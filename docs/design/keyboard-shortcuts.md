@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: 'Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.'
-ms.date: 07/08/2021
+ms.date: 09/01/2021
 localization_priority: Normal
 ---
 
@@ -97,7 +97,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     ```
 
 1. To continue the example, use `'SHOWTASKPANE'` as the first parameter.
-1. For the body of the function, use the [Office.addin.showTaskpane](/javascript/api/office/office.addin#showAsTaskpane__) method to open the add-in's task pane. When you are done, the code should look like the following:
+1. For the body of the function, use the [Office.addin.showAsTaskpane](/javascript/api/office/office.addin#showAsTaskpane__) method to open the add-in's task pane. When you are done, the code should look like the following:
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -199,7 +199,7 @@ The complete schema for the shortcuts JSON is at [extended-manifest.schema.json]
 
 There are many keyboard shortcuts that are already in use by Office. Avoid registering keyboard shortcuts for your add-in that are already in use, however there may be some instances where it is necessary to override existing keyboard shortcuts or handle conflicts between multiple add-ins that have registered the same keyboard shortcut.
 
-In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut, note that the action name that is displayed in this dialog is the `name` property in the action object in `shortcuts.json` file.
+In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut, note that the text for the add-in option that is displayed in this dialog comes from the `name` property in the action object in `shortcuts.json` file.
 
 ![Illustration showing a conflict modal with two different actions for a single shortcut.](../images/add-in-shortcut-conflict-modal.png)
 
@@ -243,7 +243,7 @@ In the following example, the `default` key is the fallback key for any platform
 
 ## Localize the keyboard shortcuts JSON
 
-If your add-in supports multiple locales, you'll need to localize the `name` property of the action objects. Also, if any of the locales that the add-in supports have alphabets or different writing systems, and hence different keyboards, you may need to localize the shortcuts also. For information about how to localize the keyboard shortcuts JSON, see [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
+If your add-in supports multiple locales, you'll need to localize the `name` property of the action objects. Also, if any of the locales that the add-in supports have different alphabets or writing systems, and hence different keyboards, you may need to localize the shortcuts also. For information about how to localize the keyboard shortcuts JSON, see [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
 
 ## Browser shortcuts that cannot be overridden
 
@@ -255,6 +255,69 @@ When using custom keyboard shortcuts on the web, some keyboard shortcuts that ar
 - Ctrl+Shift+T
 - Ctrl+W
 - Ctrl+PgUp/PgDn
+
+## Enable end users to customize the keyboard shortcuts for your add-in (preview)
+
+Your add-in can enable users to reassign the actions of the add-in to alternate keyboard combinations.
+
+> [!IMPORTANT]
+> The features described in this section are currently in preview and subject to change. They are not currently supported for use in production environments. To try the preview features, you will need to [join Office Insider](https://insider.office.com/join).
+> A good way to try out preview features is by using a Microsoft 365 subscription. If you don't already have a Microsoft 365 subscription, you can get one by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+
+> [!NOTE]
+> The APIs described in this section require the [KeyboardShortcuts 1.1](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) requirement set.
+
+To enable a user to customize the keyboard shortcuts, your add-in will need to provide a UI in which the user can assign new key combinations to the add-in's actions. The UI should present the user with the available actions and, for each, provide an input method, such as a text box, for the user to enter a key combination string. The UI should validate that the strings are the proper form. For example, there can be no spaces and keys must be separated by the "+" symbol. If the user is logged into Office, the custom combinations are saved in the user's roaming settings. If the user is not logged in, the customizations last only for the current session of the add-in.
+
+Use the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts) method to assign a user's custom keyboard combinations to your add-ins actions. The method takes a parameter of type `{[actionId:string]: string}`, where the `actionId`s are a subset of the action IDs that are defined in the add-in's extended manifest JSON. The values are the user's preferred key combinations. The following is an example in which some hypothetical custom key combinations are hardcoded. In an actual add-in, you create a function that gets them from the UI.
+
+```javascript
+const userCustomShortcuts = {
+    SHOWTASKPANE:"CTRL+SHIFT+1", 
+    HIDETASKPANE:"CTRL+SHIFT+2"
+};
+Office.actions.replaceShortcuts(userCustomShortcuts)
+    .then(function () {
+        console.log("Successfully registered.");
+    })
+    .catch(function (ex) {
+        if (ex.code == "ActionNotFound") {
+            console.log("ActionId does not exist.");
+        } else if (ex.code == "InvalidShortcut") {
+            console.log("Shortcut combination is invalid.");
+        }
+    });
+```
+
+To populate a UI that specifies the add-in's shortcuts that the user can customize, call the [Office.actions.getShortcuts](/javascript/api/office/office.actions#getShortcuts) method. This method returns an object of type `[actionId:string]:string|null}`, where the `actionId`s are (1) all of the action IDs that are defined in the add-in's extended manifest JSON and (2) all the customized shortcuts registered for the user in the user's roaming settings. The values are the key combinations currently assigned to the actions. The following is an example.
+
+```javascript
+Office.actions.getShortcuts()
+    .then(function (userShortcuts) {
+       for (const action in userShortcuts) {
+           let shortcut = userShortcuts[action];
+           // In a real add-in you would typically present this information in the UI.
+           console.log(action + ": " + shortcut);
+       }
+    });
+
+```
+
+As described in [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins), the first time a user enters a key combination that is registered to multiple actions, the user is prompted to choose which action will be associated with the combination. This can be a dilemma for a user that wants more than one of the actions to have a shortcut. You can't prevent this from happening when the conflict is between your add-in and another add-in, but you can at least prevent conflicts between the *user's customization of one of your add-in's shortcuts* and a shortcut registered by an add-in or the host Office application. To prevent a conflict, you need to warn the user about it and give them the chance to change their custom key combination.
+
+To do this pass the user's custom key combinations, as an array of strings, to the [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#areShortcutsInUse) method. The method will return a report of which combinations are already in use in the form of an array of objects of type `{shortcut: string, inUse: boolean}`. The `shortcut` property is a key combination, such as "CTRL+SHIFT+1", and the `inUse` property is set to `true` if the combination is already registered to another action. For example, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. The following is an example in which some hypothetical user's custom key combinations are hardcoded. In an actual add-in, you programmatically get this information from the UI where the user has entered custom key combinations. Also, instead of just logging the results to the console, you would typically report the results to the UI and give the user a way to change key combinations that are already in use.
+
+```javascript
+const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];
+Office.actions.areShortcutsInUse(shortcuts)
+    .then(function (inUseArray) {
+        const availableShortcuts = inUseArray.filter(function (shortcut) { return !shortcut.inUse; });
+        console.log(availableShortcuts);
+        const usedShortcuts = inUseArray.filter(function (shortcut) { return shortcut.inUse; });
+        console.log(usedShortcuts);
+    });
+
+```
 
 ## Next Steps
 

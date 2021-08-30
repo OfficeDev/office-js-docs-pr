@@ -1,7 +1,7 @@
 ---
 title: Office Common API requirement sets
 description: 'Learn more about the Office Common API requirement sets.'
-ms.date: 04/28/2021
+ms.date: 09/01/2021
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -120,6 +120,14 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 |**Office applications**|**Methods in set**|
 |:-----|:-----|
 | See [Image Coercion requirement sets](image-coercion-requirement-sets.md). | Document.setSelectedDataAsync method|
+
+---
+
+### KeyboardShortcuts
+
+|**Office applications**|**Methods in set**|
+|:-----|:-----|
+| See [Keyboard Shortcuts requirement sets](keyboard-shortcuts-requirement-sets.md). | Office.actions.areShortcutsInUse<br>Office.actions.getShortcuts<br>Office.actions.replaceShortcuts |
 
 ---
 
