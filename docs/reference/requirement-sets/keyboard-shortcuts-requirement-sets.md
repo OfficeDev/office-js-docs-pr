@@ -17,8 +17,6 @@ Office Add-ins run across multiple versions of Office. The following table lists
 | KeyboardShortcuts 1.1  | N/A | ???? or later | ????? | ????? or later | September, 2021 |
 
 
-
-
 ## Office versions and build numbers
 
 To find out more about versions, build numbers, and Office Online Server, see:
@@ -32,7 +30,7 @@ For information about Common API requirement sets, see [Office Common API requir
 
 ## KeyboardShortcuts 1.1
 
-For .
+For details about the APIs in this requirement set, see [Office.actions](/javascript/api/office/office.actions).
 
 ## See also
 
