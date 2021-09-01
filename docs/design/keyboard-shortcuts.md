@@ -256,7 +256,7 @@ When using custom keyboard shortcuts on the web, some keyboard shortcuts that ar
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
-## Enable custom the keyboard shortcuts for specific users (preview)
+## Enable custom keyboard shortcuts for specific users (preview)
 
 Your add-in can enable users to reassign the actions of the add-in to alternate keyboard combinations.
 
@@ -303,7 +303,7 @@ Office.actions.getShortcuts()
 
 ```
 
-To discover if one or more key combinations are already in use pass them as an array of strings to the [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#areShortcutsInUse) method. The method returns a report containing key combinations that are already in use in the form of an array of objects of type `{shortcut: string, inUse: boolean}`. The `shortcut` property is a key combination, such as "CTRL+SHIFT+1". If the combination is already registered to another action, the `inUse` property is set to `true`. For example, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. The following code snippet is an example:
+As described in [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins), it is a good practice to avoid conflicts in shortcuts. To discover if one or more key combinations are already in use pass them as an array of strings to the [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#areShortcutsInUse) method. The method returns a report containing key combinations that are already in use in the form of an array of objects of type `{shortcut: string, inUse: boolean}`. The `shortcut` property is a key combination, such as "CTRL+SHIFT+1". If the combination is already registered to another action, the `inUse` property is set to `true`. For example, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. The following code snippet is an example:
 
 ```javascript
 const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];
