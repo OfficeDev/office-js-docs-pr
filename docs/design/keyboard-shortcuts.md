@@ -256,7 +256,7 @@ When using custom keyboard shortcuts on the web, some keyboard shortcuts that ar
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
-## Enable end users to customize the keyboard shortcuts for your add-in (preview)
+## Enable custom the keyboard shortcuts for specific users (preview)
 
 Your add-in can enable users to reassign the actions of the add-in to alternate keyboard combinations.
 
@@ -267,9 +267,7 @@ Your add-in can enable users to reassign the actions of the add-in to alternate 
 > [!NOTE]
 > The APIs described in this section require the [KeyboardShortcuts 1.1](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) requirement set.
 
-To enable a user to customize the keyboard shortcuts, your add-in needs to provide a UI in which the user can assign new key combinations to the add-in's actions. The UI should present the user with the available actions and provide an input method, such as a text box, for the user to enter a key combination string for each action. The UI should validate that the strings are properly formatted. For example, there can be no spaces and keys must be separated by the "+" symbol. If the user is logged into Office, the custom combinations are saved in the user's roaming settings. If the user is not logged in, the customizations last only for the current session of the add-in.
-
-Use the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts) method to assign a user's custom keyboard combinations to your add-ins actions. The method takes a parameter of type `{[actionId:string]: string}`, where the `actionId`s are a subset of the action IDs that are defined in the add-in's extended manifest JSON. The values are the user's preferred key combinations. The following code snippet is an example in which some hypothetical custom key combinations are hardcoded. In an actual add-in, you create a function that gets the key combinations from the UI.
+Use the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts) method to assign a user's custom keyboard combinations to your add-ins actions. The method takes a parameter of type `{[actionId:string]: string}`, where the `actionId`s are a subset of the action IDs that are defined in the add-in's extended manifest JSON. The values are the user's preferred key combinations. If the user is logged into Office, the custom combinations are saved in the user's roaming settings. If the user is not logged in, the customizations last only for the current session of the add-in.
 
 ```javascript
 const userCustomShortcuts = {
@@ -281,31 +279,31 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
         console.log("Successfully registered.");
     })
     .catch(function (ex) {
-        if (ex.code == "ActionNotFound") {
-            console.log("ActionId does not exist.");
-        } else if (ex.code == "InvalidShortcut") {
-            console.log("Shortcut combination is invalid.");
+        if (ex.code == "InvalidOperation") {
+            console.log("ActionId does not exist or shortcut combination is invalid.");
         }
     });
 ```
 
-To populate a UI that specifies the add-in's shortcuts that the user can customize, call the [Office.actions.getShortcuts](/javascript/api/office/office.actions#getShortcuts) method. This method returns an object of type `[actionId:string]:string|null}`, where the `actionId`s are (1) all of the action IDs that are defined in the add-in's extended manifest JSON and (2) all the customized shortcuts registered for the user in the user's roaming settings. The values are the key combinations currently assigned to the actions. The following is an example.
+To find out what shortcuts are already in use for the user, call the [Office.actions.getShortcuts](/javascript/api/office/office.actions#getShortcuts) method. This method returns an object of type `[actionId:string]:string|null}`, where the `actionId`s are:
+
+- All of the action IDs that are defined in the add-in's extended manifest JSON.
+- All the customized shortcuts registered for the user in the user's roaming settings. The values are the key combinations currently assigned to the actions. 
+
+The following is an example.
 
 ```javascript
 Office.actions.getShortcuts()
     .then(function (userShortcuts) {
        for (const action in userShortcuts) {
            let shortcut = userShortcuts[action];
-           // In a real add-in you would typically present this information in the UI.
            console.log(action + ": " + shortcut);
        }
     });
 
 ```
 
-As described in [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins), the first time a user enters a key combination that is registered to multiple actions, they are prompted to choose which action will be associated with the combination. This can be a dilemma for a user that wants more than one of the actions to have a shortcut. You can't prevent this from happening when the conflict is between your add-in and another add-in, but you can at least prevent conflicts between the *user's customization of one of your add-in's shortcuts* and a shortcut registered by an add-in or the host Office application. To prevent a conflict, you need to warn the user about it and give them the chance to change their custom key combination.
-
-To do this, pass the user's custom key combinations as an array of strings to the [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#areShortcutsInUse) method. The method returns a report containing key combinations that are already in use in the form of an array of objects of type `{shortcut: string, inUse: boolean}`. The `shortcut` property is a key combination, such as "CTRL+SHIFT+1". If the combination is already registered to another action, the `inUse` property is set to `true`. For example, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. The following code snippet is an example in which some hypothetical user's custom key combinations are hardcoded. In an actual add-in, you programmatically get this information from the UI where the user has entered custom key combinations. Also, instead of just logging the results to the console, you would typically report the results to the UI and give the user a way to change key combinations that are already in use.
+To discover if one or more key combinations are already in use pass them as an array of strings to the [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#areShortcutsInUse) method. The method returns a report containing key combinations that are already in use in the form of an array of objects of type `{shortcut: string, inUse: boolean}`. The `shortcut` property is a key combination, such as "CTRL+SHIFT+1". If the combination is already registered to another action, the `inUse` property is set to `true`. For example, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. The following code snippet is an example:
 
 ```javascript
 const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];
