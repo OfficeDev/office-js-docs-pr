@@ -39,7 +39,7 @@ The following software is required for developing an Office Add-in for the suppo
   - The 32- or 64-bit version of Office 2013 or a later version, running on Windows 7 or a later version.
   - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you are testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
 
-  If you have a valid Microsoft 365 subscription and you do not have access to the Office client, you can [download and install the latest version of Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
+  If you have a valid Microsoft 365 subscription and you do not have access to the Office client, you can [download and install the latest version of Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658).
 
 - Internet Explorer 11 or Microsoft Edge (depending on the Windows and Office versions) must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 11 or Microsoft Edge. See [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md) for more details.
 
@@ -76,7 +76,7 @@ Specifically for Outlook running in a browser on smartphones and non-Windows tab
 |Outlook on the web|iPhone 4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Microsoft 365, Exchange Online, or on premises on Exchange Server 2013 or later|Safari|
 
 > [!NOTE]
-> The native apps OWA for Android, OWA for iPad, and OWA for iPhone have been [deprecated](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b) and are no longer required or available for testing Outlook add-ins.
+> The native apps OWA for Android, OWA for iPad, and OWA for iPhone have been [deprecated](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b) and are no longer required or available for testing Outlook add-ins.
 
 
 ## See also
