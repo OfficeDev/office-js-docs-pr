@@ -313,7 +313,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 1. Be sure there are at least three paragraphs in the document. You can choose the **Insert Paragraph** button three times. *Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*
 
-1. In Word, create a [custom style](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) named "MyCustomStyle". It can have any formatting that you want.
+1. In Word, create a [custom style](https://support.microsoft.com/office/d38d6e47-f6fc-48eb-a607-1eb120dec563) named "MyCustomStyle". It can have any formatting that you want.
 
 1. Choose the **Apply Style** button. The first paragraph will be styled with the built-in style **Intense Reference**.
 
@@ -812,7 +812,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 > [!NOTE]
 > There are several types of content controls that can be added to a Word document through the UI, but currently only Rich Text content controls are supported by Word.js.
 >
-> Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with the controls and their properties. For details, see [Create forms that users complete or print in Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).
+> Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with the controls and their properties. For details, see [Create forms that users complete or print in Word](https://support.microsoft.com/office/040c5cc1-e309-445b-94ac-542f732c8c8b).
 
 ### Create a content control
 
