@@ -7,16 +7,16 @@ localization_priority: Priority
 
 # Clear the Office cache
 
-You can remove an add-in that you've previously sideloaded on Windows, Mac, or iOS by clearing the Office cache on your computer.
+To remove an add-in that you've previously sideloaded on Windows, Mac, or iOS, you need to clear the Office cache on your computer.
 
-Additionally, if you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you should clear the Office cache and then re-sideload the add-in using updated manifest. Doing so will allow Office to render the add-in as it's described by the updated manifest.
+Additionally, if you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you should clear the Office cache and then re-sideload the add-in using an updated manifest. Doing so allows Office to render the add-in as it's described by the updated manifest.
 
 > [!NOTE]
 > To remove a sideloaded add-in from Excel, OneNote, PowerPoint, or Word on the web, see [Sideload Office Add-ins in Office on the web for testing: Remove a sideloaded add-in](sideload-office-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
 ## Clear the Office cache on Windows
 
-To remove all sideloaded add-ins from Excel, Word, and PowerPoint, delete the contents of the folder:
+To remove all sideloaded add-ins from Excel, Word, and PowerPoint, delete the contents of the folder.
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
@@ -48,11 +48,11 @@ Additionally, to clear the Office cache on Windows 10 when the add-in is running
 
 5. Select the add-in name to attach the debugger to your add-in. A new Microsoft Edge DevTools window will open when the debugger attaches to your add-in.
 
-6. On the **Network** tab of the new window, select the **Clear cache** button.
+6. On the **Network** tab of the new window, select **Clear cache**.
 
     ![Microsoft Edge DevTools screenshot with the Clear cache button highlighted.](../images/edge-devtools-clear-cache.png)
 
-7. If completing these steps doesn't produce the desired result, you can also select the **Always refresh from server** button.
+7. If completing these steps doesn't produce the desired result, try selecting **Always refresh from server**.
 
     ![Microsoft Edge DevTools screenshot with the Always refresh from server button highlighted.](../images/edge-devtools-refresh-from-server.png)
 
@@ -62,7 +62,7 @@ Additionally, to clear the Office cache on Windows 10 when the add-in is running
 
 ## Clear the Office cache on iOS
 
-To clear the Office cache on iOS, call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
+To clear the Office cache on iOS, call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, reinstall Office.
 
 ## See also
 
