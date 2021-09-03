@@ -2,9 +2,9 @@ You can create an Office Add-in to provide one-click sending or publishing of a 
 
 ## Prerequisites for creating an add-in for PowerPoint or Word
 
-This article assumes that you are using a text editor to create the task pane add-in for PowerPoint or Word. To create the task pane add-in, you must create the following files:
+This article assumes that you are using a text editor to create the task pane add-in for PowerPoint or Word. To create the task pane add-in, you must create the following files.
 
-- On a shared network folder or on a web server, you need the following files:
+- On a shared network folder or on a web server, you need the following files.
 
   - An HTML file (GetDoc_App.html) that contains the user interface plus links to the JavaScript files (including office.js and application-specific .js files) and Cascading Style Sheet (CSS) files.
 
@@ -148,11 +148,11 @@ function updateStatus(message) {
 }
 ```
 
-When you choose the **Submit** button in the UI, the add-in calls the `sendFile` function, which contains a call to the [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) method. The `getFileAsync` method uses the asynchronous pattern, similar to other methods in the JavaScript API for Office. It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_.
+When you choose the **Submit** button in the UI, the add-in calls the `sendFile` function, which contains a call to the [Document.getFileAsync](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_) method. The `getFileAsync` method uses the asynchronous pattern, similar to other methods in the JavaScript API for Office. It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_.
 
 The  _fileType_ parameter expects one of three constants from the [FileType](/javascript/api/office/office.filetype) enumeration: `Office.FileType.Compressed` ("compressed"), **Office.FileType.PDF** ("pdf"), or **Office.FileType.Text** ("text"). The current file type support for each platform is listed under the [Document.getFileType](/javascript/api/office/office.document#getFileAsync_fileType__callback_) remarks. When you pass in **Compressed** for the _fileType_ parameter, the `getFileAsync` method returns the document as a PowerPoint 2013 presentation file (*.pptx) or Word 2013 document file (*.docx) by creating a temporary copy of the file on the local computer.
 
-The `getFileAsync` method returns a reference to the file as a [File](/javascript/api/office/office.file) object. The `File` object exposes four members: the [size](/javascript/api/office/office.file#size) property, [sliceCount](/javascript/api/office/office.file#slicecount) property, [getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-) method, and [closeAsync](/javascript/api/office/office.file#closeasync-callback-) method. The `size` property returns the number of bytes in the file. The `sliceCount` returns the number of [Slice](/javascript/api/office/office.slice) objects (discussed later in this article) in the file.
+The `getFileAsync` method returns a reference to the file as a [File](/javascript/api/office/office.file) object. The `File` object exposes four members: the [size](/javascript/api/office/office.file#size) property, [sliceCount](/javascript/api/office/office.file#sliceCount) property, [getSliceAsync](/javascript/api/office/office.file#getSliceAsync_sliceIndex__callback_) method, and [closeAsync](/javascript/api/office/office.file#closeAsync_callback_) method. The `size` property returns the number of bytes in the file. The `sliceCount` returns the number of [Slice](/javascript/api/office/office.slice) objects (discussed later in this article) in the file.
 
 Use the following code to get the PowerPoint or Word document as a `File` object using the `Document.getFileAsync` method and then makes a call to the locally defined `getSlice` function. Note that the `File` object, a counter variable, and the total number of slices in the file are passed along in the call to `getSlice` in an anonymous object.
 

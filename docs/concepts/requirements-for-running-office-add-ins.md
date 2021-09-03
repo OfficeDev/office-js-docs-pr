@@ -1,7 +1,7 @@
 ---
 title: Requirements for running Office Add-ins
 description: 'Learn about the client and server requirements that an end user needs to run Office Add-ins.'
-ms.date: 03/18/2020
+ms.date: 07/27/2021
 localization_priority: Normal
 ---
 
@@ -24,7 +24,7 @@ For all types of add-ins (content, Outlook, and task pane add-ins and add-in com
 > [!TIP]
 > When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server.
 
-For content and task pane add-ins, in the supported Office client applications - Excel, PowerPoint, Project, or Word - you also need either an [app catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file, or you need to deploy the add-in using [Centralized Deployment](../publish/centralized-deployment.md).
+For content and task pane add-ins, in the supported Office client applications - Excel, PowerPoint, Project, or Word - you also need either an [app catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file, or you need to deploy the add-in using [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
 To test and run an Outlook add-in, the user's Outlook email account must reside on Exchange 2013 or later, which is available through Microsoft 365, Exchange Online, or through an on-premises installation. The user or administrator installs manifest files for Outlook add-ins on that server.
 
@@ -33,14 +33,13 @@ To test and run an Outlook add-in, the user's Outlook email account must reside 
 
 ## Client requirements: Windows desktop and tablet
 
-The following software is required for developing an Office Add-in for the supported Office desktop clients or web clients that run on Windows-based desktop, laptop, or tablet devices:
-
+The following software is required for developing an Office Add-in for the supported Office desktop clients or web clients that run on Windows-based desktop, laptop, or tablet devices.
 
 - For Windows x86 and x64 desktops, and tablets such as Surface Pro:
-    - The 32- or 64-bit version of Office 2013 or a later version, running on Windows 7 or a later version.
-    - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you are testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
+  - The 32- or 64-bit version of Office 2013 or a later version, running on Windows 7 or a later version.
+  - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you are testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
 
-  If you have a valid Microsoft 365 subscription and you do not have access to the Office client, you can [download and install the latest version of Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
+  If you have a valid Microsoft 365 subscription and you do not have access to the Office client, you can [download and install the latest version of Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658).
 
 - Internet Explorer 11 or Microsoft Edge (depending on the Windows and Office versions) must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 11 or Microsoft Edge. See [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md) for more details.
 
@@ -77,7 +76,7 @@ Specifically for Outlook running in a browser on smartphones and non-Windows tab
 |Outlook on the web|iPhone 4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Microsoft 365, Exchange Online, or on premises on Exchange Server 2013 or later|Safari|
 
 > [!NOTE]
-> The native apps OWA for Android, OWA for iPad, and OWA for iPhone have been [deprecated](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b) and are no longer required or available for testing Outlook add-ins.
+> The native apps OWA for Android, OWA for iPad, and OWA for iPhone have been [deprecated](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b) and are no longer required or available for testing Outlook add-ins.
 
 
 ## See also

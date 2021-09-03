@@ -1,21 +1,19 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: 'Learn how to troubleshoot user errors in Office Add-ins.'
-ms.date: 09/08/2020
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
 # Troubleshoot user errors with Office Add-ins
 
-At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in. 
+At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in.
 
 You can also use [Fiddler](https://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
 
 ## Common errors and troubleshooting steps
 
 The following table lists common error messages that users might encounter and steps that your users can take to resolve the errors.
-
-
 
 |**Error message**|**Resolution**|
 |:-----|:-----|
@@ -27,40 +25,36 @@ The following table lists common error messages that users might encounter and s
 ## When installing an add-in, you see "Error loading add-in" in the status bar
 
 1. Close Office.
-2. Verify that the manifest is valid
-3. Restart the add-in
-4. Install the add-in again.
+1. Verify that the manifest is valid
+1. Restart the add-in
+1. Install the add-in again.
 
 You can also give us feedback: if using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File** | **Feedback** | **Send a Frown**. Sending a frown provides the necessary logs to understand the issue.
 
 ## Outlook add-in doesn't work correctly
 
-If an Outlook add-in running on Windows and [using Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) is not working correctly, try turning on script debugging in Internet Explorer. 
-
+If an Outlook add-in running on Windows and [using Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) is not working correctly, try turning on script debugging in Internet Explorer.
 
 - Go to Tools > **Internet Options** > **Advanced**.
-    
 - Under **Browsing**, uncheck **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)**.
-    
-We recommend that you uncheck these settings only to troubleshoot the issue. If you leave them unchecked, you will get prompts when you browse. After the issue is resolved, check **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)** again.
 
+We recommend that you uncheck these settings only to troubleshoot the issue. If you leave them unchecked, you will get prompts when you browse. After the issue is resolved, check **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)** again.
 
 ## Add-in doesn't activate in Office 2013
 
-If the add-in doesn't activate when the user performs the following steps:
-
+If the add-in doesn't activate when the user performs the following steps.
 
 1. Signs in with their Microsoft account in Office 2013.
-    
-2. Enables two-step verification for their Microsoft account.
-    
-3. Verifies their identity when prompted when they try to insert an add-in.
-    
+
+1. Enables two-step verification for their Microsoft account.
+
+1. Verifies their identity when prompted when they try to insert an add-in.
+
 Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/kb/2986156/).
 
 ## Add-in dialog box cannot be displayed
 
-When using an Office Add-in, the user is asked to allow a dialog box to be displayed. The user chooses **Allow**, and the following error message occurs:
+When using an Office Add-in, the user is asked to allow a dialog box to be displayed. The user chooses **Allow**, and the following error message occurs.
 
 "The security settings in your browser prevent us from creating a dialog box. Try a different browser, or configure your browser so that [URL] and the domain shown in your address bar are in the same security zone."
 
@@ -78,9 +72,9 @@ To resolve the issue, end users or administrators can add the domain of the add-
 To add a URL to your list of trusted sites:
 
 1. In **Control Panel**, go to **Internet options** > **Security**.
-2. Select the **Trusted sites** zone, and choose **Sites**.
-3. Enter the URL that appears in the error message, and choose **Add**.
-4. Try to use the add-in again. If the problem persists, verify the settings for the other security zones and ensure that the add-in domain is in the same zone as the URL that is displayed in the address bar of the Office application.
+1. Select the **Trusted sites** zone, and choose **Sites**.
+1. Enter the URL that appears in the error message, and choose **Add**.
+1. Try to use the add-in again. If the problem persists, verify the settings for the other security zones and ensure that the add-in domain is in the same zone as the URL that is displayed in the address bar of the Office application.
 
 This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](/javascript/api/office/office.ui) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
 

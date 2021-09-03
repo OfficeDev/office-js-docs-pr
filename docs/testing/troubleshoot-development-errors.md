@@ -24,11 +24,12 @@ Delete the contents of the folder `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`, a
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### For iOS:
+
 Call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, you can reinstall Office.
 
 ## Changes to static files, such as JavaScript, HTML, and CSS do not take effect
 
-The browser may be caching these files. To prevent this, turn off client-side caching when developing. The details will depend on what kind of server you are using. In most cases, it involves adding certain headers to the HTTP Responses. We suggest the following set:
+The browser may be caching these files. To prevent this, turn off client-side caching when developing. The details will depend on what kind of server you are using. In most cases, it involves adding certain headers to the HTTP Responses. We suggest the following set.
 
 - Cache-Control: "private, no-cache, no-store"
 - Pragma: "no-cache"

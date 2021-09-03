@@ -31,7 +31,7 @@ There are many ways to convert a file to base64. Which programming language and 
     </section>
     ```
 
-    This markup adds the UI in the following screenshot to the page:
+    This markup adds the UI in the following screenshot to the page.
 
     ![Screenshot showing an HTML file type input control preceded by an instructional sentence reading "Select a PowerPoint presentation from which to insert slides". The control consists of a button labelled "Choose file" followed by the sentence "No file chosen".](../images/powerpoint-html-file-input-control.png)
 
@@ -44,7 +44,7 @@ There are many ways to convert a file to base64. Which programming language and 
     $("#file").change(storeFileAsBase64);
     ```
 
-3. Add the following code. Note the following about this code,:
+3. Add the following code. Note the following about this code.
 
     - The `reader.readAsDataURL` method converts the file to base64 and stores it in the `reader.result` property. When the method completes, it triggers the `onload` event handler.
     - The `onload` event handler trims metadata off of the encoded file and stores the encoded string in a global variable.
@@ -70,7 +70,7 @@ There are many ways to convert a file to base64. Which programming language and 
 
 ## Insert slides with insertSlidesFromBase64
 
-Your add-in inserts slides from another PowerPoint presentation into the current presentation with the [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-) method. The following is a simple example in which all of the slides from the source presentation are inserted at the beginning of the current presentation and the inserted slides keep the formatting of the source file. Note that `chosenFileBase64` is a global variable that holds a base64-encoded version of a PowerPoint presentation file.
+Your add-in inserts slides from another PowerPoint presentation into the current presentation with the [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertSlidesFromBase64_base64File__options_) method. The following is a simple example in which all of the slides from the source presentation are inserted at the beginning of the current presentation and the inserted slides keep the formatting of the source file. Note that `chosenFileBase64` is a global variable that holds a base64-encoded version of a PowerPoint presentation file.
 
 ```javascript
 async function insertAllSlides() {

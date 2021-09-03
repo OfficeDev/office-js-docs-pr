@@ -17,16 +17,16 @@ The following figure shows Outlook add-ins activated in the add-in bar for the m
 ## Specify activation rules in a manifest
 
 
-To have Outlook activate an add-in for specific conditions, specify activation rules in the add-in manifest by using one of the following `Rule` elements:
+To have Outlook activate an add-in for specific conditions, specify activation rules in the add-in manifest by using one of the following `Rule` elements.
 
 - [Rule element (MailApp complexType)](../reference/manifest/rule.md) - Specifies an individual rule.
 - [Rule element (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) - Combines multiple rules using logical operations.
-    
+
 
  > [!NOTE]
  > The `Rule` element that you use to specify an individual rule is of the abstract [Rule](../reference/manifest/rule.md) complex type. Each of the following types of rules extends this abstract `Rule` complex type. So when you specify an individual rule in a manifest, you must use the [xsi:type](https://www.w3.org/TR/xmlschema-1/) attribute to further define one of the following types of rules.
  > 
- > For example, the following rule defines an [ItemIs](../reference/manifest/rule.md#itemis-rule) rule:
+ > For example, the following rule defines an [ItemIs](../reference/manifest/rule.md#itemis-rule) rule.
  > `<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
  > The `FormType` attribute applies to activation rules in the manifest v1.1 but is not defined in `VersionOverrides` v1.0. So it can't be used when [ItemIs](../reference/manifest/rule.md#itemis-rule) is used in the `VersionOverrides` node.
@@ -53,8 +53,8 @@ Specify one of the following item types in the `ItemType` attribute of an **Item
 
 |**Value**|**Description**|
 |:-----|:-----|
-|**Appointment**|Specifies an item in an Outlook calendar. This includes a meeting item that has been responded to and has an organizer and attendees, or an appointment that does not have an organizer or attendee and is simply an item on the calendar.This corresponds to the IPM.Appointment message class in Outlook.|
-|**Message**|Specifies one of the following items received in typically the Inbox: <ul><li><p>An email message. This corresponds to the IPM.Note message class in Outlook.</p></li><li><p>A meeting request, response, or cancellation. This corresponds to the following  message classes in Outlook:</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
+|**Appointment**|Specifies an item in an Outlook calendar. This includes a meeting item that has been responded to and has an organizer and attendees, or an appointment that does not have an organizer or attendee and is simply an item on the calendar. This corresponds to the IPM.Appointment message class in Outlook.|
+|**Message**|Specifies one of the following items received in typically the Inbox. <ul><li><p>An email message. This corresponds to the IPM.Note message class in Outlook.</p></li><li><p>A meeting request, response, or cancellation. This corresponds to the following message classes in Outlook.</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
 The `FormType` attribute is used to specify the mode (read or compose) in which the add-in should activate.
 
@@ -68,7 +68,7 @@ You can optionally use the `ItemClass` attribute to specify the message class of
 
 For more information about message classes, see [Item Types and Message Classes](/office/vba/outlook/Concepts/Forms/item-types-and-message-classes).
 
-The following example is an **ItemIs** rule that lets users see the add-in in the Outlook add-in bar when the user is reading a message:
+The following example is an **ItemIs** rule that lets users see the add-in in the Outlook add-in bar when the user is reading a message.
 
 ```xml
 <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
@@ -98,7 +98,7 @@ The `ItemHasAttachment` complex type defines a rule that checks if the selected 
 
 Before an item is made available to an add-in, the server examines it to determine whether the subject and body contain any text that is likely to be one of the known entities. If any of these entities are found, it is placed in a collection of known entities that you access by using the `getEntities` or `getEntitiesByType` method of that item.
 
-You can specify a rule by using `ItemHasKnownEntity` that shows your add-in when an entity of the specified type is present in the item. You can specify the following known entities in the `EntityType` attribute of an `ItemHasKnownEntity` rule:
+You can specify a rule by using `ItemHasKnownEntity` that shows your add-in when an entity of the specified type is present in the item. You can specify the following known entities in the `EntityType` attribute of an `ItemHasKnownEntity` rule.
 
 - Address
 - Contact
@@ -107,7 +107,7 @@ You can specify a rule by using `ItemHasKnownEntity` that shows your add-in when
 - PhoneNumber
 - TaskSuggestion
 - URL
-    
+
 You can optionally include a regular expression in the `RegularExpression` attribute so that your add-in is only shown when an entity that matches the regular expression in present. To obtain matches to regular expressions specified in `ItemHasKnownEntity` rules, you can use the `getRegExMatches` or `getFilteredEntitiesByName` method for the currently selected Outlook item.
 
 The following example shows a collection of `Rule` elements that show the add-in when one of the specified well-known entities is present in the message.

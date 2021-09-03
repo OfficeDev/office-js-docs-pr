@@ -70,11 +70,11 @@ Be familiar with [Read properties of RangeAreas](#read-properties-of-rangeareas)
 
 ### RangeArea-specific properties and methods
 
-The `RangeAreas` type has some properties and methods that are not on the `Range` object. The following is a selection of them:
+The `RangeAreas` type has some properties and methods that are not on the `Range` object. The following is a selection of them.
 
 - `areas`: A `RangeCollection` object that contains all of the ranges represented by the `RangeAreas` object. The `RangeCollection` object is also new and is similar to other Excel collection objects. It has an `items` property which is an array of `Range` objects representing the ranges.
 - `areaCount`: The total number of ranges in the `RangeAreas`.
-- `getOffsetRangeAreas`: Works just like [Range.getOffsetRange](/javascript/api/excel/excel.range#getoffsetrange-rowoffset--columnoffset-), except that a `RangeAreas` is returned and it contains ranges that are each offset from one of the ranges in the original `RangeAreas`.
+- `getOffsetRangeAreas`: Works just like [Range.getOffsetRange](/javascript/api/excel/excel.range#getOffsetRange_rowOffset__columnOffset_), except that a `RangeAreas` is returned and it contains ranges that are each offset from one of the ranges in the original `RangeAreas`.
 
 ## Create RangeAreas
 
@@ -123,7 +123,7 @@ When calling the `getSpecialCells` or `getSpecialCellsOrNullObject` method on a 
 
 ## Read properties of RangeAreas
 
-Reading property values of `RangeAreas` requires care, because a given property may have different values for different ranges within the `RangeAreas`. The general rule is that if a consistent value *can* be returned it will be returned. For example, in the following code, The RGB code for pink (`#FFC0CB`) and `true` will be logged to the console because both the ranges in the `RangeAreas` object have a pink fill and both are entire columns.
+Reading property values of `RangeAreas` requires care, because a given property may have different values for different ranges within the `RangeAreas`. The general rule is that if a consistent value *can* be returned it will be returned. For example, in the following code, the RGB code for pink (`#FFC0CB`) and `true` will be logged to the console because both the ranges in the `RangeAreas` object have a pink fill and both are entire columns.
 
 ```js
 Excel.run(function (context) {

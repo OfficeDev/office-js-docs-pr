@@ -1,7 +1,7 @@
 ---
 title: Overview of authentication and authorization in Office Add-ins
 description: 'Require users to authenticate login in Web applications and Office Add-ins.'
-ms.date: 06/24/2021
+ms.date: 09/03/2021
 localization_priority: Priority
 ---
 
@@ -32,11 +32,11 @@ You can get authorization to Microsoft Graph data for your add-in by obtaining a
 
 ## User authentication with SSO
 
-To authenticate the user using SSO, your code in a task pane or function file calls the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) method. If the user is not signed in, Office will open a dialog box and navigate to the Azure Active Directory login page. After the user signs in, or if the user is already signed in, the method returns an access token. The token is a bootstrap token in the **On Behalf Of** flow. (See [Access to Microsoft Graph with SSO](#access-to-microsoft-graph-with-sso).) However, it can be used as an ID token as well, because it contains several claims that are unique to the current user, including `preferred_username`, `name`, `sub`, and `oid`. For guidance on which property to use as the ultimate user ID, see [Microsoft identity platform access tokens](/azure/active-directory/develop/access-tokens#payload-claims). For an example of a one of these tokens, see [Example access token](sso-in-office-add-ins.md#example-access-token).
+To authenticate the user using SSO, your code in a task pane or function file calls the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method. If the user is not signed in, Office will open a dialog box and navigate to the Azure Active Directory login page. After the user signs in, or if the user is already signed in, the method returns an access token. The token is a bootstrap token in the **On Behalf Of** flow. (See [Access to Microsoft Graph with SSO](#access-to-microsoft-graph-with-sso).) However, it can be used as an ID token as well, because it contains several claims that are unique to the current user, including `preferred_username`, `name`, `sub`, and `oid`. For guidance on which property to use as the ultimate user ID, see [Microsoft identity platform access tokens](/azure/active-directory/develop/access-tokens#payload-claims). For an example of a one of these tokens, see [Example access token](sso-in-office-add-ins.md#example-access-token).
 
 After your code has extracted the desired claim from the token, it uses that value to look up the user in a user table or user database that you maintain. Use the database to store user-relative information such as the user's preferences or the state of the user's account. Since you are using SSO, your users don't sign-in separately to your add-in, so you do not need to store a password for the user.
 
-Before you begin implementing user authentication with SSO, be sure that you are thoroughly familiar with the article [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md). Note also these samples:
+Before you begin implementing user authentication with SSO, be sure that you are thoroughly familiar with the article [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md). Note also the following samples.
 
 - [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO), especially the file [ssoAuthES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
 - [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
@@ -45,21 +45,21 @@ These samples, however, do not use the token as an ID token. They use it to get 
 
 ## Access to Microsoft Graph with SSO
 
-To use SSO to access Microsoft Graph, your add-in in a task pane or function file calls the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) method. If the user is not signed in, Office will open a dialog box and navigate it to the Azure Active Directory login page. After the user signs in, or if the user is already signed in, the method returns an access token. The token is a bootstrap token in the **On Behalf Of** flow. Specifically, it has a `scope` claim with the value `access_as_user`. For guidance about the claims in the token, see [Microsoft identity platform access tokens](/azure/active-directory/develop/access-tokens#payload-claims). For an example of a one of these tokens, see [Example access token](sso-in-office-add-ins.md#example-access-token).
+To use SSO to access Microsoft Graph, your add-in in a task pane or function file calls the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method. If the user is not signed in, Office will open a dialog box and navigate it to the Azure Active Directory login page. After the user signs in, or if the user is already signed in, the method returns an access token. The token is a bootstrap token in the **On Behalf Of** flow. Specifically, it has a `scope` claim with the value `access_as_user`. For guidance about the claims in the token, see [Microsoft identity platform access tokens](/azure/active-directory/develop/access-tokens#payload-claims). For an example of a one of these tokens, see [Example access token](sso-in-office-add-ins.md#example-access-token).
 
 After your code obtains the token, it uses it in the **On Behalf Of** flow to obtain a second token: an access token to Microsoft Graph.
 
-Before you begin implementing Office SSO, be sure that you are thoroughly familiar with these two articles:
+Before you begin implementing Office SSO, be sure that you are thoroughly familiar with these two articles.
 
 - [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md)
 - [Authorize to Microsoft Graph with SSO](authorize-to-microsoft-graph.md)
 
-You should also read at least one of the walkthrough articles listed here. Even if you don't carry out the steps, these contain valuable information about how you implement Office SSO and the **On Behalf Of** flow. 
+You should also read at least one of the walkthrough articles listed here. Even if you don't carry out the steps, these contain valuable information about how you implement Office SSO and the **On Behalf Of** flow.
 
 - [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md)
 - [Create an Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md)
 
-Note also these samples:
+Note also the following samples.
 
 - [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
 - [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)

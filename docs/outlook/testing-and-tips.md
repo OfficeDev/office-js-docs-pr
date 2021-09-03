@@ -1,13 +1,13 @@
 ---
 title: Deploy and install Outlook add-ins for testing
 description: Create a manifest file, deploy the add-in UI file to a web server, install the add-in in your mailbox, and then test the add-in.
-ms.date: 05/20/2020
+ms.date: 07/08/2021
 localization_priority: Priority
 ---
 
 # Deploy and install Outlook add-ins for testing
 
-As part of the process of developing an Outlook add-in, you will probably find yourself iteratively deploying and installing the add-in for testing, which involves the following steps:
+As part of the process of developing an Outlook add-in, you'll probably find yourself iteratively deploying and installing the add-in for testing, which involves the following steps.
 
 1. Creating a manifest file that describes the add-in.
 1. Deploying the add-in UI file(s) to a web server.
@@ -19,7 +19,7 @@ As part of the process of developing an Outlook add-in, you will probably find y
 
 ## Create a manifest file for the add-in
 
-Each add-in is described by an XML manifest, a document that gives the server information about the add-in, provides descriptive information about the add-in for the user, and identifies the location of the add-in UI HTML file. You can store the manifest in a local folder or server, as long as the location is accessible by the Exchange server of the mailbox that you are testing with. We'll assume that you store your manifest in a local folder. For information about how to create a manifest file, see [Outlook add-in manifests](manifests.md).
+Each add-in is described by an XML manifest, a document that gives the server information about the add-in, provides descriptive information about the add-in for the user, and identifies the location of the add-in UI HTML file. You can store the manifest in a local folder or server, as long as the location is accessible by the Exchange server of the mailbox that you're testing with. We'll assume that you store your manifest in a local folder. For information about how to create a manifest file, see [Outlook add-in manifests](manifests.md).
 
 ## Deploy an add-in to a web server
 
@@ -39,7 +39,7 @@ The Exchange administrator can run the following PowerShell cmdlet to assign a s
 New-ManagementRoleAssignment -Role "My Custom Apps" -User "wendyri"
 ```
 
-If necessary, the administrator can run the following cmdlet to assign multiple users the similar necessary permissions:
+If necessary, the administrator can run the following cmdlet to assign multiple users the similar necessary permissions.
 
 ```powershell
 $users = Get-Mailbox *$users | ForEach-Object { New-ManagementRoleAssignment -Role "My Custom Apps" -User $_.Alias}
@@ -59,7 +59,7 @@ New-App -URL:"http://<fully-qualified URL">
 
 The fully qualified URL is the location of the add-in manifest file that you prepared for your add-in.
 
-You can use the following additional PowerShell cmdlets to manage the add-ins for a mailbox:
+Use the following additional PowerShell cmdlets to manage the add-ins for a mailbox.
 
 - `Get-App` - Lists the add-ins that are enabled for a mailbox.
 - `Set-App` - Enables or disables a add-in on a mailbox.
@@ -69,9 +69,9 @@ You can use the following additional PowerShell cmdlets to manage the add-ins fo
 
 Deciding what versions of the Outlook client to test depends on your development requirements.
 
-- If you are developing an add-in for private use, or only for members of your organization, then it is important to test the versions of Outlook that your company uses. Keep in mind that some users may use Outlook on the web, so testing your company's standard browser versions is also important.
+- If you're developing an add-in for private use, or only for members of your organization, then it is important to test the versions of Outlook that your company uses. Keep in mind that some users may use Outlook on the web, so testing your company's standard browser versions is also important.
 
-- If you are developing an add-in to list in [AppSource](https://appsource.microsoft.com), you must test the required versions as specified in the [Commercial marketplace certification policies 1120.3](/legal/marketplace/certification-policies#11203-functionality). This includes:
+- If you're developing an add-in to list in [AppSource](https://appsource.microsoft.com), you must test the required versions as specified in the [Commercial marketplace certification policies 1120.3](/legal/marketplace/certification-policies#11203-functionality). This includes:
   - The latest version of Outlook on Windows and the version prior to the latest.
   - The latest version of Outlook on Mac.
   - The latest version of Outlook on iOS and Android (if your add-in [supports mobile form factor](add-mobile-support.md)).
@@ -89,7 +89,7 @@ To mitigate this, we recommend you test your add-in in Outlook on the web connec
 Alternatively, you can opt to pay for and use a service that hosts and manages on-premises Exchange servers. A couple of options are:
 
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
-- [Hostway](https://hostway.com/products-services-2/hosted-microsoft-exchange/)
+- [Hostway](https://hostway.com/microsoft-exchange/)
 
 Furthermore, if you don't want your add-ins to be available for users who are connected to on-premises Exchange, you can set the [requirement set](../reference/requirement-sets/outlook-api-requirement-sets.md#exchange-server-support) in the add-in manifest to be 1.6 or higher. Such add-ins will not be tested or validated on the classic Outlook on the web UI.
 

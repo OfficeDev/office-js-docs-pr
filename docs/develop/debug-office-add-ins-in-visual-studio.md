@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins in Visual Studio
 description: 'Use Visual Studio to debug Office Add-ins in the Office desktop client on Windows'
-ms.date: 12/31/2019
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -26,7 +26,7 @@ Before you start debugging, review the properties of each project to confirm tha
 
 ### Add-in project properties
 
-Open the **Properties** window for the add-in project to review project properties:
+Open the **Properties** window for the add-in project to review project properties.
 
 1. In **Solution Explorer**, choose the add-in project (*not* the web application project).
 
@@ -52,7 +52,7 @@ The following table describes the properties of the add-in project.
 
 ### Web application project properties
 
-Open the **Properties** window for the web application project to review project properties:
+Open the **Properties** window for the web application project to review project properties.
 
 1. In **Solution Explorer**, choose the web application project.
 
@@ -93,7 +93,7 @@ Start the project by choosing **Debug** > **Start Debugging** from the menu bar.
 > [!NOTE]
 > When you start an Outlook add-in project, you'll be prompted for login credentials. If you're asked to sign in repeatedly or if you receive an error that you are unauthorized, then Basic Auth may be disabled for accounts on your Microsoft 365 tenant. In this case, try using a Microsoft account instead. You may also need to set the property "Use multi-factor auth" to True in the Outlook Web Add-in project properties dialog.
 
-When Visual Studio builds the project it performs the following tasks:
+When Visual Studio builds the project it performs the following tasks.
 
 1. Creates a copy of the XML manifest file and adds it to  `_ProjectName_\bin\Debug\OfficeAppManifests` directory. The Office application that hosts your add-in consumes this copy when you start Visual Studio and debug the add-in.
 

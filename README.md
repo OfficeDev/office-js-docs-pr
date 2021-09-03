@@ -6,14 +6,14 @@ Welcome to the Office Add-ins documentation repo. In this repository, you can fi
 
 ## Give us your feedback
 
-The goal of the repo is to provide developer education on the platform's behavior. As such, issues should pertain to that educational content. Please [submit an issue](https://github.com/OfficeDev/office-js-docs-pr/issues) for the following scenarios:
+The goal of the repo is to provide developer education on the platform's behavior. As such, issues should pertain to that educational content. Please [submit an issue](https://github.com/OfficeDev/office-js-docs-pr/issues) for the following scenarios.
 
 - Information needed to succeed in developing Office Add-ins is missing or incomplete.
 - Information is inaccurate or obsolete.
 - You find typos, grammatical mistakes, or other problems with the articles.
 - Articles are organized in a confusing or unintuitive manner.
 
-If you are seeing product behavior that differs from the documentation, please provide as much of the following information as is possible and relevant:
+If you are seeing product behavior that differs from the documentation, please provide as much of the following information as is possible and relevant.
 
 - The version and build number of the client you are using.
 - Steps to reproduce the issue.
@@ -21,7 +21,7 @@ If you are seeing product behavior that differs from the documentation, please p
 
 We also encourage you to fork, make the fix, and do a pull request of your proposed changes. For details, see [Contribute to this documentation](Contributing.md).
 
-If your issue is not related to the Office Add-ins documentation, please post it to one of the following channels instead:
+If your issue is not related to the Office Add-ins documentation, please post it to one of the following channels instead.
 
 - To ask a question about using the Office.js API, post your question to Stack Overflow and tag it with the "office-js" tag (http://stackoverflow.com/questions/tagged/office-js).
 - To report an issue with the Office.js API or platform, create the issue in the OfficeDev/office-js repository (https://github.com/OfficeDev/office-js), which members of the product team monitor for customer-reported issues.

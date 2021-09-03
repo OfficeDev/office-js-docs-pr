@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: 'Learn how to create a Node.js-based add-in that uses Office Single Sign-on'
-ms.date: 06/23/2021
+ms.date: 09/03/2021
 localization_priority: Normal
 ---
 
@@ -35,10 +35,11 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 1. Clone or download the repo at [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO).
 
     > [!NOTE]
-    > There are three versions of the sample:  
+    > There are three versions of the sample:
+    >
     > * The **Begin** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
     > * The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Begin" with "Completed" and skip the sections **Code the client side** and **Code the server** side.
-    > * The **SSOAutoSetup** version is a completed sample that automates most of the steps to register the add-in with Azure AD and configure it. Use this version if you want to see a working add-in with SSO quickly. Just follow the steps in the Readme of the folder. We recommend that at some point you go through the manual registration and setup steps in this article to better understand the relationship between Azure AD and an add-in. 
+    > * The **SSOAutoSetup** version is a completed sample that automates most of the steps to register the add-in with Azure AD and configure it. Use this version if you want to see a working add-in with SSO quickly. Just follow the steps in the Readme of the folder. We recommend that at some point you go through the manual registration and setup steps in this article to better understand the relationship between Azure AD and an add-in.
 
 1. Open a command prompt in the **Begin** folder.
 
@@ -56,7 +57,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
     * Set **Name** to `Office-Add-in-NodeJS-SSO`.
     * Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**.
-    * Set the application type to **Web** and then set **Redirect URI** to ` https://localhost:44355/dialog.html`.
+    * Set the application type to **Web** and then set **Redirect URI** to `https://localhost:44355/dialog.html`.
     * Choose **Register**.
 
 1. On the **Office-Add-in-NodeJS-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
@@ -100,7 +101,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     - `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
-    For each ID, take these steps:
+    For each ID, take these steps.
 
     a. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/$App ID GUID$/access_as_user`.
 
@@ -124,7 +125,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Open the `\Begin` folder in the cloned project in your code editor.
 
-1. Open the `.ENV` file and use the values that you copied earlier. Set the **CLIENT_ID** to your **Application (client) ID**, and set the **CLIENT_SECRET** to your client secret. The values should **not** be in quotation marks. When you are done, the file should be similar to the following: 
+1. Open the `.ENV` file and use the values that you copied earlier. Set the **CLIENT_ID** to your **Application (client) ID**, and set the **CLIENT_SECRET** to your client secret. The values should **not** be in quotation marks. When you are done, the file should be similar to the following:
 
     ```javascript
     CLIENT_ID=8791c036-c035-45eb-8b0b-265f43cc4824
@@ -134,7 +135,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Open the `\public\javascripts\fallbackAuthDialog.js` file. In the `msalConfig` declaration, replace the placeholder $application_GUID here$ with the Application ID that you copied when you registered your add-in. The value should be in quotation marks.
 
-1. Open the add-in manifest file "manifest\manifest_local.xml" and then scroll to the bottom of the file. Just above the `</VersionOverrides>` end tag, you'll find the following markup:
+1. Open the add-in manifest file "manifest\manifest_local.xml" and then scroll to the bottom of the file. Just above the `</VersionOverrides>` end tag, you'll find the following markup.
 
     ```xml
     <WebApplicationInfo>
@@ -149,8 +150,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace the placeholder "$application_GUID here$" *in both places* in the markup with the Application ID that you copied when you registered your add-in. The "$" symbols are not part of the ID, so do not include them. This is the same ID you used in for the CLIENT_ID and Audience in the .ENV file.
 
-	> [!NOTE]
-    > The **Resource** value is the **Application ID URI** you set when you registered the add-in. The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
+   > [!NOTE]
+   > The **Resource** value is the **Application ID URI** you set when you registered the add-in. The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
 
 ## Code the client-side
 
@@ -158,10 +159,10 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In your code editor, open the file `public\javascripts\ssoAuthES6.js`. It already has code that ensures that Promises are supported, even in Internet Explorer 11, and an `Office.onReady` call to assign a handler to the add-in's only button.
 
-	> [!NOTE]
-    > As the name suggests, the ssoAuthES6.js uses JavaScript ES6 syntax because using `async` and `await` best shows the essential simplicity of the SSO API. When the localhost server is started, this file is transpiled to ES5 syntax so that the sample will run in Internet Explorer 11. 
+   > [!NOTE]
+   > As the name suggests, the ssoAuthES6.js uses JavaScript ES6 syntax because using `async` and `await` best shows the essential simplicity of the SSO API. When the localhost server is started, this file is transpiled to ES5 syntax so that the sample will run in Internet Explorer 11.
 
-1. Add the following code below the Office.onReady method:
+1. Add the following code below the Office.onReady method.
 
     ```javascript
     async function getGraphData() {
@@ -188,7 +189,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     }
     ```
 
-1. Replace `TODO 1` with the following code. About this code, note:
+1. Replace `TODO 1` with the following code. About this code, note the following:
 
     - `OfficeRuntime.auth.getAccessToken` instructs Office to get a bootstrap token from Azure AD. A bootstrap token is similar to an ID token, but it has a `scp` (scope) property with the value `access-as-user`. This kind of token can be exchanged by a web application for an access token to Microsoft Graph.
     - Setting the `allowSignInPrompt` option to true means that if no user is currently signed into Office, then Office will open a popup sign-in prompt.
@@ -230,7 +231,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     }
     ```
 
-1. Replace `TODO 5` with the following
+1. Replace `TODO 5` with the following:
 
     - Errors from the call of `getAccessToken` will have a `code` property with an error number, typically in the 13xxx range. You'll create the `handleClientSideErrors` method in a later step.
     - The `showMessage` method displays text on the task pane.
@@ -326,7 +327,8 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     }
     ```
 
-1. On rare occasions the bootstrap token that Office has cached is unexpired when Office validates it, but expires by the time it reaches Azure AD for exchange. Azure AD will respond with error **AADSTS500133**. In this case, the add-in should simply recursively call `getGraphData`. Since the cached bootstrap token is now expired, Office will get a new one from Azure AD. So replace `TODO 8` with the following. 
+1. On rare occasions the bootstrap token that Office has cached is unexpired when Office validates it, but expires by the time it reaches Azure AD for exchange. Azure AD will respond with error **AADSTS500133**. In this case, the add-in should simply recursively call `getGraphData`. Since the cached bootstrap token is now expired, Office will get a new one from Azure AD. So replace `TODO 8` with the following:
+
 
     ```javascript
     if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
@@ -344,7 +346,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 1. Change the `if` structure in the `handleAADErrors` method so that it:
 
     - Increments the counter just before it calls `getGraphData`.
-    - Tests to ensure that `getGraphData` has not already been called a second time. 
+    - Tests to ensure that `getGraphData` has not already been called a second time.
 
     So the final version of the `if` structure should look like the following:
 
@@ -358,7 +360,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     }
     ```
 
-1. Replace `TODO 9` with the following. 
+1. Replace `TODO 9` with the following:
 
     ```javascript
     else {
@@ -394,7 +396,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     }
     ```
 
-1. Replace `TODO 10` with the following. About this code, note: 
+1. Replace `TODO 10` with the following. About this code, note:
 
     - This object is the parameter to the `$.ajax` method.
     - The `/getuserdata` is an Express route on the add-in's server that you create in a later step. It will call a Microsoft Graph endpoint and include the access token in its call. 
@@ -410,7 +412,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Replace `TODO11` with the following. About this code, note:
 
-    - The `writeFileNamesToOfficeDocument` will insert the data from Graph into the Office document. It is defined in the `public\javascripts\document.js` file. 
+    - The `writeFileNamesToOfficeDocument` will insert the data from Graph into the Office document. It is defined in the `public\javascripts\document.js` file.
     - If `writeFileNamesToOfficeDocument` returns an error, it will begin with "Unable to add filenames to document."
 
     ```javascript
@@ -456,11 +458,11 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     } 
     ```
 
-1. Replace `TODO 13` with the following code. About this code, note: 
+1. Replace `TODO 13` with the following code. About this code, note the following:
 
-    - This is the beginning of a long `else` block, but the closing `}` is not at the end yet because you will be adding more code to it. 
+    - This is the beginning of a long `else` block, but the closing `}` is not at the end yet because you will be adding more code to it.
     - The `authorization` string is "Bearer " followed by the bootstrap token, so the first line of the `else` block is assigning the token to the `jwt`. ("JWT" stands for "JSON Web Token".)
-    - The two `process.env.*` values are the constants that you assigned when you configured the add-in. 
+    - The two `process.env.*` values are the constants that you assigned when you configured the add-in.
     - The `requested_token_use` form parameter is set to 'on_behalf_of'. This tells Azure AD that the add-in is requesting an access token to Microsoft Graph using the On-Behalf-Of Flow. Azure will respond by validating that the bootstrap token, which is assigned to `assertion` form parameter, has a `scp` property that is set to `access-as-user`.
     - The `scope` form parameter is set to 'Files.Read.All' which is the only Microsoft Graph scope that the add-in needs.
 
@@ -477,7 +479,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
         };
     ```
 
-1. Replace `TODO 14` with the following code, which completes the `else` block. About this code, note:
+1. Replace `TODO 14` with the following code, which completes the `else` block. About this code, note the following:
 
     - The const `tenant` is set to 'common' because you configured the add-in as multitenant when you registered it with Azure AD; specifically when you set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**. If you had instead chosen to support only accounts in the same Microsoft 365 tenancy where the add-in is registered, then in this code `tenant` would be set to the GUID of the tenant. 
     - If the POST request does not error, then the response from Azure AD is converted to JSON and sent to the client. This JSON object has an `access_token` property to which Azure AD has assigned the access token to Microsoft Graph.
@@ -561,9 +563,9 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
 1. Ensure that you have some files in your OneDrive so that you can verify the results.
 
-1. Open a command prompt in the root of the `\Begin` folder. 
+1. Open a command prompt in the root of the `\Begin` folder.
 
-1. Run the command `npm start`. 
+1. Run the command `npm start`.
 
 1. You need to sideload the add-in into an Office application (Excel, Word, or PowerPoint) to test it. The instructions depend on your platform. There are links to instructions at [Sideload an Office Add-in for Testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 

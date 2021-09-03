@@ -1,7 +1,7 @@
 ---
 title: Set and get the selected range using the Excel JavaScript API
 description: 'Learn how to use the Excel JavaScript API to set and get the selected range using the Excel JavaScript API.'
-ms.date: 06/22/2021
+ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
 ---
@@ -47,10 +47,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## Select the edge of a used range (online-only)
-
-> [!NOTE]
-> The `Range.getRangeEdge` and `Range.getExtendedRange` methods are currently only available in ExcelApiOnline 1.1. To learn more, see [Excel JavaScript API online-only requirement set](../reference/requirement-sets/excel-api-online-requirement-set.md).
+## Select the edge of a used range
 
 The [Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_) and [Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) methods let your add-in replicate the behavior of the keyboard selection shortcuts, selecting the edge of the used range based on the currently selected range. To learn more about used ranges, see [Get used range](excel-add-ins-ranges-get.md#get-used-range).
 

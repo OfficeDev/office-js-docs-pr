@@ -1,12 +1,11 @@
 ---
 title: Enable single sign-on for Office Add-ins
 description: 'Learn how to enable single sign-on for Office Add-ins using common Microsoft personal, work, or education accounts.'
-ms.date: 06/24/2021
+ms.date: 09/03/2021
 localization_priority: Priority
 ---
 
 # Enable single sign-on for Office Add-ins
-
 
 Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or work account. You can take advantage of this and use single sign-on (SSO) to authorize the user to your add-in without requiring the user to sign in a second time.
 
@@ -18,15 +17,13 @@ If you are working with an **Outlook** add-in, be sure to enable Modern Authenti
 
 You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. You can use a system of user tables and authentication, or you can leverage one of the social login providers. For more information about how to do this with an Office Add-in, see [Authorize external services in your Office Add-in](auth-external-add-ins.md). For *Outlook*, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md). For samples that use Azure Active Directory as the fallback system, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
-
-
 ## How SSO works at runtime
 
 The following diagram shows how the SSO process works.
 
 ![A diagram that shows the SSO process.](../images/sso-overview-diagram.png)
 
-1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). This tells the Office client application to obtain an access token to the add-in. See [Example access token](#example-access-token).
+1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). This tells the Office client application to obtain an access token to the add-in. See [Example access token](#example-access-token).
 2. If the user is not signed in, the Office client application opens a pop-up window for the user to sign in.
 3. If this is the first time the current user has used your add-in, he or she is prompted to consent.
 4. The Office client application requests the **add-in token** from the Azure AD v2.0 endpoint for the current user.
@@ -39,36 +36,36 @@ The following diagram shows how the SSO process works.
 
 This section describes the tasks involved in creating an Office Add-in that uses SSO. These tasks are described here in a language- and framework-agnostic way. For detailed walkthroughs, see:
 
-* [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md)
-* [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md)
+- [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md)
+- [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md)
 
 > [!NOTE]
 > You can use the Yeoman generator to create an SSO-enabled, Node.js Office Add-in. The Yeoman generator simplifies the process of creating an SSO-enabled add-in, by automating the steps required to configure SSO within Azure and generating the code that's necessary for an add-in to use SSO. For more information, see the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).
 
 ### Create the service application
 
-Register the add-in at the registration portal for the Azure v2.0 endpoint. This is a 5–10 minute process that includes the following tasks:
+Register the add-in at the registration portal for the Azure v2.0 endpoint. This is a 5–10 minute process that includes the following tasks.
 
-* Get a client ID and secret for the add-in.
-* Specify the permissions that your add-in needs to AAD v. 2.0 endpoint (and optionally to Microsoft Graph). The "profile" and "openid" permissions are always needed.
-* Grant the Office client application trust to the add-in.
-* Preauthorize the Office client application to the add-in with the default permission *access_as_user*.
+- Get a client ID and secret for the add-in.
+- Specify the permissions that your add-in needs to AAD v. 2.0 endpoint (and optionally to Microsoft Graph). The "profile" and "openid" permissions are always needed.
+- Grant the Office client application trust to the add-in.
+- Preauthorize the Office client application to the add-in with the default permission *access_as_user*.
 
 For more details about this process, see [Register an Office Add-in that uses SSO with the Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
 
 ### Configure the add-in
 
-Add new markup to the add-in manifest:
+Add new markup to the add-in manifest.
 
-* **WebApplicationInfo** - The parent of the following elements.
-* **Id** - The client ID of the add-in This is an application ID that you obtain as part of registering the add-in. See [Register an Office Add-in that uses SSO with the Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
-* **Resource** - The URL of the add-in. This is the same URI (including the `api:` protocol) that you used when registering the add-in in AAD. The domain part of this URI must match the domain, including any subdomains, used in the URLs in the `<Resources>` section of the add-in's manifest and the URI must end with the client ID in the `<Id>`.
-* **Scopes** - The parent of one or more **Scope** elements.
-* **Scope** - Specifies a permission that the add-in needs to AAD. The `profile` and `openID` permissions are always needed and may be the only permissions needed, if your add-in does not access Microsoft Graph. If it does, you also need **Scope** elements for the required Microsoft Graph permissions; for example, `User.Read`, `Mail.Read`. Libraries that you use in your code to access Microsoft Graph may need additional permissions. For example, Microsoft Authentication Library (MSAL) for .NET requires `offline_access` permission. For more information, see [Authorize to Microsoft Graph from an Office Add-in](authorize-to-microsoft-graph.md).
+- **WebApplicationInfo** - The parent of the following elements.
+- **Id** - The client ID of the add-in This is an application ID that you obtain as part of registering the add-in. See [Register an Office Add-in that uses SSO with the Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
+- **Resource** - The URL of the add-in. This is the same URI (including the `api:` protocol) that you used when registering the add-in in AAD. The domain part of this URI must match the domain, including any subdomains, used in the URLs in the `<Resources>` section of the add-in's manifest and the URI must end with the client ID in the `<Id>`.
+- **Scopes** - The parent of one or more **Scope** elements.
+- **Scope** - Specifies a permission that the add-in needs to AAD. The `profile` and `openID` permissions are always needed and may be the only permissions needed, if your add-in does not access Microsoft Graph. If it does, you also need **Scope** elements for the required Microsoft Graph permissions; for example, `User.Read`, `Mail.Read`. Libraries that you use in your code to access Microsoft Graph may need additional permissions. For example, Microsoft Authentication Library (MSAL) for .NET requires `offline_access` permission. For more information, see [Authorize to Microsoft Graph from an Office Add-in](authorize-to-microsoft-graph.md).
 
 For Office applications other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 
-The following is an example of the markup:
+The following is an example of the markup.
 
 ```xml
 <WebApplicationInfo>
@@ -82,6 +79,7 @@ The following is an example of the markup:
     </Scopes>
 </WebApplicationInfo>
 ```
+
 > [!NOTE]
 > Not following the format requirements in the manifest for SSO will cause your add-in to be rejected from AppSource until it meets the required format.
 
@@ -89,15 +87,14 @@ The following is an example of the markup:
 
 Add JavaScript to the add-in to:
 
-* Call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-).
+- Call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_).
 
-* Parse the access token or pass it to the add-in’s server-side code.
+- Parse the access token or pass it to the add-in’s server-side code.
 
 Here's a simple example of a call to `getAccessToken`.
 
 > [!NOTE]
 > This example handles only one kind of error explicitly. For examples of more elaborate error handling, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
-
 
 ```js
 async function getGraphData() {
@@ -149,13 +146,13 @@ If the add-in has some functionality that doesn't require a logged in user, then
 
 In most scenarios, there would be little point to obtaining the access token, if your add-in does not pass it on to a server-side and use it there. Some server-side tasks your add-in could do:
 
-* Create one or more Web API methods that use information about the user that is extracted from the token; for example, a method that looks up the user's preferences in your hosted data base. (See **Using the SSO token as an identity** below.) Depending on your language and framework, libraries might be available that will simplify the code you have to write.
-* Get Microsoft Graph data. Your server-side code should do the following:
+- Create one or more Web API methods that use information about the user that is extracted from the token; for example, a method that looks up the user's preferences in your hosted data base. (See **Using the SSO token as an identity** below.) Depending on your language and framework, libraries might be available that will simplify the code you have to write.
+- Get Microsoft Graph data. Your server-side code should do the following:
 
-    * Initiate the “on behalf of” flow with a call to the Azure AD v2.0 endpoint that includes the access token, some metadata about the user, and the credentials of the add-in (its ID and secret). In this context, the access token is called the bootstrap token.
-    * Get data from Microsoft Graph by using the new token.
-    * Optionally, before initiating the flow, validate the access token (see **Validate the access token** below).
-    * Optionally, after the on-behalf-of flow completes, cache the new access token that is returned from the flow so that it an be reused in other calls to Microsoft Graph until it expires.
+  - Initiate the “on behalf of” flow with a call to the Azure AD v2.0 endpoint that includes the access token, some metadata about the user, and the credentials of the add-in (its ID and secret). In this context, the access token is called the bootstrap token.
+  - Get data from Microsoft Graph by using the new token.
+  - Optionally, before initiating the flow, validate the access token (see **Validate the access token** below).
+  - Optionally, after the on-behalf-of flow completes, cache the new access token that is returned from the flow so that it an be reused in other calls to Microsoft Graph until it expires.
 
  For more details about getting authorized access to the user's Microsoft Graph data, see [Authorize to Microsoft Graph in your Office Add-in](authorize-to-microsoft-graph.md).
 
@@ -167,7 +164,7 @@ Once the Web API receives the access token, it can validate it before using it. 
 - Checking that the token was issued by the intended authority
 - Checking that the token is targeted to the Web API
 
-Keep in mind the following guidelines when validating the token:
+Keep in mind the following guidelines when validating the token.
 
 - Valid SSO tokens will be issued by the Azure authority, `https://login.microsoftonline.com`. The `iss` claim in the token should start with this value.
 - The token's `aud` parameter will be set to the application ID of the add-in's registration.

@@ -1,7 +1,7 @@
 ---
 title: Dialog API requirement sets
 description: 'Learn more about the Dialog API requirement sets.'
-ms.date: 09/14/2020
+ms.date: 07/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -14,7 +14,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 |  Requirement set  | Office 2013 on Windows\*<br>(one-time purchase) | Office 2016 or later on Windows\*<br>(one-time purchase)   | Office on Windows<br>(subscription) |  Office on iPad<br>(subscription)  |  Office on Mac<br>(subscription)  | Office on the web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| DialogApi 1.2  | N/A | N/A | See support<br>section below | 2.67 or later | 16.37 or later | June 2020 | N/A |
+| DialogApi 1.2  | N/A | N/A | See support<br>section below | 2.37 or later | 16.37 or later | June 2020 | N/A |
 | DialogApi 1.1  | Build 15.0.4855.1000 or later | Build 16.0.4390.1000 or later | Version 1602 (Build 6741.0000) or later | 1.22 or later | 15.20 or later | January 2017 | Version 1608 (Build 7601.6800) or later|
 
 >\* Users of the one-time purchase Office may not have accepted all patches and updates. If so, the DLL that Office uses to report its version in the UI may be greater than the versions listed here even if the updated DLLs needed to support DialogApi have not be installed on the user's computer. To ensure that the needed patch is installed, the user must go to the Office update list ([Office 2013 list](/officeupdates/msp-files-office-2013) or [Office 2016 list](/officeupdates/msp-files-office-2016)), search for **osfclient-x-none**, and install the listed patch.

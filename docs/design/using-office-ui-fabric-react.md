@@ -1,7 +1,7 @@
 ---
 title: Fluent UI React in Office Add-ins
 description: 'Learn how to use Fluent UI React in Office Add-ins.'
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -128,7 +128,7 @@ This code does the following:
 
 ## Add the React component to your add-in
 
-Add the `ButtonPrimaryExample` component to your add-in by opening **src\components\App.tsx** and completing the following steps:
+Add the `ButtonPrimaryExample` component to your add-in by opening **src\components\App.tsx** and completing the following steps.
 
 1. Add the following import statement to reference `ButtonPrimaryExample` from **Button.tsx**.
 

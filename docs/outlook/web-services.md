@@ -41,12 +41,12 @@ When the EWS SOAP request is complete, Outlook calls the callback method with on
 
 ## Tips for parsing EWS responses
 
-When parsing a SOAP response from an EWS operation, note the following browser-dependent issues:
+When parsing a SOAP response from an EWS operation, note the following browser-dependent issues.
 
 
 - Specify the prefix for a tag name when using the DOM method `getElementsByTagName`, to include support for Internet Explorer.
 
-  `getElementsByTagName` behaves differently depending on browser type. For example, an EWS response can contain the following XML (formatted and abbreviated for display purposes):
+  `getElementsByTagName` behaves differently depending on browser type. For example, an EWS response can contain the following XML (formatted and abbreviated for display purposes).
 
    ```XML
         <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
@@ -57,7 +57,7 @@ When parsing a SOAP response from an EWS operation, note the following browser-d
         }</t:Value></t:ExtendedProperty>
    ```
 
-   Code, as in the following, would work on a browser like Chrome to get the XML enclosed by the `ExtendedProperty` tags:
+   Code, as in the following, would work on a browser like Chrome to get the XML enclosed by the `ExtendedProperty` tags.
 
    ```js
         var mailbox = Office.context.mailbox;
@@ -67,7 +67,7 @@ When parsing a SOAP response from an EWS operation, note the following browser-d
             });
    ```
 
-   On Internet Explorer, you must include the `t:` prefix of the tag name, as shown below:
+   On Internet Explorer, you must include the `t:` prefix of the tag name, as follows.
 
    ```js
         var mailbox = Office.context.mailbox;
@@ -77,7 +77,7 @@ When parsing a SOAP response from an EWS operation, note the following browser-d
             });
    ```
 
-- Use the DOM property `textContent` to get the contents of a tag in an EWS response, as shown below:
+- Use the DOM property `textContent` to get the contents of a tag in an EWS response, as follows.
 
    ```js
       content = $.parseJSON(value.textContent);
@@ -88,13 +88,13 @@ When parsing a SOAP response from an EWS operation, note the following browser-d
 
 ## Example
 
-The following example calls `makeEwsRequestAsync` to use the [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation to get the subject of an item. This example includes the following three functions:
+The following example calls `makeEwsRequestAsync` to use the [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation to get the subject of an item. This example includes the following three functions.
 
--  `getSubjectRequest` &ndash; Takes an item ID as input, and returns the XML for the SOAP request to call `GetItem` for the specified item.
+- `getSubjectRequest` &ndash; Takes an item ID as input, and returns the XML for the SOAP request to call `GetItem` for the specified item.
 
--  `sendRequest` &ndash; Calls  `getSubjectRequest` to get the SOAP request for the selected item, then passes the SOAP request and the callback method, `callback`, to `makeEwsRequestAsync` to get the subject of the specified item.
+- `sendRequest` &ndash; Calls  `getSubjectRequest` to get the SOAP request for the selected item, then passes the SOAP request and the callback method, `callback`, to `makeEwsRequestAsync` to get the subject of the specified item.
 
--  `callback` &ndash; Processes the SOAP response which includes any subject and other information about the specified item.
+- `callback` &ndash; Processes the SOAP response which includes any subject and other information about the specified item.
 
 
 ```js
@@ -145,17 +145,17 @@ function callback(asyncResult)  {
 
 Outlook add-ins can access a subset of operations that are available in EWS via the `makeEwsRequestAsync` method. If you are unfamiliar with EWS operations and how to use the `makeEwsRequestAsync` method to access an operation, start with a SOAP request example to customize your _data_ argument.
 
-The following describes how you can use the `makeEwsRequestAsync` method:
+The following describes how you can use the `makeEwsRequestAsync` method.
 
 1. In the XML, substitute any item IDs and relevant EWS operation attributes with appropriate values.
 
-2. Include the SOAP request as an argument for the  _data_ parameter of `makeEwsRequestAsync`.
+1. Include the SOAP request as an argument for the  _data_ parameter of `makeEwsRequestAsync`.
 
-3. Specify a callback method and call `makeEwsRequestAsync`.
+1. Specify a callback method and call `makeEwsRequestAsync`.
 
-4. In the callback method, verify the results of the operation in the SOAP response.
+1. In the callback method, verify the results of the operation in the SOAP response.
 
-5. Use the results of the EWS operation according to your needs.
+1. Use the results of the EWS operation according to your needs.
 
 The following table lists the EWS operations that add-ins support. To see examples of SOAP requests and responses, choose the link for each operation. For more information about EWS operations, see [EWS operations in Exchange](/exchange/client-developer/web-service-reference/ews-operations-in-exchange).
 
@@ -203,7 +203,7 @@ Your add-in must specify the `ReadWriteMailbox` permission in its add-in manifes
 - [EWS reference for Exchange](/exchange/client-developer/web-service-reference/ews-reference-for-exchange)
 - [Mail apps for Outlook and EWS in Exchange](/exchange/client-developer/exchange-web-services/mail-apps-for-outlook-and-ews-in-exchange)
 
-See the following for creating backend services for add-ins using ASP.NET Web API:
+See the following for creating backend services for add-ins using ASP.NET Web API.
 
 - [Create a web service for an Office Add-in using the ASP.NET Web API](/archive/blogs/officeapps/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api)
 - [The basics of building an HTTP service using ASP.NET Web API](https://dotnet.microsoft.com/apps/aspnet/apis)

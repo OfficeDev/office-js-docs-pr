@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. 
-ms.date: 06/15/2021
+ms.date: 07/16/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
 ---
@@ -22,7 +22,7 @@ The Outlook items that support add-ins include email messages, meeting requests,
 
 ## Extension points
 
-Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done:
+Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done.
 
 - Add-ins can declare buttons that appear in command surfaces across messages and appointments. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
@@ -54,14 +54,18 @@ Outlook add-ins activate when the user is composing or reading a message or appo
 
 - A .msg or .eml file opened from the file system.
 
-- In a [group mailbox](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), in a shared mailbox\*, in another user's mailbox\*, in an archive mailbox, or in a public folder.
+- In a [group mailbox](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), in a shared mailbox\*, in another user's mailbox\*, in an [archive mailbox](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox), or in a public folder.
 
   > [!IMPORTANT]
   > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in [requirement set 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). Shared mailbox support is now in preview. To learn more, refer to [Enable shared folders and shared mailbox scenarios](delegate-access.md).
 
 - Using a custom form.
 
+- Created through [Simple MAPI](https://support.microsoft.com/topic/a3d3f856-eaf6-b6d8-3617-186c0a1123c5). Simple MAPI is used when an Office user creates or sends an email from an Office application on Windows while Outlook is closed. For example, a user can create an Outlook email while working in Word which triggers an Outlook compose window without launching the full Outlook application. If, however, Outlook is already running when the user creates the email from Word, that isn't a Simple MAPI scenario so Outlook add-ins work in the compose form as long as other activation requirements are met.
+
 In general, Outlook can activate add-ins in read form for items in the Sent Items folder, with the exception of add-ins that activate based on string matches of well-known entities. For more information about the reasons behind this, see "Support for well-known entities" in [Match strings in an Outlook item as well-known entities](match-strings-in-an-item-as-well-known-entities.md).
+
+Currently, there are additional considerations when designing and implementing add-ins for mobile clients. To learn more, refer to [Add mobile support to an Outlook add-in](add-mobile-support.md#compose-mode-and-appointments).
 
 ## Supported clients
 

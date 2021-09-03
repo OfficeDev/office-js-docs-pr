@@ -1,7 +1,7 @@
 ---
-ms.date: 12/22/2020
-description: 'Define JSON metadata for custom functions in Excel and associate your function ID and name properties.'
 title: Manually create JSON metadata for custom functions in Excel
+description: 'Define JSON metadata for custom functions in Excel and associate your function ID and name properties.'
+ms.date: 08/06/2021
 localization_priority: Normal
 ---
 
@@ -51,6 +51,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 
 ```json
 {
+  "allowErrorForDataTypeAny": true,
   "functions": [
     {
       "id": "ADD",
@@ -132,6 +133,13 @@ The following example shows the contents of a JSON metadata file for an add-in t
 > A complete sample JSON file is available in the [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) GitHub repository's commit history. As the project has been adjusted to automatically generate JSON, a full sample of handwritten JSON is only available in previous versions of the project.
 
 ## Metadata reference
+
+### allowErrorForDataTypeAny
+
+The `allowErrorForDataTypeAny` property is a boolean data type. Setting the value to `true` allows a custom function to process errors as input values. All parameters with the type `any` or `any[][]` can accept errors as input values when `allowErrorForDataTypeAny` is set to `true`. The default `allowErrorForDataTypeAny` value is `false`.
+
+> [!NOTE]
+> Unlike the other JSON metadata properties, `allowErrorForDataTypeAny` is a top-level property and contains no sub-properties. See the preceding [JSON metadata code sample](#json-metadata-example) for an example of how to format this property.
 
 ### functions
 
@@ -243,7 +251,7 @@ The following sample shows the JSON metadata that corresponds to the functions d
 
 ```json
 {
-  "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
   "functions": [
     {
       "id": "ADD",

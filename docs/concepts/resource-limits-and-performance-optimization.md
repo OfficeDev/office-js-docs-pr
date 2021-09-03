@@ -1,7 +1,7 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
 description: 'Learn about the resource limits of the Office Add-in platform, including CPU and memory.'
-ms.date: 07/29/2020
+ms.date: 08/17/2021
 localization_priority: Normal
 ---
 
@@ -13,7 +13,7 @@ You can also optimize the performance of your add-ins on desktop and mobile devi
 
 ## Resource usage limits for add-ins
 
-Run-time resource usage limits apply to all types of Office Add-ins. These limits help ensure performance for your users and mitigate denial-of-service attacks. Be sure to test your Office Add-in on your target Office application by using a range of possible data, and measure its performance against the following run-time usage limits:
+Run-time resource usage limits apply to all types of Office Add-ins. These limits help ensure performance for your users and mitigate denial-of-service attacks. Be sure to test your Office Add-in on your target Office application by using a range of possible data, and measure its performance against the following run-time usage limits.
 
 - **CPU core usage** - A single CPU core usage threshold of 90%, observed three times in default 5-second intervals.
 
@@ -38,7 +38,7 @@ If any Outlook add-in exceeds the preceding thresholds for CPU core or memory us
 > [!NOTE]
 > Even though only the Outlook rich clients and not Outlook on the web or mobile devices monitor resource usage, if a rich client disables an Outlook add-in, that add-in is also disabled for use in Outlook on the web and mobile devices.
 
-In addition to the CPU core, memory, and reliability rules, Outlook add-ins should observe the following rules on activation:
+In addition to the CPU core, memory, and reliability rules, Outlook add-ins should observe the following rules on activation.
 
 - **Regular expressions response time** - A default threshold of 1,000 milliseconds for Outlook to evaluate all regular expressions in the manifest of an Outlook add-in. Exceeding the threshold causes Outlook to retry evaluation at a later time.
 
@@ -50,14 +50,14 @@ In addition to the CPU core, memory, and reliability rules, Outlook add-ins shou
 
 ### Excel add-ins
 
-If you're building an Excel add-in, be aware of the following size limitations when interacting with the workbook:
+If you're building an Excel add-in, be aware of the following size limitations when interacting with the workbook.
 
 - Excel on the web has a payload size limit for requests and responses of 5MB. `RichAPI.Error` will be thrown if that limit is exceeded.
 - A range is limited to five million cells for get operations.
 
 If you expect user input to exceed these limits, be sure to check the data before calling `context.sync()`. Split the operation into smaller pieces as needed. Be sure to call `context.sync()` for each sub-operation to avoid those operations getting batched together again.
 
-These limitations are typically exceeded by large ranges. Your add-in might be able to use [RangeAreas](/javascript/api/excel/excel.rangeareas) to strategically update cells within a larger range. See [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md) for more information.
+These limitations are typically exceeded by large ranges. Your add-in might be able to use [RangeAreas](/javascript/api/excel/excel.rangeareas) to strategically update cells within a larger range. For more information about working with `RangeAreas`, see [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md). For additional information about optimizing payload size in Excel, see [Payload size limit best practices](../excel/performance.md#payload-size-limit-best-practices).
 
 ### Task pane and content add-ins
 
@@ -66,9 +66,9 @@ If any content or task pane add-in exceeds the preceding thresholds on CPU core 
 - Restart the add-in.
 - Cancel further alerts about exceeding that threshold. Ideally, the user should then delete the add-in from the document; continuing the add-in would risk further performance and stability issues.  
 
-## Verifying resource usage issues in the Telemetry Log
+## Verify resource usage issues in the Telemetry Log
 
-Office provides a Telemetry Log that maintains a record of certain events (loading, opening, closing, and errors) of Office solutions running on the local computer, including resource usage issues in an Office Add-in. If you have the Telemetry Log set up, you can use Excel to open the Telemetry Log in the following default location on your local drive:
+Office provides a Telemetry Log that maintains a record of certain events (loading, opening, closing, and errors) of Office solutions running on the local computer, including resource usage issues in an Office Add-in. If you have the Telemetry Log set up, you can use Excel to open the Telemetry Log in the following default location on your local drive.
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 
@@ -96,7 +96,7 @@ For more information, see [Deploying Telemetry Dashboard](/previous-versions/off
 
 ## Design and implementation techniques
 
-While the resources limits on CPU and memory usage, crash tolerance, UI responsiveness apply to Office Add-ins running only on the rich clients, optimizing the usage of these resources and battery should be a priority if you want your add-in to perform satisfactorily on all supporting clients and devices. Optimization is particularly important if your add-in carries out long-running operations or handles large data sets. The following list suggests some techniques to break up CPU-intensive or data-intensive operations into smaller chunks so that your add-in can avoid excessive resource consumption and the Office application can remain responsive:
+While the resources limits on CPU and memory usage, crash tolerance, UI responsiveness apply to Office Add-ins running only on the rich clients, optimizing the usage of these resources and battery should be a priority if you want your add-in to perform satisfactorily on all supporting clients and devices. Optimization is particularly important if your add-in carries out long-running operations or handles large data sets. The following list suggests some techniques to break up CPU-intensive or data-intensive operations into smaller chunks so that your add-in can avoid excessive resource consumption and the Office application can remain responsive.
 
 - In a scenario where your add-in needs to read a large volume of data from an unbounded dataset, you can apply paging when reading the data from a table, or reduce the size of data in each shorter read operation, rather than attempting to complete the read in one single operation. You can do this through the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data. Another option is to use [async](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) to handle your Promises.
 
@@ -121,7 +121,7 @@ The performance tips in [Using the application-specific API model](../develop/ap
 The `untrack()` method releases the object from memory. This method is implemented on many application-specific API proxy objects. Calling `untrack()` after your add-in is done with the object should yield a noticeable performance benefit when using large numbers of proxy objects.
 
 > [!NOTE]
-> `Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). Any proxy object can be untracked by removing it from the tracked objects list in the context.
+> `Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove_object_). Any proxy object can be untracked by removing it from the tracked objects list in the context.
 
 The following Excel code sample fills a selected range with data, one cell at a time. After the value is added to the cell, the range representing that cell is untracked. Run this code with a selected range of 10,000 to 20,000 cells, first with the `cell.untrack()` line, and then without it. You should notice the code runs faster with the `cell.untrack()` line than without it. You may also notice a quicker response time afterwards, since the cleanup step takes less time.
 
