@@ -34,7 +34,7 @@ For information about Common API requirement sets, see [Office Common API requir
 
 ## IdentityAPI Preview
 
-For details about this API, see either the version that uses Promises at [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) or the version that uses callbacks at [getAccessTokenAsync](/javascript/api/office/office.auth#getAccessTokenAsync_options__callback_).
+For details about this API, see either the version that uses Promises at [getAccessToken](/javascript/api/office/office.auth#getAccessToken_options_) or the version that uses callbacks at [getAccessTokenAsync](/javascript/api/office/office.auth#getAccessTokenAsync_options__callback_).
 
 ## See also
 
