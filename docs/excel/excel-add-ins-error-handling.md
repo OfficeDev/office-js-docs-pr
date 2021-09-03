@@ -1,7 +1,7 @@
 ---
 title: Error handling with the Excel JavaScript API
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 08/27/2021
+ms.date: 09/02/2021
 localization_priority: Normal
 ---
 
@@ -57,6 +57,7 @@ The following table is a list of errors that the API may return.
 |`Conflict`|Request could not be processed because of a conflict.|
 |`ContentLengthRequired`|A `Content-length` HTTP header is missing.|
 |`FilteredRangeConflict`|The attempted operation causes a conflict with a filtered range.|
+|`FormulaLengthExceedsLimit`|The bytecode of the formula exceeds the maximum length limit. For Office on 32-bit machines, the bytecode length limit is 16384 characters. On 64-bit machines, the bytecode length limit is 32768 characters. <br><br>This error occurs in both Excel on the web and on desktop.|
 |`GeneralException`|There was an internal error while processing the request.|
 |`InactiveWorkbook`|The operation failed because multiple workbooks are open and the workbook being called by this API has lost focus.|
 |`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|
@@ -73,6 +74,7 @@ The following table is a list of errors that the API may return.
 |`MergedRangeConflict`|Cannot complete the operation. A table can't overlap with another table, a PivotTable report, query results, merged cells, or an XML Map.|
 |`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|
 |`NotImplemented`|The requested feature isn't implemented.|
+|`OperationCellsExceedLimit`|The attempted operation affects more than the maximum number of cells. The cell limit is 33554000. See the [______]() article for more information. <br><br>This error only occurs in Excel on the web.|
 |`PivotTableRangeConflict`|The attempted operation causes a conflict with a PivotTable range.|
 |`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|
 |`RefreshWorkbookLinksBlocked`|The operation failed because the user hasn't granted permission to refresh external workbook links.|
