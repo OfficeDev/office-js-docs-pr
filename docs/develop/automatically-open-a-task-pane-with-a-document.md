@@ -1,7 +1,7 @@
 ---
 title: Automatically open a task pane with a document
 description: 'Learn how to configure an Office Add-in to open automatically when a document opens.'
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Normal
 ---
 
@@ -20,7 +20,7 @@ With the autoopen feature, you can explicitly define or allow the user to define
 
 ## Support and availability
 
-The autoopen feature is currently <!-- in **developer preview** and it is only --> supported in the following products and platforms.
+The autoopen feature is currently supported in the following products and platforms.
 
 |**Products**|**Platforms**|
 |:-----------|:------------|
@@ -108,6 +108,7 @@ The `webextension` part also includes a reference to the store or catalog with a
 | **`storeType` value** | **`id` value**    |**`store` value** | **`version` value**|
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|The AppSource asset ID of the add-in (see Note)|The locale of AppSource; for example, "en-us".|The version in the AppSource catalog (see Note)|
+|WOPICatalog (third-party [WOPI](https://wopi.readthedocs.io/en/latest/overview.html) hosts)| The AppSource asset ID of the add-in (see Note) | "wopicatalog". Use this value for add-ins that are published in App Source and are installed in third-party WOPI hosts. For more information, see [Enable Office Web Add-Ins provided by Host](https://wopi.readthedocs.io/en/latest/scenarios/hostinstalladdins.html) | The version in the add-in manifest.|
 |FileSystem (a network share)|The GUID of the add-in in the add-in manifest.|The path of the network share; for example, "\\\\MyComputer\\MySharedFolder".|The version in the add-in manifest.|
 |EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog". EXCatalog row is the row to use with add-ins that use Centralized Deployment in the Microsoft 365 admin center.|The version in the add-in manifest.
 |Registry (System registry)|The GUID of the add-in in the add-in manifest.|"developer"|The version in the add-in manifest.|
