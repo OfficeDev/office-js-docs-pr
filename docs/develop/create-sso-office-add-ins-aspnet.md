@@ -211,7 +211,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     * The `/api/values` parameter is the URL of a server-side controller that will use the on-behalf-of flow to exchange the token for a new access token to call Microsoft Graph.
 
     ```javascript
-    let bootstrapToken = await OfficeRuntime.auth.getAccessToken(options);
+    let bootstrapToken = await Office.auth.getAccessToken(options);
 
     getData("/api/values", bootstrapToken);
     ```
