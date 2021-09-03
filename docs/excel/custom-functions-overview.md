@@ -12,7 +12,7 @@ Custom functions enable developers to add new functions to Excel by defining tho
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-The following animated image shows your workbook calling a function you've created with JavaScript or Typescript. In this example, the custom function `=MYFUNCTION.SPHEREVOLUME` calculates the volume of a sphere.
+The following animated image shows your workbook calling a function you've created with JavaScript or TypeScript. In this example, the custom function `=MYFUNCTION.SPHEREVOLUME` calculates the volume of a sphere.
 
 ![Animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet.](../images/SphereVolumeNew.gif)
 

@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: 'Learn how to create a Node.js-based add-in that uses Office Single Sign-on'
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Normal
 ---
 
@@ -32,7 +32,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Set up the starter project
 
-1. Clone or download the repo at [Office Add-in NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso).
+1. Clone or download the repo at [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO).
 
     > [!NOTE]
     > There are three versions of the sample:
@@ -492,7 +492,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
         try {
             const tokenResponse = await fetch(`${stsDomain}/${tenant}/${tokenURLSegment}`, {
                 method: 'POST',
-                body: form(formParams),
+                body: formurlencoded(formParams),
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/x-www-form-urlencoded'

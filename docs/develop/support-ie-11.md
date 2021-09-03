@@ -1,7 +1,7 @@
 ---
 title: Support Internet Explorer 11
 description: 'Learn how to support Internet Explorer 11 and ES5 Javascript in your add-in.'
-ms.date: 06/18/2021
+ms.date: 08/13/2021
 localization_priority: Normal
 ---
 
@@ -13,7 +13,7 @@ localization_priority: Normal
 > Microsoft is ending support for Internet Explorer, but this doesn't significantly affect Office Add-ins. Some combinations of platforms and Office versions, including all one-time-purchase versions through Office 2019, will continue to use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Moreover, support for these combinations, and hence for Internet Explorer, is still required for add-ins submitted to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center). Two things *are* changing:
 >
 > - AppSource no longer tests add-ins in Office on the web using Internet Explorer as the browser. But AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer.
-> - The [Script Lab tool](../overview/explore-with-script-lab.md) will stop working in Internet Explorer sometime in 2021.
+> - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Internet Explorer.
 
 Office Add-ins are web applications that are displayed inside IFrames when running on Office on the web. Office Add-ins are displayed using embedded browser controls when running in Office on Windows or Office on the Mac. The embedded browser controls are supplied by the operating system or by a browser installed on the user's computer.
 

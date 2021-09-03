@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot development errors with Office Add-ins
 description: 'Learn how to troubleshoot development errors in Office Add-ins.'
-ms.date: 08/09/2021
+ms.date: 09/03/2021
 localization_priority: Normal
 ---
 
@@ -28,7 +28,7 @@ The browser may be caching these files. To prevent this, turn off client-side ca
 - Pragma: "no-cache"
 - Expires: "-1"
 
-For an example of doing this in an Node.JS Express server, see [this app.js file](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js). For an example in an ASP.NET project, see [this cshtml file](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
+For an example of doing this in an Node.JS Express server, see [this app.js file](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/app.js). For an example in an ASP.NET project, see [this cshtml file](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
 
 If your add-in is hosted in Internet Information Server (IIS), you could also add the following to the web.config.
 
@@ -47,7 +47,7 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 
 ## Changes made to property values don't happen and there is no error message
 
-Check the reference documentation for the property to see if it is read only. Also, the [TypeScript definitions](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) for Office JS specify which object properties are read-only. If you attempt to set a read-only property, the write operation will fail silently, with no error thrown. The following example erroneously attempts to set the read-only property [Chart.id](/javascript/api/excel/excel.chart#id). See also [Some properties cannot be set directly](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly).
+Check the reference documentation for the property to see if it is read-only. Also, the [TypeScript definitions](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) for Office JS specify which object properties are read-only. If you attempt to set a read-only property, the write operation will fail silently, with no error thrown. The following example erroneously attempts to set the read-only property [Chart.id](/javascript/api/excel/excel.chart#id). See also [Some properties cannot be set directly](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly).
 
 ```js
 // This will do nothing, since `id` is a read-only property.

@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: 'Learn the basics of creating a dialog box in an Office Add-in.'
-ms.date: 07/22/2021
+ms.date: 09/03/2021
 localization_priority: Normal
 ---
 
@@ -213,7 +213,7 @@ function processMessage(arg) {
 Either the dialog or the parent JavaScript runtime (either in a task pane or a UI-less runtime that hosts a function file) may be navigated away from the add-in's domain after the dialog is opened. If either of these things has happened, then a call of `messageParent` will fail unless your code specifies the domain of the parent runtime. You do this by adding a [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) parameter to the call of `messageParent`. This object has a `targetOrigin` property that specifies the domain to which the message should be sent. If the parameter isn't used, Office assumes that the target is the same domain that the dialog is currently hosting.
 
 > [!NOTE]
-> Using `messageParent` to send a cross-domain message requires the [Dialog Origin 1.1 requirement set](../reference/requirement-sets/dialog-origin-requirement-sets.md).
+> Using `messageParent` to send a cross-domain message requires the [Dialog Origin 1.1 requirement set](../reference/requirement-sets/dialog-origin-requirement-sets.md). The `DialogMessageOptions` parameter is ignored on older versions of Office that do not support the requirement set, so the behavior of the method is unaffected if you pass it.
 
 The following is an example of using `messageParent` to send a cross-domain message.
 
@@ -337,7 +337,7 @@ Because you can make multiple `messageChild` calls from the host page, but you h
 Either the dialog or the parent JavaScript runtime (either in a task pane or a UI-less runtime that hosts a function file) may be navigated away from the add-in's domain after the dialog is opened. If either of these things has happened, then a call of `messageChild` will fail unless your code specifies the domain of the dialog runtime. You do this by adding a [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) parameter to the call of `messageChild`. This object has a `targetOrigin` property that specifies the domain to which the message should be sent. If the parameter isn't used, Office assumes that the target is the same domain that the parent runtime is currently hosting. 
 
 > [!NOTE]
-> Using `messageChild` to send a cross-domain message requires the [Dialog Origin 1.1 requirement set](../reference/requirement-sets/dialog-origin-requirement-sets.md).
+> Using `messageChild` to send a cross-domain message requires the [Dialog Origin 1.1 requirement set](../reference/requirement-sets/dialog-origin-requirement-sets.md). The `DialogMessageOptions` parameter is ignored on older versions of Office that do not support the requirement set, so the behavior of the method is unaffected if you pass it.
 
 The following is an example of using `messageChild` to send a cross-domain message.
 
@@ -437,11 +437,11 @@ All of the following samples use `displayDialogAsync`. Some have NodeJS-based se
 
 - [Office Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Office Add-in Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
-- [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
-- [Office Add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
+- [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Office Add-in ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
 - [Office Add-in SAAS Monetization Sample](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
 - [Outlook Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
-- [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlook Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
 - [Outlook Add-in Token Viewer](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
 - [Outlook Add-in Actionable Message](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
 - [Outlook Add-in Sharing to OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
