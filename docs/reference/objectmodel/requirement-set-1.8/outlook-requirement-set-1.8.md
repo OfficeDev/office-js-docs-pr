@@ -28,7 +28,7 @@ Requirement set 1.8 includes all of the features of [requirement set 1.7](../req
 - Added [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents a category's details (its name and associated color).
 - Added [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents the set of locations on an appointment.
 - Added [InternetHeaders](/javascript/api/outlook/office.internetheaders?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents the custom internet headers of a message item. Compose mode only.
-- Added [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents a location. Read only.
+- Added [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents a location. Read-only.
 - Added [LocationIdentifier](/javascript/api/outlook/office.locationidentifier?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents the id of a location.
 - Added [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents the categories master list on a mailbox.
 - Added [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true): Adds a new object that represents the properties of an appointment or message item in a shared folder.
