@@ -1,7 +1,7 @@
 ---
 title: Ribbon API requirement sets
 description: 'Specifies which Office platforms and builds support the dynamic ribbon APIs.'
-ms.date: 05/12/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -14,12 +14,12 @@ The Ribbon API set supports programmatic control of when custom Add-in Commands 
 
 Office Add-ins run across multiple versions of Office. The following table lists the Ribbon API requirement sets, the Office client applications that support that requirement set, and the build or version numbers for the Office application.
 
-|  Requirement set  | Office 2013 on Windows<br>(one-time purchase) | Office 2016 or later on Windows<br>(one-time purchase)   | Office on Windows\*<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac\*<br>(connected to a Microsoft 365 subscription)  | Office on the web\*  |  Office Online Server  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.1  | N/A | N/A | See support<br>section below | N/A | 16.38 | November, 2020 | N/A|
-| RibbonApi 1.2  | N/A | N/A | 2102 (Build 13801.20294) | N/A | coming soon | May, 2021 | N/A|
+|  Requirement set  | Office 2021 on Windows<br>(one-time purchase) | Office on Windows\*<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac\*<br>(connected to a Microsoft 365 subscription)  | Office on the web\*  |  Office Online Server  |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| RibbonApi 1.2  | 2102 (Build 13801.20294) | 2102 (Build 13801.20294) | N/A | Not supported | May, 2021 | N/A|
+| RibbonApi 1.1  | 2102 (Build 13801.20294) | See support<br>section below | N/A | 16.38 | November, 2020 | N/A|
 
-> **&#42;** The Ribbon API is supported only on Excel and it requires a Microsoft 365 subscription.
+> **&#42;** The Ribbon API is supported only in Excel.
 
 ## Support for version 1.1 on Office on Windows (subscription)
 

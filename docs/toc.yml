@@ -747,7 +747,7 @@ items:
       href: excel/custom-functions-overview.md
       displayName: Excel, Custom Functions
     - name: CustomFunctionsRuntime API requirement sets
-      href: excel/custom-functions-requirement-sets.md
+      href: reference/requirement-sets/custom-functions-requirement-sets.md
       displayName: Excel, Custom Functions
     - name: Tutorials
       items:

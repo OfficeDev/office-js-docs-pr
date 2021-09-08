@@ -453,6 +453,12 @@
       }
       ,
       {
+        "source_path": "docs/excel/custom-functions-requirement-sets.md", 
+        "redirect_url": "/office/dev/add-ins/reference/requirement-sets/custom-function-requirement-sets", 
+        "redirect_document_id": true 
+      }
+      ,
+      {
         "source_path": "docs/publish/publish/centralized-deployment.md",
         "redirect_url": "/office/dev/add-ins/publish/publish"
       }
