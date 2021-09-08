@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: 'The monthly Microsoft Office Add-ins community call schedule and resources.'
-ms.date: 08/02/2021
+ms.date: 09/08/2021
 localization_priority: Normal
 ---
 
@@ -11,6 +11,8 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
+- [Office Add-ins community call – August 11, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-august-2021/ba-p/2661372)
+- [Office Add-ins community call – July 14, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-july-2021/ba-p/2573384)
 - [Office Add-ins community call – June 9, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-june-2021/ba-p/2446156)
 - [Office Add-ins community call – May 12, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
 - [Office Add-ins community call – April 14, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)
