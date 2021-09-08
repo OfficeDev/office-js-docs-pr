@@ -8,7 +8,7 @@ localization_priority: Normal
 
 # Custom Functions requirement sets
 
-[Custom Functions](custom-functions-overview.md) use separate requirement sets from the core Excel JavaScript APIs. The following table lists the Custom Functions requirement sets, the supported Office client applications, and the build versions or number for those applications.
+[Custom Functions](../../excel/custom-functions-overview.md) use separate requirement sets from the core Excel JavaScript APIs. The following table lists the Custom Functions requirement sets, the supported Office client applications, and the build versions or number for those applications.
 
 |  Requirement set  |  Office 2021 or later on Windows<br>(one-time purchase)  |  Office on Windows<br>(connected to a Microsoft 365 subscription)  |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web |
 |:-----|:-----|:-----|:-----|:-----|:-----|
@@ -21,9 +21,9 @@ localization_priority: Normal
 
 ## CustomFunctionsRuntime 1.1, 1.2, and 1.3
 
-The CustomFunctionsRuntime 1.1 is the first version of the API. Requirement set 1.2 adds the `CustomFunctions.Error` object to support error handling. Requirement set 1.3 adds [XLL streaming](make-custom-functions-compatible-with-xll-udf.md#custom-function-behavior-for-xll-compatible-functions) support and new `ErrorCode` options to the [CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error) object.
+The CustomFunctionsRuntime 1.1 is the first version of the API. Requirement set 1.2 adds the `CustomFunctions.Error` object to support error handling. Requirement set 1.3 adds [XLL streaming](../../excel/make-custom-functions-compatible-with-xll-udf.md#custom-function-behavior-for-xll-compatible-functions) support and new `ErrorCode` options to the [CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error) object.
 
 ## See also
 
 - [Custom Functions Reference Documentation](/javascript/api/custom-functions-runtime)
-- [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md)
+- [Excel JavaScript API requirement sets](excel-api-requirement-sets.md)
