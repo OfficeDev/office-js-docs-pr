@@ -453,6 +453,11 @@
       }
       ,
       {
+        "source_path": "docs/publish/publish/centralized-deployment.md",
+        "redirect_url": "/office/dev/add-ins/publish/publish"
+      }
+      ,
+      {
         "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.diagnostics.md",
         "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-preview"
       }

@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 04/07/2021
+ms.date: 07/27/2021
 localization_priority: Priority
 ---
 
@@ -56,7 +56,7 @@ The following figure shows the four levels of permissions and describes the capa
 
 ## Optional connected experiences
 
-End users and IT admins can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Outlook add-ins, the impact of disabling the **Optional connected experiences** setting depends on the client but usually means that user-installed add-ins and access to the Office Store are not allowed. Add-ins deployed by an organization's IT admin through [Centralized Deployment](../publish/centralized-deployment.md) will still be available.
+End users and IT admins can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Outlook add-ins, the impact of disabling the **Optional connected experiences** setting depends on the client but usually means that user-installed add-ins and access to the Office Store are not allowed. Add-ins deployed by an organization's IT admin through [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) will still be available.
 
 - Windows\*, Mac: The **Get Add-ins** button is not displayed so users can no longer manage their add-ins or access the Office Store.
 - Android, iOS: The **Get Add-ins** dialog shows only admin-deployed add-ins.

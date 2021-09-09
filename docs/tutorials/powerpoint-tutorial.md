@@ -498,7 +498,7 @@ Complete the following steps to add code that navigates between the slides of a 
 
 ## Next steps
 
-In this tutorial, you've created a PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides. To learn more about building PowerPoint add-ins, continue to the following article:
+In this tutorial, you've created a PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides. To learn more about building PowerPoint add-ins, continue to the following article.
 
 > [!div class="nextstepaction"]
 > [PowerPoint add-ins overview](../powerpoint/powerpoint-add-ins.md)

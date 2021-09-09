@@ -47,7 +47,7 @@ Excel.createWorkbook();
 
 The `createWorkbook` method can also create a copy of an existing workbook. The method accepts a base64-encoded string representation of an .xlsx file as an optional parameter. The resulting workbook will be a copy of that file, assuming the string argument is a valid .xlsx file.
 
-You can get your add-in's current workbook as a base64-encoded string by using [file slicing](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example.
+You can get your add-in's current workbook as a base64-encoded string by using [file slicing](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
@@ -69,11 +69,7 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-### Insert a copy of an existing workbook into the current one (preview)
-
-> [!NOTE]
-> The `Workbook.insertWorksheetsFromBase64` method is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+### Insert a copy of an existing workbook into the current one
 
 The previous example shows a new workbook being created from an existing workbook. You can also copy some or all of an existing workbook into the one currently associated with your add-in. A [Workbook](/javascript/api/excel/excel.workbook) has the `insertWorksheetsFromBase64` method to insert copies of the target workbook's worksheets into itself. The other workbook's file is passed as a base64-encoded string, just like the `Excel.createWorkbook` call. 
 
@@ -139,11 +135,11 @@ The `protect` method accepts an optional string parameter. This string represent
 Protection can also be set at the worksheet level to prevent unwanted data editing. For more information, see the **Data protection** section of the [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#data-protection) article.
 
 > [!NOTE]
-> For more information about workbook protection in Excel, see the [Protect a workbook](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517) article.
+> For more information about workbook protection in Excel, see the [Protect a workbook](https://support.microsoft.com/office/7e365a4d-3e89-4616-84ca-1931257c1517) article.
 
 ## Access document properties
 
-Workbook objects have access to the Office file metadata, which is known as the [document properties](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75). The Workbook object's `properties` property is a [DocumentProperties](/javascript/api/excel/excel.documentproperties) object containing these metadata values. The following example shows how to set the `author` property.
+Workbook objects have access to the Office file metadata, which is known as the [document properties](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75). The Workbook object's `properties` property is a [DocumentProperties](/javascript/api/excel/excel.documentproperties) object containing these metadata values. The following example shows how to set the `author` property.
 
 ```js
 Excel.run(function (context) {
@@ -233,7 +229,7 @@ A workbook has language and culture settings that affect how certain data is dis
 
 `Application.cultureInfo` defines the system culture settings as a [CultureInfo](/javascript/api/excel/excel.cultureinfo) object. This contains settings like the numerical decimal separator or the date format.
 
-Some culture settings can be [changed through the Excel UI](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). The system settings are preserved in the `CultureInfo` object. Any local changes are kept as [Application](/javascript/api/excel/excel.application)-level properties, such as `Application.decimalSeparator`.
+Some culture settings can be [changed through the Excel UI](https://support.microsoft.com/office/c093b545-71cb-4903-b205-aebb9837bd1e). The system settings are preserved in the `CultureInfo` object. Any local changes are kept as [Application](/javascript/api/excel/excel.application)-level properties, such as `Application.decimalSeparator`.
 
 The following sample changes the decimal separator character of a numerical string from a ',' to the character used by the system settings.
 
@@ -313,7 +309,7 @@ Excel.run(async (context) => {
 
 ### Set calculation mode
 
-By default, Excel recalculates formula results whenever a referenced cell is changed. Your add-in's performance may benefit from adjusting this calculation behavior. The Application object has a `calculationMode` property of type `CalculationMode`. It can be set to the following values:
+By default, Excel recalculates formula results whenever a referenced cell is changed. Your add-in's performance may benefit from adjusting this calculation behavior. The Application object has a `calculationMode` property of type `CalculationMode`. It can be set to the following values.
 
 - `automatic`: The default recalculation behavior where Excel calculates new formula results every time the relevant data is changed.
 - `automaticExceptTables`: Same as `automatic`, except any changes made to values in tables are ignored.
@@ -321,14 +317,14 @@ By default, Excel recalculates formula results whenever a referenced cell is cha
 
 ### Set calculation type
 
-The [Application](/javascript/api/excel/excel.application) object provides a method to force an immediate recalculation. `Application.calculate(calculationType)` starts a manual recalculation based on the specified `calculationType`. The following values can be specified:
+The [Application](/javascript/api/excel/excel.application) object provides a method to force an immediate recalculation. `Application.calculate(calculationType)` starts a manual recalculation based on the specified `calculationType`. The following values can be specified.
 
 - `full`: Recalculate all formulas in all open workbooks, regardless of whether they have changed since the last recalculation.
 - `fullRebuild`: Check dependent formulas, and then recalculate all formulas in all open workbooks, regardless of whether they have changed since the last recalculation.
 - `recalculate`: Recalculate formulas that have changed (or been programmatically marked for recalculation) since the last calculation, and formulas dependent on them, in all active workbooks.
 
 > [!NOTE]
-> For more information about recalculation, see the [Change formula recalculation, iteration, or precision](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4) article.
+> For more information about recalculation, see the [Change formula recalculation, iteration, or precision](https://support.microsoft.com/office/73fc7dac-91cf-4d36-86e8-67124f6bcce4) article.
 
 ### Temporarily suspend calculations
 
@@ -338,11 +334,7 @@ The Excel API also lets add-ins turn off calculations until `RequestContext.sync
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## Detect workbook activation (preview)
-
-> [!NOTE]
-> The `Workbook.onActivated` event is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## Detect workbook activation
 
 Your add-in can detect when a workbook is activated. A workbook becomes *inactive* when the user switches focus to another workbook, to another application, or (in Excel on the web) to another tab of the web browser. A workbook is *activated* when the user returns focus to the workbook. The workbook activation can trigger callback functions in your add-in, such as refreshing workbook data.
 
@@ -380,7 +372,7 @@ function workbookActivated(event) {
 
 ## Save the workbook
 
-`Workbook.save` saves the workbook to persistent storage. The `save` method takes a single, optional `saveBehavior` parameter that can be one of the following values:
+`Workbook.save` saves the workbook to persistent storage. The `save` method takes a single, optional `saveBehavior` parameter that can be one of the following values.
 
 - `Excel.SaveBehavior.save` (default): The file is saved without prompting the user to specify file name and save location. If the file has not been saved previously, it's saved to the default location. If the file has been saved previously, it's saved to the same location.
 - `Excel.SaveBehavior.prompt`: If file has not been saved previously, the user will be prompted to specify file name and save location. If the file has been saved previously, it will be saved to the same location and the user will not be prompted.
@@ -394,7 +386,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 
 ## Close the workbook
 
-`Workbook.close` closes the workbook, along with add-ins that are associated with the workbook (the Excel application remains open). The `close` method takes a single, optional `closeBehavior` parameter that can be one of the following values:
+`Workbook.close` closes the workbook, along with add-ins that are associated with the workbook (the Excel application remains open). The `close` method takes a single, optional `closeBehavior` parameter that can be one of the following values.
 
 - `Excel.CloseBehavior.save` (default): The file is saved before closing. If the file has not been saved previously, the user will be prompted to specify file name and save location.
 - `Excel.CloseBehavior.skipSave`: The file is immediately closed, without saving. Any unsaved changes will be lost.

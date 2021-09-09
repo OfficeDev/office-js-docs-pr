@@ -1,7 +1,7 @@
 ---
 title: Debug your add-in with runtime logging
 description: 'Learn how to use runtime logging to debug your add-in.'
-ms.date: 09/23/2020
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -57,7 +57,6 @@ Enabling runtime logging from the command line is the fastest way to use this lo
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-
 3. Set the default value of the **RuntimeLogging** key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip).
 
     > [!NOTE]
@@ -79,14 +78,14 @@ The following image shows what the registry should look like. To turn the featur
 
     `<bundle id>` identifies which the host for which to enable runtime logging. `<file_name>` is the name of the text file to which the log will be written.
 
-    Set `<bundle id>` to one of the following values to enable runtime logging for the corresponding application:
+    Set `<bundle id>` to one of the following values to enable runtime logging for the corresponding application.
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
     - `com.microsoft.Powerpoint`
     - `com.microsoft.Outlook`
 
-The following example enables runtime logging for Word and then opens the log file:
+The following example enables runtime logging for Word and then opens the log file.
 
 ```command&nbsp;line
 defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
@@ -102,7 +101,7 @@ To turn off runtime logging, use the `defaults delete` command:
 defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
-The following example will turn off runtime logging for Word:
+The following example will turn off runtime logging for Word.
 
 ```command&nbsp;line
 defaults delete com.microsoft.Word CEFRuntimeLoggingFile

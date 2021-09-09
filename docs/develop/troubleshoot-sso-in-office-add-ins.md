@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: 'Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.'
-ms.date: 06/24/2021
+ms.date: 09/03/2021
 localization_priority: Normal
 ---
 
@@ -76,8 +76,8 @@ The Office application was unable to get an access token to the add-in's web ser
 
 - If this error occurs during development, be sure that your add-in registration and add-in manifest specify the `profile` permission (and the `openid` permission, if you are using MSAL.NET). For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
 - In production, there are several things that can cause this error. Some of them are:
-    - The user has a Microsoft account identity.
-    - Some situations that would cause one of the other 13xxx errors with a Microsoft 365 Education or work account will cause a 13007 when a MSA is used.
+  - The user has a Microsoft account identity.
+  - Some situations that would cause one of the other 13xxx errors with a Microsoft 365 Education or work account will cause a 13007 when a MSA is used.
 
   For all of these cases, your code should fall back to an alternate system of user authentication.
 
@@ -91,7 +91,7 @@ The user is running the add-in in Office on Microsoft Edge or Internet Explorer.
 
 ### 13012
 
-There are several possible causes:
+There are several possible causes.
 
 - The add-in is running on a platform that does not support the `getAccessToken` API. For example, it is not supported on iPad. See also [Identity API requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md).
 - The `forMSGraphAccess` option was passed in the call to `getAccessToken` and the user obtained the add-in from AppSource. In this scenario, the tenant admin has not granted consent to the add-in for the Microsoft Graph scopes (permissions) that it needs. Recalling `getAccessToken` with the `allowConsentPrompt` will not solve the problem because Office is allowed to prompt the user for consent to only the AAD `profile` scope.
@@ -120,7 +120,7 @@ For samples of the error-handling described in this section, see:
 
 In certain configurations of identity in AAD and Microsoft 365, it is possible for some resources that are accessible with Microsoft Graph to require multifactor authentication (MFA), even when the user's Microsoft 365 tenancy does not. When AAD receives a request for a token to the MFA-protected resource, via the on-behalf-of flow, it returns to your add-in's web service a JSON message that contains a `claims` property. The claims property has information about what further authentication factors are needed.
 
-Your code should test for this `claims` property. Depending on your add-in's architecture, you may test for it on the client-side, or you may test for it on the server-side and relay it to the client. You need this information in the client because Office handles authentication for SSO add-ins. If you relay it from the server-side, the message to the client can be either an error (such as `500 Server Error` or `401 Unauthorized`) or in the body of a success response (such as `200 OK`). In either case, the (failure or success) callback of your code's client-side AJAX call to your add-in's web API should test for this response. 
+Your code should test for this `claims` property. Depending on your add-in's architecture, you may test for it on the client-side, or you may test for it on the server-side and relay it to the client. You need this information in the client because Office handles authentication for SSO add-ins. If you relay it from the server-side, the message to the client can be either an error (such as `500 Server Error` or `401 Unauthorized`) or in the body of a success response (such as `200 OK`). In either case, the (failure or success) callback of your code's client-side AJAX call to your add-in's web API should test for this response.
 
 Regardless of your architecture, if the claims value has been sent from AAD, your code should recall `getAccessToken` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the `options` parameter. When AAD sees this string, it prompts the user for the additional factor(s) and then returns a new access token which will be accepted in the on-behalf-of flow.
 

@@ -1,7 +1,7 @@
 ---
 title: Authentication options in Outlook add-ins
 description: Outlook add-ins provide a number of different methods to authenticate, depending on your specific scenario.
-ms.date: 06/24/2021
+ms.date: 09/03/2021
 localization_priority: Priority
 ---
 
@@ -45,7 +45,7 @@ Exchange user identity tokens provide a way for your add-in to establish the ide
 - When the add-in needs access to a non-Microsoft service that you control.
 - As a fallback authentication when the add-in is running on a version of Office that doesn't support SSO.
 
-Your add-in can call [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getuseridentitytokenasync-callback--usercontext-) to get Exchange user identity tokens. For details on using these tokens, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md).
+Your add-in can call [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getCallbackTokenAsync_callback__userContext_) to get Exchange user identity tokens. For details on using these tokens, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## Access tokens obtained via OAuth2 flows
 
@@ -53,7 +53,7 @@ Add-ins can also access third-party services that support OAuth2 for authorizati
 
 - Needs access to a third-party service outside of your control
 
-Using this method, your add-in prompts the user to sign-in to the service either by using the [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) method to initialize the OAuth2 flow, or by using the [office-js-helpers library](https://github.com/OfficeDev/office-js-helpers) to the OAuth2 Implicit flow.
+Using this method, your add-in prompts the user to sign-in to the service either by using the [displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_) method to initialize the OAuth2 flow, or by using the [office-js-helpers library](https://github.com/OfficeDev/office-js-helpers) to the OAuth2 Implicit flow.
 
 ## Callback tokens
 

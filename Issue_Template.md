@@ -3,7 +3,7 @@ Welcome to the Office Add-ins documentation repository.
 
 To report an issue with the Office-Add-ins documentation, please provide the article URL and describe the issue below. Alternatively, if you want to submit a pull request with your recommended documentation changes, we will review your contributions and update our documentation accordingly.
 
-If your issue is not related to the Office Add-ins documentation, please post it to one of the following channels instead:
+If your issue is not related to the Office Add-ins documentation, please post it to one of the following channels instead.
 
 - To ask a question about using the Office.js API, post your question to Stack Overflow and tag it with the "office-js" tag (http://stackoverflow.com/questions/tagged/office-js).
 

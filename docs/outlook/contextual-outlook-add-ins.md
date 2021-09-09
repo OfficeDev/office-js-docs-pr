@@ -9,7 +9,7 @@ localization_priority: Normal
 
 Contextual add-ins are Outlook add-ins that activate based on text in a message or appointment. By using contextual add-ins, a user can initiate tasks related to a message without leaving the message itself, which results in an easier and richer user experience.
 
-The following are examples of contextual add-ins:
+The following are examples of contextual add-ins.
 
 - Choosing an address to open a map of the location.
 - Choosing a string that opens a meeting suggestion add-in.
@@ -25,7 +25,7 @@ The following are examples of contextual add-ins:
 
 A contextual add-in's manifest must include an [ExtensionPoint](../reference/manifest/extensionpoint.md#detectedentity) element with an `xsi:type` attribute set to `DetectedEntity`. Within the **ExtensionPoint** element, the add-in specifies the entities or regular expression that can activate it. If an entity is specified, the entity can be any of the properties in the [Entities](/javascript/api/outlook/office.entities) object.
 
-Thus, the add-in manifest must contain a rule of type **ItemHasKnownEntity** or **ItemHasRegularExpressionMatch**. The following example shows how to specify that an add-in should activate on messages with a detected entity that is a phone number:
+Thus, the add-in manifest must contain a rule of type **ItemHasKnownEntity** or **ItemHasRegularExpressionMatch**. The following example shows how to specify that an add-in should activate on messages with a detected entity that is a phone number.
 
 ```XML
 <ExtensionPoint xsi:type="DetectedEntity">
@@ -79,9 +79,9 @@ To close the card and the add-in, a user clicks anywhere outside of the card.
 
 ## Current contextual add-ins
 
-The following contextual add-ins are installed by default for users with Outlook add-ins:
+The following contextual add-ins are installed by default for users with Outlook add-ins.
 
-- Bing Maps 
+- Bing Maps
 - Suggested Meetings
 
 ## See also

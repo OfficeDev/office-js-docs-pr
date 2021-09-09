@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins in Office on the web for testing
 description: 'Test your Office Add-in in Office on the web by sideloading.'
-ms.date: 04/14/2021
+ms.date: 08/02/2021
 localization_priority: Normal
 ---
 
@@ -22,7 +22,7 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 1. Open [Office on the web](https://office.live.com/). Using the **Create** option, make a document in **Excel**, **OneNote**, **PowerPoint**, or **Word**. In this new document, select **Share** in the ribbon, select **Copy Link**, and copy the URL.
 
-2. In the root directory of your yo office project files, open the **package.json** file. Within the **config** section of this file, create a `"document"` property. Paste the URL you copied as the value for the `"document"` property. For example, yours will look something like this:
+1. In the root directory of your yo office project files, open the **package.json** file. Within the **config** section of this file, create a `"document"` property. Paste the URL you copied as the value for the `"document"` property. For example, yours will look something like this:
 
     ```json
       "config": {
@@ -32,22 +32,22 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
     ```
 
     > [!TIP]
-    > If you are creating an add-in not using our Yeoman generator, you can add query parameters to your document's URL, by appending the following to the existing URL:
-
-    - The dev server port, such as `&wdaddindevserverport=3000`.
-    - The manifest file name, such as `&wdaddinmanifestfile=manifest1.xml`.
-    - The manifest GUID, such as `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143`.
-
+    > If you are creating an add-in not using our Yeoman generator, you can add query parameters to your document's URL, by appending the following to the existing URL.
+    >
+    > - The dev server port, such as `&wdaddindevserverport=3000`.
+    > - The manifest file name, such as `&wdaddinmanifestfile=manifest1.xml`.
+    > - The manifest GUID, such as `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143`.
+    >
     > If you are using the Yeoman generator, adding this information is not necessary as the Yeoman tooling appends this information automatically.
     > Note that in both cases, however, you can only load manifests from localhost.
 
-3. In the command line starting at the root directory of your project, run the following command: `npm run start:web`.
+1. In the command line starting at the root directory of your project, run the following command: `npm run start:web`.
 
-4. The first time you use this method to sideload an add-in on the web, you'll see a dialog asking you to enable developer mode. Select the checkbox for **Enable Developer Mode now** and select **OK**.
+1. The first time you use this method to sideload an add-in on the web, you'll see a dialog asking you to enable developer mode. Select the checkbox for **Enable Developer Mode now** and select **OK**.
 
-5. You will see a second dialog box, asking if you wish to register an Office Add-in manifest from your computer. You should select **Yes**.
+1. You will see a second dialog box, asking if you wish to register an Office Add-in manifest from your computer. You should select **Yes**.
 
-6. Your add-in is installed. If it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the task pane should appear.
+1. Your add-in is installed. If it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the task pane should appear.
 
 ## Sideload an Office Add-in in Office on the web manually
 
@@ -72,9 +72,9 @@ This method doesn't use the command line and can be accomplished using commands 
 
 1. Sign in to your Microsoft 365 account.
 
-2. Open the App Launcher on the left end of the toolbar and select **Excel**, **Word**, or **PowerPoint**, and then create a new document.
+1. Open the App Launcher on the left end of the toolbar and select **Excel**, **Word**, or **PowerPoint**, and then create a new document.
 
-3. Steps 3 - 6 are the same as in the preceding section **Sideload an Office Add-in in Office on the web**.
+1. Steps 3 - 6 are the same as in the preceding section **Sideload an Office Add-in in Office on the web**.
 
 ## Sideload an add-in when using Visual Studio
 
@@ -84,17 +84,17 @@ If you're using Visual Studio to develop your add-in, the process to sideload is
 > Although you can sideload add-ins from Visual Studio to Office on the web, you cannot debug them from Visual Studio. To debug you will need to use the browser debugging tools. For more information, see [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md).
 
 1. In Visual Studio, show the **Properties** window by choosing **View** > **Properties Window**.
-2. In the **Solution Explorer**, select the web project. This will display properties for the project in the **Properties** window.
-3. In the Properties window, copy the **SSL URL**.
-4. In the add-in project, open the manifest XML file. Be sure you are editing the source XML. For some project types Visual Studio will open a visual view of the XML which will not work for the next step.
-5. Search and replace all instances of **~remoteAppUrl/** with the SSL URL you just copied. You will see several replacements depending on the project type, and the new URLs will appear similar to `https://localhost:44300/Home.html`.
-6. Save the XML file.
-7. Right click the web project and choose **Debug** > **Start new instance**. This will run the web project without launching Office.
-8. From Office on the web, sideload the add-in using steps previously described in [Sideload an Office Add-in in Office on the web](#sideload-an-office-add-in-in-office-on-the-web).
+1. In the **Solution Explorer**, select the web project. This will display properties for the project in the **Properties** window.
+1. In the Properties window, copy the **SSL URL**.
+1. In the add-in project, open the manifest XML file. Be sure you are editing the source XML. For some project types Visual Studio will open a visual view of the XML which will not work for the next step.
+1. Search and replace all instances of **~remoteAppUrl/** with the SSL URL you just copied. You will see several replacements depending on the project type, and the new URLs will appear similar to `https://localhost:44300/Home.html`.
+1. Save the XML file.
+1. Right click the web project and choose **Debug** > **Start new instance**. This will run the web project without launching Office.
+1. From Office on the web, sideload the add-in using steps previously described in [Sideload an Office Add-in in Office on the web](#sideload-an-office-add-in-in-office-on-the-web).
 
 ## Remove a sideloaded add-in
 
-You can remove a previously sideloaded add-in by clearing your browser's cache. If you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you may need to [clear the Office cache](clear-cache.md) and then re-sideload the add-in using the updated manifest. Doing so will allow Office to render the add-in as it's described by the updated manifest.
+You can remove a previously sideloaded add-in by clearing your browser's cache. If you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you may need to clear your browser's cache and then re-sideload the add-in using the updated manifest. Doing so will allow Office on the web to render the add-in as it's described by the updated manifest.
 
 ## See also
 

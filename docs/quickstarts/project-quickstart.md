@@ -1,7 +1,7 @@
 ---
 title: Build your first Project task pane add-in
 description: Learn how to build a simple Project task pane add-in by using the Office JS API.
-ms.date: 06/07/2021
+ms.date: 08/04/2021
 ms.prod: project
 localization_priority: Priority
 ---
@@ -91,7 +91,7 @@ Office.context.document.getSelectedTaskAsync(
     cd "My Office Add-in"
     ```
 
-2. Start the local web server.
+1. Start the local web server.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
@@ -102,13 +102,13 @@ Office.context.document.getSelectedTaskAsync(
     npm run dev-server
     ```
 
-3. In Project, create a simple project plan.
+1. In Project, create a simple project plan.
 
-4. Load your add-in in Project by following the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
+1. Load your add-in in Project by following the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
-5. Select a single task within the project.
+1. Select a single task within the project.
 
-6. At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.
+1. At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.
 
     ![Screenshot of the Project application with the task pane add-in loaded.](../images/project-quickstart-addin-1.png)
 

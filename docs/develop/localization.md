@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
 description: 'Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.'
-ms.date: 02/23/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -11,7 +11,7 @@ You can implement any localization scheme that's appropriate for your Office Add
 
 ## Use the JavaScript API to determine locale-specific strings
 
-The Office JavaScript API provides two properties that support displaying or interpreting values consistent with the locale of the Office application and data:
+The Office JavaScript API provides two properties that support displaying or interpreting values consistent with the locale of the Office application and data.
 
 - [Context.displayLanguage][displayLanguage] specifies the locale (or language) of the user interface of the Office application. The following example verifies if the Office application uses the en-US or fr-FR locale, and displays a locale-specific greeting.
 
@@ -34,7 +34,7 @@ The Office JavaScript API provides two properties that support displaying or int
     }
     ```
 
-- [Context.contentLanguage][contentLanguage] specifies the locale (or language) of the data. Extending the last code sample, instead of checking the [displayLanguage] property, assign `myLanguage` the value of the [contentLanguage] property, and use the rest of the same code to display a greeting based on the locale of the data:
+- [Context.contentLanguage][contentLanguage] specifies the locale (or language) of the data. Extending the last code sample, instead of checking the [displayLanguage] property, assign `myLanguage` the value of the [contentLanguage] property, and use the rest of the same code to display a greeting based on the locale of the data.
 
     ```js
     var myLanguage = Office.context.contentLanguage;
@@ -42,11 +42,9 @@ The Office JavaScript API provides two properties that support displaying or int
 
 ## Control localization from the manifest
 
-
 Every Office Add-in specifies a [DefaultLocale] element and a locale in its manifest. By default, the Office Add-in platform and Office client applications apply the values of the [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl], and [SourceLocation] elements to all locales. You can optionally support specific values for specific locales, by specifying an [Override] child element for each additional locale, for any of these five elements. The value for the [DefaultLocale] element and for the `Locale` attribute of the [Override] element is specified according to [RFC 3066], "Tags for the Identification of Languages." Table 1 describes the localizing support for these elements.
 
 *Table 1. Localization support*
-
 
 |**Element**|**Localization support**|
 |:-----|:-----|
@@ -57,15 +55,12 @@ Every Office Add-in specifies a [DefaultLocale] element and a locale in its mani
 |[Resources] **Important:** This element is available only when using add-in manifest version 1.1.   |Users in each locale you specify can see string and icon resources that you specifically create for the add-in for that locale. |
 |[SourceLocation]   |Users in each locale you specify can see a webpage that you specifically design for the add-in for that locale. |
 
-
 > [!NOTE]
 > You can localize the description and display name for only the locales that Office supports. See [Language identifiers and OptionState Id values in Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)) for a list of languages and locales for the current release of Office.
-
 
 ### Examples
 
 For example, an Office Add-in can specify the [DefaultLocale] as `en-us`. For the [DisplayName] element, the add-in can specify an [Override] child element for the locale `fr-fr`, as shown below.
-
 
 ```xml
 <DefaultLocale>en-us</DefaultLocale>
@@ -81,9 +76,9 @@ For example, an Office Add-in can specify the [DefaultLocale] as `en-us`. For th
 This means that the add-in assumes the  `en-us` locale by default. Users see the English display name of "Video player" for all locales unless the client computer's locale is `fr-fr`, in which case users would see the French display name "Lecteur vidéo".
 
 > [!NOTE]
-> You may only specify a single override per language, including for the default locale. For example, if your default locale is `en-us` you cannot not specify an  override for `en-us` as well. 
+> You may only specify a single override per language, including for the default locale. For example, if your default locale is `en-us` you cannot not specify an  override for `en-us` as well.
 
-The following example applies a locale override for the [Description] element. It first specifies a default locale of `en-us` and an English description, and then specifies an [Override] statement with a French description for the `fr-fr` locale:
+The following example applies a locale override for the [Description] element. It first specifies a default locale of `en-us` and an English description, and then specifies an [Override] statement with a French description for the `fr-fr` locale.
 
 ```xml
 <DefaultLocale>en-us</DefaultLocale>
@@ -99,8 +94,7 @@ The following example applies a locale override for the [Description] element. I
 
 This means that the add-in assumes the `en-us` locale by default. Users would see the English description in the `DefaultValue` attribute for all locales unless the client computer's locale is `fr-fr`, in which case they would see the French description.
 
-In the following example, the add-in specifies a separate image that's more appropriate for the `fr-fr` locale and culture. Users see the image DefaultLogo.png by default, except when the locale of the client computer is `fr-fr`. In this case, users would see the image FrenchLogo.png. 
-
+In the following example, the add-in specifies a separate image that's more appropriate for the `fr-fr` locale and culture. Users see the image DefaultLogo.png by default, except when the locale of the client computer is `fr-fr`. In this case, users would see the image FrenchLogo.png.
 
 ```xml
 <!-- Replace "domain" with a real web server name and path. -->
@@ -119,11 +113,9 @@ The following example shows how to localize a resource in the `Resources` sectio
  ...
 ```
 
-
 For the [SourceLocation] element, supporting additional locales means providing a separate source HTML file for each of the specified locales. Users in each locale you specify can see a customized webpage that you design for that them.
 
 For Outlook add-ins, the [SourceLocation] element also aligns to the form factor. This allows you to provide a separate, localized source HTML file for each corresponding form factor. You can specify one or more [Override] child elements in each applicable settings element ([DesktopSettings], [TabletSettings], or [PhoneSettings]). The following example shows settings elements for the desktop, tablet, and smartphone form factors, each with one HTML file for the default locale and another for the French locale.
-
 
 ```xml
 <DesktopSettings>
@@ -248,9 +240,7 @@ You can get the locale of the user interface of the Office client application by
 
 You can get the locale of the data of the Office client application by using the [contentLanguage] property. Based on this value, you can then appropriately interpret or display date/time strings. For example, the `jp-JP` locale expresses data/time values as `yyyy/MM/dd`, and the `fr-FR` locale, `dd/MM/yyyy`.
 
-
 ## Use Ajax for globalization and localization
-
 
 If you use Visual Studio to create Office Add-ins, the .NET Framework and Ajax provide ways to globalize and localize client script files.
 
@@ -258,10 +248,9 @@ You can globalize and use the [Date](/previous-versions/bb310850(v=vs.140)) and 
 
 You can include localized resource strings directly in standalone JavaScript files to provide client script files for different locales, which are set on the browser or provided by the user. Create a separate script file for each supported locale. In each script file, include an object in JSON format that contains the resource strings for that locale. The localized values are applied when the script runs in the browser.
 
-
 ## Example: Build a localized Office Add-in
 
-This section provides examples that show you how to localize an Office Add-in description, display name, and UI. 
+This section provides examples that show you how to localize an Office Add-in description, display name, and UI.
 
 > [!NOTE]
 > To download Visual Studio 2019, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
@@ -289,20 +278,19 @@ You'll need to create a Visual Studio 2019 Office Add-in project.
 
 4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
-
 ### Localize the text used in your add-in
 
-The text that you want to localize for another language appears in two areas:
+The text that you want to localize for another language appears in two areas.
 
--  **Add-in display name and description**. This is controlled by entries in the add-in manifest file.
+- **Add-in display name and description**. This is controlled by entries in the add-in manifest file.
 
--  **Add-in UI**. You can localize the strings that appear in your add-in UI by using JavaScript code, for example, by using a separate resource file that contains the localized strings.
+- **Add-in UI**. You can localize the strings that appear in your add-in UI by using JavaScript code, for example, by using a separate resource file that contains the localized strings.
 
-To localize the add-in display name and description:
+#### Localize the add-in display name and description
 
 1. In **Solution Explorer**, expand **WorldReadyAddIn**, **WorldReadyAddInManifest**, and then choose **WorldReadyAddIn.xml**.
 
-2. In WorldReadyAddInManifest.xml, replace the [DisplayName] and [Description] elements with the following block of code:
+2. In WorldReadyAddInManifest.xml, replace the [DisplayName] and [Description] elements with the following block of code.
 
     > [!NOTE]
     > You can replace the Spanish language localized strings used in this example for the [DisplayName] and [Description] elements with the localized strings for any other language.
@@ -318,7 +306,7 @@ To localize the add-in display name and description:
 
 3. When you change the display language for Office 2013 from English to Spanish, for example, and then run the add-in, the add-in display name and description are shown with localized text.
 
-To lay out the add-in UI:
+#### Lay out the add-in UI
 
 1. In Visual Studio, in **Solution Explorer**, choose **Home.html**.
 
@@ -350,13 +338,13 @@ The following figure shows the heading (h1) element and the paragraph (p) elemen
 
 ### Add the resource file that contains the localized strings
 
-The JavaScript resource file contains the strings used for the add-in UI. The HTML for the sample add-in UI contains an `<h1>` element that displays a greeting, and a `<p>` element that introduces the add-in to the user. 
+The JavaScript resource file contains the strings used for the add-in UI. The HTML for the sample add-in UI contains an `<h1>` element that displays a greeting, and a `<p>` element that introduces the add-in to the user.
 
 To enable localized strings for the heading and paragraph, you place the strings in a separate resource file. The resource file creates a JavaScript object that contains a separate JavaScript Object Notation (JSON) object for each set of localized strings. The resource file also provides a method for getting back the appropriate JSON object for a given locale.
 
-To add the resource file to the add-in project:
+### Add the resource file to the add-in project
 
-1. In **Solution Explorer** in Visual Studio, right-click the **WorldReadyAddInWeb** project and choose **Add** > **New Item**. 
+1. In **Solution Explorer** in Visual Studio, right-click the **WorldReadyAddInWeb** project and choose **Add** > **New Item**.
 
 2. In the **Add New Item** dialog box, choose **JavaScript File**.
 
@@ -475,8 +463,6 @@ Replace the code in the Home.js file with the following code. The code shows how
 
 To test your localized add-in, change the language used for display or editing in the Office application and then run your add-in.
 
-To change the language used for display or editing in your add-in:
-
 1. In Word, choose **File** > **Options** > **Language**. The following figure shows the **Word Options** dialog box opened to the Language tab.
 
     *Figure 2. Language options in the Word Options dialog box*
@@ -492,7 +478,6 @@ To change the language used for display or editing in your add-in:
 5. In Word, choose **Home** > **Show Taskpane**.
 
 Once running, the strings in the add-in UI change to match the language used by the application, as shown in the following figure.
-
 
 *Figure 3. Add-in UI with localized text*
 
@@ -514,6 +499,6 @@ Once running, the strings in the add-in UI change to match the language used by 
 [DesktopSettings]:       ../reference/manifest/desktopsettings.md
 [TabletSettings]:        ../reference/manifest/tabletsettings.md
 [PhoneSettings]:         ../reference/manifest/phonesettings.md
-[displayLanguage]:       /javascript/api/office/office.context#displaylanguage
-[contentLanguage]:       /javascript/api/office/office.context#contentlanguage
+[displayLanguage]:       /javascript/api/office/office.context#displayLanguage
+[contentLanguage]:       /javascript/api/office/office.context#contentLanguage
 [RFC 3066]:              https://www.rfc-editor.org/info/rfc3066

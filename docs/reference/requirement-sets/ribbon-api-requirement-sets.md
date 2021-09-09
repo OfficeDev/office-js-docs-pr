@@ -36,9 +36,9 @@ The 1.1 version of the RibbonApi requirement set is supported in the Consumer Ch
 
 To find out more about versions, build numbers, and Office Online Server, see:
 
-- [Version and build numbers of update channel releases for Microsoft 365 clients](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [What version of Office am I using?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [Where you can find the version and build number for a Microsoft 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [Version and build numbers of update channel releases for Microsoft 365 clients](/officeupdates/update-history-microsoft365-apps-by-date)
+- [What version of Office am I using?](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)
+- [Where you can find the version and build number for a Microsoft 365 client application](/officeupdates/update-history-microsoft365-apps-by-date)
 - [Office Online Server overview](/officeonlineserver/office-online-server-overview)
 
 ## Office Common API requirement sets

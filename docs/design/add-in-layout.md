@@ -1,7 +1,7 @@
 ---
 title: Layout guidelines for Office Add-ins
 description: 'Get guidelines for how to layout a task pane or dialog in an Office Add-in.'
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
 ---
 
@@ -11,14 +11,14 @@ Each HTML container embedded in Office will have a layout. These layouts are the
 
 For guidelines on layout, see [Task pane](task-pane-add-ins.md), [Content](content-add-ins.md), and [Dialog box](dialog-boxes.md). For more information about how to assemble [Fluent UI React](using-office-ui-fabric-react.md), or [Office UI Fabric JS](fabric-core.md), components into common layouts and user experience flows, see [UX design patterns templates](ux-design-pattern-templates.md).
 
-Apply the following general guidelines for layouts:
+Apply the following general guidelines for layouts.
 
-*	Avoid narrow or wide margins on your HTML containers. 20 pixels is a great default.
-*	Align elements intentionally. Extra indents and new points of alignment should aid visual hierarchy.
-*	Office interfaces are on a 4px grid. Aim to keep your padding between elements at multiples of 4.
-*	Overcrowding your interface can lead to confusion and inhibit ease of use with touch interactions.
-*	Keep layouts consistent across screens. Unexpected layout changes look like visual bugs that contribute to a lack of confidence and trust with your solution.
-*	Follow common layout patterns. Conventions help users understand how to use an interface.
-*	Avoid redundant elements like branding or commands.
-*	Consolidate controls and views to avoid requiring too much mouse movement.
-*	Create responsive experiences that adapt to HTML container widths and heights.
+- Avoid narrow or wide margins on your HTML containers. 20 pixels is a great default.
+- Align elements intentionally. Extra indents and new points of alignment should aid visual hierarchy.
+- Office interfaces are on a 4px grid. Aim to keep your padding between elements at multiples of 4.
+- Overcrowding your interface can lead to confusion and inhibit ease of use with touch interactions.
+- Keep layouts consistent across screens. Unexpected layout changes look like visual bugs that contribute to a lack of confidence and trust with your solution.
+- Follow common layout patterns. Conventions help users understand how to use an interface.
+- Avoid redundant elements like branding or commands.
+- Consolidate controls and views to avoid requiring too much mouse movement.
+- Create responsive experiences that adapt to HTML container widths and heights.

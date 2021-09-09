@@ -92,7 +92,7 @@ Excel.run(function (context) {
 });
 ```
 
-This sample creates the following data in the current worksheet:
+This sample creates the following data in the current worksheet.
 
 ![A sales record showing value rows, a formula column, and formatted headers.](../images/excel-overview-range-sample.png)
 
@@ -116,7 +116,7 @@ Excel.run(function (context) {
 });
 ```
 
-Using this sample code on the worksheet with the previous data creates the following table:
+Using this sample code on the worksheet with the previous data creates the following table.
 
 ![A table made from the previous sales record.](../images/excel-overview-table-sample.png)
 
@@ -137,7 +137,7 @@ Excel.run(function (context) {
 });
 ```
 
-Running this sample on the worksheet with the previous table creates the following chart:
+Running this sample on the worksheet with the previous table creates the following chart.
 
 ![A column chart showing quantities of three items from the previous sales record.](../images/excel-overview-chart-sample.png)
 

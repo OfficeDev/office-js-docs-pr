@@ -195,16 +195,16 @@ var recurrenceType = recurrence.recurrenceType;
 
 [RecurrenceChanged event](/javascript/api/office/office.eventtype)
 
-[getAsync link]: /javascript/api/outlook/office.recurrence#getasync-options--callback-
+[getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
 [item.recurrence link]: ../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties
-[setAsync link]: /javascript/api/outlook/office.recurrence#setasync-recurrencepattern--options--callback-
+[setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
 
-[dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayofmonth
-[dayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#dayofweek
+[dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth
+[dayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#dayOfWeek
 [days link]: /javascript/api/outlook/office.recurrenceproperties#days
-[firstDayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#firstdayofweek
+[firstDayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#firstDayOfWeek
 [interval link]: /javascript/api/outlook/office.recurrenceproperties#interval
 [month link]: /javascript/api/outlook/office.recurrenceproperties#month
-[weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weeknumber
+[weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weekNumber
 
 [SeriesTime link]: /javascript/api/outlook/office.seriestime

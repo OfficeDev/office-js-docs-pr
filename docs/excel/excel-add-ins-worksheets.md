@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.'
-ms.date: 06/03/2021
+ms.date: 07/02/2021
 localization_priority: Normal
 ---
 
@@ -313,11 +313,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## Detect formula changes (preview)
-
-> [!NOTE]
-> The `Worksheet.onFormulaChanged` event is currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## Detect formula changes
 
 Your add-in can track changes to formulas in a worksheet. This is useful when a worksheet is connected to an external database. When the formula changes in the worksheet, the event in this scenario triggers corresponding updates in the external database.
 
@@ -373,11 +369,11 @@ The following images show the ranges returned by the `address` property for sort
 
 ![Table data in Excel before being sorted.](../images/excel-sort-event-before.png)
 
-If a top-to-bottom sort is performed on "**Q1**" (the values in "**B**"), the following highlighted rows are returned by `WorksheetRowSortedEventArgs.address`:
+If a top-to-bottom sort is performed on "**Q1**" (the values in "**B**"), the following highlighted rows are returned by `WorksheetRowSortedEventArgs.address`.
 
 ![Table data in Excel after a top-to-bottom sort. The rows that have moved are highlighted.](../images/excel-sort-event-after-row.png)
 
-If a left-to-right sort is performed on "**Quinces**" (the values in "**4**") on the original data, the following highlighted columns are returned by `WorksheetColumnsSortedEventArgs.address`:
+If a left-to-right sort is performed on "**Quinces**" (the values in "**4**") on the original data, the following highlighted columns are returned by `WorksheetColumnsSortedEventArgs.address`.
 
 ![Table data in Excel after a left-to-right sort. The columns that have moved are highlighted.](../images/excel-sort-event-after-column.png)
 
@@ -434,7 +430,7 @@ Excel.run(function (context) {
 
 ## Filter data
 
-An [AutoFilter](/javascript/api/excel/excel.autofilter) applies data filters across a range within the worksheet. This is created with `Worksheet.autoFilter.apply`, which has the following parameters:
+An [AutoFilter](/javascript/api/excel/excel.autofilter) applies data filters across a range within the worksheet. This is created with `Worksheet.autoFilter.apply`, which has the following parameters.
 
 - `range`: The range to which the filter is applied, specified as either a `Range` object or a string.
 - `columnIndex`: The zero-based column index against which the filter criteria is evaluated.
@@ -497,7 +493,7 @@ The `protect` method has two optional parameters:
 - `options`: A [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) object defining specific editing restrictions.
 - `password`: A string representing the password needed for a user to bypass protection and edit the worksheet.
 
-The article [Protect a worksheet](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.
+The article [Protect a worksheet](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.
 
 ## Page layout and print settings
 

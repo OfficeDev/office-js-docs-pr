@@ -275,6 +275,9 @@ items:
         href: testing/attach-debugger-from-task-pane.md
       - name: Debug using developer tools
         href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+      - name: Debug using Edge Chromium WebView2
+        href: testing/debug-desktop-using-edge-chromium.md
+        displayName: debug, windows
       - name: Test with Internet Explorer 11
         href: testing/ie-11-testing.md
     - name: Web browser
@@ -328,8 +331,6 @@ items:
       href: /office/dev/store/submit-to-the-office-store
     - name: AppSource validation policies
       href: /legal/marketplace/certification-policies
-    - name: Publish add-ins via Centralized Deployment
-      href: publish/centralized-deployment.md
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
 
@@ -344,6 +345,8 @@ items:
         href: reference/requirement-sets/add-in-commands-requirement-sets.md
       - name: Dialog API requirement sets
         href: reference/requirement-sets/dialog-api-requirement-sets.md
+      - name: Dialog Origin requirement sets
+        href: reference/requirement-sets/dialog-origin-requirement-sets.md        
       - name: Identity API requirement sets
         href: reference/requirement-sets/identity-api-requirement-sets.md
       - name: Image Coercion requirement sets
@@ -588,6 +591,9 @@ items:
       - name: ExcelApi online-only requirement set
         href: reference/requirement-sets/excel-api-online-requirement-set.md
         displayName: Excel
+      - name: ExcelApi 1.13 requirement set
+        href: reference/requirement-sets/excel-api-1-13-requirement-set.md
+        displayName: Excel 
       - name: ExcelApi 1.12 requirement set
         href: reference/requirement-sets/excel-api-1-12-requirement-set.md
         displayName: Excel
@@ -1032,7 +1038,15 @@ items:
     - name: Append on send
       href: outlook/append-on-send.md
     - name: Event-based activation
-      href: outlook/autolaunch.md
+      items:
+      - name: Walkthrough
+        href: outlook/autolaunch.md
+        displayName: event-based activation
+      - name: Debug event-based activation
+        href: outlook/debug-autolaunch.md
+      - name: AppSource options
+        href: outlook/autolaunch-store-options.md
+        displayName: event-based activation
     - name: Pinnable task pane
       href: outlook/pinnable-taskpane.md
     - name: Shared folders and shared mailboxes

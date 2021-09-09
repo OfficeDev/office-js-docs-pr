@@ -1,11 +1,11 @@
 ---
-ms.date: 07/10/2019
+ms.date: 07/08/2021
 description: 'Batch custom functions together to reduce network calls to a remote service.'
 title: Batching custom function calls for a remote service
 localization_priority: Normal
 ---
 
-# Batching custom function calls for a remote service
+# Batch custom function calls for a remote service
 
 If your custom functions call a remote service you can use a batching pattern to reduce the number of network calls to the remote service. To reduce network round trips you batch all the calls into a single call to the web service. This is ideal when the spreadsheet is recalculated.
 
@@ -17,7 +17,7 @@ For example, if someone used your custom function in 100 cells in a spreadsheet,
 
 You can follow this article and paste the code examples into your own project. For example, you can use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create a new custom function project for TypeScript, then add all the code from this article to the project. You can then run the code and try it out.
 
-Also, you can download or view the complete sample project at [Custom function batching pattern](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching). If you want to view the code in whole before reading any further, take a look at the [script file](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Excel-custom-functions/Batching/src/functions/functions.ts).
+Also, you can download or view the complete sample project at [Custom function batching pattern](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching). If you want to view the code in whole before reading any further, take a look at the [script file](https://github.com/OfficeDev/PnP-OfficeAddins/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
 
 ## Create the batching pattern in this article
 
@@ -147,7 +147,7 @@ function _makeRemoteRequest() {
 
 ### Modify `_makeRemoteRequest` for your own solution
 
-The `_makeRemoteRequest` function calls `_fetchFromRemoteService` which, as you'll see later, is just a mock representing the remote service. This makes it easier to study and run the code in this article. But when you want to use this code for an actual remote service you should make the following changes:
+The `_makeRemoteRequest` function calls `_fetchFromRemoteService` which, as you'll see later, is just a mock representing the remote service. This makes it easier to study and run the code in this article. But when you want to use this code for an actual remote service you should make the following changes.
 
 - Decide how to serialize the batch operations over the network. For example, you may want to put the array into a JSON body.
 - Instead of calling `_fetchFromRemoteService` you need to make the actual network call to the remote service passing the batch of operations.
@@ -201,7 +201,7 @@ function pause(ms: number) {
 
 ### Modify `_fetchFromRemoteService` for your live remote service
 
-To modify the `_fetchFromRemoteService` function to run in your live remote service, make the following changes:
+To modify the `_fetchFromRemoteService` function to run in your live remote service, make the following changes.
 
 - Depending on your server platform (Node.js or others) map the client network call to this function.
 - Remove the `pause` function which simulates network latency as part of the mock.
@@ -211,6 +211,7 @@ To modify the `_fetchFromRemoteService` function to run in your live remote serv
 - Place the code in the remote service.
 
 ## Next steps
+
 Learn about [the various parameters](custom-functions-parameter-options.md) you can use in your custom functions. Or review the basics behind making [a web call through a custom function](custom-functions-web-reqs.md).
 
 ## See also
