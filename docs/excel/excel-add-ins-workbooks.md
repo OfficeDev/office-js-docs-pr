@@ -3,7 +3,7 @@ title: Work with workbooks using the Excel JavaScript API
 description: 'Learn how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
 ms.date: 06/07/2021
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Work with workbooks using the Excel JavaScript API

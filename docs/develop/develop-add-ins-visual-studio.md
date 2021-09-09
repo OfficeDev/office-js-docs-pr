@@ -2,7 +2,7 @@
 title: Develop Office Add-ins with Visual Studio
 description: 'How to develop Office Add-ins with Visual Studio.'
 ms.date: 07/08/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Develop Office Add-ins with Visual Studio

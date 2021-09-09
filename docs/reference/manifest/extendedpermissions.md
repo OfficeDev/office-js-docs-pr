@@ -2,7 +2,7 @@
 title: ExtendedPermissions element in the manifest file
 description: Defines the collection of extended permissions the add-in needs to access associated APIs or features.
 ms.date: 10/15/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # ExtendedPermissions element

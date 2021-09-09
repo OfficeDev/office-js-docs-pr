@@ -2,7 +2,7 @@
 title: CitationText element in the manifest file
 description: Specifies the citation boilerplate text for this dictionary.
 ms.date: 03/19/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # CitationText element

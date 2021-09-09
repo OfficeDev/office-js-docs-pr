@@ -3,7 +3,7 @@ title: Word JavaScript preview APIs
 description: 'Details about upcoming Word JavaScript APIs'
 ms.date: 11/09/2020
 ms.prod: word
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Word JavaScript preview APIs

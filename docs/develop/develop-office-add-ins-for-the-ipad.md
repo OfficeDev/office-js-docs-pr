@@ -2,7 +2,7 @@
 title: Special requirements for add-ins on the iPad
 description: 'Learn some requirements for creating an Office Add-in that runs on an iPad.'
 ms.date: 09/03/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 

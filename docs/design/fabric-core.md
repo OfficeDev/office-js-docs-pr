@@ -2,7 +2,7 @@
 title: Fabric Core in Office Add-ins 
 description: 'Get an overview of how to use Fabric Core, and Fabric UI components in Office Add-ins.'
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Fabric Core in Office Add-ins

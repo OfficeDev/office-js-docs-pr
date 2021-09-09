@@ -2,7 +2,7 @@
 title: DictionaryHomePage element in the manifest file
 description: Specifies the URL of the home page for the dictionary.
 ms.date: 03/19/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # DictionaryHomePage element

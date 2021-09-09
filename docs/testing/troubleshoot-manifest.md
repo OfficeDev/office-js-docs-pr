@@ -2,7 +2,7 @@
 title: Validate an Office Add-in's manifest
 description: 'Learn how to validate the manifest of an Office Add-in using the XML schema and other tools.'
 ms.date: 09/18/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Validate an Office Add-in's manifest

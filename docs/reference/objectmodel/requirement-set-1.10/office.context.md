@@ -2,7 +2,7 @@
 title: Office.context - requirement set 1.10
 description: 'Office.Context object members available for Outlook add-ins using Mailbox API requirement set 1.10.'
 ms.date: 05/11/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # context (Mailbox requirement set 1.10)

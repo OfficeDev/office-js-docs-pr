@@ -2,7 +2,7 @@
 title: FunctionFile element in the manifest file
 description: Specifies the source code file for operations that an add-in exposes through add-in commands that execute a JavaScript function instead of displaying UI.
 ms.date: 11/06/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # FunctionFile element

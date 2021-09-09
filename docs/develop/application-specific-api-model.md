@@ -2,7 +2,7 @@
 title: Using the application-specific API model
 description: 'Learn about the promise-based API model for Excel, OneNote, and Word add-ins.'
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Application-specific API model

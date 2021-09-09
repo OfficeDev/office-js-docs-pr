@@ -2,7 +2,7 @@
 title: Permissions element in the manifest file
 description: The Permissions element specifies the API access level for your Office Add-in.
 ms.date: 06/26/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Permissions element

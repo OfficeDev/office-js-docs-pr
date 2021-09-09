@@ -2,7 +2,7 @@
 title: Event element in the manifest file
 description: Defines an event handler in an add-in.
 ms.date: 05/15/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Event element

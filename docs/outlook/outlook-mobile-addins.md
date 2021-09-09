@@ -2,7 +2,7 @@
 title: Outlook add-ins for Outlook Mobile
 description: Outlook mobile add-ins are supported on all Microsoft 365 business accounts, Outlook.com accounts, and support is coming soon to gmail accounts.
 ms.date: 05/27/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Add-ins for Outlook Mobile

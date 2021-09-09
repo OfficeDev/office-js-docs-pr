@@ -2,7 +2,7 @@
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: 'Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.'
 ms.date: 07/02/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Enable shared folders and shared mailbox scenarios in an Outlook add-in

@@ -2,7 +2,7 @@
 title: Dictionary element in the manifest file
 description: Defines settings for a task pane add-in that implements additional dictionary support.
 ms.date: 03/19/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Dictionary element

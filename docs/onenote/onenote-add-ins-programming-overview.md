@@ -4,7 +4,7 @@ description: 'Learn about the OneNote JavaScript API for OneNote add-ins on the 
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # OneNote JavaScript API programming overview

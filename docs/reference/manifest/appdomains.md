@@ -2,7 +2,7 @@
 title: AppDomains element in the manifest file
 description: Lists any domains in addition to the domain specified in the `SourceLocation` element that your Office Add-in will use and should be trusted by Office.
 ms.date: 06/12/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # AppDomains element

@@ -3,7 +3,7 @@ title: Add-in commands requirement sets
 description: 'Overview of Office Add-in commands requirement sets.'
 ms.date: 11/01/2020
 ms.prod: non-product-specific
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Add-in commands requirement sets
