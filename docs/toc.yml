@@ -1280,7 +1280,7 @@ items:
 - name: Samples and Community
   items:
   - name: Samples overview
-    href: develop/pnp-samples.md
+    href: develop/office-add-in-code-samples.md
   - name: Patterns and Practices community
     href: overview/patterns-and-practices-overview.md
   - name: Office Add-ins community call
