@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: 'The monthly Microsoft Office Add-ins community call schedule and resources.'
-ms.date: 09/08/2021
+ms.date: 09/09/2021
 localization_priority: Normal
 ---
 
@@ -30,7 +30,8 @@ Missed a previous community call? Check out the following blog resources to catc
 ## See also
 
 - [Recurring, monthly community call calendar invite](https://aka.ms/officeaddinscommunitycall)
-- [All Microsoft 365 developer community calls](https://aka.ms/M365DevCalls​)
 - [Community call topic requests and questions](https://aka.ms/officeaddinsform)
-- [Microsoft 365 Developer YouTube channel](https://aka.ms/OfficeDevYouTube)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/M365PnP)
+- [Microsoft 365 developer YouTube channel](https://aka.ms/m365devyoutube)
+- [Microsoft 365 community YouTube channel](https://aka.ms/M365PnP)
+- [Microsoft 365 tech community](https://aka.ms/m365pnp/community)
+- [Microsoft 365 tech community blog](https://aka.ms/m365pnp/community/blog)
