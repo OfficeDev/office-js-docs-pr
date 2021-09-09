@@ -1291,12 +1291,13 @@ items:
     - name: Use search options to find text in your Word add-in
       href: word/search-option-guidance.md
       displayName: Word
-- name: Samples and Community
+- name: Samples
   items:
   - name: Samples overview
-    href: develop/office-add-in-code-samples.md
-  - name: Patterns and Practices community
-    href: overview/patterns-and-practices-overview.md
+    href: overview/office-add-in-code-samples.md
+  - name: Open in Excel
+    href: excel/pnp-open-in-excel.md
+    displayName: Excel
   - name: Office Add-ins community call
     href: overview/office-add-ins-community-call.md
 - name: VSTO and COM transition resources
