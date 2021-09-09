@@ -2,7 +2,7 @@
 title: Integrate built-in Office buttons into custom control groups and tabs
 description: 'Learn how to include built-in Office buttons in your custom command groups and tabs on the Office ribbon.'
 ms.date: 02/25/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 

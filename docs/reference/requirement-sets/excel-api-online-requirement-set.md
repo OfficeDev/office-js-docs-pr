@@ -3,7 +3,7 @@ title: Excel JavaScript API online-only requirement set
 description: 'Details about the ExcelApiOnline requirement set.'
 ms.date: 07/23/2021
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Excel JavaScript API online-only requirement set

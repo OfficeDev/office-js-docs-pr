@@ -2,7 +2,7 @@
 title: Develop Office Add-ins
 description: 'An introduction to developing Office Add-ins.'
 ms.date: 07/08/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Develop Office Add-ins

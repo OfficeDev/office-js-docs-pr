@@ -2,7 +2,7 @@
 title: Office.context.mailbox.item - requirement set 1.3
 description: 'Outlook Mailbox API requirement set 1.3 version of the Item object model.'
 ms.date: 07/16/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # item (Mailbox requirement set 1.3)

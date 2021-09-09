@@ -3,7 +3,7 @@ title: "Tutorial: Share data and events between Excel custom functions and the t
 description: 'Learn how to share data and events between custom functions and the task pane in Excel.'
 ms.date: 08/04/2021
 ms.prod: excel
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Tutorial: Share data and events between Excel custom functions and the task pane

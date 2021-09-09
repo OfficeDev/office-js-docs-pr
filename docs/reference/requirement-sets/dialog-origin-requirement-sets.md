@@ -3,7 +3,7 @@ title: Dialog Origin requirement sets
 description: 'Learn more about the Dialog Origin requirement sets.'
 ms.date: 07/22/2021
 ms.prod: non-product-specific
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Dialog Origin requirement sets

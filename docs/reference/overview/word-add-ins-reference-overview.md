@@ -3,7 +3,7 @@ title: Word JavaScript API overview
 description: 'Overview of the Word JavaScript API'
 ms.date: 09/04/2020
 ms.prod: word
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Word JavaScript API overview

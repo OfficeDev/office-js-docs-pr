@@ -2,7 +2,7 @@
 title: Use the Outlook REST APIs from an Outlook add-in
 description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
 ms.date: 07/06/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Use the Outlook REST APIs from an Outlook add-in

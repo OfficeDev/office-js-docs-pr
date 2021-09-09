@@ -2,7 +2,7 @@
 title: Get the whole document from an add-in for Word
 description: 'Learn to get the whole document from a Word add-in.'
 ms.date: 12/04/2017
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Get the whole document from an add-in for Word or PowerPoint

@@ -2,7 +2,7 @@
 title: Troubleshoot Outlook contextual add-in activation
 description: Possible reasons your add-in doesn't activate as you expect.
 ms.date: 09/02/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Troubleshoot Outlook add-in activation

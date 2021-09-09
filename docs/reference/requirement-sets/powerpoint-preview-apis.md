@@ -3,7 +3,7 @@ title: PowerPoint JavaScript preview APIs
 description: 'Details about upcoming PowerPoint JavaScript APIs.'
 ms.date: 01/27/2021
 ms.prod: powerpoint
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # PowerPoint JavaScript preview APIs

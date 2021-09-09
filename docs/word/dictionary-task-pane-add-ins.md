@@ -2,7 +2,7 @@
 title: Create a dictionary task pane add-in
 description: 'Learn how to create a dictionary task pane add-in'
 ms.date: 09/26/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 

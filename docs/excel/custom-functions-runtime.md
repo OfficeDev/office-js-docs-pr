@@ -2,7 +2,7 @@
 ms.date: 07/08/2021
 description: Understand Excel custom functions that don't use a task pane and their specific JavaScript runtime.
 title: Runtime for UI-less Excel custom functions
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Runtime for UI-less Excel custom functions

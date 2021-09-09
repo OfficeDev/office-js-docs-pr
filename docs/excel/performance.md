@@ -2,7 +2,7 @@
 title: Excel JavaScript API performance optimization
 description: 'Optimize Excel add-in performance using the JavaScript API.'
 ms.date: 08/24/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Performance optimization using the Excel JavaScript API

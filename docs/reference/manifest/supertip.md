@@ -2,7 +2,7 @@
 title: Supertip element in the manifest file
 description: The Supertip element defines a rich tooltip (both title and description).
 ms.date: 05/07/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Supertip

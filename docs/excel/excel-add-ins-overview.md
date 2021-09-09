@@ -4,7 +4,7 @@ description: 'Excel add-in allow you to extend Excel application functionality a
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 

@@ -3,7 +3,7 @@ title: Set and get range values, text, or formulas using the Excel JavaScript AP
 description: 'Learn how to use the Excel JavaScript API to set and get range values, text, or formulas.'
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Set and get range values, text, or formulas using the Excel JavaScript API

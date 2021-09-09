@@ -2,7 +2,7 @@
 title: Handle and return errors from your custom function
 description: 'Handle and return errors like #NULL! from your custom function.'
 ms.date: 08/12/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Handle and return errors from your custom function

@@ -3,7 +3,7 @@ ms.date: 07/27/2021
 title: "Configure your Office Add-in to use a shared JavaScript runtime"
 ms.prod: non-product-specific
 description: 'Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.'
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Configure your Office Add-in to use a shared JavaScript runtime

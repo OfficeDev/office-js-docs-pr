@@ -2,7 +2,7 @@
 title: TabletSettings element in the manifest file
 description: The TabletSettings element specifies control settings that apply when your mail add-in is used on a tablet.
 ms.date: 04/09/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # TabletSettings element

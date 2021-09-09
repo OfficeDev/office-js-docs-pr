@@ -2,7 +2,7 @@
 title: Support Internet Explorer 11
 description: 'Learn how to support Internet Explorer 11 and ES5 Javascript in your add-in.'
 ms.date: 08/13/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Support Internet Explorer 11
