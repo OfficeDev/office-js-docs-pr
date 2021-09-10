@@ -2,7 +2,7 @@
 title: Match strings as well-known entities in an Outlook add-in
 description: Using the Office JavaScript API, you can get strings that match specific well-known entities for further processing.
 ms.date: 04/15/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Match strings in an Outlook item as well-known entities

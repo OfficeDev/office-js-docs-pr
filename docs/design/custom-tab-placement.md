@@ -2,7 +2,7 @@
 title: Position a custom tab on the ribbon
 description: 'Learn how to control where a custom tab appears on the Office ribbon and whether it has focus by default.'
 ms.date: 02/25/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 

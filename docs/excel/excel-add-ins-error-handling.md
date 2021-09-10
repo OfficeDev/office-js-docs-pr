@@ -2,7 +2,7 @@
 title: Error handling with the Excel JavaScript API
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
 ms.date: 08/27/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 

@@ -3,7 +3,7 @@ title: Excel JavaScript API overview
 description: 'Learn more about the Excel JavaScript API'
 ms.date: 04/05/2021
 ms.prod: excel
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Excel JavaScript API overview

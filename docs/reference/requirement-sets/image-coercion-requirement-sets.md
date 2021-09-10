@@ -3,7 +3,7 @@ title: Image Coercion requirement sets
 description: 'Support for Image Coercion requirement sets with Office Add-ins across Excel, PowerPoint, and Word.'
 ms.date: 02/19/2021
 ms.prod: non-product-specific
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Image Coercion requirement sets

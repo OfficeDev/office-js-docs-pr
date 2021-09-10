@@ -2,7 +2,7 @@
 title: Authorizations element in the manifest file
 description: Specifies the external resources that the add-in's web application needs authorization to and the required permissions.
 ms.date: 08/12/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Authorizations element

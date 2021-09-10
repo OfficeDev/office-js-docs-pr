@@ -2,7 +2,7 @@
 title: Convert an Office Add-in project in Visual Studio to TypeScript
 description: 'Learn how to convert an Office Add-in project in Visual Studio to use TypeScript.'
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Convert an Office Add-in project in Visual Studio to TypeScript

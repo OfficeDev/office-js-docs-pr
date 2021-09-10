@@ -2,7 +2,7 @@
 title: Authentication options in Outlook add-ins
 description: Outlook add-ins provide a number of different methods to authenticate, depending on your specific scenario.
 ms.date: 09/03/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Authentication options in Outlook add-ins

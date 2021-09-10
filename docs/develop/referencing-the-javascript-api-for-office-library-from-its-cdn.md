@@ -2,7 +2,7 @@
 title: Referencing the Office JavaScript API library
 description: 'Learn how to reference the Office JavaScript API library and type definitions in your add-in.'
 ms.date: 02/18/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Referencing the Office JavaScript API library

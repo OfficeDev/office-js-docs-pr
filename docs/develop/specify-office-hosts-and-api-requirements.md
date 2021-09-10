@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements
 description: 'Learn how to specify Office applications and API requirements for your add-in to work as expected.'
 ms.date: 05/04/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Specify Office applications and API requirements

@@ -2,7 +2,7 @@
 title: Enable single sign-on for Office Add-ins
 description: 'Learn how to enable single sign-on for Office Add-ins using common Microsoft personal, work, or education accounts.'
 ms.date: 09/03/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Enable single sign-on for Office Add-ins

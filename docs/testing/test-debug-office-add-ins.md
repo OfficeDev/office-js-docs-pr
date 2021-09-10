@@ -2,7 +2,7 @@
 title: Test and debug Office Add-ins
 description: 'Learn how to test and debug your Office Add-in'
 ms.date: 05/19/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Test and debug Office Add-ins

@@ -2,7 +2,7 @@
 title: Control element in the manifest file
 description: Defines a JavaScript function that executes an action or launches a task pane.
 ms.date: 01/29/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Control element
