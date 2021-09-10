@@ -31,7 +31,7 @@ The following table shows which browser is used for the various platforms and op
 |iOS|any|Not applicable|Safari|
 |Android|any|Not applicable|Chrome|
 |Windows 7, 8.1, 10 | non-subscription Office 2013 to Office 2019|Doesn't matter|Internet Explorer 11|
-|Windows 10 | non-subscription Office 2021 or later|Yes|Microsoft Edge with WebView2 (Chromium-based)<sup>1</sup>|
+|Windows 10 | non-subscription Office 2021 or later|Yes|Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
 |Windows 7 | Microsoft 365| Doesn't matter | Internet Explorer 11|
 |Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | No| Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>2</sup>| Doesn't matter|Internet Explorer 11|
