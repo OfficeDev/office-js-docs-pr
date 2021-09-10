@@ -37,7 +37,7 @@ highlightedContent:
     # Card 5
     - itemType: sample
       title: "Samples for Office Add-ins"
-      url: overview/office-add-in-samples.md
+      url: overview/office-add-in-code-samples.md
     # Card 6
     - itemType: how-to-guide
       title: Office Add-ins Beginner's guide
