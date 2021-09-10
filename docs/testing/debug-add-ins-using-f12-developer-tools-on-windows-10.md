@@ -2,7 +2,7 @@
 title: Debug add-ins using developer tools on Windows 10
 description: 'Debug add-ins using Microsoft Edge developer tools on Windows 10'
 ms.date: 12/16/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Debug add-ins using developer tools on Windows 10

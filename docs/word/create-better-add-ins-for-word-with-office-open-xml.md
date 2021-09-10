@@ -2,7 +2,7 @@
 title: Create better add-ins for Word with Office Open XML
 description: 'Overview of how to improve your Word add-in with Office Open XML.'
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 

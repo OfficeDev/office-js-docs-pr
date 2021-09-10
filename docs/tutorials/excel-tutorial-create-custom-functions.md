@@ -4,7 +4,7 @@ description: 'In this tutorial, you will create an Excel add-in that contains a 
 ms.date: 07/07/2021
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Tutorial: Create custom functions in Excel

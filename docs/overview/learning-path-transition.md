@@ -3,7 +3,7 @@ title: VSTO add-in developer's guide
 description:  A recommended path for experienced VSTO add-in developers to learning resources for Office Web Add-ins.
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # VSTO add-in developer's guide

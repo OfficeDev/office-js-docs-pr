@@ -3,7 +3,7 @@ title: Excel JavaScript preview APIs
 description: 'Details about upcoming Excel JavaScript APIs.'
 ms.date: 07/23/2021
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Excel JavaScript preview APIs

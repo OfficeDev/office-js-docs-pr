@@ -2,7 +2,7 @@
 title: Microsoft Office Add-ins community call
 description: 'The monthly Microsoft Office Add-ins community call schedule and resources.'
 ms.date: 09/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Microsoft Office Add-ins community call

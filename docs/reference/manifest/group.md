@@ -2,7 +2,7 @@
 title: Group element in the manifest file
 description: Defines a group of UI controls in a tab. 
 ms.date: 06/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Group element

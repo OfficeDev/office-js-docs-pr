@@ -2,7 +2,7 @@
 title: Work with extended overrides of the manifest
 description: 'Learn how to configure extensibility features with extended overrides of the manifest.'
 ms.date: 02/23/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Work with Extended Overrides of the manifest

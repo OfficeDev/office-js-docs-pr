@@ -2,7 +2,7 @@
 title: TargetDialect element in the manifest file
 description: The TargetDialect element defines a regional language supported by this dictionary, represented as a culture name string.
 ms.date: 03/19/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # TargetDialect element

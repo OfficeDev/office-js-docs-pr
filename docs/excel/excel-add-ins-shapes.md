@@ -2,7 +2,7 @@
 title: Work with shapes using the Excel JavaScript API
 description: 'Learn how Excel defines shapes as any object that sits on the drawing layer of Excel.'
 ms.date: 01/14/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Work with shapes using the Excel JavaScript API

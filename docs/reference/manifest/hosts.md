@@ -2,7 +2,7 @@
 title: Hosts element in the manifest file
 description: Specifies the Office client application where the Office Add-in will activate.
 ms.date: 10/09/2018
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Hosts element

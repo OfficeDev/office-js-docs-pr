@@ -2,7 +2,7 @@
 ms.date: 07/08/2021
 description: 'Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel'
 title: Receive and handle data with custom functions
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Receive and handle data with custom functions

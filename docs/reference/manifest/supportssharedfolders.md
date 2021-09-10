@@ -2,7 +2,7 @@
 title: SupportsSharedFolders element in the manifest file
 description: The SupportsSharedFolders element defines whether the Outlook add-in is available in shared folders and shared mailbox scenarios.
 ms.date: 06/15/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # SupportsSharedFolders element

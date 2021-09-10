@@ -2,7 +2,7 @@
 title: Outlook add-in manifests
 description: The manifest describes how an Outlook add-in integrates across Outlook clients; includes an example.
 ms.date: 05/27/2020
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Outlook add-in manifests

@@ -4,7 +4,7 @@ description: 'In this tutorial, you will build an Outlook add-in that inserts Gi
 ms.date: 05/12/2021
 ms.prod: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Tutorial: Build a message compose Outlook add-in

@@ -2,7 +2,7 @@
 title: Best practices and rules for the Office dialog API
 description: 'Provides rules and best practices for the Office dialog API, such as best practices for a single-page application (SPA)'
 ms.date: 07/22/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Best practices and rules for the Office dialog API

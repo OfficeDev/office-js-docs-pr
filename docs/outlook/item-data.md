@@ -2,7 +2,7 @@
 title: Get or set item data in an Outlook add-in
 description: Depending on whether an add-in is activated in a read or compose form, the properties that are available to the add-in on an item differ.
 ms.date: 12/10/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Get and set Outlook item data in read or compose forms
