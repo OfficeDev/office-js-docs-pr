@@ -12,7 +12,7 @@ metadata:
   ms.topic: hub-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 05/10/2021 #Required; mm/dd/yyyy format.
+  ms.date: 09/09/2021 #Required; mm/dd/yyyy format.
 
 # highlightedContent section
 # Maximum of 8 items
@@ -37,7 +37,7 @@ highlightedContent:
     # Card 5
     - itemType: sample
       title: "Samples for Office Add-ins"
-      url: develop/pnp-samples.md
+      url: overview/office-add-in-samples.md
     # Card 6
     - itemType: how-to-guide
       title: Office Add-ins Beginner's guide

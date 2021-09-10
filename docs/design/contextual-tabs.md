@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: 'Learn how to add custom contextual tabs to your Office Add-in.'
-ms.date: 09/02/2021
+ms.date: 09/09/2021
 localization_priority: Normal
 ---
 
@@ -48,6 +48,10 @@ The following are the major steps for including a custom contextual tab in an ad
 1. Define the tab and the groups and controls that appear on it.
 1. Register the contextual tab with Office.
 1. Specify the circumstances when the tab will be visible.
+
+## Configure the add-in to use a shared runtime
+
+Adding custom contextual tabs requires your add-in to use the shared runtime. For more information, see [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## Define the groups and controls that appear on the tab
 
@@ -587,9 +591,9 @@ function showDataTab() {
 }
 ```
 
-## PnP resources
+## Resources
 
-- PnP sample: [Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-contextual-tabs)
-- Community demo – PnP: Contextual tabs sample
+- [Code sample: Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-contextual-tabs)
+- Community demo of contextual tabs sample
 
 > [!VIDEO https://www.youtube.com/embed/9tLfm4boQIo]

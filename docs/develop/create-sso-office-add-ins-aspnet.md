@@ -173,7 +173,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     var retryGetAccessToken = 0;
 
     async function getGraphData() {
-        await getDataWithToken();
+        await getDataWithToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true });
     }
     ```
 
