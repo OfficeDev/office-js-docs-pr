@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
-ms.date: 08/09/2021
+ms.date: 09/10/2021
 ms.localizationpriority: medium
 ---
 
@@ -30,7 +30,8 @@ The following table shows which browser is used for the various platforms and op
 |Mac|any|Not applicable|Safari|
 |iOS|any|Not applicable|Safari|
 |Android|any|Not applicable|Chrome|
-|Windows 7, 8.1, 10 | non-subscription Office 2013 or later|Doesn't matter|Internet Explorer 11|
+|Windows 7, 8.1, 10 | non-subscription Office 2013 to Office 2019|Doesn't matter|Internet Explorer 11|
+|Windows 7, 8.1, 10 | non-subscription Office 2021 or later|Yes|Microsoft Edge with WebView2 (Chromium-based)|
 |Windows 7 | Microsoft 365| Doesn't matter | Internet Explorer 11|
 |Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | No| Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>| Doesn't matter|Internet Explorer 11|
