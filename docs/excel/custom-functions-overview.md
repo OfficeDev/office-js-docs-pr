@@ -4,7 +4,7 @@ title: Create custom functions in Excel
 ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 # Create custom functions in Excel
 

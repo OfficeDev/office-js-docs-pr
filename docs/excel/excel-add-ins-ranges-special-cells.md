@@ -3,7 +3,7 @@ title: Find special cells within a range using the Excel JavaScript API
 description: 'Learn how to use the Excel JavaScript API to find special cells, such as cells with formulas, errors, or numbers.' 
 ms.date: 07/08/2021
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Find special cells within a range using the Excel JavaScript API

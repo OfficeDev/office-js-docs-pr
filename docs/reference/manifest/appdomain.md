@@ -2,7 +2,7 @@
 title: AppDomain element in the manifest file
 description: Specifies additional domains that are used by your add-in and should be trusted by Office.
 ms.date: 06/12/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # AppDomain element

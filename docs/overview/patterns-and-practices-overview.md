@@ -2,7 +2,7 @@
 title: Overview of Patterns and Practices (PnP) for Office Add-ins
 description: 'Overview of Patterns and Practices (PnP) content for Office Add-in developers.'
 ms.date: 01/22/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Overview of Patterns and Practices (PnP) for Office Add-ins

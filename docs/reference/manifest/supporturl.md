@@ -2,7 +2,7 @@
 title: SupportUrl element in the manifest file
 description: The SupportUrl element specifies the URL of a page that provides support information for your add-in.
 ms.date: 10/09/2018
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # SupportUrl element

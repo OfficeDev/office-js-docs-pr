@@ -1,8 +1,8 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
-ms.date: 07/08/2021
-localization_priority: Normal
+ms.date: 09/03/2021
+ms.localizationpriority: medium
 ---
 
 # Create an ASP.NET Office Add-in that uses single sign-on
@@ -27,7 +27,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Set up the starter project
 
-Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/officedev/office-add-in-aspnet-sso).
+Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 > [!NOTE]
 > There are two versions of the sample.
@@ -180,7 +180,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. Below the `getGraphData` function add the following function. Note that you create the `handleClientSideErrors` function in a later step.
 
     ```javascript
-    async function getDataWithToken() {
+    async function getDataWithToken(options) {
         try {
 
             // TODO 1: Get the bootstrap token and send it to the server to exchange
@@ -199,20 +199,19 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     }
     ```
 
-1. Replace `TODO 1` with the following. About this code, note:
+1. Replace `TODO 1` with the following code to get the access token from the Office host. The **options** parameter contains the following settings passed from the previous **getGraphData()** function.
 
-    * `getAccessToken` tells Office to get a bootstrap token from Azure AD and return to the add-in.
-    * `allowSignInPrompt` tells Office to prompt the user to sign in if the user isn't already signed into Office.
-    * `allowConsentPrompt` tells Office to prompt the user to consent to letting the add-in access the user's AAD profile, if consent has not already been granted. (The resulting prompt does *not* allow the user to consent to any Microsoft Graph scopes.)
-    * `forMSGraphAccess` tells Office that the add-in intends to swap the bootstrap token for an access token to Microsoft Graph (instead of just using the bootstrap token as a user ID token). Setting this option gives Office a chance to cancel the process of getting a bootstrap token (and return error code 13012) if the user's tenant administrator has not granted consent to the add-in. The add-in's client-side code can respond to the 13012 by branching to a fallback authorization system. If the `forMSGraphAccess` is not used and the admin has not granted consent, the bootstrap token is returned, but the attempt to exchange it with the on-behalf-of flow would result in an error. Thus, the `forMSGraphAccess` option enables the add-in to branch to the fallback system quickly.
+    * `allowSignInPrompt` is set to true. This tells Office to prompt the user to sign in if the user isn't already signed into Office.
+    * `allowConsentPrompt` is set to true. This tells Office to prompt the user to consent to letting the add-in access the user's Microsoft Azure Active Directory profile, if consent has not already been granted. (The resulting prompt does *not* allow the user to consent to any Microsoft Graph scopes.)
+    * `forMSGraphAccess` is set to true. This informs Office to return an error (code 13012) if the user or administrator has not granted consent to Graph scopes for the add-in. To access Microsoft Graph the add-in must exchange the access token for a new access token through the on-behalf-of flow. Setting `forMSGraphAccess` to true helps avoid the scenario where **getAccessToken()** is successful, but then the on-behalf-of flow fails later for Microsoft Graph. The add-in's client-side code can respond to the 13012 by branching to a fallback authorization system.
+
+    Also note for the following code:
+
     * You create the `getData` function in a later step.
-    * The `/api/values` parameter is the URL of a server-side controller that will make the token exchange and use the access token it gets back to make the call to Microsoft Graph.
+    * The `/api/values` parameter is the URL of a server-side controller that will use the on-behalf-of flow to exchange the token for a new access token to call Microsoft Graph.
 
     ```javascript
-    let bootstrapToken = await OfficeRuntime.auth.getAccessToken({
-        allowSignInPrompt: true,
-        allowConsentPrompt: true,
-        forMSGraphAccess: true });
+    let bootstrapToken = await Office.auth.getAccessToken(options);
 
     getData("/api/values", bootstrapToken);
     ```

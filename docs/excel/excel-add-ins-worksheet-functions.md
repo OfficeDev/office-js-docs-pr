@@ -2,7 +2,7 @@
 title: Calling built-in Excel worksheet functions using the Excel JavaScript API
 description: 'Learn how to call built-in Excel worksheet functions such as `VLOOKUP` and `SUM` using the Excel JavaScript API.'
 ms.date: 12/19/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Call built-in Excel worksheet functions

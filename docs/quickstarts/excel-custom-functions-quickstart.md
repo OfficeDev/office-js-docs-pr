@@ -3,7 +3,7 @@ ms.date: 08/04/2021
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Get started developing Excel custom functions

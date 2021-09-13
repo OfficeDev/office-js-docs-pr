@@ -2,7 +2,7 @@
 title: Use regular expression activation rules to show an add-in
 description: Learn how to use regular expression activation rules for Outlook contextual add-ins.
 ms.date: 07/28/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Use regular expression activation rules to show an Outlook add-in

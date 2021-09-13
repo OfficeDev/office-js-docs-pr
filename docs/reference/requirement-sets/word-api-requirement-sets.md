@@ -3,7 +3,7 @@ title: Word JavaScript API requirement sets
 description: 'Office Add-in requirement set information for Word builds.'
 ms.date: 05/05/2021
 ms.prod: word
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Word JavaScript API requirement sets

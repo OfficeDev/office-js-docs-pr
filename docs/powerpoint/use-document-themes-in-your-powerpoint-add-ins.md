@@ -2,7 +2,7 @@
 title: Use document themes in your PowerPoint add-ins
 description: 'Learn how to visually coordinate themes such as fonts and colors to apply to presentations, documents, worksheets, and emails.'
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Use document themes in your PowerPoint add-ins

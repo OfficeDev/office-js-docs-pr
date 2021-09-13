@@ -2,7 +2,7 @@
 title: Set element in the manifest file
 description: The Set element specifies an Office JavaScript API requirement set your Office Add-in requires in order to activate.
 ms.date: 03/19/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Set element

@@ -2,7 +2,7 @@
 title: Use the Office dialog box to play a video
 description: 'Learn how to open and play a video in the Office dialog box'
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Use the Office dialog box to show a video

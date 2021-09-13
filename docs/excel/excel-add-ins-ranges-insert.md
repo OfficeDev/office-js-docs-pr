@@ -3,7 +3,7 @@ title: Insert ranges using the Excel JavaScript API
 description: 'Learn how to insert a range of cells with the Excel JavaScript API.'
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Insert a range of cells using the Excel JavaScript API

@@ -3,7 +3,7 @@ title: Implement append-on-send in your Outlook add-in
 description: Learn how to implement the append-on-send feature in your Outlook add-in.
 ms.topic: article
 ms.date: 02/01/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Implement append-on-send in your Outlook add-in

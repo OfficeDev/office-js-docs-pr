@@ -2,7 +2,7 @@
 title: Publish task pane and content add-ins to a SharePoint app catalog
 description: To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the app catalog for their organization.
 ms.date: 07/27/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Publish task pane and content add-ins to a SharePoint app catalog

@@ -3,7 +3,7 @@ title: Dialog API requirement sets
 description: 'Learn more about the Dialog API requirement sets.'
 ms.date: 07/19/2021
 ms.prod: non-product-specific
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Dialog API requirement sets

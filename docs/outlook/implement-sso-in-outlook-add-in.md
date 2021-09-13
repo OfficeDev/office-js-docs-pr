@@ -1,15 +1,15 @@
 ---
 title: Scenario - Implement single sign-on to your service
 description: Learn about using the single-sign-on token and Exchange identity token provided by an Outlook add-in to implement SSO with your service.
-ms.date: 02/09/2021
-localization_priority: Normal
+ms.date: 09/03/2021
+ms.localizationpriority: medium
 ---
 
 # Scenario: Implement single sign-on to your service in an Outlook add-in
 
 In this article we'll explore a recommended method of using the [single sign-on access token](authenticate-a-user-with-an-sso-token.md) and the [Exchange identity token](authenticate-a-user-with-an-identity-token.md) together to provide a single-sign on implementation to your own backend service. By using both tokens together, you can take advantage of the benefits of the SSO access token when it is available, while ensuring that your add-in will work when it is not, such as when the user switches to a client that does not support them, or if the user's mailbox is on an on-premises Exchange server.
 
-For a sample add-in that implements the ideas in this article, see [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO).
+For a sample add-in that implements the ideas in this article, see [Outlook Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO).
 
 
 > [!NOTE]
@@ -78,7 +78,7 @@ Based on the response from the backend Web API, the add-in may need to authorize
 1. The add-in notifies the user that it needs them to authorize their use of the API and asks them to click a link or button to start the process.
 
     > [!NOTE]
-    > The example add-in at [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO) shows how to use the [Dialog API](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_) and the [office-js-helpers library](https://github.com/OfficeDev/office-js-helpers) as options to start the [OAuth2 Authorization Code flow](/azure/active-directory/develop/active-directory-protocols-oauth-code) for the API.
+    > The example add-in at [Outlook Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO) shows how to use the [Dialog API](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) and the [office-js-helpers library](https://github.com/OfficeDev/office-js-helpers) as options to start the [OAuth2 Authorization Code flow](/azure/active-directory/develop/active-directory-protocols-oauth-code) for the API.
 
 1. Once the flow completes, the add-in sends the refresh token to the backend Web API and includes the SSO token (if available) or the Exchange identity token.
 

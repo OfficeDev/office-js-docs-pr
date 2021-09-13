@@ -2,7 +2,7 @@
 title: Debug Office Add-ins in Visual Studio
 description: 'Use Visual Studio to debug Office Add-ins in the Office desktop client on Windows'
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Debug Office Add-ins in Visual Studio

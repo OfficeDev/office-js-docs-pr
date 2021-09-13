@@ -3,7 +3,7 @@ title: Work with formula precedents and dependents using the Excel JavaScript AP
 description: 'Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.' 
 ms.date: 07/02/2021
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Get formula precedents and dependents using the Excel JavaScript API

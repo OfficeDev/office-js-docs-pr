@@ -2,7 +2,7 @@
 title: Dialog boxes in Office Add-ins
 description: 'Learn best practices for the visual design of dialogs in Office Add-ins.'
 ms.date: 03/19/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 

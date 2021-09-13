@@ -2,7 +2,7 @@
 ms.date: 07/08/2021
 description: 'Batch custom functions together to reduce network calls to a remote service.'
 title: Batching custom function calls for a remote service
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Batch custom function calls for a remote service

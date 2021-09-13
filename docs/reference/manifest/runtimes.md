@@ -3,7 +3,7 @@ title: Runtimes in the manifest file
 description: The Runtimes element specifies your add-in's runtime.
 ms.date: 05/14/2021
 
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Runtimes element

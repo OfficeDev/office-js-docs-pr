@@ -2,7 +2,7 @@
 title: Icon guidelines for Office Add-ins
 description: 'Get an overview of how to design icons and the Fresh and Monoline design styles for add-in commands.'
 ms.date: 05/12/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Icons

@@ -4,7 +4,7 @@ description: 'Build an Excel add-in that creates, populates, filters, and sorts 
 ms.date: 07/08/2021
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Tutorial: Create an Excel task pane add-in

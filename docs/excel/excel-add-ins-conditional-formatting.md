@@ -2,7 +2,7 @@
 title: Apply conditional formatting to ranges with the Excel JavaScript API
 description: 'Learn about conditional formatting in the context of Excel JavaScript add-ins.'
 ms.date: 04/01/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Apply conditional formatting to Excel ranges

@@ -2,7 +2,7 @@
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
 ms.date: 05/11/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # ExtensionPoint element
