@@ -1,9 +1,9 @@
 ---
 title: "Tutorial: Share data and events between Excel custom functions and the task pane"
 description: 'Learn how to share data and events between custom functions and the task pane in Excel.'
-ms.date: 08/13/2020
+ms.date: 08/04/2021
 ms.prod: excel
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Tutorial: Share data and events between Excel custom functions and the task pane
@@ -141,7 +141,7 @@ Now that custom functions run in the same context as your task pane code, they c
 ### Create task pane controls to work with global data
 
 1. Open the file **src/taskpane/taskpane.html**.
-2. Add the following script element just before the `</head>` element.
+2. Add the following script element just before the closing `</head>` element.
 
    ```html
    <script src="functions.js"></script>
@@ -178,18 +178,19 @@ Now that custom functions run in the same context as your task pane code, they c
    </div>
    ```
 
-4. Before the `<body>` element add the following script. This code will handle the button click events when the user wants to store or get global data.
+4. Before the closing `</body>` element, add the following script. This code will handle the button click events when the user wants to store or get global data.
 
    ```js
    <script>
    function storeSharedValue() {
-   let sharedValue = document.getElementById('storeBox').value;
-   window.sharedState = sharedValue;
+     let sharedValue = document.getElementById('storeBox').value;
+     window.sharedState = sharedValue;
    }
 
    function getSharedValue() {
-   document.getElementById('getBox').value = window.sharedState;
-   }</script>
+     document.getElementById('getBox').value = window.sharedState;
+   }
+   </script>
    ```
 
 5. Save the file.

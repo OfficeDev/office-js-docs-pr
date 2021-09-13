@@ -2,7 +2,7 @@
 title: Work with OneNote page content
 description: 'Learn how to work with OneNote page content using the JavaScript API.'
 ms.date: 03/19/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Work with OneNote page content
@@ -18,8 +18,8 @@ In the OneNote add-ins JavaScript API, page content is represented by the follow
 
 To create an empty OneNote page, use one of the following methods.
 
-- [Section.addPage](/javascript/api/onenote/onenote.section#addpage-title-)
-- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
+- [Section.addPage](/javascript/api/onenote/onenote.section#addPage_title_)
+- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertSectionAsSibling_location__title_)
 
 Then use methods in the following objects to work with the page content, such as `Page.addOutline` and `Outline.appendHtml`.
 

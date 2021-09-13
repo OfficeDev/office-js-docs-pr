@@ -4,7 +4,7 @@ description: 'Learn the basics of Word Add-ins.'
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Word add-ins overview

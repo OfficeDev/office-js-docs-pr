@@ -2,7 +2,7 @@
 title: Script element in the manifest file
 description: The Script element defines script settings a custom function uses in Excel.
 ms.date: 10/09/2018
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Script element

@@ -2,7 +2,7 @@
 title: Addressing same-origin policy limitations in Office Add-ins
 description: 'Learn how to accommodate same-origin policy limitations with JSONP, CORS, IFRAMEs and other techniques.'
 ms.date: 10/17/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 

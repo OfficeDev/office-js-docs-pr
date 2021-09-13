@@ -2,7 +2,7 @@
 title: Understanding the Office JavaScript API
 description: 'An introduction to the Office JavaScript API'
 ms.date: 03/18/2020
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Understanding the Office JavaScript API

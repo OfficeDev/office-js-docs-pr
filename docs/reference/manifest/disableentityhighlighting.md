@@ -2,7 +2,7 @@
 title: DisableEntityHighlighting element in the manifest file
 description: Specifies whether entity highlighting should be turned off for your mail add-in.
 ms.date: 10/09/2018
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # DisableEntityHighlighting element

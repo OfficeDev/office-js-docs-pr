@@ -1,8 +1,8 @@
 ---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
 description: 'Learn how to build a task pane add-in for Project Professional 2013 that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance.'
-ms.date: 09/26/2019
-localization_priority: Normal
+ms.date: 07/08/2021
+ms.localizationpriority: medium
 ---
 
 # Create a Project add-in that uses REST with an on-premises Project Server OData service
@@ -11,7 +11,7 @@ This article describes how to build a task pane add-in for Project Professional 
 
 The code in this article is based on a sample developed by Saurabh Sanghvi and Arvind Iyer, Microsoft Corporation.
 
-## Prerequisites for creating a task pane add-in that reads Project Server reporting data
+## Prerequisites
 
 The following are the prerequisites for creating a Project task pane add-in that reads the **ProjectData** service of a Project Web App instance in an on-premises installation of Project Server 2013.
 
@@ -28,9 +28,9 @@ The following are the prerequisites for creating a Project task pane add-in that
 
     Verify that the **ProjectData** service is accessible from your development computer.
 
-### Procedure 1. To verify that the ProjectData service is accessible
+### Procedure 1. Verify that the ProjectData service is accessible
 
-1. To enable your browser to directly show the XML data from a REST query, turn off the feed reading view. For information about how to do this in Internet Explorer, see Procedure 1, step 4 in [Querying OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
+1. To enable your browser to directly show the XML data from a REST query, turn off the feed reading view. For information about how to do this in Internet Explorer, see Procedure 1, step 4 in [Query OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
 2. Query the **ProjectData** service by using your browser with the following URL: **http://ServerName /ProjectServerName /_api/ProjectData**. For example, if the Project Web App instance is  `http://MyServer/pwa`, the browser shows the following results.
 
@@ -54,7 +54,7 @@ The following are the prerequisites for creating a Project task pane add-in that
 
 3. You may have to provide your network credentials to see the results. If the browser shows "Error 403, Access Denied," either you do not have logon permission for that Project Web App instance, or there is a network problem that requires administrative help.
 
-## Using Visual Studio to create a task pane add-in for Project
+## Use Visual Studio to create a task pane add-in for Project
 
 Office Developer Tools for Visual Studio includes a template for task pane add-ins for Project 2013. If you create a solution named **HelloProjectOData**, the solution contains the following two Visual Studio projects:
 
@@ -62,7 +62,7 @@ Office Developer Tools for Visual Studio includes a template for task pane add-i
 
 - The web project is named **HelloProjectODataWeb**. It includes the webpages, JavaScript files, CSS files, images, references, and configuration files for the web content in the task pane. The web project targets the .NET Framework 4. Procedure 4 and Procedure 5 show how to modify the files in the web project to create the functionality of the **HelloProjectOData** add-in.
 
-### Procedure 2. To create the HelloProjectOData add-in for Project
+### Procedure 2. Create the HelloProjectOData add-in for Project
 
 1. Run Visual Studio 2015 as an administrator, and then select **New Project** on the Start page.
 
@@ -72,35 +72,35 @@ Office Developer Tools for Visual Studio includes a template for task pane add-i
 
 4. In the **Name** field, typeHelloProjectOData, and then choose **OK**.
 
-    *Figure 1. Creating an Office Add-in*
+    *Figure 1. Create an Office Add-in*
 
-    ![Creating an Office Add-in.](../images/pj15-hello-project-o-data-creating-app.png)
+    ![Create an Office Add-in.](../images/pj15-hello-project-o-data-creating-app.png)
 
 5. In the **Choose the add-in type** dialog box, select **Task pane** and choose **Next** (see the next screenshot).
 
     *Figure 2. Choosing the type of add-in to create*
 
-    ![Choosing the type of add-in to create.](../images/pj15-hello-project-o-data-choose-project.png)
+    ![Choose the type of add-in to create.](../images/pj15-hello-project-o-data-choose-project.png)
 
 6. In the **Choose the host applications** dialog box, clear all check boxes except the **Project** check box (see the next screenshot) and choose **Finish**.
 
     *Figure 3. Choosing the host application*
 
-    ![Choosing Project as the only host application.](../images/create-office-add-in.png)
+    ![Choose Project as the only host application.](../images/create-office-add-in.png)
 
     Visual Studio creates the **HelloProjectOdata** project and the **HelloProjectODataWeb** project.
 
 The **AddIn** folder (see the next screenshot) contains the App.css file for custom CSS styles. In the **Home** subfolder , the Home.html file contains references to the CSS files and the JavaScript files that the add-in uses, and the HTML5 content for the add-in. Also, the Home.js file is for your custom JavaScript code. The **Scripts** folder includes the jQuery library files. The **Office** subfolder includes the JavaScript libraries such as office.js and project-15.js, plus the language libraries for standard strings in the Office Add-ins. In the **Content** folder, the Office.css file contains the default styles for all of the Office Add-ins.
 
-*Figure 4. Viewing the default web project files in Solution Explorer*
+*Figure 4. View the default web project files in Solution Explorer*
 
-![Viewing the web project files in the Solution Expl.](../images/pj15-hello-project-o-data-initial-solution-explorer.png)
+![View the web project files in the Solution Explorer.](../images/pj15-hello-project-o-data-initial-solution-explorer.png)
 
 The manifest for the **HelloProjectOData** project is the HelloProjectOData.xml file. You can optionally modify the manifest to add a description of the add-in, a reference to an icon, information for additional languages, and other settings. Procedure 3 simply modifies the add-in display name and description, and adds an icon.
 
 For more information about the manifest, see [Office Add-ins XML manifest](../develop/add-in-manifests.md) and [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md#see-also).
 
-### Procedure 3. To modify the add-in manifest
+### Procedure 3. Modify the add-in manifest
 
 1. In Visual Studio, open the HelloProjectOData.xml file.
 
@@ -120,7 +120,7 @@ The following steps show how to add an icon file to the Visual Studio solution.
 
     ![Icon for the HelloProjectOData app.](../images/pj15-hello-project-data-new-icon.jpg)
 
-3. In the HelloProjectOData.xml manifest, add an **IconUrl** element below the **Description** element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. The HelloProjectOData.xml manifest file now contains the following (your **Id** value will be different):
+3. In the HelloProjectOData.xml manifest, add an **IconUrl** element below the **Description** element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: `<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`. The HelloProjectOData.xml manifest file now contains the following (your **Id** value will be different):
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -145,9 +145,9 @@ The following steps show how to add an icon file to the Visual Studio solution.
     </OfficeApp>
     ```
 
-## Creating the HTML content for the HelloProjectOData add-in
+## Create the HTML content for the HelloProjectOData add-in
 
-The **HelloProjectOData** add-in is a sample that includes debugging and error output; it is not intended for production use. Before you start coding the HTML content, design the UI and user experience for the add-in, and outline the JavaScript functions that interact with the HTML code. For more information, see[Design guidelines for Office Add-ins](../design/add-in-design.md). 
+The **HelloProjectOData** add-in is a sample that includes debugging and error output; it is not intended for production use. Before you start coding the HTML content, design the UI and user experience for the add-in, and outline the JavaScript functions that interact with the HTML code. For more information, see [Design guidelines for Office Add-ins](../design/add-in-design.md).
 
 The task pane shows the add-in display name at the top, which is the value of the **DisplayName** element in the manifest. The **body** element in the HelloProjectOData.html file contains the other UI elements, as follows:
 
@@ -164,7 +164,7 @@ The task pane shows the add-in display name at the top, which is the value of th
     > [!NOTE]
     > In this example, cost and work data for the active project are derived from the published values. If you change values in Project, the **ProjectData** service does not have the changes until the project is published.
 
-### Procedure 4. To create the HTML content
+### Procedure 4. Create the HTML content
 
 1. In the **head** element of the Home.html file, add any additional **link** elements for CSS files that your add-in uses. The Visual Studio project template includes a link for the App.css file that you can use for custom CSS styles.
 
@@ -269,7 +269,7 @@ The task pane shows the add-in display name at the top, which is the value of th
     </body>
     ```
 
-## Creating the JavaScript code for the add-in
+## Create the JavaScript code for the add-in
 
 The template for a Project task pane add-in includes default initialization code that is designed to demonstrate basic get and set actions for data in a document for a typical Office 2013 add-in. Because Project 2013 does not support actions that write to the active project, and the **HelloProjectOData** add-in does not use the `getSelectedDataAsync` method, you can delete the script within the `Office.initialize` function, and delete the `setData` function and `getData` function in the default HelloProjectOData.js file.
 
@@ -277,7 +277,7 @@ The JavaScript includes global constants for the REST query and global variables
 
 The remainder of the HelloProjectOData.js file includes two functions: the `retrieveOData` function is called when the user selects **Compare All Projects**; and the `parseODataResult` function calculates averages and then populates the comparison table with values that are formatted for color and units.
 
-### Procedure 5. To create the JavaScript code
+### Procedure 5. Create the JavaScript code
 
 1. Delete all code in the default HelloProjectOData.js file, and then add the global variables and `**`Office.initialize` function. Variable names that are all capitals imply that they are constants; they are later used with the **_pwa** variable to create the REST query in this example.
 
@@ -536,11 +536,11 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
     }
     ```
 
-## Testing the HelloProjectOData add-in
+## Test the HelloProjectOData add-in
 
 To test and debug the **HelloProjectOData** add-in with Visual Studio 2015, Project Professional 2013 must be installed on the development computer. To enable different test scenarios, ensure that you can choose whether Project opens for files on the local computer or connects with Project Web App. For example, do the following steps.
 
-1. On the **FILE** tab on the ribbon, choose the **Info** tab in the Backstage view, and then choose **Manage Accounts**.
+1. On the **File** tab, choose the **Info** tab in the Backstage view, and then choose **Manage Accounts**.
 
 2. In the **Project web app Accounts** dialog box, the **Available accounts** list can have multiple Project Web App accounts in addition to the local **Computer** account. In the **When starting** section, select **Choose an account**.
 
@@ -554,7 +554,7 @@ Basic tests should include the following:
 
 - Run the add-in again, where you create a project that has tasks with cost and work data. You can save the project to Project Web App, but don't publish it. Verify that the add-in displays data from Project Server, but **NA** for the current project.
 
-### Procedure 6. To test the add-in
+### Procedure 6. Test the add-in
 
 1. Run Project Professional 2013, connect with Project Web App, and then create a test project. Assign tasks to local resources or to enterprise resources, set various values of percent complete on some tasks, and then publish the project. Quit Project, which enables Visual Studio to start Project for debugging the add-in.
 
@@ -562,17 +562,17 @@ Basic tests should include the following:
 
 3. On the **PROJECT** tab of the ribbon, in the **Office Add-ins** drop-down list, select **Hello ProjectData** (see Figure 5). The **Compare All Projects** button should be disabled.
 
-    *Figure 5. Starting the HelloProjectOData add-in*
+    *Figure 5. Start the HelloProjectOData add-in*
 
-    ![Testing the HelloProjectOData app.](../images/pj15-hello-project-data-test-the-app.png)
+    ![Test the HelloProjectOData app.](../images/pj15-hello-project-data-test-the-app.png)
 
 4. In the **Hello ProjectData** task pane, select **Get ProjectData Endpoint**. The **projectDataEndPoint** line should show the URL of the **ProjectData** service, and the **Compare All Projects** button should be enabled (see Figure 6).
 
 5. Select **Compare All Projects**. The add-in may pause while it retrieves data from the **ProjectData** service, and then it should display the formatted average and current values in the table.
 
-    *Figure 6. Viewing results of the REST query*
+    *Figure 6. View results of the REST query*
 
-    ![Viewing results of the REST query.](../images/pj15-hello-project-data-rest-results.png)
+    ![View results of the REST query.](../images/pj15-hello-project-data-rest-results.png)
 
 6. Examine output in the text box. It should show the document path, REST query, status information, and JSON results from the calls to **ajax** and **parseODataResult**. The output helps to understand, create, and debug code in the `parseODataResult` method such as `projCost += Number(res.d.results[i].ProjectCost);`.
 
@@ -626,17 +626,17 @@ Basic tests should include the following:
 
 7. Stop debugging (press **Shift + F5**), and then press **F5** again to run a new instance of Project. In the **Login** dialog box, choose the local **Computer** profile, not Project Web App. Create or open a local project .mpp file, open the **Hello ProjectData** task pane, and then select **Get ProjectData Endpoint**. The add-in should show a **No connection!** error (see Figure 7), and the **Compare All Projects** button should remain disabled.
 
-   *Figure 7. Using the add-in without a Project web app connection*
+   *Figure 7. Use the add-in without a Project web app connection*
 
-   ![Using the app without a Project Web App connection.](../images/pj15-hello-project-data-no-connection.png)
+   ![Use the app without a Project Web App connection.](../images/pj15-hello-project-data-no-connection.png)
 
 8. Stop debugging, and then press **F5** again. Log on to Project Web App, and then create a project that contains cost and work data. You can save the project, but don't publish it.
 
    In the **Hello ProjectData** task pane, when you select **Compare All Projects**, you should see a blue **NA** for fields in the **Current** column (see Figure 8).
 
-   *Figure 8. Comparing an unpublished project with other projects*
+   *Figure 8. Compare an unpublished project with other projects*
 
-   ![Comparing an unpublished project with others.](../images/pj15-hello-project-data-not-published.png)
+   ![Compare an unpublished project with others.](../images/pj15-hello-project-data-not-published.png)
 
 Even if your add-in is working correctly in the previous tests, there are other tests that should be run. For example:
 
@@ -1092,7 +1092,7 @@ If **HelloProjectOData** were a production add-in to be sold in AppSource or dis
 
 The add-in should contain additional error checks, plus logic to catch and explain or show edge cases. For example, if a Project Web App instance has 1000 projects with an average duration of five days and average cost of $2400, and the active project is the only one that has a duration longer than 20 days, the cost and work comparison would be skewed. That could be shown with a frequency graph. You could add options to display duration, compare similar length projects, or compare projects from the same or different departments. Or, add a way for the user to select from a list of fields to display.
 
-For other queries of the **ProjectData** service, there are limits to the length of the query string, which affects the number of steps that a query can take from a parent collection to an object in a child collection. For example, a two-step query of **Projects** to **Tasks** to task item works, but a three-step query such as **Projects** to **Tasks** to **Assignments** to assignment item may exceed the default maximum URL length. For more information, see [Querying OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
+For other queries of the **ProjectData** service, there are limits to the length of the query string, which affects the number of steps that a query can take from a parent collection to an object in a child collection. For example, a two-step query of **Projects** to **Tasks** to task item works, but a three-step query such as **Projects** to **Tasks** to **Assignments** to assignment item may exceed the default maximum URL length. For more information, see [Query OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
 If you modify the **HelloProjectOData** add-in for production use, do the following steps.
 
@@ -1102,11 +1102,11 @@ If you modify the **HelloProjectOData** add-in for production use, do the follow
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-- Rewrite the `retrieveOData` function to enable queries of more than 100 projects. For example, you could get the number of projects with a `~/ProjectData/Projects()/$count` query, and use the _$skip_ operator and _$top_ operator in the REST query for project data. Run multiple queries in a loop, and then average the data from each query. Each query for project data would be of the form: 
+- Rewrite the `retrieveOData` function to enable queries of more than 100 projects. For example, you could get the number of projects with a `~/ProjectData/Projects()/$count` query, and use the _$skip_ operator and _$top_ operator in the REST query for project data. Run multiple queries in a loop, and then average the data from each query. Each query for project data would be of the form:
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
 
-  For more information, see [OData System Query Options Using the REST Endpoint](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). You can also use the [Set-SPProjectOdataConfiguration](/powershell/module/sharepoint-server/Set-SPProjectOdataConfiguration?view=sharepoint-ps&preserve-view=true) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](/previous-versions/office/project-odata/jj163015(v=office.15)).
+  For more information, see [OData system query options using the REST endpoint](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). You can also use the [Set-SPProjectOdataConfiguration](/powershell/module/sharepoint-server/Set-SPProjectOdataConfiguration?view=sharepoint-ps&preserve-view=true) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](/previous-versions/office/project-odata/jj163015(v=office.15)).
 
 - To deploy the add-in, see [Publish your Office Add-in](../publish/publish.md).
 

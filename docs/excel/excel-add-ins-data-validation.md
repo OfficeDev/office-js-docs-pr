@@ -2,16 +2,16 @@
 title: Add data validation to Excel ranges
 description: 'Learn how the Excel JavaScript APIs enable your add-in to add automatic data validation to tables, columns, rows, and other ranges in a workbook.'
 ms.date: 03/19/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Add data validation to Excel ranges
 
 The Excel JavaScript Library provides APIs to enable your add-in to add automatic data validation to tables, columns, rows, and other ranges in a workbook. To understand the concepts and the terminology of data validation, please see the following articles about how users add data validation through the Excel UI.
 
-- [Apply data validation to cells](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
-- [More on data validation](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
-- [Description and examples of data validation in Excel](https://support.microsoft.com/help/211485/description-and-examples-of-data-validation-in-excel)
+- [Apply data validation to cells](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249)
+- [More on data validation](https://support.microsoft.com/office/f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
+- [Description and examples of data validation in Excel](https://support.microsoft.com/help/211485)
 
 ## Programmatic control of data validation
 
@@ -40,7 +40,7 @@ The first three `DataValidationRule` properties (i.e., validation rule types) ta
 
 Here is an example of creating a validation rule. Note the following about this code.
 
-- The `operator` is the binary operator "GreaterThan". Whenever you use a binary operator, the value that the user tries to enter in the cell is the left-hand operand and the value specified in `formula1` is the right-hand operand. So this rule says that only whole numbers that are greater than 0 are valid. 
+- The `operator` is the binary operator "GreaterThan". Whenever you use a binary operator, the value that the user tries to enter in the cell is the left-hand operand and the value specified in `formula1` is the right-hand operand. So this rule says that only whole numbers that are greater than 0 are valid.
 - The `formula1` is a hard-coded number. If you don't know at coding time what the value should be, you can also use an Excel formula (as a string) for the value. For example, "=A3" and "=SUM(A4,B5)" could also be values of `formula1`.
 
 ```js
@@ -109,7 +109,7 @@ Excel.run(function (context) {
 Use the `list` property in the `DataValidationRule` object to specify that the only valid values are those from a finite list. The following is an example. Note the following about this code.
 
 - It assumes that there is a worksheet named "Names" and that the values in the range "A1:A3" are names.
-- The `source` property specifies the list of valid values. The string argument refers to a range containing the names. You can also assign a comma-delimited list; for example: "Sue, Ricky, Liz". 
+- The `source` property specifies the list of valid values. The string argument refers to a range containing the names. You can also assign a comma-delimited list; for example: "Sue, Ricky, Liz".
 - The `inCellDropDown` property specifies whether a drop-down control will appear in the cell when the user selects it. If set to `true`, then the drop-down appears with the list of values from the `source`.
 
 ```js
@@ -205,7 +205,7 @@ For more information, see [DataValidationPrompt](/javascript/api/excel/excel.dat
 
 ## Remove data validation from a range
 
-To remove data validation from a range, call the  [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear--) method.
+To remove data validation from a range, call the  [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear__) method.
 
 ```js
 myrange.dataValidation.clear()

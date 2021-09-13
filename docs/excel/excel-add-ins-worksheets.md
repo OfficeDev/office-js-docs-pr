@@ -2,7 +2,7 @@
 title: Work with worksheets using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.'
 ms.date: 07/02/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Work with worksheets using the Excel JavaScript API
@@ -493,7 +493,7 @@ The `protect` method has two optional parameters:
 - `options`: A [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) object defining specific editing restrictions.
 - `password`: A string representing the password needed for a user to bypass protection and edit the worksheet.
 
-The article [Protect a worksheet](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.
+The article [Protect a worksheet](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.
 
 ## Page layout and print settings
 

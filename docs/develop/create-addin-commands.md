@@ -1,8 +1,8 @@
 ---
 title: Create add-in commands in your manifest for Excel, PowerPoint, and Word
 description: 'Use VersionOverrides in your manifest to define add-in commands for Excel, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.'
-ms.date: 05/12/2021
-localization_priority: Normal
+ms.date: 07/08/2021
+ms.localizationpriority: medium
 ---
 
 
@@ -199,7 +199,7 @@ The following code shows how to implement the function used by **FunctionName**.
 
 ## Step 6: Add ExtensionPoint elements
 
-The **ExtensionPoint** element defines where add-in commands should appear in the Office UI. You can define **ExtensionPoint** elements with these **xsi:type** values:
+The **ExtensionPoint** element defines where add-in commands should appear in the Office UI. You can define **ExtensionPoint** elements with these **xsi:type** values.
 
 - **PrimaryCommandSurface**, which refers to the ribbon in Office.
 

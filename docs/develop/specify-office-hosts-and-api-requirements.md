@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements
 description: 'Learn how to specify Office applications and API requirements for your add-in to work as expected.'
 ms.date: 05/04/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Specify Office applications and API requirements
@@ -130,7 +130,7 @@ The following code example shows an add-in that loads in all Office client appli
 
 ## Use runtime checks in your JavaScript code
 
-You might want to provide additional functionality in your add-in if certain requirement sets are supported by the Office application. For example, you might want to use the Word JavaScript APIs in your existing add-in if your add-in runs in Word 2016. To do this, you use the [isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) method with the name of the requirement set. `isSetSupported` determines, at runtime, whether the Office application running the add-in supports the requirement set. If the requirement set is supported, `isSetSupported` returns **true** and runs the additional code that uses the API members from that requirement set. If the Office application doesn't support the requirement set, `isSetSupported` returns **false** and the additional code won't run. The following code shows the syntax to use with `isSetSupported`.
+You might want to provide additional functionality in your add-in if certain requirement sets are supported by the Office application. For example, you might want to use the Word JavaScript APIs in your existing add-in if your add-in runs in Word 2016. To do this, you use the [isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) method with the name of the requirement set. `isSetSupported` determines, at runtime, whether the Office application running the add-in supports the requirement set. If the requirement set is supported, `isSetSupported` returns **true** and runs the additional code that uses the API members from that requirement set. If the Office application doesn't support the requirement set, `isSetSupported` returns **false** and the additional code won't run. The following code shows the syntax to use with `isSetSupported`.
 
 ```js
 if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersion))

@@ -1,8 +1,8 @@
 ---
 title: Convert an Office Add-in project in Visual Studio to TypeScript
 description: 'Learn how to convert an Office Add-in project in Visual Studio to use TypeScript.'
-ms.date: 09/01/2020
-localization_priority: Normal
+ms.date: 07/08/2021
+ms.localizationpriority: medium
 ---
 
 # Convert an Office Add-in project in Visual Studio to TypeScript
@@ -25,7 +25,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 - TypeScript SDK version 2.3 or later (for Visual Studio 2019)
 
     > [!TIP]
-    > In the [Visual Studio Installer](/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section. Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected. If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose the **Modify** button to [install that individual component](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components). 
+    > In the [Visual Studio Installer](/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section. Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected. If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose **Modify** to [install that individual component](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components).
 
 - Excel 2016 or later
 
@@ -56,7 +56,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
     > [!NOTE]
     > In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript.
 
-6. In **Home.ts**, find the line `Office.initialize = function (reason) {` and add a line immediately after it to polyfill the global `window.Promise`, as shown here:
+6. In **Home.ts**, find the line `Office.initialize = function (reason) {` and add a line immediately after it to polyfill the global `window.Promise`, as shown here.
 
     ```TypeScript
     Office.initialize = function (reason) {

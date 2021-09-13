@@ -1,8 +1,8 @@
 ---
 title: How to find the proper order of manifest elements
 description: 'Learn how to find the correct order in which to place child elements in a parent element.'
-ms.date: 01/29/2021
-localization_priority: Normal
+ms.date: 09/02/2021
+ms.localizationpriority: medium
 ---
 
 # How to find the proper order of manifest elements
@@ -204,7 +204,6 @@ The following sections show the manifest elements in the order in which they mus
                                     <Title>
                                     <FunctionName>
                     <CustomTab>
-                        <OverriddenByRibbonApi>
                         <Group> (can be below <ControlGroup>)
                             <OverriddenByRibbonApi>
                             <Label>

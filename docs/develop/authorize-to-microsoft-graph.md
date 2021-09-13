@@ -1,8 +1,8 @@
 ---
 title: Authorize to Microsoft Graph with SSO
 description: 'Learn how users of an Office Add-in can use single sign-on (SSO) to fetch data from Microsoft Graph.'
-ms.date: 02/09/2021
-localization_priority: Normal
+ms.date: 07/27/2021
+ms.localizationpriority: medium
 ---
 
 # Authorize to Microsoft Graph with SSO
@@ -25,7 +25,7 @@ The following diagram shows how the process of signing in and getting access to 
 
 ![Diagram showing the SSO process.](../images/sso-access-to-microsoft-graph.png)
 
-1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). This tells the Office client application to obtain an access token to the add-in. (Hereafter, this is called the **bootstrap access token** because it is replaced with a second token later in the process. For an example of a decoded bootstrap access token, see [Example access token](sso-in-office-add-ins.md#example-access-token).)
+1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). This tells the Office client application to obtain an access token to the add-in. (Hereafter, this is called the **bootstrap access token** because it is replaced with a second token later in the process. For an example of a decoded bootstrap access token, see [Example access token](sso-in-office-add-ins.md#example-access-token).)
 2. If the user is not signed in, the Office client application opens a pop-up window for the user to sign in.
 3. If this is the first time the current user has used your add-in, he or she is prompted to consent.
 4. The Office client application requests the **bootstrap access token** from the Azure AD v2.0 endpoint for the current user.
@@ -62,7 +62,7 @@ For examples of detailed walkthroughs and scenarios, see:
 
 ## Distributing SSO-enabled add-ins in Microsoft AppSource
 
-When a Microsoft 365 admin acquires an add-in from [AppSource](https://appsource.microsoft.com), the admin can redistribute it by [centralized deployment](../publish/centralized-deployment.md) and grant admin consent to the add-in to access Microsoft Graph scopes. It's also possible, however, for the end user to acquire the add-in directly from AppSource, in which case the user must grant consent to the add-in. This can create a potential performance problem for which we've provided a solution.
+When a Microsoft 365 admin acquires an add-in from [AppSource](https://appsource.microsoft.com), the admin can redistribute it through [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) and grant admin consent to the add-in to access Microsoft Graph scopes. It's also possible, however, for the end user to acquire the add-in directly from AppSource, in which case the user must grant consent to the add-in. This can create a potential performance problem for which we've provided a solution.
 
 If your code passes the `allowConsentPrompt` option in the call of `getAccessToken`, like `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );`, then Office can prompt the user for consent if Azure AD reports to Office that consent has not yet been granted to the add-in. However, for security reasons, Office can only prompt the user to consent to the Azure AD `profile` scope. *Office cannot prompt for consent to any Microsoft Graph scopes*, not even `User.Read`. This means that if the user grants consent on the prompt, Office will return a bootstrap token. But the attempt to exchange the bootstrap token for an access token to Microsoft Graph will fail with error AADSTS65001, which means consent (to Microsoft Graph scopes) has not been granted.
 

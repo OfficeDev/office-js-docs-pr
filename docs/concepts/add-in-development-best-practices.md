@@ -2,7 +2,7 @@
 title: Best practices for developing Office Add-ins
 description: 'Apply the best practices when developing to create Office Add-ins.'
 ms.date: 05/12/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 
@@ -73,7 +73,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 ### Optimize for touch
 
-- Use the [Context.touchEnabled](/javascript/api/office/office.context#touchenabled) property to detect whether the Office application that your add-in runs on is touch enabled.
+- Use the [Context.touchEnabled](/javascript/api/office/office.context#touchEnabled) property to detect whether the Office application that your add-in runs on is touch enabled.
 
   > [!NOTE]
   > This property is not supported in Outlook.

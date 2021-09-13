@@ -1,10 +1,10 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 02/09/2021
+ms.date: 07/08/2021
 ms.prod: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Tutorial: Create a Word task pane add-in
@@ -313,7 +313,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 1. Be sure there are at least three paragraphs in the document. You can choose the **Insert Paragraph** button three times. *Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*
 
-1. In Word, create a [custom style](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) named "MyCustomStyle". It can have any formatting that you want.
+1. In Word, create a [custom style](https://support.microsoft.com/office/d38d6e47-f6fc-48eb-a607-1eb120dec563) named "MyCustomStyle". It can have any formatting that you want.
 
 1. Choose the **Apply Style** button. The first paragraph will be styled with the built-in style **Intense Reference**.
 
@@ -396,7 +396,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
 ### Add code to fetch document properties into the task pane's script objects
 
-In all previous functions in this series of tutorials, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method which sends the queued commands to the document to be executed. But the code you added in the last step calls the `originalRange.text` property, and this is a significant difference from the earlier functions you wrote, because the `originalRange` object is only a proxy object that exists in your task pane's script. It doesn't know what the actual text of the range in the document is, so its `text` property can't have a real value. It is necessary to first fetch the text value of the range from the document and use it to set the value of `originalRange.text`. Only then can `originalRange.text` be called without causing an exception to be thrown. This fetching process has three steps:
+In all previous functions in this series of tutorials, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method which sends the queued commands to the document to be executed. But the code you added in the last step calls the `originalRange.text` property, and this is a significant difference from the earlier functions you wrote, because the `originalRange` object is only a proxy object that exists in your task pane's script. It doesn't know what the actual text of the range in the document is, so its `text` property can't have a real value. It is necessary to first fetch the text value of the range from the document and use it to set the value of `originalRange.text`. Only then can `originalRange.text` be called without causing an exception to be thrown. This fetching process has three steps.
 
    1. Queue a command to load (that is; fetch) the properties that your code needs to read.
 
@@ -812,7 +812,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 > [!NOTE]
 > There are several types of content controls that can be added to a Word document through the UI, but currently only Rich Text content controls are supported by Word.js.
 >
-> Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with the controls and their properties. For details, see [Create forms that users complete or print in Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).
+> Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with the controls and their properties. For details, see [Create forms that users complete or print in Word](https://support.microsoft.com/office/040c5cc1-e309-445b-94ac-542f732c8c8b).
 
 ### Create a content control
 

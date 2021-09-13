@@ -1,8 +1,8 @@
 ---
 title: Sideload Office Add-ins in Office on the web for testing
 description: 'Test your Office Add-in in Office on the web by sideloading.'
-ms.date: 04/14/2021
-localization_priority: Normal
+ms.date: 08/02/2021
+ms.localizationpriority: medium
 ---
 
 # Sideload Office Add-ins in Office on the web for testing
@@ -94,7 +94,7 @@ If you're using Visual Studio to develop your add-in, the process to sideload is
 
 ## Remove a sideloaded add-in
 
-You can remove a previously sideloaded add-in by clearing your browser's cache. If you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you may need to [clear the Office cache](clear-cache.md) and then re-sideload the add-in using the updated manifest. Doing so will allow Office to render the add-in as it's described by the updated manifest.
+You can remove a previously sideloaded add-in by clearing your browser's cache. If you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you may need to clear your browser's cache and then re-sideload the add-in using the updated manifest. Doing so will allow Office on the web to render the add-in as it's described by the updated manifest.
 
 ## See also
 

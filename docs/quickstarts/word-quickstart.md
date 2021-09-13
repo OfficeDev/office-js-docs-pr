@@ -1,9 +1,9 @@
 ---
 title: Build your first Word task pane add-in
 description: Learn how to build a simple Word task pane add-in by using the Office JS API.
-ms.date: 10/14/2020
+ms.date: 08/04/2021
 ms.prod: word
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Build your first Word task pane add-in
@@ -52,7 +52,7 @@ After you complete the wizard, the generator creates the project and installs su
     cd "My Office Add-in"
     ```
 
-2. Complete the following steps to start the local web server and sideload your add-in.
+1. Complete the following steps to start the local web server and sideload your add-in.
 
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
@@ -78,11 +78,11 @@ After you complete the wizard, the generator creates the project and installs su
 
         To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-3. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Screenshot showing the Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-2b.png)
 
-4. At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.
+1. At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.
 
     ![Screenshot of the Word application with the task pane add-in loaded.](../images/word-quickstart-addin-1c.png)
 

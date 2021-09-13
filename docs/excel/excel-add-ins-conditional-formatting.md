@@ -2,7 +2,7 @@
 title: Apply conditional formatting to ranges with the Excel JavaScript API
 description: 'Learn about conditional formatting in the context of Excel JavaScript add-ins.'
 ms.date: 04/01/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Apply conditional formatting to Excel ranges
@@ -11,8 +11,8 @@ The Excel JavaScript Library provides APIs to apply conditional formatting to da
 
 > [!NOTE]
 > This article covers conditional formatting in the context of Excel JavaScript add-ins. The following articles provide detailed information about the full conditional formatting capabilities within Excel.
-> -  [Add, change, or clear conditional formats](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
-> -  [Use formulas with conditional formatting](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
+> -  [Add, change, or clear conditional formats](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
+> -  [Use formulas with conditional formatting](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
 
 ## Programmatic control of conditional formatting
 
@@ -333,5 +333,5 @@ await context.sync();
 
 - [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)
 - [ConditionalFormat Object (JavaScript API for Excel)](/javascript/api/excel/excel.conditionalformat)
-- [Add, change, or clear conditional formats](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
-- [Use formulas with conditional formatting](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
+- [Add, change, or clear conditional formats](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
+- [Use formulas with conditional formatting](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)

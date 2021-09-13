@@ -2,7 +2,7 @@
 title: Outlook add-in API requirement set 1.10
 description: 'Requirement set 1.10 for Outlook add-in API.'
 ms.date: 05/17/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Outlook add-in API requirement set 1.10
@@ -21,9 +21,9 @@ Requirement set 1.10 includes all of the features of [requirement set 1.9](../re
 - Added [LaunchEvent extension point](../../manifest/extensionpoint.md#launchevent): Adds a new supported type of ExtensionPoint. It configures event-based activation functionality.
 - Added [LaunchEvents manifest element](../../manifest/launchevents.md): Adds a manifest element to support configuring event-based activation functionality.
 - Modified [Runtimes manifest element](../../manifest/runtimes.md): Adds Outlook support. It references the HTML and JavaScript files needed for event-based activation functionality.
-- Added [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-1.10&preserve-view=true#setsignatureasync-data--options--callback-): Adds a new function to the `Body` object. It adds or replaces the signature in the item body in Compose mode.
+- Added [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-1.10&preserve-view=true#setSignatureAsync_data__options__callback_): Adds a new function to the `Body` object. It adds or replaces the signature in the item body in Compose mode.
 - Added [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods): Adds a new function that disables the client signature for the sending mailbox in Compose mode.
-- Added [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getcomposetypeasync-options--callback-): Adds a new function that gets the compose type of a message in Compose mode.
+- Added [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getComposeTypeAsync_options__callback_): Adds a new function that gets the compose type of a message in Compose mode.
 - Added [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods): Adds a new function that checks if the client signature is enabled on the item in Compose mode.
 - Added [Office.MailboxEnums.ActionType](/javascript/api/outlook/office.mailboxenums.actiontype): Adds a new enum. It represents the type of custom action in a notification message.
 - Added [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true): Adds a new enum available in Compose mode.

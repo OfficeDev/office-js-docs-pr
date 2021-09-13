@@ -1,15 +1,15 @@
 ---
 title: Authenticate a user with a single-sign-on token
-description: Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.
-ms.date: 08/20/2020
-localization_priority: Normal
+description: 'Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.'
+ms.date: 09/03/2021
+ms.localizationpriority: medium
 ---
 
 # Authenticate a user with a single-sign-on token in an Outlook add-in
 
 Single sign-on (SSO) provides a seamless way for your add-in to authenticate users (and optionally to obtain access tokens to call the [Microsoft Graph API](/graph/overview)).
 
-Using this method, your add-in can obtain an access token scoped to your server back-end API. The add-in uses this as a bearer token in the `Authorization` header to authenticate a call back to your API. Optionally, you can also have your server-side code:
+Using this method, your add-in can obtain an access token scoped to your server back-end API. The add-in uses this as a bearer token in the `Authorization` header to authenticate a call back to your API. Optionally, you can also have your server-side code.
 
 - Complete the On-Behalf-Of flow to obtain an access token scoped to the Microsoft Graph API
 - Use the identity information in the token to establish the user's identity and authenticate to your own back-end services
@@ -45,6 +45,6 @@ In most scenarios, there would be little point to obtaining the access token, if
 
 ## See also
 
-- For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO).
+- For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [Outlook Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO).
 - [SSO API reference](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [IdentityAPI requirement set](../reference/requirement-sets/identity-api-requirement-sets.md)

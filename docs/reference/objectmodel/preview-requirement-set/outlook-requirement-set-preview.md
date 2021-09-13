@@ -1,8 +1,8 @@
 ---
 title: Outlook add-in API preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 06/15/2021
-localization_priority: Normal
+ms.date: 08/27/2021
+ms.localizationpriority: medium
 ---
 
 # Outlook add-in API preview requirement set
@@ -75,6 +75,26 @@ Added a new enum `AppointmentSensitivityType` that represents the sensitivity op
 
 ---
 
+### Delay delivery time
+
+#### [Office.context.mailbox.item.delayDeliveryTime](office.context.mailbox.item.md#properties)
+
+Added a new property that returns an object that allows you to manage the delivery date and time of a message in Compose mode.
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+
+#### [Office.DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime)
+
+Added a new object that allows you to manage the delivery date and time of a message in Compose mode.
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+
+<br>
+
+---
+
+---
+
 ### Event-based activation
 
 This feature was released in [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). However, additional events are now available in preview. To learn more, refer to [Supported events](../../../outlook/autolaunch.md#supported-events).
@@ -103,7 +123,7 @@ Added a new function that returns initialization data passed when the add-in is 
 
 ### Office theme
 
-#### [Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
+#### [Office.context.officeTheme](/javascript/api/office/office.context#officeTheme)
 
 Added ability to get Office theme.
 

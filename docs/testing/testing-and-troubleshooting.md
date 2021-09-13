@@ -1,21 +1,19 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: 'Learn how to troubleshoot user errors in Office Add-ins.'
-ms.date: 09/08/2020
-localization_priority: Normal
+ms.date: 07/08/2021
+ms.localizationpriority: medium
 ---
 
 # Troubleshoot user errors with Office Add-ins
 
-At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in. 
+At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in.
 
 You can also use [Fiddler](https://www.telerik.com/fiddler) to identify and debug issues with your add-ins.
 
 ## Common errors and troubleshooting steps
 
 The following table lists common error messages that users might encounter and steps that your users can take to resolve the errors.
-
-
 
 |**Error message**|**Resolution**|
 |:-----|:-----|
@@ -35,20 +33,16 @@ You can also give us feedback: if using Excel on Windows or Mac, you can report 
 
 ## Outlook add-in doesn't work correctly
 
-If an Outlook add-in running on Windows and [using Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) is not working correctly, try turning on script debugging in Internet Explorer. 
-
+If an Outlook add-in running on Windows and [using Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) is not working correctly, try turning on script debugging in Internet Explorer.
 
 - Go to Tools > **Internet Options** > **Advanced**.
-
 - Under **Browsing**, uncheck **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)**.
 
 We recommend that you uncheck these settings only to troubleshoot the issue. If you leave them unchecked, you will get prompts when you browse. After the issue is resolved, check **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)** again.
 
-
 ## Add-in doesn't activate in Office 2013
 
 If the add-in doesn't activate when the user performs the following steps.
-
 
 1. Signs in with their Microsoft account in Office 2013.
 

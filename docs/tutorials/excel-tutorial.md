@@ -1,10 +1,10 @@
 ---
 title: Excel add-in tutorial
-description: 'In this tutorial, you will build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
-ms.date: 05/12/2021
+description: 'Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
+ms.date: 07/08/2021
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Tutorial: Create an Excel task pane add-in
@@ -642,7 +642,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
 
 ### Add code to fetch document properties into the task pane's script objects
 
-In each function that you've created in this tutorial until now, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method, which sends the queued commands to the document to be executed. However, the code you added in the last step calls the `sheet.protection.protected property`. This is a significant difference from the earlier functions you wrote, because the `sheet` object is only a proxy object that exists in your task pane's script. The proxy object doesn't know the actual protection state of the document, so its `protection.protected` property can't have a real value. To avoid an exception error, you must first fetch the protection status from the document and use it set the value of `sheet.protection.protected`. This fetching process has three steps:
+In each function that you've created in this tutorial until now, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method, which sends the queued commands to the document to be executed. However, the code you added in the last step calls the `sheet.protection.protected property`. This is a significant difference from the earlier functions you wrote, because the `sheet` object is only a proxy object that exists in your task pane's script. The proxy object doesn't know the actual protection state of the document, so its `protection.protected` property can't have a real value. To avoid an exception error, you must first fetch the protection status from the document and use it set the value of `sheet.protection.protected`. This fetching process has three steps.
 
    1. Queue a command to load (that is; fetch) the properties that your code needs to read.
 
@@ -851,7 +851,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
     popup: "./src/dialogs/popup.js"
     ```
 
-    After you've done this, the new `entry` object will look like this:
+    After you've done this, the new `entry` object will look like this.
 
     ```js
     entry: {
@@ -872,7 +872,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
     })
     ```
 
-    After you've done this, the new `plugins` array will look like this:
+    After you've done this, the new `plugins` array will look like this.
 
     ```js
     plugins: [

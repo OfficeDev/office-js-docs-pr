@@ -2,7 +2,7 @@
 title: Icon element in the manifest file
 description: Defines Image elements for Button or Menu controls.
 ms.date: 03/30/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Icon element

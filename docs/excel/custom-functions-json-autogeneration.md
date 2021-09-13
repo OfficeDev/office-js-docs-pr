@@ -1,8 +1,8 @@
 ---
-ms.date: 03/15/2021
+ms.date: 07/08/2021
 description: 'Use JSDoc tags to dynamically create your custom functions JSON metadata.'
 title: Autogenerate JSON metadata for custom functions
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Autogenerate JSON metadata for custom functions
@@ -15,7 +15,7 @@ Add the `@customfunction` tag in the code comments for a JavaScript or TypeScrip
 
 The function parameter types may be provided using the [@param](#param) tag in JavaScript, or from the [Function type](https://www.typescriptlang.org/docs/handbook/functions.html) in TypeScript. For more information, see the [@param](#param) tag and [Types](#types) sections.
 
-### Adding a description to a function
+### Add a description to a function
 
 The description is displayed to the user as help text when they need help to understand what your custom function does. The description doesn't require any specific tag. Just enter a short text description in the JSDoc comment. In general the description is placed at the start of the JSDoc comment section, but it will work no matter where it is placed.
 
@@ -30,7 +30,6 @@ In the following example, the phrase "Calculates the volume of a sphere." is the
 ...
  */
 ```
-
 
 ## JSDoc Tags
 
@@ -156,9 +155,7 @@ JavaScript Syntax: @param {type} name _description_
 * `name` specifies the parameter that the @param tag applies to. It is required.
 * `description` provides the description which appears in Excel for the function parameter. It is optional.
 
-To denote a custom function parameter as optional:
-
-* Put square brackets around the parameter name. For example: `@param {string} [text] Optional text`.
+To denote a custom function parameter as optional, put square brackets around the parameter name. For example, `@param {string} [text] Optional text`.
 
 > [!NOTE]
 > The default value for optional parameters is `null`.

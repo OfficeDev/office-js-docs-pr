@@ -1,8 +1,8 @@
 ---
 title: Data visualization style guidelines for Office Add-ins
 description: 'Get some good practices for how to visualize data in an Office Add-in.'
-ms.date: 05/12/2021
-localization_priority: Normal
+ms.date: 07/08/2021
+ms.localizationpriority: medium
 ---
 
 # Data visualization style guidelines for Office Add-ins
@@ -19,7 +19,7 @@ Data visualizations share a general framework and common visual and interactive 
 
 ### Chart titles
 
-Follow these guidelines for chart titles:
+Follow these guidelines for chart titles.
 
 - Make your chart titles easily readable. Position them to create a clear visual hierarchy in relation to the rest of the chart.
 - In general, use sentence capitalization (capitalize the first word). To create contrast or to reinforce hierarchies, you can use all caps, but all caps should be used sparingly.
@@ -64,7 +64,6 @@ Add legends if necessary to:
 - Present scale or value changes
 
 Make sure that your legends enhance the data ink and do not compete with it. Place legends:
-
 
 - Flush left above the plot area by default, if all legend items fit above the chart.
 - On the upper right side of the plot area, if all legend items do not fit above the chart, and make it scrollable, if necessary.

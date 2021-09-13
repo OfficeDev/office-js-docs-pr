@@ -1,11 +1,11 @@
 ---
-ms.date: 07/10/2019
+ms.date: 07/08/2021
 description: 'Batch custom functions together to reduce network calls to a remote service.'
 title: Batching custom function calls for a remote service
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
-# Batching custom function calls for a remote service
+# Batch custom function calls for a remote service
 
 If your custom functions call a remote service you can use a batching pattern to reduce the number of network calls to the remote service. To reduce network round trips you batch all the calls into a single call to the web service. This is ideal when the spreadsheet is recalculated.
 
@@ -211,6 +211,7 @@ To modify the `_fetchFromRemoteService` function to run in your live remote serv
 - Place the code in the remote service.
 
 ## Next steps
+
 Learn about [the various parameters](custom-functions-parameter-options.md) you can use in your custom functions. Or review the basics behind making [a web call through a custom function](custom-functions-web-reqs.md).
 
 ## See also

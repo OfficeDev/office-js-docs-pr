@@ -1,8 +1,8 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize Excel add-in performance using the JavaScript API.'
-ms.date: 07/29/2020
-localization_priority: Normal
+ms.date: 08/24/2021
+ms.localizationpriority: medium
 ---
 
 # Performance optimization using the Excel JavaScript API
@@ -102,10 +102,145 @@ Excel.run(async (ctx) => {
 ```
 
 > [!NOTE]
-> You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--) method.
+> You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](/javascript/api/excel/excel.table#convertToRange__) method.
+
+## Payload size limit best practices
+
+The Excel JavaScript API has size limitations for API calls. Excel on the web has a payload size limit for requests and responses of 5MB, and an API returns a `RichAPI.Error` error if this limit is exceeded. On all platforms, a range is limited to five million cells for get operations. Large ranges typically exceed both of these limitations.
+
+The payload size of a request is a combination of the following three components.
+
+* The number of API calls
+* The number of objects, such as `Range` objects
+* The length of the value to set or get
+
+If an API returns the `RequestPayloadSizeLimitExceeded` error, use the best practice strategies documented in this article to optimize your script and avoid the error.
+
+### Strategy 1: Move unchanged values out of loops
+
+Limit the number of processes that occur within loops to improve performance. In the following code sample, `context.workbook.worksheets.getActiveWorksheet()` can be moved out of the `for` loop, because it doesn't change within that loop.
+
+```js
+// DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
+async function run() {
+  await Excel.run(async (context) => {
+    var ranges = [];
+    
+    // This sample retrieves the worksheet every time the loop runs, which is bad for performance.
+    for (let i = 0; i < 7500; i++) {
+      var rangeByIndex = context.workbook.worksheets.getActiveWorksheet().getRangeByIndexes(i, 1, 1, 1);
+    }    
+    await context.sync();
+  });
+}
+```
+
+The following code sample shows logic similar to the preceding code sample, but with an improved performance strategy. The value `context.workbook.worksheets.getActiveWorksheet()` is retrieved before the `for` loop, because this value doesn't need to be retrieved each time the `for` loop runs. Only values that change within the context of a loop should be retrieved within that loop.
+
+```js
+// This code sample shows a good performance strategy.
+async function run() {
+  await Excel.run(async (context) => {
+    var ranges = [];
+    // Retrieve the worksheet outside the loop.
+    var worksheet = context.workbook.worksheets.getActiveWorksheet(); 
+
+    // Only process the necessary values inside the loop.
+    for (let i = 0; i < 7500; i++) {
+      var rangeByIndex = worksheet.getRangeByIndexes(i, 1, 1, 1);
+    }    
+    await context.sync();
+  });
+}
+```
+
+### Strategy 2: Create fewer range objects
+
+Create fewer range objects to improve performance and minimize payload size. Two approaches for creating fewer range objects are described in the following article sections and code samples.
+
+#### Split each range array into multiple arrays
+
+One way to create fewer range objects is to split each range array into multiple arrays, and then process each new array with a loop and a new `context.sync()` call.
+
+> [!IMPORTANT]
+> Only use this strategy if you've first determined that you're exceeding the payload request size limit. Using multiple loops can reduce the size of each payload request to avoid exceeding the 5MB limit, but using multiple loops and multiple `context.sync()` calls also negatively impacts performance.
+
+The following code sample attempts to process a large array of ranges in a single loop and then a single `context.sync()` call. Processing too many range values in one `context.sync()` call causes the payload request size to exceed the 5MB limit.
+
+```js
+// This code sample does not show a recommended strategy.
+// Calling 10,000 rows would likely exceed the 5MB payload size limit in a real-world situation.
+async function run() {
+  await Excel.run(async (context) => {
+    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    
+    // This sample attempts to process too many ranges at once. 
+    for (let row = 1; row < 10000; row++) {
+      var range = sheet.getRangeByIndexes(i, 1, 1, 1);
+      range.values = [["1"]];
+    }
+    await context.sync(); 
+  });
+}
+```
+
+The following code sample shows logic similar to the preceding code sample, but with a strategy that avoids exceeding the 5MB payload request size limit. In the following code sample, the ranges are processed in two separate loops, and each loop is followed by a `context.sync()` call.
+
+```js
+// This code sample shows a strategy for reducing payload request size.
+// However, using multiple loops and `context.sync()` calls negatively impacts performance.
+// Only use this strategy if you've determined that you're exceeding the payload request limit.
+async function run() {
+  await Excel.run(async (context) => {
+    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Split the ranges into two loops, rows 1-5000 and then 5001-10000.
+    for (let row = 1; row < 5000; row++) {
+      var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      range.values = [["1"]];
+    }
+    // Sync after each loop. 
+    await context.sync(); 
+    
+    for (let row = 5001; row < 10000; row++) {
+      var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      range.values = [["1"]];
+    }
+    await context.sync(); 
+  });
+}
+```
+
+#### Set range values in an array
+
+Another way to create fewer range objects is to create an array, use a loop to set all the data in that array, and then pass the array values to a range. This benefits both performance and payload size. Instead of calling `range.values` for each range in a loop, `range.values` is a called once outside the loop.
+
+The following code sample shows how to create an array, set the values of that array in a `for` loop, and then pass the array values to a range outside the loop.
+
+```js
+// This code sample shows a good performance strategy.
+async function run() {
+  await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getActiveWorksheet();    
+    // Create an array.
+    const array = new Array(10000);
+
+    // Set the values of the array inside the loop.
+    for (var i = 0; i < 10000; i++) {
+      array[i] = [1];
+    }
+
+    // Pass the array values to a range outside the loop. 
+    var range = worksheet.getRange("A1:A10000");
+    range.values = array;
+    await context.sync();
+  });
+}
+```
 
 ## See also
 
 * [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+* [Error handling with the Excel JavaScript API](excel-add-ins-error-handling.md)
 * [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
 * [Worksheet Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.functions)

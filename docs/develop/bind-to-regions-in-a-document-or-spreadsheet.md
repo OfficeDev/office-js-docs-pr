@@ -1,8 +1,8 @@
 ---
 title: Bind to regions in a document or spreadsheet
 description: 'Learn how to use binding to ensure consistent access a specific region or element of a document or spreadsheet through an identifier.'
-ms.date: 06/20/2019
-localization_priority: Normal
+ms.date: 07/08/2021
+ms.localizationpriority: medium
 ---
 
 
@@ -20,7 +20,7 @@ The [Bindings] object exposes a [getAllAsync] method that gives access to the se
 
 ## Binding types
 
-There are [three different types of bindings][Office.BindingType] that you specify with the _bindingType_ parameter when you create a binding with the [addFromSelectionAsync], [addFromPromptAsync] or [addFromNamedItemAsync] methods:
+There are [three different types of bindings][Office.BindingType] that you specify with the _bindingType_ parameter when you create a binding with the [addFromSelectionAsync], [addFromPromptAsync] or [addFromNamedItemAsync] methods.
 
 1. **[Text Binding][TextBinding]** - Binds to a region of the document that can be represented as text.
 
@@ -240,7 +240,6 @@ function write(message){
 }
 ```
 
-
 > [!NOTE]
 > If the `select` method promise successfully returns a [Binding] object, that object exposes only the following four methods of the object: [getDataAsync], [setDataAsync], [addHandlerAsync], and [removeHandlerAsync]. If the promise cannot return a Binding object, the `onError` callback can be used to access an [asyncResult].error object to get more information.If you need to call a member of the Binding object other than the four methods exposed by the [Binding] object promise returned by the `select` method, instead use the [getByIdAsync] method by using the [Document.bindings] property and Bindings.[getByIdAsync] method to retrieve the [Binding] object.
 
@@ -282,7 +281,7 @@ function write(message){
 }
 ```
 
-`myBinding` is a variable that contains an existing text binding in the document. Alternatively, you could use the [Office.select] to access the binding by its ID, and start your call to the [getDataAsync] method, like this: 
+`myBinding` is a variable that contains an existing text binding in the document. Alternatively, you could use the [Office.select] to access the binding by its ID, and start your call to the [getDataAsync] method, like this:
 
 ```js
 Office.select("bindings#myBindingID").getDataAsync
@@ -359,19 +358,19 @@ function removeEventHandlerFromBinding() {
 [MatrixBinding]:		 /javascript/api/office/office.matrixbinding
 [TableBinding]: 		 /javascript/api/office/office.tablebinding
 [TextBinding]: 			 /javascript/api/office/office.textbinding
-[getDataAsync]: 		 /javascript/api/office/Office.Binding#getdataasync-options--callback-
-[setDataAsync]: 		 /javascript/api/office/Office.Binding#setdataasync-data--options--callback-
+[getDataAsync]: 		 /javascript/api/office/office.binding#getDataAsync_options__callback_
+[setDataAsync]: 		 /javascript/api/office/office.binding#setDataAsync_data__options__callback_
 [SelectionChanged]: 	 /javascript/api/office/office.bindingselectionchangedeventargs
-[addHandlerAsync]: 		 /javascript/api/office/Office.Binding#addhandlerasync-eventtype--handler--options--callback-
-[removeHandlerAsync]: 	 /javascript/api/office/Office.Binding#removehandlerasync-eventtype--options--callback-
+[addHandlerAsync]: 		 /javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_
+[removeHandlerAsync]: 	 /javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_
 
 [Bindings]:				 /javascript/api/office/office.bindings
-[getByIdAsync]: 		 /javascript/api/office/office.bindings#getbyidasync-id--options--callback- 
-[getAllAsync]: 			 /javascript/api/office/office.bindings#getallasync-options--callback-
-[addFromNamedItemAsync]: /javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-
-[addFromSelectionAsync]: /javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-
-[addFromPromptAsync]: 	 /javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-
-[releaseByIdAsync]: 	 /javascript/api/office/office.bindings#releasebyidasync-id--options--callback-
+[getByIdAsync]: 		 /javascript/api/office/office.bindings#getByIdAsync_id__options__callback_
+[getAllAsync]: 			 /javascript/api/office/office.bindings#getAllAsync_options__callback_
+[addFromNamedItemAsync]: /javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_
+[addFromSelectionAsync]: /javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_
+[addFromPromptAsync]: 	 /javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_
+[releaseByIdAsync]: 	 /javascript/api/office/office.bindings#releaseByIdAsync_id__options__callback_
 
 [AsyncResult]: 			/javascript/api/office/office.asyncresult
 [Office.BindingType]: 	/javascript/api/office/office.bindingtype

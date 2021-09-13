@@ -2,7 +2,7 @@
 title: Troubleshooting Excel Add-ins
 description: 'Learn how to troubleshoot development errors in Excel Add-ins.'
 ms.date: 02/12/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Troubleshooting Excel Add-ins
@@ -39,7 +39,7 @@ The following APIs are affected by this workbook switch.
 
 ## Coauthoring
 
-See [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md) for patterns to use with events in a coauthoring environment. The article also discusses potential merge conflicts when using certain APIs, such as [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-).
+See [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md) for patterns to use with events in a coauthoring environment. The article also discusses potential merge conflicts when using certain APIs, such as [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_).
 
 ## Known Issues
 

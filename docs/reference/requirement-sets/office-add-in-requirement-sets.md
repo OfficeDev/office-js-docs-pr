@@ -3,7 +3,7 @@ title: Office Common API requirement sets
 description: 'Learn more about the Office Common API requirement sets.'
 ms.date: 04/28/2021
 ms.prod: non-product-specific
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Office Common API requirement sets
@@ -72,6 +72,14 @@ See [Add-in command requirement sets](add-in-commands-requirement-sets.md).
 |**Office applications**|**Methods in set**|
 |:-----|:-----|
 | See [Dialog API requirement sets](dialog-api-requirement-sets.md). | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
+
+---
+
+### DialogOrigin
+
+|**Office applications**|**Methods in set**|
+|:-----|:-----|
+| See [Dialog Origin requirement sets](dialog-origin-requirement-sets.md). | Cross-domain support for:<br>UI.messageParent<br>UI.Dialog.messageChild |
 
 ---
 

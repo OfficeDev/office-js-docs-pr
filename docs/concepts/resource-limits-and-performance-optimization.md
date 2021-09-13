@@ -1,8 +1,8 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
 description: 'Learn about the resource limits of the Office Add-in platform, including CPU and memory.'
-ms.date: 07/29/2020
-localization_priority: Normal
+ms.date: 08/17/2021
+ms.localizationpriority: medium
 ---
 
 # Resource limits and performance optimization for Office Add-ins
@@ -57,7 +57,7 @@ If you're building an Excel add-in, be aware of the following size limitations w
 
 If you expect user input to exceed these limits, be sure to check the data before calling `context.sync()`. Split the operation into smaller pieces as needed. Be sure to call `context.sync()` for each sub-operation to avoid those operations getting batched together again.
 
-These limitations are typically exceeded by large ranges. Your add-in might be able to use [RangeAreas](/javascript/api/excel/excel.rangeareas) to strategically update cells within a larger range. See [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md) for more information.
+These limitations are typically exceeded by large ranges. Your add-in might be able to use [RangeAreas](/javascript/api/excel/excel.rangeareas) to strategically update cells within a larger range. For more information about working with `RangeAreas`, see [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md). For additional information about optimizing payload size in Excel, see [Payload size limit best practices](../excel/performance.md#payload-size-limit-best-practices).
 
 ### Task pane and content add-ins
 
@@ -66,9 +66,9 @@ If any content or task pane add-in exceeds the preceding thresholds on CPU core 
 - Restart the add-in.
 - Cancel further alerts about exceeding that threshold. Ideally, the user should then delete the add-in from the document; continuing the add-in would risk further performance and stability issues.  
 
-## Verifying resource usage issues in the Telemetry Log
+## Verify resource usage issues in the Telemetry Log
 
-Office provides a Telemetry Log that maintains a record of certain events (loading, opening, closing, and errors) of Office solutions running on the local computer, including resource usage issues in an Office Add-in. If you have the Telemetry Log set up, you can use Excel to open the Telemetry Log in the following default location on your local drive:
+Office provides a Telemetry Log that maintains a record of certain events (loading, opening, closing, and errors) of Office solutions running on the local computer, including resource usage issues in an Office Add-in. If you have the Telemetry Log set up, you can use Excel to open the Telemetry Log in the following default location on your local drive.
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 
@@ -121,7 +121,7 @@ The performance tips in [Using the application-specific API model](../develop/ap
 The `untrack()` method releases the object from memory. This method is implemented on many application-specific API proxy objects. Calling `untrack()` after your add-in is done with the object should yield a noticeable performance benefit when using large numbers of proxy objects.
 
 > [!NOTE]
-> `Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). Any proxy object can be untracked by removing it from the tracked objects list in the context.
+> `Range.untrack()` is a shortcut for [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove_object_). Any proxy object can be untracked by removing it from the tracked objects list in the context.
 
 The following Excel code sample fills a selected range with data, one cell at a time. After the value is added to the cell, the range representing that cell is untracked. Run this code with a selected range of 10,000 to 20,000 cells, first with the `cell.untrack()` line, and then without it. You should notice the code runs faster with the `cell.untrack()` line than without it. You may also notice a quicker response time afterwards, since the cleanup step takes less time.
 

@@ -1,9 +1,9 @@
 ---
 title: Build your first PowerPoint task pane add-in
 description: Learn how to build a simple PowerPoint task pane add-in by using the Office JS API.
-ms.date: 10/14/2020
+ms.date: 08/04/2021
 ms.prod: powerpoint
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Build your first PowerPoint task pane add-in

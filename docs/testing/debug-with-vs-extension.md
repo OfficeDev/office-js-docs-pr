@@ -1,8 +1,8 @@
 ---
 title: Microsoft Office Add-in Debugger Extension for Visual Studio Code
 description: 'Use the Visual Studio Code extension Microsoft Office Add-in Debugger to debug your Office Add-in.'
-ms.date: 02/01/2021
-localization_priority: Normal
+ms.date: 08/18/2021
+ms.localizationpriority: medium
 ---
 
 # Microsoft Office Add-in Debugger Extension for Visual Studio Code
@@ -24,7 +24,7 @@ These instructions assume you have experience using the command line, understand
 
 ## Install and use the debugger
 
-1. If you need to create an add-in project, [use the Yo Office generator to create one](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator). Follow the prompts within the command line to set up your project. You can choose any language or type of project to suit your needs.
+1. If you need to create an add-in project, [use the Yo Office generator to create one](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator). Follow the prompts within the command line to set up your project. You can choose any language or type of project to suit your needs. This tutorial uses an Excel task pane add-in.
 
     > [!NOTE]
     > If you already have a project, skip step 1 and move to step 2.
@@ -45,7 +45,7 @@ These instructions assume you have experience using the command line, understand
   > [!TIP]
   > To open Visual Studio Code as an administrator, select the **run as administrator** option when opening Visual Studio Code after searching for it in Windows.
 
-1. Within VS Code, select **CTRL + SHIFT + X** to open the Extensions bar. Search for the "Microsoft Office Add-in Debugger" extension and install it.
+1. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "Microsoft Office Add-in Debugger" extension and install it.
 
 1. In the .vscode folder of your project, open the **launch.json** file. Add the following code to the `configurations` section.
 
@@ -62,13 +62,13 @@ These instructions assume you have experience using the command line, understand
     }
     ```
 
-1. In the section of JSON you just copied, find the "url" section. In this URL, you will need to replace the uppercase HOST text with the application that is hosting your Office Add-in. For example, if your Office Add-in is for Excel, your URL value would be "https://localhost:3000/taskpane.html?_host_Info=<strong>Excel</strong>$Win32$16.01$en-US$\$\$\$0".
+1. In the section of JSON you just copied, find the `"url"` property. In this URL, you need to replace the uppercase **HOST** text with the application that is hosting your Office Add-in. For example, if your Office Add-in is for Excel, your URL value would be `"https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$\$\$\$0"`.
 
-1. Open the command prompt and ensure you are at the root folder of your project. Run the command `npm start` to start the dev server. When your add-in loads in the Office client, open the task pane.
+1. Open the command prompt and ensure you are at the root folder of your project. Run the command `npm start` to start the dev server. When your add-in loads in the Office application, open the task pane.
 
-1. Return to Visual Studio Code and choose **View > Debug** or enter **CTRL + SHIFT + D** to switch to debug view.
+1. Return to Visual Studio Code and choose **View > Debug** or enter **Ctrl+Shift+D** to switch to debug view.
 
-1. From the Debug options, choose **Attach to Office Add-ins**. Select **F5** or choose **Debug -> Start Debugging** from the menu to begin debugging.
+1. From the Debug options, choose **Attach to Office Add-ins**. Select **F5** or choose **Run > Start Debugging** from the menu to begin debugging.
 
 1. Set a breakpoint in your project's task pane file. You can set breakpoints in Visual Studio Code by hovering next to a line of code and selecting the red circle which appears.
 

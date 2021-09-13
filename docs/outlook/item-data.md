@@ -2,7 +2,7 @@
 title: Get or set item data in an Outlook add-in
 description: Depending on whether an add-in is activated in a read or compose form, the properties that are available to the add-in on an item differ.
 ms.date: 12/10/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Get and set Outlook item data in read or compose forms
@@ -28,7 +28,7 @@ For the remaining item-level properties available in compose forms, because the 
 |Appointments and messages|[dateTimeModified](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|JavaScript **Date** object|Property not available|
 |Appointments and messages|[itemClass](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|Property not available|
 |Appointments and messages|[itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|Property not available|
-|Appointments and messages|[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String in [ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) enumeration|String in [ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) enumeration (read only)|
+|Appointments and messages|[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String in [ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) enumeration|String in [ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) enumeration (read-only)|
 |Appointments and messages|[attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)|Property not available|
 |Appointments and messages|[body](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[Body](/javascript/api/outlook/office.body)|[Body](/javascript/api/outlook/office.body)|
 |Appointments and messages|[normalizedSubject](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|Property not available|
@@ -41,7 +41,7 @@ For the remaining item-level properties available in compose forms, because the 
 |Appointments|[start](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|JavaScript **Date** object|[Time](/javascript/api/outlook/office.time)|
 |Messages|[bcc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|Property not available|[Recipients](/javascript/api/outlook/office.recipients)|
 |Messages|[cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|[Recipients](/javascript/api/outlook/office.recipients)|
-|Messages|[conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|String (read only)|
+|Messages|[conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|String (read-only)|
 |Messages|[from](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|[From](/javascript/api/outlook/office.from)|
 |Messages|[internetMessageId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|Integer|Property not available|
 |Messages|[sender](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|Property not available|

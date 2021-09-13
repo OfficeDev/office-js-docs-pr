@@ -2,7 +2,7 @@
 ms.date: 03/30/2021
 description: 'Troubleshoot common problems with Excel custom functions.'
 title: Troubleshoot custom functions
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 # Troubleshoot custom functions
 
@@ -39,7 +39,7 @@ If you see the error "We can't open this add-in from localhost," you will need t
 
 ### Runtime logging reports "TypeError: Network request failed" on Excel on Windows
 
-If you see the error "TypeError: Network request failed" in your [runtime log](custom-functions-troubleshooting.md#enable-runtime-logging) while making calls to your localhost server, you'll need to enable a local loopback exception. For details on how to do this, see *Option #2* in [this Microsoft support article](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work).
+If you see the error "TypeError: Network request failed" in your [runtime log](custom-functions-troubleshooting.md#enable-runtime-logging) while making calls to your localhost server, you'll need to enable a local loopback exception. For details on how to do this, see *Option #2* in [this Microsoft support article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 ### Ensure promises return
 

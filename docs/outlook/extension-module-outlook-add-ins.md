@@ -2,7 +2,7 @@
 title: Module extension Outlook add-ins
 description: Create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
 ms.date: 05/27/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Module extension Outlook add-ins

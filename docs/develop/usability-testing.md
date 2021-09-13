@@ -1,15 +1,15 @@
 ---
 title: Usability testing for Office Add-ins
 description: 'Learn how to test your add-in design with real users.'
-ms.date: 03/19/2019
-localization_priority: Normal
+ms.date: 07/08/2021
+ms.localizationpriority: medium
 ---
 
 
 
 # Usability testing for Office Add-ins
 
-A great add-in design takes user behaviors into account. Because your own preconceptions influence your design decisions, it’s important to test designs with real users to make sure that your add-ins work well for your customers. 
+A great add-in design takes user behaviors into account. Because your own preconceptions influence your design decisions, it’s important to test designs with real users to make sure that your add-ins work well for your customers.
 
 You can run usability tests in different ways. For many add-in developers, remote, unmoderated usability studies are the most time and cost effective. Several popular testing services make this easy; the following are some examples.
 
@@ -17,23 +17,23 @@ You can run usability tests in different ways. For many add-in developers, remot
 - [Optimalworkshop.com](https://www.Optimalworkshop.com)
 - [Userzoom.com](https://www.Userzoom.com)
 
-These testing services help you to streamline test plan creation and remove the need to seek out participants or moderate the tests. 
+These testing services help you to streamline test plan creation and remove the need to seek out participants or moderate the tests.
 
 You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
 > [!NOTE]
 > We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to AppSource](/office/dev/store/submit-to-appsource-via-partner-center), it must work on all [platforms that support the methods that you define](../overview/office-add-in-availability.md).
 
-## 1.	Sign up for a testing service
+## 1. Sign up for a testing service
 
 For more information, see [Selecting an Online Tool for Unmoderated Remote User Testing](https://www.nngroup.com/articles/unmoderated-user-testing-tools/).
 
 ## 2. Develop your research questions
- 
+
 Research questions define the objectives of your research and guide your test plan. Your questions will help you identify participants to recruit and the tasks they will perform. Make your research questions as specific as you can. You can also seek to answer broader questions.
- 
+
 The following are some examples of research questions.
-  
+
 **Specific**
 
 - Do users notice the "free trial" link on the landing page?
@@ -100,7 +100,7 @@ Don't assume that your user will be on the screen they’re supposed to be on at
 For more information, see [Writing Great Tasks](https://help.usertesting.com/hc/articles/115003371651-Writing-great-tasks).
 
 ## 6. Create a prototype to match the tasks and questions
- 
+
 You can either test your live add-in, or you can test a prototype. Keep in mind that if you want to test the live add-in, you need to screen for participants that have the latest version of Office, are willing to install the add-in, and are willing to sign up for an account (unless you have logon credentials to provide them.) You'll then need to make sure that they successfully install your add-in.
 
 On average, it takes about 5 minutes to walk users through how to install an add-in. The following is an example of clear, concise installation steps. Adjust the steps based on the specifics of your test.
@@ -128,15 +128,14 @@ After you order your test, you will get email notifications when participants co
 
 ## 9. Analyze results
 
-This is the part where you try to make sense of the data you’ve collected. While watching the test videos, record notes about problems and successes the user has. Avoid trying to interpret the meaning of the data until you have viewed all the results. 
+This is the part where you try to make sense of the data you’ve collected. While watching the test videos, record notes about problems and successes the user has. Avoid trying to interpret the meaning of the data until you have viewed all the results.
 
 A single participant having a usability issue is not enough to warrant making a change to the design. Two or more participants encountering the same issue suggests that other users in the general population will also encounter that issue.
 
 In general, be careful about how you use your data to draw conclusions. Don’t fall into the trap of trying to make the data fit a certain narrative; be honest about what the data actually proves, disproves, or simply fails to provide any insight about. Keep an open mind; user behavior frequently defies designer’s expectations.
 
-
 ## See also
 
-- [How to Conduct Usability Testing](https://whatpixel.com/howto-conduct-usability-testing/)
-- [Best Practices for UserTesting](https://help.usertesting.com/hc/articles/115003370231-Best-practices-for-UserTesting)  
-- [Minimizing Bias](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)
+- [How to Conduct Usability Testing](https://whatpixel.com/howto-conduct-usability-testing/)  
+- [Best Practices for UserTesting](https://help.usertesting.com/hc/en-us/articles/115003370231-Best-practices-for-UserTesting)  
+- [Minimizing Bias](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  
