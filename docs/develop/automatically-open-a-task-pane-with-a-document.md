@@ -1,7 +1,7 @@
 ---
 title: Automatically open a task pane with a document
 description: 'Learn how to configure an Office Add-in to open automatically when a document opens.'
-ms.date: 09/03/2021
+ms.date: 09/14/2021
 ms.localizationpriority: medium
 ---
 
