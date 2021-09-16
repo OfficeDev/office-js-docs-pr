@@ -2,7 +2,7 @@
 title: Troubleshoot error messages for single sign-on (SSO)
 description: 'Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.'
 ms.date: 09/03/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Troubleshoot error messages for single sign-on (SSO)

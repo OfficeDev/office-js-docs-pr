@@ -2,7 +2,7 @@
 title: Call Excel JavaScript APIs from a custom function
 description: 'Learn which Excel JavaScript APIs you can call from your custom function.'
 ms.date: 08/30/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Call Excel JavaScript APIs from a custom function

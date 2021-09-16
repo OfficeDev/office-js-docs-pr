@@ -2,7 +2,7 @@
 title: Office namespace - requirement set 1.9
 description: 'Office namespace members available for Outlook add-ins using Mailbox API requirement set 1.9.'
 ms.date: 05/17/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Office (Mailbox requirement set 1.9)

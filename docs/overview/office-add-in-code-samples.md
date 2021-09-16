@@ -2,7 +2,7 @@
 title: Office Add-in code samples
 description: 'Office Add-in code samples'
 ms.date: 09/09/2021
-localization_priority: Normal
+localization_priority: high
 ---
 
 # Office Add-in code samples

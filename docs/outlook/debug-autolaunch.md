@@ -3,7 +3,7 @@ title: Debug your event-based Outlook add-in (preview)
 description: Learn how to debug your Outlook add-in that implements event-based activation.
 ms.topic: article
 ms.date: 05/14/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Debug your event-based Outlook add-in (preview)

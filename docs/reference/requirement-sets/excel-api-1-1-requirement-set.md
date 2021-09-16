@@ -3,7 +3,7 @@ title: Excel JavaScript API requirement set 1.1
 description: 'Details about the ExcelApi 1.1 requirement set.'
 ms.date: 11/09/2020
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Excel JavaScript API requirement set 1.1

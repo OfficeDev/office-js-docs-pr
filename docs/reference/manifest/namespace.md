@@ -2,7 +2,7 @@
 title: Namespace element in the manifest file
 description: The Namespace element defines the namespace a custom function uses in Excel.
 ms.date: 10/09/2018
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Namespace element

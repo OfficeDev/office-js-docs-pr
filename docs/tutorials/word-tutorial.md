@@ -4,7 +4,7 @@ description: In this tutorial, you'll build a Word add-in that inserts (and repl
 ms.date: 07/08/2021
 ms.prod: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Tutorial: Create a Word task pane add-in

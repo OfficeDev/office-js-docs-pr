@@ -3,7 +3,7 @@ title: Excel JavaScript API requirement set 1.6
 description: 'Details about the ExcelApi 1.6 requirement set.'
 ms.date: 11/09/2020
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # What's new in Excel JavaScript API 1.6

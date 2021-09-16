@@ -3,7 +3,7 @@ title: Clear or delete ranges using the Excel JavaScript API
 description: 'Learn how to clear or delete ranges using the Excel JavaScript API.'
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Clear or delete ranges using the Excel JavaScript API

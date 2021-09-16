@@ -2,7 +2,7 @@
 title: CustomTab element in the manifest file
 description: On the ribbon, you specify which tab and group for their add-in commands.
 ms.date: 09/02/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # CustomTab element

@@ -2,7 +2,7 @@
 title: Open Excel from your web page and embed your Office Add-in
 description: 'Open Excel from your web page and embed your Office Add-in.'
 ms.date: 02/09/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Open Excel from your web page and embed your Office Add-in

@@ -3,7 +3,7 @@ title: Excel JavaScript API requirement set 1.8
 description: 'Details about the ExcelApi 1.8 requirement set.'
 ms.date: 03/19/2021
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # What's new in Excel JavaScript API 1.8

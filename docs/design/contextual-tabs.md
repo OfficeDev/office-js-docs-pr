@@ -2,7 +2,7 @@
 title: Create custom contextual tabs in Office Add-ins
 description: 'Learn how to add custom contextual tabs to your Office Add-in.'
 ms.date: 09/09/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Create custom contextual tabs in Office Add-ins

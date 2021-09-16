@@ -2,7 +2,7 @@
 title: Localization for Office Add-ins
 description: 'Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.'
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Localization for Office Add-ins
