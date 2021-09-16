@@ -1291,7 +1291,7 @@ items:
       displayName: Word
 - name: Samples
   items:
-  - name: Samples overview
+  - name: Samples list
     href: overview/office-add-in-code-samples.md
   - name: Open in Excel
     href: excel/pnp-open-in-excel.md
