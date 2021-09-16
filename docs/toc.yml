@@ -1293,6 +1293,7 @@ items:
   items:
   - name: Samples list
     href: overview/office-add-in-code-samples.md
+    displayName: PnP
   - name: Open in Excel
     href: excel/pnp-open-in-excel.md
     displayName: Excel
