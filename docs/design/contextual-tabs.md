@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: 'Learn how to add custom contextual tabs to your Office Add-in.'
-ms.date: 09/02/2021
+ms.date: 09/09/2021
 ms.localizationpriority: medium
 ---
 
@@ -590,3 +590,10 @@ function showDataTab() {
     }
 }
 ```
+
+## Resources
+
+- [Code sample: Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-contextual-tabs)
+- Community demo of contextual tabs sample
+
+> [!VIDEO https://www.youtube.com/embed/9tLfm4boQIo]
