@@ -1,11 +1,11 @@
 ---
-title: Enable single sign-on for Office Add-ins
-description: 'Learn how to enable single sign-on for Office Add-ins using common Microsoft personal, work, or education accounts.'
-ms.date: 09/03/2021
+title: Overview of single sign-on (SSO) for Office Add-ins
+description: 'Overview of how single sign-on (SSO) works for Office Add-ins using common Microsoft personal, work, or education accounts.'
+ms.date: 09/13/2021
 ms.localizationpriority: high
 ---
 
-# Enable single sign-on for Office Add-ins
+# Overview of single sign-on (SSO) for Office Add-ins
 
 Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or work account. You can take advantage of this and use single sign-on (SSO) to authorize the user to your add-in without requiring the user to sign in a second time.
 
@@ -15,7 +15,7 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 
 If you are working with an **Outlook** add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. You can use a system of user tables and authentication, or you can leverage one of the social login providers. For more information about how to do this with an Office Add-in, see [Authorize external services in your Office Add-in](auth-external-add-ins.md). For *Outlook*, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md). For samples that use Azure Active Directory as the fallback system, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
+You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. You can use a system of user tables and authentication, or you can leverage one of the social login providers. For more information about how to do this with an Office Add-in, see [Authorize external services in your Office Add-in](auth-external-add-ins.md). For *Outlook*, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md). For code samples that use Azure Active Directory as the fallback system, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 ## How SSO works at runtime
 
@@ -23,14 +23,14 @@ The following diagram shows how the SSO process works.
 
 ![A diagram that shows the SSO process.](../images/sso-overview-diagram.png)
 
-1. In the add-in, JavaScript calls a new Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). This tells the Office client application to obtain an access token to the add-in. See [Example access token](#example-access-token).
-2. If the user is not signed in, the Office client application opens a pop-up window for the user to sign in.
+1. In the add-in, your JavaScript code calls the Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). This tells the Office host application to obtain an access token to the add-in. See [Example access token](#example-access-token).
+2. If the user is not signed in, the Office host application opens a pop-up window for the user to sign in.
 3. If this is the first time the current user has used your add-in, he or she is prompted to consent.
-4. The Office client application requests the **add-in token** from the Azure AD v2.0 endpoint for the current user.
-5. Azure AD sends the add-in token to the Office client application.
-6. The Office client application sends the **add-in token** to the add-in as part of the result object returned by the `getAccessToken` call.
-7. JavaScript in the add-in can parse the token and extract the information it needs, such as the user's email address.
-8. Optionally, the add-in can send HTTP request to its server-side for more data about the user; such as the user's preferences. Alternatively, the access token itself could be sent to the server-side for parsing and validation there.
+4. The Office host application requests the **add-in token** from the Azure AD v2.0 endpoint for the current user.
+5. Azure AD sends the **add-in token** to the Office host application.
+6. The Office host application sends the **add-in token** to the add-in as part of the result object returned by the `getAccessToken` call.
+7. Your JavaScript code in the add-in can parse the token and extract the information it needs, such as the user's email address.
+8. Optionally, the add-in can send HTTP requests to its server-side for more data about the user; such as the user's preferences. Alternatively, the access token itself could be sent to the server-side for parsing and validation there.
 
 ## Develop an SSO add-in
 
