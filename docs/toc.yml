@@ -747,7 +747,7 @@ items:
       href: excel/custom-functions-overview.md
       displayName: Excel, Custom Functions
     - name: CustomFunctionsRuntime API requirement sets
-      href: excel/custom-functions-requirement-sets.md
+      href: reference/requirement-sets/custom-functions-requirement-sets.md
       displayName: Excel, Custom Functions
     - name: Tutorials
       items:
@@ -1289,30 +1289,22 @@ items:
     - name: Use search options to find text in your Word add-in
       href: word/search-option-guidance.md
       displayName: Word
-
-- name: Patterns and practices
+- name: Samples
   items:
-  - name: Overview
-    href: overview/patterns-and-practices-overview.md
+  - name: Samples list
+    href: overview/office-add-in-code-samples.md
+    displayName: PnP
   - name: Open in Excel
     href: excel/pnp-open-in-excel.md
     displayName: Excel
-  - name: Batching custom function remote calls
-    href: excel/custom-functions-batching.md
-    displayName: Excel, Custom Functions
-  - name: Authentication
-    href: develop/authentication-pnp.md
-  - name: Handle high DPI and DPI scaling in your Office solution
-    href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
   - name: Office Add-ins community call
     href: overview/office-add-ins-community-call.md
-
 - name: VSTO and COM transition resources
   items: 
-    - name: VSTO add-in developers' guide
-      href: overview/learning-path-transition.md
-    - name: Share code from VSTO Add-in to Office Add-in
-      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-    - name: Make your Office Add-in compatible with an existing COM add-in
-      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-      displayName: manifest
+  - name: VSTO add-in developers' guide
+    href: overview/learning-path-transition.md
+  - name: Share code from VSTO Add-in to Office Add-in
+    href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+  - name: Make your Office Add-in compatible with an existing COM add-in
+    href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+    displayName: manifest
