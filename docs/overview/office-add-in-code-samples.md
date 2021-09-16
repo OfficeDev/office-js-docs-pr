@@ -43,7 +43,7 @@ The code samples listed in this article are written to help you learn how to use
 | [Office Add-in auth to Microsoft Graph](/samples/officedev/pnp-officeaddins/office-add-in-auth-aspnet-graph/) | Learn how to build a Microsoft Office Add-in that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to update a spreadsheet. |
 | [Outlook Add-in auth to Microsoft Graph](/samples/officedev/pnp-officeaddins/outlook-add-in-auth-aspnet-graph/). | Build an Outlook add-in that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to compose a new email message. |
 | [Single Sign-on (SSO) Office Add-in with ASP.NET](/samples/officedev/pnp-officeaddins/office-add-in-sso-aspnet/) | Use the getAccessToken API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on ASP.NET. |
-| [Single Sign-on (SSO) Office Add-in with Node.js](/samples/officedev/pnp-officeaddins/office-add-in-sso-nodejs/) | Use the getAccessToken API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on Node.js.|
+| [Single Sign-on (SSO) Office Add-in with Node.js](/samples/officedev/pnp-officeaddins/office-add-in-sso-nodejs/) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on Node.js.|
 
 ## Additional samples
 
