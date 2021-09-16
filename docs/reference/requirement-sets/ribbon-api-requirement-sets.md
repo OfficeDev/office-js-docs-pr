@@ -14,7 +14,7 @@ The Ribbon API set supports programmatic control of when custom Add-in Commands 
 
 Office Add-ins run across multiple versions of Office. The following table lists the Ribbon API requirement sets, the Office client applications that support that requirement set, and the build or version numbers for the Office application.
 
-|  Requirement set  | Office 2021 on Windows<br>(one-time purchase) | Office on Windows\*<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac\*<br>(connected to a Microsoft 365 subscription)  | Office on the web\*  |  Office Online Server  |
+|  Requirement set  | Office 2021 or later on Windows<br>(one-time purchase) | Office on Windows\*<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac\*<br>(connected to a Microsoft 365 subscription)  | Office on the web\*  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | RibbonApi 1.2  | 2102 (Build 13801.20294) | 2102 (Build 13801.20294) | N/A | Not supported | May, 2021 | N/A|
 | RibbonApi 1.1  | 2102 (Build 13801.20294) | See support<br>section below | N/A | 16.38 | November, 2020 | N/A|
