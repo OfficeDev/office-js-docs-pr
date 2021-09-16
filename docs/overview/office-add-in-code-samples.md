@@ -1,6 +1,6 @@
 ---
 title: Office Add-in code samples
-description: 'A list of Office Add-in code samples to help learn and build your own add-ins'
+description: 'A list of Office Add-in code samples to help you learn and build your own add-ins.'
 ms.date: 09/09/2021
 localization_priority: high
 ---
