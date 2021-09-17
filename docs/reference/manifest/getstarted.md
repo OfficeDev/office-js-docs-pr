@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # GetStarted element
 
-Provides information used by the callout that appears when the add-in is installed in Word, Excel, PowerPoint, and OneNote. The **GetStarted** element is a child element of [DesktopFormFactor](desktopformfactor.md). If the **GetStarted** element is omitted, the callout will use the values from the [DisplayName](displayname.md) and [Description](description.md) elements instead.
+Provides information used by the callout that appears when the add-in is installed in Word, Excel, PowerPoint, and OneNote. The **GetStarted** element is a child element of [DesktopFormFactor](desktopformfactor.md). If the **GetStarted** element is omitted, the callout uses the values from the [DisplayName](displayname.md) and [Description](description.md) elements instead.
 
 ## Child elements
 
