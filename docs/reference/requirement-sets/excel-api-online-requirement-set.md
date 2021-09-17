@@ -22,6 +22,7 @@ The following table provides a concise summary of the APIs, while the subsequent
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
+| Linked workbooks | Manage links between workbooks. | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook) |
 | Named sheet views | Gives programmatic control of per-user worksheet views. | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) |
 
 ## Recommended usage
