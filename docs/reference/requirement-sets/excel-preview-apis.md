@@ -17,12 +17,14 @@ The following table provides a concise summary of the APIs, while the subsequent
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
 | Chart data tables | Control appearance, formatting, and visibility of data tables on charts. | [Chart](/javascript/api/excel/excel.chart), [ChartDataTable](/javascript/api/excel/excel.chartdatatable), [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
+| Custom data types | An extension of existing Excel data types, including support for formatted numbers and web images. | [[BooleanCellValue](), [CellValueAttributionAttributes](), [CellValueProviderAttributes](), [DoubleCellValue](), [EmptyCellValue](), [FormattedNumberCellValue](), [StringCellValue](), [ValueTypeNotAvailableCellValue](), [WebImageCellValue]() |
+| Custom data types errors| Error objects that support custom data types. | [BlockedErrorCellValue](), [BusyErrorCellValue](), [CalcErrorCellValue](), [ConnectErrorCellValue](), [Div0ErrorCellValue](), [FieldErrorCellValue](), [GettingDataErrorCellValue](), [NaErrorCellValue](), [NameErrorCellValue](), [NullErrorCellValue](), [NumErrorCellValue](), [RefErrorCellValue](), [SpillErrorCellValue](), [ValueErrorCellValue]()|
 | Document tasks | Turn comments into tasks assigned to users. | [DocumentTask](/javascript/api/excel/excel.documenttask) |
 | Identities | Manage user identities, including display name and email address. | [Identity](/javascript/api/excel/excel.identity), [IdentityCollection](/javascript/api/excel/excel.identitycollection), [IdentityEntity](/javascript/api/excel/excel.identityentity) |
 | Linked data types | Adds support for data types connected to Excel from external sources. | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
-| Linked workbooks | Manage links between workbooks, including support for refreshing and breaking workbook links. | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook), [LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
 | Table styles | Provides control for font, border, fill color, and other aspects of table styles. | [Table](/javascript/api/excel/excel.table), [PivotTable](/javascript/api/excel/excel.pivottable), [Slicer](/javascript/api/excel/excel.slicer) |
 | Queries | Retrieve query attributes like name, refresh date, and query count. | [Query](/javascript/api/excel/excel.query), [QueryCollection](/javascript/api/excel/excel.querycollection)|
+| Worksheet protection | Prevent unauthorized users from making changes to specified ranges within a worksheet. | [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection), [WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs), [AllowEditRange](/javascript/api/excel/excel.alloweditrange), [AllowEditRangeCollection](/javascript/api/excel/excel.alloweditrangecollection), [AllowEditRangeOptions](/javascript/api/excel/excel.alloweditrangeoptions) |
 
 ## API list
 
