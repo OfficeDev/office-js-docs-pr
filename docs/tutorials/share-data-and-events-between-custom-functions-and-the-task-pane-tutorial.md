@@ -244,3 +244,7 @@ Once Excel starts, you can use the task pane buttons to store or get shared data
 
 > [!NOTE]
 > Configuring your project as shown in this article will share context between custom functions and the task pane. Calling some Office APIs from custom functions is possible. [See Call Microsoft Excel APIs from a custom function](../excel/call-excel-apis-from-custom-function.md) for more details.
+
+## See also
+
+- [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
