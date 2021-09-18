@@ -74,7 +74,7 @@ The following table is a list of errors that the API may return.
 |`MergedRangeConflict`|Cannot complete the operation. A table can't overlap with another table, a PivotTable report, query results, merged cells, or an XML Map.|
 |`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|
 |`NotImplemented`|The requested feature isn't implemented.|
-|`OperationCellsExceedLimit`|The attempted operation affects more than the limit of 33554000 cells. For additional information, refer to [OperationCellsExceedLimit errors](#operationCellsExceedLimit-errors). <br><br>This error only occurs in Excel on the web.|
+|`OperationCellsExceedLimit`|The attempted operation affects more than the limit of 33554000 cells. <br><br>If the `TableColumnCollection.add API` triggers this error, confirm that there is no unintentional data within the worksheet but outside of the table. In particular, check for data in the right-most columns of the worksheet. Remove the unintended data to resolve this error. One way to verify how many cells that an operation processes is to run the following calculation: `(number of table rows) x (16383 - (number of table columns))`. The number 16383 is the maximum number of columns that Excel supports. <br><br>This error only occurs in Excel on the web.|
 |`PivotTableRangeConflict`|The attempted operation causes a conflict with a PivotTable range.|
 |`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|
 |`RefreshWorkbookLinksBlocked`|The operation failed because the user hasn't granted permission to refresh external workbook links.|
@@ -89,14 +89,6 @@ The following table is a list of errors that the API may return.
 
 > [!NOTE]
 > The preceding table lists error messages you may encounter while using the Excel JavaScript API. If you are working with the Common API instead of the application-specific Excel JavaScript API, see [Office Common API error codes](../reference/javascript-api-for-office-error-codes.md) to learn about relevant error messages.
-
-## Solutions
-
-### `OperationCellsExceedLimit` errors
-
-The `OperationCellsExceedLimit` error indicates that the attempted operation affects more than 33,554,000 cells, which is the maximum number of cells that the operation can process. 
-
-If the `TableColumnCollection.add` API triggers this error, confirm that there is no unintentional data within the worksheet but outside of the table. In particular, check for data in the right-most columns of the worksheet. Remove the unintended data to resolve this error. One way to verify how many cells that an operation processes is to run the following calculation: *(number of table rows) x (16383 - (number of table columns))*. The number 16383 is the maximum number of columns that Excel supports. 
 
 ## See also
 
