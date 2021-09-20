@@ -1,7 +1,7 @@
 ---
 title: Error handling with the Excel JavaScript API
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 09/17/2021
+ms.date: 09/20/2021
 ms.localizationpriority: medium
 ---
 
@@ -47,45 +47,45 @@ When an Excel JavaScript API request fails to run successfully, the API returns 
 
 The following table is a list of errors that the API may return.
 
-|Error code | Error message |
-|:----------|:--------------|
-|`AccessDenied` |You cannot perform the requested operation.|
-|`ActivityLimitReached`|Activity limit has been reached.|
-|`ApiNotAvailable`|The requested API is not available.|
-|`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of Excel. See the [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md) article for more information.|
-|`BadPassword`|The password you supplied is incorrect.|
-|`Conflict`|Request could not be processed because of a conflict.|
-|`ContentLengthRequired`|A `Content-length` HTTP header is missing.|
-|`FilteredRangeConflict`|The attempted operation causes a conflict with a filtered range.|
-|`FormulaLengthExceedsLimit`|The bytecode of the applied formula exceeds the maximum length limit. For Office on 32-bit machines, the bytecode length limit is 16384 characters. On 64-bit machines, the bytecode length limit is 32768 characters. <br><br>This error occurs in both Excel on the web and on desktop.|
-|`GeneralException`|There was an internal error while processing the request.|
-|`InactiveWorkbook`|The operation failed because multiple workbooks are open and the workbook being called by this API has lost focus.|
-|`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|
-|`InvalidArgument` |The argument is invalid or missing or has an incorrect format.|
-|`InvalidBinding` |This object binding is no longer valid due to previous updates.|
-|`InvalidOperation`|The operation attempted is invalid on the object.|
-|`InvalidOperationInCellEditMode`|The operation isn't available while Excel is in Edit cell mode. Exit Edit mode by using the **Enter** or **Tab** keys, or by selecting another cell, and then try again.|
-|`InvalidReference`|This reference is not valid for the current operation.|
-|`InvalidRequest`  |Cannot process the request.|
-|`InvalidSelection`|The current selection is invalid for this operation.|
-|`ItemAlreadyExists`|The resource being created already exists.|
-|`ItemNotFound` |The requested resource doesn't exist.|
-|`MemoryLimitReached`|The memory limit has been reached. Your action could not be completed.|
+|Error code | Error message | Notes |
+|:----------|:--------------|:------|
+|`AccessDenied` |You cannot perform the requested operation.| |
+|`ActivityLimitReached`|Activity limit has been reached.| |
+|`ApiNotAvailable`|The requested API is not available.| |
+|`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of Excel. See the [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md) article for more information.| |
+|`BadPassword`|The password you supplied is incorrect.| |
+|`Conflict`|Request could not be processed because of a conflict.| |
+|`ContentLengthRequired`|A `Content-length` HTTP header is missing.| |
+|`FilteredRangeConflict`|The attempted operation causes a conflict with a filtered range.| |
+|`FormulaLengthExceedsLimit`|The bytecode of the applied formula exceeds the maximum length limit. For Office on 32-bit machines, the bytecode length limit is 16384 characters. On 64-bit machines, the bytecode length limit is 32768 characters.| This error occurs in both Excel on the web and on desktop.|
+|`GeneralException`|There was an internal error while processing the request.| |
+|`InactiveWorkbook`|The operation failed because multiple workbooks are open and the workbook being called by this API has lost focus.| |
+|`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.| |
+|`InvalidArgument` |The argument is invalid or missing or has an incorrect format.| |
+|`InvalidBinding` |This object binding is no longer valid due to previous updates.| |
+|`InvalidOperation`|The operation attempted is invalid on the object.| |
+|`InvalidOperationInCellEditMode`|The operation isn't available while Excel is in Edit cell mode. Exit Edit mode by using the **Enter** or **Tab** keys, or by selecting another cell, and then try again.| |
+|`InvalidReference`|This reference is not valid for the current operation.| |
+|`InvalidRequest`  |Cannot process the request.| |
+|`InvalidSelection`|The current selection is invalid for this operation.| |
+|`ItemAlreadyExists`|The resource being created already exists.| |
+|`ItemNotFound` |The requested resource doesn't exist.| |
+|`MemoryLimitReached`|The memory limit has been reached. Your action could not be completed.| |
 |`MergedRangeConflict`|Cannot complete the operation. A table can't overlap with another table, a PivotTable report, query results, merged cells, or an XML Map.|
-|`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|
-|`NotImplemented`|The requested feature isn't implemented.|
-|`OperationCellsExceedLimit`|The attempted operation affects more than the limit of 33554000 cells. <br><br>If the `TableColumnCollection.add API` triggers this error, confirm that there is no unintentional data within the worksheet but outside of the table. In particular, check for data in the right-most columns of the worksheet. Remove the unintended data to resolve this error. One way to verify how many cells that an operation processes is to run the following calculation: `(number of table rows) x (16383 - (number of table columns))`. The number 16383 is the maximum number of columns that Excel supports. <br><br>This error only occurs in Excel on the web.|
-|`PivotTableRangeConflict`|The attempted operation causes a conflict with a PivotTable range.|
-|`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|
-|`RefreshWorkbookLinksBlocked`|The operation failed because the user hasn't granted permission to refresh external workbook links.|
-|`RequestAborted`|The request was aborted during run time.|
-|`RequestPayloadSizeLimitExceeded`|The request payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information. <br><br>This error only occurs in Excel on the web.|
-|`ResponsePayloadSizeLimitExceeded`|The response payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.  <br><br>This error only occurs in Excel on the web.|
-|`ServiceNotAvailable`|The service is unavailable.|
-|`Unauthenticated` |Required authentication information is either missing or invalid.|
-|`UnsupportedFeature`|The operation failed because the source worksheet contains one or more unsupported features.|
-|`UnsupportedOperation`|The operation being attempted is not supported.|
-|`UnsupportedSheet`|This sheet type does not support this operation, since it is a Macro or Chart sheet.|
+|`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.| |
+|`NotImplemented`|The requested feature isn't implemented.| |
+|`OperationCellsExceedLimit`|The attempted operation affects more than the limit of 33554000 cells.| If the `TableColumnCollection.add API` triggers this error, confirm that there is no unintentional data within the worksheet but outside of the table. In particular, check for data in the right-most columns of the worksheet. Remove the unintended data to resolve this error. One way to verify how many cells that an operation processes is to run the following calculation: `(number of table rows) x (16383 - (number of table columns))`. The number 16383 is the maximum number of columns that Excel supports. <br><br>This error only occurs in Excel on the web. |
+|`PivotTableRangeConflict`|The attempted operation causes a conflict with a PivotTable range.| |
+|`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.| |
+|`RefreshWorkbookLinksBlocked`|The operation failed because the user hasn't granted permission to refresh external workbook links.| |
+|`RequestAborted`|The request was aborted during run time.| |
+|`RequestPayloadSizeLimitExceeded`|The request payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.| This error only occurs in Excel on the web.|
+|`ResponsePayloadSizeLimitExceeded`|The response payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|  This error only occurs in Excel on the web.|
+|`ServiceNotAvailable`|The service is unavailable.| |
+|`Unauthenticated` |Required authentication information is either missing or invalid.| |
+|`UnsupportedFeature`|The operation failed because the source worksheet contains one or more unsupported features.| |
+|`UnsupportedOperation`|The operation being attempted is not supported.| |
+|`UnsupportedSheet`|This sheet type does not support this operation, since it is a Macro or Chart sheet.| |
 
 > [!NOTE]
 > The preceding table lists error messages you may encounter while using the Excel JavaScript API. If you are working with the Common API instead of the application-specific Excel JavaScript API, see [Office Common API error codes](../reference/javascript-api-for-office-error-codes.md) to learn about relevant error messages.
