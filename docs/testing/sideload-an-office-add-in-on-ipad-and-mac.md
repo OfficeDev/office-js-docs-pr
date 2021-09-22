@@ -1,13 +1,16 @@
 ---
 title: Sideload Office Add-ins on iPad and Mac for testing
 description: 'Test your Office Add-in on iPad and Mac by sideloading.'
-ms.date: 09/02/2020
+ms.date: 09/22/2021
 ms.localizationpriority: medium
 ---
 
 # Sideload Office Add-ins on iPad and Mac for testing
 
 To see how your add-in will run in Office on iOS, you can sideload your add-in's manifest onto an iPad using iTunes, or sideload your add-in's manifest directly in Office on Mac. This action won't enable you to set breakpoints and debug your add-in's code while it's running, but you can see how it behaves and verify that the UI is usable and rendering appropriately.
+
+> [!NOTE]
+> To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
 
 ## Prerequisites for Office on iOS
 
@@ -74,9 +77,6 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 ## Sideload an add-in in Office on Mac
 
-> [!NOTE]
-> To sideload an Outlook add-in on Mac, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
-
 1. Open **Terminal** and go to one of the following folders where you'll save your add-in's manifest file. If the `wef` folder doesn't exist on your computer, create it.
 
     - For Word:  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`
@@ -107,3 +107,4 @@ You can remove a previously sideloaded add-in by clearing the Office cache on yo
 ## See also
 
 - [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)
+- [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
