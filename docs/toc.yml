@@ -544,10 +544,6 @@ items:
     - name: Unsupported window objects
       href: reference/window-objects-unsupported-in-add-ins.md
 
-  - name: Resources
-    href: resources/resources-links-help.md
-    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
-
 - name: Excel
   items: 
   - name: Excel add-ins documentation
@@ -1297,14 +1293,19 @@ items:
   - name: Open in Excel
     href: excel/pnp-open-in-excel.md
     displayName: Excel
+- name: Resources
+  items:
+  - name: External resources
+    href: resources/resources-links-help.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
   - name: Office Add-ins community call
     href: overview/office-add-ins-community-call.md
-- name: VSTO and COM transition resources
-  items: 
-  - name: VSTO add-in developers' guide
-    href: overview/learning-path-transition.md
-  - name: Share code from VSTO Add-in to Office Add-in
-    href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-  - name: Make your Office Add-in compatible with an existing COM add-in
-    href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-    displayName: manifest
+  - name: VSTO and COM transition resources
+    items: 
+    - name: VSTO add-in developers' guide
+      href: overview/learning-path-transition.md
+    - name: Share code from VSTO Add-in to Office Add-in
+      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+    - name: Make your Office Add-in compatible with an existing COM add-in
+      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+      displayName: manifest
