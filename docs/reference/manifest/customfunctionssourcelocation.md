@@ -1,13 +1,15 @@
 ---
 title: SourceLocation element for custom functions in the manifest file
 description: Defines the location of a resource needed by the Script or Page elements used by custom functions in Excel.
-ms.date: 08/07/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
 ---
 
 # SourceLocation element (custom functions)
 
 Defines the location of a resource needed by the Script or Page elements used by custom functions in Excel.
+
+**Add-in type:** Custom function
 
 ## Attributes
 
