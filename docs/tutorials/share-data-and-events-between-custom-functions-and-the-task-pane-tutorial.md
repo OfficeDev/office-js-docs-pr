@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Share data and events between Excel custom functions and the task pane"
 description: 'Learn how to share data and events between custom functions and the task pane in Excel.'
-ms.date: 08/04/2021
+ms.date: 09/23/2021
 ms.prod: excel
 ms.localizationpriority: high
 ---
@@ -47,7 +47,7 @@ After you complete the wizard, the generator creates the project and installs su
    ```
 
 > [!NOTE]
-> If your add-in includes the `Runtimes` element in the manifest, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
+> If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 4. In the `<Page>` element, change the source location from **Functions.Page.Url** to **ContosoAddin.Url**.
 

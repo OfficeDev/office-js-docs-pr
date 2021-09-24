@@ -1,7 +1,7 @@
 ---
 title: Internet Explorer 11 testing
 description: 'Test your Office Add-in on Internet Explorer 11.'
-ms.date: 08/13/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
 ---
 
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 >
 > Microsoft is ending support for Internet Explorer, but this doesn't significantly affect Office Add-ins. Some combinations of platforms and Office versions, including all one-time-purchase versions through Office 2019, will continue to use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Moreover, support for these combinations, and hence for Internet Explorer, is still required for add-ins submitted to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center). Two things *are* changing:
 >
-> - AppSource no longer tests add-ins in Office on the web using Internet Explorer as the browser. But AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer.
+> - Office on the web no longer opens in Internet Explorer. Consequently, AppSource no longer tests add-ins in Office on the web using Internet Explorer as the browser. But AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer.
 > - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Internet Explorer.
 
 If you plan to market your add-in through AppSource or you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser control that is based on Internet Explorer 11 (IE11). You can use a command line to switch from more modern runtimes used by add-ins to the Internet Explorer 11 runtime for this testing. For information about which versions of Windows and Office use the Internet Explorer 11 web view control, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
@@ -28,7 +28,7 @@ If you plan to market your add-in through AppSource or you plan to support older
 > Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
 
 > [!NOTE]
-> To test your add-in on the Internet Explorer 11 browser, open Office on the web in Internet Explorer and [sideload the add-in](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
+> Office on the web cannot be opened in Internet Explorer 11, so you cannot (and do not need to) test your add-in on Office on the web with Internet Explorer.
 
 ## Prerequisites
 
