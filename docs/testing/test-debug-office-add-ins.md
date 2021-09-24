@@ -1,7 +1,7 @@
 ---
 title: Test and debug Office Add-ins
 description: 'Learn how to test and debug your Office Add-in'
-ms.date: 05/19/2021
+ms.date: 09/24/2021
 ms.localizationpriority: high
 ---
 
@@ -43,7 +43,7 @@ The procedure for debugging an Office Add-in varies by platform as well. Each of
 
 - [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
 
-- [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)
+- [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md)
 
 - [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
 

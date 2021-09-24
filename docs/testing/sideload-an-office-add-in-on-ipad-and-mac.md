@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins on iPad and Mac for testing
 description: 'Test your Office Add-in on iPad and Mac by sideloading.'
-ms.date: 09/22/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
 ---
 
@@ -106,5 +106,5 @@ You can remove a previously sideloaded add-in by clearing the Office cache on yo
 
 ## See also
 
-- [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)
+- [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md)
 - [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
