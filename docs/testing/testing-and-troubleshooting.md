@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: 'Learn how to troubleshoot user errors in Office Add-ins.'
-ms.date: 07/08/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
 ---
 
@@ -62,9 +62,9 @@ When using an Office Add-in, the user is asked to allow a dialog box to be displ
 
 |**Affected browsers**|**Affected platforms**|
 |:--------------------|:---------------------|
-|Internet Explorer, Microsoft Edge|Office on the web|
+|Microsoft Edge|Office on the web|
 
-To resolve the issue, end users or administrators can add the domain of the add-in to the list of trusted sites in Internet Explorer. Use the same procedure whether you're using the Internet Explorer or Microsoft Edge browser.
+To resolve the issue, end users or administrators can add the domain of the add-in to the list of trusted sites in the Microsoft Edge browser.
 
 > [!IMPORTANT]
 > Do not add the URL for an add-in to your list of trusted sites if you don't trust the add-in.

@@ -1,5 +1,5 @@
 ---
-ms.date: 07/27/2021
+ms.date: 09/23/2021
 title: "Configure your Office Add-in to use a shared JavaScript runtime"
 ms.prod: non-product-specific
 description: 'Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.'
@@ -149,7 +149,6 @@ You can confirm that you are using the shared JavaScript runtime correctly by us
     ```
 
     to:
-
     ```xml
     <Action xsi:type="ExecuteFunction">
       <FunctionName>action</FunctionName>
@@ -195,7 +194,7 @@ When you add the `Runtime` element, you also specify a lifetime with a value of 
 ```
 
 > [!NOTE]
-> If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime), it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
+> If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the condition's are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md). For more information about the conditions, see [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md).
 
 ## About the shared JavaScript runtime
 
