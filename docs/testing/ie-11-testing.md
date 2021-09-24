@@ -28,7 +28,7 @@ If you plan to market your add-in through AppSource or you plan to support older
 > Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
 
 > [!NOTE]
-> Office on the web cannot be opened in Internet Explorer 11, so you cannot (and do not need to) test your add-in on Office on the web in Internet Explorer.
+> Office on the web cannot be opened in Internet Explorer 11, so you cannot (and do not need to) test your add-in on Office on the web with Internet Explorer.
 
 ## Prerequisites
 
