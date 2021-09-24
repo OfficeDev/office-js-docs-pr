@@ -47,7 +47,7 @@ After you complete the wizard, the generator creates the project and installs su
    ```
 
 > [!NOTE]
-> If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md). For more information about the conditions, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+> If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 4. In the `<Page>` element, change the source location from **Functions.Page.Url** to **ContosoAddin.Url**.
 
