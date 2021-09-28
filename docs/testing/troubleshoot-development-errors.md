@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot development errors with Office Add-ins
 description: 'Learn how to troubleshoot development errors in Office Add-ins.'
-ms.date: 09/03/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
 ---
 
@@ -102,7 +102,7 @@ You can repeat the previous process for any additional schemas that are out-of-d
 
 - [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
 - [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [Debug Office Add-ins on iPad and Mac](debug-office-add-ins-on-ipad-and-mac.md)  
+- [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
