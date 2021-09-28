@@ -1,7 +1,7 @@
 ---
 title: EquivalentAddin element in the manifest file
 description: Specifies backwards compatibility for an equivalent COM add-in or XLL.
-ms.date: 03/09/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,9 @@ ms.localizationpriority: medium
 
 Specifies backwards compatibility for an equivalent COM add-in or XLL.
 
-**Add-in type:** Task pane, Custom function
+[!INCLUDE [Support note for equivalent add-ins feature](../../includes/equivalent-add-in-support-note.md)]
+
+**Add-in type:** Task pane, Mail, Custom function
 
 ## Syntax
 
