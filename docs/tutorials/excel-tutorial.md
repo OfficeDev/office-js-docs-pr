@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: 'Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
-ms.date: 07/08/2021
+ms.date: 09/23/2021
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 ms.localizationpriority: high
@@ -839,7 +839,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
     ```
 
 > [!NOTE]
-> The **popup.html** file, and the **popup.js** file that it loads, run in an entirely separate Microsoft Edge or Internet Explorer 11 process from the add-in's task pane. If **popup.js** was transpiled into the same **bundle.js** file as the **app.js** file, then the add-in would have to load two copies of the **bundle.js** file, which defeats the purpose of bundling. Therefore, this add-in does not transpile the **popup.js** file at all.
+> The **popup.html** file, and the **popup.js** file that it loads, run in an entirely separate browser runtime process from the add-in's task pane. If **popup.js** was transpiled into the same **bundle.js** file as the **app.js** file, then the add-in would have to load two copies of the **bundle.js** file, which defeats the purpose of bundling. Therefore, this add-in does not transpile the **popup.js** file at all.
 
 ### Update webpack config settings
 

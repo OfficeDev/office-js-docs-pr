@@ -1,7 +1,7 @@
 ---
 title: Run code in your Office Add-in when the document opens
 description: 'Learn how to run code in your Office Add-in add-in when the document opens.'
-ms.date: 12/28/2020
+ms.date: 09/17/2021
 ms.localizationpriority: medium
 ---
 
@@ -24,23 +24,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 > [!NOTE]
 > The `setStartupBehavior` method is asynchronous.
 
-## Configure your add-in for no load behavior on document open
-
-The following code configures your add-in not to start when the document is opened. Instead, it will start when the user engages it in some way, such as choosing a ribbon button or opening the task pane.
-
-```JavaScript
-Office.addin.setStartupBehavior(Office.StartupBehavior.none);
-```
-
-## Get the current load behavior
-
-To determine what the current startup behavior is, run the following function, which returns an `Office.StartupBehavior` object.
-
-```JavaScript
-let behavior = await Office.addin.getStartupBehavior();
-```
-
-## How to run code when the document opens
+## Place startup code in Office.initialize
 
 When your add-in is configured to load on document open, it will run immediately. The `Office.initialize` event handler will be called. Place your startup code in the `Office.initialize` or `Office.onReady` event handler.
 
@@ -96,6 +80,22 @@ Office.onReady(info => {
 async function onChange(event) {
   console.log("Change type of event: " + event.type);
 }
+```
+
+## Configure your add-in for no load behavior on document open
+
+The following code configures your add-in not to start when the document is opened. Instead, it will start when the user engages it in some way, such as choosing a ribbon button or opening the task pane.
+
+```JavaScript
+Office.addin.setStartupBehavior(Office.StartupBehavior.none);
+```
+
+## Get the current load behavior
+
+To determine what the current startup behavior is, run the following function, which returns an `Office.StartupBehavior` object.
+
+```JavaScript
+let behavior = await Office.addin.getStartupBehavior();
 ```
 
 ## See also
