@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: 'Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.'
-ms.date: 07/02/2021
+ms.date: 09/28/2021
 ms.localizationpriority: medium
 ---
 
@@ -9,8 +9,19 @@ ms.localizationpriority: medium
 
 This article describes how to enable shared folders (also known as delegate access) and shared mailbox (now in [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)) scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
 
+## Supported clients and platforms
+
+The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable. Excluded combinations are not supported.
+
+| Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2013 on-premises<br>(Cumulative Update ??? or later) |
+|---|:---:|:---:|:---:|:---:|
+|Windows:<br>version 1910 (build 12130.20272) or later|Yes|No|No|No|
+|Mac:<br>build 16.47 or later|Yes|Yes|Yes|Yes|
+|Web browser:<br>modern Outlook UI|Yes|Not applicable|Not applicable|Not applicable|
+|Web browser:<br>classic Outlook UI|Not applicable|No|No|No|
+
 > [!IMPORTANT]
-> Support for this feature was introduced in [requirement set 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in [requirement set 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) (for details, refer to [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). However, note that the feature's support matrix is a superset of the requirement set's.
 
 ## Supported setups
 
@@ -45,6 +56,28 @@ After receiving access, a shared mailbox user must follow the steps outlined in 
 
 > [!WARNING]
 > Do **NOT** use other options like "Open another mailbox". The feature APIs may not work properly then.
+
+### [Mac](#tab/unix)
+
+TODO: What are the instructions for each of these? How are these set up? How do users access?
+
+#### Shared mailboxes (preview)
+
+Mail and calendar are shared with a delegate or shared mailbox user. Add-ins are available to the delegate or user in message and appointment read and compose modes.
+
+#### Shared folders
+
+If the **Inbox** folder is shared with a delegate, add-ins are available to the delegate in message read mode.
+
+If the **Drafts** folder is also shared with the delegate, add-ins are available in compose mode.
+
+#### Local shared calendar (new model)
+
+If the calendar owner explicitly shared their calendar with a delegate (the entire mailbox may not be shared), add-ins are available to the delegate in appointment read and compose modes.
+
+#### Remote shared calendar (previous model)
+
+If the calendar owner granted broad access to their calendar (for example, made it editable to a particular DL or the entire organization), users may then have indirect or implicit permission and add-ins are available to those users in appointment read and compose modes.
 
 ---
 
