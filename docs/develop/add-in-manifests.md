@@ -191,7 +191,7 @@ The following are examples of `VersionOverrides` used, respectively, in a task p
 </VersionOverrides>
 ```
 
-For an example of a manifest that includes a `VersionOverrides` element, see [Manifest v1.1 XML file examples and schemas](#manifest-v1-1-xml-file-examples-and-schemas).
+For an example of a manifest that includes a `VersionOverrides` element, see [Manifest v1.1 XML file examples and schemas](#manifest-v11-xml-file-examples-and-schemas).
 
 ## Specify domains from which Office.js API calls are made
 
