@@ -19,7 +19,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 **Associated with these requirement sets**:
 
-- [AppCommands 1.1](../requirement-sets/app-commands-requirement-sets.md)
+- [AppCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 ## Child elements
 
