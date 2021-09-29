@@ -1,5 +1,8 @@
 > [!IMPORTANT]
-> Note that the following Word preview APIs are only available on the following platforms.
-> - Word on Windows
+> Note that the following Word preview APIs may be available on the following platforms.
 >
-> Word preview APIs are currently not supported on Mac, iOS, or on the Web.
+> - Word on Windows
+> - Word on Mac
+> - Word on the web
+>
+> Word preview APIs are currently not supported on iPad.
