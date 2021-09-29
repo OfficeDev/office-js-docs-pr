@@ -20,6 +20,9 @@ Defines whether the Outlook add-in is available in shared mailbox (now in previe
 
 For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
+**Associated with these requirement sets**:
+
+- [Mailbox 1.8](../../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)
 
 The following is an example of the **SupportsSharedFolders** element.
 
