@@ -14,6 +14,13 @@ Defines whether the Outlook add-in is available in shared mailbox (now in previe
 
 **Add-in type:** Mail
 
+**Valid only in these VersionOverrides schemas**:
+
+- Mail 1.1
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+
 The following is an example of the **SupportsSharedFolders** element.
 
 ```XML
