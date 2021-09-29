@@ -144,7 +144,7 @@ The following XML manifest example hosts its main add-in page in the `https://ww
 
 ## Version overrides in the manifest
 
-The optional [VersionOverrides](../reference/manifest/versionoverrides.md) deserves special mention. It contains child markup that enables additional add-in features. Some of these are:
+The optional [VersionOverrides](../reference/manifest/versionoverrides.md) element deserves special mention. It contains child markup that enables additional add-in features. Some of these are:
 
  - Customizing the Office ribbon and menus
  - Customizing how Office works with the embedded browser runtime in which add-ins run
@@ -191,7 +191,7 @@ The following are examples of `VersionOverrides` used, respectively, in a task p
 </VersionOverrides>
 ```
 
-For an example of a manifest that includes a `VersionOverrides` element, see [Manifest v1.1 XML file examples and schemas](#manifest-v1.1-xml-file-examples-and-schemas).
+For an example of a manifest that includes a `VersionOverrides` element, see [Manifest v1.1 XML file examples and schemas](#manifest-v1_1-xml-file-examples-and-schemas).
 
 ## Specify domains from which Office.js API calls are made
 
