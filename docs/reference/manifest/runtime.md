@@ -16,7 +16,7 @@ Configures your add-in to use a shared JavaScript runtime so that various compon
  - Task pane 1.0
  - Mail 1.1
 
-For more information, see [Version overrides in the manifest](../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 **Associated with these requirement sets**:
 

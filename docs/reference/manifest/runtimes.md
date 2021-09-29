@@ -20,7 +20,7 @@ Specifies the runtime of your add-in. Child of the [`<Host>`](host.md) element.
  - Task pane 1.0
  - Mail 1.1
 
-For more information, see [Version overrides in the manifest](../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 **Associated with these requirement sets**:
 
