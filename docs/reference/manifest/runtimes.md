@@ -15,7 +15,7 @@ Specifies the runtime of your add-in. Child of the [`<Host>`](host.md) element.
 
 **Add-in type:** Task pane, Mail
 
-**Valid only in these VersionOverride schemas:**:
+**Valid only in these VersionOverrides schemas**:
 
  - Task pane 1.0
  - Mail 1.1

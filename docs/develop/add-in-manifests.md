@@ -146,9 +146,9 @@ The following XML manifest example hosts its main add-in page in the `https://ww
 
 The optional [VersionOverrides](../reference/manifest/versionoverrides.md) element deserves special mention. It contains child markup that enables additional add-in features. Some of these are:
 
- - Customizing the Office ribbon and menus
- - Customizing how Office works with the embedded browser runtime in which add-ins run
- - Configuring how the add-in interacts with Azure Active Directory and Microsoft Graph for Single Sign-on
+ - Customizing the Office ribbon and menus.
+ - Customizing how Office works with the embedded browser runtime in which add-ins run.
+ - Configuring how the add-in interacts with Azure Active Directory and Microsoft Graph for Single Sign-on.
 
 Some descendant elements of `VersionOverrides` have values that override values of the parent `OfficeApp` element. For example, the `Hosts` element in `VersionOverrides` overrides the `Hosts` element in `OfficeApp`.
 
@@ -159,17 +159,17 @@ The `VersionOverrides` element has its own schema, actually four of them, depend
 - [Mail 1.0](/openspecs/office_file_formats/ms-owemxml/578d8214-2657-4e6a-8485-25899e772fac)
 - [Mail 1.1](/openspecs/office_file_formats/ms-owemxml/8e722c85-eb78-438c-94a4-edac7e9c533a)
 
-When a `VersionOverrides` element is used, then the `OfficeApp` element must have a `xmlns` attribute that identifies the appropriate schema. The possible values of the attribute are the following.
+When a `VersionOverrides` element is used, then the `OfficeApp` element must have a `xmlns` attribute that identifies the appropriate schema. The possible values of the attribute are the following:
 
 - `http://schemas.microsoft.com/office/taskpaneappversionoverrides`
 - `http://schemas.microsoft.com/office/contentappversionoverrides`
 - `http://schemas.microsoft.com/office/mailappversionoverrides`
 
-The `VersionOverrides` element itself must also have an `xmlns` attribute specifying the schema. The possible values are the three above and the following.
+The `VersionOverrides` element itself must also have an `xmlns` attribute specifying the schema. The possible values are the three above and the following:
 
 - `http://schemas.microsoft.com/office/mailappversionoverrides/1.1`
 
-The `VersionOverrides` element also must have an `xsi:type` attribute that specifies the schema version. The possible values are the following.
+The `VersionOverrides` element also must have an `xsi:type` attribute that specifies the schema version. The possible values are the following:
 
 - `VersionOverridesV1_0`
 - `VersionOverridesV1_1`

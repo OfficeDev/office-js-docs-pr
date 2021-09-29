@@ -11,7 +11,7 @@ Configures your add-in to use a shared JavaScript runtime so that various compon
 
 **Add-in type:** Task pane, Mail
 
-**Valid only in these VersionOverride schemas:**:
+**Valid only in these VersionOverrides schemas**:
 
  - Task pane 1.0
  - Mail 1.1
