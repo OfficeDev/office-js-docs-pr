@@ -3,6 +3,5 @@
 >
 > - Word on Windows
 > - Word on Mac
-> - Word on the web
 >
-> Word preview APIs are currently not supported on iPad.
+> Word preview APIs are currently not supported on iPad. However, bookmark feature APIs are also available in Word on the web.
