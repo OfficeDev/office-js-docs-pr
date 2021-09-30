@@ -1,13 +1,23 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 05/11/2021
+ms.date: 09/29/2021
 ms.localizationpriority: medium
 ---
 
 # ExtensionPoint element
 
  Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [AllFormFactors](allformfactors.md), [DesktopFormFactor](desktopformfactor.md) or [MobileFormFactor](mobileformfactor.md).
+
+**Add-in type:** Task pane, Mail
+
+**Valid only in these VersionOverrides schemas**:
+
+- Task pane 1.0
+- Mail 1.0
+- Mail 1.1
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 ## Attributes
 
@@ -29,7 +39,7 @@ ms.localizationpriority: medium
 The following examples show how to use the **ExtensionPoint** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.
 
 > [!IMPORTANT]
-> For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format. <CustomTab id="mycompanyname.mygroupname">
+> For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format: `<CustomTab id="mycompanyname.mygroupname">`.
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">

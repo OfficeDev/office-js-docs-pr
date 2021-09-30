@@ -1,7 +1,7 @@
 ---
 title: DesktopFormFactor element in the manifest file
 description: Specifies the settings for an add-in for the desktop form factor.
-ms.date: 09/17/2021
+ms.date: 09/29/2021
 ms.localizationpriority: medium
 ---
 
@@ -10,6 +10,16 @@ ms.localizationpriority: medium
 Specifies the settings for an add-in for the desktop form factor. The desktop form factor includes Office on the web, Windows, and Mac. It contains all the add-in information for the desktop form factor except for the **Resources** node.
 
 Each DesktopFormFactor definition contains the **FunctionFile** element and one or more **ExtensionPoint** elements. For more information, see [FunctionFile element](functionfile.md) and [ExtensionPoint element](extensionpoint.md).
+
+**Add-in type:** Task pane, Mail
+
+**Valid only in these VersionOverrides schemas**:
+
+- Task pane 1.0
+- Mail 1.0
+- Mail 1.1
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 ## Child elements
 
