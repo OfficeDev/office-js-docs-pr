@@ -1,7 +1,7 @@
 ---
 title: Internet Explorer 11 testing
 description: 'Test your Office Add-in on Internet Explorer 11.'
-ms.date: 09/23/2021
+ms.date: 10/01/2021
 ms.localizationpriority: medium
 ---
 
@@ -25,7 +25,7 @@ If you plan to market your add-in through AppSource or you plan to support older
 >
 > For more information about these options, see [Support Internet Explorer 11](../develop/support-ie-11.md).
 >
-> Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
+> Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location. See also [Determine at runtime if the add-in is running in Internet Explorer](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
 
 > [!NOTE]
 > Office on the web cannot be opened in Internet Explorer 11, so you cannot (and do not need to) test your add-in on Office on the web with Internet Explorer.

@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: 'Specifies how the operating system and Office version determine what browser is used by Office Add-ins.'
-ms.date: 09/23/2021
+ms.date: 10/01/2021
 ms.localizationpriority: medium
 ---
 
@@ -55,7 +55,7 @@ The following table shows which browser is used for the various platforms and op
 >
 > For more information about these options, see [Support Internet Explorer 11](../develop/support-ie-11.md).
 >
-> Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
+> Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location. See also [Determine at runtime if the add-in is running in Internet Explorer](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
 
 ## Troubleshooting Microsoft Edge issues
 
