@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 08/27/2021
+ms.date: 10/01/2021
 ms.localizationpriority: medium
 ---
 
@@ -165,7 +165,7 @@ Added a new property to manage the session data of an item in Compose mode.
 
 Feature support for shared folders (that is, delegate access) was released in [requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). However, support for shared mailboxes is now available in preview. To learn more, refer to [Enable shared folders and shared mailbox scenarios](../../../outlook/delegate-access.md).
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern); Outlook on Mac
 
 ## See also
 
