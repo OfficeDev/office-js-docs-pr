@@ -1,0 +1,125 @@
+---
+title: Work with shapes using the PowerPoint JavaScript API
+description: 'Learn how to add, remove, and format shapes on PowerPoint slides.'
+ms.date: 10/04/2021
+ms.localizationpriority: medium
+---
+
+# Work with shapes using the PowerPoint JavaScript API (preview)
+
+This article describes how to use geometric shapes, lines, and text boxes in conjunction with the [Shape](/javascript/api/powerpoint/poweroint.shape) and [ShapeCollection](/javascript/api/powerpoint/poweroint.shapecollection) APIs.
+
+## Create shapes
+
+Shapes are created through and stored in a slide's shape collection (`slide.shapes`). `ShapeCollection` has several `.add*` methods for this purpose. All shapes have names and IDs generated for them when they are added to the collection. These are the `name` and `id` properties, respectively. `name` can be set by your add-in.
+
+### Geometric shapes
+
+A geometric shape is created with one of the overrides of `ShapeCollection.addGeometricShape`. The first parameter is either a [GeometricShapeType](/javascript/api/powerpoint/poweroint.geometricshapetype) enum or the string equivalent of one of the enum's values. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/poweroint.shapeaddoptions) that can specify the initial size of the line and it's position relative to the top and left sides of the slide. Or these properties can be set after the shape is created.
+
+The following code sample creates a 150x150-pixel rectangle named **"Square"** that is positioned 100 pixels from the top and left sides of the slide. The method returns a `Shape` object.
+
+```js
+// This sample creates a rectangle positioned 100 pixels from the top and left sides
+// of the slide and is 150x150 pixels.
+PowerPoint.run(function (context) {
+    var shapes = context.presentation.slides.getItem("Myslide").shapes;
+    var rectangle = shapes.addGeometricShape(PowerPoint.GeometricShapeType.rectangle);
+    rectangle.left = 100;
+    rectangle.top = 100;
+    rectangle.height = 150;
+    rectangle.width = 150;
+    rectangle.name = "Square";
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+### Lines
+
+A line is created with one of the overrides of `ShapeCollection.addLine` The first parameter is either a [ConnectorType](/javascript/api/powerpoint/poweroint.connectortype) enum or the string equivalent of one of the enum's values to specify how the line contorts between endpoints. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/poweroint.shapeaddoptions) that can specify the initial start and end points of the line. Or these properties can be set after the shape is created. The method returns a `Shape` object.
+
+> [!NOTE]
+> When the shape is a line, the `top` and `left` properties of the `Shape` and`ShapeAddOptions` objects specify the starting point of the line and the `height` and `width` properties specify the endpoint of the line.
+
+The following code sample creates a straight line on the slide.
+
+```js
+// This sample creates a straight line from [200,50] to [300,150] on the slide
+PowerPoint.run(function (context) {
+    var shapes = context.presentation.slides.getItem("Myslide").shapes;
+    var line = shapes.addLine(Excel.ConnectorType.straight, {left: 200, top: 50, height: 300, width: 150});
+    line.name = "StraightLine";
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+### Text boxes
+
+A text box is created with the [addTextBox](/javascript/api/powerpoint/powerpoint.shapecollection?view=powerpoint-js-preview#addTextBox_text__options_) method. The first parameter is the text that should appear in the box initially. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/poweroint.shapeaddoptions) that can specify the initial size of the text box and it's position relative to the top and left sides of the slide. Or these properties can be set after the shape is created.
+
+The following code sample shows the creation of a text box.
+
+```js
+// This sample creates a text box with the text "Hello!" and sizes it appropriately.
+PowerPoint.run(function (context) {
+    var shapes = context.presentation.slides.getItem("Myslide").shapes;
+    var textbox = shapes.addTextBox("Hello!");
+    textbox.left = 100;
+    textbox.top = 100;
+    textbox.height = 20;
+    textbox.width = 45;
+    textbox.name = "Textbox";
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+## Move and resize shapes
+
+Shapes sit on top of the slide. Their placement is defined by the `left` and `top` property. These act as margins from slide's respective edges, measured in points, with [0, 0] being the upper-left corner. The shape size is specified by the `height` and `width` properties. Your code can move or resize the shape by resetting these properties.
+
+## Text in shapes
+
+Geometric Shapes can contain text. Shapes have a `textFrame` property of type [TextFrame](/javascript/api/powerpoint/poweroint.textframe). The `TextFrame` object manages the text display options (such as margins and text overflow). `TextFrame.textRange` is a [TextRange](/javascript/api/powerpoint/poweroint.textrange) object with the text content and font settings.
+
+The following code sample creates a geometric shape named "Wave" with the text "Shape Text". It also adjusts the shape and text colors, as well as sets the text's horizontal alignment to the center.
+
+```js
+// This sample creates a light-blue wave shape and adds the purple text "Shape text" to the center.
+PowerPoint.run(function (context) {
+    var shapes = context.presentation.slides.getItem("Myslide").shapes;
+    var wave = shapes.addGeometricShape(PowerPoint.GeometricShapeType.wave);
+    wave.left = 100;
+    wave.top = 400;
+    wave.height = 50;
+    wave.width = 150;
+    wave.name = "Wave";
+    wave.fill.setSolidColor("lightblue");
+    wave.textFrame.textRange.text = "Shape text";
+    wave.textFrame.textRange.font.color = "purple";
+    wave.textFrame.verticalAlignment = PowerPoint.TextVerticalAlignment.middleCentered;
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+## Delete shapes
+
+Shapes are removed from the slide with the `Shape` object's `delete` method. 
+
+The following code sample deletes all the shapes from **Myslide**.
+
+```js
+// This deletes all the shapes from "Myslide".
+PowerPoint.run(function (context) {
+    var sheet = context.presentation.slides.getItem("Myslide");
+    var shapes = sheet.shapes;
+
+    // We'll load all the shapes in the collection without loading their properties.
+    shapes.load("items/$none");
+    return context.sync().then(function () {
+        shapes.items.forEach(function (shape) {
+            shape.delete()
+        });
+        return context.sync();
+    }).catch(errorHandlerFunction);
+}).catch(errorHandlerFunction);
+```
