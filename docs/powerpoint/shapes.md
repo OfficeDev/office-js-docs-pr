@@ -9,6 +9,8 @@ ms.localizationpriority: medium
 
 This article describes how to use geometric shapes, lines, and text boxes in conjunction with the [Shape](/javascript/api/powerpoint/poweroint.shape) and [ShapeCollection](/javascript/api/powerpoint/poweroint.shapecollection) APIs.
 
+[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
+
 ## Create shapes
 
 Shapes are created through and stored in a slide's shape collection (`slide.shapes`). `ShapeCollection` has several `.add*` methods for this purpose. All shapes have names and IDs generated for them when they are added to the collection. These are the `name` and `id` properties, respectively. `name` can be set by your add-in.
