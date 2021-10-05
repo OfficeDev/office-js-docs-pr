@@ -1,7 +1,7 @@
 ---
 title: Internet Explorer 11 testing
 description: 'Test your Office Add-in on Internet Explorer 11.'
-ms.date: 09/23/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
 ---
 
@@ -50,7 +50,7 @@ These instructions assume you have set up a Yo Office generator project before. 
     ```
 
 > [!TIP]
-> It isn't necessary to use this command, but it should help debug the majority of issues related to the Internet Explorer 11 runtime. For complete robustness, you should test using computers with various combinations of Windows 7, 8.1, and 10 and various versions of Office. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
+> It isn't necessary to use this command, but it should help debug the majority of issues related to the Internet Explorer 11 runtime. For complete robustness, you should test using computers with various combinations of Windows 7, 8.1, 10, and 11 and various versions of Office. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
 
 ### Command options
 
@@ -64,5 +64,5 @@ The `office-addin-dev-settings webview` command can also take a number of runtim
 
 * [Test and debug Office Add-ins](test-debug-office-add-ins.md)
 * [Sideload Office Add-ins for testing](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [Debug add-ins using developer tools on Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+* [Debug add-ins using developer tools on Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
 * [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)

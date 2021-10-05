@@ -39,7 +39,7 @@ The procedure for debugging an Office Add-in varies by platform as well. Each of
 
 - [Attach a debugger from the task pane (on Windows)](attach-debugger-from-task-pane.md)
 
-- [Debug add-ins using F12 developer tools on Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Debug add-ins using F12 developer tools on Windows 10](debug-add-ins-using-f12-developer-tools-on-windows.md)
 
 - [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
 
