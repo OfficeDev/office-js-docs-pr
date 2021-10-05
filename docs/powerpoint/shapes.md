@@ -17,15 +17,15 @@ Shapes are created through and stored in a slide's shape collection (`slide.shap
 
 ### Geometric shapes
 
-A geometric shape is created with one of the overrides of `ShapeCollection.addGeometricShape`. The first parameter is either a [GeometricShapeType](/javascript/api/powerpoint/poweroint.geometricshapetype) enum or the string equivalent of one of the enum's values. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/poweroint.shapeaddoptions) that can specify the initial size of the line and it's position relative to the top and left sides of the slide. Or these properties can be set after the shape is created.
+A geometric shape is created with one of the overrides of `ShapeCollection.addGeometricShape`. The first parameter is either a [GeometricShapeType](/javascript/api/powerpoint/poweroint.geometricshapetype) enum or the string equivalent of one of the enum's values. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/poweroint.shapeaddoptions) that can specify the initial size of the line and it's position relative to the top and left sides of the slide, measured in points. Or these properties can be set after the shape is created.
 
-The following code sample creates a 150x150-pixel rectangle named **"Square"** that is positioned 100 pixels from the top and left sides of the slide. The method returns a `Shape` object.
+The following code sample creates a rectangle named **"Square"** that is positioned 100 points from the top and left sides of the slide. The method returns a `Shape` object.
 
 ```js
-// This sample creates a rectangle positioned 100 pixels from the top and left sides
-// of the slide and is 150x150 pixels.
+// This sample creates a rectangle positioned 100 points from the top and left sides
+// of the slide and is 150x150 points. The shape is put on the first slide.
 PowerPoint.run(function (context) {
-    var shapes = context.presentation.slides.getItem("Myslide").shapes;
+    var shapes = context.presentation.slides.getItemAt(0).shapes;
     var rectangle = shapes.addGeometricShape(PowerPoint.GeometricShapeType.rectangle);
     rectangle.left = 100;
     rectangle.top = 100;
@@ -38,17 +38,17 @@ PowerPoint.run(function (context) {
 
 ### Lines
 
-A line is created with one of the overrides of `ShapeCollection.addLine` The first parameter is either a [ConnectorType](/javascript/api/powerpoint/poweroint.connectortype) enum or the string equivalent of one of the enum's values to specify how the line contorts between endpoints. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/poweroint.shapeaddoptions) that can specify the initial start and end points of the line. Or these properties can be set after the shape is created. The method returns a `Shape` object.
+A line is created with one of the overrides of `ShapeCollection.addLine` The first parameter is either a [ConnectorType](/javascript/api/powerpoint/poweroint.connectortype) enum or the string equivalent of one of the enum's values to specify how the line contorts between endpoints. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/poweroint.shapeaddoptions) that can specify the start and end points of the line. Or these properties can be set after the shape is created. The method returns a `Shape` object.
 
 > [!NOTE]
-> When the shape is a line, the `top` and `left` properties of the `Shape` and`ShapeAddOptions` objects specify the starting point of the line and the `height` and `width` properties specify the endpoint of the line.
+> When the shape is a line, the `top` and `left` properties of the `Shape` and`ShapeAddOptions` objects specify the starting point of the line relative to the top and left edges of the slide. The `height` and `width` properties specify the endpoint of the line *relative to the start point*. So, the end point relative to the top and left edges of the slide is (`top` + `height`) by (`left` + `width`). The unit of measure for all properties is points and negative values are allowed.
 
 The following code sample creates a straight line on the slide.
 
 ```js
-// This sample creates a straight line from [200,50] to [300,150] on the slide
+// This sample creates a straight line on the first slide.
 PowerPoint.run(function (context) {
-    var shapes = context.presentation.slides.getItem("Myslide").shapes;
+    var shapes = context.presentation.slides.getItemAt(0).shapes;
     var line = shapes.addLine(Excel.ConnectorType.straight, {left: 200, top: 50, height: 300, width: 150});
     line.name = "StraightLine";
     return context.sync();
@@ -68,8 +68,8 @@ PowerPoint.run(function (context) {
     var textbox = shapes.addTextBox("Hello!");
     textbox.left = 100;
     textbox.top = 100;
-    textbox.height = 20;
-    textbox.width = 45;
+    textbox.height = 300;
+    textbox.width = 450;
     textbox.name = "Textbox";
     return context.sync();
 }).catch(errorHandlerFunction);
