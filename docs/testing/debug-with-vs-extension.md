@@ -30,7 +30,7 @@ These instructions assume you have experience using the command line, understand
     > If you already have a project, skip step 1 and move to step 2.
 
 1. Open a command prompt as administrator.
-   ![Command prompt options, including "run as administrator" in Windows 10, 11.](../images/run-as-administrator-vs-code.jpg)
+   ![Command prompt options, including "run as administrator" in Windows 10 and 11.](../images/run-as-administrator-vs-code.jpg)
 
 1. Navigate to your project directory.
 
