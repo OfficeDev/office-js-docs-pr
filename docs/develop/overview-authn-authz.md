@@ -13,11 +13,11 @@ Your add-in can also get the user's consent to access their Microsoft Graph data
 
 ## Key resources for authentication and authorization
 
-Office Add-ins rely on the Microsoft identity platform to perform authentication and authorization. This documentation explains details specific to Office Add-ins to implement authentication and authorization. This documentation does not cover general security concepts such as OAuth flows, token caching, or identity management. This documentation also does not document anything specific to Microsoft Azure or the Microsoft identity platform. We recommend you refer to the following resources if you need more information in those areas.
+Office Add-ins rely on the Microsoft identity platform to perform authentication and authorization. This documentation explains how to build and configure Office Add-ins to successfully implement authentication and authorization. However, many concepts and security technologies mentioned are outside the scope of this documentation. For example, general security concepts such as OAuth flows, token caching, or identity management are not explained here. This documentation also does not document anything specific to Microsoft Azure or the Microsoft identity platform. We recommend you refer to the following resources if you need more information in those areas.
 
 ### Microsoft identity platform
 
-Office Add-ins primarily depend on the Microsoft identity platform to handle authentication and authorization. We'll include links to relevant resources in the Microsoft identity platform documentation when additional details are needed. When you get stuck programming something related to the Microsoft identity platform, or need help on a concept, refer to the [Microsoft identity platform](/azure/active-directory/develop) documentation for more information.
+Office Add-ins primarily depend on the Microsoft identity platform to handle authentication and authorization. We'll include links to relevant resources in the Microsoft identity platform documentation when additional details are needed. If you get stuck programming something related to the Microsoft identity platform, or need help on a concept, refer to the [Microsoft identity platform](/azure/active-directory/develop) documentation for more information.
 
 ### OAuth 2.0 and OpenID connect
 
@@ -27,22 +27,22 @@ You'll see OAuth 2.0 and OpenID connect mentioned in this documentation. These a
 
 You have a choice of two ways to accomplish authentication and authorization in your Office Add-in.
 
-- **single sign-on (SSO) through Office**: Your add-in can access the authenticated user from Office to avoid having the user sign in twice (to Office, and then also your add-in). Optionally, your add-in can also use the user's Office sign-in to authorize your add-in to [Microsoft Graph](/graph) or other Microsoft 365 services. (Non-Microsoft sources are not accessible through this approach.)
+- **single sign-on (SSO) through Office**: Your add-in can access the authenticated user's identity from Office to avoid having the user sign in twice (to Office, and then also your add-in). Optionally, your add-in can also use the user's identity to authorize your add-in to [Microsoft Graph](/graph) or other Microsoft 365 services. (Non-Microsoft sources are not accessible through this approach.)
 - **Azure AD sign-in**: Your add-in can sign in users using the Microsoft identity platform as the authentication provider. Once you have signed in the user, you can then use the Microsoft identity platform to authorize the add-in to [Microsoft Graph](/graph) or other Microsoft 365 services. This approach is used when SSO through Office is unavailable. Also, there are scenarios in which you want to have your users sign in to your add-in separately even when SSO is available; for example, if you want them to have the option of signing in to the add-in with a different ID from the one with which they are currently signed in to Office.
 
 Use the following table to find the guidance you'll need based on the required resources for your add-in, and the approach you want to use.
 
 |Required resources  | Approach  | Guidance |
 |---------|---------|---------|
-|User's identity | SSO | Use the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method and use the returned token as an ID token. For more information see [Get the user's information through SSO](#get-the-user's-information-through-sso). |
+|User's identity | SSO | Use the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method and use the returned token as an ID token. For more information see [Get the user's identity through SSO](#get-the-user's-identity-through-sso). |
 |User's identity and Microsoft Graph access | SSO | Use the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method and use the returned token in the on-behalf-of flow to get a new access token to Microsoft Graph. For more information see [Access Microsoft Graph through SSO](#access-microsoft-Graph-through-sso). |
-|User's identity | Azure AD sign-in | Authenticate as you would in any web app, but use the Dialog API to host the sign-in page. For more information, see [Authenticate with the Microsoft identity platform](#authenticate-with-the-microsoft-identity-platform).     |
-|User's identity and Microsoft Graph access | Azure AD sign-in | Use Azure AD to get an access token to Graph, but use the dialog API to host the sign-in page. For more information, see [Access to Microsoft Graph without SSO](#access-to-microsoft-graph-without-sss). |
+|User's authentication | Azure AD sign-in | Authenticate as you would in any web app, but use the Dialog API to host the sign-in page. For more information, see [Authenticate with the Microsoft identity platform](#authenticate-with-the-microsoft-identity-platform).     |
+|User's authentication and Microsoft Graph access | Azure AD sign-in | Use the Microsoft identity platform to get an access token to Graph, but use the dialog API to host the sign-in page. For more information, see [Access to Microsoft Graph without SSO](#access-to-microsoft-graph-without-sso). |
 |User's identity and non-Microsoft data     | Separate sign-in        | Get authorization to the external source as you would in any web app, but you may need to use the dialog API to host the login page. See [Access to non-Microsoft data sources](#access-to-non-microsoft-data-sources). |
 
 ## SSO scenarios
 
-Using SSO is convenient for the user because they only have to sign in once to Office. SSO is not supported on all versions of Office, so you'll still need to implement an alternative sign-in approach, such as using the Microsoft identity platform. For more information on supported versions, see [Identity API requirement sets](../reference/requirement-sets/identity-api-requirement-sets)
+Using SSO is convenient for the user because they only have to sign in once to Office. SSO is not supported on all versions of Office, so you'll still need to implement an alternative sign-in approach, by using the Microsoft identity platform. For more information on supported Office versions, see [Identity API requirement sets](../reference/requirement-sets/identity-api-requirement-sets)
 
 ### Get the user's identity through SSO
 
@@ -52,7 +52,7 @@ To get the user's identity through SSO, call the [getAccessToken](/javascript/ap
 
 If the user is not signed in, Office will open a dialog box and use the Microsoft identity platform to request the user to sign in. Then the method will return an access token, or throw an error if unable to sign in the user.
 
-In a scenario where you need to store data for the user, refer to [Microsoft identity platform ID tokens](azure/active-directory/develop/id-tokens) for information about how to get a value from the token to uniquely identify the user. Then use that value to look up the user in a user table or user database that you maintain. Use the database to store user-relative information such as the user's preferences or the state of the user's account. Since you are using SSO, your users don't sign-in separately to your add-in, so you do not need to store a password for the user.
+In a scenario where you need to store data for the user, refer to [Microsoft identity platform ID tokens](azure/active-directory/develop/id-tokens) for information about how to get a value from the token to uniquely identify the user. Use that value to look up the user in a user table or user database that you maintain. Use the database to store user-relative information such as the user's preferences or the state of the user's account. Since you are using SSO, your users don't sign-in separately to your add-in, so you do not need to store a password for the user.
 
 Before you begin implementing user authentication with SSO, be sure that you are thoroughly familiar with the article [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md). Note also the following samples.
 
@@ -63,7 +63,7 @@ These samples, however, do not use the token as an ID token. They use it to get 
 
 ### Access Microsoft Graph through SSO
 
-In some scenarios not only do you need the user's information, but you also need to access [Microsoft Graph](/graph) resources on behalf of the user. For example, you may need to send an email, or create a chat in Teams on behalf of the user. These actions, and more, can be accomplished through Microsoft Graph. You'll need to follow these steps:
+In some scenarios not only do you need the user's identity, but you also need to access [Microsoft Graph](/graph) resources on behalf of the user. For example, you may need to send an email, or create a chat in Teams on behalf of the user. These actions, and more, can be accomplished through Microsoft Graph. You'll need to follow these steps:
 
 1. Get the access token for the current user through SSO by calling [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_).
 1. Use the on-behalf-of flow to exchange the access token for a new access token containing claims that allow your add-in to call Microsoft Graph.
