@@ -63,10 +63,10 @@ These samples, however, do not use the token as an ID token. They use it to get 
 
 ### Access Microsoft Graph through SSO
 
-In some scenarios not only do you need the user's information, but you also need to access Microsoft Graph resources on behalf of the user. For example, you may need to send an email, or create a chat in Teams on behalf of the user. These actions, and more, can be accomplished through Microsoft Graph. You'll need to follow these steps:
+In some scenarios not only do you need the user's information, but you also need to access [Microsoft Graph](/graph) resources on behalf of the user. For example, you may need to send an email, or create a chat in Teams on behalf of the user. These actions, and more, can be accomplished through Microsoft Graph. You'll need to follow these steps:
 
-1. Get the access token for the curren user through SSO by calling getAccessToken.
-1. Use the on-behalf-of flow to exchange the access token for a new access token containing claims allow your add-in to call Microsoft Graph.
+1. Get the access token for the current user through SSO by calling [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_).
+1. Use the on-behalf-of flow to exchange the access token for a new access token containing claims that allow your add-in to call Microsoft Graph.
 
 To use SSO to access Microsoft Graph, your add-in in a task pane or function file calls the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method. If the user is not signed in, Office will open a dialog box and navigate it to the Azure Active Directory login page. After the user signs in, or if the user is already signed in, the method returns an access token. The token is a bootstrap token in the **On Behalf Of** flow. Specifically, it has a `scope` claim with the value `access_as_user`. For guidance about the claims in the token, see [Microsoft identity platform access tokens](/azure/active-directory/develop/access-tokens#payload-claims). For an example of a one of these tokens, see [Example access token](sso-in-office-add-ins.md#example-access-token).
 
