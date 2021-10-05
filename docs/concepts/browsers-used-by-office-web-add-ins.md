@@ -33,7 +33,7 @@ The following table shows which browser is used for the various platforms and op
 |Windows 7, 8.1, 10, 11 | non-subscription Office 2013 to Office 2019|Doesn't matter|Internet Explorer 11|
 |Windows 10, 11 | non-subscription Office 2021 or later|Yes|Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
 |Windows 7 | Microsoft 365| Doesn't matter | Internet Explorer 11|
-|Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp;1903,<br>Windows 11| Microsoft 365 | No| Internet Explorer 11|
+|Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | No| Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>2</sup>| Doesn't matter|Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;_AND_&nbsp;<&nbsp;16.0.13530.20424<sup>2</sup>| Doesn't matter|Microsoft Edge<sup>1, 3</sup> with original WebView (EdgeHTML)|
 |Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Window 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>2</sup>| No |Microsoft Edge<sup>1, 3</sup> with original WebView (EdgeHTML)|
