@@ -1,7 +1,7 @@
 ---
 title: Support Internet Explorer 11
 description: 'Learn how to support Internet Explorer 11 and ES5 Javascript in your add-in.'
-ms.date: 09/23/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
 ---
 
@@ -18,6 +18,9 @@ ms.localizationpriority: medium
 Office Add-ins are web applications that are displayed inside IFrames when running on Office on the web. Office Add-ins are displayed using embedded browser controls when running in Office on Windows or Office on the Mac. The embedded browser controls are supplied by the operating system or by a browser installed on the user's computer.
 
 If you plan to market your add-in through AppSource or you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser control that is based on Internet Explorer 11 (IE11). For information about which combinations of Windows and Office use the IE11-based browser control, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+
+> [!TIP]
+> If you don't plan to support older versions of Windows or Office, your add-in can gracefully fail on Internet Browser based platforms and still pass AppSource validation. See the [Graceful failure section](#graceful-failure) section at the end of this article to learn more.
 
 > [!IMPORTANT]
 > Internet Explorer 11 doesn't support some HTML5 features such as media, recording, and location. If your add-in must support Internet Explorer 11, then you can't use these features.
@@ -51,6 +54,18 @@ For a sample add-in that uses core.js, see [Word Add-in Angular2 StyleChecker](h
 ## Testing an add-in on Internet Explorer
 
 See [Internet Explorer 11 testing](../testing/ie-11-testing.md).
+
+## Graceful failure
+
+The features of add-in may rely on Office Add-ins APIs that are not compatible with older versions of Office. In this case, your add-in should display a helpful message to the user, instead of performing its normal functions. This way, the add-in still passes AppSource validation.
+
+The recommended approach for checking the browser version is through a user agent.
+
+```javascript
+if (window.navigator.userAgent.indexOf("Trident/7.0") > -1) {
+    // Display a message explaining your support.   
+}
+```
 
 ## Additional resources
 
