@@ -1,7 +1,7 @@
 ---
 title: Overview of single sign-on (SSO) for Office Add-ins
 description: 'Overview of how single sign-on (SSO) works for Office Add-ins using common Microsoft personal, work, or education accounts.'
-ms.date: 09/13/2021
+ms.date: 09/20/2021
 ms.localizationpriority: high
 ---
 
