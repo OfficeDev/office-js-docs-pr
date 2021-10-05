@@ -64,5 +64,5 @@ The `office-addin-dev-settings webview` command can also take a number of runtim
 
 * [Test and debug Office Add-ins](test-debug-office-add-ins.md)
 * [Sideload Office Add-ins for testing](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [Debug add-ins using developer tools on Windows](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+* [Debug add-ins using developer tools on Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
 * [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)

@@ -221,7 +221,7 @@ For Office on Windows, the shared runtime uses Microsoft Edge with WebView2 (Chr
 
 ### Debugging
 
-When using a shared runtime, you can't use Visual Studio Code to debug custom functions in Excel on Windows at this time. You'll need to use developer tools instead. For more information, see [Debug add-ins using developer tools on Windows](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
+When using a shared runtime, you can't use Visual Studio Code to debug custom functions in Excel on Windows at this time. You'll need to use developer tools instead. For more information, see [Debug add-ins using developer tools on Windows](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md).
 
 ### Multiple task panes
 
