@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: 'Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.'
-ms.date: 09/28/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
 ---
 
@@ -13,7 +13,7 @@ This article describes how to enable shared folders (also known as delegate acce
 
 The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable. Excluded combinations are not supported.
 
-| Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2013 on-premises<br>(Cumulative Update ??? or later) |
+| Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2013 on-premises |
 |---|:---:|:---:|:---:|:---:|
 |Windows:<br>version 1910 (build 12130.20272) or later|Yes|No|No|No|
 |Mac:<br>build 16.47 or later|Yes|Yes|Yes|Yes|
@@ -58,8 +58,6 @@ After receiving access, a shared mailbox user must follow the steps outlined in 
 > Do **NOT** use other options like "Open another mailbox". The feature APIs may not work properly then.
 
 ### [Mac](#tab/unix)
-
-TODO: What are the instructions for each of these? How are these set up? How do users access?
 
 #### Shared mailboxes (preview)
 
