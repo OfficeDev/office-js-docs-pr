@@ -1,13 +1,13 @@
 ---
-title: Get the ID token of the signed-in user
+title: Use SSO to get the identity of the signed-in user
 description: Call the getAccessToken API to get the ID token with name, email, and additional information about the signed in user.
-ms.date: 07/15/2021
+ms.date: 10/06/2021
 localization_priority: Normal
 ---
 
-# Get the ID token of the signed-in user
+# Use SSO to get the identity of the signed-in user
 
-Use the `getAccessToken` API to get an ID token for the user that is signed in to Office. The user ID token contains information about the signed in user, such as their name and email. You can also obtain a unique ID from the ID token to identify the user when calling your own web services. To call `getAccessToken` you must configure your Office Add-in to use SSO with Office.
+Use the `getAccessToken` API to get an access token that contains the identity for the current user signed in to Office. The access token is also an ID token because it contains identity claims about the signed in user, such as their name and email. You can also use the ID token to identify the user when calling your own web services. To call `getAccessToken` you must configure your Office Add-in to use SSO with Office.
 
 In this article you'll create an Office Add-in that gets the ID token, and displays the user's name, email, and unique ID in the task pane.
 
@@ -212,9 +212,18 @@ The final step is to get the ID token by calling `getAccessToken`.
 
 ---
 
-run it!
+## Run the add-in
+
+# [Visual Studio 2019](#tab/vs2019)
+
+1. Press **F5**.
+1. 
+
+# [yo office](#tab/yooffice)
 
 
-## Next steps
+---
 
+## See also
 
+[Using claims to reliably identify a user (Subject and Object ID)](/azure/active-directory/develop/id-tokens#using-claims-to-reliably-identify-a-user-subject-and-object-id)
