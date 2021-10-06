@@ -75,13 +75,13 @@ function write(message){
 ---
 ---
 
-#### diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation)
+#### diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.4&preserve-view=true)
 
 Gets information about the environment in which the add-in is running.
 
 ##### Type
 
-*   [ContextInformation](/javascript/api/office/office.contextinformation)
+*   [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.4&preserve-view=true)
 
 ##### Requirements
 
@@ -147,13 +147,13 @@ function write(message){
 ---
 ---
 
-#### requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+#### requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.4&preserve-view=true)
 
 Provides a method for determining what requirement sets are supported on the current application and platform.
 
 ##### Type
 
-*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.4&preserve-view=true)
 
 ##### Requirements
 
@@ -173,7 +173,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings)
+#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.4&preserve-view=true)
 
 Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.
 
@@ -181,7 +181,7 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 
 ##### Type
 
-*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
+*   [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.4&preserve-view=true)
 
 ##### Requirements
 
@@ -196,13 +196,13 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 ---
 ---
 
-#### ui: [UI](/javascript/api/office/office.ui)
+#### ui: [UI](/javascript/api/office/office.ui?view=outlook-js-1.4&preserve-view=true)
 
 Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes, in your Office Add-ins.
 
 ##### Type
 
-*   [UI](/javascript/api/office/office.ui)
+*   [UI](/javascript/api/office/office.ui?view=outlook-js-1.4&preserve-view=true)
 
 ##### Requirements
 

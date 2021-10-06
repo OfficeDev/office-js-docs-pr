@@ -25,11 +25,11 @@ Requirement set 1.10 includes all of the features of [requirement set 1.9](../re
 - Added [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods): Adds a new function that disables the client signature for the sending mailbox in Compose mode.
 - Added [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getComposeTypeAsync_options__callback_): Adds a new function that gets the compose type of a message in Compose mode.
 - Added [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods): Adds a new function that checks if the client signature is enabled on the item in Compose mode.
-- Added [Office.MailboxEnums.ActionType](/javascript/api/outlook/office.mailboxenums.actiontype): Adds a new enum. It represents the type of custom action in a notification message.
+- Added [Office.MailboxEnums.ActionType](/javascript/api/outlook/office.mailboxenums.actiontype?view=outlook-js-1.10&preserve-view=true): Adds a new enum. It represents the type of custom action in a notification message.
 - Added [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true): Adds a new enum available in Compose mode.
-- Added [Office.MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype): Adds a new type to the `ItemNotificationMessageType` enum. It represents a notification message with a custom action.
-- Added [Office.NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction): Adds a new object so you can define a custom action for your `InsightMessage` notification.
-- Added [Office.NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails#actions): Adds a new property that enables you to add an `InsightMessage` notification with a custom action.
+- Added [Office.MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype?view=outlook-js-1.10&preserve-view=true): Adds a new type to the `ItemNotificationMessageType` enum. It represents a notification message with a custom action.
+- Added [Office.NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction?view=outlook-js-1.10&preserve-view=true): Adds a new object so you can define a custom action for your `InsightMessage` notification.
+- Added [Office.NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails?view=outlook-js-1.10&preserve-view=true#actions): Adds a new property that enables you to add an `InsightMessage` notification with a custom action.
 
 ## See also
 

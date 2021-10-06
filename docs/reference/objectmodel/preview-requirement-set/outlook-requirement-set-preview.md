@@ -83,7 +83,7 @@ Added a new property that returns an object that allows you to manage the delive
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
 
-#### [Office.DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime)
+#### [Office.DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime?view=outlook-js-preview&preserve-view=true)
 
 Added a new object that allows you to manage the delivery date and time of a message in Compose mode.
 
@@ -123,13 +123,13 @@ Added a new function that returns initialization data passed when the add-in is 
 
 ### Office theme
 
-#### [Office.context.officeTheme](/javascript/api/office/office.context#officeTheme)
+#### [Office.context.officeTheme](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true#officeTheme)
 
 Added ability to get Office theme.
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
 
-#### [Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
+#### [Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true)
 
 Added `OfficeThemeChanged` event to `Mailbox`.
 
@@ -143,7 +143,7 @@ Added `OfficeThemeChanged` event to `Mailbox`.
 
 ### Session data
 
-#### [Office.SessionData](/javascript/api/outlook/office.sessiondata)
+#### [Office.SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true)
 
 Added a new object that represents the session data of an item.
 
