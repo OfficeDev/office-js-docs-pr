@@ -48,7 +48,7 @@ Using SSO is convenient for the user because they only have to sign in once to O
 
 Often your add-in only needs the user's identity. For example, you may just want personalize your add-in and display the user's name on the task pane. Or you might want a unique ID to associate the user with their data in your database. This can be accomplished by just getting the access token for the user from Office.
 
-To get the user's identity through SSO, call the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method. The method returns an access token containing several claims that are unique to the current signed in user, including `preferred_username`, `name`, `sub`, and `oid`. For more information on these properties, see [Microsoft identity platform access tokens](/azure/active-directory/develop/access-tokens#payload-claims). For an example of a one of these tokens, see [Example access token](sso-in-office-add-ins.md#example-access-token).
+To get the user's identity through SSO, call the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method. The method returns an access token containing several claims that are unique to the current signed in user, including `preferred_username`, `name`, `sub`, and `oid`. For more information on these properties, see [Microsoft identity platform access tokens](/azure/active-directory/develop/id-tokens#using-claims-to-reliably-identify-a-user-subject-and-object-id). For an example of a one of these tokens, see [Example access token](sso-in-office-add-ins.md#example-access-token).
 
 If the user is not signed in, Office will open a dialog box and use the Microsoft identity platform to request the user to sign in. Then the method will return an access token, or throw an error if unable to sign in the user.
 
@@ -65,19 +65,15 @@ These samples, however, do not use the token as an ID token. They use it to get 
 
 In some scenarios not only do you need the user's identity, but you also need to access [Microsoft Graph](/graph) resources on behalf of the user. For example, you may need to send an email, or create a chat in Teams on behalf of the user. These actions, and more, can be accomplished through Microsoft Graph. You'll need to follow these steps:
 
-1. Get the access token for the current user through SSO by calling [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_).
-1. Use the on-behalf-of flow to exchange the access token for a new access token containing claims that allow your add-in to call Microsoft Graph.
+1. Get the access token for the current user through SSO by calling [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). If the user is not signed in, Office will open a dialog box and sign in the user with the Microsoft identity platform. After the user signs in, or if the user is already signed in, the method returns an access token.
+1. Use the OAuth 2.0 On-Behalf-Of flow to exchange the access token for a new access token containing the necessary delegated user identity and permissions that allow your add-in to call Microsoft Graph.
 
-To use SSO to access Microsoft Graph, your add-in in a task pane or function file calls the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method. If the user is not signed in, Office will open a dialog box and navigate it to the Azure Active Directory login page. After the user signs in, or if the user is already signed in, the method returns an access token. The token is a bootstrap token in the **On Behalf Of** flow. Specifically, it has a `scope` claim with the value `access_as_user`. For guidance about the claims in the token, see [Microsoft identity platform access tokens](/azure/active-directory/develop/access-tokens#payload-claims). For an example of a one of these tokens, see [Example access token](sso-in-office-add-ins.md#example-access-token).
-
-After your code obtains the token, it uses it in the **On Behalf Of** flow to obtain a second token: an access token to Microsoft Graph.
-
-Before you begin implementing Office SSO, be sure that you are thoroughly familiar with these two articles.
+Before you begin implementing SSO to access Microsoft Graph in your add-in, be sure that you are thoroughly familiar with the following articles.
 
 - [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md)
 - [Authorize to Microsoft Graph with SSO](authorize-to-microsoft-graph.md)
 
-You should also read at least one of the walkthrough articles listed here. Even if you don't carry out the steps, these contain valuable information about how you implement Office SSO and the **On Behalf Of** flow.
+You should also read at least one of the following articles that will walk you through building an Office Add-in to use SSO and access Microsoft Graph. Even if you don't carry out the steps, they contain valuable information about how you implement SSO and the On-Behalf-Of flow.
 
 - [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md)
 - [Create an Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md)
@@ -95,15 +91,15 @@ In some scenarios you may not want to use SSO. For example, you may need to auth
 
 You can authenticate a user in an Office Add-in with the Microsoft identity platform as you would in other web applications. You should use this approach as the alternate authentication system when SSO doesn't work.
 
-It's important to note that the Microsoft identity platform does not allow its sign in page to open in an iframe. When an Office Add-in is running on *Office on the web*, the task pane is an iframe. This means that you'll need to open the sign in page by using a dialog box opened with the Office dialog API. This affects how you use authentication helper libraries. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
+It's important to note that the Microsoft identity platform does not allow its sign in page to open in an iframe. When an Office Add-in is running on *Office on the web*, the task pane is an iframe. This means that you'll need to open the sign-in page by using a dialog box opened with the Office dialog API. This affects how you use authentication helper libraries. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
 
-For information about implementing authentication with the Microsoft identity platform, see [Microsoft identity platform (v2.0) overview](/azure/active-directory/develop/v2-overview). The documentaiton contains many tutorials and guides, as well as links to relevant samples and libraries. As explained in [Authentication with the Office dialog API](auth-with-office-dialog-api.md), you may need to adjust the code in the samples to run in the Office dialog box.
+For information about implementing authentication with the Microsoft identity platform, see [Microsoft identity platform (v2.0) overview](/azure/active-directory/develop/v2-overview). The documentation contains many tutorials and guides, as well as links to relevant samples and libraries. As explained in [Authentication with the Office dialog API](auth-with-office-dialog-api.md), you may need to adjust the code in the samples to run in the Office dialog box.
 
 ### Access to Microsoft Graph without SSO
 
-You can get authorization to Microsoft Graph data for your add-in by obtaining an access token to Microsoft Graph from the Microsoft identity platform. You can do this without relying on Office SSO (or if SSO failed or is not supported). For more information, see [Access to Microsoft Graph without SSO](authorize-to-microsoft-graph-without-sso.md) which has more details and links to samples.
+You can get authorization to Microsoft Graph data for your add-in by obtaining an access token to Microsoft Graph from the Microsoft identity platform. You can do this without relying on SSO through Office (or if SSO failed or is not supported). For more information, see [Access to Microsoft Graph without SSO](authorize-to-microsoft-graph-without-sso.md) which has more details and links to samples.
 
-## Access to non-Microsoft data sources
+### Access to non-Microsoft data sources
 
 Popular online services, including Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in. For an overview of the ways that your add-in can do this, see [Authorize external services in your Office Add-in](auth-external-add-ins.md).
 
