@@ -26,7 +26,7 @@ Requirement set 1.3 includes all of the features of [requirement set 1.2](../req
 
 - Added [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#getAsync_coercionType__options__callback_): Returns the current body in a specified format.
 - Added [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#setAsync_data__options__callback_): Replaces the entire body with the specified text.
-- Added [Event](/javascript/api/office/office.addincommands.event) object: Passed as a parameter to UI-less command functions in an Outlook add-in. Used to signal completion of processing.
+- Added [Event](/javascript/api/office/office.addincommands.event?view=outlook-js-1.3&preserve-view=true) object: Passed as a parameter to UI-less command functions in an Outlook add-in. Used to signal completion of processing.
 - Added [Office.context.mailbox.item.close](office.context.mailbox.item.md#methods): Closes the current item that is being composed.
 - Added [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#methods): Asynchronously saves an item.
 - Added [Office.context.mailbox.item.notificationMessages](office.context.mailbox.item.md#properties): Gets the notification messages for an item.
