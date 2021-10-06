@@ -33,7 +33,7 @@ PowerPoint.run(function (context) {
     rectangle.width = 150;
     rectangle.name = "Square";
     return context.sync();
-}).catch(errorHandlerFunction);
+});
 ```
 
 ### Lines
@@ -52,19 +52,19 @@ PowerPoint.run(function (context) {
     var line = shapes.addLine(Excel.ConnectorType.straight, {left: 200, top: 50, height: 300, width: 150});
     line.name = "StraightLine";
     return context.sync();
-}).catch(errorHandlerFunction);
+});
 ```
 
 ### Text boxes
 
 A text box is created with the [addTextBox](/javascript/api/powerpoint/powerpoint.shapecollection?view=powerpoint-js-preview#addTextBox_text__options_) method. The first parameter is the text that should appear in the box initially. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/poweroint.shapeaddoptions) that can specify the initial size of the text box and it's position relative to the top and left sides of the slide. Or these properties can be set after the shape is created.
 
-The following code sample shows the creation of a text box.
+The following code sample shows how to create a text box on the first slide.
 
 ```js
 // This sample creates a text box with the text "Hello!" and sizes it appropriately.
 PowerPoint.run(function (context) {
-    var shapes = context.presentation.slides.getItem("Myslide").shapes;
+    var shapes = context.presentation.slides.getItemAt(0).shapes;
     var textbox = shapes.addTextBox("Hello!");
     textbox.left = 100;
     textbox.top = 100;
@@ -72,12 +72,12 @@ PowerPoint.run(function (context) {
     textbox.width = 450;
     textbox.name = "Textbox";
     return context.sync();
-}).catch(errorHandlerFunction);
+});
 ```
 
 ## Move and resize shapes
 
-Shapes sit on top of the slide. Their placement is defined by the `left` and `top` property. These act as margins from slide's respective edges, measured in points, with [0, 0] being the upper-left corner. The shape size is specified by the `height` and `width` properties. Your code can move or resize the shape by resetting these properties.
+Shapes sit on top of the slide. Their placement is defined by the `left` and `top` property. These act as margins from slide's respective edges, measured in points, with [0, 0] being the upper-left corner. The shape size is specified by the `height` and `width` properties. Your code can move or resize the shape by resetting these properties. (These properties have a slightly different meaning when the shape is a line. See [Lines](#lines).
 
 ## Text in shapes
 
@@ -86,10 +86,10 @@ Geometric Shapes can contain text. Shapes have a `textFrame` property of type [T
 The following code sample creates a geometric shape named "Wave" with the text "Shape Text". It also adjusts the shape and text colors, as well as sets the text's horizontal alignment to the center.
 
 ```js
-// This sample creates a light-blue wave shape and adds the purple text "Shape text" to the center.
+// This sample creates a light-blue rectangle with braces ("{}") on the left and right ends and adds the purple text "Shape text" to the center.
 PowerPoint.run(function (context) {
-    var shapes = context.presentation.slides.getItem("Myslide").shapes;
-    var wave = shapes.addGeometricShape(PowerPoint.GeometricShapeType.wave);
+    var shapes = context.presentation.slides.getItemAt(0).shapes;
+    var wave = shapes.addGeometricShape(PowerPoint.GeometricShapeType.bracePair);
     wave.left = 100;
     wave.top = 400;
     wave.height = 50;
@@ -100,28 +100,31 @@ PowerPoint.run(function (context) {
     wave.textFrame.textRange.font.color = "purple";
     wave.textFrame.verticalAlignment = PowerPoint.TextVerticalAlignment.middleCentered;
     return context.sync();
-}).catch(errorHandlerFunction);
+});
 ```
 
 ## Delete shapes
 
-Shapes are removed from the slide with the `Shape` object's `delete` method. 
+Shapes are removed from the slide with the `Shape` object's `delete` method.
 
-The following code sample deletes all the shapes from **Myslide**.
+The following code sample shows how to delete slides.
 
 ```js
-// This deletes all the shapes from "Myslide".
 PowerPoint.run(function (context) {
-    var sheet = context.presentation.slides.getItem("Myslide");
+    // Delete all shapes from the first slide.
+    var sheet = context.presentation.slides.getItemAt(0);
     var shapes = sheet.shapes;
 
-    // We'll load all the shapes in the collection without loading their properties.
+    // Load all the shapes in the collection without loading their properties.
+    // This is required because the items property is being read by the forEach method.
     shapes.load("items/$none");
-    return context.sync().then(function () {
-        shapes.items.forEach(function (shape) {
-            shape.delete()
-        });
-        return context.sync();
-    }).catch(errorHandlerFunction);
-}).catch(errorHandlerFunction);
+    return context.sync()
+        .then(function () {
+            shapes.items.forEach(function (shape) {
+                shape.delete()
+            });
+            return context.sync();
+        })
+       .catch(errorHandlerFunction);
+});
 ```
