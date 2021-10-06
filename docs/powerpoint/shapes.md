@@ -1,7 +1,7 @@
 ---
 title: Work with shapes using the PowerPoint JavaScript API
 description: 'Learn how to add, remove, and format shapes on PowerPoint slides.'
-ms.date: 10/04/2021
+ms.date: 10/06/2021
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,7 @@ Shapes are created through and stored in a slide's shape collection (`slide.shap
 
 ### Geometric shapes
 
-A geometric shape is created with one of the overrides of `ShapeCollection.addGeometricShape`. The first parameter is either a [GeometricShapeType](/javascript/api/powerpoint/poweroint.geometricshapetype) enum or the string equivalent of one of the enum's values. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/poweroint.shapeaddoptions) that can specify the initial size of the line and it's position relative to the top and left sides of the slide, measured in points. Or these properties can be set after the shape is created.
+A geometric shape is created with one of the overrides of `ShapeCollection.addGeometricShape`. The first parameter is either a [GeometricShapeType](/javascript/api/powerpoint/poweroint.geometricshapetype) enum or the string equivalent of one of the enum's values. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/poweroint.shapeaddoptions) that can specify the initial size of the line and its position relative to the top and left sides of the slide, measured in points. Or these properties can be set after the shape is created.
 
 The following code sample creates a rectangle named **"Square"** that is positioned 100 points from the top and left sides of the slide. The method returns a `Shape` object.
 
@@ -57,7 +57,7 @@ PowerPoint.run(function (context) {
 
 ### Text boxes
 
-A text box is created with the [addTextBox](/javascript/api/powerpoint/powerpoint.shapecollection?view=powerpoint-js-preview#addTextBox_text__options_) method. The first parameter is the text that should appear in the box initially. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/poweroint.shapeaddoptions) that can specify the initial size of the text box and it's position relative to the top and left sides of the slide. Or these properties can be set after the shape is created.
+A text box is created with the [addTextBox](/javascript/api/powerpoint/powerpoint.shapecollection?view=powerpoint-js-preview#addTextBox_text__options_) method. The first parameter is the text that should appear in the box initially. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/poweroint.shapeaddoptions) that can specify the initial size of the text box and its position relative to the top and left sides of the slide. Or these properties can be set after the shape is created.
 
 The following code sample shows how to create a text box on the first slide.
 
