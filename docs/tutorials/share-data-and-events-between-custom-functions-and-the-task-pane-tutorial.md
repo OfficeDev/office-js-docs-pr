@@ -20,7 +20,7 @@ You'll use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDe
     yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true
     ```
 
-The generator will create the project and install supporting Node components.
+The generator creates the project and installs supporting Node components.
 
 ## Configure the manifest
 
