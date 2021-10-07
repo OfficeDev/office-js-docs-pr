@@ -648,6 +648,14 @@ items:
     - name: Comments
       href: excel/excel-add-ins-comments.md
       displayName: Excel
+    - name: Custom data types (preview)
+      items:
+        - name: Overview (preview)
+          href: excel/excel-data-types-overview.md
+          displayName: Excel
+        - name: Concepts (preview)
+          href: excel/excel-data-types-concepts.md
+          displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
       displayName: Excel
