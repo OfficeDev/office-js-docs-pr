@@ -21,7 +21,7 @@ These code samples are written to help you learn how to use various features whe
 | Name                | Description         |
 |:--------------------|:--------------------|
 | [Open in Teams](/samples/officedev/pnp-officeaddins/office-excel-add-in-open-in-teams/) | Create a new Excel spreadsheet in Microsoft Teams containing data you define.|
-| [Insert an external Excel file and populate it with JSON data](/samples/officedev/pnp-officeaddins/excel-add-in-insert-external-file/)  | Insert an existing template from an external Excel file into the currently open Excel file. Then retrieve data from a JSON web service and populate the template for the customer. |
+| [Insert an external Excel file and populate it with JSON data](/samples/officedev/pnp-officeaddins/excel-add-in-insert-external-file/)  | Insert an existing template from an external Excel file into the currently open Excel workbook. Then, populate the template with data from a JSON web service. |
 | [Create custom contextual tabs on the ribbon](/samples/officedev/pnp-officeaddins/office-add-in-contextual-tabs/) | Create a custom contextual tab on the ribbon in the Office UI. The sample creates a table, and when the user moves the focus inside the table, the custom tab is displayed. When the user moves outside the table, the custom tab is hidden. |
 | [Use keyboard shortcuts for Office add-in actions](/samples/officedev/pnp-officeaddins/office-add-in-keyboard-shortcuts) | Set up a basic Excel add-in project that utilizes keyboard shortcuts. |
 | [Custom function sample using web worker](/samples/officedev/pnp-officeaddins/excel-custom-function-web-worker-pattern/) | Use web workers in custom functions to prevent blocking the UI of your Office Add-in. |
