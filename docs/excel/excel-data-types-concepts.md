@@ -1,6 +1,6 @@
 ---
 title: Excel JavaScript API custom data types core concepts
-description: 'Learn to ..'
+description: 'Learn the core concepts for using Excel custom data types in your Office Add-in.'
 ms.date: 10/06/2021
 ms.topic: conceptual
 ms.prod: excel
@@ -14,13 +14,17 @@ ms.localizationpriority: high
 > Custom data types APIs are currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 > 
 
-This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with custom data types. It introduces core concepts that are fundamental to custom data type development, outlines the organizational schemas of custom data types, and provides guidances for performing specific tasks such as reading or writing to a custom data type.
+This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with custom data types. It introduces core concepts that are fundamental to custom data type development and provides guidances for performing specific tasks such as reading or writing to a custom data type.
 
-## Custom data type schemas
+## Core concepts
 
-### type property
+- The type property
+- Range.value and Range.valueAsJSON
+- basicType, basicValue
 
-### Basic cell values schema
+## Read and write a custom data type
+
+### Cell values
 
 - [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)
 - [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)
@@ -32,11 +36,9 @@ This article describes how to use the [Excel JavaScript API](../reference/overvi
 
 - [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)
 
-### Web image schema
+### Web image
 
 - [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)
-
-### Entity schema
 
 ### Rich errors
 
@@ -55,8 +57,11 @@ This article describes how to use the [Excel JavaScript API](../reference/overvi
 - [SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue)
 - [ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)
 
+### Entity schema
+
+TBD.
 
 ## See also
 
-* [Excel custom data types core concepts](/excel-data-types-concepts.md)
-* [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
+- [Excel custom data types core concepts](/excel-data-types-concepts.md)
+- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
