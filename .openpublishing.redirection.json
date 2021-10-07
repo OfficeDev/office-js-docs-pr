@@ -8,6 +8,11 @@
         "source_path": "docs/develop/create-and-debug-office-add-ins-in-visual-studio.md", 
         "redirect_url": "/office/dev/add-ins/develop/create-office-add-ins-in-visual-studio"
       },
+      {
+        "source_path": "docs/testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md", 
+        "redirect_url": "/office/dev/add-ins/testing/debug-add-ins-using-f12-developer-tools-on-windows"
+      },
+      
       {   
         "source_path": "docs/overview/index.md", 
         "redirect_url": "/office/dev/add-ins/overview/core-concepts-office-add-ins"

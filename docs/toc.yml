@@ -272,7 +272,7 @@ items:
       - name: Attach a debugger from the task pane
         href: testing/attach-debugger-from-task-pane.md
       - name: Debug using developer tools
-        href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+        href: testing/debug-add-ins-using-f12-developer-tools-on-windows.md
       - name: Debug using Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
         displayName: debug, windows
@@ -392,10 +392,6 @@ items:
         href: reference/manifest/equivalentaddins.md
       - name: ExtendedOverrides
         href: reference/manifest/extendedoverrides.md
-      - name: ExtendedPermission
-        href: reference/manifest/extendedpermission.md
-      - name: ExtendedPermissions
-        href: reference/manifest/extendedpermissions.md
       - name: FileName
         href: reference/manifest/filename.md
       - name: Form
@@ -480,6 +476,8 @@ items:
           href: reference/manifest/control.md
         - name: CustomTab
           href: reference/manifest/customtab.md
+        - name: DesktopFormFactor
+          href: reference/manifest/desktopformfactor.md
         - name: Enabled
           href: reference/manifest/enabled.md
         - name: EquivalentAddin
@@ -488,10 +486,12 @@ items:
           href: reference/manifest/equivalentaddins.md
         - name: Event
           href: reference/manifest/event.md
+        - name: ExtendedPermission
+          href: reference/manifest/extendedpermission.md
+        - name: ExtendedPermissions
+          href: reference/manifest/extendedpermissions.md
         - name: ExtensionPoint
           href: reference/manifest/extensionpoint.md
-        - name: DesktopFormFactor
-          href: reference/manifest/desktopformfactor.md
         - name: FunctionFile
           href: reference/manifest/functionfile.md
         - name: GetStarted
@@ -543,10 +543,6 @@ items:
       href: reference/javascript-api-for-office-error-codes.md
     - name: Unsupported window objects
       href: reference/window-objects-unsupported-in-add-ins.md
-
-  - name: Resources
-    href: resources/resources-links-help.md
-    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
 
 - name: Excel
   items: 
@@ -1017,8 +1013,6 @@ items:
     - name: API reference - latest release
       href: reference/outlook-api-reference-1-10.md
       displayName: Outlook
-  - name: Concepts
-    items: 
     - name: Outlook add-in design guidelines
       href: outlook/outlook-addin-design.md
     - name: Add-in commands
@@ -1297,14 +1291,19 @@ items:
   - name: Open in Excel
     href: excel/pnp-open-in-excel.md
     displayName: Excel
+- name: Resources
+  items:
+  - name: External resources
+    href: resources/resources-links-help.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
   - name: Office Add-ins community call
     href: overview/office-add-ins-community-call.md
-- name: VSTO and COM transition resources
-  items: 
-  - name: VSTO add-in developers' guide
-    href: overview/learning-path-transition.md
-  - name: Share code from VSTO Add-in to Office Add-in
-    href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-  - name: Make your Office Add-in compatible with an existing COM add-in
-    href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-    displayName: manifest
+  - name: VSTO and COM transition resources
+    items: 
+    - name: VSTO add-in developers' guide
+      href: overview/learning-path-transition.md
+    - name: Share code from VSTO Add-in to Office Add-in
+      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+    - name: Make your Office Add-in compatible with an existing COM add-in
+      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+      displayName: manifest

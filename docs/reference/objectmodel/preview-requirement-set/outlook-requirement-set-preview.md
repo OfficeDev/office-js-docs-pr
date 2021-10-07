@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 08/27/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
 ---
 
@@ -83,7 +83,7 @@ Added a new property that returns an object that allows you to manage the delive
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
 
-#### [Office.DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime)
+#### [Office.DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime?view=outlook-js-preview&preserve-view=true)
 
 Added a new object that allows you to manage the delivery date and time of a message in Compose mode.
 
@@ -123,13 +123,13 @@ Added a new function that returns initialization data passed when the add-in is 
 
 ### Office theme
 
-#### [Office.context.officeTheme](/javascript/api/office/office.context#officeTheme)
+#### [Office.context.officeTheme](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true#officeTheme)
 
 Added ability to get Office theme.
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
 
-#### [Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
+#### [Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true)
 
 Added `OfficeThemeChanged` event to `Mailbox`.
 
@@ -143,7 +143,7 @@ Added `OfficeThemeChanged` event to `Mailbox`.
 
 ### Session data
 
-#### [Office.SessionData](/javascript/api/outlook/office.sessiondata)
+#### [Office.SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true)
 
 Added a new object that represents the session data of an item.
 
@@ -165,7 +165,7 @@ Added a new property to manage the session data of an item in Compose mode.
 
 Feature support for shared folders (that is, delegate access) was released in [requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). However, support for shared mailboxes is now available in preview. To learn more, refer to [Enable shared folders and shared mailbox scenarios](../../../outlook/delegate-access.md).
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern), Outlook on Mac
 
 ## See also
 

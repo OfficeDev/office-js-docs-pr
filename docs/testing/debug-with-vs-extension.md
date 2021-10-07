@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-in Debugger Extension for Visual Studio Code
 description: 'Use the Visual Studio Code extension Microsoft Office Add-in Debugger to debug your Office Add-in.'
-ms.date: 08/18/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,7 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 
 - [Visual Studio Code](https://code.visualstudio.com/) (must be run as an administrator)
 - [Node.js (version 10+)](https://nodejs.org/)
-- Windows 10
+- Windows 10, 11
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
 These instructions assume you have experience using the command line, understand basic JavaScript, and have created an Office Add-in project before using the Yo Office generator. If you haven't done this before, consider visiting one of our tutorials, like this [Excel Office Add-in tutorial](../tutorials/excel-tutorial.md).
@@ -30,7 +30,7 @@ These instructions assume you have experience using the command line, understand
     > If you already have a project, skip step 1 and move to step 2.
 
 1. Open a command prompt as administrator.
-   ![Command prompt options, including "run as administrator" in Windows 10.](../images/run-as-administrator-vs-code.jpg)
+   ![Command prompt options, including "run as administrator" in Windows 10 and 11.](../images/run-as-administrator-vs-code.jpg)
 
 1. Navigate to your project directory.
 
@@ -80,6 +80,6 @@ These instructions assume you have experience using the command line, understand
 
 - [Test and debug Office Add-ins](test-debug-office-add-ins.md)
 
-- [Debug add-ins using developer tools on Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Debug add-ins using developer tools on Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
 
 - [Debug add-ins on Windows using Microsoft Edge WebView2 (Chromium-based)](debug-desktop-using-edge-chromium.md)

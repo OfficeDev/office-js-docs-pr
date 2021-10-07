@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: 'Get an overview of the Office Add-in manifest and its uses.'
-ms.date: 07/08/2020
+ms.date: 09/28/2021
 ms.localizationpriority: high
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: high
 
 The XML manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications.
 
-An XML manifest file based on this schema enables an Office Add-in to do the following:
+An XML manifest file enables an Office Add-in to do the following:
 
 * Describe itself by providing an ID, version, description, display name, and default locale.
 
@@ -141,6 +141,57 @@ The following XML manifest example hosts its main add-in page in the `https://ww
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
 ```
+
+## Version overrides in the manifest
+
+The optional [VersionOverrides](../reference/manifest/versionoverrides.md) element deserves special mention. It contains child markup that enables additional add-in features. Some of these are:
+
+ - Customizing the Office ribbon and menus.
+ - Customizing how Office works with the embedded browser runtime in which add-ins run.
+ - Configuring how the add-in interacts with Azure Active Directory and Microsoft Graph for Single Sign-on.
+
+Some descendant elements of `VersionOverrides` have values that override values of the parent `OfficeApp` element. For example, the `Hosts` element in `VersionOverrides` overrides the `Hosts` element in `OfficeApp`.
+
+The `VersionOverrides` element has its own schema, actually four of them, depending on the type of add-in and the features it uses. The schemas are:
+
+- [Task pane 1.0](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)
+- [Content 1.0](/openspecs/office_file_formats/ms-owemxml/c9cb8dca-e9e7-45a7-86b7-f1f0833ce2c7)
+- [Mail 1.0](/openspecs/office_file_formats/ms-owemxml/578d8214-2657-4e6a-8485-25899e772fac)
+- [Mail 1.1](/openspecs/office_file_formats/ms-owemxml/8e722c85-eb78-438c-94a4-edac7e9c533a)
+
+When a `VersionOverrides` element is used, then the `OfficeApp` element must have a `xmlns` attribute that identifies the appropriate schema. The possible values of the attribute are the following:
+
+- `http://schemas.microsoft.com/office/taskpaneappversionoverrides`
+- `http://schemas.microsoft.com/office/contentappversionoverrides`
+- `http://schemas.microsoft.com/office/mailappversionoverrides`
+
+The `VersionOverrides` element itself must also have an `xmlns` attribute specifying the schema. The possible values are the three above and the following:
+
+- `http://schemas.microsoft.com/office/mailappversionoverrides/1.1`
+
+The `VersionOverrides` element also must have an `xsi:type` attribute that specifies the schema version. The possible values are the following:
+
+- `VersionOverridesV1_0`
+- `VersionOverridesV1_1`
+
+The following are examples of `VersionOverrides` used, respectively, in a task pane add-in and a mail add-in. Note that when a mail `VersionOverrides` with version 1.1 is used, it must be the last child of a parent `VersionOverrides` of type 1.0. The values of child elements in the inner `VersionOverrides` override the values of the same-named elements in the parent `VersionOverrides` and the grandparent `OfficeApp` element.
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <!-- child elements omitted -->
+</VersionOverrides>
+```
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <!-- other child elements omitted -->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    <!-- child elements omitted -->
+  </VersionOverrides>
+</VersionOverrides>
+```
+
+For an example of a manifest that includes a `VersionOverrides` element, see [Manifest v1.1 XML file examples and schemas](#manifest-v11-xml-file-examples-and-schemas).
 
 ## Specify domains from which Office.js API calls are made
 

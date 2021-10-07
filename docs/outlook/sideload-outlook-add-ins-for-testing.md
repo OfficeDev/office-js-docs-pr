@@ -1,13 +1,16 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 05/13/2021
+ms.date: 09/22/2021
 ms.localizationpriority: medium
 ---
 
 # Sideload Outlook add-ins for testing
 
 You can use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
+
+> [!IMPORTANT]
+> If your Outlook add-in supports mobile, sideload the manifest using the instructions in this article for your Outlook client on the web, Windows, or Mac, then follow the guidance in the **Testing your add-ins on mobile** section of the [Add-ins for Outlook Mobile](outlook-mobile-addins.md#testing-your-add-ins-on-mobile) article.
 
 ## Sideload automatically
 
@@ -123,3 +126,7 @@ On all versions of Outlook, the key to removing a sideloaded add-in is the **My 
 To navigate to the **My Add-ins** dialog box for your Outlook client, use the last steps listed for [manual sideloading](#sideload-manually) in the previous sections of this article.
 
 To remove a sideloaded add-in from Outlook, use the steps previously described in this article to find the add-in in the **Custom add-ins** section of the dialog box that lists your installed add-ins. Choose the ellipsis (`...`) for the add-in then choose **Remove** to remove that specific add-in. Close the dialog.
+
+## See also
+
+- [Add-ins for Outlook Mobile](outlook-mobile-addins.md)
