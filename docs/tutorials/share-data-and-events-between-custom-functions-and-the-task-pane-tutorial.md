@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Share data and events between Excel custom functions and the task pane"
 description: 'Learn how to share data and events between custom functions and the task pane in Excel.'
-ms.date: 09/17/2021
+ms.date: 10/07/2021
 ms.prod: excel
 ms.localizationpriority: high
 ---
@@ -14,7 +14,11 @@ You can configure your Excel add-in to use a shared runtime. This makes it possi
 
 You'll use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create the Excel add-in project.
 
-- To generate an Excel add-in with custom functions, run the command `yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true`.
+- To generate an Excel add-in with custom functions, run the following command.
+    
+    ```command line
+    yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true
+    ```
 
 The generator will create the project and install supporting Node components.
 
@@ -24,11 +28,21 @@ Follow these steps to configure the add-in project to use a shared runtime.
 
 1. Start Visual Studio Code and open the add-in project you generated.
 1. Open the **manifest.xml** file.
-1. Update the requirements section to use the [shared runtime](../reference/requirement-sets/shared-runtime-requirement-sets.md) instead of the custom function runtime. The XML should appear as follows.
+1. Replace (or add) the following `<Requirements>` section XML to require the [shared runtime requirement set](../reference/requirement-sets/shared-runtime-requirement-sets.md).
+
+    ```xml
+    <Requirements>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
+    </Requirements>
+    ```
+
+    After updating, your manifest XML should appear in the following order.
 
     ```xml
     <Hosts>
-      <Host Name="Workbook"/>
+      <Host Name="..."/>
     </Hosts>
     <Requirements>
       <Sets DefaultMinVersion="1.1">
@@ -38,15 +52,21 @@ Follow these steps to configure the add-in project to use a shared runtime.
     <DefaultSettings>
     ```
 
-1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the ` <bt:Urls>` section near the bottom of the **manifest.xml** file.
+1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
+
+    ```xml
+    <Runtimes>
+      <Runtime resid="Taskpane.Url" lifetime="long" />
+    </Runtimes>
+    ```
 
     > [!IMPORTANT]
-    > The `<Runtimes>` section must be entered after the `<Host>` element in the exact order shown in the following XML.
+    > The `<Runtimes>` section must be entered after the `<Host xsi:type="...">` element in the exact order shown in the following XML.
 
    ```xml
    <VersionOverrides ...>
      <Hosts>
-       <Host ...>
+       <Host xsi:type="...">
          <Runtimes>
            <Runtime resid="Taskpane.Url" lifetime="long" />
          </Runtimes>
@@ -80,10 +100,10 @@ Follow these steps to configure the add-in project to use a shared runtime.
 
 The **webpack.config.js** will build multiple runtime loaders. You need to modify it to load only the shared JavaScript runtime via the **taskpane.html** file.
 
-1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
 1. Open the **webpack.config.js** file.
-1. Remove the following **functions.html** plugin code.
-
+1. Go to the `plugins:` section.
+1. Remove the following `functions.html` plugin if it esists
+    
     ```javascript
     new HtmlWebpackPlugin({
         filename: "functions.html",
@@ -92,7 +112,7 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
       })
     ```
 
-1. Remove the following **commands.html** plugin code.
+1. Remove the following `commands.html` plugin if it exists.
 
     ```javascript
     new HtmlWebpackPlugin({
@@ -102,8 +122,8 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
       })
     ```
 
-1. Add **functions** and **commands** entries to the chunks list as shown next.
-
+1. If you removed the `functions` or `commands` plugin, add them as `chunks`. The following JavaScript shows the updated entry if you removed both `functions` and `commands` plugins.
+    
     ```javascript
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
@@ -111,20 +131,20 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
         chunks: ["polyfill", "taskpane", "commands", "functions"]
       })
     ```
-
+    
 1. Save your changes and rebuild the project.
 
    ```command line
    npm run build
    ```
-
-> [!NOTE]
-> You can also remove the **functions.html** and **commands.html** files. The **taskpane.html** will load the **functions.js** and **commands.js** code into the shared JavaScript runtime via the webpack updates you just made.
-
+    
+    > [!NOTE]
+    > You can also remove the **functions.html** and **commands.html** files. The **taskpane.html** will load the **functions.js** and **commands.js** code into the shared JavaScript runtime via the webpack updates you just made.
+    
 1. Save your changes and run the project. Ensure that it loads and runs with no errors.
-
+    
    ```command line
-   npm start
+   npm run start
    ```
 
 ## Share state between custom function and task pane code
