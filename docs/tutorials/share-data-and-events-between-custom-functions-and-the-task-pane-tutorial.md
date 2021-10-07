@@ -8,15 +8,15 @@ ms.localizationpriority: high
 
 # Tutorial: Share data and events between Excel custom functions and the task pane
 
-You can configure your Excel add-in to use a shared runtime. This makes it possible to shared global data, or send events between the task pane and custom functions. For most custom functions scenarios, we recommend using a shared runtime, unless you have a specific reason to use a non-task pane (UI-less) custom function. This tutorial assumes you're familiar with using the Yo Office generator to create add-in projects. Consider completing the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), if you haven't already.
+Share global data and send events between the task pane and custom functions of your Excel add-in with a shared runtime. We recommend using a shared runtime for most custom functions scenarios, unless you have a specific reason to use a non-task pane (UI-less) custom function. This tutorial assumes you're familiar with using the Yo Office generator to create add-in projects. Consider completing the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), if you haven't already.
 
 ## Create the add-in project
 
-You'll use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create the Excel add-in project.
+Use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create the Excel add-in project.
 
 - To generate an Excel add-in with custom functions, run the following command.
     
-    ```command line
+    ```command&nbsp;line
     yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true
     ```
 
@@ -105,7 +105,7 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
 
 1. Open the **webpack.config.js** file.
 1. Go to the `plugins:` section.
-1. Remove the following `functions.html` plugin if it esists
+1. Remove the following `functions.html` plugin if it exists.
     
     ```javascript
     new HtmlWebpackPlugin({
@@ -137,16 +137,16 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
     
 1. Save your changes and rebuild the project.
 
-   ```command line
+   ```command&nbsp;line
    npm run build
    ```
     
     > [!NOTE]
-    > You can also remove the **functions.html** and **commands.html** files. The **taskpane.html** will load the **functions.js** and **commands.js** code into the shared JavaScript runtime via the webpack updates you just made.
+    > You can also remove the **functions.html** and **commands.html** files. The **taskpane.html** loads the **functions.js** and **commands.js** code into the shared JavaScript runtime via the webpack updates you just made.
     
 1. Save your changes and run the project. Ensure that it loads and runs with no errors.
     
-   ```command line
+   ```command&nbsp;line
    npm run start
    ```
 
