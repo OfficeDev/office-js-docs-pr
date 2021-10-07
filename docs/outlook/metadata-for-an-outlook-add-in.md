@@ -16,7 +16,7 @@ Both of these give access to custom data that is only accessible by your Outlook
 
 ## Custom data per mailbox: roaming settings
 
-You can specify data specific to a user's Exchange mailbox using the [RoamingSettings](/javascript/api/outlook/office.RoamingSettings) object. Examples of such data include the user's personal data and preferences. Your mail add-in can access roaming settings when it roams on any device it's designed to run on (desktop, tablet, or smartphone).
+You can specify data specific to a user's Exchange mailbox using the [RoamingSettings](/javascript/api/outlook/office.roamingsettings) object. Examples of such data include the user's personal data and preferences. Your mail add-in can access roaming settings when it roams on any device it's designed to run on (desktop, tablet, or smartphone).
 
 Changes to this data are stored on an in-memory copy of those settings for the current Outlook session. You should explicitly save all the roaming settings after updating them so that they will be available the next time the user opens your add-in, on the same or any other supported device.
 
