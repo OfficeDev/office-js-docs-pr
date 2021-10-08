@@ -29,8 +29,7 @@ Word add-ins run across multiple versions of Office, including Office 2016 or la
 > [!NOTE]
 > Non-subscription versions of Office support requirement sets as follows:
 >
-> - Office 2021 supports WordApi 1.3 and earlier.
-> - Office 2019 supports WordApi 1.3 and earlier.
+> - Office 2019 and Office 2021 support WordApi 1.3 and earlier.
 > - Office 2016 only supports the WordApi 1.1 requirement set.
 
 ## Office versions and build numbers
