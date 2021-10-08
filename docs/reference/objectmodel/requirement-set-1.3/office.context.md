@@ -1,7 +1,7 @@
 ---
 title: Office.context - requirement set 1.3
 description: 'Office.Context object members available for Outlook add-ins using Mailbox API requirement set 1.3.'
-ms.date: 12/02/2020
+ms.date: 10/08/2021
 ms.localizationpriority: medium
 ---
 
@@ -167,6 +167,9 @@ Provides a method for determining what requirement sets are supported on the cur
 ```js
 console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.1")));
 ```
+
+> [!IMPORTANT]
+> There is currently a bug where `isSetSupported('mailbox', '1.3')` erroneously returns `true` in Outlook on the web against Exchange 2013. To learn more about the supported combinations of requirement sets, Exchange servers, and Outlook clients, refer to [Requirement sets supported by Exchange servers and Outlook clients](../../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 
 <br>
 

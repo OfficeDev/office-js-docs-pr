@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: 'Learn more about the Outlook JavaScript API requirement sets.'
-ms.date: 10/05/2021
+ms.date: 10/08/2021
 ms.prod: outlook
 ms.localizationpriority: high
 ---
@@ -43,6 +43,9 @@ else {
   // Provide alternate flow/logic.
 }
 ```
+
+> [!IMPORTANT]
+> There is currently a bug where `isSetSupported('Mailbox', '1.3')` erroneously returns `true` in Outlook on the web against Exchange 2013. To learn more about the supported combinations of requirement sets, Exchange servers, and Outlook clients, refer to [Requirement sets supported by Exchange servers and Outlook clients](#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 
 Alternatively, developers can check for the existence of a newer API by using standard JavaScript technique.
 
