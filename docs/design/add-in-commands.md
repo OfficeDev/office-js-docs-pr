@@ -81,9 +81,9 @@ You can specify that a tab is only visible on the ribbon in certain contexts, su
 Add-in commands are currently supported on the following platforms, except for limitations specified in the subsections of [Command capabilities](#command-capabilities) earlier.
 
 - Office on Windows (build 16.0.6769+, connected to a Microsoft 365 subscription)
-- Office 2019 on Windows
+- Office 2019 or later on Windows
 - Office on Mac (build 15.33+, connected to a Microsoft 365 subscription)
-- Office 2019 on Mac
+- Office 2019 or later on Mac
 - Office on the web
 
 > [!NOTE]
