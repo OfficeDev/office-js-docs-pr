@@ -12,7 +12,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 ## Agenda for October 13th call
 
 - Word API updates
-- Outlook on Mac API updates
+- API updates for Outlook on Mac
 - Code sample demo: Hello world
 
 ## Previous calls
