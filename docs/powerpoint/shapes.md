@@ -77,13 +77,13 @@ PowerPoint.run(function (context) {
 
 ## Move and resize shapes
 
-Shapes sit on top of the slide. Their placement is defined by the `left` and `top` properties. These act as margins from slide's respective edges, measured in points, with `left: 0` and `top 0` being the upper-left corner. The shape size is specified by the `height` and `width` properties. Your code can move or resize the shape by resetting these properties. (These properties have a slightly different meaning when the shape is a line. See [Lines](#lines).)
+Shapes sit on top of the slide. Their placement is defined by the `left` and `top` properties. These act as margins from slide's respective edges, measured in points, with `left: 0` and `top: 0` being the upper-left corner. The shape size is specified by the `height` and `width` properties. Your code can move or resize the shape by resetting these properties. (These properties have a slightly different meaning when the shape is a line. See [Lines](#lines).)
 
 ## Text in shapes
 
 Geometric shapes can contain text. Shapes have a `textFrame` property of type [TextFrame](/javascript/api/powerpoint/powerpoint.textframe). The `TextFrame` object manages the text display options (such as margins and text overflow). `TextFrame.textRange` is a [TextRange](/javascript/api/powerpoint/powerpoint.textrange) object with the text content and font settings.
 
-The following code sample creates a geometric shape named "Braces" with the text "Shape text". It also adjusts the shape and text colors, as well as sets the text's vertical alignment to the center.
+The following code sample creates a geometric shape named **"Braces"** with the text **"Shape text"**. It also adjusts the shape and text colors, as well as sets the text's vertical alignment to the center.
 
 ```js
 // This sample creates a light blue rectangle with braces ("{}") on the left and right ends and adds the purple text "Shape text" to the center.
