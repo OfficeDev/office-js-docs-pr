@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript API requirement sets
 description: 'Office Add-in requirement set information for Word builds.'
-ms.date: 05/05/2021
+ms.date: 10/08/2021
 ms.prod: word
 ms.localizationpriority: high
 ---
@@ -29,7 +29,7 @@ Word add-ins run across multiple versions of Office, including Office 2016 or la
 > [!NOTE]
 > Non-subscription versions of Office support requirement sets as follows:
 >
-> - Office 2019 supports WordApi 1.3 and earlier.
+> - Office 2019 and Office 2021 support WordApi 1.3 and earlier.
 > - Office 2016 only supports the WordApi 1.1 requirement set.
 
 ## Office versions and build numbers

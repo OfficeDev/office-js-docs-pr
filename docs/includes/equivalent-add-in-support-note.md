@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> The equivalent add-in feature is supported by the following platform and applications, when connected to a Microsoft 365 subscription. COM add-ins cannot be installed on any other platform, so on those platforms the manifest element that is discussed later in this article, `EquivalentAddins`, is ignored.
+> The equivalent add-in feature is supported by the following platform and applications. COM add-ins cannot be installed on any other platform, so on those platforms the manifest element that is discussed later in this article, `EquivalentAddins`, is ignored.
 >
 > - Excel, Word, and PowerPoint on Windows (version 1904 or later)
 > - Outlook on Windows (version 2102 or later) against a supported Exchange server version
