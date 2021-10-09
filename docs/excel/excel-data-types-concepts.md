@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API custom data types core concepts
 description: 'Learn the core concepts for using Excel custom data types in your Office Add-in.'
-ms.date: 10/06/2021
+ms.date: 10/08/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -14,17 +14,15 @@ ms.localizationpriority: high
 > Custom data types APIs are currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 > 
 
-This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with custom data types. It introduces core concepts that are fundamental to custom data type development and provides guidances for performing specific tasks such as reading or writing to a custom data type.
+This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with custom data types. It introduces core concepts that are fundamental to custom data type development and provides guidance for performing specific tasks such as reading or writing to a custom data type.
 
 ## Core concepts
 
-- The type property
-- Range.value and Range.valueAsJSON
+- The type property. All cell value objects have a type defined by the [CellValueType](/javascript/api/excel/excel.cellvaluetype) enum.
+- Range.valueAsJSON as an extension of Range.value.
 - basicType, basicValue
 
-## Read and write a custom data type
-
-### Cell values
+### Cell value objects
 
 - [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)
 - [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)
@@ -34,13 +32,15 @@ This article describes how to use the [Excel JavaScript API](../reference/overvi
 
 ### Formatted number values
 
-- [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)
+The [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue) object enables Excel add-ins to define a `numberFormat` for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
 
-### Web image
+### Web images
 
-- [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)
+The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entities) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
 
-### Rich errors
+### Improved error support
+
+The improved error support included in the custom data types APIs allows access to the properties contained within errors returned by the Excel UI. The following is a list of all the error objects with expanded support through custom data types.
 
 - [BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue)
 - [BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue)
@@ -57,9 +57,13 @@ This article describes how to use the [Excel JavaScript API](../reference/overvi
 - [SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue)
 - [ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)
 
-### Entity schema
+### Entities
 
-TBD.
+Entity values function as a container within custom data types, similar to objects in other programming languages.
+
+## Read and write a custom data type
+
+In progress.
 
 ## See also
 
