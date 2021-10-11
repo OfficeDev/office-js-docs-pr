@@ -1,7 +1,7 @@
 ---
 title: Validate an Outlook add-in identity token
 description: Your Outlook add-in can send you an Exchange user identity token, but before you trust the request you must validate the token to ensure that it came from the Exchange server that you expect.
-ms.date: 10/08/2021
+ms.date: 10/11/2021
 ms.localizationpriority: medium
 ---
 
@@ -105,7 +105,7 @@ After you have the correct public key, verify the signature. The signed data is 
 
 ## Compute the unique ID for an Exchange account
 
-You can create a unique identifier for an Exchange account by concatenating the authentication metadata document URL with the Exchange identifier for the account. When you have this unique identifier, you can use it to create a single sign-on (SSO) system for your Outlook add-in web service. For details about using the unique identifier for SSO, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md).
+Create a unique identifier for an Exchange account by concatenating the authentication metadata document URL with the Exchange identifier for the account. When you have this unique identifier, use it to create a single sign-on (SSO) system for your Outlook add-in web service. For details about using the unique identifier for SSO, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## Use a library to validate the token
 
