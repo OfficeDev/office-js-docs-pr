@@ -90,7 +90,7 @@ The following table lists the Word JavaScript APIs currently in preview, except 
 
 ## Web-only API list
 
-The following table lists the Word JavaScript APIs currently only in preview in Word on the web. To see a complete list of all Word JavaScript APIs (including preview APIs and previously released APIs), see [all Word JavaScript APIs](/javascript/api/word?view=word-js-preview&preserve-view=true).
+The following table lists the Word JavaScript APIs currently in preview only in Word on the web. To see a complete list of all Word JavaScript APIs (including preview APIs and previously released APIs), see [all Word JavaScript APIs](/javascript/api/word?view=word-js-preview&preserve-view=true).
 
 | Class | Fields | Description |
 |:---|:---|:---|
