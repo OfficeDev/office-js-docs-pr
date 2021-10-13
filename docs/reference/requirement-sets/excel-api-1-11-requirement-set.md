@@ -30,8 +30,8 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.11.
 ||[thousandsSeparator](/javascript/api/excel/excel.application#thousandsSeparator)|Gets the string used to separate groups of digits to the left of the decimal for numeric values.|
 ||[useSystemSeparators](/javascript/api/excel/excel.application#useSystemSeparators)|Specifies if the system separators of Excel are enabled.|
 |[Comment](/javascript/api/excel/excel.comment)|[mentions](/javascript/api/excel/excel.comment#mentions)|Gets the entities (e.g., people) that are mentioned in comments.|
-||[richContent](/javascript/api/excel/excel.comment#richContent)|Gets the rich comment content (e.g., mentions in comments).|
 ||[resolved](/javascript/api/excel/excel.comment#resolved)|The comment thread status.|
+||[richContent](/javascript/api/excel/excel.comment#richContent)|Gets the rich comment content (e.g., mentions in comments).|
 ||[updateMentions(contentWithMentions: Excel.CommentRichContent)](/javascript/api/excel/excel.comment#updateMentions_contentWithMentions_)|Updates the comment content with a specially formatted string and a list of mentions.|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(cellAddress: Range \| string, content: CommentRichContent \| string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add_cellAddress__content__contentType_)|Creates a new comment with the given content on the given cell.|
 |[CommentMention](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|The email address of the entity that is mentioned in a comment.|
