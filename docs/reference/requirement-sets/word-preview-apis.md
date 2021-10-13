@@ -48,7 +48,8 @@ The following table lists the Word JavaScript APIs currently in preview, except 
 ||[getOnlyItem()](/javascript/api/word/word.customxmlpartscopedcollection#getOnlyItem__)|If the collection contains exactly one item, this method returns it.|
 ||[getOnlyItemOrNullObject()](/javascript/api/word/word.customxmlpartscopedcollection#getOnlyItemOrNullObject__)|If the collection contains exactly one item, this method returns it.|
 ||[items](/javascript/api/word/word.customxmlpartscopedcollection#items)|Gets the loaded child items in this collection.|
-|[Document](/javascript/api/word/word.document)|[deleteBookmark(name: string)](/javascript/api/word/word.document#deleteBookmark_name_)|Deletes a bookmark, if it exists, from the document.|
+|[Document](/javascript/api/word/word.document)|[customXmlParts](/javascript/api/word/word.document#customXmlParts)|Gets the custom XML parts in the document.|
+||[deleteBookmark(name: string)](/javascript/api/word/word.document#deleteBookmark_name_)|Deletes a bookmark, if it exists, from the document.|
 ||[getBookmarkRange(name: string)](/javascript/api/word/word.document#getBookmarkRange_name_)|Gets a bookmark's range.|
 ||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.document#getBookmarkRangeOrNullObject_name_)|Gets a bookmark's range.|
 ||[ignorePunct](/javascript/api/word/word.document#ignorePunct)||
@@ -58,14 +59,13 @@ The following table lists the Word JavaScript APIs currently in preview, except 
 ||[matchSuffix](/javascript/api/word/word.document#matchSuffix)||
 ||[matchWholeWord](/javascript/api/word/word.document#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.document#matchWildcards)||
-||[customXmlParts](/javascript/api/word/word.document#customXmlParts)|Gets the custom XML parts in the document.|
 ||[onContentControlAdded](/javascript/api/word/word.document#onContentControlAdded)|Occurs when a content control is added.|
-||[settings](/javascript/api/word/word.document#settings)|Gets the add-in's settings in the document.|
 ||[search(searchText: string, searchOptions?: Word.SearchOptions \| {            ignorePunct?: boolean            ignoreSpace?: boolean            matchCase?: boolean            matchPrefix?: boolean            matchSuffix?: boolean            matchWholeWord?: boolean            matchWildcards?: boolean        })](/javascript/api/word/word.document#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|Performs a search with the specified SearchOptions on the scope of the whole document.|
-|[DocumentCreated](/javascript/api/word/word.documentcreated)|[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|Deletes a bookmark, if it exists, from the document.|
+||[settings](/javascript/api/word/word.document#settings)|Gets the add-in's settings in the document.|
+|[DocumentCreated](/javascript/api/word/word.documentcreated)|[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|Gets the custom XML parts in the document.|
+||[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|Deletes a bookmark, if it exists, from the document.|
 ||[getBookmarkRange(name: string)](/javascript/api/word/word.documentcreated#getBookmarkRange_name_)|Gets a bookmark's range.|
 ||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.documentcreated#getBookmarkRangeOrNullObject_name_)|Gets a bookmark's range.|
-||[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|Gets the custom XML parts in the document.|
 ||[settings](/javascript/api/word/word.documentcreated#settings)|Gets the add-in's settings in the document.|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageFormat)|Gets the format of the inline image.|
 |[List](/javascript/api/word/word.list)|[getLevelFont(level: number)](/javascript/api/word/word.list#getLevelFont_level_)|Gets the font of the bullet, number, or picture at the specified level in the list.|
@@ -94,16 +94,16 @@ The following table lists the Word JavaScript APIs currently in preview only in 
 
 | Class | Fields | Description |
 |:---|:---|:---|
-|[Body](/javascript/api/word/word.body)|[getComments()](/javascript/api/word/word.body#getComments__)|Gets comments associated with the body.|
-||[endnotes](/javascript/api/word/word.body#endnotes)|Gets the collection of endnotes in the body.|
+|[Body](/javascript/api/word/word.body)|[endnotes](/javascript/api/word/word.body#endnotes)|Gets the collection of endnotes in the body.|
 ||[footnotes](/javascript/api/word/word.body#footnotes)|Gets the collection of footnotes in the body.|
+||[getComments()](/javascript/api/word/word.body#getComments__)|Gets comments associated with the body.|
 ||[type](/javascript/api/word/word.body#type)|Gets the type of the body.|
-|[Comment](/javascript/api/word/word.comment)|[content](/javascript/api/word/word.comment#content)|Gets or sets the comment's content as plain text.|
+|[Comment](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#authorEmail)|Gets the email of the comment's author.|
+||[authorName](/javascript/api/word/word.comment#authorName)|Gets the name of the comment's author.|
+||[content](/javascript/api/word/word.comment#content)|Gets or sets the comment's content as plain text.|
+||[creationDate](/javascript/api/word/word.comment#creationDate)|Gets the creation date of the comment.|
 ||[delete()](/javascript/api/word/word.comment#delete__)|Deletes the comment and its replies.|
 ||[getRange()](/javascript/api/word/word.comment#getRange__)|Gets the range in the main document where the comment is on.|
-||[authorEmail](/javascript/api/word/word.comment#authorEmail)|Gets the email of the comment's author.|
-||[authorName](/javascript/api/word/word.comment#authorName)|Gets the name of the comment's author.|
-||[creationDate](/javascript/api/word/word.comment#creationDate)|Gets the creation date of the comment.|
 ||[id](/javascript/api/word/word.comment#id)|ID|
 ||[replies](/javascript/api/word/word.comment#replies)|Gets the collection of reply objects associated with the comment.|
 ||[reply(replyText: string)](/javascript/api/word/word.comment#reply_replyText_)|Adds a new reply to the end of the comment thread.|
@@ -112,40 +112,40 @@ The following table lists the Word JavaScript APIs currently in preview only in 
 ||[getFirstOrNullObject()](/javascript/api/word/word.commentcollection#getFirstOrNullObject__)|Gets the first comment or null object in the collection.|
 ||[getItem(index: number)](/javascript/api/word/word.commentcollection#getItem_index_)|Gets a comment object by its index in the collection.|
 ||[items](/javascript/api/word/word.commentcollection#items)|Gets the loaded child items in this collection.|
-|[CommentReply](/javascript/api/word/word.commentreply)|[content](/javascript/api/word/word.commentreply#content)|Gets or sets the comment reply's content.|
-||[delete()](/javascript/api/word/word.commentreply#delete__)|Deletes the comment reply.|
-||[authorEmail](/javascript/api/word/word.commentreply#authorEmail)|Gets the email of the comment reply's author.|
+|[CommentReply](/javascript/api/word/word.commentreply)|[authorEmail](/javascript/api/word/word.commentreply#authorEmail)|Gets the email of the comment reply's author.|
 ||[authorName](/javascript/api/word/word.commentreply#authorName)|Gets the name of the comment reply's author.|
+||[content](/javascript/api/word/word.commentreply#content)|Gets or sets the comment reply's content.|
 ||[creationDate](/javascript/api/word/word.commentreply#creationDate)|Gets the creation date of the comment reply.|
+||[delete()](/javascript/api/word/word.commentreply#delete__)|Deletes the comment reply.|
 ||[id](/javascript/api/word/word.commentreply#id)|ID|
 ||[parentComment](/javascript/api/word/word.commentreply#parentComment)|Gets the parent comment of this reply.|
 |[CommentReplyCollection](/javascript/api/word/word.commentreplycollection)|[getFirst()](/javascript/api/word/word.commentreplycollection#getFirst__)|Gets the first comment reply in the collection.|
 ||[getFirstOrNullObject()](/javascript/api/word/word.commentreplycollection#getFirstOrNullObject__)|Gets the first comment reply or null object in the collection.|
 ||[getItem(index: number)](/javascript/api/word/word.commentreplycollection#getItem_index_)|Gets a comment reply object by its index in the collection.|
 ||[items](/javascript/api/word/word.commentreplycollection#items)|Gets the loaded child items in this collection.|
-|[ContentControl](/javascript/api/word/word.contentcontrol)|[getComments()](/javascript/api/word/word.contentcontrol#getComments__)|Gets comments associated with the body.|
-||[endnotes](/javascript/api/word/word.contentcontrol#endnotes)|Gets the collection of endnotes in the contentcontrol.|
+|[ContentControl](/javascript/api/word/word.contentcontrol)|[endnotes](/javascript/api/word/word.contentcontrol#endnotes)|Gets the collection of endnotes in the contentcontrol.|
 ||[footnotes](/javascript/api/word/word.contentcontrol#footnotes)|Gets the collection of footnotes in the contentcontrol.|
+||[getComments()](/javascript/api/word/word.contentcontrol#getComments__)|Gets comments associated with the body.|
 |[Document](/javascript/api/word/word.document)|[getEndnoteBody()](/javascript/api/word/word.document#getEndnoteBody__)|Gets the body of the document's endnotes.|
 ||[getFootnoteBody()](/javascript/api/word/word.document#getFootnoteBody__)|Gets the body of the document's footnotes.|
-|[NoteItem](/javascript/api/word/word.noteitem)|[delete()](/javascript/api/word/word.noteitem#delete__)|Deletes the note item.|
+|[NoteItem](/javascript/api/word/word.noteitem)|[body](/javascript/api/word/word.noteitem#body)|Represents the body object of the note item.|
+||[delete()](/javascript/api/word/word.noteitem#delete__)|Deletes the note item.|
 ||[getNext()](/javascript/api/word/word.noteitem#getNext__)|Gets the next note item of the same type.|
 ||[getNextOrNullObject()](/javascript/api/word/word.noteitem#getNextOrNullObject__)|Gets the next note item of the same type.|
-||[body](/javascript/api/word/word.noteitem#body)|Represents the body object of the note item.|
 ||[reference](/javascript/api/word/word.noteitem#reference)|Represents a footnote/endnote reference in the main document.|
 ||[type](/javascript/api/word/word.noteitem#type)|Represent the note item type: footnote or endnote.|
 |[NoteItemCollection](/javascript/api/word/word.noteitemcollection)|[getFirst()](/javascript/api/word/word.noteitemcollection#getFirst__)|Gets the first note item in this collection.|
 ||[getFirstOrNullObject()](/javascript/api/word/word.noteitemcollection#getFirstOrNullObject__)|Gets the first note item in this collection.|
 ||[items](/javascript/api/word/word.noteitemcollection#items)|Gets the loaded child items in this collection.|
-|[Paragraph](/javascript/api/word/word.paragraph)|[getComments()](/javascript/api/word/word.paragraph#getComments__)|Gets comments associated with the paragraph.|
-||[endnotes](/javascript/api/word/word.paragraph#endnotes)|Gets the collection of endnotes in the Paragraph.|
+|[Paragraph](/javascript/api/word/word.paragraph)|[endnotes](/javascript/api/word/word.paragraph#endnotes)|Gets the collection of endnotes in the Paragraph.|
 ||[footnotes](/javascript/api/word/word.paragraph#footnotes)|Gets the collection of footnotes in the Paragraph.|
-|[Range](/javascript/api/word/word.range)|[getComments()](/javascript/api/word/word.range#getComments__)|Gets comments associated with the range.|
+||[getComments()](/javascript/api/word/word.paragraph#getComments__)|Gets comments associated with the paragraph.|
+|[Range](/javascript/api/word/word.range)|[endnotes](/javascript/api/word/word.range#endnotes)|Gets the collection of endnotes in the Range.|
+||[footnotes](/javascript/api/word/word.range#footnotes)|Gets the collection of footnotes in the Range.|
+||[getComments()](/javascript/api/word/word.range#getComments__)|Gets comments associated with the range.|
 ||[insertComment(commentText: string)](/javascript/api/word/word.range#insertComment_commentText_)|Insert a comment on the range.|
 ||[insertEndnote(insertText?: string)](/javascript/api/word/word.range#insertEndnote_insertText_)|Inserts an endnote.|
 ||[insertFootnote(insertText?: string)](/javascript/api/word/word.range#insertFootnote_insertText_)|Inserts a footnote.|
-||[endnotes](/javascript/api/word/word.range#endnotes)|Gets the collection of endnotes in the Range.|
-||[footnotes](/javascript/api/word/word.range#footnotes)|Gets the collection of footnotes in the Range.|
 |[Table](/javascript/api/word/word.table)|[endnotes](/javascript/api/word/word.table#endnotes)|Gets the collection of endnotes in the table.|
 ||[footnotes](/javascript/api/word/word.table#footnotes)|Gets the collection of footnotes in the table.|
 |[TableRow](/javascript/api/word/word.tablerow)|[endnotes](/javascript/api/word/word.tablerow#endnotes)|Gets the collection of endnotes in the table row.|
