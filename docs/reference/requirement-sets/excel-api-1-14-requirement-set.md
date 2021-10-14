@@ -8,13 +8,13 @@ ms.localizationpriority: medium
 
 # What's new in Excel JavaScript API 1.14
 
-The ExcelApi 1.14 added objects to control the data table feature of a chart, a method to locate all the precedent cells of a formula, and worksheet protection events to track changes to the protection state of a worksheet. It also added multiple `getItemOrNullObject` methods for objects like `CommentCollection`, `ShapeCollection`, and `StyleCollection` to improve error handling.
+The ExcelApi 1.14 added objects to control the data table feature of a chart, a method to locate all the precedent cells of a formula, and worksheet protection events to track changes to the protection state of a worksheet. It also added multiple [`getItemOrNullObject`](../../develop/application-specific-api-model.md#ornullobject-methods-and-properties) methods for objects like `CommentCollection`, `ShapeCollection`, and `StyleCollection` to improve error handling.
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
 | Chart data tables | Control appearance, formatting, and visibility of data tables on charts. | [Chart](/javascript/api/excel/excel.chart), [ChartDataTable](/javascript/api/excel/excel.chartdatatable), [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
 | Formula precedents | Return all the precedent cells of a formula. | [Range](/javascript/api/excel/excel.range) |
-| Queries | Retrieve query attributes like name, refresh date, and query count. | [Query](/javascript/api/excel/excel.query), [QueryCollection](/javascript/api/excel/excel.querycollection)|
+| Queries | Retrieve Power Query attributes like name, refresh date, and query count. | [Query](/javascript/api/excel/excel.query), [QueryCollection](/javascript/api/excel/excel.querycollection)|
 | Worksheet protection events | Track changes to the protection state of a worksheet and the source of those changes. | [WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs), [Worksheet](/javascript/api/excel/excel.worksheet), [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) |
 
 ## API list
