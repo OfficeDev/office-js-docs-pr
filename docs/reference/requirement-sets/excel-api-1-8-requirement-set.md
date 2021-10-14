@@ -271,7 +271,8 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.8. 
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getRange_ctx_)|Gets the range that represents the changed area of a table on a specific worksheet.|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getRangeOrNullObject_ctx_)|Gets the range that represents the changed area of a table on a specific worksheet.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readOnly)|Returns `true` if the workbook is open in read-only mode.|
-|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)||[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#onCalculated)|Occurs when the worksheet is calculated.|
+|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)|||
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#onCalculated)|Occurs when the worksheet is calculated.|
 ||[showGridlines](/javascript/api/excel/excel.worksheet#showGridlines)|Specifies if gridlines are visible to the user.|
 ||[showHeadings](/javascript/api/excel/excel.worksheet#showHeadings)|Specifies if headings are visible to the user.|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[type](/javascript/api/excel/excel.worksheetcalculatedeventargs#type)|Gets the type of the event.|
