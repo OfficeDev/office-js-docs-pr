@@ -69,21 +69,18 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.7. 
 ||[showAllFieldButtons](/javascript/api/excel/excel.chart#showAllFieldButtons)|Specifies whether to display all field buttons on a PivotChart.|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[border](/javascript/api/excel/excel.chartareaformat#border)|Represents the border format of chart area, which includes color, linestyle, and weight.|
 |[ChartAxes](/javascript/api/excel/excel.chartaxes)|[getItem(type: Excel.ChartAxisType, group?: Excel.ChartAxisGroup)](/javascript/api/excel/excel.chartaxes#getItem_type__group_)|Returns the specific axis identified by type and group.|
-|[ChartAxis](/javascript/api/excel/excel.chartaxis)|[baseTimeUnit](/javascript/api/excel/excel.chartaxis#baseTimeUnit)|Specifies the base unit for the specified category axis.|
+|[ChartAxis](/javascript/api/excel/excel.chartaxis)|[axisGroup](/javascript/api/excel/excel.chartaxis#axisGroup)|Specifies the group for the specified axis.|
+||[baseTimeUnit](/javascript/api/excel/excel.chartaxis#baseTimeUnit)|Specifies the base unit for the specified category axis.|
 ||[categoryType](/javascript/api/excel/excel.chartaxis#categoryType)|Specifies the category axis type.|
+||[customDisplayUnit](/javascript/api/excel/excel.chartaxis#customDisplayUnit)|Specifies the custom axis display unit value.|
 ||[displayUnit](/javascript/api/excel/excel.chartaxis#displayUnit)|Represents the axis display unit.|
+||[height](/javascript/api/excel/excel.chartaxis#height)|Specifies the height, in points, of the chart axis.|
+||[left](/javascript/api/excel/excel.chartaxis#left)|Specifies the distance, in points, from the left edge of the axis to the left of chart area.|
 ||[logBase](/javascript/api/excel/excel.chartaxis#logBase)|Specifies the base of the logarithm when using logarithmic scales.|
 ||[majorTickMark](/javascript/api/excel/excel.chartaxis#majorTickMark)|Specifies the type of major tick mark for the specified axis.|
 ||[majorTimeUnitScale](/javascript/api/excel/excel.chartaxis#majorTimeUnitScale)|Specifies the major unit scale value for the category axis when the `categoryType` property is set to `dateAxis`.|
 ||[minorTickMark](/javascript/api/excel/excel.chartaxis#minorTickMark)|Specifies the type of minor tick mark for the specified axis.|
 ||[minorTimeUnitScale](/javascript/api/excel/excel.chartaxis#minorTimeUnitScale)|Specifies the minor unit scale value for the category axis when the `categoryType` property is set to `dateAxis`.|
-||[axisGroup](/javascript/api/excel/excel.chartaxis#axisGroup)|Specifies the group for the specified axis.|
-||[customDisplayUnit](/javascript/api/excel/excel.chartaxis#customDisplayUnit)|Specifies the custom axis display unit value.|
-||[height](/javascript/api/excel/excel.chartaxis#height)|Specifies the height, in points, of the chart axis.|
-||[left](/javascript/api/excel/excel.chartaxis#left)|Specifies the distance, in points, from the left edge of the axis to the left of chart area.|
-||[top](/javascript/api/excel/excel.chartaxis#top)|Specifies the distance, in points, from the top edge of the axis to the top of chart area.|
-||[type](/javascript/api/excel/excel.chartaxis#type)|Specifies the axis type.|
-||[width](/javascript/api/excel/excel.chartaxis#width)|Specifies the width, in points, of the chart axis.|
 ||[reversePlotOrder](/javascript/api/excel/excel.chartaxis#reversePlotOrder)|Specifies if Excel plots data points from last to first.|
 ||[scaleType](/javascript/api/excel/excel.chartaxis#scaleType)|Specifies the value axis scale type.|
 ||[setCategoryNames(sourceData: Range)](/javascript/api/excel/excel.chartaxis#setCategoryNames_sourceData_)|Sets all the category names for the specified axis.|
@@ -92,7 +89,10 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.7. 
 ||[tickLabelPosition](/javascript/api/excel/excel.chartaxis#tickLabelPosition)|Specifies the position of tick-mark labels on the specified axis.|
 ||[tickLabelSpacing](/javascript/api/excel/excel.chartaxis#tickLabelSpacing)|Specifies the number of categories or series between tick-mark labels.|
 ||[tickMarkSpacing](/javascript/api/excel/excel.chartaxis#tickMarkSpacing)|Specifies the number of categories or series between tick marks.|
+||[top](/javascript/api/excel/excel.chartaxis#top)|Specifies the distance, in points, from the top edge of the axis to the top of chart area.|
+||[type](/javascript/api/excel/excel.chartaxis#type)|Specifies the axis type.|
 ||[visible](/javascript/api/excel/excel.chartaxis#visible)|Specifies if the axis is visible.|
+||[width](/javascript/api/excel/excel.chartaxis#width)|Specifies the width, in points, of the chart axis.|
 |[ChartBorder](/javascript/api/excel/excel.chartborder)|[color](/javascript/api/excel/excel.chartborder#color)|HTML color code representing the color of borders in the chart.|
 ||[lineStyle](/javascript/api/excel/excel.chartborder#lineStyle)|Represents the line style of the border.|
 ||[weight](/javascript/api/excel/excel.chartborder#weight)|Represents weight of the border, in points.|
@@ -117,12 +117,12 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.7. 
 ||[items](/javascript/api/excel/excel.chartlegendentrycollection#items)|Gets the loaded child items in this collection.|
 |[ChartLineFormat](/javascript/api/excel/excel.chartlineformat)|[lineStyle](/javascript/api/excel/excel.chartlineformat#lineStyle)|Represents the line style.|
 ||[weight](/javascript/api/excel/excel.chartlineformat#weight)|Represents weight of the line, in points.|
-|[ChartPoint](/javascript/api/excel/excel.chartpoint)|[hasDataLabel](/javascript/api/excel/excel.chartpoint#hasDataLabel)|Represents whether a data point has a data label.|
+|[ChartPoint](/javascript/api/excel/excel.chartpoint)|[dataLabel](/javascript/api/excel/excel.chartpoint#dataLabel)|Returns the data label of a chart point.|
+||[hasDataLabel](/javascript/api/excel/excel.chartpoint#hasDataLabel)|Represents whether a data point has a data label.|
 ||[markerBackgroundColor](/javascript/api/excel/excel.chartpoint#markerBackgroundColor)|HTML color code representation of the marker background color of a data point (e.g., #FF0000 represents Red).|
 ||[markerForegroundColor](/javascript/api/excel/excel.chartpoint#markerForegroundColor)|HTML color code representation of the marker foreground color of a data point (e.g., #FF0000 represents Red).|
 ||[markerSize](/javascript/api/excel/excel.chartpoint#markerSize)|Represents marker size of a data point.|
 ||[markerStyle](/javascript/api/excel/excel.chartpoint#markerStyle)|Represents marker style of a chart data point.|
-||[dataLabel](/javascript/api/excel/excel.chartpoint#dataLabel)|Returns the data label of a chart point.|
 |[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[border](/javascript/api/excel/excel.chartpointformat#border)|Represents the border format of a chart data point, which includes color, style, and weight information.|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[chartType](/javascript/api/excel/excel.chartseries#chartType)|Represents the chart type of a series.|
 ||[delete()](/javascript/api/excel/excel.chartseries#delete__)|Deletes the chart series.|
@@ -135,31 +135,31 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.7. 
 ||[markerSize](/javascript/api/excel/excel.chartseries#markerSize)|Specifies the marker size of a chart series.|
 ||[markerStyle](/javascript/api/excel/excel.chartseries#markerStyle)|Specifies the marker style of a chart series.|
 ||[plotOrder](/javascript/api/excel/excel.chartseries#plotOrder)|Specifies the plot order of a chart series within the chart group.|
-||[trendlines](/javascript/api/excel/excel.chartseries#trendlines)|The collection of trendlines in the series.|
 ||[setBubbleSizes(sourceData: Range)](/javascript/api/excel/excel.chartseries#setBubbleSizes_sourceData_)|Sets the bubble sizes for a chart series.|
 ||[setValues(sourceData: Range)](/javascript/api/excel/excel.chartseries#setValues_sourceData_)|Sets the values for a chart series.|
 ||[setXAxisValues(sourceData: Range)](/javascript/api/excel/excel.chartseries#setXAxisValues_sourceData_)|Sets the values of the x-axis for a chart series.|
 ||[showShadow](/javascript/api/excel/excel.chartseries#showShadow)|Specifies if the series has a shadow.|
 ||[smooth](/javascript/api/excel/excel.chartseries#smooth)|Specifies if the series is smooth.|
+||[trendlines](/javascript/api/excel/excel.chartseries#trendlines)|The collection of trendlines in the series.|
 |[ChartSeriesCollection](/javascript/api/excel/excel.chartseriescollection)|[add(name?: string, index?: number)](/javascript/api/excel/excel.chartseriescollection#add_name__index_)|Add a new series to the collection.|
 |[ChartTitle](/javascript/api/excel/excel.charttitle)|[getSubstring(start: number, length: number)](/javascript/api/excel/excel.charttitle#getSubstring_start__length_)|Get the substring of a chart title.|
+||[height](/javascript/api/excel/excel.charttitle#height)|Returns the height, in points, of the chart title.|
 ||[horizontalAlignment](/javascript/api/excel/excel.charttitle#horizontalAlignment)|Specifies the horizontal alignment for chart title.|
 ||[left](/javascript/api/excel/excel.charttitle#left)|Specifies the distance, in points, from the left edge of chart title to the left edge of chart area.|
 ||[position](/javascript/api/excel/excel.charttitle#position)|Represents the position of chart title.|
-||[height](/javascript/api/excel/excel.charttitle#height)|Returns the height, in points, of the chart title.|
-||[width](/javascript/api/excel/excel.charttitle#width)|Specifies the width, in points, of the chart title.|
 ||[setFormula(formula: string)](/javascript/api/excel/excel.charttitle#setFormula_formula_)|Sets a string value that represents the formula of chart title using A1-style notation.|
 ||[showShadow](/javascript/api/excel/excel.charttitle#showShadow)|Represents a boolean value that determines if the chart title has a shadow.|
 ||[textOrientation](/javascript/api/excel/excel.charttitle#textOrientation)|Specifies the angle to which the text is oriented for the chart title.|
 ||[top](/javascript/api/excel/excel.charttitle#top)|Specifies the distance, in points, from the top edge of chart title to the top of chart area.|
 ||[verticalAlignment](/javascript/api/excel/excel.charttitle#verticalAlignment)|Specifies the vertical alignment of chart title.|
+||[width](/javascript/api/excel/excel.charttitle#width)|Specifies the width, in points, of the chart title.|
 |[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[border](/javascript/api/excel/excel.charttitleformat#border)|Represents the border format of chart title, which includes color, linestyle, and weight.|
 |[ChartTrendline](/javascript/api/excel/excel.charttrendline)|[delete()](/javascript/api/excel/excel.charttrendline#delete__)|Delete the trendline object.|
+||[format](/javascript/api/excel/excel.charttrendline#format)|Represents the formatting of a chart trendline.|
 ||[intercept](/javascript/api/excel/excel.charttrendline#intercept)|Represents the intercept value of the trendline.|
 ||[movingAveragePeriod](/javascript/api/excel/excel.charttrendline#movingAveragePeriod)|Represents the period of a chart trendline.|
 ||[name](/javascript/api/excel/excel.charttrendline#name)|Represents the name of the trendline.|
 ||[polynomialOrder](/javascript/api/excel/excel.charttrendline#polynomialOrder)|Represents the order of a chart trendline.|
-||[format](/javascript/api/excel/excel.charttrendline#format)|Represents the formatting of a chart trendline.|
 ||[type](/javascript/api/excel/excel.charttrendline#type)|Represents the type of a chart trendline.|
 |[ChartTrendlineCollection](/javascript/api/excel/excel.charttrendlinecollection)|[add(type?: Excel.ChartTrendlineType)](/javascript/api/excel/excel.charttrendlinecollection#add_type_)|Adds a new trendline to trendline collection.|
 ||[getCount()](/javascript/api/excel/excel.charttrendlinecollection#getCount__)|Returns the number of trendlines in the collection.|
@@ -181,25 +181,25 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.7. 
 ||[category](/javascript/api/excel/excel.documentproperties#category)|The category of the workbook.|
 ||[comments](/javascript/api/excel/excel.documentproperties#comments)|The comments of the workbook.|
 ||[company](/javascript/api/excel/excel.documentproperties#company)|The company of the workbook.|
-||[keywords](/javascript/api/excel/excel.documentproperties#keywords)|The keywords of the workbook.|
-||[manager](/javascript/api/excel/excel.documentproperties#manager)|The manager of the workbook.|
 ||[creationDate](/javascript/api/excel/excel.documentproperties#creationDate)|Gets the creation date of the workbook.|
 ||[custom](/javascript/api/excel/excel.documentproperties#custom)|Gets the collection of custom properties of the workbook.|
+||[keywords](/javascript/api/excel/excel.documentproperties#keywords)|The keywords of the workbook.|
 ||[lastAuthor](/javascript/api/excel/excel.documentproperties#lastAuthor)|Gets the last author of the workbook.|
+||[manager](/javascript/api/excel/excel.documentproperties#manager)|The manager of the workbook.|
 ||[revisionNumber](/javascript/api/excel/excel.documentproperties#revisionNumber)|Gets the revision number of the workbook.|
 ||[subject](/javascript/api/excel/excel.documentproperties#subject)|The subject of the workbook.|
 ||[title](/javascript/api/excel/excel.documentproperties#title)|The title of the workbook.|
-|[NamedItem](/javascript/api/excel/excel.nameditem)|[formula](/javascript/api/excel/excel.nameditem#formula)|The formula of the named item.|
-||[arrayValues](/javascript/api/excel/excel.nameditem#arrayValues)|Returns an object containing values and types of the named item.|
+|[NamedItem](/javascript/api/excel/excel.nameditem)|[arrayValues](/javascript/api/excel/excel.nameditem#arrayValues)|Returns an object containing values and types of the named item.|
+||[formula](/javascript/api/excel/excel.nameditem#formula)|The formula of the named item.|
 |[NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)|[types](/javascript/api/excel/excel.nameditemarrayvalues#types)|Represents the types for each item in the named item array|
 ||[values](/javascript/api/excel/excel.nameditemarrayvalues#values)|Represents the values of each item in the named item array.|
 |[Range](/javascript/api/excel/excel.range)|[getAbsoluteResizedRange(numRows: number, numColumns: number)](/javascript/api/excel/excel.range#getAbsoluteResizedRange_numRows__numColumns_)|Gets a `Range` object with the same top-left cell as the current `Range` object, but with the specified numbers of rows and columns.|
 ||[getImage()](/javascript/api/excel/excel.range#getImage__)|Renders the range as a base64-encoded png image.|
 ||[getSurroundingRegion()](/javascript/api/excel/excel.range#getSurroundingRegion__)|Returns a `Range` object that represents the surrounding region for the top-left cell in this range.|
 ||[hyperlink](/javascript/api/excel/excel.range#hyperlink)|Represents the hyperlink for the current range.|
-||[numberFormatLocal](/javascript/api/excel/excel.range#numberFormatLocal)|Represents Excel's number format code for the given range, based on the language settings of the user.|
 ||[isEntireColumn](/javascript/api/excel/excel.range#isEntireColumn)|Represents if the current range is an entire column.|
 ||[isEntireRow](/javascript/api/excel/excel.range#isEntireRow)|Represents if the current range is an entire row.|
+||[numberFormatLocal](/javascript/api/excel/excel.range#numberFormatLocal)|Represents Excel's number format code for the given range, based on the language settings of the user.|
 ||[showCard()](/javascript/api/excel/excel.range#showCard__)|Displays the card for an active cell if it has rich value content.|
 ||[style](/javascript/api/excel/excel.range#style)|Represents the style of the current range.|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[textOrientation](/javascript/api/excel/excel.rangeformat#textOrientation)|The text orientation of all the cells within the range.|
@@ -209,7 +209,11 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.7. 
 ||[documentReference](/javascript/api/excel/excel.rangehyperlink#documentReference)|Represents the document reference target for the hyperlink.|
 ||[screenTip](/javascript/api/excel/excel.rangehyperlink#screenTip)|Represents the string displayed when hovering over the hyperlink.|
 ||[textToDisplay](/javascript/api/excel/excel.rangehyperlink#textToDisplay)|Represents the string that is displayed in the top left most cell in the range.|
-|[Style](/javascript/api/excel/excel.style)|[delete()](/javascript/api/excel/excel.style#delete__)|Deletes this style.|
+|[Style](/javascript/api/excel/excel.style)|[borders](/javascript/api/excel/excel.style#borders)|A collection of four border objects that represent the style of the four borders.|
+||[builtIn](/javascript/api/excel/excel.style#builtIn)|Specifies if the style is a built-in style.|
+||[delete()](/javascript/api/excel/excel.style#delete__)|Deletes this style.|
+||[fill](/javascript/api/excel/excel.style#fill)|The fill of the style.|
+||[font](/javascript/api/excel/excel.style#font)|A `Font` object that represents the font of the style.|
 ||[formulaHidden](/javascript/api/excel/excel.style#formulaHidden)|Specifies if the formula will be hidden when the worksheet is protected.|
 ||[horizontalAlignment](/javascript/api/excel/excel.style#horizontalAlignment)|Represents the horizontal alignment for the style.|
 ||[includeAlignment](/javascript/api/excel/excel.style#includeAlignment)|Specifies if the style includes the auto indent, horizontal alignment, vertical alignment, wrap text, indent level, and text orientation properties.|
@@ -220,14 +224,10 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.7. 
 ||[includeProtection](/javascript/api/excel/excel.style#includeProtection)|Specifies if the style includes the formula hidden and locked protection properties.|
 ||[indentLevel](/javascript/api/excel/excel.style#indentLevel)|An integer from 0 to 250 that indicates the indent level for the style.|
 ||[locked](/javascript/api/excel/excel.style#locked)|Specifies if the object is locked when the worksheet is protected.|
+||[name](/javascript/api/excel/excel.style#name)|The name of the style.|
 ||[numberFormat](/javascript/api/excel/excel.style#numberFormat)|The format code of the number format for the style.|
 ||[numberFormatLocal](/javascript/api/excel/excel.style#numberFormatLocal)|The localized format code of the number format for the style.|
 ||[readingOrder](/javascript/api/excel/excel.style#readingOrder)|The reading order for the style.|
-||[borders](/javascript/api/excel/excel.style#borders)|A collection of four border objects that represent the style of the four borders.|
-||[builtIn](/javascript/api/excel/excel.style#builtIn)|Specifies if the style is a built-in style.|
-||[fill](/javascript/api/excel/excel.style#fill)|The fill of the style.|
-||[font](/javascript/api/excel/excel.style#font)|A `Font` object that represents the font of the style.|
-||[name](/javascript/api/excel/excel.style#name)|The name of the style.|
 ||[shrinkToFit](/javascript/api/excel/excel.style#shrinkToFit)|Specifies if text automatically shrinks to fit in the available column width.|
 ||[verticalAlignment](/javascript/api/excel/excel.style#verticalAlignment)|Specifies the vertical alignment for the style.|
 ||[wrapText](/javascript/api/excel/excel.style#wrapText)|Specifies if Excel wraps the text in the object.|
@@ -248,8 +248,8 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.7. 
 ||[tableId](/javascript/api/excel/excel.tableselectionchangedeventargs#tableId)|Gets the ID of the table in which the selection changed.|
 ||[type](/javascript/api/excel/excel.tableselectionchangedeventargs#type)|Gets the type of the event.|
 ||[worksheetId](/javascript/api/excel/excel.tableselectionchangedeventargs#worksheetId)|Gets the ID of the worksheet in which the selection changed.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getActiveCell__)|Gets the currently active cell from the workbook.|
-||[dataConnections](/javascript/api/excel/excel.workbook#dataConnections)|Represents all data connections in the workbook.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[dataConnections](/javascript/api/excel/excel.workbook#dataConnections)|Represents all data connections in the workbook.|
+||[getActiveCell()](/javascript/api/excel/excel.workbook#getActiveCell__)|Gets the currently active cell from the workbook.|
 ||[name](/javascript/api/excel/excel.workbook#name)|Gets the workbook name.|
 ||[properties](/javascript/api/excel/excel.workbook#properties)|Gets the workbook properties.|
 ||[protection](/javascript/api/excel/excel.workbook#protection)|Returns the protection object for a workbook.|
@@ -258,8 +258,8 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.7. 
 ||[protected](/javascript/api/excel/excel.workbookprotection#protected)|Specifies if the workbook is protected.|
 ||[unprotect(password?: string)](/javascript/api/excel/excel.workbookprotection#unprotect_password_)|Unprotects a workbook.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[copy(positionType?: Excel.WorksheetPositionType, relativeTo?: Excel.Worksheet)](/javascript/api/excel/excel.worksheet#copy_positionType__relativeTo_)|Copies a worksheet and places it at the specified position.|
-||[getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](/javascript/api/excel/excel.worksheet#getRangeByIndexes_startRow__startColumn__rowCount__columnCount_)|Gets the `Range` object beginning at a particular row index and column index, and spanning a certain number of rows and columns.|
 ||[freezePanes](/javascript/api/excel/excel.worksheet#freezePanes)|Gets an object that can be used to manipulate frozen panes on the worksheet.|
+||[getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](/javascript/api/excel/excel.worksheet#getRangeByIndexes_startRow__startColumn__rowCount__columnCount_)|Gets the `Range` object beginning at a particular row index and column index, and spanning a certain number of rows and columns.|
 ||[onActivated](/javascript/api/excel/excel.worksheet#onActivated)|Occurs when the worksheet is activated.|
 ||[onChanged](/javascript/api/excel/excel.worksheet#onChanged)|Occurs when data changes in a specific worksheet.|
 ||[onDeactivated](/javascript/api/excel/excel.worksheet#onDeactivated)|Occurs when the worksheet is deactivated.|

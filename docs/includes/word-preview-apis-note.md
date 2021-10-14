@@ -4,4 +4,4 @@
 > - Word on Windows
 > - Word on Mac
 >
-> Word preview APIs are currently not supported on iPad. However, bookmark feature APIs are also available in Word on the web and APIs related to comments, endnotes, and footnotes are currently only available in Word on the web.
+> Word preview APIs are currently not supported on iPad. However, bookmark feature APIs are also available in Word on the web. For APIs available only in Word on the web, see the [Web-only API list](#web-only-api-list).
