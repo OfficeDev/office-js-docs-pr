@@ -8,13 +8,13 @@ ms.localizationpriority: medium
 
 # What's new in Excel JavaScript API 1.14
 
-The ExcelApi 1.14 added...
-
-added a method to insert worksheets into a workbook from a Base64-encoded string and an event to detect workbook activation. It also increased support for formulas in ranges by adding APIs to track changes to formulas and locate a formula's direct dependent cells. Additionally, it expanded PivotTable support by adding PivotLayout APIs for alt text, style, and empty cell management.
+The ExcelApi 1.14 added objects to control the data table feature of a chart, a method to locate all the precedent cells of a formula, and worksheet protection events to track changes to the protection state of a worksheet. It also added multiple `getItemOrNullObject` methods for objects like `CommentCollection`, `ShapeCollection`, and `StyleCollection` to improve error processing.
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-
+| Chart data table | Programmatically control a chart data table, including visibility, border style, formatting, and legend key visibility. | [Chart](/javascript/api/excel/excel.chart), [ChartDataTable](/javascript/api/excel/excel.chartdatatable), [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
+| Formula precedents | Return all the precedent cells of a formula. | [Range](/javascript/api/excel/excel.range) |
+| Worksheet protection events | Track changes to the protection state of a worksheet and the source of those changes. | [WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs), [Worksheet](/javascript/api/excel/excel.worksheet), [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) |
 
 ## API list
 
