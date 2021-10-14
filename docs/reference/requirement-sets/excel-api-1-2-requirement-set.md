@@ -493,10 +493,10 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.2. 
 ||[getRowsAbove(count?: number)](/javascript/api/excel/excel.range#getRowsAbove_count_)|Gets a certain number of rows above the current `Range` object.|
 ||[getRowsBelow(count?: number)](/javascript/api/excel/excel.range#getRowsBelow_count_)|Gets a certain number of rows below the current `Range` object.|
 ||[getUsedRange(valuesOnly?: boolean)](/javascript/api/excel/excel.range#getUsedRange_valuesOnly_)|Returns the used range of the given range object.|
-||[merge(across?: boolean)](/javascript/api/excel/excel.range#merge_across_)|Merge the range cells into one region in the worksheet.|
 ||[hidden](/javascript/api/excel/excel.range#hidden)|Represents if all cells in the current range are hidden.|
-||[sort](/javascript/api/excel/excel.range#sort)|Represents the range sort of the current range.|
+||[merge(across?: boolean)](/javascript/api/excel/excel.range#merge_across_)|Merge the range cells into one region in the worksheet.|
 ||[rowHidden](/javascript/api/excel/excel.range#rowHidden)|Represents if all rows in the current range are hidden.|
+||[sort](/javascript/api/excel/excel.range#sort)|Represents the range sort of the current range.|
 ||[unmerge()](/javascript/api/excel/excel.range#unmerge__)|Unmerge the range cells into separate cells.|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[autofitColumns()](/javascript/api/excel/excel.rangeformat#autofitColumns__)|Changes the width of the columns of the current range to achieve the best fit, based on the current data in the columns.|
 ||[autofitRows()](/javascript/api/excel/excel.rangeformat#autofitRows__)|Changes the height of the rows of the current range to achieve the best fit, based on the current data in the columns.|
@@ -514,9 +514,9 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.2. 
 ||[sortOn](/javascript/api/excel/excel.sortfield#sortOn)|Specifies the type of sorting of this condition.|
 |[Table](/javascript/api/excel/excel.table)|[clearFilters()](/javascript/api/excel/excel.table#clearFilters__)|Clears all the filters currently applied on the table.|
 ||[convertToRange()](/javascript/api/excel/excel.table#convertToRange__)|Converts the table into a normal range of cells.|
+||[reapplyFilters()](/javascript/api/excel/excel.table#reapplyFilters__)|Reapplies all the filters currently on the table.|
 ||[sort](/javascript/api/excel/excel.table#sort)|Represents the sorting for the table.|
 ||[worksheet](/javascript/api/excel/excel.table#worksheet)|The worksheet containing the current table.|
-||[reapplyFilters()](/javascript/api/excel/excel.table#reapplyFilters__)|Reapplies all the filters currently on the table.|
 |[TableColumn](/javascript/api/excel/excel.tablecolumn)|[filter](/javascript/api/excel/excel.tablecolumn#filter)|Retrieves the filter applied to the column.|
 |[TableSort](/javascript/api/excel/excel.tablesort)|[apply(fields: Excel.SortField[], matchCase?: boolean, method?: Excel.SortMethod)](/javascript/api/excel/excel.tablesort#apply_fields__matchCase__method_)|Perform a sort operation.|
 ||[clear()](/javascript/api/excel/excel.tablesort#clear__)|Clears the sorting that is currently on the table.|
@@ -558,8 +558,8 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.2. 
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onSelectionChanged)|Occurs when the selection in the document is changed.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange(valuesOnly?: boolean)](/javascript/api/excel/excel.worksheet#getUsedRange_valuesOnly_)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them.|
 ||[protection](/javascript/api/excel/excel.worksheet#protection)|Returns the sheet protection object for a worksheet.|
-|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[protect(options?: Excel.WorksheetProtectionOptions, password?: string)](/javascript/api/excel/excel.worksheetprotection#protect_options__password_)|Protects a worksheet.|
-||[options](/javascript/api/excel/excel.worksheetprotection#options)|Specifies the protection options for the worksheet.|
+|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[options](/javascript/api/excel/excel.worksheetprotection#options)|Specifies the protection options for the worksheet.|
+||[protect(options?: Excel.WorksheetProtectionOptions, password?: string)](/javascript/api/excel/excel.worksheetprotection#protect_options__password_)|Protects a worksheet.|
 ||[protected](/javascript/api/excel/excel.worksheetprotection#protected)|Specifies if the worksheet is protected.|
 |[WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions)|[allowAutoFilter](/javascript/api/excel/excel.worksheetprotectionoptions#allowAutoFilter)|Represents the worksheet protection option allowing use of the AutoFilter feature.|
 ||[allowDeleteColumns](/javascript/api/excel/excel.worksheetprotectionoptions#allowDeleteColumns)|Represents the worksheet protection option allowing deleting of columns.|

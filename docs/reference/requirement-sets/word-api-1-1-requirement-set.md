@@ -17,10 +17,13 @@ The following table lists the APIs in Word JavaScript API requirement set 1.1. T
 | Class | Fields | Description |
 |:---|:---|:---|
 |[Body](/javascript/api/word/word.body)|[clear()](/javascript/api/word/word.body#clear__)|Clears the contents of the body object.|
+||[contentControls](/javascript/api/word/word.body#contentControls)|Gets the collection of rich text content control objects in the body.|
+||[font](/javascript/api/word/word.body#font)|Gets the text format of the body.|
 ||[getHtml()](/javascript/api/word/word.body#getHtml__)|Gets an HTML representation of the body object.|
 ||[getOoxml()](/javascript/api/word/word.body#getOoxml__)|Gets the OOXML (Office Open XML) representation of the body object.|
 ||[ignorePunct](/javascript/api/word/word.body#ignorePunct)||
 ||[ignoreSpace](/javascript/api/word/word.body#ignoreSpace)||
+||[inlinePictures](/javascript/api/word/word.body#inlinePictures)|Gets the collection of InlinePicture objects in the body.|
 ||[insertBreak(breakType: Word.BreakType, insertLocation: Word.InsertLocation)](/javascript/api/word/word.body#insertBreak_breakType__insertLocation_)|Inserts a break at the specified location in the main document.|
 ||[insertContentControl()](/javascript/api/word/word.body#insertContentControl__)|Wraps the body object with a Rich Text content control.|
 ||[insertFileFromBase64(base64File: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.body#insertFileFromBase64_base64File__insertLocation_)|Inserts a document into the body at the specified location.|
@@ -33,25 +36,26 @@ The following table lists the APIs in Word JavaScript API requirement set 1.1. T
 ||[matchSuffix](/javascript/api/word/word.body#matchSuffix)||
 ||[matchWholeWord](/javascript/api/word/word.body#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.body#matchWildcards)||
-||[contentControls](/javascript/api/word/word.body#contentControls)|Gets the collection of rich text content control objects in the body.|
-||[font](/javascript/api/word/word.body#font)|Gets the text format of the body.|
-||[inlinePictures](/javascript/api/word/word.body#inlinePictures)|Gets the collection of InlinePicture objects in the body.|
 ||[paragraphs](/javascript/api/word/word.body#paragraphs)|Gets the collection of paragraph objects in the body.|
 ||[parentContentControl](/javascript/api/word/word.body#parentContentControl)|Gets the content control that contains the body.|
-||[text](/javascript/api/word/word.body#text)|Gets the text of the body.|
 ||[search(searchText: string, searchOptions?: Word.SearchOptions \| {            ignorePunct?: boolean            ignoreSpace?: boolean            matchCase?: boolean            matchPrefix?: boolean            matchSuffix?: boolean            matchWholeWord?: boolean            matchWildcards?: boolean        })](/javascript/api/word/word.body#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|Performs a search with the specified SearchOptions on the scope of the body object.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.body#select_selectionMode_)|Selects the body and navigates the Word UI to it.|
 ||[style](/javascript/api/word/word.body#style)|Gets or sets the style name for the body.|
+||[text](/javascript/api/word/word.body#text)|Gets the text of the body.|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[appearance](/javascript/api/word/word.contentcontrol#appearance)|Gets or sets the appearance of the content control.|
 ||[cannotDelete](/javascript/api/word/word.contentcontrol#cannotDelete)|Gets or sets a value that indicates whether the user can delete the content control.|
 ||[cannotEdit](/javascript/api/word/word.contentcontrol#cannotEdit)|Gets or sets a value that indicates whether the user can edit the contents of the content control.|
 ||[clear()](/javascript/api/word/word.contentcontrol#clear__)|Clears the contents of the content control.|
 ||[color](/javascript/api/word/word.contentcontrol#color)|Gets or sets the color of the content control.|
+||[contentControls](/javascript/api/word/word.contentcontrol#contentControls)|Gets the collection of content control objects in the content control.|
 ||[delete(keepContent: boolean)](/javascript/api/word/word.contentcontrol#delete_keepContent_)|Deletes the content control and its content.|
+||[font](/javascript/api/word/word.contentcontrol#font)|Gets the text format of the content control.|
 ||[getHtml()](/javascript/api/word/word.contentcontrol#getHtml__)|Gets an HTML representation of the content control object.|
 ||[getOoxml()](/javascript/api/word/word.contentcontrol#getOoxml__)|Gets the Office Open XML (OOXML) representation of the content control object.|
+||[id](/javascript/api/word/word.contentcontrol#id)|Gets an integer that represents the content control identifier.|
 ||[ignorePunct](/javascript/api/word/word.contentcontrol#ignorePunct)||
 ||[ignoreSpace](/javascript/api/word/word.contentcontrol#ignoreSpace)||
+||[inlinePictures](/javascript/api/word/word.contentcontrol#inlinePictures)|Gets the collection of inlinePicture objects in the content control.|
 ||[insertBreak(breakType: Word.BreakType, insertLocation: Word.InsertLocation)](/javascript/api/word/word.contentcontrol#insertBreak_breakType__insertLocation_)|Inserts a break at the specified location in the main document.|
 ||[insertFileFromBase64(base64File: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.contentcontrol#insertFileFromBase64_base64File__insertLocation_)|Inserts a document into the content control at the specified location.|
 ||[insertHtml(html: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.contentcontrol#insertHtml_html__insertLocation_)|Inserts HTML into the content control at the specified location.|
@@ -63,32 +67,28 @@ The following table lists the APIs in Word JavaScript API requirement set 1.1. T
 ||[matchSuffix](/javascript/api/word/word.contentcontrol#matchSuffix)||
 ||[matchWholeWord](/javascript/api/word/word.contentcontrol#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.contentcontrol#matchWildcards)||
-||[placeholderText](/javascript/api/word/word.contentcontrol#placeholderText)|Gets or sets the placeholder text of the content control.|
-||[contentControls](/javascript/api/word/word.contentcontrol#contentControls)|Gets the collection of content control objects in the content control.|
-||[font](/javascript/api/word/word.contentcontrol#font)|Gets the text format of the content control.|
-||[id](/javascript/api/word/word.contentcontrol#id)|Gets an integer that represents the content control identifier.|
-||[inlinePictures](/javascript/api/word/word.contentcontrol#inlinePictures)|Gets the collection of inlinePicture objects in the content control.|
 ||[paragraphs](/javascript/api/word/word.contentcontrol#paragraphs)|Get the collection of paragraph objects in the content control.|
 ||[parentContentControl](/javascript/api/word/word.contentcontrol#parentContentControl)|Gets the content control that contains the content control.|
-||[text](/javascript/api/word/word.contentcontrol#text)|Gets the text of the content control.|
-||[type](/javascript/api/word/word.contentcontrol#type)|Gets the content control type.|
+||[placeholderText](/javascript/api/word/word.contentcontrol#placeholderText)|Gets or sets the placeholder text of the content control.|
 ||[removeWhenEdited](/javascript/api/word/word.contentcontrol#removeWhenEdited)|Gets or sets a value that indicates whether the content control is removed after it is edited.|
 ||[search(searchText: string, searchOptions?: Word.SearchOptions \| {            ignorePunct?: boolean            ignoreSpace?: boolean            matchCase?: boolean            matchPrefix?: boolean            matchSuffix?: boolean            matchWholeWord?: boolean            matchWildcards?: boolean        })](/javascript/api/word/word.contentcontrol#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|Performs a search with the specified SearchOptions on the scope of the content control object.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.contentcontrol#select_selectionMode_)|Selects the content control.|
 ||[style](/javascript/api/word/word.contentcontrol#style)|Gets or sets the style name for the content control.|
 ||[tag](/javascript/api/word/word.contentcontrol#tag)|Gets or sets a tag to identify a content control.|
+||[text](/javascript/api/word/word.contentcontrol#text)|Gets the text of the content control.|
 ||[title](/javascript/api/word/word.contentcontrol#title)|Gets or sets the title for a content control.|
+||[type](/javascript/api/word/word.contentcontrol#type)|Gets the content control type.|
 |[ContentControlCollection](/javascript/api/word/word.contentcontrolcollection)|[getById(id: number)](/javascript/api/word/word.contentcontrolcollection#getById_id_)|Gets a content control by its identifier.|
 ||[getByTag(tag: string)](/javascript/api/word/word.contentcontrolcollection#getByTag_tag_)|Gets the content controls that have the specified tag.|
 ||[getByTitle(title: string)](/javascript/api/word/word.contentcontrolcollection#getByTitle_title_)|Gets the content controls that have the specified title.|
 ||[getItem(index: number)](/javascript/api/word/word.contentcontrolcollection#getItem_index_)|Gets a content control by its index in the collection.|
 ||[items](/javascript/api/word/word.contentcontrolcollection#items)|Gets the loaded child items in this collection.|
-|[Document](/javascript/api/word/word.document)|[getSelection()](/javascript/api/word/word.document#getSelection__)|Gets the current selection of the document.|
-||[body](/javascript/api/word/word.document#body)|Gets the body object of the document.|
+|[Document](/javascript/api/word/word.document)|[body](/javascript/api/word/word.document#body)|Gets the body object of the main document.|
 ||[contentControls](/javascript/api/word/word.document#contentControls)|Gets the collection of content control objects in the document.|
+||[getSelection()](/javascript/api/word/word.document#getSelection__)|Gets the current selection of the document.|
+||[save()](/javascript/api/word/word.document#save__)|Saves the document.|
 ||[saved](/javascript/api/word/word.document#saved)|Indicates whether the changes in the document have been saved.|
 ||[sections](/javascript/api/word/word.document#sections)|Gets the collection of section objects in the document.|
-||[save()](/javascript/api/word/word.document#save__)|Saves the document.|
 |[Font](/javascript/api/word/word.font)|[bold](/javascript/api/word/word.font#bold)|Gets or sets a value that indicates whether the font is bold.|
 ||[color](/javascript/api/word/word.font#color)|Gets or sets the color for the specified font.|
 ||[doubleStrikeThrough](/javascript/api/word/word.font#doubleStrikeThrough)|Gets or sets a value that indicates whether the font has a double strikethrough.|
@@ -112,12 +112,15 @@ The following table lists the APIs in Word JavaScript API requirement set 1.1. T
 |[InlinePictureCollection](/javascript/api/word/word.inlinepicturecollection)|[items](/javascript/api/word/word.inlinepicturecollection#items)|Gets the loaded child items in this collection.|
 |[Paragraph](/javascript/api/word/word.paragraph)|[alignment](/javascript/api/word/word.paragraph#alignment)|Gets or sets the alignment for a paragraph.|
 ||[clear()](/javascript/api/word/word.paragraph#clear__)|Clears the contents of the paragraph object.|
+||[contentControls](/javascript/api/word/word.paragraph#contentControls)|Gets the collection of content control objects in the paragraph.|
 ||[delete()](/javascript/api/word/word.paragraph#delete__)|Deletes the paragraph and its content from the document.|
 ||[firstLineIndent](/javascript/api/word/word.paragraph#firstLineIndent)|Gets or sets the value, in points, for a first line or hanging indent.|
+||[font](/javascript/api/word/word.paragraph#font)|Gets the text format of the paragraph.|
 ||[getHtml()](/javascript/api/word/word.paragraph#getHtml__)|Gets an HTML representation of the paragraph object.|
 ||[getOoxml()](/javascript/api/word/word.paragraph#getOoxml__)|Gets the Office Open XML (OOXML) representation of the paragraph object.|
 ||[ignorePunct](/javascript/api/word/word.paragraph#ignorePunct)||
 ||[ignoreSpace](/javascript/api/word/word.paragraph#ignoreSpace)||
+||[inlinePictures](/javascript/api/word/word.paragraph#inlinePictures)|Gets the collection of InlinePicture objects in the paragraph.|
 ||[insertBreak(breakType: Word.BreakType, insertLocation: Word.InsertLocation)](/javascript/api/word/word.paragraph#insertBreak_breakType__insertLocation_)|Inserts a break at the specified location in the main document.|
 ||[insertContentControl()](/javascript/api/word/word.paragraph#insertContentControl__)|Wraps the paragraph object with a rich text content control.|
 ||[insertFileFromBase64(base64File: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.paragraph#insertFileFromBase64_base64File__insertLocation_)|Inserts a document into the paragraph at the specified location.|
@@ -136,20 +139,19 @@ The following table lists the APIs in Word JavaScript API requirement set 1.1. T
 ||[matchWholeWord](/javascript/api/word/word.paragraph#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.paragraph#matchWildcards)||
 ||[outlineLevel](/javascript/api/word/word.paragraph#outlineLevel)|Gets or sets the outline level for the paragraph.|
-||[contentControls](/javascript/api/word/word.paragraph#contentControls)|Gets the collection of content control objects in the paragraph.|
-||[font](/javascript/api/word/word.paragraph#font)|Gets the text format of the paragraph.|
-||[inlinePictures](/javascript/api/word/word.paragraph#inlinePictures)|Gets the collection of InlinePicture objects in the paragraph.|
 ||[parentContentControl](/javascript/api/word/word.paragraph#parentContentControl)|Gets the content control that contains the paragraph.|
-||[text](/javascript/api/word/word.paragraph#text)|Gets the text of the paragraph.|
 ||[rightIndent](/javascript/api/word/word.paragraph#rightIndent)|Gets or sets the right indent value, in points, for the paragraph.|
 ||[search(searchText: string, searchOptions?: Word.SearchOptions \| {            ignorePunct?: boolean            ignoreSpace?: boolean            matchCase?: boolean            matchPrefix?: boolean            matchSuffix?: boolean            matchWholeWord?: boolean            matchWildcards?: boolean        })](/javascript/api/word/word.paragraph#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|Performs a search with the specified SearchOptions on the scope of the paragraph object.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.paragraph#select_selectionMode_)|Selects and navigates the Word UI to the paragraph.|
 ||[spaceAfter](/javascript/api/word/word.paragraph#spaceAfter)|Gets or sets the spacing, in points, after the paragraph.|
 ||[spaceBefore](/javascript/api/word/word.paragraph#spaceBefore)|Gets or sets the spacing, in points, before the paragraph.|
 ||[style](/javascript/api/word/word.paragraph#style)|Gets or sets the style name for the paragraph.|
+||[text](/javascript/api/word/word.paragraph#text)|Gets the text of the paragraph.|
 |[ParagraphCollection](/javascript/api/word/word.paragraphcollection)|[items](/javascript/api/word/word.paragraphcollection#items)|Gets the loaded child items in this collection.|
 |[Range](/javascript/api/word/word.range)|[clear()](/javascript/api/word/word.range#clear__)|Clears the contents of the range object.|
+||[contentControls](/javascript/api/word/word.range#contentControls)|Gets the collection of content control objects in the range.|
 ||[delete()](/javascript/api/word/word.range#delete__)|Deletes the range and its content from the document.|
+||[font](/javascript/api/word/word.range#font)|Gets the text format of the range.|
 ||[getHtml()](/javascript/api/word/word.range#getHtml__)|Gets an HTML representation of the range object.|
 ||[getOoxml()](/javascript/api/word/word.range#getOoxml__)|Gets the OOXML representation of the range object.|
 ||[ignorePunct](/javascript/api/word/word.range#ignorePunct)||
@@ -166,14 +168,12 @@ The following table lists the APIs in Word JavaScript API requirement set 1.1. T
 ||[matchSuffix](/javascript/api/word/word.range#matchSuffix)||
 ||[matchWholeWord](/javascript/api/word/word.range#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.range#matchWildcards)||
-||[contentControls](/javascript/api/word/word.range#contentControls)|Gets the collection of content control objects in the range.|
-||[font](/javascript/api/word/word.range#font)|Gets the text format of the range.|
 ||[paragraphs](/javascript/api/word/word.range#paragraphs)|Gets the collection of paragraph objects in the range.|
 ||[parentContentControl](/javascript/api/word/word.range#parentContentControl)|Gets the content control that contains the range.|
-||[text](/javascript/api/word/word.range#text)|Gets the text of the range.|
 ||[search(searchText: string, searchOptions?: Word.SearchOptions \| {            ignorePunct?: boolean            ignoreSpace?: boolean            matchCase?: boolean            matchPrefix?: boolean            matchSuffix?: boolean            matchWholeWord?: boolean            matchWildcards?: boolean        })](/javascript/api/word/word.range#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|Performs a search with the specified SearchOptions on the scope of the range object.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.range#select_selectionMode_)|Selects and navigates the Word UI to the range.|
 ||[style](/javascript/api/word/word.range#style)|Gets or sets the style name for the range.|
+||[text](/javascript/api/word/word.range#text)|Gets the text of the range.|
 |[RangeCollection](/javascript/api/word/word.rangecollection)|[items](/javascript/api/word/word.rangecollection#items)|Gets the loaded child items in this collection.|
 |[SearchOptions](/javascript/api/word/word.searchoptions)|[ignorePunct](/javascript/api/word/word.searchoptions#ignorePunct)|Gets or sets a value that indicates whether to ignore all punctuation characters between words.|
 ||[ignoreSpace](/javascript/api/word/word.searchoptions#ignoreSpace)|Gets or sets a value that indicates whether to ignore all whitespace between words.|
@@ -182,9 +182,9 @@ The following table lists the APIs in Word JavaScript API requirement set 1.1. T
 ||[matchSuffix](/javascript/api/word/word.searchoptions#matchSuffix)|Gets or sets a value that indicates whether to match words that end with the search string.|
 ||[matchWholeWord](/javascript/api/word/word.searchoptions#matchWholeWord)|Gets or sets a value that indicates whether to find operation only entire words, not text that is part of a larger word.|
 ||[matchWildcards](/javascript/api/word/word.searchoptions#matchWildcards)|Gets or sets a value that indicates whether the search will be performed using special search operators.|
-|[Section](/javascript/api/word/word.section)|[getFooter(type: Word.HeaderFooterType)](/javascript/api/word/word.section#getFooter_type_)|Gets one of the section's footers.|
+|[Section](/javascript/api/word/word.section)|[body](/javascript/api/word/word.section#body)|Gets the body object of the section.|
+||[getFooter(type: Word.HeaderFooterType)](/javascript/api/word/word.section#getFooter_type_)|Gets one of the section's footers.|
 ||[getHeader(type: Word.HeaderFooterType)](/javascript/api/word/word.section#getHeader_type_)|Gets one of the section's headers.|
-||[body](/javascript/api/word/word.section#body)|Gets the body object of the section.|
 |[SectionCollection](/javascript/api/word/word.sectioncollection)|[items](/javascript/api/word/word.sectioncollection#items)|Gets the loaded child items in this collection.|
 
 ## See also
