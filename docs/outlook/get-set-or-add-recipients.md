@@ -51,6 +51,7 @@ Note that because the `getAsync` method is asynchronous, if there are subsequent
 
 > [!IMPORTANT]
 > In Outlook on the web, if a user created a new message by activating a contact's email address link from their contact or profile card, your add-in's `Recipients.getAsync` call currently won't return a value in the `displayName` property of the associated `EmailAddressDetails` object.
+> For more details, refer to the [related GitHub issue](https://github.com/OfficeDev/office-js-docs-pr/issues/2962).
 
 ```js
 var item;
