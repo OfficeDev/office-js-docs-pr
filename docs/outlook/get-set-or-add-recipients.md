@@ -1,7 +1,7 @@
 ---
 title: Get or modify recipients in an Outlook add-in
 description: Learn how to get, set, or add recipients of a message or appointment in an Outlook add-in.
-ms.date: 12/10/2019
+ms.date: 10/15/2021
 ms.localizationpriority: medium
 ---
 
@@ -49,8 +49,8 @@ To use `getAsync` provide a callback method to check for the status, results, an
 
 Note that because the `getAsync` method is asynchronous, if there are subsequent actions that depend on successfully getting the recipients, you should organize your code to start such actions only in the corresponding callback method when the asynchronous call has successfully completed.
 
-
-
+> [!IMPORTANT]
+> In Outlook on the web, if a user created a new message by activating a contact's email address link from their contact or profile card, your add-in's `Recipients.getAsync` call currently won't return a value in the `displayName` property of the associated `EmailAddressDetails` object.
 
 ```js
 var item;
