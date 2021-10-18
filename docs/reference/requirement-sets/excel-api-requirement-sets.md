@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement sets
 description: 'Office Add-in requirement set information for Excel builds.'
-ms.date: 10/08/2021
+ms.date: 10/18/2021
 ms.prod: excel
 ms.localizationpriority: high
 ---
@@ -40,7 +40,7 @@ Excel add-ins run across multiple versions of Office, including Office 2016 or l
 > [!NOTE]
 > Non-subscription versions of Office support requirement sets as follows:
 >
-> - Office 2021 supports ExcelApi 1.13 and earlier.
+> - Office 2021 supports ExcelApi 1.14 and earlier.
 > - Office 2019 supports ExcelApi 1.8 and earlier.
 > - Office 2016 only supports the ExcelApi 1.1 requirement set.
 
