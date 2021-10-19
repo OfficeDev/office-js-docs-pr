@@ -1,11 +1,11 @@
 ---
-title: Overview of single sign-on (SSO) for Office Add-ins
-description: 'Overview of how single sign-on (SSO) works for Office Add-ins using common Microsoft personal, work, or education accounts.'
-ms.date: 09/20/2021
+title: Enable single sign-on (SSO) in an Office Add-in
+description: 'Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.'
+ms.date: 10/19/2021
 ms.localizationpriority: high
 ---
 
-# Overview of single sign-on (SSO) for Office Add-ins
+# Enable single sign-on (SSO) in an Office Add-in
 
 Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or work account. You can take advantage of this and use single sign-on (SSO) to authenticate and authorize the user to your add-in without requiring the user to sign in a second time.
 
@@ -15,7 +15,7 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 
 The following diagram shows how the SSO process works.
 
-![A diagram that shows the SSO process.](../images/sso-overview-diagram.png)
+![A diagram that shows the SSO process.](../images/sso-overview-diagram.svg)
 
 1. In the add-in, your JavaScript code calls the Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). If the user is already signed in to Office, the Office host will return the access token with the claims of the signed in user.
 2. If the user is not signed in, the Office host application opens a dialog box for the user to sign in. Office redirects to the Microsoft identity platform to complete the sign-in process.

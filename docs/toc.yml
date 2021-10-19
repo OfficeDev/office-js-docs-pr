@@ -127,10 +127,10 @@ items:
         items:
         - name: SSO quick start
           href: quickstarts/sso-quickstart.md
+        - name: Enable SSO in an Office Add-in
+          href: develop/sso-in-office-add-ins.md
         - name: Customize your SSO-enabled add-in
           href: quickstarts/sso-quickstart-customize.md
-        - name: Overview of SSO in Office add-ins
-          href: develop/sso-in-office-add-ins.md
         - name: Register an Office Add-in that uses SSO with Azure AD v2.0
           href: develop/register-sso-add-in-aad-v2.md
         - name: Grant administrator consent to the add-in
