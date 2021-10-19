@@ -123,7 +123,7 @@ items:
       items:
       - name: Overview of authentication and authorization
         href: develop/overview-authn-authz.md
-      - name: Get user identity with SSO
+      - name: Use SSO with Office
         items:
         - name: SSO quick start
           href: quickstarts/sso-quickstart.md
@@ -145,20 +145,10 @@ items:
           href: develop/create-sso-office-add-ins-nodejs.md
         - name: Troubleshoot error messages for single sign-on (SSO)
           href: develop/troubleshoot-sso-in-office-add-ins.md
-      - name: Get user identity with dialog API
-        href: develop/get-user-identity-with-dialog-api.md
-      - name: Access Microsoft Graph APIs and other Azure resources
-        items:
-        - name: Use the on behalf of flow from SSO
-          href: develop/ise-the-on-behalf-of-flow-from-sso.md
-        - name: Use OAuth 2.0 authorization code flow for web app add-in
-          href: develop/use-oauth-2-authorization-code-flow-for-web-app-add-in.md
-        - name: Use OAuth 2.0 implicit flow for SPA add-in
-          href: develop/use-oauth-2-implicit-flow-for-spa-add-in.md
+      - name: Authenticate and authorize with the Office dialog API
+        href: develop/auth-with-office-dialog-api.md      
       - name: Authorize external services
         href: develop/auth-external-add-ins.md
-      - name: Authenticate and authorize with the Office dialog API
-        href: develop/auth-with-office-dialog-api.md
       - name: Authorize to Microsoft Graph without SSO
         href: develop/authorize-to-microsoft-graph-without-sso.md
     - name: UI and UX
