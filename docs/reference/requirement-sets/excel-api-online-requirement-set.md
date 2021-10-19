@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API online-only requirement set
 description: 'Details about the ExcelApiOnline requirement set.'
-ms.date: 10/13/2021
+ms.date: 10/14/2021
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -24,6 +24,7 @@ The following table provides a concise summary of the APIs, while the subsequent
 |:--- |:--- |:--- |
 | Linked workbooks | Manage links between workbooks, including support for refreshing and breaking workbook links. | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook), [LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
 | Named sheet views | Gives programmatic control of per-user worksheet views. | [NamedSheetView](/javascript/api/excel/excel.namedsheetview), [NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection) |
+| Worksheet move events | Detect when worksheets are moved within a collection, the position of the worksheet, and the source of the change. | [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection), [WorksheetMovedEventArgs](/javascript/api/excel/excel.worksheetmovedeventargs) |
 
 ## Recommended usage
 
