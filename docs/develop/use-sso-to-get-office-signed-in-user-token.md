@@ -12,7 +12,7 @@ Use the `getAccessToken` API to get an access token that contains the identity f
 In this article you'll create an Office Add-in that gets the ID token, and displays the user's name, email, and unique ID in the task pane.
 
 > [!NOTE]
-> SSO with Office and the `getAccessToken` API do not work in all scenarios. You should always implement a fallback dialog to sign in the user when SSO is unavailable. For more information see TBD.
+> SSO with Office and the `getAccessToken` API do not work in all scenarios. You should always implement a fallback dialog to sign in the user when SSO is unavailable. For more information see [Authenticate and authorize with the Office dialog API](auth-with-office-dialog-api.md).
 
 ## Create an app registration
 

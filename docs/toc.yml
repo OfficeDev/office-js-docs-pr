@@ -125,25 +125,25 @@ items:
         href: develop/overview-authn-authz.md
       - name: Use SSO with Office
         items:
-        - name: SSO quick start
-          href: quickstarts/sso-quickstart.md
         - name: Enable SSO in an Office Add-in
           href: develop/sso-in-office-add-ins.md
-        - name: Customize your SSO-enabled add-in
+        - name: Quick start (part 1)
+          href: quickstarts/sso-quickstart.md
+        - name: Quick start (part 2) add functionality
           href: quickstarts/sso-quickstart-customize.md
-        - name: Register an Office Add-in that uses SSO with Azure AD v2.0
+        - name: Register with Microsoft identity platform
           href: develop/register-sso-add-in-aad-v2.md
-        - name: Grant administrator consent to the add-in
+        - name: Grant administrator consent
           href: develop/grant-admin-consent-to-an-add-in.md
-        - name: Use SSO to get Office signed in user token
+        - name: Get the Office signed in user token
           href: develop/use-sso-to-get-office-signed-in-user-token.md
-        - name: Authorize to Microsoft Graph with SSO
+        - name: Authorize to Microsoft Graph
           href: develop/authorize-to-microsoft-graph.md
         - name: Create an SSO add-in using ASP.NET
           href: develop/create-sso-office-add-ins-aspnet.md
         - name: Create an SSO add-in using Node.js
           href: develop/create-sso-office-add-ins-nodejs.md
-        - name: Troubleshoot error messages for single sign-on (SSO)
+        - name: Troubleshoot error messages
           href: develop/troubleshoot-sso-in-office-add-ins.md
       - name: Authenticate and authorize with the Office dialog API
         href: develop/auth-with-office-dialog-api.md      

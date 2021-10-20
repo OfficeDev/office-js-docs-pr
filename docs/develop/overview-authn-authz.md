@@ -1,7 +1,7 @@
 ---
 title: Overview of authentication and authorization in Office Add-ins
 description: 'Learn how authentication and authorization works in Office Add-ins.'
-ms.date: 09/20/2021
+ms.date: 10/19/2021
 ms.localizationpriority: high
 ---
 
@@ -34,15 +34,15 @@ Use the following table to find the guidance you'll need based on the required r
 
 |Required resources  | Approach  | Guidance |
 |---------|---------|---------|
-|User's identity | SSO | Use the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method and use the returned token as an ID token. For more information see [Get the user's identity through SSO](#get-the-user's-identity-through-sso). |
-|User's identity and Microsoft Graph access | SSO | Use the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method and use the returned token in the on-behalf-of flow to get a new access token to Microsoft Graph. For more information see [Access Microsoft Graph through SSO](#access-microsoft-Graph-through-sso). |
+|User's identity | SSO | Use the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method and use the returned token as an ID token. For more information see [Get the user's identity through SSO](#get-the-users-identity-through-sso). |
+|User's identity and Microsoft Graph access | SSO | Use the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method and use the returned token in the on-behalf-of flow to get a new access token to Microsoft Graph. For more information see [Access Microsoft Graph through SSO](#access-microsoft-graph-through-sso). |
 |User's authentication | Azure AD sign-in | Authenticate as you would in any web app, but use the Dialog API to host the sign-in page. For more information, see [Authenticate with the Microsoft identity platform](#authenticate-with-the-microsoft-identity-platform).     |
 |User's authentication and Microsoft Graph access | Azure AD sign-in | Use the Microsoft identity platform to get an access token to Graph, but use the dialog API to host the sign-in page. For more information, see [Access to Microsoft Graph without SSO](#access-to-microsoft-graph-without-sso). |
 |User's identity and non-Microsoft data     | Separate sign-in        | Get authorization to the external source as you would in any web app, but you may need to use the dialog API to host the login page. See [Access to non-Microsoft data sources](#access-to-non-microsoft-data-sources). |
 
 ## SSO scenarios
 
-Using SSO is convenient for the user because they only have to sign in once to Office. SSO is not supported on all versions of Office, so you'll still need to implement an alternative sign-in approach, by using the Microsoft identity platform. For more information on supported Office versions, see [Identity API requirement sets](../reference/requirement-sets/identity-api-requirement-sets)
+Using SSO is convenient for the user because they only have to sign in once to Office. SSO is not supported on all versions of Office, so you'll still need to implement an alternative sign-in approach, by using the Microsoft identity platform. For more information on supported Office versions, see [Identity API requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md)
 
 ### Get the user's identity through SSO
 
@@ -52,7 +52,7 @@ To get the user's identity through SSO, call the [getAccessToken](/javascript/ap
 
 If the user is not signed in, Office will open a dialog box and use the Microsoft identity platform to request the user to sign in. Then the method will return an access token, or throw an error if unable to sign in the user.
 
-In a scenario where you need to store data for the user, refer to [Microsoft identity platform ID tokens](azure/active-directory/develop/id-tokens) for information about how to get a value from the token to uniquely identify the user. Use that value to look up the user in a user table or user database that you maintain. Use the database to store user-relative information such as the user's preferences or the state of the user's account. Since you are using SSO, your users don't sign-in separately to your add-in, so you do not need to store a password for the user.
+In a scenario where you need to store data for the user, refer to [Microsoft identity platform ID tokens](azure/active-directory/develop/id-tokens.md) for information about how to get a value from the token to uniquely identify the user. Use that value to look up the user in a user table or user database that you maintain. Use the database to store user-relative information such as the user's preferences or the state of the user's account. Since you are using SSO, your users don't sign-in separately to your add-in, so you do not need to store a password for the user.
 
 Before you begin implementing user authentication with SSO, be sure that you are thoroughly familiar with the article [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md). Note also the following samples.
 
@@ -109,8 +109,8 @@ Popular online services, including Google, Facebook, LinkedIn, SalesForce, and G
 ## See also
 
 - [Microsoft identity platform documentation](/azure/active-directory/develop/)
-- [Microsoft identity platform access tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens)
-- [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols)
-- [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
+- [Microsoft identity platform access tokens](/azure/active-directory/develop/access-tokens)
+- [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](/azure/active-directory/develop/active-directory-v2-protocols)
+- [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
 - [JSON web token (JWT)](https://en.wikipedia.org/wiki/JSON_Web_Token)
 - [JSON web token viewer](https://jwt.ms/)

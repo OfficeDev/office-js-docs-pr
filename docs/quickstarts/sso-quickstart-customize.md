@@ -1,12 +1,12 @@
 ---
-title: Customize your Node.js SSO-enabled add-in
-description: Learn about customizing the SSO-enabled add-in that you created with the Yeoman generator.
-ms.date: 08/04/2021
+title: "SSO quick start part 2 - add new Microsoft Graph functionality"
+description: Learn how to add new Microsoft Graph functionality to the SSO-enabled add-in that you created in part 1.
+ms.date: 10/20/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
 ---
 
-# Customize your Node.js SSO-enabled add-in
+# SSO quick start part 2 - add new Microsoft Graph functionality
 
 > [!IMPORTANT]
 > This article builds upon the SSO-enabled add-in that's created by completing the [single sign-on (SSO) quick start](sso-quickstart.md). Please complete the quick start before reading this article.

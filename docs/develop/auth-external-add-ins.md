@@ -9,9 +9,6 @@ ms.localizationpriority: medium
 
 Popular online services, including Microsoft 365, Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in.
 
-> [!NOTE]
-> The remainder of this article is about accessing non-Microsoft services. For information about accessing Microsoft Graph (including Microsoft 365), see [Access to Microsoft Graph with SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso) and [Access to Microsoft Graph without SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
-
 The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
 
 A fundamental idea of OAuth is that an application can be a [security principal](/windows/security/identity-protection/access-control/security-principals) unto itself, just like a user or a group, with its own identity and set of permissions. In the most typical scenarios, when the user takes an action in the Office Add-in that requires the online service, the add-in sends the service a request for a specific set of permissions to the user's account. The service then prompts the user to grant the add-in those permissions. After the permissions are granted, the service sends the add-in a small encoded *access token*. The add-in can use the service by including the token in all its requests to the service's APIs. But the add-in can act only within the permissions that the user granted it. The token also expires after a specified time.
@@ -57,3 +54,7 @@ We recommend that the UI for authentication/authorization in your add-in use our
 ## What is CORS?
 
 CORS stands for [Cross Origin Resource Sharing](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS). For information about how to use CORS inside add-ins, see [Addressing same-origin policy limitations in Office Add-ins](addressing-same-origin-policy-limitations.md).
+
+## See also
+
+- [Overview of authentication and authorization in Office Add-ins](overview-authn-authz.md).
