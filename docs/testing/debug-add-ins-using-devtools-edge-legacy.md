@@ -1,6 +1,6 @@
 ---
 title: Debug add-ins using developer tools for Microsoft Edge Legacy
-description: 'Debug add-ins using the developer tools in Microsoft Edge Legacy'
+description: 'Debug add-ins using the developer tools in Microsoft Edge Legacy.'
 ms.date: 10/20/2021
 ms.localizationpriority: medium
 ---
@@ -35,7 +35,7 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
 
 5. Select the add-in name to open it in the tools.
 6. Open the **Debugger** tab.
-7. Open the file that you want to debug with these steps:
+7. Open the file that you want to debug with the following steps.
 
    <ol type="a">
       <li>On the debugger task bar, select <b>Show find in files</b>. This will open a search window.</li>
