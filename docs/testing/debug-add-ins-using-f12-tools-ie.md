@@ -25,9 +25,9 @@ To determine which browser is being used on your computer, see [Browsers used by
 Windows 10 and 11 include a web development tool called "F12" because it was originally launched by pressing F12 in Internet Explorer. It's now an independent application that you can use to debug your add-in when it's running in the Internet Explorer webview control, Trident. The application isn't available in earlier versions of Windows.
 
 > [!NOTE]
-> If your add-in has an [Add-in Command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser process that the F12 tools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
+> If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser process that the F12 tools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
 
-The following are the instructions for debugging your add-in. If you just want to test the F12 tools themselves, see [Example add-in to test the F12 tools](#example-add-in-to-test-the-f12-tools).
+The following steps are the instructions for debugging your add-in. If you just want to test the F12 tools themselves, see [Example add-in to test the F12 tools](#example-add-in-to-test-the-f12-tools).
 
 1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
 2. Launch the F12 development tools that corresponds to your version of Office:
