@@ -37,12 +37,9 @@ The following steps are the instructions for debugging your add-in. If you just 
 
    IEChooser opens with a window named **Choose target to debug**. Your add-in will appear in the window named by the filename of the add-in's home page. In the following screenshot, it is `Home.html`. (Only processes that are running in Internet Explorer, or Trident, appear. The tool cannot attach to processes that are running in other browsers or webviews, including Microsoft Edge.)
 
-    :::image type="content" source="(../images/choose-target-to-debug.png" alt-text="IEChooser screen, with several Internet Explorer and Trident processes listed. One is named Home.html.":::
+    :::image type="content" source="../images/choose-target-to-debug.png" alt-text="IEChooser screen, with several Internet Explorer and Trident processes listed. One is named Home.html.":::
 
-
-   ![IEChooser screen, with several Internet Explorer and Trident processes listed. One is named Home.html.](../images/choose-target-to-debug.png)
-
-1. zzSelect your add-in's process; that is, its home page file name. This action will attach the F12 tools to the process and open the main F12 user interface.
+1. Select your add-in's process; that is, its home page file name. This action will attach the F12 tools to the process and open the main F12 user interface.
 1. Open the **Debugger** tab.
 1. In the upper left of the tab, just below the debugger tool ribbon, there is a small folder icon. Select this to open a drop down list of the files in the add-in. The following is an example.
 
@@ -54,13 +51,9 @@ The following steps are the instructions for debugging your add-in. If you just 
 
     :::image type="content" source="../images/debugger-home-js-02.png" alt-text="Debugger with breakpoint in home.js file.":::
 
-    ![Debugger with breakpoint in home.js file.](../images/debugger-home-js-02.png)
-
 1. Execute functions in the add-in as needed to trigger the breakpoint. When the breakpoint is hit, a right-pointing arrow appears on the red dot of the breakpoint. The following screenshot is an example.
 
     :::image type="content" source="../images/debugger-home-js-01.png" alt-text="Debugger with results from the triggered breakpoint.":::
-
-   ![Debugger with results from the triggered breakpoint.](../images/debugger-home-js-01.png)
 
 > [!TIP]
 > For more information about using the F12 tools, see [Inspect running JavaScript with the Debugger](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)).
