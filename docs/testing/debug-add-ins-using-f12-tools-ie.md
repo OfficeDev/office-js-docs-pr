@@ -30,7 +30,7 @@ Windows 10 and 11 include a web development tool called "F12" because it was ori
 The following steps are the instructions for debugging your add-in. If you just want to test the F12 tools themselves, see [Example add-in to test the F12 tools](#example-add-in-to-test-the-f12-tools).
 
 1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
-2. Launch the F12 development tools that corresponds to your version of Office.
+1. Launch the F12 development tools that corresponds to your version of Office.
 
    - For the 32-bit version of Office, use C:\Windows\System32\F12\IEChooser.exe
    - For the 64-bit version of Office, use C:\Windows\SysWOW64\F12\IEChooser.exe
@@ -39,19 +39,19 @@ The following steps are the instructions for debugging your add-in. If you just 
 
    ![IEChooser screen, with several Internet Explorer and Trident processes listed. One is named Home.html.](../images/choose-target-to-debug.png)
 
-3. Select your add-in's process; that is, its home page file name. This action will attach the F12 tools to the process and open the main F12 user interface.
-4. Open the **Debugger** tab.
-5. In the upper left of the tab, just below the debugger tool ribbon, there is a small folder icon. Select this to open a drop down list of the files in the add-in. The following is an example.
+1. Select your add-in's process; that is, its home page file name. This action will attach the F12 tools to the process and open the main F12 user interface.
+1. Open the **Debugger** tab.
+1. In the upper left of the tab, just below the debugger tool ribbon, there is a small folder icon. Select this to open a drop down list of the files in the add-in. The following is an example.
 
     ![Screenshot of upper left corner of debugger tab with a folder drop down open and a list of files. ](../images/f12-file-dropdown.png)
 
-6. Select the file that you want to debug and it opens in the the **script** (left) pane of the **Debugger** tab. (If you're using a transpiler, bundler, or minifier, that changes the name of the file, it will have the final name that is actually loaded, not the original source file name.)
+1. Select the file that you want to debug and it opens in the the **script** (left) pane of the **Debugger** tab. (If you're using a transpiler, bundler, or minifier, that changes the name of the file, it will have the final name that is actually loaded, not the original source file name.)
 
-7. Scroll to a line where you want to set a breakpoint and click in the margin to the left of the line number. You'll see a red dot to the left of the line and a corresponding line appears in the **Breakpoints** tab of the bottom right pane. The following screenshot is an example.
+1. Scroll to a line where you want to set a breakpoint and click in the margin to the left of the line number. You'll see a red dot to the left of the line and a corresponding line appears in the **Breakpoints** tab of the bottom right pane. The following screenshot is an example.
 
     ![Debugger with breakpoint in home.js file.](../images/debugger-home-js-02.png)
 
-8. Execute functions in the add-in as needed to trigger the breakpoint. When the breakpoint is hit, a right-pointing arrow appears on the red dot of the breakpoint. The following screenshot is an example.
+1. Execute functions in the add-in as needed to trigger the breakpoint. When the breakpoint is hit, a right-pointing arrow appears on the red dot of the breakpoint. The following screenshot is an example.
 
    ![Debugger with results from the triggered breakpoint.](../images/debugger-home-js-01.png)
 
@@ -63,13 +63,13 @@ The following steps are the instructions for debugging your add-in. If you just 
 This example uses Word and a free add-in from AppSource.
 
 1. Open Word and choose a blank document.
-2. On the **Insert** tab, in the **Add-ins** group, select **My Add-ins** to open the **Office Add-ins** dialog and then select the **STORE** tab.
-3. Select the **QR4Office** add-in. It opens in a task pane.
-4. Launch the F12 development tools that corresponds to your version of Office as described in the preceding section.
-5. In the F12 window, select **Home.html**.
-6. In the **Debugger** tab, open the file **Home.js** as described in the preceding section.
-7. Set the breakpoints on lines 310 and 312.
-8. In the add-in, select the **Insert** button. One or the other breakpoint is hit.
+1. On the **Insert** tab, in the **Add-ins** group, select **My Add-ins** to open the **Office Add-ins** dialog and then select the **STORE** tab.
+1. Select the **QR4Office** add-in. It opens in a task pane.
+1. Launch the F12 development tools that corresponds to your version of Office as described in the preceding section.
+1. In the F12 window, select **Home.html**.
+1. In the **Debugger** tab, open the file **Home.js** as described in the preceding section.
+1. Set the breakpoints on lines 310 and 312.
+1. In the add-in, select the **Insert** button. One or the other breakpoint is hit.
 
 ## Debug a dialog in an add-in
 
