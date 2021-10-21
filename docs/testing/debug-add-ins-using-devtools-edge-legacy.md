@@ -56,7 +56,7 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
 
 If your add-in uses the Office Dialog API, the dialog runs in a separate process from the task pane (if any) and the tools must attach to that process. Run the add-in and the tools. Open the dialog and then select the **Refresh** button in the tools. The dialog process is shown. Its name comes from the `<title>` element in the HTML file that is open in the dialog. Select the process to open it and debug just as described in the section [Debug a task pane add-in using Microsoft Edge DevTools Preview](#debug-a-task-pane-add-in-using-microsoft-edge-devtools-preview).
 
-   ![Screenshot of Edge DevTools showing a process named My Dialog](../images/edge-devtools-with-add-in-and-dialog-processes.png)
+   ![Screenshot of Edge DevTools showing a process named My Dialog.](../images/edge-devtools-with-add-in-and-dialog-processes.png)
 
 ## Install a version of Office that uses Microsoft Edge Legacy
 
