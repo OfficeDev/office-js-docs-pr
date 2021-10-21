@@ -7,12 +7,12 @@ ms.localizationpriority: medium
 
 # Debug add-ins using developer tools in Microsoft Edge Legacy
 
-This article shows how to debug the client-side code (JavaScript or TypeScript) of your add-in when the following conditions are met:
+This article shows how to debug the client-side code (JavaScript or TypeScript) of your add-in when the following conditions are met.
 
 - You cannot, or don't wish to, debug using tools built into your IDE; or you are encountering a problem that only occurs when the add-in is run outside the IDE.
 - Your computer is using a combination of Windows and Office versions that use the original Edge webview control, EdgeHTML.
 
-To determine which browser is being used on your computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). 
+To determine which browser you're using, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). 
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
@@ -22,10 +22,10 @@ To determine which browser is being used on your computer, see [Browsers used by
 
 ## Debug a task pane add-in using Microsoft Edge DevTools Preview
 
-1. Install the [Microsoft Edge DevTools Preview](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). (The word "Preview" is in the name for historical reasons. There is no more recent version.)
+1. Install the [Microsoft Edge DevTools Preview](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). (The word "Preview" is in the name for historical reasons. There isn't a more recent version.)
 
    > [!NOTE]
-   > If your add-in has an [Add-in Command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser process that the Microsoft Edge DevTools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
+   > If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser process that the Microsoft Edge DevTools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
 
 1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
 1. Run the Microsoft Edge DevTools.
