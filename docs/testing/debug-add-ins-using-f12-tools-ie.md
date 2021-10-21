@@ -20,14 +20,17 @@ To determine which browser is being used on your computer, see [Browsers used by
 > [!NOTE]
 > To install a version of Office that uses the Internet Explorer webview, see [Install a version of Office that uses Internet Explorer](#install-a-version-of-office-that-uses-internet-explorer).
 
+> [!NOTE]
+> If your add-in has an [Add-in Command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser process that the F12 tools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
+
 ## Debug a task pane add-in using the F12 tools
 
-Windows 10 and 11 include a web development tool called **F12** because it was originally launched by pressing F12 in Internet Explorer. It is now an independent application that you can use to debug your add-in when it is running in the Internet Explorer webview control, Trident. The application is not available in earlier versions of Windows.
+Windows 10 and 11 include a web development tool called F12 because it was originally launched by pressing F12 in Internet Explorer. It is now an independent application that you can use to debug your add-in when it is running in the Internet Explorer webview control, Trident. The application is not available in earlier versions of Windows.
 
-The following are the instructions for debugging your add-in. If you just want to test the **F12** tools themselves, see [Example add-in to test the F12 tools](example-add-in-to-test-the-f12-tools).
+The following are the instructions for debugging your add-in. If you just want to test the F12 tools themselves, see [Example add-in to test the F12 tools](example-add-in-to-test-the-f12-tools).
 
 1. Run the add-in.
-2. Launch the **F12** development tools that corresponds to your version of Office:
+2. Launch the F12 development tools that corresponds to your version of Office:
 
    - For the 32-bit version of Office, use C:\Windows\System32\F12\IEChooser.exe
    - For the 64-bit version of Office, use C:\Windows\SysWOW64\F12\IEChooser.exe
@@ -36,7 +39,7 @@ The following are the instructions for debugging your add-in. If you just want t
 
    ![IEChooser screen, with several Internet Explorer and Trident processes listed. One is named Home.html.](../images/choose-target-to-debug.png)
 
-3. Select your add-in's process; that is, its home page file name. This action will attach the F12 tools to the process and open the main **F12** user interface.
+3. Select your add-in's process; that is, its home page file name. This action will attach the F12 tools to the process and open the main F12 user interface.
 4. Open the **Debugger** tab.
 5. In the upper left of the tab, just below the debugger tool ribbon, there is a small folder icon. Select this to open a drop down list of the files in the add-in.
 6. Select the file that you want to debug and it opens in the debugger. (If you are using a transpiler, bundler, or minifier, that changes the name of the file, it will have the final name that is actually loaded, not the original source file name.) The following is an example.
@@ -53,7 +56,7 @@ The following are the instructions for debugging your add-in. If you just want t
    ![Debugger with results from the triggered breakpoint.](../images/debugger-home-js-01.png)
 
 > [!TIP]
-> For more information about using the **F12** tools, see [Inspect running JavaScript with the Debugger](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)).
+> For more information about using the F12 tools, see [Inspect running JavaScript with the Debugger](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)).
 
 ### Example add-in to test the F12 tools
 
@@ -62,11 +65,15 @@ This example uses Word and a free add-in from AppSource.
 1. Open Word and choose a blank document.
 2. On the **Insert** tab, in the **Add-ins** group, select **My Add-ins** to open the **Office Add-ins** dialog and then select the **STORE** tab.
 3. Select the **QR4Office** add-in. It opens in a task pane.
-4. Launch the **F12** development tools that corresponds to your version of Office as described in the preceding section.
-5. In the **F12** window, select **Home.html**.
+4. Launch the F12 development tools that corresponds to your version of Office as described in the preceding section.
+5. In the F12 window, select **Home.html**.
 6. In the **Debugger** tab, open the file **Home.js** as described in the preceding section.
 7. Set the breakpoints on lines 310 and 312.
 8. In the add-in, select the **Insert** button. One or the other breakpoint is hit.
+
+## Debug a dialog in an add-in
+
+If your add-in uses the Office Dialog API, the dialog runs in a separate process from the task pane (if any) and the tools must attach to that process. Run the add-in and the tools. Open the dialog and then click the **Refresh** button in the tools. The dialog process is shown. Its name is the file name of the file that is open in the dialog. Select the process to open it and debug just as described in the section [Debug a task pane add-in using the F12 tools](#debug-a-task-pane-add-in-using-the-f12-tools).
 
 ## Install a version of Office that uses Internet Explorer
 
