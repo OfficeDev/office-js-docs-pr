@@ -30,12 +30,12 @@ Windows 10 and 11 include a web development tool called "F12" because it was ori
 The following steps are the instructions for debugging your add-in. If you just want to test the F12 tools themselves, see [Example add-in to test the F12 tools](#example-add-in-to-test-the-f12-tools).
 
 1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
-2. Launch the F12 development tools that corresponds to your version of Office:
+2. Launch the F12 development tools that corresponds to your version of Office.
 
    - For the 32-bit version of Office, use C:\Windows\System32\F12\IEChooser.exe
    - For the 64-bit version of Office, use C:\Windows\SysWOW64\F12\IEChooser.exe
 
-   IEChooser opens with a window named **Choose target to debug**. Your add-in will appear in the window named by the filename of the add-in's home page. In the screenshot below, it is `Home.html`. (Only processes that are running in Internet Explorer, or Trident, appear. The tool cannot attach to processes that are running in other browsers or webviews, including Microsoft Edge.)
+   IEChooser opens with a window named **Choose target to debug**. Your add-in will appear in the window named by the filename of the add-in's home page. In the following screenshot, it is `Home.html`. (Only processes that are running in Internet Explorer, or Trident, appear. The tool cannot attach to processes that are running in other browsers or webviews, including Microsoft Edge.)
 
    ![IEChooser screen, with several Internet Explorer and Trident processes listed. One is named Home.html.](../images/choose-target-to-debug.png)
 
