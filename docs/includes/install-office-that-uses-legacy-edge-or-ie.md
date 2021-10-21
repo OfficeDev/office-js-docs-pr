@@ -1,7 +1,7 @@
 Use the following procedure to install either a version of subscription Office that uses the Microsoft Edge Legacy webview (EdgeHTML) to run add-ins or a version that uses Internet Explorer (Trident).
 
 1. Download and install the [Office Deployment Tool](https://www.microsoft.com/download/details.aspx?id=49117).
-2. In the folder where you installed the tool (where the `setup.exe` file is located), create a text file with the name `config.xml` and add the following contents:
+2. In the folder where you installed the tool (where the `setup.exe` file is located), create a text file with the name `config.xml` and add the following contents.
 
     ```xml
     <Configuration>
@@ -14,10 +14,10 @@ Use the following procedure to install either a version of subscription Office t
     ```
 
 3. Change the `Version` value to `16.0.11929.20946` to install a version that uses Edge Legacy, or to `16.0.10730.20348` to install a version that uses Internet Explorer.
-4. Optionally, change the value of `OfficeClientEdition` to `"32"` to install 32-bit Office; and change the `Language ID` value as needed to install Office in a different language.
-5. Open a Command Prompt *as an administrator*.
+4. Optionally, change the value of `OfficeClientEdition` to `"32"` to install 32-bit Office, and change the `Language ID` value as needed to install Office in a different language.
+5. Open a command prompt *as an administrator*.
 6. Navigate to the folder with the `setup.exe` and `config.xml` files.
-7. Run the following command:
+7. Run the following command.
 
     ```command&nbsp;line
     setup.exe /configure config.xml
