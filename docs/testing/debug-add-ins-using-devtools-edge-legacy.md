@@ -37,7 +37,7 @@ To determine which browser is being used on your computer, see [Browsers used by
 6. Open the **Debugger** tab.
 7. Open the file that you want to debug with these steps:
 
-   <ol type="i">
+   <ol type="a">
       <li>On the debugger task bar, click <b>Show find in files</b>. This will open a search window.</li>
       <li>Enter a line of code from the file you want to debug in the search box. It should be something that's not likely to be in any other file.</li>
       <li>Click the refresh button.</li>
