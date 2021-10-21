@@ -28,7 +28,7 @@ Use the following procedure to install either a version of subscription Office t
 8. [Clear the Office cache](../testing/clear-cache.md).
 
 > [!IMPORTANT]
-> After installation, be sure that automatic updating of Office is turned off, so that Office isn't updated to a version that does not use webview you want to work with before you have completed using it. **This can happen within minutes of installation.** Follow these steps:
+> After installation, be sure that you turn off automatic updating of Office, so that Office isn't updated to a version that doesn't use webview you want to work with before you've completed using it. **This can happen within minutes of installation.** Follow these steps.
 >
 > 1. Start any Office application and open a new document.
 > 1. Open the **File** tab on the ribbon, and then select **Office Account** or **Account**.
