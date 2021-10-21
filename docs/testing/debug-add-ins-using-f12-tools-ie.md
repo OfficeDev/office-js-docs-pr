@@ -29,7 +29,7 @@ Windows 10 and 11 include a web development tool called "F12" because it was ori
 
 The following are the instructions for debugging your add-in. If you just want to test the F12 tools themselves, see [Example add-in to test the F12 tools](#example-add-in-to-test-the-f12-tools).
 
-1. [Sideload](sideload-office-add-ins-for-testing.md) and run the add-in.
+1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
 2. Launch the F12 development tools that corresponds to your version of Office:
 
    - For the 32-bit version of Office, use C:\Windows\System32\F12\IEChooser.exe
@@ -45,7 +45,7 @@ The following are the instructions for debugging your add-in. If you just want t
 
     ![Screenshot of upper left corner of debugger tab with a folder drop down open and a list of files. ](../images/f12-file-dropdown.png)
 
-6. Select the file that you want to debug and it opens in the the **script** (left) pane of the **Debugger** tab. (If you are using a transpiler, bundler, or minifier, that changes the name of the file, it will have the final name that is actually loaded, not the original source file name.) 
+6. Select the file that you want to debug and it opens in the the **script** (left) pane of the **Debugger** tab. (If you are using a transpiler, bundler, or minifier, that changes the name of the file, it will have the final name that is actually loaded, not the original source file name.)
 
 7. Scroll to a line where you want to set a breakpoint and click in the margin to the left of the line number. You will see a red dot to the left of the line and a corresponding line appears in the **Breakpoints** tab of the bottom right pane. The following is an example:
 

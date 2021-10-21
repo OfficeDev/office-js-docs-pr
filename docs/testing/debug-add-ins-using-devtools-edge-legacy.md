@@ -27,7 +27,7 @@ To determine which browser is being used on your computer, see [Browsers used by
    > [!NOTE]
    > If your add-in has an [Add-in Command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser process that the Microsoft Edge DevTools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
 
-1. [Sideload](sideload-office-add-ins-for-testing.md) and run the add-in.
+1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
 1. Run the Microsoft Edge DevTools.
 1. In the tools, open the **Local** tab. Your add-in will be listed by its name. (Only processes that are running in EdgeHTML appear on the tab. The tool cannot attach to processes that are running in other browsers or webviews, including Microsoft Edge (WebView2) and Internet Explorer (Trident).)
 
@@ -37,7 +37,7 @@ To determine which browser is being used on your computer, see [Browsers used by
 6. Open the **Debugger** tab.
 7. Open the file that you want to debug with these steps:
 
-   <ol type="A">
+   <ol type="i">
       <li>On the debugger task bar, click <b>Show find in files</b>. This will open a search window.</li>
       <li>Enter a line of code from the file you want to debug in the search box. It should be something that's not likely to be in any other file.</li>
       <li>Click the refresh button.</li>
