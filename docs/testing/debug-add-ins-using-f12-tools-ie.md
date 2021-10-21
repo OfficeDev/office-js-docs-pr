@@ -37,6 +37,9 @@ The following steps are the instructions for debugging your add-in. If you just 
 
    IEChooser opens with a window named **Choose target to debug**. Your add-in will appear in the window named by the filename of the add-in's home page. In the following screenshot, it is `Home.html`. (Only processes that are running in Internet Explorer, or Trident, appear. The tool cannot attach to processes that are running in other browsers or webviews, including Microsoft Edge.)
 
+   :::image type="content" source="(../images/choose-target-to-debug.png" alt-text="IEChooser screen, with several Internet Explorer and Trident processes listed. One is named Home.html.":::
+
+
    ![IEChooser screen, with several Internet Explorer and Trident processes listed. One is named Home.html.](../images/choose-target-to-debug.png)
 
 1. Select your add-in's process; that is, its home page file name. This action will attach the F12 tools to the process and open the main F12 user interface.
