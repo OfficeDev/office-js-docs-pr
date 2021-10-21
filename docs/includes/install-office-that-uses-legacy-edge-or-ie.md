@@ -32,4 +32,4 @@ Use the following procedure to install either a version of subscription Office t
 >
 > 1. Start any Office application and open a new document.
 > 1. Open the **File** tab on the ribbon, and then select **Office Account** or **Account**.
-> 1. In the **Product Information** column, select **Update Options**, and then select **Disable Updates**. If that option is not available, then Office is already configured to not update.
+> 1. In the **Product Information** column, select **Update Options**, and then select **Disable Updates**. If that option isn't available, then Office is already configured to not update automatically.
