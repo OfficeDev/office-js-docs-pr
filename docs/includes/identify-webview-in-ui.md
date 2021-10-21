@@ -1,0 +1,3 @@
+In recent versions of Office, you can identify the webview control that is being used through the [personality menu](../design/task-pane-add-ins.md#personality-menu) on any add-in. Open the menu and select **Security Info**. On Windows, the **Security Info** dialog, the **Runtime** will report **Microsoft Edge**, **Microsoft Edge Legacy**, or **Internet Explorer**. The runtime is not included on the dialog in older versions of Office. 
+
+Note also that right-clicking a task pane in an add-in will open a context menu if Microsoft Edge (Chromium) is being used. If it is not, then right-clicking does nothing.
