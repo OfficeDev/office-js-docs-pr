@@ -73,7 +73,7 @@ This example uses Word and a free add-in from AppSource.
 
 ## Debug a dialog in an add-in
 
-If your add-in uses the Office Dialog API, the dialog runs in a separate process from the task pane (if any) and the tools must attach to that process. Run the add-in and the tools. Open the dialog and then click the **Refresh** button in the tools. The dialog process is shown. Its name is the file name of the file that is open in the dialog. Select the process to open it and debug just as described in the section [Debug a task pane add-in using the F12 tools](#debug-a-task-pane-add-in-using-the-f12-tools).
+If your add-in uses the Office Dialog API, the dialog runs in a separate process from the task pane (if any) and the tools must attach to that process. Run the add-in and the tools. Open the dialog and then choose the **Refresh** button in the tools. The dialog process is shown. Its name is the file name of the file that is open in the dialog. Select the process to open it and debug just as described in the section [Debug a task pane add-in using the F12 tools](#debug-a-task-pane-add-in-using-the-f12-tools).
 
 ## Install a version of Office that uses Internet Explorer
 
