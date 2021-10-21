@@ -31,7 +31,7 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
 1. Run the Microsoft Edge DevTools.
 1. In the tools, open the **Local** tab. Your add-in will be listed by its name. (Only processes that are running in EdgeHTML appear on the tab. The tool cannot attach to processes that are running in other browsers or webviews, including Microsoft Edge (WebView2) and Internet Explorer (Trident).)
 
-   ![Screenshot of Edge DevTools showing a process named legacy-edge-debugging.](../images/edge-devtools-with-add-in-process.png)
+   :::image type="content" source="../images/edge-devtools-with-add-in-process.png" alt-text="Screenshot of Edge DevTools showing a process named legacy-edge-debugging.":::
 
 1. Select the add-in name to open it in the tools.
 1. Open the **Debugger** tab.
@@ -42,7 +42,7 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
    1. Select the refresh button.</li>
    1. In the search results, select the line to open the code file in the pane above the search results.</li>
 
-   ![Screenshot of Edge DevTools debugging tab with 4 parts labelled A through D.](../images/open-file-in-edge-devtools.png)
+   :::image type="content" source="../images/open-file-in-edge-devtools.png" alt-text="Screenshot of Edge DevTools debugging tab with 4 parts labelled A through D.":::
 
 1. To set a breakpoint, select the line in the code file. The breakpoint is registered in the **Call stack** (bottom right) pane. There may also be a red dot by the line in the code file, but this doesn't appear reliably.
 1. Execute functions in the add-in as needed to trigger the breakpoint.
@@ -58,7 +58,7 @@ If your add-in uses the Office Dialog API, the dialog runs in a separate process
 1. Open the dialog and then select the **Refresh** button in the tools. The dialog process is shown. Its name comes from the `<title>` element in the HTML file that is open in the dialog.
 1. Select the process to open it and debug just as described in the section [Debug a task pane add-in using Microsoft Edge DevTools Preview](#debug-a-task-pane-add-in-using-microsoft-edge-devtools-preview).
 
-   ![Screenshot of Edge DevTools showing a process named My Dialog.](../images/edge-devtools-with-add-in-and-dialog-processes.png)
+   :::image type="content" source="../images/edge-devtools-with-add-in-and-dialog-processes.png" alt-text="Screenshot of Edge DevTools showing a process named My Dialog.":::
 
 ## Install a version of Office that uses Microsoft Edge Legacy
 
