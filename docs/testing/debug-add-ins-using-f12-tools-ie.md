@@ -39,12 +39,12 @@ The following steps are the instructions for debugging your add-in. If you just 
 
    :::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Image of Excel button on your web page opening up a new Excel document with your add-in embedded and auto-opening.":::
 
-   :::image type="content" source="(../images/choose-target-to-debug.png" alt-text="IEChooser screen, with several Internet Explorer and Trident processes listed. One is named Home.html.":::
+   :::image type="content" source="(../images/choose-target-to-debug.png" alt-text="IEChooser screen, with several Internet Explorer and Trident processes listed.":::
 
 
    ![IEChooser screen, with several Internet Explorer and Trident processes listed. One is named Home.html.](../images/choose-target-to-debug.png)
 
-1. ySelect your add-in's process; that is, its home page file name. This action will attach the F12 tools to the process and open the main F12 user interface.
+1. zSelect your add-in's process; that is, its home page file name. This action will attach the F12 tools to the process and open the main F12 user interface.
 1. Open the **Debugger** tab.
 1. In the upper left of the tab, just below the debugger tool ribbon, there is a small folder icon. Select this to open a drop down list of the files in the add-in. The following is an example.
 
