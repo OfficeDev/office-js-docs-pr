@@ -339,7 +339,7 @@ Run `npm start` from the command line.
 The add-in will display the name, email, and ID of the account you signed in with.
 
 > [!NOTE]
-> If you encounter any errors, review the registration steps in this article for the app registration. Missing a detail when setting up the app registration is a common cause of issues working with SSO. If you still can't get the add-in to run successfully, see [Troubleshoot error messages for single sign-on (SSO)](troubleshoot-sso-in-office-add-ins).
+> If you encounter any errors, review the registration steps in this article for the app registration. Missing a detail when setting up the app registration is a common cause of issues working with SSO. If you still can't get the add-in to run successfully, see [Troubleshoot error messages for single sign-on (SSO)](troubleshoot-sso-in-office-add-ins.md).
 
 ## See also
 

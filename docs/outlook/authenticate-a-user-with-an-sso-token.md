@@ -38,7 +38,7 @@ The add-in gets an SSO token with client-side script. For more information, see 
 
 ## Use the SSO token at the back-end
 
-In most scenarios, there would be little point to obtaining the access token, if your add-in does not pass it on to a server-side and use it there. For details on what your server-side could and should do, see [Add server-side code](../develop/sso-in-office-add-ins.md#add-server-side-code).
+In most scenarios, there would be little point to obtaining the access token, if your add-in does not pass it on to a server-side and use it there. For details on what your server-side could and should do, see [Add server-side code](../develop/sso-in-office-add-ins.md#register-your-add-in-with-the-microsoft-identity-platform).
 
 > [!IMPORTANT]
 > When using the SSO token as an identity in an *Outlook* add-in, we recommend that you also [use the Exchange identity token](authenticate-a-user-with-an-identity-token.md) as an alternate identity. Users of your add-in may use multiple clients, and some may not support providing an SSO token. By using the Exchange identity token as an alternate, you can avoid having to prompt these users for credentials multiple times. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](implement-sso-in-outlook-add-in.md).
@@ -46,5 +46,5 @@ In most scenarios, there would be little point to obtaining the access token, if
 ## See also
 
 - For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [Outlook Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO).
-- [SSO API reference](../develop/sso-in-office-add-ins.md#sso-api-reference)
+- [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_)
 - [IdentityAPI requirement set](../reference/requirement-sets/identity-api-requirement-sets.md)

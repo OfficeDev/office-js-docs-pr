@@ -127,9 +127,9 @@ items:
         items:
         - name: Enable SSO in an Office Add-in
           href: develop/sso-in-office-add-ins.md
-        - name: Quick start (part 1)
+        - name: Quick start
           href: quickstarts/sso-quickstart.md
-        - name: Quick start (part 2) add functionality
+        - name: Customize the quick start
           href: quickstarts/sso-quickstart-customize.md
         - name: Register with Microsoft identity platform
           href: develop/register-sso-add-in-aad-v2.md

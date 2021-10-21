@@ -1,12 +1,12 @@
 ---
-title: "SSO quick start part 2 - add new Microsoft Graph functionality"
-description: Learn how to add new Microsoft Graph functionality to the SSO-enabled add-in that you created in part 1.
+title: "Add Microsoft Graph functionality to your SSO quick start project"
+description: Learn how to add new Microsoft Graph functionality to the SSO-enabled add-in that you created.
 ms.date: 10/20/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
 ---
 
-# SSO quick start part 2 - add new Microsoft Graph functionality
+# Add Microsoft Graph functionality to your SSO quick start project
 
 > [!IMPORTANT]
 > This article builds upon the SSO-enabled add-in that's created by completing the [single sign-on (SSO) quick start](sso-quickstart.md). Please complete the quick start before reading this article.
