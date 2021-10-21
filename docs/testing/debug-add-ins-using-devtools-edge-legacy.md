@@ -50,7 +50,7 @@ To determine which browser is being used on your computer, see [Browsers used by
 9. Execute functions in the add-in as needed to trigger the breakpoint.
 
 > [!TIP]
-> For more information about using the tools, see [Microsoft Edge (EdgeHTML) Developer Tools](https://docs.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/devtools-guide/).
+> For more information about using the tools, see [Microsoft Edge (EdgeHTML) Developer Tools](/archive/microsoft-edge/legacy/developer/devtools-guide/).
 
 ## Debug a dialog in an add-in
 
