@@ -271,9 +271,9 @@ items:
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Attach a debugger from the task pane
         href: testing/attach-debugger-from-task-pane.md
-      - name: Debug using developer tools in Internet Explorer
+      - name: Debug using developer tools for Internet Explorer
         href: testing/debug-add-ins-using-f12-tools-ie.md
-      - name: Debug using developer tools in Edge legacy
+      - name: Debug using developer tools for Edge legacy
         href: testing/debug-add-ins-using-devtools-edge-legacy.md
       - name: Debug using Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md

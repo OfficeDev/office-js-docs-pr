@@ -1,5 +1,5 @@
 ---
-title: Debug add-ins using developer tools in Internet Explorer
+title: Debug add-ins using developer tools for Internet Explorer
 description: 'Debug add-ins using the developer tools in Internet Explorer'
 ms.date: 10/20/2021
 ms.localizationpriority: medium
@@ -20,38 +20,38 @@ To determine which browser is being used on your computer, see [Browsers used by
 > [!NOTE]
 > To install a version of Office that uses the Internet Explorer webview, see [Install a version of Office that uses Internet Explorer](#install-a-version-of-office-that-uses-internet-explorer).
 
+## Debug a task pane add-in using the F12 tools
+
+Windows 10 and 11 include a web development tool called "F12" because it was originally launched by pressing F12 in Internet Explorer. It is now an independent application that you can use to debug your add-in when it is running in the Internet Explorer webview control, Trident. The application is not available in earlier versions of Windows.
+
 > [!NOTE]
 > If your add-in has an [Add-in Command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser process that the F12 tools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
 
-## Debug a task pane add-in using the F12 tools
+The following are the instructions for debugging your add-in. If you just want to test the F12 tools themselves, see [Example add-in to test the F12 tools](#example-add-in-to-test-the-f12-tools).
 
-Windows 10 and 11 include a web development tool called F12 because it was originally launched by pressing F12 in Internet Explorer. It is now an independent application that you can use to debug your add-in when it is running in the Internet Explorer webview control, Trident. The application is not available in earlier versions of Windows.
-
-The following are the instructions for debugging your add-in. If you just want to test the F12 tools themselves, see [Example add-in to test the F12 tools](example-add-in-to-test-the-f12-tools).
-
-1. Run the add-in.
+1. [Sideload](sideload-office-add-ins-for-testing.md) and run the add-in.
 2. Launch the F12 development tools that corresponds to your version of Office:
 
    - For the 32-bit version of Office, use C:\Windows\System32\F12\IEChooser.exe
    - For the 64-bit version of Office, use C:\Windows\SysWOW64\F12\IEChooser.exe
 
-   IEChooser opens with a window named **Choose target to debug**. Your add-in will appear in the window named by it's home page filename. In the screenshot below, it is `Home.html`. (Only processes that are running in Internet Explorer, or Trident, appear. The tool cannot attach to processes that are running in other browsers or webviews, including Microsoft Edge.)
+   IEChooser opens with a window named **Choose target to debug**. Your add-in will appear in the window named by the filename of the add-in's home page. In the screenshot below, it is `Home.html`. (Only processes that are running in Internet Explorer, or Trident, appear. The tool cannot attach to processes that are running in other browsers or webviews, including Microsoft Edge.)
 
    ![IEChooser screen, with several Internet Explorer and Trident processes listed. One is named Home.html.](../images/choose-target-to-debug.png)
 
 3. Select your add-in's process; that is, its home page file name. This action will attach the F12 tools to the process and open the main F12 user interface.
 4. Open the **Debugger** tab.
-5. In the upper left of the tab, just below the debugger tool ribbon, there is a small folder icon. Select this to open a drop down list of the files in the add-in.
-6. Select the file that you want to debug and it opens in the debugger. (If you are using a transpiler, bundler, or minifier, that changes the name of the file, it will have the final name that is actually loaded, not the original source file name.) The following is an example.
+5. In the upper left of the tab, just below the debugger tool ribbon, there is a small folder icon. Select this to open a drop down list of the files in the add-in. The following is an example.
 
     ![Screenshot of upper left corner of debugger tab with a folder drop down open and a list of files. ](../images/f12-file-dropdown.png)
 
-7. Select the file that you want to debug and it opens in the **script** (left) pane of the **Debugger** tab.
-8. Scroll to a line where you want to set a breakpoint and click in the margin to the left of the line number. You will see a red dot to the left of the line and a corresponding line appears in the **Breakpoints** tab of the bottom right pane. The following is an example:
+6. Select the file that you want to debug and it opens in the the **script** (left) pane of the **Debugger** tab. (If you are using a transpiler, bundler, or minifier, that changes the name of the file, it will have the final name that is actually loaded, not the original source file name.) 
+
+7. Scroll to a line where you want to set a breakpoint and click in the margin to the left of the line number. You will see a red dot to the left of the line and a corresponding line appears in the **Breakpoints** tab of the bottom right pane. The following is an example:
 
     ![Debugger with breakpoint in home.js file.](../images/debugger-home-js-02.png)
 
-9. Execute functions in the add-in as needed to trigger the breakpoint. When the breakpoint is hit, a right-pointing arrow appears on the red dot of the breakpoint. The following is an example:
+8. Execute functions in the add-in as needed to trigger the breakpoint. When the breakpoint is hit, a right-pointing arrow appears on the red dot of the breakpoint. The following is an example:
 
    ![Debugger with results from the triggered breakpoint.](../images/debugger-home-js-01.png)
 
