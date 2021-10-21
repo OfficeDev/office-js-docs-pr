@@ -33,28 +33,30 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
 
    ![Screenshot of Edge DevTools showing a process named legacy-edge-debugging.](../images/edge-devtools-with-add-in-process.png)
 
-5. Select the add-in name to open it in the tools.
-6. Open the **Debugger** tab.
-7. Open the file that you want to debug with the following steps.
+1. Select the add-in name to open it in the tools.
+1. Open the **Debugger** tab.
+1. Open the file that you want to debug with the following steps.
 
-   <ol type="a">
-      <li>On the debugger task bar, select <b>Show find in files</b>. This will open a search window.</li>
-      <li>Enter a line of code from the file you want to debug in the search box. It should be something that's not likely to be in any other file.</li>
-      <li>Select the refresh button.</li>
-      <li>In the search results, select the line to open the code file in the pane above the search results.</li>
-   </ol>
+   1. On the debugger task bar, select <b>Show find in files</b>. This will open a search window.</li>
+   1. Enter a line of code from the file you want to debug in the search box. It should be something that's not likely to be in any other file.</li>
+   1. Select the refresh button.</li>
+   1. In the search results, select the line to open the code file in the pane above the search results.</li>
 
    ![Screenshot of Edge DevTools debugging tab with 4 parts labelled A through D.](../images/open-file-in-edge-devtools.png)
 
-8. To set a breakpoint, select the line in the code file. The breakpoint is registered in the **Call stack** (bottom right) pane. There may also be a red dot by the line in the code file, but this doesn't appear reliably.
-9. Execute functions in the add-in as needed to trigger the breakpoint.
+1. To set a breakpoint, select the line in the code file. The breakpoint is registered in the **Call stack** (bottom right) pane. There may also be a red dot by the line in the code file, but this doesn't appear reliably.
+1. Execute functions in the add-in as needed to trigger the breakpoint.
 
 > [!TIP]
 > For more information about using the tools, see [Microsoft Edge (EdgeHTML) Developer Tools](/archive/microsoft-edge/legacy/developer/devtools-guide/).
 
 ## Debug a dialog in an add-in
 
-If your add-in uses the Office Dialog API, the dialog runs in a separate process from the task pane (if any) and the tools must attach to that process. Run the add-in and the tools. Open the dialog and then select the **Refresh** button in the tools. The dialog process is shown. Its name comes from the `<title>` element in the HTML file that is open in the dialog. Select the process to open it and debug just as described in the section [Debug a task pane add-in using Microsoft Edge DevTools Preview](#debug-a-task-pane-add-in-using-microsoft-edge-devtools-preview).
+If your add-in uses the Office Dialog API, the dialog runs in a separate process from the task pane (if any) and the tools must attach to that process. Follow these steps.
+
+1. Run the add-in and the tools. 
+1. Open the dialog and then select the **Refresh** button in the tools. The dialog process is shown. Its name comes from the `<title>` element in the HTML file that is open in the dialog.
+1. Select the process to open it and debug just as described in the section [Debug a task pane add-in using Microsoft Edge DevTools Preview](#debug-a-task-pane-add-in-using-microsoft-edge-devtools-preview).
 
    ![Screenshot of Edge DevTools showing a process named My Dialog.](../images/edge-devtools-with-add-in-and-dialog-processes.png)
 

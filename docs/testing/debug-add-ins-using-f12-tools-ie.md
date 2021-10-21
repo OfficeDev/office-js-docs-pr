@@ -22,7 +22,7 @@ To determine which browser is being used on your computer, see [Browsers used by
 
 ## Debug a task pane add-in using the F12 tools
 
-Windows 10 and 11 include a web development tool called "F12" because it was originally launched by pressing F12 in Internet Explorer. It's now an independent application that you can use to debug your add-in when it's running in the Internet Explorer webview control, Trident. The application isn't available in earlier versions of Windows.
+Windows 10 and 11 include a web development tool called "F12" because it was originally launched by pressing F12 in Internet Explorer. F12 is now an independent application used to debug your add-in when it is running in the Internet Explorer webview control, Trident. The application is not available in earlier versions of Windows.
 
 > [!NOTE]
 > If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser process that the F12 tools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
@@ -73,7 +73,11 @@ This example uses Word and a free add-in from AppSource.
 
 ## Debug a dialog in an add-in
 
-If your add-in uses the Office Dialog API, the dialog runs in a separate process from the task pane (if any) and the tools must attach to that process. Run the add-in and the tools. Open the dialog and then choose the **Refresh** button in the tools. The dialog process is shown. Its name is the file name of the file that is open in the dialog. Select the process to open it and debug just as described in the section [Debug a task pane add-in using the F12 tools](#debug-a-task-pane-add-in-using-the-f12-tools).
+If your add-in uses the Office Dialog API, the dialog runs in a separate process from the task pane (if any) and the tools must attach to that process. Follow these steps.
+
+1. Run the add-in and the tools. 
+1. Open the dialog and then select the **Refresh** button in the tools. The dialog process is shown. Its name is the file name of the file that is open in the dialog.
+1. Select the process to open it and debug just as described in the section [Debug a task pane add-in using the F12 tools](#debug-a-task-pane-add-in-using-the-f12-tools).
 
 ## Install a version of Office that uses Internet Explorer
 
