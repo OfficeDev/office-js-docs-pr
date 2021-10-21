@@ -45,13 +45,13 @@ The following steps are the instructions for debugging your add-in. If you just 
 
     ![Screenshot of upper left corner of debugger tab with a folder drop down open and a list of files. ](../images/f12-file-dropdown.png)
 
-6. Select the file that you want to debug and it opens in the the **script** (left) pane of the **Debugger** tab. (If you are using a transpiler, bundler, or minifier, that changes the name of the file, it will have the final name that is actually loaded, not the original source file name.)
+6. Select the file that you want to debug and it opens in the the **script** (left) pane of the **Debugger** tab. (If you're using a transpiler, bundler, or minifier, that changes the name of the file, it will have the final name that is actually loaded, not the original source file name.)
 
-7. Scroll to a line where you want to set a breakpoint and click in the margin to the left of the line number. You will see a red dot to the left of the line and a corresponding line appears in the **Breakpoints** tab of the bottom right pane. The following is an example:
+7. Scroll to a line where you want to set a breakpoint and click in the margin to the left of the line number. You'll see a red dot to the left of the line and a corresponding line appears in the **Breakpoints** tab of the bottom right pane. The following screenshot is an example.
 
     ![Debugger with breakpoint in home.js file.](../images/debugger-home-js-02.png)
 
-8. Execute functions in the add-in as needed to trigger the breakpoint. When the breakpoint is hit, a right-pointing arrow appears on the red dot of the breakpoint. The following is an example:
+8. Execute functions in the add-in as needed to trigger the breakpoint. When the breakpoint is hit, a right-pointing arrow appears on the red dot of the breakpoint. The following screenshot is an example.
 
    ![Debugger with results from the triggered breakpoint.](../images/debugger-home-js-01.png)
 
