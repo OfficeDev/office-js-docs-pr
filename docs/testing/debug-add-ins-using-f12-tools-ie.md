@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Debug add-ins using developer tools in Internet Explorer
 
-This article shows how to debug the client-side code (JavaScript or TypeScript) of your add-in when the following conditions are met:
+This article shows how to debug the client-side code (JavaScript or TypeScript) of your add-in when the following conditions are met.
 
 - You cannot, or don't wish to, debug using tools built into your IDE; or you are encountering a problem that only occurs when the add-in is run outside the IDE.
 - Your computer is using a combination of Windows and Office versions that use the Internet Explorer webview control, Trident.
