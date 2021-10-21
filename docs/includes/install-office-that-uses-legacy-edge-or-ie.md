@@ -1,6 +1,6 @@
 Use the following procedure to install either a version of subscription Office that uses the Microsoft Edge Legacy webview (EdgeHTML) to run add-ins or a version that uses Internet Explorer (Trident).
 
-1. Download and Install the [Office Deployment Tool](https://www.microsoft.com/download/details.aspx?id=49117).
+1. Download and install the [Office Deployment Tool](https://www.microsoft.com/download/details.aspx?id=49117).
 2. In the folder where you installed the tool (where the `setup.exe` file is located), create a text file with the name `config.xml` and add the following contents:
 
     ```xml
