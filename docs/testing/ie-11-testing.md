@@ -1,7 +1,7 @@
 ---
 title: Internet Explorer 11 testing
 description: 'Test your Office Add-in on Internet Explorer 11.'
-ms.date: 10/08/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
 ---
 
@@ -25,7 +25,7 @@ If you plan to market your add-in through AppSource or you plan to support older
 >
 > For more information about these options, see [Support Internet Explorer 11](../develop/support-ie-11.md).
 >
-> Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
+> Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location. To learn more, see [Determine at runtime if the add-in is running in Internet Explorer](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
 
 > [!NOTE]
 > Office on the web cannot be opened in Internet Explorer 11, so you cannot (and do not need to) test your add-in on Office on the web with Internet Explorer.
@@ -38,6 +38,9 @@ These instructions assume you have set up a Yo Office generator project before. 
 
 ## Switching to the Internet Explorer 11 webview
 
+[!INCLUDE [Steps to install Office that uses Edge Legacy or Internet Explorer](../includes/install-office-that-uses-legacy-edge-or-ie.md)]
+
+<!-- The npx command is broken. Save this text for reuse if it is ever fixed.
 1. Create a Yo Office generator project. It doesn't matter what kind of project you select, this tooling will work with all project types.
 
     > [!NOTE]
@@ -60,6 +63,7 @@ The `office-addin-dev-settings webview` command can also take a number of runtim
 - edge
 - default
 
+ -->
 ## See also
 
 * [Test and debug Office Add-ins](test-debug-office-add-ins.md)
