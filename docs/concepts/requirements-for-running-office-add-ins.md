@@ -1,7 +1,7 @@
 ---
 title: Requirements for running Office Add-ins
 description: 'Learn about the client and server requirements that an end user needs to run Office Add-ins.'
-ms.date: 07/27/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
 ---
 
@@ -61,7 +61,7 @@ The following are the minimum client versions of Office on Mac that support Offi
 
 ## Client requirements: Browser support for Office web clients and SharePoint
 
-Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Explorer 11, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
+Any browser, except Internet Explorer, that supports ECMAScript 5.1, HTML5, and CSS3, such as Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
 
 
 ## Client requirements: non-Windows smartphone and tablet

@@ -1,7 +1,7 @@
 ---
 title: ExtendedPermissions element in the manifest file
 description: Defines the collection of extended permissions the add-in needs to access associated APIs or features.
-ms.date: 10/15/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
 ---
 
@@ -11,6 +11,8 @@ Defines the collection of extended permissions the add-in needs to access associ
 
 > [!IMPORTANT]
 > Support for this element was introduced in requirement set 1.9. See [clients and platforms](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+
+**Add-in type:** Mail
 
 ## Child elements
 

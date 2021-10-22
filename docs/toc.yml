@@ -275,8 +275,10 @@ items:
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Attach a debugger from the task pane
         href: testing/attach-debugger-from-task-pane.md
-      - name: Debug using developer tools
-        href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+      - name: Debug using developer tools for Internet Explorer
+        href: testing/debug-add-ins-using-f12-tools-ie.md
+      - name: Debug using developer tools for Edge legacy
+        href: testing/debug-add-ins-using-devtools-edge-legacy.md
       - name: Debug using Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
         displayName: debug, windows
@@ -396,10 +398,6 @@ items:
         href: reference/manifest/equivalentaddins.md
       - name: ExtendedOverrides
         href: reference/manifest/extendedoverrides.md
-      - name: ExtendedPermission
-        href: reference/manifest/extendedpermission.md
-      - name: ExtendedPermissions
-        href: reference/manifest/extendedpermissions.md
       - name: FileName
         href: reference/manifest/filename.md
       - name: Form
@@ -484,6 +482,8 @@ items:
           href: reference/manifest/control.md
         - name: CustomTab
           href: reference/manifest/customtab.md
+        - name: DesktopFormFactor
+          href: reference/manifest/desktopformfactor.md
         - name: Enabled
           href: reference/manifest/enabled.md
         - name: EquivalentAddin
@@ -492,10 +492,12 @@ items:
           href: reference/manifest/equivalentaddins.md
         - name: Event
           href: reference/manifest/event.md
+        - name: ExtendedPermission
+          href: reference/manifest/extendedpermission.md
+        - name: ExtendedPermissions
+          href: reference/manifest/extendedpermissions.md
         - name: ExtensionPoint
           href: reference/manifest/extensionpoint.md
-        - name: DesktopFormFactor
-          href: reference/manifest/desktopformfactor.md
         - name: FunctionFile
           href: reference/manifest/functionfile.md
         - name: GetStarted
@@ -548,10 +550,6 @@ items:
     - name: Unsupported window objects
       href: reference/window-objects-unsupported-in-add-ins.md
 
-  - name: Resources
-    href: resources/resources-links-help.md
-    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
-
 - name: Excel
   items: 
   - name: Excel add-ins documentation
@@ -593,6 +591,8 @@ items:
       - name: ExcelApi online-only requirement set
         href: reference/requirement-sets/excel-api-online-requirement-set.md
         displayName: Excel
+      - name: ExcelApi 1.14 requirement set
+        href: reference/requirement-sets/excel-api-1-14-requirement-set.md
       - name: ExcelApi 1.13 requirement set
         href: reference/requirement-sets/excel-api-1-13-requirement-set.md
         displayName: Excel 
@@ -751,7 +751,7 @@ items:
       href: excel/custom-functions-overview.md
       displayName: Excel, Custom Functions
     - name: CustomFunctionsRuntime API requirement sets
-      href: excel/custom-functions-requirement-sets.md
+      href: reference/requirement-sets/custom-functions-requirement-sets.md
       displayName: Excel, Custom Functions
     - name: Tutorials
       items:
@@ -1021,8 +1021,6 @@ items:
     - name: API reference - latest release
       href: reference/outlook-api-reference-1-10.md
       displayName: Outlook
-  - name: Concepts
-    items: 
     - name: Outlook add-in design guidelines
       href: outlook/outlook-addin-design.md
     - name: Add-in commands
@@ -1200,6 +1198,9 @@ items:
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
       displayName: PowerPoint
+    - name: Work with shapes
+      href: powerpoint/shapes.md
+      displayName: PowerPoint
   
 - name: Project
   items:
@@ -1293,26 +1294,23 @@ items:
     - name: Use search options to find text in your Word add-in
       href: word/search-option-guidance.md
       displayName: Word
-
-- name: Patterns and practices
+- name: Samples
   items:
-  - name: Overview
-    href: overview/patterns-and-practices-overview.md
+  - name: Samples list
+    href: overview/office-add-in-code-samples.md
+    displayName: PnP
   - name: Open in Excel
     href: excel/pnp-open-in-excel.md
     displayName: Excel
-  - name: Batching custom function remote calls
-    href: excel/custom-functions-batching.md
-    displayName: Excel, Custom Functions
-  - name: Authentication
-    href: develop/authentication-pnp.md
-  - name: Handle high DPI and DPI scaling in your Office solution
-    href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+- name: Resources
+  items:
+  - name: External resources
+    href: resources/resources-links-help.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
   - name: Office Add-ins community call
     href: overview/office-add-ins-community-call.md
-
-- name: VSTO and COM transition resources
-  items: 
+  - name: VSTO and COM transition resources
+    items: 
     - name: VSTO add-in developers' guide
       href: overview/learning-path-transition.md
     - name: Share code from VSTO Add-in to Office Add-in
