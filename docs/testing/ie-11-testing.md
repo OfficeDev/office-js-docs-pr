@@ -1,7 +1,7 @@
 ---
 title: Internet Explorer 11 testing
 description: 'Test your Office Add-in on Internet Explorer 11.'
-ms.date: 10/01/2021
+ms.date: 10/08/2021
 ms.localizationpriority: medium
 ---
 
