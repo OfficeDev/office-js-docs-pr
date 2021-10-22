@@ -15,7 +15,7 @@ Use the following procedure to install either a version of subscription Office t
     </Configuration>
     ```
 
-3. Change the `Version` value.
+1. Change the `Version` value.
 
     - To install a version that uses Edge Legacy, change it to `16.0.11929.20946`.
     - To install a version that uses Internet Explorer, change it to `16.0.10730.20348`.
