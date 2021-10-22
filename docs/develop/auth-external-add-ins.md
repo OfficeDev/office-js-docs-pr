@@ -1,13 +1,13 @@
 ---
-title: Authorize external services in your Office Add-in
+title: Authorization with Google, Facebook, and other identity providers
 description: 'Getting authorization to non-Microsoft data sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub using OAuth 2.0, the Authorization Code and Implicit flows.'
-ms.date: 07/08/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
 ---
 
-# Authorize external services in your Office Add-in
+# Authorization with Google, Facebook, and other identity providers
 
-Popular online services, including Microsoft 365, Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in.
+Popular online services, such as Google, Facebook, LinkedIn, SalesForce, and GitHub, have identity providers that developers can use to give users access to their accounts in other applications. You can use these identity providers in your Office Add-in.
 
 The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
 
