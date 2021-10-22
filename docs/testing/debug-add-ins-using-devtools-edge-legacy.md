@@ -37,10 +37,10 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
 1. Open the **Debugger** tab.
 1. Open the file that you want to debug with the following steps.
 
-   1. On the debugger task bar, select <b>Show find in files</b>. This will open a search window.</li>
-   1. Enter a line of code from the file you want to debug in the search box. It should be something that's not likely to be in any other file.</li>
-   1. Select the refresh button.</li>
-   1. In the search results, select the line to open the code file in the pane above the search results.</li>
+   1. On the debugger task bar, select **Show find in files**. This will open a search window.
+   1. Enter a line of code from the file you want to debug in the search box. It should be something that's not likely to be in any other file.
+   1. Select the refresh button.
+   1. In the search results, select the line to open the code file in the pane above the search results.
 
    :::image type="content" source="../images/open-file-in-edge-devtools.png" alt-text="Screenshot of Edge DevTools debugging tab with 4 parts labelled A through D.":::
 
