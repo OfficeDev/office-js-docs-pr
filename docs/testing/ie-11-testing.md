@@ -40,7 +40,7 @@ These instructions assume you have set up a Yo Office generator project before. 
 
 [!INCLUDE [Steps to install Office that uses Edge Legacy or Internet Explorer](../includes/install-office-that-uses-legacy-edge-or-ie.md)]
 
-<!-- The npx command is broken. Save this text for resuse if it is ever fixed.
+<!-- The npx command is broken. Save this text for reuse if it is ever fixed.
 1. Create a Yo Office generator project. It doesn't matter what kind of project you select, this tooling will work with all project types.
 
     > [!NOTE]
