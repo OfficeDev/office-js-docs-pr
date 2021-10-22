@@ -38,7 +38,7 @@ These instructions assume you have set up a Yo Office generator project before. 
 
 ## Switching to the Internet Explorer 11 webview
 
-
+[!INCLUDE [Steps to install Office that uses Edge Legacy or Internet Explorer](../includes/install-office-that-uses-legacy-edge-or-ie.md)]
 
 <!-- The npx command is broken. Save this text for resuse if it is ever fixed.
 1. Create a Yo Office generator project. It doesn't matter what kind of project you select, this tooling will work with all project types.
@@ -53,7 +53,7 @@ These instructions assume you have set up a Yo Office generator project before. 
     ```
 
 > [!TIP]
-> It isn't necessary to use this command, but it should help debug the majority of issues related to the Internet Explorer 11 runtime. For complete robustness, you should test using computers with various combinations of Windows 7, 8.1, and 10 and various versions of Office. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
+> It isn't necessary to use this command, but it should help debug the majority of issues related to the Internet Explorer 11 runtime. For complete robustness, you should test using computers with various combinations of Windows 7, 8.1, 10, and 11 and various versions of Office. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
 
  -->
 
