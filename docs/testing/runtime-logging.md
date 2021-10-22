@@ -136,4 +136,5 @@ You might see messages in the log file that are confusing or that are classified
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Clear the Office cache](clear-cache.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
-- [Debug Office Add-ins](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
