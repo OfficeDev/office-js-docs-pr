@@ -52,7 +52,7 @@ To get the user's identity through SSO, call the [getAccessToken](/javascript/ap
 
 If the user is not signed in, Office will open a dialog box and use the Microsoft identity platform to request the user to sign in. Then the method will return an access token, or throw an error if unable to sign in the user.
 
-In a scenario where you need to store data for the user, refer to [Microsoft identity platform ID tokens](azure/active-directory/develop/id-tokens) for information about how to get a value from the token to uniquely identify the user. Use that value to look up the user in a user table or user database that you maintain. Use the database to store user-relative information such as the user's preferences or the state of the user's account. Since you are using SSO, your users don't sign-in separately to your add-in, so you do not need to store a password for the user.
+In a scenario where you need to store data for the user, refer to [Microsoft identity platform ID tokens](/azure/active-directory/develop/id-tokens) for information about how to get a value from the token to uniquely identify the user. Use that value to look up the user in a user table or user database that you maintain. Use the database to store user-relative information such as the user's preferences or the state of the user's account. Since you are using SSO, your users don't sign-in separately to your add-in, so you do not need to store a password for the user.
 
 Before you begin implementing user authentication with SSO, be sure that you are thoroughly familiar with the article [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md). Note also the following samples.
 
