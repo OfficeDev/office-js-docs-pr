@@ -101,10 +101,10 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.12.
 |[RangeAreasCollection](/javascript/api/excel/excel.rangeareascollection)|[getCount()](/javascript/api/excel/excel.rangeareascollection#getCount__)|Gets the number of `RangeAreas` objects in this collection.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangeareascollection#getItemAt_index_)|Returns the `RangeAreas` object based on position in the collection.|
 ||[items](/javascript/api/excel/excel.rangeareascollection#items)|Gets the loaded child items in this collection.|
-|[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[getRangeAreasBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasBySheet_key_)|Returns the `RangeAreas` object based on worksheet ID or name in the collection.|
-||[getRangeAreasOrNullObjectBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasOrNullObjectBySheet_key_)|Returns the `RangeAreas` object based on worksheet name or ID in the collection.|
-||[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|Returns an array of addresses in A1-style.|
+|[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|Returns an array of addresses in A1-style.|
 ||[areas](/javascript/api/excel/excel.workbookrangeareas#areas)|Returns the `RangeAreasCollection` object.|
+||[getRangeAreasBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasBySheet_key_)|Returns the `RangeAreas` object based on worksheet ID or name in the collection.|
+||[getRangeAreasOrNullObjectBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasOrNullObjectBySheet_key_)|Returns the `RangeAreas` object based on worksheet name or ID in the collection.|
 ||[ranges](/javascript/api/excel/excel.workbookrangeareas#ranges)|Returns ranges that comprise this object in a `RangeCollection` object.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[customProperties](/javascript/api/excel/excel.worksheet#customProperties)|Gets a collection of worksheet-level custom properties.|
 |[WorksheetCustomProperty](/javascript/api/excel/excel.worksheetcustomproperty)|[delete()](/javascript/api/excel/excel.worksheetcustomproperty#delete__)|Deletes the custom property.|

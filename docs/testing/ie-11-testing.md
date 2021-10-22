@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > **Internet Explorer still used in Office Add-ins**
 >
-> Microsoft is ending support for Internet Explorer, but this doesn't significantly affect Office Add-ins. Some combinations of platforms and Office versions, including all one-time-purchase versions through Office 2019, will continue to use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Moreover, support for these combinations, and hence for Internet Explorer, is still required for add-ins submitted to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center). Two things *are* changing:
+> Microsoft is ending support for Internet Explorer, but this doesn't significantly affect Office Add-ins. Some combinations of platforms and Office versions, including one-time-purchase versions through Office 2019, will continue to use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Moreover, support for these combinations, and hence for Internet Explorer, is still required for add-ins submitted to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center). Two things *are* changing:
 >
 > - Office on the web no longer opens in Internet Explorer. Consequently, AppSource no longer tests add-ins in Office on the web using Internet Explorer as the browser. But AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer.
 > - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Internet Explorer.
@@ -40,7 +40,7 @@ These instructions assume you have set up a Yo Office generator project before. 
 
 [!INCLUDE [Steps to install Office that uses Edge Legacy or Internet Explorer](../includes/install-office-that-uses-legacy-edge-or-ie.md)]
 
-<!-- The npx command is broken. Save this text for resuse if it is ever fixed.
+<!-- The npx command is broken. Save this text for reuse if it is ever fixed.
 1. Create a Yo Office generator project. It doesn't matter what kind of project you select, this tooling will work with all project types.
 
     > [!NOTE]
@@ -69,5 +69,5 @@ The `office-addin-dev-settings webview` command can also take a number of runtim
 
 * [Test and debug Office Add-ins](test-debug-office-add-ins.md)
 * [Sideload Office Add-ins for testing](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [Debug add-ins using developer tools on Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+* [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 * [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)

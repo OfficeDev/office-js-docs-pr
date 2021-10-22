@@ -271,8 +271,10 @@ items:
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Attach a debugger from the task pane
         href: testing/attach-debugger-from-task-pane.md
-      - name: Debug using developer tools
-        href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+      - name: Debug using developer tools for Internet Explorer
+        href: testing/debug-add-ins-using-f12-tools-ie.md
+      - name: Debug using developer tools for Edge legacy
+        href: testing/debug-add-ins-using-devtools-edge-legacy.md
       - name: Debug using Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
         displayName: debug, windows
@@ -585,6 +587,8 @@ items:
       - name: ExcelApi online-only requirement set
         href: reference/requirement-sets/excel-api-online-requirement-set.md
         displayName: Excel
+      - name: ExcelApi 1.14 requirement set
+        href: reference/requirement-sets/excel-api-1-14-requirement-set.md
       - name: ExcelApi 1.13 requirement set
         href: reference/requirement-sets/excel-api-1-13-requirement-set.md
         displayName: Excel 
@@ -1189,6 +1193,9 @@ items:
       displayName: PowerPoint 
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
+      displayName: PowerPoint
+    - name: Work with shapes
+      href: powerpoint/shapes.md
       displayName: PowerPoint
   
 - name: Project
