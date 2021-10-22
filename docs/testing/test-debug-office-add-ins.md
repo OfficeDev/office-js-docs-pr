@@ -38,13 +38,10 @@ You can use sideloading to install an Office Add-in for testing without having t
 The procedure for debugging an Office Add-in varies by platform as well. Each of the following articles describes how to debug Office Add-ins on a specific platform.
 
 - [Attach a debugger from the task pane (on Windows)](attach-debugger-from-task-pane.md)
-
-- [Debug add-ins using F12 developer tools on Windows 10](debug-add-ins-using-f12-developer-tools-on-windows.md)
-
+- [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
-
 - [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md)
-
 - [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
 
 ## Validate an Office Add-in manifest

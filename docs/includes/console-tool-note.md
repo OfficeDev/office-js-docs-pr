@@ -1,2 +1,2 @@
 > [!NOTE]
-> To see the `console.log` output, you'll need a separate set of developer tools for a JavaScript console. Visit [Debug add-ins using developer tools on Windows](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md) to learn more about F12 tools and the Microsoft Edge DevTools.
+> To see the `console.log` output, you'll need a separate set of developer tools for a JavaScript console. To learn more about F12 tools and the Microsoft Edge DevTools, visit [Debug add-ins using developer tools for Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md) or [Debug add-ins using developer tools for Edge Legacy](../testing/debug-add-ins-using-devtools-edge-legacy.md).

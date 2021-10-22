@@ -25,8 +25,10 @@
         "source_path": "docs/testing/sideload-office-addin-using-sideload-command.md",
         "redirect_url": "/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins"
       },
-
-
+      {
+        "source_path": "docs/testing/debug-add-ins-using-f12-developer-tools-on-windows.md",
+        "redirect_url": "/office/dev/add-ins/testing/debug-add-ins-using-f12-tools-ie"
+      },
       {	
         "source_path": "docs/reference/excel-api-reference.md",	
         "redirect_url": "/javascript/api/excel?view=excel-js-preview"	

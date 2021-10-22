@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 09/22/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
 ---
 
@@ -14,9 +14,9 @@ You can use sideloading to install an Outlook add-in for testing without having 
 
 ## Sideload automatically
 
-If you created your Outlook add-in using [the Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), sideloading is best done through the command line. This will take advantage of our tooling and sideload across all of your supported devices in one command.
+If you created your Outlook add-in using [the Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), sideloading is best done through the command line on Windows. This will take advantage of our tooling and sideload across all of your supported devices in one command.
 
-1. Using the command line, navigate to the root directory of your Yeoman generated add-in project. Run the command `npm start`.
+1. On Windows, open a command prompt and navigate to the root directory of your Yeoman generated add-in project. Run the command `npm start`.
 
 1. Your Outlook add-in will automatically sideload to Outlook on your desktop computer. You'll see a dialog appear, stating there is an attempt to sideload the add-in, listing the name and the location of the manifest file. Select **OK**, which will register the manifest.
 
@@ -84,7 +84,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 ### Outlook on the desktop
 
-#### Outlook 2016 or later
+### Outlook 2016 or later
 
 1. Open Outlook 2016 or later on Windows or Mac.
 
@@ -111,7 +111,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
-#### Outlook 2013
+### Outlook 2013
 
 1. Open Outlook 2013 on Windows.
 
