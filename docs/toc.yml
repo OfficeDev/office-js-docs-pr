@@ -121,9 +121,9 @@ items:
         href: develop/itp-and-third-party-cookies.md
     - name: Authentication and authorization
       items:
-      - name: Overview of authentication and authorization
+      - name: Overview
         href: develop/overview-authn-authz.md
-      - name: Use SSO with Office
+      - name: Single sign-on (SSO)
         items:
         - name: Enable SSO in an Office Add-in
           href: develop/sso-in-office-add-ins.md
@@ -135,7 +135,7 @@ items:
           href: develop/register-sso-add-in-aad-v2.md
         - name: Grant administrator consent
           href: develop/grant-admin-consent-to-an-add-in.md
-        - name: Get the Office signed in user token
+        - name: Get the identity token
           href: develop/use-sso-to-get-office-signed-in-user-token.md
         - name: Authorize to Microsoft Graph
           href: develop/authorize-to-microsoft-graph.md
@@ -145,11 +145,11 @@ items:
           href: develop/create-sso-office-add-ins-nodejs.md
         - name: Troubleshoot error messages
           href: develop/troubleshoot-sso-in-office-add-ins.md
-      - name: Authenticate and authorize with the Office dialog API
+      - name: Office dialog API
         href: develop/auth-with-office-dialog-api.md      
-      - name: Authorize external services
+      - name: Authentication providers
         href: develop/auth-external-add-ins.md
-      - name: Authorize to Microsoft Graph without SSO
+      - name: Access Microsoft Graph
         href: develop/authorize-to-microsoft-graph-without-sso.md
     - name: UI and UX
       items:
