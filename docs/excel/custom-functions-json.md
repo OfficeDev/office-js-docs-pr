@@ -1,7 +1,7 @@
 ---
 title: Manually create JSON metadata for custom functions in Excel
 description: 'Define JSON metadata for custom functions in Excel and associate your function ID and name properties.'
-ms.date: 08/06/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
 ---
 
@@ -51,6 +51,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 
 ```json
 {
+  "allowCustomDataForDataTypeAny": true, // This property is currently only available in public preview.
   "allowErrorForDataTypeAny": true,
   "functions": [
     {
@@ -133,6 +134,14 @@ The following example shows the contents of a JSON metadata file for an add-in t
 > A complete sample JSON file is available in the [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) GitHub repository's commit history. As the project has been adjusted to automatically generate JSON, a full sample of handwritten JSON is only available in previous versions of the project.
 
 ## Metadata reference
+
+### allowCustomDataForDataTypeAny (preview)
+
+> [!NOTE]
+> Custom data types APIs are currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
+
+The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting this value to `true` allows a custom function to accept custom data types as input and output values. To learn more, see []().
 
 ### allowErrorForDataTypeAny
 
