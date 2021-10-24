@@ -69,3 +69,4 @@ In progress.
 
 - [Excel custom data types core concepts](/excel-data-types-concepts.md)
 - [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
+- [Custom functions and custom data types overview](/custom-functions-data-types-overview.md)

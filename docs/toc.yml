@@ -776,6 +776,12 @@ items:
     - name: Autogenerate JSON metadata
       href: excel/custom-functions-json-autogeneration.md
       displayName: Excel, Custom Functions
+    - name: Custom functions and custom data types overview
+      href: excel/custom-functions-data-types-overview.md
+      displayName: Excel, Custom Functions
+    - name: Custom functions and custom data types concepts
+      href: excel/custom-functions-data-types-concepts.md
+      displayName: Excel, Custom Functions
     - name: Call Excel JavaScript APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions

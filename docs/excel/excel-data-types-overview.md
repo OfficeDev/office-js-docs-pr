@@ -26,13 +26,10 @@ Custom data types expand Excel JavaScript API support beyond the four original d
 
 ## Custom data types and custom functions
 
-Custom data types enhance the power of custom functions. Custom functions accept custom data types as both inputs to custom functions and outputs of custom functions.
-
-```js
-// Scenario
-```
+Custom data types enhance the power of custom functions. Custom functions accept custom data types as both inputs to custom functions and outputs of custom functions. To learn more about integrating custom data types with your custom functions, see [Custom functions and custom data types core concepts](/custom-functions-data-types-concepts.md).
 
 ## See also
 
 * [Excel custom data types core concepts](/excel-data-types-concepts.md)
 * [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
+* [Custom functions and custom data types overview](/custom-functions-data-types-overview.md)

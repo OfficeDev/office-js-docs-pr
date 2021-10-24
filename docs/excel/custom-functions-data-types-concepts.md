@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 Custom data types enhance the Excel JavaScript API by expanding support for data types beyond the original four (string, number, boolean, and error). Custom data types include support for formatted number values, web images, and entity values. Custom functions accept custom data types as both input and output values, expanding the calculation power of custom functions.
 
-To learn more about using custom data types with an Excel add-in, see the [Excel custom data types core concepts (preview)](/excel-data-types-concepts.md) article
+To learn more about using custom data types with an Excel add-in, see the [Excel custom data types core concepts](/excel-data-types-concepts.md) article
 
 ## How custom functions handle custom data types
 
@@ -24,7 +24,7 @@ Custom functions can recognize custom data types and take these data types as bo
 > [!NOTE]
 > Custom functions do not support the full functionality of the enhanced error objects offered by custom data types. Custom functions can accept custom data types error objects, but the custom data type error object may not be maintained throughout calculation. At this time, custom functions support the errors included in the [CustomFunctions.Error object](/custom-functions-errors.md).
 
-## How to enable custom data types for custom functions
+## Enable custom data types for custom functions
 
 The custom data types integration with custom functions is currently only available in public preview. To try out this new feature, you need to join the Office Insider program, adjust your Office update channel, and customize your Script Lab settings. The following sections outline these steps in more detail.
 
@@ -43,7 +43,7 @@ Script Lab requires a settings update to enable the custom data types integratio
 
 ![Screenshot showing the steps to enable custom data types for custom functions in Script Lab.](../images/custom-functions-script-lab-data-type.png)
 
-## Scenario and code sample: Formatted number values
+## Code sample: Formatted number values
 
 [Section in progress]
 The following code sample shows how to take a formatted number value as an input parameter for a custom function. The following custom function returns a formatted number value as an output.
@@ -74,7 +74,7 @@ function createEntity(data) {
 
 ## See also
 
-* [Custom functions and custom data types overview (preview)](/custom-functions-data-types-overview.md)
+* [Custom functions and custom data types overview](/custom-functions-data-types-overview.md)
 * [Excel custom data types overview](/excel-data-types-overview.md)
 * [Excel custom data types core concepts](/excel-data-types-concepts.md)
 * [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

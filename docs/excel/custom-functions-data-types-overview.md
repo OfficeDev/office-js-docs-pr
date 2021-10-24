@@ -17,11 +17,11 @@ Custom data types expand the Excel JavaScript API to support data types beyond t
 
 These custom data types amplify the power of custom functions, because custom functions accept custom data types as both input and output values. You can generate custom data types through custom functions, or take existing custom data types as function arguments into calculations. Once the JSON schema of a custom data type is set, this schema is maintained throughout custom function calculations.
 
-To learn more about using custom data types with an Excel add-in, see the [Excel custom data types core concepts (preview)](/excel-data-types-concepts.md) article. To learn more about integrating custom data types with your custom functions, see [Custom functions and custom data types core concepts (preview)](/custom-functions-data-types-concepts.md).
+To learn more about using custom data types with an Excel add-in, see the [Excel custom data types core concepts](/excel-data-types-concepts.md) article. To learn more about integrating custom data types with your custom functions, see [Custom functions and custom data types core concepts](/custom-functions-data-types-concepts.md).
 
 ## See also
 
-* [Excel custom data types overview (preview)](/excel-data-types-overview.md)
-* [Excel custom data types core concepts (preview)](/excel-data-types-concepts.md)
-* [Custom functions and custom data types core concepts (preview)](/custom-functions-data-types-concepts.md)
+* [Excel custom data types overview](/excel-data-types-overview.md)
+* [Excel custom data types core concepts](/excel-data-types-concepts.md)
+* [Custom functions and custom data types core concepts](/custom-functions-data-types-concepts.md)
 * [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
