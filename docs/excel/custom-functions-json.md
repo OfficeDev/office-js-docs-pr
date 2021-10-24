@@ -141,7 +141,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 > Custom data types APIs are currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 > 
 
-The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting this value to `true` allows a custom function to accept custom data types as input and output values. To learn more, see []().
+The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting this value to `true` allows a custom function to accept custom data types as input and output values. To learn more, see [Custom functions and custom data types core concepts (preview)](/custom-functions-data-types-concepts.md).
 
 ### allowErrorForDataTypeAny
 
