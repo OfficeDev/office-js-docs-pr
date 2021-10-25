@@ -1,7 +1,7 @@
 ---
 title: Scopes element in the manifest file
 description: The Scopes element contains permissions the add-in needs to connect to an external resource.
-ms.date: 08/12/2019
+ms.date: 10/25/2021
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 Contains permissions that the add-in needs to an external resource, such as Microsoft Graph. When Microsoft Graph is the resource, AppSource uses the Scopes element to create a consent dialog box. When users install the add-in from the Store, they are prompted to grant the add-in the specified permissions to the user's Microsoft Graph data.
 
-**Scopes** is a child element of the [WebApplicationInfo](webapplicationinfo.md) and [Authorization](authorization.md) elements in the manifest.
+**Scopes** is a child element of the [WebApplicationInfo](webapplicationinfo.md) element in the manifest.
 
 ## Child elements
 
@@ -26,7 +26,7 @@ Contains permissions that the add-in needs to an external resource, such as Micr
     ...
     <WebApplicationInfo>
       <Id>12345678-abcd-1234-efab-123456789abc</Id>
-      <Resource>api://myDomain.com/12345678-abcd-1234-efab-123456789abc<Resource>
+      <Resource>api://contoso.com/12345678-abcd-1234-efab-123456789abc<Resource>
       <Scopes>
         <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
