@@ -1,7 +1,7 @@
 ---
 title: How to find the proper order of manifest elements
 description: 'Learn how to find the correct order in which to place child elements in a parent element.'
-ms.date: 09/02/2021
+ms.date: 10/25/2021
 ms.localizationpriority: medium
 ---
 
@@ -278,15 +278,9 @@ The following sections show the manifest elements in the order in which they mus
                     <Override>
         <WebApplicationInfo>
             <Id>
-            <MsaId>
             <Resource>
             <Scopes>
                 <Scope>
-            <Authorizations>
-                <Authorization>
-                    <Resource>
-                    <Scopes>
-                        <Scope>
         <EquivalentAddins>
             <EquivalentAddin>
                 <ProgId>
