@@ -25,19 +25,24 @@ Custom functions can recognize custom data types and take these data types as bo
 
 ## Enable custom data types for custom functions
 
-The custom data types integration with custom functions is currently only available in public preview. To try out this new feature, you need to join the Office Insider program, adjust your Office update channel, and customize your Script Lab settings. The following sections outline these steps in more detail.
+The custom data types integration with custom functions is currently only available in public preview. To try out this new feature, you need to join the Office Insider program, adjust your Office update channel, and manually update your JSON metadata. For more temporary testing, you can customize your Script Lab settings instead of manually updating JSON metadata. The following sections outline these steps in more detail.
 
 ### Office Insider program
 
-To try out the custom functions integration with custom data types, you first need to [join Office Insider](https://insider.office.com/join). After joining the Office Insider program, set your **Office update channel** to the "Beta Channel".
+To try out the custom functions integration with custom data types, you first need to [join Office Insider](https://insider.office.com/join), and then choose the **Beta Channel** Insider level. You must use a Windows device, and your Excel desktop application must be using the **Beta Channel** to support this feature. To learn more about accessing the Beta Channel, see [Join the Office Insider Program](https://insider.office.com/join/windows).
 
-### Script Lab settings
+### Manually update JSON metadata
 
-Script Lab requires a settings update to enable the custom data types integration with custom functions. Take the following steps to update the Script Lab settings.
+After joining the Office Insider program, manually update your JSON metadata. The JSON metadata property required to use the custom data types integration with custom functions feature is `allowCustomDataForDataTypeAny`. Set this property to `true`.
+
+For more information, see [Manually create JSON metadata for custom functions: allowCustomDataForDataTypeAny](custom-functions-json.md#allowCustomDataForDataTypeAny).
+
+### Script Lab option
+
+The custom functions integration with custom data types is available for testing with Script Lab, in addition to the manual JSON metadata update described in the preceding section. To test this feature with Script Lab, update the settings using the following steps.
 
 1. Open the Script Lab **Code** task pane.
 1. In the lower right corner, select the **Settings** button.
-1. In the lower left corner, change the environment from **Production** to **Alpha**.
 1. Go to the **User Settings** tab and enter `allowCustomDataForDataTypeAny: true`.
 
 ![Screenshot showing the steps to enable custom data types for custom functions in Script Lab.](../images/custom-functions-script-lab-data-type.png)
