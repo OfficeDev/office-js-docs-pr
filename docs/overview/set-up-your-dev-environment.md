@@ -55,7 +55,7 @@ You can use any code editor or IDE that supports client-side development to buil
 
 ## Install and use the Office JavaScript linter
 
-Microsoft provides a JavaScript linter that will help you catch common errors when using the Office JavaScript library. To install the linter, run these two commands (after you have [installed Node.js](#install-node-js) and [npm](#install-npm)).
+Microsoft provides a JavaScript linter that will help you catch common errors when using the Office JavaScript library. To install the linter, run these two commands (after you have [installed Node.js](#install-nodejs) and [npm](#install-npm)).
 
 ```command&nbsp;line
 npm install office-addin-lint --save-dev
