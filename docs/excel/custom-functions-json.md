@@ -1,7 +1,7 @@
 ---
 title: Manually create JSON metadata for custom functions in Excel
 description: 'Define JSON metadata for custom functions in Excel and associate your function ID and name properties.'
-ms.date: 10/22/2021
+ms.date: 10/25/2021
 ms.localizationpriority: medium
 ---
 
@@ -138,8 +138,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 ### allowCustomDataForDataTypeAny (preview)
 
 > [!NOTE]
-> Custom data types APIs are currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+> The `allowCustomDataForDataTypeAny` property is currently only available in public preview and is only compatible with Windows devices. To use this feature, you need to join the [Office Insider program](https://insider.office.com/) and then choose the **Beta Channel** Insider level. See [Join the Office Insider Program](https://insider.office.com/join/windows) to learn more.
 
 The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting this value to `true` allows a custom function to accept custom data types as input and output values. To learn more, see [Custom functions and custom data types core concepts (preview)](/custom-functions-data-types-concepts.md).
 
