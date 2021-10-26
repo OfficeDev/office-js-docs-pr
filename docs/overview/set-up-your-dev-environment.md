@@ -13,6 +13,7 @@ This guide helps you set up tools so you can create Office Add-ins by following 
 - npm
 - A Microsoft 365 account which includes the subscription version of Office
 - A code editor of your choice
+- The Office JavaScript linter
 
 This guide assumes that you know how to use a command line tool.
 
@@ -71,28 +72,28 @@ If your add-in project was created another way, take the following steps.
 
 1. Create a text file named .eslintrc.json in the root of the project, if there isn't one already there. Be sure it has properties named `plugins` and `extends`, both of type array. The `plugins` array should include `"office-addins"` and the `extends` array should include `"plugin:office-addins/recommended"`. The following is a simple example. Your .eslintrc.json file may have additional properties and additional members of the two arrays.
 
-```json
-{
-  "plugins": [
-    "office-addins"
-  ],
-  "extends": [
-    "plugin:office-addins/recommended"
-  ]
-}
-```
+   ```json
+   {
+     "plugins": [
+       "office-addins"
+     ],
+     "extends": [
+       "plugin:office-addins/recommended"
+     ]
+   }
+   ```
 
 1. Open the package.json file in the root of the project and be sure that the `scripts` array has the following member.
 
-```json
-"lint": "office-addin-lint check",
-```
+   ```json
+   "lint": "office-addin-lint check",
+   ```
 
 1. Turn on the linter with the following command either in the terminal of an editor, such as Visual Studio Code, or in a command prompt.
 
-```command&nbsp;line
-npm run lint
-```
+   ```command&nbsp;line
+   npm run lint
+   ```
 
 ## Next steps
 
