@@ -55,14 +55,14 @@ You can use any code editor or IDE that supports client-side development to buil
 
 ## Install and use the Office JavaScript linter
 
-Microsoft provides a JavaScript linter that will help you catch common errors when using the Office JavaScript library. To install the linter, run these two commands (after you have [installed Node.js](#install-nodejs) and [npm](#install-npm)).
+Microsoft provides a JavaScript linter to help you catch common errors when using the Office JavaScript library. To install the linter, run these two commands (after you've [installed Node.js](#install-nodejs) and [npm](#install-npm)).
 
 ```command&nbsp;line
 npm install office-addin-lint --save-dev
 npm install eslint-plugin-office-addins --save-dev
 ```
 
-If you create an Office Add-in project with the Yo Office tool, then the rest of the setup is done for you. You can start the linter with the following command either in the terminal of an editor, such as Visual Studio Code, or in a command prompt. (For information about installing the Yo Office tool, go through one of our Office Add-in quick starts, such as [this one for Excel add-ins](../quickstarts/excel-quickstart-jquery.md).)
+If you create an Office Add-in project with the Yo Office tool, then the rest of the setup is done for you. Start the linter with the following command either in the terminal of an editor, such as Visual Studio Code, or in a command prompt. (For information about installing the Yo Office tool, go through one of our Office Add-in quick starts, such as [this one for Excel add-ins](../quickstarts/excel-quickstart-jquery.md).)
 
 ```command&nbsp;line
 npm run lint
@@ -70,7 +70,7 @@ npm run lint
 
 If your add-in project was created another way, take the following steps.
 
-1. Create a text file named .eslintrc.json in the root of the project, if there isn't one already there. Be sure it has properties named `plugins` and `extends`, both of type array. The `plugins` array should include `"office-addins"` and the `extends` array should include `"plugin:office-addins/recommended"`. The following is a simple example. Your .eslintrc.json file may have additional properties and additional members of the two arrays.
+1. In the root of the project, create a text file named .eslintrc.json, if there isn't one already there. Be sure it has properties named `plugins` and `extends`, both of type array. The `plugins` array should include `"office-addins"` and the `extends` array should include `"plugin:office-addins/recommended"`. The following is a simple example. Your .eslintrc.json file may have additional properties and additional members of the two arrays.
 
    ```json
    {
@@ -83,7 +83,7 @@ If your add-in project was created another way, take the following steps.
    }
    ```
 
-1. Open the package.json file in the root of the project and be sure that the `scripts` array has the following member.
+1. In the root of the project, open the package.json file and be sure that the `scripts` array has the following member.
 
    ```json
    "lint": "office-addin-lint check",
