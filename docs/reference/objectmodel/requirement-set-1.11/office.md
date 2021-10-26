@@ -1,13 +1,13 @@
 ---
-title: Office namespace - requirement set 1.10
-description: 'Office namespace members available for Outlook add-ins using Mailbox API requirement set 1.10.'
-ms.date: 05/17/2021
+title: Office namespace - requirement set 1.11
+description: 'Office namespace members available for Outlook add-ins using Mailbox API requirement set 1.11.'
+ms.date: 11/01/2021
 ms.localizationpriority: medium
 ---
 
-# Office (Mailbox requirement set 1.10)
+# Office (Mailbox requirement set 1.11)
 
-The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Common API](/javascript/api/office?view=outlook-js-1.10&preserve-view=true).
+The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Common API](/javascript/api/office?view=outlook-js-1.11&preserve-view=true).
 
 ##### Requirements
 
@@ -20,7 +20,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 
 | Property | Modes | Return type | Minimum<br>requirement set |
 |---|---|---|:---:|
-| [context](office.context.md) | Compose<br>Read | [Context](/javascript/api/office/office.context?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | Compose<br>Read | [Context](/javascript/api/office/office.context?view=outlook-js-1.11&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## Enumerations
 
@@ -33,7 +33,7 @@ The Office namespace provides shared interfaces that are used by add-ins in all 
 
 ## Namespaces
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.10&preserve-view=true): Includes a number of Outlook-specific enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.11&preserve-view=true): Includes a number of Outlook-specific enumerations, for example, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`, `ResponseType`, and `ItemNotificationMessageType`.
 
 ## Enumeration details
 

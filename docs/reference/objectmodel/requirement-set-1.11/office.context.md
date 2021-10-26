@@ -1,15 +1,15 @@
 ---
 title: Office.context - requirement set 1.10
-description: 'Office.Context object members available for Outlook add-ins using Mailbox API requirement set 1.10.'
-ms.date: 05/11/2021
+description: 'Office.Context object members available for Outlook add-ins using Mailbox API requirement set 1.11.'
+ms.date: 11/01/2021
 ms.localizationpriority: medium
 ---
 
-# context (Mailbox requirement set 1.10)
+# context (Mailbox requirement set 1.11)
 
 ### [Office](office.md).context
 
-Office.context provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context?view=outlook-js-1.10&preserve-view=true).
+Office.context provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context?view=outlook-js-1.11&preserve-view=true).
 
 ##### Requirements
 
@@ -22,26 +22,26 @@ Office.context provides shared interfaces that are used by add-ins in all of the
 
 | Property | Modes | Return type | Minimum<br>requirement set |
 |---|---|---|:---:|
-| [auth](#auth-auth) | Compose<br>Read | [Auth](/javascript/api/office/office.auth?view=outlook-js-1.10&preserve-view=true) | [IdentityAPI 1.3](../../requirement-sets/identity-api-requirement-sets.md) |
+| [auth](#auth-auth) | Compose<br>Read | [Auth](/javascript/api/office/office.auth?view=outlook-js-1.11&preserve-view=true) | [IdentityAPI 1.3](../../requirement-sets/identity-api-requirement-sets.md) |
 | [contentLanguage](#contentlanguage-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [diagnostics](#diagnostics-contextinformation) | Compose<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [diagnostics](#diagnostics-contextinformation) | Compose<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.11&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | Compose<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [host](#host-hosttype) | Compose<br>Read | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.10&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [mailbox](office.context.mailbox.md) | Compose<br>Read | [Mailbox](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [platform](#platform-platformtype) | Compose<br>Read | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.10&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [requirements](#requirements-requirementsetsupport) | Compose<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [roamingSettings](#roamingsettings-roamingsettings) | Compose<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ui](#ui-ui) | Compose<br>Read | [UI](/javascript/api/office/office.ui?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [host](#host-hosttype) | Compose<br>Read | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.11&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [mailbox](office.context.mailbox.md) | Compose<br>Read | [Mailbox](/javascript/api/outlook/office.mailbox?view=outlook-js-1.11&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [platform](#platform-platformtype) | Compose<br>Read | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.11&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [requirements](#requirements-requirementsetsupport) | Compose<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.11&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | Compose<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.11&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ui](#ui-ui) | Compose<br>Read | [UI](/javascript/api/office/office.ui?view=outlook-js-1.11&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## Property details
 
-#### auth: [Auth](/javascript/api/office/office.auth?view=outlook-js-1.10&preserve-view=true)
+#### auth: [Auth](/javascript/api/office/office.auth?view=outlook-js-1.11&preserve-view=true)
 
 Supports [single sign-on (SSO)](../../../outlook/authenticate-a-user-with-an-sso-token.md) by providing a method that allows the Office application to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
 
 ##### Type
 
-*   [Auth](/javascript/api/office/office.auth?view=outlook-js-1.10&preserve-view=true)
+*   [Auth](/javascript/api/office/office.auth?view=outlook-js-1.11&preserve-view=true)
 
 ##### Requirements
 
@@ -111,13 +111,13 @@ function write(message){
 ---
 ---
 
-#### diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.10&preserve-view=true)
+#### diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.11&preserve-view=true)
 
 Gets information about the environment in which the add-in is running.
 
 ##### Type
 
-*   [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.10&preserve-view=true)
+*   [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.11&preserve-view=true)
 
 ##### Requirements
 
@@ -183,7 +183,7 @@ function write(message){
 ---
 ---
 
-#### host: [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.10&preserve-view=true)
+#### host: [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.11&preserve-view=true)
 
 Gets the Office application that is hosting the add-in.
 
@@ -192,7 +192,7 @@ Gets the Office application that is hosting the add-in.
 
 ##### Type
 
-*   [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.10&preserve-view=true)
+*   [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.11&preserve-view=true)
 
 ##### Requirements
 
@@ -212,7 +212,7 @@ console.log(JSON.stringify(Office.context.host));
 ---
 ---
 
-#### platform: [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.10&preserve-view=true)
+#### platform: [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.11&preserve-view=true)
 
 Provides the platform on which the add-in is running.
 
@@ -221,7 +221,7 @@ Provides the platform on which the add-in is running.
 
 ##### Type
 
-*   [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.10&preserve-view=true)
+*   [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.11&preserve-view=true)
 
 ##### Requirements
 
@@ -241,13 +241,13 @@ console.log(JSON.stringify(Office.context.platform));
 ---
 ---
 
-#### requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.10&preserve-view=true)
+#### requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.11&preserve-view=true)
 
 Provides a method for determining what requirement sets are supported on the current application and platform.
 
 ##### Type
 
-*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.10&preserve-view=true)
+*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.11&preserve-view=true)
 
 ##### Requirements
 
@@ -267,7 +267,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.10&preserve-view=true)
+#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.11&preserve-view=true)
 
 Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.
 
@@ -275,7 +275,7 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 
 ##### Type
 
-*   [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.10&preserve-view=true)
+*   [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.11&preserve-view=true)
 
 ##### Requirements
 
@@ -290,13 +290,13 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 ---
 ---
 
-#### ui: [UI](/javascript/api/office/office.ui?view=outlook-js-1.10&preserve-view=true)
+#### ui: [UI](/javascript/api/office/office.ui?view=outlook-js-1.11&preserve-view=true)
 
 Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes, in your Office Add-ins.
 
 ##### Type
 
-*   [UI](/javascript/api/office/office.ui?view=outlook-js-1.10&preserve-view=true)
+*   [UI](/javascript/api/office/office.ui?view=outlook-js-1.11&preserve-view=true)
 
 ##### Requirements
 
