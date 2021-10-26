@@ -89,7 +89,7 @@ If your add-in project was created another way, take the following steps.
    "lint": "office-addin-lint check",
    ```
 
-1. Turn on the linter with the following command either in the terminal of an editor, such as Visual Studio Code, or in a command prompt.
+1. xTurn on the linter with the following command either in the terminal of an editor, such as Visual Studio Code, or in a command prompt.
 
    ```command&nbsp;line
    npm run lint
