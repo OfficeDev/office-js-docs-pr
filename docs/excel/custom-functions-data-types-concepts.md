@@ -35,7 +35,7 @@ To try out the custom functions integration with custom data types, you first ne
 
 After joining the Office Insider program, manually update your JSON metadata. The JSON metadata property required to use the custom data types integration with custom functions feature is `allowCustomDataForDataTypeAny`. Set this property to `true`.
 
-For more information, see [Manually create JSON metadata for custom functions: allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview).
+For more information, see [Manually create JSON metadata: allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview).
 
 ### Script Lab option
 

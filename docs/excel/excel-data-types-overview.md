@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API custom data types overview
 description: 'Custom data types in the Excel JavaScript API enable Office Add-in developers to work with formatted number values, rich errors, and web images as data types.'
-ms.date: 10/25/2021
+ms.date: 10/26/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -20,16 +20,12 @@ Prior to the custom data types addition, the Excel JavaScript API supported stri
 
 Custom data types expand Excel JavaScript API support beyond the four original data types (string, number, boolean, and error) to include web images, formatted number values, entities, and rich error data types as flexible data structures. These custom data types allow for precision and simplicity during add-in calculations and extend the power of Excel add-ins beyond a 2-dimensional grid.
 
-```js
-// Scenario
-```
-
 ## Custom data types and custom functions
 
 > [!NOTE]
 > The custom functions integration with custom data types is currently only available in public preview and is only compatible with Windows devices. To use this feature, you need to join the [Office Insider program](https://insider.office.com/) and then choose the **Beta Channel** Insider level. See [Join the Office Insider Program](https://insider.office.com/join/windows) to learn more.
 
-Custom data types enhance the power of custom functions. Custom functions accept custom data types as both inputs to custom functions and outputs of custom functions. To learn more about integrating custom data types with your custom functions, see [Custom functions and custom data types core concepts](/custom-functions-data-types-concepts.md).
+Custom data types enhance the power of custom functions. Custom functions accept custom data types as both inputs to custom functions and outputs of custom functions, and custom functions use the same JSON schema for custom data types as the Excel JavaScript API. This custom data types JSON schema is maintained as custom functions calculate and evaluate. To learn more about integrating custom data types with your custom functions, see [Custom functions and custom data types core concepts](/custom-functions-data-types-concepts.md).
 
 ## See also
 
