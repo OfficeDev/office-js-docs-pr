@@ -131,7 +131,9 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 ```
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
+>
+> - For **SendMode** options available with the `OnMessageSend` event, refer to [Available SendMode options](../reference/manifest/launchevent.md#available-sendmode-options-preview).
+> - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
 ## Implement event handling
 
