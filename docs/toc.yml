@@ -1034,6 +1034,9 @@ items:
       - name: Walkthrough
         href: outlook/autolaunch.md
         displayName: event-based activation
+      - name: OnMessageSend event walkthrough
+        href: outlook/onmessagesend-walkthrough.md
+        displayName: event-based activation
       - name: Debug event-based activation
         href: outlook/debug-autolaunch.md
       - name: AppSource options
