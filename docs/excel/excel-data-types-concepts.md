@@ -66,10 +66,6 @@ const myEntity = {
 };
 ```
 
-The following image shows how the `myEntity` custom data type displays in the Excel UI.
-
-![Screenshot showing the display of an entity custom data type in the Excel UI.](../images/excel-custom-data-type-entity.png)
-
 ## Web images
 
 The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
@@ -83,10 +79,6 @@ const myImage = {
     address: "https://bit.ly/2YGOwtw"
 };
 ```
-
-The following image shows how the `myImage` custom data type displays in the Excel UI.
-
-![Screenshot showing the display of a web image custom data type in the Excel UI.](../images/excel-custom-data-type-image.png)
 
 ## Improved error support
 

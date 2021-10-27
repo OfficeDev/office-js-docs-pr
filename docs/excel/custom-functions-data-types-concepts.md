@@ -1,7 +1,7 @@
 ---
 title: Custom functions and custom data types core concepts (preview)
 description: 'Learn the core concepts for using Excel custom data types with your custom functions.'
-ms.date: 10/25/2021
+ms.date: 10/26/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -47,32 +47,49 @@ The custom functions integration with custom data types is available for testing
 
 ![Screenshot showing the steps to enable custom data types for custom functions in Script Lab.](../images/custom-functions-script-lab-data-type.png)
 
-## Code sample: Formatted number values
+## Output a formatted number value
 
-[Section in progress]
-The following code sample shows how to take a formatted number value as an input parameter for a custom function. The following custom function returns a formatted number value as an output.
+The following code sample shows how to create a [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue) custom data type with a custom function. The function takes a basic number and a format setting as the input parameters and returns a formatted number value data type as the output.
 
 ```js
-// Sample in progress.
 /**
- * Create Entity from sales data.
+ * Take a number as the input value and return a formatted number value as the output.
  * @customfunction
- * @param {any[][]} data Description here.
- * @returns{any[][]} Description here.
+ * @param {number} value
+ * @param {string} format (e.g. "0.00%")
+ * @returns A formatted number value.
  */
-function createEntity(data) {
-    yearEntity["properties"] = {
-        Inventory: {
-            type: "FormattedNumber",
-            basicValue: item.inventories,
-            numberFormat: "[Red][>=100];[Blue]"
-        },
-        Profit: {
-            type: "FormattedNumber",
-            basicValue: profit,
-            numberFormat: '_($* #,##0.00_);_($* (#,##0.00);_($* " -"??_);_(@_)'
+function createFormattedNumber(value, format) {
+    return {
+        type: "FormattedNumber",
+        basicValue: value,
+        numberFormat: format
+    }
+}
+```
+
+## Input an entity value
+
+The following code sample shows a custom function that takes an entity value custom data type as an input. If the `attribute` parameter is set to `text`, then the function returns the `text` property of the entity value. Otherwise, the function returns the `basicValue` property of the entity value.
+
+```js
+/**
+ * Accept an entity value custom data type as a function input.
+ * @customfunction
+ * @param {any} value
+ * @param {string} attribute
+ * @returns {any} The text value of the entity.
+ */
+function getEntityAttribute(value, attribute) {
+    if (value.type == "Entity") {
+        if (attribute == "text") {
+            return value.text;
+        } else {
+            return value.properties[attribute].basicValue;
         }
-    };
+    } else {
+        return JSON.stringify(value);
+    }
 }
 ```
 
