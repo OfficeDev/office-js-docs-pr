@@ -14,11 +14,11 @@ ms.localizationpriority: high
 > Custom data types APIs are currently only available in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 > 
 
-Custom data types in the Excel JavaScript API enable add-in developers to organize complex data structures as objects, such as formatted number values, web images, rich errors, and entities.
+Custom data types in the Excel JavaScript API enable add-in developers to organize complex data structures as objects, such as formatted number values, web images, and entity values.
 
-Prior to the custom data types addition, the Excel JavaScript API supported string, number, boolean, and error data types. The Excel UI formatting layer is capable of adding currency, date, and other types of formatting to cell that contain the four original data types, but this formatting layer only controls the display of the original data types in the Excel UI. The underlying number value is not changed, even when a cell in the Excel UI is formatted as currency or a date. This gap between an underlying value and the formatted display in the Excel UI can result in confusion and errors during add-in calculations.
+Prior to the custom data types addition, the Excel JavaScript API supported string, number, boolean, and error data types. The Excel UI formatting layer is capable of adding currency, date, and other types of formatting to cells that contain the four original data types, but this formatting layer only controls the display of the original data types in the Excel UI. The underlying number value is not changed, even when a cell in the Excel UI is formatted as currency or a date. This gap between an underlying value and the formatted display in the Excel UI can result in confusion and errors during add-in calculations. Custom data types are a solution to this gap.
 
-Custom data types expand Excel JavaScript API support beyond the four original data types (string, number, boolean, and error) to include web images, formatted number values, entities, and rich error data types as flexible data structures. These custom data types allow for precision and simplicity during add-in calculations and extend the power of Excel add-ins beyond a 2-dimensional grid.
+Custom data types expand Excel JavaScript API support beyond the four original data types (string, number, boolean, and error) to include web images, formatted number values, entity values, and improved error data types as flexible data structures. These custom data types allow for precision and simplicity during add-in calculations and extend the power of Excel add-ins beyond a 2-dimensional grid.
 
 ## Custom data types and custom functions
 

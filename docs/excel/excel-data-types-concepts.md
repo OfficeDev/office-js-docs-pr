@@ -29,7 +29,9 @@ Custom data types use a consistent JSON schema which defines the [CellValueType]
 
 ## Formatted number values
 
-The [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue) object enables Excel add-ins to define a `numberFormat` for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
+The [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue) object enables Excel add-ins to define a `numberFormat` property for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
+
+The following JSON code sample shows the schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI.
 
 ```json
 // This is an example of the JSON schema of a formatted number value.
@@ -44,6 +46,8 @@ const myDate = {
 ## Entity values
 
 Entity values function as a container within custom data types, similar to objects in other programming languages.
+
+The following JSON code sample shows the schema of an entity value.
 
 ```json
 // This is an example of the JSON schema of an entity value.
@@ -62,17 +66,27 @@ const myEntity = {
 };
 ```
 
+The following image shows how the `myEntity` custom data type displays in the Excel UI.
+
+![Screenshot showing the display of an entity custom data type in the Excel UI.](../images/excel-custom-data-type-entity.png)
+
 ## Web images
 
-The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entities) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
+The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
+
+The following JSON code sample shows the schema of a web image.
 
 ```json
 // This is an example of the JSON schema of a web image.
-const myImg = {
+const myImage = {
     type: Excel.CellValueType.webImage,
     address: "https://bit.ly/2YGOwtw"
 };
 ```
+
+The following image shows how the `myImage` custom data type displays in the Excel UI.
+
+![Screenshot showing the display of a web image custom data type in the Excel UI.](../images/excel-custom-data-type-image.png)
 
 ## Improved error support
 
