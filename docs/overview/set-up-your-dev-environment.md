@@ -55,7 +55,7 @@ You can use any code editor or IDE that supports client-side development to buil
 
 ## Install and use the Office JavaScript linter
 
-Microsoft provides a JavaScript linter to help you catch common errors when using the Office JavaScript library. To install the linter, run these two commands (after you've [installed Node.js](#install-nodejs) and [npm](#install-npm)).
+Microsoft provides a JavaScript linter to help you catch common errors when using the Office JavaScript library. To install the linter, run the following two commands (after you've [installed Node.js](#install-nodejs) and [npm](#install-npm)).
 
 ```command&nbsp;line
 npm install office-addin-lint --save-dev
@@ -70,7 +70,7 @@ npm run lint
 
 If your add-in project was created another way, take the following steps.
 
-1. In the root of the project, create a text file named .eslintrc.json, if there isn't one already there. Be sure it has properties named `plugins` and `extends`, both of type array. The `plugins` array should include `"office-addins"` and the `extends` array should include `"plugin:office-addins/recommended"`. The following is a simple example. Your .eslintrc.json file may have additional properties and additional members of the two arrays.
+1. In the root of the project, create a text file named **.eslintrc.json**, if there isn't one already there. Be sure it has properties named `plugins` and `extends`, both of type array. The `plugins` array should include `"office-addins"` and the `extends` array should include `"plugin:office-addins/recommended"`. The following is a simple example. Your **.eslintrc.json** file may have additional properties and additional members of the two arrays.
 
    ```json
    {
@@ -83,7 +83,7 @@ If your add-in project was created another way, take the following steps.
    }
    ```
 
-1. In the root of the project, open the package.json file and be sure that the `scripts` array has the following member.
+1. In the root of the project, open the **package.json** file and be sure that the `scripts` array has the following member.
 
    ```json
    "lint": "office-addin-lint check",
