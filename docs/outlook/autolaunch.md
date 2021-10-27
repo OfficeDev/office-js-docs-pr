@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 10/26/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
 ---
 
@@ -33,7 +33,8 @@ At present, the following events are supported. When an event is raised, the han
 |`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.|[AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-preview&preserve-view=true)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows, web browser|
 |`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|[RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-preview&preserve-view=true)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows, web browser|
 |`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|[InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-preview&preserve-view=true)|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows, web browser|
-|`OnMessageSend`|On sending a message item. To learn more, refer to the [OnMessageSend walkthrough](onmessagesend-walkthrough.md).|Not applicable|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
+|`OnMessageSend`|On sending a message item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|Not applicable|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
+|`OnAppointmentSend`|On sending an appointment item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|Not applicable|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
 
 ### How to preview
 
@@ -324,7 +325,7 @@ Full CORS support is coming soon.
 - [Outlook add-in manifests](manifests.md)
 - [How to debug event-based add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
-- [OnMessageSend walkthrough](onmessagesend-walkthrough.md)
+- [Smart Alerts and OnMessageSend walkthrough](smart-alerts-onmessagesend-walkthrough.md)
 - PnP samples:
   - [Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
   - [Use Outlook event-based activation to tag external recipients](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)

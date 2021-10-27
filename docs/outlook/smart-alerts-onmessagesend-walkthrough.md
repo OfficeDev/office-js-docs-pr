@@ -1,23 +1,23 @@
 ---
-title: Use the OnMessageSend event in your Outlook add-in (preview)
+title: Use Smart Alerts and the OnMessageSend event in your Outlook add-in (preview)
 description: Learn how to handle the send message event in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 10/26/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
 ---
 
-# Use the OnMessageSend event in your Outlook add-in (preview)
+# Use Smart Alerts and the OnMessageSend event in your Outlook add-in (preview)
 
-The `OnMessageSend` event takes advantage of Smart Alerts which allow you to run logic after a user selects **Send** in their Outlook message. Your event handler allows you to give your users the opportunity to improve their emails before they're sent.
+The `OnMessageSend` event takes advantage of Smart Alerts which allow you to run logic after a user selects **Send** in their Outlook message. Your event handler allows you to give your users the opportunity to improve their emails before they're sent. The `OnAppointmentSend` event is similar but applies to an appointment.
 
 By the end of this walkthrough, you'll have an add-in that runs whenever a message is being sent and checks if the user forgot to add a document or picture they mentioned in their email.
 
 > [!IMPORTANT]
-> This event is only available in preview with a Microsoft 365 subscription in Outlook on Windows. For more details, see [How to preview](autolaunch.md#how-to-preview). Preview events shouldn't be used in production add-ins.
+> The `OnMessageSend` and `OnAppointmentSend` events are only available in preview with a Microsoft 365 subscription in Outlook on Windows. For more details, see [How to preview](autolaunch.md#how-to-preview). Preview events shouldn't be used in production add-ins.
 
 ## Prerequisites
 
-This event is available through the event-based activation feature. To understand about configuring your add-in to use this feature, available events, how to preview this event, debugging, feature limitations, and more, refer to [Configure your Outlook add-in for event-based activation](autolaunch.md).
+The `OnMessageSend` event is available through the event-based activation feature. To understand about configuring your add-in to use this feature, available events, how to preview this event, debugging, feature limitations, and more, refer to [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 ## Set up your environment
 
@@ -232,15 +232,6 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 >    ```
 >
 > 1. Restart Outlook.
-
-## Available SendMode options
-
-When you set up the `OnMessageSend` event in the manifest, you also set the **SendMode** property. The following are the available options. In both cases, if your add-in finds an issue based on the conditions you're looking for in the message being sent, the user is notified.
-
-| SendMode option | Description |
-|---|---|
-|`PromptUser`|In the notification, the user can choose to **Send Anyway**, or address the issue then try to send the message again.|
-|`SoftBlock`|The user must fix the issue before trying to send the message again.|
 
 ## See also
 

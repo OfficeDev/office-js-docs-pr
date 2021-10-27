@@ -1034,7 +1034,7 @@ items:
       - name: Walkthrough
         href: outlook/autolaunch.md
         displayName: event-based activation
-      - name: OnMessageSend event walkthrough
+      - name: Smart Alerts and OnMessageSend event walkthrough
         href: outlook/onmessagesend-walkthrough.md
         displayName: event-based activation
       - name: Debug event-based activation
