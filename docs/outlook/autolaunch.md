@@ -17,7 +17,7 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 
 ## Supported events
 
-The following table lists events that are currently supported. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Event-specific JSON** column includes a link to the related object where applicable and notes the supported clients for each event.
+The following table lists events that are currently supported. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Event-specific JSON** column includes a link to the related object where applicable. The table also notes the supported clients for each event.
 
 > [!IMPORTANT]
 > Events still in preview may only be available with a Microsoft 365 subscription in Outlook on the web and on Windows. For more details, see [How to preview](#how-to-preview) in this article. Preview events shouldn't be used in production add-ins.
