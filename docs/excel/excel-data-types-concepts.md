@@ -45,9 +45,9 @@ const myDate = {
 
 ## Entity values
 
-Entity values function as a container within data types, similar to objects in other programming languages.
+Entity values function as a container within data types, similar to objects in other programming languages. Entities also support arrays as properties of an entity value.
 
-The following JSON code sample shows the schema of an entity value.
+The following JSON code sample shows the schema of an entity value that contains text, an image, a date, and an additional text value.
 
 ```json
 // This is an example of the JSON schema of an entity value.
@@ -56,11 +56,11 @@ const myEntity = {
     type: Excel.CellValueType.entity,
     text: "A llama",
     properties: {
-        image: myImg,
+        image: myImage,
         "start date": myDate,
         "quote": {
             type: Excel.CellValueType.string,
-            basicValue: "I love Excel llamambdas"
+            basicValue: "I love llamas."
         }
     }
 };

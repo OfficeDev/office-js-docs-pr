@@ -12,7 +12,7 @@ ms.localizationpriority: high
 > [!NOTE]
 > The custom functions integration with data types is currently only available in public preview and is only compatible with Windows devices. To use this feature, you need to join the [Office Insider program](https://insider.office.com/) and then choose the **Beta Channel** Insider level. See [Join the Office Insider Program](https://insider.office.com/join/windows) to learn more.
 
-Data types expand the Excel JavaScript API to support data types beyond the four original data types (string, number, boolean, and error). Data types include support for web images, formatted number values, and entity values.
+Data types expand the Excel JavaScript API to support data types beyond the four original data types (string, number, boolean, and error). Data types include support for web images, formatted number values, entity values, and arrays within entity values.
 
 These data types amplify the power of custom functions, because custom functions accept data types as both input and output values. You can generate data types through custom functions, or take existing data types as function arguments into calculations. Once the JSON schema of a data type is set, this schema is maintained throughout custom function calculations.
 
