@@ -1,7 +1,7 @@
 ---
 title: Custom functions and data types core concepts
 description: 'Learn the core concepts for using Excel data types with your custom functions.'
-ms.date: 10/27/2021
+ms.date: 10/28/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -9,8 +9,7 @@ ms.localizationpriority: medium
 
 # Custom functions and data types core concepts (preview)
 
-> [!NOTE]
-> The custom functions integration with data types is currently in public preview and is only compatible with Windows devices. To use this feature, you need to join the [Office Insider Program](https://insider.office.com/) and then choose the **Beta Channel** Insider level. To learn more, see [Join the Office Insider Program](https://insider.office.com/join/windows).
+[!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
 
 Data types enhance the Excel JavaScript API by expanding support for data types beyond the original four (string, number, boolean, and error). Data types include support for formatted number values, web images, entity values, and arrays within entity values. Custom functions accept data types as both input and output values, expanding the calculation power of custom functions.
 

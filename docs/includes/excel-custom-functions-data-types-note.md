@@ -1,0 +1,2 @@
+> [!NOTE]
+> The custom functions integration with data types is currently in public preview and is only compatible with Windows devices. To use this feature, you need to join the [Office Insider Program](https://insider.office.com/) and then choose the **Beta Channel** Insider level. To learn more, see [Join the Office Insider Program](https://insider.office.com/join/windows).
