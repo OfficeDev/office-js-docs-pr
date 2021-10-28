@@ -648,7 +648,7 @@ items:
     - name: Comments
       href: excel/excel-add-ins-comments.md
       displayName: Excel
-    - name: Custom data types (preview)
+    - name: Data types (preview)
       items:
         - name: Overview (preview)
           href: excel/excel-data-types-overview.md
@@ -776,10 +776,10 @@ items:
     - name: Autogenerate JSON metadata
       href: excel/custom-functions-json-autogeneration.md
       displayName: Excel, Custom Functions
-    - name: Custom data types and custom functions overview (preview)
+    - name: Data types and custom functions overview (preview)
       href: excel/custom-functions-data-types-overview.md
       displayName: Excel, Custom Functions
-    - name: Custom data types and custom functions concepts (preview)
+    - name: Data types and custom functions concepts (preview)
       href: excel/custom-functions-data-types-concepts.md
       displayName: Excel, Custom Functions
     - name: Call Excel JavaScript APIs
