@@ -38,7 +38,7 @@ Configures your add-in to activate based on supported events. Child of the [`<La
 
 ## Available SendMode options (preview)
 
-When you include the `OnMessageSend` or `OnAppointmentSend` event in the manifest, you must also set the **SendMode** property. The following are the available options. Based on the conditions your add-in is looking for, if your add-in finds an issue in the item being sent, the user is alerted.
+When you include the `OnMessageSend` or `OnAppointmentSend` event in the manifest, you must also set the **SendMode** property. The following are the available options. Based on the conditions your add-in is looking for, the user is alerted if your add-in finds an issue in the item being sent.
 
 | SendMode option | Description |
 |---|---|
