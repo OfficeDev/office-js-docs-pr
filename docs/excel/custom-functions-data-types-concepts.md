@@ -10,11 +10,11 @@ ms.localizationpriority: medium
 # Custom functions and data types core concepts (preview)
 
 > [!NOTE]
-> The custom functions integration with data types is currently only available in public preview and is only compatible with Windows devices. To use this feature, you need to join the [Office Insider program](https://insider.office.com/) and then choose the **Beta Channel** Insider level. See [Join the Office Insider Program](https://insider.office.com/join/windows) to learn more.
+> The custom functions integration with data types is currently in public preview and is only compatible with Windows devices. To use this feature, you need to join the [Office Insider Program](https://insider.office.com/) and then choose the **Beta Channel** Insider level. To learn more, see [Join the Office Insider Program](https://insider.office.com/join/windows).
 
 Data types enhance the Excel JavaScript API by expanding support for data types beyond the original four (string, number, boolean, and error). Data types include support for formatted number values, web images, entity values, and arrays within entity values. Custom functions accept data types as both input and output values, expanding the calculation power of custom functions.
 
-To learn more about using data types with an Excel add-in, see the [Excel data types core concepts](/excel-data-types-concepts.md) article
+To learn more about using data types with an Excel add-in, see [Excel data types core concepts](/excel-data-types-concepts.md).
 
 ## How custom functions handle data types
 
@@ -27,13 +27,13 @@ Custom functions can recognize data types and take them as both input and output
 
 The data types integration with custom functions is currently only available in public preview. To try out this new feature, you need to join the Office Insider program, adjust your Office update channel, and manually update your JSON metadata. For more temporary testing, you can customize your Script Lab settings instead of manually updating JSON metadata. The following sections outline these steps in more detail.
 
-### Office Insider program
+### Join the Office Insider Program
 
-To try out the custom functions integration with data types, you first need to [join Office Insider](https://insider.office.com/join), and then choose the **Beta Channel** Insider level. You must use a Windows device, and your Excel desktop application must be using the **Beta Channel** to support this feature. To learn more about accessing the Beta Channel, see [Join the Office Insider Program](https://insider.office.com/join/windows).
+To try out the custom functions integration with data types, you first need to [Join the Office Insider Program](https://insider.office.com/join), and then choose the **Beta Channel** Insider level. You must use a Windows device, and your Excel desktop application must be using the **Beta Channel** to support this feature. To learn more about accessing the Beta Channel, see [How to get Office Insider builds on Windows](https://insider.office.com/join/windows).
 
 ### Manually update JSON metadata
 
-After joining the Office Insider program, manually update your JSON metadata. The JSON metadata property required to use the data types integration with custom functions feature is `allowCustomDataForDataTypeAny`. Set this property to `true`.
+After joining Office Insider, manually update your JSON metadata. The JSON metadata property required to use the data types integration with custom functions feature is `allowCustomDataForDataTypeAny`. Set this property to `true`.
 
 For more information, see [Manually create JSON metadata: allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview).
 

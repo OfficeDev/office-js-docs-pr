@@ -25,7 +25,7 @@ The gateway to the data types APIs is the `Range.valueAsJSON` property. This pro
 
 ### JSON schema
 
-Data types use a consistent JSON schema which defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data and additional information such as `basicValue`, `numberFormat`, or `address`. Each `CellValueType` has properties available according to that type. For example, the `webImage` type includes the [altText](/javascript/api/excel/excel.webimagecellvalue#altText) and [attribution](/javascript/api/excel/excel.webimagecellvalue#attribution) properties. The following article sections show JSON code samples for the formatted number value, entity value, and web image data types.
+Data types use a consistent JSON schema which defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data and additional information such as `basicValue`, `numberFormat`, or `address`. Each `CellValueType` has properties available according to that type. For example, the `webImage` type includes the [altText](/javascript/api/excel/excel.webimagecellvalue#altText) and [attribution](/javascript/api/excel/excel.webimagecellvalue#attribution) properties. The following sections show JSON code samples for the formatted number value, entity value, and web image data types.
 
 ## Formatted number values
 
