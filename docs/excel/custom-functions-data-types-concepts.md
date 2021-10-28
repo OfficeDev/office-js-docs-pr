@@ -20,7 +20,7 @@ To learn more about using data types with an Excel add-in, see [Excel data types
 Custom functions can recognize data types and take them as both input and output values. A custom function can generate a new data type or accept an existing data type as an input parameter. Custom functions use the same JSON schema for data types as the Excel JavaScript API, and this JSON schema is maintained as custom functions calculate and evaluate.
 
 > [!NOTE]
-> Custom functions do not support the full functionality of the enhanced error objects offered by data types. Custom functions can accept data types error objects, but the data type error object may not be maintained throughout calculation. At this time, custom functions support the errors included in the [CustomFunctions.Error object](/custom-functions-errors.md).
+> Custom functions do not support the full functionality of the enhanced error objects offered by data types. A custom function can accept a data types error object, but it may not be maintained throughout calculation. At this time, custom functions support the errors included in the [CustomFunctions.Error object](/custom-functions-errors.md).
 
 ## Enable data types for custom functions
 
@@ -38,7 +38,7 @@ For more information, see [Manually create JSON metadata: allowCustomDataForData
 
 ### Script Lab option
 
-The custom functions integration with data types is available for testing with Script Lab, in addition to the manual JSON metadata update described in the preceding section. To test this feature with Script Lab, update the settings using the following steps.
+The custom functions integration with data types is available for testing with Script Lab, in addition to the manual JSON metadata update described in the preceding section. To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md). To test this feature with Script Lab, update the settings using the following steps.
 
 1. Open the Script Lab **Code** task pane.
 1. In the lower right corner, select the **Settings** button.
