@@ -62,7 +62,7 @@ npm install office-addin-lint --save-dev
 npm install eslint-plugin-office-addins --save-dev
 ```
 
-If you create an Office Add-in project with the Yo Office tool, then the rest of the setup is done for you. Start the linter with the following command either in the terminal of an editor, such as Visual Studio Code, or in a command prompt. (For information about installing the Yo Office tool, go through one of our Office Add-in quick starts, such as [this one for Excel add-ins](../quickstarts/excel-quickstart-jquery.md).)
+If you create an Office Add-in project with the Yo Office tool, then the rest of the setup is done for you. Run the linter with the following command either in the terminal of an editor, such as Visual Studio Code, or in a command prompt. Problems found by the linter appear in the terminal or prompt, and also appear directly in the code when you're using an editor that supports linter messages, such as Visual Studio Code. (For information about installing the Yo Office tool, go through one of our Office Add-in quick starts, such as [this one for Excel add-ins](../quickstarts/excel-quickstart-jquery.md).)
 
 ```command&nbsp;line
 npm run lint
@@ -89,7 +89,7 @@ If your add-in project was created another way, take the following steps.
    "lint": "office-addin-lint check",
    ```
 
-1. Turn on the linter with the following command either in the terminal of an editor, such as Visual Studio Code, or in a command prompt.
+1. Run the linter with the following command either in the terminal of an editor, such as Visual Studio Code, or in a command prompt. Problems found by the linter appear in the terminal or prompt, and also appear directly in the code when you're using an editor that supports linter messages, such as Visual Studio Code.
 
    ```command&nbsp;line
    npm run lint
