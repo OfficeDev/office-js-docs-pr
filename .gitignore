@@ -1,3 +1,4 @@
+.vscode/
 log/
 obj/
 _site/
@@ -7,4 +8,3 @@ _repo.*/
 *.DS_Store
 
 .openpublishing.buildcore.ps1
-.vscode/
