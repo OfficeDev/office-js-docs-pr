@@ -140,7 +140,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 > [!NOTE]
 > The `allowCustomDataForDataTypeAny` property is currently only available in public preview and is only compatible with Windows devices. To use this feature, you need to join the [Office Insider Program](https://insider.office.com/) and then choose the **Beta Channel** Insider level. To learn more, see [Join the Office Insider Program](https://insider.office.com/join/windows).
 
-The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting this value to `true` allows a custom function to accept data types as input and output values. To learn more, see [Custom functions and data types core concepts](/custom-functions-data-types-concepts.md).
+The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting this value to `true` allows a custom function to accept data types as parameters and return values. To learn more, see [Custom functions and data types core concepts](/custom-functions-data-types-concepts.md).
 
 Unlike most of the other JSON metadata properties, `allowCustomDataForDataTypeAny` is a top-level property and contains no sub-properties. See the preceding [JSON metadata code sample](#json-metadata-example) for an example of how to format this property.
 

@@ -17,7 +17,7 @@ To learn more about using data types with an Excel add-in, see [Excel data types
 
 ## How custom functions handle data types
 
-Custom functions can recognize data types and take them as both input and output values. A custom function can generate a new data type or accept an existing data type as an input parameter. Custom functions use the same JSON schema for data types as the Excel JavaScript API, and this JSON schema is maintained as custom functions calculate and evaluate.
+Custom functions can recognize data types and accept them as parameter values. A custom function can create a new data type for a return value. Custom functions use the same JSON schema for data types as the Excel JavaScript API, and this JSON schema is maintained as custom functions calculate and evaluate.
 
 > [!NOTE]
 > Custom functions do not support the full functionality of the enhanced error objects offered by data types. A custom function can accept a data types error object, but it may not be maintained throughout calculation. At this time, custom functions support the errors included in the [CustomFunctions.Error object](/custom-functions-errors.md).

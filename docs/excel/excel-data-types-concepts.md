@@ -21,7 +21,7 @@ This article describes how to use the [Excel JavaScript API](../reference/overvi
 
 ## Core concepts
 
-The gateway to the data types APIs is the `Range.valueAsJSON` property. This property is similar to [Range.values](/javascript/api/excel/excel.range#values), but `Range.values` only returns the four basic types: string, number, boolean, or error values. `Range.valueAsJSON` can return expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
+Use the `Range.valueAsJSON` property to work with data type values. This property is similar to [Range.values](/javascript/api/excel/excel.range#values), but `Range.values` only returns the four basic types: string, number, boolean, or error values. `Range.valueAsJSON` can return expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
 
 ### JSON schema
 
