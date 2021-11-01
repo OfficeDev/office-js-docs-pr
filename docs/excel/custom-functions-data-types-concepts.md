@@ -1,7 +1,7 @@
 ---
 title: Custom functions and data types core concepts
 description: 'Learn the core concepts for using Excel data types with your custom functions.'
-ms.date: 10/28/2021
+ms.date: 11/01/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -95,6 +95,6 @@ function getEntityAttribute(value, attribute) {
 ## See also
 
 * [Custom functions and data types overview](/custom-functions-data-types-overview.md)
-* [Excel data types overview](/excel-data-types-overview.md)
+* [Overview of data types in Excel add-ins](/excel-data-types-overview.md)
 * [Excel data types core concepts](/excel-data-types-concepts.md)
 * [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
