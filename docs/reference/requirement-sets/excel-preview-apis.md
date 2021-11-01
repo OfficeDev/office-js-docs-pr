@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript preview APIs
 description: 'Details about upcoming Excel JavaScript APIs.'
-ms.date: 10/14/2021
+ms.date: 10/29/2021
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -16,7 +16,7 @@ The following table provides a concise summary of the APIs, while the subsequent
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| Custom data types | An extension of existing Excel data types, including support for formatted numbers and web images. | [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue), [CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes), [CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes), [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue), [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue), [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue), [StringCellValue](/javascript/api/excel/excel.stringcellvalue), [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue), [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) |
+| Custom data types | An extension of existing Excel data types, including support for formatted numbers and web images. | [ArrayCellValue](/javascript/api/excel/excel.arraycellvalue), [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue), [CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes), [CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes), [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue), [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue), [EntityCellValue](/javascript/api/excel/excel.entitycellvalue), [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue), [StringCellValue](/javascript/api/excel/excel.stringcellvalue), [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue), [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) |
 | Custom data types errors | Error objects that support custom data types. | [BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue), [BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue), [CalcErrorCellValue](/javascript/api/excel/excel.calcerrorcellvalue), [ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue), [Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue), [FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue), [GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue), [NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue), [NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue), [NullErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue), [NumErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue), [RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue), [SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue), [ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|
 | Document tasks | Turn comments into tasks assigned to users. | [DocumentTask](/javascript/api/excel/excel.documenttask) |
 | Identities | Manage user identities, including display name and email address. | [Identity](/javascript/api/excel/excel.identity), [IdentityCollection](/javascript/api/excel/excel.identitycollection), [IdentityEntity](/javascript/api/excel/excel.identityentity) |
@@ -44,28 +44,39 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 ||[items](/javascript/api/excel/excel.alloweditrangecollection#items)|Gets the loaded child items in this collection.|
 ||[pauseProtection(password: string)](/javascript/api/excel/excel.alloweditrangecollection#pauseProtection_password_)|Pauses worksheet protection for all `AllowEditRange` objects in the collection that have the given password for the user in a given session.|
 |[AllowEditRangeOptions](/javascript/api/excel/excel.alloweditrangeoptions)|[password](/javascript/api/excel/excel.alloweditrangeoptions#password)|The password associated with the `AllowEditRange`.|
-|[BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue)|[errorSubType](/javascript/api/excel/excel.blockederrorcellvalue#errorSubType)|Represents the type of `BlockedErrorCellValue`.|
+|[ArrayCellValue](/javascript/api/excel/excel.arraycellvalue)|[basicType](/javascript/api/excel/excel.arraycellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.arraycellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[elements](/javascript/api/excel/excel.arraycellvalue#elements)|Represents the elements of the array.|
+||[type](/javascript/api/excel/excel.arraycellvalue#type)|Represents the type of this cell value.|
+|[BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue)|[basicType](/javascript/api/excel/excel.blockederrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.blockederrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorSubType](/javascript/api/excel/excel.blockederrorcellvalue#errorSubType)|Represents the type of `BlockedErrorCellValue`.|
 ||[errorType](/javascript/api/excel/excel.blockederrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.blockederrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.blockederrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.blockederrorcellvalue#type)|Represents the type of this cell value.|
-|[BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)|[primitive](/javascript/api/excel/excel.booleancellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.booleancellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+|[BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)|[basicType](/javascript/api/excel/excel.booleancellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.booleancellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.booleancellvalue#type)|Represents the type of this cell value.|
-|[BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.busyerrorcellvalue#errorSubType)|Represents the type of `BusyErrorCellValue`.|
+|[BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue)|[basicType](/javascript/api/excel/excel.busyerrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.busyerrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorSubType](/javascript/api/excel/excel.busyerrorcellvalue#errorSubType)|Represents the type of `BusyErrorCellValue`.|
 ||[errorType](/javascript/api/excel/excel.busyerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.busyerrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.busyerrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.busyerrorcellvalue#type)|Represents the type of this cell value.|
-|[CalcErrorCellValue](/javascript/api/excel/excel.calcerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.calcerrorcellvalue#errorSubType)|Represents the type of `CalcErrorCellValue`.|
+|[CalcErrorCellValue](/javascript/api/excel/excel.calcerrorcellvalue)|[basicType](/javascript/api/excel/excel.calcerrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.calcerrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorSubType](/javascript/api/excel/excel.calcerrorcellvalue#errorSubType)|Represents the type of `CalcErrorCellValue`.|
 ||[errorType](/javascript/api/excel/excel.calcerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.calcerrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.calcerrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.calcerrorcellvalue#type)|Represents the type of this cell value.|
 |[CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes)|[licenseAddress](/javascript/api/excel/excel.cellvalueattributionattributes#licenseAddress)|Represents a URL to a license or source that describes how this property can be used.|
 ||[licenseText](/javascript/api/excel/excel.cellvalueattributionattributes#licenseText)|Represents a name for the license that governs this property.|
 ||[sourceAddress](/javascript/api/excel/excel.cellvalueattributionattributes#sourceAddress)|Represents a URL to the source of the `CellValue`.|
 ||[sourceText](/javascript/api/excel/excel.cellvalueattributionattributes#sourceText)|Represents a name for the source of the `CellValue`.|
+|[CellValuePropertyMetadata](/javascript/api/excel/excel.cellvaluepropertymetadata)|[attribution](/javascript/api/excel/excel.cellvaluepropertymetadata#attribution)|Represents attribution information to describe the source and license requirements for using this property.|
+||[excludeFrom](/javascript/api/excel/excel.cellvaluepropertymetadata#excludeFrom)|Represents which features this property is excluded from.|
+||[sublabel](/javascript/api/excel/excel.cellvaluepropertymetadata#sublabel)|Represents the sublabel for this property shown in card view.|
+|[CellValuePropertyMetadataExclusions](/javascript/api/excel/excel.cellvaluepropertymetadataexclusions)|[autoComplete](/javascript/api/excel/excel.cellvaluepropertymetadataexclusions#autoComplete)|True represents that the property is excluded from the properties shown by auto complete.|
+||[calcCompare](/javascript/api/excel/excel.cellvaluepropertymetadataexclusions#calcCompare)|True represents that the property is excluded from the properties used to compare cell values during recalc.|
+||[cardView](/javascript/api/excel/excel.cellvaluepropertymetadataexclusions#cardView)|True represents that the property is excluded from the properties shown by card view.|
+||[dotNotation](/javascript/api/excel/excel.cellvaluepropertymetadataexclusions#dotNotation)|True represents that the property is excluded from the properties which can be accessed via the FIELDVALUE function.|
 |[CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes)|[description](/javascript/api/excel/excel.cellvalueproviderattributes#description)|Represents the provider description property that is used in card view if no logo is specified.|
 ||[logoSourceAddress](/javascript/api/excel/excel.cellvalueproviderattributes#logoSourceAddress)|Represents a URL used to download an image that will be used as a logo in card view.|
 ||[logoTargetAddress](/javascript/api/excel/excel.cellvalueproviderattributes#logoTargetAddress)|Represents a URL that is the navigation target if the user clicks on the logo element in card view.|
@@ -75,14 +86,14 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.commentreply#assignTask_assignee_)|Assigns the task attached to the comment to the given user as the sole assignee.|
 ||[getTask()](/javascript/api/excel/excel.commentreply#getTask__)|Gets the task associated with this comment reply's thread.|
 ||[getTaskOrNullObject()](/javascript/api/excel/excel.commentreply#getTaskOrNullObject__)|Gets the task associated with this comment reply's thread.|
-|[ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue)|[errorSubType](/javascript/api/excel/excel.connecterrorcellvalue#errorSubType)|Represents the type of `ConnectErrorCellValue`.|
+|[ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue)|[basicType](/javascript/api/excel/excel.connecterrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.connecterrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorSubType](/javascript/api/excel/excel.connecterrorcellvalue#errorSubType)|Represents the type of `ConnectErrorCellValue`.|
 ||[errorType](/javascript/api/excel/excel.connecterrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.connecterrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.connecterrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.connecterrorcellvalue#type)|Represents the type of this cell value.|
-|[Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue)|[errorType](/javascript/api/excel/excel.div0errorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.div0errorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.div0errorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+|[Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue)|[basicType](/javascript/api/excel/excel.div0errorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.div0errorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorType](/javascript/api/excel/excel.div0errorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
 ||[type](/javascript/api/excel/excel.div0errorcellvalue#type)|Represents the type of this cell value.|
 |[DocumentTask](/javascript/api/excel/excel.documenttask)|[assignees](/javascript/api/excel/excel.documenttask#assignees)|Returns a collection of assignees of the task.|
 ||[changes](/javascript/api/excel/excel.documenttask#changes)|Gets the change records of the task.|
@@ -119,24 +130,30 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 ||[items](/javascript/api/excel/excel.documenttaskcollection#items)|Gets the loaded child items in this collection.|
 |[DocumentTaskSchedule](/javascript/api/excel/excel.documenttaskschedule)|[dueDateTime](/javascript/api/excel/excel.documenttaskschedule#dueDateTime)|Gets the date and time that the task is due.|
 ||[startDateTime](/javascript/api/excel/excel.documenttaskschedule#startDateTime)|Gets the date and time that the task should start.|
-|[DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)|[primitive](/javascript/api/excel/excel.doublecellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.doublecellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+|[DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)|[basicType](/javascript/api/excel/excel.doublecellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.doublecellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.doublecellvalue#type)|Represents the type of this cell value.|
-|[EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)|[primitive](/javascript/api/excel/excel.emptycellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.emptycellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+|[EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)|[basicType](/javascript/api/excel/excel.emptycellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.emptycellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.emptycellvalue#type)|Represents the type of this cell value.|
-|[FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue)|[errorSubType](/javascript/api/excel/excel.fielderrorcellvalue#errorSubType)|Represents the type of `FieldErrorCellValue`.|
+|[EntityCellValue](/javascript/api/excel/excel.entitycellvalue)|[basicType](/javascript/api/excel/excel.entitycellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.entitycellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[properties: {            [key: string]: CellValue & {                propertyMetadata](/javascript/api/excel/excel.entitycellvalue#properties)|Represents the properties of this entity and their metadata.|
+||[propertyMetadata](/javascript/api/excel/excel.entitycellvalue#propertyMetadata)||
+||[text](/javascript/api/excel/excel.entitycellvalue#text)|Represents the text shown when a cell with this value is rendered.|
+||[type](/javascript/api/excel/excel.entitycellvalue#type)|Represents the type of this cell value.|
+|[FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue)|[basicType](/javascript/api/excel/excel.fielderrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.fielderrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorSubType](/javascript/api/excel/excel.fielderrorcellvalue#errorSubType)|Represents the type of `FieldErrorCellValue`.|
 ||[errorType](/javascript/api/excel/excel.fielderrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.fielderrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.fielderrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.fielderrorcellvalue#type)|Represents the type of this cell value.|
-|[FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)|[numberFormat](/javascript/api/excel/excel.formattednumbercellvalue#numberFormat)|Returns the number format string that is used to display this value.|
-||[primitive](/javascript/api/excel/excel.formattednumbercellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.formattednumbercellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+|[FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)|[basicType](/javascript/api/excel/excel.formattednumbercellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.formattednumbercellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[numberFormat](/javascript/api/excel/excel.formattednumbercellvalue#numberFormat)|Returns the number format string that is used to display this value.|
 ||[type](/javascript/api/excel/excel.formattednumbercellvalue#type)|Represents the type of this cell value.|
-|[GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue)|[errorType](/javascript/api/excel/excel.gettingdataerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.gettingdataerrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.gettingdataerrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+|[GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue)|[basicType](/javascript/api/excel/excel.gettingdataerrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.gettingdataerrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorType](/javascript/api/excel/excel.gettingdataerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
 ||[type](/javascript/api/excel/excel.gettingdataerrorcellvalue#type)|Represents the type of this cell value.|
 |[Identity](/javascript/api/excel/excel.identity)|[displayName](/javascript/api/excel/excel.identity#displayName)|Represents the user's display name.|
 ||[email](/javascript/api/excel/excel.identity#email)|Represents the user's email address.|
@@ -168,22 +185,22 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 ||[getItemOrNullObject(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemOrNullObject_key_)|Gets a linked data type by ID.|
 ||[items](/javascript/api/excel/excel.linkeddatatypecollection#items)|Gets the loaded child items in this collection.|
 ||[requestRefreshAll()](/javascript/api/excel/excel.linkeddatatypecollection#requestRefreshAll__)|Makes a request to refresh all the linked data types in the collection.|
-|[NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue)|[errorType](/javascript/api/excel/excel.naerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.naerrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.naerrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
-||[type](/javascript/api/excel/excel.naerrorcellvalue#type)|Represents the type of this cell value.|
-|[NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue)|[errorType](/javascript/api/excel/excel.nameerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.nameerrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.nameerrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+|[NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue)|[basicType](/javascript/api/excel/excel.nameerrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.nameerrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorType](/javascript/api/excel/excel.nameerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
 ||[type](/javascript/api/excel/excel.nameerrorcellvalue#type)|Represents the type of this cell value.|
 |[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItemOrNullObject_key_)|Gets a sheet view using its name.|
-|[NullErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue)|[errorType](/javascript/api/excel/excel.nullerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.nullerrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.nullerrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+|[NotAvailableErrorCellValue](/javascript/api/excel/excel.notavailableerrorcellvalue)|[basicType](/javascript/api/excel/excel.notavailableerrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.notavailableerrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorType](/javascript/api/excel/excel.notavailableerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
+||[type](/javascript/api/excel/excel.notavailableerrorcellvalue#type)|Represents the type of this cell value.|
+|[NullErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue)|[basicType](/javascript/api/excel/excel.nullerrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.nullerrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorType](/javascript/api/excel/excel.nullerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
 ||[type](/javascript/api/excel/excel.nullerrorcellvalue#type)|Represents the type of this cell value.|
-|[NumErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue)|[errorType](/javascript/api/excel/excel.numerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.numerrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.numerrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+|[NumErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue)|[basicType](/javascript/api/excel/excel.numerrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.numerrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorType](/javascript/api/excel/excel.numerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
 ||[type](/javascript/api/excel/excel.numerrorcellvalue#type)|Represents the type of this cell value.|
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getCell_dataHierarchy__rowItems__columnItems_)|Gets a unique cell in the PivotTable based on a data hierarchy and the row and column items of their respective hierarchies.|
 ||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotStyle)|The style applied to the PivotTable.|
@@ -192,10 +209,10 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 ||[getDataSourceType()](/javascript/api/excel/excel.pivottable#getDataSourceType__)|Gets the type of the data source for the PivotTable.|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject()](/javascript/api/excel/excel.pivottablescopedcollection#getFirstOrNullObject__)|Gets the first PivotTable in the collection.|
 |[Range](/javascript/api/excel/excel.range)|[getDependents()](/javascript/api/excel/excel.range#getDependents__)|Returns a `WorkbookRangeAreas` object that represents the range containing all the dependents of a cell in the same worksheet or in multiple worksheets.|
-|[RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue)|[errorSubType](/javascript/api/excel/excel.referrorcellvalue#errorSubType)|Represents the type of `RefErrorCellValue`.|
+|[RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue)|[basicType](/javascript/api/excel/excel.referrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.referrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorSubType](/javascript/api/excel/excel.referrorcellvalue#errorSubType)|Represents the type of `RefErrorCellValue`.|
 ||[errorType](/javascript/api/excel/excel.referrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.referrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.referrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.referrorcellvalue#type)|Represents the type of this cell value.|
 |[RefreshModeChangedEventArgs](/javascript/api/excel/excel.refreshmodechangedeventargs)|[refreshMode](/javascript/api/excel/excel.refreshmodechangedeventargs#refreshMode)|The linked data type refresh mode.|
 ||[serviceId](/javascript/api/excel/excel.refreshmodechangedeventargs#serviceId)|The unique ID of the object whose refresh mode was changed.|
@@ -211,15 +228,15 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 |[Slicer](/javascript/api/excel/excel.slicer)|[nameInFormula](/javascript/api/excel/excel.slicer#nameInFormula)|Represents the slicer name used in the formula.|
 ||[setStyle(style: string \| SlicerStyle \| BuiltInSlicerStyle)](/javascript/api/excel/excel.slicer#setStyle_style_)|Sets the style applied to the slicer.|
 ||[slicerStyle](/javascript/api/excel/excel.slicer#slicerStyle)|The style applied to the slicer.|
-|[SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.spillerrorcellvalue#errorSubType)|Represents the type of `SpillErrorCellValue`.|
+|[SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue)|[basicType](/javascript/api/excel/excel.spillerrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.spillerrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorSubType](/javascript/api/excel/excel.spillerrorcellvalue#errorSubType)|Represents the type of `SpillErrorCellValue`.|
 ||[errorType](/javascript/api/excel/excel.spillerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.spillerrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.spillerrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#spilledColumns)|Represents the number of columns that would spill if there were no #SPILL! error.|
 ||[spilledRows](/javascript/api/excel/excel.spillerrorcellvalue#spilledRows)|Represents the number of rows that would spill if there were no #SPILL! error.|
 ||[type](/javascript/api/excel/excel.spillerrorcellvalue#type)|Represents the type of this cell value.|
-|[StringCellValue](/javascript/api/excel/excel.stringcellvalue)|[primitive](/javascript/api/excel/excel.stringcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.stringcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+|[StringCellValue](/javascript/api/excel/excel.stringcellvalue)|[basicType](/javascript/api/excel/excel.stringcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.stringcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.stringcellvalue#type)|Represents the type of this cell value.|
 |[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearStyle__)|Changes the table to use the default table style.|
 ||[onFiltered](/javascript/api/excel/excel.table#onFiltered)|Occurs when a filter is applied on a specific table.|
@@ -229,19 +246,19 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableId)|Gets the ID of the table in which the filter is applied.|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|Gets the type of the event.|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetId)|Gets the ID of the worksheet which contains the table.|
-|[ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.valueerrorcellvalue#errorSubType)|Represents the type of `ValueErrorCellValue`.|
+|[ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|[basicType](/javascript/api/excel/excel.valueerrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.valueerrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
+||[errorSubType](/javascript/api/excel/excel.valueerrorcellvalue#errorSubType)|Represents the type of `ValueErrorCellValue`.|
 ||[errorType](/javascript/api/excel/excel.valueerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
-||[primitive](/javascript/api/excel/excel.valueerrorcellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.valueerrorcellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.valueerrorcellvalue#type)|Represents the type of this cell value.|
-|[ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)|[primitive](/javascript/api/excel/excel.valuetypenotavailablecellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.valuetypenotavailablecellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+|[ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)|[basicType](/javascript/api/excel/excel.valuetypenotavailablecellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.valuetypenotavailablecellvalue#type)|Represents the type of this cell value.|
 |[WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)|[address](/javascript/api/excel/excel.webimagecellvalue#address)|Represents the URL from which the image will be downloaded.|
 ||[altText](/javascript/api/excel/excel.webimagecellvalue#altText)|Represents the alternate text that can be used in accessibility scenarios to describe what the image represents.|
 ||[attribution](/javascript/api/excel/excel.webimagecellvalue#attribution)|Represents attribution information to describe the source and license requirements for using this image.|
-||[primitive](/javascript/api/excel/excel.webimagecellvalue#primitive)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[primitiveType](/javascript/api/excel/excel.webimagecellvalue#primitiveType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicType](/javascript/api/excel/excel.webimagecellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
+||[basicValue](/javascript/api/excel/excel.webimagecellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
 ||[provider](/javascript/api/excel/excel.webimagecellvalue#provider)|Represents information that describes the entity or individual who provided the image.|
 ||[relatedImagesAddress](/javascript/api/excel/excel.webimagecellvalue#relatedImagesAddress)|Represents the URL of a webpage with images that are considered related to this `WebImageCellValue`.|
 ||[type](/javascript/api/excel/excel.webimagecellvalue#type)|Represents the type of this cell value.|
