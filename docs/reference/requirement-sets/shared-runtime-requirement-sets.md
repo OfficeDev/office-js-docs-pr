@@ -1,7 +1,7 @@
 ---
 title: Shared runtime requirement sets
 description: 'Specifies the platforms and Office applications that support the SharedRuntime APIs.'
-ms.date: 10/05/2021
+ms.date: 11/01/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
 ---
@@ -19,12 +19,15 @@ The following table lists the SharedRuntime 1.1 requirement set, the Office clie
 | SharedRuntime 1.1  | Build 16.0.14326.20454 or later | Version 2002 (Build 12527.20092) or later | N/A | 16.35 or later | February 2020 | N/A |
 
 > [!IMPORTANT]
-> The shared JavaScript runtime requirement set is only available on the following Office applications and platforms.
->
-> - Excel on the web, Windows, and Mac.
-> - PowerPoint on Windows (build 13218.10000 or later). The shared JavaScript runtime for PowerPoint is currently in preview and subject to change. It is not supported for use in production environments. To get the latest build you need to [join Office Insider](https://insider.office.com/join). A good way to try out preview features is by using a Microsoft 365 subscription. If you don't already have a Microsoft 365 subscription, you can get one by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+> The SharedRuntime 1.1 requirement set is only released for Excel on the web, Windows, and Mac. The following table lists additional application builds that support a preview of the shared JavaScript runtime. The preview version of the shared runtime is subject to change. It is not supported for use in production environments. To get the latest build you need to [join Office Insider](https://insider.office.com/join). A good way to try out preview features is by using a Microsoft 365 subscription. If you don't already have a Microsoft 365 subscription, you can get one by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 >
 > At this time, the shared JavaScript runtime is not supported on iPad or in one-time purchase versions of Office 2019 or earlier.
+
+|Office application |Build |Status |
+|-------------------|------|-------|
+|Word on Windows |build 16.0.13218.10000 or later |Preview |
+|Word on Mac |Build 16.46.207.0 or later |Preview |
+|PowerPoint on Windows |Build 13218.10000 or later |Preview |
 
 ## Office versions and build numbers
 
