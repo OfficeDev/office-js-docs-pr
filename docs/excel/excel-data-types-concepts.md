@@ -31,7 +31,7 @@ Data types use a consistent JSON schema which defines the [CellValueType](/javas
 
 The [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue) object enables Excel add-ins to define a `numberFormat` property for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
 
-The following JSON code sample shows the schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI.
+The following JSON code sample shows a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI.
 
 ```json
 // This is an example of the JSON schema of a formatted number value.
@@ -45,12 +45,12 @@ const myDate = {
 
 ## Entity values
 
-Entity values function as a container within data types, similar to objects in other programming languages. Entities also support arrays as properties of an entity value.
+An entity value is a container for data types, similar to an object in object oriented programming. Entities also support arrays as properties of an entity value.
 
-The following JSON code sample shows the schema of an entity value that contains text, an image, a date, and an additional text value.
+The following JSON code sample shows an entity value that contains text, an image, a date, and an additional text value.
 
 ```json
-// This is an example of the JSON schema of an entity value.
+// This is an example of the JSON for an entity value.
 // The entity contains text and properties which contain an image, a date, and another text value.
 const myEntity = {
     type: Excel.CellValueType.entity,
@@ -66,14 +66,14 @@ const myEntity = {
 };
 ```
 
-## Web images
+## Web image values
 
 The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
 
-The following JSON code sample shows the schema of a web image.
+The following JSON code sample shows how to represent a web image.
 
 ```json
-// This is an example of the JSON schema of a web image.
+// This is an example of the JSON for a web image.
 const myImage = {
     type: Excel.CellValueType.webImage,
     address: "https://bit.ly/2YGOwtw"
