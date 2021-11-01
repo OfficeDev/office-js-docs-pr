@@ -20,21 +20,17 @@ To learn more about using data types with an Excel add-in, see [Excel data types
 Custom functions can recognize data types and accept them as parameter values. A custom function can create a new data type for a return value. Custom functions use the same JSON schema for data types as the Excel JavaScript API, and this JSON schema is maintained as custom functions calculate and evaluate.
 
 > [!NOTE]
-> Custom functions do not support the full functionality of the enhanced error objects offered by data types. A custom function can accept a data types error object, but it may not be maintained throughout calculation. At this time, custom functions support the errors included in the [CustomFunctions.Error object](/custom-functions-errors.md).
+> Custom functions do not support the full functionality of the enhanced error objects offered by data types. A custom function can accept a data types error object, but it won't be maintained throughout calculation. At this time, custom functions only support the errors included in the [CustomFunctions.Error object](/custom-functions-errors.md).
 
 ## Enable data types for custom functions
 
-The data types integration with custom functions is currently only available in public preview. To try out this new feature, you need to join the Office Insider program, adjust your Office update channel, and manually update your JSON metadata. For more temporary testing, you can customize your Script Lab settings instead of manually updating JSON metadata. The following sections outline these steps in more detail.
-
-### Join the Office Insider Program
-
-To try out the custom functions integration with data types, you first need to [Join the Office Insider Program](https://insider.office.com/join), and then choose the **Beta Channel** Insider level. You must use a Windows device, and your Excel desktop application must be using the **Beta Channel** to support this feature. To learn more about accessing the Beta Channel, see [How to get Office Insider builds on Windows](https://insider.office.com/join/windows).
+To use this feature, you need to manually update your JSON metadata. For more temporary testing, you can customize your Script Lab settings instead of manually updating JSON metadata. The following sections outline these steps in more detail.
 
 ### Manually update JSON metadata
 
-After joining Office Insider, manually update your JSON metadata. The JSON metadata property required to use the data types integration with custom functions feature is `allowCustomDataForDataTypeAny`. Set this property to `true`.
+Custom functions projects include a JSON metadata file. This JSON metadata file differs from the JSON schema used by data types APIs. To use the data types integration with custom functions, the custom functions JSON metadata file must be manually updated to include the property `allowCustomDataForDataTypeAny`. Set this property to `true`.
 
-For more information, see [Manually create JSON metadata: allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview).
+For a full description of the manual JSON creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview) for additional details about this property.
 
 ### Script Lab option
 
