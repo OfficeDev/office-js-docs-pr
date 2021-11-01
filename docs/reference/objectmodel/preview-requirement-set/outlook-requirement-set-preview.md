@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API preview requirement set
 description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 10/05/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
 ---
 
@@ -19,7 +19,7 @@ The Outlook add-in API subset of the Office JavaScript API includes objects, met
 >
 > For other features, you may be able to request access to preview bits for Outlook on the web using your Microsoft 365 account by completing and submitting [this form](https://aka.ms/OWAPreview). "Request preview access" is noted on those features.
 
-The preview requirement set includes all of the features of [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md).
+The preview requirement set includes all of the features of [requirement set 1.11](../requirement-set-1.11/outlook-requirement-set-1.11.md).
 
 ## Features in preview
 
@@ -99,7 +99,7 @@ Added a new object that allows you to manage the delivery date and time of a mes
 
 This feature was released in [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). However, additional events are now available in preview. To learn more, refer to [Supported events](../../../outlook/autolaunch.md#supported-events).
 
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
 
 <br>
 
@@ -134,26 +134,6 @@ Added ability to get Office theme.
 Added `OfficeThemeChanged` event to `Mailbox`.
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
-
-<br>
-
----
-
----
-
-### Session data
-
-#### [Office.SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true)
-
-Added a new object that represents the session data of an item.
-
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
-
-#### [Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
-
-Added a new property to manage the session data of an item in Compose mode.
-
-**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)
 
 <br>
 

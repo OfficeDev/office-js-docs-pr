@@ -1,7 +1,7 @@
 ---
 title: Validate an Office Add-in's manifest
 description: 'Learn how to validate the manifest of an Office Add-in using the XML schema and other tools.'
-ms.date: 09/18/2020
+ms.date: 10/29/2020
 ms.localizationpriority: medium
 ---
 
@@ -47,7 +47,7 @@ If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.co
     > If this command is not available or not working, run the following command instead to force the use of the latest version of the office-addin-manifest tool (replacing `MANIFEST_FILE` with the name of the manifest file).
     >
     > ```command&nbsp;line
-    > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
+    > npx office-addin-manifest validate MANIFEST_FILE
     > ```
 
 ## Validate your manifest against the XML schema

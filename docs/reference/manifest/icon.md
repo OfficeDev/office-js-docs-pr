@@ -1,7 +1,7 @@
 ---
 title: Icon element in the manifest file
 description: Defines Image elements for Button or Menu controls.
-ms.date: 03/30/2021
+ms.date: 10/30/2021
 ms.localizationpriority: medium
 ---
 
@@ -38,7 +38,7 @@ An image for the button. The **resid** attribute can be no more than 32 characte
 
 ## Additional requirements for mobile form factors
 
-When the parent **Icon** element is a descendant of a [MobileFormFactor](mobileformfactor.md) element, the minimum required sizes are slightly different. The manifest must minimally provide 25, 32, and 48 pixel sizes. Each size provided must appear three times, with a `scale` attribute set to `1`, `2`, or `3`.
+When the parent **Icon** element is a descendant of a [MobileFormFactor](mobileformfactor.md) element, the minimum required sizes are slightly different. The manifest must minimally provide 25, 32, and 48 pixel sizes. Each size provided must appear three times, with a `scale` attribute set to `1`, `2`, or `3`. This attribute specifies the `UIScreen.scale` property for iOS devices. For more information, see [scale](https://developer.apple.com/documentation/uikit/uiscreen/1617836-scale).
 
 ```xml
 <Icon xsi:type="bt:MobileIconList">

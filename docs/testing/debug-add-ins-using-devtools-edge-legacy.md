@@ -12,6 +12,9 @@ This article shows how to debug the client-side code (JavaScript or TypeScript) 
 - You cannot, or don't wish to, debug using tools built into your IDE; or you are encountering a problem that only occurs when the add-in is run outside the IDE.
 - Your computer is using a combination of Windows and Office versions that use the original Edge webview control, EdgeHTML.
 
+> [!TIP]
+> For information about debugging with Edge Legacy inside Visual Studio Code, see [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
+
 To determine which browser you're using, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). 
 
 > [!TIP]
