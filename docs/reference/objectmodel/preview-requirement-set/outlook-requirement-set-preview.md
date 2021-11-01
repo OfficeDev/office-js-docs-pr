@@ -95,6 +95,18 @@ Added a new object that allows you to manage the delivery date and time of a mes
 
 ---
 
+### Event-based activation
+
+This feature was released in [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). However, additional events are now available in preview. To learn more, refer to [Supported events](../../../outlook/autolaunch.md#supported-events).
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
+
+<br>
+
+---
+
+---
+
 ### Integration with actionable messages
 
 #### [Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#methods)
