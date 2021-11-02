@@ -2,7 +2,7 @@
 title: Sideload Office Add-ins for testing from a network share
 description: 'Learn how to sideload an Office Add-in for testing from a network share'
 ms.date: 06/02/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Sideload Office Add-ins for testing from a network share

@@ -2,12 +2,12 @@
 title: Work with comments using the Excel JavaScript API
 description: 'Information on using the APIs to add, remove, and edit comments and comment threads.' 
 ms.date: 10/09/2020 
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Work with comments using the Excel JavaScript API
 
-This article describes how to add, read, modify, and remove comments in a workbook with the Excel JavaScript API. You can learn more about the comment feature from the [Insert comments and notes in Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) article.
+This article describes how to add, read, modify, and remove comments in a workbook with the Excel JavaScript API. You can learn more about the comment feature from the [Insert comments and notes in Excel](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) article.
 
 In the Excel JavaScript API, a comment includes both the single initial comment and the connected threaded discussion. It is tied to an individual cell. Anyone viewing the workbook with sufficient permissions can reply to a comment. A [Comment](/javascript/api/excel/excel.comment) object stores those replies as [CommentReply](/javascript/api/excel/excel.commentreply) objects. You should consider a comment to be a thread and that a thread must have a special entry as the starting point.
 
@@ -166,7 +166,7 @@ Excel.run(function (context) {
 
 ## Mentions
 
-[Mentions](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) are used to tag colleagues in a comment. This sends them notifications with your comment's content. Your add-in can create these mentions on your behalf.
+[Mentions](https://support.microsoft.com/office/644bf689-31a0-4977-a4fb-afe01820c1fd) are used to tag colleagues in a comment. This sends them notifications with your comment's content. Your add-in can create these mentions on your behalf.
 
 Comments with mentions need to be created with [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) objects. Call `CommentCollection.add` with a `CommentRichContent` containing one or more mentions and specify `ContentType.mention` as the `contentType` parameter. The `content` string also needs to be formatted to insert the mention into the text. The format for a mention is: `<at id="{replyIndex}">{mentionName}</at>`.
 
@@ -316,4 +316,4 @@ function commentDeleted() {
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with workbooks using the Excel JavaScript API](excel-add-ins-workbooks.md)
 - [Work with Events using the Excel JavaScript API](excel-add-ins-events.md)
-- [Insert comments and notes in Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
+- [Insert comments and notes in Excel](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)

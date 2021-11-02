@@ -1,8 +1,8 @@
 ---
 title: Office.context - requirement set 1.3
 description: 'Office.Context object members available for Outlook add-ins using Mailbox API requirement set 1.3.'
-ms.date: 12/02/2020
-localization_priority: Normal
+ms.date: 10/08/2021
+ms.localizationpriority: medium
 ---
 
 # context (Mailbox requirement set 1.3)
@@ -75,13 +75,13 @@ function write(message){
 ---
 ---
 
-#### diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation)
+#### diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.3&preserve-view=true)
 
 Gets information about the environment in which the add-in is running.
 
 ##### Type
 
-*   [ContextInformation](/javascript/api/office/office.contextinformation)
+*   [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.3&preserve-view=true)
 
 ##### Requirements
 
@@ -147,13 +147,13 @@ function write(message){
 ---
 ---
 
-#### requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+#### requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.3&preserve-view=true)
 
 Provides a method for determining what requirement sets are supported on the current application and platform.
 
 ##### Type
 
-*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.3&preserve-view=true)
 
 ##### Requirements
 
@@ -168,12 +168,15 @@ Provides a method for determining what requirement sets are supported on the cur
 console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.1")));
 ```
 
+> [!IMPORTANT]
+> There is currently a bug where `isSetSupported('mailbox', '1.3')` erroneously returns `true` in Outlook on the web against Exchange 2013. To learn more about the supported combinations of requirement sets, Exchange servers, and Outlook clients, refer to [Requirement sets supported by Exchange servers and Outlook clients](../../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
+
 <br>
 
 ---
 ---
 
-#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings)
+#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.3&preserve-view=true)
 
 Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.
 
@@ -181,7 +184,7 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 
 ##### Type
 
-*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
+*   [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.3&preserve-view=true)
 
 ##### Requirements
 
@@ -196,13 +199,13 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 ---
 ---
 
-#### ui: [UI](/javascript/api/office/office.ui)
+#### ui: [UI](/javascript/api/office/office.ui?view=outlook-js-1.3&preserve-view=true)
 
 Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes, in your Office Add-ins.
 
 ##### Type
 
-*   [UI](/javascript/api/office/office.ui)
+*   [UI](/javascript/api/office/office.ui?view=outlook-js-1.3&preserve-view=true)
 
 ##### Requirements
 

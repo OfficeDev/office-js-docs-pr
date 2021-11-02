@@ -1,9 +1,9 @@
 ---
-ms.date: 07/27/2021
+ms.date: 10/05/2021
 title: "Configure your Office Add-in to use a shared JavaScript runtime"
 ms.prod: non-product-specific
 description: 'Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.'
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Configure your Office Add-in to use a shared JavaScript runtime
@@ -49,16 +49,20 @@ Follow these steps for a new or existing project to configure it to use a shared
     <DefaultSettings>
     ```
 
-1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section just inside the `<Host ...>` tag. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the ` <bt:Urls>` section near the bottom of the **manifest.xml** file.
+1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the ` <bt:Urls>` section near the bottom of the **manifest.xml** file.
+
+    > [!IMPORTANT]
+    > The `<Runtimes>` section must be entered after the `<Host>` element in the exact order shown in the following XML.
 
    ```xml
    <VersionOverrides ...>
      <Hosts>
        <Host ...>
-       <Runtimes>
-         <Runtime resid="Taskpane.Url" lifetime="long" />
-       </Runtimes>
+         <Runtimes>
+           <Runtime resid="Taskpane.Url" lifetime="long" />
+         </Runtimes>
        ...
+       </Host>
    ```
 
 1. If you generated an Excel add-in with custom functions, find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
@@ -191,7 +195,7 @@ When you add the `Runtime` element, you also specify a lifetime with a value of 
 ```
 
 > [!NOTE]
-> If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime), it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md).
+> If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## About the shared JavaScript runtime
 
@@ -215,9 +219,9 @@ For Office on Windows, the shared runtime uses Microsoft Edge with WebView2 (Chr
 
 ![Diagram of a custom function, task pane, and ribbon buttons all running in a shared browser runtime in Excel.](../images/custom-functions-in-browser-runtime.png)
 
-### Debugging
+### Debug
 
-When using a shared runtime, you can't use Visual Studio Code to debug custom functions in Excel on Windows at this time. You'll need to use developer tools instead. For more information, see [Debug add-ins using developer tools on Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
+When using a shared runtime, you can't use Visual Studio Code to debug custom functions in Excel on Windows at this time. You'll need to use developer tools instead. For more information, see [Debug add-ins using developer tools for Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md) or [Debug add-ins using developer tools for Edge Legacy](../testing/debug-add-ins-using-devtools-edge-legacy.md).
 
 ### Multiple task panes
 

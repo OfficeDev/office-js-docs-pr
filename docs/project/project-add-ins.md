@@ -4,7 +4,7 @@ description: 'Learn about task pane add-ins for Project.'
 ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Task pane add-ins for Project

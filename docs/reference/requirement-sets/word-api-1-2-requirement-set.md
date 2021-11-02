@@ -3,7 +3,7 @@ title: Word JavaScript API requirement set 1.2
 description: 'Details about the WordApi 1.2 requirement set'
 ms.date: 11/09/2020
 ms.prod: word
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # What's new in Word JavaScript API 1.2
@@ -28,8 +28,8 @@ The following table lists the APIs in Word JavaScript API requirement set 1.2. T
 ||[insertText(text: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.inlinepicture#insertText_text__insertLocation_)|Inserts text at the specified location.|
 ||[paragraph](/javascript/api/word/word.inlinepicture#paragraph)|Gets the parent paragraph that contains the inline image.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.inlinepicture#select_selectionMode_)|Selects the inline picture.|
-|[Range](/javascript/api/word/word.range)|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.range#insertInlinePictureFromBase64_base64EncodedImage__insertLocation_)|Inserts a picture at the specified location.|
-||[inlinePictures](/javascript/api/word/word.range#inlinePictures)|Gets the collection of inline picture objects in the range.|
+|[Range](/javascript/api/word/word.range)|[inlinePictures](/javascript/api/word/word.range#inlinePictures)|Gets the collection of inline picture objects in the range.|
+||[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.range#insertInlinePictureFromBase64_base64EncodedImage__insertLocation_)|Inserts a picture at the specified location.|
 
 ## See also
 

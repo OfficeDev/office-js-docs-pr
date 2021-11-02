@@ -2,7 +2,7 @@
 title: Use search options to find text in your Word add-in 
 description: 'Learn to use search options in your Word add-in'
 ms.date: 09/27/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Use search options to find text in your Word add-in

@@ -1,8 +1,8 @@
 ---
 title: WebApplicationInfo element in the manifest file
 description: 'Reference documentation of the WebApplicationInfo element for Office Add-ins manifest (XML) files.'
-ms.date: 07/30/2020
-localization_priority: Normal
+ms.date: 10/25/2021
+ms.localizationpriority: medium
 ---
 
 # WebApplicationInfo element
@@ -22,10 +22,8 @@ Supports single sign-on (SSO) in Office Add-ins. This element contains informati
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  **Id**    |  Yes   |  The **Application Id** of the add-in's associated service as registered in the Azure Active Directory v 2.0 endpoint.|
-|  **MsaId**    |  No   |  The client ID of your add-in's web application for MSA as registered in msm.live.com.|
 |  **Resource**  |  Yes   |  Specifies the **Application ID URI** of the add-in as registered in the Azure Active Directory v 2.0 endpoint.|
 |  [Scopes](scopes.md)                |  Yes  |  Specifies the permissions that the add-in needs to a resource, such as Microsoft Graph.  |
-|  [Authorizations](authorizations.md)  |  No   | Specifies the external resources that the add-in's web application needs authorization to and the required permissions.|
 
 ## WebApplicationInfo example
 
@@ -36,21 +34,13 @@ Supports single sign-on (SSO) in Office Add-ins. This element contains informati
     ...
     <WebApplicationInfo>
       <Id>12345678-abcd-1234-efab-123456789abc</Id>
-      <Resource>api://myDomain.com/12345678-abcd-1234-efab-123456789abc</Resource>
+      <Resource>api://contoso.com/12345678-abcd-1234-efab-123456789abc</Resource>
       <Scopes>
         <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
         <Scope>openid</Scope>
         <Scope>profile</Scope>
       </Scopes>
-      <Authorizations>
-        <Authorization>
-          <Resource>https://api.contoso.com</Resource>
-            <Scopes>
-              <Scope>profile</Scope>
-          </Scopes>
-        </Authorization>
-      </Authorizations>
     </WebApplicationInfo>
   </VersionOverrides>
 ...

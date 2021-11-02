@@ -12,7 +12,7 @@ metadata:
   ms.topic: hub-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 05/10/2021 #Required; mm/dd/yyyy format.
+  ms.date: 09/09/2021 #Required; mm/dd/yyyy format.
 
 # highlightedContent section
 # Maximum of 8 items
@@ -35,9 +35,9 @@ highlightedContent:
       title: "Microsoft Learn: Extend Office clients with Office Add-ins"
       url: /learn/paths/m365-office-add-in-associate
     # Card 5
-    - itemType: whats-new
-      title: Microsoft 365 Developer Blog
-      url: https://developer.microsoft.com/office/blogs/technology/office-add-ins
+    - itemType: sample
+      title: "Samples for Office Add-ins"
+      url: overview/office-add-in-code-samples.md
     # Card 6
     - itemType: how-to-guide
       title: Office Add-ins Beginner's guide
@@ -47,9 +47,9 @@ highlightedContent:
       title: Office JavaScript API reference documentation
       url: /javascript/api/overview
     # Card 8
-    - itemType: sample
-      title: "GitHub: Patterns and Practices for Office Add-ins"
-      url: https://github.com/OfficeDev/PnP-OfficeAddins
+    - itemType: whats-new
+      title: Microsoft 365 Developer Blog
+      url: https://developer.microsoft.com/office/blogs/technology/office-add-ins
 
 
 # conceptualContent section (optional)

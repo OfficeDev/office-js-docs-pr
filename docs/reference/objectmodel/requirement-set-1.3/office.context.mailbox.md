@@ -2,7 +2,7 @@
 title: Office.context.mailbox - requirement set 1.3
 description: 'Outlook Mailbox API requirement set 1.3 version of the Mailbox object model.'
 ms.date: 03/18/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # mailbox (requirement set 1.3)

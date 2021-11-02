@@ -1,8 +1,8 @@
 ---
 title: Set up your development environment
 description:  'Set up your developer environment to build Office Add-ins.'
-ms.date: 07/08/2021
-localization_priority: Normal
+ms.date: 10/26/2021
+ms.localizationpriority: medium
 ---
 
 # Set up your development environment
@@ -13,6 +13,7 @@ This guide helps you set up tools so you can create Office Add-ins by following 
 - npm
 - A Microsoft 365 account which includes the subscription version of Office
 - A code editor of your choice
+- The Office JavaScript linter
 
 This guide assumes that you know how to use a command line tool.
 
@@ -51,6 +52,48 @@ You can use any code editor or IDE that supports client-side development to buil
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm)
+
+## Install and use the Office JavaScript linter
+
+Microsoft provides a JavaScript linter to help you catch common errors when using the Office JavaScript library. To install the linter, run the following two commands (after you've [installed Node.js](#install-nodejs) and [npm](#install-npm)).
+
+```command&nbsp;line
+npm install office-addin-lint --save-dev
+npm install eslint-plugin-office-addins --save-dev
+```
+
+If you create an Office Add-in project with the Yo Office tool, then the rest of the setup is done for you. Run the linter with the following command either in the terminal of an editor, such as Visual Studio Code, or in a command prompt. Problems found by the linter appear in the terminal or prompt, and also appear directly in the code when you're using an editor that supports linter messages, such as Visual Studio Code. (For information about installing the Yo Office tool, go through one of our Office Add-in quick starts, such as [this one for Excel add-ins](../quickstarts/excel-quickstart-jquery.md).)
+
+```command&nbsp;line
+npm run lint
+```
+
+If your add-in project was created another way, take the following steps.
+
+1. In the root of the project, create a text file named **.eslintrc.json**, if there isn't one already there. Be sure it has properties named `plugins` and `extends`, both of type array. The `plugins` array should include `"office-addins"` and the `extends` array should include `"plugin:office-addins/recommended"`. The following is a simple example. Your **.eslintrc.json** file may have additional properties and additional members of the two arrays.
+
+   ```json
+   {
+     "plugins": [
+       "office-addins"
+     ],
+     "extends": [
+       "plugin:office-addins/recommended"
+     ]
+   }
+   ```
+
+1. In the root of the project, open the **package.json** file and be sure that the `scripts` array has the following member.
+
+   ```json
+   "lint": "office-addin-lint check",
+   ```
+
+1. Run the linter with the following command either in the terminal of an editor, such as Visual Studio Code, or in a command prompt. Problems found by the linter appear in the terminal or prompt, and also appear directly in the code when you're using an editor that supports linter messages, such as Visual Studio Code.
+
+   ```command&nbsp;line
+   npm run lint
+   ```
 
 ## Next steps
 

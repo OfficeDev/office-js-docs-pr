@@ -3,7 +3,7 @@ title: Excel JavaScript API requirement set 1.10
 description: 'Details about the ExcelApi 1.10 requirement set.'
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # What's new in Excel JavaScript API 1.10
@@ -23,12 +23,12 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.10.
 
 | Class | Fields | Description |
 |:---|:---|:---|
-|[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|The comment's content.|
+|[Comment](/javascript/api/excel/excel.comment)|[authorEmail](/javascript/api/excel/excel.comment#authorEmail)|Gets the email of the comment's author.|
+||[authorName](/javascript/api/excel/excel.comment#authorName)|Gets the name of the comment's author.|
+||[content](/javascript/api/excel/excel.comment#content)|The comment's content.|
+||[creationDate](/javascript/api/excel/excel.comment#creationDate)|Gets the creation time of the comment.|
 ||[delete()](/javascript/api/excel/excel.comment#delete__)|Deletes the comment and all the connected replies.|
 ||[getLocation()](/javascript/api/excel/excel.comment#getLocation__)|Gets the cell where this comment is located.|
-||[authorEmail](/javascript/api/excel/excel.comment#authorEmail)|Gets the email of the comment's author.|
-||[authorName](/javascript/api/excel/excel.comment#authorName)|Gets the name of the comment's author.|
-||[creationDate](/javascript/api/excel/excel.comment#creationDate)|Gets the creation time of the comment.|
 ||[id](/javascript/api/excel/excel.comment#id)|Specifies the comment identifier.|
 ||[replies](/javascript/api/excel/excel.comment#replies)|Represents a collection of reply objects associated with the comment.|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(cellAddress: Range \| string, content: string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add_cellAddress__content__contentType_)|Creates a new comment with the given content on the given cell.|
@@ -38,13 +38,13 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.10.
 ||[getItemByCell(cellAddress: Range \| string)](/javascript/api/excel/excel.commentcollection#getItemByCell_cellAddress_)|Gets the comment from the specified cell.|
 ||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getItemByReplyId_replyId_)|Gets the comment to which the given reply is connected.|
 ||[items](/javascript/api/excel/excel.commentcollection#items)|Gets the loaded child items in this collection.|
-|[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|The comment reply's content.|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[authorEmail](/javascript/api/excel/excel.commentreply#authorEmail)|Gets the email of the comment reply's author.|
+||[authorName](/javascript/api/excel/excel.commentreply#authorName)|Gets the name of the comment reply's author.|
+||[content](/javascript/api/excel/excel.commentreply#content)|The comment reply's content.|
+||[creationDate](/javascript/api/excel/excel.commentreply#creationDate)|Gets the creation time of the comment reply.|
 ||[delete()](/javascript/api/excel/excel.commentreply#delete__)|Deletes the comment reply.|
 ||[getLocation()](/javascript/api/excel/excel.commentreply#getLocation__)|Gets the cell where this comment reply is located.|
 ||[getParentComment()](/javascript/api/excel/excel.commentreply#getParentComment__)|Gets the parent comment of this reply.|
-||[authorEmail](/javascript/api/excel/excel.commentreply#authorEmail)|Gets the email of the comment reply's author.|
-||[authorName](/javascript/api/excel/excel.commentreply#authorName)|Gets the name of the comment reply's author.|
-||[creationDate](/javascript/api/excel/excel.commentreply#creationDate)|Gets the creation time of the comment reply.|
 ||[id](/javascript/api/excel/excel.commentreply#id)|Specifies the comment reply identifier.|
 |[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentreplycollection#add_content__contentType_)|Creates a comment reply for a comment.|
 ||[getCount()](/javascript/api/excel/excel.commentreplycollection#getCount__)|Gets the number of comment replies in the collection.|
@@ -64,13 +64,13 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.10.
 ||[items](/javascript/api/excel/excel.pivottablestylecollection#items)|Gets the loaded child items in this collection.|
 ||[setDefault(newDefaultStyle: PivotTableStyle \| string)](/javascript/api/excel/excel.pivottablestylecollection#setDefault_newDefaultStyle_)|Sets the default PivotTable style for use in the parent object's scope.|
 |[Range](/javascript/api/excel/excel.range)|[group(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#group_groupOption_)|Groups columns and rows for an outline.|
-||[hideGroupDetails(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#hideGroupDetails_groupOption_)|Hides the details of the row or column group.|
 ||[height](/javascript/api/excel/excel.range#height)|Returns the distance in points, for 100% zoom, from the top edge of the range to the bottom edge of the range.|
+||[hideGroupDetails(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#hideGroupDetails_groupOption_)|Hides the details of the row or column group.|
 ||[left](/javascript/api/excel/excel.range#left)|Returns the distance in points, for 100% zoom, from the left edge of the worksheet to the left edge of the range.|
-||[top](/javascript/api/excel/excel.range#top)|Returns the distance in points, for 100% zoom, from the top edge of the worksheet to the top edge of the range.|
-||[width](/javascript/api/excel/excel.range#width)|Returns the distance in points, for 100% zoom, from the left edge of the range to the right edge of the range.|
 ||[showGroupDetails(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#showGroupDetails_groupOption_)|Shows the details of the row or column group.|
+||[top](/javascript/api/excel/excel.range#top)|Returns the distance in points, for 100% zoom, from the top edge of the worksheet to the top edge of the range.|
 ||[ungroup(groupOption: Excel.GroupOption)](/javascript/api/excel/excel.range#ungroup_groupOption_)|Ungroups columns and rows for an outline.|
+||[width](/javascript/api/excel/excel.range#width)|Returns the distance in points, for 100% zoom, from the left edge of the range to the right edge of the range.|
 |[Shape](/javascript/api/excel/excel.shape)|[copyTo(destinationSheet?: Worksheet \| string)](/javascript/api/excel/excel.shape#copyTo_destinationSheet_)|Copies and pastes a `Shape` object.|
 ||[placement](/javascript/api/excel/excel.shape#placement)|Represents how the object is attached to the cells below it.|
 |[Slicer](/javascript/api/excel/excel.slicer)|[caption](/javascript/api/excel/excel.slicer#caption)|Represents the caption of the slicer.|
@@ -78,25 +78,25 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.10.
 ||[delete()](/javascript/api/excel/excel.slicer#delete__)|Deletes the slicer.|
 ||[getSelectedItems()](/javascript/api/excel/excel.slicer#getSelectedItems__)|Returns an array of selected items' keys.|
 ||[height](/javascript/api/excel/excel.slicer#height)|Represents the height, in points, of the slicer.|
-||[left](/javascript/api/excel/excel.slicer#left)|Represents the distance, in points, from the left side of the slicer to the left of the worksheet.|
-||[name](/javascript/api/excel/excel.slicer#name)|Represents the name of the slicer.|
 ||[id](/javascript/api/excel/excel.slicer#id)|Represents the unique ID of the slicer.|
 ||[isFilterCleared](/javascript/api/excel/excel.slicer#isFilterCleared)|Value is `true` if all filters currently applied on the slicer are cleared.|
-||[slicerItems](/javascript/api/excel/excel.slicer#slicerItems)|Represents the collection of slicer items that are part of the slicer.|
-||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|Represents the worksheet containing the slicer.|
+||[left](/javascript/api/excel/excel.slicer#left)|Represents the distance, in points, from the left side of the slicer to the left of the worksheet.|
+||[name](/javascript/api/excel/excel.slicer#name)|Represents the name of the slicer.|
 ||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectItems_items_)|Selects slicer items based on their keys.|
+||[slicerItems](/javascript/api/excel/excel.slicer#slicerItems)|Represents the collection of slicer items that are part of the slicer.|
 ||[sortBy](/javascript/api/excel/excel.slicer#sortBy)|Represents the sort order of the items in the slicer.|
 ||[style](/javascript/api/excel/excel.slicer#style)|Constant value that represents the slicer style.|
 ||[top](/javascript/api/excel/excel.slicer#top)|Represents the distance, in points, from the top edge of the slicer to the top of the worksheet.|
 ||[width](/javascript/api/excel/excel.slicer#width)|Represents the width, in points, of the slicer.|
+||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|Represents the worksheet containing the slicer.|
 |[SlicerCollection](/javascript/api/excel/excel.slicercollection)|[add(slicerSource: string \| PivotTable \| Table, sourceField: string \| PivotField \| number \| TableColumn, slicerDestination?: string \| Worksheet)](/javascript/api/excel/excel.slicercollection#add_slicerSource__sourceField__slicerDestination_)|Adds a new slicer to the workbook.|
 ||[getCount()](/javascript/api/excel/excel.slicercollection#getCount__)|Returns the number of slicers in the collection.|
 ||[getItem(key: string)](/javascript/api/excel/excel.slicercollection#getItem_key_)|Gets a slicer object using its name or ID.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.slicercollection#getItemAt_index_)|Gets a slicer based on its position in the collection.|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.slicercollection#getItemOrNullObject_key_)|Gets a slicer using its name or ID.|
 ||[items](/javascript/api/excel/excel.slicercollection#items)|Gets the loaded child items in this collection.|
-|[SlicerItem](/javascript/api/excel/excel.sliceritem)|[isSelected](/javascript/api/excel/excel.sliceritem#isSelected)|Value is `true` if the slicer item is selected.|
-||[hasData](/javascript/api/excel/excel.sliceritem#hasData)|Value is `true` if the slicer item has data.|
+|[SlicerItem](/javascript/api/excel/excel.sliceritem)|[hasData](/javascript/api/excel/excel.sliceritem#hasData)|Value is `true` if the slicer item has data.|
+||[isSelected](/javascript/api/excel/excel.sliceritem#isSelected)|Value is `true` if the slicer item is selected.|
 ||[key](/javascript/api/excel/excel.sliceritem#key)|Represents the unique value representing the slicer item.|
 ||[name](/javascript/api/excel/excel.sliceritem#name)|Represents the title displayed in the Excel UI.|
 |[SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection)|[getCount()](/javascript/api/excel/excel.sliceritemcollection#getCount__)|Returns the number of slicer items in the slicer.|
@@ -137,9 +137,9 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.10.
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.timelinestylecollection#getItemOrNullObject_name_)|Gets a `TimelineStyle` by name.|
 ||[items](/javascript/api/excel/excel.timelinestylecollection#items)|Gets the loaded child items in this collection.|
 ||[setDefault(newDefaultStyle: TimelineStyle \| string)](/javascript/api/excel/excel.timelinestylecollection#setDefault_newDefaultStyle_)|Sets the default timeline style for use in the parent object's scope.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveSlicer()](/javascript/api/excel/excel.workbook#getActiveSlicer__)|Gets the currently active slicer in the workbook.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[comments](/javascript/api/excel/excel.workbook#comments)|Represents a collection of comments associated with the workbook.|
+||[getActiveSlicer()](/javascript/api/excel/excel.workbook#getActiveSlicer__)|Gets the currently active slicer in the workbook.|
 ||[getActiveSlicerOrNullObject()](/javascript/api/excel/excel.workbook#getActiveSlicerOrNullObject__)|Gets the currently active slicer in the workbook.|
-||[comments](/javascript/api/excel/excel.workbook#comments)|Represents a collection of comments associated with the workbook.|
 ||[pivotTableStyles](/javascript/api/excel/excel.workbook#pivotTableStyles)|Represents a collection of PivotTableStyles associated with the workbook.|
 ||[slicerStyles](/javascript/api/excel/excel.workbook#slicerStyles)|Represents a collection of SlicerStyles associated with the workbook.|
 ||[slicers](/javascript/api/excel/excel.workbook#slicers)|Represents a collection of slicers associated with the workbook.|
@@ -149,8 +149,8 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.10.
 ||[onColumnSorted](/javascript/api/excel/excel.worksheet#onColumnSorted)|Occurs when one or more columns have been sorted.|
 ||[onRowSorted](/javascript/api/excel/excel.worksheet#onRowSorted)|Occurs when one or more rows have been sorted.|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheet#onSingleClicked)|Occurs when a left-clicked/tapped action happens in the worksheet.|
-||[slicers](/javascript/api/excel/excel.worksheet#slicers)|Returns a collection of slicers that are part of the worksheet.|
 ||[showOutlineLevels(rowLevels: number, columnLevels: number)](/javascript/api/excel/excel.worksheet#showOutlineLevels_rowLevels__columnLevels_)|Shows row or column groups by their outline levels.|
+||[slicers](/javascript/api/excel/excel.worksheet#slicers)|Returns a collection of slicers that are part of the worksheet.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#onColumnSorted)|Occurs when one or more columns have been sorted.|
 ||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onRowSorted)|Occurs when one or more rows have been sorted.|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onSingleClicked)|Occurs when left-clicked/tapped operation happens in the worksheet collection.|

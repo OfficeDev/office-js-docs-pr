@@ -1,8 +1,8 @@
 ---
 title: Debug add-ins on Windows using Microsoft Edge WebView2 (Chromium-based)
 description: 'Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) by using the Debugger for Microsoft Edge extension in VS Code.'
-ms.date: 08/18/2021
-localization_priority: Priority
+ms.date: 11/01/2021
+ms.localizationpriority: high
 ---
 # Debug add-ins on Windows using Edge Chromium WebView2
 
@@ -12,15 +12,19 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
 
 - [Visual Studio Code](https://code.visualstudio.com/) (must be run as an administrator)
 - [Node.js (version 10+)](https://nodejs.org/)
-- Windows 10
+- Windows 10, 11
 - A combination of platform and Office application that supports Microsoft Edge with WebView2 (Chromium-based) as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your version of Microsoft 365 is earlier than 2101, you will need to install WebView2. Use the instructions for installing it at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 ## Install and use the debugger
 
 1. Create a project using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). You can use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this.
 
-    > [!TIP]
-    > If you aren't using a Yeoman generator based add-in, you may be prompted to adjust a registry key. While in the root folder of your project, run the following in the command line:  `office-add-in-debugging start <your manifest path>`
+   > [!TIP]
+   > If you aren't using a Yeoman generator based add-in, you may be prompted to adjust a registry key. While in the root folder of your project, run the following in the command line.
+   >
+   > ``` command&nbsp;line
+   > npx office-addin-debugging start <your manifest path>
+   > ```
 
 1. Open your project in VS Code. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "Debugger for Microsoft Edge" extension and install it.
 

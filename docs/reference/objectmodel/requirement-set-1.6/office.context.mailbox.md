@@ -2,7 +2,7 @@
 title: Office.context.mailbox - requirement set 1.6
 description: 'Outlook Mailbox API requirement set 1.6 version of the Mailbox object model.'
 ms.date: 05/17/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # mailbox (requirement set 1.6)
@@ -55,6 +55,6 @@ You can subscribe to and unsubscribe from the following events using [addHandler
 > [!IMPORTANT]
 > Events are only available with task pane implementation.
 
-| [Event](/javascript/api/office/office.eventtype) | Description | Minimum<br>requirement set |
+| [Event](/javascript/api/office/office.eventtype?view=outlook-js-1.6&preserve-view=true) | Description | Minimum<br>requirement set |
 |---|---|:---:|
 |`ItemChanged`| A different Outlook item is selected for viewing while the task pane is pinned. | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |

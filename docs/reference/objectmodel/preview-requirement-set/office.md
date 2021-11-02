@@ -2,12 +2,12 @@
 title: Office namespace - preview requirement set
 description: 'Office namespace members available for Outlook add-ins using Mailbox API preview requirement set.'
 ms.date: 05/17/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Office (Mailbox preview requirement set)
 
-The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Common API](/javascript/api/office).
+The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Common API](/javascript/api/office?view=outlook-js-preview&preserve-view=true).
 
 ##### Requirements
 

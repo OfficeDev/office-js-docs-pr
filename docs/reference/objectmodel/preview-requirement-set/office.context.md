@@ -2,7 +2,7 @@
 title: Office.context - preview requirement set
 description: 'Office.Context object members available for Outlook add-ins using Mailbox API preview requirement set.'
 ms.date: 12/03/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # context (Mailbox preview requirement set)
@@ -36,13 +36,13 @@ Office.context provides shared interfaces that are used by add-ins in all of the
 
 ## Property details
 
-#### auth: [Auth](/javascript/api/office/office.auth)
+#### auth: [Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true)
 
 Supports [single sign-on (SSO)](../../../outlook/authenticate-a-user-with-an-sso-token.md) by providing a method that allows the Office application to obtain an access token to the add-in's web application. Indirectly, this also enables the add-in to access the signed-in user's Microsoft Graph data without requiring the user to sign in a second time.
 
 ##### Type
 
-*   [Auth](/javascript/api/office/office.auth)
+*   [Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true)
 
 ##### Requirements
 
@@ -112,13 +112,13 @@ function write(message){
 ---
 ---
 
-#### diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation)
+#### diagnostics: [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview&preserve-view=true)
 
 Gets information about the environment in which the add-in is running.
 
 ##### Type
 
-*   [ContextInformation](/javascript/api/office/office.contextinformation)
+*   [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview&preserve-view=true)
 
 ##### Requirements
 
@@ -184,7 +184,7 @@ function write(message){
 ---
 ---
 
-#### host: [HostType](/javascript/api/office/office.hosttype)
+#### host: [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview&preserve-view=true)
 
 Gets the Office application that is hosting the add-in.
 
@@ -193,7 +193,7 @@ Gets the Office application that is hosting the add-in.
 
 ##### Type
 
-*   [HostType](/javascript/api/office/office.hosttype)
+*   [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview&preserve-view=true)
 
 ##### Requirements
 
@@ -213,7 +213,7 @@ console.log(JSON.stringify(Office.context.host));
 ---
 ---
 
-#### officeTheme: [OfficeTheme](/javascript/api/office/office.officetheme)
+#### officeTheme: [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview&preserve-view=true)
 
 Provides access to the properties for Office theme colors.
 
@@ -224,7 +224,7 @@ Using Office theme colors lets you coordinate the color scheme of your add-in wi
 
 ##### Type
 
-*   [OfficeTheme](/javascript/api/office/office.officetheme)
+*   [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview&preserve-view=true)
 
 ##### Properties
 
@@ -271,7 +271,7 @@ Provides the platform on which the add-in is running.
 
 ##### Type
 
-*   [PlatformType](/javascript/api/office/office.platformtype)
+*   [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview&preserve-view=true)
 
 ##### Requirements
 
@@ -291,13 +291,13 @@ console.log(JSON.stringify(Office.context.platform));
 ---
 ---
 
-#### requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+#### requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview&preserve-view=true)
 
 Provides a method for determining what requirement sets are supported on the current application and platform.
 
 ##### Type
 
-*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview&preserve-view=true)
 
 ##### Requirements
 
@@ -317,7 +317,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings)
+#### roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true)
 
 Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.
 
@@ -325,7 +325,7 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 
 ##### Type
 
-*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
+*   [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true)
 
 ##### Requirements
 
@@ -340,13 +340,13 @@ The `RoamingSettings` object lets you store and access data for a mail add-in th
 ---
 ---
 
-#### ui: [UI](/javascript/api/office/office.ui)
+#### ui: [UI](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true)
 
 Provides objects and methods that you can use to create and manipulate UI components, such as dialog boxes, in your Office Add-ins.
 
 ##### Type
 
-*   [UI](/javascript/api/office/office.ui)
+*   [UI](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true)
 
 ##### Requirements
 

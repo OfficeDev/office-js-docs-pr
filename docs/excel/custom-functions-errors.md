@@ -2,7 +2,7 @@
 title: Handle and return errors from your custom function
 description: 'Handle and return errors like #NULL! from your custom function.'
 ms.date: 08/12/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Handle and return errors from your custom function
@@ -130,5 +130,5 @@ Learn how to [troubleshoot problems with your custom functions](custom-functions
 ## See also
 
 * [Custom functions debugging](custom-functions-debugging.md)
-* [Custom functions requirements](custom-functions-requirement-sets.md)
+* [Custom functions requirement sets](../reference/requirement-sets/custom-functions-requirement-sets.md)
 * [Create custom functions in Excel](custom-functions-overview.md)

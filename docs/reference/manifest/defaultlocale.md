@@ -2,7 +2,7 @@
 title: DefaultLocale element in the manifest file
 description: Specifies the default culture name of the locale used by strings in your add-in.
 ms.date: 10/09/2018
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # DefaultLocale element

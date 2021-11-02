@@ -1,16 +1,27 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: 'Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.'
-ms.date: 07/02/2021
-localization_priority: Normal
+ms.date: 10/05/2021
+ms.localizationpriority: medium
 ---
 
 # Enable shared folders and shared mailbox scenarios in an Outlook add-in
 
 This article describes how to enable shared folders (also known as delegate access) and shared mailbox (now in [preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)) scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
 
+## Supported clients and platforms
+
+The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable. Excluded combinations are not supported.
+
+| Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2013 on-premises |
+|---|:---:|:---:|:---:|:---:|
+|Windows:<br>version 1910 (build 12130.20272) or later|Yes|No|No|No|
+|Mac:<br>build 16.47 or later|Yes|Yes|Yes|Yes|
+|Web browser:<br>modern Outlook UI|Yes|Not applicable|Not applicable|Not applicable|
+|Web browser:<br>classic Outlook UI|Not applicable|No|No|No|
+
 > [!IMPORTANT]
-> Support for this feature was introduced in [requirement set 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in [requirement set 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) (for details, refer to [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). However, note that the feature's support matrix is a superset of the requirement set's.
 
 ## Supported setups
 
@@ -20,13 +31,13 @@ The following sections describe supported configurations for shared mailboxes (n
 
 #### Shared folders
 
-The mailbox owner must first [provide access to a delegate](https://support.microsoft.com/office/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926). The delegate must then follow the instructions outlined in the "Add another person's mailbox to your profile" section of the article [Manage another person's mail and calendar items](https://support.microsoft.com/office/manage-another-person-s-mail-and-calendar-items-afb79d6b-2967-43b9-a944-a6b953190af5).
+The mailbox owner must first [provide access to a delegate](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926). The delegate must then follow the instructions outlined in the "Add another person's mailbox to your profile" section of the article [Manage another person's mail and calendar items](https://support.microsoft.com/office/afb79d6b-2967-43b9-a944-a6b953190af5).
 
 #### Shared mailboxes (preview)
 
 Exchange server admins can create and manage shared mailboxes for sets of users to access. At present, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) is the only supported server version for this feature.
 
-An Exchange Server feature known as "automapping" is on by default which means that subsequently the [shared mailbox should automatically appear](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) in a user's Outlook app after Outlook has been closed and reopened. However, if an admin turned off automapping, the user must follow the manual steps outlined in the "Add a shared mailbox to Outlook" section of the article [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-d94a8e9e-21f1-4240-808b-de9c9c088afd).
+An Exchange Server feature known as "automapping" is on by default which means that subsequently the [shared mailbox should automatically appear](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) in a user's Outlook app after Outlook has been closed and reopened. However, if an admin turned off automapping, the user must follow the manual steps outlined in the "Add a shared mailbox to Outlook" section of the article [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
 > [!WARNING]
 > Do **NOT** sign into the shared mailbox with a password. The feature APIs won't work in that case.
@@ -35,16 +46,36 @@ An Exchange Server feature known as "automapping" is on by default which means t
 
 #### Shared folders
 
-The mailbox owner must first [provide access to a delegate](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) by updating the mailbox folder permissions. The delegate must then follow the instructions outlined in the "Add another person’s mailbox to your folder list in Outlook Web App" section of the article [Access another person's mailbox](https://support.microsoft.com/office/access-another-person-s-mailbox-a909ad30-e413-40b5-a487-0ea70b763081).
+The mailbox owner must first [provide access to a delegate](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) by updating the mailbox folder permissions. The delegate must then follow the instructions outlined in the "Add another person’s mailbox to your folder list in Outlook Web App" section of the article [Access another person's mailbox](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081).
 
 #### Shared mailboxes (preview)
 
 Exchange server admins can create and manage shared mailboxes for sets of users to access. At present, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) is the only supported server version for this feature.
 
-After receiving access, a shared mailbox user must follow the steps outlined in the "Add the shared mailbox so it displays under your primary mailbox" section of the article [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-on-the-web-98b5a90d-4e38-415d-a030-f09a4cd28207).
+After receiving access, a shared mailbox user must follow the steps outlined in the "Add the shared mailbox so it displays under your primary mailbox" section of the article [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
 
 > [!WARNING]
 > Do **NOT** use other options like "Open another mailbox". The feature APIs may not work properly then.
+
+### [Mac](#tab/unix)
+
+#### Shared mailboxes (preview)
+
+Mail and calendar are shared with a delegate or shared mailbox user. Add-ins are available to the delegate or user in message and appointment read and compose modes.
+
+#### Shared folders
+
+If the **Inbox** folder is shared with a delegate, add-ins are available to the delegate in message read mode.
+
+If the **Drafts** folder is also shared with the delegate, add-ins are available in compose mode.
+
+#### Local shared calendar (new model)
+
+If the calendar owner explicitly shared their calendar with a delegate (the entire mailbox may not be shared), add-ins are available to the delegate in appointment read and compose modes.
+
+#### Remote shared calendar (previous model)
+
+If the calendar owner granted broad access to their calendar (for example, made it editable to a particular DL or the entire organization), users may then have indirect or implicit permission and add-ins are available to those users in appointment read and compose modes.
 
 ---
 
@@ -218,8 +249,8 @@ If an admin hid a user or shared mailbox address from an address list like the g
 
 ## See also
 
-- [Allow someone else to manage your mail and calendar](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
-- [Calendar sharing in Microsoft 365](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)
+- [Allow someone else to manage your mail and calendar](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)
+- [Calendar sharing in Microsoft 365](https://support.microsoft.com/office/b576ecc3-0945-4d75-85f1-5efafb8a37b4)
 - [Add a shared mailbox to Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
 - [How to order manifest elements](../develop/manifest-element-ordering.md)
 - [Mask (computing)](https://en.wikipedia.org/wiki/Mask_(computing))

@@ -3,7 +3,7 @@ title: Excel JavaScript API requirement set 1.4
 description: 'Details about the ExcelApi 1.4 requirement set.'
 ms.date: 11/09/2020
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # What's new in Excel JavaScript API 1.4
@@ -71,7 +71,7 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.4. 
 |[Setting](/javascript/api/excel/excel.setting)|[delete()](/javascript/api/excel/excel.setting#delete__)|Deletes the setting.|
 ||[key](/javascript/api/excel/excel.setting#key)|The key that represents the ID of the setting.|
 ||[value](/javascript/api/excel/excel.setting#value)|Represents the value stored for this setting.|
-|[SettingCollection](/javascript/api/excel/excel.settingcollection)|[add(key: string, value: string \| number \| boolean \| Date \| Array<any> \| any)](/javascript/api/excel/excel.settingcollection#add_key__value_)|Sets or adds the specified setting to the workbook.|
+|[SettingCollection](/javascript/api/excel/excel.settingcollection)|[add(key: string, value: string \| number \| boolean \| Date \| Array \| any)](/javascript/api/excel/excel.settingcollection#add_key__value_)|Sets or adds the specified setting to the workbook.|
 ||[getCount()](/javascript/api/excel/excel.settingcollection#getCount__)|Gets the number of settings in the collection.|
 ||[getItem(key: string)](/javascript/api/excel/excel.settingcollection#getItem_key_)|Gets a setting entry via the key.|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.settingcollection#getItemOrNullObject_key_)|Gets a setting entry via the key.|

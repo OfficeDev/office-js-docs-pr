@@ -2,7 +2,7 @@
 title: IconUrl element in the manifest file
 description: The IconUrl element specifies the URL of the image that represents your Office Add-in in the insertion UX and Office Store.
 ms.date: 03/30/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # IconUrl element

@@ -1,8 +1,8 @@
 ---
 title: Automatically open a task pane with a document
 description: 'Learn how to configure an Office Add-in to open automatically when a document opens.'
-ms.date: 07/08/2021
-localization_priority: Normal
+ms.date: 09/14/2021
+ms.localizationpriority: medium
 ---
 
 
@@ -10,7 +10,7 @@ localization_priority: Normal
 
 You can use add-in commands in your Office Add-in to extend the Office UI by adding buttons to the Office app ribbon. When users click your command button, an action occurs, such as opening a task pane.
 
-Some scenarios require that a task pane open automatically when a document opens, without explicit user interaction. You can use the autoopen task pane feature, introduced in the AddInCommands 1.1 requirement set, to automatically open a task pane when your scenario requires it.
+Some scenarios require that a task pane open automatically when a document opens, without explicit user interaction. You can use the autoopen task pane feature, introduced in the [AddInCommands 1.1 requirement set](../reference/requirement-sets/add-in-commands-requirement-sets.md), to automatically open a task pane when your scenario requires it.
 
 ## How is the autoopen feature different from inserting a task pane?
 
@@ -20,9 +20,9 @@ With the autoopen feature, you can explicitly define or allow the user to define
 
 ## Support and availability
 
-The autoopen feature is currently <!-- in **developer preview** and it is only --> supported in the following products and platforms.
+The autoopen feature is currently supported in the following products and platforms.
 
-|**Products**|**Platforms**|
+|Products|Platforms|
 |:-----------|:------------|
 |<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Supported platforms for all products:<ul><li>Office on Windows Desktop. Build 16.0.8121.1000+</li><li>Office on Mac. Build 15.34.17051500+</li><li>Office on the web</li></ul>|
 
@@ -105,11 +105,12 @@ The `webextension` part includes a property bag and a property named **Office.Au
 
 The `webextension` part also includes a reference to the store or catalog with attributes for `id`, `storeType`, `store`, and `version`. Of the `storeType` values, only four are relevant to the autoopen feature. The values for the other three attributes depend on the value for `storeType`, as shown in the following table.
 
-| **`storeType` value** | **`id` value**    |**`store` value** | **`version` value**|
+|`storeType` value|`id` value|`store` value|`version` value|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (AppSource)|The AppSource asset ID of the add-in (see Note)|The locale of AppSource; for example, "en-us".|The version in the AppSource catalog (see Note)|
+|OMEX (AppSource)|The AppSource asset ID of the add-in (see Note).|The locale of AppSource; for example, "en-us".|The version in the AppSource catalog (see Note).|
+|WOPICatalog (third-party [WOPI](/microsoft-365/cloud-storage-partner-program/online/) hosts)| The AppSource asset ID of the add-in (see Note). | "wopicatalog". Use this value for add-ins that are published in App Source and are installed in third-party WOPI hosts. For more information, see [Integrating with Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | The version in the add-in manifest.|
 |FileSystem (a network share)|The GUID of the add-in in the add-in manifest.|The path of the network share; for example, "\\\\MyComputer\\MySharedFolder".|The version in the add-in manifest.|
-|EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog". EXCatalog row is the row to use with add-ins that use Centralized Deployment in the Microsoft 365 admin center.|The version in the add-in manifest.
+|EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog". EXCatalog row is the row to use with add-ins that use Centralized Deployment in the Microsoft 365 admin center.|The version in the add-in manifest.|
 |Registry (System registry)|The GUID of the add-in in the add-in manifest.|"developer"|The version in the add-in manifest.|
 
 > [!NOTE]
@@ -154,5 +155,5 @@ You can test the previous example by using your Microsoft 365 subscription to tr
 
 ## See also
 
-For a sample that shows you how to use the autoopen feature, see [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-[Join the Microsoft 365 developer program](/office/developer-program/office-365-developer-program).
+- For a sample that shows you how to use the autoopen feature, see [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
+- [Join the Microsoft 365 developer program.](/office/developer-program/office-365-developer-program)

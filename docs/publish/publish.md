@@ -2,7 +2,7 @@
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
 ms.date: 07/30/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Deploy and publish Office Add-ins
@@ -45,7 +45,7 @@ The deployment options that are available depend on the Office application that 
 
 The following sections provide additional information about the deployment methods that are most commonly used to distribute production Office Add-ins to users within an organization.
 
-For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.office.com/article/start-using-your-office-add-in-82e665c4-6700-4b56-a3f3-ef5441996862).
+For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.microsoft.com/office/82e665c4-6700-4b56-a3f3-ef5441996862).
 
 ### Integrated Apps via the Microsoft 365 admin center
 

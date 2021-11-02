@@ -1,8 +1,8 @@
 ---
 title: Validate an Office Add-in's manifest
 description: 'Learn how to validate the manifest of an Office Add-in using the XML schema and other tools.'
-ms.date: 09/18/2020
-localization_priority: Normal
+ms.date: 10/29/2020
+ms.localizationpriority: medium
 ---
 
 # Validate an Office Add-in's manifest
@@ -47,7 +47,7 @@ If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.co
     > If this command is not available or not working, run the following command instead to force the use of the latest version of the office-addin-manifest tool (replacing `MANIFEST_FILE` with the name of the manifest file).
     >
     > ```command&nbsp;line
-    > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
+    > npx office-addin-manifest validate MANIFEST_FILE
     > ```
 
 ## Validate your manifest against the XML schema
@@ -70,4 +70,5 @@ You can validate the manifest file against the [XML Schema Definition (XSD)](/op
 - [Clear the Office cache](clear-cache.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
-- [Debug Office Add-ins](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)

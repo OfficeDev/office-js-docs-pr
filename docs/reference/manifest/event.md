@@ -1,8 +1,8 @@
 ---
 title: Event element in the manifest file
 description: Defines an event handler in an add-in.
-ms.date: 05/15/2020
-localization_priority: Normal
+ms.date: 09/24/2021
+ms.localizationpriority: medium
 ---
 
 # Event element
@@ -11,6 +11,8 @@ Defines an event handler in an add-in.
 
 > [!NOTE]
 > For information about support and usage, see [On-send feature for Outlook add-ins](../../outlook/outlook-on-send-addins.md).
+
+**Add-in type:** Mail
 
 ## Attributes
 

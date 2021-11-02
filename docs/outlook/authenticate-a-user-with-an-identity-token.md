@@ -1,8 +1,8 @@
 ---
 title: Authenticate a user with an identity token in an add-in
 description: 'Learn about using the identity token provided by an Outlook add-in to implement SSO with your service.'
-ms.date: 10/31/2019
-localization_priority: Normal
+ms.date: 10/12/2021
+ms.localizationpriority: medium
 ---
 
 # Authenticate a user with an identity token for Exchange
@@ -44,7 +44,7 @@ Your back-end service can calculate a unique user ID from the token and map it t
 
 ### Generate a unique ID
 
-We recommend that you use a combination of the `msexchuid` and `amurl` properties. For example, you could concatenate the two values together and generate a base 64-encoded string. This value can be reliably generated from the token every time, so you can map an Exchange user identity token back to the user in your system.
+Use a combination of the `msexchuid` and `amurl` properties. For example, you could concatenate the two values together and generate a base 64-encoded string. This value can be reliably generated from the token every time, so you can map an Exchange user identity token back to the user in your system.
 
 ### Check the user
 

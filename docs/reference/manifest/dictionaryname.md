@@ -2,7 +2,7 @@
 title: DictionaryName element in the manifest file
 description: Specifies the name of this dictionary.
 ms.date: 03/19/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # DictionaryName element

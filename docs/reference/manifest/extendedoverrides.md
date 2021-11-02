@@ -2,7 +2,7 @@
 title: ExtendedOverrides element in the manifest file
 description: Specifies the URLs for a JSON-formatted extension of the manifest.
 ms.date: 02/23/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # ExtendedOverrides element

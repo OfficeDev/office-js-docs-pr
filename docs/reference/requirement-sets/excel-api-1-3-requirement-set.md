@@ -3,7 +3,7 @@ title: Excel JavaScript API requirement set 1.3
 description: 'Details about the ExcelApi 1.3 requirement set.'
 ms.date: 11/09/2020
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # What's new in Excel JavaScript API 1.3
@@ -21,20 +21,20 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.3. 
 ||[addFromNamedItem(name: string, bindingType: Excel.BindingType, id: string)](/javascript/api/excel/excel.bindingcollection#addFromNamedItem_name__bindingType__id_)|Add a new binding based on a named item in the workbook.|
 ||[addFromSelection(bindingType: Excel.BindingType, id: string)](/javascript/api/excel/excel.bindingcollection#addFromSelection_bindingType__id_)|Add a new binding based on the current selection.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[name](/javascript/api/excel/excel.pivottable#name)|Name of the PivotTable.|
-||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|The worksheet containing the current PivotTable.|
 ||[refresh()](/javascript/api/excel/excel.pivottable#refresh__)|Refreshes the PivotTable.|
+||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|The worksheet containing the current PivotTable.|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getItem(name: string)](/javascript/api/excel/excel.pivottablecollection#getItem_name_)|Gets a PivotTable by name.|
 ||[items](/javascript/api/excel/excel.pivottablecollection#items)|Gets the loaded child items in this collection.|
 ||[refreshAll()](/javascript/api/excel/excel.pivottablecollection#refreshAll__)|Refreshes all the pivot tables in the collection.|
 |[Range](/javascript/api/excel/excel.range)|[getVisibleView()](/javascript/api/excel/excel.range#getVisibleView__)|Represents the visible rows of the current range.|
-|[RangeView](/javascript/api/excel/excel.rangeview)|[formulas](/javascript/api/excel/excel.rangeview#formulas)|Represents the formula in A1-style notation.|
+|[RangeView](/javascript/api/excel/excel.rangeview)|[cellAddresses](/javascript/api/excel/excel.rangeview#cellAddresses)|Represents the cell addresses of the `RangeView`.|
+||[columnCount](/javascript/api/excel/excel.rangeview#columnCount)|The number of visible columns.|
+||[formulas](/javascript/api/excel/excel.rangeview#formulas)|Represents the formula in A1-style notation.|
 ||[formulasLocal](/javascript/api/excel/excel.rangeview#formulasLocal)|Represents the formula in A1-style notation, in the user's language and number-formatting locale.|
 ||[formulasR1C1](/javascript/api/excel/excel.rangeview#formulasR1C1)|Represents the formula in R1C1-style notation.|
 ||[getRange()](/javascript/api/excel/excel.rangeview#getRange__)|Gets the parent range associated with the current `RangeView`.|
-||[numberFormat](/javascript/api/excel/excel.rangeview#numberFormat)|Represents Excel's number format code for the given cell.|
-||[cellAddresses](/javascript/api/excel/excel.rangeview#cellAddresses)|Represents the cell addresses of the `RangeView`.|
-||[columnCount](/javascript/api/excel/excel.rangeview#columnCount)|The number of visible columns.|
 ||[index](/javascript/api/excel/excel.rangeview#index)|Returns a value that represents the index of the `RangeView`.|
+||[numberFormat](/javascript/api/excel/excel.rangeview#numberFormat)|Represents Excel's number format code for the given cell.|
 ||[rowCount](/javascript/api/excel/excel.rangeview#rowCount)|The number of visible rows.|
 ||[rows](/javascript/api/excel/excel.rangeview#rows)|Represents a collection of range views associated with the range.|
 ||[text](/javascript/api/excel/excel.rangeview#text)|Text values of the specified range.|

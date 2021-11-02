@@ -1,15 +1,15 @@
 ---
 title: Outlook add-ins for Outlook Mobile
-description: Outlook mobile add-ins are supported on all Microsoft 365 business accounts, Outlook.com accounts, and support is coming soon to gmail accounts.
-ms.date: 05/27/2020
-localization_priority: Normal
+description: Outlook mobile add-ins are supported on all Microsoft 365 business accounts and Outlook.com accounts.
+ms.date: 09/22/2021
+ms.localizationpriority: medium
 ---
 
 # Add-ins for Outlook Mobile
 
 Add-ins now work on Outlook Mobile, using the same APIs available for other Outlook endpoints. If you've built an add-in for Outlook already, it's easy to get it working on Outlook Mobile.
 
-Outlook mobile add-ins are supported on all Microsoft 365 business accounts, Outlook.com accounts, and support is coming soon to Gmail accounts.
+Outlook mobile add-ins are supported on all Microsoft 365 business accounts and Outlook.com accounts. However, support is not currently available on Gmail accounts.
 
 **An example task pane in Outlook on iOS**
 
@@ -60,7 +60,7 @@ Here are examples of scenarios that make sense in Outlook Mobile.
 
 ## Testing your add-ins on mobile
 
-To test an add-in on Outlook Mobile, you can sideload an add-in to an O365 or Outlook.com account. In Outlook on the web, go to the settings gear, and choose **Manage Integrations** or **Manage Add-ins**. Near the top, click where it says **Click here to add a custom add-in** and upload your manifest. Make sure your manifest is properly formatted to contain `MobileFormFactor` or it won't load.
+To test an add-in on Outlook Mobile, first [sideload an add-in](sideload-outlook-add-ins-for-testing.md) to an O365 or Outlook.com account on the web, Windows, or Mac. Make sure your manifest is properly formatted to contain `MobileFormFactor` or it won't load in your Outlook client on mobile.
 
 After your add-in is working, make sure to test it on different screen sizes, including phones and tablets. You should make sure it meets accessibility guidelines for contrast, font size, and color, as well as being usable with a screen reader such as VoiceOver on iOS or TalkBack on Android.
 

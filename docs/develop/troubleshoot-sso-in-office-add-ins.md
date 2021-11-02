@@ -1,8 +1,8 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: 'Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.'
-ms.date: 07/08/2021
-localization_priority: Normal
+ms.date: 09/23/2021
+ms.localizationpriority: medium
 ---
 
 # Troubleshoot error messages for single sign-on (SSO)
@@ -23,9 +23,8 @@ We strongly recommend that you use a tool that can intercept and display the HTT
 ## Causes and handling of errors from getAccessToken
 
 For examples of the error handling described in this section, see:
-
-- [HomeES6.js in Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
-- [ssoAuthES6.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
+- [HomeES6.js in Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
+- [ssoAuthES6.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
 
 ### 13000
 
@@ -88,7 +87,7 @@ The user triggered an operation that calls `getAccessToken` before a previous ca
 
 ### 13010
 
-The user is running the add-in in Office on Microsoft Edge or Internet Explorer. The user's Microsoft 365 domain, and the `login.microsoftonline.com` domain, are in a different security zones in the browser settings. This error is only seen on **Office on the web**. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
+The user is running the add-in in Office on Microsoft Edge. The user's Microsoft 365 domain, and the `login.microsoftonline.com` domain, are in a different security zones in the browser settings. This error is only seen on **Office on the web**. If this error is returned, the user will have already seen an error explaining this and linking to a page about how to change the zone configuration. If your add-in provides functions that don't require the user to be signed in, then your code should catch this error and allow the add-in to stay running.
 
 ### 13012
 
@@ -103,7 +102,7 @@ In development, the add-in is sideloaded in Outlook and the `forMSGraphAccess` o
 
 ### 13013
 
-The `getAccessToken` was called too many times in a short amount of time, so Office throttled the most recent call. This is usually caused by an infinite loop of calls to the method. There are scenarios when recalling the method is advisable. However, your code should use a counter or flag variable to ensure that the method is not recalled repeatedly. If the same "retry" code path is running again, the code should fall back to an alternate system of user authentication. For a code example, see how the `retryGetAccessToken` variable is used in [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) or [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
+The `getAccessToken` was called too many times in a short amount of time, so Office throttled the most recent call. This is usually caused by an infinite loop of calls to the method. There are scenarios when recalling the method is advisable. However, your code should use a counter or flag variable to ensure that the method is not recalled repeatedly. If the same "retry" code path is running again, the code should fall back to an alternate system of user authentication. For a code example, see how the `retryGetAccessToken` variable is used in [HomeES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) or [ssoAuthES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
 
 ### 50001
 
@@ -114,9 +113,8 @@ In a production add-in, the add-in should respond to this error by falling back 
 ## Errors on the server-side from Azure Active Directory
 
 For samples of the error-handling described in this section, see:
-
-- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
-- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
+- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
 
 ### Conditional access / Multifactor authentication errors
 

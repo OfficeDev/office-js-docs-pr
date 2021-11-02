@@ -4,7 +4,7 @@ title: Create custom functions in Excel
 ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 # Create custom functions in Excel
 
@@ -12,7 +12,7 @@ Custom functions enable developers to add new functions to Excel by defining tho
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-The following animated image shows your workbook calling a function you've created with JavaScript or Typescript. In this example, the custom function `=MYFUNCTION.SPHEREVOLUME` calculates the volume of a sphere.
+The following animated image shows your workbook calling a function you've created with JavaScript or TypeScript. In this example, the custom function `=MYFUNCTION.SPHEREVOLUME` calculates the volume of a sphere.
 
 ![Animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet.](../images/SphereVolumeNew.gif)
 
@@ -91,7 +91,7 @@ Another easy way to try out custom functions is to use [Script Lab](https://apps
 ## See also
 
 * [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
-* [Custom functions requirement sets](custom-functions-requirement-sets.md)
+* [Custom functions requirement sets](../reference/requirement-sets/custom-functions-requirement-sets.md)
 * [Custom functions naming guidelines](custom-functions-naming.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
 * [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

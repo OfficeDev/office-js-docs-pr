@@ -2,7 +2,7 @@
 title: Asynchronous programming in Office Add-ins
 description: 'Learn how the Office JavaScript library uses asynchronous programming in Office Add-ins.'
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Asynchronous programming in Office Add-ins

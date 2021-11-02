@@ -3,7 +3,7 @@ title: Excel JavaScript API requirement set 1.6
 description: 'Details about the ExcelApi 1.6 requirement set.'
 ms.date: 11/09/2020
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # What's new in Excel JavaScript API 1.6
@@ -54,11 +54,7 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.6. 
 ||[gradientFill](/javascript/api/excel/excel.conditionaldatabarpositiveformat#gradientFill)|Specifies if the data bar has a gradient.|
 |[ConditionalDataBarRule](/javascript/api/excel/excel.conditionaldatabarrule)|[formula](/javascript/api/excel/excel.conditionaldatabarrule#formula)|The formula, if required, on which to evaluate the data bar rule.|
 ||[type](/javascript/api/excel/excel.conditionaldatabarrule#type)|The type of rule for the data bar.|
-|[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[delete()](/javascript/api/excel/excel.conditionalformat#delete__)|Deletes this conditional format.|
-||[getRange()](/javascript/api/excel/excel.conditionalformat#getRange__)|Returns the range the conditonal format is applied to.|
-||[getRangeOrNullObject()](/javascript/api/excel/excel.conditionalformat#getRangeOrNullObject__)|Returns the range to which the conditonal format is applied.|
-||[priority](/javascript/api/excel/excel.conditionalformat#priority)|The priority (or index) within the conditional format collection that this conditional format currently exists in.|
-||[cellValue](/javascript/api/excel/excel.conditionalformat#cellValue)|Returns the cell value conditional format properties if the current conditional format is a `CellValue` type.|
+|[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[cellValue](/javascript/api/excel/excel.conditionalformat#cellValue)|Returns the cell value conditional format properties if the current conditional format is a `CellValue` type.|
 ||[cellValueOrNullObject](/javascript/api/excel/excel.conditionalformat#cellValueOrNullObject)|Returns the cell value conditional format properties if the current conditional format is a `CellValue` type.|
 ||[colorScale](/javascript/api/excel/excel.conditionalformat#colorScale)|Returns the color scale conditional format properties if the current conditional format is a `ColorScale` type.|
 ||[colorScaleOrNullObject](/javascript/api/excel/excel.conditionalformat#colorScaleOrNullObject)|Returns the color scale conditional format properties if the current conditional format is a `ColorScale` type.|
@@ -66,17 +62,21 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.6. 
 ||[customOrNullObject](/javascript/api/excel/excel.conditionalformat#customOrNullObject)|Returns the custom conditional format properties if the current conditional format is a custom type.|
 ||[dataBar](/javascript/api/excel/excel.conditionalformat#dataBar)|Returns the data bar properties if the current conditional format is a data bar.|
 ||[dataBarOrNullObject](/javascript/api/excel/excel.conditionalformat#dataBarOrNullObject)|Returns the data bar properties if the current conditional format is a data bar.|
+||[delete()](/javascript/api/excel/excel.conditionalformat#delete__)|Deletes this conditional format.|
+||[getRange()](/javascript/api/excel/excel.conditionalformat#getRange__)|Returns the range the conditonal format is applied to.|
+||[getRangeOrNullObject()](/javascript/api/excel/excel.conditionalformat#getRangeOrNullObject__)|Returns the range to which the conditonal format is applied.|
 ||[iconSet](/javascript/api/excel/excel.conditionalformat#iconSet)|Returns the icon set conditional format properties if the current conditional format is an `IconSet` type.|
 ||[iconSetOrNullObject](/javascript/api/excel/excel.conditionalformat#iconSetOrNullObject)|Returns the icon set conditional format properties if the current conditional format is an `IconSet` type.|
 ||[id](/javascript/api/excel/excel.conditionalformat#id)|The priority of the conditional format in the current `ConditionalFormatCollection`.|
 ||[preset](/javascript/api/excel/excel.conditionalformat#preset)|Returns the preset criteria conditional format.|
 ||[presetOrNullObject](/javascript/api/excel/excel.conditionalformat#presetOrNullObject)|Returns the preset criteria conditional format.|
+||[priority](/javascript/api/excel/excel.conditionalformat#priority)|The priority (or index) within the conditional format collection that this conditional format currently exists in.|
+||[stopIfTrue](/javascript/api/excel/excel.conditionalformat#stopIfTrue)|If the conditions of this conditional format are met, no lower-priority formats shall take effect on that cell.|
 ||[textComparison](/javascript/api/excel/excel.conditionalformat#textComparison)|Returns the specific text conditional format properties if the current conditional format is a text type.|
 ||[textComparisonOrNullObject](/javascript/api/excel/excel.conditionalformat#textComparisonOrNullObject)|Returns the specific text conditional format properties if the current conditional format is a text type.|
 ||[topBottom](/javascript/api/excel/excel.conditionalformat#topBottom)|Returns the top/bottom conditional format properties if the current conditional format is a `TopBottom` type.|
 ||[topBottomOrNullObject](/javascript/api/excel/excel.conditionalformat#topBottomOrNullObject)|Returns the top/bottom conditional format properties if the current conditional format is a `TopBottom` type.|
 ||[type](/javascript/api/excel/excel.conditionalformat#type)|A type of conditional format.|
-||[stopIfTrue](/javascript/api/excel/excel.conditionalformat#stopIfTrue)|If the conditions of this conditional format are met, no lower-priority formats shall take effect on that cell.|
 |[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[add(type: Excel.ConditionalFormatType)](/javascript/api/excel/excel.conditionalformatcollection#add_type_)|Adds a new conditional format to the collection at the first/top priority.|
 ||[clearAll()](/javascript/api/excel/excel.conditionalformatcollection#clearAll__)|Clears all conditional formats active on the current specified range.|
 ||[getCount()](/javascript/api/excel/excel.conditionalformatcollection#getCount__)|Returns the number of conditional formats in the workbook.|
@@ -94,10 +94,10 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.6. 
 |[ConditionalRangeBorder](/javascript/api/excel/excel.conditionalrangeborder)|[color](/javascript/api/excel/excel.conditionalrangeborder#color)|HTML color code representing the color of the border line, in the form #RRGGBB (e.g., "FFA500") or as a named HTML color (e.g., "orange").|
 ||[sideIndex](/javascript/api/excel/excel.conditionalrangeborder#sideIndex)|Constant value that indicates the specific side of the border.|
 ||[style](/javascript/api/excel/excel.conditionalrangeborder#style)|One of the constants of line style specifying the line style for the border.|
-|[ConditionalRangeBorderCollection](/javascript/api/excel/excel.conditionalrangebordercollection)|[getItem(index: Excel.ConditionalRangeBorderIndex)](/javascript/api/excel/excel.conditionalrangebordercollection#getItem_index_)|Gets a border object using its name.|
-||[getItemAt(index: number)](/javascript/api/excel/excel.conditionalrangebordercollection#getItemAt_index_)|Gets a border object using its index.|
-||[bottom](/javascript/api/excel/excel.conditionalrangebordercollection#bottom)|Gets the bottom border.|
+|[ConditionalRangeBorderCollection](/javascript/api/excel/excel.conditionalrangebordercollection)|[bottom](/javascript/api/excel/excel.conditionalrangebordercollection#bottom)|Gets the bottom border.|
 ||[count](/javascript/api/excel/excel.conditionalrangebordercollection#count)|Number of border objects in the collection.|
+||[getItem(index: Excel.ConditionalRangeBorderIndex)](/javascript/api/excel/excel.conditionalrangebordercollection#getItem_index_)|Gets a border object using its name.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.conditionalrangebordercollection#getItemAt_index_)|Gets a border object using its index.|
 ||[items](/javascript/api/excel/excel.conditionalrangebordercollection#items)|Gets the loaded child items in this collection.|
 ||[left](/javascript/api/excel/excel.conditionalrangebordercollection#left)|Gets the left border.|
 ||[right](/javascript/api/excel/excel.conditionalrangebordercollection#right)|Gets the right border.|
@@ -110,10 +110,10 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.6. 
 ||[italic](/javascript/api/excel/excel.conditionalrangefont#italic)|Specifies if the font is italic.|
 ||[strikethrough](/javascript/api/excel/excel.conditionalrangefont#strikethrough)|Specifies the strikethrough status of the font.|
 ||[underline](/javascript/api/excel/excel.conditionalrangefont#underline)|The type of underline applied to the font.|
-|[ConditionalRangeFormat](/javascript/api/excel/excel.conditionalrangeformat)|[numberFormat](/javascript/api/excel/excel.conditionalrangeformat#numberFormat)|Represents Excel's number format code for the given range.|
-||[borders](/javascript/api/excel/excel.conditionalrangeformat#borders)|Collection of border objects that apply to the overall conditional format range.|
+|[ConditionalRangeFormat](/javascript/api/excel/excel.conditionalrangeformat)|[borders](/javascript/api/excel/excel.conditionalrangeformat#borders)|Collection of border objects that apply to the overall conditional format range.|
 ||[fill](/javascript/api/excel/excel.conditionalrangeformat#fill)|Returns the fill object defined on the overall conditional format range.|
 ||[font](/javascript/api/excel/excel.conditionalrangeformat#font)|Returns the font object defined on the overall conditional format range.|
+||[numberFormat](/javascript/api/excel/excel.conditionalrangeformat#numberFormat)|Represents Excel's number format code for the given range.|
 |[ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule)|[operator](/javascript/api/excel/excel.conditionaltextcomparisonrule#operator)|The operator of the text conditional format.|
 ||[text](/javascript/api/excel/excel.conditionaltextcomparisonrule#text)|The text value of the conditional format.|
 |[ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule)|[rank](/javascript/api/excel/excel.conditionaltopbottomrule#rank)|The rank between 1 and 1000 for numeric ranks or 1 and 100 for percent ranks.|

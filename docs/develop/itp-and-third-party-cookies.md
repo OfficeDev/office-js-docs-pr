@@ -2,7 +2,7 @@
 title: Develop your Office Add-in to work with ITP when using third-party cookies
 description: How to work with ITP and Office Add-ins when using third-party cookies
 ms.date: 07/8/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Develop your Office Add-in to work with ITP when using third-party cookies

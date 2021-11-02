@@ -2,7 +2,7 @@
 title: Outlook add-in API requirement set 1.7
 description: 'Overview of the Outlook add-in API (requirement set 1.7)'
 ms.date: 05/17/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Outlook add-in API requirement set 1.7
@@ -38,7 +38,7 @@ Requirement set 1.7 includes all of the features of [requirement set 1.6](../req
 - Added [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook/office.mailboxenums.recurrencetimezone?view=outlook-js-1.7&preserve-view=true): Adds a new enum that specifies the time zone applied to the recurrence.
 - Added [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook/office.mailboxenums.recurrencetype?view=outlook-js-1.7&preserve-view=true): Adds a new enum that specifies the type of recurrence.
 - Added [Office.MailboxEnums.WeekNumber](/javascript/api/outlook/office.mailboxenums.weeknumber?view=outlook-js-1.7&preserve-view=true): Adds a new enum that specifies the week of the month.
-- Modified [Office.EventType](/javascript/api/office/office.eventtype): Adds support for `RecurrenceChanged`, `RecipientsChanged`, and `AppointmentTimeChanged` events.
+- Modified [Office.EventType](/javascript/api/office/office.eventtype?view=outlook-js-1.7&preserve-view=true): Adds support for `RecurrenceChanged`, `RecipientsChanged`, and `AppointmentTimeChanged` events.
 
 ## See also
 

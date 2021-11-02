@@ -4,7 +4,7 @@ description: 'Learn how to use PowerPoint add-ins to build engaging solutions fo
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # PowerPoint add-ins

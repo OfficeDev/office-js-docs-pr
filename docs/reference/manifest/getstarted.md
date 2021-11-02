@@ -1,13 +1,25 @@
 ---
 title: GetStarted element in the manifest file
 description: Provides information used by the callout that appears when the add-in is installed in Word, Excel, PowerPoint, and OneNote.
-ms.date: 10/09/2018
-localization_priority: Normal
+ms.date: 09/29/2021
+ms.localizationpriority: medium
 ---
 
 # GetStarted element
 
-Provides information used by the callout that appears when the add-in is installed in Word, Excel, PowerPoint, and OneNote. The **GetStarted** element is a child element of [DesktopFormFactor](desktopformfactor.md).
+Provides information used by the callout that appears when the add-in is installed in Word, Excel, PowerPoint, and OneNote. The **GetStarted** element is a child element of [DesktopFormFactor](desktopformfactor.md). If the **GetStarted** element is omitted, the callout uses the values from the [DisplayName](displayname.md) and [Description](description.md) elements instead.
+
+**Add-in type:** Task pane
+
+**Valid only in these VersionOverrides schemas**:
+
+- Task pane 1.0
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associated with these requirement sets**:
+
+- [AppCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 ## Child elements
 
