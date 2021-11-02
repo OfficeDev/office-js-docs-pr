@@ -81,9 +81,9 @@ If your add-in uses the Office Dialog API, the dialog runs in a separate process
 
 ## Switch to the Internet Explorer 11 webview
 
-There are two ways to switch the Internet Explorer webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Internet Explorer by default. We recommend the first method. But you should use the second in the following scenarios:
+There are two ways to switch the Internet Explorer webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Internet Explorer by default. We recommend the first method. But you should use the second in the following scenarios.
 
-- Your project was developed with Visual Studio and IIS. It isn't nodejs-based.
+- Your project was developed with Visual Studio and IIS. It isn't node.js-based.
 - You want to be absolutely robust in your testing.
 - If for any reason the command line tool doesn't work.
 
