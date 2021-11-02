@@ -14,7 +14,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 |  Requirement set  | Office 2013 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| KeyboardShortcuts 1.1  | N/A | 16.0.14701.10000 or later | ????? | 16.55 or later | September, 2021 |
+| KeyboardShortcuts 1.1  | N/A | Version: 2110 (Build 14701.10000) | N/A | 16.55 | September, 2021 |
 
 ## Office versions and build numbers
 
