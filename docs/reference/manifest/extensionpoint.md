@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 09/29/2021
+ms.date: 11/02/2021
 ms.localizationpriority: medium
 ---
 
@@ -98,6 +98,7 @@ The following examples show how to use the **ExtensionPoint** element with **Pri
 - [Module](#module) (Can only be used in the [DesktopFormFactor](desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 - [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface)
+- [MobileLogEventAppointmentAttendee](#mobilelogeventappointmentattendee)
 - [LaunchEvent](#launchevent)
 - [Events](#events)
 - [DetectedEntity](#detectedentity)
@@ -307,6 +308,51 @@ The `Icon` images should be in grayscale using hex code `#919191` or its equival
     </Icon>
     <Action xsi:type="ExecuteFunction">
       <FunctionName>insertContosoMeeting</FunctionName>
+    </Action>
+  </Control>
+</ExtensionPoint>
+```
+
+### MobileLogEventAppointmentAttendee
+
+This extension point puts a **Log** action button contextually in the command surface for an appointment in the mobile form factor. Appointment attendees who have the add-in installed can save the appointment details to an external app in one click. This extension point supports functionality for task pane and UI-less. To learn more about this scenario, refer to the [Log appointments to a CRM application in Outlook mobile add-ins](../../outlook/mobile-log-crm.md) article.
+
+> [!NOTE]
+> This extension point is only supported on Android with a Microsoft 365 subscription.
+>
+> Registering [Mailbox](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) and [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) events is not available with this extension point.
+
+#### Child elements
+
+|  Element |  Description  |
+|:-----|:-----|
+|  [Control](control.md) |  Adds a button to the command surface.  |
+
+`ExtensionPoint` elements of this type can only have one child element: a `Control` element.
+
+The `Control` element contained in this extension point must have the `xsi:type` attribute set to `MobileButton`.
+
+The `Icon` images should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
+
+#### Example
+
+```xml
+<ExtensionPoint xsi:type="MobileLogEventAppointmentAttendee">
+  <Control xsi:type="MobileButton" id="appointmentReadFunctionButton">
+    <Label resid="LogButtonLabel" />
+    <Icon>
+      <bt:Image resid="Icon.16x16" size="25" scale="1" />
+      <bt:Image resid="Icon.16x16" size="25" scale="2" />
+      <bt:Image resid="Icon.16x16" size="25" scale="3" />
+      <bt:Image resid="Icon.32x32" size="32" scale="1" />
+      <bt:Image resid="Icon.32x32" size="32" scale="2" />
+      <bt:Image resid="Icon.32x32" size="32" scale="3" />
+      <bt:Image resid="Icon.80x80" size="48" scale="1" />
+      <bt:Image resid="Icon.80x80" size="48" scale="2" />
+      <bt:Image resid="Icon.80x80" size="48" scale="3" />
+    </Icon>
+    <Action xsi:type="ExecuteFunction">
+      <FunctionName>logToCRM</FunctionName>
     </Action>
   </Control>
 </ExtensionPoint>
