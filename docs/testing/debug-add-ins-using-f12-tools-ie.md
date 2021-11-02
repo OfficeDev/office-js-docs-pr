@@ -87,7 +87,7 @@ There are two ways to switch the Internet Explorer webview. You can run a simple
 - You want to be absolutely robust in your testing.
 - If for any reason the command line tool doesn't work.
 
-### Switch on the command line
+### Switch via the command line
 
 [!INCLUDE [Steps to switch browsers with the command line tool](../includes/use-legacy-edge-or-ie.md)]
 
