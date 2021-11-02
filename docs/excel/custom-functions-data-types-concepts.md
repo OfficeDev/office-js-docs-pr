@@ -65,7 +65,7 @@ function createFormattedNumber(value, format) {
 
 ## Input an entity value
 
-The following code sample shows a custom function that takes an entity value data type as an input. If the `attribute` parameter is set to `text`, then the function returns the `text` property of the entity value. Otherwise, the function returns the `basicValue` property of the entity value.
+The following code sample shows a custom function that takes an [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) data type as an input. If the `attribute` parameter is set to `text`, then the function returns the `text` property of the entity value. Otherwise, the function returns the `basicValue` property of the entity value.
 
 ```js
 /**
