@@ -1,7 +1,7 @@
 ---
 title: Overview of data types in Excel add-ins
 description: 'Data types in the Excel JavaScript API enable Office Add-in developers to work with formatted number values, web images, entity values, arrays within entity values, and enhanced errors as data types.'
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -26,10 +26,10 @@ Data types expand Excel JavaScript API support beyond the four original data typ
 
 [!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
 
-Data types enhance the power of custom functions. Custom functions accept data types as both inputs to custom functions and outputs of custom functions, and custom functions use the same JSON schema for data types as the Excel JavaScript API. This data types JSON schema is maintained as custom functions calculate and evaluate. To learn more about integrating data types with your custom functions, see [Custom functions and data types core concepts](/custom-functions-data-types-concepts.md).
+Data types enhance the power of custom functions. Custom functions accept data types as both inputs to custom functions and outputs of custom functions, and custom functions use the same JSON schema for data types as the Excel JavaScript API. This data types JSON schema is maintained as custom functions calculate and evaluate. To learn more about integrating data types with your custom functions, see [Custom functions and data types core concepts](custom-functions-data-types-concepts.md).
 
 ## See also
 
-* [Excel data types core concepts](/excel-data-types-concepts.md)
+* [Excel data types core concepts](excel-data-types-concepts.md)
 * [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
-* [Custom functions and data types overview](/custom-functions-data-types-overview.md)
+* [Custom functions and data types overview](custom-functions-data-types-overview.md)
