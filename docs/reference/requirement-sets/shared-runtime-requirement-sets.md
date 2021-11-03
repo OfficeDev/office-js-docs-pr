@@ -31,9 +31,9 @@ The following table lists additional application builds that support a preview o
 
 |Office application |Build |
 |-------------------|------|
-|Word on Windows |build 16.0.13218.10000 or later |
+|PowerPoint on Windows |Build 16.0.13218.10000 or later |
+|Word on Windows |Build 16.0.13218.10000 or later |
 |Word on Mac |Build 16.46.207.0 or later |
-|PowerPoint on Windows |Build 13218.10000 or later |
 
 ## Office versions and build numbers
 
