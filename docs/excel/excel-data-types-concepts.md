@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: 'Learn the core concepts for using Excel data types in your Office Add-in.'
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -104,6 +104,6 @@ Each of the error objects can access an enum through the `errorSubType` property
 
 ## See also
 
-- [Overview of data types in Excel add-ins](/excel-data-types-overview.md)
+- [Overview of data types in Excel add-ins](excel-data-types-overview.md)
 - [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
-- [Custom functions and data types overview](/custom-functions-data-types-overview.md)
+- [Custom functions and data types overview](custom-functions-data-types-overview.md)
