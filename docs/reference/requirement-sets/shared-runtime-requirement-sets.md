@@ -19,7 +19,7 @@ The following table lists the SharedRuntime 1.1 requirement set, the Office clie
 | SharedRuntime 1.1  | Build 16.0.14326.20454 or later | Version 2002 (Build 12527.20092) or later | N/A | 16.35 or later | February 2020 | N/A |
 
 > [!IMPORTANT]
-> At this time, the shared JavaScript runtime is not supported on iPad or in one-time purchase versions of Office 2019 or earlier.
+> At this time, the shared JavaScript runtime is not supported on iPad or in one-time purchase versions of Office 2019 or earlier. For additional support details, see the following sections.
 
 ## Support for version 1.1 on Excel
 
