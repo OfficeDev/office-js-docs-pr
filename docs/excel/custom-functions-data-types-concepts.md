@@ -1,7 +1,7 @@
 ---
 title: Custom functions and data types core concepts
 description: 'Learn the core concepts for using Excel data types with your custom functions.'
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -13,14 +13,14 @@ ms.localizationpriority: medium
 
 Data types enhance the Excel JavaScript API by expanding support for data types beyond the original four (string, number, boolean, and error). Data types include support for formatted number values, web images, entity values, and arrays within entity values. Custom functions accept data types as both input and output values, expanding the calculation power of custom functions.
 
-To learn more about using data types with an Excel add-in, see [Excel data types core concepts](/excel-data-types-concepts.md).
+To learn more about using data types with an Excel add-in, see [Excel data types core concepts](excel-data-types-concepts.md).
 
 ## How custom functions handle data types
 
 Custom functions can recognize data types and accept them as parameter values. A custom function can create a new data type for a return value. Custom functions use the same JSON schema for data types as the Excel JavaScript API, and this JSON schema is maintained as custom functions calculate and evaluate.
 
 > [!NOTE]
-> Custom functions do not support the full functionality of the enhanced error objects offered by data types. A custom function can accept a data types error object, but it won't be maintained throughout calculation. At this time, custom functions only support the errors included in the [CustomFunctions.Error object](/custom-functions-errors.md).
+> Custom functions do not support the full functionality of the enhanced error objects offered by data types. A custom function can accept a data types error object, but it won't be maintained throughout calculation. At this time, custom functions only support the errors included in the [CustomFunctions.Error object](custom-functions-errors.md).
 
 ## Enable data types for custom functions
 
@@ -90,7 +90,7 @@ function getEntityAttribute(value, attribute) {
 
 ## See also
 
-* [Custom functions and data types overview](/custom-functions-data-types-overview.md)
-* [Overview of data types in Excel add-ins](/excel-data-types-overview.md)
-* [Excel data types core concepts](/excel-data-types-concepts.md)
+* [Custom functions and data types overview](custom-functions-data-types-overview.md)
+* [Overview of data types in Excel add-ins](excel-data-types-overview.md)
+* [Excel data types core concepts](excel-data-types-concepts.md)
 * [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
