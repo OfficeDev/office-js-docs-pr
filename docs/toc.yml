@@ -147,7 +147,7 @@ items:
           href: develop/troubleshoot-sso-in-office-add-ins.md
       - name: Office dialog API
         href: develop/auth-with-office-dialog-api.md      
-      - name: Authentication providers
+      - name: Identity providers
         href: develop/auth-external-add-ins.md
       - name: Access Microsoft Graph
         href: develop/authorize-to-microsoft-graph-without-sso.md
