@@ -11,12 +11,15 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for November 10th call
 
-- We plan to post the agenda here Friday, November 5th.
+- Community presentation by CodeTwo. Integration of event-based activation with Outlook signatures.
+- Demonstration of the new Office-Addin-Mock library for unit testing your code when working with Office JS APIs.
+- Microsoft 365 instant sandbox.
 
 ## Previous calls
 
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
+- [Office Add-ins community call – October 13, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-october-13-2021/ba-p/2867151)
 - [Office Add-ins community call – September 8, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-september-8-2021/ba-p/2747100)
 - [Office Add-ins community call – August 11, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-august-2021/ba-p/2661372)
 - [Office Add-ins community call – July 14, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-july-2021/ba-p/2573384)
