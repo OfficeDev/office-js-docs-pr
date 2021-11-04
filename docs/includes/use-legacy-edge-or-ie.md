@@ -6,6 +6,8 @@ If your project is node.js-based (that is, not developed with Visual Studio and 
     npm install office-addin-dev-settings --save-dev
     ```
 
+    [!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
+
 1. Specify the browser that you want Office to use with the following command in a command prompt in the root of the project. Replace `<path-to-manifest>` with the relative path, which is just the manifest filename if it is in the root of the project. Replace `<webview>` with either `ie` or `edge-legacy`.
 
     ```command&nbsp;line
