@@ -1,7 +1,7 @@
 ---
 title: Debug your add-in with runtime logging
 description: 'Learn how to use runtime logging to debug your add-in.'
-ms.date: 07/08/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
 ---
 
@@ -18,6 +18,8 @@ You can use runtime logging to debug your add-in's manifest as well as several i
 ## Use runtime logging from the command line
 
 Enabling runtime logging from the command line is the fastest way to use this logging tool. These use npx, which is provided by default as part of npm@5.2.0+. If you have an earlier version of [npm](https://www.npmjs.com/), try [Runtime logging on Windows](#runtime-logging-on-windows) or [Runtime logging on Mac](#runtime-logging-on-mac) instructions, or [install npx](https://www.npmjs.com/package/npx).
+
+[!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
 - To enable runtime logging:
 
