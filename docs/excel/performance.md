@@ -176,7 +176,7 @@ async function run() {
     
     // This sample attempts to process too many ranges at once. 
     for (let row = 1; row < 10000; row++) {
-      var range = sheet.getRangeByIndexes(i, 1, 1, 1);
+      var range = sheet.getRangeByIndexes(row, 1, 1, 1);
       range.values = [["1"]];
     }
     await context.sync(); 
@@ -196,14 +196,14 @@ async function run() {
 
     // Split the ranges into two loops, rows 1-5000 and then 5001-10000.
     for (let row = 1; row < 5000; row++) {
-      var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      var range = worksheet.getRangeByIndexes(row, 1, 1, 1);
       range.values = [["1"]];
     }
     // Sync after each loop. 
     await context.sync(); 
     
     for (let row = 5001; row < 10000; row++) {
-      var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      var range = worksheet.getRangeByIndexes(row, 1, 1, 1);
       range.values = [["1"]];
     }
     await context.sync(); 
