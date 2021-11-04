@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: 'Learn how to create a Node.js-based add-in that uses Office Single Sign-on'
-ms.date: 09/03/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
 ---
 
@@ -168,9 +168,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     async function getGraphData() {
         try {
             
-            // TODO 1: Tell Office to get a bootstrap token from Azure AD.
+            // TODO 1: Tell Office to get an access token from Azure AD.
             
-            // TODO 2: Attempt to exchange the bootstrap token for an 
+            // TODO 2: Attempt to exchange the access token for a new
             //         access token to Microsoft Graph.
 
             // TODO 3: Handle case where Microsoft Graph requires an 
@@ -191,10 +191,10 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Replace `TODO 1` with the following code. About this code, note the following:
 
-    - `Office.auth.getAccessToken` instructs Office to get a bootstrap token from Azure AD. A bootstrap token is similar to an ID token, but it has a `scp` (scope) property with the value `access-as-user`. This kind of token can be exchanged by a web application for an access token to Microsoft Graph.
+    - `Office.auth.getAccessToken` instructs Office to get an access token from Azure AD. The access token is an ID token, but it also has a `scp` (scope) property with the value `access-as-user`. This token can be exchanged by a web application for an access token with permissions to Microsoft Graph.
     - Setting the `allowSignInPrompt` option to true means that if no user is currently signed into Office, then Office will open a popup sign-in prompt.
     - Setting the `allowConsentPrompt` option to true means that if the user has not consented to let the add-in access the user's AAD profile, then Office will open a consent prompt. (The prompt only allows the user to consent to the user's AAD profile, not to Microsoft Graph scopes.)
-    - Setting the `forMSGraphAccess` option to true signals to Office that the add-in intends to use the bootstrap token to get an access token to Microsoft Graph, instead of just using it as an ID token. If the tenant administrator has not granted consent to the add-in's access to Microsoft Graph, then `Office.auth.getAccessToken` returns error **13012**. The add-in can respond by falling back to an alternative system of authorization, which is necessary because Office can prompt only for consent to the user's Azure AD profile, not to any Microsoft Graph scopes. The fallback authorization system requires the user to sign in again and the user *can* be prompted to consent to Microsoft Graph scopes. So, the `forMSGraphAccess` option ensures that the add-in won't make a token exchange that will fail due to lack of consent. (Since you granted administrator consent in an earlier step, this scenario won't happen for this add-in. But the option is included here anyway to illustrate a best practice.)
+    - Setting the `forMSGraphAccess` option to true signals to Office that the add-in intends to use the access token to get an additional access token with permissions to Microsoft Graph, instead of just using it as an ID token. If the tenant administrator has not granted consent to the add-in's access to Microsoft Graph, then `Office.auth.getAccessToken` returns error **13012**. The add-in can respond by falling back to an alternative system of authorization, which is necessary because Office can prompt only for consent to the user's Azure AD profile, not to any Microsoft Graph scopes. The fallback authorization system requires the user to sign in again and the user *can* be prompted to consent to Microsoft Graph scopes. So, the `forMSGraphAccess` option ensures that the add-in won't make a token exchange that will fail due to lack of consent. (Since you granted administrator consent in an earlier step, this scenario won't happen for this add-in. But the option is included here anyway to illustrate a best practice.)
 
     ```javascript
     let bootstrapToken = await Office.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
@@ -245,7 +245,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     }
     ```
 
-1. Below the `getGraphData` method, add the following function. Note that `/auth` is a server-side Express route that exchanges the bootstrap token with Azure AD for an access token to Microsoft Graph.
+1. Below the `getGraphData` method, add the following function. Note that `/auth` is a server-side Express route that exchanges the access token with Azure AD for an access token with permissions to Microsoft Graph.
 
     ```javascript
     async function getGraphToken(bootstrapToken) {
@@ -320,14 +320,14 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     ```javascript
     function handleAADErrors(exchangeResponse) {
 
-    // TODO 8: Handle case where the bootstrap token is expired.
+    // TODO 8: Handle case where the access token is expired.
 
     // TODO 9: Handle all other Azure AD errors.
     
     }
     ```
 
-1. On rare occasions the bootstrap token that Office has cached is unexpired when Office validates it, but expires by the time it reaches Azure AD for exchange. Azure AD will respond with error **AADSTS500133**. In this case, the add-in should simply recursively call `getGraphData`. Since the cached bootstrap token is now expired, Office will get a new one from Azure AD. So replace `TODO 8` with the following:
+1. On rare occasions the access token that Office has cached is unexpired when Office validates it, but expires by the time it reaches Azure AD for exchange. Azure AD will respond with error **AADSTS500133**. In this case, the add-in should simply call `getGraphData` again. Since the cached access token is now expired, Office will get a new one from Azure AD. So replace `TODO 8` with the following:
 
 
     ```javascript
@@ -440,7 +440,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 
         // TODO 13: Create the hidden form that will be sent to Azure AD 
         //          to request the access token in exchange for the 
-        //          bootstrap token.
+        //          access token.
 
         // TODO 14: Send the POST request to Azure AD and relay the 
         //          access token (or an error) to the client.
@@ -461,9 +461,9 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
 1. Replace `TODO 13` with the following code. About this code, note the following:
 
     - This is the beginning of a long `else` block, but the closing `}` is not at the end yet because you will be adding more code to it.
-    - The `authorization` string is "Bearer " followed by the bootstrap token, so the first line of the `else` block is assigning the token to the `jwt`. ("JWT" stands for "JSON Web Token".)
+    - The `authorization` string is "Bearer " followed by the access token, so the first line of the `else` block is assigning the token to the `jwt`. ("JWT" stands for "JSON Web Token".)
     - The two `process.env.*` values are the constants that you assigned when you configured the add-in.
-    - The `requested_token_use` form parameter is set to 'on_behalf_of'. This tells Azure AD that the add-in is requesting an access token to Microsoft Graph using the On-Behalf-Of Flow. Azure will respond by validating that the bootstrap token, which is assigned to `assertion` form parameter, has a `scp` property that is set to `access-as-user`.
+    - The `requested_token_use` form parameter is set to 'on_behalf_of'. This tells Azure AD that the add-in is requesting an access token to Microsoft Graph using the On-Behalf-Of Flow. Azure will respond by validating that the access token, which is assigned to `assertion` form parameter, has a `scp` property that is set to `access-as-user`.
     - The `scope` form parameter is set to 'Files.Read.All' which is the only Microsoft Graph scope that the add-in needs.
 
     ```javascript

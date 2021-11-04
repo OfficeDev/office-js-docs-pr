@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: 'Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.'
-ms.date: 09/23/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
 ---
 
@@ -137,6 +137,6 @@ This kind of error should only be seen in development.
 - Your server-side code should send a `403 Forbidden` response to the client which should log the error to the console or record it in a log.
 - Be sure your add-in manifest [Scopes](../reference/manifest/scopes.md) section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
 
-### Invalid audience error in the access token (not the bootstrap token)
+### Invalid audience error in the access token for Microsoft Graph
 
 Your server-side code should send a `403 Forbidden` response to the client which should present a friendly message to the user and possibly also log the error to the console or record it in a log.
