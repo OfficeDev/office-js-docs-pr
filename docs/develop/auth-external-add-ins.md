@@ -1,6 +1,6 @@
 ---
 title: Authorization with Google, Facebook, and other identity providers
-description: 'Getting authorization to non-Microsoft data sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub using OAuth 2.0, the Authorization Code and Implicit flows.'
+description: 'Get authorization to non-Microsoft data sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub using OAuth 2.0, the Authorization Code and Implicit flows.'
 ms.date: 10/22/2021
 ms.localizationpriority: medium
 ---
