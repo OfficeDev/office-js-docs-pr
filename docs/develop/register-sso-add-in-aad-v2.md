@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Register an Office Add-in that uses single sign-on (SSO) with the Microsoft identity platform
 
-This article explains how to register an Office Add-in with the Microsoft identity platform so that you can use SSO. You need to register the add-in when you begin developing it. When you progress to testing or production, you can change the existing registration or create separate registrations for development, testing, and production versions of the add-in.
+This article explains how to register an Office Add-in with the Microsoft identity platform so that you can use SSO. Register the add-in when you begin developing it so that when you progress to testing or production, you can change the existing registration or create separate registrations for development, testing, and production versions of the add-in.
 
 The following table itemizes the information that you need to carry out this procedure and the corresponding placeholders that appear in the instructions.
 

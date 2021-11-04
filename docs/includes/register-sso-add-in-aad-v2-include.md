@@ -1,5 +1,6 @@
 
-1. Browse to the [App registrations - Microsoft Azure](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your add-in.
+##Register your add-in
+1. Browse to the [App registrations - Microsoft Azure](https://go.microsoft.com/fwlink/?linkid=2083908) page.
 
 1. Sign in with the ***admin*** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
 
@@ -50,7 +51,7 @@
 
     For each ID, take these steps.
 
-      a. Select **Add a client application**, then, in the panel that opens, set the **Client ID** to the respective GUID and check the box for `api://$FQDN-WITHOUT-PROTOCOL$/$App ID GUID$/access_as_user`.
+      a. Select **Add a client application**. In the panel that opens, set the **Client ID** to the respective GUID and check the box for `api://$FQDN-WITHOUT-PROTOCOL$/$App ID GUID$/access_as_user`.
 
       b. Select **Add application**.
 

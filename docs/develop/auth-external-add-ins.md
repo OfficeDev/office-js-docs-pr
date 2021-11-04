@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Authorization with Google, Facebook, and other identity providers
 
-Popular online services, such as Google, Facebook, LinkedIn, SalesForce, and GitHub, have identity providers that developers can use to give users access to their accounts in other applications. You can use these identity providers in your Office Add-in.
+Popular online services, such as Google, Facebook, LinkedIn, SalesForce, and GitHub, have identity providers that developers can use to give users access to their accounts in other applications, including your Office Add-in.
 
 The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
 
