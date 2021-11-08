@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API requirement set 1.10
 description: 'Requirement set 1.10 for Outlook add-in API.'
-ms.date: 11/01/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
 ---
 
@@ -17,6 +17,7 @@ The Outlook add-in API subset of the Office JavaScript API includes objects, met
 Requirement set 1.10 includes all of the features of [requirement set 1.9](../requirement-set-1.9/outlook-requirement-set-1.9.md). It added the following features.
 
 - Added new APIs for [event-based activation](../../../outlook/autolaunch.md) and mail signature features.
+- Added support for the [OfficeRuntime.Storage](/javascript/api/office-runtime/officeruntime.storage?view=outlook-js-1.10&preserve-view=true) object with the event-based activation feature.
 - Added ability to include a custom action on a notification message.
 
 ### Change log
@@ -33,6 +34,7 @@ Requirement set 1.10 includes all of the features of [requirement set 1.9](../re
 - Added [Office.MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype?view=outlook-js-1.10&preserve-view=true): Adds a new type to the `ItemNotificationMessageType` enum. It represents a notification message with a custom action.
 - Added [Office.NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction?view=outlook-js-1.10&preserve-view=true): Adds a new object so you can define a custom action for your `InsightMessage` notification.
 - Added [Office.NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails?view=outlook-js-1.10&preserve-view=true#actions): Adds a new property that enables you to add an `InsightMessage` notification with a custom action.
+- Modified [OfficeRuntime.Storage](/javascript/api/office-runtime/officeruntime.storage?view=outlook-js-1.10&preserve-view=true): Adds Outlook support but only with the event-based activation feature.
 
 ## See also
 
