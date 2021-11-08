@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: 'Learn the core concepts for using Excel data types in your Office Add-in.'
-ms.date: 11/03/2021
+ms.date: 11/08/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -92,7 +92,7 @@ The following is a list of all the error objects with expanded support through d
 - [Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue)
 - [FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue)
 - [GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue)
-- [NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue)
+- [NotAvailableErrorCellValue](/javascript/api/excel/excel.notavailableerrorcellvalue)
 - [NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue)
 - [NullErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue)
 - [NumErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue)
