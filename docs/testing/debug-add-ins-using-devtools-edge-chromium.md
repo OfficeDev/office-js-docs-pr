@@ -58,4 +58,4 @@ If your add-in uses the Office Dialog API, the dialog runs in a separate process
    - Press **Ctrl-Shift-I** or **F12**.
    - Right-click the dialog to open the context menu and select **Inspect**.
 
-1. Use the tool the same as you would for code in a task pane. See [Debug a task pane add-in using Microsoft Edge (Chromium-based) developer tools](#debug-a-task-pane-add-in-using-microsoft-edge-(chromium-based)-developer-tools) earlier in this article.
+1. Use the tool the same as you would for code in a task pane. See [Debug a task pane add-in using Microsoft Edge (Chromium-based) developer tools](#debug-a-task-pane-add-in-using-microsoft-edge-chromium-based-developer-tools) earlier in this article.
