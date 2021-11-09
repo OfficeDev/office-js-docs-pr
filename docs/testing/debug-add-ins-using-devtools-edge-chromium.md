@@ -28,7 +28,7 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
 1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
 1. Run the Microsoft Edge (Chromium-based) developer tools by one of these methods:
 
-   - Be sure the add-in's task pane has focus and press **Ctrl-Shift-I**.
+   - Be sure the add-in's task pane has focus and press **Ctrl+Shift+I**.
    - Right-click the task pane to open the context menu and select **Inspect**, or open the [personality menu](../design/task-pane-add-ins.md#personality-menu) and select **Attach Debugger**.
 
 1. Open the **Sources** tab.
@@ -41,7 +41,7 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
 
    :::image type="content" source="../images/open-file-in-edge-chromium-devtools.png" alt-text="Screenshot of Edge Chromium developer tools source tab with 4 parts labelled A through D.":::
 
-1. To set a breakpoint, select the the line number of the line in the code file. A red dot appears by the line in the code file. In the debugger window to the right, the breakpoint is registered in the **Breakpoints** drop down.
+1. To set a breakpoint, select the line number of the line in the code file. A red dot appears by the line in the code file. In the debugger window to the right, the breakpoint is registered in the **Breakpoints** drop down.
 1. Execute functions in the add-in as needed to trigger the breakpoint.
 
 > [!TIP]
@@ -55,7 +55,7 @@ If your add-in uses the Office Dialog API, the dialog runs in a separate process
 1. Open the dialog and be sure it has focus.
 1. Open the Microsoft Edge (Chromium-based) developer tools by one of these methods:
 
-   - Press **Ctrl-Shift-I** or **F12**.
+   - Press **Ctrl+Shift+I** or **F12**.
    - Right-click the dialog to open the context menu and select **Inspect**.
 
 1. Use the tool the same as you would for code in a task pane. See [Debug a task pane add-in using Microsoft Edge (Chromium-based) developer tools](#debug-a-task-pane-add-in-using-microsoft-edge-chromium-based-developer-tools) earlier in this article.
