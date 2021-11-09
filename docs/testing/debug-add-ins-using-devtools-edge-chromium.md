@@ -51,9 +51,11 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
 
 If your add-in uses the Office Dialog API, the dialog runs in a separate process from the task pane (if any) and the tool must be started from that separate process. Follow these steps.
 
-1. Run the add-in and the tools.
+1. Run the add-in.
 1. Open the dialog and be sure it has focus.
 1. Open the Microsoft Edge (Chromium-based) developer tools by one of these methods:
 
-   - Be sure the add-in's task pane has focus and press **Ctrl-Shift-I** or **F12**.
-   - Right-click the task pane to open the context menu and select **Inspect**.
+   - Press **Ctrl-Shift-I** or **F12**.
+   - Right-click the dialog to open the context menu and select **Inspect**.
+
+1. Use the tool the same as you would for code in a task pane. See [Debug a task pane add-in using Microsoft Edge (Chromium-based) developer tools](#debug-a-task-pane-add-in-using-microsoft-edge-(chromium-based)-developer-tools) earlier in this article.
