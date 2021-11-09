@@ -13,7 +13,7 @@ This article shows how to debug the client-side code (JavaScript or TypeScript) 
 - Your computer is using a combination of Windows and Office versions that use the Edge (Chromium-based) webview control, WebView2.
 
 > [!TIP]
-> For information about debugging with Edge WebView2 (Chromium-based) inside Visual Studio Code, see [Debug add-ins on Windows using Microsoft Edge WebView2 (Chromium-based)](debug-desktop-using-edge-chromium.md).
+> For information about debugging with Edge WebView2 (Chromium-based) inside Visual Studio Code, see [Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)](debug-desktop-using-edge-chromium.md).
 
 To determine which browser you're using, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
