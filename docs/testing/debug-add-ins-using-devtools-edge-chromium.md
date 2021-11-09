@@ -29,7 +29,7 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
 1. Run the Microsoft Edge (Chromium-based) developer tools by one of these methods:
 
    - Be sure the add-in's task pane has focus and press **Ctrl-Shift-I**.
-   - Right-click the task pane to open the context menu, or open the [personality menu](../design/task-pane-add-ins.md#personality-menu), and select **Inspect**.
+   - Right-click the task pane to open the context menu and select **Inspect**, or open the [personality menu](../design/task-pane-add-ins.md#personality-menu) and select **Attach Debugger**.
 
 1. Open the **Sources** tab.
 1. Open the file that you want to debug with the following steps.
