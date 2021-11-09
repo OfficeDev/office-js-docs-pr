@@ -39,7 +39,7 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
    1. Select the refresh button.
    1. In the search results, select the line to open the code file in the pane above the search results.
 
-   :::image type="content" source="../images/open-file-in-edge-devtools.png" alt-text="Screenshot of Edge DevTools debugging tab with 4 parts labelled A through D.":::
+   :::image type="content" source="../images/open-file-in-edge-chromium-devtools.png" alt-text="Screenshot of Edge Chromium developer tools source tab with 4 parts labelled A through D.":::
 
 1. To set a breakpoint, select the the line number of the line in the code file. A red dot appears by the line in the code file. In the debugger window to the right, the breakpoint is registered in the **Breakpoints** drop down.
 1. Execute functions in the add-in as needed to trigger the breakpoint.
