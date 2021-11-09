@@ -4,7 +4,7 @@ description: 'Learn how to debug Office Add-ins that use Microsoft Edge WebView2
 ms.date: 11/09/2021
 ms.localizationpriority: high
 ---
-# Debug add-ins on Windows using Visual Studio Code and EMicrosoft Edge WebView2 (Chromium-based)
+# Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 
 Office Add-ins running on Windows can use the Debugger for Microsoft Edge extension in Visual Studio Code to debug against the Edge Chromium WebView2 runtime. 
 
