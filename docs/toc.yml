@@ -275,7 +275,9 @@ items:
         href: testing/debug-add-ins-using-f12-tools-ie.md
       - name: Debug using developer tools for Edge legacy
         href: testing/debug-add-ins-using-devtools-edge-legacy.md
-      - name: Debug using Edge Chromium WebView2
+      - name: Debug using developer tools for Edge Chromium WebView2
+        href: testing/debug-add-ins-using-devtools-edge-chromium.md
+      - name: Debug using Visual Studio Code and Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
         displayName: debug, windows
       - name: Test with Internet Explorer 11
