@@ -1,7 +1,7 @@
 ---
 title: Authenticate a user with a single-sign-on token
 description: 'Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.'
-ms.date: 09/03/2021
+ms.date: 11/11/2021
 ms.localizationpriority: medium
 ---
 
@@ -43,8 +43,13 @@ In most scenarios, there would be little point to obtaining the access token, if
 > [!IMPORTANT]
 > When using the SSO token as an identity in an *Outlook* add-in, we recommend that you also [use the Exchange identity token](authenticate-a-user-with-an-identity-token.md) as an alternate identity. Users of your add-in may use multiple clients, and some may not support providing an SSO token. By using the Exchange identity token as an alternate, you can avoid having to prompt these users for credentials multiple times. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](implement-sso-in-outlook-add-in.md).
 
+## SSO for event-based activation
+
+There are additional steps to take if you add-in uses event-based activation. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
+
 ## See also
 
 - For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [Outlook Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO).
 - [SSO API reference](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [IdentityAPI requirement set](../reference/requirement-sets/identity-api-requirement-sets.md)
+- [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md)
