@@ -55,13 +55,17 @@ npm install office-addin-mock --save-dev
    ```
 
 1. Pass the data object to the `OfficeMockObject` constructor. Note the following about the returned `OfficeMockObject` object:
+
    - It is a simplified mock of an [OfficeExtension.ClientRequestContext](/javascript/api/office/officeextension.clientrequestcontext) object. (It is also possible to mock a host object, such as [Excel](/javascript/api/excel) or [Word](/javascript/api/word). For an example, see [Mocking a host object](#mocking-a-host-object).)
-   - The mock object has all the members of the data object and also has mock `load()` and `sync()` methods. 
+   - The mock object has all the members of the data object and also has mock `load()` and `sync()` methods.
    - The mock object will mimic crucial error behavior of the `ClientRequestContext` object. For example, if the Office API you are testing tries to read a property without first loading the property and calling `sync()`, then the test will fail with an error similar to what would be thrown in production runtime: "Error, property not loaded".
 
    ```javascript
    const contextMock = new OfficeMockObject.OfficeMockObject(mockData);
    ```
+
+> [!NOTE]
+> Full reference documentation for the `OfficeMockObject` type is at [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 
 1. In the syntax of your test framework, add a test of the function, but use the `OfficeMockObject` object in place of the object that it mocks, in this case the `ClientRequestContext` object. The following continues the example in Jest. This example test assumes that the add-in function that is being tested is called `getSelectedRangeAddress`, that it takes a `ClientRequestContext` object as a parameter, and that it is intended to return the address of the currently selected range. The full example is at [Mocking a ClientRequestContext object](#mocking-a-clientrequestcontext-object).
 
@@ -92,7 +96,7 @@ The examples in this section use Jest with its default settings. These settings 
 
 To run any of these examples, take the following steps:
 
-1. Create an Office add-in project for the appropriate Office host application (e.g., Excel or Word). One way to do this quickly is to use the [Yo Office tool](https://github.com/OfficeDev/generator-office).
+1. Create an Office add-in project for the appropriate Office host application (for example, Excel or Word). One way to do this quickly is to use the [Yo Office tool](https://github.com/OfficeDev/generator-office).
 1. In the root of the project, [install Jest](https://jestjs.io/docs/getting-started).
 1. [Install the office-addin-mock tool](#install-the-tool).
 1. Create a file exactly like the first file in the example and add it to the folder that contains the project's other source files, often called `\src`.
@@ -100,7 +104,76 @@ To run any of these examples, take the following steps:
 1. Create a file exactly like the test file in the example and add it to the subfolder.
 1. Add a `test` script to the package.json file, and then run the test, as described in [Basic usage](basic-usage).
 
-### Mocking a ClientRequestContext object
+### Mocking the Office Common APIs
+
+This example assumes an Office add-in for any host that supports the Office Common APIs (for example, Excel, PowerPoint, or Word). The add-in has one of its features in a file named `my-common-api-add-in-feature.js`. The following shows the contents of the file. The `addHelloWorldText` function sets the text "Hello World!" to whatever is currently selected in the document; for example; a range in Word, or a cell in Excel, or a text box in PowerPoint.
+
+```javascript
+const myCommonAPIAddinFeature = {
+
+    addHelloWorldText: async () => {
+        const options = { coercionType: Office.CoercionType.Text };
+        await Office.context.document.setSelectedDataAsync("Hello World!", options);
+    }
+}
+  
+module.exports = myCommonAPIAddinFeature;
+```
+
+The test file, named `my-common-api-add-in-feature.test.js` is in a subfolder, relative to the location of the add-in code file. The following shows the contents of the file. Note that the top level property is `context`, an [Office.Context](/javascript/api/office/office.context) object, so the object that is being mocked is the parent of this property: an [Office](/javascript/api/office) object. Note the following about this code:
+
+- The `OfficeMockObject` constructor does *not* add all of the Office enum classes to the mock `Office` object, so the `CoercionType.Text` value that is referenced in the add-in method must be added explicitly in the seed object.
+- Because the Office JavaScript APIs library is not loaded in the node process, the `Office` object that is referenced in the add-in code must be declared and initialized.
+
+```javascript
+const OfficeMockObject = require("office-addin-mock");
+const myCommonAPIAddinFeature = require("../my-common-api-add-in-feature");
+
+// Create the seed mock object.
+const mockData = {
+    context: {
+      document: {
+        setSelectedDataAsync: function (data, options) {
+          this.data = data;
+          this.options = options;
+        },
+      },
+    },
+    // Mock the Office.CoercionType enum.
+    CoercionType: {
+      Text: {},
+    },
+};
+  
+// Create the final mock object from the seed object.
+const officeMock = new OfficeMockObject.OfficeMockObject(mockData);
+
+// Create the Office object that is called in the addHelloWorldText function.
+global.Office = officeMock;
+
+/* Code that calls the test framework goes below this line. */
+
+// Jest test
+test("Text of selection in document should be set to 'Hello World'", async function () {
+    await myCommonAPIAddinFeature.addHelloWorldText();
+    expect(officeMock.context.document.data).toBe("Hello World!");
+});
+```
+
+### Mocking the Office application-specific APIs
+
+When you are testing functions that use the application-specific APIs, be sure that you are mocking the right type of object. There are two options:
+
+- Mock a [OfficeExtension.ClientRequestObject](/javascript/api/office/officeextension.clientrequestcontext). Do this when the function that is being tested meets both of the following conditions:
+
+    - It does not call a *Host*.`run` method, such as [Excel.run](s/javascript/api/excel#Excel_run_batch_).
+    - It does not reference any other direct property or method of a *Host* object.
+
+- Mock a *Host* object, such as [Excel](/javascript/api/excel) or [Word](/javascript/api/word). Do this when the preceding option is not possible.
+
+Examples of both types of tests are in the subsections below.
+
+#### Mocking a ClientRequestContext object
 
 This example assumes an Excel add-in that has one of its features in a file named `my-excel-add-in-feature.js`. The following shows the contents of the file. Note that the `getSelectedRangeAddress` is a helper method that is called inside the callback that is passed to `Excel.run`.
 
@@ -114,7 +187,7 @@ const myExcelAddinFeature = {
         await context.sync();
       
         return range.address;
-      }
+    }
 }
 
 module.exports = myExcelAddinFeature;
@@ -137,7 +210,7 @@ const mockData = {
         return this.range;
       },
     },
-  };
+};
 
 // Create the final mock object from the seed object.
 const contextMock = new OfficeMockObject.OfficeMockObject(mockData);
@@ -150,7 +223,7 @@ test("getSelectedRangeAddress should return address of selected range", async fu
 });
 ```
 
-### Mocking a host object
+#### Mocking a host object
 
 This example assumes a Word add-in that has one of its features in a file named `my-word-add-in-feature.js`. The following shows the contents of the file.
 
@@ -223,14 +296,12 @@ global.Word = wordMock;
 describe("Insert blue paragraph at end tests", () => {
 
   test("color of paragraph", async function () {
-    await myWordAddinFeature.insertBlueParagraph();
-  
+    await myWordAddinFeature.insertBlueParagraph();  
     expect(wordMock.context.document.body.paragraph.font.color).toBe("blue");
   });
 
   test("text of paragraph", async function () {
     await myWordAddinFeature.insertBlueParagraph();
-
     expect(wordMock.context.document.body.paragraph.text).toBe("Hello World");
   });
 })
@@ -239,3 +310,36 @@ describe("Insert blue paragraph at end tests", () => {
 
 ## Adding mock objects, properties, and methods dynamically when testing
 
+In some scenarios, efficient testing requires that mock objects be created or modified at runtime; that is, while the tests are running. The following are examples:
+
+- The function that is being tested behaves differently when called a second time, from how it behaves when first called. You need to first test the function with one mock object, then change this mock object and test the function again with the changed mock object.
+- You need to test a function against multiple arguments quickly. For example, you need to test a function with a mock object that has a color property and then test the function again with a mock object that has a text property, but is otherwise identical to the original mock object.
+
+The `OfficeMockObject` has three methods to help in these scenarios.
+
+- `OfficeMockObject.setMock` adds a property and value to a `OfficeMockObject` object. The following is an example:
+
+    ```javascript
+    rangeMock.setMock("address", "G6:K9")`;
+    ```
+
+- `OfficeMockObject.addMockFunction` adds a stub function to a `OfficeMockObject` object. If the function parameter is not used, an empty function is created. The following is an example:
+
+    ```javascript
+    workbookMock.addMockFunction("getSelectedRange", function () { 
+      const range = {
+        address: "B2:G5",
+      };
+      return range;
+    });
+
+    ```
+
+- `OfficeMockObject.addMock` adds a new `OfficeMockObject` object to an existing one and gives it a name. It would have the minimum members that all `OfficeMockObject` have, such as `load` and `sync`. Additional members can be added with the `setMock` and `addMockFunction` methods. The following is an example:
+
+    ```javascript
+    workbookMock.addMock("range");
+    ```
+
+> [!NOTE]
+> Full reference documentation for the `OfficeMockObject` type is at [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
