@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 It is a good practice to create unit tests for your add-in's code. Unit testing server-side code, and client-side code that does *not* call the Office JavaScript APIs, is the same in Office Add-ins as it is in any web application, so it requires no special documentation. But client-side code that calls the Office JavaScript APIs is challenging to test for the following reasons:
 
 - The Office JavaScript APIs must initialize in a webview control in the context of an Office application (Excel, Word, etc.), so they cannot be loaded in the process in which unit tests run on your development computer.
-- Some unit testing frameworks require that mock objects emulate all the members of the object type that is being mocked, which is not feasible for the Office JavaScript APIs because some object types have over a hundred members.
+- Some unit testing frameworks require that mock objects emulate all the members of the object type that is being mocked, which isn't feasible for the Office JavaScript APIs because some object types have over a hundred members.
 - Unit testing frameworks are stateless, which makes it difficult to test the [application specific APIs](../develop/understanding-the-javascript-api-for-office#api-models) in the Office JavaScript APIs, because they have methods [load()](../develop/application-specific-api-model#load) and [sync()](../develop/application-specific-api-model#sync) that must be called in a particular order relative to other functions and to each other.
 
 To solve these problems, we have created a library to simplify the creation of mock Office objects in unit tests: [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 
-The library does not depend on the Office JavaScript APIs and it can be used with any JavaScript unit testing framework. The examples in this article use the Jest framework. There are examples using the Mocha framework and written in TypeScript at [the library's home page](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
+The library doesn't depend on the Office JavaScript APIs and it can be used with any JavaScript unit testing framework. The examples in this article use the Jest framework. There are examples using the Mocha framework and written in TypeScript at [the library's home page](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 
 ## Install the tool
 
@@ -39,7 +39,7 @@ npm install office-addin-mock --save-dev
    const myOfficeAddinFeature = require("../my-office-add-in");
    ```
 
-1. Create a data object that has the properties and subproperties that you need to mock to test the function. The following is an example of an object that mocks the Excel [Workbook.range.address](/javascript/api/excel/excel.range#address) property and the [Workbook.getSelectedRange](/javascript/api/excel/excel.workbook#getSelectedRange__) method. This is not the final mock object. Think of it as a seed object that is used by `OfficeMockObject` to create the final mock object.
+1. Create a data object that has the properties and subproperties that you need to mock to test the function. The following is an example of an object that mocks the Excel [Workbook.range.address](/javascript/api/excel/excel.range#address) property and the [Workbook.getSelectedRange](/javascript/api/excel/excel.workbook#getSelectedRange__) method. This isn't the final mock object. Think of it as a seed object that is used by `OfficeMockObject` to create the final mock object.
 
    ```javascript
    const mockData = {
@@ -92,7 +92,10 @@ npm install office-addin-mock --save-dev
 
 ## Examples
 
-The examples in this section use Jest with its default settings. These settings support ES5 JavaScript and CommonJS modules. See the [Jest documentation](https://jestjs.io/docs/getting-started) for how to configure Jest and node.js to support more recent versions of JavaScript, support TypeScript, and support ESM modules.
+The examples in this section use Jest with its default settings. These settings support ES5 JavaScript and CommonJS modules. See the [Jest documentation](https://jestjs.io/docs/getting-started) for how to configure Jest and node.js to support more recent versions of JavaScript, support TypeScript, and support ECMAScript modules.
+
+> [!NOTE]
+> The hypothetical add-in functions in these examples *do* use features of JavaScript that are more recent than ES5. This causes no problems because the add-in functions aren't run in the tests, so Jest never "sees" them. They are provided in the examples so that you can see how the mocks in each example reflects the add-in scenario that is being tested.
 
 To run any of these examples, take the following steps:
 
@@ -123,7 +126,7 @@ module.exports = myCommonAPIAddinFeature;
 The test file, named `my-common-api-add-in-feature.test.js` is in a subfolder, relative to the location of the add-in code file. The following shows the contents of the file. Note that the top level property is `context`, an [Office.Context](/javascript/api/office/office.context) object, so the object that is being mocked is the parent of this property: an [Office](/javascript/api/office) object. Note the following about this code:
 
 - The `OfficeMockObject` constructor does *not* add all of the Office enum classes to the mock `Office` object, so the `CoercionType.Text` value that is referenced in the add-in method must be added explicitly in the seed object.
-- Because the Office JavaScript APIs library is not loaded in the node process, the `Office` object that is referenced in the add-in code must be declared and initialized.
+- Because the Office JavaScript APIs library isn't loaded in the node process, the `Office` object that is referenced in the add-in code must be declared and initialized.
 
 ```javascript
 const OfficeMockObject = require("office-addin-mock");
@@ -166,10 +169,10 @@ When you are testing functions that use the application-specific APIs, be sure t
 
 - Mock a [OfficeExtension.ClientRequestObject](/javascript/api/office/officeextension.clientrequestcontext). Do this when the function that is being tested meets both of the following conditions:
 
-    - It does not call a *Host*.`run` method, such as [Excel.run](s/javascript/api/excel#Excel_run_batch_).
-    - It does not reference any other direct property or method of a *Host* object.
+  - It doesn't call a *Host*.`run` method, such as [Excel.run](s/javascript/api/excel#Excel_run_batch_).
+  - It doesn't reference any other direct property or method of a *Host* object.
 
-- Mock a *Host* object, such as [Excel](/javascript/api/excel) or [Word](/javascript/api/word). Do this when the preceding option is not possible.
+- Mock a *Host* object, such as [Excel](/javascript/api/excel) or [Word](/javascript/api/word). Do this when the preceding option isn't possible.
 
 Examples of both types of tests are in the subsections below.
 
@@ -205,7 +208,7 @@ const mockData = {
       range: {
         address: "C2:G3",
       },
-      // Stub the Workbook.getSelectRange method.
+      // Mock the Workbook.getSelectRange method.
       getSelectedRange: function () {
         return this.range;
       },
@@ -251,7 +254,7 @@ The test file, named `my-word-add-in-feature.test.js` is in a subfolder, relativ
 - When the `OfficeMockObject` constructor creates the final mock object, it will ensure that the child `ClientRequestContext` object has `sync` and `load` methods.
 - The `OfficeMockObject` constructor does *not* add a `run` method to the mock `Word` object, so it must be added explicitly in the seed object.
 - The `OfficeMockObject` constructor does *not* add all of the Word enum classes to the mock `Word` object, so the `InsertLocation.end` value that is referenced in the add-in method must be added explicitly in the seed object.
-- Because the Office JavaScript APIs library is not loaded in the node process, the `Word` object that is referenced in the add-in code must be declared and initialized.
+- Because the Office JavaScript APIs library isn't loaded in the node process, the `Word` object that is referenced in the add-in code must be declared and initialized.
 
 ```javascript
 const OfficeMockObject = require("office-addin-mock");
@@ -265,7 +268,7 @@ const mockData = {
         paragraph: {
           font: {},
         },
-        // Stub the Body.insertParagraph method.
+        // Mock the Body.insertParagraph method.
         insertParagraph: function (paragraphText, insertLocation) {
           this.paragraph.text = paragraphText;
           this.paragraph.insertLocation = insertLocation;
@@ -278,7 +281,7 @@ const mockData = {
   InsertLocation: {
     end: "end",
   },
-  // Stub the Word.run method.
+  // Mock the Word.run method.
   run: async function(callback) {
     await callback(this.context);
   },
@@ -305,7 +308,6 @@ describe("Insert blue paragraph at end tests", () => {
     expect(wordMock.context.document.body.paragraph.text).toBe("Hello World");
   });
 })
-
 ```
 
 ## Adding mock objects, properties, and methods dynamically when testing
@@ -323,7 +325,7 @@ The `OfficeMockObject` has three methods to help in these scenarios.
     rangeMock.setMock("address", "G6:K9")`;
     ```
 
-- `OfficeMockObject.addMockFunction` adds a stub function to a `OfficeMockObject` object. If the function parameter is not used, an empty function is created. The following is an example:
+- `OfficeMockObject.addMockFunction` adds a mock function to a `OfficeMockObject` object. If the function parameter isn't used, an empty function is created. The following is an example:
 
     ```javascript
     workbookMock.addMockFunction("getSelectedRange", function () { 
@@ -332,7 +334,6 @@ The `OfficeMockObject` has three methods to help in these scenarios.
       };
       return range;
     });
-
     ```
 
 - `OfficeMockObject.addMock` adds a new `OfficeMockObject` object to an existing one and gives it a name. It would have the minimum members that all `OfficeMockObject` have, such as `load` and `sync`. Additional members can be added with the `setMock` and `addMockFunction` methods. The following is an example:
