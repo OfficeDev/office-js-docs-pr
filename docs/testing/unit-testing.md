@@ -165,6 +165,57 @@ test("Text of selection in document should be set to 'Hello World'", async funct
 });
 ```
 
+### Mocking the Outlook APIs
+
+Although strictly speaking, the Outlook APIs are part of the Common API model, they have a special architecture that is built around the Mailbox object, so we have provided a distinct example for Outlook. This example assumes an Outlook that has one of its features in a file named `my-outlook-add-in-feature.js`. The following shows the contents of the file. The `addHelloWorldText` function sets the text "Hello World!" to whatever is currently selected in the message compose window.
+
+```javascript
+const myOutlookAddinFeature = {
+
+    addHelloWorldText: async () => {
+        Office.context.mailbox.item.setSelectedDataAsync("Hello World!");
+      }
+}
+
+module.exports = myOutlookAddinFeature;
+```
+
+The test file, named `my-outlook-add-in-feature.test.js` is in a subfolder, relative to the location of the add-in code file. The following shows the contents of the file. Note that the top level property is `context`, an [Office.Context](/javascript/api/office/office.context) object, so the object that is being mocked is the parent of this property: an [Office](/javascript/api/office) object. Note the following about this code:
+
+- Because the Office JavaScript APIs library isn't loaded in the node process, the `Office` object that is referenced in the add-in code must be declared and initialized.
+
+```javascript
+const OfficeMockObject = require("office-addin-mock");
+const myOutlookAddinFeature = require("../my-outlook-add-in-feature");
+
+// Create the seed mock object.
+const mockData = {
+  context: {
+    mailbox: {
+      item: {
+          setSelectedDataAsync: function (data) {
+          this.data = data;
+        },
+      },
+    },
+  },
+};
+  
+// Create the final mock object from the seed object.
+const officeMock = new OfficeMockObject.OfficeMockObject(mockData);
+
+// Create the Office object that is called in the addHelloWorldText function.
+global.Office = officeMock;
+
+/* Code that calls the test framework goes below this line. */
+
+// Jest test
+test("Text of selection in message should be set to 'Hello World'", async function () {
+    await myOutlookAddinFeature.addHelloWorldText();
+    expect(officeMock.context.mailbox.item.data).toBe("Hello World!");
+});
+```
+
 ### Mocking the Office application-specific APIs
 
 When you are testing functions that use the application-specific APIs, be sure that you are mocking the right type of object. There are two options:
