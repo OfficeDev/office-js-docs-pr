@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: 'The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.'
-ms.date: 11/07/2021
+ms.date: 11/15/2021
 ms.localizationpriority: medium
 ---
 
@@ -9,11 +9,9 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 8:00AM PDT. You can download the calendar invite at [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall).
 
-## Agenda for November 10th call
+## Agenda for December 8th call
 
-- [CodeTwo](https://www.codetwo.com/email-signatures/): Automatic Outlook signatures based on email recipients and more.
-- Demonstration of the new Office-Addin-Mock library for unit testing your code when working with Office JS APIs.
-- Microsoft 365 instant sandbox.
+The agenda for December will be posted about a week before the call.
 
 ## Previous calls
 
