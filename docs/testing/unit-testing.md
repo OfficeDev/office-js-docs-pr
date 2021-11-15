@@ -7,15 +7,22 @@ ms.localizationpriority: medium
 
 # Unit testing in Office Add-ins
 
-It is a good practice to create unit tests for your add-in's code. Unit testing server-side code, and client-side code that does *not* call the Office JavaScript APIs, is the same in Office Add-ins as it is in any web application, so it requires no special documentation. But client-side code that calls the Office JavaScript APIs is challenging to test for the following reasons:
+It is a good practice to create unit tests for your add-in's code. Unit testing server-side code, and client-side code that does *not* call the [Office JavaScript APIs](../develop/understanding-the-javascript-api-for-office.md), is the same in Office Add-ins as it is in any web application, so it requires no special documentation. But client-side code that calls the Office JavaScript APIs is challenging to test for the following reasons:
 
 - The Office JavaScript APIs must initialize in a webview control in the context of an Office application (Excel, Word, etc.), so they cannot be loaded in the process in which unit tests run on your development computer.
 - Some unit testing frameworks require that mock objects emulate all the members of the object type that is being mocked, which isn't feasible for the Office JavaScript APIs because some object types have over a hundred members.
-- Unit testing frameworks are stateless, which makes it difficult to test the [application specific APIs](../develop/understanding-the-javascript-api-for-office#api-models) in the Office JavaScript APIs, because they have methods [load()](../develop/application-specific-api-model#load) and [sync()](../develop/application-specific-api-model#sync) that must be called in a particular order relative to other functions and to each other.
+- Unit testing frameworks are stateless, which makes it difficult to test the [application-specific APIs](../develop/understanding-the-javascript-api-for-office#api-models) in the Office JavaScript APIs, because they have methods [load()](../develop/application-specific-api-model#load) and [sync()](../develop/application-specific-api-model#sync) that must be called in a particular order relative to other functions and to each other.
 
 To solve these problems, we have created a library to simplify the creation of mock Office objects in unit tests: [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 
-The library doesn't depend on the Office JavaScript APIs and it can be used with any JavaScript unit testing framework. The examples in this article use the Jest framework. There are examples using the Mocha framework and written in TypeScript at [the library's home page](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
+The library doesn't depend on the Office JavaScript APIs and it can be used with any JavaScript unit testing framework, including the following among others:
+
+- [Jest](https://jestjs.io)
+- [Mocha](https://mochajs.org/)
+- [Storybook](https://storybook.js.org/docs/react/workflows/unit-testing)
+- [Jasmine](https://jasmine.github.io/)
+
+The examples in this article use the Jest framework. There are examples using the Mocha framework and samples written in TypeScript at [the library's home page](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 
 ## Install the tool
 
@@ -64,8 +71,8 @@ npm install office-addin-mock --save-dev
    const contextMock = new OfficeMockObject.OfficeMockObject(mockData);
    ```
 
-> [!NOTE]
-> Full reference documentation for the `OfficeMockObject` type is at [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
+  > [!NOTE]
+  > Full reference documentation for the `OfficeMockObject` type is at [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 
 1. In the syntax of your test framework, add a test of the function, but use the `OfficeMockObject` object in place of the object that it mocks, in this case the `ClientRequestContext` object. The following continues the example in Jest. This example test assumes that the add-in function that is being tested is called `getSelectedRangeAddress`, that it takes a `ClientRequestContext` object as a parameter, and that it is intended to return the address of the currently selected range. The full example is at [Mocking a ClientRequestContext object](#mocking-a-clientrequestcontext-object).
 
@@ -105,7 +112,7 @@ To run any of these examples, take the following steps:
 1. Create a file exactly like the first file in the example and add it to the folder that contains the project's other source files, often called `\src`.
 1. Create a subfolder to the source file folder and give it an appropriate name, such as `\tests`.
 1. Create a file exactly like the test file in the example and add it to the subfolder.
-1. Add a `test` script to the package.json file, and then run the test, as described in [Basic usage](basic-usage).
+1. Add a `test` script to the package.json file, and then run the test, as described in [Basic usage](#basic-usage).
 
 ### Mocking the Office Common APIs
 
