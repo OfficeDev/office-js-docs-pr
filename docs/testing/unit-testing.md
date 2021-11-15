@@ -24,6 +24,13 @@ The library doesn't depend on the Office JavaScript APIs and it can be used with
 
 The examples in this article use the Jest framework. There are examples using the Mocha framework and samples written in TypeScript at [the library's home page](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 
+## Prerequisites
+
+This article assumes that you are familiar with the basic concepts of unit testing and mocking, and that you have some experience with a unit testing framework.
+
+> [!TIP]
+> If you are working with Visual Studio, see the article [Unit testing JavaScript and TypeScript in Visual Studio](/visualstudio/javascript/unit-testing-javascript-with-visual-studio.md).
+
 ## Install the tool
 
 To install the library open a command prompt, navigate to the root of your add-in project, and then enter the following command:
