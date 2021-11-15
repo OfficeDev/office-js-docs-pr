@@ -11,7 +11,7 @@ It is a good practice to create unit tests for your add-in's code. Unit testing 
 
 - The Office JavaScript APIs must initialize in a webview control in the context of an Office application (Excel, Word, etc.), so they cannot be loaded in the process in which unit tests run on your development computer.
 - Some unit testing frameworks require that mock objects emulate all the members of the object type that is being mocked, which isn't feasible for the Office JavaScript APIs because some object types have over a hundred members.
-- Unit testing frameworks are stateless, which makes it difficult to test the [application-specific APIs](../develop/understanding-the-javascript-api-for-office#api-models.md) in the Office JavaScript APIs, because they have methods [load()](../develop/application-specific-api-model.md#load) and [sync()](../develop/application-specific-api-model.md#sync) that must be called in a particular order relative to other functions and to each other.
+- Unit testing frameworks are stateless, which makes it difficult to test the [application-specific APIs](../develop/understanding-the-javascript-api-for-office.md#api-models) in the Office JavaScript APIs, because they have methods [load()](../develop/application-specific-api-model.md#load) and [sync()](../develop/application-specific-api-model.md#sync) that must be called in a particular order relative to other functions and to each other.
 
 To solve these problems, we have created a library to simplify the creation of mock Office objects in unit tests: [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 
