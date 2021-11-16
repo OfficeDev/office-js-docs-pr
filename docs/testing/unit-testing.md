@@ -171,7 +171,7 @@ test("Text of selection in document should be set to 'Hello World'", async funct
 
 ### Mocking the Outlook APIs
 
-Although strictly speaking, the Outlook APIs are part of the Common API model, they have a special architecture that is built around the Mailbox object, so we have provided a distinct example for Outlook. This example assumes an Outlook that has one of its features in a file named `my-outlook-add-in-feature.js`. The following shows the contents of the file. The `addHelloWorldText` function sets the text "Hello World!" to whatever is currently selected in the message compose window.
+Although strictly speaking, the Outlook APIs are part of the Common API model, they have a special architecture that is built around the [Mailbox](/javascript/api/office/office.mailbox) object, so we have provided a distinct example for Outlook. This example assumes an Outlook that has one of its features in a file named `my-outlook-add-in-feature.js`. The following shows the contents of the file. The `addHelloWorldText` function sets the text "Hello World!" to whatever is currently selected in the message compose window.
 
 ```javascript
 const myOutlookAddinFeature = {
