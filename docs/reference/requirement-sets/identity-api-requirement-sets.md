@@ -1,7 +1,7 @@
 ---
 title: Identity API requirement sets
 description: 'Identity API requirement set information for Office Add-ins.'
-ms.date: 10/05/2021
+ms.date: 11/16/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
 ---
@@ -40,10 +40,6 @@ To find out more about versions, build numbers, and Office Online Server, see:
 ## Office Common API requirement sets
 
 For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).
-
-## IdentityAPI Preview
-
-For details about this API, see either the version that uses Promises at [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) or the version that uses callbacks at [getAccessTokenAsync](/javascript/api/office/office.auth#getAccessTokenAsync_options__callback_).
 
 ## See also
 

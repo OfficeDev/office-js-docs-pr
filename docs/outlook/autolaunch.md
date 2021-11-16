@@ -299,7 +299,7 @@ Some Office.js APIs that change or alter the UI are not allowed from event-based
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > `OfficeRuntime.auth` is supported. See [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md)
+    > `OfficeRuntime.auth` is supported. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
 - Under `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`
