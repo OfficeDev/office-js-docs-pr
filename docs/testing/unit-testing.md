@@ -235,7 +235,7 @@ Examples of both types of tests are in the subsections below.
 
 #### Mocking a ClientRequestContext object
 
-This example assumes an Excel add-in that has one of its features in a file named `my-excel-add-in-feature.js`. The following shows the contents of the file. Note that the `getSelectedRangeAddress` is a helper method that is called inside the callback that is passed to `Excel.run`.
+This example assumes an Excel add-in that has one of its features in a file named `my-excel-add-in-feature.js`. The following shows the contents of the file. Note that the `getSelectedRangeAddress` is a helper method called inside the callback that is passed to `Excel.run`.
 
 ```javascript
 const myExcelAddinFeature = {
