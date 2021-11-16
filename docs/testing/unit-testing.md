@@ -311,7 +311,7 @@ The test file, named `my-word-add-in-feature.test.js` is in a subfolder, relativ
 - When the `OfficeMockObject` constructor creates the final mock object, it will ensure that the child `ClientRequestContext` object has `sync` and `load` methods.
 - The `OfficeMockObject` constructor does *not* add a `run` method to the mock `Word` object, so it must be added explicitly in the seed object.
 - The `OfficeMockObject` constructor does *not* add all of the Word enum classes to the mock `Word` object, so the `InsertLocation.end` value that is referenced in the add-in method must be added explicitly in the seed object.
-- Because the Office JavaScript APIs library isn't loaded in the node process, the `Word` object that is referenced in the add-in code must be declared and initialized.
+- Because the Office JavaScript library isn't loaded in the node process, the `Word` object that is referenced in the add-in code must be declared and initialized.
 
 ```javascript
 const OfficeAddinMock = require("office-addin-mock");
