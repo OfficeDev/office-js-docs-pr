@@ -18,8 +18,17 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 \* Currently, the requirement set is supported in Office on the web only for documents that are opened from Microsoft SharePoint Online and OneDrive.
 
-> [!NOTE]
-> Outlook: To require the Identity API set 1.3 in your add-in code, check if it's supported by calling `isSetSupported('IdentityAPI', '1.3')`. Declaring it in the Outlook add-in's manifest isn't supported. You can also determine if the API is supported by checking that it's not `undefined`. For further details, see [Using APIs from later requirement sets](outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets).
+## Outlook and Identity API requirement sets
+
+To require the Identity API set 1.3 in your Outlook add-in code, check if it's supported by calling `isSetSupported('IdentityAPI', '1.3')`. Declaring it in the Outlook add-in's manifest isn't supported. You can also determine if the API is supported by checking that it's not `undefined`. For further details, see [Using APIs from later requirement sets](outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets).
+
+## Outlook event-based activation
+
+The Identity API requirement set has the following platform support when used from event handling code in an Outlook add-in uses event-based activation.
+
+|  Requirement set  | Office 2021 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web  |
+|:-----|:-----|:-----|:-----|:-----|:-----|
+| IdentityAPI 1.3  | Build 16.0.14623.10000 or later | Not supported | Not supported | Not supported | Microsoft SharePoint Online and OneDrive\* |
 
 ## Office versions and build numbers
 
