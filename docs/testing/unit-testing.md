@@ -23,7 +23,7 @@ The examples in this article use the Jest framework. There are examples using th
 
 ## Prerequisites
 
-This article assumes that you are familiar with the basic concepts of unit testing and mocking, including what a test file is, and that you have some experience with a unit testing framework.
+This article assumes that you are familiar with the basic concepts of unit testing and mocking, including how to create and run test files, and that you have some experience with a unit testing framework.
 
 > [!TIP]
 > If you are working with Visual Studio, we recommend that you read the article [Unit testing JavaScript and TypeScript in Visual Studio](/visualstudio/javascript/unit-testing-javascript-with-visual-studio.md) for some basic information about JavaScript unit testing in Visual Studio and then return to this article.
