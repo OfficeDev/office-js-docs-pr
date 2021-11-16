@@ -376,7 +376,7 @@ In some scenarios, efficient testing requires that mock objects be created or mo
 
 The `OfficeMockObject` has three methods to help in these scenarios.
 
-- `OfficeMockObject.setMock` adds a property and value to a `OfficeMockObject` object. The following is an example:
+- `OfficeMockObject.setMock` adds a property and value to a `OfficeMockObject` object. The following example adds the `address` property.
 
     ```javascript
     rangeMock.setMock("address", "G6:K9");
