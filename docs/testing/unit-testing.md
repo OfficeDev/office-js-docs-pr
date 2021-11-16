@@ -78,7 +78,7 @@ npm install office-addin-mock --save-dev
     > [!NOTE]
     > Full reference documentation for the `OfficeMockObject` type is at [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 
-1. In the syntax of your test framework, add a test of the function, but use the `OfficeMockObject` object in place of the object that it mocks, in this case the `ClientRequestContext` object. The following continues the example in Jest. This example test assumes that the add-in function that is being tested is called `getSelectedRangeAddress`, that it takes a `ClientRequestContext` object as a parameter, and that it is intended to return the address of the currently selected range. The full example is [later in this article](#mocking-a-clientrequestcontext-object).
+1. In the syntax of your test framework, add a test of the function. Use the `OfficeMockObject` object in place of the object that it mocks, in this case the `ClientRequestContext` object. The following continues the example in Jest. This example test assumes that the add-in function that is being tested is called `getSelectedRangeAddress`, that it takes a `ClientRequestContext` object as a parameter, and that it is intended to return the address of the currently selected range. The full example is [later in this article](#mocking-a-clientrequestcontext-object).
 
    ```javascript
    test("getSelectedRangeAddress should return the address of the range", async function () {
