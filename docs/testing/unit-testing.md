@@ -86,7 +86,7 @@ npm install office-addin-mock --save-dev
    });
    ```
 
-1. Run the test in accordance with documentation of the test framework and your development tools. Typically, there is a package.json file with a script that executes the test framework. For example, if Jest is the framework, the package.json would contain the following:
+1. Run the test in accordance with documentation of the test framework and your development tools. Typically, there is a package.json file with a script that executes the test framework. For example, if Jest is the framework, the **package.json** would contain the following:
 
    ```json
    "scripts": {
@@ -103,7 +103,7 @@ npm install office-addin-mock --save-dev
 
 ## Examples
 
-The examples in this section use Jest with its default settings. These settings support ES5 JavaScript and CommonJS modules. See the [Jest documentation](https://jestjs.io/docs/getting-started) for how to configure Jest and node.js to support more recent versions of JavaScript, support TypeScript, and support ECMAScript modules. To run any of these examples, take the following steps:
+The examples in this section use Jest with its default settings. These settings support CommonJS modules. See the [Jest documentation](https://jestjs.io/docs/getting-started) for how to configure Jest and node.js to support ECMAScript modules and to support TypeScript. To run any of these examples, take the following steps:
 
 1. Create an Office add-in project for the appropriate Office host application (for example, Excel or Word). One way to do this quickly is to use the [Yo Office tool](https://github.com/OfficeDev/generator-office).
 1. In the root of the project, [install Jest](https://jestjs.io/docs/getting-started).
@@ -111,7 +111,7 @@ The examples in this section use Jest with its default settings. These settings 
 1. Create a file exactly like the first file in the example and add it to the folder that contains the project's other source files, often called `\src`.
 1. Create a subfolder to the source file folder and give it an appropriate name, such as `\tests`.
 1. Create a file exactly like the test file in the example and add it to the subfolder.
-1. Add a `test` script to the package.json file, and then run the test, as described in [Basic usage](#basic-usage).
+1. Add a `test` script to the **package.json** file, and then run the test, as described in [Basic usage](#basic-usage).
 
 ### Mocking the Office Common APIs
 
@@ -372,7 +372,7 @@ describe("Insert blue paragraph at end tests", () => {
 In some scenarios, efficient testing requires that mock objects be created or modified at runtime; that is, while the tests are running. The following are examples:
 
 - The function that is being tested behaves differently when called a second time. You need to first test the function with one mock object, then change this mock object and test the function again with the changed mock object.
-- You need to test a function against multiple arguments quickly. For example, you need to test a function with a mock object that has a color property and then test the function again with a mock object that has a text property, but is otherwise identical to the original mock object.
+- You need to test a function against multiple similar, but not identical, mock objects. For example, you need to test a function with a mock object that has a color property and then test the function again with a mock object that has a text property, but is otherwise identical to the original mock object.
 
 The `OfficeMockObject` has three methods to help in these scenarios.
 
@@ -382,7 +382,7 @@ The `OfficeMockObject` has three methods to help in these scenarios.
     rangeMock.setMock("address", "G6:K9");
     ```
 
-- `OfficeMockObject.addMockFunction` adds a mock function to a `OfficeMockObject` object. If the function parameter isn't used, an empty function is created. The following is an example:
+- `OfficeMockObject.addMockFunction` adds a mock function to a `OfficeMockObject` object. The following is an example:
 
     ```javascript
     workbookMock.addMockFunction("getSelectedRange", function () { 
@@ -393,10 +393,14 @@ The `OfficeMockObject` has three methods to help in these scenarios.
     });
     ```
 
-- `OfficeMockObject.addMock` adds a new `OfficeMockObject` object as a property to an existing one and gives it a name. It would have the minimum members that all `OfficeMockObject` have, such as `load` and `sync`. Additional members can be added with the `setMock` and `addMockFunction` methods. The following is an example:
+    > [!NOTE]
+    > The function parameter is optional. If it isn't present, an empty function is created.
+
+- `OfficeMockObject.addMock` adds a new `OfficeMockObject` object as a property to an existing one and gives it a name. It would have the minimum members that all `OfficeMockObject` have, such as `load` and `sync`. Additional members can be added with the `setMock` and `addMockFunction` methods. The following is an example that adds a mock `Excel.WorkbookProtection` object as a `protection` property to a mock workbook. It then adds a `protect` property to the new mock object.
 
     ```javascript
-    workbookMock.addMock("range");
+    workbookMock.addMock("protection");
+    workbookMock.protection.setMock("protected", true);
     ```
 
 > [!NOTE]
