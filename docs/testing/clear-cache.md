@@ -16,7 +16,7 @@ Additionally, if you make changes to your add-in's manifest (for example, update
 
 ## Clear the Office cache on Windows
 
-There are three ways to clear the Office cache on a Windows computer; automatically, manually, and using the Microsoft Edge developer tools. The methods are described in the following subsections.
+There are three ways to clear the Office cache on a Windows computer: automatically, manually, and using the Microsoft Edge developer tools. The methods are described in the following subsections.
 
 ### Automatically
 
@@ -25,8 +25,8 @@ This method is recommended for add-in development computers. If your Office on W
 > [!NOTE]
 > The automatic method is not supported for Outlook.
 
-1. From the ribbon of any Office host, except Outlook, navigate to **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
-1. Enable the check box **Next time Office starts, clear all previously-started web add-ins cache**.
+1. From the ribbon of any Office host except Outlook, navigate to **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
+1. Select the checkbox **Next time Office starts, clear all previously-started web add-ins cache**.
 
 ### Manually
 
