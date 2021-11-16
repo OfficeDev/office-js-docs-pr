@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 When an Outlook add-in uses event-based activation, the events run in a separate JavaScript runtime. After completing the steps in [Authenticate a user with a single-sign-on token in an Outlook add-in](authenticate-a-user-with-an-sso-token.md), this article describes additional steps to enable SSO for your event handling code. Once you enable SSO you can call the `getAccessToken()` API to get an access token with the user's identity.
 
 > [!NOTE]
-> The steps in this article only apply when running your Outlook add-in on Windows. This is because Outlook on Windows uses a JavaScript file, while Outlook on the web uses an HTML file that can reference the same JavaScript file. Support for SSO in event-based activation is in Window build 16.0.14623.10000 or later.
+> The steps in this article only apply when running your Outlook add-in on Windows. This is because Outlook on Windows uses a JavaScript file, while Outlook on the web uses an HTML file that can reference the same JavaScript file.
 
 For Outlook on Windows, in the manifest for your Outlook add-in, you identify a single JavaScript file to load for event-based activation. You also need to specify to Office that this file is allowed to support SSO. There are two approaches to do this. You can create a list of all add-ins, and their JavaScript files, to provide to Office through a well-known URI. Or you can add a custom response header to enable SSO.
 
