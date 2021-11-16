@@ -12,7 +12,7 @@ Unit tests check your add-in's functionality without requiring network or servic
 - The Office JavaScript APIs must initialize in a webview control in the context of an Office application (Excel, Word, etc.), so they cannot be loaded in the process in which unit tests run on your development computer. The Office-Addin-Mock library can be imported into your test files, which enables the mocking of Office JavaScript APIs inside the node.js process in which the tests run.
 - Unit testing frameworks are stateless, which makes it difficult to test the [application-specific APIs](../develop/understanding-the-javascript-api-for-office.md#api-models) in the Office JavaScript APIs, because they have methods [load](../develop/application-specific-api-model.md#load) and [sync](../develop/application-specific-api-model.md#sync) that must be called in a particular order relative to other functions and to each other. The mock objects that you create with the Office-Addin-Mock library automatically have mock implementations of `load` and `sync`.
 
-The library doesn't depend on the Office JavaScript APIs and it can be used with any JavaScript unit testing framework, including the following among others:
+The library doesn't depend on the Office JavaScript APIs and it can be used with any JavaScript unit testing framework, such as:
 
 - [Jest](https://jestjs.io)
 - [Mocha](https://mochajs.org/)
