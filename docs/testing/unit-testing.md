@@ -19,7 +19,7 @@ The library doesn't depend on the Office JavaScript APIs and it can be used with
 - [Storybook](https://storybook.js.org/docs/react/workflows/unit-testing)
 - [Jasmine](https://jasmine.github.io/)
 
-The examples in this article use the Jest framework. There are examples using the Mocha framework and samples written in TypeScript at [the library's home page](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
+The examples in this article use the Jest framework. There are examples using the Mocha framework and samples written in TypeScript at [the Office-Addin-Mock home page](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 
 ## Prerequisites
 
