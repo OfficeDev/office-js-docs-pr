@@ -16,7 +16,7 @@ Additionally, if you make changes to your add-in's manifest (for example, update
 
 ## Clear the Office cache on Windows
 
-There are three ways to clear the Office cache on a Windows computer, described in the following subsections.
+There are three ways to clear the Office cache on a Windows computer; automatically, manually, and using the Microsoft Edge developer tools. The methods are described in the following subsections.
 
 ### Automatically
 
@@ -32,7 +32,7 @@ This method is recommended for add-in development computers. If your Office on W
 
 The manual method is different for Excel, Word, and PowerPoint from Outlook.
 
-#### Excel, Word, and PowerPoint
+#### Manually clear the cache in Excel, Word, and PowerPoint
 
 To remove all sideloaded add-ins from Excel, Word, and PowerPoint, delete the contents of the folder.
 
@@ -46,7 +46,7 @@ If the following folder exists, delete its contents too.
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
-#### Outlook
+#### Manually clear the cache in Outlook
 
 To remove a sideloaded add-in from Outlook, use the steps outlined in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to find the add-in in the **Custom add-ins** section of the dialog box that lists your installed add-ins. Choose the ellipsis (`...`) for the add-in and then choose **Remove** to remove that specific add-in. If this add-in removal doesn't work, then delete the contents of the `Wef` folder as noted previously for Excel, Word, and PowerPoint.
 
