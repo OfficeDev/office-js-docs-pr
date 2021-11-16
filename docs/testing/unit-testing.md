@@ -30,7 +30,7 @@ This article assumes that you are familiar with the basic concepts of unit testi
 
 ## Install the tool
 
-To install the library open a command prompt, navigate to the root of your add-in project, and then enter the following command.
+To install the library, open a command prompt, navigate to the root of your add-in project, and then enter the following command.
 
 ```command&nbsp;line
 npm install office-addin-mock --save-dev
