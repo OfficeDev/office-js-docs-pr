@@ -26,7 +26,7 @@ This method is recommended for add-in development computers. If your Office on W
 > The automatic method is not supported for Outlook.
 
 1. On the ribbon or any Office host, except Outlook, navigate to **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
-1. Enable the check box **Next time Office starts, clear all previously-started web add-ins cache.**.
+1. Enable the check box **Next time Office starts, clear all previously-started web add-ins cache**.
 
 ### Manually
 
