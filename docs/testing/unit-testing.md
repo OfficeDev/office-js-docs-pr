@@ -44,7 +44,7 @@ npm install office-addin-mock --save-dev
    const OfficeAddinMock = require("office-addin-mock");
    ```
 
-1. Require (or import) the module that contains the add-in function that you want to test. The following is an example that assumes your test file is in a subfolder of the folder with your add-in's code files:
+1. Import the module that contains the add-in function that you want to test with either the `require` or `import` keyword. The following is an example that assumes your test file is in a subfolder of the folder with your add-in's code files.
 
    ```javascript
    const myOfficeAddinFeature = require("../my-office-add-in");
