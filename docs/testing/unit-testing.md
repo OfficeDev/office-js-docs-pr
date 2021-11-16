@@ -115,7 +115,7 @@ The examples in this section use Jest with its default settings. These settings 
 
 ### Mocking the Office Common APIs
 
-This example assumes an Office add-in for any host that supports the [Office Common APIs](../develop/office-javascript-api-object-model.md) (for example, Excel, PowerPoint, or Word). The add-in has one of its features in a file named `my-common-api-add-in-feature.js`. The following shows the contents of the file. The `addHelloWorldText` function sets the text "Hello World!" to whatever is currently selected in the document; for example; a range in Word, or a cell in Excel, or a text box in PowerPoint.
+This example assumes an Office Add-in for any host that supports the [Office Common APIs](../develop/office-javascript-api-object-model.md) (for example, Excel, PowerPoint, or Word). The add-in has one of its features in a file named `my-common-api-add-in-feature.js`. The following shows the contents of the file. The `addHelloWorldText` function sets the text "Hello World!" to whatever is currently selected in the document; for example; a range in Word, or a cell in Excel, or a text box in PowerPoint.
 
 ```javascript
 const myCommonAPIAddinFeature = {
