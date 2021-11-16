@@ -186,7 +186,7 @@ module.exports = myOutlookAddinFeature;
 
 The test file, named `my-outlook-add-in-feature.test.js` is in a subfolder, relative to the location of the add-in code file. The following shows the contents of the file. Note that the top level property is `context`, an [Office.Context](/javascript/api/office/office.context) object, so the object that is being mocked is the parent of this property: an [Office](/javascript/api/office) object. Note the following about this code:
 
-- Because the Office JavaScript APIs library isn't loaded in the node process, the `Office` object that is referenced in the add-in code must be declared and initialized.
+- Because the Office JavaScript library isn't loaded in the node process, the `Office` object that is referenced in the add-in code must be declared and initialized.
 
 ```javascript
 const OfficeAddinMock = require("office-addin-mock");
