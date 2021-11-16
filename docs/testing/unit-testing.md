@@ -65,7 +65,7 @@ npm install office-addin-mock --save-dev
    };
    ```
 
-1. Pass the data object to the `OfficeMockObject` constructor. Note the following about the returned `OfficeMockObject` object:
+1. Pass the data object to the `OfficeMockObject` constructor. Note the following about the returned `OfficeMockObject` object.
 
    - It is a simplified mock of an [OfficeExtension.ClientRequestContext](/javascript/api/office/officeextension.clientrequestcontext) object.
    - The mock object has all the members of the data object and also has mock implementations of the `load` and `sync` methods.
