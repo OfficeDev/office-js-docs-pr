@@ -86,7 +86,7 @@ npm install office-addin-mock --save-dev
    });
    ```
 
-1. Run the test in accordance with documentation of the test framework and your development tools and task runner. Typically, there is a package.json file with a script that executes the test framework. For example, if Jest is the framework, the package.json would contain the following:
+1. Run the test in accordance with documentation of the test framework and your development tools. Typically, there is a package.json file with a script that executes the test framework. For example, if Jest is the framework, the package.json would contain the following:
 
    ```json
    "scripts": {
