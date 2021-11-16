@@ -20,21 +20,21 @@ There are three ways to clear the Office cache on a Windows computer; automatica
 
 ### Automatically
 
-This method is recommended for add-in development computers. If your Office on Windows version is 2108 or later, the Office cache is configure to be cleared automatically every time Office is reopened with the following steps.
+This method is recommended for add-in development computers. If your Office on Windows version is 2108 or later, the following steps configure the Office cache to be cleared automatically every time Office is reopened.
 
 > [!NOTE]
 > The automatic method is not supported for Outlook.
 
-1. On the ribbon or any Office host, except Outlook, navigate to **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
+1. From the ribbon of any Office host, except Outlook, navigate to **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
 1. Enable the check box **Next time Office starts, clear all previously-started web add-ins cache**.
 
 ### Manually
 
-The manual method is different for Excel, Word, and PowerPoint from Outlook.
+The manual method for Excel, Word, and PowerPoint is different from Outlook.
 
 #### Manually clear the cache in Excel, Word, and PowerPoint
 
-To remove all sideloaded add-ins from Excel, Word, and PowerPoint, delete the contents of the folder.
+To remove all sideloaded add-ins from Excel, Word, and PowerPoint, delete the contents of the following folder.
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
