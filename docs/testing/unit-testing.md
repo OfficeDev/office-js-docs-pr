@@ -371,7 +371,7 @@ describe("Insert blue paragraph at end tests", () => {
 
 In some scenarios, efficient testing requires that mock objects be created or modified at runtime; that is, while the tests are running. The following are examples:
 
-- The function that is being tested behaves differently when called a second time, from how it behaves when first called. You need to first test the function with one mock object, then change this mock object and test the function again with the changed mock object.
+- The function that is being tested behaves differently when called a second time. You need to first test the function with one mock object, then change this mock object and test the function again with the changed mock object.
 - You need to test a function against multiple arguments quickly. For example, you need to test a function with a mock object that has a color property and then test the function again with a mock object that has a text property, but is otherwise identical to the original mock object.
 
 The `OfficeMockObject` has three methods to help in these scenarios.
