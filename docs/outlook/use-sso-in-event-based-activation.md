@@ -1,13 +1,13 @@
 ---
 title: Enable single sign-on (SSO) in Outlook add-ins that use event-based activation
-description: 'Learn how to enable SSO when working in an event-based activation add-in'
+description: 'Learn how to enable SSO when working in an event-based activation add-in.'
 ms.date: 11/16/2021
 ms.localizationpriority: medium
 ---
 
 # Enable single sign-on (SSO) in Outlook add-ins that use event-based activation
 
-When an Outlook add-in uses event-based activation, the events run in a separate JavaScript runtime. After completing the steps in [Authenticate a user with a single-sign-on token in an Outlook add-in](authenticate-a-user-with-an-sso-token.md), this article describes additional steps to enable SSO for your event handling code. Once you enable SSO you can call the `getAccessToken()` API to get an access token with the user's identity.
+When an Outlook add-in uses event-based activation, the events run in a separate JavaScript runtime. After completing the steps in [Authenticate a user with a single-sign-on token in an Outlook add-in](authenticate-a-user-with-an-sso-token.md), follow the additional steps described in this article to enable SSO for your event handling code. Once you enable SSO you can call the `getAccessToken()` API to get an access token with the user's identity.
 
 > [!NOTE]
 > The steps in this article only apply when running your Outlook add-in on Windows. This is because Outlook on Windows uses a JavaScript file, while Outlook on the web uses an HTML file that can reference the same JavaScript file.
@@ -38,7 +38,7 @@ The origin refers to a pattern of scheme + subdomain + domain + port. The name o
 
 A second approach is to add a custom response header named `MS-OfficeAddins-Allowed-Origin`. The value of the header must be the origin of the JavaScript file.
 
-For example, if the JavaScript file is located at `https://addin.contoso.com:8000/main/js/autorun.js`, then add the following response header:
+For example, if the JavaScript file is located at `https://addin.contoso.com:8000/main/js/autorun.js`, then add the following response header.
 `MS-OfficeAddins-Allowed-Origin : https://addin.contoso.com:8000`
 
 You'll need to refer to your specific web server documentation for how to add the custom response header.

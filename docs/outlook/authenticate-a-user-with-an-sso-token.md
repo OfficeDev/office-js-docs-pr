@@ -45,7 +45,7 @@ In most scenarios, there would be little point to obtaining the access token, if
 
 ## SSO for event-based activation
 
-There are additional steps to take if you add-in uses event-based activation. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
+There are additional steps to take if your add-in uses event-based activation. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
 
 ## See also
 
