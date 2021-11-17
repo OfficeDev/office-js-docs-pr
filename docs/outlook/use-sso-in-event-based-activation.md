@@ -39,6 +39,7 @@ The origin refers to a pattern of scheme + subdomain + domain + port. The name o
 A second approach is to add a custom response header named `MS-OfficeAddins-Allowed-Origin`. The value of the header must be the origin of the JavaScript file.
 
 For example, if the JavaScript file is located at `https://addin.contoso.com:8000/main/js/autorun.js`, then add the following response header.
+
 `MS-OfficeAddins-Allowed-Origin : https://addin.contoso.com:8000`
 
 You'll need to refer to your specific web server documentation for how to add the custom response header.
