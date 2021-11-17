@@ -279,7 +279,9 @@ items:
         href: testing/debug-add-ins-using-f12-tools-ie.md
       - name: Debug using developer tools for Edge legacy
         href: testing/debug-add-ins-using-devtools-edge-legacy.md
-      - name: Debug using Edge Chromium WebView2
+      - name: Debug using developer tools for Edge Chromium WebView2
+        href: testing/debug-add-ins-using-devtools-edge-chromium.md
+      - name: Debug using Visual Studio Code and Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
         displayName: debug, windows
       - name: Test with Internet Explorer 11
@@ -474,10 +476,6 @@ items:
           href: reference/manifest/action.md
         - name: AllFormFactors
           href: reference/manifest/allformfactors.md
-        - name: Authorization
-          href: reference/manifest/authorization.md
-        - name: Authorizations
-          href: reference/manifest/authorizations.md
         - name: Control
           href: reference/manifest/control.md
         - name: CustomTab
@@ -656,6 +654,14 @@ items:
     - name: Comments
       href: excel/excel-add-ins-comments.md
       displayName: Excel
+    - name: Data types (preview)
+      items:
+        - name: Overview (preview)
+          href: excel/excel-data-types-overview.md
+          displayName: Excel
+        - name: Concepts (preview)
+          href: excel/excel-data-types-concepts.md
+          displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
       displayName: Excel
@@ -776,6 +782,12 @@ items:
     - name: Autogenerate JSON metadata
       href: excel/custom-functions-json-autogeneration.md
       displayName: Excel, Custom Functions
+    - name: Data types and custom functions overview (preview)
+      href: excel/custom-functions-data-types-overview.md
+      displayName: Excel, Custom Functions
+    - name: Data types and custom functions concepts (preview)
+      href: excel/custom-functions-data-types-concepts.md
+      displayName: Excel, Custom Functions
     - name: Call Excel JavaScript APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
@@ -878,6 +890,20 @@ items:
           href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.item.md
         - name: Outlook Preview API Reference
           href: reference/outlook-api-reference-preview.md
+      - name: Mailbox requirement set 1.11
+        items:
+        - name: Overview
+          href: reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md
+        - name: Office
+          href: reference/objectmodel/requirement-set-1.11/office.md
+        - name: Office.context
+          href: reference/objectmodel/requirement-set-1.11/Office.context.md
+        - name: Office.context.mailbox
+          href: reference/objectmodel/requirement-set-1.11/Office.context.mailbox.md
+        - name: Office.context.mailbox.item
+          href: reference/objectmodel/requirement-set-1.11/Office.context.mailbox.item.md
+        - name: Outlook 1.11 API Reference
+          href: reference/outlook-api-reference-1-11.md
       - name: Mailbox requirement set 1.10
         items:
         - name: Overview
@@ -1019,7 +1045,7 @@ items:
         - name: Outlook 1.1 API Reference
           href: reference/outlook-api-reference-1-1.md
     - name: API reference - latest release
-      href: reference/outlook-api-reference-1-10.md
+      href: reference/outlook-api-reference-1-11.md
       displayName: Outlook
     - name: Outlook add-in design guidelines
       href: outlook/outlook-addin-design.md
@@ -1041,6 +1067,9 @@ items:
       items:
       - name: Walkthrough
         href: outlook/autolaunch.md
+        displayName: event-based activation
+      - name: Smart Alerts and OnMessageSend event walkthrough
+        href: outlook/smart-alerts-onmessagesend-walkthrough.md
         displayName: event-based activation
       - name: Debug event-based activation
         href: outlook/debug-autolaunch.md
@@ -1122,6 +1151,8 @@ items:
         href: outlook/authentication.md
       - name: Authenticate with SSO token
         href: outlook/authenticate-a-user-with-an-sso-token.md
+      - name: SSO in event-based activation
+        href: outlook/use-sso-in-event-based-activation.md
       - name: Authenticate with an identity token
         href: outlook/authenticate-a-user-with-an-identity-token.md
       - name: Validate an identity token

@@ -1,7 +1,7 @@
 ---
 title: Error handling with the Excel JavaScript API
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 09/20/2021
+ms.date: 11/16/2021
 ms.localizationpriority: medium
 ---
 
@@ -56,6 +56,7 @@ The following table is a list of errors that the API may return.
 |`BadPassword`|The password you supplied is incorrect.| |
 |`Conflict`|Request could not be processed because of a conflict.| |
 |`ContentLengthRequired`|A `Content-length` HTTP header is missing.| |
+|`EmptyChartSeries`|The attempted operation failed because the chart series is empty.| |
 |`FilteredRangeConflict`|The attempted operation causes a conflict with a filtered range.| |
 |`FormulaLengthExceedsLimit`|The bytecode of the applied formula exceeds the maximum length limit. For Office on 32-bit machines, the bytecode length limit is 16384 characters. On 64-bit machines, the bytecode length limit is 32768 characters.| This error occurs in both Excel on the web and on desktop.|
 |`GeneralException`|There was an internal error while processing the request.| |

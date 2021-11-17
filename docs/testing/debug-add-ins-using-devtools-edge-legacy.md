@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using developer tools for Microsoft Edge Legacy
 description: 'Debug add-ins using the developer tools in Microsoft Edge Legacy.'
-ms.date: 10/20/2021
+ms.date: 11/02/2021
 ms.localizationpriority: medium
 ---
 
@@ -12,13 +12,16 @@ This article shows how to debug the client-side code (JavaScript or TypeScript) 
 - You cannot, or don't wish to, debug using tools built into your IDE; or you are encountering a problem that only occurs when the add-in is run outside the IDE.
 - Your computer is using a combination of Windows and Office versions that use the original Edge webview control, EdgeHTML.
 
+> [!TIP]
+> For information about debugging with Edge Legacy inside Visual Studio Code, see [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
+
 To determine which browser you're using, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). 
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
 > [!NOTE]
-> To install a version of Office that uses the Edge legacy webview, see [Install a version of Office that uses Microsoft Edge Legacy](#install-a-version-of-office-that-uses-microsoft-edge-legacy).
+> To install a version of Office that uses the Edge legacy webview or to force your current version of Office to use Edge Legacy, see [Switch to the Edge Legacy webview](#switch-to-the-edge-legacy-webview).
 
 ## Debug a task pane add-in using Microsoft Edge DevTools Preview
 
@@ -54,12 +57,24 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
 
 If your add-in uses the Office Dialog API, the dialog runs in a separate process from the task pane (if any) and the tools must attach to that process. Follow these steps.
 
-1. Run the add-in and the tools. 
+1. Run the add-in and the tools.
 1. Open the dialog and then select the **Refresh** button in the tools. The dialog process is shown. Its name comes from the `<title>` element in the HTML file that is open in the dialog.
 1. Select the process to open it and debug just as described in the section [Debug a task pane add-in using Microsoft Edge DevTools Preview](#debug-a-task-pane-add-in-using-microsoft-edge-devtools-preview).
 
    :::image type="content" source="../images/edge-devtools-with-add-in-and-dialog-processes.png" alt-text="Screenshot of Edge DevTools showing a process named My Dialog.":::
 
-## Install a version of Office that uses Microsoft Edge Legacy
+## Switch to the Edge Legacy webview
+
+There are two ways to switch the Edge Legacy webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Edge Legacy by default. We recommend the first method. But you should use the second in the following scenarios.
+
+- Your project was developed with Visual Studio and IIS. It isn't node.js-based.
+- You want to be absolutely robust in your testing.
+- If for any reason the command line tool doesn't work.
+
+### Switch via the command line
+
+[!INCLUDE [Steps to switch browsers with the command line tool](../includes/use-legacy-edge-or-ie.md)]
+
+### Install a version of Office that uses Edge Legacy
 
 [!INCLUDE [Steps to install Office that uses Edge Legacy or Internet Explorer](../includes/install-office-that-uses-legacy-edge-or-ie.md)]

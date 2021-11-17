@@ -1,7 +1,7 @@
 ---
 title: Clear the Office cache
 description: 'Learn how to clear the Office cache on your computer.'
-ms.date: 08/02/2021
+ms.date: 11/15/2021
 ms.localizationpriority: high
 ---
 
@@ -16,7 +16,25 @@ Additionally, if you make changes to your add-in's manifest (for example, update
 
 ## Clear the Office cache on Windows
 
-To remove all sideloaded add-ins from Excel, Word, and PowerPoint, delete the contents of the folder.
+There are three ways to clear the Office cache on a Windows computer: automatically, manually, and using the Microsoft Edge developer tools. The methods are described in the following subsections.
+
+### Automatically
+
+This method is recommended for add-in development computers. If your Office on Windows version is 2108 or later, the following steps configure the Office cache to be cleared automatically every time Office is reopened.
+
+> [!NOTE]
+> The automatic method is not supported for Outlook.
+
+1. From the ribbon of any Office host except Outlook, navigate to **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
+1. Select the checkbox **Next time Office starts, clear all previously-started web add-ins cache**.
+
+### Manually
+
+The manual method for Excel, Word, and PowerPoint is different from Outlook.
+
+#### Manually clear the cache in Excel, Word, and PowerPoint
+
+To remove all sideloaded add-ins from Excel, Word, and PowerPoint, delete the contents of the following folder.
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
@@ -28,9 +46,13 @@ If the following folder exists, delete its contents too.
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
+#### Manually clear the cache in Outlook
+
 To remove a sideloaded add-in from Outlook, use the steps outlined in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to find the add-in in the **Custom add-ins** section of the dialog box that lists your installed add-ins. Choose the ellipsis (`...`) for the add-in and then choose **Remove** to remove that specific add-in. If this add-in removal doesn't work, then delete the contents of the `Wef` folder as noted previously for Excel, Word, and PowerPoint.
 
-Additionally, to clear the Office cache on Windows 10 when the add-in is running in Microsoft Edge, you can use the Microsoft Edge DevTools.
+### Using the Microsoft Edge developer tools
+
+To clear the Office cache on Windows 10 when the add-in is running in Microsoft Edge, you can use the Microsoft Edge DevTools.
 
 > [!TIP]
 > If you only want the sideloaded add-in to reflect recent changes to its HTML or JavaScript source files, you shouldn't need to clear the cache. Instead, just put focus in the add-in's task pane (by clicking anywhere within the task pane) and then press **Ctrl+F5** to reload the add-in.

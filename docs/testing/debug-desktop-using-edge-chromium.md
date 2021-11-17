@@ -1,12 +1,15 @@
 ---
-title: Debug add-ins on Windows using Microsoft Edge WebView2 (Chromium-based)
+title: Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 description: 'Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) by using the Debugger for Microsoft Edge extension in VS Code.'
-ms.date: 10/05/2021
+ms.date: 11/09/2021
 ms.localizationpriority: high
 ---
-# Debug add-ins on Windows using Edge Chromium WebView2
+# Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 
-Office Add-ins running on Windows can use the Debugger for Microsoft Edge extension in VS Code to debug against the Edge Chromium WebView2 runtime.
+Office Add-ins running on Windows can use the Debugger for Microsoft Edge extension in Visual Studio Code to debug against the Edge Chromium WebView2 runtime. 
+
+> [!TIP]
+> If you cannot, or don't wish to, debug using tools built into Visual Studio Code; or you are encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Chromium WebView2 runtime by using the Edge (Chromium-based) developer tools as described in [Debug add-ins using developer tools for Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
 
 ## Prerequisites
 
@@ -19,8 +22,12 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
 
 1. Create a project using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). You can use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this.
 
-    > [!TIP]
-    > If you aren't using a Yeoman generator based add-in, you may be prompted to adjust a registry key. While in the root folder of your project, run the following in the command line:  `office-add-in-debugging start <your manifest path>`
+   > [!TIP]
+   > If you aren't using a Yeoman generator based add-in, you may be prompted to adjust a registry key. While in the root folder of your project, run the following in the command line.
+   >
+   > ``` command&nbsp;line
+   > npx office-addin-debugging start <your manifest path>
+   > ```
 
 1. Open your project in VS Code. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "Debugger for Microsoft Edge" extension and install it.
 
