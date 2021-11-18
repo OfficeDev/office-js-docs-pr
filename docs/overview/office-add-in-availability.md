@@ -63,7 +63,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
 |Office on Android<br>(connected to a Microsoft 365 subscription)|- [Message Read](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface)<br>- [Appointment Organizer (Compose): online meeting](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface)<br>- [Add-in Commands](../reference/requirement-sets/add-in-commands-requirement-sets.md)|- [Mailbox 1.1](../reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)<br>- [Mailbox 1.2](../reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)<br>- [Mailbox 1.3](../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)<br>- [Mailbox 1.4](../reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)<br>- [Mailbox 1.5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)|Not available|
 
 > [!NOTE]
-> <sup>1</sup> [!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../../includes/outlook-identity-13-note.md)]
+> <sup>1</sup> [!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../includes/outlook-identity-13-note.md)]
 >
 > <sup>2</sup> Added with post-release updates.
 >
