@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
-ms.date: 09/03/2021
+ms.date: 11/17/2021
 ms.localizationpriority: medium
 ---
 
@@ -16,6 +16,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 ## Prerequisites
 
 * Visual Studio 2019 or later.
+
+* The **Office/SharePoint development** workload when configuring Visual studio.
 
 * [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
@@ -86,7 +88,7 @@ Use the following settings for your app registration:
 
     For each Client ID, take the following steps.
 
-    a. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/$App ID GUID$/access_as_user`.
+    a. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/[application-id-guid]/access_as_user`.
 
     b. Select **Add application**.
 
@@ -168,7 +170,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     * An assignment to the `Office.initialize` method that, in turn, assigns a handler to the `getGraphAccessTokenButton` button click event.
     * A `showResult` method that will display data returned from Microsoft Graph (or an error message) at the bottom of the task pane.
     * A `logErrors` method that will log to console errors that are not intended for the end user.
-    * Code that implements the fallback authorization system that the add-in will use in scenarios where SSO is not supported or has errored.
+    * Code that implements the fallback authorization system that the add-in will use in scenarios where SSO is not supported or an error occurred.
 
 1. Below the assignment to `Office.initialize`, add the code below. About this code, note:
 
