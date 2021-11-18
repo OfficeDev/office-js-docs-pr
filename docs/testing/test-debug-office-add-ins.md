@@ -40,6 +40,7 @@ The procedure for debugging an Office Add-in varies by platform as well. Each of
 - [Attach a debugger from the task pane (on Windows)](attach-debugger-from-task-pane.md)
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
+- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
 - [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
 - [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md)
 - [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
