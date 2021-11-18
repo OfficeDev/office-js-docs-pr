@@ -1,7 +1,7 @@
 ---
 title: Office client application and platform availability for Office Add-ins
 description: 'Supported requirement sets for Excel, OneNote, Outlook, PowerPoint, Project, and Word.'
-ms.date: 11/08/2021
+ms.date: 11/18/2021
 ms.localizationpriority: high
 ---
 
@@ -63,7 +63,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
 |Office on Android<br>(connected to a Microsoft 365 subscription)|- [Message Read](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface)<br>- [Appointment Organizer (Compose): online meeting](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface)<br>- [Add-in Commands](../reference/requirement-sets/add-in-commands-requirement-sets.md)|- [Mailbox 1.1](../reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md)<br>- [Mailbox 1.2](../reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md)<br>- [Mailbox 1.3](../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)<br>- [Mailbox 1.4](../reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md)<br>- [Mailbox 1.5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)|Not available|
 
 > [!NOTE]
-> <sup>1</sup> To require Identity API set 1.3 in your add-in code, check if it's supported by calling `isSetSupported('IdentityAPI', '1.3')`. Declaring it in your add-in's manifest isn't supported. You can also determine if the API is supported by checking that it's not `undefined`. For further details, see [Using APIs from later requirement sets](../reference/requirement-sets/outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets).
+> <sup>1</sup> [!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../includes/outlook-identity-13-note.md)]
 >
 > <sup>2</sup> Added with post-release updates.
 >
