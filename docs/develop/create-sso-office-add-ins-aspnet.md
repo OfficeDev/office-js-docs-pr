@@ -76,13 +76,15 @@ Use the following settings for your app registration:
 
 1. In the **Authorized client applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized.
 
-    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
-    * `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
+    |Client Id                              |Application  |
+    |---------------------------------------|-----------------|
+    |`d3590ed6-52b3-4102-aeff-aad2292ab01c` |Microsoft Office |
+    |`ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` |Microsoft Office |
+    |`57fb890c-0dab-4253-a5e0-7188c88b2bb4` |Office on the web |
+    |`08e18876-6177-487e-b8b5-cf950c1e598c` |Office on the web |
+    |`bc59ab01-8403-45c6-8796-ac3ef710b3e3` |Outlook on the web |
 
-    For each ID, take these steps.
+    For each Client ID, take the following steps.
 
     a. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/$App ID GUID$/access_as_user`.
 
