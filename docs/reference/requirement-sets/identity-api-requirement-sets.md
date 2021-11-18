@@ -20,7 +20,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 ## Outlook and Identity API requirement sets
 
-To require the Identity API set 1.3 in your Outlook add-in code, check if it's supported by calling `isSetSupported('IdentityAPI', '1.3')`. Declaring it in the Outlook add-in's manifest isn't supported. You can also determine if the API is supported by checking that it's not `undefined`. For further details, see [Using APIs from later requirement sets](outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets).
+[!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../../includes/outlook-identity-13-note.md)]
 
 > [!NOTE]
 > In an Outlook add-in using event-based activation, the [OfficeRuntime.Auth interface](/javascript/api/office-runtime/officeruntime.auth) is supported on Office on Windows version 2108 (build 14326.20258) or later. The [Office.Auth interface](/javascript/api/office/office.auth) is supported on version 2109 (build 14425.10000) or later. For more details according to your version, see the update history page for [Office 2021](/officeupdates/update-history-office-2021) or [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
