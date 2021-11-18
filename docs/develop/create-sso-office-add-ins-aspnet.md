@@ -51,7 +51,7 @@ Use the following settings for your app registration:
 * Redirect URI: **https://localhost:44355/AzureADAuth/Authorize**
 * Client secret: `*********` (record this value after creation - it's shown only once)
 
-Next, you need to expose a web API.
+### Expose a web API
 
 1. In the app registration you created, select **Expose an API > Add a scope**.
 1. You're prompted to set an **Application ID URI** if you haven't yet configured one.
