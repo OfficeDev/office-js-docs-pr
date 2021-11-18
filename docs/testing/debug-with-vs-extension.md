@@ -81,4 +81,4 @@ These instructions assume you have experience using the command line, understand
 - [Test and debug Office Add-ins](test-debug-office-add-ins.md)
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
-- [Debug add-ins on Windows using Microsoft Edge WebView2 (Chromium-based)](debug-desktop-using-edge-chromium.md)
+- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)

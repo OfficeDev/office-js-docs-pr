@@ -72,3 +72,4 @@ You can validate the manifest file against the [XML Schema Definition (XSD)](/op
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
+- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
