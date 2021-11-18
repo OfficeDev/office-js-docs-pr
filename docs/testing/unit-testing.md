@@ -396,7 +396,7 @@ The `OfficeMockObject` has three methods to help in these scenarios.
     > [!NOTE]
     > The function parameter is optional. If it isn't present, an empty function is created.
 
-- `OfficeMockObject.addMock` adds a new `OfficeMockObject` object as a property to an existing one and gives it a name. It would have the minimum members that all `OfficeMockObject` have, such as `load` and `sync`. Additional members can be added with the `setMock` and `addMockFunction` methods. The following is an example that adds a mock `Excel.WorkbookProtection` object as a `protection` property to a mock workbook. It then adds a `protect` property to the new mock object.
+- `OfficeMockObject.addMock` adds a new `OfficeMockObject` object as a property to an existing one and gives it a name. It would have the minimum members that all `OfficeMockObject` have, such as `load` and `sync`. Additional members can be added with the `setMock` and `addMockFunction` methods. The following is an example that adds a mock `Excel.WorkbookProtection` object as a `protection` property to a mock workbook. It then adds a `protected` property to the new mock object.
 
     ```javascript
     workbookMock.addMock("protection");
