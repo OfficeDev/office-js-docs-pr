@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 Unit tests check your add-in's functionality without requiring network or service connections, including connections to the Office application. Unit testing server-side code, and client-side code that does *not* call the [Office JavaScript APIs](../develop/understanding-the-javascript-api-for-office.md), is the same in Office Add-ins as it is in any web application, so it requires no special documentation. But client-side code that calls the Office JavaScript APIs is challenging to test. To solve these problems, we have created a library to simplify the creation of mock Office objects in unit tests: [Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock). The library makes testing easier in the following ways:
 
 - The Office JavaScript APIs must initialize in a webview control in the context of an Office application (Excel, Word, etc.), so they cannot be loaded in the process in which unit tests run on your development computer. The Office-Addin-Mock library can be imported into your test files, which enables the mocking of Office JavaScript APIs inside the node.js process in which the tests run.
-- The [application-specific APIs](../develop/understanding-the-javascript-api-for-office.md#api-models) have methods [load](../develop/application-specific-api-model.md#load) and [sync](../develop/application-specific-api-model.md#sync) that must be called in a particular order relative to other functions and to each other. Moreover, the `load` method must be called with certain parameters depending on what what properties of Office objects are going to be read in by code *later* in the function being tested. But unit testing frameworks are inherently stateless, so they cannot keep a record of whether `load` or `sync` was called or what parameters were passed to `load`. The mock objects that you create with the Office-Addin-Mock library have internal state that keeps track of these things. This enables the mock objects to emulate the error behavior of actual Office objects. For example, if the function that is being tested tries to read a property that was not first passed to `load`, then the test will return an error similar to what Office would return.
+- The [application-specific APIs](../develop/understanding-the-javascript-api-for-office.md#api-models) have [load](../develop/application-specific-api-model.md#load) and [sync](../develop/application-specific-api-model.md#sync) methods that must be called in a particular order relative to other functions and to each other. Moreover, the `load` method must be called with certain parameters depending on what what properties of Office objects are going to be read in by code *later* in the function being tested. But unit testing frameworks are inherently stateless, so they cannot keep a record of whether `load` or `sync` was called or what parameters were passed to `load`. The mock objects that you create with the Office-Addin-Mock library have internal state that keeps track of these things. This enables the mock objects to emulate the error behavior of actual Office objects. For example, if the function that is being tested tries to read a property that was not first passed to `load`, then the test will return an error similar to what Office would return.
 
 The library doesn't depend on the Office JavaScript APIs and it can be used with any JavaScript unit testing framework, such as:
 
@@ -38,7 +38,7 @@ npm install office-addin-mock --save-dev
 
 ## Basic usage
 
-1. Your project will have one or more test files. (See the instructions for your test framework and the example test files in Examples(#examples) below.) Import the library, with either the `require` or `import` keyword, to any test file that has a test of a function that calls the Office JavaScript APIs, as shown in the following example:
+1. Your project will have one or more test files. (See the instructions for your test framework and the example test files in Examples(#examples) below.) Import the library, with either the `require` or `import` keyword, to any test file that has a test of a function that calls the Office JavaScript APIs, as shown in the following example.
 
    ```javascript
    const OfficeAddinMock = require("office-addin-mock");
@@ -86,7 +86,7 @@ npm install office-addin-mock --save-dev
    });
    ```
 
-1. Run the test in accordance with documentation of the test framework and your development tools. Typically, there is a package.json file with a script that executes the test framework. For example, if Jest is the framework, the **package.json** would contain the following:
+1. Run the test in accordance with documentation of the test framework and your development tools. Typically, there is a **package.json** file with a script that executes the test framework. For example, if Jest is the framework, **package.json** would contain the following:
 
    ```json
    "scripts": {
@@ -103,7 +103,7 @@ npm install office-addin-mock --save-dev
 
 ## Examples
 
-The examples in this section use Jest with its default settings. These settings support CommonJS modules. See the [Jest documentation](https://jestjs.io/docs/getting-started) for how to configure Jest and node.js to support ECMAScript modules and to support TypeScript. To run any of these examples, take the following steps:
+The examples in this section use Jest with its default settings. These settings support CommonJS modules. See the [Jest documentation](https://jestjs.io/docs/getting-started) for how to configure Jest and node.js to support ECMAScript modules and to support TypeScript. To run any of these examples, take the following steps.
 
 1. Create an Office add-in project for the appropriate Office host application (for example, Excel or Word). One way to do this quickly is to use the [Yo Office tool](https://github.com/OfficeDev/generator-office).
 1. In the root of the project, [install Jest](https://jestjs.io/docs/getting-started).
@@ -382,7 +382,7 @@ The `OfficeMockObject` has three methods to help in these scenarios.
     rangeMock.setMock("address", "G6:K9");
     ```
 
-- `OfficeMockObject.addMockFunction` adds a mock function to a `OfficeMockObject` object. The following is an example:
+- `OfficeMockObject.addMockFunction` adds a mock function to a `OfficeMockObject` object, as shown in the following example.
 
     ```javascript
     workbookMock.addMockFunction("getSelectedRange", function () { 
