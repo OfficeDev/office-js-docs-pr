@@ -312,6 +312,8 @@ items:
       href: testing/testing-and-troubleshooting.md
     - name: Troubleshoot development errors
       href: testing/troubleshoot-development-errors.md
+    - name: Unit testing
+      href: testing/unit-testing.md
     - name: Usability testing
       href: develop/usability-testing.md
     - name: Validate an add-in's manifest

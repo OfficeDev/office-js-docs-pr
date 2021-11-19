@@ -1,7 +1,7 @@
 ---
 title: Test and debug Office Add-ins
 description: 'Learn how to test and debug your Office Add-in'
-ms.date: 09/24/2021
+ms.date: 11/14/2021
 ms.localizationpriority: high
 ---
 
@@ -32,6 +32,10 @@ You can use sideloading to install an Office Add-in for testing without having t
 - [Sideload Office Add-ins on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 
 - [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
+
+## Unit testing
+
+For information about how to add unit tests to your add-in project, see [Unit testing in Office Add-ins](unit-testing.md).
 
 ## Debug an Office Add-in
 
