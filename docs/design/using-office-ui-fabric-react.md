@@ -136,7 +136,7 @@ Add the `ButtonPrimaryExample` component to your add-in by opening **src\compone
     import {ButtonPrimaryExample} from './Button';
     ```
 
-2. Remove the following two import statements.
+2. Remove the following import statement.
 
     ```typescript
     import Progress from './Progress';
