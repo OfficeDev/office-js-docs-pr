@@ -19,7 +19,7 @@ The library doesn't depend on the Office JavaScript APIs and it can be used with
 - [Storybook](https://storybook.js.org/docs/react/workflows/unit-testing)
 - [Jasmine](https://jasmine.github.io/)
 
-The examples in this article use the Jest framework. There are examples using the Mocha framework and samples written in TypeScript at [the Office-Addin-Mock home page](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
+The examples in this article use the Jest framework. There are examples using the Mocha framework at [the Office-Addin-Mock home page](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples).
 
 ## Prerequisites
 
@@ -76,7 +76,7 @@ npm install office-addin-mock --save-dev
    ```
 
     > [!NOTE]
-    > Full reference documentation for the `OfficeMockObject` type is at [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
+    > Full reference documentation for the `OfficeMockObject` type is at [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference).
 
 1. In the syntax of your test framework, add a test of the function. Use the `OfficeMockObject` object in place of the object that it mocks, in this case the `ClientRequestContext` object. The following continues the example in Jest. This example test assumes that the add-in function that is being tested is called `getSelectedRangeAddress`, that it takes a `ClientRequestContext` object as a parameter, and that it is intended to return the address of the currently selected range. The full example is [later in this article](#mocking-a-clientrequestcontext-object).
 
@@ -104,6 +104,9 @@ npm install office-addin-mock --save-dev
 ## Examples
 
 The examples in this section use Jest with its default settings. These settings support CommonJS modules. See the [Jest documentation](https://jestjs.io/docs/getting-started) for how to configure Jest and node.js to support ECMAScript modules and to support TypeScript. To run any of these examples, take the following steps.
+
+> [!NOTE]
+> 
 
 1. Create an Office add-in project for the appropriate Office host application (for example, Excel or Word). One way to do this quickly is to use the [Yo Office tool](https://github.com/OfficeDev/generator-office).
 1. In the root of the project, [install Jest](https://jestjs.io/docs/getting-started).
@@ -404,7 +407,7 @@ The `OfficeMockObject` has three methods to help in these scenarios.
     ```
 
 > [!NOTE]
-> Full reference documentation for the `OfficeMockObject` type is at [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
+> Full reference documentation for the `OfficeMockObject` type is at [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference).
 
 ## See also
 
