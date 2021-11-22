@@ -275,7 +275,9 @@ items:
         href: testing/debug-add-ins-using-f12-tools-ie.md
       - name: Debug using developer tools for Edge legacy
         href: testing/debug-add-ins-using-devtools-edge-legacy.md
-      - name: Debug using Edge Chromium WebView2
+      - name: Debug using developer tools for Edge Chromium WebView2
+        href: testing/debug-add-ins-using-devtools-edge-chromium.md
+      - name: Debug using Visual Studio Code and Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
         displayName: debug, windows
       - name: Test with Internet Explorer 11
@@ -310,6 +312,8 @@ items:
       href: testing/testing-and-troubleshooting.md
     - name: Troubleshoot development errors
       href: testing/troubleshoot-development-errors.md
+    - name: Unit testing
+      href: testing/unit-testing.md
     - name: Usability testing
       href: develop/usability-testing.md
     - name: Validate an add-in's manifest
@@ -1147,6 +1151,8 @@ items:
         href: outlook/authentication.md
       - name: Authenticate with SSO token
         href: outlook/authenticate-a-user-with-an-sso-token.md
+      - name: SSO in event-based activation
+        href: outlook/use-sso-in-event-based-activation.md
       - name: Authenticate with an identity token
         href: outlook/authenticate-a-user-with-an-identity-token.md
       - name: Validate an identity token
