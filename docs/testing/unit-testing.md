@@ -1,7 +1,7 @@
 ---
 title: Unit testing in Office Add-ins
 description: 'Learn how to unit test code that calls the Office JavaScript APIs'
-ms.date: 11/14/2021
+ms.date: 11/23/2021
 ms.localizationpriority: medium
 ---
 
@@ -26,7 +26,7 @@ The examples in this article use the Jest framework. There are examples using th
 This article assumes that you are familiar with the basic concepts of unit testing and mocking, including how to create and run test files, and that you have some experience with a unit testing framework.
 
 > [!TIP]
-> If you are working with Visual Studio, we recommend that you read the article [Unit testing JavaScript and TypeScript in Visual Studio](/visualstudio/javascript/unit-testing-javascript-with-visual-studio.md) for some basic information about JavaScript unit testing in Visual Studio and then return to this article.
+> If you are working with Visual Studio, we recommend that you read the article [Unit testing JavaScript and TypeScript in Visual Studio](/visualstudio/javascript/unit-testing-javascript-with-visual-studio) for some basic information about JavaScript unit testing in Visual Studio and then return to this article.
 
 ## Install the tool
 
@@ -174,7 +174,7 @@ test("Text of selection in document should be set to 'Hello World'", async funct
 
 ### Mocking the Outlook APIs
 
-Although strictly speaking, the Outlook APIs are part of the Common API model, they have a special architecture that is built around the [Mailbox](/javascript/api/office/office.mailbox) object, so we have provided a distinct example for Outlook. This example assumes an Outlook that has one of its features in a file named `my-outlook-add-in-feature.js`. The following shows the contents of the file. The `addHelloWorldText` function sets the text "Hello World!" to whatever is currently selected in the message compose window.
+Although strictly speaking, the Outlook APIs are part of the Common API model, they have a special architecture that is built around the [Mailbox](/javascript/api/outlook/office.mailbox) object, so we have provided a distinct example for Outlook. This example assumes an Outlook that has one of its features in a file named `my-outlook-add-in-feature.js`. The following shows the contents of the file. The `addHelloWorldText` function sets the text "Hello World!" to whatever is currently selected in the message compose window.
 
 ```javascript
 const myOutlookAddinFeature = {

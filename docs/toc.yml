@@ -355,6 +355,8 @@ items:
         href: reference/requirement-sets/identity-api-requirement-sets.md
       - name: Image Coercion requirement sets
         href: reference/requirement-sets/image-coercion-requirement-sets.md
+      - name: Keyboard Shortcuts requirement sets
+        href: reference/requirement-sets/keyboard-shortcuts-requirement-sets.md
       - name: Office Common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
       - name: Open Browser Window requirement sets
