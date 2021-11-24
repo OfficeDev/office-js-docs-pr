@@ -1,7 +1,7 @@
 ---
 title: Work with formula precedents and dependents using the Excel JavaScript API
 description: 'Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.' 
-ms.date: 07/02/2021
+ms.date: 11/23/2021
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -12,40 +12,56 @@ Excel formulas often refer to other cells. These cross-cell references are known
 
 A cell may have a precedent cell, and that precedent cell may have its own precedent cells. A "direct precedent" is the first preceding group of cells in this sequence, similar to the concept of parents in a parent-child relationship. A "direct dependent" is the first dependent group of cells in a sequence, similar to children in a parent-child relationship. Cells that refer to other cells in a workbook, but whose relationship is not a parent-child relationship, are not direct dependents or direct precedents.
 
-This article provides code samples that retrieve direct precedents and direct dependents of formulas using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
+This article provides code samples that retrieve precedents and dependents of formulas using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
 
-## Get the direct precedents of a formula
+## Get the precedents of a formula
 
-Locate a formula's direct precedent cells with [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getDirectPrecedents__). `Range.getDirectPrecedents` returns a `WorkbookRangeAreas` object. This object contains the addresses of all the direct precedents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula precedent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
+Locate all of a formula's precedent cells with [Range.getPrecedents](/javascript/api/excel/excel.range#getPrecedents__). `Range.getPrecedents` returns a `WorkbookRangeAreas` object. This object contains the addresses of all the precedents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula precedent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
-The following screenshot shows the result of selecting the **Trace Precedents** button in the Excel UI. This button draws an arrow from precedent cells to the selected cell. The selected cell, **E3**, contains the formula "=C3 * D3", so both **C3** and **D3** are precedent cells. Unlike the Excel UI button, the `getDirectPrecedents` method does not draw arrows.
+To locate only the direct precedent cells of a formula, use [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getDirectPrecedents__). `Range.getDirectPrecedents` works like `Range.getPrecedents` and returns a `WorkbookRangeAreas` object containing the addresses of direct precedents.
+
+The following screenshot shows the result of selecting the **Trace Precedents** button in the Excel UI. This button draws an arrow from precedent cells to the selected cell. The selected cell, **E3**, contains the formula "=C3 * D3", so both **C3** and **D3** are precedent cells. Unlike the Excel UI button, the `getPrecedents` and `getDirectPrecedents` methods don't draw arrows.
 
 ![Arrow tracing precedent cells in the Excel UI.](../images/excel-ranges-trace-precedents.png)
 
 > [!IMPORTANT]
-> The `getDirectPrecedents` method can't retrieve precedent cells across workbooks.
+> The `getPrecedents` and `getDirectPrecedents` methods can't retrieve precedent cells across workbooks.
 
-The following code sample gets the direct precedents for the active range and then changes the background color of those precedent cells to yellow.
+The following code sample shows how to use the `Range.getPrecedents` and `Range.getDirectPrecedents` methods to get the precedents for the active range and then change the background color of those precedent cells. The sample changes the background color of the direct precedent cells to yellow, and the background color of the other precedent cells to orange.
 
 ```js
+// This code sample shows how to find and highlight the precedents and direct precedents of the currently selected cell.
 Excel.run(function (context) {
-    // Precedents are cells that provide data to the selected formula.
-    var range = context.workbook.getActiveCell();
-    var directPrecedents = range.getDirectPrecedents();
-    range.load("address");
-    directPrecedents.areas.load("address");
-    
-    return context.sync()
-        .then(function () {
-            console.log(`Direct precedent cells of ${range.address}:`);
+  var range = context.workbook.getActiveCell();
+  // Precedents are all cells that provide data to the selected formula.
+  var precedents = range.getPrecedents();
+  // Direct precedents are the first preceding group of cells that provide data to the selected formula.    
+  var directPrecedents = range.getDirectPrecedents();
 
-            // Use the direct precedents API to loop through precedents of the active cell.
-            for (var i = 0; i < directPrecedents.areas.items.length; i++) {
-              // Highlight and print out the address of each precedent cell.
-              directPrecedents.areas.items[i].format.fill.color = "Yellow";
-              console.log(`  ${directPrecedents.areas.items[i].address}`);
-            }
-        });
+  range.load("address");
+  precedents.areas.load("address");
+  directPrecedents.areas.load("address");
+  
+  return context.sync()
+    .then(function () {
+      console.log(`All precedent cells of ${range.address}:`);
+      
+      // Use the precedents API to loop through all precedents of the active cell.
+      for (var i = 0; i < precedents.areas.items.length; i++) {
+        // Highlight and print out the address of all precedent cells.
+        precedents.areas.items[i].format.fill.color = "Orange";
+        console.log(`  ${precedents.areas.items[i].address}`);
+      }
+
+      console.log(`Direct precedent cells of ${range.address}:`);
+
+      // Use the direct precedents API to loop through direct precedents of the active cell.
+      for (var i = 0; i < directPrecedents.areas.items.length; i++) {
+        // Highlight and print out the address of each direct precedent cell.
+        directPrecedents.areas.items[i].format.fill.color = "Yellow";
+        console.log(`  ${directPrecedents.areas.items[i].address}`);
+      }
+    });
 }).catch(errorHandlerFunction);
 ```
 
@@ -63,6 +79,7 @@ The following screenshot shows the result of selecting the **Trace Dependents** 
 The following code sample gets the direct dependents for the active range and then changes the background color of those dependent cells to yellow.
 
 ```js
+// This code sample shows how to find and highlight the dependents of the currently selected cell.
 Excel.run(function (context) {
     // Direct dependents are cells that contain formulas that refer to other cells.
     var range = context.workbook.getActiveCell();
