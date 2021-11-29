@@ -1,7 +1,7 @@
 ---
 title: Work with formula precedents and dependents using the Excel JavaScript API
 description: 'Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.' 
-ms.date: 11/23/2021
+ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -75,7 +75,7 @@ The following screenshot shows the result of selecting the **Trace Dependents** 
 ![Arrow tracing dependent cells in the Excel UI.](../images/excel-ranges-trace-dependents.png)
 
 > [!IMPORTANT]
-> The `getDirectDependents` method can't retrieve dependent cells across workbooks.
+> The `getDirectDependents` method doesn't retrieve dependent cells across workbooks.
 
 The following code sample gets the direct dependents for the active range and then changes the background color of those dependent cells to yellow.
 
