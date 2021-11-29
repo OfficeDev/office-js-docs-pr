@@ -219,7 +219,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-The following screenshot shows the data table that the preceding code sample creates, including the custom formatting of the data table.
+The following screenshot shows the data table that the preceding code sample creates.
 
 ![A chart with a data table, showcasing custom formatting of the data table.](../images/excel-charts-data-table.png)
 
