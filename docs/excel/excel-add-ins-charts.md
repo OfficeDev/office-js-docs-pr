@@ -1,7 +1,7 @@
 ---
 title: Work with charts using the Excel JavaScript API
 description: 'Code samples demonstrating chart tasks using the Excel JavaScript API.'
-ms.date: 11/23/2021
+ms.date: 11/29/2021
 ms.localizationpriority: medium
 ---
 
