@@ -16,7 +16,7 @@ This article provides code samples that retrieve precedents and dependents of fo
 
 ## Get the precedents of a formula
 
-Locate all of a formula's precedent cells with [Range.getPrecedents](/javascript/api/excel/excel.range#getPrecedents__). `Range.getPrecedents` returns a `WorkbookRangeAreas` object. This object contains the addresses of all the precedents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula precedent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
+Locate a formula's precedent cells with [Range.getPrecedents](/javascript/api/excel/excel.range#getPrecedents__). `Range.getPrecedents` returns a `WorkbookRangeAreas` object. This object contains the addresses of all the precedents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula precedent. To learn more about the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
 To locate only the direct precedent cells of a formula, use [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getDirectPrecedents__). `Range.getDirectPrecedents` works like `Range.getPrecedents` and returns a `WorkbookRangeAreas` object containing the addresses of direct precedents.
 
@@ -25,9 +25,9 @@ The following screenshot shows the result of selecting the **Trace Precedents** 
 ![Arrow tracing precedent cells in the Excel UI.](../images/excel-ranges-trace-precedents.png)
 
 > [!IMPORTANT]
-> The `getPrecedents` and `getDirectPrecedents` methods can't retrieve precedent cells across workbooks.
+> The `getPrecedents` and `getDirectPrecedents` methods don't retrieve precedent cells across workbooks.
 
-The following code sample shows how to use the `Range.getPrecedents` and `Range.getDirectPrecedents` methods to get the precedents for the active range and then change the background color of those precedent cells. The sample changes the background color of the direct precedent cells to yellow and the background color of the other precedent cells to orange.
+The following code sample shows how to work with the `Range.getPrecedents` and `Range.getDirectPrecedents` methods. The sample gets the precedents for the active range and then changes the background color of those precedent cells. The background color of the direct precedent cells is set to yellow and the background color of the other precedent cells is set to orange.
 
 ```js
 // This code sample shows how to find and highlight the precedents 
