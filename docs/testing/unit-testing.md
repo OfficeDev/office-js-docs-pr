@@ -1,7 +1,7 @@
 ---
 title: Unit testing in Office Add-ins
 description: 'Learn how to unit test code that calls the Office JavaScript APIs'
-ms.date: 11/23/2021
+ms.date: 11/30/2021
 ms.localizationpriority: medium
 ---
 
@@ -16,7 +16,6 @@ The library doesn't depend on the Office JavaScript APIs and it can be used with
 
 - [Jest](https://jestjs.io)
 - [Mocha](https://mochajs.org/)
-- [Storybook](https://storybook.js.org/docs/react/workflows/unit-testing)
 - [Jasmine](https://jasmine.github.io/)
 
 The examples in this article use the Jest framework. There are examples using the Mocha framework at [the Office-Addin-Mock home page](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples).
@@ -412,6 +411,4 @@ The `OfficeMockObject` has three methods to help in these scenarios.
 - The open source repo is [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 - [Jest](https://jestjs.io)
 - [Mocha](https://mochajs.org/)
-- [Storybook](https://storybook.js.org/docs/react/workflows/unit-testing)
 - [Jasmine](https://jasmine.github.io/)
- 
