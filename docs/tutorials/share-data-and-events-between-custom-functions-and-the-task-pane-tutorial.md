@@ -211,8 +211,7 @@ Now that custom functions run in the same context as your task pane code, they c
        <strong>Store</strong>.
      </li>
      <li>
-       Enter <strong>=CONTOSO.GETVALUE()</strong> into a cell to retrieve
-       it.
+       Enter <strong>=CONTOSO.GETVALUE()</strong> into a cell to retrieve it.
      </li>
      <li>
        To send data to the task pane, in a cell, enter
