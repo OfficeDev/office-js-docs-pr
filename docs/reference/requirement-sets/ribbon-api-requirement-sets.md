@@ -1,7 +1,7 @@
 ---
 title: Ribbon API requirement sets
 description: 'Specifies which Office platforms and builds support the dynamic ribbon APIs.'
-ms.date: 10/05/2021
+ms.date: 11/29/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
 ---
@@ -10,7 +10,10 @@ ms.localizationpriority: medium
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
-The Ribbon API set supports programmatic control of when custom Add-in Commands (that is, custom ribbon buttons and menu items) are enabled and disabled.
+The Ribbon API set supports programmatic control of when custom Add-in Commands (that is, custom ribbon buttons and menu items) are enabled and disabled and when contextual tabs appear on the ribbon.
+
+> [!NOTE]
+> The RibbonApi requirement sets are supported only on task pane add-ins.
 
 Office Add-ins run across multiple versions of Office. The following table lists the Ribbon API requirement sets, the Office client applications that support that requirement set, and the build or version numbers for the Office application.
 
