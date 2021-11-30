@@ -219,6 +219,7 @@ Now that custom functions run in the same context as your task pane code, they c
      </li>
      <li>Select <strong>Get</strong> to display the value in the task pane.</li>
    </ol>
+
    <p>Store new value to shared state</p>
    <div>
      <input type="text" id="storeBox" />
