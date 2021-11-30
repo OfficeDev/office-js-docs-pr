@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Share data and events between Excel custom functions and the task pane"
 description: 'Learn how to share data and events between custom functions and the task pane in Excel.'
-ms.date: 10/07/2021
+ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
 ---
@@ -199,7 +199,7 @@ Now that custom functions run in the same context as your task pane code, they c
 2. Add the following script element just before the closing `</head>` element.
 
    ```html
-   <script src="functions.js"></script>
+   <script src="../functions/functions.js"></script>
    ```
 
 3. After the closing `</main>` element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
@@ -211,7 +211,7 @@ Now that custom functions run in the same context as your task pane code, they c
        <strong>Store</strong>.
      </li>
      <li>
-       Enter <strong>=CONTOSO.GETVALUE()</strong>strong> into a cell to retrieve
+       Enter <strong>=CONTOSO.GETVALUE()</strong> into a cell to retrieve
        it.
      </li>
      <li>
