@@ -312,6 +312,8 @@ items:
       href: testing/testing-and-troubleshooting.md
     - name: Troubleshoot development errors
       href: testing/troubleshoot-development-errors.md
+    - name: Unit testing
+      href: testing/unit-testing.md
     - name: Usability testing
       href: develop/usability-testing.md
     - name: Validate an add-in's manifest
@@ -353,6 +355,8 @@ items:
         href: reference/requirement-sets/identity-api-requirement-sets.md
       - name: Image Coercion requirement sets
         href: reference/requirement-sets/image-coercion-requirement-sets.md
+      - name: Keyboard Shortcuts requirement sets
+        href: reference/requirement-sets/keyboard-shortcuts-requirement-sets.md
       - name: Office Common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
       - name: Open Browser Window requirement sets
@@ -1147,6 +1151,8 @@ items:
         href: outlook/authentication.md
       - name: Authenticate with SSO token
         href: outlook/authenticate-a-user-with-an-sso-token.md
+      - name: SSO in event-based activation
+        href: outlook/use-sso-in-event-based-activation.md
       - name: Authenticate with an identity token
         href: outlook/authenticate-a-user-with-an-identity-token.md
       - name: Validate an identity token

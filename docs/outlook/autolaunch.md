@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 11/01/2021
+ms.date: 11/16/2021
 ms.localizationpriority: medium
 ---
 
@@ -295,11 +295,11 @@ Imports are not supported in the JavaScript file where you implement the handlin
 
 Some Office.js APIs that change or alter the UI are not allowed from event-based add-ins. The following are the blocked APIs.
 
-- Under `OfficeRuntime.auth`:
-  - `getAccessToken` (Windows only)
 - Under `Office.context.auth`:
   - `getAccessToken`
   - `getAccessTokenAsync`
+    > [!NOTE]
+    > `OfficeRuntime.auth` is supported. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
 - Under `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`

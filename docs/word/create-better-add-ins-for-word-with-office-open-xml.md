@@ -1,7 +1,7 @@
 ---
 title: Create better add-ins for Word with Office Open XML
 description: 'Overview of how to improve your Word add-in with Office Open XML.'
-ms.date: 07/08/2021
+ms.date: 11/19/2021
 ms.localizationpriority: medium
 ---
 
@@ -20,7 +20,7 @@ Because Office Open XML is the language in which Word documents (such as .docx a
 > Office Open XML is also the language behind PowerPoint and Excel (and, as of Office 2013, Visio) documents. However, currently, you can coerce content as Office Open XML only in Office Add-ins created for Word. For more information about Office Open XML, including the complete language reference documentation, see [Additional resources](#see-also).
 
 To begin, take a look at some of the content types you can insert using Office Open XML coercion.
-Download the code sample [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML), which contains the Office Open XML markup and Office.js code required for inserting any of the following examples into Word.
+Download the code sample [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml), which contains the Office Open XML markup and Office.js code required for inserting any of the following examples into Word.
 
 > [!NOTE]
 > Throughout this article, the terms **content types** and **rich content** refer to the types of rich content you can insert into a Word document.
@@ -195,7 +195,7 @@ Once you save the preceding Office Open XML as an XML file that's accessible fro
 In this function, notice that all but the last line are used to get your saved markup for use in the [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) method call at the end of the function. `setSelectedDataASync` requires only that you specify the content to be inserted and the coercion type.
 
 > [!NOTE]
-> Replace  _yourXMLfilename_ with the name and path of the XML file as you've saved it in your solution. If you're not sure where to include XML files in your solution or how to reference them in your code, see the [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) code sample for examples of that and a working example of the markup and JavaScript shown here.
+> Replace  _yourXMLfilename_ with the name and path of the XML file as you've saved it in your solution. If you're not sure where to include XML files in your solution or how to reference them in your code, see the [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) code sample for examples of that and a working example of the markup and JavaScript shown here.
 
 ```js
 function writeContent() {
@@ -323,7 +323,7 @@ After removing the majority of the markup from this package, we're left with the
 
 Several types of rich content require only the .rels and document.xml components shown in the preceding example, including content controls, Office drawing shapes and text boxes, and tables (unless a style is applied to the table). In fact, you can reuse the same edited package parts and swap out just the **body** content in document.xml for the markup of your content.
 
-To check out the Office Open XML markup for the examples of each of these content types shown earlier in Figures 5 through 8, explore the [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) code sample referenced in the overview section.
+To check out the Office Open XML markup for the examples of each of these content types shown earlier in Figures 5 through 8, explore the [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) code sample referenced in the overview section.
 
 Before you move on, take a look at differences to note for a couple of these content types and how to swap out the pieces you need.
 
@@ -333,7 +333,7 @@ If the markup for your shape or text box looks far more complex than you would e
 
 So, to support shapes and text boxes in Office Open XML Format Word documents when opened in Word 2007, shapes (including text boxes) require fallback VML markup.
 
-Typically, as you see for the shape and text box examples included in the [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) code sample, the fallback markup can be removed. Word automatically adds missing fallback markup to shapes when a document is saved. However, if you prefer to keep the fallback markup to ensure that you're supporting all user scenarios, there's no harm in retaining it.
+Typically, as you see for the shape and text box examples included in the [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) code sample, the fallback markup can be removed. Word automatically adds missing fallback markup to shapes when a document is saved. However, if you prefer to keep the fallback markup to ensure that you're supporting all user scenarios, there's no harm in retaining it.
 
 If you have grouped drawing objects included in your content, you'll see additional (and apparently repetitive) markup, but this must be retained. Portions of the markup for drawing shapes are duplicated when the object is included in a group.
 
@@ -342,7 +342,7 @@ If you have grouped drawing objects included in your content, you'll see additio
 
 #### About graphic positioning
 
-In the code samples [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) and [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML), the text box and shape are setup using different types of text wrapping and positioning settings. (Also be aware that the image examples in those code samples are setup using in line with text formatting, which positions a graphic object on the text baseline.)
+In the code samples [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) and [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML), the text box and shape are setup using different types of text wrapping and positioning settings. (Also be aware that the image examples in those code samples are setup using in line with text formatting, which positions a graphic object on the text baseline.)
 
 The shape in those code samples is positioned relative to the right and bottom page margins. Relative positioning lets you more easily coordinate with a user's unknown document setup because it will adjust to the user's margins and run less risk of looking awkward because of paper size, orientation, or margin settings. To retain relative positioning settings when you insert a graphic object, you must retain the paragraph mark (w:p) in which the positioning (known in Word as an anchor) is stored. If you insert the content into an existing paragraph mark rather than including your own, you may be able to retain the same initial visual, but many types of relative references that enable the positioning to automatically adjust to the user's layout may be lost.
 
@@ -531,7 +531,7 @@ For example, consider the following:
 
 - Charts (such as the one shown in Figure 11) require multiple additional parts, including their own relationship (.rels) part.
 
-You can see edited examples of the markup for all of these content types in the previously-referenced code sample [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML). You can insert all of these content types using the same JavaScript code shown earlier (and provided in the referenced code samples) for inserting content at the active selection and writing content to a specified location using bindings.
+You can see edited examples of the markup for all of these content types in the previously-referenced code sample [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml). You can insert all of these content types using the same JavaScript code shown earlier (and provided in the referenced code samples) for inserting content at the active selection and writing content to a specified location using bindings.
 
 Before you explore the samples, take a look at a few tips for working with each of these content types.
 
@@ -629,7 +629,7 @@ However, when you look at the markup both for your table in document.xml and for
 
 The markup for an image includes a reference to at least one part that includes the binary data to describe your image. For a complex image, this can be hundreds of pages of markup and you can't edit it. Since you don't ever have to touch the binary part(s), you can simply collapse it if you're using a structured editor such as Visual Studio, so that you can still easily review and edit the rest of the package.
 
-If you check out the example markup for the simple image shown earlier in Figure 3, available in the previously-referenced code sample [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML), you'll see that the markup for the image in document.xml includes size and position information as well as a relationship reference to the part that contains the binary image data. That reference is included in the **a:blip** tag, as follows:
+If you check out the example markup for the simple image shown earlier in Figure 3, available in the previously-referenced code sample [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml), you'll see that the markup for the image in document.xml includes size and position information as well as a relationship reference to the part that contains the binary image data. That reference is included in the **a:blip** tag, as follows:
 
 ```XML
 <a:blip r:embed="rId4" cstate="print">
@@ -648,11 +648,11 @@ When you use some Office picture formatting effects on your image, such as for t
 <a14:imgLayer r:embed="rId5">
 ```
 
-See the required markup for the formatted image shown in Figure 4 (which uses layering effects among others) in the [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) code sample.
+See the required markup for the formatted image shown in Figure 4 (which uses layering effects among others) in the [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) code sample.
 
 ### Work with SmartArt diagrams
 
-A SmartArt diagram has four associated parts, but only two are always required. You can examine an example of SmartArt markup in the [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) code sample. First, take a look at a brief description of each of the parts and why they are or are not required:
+A SmartArt diagram has four associated parts, but only two are always required. You can examine an example of SmartArt markup in the [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) code sample. First, take a look at a brief description of each of the parts and why they are or are not required:
 
 > [!NOTE]
 > If your content includes more than one diagram, they will be numbered consecutively, replacing the 1 in the file names listed here.
@@ -689,7 +689,7 @@ Charts that you can create and edit natively in Word are Excel charts, and their
 
 However, similar to SmartArt, you can delete the colors and styles parts. If you've used the chart styles and color styles available in to format your chart, the chart will take on the applicable formatting automatically when it is inserted into the destination document.
 
-See the edited markup for the example chart shown in Figure 11 in the [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) code sample.
+See the edited markup for the example chart shown in Figure 11 in the [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) code sample.
 
 ## Edit the Office Open XML for use in your task pane add-in
 
