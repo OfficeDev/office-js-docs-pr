@@ -1,7 +1,7 @@
 ---
 title: Unit testing in Office Add-ins
 description: 'Learn how to unit test code that calls the Office JavaScript APIs'
-ms.date: 11/23/2021
+ms.date: 11/30/2021
 ms.localizationpriority: medium
 ---
 
@@ -16,7 +16,6 @@ The library doesn't depend on the Office JavaScript APIs and it can be used with
 
 - [Jest](https://jestjs.io)
 - [Mocha](https://mochajs.org/)
-- [Storybook](https://storybook.js.org/docs/react/workflows/unit-testing)
 - [Jasmine](https://jasmine.github.io/)
 
 The examples in this article use the Jest framework. There are examples using the Mocha framework at [the Office-Addin-Mock home page](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples).
@@ -104,9 +103,6 @@ npm install office-addin-mock --save-dev
 ## Examples
 
 The examples in this section use Jest with its default settings. These settings support CommonJS modules. See the [Jest documentation](https://jestjs.io/docs/getting-started) for how to configure Jest and node.js to support ECMAScript modules and to support TypeScript. To run any of these examples, take the following steps.
-
-> [!NOTE]
-> 
 
 1. Create an Office add-in project for the appropriate Office host application (for example, Excel or Word). One way to do this quickly is to use the [Yo Office tool](https://github.com/OfficeDev/generator-office).
 1. In the root of the project, [install Jest](https://jestjs.io/docs/getting-started).
@@ -415,6 +411,4 @@ The `OfficeMockObject` has three methods to help in these scenarios.
 - The open source repo is [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 - [Jest](https://jestjs.io)
 - [Mocha](https://mochajs.org/)
-- [Storybook](https://storybook.js.org/docs/react/workflows/unit-testing)
 - [Jasmine](https://jasmine.github.io/)
- 

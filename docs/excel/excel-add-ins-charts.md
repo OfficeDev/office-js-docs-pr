@@ -1,7 +1,7 @@
 ---
 title: Work with charts using the Excel JavaScript API
 description: 'Code samples demonstrating chart tasks using the Excel JavaScript API.'
-ms.date: 07/17/2019
+ms.date: 11/29/2021
 ms.localizationpriority: medium
 ---
 
@@ -182,6 +182,46 @@ Excel.run(function (context) {
 **Chart with linear trendline**
 
 ![Chart with linear trendline in Excel.](../images/excel-charts-trendline-linear.png)
+
+## Add and format a chart data table
+
+You can access the data table element of a chart with the [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#getDataTableOrNullObject__) method. This method returns the [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) object. The `ChartDataTable` object has boolean formatting properties such as `visible`, `showLegendKey`, and `showHorizontalBorder`.
+
+The `ChartDataTable.format` property returns the [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) object, which allows you to further format and style the data table. The `ChartDataTableFormat` object offers `border`, `fill`, and `font` properties.
+
+The following code sample shows how to add a data table to a chart and then format that data table using the `ChartDataTable` and `ChartDataTableFormat` objects.
+
+```js
+// This code sample adds a data table to a chart that already exists on the worksheet, 
+// and then adjusts the display and format of that data table.
+Excel.run(function (context) {
+    // Retrieve the chart on the "Sample" worksheet.
+    var chart = context.workbook.worksheets.getItem("Sample").charts.getItemAt(0);
+
+    // Get the chart data table object and load its properties.
+    var chartDataTable = chart.getDataTableOrNullObject();
+    chartDataTable.load();
+
+    // Set the display properties of the chart data table.
+    chartDataTable.visible = true;
+    chartDataTable.showLegendKey = true;
+    chartDataTable.showHorizontalBorder = false;
+    chartDataTable.showVerticalBorder = true;
+    chartDataTable.showOutlineBorder = true;
+
+    // Retrieve the chart data table format object and set font and border properties. 
+    var chartDataTableFormat = chartDataTable.format;
+    chartDataTableFormat.font.color = "#B76E79";
+    chartDataTableFormat.font.name = "Comic Sans";
+    chartDataTableFormat.border.color = "blue";
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+The following screenshot shows the data table that the preceding code sample creates.
+
+![A chart with a data table, showcasing custom formatting of the data table.](../images/excel-charts-data-table.png)
 
 ## Export a chart as an image
 
