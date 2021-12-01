@@ -18,6 +18,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
+- [November 10, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-november-10-2021/ba-p/2983146)
 - [October 13, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-october-13-2021/ba-p/2867151)
 - [September 8, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-september-8-2021/ba-p/2747100)
 - [August 11, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-august-2021/ba-p/2661372)
