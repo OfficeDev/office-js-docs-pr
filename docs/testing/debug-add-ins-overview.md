@@ -7,7 +7,7 @@ ms.localizationpriority: high
 
 # Overview of debugging Office Add-ins
 
-Debugging Office Add-ins is essentially the same as debugging any web application; but there isn't a single set of tools that all add-in developers can use. This is because add-ins can be developed on different operating systems and can run cross-platform. This article will help you find the detailed debugging guidance for your development environment.
+Debugging Office Add-ins is essentially the same as debugging any web application. However, a single set of tools won't work for all add-in developers. This is because add-ins can be developed on different operating systems and run cross-platform. This article helps you find the detailed debugging guidance for your development environment.
 
 > [!NOTE]
 > This article is concerned with debugging in the narrow sense of setting breakpoints and stepping through code. For guidance on testing and troubleshooting, start with [Test Office Add-ins](test-debug-office-add-ins.md) and [Troubleshoot development errors with Office Add-ins](troubleshoot-development-errors.md).
@@ -16,7 +16,7 @@ Debugging Office Add-ins is essentially the same as debugging any web applicatio
 
 ## Server-side or client-side?
 
-Debugging the server-side code of an Office Add-in is exactly the same as debugging the server-side of any web application, so there is no need for special documentation. See the debugging instructions for your IDE or other tools. The following are examples and you can find much more on the web.
+Debugging the server-side code of an Office Add-in is the same as debugging the server-side of any web application. See the debugging instructions for your IDE or other tools. The following are examples for some of the most popular tools.
 
 - [Debug ASP.NET or ASP.NET Core apps in Visual Studio](/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications)
 - [Debugging Express](https://expressjs.com/en/guide/debugging.html)
@@ -26,7 +26,7 @@ Debugging the server-side code of an Office Add-in is exactly the same as debugg
 
 The rest of this article is concerned only with debugging client-side JavaScript (which may be transpiled from TypeScript).
 
-To find guidance for debugging client-side code, the first variable is the OS of your development computer.
+To find guidance for debugging client-side code, the first variable is the operating system of your development computer.
 
 - [Windows](#debug-on-windows)
 - [Mac](#debug-on-mac)

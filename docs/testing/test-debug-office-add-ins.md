@@ -39,7 +39,7 @@ For information about how to add unit tests to your add-in project, see [Unit te
 
 ## Debug an Office Add-in
 
-The procedure for debugging an Office Add-in varies as well. For more information, see [Debug Office Add-ins](debug-add-ins-overview.md).
+The procedure for debugging an Office Add-in varies based on your platform and environment. For more information, see [Debug Office Add-ins](debug-add-ins-overview.md).
 
 ## Validate an Office Add-in manifest
 
