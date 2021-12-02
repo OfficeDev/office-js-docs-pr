@@ -9,10 +9,11 @@ ms.localizationpriority: high
 
 Debugging Office Add-ins is essentially the same as debugging any web application. However, a single set of tools won't work for all add-in developers. This is because add-ins can be developed on different operating systems and run cross-platform. This article helps you find the detailed debugging guidance for your development environment.
 
-> [!NOTE]
+> [!TIP]
 > This article is concerned with debugging in the narrow sense of setting breakpoints and stepping through code. For guidance on testing and troubleshooting, start with [Test Office Add-ins](test-debug-office-add-ins.md) and [Troubleshoot development errors with Office Add-ins](troubleshoot-development-errors.md).
->
-> This article uses "your development computer" and "your development environment" to refer to the environment on which you're debugging. This almost always *is* your development computer. Although you should *test* your add-in on all the platforms that you want to support, you'll only very rarely need to *debug* on an environment different from your development computer.  
+
+> [!NOTE]
+> Although you should *test* your add-in on all the platforms that you want to support, you'll only very rarely need to *debug* on an environment different from your development computer. For this reason, this article uses "your development computer" and "your development environment" to refer to the environment on which you're debugging. If a problem in the code occurs only on a platform other than the one on your development computer, and you need to set breakpoints or step through code to solve it, then the environment on which you're debugging isn't literally your development environment.
 
 ## Server-side or client-side?
 
@@ -34,11 +35,11 @@ To find guidance for debugging client-side code, the first variable is the opera
 
 ## Debug on Windows
 
-The following provides general guidance to debugging on Windows. There are special instructions for debugging UI-less custom functions in Excel and event-based add-ins in Outlook. See [Special cases in Windows](#special-cases-in-windows) later in this section.
+The following provides general guidance to debugging on Windows. There are special instructions for debugging UI-less custom functions in Excel and event-based add-ins in Outlook. See [Special cases in Windows](#special-cases-in-windows) later in this section. Debugging on Windows depends on your IDE:
 
-- If you're using Visual Studio, see [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
-- If you're using Visual Studio Code, debug using the [Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
-- If you're using any other IDE or don't want to debug inside your IDE, use the developer tools that are associated with the browser runtime that add-ins use on your development computer. See one of the following:
+- **Visual Studio**: Debug using the internal debugger. See [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
+- **Visual Studio Code**: Debug using the [Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
+- **Any other IDE** (or don't want to debug inside your IDE): Use the developer tools that are associated with the browser runtime that add-ins use on your development computer. See one of the following:
 
     - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
     - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
@@ -68,4 +69,7 @@ To debug UI-less custom functions on Mac, see [UI-less custom functions debuggin
 
 ## Debug on Linux
 
-We don't recommend that you develop Office Add-ins on a Linux (or other Unix variant) computer except in the unusual case where you can be sure that all the add-ins users will be accessing the add-in through Office on the web from a Linux computer. You'll need to [sideload the add-in to Office on the web](sideload-office-add-ins-for-testing.md) to test and debug it. Debugging guidance is in [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md).
+There is no desktop version of Office for Linux, so you'll need to [sideload the add-in to Office on the web](sideload-office-add-ins-for-testing.md) to test and debug it. Debugging guidance is in [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md).
+
+> [!NOTE]
+> We don't recommend that you develop Office Add-ins on a Linux computer except in the unusual case where you can be sure that all the add-in's users will be accessing the add-in through Office on the web from a Linux computer.
