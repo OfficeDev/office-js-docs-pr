@@ -267,7 +267,9 @@ Your add-in can enable users to reassign the actions of the add-in to alternate 
 > [!NOTE]
 > The APIs described in this section require the [KeyboardShortcuts 1.1](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) requirement set.
 
-Use the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts) method to assign a user's custom keyboard combinations to your add-ins actions. The method takes a parameter of type `{[actionId:string]: string}`, where the `actionId`s are a subset of the action IDs that are defined in the add-in's extended manifest JSON. The values are the user's preferred key combinations. If the user is logged into Office, the custom combinations are saved in the user's roaming settings. If the user is not logged in, the customizations last only for the current session of the add-in.
+Use the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts) method to assign a user's custom keyboard combinations to your add-ins actions. The method takes a parameter of type `{[actionId:string]: string|null}`, where the `actionId`s are a subset of the action IDs that must be defined in the add-in's extended manifest JSON. The values are the user's preferred key combinations. The value can also be `null`, which will remove any customization for that `actionId` and revert back to the default keyboard combination that is defined in the add-in's extended manifest JSON.
+
+If the user is logged into Office, the custom combinations are saved in the user's roaming settings per platform. Customizing shortcuts are currently not supported for anonymous users.
 
 ```javascript
 const userCustomShortcuts = {
@@ -285,10 +287,11 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
     });
 ```
 
-To find out what shortcuts are already in use for the user, call the [Office.actions.getShortcuts](/javascript/api/office/office.actions#getShortcuts) method. This method returns an object of type `[actionId:string]:string|null}`, where the `actionId`s are:
+To find out what shortcuts are already in use for the user, call the [Office.actions.getShortcuts](/javascript/api/office/office.actions#getShortcuts) method. This method returns an object of type `[actionId:string]:string|null}`, where the values represent the current keyboard combination the user must use to invoke the specified action. The values can come from three different sources:
 
-- All of the action IDs that are defined in the add-in's extended manifest JSON.
-- All the customized shortcuts registered for the user in the user's roaming settings. The values are the key combinations currently assigned to the actions. 
+- If there was a conflict with the shortcut and the user has chosen to use a different action (either native or another add-in) for that keyboard combination, the value returned will be `null` since the shortcut has been overridden and there is no keyboard combination the user can currently use to invoke that add-in action.
+- If the shortcut has been customized using the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts) method, the value returned will be the customized keyboard combination.
+- If the shortcut has not been overridden or customized, it will return the value from the add-in's extended manifest JSON.
 
 The following is an example.
 
