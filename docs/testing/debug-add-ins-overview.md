@@ -12,7 +12,7 @@ Debugging Office Add-ins is essentially the same as debugging any web applicatio
 > [!NOTE]
 > This article is concerned with debugging in the narrow sense of setting breakpoints and stepping through code. For guidance on testing and troubleshooting, start with [Test Office Add-ins](test-debug-office-add-ins.md) and [Troubleshoot development errors with Office Add-ins](troubleshoot-development-errors.md).
 >
-> This article uses "your development computer" and "your development environment" to refer to the environment on which you're debugging. This almost always *is* your development computer. All of the JavaScript runtimes in which add-ins run are [ECMAScript](https://developer.mozilla.org/en-US/docs/Glossary/ECMAScript) compliant and code that works in one of them will nearly always work the same way in all the others. Although you should *test* your add-in on all the platforms that you want to support, you'll only very rarely need to *debug* on an environment different from your development computer.  
+> This article uses "your development computer" and "your development environment" to refer to the environment on which you're debugging. This almost always *is* your development computer. Although you should *test* your add-in on all the platforms that you want to support, you'll only very rarely need to *debug* on an environment different from your development computer.  
 
 ## Server-side or client-side?
 
