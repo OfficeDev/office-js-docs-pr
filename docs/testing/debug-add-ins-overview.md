@@ -18,7 +18,7 @@ Debugging Office Add-ins is essentially the same as debugging any web applicatio
 
 Debugging the server-side code of an Office Add-in is exactly the same as debugging the server-side of any web application, so there is no need for special documentation. See the debugging instructions for your IDE or other tools. The following are examples and you can find much more on the web.
 
-- [Debug ASP.NET or ASP.NET Core apps in Visual Studio](/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications?view=vs-2022)
+- [Debug ASP.NET or ASP.NET Core apps in Visual Studio](/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications)
 - [Debugging Express](https://expressjs.com/en/guide/debugging.html)
 - [Node.js Debugging Guide](https://nodejs.org/en/docs/guides/debugging-getting-started/)
 - [Node.js debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
