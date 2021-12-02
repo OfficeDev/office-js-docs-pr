@@ -39,7 +39,7 @@ The following provides general guidance to debugging on Windows. There are speci
 
 - **Visual Studio**: Debug using the internal debugger. See [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
 - **Visual Studio Code**: Debug using the [Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
-- **Any other IDE** (or don't want to debug inside your IDE): Use the developer tools that are associated with the browser runtime that add-ins use on your development computer. See one of the following:
+- **Any other IDE** (or you don't want to debug inside your IDE): Use the developer tools that are associated with the browser runtime that add-ins use on your development computer. See one of the following:
 
     - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
     - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
