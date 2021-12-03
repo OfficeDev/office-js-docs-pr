@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API requirement set 1.14
 description: 'Details about the ExcelApi 1.14 requirement set.'
-ms.date: 10/29/2021
+ms.date: 12/02/2021
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -12,8 +12,8 @@ The ExcelApi 1.14 added objects to control the data table feature of a chart, a 
 
 | Feature area | Description | Relevant objects |
 |:--- |:--- |:--- |
-| Chart data tables | Control appearance, formatting, and visibility of data tables on charts. | [Chart](/javascript/api/excel/excel.chart), [ChartDataTable](/javascript/api/excel/excel.chartdatatable), [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
-| Formula precedents | Return all the precedent cells of a formula. | [Range](/javascript/api/excel/excel.range) |
+| [Chart data tables](../../excel/excel-add-ins-charts.md#add-and-format-a-chart-data-table) | Control appearance, formatting, and visibility of data tables on charts. | [Chart](/javascript/api/excel/excel.chart), [ChartDataTable](/javascript/api/excel/excel.chartdatatable), [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
+| [Formula precedents](../../excel/excel-add-ins-ranges-precedents-dependents.md#get-the-precedents-of-a-formula) | Return all the precedent cells of a formula. | [Range](/javascript/api/excel/excel.range) |
 | Queries | Retrieve Power Query attributes like name, refresh date, and query count. | [Query](/javascript/api/excel/excel.query), [QueryCollection](/javascript/api/excel/excel.querycollection)|
 | Worksheet protection events | Track changes to the protection state of a worksheet and the source of those changes. | [WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs), [Worksheet](/javascript/api/excel/excel.worksheet), [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) |
 
