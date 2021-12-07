@@ -511,7 +511,7 @@ Excel.run(function (context) {
     sheet.onProtectionChanged.add(checkProtection);
 
     return context.sync();
-});
+}).catch(errorHandlerFunction);
 
 // This method is an event handler that returns the protection status of a worksheet 
 // and information about the changed worksheet.
