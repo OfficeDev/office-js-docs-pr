@@ -523,9 +523,9 @@ function checkProtection(event) {
         var source = event.source;
 
         // Print the event properties to the console.
-        console.log("Protection status changed. Protection status is now: " + protectionStatus + ".");
-        console.log("    ID of changed worksheet: " + worksheetId + ".");
-        console.log("    Source of change event: " + source + ".");    
+        console.log("Protection status changed. Protection status is now: " + protectionStatus);
+        console.log("    ID of changed worksheet: " + worksheetId);
+        console.log("    Source of change event: " + source);    
     });
 }
 ```
