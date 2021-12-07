@@ -513,7 +513,7 @@ Excel.run(function (context) {
     return context.sync();
 }).catch(errorHandlerFunction);
 
-// This method is an event handler that returns the protection status of a worksheet 
+// This method is an event handler that returns the protection state of a worksheet 
 // and information about the changed worksheet.
 function checkProtection(event) {
     Excel.run(function (context) {
