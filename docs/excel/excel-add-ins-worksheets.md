@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.'
-ms.date: 07/02/2021
+ms.date: 12/06/2021
 ms.localizationpriority: medium
 ---
 
@@ -494,6 +494,35 @@ The `protect` method has two optional parameters:
 - `password`: A string representing the password needed for a user to bypass protection and edit the worksheet.
 
 The article [Protect a worksheet](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.
+
+### Detect changes to the worksheet protection state
+
+The protection state of a worksheet can be changed by an add-in or through the Excel UI. Detect changes to the protection state with the [`Worksheet.onProtectionChanged`]((/javascript/api/excel/excel.worksheet#onProtectionChanged)) event handler.
+
+```js
+// This method registers an event handler for the onProtectionChanged event of a worksheet.
+Excel.run(function (context) {
+    // Retrieve the worksheet named "Sample".
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Register the onProtectionChanged event handler.
+    sheet.onProtectionChanged.add(checkProtection);
+
+    return context.sync();
+});
+
+// This method is an event handler that returns the protection status of a worksheet and information about the changed worksheet.
+function formulaChangeHandler(event) {
+    Excel.run(function (context) {
+        var protectionStatus = event.isProtected;
+        var worksheetId = event.worksheetId;
+        var source = event.source;
+        console.log("Protection status changed. Protection status is now: " + protectionStatus + ".");
+        console.log("    ID of changed worksheet: " + worksheetId + ".");
+        console.log("    Source of change event: " + source + ".");    
+    });
+}
+```
 
 ## Page layout and print settings
 
