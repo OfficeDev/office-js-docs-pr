@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.'
-ms.date: 07/02/2021
+ms.date: 12/06/2021
 ms.localizationpriority: medium
 ---
 
@@ -494,6 +494,41 @@ The `protect` method has two optional parameters:
 - `password`: A string representing the password needed for a user to bypass protection and edit the worksheet.
 
 The article [Protect a worksheet](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.
+
+### Detect changes to the worksheet protection state
+
+The protection state of a worksheet can be changed by an add-in or through the Excel UI. To detect changes to the protection state, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#onProtectionChanged) event of a worksheet. Event handlers for the `onProtectionChanged` event receive a [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) object when the event fires.
+
+The following code sample shows how to register the `onProtectionChanged` event handler and use the `WorksheetProtectionChangedEventArgs` object to retrieve the `isProtected`, `worksheetId`, and `source` properties of the event.
+
+```js
+// This method registers an event handler for the onProtectionChanged event of a worksheet.
+Excel.run(function (context) {
+    // Retrieve the worksheet named "Sample".
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Register the onProtectionChanged event handler.
+    sheet.onProtectionChanged.add(checkProtection);
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+// This method is an event handler that returns the protection state of a worksheet 
+// and information about the changed worksheet.
+function checkProtection(event) {
+    Excel.run(function (context) {
+        // Retrieve the protection, worksheet ID, and source properties of the event.
+        var protectionStatus = event.isProtected;
+        var worksheetId = event.worksheetId;
+        var source = event.source;
+
+        // Print the event properties to the console.
+        console.log("Protection status changed. Protection status is now: " + protectionStatus);
+        console.log("    ID of changed worksheet: " + worksheetId);
+        console.log("    Source of change event: " + source);    
+    });
+}
+```
 
 ## Page layout and print settings
 
