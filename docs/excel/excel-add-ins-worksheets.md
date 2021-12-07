@@ -497,7 +497,9 @@ The article [Protect a worksheet](https://support.microsoft.com/office/3179efdb-
 
 ### Detect changes to the worksheet protection state
 
-The protection state of a worksheet can be changed by an add-in or through the Excel UI. Detect changes to the protection state with the [`Worksheet.onProtectionChanged`]((/javascript/api/excel/excel.worksheet#onProtectionChanged)) event handler.
+The protection state of a worksheet can be changed by an add-in or through the Excel UI. To detect changes to the protection state, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#onProtectionChanged) event of a worksheet. Event handlers for the `onProtectionChanged` event receive a [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) object when the event fires.
+
+The following code sample shows how to register the `onProtectionChanged` event handler and use the `WorksheetProtectionChangedEventArgs` object to retrieve the `isProtected`, `worksheetId`, and `source` properties of the event.
 
 ```js
 // This method registers an event handler for the onProtectionChanged event of a worksheet.
@@ -511,12 +513,16 @@ Excel.run(function (context) {
     return context.sync();
 });
 
-// This method is an event handler that returns the protection status of a worksheet and information about the changed worksheet.
-function formulaChangeHandler(event) {
+// This method is an event handler that returns the protection status of a worksheet 
+// and information about the changed worksheet.
+function checkProtection(event) {
     Excel.run(function (context) {
+        // Retrieve the protection, worksheet ID, and source properties of the event.
         var protectionStatus = event.isProtected;
         var worksheetId = event.worksheetId;
         var source = event.source;
+
+        // Print the event properties to the console.
         console.log("Protection status changed. Protection status is now: " + protectionStatus + ".");
         console.log("    ID of changed worksheet: " + worksheetId + ".");
         console.log("    Source of change event: " + source + ".");    
