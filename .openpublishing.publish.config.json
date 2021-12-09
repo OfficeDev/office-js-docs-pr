@@ -8,6 +8,7 @@
       "monikers": [],
       "moniker_ranges": [
         "common-js",
+        "common-js-preview",
         "excel-js-preview",
         "excel-js-1.1",
         "excel-js-1.2",
