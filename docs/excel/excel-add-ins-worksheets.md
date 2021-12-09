@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: 'Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.'
-ms.date: 12/06/2021
+ms.date: 12/08/2021
 ms.localizationpriority: medium
 ---
 
@@ -439,6 +439,8 @@ An [AutoFilter](/javascript/api/excel/excel.autofilter) applies data filters acr
 The first code sample shows how to add a filter to the worksheet's used range. This filter will hide entries that are not in the top 25%, based on the values in column **3**.
 
 ```js
+// This method adds a custom AutoFilter to the active worksheet
+// and applies the filter to a column of the used range.
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var farmData = sheet.getUsedRange();
@@ -452,6 +454,7 @@ Excel.run(function (context) {
 The next code sample shows how to refresh the auto-filter using the `reapply` method. This should be done when the data in the range changes.
 
 ```js
+// This method refreshes the AutoFilter to ensure that changes are captured.
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.autoFilter.reapply();
@@ -459,9 +462,24 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+The following code sample shows how to use the `clearColumnCriteria` method to clear the auto-filter from only one column, while leaving the filter active on other columns.
+
+```js
+// This method clears the AutoFilter setting from one column.
+Excel.run(function (context) {
+    // Retrieve the active worksheet.
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Clear the filter from only column 3.
+    sheet.autoFilter.clearColumnCriteria(3);
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
 The final auto-filter code sample shows how to remove the auto-filter from the worksheet with the `remove` method.
 
 ```js
+// This method removes all AutoFilters from the active worksheet.
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.autoFilter.remove();
