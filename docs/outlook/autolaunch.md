@@ -176,7 +176,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 </VersionOverrides>
 ```
 
-Outlook on Windows uses a JavaScript file, while Outlook on the web uses an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the `Runtime` element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
+Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI preview use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the `Runtime` element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
 
 > [!TIP]
 > To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
@@ -243,6 +243,8 @@ In this scenario, you'll add handling for composing new items.
 1. In Outlook on the web, create a new message.
 
     ![Screenshot of a message window in Outlook on the web with the subject set on compose.](../images/outlook-web-autolaunch-1.png)
+
+1. In Outlook on the new Mac UI preview, create a new message.
 
 1. In Outlook on Windows, create a new message.
 
