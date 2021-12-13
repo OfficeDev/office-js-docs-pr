@@ -1,7 +1,7 @@
 ---
 title: Compare Outlook add-in support in Outlook on Mac
 description: 'Learn how add-in support in Outlook on Mac compares with other Outlook clients.'
-ms.date: 10/05/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
 ---
 
@@ -26,9 +26,9 @@ For information about new UI support, see [Add-in support in Outlook on new Mac 
 
 ## Add-in support in Outlook on new Mac UI (preview)
 
-Outlook add-ins are now supported on the new Mac UI (preview), up to requirement set 1.9. However, the following requirement sets and features are **NOT** supported yet.
+Outlook add-ins are now supported on the new Mac UI (preview), up to requirement set 1.10. However, the following requirement sets and features are **NOT** supported yet.
 
-- API requirement set 1.10
+- API requirement set 1.11
 
 We encourage you to preview Outlook on the new Mac UI, available from version 16.38.506. To learn more about how to try it out, see [Outlook for Mac - Release notes for Insider Fast builds](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
 
