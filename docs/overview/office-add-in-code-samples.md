@@ -1,13 +1,22 @@
 ---
 title: Office Add-in code samples
 description: 'A list of Office Add-in code samples to help you learn and build your own add-ins.'
-ms.date: 10/07/2021
+ms.date: 11/18/2021
 localization_priority: high
 ---
 
 # Office Add-in code samples
 
 These code samples are written to help you learn how to use various features when developing Office Add-ins.
+
+## Getting started
+
+The following samples show how to build the simplest Office Add-in with only a manifest, HTML web page, and a logo. These components are the fundamental parts of an Office Add-in. For additional getting started information, see our [quick starts](../quickstarts/excel-quickstart-jquery.md) and [tutorials](/search/?terms=tutorial&scope=Office%20Add-ins).
+
+* [Excel "Hello world" add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/excel-hello-world)
+* [Outlook "Hello world" add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/outlook-hello-world)
+* [PowerPoint "Hello world" add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/powerpoint-hello-world)
+* [Word "Hello world" add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/word-hello-world)
 
 ## Outlook
 

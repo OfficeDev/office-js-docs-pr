@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: 'Learn the core concepts for using Excel data types in your Office Add-in.'
-ms.date: 11/08/2021
+ms.date: 12/08/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -11,16 +11,20 @@ ms.localizationpriority: high
 # Excel data types core concepts (preview)
 
 > [!NOTE]
-> Data types APIs are currently only available in public preview. Preview APIs are subject to change and are not intended for use in a production environment. Do not use preview APIs in a production environment or within business-critical documents.
-
-> [!IMPORTANT]
-> Some of the data types concepts described in this article, such as `Range.valuesAsJSON` are in active development and are not yet available in public preview. This article is intended as a conceptual introduction. Concepts described in this article that are not yet in public preview will be released to preview soon.
+> Data types APIs are currently only available in public preview. Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview APIs in a production environment or within business-critical documents.
+>
+> To use preview APIs:
+>
+> - You must reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`. For additional information, see the [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) NPM package readme.
+> - You may need to join the [Office Insider program](https://insider.office.com) for access to more recent Office builds.
+>
+> To try out data types in Office on Windows, you must have an Excel build number greater than or equal to 16.0.14626.10000. To try out data types in Office on Mac, you must have an Excel build number greater than or equal to 16.55.21102600.
 
 This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with data types. It introduces core concepts that are fundamental to data type development.
 
 ## Core concepts
 
-Use the `Range.valuesAsJSON` property to work with data type values. This property is similar to [Range.values](/javascript/api/excel/excel.range#values), but `Range.values` only returns the four basic types: string, number, boolean, or error values. `Range.valuesAsJSON` can return expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
+Use the [`Range.valuesAsJson`](/javascript/api/excel/excel.range#valuesAsJson) property to work with data type values. This property is similar to [Range.values](/javascript/api/excel/excel.range#values), but `Range.values` only returns the four basic types: string, number, boolean, or error values. `Range.valuesAsJson` can return expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
 
 ### JSON schema
 
