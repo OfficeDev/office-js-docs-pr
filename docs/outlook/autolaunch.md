@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 12/13/2021
+ms.date: 12/14/2021
 ms.localizationpriority: medium
 ---
 
@@ -17,10 +17,10 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 
 ## Supported events
 
-The following table lists events that are currently supported. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Event-specific JSON** column includes a link to the related object where applicable. The table also notes the supported clients for each event.
+The following table lists events that are currently available and the supported clients for each event. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Event-specific JSON** column includes a link to the related object where applicable.
 
 > [!IMPORTANT]
-> Events still in preview may only be available with a Microsoft 365 subscription in Outlook on the web and on Windows. For more details, see [How to preview](#how-to-preview) in this article. Preview events shouldn't be used in production add-ins.
+> Events still in preview may only be available with a Microsoft 365 subscription and in a limited set of supported clients as noted in the following table. For client configuration details, see [How to preview](#how-to-preview) in this article. Preview events shouldn't be used in production add-ins.
 
 |Event|Description|Event-specific JSON|Minimum requirement set|Supported clients|
 |---|---|---|---|---|
@@ -40,7 +40,7 @@ The following table lists events that are currently supported. When an event is 
 
 We invite you to try out the events now in preview! Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).
 
-To preview these events:
+To preview these events where available:
 
 - For Outlook on the web and Outlook on the new Mac UI preview:
   - [Configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
