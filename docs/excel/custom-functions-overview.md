@@ -2,7 +2,7 @@
 description: 'Create an Excel custom function for your Office Add-in.'
 title: Create custom functions in Excel
 ms.date: 08/04/2021
-ms.topic: conceptual
+ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
 ---

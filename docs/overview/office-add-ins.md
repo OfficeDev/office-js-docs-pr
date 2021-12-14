@@ -1,8 +1,8 @@
 ---
-title: Office Add-ins platform overview | Microsoft Docs
+title: Office Add-ins platform overview
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
 ms.date: 10/14/2020
-ms.topic: conceptual
+ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
 ---
