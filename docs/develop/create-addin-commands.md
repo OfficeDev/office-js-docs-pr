@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands in your manifest for Excel, PowerPoint, and Word
 description: 'Use VersionOverrides in your manifest to define add-in commands for Excel, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.'
-ms.date: 07/08/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
 ---
 
@@ -29,9 +29,9 @@ The following image is an overview of add-in commands elements in the manifest.
 
 ![Overview of add-in commands elements in the manifest. The top node here is VersionOverrides with children Hosts and Resources. Under Hosts are Host then DesktopFormFactor. Under DesktopFormFactor are FunctionFile and ExtensionPoint. Under ExtensionPoint are CustomTab or OfficeTab and Office Menu. Under CustomTab or Office Tab are Group then Control then Action. Under Office Menu are Control then Action. Under Resources (child of VersionOverrides) are Images, Urls, ShortStrings, and LongStrings.](../images/version-overrides.png)
 
-## Step 1: Start from a sample
+## Step 1: Create the project
 
-We strongly recommend that you start from one of the samples we provide in  [Office Add-in Commands Samples](https://github.com/OfficeDev/Office-Add-in-Command-Sample). Optionally, you can create your own manifest by following the steps in this guide. You can validate your manifest using the XSD file in the Office Add-in Commands Samples site. Ensure that you have read  [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands.md) before using add-in commands.
+We recommend you create a project by following one of the quick starts such as [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md). Each quick start for Excel, Word, or PowerPoint will generate a project that already contains an add-in command (button) to show the task pane. Ensure that you have read  [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands.md) before using add-in commands.
 
 ## Step 2: Create a task pane add-in
 
@@ -438,3 +438,6 @@ In Excel and Word, you can add your add-in commands to the ribbon by using the d
 ## See also
 
 - [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md)
+- [Sample: Create an Excel add-in with command buttons](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/excel)
+- [Sample: Create an Word add-in with command buttons](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/word)
+- [Sample: Create an PowerPoint add-in with command buttons](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/powerpoint)
