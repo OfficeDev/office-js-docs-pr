@@ -48,7 +48,7 @@ To preview these events where available:
 - For Outlook on the new Mac UI preview:
   - Join the [Office Insider program](https://insider.office.com/join/Mac) and choose the **Beta Channel** for access to Office beta builds.
 - For Outlook on Windows:
-  - The minimum required build is 16.0.14511.10000. Join the [Office Insider program](https://insider.office.com) for access to Office beta builds.
+  - The minimum required build is 16.0.14511.10000. Join the [Office Insider program](https://insider.office.com/join/windows) and choose the **Beta Channel** for access to Office beta builds.
   - Configure the registry. Outlook includes a local copy of the production and beta versions of Office.js instead of loading from the CDN. By default, the local production copy of the API is referenced. To switch to the local beta copy of the Outlook JavaScript APIs, you need to add this registry entry, otherwise beta APIs may not be found.
     1. Create the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`.
     1. Add an entry named `EnableBetaAPIsInJavaScript` and set the value to `1`. The following image shows what the registry should look like.
