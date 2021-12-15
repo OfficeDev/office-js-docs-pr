@@ -1,16 +1,13 @@
 ---
 title: Use custom tags on presentations, slides, and shapes in PowerPoint
 description: 'Learn how to use tags for custom metadata about presentations, slides, and shapes.'
-ms.date: 04/08/2021
+ms.date: 12/14/2021
 ms.localizationpriority: medium
 ---
 
 # Use custom tags for presentations, slides, and shapes in PowerPoint
 
 An add-in can attach custom metadata, in the form of key-value pairs, called "tags", to presentations, specific slides, and specific shapes on a slide.
-
-> [!IMPORTANT]
-> The APIs for tags are in preview. Please experiment with them in a development or testing environment but don't add them to a production add-in.
 
 There are two main scenarios for using tags:
 
@@ -25,7 +22,7 @@ A tag is a key-value pair, where the value is always of type `string` and is rep
 
 To add a tag to an object, call the [TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#add_key__value_) method of the parent object's `tags` property. The following code adds two tags to the first slide of a presentation. About this code, note:
 
-- The first parameter of the `add` method is the key in the key-value pair. 
+- The first parameter of the `add` method is the key in the key-value pair.
 - The second parameter is the value.
 - The key is in uppercase letters. This isn't strictly mandatory for the `add` method; however, the key is always stored by PowerPoint as uppercase, and *some tag-related methods do require that the key be expressed in uppercase*, so we recommend as a best practice that you always use uppercase in your code for a tag key.
 
