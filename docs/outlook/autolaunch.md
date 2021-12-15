@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 12/14/2021
+ms.date: 12/15/2021
 ms.localizationpriority: medium
 ---
 
@@ -42,9 +42,11 @@ We invite you to try out the events now in preview! Let us know your scenarios a
 
 To preview these events where available:
 
-- For Outlook on the web and Outlook on the new Mac UI preview:
+- For Outlook on the web:
   - [Configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
   - Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`.
+- For Outlook on the new Mac UI preview:
+  - Join the [Office Insider program](https://insider.office.com/join/Mac) and choose the **Beta Channel** for access to Office beta builds.
 - For Outlook on Windows:
   - The minimum required build is 16.0.14511.10000. Join the [Office Insider program](https://insider.office.com) for access to Office beta builds.
   - Configure the registry. Outlook includes a local copy of the production and beta versions of Office.js instead of loading from the CDN. By default, the local production copy of the API is referenced. To switch to the local beta copy of the Outlook JavaScript APIs, you need to add this registry entry, otherwise beta APIs may not be found.
