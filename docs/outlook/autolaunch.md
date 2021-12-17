@@ -248,6 +248,8 @@ In this scenario, you'll add handling for composing new items.
 
 1. In Outlook on the new Mac UI preview, create a new message.
 
+    ![Screenshot of a message window in Outlook on the new Mac UI preview with the subject set on compose.](../images/outlook-mac-autolaunch.png)
+
 1. In Outlook on Windows, create a new message.
 
     ![Screenshot of a message window in Outlook on Windows with the subject set on compose.](../images/outlook-win-autolaunch.png)
