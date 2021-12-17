@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 12/16/2021
+ms.date: 12/17/2021
 ms.localizationpriority: medium
 ---
 
@@ -247,6 +247,8 @@ In this scenario, you'll add handling for composing new items.
     ![Screenshot of a message window in Outlook on the web with the subject set on compose.](../images/outlook-web-autolaunch-1.png)
 
 1. In Outlook on the new Mac UI preview, create a new message.
+
+    ![Screenshot of a message window in Outlook on the new Mac UI preview with the subject set on compose.](../images/outlook-mac-autolaunch.png)
 
 1. In Outlook on Windows, create a new message.
 
