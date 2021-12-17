@@ -259,10 +259,16 @@ In this scenario, you'll add handling for composing new items.
     >
     > 1. Close Outlook.
     > 1. Open the **Task Manager** and ensure that the **msoadfsb.exe** process is not running.
-    > 1. Run the following command.
+    > 1. For `http://localhost`, run the following command.
     >
     >    ```command&nbsp;line
     >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+    >    ```
+    >
+    > 1. For `https://localhost`, run the following command.
+    >
+    >    ```command&nbsp;line
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
     >    ```
     >
     > 1. Restart Outlook.
