@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 12/17/2021
+ms.date: 12/20/2021
 ms.localizationpriority: medium
 ---
 
@@ -259,16 +259,16 @@ In this scenario, you'll add handling for composing new items.
     >
     > 1. Close Outlook.
     > 1. Open the **Task Manager** and ensure that the **msoadfsb.exe** process is not running.
-    > 1. For `http://localhost`, run the following command.
-    >
-    >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
-    >    ```
-    >
-    > 1. For `https://localhost`, run the following command.
+    > 1. If you're using `https://localhost` (the default version in the manifest), run the following command.
     >
     >    ```command&nbsp;line
     >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+    >    ```
+    >
+    > 1. If you're using `http://localhost`, run the following command.
+    >
+    >    ```command&nbsp;line
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
     >    ```
     >
     > 1. Restart Outlook.
