@@ -13,7 +13,7 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 
 ## How SSO works at runtime
 
-The following diagram shows how the SSO process works.
+The following diagram shows how the SSO process works. The blue elements represent Office or the Microsoft identity platform. The gray elements represent the code you write and include the client-side code (task pane) and the server-side code for your add-in.
 
 ![A diagram that shows the SSO process.](../images/sso-overview-diagram.svg)
 
@@ -21,16 +21,20 @@ The following diagram shows how the SSO process works.
 2. If the user is not signed in, the Office host application opens a dialog box for the user to sign in. Office redirects to the Microsoft identity platform to complete the sign-in process.
 3. If this is the first time the current user has used your add-in, they are prompted to consent.
 4. The Office host application requests the **access token** from the Microsoft identity platform for the current user.
-5. The Microsoft identity platform sends the **access token** to the Office host application.
-6. The Office host application sends the **access token** to the add-in as part of the result object returned by the `getAccessToken` call.
-7. Your JavaScript code in the add-in can parse the token and extract the information it needs, such as the user's email address.
-8. Optionally, the add-in can send HTTP requests to its server-side for more data about the user; such as the user's preferences. Alternatively, the access token itself could be sent to the server-side for parsing and validation there.
+5. The Office host application returns the **access token** to the add-in as part of the result object returned by the `getAccessToken` call.
+
+    The token is both an **access token** and an **identity token**. You can use it as an access token to make authenticated API calls to your add-in web server. You can use it as an identity token to parse and examine claims about the user, such as the user's name and email address.
+
+6. Your JavaScript code in the add-in can parse the token as an identity token and extract the information it needs, such as the user's email address.
+7. Optionally, the add-in can use the token as an **access token** to make authenticated HTTPS requests to APIs on the server-side. You can also pass the token to your server-side code so that the server can store information associated with the user's identity; such as the user's preferences.
 
 ## Requirements and Best Practices
 
 If you are working with an **Outlook** add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. You can use a system of user tables and authentication, or you can leverage one of the social login providers. For more information about how to do this with an Office Add-in, see [Authorize external services in your Office Add-in](auth-external-add-ins.md). For *Outlook*, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md). For code samples that use the Microsoft identity platform as the fallback system, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
+You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. For example, if your add-in is loaded on an older version of Office that does not support SSO, the `getAccessToken` call will fail. 
+
+To implement a fallback method of authentication, you can use a system of user tables and authentication, or you can leverage one of the social login providers. For more information about how to do this with an Office Add-in, see [Authorize external services in your Office Add-in](auth-external-add-ins.md). For *Outlook*, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md). For code samples that use the Microsoft identity platform as the fallback system, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 ## Develop an SSO add-in
 
