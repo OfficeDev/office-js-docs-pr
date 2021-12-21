@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: 'The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.'
-ms.date: 12/01/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
 ---
 
@@ -9,10 +9,9 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 8:00AM PDT. You can download the calendar invite at [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall).
 
-## Agenda for December 8th call
+## Agenda for January 12th call
 
-- Outlook: Recap of Ignite announcements
-- Outlook sample: Use event-based activation to encrypt attachments
+The agenda for January will be posted about a week before the call.
 
 ## Previous calls
 
