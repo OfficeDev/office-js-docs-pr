@@ -2,7 +2,7 @@
 title: Use Smart Alerts and the OnMessageSend event in your Outlook add-in (preview)
 description: Learn how to handle the send message event in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 11/01/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
 ---
 
@@ -44,7 +44,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web. -->
+               This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
             <Override type="javascript" resid="JSRuntime.Url"/>

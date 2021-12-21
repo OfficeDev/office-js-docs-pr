@@ -47,9 +47,13 @@
   
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
+    * `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
     * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
     * `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
+
+    > [!NOTE]
+    > The ID `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` includes all of the other IDs listed and can be used singularly to pre-authorize all of the Office host endpoints for use with your service in the Office add-in SSO flow. 
 
     For each ID, take these steps.
 
