@@ -18,7 +18,7 @@ To do that, you can:
 
 - Use techniques provided by the underlying browser control: browser cookies, or HTML5 web storage ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
     > [!NOTE]
-    > Some browsers, or the user's browser settings may block browser-based storage techniques. You should test for availability as documented in [Using the Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
+    > Some browsers or the user's browser settings may block browser-based storage techniques. You should test for availability as documented in [Using the Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
 
 This article focuses on how to use the Office JavaScript API to persist add-in state to the current document. If you need to persist state across documents, such as tracking user preferences across any documents they open, you will need to use a different approach. For example, you could use [SSO](sso-in-office-add-ins.md#using-the-sso-token-as-an-identity) to obtain the user identity, and then save the user ID and their settings to an online database.
 
