@@ -30,13 +30,13 @@ Use the [`Range.valuesAsJson`](/javascript/api/excel/excel.range#valuesAsJson) p
 
 Each data type uses a JSON metadata schema designed for that type, which defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data and additional information such as `basicValue`, `numberFormat`, or `address`. Each `CellValueType` has properties available according to that type. For example, the `webImage` type includes the [altText](/javascript/api/excel/excel.webimagecellvalue#altText) and [attribution](/javascript/api/excel/excel.webimagecellvalue#attribution) properties. The following sections show JSON code samples for the formatted number value, entity value, and web image data types.
 
-Each JSON metadata schema also includes one or more readonly properties that are used when calculations encounter incompatible scenarios, such as a version of Excel that doesn't meet the minimum build number requirement for the data types feature. The property `basicType` is part of the JSON metadata of every data type, and it's always a readonly property.
+The JSON metadata schema for each data type also includes one or more readonly properties that are used when calculations encounter incompatible scenarios, such as a version of Excel that doesn't meet the minimum build number requirement for the data types feature. The property `basicType` is part of the JSON metadata of every data type, and it's always a readonly property.
 
 ## Formatted number values
 
 The [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue) object enables Excel add-ins to define a `numberFormat` property for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
 
-The following JSON code sample shows the complete schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI. If minimum compatibility requirements aren't met, the Excel UI displays the `basicValue` in place of the formatted number.
+The following JSON code sample shows the complete schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI. If minimum compatibility requirements aren't met, calculations use the `basicValue` in place of the formatted number.
 
 ```json
 // This is an example of the JSON of a formatted number value.
@@ -51,9 +51,9 @@ const myDate = {
 
 ## Entity values
 
-An entity value is a container for data types, similar to an object in object oriented programming. Entities also support arrays as properties of an entity value. The [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) object allows add-ins to define properties such as `type`, `text`, and `properties`.
+An entity value is a container for data types, similar to an object in object oriented programming. Entities also support arrays as properties of an entity value. The [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) object allows add-ins to define properties such as `type`, `text`, and `properties`. The `properties` property enables the entity value to define and contain additional data types.
 
-The `properties` property enables the entity value to define and contain additional data types. The `basicType` and `basicValue` properties define how the Excel UI reads this data type if the minimum compatibility requirements aren't met. In that scenario, this data type displays as a **#VALUE!** error in the Excel UI.
+The `basicType` and `basicValue` properties define how calculations read this data type if minimum compatibility requirements aren't met. In that scenario, this data type displays as a **#VALUE!** error in the Excel UI.
 
 The following JSON code sample shows the complete schema of an entity value that contains text, an image, a date, and an additional text value.
 
@@ -80,7 +80,7 @@ const myEntity = {
 
 The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
 
-The `basicType` and `basicValue` properties define how the Excel UI reads this data type if the minimum compatibility requirements are not met. In that scenario, this data type displays as a **#VALUE!** error in the Excel UI.
+The `basicType` and `basicValue` properties define how calculations read this data type if minimum compatibility requirements are not met. In that scenario, this data type displays as a **#VALUE!** error in the Excel UI.
 
 The following JSON code sample shows the complete schema of a web image.
 
