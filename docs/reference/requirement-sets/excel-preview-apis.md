@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript preview APIs
 description: 'Details about upcoming Excel JavaScript APIs.'
-ms.date: 11/02/2021
+ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -66,6 +66,17 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 ||[errorSubType](/javascript/api/excel/excel.calcerrorcellvalue#errorSubType)|Represents the type of `CalcErrorCellValue`.|
 ||[errorType](/javascript/api/excel/excel.calcerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
 ||[type](/javascript/api/excel/excel.calcerrorcellvalue#type)|Represents the type of this cell value.|
+|[CardLayoutListSection](/javascript/api/excel/excel.cardlayoutlistsection)|[layout](/javascript/api/excel/excel.cardlayoutlistsection#layout)|Represents the type of layout for this section.|
+|[CardLayoutPropertyReference](/javascript/api/excel/excel.cardlayoutpropertyreference)|[property](/javascript/api/excel/excel.cardlayoutpropertyreference#property)|The name of the property referenced by the card layout.|
+|[CardLayoutSectionStandardProperties](/javascript/api/excel/excel.cardlayoutsectionstandardproperties)|[collapsed](/javascript/api/excel/excel.cardlayoutsectionstandardproperties#collapsed)|Represents whether this section of the card is initially collapsed.|
+||[collapsible](/javascript/api/excel/excel.cardlayoutsectionstandardproperties#collapsible)|Represents whether this section of the card is collapsible.|
+||[properties](/javascript/api/excel/excel.cardlayoutsectionstandardproperties#properties)|Represents the names of the properties in this section.|
+||[title](/javascript/api/excel/excel.cardlayoutsectionstandardproperties#title)|Represents the title of this section of the card.|
+|[CardLayoutStandardProperties](/javascript/api/excel/excel.cardlayoutstandardproperties)|[mainImage](/javascript/api/excel/excel.cardlayoutstandardproperties#mainImage)|Specifies a property which will be used as the main image of the card.|
+||[sections](/javascript/api/excel/excel.cardlayoutstandardproperties#sections)|Represents the sections of the card.|
+||[subTitle](/javascript/api/excel/excel.cardlayoutstandardproperties#subTitle)|Represents a specification of which property contains the subtitle of the card.|
+||[title](/javascript/api/excel/excel.cardlayoutstandardproperties#title)|Represents the title of the card or the specification of which property contains the title of the card.|
+|[CardLayoutTableSection](/javascript/api/excel/excel.cardlayouttablesection)|[layout](/javascript/api/excel/excel.cardlayouttablesection#layout)|Represents the type of layout for this section.|
 |[CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes)|[licenseAddress](/javascript/api/excel/excel.cellvalueattributionattributes#licenseAddress)|Represents a URL to a license or source that describes how this property can be used.|
 ||[licenseText](/javascript/api/excel/excel.cellvalueattributionattributes#licenseText)|Represents a name for the license that governs this property.|
 ||[sourceAddress](/javascript/api/excel/excel.cellvalueattributionattributes#sourceAddress)|Represents a URL to the source of the `CellValue`.|
@@ -136,10 +147,11 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 |[EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)|[basicType](/javascript/api/excel/excel.emptycellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[basicValue](/javascript/api/excel/excel.emptycellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
 ||[type](/javascript/api/excel/excel.emptycellvalue#type)|Represents the type of this cell value.|
+|[EntityCardLayout](/javascript/api/excel/excel.entitycardlayout)|[layout](/javascript/api/excel/excel.entitycardlayout#layout)|Represent the type of this layout.|
 |[EntityCellValue](/javascript/api/excel/excel.entitycellvalue)|[basicType](/javascript/api/excel/excel.entitycellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[basicValue](/javascript/api/excel/excel.entitycellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
-||[properties: {            [key: string]: CellValue & {                propertyMetadata](/javascript/api/excel/excel.entitycellvalue#properties)|Represents the properties of this entity and their metadata.|
-||[propertyMetadata](/javascript/api/excel/excel.entitycellvalue#propertyMetadata)||
+||[cardLayout](/javascript/api/excel/excel.entitycellvalue#cardLayout)|Represents the layout of this entity in card view.|
+||[properties: {            [key: string]](/javascript/api/excel/excel.entitycellvalue#properties)|Represents the properties of this entity and their metadata.|
 ||[text](/javascript/api/excel/excel.entitycellvalue#text)|Represents the text shown when a cell with this value is rendered.|
 ||[type](/javascript/api/excel/excel.entitycellvalue#type)|Represents the type of this cell value.|
 |[FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue)|[basicType](/javascript/api/excel/excel.fielderrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
@@ -189,6 +201,8 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 ||[basicValue](/javascript/api/excel/excel.nameerrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
 ||[errorType](/javascript/api/excel/excel.nameerrorcellvalue#errorType)|Represents the type of `ErrorCellValue`.|
 ||[type](/javascript/api/excel/excel.nameerrorcellvalue#type)|Represents the type of this cell value.|
+|[NamedItem](/javascript/api/excel/excel.nameditem)|[valueAsJson](/javascript/api/excel/excel.nameditem#valueAsJson)|A JSON representation of the values in this named item.|
+|[NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)|[valuesAsJson](/javascript/api/excel/excel.nameditemarrayvalues#valuesAsJson)|A JSON representation of the values in the cells in this range.|
 |[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItemOrNullObject_key_)|Gets a sheet view using its name.|
 |[NotAvailableErrorCellValue](/javascript/api/excel/excel.notavailableerrorcellvalue)|[basicType](/javascript/api/excel/excel.notavailableerrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[basicValue](/javascript/api/excel/excel.notavailableerrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
@@ -209,6 +223,8 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 ||[getDataSourceType()](/javascript/api/excel/excel.pivottable#getDataSourceType__)|Gets the type of the data source for the PivotTable.|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject()](/javascript/api/excel/excel.pivottablescopedcollection#getFirstOrNullObject__)|Gets the first PivotTable in the collection.|
 |[Range](/javascript/api/excel/excel.range)|[getDependents()](/javascript/api/excel/excel.range#getDependents__)|Returns a `WorkbookRangeAreas` object that represents the range containing all the dependents of a cell in the same worksheet or in multiple worksheets.|
+||[valuesAsJson](/javascript/api/excel/excel.range#valuesAsJson)|A JSON representation of the values in the cells in this range.|
+|[RangeView](/javascript/api/excel/excel.rangeview)|[valuesAsJson](/javascript/api/excel/excel.rangeview#valuesAsJson)|A JSON representation of the values in the cells in this range.|
 |[RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue)|[basicType](/javascript/api/excel/excel.referrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[basicValue](/javascript/api/excel/excel.referrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
 ||[errorSubType](/javascript/api/excel/excel.referrorcellvalue#errorSubType)|Represents the type of `RefErrorCellValue`.|
@@ -243,9 +259,11 @@ The following table lists the Excel JavaScript APIs currently in preview. For a 
 ||[setStyle(style: string \| TableStyle \| BuiltInTableStyle)](/javascript/api/excel/excel.table#setStyle_style_)|Sets the style applied to the table.|
 ||[tableStyle](/javascript/api/excel/excel.table#tableStyle)|The style applied to the table.|
 |[TableCollection](/javascript/api/excel/excel.tablecollection)|[onFiltered](/javascript/api/excel/excel.tablecollection#onFiltered)|Occurs when a filter is applied on any table in a workbook, or a worksheet.|
+|[TableColumn](/javascript/api/excel/excel.tablecolumn)|[valuesAsJson](/javascript/api/excel/excel.tablecolumn#valuesAsJson)|A JSON representation of the values in the cells in this table column.|
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableId)|Gets the ID of the table in which the filter is applied.|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|Gets the type of the event.|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetId)|Gets the ID of the worksheet which contains the table.|
+|[TableRow](/javascript/api/excel/excel.tablerow)|[valuesAsJson](/javascript/api/excel/excel.tablerow#valuesAsJson)|A JSON representation of the values in the cells in this table row.|
 |[ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|[basicType](/javascript/api/excel/excel.valueerrorcellvalue#basicType)|Represents the value that would be returned by `Range.valueTypes` for a cell with this value.|
 ||[basicValue](/javascript/api/excel/excel.valueerrorcellvalue#basicValue)|Represents the value that would be returned by `Range.values` for a cell with this value.|
 ||[errorSubType](/javascript/api/excel/excel.valueerrorcellvalue#errorSubType)|Represents the type of `ValueErrorCellValue`.|

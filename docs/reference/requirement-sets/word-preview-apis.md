@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript preview APIs
 description: Details about upcoming Word JavaScript APIs.
-ms.date: 10/13/2021
+ms.date: 12/14/2021
 ms.prod: word
 ms.localizationpriority: medium
 ---
@@ -60,7 +60,7 @@ The following table lists the Word JavaScript APIs currently in preview, except 
 ||[matchWholeWord](/javascript/api/word/word.document#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.document#matchWildcards)||
 ||[onContentControlAdded](/javascript/api/word/word.document#onContentControlAdded)|Occurs when a content control is added.|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| {            ignorePunct?: boolean            ignoreSpace?: boolean            matchCase?: boolean            matchPrefix?: boolean            matchSuffix?: boolean            matchWholeWord?: boolean            matchWildcards?: boolean        })](/javascript/api/word/word.document#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|Performs a search with the specified SearchOptions on the scope of the whole document.|
+||[search(searchText: string, searchOptions?: Word.SearchOptions \| {            ignorePunct?: boolean            ignoreSpace?: boolean            matchCase?: boolean            matchPrefix?: boolean            matchSuffix?: boolean            matchWholeWord?: boolean            matchWildcards?: boolean        })](/javascript/api/word/word.document#search_searchText__searchOptions_)|Performs a search with the specified search options on the scope of the whole document.|
 ||[settings](/javascript/api/word/word.document#settings)|Gets the add-in's settings in the document.|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|Gets the custom XML parts in the document.|
 ||[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|Deletes a bookmark, if it exists, from the document.|
@@ -97,6 +97,7 @@ The following table lists the Word JavaScript APIs currently in preview only in 
 |[Body](/javascript/api/word/word.body)|[endnotes](/javascript/api/word/word.body#endnotes)|Gets the collection of endnotes in the body.|
 ||[footnotes](/javascript/api/word/word.body#footnotes)|Gets the collection of footnotes in the body.|
 ||[getComments()](/javascript/api/word/word.body#getComments__)|Gets comments associated with the body.|
+||[getReviewedText(changeTrackingVersion?: Word.ChangeTrackingVersion)](/javascript/api/word/word.body#getReviewedText_changeTrackingVersion_)|Gets reviewed text based on ChangeTrackingVersion selection.|
 ||[type](/javascript/api/word/word.body#type)|Gets the type of the body.|
 |[Comment](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#authorEmail)|Gets the email of the comment's author.|
 ||[authorName](/javascript/api/word/word.comment#authorName)|Gets the name of the comment's author.|
@@ -126,23 +127,27 @@ The following table lists the Word JavaScript APIs currently in preview only in 
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[endnotes](/javascript/api/word/word.contentcontrol#endnotes)|Gets the collection of endnotes in the contentcontrol.|
 ||[footnotes](/javascript/api/word/word.contentcontrol#footnotes)|Gets the collection of footnotes in the contentcontrol.|
 ||[getComments()](/javascript/api/word/word.contentcontrol#getComments__)|Gets comments associated with the body.|
-|[Document](/javascript/api/word/word.document)|[getEndnoteBody()](/javascript/api/word/word.document#getEndnoteBody__)|Gets the body of the document's endnotes.|
-||[getFootnoteBody()](/javascript/api/word/word.document#getFootnoteBody__)|Gets the body of the document's footnotes.|
+||[getReviewedText(changeTrackingVersion?: Word.ChangeTrackingVersion)](/javascript/api/word/word.contentcontrol#getReviewedText_changeTrackingVersion_)|Gets reviewed text based on ChangeTrackingVersion selection.|
+|[Document](/javascript/api/word/word.document)|[changeTrackingMode](/javascript/api/word/word.document#changeTrackingMode)|Gets or sets the ChangeTracking mode.|
+||[getEndnoteBody()](/javascript/api/word/word.document#getEndnoteBody__)|Gets the document's endnotes in a single body.|
+||[getFootnoteBody()](/javascript/api/word/word.document#getFootnoteBody__)|Gets the document's footnotes in a single body.|
 |[NoteItem](/javascript/api/word/word.noteitem)|[body](/javascript/api/word/word.noteitem#body)|Represents the body object of the note item.|
 ||[delete()](/javascript/api/word/word.noteitem#delete__)|Deletes the note item.|
 ||[getNext()](/javascript/api/word/word.noteitem#getNext__)|Gets the next note item of the same type.|
 ||[getNextOrNullObject()](/javascript/api/word/word.noteitem#getNextOrNullObject__)|Gets the next note item of the same type.|
-||[reference](/javascript/api/word/word.noteitem#reference)|Represents a footnote/endnote reference in the main document.|
-||[type](/javascript/api/word/word.noteitem#type)|Represent the note item type: footnote or endnote.|
+||[reference](/javascript/api/word/word.noteitem#reference)|Represents a footnote or endnote reference in the main document.|
+||[type](/javascript/api/word/word.noteitem#type)|Represents the note item type: footnote or endnote.|
 |[NoteItemCollection](/javascript/api/word/word.noteitemcollection)|[getFirst()](/javascript/api/word/word.noteitemcollection#getFirst__)|Gets the first note item in this collection.|
 ||[getFirstOrNullObject()](/javascript/api/word/word.noteitemcollection#getFirstOrNullObject__)|Gets the first note item in this collection.|
 ||[items](/javascript/api/word/word.noteitemcollection#items)|Gets the loaded child items in this collection.|
-|[Paragraph](/javascript/api/word/word.paragraph)|[endnotes](/javascript/api/word/word.paragraph#endnotes)|Gets the collection of endnotes in the Paragraph.|
-||[footnotes](/javascript/api/word/word.paragraph#footnotes)|Gets the collection of footnotes in the Paragraph.|
+|[Paragraph](/javascript/api/word/word.paragraph)|[endnotes](/javascript/api/word/word.paragraph#endnotes)|Gets the collection of endnotes in the paragraph.|
+||[footnotes](/javascript/api/word/word.paragraph#footnotes)|Gets the collection of footnotes in the paragraph.|
 ||[getComments()](/javascript/api/word/word.paragraph#getComments__)|Gets comments associated with the paragraph.|
-|[Range](/javascript/api/word/word.range)|[endnotes](/javascript/api/word/word.range#endnotes)|Gets the collection of endnotes in the Range.|
-||[footnotes](/javascript/api/word/word.range#footnotes)|Gets the collection of footnotes in the Range.|
+||[getReviewedText(changeTrackingVersion?: Word.ChangeTrackingVersion)](/javascript/api/word/word.paragraph#getReviewedText_changeTrackingVersion_)|Gets reviewed text based on ChangeTrackingVersion selection.|
+|[Range](/javascript/api/word/word.range)|[endnotes](/javascript/api/word/word.range#endnotes)|Gets the collection of endnotes in the range.|
+||[footnotes](/javascript/api/word/word.range#footnotes)|Gets the collection of footnotes in the range.|
 ||[getComments()](/javascript/api/word/word.range#getComments__)|Gets comments associated with the range.|
+||[getReviewedText(changeTrackingVersion?: Word.ChangeTrackingVersion)](/javascript/api/word/word.range#getReviewedText_changeTrackingVersion_)|Gets reviewed text based on ChangeTrackingVersion selection.|
 ||[insertComment(commentText: string)](/javascript/api/word/word.range#insertComment_commentText_)|Insert a comment on the range.|
 ||[insertEndnote(insertText?: string)](/javascript/api/word/word.range#insertEndnote_insertText_)|Inserts an endnote.|
 ||[insertFootnote(insertText?: string)](/javascript/api/word/word.range#insertFootnote_insertText_)|Inserts a footnote.|
