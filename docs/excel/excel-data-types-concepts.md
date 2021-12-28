@@ -39,7 +39,7 @@ The [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellva
 The following JSON code sample shows the complete schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI. If minimum compatibility requirements aren't met, calculations use the `basicValue` in place of the formatted number.
 
 ```json
-// This is an example of the JSON of a formatted number value.
+// This is an example of the complete JSON of a formatted number value.
 // In this case, the number is formatted as a date.
 const myDate = {
     type: Excel.CellValueType.formattedNumber,
@@ -53,12 +53,12 @@ const myDate = {
 
 An entity value is a container for data types, similar to an object in object oriented programming. Entities also support arrays as properties of an entity value. The [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) object allows add-ins to define properties such as `type`, `text`, and `properties`. The `properties` property enables the entity value to define and contain additional data types.
 
-The `basicType` and `basicValue` properties define how calculations read this data type if minimum compatibility requirements aren't met. In that scenario, this data type displays as a **#VALUE!** error in the Excel UI.
+The `basicType` and `basicValue` properties define how calculations read this entity data type if minimum compatibility requirements aren't met. In that scenario, this entity data type displays as a **#VALUE!** error in the Excel UI.
 
 The following JSON code sample shows the complete schema of an entity value that contains text, an image, a date, and an additional text value.
 
 ```json
-// This is an example of the JSON for an entity value.
+// This is an example of the complete JSON for an entity value.
 // The entity contains text and properties which contain an image, a date, and another text value.
 const myEntity = {
     type: Excel.CellValueType.entity,
@@ -80,12 +80,12 @@ const myEntity = {
 
 The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
 
-The `basicType` and `basicValue` properties define how calculations read this data type if minimum compatibility requirements are not met. In that scenario, this data type displays as a **#VALUE!** error in the Excel UI.
+The `basicType` and `basicValue` properties define how calculations read the web image data type if minimum compatibility requirements are not met. In that scenario, this web image data type displays as a **#VALUE!** error in the Excel UI.
 
 The following JSON code sample shows the complete schema of a web image.
 
 ```json
-// This is an example of the JSON for a web image.
+// This is an example of the complete JSON for a web image.
 const myImage = {
     type: Excel.CellValueType.webImage,
     address: "https://bit.ly/2YGOwtw", 
