@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: 'Learn the core concepts for using Excel data types in your Office Add-in.'
-ms.date: 12/27/2021
+ms.date: 12/28/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -28,13 +28,15 @@ Use the [`Range.valuesAsJson`](/javascript/api/excel/excel.range#valuesAsJson) p
 
 ### JSON schema
 
-Data types use a consistent JSON schema which defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data and additional information such as `basicValue`, `numberFormat`, or `address`. Each `CellValueType` has properties available according to that type. For example, the `webImage` type includes the [altText](/javascript/api/excel/excel.webimagecellvalue#altText) and [attribution](/javascript/api/excel/excel.webimagecellvalue#attribution) properties. The following sections show JSON code samples for the formatted number value, entity value, and web image data types.
+Each data type uses a JSON metadata schema designed for that type, which defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data and additional information such as `basicValue`, `numberFormat`, or `address`. Each `CellValueType` has properties available according to that type. For example, the `webImage` type includes the [altText](/javascript/api/excel/excel.webimagecellvalue#altText) and [attribution](/javascript/api/excel/excel.webimagecellvalue#attribution) properties. The following sections show JSON code samples for the formatted number value, entity value, and web image data types.
+
+Each JSON metadata schema includes one or more readonly properties that are used when calculations encounter incompatible scenarios, such as a version of Excel that doesn't meet the minimum build number requirement for the data types feature. The property `basicType` is part of the JSON metadata of every data type, and it is always a readonly property.
 
 ## Formatted number values
 
 The [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue) object enables Excel add-ins to define a `numberFormat` property for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
 
-The following JSON code sample shows a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI.
+The following JSON code sample shows the complete schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI.
 
 ```json
 // This is an example of the JSON of a formatted number value.
@@ -42,15 +44,16 @@ The following JSON code sample shows a formatted number value. The `myDate` form
 const myDate = {
     type: Excel.CellValueType.formattedNumber,
     basicValue: 32889.0,
+    basicType: Excel.CellValueType.double, // A readonly property. Used as a fallback in incompatible scenarios.
     numberFormat: "m/d/yyyy"
 };
 ```
 
 ## Entity values
 
-An entity value is a container for data types, similar to an object in object oriented programming. Entities also support arrays as properties of an entity value. The [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) object allows add-ins to define properties such as `type`, `text`, and `properties`. The `properties` property enables the entity value to define and contain additional data types.
+An entity value is a container for data types, similar to an object in object oriented programming. Entities also support arrays as properties of an entity value. The [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) object allows add-ins to define properties such as `type`, `text`, and `properties`. The `properties` property enables the entity value to define and contain additional data types. The `basicType` and `basicValue` properties define how the Excel UI will read this data type if the minimum compatibility requirements are not met. In that scenario, this data type will display as a **#VALUE!** error in the Excel UI.
 
-The following JSON code sample shows an entity value that contains text, an image, a date, and an additional text value.
+The following JSON code sample shows the complete schema of an entity value that contains text, an image, a date, and an additional text value.
 
 ```json
 // This is an example of the JSON for an entity value.
@@ -65,21 +68,25 @@ const myEntity = {
             type: Excel.CellValueType.string,
             basicValue: "I love llamas."
         }
-    }
+    }, 
+    basicType: Excel.CellValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
 };
 ```
 
 ## Web image values
 
-The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
+The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`. The `basicType` and `basicValue` properties define how the Excel UI will read this data type if the minimum compatibility requirements are not met. In that scenario, this data type will display as a **#VALUE!** error in the Excel UI.
 
-The following JSON code sample shows how to represent a web image.
+The following JSON code sample shows the complete schema of a web image.
 
 ```json
 // This is an example of the JSON for a web image.
 const myImage = {
     type: Excel.CellValueType.webImage,
-    address: "https://bit.ly/2YGOwtw"
+    address: "https://bit.ly/2YGOwtw", 
+    basicType: "Error", // A readonly property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
 };
 ```
 
