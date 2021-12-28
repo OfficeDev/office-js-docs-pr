@@ -4,10 +4,10 @@ description: 'Learn the core concepts for using Excel data types with your custo
 ms.date: 12/27/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-ms.localizationpriority: medium
+ms.localizationpriority: high
 ---
 
-# Custom functions and data types core concepts (preview)
+# Use data types with custom functions in Excel (preview)
 
 [!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
 
