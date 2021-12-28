@@ -28,7 +28,7 @@ Use the [`Range.valuesAsJson`](/javascript/api/excel/excel.range#valuesAsJson) p
 
 ### JSON schema
 
-Each data type uses a JSON metadata schema designed for that type, which defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data and additional information such as `basicValue`, `numberFormat`, or `address`. Each `CellValueType` has properties available according to that type. For example, the `webImage` type includes the [altText](/javascript/api/excel/excel.webimagecellvalue#altText) and [attribution](/javascript/api/excel/excel.webimagecellvalue#attribution) properties. The following sections show JSON code samples for the formatted number value, entity value, and web image data types.
+Each data type uses a JSON metadata schema designed for that type. This defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data and additional information about the cell, such as `basicValue`, `numberFormat`, or `address`. Each `CellValueType` has properties available according to that type. For example, the `webImage` type includes the [altText](/javascript/api/excel/excel.webimagecellvalue#altText) and [attribution](/javascript/api/excel/excel.webimagecellvalue#attribution) properties. The following sections show JSON code samples for the formatted number value, entity value, and web image data types.
 
 The JSON metadata schema for each data type also includes one or more readonly properties that are used when calculations encounter incompatible scenarios, such as a version of Excel that doesn't meet the minimum build number requirement for the data types feature. The property `basicType` is part of the JSON metadata of every data type, and it's always a readonly property.
 
