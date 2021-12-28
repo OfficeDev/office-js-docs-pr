@@ -568,5 +568,10 @@
         "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.userprofile.md",
         "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.1"
       }
+      , 
+      {
+        "source_path": "docs/excel/custom-functions-data-types-overview.md", 
+        "redirect_url": "/office/dev/add-ins/excel/custom-functions-data-types-concepts"
+      }
     ] 
 }
