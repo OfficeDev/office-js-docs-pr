@@ -11,9 +11,9 @@ ms.localizationpriority: high
 
 [!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
 
-Data types expand the Excel JavaScript API to support data types beyond the original four (string, number, boolean, and error). Data types include support for web images, formatted number values, entity values, and arrays within entity values.
+Data types expand the Excel JavaScript API to support data types beyond the original four cell value types (string, number, boolean, and error). Data types include support for web images, formatted number values, entity values, and arrays within entity values.
 
-These data types amplify the power of custom functions, because custom functions accept data types as both input and output values. You can generate data types through custom functions, or take existing data types as function arguments into calculations. Once the JSON schema of a data type is set, this schema is maintained throughout custom function calculations.
+These data types amplify the power of custom functions, because custom functions accept data types as both input and output values. You can generate data types through custom functions, or take existing data types as function arguments into calculations. Once the JSON schema of a data type is set, this schema is maintained throughout the calculations.
 
 To learn more about using data types with an Excel add-in, see [Overview of data types in Excel add-ins](excel-data-types-overview.md).
 
