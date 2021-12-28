@@ -103,9 +103,9 @@ Congratulations, you've successfully created a custom function in an Excel add-i
 
 ## Troubleshooting
 
-You may encounter issues if you run the quick start multiple times. If the Office cache already has an instance of a function with the same name, your add-in will get an error when it sideloads. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`.
+You may encounter issues if you run the quick start multiple times. If the Office cache already has an instance of a function with the same name, your add-in gets an error when it sideloads. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`.
 
-:::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="An error message in Excel titled 'Error installing functions'. It contains the text 'This add-in wasn't installed because a custom function ith the same name already exists'.":::
+:::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="An error message in Excel titled 'Error installing functions'. It contains the text 'This add-in wasn't installed because a custom function with the same name already exists'.":::
 
 ## See also
 
