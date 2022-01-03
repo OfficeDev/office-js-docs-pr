@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins in Office on the web
 description: 'How to use Office on the web to test and debug your add-ins.'
-ms.date: 07/07/2020
+ms.date: 12/02/2021
 ms.localizationpriority: medium
 ---
 
@@ -43,7 +43,7 @@ To debug your add-in by using Office on the web:
 
 5. On the Insert tab, choose **My Add-ins** or **Office Add-ins** to insert your add-in and test it in the app.
 
-6. Use your favorite browser tool debugger to debug your add-in.
+6. Use your browser's debugging tool to debug your add-in. It is usually opened by pressing F12.
 
 ## Potential issues
 

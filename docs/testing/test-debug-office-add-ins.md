@@ -1,11 +1,11 @@
 ---
-title: Test and debug Office Add-ins
-description: 'Learn how to test and debug your Office Add-in'
-ms.date: 11/14/2021
+title: Test Office Add-ins
+description: 'Learn how to test your Office Add-in'
+ms.date: 12/02/2021
 ms.localizationpriority: high
 ---
 
-# Test and debug Office Add-ins
+# Test Office Add-ins
 
 This article contains guidance about testing, debugging, and troubleshooting issues with Office Add-ins.
 
@@ -39,15 +39,7 @@ For information about how to add unit tests to your add-in project, see [Unit te
 
 ## Debug an Office Add-in
 
-The procedure for debugging an Office Add-in varies by platform as well. Each of the following articles describes how to debug Office Add-ins on a specific platform.
-
-- [Attach a debugger from the task pane (on Windows)](attach-debugger-from-task-pane.md)
-- [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
-- [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
-- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
-- [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
-- [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md)
-- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
+The procedure for debugging an Office Add-in varies based on your platform and environment. For more information, see [Debug Office Add-ins](debug-add-ins-overview.md).
 
 ## Validate an Office Add-in manifest
 

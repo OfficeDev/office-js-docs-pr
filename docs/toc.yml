@@ -262,9 +262,12 @@ items:
       href: develop/develop-office-add-ins-for-the-ipad.md
   - name: Test and debug
     items:
-    - name: Test and debug Office Add-ins
+    - name: Test Office Add-ins
       href: testing/test-debug-office-add-ins.md
       displayName: test, debug
+    - name: Debug Office Add-ins
+      href: testing/debug-add-ins-overview.md
+      displayName: debug
     - name: Windows
       items:
       - name: Sideload Office Add-ins on Windows from a network share
