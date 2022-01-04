@@ -570,8 +570,7 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
 
 1. In the root folder of the project, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 
-    > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
+[!INCLUDE [alert-use-https](alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
@@ -602,8 +601,7 @@ Complete the following steps to try out an Outlook add-in.
 
 1. In the root folder of the project, run the following command to build the project, start the local web server, and sideload your add-in. 
 
-    > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.
+[!INCLUDE [alert-use-https](alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
