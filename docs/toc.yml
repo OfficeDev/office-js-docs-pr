@@ -35,6 +35,9 @@ items:
   - name: Set up your development environment 
     href: overview/set-up-your-dev-environment.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+  - name: Glossary of terms
+    href: resources/resources-glossary.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
 
 - name: Development lifecycle
   items:
@@ -1338,6 +1341,9 @@ items:
     displayName: Excel
 - name: Resources
   items:
+  - name: Glossary of terms
+    href: resources/resources-glossary.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
   - name: External resources
     href: resources/resources-links-help.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
