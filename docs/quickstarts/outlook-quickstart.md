@@ -90,7 +90,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ### Try it out
 
-[!INCLUDE [alert-use-https](alert-use-https.md)]
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running) and your add-in will be sideloaded.
 

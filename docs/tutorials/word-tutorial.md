@@ -125,7 +125,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 1. Complete the following steps to start the local web server and sideload your add-in.
 
-[!INCLUDE [alert-use-https](alert-use-https.md)]
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > If you're testing your add-in on Mac, run the following command in the root directory of your project before proceeding. When you run this command, the local web server starts.

@@ -93,7 +93,7 @@ Office.context.document.getSelectedTaskAsync(
 
 1. Start the local web server.
 
-[!INCLUDE [alert-use-https](alert-use-https.md)]
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     Run the following command in the root directory of your project. When you run this command, the local web server will start.
 

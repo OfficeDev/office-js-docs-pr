@@ -75,7 +75,7 @@ try {
 
 1. Start the local web server and sideload your add-in.
 
-[!INCLUDE [alert-use-https](alert-use-https.md)]
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.

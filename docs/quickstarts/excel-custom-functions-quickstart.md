@@ -54,7 +54,7 @@ To test your add-in in Excel on Windows, run the following command. When you run
 npm run start:desktop
 ```
 
-[!INCLUDE [alert-use-https](alert-use-https.md)]
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
     
 # [Excel on the web](#tab/excel-online)
 
@@ -64,7 +64,7 @@ To test your add-in in Excel on the web, run the following command. When you run
 npm run start:web
 ```
 
-[!INCLUDE [alert-use-https](alert-use-https.md)]
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 To use your custom functions add-in, open a new workbook in Excel on a browser. In this workbook, complete the following steps to sideload your add-in.
 

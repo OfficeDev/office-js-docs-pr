@@ -570,7 +570,7 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
 
 1. In the root folder of the project, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 
-[!INCLUDE [alert-use-https](alert-use-https.md)]
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
@@ -601,7 +601,7 @@ Complete the following steps to try out an Outlook add-in.
 
 1. In the root folder of the project, run the following command to build the project, start the local web server, and sideload your add-in. 
 
-[!INCLUDE [alert-use-https](alert-use-https.md)]
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start

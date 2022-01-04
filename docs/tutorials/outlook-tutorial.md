@@ -154,7 +154,7 @@ Make the following updates in the **manifest.xml** file to specify some basic in
 
 Before going any further, let's test the basic add-in that the generator created to confirm that the project is set up correctly.
 
-[!INCLUDE [alert-use-https](alert-use-https.md)]
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running) and your add-in will be sideloaded.
 
