@@ -479,7 +479,7 @@ items:
         - name: VersionOverrides 1.0 Mail
           href: reference/manifest/versionoverrides-1-0-mail.md
         - name: VersionOverrides 1.1 Mail
-          href: reference/manifest/versionoverrides-1.1-mail.md
+          href: reference/manifest/versionoverrides-1-1-mail.md
         - name: Action
           href: reference/manifest/action.md
         - name: AllFormFactors

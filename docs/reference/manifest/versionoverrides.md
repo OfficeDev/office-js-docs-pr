@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # VersionOverrides element
 
-This element contains information for features that aren't supported in the base manifest. Its child markup may override some of the markup in the base manifest (or in a parent **VersionOverrides**). It is also used to enable support versioned features that cannot be configured in the base manifest. For example, add-in commands are defined inside a **VersionOverrides** element. **VersionOverrides** is a child element of either the root [OfficeApp](officeapp.md) element in the manifest or a parent **VersionOverrides** element. This element is supported in manifest schema v1.1 and later but is defined in separate VersionOverrides schemas.
+This element contains information for features that aren't supported in the base manifest. Its child markup may override some of the markup in the base manifest (or in a parent **VersionOverrides**). **VersionOverrides** is a child element of either the root [OfficeApp](officeapp.md) element in the manifest or a parent **VersionOverrides** element. This element is supported in manifest schema v1.1 and later but is defined in separate VersionOverrides schemas.
 
 For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 

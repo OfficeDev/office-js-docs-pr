@@ -35,7 +35,7 @@ The following table applies only to version 1.0 of **VersionOverrides** elements
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
 |  [Description](#description)    |  No   |  Describes the add-in. |
-|  **Requirements**  |  No   |  Specifies the minimum requirement set and version of Office.js that the add-in requires. This overrides the  `Requirements` element in the parent portion of the manifest.|
+|  [Requirements](requirements.md)  |  No   |  Specifies the minimum requirement sets that must be supported in order for the markup in the parent `VersionOverrides` to take effect. This should always be *more* restrictive than the `Requirements` element in the base portion of the manifest.|
 |  [Hosts](hosts.md)                |  Yes  |  Specifies a collection of Office applications. The child Hosts element overrides the Hosts element in the parent portion of the manifest.  |
 |  [Resources](resources.md)    |  Yes  | Defines a collection of resources (strings, URLs, and images) that other manifest elements reference.|
 |  **VersionOverrides**    |  No  | Defines add-in commands under a newer schema version. See [Implementing multiple versions](#implementing-multiple-versions) for details. |
