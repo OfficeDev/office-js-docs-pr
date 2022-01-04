@@ -1,7 +1,7 @@
 ---
 title: Enable single sign-on (SSO) in an Office Add-in
 description: 'Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.'
-ms.date: 10/22/2021
+ms.date: 01/02/2021
 ms.localizationpriority: high
 ---
 
@@ -21,20 +21,32 @@ The following diagram shows how the SSO process works. The blue elements represe
 2. If the user is not signed in, the Office host application opens a dialog box for the user to sign in. Office redirects to the Microsoft identity platform to complete the sign-in process.
 3. If this is the first time the current user has used your add-in, they are prompted to consent.
 4. The Office host application requests the **access token** from the Microsoft identity platform for the current user.
-5. The Office host application returns the **access token** to the add-in as part of the result object returned by the `getAccessToken` call.
-
-    The token is both an **access token** and an **identity token**. You can use it as an access token to make authenticated API calls to your add-in web server. You can use it as an identity token to parse and examine claims about the user, such as the user's name and email address.
-
-6. Your JavaScript code in the add-in can parse the token as an identity token and extract the information it needs, such as the user's email address.
-7. Optionally, the add-in can use the token as an **access token** to make authenticated HTTPS requests to APIs on the server-side. You can also pass the token to your server-side code so that the server can store information associated with the user's identity; such as the user's preferences.
+5. The Microsoft identity platform returns the access token to Office. Office will cache the token on your behalf so that future calls to **getAccessToken** simply return the cached token.
+6. The Office host application returns the **access token** to the add-in as part of the result object returned by the `getAccessToken` call.
+7. The token is both an **access token** and an **identity token**. You can use it as an identity token to parse and examine claims about the user, such as the user's name and email address.
+8. Optionally, the add-in can use the token as an **access token** to make authenticated HTTPS requests to APIs on the server-side. Because the access token contains identity claims, the server can store information associated with the user's identity; such as the user's preferences.
 
 ## Requirements and Best Practices
 
+### Don't cache the access token
+
+Never cache or store the access token in your cient-side code. Always call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) when you need an access token. Office will cache the access token (or request a new one if it expired.) This will help to avoid accidentally leaking the token from your add-in.
+
+### Enable modern authentication for Outlook
+
 If you are working with an **Outlook** add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. For example, if your add-in is loaded on an older version of Office that does not support SSO, the `getAccessToken` call will fail. 
+### Implement a fallback authentication system
 
-To implement a fallback method of authentication, you can use a system of user tables and authentication, or you can leverage one of the social login providers. For more information about how to do this with an Office Add-in, see [Authorize external services in your Office Add-in](auth-external-add-ins.md). For *Outlook*, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md). For code samples that use the Microsoft identity platform as the fallback system, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
+You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. For example, if your add-in is loaded on an older version of Office that does not support SSO, the `getAccessToken` call will fail.
+
+For Excel, Word, and PowerPoint add-ins you will typically want to fall back to using the Microsoft identity platform. For more information, see [Authenticate with the Microsoft identity platform](add-ins/develop/overview-authn-authz#authenticate-with-the-microsoft-identity-platform).
+
+For Outlook add-ins, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md).
+
+You can also use a system of user tables and authentication, or you can leverage one of the social login providers. For more information about how to do this with an Office Add-in, see [Authorize external services in your Office Add-in](auth-external-add-ins.md).
+
+For code samples that use the Microsoft identity platform as the fallback system, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 ## Develop an SSO add-in
 
@@ -64,7 +76,7 @@ Add new markup to the add-in manifest.
 
 - **WebApplicationInfo** - The parent of the following elements.
 - **Id** - The application (client) ID you received when you registered the add-in with the Microsoft identity platform. For more information, see [Register an Office Add-in that uses SSO with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
-- **Resource** - The URL of the add-in. This is the same URI (including the `api:` protocol) that you used when registering the add-in with the Microsoft identity platform. The domain part of this URI must match the domain, including any subdomains, used in the URLs in the `<Resources>` section of the add-in's manifest and the URI must end with the client ID in the `<Id>`.
+- **Resource** - The URI of the add-in. This is the same URI (including the `api:` protocol) that you used when registering the add-in with the Microsoft identity platform. The domain part of this URI must match the domain, including any subdomains, used in the URLs in the `<Resources>` section of the add-in's manifest and the URI must end with the client ID specified in the `<Id>` element.
 - **Scopes** - The parent of one or more **Scope** elements.
 - **Scope** - Specifies a permission that the add-in needs. The `profile` and `openID` permissions are always needed and may be the only permissions needed. If your add-in needs access to Microsoft Graph or other Microsoft 365 resources, you'll need additional **Scope** elements. For example, for Microsoft Graph permissions you might request the `User.Read` and `Mail.Read` scopes. Libraries that you use in your code to access Microsoft Graph may need additional permissions. For more information, see [Authorize to Microsoft Graph from an Office Add-in](authorize-to-microsoft-graph.md).
 
@@ -152,7 +164,7 @@ If the add-in has some functionality that doesn't require a signed in user, then
 
 ### Pass the access token to server-side code
 
-There are scenarios where you will need to pass the access token to your add-in's server-side code. Your server-side code may provide web APIs that need to use information about the user that is extracted from the token; for example, a method that looks up the user's preferences in your hosted data base. (See **Using the access token as an identity** below.) Depending on your language and framework, libraries might be available that will simplify the code you have to write.
+There are scenarios where you will need to pass the access token to your add-in's server-side code. Your server-side code may provide web APIs that need to use information about the user that is extracted from the token; for example, a method that looks up the user's preferences in your hosted data base. (See **Use the access token as an identity token** below.) Depending on your language and framework, libraries might be available that will simplify the code you have to write.
 
 If you need to access Microsoft Graph data, your server-side code should do the following:
 
@@ -174,21 +186,21 @@ Web APIs on your server must validate the access token if it is sent from the cl
 Keep in mind the following guidelines when validating the token.
 
 - Valid SSO tokens will be issued by the Azure authority, `https://login.microsoftonline.com`. The `iss` claim in the token should start with this value.
-- The token's `aud` parameter will be set to the application ID of the add-in's registration.
+- The token's `aud` parameter will be set to the application ID of the add-in's Azure app registration.
 - The token's `scp` parameter will be set to `access_as_user`.
 
 For more information on token validation, see [Microsoft identity platform access tokens](/azure/active-directory/develop/access-tokens#validating-tokens).
 
-#### Use the access token as an identity
+#### Use the access token as an identity token
 
 If your add-in needs to verify the user's identity, the access token returned from `getAccessToken()` contains information that can be used to establish the identity. The following claims in the token relate to identity.
 
 - `name` - The user's display name.
 - `preferred_username` - The user's email address.
-- `oid` - A GUID representing the ID of the user in the Azure Active Directory.
-- `tid` - A GUID representing the ID of the user's organization in the Azure Active Directory.
+- `oid` - A GUID representing the ID of the user in the Microsoft identity system.
+- `tid` - A GUID representing the tenant tha the user is signing in to.
 
-If you need to construct a unique ID to represent the user in your system, refer to [Microsoft identity platform ID tokens](/azure/active-directory/develop/id-tokens#using-claims-to-reliably-identify-a-user-subject-and-object-id) for more information.
+For more details on these and other claims, see [Microsoft identity platform ID tokens](/azure/active-directory/develop/id-tokens). If you need to construct a unique ID to represent the user in your system, refer to [Using claims to reliably identify a user](/azure/active-directory/develop/id-tokens#using-claims-to-reliably-identify-a-user-subject-and-object-id) for more information.
 
 ### Example access token
 

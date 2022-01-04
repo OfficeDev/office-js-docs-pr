@@ -1,24 +1,10 @@
 
-##Register your add-in
-1. Browse to the [App registrations - Microsoft Azure](https://go.microsoft.com/fwlink/?linkid=2083908) page.
+First, complete the steps in [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app) to create an initial app registration. Return here after you complete the step [Add credentials](/azure/active-directory/develop/quickstart-register-app#add-credentials).
 
-1. Sign in with the ***admin*** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
+### Expose a web API
 
-1. Select **New registration**. On the **App registrations** page, set the values as follows.
-
-    * Set **Name** to **$ADD-IN-NAME$**.
-    * Set **Supported account types** to **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
-    * Leave **Redirect URI** empty.
-    * Choose **Register**.
-
-1. On the **$ADD-IN-NAME$** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
-
-    > [!NOTE]
-    > This ID is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
-
-1. Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value for **Description** then select an appropriate option for **Expires** and choose **Add**. *Record the secret's value* since you'll need it in a later procedure. This secret value is *never displayed again* after you leave this page.
-
-1. Select **Expose an API** under **Manage**. Select the **Set** link. This opens a **Set the App ID URI** box with a generated Application ID URI in the form "api://$App ID GUID$". Insert the **$FQDN-WITHOUT-PROTOCOL$** (with a forward slash "/" appended to the end) between the double forward slashes and the GUID. The entire ID should have the form `api://$FQDN-WITHOUT-PROTOCOL$/$App ID GUID$`; for example `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
+1. Be sure you are viewing the app registration you just created.
+1. Select **Expose an API** under **Manage**. Select the **Set** link. This opens a **Set the App ID URI** box with a generated Application ID URI in the form `api://<application-id>`. Insert your fully qualified domain name before the `<application-id>`. The entire ID should have the form `api://<fully-qualified-domain-name>/<application-id>`; for example `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
     > [!NOTE]
     > If you get an error saying that the domain is already owned but you own it, follow the procedure at [Quickstart: Add a custom domain name to Azure Active Directory](/azure/active-directory/add-custom-domain) to register it, and then repeat this step. (This error can also occur if you are not signed in with credentials of an admin in the Microsoft 365 tenancy. See step 2. Sign out and sign in again with admin credentials and repeat the process from step 3.)
@@ -51,13 +37,13 @@
 
     For each ID, take these steps.
 
-      a. Select **Add a client application**. In the panel that opens, set the **Client ID** to the respective GUID and check the box for `api://$FQDN-WITHOUT-PROTOCOL$/$App ID GUID$/access_as_user`.
+      a. Select **Add a client application**. In the panel that opens, set the **Client ID** to the respective GUID and check the box for `api://<fully-qualified-domain-name>/<application-id>/access_as_user`.
 
       b. Select **Add application**.
 
 1. Under **Manage** select **Authentication**, then choose **Add a platform**.
 
-1. In the **Configure platforms** pane, select **Web**, and then set the **Redirect URI** value to `https://$FQDN-WITHOUT-PROTOCOL$`.
+1. In the **Configure platforms** pane, select **Web**, and then set the **Redirect URI** value to `https://<fully-qualified-domain-name>`.
 
 1. Choose **Configure**.
 
