@@ -5,7 +5,7 @@ ms.date: 01/04/2022
 ms.localizationpriority: medium
 ---
 
-# VersionOverrides 1.0 element in the manifest file for a mail add-in
+# VersionOverrides 1.1 element in the manifest file for a mail add-in
 
 This element contains information for features that are not supported in the base manifest.
 
