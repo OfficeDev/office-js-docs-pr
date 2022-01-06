@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 08/04/2021
+ms.date: 01/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
 ---
