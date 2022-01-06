@@ -89,7 +89,7 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
 
 1. When the SSO configuration process completes, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 
-[!INCLUDE [alert use https](../includes/alert-use-https.md)]
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
@@ -120,7 +120,7 @@ Complete the following steps to try out an Outlook add-in.
 
 1. When the SSO configuration process completes, run the following command to build the project and start the local web server.
 
-[!INCLUDE [alert use https](../includes/alert-use-https.md)]
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
