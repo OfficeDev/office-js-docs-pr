@@ -1,7 +1,7 @@
 ---
 title: Overview of authentication and authorization in Office Add-ins
 description: 'Learn how authentication and authorization works in Office Add-ins.'
-ms.date: 10/22/2021
+ms.date: 01/06/2022
 ms.localizationpriority: high
 ---
 
@@ -13,26 +13,17 @@ Your add-in can also get the user's consent to access their Microsoft Graph data
 
 ## Key resources for authentication and authorization
 
-Office Add-ins rely on the Microsoft identity platform to perform authentication and authorization. This documentation explains how to build and configure Office Add-ins to successfully implement authentication and authorization. However, many concepts and security technologies mentioned are outside the scope of this documentation. For example, general security concepts such as OAuth flows, token caching, or identity management are not explained here. This documentation also does not document anything specific to Microsoft Azure or the Microsoft identity platform. We recommend you refer to the following resources if you need more information in those areas.
+This documentation explains how to build and configure Office Add-ins to successfully implement authentication and authorization. However, many concepts and security technologies mentioned are outside the scope of this documentation. For example, general security concepts such as OAuth flows, token caching, or identity management are not explained here. This documentation also does not document anything specific to Microsoft Azure or the Microsoft identity platform. We recommend you refer to the following resources if you need more information in those areas.
 
-### Microsoft identity platform
-
-Office Add-ins primarily depend on the Microsoft identity platform to handle authentication and authorization. We'll include links to relevant resources in the Microsoft identity platform documentation when additional details are needed. If you get stuck programming something related to the Microsoft identity platform, or need help on a concept, refer to the [Microsoft identity platform](/azure/active-directory/develop) documentation for more information.
-
-### OAuth 2.0 and OpenID connect
-
-You'll see OAuth 2.0 and OpenID connect mentioned in this documentation. These are standard protocols used throughout the industry that Microsoft identity platform, and Office, rely upon for authentication and authorization workflows. For more information, see [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](/azure/active-directory/develop/active-directory-v2-protocols)
-
-## Authentication and authorization approach
-
-There are two ways to authenticate and authorize in your Office Add-in.
-
-- **Single sign-on (SSO) through Office**: Your add-in can access the authenticated user's identity from Office to avoid having the user sign in twice (to Office, and then also your add-in). Optionally, your add-in can also use the user's identity to authorize your add-in to [Microsoft Graph](/graph) or other Microsoft 365 services. (Non-Microsoft sources are not accessible through this approach.)
-- **Microsoft identity platform**: Your add-in can sign in users using the [Microsoft identity platform](/azure/active-directory/develop) as the authentication provider. Once you have signed in the user, you can then use the Microsoft identity platform to authorize the add-in to [Microsoft Graph](/graph) or other Microsoft 365 services. This approach is used when SSO through Office is unavailable. Also, there are scenarios in which you want to have your users sign in to your add-in separately even when SSO is available; for example, if you want them to have the option of signing in to the add-in with a different ID from the one with which they are currently signed in to Office.
+|Topic    |Description |Link     |
+|---------|------------|---------|
+|Microsoft identity platform | Home page for all Microsoft identity platform documentation. |[Microsoft identity platform](/azure/active-directory/develop) |
+|Microsoft identity platform help | Provides additional resources for getting help with Microsoft identity platform. |[Support and help options for developers](/azure/active-directory/develop/developer-support-help-options) |
+|OAuth 2.0 and OpenID connect |Provides implementation details. |[OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](/azure/active-directory/develop/active-directory-v2-protocols)|
 
 ## SSO scenarios
 
-Using SSO is convenient for the user because they only have to sign in once to Office. SSO is not supported on all versions of Office, so you'll still need to implement an alternative sign-in approach, by [using the Microsoft identity platform](#authenticate-with-the-microsoft-identity-platform). For more information on supported Office versions, see [Identity API requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md)
+Using Single Sign-on (SSO) is convenient for the user because they only have to sign in once to Office. They do not need to sign in separately to your add-in. SSO is not supported on all versions of Office, so you'll still need to implement an alternative sign-in approach, by [using the Microsoft identity platform](#authenticate-with-the-microsoft-identity-platform). For more information on supported Office versions, see [Identity API requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md)
 
 ### Get the user's identity through SSO
 
@@ -110,9 +101,11 @@ You should also read at least one of the following articles that will walk you t
 
 ## Non-SSO scenarios
 
-In some scenarios you may not want to use SSO. For example, you may need to authenticate using a different identity provider than the Microsoft identity platform. Also SSO is not supported in all scenarios. For example, older versions of Office don't support SSO. You should implement an alternate authentication system that your add-in can fall back to in certain error situations.
+In some scenarios you may not want to use SSO. For example, you may need to authenticate using a different identity provider than the Microsoft identity platform. Also SSO is not supported in all scenarios. For example, older versions of Office don't support SSO. In this case you would need to fall back to an alternate authentication system for your add-in.
 
 ### Authenticate with the Microsoft identity platform
+
+Your add-in can sign in users using the [Microsoft identity platform](/azure/active-directory/develop) as the authentication provider. Once you have signed in the user, you can then use the Microsoft identity platform to authorize the add-in to [Microsoft Graph](/graph) or other services managed by Microsoft. This approach is used when SSO through Office is unavailable. Also, there are scenarios in which you want to have your users sign in to your add-in separately even when SSO is available; for example, if you want them to have the option of signing in to the add-in with a different ID from the one with which they are currently signed in to Office.
 
 You can authenticate a user in an Office Add-in with the Microsoft identity platform as you would in other web applications. You should use this approach as the alternate authentication system when SSO doesn't work.
 
