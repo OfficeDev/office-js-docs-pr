@@ -1,12 +1,12 @@
 ---
 title: Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 description: 'Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) by using the Debugger for Microsoft Edge extension in VS Code.'
-ms.date: 11/09/2021
+ms.date: 01/07/2022
 ms.localizationpriority: high
 ---
 # Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 
-Office Add-ins running on Windows can use the Debugger for Microsoft Edge extension in Visual Studio Code to debug against the Edge Chromium WebView2 runtime. 
+Office Add-ins running on Windows can use the Debugger for Microsoft Edge extension in Visual Studio Code to debug against the Edge Chromium WebView2 runtime.
 
 > [!TIP]
 > If you cannot, or don't wish to, debug using tools built into Visual Studio Code; or you are encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Chromium WebView2 runtime by using the Edge (Chromium-based) developer tools as described in [Debug add-ins using developer tools for Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
@@ -29,11 +29,11 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
    > npx office-addin-debugging start <your manifest path>
    > ```
 
-1. Open your project in VS Code. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "Debugger for Microsoft Edge" extension and install it.
+1. Open your project in VS Code. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "[Microsoft Edge DevTools](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)" extension and install it.
 
-1. Next, choose  **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
+1. Next, choose  **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 
-1. From the **RUN AND DEBUG** options, choose the Edge Chromium option for your host application, such as **Excel Desktop (Edge Chromium)**. Select **F5** or choose **Run > Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
+1. From the **RUN AND DEBUG** options, choose the Edge Chromium option for your host application, such as **Excel Desktop (Edge Chromium)**. Select **F5** or choose **Run > Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
 
 1. In the host application, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear, reading:
 
