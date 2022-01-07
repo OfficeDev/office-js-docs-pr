@@ -15,11 +15,9 @@ Your add-in can also get the user's consent to access their Microsoft Graph data
 
 This documentation explains how to build and configure Office Add-ins to successfully implement authentication and authorization. However, many concepts and security technologies mentioned are outside the scope of this documentation. For example, general security concepts such as OAuth flows, token caching, or identity management are not explained here. This documentation also does not document anything specific to Microsoft Azure or the Microsoft identity platform. We recommend you refer to the following resources if you need more information in those areas.
 
-|Topic    |Description |Link     |
-|---------|------------|---------|
-|Microsoft identity platform | Home page for all Microsoft identity platform documentation. |[Microsoft identity platform](/azure/active-directory/develop) |
-|Microsoft identity platform help | Provides additional resources for getting help with Microsoft identity platform. |[Support and help options for developers](/azure/active-directory/develop/developer-support-help-options) |
-|OAuth 2.0 and OpenID connect |Provides implementation details. |[OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](/azure/active-directory/develop/active-directory-v2-protocols)|
+- [Microsoft identity platform](/azure/active-directory/develop)
+- [Microsoft identity platform support and help options for developers](/azure/active-directory/develop/developer-support-help-options)
+- [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](/azure/active-directory/develop/active-directory-v2-protocols)
 
 ## SSO scenarios
 
@@ -27,7 +25,7 @@ Using Single Sign-on (SSO) is convenient for the user because they only have to 
 
 ### Get the user's identity through SSO
 
-Often your add-in only needs the user's identity. For example, you may just want personalize your add-in and display the user's name on the task pane. Or you might want a unique ID to associate the user with their data in your database. This can be accomplished by just getting the access token for the user from Office.
+Often your add-in only needs the user's identity. For example, you may just want to personalize your add-in and display the user's name on the task pane. Or you might want a unique ID to associate the user with their data in your database. This can be accomplished by just getting the access token for the user from Office.
 
 To get the user's identity through SSO, call the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method. The method returns an access token that is also an identity token containing several claims that are unique to the current signed in user, including `preferred_username`, `name`, `sub`, and `oid`. For more information on these properties, see [Microsoft identity platform ID tokens](/azure/active-directory/develop/id-tokens). For an example of the token returned by [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_), see [Example access token](sso-in-office-add-ins.md#example-access-token).
 
@@ -39,25 +37,9 @@ Before you begin implementing user authentication with SSO, be sure that you are
 
 ### Access your Web APIs through SSO
 
-If your add-in has server-side APIs that require an authorized user to call, use the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method to get an access token. The access token provides access to your own web server (configured through a Microsoft Azure app registration.) When you call APIs on your web server, you also pass the access token to authorize the user.
+If your add-in has server-side APIs that require an authorized user, call the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) method to get an access token. The access token provides access to your own web server (configured through a [Microsoft Azure app registration](register-sso-add-in-aad-v2.md).) When you call APIs on your web server, you also pass the access token to authorize the user.
 
-As an example, the following code shows a REST API for getting data associated with the signed in user. This code is ASP.NET code running on a web server. The `[Authorize]` attribute will require that a valid access token is passed from the client, or it will return an error to the client.
-
-```csharp
-    [Authorize]
-    // GET api/data
-    public async Task<HttpResponseMessage> Get()
-    {
-        string accessToken = Request.Headers.Authorization.ToString().Split(' ')[1];
-
-        return await DataApiHelper.GetDataForUser(accessToken);
-    }
-```
-
-The following code shows how to call the previous REST API from your add-in's client-side JavaScript code. The code gets the access token by calling `getAccessToken`. Then it constructs an AJAX call with the correct authorization header and URL for the server API.
-
-> [!IMPORTANT]
-> As a best security practice, always call `getAccessToken` when you need an access token. Office will cache it for you. Don't cache or store the access token using your own code.
+The following code shows how to construct an HTTPS GET request to the add-in's web server API to get some data. The code runs on the client side, such as in a task pane. It first gets the access token by calling `getAccessToken`. Then it constructs an AJAX call with the correct authorization header and URL for the server API.
 
 ```javascript
 function getOneDriveFileNames() {
@@ -71,11 +53,19 @@ function getOneDriveFileNames() {
     })
         .done(function (result) {
             showDataValues(result)
-        })
-        .fail(function (result) {
-            handleErrors(result);
         });
 }
+```
+
+The following code shows an example /api/data handler for the REST call from the previous code example. The code is ASP.NET code running on a web server. The `[Authorize]` attribute will require that a valid access token is passed from the client, or it will return an error to the client.
+
+```csharp
+    [Authorize]
+    // GET api/data
+    public async Task<HttpResponseMessage> Get()
+    {
+        //... return data to the client-side code...
+    }
 ```
 
 ### Access Microsoft Graph through SSO
@@ -105,9 +95,7 @@ In some scenarios you may not want to use SSO. For example, you may need to auth
 
 ### Authenticate with the Microsoft identity platform
 
-Your add-in can sign in users using the [Microsoft identity platform](/azure/active-directory/develop) as the authentication provider. Once you have signed in the user, you can then use the Microsoft identity platform to authorize the add-in to [Microsoft Graph](/graph) or other services managed by Microsoft. This approach is used when SSO through Office is unavailable. Also, there are scenarios in which you want to have your users sign in to your add-in separately even when SSO is available; for example, if you want them to have the option of signing in to the add-in with a different ID from the one with which they are currently signed in to Office.
-
-You can authenticate a user in an Office Add-in with the Microsoft identity platform as you would in other web applications. You should use this approach as the alternate authentication system when SSO doesn't work.
+Your add-in can sign in users using the [Microsoft identity platform](/azure/active-directory/develop) as the authentication provider. Once you have signed in the user, you can then use the Microsoft identity platform to authorize the add-in to [Microsoft Graph](/graph) or other services managed by Microsoft. You can use this approach when SSO through Office is unavailable. Also, there are scenarios in which you want to have your users sign in to your add-in separately even when SSO is available; for example, if you want them to have the option of signing in to the add-in with a different ID from the one with which they are currently signed in to Office.
 
 It's important to note that the Microsoft identity platform does not allow its sign in page to open in an iframe. When an Office Add-in is running on *Office on the web*, the task pane is an iframe. This means that you'll need to open the sign-in page by using a dialog box opened with the Office dialog API. This affects how you use authentication helper libraries. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
 
@@ -123,9 +111,6 @@ Popular online services, including Google, Facebook, LinkedIn, SalesForce, and G
 
 > [!IMPORTANT]
 > Before you begin coding, find out if the data source allows its sign in page to open in an iframe. When an Office Add-in is running on *Office on the web*, the task pane is an iframe. If the data source does not allow its sign in page to open in an iframe, then you'll need to open the sign in page in a dialog box opened with the Office dialog API. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
-
-## Implement an alternative sign-in approach
-TODO
 
 ## See also
 
