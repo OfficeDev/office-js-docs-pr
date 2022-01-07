@@ -43,7 +43,7 @@ The following table applies only to version 1.0 of **VersionOverrides** elements
 
 ### Description
 
-Describes the add-in. This overrides the `Description` element in any parent portion of the manifest. The text of the description is contained in a child element of the **LongString** element contained in the [Resources](resources.md) element. The `resid` attribute of the **Description** element can be no more than 32 characters and is set to the value of the `id` attribute of the `String` element that contains the text.
+Describes the add-in. This overrides the `Description` element in any parent portion of the manifest. The text of the description is contained in a child element of the **LongString** element contained in the [Resources](resources.md) element. The `resid` attribute of the **Description** element can be no more than 32 characters and must match the value of the `id` attribute of a child element of the **ShortString** element contained in the [Resources](resources.md) element. 
 
 **Add-in type:** Task pane, Mail
 
