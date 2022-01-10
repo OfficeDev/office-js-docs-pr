@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 11/16/2021
+ms.date: 12/22/2021
 ms.localizationpriority: medium
 ---
 
@@ -17,15 +17,15 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 
 ## Supported events
 
-The following table lists events that are currently supported. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Event-specific JSON** column includes a link to the related object where applicable. The table also notes the supported clients for each event.
+The following table lists events that are currently available and the supported clients for each event. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Event-specific JSON** column includes a link to the related object where applicable.
 
 > [!IMPORTANT]
-> Events still in preview may only be available with a Microsoft 365 subscription in Outlook on the web and on Windows. For more details, see [How to preview](#how-to-preview) in this article. Preview events shouldn't be used in production add-ins.
+> Events still in preview may only be available with a Microsoft 365 subscription and in a limited set of supported clients as noted in the following table. For client configuration details, see [How to preview](#how-to-preview) in this article. Preview events shouldn't be used in production add-ins.
 
 |Event|Description|Event-specific JSON|Minimum requirement set|Supported clients|
 |---|---|---|---|---|
-|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|Not applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows, web browser|
-|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|Not applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows, web browser|
+|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|Not applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows, web browser, new Mac UI preview|
+|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|Not applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows, web browser, new Mac UI preview|
 |`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, web browser|
 |`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, web browser|
 |`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, web browser|
@@ -40,13 +40,15 @@ The following table lists events that are currently supported. When an event is 
 
 We invite you to try out the events now in preview! Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).
 
-To preview these events:
+To preview these events where available:
 
 - For Outlook on the web:
   - [Configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
   - Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`.
+- For Outlook on the new Mac UI preview:
+  - The minimum required build is 16.54 (21101001). Join the [Office Insider program](https://insider.office.com/join/Mac) and choose the **Beta Channel** for access to Office beta builds.
 - For Outlook on Windows:
-  - The minimum required build is 16.0.14511.10000. Join the [Office Insider program](https://insider.office.com) for access to Office beta builds.
+  - The minimum required build is 16.0.14511.10000. Join the [Office Insider program](https://insider.office.com/join/windows) and choose the **Beta Channel** for access to Office beta builds.
   - Configure the registry. Outlook includes a local copy of the production and beta versions of Office.js instead of loading from the CDN. By default, the local production copy of the API is referenced. To switch to the local beta copy of the Outlook JavaScript APIs, you need to add this registry entry, otherwise beta APIs may not be found.
     1. Create the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`.
     1. Add an entry named `EnableBetaAPIsInJavaScript` and set the value to `1`. The following image shows what the registry should look like.
@@ -80,7 +82,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web. -->
+               This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
@@ -176,7 +178,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 </VersionOverrides>
 ```
 
-Outlook on Windows uses a JavaScript file, while Outlook on the web uses an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the `Runtime` element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
+Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI preview use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the `Runtime` element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
 
 > [!TIP]
 > To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
@@ -244,6 +246,10 @@ In this scenario, you'll add handling for composing new items.
 
     ![Screenshot of a message window in Outlook on the web with the subject set on compose.](../images/outlook-web-autolaunch-1.png)
 
+1. In Outlook on the new Mac UI preview, create a new message.
+
+    ![Screenshot of a message window in Outlook on the new Mac UI preview with the subject set on compose.](../images/outlook-mac-autolaunch.png)
+
 1. In Outlook on Windows, create a new message.
 
     ![Screenshot of a message window in Outlook on Windows with the subject set on compose.](../images/outlook-win-autolaunch.png)
@@ -253,10 +259,16 @@ In this scenario, you'll add handling for composing new items.
     >
     > 1. Close Outlook.
     > 1. Open the **Task Manager** and ensure that the **msoadfsb.exe** process is not running.
-    > 1. Run the following command.
+    > 1. If you're using `https://localhost` (the default version in the manifest), run the following command.
     >
     >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
+    >    ```
+    >
+    > 1. If you're using `http://localhost`, run the following command.
+    >
+    >    ```command&nbsp;line
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
     >    ```
     >
     > 1. Restart Outlook.

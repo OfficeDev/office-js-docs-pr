@@ -2,7 +2,7 @@
 title: Use Smart Alerts and the OnMessageSend event in your Outlook add-in (preview)
 description: Learn how to handle the send message event in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 11/01/2021
+ms.date: 12/22/2021
 ms.localizationpriority: medium
 ---
 
@@ -44,7 +44,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web. -->
+               This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
@@ -227,10 +227,16 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 >
 > 1. Close Outlook.
 > 1. Open the **Task Manager** and ensure that the **msoadfsb.exe** process is not running.
-> 1. Run the following command.
+> 1. If you're using `https://localhost` (the default version in the manifest), run the following command.
 >
 >    ```command&nbsp;line
->    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+>    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
+>    ```
+>
+> 1. If you're using `http://localhost`, run the following command.
+>
+>    ```command&nbsp;line
+>    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
 >    ```
 >
 > 1. Restart Outlook.

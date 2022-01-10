@@ -266,9 +266,12 @@ items:
       href: develop/develop-office-add-ins-for-the-ipad.md
   - name: Test and debug
     items:
-    - name: Test and debug Office Add-ins
+    - name: Test Office Add-ins
       href: testing/test-debug-office-add-ins.md
       displayName: test, debug
+    - name: Debug Office Add-ins
+      href: testing/debug-add-ins-overview.md
+      displayName: debug
     - name: Windows
       items:
       - name: Sideload Office Add-ins on Windows from a network share
@@ -316,6 +319,8 @@ items:
       href: testing/testing-and-troubleshooting.md
     - name: Troubleshoot development errors
       href: testing/troubleshoot-development-errors.md
+    - name: Unit testing
+      href: testing/unit-testing.md
     - name: Usability testing
       href: develop/usability-testing.md
     - name: Validate an add-in's manifest
@@ -357,6 +362,8 @@ items:
         href: reference/requirement-sets/identity-api-requirement-sets.md
       - name: Image Coercion requirement sets
         href: reference/requirement-sets/image-coercion-requirement-sets.md
+      - name: Keyboard Shortcuts requirement sets
+        href: reference/requirement-sets/keyboard-shortcuts-requirement-sets.md
       - name: Office Common API requirement sets
         href: reference/requirement-sets/office-add-in-requirement-sets.md
       - name: Open Browser Window requirement sets
@@ -782,10 +789,7 @@ items:
     - name: Autogenerate JSON metadata
       href: excel/custom-functions-json-autogeneration.md
       displayName: Excel, Custom Functions
-    - name: Data types and custom functions overview (preview)
-      href: excel/custom-functions-data-types-overview.md
-      displayName: Excel, Custom Functions
-    - name: Data types and custom functions concepts (preview)
+    - name: Data types (preview)
       href: excel/custom-functions-data-types-concepts.md
       displayName: Excel, Custom Functions
     - name: Call Excel JavaScript APIs
@@ -1204,6 +1208,9 @@ items:
         displayName: PowerPoint
       - name: PowerPointApi preview requirement set
         href: reference/requirement-sets/powerpoint-preview-apis.md
+        displayName: PowerPoint
+      - name: PowerPointApi 1.3 requirement set
+        href: reference/requirement-sets/powerpoint-api-1-3-requirement-set.md
         displayName: PowerPoint
       - name: PowerPointApi 1.2 requirement set
         href: reference/requirement-sets/powerpoint-api-1-2-requirement-set.md

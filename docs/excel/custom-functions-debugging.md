@@ -1,7 +1,7 @@
 ---
 title: UI-less custom functions debugging
 description: Learn how to debug your Excel custom functions that don't use a task pane.
-ms.date: 07/08/2021
+ms.date: 01/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -63,7 +63,7 @@ At this point, execution will stop on the line of code where you set the breakpo
 
 ## Use the VS Code debugger for Excel in Microsoft Edge
 
-You can use VS Code to debug UI-less custom functions in Excel on the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) extension.
+You can use VS Code to debug UI-less custom functions in Excel on the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Microsoft Edge DevTools extension for Visual Studio Code](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension).
 
 ### Run your add-in from VS Code
 
