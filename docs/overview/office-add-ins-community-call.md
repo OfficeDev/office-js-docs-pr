@@ -11,7 +11,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for January 12th call
 
-- Working with data types APIs in Excel
+- Excel shortcut customization APIs
 - Updates to SSO in Office
 
 ## Previous calls
