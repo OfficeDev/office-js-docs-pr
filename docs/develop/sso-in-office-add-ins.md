@@ -40,7 +40,7 @@ If you are working with an **Outlook** add-in, be sure to enable Modern Authenti
 
 You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. For example, if your add-in is loaded on an older version of Office that does not support SSO, the `getAccessToken` call will fail.
 
-For Excel, Word, and PowerPoint add-ins you will typically want to fall back to using the Microsoft identity platform. For more information, see [Authenticate with the Microsoft identity platform](overview-authn-authz#authenticate-with-the-microsoft-identity-platform.md).
+For Excel, Word, and PowerPoint add-ins you will typically want to fall back to using the Microsoft identity platform. For more information, see [Authenticate with the Microsoft identity platform](overview-authn-authz.md#authenticate-with-the-microsoft-identity-platform).
 
 For Outlook add-ins, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md).
 
@@ -153,7 +153,7 @@ If you need to access web APIs on your server, or additional services such as Mi
 If you need to access Microsoft Graph data, your server-side code should do the following:
 
 - Validate the access token (see **Validate the access token** below).
-- Initiate the [OAuth 2.0 On-Behalf-Of flow](azure/active-directory/develop/v2-oauth2-on-behalf-of-flow) with a call to the Microsoft identity platform that includes the access token, some metadata about the user, and the credentials of the add-in (its ID and secret). The Microsoft identity platform will return a new access token that can be used to access Microsoft Graph.
+- Initiate the [OAuth 2.0 On-Behalf-Of flow](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow) with a call to the Microsoft identity platform that includes the access token, some metadata about the user, and the credentials of the add-in (its ID and secret). The Microsoft identity platform will return a new access token that can be used to access Microsoft Graph.
 - Get data from Microsoft Graph by using the new token.
 - If you need to cache the new access token for multiple calls, we recommend using [Token cache serialization in MSAL.NET](/azure/active-directory/develop/msal-net-token-cache-serialization?tabs=aspnet).
 

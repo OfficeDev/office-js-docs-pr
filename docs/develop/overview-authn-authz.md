@@ -74,7 +74,7 @@ In some scenarios not only do you need the user's identity, but you also need to
 
 1. Get the access token for the current user through SSO by calling [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). If the user is not signed in, Office will open a dialog box and sign in the user with the Microsoft identity platform. After the user signs in, or if the user is already signed in, the method returns an access token.
 1. Pass the access token to your server-side code.
-1. On the server-side, use the [OAuth 2.0 On-Behalf-Of flow](azure/active-directory/develop/v2-oauth2-on-behalf-of-flow) to exchange the access token for a new access token containing the necessary delegated user identity and permissions to call Microsoft Graph.
+1. On the server-side, use the [OAuth 2.0 On-Behalf-Of flow](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow) to exchange the access token for a new access token containing the necessary delegated user identity and permissions to call Microsoft Graph.
 
 > [!NOTE]
 > For best security to avoid leaking the access token, always perform the On-Behalf-Of flow on the server-side. Call Microsoft Graph APIs from your server, not the client. Do not return the access token to the client-side code.
