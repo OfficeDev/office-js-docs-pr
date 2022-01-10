@@ -18,7 +18,7 @@ In this article you'll create an Office Add-in that gets the ID token, and displ
 
 To use SSO with Office, you need to create an app registration in the Azure portal so the Microsoft identity platform can provide authentication and authorization services for your Office Add-in and its users.
 
-1. Go to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
+1. To register your app, go to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page.
 
 1. Sign in with the **_admin_** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
 
