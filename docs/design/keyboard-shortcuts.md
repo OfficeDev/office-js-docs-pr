@@ -12,7 +12,7 @@ Keyboard shortcuts, also known as key combinations, enable your add-in's users t
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> To start with a working version of an add-in with keyboard shortcuts already enabled, clone and run the sample [Excel Keyboard Shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts). When you are ready to add keyboard shortcuts to your own add-in, continue with this article.
+> To start with a working version of an add-in with keyboard shortcuts already enabled, clone and run the sample [Excel Keyboard Shortcuts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts). When you are ready to add keyboard shortcuts to your own add-in, continue with this article.
 
 There are three steps to add keyboard shortcuts to an add-in.
 
@@ -125,7 +125,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     });
     ```
 
-Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Alt+Up** and **Ctrl+Alt+Down**. The same behavior is shown in the [Excel keyboard shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) sample in the Office Add-ins PnP repo in GitHub.
+Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Alt+Up** and **Ctrl+Alt+Down**. The same behavior is shown in the [Excel keyboard shortcuts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) sample in the Office Add-ins PnP repo in GitHub.
 
 ## Details and restrictions
 
@@ -322,5 +322,5 @@ Office.actions.areShortcutsInUse(shortcuts)
 
 ## Next Steps
 
-- See the [Excel keyboard shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) sample add-in.
+- See the [Excel keyboard shortcuts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) sample add-in.
 - Get an overview of working with extended overrides in [Work with extended overrides of the manifest](../develop/extended-overrides.md).
