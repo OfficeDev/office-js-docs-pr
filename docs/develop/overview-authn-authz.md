@@ -1,7 +1,7 @@
 ---
 title: Overview of authentication and authorization in Office Add-ins
 description: 'Learn how authentication and authorization works in Office Add-ins.'
-ms.date: 01/06/2022
+ms.date: 01/07/2022
 ms.localizationpriority: high
 ---
 
@@ -52,7 +52,7 @@ function getOneDriveFileNames() {
         type: "GET"
     })
         .done(function (result) {
-            showDataValues(result)
+            //... work with data from the result...
         });
 }
 ```
@@ -64,7 +64,7 @@ The following code shows an example /api/data handler for the REST call from the
     // GET api/data
     public async Task<HttpResponseMessage> Get()
     {
-        //... return data to the client-side code...
+        //... obtain and return data to the client-side code...
     }
 ```
 
@@ -77,7 +77,7 @@ In some scenarios not only do you need the user's identity, but you also need to
 1. On the server-side, use the [OAuth 2.0 On-Behalf-Of flow](azure/active-directory/develop/v2-oauth2-on-behalf-of-flow) to exchange the access token for a new access token containing the necessary delegated user identity and permissions to call Microsoft Graph.
 
 > [!NOTE]
-> For a best security practice, we recommend that you always perform the On-Behalf-Of flow on the server-side. When using the access token, call Microsoft Graph APIs from your server, not the client. Do not return the access token to the client-side code.
+> For best security to avoid leaking the access token, always perform the On-Behalf-Of flow on the server-side. Call Microsoft Graph APIs from your server, not the client. Do not return the access token to the client-side code.
 
 Before you begin implementing SSO to access Microsoft Graph in your add-in, be sure that you are thoroughly familiar with the following articles.
 
@@ -95,7 +95,7 @@ In some scenarios you may not want to use SSO. For example, you may need to auth
 
 ### Authenticate with the Microsoft identity platform
 
-Your add-in can sign in users using the [Microsoft identity platform](/azure/active-directory/develop) as the authentication provider. Once you have signed in the user, you can then use the Microsoft identity platform to authorize the add-in to [Microsoft Graph](/graph) or other services managed by Microsoft. You can use this approach when SSO through Office is unavailable. Also, there are scenarios in which you want to have your users sign in to your add-in separately even when SSO is available; for example, if you want them to have the option of signing in to the add-in with a different ID from the one with which they are currently signed in to Office.
+Your add-in can sign in users using the [Microsoft identity platform](/azure/active-directory/develop) as the authentication provider. Once you have signed in the user, you can then use the Microsoft identity platform to authorize the add-in to [Microsoft Graph](/graph) or other services managed by Microsoft. Use this approach as an alternate sign-in method when SSO through Office is unavailable. Also, there are scenarios in which you want to have your users sign in to your add-in separately even when SSO is available; for example, if you want them to have the option of signing in to the add-in with a different ID from the one with which they are currently signed in to Office.
 
 It's important to note that the Microsoft identity platform does not allow its sign in page to open in an iframe. When an Office Add-in is running on *Office on the web*, the task pane is an iframe. This means that you'll need to open the sign-in page by using a dialog box opened with the Office dialog API. This affects how you use authentication helper libraries. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
 

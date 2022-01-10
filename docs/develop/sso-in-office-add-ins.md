@@ -1,7 +1,7 @@
 ---
 title: Enable single sign-on (SSO) in an Office Add-in
 description: 'Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.'
-ms.date: 01/02/2021
+ms.date: 01/07/2022
 ms.localizationpriority: high
 ---
 
@@ -40,7 +40,7 @@ If you are working with an **Outlook** add-in, be sure to enable Modern Authenti
 
 You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. For example, if your add-in is loaded on an older version of Office that does not support SSO, the `getAccessToken` call will fail.
 
-For Excel, Word, and PowerPoint add-ins you will typically want to fall back to using the Microsoft identity platform. For more information, see [Authenticate with the Microsoft identity platform](add-ins/develop/overview-authn-authz#authenticate-with-the-microsoft-identity-platform).
+For Excel, Word, and PowerPoint add-ins you will typically want to fall back to using the Microsoft identity platform. For more information, see [Authenticate with the Microsoft identity platform](overview-authn-authz#authenticate-with-the-microsoft-identity-platform.md).
 
 For Outlook add-ins, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md).
 
@@ -123,7 +123,7 @@ async function getUserData() {
         let userToken = jwt_decode(userTokenEncoded); // Using the https://www.npmjs.com/package/jwt-decode library.
         console.log(userToken.name); // user name
         console.log(userToken.preferred_username); // email
-        console.log(userToken.oid); // unique id     
+        console.log(userToken.oid); // user id     
     }
     catch (exception) {
         if (exception.code === 13003) {
@@ -135,6 +135,30 @@ async function getUserData() {
     }
 }
 ```
+
+
+#### When to call getAccessToken
+
+If your add-in requires a signed in user, then you should call `getAccessToken` from inside `Office.initialize`. You should also pass `allowSignInPrompt: true` in the `options` parameter of `getAccessToken`. For example; `OfficeRuntime.auth.getAccessToken( { allowSignInPrompt: true });` This will ensure that if the user is not yet signed in, that Office prompts the user through the UI to sign in now.
+
+If the add-in has some functionality that doesn't require a signed in user, then you can call `getAccessToken` *when the user takes an action that requires a signed in user*. There is no significant performance degradation with redundant calls of `getAccessToken` because Office caches the access token and will reuse it, until it expires, without making another call to the [Microsoft identity platform](/azure/active-directory/develop/) whenever `getAccessToken` is called. So you can add calls of `getAccessToken` to all functions and handlers that initiate an action where the token is needed.
+
+> [!IMPORTANT]
+> As a best security practice, always call `getAccessToken` when you need an access token. Office will cache it for you. Don't cache or store the access token using your own code.
+
+### Pass the access token to server-side code
+
+If you need to access web APIs on your server, or additional services such as Microsoft Graph, you'll need to pass the access token to your server-side code. The access token provides access (for the authenticated user) to your web APIs. Also the server-side code can parse the token for identity information if it needs it. (See **Use the access token as an identity token** below.) There are many libraries available for different languages and platforms that can help simplify the code you write. For more information, see [Overview of the Microsoft Authentication Library (MSAL)](/azure/active-directory/develop/msal-overview).
+
+If you need to access Microsoft Graph data, your server-side code should do the following:
+
+- Validate the access token (see **Validate the access token** below).
+- Initiate the [OAuth 2.0 On-Behalf-Of flow](azure/active-directory/develop/v2-oauth2-on-behalf-of-flow) with a call to the Microsoft identity platform that includes the access token, some metadata about the user, and the credentials of the add-in (its ID and secret). The Microsoft identity platform will return a new access token that can be used to access Microsoft Graph.
+- Get data from Microsoft Graph by using the new token.
+- If you need to cache the new access token for multiple calls, we recommend using [Token cache serialization in MSAL.NET](/azure/active-directory/develop/msal-net-token-cache-serialization?tabs=aspnet).
+
+> [!IMPORTANT]
+> As a best security practice, always use the server-side code to make Microsoft Graph calls, or other calls that require passing an access token. Never return the OBO token to the client to enable the client to make direct calls to Microsoft Graph. This helps protect the token from being intercepted or leaked. For more information on the proper protocol flow, see the [OAuth 2.0 protocol diagram](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#protocol-diagram)
 
 The following code shows an example of passing the access token to the server-side. The token is passed in an `Authorization` header when sending a request to a server-side web API. This example sends JSON data, so it uses the `POST` method, but `GET` is sufficient to send the access token when you are not writing to the server.
 
@@ -155,23 +179,6 @@ $.ajax({
     // Cleanup
 });
 ```
-
-#### When to call getAccessToken
-
-If your add-in requires a signed in user, then you should call `getAccessToken` from inside `Office.initialize`. You should also pass `allowSignInPrompt: true` in the `options` parameter of `getAccessToken`. For example; `OfficeRuntime.auth.getAccessToken( { allowSignInPrompt: true });` This will ensure that if the user is not yet signed in, that Office prompts the user through the UI to sign in now.
-
-If the add-in has some functionality that doesn't require a signed in user, then you can call `getAccessToken` *when the user takes an action that requires a signed in user*. There is no significant performance degradation with redundant calls of `getAccessToken` because Office caches the access token and will reuse it, until it expires, without making another call to the [Microsoft identity platform](/azure/active-directory/develop/) whenever `getAccessToken` is called. So you can add calls of `getAccessToken` to all functions and handlers that initiate an action where the token is needed.
-
-### Pass the access token to server-side code
-
-There are scenarios where you will need to pass the access token to your add-in's server-side code. Your server-side code may provide web APIs that need to use information about the user that is extracted from the token; for example, a method that looks up the user's preferences in your hosted data base. (See **Use the access token as an identity token** below.) Depending on your language and framework, libraries might be available that will simplify the code you have to write.
-
-If you need to access Microsoft Graph data, your server-side code should do the following:
-
-  - Validate the access token (see **Validate the access token** below).
-  - Initiate the on-behalf-of flow with a call to the Microsoft identity platform that includes the access token, some metadata about the user, and the credentials of the add-in (its ID and secret). The Microsoft identity platform will return a new access token that can be used to access Microsoft Graph.
-  - Get data from Microsoft Graph by using the new token.
-  - If you need to cache the new access token for multiple calls, we recommend using [Token cache serialization in MSAL.NET](/azure/active-directory/develop/msal-net-token-cache-serialization?tabs=aspnet).
 
 For more details about getting authorized access to the user's Microsoft Graph data, see [Authorize to Microsoft Graph in your Office Add-in](authorize-to-microsoft-graph.md).
 

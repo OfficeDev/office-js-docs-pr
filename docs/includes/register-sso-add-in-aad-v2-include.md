@@ -1,5 +1,6 @@
+### Create the app registration
 
-First, complete the steps in [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app) to create an initial app registration. Return here after you complete the step [Add credentials](/azure/active-directory/develop/quickstart-register-app#add-credentials).
+First, complete the steps in [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app) to create an initial app registration. After you complete the step [Add credentials](/azure/active-directory/develop/quickstart-register-app#add-credentials) return to this article and continue following the steps in [Expose a web API](#expose-a-web-api).
 
 ### Expose a web API
 
