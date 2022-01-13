@@ -72,7 +72,7 @@ The XML manifest file for an add-in that defines custom functions (**./manifest.
 
 If you are using the Yo Office generator to create files, we recommend adjusting your manifest to use a shared runtime, as this is not the default for these files. To change your manifest, follow the instructions in [Configure your Excel add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
-To see a full working manifest from a sample add-in, see [this Github repository](https://github.com/OfficeDev/Office-Add-in-samples/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml).
+To see a full working manifest from a sample add-in, see [this Github repository](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
