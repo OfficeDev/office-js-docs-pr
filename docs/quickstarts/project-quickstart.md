@@ -1,7 +1,7 @@
 ---
 title: Build your first Project task pane add-in
 description: Learn how to build a simple Project task pane add-in by using the Office JS API.
-ms.date: 08/04/2021
+ms.date: 01/06/2022
 ms.prod: project
 ms.localizationpriority: high
 ---
@@ -93,8 +93,7 @@ Office.context.document.getSelectedTaskAsync(
 
 1. Start the local web server.
 
-    > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     Run the following command in the root directory of your project. When you run this command, the local web server will start.
 

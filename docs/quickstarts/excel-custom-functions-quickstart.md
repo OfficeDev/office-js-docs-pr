@@ -1,5 +1,5 @@
 ---
-ms.date: 12/28/2021
+ms.date: 01/06/2022
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -54,8 +54,7 @@ To test your add-in in Excel on Windows, run the following command. When you run
 npm run start:desktop
 ```
 
-> [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start`, accept the prompt to install the certificate that the Yeoman generator provides.
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
     
 # [Excel on the web](#tab/excel-online)
 
@@ -65,8 +64,7 @@ To test your add-in in Excel on the web, run the following command. When you run
 npm run start:web
 ```
 
-> [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run start`, accept the prompt to install the certificate that the Yeoman generator provides.
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 To use your custom functions add-in, open a new workbook in Excel on a browser. In this workbook, complete the following steps to sideload your add-in.
 

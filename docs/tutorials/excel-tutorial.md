@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: 'Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
-ms.date: 09/23/2021
+ms.date: 01/06/2022
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 ms.localizationpriority: high
@@ -171,8 +171,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 1. Complete the following steps to start the local web server and sideload your add-in.
 
-    > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > If you're testing your add-in on Mac, run the following command in the root directory of your project before proceeding. When you run this command, the local web server starts.
