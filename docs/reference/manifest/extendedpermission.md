@@ -1,7 +1,7 @@
 ---
 title: ExtendedPermission element in the manifest file
 description: Defines an extended permission the add-in needs to access the associated API or feature.
-ms.date: 09/24/2021
+ms.date: 01/04/2022
 ms.localizationpriority: medium
 ---
 
@@ -13,6 +13,16 @@ Defines an extended permission the add-in needs to access the associated API or 
 > Support for this element was introduced in requirement set 1.9. See [clients and platforms](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 **Add-in type:** Mail
+
+**Valid only in these VersionOverrides schemas**:
+
+- Mail 1.1
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associated with these requirement sets**:
+
+- [Mailbox 1.9](../../reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md)
 
 ## Available extended permissions
 
