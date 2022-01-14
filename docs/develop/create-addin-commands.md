@@ -438,6 +438,6 @@ In Excel and Word, you can add your add-in commands to the ribbon by using the d
 ## See also
 
 - [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md)
-- [Sample: Create an Excel add-in with command buttons](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/excel)
-- [Sample: Create an Word add-in with command buttons](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/word)
-- [Sample: Create an PowerPoint add-in with command buttons](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/powerpoint)
+- [Sample: Create an Excel add-in with command buttons](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/excel)
+- [Sample: Create an Word add-in with command buttons](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word)
+- [Sample: Create an PowerPoint add-in with command buttons](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/powerpoint)

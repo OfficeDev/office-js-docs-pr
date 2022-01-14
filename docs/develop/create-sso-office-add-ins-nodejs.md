@@ -32,7 +32,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Set up the starter project
 
-1. Clone or download the repo at [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO).
+1. Clone or download the repo at [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO).
 
     > [!NOTE]
     > There are three versions of the sample:

@@ -340,5 +340,5 @@ Full CORS support is coming soon.
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
 - [Smart Alerts and OnMessageSend walkthrough](smart-alerts-onmessagesend-walkthrough.md)
 - PnP samples:
-  - [Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
-  - [Use Outlook event-based activation to tag external recipients](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)
+  - [Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
+  - [Use Outlook event-based activation to tag external recipients](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)

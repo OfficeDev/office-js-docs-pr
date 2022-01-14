@@ -27,7 +27,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Set up the starter project
 
-Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
+Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 > [!NOTE]
 > There are two versions of the sample.
