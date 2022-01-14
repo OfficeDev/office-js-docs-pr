@@ -43,16 +43,7 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 1. In the command line starting at the root directory of your project, run the following command. Replace "{url}" with the URL of an Office document on your OneDrive or a SharePoint library to which you have permissions.
 
-    ```command&nbsp;line
-    npm run start:web -- --document {url}
-
-    // examples:
-    npm run start:web -- --document https://contoso.sharepoint.com/:t:/g/EZGxP7ksiE5DuxvY638G798BpuhwluxCMfF1WZQj3VYhYQ?e=F4QM1R
-
-    npm run start:web -- --document https://1drv.ms/x/s!jkcH7spkM4EGgcZUgqthk4IK3NOypVw?e=Z6G1qp
-
-    npm run start:web -- --document https://contoso-my.sharepoint-df.com/:t:/p/user/EQda453DNTpFnl1bFPhOVR0BwlrzetbXvnaRYii2lDr_oQ?e=RSccmNP
-    ```
+    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. The first time you use this method to sideload an add-in on the web, you'll see a dialog asking you to enable developer mode. Select the checkbox for **Enable Developer Mode now** and select **OK**.
 
