@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins in Office on the web for testing
 description: 'Test your Office Add-in in Office on the web by sideloading.'
-ms.date: 11/04/2021
+ms.date: 01/13/2022
 ms.localizationpriority: medium
 ---
 
@@ -41,7 +41,9 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
     > If you are using the Yeoman generator, adding this information is not necessary as the Yeoman tooling appends this information automatically.
     > Note that in both cases, however, you can only load manifests from localhost.
 
-1. In the command line starting at the root directory of your project, run the following command: `npm run start:web`.
+1. In the command line starting at the root directory of your project, run the following command. Replace "{url}" with the URL of an Office document on your OneDrive or a SharePoint library to which you have permissions.
+
+    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. The first time you use this method to sideload an add-in on the web, you'll see a dialog asking you to enable developer mode. Select the checkbox for **Enable Developer Mode now** and select **OK**.
 

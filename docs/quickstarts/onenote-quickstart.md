@@ -1,7 +1,7 @@
 ---
 title: Build your first OneNote task pane add-in
 description: Learn how to build a simple OneNote task pane add-in by using the Office JS API.
-ms.date: 01/06/2022
+ms.date: 01/13/2022
 ms.prod: onenote
 ms.localizationpriority: high
 ---
@@ -84,11 +84,9 @@ try {
     > npm run dev-server
     > ```
 
-    Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+    Run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a OneNote document on your OneDrive or a SharePoint library to which you have permissions.
 
-    ```command&nbsp;line
-    npm run start:web
-    ```
+    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]`
 
 1. In [OneNote on the web](https://www.onenote.com/notebooks), open a notebook and create a new page.
 

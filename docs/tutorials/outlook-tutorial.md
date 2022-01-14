@@ -156,7 +156,7 @@ Before going any further, let's test the basic add-in that the generator created
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running) and your add-in will be sideloaded.
+1. Run the following command in the root directory of your project. When you run this command, the local web server starts and your add-in will be sideloaded.
 
     ```command&nbsp;line
     npm start

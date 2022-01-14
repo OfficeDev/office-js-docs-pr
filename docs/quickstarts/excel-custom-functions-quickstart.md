@@ -1,5 +1,5 @@
 ---
-ms.date: 01/06/2022
+ms.date: 01/13/2022
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -58,11 +58,9 @@ npm run start:desktop
     
 # [Excel on the web](#tab/excel-online)
 
-To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start.
+To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
-```command&nbsp;line
-npm run start:web
-```
+[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 

@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: 'In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.'
-ms.date: 12/28/2021
+ms.date: 01/13/2022
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ms.localizationpriority: high
@@ -70,23 +70,9 @@ npm run start:desktop
 
 # [Excel on the web](#tab/excel-online)
 
-To test your add-in in Excel on a browser, run the following command. When you run this command, the local web server will start.
+To test your add-in in Excel on a browser, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
-```command&nbsp;line
-npm run start:web
-```
-
-To use your custom functions add-in, open a new workbook in Excel on the web. In this workbook, complete the following steps to sideload your add-in.
-
-1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
-
-   ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted.](../images/excel-cf-online-register-add-in-1.png)
-
-1. Choose **Manage My Add-ins** and select **Upload My Add-in**.
-
-1. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
-
-1. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
+[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 ---
 
