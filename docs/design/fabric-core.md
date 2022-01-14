@@ -1,7 +1,7 @@
 ---
 title: Fabric Core in Office Add-ins 
 description: 'Get an overview of how to use Fabric Core, and Fabric UI components in Office Add-ins.'
-ms.date: 07/08/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
 ---
 
@@ -16,7 +16,7 @@ If your add-in's UI is not React-based, you can also make use of a set of non-Re
 
 ## Use Fabric Core: icons, fonts, colors
 
-1. Add the CDN reference to the HTML on your page.  
+1. Add the content delivery network (CDN) reference to the HTML on your page.
 
     ```html
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css">
