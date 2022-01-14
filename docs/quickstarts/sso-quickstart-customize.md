@@ -44,9 +44,9 @@ Before the add-in can successfully read the contents of the user's OneDrive for 
 
 3. Go to the **App registrations** page, and choose the app registration that you created during the quick start.
     > [!TIP]
-    > The **Display name** of the app will match the add-in name that you specified when you created the project with the Yeoman generator.
+    > The **Display name** of the app matches the add-in name that you specified when you created the project with the Yeoman generator.
 
-4. Under **Manage** choose **API permissions**.
+4. Under **Manage**, choose **API permissions**.
 
 5. In the **User.Read** row of the permissions table, choose the ellipsis and then select **Revoke admin consent** from the menu that appears.
 

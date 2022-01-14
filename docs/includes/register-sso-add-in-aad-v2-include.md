@@ -1,11 +1,11 @@
 ### Create the app registration
 
-First, complete the steps in [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app) to create an initial app registration. After you complete the step [Add credentials](/azure/active-directory/develop/quickstart-register-app#add-credentials) return to this article and continue following the steps in [Expose a web API](#expose-a-web-api).
+First, complete the steps in [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app) to create an initial app registration. After you complete the step [Add credentials](/azure/active-directory/develop/quickstart-register-app#add-credentials), return to this article and continue following the steps in [Expose a web API](#expose-a-web-api).
 
 ### Expose a web API
 
 1. Be sure you are viewing the app registration you just created.
-1. Select **Expose an API** under **Manage**. Select the **Set** link. This opens a **Set the App ID URI** box with a generated Application ID URI in the form `api://<application-id>`. Insert your fully qualified domain name before the `<application-id>`. The entire ID should have the form `api://<fully-qualified-domain-name>/<application-id>`; for example `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
+1. Under **Manage**, select **Expose an API**, and select the **Set** link. This opens a **Set the App ID URI** box with a generated Application ID URI in the form `api://<application-id>`. Insert your fully qualified domain name before the `<application-id>`. The entire ID should have the form `api://<fully-qualified-domain-name>/<application-id>`; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
     > [!NOTE]
     > If you get an error saying that the domain is already owned but you own it, follow the procedure at [Quickstart: Add a custom domain name to Azure Active Directory](/azure/active-directory/add-custom-domain) to register it, and then repeat this step. (This error can also occur if you are not signed in with credentials of an admin in the Microsoft 365 tenancy. See step 2. Sign out and sign in again with admin credentials and repeat the process from step 3.)
@@ -46,7 +46,7 @@ First, complete the steps in [Quickstart: Register an application with the Micro
 
       b. Select **Add application**.
 
-1. Under **Manage** select **Authentication**, then choose **Add a platform**.
+1. Under **Manage**, select **Authentication**, then choose **Add a platform**.
 
 1. In the **Configure platforms** pane, select **Web**, and then set the **Redirect URI** value to `https://<fully-qualified-domain-name>`.
 
@@ -62,6 +62,6 @@ First, complete the steps in [Quickstart: Register an application with the Micro
     * profile
 
     > [!NOTE]
-    > The `User.Read` permission may already be listed by default. It is a good practice to only request permissions that are needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.
+    > The `User.Read` permission may already be listed by default. It's a good practice to only request permissions that are needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.
 
-1. Select the check box for each permission as it appears (note that the permissions will not remain visible in the list as you select each one). After selecting the permissions that your add-in needs, select the **Add permissions** button at the bottom of the panel.
+1. Select the check box for each permission as it appears (note that the permissions will not remain visible in the list as you select each one). After selecting the permissions that your add-in needs, select the **Add permissions** button.
