@@ -74,18 +74,6 @@ To test your add-in in Excel on a browser, run the following command. When you r
 
 [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-If your add-in doesn't sideload in the document, open a new workbook in Excel on the web. In this workbook, complete the following steps to sideload your add-in.
-
-1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
-
-   ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted.](../images/excel-cf-online-register-add-in-1.png)
-
-1. Choose **Manage My Add-ins** and select **Upload My Add-in**.
-
-1. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
-
-1. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
-
 ---
 
 ## Try out a prebuilt custom function

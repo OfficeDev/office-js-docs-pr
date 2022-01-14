@@ -67,8 +67,6 @@ After you complete the wizard, the generator creates the project and installs su
 
         [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-        If your add-in doesn't sideload in the document, open a document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
-
 3. To open the add-in task pane, on the **Home** tab, choose the **Show Taskpane** button. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fluent UI React.
 
     ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane.](../images/word-task-pane-yo-default.png)

@@ -20,6 +20,3 @@ Complete the following steps to start the local web server and sideload your add
 - To test your add-in in Excel on a browser, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
     [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
-    
-    If your add-in doesn't sideload in the document, open a new workbook in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
-

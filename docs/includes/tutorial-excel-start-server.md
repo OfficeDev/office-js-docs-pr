@@ -10,4 +10,3 @@ If the local web server is already running and your add-in is already loaded in 
 
     [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-    If your add-in doesn't sideload in the document, open a document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).

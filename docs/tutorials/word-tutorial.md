@@ -145,8 +145,6 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
         [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-        If your add-in doesn't sideload in the document, open a document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
-
 1. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Screenshot displaying the Show Taskpane button highlighted in Word.](../images/word-quickstart-addin-2b.png)

@@ -72,8 +72,6 @@ After you complete the wizard, the generator creates the project and installs su
 
         [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-        If your add-in doesn't sideload in the document, open a document in PowerPoint on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
-
 3. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Screenshot of PowerPoint with the Show Taskpane button highlighted.](../images/powerpoint_quickstart_addin_1c.png)
