@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Authorization with non-Microsoft identity providers
 
-There are many popular online services outside of the Microsoft identity platform that are identity providers that developers can use. They give users access to their accounts in other applications, including your Office Add-in.
+There are many popular identity providing services, in addition to the Microsoft identity platform, that you can use in your add-in. They give users, and applications such as your Office add-in, access to the users' accounts in other applications.
 
 The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
 

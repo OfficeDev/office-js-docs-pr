@@ -164,8 +164,8 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Add the following code below the Office.onReady method.
 
-> [!NOTE]
-> To distinguish between the two access tokens you work with in this article, the token returned from getAccessToken() is referred to as a bootstrap token. It is later exchanged through the On-Behalf-Of flow for a new token with access to Microsoft Graph.
+    > [!NOTE]
+    > To distinguish between the two access tokens you work with in this article, the token returned from getAccessToken() is referred to as a bootstrap token. It is later exchanged through the On-Behalf-Of flow for a new token with access to Microsoft Graph.
 
     ```javascript
     async function getGraphData() {
@@ -330,7 +330,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     }
     ```
 
-1. On rare occasions the bootstrap token that Office has cached is unexpired when Office validates it, but expires by the time it reaches Azure AD for exchange. Azure AD will respond with error **AADSTS500133**. In this case, the add-in should simply call `getGraphData` again. Since the cached bootstrap token is now expired, Office will get a new one from Azure AD. So replace `TODO 8` with the following:
+1. On rare occasions the bootstrap token that Office has cached is unexpired when Office validates it but expires by the time it reaches Azure AD for exchange. Azure AD will respond with error **AADSTS500133**. In this case, the add-in should simply call `getGraphData` again. Since the cached bootstrap token is now expired, Office will get a new one from Azure AD. So, replace `TODO 8` with the following.
 
 
     ```javascript
@@ -466,7 +466,7 @@ For more information about these errors, see [Troubleshoot SSO in Office Add-ins
     - This is the beginning of a long `else` block, but the closing `}` is not at the end yet because you will be adding more code to it.
     - The `authorization` string is "Bearer " followed by the bootstrap token, so the first line of the `else` block is assigning the token to the `jwt`. ("JWT" stands for "JSON Web Token".)
     - The two `process.env.*` values are the constants that you assigned when you configured the add-in.
-    - The `requested_token_use` form parameter is set to 'on_behalf_of'. This tells Azure AD that the add-in is requesting an access token to Microsoft Graph using the On-Behalf-Of Flow. Azure will respond by validating that the bootstrap token, which is assigned to `assertion` form parameter, has a `scp` property that is set to `access-as-user`.
+    - The `requested_token_use` form parameter is set to 'on_behalf_of'. This tells Azure AD that the add-in is requesting an access token to Microsoft Graph using the On-Behalf-Of flow (OBO). Azure responds by validating that the bootstrap token, which is assigned to `assertion` form parameter, has a `scp` property that is set to `access-as-user`.
     - The `scope` form parameter is set to 'Files.Read.All' which is the only Microsoft Graph scope that the add-in needs.
 
     ```javascript

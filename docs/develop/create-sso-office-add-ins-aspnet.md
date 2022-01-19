@@ -188,8 +188,8 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Below the `getGraphData` function add the following function. Note that you create the `handleClientSideErrors` function in a later step.
 
-> [!NOTE]
-> To distinguish between the two access tokens you work with in this article, the token returned from getAccessToken() is referred to as a bootstrap token. It is later exchanged through the On-Behalf-Of flow for a new token with access to Microsoft Graph.
+    > [!NOTE]
+    > To distinguish between the two access tokens you work with in this article, the token returned from getAccessToken() is referred to as a bootstrap token. It is later exchanged through the On-Behalf-Of flow for a new token with access to Microsoft Graph.
 
     ```javascript
     async function getDataWithToken(options) {
