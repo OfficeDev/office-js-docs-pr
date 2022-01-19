@@ -13,55 +13,55 @@ These code samples are written to help you learn how to use various features whe
 
 The following samples show how to build the simplest Office Add-in with only a manifest, HTML web page, and a logo. These components are the fundamental parts of an Office Add-in. For additional getting started information, see our [quick starts](../quickstarts/excel-quickstart-jquery.md) and [tutorials](/search/?terms=tutorial&scope=Office%20Add-ins).
 
-* [Excel "Hello world" add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/excel-hello-world)
-* [Outlook "Hello world" add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/outlook-hello-world)
-* [PowerPoint "Hello world" add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/powerpoint-hello-world)
-* [Word "Hello world" add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/word-hello-world)
+* [Excel "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/excel-hello-world)
+* [Outlook "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/outlook-hello-world)
+* [PowerPoint "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world)
+* [Word "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world)
 
 ## Outlook
 
 | Name                | Description         |
 |:--------------------|:--------------------|
-| [Use Outlook event-based activation to tag external recipients (preview)](/samples/officedev/pnp-officeaddins/outlook-add-in-tag-external-recipients) | Use event-based activation to run an Outlook add-in when the user changes recipients while composing a message. The add-in also uses the `appendOnSendAsync` API to add a disclaimer. |
-| [Use Outlook event-based activation to set the signature](/samples/officedev/pnp-officeaddins/outlook-add-in-set-signature/) | Use event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane is not open. It also uses the `setSignatureAsync` API. |
+| [Use Outlook event-based activation to tag external recipients (preview)](/samples/officedev/Office-Add-in-samples/outlook-add-in-tag-external-recipients) | Use event-based activation to run an Outlook add-in when the user changes recipients while composing a message. The add-in also uses the `appendOnSendAsync` API to add a disclaimer. |
+| [Use Outlook event-based activation to set the signature](/samples/officedev/Office-Add-in-samples/outlook-add-in-set-signature/) | Use event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane is not open. It also uses the `setSignatureAsync` API. |
 
 ## Excel
 
 | Name                | Description         |
 |:--------------------|:--------------------|
-| [Open in Teams](/samples/officedev/pnp-officeaddins/office-excel-add-in-open-in-teams/) | Create a new Excel spreadsheet in Microsoft Teams containing data you define.|
-| [Insert an external Excel file and populate it with JSON data](/samples/officedev/pnp-officeaddins/excel-add-in-insert-external-file/)  | Insert an existing template from an external Excel file into the currently open Excel workbook. Then, populate the template with data from a JSON web service. |
-| [Create custom contextual tabs on the ribbon](/samples/officedev/pnp-officeaddins/office-add-in-contextual-tabs/) | Create a custom contextual tab on the ribbon in the Office UI. The sample creates a table, and when the user moves the focus inside the table, the custom tab is displayed. When the user moves outside the table, the custom tab is hidden. |
-| [Use keyboard shortcuts for Office add-in actions](/samples/officedev/pnp-officeaddins/office-add-in-keyboard-shortcuts) | Set up a basic Excel add-in project that utilizes keyboard shortcuts. |
-| [Custom function sample using web worker](/samples/officedev/pnp-officeaddins/excel-custom-function-web-worker-pattern/) | Use web workers in custom functions to prevent blocking the UI of your Office Add-in. |
-| [Use storage techniques to access data from an Office Add-in when offline](/samples/officedev/pnp-officeaddins/use-storage-techniques-to-access-data-from-an-office-add-in-when-offline/) | Implement localStorage to enable limited functionality for your Office Add-in when a user experiences lost connection. |
-| [Custom function batching pattern](/samples/officedev/pnp-officeaddins/excel-custom-function-batching-pattern/)| Batch multiple calls into a single call to reduce the number of network calls to a remote service.|
+| [Open in Teams](/samples/officedev/Office-Add-in-samples/office-excel-add-in-open-in-teams/) | Create a new Excel spreadsheet in Microsoft Teams containing data you define.|
+| [Insert an external Excel file and populate it with JSON data](/samples/officedev/Office-Add-in-samples/excel-add-in-insert-external-file/)  | Insert an existing template from an external Excel file into the currently open Excel workbook. Then, populate the template with data from a JSON web service. |
+| [Create custom contextual tabs on the ribbon](/samples/officedev/Office-Add-in-samples/office-add-in-contextual-tabs/) | Create a custom contextual tab on the ribbon in the Office UI. The sample creates a table, and when the user moves the focus inside the table, the custom tab is displayed. When the user moves outside the table, the custom tab is hidden. |
+| [Use keyboard shortcuts for Office add-in actions](/samples/officedev/Office-Add-in-samples/office-add-in-keyboard-shortcuts) | Set up a basic Excel add-in project that utilizes keyboard shortcuts. |
+| [Custom function sample using web worker](/samples/officedev/Office-Add-in-samples/excel-custom-function-web-worker-pattern/) | Use web workers in custom functions to prevent blocking the UI of your Office Add-in. |
+| [Use storage techniques to access data from an Office Add-in when offline](/samples/officedev/Office-Add-in-samples/use-storage-techniques-to-access-data-from-an-office-add-in-when-offline/) | Implement localStorage to enable limited functionality for your Office Add-in when a user experiences lost connection. |
+| [Custom function batching pattern](/samples/officedev/Office-Add-in-samples/excel-custom-function-batching-pattern/)| Batch multiple calls into a single call to reduce the number of network calls to a remote service.|
 
 ## Shared JavaScript runtime
 
 | Name                | Description         |
 |:--------------------|:--------------------|
-[Share global data with a shared runtime](/samples/officedev/pnp-officeaddins/office-add-in-shared-runtime-global-data/) | Set up a basic project that uses the shared runtime to run code for ribbon buttons, task pane, and custom functions in a single browser runtime. |
-| [Manage ribbon and task pane UI, and run code on doc open](/samples/officedev/pnp-officeaddins/office-add-in-ribbon-task-pane-ui/) | Create contextual ribbon buttons that are enabled based on the state of your add-in. |
+[Share global data with a shared runtime](/samples/officedev/Office-Add-in-samples/office-add-in-shared-runtime-global-data/) | Set up a basic project that uses the shared runtime to run code for ribbon buttons, task pane, and custom functions in a single browser runtime. |
+| [Manage ribbon and task pane UI, and run code on doc open](/samples/officedev/Office-Add-in-samples/office-add-in-ribbon-task-pane-ui/) | Create contextual ribbon buttons that are enabled based on the state of your add-in. |
 
 ## Authentication, authorization, and single sign-on (SSO)
 
 | Name                | Description         |
 |:--------------------|:--------------------|
-| [Single Sign-on (SSO) Sample Outlook Add-in](/samples/officedev/pnp-officeaddins/outlook-add-in-sso-aspnet/) | Use Office's SSO feature to give the add-in access to Microsoft Graph data.|
-| [Get OneDrive data using Microsoft Graph and msal.js in an Office Add-in](/samples/officedev/pnp-officeaddins/office-add-in-auth-graph-react/) | Build an Office Add-in, as a single-page application (SPA) with no backend, that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to update a spreadsheet.  |
-| [Office Add-in auth to Microsoft Graph](/samples/officedev/pnp-officeaddins/office-add-in-auth-aspnet-graph/) | Learn how to build a Microsoft Office Add-in that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to update a spreadsheet. |
-| [Outlook Add-in auth to Microsoft Graph](/samples/officedev/pnp-officeaddins/outlook-add-in-auth-aspnet-graph/). | Build an Outlook add-in that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to compose a new email message. |
-| [Single Sign-on (SSO) Office Add-in with ASP.NET](/samples/officedev/pnp-officeaddins/office-add-in-sso-aspnet/) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on ASP.NET. |
-| [Single Sign-on (SSO) Office Add-in with Node.js](/samples/officedev/pnp-officeaddins/office-add-in-sso-nodejs/) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on Node.js.|
+| [Single Sign-on (SSO) Sample Outlook Add-in](/samples/officedev/Office-Add-in-samples/outlook-add-in-sso-aspnet/) | Use Office's SSO feature to give the add-in access to Microsoft Graph data.|
+| [Get OneDrive data using Microsoft Graph and msal.js in an Office Add-in](/samples/officedev/Office-Add-in-samples/office-add-in-auth-graph-react/) | Build an Office Add-in, as a single-page application (SPA) with no backend, that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to update a spreadsheet.  |
+| [Office Add-in auth to Microsoft Graph](/samples/officedev/Office-Add-in-samples/office-add-in-auth-aspnet-graph/) | Learn how to build a Microsoft Office Add-in that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to update a spreadsheet. |
+| [Outlook Add-in auth to Microsoft Graph](/samples/officedev/Office-Add-in-samples/outlook-add-in-auth-aspnet-graph/). | Build an Outlook add-in that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to compose a new email message. |
+| [Single Sign-on (SSO) Office Add-in with ASP.NET](/samples/officedev/Office-Add-in-samples/office-add-in-sso-aspnet/) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on ASP.NET. |
+| [Single Sign-on (SSO) Office Add-in with Node.js](/samples/officedev/Office-Add-in-samples/office-add-in-sso-nodejs/) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on Node.js.|
 
 ## Additional samples
 
 | Name                | Description         |
 |:--------------------|:--------------------|
-|[Use a shared library to migrate your Visual Studio Tools for Office add-in to an Office web add-in](/samples/officedev/pnp-officeaddins/vsto-shared-library-excel/) |Provides a strategy for code reuse when migrating from VSTO Add-ins to Office Add-ins. |
-| [Integrate an Azure function with your Excel custom function](/samples/officedev/pnp-officeaddins/azure-function-with-excel-custom-function/) | Integrate Azure functions with custom functions to move to the cloud or integrate additional services. |
-|[Dynamic DPI code samples](/samples/officedev/pnp-officeaddins/dynamic-dpi-code-samples/) |A collection of samples for handling DPI changes in COM, VSTO, and Office Add-ins. |
+|[Use a shared library to migrate your Visual Studio Tools for Office add-in to an Office web add-in](/samples/officedev/Office-Add-in-samples/vsto-shared-library-excel/) |Provides a strategy for code reuse when migrating from VSTO Add-ins to Office Add-ins. |
+| [Integrate an Azure function with your Excel custom function](/samples/officedev/Office-Add-in-samples/azure-function-with-excel-custom-function/) | Integrate Azure functions with custom functions to move to the cloud or integrate additional services. |
+|[Dynamic DPI code samples](/samples/officedev/Office-Add-in-samples/dynamic-dpi-code-samples/) |A collection of samples for handling DPI changes in COM, VSTO, and Office Add-ins. |
 
 ## Next steps
 

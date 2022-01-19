@@ -1,11 +1,9 @@
 ---
 title: Best practices for developing Office Add-ins
 description: 'Apply the best practices when developing to create Office Add-ins.'
-ms.date: 05/12/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
 ---
-
-
 
 # Best practices for developing Office Add-ins
 
@@ -89,7 +87,6 @@ For patterns that you can apply as you develop your first-run experience, see [U
 > [!NOTE]
 > If you're using [Fluent UI React](../design/using-office-ui-fabric-react.md) for your design elements, many of these elements are built into the design system.
 
-
 ## Optimize and monitor add-in performance
 
 - Create the perception of fast UI responses. Your add-in should load in 500 ms or less.
@@ -98,7 +95,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Provide loading indicators for long-running operations.
 
-- Use a CDN to host images, resources, and common libraries. Load as much as you can from one place.
+- Use a content delivery network (CDN) to host images, resources, and common libraries. Load as much as you can from one place.
 
 - Follow standard web practices to optimize your web page. In production, use only minified versions of libraries. Only load resources that you need, and optimize how resources are loaded.
 

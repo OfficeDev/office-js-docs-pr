@@ -40,7 +40,7 @@ The following diagram outlines this basic process. The dotted line indicates tha
 
 ## Storing the token
 
-The following examples are from the [Using OfficeRuntime.storage in custom functions](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) code sample. Refer to this code sample for a complete example of sharing data between UI-less custom functions and the task pane.
+The following examples are from the [Using OfficeRuntime.storage in custom functions](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage) code sample. Refer to this code sample for a complete example of sharing data between UI-less custom functions and the task pane.
 
 If the UI-less custom function authenticates, then it receives the access token and will need to store it in `storage`. The following code sample shows how to call the `storage.setItem` method to store a value. The `storeValue` function is a UI-less custom function that for example purposes stores a value from the user. You can modify this to store any token value you need.
 
