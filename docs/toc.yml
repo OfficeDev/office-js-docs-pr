@@ -477,8 +477,16 @@ items:
         href: reference/manifest/version.md
       - name: VersionOverrides
         items:
-        - name: VersionOverrides
+        - name: VersionOverrides Overview
           href: reference/manifest/versionoverrides.md
+        - name: VersionOverrides 1.0 TaskPane
+          href: reference/manifest/versionoverrides-1-0-taskpane.md
+        - name: VersionOverrides 1.0 Content
+          href: reference/manifest/versionoverrides-1-0-content.md
+        - name: VersionOverrides 1.0 Mail
+          href: reference/manifest/versionoverrides-1-0-mail.md
+        - name: VersionOverrides 1.1 Mail
+          href: reference/manifest/versionoverrides-1-1-mail.md
         - name: Action
           href: reference/manifest/action.md
         - name: AllFormFactors

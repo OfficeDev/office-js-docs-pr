@@ -593,7 +593,7 @@ function showDataTab() {
 
 ## Resources
 
-- [Code sample: Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-contextual-tabs)
+- [Code sample: Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs)
 - Community demo of contextual tabs sample
 
 > [!VIDEO https://www.youtube.com/embed/9tLfm4boQIo]
