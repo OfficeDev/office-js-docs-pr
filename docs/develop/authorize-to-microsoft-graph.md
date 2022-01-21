@@ -17,11 +17,11 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 
 In addition to hosting the pages and JavaScript of the web application, the add-in must also host, at the same [fully qualified domain name](/windows/desktop/DNS/f-gly#_dns_fully_qualified_domain_name_fqdn__gly), one or more web APIs that will get an access token to Microsoft Graph and make requests to it.
 
-The add-in manifest contains markup that specifies how the add-in is registered in the Azure Active Directory (Azure AD) v2.0 endpoint, and it specifies any permissions to Microsoft Graph that the add-in needs.
+The add-in manifest contains a **WebApplicationInfo** element that provides important Azure app registration information to Office, including the permissions to Microsoft Graph that the add-in requires.
 
 ### How it works at runtime
 
-The following diagram shows the steps involved to sign in and access Microsoft Graph.
+The following diagram shows the steps involved to sign in and access Microsoft Graph. The entire process uses OAuth 2.0 and JWT access tokens.
 
 :::image type="content" source="../images/sso-access-to-microsoft-graph.svg" alt-text="Diagram showing the SSO process." border="false":::
 
