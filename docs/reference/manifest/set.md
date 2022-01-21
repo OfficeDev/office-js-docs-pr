@@ -1,15 +1,33 @@
 ---
 title: Set element in the manifest file
-description: The Set element specifies an Office JavaScript API requirement set your Office Add-in requires in order to activate.
-ms.date: 03/19/2019
+description: The Set element specifies an Office JavaScript API requirement set your Office Add-in requires in order to be activated by Office or to override base manifest settings.
+ms.date: 01/22/2022
 ms.localizationpriority: medium
 ---
 
 # Set element
 
-Specifies a requirement set from the Office JavaScript API that your Office Add-in requires to activate.
+The meaning of this element depends on where it is used in the manifest.
+
+## In the base manifest
+
+When used in the base manifest, that is, the grandparent **Requirements** element is a direct child of [OfficeApp](officeapp.md), the **Set** element specifies a ([requirement set](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets) from the Office JavaScript API that your Office Add-in needs in order to be activated by Office.
 
 **Add-in type:** Content, Task pane, Mail
+
+## As a great grandchild of a VersionOverrides element
+
+Specifies a ([requirement set](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets) from the Office JavaScript API that must be supported by the Office version and platform (such as Windows, Mac, iOS, and web) in order for the [VersionOverrides](versionoverrides.md) to take effect.
+
+**Add-in type:** Task pane, Mail
+
+**Valid only in these VersionOverrides schemas**:
+
+- Same as the grandparent [Requirements](requirements.md) element.
+
+**Associated with these requirement sets**:
+
+- Same as the grandparent [Requirements](requirements.md) element.
 
 ## Syntax
 
@@ -32,7 +50,5 @@ Specifies a requirement set from the Office JavaScript API that your Office Add-
 
 For more information about requirement sets, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
-For more information about the **MinVersion** attribute of the **Set** element and the **DefaultMinVersion** attribute of the **Sets** element, see [Set the Requirements element in the manifest](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest).
+For more information about the **MinVersion** attribute of the **Set** element and the **DefaultMinVersion** attribute of the **Sets** element, see [Specify which Office versions and platforms can host your add-in](../../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in).
 
-> [!IMPORTANT]
-> For mail add-ins, there is only one  `"Mailbox"` requirement set available. This requirement set contains the entire subset of API supported in mail add-ins for Outlook, and you must specify the `"Mailbox"` requirement set in your mail add-in's manifest (it's not optional as is the case for content and task pane add-ins). Also, you can't declare support for specific methods in mail add-ins.

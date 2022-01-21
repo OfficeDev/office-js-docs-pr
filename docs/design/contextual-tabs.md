@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: 'Learn how to add custom contextual tabs to your Office Add-in.'
-ms.date: 09/09/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
 ---
 
@@ -28,7 +28,7 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 > - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
 > - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
 >
-> You can use the runtime checks in your code to test whether the user's host and platform combination supports these requirement sets as described in [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (The technique of specifying the requirement sets in the manifest, which is also described in that article, does not currently work for RibbonApi 1.2.) Alternatively, you can [implement an alternate UI experience when custom contextual tabs are not supported](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
+> You can use the runtime checks in your code to test whether the user's host and platform combination supports these requirement sets as described in [Runtime checks for method and requirement set support](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (The technique of specifying the requirement sets in the manifest, which is also described in that article, does not currently work for RibbonApi 1.2.) Alternatively, you can [implement an alternate UI experience when custom contextual tabs are not supported](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 
 ## Behavior of custom contextual tabs
 
@@ -112,7 +112,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
 1. In the simple ongoing example, the contextual tab has only a single group. Add the following as the only member of the `groups` array. About this markup, note:
 
     - All the properties are required.
-    - The `id` property must be unique among all the groups in the tab. Use a brief, descriptive ID.
+    - The `id` property must be unique among all the groups in the manifest. Use a brief, descriptive ID, of up to 125 characters.
     - The `label` is a user-friendly string to serve as the label of the group.
     - The `icon` property's value is an array of objects that specify the icons that the group will have on the ribbon depending on the size of the ribbon and the Office application window.
     - The `controls` property's value is an array of objects that specify the buttons and menus in the group. There must be at least one.
@@ -376,7 +376,7 @@ function myContextChanges() {
 
 ## Open a task pane from contextual tabs
 
-To open your task pane from a button on a custom contextual tab, create an action in the JSON with a `type` of `ShowTaskpane`. Then define a button with the `actionId` property set to the `id` of the action. This opens the default task pane specified by the `<Runtime>` element in your manifest.
+To open your task pane from a button on a custom contextual tab, create an action in the JSON with a `type` of `ShowTaskpane`. Then define a button with the `actionId` property set to the `id` of the action. This opens the default task pane specified by the **Runtime** element in your manifest.
 
 ```json
 `{
@@ -528,7 +528,7 @@ Some combinations of platform, Office application, and Office build don't suppor
 
 There is a manifest element, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), that is designed to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs.
 
-The simplest strategy for using this element is that you define in the manifest one or more custom core tabs (that is, *noncontextual* custom tabs) that duplicate the ribbon customizations of the custom contextual tabs in your add-in. But you add `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` as the first child element of the duplicate [Group](../reference/manifest/group.md), [Control](../reference/manifest/control.md), and menu `<Item>` elements on the custom core tabs. The effect of doing so is the following:
+The simplest strategy for using this element is that you define in the manifest one or more custom core tabs (that is, *noncontextual* custom tabs) that duplicate the ribbon customizations of the custom contextual tabs in your add-in. But you add `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` as the first child element of the duplicate [Group](../reference/manifest/group.md), [Control](../reference/manifest/control.md), and menu **Item** elements on the custom core tabs. The effect of doing so is the following:
 
 - If the add-in runs on an application and platform that support custom contextual tabs, then the custom core groups and controls won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.
 - If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the elements do appear on the custom core tabs.
@@ -549,7 +549,7 @@ The following is an example. Note that "MyButton" will appear on the custom core
               ...
               <Group ...>
                 ...
-                <Control ... id="MyButton">
+                <Control ... id="Contoso.MyButton1">
                   <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
                   ...
                   <Action ...>
@@ -559,14 +559,14 @@ The following is an example. Note that "MyButton" will appear on the custom core
 
 For more examples, see [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md).
 
-When a parent group, or menu is marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`, then it isn't visible, and all of its child markup is ignored when custom contextual tabs aren't supported. So, it doesn't matter if any of those child elements have the `<OverriddenByRibbonApi>` element or what its value is. The implication of this is that if a menu item or control must be visible in all contexts, then not only should it not be marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`, but *its ancestor menu and group must also not be marked this way*.
+When a parent group, or menu is marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`, then it isn't visible, and all of its child markup is ignored when custom contextual tabs aren't supported. So, it doesn't matter if any of those child elements have the **OverriddenByRibbonApi** element or what its value is. The implication of this is that if a menu item or control must be visible in all contexts, then not only should it not be marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`, but *its ancestor menu and group must also not be marked this way*.
 
 > [!IMPORTANT]
-> Don't mark *all* of the child elements of a group or menu with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`. This is pointless if the parent element is marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` for reasons given in the preceding paragraph. Moreover, if you leave out the `<OverriddenByRibbonApi>` on the parent (or set it to `false`), then the parent will appear regardless of whether custom contextual tabs are supported, but it will be empty when they are supported. So, if all the child elements shouldn't appear when custom contextual tabs are supported, mark the parent, and only the parent, with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`.
+> Don't mark *all* of the child elements of a group or menu with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`. This is pointless if the parent element is marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` for reasons given in the preceding paragraph. Moreover, if you leave out the **OverriddenByRibbonApi** on the parent (or set it to `false`), then the parent will appear regardless of whether custom contextual tabs are supported, but it will be empty when they are supported. So, if all the child elements shouldn't appear when custom contextual tabs are supported, mark the parent, and only the parent, with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`.
 
 #### Use APIs that show or hide a task pane in specified contexts
 
-As an alternative to `<OverriddenByRibbonApi>`, your add-in can define a task pane with UI controls that duplicate the functionality of the controls on a custom contextual tab. Then use the [Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#showAsTaskpane__) and [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#hide__) methods to show the task pane when, and only when, the contextual tab would have been shown if it was supported. For details on how to use these methods, see [Show or hide the task pane of your Office Add-in](../develop/show-hide-add-in.md).
+As an alternative to **OverriddenByRibbonApi**, your add-in can define a task pane with UI controls that duplicate the functionality of the controls on a custom contextual tab. Then use the [Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#showAsTaskpane__) and [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#hide__) methods to show the task pane when, and only when, the contextual tab would have been shown if it was supported. For details on how to use these methods, see [Show or hide the task pane of your Office Add-in](../develop/show-hide-add-in.md).
 
 ### Handle the HostRestartNeeded error
 
@@ -593,7 +593,7 @@ function showDataTab() {
 
 ## Resources
 
-- [Code sample: Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs)
+- [Code sample: Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-contextual-tabs)
 - Community demo of contextual tabs sample
 
 > [!VIDEO https://www.youtube.com/embed/9tLfm4boQIo]
