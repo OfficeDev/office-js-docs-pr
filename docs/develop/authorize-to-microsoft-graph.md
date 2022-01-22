@@ -29,13 +29,15 @@ The following diagram shows the steps involved to sign in and access Microsoft G
 
     If the user is not signed in, the Office host in conjunction with the Microsoft identity platform provides UI for the user to sign in and consent.
 
-2. The Office host returns an access token (A) to the add-in's client-side code. Access token A only provides access to the add-in's own server-side APIs. It does not provide access to Microsoft Graph.
-3. The client-side code makes an HTTP request to a web API on the server-side that requires authentication. It includes access token A as authorization proof. Server-side code validates access token A.
-4. The server-side code uses the OAuth 2.0 On-Behalf-Of flow (OBO) to request a new access token with permissions to Microsoft Graph.
-5. Microsoft identity platform returns the new access token (B) with permissions to Microsoft Graph (and a refresh token, if the add-in requests *offline_access* permission). The server can optionally cache access token B.
-6. The server-side code makes a request to a Microsoft Graph API and includes access token B with permissions to Microsoft Graph.
-7. Microsoft Graph returns data back to the server-side code.
-8. The server-side code returns the data back to the client-side code.
+2. The Office host request an access token from the Microsoft identity platform.
+3. The Microsoft identity platform returns access token (A) to the Office host. Access token A only provides access to the add-in's own server-side APIs. It does not provide access to Microsoft Graph.
+4. The Office host returns access token A to the add-in's client-side code. Now the client-side code can make authenticated calls to the server-side APIs.
+5. The client-side code makes an HTTP request to a web API on the server-side that requires authentication. It includes access token A as authorization proof. Server-side code validates access token A.
+6. The server-side code uses the OAuth 2.0 On-Behalf-Of flow (OBO) to request a new access token with permissions to Microsoft Graph.
+7. The Microsoft identity platform returns the new access token (B) with permissions to Microsoft Graph (and a refresh token, if the add-in requests *offline_access* permission). The server can optionally cache access token B.
+8. The server-side code makes a request to a Microsoft Graph API and includes access token B with permissions to Microsoft Graph.
+9. Microsoft Graph returns data back to the server-side code.
+10. The server-side code returns the data back to the client-side code.
 
 On subsequent requests the client code will always pass access token A when making authenticated calls to server-side code. The server-side code can cache token B so that it does not need to request it again on future API calls.
 
@@ -77,5 +79,5 @@ As a best practice, always pass `forMSGraphAccess` to `getAccessToken` when your
 
 ## See also
 
-- [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)
-- [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
+* [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)
+* [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
