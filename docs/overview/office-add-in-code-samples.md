@@ -22,8 +22,9 @@ The following samples show how to build the simplest Office Add-in with only a m
 
 | Name                | Description         |
 |:--------------------|:--------------------|
-| [Use Outlook event-based activation to tag external recipients (preview)](/samples/officedev/pnp-officeaddins/outlook-add-in-tag-external-recipients) | Use event-based activation to run an Outlook add-in when the user changes recipients while composing a message. The add-in also uses the `appendOnSendAsync` API to add a disclaimer. |
-| [Use Outlook event-based activation to set the signature](/samples/officedev/pnp-officeaddins/outlook-add-in-set-signature/) | Use event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane is not open. It also uses the `setSignatureAsync` API. |
+| [Encrypt attachments, process meeting request attendees, and react to appointment date/time changes](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-encrypt-attachments) | Use event-based activation to encrypt attachments when added by the user. Also use event handling for recipients changed in a meeting request, and changes to the start or end date or time in a meeting request. |
+| [Use Outlook event-based activation to tag external recipients (preview)](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external) | Use event-based activation to run an Outlook add-in when the user changes recipients while composing a message. The add-in also uses the `appendOnSendAsync` API to add a disclaimer. |
+| [Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature) | Use event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane is not open. It also uses the `setSignatureAsync` API. |
 
 ## Excel
 
@@ -51,9 +52,9 @@ The following samples show how to build the simplest Office Add-in with only a m
 | [Single Sign-on (SSO) Sample Outlook Add-in](/samples/officedev/pnp-officeaddins/outlook-add-in-sso-aspnet/) | Use Office's SSO feature to give the add-in access to Microsoft Graph data.|
 | [Get OneDrive data using Microsoft Graph and msal.js in an Office Add-in](/samples/officedev/pnp-officeaddins/office-add-in-auth-graph-react/) | Build an Office Add-in, as a single-page application (SPA) with no backend, that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to update a spreadsheet.  |
 | [Office Add-in auth to Microsoft Graph](/samples/officedev/pnp-officeaddins/office-add-in-auth-aspnet-graph/) | Learn how to build a Microsoft Office Add-in that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to update a spreadsheet. |
-| [Outlook Add-in auth to Microsoft Graph](/samples/officedev/pnp-officeaddins/outlook-add-in-auth-aspnet-graph/). | Build an Outlook add-in that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to compose a new email message. |
+| [Outlook Add-in auth to Microsoft Graph](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET). | Build an Outlook add-in that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to compose a new email message. |
 | [Single Sign-on (SSO) Office Add-in with ASP.NET](/samples/officedev/pnp-officeaddins/office-add-in-sso-aspnet/) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on ASP.NET. |
-| [Single Sign-on (SSO) Office Add-in with Node.js](/samples/officedev/pnp-officeaddins/office-add-in-sso-nodejs/) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on Node.js.|
+| [Single Sign-on (SSO) Office Add-in with Node.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on Node.js.|
 
 ## Additional samples
 
