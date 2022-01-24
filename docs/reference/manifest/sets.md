@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Sets element
 
-The meaning of this element depends on where it is used in the manifest.
+The meaning of this element depends on where it's used in the manifest.
 
 ## In the base manifest
 
