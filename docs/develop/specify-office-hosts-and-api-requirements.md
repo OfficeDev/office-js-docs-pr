@@ -89,7 +89,7 @@ Requirement set support varies by Office application, the version of the Office 
 > For more information about requirement set versioning, see [Office requirement sets availability](office-versions-and-requirement-sets.md#office-requirement-sets-availability), and for the complete lists of requirement sets and information about the APIs in each, start with [Office Add-in requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md). The reference topics for most Office.js APIs also specify the requirement set they belong to (if any).
 
 > [!NOTE]
-> Some requirement sets also have manifest elements associated with them. See [Specifying requirements in a VersionOverrides element](#specifying-requirements-in-a-versionoverrides-element) for information about when this fact is relevant to your add-in design.
+> Some requirement sets also have manifest elements associated with them. See [Specifying requirements in a VersionOverrides element](#specify-requirements-in-a-versionoverrides-element) for information about when this fact is relevant to your add-in design.
 
 #### APIs not in a requirement set
 
@@ -146,7 +146,7 @@ If your add-in uses a specific extensibility feature for some of its functionali
 You implement this design differently depending on how the extensibility feature is implemented: 
 
 - For features implemented entirely with JavaScript, see [Runtime checks for method and requirement set support](#runtime-checks-for-method-and-requirement-set-support).
-- For features that require you to configure a **VersionOverrides** element, see [Specifying requirements in a VersionOverrides element](#specifying-requirements-in-a-versionoverrides-element).
+- For features that require you to configure a **VersionOverrides** element, see [Specifying requirements in a VersionOverrides element](#specify-requirements-in-a-versionoverrides-element).
 
 ### Runtime checks for method and requirement set support 
 
