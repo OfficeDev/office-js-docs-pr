@@ -366,42 +366,6 @@ describe("Insert blue paragraph at end tests", () => {
 })
 ```
 
-## Adding mock objects, properties, and methods dynamically when testing
-
-In some scenarios, efficient testing requires that mock objects be created or modified at runtime; that is, while the tests are running. The following are examples:
-
-- The function that is being tested behaves differently when called a second time. You need to first test the function with one mock object, then change this mock object and test the function again with the changed mock object.
-- You need to test a function against multiple similar, but not identical, mock objects. For example, you need to test a function with a mock object that has a color property and then test the function again with a mock object that has a text property, but is otherwise identical to the original mock object.
-
-The `OfficeMockObject` has three methods to help in these scenarios.
-
-- `OfficeMockObject.setMock` adds a property and value to a `OfficeMockObject` object. The following example adds the `address` property.
-
-    ```javascript
-    rangeMock.setMock("address", "G6:K9");
-    ```
-
-- `OfficeMockObject.addMockFunction` adds a mock function to a `OfficeMockObject` object, as shown in the following example.
-
-    ```javascript
-    workbookMock.addMockFunction("getSelectedRange", function () { 
-      const range = {
-        address: "B2:G5",
-      };
-      return range;
-    });
-    ```
-
-    > [!NOTE]
-    > The function parameter is optional. If it isn't present, an empty function is created.
-
-- `OfficeMockObject.addMock` adds a new `OfficeMockObject` object as a property to an existing one and gives it a name. It would have the minimum members that all `OfficeMockObject` have, such as `load` and `sync`. Additional members can be added with the `setMock` and `addMockFunction` methods. The following is an example that adds a mock `Excel.WorkbookProtection` object as a `protection` property to a mock workbook. It then adds a `protected` property to the new mock object.
-
-    ```javascript
-    workbookMock.addMock("protection");
-    workbookMock.protection.setMock("protected", true);
-    ```
-
 > [!NOTE]
 > Full reference documentation for the `OfficeMockObject` type is at [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference).
 
