@@ -208,7 +208,7 @@ if (Office.context.document.setSelectedDataAsync)
 }
 ```
 
-### Specifying requirements in a VersionOverrides element
+### Specify requirements in a VersionOverrides element
 
 The [VersionOverrides](../reference/manifest/versionoverrides.md) element was added to the manifest schema primarily, but not exclusively, to support features that must be available immediately after an add-in is installed, such as add-in commands (custom ribbon buttons and menus). Office must know about these features when it parses the add-in manifest. 
 
