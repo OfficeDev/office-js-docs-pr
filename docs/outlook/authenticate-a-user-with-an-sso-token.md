@@ -1,7 +1,7 @@
 ---
 title: Authenticate a user with a single-sign-on token
 description: 'Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.'
-ms.date: 11/11/2021
+ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---
 

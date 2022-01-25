@@ -1,7 +1,7 @@
 ---
 title: Authorization with non-Microsoft identity providers
 description: 'Get authorization to non-Microsoft data sources using OAuth 2.0, the Authorization Code and Implicit flows.'
-ms.date: 10/22/2021
+ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---
 

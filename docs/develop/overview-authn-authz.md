@@ -1,7 +1,7 @@
 ---
 title: Overview of authentication and authorization in Office Add-ins
 description: 'Learn how authentication and authorization works in Office Add-ins.'
-ms.date: 01/07/2022
+ms.date: 01/25/2022
 ms.localizationpriority: high
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Authorize to Microsoft Graph from an Office Add-in
 description: 'Learn to authorize to Microsoft Graph from an Office Add-in'
-ms.date: 01/10/2022
+ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---
 
