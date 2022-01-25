@@ -65,7 +65,7 @@ The **Hosts** element can contain one or more **Host** elements. There should be
 > Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You usually can't specify which platform can be used to run your add-in. For example, if you specify `Workbook`, both Excel on the web and on Windows can be used to run your add-in. However, if you specify `Mailbox`, your add-in won't run on Outlook mobile clients unless you define the [mobile extension point](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface).
 
 > [!NOTE]
-> It is not possible for an add-in manifest to apply to more than one type: Mail, Task pane, or Content. This means that if you want your add-in to be installable on Outlook and on one of the other Office applications, you must create *two* add-ins, one with a Mail type manifest and the other with a Task pane or Content type manifest.
+> It isn't possible for an add-in manifest to apply to more than one type: Mail, Task pane, or Content. This means that if you want your add-in to be installable on Outlook and on one of the other Office applications, you must create *two* add-ins, one with a Mail type manifest and the other with a Task pane or Content type manifest.
 
 > [!IMPORTANT]
 > We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
@@ -141,7 +141,7 @@ The extensibility features that the Office add-in platform provides can be usefu
 - Extensibility features that are available only when the add-in is running and that are implemented with Office.js JavaScript APIs; for example, [Dialog Boxes](../design/dialog-boxes.md).
 - Extensibility features that are available only at runtime but are implemented with a combination of Office.js JavaScript and configuration in a **VersionOverrides** element. Examples of these are [Excel custom functions](../excel/custom-functions-overview.md), [single sign-on](sso-in-office-add-ins.md), and [custom contextual tabs](../design/contextual-tabs.md).
 
-If your add-in uses a specific extensibility feature for some of its functionality but has other useful functionality that doesn't require the extensibility feature, you should design the add-in so that it is installable on platform and Office version combinations that don't support the extensibility feature. It can provide a valuable, albeit diminished, experience on those combinations. 
+If your add-in uses a specific extensibility feature for some of its functionality but has other useful functionality that doesn't require the extensibility feature, you should design the add-in so that it's installable on platform and Office version combinations that don't support the extensibility feature. It can provide a valuable, albeit diminished, experience on those combinations. 
 
 You implement this design differently depending on how the extensibility feature is implemented: 
 
@@ -187,7 +187,7 @@ if (Office.context.requirements.isSetSupported('CustomXmlParts'))
 }
 else
 {
-    // Run alternate code when the user's Word does not support the CustomXmlParts requirement set.
+    // Run alternate code when the user's Word doesn't support the CustomXmlParts requirement set.
 }
 ```
 
