@@ -14,13 +14,13 @@ The meaning of this element depends on whether it's used [in the base manifest](
 
 ## In the base manifest
 
-When used in the base manifest, that is, as a direct child of [OfficeApp](officeapp.md), the **Requirements** element specifies the minimum set of Office JavaScript API requirements ([requirement sets](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets) and/or methods) that your Office Add-in needs to be activated by Office. The add-in will not be activated on any combination of Office version and platform (such as Windows, Mac, iOS, and web) that doesn't support the specified methods and requirement sets.
+When used in the base manifest (that is, as a direct child of [OfficeApp](officeapp.md)), the **Requirements** element specifies the minimum set of Office JavaScript API requirements ([requirement sets](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets) and/or methods) that your Office Add-in needs to be activated by Office. The add-in will not be activated on any combination of Office version and platform (such as Windows, Mac, web, and iOS or iPad) that doesn't support the specified methods and requirement sets.
 
 **Add-in type:** Task pane, Mail
 
 ## As a child of a VersionOverrides element
 
-When used as a child of [VersionOverrides](versionoverrides.md), specifies the minimum set of Office JavaScript API requirements ([requirement sets](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets) and/or methods) that must be supported by the Office version and platform (such as Windows, Mac, iOS, and web) in order for the settings in the **VersionOverrides** element *that override base manifest settings* to take effect.
+When used as a child of [VersionOverrides](versionoverrides.md), specifies the minimum set of Office JavaScript API requirements ([requirement sets](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets) and/or methods) that must be supported by the Office version and platform (such as Windows, Mac, web, and iOS or iPad) in order for the settings in the **VersionOverrides** element *that override base manifest settings* to take effect.
 
 Consider an add-in that specifies requirement A in the base manifest and specifies requirement B inside the **VersionOverrides**. 
 

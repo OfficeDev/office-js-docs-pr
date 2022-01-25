@@ -7,17 +7,17 @@ ms.localizationpriority: medium
 
 # Methods element
 
-The meaning of this element depends on where it is used in the manifest.
+The meaning of this element depends on where it's used in the manifest.
 
 ## In the base manifest
 
-When used in the base manifest, that is, the parent **Requirements** element is a direct child of [OfficeApp](officeapp.md), the **Methods** element specifies the list of Office JavaScript API methods that your Office Add-in needs in order to be activated by Office.
+When used in the base manifest (that is, the parent **Requirements** element is a direct child of [OfficeApp](officeapp.md)), the **Methods** element specifies the list of Office JavaScript API methods that your Office Add-in needs in order to be activated by Office.
 
 **Add-in type:** Content, Task pane
 
 ## As a grandchild of a VersionOverrides element
 
-Specifies the minimum set of Office JavaScript API methods that must be supported by the Office version and platform (such as Windows, Mac, iOS, and web) in order for the [VersionOverrides](versionoverrides.md) to take effect.
+Specifies the minimum set of Office JavaScript API methods that must be supported by the Office version and platform (such as Windows, Mac, web, and iOS or iPad) in order for the [VersionOverrides](versionoverrides.md) to take effect.
 
 **Add-in type:** Task pane, Mail
 
