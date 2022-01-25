@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: 'Learn the basics of creating a dialog box in an Office Add-in.'
-ms.date: 09/03/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
 ---
 
@@ -330,7 +330,7 @@ Because you can make multiple `messageChild` calls from the host page, but you h
 > In some situations, the `messageChild` API, which is a part of the [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md), may not be supported. Some alternative ways for parent-to-dialog-box messaging are described in [Alternative ways of passing messages to a dialog box from its host page](parent-to-dialog.md).
 
 > [!IMPORTANT]
-> The [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md) can't be specified in the `<Requirements>` section of an add-in manifest. You will have to check for support for DialogApi 1.2 at runtime using the [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) method. Support for manifest requirements is under development.
+> The [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md) can't be specified in the **Requirements** section of an add-in manifest. You will have to check for support for DialogApi 1.2 at runtime using the `isSetSupported` method as described in [Runtime checks for method and requirement set support](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). Support for manifest requirements is under development.
 
 ### Cross-domain messaging to the dialog runtime
 
@@ -351,7 +351,7 @@ If the message doesn't include sensitive data, you can set the `targetOrigin` to
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
-Because the JavaScript runtime that is hosting the dialog can't access the `<AppDomains>` section of the manifest and thereby determine whether the domain *from which the message comes* is trusted, you must use the `DialogParentMessageReceived` handler to determine this. The object that is passed to the handler contains the domain that is currently hosted in the parent  as its `origin` property. The following is an example of how to use the property.
+Because the JavaScript runtime that is hosting the dialog can't access the **AppDomains** section of the manifest and thereby determine whether the domain *from which the message comes* is trusted, you must use the `DialogParentMessageReceived` handler to determine this. The object that is passed to the handler contains the domain that is currently hosted in the parent  as its `origin` property. The following is an example of how to use the property.
 
 ```javascript
 function onMessageFromParent(arg) {
