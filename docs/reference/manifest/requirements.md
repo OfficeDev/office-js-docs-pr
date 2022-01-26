@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Requirements element
 
-The meaning of this element depends on whether it's used [in the base manifest](#in-the-base-manifest)] or [as a child of a **VersionOverrides** element](#as-a-child-of-a-versionoverrides-element).
+The meaning of this element depends on whether it's used [in the base manifest](#in-the-base-manifest) or [as a child of a **VersionOverrides** element](#as-a-child-of-a-versionoverrides-element).
 
 > [!TIP]
 > Before using this element, be familiar with [Specify Office hosts and API requirements](../../develop/specify-office-hosts-and-api-requirements.md)
