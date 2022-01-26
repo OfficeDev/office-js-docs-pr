@@ -1,7 +1,7 @@
 ---
 title: Publish an add-in using Visual Studio Code and Azure
 description: How to publish an add-in using Visual Studio Code and Azure Active Directory
-ms.date: 01/24/2022
+ms.date: 01/26/2022
 ms.localizationpriority: medium
 ---
 
@@ -43,7 +43,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 
 10. To deploy, select the Files explorer, select and hold (right-click) your **dist** folder, and choose **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously.
 
-![Deploying to a static website.](../images/deploy-to-static-website.png)
+    ![Deploying to a static website.](../images/deploy-to-static-website.png)
 
 11. When deployment is complete, a **Browse to website** message appears which you can select to open the primary endpoint of the deployed app code.
 
@@ -79,7 +79,7 @@ Next you need to add a MIME type for JSON files.
         </staticContent>
       </system.webServer>
     </configuration> 
-    ``` 
+    ```
 
 1. Open the **webpack.config.js** file.
 1. Add the following code in the list of `plugins` to copy the web.config into the bundle when the build runs.
