@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 ## null property values in the response
 
-Formatting properties such as [color](/javascript/api/word/word.font?view=word-js-preview#word-word-font-color-member) will contain `null` values in the response when different values exist in the specified [range](/javascript/api/word/word.range?view=word-js-preview). For example, if you retrieve a range and load its `range.font.color` property:
+Formatting properties such as [color](/javascript/api/word/word.font#word-word-font-color-member) will contain `null` values in the response when different values exist in the specified [range](/javascript/api/word/word.range). For example, if you retrieve a range and load its `range.font.color` property:
 
 - If all text in the range has the same font color, `range.font.color` specifies that color.
 - If multiple font colors are present within the range, `range.font.color` is `null`.
