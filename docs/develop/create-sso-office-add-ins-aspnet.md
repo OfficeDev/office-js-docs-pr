@@ -38,13 +38,13 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/Offi
 
 First, complete the steps in [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app) to register the add-in.
 
-Use the following settings for your app registration:
+Use the following settings for your app registration.
 
 * Name: `Office-Add-in-ASPNET-SSO`
 * Supported account types: **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**
 
     > [!NOTE]
-    >  If you want the add-in to be usable only by users in the tenancy where you are registering it, you can choose **Accounts in this organizational directory only ...** instead, but you will need to go through some additional setup steps. See **Setup for single-tenant** later in this article.)
+    >  If you want the add-in to be usable only by users in the tenancy where you are registering it, you can choose **Accounts in this organizational directory only ...** instead, but you'll need to go through some additional setup steps. See **Setup for single-tenant** later in this article.
 
 * Platform: **Web**
 * Redirect URI: **https://localhost:44355/AzureADAuth/Authorize**
@@ -53,7 +53,7 @@ Use the following settings for your app registration:
 ### Expose a web API
 
 1. In the app registration you created, select **Expose an API > Add a scope**.
-1. You're prompted to set an **Application ID URI** if you haven't yet configured one.
+   You're prompted to set an **Application ID URI** if you haven't yet configured one.
 
     The App ID URI acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. Use the form `api://localhost:44355/[application-id-guid]`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
@@ -89,7 +89,7 @@ Use the following settings for your app registration:
 
     For each Client ID, take the following steps.
 
-    a. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/[application-id-guid]/access_as_user`.
+    a. Select **Add a client application**. In the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/[application-id-guid]/access_as_user`.
 
     b. Select **Add application**.
 
@@ -99,7 +99,7 @@ Use the following settings for your app registration:
 
 1. Select **Delegated permissions**. Microsoft Graph exposes many permissions, with the most commonly used shown at the top of the list.
 
-1. Under **Select permissions** select the following permissions:
+1. Under **Select permissions**, select the following permissions.
 
     |Permission     |Description  |
     |---------------|-------------|
