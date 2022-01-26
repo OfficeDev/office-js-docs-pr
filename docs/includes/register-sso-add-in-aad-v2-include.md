@@ -6,7 +6,7 @@ Registering your application (the add-in) establishes a trust relationship betwe
 1. Under **Manage**, select **App registrations** > **New registration**. On the **Register an application** page, set the values as follows.
 
     * Set **Name** to `<add-in-name>`.
-    * Set **Supported account types** to **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
+    * Set **Supported account types** to **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
     * Leave **Redirect URI** empty.
     * Choose **Register**.
 

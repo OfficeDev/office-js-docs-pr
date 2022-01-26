@@ -41,7 +41,7 @@ First, complete the steps in [Quickstart: Register an application with the Micro
 Use the following settings for your app registration.
 
 * Name: `Office-Add-in-ASPNET-SSO`
-* Supported account types: **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**
+* Supported account types: **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**
 
     > [!NOTE]
     >  If you want the add-in to be usable only by users in the tenancy where you are registering it, you can choose **Accounts in this organizational directory only ...** instead, but you'll need to go through some additional setup steps. See **Setup for single-tenant** later in this article.
