@@ -252,8 +252,8 @@ The management and enforcement of Office settings is done with group policy sett
 | Setting name | Description |
 |--------------|-------------|
 | Allow Unsecure web add-ins and Catalogs | Allows users to run non-secure Office Add-ins, which are Office Add-ins that have webpage or catalog locations that are not SSL-secured (https://) and are not in users' Internet zones. |
-| Block Web Add-ins | Allows you to prevent users from running Office Add-ins using web technologies. |
-| Block the Office Store |  Allows you to prevent users from running or inserting Office Add-ins that come from the Office Store. |
+| Block Web Add-ins | Allows you to prevent users from running Office Add-ins that use web technologies. |
+| Block the Office Store |  Allows you to prevent users from getting or running Office Add-ins that come from the Office Store. |
 
 > [!IMPORTANT]
 > If your working groups are using multiple releases of Office, group policy settings must be configured for each release. Please refer to the [Using Group Policy to manage how users can install and use apps for Office](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) of the [Overview of apps for Office 2013](/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15)) article for details on group policy settings for Office 2013.
