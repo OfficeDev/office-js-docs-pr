@@ -1,6 +1,6 @@
 ---
 title: Attach a debugger from the task pane
-description: 'Learn how to attach a debugger from the task pane'
+description: Learn how to attach a debugger from the task pane.
 ms.date: 01/27/2022
 ms.localizationpriority: medium
 ---
