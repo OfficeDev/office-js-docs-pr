@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins
 description: 'Find the Office Add-in debugging guidance for your development environment'
-ms.date: 12/02/2021
+ms.date: 01/27/2022
 ms.localizationpriority: high
 ---
 
@@ -73,3 +73,7 @@ There is no desktop version of Office for Linux, so you'll need to [sideload the
 
 > [!NOTE]
 > We don't recommend that you develop Office Add-ins on a Linux computer except in the unusual case where you can be sure that all the add-in's users will be accessing the add-in through Office on the web from a Linux computer.
+
+## Debug add-ins in staging or production
+
+To debug an add-in that is already in staging or production, attach a debugger from the UI of the add-in. For instructions, see [Attach a debugger from the task pane](attach-debugger-from-task-pane.md).
