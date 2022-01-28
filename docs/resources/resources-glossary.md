@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
-description: ''
-ms.date: 01/03/2022
+description: 'A glossary of terms commonly used throughout the Office Add-ins documentation.'
+ms.date: 01/27/2022
 ms.localizationpriority: medium
 ---
 
@@ -21,13 +21,23 @@ Office Add-ins differ from VBA, COM, and VSTO add-ins because they offer cross-p
 
 In the Office Add-ins documentation, **application** refers to an Office application. The Office applications that support Office Add-ins are: Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
-See also: platform, host, Office application, Office client.
+See also: client, host, Office application, Office client.
 
 ## application-specific API
 
 Application-specific APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. application-specific APIs are currently available for Excel, OneNote, PowerPoint, and Word.
 
 See also: Common API.
+
+## CDN
+
+CDN is an acronym. It represents **content delivery network (CDN)** and refers to a distributed network of servers and data centers. A CDN typically provides higher resource availability and performance when compared to a single server or data center.
+
+## client
+
+In the Office Add-ins documentation, **client** typically refers to an Office application. The Office applications, or clients, that support Office Add-ins are: Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
+
+See also: application, host, Office application, Office client.
 
 ## Common API
 
@@ -47,7 +57,7 @@ See also: task pane.
 
 In the Office Add-ins documentation, **host** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are: Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
-See also: application, host, Office application, Office client.
+See also: application, client, Office application, Office client.
 
 ## Office
 
@@ -55,7 +65,7 @@ See also: application, host, Office application, Office client.
 
 In the Office Add-ins documentation, **Office client** refers to an Office application. The Office applications, or clients, that support Office Add-ins are: Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
-See also: application, platform, host.
+See also: application, client, host.
 
 ## platform
 
@@ -64,8 +74,6 @@ In the the Office Add-ins context, a **platform** usually refers to the operatin
 ## requirement set
 
 [!include[Requirement set note](../includes/office-js-requirement-sets.md)]
-
-See also: application-specific API.
 
 ## ribbon, ribbon button
 
@@ -85,6 +93,16 @@ See also: tutorial.
 
 ## UI-less custom function
 
+See also: custom function.
+
+## Web add-ins
+
+Web add-in is a legacy term for Office Add-ins.
+
+See also: add-in.
+
 ## XLL
+
+See also: custom function.
 
 ## Yeoman generator, yo office
