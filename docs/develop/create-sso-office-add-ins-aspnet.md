@@ -518,7 +518,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. Replace `TODO 2` with the following code to assemble all the information that is needed to get a token for Microsoft Graph using the "on behalf of" flow. About this code, note:
 
     * Your add-in is no longer playing the role of a resource (or audience) to which the Office application and user need access. Now it is itself a client that needs access to Microsoft Graph. `ConfidentialClientApplication` is the MSAL “client context” object.
-    * Beginning with MSAL.NET 3.x.x, the `bootstrapContext` is just the boostrap token itself.
+    * Beginning with MSAL.NET 3.x.x, the `bootstrapContext` is just the bootstrap token itself.
     * The Authority comes from the web.config. It is either the string "common" or, for a single-tenant add-in, a GUID.
     * MSAL will throw an error if your code requests `profile`, which is really only used when the Office client application gets the token to your add-in's web application. So only `Files.Read.All` is explicitly requested.
 
