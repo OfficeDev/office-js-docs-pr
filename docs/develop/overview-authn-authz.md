@@ -7,7 +7,7 @@ ms.localizationpriority: high
 
 # Overview of authentication and authorization in Office Add-ins
 
-Office Add-ins allow anonymous access by default, but you can require users to authenticate to use your add-in. For example, you can require that your users sign in with a Microsoft account, a Microsoft 365 Education or work account, or other common account. This task is called user authentication because it enables the add-in to know who the user is.
+Office Add-ins allow anonymous access by default, but you can require users to sign in to use your add-in with a Microsoft account, a Microsoft 365 Education or work account, or other common account. This task is called user authentication because it enables the add-in to know who the user is.
 
 Your add-in can also get the user's consent to access their Microsoft Graph data (such as their Microsoft 365 profile, OneDrive files, and SharePoint data) or to data in other external sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub. This task is called add-in (or app) authorization, because it is the *add-in* that is being authorized, not the user.
 
