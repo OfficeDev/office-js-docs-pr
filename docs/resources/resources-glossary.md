@@ -47,19 +47,19 @@ See also: application-specific API.
 
 ## Contoso
 
-## content pane
+## content add-in
 
-See also: task pane.
+**Content add-ins** are surfaces that can be embedded directly into Excel or PowerPoint documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document.
 
 ## custom function
+
+In the Office Add-ins documentation, a **custom function** is a user-defined function in Excel. Custom functions in Excel enable developers to add new functions, beyond the typical Excel features, by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel.
 
 ## host
 
 In the Office Add-ins documentation, **host** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are: Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
 See also: application, client, Office application, Office client.
-
-## Office
 
 ## Office application, Office client
 
@@ -69,7 +69,7 @@ See also: application, client, host.
 
 ## platform
 
-In the the Office Add-ins context, a **platform** usually refers to the operating system running an add-in. Platforms that support Office Add-ins are: Windows, Mac, iPad, and web browsers.
+In the Office Add-ins context, a **platform** usually refers to the operating system running an add-in. Platforms that support Office Add-ins are: Windows, Mac, iPad, and web browsers.
 
 ## requirement set
 
@@ -77,11 +77,15 @@ In the the Office Add-ins context, a **platform** usually refers to the operatin
 
 ## ribbon, ribbon button
 
+A **ribbon** is a command bar that organizes an application's features into a series of tabs or buttons at the top of a window. A **ribbon button** is one of the buttons within this series.
+
 ## runtime
+
+In the Office Add-ins context, a **runtime** is a lifecycle, or the time during which an application is running.
 
 ## task pane
 
-See also: content pane.
+Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
 
 ## tutorial
 
@@ -93,11 +97,13 @@ See also: tutorial.
 
 ## UI-less custom function
 
+A **UI-less custom function** is a custom functions add-in that doesn't have a task pane or other user-interface elements.
+
 See also: custom function.
 
 ## Web add-ins
 
-Web add-in is a legacy term for Office Add-ins.
+In the Office Add-ins documentation, **web add-in** is a legacy term for Office Add-ins.
 
 See also: add-in.
 
