@@ -22,7 +22,7 @@ The following table lists events that are currently available and the supported 
 > [!IMPORTANT]
 > Events still in preview may only be available with a Microsoft 365 subscription and in a limited set of supported clients as noted in the following table. For client configuration details, see [How to preview](#how-to-preview) in this article. Preview events shouldn't be used in production add-ins.
 
-[!div class="mx-tdCol2BreakAll"]
+[!div class="mx-tdBreakAll"]
 |Event|Description|Event-specific JSON|Minimum requirement set|Supported clients|
 |---|---|---|---|---|
 |`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|Not applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows, web browser, new Mac UI preview|
