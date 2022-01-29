@@ -88,8 +88,8 @@ Next you need to add a MIME type for JSON files.
     new CopyWebpackPlugin({
       patterns: [
       {
-        from: "web.config",
-        to: "web.config",
+        from: "src/web.config",
+        to: "src/web.config",
       },
      ],
     }),
