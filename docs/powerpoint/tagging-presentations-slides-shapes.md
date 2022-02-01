@@ -60,7 +60,7 @@ Consider the following scenario: Contoso Consulting has a presentation they show
 1. Create a method that tags the currently selected slide as intended for `Premium` customers. About this code, note:
 
     - The `getSelectedSlideIndex` function is defined in the next step. It returns the 1-based index of the currently selected slide.
-    - The value returned by the `getSelectedSlideIndex` function has to be decremented because the [SlideCollection.getItemAt](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-getItemAt-member(1)) method is 0-based.
+    - The value returned by the `getSelectedSlideIndex` function has to be decremented because the [SlideCollection.getItemAt](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-getitemat-member(1)) method is 0-based.
 
     ```javascript
     async function addTagToSelectedSlide() {
@@ -77,7 +77,7 @@ Consider the following scenario: Contoso Consulting has a presentation they show
 
 2. The following code creates a method to get the index of the selected slide. About this code, note:
 
-    - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getSelectedDataAsync-member(1)) method of the Common JavaScript APIs.
+    - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) method of the Common JavaScript APIs.
     - The call to `getSelectedDataAsync` is embedded in a promise-returning function. For more information about why and how to do this, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` returns an array because multiple slides can be selected. In this scenario, the user has selected just one, so the code gets the first (0th) slide, which is the only one selected.
     - The `index` value of the slide is the 1-based value the user sees beside the slide in the PowerPoint UI thumbnails pane.

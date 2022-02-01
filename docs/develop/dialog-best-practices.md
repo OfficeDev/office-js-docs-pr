@@ -20,9 +20,9 @@ This article provides rules, gotchas, and best practices for the Office dialog A
 - The URL passed to the [displayDialogAsync](/javascript/api/office/office.ui) method must be in the exact same domain as the add-in itself. It cannot be a subdomain. But the page that is passed to it can redirect to a page in another domain.
 - A host window, which can be a task pane or the UI-less [function file](../reference/manifest/functionfile.md) of an add-in command, can have only one dialog box open at a time.
 - Only two Office APIs can be called in the dialog box:
-  - The [messageParent](/javascript/api/office/office.ui#office-office-ui-messageParent-member(1)) function.
+  - The [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) function.
   - `Office.context.requirements.isSetSupported` (For more information, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md).)
-- The [messageParent](/javascript/api/office/office.ui#office-office-ui-messageParent-member(1)) function should usually be called from a page in the exact same domain as the add-in itself, but this is not mandatory. For more information, see [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
+- The [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) function should usually be called from a page in the exact same domain as the add-in itself, but this is not mandatory. For more information, see [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
 
 ## Best practices
 

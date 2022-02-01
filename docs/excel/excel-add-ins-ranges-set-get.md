@@ -49,7 +49,7 @@ Excel.run(function (context) {
 
 ## Select the edge of a used range
 
-The [Range.getRangeEdge](/javascript/api/excel/excel.range#excel-excel-range-getRangeEdge-member(1)) and [Range.getExtendedRange](/javascript/api/excel/excel.range#excel-excel-range-getExtendedRange-member(1)) methods let your add-in replicate the behavior of the keyboard selection shortcuts, selecting the edge of the used range based on the currently selected range. To learn more about used ranges, see [Get used range](excel-add-ins-ranges-get.md#get-used-range).
+The [Range.getRangeEdge](/javascript/api/excel/excel.range#excel-excel-range-getrangeedge-member(1)) and [Range.getExtendedRange](/javascript/api/excel/excel.range#excel-excel-range-getextendedrange-member(1)) methods let your add-in replicate the behavior of the keyboard selection shortcuts, selecting the edge of the used range based on the currently selected range. To learn more about used ranges, see [Get used range](excel-add-ins-ranges-get.md#get-used-range).
 
 In the following screenshot, the used range is the table with values in each cell, **C5:F12**. The empty cells outside this table are outside the used range.
 

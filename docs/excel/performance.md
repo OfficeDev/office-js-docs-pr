@@ -102,7 +102,7 @@ Excel.run(async (ctx) => {
 ```
 
 > [!NOTE]
-> You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](/javascript/api/excel/excel.table#excel-excel-table-convertToRange-member(1)) method.
+> You can conveniently convert a Table object to a Range object by using the [Table.convertToRange()](/javascript/api/excel/excel.table#excel-excel-table-converttorange-member(1)) method.
 
 ## Payload size limit best practices
 

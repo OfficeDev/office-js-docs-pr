@@ -18,8 +18,8 @@ In the OneNote add-ins JavaScript API, page content is represented by the follow
 
 To create an empty OneNote page, use one of the following methods.
 
-- [Section.addPage](/javascript/api/onenote/onenote.section#onenote-onenote-section-addPage-member(1))
-- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#onenote-onenote-section-insertSectionAsSibling-member(1))
+- [Section.addPage](/javascript/api/onenote/onenote.section#onenote-onenote-section-addpage-member(1))
+- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#onenote-onenote-section-insertsectionassibling-member(1))
 
 Then use methods in the following objects to work with the page content, such as `Page.addOutline` and `Outline.appendHtml`.
 

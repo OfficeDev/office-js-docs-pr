@@ -61,7 +61,7 @@ To persist state or custom settings of a content or task pane add-in for Word, E
 
 The `Settings` object is automatically loaded as part of the [Document](/javascript/api/office/office.document) object, and is available when the task pane or content add-in is activated. After the `Document` object is instantiated, you can access the `Settings` object with the [settings](/javascript/api/office/office.document#office-office-document-settings-member) property of the `Document` object. During the lifetime of the session, you can just use the `Settings.get`, `Settings.set`, and `Settings.remove` methods to read, write, or remove persisted settings and add-in state from the in-memory copy of the property bag.
 
-Because the set and remove methods operate against only the in-memory copy of the settings property bag, to save new or changed settings back to the document the add-in is associated with you must call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveAsync-member(1)) method.
+Because the set and remove methods operate against only the in-memory copy of the settings property bag, to save new or changed settings back to the document the add-in is associated with you must call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) method.
 
 ### Creating or updating a setting value
 
@@ -100,7 +100,7 @@ Nothing will happen if the setting does not exist. Use the `Settings.saveAsync` 
 
 ### Saving your settings
 
-To save any additions, changes, or deletions your add-in made to the in-memory copy of the settings property bag during the current session, you must call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveAsync-member(1)) method to store them in the document. The only parameter of the `saveAsync` method is _callback_, which is a callback function with a single parameter.
+To save any additions, changes, or deletions your add-in made to the in-memory copy of the settings property bag during the current session, you must call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) method to store them in the document. The only parameter of the `saveAsync` method is _callback_, which is a callback function with a single parameter.
 
 ```js
 Office.context.document.settings.saveAsync(function (asyncResult) {
@@ -141,7 +141,7 @@ function createCustomXmlPart() {
 }
 ```
 
-To retrieve a custom XML part, you use the [getByIdAsync](/javascript/api/office/office.customxmlparts#office-office-customxmlparts-getByIdAsync-member(1)) method, but the ID is a GUID that is generated when the XML part is created, so you can't know when coding what the ID is. For that reason, it is a good practice when creating an XML part to immediately store the ID of the XML part as a setting and give it a memorable key. The following method shows how to do this. (But see earlier sections of this article for details and best practices when working with custom settings.)
+To retrieve a custom XML part, you use the [getByIdAsync](/javascript/api/office/office.customxmlparts#office-office-customxmlparts-getbyidasync-member(1)) method, but the ID is a GUID that is generated when the XML part is created, so you can't know when coding what the ID is. For that reason, it is a good practice when creating an XML part to immediately store the ID of the XML part as a setting and give it a memorable key. The following method shows how to do this. (But see earlier sections of this article for details and best practices when working with custom settings.)
 
  ```js
 function createCustomXmlPartAndStoreId() {

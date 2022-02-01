@@ -59,7 +59,7 @@ If your add-in can be used in scenarios where the new slide should use the same 
 
 1. Create a method to get the index of the selected slide. The following is an example. About this code, note:
 
-    - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getSelectedDataAsync-member(1)) method of the Common JavaScript APIs.
+    - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) method of the Common JavaScript APIs.
     - The call to `getSelectedDataAsync` is embedded in a Promise-returning function. For more information about why and how to do this, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` returns an array because multiple slides can be selected. In this scenario, the user has selected just one, so the code gets the first (0th) slide, which is the only one selected.
     - The `index` value of the slide is the 1-based value the user sees beside the slide in the thumbnails pane.

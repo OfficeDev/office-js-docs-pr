@@ -62,7 +62,7 @@ The **ReadItem** permission is the next level of permission in the permissions m
 
 ### Can do
 
-- [Read all the properties](item-data.md) of the current item in a read or [compose form](get-and-set-item-data-in-a-compose-form.md), for example, [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) in a read form and [item.to.getAsync](/javascript/api/outlook/office.Recipients#outlook-office-Recipients-getAsync-member(1)) in a compose form.
+- [Read all the properties](item-data.md) of the current item in a read or [compose form](get-and-set-item-data-in-a-compose-form.md), for example, [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) in a read form and [item.to.getAsync](/javascript/api/outlook/office.Recipients#outlook-office-Recipients-getasync-member(1)) in a compose form.
 
 - [Get a callback token to get item attachments](get-attachments-of-an-outlook-item.md) or the full item with Exchange Web Services (EWS) or [Outlook REST APIs](use-rest-api.md).
 
@@ -101,24 +101,24 @@ The **ReadItem** permission is the next level of permission in the permissions m
   - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
   - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
   - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.bcc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addAsync-member(1))
-  - [item.bcc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setAsync-member(1))
-  - [item.body.prependAsync](/javascript/api/outlook/office.body#outlook-office-body-prependAsync-member(1))
-  - [item.body.setAsync](/javascript/api/outlook/office.body#outlook-office-body-setAsync-member(1))
-  - [item.body.setSelectedDataAsync](/javascript/api/outlook/office.body#outlook-office-body-setSelectedDataAsync-member(1))
-  - [item.cc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addAsync-member(1))
-  - [item.cc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setAsync-member(1))
-  - [item.end.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setAsync-member(1))
-  - [item.location.setAsync](/javascript/api/outlook/office.location#outlook-office-location-setAsync-member(1))
-  - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addAsync-member(1))
-  - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setAsync-member(1))
+  - [item.bcc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.bcc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
+  - [item.body.prependAsync](/javascript/api/outlook/office.body#outlook-office-body-prependasync-member(1))
+  - [item.body.setAsync](/javascript/api/outlook/office.body#outlook-office-body-setasync-member(1))
+  - [item.body.setSelectedDataAsync](/javascript/api/outlook/office.body#outlook-office-body-setselecteddataasync-member(1))
+  - [item.cc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.cc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
+  - [item.end.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))
+  - [item.location.setAsync](/javascript/api/outlook/office.location#outlook-office-location-setasync-member(1))
+  - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
   - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addAsync-member(1))
-  - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setAsync-member(1))
-  - [item.start.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setAsync-member(1))
-  - [item.subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setAsync-member(1))
-  - [item.to.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addAsync-member(1))
-  - [item.to.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setAsync-member(1))
+  - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
+  - [item.start.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))
+  - [item.subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))
+  - [item.to.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.to.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
 
 ## ReadWriteItem permission
 

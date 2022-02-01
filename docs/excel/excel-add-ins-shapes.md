@@ -20,11 +20,11 @@ The following types of shapes are added using the associated method.
 
 | Shape | Add Method | Signature |
 |-------|------------|-----------|
-| Geometric Shape | [addGeometricShape](/javascript/api/excel/excel.shapecollection#excel-excel-shapecollection-addGeometricShape-member(1)) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
-| Image (either JPEG or PNG) | [addImage](/javascript/api/excel/excel.shapecollection#excel-excel-shapecollection-addImage-member(1)) | `addImage(base64ImageString: string): Excel.Shape` |
-| Line | [addLine](/javascript/api/excel/excel.shapecollection#excel-excel-shapecollection-addLine-member(1)) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
-| SVG | [addSvg](/javascript/api/excel/excel.shapecollection#excel-excel-shapecollection-addSvg-member(1)) | `addSvg(xml: string): Excel.Shape` |
-| Text Box | [addTextBox](/javascript/api/excel/excel.shapecollection#excel-excel-shapecollection-addTextBox-member(1)) | `addTextBox(text?: string): Excel.Shape` |
+| Geometric Shape | [addGeometricShape](/javascript/api/excel/excel.shapecollection#excel-excel-shapecollection-addgeometricshape-member(1)) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
+| Image (either JPEG or PNG) | [addImage](/javascript/api/excel/excel.shapecollection#excel-excel-shapecollection-addimage-member(1)) | `addImage(base64ImageString: string): Excel.Shape` |
+| Line | [addLine](/javascript/api/excel/excel.shapecollection#excel-excel-shapecollection-addline-member(1)) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
+| SVG | [addSvg](/javascript/api/excel/excel.shapecollection#excel-excel-shapecollection-addsvg-member(1)) | `addSvg(xml: string): Excel.Shape` |
+| Text Box | [addTextBox](/javascript/api/excel/excel.shapecollection#excel-excel-shapecollection-addtextbox-member(1)) | `addTextBox(text?: string): Excel.Shape` |
 
 ### Geometric shapes
 
@@ -209,7 +209,7 @@ Excel.run(function (context) {
 
 ## Export shapes as images
 
-Any `Shape` object can be converted to an image. [Shape.getAsImage](/javascript/api/excel/excel.shape#excel-excel-shape-getAsImage-member(1)) returns base64-encoded string. The image's format is specified as a [PictureFormat](/javascript/api/excel/excel.pictureformat) enum passed to `getAsImage`.
+Any `Shape` object can be converted to an image. [Shape.getAsImage](/javascript/api/excel/excel.shape#excel-excel-shape-getasimage-member(1)) returns base64-encoded string. The image's format is specified as a [PictureFormat](/javascript/api/excel/excel.pictureformat) enum passed to `getAsImage`.
 
 ```js
 Excel.run(function (context) {

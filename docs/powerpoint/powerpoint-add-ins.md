@@ -35,9 +35,9 @@ If you are building a content add-in, you will need to get the presentation's ac
 
 In the following code sample:
 
-- The  `getActiveFileView` function calls the [Document.getActiveViewAsync](/javascript/api/office/office.document#office-office-document-getActiveViewAsync-member(1)) method to return whether the presentation's current view is "edit" (any of the views in which you can edit slides, such as **Normal** or **Outline View**) or "read" (**Slide Show** or **Reading View**).
+- The  `getActiveFileView` function calls the [Document.getActiveViewAsync](/javascript/api/office/office.document#office-office-document-getactiveviewasync-member(1)) method to return whether the presentation's current view is "edit" (any of the views in which you can edit slides, such as **Normal** or **Outline View**) or "read" (**Slide Show** or **Reading View**).
 
-- The  `registerActiveViewChanged` function calls the [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addHandlerAsync-member(1)) method to register a handler for the [Document.ActiveViewChanged](/javascript/api/office/office.document) event.
+- The  `registerActiveViewChanged` function calls the [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) method to register a handler for the [Document.ActiveViewChanged](/javascript/api/office/office.document) event.
 
 
 ```js
@@ -86,7 +86,7 @@ function registerActiveViewChanged() {
 
 ## Navigate to a particular slide in the presentation
 
-In the following code sample, the `getSelectedRange` function calls the [Document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getSelectedDataAsync-member(1)) method to get the JSON object returned by `asyncResult.value`, which contains an array named `slides`. The `slides` array contains the ids, titles, and indexes of selected range of slides (or of the current slide, if multiple slides are not selected). It also saves the id of the first slide in the selected range to a global variable.
+In the following code sample, the `getSelectedRange` function calls the [Document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) method to get the JSON object returned by `asyncResult.value`, which contains an array named `slides`. The `slides` array contains the ids, titles, and indexes of selected range of slides (or of the current slide, if multiple slides are not selected). It also saves the id of the first slide in the selected range to a global variable.
 
 ```js
 function getSelectedRange() {
@@ -105,7 +105,7 @@ function getSelectedRange() {
 }
 ```
 
-In the following code sample, the `goToFirstSlide` function calls the [Document.goToByIdAsync](/javascript/api/office/office.document#office-office-document-goToByIdAsync-member(1)) method to navigate to the first slide that was identified by the `getSelectedRange` function shown previously.
+In the following code sample, the `goToFirstSlide` function calls the [Document.goToByIdAsync](/javascript/api/office/office.document#office-office-document-gotobyidasync-member(1)) method to navigate to the first slide that was identified by the `getSelectedRange` function shown previously.
 
 ```js
 function goToFirstSlide() {
@@ -144,7 +144,7 @@ function goToSlideByIndex() {
 
 ## Get the URL of the presentation
 
-In the following code sample, the  `getFileUrl` function calls the [Document.getFileProperties](/javascript/api/office/office.document#office-office-document-getFilePropertiesAsync-member(1)) method to get the URL of the presentation file.
+In the following code sample, the  `getFileUrl` function calls the [Document.getFileProperties](/javascript/api/office/office.document#office-office-document-getfilepropertiesasync-member(1)) method to get the URL of the presentation file.
 
 ```js
 function getFileUrl() {

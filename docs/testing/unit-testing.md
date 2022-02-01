@@ -49,7 +49,7 @@ npm install office-addin-mock --save-dev
    const myOfficeAddinFeature = require("../my-office-add-in");
    ```
 
-1. Create a data object that has the properties and subproperties that you need to mock to test the function. The following is an example of an object that mocks the Excel [Workbook.range.address](/javascript/api/excel/excel.range#excel-excel-range-address-member) property and the [Workbook.getSelectedRange](/javascript/api/excel/excel.workbook#excel-excel-workbook-getSelectedRange-member(1)) method. This isn't the final mock object. Think of it as a seed object that is used by `OfficeMockObject` to create the final mock object.
+1. Create a data object that has the properties and subproperties that you need to mock to test the function. The following is an example of an object that mocks the Excel [Workbook.range.address](/javascript/api/excel/excel.range#excel-excel-range-address-member) property and the [Workbook.getSelectedRange](/javascript/api/excel/excel.workbook#excel-excel-workbook-getselectedrange-member(1)) method. This isn't the final mock object. Think of it as a seed object that is used by `OfficeMockObject` to create the final mock object.
 
    ```javascript
    const mockData = {

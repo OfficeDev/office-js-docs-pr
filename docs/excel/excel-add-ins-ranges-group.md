@@ -14,7 +14,7 @@ This article provides a code sample that shows how to group ranges for an outlin
 
 Rows or columns of a range can be grouped together to create an [outline](https://support.microsoft.com/office/08ce98c4-0063-4d42-8ac7-8278c49e9aff). These groups can be collapsed and expanded to hide and show the corresponding cells. This makes quick analysis of top-line data easier. Use [Range.group](/javascript/api/excel/excel.range#excel-excel-range-group-member(1)) to make these outline groups.
 
-An outline can have a hierarchy, where smaller groups are nested under larger groups. This allows the outline to be viewed at different levels. Changing the visible outline level can be done programmatically through the [Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showOutlineLevels-member(1)) method. Note that Excel only supports eight levels of outline groups.
+An outline can have a hierarchy, where smaller groups are nested under larger groups. This allows the outline to be viewed at different levels. Changing the visible outline level can be done programmatically through the [Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showoutlinelevels-member(1)) method. Note that Excel only supports eight levels of outline groups.
 
 The following code sample creates an outline with two levels of groups for both the rows and columns. The subsequent image shows the groupings of that outline. In the code sample, the ranges being grouped do not include the row or column of the outline control (the "Totals" for this example). A group defines what will be collapsed, not the row or column with the control.
 
