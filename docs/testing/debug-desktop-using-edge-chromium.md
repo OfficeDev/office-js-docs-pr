@@ -1,15 +1,22 @@
 ---
 title: Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
-description: 'Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) by using the Debugger for Microsoft Edge extension in VS Code.'
-ms.date: 01/07/2022
+description: 'Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) by using the Office Add-in Debugger Extension in VS Code.'
+ms.date: 02/01/2022
 ms.localizationpriority: high
 ---
 # Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 
-Office Add-ins running on Windows can use the Debugger for Microsoft Edge extension in Visual Studio Code to debug against the Edge Chromium WebView2 runtime.
+Office Add-ins running on Windows can use the Office Add-in Debugger Extension in Visual Studio Code to debug against the Edge Chromium WebView2 runtime.
+
+> [!IMPORTANT]
+> This article only applies when Office runs add-ins in the Microsoft Edge Chromium WebView2 runtime, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio Code against Microsoft Edge Legacy with the original webView (EdgeHTML) runtime, [see this article](debug-with-vs-extension.md).
 
 > [!TIP]
 > If you cannot, or don't wish to, debug using tools built into Visual Studio Code; or you are encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Chromium WebView2 runtime by using the Edge (Chromium-based) developer tools as described in [Debug add-ins using developer tools for Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
+
+This debugging mode is dynamic, allowing you to set breakpoints while code is running. You can see changes in your code immediately while the debugger is attached, all without losing your debugging session. Your code changes also persist, so you can see the results of multiple changes to your code. The following image shows this extension in action.
+
+![Office Add-in Debugger Extension debugging a section of Excel add-ins.](../images/vs-debugger-extension-for-office-addins.jpg)
 
 ## Prerequisites
 
@@ -20,7 +27,11 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
 
 ## Install and use the debugger
 
-1. Create a project using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). You can use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this.
+These instructions assume you have experience using the command line, understand basic JavaScript, and have created an Office Add-in project before using the Yo Office generator. If you haven't done this before, consider visiting one of our tutorials, like this [Excel Office Add-in tutorial](../tutorials/excel-tutorial.md).
+
+1. If you want to create a project to experiement with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). You can use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this. If you want to debug an existing project, skip to the next step.
+
+1. Open your project in VS Code. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "Microsoft Office Add-in Debugger" extension and install it.
 
    > [!TIP]
    > If you aren't using a Yeoman generator based add-in, you may be prompted to adjust a registry key. While in the root folder of your project, run the following in the command line.
@@ -28,8 +39,6 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
    > ``` command&nbsp;line
    > npx office-addin-debugging start <your manifest path>
    > ```
-
-1. Open your project in VS Code. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "[Microsoft Edge DevTools](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)" extension and install it.
 
 1. Next, choose  **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 
@@ -45,6 +54,16 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
    > [!NOTE]
    > If you select **Cancel**, the dialog won't be shown again while this instance of the add-in is running. However, if you restart your add-in, you'll see the dialog again.
 
+  > [!IMPORTANT]
+  > If your project was created with older versions of Yo Office, you may see the following error dialog box at this point.
+  >
+  > ![Error that says Configured debug type edge is not supported.](../images/configured-debug-type-error.jpg)
+  >
+  > Select the **Cancel** button on the error dialog box. Open the `\.vscode\launch.json` file in the project. In the `configurations` array, there are several configuration objects. You need to edit the ones whose names have the pattern `$HOST$ Desktop (Edge Chromium)`, Where $HOST$ is an Office application; for example, `Excel Desktop (Edge Chromium)` and `Word Desktop (Edge Chromium)`. You need to make two edits to each of these configurations. 
+  > 
+  > - Change the value of the `"type"` property from `"edge"` to `"pwa-msedge"`.
+  > - Change value of the `"useWebView"` property from the string `"advanced"` to the boolean `true` (note there are no quotation marks around the `true`).
+
 1. You're now able to set breakpoints in your project's code and debug.
 
    > [!NOTE]
@@ -58,5 +77,8 @@ Office Add-ins running on Windows can use the Debugger for Microsoft Edge extens
 ## See also
 
 - [Test and debug Office Add-ins](test-debug-office-add-ins.md)
-- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
+- [Debug add-ins on Windows using Visual Studio Code and Microsoft Edge legacy WebView (EdgeHTML)](debug-with-vs-extension.md)
+- [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
+- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
 - [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)

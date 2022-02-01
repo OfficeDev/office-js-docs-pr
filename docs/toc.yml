@@ -283,6 +283,8 @@ items:
       - name: Debug using Visual Studio Code and Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
         displayName: debug, windows
+      - name: Debug using Visual Studio Code and the Edge Legacy WebView
+        href: testing/debug-with-vs-extension.md
       - name: Test with Internet Explorer 11
         href: testing/ie-11-testing.md
     - name: Web browser
@@ -300,11 +302,8 @@ items:
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload
-
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
-    - name: Debugger Extension for Visual Studio Code
-      href: testing/debug-with-vs-extension.md
     - name: Performance
       items:
       - name: Avoid using the context.sync method in loops
