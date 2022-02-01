@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript preview APIs
 description: Details about upcoming Word JavaScript APIs.
-ms.date: 12/14/2021
+ms.date: 02/01/2022
 ms.prod: word
 ms.localizationpriority: medium
 ---
@@ -102,26 +102,36 @@ The following table lists the Word JavaScript APIs currently in preview only in 
 |[Comment](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#word-word-comment-authorEmail-member)|Gets the email of the comment's author.|
 ||[authorName](/javascript/api/word/word.comment#word-word-comment-authorName-member)|Gets the name of the comment's author.|
 ||[content](/javascript/api/word/word.comment#word-word-comment-content-member)|Gets or sets the comment's content as plain text.|
+||[contentRange](/javascript/api/word/word.comment#word-word-comment-contentRange-member)|Gets or sets the comment thread status.|
 ||[creationDate](/javascript/api/word/word.comment#word-word-comment-creationDate-member)|Gets the creation date of the comment.|
 ||[delete()](/javascript/api/word/word.comment#word-word-comment-delete-member(1))|Deletes the comment and its replies.|
 ||[getRange()](/javascript/api/word/word.comment#word-word-comment-getRange-member(1))|Gets the range in the main document where the comment is on.|
 ||[id](/javascript/api/word/word.comment#word-word-comment-id-member)|ID|
 ||[replies](/javascript/api/word/word.comment#word-word-comment-replies-member)|Gets the collection of reply objects associated with the comment.|
 ||[reply(replyText: string)](/javascript/api/word/word.comment#word-word-comment-reply-member(1))|Adds a new reply to the end of the comment thread.|
-||[resolved](/javascript/api/word/word.comment#word-word-comment-resolved-member)|Gets or sets the comment thread status.|
+||[resolved](/javascript/api/word/word.comment#word-word-comment-resolved-member)|Gets or sets the comment thread's status.|
 |[CommentCollection](/javascript/api/word/word.commentcollection)|[getFirst()](/javascript/api/word/word.commentcollection#word-word-commentcollection-getFirst-member(1))|Gets the first comment in the collection.|
-||[getFirstOrNullObject()](/javascript/api/word/word.commentcollection#word-word-commentcollection-getFirstOrNullObject-member(1))|Gets the first comment or null object in the collection.|
+||[getFirstOrNullObject()](/javascript/api/word/word.commentcollection#word-word-commentcollection-getFirstOrNullObject-member(1))|Gets the first comment in the collection.|
 ||[getItem(index: number)](/javascript/api/word/word.commentcollection#word-word-commentcollection-getItem-member(1))|Gets a comment object by its index in the collection.|
 ||[items](/javascript/api/word/word.commentcollection#word-word-commentcollection-items-member)|Gets the loaded child items in this collection.|
+|[CommentContentRange](/javascript/api/word/word.commentcontentrange)|[bold](/javascript/api/word/word.commentcontentrange#word-word-commentcontentrange-bold-member)|Gets or sets a value that indicates whether the comment text is bold.|
+||[hyperlink](/javascript/api/word/word.commentcontentrange#word-word-commentcontentrange-hyperlink-member)|Gets the first hyperlink in the range, or sets a hyperlink on the range.|
+||[insertText(text: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.commentcontentrange#word-word-commentcontentrange-insertText-member(1))|Inserts text into at the specified location.|
+||[isEmpty](/javascript/api/word/word.commentcontentrange#word-word-commentcontentrange-isEmpty-member)|Checks whether the range length is zero.|
+||[italic](/javascript/api/word/word.commentcontentrange#word-word-commentcontentrange-italic-member)|Gets or sets a value that indicates whether the comment text is italicized.|
+||[strikeThrough](/javascript/api/word/word.commentcontentrange#word-word-commentcontentrange-strikeThrough-member)|Gets or sets a value that indicates whether the comment text has a strikethrough.|
+||[text](/javascript/api/word/word.commentcontentrange#word-word-commentcontentrange-text-member)|Gets the text of the comment range.|
+||[underline](/javascript/api/word/word.commentcontentrange#word-word-commentcontentrange-underline-member)|Gets or sets a value that indicates the comment text's underline type.|
 |[CommentReply](/javascript/api/word/word.commentreply)|[authorEmail](/javascript/api/word/word.commentreply#word-word-commentreply-authorEmail-member)|Gets the email of the comment reply's author.|
 ||[authorName](/javascript/api/word/word.commentreply#word-word-commentreply-authorName-member)|Gets the name of the comment reply's author.|
 ||[content](/javascript/api/word/word.commentreply#word-word-commentreply-content-member)|Gets or sets the comment reply's content.|
+||[contentRange](/javascript/api/word/word.commentreply#word-word-commentreply-contentRange-member)|Gets or sets the commentReply's content range.|
 ||[creationDate](/javascript/api/word/word.commentreply#word-word-commentreply-creationDate-member)|Gets the creation date of the comment reply.|
 ||[delete()](/javascript/api/word/word.commentreply#word-word-commentreply-delete-member(1))|Deletes the comment reply.|
 ||[id](/javascript/api/word/word.commentreply#word-word-commentreply-id-member)|ID|
 ||[parentComment](/javascript/api/word/word.commentreply#word-word-commentreply-parentComment-member)|Gets the parent comment of this reply.|
 |[CommentReplyCollection](/javascript/api/word/word.commentreplycollection)|[getFirst()](/javascript/api/word/word.commentreplycollection#word-word-commentreplycollection-getFirst-member(1))|Gets the first comment reply in the collection.|
-||[getFirstOrNullObject()](/javascript/api/word/word.commentreplycollection#word-word-commentreplycollection-getFirstOrNullObject-member(1))|Gets the first comment reply or null object in the collection.|
+||[getFirstOrNullObject()](/javascript/api/word/word.commentreplycollection#word-word-commentreplycollection-getFirstOrNullObject-member(1))|Gets the first comment reply in the collection.|
 ||[getItem(index: number)](/javascript/api/word/word.commentreplycollection#word-word-commentreplycollection-getItem-member(1))|Gets a comment reply object by its index in the collection.|
 ||[items](/javascript/api/word/word.commentreplycollection#word-word-commentreplycollection-items-member)|Gets the loaded child items in this collection.|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[endnotes](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-endnotes-member)|Gets the collection of endnotes in the contentcontrol.|
