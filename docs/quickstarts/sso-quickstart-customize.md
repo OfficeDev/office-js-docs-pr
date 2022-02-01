@@ -1,12 +1,12 @@
 ---
-title: Customize your Node.js SSO-enabled add-in
-description: Learn about customizing the SSO-enabled add-in that you created with the Yeoman generator.
-ms.date: 01/06/2022
+title: "Add Microsoft Graph functionality to your SSO quick start project"
+description: Learn how to add new Microsoft Graph functionality to the SSO-enabled add-in that you created.
+ms.date: 01/25/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
 ---
 
-# Customize your Node.js SSO-enabled add-in
+# Add Microsoft Graph functionality to your SSO quick start project
 
 > [!IMPORTANT]
 > This article builds upon the SSO-enabled add-in that's created by completing the [single sign-on (SSO) quick start](sso-quickstart.md). Please complete the quick start before reading this article.
@@ -40,17 +40,13 @@ The add-in that you created with the SSO quick start uses Microsoft Graph to get
 
 Before the add-in can successfully read the contents of the user's OneDrive for Business, its app registration information in Azure must be updated with the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission and revoke the **User.Read** permission, which is no longer needed.
 
-1. Navigate to the [Azure portal](https://ms.portal.azure.com/#home) and **sign in using your Microsoft 365 administrator credentials**.
+1. Sign in to the [Azure portal](https://portal.azure.com) with your **Microsoft 365 administrator credentials**.
 
-2. Navigate to the **App registrations** page.
+3. Go to the **App registrations** page, and choose the app registration that you created during the quick start.
     > [!TIP]
-    > You can do this either by choosing the **App registrations** tile on the Azure home page or by using the search box on the home page to find and choose **App registrations**.
+    > The **Display name** of the app matches the add-in name that you specified when you created the project with the Yeoman generator.
 
-3. On the **App registrations** page, choose the app that you created during the quick start.
-    > [!TIP]
-    > The **Display name** of the app will match the add-in name that you specified when you created the project with the Yeoman generator.
-
-4. From the app overview page, choose **API permissions** under the **Manage** heading on the left side of the page.
+4. Under **Manage**, choose **API permissions**.
 
 5. In the **User.Read** row of the permissions table, choose the ellipsis and then select **Revoke admin consent** from the menu that appears.
 

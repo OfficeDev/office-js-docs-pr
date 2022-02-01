@@ -1,16 +1,13 @@
 ---
-title: Authorize external services in your Office Add-in
-description: 'Getting authorization to non-Microsoft data sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub using OAuth 2.0, the Authorization Code and Implicit flows.'
-ms.date: 07/08/2021
+title: Authorization with non-Microsoft identity providers
+description: 'Get authorization to non-Microsoft data sources using OAuth 2.0, the Authorization Code and Implicit flows.'
+ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---
 
-# Authorize external services in your Office Add-in
+# Authorization with non-Microsoft identity providers
 
-Popular online services, including Microsoft 365, Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in.
-
-> [!NOTE]
-> The remainder of this article is about accessing non-Microsoft services. For information about accessing Microsoft Graph (including Microsoft 365), see [Access to Microsoft Graph with SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso) and [Access to Microsoft Graph without SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
+There are many popular identity providing services, in addition to the Microsoft identity platform, that you can use in your add-in. They give users, and applications such as your Office add-in, access to the users' accounts in other applications.
 
 The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
 
@@ -42,8 +39,6 @@ Many libraries are available for implementing the Authorization Code flow in var
 
 Libraries are available for many languages and platforms, for both the Implicit flow and the Authorization Code flow. Some libraries are general purpose, while others are for specific online services.
 
-**Google**: Search [GitHub.com/Google](https://github.com/google) for "auth" or the name of your language. Most of the relevant repos are named `google-auth-library-[name of language]`.
-
 **Facebook**: Search [Facebook for Developers](https://developers.facebook.com) for "library" or "sdk".
 
 **General OAuth 2.0**: A page of links to libraries for over a dozen languages is maintained by the IETF OAuth Working Group at: [OAuth Code](https://oauth.net/code/). Note that some of these libraries are for implementing an OAuth compliant service. The libraries of interest to you as a an add-in developer are called *client* libraries on this page because your web server is a client of the OAuth compliant service.
@@ -57,3 +52,7 @@ We recommend that the UI for authentication/authorization in your add-in use our
 ## What is CORS?
 
 CORS stands for [Cross Origin Resource Sharing](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS). For information about how to use CORS inside add-ins, see [Addressing same-origin policy limitations in Office Add-ins](addressing-same-origin-policy-limitations.md).
+
+## See also
+
+- [Overview of authentication and authorization in Office Add-ins](overview-authn-authz.md).
