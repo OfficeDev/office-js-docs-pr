@@ -21,9 +21,6 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
 
 ![Screenshot of a task pane in Outlook on Android.](../images/outlook-mobile-addin-taskpane-android.png)
 
-> [!IMPORTANT]
-> Add-ins no longer work in Outlook on a web browser on Android. For more information, see [Outlook on your mobile browser is being upgraded](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816).
-
 ## What's different on mobile?
 
 - The small size and quick interactions make designing for mobile a challenge. To ensure quality experiences for our customers, we are setting strict validation criteria that must be met by an add-in declaring mobile support, in order to be approved in AppSource.
@@ -60,11 +57,14 @@ Here are examples of scenarios that make sense in Outlook Mobile.
 
 ## Testing your add-ins on mobile
 
-To test an add-in on Outlook Mobile, first [sideload an add-in](sideload-outlook-add-ins-for-testing.md) to an O365 or Outlook.com account on the web, Windows, or Mac. Make sure your manifest is properly formatted to contain `MobileFormFactor` or it won't load in your Outlook client on mobile.
+To test an add-in on Outlook Mobile, first [sideload an add-in](sideload-outlook-add-ins-for-testing.md) to a Microsoft 365 or Outlook.com account on the web, Windows, or Mac. Make sure your manifest is properly formatted to contain `MobileFormFactor` or it won't load in your Outlook client on mobile.
 
 After your add-in is working, make sure to test it on different screen sizes, including phones and tablets. You should make sure it meets accessibility guidelines for contrast, font size, and color, as well as being usable with a screen reader such as VoiceOver on iOS or TalkBack on Android.
 
 Troubleshooting on mobile can be hard since you may not have the tools you're used to. However, one option for troubleshooting on iOS is to use Fiddler (check out [this tutorial on using it with an iOS device](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
+
+> [!NOTE]
+> Add-ins don't work in modern Outlook on a web browser on Android. For information about supported devices, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
 ## Next steps
 
