@@ -32,8 +32,8 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.8. 
 
 | Class | Fields | Description |
 |:---|:---|:---|
-|[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#formula1)|Specifies the right-hand operand when the operator property is set to a binary operator such as GreaterThan (the left-hand operand is the value the user tries to enter in the cell).|
-||[formula2](/javascript/api/excel/excel.basicdatavalidation#formula2)|With the ternary operators Between and NotBetween, specifies the upper bound operand.|
+|[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#excel-excel-basicdatavalidation-formula1-member)|Specifies the right-hand operand when the operator property is set to a binary operator such as GreaterThan (the left-hand operand is the value the user tries to enter in the cell).|
+||[formula2](/javascript/api/excel/excel.basicdatavalidation#excel-excel-basicdatavalidation-formula2-member)|With the ternary operators Between and NotBetween, specifies the upper bound operand.|
 ||[operator](/javascript/api/excel/excel.basicdatavalidation#excel-excel-basicdatavalidation-operator-member)|The operator to use for validating the data.|
 |[Chart](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#excel-excel-chart-categoryLabelLevel-member)|Specifies a chart category label level enumeration constant, referring to the level of the source category labels.|
 ||[displayBlanksAs](/javascript/api/excel/excel.chart#excel-excel-chart-displayBlanksAs-member)|Specifies the way that blank cells are plotted on a chart.|
@@ -178,8 +178,8 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.8. 
 ||[textLength](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-textLength-member)|Text length data validation criteria.|
 ||[time](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-time-member)|Time data validation criteria.|
 ||[wholeNumber](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-wholeNumber-member)|Whole number data validation criteria.|
-|[DateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation)|[formula1](/javascript/api/excel/excel.datetimedatavalidation#formula1)|Specifies the right-hand operand when the operator property is set to a binary operator such as GreaterThan (the left-hand operand is the value the user tries to enter in the cell).|
-||[formula2](/javascript/api/excel/excel.datetimedatavalidation#formula2)|With the ternary operators Between and NotBetween, specifies the upper bound operand.|
+|[DateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation)|[formula1](/javascript/api/excel/excel.datetimedatavalidation#excel-excel-datetimedatavalidation-formula1-member)|Specifies the right-hand operand when the operator property is set to a binary operator such as GreaterThan (the left-hand operand is the value the user tries to enter in the cell).|
+||[formula2](/javascript/api/excel/excel.datetimedatavalidation#excel-excel-datetimedatavalidation-formula2-member)|With the ternary operators Between and NotBetween, specifies the upper bound operand.|
 ||[operator](/javascript/api/excel/excel.datetimedatavalidation#excel-excel-datetimedatavalidation-operator-member)|The operator to use for validating the data.|
 |[FilterPivotHierarchy](/javascript/api/excel/excel.filterpivothierarchy)|[enableMultipleFilterItems](/javascript/api/excel/excel.filterpivothierarchy#excel-excel-filterpivothierarchy-enableMultipleFilterItems-member)|Determines whether to allow multiple filter items.|
 ||[fields](/javascript/api/excel/excel.filterpivothierarchy#excel-excel-filterpivothierarchy-fields-member)|Returns the PivotFields associated with the FilterPivotHierarchy.|
@@ -271,8 +271,7 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.8. 
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#excel-excel-tablechangedeventargs-getRange-member(1))|Gets the range that represents the changed area of a table on a specific worksheet.|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#excel-excel-tablechangedeventargs-getRangeOrNullObject-member(1))|Gets the range that represents the changed area of a table on a specific worksheet.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#excel-excel-workbook-readOnly-member)|Returns `true` if the workbook is open in read-only mode.|
-|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)|||
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onCalculated-member)|Occurs when the worksheet is calculated.|
+|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)||[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onCalculated-member)|Occurs when the worksheet is calculated.|
 ||[showGridlines](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showGridlines-member)|Specifies if gridlines are visible to the user.|
 ||[showHeadings](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showHeadings-member)|Specifies if headings are visible to the user.|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[type](/javascript/api/excel/excel.worksheetcalculatedeventargs#excel-excel-worksheetcalculatedeventargs-type-member)|Gets the type of the event.|

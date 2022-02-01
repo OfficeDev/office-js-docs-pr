@@ -31,7 +31,7 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.3. 
 ||[columnCount](/javascript/api/excel/excel.rangeview#excel-excel-rangeview-columnCount-member)|The number of visible columns.|
 ||[formulas](/javascript/api/excel/excel.rangeview#excel-excel-rangeview-formulas-member)|Represents the formula in A1-style notation.|
 ||[formulasLocal](/javascript/api/excel/excel.rangeview#excel-excel-rangeview-formulasLocal-member)|Represents the formula in A1-style notation, in the user's language and number-formatting locale.|
-||[formulasR1C1](/javascript/api/excel/excel.rangeview#formulasR1C1)|Represents the formula in R1C1-style notation.|
+||[formulasR1C1](/javascript/api/excel/excel.rangeview#excel-excel-rangeview-formulasR1C1-member)|Represents the formula in R1C1-style notation.|
 ||[getRange()](/javascript/api/excel/excel.rangeview#excel-excel-rangeview-getRange-member(1))|Gets the parent range associated with the current `RangeView`.|
 ||[index](/javascript/api/excel/excel.rangeview#excel-excel-rangeview-index-member)|Returns a value that represents the index of the `RangeView`.|
 ||[numberFormat](/javascript/api/excel/excel.rangeview#excel-excel-rangeview-numberFormat-member)|Represents Excel's number format code for the given cell.|

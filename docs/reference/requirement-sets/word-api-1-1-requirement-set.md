@@ -26,7 +26,7 @@ The following table lists the APIs in Word JavaScript API requirement set 1.1. T
 ||[inlinePictures](/javascript/api/word/word.body#word-word-body-inlinePictures-member)|Gets the collection of InlinePicture objects in the body.|
 ||[insertBreak(breakType: Word.BreakType, insertLocation: Word.InsertLocation)](/javascript/api/word/word.body#word-word-body-insertBreak-member(1))|Inserts a break at the specified location in the main document.|
 ||[insertContentControl()](/javascript/api/word/word.body#word-word-body-insertContentControl-member(1))|Wraps the body object with a Rich Text content control.|
-||[insertFileFromBase64(base64File: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.body#insertFileFromBase64_base64File__insertLocation_)|Inserts a document into the body at the specified location.|
+||[insertFileFromBase64(base64File: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.body#word-word-body-insertFileFromBase64-member(1))|Inserts a document into the body at the specified location.|
 ||[insertHtml(html: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.body#word-word-body-insertHtml-member(1))|Inserts HTML at the specified location.|
 ||[insertOoxml(ooxml: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.body#word-word-body-insertOoxml-member(1))|Inserts OOXML at the specified location.|
 ||[insertParagraph(paragraphText: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.body#word-word-body-insertParagraph-member(1))|Inserts a paragraph at the specified location.|
@@ -57,7 +57,7 @@ The following table lists the APIs in Word JavaScript API requirement set 1.1. T
 ||[ignoreSpace](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-ignoreSpace-member)||
 ||[inlinePictures](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-inlinePictures-member)|Gets the collection of inlinePicture objects in the content control.|
 ||[insertBreak(breakType: Word.BreakType, insertLocation: Word.InsertLocation)](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-insertBreak-member(1))|Inserts a break at the specified location in the main document.|
-||[insertFileFromBase64(base64File: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.contentcontrol#insertFileFromBase64_base64File__insertLocation_)|Inserts a document into the content control at the specified location.|
+||[insertFileFromBase64(base64File: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-insertFileFromBase64-member(1))|Inserts a document into the content control at the specified location.|
 ||[insertHtml(html: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-insertHtml-member(1))|Inserts HTML into the content control at the specified location.|
 ||[insertOoxml(ooxml: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-insertOoxml-member(1))|Inserts OOXML into the content control at the specified location.|
 ||[insertParagraph(paragraphText: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-insertParagraph-member(1))|Inserts a paragraph at the specified location.|
@@ -102,7 +102,7 @@ The following table lists the APIs in Word JavaScript API requirement set 1.1. T
 ||[underline](/javascript/api/word/word.font#word-word-font-underline-member)|Gets or sets a value that indicates the font's underline type.|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[altTextDescription](/javascript/api/word/word.inlinepicture#word-word-inlinepicture-altTextDescription-member)|Gets or sets a string that represents the alternative text associated with the inline image.|
 ||[altTextTitle](/javascript/api/word/word.inlinepicture#word-word-inlinepicture-altTextTitle-member)|Gets or sets a string that contains the title for the inline image.|
-||[getBase64ImageSrc()](/javascript/api/word/word.inlinepicture#getBase64ImageSrc__)|Gets the base64 encoded string representation of the inline image.|
+||[getBase64ImageSrc()](/javascript/api/word/word.inlinepicture#word-word-inlinepicture-getBase64ImageSrc-member(1))|Gets the base64 encoded string representation of the inline image.|
 ||[height](/javascript/api/word/word.inlinepicture#word-word-inlinepicture-height-member)|Gets or sets a number that describes the height of the inline image.|
 ||[hyperlink](/javascript/api/word/word.inlinepicture#word-word-inlinepicture-hyperlink-member)|Gets or sets a hyperlink on the image.|
 ||[insertContentControl()](/javascript/api/word/word.inlinepicture#word-word-inlinepicture-insertContentControl-member(1))|Wraps the inline picture with a rich text content control.|
@@ -123,9 +123,9 @@ The following table lists the APIs in Word JavaScript API requirement set 1.1. T
 ||[inlinePictures](/javascript/api/word/word.paragraph#word-word-paragraph-inlinePictures-member)|Gets the collection of InlinePicture objects in the paragraph.|
 ||[insertBreak(breakType: Word.BreakType, insertLocation: Word.InsertLocation)](/javascript/api/word/word.paragraph#word-word-paragraph-insertBreak-member(1))|Inserts a break at the specified location in the main document.|
 ||[insertContentControl()](/javascript/api/word/word.paragraph#word-word-paragraph-insertContentControl-member(1))|Wraps the paragraph object with a rich text content control.|
-||[insertFileFromBase64(base64File: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.paragraph#insertFileFromBase64_base64File__insertLocation_)|Inserts a document into the paragraph at the specified location.|
+||[insertFileFromBase64(base64File: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.paragraph#word-word-paragraph-insertFileFromBase64-member(1))|Inserts a document into the paragraph at the specified location.|
 ||[insertHtml(html: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.paragraph#word-word-paragraph-insertHtml-member(1))|Inserts HTML into the paragraph at the specified location.|
-||[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.paragraph#insertInlinePictureFromBase64_base64EncodedImage__insertLocation_)|Inserts a picture into the paragraph at the specified location.|
+||[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.paragraph#word-word-paragraph-insertInlinePictureFromBase64-member(1))|Inserts a picture into the paragraph at the specified location.|
 ||[insertOoxml(ooxml: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.paragraph#word-word-paragraph-insertOoxml-member(1))|Inserts OOXML into the paragraph at the specified location.|
 ||[insertParagraph(paragraphText: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.paragraph#word-word-paragraph-insertParagraph-member(1))|Inserts a paragraph at the specified location.|
 ||[insertText(text: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.paragraph#word-word-paragraph-insertText-member(1))|Inserts text into the paragraph at the specified location.|
@@ -158,7 +158,7 @@ The following table lists the APIs in Word JavaScript API requirement set 1.1. T
 ||[ignoreSpace](/javascript/api/word/word.range#word-word-range-ignoreSpace-member)||
 ||[insertBreak(breakType: Word.BreakType, insertLocation: Word.InsertLocation)](/javascript/api/word/word.range#word-word-range-insertBreak-member(1))|Inserts a break at the specified location in the main document.|
 ||[insertContentControl()](/javascript/api/word/word.range#word-word-range-insertContentControl-member(1))|Wraps the range object with a rich text content control.|
-||[insertFileFromBase64(base64File: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.range#insertFileFromBase64_base64File__insertLocation_)|Inserts a document at the specified location.|
+||[insertFileFromBase64(base64File: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.range#word-word-range-insertFileFromBase64-member(1))|Inserts a document at the specified location.|
 ||[insertHtml(html: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.range#word-word-range-insertHtml-member(1))|Inserts HTML at the specified location.|
 ||[insertOoxml(ooxml: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.range#word-word-range-insertOoxml-member(1))|Inserts OOXML at the specified location.|
 ||[insertParagraph(paragraphText: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.range#word-word-range-insertParagraph-member(1))|Inserts a paragraph at the specified location.|
