@@ -29,9 +29,11 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 
 These instructions assume you have experience using the command line, understand basic JavaScript, and have created an Office Add-in project before using the Yo Office generator. If you haven't done this before, consider visiting one of our tutorials, like this [Excel Office Add-in tutorial](../tutorials/excel-tutorial.md).
 
-1. If you want to create a project to experiement with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). You can use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this. If you want to debug an existing project, skip to the next step.
+1. If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). You can use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this. If you want to debug an existing project, skip to the next step.
 
-1. Open your project in VS Code. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "Microsoft Office Add-in Debugger" extension and install it.
+1. Open VS Code *as an administrator* and open your project in it. 
+
+1. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "Microsoft Office Add-in Debugger" extension and install it.
 
    > [!TIP]
    > If you aren't using a Yeoman generator based add-in, you may be prompted to adjust a registry key. While in the root folder of your project, run the following in the command line.
@@ -54,17 +56,21 @@ These instructions assume you have experience using the command line, understand
    > [!NOTE]
    > If you select **Cancel**, the dialog won't be shown again while this instance of the add-in is running. However, if you restart your add-in, you'll see the dialog again.
 
-  > [!IMPORTANT]
-  > If your project was created with older versions of Yo Office, you may see the following error dialog box at this point.
-  >
-  > ![Error that says Configured debug type edge is not supported.](../images/configured-debug-type-error.jpg)
-  >
-  > Select the **Cancel** button on the error dialog box. Open the `\.vscode\launch.json` file in the project. In the `configurations` array, there are several configuration objects. You need to edit the ones whose names have the pattern `$HOST$ Desktop (Edge Chromium)`, Where $HOST$ is an Office application; for example, `Excel Desktop (Edge Chromium)` and `Word Desktop (Edge Chromium)`. You need to make two edits to each of these configurations. 
-  > 
-  > - Change the value of the `"type"` property from `"edge"` to `"pwa-msedge"`.
-  > - Change value of the `"useWebView"` property from the string `"advanced"` to the boolean `true` (note there are no quotation marks around the `true`).
+   > [!IMPORTANT]
+   > If your project was created with older versions of Yo Office, you may see the following error dialog box at this point.
+   >
+   > ![Error that says Configured debug type edge is not supported.](../images/configured-debug-type-error.jpg)
+   >
+   > Select the **Cancel** button on the error dialog box. Open the `\.vscode\launch.json` file in the project. In the `configurations` array, there are several configuration objects. You need to edit the ones whose names have the pattern `$HOST$ Desktop (Edge Chromium)`, Where $HOST$ is an Office application; for example, `Excel Desktop (Edge Chromium)` and `Word Desktop (Edge Chromium)`. You need to make two edits to each of these configurations. 
+   > 
+   > - Change the value of the `"type"` property from `"edge"` to `"pwa-msedge"`.
+   > - Change value of the `"useWebView"` property from the string `"advanced"` to the boolean `true` (note there are no quotation marks around the `true`).
 
-1. You're now able to set breakpoints in your project's code and debug.
+1. You're now able to set breakpoints in your project's code and debug. You can set breakpoints in Visual Studio Code by hovering next to a line of code and selecting the red circle which appears.
+
+    ![Red circle appears on a line of code in Visual Studio Code.](../images/set-breakpoint.jpg)
+
+1. Run functionality in your add-in that calls the lines with breakpoints. You will see that breakpoints have been hit and you can inspect local variables.
 
    > [!NOTE]
    > Breakpoints in calls of `Office.initialize` or `Office.onReady` are ignored. For details about these methods, see [Initialize your Office Add-in](../develop/initialize-add-in.md).

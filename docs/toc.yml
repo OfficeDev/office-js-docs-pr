@@ -283,7 +283,7 @@ items:
       - name: Debug using Visual Studio Code and Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
         displayName: debug, windows
-      - name: Debug using Visual Studio Code and the Edge Legacy WebView
+      - name: Debug using Visual Studio Code and Edge Legacy WebView
         href: testing/debug-with-vs-extension.md
       - name: Test with Internet Explorer 11
         href: testing/ie-11-testing.md

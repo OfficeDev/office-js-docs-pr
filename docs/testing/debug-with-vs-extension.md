@@ -32,25 +32,9 @@ These instructions assume you have experience using the command line, understand
 
 1. If you need to create an add-in project to experiment with debugging in Visual Studio Code, [use the Yo Office generator to create one](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator). Follow the prompts within the command line to set up your project. You can choose any language or type of project to suit your needs. If you want to debug an existing project, skip to the next step.
 
-1. Open a command prompt as administrator.
-   ![Command prompt options, including "run as administrator" in Windows 10 and 11.](../images/run-as-administrator-vs-code.jpg)
-
-1. Navigate to your project directory.
-
-1. Run the following command to open your project in Visual Studio Code as an administrator.
-
-    ```command&nbsp;line
-    code .
-    ```
-
-  Once Visual Studio Code is open, navigate manually to the project folder.
-
-  > [!TIP]
-  > To open Visual Studio Code as an administrator, select the **run as administrator** option when opening Visual Studio Code after searching for it in Windows.
+1. Open VS Code *as an administrator* and open your project in it. 
 
 1. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "Microsoft Office Add-in Debugger" extension and install it.
-
-1. Open the command prompt and ensure you are at the root folder of your project. Run the command `npm start` to start the dev server. When your add-in loads in the Office application, open the task pane.
 
 1. Next, choose  **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 
@@ -60,7 +44,7 @@ These instructions assume you have experience using the command line, understand
 
     ![Red circle appears on a line of code in Visual Studio Code.](../images/set-breakpoint.jpg)
 
-1. Run functionality in your add-in. You will see that breakpoints have been hit and you can inspect local variables.
+1. Run functionality in your add-in that calls the lines with breakpoints. You will see that breakpoints have been hit and you can inspect local variables.
 
    > [!NOTE]
    > Breakpoints in calls of `Office.initialize` or `Office.onReady` are ignored. For details about these methods, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
