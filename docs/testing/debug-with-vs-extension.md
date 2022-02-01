@@ -21,7 +21,7 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 
 ## Prerequisites
 
-- [Visual Studio Code](https://code.visualstudio.com/) (must be run as an administrator)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js (version 10+)](https://nodejs.org/)
 - Windows 10, 11
 - [Microsoft Edge](https://www.microsoft.com/edge) A combination of platform and Office application that supports Microsoft Edge Legacy with with the original webview (EdgeHTML) as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
@@ -30,13 +30,18 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 
 These instructions assume you have experience using the command line, understand basic JavaScript, and have created an Office Add-in project before using the Yo Office generator. If you haven't done this before, consider visiting one of our tutorials, like this [Excel Office Add-in tutorial](../tutorials/excel-tutorial.md).
 
-1. If you need to create an add-in project to experiment with debugging in Visual Studio Code, [use the Yo Office generator to create one](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator). Follow the prompts within the command line to set up your project. You can choose any language or type of project to suit your needs. If you want to debug an existing project, skip to the next step.
+1. The first step depends on the project and how it was created.
 
-1. Open VS Code *as an administrator* and open your project in it. 
+   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). You can use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this. 
+   - If you want to debug an existing project that was created with Yo Office, skip to the next step.
+   - If you want to debug an existing project that was not created with Yo Office, carry out the procedure in the [Appendix](#appendix) and then return to the next step of this procedure.
+
+
+1. Open VS Code and open your project in it. 
 
 1. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "Microsoft Office Add-in Debugger" extension and install it.
 
-1. Next, choose  **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
+1. Choose  **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 
 1. From the **RUN AND DEBUG** options, choose the Edge Legacy option for your host application, such as **Excel Desktop (Edge Legacy)**. Select **F5** or choose **Run > Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
 
@@ -63,6 +68,46 @@ These instructions assume you have experience using the command line, understand
 > The best way to stop a debugging session is to select **Shift+F5** or choose **Run > Stop Debugging** from the menu. This action should close the Node server window and attempt to close the host application, but there will be a prompt on the host application asking you whether to save the document or not. Make an appropriate choice and let the host application close. Avoid manually closing the Node window or host application. Doing so can cause bugs especially when you are stopping and starting debugging sessions repeatedly.
 >
 > If debugging stops working; for example, if breakpoints are being ignored; stop debugging. Then, if necessary, close all host application windows and the Node window. Finally, close Visual Studio Code and reopen it.
+
+### Appendix
+
+If your project was not created with Yo Office, you need to create a debug configuration for Visual Studio Code. 
+
+1. Create a file named `launch.json` in the `\.vscode` folder of the project if there isn't one there already. 
+1. Ensure that the file has a `configurations` array. The following is a simple example of a `launch.json`.
+
+```json
+{
+  // other properities may be here.
+
+  "configurations": [
+
+    // configuration objects may be here.
+
+  ]
+
+  //other properies may be here.
+}
+```
+
+1. Add the following object to the `configurations` array.
+
+```json
+    {
+      "name": "$HOST$ Desktop (Edge Legacy)",
+      "type": "office-addin",
+      "request": "attach",
+      "url": "https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$$$$0",
+      "port": 9222,
+      "timeout": 600000,
+      "webRoot": "${workspaceRoot}",
+      "preLaunchTask": "Debug: Excel Desktop",
+      "postDebugTask": "Stop Debug"
+    },
+```
+
+1. Replace the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Excel` or `Word`.
+1. Save and close the file.
 
 ## See also
 
