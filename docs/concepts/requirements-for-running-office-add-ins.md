@@ -1,7 +1,7 @@
 ---
 title: Requirements for running Office Add-ins
 description: 'Learn about the client and server requirements that an end user needs to run Office Add-ins.'
-ms.date: 01/26/2022
+ms.date: 02/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -72,11 +72,12 @@ Specifically for Outlook running on smartphones and non-Windows tablet devices, 
 |:-----|:-----|:-----|:-----|:-----|
 |Outlook on Android|Android tablets and smartphones|Android 4.4 KitKat later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Native app for Android; browser not applicable|
 |Outlook on iOS|iPad tablets, iPhone smartphones|iOS 11 or later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Native app for iOS; browser not applicable|
+|Outlook on the web|iPhone4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Microsoft 365, Exchange Online, or on premises on Exchange Server 2013 or later|Safari|
 
 > [!IMPORTANT]
 > The following are no longer required or available for testing Outlook add-ins.
 >
-> - Mobile web browsers - [Outlook add-ins are no longer supported in Outlook on mobile browsers](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816).
+> - Web browsers on Android - [Outlook add-ins are no longer supported in Outlook on mobile browsers](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816).
 > - The native apps OWA for Android, OWA for iPad, and OWA for iPhone - they have been [deprecated](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
 
 ## See also
