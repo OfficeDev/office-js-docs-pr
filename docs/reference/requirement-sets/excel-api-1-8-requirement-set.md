@@ -271,7 +271,8 @@ The following table lists the APIs in Excel JavaScript API requirement set 1.8. 
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#excel-excel-tablechangedeventargs-getRange-member(1))|Gets the range that represents the changed area of a table on a specific worksheet.|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#excel-excel-tablechangedeventargs-getRangeOrNullObject-member(1))|Gets the range that represents the changed area of a table on a specific worksheet.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#excel-excel-workbook-readOnly-member)|Returns `true` if the workbook is open in read-only mode.|
-|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)||[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onCalculated-member)|Occurs when the worksheet is calculated.|
+|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)|||
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onCalculated-member)|Occurs when the worksheet is calculated.|
 ||[showGridlines](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showGridlines-member)|Specifies if gridlines are visible to the user.|
 ||[showHeadings](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showHeadings-member)|Specifies if headings are visible to the user.|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[type](/javascript/api/excel/excel.worksheetcalculatedeventargs#excel-excel-worksheetcalculatedeventargs-type-member)|Gets the type of the event.|
