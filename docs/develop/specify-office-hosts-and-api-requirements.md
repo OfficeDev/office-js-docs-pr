@@ -150,7 +150,7 @@ You implement this design differently depending on how the extensibility feature
 
 ### Runtime checks for method and requirement set support 
 
-You test at runtime to discover whether the user's Office supports a requirement set with the [isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) method. Pass the requirement set's name and the minimum version as parameters. If the requirement set is supported, `isSetSupported` returns **true**. The following code shows an example.
+You test at runtime to discover whether the user's Office supports a requirement set with the [isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-isSetSupported-member(1)) method. Pass the requirement set's name and the minimum version as parameters. If the requirement set is supported, `isSetSupported` returns **true**. The following code shows an example.
 
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', '1.1'))

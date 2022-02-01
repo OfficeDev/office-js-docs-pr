@@ -39,13 +39,13 @@ The following APIs are affected by this workbook switch.
 
 ## Coauthoring
 
-See [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md) for patterns to use with events in a coauthoring environment. The article also discusses potential merge conflicts when using certain APIs, such as [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_).
+See [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md) for patterns to use with events in a coauthoring environment. The article also discusses potential merge conflicts when using certain APIs, such as [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)).
 
 ## Known Issues
 
 ### Binding events return temporary `Binding` obects
 
-Both [BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding) and [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding) return a temporary `Binding` object that contains the ID of the `Binding` object that raised the event. Use this ID with `BindingCollection.getItem(id)` to retrieve the `Binding` object that raised the event.
+Both [BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingdatachangedeventargs#excel-excel-bindingdatachangedeventargs-binding-member) and [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#excel-excel-bindingselectionchangedeventargs-binding-member) return a temporary `Binding` object that contains the ID of the `Binding` object that raised the event. Use this ID with `BindingCollection.getItem(id)` to retrieve the `Binding` object that raised the event.
 
 The following code sample shows how to use this temporary binding ID to retrieve the related `Binding` object. In the sample, an event listener is assigned to a binding. The listener calls the `getBindingId` method when the `onDataChanged` event is triggered. The `getBindingId` method uses the ID of the temporary `Binding` object to retrieve the `Binding` object that raised the event.
 
@@ -79,17 +79,17 @@ function getBindingId(eventArgs) {
 
 ### Cell format `useStandardHeight` and `useStandardWidth` issues
 
-The [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) property of `CellPropertiesFormat` doesn't work properly in Excel on the web. Due to an issue in the Excel on the web UI, setting the `useStandardHeight` property to `true` calculates height imprecisely on this platform. For example, a standard height of **14** is modified to **14.25** in Excel on the web.
+The [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-useStandardHeight-member) property of `CellPropertiesFormat` doesn't work properly in Excel on the web. Due to an issue in the Excel on the web UI, setting the `useStandardHeight` property to `true` calculates height imprecisely on this platform. For example, a standard height of **14** is modified to **14.25** in Excel on the web.
 
-On all platforms, the [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) and [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#useStandardWidth) properties of `CellPropertiesFormat` are only intended to be set to `true`. Setting these properties to `false` has no effect. 
+On all platforms, the [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-useStandardHeight-member) and [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-useStandardWidth-member) properties of `CellPropertiesFormat` are only intended to be set to `true`. Setting these properties to `false` has no effect. 
 
 ### Range `getImage` method unsupported on Excel for Mac
 
-The Range [getImage](/javascript/api/excel/excel.range#getImage__) method isn't currently supported in Excel for Mac. See [OfficeDev/office-js Issue #235](https://github.com/OfficeDev/office-js/issues/235) for the current status.
+The Range [getImage](/javascript/api/excel/excel.range#excel-excel-range-getImage-member(1)) method isn't currently supported in Excel for Mac. See [OfficeDev/office-js Issue #235](https://github.com/OfficeDev/office-js/issues/235) for the current status.
 
 ### Range return character limit
 
-The [Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#getRange_address_) and [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#getRanges_address_) methods have an address string limit of 8192 characters. When this limit is exceeded, the address string is truncated to 8192 characters.
+The [Worksheet.getRange(address)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getRange-member(1)) and [Worksheet.getRanges(address)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getRanges-member(1)) methods have an address string limit of 8192 characters. When this limit is exceeded, the address string is truncated to 8192 characters.
 
 ## See also
 

@@ -91,8 +91,8 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 ### Accessing the Common API through the *Document* object
 
-Use the `Document` object to access the Common API, such as the [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_)
-and [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) methods.
+Use the `Document` object to access the Common API, such as the [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getSelectedDataAsync-member(1))
+and [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setSelectedDataAsync-member(1)) methods.
 
 For example:  
 
@@ -115,10 +115,10 @@ OneNote add-ins support only the following Common APIs.
 
 | API | Notes |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) | `Office.CoercionType.Text` and `Office.CoercionType.Matrix` only |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) | `Office.CoercionType.Text`, `Office.CoercionType.Image`, and `Office.CoercionType.Html` only | 
-| [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#get_name_) | Settings are supported by content add-ins only | 
-| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set_name__value_) | Settings are supported by content add-ins only | 
+| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getSelectedDataAsync-member(1)) | `Office.CoercionType.Text` and `Office.CoercionType.Matrix` only |
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setSelectedDataAsync-member(1)) | `Office.CoercionType.Text`, `Office.CoercionType.Image`, and `Office.CoercionType.Html` only | 
+| [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | Settings are supported by content add-ins only | 
+| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | Settings are supported by content add-ins only | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
 In general, you use the Common API to do something that isn't supported in the application-specific API. To learn more about using the Common API, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).

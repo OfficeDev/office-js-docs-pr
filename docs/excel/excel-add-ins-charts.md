@@ -185,7 +185,7 @@ Excel.run(function (context) {
 
 ## Add and format a chart data table
 
-You can access the data table element of a chart with the [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#getDataTableOrNullObject__) method. This method returns the [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) object. The `ChartDataTable` object has boolean formatting properties such as `visible`, `showLegendKey`, and `showHorizontalBorder`.
+You can access the data table element of a chart with the [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#excel-excel-chart-getDataTableOrNullObject-member(1)) method. This method returns the [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) object. The `ChartDataTable` object has boolean formatting properties such as `visible`, `showLegendKey`, and `showHorizontalBorder`.
 
 The `ChartDataTable.format` property returns the [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) object, which allows you to further format and style the data table. The `ChartDataTableFormat` object offers `border`, `fill`, and `font` properties.
 
