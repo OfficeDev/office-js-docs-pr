@@ -17,7 +17,7 @@ The following diagram shows how the SSO process works. The blue elements represe
 
 ![A diagram that shows the SSO process.](../images/sso-overview-diagram.svg)
 
-1. In the add-in, your JavaScript code calls the Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). If the user is already signed in to Office, the Office host will return the access token with the claims of the signed in user.
+1. In the add-in, your JavaScript code calls the Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). If the user is already signed in to Office, the Office host will return the access token with the claims of the signed in user.
 2. If the user is not signed in, the Office host application opens a dialog box for the user to sign in. Office redirects to the Microsoft identity platform to complete the sign-in process.
 3. If this is the first time the current user has used your add-in, they are prompted to consent.
 4. The Office host application requests the **access token** from the Microsoft identity platform for the current user.
@@ -30,7 +30,7 @@ The following diagram shows how the SSO process works. The blue elements represe
 
 ### Don't cache the access token
 
-Never cache or store the access token in your cient-side code. Always call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) when you need an access token. Office will cache the access token (or request a new one if it expired.) This will help to avoid accidentally leaking the token from your add-in.
+Never cache or store the access token in your client-side code. Always call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) when you need an access token. Office will cache the access token (or request a new one if it expired.) This will help to avoid accidentally leaking the token from your add-in.
 
 ### Enable modern authentication for Outlook
 
@@ -108,7 +108,7 @@ To use SSO your add-in requires the Identity API 1.3 requirement set. For more i
 
 Add JavaScript to the add-in to:
 
-- Call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_).
+- Call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)).
 - Parse the access token or pass it to the add-in’s server-side code.
 
 The following code shows a simple example of calling `getAccessToken` and parsing the token for the user name and other credentials.
