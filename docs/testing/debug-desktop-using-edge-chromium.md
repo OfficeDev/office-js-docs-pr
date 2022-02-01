@@ -89,24 +89,24 @@ If your project was not created with Yo Office, you need to create a debug confi
 1. Create a file named `launch.json` in the `\.vscode` folder of the project if there isn't one there already. 
 1. Ensure that the file has a `configurations` array. The following is a simple example of a `launch.json`.
 
-```json
-{
-  // other properities may be here.
-
-  "configurations": [
-
-    // configuration objects may be here.
-
-  ]
-
-  //other properies may be here.
-}
-```
+   ```json
+   {
+     // other properities may be here.
+   
+     "configurations": [
+   
+       // configuration objects may be here.
+   
+     ]
+   
+     //other properies may be here.
+   }
+   ```
 
 1. Add the following object to the `configurations` array.
 
-```json
-    {
+   ```json
+   {
       "name": "$HOST$ Desktop (Edge Chromium)",
       "type": "pwa-msedge",
       "request": "attach",
@@ -116,8 +116,8 @@ If your project was not created with Yo Office, you need to create a debug confi
       "webRoot": "${workspaceRoot}",
       "preLaunchTask": "Debug: Excel Desktop",
       "postDebugTask": "Stop Debug"
-    },
-```
+   },
+   ```
 
 1. Replace the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Excel` or `Word`.
 1. Save and close the file.
