@@ -39,7 +39,7 @@ These instructions assume you have experience using the command line, understand
 
 1. Choose  **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 
-1. From the **RUN AND DEBUG** options, choose the Edge Chromium option for your host application, such as **Excel Desktop (Edge Chromium)**. Select **F5** or choose **Run > Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
+1. From the **RUN AND DEBUG** options, choose the Edge Chromium option for your host application, such as **Outlook Desktop (Edge Chromium)**. Select **F5** or choose **Run > Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
 
    > [!TIP]
    > If you aren't using a project created with Yo Office, you may be prompted to adjust a registry key. While in the root folder of your project, run the following in the command line.
@@ -63,7 +63,7 @@ These instructions assume you have experience using the command line, understand
    >
    > ![Error that says Configured debug type edge is not supported.](../images/configured-debug-type-error.jpg)
    >
-   > Select the **Cancel** button on the error dialog box. Open the `\.vscode\launch.json` file in the project. In the `configurations` array, there are several configuration objects. You need to edit the ones whose names have the pattern `$HOST$ Desktop (Edge Chromium)`, Where $HOST$ is an Office application; for example, `Excel Desktop (Edge Chromium)` and `Word Desktop (Edge Chromium)`. You need to make two edits to each of these configurations. 
+   > Select the **Cancel** button on the error dialog box. Open the `\.vscode\launch.json` file in the project. In the `configurations` array, there are several configuration objects. You need to edit the ones whose names have the pattern `$HOST$ Desktop (Edge Chromium)`, Where $HOST$ is an Office application; for example, `Outlook Desktop (Edge Chromium)` and `Word Desktop (Edge Chromium)`. You need to make two edits to each of these configurations. 
    > 
    > - Change the value of the `"type"` property from `"edge"` to `"pwa-msedge"`.
    > - Change value of the `"useWebView"` property from the string `"advanced"` to the boolean `true` (note there are no quotation marks around the `true`).
@@ -119,7 +119,7 @@ If your project was not created with Yo Office, you need to create a debug confi
    },
    ```
 
-1. Replace the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Excel` or `Word`.
+1. Replace the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
 1. Save and close the file.
 
 ## See also

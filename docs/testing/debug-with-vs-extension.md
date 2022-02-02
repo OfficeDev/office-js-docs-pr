@@ -41,9 +41,9 @@ These instructions assume you have experience using the command line, understand
 
 1. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "Microsoft Office Add-in Debugger" extension and install it.
 
-1. hoose  **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
+1. Choose  **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 
-1. From the **RUN AND DEBUG** options, choose the Edge Legacy option for your host application, such as **Excel Desktop (Edge Legacy)**. Select **F5** or choose **Run > Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
+1. From the **RUN AND DEBUG** options, choose the Edge Legacy option for your host application, such as **Outlook Desktop (Edge Legacy)**. Select **F5** or choose **Run > Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
 
 1. In the host application, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear, reading:
 
@@ -106,7 +106,7 @@ If your project was not created with Yo Office, you need to create a debug confi
     }
     ```
 
-1. Replace the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Excel` or `Word`.
+1. Replace the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
 1. Save and close the file.
 
 ## See also
