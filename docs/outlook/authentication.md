@@ -45,7 +45,7 @@ Exchange user identity tokens provide a way for your add-in to establish the ide
 - When the add-in needs access to a non-Microsoft service that you control.
 - As a fallback authentication when the add-in is running on a version of Office that doesn't support SSO.
 
-Your add-in can call [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getcallbacktokenasync-member(1)) to get Exchange user identity tokens. For details on using these tokens, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md).
+Your add-in can call [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getuseridentitytokenasync-member(1)) to get Exchange user identity tokens. For details on using these tokens, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## Access tokens obtained via OAuth2 flows
 
