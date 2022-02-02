@@ -7,10 +7,10 @@ ms.localizationpriority: medium
 
 # Microsoft Office Add-in Debugger Extension for Visual Studio Code
 
-Office Add-ins running on Windows can use the Office Add-in Debugger Extension in Visual Studio Code to debug against Microsoft Edge Legacy with the original webView (EdgeHTML) runtime. 
+Office Add-ins running on Windows can use the Office Add-in Debugger Extension in Visual Studio Code to debug against Microsoft Edge Legacy with the original WebView (EdgeHTML) runtime. 
 
 > [!IMPORTANT]
-> This article only applies when Office runs add-ins in the original webView (EdgeHTML) runtime, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio code against Microsoft Edge WebView2 (Chromium-based), [see this article](debug-desktop-using-edge-chromium.md).
+> This article only applies when Office runs add-ins in the original WebView (EdgeHTML) runtime, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio code against Microsoft Edge WebView2 (Chromium-based), see [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-desktop-using-edge-chromium.md).
 
 > [!TIP]
 > If you cannot, or don't wish to, debug using tools built into Visual Studio Code; or you are encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Legacy (EdgeHTML) runtime by using the Edge Legacy developer tools as described in [Debug add-ins using developer tools in Microsoft Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md).
@@ -32,7 +32,7 @@ These instructions assume you have experience using the command line, understand
 
 1. The first step depends on the project and how it was created.
 
-   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). You can use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this. 
+   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). Use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this. 
    - If you want to debug an existing project that was created with Yo Office, skip to the next step.
    - If you want to debug an existing project that was not created with Yo Office, carry out the procedure in the [Appendix](#appendix) and then return to the next step of this procedure.
 
@@ -45,21 +45,21 @@ These instructions assume you have experience using the command line, understand
 
 1. From the **RUN AND DEBUG** options, choose the Edge Legacy option for your host application, such as **Outlook Desktop (Edge Legacy)**. Select **F5** or choose **Run > Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
 
-1. In the host application, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear, reading:
+1. In the host application, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear similar to the following:
 
    > WebView Stop On Load.
-   > To debug the webview, attach VS Code to the webview instance using the Microsoft Debugger for Edge extension, and click OK to continue. To prevent this dialog from appearing in the future, click Cancel.
+   > To debug the WebView, attach VS Code to the WebView instance using the Microsoft Debugger for Edge extension, and click **OK** to continue. To prevent this dialog from appearing in the future, click **Cancel**.
 
    Select **OK**.
 
    > [!NOTE]
    > If you select **Cancel**, the dialog won't be shown again while this instance of the add-in is running. However, if you restart your add-in, you'll see the dialog again.
 
-1. Set a breakpoint in your project's task pane file. You can set breakpoints in Visual Studio Code by hovering next to a line of code and selecting the red circle which appears.
+1. Set a breakpoint in your project's task pane file. To set breakpoints in Visual Studio Code, hover next to a line of code and select the red circle that appears.
 
     ![Red circle appears on a line of code in Visual Studio Code.](../images/set-breakpoint.jpg)
 
-1. Run functionality in your add-in that calls the lines with breakpoints. You will see that breakpoints have been hit and you can inspect local variables.
+1. Run functionality in your add-in that calls the lines with breakpoints. You'll see that breakpoints have been hit and you can inspect local variables.
 
    > [!NOTE]
    > Breakpoints in calls of `Office.initialize` or `Office.onReady` are ignored. For details about these methods, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
