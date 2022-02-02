@@ -1,7 +1,7 @@
 ---
 title: Read and write data to the active selection in a document or spreadsheet
-description: 'Learn how to read and write data to the active selection in a Word document or Excel spreadsheet.'
-ms.date: 06/20/2019
+description: Learn how to read and write data to the active selection in a Word document or Excel spreadsheet.
+ms.date: 01/31/2022
 ms.localizationpriority: medium
 ---
 
@@ -85,7 +85,7 @@ Office.context.document.addHandlerAsync("documentSelectionChanged", myHandler, f
 
 // Event handler function.
 function myHandler(eventArgs){
-write('Document Selection Changed');
+    write('Document Selection Changed');
 }
 
 // Function that writes to a div with id='message' on the page.
@@ -96,7 +96,7 @@ function write(message){
 
 The first  _eventType_ parameter specifies the name of the event to subscribe to. Passing the string `"documentSelectionChanged"` for this parameter is equivalent to passing the `Office.EventType.DocumentSelectionChanged` event type of the [Office.EventType](/javascript/api/office/office.eventtype) enumeration.
 
-The  `myHander()` function that is passed into the function as the second _handler_ parameter is an event handler that is executed when the selection is changed on the document. The function is called with a single parameter, _eventArgs_, which will contain a reference to a [DocumentSelectionChangedEventArgs](/javascript/api/office/office.documentselectionchangedeventargs) object when the asynchronous operation completes. You can use the [DocumentSelectionChangedEventArgs.document](/javascript/api/office/office.documentselectionchangedeventargs#document) property to access the document that raised the event.
+The  `myHandler()` function that is passed into the function as the second _handler_ parameter is an event handler that is executed when the selection is changed on the document. The function is called with a single parameter, _eventArgs_, which will contain a reference to a [DocumentSelectionChangedEventArgs](/javascript/api/office/office.documentselectionchangedeventargs) object when the asynchronous operation completes. You can use the [DocumentSelectionChangedEventArgs.document](/javascript/api/office/office.documentselectionchangedeventargs#document) property to access the document that raised the event.
 
 
 > [!NOTE]
