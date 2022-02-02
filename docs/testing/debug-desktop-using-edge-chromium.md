@@ -63,10 +63,12 @@ These instructions assume you have experience using the command line, understand
    >
    > ![Error that says Configured debug type edge is not supported.](../images/configured-debug-type-error.jpg)
    >
-   > Select the **Cancel** button on the error dialog box. Open the `\.vscode\launch.json` file in the project. In the `configurations` array, there are several configuration objects. You need to edit the ones whose names have the pattern `$HOST$ Desktop (Edge Chromium)`, Where $HOST$ is an Office application; for example, `Outlook Desktop (Edge Chromium)` and `Word Desktop (Edge Chromium)`. You need to make two edits to each of these configurations. 
+   > Select the **Cancel** button on the error dialog box, and then select **Shift+F5** or choose **Run > Stop Debugging** from the menu. Open the `\.vscode\launch.json` file in the project. In the `configurations` array, there are several configuration objects. You need to edit the ones whose names have the pattern `$HOST$ Desktop (Edge Chromium)`, Where $HOST$ is an Office application; for example, `Outlook Desktop (Edge Chromium)` and `Word Desktop (Edge Chromium)`. You need to make two edits to each of these configurations. 
    > 
    > - Change the value of the `"type"` property from `"edge"` to `"pwa-msedge"`.
    > - Change the value of the `"useWebView"` property from the string `"advanced"` to the boolean `true` (note there are no quotation marks around the `true`).
+   >
+   > Restart this procedure from step 3.
 
 1. You're now able to set breakpoints in your project's code and debug. To set breakpoints in Visual Studio Code, hover next to a line of code and select the red circle that appears.
 
