@@ -63,7 +63,7 @@ These instructions assume you have experience using the command line, understand
    >
    > ![Error that says Configured debug type edge is not supported.](../images/configured-debug-type-error.jpg)
    >
-   > In the error dialog box, select the **Cancel** button, and then select **Shift+F5** or choose **Run > Stop Debugging** from the menu. Open the `\.vscode\launch.json` file in the project. In the `configurations` array, there are several configuration objects. Edit the ones whose names have the pattern `$HOST$ Desktop (Edge Chromium)`, where $HOST$ is an Office application; for example, `Outlook Desktop (Edge Chromium)` and `Word Desktop (Edge Chromium)`. Make the following two edits to each of these configurations. 
+   > In the error dialog box, select the **Cancel** button. (If debugging doesn't stop automatically, select **Shift+F5** or choose **Run > Stop Debugging** from the menu.) Open the `\.vscode\launch.json` file in the project. In the `configurations` array, there are several configuration objects. Edit the ones whose names have the pattern `$HOST$ Desktop (Edge Chromium)`, where $HOST$ is an Office application; for example, `Outlook Desktop (Edge Chromium)` and `Word Desktop (Edge Chromium)`. Make the following two edits to each of these configurations. 
    > 
    > - Change the value of the `"type"` property from `"edge"` to `"pwa-msedge"`.
    > - Change the value of the `"useWebView"` property from the string `"advanced"` to the boolean `true` (note there are no quotation marks around the `true`).
