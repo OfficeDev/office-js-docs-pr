@@ -33,7 +33,7 @@ These instructions assume you have experience using the command line, understand
 
    - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). Use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this. 
    - If you want to debug an existing project that was created with Yo Office, skip to the next step.
-   - If you want to debug an existing project that was not created with Yo Office, complete the procedure in the [Appendix](#appendix) and then return to the next step of this procedure.
+   - If you want to debug an existing project that was not created with Yo Office, complete the procedure in the [Appendix A](#appendix-a) and then return to the next step of this procedure.
 
 1. Open VS Code and open your project in it. 
 
@@ -48,6 +48,13 @@ These instructions assume you have experience using the command line, understand
    > npx office-addin-debugging start <your manifest path>
    > ```
 
+   > [!IMPORTANT]
+   > If your project was created with older versions of Yo Office, you may see the following error dialog box about 10 - 30 seconds after you start debugging (at which point you may have already gone on to another step in this procedure) and it may be hidden behind the dialog box described in the next step.
+   >
+   > ![Error that says Configured debug type edge is not supported.](../images/configured-debug-type-error.jpg)
+   >
+   > Complete the tasks in [Appendix B](#appendix-b) and then restart this procedure.
+   
 1. In the host application, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear with text similar to the following:
 
    > WebView Stop On Load.
@@ -57,18 +64,6 @@ These instructions assume you have experience using the command line, understand
 
    > [!NOTE]
    > If you select **Cancel**, the dialog won't be shown again while this instance of the add-in is running. However, if you restart your add-in, you'll see the dialog again.
-
-   > [!IMPORTANT]
-   > If your project was created with older versions of Yo Office, you may see the following error dialog box at this point.
-   >
-   > ![Error that says Configured debug type edge is not supported.](../images/configured-debug-type-error.jpg)
-   >
-   > In the error dialog box, select the **Cancel** button. (If debugging doesn't stop automatically, select **Shift+F5** or choose **Run > Stop Debugging** from the menu.) Open the `\.vscode\launch.json` file in the project. In the `configurations` array, there are several configuration objects. Edit the ones whose names have the pattern `$HOST$ Desktop (Edge Chromium)`, where $HOST$ is an Office application; for example, `Outlook Desktop (Edge Chromium)` and `Word Desktop (Edge Chromium)`. Make the following two edits to each of these configurations. 
-   > 
-   > - Change the value of the `"type"` property from `"edge"` to `"pwa-msedge"`.
-   > - Change the value of the `"useWebView"` property from the string `"advanced"` to the boolean `true` (note there are no quotation marks around the `true`).
-   >
-   > Restart this procedure from step 3.
 
 1. You're now able to set breakpoints in your project's code and debug. To set breakpoints in Visual Studio Code, hover next to a line of code and select the red circle that appears.
 
@@ -84,7 +79,7 @@ These instructions assume you have experience using the command line, understand
 >
 > If debugging stops working; for example, if breakpoints are being ignored; stop debugging. Then, if necessary, close all host application windows and the Node window. Finally, close Visual Studio Code and reopen it.
 
-### Appendix
+### Appendix A
 
 If your project was not created with Yo Office, you need to create a debug configuration for Visual Studio Code. 
 
@@ -123,6 +118,19 @@ If your project was not created with Yo Office, you need to create a debug confi
 
 1. Replace the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
 1. Save and close the file.
+
+### Appendix B
+
+1. In the error dialog box, select the **Cancel** button.
+1. If debugging doesn't stop automatically, select **Shift+F5** or choose **Run > Stop Debugging** from the menu. 
+1. Close the Node window where the local server is running, if it doesn't close automatically.
+1. Close the Office application if it doesn't close automatically.
+1. Open the `\.vscode\launch.json` file in the project. 
+1. In the `configurations` array, there are several configuration objects. Find the one whose name has the pattern `$HOST$ Desktop (Edge Chromium)`, where $HOST$ is an Office application that your add-in runs in; for example, `Outlook Desktop (Edge Chromium)` or `Word Desktop (Edge Chromium)`. 
+1. Change the value of the `"type"` property from `"edge"` to `"pwa-msedge"`.
+1. Change the value of the `"useWebView"` property from the string `"advanced"` to the boolean `true` (note there are no quotation marks around the `true`).
+1. Save the file.
+1. Close VS Code.
 
 ## See also
 
