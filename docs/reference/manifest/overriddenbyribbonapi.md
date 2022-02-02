@@ -21,7 +21,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 - [Ribbon 1.2](../requirement-sets/add-in-commands-requirement-sets.md) (Required for Excel, PowerPoint, and Word.)
 
-If this element is omitted, the default is `false`. If it is used, it must be the *first* child element of its parent element.
+If this element is omitted, the default is `false`. If it's used, it must be the *first* child element of its parent element.
 
 > [!NOTE]
 > For a full understanding of this element, please read [Implement an alternate UI experience when custom contextual tabs are not supported](../../design/contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
