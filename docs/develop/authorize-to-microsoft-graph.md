@@ -21,7 +21,7 @@ The following diagram shows the steps involved to sign in and access Microsoft G
 
 :::image type="content" source="../images/sso-access-to-microsoft-graph.svg" alt-text="Diagram showing the SSO process." border="false":::
 
-1. The client-side code of the add-in calls the Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). This tells the Office host to obtain an access token for the add-in.
+1. The client-side code of the add-in calls the Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). This tells the Office host to obtain an access token for the add-in.
 
     If the user is not signed in, the Office host in conjunction with the Microsoft identity platform provides UI for the user to sign in and consent.
 

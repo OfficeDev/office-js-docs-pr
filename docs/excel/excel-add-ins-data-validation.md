@@ -205,7 +205,7 @@ For more information, see [DataValidationPrompt](/javascript/api/excel/excel.dat
 
 ## Remove data validation from a range
 
-To remove data validation from a range, call the  [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear__) method.
+To remove data validation from a range, call the  [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#excel-excel-datavalidation-clear-member(1)) method.
 
 ```js
 myrange.dataValidation.clear()

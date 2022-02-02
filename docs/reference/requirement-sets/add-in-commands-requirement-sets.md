@@ -32,7 +32,7 @@ The following table lists the add-in commands requirement sets, the Office clien
 | AddinCommands 1.3  | N/A | N/A | N/A | N/A | Not supported | N/A | Not supported | November 2020 |
 | AddinCommands 1.1  | N/A | N/A  | Version 1809 (Build 10827.20150) or later&dagger; | 16.0.14326.20454 or later&dagger; | Version 1705 (Build 8121.1000) or later&dagger; | N/A | 15.34 or later&dagger;\*| May 2017 |
 
-\* The [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) method will erroneously return `false` for versions 16.9 &ndash; 16.14 (inclusive), but the requirement set *is* supported on these versions.
+\* The [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-issetsupported-member(1)) method will erroneously return `false` for versions 16.9 &ndash; 16.14 (inclusive), but the requirement set *is* supported on these versions.
 
 &dagger; OneNote is supported only in Office on the web.
 
