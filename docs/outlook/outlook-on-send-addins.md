@@ -523,7 +523,7 @@ To signal that the add-in has finished processing the `ItemSend` event triggered
 
 ### `replaceAsync`, `removeAsync`, and `getAllAsync` methods
 
-In addition to the `addAsync` method, the `NotificationMessages` object also includes `replaceAsync`, `removeAsync`, and `getAllAsync` methods.  These methods are not used in this code sample.  For more information, see [NotificationMessages](/javascript/api/outlook/office.NotificationMessages).
+In addition to the `addAsync` method, the `NotificationMessages` object also includes `replaceAsync`, `removeAsync`, and `getAllAsync` methods.  These methods are not used in this code sample.  For more information, see [NotificationMessages](/javascript/api/outlook/office.notificationmessages).
 
 
 ### Subject and CC checker code

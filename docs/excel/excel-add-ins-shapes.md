@@ -205,7 +205,7 @@ Excel.run(function (context) {
 ```
 
 > [!IMPORTANT]
-> Individual shapes within the group are referenced through the `ShapeGroup.shapes` property, which is of type [GroupShapeCollection](/javascript/api/excel/excel.GroupShapeCollection). They are no longer accessible through the worksheet's shape collection after being grouped. As an example, if your worksheet had three shapes and they were all grouped together, the worksheet's `shapes.getCount` method would return a count of 1.
+> Individual shapes within the group are referenced through the `ShapeGroup.shapes` property, which is of type [GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection). They are no longer accessible through the worksheet's shape collection after being grouped. As an example, if your worksheet had three shapes and they were all grouped together, the worksheet's `shapes.getCount` method would return a count of 1.
 
 ## Export shapes as images
 

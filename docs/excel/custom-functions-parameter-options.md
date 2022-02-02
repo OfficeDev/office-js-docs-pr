@@ -252,7 +252,7 @@ The `invocation` parameter can also be used to send information to Excel. See [M
 
 ## Detect the address of a parameter
 
-In combination with the [invocation parameter](#invocation-parameter), you can use the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object to retrieve the address of a custom function input parameter. When invoked, the [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#custom-functions-runtime-customfunctions-invocation-parameterAddresses-member) property of the `Invocation` object allows a function to return the addresses of all input parameters. 
+In combination with the [invocation parameter](#invocation-parameter), you can use the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object to retrieve the address of a custom function input parameter. When invoked, the [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#custom-functions-runtime-customfunctions-invocation-parameteraddresses-member) property of the `Invocation` object allows a function to return the addresses of all input parameters. 
 
 This is useful in scenarios where input data types may vary. The address of an input parameter can be used to check the number format of the input value. The number format can then be adjusted prior to input, if necessary. The address of an input parameter can also be used to detect whether the input value has any related properties that may be relevant to subsequent calculations. 
 

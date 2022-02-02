@@ -70,7 +70,7 @@ There are many ways to convert a file to base64. Which programming language and 
 
 ## Insert slides with insertSlidesFromBase64
 
-Your add-in inserts slides from another PowerPoint presentation into the current presentation with the [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertSlidesFromBase64_base64File__options_) method. The following is a simple example in which all of the slides from the source presentation are inserted at the beginning of the current presentation and the inserted slides keep the formatting of the source file. Note that `chosenFileBase64` is a global variable that holds a base64-encoded version of a PowerPoint presentation file.
+Your add-in inserts slides from another PowerPoint presentation into the current presentation with the [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)) method. The following is a simple example in which all of the slides from the source presentation are inserted at the beginning of the current presentation and the inserted slides keep the formatting of the source file. Note that `chosenFileBase64` is a global variable that holds a base64-encoded version of a PowerPoint presentation file.
 
 ```javascript
 async function insertAllSlides() {

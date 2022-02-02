@@ -62,11 +62,11 @@ The **ReadItem** permission is the next level of permission in the permissions m
 
 ### Can do
 
-- [Read all the properties](item-data.md) of the current item in a read or [compose form](get-and-set-item-data-in-a-compose-form.md), for example, [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) in a read form and [item.to.getAsync](/javascript/api/outlook/office.Recipients#outlook-office-Recipients-getasync-member(1)) in a compose form.
+- [Read all the properties](item-data.md) of the current item in a read or [compose form](get-and-set-item-data-in-a-compose-form.md), for example, [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) in a read form and [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)) in a compose form.
 
 - [Get a callback token to get item attachments](get-attachments-of-an-outlook-item.md) or the full item with Exchange Web Services (EWS) or [Outlook REST APIs](use-rest-api.md).
 
-- [Write custom properties](/javascript/api/outlook/office.CustomProperties) set by the add-in on that item.
+- [Write custom properties](/javascript/api/outlook/office.customproperties) set by the add-in on that item.
 
 - [Get all existing well-known entities](match-strings-in-an-item-as-well-known-entities.md), not just a subset, from the item's subject or body.
 
