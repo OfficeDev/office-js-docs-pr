@@ -1,13 +1,25 @@
 ---
 title: OfficeMenu element in the manifest file
 description: The OfficeMenu element defines a collection of controls to be added to the Office context menu.
-ms.date: 10/09/2018
+ms.date: 02/02/2022
 ms.localizationpriority: medium
 ---
 
 # OfficeMenu element
 
 Defines a collection of controls to be added to the Office context menu. Applies to Word, Excel, PowerPoint, and OneNote add-ins.
+
+**Add-in type:** Task pane
+
+**Valid only in these VersionOverrides schemas**:
+
+- Taskpane 1.0
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associated with these requirement sets**:
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 ## Attributes
 
@@ -36,7 +48,7 @@ Each **OfficeMenu** element requires at one or more [menu](control.md#menu-dropd
 
 ```xml
 <OfficeMenu id="ContextMenuCell">
-    <Control xsi:type="Menu" id="myMenuID">
+    <Control xsi:type="Menu" id="Contoso.myMenu">
       <Label resid="residLabel3" />
       <Supertip>
           <Title resid="residLabel" />

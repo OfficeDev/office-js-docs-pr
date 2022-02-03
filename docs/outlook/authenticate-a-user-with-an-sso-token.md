@@ -1,7 +1,7 @@
 ---
 title: Authenticate a user with a single-sign-on token
 description: 'Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.'
-ms.date: 11/11/2021
+ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---
 
@@ -38,7 +38,7 @@ The add-in gets an SSO token with client-side script. For more information, see 
 
 ## Use the SSO token at the back-end
 
-In most scenarios, there would be little point to obtaining the access token, if your add-in does not pass it on to a server-side and use it there. For details on what your server-side could and should do, see [Add server-side code](../develop/sso-in-office-add-ins.md#add-server-side-code).
+In most scenarios, there would be little point to obtaining the access token, if your add-in does not pass it on to a server-side and use it there. For details on what your server-side could and should do, see [Add server-side code](../develop/sso-in-office-add-ins.md#pass-the-access-token-to-server-side-code).
 
 > [!IMPORTANT]
 > When using the SSO token as an identity in an *Outlook* add-in, we recommend that you also [use the Exchange identity token](authenticate-a-user-with-an-identity-token.md) as an alternate identity. Users of your add-in may use multiple clients, and some may not support providing an SSO token. By using the Exchange identity token as an alternate, you can avoid having to prompt these users for credentials multiple times. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](implement-sso-in-outlook-add-in.md).
@@ -49,7 +49,8 @@ There are additional steps to take if your add-in uses event-based activation. F
 
 ## See also
 
+- [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1))
 - For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [Outlook Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
-- [SSO API reference](../develop/sso-in-office-add-ins.md#sso-api-reference)
+- [SSO API reference](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
 - [IdentityAPI requirement set](../reference/requirement-sets/identity-api-requirement-sets.md)
 - [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md)

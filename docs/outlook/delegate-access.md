@@ -223,7 +223,7 @@ Depending on your add-in's scenarios, there are a few limitations for you to con
 
 ### Message Compose mode
 
-In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_) is not supported in Outlook on the web or on Windows unless the following conditions are met.
+In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) is not supported in Outlook on the web or on Windows unless the following conditions are met.
 
 a. **Delegate access/Shared folders**
 

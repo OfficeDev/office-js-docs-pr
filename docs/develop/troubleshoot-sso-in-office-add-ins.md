@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: 'Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.'
-ms.date: 09/23/2021
+ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---
 
@@ -28,7 +28,7 @@ For examples of the error handling described in this section, see:
 
 ### 13000
 
-The [getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) API is not supported by the add-in or the Office version.
+The [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) API is not supported by the add-in or the Office version.
 
 - The version of Office does not support SSO. The required version is Microsoft 365 subscription, in any monthly channel.
 - The add-in manifest is missing the proper [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) section.
@@ -62,7 +62,7 @@ Invalid Resource. (This error should only be seen in development.) The add-in ma
 
 ### 13005
 
-Invalid Grant. This usually means that Office has not been pre-authorized to the add-in's web service. For more information, see [Create the service application](sso-in-office-add-ins.md#create-the-service-application) and [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md). This also may happen if the user has not granted your service application permissions to their `profile`, or has revoked consent. Your code should fall back to an alternate system of user authentication.
+Invalid Grant. This usually means that Office has not been pre-authorized to the add-in's web service. For more information, see [Create the service application](sso-in-office-add-ins.md#register-your-add-in-with-the-microsoft-identity-platform) and [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md). This also may happen if the user has not granted your service application permissions to their `profile`, or has revoked consent. Your code should fall back to an alternate system of user authentication.
 
 Another possible cause, during development, is that your add-in using Internet Explorer, and you are using a self-signed certificate. (To determine which browser is being used by the add-in, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).)
 
@@ -137,6 +137,6 @@ This kind of error should only be seen in development.
 - Your server-side code should send a `403 Forbidden` response to the client which should log the error to the console or record it in a log.
 - Be sure your add-in manifest [Scopes](../reference/manifest/scopes.md) section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
 
-### Invalid audience error in the access token (not the bootstrap token)
+### Invalid audience error in the access token for Microsoft Graph
 
 Your server-side code should send a `403 Forbidden` response to the client which should present a friendly message to the user and possibly also log the error to the console or record it in a log.

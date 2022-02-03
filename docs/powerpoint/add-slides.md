@@ -13,7 +13,7 @@ The APIs for adding slides are primarily used in scenarios where the IDs of the 
 
 ## Add a slide with SlideCollection.add
 
-Add slides with the [SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) method. The following is a simple example in which a slide that uses the presentation's default slide master and the first layout of that master is added. The method always adds new slides to the end of the presentation. The following is an example.
+Add slides with the [SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-add-member(1)) method. The following is a simple example in which a slide that uses the presentation's default slide master and the first layout of that master is added. The method always adds new slides to the end of the presentation. The following is an example.
 
 ```javascript
 async function addSlide() {
@@ -59,7 +59,7 @@ If your add-in can be used in scenarios where the new slide should use the same 
 
 1. Create a method to get the index of the selected slide. The following is an example. About this code, note:
 
-    - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) method of the Common JavaScript APIs.
+    - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) method of the Common JavaScript APIs.
     - The call to `getSelectedDataAsync` is embedded in a Promise-returning function. For more information about why and how to do this, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` returns an array because multiple slides can be selected. In this scenario, the user has selected just one, so the code gets the first (0th) slide, which is the only one selected.
     - The `index` value of the slide is the 1-based value the user sees beside the slide in the thumbnails pane.

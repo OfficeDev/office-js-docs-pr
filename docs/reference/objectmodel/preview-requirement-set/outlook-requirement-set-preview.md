@@ -123,7 +123,7 @@ Added a new function that returns initialization data passed when the add-in is 
 
 ### Office theme
 
-#### [Office.context.officeTheme](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true#officeTheme)
+#### [Office.context.officeTheme](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true#office-office-context-officetheme-member)
 
 Added ability to get Office theme.
 

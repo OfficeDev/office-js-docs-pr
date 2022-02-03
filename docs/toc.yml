@@ -111,42 +111,46 @@ items:
       - name: Update API and manifest version
         href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
         displayName: manifest
-    - name: Privacy, security, and authentication
+    - name: Privacy and security
       items:
       - name: Overview of add-in privacy and security
         href: concepts/privacy-and-security.md
-      - name: Overview of authentication and authorization
+      - name: Request permissions for API use in add-ins
+        href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+      - name: ITP and third-party cookies
+        href: develop/itp-and-third-party-cookies.md
+    - name: Authentication and authorization
+      items:
+      - name: Overview
         href: develop/overview-authn-authz.md
-      - name: Authenticate and authorize with the Office dialog API
-        href: develop/auth-with-office-dialog-api.md
-      - name: Authorize external services
-        href: develop/auth-external-add-ins.md
-      - name: Authorize to Microsoft Graph without SSO
-        href: develop/authorize-to-microsoft-graph-without-sso.md
-      - name: Enable SSO in an add-in
+      - name: Single sign-on (SSO)
         items:
-        - name: Enable single sign-on
+        - name: Enable SSO in an Office Add-in
           href: develop/sso-in-office-add-ins.md
-        - name: SSO quick start
+        - name: Quick start
           href: quickstarts/sso-quickstart.md
-        - name: Customize your SSO-enabled add-in
+        - name: Customize the quick start
           href: quickstarts/sso-quickstart-customize.md
-        - name: Authorize to Microsoft Graph with SSO
+        - name: Register with Microsoft identity platform
+          href: develop/register-sso-add-in-aad-v2.md
+        - name: Grant administrator consent
+          href: develop/grant-admin-consent-to-an-add-in.md
+        - name: Get the identity token
+          href: develop/use-sso-to-get-office-signed-in-user-token.md
+        - name: Authorize to Microsoft Graph
           href: develop/authorize-to-microsoft-graph.md
         - name: Create an SSO add-in using ASP.NET
           href: develop/create-sso-office-add-ins-aspnet.md
         - name: Create an SSO add-in using Node.js
           href: develop/create-sso-office-add-ins-nodejs.md
-        - name: Register an Office Add-in that uses SSO with Azure AD v2.0
-          href: develop/register-sso-add-in-aad-v2.md
-        - name: Grant administrator consent to the add-in
-          href: develop/grant-admin-consent-to-an-add-in.md
-        - name: Troubleshoot error messages for single sign-on (SSO)
+        - name: Troubleshoot error messages
           href: develop/troubleshoot-sso-in-office-add-ins.md
-      - name: Request permissions for API use in add-ins
-        href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-      - name: ITP and third-party cookies
-        href: develop/itp-and-third-party-cookies.md
+      - name: Office dialog API
+        href: develop/auth-with-office-dialog-api.md      
+      - name: Identity providers
+        href: develop/auth-external-add-ins.md
+      - name: Access Microsoft Graph
+        href: develop/authorize-to-microsoft-graph-without-sso.md
     - name: UI and UX
       items:
       - name: Overview

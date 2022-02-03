@@ -1,7 +1,7 @@
 ---
 title: Clear the Office cache
 description: 'Learn how to clear the Office cache on your computer.'
-ms.date: 11/15/2021
+ms.date: 01/27/2022
 ms.localizationpriority: high
 ---
 
@@ -20,7 +20,7 @@ There are three ways to clear the Office cache on a Windows computer: automatica
 
 ### Automatically
 
-This method is recommended for add-in development computers. If your Office on Windows version is 2108 or later, the following steps configure the Office cache to be cleared automatically every time Office is reopened.
+This method is recommended for add-in development computers. If your Office on Windows version is 2108 or later, the following steps configure the Office cache to be cleared the next time Office is reopened.
 
 > [!NOTE]
 > The automatic method is not supported for Outlook.
