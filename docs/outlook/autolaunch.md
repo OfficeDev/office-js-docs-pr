@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 01/14/2022
+ms.date: 02/02/2022
 ms.localizationpriority: medium
 ---
 
@@ -17,25 +17,24 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 
 ## Supported events
 
-The following table lists events that are currently available and the supported clients for each event. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Event-specific JSON** column includes a link to the related object where applicable.
+The following table lists events that are currently available and the supported clients for each event. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Description** column includes a link to the related object where applicable.
 
 > [!IMPORTANT]
 > Events still in preview may only be available with a Microsoft 365 subscription and in a limited set of supported clients as noted in the following table. For client configuration details, see [How to preview](#how-to-preview) in this article. Preview events shouldn't be used in production add-ins.
 
->[!div class="mx-tdCol2BreakAll"]
->|Event|Description|Event-specific JSON|Minimum requirement set|Supported clients|
->|---|---|---|---|---|
->|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|Not applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows, web browser, new Mac UI preview|
->|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|Not applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows, web browser, new Mac UI preview|
->|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, web browser|
->|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, web browser|
->|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, web browser|
->|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, web browser|
->|`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.|[AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, web browser|
->|`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.|[RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, web browser|
->|`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.|[InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, web browser|
->|`OnMessageSend`|On sending a message item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|Not applicable|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
->|`OnAppointmentSend`|On sending an appointment item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|Not applicable|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|Windows|
+|Event|Description|Supported minimum requirement set and clients|
+|---|---|---|
+|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)<br><br>Windows, web browser, new Mac UI preview|
+|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)<br><br>Windows, web browser, new Mac UI preview|
+|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.<br><br>Event information listed in [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true).|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>Windows, web browser|
+|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.<br><br>Event information listed in [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true).|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>Windows, web browser|
+|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.<br><br>Event information listed in [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true).|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>Windows, web browser|
+|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.<br><br>Event information listed in [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>Windows, web browser|
+|`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.<br><br>Event information listed in [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true).|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>Windows, web browser|
+|`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.<br><br>Event information listed in [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true).|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>Windows, web browser|
+|`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.<br><br>Event information listed in [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true).|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>Windows, web browser|
+|`OnMessageSend`|On sending a message item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)<br><br>Windows|
+|`OnAppointmentSend`|On sending an appointment item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)<br><br>Windows|
 
 ### How to preview
 
