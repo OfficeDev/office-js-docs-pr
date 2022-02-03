@@ -259,7 +259,7 @@ In this scenario, you'll add handling for composing new items.
     >
     > 1. Close Outlook.
     > 1. Open the **Task Manager** and ensure that the **msoadfsb.exe** process is not running.
-    > 1. Set the loopback exemption.
+    > 1. Set the [loopback exemption](/previous-versions/windows/apps/hh780593(v=win.10)?redirectedfrom=MSDN) in an elevated prompt.
     >     - If you're using `https://localhost` (the default version in the manifest), run the following command.
     >
     >        ```command&nbsp;line
