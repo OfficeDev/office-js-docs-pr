@@ -11,7 +11,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for February 9th call
 
-- Work with data types in the Excel API
+- Work with [data types](../excel/excel-data-types-overview.md) in the Excel API.
 - Update on the Word APIs
 
 ## Previous calls
