@@ -26,7 +26,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 **Associated with these requirement sets**:
 
-- [Mailbox 1.5](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.5.md)
+- [Mailbox 1.5](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)
 
 ## Child elements
 
