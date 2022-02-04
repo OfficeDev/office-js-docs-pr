@@ -17,6 +17,10 @@ Office Add-ins differ from VBA, COM, and VSTO add-ins because they offer cross-p
 
 ## add-in commands
 
+**Add-in commands** are UI elements, such as buttons and menus, that extend the Office UI for your add-in. When users select an add-in command element, they initiate actions such as running JavaScript code or displaying the add-in in a task pane. Add-in commands help users find and use your add-in, which can support your add-in's adoption and reuse.
+
+See also: [ribbon, ribbon button](#ribbon-ribbon-button).
+
 ## application
 
 In the Office Add-ins documentation, **application** refers to an Office application. The Office applications that support Office Add-ins are: Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
@@ -46,6 +50,8 @@ Common APIs can be used to access features such as UI, dialogs, and client setti
 See also: [application-specific API](#application-specific-api).
 
 ## Contoso
+
+**Contoso** Ltd. (also known as Contoso and Contoso University) is a fictional company used by Microsoft as an example company and domain.
 
 ## content add-in
 
@@ -89,9 +95,13 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 ## tutorial
 
+A **tutorial** is a teaching aid designed to help people learn to use a product or procedure. In the Office Add-ins context, a tutorial guides an add-in developer through the complete add-in development process for a particular application, such as Excel. This involves following 20 or more steps and is a greater time investment than a [quickstart](#quickstart).
+
 See also: [quickstart](#quickstart).
 
 ## quickstart
+
+A **quickstart** is a a high level description of key skills and knowledge required for the basic operation of a particular program. In the Office Add-ins documentation, a quickstart is an introduction to developing an add-in for a particular application, such as Outlook. A quickstart contains series of steps than an add-in developer can complete in approximately 5 minutes, resulting in a functioning add-in.
 
 See also: [tutorial](#tutorial).
 
@@ -108,6 +118,8 @@ In the Office Add-ins documentation, **web add-in** is a legacy term for Office 
 See also: [add-in](#add-in).
 
 ## XLL
+
+An **XLL** add-in is an Excel add-in file with the file extension **.xll**. An XLL file is a type of dynamic link library (DLL) file that can only be opened by Excel. XLL add-in files must be written in C or C++. See [Developing Excel XLLs](/office/client-developer/excel/developing-excel-xlls) to learn more.
 
 See also: [custom function](#custom-function).
 
