@@ -17,7 +17,7 @@ Office Add-ins differ from VBA, COM, and VSTO add-ins because they offer cross-p
 
 ## add-in commands
 
-**Add-in commands** are UI elements, such as buttons and menus, that extend the Office UI for your add-in. When users select an add-in command element, they initiate actions such as running JavaScript code or displaying the add-in in a task pane. Add-in commands help users find and use your add-in, which can support your add-in's adoption and reuse.
+**Add-in commands** are UI elements, such as buttons and menus, that extend the Office UI for your add-in. When users select an add-in command element, they initiate actions such as running JavaScript code or displaying the add-in in a task pane. Add-in commands help users find and use your add-in, which can support your add-in's adoption and reuse. See [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-comments.md) to learn more.
 
 See also: [ribbon, ribbon button](#ribbon-ribbon-button).
 
@@ -29,7 +29,7 @@ See also: [client](#client), [host](#host), [Office application, Office client](
 
 ## application-specific API
 
-Application-specific APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. application-specific APIs are currently available for Excel, OneNote, PowerPoint, and Word.
+Application-specific APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. application-specific APIs are currently available for Excel, OneNote, PowerPoint, and Word. See [Application-specific API model](../develop/using-the-application-specific-api-model.md) to learn more.
 
 See also: [Common API](#common-api).
 
@@ -91,7 +91,7 @@ In the Office Add-ins context, a **runtime** is a lifecycle, or the time during 
 
 ## task pane
 
-Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
+Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document. See [Task panes in Office Add-ins](../design/task-pane-add-ins.md) to learn more.
 
 ## tutorial
 
@@ -124,3 +124,9 @@ An **XLL** add-in is an Excel add-in file with the file extension **.xll**. An X
 See also: [custom function](#custom-function).
 
 ## Yeoman generator, yo office
+
+The [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) uses the open source [Yeoman](https://github.com/yeoman/yo) tool to generate an Office Add-in via the command line. **Yo office** is the command line argument that runs the Yeoman generator for Office Add-ins. The Office Add-ins quickstarts and tutorials use the Yeoman generator.
+
+## See also
+
+- [Office Add-ins additional resources](resources-links-help.md)
