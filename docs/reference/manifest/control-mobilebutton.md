@@ -1,6 +1,6 @@
 ---
-title: Button type Control element in the manifest file
-description: Defines a button that executes an action or launches a task pane.
+title: MobileButton type Control element in the manifest file
+description: Defines a button on a mobile device that executes an action or launches a task pane.
 ms.date: 02/04/2022
 ms.localizationpriority: medium
 ---

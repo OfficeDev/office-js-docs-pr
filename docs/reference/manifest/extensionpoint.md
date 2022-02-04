@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 09/29/2021
+ms.date: 02/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -85,7 +85,7 @@ The following examples show how to use the **ExtensionPoint** element with **Pri
 |**Label**|Required. The label of the group. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.|
 |**Icon**|Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64.|
 |**Tooltip**|Optional. The tooltip of the group. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
-|**Control**|Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. See the [Button controls](control.md#button-control) and [Menu controls](control.md#menu-dropdown-button-controls) sections for more information.<br/>**Note:**  To make troubleshooting easier, we recommend that a **Control** element and the related **Resources** child elements be added one at a time.|
+|**Control**|Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. See the [Button controls](control-button.md) and [Menu controls](control-menu.md) sections for more information.<br/>**Note:**  To make troubleshooting easier, we recommend that a **Control** element and the related **Resources** child elements be added one at a time.|
 |**Script**|Links to the JavaScript file with the custom function definition and registration code. This element is not used in the Developer Preview. Instead, the HTML page is responsible for loading all JavaScript files.|
 |**Page**|Links to the HTML page for your custom functions.|
 

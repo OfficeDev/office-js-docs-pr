@@ -33,6 +33,26 @@ When used with **ContextMenu** [extension point](extensionpoint.md), a root menu
 |  **Items**     | Yes |  A collection of items to display within the menu. Contains the **Item** element for each item. |
 |  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies whether the menu should appear on application and platform combinations that support custom contextual tabs. If used, it must be the *first* child element. |
 
+### Label
+
+Specifies the text for the menu name by means of its only attribute, the **resid** attribute, which can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
+
+**Add-in type:** Task pane, Mail
+
+**Valid only in these VersionOverrides schemas**:
+
+- Task pane 1.0
+- Mail 1.0
+- Mail 1.1
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associated with these requirement sets**:
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) when the parent **VersionOverrides** is type Taskpane 1.0.
+- [Mailbox 1.3](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) when the parent **VersionOverrides** is type Mail 1.0.
+- [Mailbox 1.5](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) when the parent **VersionOverrides** is type Mail 1.1.
+
 ## Examples
 
 In the following example, the menu has two items. The first displays a task pane. The second executes a function. The menu has been configured to *not* be visible when the add-in is running on a platform that supports contextual tabs. For more information, please read [Implement an alternate UI experience when custom contextual tabs are not supported](../../design/contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
