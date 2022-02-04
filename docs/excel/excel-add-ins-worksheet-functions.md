@@ -442,4 +442,4 @@ The following built-in Excel worksheet functions can be called using the Excel J
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Functions Class (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
-- [Workbook Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook#functions)
+- [Workbook Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook#excel-excel-workbook-functions-member)

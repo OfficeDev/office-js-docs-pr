@@ -1,15 +1,27 @@
 ---
 title: OverriddenByRibbonApi element in the manifest file
 description: Learn how to specify that a custom tab, group, control, or menu item shouldn't appear when it is also part of a custom contextual tab.
-ms.date: 09/02/2021
+ms.date: 02/02/2022
 ms.localizationpriority: medium
 ---
 
 # OverriddenByRibbonApi element
 
-Specifies whether a [Group](group.md), [Button](control.md#button-control) control, [Menu](control.md#menu-dropdown-button-controls) control, or menu item will be hidden on application and platform combinations that support the API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_)) that installs custom contextual tabs on the ribbon.
+Specifies whether a [Group](group.md), [Button](control.md#button-control) control, [Menu](control.md#menu-dropdown-button-controls) control, or menu item will be hidden on application and platform combinations that support the API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))) that installs custom contextual tabs on the ribbon.
 
-If it is omitted, the default is `false`. If it is used, it must be the *first* child element of its parent element.
+**Add-in type:** Task pane
+
+**Valid only in these VersionOverrides schemas**:
+
+- Taskpane 1.0
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associated with these requirement sets**:
+
+- [Ribbon 1.2](../requirement-sets/add-in-commands-requirement-sets.md) (Required for Excel, PowerPoint, and Word.)
+
+If this element is omitted, the default is `false`. If it's used, it must be the *first* child element of its parent element.
 
 > [!NOTE]
 > For a full understanding of this element, please read [Implement an alternate UI experience when custom contextual tabs are not supported](../../design/contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
@@ -25,10 +37,10 @@ The purpose of this element is to create a fallback experience in an add-in that
 
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
-  <CustomTab id="TabCustom1">
-    <Group id="ContosoCustomTab.grp1">
+  <CustomTab id="Contoso.TabCustom1">
+    <Group id="Contoso.CustomTab.group1">
       <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
-      <Control  xsi:type="Button" id="MyButton">
+      <Control  xsi:type="Button" id="Contoso.MyButton1">
         <!-- Child elements omitted. -->
       </Control>
     </Group>
@@ -41,9 +53,9 @@ The purpose of this element is to create a fallback experience in an add-in that
 
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
-  <CustomTab id="TabCustom1">
-    <Group id="ContosoCustomTab.grp1">
-      <Control  xsi:type="Button" id="MyButton">
+  <CustomTab id="Contoso.TabCustom2">
+    <Group id="Contoso.CustomTab2.group2">
+      <Control  xsi:type="Button" id="Contoso.MyButton2">
         <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
         <!-- Other child elements omitted. -->
       </Control>
@@ -57,9 +69,9 @@ The purpose of this element is to create a fallback experience in an add-in that
 
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
-  <CustomTab id="TabCustom1">
-    <Group id="ContosoCustomTab.grp1">
-      <Control  xsi:type="Menu" id="MyMenu">
+  <CustomTab id="Contoso.TabCustom3">
+    <Group id="Contoso.CustomTab3.group3.">
+      <Control  xsi:type="Menu" id="Contoso.MyMenu">
         <!-- Other child elements omitted. -->
         <Items>
           <Item id="showGallery">

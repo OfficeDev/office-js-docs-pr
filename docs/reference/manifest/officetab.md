@@ -1,13 +1,29 @@
 ---
 title: OfficeTab element in the manifest file
 description: The OfficeTab element defines the ribbon tab where your add-in command appears.
-ms.date: 06/20/2019
+ms.date: 02/02/2022
 ms.localizationpriority: medium
 ---
 
 # OfficeTab element
 
 Defines the ribbon tab on which your add-in command appears. This can either be the default tab (either **Home**, **Message**, or **Meeting**), or a custom tab defined by the add-in. This element is required.
+
+**Add-in type:** Task pane, Mail
+
+**Valid only in these VersionOverrides schemas**:
+
+- Taskpane 1.0
+- Mail 1.0
+- Mail 1.1
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associated with these requirement sets**:
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) when the parent **VersionOverrides** is type Taskpane 1.0.
+- [Mailbox 1.3](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) when the parent **VersionOverrides** is type Mail 1.0.
+- [Mailbox 1.5](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) when the parent **VersionOverrides** is type Mail 1.1.
 
 ## Child elements
 
@@ -88,14 +104,14 @@ The following are valid tab `id` values by application. Values in **bold** are s
 
 ## Group
 
-A group of UI extension points in a tab. A group can have up to six controls. The **id** attribute is required and each **id** must be unique within the manifest. The **id** is a string with a maximum of 125 characters. See [Group element](group.md).
+A group of UI extension points in a tab. A group can have up to six controls. The **id** attribute is required and each **id** must be unique among all groups in the manifest. The **id** is a string with a maximum of 125 characters. See [Group element](group.md).
 
 ## OfficeTab example
 
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <OfficeTab id="TabDefault">
-    <Group id="msgreadTabMessage.grp1">
+    <Group id="Contoso.msgreadTabMessage.group1">
         <!-- Group Definition -->
     </Group>
   </OfficeTab>

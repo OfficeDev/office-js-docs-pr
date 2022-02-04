@@ -57,7 +57,7 @@ PowerPoint.run(function (context) {
 
 ### Text boxes
 
-A text box is created with the [addTextBox](/javascript/api/powerpoint/powerpoint.shapecollection#addTextBox_text__options_) method. The first parameter is the text that should appear in the box initially. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) that can specify the initial size of the text box and its position relative to the top and left sides of the slide. Or these properties can be set after the shape is created.
+A text box is created with the [addTextBox](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1)) method. The first parameter is the text that should appear in the box initially. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) that can specify the initial size of the text box and its position relative to the top and left sides of the slide. Or these properties can be set after the shape is created.
 
 The following code sample shows how to create a text box on the first slide.
 

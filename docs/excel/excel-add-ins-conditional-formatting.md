@@ -148,7 +148,7 @@ await context.sync();
 
 ### [Icon set](/javascript/api/excel/excel.iconsetconditionalformat)
 
-Icon set conditional formatting uses Excel [Icons](/javascript/api/excel/excel.icon) to highlight cells. The `criteria` property is an array of [ConditionalIconCriterion](/javascript/api/excel/excel.ConditionalIconCriterion), which define the symbol to be inserted and the condition under which it is inserted. This array is automatically prepopulated with criterion elements with default properties. Individual properties cannot be overwritten. Instead, the whole criteria object must be replaced. 
+Icon set conditional formatting uses Excel [Icons](/javascript/api/excel/excel.icon) to highlight cells. The `criteria` property is an array of [ConditionalIconCriterion](/javascript/api/excel/excel.conditionaliconcriterion), which define the symbol to be inserted and the condition under which it is inserted. This array is automatically prepopulated with criterion elements with default properties. Individual properties cannot be overwritten. Instead, the whole criteria object must be replaced. 
 
 The following example shows a three-triangle icon set applied across the range.
 
@@ -191,7 +191,7 @@ await context.sync();
 
 ### [Preset criteria](/javascript/api/excel/excel.presetcriteriaconditionalformat)
 
-Preset conditional formatting applies a user-defined format to the range based on a selected standard rule. These rules are defined by the [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) in the [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule). 
+Preset conditional formatting applies a user-defined format to the range based on a selected standard rule. These rules are defined by the [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.conditionalformatpresetcriterion) in the [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule). 
 
 The following example colors the font white wherever a cell's value is at least one standard deviation above the range's average.
 
@@ -238,7 +238,7 @@ conditionalFormat.textComparison.rule = {
 await context.sync();
 ```
 
-### [Top/bottom](/javascript/api/excel/excel.TopBottomconditionalformat)
+### [Top/bottom](/javascript/api/excel/excel.topbottomconditionalformat)
 
 Top/bottom conditional formatting applies a format to the highest or lowest values in a range. The `rule` property, which is of type [ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule), sets whether the condition is based on the highest or lowest, as well as whether the evaluation is ranked or percentage-based. 
 

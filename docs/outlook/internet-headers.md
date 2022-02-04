@@ -33,7 +33,7 @@ Introduced in [requirement set 1.8](../reference/objectmodel/requirement-set-1.8
 
 ## Set internet headers while composing a message
 
-Try using the [item.internetHeaders](/javascript/api/outlook/office.messagecompose#internetHeaders) property to manage the custom internet headers you place on the current message in Compose mode.
+Try using the [item.internetHeaders](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-internetheaders-member) property to manage the custom internet headers you place on the current message in Compose mode.
 
 ### Set, get, and remove custom headers example
 
@@ -102,7 +102,7 @@ Selected headers: {"x-preferred-fruit":"orange","x-preferred-vegetable":"broccol
 
 ## Get internet headers while reading a message
 
-Try calling [item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#getAllInternetHeadersAsync_options__callback_) to get internet headers on the current message in Read mode.
+Try calling [item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getallinternetheadersasync-member(1)) to get internet headers on the current message in Read mode.
 
 ### Get sender preferences from current MIME headers example
 

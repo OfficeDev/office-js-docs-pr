@@ -71,7 +71,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 ### Optimize for touch
 
-- Use the [Context.touchEnabled](/javascript/api/office/office.context#touchEnabled) property to detect whether the Office application that your add-in runs on is touch enabled.
+- Use the [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) property to detect whether the Office application that your add-in runs on is touch enabled.
 
   > [!NOTE]
   > This property is not supported in Outlook.

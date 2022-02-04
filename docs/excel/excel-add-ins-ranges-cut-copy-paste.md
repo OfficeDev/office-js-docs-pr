@@ -14,7 +14,7 @@ This article provides code samples that cut, copy, and paste ranges using the Ex
 
 ## Copy and paste
 
-The [Range.copyFrom](/javascript/api/excel/excel.range#copyFrom_sourceRange__copyType__skipBlanks__transpose_) method replicates the **Copy** and **Paste** actions of the Excel UI. The destination is the `Range` object that `copyFrom` is called on. The source to be copied is passed as a range or a string address representing a range.
+The [Range.copyFrom](/javascript/api/excel/excel.range#excel-excel-range-copyfrom-member(1)) method replicates the **Copy** and **Paste** actions of the Excel UI. The destination is the `Range` object that `copyFrom` is called on. The source to be copied is passed as a range or a string address representing a range.
 
 The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
 
@@ -75,7 +75,7 @@ Excel.run(function (context) {
 
 ## Cut and paste (move) cells
 
-The [Range.moveTo](/javascript/api/excel/excel.range#moveTo_destinationRange_) method moves cells to a new location in the workbook. This cell movement behavior works the same as when cells are moved by [dragging the range border](https://support.microsoft.com/office/803d65eb-6a3e-4534-8c6f-ff12d1c4139e) or when taking the **Cut** and **Paste** actions. Both the formatting and values of the range are moved to the location specified as the `destinationRange` parameter.
+The [Range.moveTo](/javascript/api/excel/excel.range#excel-excel-range-moveto-member(1)) method moves cells to a new location in the workbook. This cell movement behavior works the same as when cells are moved by [dragging the range border](https://support.microsoft.com/office/803d65eb-6a3e-4534-8c6f-ff12d1c4139e) or when taking the **Cut** and **Paste** actions. Both the formatting and values of the range are moved to the location specified as the `destinationRange` parameter.
 
 The following code sample moves a range with the `Range.moveTo` method. Note that if the destination range is smaller than the source, it will be expanded to encompass the source content.
 

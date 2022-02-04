@@ -1,7 +1,7 @@
 ---
 title: LaunchEvents in the manifest file
 description: The LaunchEvents element configures your add-in to activate based on supported events.
-ms.date: 05/11/2021
+ms.date: 02/02/2022
 ms.localizationpriority: medium
 ---
 
@@ -10,6 +10,12 @@ ms.localizationpriority: medium
 Configures your add-in to activate based on supported events. Child of the [`<ExtensionPoint>`](extensionpoint.md) element. For more information, see [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md).
 
 **Add-in type:** Mail
+
+**Valid only in these VersionOverrides schemas**:
+
+- Mail 1.1
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 ## Syntax
 
