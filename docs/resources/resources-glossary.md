@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
-description: 'A glossary of terms commonly used throughout the Office Add-ins documentation.'
-ms.date: 01/27/2022
+description: A glossary of terms commonly used throughout the Office Add-ins documentation.
+ms.date: 02/04/2022
 ms.localizationpriority: medium
 ---
 
@@ -21,13 +21,13 @@ Office Add-ins differ from VBA, COM, and VSTO add-ins because they offer cross-p
 
 In the Office Add-ins documentation, **application** refers to an Office application. The Office applications that support Office Add-ins are: Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
-See also: client, host, Office application, Office client.
+See also: [client](#client), [host](#host), [Office application, Office client](#office-application-office-client).
 
 ## application-specific API
 
 Application-specific APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. application-specific APIs are currently available for Excel, OneNote, PowerPoint, and Word.
 
-See also: Common API.
+See also: [Common API](#common-api).
 
 ## CDN
 
@@ -37,13 +37,13 @@ CDN is an acronym. It represents **content delivery network (CDN)** and refers t
 
 In the Office Add-ins documentation, **client** typically refers to an Office application. The Office applications, or clients, that support Office Add-ins are: Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
-See also: application, host, Office application, Office client.
+See also: [application](#application), [host](#host), [Office application, Office client](#office-application-office-client).
 
 ## Common API
 
 Common APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), which allow you to specify only one operation in each request sent to the Office application. Common APIs were introduced with Office 2013 and can be used to interact with Office 2013 or later. For details about the Common API object model, which includes APIs for interacting with Outlook, PowerPoint, and Project, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
-See also: application-specific API.
+See also: [application-specific API](#application-specific-api).
 
 ## Contoso
 
@@ -59,13 +59,13 @@ In the Office Add-ins documentation, a **custom function** is a user-defined fun
 
 In the Office Add-ins documentation, **host** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are: Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
-See also: application, client, Office application, Office client.
+See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 
 ## Office application, Office client
 
 In the Office Add-ins documentation, **Office client** refers to an Office application. The Office applications, or clients, that support Office Add-ins are: Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
-See also: application, client, host.
+See also: [application](#application), [client](#client), [host](#host).
 
 ## platform
 
@@ -89,26 +89,26 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 ## tutorial
 
-See also: quickstart.
+See also: [quickstart](#quickstart).
 
 ## quickstart
 
-See also: tutorial.
+See also: [tutorial](#tutorial).
 
 ## UI-less custom function
 
 A **UI-less custom function** is a custom functions add-in that doesn't have a task pane or other user-interface elements.
 
-See also: custom function.
+See also: [custom function](#custom-function).
 
-## Web add-ins
+## web add-in
 
 In the Office Add-ins documentation, **web add-in** is a legacy term for Office Add-ins.
 
-See also: add-in.
+See also: [add-in](#add-in).
 
 ## XLL
 
-See also: custom function.
+See also: [custom function](#custom-function).
 
 ## Yeoman generator, yo office
