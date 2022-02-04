@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # OverriddenByRibbonApi element
 
-Specifies whether a [Group](group.md), [Button](control-button.md) control, [Menu](control-menu.md) control, or menu item will be hidden on application and platform combinations that support the API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_)) that installs custom contextual tabs on the ribbon.
+Specifies whether a [Group](group.md), [Button](control-button.md) control, [Menu](control-menu.md) control, or menu item will be hidden on application and platform combinations that support the API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))) that installs custom contextual tabs on the ribbon.
 
 **Add-in type:** Task pane
 
@@ -21,7 +21,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 - [Ribbon 1.2](../requirement-sets/add-in-commands-requirement-sets.md) (Required for Excel, PowerPoint, and Word.)
 
-If this element is omitted, the default is `false`. If it is used, it must be the *first* child element of its parent element.
+If this element is omitted, the default is `false`. If it's used, it must be the *first* child element of its parent element.
 
 > [!NOTE]
 > For a full understanding of this element, please read [Implement an alternate UI experience when custom contextual tabs are not supported](../../design/contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
