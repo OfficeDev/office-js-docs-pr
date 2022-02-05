@@ -1,5 +1,5 @@
 ---
-title: Button type Control element in the manifest file
+title: Control element of type Button in the manifest file
 description: Defines a button that executes an action or launches a task pane.
 ms.date: 02/04/2022
 ms.localizationpriority: medium
@@ -31,7 +31,7 @@ A button performs a single action when the user selects it. It can either execut
 
 ### Label
 
-Specifies the text for the button by means of its only attribute, the **resid** attribute, which can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
+Specifies the text for the button by means of its only attribute, **resid**, which can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** child of the [Resources](resources.md) element.
 
 **Add-in type:** Task pane, Mail
 
@@ -51,7 +51,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 ## Examples
 
-In the following example, the button executes a function. It is also configured to be disabled when the add-in launches. It can be programmatically enabled. For more information, see [Enable and Disable Add-in Commands](../../design/disable-add-in-commands.md).
+In the following example, the button executes a function. It's also configured to be disabled when the add-in launches. It can be programmatically enabled. For more information, see [Enable and Disable Add-in Commands](../../design/disable-add-in-commands.md).
 
 ```xml
 <Control xsi:type="Button" id="Contoso.msgReadFunctionButton">

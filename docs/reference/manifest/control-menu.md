@@ -1,6 +1,6 @@
 ---
-title: Menu type Control element in the manifest file
-description: Defines a menu whose items can execute an actions or launch task panes.
+title: Control element of type Menu in the manifest file
+description: Defines a menu whose items can execute actions or launch task panes.
 ms.date: 02/04/2022
 ms.localizationpriority: medium
 ---
@@ -18,7 +18,7 @@ The menu control defines:
 - A root-level menu control.
 - A list of menu items.
 
-When used with **PrimaryCommandSurface** [extension point](extensionpoint.md), the root menu item displays as a button on the ribbon. When the button is selected, the menu displays as a drop-down list. Submenus are not supported.
+When used with the **PrimaryCommandSurface** [extension point](extensionpoint.md), the root menu item displays as a button on the ribbon. When the button is selected, the menu displays as a dropdown list. Submenus are not supported.
 
 When used with **ContextMenu** [extension point](extensionpoint.md), a root menu item displays on the context menu. When the root item is selected, the menu items display as a submenu. None of the items can itself be a submenu, because only one level of submenus is supported.
 
