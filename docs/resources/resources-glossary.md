@@ -29,7 +29,7 @@ See also: [client](#client), [host](#host), [Office application, Office client](
 
 ## application-specific API
 
-Application-specific APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. application-specific APIs are currently available for Excel, OneNote, PowerPoint, and Word. See [Application-specific API model](../develop/using-the-application-specific-api-model.md) to learn more.
+Application-specific APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. Application-specific APIs are currently available for Excel, OneNote, PowerPoint, and Word. See [Application-specific API model](../develop/using-the-application-specific-api-model.md) to learn more.
 
 See also: [Common API](#common-api).
 
@@ -55,11 +55,11 @@ See also: [application-specific API](#application-specific-api).
 
 ## content add-in
 
-**Content add-ins** are surfaces that can be embedded directly into Excel or PowerPoint documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document.
+**Content add-ins** are surfaces that can be embedded directly into Excel or PowerPoint documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document. See [Content Office Add-ins](../design/content-add-ins.md) to learn more.
 
 ## custom function
 
-In the Office Add-ins documentation, a **custom function** is a user-defined function in Excel. Custom functions in Excel enable developers to add new functions, beyond the typical Excel features, by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel.
+In the Office Add-ins documentation, a **custom function** is a user-defined function in Excel. Custom functions in Excel enable developers to add new functions, beyond the typical Excel features, by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel. See [Create custom functions in Excel](../excel/custom-functions-overview.md) to learn more.
 
 ## host
 
@@ -101,7 +101,7 @@ See also: [quickstart](#quickstart).
 
 ## quickstart
 
-A **quickstart** is a a high level description of key skills and knowledge required for the basic operation of a particular program. In the Office Add-ins documentation, a quickstart is an introduction to developing an add-in for a particular application, such as Outlook. A quickstart contains series of steps than an add-in developer can complete in approximately 5 minutes, resulting in a functioning add-in.
+A **quickstart** is a a high level description of key skills and knowledge required for the basic operation of a particular program. In the Office Add-ins documentation, a quickstart is an introduction to developing an add-in for a particular application, such as Outlook. A quickstart contains series of steps that an add-in developer can complete in approximately 5 minutes, resulting in a functioning add-in.
 
 See also: [tutorial](#tutorial).
 
