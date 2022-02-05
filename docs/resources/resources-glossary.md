@@ -17,7 +17,7 @@ Office Add-ins differ from VBA, COM, and VSTO add-ins because they offer cross-p
 
 ## add-in commands
 
-**Add-in commands** are UI elements, such as buttons and menus, that extend the Office UI for your add-in. When users select an add-in command element, they initiate actions such as running JavaScript code or displaying the add-in in a task pane. Add-in commands help users find and use your add-in, which can support your add-in's adoption and reuse. See [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-comments.md) to learn more.
+**Add-in commands** are UI elements, such as buttons and menus, that extend the Office UI for your add-in. When users select an add-in command element, they initiate actions such as running JavaScript code or displaying the add-in in a task pane. Add-in commands help users find and use your add-in, which can support your add-in's adoption and reuse. See [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md) to learn more.
 
 See also: [ribbon, ribbon button](#ribbon-ribbon-button).
 
@@ -29,7 +29,7 @@ See also: [client](#client), [host](#host), [Office application, Office client](
 
 ## application-specific API
 
-Application-specific APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. Application-specific APIs are currently available for Excel, OneNote, PowerPoint, and Word. See [Application-specific API model](../develop/using-the-application-specific-api-model.md) to learn more.
+Application-specific APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. Application-specific APIs are currently available for Excel, OneNote, PowerPoint, and Word. See [Application-specific API model](../develop/application-specific-api-model.md) to learn more.
 
 See also: [Common API](#common-api).
 
