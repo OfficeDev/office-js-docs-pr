@@ -28,7 +28,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|**xsi:type**|Yes|The type of control being defined. Can be either `Button`, `Menu`, or `MobileButton`. |
+|**xsi:type**|Yes|The type of control being defined. Can be `Button`, `Menu`, or `MobileButton`. |
 |**id**|Yes|The ID of the control element. Can be a maximum of 125 characters. Must be unique across all **Control** elements in the manifest.|
 
 > [!NOTE]
@@ -36,7 +36,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 ## Child elements
 
-The valid child elements vary depending on the value of the **xsi:type** attribute.
+The valid child elements depend on the value of the **xsi:type** attribute.
 
 - [Button type of Control element](control-button.md)
 - [Menu type of Control element](control-menu.md)

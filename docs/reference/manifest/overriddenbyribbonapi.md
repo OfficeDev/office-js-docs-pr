@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # OverriddenByRibbonApi element
 
-Specifies whether a [Group](group.md), [Button](control-button.md) control, [Menu](control-menu.md) control, or menu item will be hidden on application and platform combinations that support the API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))) that installs custom contextual tabs on the ribbon.
+Specifies whether a [Group](group.md), [Button control](control-button.md), [Menu control](control-menu.md), or menu item will be hidden on application and platform combinations that support the API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))) that installs custom contextual tabs on the ribbon.
 
 **Add-in type:** Task pane
 

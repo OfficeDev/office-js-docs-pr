@@ -20,7 +20,7 @@ The menu control defines:
 
 When used with the **PrimaryCommandSurface** [extension point](extensionpoint.md), the root menu item displays as a button on the ribbon. When the button is selected, the menu displays as a dropdown list. Submenus are not supported.
 
-When used with **ContextMenu** [extension point](extensionpoint.md), a root menu item displays on the context menu. When the root item is selected, the menu items display as a submenu. None of the items can itself be a submenu, because only one level of submenus is supported.
+When used with the **ContextMenu** [extension point](extensionpoint.md), a root menu item displays on the context menu. When the root item is selected, the menu items display as a submenu. None of the items can itself be a submenu because only one level of submenus is supported.
 
 ## Child elements
 
@@ -35,7 +35,7 @@ When used with **ContextMenu** [extension point](extensionpoint.md), a root menu
 
 ### Label
 
-Specifies the text for the menu name by means of its only attribute, the **resid** attribute, which can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
+Specifies the text for the menu name by means of its only attribute, **resid**, which can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** child of the [Resources](resources.md) element.
 
 **Add-in type:** Task pane, Mail
 

@@ -32,13 +32,13 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 |  [Label](#label)     | Yes |  The text for the button. |
 |  [Supertip](supertip.md)  | Yes |  The supertip for the button.    |
 |  [Icon](icon.md)      | Yes |  An image for the button.         |
-|  [Action](action.md)    | Yes |  Specifies the action to perform. There can be only one **Action** child of a **Item** element.  |
+|  [Action](action.md)    | Yes |  Specifies the action to perform. There can be only one **Action** child of an **Item** element.  |
 |  [Enabled](enabled.md)    | No |  Specifies whether the control is enabled when the add-in launches.  |
 |  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | No |  Specifies whether the button should appear on application and platform combinations that support custom contextual tabs. If used, it must be the *first* child element. |
 
 ### Label
 
-Specifies the text for the button by means of its only attribute, the **resid** attribute, which can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.
+Specifies the text for the button by means of its only attribute, **resid**, which can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** child of the [Resources](resources.md) element.
 
 **Add-in type:** Task pane, Mail
 
