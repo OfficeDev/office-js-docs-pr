@@ -1,13 +1,13 @@
 ---
 title: Action element in the manifest file
 description: This element specifies the action to perform when the user selects a button or menu control.
-ms.date: 06/08/2021
+ms.date: 02/04/2022
 ms.localizationpriority: medium
 ---
 
 # Action element
 
-Specifies the action to perform when the user selects a  [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) control.
+Specifies the action to perform when the user selects a [Button control](control-button.md) or [Menu control](control-menu.md).
 
 ## Attributes
 
