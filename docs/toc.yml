@@ -287,6 +287,8 @@ items:
       - name: Debug using Visual Studio Code and Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
         displayName: debug, windows
+      - name: Debug using Visual Studio Code and Edge Legacy WebView
+        href: testing/debug-with-vs-extension.md
       - name: Test with Internet Explorer 11
         href: testing/ie-11-testing.md
     - name: Web browser
@@ -304,11 +306,8 @@ items:
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload
-
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
-    - name: Debugger Extension for Visual Studio Code
-      href: testing/debug-with-vs-extension.md
     - name: Performance
       items:
       - name: Avoid using the context.sync method in loops
@@ -493,6 +492,12 @@ items:
           href: reference/manifest/allformfactors.md
         - name: Control
           href: reference/manifest/control.md
+        - name: Control (Button)
+          href: reference/manifest/control-button.md
+        - name: Control (Menu)
+          href: reference/manifest/control-menu.md
+        - name: Control (MobileButton)
+          href: reference/manifest/control-mobilebutton.md
         - name: CustomTab
           href: reference/manifest/customtab.md
         - name: DesktopFormFactor
@@ -521,6 +526,10 @@ items:
           href: reference/manifest/hosts.md
         - name: Icon
           href: reference/manifest/icon.md
+        - name: Item
+          href: reference/manifest/item.md
+        - name: Items
+          href: reference/manifest/items.md
         - name: LaunchEvent
           href: reference/manifest/launchevent.md
         - name: LaunchEvents

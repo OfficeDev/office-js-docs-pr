@@ -1,13 +1,13 @@
 ---
 title: OverriddenByRibbonApi element in the manifest file
 description: Learn how to specify that a custom tab, group, control, or menu item shouldn't appear when it is also part of a custom contextual tab.
-ms.date: 02/02/2022
+ms.date: 02/04/2022
 ms.localizationpriority: medium
 ---
 
 # OverriddenByRibbonApi element
 
-Specifies whether a [Group](group.md), [Button](control.md#button-control) control, [Menu](control.md#menu-dropdown-button-controls) control, or menu item will be hidden on application and platform combinations that support the API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))) that installs custom contextual tabs on the ribbon.
+Specifies whether a [Group](group.md), [Button control](control-button.md), [Menu control](control-menu.md), or menu item will be hidden on application and platform combinations that support the API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))) that installs custom contextual tabs on the ribbon.
 
 **Add-in type:** Task pane
 
@@ -38,7 +38,7 @@ The purpose of this element is to create a fallback experience in an add-in that
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="Contoso.TabCustom1">
-    <Group id="Contoso.CustomTab.group1">
+    <Group id="Contoso.CustomTab1.group1">
       <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
       <Control  xsi:type="Button" id="Contoso.MyButton1">
         <!-- Child elements omitted. -->
@@ -70,7 +70,7 @@ The purpose of this element is to create a fallback experience in an add-in that
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="Contoso.TabCustom3">
-    <Group id="Contoso.CustomTab3.group3.">
+    <Group id="Contoso.CustomTab3.group3">
       <Control  xsi:type="Menu" id="Contoso.MyMenu">
         <!-- Other child elements omitted. -->
         <Items>
