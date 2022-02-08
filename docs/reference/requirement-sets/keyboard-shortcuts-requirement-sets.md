@@ -1,7 +1,7 @@
 ---
 title: Keyboard Shortcuts requirement sets
 description: 'Keyboard Shortcuts requirement set information for Office Add-ins.'
-ms.date: 11/22/2021
+ms.date: 02/07/2022
 ms.prod: non-product-specific
 localization_priority: Normal
 ---
@@ -15,6 +15,9 @@ Office Add-ins run across multiple versions of Office. The following table lists
 |  Requirement set  | Office 2013 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(connected to a Microsoft 365 subscription)  | Office on the web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | KeyboardShortcuts 1.1  | N/A | Version: 2111 (Build 14701.10000) | N/A | 16.55 | September, 2021 |
+
+> [!NOTE]
+> The **KeyboardShortcuts 1.1** requirement set is supported only in Excel.
 
 ## Office versions and build numbers
 
