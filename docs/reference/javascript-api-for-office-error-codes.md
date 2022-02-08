@@ -1,7 +1,7 @@
 ---
 title: Office Common API error codes
 description: This article documents the error messages you might encounter while using the Office Common API.
-ms.date: 02/09/2021
+ms.date: 02/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 This article documents the error messages you might encounter while using the Common API model. These error codes don't apply to application-specific APIs, such as the Excel JavaScript API or the Word JavaScript API.
 
-See [API models](../develop/understanding-the-javascript-api-for-office.md#api-models) to learn more about the differences between the Common API and application-specific API models. 
+See [API models](../develop/understanding-the-javascript-api-for-office.md#api-models) to learn more about the differences between the Common API and application-specific API models.
 
 ## Error codes
 
@@ -76,6 +76,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |8021|Out of range|The column index value is out of the allowed range. Use a positive value (0 or higher) that's less than the number of columns.|The column index is more than the biggest column index of the table or less than 0.|
 |8022|Out of range|The value is out of the allowed range.|Some of the values in the format are out of the supported ranges.|
 |9016|Permission denied|Permission denied|Access is denied.|
+|9020|Generic Response Error|An internal error has occurred.|Refers to an internal error condition.|
 |9021|Save Error|Connection error occurred while trying to save the item on the server.|The item couldn't be saved. This could be due to a server connection error if using Online Mode in Outlook desktop, or due to an attempt to re-save a draft item that was deleted from the Exchange server.|
 |9022|Message In Different Store Error|The EWS ID cannot be retrieved because the message is saved in another store.|The EWS ID for the current message couldn't be retrieved as the message may have been moved or the sending mailbox may have changed.|
 |9041|Network error|The user is no longer connected to the network. Please check your network connection and try again.|The user no longer has network or internet access.|
@@ -138,3 +139,4 @@ The following table summarizes binding behavior in Word.
 - [Understanding the Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
 - [Error handling with the Excel JavaScript API](../excel/excel-add-ins-error-handling.md)
 - [Troubleshoot error messages for single sign-on (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
+- [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md)
