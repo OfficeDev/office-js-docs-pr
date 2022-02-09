@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 02/04/2022
+ms.date: 02/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -23,7 +23,7 @@ See also: [ribbon, ribbon button](#ribbon-ribbon-button).
 
 ## application
 
-In the Office Add-ins documentation, **application** refers to an Office application. The Office applications that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
+**Application** refers to an Office application. The Office applications that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
 See also: [client](#client), [host](#host), [Office application, Office client](#office-application-office-client).
 
@@ -35,7 +35,7 @@ See also: [Common API](#common-api).
 
 ## client
 
-In the Office Add-ins documentation, **client** typically refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
+A **client** typically refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
 See also: [application](#application), [host](#host), [Office application, Office client](#office-application-office-client).
 
@@ -59,23 +59,23 @@ A **content delivery network** or **CDN** is a distributed network of servers an
 
 ## custom function
 
-In the Office Add-ins documentation, a **custom function** is a user-defined function in Excel. Custom functions in Excel enable developers to add new functions, beyond the typical Excel features, by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel. See [Create custom functions in Excel](../excel/custom-functions-overview.md) to learn more.
+A **custom function** is a user-defined function in Excel. Custom functions in Excel enable developers to add new functions, beyond the typical Excel features, by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel. See [Create custom functions in Excel](../excel/custom-functions-overview.md) to learn more.
 
 ## host
 
-In the Office Add-ins documentation, **host** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
+**Host** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 
 ## Office application, Office client
 
-In the Office Add-ins documentation, **Office client** refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
+**Office client** refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
 See also: [application](#application), [client](#client), [host](#host).
 
 ## platform
 
-In the Office Add-ins context, a **platform** usually refers to the operating system running the Office application. Platforms that support Office Add-ins are Windows, Mac, iPad, and web browsers.
+A **platform** usually refers to the operating system running the Office application. Platforms that support Office Add-ins are Windows, Mac, iPad, and web browsers.
 
 ## quick start
 
@@ -89,11 +89,11 @@ See also: [tutorial](#tutorial).
 
 ## ribbon, ribbon button
 
-A **ribbon** is a command bar that organizes an application's features into a series of tabs or buttons at the top of a window. A **ribbon button** is one of the buttons within this series.
+A **ribbon** is a command bar that organizes an application's features into a series of tabs or buttons at the top of a window. A **ribbon button** is one of the buttons within this series. See [Show or hide the ribbon in Office](https://support.microsoft.com/office/show-or-hide-the-ribbon-in-office-d946b26e-0c8c-402d-a0f7-c6efa296b527#ID0EBBD=Newer_Versions) for more information.
 
 ## runtime
 
-In the Office Add-ins context, a **runtime** is a lifecycle, or the time during which an application is running.
+A **runtime** is a lifecycle, or the time during which an application is running.
 
 ## task pane
 
@@ -101,7 +101,7 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 ## tutorial
 
-A **tutorial** is a teaching aid designed to help people learn to use a product or procedure. In the Office Add-ins context, a tutorial guides an add-in developer through the complete add-in development process for a particular application, such as Excel. This involves following 20 or more steps and is a greater time investment than a [quick start](#quicks-tart).
+A **tutorial** is a teaching aid designed to help people learn to use a product or procedure. In the Office Add-ins context, a tutorial guides an add-in developer through the complete add-in development process for a particular application, such as Excel. This involves following 20 or more steps and is a greater time investment than a [quick start](#quick-start).
 
 See also: [quick start](#quick-start).
 
@@ -113,7 +113,7 @@ See also: [custom function](#custom-function).
 
 ## web add-in
 
-In the Office Add-ins documentation, **web add-in** is a legacy term for Office Add-ins. This term may be used when the Microsoft 365 documentation needs to distinguish modern Office Add-ins from other types of add-ins like VBA, COM, or VSTO.
+A **web add-in** is a legacy term for Office Add-ins. This term may be used when the Microsoft 365 documentation needs to distinguish modern Office Add-ins from other types of add-ins like VBA, COM, or VSTO.
 
 See also: [add-in](#add-in).
 
