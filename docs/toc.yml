@@ -1338,7 +1338,7 @@ items:
     displayName: Excel
 - name: Resources
   items:
-  - name: Office Add-ins glossary
+  - name: Glossary
     href: resources/resources-glossary.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
   - name: External resources
