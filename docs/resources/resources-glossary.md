@@ -33,10 +33,6 @@ Application-specific APIs provide strongly-typed objects that interact with obje
 
 See also: [Common API](#common-api).
 
-## Content delivery network (CDN)
-
-A **content delivery network** or **CDN** is a distributed network of servers and data centers. It typically provides higher resource availability and performance when compared to a single server or data center.
-
 ## client
 
 In the Office Add-ins documentation, **client** typically refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
@@ -49,13 +45,17 @@ Common APIs can be used to access features such as UI, dialogs, and client setti
 
 See also: [application-specific API](#application-specific-api).
 
+## content add-in
+
+**Content add-ins** are surfaces that can be embedded directly into Excel, PowerPoint, or OneNote documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document. See [Content Office Add-ins](../design/content-add-ins.md) to learn more.
+
+## content delivery network (CDN)
+
+A **content delivery network** or **CDN** is a distributed network of servers and data centers. It typically provides higher resource availability and performance when compared to a single server or data center.
+
 ## Contoso
 
 **Contoso** Ltd. (also known as Contoso and Contoso University) is a fictional company used by Microsoft as an example company and domain.
-
-## content add-in
-
-**Content add-ins** are surfaces that can be embedded directly into Excel or PowerPoint documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document. See [Content Office Add-ins](../design/content-add-ins.md) to learn more.
 
 ## custom function
 
@@ -75,7 +75,13 @@ See also: [application](#application), [client](#client), [host](#host).
 
 ## platform
 
-In the Office Add-ins context, a **platform** usually refers to the operating system running an add-in. Platforms that support Office Add-ins are Windows, Mac, iPad, and web browsers.
+In the Office Add-ins context, a **platform** usually refers to the operating system running the Office application. Platforms that support Office Add-ins are Windows, Mac, iPad, and web browsers.
+
+## quick start
+
+A **quick start** is a high-level description of key skills and knowledge required for the basic operation of a particular program. In the Office Add-ins documentation, a quick start is an introduction to developing an add-in for a particular application, such as Outlook. A quick start contains series of steps that an add-in developer can complete in approximately 5 minutes, resulting in a functioning add-in and functional development environment.
+
+See also: [tutorial](#tutorial).
 
 ## requirement set
 
@@ -95,15 +101,9 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 ## tutorial
 
-A **tutorial** is a teaching aid designed to help people learn to use a product or procedure. In the Office Add-ins context, a tutorial guides an add-in developer through the complete add-in development process for a particular application, such as Excel. This involves following 20 or more steps and is a greater time investment than a [quickstart](#quickstart).
+A **tutorial** is a teaching aid designed to help people learn to use a product or procedure. In the Office Add-ins context, a tutorial guides an add-in developer through the complete add-in development process for a particular application, such as Excel. This involves following 20 or more steps and is a greater time investment than a [quick start](#quicks-tart).
 
-See also: [quickstart](#quickstart).
-
-## quick start
-
-A **quick start** is a high-level description of key skills and knowledge required for the basic operation of a particular program. In the Office Add-ins documentation, a quick start is an introduction to developing an add-in for a particular application, such as Outlook. A quick start contains series of steps that an add-in developer can complete in approximately 5 minutes, resulting in a functioning add-in.
-
-See also: [tutorial](#tutorial).
+See also: [quick start](#quick-start).
 
 ## UI-less custom function
 
@@ -113,7 +113,7 @@ See also: [custom function](#custom-function).
 
 ## web add-in
 
-In the Office Add-ins documentation, **web add-in** is a legacy term for Office Add-ins. This term may be used when the documentation needs to distinguish Office Add-ins from other types of add-ins like VBA or COM.
+In the Office Add-ins documentation, **web add-in** is a legacy term for Office Add-ins. This term may be used when the Microsoft 365 documentation needs to distinguish modern Office Add-ins from other types of add-ins like VBA, COM, or VSTO.
 
 See also: [add-in](#add-in).
 
