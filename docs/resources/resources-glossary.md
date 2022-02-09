@@ -35,7 +35,7 @@ See also: [Common API](#common-api).
 
 ## client
 
-A **client** typically refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
+**Client** typically refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
 
 See also: [application](#application), [host](#host), [Office application, Office client](#office-application-office-client).
 
