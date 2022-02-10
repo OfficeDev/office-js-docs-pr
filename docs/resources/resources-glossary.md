@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 02/09/2022
+ms.date: 02/10/2022
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,7 @@ Office Add-ins differ from VBA, COM, and VSTO add-ins because they offer cross-p
 
 ## add-in commands
 
-**Add-in commands** are UI elements, such as buttons and menus, that extend the Office UI for your add-in. When users select an add-in command element, they initiate actions such as running JavaScript code or displaying the add-in in a task pane. Add-in commands let your add-in look and feel like a part of Office, which gives users more confidence in your add-in. See [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md) to learn more.
+**Add-in commands** are UI elements, such as buttons and menus, that extend the Office UI for your add-in. When users select an add-in command element, they initiate actions such as running JavaScript code or displaying the add-in in a task pane. Add-in commands let your add-in look and feel like a part of Office, which gives users more confidence in your add-in. See [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md) and [Add-in commands for Outlook](../outlook/add-in-commands-for-outlook.md) to learn more.
 
 See also: [ribbon, ribbon button](#ribbon-ribbon-button).
 
@@ -41,13 +41,17 @@ See also: [application](#application), [host](#host), [Office application, Offic
 
 ## Common API
 
-Common APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), which allow you to specify only one operation in each request sent to the Office application. Common APIs were introduced with Office 2013 and can be used to interact with Office 2013 or later. For details about the Common API object model, which includes APIs for interacting with Outlook, PowerPoint, and Project, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
+Common APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), which allow you to specify only one operation in each request sent to the Office application.
+
+Common APIs were introduced with Office 2013 and can be used to interact with Office 2013 or later. Some Common APIs, particularly the Common APIs related to Excel, are legacy APIs from the early 2010s. The application-specific APIs are preferred when possible. Other Common APIs, such as the Common APIs related to Outlook, UI, and authentication, are the modern and preferred APIs for these purposes. For details about the Common API object model, which includes APIs for interacting with Outlook, PowerPoint, and Project, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 See also: [application-specific API](#application-specific-api).
 
 ## content add-in
 
-**Content add-ins** are surfaces that can be embedded directly into Excel, PowerPoint, or OneNote documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document. See [Content Office Add-ins](../design/content-add-ins.md) to learn more.
+**Content add-ins** are webviews, or web browser views, that can be embedded directly into Excel, PowerPoint, or OneNote documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document. See [Content Office Add-ins](../design/content-add-ins.md) to learn more.
+
+See also: [webview](#webview).
 
 ## content delivery network (CDN)
 
@@ -59,7 +63,7 @@ A **content delivery network** or **CDN** is a distributed network of servers an
 
 ## custom function
 
-A **custom function** is a user-defined function in Excel. Custom functions in Excel enable developers to add new functions, beyond the typical Excel features, by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel. See [Create custom functions in Excel](../excel/custom-functions-overview.md) to learn more.
+A **custom function** is a user-defined function that is packaged with an Excel add-in. Custom functions enable developers to add new functions, beyond the typical Excel features, by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel. See [Create custom functions in Excel](../excel/custom-functions-overview.md) to learn more.
 
 ## host
 
@@ -75,7 +79,7 @@ See also: [application](#application), [client](#client), [host](#host).
 
 ## platform
 
-A **platform** usually refers to the operating system running the Office application. Platforms that support Office Add-ins are Windows, Mac, iPad, and web browsers.
+A **platform** usually refers to the operating system running the Office application. Platforms that support Office Add-ins include Windows, Mac, iPad, and web browsers.
 
 ## quick start
 
@@ -97,7 +101,9 @@ A **runtime** is a lifecycle, or the time during which an application is running
 
 ## task pane
 
-Task panes are interface surfaces that typically appear on the right side of the window within Excel, Outlook, PowerPoint, and Word. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document. See [Task panes in Office Add-ins](../design/task-pane-add-ins.md) to learn more.
+Task panes are interface surfaces, or webviews, that typically appear on the right side of the window within Excel, Outlook, PowerPoint, and Word. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document. See [Task panes in Office Add-ins](../design/task-pane-add-ins.md) to learn more.
+
+See also: [webview](#webview).
 
 ## tutorial
 
@@ -113,13 +119,19 @@ See also: [custom function](#custom-function).
 
 ## web add-in
 
-A **web add-in** is a legacy term for Office Add-ins. This term may be used when the Microsoft 365 documentation needs to distinguish modern Office Add-ins from other types of add-ins like VBA, COM, or VSTO.
+**Web add-in** is a legacy term for an Office Add-in. This term may be used when the Microsoft 365 documentation needs to distinguish modern Office Add-ins from other types of add-ins like VBA, COM, or VSTO.
 
 See also: [add-in](#add-in).
 
+## webview
+
+A **webview** is an element or view that displays web content inside an application. Content add-ins and task panes both contain embedded web browsers and are examples of webviews in Office Add-ins.
+
+See also: [content add-in](#content-add-in), [task pane](#task-pane).
+
 ## XLL
 
-An **XLL** add-in is an Excel add-in file with the file extension **.xll**. An XLL file is a type of dynamic link library (DLL) file that can only be opened by Excel. XLL add-in files must be written in C or C++. See [Developing Excel XLLs](/office/client-developer/excel/developing-excel-xlls) to learn more.
+An **XLL** add-in is an Excel add-in file with the file extension **.xll**. An XLL file is a type of dynamic link library (DLL) file that can only be opened by Excel. XLL add-in files must be written in C or C++. Custom function add-ins are based on standard web technologies and are a modern version of XLL add-ins. See [Developing Excel XLLs](/office/client-developer/excel/developing-excel-xlls) to learn more about these legacy add-ins.
 
 See also: [custom function](#custom-function).
 
