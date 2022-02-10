@@ -41,15 +41,15 @@ See also: [application](#application), [host](#host), [Office application, Offic
 
 ## Common API
 
-Common APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), which allow you to specify only one operation in each request sent to the Office application.
+Common APIs are used to access features such as UI, dialogs, and client settings that are common across multiple Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), which allow you to specify only one operation in each request sent to the Office application.
 
-Common APIs were introduced with Office 2013 and can be used to interact with Office 2013 or later. Some Common APIs, particularly the Common APIs related to Excel, are legacy APIs from the early 2010s. The application-specific APIs are preferred when possible. Other Common APIs, such as the Common APIs related to Outlook, UI, and authentication, are the modern and preferred APIs for these purposes. For details about the Common API object model, which includes APIs for interacting with Outlook, PowerPoint, and Project, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
+Common APIs were introduced with Office 2013 and are used to interact with Office 2013 or later. Some Common APIs, particularly the Common APIs related to Excel, are legacy APIs from the early 2010s. The application-specific APIs are preferred when possible. Other Common APIs, such as the Common APIs related to Outlook, UI, and authentication, are the modern and preferred APIs for these purposes. For details about the Common API object model, which includes APIs for interacting with Outlook, PowerPoint, and Project, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 See also: [application-specific API](#application-specific-api).
 
 ## content add-in
 
-**Content add-ins** are webviews, or web browser views, that can be embedded directly into Excel, PowerPoint, or OneNote documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document. See [Content Office Add-ins](../design/content-add-ins.md) to learn more.
+**Content add-ins** are webviews, or web browser views, that are embedded directly into Excel, PowerPoint, or OneNote documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document. See [Content Office Add-ins](../design/content-add-ins.md) to learn more.
 
 See also: [webview](#webview).
 
