@@ -23,7 +23,7 @@ See also: [ribbon, ribbon button](#ribbon-ribbon-button).
 
 ## application
 
-**Application** refers to an Office application. The Office applications that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
+**Application** refers to an Office application. The Office applications that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
 See also: [client](#client), [host](#host), [Office application, Office client](#office-application-office-client).
 
@@ -35,7 +35,7 @@ See also: [Common API](#common-api).
 
 ## client
 
-**Client** typically refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
+**Client** typically refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
 See also: [application](#application), [host](#host), [Office application, Office client](#office-application-office-client).
 
@@ -69,13 +69,13 @@ A **custom function** is a user-defined function that is packaged with an Excel 
 
 ## host
 
-**Host** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
+**Host** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 
 ## Office application, Office client
 
-**Office client** refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, Visio, and Word.
+**Office client** refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
 See also: [application](#application), [client](#client), [host](#host).
 
