@@ -1,23 +1,25 @@
 ---
-title: Create better add-ins for Word with Office Open XML
-description: 'Overview of how to improve your Word add-in with Office Open XML.'
-ms.date: 11/19/2021
+title: Create better add-ins for Word 2013 with Office Open XML
+description: Overview of how to improve your Word 2013 add-in with Office Open XML.
+ms.date: 02/11/2022
 ms.localizationpriority: medium
 ---
 
 
-# Create better add-ins for Word with Office Open XML
+# Create better add-ins for Word 2013 with Office Open XML
 
 **Provided by:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
 If you're building Office Add-ins to run in Word, you might already know that the Office JavaScript API (Office.js) offers several formats for reading and writing document content. These are called coercion types, and they include plain text, tables, HTML, and Office Open XML.
 
-So what are your options when you need to add rich content to a document, such as images, formatted tables, charts, or even just formatted text?
-Use HTML for inserting some types of rich content, such as pictures. Depending on your scenario, there can be drawbacks to HTML coercion, such as limitations in the formatting and positioning options available to your content.
+So what are your options when you need to add rich content to a document, such as images, formatted tables, charts, or even just formatted text? For Word 2016 and later, you can use API available through the [WordApi requirement sets](../reference/requirement-sets/word-api-requirement-sets.md).
+
+If APIs are not yet available or you're targeting Word 2013, you can use HTML for inserting some types of rich content, such as pictures. Depending on your scenario, there can be drawbacks to HTML coercion, such as limitations in the formatting and positioning options available to your content.
+
 Because Office Open XML is the language in which Word documents (such as .docx and .dotx) are written, you can insert virtually any type of content that a user can add to a Word document, with virtually any type of formatting the user can apply. Determining the Office Open XML markup you need to get it done is easier than you might think.
 
 > [!NOTE]
-> Office Open XML is also the language behind PowerPoint and Excel (and, as of Office 2013, Visio) documents. However, currently, you can coerce content as Office Open XML only in Office Add-ins created for Word. For more information about Office Open XML, including the complete language reference documentation, see [Additional resources](#see-also).
+> Office Open XML is also the language behind PowerPoint and Excel (and, as of Office 2013, Visio) documents. However, currently, you can coerce content as Office Open XML only in Office Add-ins created for Word. For more information about Office Open XML, including the complete language reference documentation, refer to the [See also](#see-also) section.
 
 To begin, take a look at some of the content types you can insert using Office Open XML coercion.
 Download the code sample [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml), which contains the Office Open XML markup and Office.js code required for inserting any of the following examples into Word.
