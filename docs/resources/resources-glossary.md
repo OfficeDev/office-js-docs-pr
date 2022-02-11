@@ -51,7 +51,7 @@ See also: [application-specific API](#application-specific-api).
 
 ## content add-in
 
-**Content add-ins** are webviews, or web browser views, that are embedded directly into Excel, PowerPoint, or OneNote documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document. See [Content Office Add-ins](../design/content-add-ins.md) to learn more.
+**Content add-ins** are webviews, or web browser views, that are embedded directly into Excel, OneNote, or PowerPoint documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document. See [Content Office Add-ins](../design/content-add-ins.md) to learn more.
 
 See also: [webview](#webview).
 
