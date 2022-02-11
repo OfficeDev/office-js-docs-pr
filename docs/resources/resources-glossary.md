@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 02/10/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -67,11 +67,23 @@ A **content delivery network** or **CDN** is a distributed network of servers an
 
 A **custom function** is a user-defined function that is packaged with an Excel add-in. Custom functions enable developers to add new functions, beyond the typical Excel features, by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel. See [Create custom functions in Excel](../excel/custom-functions-overview.md) to learn more.
 
+## custom functions runtime
+
+A **custom functions runtime** is a JavaScript runtime that only runs custom functions. It has no UI and cannot interact with Office.js APIs. If your add-in only has custom functions, this is a good lightweight runtime to use. If your custom functions need to interact with the task pane or Office.js APIs, configure a shared JavaScript runtime. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
+
+See also: [JavaScript runtime](#javascript-runtime), [shared JavaScript runtime, shared runtime](#shared-javascript-runtime-shared-runtime).
+
 ## host
 
 **Host** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
+
+## JavaScript runtime
+
+The **JavaScript runtime** is the browser host environment that the add-in runs in. In Office on Windows and Office on Mac, the JavaScript runtime is an embedded browser control (or webview) such as Internet Explorer, Edge Legacy, Edge WebView2, or Safari. Different parts of an add-in run in separate JavaScript runtimes. For example, add-in commands, custom functions, and task pane code typically use separate JavaScript runtimes unless you configure a shared JavaScript runtime. See [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) for more information.
+
+See also: [custom functions runtime](#custom-functions-runtime), [shared JavaScript runtime, shared runtime](#shared-javascript-runtime-shared-runtime), [webview](#webview).
 
 ## Office application, Office client
 
@@ -99,7 +111,13 @@ A **ribbon** is a command bar that organizes an application's features into a se
 
 ## runtime
 
-A **runtime** is a lifecycle, or the time during which an application is running.
+See: [JavaScript runtime](#javascript-runtime).
+
+## shared JavaScript runtime, shared runtime
+
+A **shared JavaScript runtime**, or **shared runtime**, enables all code in your add-in, including task pane, add-in commands, and custom functions, to run in the same JavaScript runtime, and continue running even when the task pane is closed. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) and [Tips for using the shared JavaScript runtime in your Office Add-in](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) to learn more.
+
+See also: [custom functions runtime](#custom-functions-runtime), [JavaScript runtime](#javascript-runtime).
 
 ## task pane
 
@@ -115,9 +133,9 @@ See also: [quick start](#quick-start).
 
 ## UI-less custom function
 
-A **UI-less custom function** is a custom functions add-in that doesn't have a task pane or other user-interface elements.
+**UI-less custom functions** run in the custom functions runtime. They have no UI and cannot interact with Office.js APIs.
 
-See also: [custom function](#custom-function).
+See also: [custom function](#custom-function), [custom functions runtime](#custom-functions-runtime).
 
 ## web add-in
 
@@ -133,7 +151,7 @@ See also: [content add-in](#content-add-in), [task pane](#task-pane).
 
 ## XLL
 
-An **XLL** add-in is an Excel add-in file with the file extension **.xll**. An XLL file is a type of dynamic link library (DLL) file that can only be opened by Excel. XLL add-in files must be written in C or C++. Custom function add-ins are based on standard web technologies and are a modern version of XLL add-ins. See [Developing Excel XLLs](/office/client-developer/excel/developing-excel-xlls) to learn more about these legacy add-ins.
+An **XLL** add-in is an Excel add-in file that provides user-defined functions and has the file extension **.xll**. An XLL file is a type of dynamic link library (DLL) file that can only be opened by Excel. XLL add-in files must be written in C or C++. Custom functions are the modern equivalent of XLL user-defined functions. Custom functions offer support across platforms and are backwards compatible with XLL files. See [Extend custom functions with XLL user-defined functions](/office/dev/add-ins/excel/make-custom-functions-compatible-with-xll-udf) for more information.
 
 See also: [custom function](#custom-function).
 
