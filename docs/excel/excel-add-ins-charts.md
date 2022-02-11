@@ -228,8 +228,8 @@ The following screenshot shows the data table that the preceding code sample cre
 Charts can be rendered as images outside of Excel. `Chart.getImage` returns the chart as a base64-encoded string representing the chart as a JPEG image. The following code shows how to get the image string and log it to the console.
 
 ```js
-Excel.run(function (ctx) {
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+Excel.run(function (context) {
+    var chart = context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
     var imageAsString = chart.getImage();
     return context.sync().then(function () {
         console.log(imageAsString.value);
