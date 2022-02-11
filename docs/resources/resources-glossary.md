@@ -115,7 +115,7 @@ See: [JavaScript runtime](#javascript-runtime).
 
 ## shared JavaScript runtime, shared runtime
 
-A **shared JavaScript runtime**, or **shared runtime**, enables all code in your add-in, including task pane, add-in commands, and custom functions, to run in the same JavaScript runtime, and continue running even when the task pane is closed. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) and [Tips for using the shared JavaScript runtime in your Office Add-in](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) to learn more.
+A **shared JavaScript runtime**, or **shared runtime**, enables all code in your add-in, including task pane, add-in commands, and custom functions, to run in the same JavaScript runtime and continue running even when the task pane is closed. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) and [Tips for using the shared JavaScript runtime in your Office Add-in](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) to learn more.
 
 See also: [custom functions runtime](#custom-functions-runtime), [JavaScript runtime](#javascript-runtime).
 
