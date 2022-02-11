@@ -45,7 +45,7 @@ In your code editor, open the file **./src/taskpane/taskpane.js** and add the fo
 
 ```js
 try {
-    await OneNote.run(async context => {
+    await OneNote.run(async (context) => {
 
         // Get the current page.
         var page = context.application.getActivePage();
