@@ -29,7 +29,7 @@ See also: [client](#client), [host](#host), [Office application, Office client](
 
 ## application-specific API
 
-Application-specific APIs provide strongly-typed objects that interact with objects that are native to a specific Office application. For example, you call the Excel JavaScript APIs for access to worksheets, ranges, tables, charts, and more. Application-specific APIs are currently available for Excel, OneNote, PowerPoint, and Word. See [Application-specific API model](../develop/application-specific-api-model.md) to learn more.
+Application-specific APIs provide strongly-typed objects that interact with objects that are native to a specific Office application. For example, you call the Excel JavaScript APIs for access to worksheets, ranges, tables, charts, and more. Application-specific APIs are currently available for Excel, OneNote, PowerPoint, Visio, and Word. See [Application-specific API model](../develop/application-specific-api-model.md) to learn more.
 
 See also: [Common API](#common-api).
 
@@ -43,7 +43,9 @@ See also: [application](#application), [host](#host), [Office application, Offic
 
 Common APIs are used to access features such as UI, dialogs, and client settings that are common across multiple Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), which allow you to specify only one operation in each request sent to the Office application.
 
-Common APIs were introduced with Office 2013 and are used to interact with Office 2013 or later. Some Common APIs, particularly the Common APIs related to Excel, are legacy APIs from the early 2010s. The application-specific APIs are preferred when possible. Other Common APIs, such as the Common APIs related to Outlook, UI, and authentication, are the modern and preferred APIs for these purposes. For details about the Common API object model, which includes APIs for interacting with Outlook, PowerPoint, and Project, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
+Common APIs were introduced with Office 2013 and are used to interact with Office 2013 or later. Some Common APIs are legacy APIs from the early 2010s. Excel, PowerPoint, and Word all have Common API functionality, but most of this functionality has been replaced or superseded by the application-specific API model. The application-specific APIs are preferred when possible.
+
+Other Common APIs, such as the Common APIs related to Outlook, UI, and authentication, are the modern and preferred APIs for these purposes. For details about the Common API object model, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 See also: [application-specific API](#application-specific-api).
 
