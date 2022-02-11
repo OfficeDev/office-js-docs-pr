@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: 'Learn how to add custom contextual tabs to your Office Add-in.'
-ms.date: 01/22/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -13,8 +13,6 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 > This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
 >
 > - [Basic concepts for Add-in Commands](add-in-commands.md)
-
-[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 > [!IMPORTANT]
 > Custom contextual tabs are currently only supported on Excel and only on these platforms and builds.

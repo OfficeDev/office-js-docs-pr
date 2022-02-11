@@ -1,7 +1,7 @@
 ---
 title: Enable and Disable Add-in Commands
 description: 'Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
-ms.date: 01/22/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -15,8 +15,6 @@ You can also specify whether the command is enabled or disabled when the Office 
 > This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
 >
 > - [Basic concepts for Add-in Commands](add-in-commands.md)
-
-[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 ## Office application and platform support only
 
