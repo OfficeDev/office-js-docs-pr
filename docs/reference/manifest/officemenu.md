@@ -1,7 +1,7 @@
 ---
 title: OfficeMenu element in the manifest file
 description: The OfficeMenu element defines a collection of controls to be added to the Office context menu.
-ms.date: 02/02/2022
+ms.date: 02/04/2022
 ms.localizationpriority: medium
 ---
 
@@ -42,7 +42,7 @@ Specifies a built-in menu of the Office client application on which to add this 
 
 ## Control
 
-Each **OfficeMenu** element requires at one or more [menu](control.md#menu-dropdown-button-controls) controls. 
+Each **OfficeMenu** element requires at one or more [Menu controls](control-menu.md). 
 
 ## Example
 
