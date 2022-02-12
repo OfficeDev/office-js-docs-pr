@@ -23,9 +23,9 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **xsi:type**  |  Yes  | The type of extension point being defined. Possible values depend on the Office host application; that is, the grandparent **Host** element value.|
+|  **xsi:type**  |  Yes  | The type of extension point being defined. Possible values depend on the Office host application defined in the grandparent **Host** element value.|
 
-## Extension points for Word, Excel, PowerPoint, and OneNote add-in commands
+## Extension points for Excel, OneNote, PowerPoint, and Word add-in commands
 
 There are three types of extension points available in some or all of these hosts.
 
@@ -33,7 +33,7 @@ There are three types of extension points available in some or all of these host
 - [ContextMenu](#contextmenu) (Valid for Word, Excel, PowerPoint, and OneNote) - The shortcut menu that appears when you right-click in the Office UI.
 - [CustomFunctions](#customfunctions) (Valid only for Excel) - A custom function written in JavaScript for Excel.
 
-See the subsections below for the child elements and examples of these types of extension points.
+See the following subsections for the child elements and examples of these types of extension points.
 
 ### PrimaryCommandSurface
 
@@ -107,7 +107,7 @@ A custom function written in JavaScript or TypeScript for Excel.
 
 |Element|Description|
 |:-----|:-----|
-|[Script](script.md|Required. Links to the JavaScript file with the custom function definition and registration code. This element is not used in the Developer Preview. Instead, the HTML page is responsible for loading all JavaScript files.|
+|[Script](script.md|Required. Links to the JavaScript file with the custom function's definition and registration code. This element is not used in the Developer Preview. Instead, the HTML page is responsible for loading all JavaScript files.|
 |[Page](page.md)|Required. Links to the HTML page for your custom functions.|
 |[MetaData](metadata.md)|Required. Defines the metadata settings used by a custom function in Excel.|
 |[Namespace](namespace.md)|Optional. Defines the namespace used by a custom function in Excel.|
