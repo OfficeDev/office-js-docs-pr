@@ -1359,6 +1359,9 @@ items:
     displayName: Excel
 - name: Resources
   items:
+  - name: Glossary
+    href: resources/resources-glossary.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
   - name: External resources
     href: resources/resources-links-help.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
