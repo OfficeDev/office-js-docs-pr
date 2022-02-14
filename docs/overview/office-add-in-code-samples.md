@@ -13,18 +13,18 @@ These code samples are written to help you learn how to use various features whe
 
 The following samples show how to build the simplest Office Add-in with only a manifest, HTML web page, and a logo. These components are the fundamental parts of an Office Add-in. For additional getting started information, see our [quick starts](../quickstarts/excel-quickstart-jquery.md) and [tutorials](/search/?terms=tutorial&scope=Office%20Add-ins).
 
-* [Excel "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/excel-hello-world)
-* [Outlook "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/outlook-hello-world)
-* [PowerPoint "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world)
-* [Word "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world)
+- [Excel "Hello world" add-in](/samples/officedev/pnp-officeaddins/excel-add-in-hello-world/)
+- [Outlook "Hello world" add-in](/samples/officedev/pnp-officeaddins/outlook-add-in-hello-world/)
+- [PowerPoint "Hello world" add-in](/samples/officedev/pnp-officeaddins/powerpoint-add-in-hello-world/)
+- [Word "Hello world" add-in](/samples/officedev/pnp-officeaddins/word-add-in-hello-world/)
 
 ## Outlook
 
 | Name                | Description         |
 |:--------------------|:--------------------|
-| [Encrypt attachments, process meeting request attendees, and react to appointment date/time changes](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-encrypt-attachments) | Use event-based activation to encrypt attachments when added by the user. Also use event handling for recipients changed in a meeting request, and changes to the start or end date or time in a meeting request. |
-| [Use Outlook event-based activation to tag external recipients (preview)](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external) | Use event-based activation to run an Outlook add-in when the user changes recipients while composing a message. The add-in also uses the `appendOnSendAsync` API to add a disclaimer. |
-| [Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature) | Use event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane is not open. It also uses the `setSignatureAsync` API. |
+| [Encrypt attachments, process meeting request attendees, and react to appointment date/time changes](/samples/officedev/pnp-officeaddins/outlook-add-in-encrypt-attachments) | Use event-based activation to encrypt attachments when added by the user. Also use event handling for recipients changed in a meeting request, and changes to the start or end date or time in a meeting request. |
+| [Use Outlook event-based activation to tag external recipients (preview)](/samples/officedev/pnp-officeaddins/outlook-add-in-tag-external-recipients/) | Use event-based activation to run an Outlook add-in when the user changes recipients while composing a message. The add-in also uses the `appendOnSendAsync` API to add a disclaimer. |
+| [Use Outlook event-based activation to set the signature](/samples/officedev/pnp-officeaddins/outlook-add-in-set-signature/) | Use event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane is not open. It also uses the `setSignatureAsync` API. |
 
 ## Excel
 
