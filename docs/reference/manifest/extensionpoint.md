@@ -107,7 +107,7 @@ A custom function written in JavaScript or TypeScript for Excel.
 
 |Element|Description|
 |:-----|:-----|
-|[Script](script.md|Required. Links to the JavaScript file with the custom function's definition and registration code. This element is not used in the Developer Preview. Instead, the HTML page is responsible for loading all JavaScript files.|
+|[Script](script.md)|Required. Links to the JavaScript file with the custom function's definition and registration code. This element is not used in the Developer Preview. Instead, the HTML page is responsible for loading all JavaScript files.|
 |[Page](page.md)|Required. Links to the HTML page for your custom functions.|
 |[MetaData](metadata.md)|Required. Defines the metadata settings used by a custom function in Excel.|
 |[Namespace](namespace.md)|Optional. Defines the namespace used by a custom function in Excel.|
