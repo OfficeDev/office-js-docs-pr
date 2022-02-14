@@ -1,7 +1,7 @@
 ---
 title: ExtensionPoint element in the manifest file
 description: Defines where an add-in exposes functionality in the Office UI.
-ms.date: 02/07/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -23,71 +23,111 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  **xsi:type**  |  Yes  | The type of extension point being defined.|
+|  **xsi:type**  |  Yes  | The type of extension point being defined. Possible values depend on the Office host application defined in the grandparent **Host** element value.|
 
-## Extension points for Excel only
+## Extension points for Excel, OneNote, PowerPoint, and Word add-in commands
 
-- **CustomFunctions** - A custom function written in JavaScript for Excel.
+There are three types of extension points available in some or all of these hosts.
 
-[This XML code sample](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml) shows how to use the **ExtensionPoint** element with the **CustomFunctions** attribute value, and the child elements to be used.
+- [PrimaryCommandSurface](#primarycommandsurface) (Valid for Word, Excel, PowerPoint, and OneNote) - The ribbon in Office.
+- [ContextMenu](#contextmenu) (Valid for Word, Excel, PowerPoint, and OneNote) - The shortcut menu that appears when you select and hold (or right-click) in the Office UI.
+- [CustomFunctions](#customfunctions) (Valid only for Excel) - A custom function written in JavaScript for Excel.
 
-## Extension points for Word, Excel, PowerPoint, and OneNote add-in commands
+See the following subsections for the child elements and examples of these types of extension points.
 
-- **PrimaryCommandSurface** - The ribbon in Office.
-- **ContextMenu** - The shortcut menu that appears when you right-click in the Office UI.
+### PrimaryCommandSurface
 
-The following examples show how to use the **ExtensionPoint** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.
+The primary command surface in Word, Excel, PowerPoint, and OneNote is the ribbon.
+
+#### Child elements
+
+|Element|Description|
+|:-----|:-----|
+|[CustomTab](customtab.md|Required if you want to add a custom tab to the ribbon (using **PrimaryCommandSurface**). If you use the **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required.|
+|[OfficeTab](officetab.md)|Required if you want to extend a default Office app ribbon tab (using **PrimaryCommandSurface**). If you use the **OfficeTab** element, you can't use the **CustomTab** element.|
+
+#### Example
+
+The following example shows how to use the **ExtensionPoint** element with **PrimaryCommandSurface**. It adds a custom tab to the ribbon.
 
 > [!IMPORTANT]
-> For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format: `<CustomTab id="mycompanyname.mygroupname">`.
+> For elements that contain an ID attribute, make sure you provide a unique ID.
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
-          <CustomTab id="Contoso Tab">
-          <!-- If you want to use a default tab that comes with Office, remove the above CustomTab element, and then uncomment the following OfficeTab element -->
-            <!-- <OfficeTab id="TabData"> -->
-            <Label resid="residLabel4" />
-            <Group id="Group1Id12">
-              <Label resid="residLabel4" />
-              <Icon>
-                <bt:Image size="16" resid="icon1_32x32" />
-                <bt:Image size="32" resid="icon1_32x32" />
-                <bt:Image size="80" resid="icon1_32x32" />
-              </Icon>
-              <Tooltip resid="residToolTip" />
-              <Control xsi:type="Button" id="Button1Id1">
-
-                  <!-- information about the control -->
-              </Control>
-              <!-- other controls, as needed -->
-            </Group>
-          </CustomTab>
-        </ExtensionPoint>
-
-      <ExtensionPoint xsi:type="ContextMenu">
-        <OfficeMenu id="ContextMenuCell">
-          <Control xsi:type="Menu" id="ContextMenu2">
-                  <!-- information about the control -->
-          </Control>
-          <!-- other controls, as needed -->
-        </OfficeMenu>
-        </ExtensionPoint>
+  <CustomTab id="Contoso.MyTab1">
+    <Label resid="residLabel4" />
+    <Group id="Contoso.Group1">
+      <Label resid="residLabel4" />
+      <Icon>
+        <bt:Image size="16" resid="icon1_32x32" />
+        <bt:Image size="32" resid="icon1_32x32" />
+        <bt:Image size="80" resid="icon1_32x32" />
+      </Icon>
+      <Tooltip resid="residToolTip" />
+      <Control xsi:type="Button" id="Contoso.Button1">
+          <!-- information about the control -->
+      </Control>
+      <!-- other controls, as needed -->
+    </Group>
+  </CustomTab>
+</ExtensionPoint>
 ```
+
+### ContextMenu
+
+A context menu is a shortcut menu that appears when you right-click in the Office UI.
 
 #### Child elements
  
 |Element|Description|
 |:-----|:-----|
-|[CustomTab](customtab.md)|Required if you want to add a custom tab to the ribbon (using **PrimaryCommandSurface**). If you use the **CustomTab** element, you can't use the **OfficeTab** element. The **id** attribute is required.|
-|[OfficeTab](officetab.md)|Required if you want to extend a default Office app ribbon tab (using **PrimaryCommandSurface**). If you use the **OfficeTab** element, you can't use the **CustomTab** element.|
-|[OfficeMenu](officemenu.md)|Required if you're adding add-in commands to a default context menu (using **ContextMenu**). The **id** attribute must be set to: <br/> - **ContextMenuText** for Excel or Word. Displays the item on the context menu when text is selected and then the user right-clicks on the selected text. <br/> - **ContextMenuCell** for Excel. Displays the  item on the context menu when the user right-clicks on a cell on the spreadsheet.|
-|[Group](group.md)|A group of user interface extension points on a tab. A group can have up to six controls. The **id** attribute is required. It's a string with a maximum of 125 characters.|
-|**Label**|Required. The label of the group. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.|
-|[Icon](icon.md)|Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64.|
-|**Tooltip**|Optional. The tooltip of the group. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
-|[Control](control.md)|Each group requires at least one control. A **Control** element can be either a **Button** or a **Menu**. Use **Menu** to specify a dropdown list of button controls. Currently, only buttons and menus are supported. See [Button control](control-button.md) and [Menu control](control-menu.md) for more information.<br/>**Note:**  To make troubleshooting easier, we recommend that a **Control** element and the related **Resources** child elements be added one at a time.|
-|[Script](script.md)|Links to the JavaScript file with the custom function definition and registration code. This element is not used in the Developer Preview. Instead, the HTML page is responsible for loading all JavaScript files.|
-|[Page](page.md)|Links to the HTML page for your custom functions.|
+|[OfficeMenu](officemenu.md)|Required if you're adding add-in commands to a default context menu (using **ContextMenu**). The **id** attribute must be set to one of the following strings: <br/> - **ContextMenuText** if the context menu should open when a user right-clicks on the selected text. <br/> - **ContextMenuCell** if the context menu should open when the user right-clicks on a cell on an Excel spreadsheet.|
+
+#### Example
+
+The following adds a custom context menu to the cells in an Excel spreadsheet.
+
+```xml
+<ExtensionPoint xsi:type="ContextMenu">
+  <OfficeMenu id="ContextMenuCell">
+    <Control xsi:type="Menu" id="Contoso.ContextMenu2">
+            <!-- information about the control -->
+    </Control>
+    <!-- other controls, as needed -->
+  </OfficeMenu>
+</ExtensionPoint>
+```
+
+### CustomFunctions
+
+A custom function written in JavaScript or TypeScript for Excel.
+
+#### Child elements
+
+|Element|Description|
+|:-----|:-----|
+|[Script](script.md)|Required. Links to the JavaScript file with the custom function's definition and registration code.|
+|[Page](page.md)|Required. Links to the HTML page for your custom functions.|
+|[MetaData](metadata.md)|Required. Defines the metadata settings used by a custom function in Excel.|
+|[Namespace](namespace.md)|Optional. Defines the namespace used by a custom function in Excel.|
+
+#### Example
+
+```xml
+<ExtensionPoint xsi:type="CustomFunctions">
+  <Script>
+    <SourceLocation resid="Functions.Script.Url"/>
+  </Script>
+  <Page>
+    <SourceLocation resid="Shared.Url"/>
+  </Page>
+  <Metadata>
+    <SourceLocation resid="Functions.Metadata.Url"/>
+  </Metadata>
+  <Namespace resid="Functions.Namespace"/>
+</ExtensionPoint>
+```
 
 ## Extension points for Outlook
 
@@ -127,7 +167,7 @@ This extension point puts buttons in the command surface for the mail read view.
 
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom2">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -158,7 +198,7 @@ This extension point puts buttons on the ribbon for add-ins using mail compose f
 
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom3">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -189,7 +229,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom4">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -220,7 +260,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom5">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -258,9 +298,9 @@ This extension point puts buttons in the command surface for the mail read view 
 
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
-  <Group id="mobileGroupID">
+  <Group id="Contoso.mobileGroup1">
     <Label resid="residAppName"/>
-      <Control id="mobileButton1" xsi:type="MobileButton">
+      <Control  xsi:type="MobileButton id="Contoso.mobileButton1"">
         <!-- Control definition -->
       </Control>
   </Group>
@@ -292,7 +332,7 @@ The `Icon` images should be in grayscale using hex code `#919191` or its equival
 
 ```xml
 <ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
-  <Control xsi:type="MobileButton" id="onlineMeetingFunctionButton">
+  <Control xsi:type="MobileButton" id="Contoso.onlineMeetingFunctionButton1">
     <Label resid="residUILessButton0Name" />
     <Icon>
       <bt:Image resid="UiLessIcon" size="25" scale="1" />
