@@ -30,7 +30,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 There are three types of extension points available in some or all of these hosts.
 
 - [PrimaryCommandSurface](#primarycommandsurface) (Valid for Word, Excel, PowerPoint, and OneNote) - The ribbon in Office.
-- [ContextMenu](#contextmenu) (Valid for Word, Excel, PowerPoint, and OneNote) - The shortcut menu that appears when you right-click in the Office UI.
+- [ContextMenu](#contextmenu) (Valid for Word, Excel, PowerPoint, and OneNote) - The shortcut menu that appears when you select and hold (or right-click) in the Office UI.
 - [CustomFunctions](#customfunctions) (Valid only for Excel) - A custom function written in JavaScript for Excel.
 
 See the following subsections for the child elements and examples of these types of extension points.
@@ -107,7 +107,7 @@ A custom function written in JavaScript or TypeScript for Excel.
 
 |Element|Description|
 |:-----|:-----|
-|[Script](script.md)|Required. Links to the JavaScript file with the custom function's definition and registration code. This element is not used in the Developer Preview. Instead, the HTML page is responsible for loading all JavaScript files.|
+|[Script](script.md)|Required. Links to the JavaScript file with the custom function's definition and registration code.|
 |[Page](page.md)|Required. Links to the HTML page for your custom functions.|
 |[MetaData](metadata.md)|Required. Defines the metadata settings used by a custom function in Excel.|
 |[Namespace](namespace.md)|Optional. Defines the namespace used by a custom function in Excel.|
