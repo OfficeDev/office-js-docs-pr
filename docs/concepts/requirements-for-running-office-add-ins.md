@@ -72,7 +72,7 @@ Specifically for Outlook running on smartphones and non-Windows tablet devices, 
 |Outlook on Android|- Android tablets<br>- Android smartphones|- Android 4.4 KitKat or later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for Android.<sup>1</sup>|
 |Outlook on iOS|- iPad tablets<br>- iPhone smartphones|- iOS 11 or later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for iOS.<sup>1</sup>|
 |Outlook on the web (modern)<sup>2</sup>|- iPad 2 or later<br>- Android tablets |- iOS 5 or later<br>- Android 4.4 KitKat or later|On Microsoft 365, Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
-|Outlook on the web (classic)|- iPhone 4 or later<br>- iPad 2 or later<br>- iPod Touch 4 or later|- iOS 5 or later|On on-premises Exchange Server 2013 or later|Safari|
+|Outlook on the web (classic)|- iPhone 4 or later<br>- iPad 2 or later<br>- iPod Touch 4 or later|- iOS 5 or later|On on-premises Exchange Server 2013 or later|- Safari|
 
 > [!NOTE]
 > <sup>1</sup> OWA for Android, OWA for iPad, and OWA for iPhone native apps have been [deprecated](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
