@@ -12,7 +12,7 @@ metadata:
   ms.topic: hub-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 09/09/2021 #Required; mm/dd/yyyy format.
+  ms.date: 02/10/2022 #Required; mm/dd/yyyy format.
 
 # highlightedContent section
 # Maximum of 8 items
@@ -124,10 +124,13 @@ conceptualContent:
       links:
         - url: https://developer.microsoft.com/office
           itemType: whats-new
-          text: Join the Developer Program 
-        - url: /answers/products/m365
+          text: Join the Developer Program
+        - url: https://aka.ms/m365dev-suggestions
           itemType: architecture
           text: Request features
+        - url: /answers/products/m365
+          itemType: reference
+          text: Ask questions about Office.js on Microsoft Q&A
         - url: https://stackoverflow.com/questions/tagged/office-js
           itemType: reference
           text: Ask questions about Office.js on Stack Overflow
