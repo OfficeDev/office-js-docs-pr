@@ -84,11 +84,11 @@ Specifically for Outlook running on smartphones and non-Windows tablet devices, 
 >
 > **modern**
 >
-> ![Partial screenshot of the modern Outlook toolbar.](docs\images\outlook-on-the-web-new-toolbar.png)
+> ![Partial screenshot of the modern Outlook toolbar.](../images/outlook-on-the-web-new-toolbar.png)
 >
 > **classic**
 >
-> ![Partial screenshot of the classic Outlook toolbar.](docs\images\outlook-on-the-web-classic-toolbar.png)
+> ![Partial screenshot of the classic Outlook toolbar.](../images/outlook-on-the-web-classic-toolbar.png)
 
 ## See also
 
