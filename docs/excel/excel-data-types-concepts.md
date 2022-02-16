@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: 'Learn the core concepts for using Excel data types in your Office Add-in.'
-ms.date: 01/14/2021
+ms.date: 02/15/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -41,10 +41,10 @@ The following JSON code sample shows the complete schema of a formatted number v
 ```json
 // This is an example of the complete JSON of a formatted number value.
 // In this case, the number is formatted as a date.
-const myDate = {
+const myDate: Excel.FormattedNumberCellValue = {
     type: Excel.CellValueType.formattedNumber,
     basicValue: 32889.0,
-    basicType: Excel.CellValueType.double, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.double, // A readonly property. Used as a fallback in incompatible scenarios.
     numberFormat: "m/d/yyyy"
 };
 ```
@@ -60,7 +60,7 @@ The following JSON code sample shows the complete schema of an entity value that
 ```json
 // This is an example of the complete JSON for an entity value.
 // The entity contains text and properties which contain an image, a date, and another text value.
-const myEntity = {
+const myEntity: Excel.EntityCellValue = {
     type: Excel.CellValueType.entity,
     text: "A llama",
     properties: {
@@ -71,7 +71,7 @@ const myEntity = {
             basicValue: "I love llamas."
         }
     }, 
-    basicType: Excel.CellValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
     basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
 };
 ```
@@ -86,10 +86,10 @@ The following JSON code sample shows the complete schema of a web image.
 
 ```json
 // This is an example of the complete JSON for a web image.
-const myImage = {
+const myImage: Excel.WebImageCellValue = {
     type: Excel.CellValueType.webImage,
     address: "https://bit.ly/2YGOwtw", 
-    basicType: Excel.CellValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
     basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
 };
 ```
