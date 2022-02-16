@@ -1,7 +1,7 @@
 ---
 title: Open Browser Window requirement sets
 description: 'Specifies which Office platforms and builds support the openBrowserWindow API.'
-ms.date: 10/05/2021
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
 ---
@@ -14,7 +14,7 @@ The OpenBrowserWindow API set enables add-ins to open a browser to accomplish ta
 
 Office Add-ins run across multiple versions of Office. The following table lists the OpenBrowserWindow API requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application.
 
-|  Requirement set  | Office 2021 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to Microsoft 365 subscription) |  Office on iPad<br>(connected to Microsoft 365 subscription)  |  Office on Mac<br>(connected to Microsoft 365 subscription)  | Office on the web  |  Office Online Server  |
+|  Requirement set  | Office 2021 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to Microsoft 365 subscription) |  Office on iPad<br>(connected to Microsoft 365 subscription)  |  Office on Mac<br>(subscription<br> and one-time purchase Office on Mac 2019 and later)   | Office on the web  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | OpenBrowserWindowApi 1.1  | Build 16.0.14326.20454 or later | Version 1810 (Build 16.0.11001.20074) or later | 16.0.0.0 or later | 16.0.0.0 or later | N/A | N/A|
 
