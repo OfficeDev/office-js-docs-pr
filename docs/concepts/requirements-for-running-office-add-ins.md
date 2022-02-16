@@ -79,16 +79,7 @@ Specifically for Outlook running on smartphones and non-Windows tablet devices, 
 >
 > <sup>2</sup> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins.
 
-> [!TIP]
-> You can distinguish between classic and modern Outlook in a web browser by checking your mailbox toolbar.
->
-> **modern**
->
-> ![Partial screenshot of the modern Outlook toolbar.](../images/outlook-on-the-web-new-toolbar.png)
->
-> **classic**
->
-> ![Partial screenshot of the classic Outlook toolbar.](../images/outlook-on-the-web-classic-toolbar.png)
+[!INCLUDE [How to distinguish between classic and modern Outlook on the web](../../includes/classic-versus-modern-Outlook-on-the-web)]
 
 ## See also
 
