@@ -12,7 +12,7 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Office Add-ins run across multiple versions of Office. The following table lists the Keyboard Shortcuts requirement sets, the Office client applications that support that requirement set, and the build or version numbers for the Office application.
 
-|  Requirement set  | Office 2013 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(subscription<br> and one-time purchase Office on Mac 2019 and later)   | Office on the web  |
+|  Requirement set  | Office 2013 or later on Windows<br>(one-time purchase) | Office on Windows<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac<br>(both subscription<br> and one-time purchase Office on Mac 2019 and later)   | Office on the web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | KeyboardShortcuts 1.1  | N/A | Version: 2111 (Build 14701.10000) | N/A | 16.55 | September, 2021 |
 
