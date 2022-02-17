@@ -60,37 +60,6 @@ The following table describes the properties of the web application project that
 |**Project File**|Specifies the name of the file containing build, configuration, and other information about the project.|
 |**Project Folder**|Specifies the location of the project file. Read-only. The manifest file that Visual Studio generates at runtime is written to the `bin\Debug\OfficeAppManifests` folder in this location.|
 
-
-### Start the project
-
-Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the F5 button. Visual Studio will automatically build the solution and start Office to host your add-in.
-
-
-When Visual Studio builds the project it performs the following tasks.
-
-1. Creates a copy of the XML manifest file and adds it to  `_ProjectName_\bin\Debug\OfficeAppManifests` directory. The Office application that hosts your add-in consumes this copy when you start Visual Studio and debug the add-in.
-
-2. Creates a set of registry entries on your Windows computer that enable the add-in to appear in the Office application.
-
-3. Builds the web application project, and then deploys it to the local IIS web server (https://localhost).
-
-4. If this is the first add-in project that you have deployed to local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store. This is required for IIS Express to display the content of your add-in correctly.
-
-> [!NOTE]
-> The latest version of Office may use a newer web control to display the add-in contents when running on Windows 10. If this is the case, Visual Studio may prompt you to add a local network loopback exemption. This is required for the web control, in the Office client application, to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**.
-
-Next, Visual Studio does the following:
-
-1. Modifies the [SourceLocation](../reference/manifest/sourcelocation.md) element of the XML manifest file by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
-
-2. Starts the web application project in IIS Express.
-
-3. Opens the Office application.
-
-Visual Studio doesn't show validation errors in the **OUTPUT** window when you build the project. Visual Studio reports errors and warnings in the **ERRORLIST** window as they occur. Visual Studio also reports validation errors by showing wavy underlines (known as squiggles) of different colors in the code and text editor. These marks notify you of problems that Visual Studio detected in your code. For more information about how to enable or disable validation, see [Options, Text Editor, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019&preserve-view=true).
-
-To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
-
 ## Debug an Excel, PowerPoint, or Word add-in project
 
 This section describes how to start and debug an Excel, PowerPoint, or Word add-in.
