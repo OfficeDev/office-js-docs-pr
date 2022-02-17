@@ -1,7 +1,7 @@
 ---
 title: Group ranges using the Excel JavaScript API
 description: 'Learn how to group rows or columns of a range together to create an outline using the Excel JavaScript API.' 
-ms.date: 04/05/2021 
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -19,8 +19,8 @@ An outline can have a hierarchy, where smaller groups are nested under larger gr
 The following code sample creates an outline with two levels of groups for both the rows and columns. The subsequent image shows the groupings of that outline. In the code sample, the ranges being grouped do not include the row or column of the outline control (the "Totals" for this example). A group defines what will be collapsed, not the row or column with the control.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
     // Group the larger, main level. Note that the outline controls
     // will be on row 10, meaning 4-9 will collapse and expand.
@@ -40,8 +40,8 @@ Excel.run(function (context) {
     sheet.getRange("C:F").group(Excel.GroupOption.byColumns);
     sheet.getRange("H:K").group(Excel.GroupOption.byColumns);
     sheet.getRange("M:P").group(Excel.GroupOption.byColumns);
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ![Range with a two-level, two-dimension outline.](../images/excel-outline.png)

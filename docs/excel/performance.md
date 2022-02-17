@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: 'Optimize Excel add-in performance using the JavaScript API.'
-ms.date: 08/24/2021
+ms.date: 02/17/2022
 ms.localizationpriority: medium
 ---
 
@@ -23,13 +23,13 @@ If you are trying to perform an operation on a large number of cells (for exampl
 See the [Application Object](/javascript/api/excel/excel.application) reference documentation for information about how to use the `suspendApiCalculationUntilNextSync()` API to suspend and reactivate calculations in a very convenient way. The following code demonstrates how to suspend calculation temporarily.
 
 ```js
-Excel.run(async function(ctx) {
-    var app = ctx.workbook.application;
-    var sheet = ctx.workbook.worksheets.getItem("sheet1");
+Excel.run(async function(context) {
+    var app = context.workbook.application;
+    var sheet = context.workbook.worksheets.getItem("sheet1");
     var rangeToSet: Excel.Range;
     var rangeToGet: Excel.Range;
     app.load("calculationMode");
-    await ctx.sync();
+    await context.sync();
     // Calculation mode should be "Automatic" by default
     console.log(app.calculationMode);
 
@@ -37,7 +37,7 @@ Excel.run(async function(ctx) {
     rangeToSet.values = [[1, 2, "=SUM(A1:B1)"]];
     rangeToGet = sheet.getRange("A1:C1");
     rangeToGet.load("values");
-    await ctx.sync();
+    await context.sync();
     // Range value should be [1, 2, 3] now
     console.log(rangeToGet.values);
 
@@ -48,14 +48,14 @@ Excel.run(async function(ctx) {
     rangeToGet = sheet.getRange("A1:C1");
     rangeToGet.load("values");
     app.load("calculationMode");
-    await ctx.sync();
+    await context.sync();
     // Range value should be [10, 20, 3] when we load the property, because calculation is suspended at that point
     console.log(rangeToGet.values);
     // Calculation mode should still be "Automatic" even with suspend recalculation
     console.log(app.calculationMode);
 
     rangeToGet.load("values");
-    await ctx.sync();
+    await context.sync();
     // Range value should be [10, 20, 30] when we load the property, because calculation is resumed after last sync
     console.log(rangeToGet.values);
 })
@@ -81,8 +81,8 @@ When trying to import a huge amount of data directly into a [Table](/javascript/
 Here is an example of this approach:
 
 ```js
-Excel.run(async (ctx) => {
-    var sheet = ctx.workbook.worksheets.getItem("Sheet1");
+Excel.run(async (context) => {
+    var sheet = context.workbook.worksheets.getItem("Sheet1");
     // Write the data into the range first.
     var range = sheet.getRange("A1:B3");
     range.values = [["Key", "Value"], ["A", 1], ["B", 2]];
@@ -90,14 +90,14 @@ Excel.run(async (ctx) => {
     // Create the table over the range
     var table = sheet.tables.add('A1:B3', true);
     table.name = "Example";
-    await ctx.sync();
+    await context.sync();
 
 
     // Insert a new row to the table
     table.getDataBodyRange().getRowsBelow(1).values = [["C", 3]];
     // Change a existing row value
     table.getDataBodyRange().getRow(1).values = [["D", 4]];
-    await ctx.sync();
+    await context.sync();
 })
 ```
 

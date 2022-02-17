@@ -1,7 +1,7 @@
 ---
 title: Delay execution while cell is being edited
 description: 'Learn how to delay the execution of the Excel.run method when a cell is being edited.'
-ms.date: 09/03/2020
+ms.date: 02/16/2022
 ms.localizationpriority: medium
 ---
 
@@ -13,5 +13,5 @@ ms.localizationpriority: medium
 - `delayForCellEdit`: Determines whether Excel delays the batch request until the user exits cell edit mode. When **true**, the batch request is delayed and runs when the user exits cell edit mode. When **false**, the batch request automatically fails if the user is in cell edit mode (causing an error to reach the user). The default behavior with no `delayForCellEdit` property specified is equivalent to when it is **false**.
 
 ```js
-Excel.run({ delayForCellEdit: true }, function (context) { ... })
+await Excel.run({ delayForCellEdit: true }, async (context) => { ... });
 ```

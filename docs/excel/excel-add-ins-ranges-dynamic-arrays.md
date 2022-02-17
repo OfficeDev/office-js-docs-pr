@@ -1,7 +1,7 @@
 ---
 title: Handle dynamic arrays and range spilling using the Excel JavaScript API
 description: 'Learn how to handle dynamic arrays and range spilling with the Excel JavaScript API.' 
-ms.date: 04/02/2021 
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -17,23 +17,23 @@ Some Excel formulas return [Dynamic arrays](https://support.microsoft.com/office
 The following sample shows a basic formula that copies the contents of a range into a cell, which spills into neighboring cells. The add-in then logs the range that contains the spill.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
     // Set G4 to a formula that returns a dynamic array.
-    var targetCell = sheet.getRange("G4");
+    let targetCell = sheet.getRange("G4");
     targetCell.formulas = [["=A4:D4"]];
 
     // Get the address of the cells that the dynamic array spilled into.
-    var spillRange = targetCell.getSpillingToRange();
+    let spillRange = targetCell.getSpillingToRange();
     spillRange.load("address");
 
     // Sync and log the spilled-to range.
-    return context.sync().then(function () {
-        // This will log the range as "G4:J4".
-        console.log(`Copying the table headers spilled into ${spillRange.address}.`);
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    // This will log the range as "G4:J4".
+    console.log(`Copying the table headers spilled into ${spillRange.address}.`);
+});
 ```
 
 ## Range spilling
