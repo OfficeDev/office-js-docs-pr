@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins for Outlook Mobile
 description: Outlook mobile add-ins are supported on all Microsoft 365 business accounts and Outlook.com accounts.
-ms.date: 02/01/2022
+ms.date: 02/15/2022
 ms.localizationpriority: medium
 ---
 
@@ -64,7 +64,7 @@ After your add-in is working, make sure to test it on different screen sizes, in
 Troubleshooting on mobile can be hard since you may not have the tools you're used to. However, one option for troubleshooting on iOS is to use Fiddler (check out [this tutorial on using it with an iOS device](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
 
 > [!NOTE]
-> Add-ins don't work in modern Outlook on a web browser on Android. For information about supported devices, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
+> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins. For information about supported devices, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
 ## Next steps
 

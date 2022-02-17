@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins on Windows using Visual Studio Code and Microsoft Edge legacy WebView (EdgeHTML)
 description: 'Learn how to debug Office Add-ins that use Microsoft Edge Legacy WebView (EdgeHTML) by using the Office Add-in Debugger Extension in VS Code.'
-ms.date: 02/01/2022
+ms.date: 02/15/2022
 ms.localizationpriority: medium
 ---
 
@@ -94,19 +94,19 @@ If your project was not created with Yo Office, you need to create a debug confi
 
     ```json
     {
-      "name": "$HOST$ Desktop (Edge Legacy)",
+      "name": "HOST Desktop (Edge Legacy)",
       "type": "office-addin",
       "request": "attach",
-      "url": "https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$$$$0",
+      "url": "https://localhost:3000/taskpane.html?_host_Info=HOST$Win32$16.01$en-US$$$$0",
       "port": 9222,
       "timeout": 600000,
       "webRoot": "${workspaceRoot}",
-      "preLaunchTask": "Debug: Excel Desktop",
+      "preLaunchTask": "Debug: HOST Desktop",
       "postDebugTask": "Stop Debug"
     }
     ```
 
-1. Replace the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
+1. Replace the placeholder `HOST` in all three places with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
 1. Save and close the file.
 
 ## See also
