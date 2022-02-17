@@ -110,9 +110,9 @@ Next, Visual Studio does the following:
 
 3. Open the [personality menu](../design/task-pane-add-ins.md#personality-menu) and then choose **Attach a debugger**. This will open the debugging tools for the webview control that Office is using to run add-ins on your Windows computer. You can set breakpoints and step through code as described in one of the following articles:
 
-    - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
-    - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
-    - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
+    - [Debug add-ins using developer tools for Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md)
+    - [Debug add-ins using developer tools for Edge Legacy](../testing/debug-add-ins-using-devtools-edge-legacy.md)
+    - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md)
 
 4. To make changes to your code, first stop the debugging session in Visual Studio and close the Office application. Make your changes, and start a new debugging session.
 
@@ -162,8 +162,8 @@ Next, Visual Studio does the following:
 
 4. Use the instructions in one of the following articles to set breakpoints and step through code. They each have a link to more detailed guidance.
 
-   - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
-   - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
+   - [Debug add-ins using developer tools for Edge Legacy](../testing/debug-add-ins-using-devtools-edge-legacy.md)
+   - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md)
 
    > [!TIP]
    > To debug code that runs in the `Office.initialize` method or an `Office.onReady` method that runs when the add-in opens, set your breakpoints and then close and reopen the add-in. For more information about these methods, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
