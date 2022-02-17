@@ -179,10 +179,7 @@ Next, Visual Studio does the following:
    > [!IMPORTANT]
    > The Office manifest XSD files that Visual Studio installs are out-of-date. If you get validation errors for the manifest, your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
 
-4. Opens the Outlook page of your Microsoft 365 tenancy in the Windows computer's default browser. See [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) for more information.
-
-   > [!NOTE]
-   > Office on the web cannot open in Internet Explorer (IE). If IE is the default browser but Edge is installed, Office will open the Outlook page in Edge. If Edge is not installed, you will see an error. 
+4. Opens the Outlook page of your Microsoft 365 tenancy in the Microsoft Edge.
 
 ### Debug the Outlook add-in
 
