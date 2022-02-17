@@ -46,6 +46,7 @@ The following samples show how to build the simplest Office Add-in with only a m
 | [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)  | This sample add-in shows you how to add a variety of rich content types to a Word document using the setSelectedDataAsync method with ooxml coercion type. The add-in also gives you the ability to show the Office Open XML markup for each sample content type right on the page. |
 
 -----
+-----
 
 ## Authentication, authorization, and single sign-on (SSO)
 
@@ -65,6 +66,7 @@ The following samples show how to build the simplest Office Add-in with only a m
 | [Share global data with a shared runtime](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-global-state) | Set up a basic project that uses the shared runtime to run code for ribbon buttons, task pane, and custom functions in a single browser runtime. |
 | [Manage ribbon and task pane UI, and run code on doc open](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-scenario) | Create contextual ribbon buttons that are enabled based on the state of your add-in. |
 
+-----
 -----
 
 ## Additional samples
