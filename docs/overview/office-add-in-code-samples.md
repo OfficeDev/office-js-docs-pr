@@ -18,6 +18,12 @@ The following samples show how to build the simplest Office Add-in with only a m
 - [PowerPoint "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world)
 - [Word "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world)
 
+<br>
+
+---
+
+---
+
 ## Excel
 
 | Name                | Description         |
