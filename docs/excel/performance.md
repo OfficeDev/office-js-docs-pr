@@ -23,11 +23,11 @@ If you are trying to perform an operation on a large number of cells (for exampl
 See the [Application Object](/javascript/api/excel/excel.application) reference documentation for information about how to use the `suspendApiCalculationUntilNextSync()` API to suspend and reactivate calculations in a very convenient way. The following code demonstrates how to suspend calculation temporarily.
 
 ```js
-Excel.run(async function(context) {
-    var app = context.workbook.application;
-    var sheet = context.workbook.worksheets.getItem("sheet1");
-    var rangeToSet: Excel.Range;
-    var rangeToGet: Excel.Range;
+await Excel.run(async (context) => {
+    let app = context.workbook.application;
+    let sheet = context.workbook.worksheets.getItem("sheet1");
+    let rangeToSet: Excel.Range;
+    let rangeToGet: Excel.Range;
     app.load("calculationMode");
     await context.sync();
     // Calculation mode should be "Automatic" by default
@@ -58,7 +58,7 @@ Excel.run(async function(context) {
     await context.sync();
     // Range value should be [10, 20, 30] when we load the property, because calculation is resumed after last sync
     console.log(rangeToGet.values);
-})
+});
 ```
 
 Please note that only formula calculations are suspended. Any altered references are still rebuilt. For example, renaming a worksheet still updates any references in formulas to that worksheet.
@@ -81,14 +81,14 @@ When trying to import a huge amount of data directly into a [Table](/javascript/
 Here is an example of this approach:
 
 ```js
-Excel.run(async (context) => {
-    var sheet = context.workbook.worksheets.getItem("Sheet1");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sheet1");
     // Write the data into the range first.
-    var range = sheet.getRange("A1:B3");
+    let range = sheet.getRange("A1:B3");
     range.values = [["Key", "Value"], ["A", 1], ["B", 2]];
 
     // Create the table over the range
-    var table = sheet.tables.add('A1:B3', true);
+    let table = sheet.tables.add('A1:B3', true);
     table.name = "Example";
     await context.sync();
 
@@ -98,7 +98,7 @@ Excel.run(async (context) => {
     // Change a existing row value
     table.getDataBodyRange().getRow(1).values = [["D", 4]];
     await context.sync();
-})
+});
 ```
 
 > [!NOTE]
@@ -124,11 +124,11 @@ Limit the number of processes that occur within loops to improve performance. In
 // DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
 async function run() {
   await Excel.run(async (context) => {
-    var ranges = [];
+    let ranges = [];
     
     // This sample retrieves the worksheet every time the loop runs, which is bad for performance.
     for (let i = 0; i < 7500; i++) {
-      var rangeByIndex = context.workbook.worksheets.getActiveWorksheet().getRangeByIndexes(i, 1, 1, 1);
+      let rangeByIndex = context.workbook.worksheets.getActiveWorksheet().getRangeByIndexes(i, 1, 1, 1);
     }    
     await context.sync();
   });
@@ -141,13 +141,13 @@ The following code sample shows logic similar to the preceding code sample, but 
 // This code sample shows a good performance strategy.
 async function run() {
   await Excel.run(async (context) => {
-    var ranges = [];
+    let ranges = [];
     // Retrieve the worksheet outside the loop.
-    var worksheet = context.workbook.worksheets.getActiveWorksheet(); 
+    let worksheet = context.workbook.worksheets.getActiveWorksheet(); 
 
     // Only process the necessary values inside the loop.
     for (let i = 0; i < 7500; i++) {
-      var rangeByIndex = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      let rangeByIndex = worksheet.getRangeByIndexes(i, 1, 1, 1);
     }    
     await context.sync();
   });
@@ -172,11 +172,11 @@ The following code sample attempts to process a large array of ranges in a singl
 // Calling 10,000 rows would likely exceed the 5MB payload size limit in a real-world situation.
 async function run() {
   await Excel.run(async (context) => {
-    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    let worksheet = context.workbook.worksheets.getActiveWorksheet();
     
     // This sample attempts to process too many ranges at once. 
     for (let row = 1; row < 10000; row++) {
-      var range = sheet.getRangeByIndexes(row, 1, 1, 1);
+      let range = sheet.getRangeByIndexes(row, 1, 1, 1);
       range.values = [["1"]];
     }
     await context.sync(); 
@@ -192,18 +192,18 @@ The following code sample shows logic similar to the preceding code sample, but 
 // Only use this strategy if you've determined that you're exceeding the payload request limit.
 async function run() {
   await Excel.run(async (context) => {
-    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    let worksheet = context.workbook.worksheets.getActiveWorksheet();
 
     // Split the ranges into two loops, rows 1-5000 and then 5001-10000.
     for (let row = 1; row < 5000; row++) {
-      var range = worksheet.getRangeByIndexes(row, 1, 1, 1);
+      let range = worksheet.getRangeByIndexes(row, 1, 1, 1);
       range.values = [["1"]];
     }
     // Sync after each loop. 
     await context.sync(); 
     
     for (let row = 5001; row < 10000; row++) {
-      var range = worksheet.getRangeByIndexes(row, 1, 1, 1);
+      let range = worksheet.getRangeByIndexes(row, 1, 1, 1);
       range.values = [["1"]];
     }
     await context.sync(); 
@@ -226,12 +226,12 @@ async function run() {
     const array = new Array(10000);
 
     // Set the values of the array inside the loop.
-    for (var i = 0; i < 10000; i++) {
+    for (let i = 0; i < 10000; i++) {
       array[i] = [1];
     }
 
     // Pass the array values to a range outside the loop. 
-    var range = worksheet.getRange("A1:A10000");
+    let range = worksheet.getRange("A1:A10000");
     range.values = array;
     await context.sync();
   });

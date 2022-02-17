@@ -392,10 +392,8 @@ await Excel.run(async (context) => {
         matchCase: false // findAll will not match case
     });
 
-    return context.sync()
-        .then(function() {
-            foundRanges.format.fill.color = "green"
-    });
+    await context.sync();
+    foundRanges.format.fill.color = "green"
 });
 ```
 
@@ -425,7 +423,7 @@ await Excel.run(async (context) => {
 
     // This filter will only show the rows with the top 25% of values in column 3.
     sheet.autoFilter.apply(farmData, 3, { criterion1: "25", filterOn: Excel.FilterOn.topPercent });
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -436,7 +434,7 @@ The next code sample shows how to refresh the auto-filter using the `reapply` me
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.autoFilter.reapply();
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -450,7 +448,7 @@ await Excel.run(async (context) => {
 
     // Clear the filter from only column 3.
     sheet.autoFilter.clearColumnCriteria(3);
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -461,7 +459,7 @@ The final auto-filter code sample shows how to remove the auto-filter from the w
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.autoFilter.remove();
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -475,12 +473,11 @@ Your add-in can control a user's ability to edit data in a worksheet. The worksh
 await Excel.run(async (context) => {
     let activeSheet = context.workbook.worksheets.getActiveWorksheet();
     activeSheet.load("protection/protected");
+    await context.sync();
 
-    return context.sync().then(function() {
-        if (!activeSheet.protection.protected) {
-            activeSheet.protection.protect();
-        }
-    })
+    if (!activeSheet.protection.protected) {
+        activeSheet.protection.protect();
+    }
 });
 ```
 
@@ -499,20 +496,21 @@ The following code sample shows how to register the `onProtectionChanged` event 
 
 ```js
 // This method registers an event handler for the onProtectionChanged event of a worksheet.
-await Excel.run(async (context) => {
-    // Retrieve the worksheet named "Sample".
-    let sheet = context.workbook.worksheets.getItem("Sample");
-
-    // Register the onProtectionChanged event handler.
-    sheet.onProtectionChanged.add(checkProtection);
-
-    return context.sync();
-});
+async function run() {
+    await Excel.run(async (context) => {
+        // Retrieve the worksheet named "Sample".
+        let sheet = context.workbook.worksheets.getItem("Sample");
+    
+        // Register the onProtectionChanged event handler.
+        sheet.onProtectionChanged.add(checkProtection);
+        await context.sync();
+    });
+}
 
 // This method is an event handler that returns the protection state of a worksheet 
 // and information about the changed worksheet.
-function checkProtection(event) {
-    Excel.run(function (context) {
+async function checkProtection(event) {
+    await Excel.run(async (context) => {
         // Retrieve the protection, worksheet ID, and source properties of the event.
         let protectionStatus = event.isProtected;
         let worksheetId = event.worksheetId;
@@ -536,7 +534,7 @@ Add-ins have access to page layout settings at a worksheet level. These control 
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.horizontalPageBreaks.add("A21:E21"); // The page break is added above this range.
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -558,7 +556,7 @@ await Excel.run(async (context) => {
     // Limit the area to be printed to the range "A1:D100".
     sheet.pageLayout.setPrintArea("A1:D100");
 
-    return context.sync();
+    await context.sync();
 });
 ```
 
