@@ -154,18 +154,16 @@ Next, Visual Studio does the following:
 
 1. In the Outlook page, select an email message or appointment item to open it in its own window. 
 
-2. Press F12 to open the browser's debugging tool.
+2. Press F12 to open the Edge debugging tool.
 
 3. After the tool is open, launch the add-in. For example, in the toolbar at the top of a message, select the **More apps** button and then select your add-in from the callout that opens.
 
    ![Screenshot showing the More apps button and the callout that it opens with the add-in's name and icon visible along with other app icons.](../images/outlook-more-apps-button.png)
 
-4. Use the instructions for your browser's tools to set breakpoints and step through code. The following have instructions for popular browsers that run on Windows, and some link to more detailed guidance. (Office on the web cannot open in Internet Explorer.)
+4. Use the instructions in one of the following articles to set breakpoints and step through code. They each have a link to more detailed guidance.
 
    - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
    - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
-   - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-   - [The FireFox JavaScript Debugger](https://developer.mozilla.org/en-US/docs/Tools/Debugger)
 
    > [!TIP]
    > To debug code that runs in the `Office.initialize` method or an `Office.onReady` method that runs when the add-in opens, set your breakpoints and then close and reopen the add-in. For more information about these methods, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
