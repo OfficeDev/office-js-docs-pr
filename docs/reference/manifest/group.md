@@ -1,13 +1,27 @@
 ---
 title: Group element in the manifest file
 description: Defines a group of UI controls in a tab. 
-ms.date: 06/08/2021
+ms.date: 02/17/2022
 ms.localizationpriority: medium
 ---
 
 # Group element
 
 Defines a group of UI controls in a tab. On custom tabs, the add-in can create multiple groups. Add-ins are limited to one custom tab.
+
+**Add-in type:** Task pane, Mail
+
+**Valid only in these VersionOverrides schemas**:
+
+- Task pane 1.0
+- Mail 1.0
+- Mail 1.1
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associated with these requirement sets**:
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) 
 
 ## Attributes
 
@@ -17,13 +31,13 @@ Defines a group of UI controls in a tab. On custom tabs, the add-in can create m
 
 ### id attribute
 
-Required. Unique identifier for the group. It is a string with a maximum of 125 characters. This must be unique within the manifest or the group will fail to render.
+Required. Unique identifier for the group. It is a string with a maximum of 125 characters. This must be unique across all Group elements in the manifest.
 
 ## Child elements
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [Label](#label)      | Yes |  The label for the CustomTab or a group.  |
+|  [Label](#label)      | Yes |  The label for a group.  |
 |  [Icon](icon.md)      | Yes |  The image for a group. Not supported in Outlook add-ins. |
 |  [Control](#control)    | No |  Represents a Control object. Can be zero or more.  |
 |  [OfficeControl](#officecontrol)  | No | Represents one of the built-in Office controls. Can be zero or more. Not supported in Outlook add-ins.|
@@ -45,14 +59,14 @@ Required. If a tab contains a lot of groups and the program window is resized, t
 Optional, but if not present there must be at least one **OfficeControl**. For details about the types of controls that are supported, see the [Control](control.md) element. The order of **Control** and **OfficeControl** in the manifest is interchangeable and they can be intermingled if there are multiple elements, but all must be below the **Icon** element.
 
 ```xml
-<Group id="contosoCustomTab.grp1">
+<Group id="Contoso.CustomTab1.group1">
     <Label resid="CustomTabGroupLabel"/>
     <Icon>
         <bt:Image size="16" resid="blue-icon-16" />
         <bt:Image size="32" resid="blue-icon-32" />
         <bt:Image size="80" resid="blue-icon-80" />
     </Icon>
-    <Control xsi:type="Button" id="Button2">
+    <Control xsi:type="Button" id="Contoso.Button1">
         <!-- information on the control -->
     </Control>
     <!-- other controls, as needed -->
@@ -63,18 +77,30 @@ Optional, but if not present there must be at least one **OfficeControl**. For d
 
 Optional, but if not present there must be at least one **Control**. Include one or more built-in Office controls in the group with `<OfficeControl>` elements. The `id` attribute specifies the ID of the built-in Office control. To find the ID of a control, see [Find the IDs of controls and control groups](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups). The order of **Control** and **OfficeControl** in the manifest is interchangeable and they can be intermingled if there are multiple elements, but all must be below the **Icon** element.
 
+**Add-in type:** Task pane
+
+**Valid only in these VersionOverrides schemas**:
+
+- Task pane 1.0
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associated with these requirement sets**:
+
+- [AddinCommands 1.3](../requirement-sets/add-in-commands-requirement-sets.md)
+
 > [!NOTE]
 > This child element is not supported in Outlook add-ins.
 
 ```xml
-<Group id="contosoCustomTab.grp1">
+<Group id="Contoso.CustomTab2.group2">
     <Label resid="CustomTabGroupLabel"/>
     <Icon>
         <bt:Image size="16" resid="blue-icon-16" />
         <bt:Image size="32" resid="blue-icon-32" />
         <bt:Image size="80" resid="blue-icon-80" />
     </Icon>
-    <Control xsi:type="Button" id="Button2">
+    <Control xsi:type="Button" id="Contoso.Button2">
         <!-- information on the control -->
     </Control>
     <OfficeControl id="Superscript" />
@@ -91,8 +117,8 @@ Optional (boolean). Specifies whether the **Group** will be hidden on applicatio
 
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
-  <CustomTab id="TabCustom1">
-    <Group id="ContosoCustomTab.grp1">
+  <CustomTab id="Contoso.CustomTab3">
+    <Group id="Contoso.CustomTab3.group1">
       <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
       <!-- other child elements of the group -->
     </Group>

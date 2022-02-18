@@ -1,7 +1,7 @@
 ---
 title: GetStarted element in the manifest file
 description: Provides information used by the callout that appears when the add-in is installed in Word, Excel, PowerPoint, and OneNote.
-ms.date: 09/29/2021
+ms.date: 02/17/2022
 ms.localizationpriority: medium
 ---
 
@@ -19,7 +19,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 **Associated with these requirement sets**:
 
-- [AppCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 ## Child elements
 
