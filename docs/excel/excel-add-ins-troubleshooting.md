@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Excel Add-ins
 description: 'Learn how to troubleshoot development errors in Excel Add-ins.'
-ms.date: 02/12/2021
+ms.date: 02/17/2022
 ms.localizationpriority: medium
 ---
 
@@ -50,27 +50,28 @@ Both [BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingda
 The following code sample shows how to use this temporary binding ID to retrieve the related `Binding` object. In the sample, an event listener is assigned to a binding. The listener calls the `getBindingId` method when the `onDataChanged` event is triggered. The `getBindingId` method uses the ID of the temporary `Binding` object to retrieve the `Binding` object that raised the event.
 
 ```js
-Excel.run(function (context) {
-    // Retrieve your binding.
-    var binding = context.workbook.bindings.getItemAt(0);
-
-    return context.sync().then(function () {
+async function run() {
+    await Excel.run(async (context) => {
+        // Retrieve your binding.
+        let binding = context.workbook.bindings.getItemAt(0);
+    
+        await context.sync();
+    
         // Register an event listener to detect changes to your binding
         // and then trigger the `getBindingId` method when the data changes. 
         binding.onDataChanged.add(getBindingId);
-
-        return context.sync();
+        await context.sync();
     });
-});
+}
 
-function getBindingId(eventArgs) {
-    return Excel.run(function (context) {
+async function getBindingId(eventArgs) {
+    await Excel.run(async (context) => {
         // Get the temporary binding object and load its ID. 
-        var tempBindingObject = eventArgs.binding;
+        let tempBindingObject = eventArgs.binding;
         tempBindingObject.load("id");
 
         // Use the temporary binding object's ID to retrieve the original binding object. 
-        var originalBindingObject = context.workbook.bindings.getItem(tempBindingObject.id);
+        let originalBindingObject = context.workbook.bindings.getItem(tempBindingObject.id);
 
         // You now have the binding object that raised the event: `originalBindingObject`. 
     });
@@ -81,7 +82,7 @@ function getBindingId(eventArgs) {
 
 The [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) property of `CellPropertiesFormat` doesn't work properly in Excel on the web. Due to an issue in the Excel on the web UI, setting the `useStandardHeight` property to `true` calculates height imprecisely on this platform. For example, a standard height of **14** is modified to **14.25** in Excel on the web.
 
-On all platforms, the [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) and [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardwidth-member) properties of `CellPropertiesFormat` are only intended to be set to `true`. Setting these properties to `false` has no effect. 
+On all platforms, the [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) and [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardwidth-member) properties of `CellPropertiesFormat` are only intended to be set to `true`. Setting these properties to `false` has no effect.
 
 ### Range `getImage` method unsupported on Excel for Mac
 

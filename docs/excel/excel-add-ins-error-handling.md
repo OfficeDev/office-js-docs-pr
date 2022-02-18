@@ -1,7 +1,7 @@
 ---
 title: Error handling with the Excel JavaScript API
 description: 'Learn about Excel JavaScript API error handling logic to account for runtime errors.'
-ms.date: 11/16/2021
+ms.date: 02/16/2022
 ms.localizationpriority: medium
 ---
 
@@ -15,19 +15,31 @@ When you build an add-in using the Excel JavaScript API, be sure to include erro
 
 ## Best practices
 
-Throughout the code samples in this documentation, you'll notice that every call to `Excel.run` is accompanied by a `catch` statement to catch any errors that occur within the `Excel.run`. We recommend that you use the same pattern when you build an add-in using the Excel JavaScript APIs.
+In our [code samples](https://github.com/OfficeDev/Office-Add-in-samples) and [Script Lab](../overview/explore-with-script-lab.md) snippets, you'll notice that every call to `Excel.run` is accompanied by a `catch` statement to catch any errors that occur within the `Excel.run`. We recommend that you use the same pattern when you build an add-in using the Excel JavaScript APIs.
 
 ```js
-Excel.run(function (context) {
-  
-  // Excel JavaScript API calls here
+$("#run").click(() => tryCatch(run));
 
-  // Await the completion of context.sync() before continuing.
-  return context.sync()
-    .then(function () {
-      console.log("Finished!");
-    })
-}).catch(errorHandlerFunction);
+async function run() {
+  await Excel.run(async (context) => {
+      // Add your Excel JavaScript API calls here.
+
+      // Await the completion of context.sync() before continuing.
+    await context.sync();
+    console.log("Finished!");
+  });
+}
+
+/** Default helper for invoking an action and handling errors. */
+async function tryCatch(callback) {
+  try {
+    await callback();
+  } catch (error) {
+    // Note: In a production add-in, you'd want to notify the user through your add-in's UI.
+    console.error(error);
+  }
+}
+
 ```
 
 ## API errors
