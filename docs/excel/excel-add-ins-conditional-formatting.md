@@ -217,7 +217,7 @@ await Excel.run(async (context) => {
          Excel.ConditionalFormatType.presetCriteria
     );
     
-    // color every cell's font white that is one standard deviation above average relative to the range
+    // Color every cell's font white that is one standard deviation above average relative to the range.
     conditionalFormat.preset.format.font.color = "white";
     conditionalFormat.preset.rule = {
          criterion: Excel.ConditionalFormatPresetCriterion.oneStdDevAboveAverage
@@ -243,7 +243,7 @@ await Excel.run(async (context) => {
          Excel.ConditionalFormatType.containsText
     );
     
-    // color the font of every cell containing "Delayed"
+    // Color the font of every cell containing "Delayed".
     conditionalFormat.textComparison.format.font.color = "red";
     conditionalFormat.textComparison.rule = {
          operator: Excel.ConditionalTextOperator.contains,
@@ -270,7 +270,7 @@ await Excel.run(async (context) => {
          Excel.ConditionalFormatType.topBottom
     );
     
-    // for the highest valued cell in the range, make the background green
+    // For the highest valued cell in the range, make the background green.
     conditionalFormat.topBottom.format.fill.color = "green"
     conditionalFormat.topBottom.rule = { rank: 1, type: "TopItems"}
     

@@ -290,7 +290,7 @@ await Excel.run(async (context) => {
 
         await context.sync();
 
-        // Add spaces to make more human readable in the console
+        // Add spaces to make it more human-readable in the console.
         let readableXML = xmlBlob.value.replace(/></g, "> <");
         console.log(readableXML);
     }

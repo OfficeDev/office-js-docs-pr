@@ -22,7 +22,7 @@ $("#run").click(() => tryCatch(run));
 
 async function run() {
   await Excel.run(async (context) => {
-      // Add you Excel JavaScript API calls here.
+      // Add your Excel JavaScript API calls here.
 
       // Await the completion of context.sync() before continuing.
     await context.sync();
