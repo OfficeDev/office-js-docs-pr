@@ -126,7 +126,7 @@ Start the project by choosing **Debug** > **Start Debugging** from the menu bar 
 
 When Visual Studio builds the project it performs the following tasks.
 
-1. Prompts you for login credentials. If you're asked to sign in repeatedly or if you receive an error that you are unauthorized, then Basic Auth may be disabled for accounts on your Microsoft 365 tenant. In this case, try using a Microsoft account instead. You can also try setting the property **Use multi-factor auth** to **True** in the Outlook Web Add-in project properties dialog.
+1. Prompts you for login credentials. If you're asked to sign in repeatedly or if you receive an error that you are unauthorized, then Basic Auth may be disabled for accounts on your Microsoft 365 tenant. In this case, try using a Microsoft account instead. You can also try setting the property **Use multi-factor auth** to **True** in the Outlook Web Add-in project properties pane. See [Add-in project properties](#add-in-project-properties).
 
 1. Creates a copy of the XML manifest file and adds it to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory. Outlook consumes this copy when you start Visual Studio and debug the add-in.
 
