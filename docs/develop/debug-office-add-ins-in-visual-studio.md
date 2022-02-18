@@ -29,15 +29,15 @@ The following table describes the properties of the add-in project.
 |Property|Description|
 |:-----|:-----|
 |**Start Action**|Specifies the debug mode for your add-in. This should be set to **Microsoft Edge** for an Outlook add-in. For all other Office applications, it should be set to **Office Desktop Client**.|
-|**Start Document**<br/>(Excel, PowerPoint, and Word add-ins only)|Specifies what document to open when you start the project. In a new project this is set to one of **[New Excel Workbook]**, **[New Word Document]**, or **[New PowerPoint Presnetation]**. To specify a particular document, follow the steps in [Use an existing document to debug the add-in](#use-an-existing-document-to-debug-the-add-in). |
+|**Start Document**<br/>(Excel, PowerPoint, and Word add-ins only)|Specifies what document to open when you start the project. In a new project, this is set to **[New Excel Workbook]**, **[New Word Document]**, or **[New PowerPoint Presentation]**. To specify a particular document, follow the steps in [Use an existing document to debug the add-in](#use-an-existing-document-to-debug-the-add-in).|
 |**Web Project**|Specifies the name of the web project associated with the add-in.|
-|**Email Address**<br/>(Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in. You can leave this blank and you will be prompted for it when you start debugging.|
-|**EWS Url**<br/>(Outlook add-ins only)|Exchange Web service URL (For example: `https://www.contoso.com/ews/exchange.aspx`). This property can be left blank.|
-|**OWA Url**<br/>(Outlook add-ins only)|Outlook on the web URL (For example: `https://www.contoso.com/owa`). This property can be left blank.|
-|**Use multi-factor auth**<br/>(Outlook add-ins only)|Boolean value that indicates whether multi-factor authentication should be used. The default is **false**, but the property has no practical effect. If you normally have to provide a second factor to login to the email account, you will be prompted to when you start debugging. |
+|**Email Address**<br/>(Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in. If left blank, you will be prompted for the email address when you start debugging.|
+|**EWS Url**<br/>(Outlook add-ins only)|Specifies the Exchange Web Services URL (For example: `https://www.contoso.com/ews/exchange.aspx`). This property can be left blank.|
+|**OWA Url**<br/>(Outlook add-ins only)|Specifies the Outlook on the web URL (For example: `https://www.contoso.com/owa`). This property can be left blank.|
+|**Use multi-factor auth**<br/>(Outlook add-ins only)|Specifies the boolean value that indicates whether multi-factor authentication should be used. The default is **false**, but the property has no practical effect. If you normally have to provide a second factor to login to the email account, you will be prompted to when you start debugging. |
 |**User Name**<br/>(Outlook add-ins only)|Specifies the name of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in. This property can be left blank.|
 |**Project File**|Specifies the name of the file containing build, configuration, and other information about the project.|
-|**Project Folder**|The location of the project file.|
+|**Project Folder**|Specifies the location of the project file.|
 
 > [!NOTE]
 > For an Outlook add-in, you may choose to specify values for one or more of the *Outlook add-in only* properties in the **Properties** window, but doing so is not required.
@@ -68,15 +68,15 @@ This section describes how to start and debug an Excel, PowerPoint, or Word add-
 
 Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the F5 button. Visual Studio will automatically build the solution and start the Office host application.
 
-When Visual Studio builds the project it performs the following tasks.
+When Visual Studio builds the project, it performs the following tasks:
 
-1. Creates a copy of the XML manifest file and adds it to  `_ProjectName_\bin\Debug\OfficeAppManifests` directory. The Office application that hosts your add-in consumes this copy when you start Visual Studio and debug the add-in.
+1. Creates a copy of the XML manifest file and adds it to the  `_ProjectName_\bin\Debug\OfficeAppManifests` directory. The Office application that hosts your add-in consumes this copy when you start Visual Studio and debug the add-in.
 
-2. Creates a set of registry entries on your Windows computer that enable the add-in to appear in the Office application.
+2. Creates a set of registry entries on your Windows computer that enables the add-in to appear in the Office application.
 
-3. Builds the web application project, and then deploys it to the local IIS web server (https://localhost).
+3. Builds the web application project, and then deploys it to the local IIS web server (`https://localhost`).
 
-4. If this is the first add-in project that you have deployed to local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store. This is required for IIS Express to display the content of your add-in correctly.
+4. If this is the first add-in project that you have deployed to the local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store. This is required for IIS Express to display the content of your add-in correctly.
 
 > [!NOTE]
 > If Office uses the Edge Legacy webview control (EdgeHTML) to run add-ins on your Windows computer, Visual Studio may prompt you to add a local network loopback exemption. This is required for the webview control to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**. To find out what browser control is used on your Windows computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
@@ -99,7 +99,7 @@ Next, Visual Studio does the following:
 1. Launch the add-in in the Office application. For example, if it is a task pane add-in, it will have added a button to the **Home** ribbon (for example, a **Show Taskpane** button). Select the button in the ribbon. 
 
    > [!NOTE]
-   > If your add-in is not sideloaded by Visual Studio, you can sideload it manually. In Excel, PowerPoint, or Word, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
+   > If your add-in is not sideloaded by Visual Studio, you can sideload it manually. In Excel, PowerPoint, or Word, choose the **Insert** tab, and then choose the down-arrow located to the right of **My Add-ins**.
    >
    > ![Screenshot showing Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted.](../images/excel-cf-register-add-in-1b.png)
    >
@@ -128,11 +128,11 @@ When Visual Studio builds the project it performs the following tasks.
 
 1. Prompts you for login credentials. If you're asked to sign in repeatedly or if you receive an error that you are unauthorized, then Basic Auth may be disabled for accounts on your Microsoft 365 tenant. In this case, try using a Microsoft account instead. You can also try setting the property **Use multi-factor auth** to **True** in the Outlook Web Add-in project properties dialog.
 
-1. Creates a copy of the XML manifest file and adds it to  `_ProjectName_\bin\Debug\OfficeAppManifests` directory. Outlook consumes this copy when you start Visual Studio and debug the add-in.
+1. Creates a copy of the XML manifest file and adds it to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory. Outlook consumes this copy when you start Visual Studio and debug the add-in.
 
-2. Builds the web application project, and then deploys it to the local IIS web server (https://localhost).
+2. Builds the web application project, and then deploys it to the local IIS web server (`https://localhost`).
 
-3. If this is the first add-in project that you have deployed to local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store. This is required for IIS Express to display the content of your add-in correctly.
+3. If this is the first add-in project that you have deployed to the local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store. This is required for IIS Express to display the content of your add-in correctly.
 
 > [!NOTE]
 > If Office uses the Edge Legacy webview control (EdgeHTML) to run add-ins on your Windows computer, Visual Studio may prompt you to add a local network loopback exemption. This is required for the webview control to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**. To find out what browser control is used on your Windows computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
@@ -148,7 +148,7 @@ Next, Visual Studio does the following:
    > [!IMPORTANT]
    > The Office manifest XSD files that Visual Studio installs are out-of-date. If you get validation errors for the manifest, your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
 
-4. Opens the Outlook page of your Microsoft 365 tenancy in the Microsoft Edge.
+4. Opens the Outlook page of your Microsoft 365 tenancy in Microsoft Edge.
 
 ### Debug the Outlook add-in
 
@@ -156,7 +156,7 @@ Next, Visual Studio does the following:
 
 2. Press F12 to open the Edge debugging tool.
 
-3. After the tool is open, launch the add-in. For example, in the toolbar at the top of a message, select the **More apps** button and then select your add-in from the callout that opens.
+3. After the tool is open, launch the add-in. For example, in the toolbar at the top of a message, select the **More apps** button, and then select your add-in from the callout that opens.
 
    ![Screenshot showing the More apps button and the callout that it opens with the add-in's name and icon visible along with other app icons.](../images/outlook-more-apps-button.png)
 
@@ -166,7 +166,7 @@ Next, Visual Studio does the following:
    - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md)
 
    > [!TIP]
-   > To debug code that runs in the `Office.initialize` method or an `Office.onReady` method that runs when the add-in opens, set your breakpoints and then close and reopen the add-in. For more information about these methods, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
+   > To debug code that runs in the `Office.initialize` method or an `Office.onReady` method that runs when the add-in opens, set your breakpoints, and then close and reopen the add-in. For more information about these methods, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
 5. To make changes to your code, first stop the debugging session in Visual Studio and close the Outlook pages. Make your changes, and start a new debugging session.
 
