@@ -23,16 +23,9 @@ In this tutorial, you will:
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)
+- [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt.
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) or your preferred code editor
 
 - Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web
 
@@ -46,9 +39,9 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
 1. [Create a new gist](https://gist.github.com).
 
-    - In the **Gist description...** field, enter **Hello World Markdown**.
+    - In the **Gist description...** field, enter *Hello World Markdown*.
 
-    - In the **Filename including extension...** field, enter **test.md**.
+    - In the **Filename including extension...** field, enter *test.md*.
 
     - Add the following markdown to the multiline textbox.
 
@@ -70,9 +63,9 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
 1. [Create another new gist](https://gist.github.com).
 
-    - In the **Gist description...** field, enter **Hello World Html**.
+    - In the **Gist description...** field, enter *Hello World Html*.
 
-    - In the **Filename including extension...** field, enter **test.html**.
+    - In the **Filename including extension...** field, enter *test.html*.
 
     - Add the following markdown to the multiline textbox.
 
@@ -130,13 +123,17 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
     npm install showdown urijs jquery --save
     ```
 
+1. Open your project in VS Code or your preferred code editor.
+
+    [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
 ### Update the manifest
 
 The manifest for an add-in controls how it appears in Outlook. It defines the way the add-in appears in the add-in list and the buttons that appear on the ribbon, and it sets the URLs for the HTML and JavaScript files used by the add-in.
 
 #### Specify basic information
 
-Make the following updates in the **manifest.xml** file to specify some basic information about the add-in.
+Make the following updates in the *manifest.xml* file to specify some basic information about the add-in.
 
 1. Locate the `ProviderName` element and replace the default value with your company name.
 
@@ -162,7 +159,13 @@ Before going any further, let's test the basic add-in that the generator created
     npm start
     ```
 
-1. In Outlook, open an existing message and select the **Show Taskpane** button. If everything's been set up correctly, the task pane will open and render the add-in's welcome page.
+1. In Outlook, open an existing message and select the **Show Taskpane** button.
+
+1. When prompted with the **WebView Stop On Load** dialog box, select **OK**.
+
+    [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
+
+    If everything's been set up correctly, the task pane will open and render the add-in's welcome page.
 
     ![Screenshot of the "Show Taskpane" button and Git the gist task pane added by the sample.](../images/button-and-pane.png)
 
