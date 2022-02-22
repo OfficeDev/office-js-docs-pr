@@ -1,7 +1,7 @@
 ---
 title: Publish an add-in using Visual Studio Code and Azure
 description: How to publish an add-in using Visual Studio Code and Azure Active Directory
-ms.date: 01/26/2022
+ms.date: 02/22/2022
 ms.localizationpriority: medium
 ---
 
@@ -64,6 +64,9 @@ If your add-in has custom functions there are a few more steps to enable them on
     |Max age         | 200                         |
 
 1. Choose **Save**.
+
+> [!CAUTION]
+> This CORS configuration assumes all files on your server are publicly available to all domains. If you have sensitive data, or APIs to support, you should consider setting up an Azure app service to host your add-in, and implement [authentication](../develop/overview-authn-authz.md).  
 
 Next you need to add a MIME type for JSON files.
 
