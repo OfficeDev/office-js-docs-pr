@@ -49,7 +49,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 
 ## Deploy custom functions for Excel
 
-If your add-in has custom functions there are a few more steps to enable them on the Azure Storage account. First you need to enable CORS so that Office can access the functions.json file.
+If your add-in has custom functions there are a few more steps to enable them on the Azure Storage account. First you need to [enable CORS](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) so that Office can access the functions.json file.
 
 1. Right-click the Azure storage account and choose **Open in Portal**.
 1. In the Settings group, choose **Resource sharing (CORS)**. You can also use the search box to find this.
