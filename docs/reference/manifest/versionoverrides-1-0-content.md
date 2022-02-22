@@ -1,16 +1,16 @@
 ---
 title: VersionOverrides 1.0 element in the manifest file for a content add-in
-description: 'Reference documentation of the VersionOverrides element (content) for Office Add-ins manifest (XML) files.'
-ms.date: 01/04/2022
+description: Reference documentation of the VersionOverrides element (content) for Office Add-ins manifest (XML) files.
+ms.date: 02/18/2022
 ms.localizationpriority: medium
 ---
 
 # VersionOverrides 1.0 element in the manifest file for a content add-in
 
-This element contains information for features that are not supported in the base manifest.
+This element contains information for features that aren't supported in the base manifest.
 
 > [!NOTE]
-> This article assumes that you are familiar with the [overview of the VersionOverrides element](versionoverrides.md), which contains important information about the element's attributes and variations.
+> This article assumes that you're familiar with the [overview of the VersionOverrides element](versionoverrides.md), which contains important information about the element's attributes and variations.
 
 ## Child elements
 
@@ -23,7 +23,7 @@ The following table applies only to version 1.0 of **VersionOverrides** elements
 
 ## Example
 
-The following is a simple example. For fuller examples, see the manifests for the sample add-ins in [Office Add-in code samples](https://github.com/OfficeDev/PnP-OfficeAddins).
+The following is a simple example. For more complex examples, see the manifests for the sample add-ins in [Office Add-in code samples](https://github.com/OfficeDev/PnP-OfficeAddins).
 
 ```xml
 <OfficeApp ... xsi:type="Content">

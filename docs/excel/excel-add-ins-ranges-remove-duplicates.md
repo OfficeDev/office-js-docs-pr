@@ -1,7 +1,7 @@
 ---
 title: Remove duplicates using the Excel JavaScript API
 description: 'Learn how to use the Excel JavaScript API to remove duplicates.' 
-ms.date: 04/02/2021 
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -24,18 +24,18 @@ When using a range's `removeDuplicates` method, keep the following in mind.
 The following code sample shows the removal of entries with duplicate values in the first column.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:D11");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let range = sheet.getRange("B2:D11");
 
-    var deleteResult = range.removeDuplicates([0],true);
+    let deleteResult = range.removeDuplicates([0],true);
     deleteResult.load();
 
-    return context.sync().then(function () {
-        console.log(deleteResult.removed + " entries with duplicate names removed.");
-        console.log(deleteResult.uniqueRemaining + " entries with unique names remain in the range.");
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    console.log(deleteResult.removed + " entries with duplicate names removed.");
+    console.log(deleteResult.uniqueRemaining + " entries with unique names remain in the range.");
+});
 ```
 
 ### Data before duplicate entries are removed

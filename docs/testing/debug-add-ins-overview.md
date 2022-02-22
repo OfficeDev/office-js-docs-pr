@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins
 description: 'Find the Office Add-in debugging guidance for your development environment'
-ms.date: 01/27/2022
+ms.date: 02/17/2022
 ms.localizationpriority: high
 ---
 
@@ -37,7 +37,7 @@ To find guidance for debugging client-side code, the first variable is the opera
 
 The following provides general guidance to debugging on Windows. There are special instructions for debugging UI-less custom functions in Excel and event-based add-ins in Outlook. See [Special cases in Windows](#special-cases-in-windows) later in this section. Debugging on Windows depends on your IDE:
 
-- **Visual Studio**: Debug using the internal debugger. See [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
+- **Visual Studio**: Debug using the browser's F12 tools. See [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
 - **Visual Studio Code**: Debug using the [Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
 - **Any other IDE** (or you don't want to debug inside your IDE): Use the developer tools that are associated with the browser runtime that add-ins use on your development computer. See one of the following:
 
