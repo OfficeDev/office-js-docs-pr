@@ -1,7 +1,7 @@
 ---
 title: GetStarted element in the manifest file
 description: Provides information used by the callout that appears when the add-in is installed in Word, Excel, PowerPoint, and OneNote.
-ms.date: 02/17/2022
+ms.date: 02/22/2022
 ms.localizationpriority: medium
 ---
 
