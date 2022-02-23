@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: 'In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.'
-ms.date: 01/06/2022
+ms.date: 02/23/2022
 ms.prod: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -365,11 +365,14 @@ Let's start by creating the UI for the dialog itself. Within the *./src* folder,
     </section>
   </main>
   <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="../helpers/gist-api.js"></script>
   <script type="text/javascript" src="dialog.js"></script>
 </body>
 
 </html>
 ```
+
+You may have noticed that the JavaScript file, *gist-api.js*, is referenced above, but doesn't yet exist. This file will be created in the [Fetch data from GitHub](#fetch-data-from-github) section below.
 
 Next, create a file in the *./src/settings* folder named *dialog.css*, and add the following code to specify the styles that are used by *dialog.html*.
 
@@ -634,6 +637,82 @@ Finally, open the *webpack.config.js* file from the root directory of the projec
     ],
     ```
 
+### Fetch data from GitHub
+
+The *dialog.js* file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field. To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).
+
+1. Within the *./src* folder, create a new subfolder named *helpers*.
+
+1. In the *./src/helpers* folder, create a file named *gist-api.js*, and add the following code to retrieve the user's gists from GitHub and build the list of gists.
+
+    ```js
+    function getUserGists(user, callback) {
+      var requestUrl = 'https://api.github.com/users/' + user + '/gists';
+    
+      $.ajax({
+        url: requestUrl,
+        dataType: 'json'
+      }).done(function(gists){
+        callback(gists);
+      }).fail(function(error){
+        callback(null, error);
+      });
+    }
+    
+    function buildGistList(parent, gists, clickFunc) {
+      gists.forEach(function(gist) {
+    
+        var listItem = $('<div/>')
+          .appendTo(parent);
+    
+        var radioItem = $('<input>')
+          .addClass('ms-ListItem')
+          .addClass('is-selectable')
+          .attr('type', 'radio')
+          .attr('name', 'gists')
+          .attr('tabindex', 0)
+          .val(gist.id)
+          .appendTo(listItem);
+    
+        var desc = $('<span/>')
+          .addClass('ms-ListItem-primaryText')
+          .text(gist.description)
+          .appendTo(listItem);
+    
+        var desc = $('<span/>')
+          .addClass('ms-ListItem-secondaryText')
+          .text(' - ' + buildFileList(gist.files))
+          .appendTo(listItem);
+    
+        var updated = new Date(gist.updated_at);
+    
+        var desc = $('<span/>')
+          .addClass('ms-ListItem-tertiaryText')
+          .text(' - Last updated ' + updated.toLocaleString())
+          .appendTo(listItem);
+    
+        listItem.on('click', clickFunc);
+      });  
+    }
+    
+    function buildFileList(files) {
+    
+      var fileList = '';
+    
+      for (var file in files) {
+        if (files.hasOwnProperty(file)) {
+          if (fileList.length > 0) {
+            fileList = fileList + ', ';
+          }
+    
+          fileList = fileList + files[file].filename + ' (' + files[file].language + ')';
+        }
+      }
+    
+      return fileList;
+    }
+    ```
+
 1. If the web server is running, close the node command window.
 
 1. Run the following command to rebuild the project.
@@ -647,96 +726,6 @@ Finally, open the *webpack.config.js* file from the root directory of the projec
     ```command&nbsp;line
     npm start
     ```
-
-### Fetch data from GitHub
-
-The *dialog.js* file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field. To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).
-
-Within the *./src* folder, create a new subfolder named *helpers*. In the *./src/helpers* folder, create a file named *gist-api.js*, and add the following code to retrieve the user's gists from GitHub and build the list of gists.
-
-```js
-function getUserGists(user, callback) {
-  var requestUrl = 'https://api.github.com/users/' + user + '/gists';
-
-  $.ajax({
-    url: requestUrl,
-    dataType: 'json'
-  }).done(function(gists){
-    callback(gists);
-  }).fail(function(error){
-    callback(null, error);
-  });
-}
-
-function buildGistList(parent, gists, clickFunc) {
-  gists.forEach(function(gist) {
-
-    var listItem = $('<div/>')
-      .appendTo(parent);
-
-    var radioItem = $('<input>')
-      .addClass('ms-ListItem')
-      .addClass('is-selectable')
-      .attr('type', 'radio')
-      .attr('name', 'gists')
-      .attr('tabindex', 0)
-      .val(gist.id)
-      .appendTo(listItem);
-
-    var desc = $('<span/>')
-      .addClass('ms-ListItem-primaryText')
-      .text(gist.description)
-      .appendTo(listItem);
-
-    var desc = $('<span/>')
-      .addClass('ms-ListItem-secondaryText')
-      .text(' - ' + buildFileList(gist.files))
-      .appendTo(listItem);
-
-    var updated = new Date(gist.updated_at);
-
-    var desc = $('<span/>')
-      .addClass('ms-ListItem-tertiaryText')
-      .text(' - Last updated ' + updated.toLocaleString())
-      .appendTo(listItem);
-
-    listItem.on('click', clickFunc);
-  });  
-}
-
-function buildFileList(files) {
-
-  var fileList = '';
-
-  for (var file in files) {
-    if (files.hasOwnProperty(file)) {
-      if (fileList.length > 0) {
-        fileList = fileList + ', ';
-      }
-
-      fileList = fileList + files[file].filename + ' (' + files[file].language + ')';
-    }
-  }
-
-  return fileList;
-}
-```
-
-### Reference the JavaScript file in dialog.html
-
-To ensure that the user's gists are retrieved from GitHub and properly listed in the add-in, you must reference the *gist-api.js* file you just created in *./src/settings/dialog.html*. At the end of the `body` element in *dialog.html*, add the following code.
-
-```html
-<script type="text/javascript" src="../helpers/gist-api.js"></script>
-```
-
-After you've done this, the updated JavaScript files referenced in *dialog.html* will look like this:
-
-```html
-<script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
-<script type="text/javascript" src="../helpers/gist-api.js"></script>
-<script type="text/javascript" src="dialog.js"></script>
-```
 
 > [!NOTE]
 > You may have noticed that there's no button to invoke the settings dialog. Instead, the add-in will check whether it has been configured when the user selects either the **Insert default gist** button or the **Insert gist** button. If the add-in has not yet been configured, the settings dialog will prompt the user to configure before proceeding.
@@ -766,11 +755,11 @@ Open the file *./src/commands/commands.html* and replace the entire contents wit
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="../node_modules/showdown/dist/showdown.min.js"></script>
-    <script type="text/javascript" src="../node_modules/urijs/src/URI.min.js"></script>
-    <script type="text/javascript" src="../src/helpers/addin-config.js"></script>
-    <script type="text/javascript" src="../src/helpers/gist-api.js"></script>
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/urijs/src/URI.min.js"></script>
+    <script type="text/javascript" src="../helpers/addin-config.js"></script>
+    <script type="text/javascript" src="../helpers/gist-api.js"></script>
 </head>
 
 <body>
@@ -781,9 +770,11 @@ Open the file *./src/commands/commands.html* and replace the entire contents wit
 </html>
 ```
 
+You may have noticed that the HTML file references a JavaScript file, *addin-config.js*, that doesn't yet exist. This file will be created in the [Create a file to manage configuration settings](#create-a-file-to-manage-configuration-settings) section below.
+
 ### Update the function file (JavaScript)
 
-Open the file *./src/commands/commands.js* and replace the entire contents with the following code. Note that if the `insertDefaultGist` function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL. Doing so makes the settings dialog render the message bar that's defined in *./settings/dialog.html*, to tell the user why they're seeing the dialog.
+Open the file *./src/commands/commands.js* and replace the entire contents with the following code. Note that if the `insertDefaultGist` function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL. Doing so makes the settings dialog render the message bar that's defined in *./src/settings/dialog.html*, to tell the user why they're seeing the dialog.
 
 ```js
 var config;
@@ -882,7 +873,7 @@ g.insertDefaultGist = insertDefaultGist;
 
 ### Create a file to manage configuration settings
 
-The HTML function file references a file named **addin-config.js**, which doesn't yet exist. Create a file named **addin-config.js** in the **./src/helpers** folder and add the following code. This code uses the [RoamingSettings object](/javascript/api/outlook/office.roamingsettings) to get and set configuration values.
+The HTML function file references a file named *addin-config.js*, which doesn't yet exist. Create a file named *addin-config.js* in the *./src/helpers* folder and add the following code. This code uses the [RoamingSettings object](/javascript/api/outlook/office.roamingsettings) to get and set configuration values.
 
 ```js
 function getConfig() {
@@ -904,7 +895,7 @@ function setConfig(config, callback) {
 
 ### Create new functions to process gists
 
-Next, open the **./src/helpers/gist-api.js** file and add the following functions. Note the following:
+Next, open the *./src/helpers/gist-api.js* file and add the following functions. Note the following:
 
 - If the gist contains HTML, the add-in will insert the HTML as-is into the body of the message.
 
@@ -985,7 +976,7 @@ This add-in's **Insert gist** button will open a task pane and display the user'
 
 ### Specify the HTML for the task pane
 
-In the project that you've created, the task pane HTML is specified in the file **./src/taskpane/taskpane.html**. Open that file and replace the entire contents with the following markup.
+In the project that you've created, the task pane HTML is specified in the file *./src/taskpane/taskpane.html*. Open that file and replace the entire contents with the following markup.
 
 ```html
 <!DOCTYPE html>
@@ -1036,11 +1027,11 @@ In the project that you've created, the task pane HTML is specified in the file 
       <i class="ms-Icon enlarge ms-Icon--Settings ms-fontColor-white"></i>
     </div>
   </footer>
-  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="../node_modules/showdown/dist/showdown.min.js"></script>
-  <script type="text/javascript" src="../node_modules/urijs/src/URI.min.js"></script>
-  <script type="text/javascript" src="../src/helpers/addin-config.js"></script>
-  <script type="text/javascript" src="../src/helpers/gist-api.js"></script>
+  <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
+  <script type="text/javascript" src="../../node_modules/urijs/src/URI.min.js"></script>
+  <script type="text/javascript" src="../helpers/addin-config.js"></script>
+  <script type="text/javascript" src="../helpers/gist-api.js"></script>
   <script type="text/javascript" src="taskpane.js"></script>
 </body>
 
@@ -1049,7 +1040,7 @@ In the project that you've created, the task pane HTML is specified in the file 
 
 ### Specify the CSS for the task pane
 
-In the project that you've created, the task pane CSS is specified in the file **./src/taskpane/taskpane.css**. Open that file and replace the entire contents with the following code.
+In the project that you've created, the task pane CSS is specified in the file *./src/taskpane/taskpane.css*. Open that file and replace the entire contents with the following code.
 
 ```css
 /* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in root of repo. */
@@ -1209,7 +1200,7 @@ ul {
 
 ### Specify the JavaScript for the task pane
 
-In the project that you've created, the task pane JavaScript is specified in the file **./src/taskpane/taskpane.js**. Open that file and replace the entire contents with the following code.
+In the project that you've created, the task pane JavaScript is specified in the file *./src/taskpane/taskpane.js*. Open that file and replace the entire contents with the following code.
 
 ```js
 (function(){
@@ -1260,7 +1251,7 @@ In the project that you've created, the task pane JavaScript is specified in the
       // When the settings icon is selected, open the settings dialog.
       $('#settings-icon').on('click', function(){
         // Display settings dialog.
-        var url = new URI('../src/settings/dialog.html').absoluteTo(window.location).toString();
+        var url = new URI('dialog.html').absoluteTo(window.location).toString();
         if (config) {
           // If the add-in has already been configured, pass the existing values
           // to the dialog.
