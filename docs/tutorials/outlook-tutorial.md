@@ -179,7 +179,7 @@ Now that you've verified the base add-in works, you can customize it to add more
 
 ### Remove the MessageReadCommandSurface extension point
 
-Open the **manifest.xml** file and locate the `ExtensionPoint` element with type `MessageReadCommandSurface`. Delete this `ExtensionPoint` element (including its closing tag) to remove the buttons from the read message window.
+Open the *manifest.xml* file and locate the `ExtensionPoint` element with type `MessageReadCommandSurface`. Delete this `ExtensionPoint` element (including its closing tag) to remove the buttons from the read message window.
 
 ### Add the MessageComposeCommandSurface extension point
 
@@ -273,15 +273,15 @@ The previous code references labels, tooltips, and URLs that you need to define 
 
 ### Reinstall the add-in
 
-Since you previously installed the add-in from a file, you must reinstall it in order for the manifest changes to take effect.
+You must reinstall the add-in for the manifest changes to take effect.
 
-1. Follow the instructions to remove **Git the gist** from [sideloaded add-ins](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
+1. If the web server is running, close the node command window.
 
-1. Close the **My add-ins** window.
+1. Run the following command to start the local web server and automatically sideload your add-in.
 
-1. The custom button should disappear from the ribbon momentarily.
-
-1. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to reinstall the add-in using the updated **manifest.xml** file.
+    ```command&nbsp;line
+    npm start
+    ```
 
 After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Insert gist** and **Insert default gist** in a compose message window. Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.
 
@@ -299,7 +299,7 @@ This add-in needs to be able to read gists from the user's GitHub account and id
 
 ### Collect data from the user
 
-Let's start by creating the UI for the dialog itself. Within the **./src** folder, create a new subfolder named **settings**. In the **./src/settings** folder, create a file named **dialog.html**, and add the following markup to define a very basic form with a text input for a GitHub username and an empty list for gists that'll be populated via JavaScript.
+Let's start by creating the UI for the dialog itself. Within the *./src* folder, create a new subfolder named *settings*. In the *./src/settings* folder, create a file named *dialog.html*, and add the following markup to define a basic form with a text input for a GitHub username and an empty list for gists that'll be populated via JavaScript.
 
 ```html
 <!DOCTYPE html>
@@ -364,16 +364,14 @@ Let's start by creating the UI for the dialog itself. Within the **./src** folde
       </div>
     </section>
   </main>
-  <script type="text/javascript" src="../../node_modules/core-js/client/core.js"></script>
   <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="../helpers/gist-api.js"></script>
   <script type="text/javascript" src="dialog.js"></script>
 </body>
 
 </html>
 ```
 
-Next, create a file in the **./src/settings** folder named **dialog.css**, and add the following code to specify the styles that are used by **dialog.html**.
+Next, create a file in the *./src/settings* folder named *dialog.css*, and add the following code to specify the styles that are used by *dialog.html*.
 
 ```CSS
 section {
@@ -408,7 +406,7 @@ ul {
 }
 ```
 
-Now that you've defined the dialog UI, you can write the code that makes it actually do something. Create a file in the **./src/settings** folder named **dialog.js** and add the following code. Note that this code uses jQuery to register events and uses the `messageParent` function to send the user's choices back to the caller.
+Now that you've defined the dialog UI, you can write the code that makes it actually do something. Create a file in the *./src/settings* folder named *dialog.js* and add the following code. Note that this code uses jQuery to register events and uses the `messageParent` function to send the user's choices back to the caller.
 
 ```js
 (function(){
@@ -514,62 +512,70 @@ Now that you've defined the dialog UI, you can write the code that makes it actu
 
 #### Update webpack config settings
 
-Finally, open the file **webpack.config.js** file in the root directory of the project and complete the following steps.
+Finally, open the *webpack.config.js* file from the root directory of the project and complete the following steps.
 
 1. Locate the `entry` object within the `config` object and add a new entry for `dialog`.
 
     ```js
-    dialog: "./src/settings/dialog.js"
+    dialog: "./src/settings/dialog.js",
     ```
 
     After you've done this, the new `entry` object will look like this:
 
     ```js
     entry: {
-      polyfill: "@babel/polyfill",
+      polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
       taskpane: "./src/taskpane/taskpane.js",
       commands: "./src/commands/commands.js",
-      dialog: "./src/settings/dialog.js"
+      dialog: "./src/settings/dialog.js",
     },
     ```
 
-1. Locate the `plugins` array within the `config` object. In the `patterns` array of the `new CopyWebpackPlugin` object, add a new entry after the `taskpane.css` entry.
+1. Locate the `plugins` array within the `config` object. In the `patterns` array of the `new CopyWebpackPlugin` object, add new entries for `taskpane.css` and `dialog.css`.
 
     ```js
     {
+      from: "./src/taskpane/taskpane.css",
+      to: "taskpane.css",
+    },
+    {
+      from: "./src/settings/dialog.css",
       to: "dialog.css",
-      from: "./src/settings/dialog.css"
     },
     ```
 
     After you've done this, the `new CopyWebpackPlugin` object will look like this:
 
     ```js
-      new CopyWebpackPlugin({
-        patterns: [
-        {
-          to: "taskpane.css",
-          from: "./src/taskpane/taskpane.css"
-        },
-        {
-          to: "dialog.css",
-          from: "./src/settings/dialog.css"
-        },
-        {
-          to: "[name]." + buildType + ".[ext]",
-          from: "manifest*.xml",
-          transform(content) {
-            if (dev) {
-              return content;
-            } else {
-              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
-            }
+    new CopyWebpackPlugin({
+      patterns: [
+      {
+        from: "./src/taskpane/taskpane.css",
+        to: "taskpane.css",
+      },
+      {
+        from: "./src/settings/dialog.css",
+        to: "dialog.css",
+      },
+      {
+        from: "assets/*",
+        to: "assets/[name][ext][query]",
+      },
+      {
+        from: "manifest*.xml",
+        to: "[name]." + buildType + "[ext]",
+        transform(content) {
+          if (dev) {
+            return content;
+          } else {
+            return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
           }
-        }
-      ]}),
+        },
+      },
+    ]}),
     ```
 
-1. Locate the `plugins` array within the `config` object and add this new object to the end of that array.
+1. In the same `plugins` array within the `config` object, add this new object to the end of the array.
 
     ```js
     new HtmlWebpackPlugin({
@@ -583,38 +589,42 @@ Finally, open the file **webpack.config.js** file in the root directory of the p
 
     ```js
     plugins: [
-      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
         template: "./src/taskpane/taskpane.html",
-        chunks: ["polyfill", "taskpane"]
+        chunks: ["polyfill", "taskpane"],
       }),
       new CopyWebpackPlugin({
         patterns: [
-        {
-          to: "taskpane.css",
-          from: "./src/taskpane/taskpane.css"
-        },
-        {
-          to: "dialog.css",
-          from: "./src/settings/dialog.css"
-        },
-        {
-          to: "[name]." + buildType + ".[ext]",
-          from: "manifest*.xml",
-          transform(content) {
-            if (dev) {
-              return content;
-            } else {
-              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
-            }
-          }
-        }
-      ]}),
+          {
+            from: "./src/taskpane/taskpane.css",
+            to: "taskpane.css",
+          },
+          {
+            from: "./src/settings/dialog.css",
+            to: "dialog.css",
+          },
+          {
+            from: "assets/*",
+            to: "assets/[name][ext][query]",
+          },
+          {
+            from: "manifest*.xml",
+            to: "[name]." + buildType + "[ext]",
+            transform(content) {
+              if (dev) {
+                return content;
+              } else {
+                return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+              }
+            },
+          },
+        ],
+      }),
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
-        chunks: ["polyfill", "commands"]
+        chunks: ["polyfill", "commands"],
       }),
       new HtmlWebpackPlugin({
         filename: "dialog.html",
@@ -640,9 +650,9 @@ Finally, open the file **webpack.config.js** file in the root directory of the p
 
 ### Fetch data from GitHub
 
-The **dialog.js** file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field. To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).
+The *dialog.js* file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field. To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).
 
-Within the **./src** folder, create a new subfolder named **helpers**. In the **./src/helpers** folder, create a file named **gist-api.js**, and add the following code to retrieve the user's gists from GitHub and build the list of gists.
+Within the *./src* folder, create a new subfolder named *helpers*. In the *./src/helpers* folder, create a file named *gist-api.js*, and add the following code to retrieve the user's gists from GitHub and build the list of gists.
 
 ```js
 function getUserGists(user, callback) {
@@ -712,6 +722,22 @@ function buildFileList(files) {
 }
 ```
 
+### Reference the JavaScript file in dialog.html
+
+To ensure that the user's gists are retrieved from GitHub and properly listed in the add-in, you must reference the *gist-api.js* file you just created in *./src/settings/dialog.html*. At the end of the `body` element in *dialog.html*, add the following code.
+
+```html
+<script type="text/javascript" src="../helpers/gist-api.js"></script>
+```
+
+After you've done this, the updated JavaScript files referenced in *dialog.html* will look like this:
+
+```html
+<script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="../helpers/gist-api.js"></script>
+<script type="text/javascript" src="dialog.js"></script>
+```
+
 > [!NOTE]
 > You may have noticed that there's no button to invoke the settings dialog. Instead, the add-in will check whether it has been configured when the user selects either the **Insert default gist** button or the **Insert gist** button. If the add-in has not yet been configured, the settings dialog will prompt the user to configure before proceeding.
 
@@ -727,7 +753,7 @@ This add-in's **Insert default gist** button is a UI-less button that will invok
 
 A function that's invoked by a UI-less button must be defined in the file that's specified by the `FunctionFile` element in the manifest for the corresponding form factor. This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.
 
-Open the file **./src/commands/commands.html** and replace the entire contents with the following markup.
+Open the file *./src/commands/commands.html* and replace the entire contents with the following markup.
 
 ```html
 <!DOCTYPE html>
@@ -757,7 +783,7 @@ Open the file **./src/commands/commands.html** and replace the entire contents w
 
 ### Update the function file (JavaScript)
 
-Open the file **./src/commands/commands.js** and replace the entire contents with the following code. Note that if the `insertDefaultGist` function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL. Doing so makes the settings dialog render the message bar that's defined in **./settings/dialog.html**, to tell the user why they're seeing the dialog.
+Open the file *./src/commands/commands.js* and replace the entire contents with the following code. Note that if the `insertDefaultGist` function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL. Doing so makes the settings dialog render the message bar that's defined in *./settings/dialog.html*, to tell the user why they're seeing the dialog.
 
 ```js
 var config;
@@ -814,7 +840,7 @@ function insertDefaultGist(event) {
     btnEvent = event;
     // Not configured yet, display settings dialog with
     // warn=1 to display warning.
-    var url = new URI('../src/settings/dialog.html?warn=1').absoluteTo(window.location).toString();
+    var url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
     var dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
