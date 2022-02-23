@@ -1,7 +1,7 @@
 ---
 title: Work with shapes using the PowerPoint JavaScript API
 description: 'Learn how to add, remove, and format shapes on PowerPoint slides.'
-ms.date: 10/06/2021
+ms.date: 02/22/2022
 ms.localizationpriority: medium
 ---
 
@@ -24,15 +24,15 @@ The following code sample creates a rectangle named **"Square"** that is positio
 ```js
 // This sample creates a rectangle positioned 100 points from the top and left sides
 // of the slide and is 150x150 points. The shape is put on the first slide.
-PowerPoint.run(function (context) {
-    var shapes = context.presentation.slides.getItemAt(0).shapes;
-    var rectangle = shapes.addGeometricShape(PowerPoint.GeometricShapeType.rectangle);
+await PowerPoint.run(async (context) => {
+    let shapes = context.presentation.slides.getItemAt(0).shapes;
+    let rectangle = shapes.addGeometricShape(PowerPoint.GeometricShapeType.rectangle);
     rectangle.left = 100;
     rectangle.top = 100;
     rectangle.height = 150;
     rectangle.width = 150;
     rectangle.name = "Square";
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -47,11 +47,11 @@ The following code sample creates a straight line on the slide.
 
 ```js
 // This sample creates a straight line on the first slide.
-PowerPoint.run(function (context) {
-    var shapes = context.presentation.slides.getItemAt(0).shapes;
-    var line = shapes.addLine(Excel.ConnectorType.straight, {left: 200, top: 50, height: 300, width: 150});
+await PowerPoint.run(async (context) => {
+    let shapes = context.presentation.slides.getItemAt(0).shapes;
+    let line = shapes.addLine(Excel.ConnectorType.straight, {left: 200, top: 50, height: 300, width: 150});
     line.name = "StraightLine";
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -63,15 +63,15 @@ The following code sample shows how to create a text box on the first slide.
 
 ```js
 // This sample creates a text box with the text "Hello!" and sizes it appropriately.
-PowerPoint.run(function (context) {
-    var shapes = context.presentation.slides.getItemAt(0).shapes;
-    var textbox = shapes.addTextBox("Hello!");
+await PowerPoint.run(async (context) => {
+    let shapes = context.presentation.slides.getItemAt(0).shapes;
+    let textbox = shapes.addTextBox("Hello!");
     textbox.left = 100;
     textbox.top = 100;
     textbox.height = 300;
     textbox.width = 450;
     textbox.name = "Textbox";
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -87,9 +87,9 @@ The following code sample creates a geometric shape named **"Braces"** with the 
 
 ```js
 // This sample creates a light blue rectangle with braces ("{}") on the left and right ends and adds the purple text "Shape text" to the center.
-PowerPoint.run(function (context) {
-    var shapes = context.presentation.slides.getItemAt(0).shapes;
-    var braces = shapes.addGeometricShape(PowerPoint.GeometricShapeType.bracePair);
+await PowerPoint.run(async (context) => {
+    let shapes = context.presentation.slides.getItemAt(0).shapes;
+    let braces = shapes.addGeometricShape(PowerPoint.GeometricShapeType.bracePair);
     braces.left = 100;
     braces.top = 400;
     braces.height = 50;
@@ -99,7 +99,7 @@ PowerPoint.run(function (context) {
     braces.textFrame.textRange.text = "Shape text";
     braces.textFrame.textRange.font.color = "purple";
     braces.textFrame.verticalAlignment = PowerPoint.TextVerticalAlignment.middleCentered;
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -110,20 +110,18 @@ Shapes are removed from the slide with the `Shape` object's `delete` method.
 The following code sample shows how to delete shapes.
 
 ```js
-PowerPoint.run(function (context) {
+await PowerPoint.run(async (context) => {
     // Delete all shapes from the first slide.
-    var sheet = context.presentation.slides.getItemAt(0);
-    var shapes = sheet.shapes;
+    let sheet = context.presentation.slides.getItemAt(0);
+    let shapes = sheet.shapes;
 
     // Load all the shapes in the collection without loading their properties.
     shapes.load("items/$none");
-    return context.sync()
-        .then(function () {
-            shapes.items.forEach(function (shape) {
-                shape.delete()
-            });
-            return context.sync();
-        })
-       .catch(errorHandlerFunction);
+    await context.sync();
+        
+    shapes.items.forEach(function (shape) {
+        shape.delete();
+    });
+    await context.sync();
 });
 ```
