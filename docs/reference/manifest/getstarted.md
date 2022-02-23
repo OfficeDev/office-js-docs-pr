@@ -25,8 +25,8 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 | Element                       | Required | Description                                        |
 |:------------------------------|:--------:|:---------------------------------------------------|
-| [Title](#title)               | Yes      | Defines where an add-in exposes functionality.     |
-| [Description](#description)   | Yes      | A URL to a file that contains JavaScript functions.|
+| [Title](#title)               | Yes      | The title used for the top of the callout.     |
+| [Description](#description)   | Yes      | The description / body content for the callout.|
 | [LearnMoreUrl](#learnmoreurl) | Yes       | A URL to a page that explains the add-in in detail.   |
 
 ### Title 
