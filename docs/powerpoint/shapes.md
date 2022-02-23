@@ -25,8 +25,8 @@ The following code sample creates a rectangle named **"Square"** that is positio
 // This sample creates a rectangle positioned 100 points from the top and left sides
 // of the slide and is 150x150 points. The shape is put on the first slide.
 await PowerPoint.run(async (context) => {
-    let shapes = context.presentation.slides.getItemAt(0).shapes;
-    let rectangle = shapes.addGeometricShape(PowerPoint.GeometricShapeType.rectangle);
+    const shapes = context.presentation.slides.getItemAt(0).shapes;
+    const rectangle = shapes.addGeometricShape(PowerPoint.GeometricShapeType.rectangle);
     rectangle.left = 100;
     rectangle.top = 100;
     rectangle.height = 150;
@@ -48,8 +48,8 @@ The following code sample creates a straight line on the slide.
 ```js
 // This sample creates a straight line on the first slide.
 await PowerPoint.run(async (context) => {
-    let shapes = context.presentation.slides.getItemAt(0).shapes;
-    let line = shapes.addLine(Excel.ConnectorType.straight, {left: 200, top: 50, height: 300, width: 150});
+    const shapes = context.presentation.slides.getItemAt(0).shapes;
+    const line = shapes.addLine(Excel.ConnectorType.straight, {left: 200, top: 50, height: 300, width: 150});
     line.name = "StraightLine";
     await context.sync();
 });
@@ -64,8 +64,8 @@ The following code sample shows how to create a text box on the first slide.
 ```js
 // This sample creates a text box with the text "Hello!" and sizes it appropriately.
 await PowerPoint.run(async (context) => {
-    let shapes = context.presentation.slides.getItemAt(0).shapes;
-    let textbox = shapes.addTextBox("Hello!");
+    const shapes = context.presentation.slides.getItemAt(0).shapes;
+    const textbox = shapes.addTextBox("Hello!");
     textbox.left = 100;
     textbox.top = 100;
     textbox.height = 300;
@@ -86,10 +86,11 @@ Geometric shapes can contain text. Shapes have a `textFrame` property of type [T
 The following code sample creates a geometric shape named **"Braces"** with the text **"Shape text"**. It also adjusts the shape and text colors, as well as sets the text's vertical alignment to the center.
 
 ```js
-// This sample creates a light blue rectangle with braces ("{}") on the left and right ends and adds the purple text "Shape text" to the center.
+// This sample creates a light blue rectangle with braces ("{}") on the left and right ends
+// and adds the purple text "Shape text" to the center.
 await PowerPoint.run(async (context) => {
-    let shapes = context.presentation.slides.getItemAt(0).shapes;
-    let braces = shapes.addGeometricShape(PowerPoint.GeometricShapeType.bracePair);
+    const shapes = context.presentation.slides.getItemAt(0).shapes;
+    const braces = shapes.addGeometricShape(PowerPoint.GeometricShapeType.bracePair);
     braces.left = 100;
     braces.top = 400;
     braces.height = 50;
@@ -112,8 +113,8 @@ The following code sample shows how to delete shapes.
 ```js
 await PowerPoint.run(async (context) => {
     // Delete all shapes from the first slide.
-    let sheet = context.presentation.slides.getItemAt(0);
-    let shapes = sheet.shapes;
+    const sheet = context.presentation.slides.getItemAt(0);
+    const shapes = sheet.shapes;
 
     // Load all the shapes in the collection without loading their properties.
     shapes.load("items/$none");

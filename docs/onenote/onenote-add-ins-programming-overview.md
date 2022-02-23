@@ -54,7 +54,7 @@ async function getPagesInSection() {
     await OneNote.run(async (context) => {
 
         // Get the pages in the current section.
-        var pages = context.application.getActiveSection().pages;
+        const pages = context.application.getActiveSection().pages;
 
         // Queue a command to load the id and title for each page.
         pages.load('id,title');
@@ -64,8 +64,8 @@ async function getPagesInSection() {
             
         // Read the id and title of each page.
         $.each(pages.items, function(index, page) {
-            var pageId = page.id;
-            var pageTitle = page.title;
+            let pageId = page.id;
+            let pageTitle = page.title;
             console.log(pageTitle + ': ' + pageId);
         });
     });
