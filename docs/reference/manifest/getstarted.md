@@ -1,7 +1,7 @@
 ---
 title: GetStarted element in the manifest file
 description: Provides information used by the callout that appears when the add-in is installed in Word, Excel, PowerPoint, and OneNote.
-ms.date: 02/17/2022
+ms.date: 02/22/2022
 ms.localizationpriority: medium
 ---
 
@@ -25,8 +25,8 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 | Element                       | Required | Description                                        |
 |:------------------------------|:--------:|:---------------------------------------------------|
-| [Title](#title)               | Yes      | Defines where an add-in exposes functionality.     |
-| [Description](#description)   | Yes      | A URL to a file that contains JavaScript functions.|
+| [Title](#title)               | Yes      | The title used for the top of the callout.     |
+| [Description](#description)   | Yes      | The description / body content for the callout.|
 | [LearnMoreUrl](#learnmoreurl) | Yes       | A URL to a page that explains the add-in in detail.   |
 
 ### Title 
