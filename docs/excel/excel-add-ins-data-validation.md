@@ -55,7 +55,7 @@ await Excel.run(async (context) => {
             }
         };
 
-    return context.sync();
+    await context.sync();
 });
 ```
 

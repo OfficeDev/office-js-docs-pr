@@ -400,7 +400,7 @@ await Excel.run(async (context) => {
     pivotTable.hierarchies.items.forEach(function (hierarchy) {
         hierarchy.fields.getItem(hierarchy.name).clearAllFilters();
     });
-    return context.sync();
+    await context.sync();
 });
 ```
 
