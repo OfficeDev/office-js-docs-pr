@@ -1,7 +1,7 @@
 ---
 title: Word add-ins overview
 description: 'Learn the basics of Word Add-ins.'
-ms.date: 10/14/2020
+ms.date: 02/24/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -24,13 +24,13 @@ The following figure shows an example of a Word add-in that runs in a task pane.
 The Word add-in (1) can send requests to the Word document (2) and can use JavaScript to access the paragraph object and update, delete, or move the paragraph. For example, the following code shows how to append a new sentence to that paragraph.
 
 ```js
-Word.run(function (context) {
-    var paragraphs = context.document.getSelection().paragraphs;
+await Word.run(async (context) => {
+    const paragraphs = context.document.getSelection().paragraphs;
     paragraphs.load();
-    return context.sync().then(function () {
-        paragraphs.items[0].insertText(' New sentence in the paragraph.',
+    await context.sync();
+    paragraphs.items[0].insertText(' New sentence in the paragraph.',
                                        Word.InsertLocation.end);
-    }).then(context.sync);
+    await context.sync();
 });
 
 ```
