@@ -914,7 +914,7 @@ function buildBodyContent(gist, callback) {
         // We have a winner.
         switch (file.language) {
           case 'HTML':
-            // Insert as-is.
+            // Insert as is.
             callback(file.content);
             break;
           case 'Markdown':
