@@ -1145,11 +1145,8 @@ ul {
       -webkit-flex: 1 0 0px;
               flex: 1 0 0px;
       padding: 20px; }
-      .ms-landing-page__footer--left:active, .ms-landing-page__footer--left:hover {
-        background: #005ca4;
-        cursor: pointer; }
       .ms-landing-page__footer--left:active {
-        background: #005ca4; }
+        cursor: default; }
       .ms-landing-page__footer--left--disabled {
         opacity: 0.6;
         pointer-events: none;
