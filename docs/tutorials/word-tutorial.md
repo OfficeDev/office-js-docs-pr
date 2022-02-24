@@ -401,7 +401,7 @@ In all previous functions in this series of tutorials, you queued commands to *w
 
 These steps must be completed whenever your code needs to *read* information from the Office document.
 
-1. Within the `insertTextIntoRange()` function, replace `TODO3` with the following code.
+1. Within the `insertTextIntoRange()` function, replace `TODO2` with the following code.
   
     ```js
     originalRange.load("text");
