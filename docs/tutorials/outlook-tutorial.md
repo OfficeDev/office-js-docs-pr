@@ -372,7 +372,7 @@ Let's start by creating the UI for the dialog itself. Within the *./src* folder,
 </html>
 ```
 
-You may have noticed that the JavaScript file, *gist-api.js*, is referenced above, but doesn't yet exist. This file will be created in the [Fetch data from GitHub](#fetch-data-from-github) section below.
+You may have noticed that the HTML file references a JavaScript file, *gist-api.js*, that doesn't yet exist. This file will be created in the [Fetch data from GitHub](#fetch-data-from-github) section below.
 
 Next, create a file in the *./src/settings* folder named *dialog.css*, and add the following code to specify the styles that are used by *dialog.html*.
 
@@ -641,94 +641,81 @@ Finally, open the *webpack.config.js* file from the root directory of the projec
 
 The *dialog.js* file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field. To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).
 
-1. Within the *./src* folder, create a new subfolder named *helpers*.
+Within the *./src* folder, create a new subfolder named *helpers*. In the *./src/helpers* folder, create a file named *gist-api.js*, and add the following code to retrieve the user's gists from GitHub and build the list of gists.
 
-1. In the *./src/helpers* folder, create a file named *gist-api.js*, and add the following code to retrieve the user's gists from GitHub and build the list of gists.
+```js
+function getUserGists(user, callback) {
+  var requestUrl = 'https://api.github.com/users/' + user + '/gists';
 
-    ```js
-    function getUserGists(user, callback) {
-      var requestUrl = 'https://api.github.com/users/' + user + '/gists';
-    
-      $.ajax({
-        url: requestUrl,
-        dataType: 'json'
-      }).done(function(gists){
-        callback(gists);
-      }).fail(function(error){
-        callback(null, error);
-      });
-    }
-    
-    function buildGistList(parent, gists, clickFunc) {
-      gists.forEach(function(gist) {
-    
-        var listItem = $('<div/>')
-          .appendTo(parent);
-    
-        var radioItem = $('<input>')
-          .addClass('ms-ListItem')
-          .addClass('is-selectable')
-          .attr('type', 'radio')
-          .attr('name', 'gists')
-          .attr('tabindex', 0)
-          .val(gist.id)
-          .appendTo(listItem);
-    
-        var desc = $('<span/>')
-          .addClass('ms-ListItem-primaryText')
-          .text(gist.description)
-          .appendTo(listItem);
-    
-        var desc = $('<span/>')
-          .addClass('ms-ListItem-secondaryText')
-          .text(' - ' + buildFileList(gist.files))
-          .appendTo(listItem);
-    
-        var updated = new Date(gist.updated_at);
-    
-        var desc = $('<span/>')
-          .addClass('ms-ListItem-tertiaryText')
-          .text(' - Last updated ' + updated.toLocaleString())
-          .appendTo(listItem);
-    
-        listItem.on('click', clickFunc);
-      });  
-    }
-    
-    function buildFileList(files) {
-    
-      var fileList = '';
-    
-      for (var file in files) {
-        if (files.hasOwnProperty(file)) {
-          if (fileList.length > 0) {
-            fileList = fileList + ', ';
-          }
-    
-          fileList = fileList + files[file].filename + ' (' + files[file].language + ')';
-        }
+  $.ajax({
+    url: requestUrl,
+    dataType: 'json'
+  }).done(function(gists){
+    callback(gists);
+  }).fail(function(error){
+    callback(null, error);
+  });
+}
+
+function buildGistList(parent, gists, clickFunc) {
+  gists.forEach(function(gist) {
+
+    var listItem = $('<div/>')
+      .appendTo(parent);
+
+    var radioItem = $('<input>')
+      .addClass('ms-ListItem')
+      .addClass('is-selectable')
+      .attr('type', 'radio')
+      .attr('name', 'gists')
+      .attr('tabindex', 0)
+      .val(gist.id)
+      .appendTo(listItem);
+
+    var desc = $('<span/>')
+      .addClass('ms-ListItem-primaryText')
+      .text(gist.description)
+      .appendTo(listItem);
+
+    var desc = $('<span/>')
+      .addClass('ms-ListItem-secondaryText')
+      .text(' - ' + buildFileList(gist.files))
+      .appendTo(listItem);
+
+    var updated = new Date(gist.updated_at);
+
+    var desc = $('<span/>')
+      .addClass('ms-ListItem-tertiaryText')
+      .text(' - Last updated ' + updated.toLocaleString())
+      .appendTo(listItem);
+
+    listItem.on('click', clickFunc);
+  });  
+}
+
+function buildFileList(files) {
+
+  var fileList = '';
+
+  for (var file in files) {
+    if (files.hasOwnProperty(file)) {
+      if (fileList.length > 0) {
+        fileList = fileList + ', ';
       }
-    
-      return fileList;
+
+      fileList = fileList + files[file].filename + ' (' + files[file].language + ')';
     }
-    ```
+  }
 
-1. If the web server is running, close the node command window.
+  return fileList;
+}
+```
 
-1. Run the following command to rebuild the project.
+Run the following command to rebuild the project.
 
-    ```command&nbsp;line
-    npm run build
-    ```
-
-1. Run the following command to start the web server and sideload your add-in.
-
-    ```command&nbsp;line
-    npm start
-    ```
-
-> [!NOTE]
-> You may have noticed that there's no button to invoke the settings dialog. Instead, the add-in will check whether it has been configured when the user selects either the **Insert default gist** button or the **Insert gist** button. If the add-in has not yet been configured, the settings dialog will prompt the user to configure before proceeding.
+```command&nbsp;line
+npm run build
+```
 
 ## Implement a UI-less button
 
@@ -873,7 +860,7 @@ g.insertDefaultGist = insertDefaultGist;
 
 ### Create a file to manage configuration settings
 
-The HTML function file references a file named *addin-config.js*, which doesn't yet exist. Create a file named *addin-config.js* in the *./src/helpers* folder and add the following code. This code uses the [RoamingSettings object](/javascript/api/outlook/office.roamingsettings) to get and set configuration values.
+The HTML function file references a file named *addin-config.js*, which doesn't yet exist. In the *./src/helpers* folder, create a file named *addin-config.js* and add the following code. This code uses the [RoamingSettings object](/javascript/api/outlook/office.roamingsettings) to get and set configuration values.
 
 ```js
 function getConfig() {
@@ -951,7 +938,7 @@ function buildBodyContent(gist, callback) {
 }
 ```
 
-### Test the button
+### Test the Insert default gist button
 
 Save all of your changes and run `npm start` from the command prompt, if the server isn't already running. Then complete the following steps to test the **Insert default gist** button.
 
@@ -1312,7 +1299,7 @@ In the project that you've created, the task pane JavaScript is specified in the
 })();
 ```
 
-### Test the button
+### Test the Insert gist button
 
 Save all of your changes and run `npm start` from the command prompt, if the server isn't already running. Then complete the following steps to test the **Insert gist** button.
 
