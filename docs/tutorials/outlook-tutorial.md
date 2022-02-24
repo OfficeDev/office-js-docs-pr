@@ -183,17 +183,17 @@ Open the **manifest.xml** file and locate the **ExtensionPoint** element with ty
 
 ### Add the MessageComposeCommandSurface extension point
 
-Locate the line in the manifest that reads **</DesktopFormFactor>**. Immediately before this line, insert the following XML markup. Note the following about this markup.
+Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately before this line, insert the following XML markup. Note the following about this markup.
 
-- The **ExtensionPoint** with **xsi:type="MessageComposeCommandSurface"** indicates that you're defining buttons to add to the compose message window.
+- The **ExtensionPoint** with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.
 
-- By using an **OfficeTab** element with **id="TabDefault"**, you're indicating you want to add the buttons to the default tab on the ribbon.
+- By using an **OfficeTab** element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.
 
 - The **Group** element defines the grouping for the new buttons, with a label set by the **groupLabel** resource.
 
-- The first **Control** element contains an **Action** element with **xsi:type="ShowTaskPane"**, so this button opens a task pane.
+- The first **Control** element contains an **Action** element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.
 
-- The second **Control** element contains an **Action** element with **xsi:type="ExecuteFunction"**, so this button invokes a JavaScript function contained in the function file.
+- The second **Control** element contains an **Action** element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.
 
 ```xml
 <!-- Message Compose -->
