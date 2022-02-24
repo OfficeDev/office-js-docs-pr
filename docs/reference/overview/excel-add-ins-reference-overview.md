@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API overview
 description: 'Learn more about the Excel JavaScript API'
-ms.date: 04/05/2021
+ms.date: 02/23/2022
 ms.prod: excel
 ms.localizationpriority: high
 ---
@@ -31,6 +31,7 @@ Each major Excel API feature has an article or set of articles exploring what th
 * [Conditional formatting](../../excel/excel-add-ins-conditional-formatting.md)
 * [Custom functions](../../excel/custom-functions-overview.md)
 * [Data validation](../../excel/excel-add-ins-data-validation.md)
+* [Data types](../../excel/excel-data-types-overview.md)
 * [Events](../../excel/excel-add-ins-events.md)
 * [PivotTables](../../excel/excel-add-ins-pivottables.md)
 * [Ranges](../../excel/excel-add-ins-ranges-get.md) and [Cells](../../excel/excel-add-ins-cells.md)
