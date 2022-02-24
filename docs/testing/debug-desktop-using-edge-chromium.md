@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
-description: 'Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) in VS Code.'
-ms.date: 02/01/2022
+description: Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) in VS Code.
+ms.date: 02/18/2022
 ms.localizationpriority: high
 ---
 # Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
@@ -62,8 +62,7 @@ These instructions assume you have experience using the command line, understand
 
    Select **OK**.
 
-   > [!NOTE]
-   > If you select **Cancel**, the dialog won't be shown again while this instance of the add-in is running. However, if you restart your add-in, you'll see the dialog again.
+   [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
 
 1. You're now able to set breakpoints in your project's code and debug. To set breakpoints in Visual Studio Code, hover next to a line of code and select the red circle that appears.
 
