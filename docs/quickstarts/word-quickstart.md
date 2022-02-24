@@ -163,11 +163,11 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
             await Word.run(async (context) => {
 
                 // Create a proxy object for the document.
-                let thisDocument = context.document;
+                const thisDocument = context.document;
 
                 // Queue a command to get the current selection.
                 // Create a proxy range object for the selection.
-                let range = thisDocument.getSelection();
+                const range = thisDocument.getSelection();
 
                 // Queue a command to replace the selected text.
                 range.insertText('"Hitch your wagon to a star."\n', Word.InsertLocation.replace);
@@ -189,7 +189,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
             await Word.run(async (context) => {
 
                 // Create a proxy object for the document body.
-                let body = context.document.body;
+                const body = context.document.body;
 
                 // Queue a command to insert text at the start of the document body.
                 body.insertText('"Knowledge is of no value unless you put it into practice."\n', Word.InsertLocation.start);
@@ -211,7 +211,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
             await Word.run(async (context) => {
 
                 // Create a proxy object for the document body.
-                let body = context.document.body;
+                const body = context.document.body;
 
                 // Queue a command to insert text at the end of the document body.
                 body.insertText('"To know the road ahead, ask those coming back."\n', Word.InsertLocation.end);
