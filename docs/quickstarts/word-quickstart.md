@@ -147,9 +147,9 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
                 // Use this to check whether the API is supported in the Word client.
                 if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
                     // Do something that is only available via the new APIs
-                    $('#emerson').click(() => tryCatch(insertEmersonQuoteAtSelection));
-                    $('#checkhov').click(() => tryCatch(insertChekhovQuoteAtTheBeginning));
-                    $('#proverb').click(() => tryCatch(insertChineseProverbAtTheEnd));
+                    $('#emerson').click(insertEmersonQuoteAtSelection);
+                    $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
+                    $('#proverb').click(insertChineseProverbAtTheEnd);
                     $('#supportedVersion').html('This code is using Word 2016 or later.');
                 }
                 else {
@@ -177,6 +177,12 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
                 await context.sync();
                 console.log('Added a quote from Ralph Waldo Emerson.');
             });
+            .catch(function (error) {
+                console.log('Error: ' + JSON.stringify(error));
+                if (error instanceof OfficeExtension.Error) {
+                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+                }
+            });
         }
 
         async function insertChekhovQuoteAtTheBeginning() {
@@ -192,6 +198,12 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
                 // and return a promise to indicate task completion.
                 await context.sync();
                 console.log('Added a quote from Anton Chekhov.');
+            });
+            .catch(function (error) {
+                console.log('Error: ' + JSON.stringify(error));
+                if (error instanceof OfficeExtension.Error) {
+                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+                }
             });
         }
 
@@ -209,18 +221,12 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
                 await context.sync();
                 console.log('Added a quote from a Chinese proverb.');
             });
-        }
-
-        /** Default helper for invoking an action and handling errors. */
-        async function tryCatch(callback) {
-            try {
-                await callback();
-            } catch (error) {
+            .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
                 if (error instanceof OfficeExtension.Error) {
                     console.log('Debug info: ' + JSON.stringify(error.debugInfo));
                 }
-            }
+            });
         }
     })();
     ```
