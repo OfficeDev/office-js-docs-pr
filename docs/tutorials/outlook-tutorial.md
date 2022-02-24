@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Build a message compose Outlook add-in
+title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
 ms.date: 02/23/2022
 ms.prod: outlook
@@ -113,7 +113,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
 1. This add-in will use the following libraries.
 
-    - [Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML
+    - [Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML.
     - [URI.js](https://github.com/medialize/URI.js) library to build relative URLs.
     - [jquery](https://jquery.com/) library to simplify DOM interactions.
 
@@ -141,7 +141,7 @@ Make the following updates in the **manifest.xml** file to specify some basic in
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. Locate the `Description` element, replace the default value with a description of the add-in, and save the file.
+1. Locate the **Description** element, replace the default value with a description of the add-in, and save the file.
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
@@ -179,21 +179,21 @@ Now that you've verified the base add-in works, you can customize it to add more
 
 ### Remove the MessageReadCommandSurface extension point
 
-Open the **manifest.xml** file and locate the `ExtensionPoint` element with type `MessageReadCommandSurface`. Delete this `ExtensionPoint` element (including its closing tag) to remove the buttons from the read message window.
+Open the **manifest.xml** file and locate the **ExtensionPoint** element with type **MessageReadCommandSurface**. Delete this **ExtensionPoint** element (including its closing tag) to remove the buttons from the read message window.
 
 ### Add the MessageComposeCommandSurface extension point
 
-Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately before this line, insert the following XML markup. Note the following about this markup.
+Locate the line in the manifest that reads **</DesktopFormFactor>**. Immediately before this line, insert the following XML markup. Note the following about this markup.
 
-- The `ExtensionPoint` with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.
+- The **ExtensionPoint** with **xsi:type="MessageComposeCommandSurface"** indicates that you're defining buttons to add to the compose message window.
 
-- By using an `OfficeTab` element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.
+- By using an **OfficeTab** element with **id="TabDefault"**, you're indicating you want to add the buttons to the default tab on the ribbon.
 
-- The `Group` element defines the grouping for the new buttons, with a label set by the `groupLabel` resource.
+- The **Group** element defines the grouping for the new buttons, with a label set by the **groupLabel** resource.
 
-- The first `Control` element contains an `Action` element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.
+- The first **Control** element contains an **Action** element with **xsi:type="ShowTaskPane"**, so this button opens a task pane.
 
-- The second `Control` element contains an `Action` element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.
+- The second **Control** element contains an **Action** element with **xsi:type="ExecuteFunction"**, so this button invokes a JavaScript function contained in the function file.
 
 ```xml
 <!-- Message Compose -->
@@ -238,11 +238,11 @@ Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately b
 
 ### Update resources in the manifest
 
-The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the `Resources` section of the manifest.
+The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the **Resources** section of the manifest.
 
-1. Locate the `Resources` element in the manifest file and delete the entire element (including its closing tag).
+1. Locate the **Resources** element in the manifest file and delete the entire element (including its closing tag).
 
-1. In that same location, add the following markup to replace the `Resources` element you just removed.
+1. In that same location, add the following markup to replace the **Resources** element you just removed.
 
     ```xml
     <Resources>
@@ -948,7 +948,7 @@ Save all of your changes and run `npm start` from the command prompt, if the ser
 
     ![Screenshot of the dialog prompt to configure the add-in.](../images/addin-prompt-configure.png)
 
-1. In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the `change` event, which should load your list of public gists. Select a gist to be the default, and select **Done**.
+1. In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the **change** event, which should load your list of public gists. Select a gist to be the default, and select **Done**.
 
     ![Screenshot of the add-in's settings dialog.](../images/addin-settings.png)
 
