@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Build a message compose Outlook add-in'
-description: 'In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.'
+title: Tutorial: Build a message compose Outlook add-in
+description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
 ms.date: 02/23/2022
 ms.prod: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
@@ -23,7 +23,7 @@ In this tutorial, you will:
 
 ## Prerequisites
 
-- [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+[!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - [Visual Studio Code (VS Code)](https://code.visualstudio.com/) or your preferred code editor
 
@@ -39,9 +39,9 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
 1. [Create a new gist](https://gist.github.com).
 
-    - In the **Gist description...** field, enter *Hello World Markdown*.
+    - In the **Gist description...** field, enter **Hello World Markdown**.
 
-    - In the **Filename including extension...** field, enter *test.md*.
+    - In the **Filename including extension...** field, enter **test.md**.
 
     - Add the following markdown to the multiline textbox.
 
@@ -63,9 +63,9 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
 1. [Create another new gist](https://gist.github.com).
 
-    - In the **Gist description...** field, enter *Hello World Html*.
+    - In the **Gist description...** field, enter **Hello World Html**.
 
-    - In the **Filename including extension...** field, enter *test.html*.
+    - In the **Filename including extension...** field, enter **test.html**.
 
     - Add the following markdown to the multiline textbox.
 
@@ -133,9 +133,9 @@ The manifest for an add-in controls how it appears in Outlook. It defines the wa
 
 #### Specify basic information
 
-Make the following updates in the *manifest.xml* file to specify some basic information about the add-in.
+Make the following updates in the **manifest.xml** file to specify some basic information about the add-in.
 
-1. Locate the `ProviderName` element and replace the default value with your company name.
+1. Locate the **ProviderName** element and replace the default value with your company name.
 
     ```xml
     <ProviderName>Contoso</ProviderName>
@@ -179,7 +179,7 @@ Now that you've verified the base add-in works, you can customize it to add more
 
 ### Remove the MessageReadCommandSurface extension point
 
-Open the *manifest.xml* file and locate the `ExtensionPoint` element with type `MessageReadCommandSurface`. Delete this `ExtensionPoint` element (including its closing tag) to remove the buttons from the read message window.
+Open the **manifest.xml** file and locate the `ExtensionPoint` element with type `MessageReadCommandSurface`. Delete this `ExtensionPoint` element (including its closing tag) to remove the buttons from the read message window.
 
 ### Add the MessageComposeCommandSurface extension point
 
@@ -299,7 +299,7 @@ This add-in needs to be able to read gists from the user's GitHub account and id
 
 ### Collect data from the user
 
-Let's start by creating the UI for the dialog itself. Within the *./src* folder, create a new subfolder named *settings*. In the *./src/settings* folder, create a file named *dialog.html*, and add the following markup to define a basic form with a text input for a GitHub username and an empty list for gists that'll be populated via JavaScript.
+Let's start by creating the UI for the dialog itself. Within the **./src** folder, create a new subfolder named **settings**. In the **./src/settings** folder, create a file named **dialog.html**, and add the following markup to define a basic form with a text input for a GitHub username and an empty list for gists that'll be populated via JavaScript.
 
 ```html
 <!DOCTYPE html>
@@ -372,9 +372,9 @@ Let's start by creating the UI for the dialog itself. Within the *./src* folder,
 </html>
 ```
 
-You may have noticed that the HTML file references a JavaScript file, *gist-api.js*, that doesn't yet exist. This file will be created in the [Fetch data from GitHub](#fetch-data-from-github) section below.
+You may have noticed that the HTML file references a JavaScript file, **gist-api.js**, that doesn't yet exist. This file will be created in the [Fetch data from GitHub](#fetch-data-from-github) section below.
 
-Next, create a file in the *./src/settings* folder named *dialog.css*, and add the following code to specify the styles that are used by *dialog.html*.
+Next, create a file in the **./src/settings** folder named **dialog.css**, and add the following code to specify the styles that are used by **dialog.html**.
 
 ```CSS
 section {
@@ -409,7 +409,7 @@ ul {
 }
 ```
 
-Now that you've defined the dialog UI, you can write the code that makes it actually do something. Create a file in the *./src/settings* folder named *dialog.js* and add the following code. Note that this code uses jQuery to register events and uses the `messageParent` function to send the user's choices back to the caller.
+Now that you've defined the dialog UI, you can write the code that makes it actually do something. Create a file in the **./src/settings** folder named **dialog.js** and add the following code. Note that this code uses jQuery to register events and uses the **messageParent** function to send the user's choices back to the caller.
 
 ```js
 (function(){
@@ -515,7 +515,7 @@ Now that you've defined the dialog UI, you can write the code that makes it actu
 
 #### Update webpack config settings
 
-Finally, open the *webpack.config.js* file from the root directory of the project and complete the following steps.
+Finally, open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
 
 1. Locate the `entry` object within the `config` object and add a new entry for `dialog`.
 
@@ -534,7 +534,7 @@ Finally, open the *webpack.config.js* file from the root directory of the projec
     },
     ```
 
-1. Locate the `plugins` array within the `config` object. In the `patterns` array of the `new CopyWebpackPlugin` object, add new entries for `taskpane.css` and `dialog.css`.
+1. Locate the `plugins` array within the `config` object. In the `patterns` array of the `new CopyWebpackPlugin` object, add new entries for **taskpane.css** and **dialog.css**.
 
     ```js
     {
@@ -639,9 +639,9 @@ Finally, open the *webpack.config.js* file from the root directory of the projec
 
 ### Fetch data from GitHub
 
-The *dialog.js* file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field. To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).
+The **dialog.js** file you just created specifies that the add-in should load gists when the **change** event fires for the GitHub username field. To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).
 
-Within the *./src* folder, create a new subfolder named *helpers*. In the *./src/helpers* folder, create a file named *gist-api.js*, and add the following code to retrieve the user's gists from GitHub and build the list of gists.
+Within the **./src** folder, create a new subfolder named **helpers**. In the **./src/helpers** folder, create a file named **gist-api.js**, and add the following code to retrieve the user's gists from GitHub and build the list of gists.
 
 ```js
 function getUserGists(user, callback) {
@@ -727,9 +727,9 @@ This add-in's **Insert default gist** button is a UI-less button that will invok
 
 ### Update the function file (HTML)
 
-A function that's invoked by a UI-less button must be defined in the file that's specified by the `FunctionFile` element in the manifest for the corresponding form factor. This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.
+A function that's invoked by a UI-less button must be defined in the file that's specified by the **FunctionFile** element in the manifest for the corresponding form factor. This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.
 
-Open the file *./src/commands/commands.html* and replace the entire contents with the following markup.
+Open the file **./src/commands/commands.html** and replace the entire contents with the following markup.
 
 ```html
 <!DOCTYPE html>
@@ -757,11 +757,11 @@ Open the file *./src/commands/commands.html* and replace the entire contents wit
 </html>
 ```
 
-You may have noticed that the HTML file references a JavaScript file, *addin-config.js*, that doesn't yet exist. This file will be created in the [Create a file to manage configuration settings](#create-a-file-to-manage-configuration-settings) section below.
+You may have noticed that the HTML file references a JavaScript file, **addin-config.js**, that doesn't yet exist. This file will be created in the [Create a file to manage configuration settings](#create-a-file-to-manage-configuration-settings) section later in this tutorial.
 
 ### Update the function file (JavaScript)
 
-Open the file *./src/commands/commands.js* and replace the entire contents with the following code. Note that if the `insertDefaultGist` function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL. Doing so makes the settings dialog render the message bar that's defined in *./src/settings/dialog.html*, to tell the user why they're seeing the dialog.
+Open the file **./src/commands/commands.js** and replace the entire contents with the following code. Note that if the **insertDefaultGist** function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL. Doing so makes the settings dialog render the message bar that's defined in **./src/settings/dialog.html**, to tell the user why they're seeing the dialog.
 
 ```js
 var config;
@@ -860,7 +860,7 @@ g.insertDefaultGist = insertDefaultGist;
 
 ### Create a file to manage configuration settings
 
-The HTML function file references a file named *addin-config.js*, which doesn't yet exist. In the *./src/helpers* folder, create a file named *addin-config.js* and add the following code. This code uses the [RoamingSettings object](/javascript/api/outlook/office.roamingsettings) to get and set configuration values.
+The HTML function file references a file named **addin-config.js**, which doesn't yet exist. In the **./src/helpers** folder, create a file named **addin-config.js** and add the following code. This code uses the [RoamingSettings object](/javascript/api/outlook/office.roamingsettings) to get and set configuration values.
 
 ```js
 function getConfig() {
@@ -882,9 +882,9 @@ function setConfig(config, callback) {
 
 ### Create new functions to process gists
 
-Next, open the *./src/helpers/gist-api.js* file and add the following functions. Note the following:
+Next, open the **./src/helpers/gist-api.js** file and add the following functions. Note the following:
 
-- If the gist contains HTML, the add-in will insert the HTML as-is into the body of the message.
+- If the gist contains HTML, the add-in will insert the HTML as is into the body of the message.
 
 - If the gist contains Markdown, the add-in will use the [Showdown](https://github.com/showdownjs/showdown) library to convert the Markdown to HTML, and will then insert the resulting HTML into the body of the message.
 
@@ -963,7 +963,7 @@ This add-in's **Insert gist** button will open a task pane and display the user'
 
 ### Specify the HTML for the task pane
 
-In the project that you've created, the task pane HTML is specified in the file *./src/taskpane/taskpane.html*. Open that file and replace the entire contents with the following markup.
+In the project that you've created, the task pane HTML is specified in the file **./src/taskpane/taskpane.html**. Open that file and replace the entire contents with the following markup.
 
 ```html
 <!DOCTYPE html>
@@ -1027,7 +1027,7 @@ In the project that you've created, the task pane HTML is specified in the file 
 
 ### Specify the CSS for the task pane
 
-In the project that you've created, the task pane CSS is specified in the file *./src/taskpane/taskpane.css*. Open that file and replace the entire contents with the following code.
+In the project that you've created, the task pane CSS is specified in the file **./src/taskpane/taskpane.css**. Open that file and replace the entire contents with the following code.
 
 ```css
 /* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in root of repo. */
@@ -1184,7 +1184,7 @@ ul {
 
 ### Specify the JavaScript for the task pane
 
-In the project that you've created, the task pane JavaScript is specified in the file *./src/taskpane/taskpane.js*. Open that file and replace the entire contents with the following code.
+In the project that you've created, the task pane JavaScript is specified in the file **./src/taskpane/taskpane.js**. Open that file and replace the entire contents with the following code.
 
 ```js
 (function(){

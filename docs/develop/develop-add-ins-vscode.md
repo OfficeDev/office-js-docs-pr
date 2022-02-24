@@ -1,6 +1,6 @@
 ---
 title: Develop Office Add-ins with Visual Studio Code
-description: 'How to develop Office Add-ins with Visual Studio Code.'
+description: How to develop Office Add-ins with Visual Studio Code.
 ms.date: 02/18/2022
 ms.localizationpriority: high
 ---
