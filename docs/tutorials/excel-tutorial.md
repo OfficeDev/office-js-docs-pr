@@ -658,18 +658,9 @@ These steps must be completed whenever your code needs to *read* information fro
     await context.sync();
 
     // TODO3: Move the queued toggle logic here.
-
-    // TODO4: Move the final call of `context.sync` here and ensure that it
-    //        does not run until the toggle logic has been queued.
     ```
 
 1. Cut the `if ... else` structure in the `toggleProtection` function and paste it in place of `TODO3`.
-
-1. Replace `TODO4` with the following code.
-
-    ```js
-    await context.sync();
-    ```
 
    When you are done, the entire function should look like the following:
 
