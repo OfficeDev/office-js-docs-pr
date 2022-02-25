@@ -181,7 +181,7 @@ await Excel.run(async (context) => {
         console.log(`Deleting worksheet named "${lastSheet.name}"`);
         lastSheet.delete();
 
-        return context.sync();
+        await context.sync();
     }
 });
 ```
