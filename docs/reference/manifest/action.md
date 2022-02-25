@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Action element
 
-Specifies the action to perform when the user selects a  [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls) control.
+Specifies the action to perform when the user selects a  [Button](control-button.md) or [Menu](control-menu.md) control.
 
 **Valid only in these VersionOverrides schemas**:
 
