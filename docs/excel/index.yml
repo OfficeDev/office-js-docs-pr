@@ -33,7 +33,7 @@ landingContent:
         links:
           - text: Use the Excel JavaScript API to interact with objects and workbook content
             url: ../reference/overview/excel-add-ins-reference-overview.md
-          - text: Add data types to Excel add-ins (preview)
+          - text: Use data types in an Excel add-in (preview)
             url: excel-data-types-overview.md
           - text: Add custom functions to Excel
             url: custom-functions-overview.md           
