@@ -651,16 +651,12 @@ These steps must be completed whenever your code needs to *read* information fro
 
    - Every Excel object has a `load` method. You specify the properties of the object that you want to read in the parameter as a string of comma-delimited names. In this case, the property you need to read is a subproperty of the `protection` property. You reference the subproperty almost exactly as you would anywhere else in your code, with the exception that you use a forward slash ('/') character instead of a "." character.
 
-   - To ensure that the toggle logic, which reads `sheet.protection.protected`, does not run until after the `sync` is complete and the `sheet.protection.protected` has been assigned the correct value that is fetched from the document, it will be moved (in the next step) after the `await` operator ensures `sync` has completed.
+   - To ensure that the toggle logic, which reads `sheet.protection.protected`, doesn't run until after the `sync` is complete and the `sheet.protection.protected` has been assigned the correct value that is fetched from the document, it must come after the `await` operator ensures `sync` has completed.
 
     ```js
     sheet.load('protection/protected');
     await context.sync();
-
-    // TODO3: Move the queued toggle logic here.
     ```
-
-1. Cut the `if ... else` structure in the `toggleProtection` function and paste it in place of `TODO3`.
 
    When you are done, the entire function should look like the following:
 
