@@ -1,7 +1,7 @@
 ---
 title: Host element in the manifest file
 description: Specifies an individual Office application type where the add-in should activate.
-ms.date: 11/05/2019
+ms.date: 02/25/2022
 ms.localizationpriority: medium
 ---
 
@@ -48,13 +48,25 @@ Specifies the Host type targeted by this add-in. The value must be one of the fo
 
 ## VersionOverrides node
 
-When defined in [VersionOverrides](versionoverrides.md), the host type is determined by the `xsi:type` attribute.
+When defined in [VersionOverrides](versionoverrides.md), the host type is determined by the `xsi:type` attribute. 
+
+This element overrides the **Hosts** element in the basic manifest.
+
+**Add-in type:** Task pane, Mail
+
+**Valid only in these VersionOverrides schemas**:
+
+- Task pane 1.0
+- Mail 1.0
+- Mail 1.1
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 ### Attributes
 
 |  Attribute  |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  Yes  | Describes the Office application where these settings apply.|
+|  [xsi:type](#xsitype)  |  Yes  | Specifies the Office application where these settings apply.|
 
 ### Child elements
 
