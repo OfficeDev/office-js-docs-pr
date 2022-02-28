@@ -51,7 +51,7 @@ This attribute specifies the kind of action performed when the user selects the 
 
 ## FunctionName
 
-Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.
+Required element when **xsi:type** is `ExecuteFunction`. Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -61,7 +61,7 @@ Required element when **xsi:type** is "ExecuteFunction". Specifies the name of t
 
 ## SourceLocation
 
-Required element when **xsi:type** is "ShowTaskpane". Specifies the source file location for this action. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the [Resources](resources.md) element.
+Required element when **xsi:type** is `ShowTaskpane`. Specifies the source file location for this action. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the [Resources](resources.md) element.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
