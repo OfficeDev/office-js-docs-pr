@@ -71,7 +71,7 @@ Required element when **xsi:type** is `ShowTaskpane`. Specifies the source file 
 
 ## TaskpaneId
 
-Optional element when  **xsi:type** is "ShowTaskpane". Specifies the ID of the task pane container. When you have multiple "ShowTaskpane" actions, use a different **TaskpaneId** if you want an independent pane for each. Use the same **TaskpaneId** for  different actions that share the same pane. When users choose commands that share the same **TaskpaneId**, the pane container will remain open but the contents of the pane will be replaced with the corresponding Action "SourceLocation".
+Optional element when  **xsi:type** is `ShowTaskpane`. Specifies the ID of the task pane container. When you have multiple `ShowTaskpane` actions, use a different **TaskpaneId** if you want an independent pane for each. Use the same **TaskpaneId** for  different actions that share the same pane. When users choose commands that share the same **TaskpaneId**, the pane container will remain open but the contents of the pane will be replaced with the corresponding Action `SourceLocation`.
 
 **Add-in type:** Task pane
 
@@ -125,7 +125,7 @@ The following examples show two actions that use a different **TaskpaneId**. To 
 
 ## Title
 
-Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action.
+Optional element when  **xsi:type** is `ShowTaskpane`. Specifies the custom title for the task pane for this action.
 
 **Add-in type:** Task pane
 
@@ -167,7 +167,7 @@ The following example shows an action that uses the **Title** element. Note that
 
 ## SupportsPinning
 
-Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support task pane pinning. The user will be able to "pin" the task pane, causing it to stay open when changing the selection. For more information, see [Implement a pinnable task pane in Outlook](../../outlook/pinnable-taskpane.md).
+Optional element when **xsi:type** is `ShowTaskpane`. The containing [VersionOverrides](versionoverrides.md) elements must have an **xsi:type** attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support task pane pinning. The user will be able to "pin" the task pane, causing it to stay open when changing the selection. For more information, see [Implement a pinnable task pane in Outlook](../../outlook/pinnable-taskpane.md).
 
 **Add-in type:** Mail
 
@@ -182,7 +182,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 - [Mailbox 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)
 
 > [!IMPORTANT]
-> Although the `SupportsPinning` element was introduced in [requirement set 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), it's currently only supported for Microsoft 365 subscribers using the following:
+> Although the **SupportsPinning** element was introduced in [requirement set 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), it's currently only supported for Microsoft 365 subscribers using the following:
 >
 > - Outlook 2016 or later on Windows (build 7628.1000 or later)
 > - Outlook 2016 or later on Mac (build 16.13.503 or later)

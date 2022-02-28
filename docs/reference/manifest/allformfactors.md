@@ -22,7 +22,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 - [CustomFunctionsRuntime 1.1](../requirement-sets/custom-functions-requirement-sets.md)
 
 > [!NOTE]
-> This element is only supported in Excel on Windows, on Mac, on the web. It is not supported in other Office applications or on iOS or Android.
+> This element is only supported in Excel on Windows, on Mac, and on the web. It is not supported in other Office applications or on iOS or Android.
 
 ## Child elements
 

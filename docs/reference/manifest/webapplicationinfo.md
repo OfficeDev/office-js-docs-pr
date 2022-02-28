@@ -1,6 +1,6 @@
 ---
 title: WebApplicationInfo element in the manifest file
-description: 'Reference documentation of the WebApplicationInfo element for Office Add-ins manifest (XML) files.'
+description: Reference documentation of the WebApplicationInfo element for Office Add-ins manifest (XML) files.
 ms.date: 02/25/2022
 ms.localizationpriority: medium
 ---
