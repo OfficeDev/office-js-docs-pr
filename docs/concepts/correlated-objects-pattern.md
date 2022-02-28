@@ -42,29 +42,29 @@ In the simplest case, you are only writing to members of a collection object, no
 
 ```javascript
 await Word.run(async function (context) {
-    let startTime, endTime;
-    const docBody = context.document.body;
+  let startTime, endTime;
+  const docBody = context.document.body;
 
-    // search() returns an array of Ranges.
-    const searchResults = docBody.search('the', { matchWholeWord: true });
-    searchResults.load('font');
-    await context.sync();
+  // search() returns an array of Ranges.
+  const searchResults = docBody.search('the', { matchWholeWord: true });
+  searchResults.load('font');
+  await context.sync();
 
-    // Record the system time.
-    startTime = performance.now();
+  // Record the system time.
+  startTime = performance.now();
 
-    for (var i = 0; i < searchResults.items.length; i++) {
-      searchResults.items[i].font.highlightColor = '#FFFF00';
+  for (var i = 0; i < searchResults.items.length; i++) {
+    searchResults.items[i].font.highlightColor = '#FFFF00';
 
-      await context.sync(); // SYNCHRONIZE IN EACH ITERATION
-    }
-    
-    // await context.sync(); // SYNCHRONIZE AFTER THE LOOP
+    await context.sync(); // SYNCHRONIZE IN EACH ITERATION
+  }
+  
+  // await context.sync(); // SYNCHRONIZE AFTER THE LOOP
 
-    // Record the system time again then calculate how long the operation took.
-    endTime = performance.now();
-    console.log("The operation took: " + (endTime - startTime) + " milliseconds.");
-  })
+  // Record the system time again then calculate how long the operation took.
+  endTime = performance.now();
+  console.log("The operation took: " + (endTime - startTime) + " milliseconds.");
+})
 ```
 
 The preceding code took 1 full second to complete in a document with 200 instances of "the" in Word on Windows. But when the `await context.sync();` line inside the loop is commented out and the same line just after the loop is uncommented, the operation took only a 1/10th of a second. In Word on the web (with Edge as the browser), it took 3 full seconds with the synchronization inside the loop and only 6/10ths of a second with the synchronization after the loop, about five times faster. In a document with 2000 instances of "the", it took (in Word on the web) 80 seconds with the synchronization inside the loop and only 4 seconds with the synchronization after the loop, about 20 times faster.
