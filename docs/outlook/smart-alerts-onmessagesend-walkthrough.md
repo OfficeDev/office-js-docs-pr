@@ -2,7 +2,7 @@
 title: Use Smart Alerts and the OnMessageSend event in your Outlook add-in (preview)
 description: Learn how to handle the send message event in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 02/02/2022
+ms.date: 02/28/2022
 ms.localizationpriority: medium
 ---
 
@@ -222,25 +222,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 1. Send the message. A dialog should pop up with a recommendation for you to add an attachment.
 1. Add an attachment then send the message again. There should be no alert this time.
 
-> [!NOTE]
-> If you're running your add-in from localhost and see the error "We're sorry, we couldn't access *{your-add-in-name-here}*. Make sure you have a network connection. If the problem continues, please try again later.", you may need to enable a loopback exemption.
->
-> 1. Close Outlook.
-> 1. Open the **Task Manager** and ensure that the **msoadfsb.exe** process is not running.
-> 1. Set the [loopback exemption](/previous-versions/windows/apps/hh780593(v=win.10)?redirectedfrom=MSDN) in an elevated prompt.
->     - If you're using `https://localhost` (the default version in the manifest), run the following command.
->
->        ```command&nbsp;line
->        call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
->        ```
->     - If you're using `http://localhost`, run the following command.
->
->        ```command&nbsp;line
->        call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50
->        ```
->     - **Note**: The full GUID is 04ACA5EC-D79A-43EA-AB47-E50E47DD96FC. The `LoopbackExempt` command accepts only 50 characters so you may need to adjust the AppContainer name to include more or fewer GUID characters. For example, if you're using a different port that's one character longer than the default 3000, then the name used in the command should have one less GUID character. In that case, for https, the name would be 1_https___localhost_*nnnnn*04ACA5EC-D79A-43EA-AB47-E where *nnnnn* represents a 5-character port number.
->
-> 1. Restart Outlook.
+[!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## See also
 
