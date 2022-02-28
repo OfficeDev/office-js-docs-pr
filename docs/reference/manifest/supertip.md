@@ -1,13 +1,13 @@
 ---
 title: Supertip element in the manifest file
 description: The Supertip element defines a rich tooltip (both title and description).
-ms.date: 02/02/2022
+ms.date: 02/04/2022
 ms.localizationpriority: medium
 ---
 
 # Supertip
 
-Defines a rich tooltip (both Title and Description). It is used by both [Button](control.md#button-control) or [Menu](control.md#menu-dropdown-button-controls)  controls.
+Defines a rich tooltip (both Title and Description). It is used by both [Button controls](control-button.md) and [Menu controls](control-menu.md).
 
 **Add-in type:** Task pane, Mail
 

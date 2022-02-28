@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript API requirement sets
 description: 'Learn more about the Outlook JavaScript API requirement sets.'
-ms.date: 02/01/2022
+ms.date: 02/15/2022
 ms.prod: outlook
 ms.localizationpriority: high
 ---
@@ -116,18 +116,9 @@ Add-ins are supported in Outlook on the following platforms.
 >
 > <sup>5</sup> Currently, there are additional considerations when designing and implementing add-ins for mobile clients. For example, the only supported mode is Message Read. For more details, see [code considerations when adding support for add-in commands for Outlook Mobile](../../outlook/add-mobile-support.md#code-considerations).
 >
-> <sup>6</sup> Add-ins don't work in modern Outlook on a web browser on Android. For information about supported devices, see [Requirements for running Office Add-ins](../../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
+> <sup>6</sup> Add-ins don't work in modern Outlook on the web on iPhone and Android smartphones. For information about supported devices, see [Requirements for running Office Add-ins](../../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
-> [!TIP]
-> You can distinguish between classic and modern Outlook in a web browser by checking your mailbox toolbar.
->
-> **modern**
->
-> ![Partial screenshot of the modern Outlook toolbar.](../../images/outlook-on-the-web-new-toolbar.png)
->
-> **classic**
->
-> ![Partial screenshot of the classic Outlook toolbar.](../../images/outlook-on-the-web-classic-toolbar.png)
+[!INCLUDE [How to distinguish between classic and modern Outlook on the web](../../includes/classic-versus-modern-Outlook-on-the-web.md)]
 
 ## Using preview APIs
 

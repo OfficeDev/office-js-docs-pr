@@ -1,7 +1,7 @@
 ---
 title: Cut, copy, and paste ranges using the Excel JavaScript API
 description: 'Learn how to cut, copy, and paste ranges using the Excel JavaScript API.' 
-ms.date: 04/02/2021
+ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -19,12 +19,12 @@ The [Range.copyFrom](/javascript/api/excel/excel.range#excel-excel-range-copyfro
 The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1")
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    // Copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1").
     sheet.getRange("G1").copyFrom("A1:E1");
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 `Range.copyFrom` has three optional parameters.
@@ -49,20 +49,20 @@ A transposed range is flipped along the main diagonal, so rows **1**, **2**, and
 The following code sample and images demonstrate this behavior in a simple scenario.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    // Copy a range, omitting the blank cells so existing data is not overwritten in those cells.
     sheet.getRange("D1").copyFrom("A1:C1",
         Excel.RangeCopyType.all,
         true, // skipBlanks
         false); // transpose
-    // copy a range, including the blank cells which will overwrite existing data in the target cells
+    // Copy a range, including the blank cells which will overwrite existing data in the target cells.
     sheet.getRange("D2").copyFrom("A2:C2",
         Excel.RangeCopyType.all,
         false, // skipBlanks
         false); // transpose
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### Data before range is copied and pasted
@@ -80,13 +80,13 @@ The [Range.moveTo](/javascript/api/excel/excel.range#excel-excel-range-moveto-me
 The following code sample moves a range with the `Range.moveTo` method. Note that if the destination range is smaller than the source, it will be expanded to encompass the source content.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.getRange("F1").values = [["Moved Range"]];
 
     // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1").
     sheet.getRange("A1:E1").moveTo("G1");
-    return context.sync();
+    await context.sync();
 });
 ```
 

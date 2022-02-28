@@ -280,10 +280,10 @@ Two projects will be created:
     })();
 
     function showUnicode() {
-      Excel.run(function (ctx) {
-        const range = ctx.workbook.getSelectedRange();
+      Excel.run(function (context) {
+        const range = context.workbook.getSelectedRange();
         range.load("values");
-        return ctx.sync(range).then(function (range) {
+        return context.sync(range).then(function (range) {
           const url = "https://localhost:<ssl port number>/api/analyzeunicode?value=" + range.values[0][0];
           $.ajax({
             type: "GET",

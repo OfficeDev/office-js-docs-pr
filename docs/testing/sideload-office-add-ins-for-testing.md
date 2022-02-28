@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins in Office on the web for testing
 description: 'Test your Office Add-in in Office on the web by sideloading.'
-ms.date: 01/13/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -55,7 +55,7 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 This method doesn't use the command line and can be accomplished using commands only within the host application (such as Excel).
 
-1. Open [Office on the web](https://office.live.com/). Open a document in **Excel**, **Word**, or **PowerPoint**. On the **Insert** tab on the ribbon in the **Add-ins** section, choose **Office Add-ins**.
+1. Open [Office on the web](https://office.com/). Open a document in **Excel**, **OneNote**, **PowerPoint**, or  **Word**. On the **Insert** tab on the ribbon in the **Add-ins** section, choose **Office Add-ins**.
 
 1. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
 
@@ -76,7 +76,7 @@ This method doesn't use the command line and can be accomplished using commands 
 
 1. Sign in to your Microsoft 365 account.
 
-1. Open the App Launcher on the left end of the toolbar and select **Excel**, **Word**, or **PowerPoint**, and then create a new document.
+1. Open the App Launcher on the left end of the toolbar and select **Excel**, **PowerPoint**, or **Word**, and then create a new document.
 
 1. Steps 3 - 6 are the same as in the preceding section **Sideload an Office Add-in in Office on the web**.
 

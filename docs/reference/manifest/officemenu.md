@@ -1,7 +1,7 @@
 ---
 title: OfficeMenu element in the manifest file
 description: The OfficeMenu element defines a collection of controls to be added to the Office context menu.
-ms.date: 02/02/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -31,7 +31,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 |  Element |  Required  |  Description  |
 |:-----|:-----|:-----|
-|  [Control](#control)    | Yes |  A collection of one or more Control objects.  |
+|  [Control of type Menu](control-menu.md)    | Yes |  A collection of one or more Control objects.  |
 
 ## xsi:type
 
@@ -39,10 +39,6 @@ Specifies a built-in menu of the Office client application on which to add this 
 
 - `ContextMenuText` -  Displays the item on the context menu when text is selected and the user opens the context menu (right-clicks) on the selected text. Applies to Word, Excel, PowerPoint, and OneNote.
 - `ContextMenuCell` -  Displays the item on the context menu when the user opens the context menu (right-clicks) on a cell on the spreadsheet. Applies to Excel.
-
-## Control
-
-Each **OfficeMenu** element requires at one or more [menu](control.md#menu-dropdown-button-controls) controls. 
 
 ## Example
 
