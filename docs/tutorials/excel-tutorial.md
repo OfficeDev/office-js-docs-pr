@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: 'Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.'
-ms.date: 01/13/2022
+ms.date: 02/26/2022
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 ms.localizationpriority: high
@@ -90,11 +90,11 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - The `context.sync` method sends all queued commands to Excel for execution.
 
-    - The `Excel.run` is followed by a `catch` block. This is a best practice that you should always follow. 
+    - The `Excel.run` is followed by a `catch` block. This is a best practice that you should always follow.
 
     ```js
-    function createTable() {
-        Excel.run(function (context) {
+    async function createTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue table creation logic here.
 
@@ -102,7 +102,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
             // TODO3: Queue commands to format the table.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -122,8 +122,8 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     - Table names must be unique across the entire workbook, not just the worksheet.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
     expensesTable.name = "ExpensesTable";
     ```
 
@@ -223,13 +223,13 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 1. Add the following function to the end of the file.
 
     ```js
-    function filterTable() {
-        Excel.run(function (context) {
+    async function filterTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to filter out all expense categories except
             //        Groceries and Education.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -247,9 +247,9 @@ In this step of the tutorial, you'll filter and sort the table that you created 
    - The `applyValuesFilter` method is one of several filtering methods on the `Filter` object.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var categoryFilter = expensesTable.columns.getItem('Category').filter;
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const categoryFilter = expensesTable.columns.getItem('Category').filter;
     categoryFilter.applyValuesFilter(['Education', 'Groceries']);
     ```
 
@@ -274,12 +274,12 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 1. Add the following function to the end of the file.
 
     ```js
-    function sortTable() {
-        Excel.run(function (context) {
+    async function sortTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to sort the table by Merchant name.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -299,9 +299,9 @@ In this step of the tutorial, you'll filter and sort the table that you created 
    - The `sort` member of a `Table` is a `TableSort` object, not a method. The `SortField`s are passed to the `TableSort` object's `apply` method.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var sortFields = [
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const sortFields = [
         {
             key: 1,            // Merchant column
             ascending: false,
@@ -350,8 +350,8 @@ In this step of the tutorial, you'll create a chart using data from the table th
 1. Add the following function to the end of the file.
 
     ```js
-    function createChart() {
-        Excel.run(function (context) {
+    async function createChart() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to get the range of data to be charted.
 
@@ -359,7 +359,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
             // TODO3: Queue commands to position and format the chart.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -373,9 +373,9 @@ In this step of the tutorial, you'll create a chart using data from the table th
 1. Within the `createChart()` function, replace `TODO1` with the following code. Note that in order to exclude the header row, the code uses the `Table.getDataBodyRange` method to get the range of data you want to chart instead of the `getRange` method.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var dataRange = expensesTable.getDataBodyRange();
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const dataRange = expensesTable.getDataBodyRange();
     ```
 
 1. Within the `createChart()` function, replace `TODO2` with the following code. Note the following parameters.
@@ -387,7 +387,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
    - The third parameter determines whether a series of data points from the table should be charted row-wise or column-wise. The option `auto` tells Excel to decide the best method.
 
     ```js
-    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
+    const chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
 1. Within the `createChart()` function, replace `TODO3` with the following code. Most of this code is self-explanatory. Note:
@@ -445,12 +445,12 @@ When a table is long enough that a user must scroll to see some rows, the header
 1. Add the following function to the end of the file.
 
     ```js
-    function freezeHeader() {
-        Excel.run(function (context) {
+    async function freezeHeader() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to keep the header visible when the user scrolls.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -468,7 +468,7 @@ When a table is long enough that a user must scroll to see some rows, the header
    - The `freezeRows` method takes as a parameter the number of rows, from the top, that are to be pinned in place. We pass `1` to pin the first row in place.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
     ```
 
@@ -597,12 +597,12 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
 1. Add the following function immediately after the `action` function. Note that we specify an `args` parameter to the function and the very last line of the function calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office client application that the function has finished and the UI can become responsive again.
 
     ```js
-    function toggleProtection(args) {
-        Excel.run(function (context) {
+    async function toggleProtection(args) {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to reverse the protection status of the current worksheet.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -623,7 +623,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
 1. Within the `toggleProtection` function, replace `TODO1` with the following code. This code uses the worksheet object's protection property in a standard toggle pattern. The `TODO2` will be explained in the next section.
 
     ```js
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // TODO2: Queue command to load the sheet's "protection.protected" property from
     //        the document and re-synchronize the document and task pane.
@@ -651,53 +651,30 @@ These steps must be completed whenever your code needs to *read* information fro
 
    - Every Excel object has a `load` method. You specify the properties of the object that you want to read in the parameter as a string of comma-delimited names. In this case, the property you need to read is a subproperty of the `protection` property. You reference the subproperty almost exactly as you would anywhere else in your code, with the exception that you use a forward slash ('/') character instead of a "." character.
 
-   - To ensure that the toggle logic, which reads `sheet.protection.protected`, does not run until after the `sync` is complete and the `sheet.protection.protected` has been assigned the correct value that is fetched from the document, it will be moved (in the next step) into a `then` function that won't run until the `sync` has completed.
+   - To ensure that the toggle logic, which reads `sheet.protection.protected`, doesn't run until after the `sync` is complete and the `sheet.protection.protected` has been assigned the correct value that is fetched from the document, it must come after the `await` operator ensures `sync` has completed.
 
     ```js
     sheet.load('protection/protected');
-    return context.sync()
-        .then(
-            function() {
-                // TODO3: Move the queued toggle logic here.
-            }
-        )
-        // TODO4: Move the final call of `context.sync` here and ensure that it
-        //        does not run until the toggle logic has been queued.
-    ```
-
-1. You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Excel.run`. You will add a new final `context.sync`, in a later step.
-
-1. Cut the `if ... else` structure in the `toggleProtection` function and paste it in place of `TODO3`.
-
-1. Replace `TODO4` with the following code. Note:
-
-   - Passing the `sync` method to a `then` function ensures that it does not run until either `sheet.protection.unprotect()` or `sheet.protection.protect()` has been queued.
-
-   - The `then` method invokes whatever function is passed to it, and you don't want `sync` to be invoked twice, so leave off the "()" from the end of `context.sync`.
-
-    ```js
-    .then(context.sync);
+    await context.sync();
     ```
 
    When you are done, the entire function should look like the following:
 
     ```js
-    function toggleProtection(args) {
-        Excel.run(function (context) {
-          var sheet = context.workbook.worksheets.getActiveWorksheet();
-          sheet.load('protection/protected');
+    async function toggleProtection(args) {
+        await Excel.run(async (context) => {
+            const sheet = context.workbook.worksheets.getActiveWorksheet();
+            sheet.load('protection/protected');
 
-          return context.sync()
-              .then(
-                  function() {
-                    if (sheet.protection.protected) {
-                        sheet.protection.unprotect();
-                    } else {
-                        sheet.protection.protect();
-                    }
-                  }
-              )
-              .then(context.sync);
+            await context.sync();
+
+            if (sheet.protection.protected) {
+                sheet.protection.unprotect();
+            } else {
+                sheet.protection.protect();
+            }
+            
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -828,7 +805,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
     ```js
     function sendStringToParentPage() {
-        var userName = document.getElementById("name-box").value;
+        const userName = document.getElementById("name-box").value;
         Office.context.ui.messageParent(userName);
     }
     ```
@@ -931,7 +908,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 1. Add the following declaration to the end of the file. This variable is used to hold an object in the parent page's execution context that acts as an intermediator to the dialog page's execution context.
 
     ```js
-    var dialog = null;
+    let dialog = null;
     ```
 
 1. Add the following function to the end of the file (after the declaration of `dialog`). The important thing to notice about this code is what is *not* there: there is no call of `Excel.run`. This is because the API to open a dialog is shared among all Office applications, so it is part of the Office JavaScript Common API, not the Excel-specific API.

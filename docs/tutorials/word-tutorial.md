@@ -91,12 +91,12 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
    - The `Word.run` is followed by a `catch` block. This is a best practice that you should always follow.
 
     ```js
-    function insertParagraph() {
-        Word.run(function (context) {
+    async function insertParagraph() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert a paragraph into the document.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -114,7 +114,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
    - The second parameter is the location within the body where the paragraph will be inserted. Other options for insert paragraph, when the parent object is the body, are "End" and "Replace".
 
     ```js
-    var docBody = context.document.body;
+    const docBody = context.document.body;
     docBody.insertParagraph("Office has several versions, including Office 2016, Microsoft 365 subscription, and Office on the web.",
                             "Start");
     ```
@@ -181,12 +181,12 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 1. Add the following function to the end of the file.
 
     ```js
-    function applyStyle() {
-        Word.run(function (context) {
+    async function applyStyle() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to style text.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -200,7 +200,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 1. Within the `applyStyle()` function, replace `TODO1` with the following code. Note that the code applies a style to a paragraph, but styles can also be applied to ranges of text.
 
     ```js
-    var firstParagraph = context.document.body.paragraphs.getFirst();
+    const firstParagraph = context.document.body.paragraphs.getFirst();
     firstParagraph.styleBuiltIn = Word.Style.intenseReference;
     ```
 
@@ -225,12 +225,12 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 1. Add the following function to the end of the file.
 
     ```js
-    function applyCustomStyle() {
-        Word.run(function (context) {
+    async function applyCustomStyle() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to apply the custom style.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -244,7 +244,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 1. Within the `applyCustomStyle()` function, replace `TODO1` with the following code. Note that the code applies a custom style that does not exist yet. You'll create a style with the name **MyCustomStyle** in the [Test the add-in](#test-the-add-in-1) step.
 
     ```js
-    var lastParagraph = context.document.body.paragraphs.getLast();
+    const lastParagraph = context.document.body.paragraphs.getLast();
     lastParagraph.style = "MyCustomStyle";
     ```
 
@@ -271,12 +271,12 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 1. Add the following function to the end of the file.
 
     ```js
-    function changeFont() {
-        Word.run(function (context) {
+    async function changeFont() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to apply a different font.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -290,7 +290,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 1. Within the `changeFont()` function, replace `TODO1` with the following code. Note that the code gets a reference to the second paragraph by using the `ParagraphCollection.getFirst` method chained to the `Paragraph.getNext` method.
 
     ```js
-    var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
+    const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     secondParagraph.font.set({
             name: "Courier New",
             bold: true,
@@ -343,8 +343,8 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 1. Add the following function to the end of the file.
 
     ```js
-    function insertTextIntoRange() {
-        Word.run(function (context) {
+    async function insertTextIntoRange() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert text into a selected range.
 
@@ -354,7 +354,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
             // TODO3: Queue commands to repeat the text of the original
             //        range at the end of the document.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -378,8 +378,8 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
    - You saw in an earlier stage of the tutorial that the insert* methods of the body object do not have the "Before" and "After" options. This is because you can't put content outside of the document's body.
 
     ```js
-    var doc = context.document;
-    var originalRange = doc.getSelection();
+    const doc = context.document;
+    const originalRange = doc.getSelection();
     originalRange.insertText(" (C2R)", "End");
     ```
 
@@ -405,45 +405,33 @@ These steps must be completed whenever your code needs to *read* information fro
   
     ```js
     originalRange.load("text");
-    return context.sync()
-        .then(function() {
-            // TODO4: Move the doc.body.insertParagraph line here.
-        })
-        // TODO5: Move the final call of context.sync here and ensure
-        //        that it does not run until the insertParagraph has
-        //        been queued.
-    ```
+    await context.sync();
 
-1. You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Word.run`. You'll add a new final `context.sync` later in this tutorial.
+    // TODO4: Move the doc.body.insertParagraph line here.
+
+    // TODO5: Move the final call of context.sync here and ensure
+    //        that it does not run until the insertParagraph has
+    //        been queued.
+    ```
 
 1. Cut the `doc.body.insertParagraph` line and paste in place of `TODO4`.
-
-1. Replace `TODO5` with the following code. Note:
-
-   - Passing the `sync` method to a `then` function ensures that it does not run until the `insertParagraph` logic has been queued.
-
-   - The `then` method invokes whatever function is passed to it, and you don't want `sync` to be invoked twice, so omit the "()" from the end of context.sync.
-
-    ```js
-    .then(context.sync);
-    ```
 
 When you're done, the entire function should look like the following:
 
 ```js
-function insertTextIntoRange() {
-    Word.run(function (context) {
+async function insertTextIntoRange() {
+    await Word.run(async (context) => {
 
-        var doc = context.document;
-        var originalRange = doc.getSelection();
+        const doc = context.document;
+        const originalRange = doc.getSelection();
         originalRange.insertText(" (C2R)", "End");
 
         originalRange.load("text");
-        return context.sync()
-            .then(function() {
-                doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
-            })
-            .then(context.sync);
+        await context.sync();
+
+        doc.body.insertParagraph("Original range: " + originalRange.text, "End");
+
+        await context.sync();
     })
     .catch(function (error) {
         console.log("Error: " + error);
@@ -475,8 +463,8 @@ function insertTextIntoRange() {
 1. Add the following function to the end of the file.
 
     ```js
-    function insertTextBeforeRange() {
-        Word.run(function (context) {
+    async function insertTextBeforeRange() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert a new range before the
             //        selected range.
@@ -503,8 +491,8 @@ function insertTextIntoRange() {
    - The second parameter specifies where in the range the additional text should be inserted. For more details about the location options, see the previous discussion of the `insertTextIntoRange` function.
 
     ```js
-    var doc = context.document;
-    var originalRange = doc.getSelection();
+    const doc = context.document;
+    const originalRange = doc.getSelection();
     originalRange.insertText("Office 2019, ", "Before");
     ```
 
@@ -512,14 +500,13 @@ function insertTextIntoRange() {
 
      ```js
     originalRange.load("text");
-    return context.sync()
-        .then(function() {
-            // TODO3: Queue commands to insert the original range as a
-            //        paragraph at the end of the document.
-        })
-        // TODO4: Make a final call of context.sync here and ensure
-        //        that it does not run until the insertParagraph has
-        //        been queued.
+    await context.sync();
+
+    // TODO3: Queue commands to insert the original range as a
+    //        paragraph at the end of the document.
+
+    // TODO4: Make a final call of context.sync here and ensure
+    //        that it runs after the insertParagraph has been queued.
     ```
 
 1. Replace `TODO3` with the following code. This new paragraph will demonstrate the fact that the new text is ***not*** part of the original selected range. The original range still has only the text it had when it was selected.
@@ -531,7 +518,7 @@ function insertTextIntoRange() {
 1. Replace `TODO4` with the following code.
 
     ```js
-    .then(context.sync);
+    await context.sync();
     ```
 
 ### Replace the text of a range
@@ -555,12 +542,12 @@ function insertTextIntoRange() {
 1. Add the following function to the end of the file.
 
     ```js
-    function replaceText() {
-        Word.run(function (context) {
+    async function replaceText() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to replace the text.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -574,8 +561,8 @@ function insertTextIntoRange() {
 1. Within the `replaceText()` function, replace `TODO1` with the following code. Note that the method is intended to replace the string "several" with the string "many". It makes a simplifying assumption that the string is present and the user has selected it.
 
     ```js
-    var doc = context.document;
-    var originalRange = doc.getSelection();
+    const doc = context.document;
+    const originalRange = doc.getSelection();
     originalRange.insertText("many", "Replace");
     ```
 
@@ -647,12 +634,12 @@ Complete the following steps to define the image that you'll insert into the doc
 1. Add the following function to the end of the file.
 
     ```js
-    function insertImage() {
-        Word.run(function (context) {
+    async function insertImage() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert an image.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -690,12 +677,12 @@ Complete the following steps to define the image that you'll insert into the doc
 1. Add the following function to the end of the file.
 
     ```js
-    function insertHTML() {
-        Word.run(function (context) {
+    async function insertHTML() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert a string of HTML.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -713,7 +700,7 @@ Complete the following steps to define the image that you'll insert into the doc
    - The second line inserts a string of HTML at the end of the paragraph; specifically two paragraphs, one formatted with Verdana font, the other with the default styling of the Word document. (As you saw in the `insertImage` method earlier, the `context.document.body` object also has the `insert*` methods.)
 
     ```js
-    var blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
+    const blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
     blankParagraph.insertHtml('<p style="font-family: verdana;">Inserted HTML.</p><p>Another paragraph</p>', "End");
     ```
 
@@ -738,15 +725,15 @@ Complete the following steps to define the image that you'll insert into the doc
 1. Add the following function to the end of the file.
 
     ```js
-    function insertTable() {
-        Word.run(function (context) {
+    async function insertTable() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to get a reference to the paragraph
             //        that will proceed the table.
 
             // TODO2: Queue commands to create a table and populate it with data.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -760,7 +747,7 @@ Complete the following steps to define the image that you'll insert into the doc
 1. Within the `insertTable()` function, replace `TODO1` with the following code. Note that this line uses the `ParagraphCollection.getFirst` method to get a reference ot the first paragraph and then uses the `Paragraph.getNext` method to get a reference to the second paragraph.
 
     ```js
-    var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
+    const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     ```
 
 1. Within the `insertTable()` function, replace `TODO2` with the following code. Note:
@@ -774,7 +761,7 @@ Complete the following steps to define the image that you'll insert into the doc
    - The table will have plain default styling, but the `insertTable` method returns a `Table` object with many members, some of which are used to style the table.
 
     ```js
-    var tableData = [
+    const tableData = [
             ["Name", "ID", "Birth City"],
             ["Bob", "434", "Chicago"],
             ["Sue", "719", "Havana"],
@@ -830,12 +817,12 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 1. Add the following function to the end of the file.
 
     ```js
-    function createContentControl() {
-        Word.run(function (context) {
+    async function createContentControl() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to create a content control.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -859,8 +846,8 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
    - The `ContentControl.color` property specifies the color of the tags or the border of the bounding box.
 
     ```js
-    var serviceNameRange = context.document.getSelection();
-    var serviceNameContentControl = serviceNameRange.insertContentControl();
+    const serviceNameRange = context.document.getSelection();
+    const serviceNameContentControl = serviceNameRange.insertContentControl();
     serviceNameContentControl.title = "Service Name";
     serviceNameContentControl.tag = "serviceName";
     serviceNameContentControl.appearance = "Tags";
@@ -888,13 +875,13 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 1. Add the following function to the end of the file.
 
     ```js
-    function replaceContentInControl() {
-        Word.run(function (context) {
+    async function replaceContentInControl() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to replace the text in the Service Name
             //        content control.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -910,7 +897,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
     - The `ContentControlCollection.getByTag` method returns a `ContentControlCollection` of all content controls of the specified tag. We use `getFirst` to get a reference to the desired control.
 
     ```js
-    var serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
+    const serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
     ```
 

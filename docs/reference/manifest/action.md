@@ -1,13 +1,27 @@
 ---
 title: Action element in the manifest file
 description: This element specifies the action to perform when the user selects a button or menu control.
-ms.date: 02/04/2022
+ms.date: 02/25/2022
 ms.localizationpriority: medium
 ---
 
 # Action element
 
-Specifies the action to perform when the user selects a [Button control](control-button.md) or [Menu control](control-menu.md).
+Specifies the action to perform when the user selects a  [Button](control-button.md) or [Menu](control-menu.md) control.
+
+**Valid only in these VersionOverrides schemas**:
+
+- Task pane 1.0
+- Mail 1.0
+- Mail 1.1
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associated with these requirement sets**:
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) when the parent **VersionOverrides** is type Taskpane 1.0.
+- [Mailbox 1.3](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) when the parent **VersionOverrides** is type Mail 1.0.
+- [Mailbox 1.5](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) when the parent **VersionOverrides** is type Mail 1.1.
 
 ## Attributes
 
@@ -37,7 +51,7 @@ This attribute specifies the kind of action performed when the user selects the 
 
 ## FunctionName
 
-Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.
+Required element when **xsi:type** is `ExecuteFunction`. Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -47,7 +61,7 @@ Required element when **xsi:type** is "ExecuteFunction". Specifies the name of t
 
 ## SourceLocation
 
-Required element when **xsi:type** is "ShowTaskpane". Specifies the source file location for this action. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the [Resources](resources.md) element.
+Required element when **xsi:type** is `ShowTaskpane`. Specifies the source file location for this action. The **resid** attribute can be no more than 32 characters and must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the [Resources](resources.md) element.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -57,7 +71,19 @@ Required element when **xsi:type** is "ShowTaskpane". Specifies the source file 
 
 ## TaskpaneId
 
-Optional element when  **xsi:type** is "ShowTaskpane". Specifies the ID of the task pane container. When you have multiple "ShowTaskpane" actions, use a different **TaskpaneId** if you want an independent pane for each. Use the same **TaskpaneId** for  different actions that share the same pane. When users choose commands that share the same **TaskpaneId**, the pane container will remain open but the contents of the pane will be replaced with the corresponding Action "SourceLocation".
+Optional element when  **xsi:type** is `ShowTaskpane`. Specifies the ID of the task pane container. When you have multiple `ShowTaskpane` actions, use a different **TaskpaneId** if you want an independent pane for each. Use the same **TaskpaneId** for  different actions that share the same pane. When users choose commands that share the same **TaskpaneId**, the pane container will remain open but the contents of the pane will be replaced with the corresponding Action `SourceLocation`.
+
+**Add-in type:** Task pane
+
+**Valid only in these VersionOverrides schemas**:
+
+- Task pane 1.0
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associated with these requirement sets**:
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 > [!NOTE]
 > This element is not supported in Outlook.
@@ -99,7 +125,19 @@ The following examples show two actions that use a different **TaskpaneId**. To 
 
 ## Title
 
-Optional element when  **xsi:type** is "ShowTaskpane". Specifies the custom title for the task pane for this action.
+Optional element when  **xsi:type** is `ShowTaskpane`. Specifies the custom title for the task pane for this action.
+
+**Add-in type:** Task pane
+
+**Valid only in these VersionOverrides schemas**:
+
+- Task pane 1.0
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associated with these requirement sets**:
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 > [!NOTE]
 > This child element is not supported in Outlook add-ins.
@@ -129,10 +167,22 @@ The following example shows an action that uses the **Title** element. Note that
 
 ## SupportsPinning
 
-Optional element when **xsi:type** is "ShowTaskpane". The containing [VersionOverrides](versionoverrides.md) elements must have an `xsi:type` attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support task pane pinning. The user will be able to "pin" the task pane, causing it to stay open when changing the selection. For more information, see [Implement a pinnable task pane in Outlook](../../outlook/pinnable-taskpane.md).
+Optional element when **xsi:type** is `ShowTaskpane`. The containing [VersionOverrides](versionoverrides.md) elements must have an **xsi:type** attribute value of `VersionOverridesV1_1`. Include this element with a value of `true` to support task pane pinning. The user will be able to "pin" the task pane, causing it to stay open when changing the selection. For more information, see [Implement a pinnable task pane in Outlook](../../outlook/pinnable-taskpane.md).
+
+**Add-in type:** Mail
+
+**Valid only in these VersionOverrides schemas**:
+
+- Mail 1.1
+
+For more information, see [Version overrides in the manifest](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associated with these requirement sets**:
+
+- [Mailbox 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)
 
 > [!IMPORTANT]
-> Although the `SupportsPinning` element was introduced in [requirement set 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), it's currently only supported for Microsoft 365 subscribers using the following:
+> Although the **SupportsPinning** element was introduced in [requirement set 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), it's currently only supported for Microsoft 365 subscribers using the following:
 >
 > - Outlook 2016 or later on Windows (build 7628.1000 or later)
 > - Outlook 2016 or later on Mac (build 16.13.503 or later)
