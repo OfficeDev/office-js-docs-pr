@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 02/03/2022
+ms.date: 02/28/2022
 ms.localizationpriority: medium
 ---
 
@@ -254,24 +254,7 @@ In this scenario, you'll add handling for composing new items.
 
     ![Screenshot of a message window in Outlook on Windows with the subject set on compose.](../images/outlook-win-autolaunch.png)
 
-    > [!NOTE]
-    > If you're running your add-in from localhost and see the error "We're sorry, we couldn't access *{your-add-in-name-here}*. Make sure you have a network connection. If the problem continues, please try again later.", you may need to enable a loopback exemption.
-    >
-    > 1. Close Outlook.
-    > 1. Open the **Task Manager** and ensure that the **msoadfsb.exe** process is not running.
-    > 1. If you're using `https://localhost` (the default version in the manifest), run the following command.
-    >
-    >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
-    >    ```
-    >
-    > 1. If you're using `http://localhost`, run the following command.
-    >
-    >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
-    >    ```
-    >
-    > 1. Restart Outlook.
+    [!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## Debug
 
