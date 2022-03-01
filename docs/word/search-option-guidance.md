@@ -1,7 +1,7 @@
 ---
 title: Use search options to find text in your Word add-in 
 description: Learn to use search options in your Word add-in.
-ms.date: 02/24/2022
+ms.date: 02/28/2022
 ms.localizationpriority: medium
 ---
 
@@ -59,8 +59,8 @@ await Word.run(async (context) => {
     // Queue a command to search the document and ignore punctuation.
     const searchResults = context.document.body.search('video you', {ignorePunct: true});
 
-    // Queue a command to load the search results and get the font property values.
-    context.load(searchResults, 'font');
+    // Queue a command to load the font property values.
+    searchResults.load('font');
 
     // Synchronize the document state.
     await context.sync();
@@ -87,8 +87,8 @@ await Word.run(async (context) => {
     // Queue a command to search the document based on a prefix.
     const searchResults = context.document.body.search('vid', {matchPrefix: true});
 
-    // Queue a command to load the search results and get the font property values.
-    context.load(searchResults, 'font');
+    // Queue a command to load the font property values.
+    searchResults.load('font');
 
     // Synchronize the document state.
     await context.sync();
@@ -115,8 +115,8 @@ await Word.run(async (context) => {
     // Queue a command to search the document for any string of characters after 'ly'.
     const searchResults = context.document.body.search('ly', {matchSuffix: true});
 
-    // Queue a command to load the search results and get the font property values.
-    context.load(searchResults, 'font');
+    // Queue a command to load the font property values.
+    searchResults.load('font');
 
     // Synchronize the document state.
     await context.sync();
@@ -129,7 +129,7 @@ await Word.run(async (context) => {
         searchResults.items[i].font.bold = true;
     }
 
-    // Synchronize the document state .
+    // Synchronize the document state.
     await context.sync();
 });
 ```
@@ -144,8 +144,8 @@ await Word.run(async (context) => {
     // for any string of characters that starts with 'to' and ends with 'n'.
     const searchResults = context.document.body.search('to*n', {matchWildcards: true});
 
-    // Queue a command to load the search results and get the font property values.
-    context.load(searchResults, 'font');
+    // Queue a command to load the font property values.
+    searchResults.load('font');
 
     // Synchronize the document state.
     await context.sync();
