@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
-description: 'The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.'
-ms.date: 02/11/2022
+description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
+ms.date: 03/02/2022
 ms.localizationpriority: medium
 ---
 
@@ -11,12 +11,13 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for March 9th call
 
-The agenda for March will be posted about a week before the call.
+- Consuming Graph Services using SSO and CORS from event-based Outlook add-ins.
 
 ## Previous calls
 
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
+- [February 9, 2022](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-february-9-2022/ba-p/3164559)
 - [January 12, 2022](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-january-12-2022/ba-p/3061097)
 - [December 8, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-december-8-2021/ba-p/3032949)
 - [November 10, 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-november-10-2021/ba-p/2983146)
