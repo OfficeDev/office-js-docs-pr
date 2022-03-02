@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 02/28/2022
+ms.date: 03/02/2022
 ms.localizationpriority: medium
 ---
 
@@ -162,7 +162,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
         <!-- Entry needed for Outlook Desktop. -->
-        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/src/commands/commands.js" />
+        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
@@ -189,11 +189,22 @@ You have to implement handling for your selected events.
 
 In this scenario, you'll add handling for composing new items.
 
-1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
+1. From the same quick start project, create a new folder named **launchevent** under **/src/** directory.
 
-1. After the `action` function, insert the following JavaScript functions.
+1. Under the **./src/launchevent**, create a new file named **launchevent.js**.
+
+1. Open the file **./src/launchevent/launchevent.js** in your code editor and add the following JavaScript code.
 
     ```js
+    /*
+    * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+    * See LICENSE in the project root for license information.
+    */
+
+    Office.onReady(() => {
+      // If needed, Office.js is ready to be called
+    });
+      
     function onMessageComposeHandler(event) {
       setSubject(event);
     }
@@ -204,23 +215,19 @@ In this scenario, you'll add handling for composing new items.
       Office.context.mailbox.item.subject.setAsync(
         "Set by an event-based add-in!",
         {
-          "asyncContext" : event
+        "asyncContext" : event
         },
         function (asyncResult) {
           // Handle success or error.
           if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
             console.error("Failed to set subject: " + JSON.stringify(asyncResult.error));
           }
-    
+
           // Call event.completed() after all work is done.
           asyncResult.asyncContext.completed();
         });
     }
-    ```
 
-1. Add the following JavaScript code at the end of the file.
-
-    ```js
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
     Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
     Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
@@ -231,11 +238,32 @@ In this scenario, you'll add handling for composing new items.
 > [!IMPORTANT]
 > Windows: At present, imports are not supported in the JavaScript file where you implement the handling for event-based activation.
 
+## Update webpack config settings
+
+Open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
+
+1. Locate the `plugins` array within the `config` object and add this new object at the beginning of the array.
+
+    ```js
+    new CopyPlugin({
+      patterns: [
+        "./src/launchevent/launchevent.js",
+        {
+          from: "**/*",
+          info: { minimized: true },
+        },
+      ],
+    }),
+    ```
+
+1. Save your changes.
+
 ## Try it out
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running) and your add-in will be sideloaded.
+1. Run the following commands in the root directory of your project. When you run `npm start`, the local web server will start (if it's not already running) and your add-in will be sideloaded.
 
     ```command&nbsp;line
+    npm run build
     npm start
     ```
 
