@@ -189,9 +189,9 @@ You have to implement handling for your selected events.
 
 In this scenario, you'll add handling for composing new items.
 
-1. From the same quick start project, create a new folder named **launchevent** under **/src/** directory.
+1. From the same quick start project, create a new folder named **launchevent** under the **/src/** directory.
 
-1. Under the **./src/launchevent**, create a new file named **launchevent.js**.
+1. In the **./src/launchevent** folder, create a new file named **launchevent.js**.
 
 1. Open the file **./src/launchevent/launchevent.js** in your code editor and add the following JavaScript code.
 
