@@ -242,6 +242,12 @@ In this scenario, you'll add handling for composing new items.
 
 Open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
 
+1. Near the beginning of the file with other `const` statements, insert the following statement.
+
+   ```js
+   const CopyPlugin = require("copy-webpack-plugin");
+   ```
+
 1. Locate the `plugins` array within the `config` object and add this new object at the beginning of the array.
 
     ```js
@@ -264,6 +270,8 @@ Open the **webpack.config.js** file found in the root directory of the project a
 
     ```command&nbsp;line
     npm run build
+    ```
+    ```command&nbsp;line
     npm start
     ```
 
