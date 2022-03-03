@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 03/02/2022
+ms.date: 03/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -201,10 +201,6 @@ In this scenario, you'll add handling for composing new items.
     * See LICENSE in the project root for license information.
     */
 
-    Office.onReady(() => {
-      // If needed, Office.js is ready to be called
-    });
-      
     function onMessageComposeHandler(event) {
       setSubject(event);
     }
@@ -215,7 +211,7 @@ In this scenario, you'll add handling for composing new items.
       Office.context.mailbox.item.subject.setAsync(
         "Set by an event-based add-in!",
         {
-        "asyncContext" : event
+          "asyncContext": event
         },
         function (asyncResult) {
           // Handle success or error.
@@ -242,21 +238,14 @@ In this scenario, you'll add handling for composing new items.
 
 Open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
 
-1. Near the beginning of the file with other `const` statements, insert the following statement.
-
-   ```js
-   const CopyPlugin = require("copy-webpack-plugin");
-   ```
-
 1. Locate the `plugins` array within the `config` object and add this new object at the beginning of the array.
 
     ```js
-    new CopyPlugin({
+    new CopyWebpackPlugin({
       patterns: [
-        "./src/launchevent/launchevent.js",
         {
-          from: "**/*",
-          info: { minimized: true },
+          from: "./src/launchevent/launchevent.js",
+          to: "launchevent.js",
         },
       ],
     }),
@@ -296,7 +285,7 @@ Open the **webpack.config.js** file found in the root directory of the project a
 
 As you make changes to launch-event handling in your add-in, you should be aware that:
 
-- If you updated the manifest, [remove the add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) then sideload it again.
+- If you updated the manifest, [remove the add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in), then sideload it again. If you're using Outlook on Windows, then close and reopen it.
 - If you made changes to files other than the manifest, close and reopen Outlook on Windows, or refresh the browser tab running Outlook on the web.
 
 While implementing your own functionality, you may need to debug your code. For guidance on how to debug event-based add-in activation, see [Debug your event-based Outlook add-in](debug-autolaunch.md).
