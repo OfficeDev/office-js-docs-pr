@@ -135,6 +135,9 @@ To enable event-based activation of your add-in, you must configure the [Runtime
             <LaunchEvents>
               <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
               <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+              
+              <!-- Other available events (currently released) -->
+              <!--
               <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
               <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />
               <LaunchEvent Type="OnMessageRecipientsChanged" FunctionName="onMessageRecipientsChangedHandler" />
@@ -142,8 +145,13 @@ To enable event-based activation of your add-in, you must configure the [Runtime
               <LaunchEvent Type="OnAppointmentTimeChanged" FunctionName="onAppointmentTimeChangedHandler" />
               <LaunchEvent Type="OnAppointmentRecurrenceChanged" FunctionName="onAppointmentRecurrenceChangedHandler" />
               <LaunchEvent Type="OnInfoBarDismissClicked" FunctionName="onInfobarDismissClickedHandler" />
+              -->
+
+              <!-- Other available events (currently in preview) -->
+              <!--
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
               <LaunchEvent Type="OnAppointmentSend" FunctionName="onAppointmentSendHandler" SendMode="PromptUser" />
+              -->
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
             <SourceLocation resid="WebViewRuntime.Url"/>
@@ -348,5 +356,6 @@ Full CORS support is coming soon.
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
 - [Smart Alerts and OnMessageSend walkthrough](smart-alerts-onmessagesend-walkthrough.md)
 - PnP samples:
+  - [Use Outlook event-based activation to encrypt attachments, process meeting request attendees and react to appointment date/time changes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
   - [Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
   - [Use Outlook event-based activation to tag external recipients](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)
