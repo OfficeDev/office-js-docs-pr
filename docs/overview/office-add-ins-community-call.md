@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 03/02/2022
+ms.date: 03/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -12,6 +12,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 ## Agenda for March 9th call
 
 - Consuming Graph Services using SSO and CORS from event-based Outlook add-ins.
+- Excel API 1.15 preview.
 
 ## Previous calls
 
