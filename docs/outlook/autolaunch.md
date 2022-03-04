@@ -299,8 +299,6 @@ In this scenario, you'll add handling for composing new items.
 
     ![Screenshot of a message window in Outlook on Windows with the subject set on compose.](../images/outlook-win-autolaunch.png)
 
-    [!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
-
 ## Debug
 
 As you make changes to launch-event handling in your add-in, you should be aware that:
@@ -311,6 +309,8 @@ As you make changes to launch-event handling in your add-in, you should be aware
 While implementing your own functionality, you may need to debug your code. For guidance on how to debug event-based add-in activation, see [Debug your event-based Outlook add-in](debug-autolaunch.md).
 
 Runtime logging is also available for this feature on Windows. For more information, see [Debug your add-in with runtime logging](../testing/runtime-logging.md#runtime-logging-on-windows).
+
+[!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## Deploy to users
 
