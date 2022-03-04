@@ -260,9 +260,10 @@ Open the **webpack.config.js** file found in the root directory of the project a
 
 1. In Outlook on Windows, create a new message and set the subject. In the body, add text like "Hey, check out this picture of my dog!".
 1. Send the message. A dialog should pop up with a recommendation for you to add an attachment.
-1. Add an attachment then send the message again. There should be no alert this time.
 
-[!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
+    ![Screenshot of a message window in Outlook on Windows with dialog.](../images/outlook-win-smart-alert.png)
+
+1. Add an attachment then send the message again. There should be no alert this time.
 
 ## See also
 
