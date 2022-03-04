@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 03/03/2022
+ms.date: 03/04/2022
 ms.localizationpriority: medium
 ---
 
@@ -242,9 +242,21 @@ In this scenario, you'll add handling for composing new items.
 > [!IMPORTANT]
 > Windows: At present, imports are not supported in the JavaScript file where you implement the handling for event-based activation.
 
+## Update commands HTML file
+
+1. In the **./src/commands** folder, open **commands.html**.
+
+1. Immediately before the closing **head** tag (`<\head>`), add a script entry to include the event-handling JavaScript code.
+
+    ```html
+    <script type="text/javascript" src="../launchevent/launchevent.js"></script>
+    ```
+
+1. Save your changes.
+
 ## Update webpack config settings
 
-Open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
+1. Open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
 
 1. Locate the `plugins` array within the `config` object and add this new object at the beginning of the array.
 
