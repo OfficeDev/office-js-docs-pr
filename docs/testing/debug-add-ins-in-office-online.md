@@ -22,13 +22,13 @@ To debug your add-in by using Office on the web:
 
 2. Open the browser's developer tools. This is usually done by pressing F12. Open the debugger tool and use it to set breakpoints and watch variables. For detailed help in using your browser's tool, see one of the following.  
 
-- [Firefox](https://developer.mozilla.org/en-US/docs/Tools)
-- [Safari](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac)
-- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
-- [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
+   - [Firefox](https://developer.mozilla.org/en-US/docs/Tools)
+   - [Safari](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac)
+   - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
+   - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 
-> [!NOTE]
-> Office on the web won't open in Internet Explorer.
+   > [!NOTE]
+   > Office on the web won't open in Internet Explorer.
 
 ## Potential issues
 
