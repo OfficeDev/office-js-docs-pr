@@ -242,7 +242,7 @@ In this scenario, you'll add handling for composing new items.
 > [!IMPORTANT]
 > Windows: At present, imports are not supported in the JavaScript file where you implement the handling for event-based activation.
 
-## Update commands HTML file
+## Update the commands HTML file
 
 1. In the **./src/commands** folder, open **commands.html**.
 
