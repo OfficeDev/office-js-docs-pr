@@ -1,7 +1,7 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
 description: 'Use the Excel JavaScript API to create PivotTables and interact with their components.'
-ms.date: 02/16/2022
+ms.date: 03/04/2022
 ms.localizationpriority: medium
 ---
 
@@ -16,6 +16,8 @@ See [Create a PivotTable to analyze worksheet data](https://support.microsoft.co
 > PivotTables created with OLAP are not currently supported. There is also no support for Power Pivot.
 
 ## Object model
+
+:::image type="content" source="../images/pivottable-object-model.png" alt-text="A diagram showing the relationship between object types for PivotTables, as described in the subsequent list and associated reference documentation.":::
 
 The [PivotTable](/javascript/api/excel/excel.pivottable) is the central object for PivotTables in the Office JavaScript API.
 
