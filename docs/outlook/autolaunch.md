@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 03/04/2022
+ms.date: 03/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -43,7 +43,7 @@ We invite you to try out the events now in preview! Let us know your scenarios a
 To preview these events where available:
 
 - For Outlook on the web:
-  - [Configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
+  - [Configure targeted release on your Microsoft 365 tenant.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`.
 - For Outlook on the new Mac UI preview:
   - The minimum required build is 16.54 (21101001). Join the [Office Insider program](https://insider.office.com/join/Mac) and choose the **Beta Channel** for access to Office beta builds.
@@ -197,7 +197,7 @@ You have to implement handling for your selected events.
 
 In this scenario, you'll add handling for composing new items.
 
-1. From the same quick start project, create a new folder named **launchevent** under the **/src/** directory.
+1. From the same quick start project, create a new folder named **launchevent** under the **./src** directory.
 
 1. In the **./src/launchevent** folder, create a new file named **launchevent.js**.
 
