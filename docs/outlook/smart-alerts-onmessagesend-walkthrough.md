@@ -208,14 +208,11 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 1. Save your changes.
 
-> [!IMPORTANT]
-> Windows: At present, imports are not supported in the JavaScript file where you implement the handling for event-based activation.
-
 ## Update webpack config settings
 
 1. Open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
 
-1. Locate the `plugins` array within the `config` object and add this new object at the beginning of the array.
+1. Locate the `plugins` array within the `config` object and add this new object to the beginning of the array.
 
     ```js
     new CopyWebpackPlugin({
