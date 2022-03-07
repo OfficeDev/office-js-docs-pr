@@ -2,7 +2,7 @@
 title: Use Smart Alerts and the OnMessageSend event in your Outlook add-in (preview)
 description: Learn how to handle the send message event in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 03/04/2022
+ms.date: 03/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -141,7 +141,7 @@ You have to implement handling for your selected event.
 
 In this scenario, you'll add handling for sending a message. Your add-in will check for certain keywords in the message. If any of those keywords are found, it will then check if there are any attachments. If there are no attachments, your add-in will recommend to the user to add the possibly missing attachment.
 
-1. From the same quick start project, create a new folder named **launchevent** under the **/src/** directory.
+1. From the same quick start project, create a new folder named **launchevent** under the **./src** directory.
 
 1. In the **./src/launchevent** folder, create a new file named **launchevent.js**.
 
@@ -222,14 +222,11 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 1. Save your changes.
 
-> [!IMPORTANT]
-> Windows: At present, imports are not supported in the JavaScript file where you implement the handling for event-based activation.
-
 ## Update webpack config settings
 
-Open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
+1. Open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
 
-1. Locate the `plugins` array within the `config` object and add this new object at the beginning of the array.
+1. Locate the `plugins` array within the `config` object and add this new object to the beginning of the array.
 
     ```js
     new CopyWebpackPlugin({
