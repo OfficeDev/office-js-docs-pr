@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 03/03/2022
+ms.date: 03/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -43,7 +43,7 @@ We invite you to try out the events now in preview! Let us know your scenarios a
 To preview these events where available:
 
 - For Outlook on the web:
-  - [Configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
+  - [Configure targeted release on your Microsoft 365 tenant.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`.
 - For Outlook on the new Mac UI preview:
   - The minimum required build is 16.54 (21101001). Join the [Office Insider program](https://insider.office.com/join/Mac) and choose the **Beta Channel** for access to Office beta builds.
@@ -197,7 +197,7 @@ You have to implement handling for your selected events.
 
 In this scenario, you'll add handling for composing new items.
 
-1. From the same quick start project, create a new folder named **launchevent** under the **/src/** directory.
+1. From the same quick start project, create a new folder named **launchevent** under the **./src** directory.
 
 1. In the **./src/launchevent** folder, create a new file named **launchevent.js**.
 
@@ -242,9 +242,21 @@ In this scenario, you'll add handling for composing new items.
 > [!IMPORTANT]
 > Windows: At present, imports are not supported in the JavaScript file where you implement the handling for event-based activation.
 
+## Update the commands HTML file
+
+1. In the **./src/commands** folder, open **commands.html**.
+
+1. Immediately before the closing **head** tag (`<\head>`), add a script entry to include the event-handling JavaScript code.
+
+    ```html
+    <script type="text/javascript" src="../launchevent/launchevent.js"></script>
+    ```
+
+1. Save your changes.
+
 ## Update webpack config settings
 
-Open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
+1. Open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
 
 1. Locate the `plugins` array within the `config` object and add this new object at the beginning of the array.
 
@@ -287,8 +299,6 @@ Open the **webpack.config.js** file found in the root directory of the project a
 
     ![Screenshot of a message window in Outlook on Windows with the subject set on compose.](../images/outlook-win-autolaunch.png)
 
-    [!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
-
 ## Debug
 
 As you make changes to launch-event handling in your add-in, you should be aware that:
@@ -299,6 +309,8 @@ As you make changes to launch-event handling in your add-in, you should be aware
 While implementing your own functionality, you may need to debug your code. For guidance on how to debug event-based add-in activation, see [Debug your event-based Outlook add-in](debug-autolaunch.md).
 
 Runtime logging is also available for this feature on Windows. For more information, see [Debug your add-in with runtime logging](../testing/runtime-logging.md#runtime-logging-on-windows).
+
+[!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## Deploy to users
 
