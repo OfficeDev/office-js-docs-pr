@@ -8,8 +8,6 @@ ms.localizationpriority: high
 
 # Build your first Word task pane add-in
 
-_Applies to: Word 2016 or later on Windows, and Word on iPad and Mac_
-
 In this article, you'll walk through the process of building a Word task pane add-in.
 
 ## Create the add-in
