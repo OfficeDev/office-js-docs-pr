@@ -27,6 +27,11 @@ In this tutorial, you'll create an Excel task pane add-in that:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
+- Office connected to a Microsoft 365 subscription (including Office on the web).
+
+    > [!NOTE]
+    > If you don't already have Office, you can [join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
+
 ## Create your add-in project
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
