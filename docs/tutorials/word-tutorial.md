@@ -90,6 +90,8 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
    - The `Word.run` is followed by a `catch` block. This is a best practice that you should always follow.
 
+   [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
+
     ```js
     async function insertParagraph() {
         await Word.run(async (context) => {

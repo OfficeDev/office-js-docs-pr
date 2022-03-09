@@ -135,6 +135,8 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
+
     ```js
     'use strict';
 
