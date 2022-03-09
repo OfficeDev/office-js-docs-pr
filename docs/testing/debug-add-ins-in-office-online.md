@@ -12,7 +12,7 @@ This article describes how to use Office on the web to debug your add-ins. Use t
 - To debug add-ins on a computer that isn't running Windows or the Office desktop client&mdash;for example, if you're developing on a Mac or Linux.
 - As a alternative debugging process if you cannot, or don't wish to, debug in an IDE, such as Visual Studio or Visual Studio Code.
 
-This article assumes that you have an add-in project that needs to be debugged. If you just want to practice debugging on the web, create a new project using one of the quickstarts for specific Office applications, such as this [quickstart for Word](../quickstarts/word-quickstart.md).
+This article assumes that you have an add-in project that needs to be debugged. If you just want to practice debugging on the web, create a new project using one of the quickstarts for specific Office applications, such as this [quick start for Word](../quickstarts/word-quickstart.md).
 
 ## Debug your add-in
 
