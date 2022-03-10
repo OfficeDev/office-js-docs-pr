@@ -44,7 +44,7 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 
 ## Available SendMode options (preview)
 
-When you include the `OnMessageSend` or `OnAppointmentSend` event in the manifest, you should also set the **SendMode** property. If a **SendMode** option is not specified, `SoftBlock`is set by default. The following are the available options. Based on the conditions your add-in is looking for, the user is alerted if your add-in finds an issue in the item being sent.
+When you include the `OnMessageSend` or `OnAppointmentSend` event in the manifest, you should also set the **SendMode** property. If a **SendMode** option is not specified, `SoftBlock` is set by default. The following are the available options. Based on the conditions your add-in is looking for, the user is alerted if your add-in finds an issue in the item being sent.
 
 | SendMode option | Description |
 |---|---|
