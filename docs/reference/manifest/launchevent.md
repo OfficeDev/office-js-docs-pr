@@ -40,11 +40,11 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 |:-----|:-----|:-----|
 |  **Type**  |  Yes  | Specifies a supported event type. For the set of supported types, see [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md#supported-events). |
 |  **FunctionName**  |  Yes  | Specifies the name of the JavaScript function to handle the event specified in the `Type` attribute. |
-|  **SendMode** (preview) |  No  | Used by `OnMessageSend` and `OnAppointmentSend` events. Specifies the options available to the user if your add-in stops an item from being sent. If a `SendMode` option is not specified, the `SoftBlock` option is set by default. For available options, refer to [Available SendMode options](#available-sendmode-options-preview). |
+|  **SendMode** (preview) |  No  | Used by `OnMessageSend` and `OnAppointmentSend` events. Specifies the options available to the user if your add-in stops an item from being sent. If the **SendMode** property isn't included, the `SoftBlock` option is set by default. For available options, refer to [Available SendMode options](#available-sendmode-options-preview). |
 
 ## Available SendMode options (preview)
 
-When you include the `OnMessageSend` or `OnAppointmentSend` event in the manifest, you should also set the **SendMode** property. If a **SendMode** option is not specified, `SoftBlock` is set by default. The following are the available options. Based on the conditions your add-in is looking for, the user is alerted if your add-in finds an issue in the item being sent.
+When you include the `OnMessageSend` or `OnAppointmentSend` event in the manifest, you should also set the **SendMode** property. If the **SendMode** property isn't included, the `SoftBlock` option is set by default. The following are the available options. Based on the conditions your add-in is looking for, the user is alerted if your add-in finds an issue in the item being sent.
 
 | SendMode option | Description |
 |---|---|
