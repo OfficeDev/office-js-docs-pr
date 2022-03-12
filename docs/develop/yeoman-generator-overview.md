@@ -83,7 +83,7 @@ If the creation has been successful, you will see a **Congratulations!** message
 
 This option creates only a manifest for an add-in. The resulting project doesn't have a Hello World add-in, any of the scripts, or any of the dependencies. Use this option in the following scenarios:
 
-- You want to use different tools from the ones a Yeoman generator project installs and configures by default. For example, you want to use a different bundler, transpiler, different task runner, or development server.
+- You want to use different tools from the ones a Yeoman generator project installs and configures by default. For example, you want to use a different bundler, transpiler, task runner, or development server.
 - You want to use a web application development framework, other than Angular or React, such as Vue.
 
 See [Use Vue to build an Excel task pane add-in](../quickstarts/excel-quickstart-vue.md) for an example of using the generator with the manifest-only option.
