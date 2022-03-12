@@ -24,7 +24,7 @@ The following image explains the differences between using `yo office` scaffold 
 ![Image of differences between using the Yeoman generator for Office Add-ins and writing your own JSON.](../images/custom-functions-json.png)
 
 > [!NOTE]
-> Remember to connect your manifest to the JSON file you create, through the `<Resources>` section in your XML manifest file if you do not use the `yo office` generator.
+> Remember to connect your manifest to the JSON file you create, through the `<Resources>` section in your XML manifest file if you do not use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Authoring metadata and connecting to the manifest
 

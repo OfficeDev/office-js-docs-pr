@@ -43,18 +43,18 @@ The first question asks you to choose between six types of projects. The options
 - **Office Add-in Task Pane project**
 - **Office Add-in Task Pane project using Angular framework**
 - **Office Add-in Task Pane project using React framework**
-- **Office Add-in project supporting single sign-on**
+- **Office Add-in Task Pane project supporting single sign-on**
 - **Office Add-in project containing the manifest only**
 - **Excel Custom Functions Add-in project**
 
 ![Screenshot showing the prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
 
 > [!NOTE]
-> The option **Office Add-in project supporting single sign-on** produces a project that can be used to see how single sign-on works in an add-in. The project cannot be used as the basis of a production add-in. To get an SSO-enabled project that can be basis of a production add-in, see the "Complete" version of [one of the SSO samples in our samples repo](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth).
+> The **Office Add-in Task Pane project supporting single sign-on** option produces a project that can be used to see how single sign-on (SSO) works in an add-in. The project can't be used as the basis of a production add-in. To get an SSO-enabled project that can be a basis of a production add-in, see the "Complete" version of [one of the SSO samples in our samples repo](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth).
 >
-> The option **Office Add-in project containing the manifest only** produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
+> The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
 
-The next question asks you to choose between TypeScript and JavaScript. (This question is skipped if you take the manifest-only option for the preceding question.)
+The next question asks you to choose between **TypeScript** and **JavaScript**. (This question is skipped if you chose the manifest-only option in the preceding question.)
 
 ![Screenshot showing that the user chose "Office Add-in Task Pane project" to the preceding question and shows the prompt for language, and the possible answers, TypeScript and JavaScript, in the Yeoman generator.](../images/yo-office-language-prompt.png)
 
@@ -62,7 +62,7 @@ You're then prompted to give the add-in a name. The name you specify will be use
 
 ![Screenshot showing that the user chose TypeScript to the previous question and shows the prompt for the add-in name in the Yeoman generator.](../images/yo-office-name-prompt.png)
 
-You're then prompted to choose which Office application the add-in should run in. There are six possible applications to choose from; Excel, OneNote, Outlook, PowerPoint, Project, and Word. You must choose just one, but if you want the add-in to be runnable in more than one of the Office applications, you can change the manifest later to support the ones that you don't choose here. The exception is Outlook. A manifest that supports Outlook cannot support any other Office application.
+You're then prompted to choose which Office application the add-in should run in. There are six possible applications to choose from: **Excel**, **OneNote**, **Outlook**, **PowerPoint**, **Project**, and **Word**. You must choose just one, but if you want the add-in to be runnable in more than one of the Office applications, you can change the manifest later to support the ones that you don't choose here. The exception is Outlook. A manifest that supports Outlook cannot support any other Office application.
 
 ![Screenshot showing that the user named the project "Contoso Add-in" and shows the prompt for Office application, and the possible answers, in the Yeoman generator.](../images/yo-office-host-prompt.png)
 
@@ -99,4 +99,4 @@ For detailed reference about the command line parameters, see the readme for the
 
 ## Troubleshooting
 
-If you encounter problems using the tool, your first step should be to reinstall it to be sure that you have the latest version. If doing so doesn't fix the problem, search the [issues of the GitHub repo for the tool](https://github.com/OfficeDev/generator-office/issues) to see if anyone else has encountered the same problem and found a solution. If no one has, [create a new issue](https://github.com/OfficeDev/generator-office/issues/new?assignees=&labels=needs+triage&template=bug_report.md&title=).
+If you encounter problems using the tool, your first step should be to reinstall it to be sure that you have the latest version. (See [Install the generator](#install-the-generator) for details.) If doing so doesn't fix the problem, search the [issues of the GitHub repo for the tool](https://github.com/OfficeDev/generator-office/issues) to see if anyone else has encountered the same problem and found a solution. If no one has, [create a new issue](https://github.com/OfficeDev/generator-office/issues/new?assignees=&labels=needs+triage&template=bug_report.md&title=).
