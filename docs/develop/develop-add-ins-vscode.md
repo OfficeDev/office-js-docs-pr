@@ -20,7 +20,7 @@ This article describes how to use [Visual Studio Code (VS Code)](https://code.vi
 
 ## Create the add-in project using the Yeoman generator
 
-If you're using VS Code as your integrated development environment (IDE), you should create the Office Add-in project with the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). The Yeoman generator creates a Node.js project that can be managed with VS Code or any other editor.
+If you're using VS Code as your integrated development environment (IDE), you should create the Office Add-in project with the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md). The Yeoman generator creates a Node.js project that can be managed with VS Code or any other editor.
 
 To create an Office Add-in with the Yeoman generator, follow instructions in the [5-minute quick start](../index.yml) that corresponds to the type of add-in you'd like to create.
 

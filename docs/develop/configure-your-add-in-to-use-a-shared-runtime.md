@@ -14,7 +14,7 @@ You can configure your Office Add-in to run all of its code in a single shared J
 
 ## Create the add-in project
 
-If you are starting a new project, follow these steps to use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create an Excel or PowerPoint add-in project.
+If you are starting a new project, follow these steps to use the [Yeoman generator or Office Add-ins](yeoman-generator-overview.md) to create an Excel or PowerPoint add-in project.
 
 Do one of the following:
 
@@ -31,7 +31,7 @@ The generator will create the project and install supporting Node components.
 
 ## Configure the manifest
 
-Follow these steps for a new or existing project to configure it to use a shared runtime. These steps assume you have generated your project using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
+Follow these steps for a new or existing project to configure it to use a shared runtime. These steps assume you have generated your project using the [Yeoman generator or Office Add-ins](yeoman-generator-overview.md).
 
 1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
 1. Open the **manifest.xml** file.

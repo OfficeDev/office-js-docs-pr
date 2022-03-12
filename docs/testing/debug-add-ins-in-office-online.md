@@ -29,7 +29,7 @@ To debug your add-in by using Office on the web:
 1. Deploy your add-in to a server that supports SSL.
 
     > [!NOTE]
-    > We recommend that you use the [Yeoman generator](https://github.com/OfficeDev/generator-office) to create and host your add-in.
+    > We recommend that you use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create and host your add-in.
 
 2. In your [add-in manifest file](../develop/add-in-manifests.md), update the **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:
 
