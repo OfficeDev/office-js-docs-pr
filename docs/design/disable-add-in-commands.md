@@ -1,7 +1,7 @@
 ---
 title: Enable and Disable Add-in Commands
 description: 'Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.'
-ms.date: 02/11/2022
+ms.date: 03/12/2022
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +18,7 @@ You can also specify whether the command is enabled or disabled when the Office 
 
 ## Office application and platform support only
 
-The APIs described in this article are only available in Excel on all platforms and in PowerPoint on the web.
+The APIs described in this article are only available in Excel, PowerPoint, and Word.
 
 ### Test for platform support with requirement sets
 
