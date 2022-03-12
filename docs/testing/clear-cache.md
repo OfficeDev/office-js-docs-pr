@@ -1,7 +1,7 @@
 ---
 title: Clear the Office cache
 description: 'Learn how to clear the Office cache on your computer.'
-ms.date: 01/27/2022
+ms.date: 03/11/2022
 ms.localizationpriority: high
 ---
 
