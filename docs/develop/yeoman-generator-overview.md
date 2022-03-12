@@ -7,7 +7,7 @@ ms.localizationpriority: high
 
 # Create Office Add-in projects with the Yeoman Generator
 
-The Yeoman Generator for Office Add-ins (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. We recommend that you use this tool to create add-in projects except when you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS). In either of the latter two situations, [use Visual Studio to create the add-in](develop-add-ins-in-visual-studio.md).
+The Yeoman Generator for Office Add-ins (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. We recommend that you use this tool to create add-in projects except when you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS). In either of the latter two situations, [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
 
 The projects that tool creates have the following characteristics:
 
@@ -21,7 +21,7 @@ The projects that tool creates have the following characteristics:
 - They include a polyfill and a transpiler that is configured to transpile TypeScript, and recent versions of JavaScript, to ES5 JavaScript. These features ensure that the add-in is supported in all browser runtimes that Office Add-ins might run in, including Internet Explorer.
 
 > [!TIP]
-> If you want to deviate from these choices significantly, such as using a different task-runner or a different server, we recommend that when you run the tool you take the option described in [Manifest-only option](#manifests-only-option).
+> If you want to deviate from these choices significantly, such as using a different task-runner or a different server, we recommend that when you run the tool you take the option described in [Manifest-only option](#manifest-only-option).
 
 ## Install the generator
 
@@ -52,7 +52,7 @@ The first question asks you to choose between six types of projects. The options
 > [!NOTE]
 > The option **Office Add-in project supporting single sign-on** produces a project that can be used to see how single sign-on works in an add-in. The project cannot be used as the basis of a production add-in. To get an SSO-enabled project that can be basis of a production add-in, see the "Complete" version of [one of the SSO samples in our samples repo](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth).
 >
-> The option **Office Add-in project containing the manifest only** produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifests-only-option).
+> The option **Office Add-in project containing the manifest only** produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
 
 The next question asks you to choose between TypeScript and JavaScript. (This question is skipped if you take the manifest-only option for the preceding question.)
 
@@ -86,7 +86,7 @@ This option creates only a manifest for an add-in. The resulting project doesn't
 - You want to use different tools from the ones a Yeoman generator project installs and configures by default. For example, you want to use a different bundler, transpiler, different task runner, or development server.
 - You want to use a web application development framework, other than Angular or React, such as Vue.
 
-See [Use Vue to build an Excel task pane add-in](..quickstarts\excel-quickstart-vue.md) for an example of using the generator with the manifest-only option.
+See [Use Vue to build an Excel task pane add-in](../quickstarts/excel-quickstart-vue.md) for an example of using the generator with the manifest-only option.
 
 ## Use command line parameters
 
