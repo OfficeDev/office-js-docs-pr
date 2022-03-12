@@ -96,3 +96,7 @@ You can also add parameters to the `yo office` command. The two most common are 
 - `yo office --skip-install`: This will prevent the generator from installing the dependencies.
 
 For detailed reference about the command line parameters, see the readme for the generator at [Yeoman generator for Office Add-ins](https://github.com/officedev/generator-office).
+
+## Troubleshooting
+
+If you encounter problems using the tool, your first step should be to reinstall it to be sure that you have the latest version. If doing so doesn't fix the problem, search the [issues of the GitHub repo for the tool](https://github.com/OfficeDev/generator-office/issues) to see if anyone else has encountered the same problem and found a solution. If no one has, [create a new issue](https://github.com/OfficeDev/generator-office/issues/new?assignees=&labels=needs+triage&template=bug_report.md&title=).
