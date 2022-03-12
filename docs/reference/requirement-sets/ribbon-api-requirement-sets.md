@@ -1,7 +1,7 @@
 ---
 title: Ribbon API requirement sets
 description: 'Specifies which Office platforms and builds support the dynamic ribbon APIs.'
-ms.date: 02/23/2022
+ms.date: 03/12/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
 ---
@@ -19,7 +19,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 
 |  Requirement set  | Office 2021 or later on Windows\*<br>(one-time purchase) | Office on Windows\*<br>(connected to a Microsoft 365 subscription) |  Office on iPad<br>(connected to a Microsoft 365 subscription)  |  Office on Mac\*<br>(both subscription<br> and one-time purchase Office on Mac 2019 and later)   | Office on the web\*  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.2  | Build 16.0.14326.20454 or later | 2102 (Build 13801.20294) | N/A | Not supported | May, 2021 | N/A|
+| RibbonApi 1.2  | Build 16.0.14326.20454 or later | 2102 (Build 13801.20294) | N/A | 16.53.806.0 | May, 2021 | N/A|
 | RibbonApi 1.1  | Build 16.0.14326.20454 or later | See support<br>section below | N/A | 16.38 | November, 2020 | N/A|
 
 > **&#42;** The Ribbon API is supported only in Excel.
