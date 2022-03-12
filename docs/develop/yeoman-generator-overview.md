@@ -9,9 +9,9 @@ ms.localizationpriority: high
 
 The Yeoman Generator for Office Add-ins (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. We recommend that you use this tool to create add-in projects except when you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS). In either of the latter two situations, [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
 
-The projects that tool creates have the following characteristics:
+The projects that the tool creates have the following characteristics:
 
-- They have a standard [npm](https://www.npmjs.com/) configuration that includes a package.json.
+- They have a standard [npm](https://www.npmjs.com/) configuration that includes a **package.json** file.
 - They include several helpful scripts to build the project, start the server, sideload the add-in in Office, and other tasks.
 - They use [webpack](https://webpack.js.org/) as a bundler and basic task runner.
 - In development mode, they are hosted on localhost by webpack's Node.js-based webpack-dev-server, a development-oriented version of the [express](http://expressjs.com/) server that supports hot-reloading and recompile-on-change.
@@ -21,7 +21,7 @@ The projects that tool creates have the following characteristics:
 - They include a polyfill and a transpiler that is configured to transpile TypeScript, and recent versions of JavaScript, to ES5 JavaScript. These features ensure that the add-in is supported in all browser runtimes that Office Add-ins might run in, including Internet Explorer.
 
 > [!TIP]
-> If you want to deviate from these choices significantly, such as using a different task-runner or a different server, we recommend that when you run the tool you take the option described in [Manifest-only option](#manifest-only-option).
+> If you want to deviate from these choices significantly, such as using a different task runner or a different server, we recommend that when you run the tool you take the option described in [Manifest-only option](#manifest-only-option).
 
 ## Install the generator
 
@@ -36,7 +36,7 @@ Start the tool with the following command in a system prompt (not a bash window)
 yo office 
 ```
 
-A lot needs to load, so it may take 20 seconds before the tool starts. The tool asks you a series of questions. For some, you just type an answer to the prompt. For others, you're given a list of possible answers. Select one using the arrow keys and then press the Enter key.
+A lot needs to load, so it may take 20 seconds before the tool starts. The tool asks you a series of questions. For some, you just type an answer to the prompt. For others, you're given a list of possible answers. If given a list, select one using the arrow keys, then select the Enter key.
 
 The first question asks you to choose between six types of projects. The options are:
 
