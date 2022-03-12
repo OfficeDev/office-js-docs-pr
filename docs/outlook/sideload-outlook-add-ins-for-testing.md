@@ -84,7 +84,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 ### Outlook on the desktop
 
-### Outlook 2016 or later (Windows or Mac)
+#### Outlook 2016 or later (Windows or Mac)
 
 1. Open Outlook 2016 or later on Windows or Mac.
 
@@ -115,7 +115,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
-### Outlook 2013 (Windows)
+#### Outlook 2013 (Windows)
 
 1. Open Outlook 2013 on Windows.
 
