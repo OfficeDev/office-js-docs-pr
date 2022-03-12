@@ -8,8 +8,6 @@ ms.localizationpriority: high
 
 # Build your first Word task pane add-in
 
-_Applies to: Word 2016 or later on Windows, and Word on iPad and Mac_
-
 In this article, you'll walk through the process of building a Word task pane add-in.
 
 ## Create the add-in
@@ -134,6 +132,8 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
     ```
 
 2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
+
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     'use strict';

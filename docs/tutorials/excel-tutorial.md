@@ -27,6 +27,11 @@ In this tutorial, you'll create an Excel task pane add-in that:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
+- Office connected to a Microsoft 365 subscription (including Office on the web).
+
+    > [!NOTE]
+    > If you don't already have Office, you can [join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
+
 ## Create your add-in project
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
@@ -91,6 +96,8 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     - The `context.sync` method sends all queued commands to Excel for execution.
 
     - The `Excel.run` is followed by a `catch` block. This is a best practice that you should always follow.
+
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     async function createTable() {

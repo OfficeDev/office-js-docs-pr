@@ -1347,6 +1347,9 @@ items:
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
       displayName: Word
+    - name: Null values
+      href: word/null-values.md
+      displayName: Word
     - name: Use search options to find text in your Word add-in
       href: word/search-option-guidance.md
       displayName: Word
