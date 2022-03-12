@@ -29,7 +29,7 @@ The following table lists the add-in commands requirement sets, the Office clien
 
 |  Requirement set  |  Office 2013 on Windows<br>(one-time purchase) | Office 2016 on Windows<br>(one-time purchase) | Office 2019 on Windows<br>(one-time purchase) |  Office 2021 on Windows<br>(one-time purchase) | Office on Windows<br>(subscription)   |  Office on iPad<br>(subscription)  |  Office on Mac<br>(both subscription<br> and one-time purchase Office on Mac 2019 and later)   | Office on the web  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| AddinCommands 1.3  | N/A | N/A | N/A | N/A | Version 2204 (Build 14827.10000) | N/A | 16.57.105.0 or later | November 2020 |
+| AddinCommands 1.3  | N/A | N/A | N/A | N/A | Version 2204 (Build 14827.10000) or later | N/A | 16.57.105.0 or later | November 2020 |
 | AddinCommands 1.1  | N/A | N/A  | Version 1809 (Build 10827.20150) or later&dagger; | 16.0.14326.20454 or later&dagger; | Version 1705 (Build 8121.1000) or later&dagger; | N/A | 15.34 or later&dagger;\*| May 2017 |
 
 \* The [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-issetsupported-member(1)) method will erroneously return `false` for versions 16.9 &ndash; 16.14 (inclusive), but the requirement set *is* supported on these versions.
