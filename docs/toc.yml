@@ -119,6 +119,8 @@ items:
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
       - name: ITP and third-party cookies
         href: develop/itp-and-third-party-cookies.md
+      - name: Address same origin policy limitations
+        href: develop/addressing-same-origin-policy-limitations.md
     - name: Authentication and authorization
       items:
       - name: Overview
@@ -561,8 +563,6 @@ items:
           href: reference/manifest/supportssharedfolders.md
         - name: WebApplicationInfo
           href: reference/manifest/webapplicationinfo.md
-    - name: Address same origin policy limitations
-      href: develop/addressing-same-origin-policy-limitations.md
     - name: Browsers used by Office Add-ins
       href: concepts/browsers-used-by-office-web-add-ins.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
