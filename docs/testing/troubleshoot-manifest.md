@@ -23,7 +23,7 @@ npm run validate
 ![Animated GIF that shows the Yo Office validator being run at the command line and generating results that show Validation Passed.](../images/yo-office-validator.gif)
 
 > [!NOTE]
-> To have access to this functionality, your add-in project must have been created by using [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) version 1.1.17 or later.
+> To access this functionality, your add-in project must be created using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) version 1.1.17 or later.
 
 ## Validate your manifest with office-addin-manifest
 
