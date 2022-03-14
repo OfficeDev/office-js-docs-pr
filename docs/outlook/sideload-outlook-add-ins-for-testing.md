@@ -44,7 +44,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 > [!NOTE]
 > If your organization has included its logo in the mailbox toolbar, you might see something slightly different than shown in the preceding images.
 
-### New Outlook on the web
+#### New Outlook on the web
 
 1. Go to [Outlook on the web](https://outlook.office.com).
 
@@ -64,7 +64,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
-### Classic Outlook on the web
+#### Classic Outlook on the web
 
 1. Go to [Outlook on the web](https://outlook.office.com).
 
