@@ -84,7 +84,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 ### Outlook on the desktop
 
-#### Outlook 2016 or later (Windows or Mac)
+#### Outlook 2016 or later on Windows or Mac
 
 1. Open Outlook 2016 or later on Windows or Mac.
 
@@ -95,7 +95,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
     > [!IMPORTANT]
     > If you don't see the **Get Add-ins** button in your version of Outlook, do one of the following:
     >
-    > - If you're using Outlook for Mac or configured your ribbon layout to Simplified Ribbon in Outlook for Windows, select the **See more items (`...`)** button from the ribbon, then select **Get Add-ins**.
+    > - If you're using Outlook on Mac or configured your ribbon layout to Simplified Ribbon in Outlook on Windows, select the **See more items (`...`)** button from the ribbon, then select **Get Add-ins**.
     >
     >   OR
     >
@@ -103,7 +103,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
     >
     >   OR
     >
-    > - For Outlook for Windows, select the **File** menu, then select the **Manage Add-ins** button on the **Info** tab to open the **Add-ins** dialog in Outlook on the web. You can see more about the web experience in the previous section [Sideload an add-in in Outlook on the web](#outlook-on-the-web).
+    > - For Outlook on Windows, select the **File** menu, then select the **Manage Add-ins** button on the **Info** tab to open the **Add-ins** dialog in Outlook on the web. You can see more about the web experience in the previous section [Sideload an add-in in Outlook on the web](#outlook-on-the-web).
 
 1. If there are tabs near the top of the dialog, ensure that the **Add-ins** tab is selected. Choose **My add-ins**.
 
@@ -115,7 +115,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
-#### Outlook 2013 (Windows)
+#### Outlook 2013 on Windows
 
 1. Open Outlook 2013 on Windows.
 
