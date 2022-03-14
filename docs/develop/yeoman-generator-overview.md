@@ -17,7 +17,7 @@ The projects that the tool creates have the following characteristics.
 - In development mode, they are hosted on localhost by webpack's Node.js-based webpack-dev-server, a development-oriented version of the [express](http://expressjs.com/) server that supports hot-reloading and recompile-on-change.
 - By default, all dependencies are installed by the tool, but you can postpone the installation with a command line argument.
 - They include a complete add-in manifest.
-- They have a "Hello World"-level add-in that can be run as soon as the tool has finished.
+- They have a "Hello World"-level add-in that is ready run as soon as the tool has finished.
 - They include a polyfill and a transpiler that is configured to transpile TypeScript, and recent versions of JavaScript, to ES5 JavaScript. These features ensure that the add-in is supported in all browser runtimes that Office Add-ins might run in, including Internet Explorer.
 
 > [!TIP]
@@ -86,7 +86,7 @@ This option creates only a manifest for an add-in. The resulting project doesn't
 - You want to use different tools from the ones a Yeoman generator project installs and configures by default. For example, you want to use a different bundler, transpiler, task runner, or development server.
 - You want to use a web application development framework, other than Angular or React, such as Vue.
 
-See [Use Vue to build an Excel task pane add-in](../quickstarts/excel-quickstart-vue.md) for an example of using the generator with the manifest-only option.
+For an example of using the generator with the manifest-only option, see [Use Vue to build an Excel task pane add-in](../quickstarts/excel-quickstart-vue.md).
 
 ## Use command line parameters
 
