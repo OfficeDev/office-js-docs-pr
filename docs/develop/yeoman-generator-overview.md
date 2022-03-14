@@ -36,7 +36,7 @@ Start the tool with the following command in a system prompt (not a bash window)
 yo office 
 ```
 
-A lot needs to load, so it may take 20 seconds before the tool starts. The tool asks you a series of questions. For some, you just type an answer to the prompt. For others, you're given a list of possible answers. If given a list, select one using the arrow keys, then select the Enter key.
+A lot needs to load, so it may take 20 seconds before the tool starts. The tool asks you a series of questions. For some, you just type an answer to the prompt. For others, you're given a list of possible answers. If given a list, select one and then select Enter.
 
 The first question asks you to choose between six types of projects. The options are:
 
