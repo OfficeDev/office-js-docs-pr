@@ -1,7 +1,7 @@
 ---
 title: Shared runtime requirement sets
 description: 'Specifies the platforms and Office applications that support the SharedRuntime APIs.'
-ms.date: 02/05/2022
+ms.date: 03/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
 ---
@@ -32,6 +32,8 @@ The following table lists additional application builds that support a preview o
 |Office application |Build |
 |-------------------|------|
 |PowerPoint on Windows |Build 16.0.13218.10000 or later |
+|PowerPoint on Mac |Build Build 16.46.207.0 or later |
+|PowerPoint on the web | February 2022 |
 |Word on Windows |Build 16.0.13218.10000 or later |
 |Word on Mac |Build 16.46.207.0 or later |
 
