@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in API preview requirement set
-description: 'Features and APIs that are currently in preview for Outlook add-ins.'
-ms.date: 11/01/2021
+description: Features and APIs that are currently in preview for Outlook add-ins.
+ms.date: 03/15/2021
 ms.localizationpriority: medium
 ---
 
@@ -98,6 +98,14 @@ Added a new object that allows you to manage the delivery date and time of a mes
 ### Event-based activation
 
 This feature was released in [requirement set 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). However, additional events are now available in preview. To learn more, refer to [Supported events](../../../outlook/autolaunch.md#supported-events).
+
+**Available in**: Outlook on Windows (connected to a Microsoft 365 subscription), Outlook on the web (modern)\*, Outlook on Mac (new UI)\*
+
+\* *Some events are only supported on certain clients. For guidance, refer to the [list of events and their supported clients](../../../outlook/autolaunch.md#supported-events).*
+
+#### [Office.AddinCommands.EventCompletedOptions.errorMessage](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview#office-office-addincommands-eventcompletedoptions-errormessage-member)
+
+Added a new property to display an error message to the user if the handled event can't continue to execute. For an example, refer to the [Smart Alerts walkthrough](../../../outlook/smart-alerts-onmessagesend-walkthrough.md).
 
 **Available in**: Outlook on Windows (connected to a Microsoft 365 subscription)
 
