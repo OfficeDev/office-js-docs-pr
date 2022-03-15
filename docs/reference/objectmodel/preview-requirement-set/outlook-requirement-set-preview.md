@@ -103,7 +103,7 @@ This feature was released in [requirement set 1.10](../requirement-set-1.10/outl
 
 \* *Some events are only supported on certain clients. For guidance, refer to the [list of events and their supported clients](../../../outlook/autolaunch.md#supported-events).*
 
-#### [Office.AddinCommands.EventCompletedOptions.errorMessage](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview#office-office-addincommands-eventcompletedoptions-errormessage-member)
+#### [Office.AddinCommands.EventCompletedOptions.errorMessage](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview#office-office-addincommands-eventcompletedoptions-errormessage-member&preserve-view=true)
 
 Added a new property to display an error message to the user if the handled event can't continue to execute. For an example, refer to the [Smart Alerts walkthrough](../../../outlook/smart-alerts-onmessagesend-walkthrough.md).
 
