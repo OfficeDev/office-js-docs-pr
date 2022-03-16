@@ -97,6 +97,8 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
     >
     > - If you're using Outlook on Mac or configured your ribbon layout to Simplified Ribbon in Outlook on Windows, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
     >
+    >   ![Outlook on Mac and Windows pointing to the Get Add-ins button from the ellipsis button.](../images/outlook-sideload-deskop-mac.png)
+    >
     >   OR
     >
     > - Select the **Store** button on the ribbon, if available.
