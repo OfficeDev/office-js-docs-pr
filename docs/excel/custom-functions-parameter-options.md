@@ -257,7 +257,7 @@ In combination with the [invocation parameter](#invocation-parameter), you can u
 This is useful in scenarios where input data types may vary. The address of an input parameter can be used to check the number format of the input value. The number format can then be adjusted prior to input, if necessary. The address of an input parameter can also be used to detect whether the input value has any related properties that may be relevant to subsequent calculations. 
 
 >[!NOTE]
-> If you're working with [manually-created JSON metadata](custom-functions-json.md) to return parameter addresses instead of the Yo Office generator, the `options` object must have the `requiresParameterAddresses` property set to `true`, and the `result` object must have the `dimensionality` property set to `matrix`.
+> If you're working with [manually-created JSON metadata](custom-functions-json.md) to return parameter addresses instead of the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), the `options` object must have the `requiresParameterAddresses` property set to `true`, and the `result` object must have the `dimensionality` property set to `matrix`.
 
 The following custom function takes in three input parameters, retrieves the `parameterAddresses` property of the `Invocation` object for each parameter, and then returns the addresses. 
 

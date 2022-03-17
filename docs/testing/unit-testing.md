@@ -104,7 +104,7 @@ npm install office-addin-mock --save-dev
 
 The examples in this section use Jest with its default settings. These settings support CommonJS modules. See the [Jest documentation](https://jestjs.io/docs/getting-started) for how to configure Jest and node.js to support ECMAScript modules and to support TypeScript. To run any of these examples, take the following steps.
 
-1. Create an Office add-in project for the appropriate Office host application (for example, Excel or Word). One way to do this quickly is to use the [Yo Office tool](https://github.com/OfficeDev/generator-office).
+1. Create an Office Add-in project for the appropriate Office host application (for example, Excel or Word). One way to do this quickly is to use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 1. In the root of the project, [install Jest](https://jestjs.io/docs/getting-started).
 1. [Install the office-addin-mock tool](#install-the-tool).
 1. Create a file exactly like the first file in the example and add it to the folder that contains the project's other source files, often called `\src`.

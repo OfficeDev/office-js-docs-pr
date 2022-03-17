@@ -1,7 +1,7 @@
 ---
 title: Develop Office Add-ins
 description: 'An introduction to developing Office Add-ins.'
-ms.date: 07/08/2021
+ms.date: 03/11/2022
 ms.localizationpriority: high
 ---
 
@@ -14,11 +14,11 @@ All Office Add-ins are built upon the Office Add-ins platform. For any add-in yo
 
 ## Create an Office Add-in
 
-You can create an Office Add-in by using the Yeoman generator for Office Add-ins or Visual Studio.
+You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md) or Visual Studio.
 
-### Yeoman generator for Office Add-ins
+### Yeoman generator
 
-The [Yeoman generator for Office Add-ins](https://github.com/officedev/generator-office) can be used to create a Node.js Office Add-in project that can be managed with Visual Studio Code or any other editor. The generator can create Office Add-ins for any of the following:
+The Yeoman generator for Office Add-ins can be used to create a Node.js Office Add-in project that can be managed with Visual Studio Code or any other editor. The generator can create Office Add-ins for any of the following:
 
 - Excel
 - OneNote
@@ -28,7 +28,7 @@ The [Yeoman generator for Office Add-ins](https://github.com/officedev/generator
 - Word
 - Excel custom functions
 
-You can choose to create the project using HTML, CSS and JavaScript, or using Angular or React. For whichever framework you choose, you can choose between JavaScript and Typescript as well. For more information about creating add-ins with the Yeoman generator, see [Develop Office Add-ins with Visual Studio Code](../develop/develop-add-ins-vscode.md).
+Create your project using HTML, CSS and JavaScript (or TypeScript), or using Angular or React. For whichever framework you choose, you can choose between JavaScript and Typescript as well. For more information about creating add-ins with the generator, see [Yeoman generator for Office Add-ins](yeoman-generator-overview.md).
 
 ### Visual Studio
 

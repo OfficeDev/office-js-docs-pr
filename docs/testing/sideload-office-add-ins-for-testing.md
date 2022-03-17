@@ -18,7 +18,7 @@ Sideloading varies between host applications (for example, Excel).
 
 ## Sideload an Office Add-in in Office on the web
 
-This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word** only. For other host applications, see the manual sideloading instructions in the following section. This example project assumes that you are using a project created with [the Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
+This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word** only. For other host applications, see the manual sideloading instructions in the following section. This example project assumes that you are using a project created with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 1. Open [Office on the web](https://office.live.com/). Using the **Create** option, make a document in **Excel**, **OneNote**, **PowerPoint**, or **Word**. In this new document, select **Share** in the ribbon, select **Copy Link**, and copy the URL.
 

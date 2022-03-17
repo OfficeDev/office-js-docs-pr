@@ -25,7 +25,7 @@ This article helps you understand which options you should choose to ensure that
 > For a high-level view of where Office Add-ins are currently supported, see the [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md) page.
 
 > [!TIP]
-> Many of the tasks described in this article are done for you, in whole or in part, when you create your add-in project with a tool such as Yo Office or one of the Office Add-in templates in Visual Studio. In such cases, please interpret the task as meaning that you should verify that it has been done.
+> Many of the tasks described in this article are done for you, in whole or in part, when you create your add-in project with a tool, such as the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md) or one of the Office Add-in templates in Visual Studio. In such cases, please interpret the task as meaning that you should verify that it has been done.
 
 ## Use the latest Office JavaScript API library
 
