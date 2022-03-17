@@ -14,7 +14,7 @@ You can use sideloading to install an Outlook add-in for testing without having 
 
 ## Sideload automatically
 
-If you created your Outlook add-in using [the Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), sideloading is best done through the command line on Windows. This will take advantage of our tooling and sideload across all of your supported devices in one command.
+If you created your Outlook add-in using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), sideloading is best done through the command line on Windows. This will take advantage of our tooling and sideload across all of your supported devices in one command.
 
 1. On Windows, open a command prompt and navigate to the root directory of your Yeoman generated add-in project. Run the command `npm start`.
 

@@ -247,13 +247,15 @@ items:
         href: develop/show-hide-add-in.md  
       - name: Localization
         href: develop/localization.md
-    - name: Frameworks and IDEs
+    - name: Frameworks, IDEs, and other tools
       items:
       - name: Develop add-ins with Angular
         href: develop/add-ins-with-angular2.md
+      - name: Create add-ins with the Yeoman Generator
+        href: develop/yeoman-generator-overview.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
-      - name: Develop add-ins with Visual Studio
+      - name: Create and Develop add-ins with Visual Studio
         items:
         - name: Overview
           href: develop/develop-add-ins-visual-studio.md
