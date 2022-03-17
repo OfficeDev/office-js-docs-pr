@@ -16,7 +16,7 @@ This article describes concepts that are fundamental to using the [Word JavaScri
 
 A Word add-in interacts with objects in Word by using the Office JavaScript API. This includes two JavaScript object models:
 
-* **Word JavaScript API**: The [Word JavaScript API](./javascript/api/word) provides strongly-typed objects that work with the document, ranges, tables, lists, formatting, and more.
+* **Word JavaScript API**: The [Word JavaScript API](/javascript/api/word) provides strongly-typed objects that work with the document, ranges, tables, lists, formatting, and more.
 
 * **Common APIs**: The [Common API](/javascript/api/office) give access to features such as UI, dialogs, and client settings that are common across multiple Office applications.
 
