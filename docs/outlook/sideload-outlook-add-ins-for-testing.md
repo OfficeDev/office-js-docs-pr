@@ -96,7 +96,9 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
     # [Mac](#tab/mac)
 
-    ![Outlook on Mac ribbon pointing to Get Add-ins button.](../images/outlook-sideload-mac-classic.png)    
+    ![Outlook on Mac ribbon pointing to Get Add-ins button.](../images/outlook-sideload-mac-classic.png)
+
+    ---
 
     > [!IMPORTANT]
     > If you don't see the **Get Add-ins** button in your version of Outlook, do one of the following:
@@ -110,6 +112,8 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
     >   # [Mac](#tab/mac)
     >
     >   ![Outlook on Mac pointing to the Get Add-ins button from the ellipsis button.](../images/outlook-sideload-deskop-mac.png)
+    >
+    >   ---
     >
     >   OR
     >
