@@ -66,18 +66,6 @@ To test your add-in in Excel on the web, run the following command. When you run
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-To use your custom functions add-in, open a new workbook in Excel on the web. In this workbook, complete the following steps to sideload your add-in.
-
-1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
-
-   ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted.](../images/excel-cf-online-register-add-in-1.png)
-
-1. Choose **Manage My Add-ins** and select **Upload My Add-in**.
-
-1. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
-
-1. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
-
 ---
 
 ## Try out a prebuilt custom function

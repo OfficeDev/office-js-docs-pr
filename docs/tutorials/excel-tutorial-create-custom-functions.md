@@ -71,11 +71,15 @@ To test your add-in in Excel on Windows or Mac, run the following command. When 
 npm run start:desktop
 ```
 
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
+
 # [Excel on the web](#tab/excel-online)
 
 To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
 [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 ---
 
