@@ -1,7 +1,7 @@
 ---
 title: LaunchEvent in the manifest file
 description: The LaunchEvent element configures your add-in to activate based on supported events.
-ms.date: 03/16/2022
+ms.date: 03/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -48,9 +48,9 @@ When you include the `OnMessageSend` or `OnAppointmentSend` event in the manifes
 
 | SendMode option | Description |
 |---|---|
-|`PromptUser`|In the alert, the user can choose to **Send Anyway**, or address the issue then try to send the item again.|
-|`SoftBlock`|The user is alerted that the item they're sending doesn't meet the add-in conditions and the add-in will decide what to do. For example, the add-in can be set to simply alert the user about the issue or require the user to address the issue before sending the item again. If the add-in is unable to connect to the server when the add-in is activated, the item will always be sent.|
-|`Block`|If the item being sent doesn't meet the add-in conditions, or if the add-in is unable to connect to the server, the item is blocked from being sent.|
+|`PromptUser`|In the alert, the user can choose to **Send Anyway**, or address the issue and then try to send the item again. If the add-in is taking a long time to process the item, the user will have the option to stop running the add-in and choose **Send Anyway**.|
+|`SoftBlock`|Default option if the **SendMode** property isn't included. The user is alerted that the item they're sending doesn't meet the add-in conditions, and must address the issue before trying to send the item again. However, if the add-in is unavailable when an item is being sent (for example, the add-in is unable to connect to the server), the user will be able to send the item.
+|`Block`|If the item being sent doesn't meet the add-in conditions, or if the add-in is unavailable (for example, the add-in is unable to connect to the server), the item is blocked from being sent.|
 
 ## See also
 
