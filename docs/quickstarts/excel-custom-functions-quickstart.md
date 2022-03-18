@@ -1,5 +1,5 @@
 ---
-ms.date: 01/13/2022
+ms.date: 03/18/2022
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -8,15 +8,17 @@ ms.localizationpriority: high
 
 # Get started developing Excel custom functions
 
-With custom functions, developers can now add new functions to Excel by defining them in JavaScript or Typescript as part of an add-in. Excel users can access custom functions just as they would any native function in Excel, such as `SUM()`.
+With custom functions, developers can add new functions to Excel by defining them in JavaScript or Typescript as part of an add-in. Excel users can access custom functions just as they would any native function in Excel, such as `SUM()`.
 
 ## Prerequisites
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Excel on Windows (version 1904 or later) or Excel on the web.
-- Excel custom functions are supported in Office on Mac (connected to a Microsoft 365 subscription) and an update to this tutorial is forthcoming.
+- Office connected to a Microsoft 365 subscription (including Office on the web).
+
+> [!NOTE]
+> If you don't already have Office, you can [join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
 
 ## Build your first custom functions project
 
@@ -44,11 +46,11 @@ To start, you'll use the Yeoman generator to create the custom functions project
     npm run build
     ```
 
-1. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel on the web or Windows. You may be prompted to open the add-in's task pane, although this is optional. You can still run your custom functions without opening your add-in's task pane.
+1. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel. You may be prompted to open the add-in's task pane, although this is optional. You can still run your custom functions without opening your add-in's task pane.
 
-# [Excel on Windows](#tab/excel-windows)
+# [Excel on Windows or Mac](#tab/excel-windows)
 
-To test your add-in in Excel on Windows, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
+To test your add-in in Excel on Windows or Mac, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
 
 ```command&nbsp;line
 npm run start:desktop
@@ -64,7 +66,7 @@ To test your add-in in Excel on the web, run the following command. When you run
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-To use your custom functions add-in, open a new workbook in Excel on a browser. In this workbook, complete the following steps to sideload your add-in.
+To use your custom functions add-in, open a new workbook in Excel on the web. In this workbook, complete the following steps to sideload your add-in.
 
 1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
 
