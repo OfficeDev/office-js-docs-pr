@@ -92,30 +92,36 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
     # [Windows](#tab/windows)
 
-    ![Outlook on Windows ribbon pointing to Get Add-ins button.](../images/outlook-sideload-desktop-windows.png)
+    ![Outlook on Windows ribbon pointing to the Get Add-ins button.](../images/outlook-sideload-desktop-windows.png)
 
     # [Mac](#tab/mac)
 
-    ![Outlook on Mac ribbon pointing to Get Add-ins button.](../images/outlook-sideload-mac-classic.png)
+    ![Outlook on Mac ribbon pointing to the Get Add-ins button.](../images/outlook-sideload-mac-classic.png)
 
     ---
 
     > [!IMPORTANT]
     > If you don't see the **Get Add-ins** button in your version of Outlook, do one of the following:
     >
-    > - If you're using Outlook on Mac or configured your ribbon layout to Simplified Ribbon in Outlook on Windows, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
+    > # [Windows](#tab/nestedWindows)
     >
-    >   # [Windows](#tab/nestedWindows)
+    > - If you configured your ribbon layout to Simplified Ribbon, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
     >
     >   ![Outlook on Windows pointing to the Get Add-ins button from the ellipsis button.](../images/outlook-sideload-simplified-ribbon.png)
     >
-    >   # [Mac](#tab/nestedMac)
+    > - Select the **Store** button on the ribbon, if available.
+    >
+    > - Select the **File** menu, then select the **Manage Add-ins** button on the **Info** tab to open the **Add-ins** dialog in Outlook on the web. You can see more about the web experience in the previous section [Sideload an add-in in Outlook on the web](#outlook-on-the-web).
+    >
+    > # [Mac](#tab/nestedMac)
+    >
+    > - Select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
     >
     >   ![Outlook on Mac pointing to the Get Add-ins button from the ellipsis button.](../images/outlook-sideload-deskop-mac.png)
     >
     > - Select the **Store** button on the ribbon, if available.
     >
-    > - For Outlook on Windows, select the **File** menu, then select the **Manage Add-ins** button on the **Info** tab to open the **Add-ins** dialog in Outlook on the web. You can see more about the web experience in the previous section [Sideload an add-in in Outlook on the web](#outlook-on-the-web).
+    > ---
 
 1. If there are tabs near the top of the dialog, ensure that the **Add-ins** tab is selected. Choose **My add-ins**.
 
