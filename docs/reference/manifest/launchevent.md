@@ -48,7 +48,7 @@ When you include the `OnMessageSend` or `OnAppointmentSend` event in the manifes
 
 | SendMode option | Description |
 |---|---|
-|`PromptUser`|If the item doesn't meet the add-in's conditions, the user can choose *Send Anyway** in the alert, or address the issue then try to send the item again. If the add-in is taking a long time to process the item, the user will be prompted with the option to stop running the add-in and choose **Send Anyway**. In the event the add-in is unavailable (for example, there's an error loading the add-in), the item will be sent.|
+|`PromptUser`|If the item doesn't meet the add-in's conditions, the user can choose **Send Anyway** in the alert, or address the issue then try to send the item again. If the add-in is taking a long time to process the item, the user will be prompted with the option to stop running the add-in and choose **Send Anyway**. In the event the add-in is unavailable (for example, there's an error loading the add-in), the item will be sent.|
 |`SoftBlock`|Default option if the **SendMode** property isn't included. The user is alerted that the item they're sending doesn't meet the add-in's conditions and they must address the issue before trying to send the item again. However, if the add-in is unavailable (for example, there's an error loading the add-in), the item will be sent.|
 |`Block`|The item isn't sent if any of the following situations occur.<br>- The item doesn't meet the add-in's conditions.<br>- The add-in is unable to connect to the server.<br>- There's an error loading the add-in.|
 
