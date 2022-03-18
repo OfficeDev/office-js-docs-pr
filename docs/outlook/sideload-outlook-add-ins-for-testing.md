@@ -103,7 +103,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
     > [!IMPORTANT]
     > If you don't see the **Get Add-ins** button in your version of Outlook, do one of the following:
     >
-    > # [Windows](#tab/nestedWindows)
+    > # [Windows](#tab/windows)
     >
     > - If you configured your ribbon layout to Simplified Ribbon, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
     >
@@ -113,7 +113,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
     >
     > - Select the **File** menu, then select the **Manage Add-ins** button on the **Info** tab to open the **Add-ins** dialog in Outlook on the web. You can see more about the web experience in the previous section [Sideload an add-in in Outlook on the web](#outlook-on-the-web).
     >
-    > # [Mac](#tab/nestedMac)
+    > # [Mac](#tab/mac)
     >
     > - Select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
     >
