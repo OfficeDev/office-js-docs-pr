@@ -22,9 +22,9 @@ Requirement set 1.10 includes all of the features of [requirement set 1.9](../re
 
 ### Change log
 
-- Added [LaunchEvent extension point](../../manifest/extensionpoint.md#launchevent): Adds a new supported type of ExtensionPoint. It configures event-based activation functionality.
-- Added [LaunchEvents manifest element](../../manifest/launchevents.md): Adds a manifest element to support configuring event-based activation functionality.
-- Modified [Runtimes manifest element](../../manifest/runtimes.md): Adds Outlook support. It references the HTML and JavaScript files needed for event-based activation functionality.
+- Added [LaunchEvent extension point](/javascript/api/manifest/extensionpoint#launchevent): Adds a new supported type of ExtensionPoint. It configures event-based activation functionality.
+- Added [LaunchEvents manifest element](/javascript/api/manifest/launchevents): Adds a manifest element to support configuring event-based activation functionality.
+- Modified [Runtimes manifest element](/javascript/api/manifest/runtimes): Adds Outlook support. It references the HTML and JavaScript files needed for event-based activation functionality.
 - Added [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-1.10&preserve-view=true#outlook-office-body-setsignatureasync-member(1)): Adds a new function to the `Body` object. It adds or replaces the signature in the item body in Compose mode.
 - Added [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods): Adds a new function that disables the client signature for the sending mailbox in Compose mode.
 - Added [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#outlook-office-messagecompose-getcomposetypeasync-member(1)): Adds a new function that gets the compose type of a message in Compose mode.
