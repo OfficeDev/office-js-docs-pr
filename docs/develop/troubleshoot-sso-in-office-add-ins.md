@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
-description: 'Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.'
+description: Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---

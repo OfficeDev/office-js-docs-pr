@@ -1,6 +1,6 @@
 ---
 title: Internet Explorer 11 testing
-description: 'Test your Office Add-in on Internet Explorer 11.'
+description: Test your Office Add-in on Internet Explorer 11.
 ms.date: 11/02/2021
 ms.localizationpriority: medium
 ---

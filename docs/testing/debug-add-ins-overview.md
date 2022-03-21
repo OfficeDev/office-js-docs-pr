@@ -1,6 +1,6 @@
 ---
 title: Debug Office Add-ins
-description: 'Find the Office Add-in debugging guidance for your development environment'
+description: Find the Office Add-in debugging guidance for your development environment.
 ms.date: 02/17/2022
 ms.localizationpriority: high
 ---

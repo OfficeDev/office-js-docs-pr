@@ -1,6 +1,6 @@
 ---
 title: Debug add-ins on Windows using Visual Studio Code and Microsoft Edge legacy WebView (EdgeHTML)
-description: 'Learn how to debug Office Add-ins that use Microsoft Edge Legacy WebView (EdgeHTML) by using the Office Add-in Debugger Extension in VS Code.'
+description: Learn how to debug Office Add-ins that use Microsoft Edge Legacy WebView (EdgeHTML) by using the Office Add-in Debugger Extension in VS Code.
 ms.date: 02/15/2022
 ms.localizationpriority: medium
 ---

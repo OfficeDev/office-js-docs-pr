@@ -1,6 +1,6 @@
 ---
 title: Custom functions and data types
-description: 'Use Excel data types with your custom functions and Office Add-ins.'
+description: Use Excel data types with your custom functions and Office Add-ins.
 ms.date: 12/27/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started

@@ -1,6 +1,6 @@
 ---
 title: Outlook add-in API requirement set 1.6
-description: 'Features and APIs that were introduced for Outlook Add-ins and the Office JavaScript APIs as part of Mailbox API 1.6.'
+description: Features and APIs that were introduced for Outlook add-ins and the Office JavaScript APIs as part of Mailbox API 1.6.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
 ---

@@ -1,6 +1,6 @@
 ---
 title: Basic concepts for add-in commands
-description: 'Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.'
+description: Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.
 ms.date: 12/13/2021
 ms.localizationpriority: high
 ---

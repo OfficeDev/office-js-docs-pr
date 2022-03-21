@@ -1,6 +1,6 @@
 ---
 title: Blank and null values in Excel add-ins
-description: 'Learn how to work with blank an null values in Excel object model methods and properties.'
+description: Learn how to work with blank an null values in Excel object model methods and properties.
 ms.date: 09/03/2020
 ms.localizationpriority: medium
 ---

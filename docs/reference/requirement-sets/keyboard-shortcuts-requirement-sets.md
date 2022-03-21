@@ -1,6 +1,6 @@
 ---
 title: Keyboard Shortcuts requirement sets
-description: 'Keyboard Shortcuts requirement set information for Office Add-ins.'
+description: Keyboard Shortcuts requirement set information for Office Add-ins.
 ms.date: 02/15/2022
 ms.prod: non-product-specific
 localization_priority: Normal

@@ -1,6 +1,6 @@
 ---
 title: Office namespace - requirement set 1.7
-description: 'Office namespace members available for Outlook add-ins using Mailbox API requirement set 1.7.'
+description: Office namespace members available for Outlook add-ins using Mailbox API requirement set 1.7.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
 ---

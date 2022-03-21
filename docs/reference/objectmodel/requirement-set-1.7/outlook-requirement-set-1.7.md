@@ -1,6 +1,6 @@
 ---
 title: Outlook add-in API requirement set 1.7
-description: 'Overview of the Outlook add-in API (requirement set 1.7)'
+description: Overview of the Outlook add-in API (requirement set 1.7).
 ms.date: 05/17/2021
 ms.localizationpriority: medium
 ---

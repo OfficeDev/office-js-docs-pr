@@ -1,7 +1,7 @@
 ---
 ms.date: 02/09/2021
 ms.prod: non-product-specific
-description: 'Tutorial on how to share code between a VSTO Add-in and an Office Add-in.'
+description: Tutorial on how to share code between a VSTO Add-in and an Office Add-in.
 title: 'Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library'
 ms.localizationpriority: high
 ---

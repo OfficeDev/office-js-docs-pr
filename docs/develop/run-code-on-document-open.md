@@ -1,6 +1,6 @@
 ---
 title: Run code in your Office Add-in when the document opens
-description: 'Learn how to run code in your Office Add-in add-in when the document opens.'
+description: Learn how to run code in your Office Add-in add-in when the document opens.
 ms.date: 09/17/2021
 ms.localizationpriority: medium
 ---

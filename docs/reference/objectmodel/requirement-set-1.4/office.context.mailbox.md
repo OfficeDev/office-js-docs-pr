@@ -1,6 +1,6 @@
 ---
 title: Office.context.mailbox - requirement set 1.4
-description: 'Outlook Mailbox API requirement set 1.4 version of the Mailbox object model.'
+description: Outlook Mailbox API requirement set 1.4 version of the Mailbox object model.
 ms.date: 03/18/2020
 ms.localizationpriority: medium
 ---

@@ -1,6 +1,6 @@
 ---
 title: Office Add-in design language
-description: 'Learn how to make your Office Add-in visually compatible with Office.'
+description: Learn how to make your Office Add-in visually compatible with Office.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
 ---

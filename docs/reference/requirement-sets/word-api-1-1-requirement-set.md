@@ -1,6 +1,6 @@
 ---
 title: Word JavaScript API requirement set 1.1
-description: 'Details about the WordApi 1.1 requirement set'
+description: Details about the WordApi 1.1 requirement set.
 ms.date: 11/01/2021
 ms.prod: word
 ms.localizationpriority: medium

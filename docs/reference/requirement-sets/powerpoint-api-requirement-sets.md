@@ -1,6 +1,6 @@
 ---
 title: PowerPoint JavaScript API requirement sets
-description: 'Learn more about the PowerPoint JavaScript API requirement sets.'
+description: Learn more about the PowerPoint JavaScript API requirement sets.
 ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: high
@@ -71,7 +71,7 @@ The following code sample shows the `Requirements` element in an add-in manifest
 
 ## Office Common API requirement sets
 
-Most of the PowerPoint Add-in functionality comes from the Common API set. For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).
+Most of the PowerPoint add-in functionality comes from the Common API set. For information about Common API requirement sets, see [Office Common API requirement sets](office-add-in-requirement-sets.md).
 
 ## See also
 

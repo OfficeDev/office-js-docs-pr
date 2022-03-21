@@ -1,6 +1,6 @@
 ---
 title: Word JavaScript object model in Office Add-ins
-description: 'Learn the most important classes in the Word-specific JavaScript object model.'
+description: Learn about the key components in the Word-specific JavaScript object model.
 ms.date: 3/17/2022
 ms.localizationpriority: high
 ---
