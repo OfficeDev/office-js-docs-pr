@@ -114,7 +114,7 @@ Developers should follow the tiered permissions model to provide transparency an
 
 - Developers request an appropriate level of permission for an Outlook add-in, based on how the Outlook add-in should be activated, and its need to read or write certain properties of an item, or to create and send an item.
 
-- Developers request permission by using the [Permissions](../reference/manifest/permissions.md) element in the manifest of the Outlook add-in, by assigning a value of **Restricted**, **ReadItem**, **ReadWriteItem** or **ReadWriteMailbox**, as appropriate.
+- Developers request permission by using the [Permissions](/javascript/api/manifest/permissions.md) element in the manifest of the Outlook add-in, by assigning a value of **Restricted**, **ReadItem**, **ReadWriteItem** or **ReadWriteMailbox**, as appropriate.
 
   > [!NOTE]
   > Note that the **ReadWriteItem** permission is available starting in manifest schema v1.1.

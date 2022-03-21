@@ -204,7 +204,7 @@ The final icons should be saved as .png image files. Use PNG format with a trans
 
 ## See also
 
-- [Icon manifest element](../reference/manifest/icon.md)
-- [IconUrl manifest element](../reference/manifest/iconurl.md)
-- [HighResolutionIconUrl manifest element](../reference/manifest/highresolutioniconurl.md)
+- [Icon manifest element](/javascript/api/manifest/icon.md)
+- [IconUrl manifest element](/javascript/api/manifest/iconurl.md)
+- [HighResolutionIconUrl manifest element](/javascript/api/manifest/highresolutioniconurl.md)
 - [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)

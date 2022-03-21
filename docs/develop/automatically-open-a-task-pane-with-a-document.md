@@ -52,7 +52,7 @@ Apply the following best practices when you use the autoopen feature.
 
 ### Step 1: Specify the task pane to open
 
-To specify the task pane to open automatically, set the [TaskpaneId](../reference/manifest/action.md#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
+To specify the task pane to open automatically, set the [TaskpaneId](/javascript/api/manifest/action.md#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
 
 The following example shows the TaskPaneId value set to Office.AutoShowTaskpaneWithDocument.
 

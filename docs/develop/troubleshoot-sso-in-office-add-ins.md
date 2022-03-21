@@ -31,7 +31,7 @@ For examples of the error handling described in this section, see:
 The [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) API is not supported by the add-in or the Office version.
 
 - The version of Office does not support SSO. The required version is Microsoft 365 subscription, in any monthly channel.
-- The add-in manifest is missing the proper [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) section.
+- The add-in manifest is missing the proper [WebApplicationInfo](/javascript/api/manifest/webapplicationinfo.md) section.
 
 Your add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
@@ -135,7 +135,7 @@ If the add-in needs Microsoft Graph scopes that can only be consented to by an a
 This kind of error should only be seen in development.
 
 - Your server-side code should send a `403 Forbidden` response to the client which should log the error to the console or record it in a log.
-- Be sure your add-in manifest [Scopes](../reference/manifest/scopes.md) section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
+- Be sure your add-in manifest [Scopes](/javascript/api/manifest/scopes.md) section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
 
 ### Invalid audience error in the access token for Microsoft Graph
 

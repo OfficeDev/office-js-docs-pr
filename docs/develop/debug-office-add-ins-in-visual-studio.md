@@ -83,7 +83,7 @@ When Visual Studio builds the project, it performs the following tasks:
 
 Next, Visual Studio does the following:
 
-1. Modifies the [SourceLocation](../reference/manifest/sourcelocation.md) element of the XML manifest file (that was copied to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory) by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
+1. Modifies the [SourceLocation](/javascript/api/manifest/sourcelocation.md) element of the XML manifest file (that was copied to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory) by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
 
 2. Starts the web application project in IIS Express.
 
@@ -139,7 +139,7 @@ When Visual Studio builds the project it performs the following tasks.
 
 Next, Visual Studio does the following:
 
-1. Modifies the [SourceLocation](../reference/manifest/sourcelocation.md) element of the XML manifest file (that was copied to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory) by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
+1. Modifies the [SourceLocation](/javascript/api/manifest/sourcelocation.md) element of the XML manifest file (that was copied to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory) by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
 
 2. Starts the web application project in IIS Express.
 

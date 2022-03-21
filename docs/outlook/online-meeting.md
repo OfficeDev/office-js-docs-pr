@@ -21,7 +21,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To enable users to create online meetings with your add-in, you must configure the [MobileOnlineMeetingCommandSurface extension point](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) in the manifest under the parent element `MobileFormFactor`. Other form factors are not supported.
+To enable users to create online meetings with your add-in, you must configure the [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) in the manifest under the parent element `MobileFormFactor`. Other form factors are not supported.
 
 1. In your code editor, open the quick start project.
 

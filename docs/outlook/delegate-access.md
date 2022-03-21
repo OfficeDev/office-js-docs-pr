@@ -110,9 +110,9 @@ However, if REST or Exchange Web Services (EWS) operations were used to set an e
 
 ## Configure the manifest
 
-To enable shared folders and shared mailbox scenarios in your add-in, you must set the [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors are not supported.
+To enable shared folders and shared mailbox scenarios in your add-in, you must set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders.md) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors are not supported.
 
-To support REST calls from a delegate, set the [Permissions](../reference/manifest/permissions.md) node in the manifest to `ReadWriteMailbox`.
+To support REST calls from a delegate, set the [Permissions](/javascript/api/manifest/permissions.md) node in the manifest to `ReadWriteMailbox`.
 
 The following example shows the `SupportsSharedFolders` element set to `true` in a section of the manifest.
 

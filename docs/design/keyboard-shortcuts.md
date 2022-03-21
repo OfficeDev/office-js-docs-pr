@@ -30,7 +30,7 @@ Adding custom keyboard shortcuts requires your add-in to use the shared runtime.
 
 ### Link the mapping file to the manifest
 
-Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step.
+Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides.md) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step.
 
 ```xml
     ...
@@ -41,7 +41,7 @@ Immediately *below* (not inside) the `<VersionOverrides>` element in the manifes
 
 ## Create or edit the shortcuts JSON file
 
-Create a JSON file in your project. Be sure the path of the file matches the location you specified for the `Url` attribute of the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. This file will describe your keyboard shortcuts, and the actions that they will invoke.
+Create a JSON file in your project. Be sure the path of the file matches the location you specified for the `Url` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides.md) element. This file will describe your keyboard shortcuts, and the actions that they will invoke.
 
 1. Inside the JSON file, there are two arrays. The actions array will contain objects that define the actions to be invoked and the shortcuts array will contain objects that map key combinations onto actions. Here is an example.
     ```json
