@@ -56,7 +56,7 @@ The Ribbon API 1.1 is the first version of the API. For details about the API, s
 
 The Ribbon API 1.2 adds support for contextual tabs. For more information, see [Create custom contextual tabs in Office Add-ins](../../design/contextual-tabs.md).
 
-> [!NOTE]
+> [!NOTE] 
 > The **RibbonApi 1.2** requirement set is not yet supported in the manifest, so you shouldn't specify it in the manifest's `<Requirements>` section.
 
 ## See also
