@@ -1,6 +1,6 @@
 ---
 title: Enable single sign-on (SSO) in an Office Add-in
-description: 'Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.'
+description: Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.
 ms.date: 01/25/2022
 ms.localizationpriority: high
 ---

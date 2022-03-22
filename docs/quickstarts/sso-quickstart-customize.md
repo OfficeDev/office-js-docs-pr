@@ -1,5 +1,5 @@
 ---
-title: "Add Microsoft Graph functionality to your SSO quick start project"
+title: Add Microsoft Graph functionality to your SSO quick start project
 description: Learn how to add new Microsoft Graph functionality to the SSO-enabled add-in that you created.
 ms.date: 01/25/2022
 ms.prod: non-product-specific

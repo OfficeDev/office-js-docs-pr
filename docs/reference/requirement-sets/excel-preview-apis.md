@@ -1,6 +1,6 @@
 ---
 title: Excel JavaScript preview APIs
-description: 'Details about upcoming Excel JavaScript APIs.'
+description: Details about upcoming Excel JavaScript APIs.
 ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium

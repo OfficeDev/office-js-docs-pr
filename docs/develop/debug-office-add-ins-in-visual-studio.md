@@ -1,13 +1,13 @@
 ---
 title: Debug Office Add-ins in Visual Studio
-description: 'Use Visual Studio to debug Office Add-ins in the Office desktop client on Windows'
+description: Use Visual Studio to debug Office Add-ins in the Office desktop client on Windows.
 ms.date: 02/17/2022
 ms.localizationpriority: medium
 ---
 
 # Debug Office Add-ins in Visual Studio
 
-This article describes how to debug client-side code in Office Add-ins that are created with one of the Office Add-in project templates in Visual Studio 2022.  For information about debugging server-side code in Office add-ins, see [Overview of debugging Office Add-ins - Server-side or client-side?](../testing/debug-add-ins-overview.md#server-side-or-client-side).
+This article describes how to debug client-side code in Office Add-ins that are created with one of the Office Add-in project templates in Visual Studio 2022.  For information about debugging server-side code in Office Add-ins, see [Overview of debugging Office Add-ins - Server-side or client-side?](../testing/debug-add-ins-overview.md#server-side-or-client-side).
 
 > [!NOTE]
 > You can't use Visual Studio to debug add-ins in Office on Mac. For information about debugging on a Mac, see [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md).

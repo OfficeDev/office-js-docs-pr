@@ -1,6 +1,6 @@
 ---
 title: OneNote JavaScript API programming overview
-description: 'Learn about the OneNote JavaScript API for OneNote add-ins on the web.'
+description: Learn about the OneNote JavaScript API for OneNote add-ins on the web.
 ms.date: 10/14/2020
 ms.topic: overview
 ms.custom: scenarios:getting-started

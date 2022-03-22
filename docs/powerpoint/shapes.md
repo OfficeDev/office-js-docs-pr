@@ -1,6 +1,6 @@
 ---
 title: Work with shapes using the PowerPoint JavaScript API
-description: 'Learn how to add, remove, and format shapes on PowerPoint slides.'
+description: Learn how to add, remove, and format shapes on PowerPoint slides.
 ms.date: 02/22/2022
 ms.localizationpriority: medium
 ---

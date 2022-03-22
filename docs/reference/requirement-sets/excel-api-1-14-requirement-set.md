@@ -1,6 +1,6 @@
 ---
 title: Excel JavaScript API requirement set 1.14
-description: 'Details about the ExcelApi 1.14 requirement set.'
+description: Details about the ExcelApi 1.14 requirement set.
 ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium

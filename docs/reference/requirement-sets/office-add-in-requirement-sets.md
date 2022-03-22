@@ -1,6 +1,6 @@
 ---
 title: Office Common API requirement sets
-description: 'Learn more about the Office Common API requirement sets.'
+description: Learn more about the Office Common API requirement sets.
 ms.date: 11/22/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium

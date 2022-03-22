@@ -1,6 +1,6 @@
 ---
 title: PowerPoint JavaScript API requirement set 1.1
-description: 'Details about the PowerPointApi 1.1 requirement set.'
+description: Details about the PowerPointApi 1.1 requirement set.
 ms.date: 01/08/2021
 ms.prod: powerpoint
 ms.localizationpriority: medium

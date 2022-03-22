@@ -1,6 +1,6 @@
 ---
 title: Add-in commands requirement sets
-description: 'Overview of Office Add-in commands requirement sets.'
+description: Overview of Office Add-in commands requirement sets.
 ms.date: 03/12/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium

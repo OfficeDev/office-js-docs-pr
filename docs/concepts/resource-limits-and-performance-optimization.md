@@ -1,6 +1,6 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
-description: 'Learn about the resource limits of the Office Add-in platform, including CPU and memory.'
+description: Learn about the resource limits of the Office Add-in platform, including CPU and memory.
 ms.date: 08/17/2021
 ms.localizationpriority: medium
 ---

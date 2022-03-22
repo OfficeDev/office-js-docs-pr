@@ -1,6 +1,6 @@
 ---
 title: Office Add-ins XML manifest
-description: 'Get an overview of the Office Add-in manifest and its uses.'
+description: Get an overview of the Office Add-in manifest and its uses.
 ms.date: 09/28/2021
 ms.localizationpriority: high
 ---

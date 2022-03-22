@@ -1,6 +1,6 @@
 ---
 title: Common JavaScript API object model
-description: 'Learn about the Office JavaScript common API object model'
+description: Learn about the Office JavaScript common API object model.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
 ---

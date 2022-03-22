@@ -1,6 +1,6 @@
 ---
 title: Office.context.mailbox.item - requirement set 1.9
-description: 'Outlook Mailbox API requirement set 1.9 version of the Item object model.'
+description: Outlook Mailbox API requirement set 1.9 version of the Item object model.
 ms.date: 07/16/2021
 ms.localizationpriority: medium
 ---

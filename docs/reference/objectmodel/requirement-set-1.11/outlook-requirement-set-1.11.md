@@ -1,6 +1,6 @@
 ---
 title: Outlook add-in API requirement set 1.11
-description: 'Requirement set 1.11 for Outlook add-in API.'
+description: Requirement set 1.11 for Outlook add-in API.
 ms.date: 11/01/2021
 ms.localizationpriority: medium
 ---

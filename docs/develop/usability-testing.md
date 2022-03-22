@@ -1,6 +1,6 @@
 ---
 title: Usability testing for Office Add-ins
-description: 'Learn how to test your add-in design with real users.'
+description: Learn how to test your add-in design with real users.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
 ---

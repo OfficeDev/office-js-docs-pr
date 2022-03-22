@@ -1,6 +1,6 @@
 ---
 title: Excel JavaScript API requirement set 1.9
-description: 'Details about the ExcelApi 1.9 requirement set.'
+description: Details about the ExcelApi 1.9 requirement set.
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
