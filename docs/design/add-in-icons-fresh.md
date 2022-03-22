@@ -1,6 +1,6 @@
 ---
 title: Fresh style icon guidelines for Office Add-ins
-description: 'Guidelines for using Fresh style icons in Office Add-ins.'
+description: Guidelines for using Fresh style icons in Office Add-ins.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
 ---

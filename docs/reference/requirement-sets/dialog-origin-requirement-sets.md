@@ -1,6 +1,6 @@
 ---
 title: Dialog Origin requirement sets
-description: 'Learn more about the Dialog Origin requirement sets.'
+description: Learn more about the Dialog Origin requirement sets.
 ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium

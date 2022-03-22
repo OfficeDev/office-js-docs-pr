@@ -1,6 +1,6 @@
 ---
 title: Specify Office hosts and API requirements
-description: 'Learn how to specify Office applications and API requirements for your add-in to work as expected.'
+description: Learn how to specify Office applications and API requirements for your add-in to work as expected.
 ms.date: 01/26/2022
 ms.localizationpriority: medium
 ---
@@ -135,7 +135,7 @@ Note the following about this example.
 
 ## Design for alternate experiences
 
-The extensibility features that the Office add-in platform provides can be usefully divided into three kinds:
+The extensibility features that the Office Add-in platform provides can be usefully divided into three kinds:
 
 - Extensibility features that are available immediately after the add-in is installed. You can make use of this kind of feature by configuring a [VersionOverrides](../reference/manifest/versionoverrides.md) element in the manifest. An example of this kind of feature is [Add-in Commands](../design/add-in-commands.md), which are custom ribbon buttons and menus.
 - Extensibility features that are available only when the add-in is running and that are implemented with Office.js JavaScript APIs; for example, [Dialog Boxes](../design/dialog-boxes.md).

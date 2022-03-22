@@ -1,7 +1,7 @@
 ---
 title: LaunchEvent in the manifest file
 description: The LaunchEvent element configures your add-in to activate based on supported events.
-ms.date: 02/02/2022
+ms.date: 03/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -40,16 +40,17 @@ For more information, see [Version overrides in the manifest](../../develop/add-
 |:-----|:-----|:-----|
 |  **Type**  |  Yes  | Specifies a supported event type. For the set of supported types, see [Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md#supported-events). |
 |  **FunctionName**  |  Yes  | Specifies the name of the JavaScript function to handle the event specified in the `Type` attribute. |
-|  **SendMode** (preview) |  No  | Required for `OnMessageSend` and `OnAppointmentSend` events. Specifies the options available to the user if your add-in stops the item from being sent. For available options, refer to [Available SendMode options](#available-sendmode-options-preview). |
+|  **SendMode** (preview) |  No  | Used by `OnMessageSend` and `OnAppointmentSend` events. Specifies the options available to the user if your add-in stops an item from being sent or if the add-in is unavailable. If the **SendMode** property isn't included, the `SoftBlock` option is set by default. For available options, refer to [Available SendMode options](#available-sendmode-options-preview). |
 
 ## Available SendMode options (preview)
 
-When you include the `OnMessageSend` or `OnAppointmentSend` event in the manifest, you must also set the **SendMode** property. The following are the available options. Based on the conditions your add-in is looking for, the user is alerted if your add-in finds an issue in the item being sent.
+When you include the `OnMessageSend` or `OnAppointmentSend` event in the manifest, you should also set the **SendMode** property. If the **SendMode** property isn't included, the `SoftBlock` option is set by default. The following are the available options. Based on the conditions your add-in is looking for, the user is alerted if your add-in finds an issue in the item being sent.
 
 | SendMode option | Description |
 |---|---|
-|`PromptUser`|In the alert, the user can choose to **Send Anyway**, or address the issue then try to send the item again.|
-|`SoftBlock`|The user must fix the issue before trying to send the item again.|
+|`PromptUser`|If the item doesn't meet the add-in's conditions, the user can choose **Send Anyway** in the alert, or address the issue then try to send the item again. If the add-in is taking a long time to process the item, the user will be prompted with the option to stop running the add-in and choose **Send Anyway**. In the event the add-in is unavailable (for example, there's an error loading the add-in), the item will be sent.|
+|`SoftBlock`|Default option if the **SendMode** property isn't included. The user is alerted that the item they're sending doesn't meet the add-in's conditions and they must address the issue before trying to send the item again. However, if the add-in is unavailable (for example, there's an error loading the add-in), the item will be sent.|
+|`Block`|The item isn't sent if any of the following situations occur.<br>- The item doesn't meet the add-in's conditions.<br>- The add-in is unable to connect to the server.<br>- There's an error loading the add-in.|
 
 ## See also
 

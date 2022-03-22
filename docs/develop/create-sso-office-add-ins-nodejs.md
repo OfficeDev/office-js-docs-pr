@@ -1,6 +1,6 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
-description: 'Learn how to create a Node.js-based add-in that uses Office Single Sign-on'
+description: Learn how to create a Node.js-based add-in that uses Office Single Sign-on.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---
@@ -103,7 +103,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
     > [!NOTE]
-    > The ID ea5a67f6-b6f3-4338-b240-c655ddc3cc8e includes all of the other IDs listed and can be used singularly to pre-authorize all of the Office host endpoints for use with your service in the Office add-in SSO flow.
+    > The ID ea5a67f6-b6f3-4338-b240-c655ddc3cc8e includes all of the other IDs listed and can be used singularly to pre-authorize all of the Office host endpoints for use with your service in the Office Add-in SSO flow.
 
     For each ID, take these steps.
 

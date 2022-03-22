@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot development errors with Office Add-ins
-description: 'Learn how to troubleshoot development errors in Office Add-ins.'
+description: Learn how to troubleshoot development errors in Office Add-ins.
 ms.date: 09/24/2021
 ms.localizationpriority: medium
 ---

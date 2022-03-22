@@ -1,6 +1,6 @@
 ---
 title: Debug add-ins using developer tools for Microsoft Edge WebView2
-description: 'Debug add-ins using the developer tools in Microsoft Edge WebView2 (Chromium-based).'
+description: Debug add-ins using the developer tools in Microsoft Edge WebView2 (Chromium-based).
 ms.date: 11/09/2021
 ms.localizationpriority: medium
 ---

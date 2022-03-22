@@ -1,6 +1,6 @@
 ---
 title: Sideload Office Add-ins in Office on the web for testing
-description: 'Test your Office Add-in in Office on the web by sideloading.'
+description: Test your Office Add-in in Office on the web by sideloading.
 ms.date: 02/11/2022
 ms.localizationpriority: medium
 ---

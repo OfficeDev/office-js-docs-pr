@@ -1,6 +1,6 @@
 ---
 title: Office.context - preview requirement set
-description: 'Office.Context object members available for Outlook add-ins using Mailbox API preview requirement set.'
+description: Office.Context object members available for Outlook add-ins using Mailbox API preview requirement set.
 ms.date: 12/03/2020
 ms.localizationpriority: medium
 ---

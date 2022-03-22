@@ -1,6 +1,6 @@
 ---
 title: Alternative ways of passing messages to a dialog box from its host page
-description: 'Learn workarounds to use when the messageChild method is not supported.'
+description: Learn workarounds to use when the messageChild method isn't supported.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
 ---

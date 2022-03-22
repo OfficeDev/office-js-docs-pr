@@ -1,6 +1,6 @@
 ---
 title: Enable single sign-on (SSO) in Outlook add-ins that use event-based activation
-description: 'Learn how to enable SSO when working in an event-based activation add-in.'
+description: Learn how to enable SSO when working in an event-based activation add-in.
 ms.date: 03/17/2022
 ms.localizationpriority: medium
 ---

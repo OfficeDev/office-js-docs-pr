@@ -1,6 +1,6 @@
 ---
 title: Design tool kits for Office Add-ins
-description: 'Get links to some tools to help design the UI of an Office Add-in.'
+description: Get links to some tools to help design the UI of an Office Add-in.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
 ---

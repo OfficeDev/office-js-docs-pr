@@ -1,6 +1,6 @@
 ---
 title: Persist add-in state and settings
-description: 'Learn to persist data in Office Add-in web applications running in the stateless environment of a browser control.'
+description: Learn to persist data in Office Add-in web applications running in the stateless environment of a browser control.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---

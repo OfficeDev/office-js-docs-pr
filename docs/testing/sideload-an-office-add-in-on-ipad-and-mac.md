@@ -1,6 +1,6 @@
 ---
 title: Sideload Office Add-ins on iPad and Mac for testing
-description: 'Test your Office Add-in on iPad and Mac by sideloading.'
+description: Test your Office Add-in on iPad and Mac by sideloading.
 ms.date: 09/24/2021
 ms.localizationpriority: medium
 ---

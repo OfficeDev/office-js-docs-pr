@@ -1,6 +1,6 @@
 ---
 title: Unit testing in Office Add-ins
-description: 'Learn how to unit test code that calls the Office JavaScript APIs'
+description: Learn how to unit test code that calls the Office JavaScript APIs.
 ms.date: 02/07/2022
 ms.localizationpriority: medium
 ---
