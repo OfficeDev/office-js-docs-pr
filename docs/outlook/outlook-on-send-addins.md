@@ -28,7 +28,7 @@ The following table shows supported client-server combinations for the on-send f
 |Web browser:<br>classic Outlook UI|Not applicable|Yes|Yes|
 
 > [!NOTE]
-> The on-send feature was officially released in requirement set 1.8 (see [current server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details). However, note that the feature's support matrix is a superset of the requirement set's.
+> The on-send feature was officially released in requirement set 1.8 (see [current server and client support](/javascript/api/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details). However, note that the feature's support matrix is a superset of the requirement set's.
 
 > [!IMPORTANT]
 > Add-ins that use the on-send feature aren't allowed in [AppSource](https://appsource.microsoft.com).

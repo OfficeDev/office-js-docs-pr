@@ -470,7 +470,7 @@
       ,
       {
         "source_path": "docs/excel/custom-functions-requirement-sets.md", 
-        "redirect_url": "/office/dev/add-ins/reference/requirement-sets/custom-functions-requirement-sets", 
+        "redirect_url": "/javascript/api/requirement-sets/custom-functions-requirement-sets", 
         "redirect_document_id": true 
       }
       ,

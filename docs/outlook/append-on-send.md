@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 By the end of this walkthrough, you'll have an Outlook add-in that can insert a disclaimer when a message is sent.
 
 > [!NOTE]
-> Support for this feature was introduced in requirement set 1.9. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in requirement set 1.9. See [clients and platforms](/javascript/api/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Set up your environment
 

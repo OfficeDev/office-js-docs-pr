@@ -35,7 +35,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
 1. Open the **manifest.xml** file.
-1. If you generated an Excel add-in, update the requirements section to use the [shared runtime](../reference/requirement-sets/shared-runtime-requirement-sets.md) instead of the custom function runtime. The XML should appear as follows.
+1. If you generated an Excel add-in, update the requirements section to use the [shared runtime](/javascript/api/requirement-sets/shared-runtime-requirement-sets.md) instead of the custom function runtime. The XML should appear as follows.
 
     ```xml
     <Hosts>

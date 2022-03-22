@@ -102,7 +102,7 @@ The following is an example of the markup.
 
 ### Include the Identity API requirement set
 
-To use SSO your add-in requires the Identity API 1.3 requirement set. For more information, see [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
+To use SSO your add-in requires the Identity API 1.3 requirement set. For more information, see [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets.md).
 
 ### Add client-side code
 
@@ -243,4 +243,4 @@ There are some small, but important differences in using SSO in an Outlook add-i
 
 - [Microsoft identity platform documentation](/azure/active-directory/develop/)
 - [Requirement sets](specify-office-hosts-and-api-requirements.md)
-- [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)
+- [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets.md)
