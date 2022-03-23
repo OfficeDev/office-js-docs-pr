@@ -58,6 +58,9 @@ items:
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Browsers used by Office Add-ins
+      href: concepts/browsers-used-by-office-web-add-ins.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Support Internet Explorer 11
       href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
@@ -82,6 +85,8 @@ items:
         href: develop/persisting-add-in-state-and-settings.md
       - name: Bind to regions in a document or spreadsheet
         href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
+      - name: Common API error codes
+        href: reference/javascript-api-for-office-error-codes.md
     - name: Setup and run your add-in
       items:
       - name: Reference Office.js
@@ -294,6 +299,8 @@ items:
         href: develop/debug-office-add-ins-in-visual-studio.md
       - name: Test with Internet Explorer 11
         href: testing/ie-11-testing.md
+      - name: Unsupported window objects
+        href: reference/window-objects-unsupported-in-add-ins.md
     - name: Web browser
       items:
       - name: Sideload Add-ins in Office on the web
@@ -346,21 +353,6 @@ items:
       href: /legal/marketplace/certification-policies
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
-
-  - name: Reference
-    items:
-    - name: API reference documentation
-      href: reference/javascript-api-for-office.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
-
-
-    - name: Browsers used by Office Add-ins
-      href: concepts/browsers-used-by-office-web-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Office Common API error codes
-      href: reference/javascript-api-for-office-error-codes.md
-    - name: Unsupported window objects
-      href: reference/window-objects-unsupported-in-add-ins.md
 
 - name: Excel
   items: 
