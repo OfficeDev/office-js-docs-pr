@@ -23,7 +23,7 @@ While there's a way for you to set the internet headers through EWS requests, in
 
 ## Purpose of the internet headers API
 
-Introduced in [requirement set 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), the internet headers APIs enable developers to:
+Introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8.md), the internet headers APIs enable developers to:
 
 - Stamp information on an email that persists after it leaves Exchange across all clients.
 - Read information on an email that persisted after the email left Exchange across all clients in mail read scenarios.

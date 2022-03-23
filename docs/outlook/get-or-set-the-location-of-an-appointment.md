@@ -9,8 +9,8 @@ ms.localizationpriority: medium
 
 The Office JavaScript API provides properties and methods to manage the location of an appointment that the user is composing. Currently, there are two properties that provide an appointment's location:
 
-- [item.location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): Basic API that allows you to get and set the location.
-- [item.enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): Enhanced API that allows you to get and set the location, and includes specifying the [location type](/javascript/api/outlook/office.mailboxenums.locationtype). The type is `LocationType.Custom` if you set the location using `item.location`.
+- [item.location](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item.md#properties): Basic API that allows you to get and set the location.
+- [item.enhancedLocation](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item.md#properties): Enhanced API that allows you to get and set the location, and includes specifying the [location type](/javascript/api/outlook/office.mailboxenums.locationtype). The type is `LocationType.Custom` if you set the location using `item.location`.
 
 The following table lists the location APIs and the modes (i.e., Compose or Read) where they are available.
 

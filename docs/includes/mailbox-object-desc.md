@@ -1,4 +1,4 @@
-Outlook add-ins primarily use the APIs exposed through the [Mailbox](/javascript/api/outlook/office.mailbox) object. To access the objects and members specifically for use in Outlook add-ins, such as the [Item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) object, you use the [mailbox](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) property of the **Context** object to access the **Mailbox** object, as shown in the following line of code.
+Outlook add-ins primarily use the APIs exposed through the [Mailbox](/javascript/api/outlook/office.mailbox) object. To access the objects and members specifically for use in Outlook add-ins, such as the [Item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item.md) object, you use the [mailbox](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.md) property of the **Context** object to access the **Mailbox** object, as shown in the following line of code.
 
 ```js
 // Access the Item object.
