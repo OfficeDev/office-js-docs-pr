@@ -2,7 +2,7 @@ Add-ins are often cached in Office on Mac for performance reasons. Normally, the
 
 ### Use the personality menu to clear the cache
 
-You can clear the cache by using the personality menu of any task pane add-in. However, try the [manual option](#clear-the-cache-manually) if you're using Outlook because the personality menu isn't supported in Outlook add-ins.
+You can clear the cache by using the personality menu of any task pane add-in. However, because the personality menu isn't supported in Outlook add-ins, you can try the option to [clear the cache manually](#clear-the-cache-manually) if you're using Outlook.
 
 - Choose the personality menu. Then choose **Clear Web Cache**.
     > [!NOTE]
