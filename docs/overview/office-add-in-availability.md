@@ -65,7 +65,7 @@ To work as expected, your Office Add-in might depend on a specific Office applic
 > [!NOTE]
 > <sup>1</sup> Add-ins don't work in modern Outlook on the web on iPhone and Android smartphones. For information about supported devices, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 >
-> <sup>2</sup> [!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../includes/outlook-identity-13-note.md)]
+> <sup>2</sup> To require the Identity API set 1.3 in your Outlook add-in code, check if it's supported by calling `isSetSupported('IdentityAPI', '1.3')`. Declaring it in the Outlook add-in's manifest isn't supported. You can also determine if the API is supported by checking that it's not `undefined`. For further details, see [Using APIs from later requirement sets](/javascript/api/requirement-sets/outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets).
 >
 > <sup>3</sup> Added with post-release updates.
 >
