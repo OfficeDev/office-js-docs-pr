@@ -67,7 +67,7 @@ items:
     - name: Overview
       href: develop/develop-overview.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Api reference
+    - name: API reference
       href: reference/javascript-api-for-office.md
     - name: Understanding the Office JavaScript API
       href: develop/understanding-the-javascript-api-for-office.md
