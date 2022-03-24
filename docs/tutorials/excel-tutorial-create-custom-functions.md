@@ -95,7 +95,7 @@ Next, try out the `ADD` custom function by completing the following steps.
 
 The `ADD` custom function computes the sum of the two numbers that you provided and returns the result of **210**.
 
-If the `CONTOSO` namespace isn't available, complete the following steps to register the add-in in Excel.
+If the `CONTOSO` namespace isn't available in the autocomplete menu, take the following steps to register the add-in in Excel.
 
 ### [Excel on Windows or Mac](#tab/excel-windows)
 
