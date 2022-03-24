@@ -25,6 +25,8 @@ npm run validate
 > [!NOTE]
 > To access this functionality, your add-in project must be created using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) version 1.1.17 or later.
 
+### Office Store validation
+
 In addition, this command does Office Store validation but allows developer information like localhost URLs. If you'd like to run production-level Office Store validation, then run the following command.
 
 ```command&nbsp;line
@@ -56,13 +58,15 @@ If you didn't use the [Yeoman generator for Office Add-ins](../develop/yeoman-ge
     > npx office-addin-manifest validate MANIFEST_FILE
     > ```
 
+### Office Store validation
+
 In addition, the `validate` command does Office Store validation but allows developer information like localhost URLs. If you'd like to run production-level Office Store validation, then run the following command.
 
 ```command&nbsp;line
 npm run validate -- -p
 ```
 
-If you're having trouble with that command, try the following:
+If you're having trouble with that command, try the following (replacing `MANIFEST_FILE` with the name of the manifest file).
 
 ```command&nbsp;line
 npx office-addin-manifest validate -p MANIFEST_FILE
