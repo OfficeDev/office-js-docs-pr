@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 03/18/2022
+ms.date: 03/23/2022
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ms.localizationpriority: high
@@ -95,6 +95,31 @@ Next, try out the `ADD` custom function by completing the following steps.
 
 The `ADD` custom function computes the sum of the two numbers that you provided and returns the result of **210**.
 
+If the `CONTOSO` namespace isn't available, complete the following steps to register the add-in in Excel.
+
+### [Excel on Windows or Mac](#tab/excel-windows)
+
+1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
+    ![Screenshot of the Insert ribbon in Excel on Windows, with the My Add-ins down-arrow highlighted.](../images/select-insert.png)
+
+1. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
+    ![Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list.](../images/list-starcount.png)
+
+# [Excel on the web](#tab/excel-online)
+
+1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
+    ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted.](../images/excel-cf-online-register-add-in-1.png)
+
+1. Choose **Manage My Add-ins** and select **Upload My Add-in**.
+
+1. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
+
+1. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
+
+1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
+
+---
+
 ## Create a custom function that requests data from the web
 
 Integrating data from the Web is a great way to extend Excel through custom functions. Next you'll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.
@@ -158,7 +183,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
-5. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
+1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
 
 ---
 
