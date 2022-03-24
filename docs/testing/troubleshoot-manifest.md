@@ -27,7 +27,7 @@ npm run validate
 
 ### Office Store validation
 
-In addition, this command does Office Store validation but allows developer information like localhost URLs. If you'd like to run production-level Office Store validation, then run the following command.
+In addition, the `validate` command does Office Store validation but allows developer information like localhost URLs. If you'd like to run production-level Office Store validation, then run the following command.
 
 ```command&nbsp;line
 npm run validate -- -p
