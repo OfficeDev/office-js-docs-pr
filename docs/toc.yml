@@ -110,7 +110,7 @@ items:
       - name: Overview
         href: develop/add-in-manifests.md
       - name: Manifest reference
-        href: docs/reference/manifest-reference.md
+        href: reference/manifest-reference.md
       - name: Extended overrides
         href: develop/extended-overrides.md
       - name: Find the proper order of manifest elements
