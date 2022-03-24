@@ -55,9 +55,9 @@ Optional. Represents the length of time the add-in is allowed to run.
 
 **Available values**
 
-`short`: Default. After the add-in is activated, it will be allowed to run for a maximum amount of time as specified by the platform. Currently, that's around 5 minutes. This is the only value supported by Outlook.
+`short`: Default. Used only for Outlook add-ins. After the add-in is activated, it will run for a maximum amount of time as specified by the platform. Currently, that's around 5 minutes. This is the only value supported by Outlook.
 
-`long`: The add-in will be allowed to run without any time limitations. This is the only value supported by a [shared runtime](../../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+`long`: Used only when configuring a [shared JavaScript runtime](../../develop/configure-your-add-in-to-use-a-shared-runtime.md). The add-in can start on document open and run indefinitely. For example, task pane code will continue running even when the user closes the task pane. This is the only value supported by the shared runtime.
 
 ## See also
 
