@@ -19,4 +19,4 @@ For hands-on experience using the Common API to interact with content in Project
 - [Project add-ins documentation](../../project/index.yml)
 - [Project add-ins overview](../../project/project-add-ins.md)
 - [API Reference documentation](../javascript-api-for-office.md)
-- [Office client application and platform availability for Office Add-ins](..//javascript/api/requirement-sets)
+- [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)
