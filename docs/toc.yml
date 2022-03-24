@@ -67,6 +67,8 @@ items:
     - name: Overview
       href: develop/develop-overview.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Api reference
+      href: reference/javascript-api-for-office.md
     - name: Understanding the Office JavaScript API
       href: develop/understanding-the-javascript-api-for-office.md
     - name: Using the application-specific API model
@@ -107,6 +109,8 @@ items:
       items:
       - name: Overview
         href: develop/add-in-manifests.md
+      - name: Manifest reference
+        href: /javascript/api/requirement-sets
       - name: Extended overrides
         href: develop/extended-overrides.md
       - name: Find the proper order of manifest elements

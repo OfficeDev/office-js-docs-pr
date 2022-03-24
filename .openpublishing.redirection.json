@@ -572,5 +572,105 @@
         "source_path": "docs/excel/custom-functions-data-types-overview.md", 
         "redirect_url": "/office/dev/add-ins/excel/custom-functions-data-types-concepts"
       }
+      , 
+      {
+        "source_path": "docs/overview/office-add-in-availability.md", 
+        "redirect_url": "javascript/api/requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/add-in-commands-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/common/add-in-commands-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/dialog-api-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/common/dialog-api-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/dialog-origin-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/common/dialog-origin-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/identity-api-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/common/identity-api-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/image-coercion-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/common/image-coercion-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/keyboard-shortcuts-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/office-add-in-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/common/office-add-in-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/open-browser-window-api-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/common/open-browser-window-api-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/ribbon-api-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/common/ribbon-api-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/shared-runtime-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/common/shared-runtime-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/excel-api-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/excel/excel-api-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/excel-preview-apis.md", 
+        "redirect_url": "javascript/api/requirement-sets/excel/excel-preview-apis"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/excel-api-online-requirement-set.md", 
+        "redirect_url": "javascript/api/requirement-sets/excel/excel-api-online-requirement-set"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/custom-functions-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/excel/custom-functions-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/outlook-api-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/outlook/outlook-api-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/powerpoint-api-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/powerpoint/powerpoint-api-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/powerpoint-preview-apis.md", 
+        "redirect_url": "javascript/api/requirement-sets/powerpoint/powerpoint-preview-apis"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/word-api-requirement-sets.md", 
+        "redirect_url": "javascript/api/requirement-sets/word/word-api-requirement-sets"
+      }
+      , 
+      {
+        "source_path": "docs/reference/requirement-sets/word-preview-apis.md", 
+        "redirect_url": "javascript/api/requirement-sets/word/word-preview-apis"
+      }
     ] 
 }
