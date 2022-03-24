@@ -30,7 +30,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `starcount`
 
-    ![Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.](../images/starcountPrompt.png)
+    :::image type="content" source="../images/starcountPrompt.png" alt-text="Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
 
     The Yeoman generator will create the project files and install supporting Node components.
 
@@ -57,7 +57,7 @@ npm run start:desktop
 ```
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-    
+
 # [Excel on the web](#tab/excel-online)
 
 To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
