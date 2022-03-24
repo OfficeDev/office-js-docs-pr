@@ -101,6 +101,10 @@
         "source_path": "docs/reference/common-api-reference.md",
         "redirect_url": "/javascript/api/office?view=common-js"
       },
+      {
+        "source_path": "docs/reference/manifest-reference.md",
+        "redirect_url": "/javascript/api/manifest"
+      },
       
       {
         "source_path": "docs/excel/xll-compatibility-requirements.md",
