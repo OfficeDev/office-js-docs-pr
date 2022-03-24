@@ -1,5 +1,5 @@
 ---
-ms.date: 03/18/2022
+ms.date: 03/23/2022
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -30,7 +30,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `starcount`
 
-    ![Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.](../images/starcountPrompt.png)
+    :::image type="content" source="../images/starcountPrompt.png" alt-text="Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
 
     The Yeoman generator will create the project files and install supporting Node components.
 
@@ -57,7 +57,7 @@ npm run start:desktop
 ```
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-    
+
 # [Excel on the web](#tab/excel-online)
 
 To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
@@ -79,6 +79,8 @@ In your Excel workbook, try out the `ADD` custom function by completing the foll
 1. Run the `CONTOSO.ADD` function, using numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.
 
 The `ADD` custom function computes the sum of the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press enter.
+
+[!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 
 ## Next steps
 
