@@ -22,7 +22,7 @@ Office Add-ins run across multiple versions of Office. The following table lists
 | RibbonApi 1.2  | Build 16.0.14326.20454 or later | 2102 (Build 13801.20294) | N/A | 16.53.806.0 | May, 2021 | N/A|
 | RibbonApi 1.1  | Build 16.0.14326.20454 or later | See support<br>section below | N/A | 16.38 | November, 2020 | N/A|
 
-> **&#42;** The Ribbon API is supported only in Excel.
+> **&#42;** The Ribbon API is supported for production add-ins only in Excel. It's available as a preview in PowerPoint and Word, but only in Office on Windows (subscription) and Mac. 
 
 ## Support for version 1.1 on Office on Windows (subscription)
 

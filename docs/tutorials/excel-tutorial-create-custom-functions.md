@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 03/18/2022
+ms.date: 03/23/2022
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ms.localizationpriority: high
@@ -40,7 +40,7 @@ In this tutorial, you will:
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `starcount`
 
-    ![Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.](../images/starcountPrompt.png)
+    :::image type="content" source="../images/starcountPrompt.png" alt-text="Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
 
     The Yeoman generator will create the project files and install supporting Node components.
 
@@ -95,6 +95,8 @@ Next, try out the `ADD` custom function by completing the following steps.
 
 The `ADD` custom function computes the sum of the two numbers that you provided and returns the result of **210**.
 
+[!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
+
 ## Create a custom function that requests data from the web
 
 Integrating data from the Web is a great way to extend Excel through custom functions. Next you'll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.
@@ -142,15 +144,18 @@ Integrating data from the Web is a great way to extend Excel through custom func
 1. Close Excel and then reopen Excel.
 
 1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-    ![Screenshot of the Insert ribbon in Excel on Windows, with the My Add-ins down-arrow highlighted.](../images/select-insert.png)
+
+    :::image type="content" source="../images/select-insert.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the My Add-ins down-arrow highlighted.":::
 
 1. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
-    ![Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list.](../images/list-starcount.png)
+
+    :::image type="content" source="../images/list-starcount.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list.":::
 
 # [Excel on the web](#tab/excel-online)
 
 1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
-    ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted.](../images/excel-cf-online-register-add-in-1.png)
+
+    :::image type="content" source="../images/excel-cf-online-register-add-in-1.png" alt-text="Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted.":::
 
 1. Choose **Manage My Add-ins** and select **Upload My Add-in**.
 
@@ -158,7 +163,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
-5. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
+1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
 
 ---
 
