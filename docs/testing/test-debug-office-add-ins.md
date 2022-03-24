@@ -1,6 +1,6 @@
 ---
 title: Test Office Add-ins
-description: 'Learn how to test your Office Add-in'
+description: Learn how to test your Office Add-in.
 ms.date: 12/02/2021
 ms.localizationpriority: high
 ---

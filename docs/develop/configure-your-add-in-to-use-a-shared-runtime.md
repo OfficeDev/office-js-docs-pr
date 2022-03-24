@@ -1,8 +1,8 @@
 ---
-ms.date: 10/05/2021
-title: "Configure your Office Add-in to use a shared JavaScript runtime"
+ms.date: 03/23/2022
+title: Configure your Office Add-in to use a shared JavaScript runtime
 ms.prod: non-product-specific
-description: 'Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.'
+description: Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.
 ms.localizationpriority: high
 ---
 
@@ -18,11 +18,14 @@ If you are starting a new project, follow these steps to use the [Yeoman generat
 
 Do one of the following:
 
-- To generate an Excel add-in with custom functions, run the command `yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true`.
+- To generate an Excel add-in with custom functions, run the command `yo office --projectType excel-functions --name "NAME OF YOUR PROJECT HERE" --host excel --js true`.
 
     or
 
-- To generate a PowerPoint add-in, run the command `yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js true`.
+- To generate a PowerPoint add-in, run the command `yo office --projectType taskpane --name "NAME OF YOUR PROJECT HERE" --host powerpoint --js true`.
+
+> [!IMPORTANT]
+> The `--name` argument value must be in double quotation marks, even if it has no spaces.
 
 The generator will create the project and install supporting Node components.
 

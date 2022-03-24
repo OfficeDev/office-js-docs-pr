@@ -1,6 +1,6 @@
 ---
 title: Requirements for running Office Add-ins
-description: 'Learn about the client and server requirements that an end user needs to run Office Add-ins.'
+description: Learn about the client and server requirements that an end user needs to run Office Add-ins.
 ms.date: 02/15/2022
 ms.localizationpriority: medium
 ---

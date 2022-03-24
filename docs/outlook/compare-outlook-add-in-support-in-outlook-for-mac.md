@@ -1,6 +1,6 @@
 ---
 title: Compare Outlook add-in support in Outlook on Mac
-description: 'Learn how add-in support in Outlook on Mac compares with other Outlook clients.'
+description: Learn how add-in support in Outlook on Mac compares with other Outlook clients.
 ms.date: 12/13/2021
 ms.localizationpriority: medium
 ---

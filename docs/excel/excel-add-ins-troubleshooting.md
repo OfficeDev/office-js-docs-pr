@@ -1,11 +1,11 @@
 ---
-title: Troubleshooting Excel Add-ins
-description: 'Learn how to troubleshoot development errors in Excel Add-ins.'
+title: Troubleshooting Excel add-ins
+description: Learn how to troubleshoot development errors in Excel add-ins.
 ms.date: 02/17/2022
 ms.localizationpriority: medium
 ---
 
-# Troubleshooting Excel Add-ins
+# Troubleshooting Excel add-ins
 
 This article discusses troubleshooting issues that are unique to Excel. Please use the feedback tool at the bottom of the page to suggest other issues that can be added to the article.
 

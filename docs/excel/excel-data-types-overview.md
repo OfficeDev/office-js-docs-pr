@@ -1,6 +1,6 @@
 ---
 title: Overview of data types in Excel add-ins
-description: 'Data types in the Excel JavaScript API enable Office Add-in developers to work with formatted number values, web images, entity values, arrays within entity values, and enhanced errors as data types.'
+description: Data types in the Excel JavaScript API enable Office Add-in developers to work with formatted number values, web images, entity values, arrays within entity values, and enhanced errors as data types.
 ms.date: 12/27/2021
 ms.topic: conceptual
 ms.prod: excel

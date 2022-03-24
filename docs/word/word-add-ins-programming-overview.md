@@ -1,6 +1,6 @@
 ---
 title: Word add-ins overview
-description: Learn the basics of Word Add-ins.
+description: Learn the basics of Word add-ins.
 ms.date: 02/24/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started

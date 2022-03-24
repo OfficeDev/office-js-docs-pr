@@ -1,6 +1,6 @@
 ---
 title: Office JavaScript API support for content and task pane add-ins in Office 2013
-description: 'Use the Office JavaScript API to create a task pane in Office 2013.'
+description: Use the Office JavaScript API to create a task pane in Office 2013.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
 ---

@@ -1,6 +1,6 @@
 ---
 title: Work with extended overrides of the manifest
-description: 'Learn how to configure extensibility features with extended overrides of the manifest.'
+description: Learn how to configure extensibility features with extended overrides of the manifest.
 ms.date: 02/23/2021
 ms.localizationpriority: medium
 ---
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 Some extensibility features of Office Add-ins are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest.
 
 > [!NOTE]
-> This article assumes that you're familiar with Office add-in manifests and their role in add-ins. Please read [Office Add-ins XML manifest](add-in-manifests.md), if you haven't recently.
+> This article assumes that you're familiar with Office Add-in manifests and their role in add-ins. Please read [Office Add-ins XML manifest](add-in-manifests.md), if you haven't recently.
 
 The following table specifies the extensibility features that require an extended override along with links to documentation of the feature.
 

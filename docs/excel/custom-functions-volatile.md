@@ -1,6 +1,6 @@
 ---
 ms.date: 01/14/2020
-description: 'Learn to implement volatile and offline streaming custom functions.'
+description: Learn to implement volatile and offline streaming custom functions.
 title: Volatile values in functions
 ms.localizationpriority: medium
 ---

@@ -1,13 +1,13 @@
 ---
 title: Attach a debugger from the task pane
-description: 'Learn how to attach a debugger from the task pane'
+description: Learn how to attach a debugger from the task pane.
 ms.date: 01/27/2022
 ms.localizationpriority: medium
 ---
 
 # Attach a debugger from the task pane
 
-In some environments, a debugger can be attached on an Office add-in that is already running. This can be useful when you want to debug an add-in that is already in staging or production. If you are still developing and testing the add-in, see [Overview of debugging Office Add-ins](debug-add-ins-overview.md).
+In some environments, a debugger can be attached on an Office Add-in that is already running. This can be useful when you want to debug an add-in that is already in staging or production. If you are still developing and testing the add-in, see [Overview of debugging Office Add-ins](debug-add-ins-overview.md).
 
 The technique described in this article can be used only when the following conditions are met.
 
