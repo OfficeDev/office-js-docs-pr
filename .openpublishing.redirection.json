@@ -675,6 +675,379 @@
       {
         "source_path": "docs/reference/requirement-sets/word-preview-apis.md", 
         "redirect_url": "/javascript/api/requirement-sets/word/word-preview-apis"
+      },
+
+      {
+        "source_path": "docs/reference/manifest/allowsnapshot.md", 
+        "redirect_url": "/javascript/api//manifest/allowsnapshot"
+      },
+      {
+        "source_path": "docs/reference/manifest/alternateid.md", 
+        "redirect_url": "/javascript/api//manifest/alternateid"
+      },
+      {
+        "source_path": "docs/reference/manifest/appdomain.md", 
+        "redirect_url": "/javascript/api//manifest/appdomain"
+      },
+      {
+        "source_path": "docs/reference/manifest/appdomains.md", 
+        "redirect_url": "/javascript/api//manifest/appdomains"
+      },
+      {
+        "source_path": "docs/reference/manifest/citationtext.md", 
+        "redirect_url": "/javascript/api//manifest/citationtext"
+      },
+      {
+        "source_path": "docs/reference/manifest/defaultlocale.md", 
+        "redirect_url": "/javascript/api//manifest/defaultlocale"
+      },
+      {
+        "source_path": "docs/reference/manifest/defaultsettings.md", 
+        "redirect_url": "/javascript/api//manifest/defaultsettings"
+      },
+      {
+        "source_path": "docs/reference/manifest/description.md", 
+        "redirect_url": "/javascript/api//manifest/description"
+      },
+      {
+        "source_path": "docs/reference/manifest/desktopsettings.md",
+        "redirect_url": "/javascript/api//manifest/desktopsettings"
+      },
+      {
+        "source_path": "docs/reference/manifest/dictionary.md", 
+        "redirect_url": "/javascript/api//manifest/dictionary"
+      },
+      {
+        "source_path": "docs/reference/manifest/dictionaryhomepage.md", 
+        "redirect_url": "/javascript/api//manifest/dictionaryhomepage"
+      },
+      {
+        "source_path": "docs/reference/manifest/disableentityhighlighting.md",
+        "redirect_url": "/javascript/api//manifest/disableentityhighlighting"
+      },
+      {
+        "source_path": "docs/reference/manifest/displayname.md", 
+        "redirect_url": "/javascript/api//manifest/displayname"
+      },
+      {
+        "source_path": "docs/reference/manifest/equivalentaddin.md", 
+        "redirect_url": "/javascript/api//manifest/equivalentaddin"
+      },
+      {
+        "source_path": "docs/reference/manifest/equivalentaddins.md", 
+        "redirect_url": "/javascript/api//manifest/equivalentaddins"
+      },
+      {
+        "source_path": "docs/reference/manifest/extendedoverrides.md", 
+        "redirect_url": "/javascript/api//manifest/extendedoverrides"
+      },
+      {
+        "source_path": "docs/reference/manifest/filename.md", 
+        "redirect_url": "/javascript/api//manifest/filename"
+      },
+      {
+        "source_path": "docs/reference/manifest/form.md", 
+        "redirect_url": "/javascript/api//manifest/form"
+      },
+      {
+        "source_path": "docs/reference/manifest/formsettings.md",
+        "redirect_url": "/javascript/api//manifest/formsettings"
+      },
+      {
+        "source_path": "docs/reference/manifest/highresolutioniconurl.md", 
+        "redirect_url": "/javascript/api//manifest/highresolutioniconurl"
+      },
+      {
+        "source_path": "docs/reference/manifest/host.md", 
+        "redirect_url": "/javascript/api//manifest/host"
+      },
+      {
+        "source_path": "docs/reference/manifest/hosts.md", 
+        "redirect_url": "/javascript/api//manifest/hosts"
+      },
+      {
+        "source_path": "docs/reference/manifest/iconurl.md", 
+        "redirect_url": "/javascript/api//manifest/iconurl"
+      },
+      {
+        "source_path": "docs/reference/manifest/id.md", 
+        "redirect_url": "/javascript/api//manifest/id"
+      },
+      {
+        "source_path": "docs/reference/manifest/metadata.md", 
+        "redirect_url": "/javascript/api//manifest/metadata"
+      },
+      {
+        "source_path": "docs/reference/manifest/method.md", 
+        "redirect_url": "/javascript/api//manifest/method"
+      },
+      {
+        "source_path": "docs/reference/manifest/methods.md", 
+        "redirect_url": "/javascript/api//manifest/methods"
+      },
+      {
+        "source_path": "docs/reference/manifest/namespace.md", 
+        "redirect_url": "/javascript/api//manifest/namespace"
+      },
+      {
+        "source_path": "docs/reference/manifest/officeapp.md", 
+        "redirect_url": "/javascript/api//manifest/officeapp"
+      },
+      {
+        "source_path": "docs/reference/manifest/override.md", 
+        "redirect_url": "/javascript/api//manifest/override"
+      },
+      {
+        "source_path": "docs/reference/manifest/permissions.md", 
+        "redirect_url": "/javascript/api//manifest/permissions"
+      },
+      {
+        "source_path": "docs/reference/manifest/phonesettings.md",
+        "redirect_url": "/javascript/api//manifest/phonesettings"
+      },
+      {
+        "source_path": "docs/reference/manifest/progid.md", 
+        "redirect_url": "/javascript/api//manifest/progid"
+      },
+      {
+        "source_path": "docs/reference/manifest/providername.md", 
+        "redirect_url": "/javascript/api//manifest/providername"
+      },
+      {
+        "source_path": "docs/reference/manifest/queryuri.md", 
+        "redirect_url": "/javascript/api//manifest/queryuri"
+      },
+      {
+        "source_path": "docs/reference/manifest/requestedheight.md", 
+        "redirect_url": "/javascript/api//manifest/requestedheight"
+      },
+      {
+        "source_path": "docs/reference/manifest/requestedwidth.md", 
+        "redirect_url": "/javascript/api//manifest/requestedwidth"
+      },
+      {
+        "source_path": "docs/reference/manifest/requirements.md", 
+        "redirect_url": "/javascript/api//manifest/requirements"
+      },
+      {
+        "source_path": "docs/reference/manifest/rule.md", 
+        "redirect_url": "/javascript/api//manifest/rule"
+      },
+      {
+        "source_path": "docs/reference/manifest/set.md", 
+        "redirect_url": "/javascript/api//manifest/set"
+      },
+      {
+        "source_path": "docs/reference/manifest/sets.md", 
+        "redirect_url": "/javascript/api//manifest/sets"
+      },
+      {
+        "source_path": "docs/reference/manifest/sourcelocation.md", 
+        "redirect_url": "/javascript/api//manifest/sourcelocation"
+      },
+      {
+        "source_path": "docs/reference/manifest/supporturl.md", 
+        "redirect_url": "/javascript/api//manifest/supporturl"
+      },
+      {
+        "source_path": "docs/reference/manifest/tabletsettings.md",
+        "redirect_url": "/javascript/api//manifest/tabletsettings"
+      },
+      {
+        "source_path": "docs/reference/manifest/targetdialect.md", 
+        "redirect_url": "/javascript/api//manifest/targetdialect"
+      },
+      {
+        "source_path": "docs/reference/manifest/targetdialects.md", 
+        "redirect_url": "/javascript/api//manifest/targetdialects"
+      },
+      {
+        "source_path": "docs/reference/manifest/tokens.md", 
+        "redirect_url": "/javascript/api//manifest/tokens"
+      },
+      {
+        "source_path": "docs/reference/manifest/token.md",
+        "redirect_url": "/javascript/api//manifest/token"
+      },
+      {
+        "source_path": "docs/reference/manifest/type.md",
+        "redirect_url": "/javascript/api//manifest/type"
+      },
+      {
+        "source_path": "docs/reference/manifest/version.md", 
+        "redirect_url": "/javascript/api//manifest/version"
+      },
+      {
+        "source_path": "docs/reference/manifest/versionoverrides.md", 
+        "redirect_url": "/javascript/api//manifest/versionoverrides"
+      },
+      {
+        "source_path": "docs/reference/manifest/versionoverrides-1-0-taskpane.md", 
+        "redirect_url": "/javascript/api//manifest/versionoverrides-1-0-taskpane"
+      },
+      {
+        "source_path": "docs/reference/manifest/versionoverrides-1-0-content.md", 
+        "redirect_url": "/javascript/api//manifest/versionoverrides-1-0-content"
+      },
+      {        
+        "source_path": "docs/reference/manifest/versionoverrides-1-0-mail.md", 
+        "redirect_url": "/javascript/api//manifest/versionoverrides-1-0-mail"
+      },
+      {
+        "source_path": "docs/reference/manifest/versionoverrides-1-1-mail.md",
+        "redirect_url": "/javascript/api//manifest/versionoverrides-1-1-mail"
+      },
+      {
+        "source_path": "docs/reference/manifest/action.md", 
+        "redirect_url": "/javascript/api//manifest/action"
+      },
+      {
+        "source_path": "docs/reference/manifest/allformfactors.md", 
+        "redirect_url": "/javascript/api//manifest/allformfactors"
+      },
+      {
+        "source_path": "docs/reference/manifest/control.md", 
+        "redirect_url": "/javascript/api//manifest/control"
+      },
+      {
+        "source_path": "docs/reference/manifest/control-button.md",
+        "redirect_url": "/javascript/api//manifest/control-button"
+      },
+      {
+        "source_path": "docs/reference/manifest/control-menu.md", 
+        "redirect_url": "/javascript/api//manifest/control-menu"
+      },
+      {
+        "source_path": "docs/reference/manifest/control-mobilebutton.md", 
+        "redirect_url": "/javascript/api//manifest/control-mobilebutton"
+      },
+      {
+        "source_path": "docs/reference/manifest/customtab.md", 
+        "redirect_url": "/javascript/api//manifest/customtab"
+      },
+      {
+        "source_path": "docs/reference/manifest/desktopformfactor.md",
+         "redirect_url": "/javascript/api//manifest/desktopformfactor"
+      },
+      {
+        "source_path": "docs/reference/manifest/enabled.md", 
+        "redirect_url": "/javascript/api//manifest/enabled"
+      },
+      {
+        "source_path": "docs/reference/manifest/equivalentaddin.md",
+        "redirect_url": "/javascript/api//manifest/equivalentaddin"
+      },
+      {
+        "source_path": "docs/reference/manifest/equivalentaddins.md",
+        "redirect_url": "/javascript/api//manifest/equivalentaddins"
+      },
+      {
+        "source_path": "docs/reference/manifest/event.md", 
+        "redirect_url": "/javascript/api//manifest/event"
+      },
+      {
+        "source_path": "docs/reference/manifest/extendedpermission.md", 
+        "redirect_url": "/javascript/api//manifest/extendedpermission"
+      },
+      {
+        "source_path": "docs/reference/manifest/extendedpermissions.md", 
+        "redirect_url": "/javascript/api//manifest/extendedpermissions"
+      },
+      {
+        "source_path": "docs/reference/manifest/extensionpoint.md", 
+        "redirect_url": "/javascript/api//manifest/extensionpoint"
+      },
+      {
+        "source_path": "docs/reference/manifest/functionfile.md", 
+        "redirect_url": "/javascript/api//manifest/functionfile"
+      },
+      {
+        "source_path": "docs/reference/manifest/getstarted.md", 
+        "redirect_url": "/javascript/api//manifest/getstarted"
+      },
+      {
+        "source_path": "docs/reference/manifest/group.md", 
+        "redirect_url": "/javascript/api//manifest/group"
+      },
+      {
+        "source_path": "docs/reference/manifest/hosts.md", 
+        "redirect_url": "/javascript/api//manifest/hosts"
+      },
+      {
+        "source_path": "docs/reference/manifest/icon.md", 
+        "redirect_url": "/javascript/api//manifest/icon"
+      },
+      {
+        "source_path": "docs/reference/manifest/item.md", 
+        "redirect_url": "/javascript/api//manifest/item"
+      },
+      {
+        "source_path": "docs/reference/manifest/items.md",
+        "redirect_url": "/javascript/api//manifest/items"
+      },
+      {        
+        "source_path": "docs/reference/manifest/launchevent.md", 
+        "redirect_url": "/javascript/api//manifest/launchevent"
+      },
+      {
+        "source_path": "docs/reference/manifest/launchevents.md", 
+        "redirect_url": "/javascript/api//manifest/launchevents"
+      },
+      {
+        "source_path": "docs/reference/manifest/mobileformfactor.md", 
+        "redirect_url": "/javascript/api//manifest/mobileformfactor"
+      },
+      {
+        "source_path": "docs/reference/manifest/officemenu.md", 
+        "redirect_url": "/javascript/api//manifest/officemenu"
+      },
+      {
+        "source_path": "docs/reference/manifest/officetab.md", 
+        "redirect_url": "/javascript/api//manifest/officetab"
+      },
+      {
+        "source_path": "docs/reference/manifest/overriddenbyribbonapi.md", 
+        "redirect_url": "/javascript/api//manifest/overriddenbyribbonapi"
+      },
+      {
+        "source_path": "docs/reference/manifest/page.md", 
+        "redirect_url": "/javascript/api//manifest/page"
+      },
+      {
+        "source_path": "docs/reference/manifest/resources.md", 
+        "redirect_url": "/javascript/api//manifest/resources"
+      },
+      {
+        "source_path": "docs/reference/manifest/runtime.md", 
+        "redirect_url": "/javascript/api//manifest/runtime"
+      },
+      {
+        "source_path": "docs/reference/manifest/runtimes.md", 
+        "redirect_url": "/javascript/api//manifest/runtimes"
+      },
+      {
+        "source_path": "docs/reference/manifest/scopes.md", 
+        "redirect_url": "/javascript/api//manifest/scopes"
+      },
+      {
+        "source_path": "docs/reference/manifest/script.md", 
+        "redirect_url": "/javascript/api//manifest/script"
+      },
+      {
+        "source_path": "docs/reference/manifest/customfunctionssourcelocation.md", 
+        "redirect_url": "/javascript/api//manifest/customfunctionssourcelocation"
+      },
+      {
+        "source_path": "docs/reference/manifest/supertip.md", 
+        "redirect_url": "/javascript/api//manifest/supertip"
+      },
+      {
+        "source_path": "docs/reference/manifest/supportssharedfolders.md",
+        "redirect_url": "/javascript/api//manifest/supportssharedfolders"
+      },
+      {
+        "source_path": "docs/reference/manifest/webapplicationinfo.md",
+        "redirect_url": "/javascript/api//manifest/webapplicationinfo"
       }
     ] 
 }
