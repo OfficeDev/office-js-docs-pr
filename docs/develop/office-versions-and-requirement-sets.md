@@ -31,18 +31,18 @@ In addition, other functionality such as add-in commands (ribbon extensibility) 
 
 An add-in can only use APIs in requirement sets that are supported by the version of Office application where the add-in is running. To know exactly which requirement sets are available for a specific Office application version, refer to the following application-specific requirement set articles.
 
-- [Excel JavaScript API requirement sets](/javascript/api/requirement-sets/excel-api-requirement-sets.md) (ExcelApi)
-- [Word JavaScript API requirement sets](/javascript/api/requirement-sets/word-api-requirement-sets.md) (WordApi)
-- [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote-api-requirement-sets.md) (OneNoteApi)
-- [PowerPoint JavaScript API requirement sets](/javascript/api/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)
-- [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook-api-requirement-sets.md) (Mailbox)
+- [Excel JavaScript API requirement sets](/javascript/api/requirement-sets/excel-api-requirement-sets) (ExcelApi)
+- [Word JavaScript API requirement sets](/javascript/api/requirement-sets/word-api-requirement-sets) (WordApi)
+- [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
+- [PowerPoint JavaScript API requirement sets](/javascript/api/requirement-sets/powerpoint-api-requirement-sets) (PowerPointApi)
+- [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook-api-requirement-sets) (Mailbox)
 
 Some requirement sets contain APIs that can be used by any Office application. For information about these requirement sets, refer to the following articles.
 
-- [Office common requirement sets](/javascript/api/requirement-sets/office-add-in-requirement-sets.md)
-- [Add-in commands requirement sets](/javascript/api/requirement-sets/add-in-commands-requirement-sets.md)
-- [Dialog API requirement sets](/javascript/api/requirement-sets/dialog-api-requirement-sets.md)
-- [Identity API requirement sets](/javascript/api/requirement-sets/identity-api-requirement-sets.md)
+- [Office common requirement sets](/javascript/api/requirement-sets/office-add-in-requirement-sets)
+- [Add-in commands requirement sets](/javascript/api/requirement-sets/add-in-commands-requirement-sets)
+- [Dialog API requirement sets](/javascript/api/requirement-sets/dialog-api-requirement-sets)
+- [Identity API requirement sets](/javascript/api/requirement-sets/identity-api-requirement-sets)
 
 The version number of a requirement set, such as the "1.1" in `ExcelApi 1.1`, is relative to the Office application. The version number of a given requirement set (e.g., `ExcelApi 1.1`) does not correspond to the version number of Office.js or to requirement sets for other Office applications (e.g., Word, Outlook, etc.).  Requirement sets for the different Office applications are released at different rates. For example, `ExcelApi 1.5` was released before the `WordApi 1.3` requirement set.
 

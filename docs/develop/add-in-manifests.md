@@ -65,33 +65,33 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 
 <!-- Links for above table -->
 
-[officeapp]: /javascript/api/manifest/officeapp.md
-[id]: /javascript/api/manifest/id.md
-[version]: /javascript/api/manifest/version.md
-[providername]: /javascript/api/manifest/providername.md
-[defaultlocale]: /javascript/api/manifest/defaultlocale.md
-[displayname]: /javascript/api/manifest/displayname.md
-[description]: /javascript/api/manifest/description.md
-[iconurl]: /javascript/api/manifest/iconurl.md
-[supporturl]: /javascript/api/manifest/supporturl.md
-[defaultsettings (contentapp)]: /javascript/api/manifest/defaultsettings.md
-[defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings.md
-[sourcelocation (contentapp)]: /javascript/api/manifest/sourcelocation.md
-[sourcelocation (taskpaneapp)]: /javascript/api/manifest/sourcelocation.md
+[officeapp]: /javascript/api/manifest/officeapp
+[id]: /javascript/api/manifest/id
+[version]: /javascript/api/manifest/version
+[providername]: /javascript/api/manifest/providername
+[defaultlocale]: /javascript/api/manifest/defaultlocale
+[displayname]: /javascript/api/manifest/displayname
+[description]: /javascript/api/manifest/description
+[iconurl]: /javascript/api/manifest/iconurl
+[supporturl]: /javascript/api/manifest/supporturl
+[defaultsettings (contentapp)]: /javascript/api/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings
+[sourcelocation (contentapp)]: /javascript/api/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: /javascript/api/manifest/sourcelocation
 [desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
 [sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
-[permissions (contentapp)]: /javascript/api/manifest/permissions.md
-[permissions (taskpaneapp)]: /javascript/api/manifest/permissions.md
-[permissions (mailapp)]: /javascript/api/manifest/permissions.md
-[rule (rulecollection)]: /javascript/api/manifest/rule.md
-[rule (mailapp)]: /javascript/api/manifest/rule.md
-[requirements (mailapp)*]: /javascript/api/manifest/requirements.md
-[set*]: /javascript/api/manifest/set.md
-[sets (mailapprequirements)*]: /javascript/api/manifest/sets.md
-[form*]: /javascript/api/manifest/form.md
-[formsettings*]: /javascript/api/manifest/formsettings.md
-[sets (requirements)*]: /javascript/api/manifest/sets.md
-[hosts*]: /javascript/api/manifest/hosts.md
+[permissions (contentapp)]: /javascript/api/manifest/permissions
+[permissions (taskpaneapp)]: /javascript/api/manifest/permissions
+[permissions (mailapp)]: /javascript/api/manifest/permissions
+[rule (rulecollection)]: /javascript/api/manifest/rule
+[rule (mailapp)]: /javascript/api/manifest/rule
+[requirements (mailapp)*]: /javascript/api/manifest/requirements
+[set*]: /javascript/api/manifest/set
+[sets (mailapprequirements)*]: /javascript/api/manifest/sets
+[form*]: /javascript/api/manifest/form
+[formsettings*]: /javascript/api/manifest/formsettings
+[sets (requirements)*]: /javascript/api/manifest/sets
+[hosts*]: /javascript/api/manifest/hosts
 
 ## Hosting requirements
 

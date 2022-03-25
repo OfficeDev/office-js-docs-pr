@@ -62,7 +62,7 @@ The `FormType` attribute is used to specify the mode (read or compose) in which 
  > [!NOTE]
  > The ItemIs `FormType` attribute is defined in schema v1.1 and later but not in `VersionOverrides` v1.0. Do not include the `FormType` attribute when defining add-in commands.
 
-After an add-in is activated, you can use the [mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item.md) property to obtain the currently selected item in Outlook, and the [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item.md#properties) property to obtain the type of the current item.
+After an add-in is activated, you can use the [mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) property to obtain the currently selected item in Outlook, and the [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) property to obtain the type of the current item.
 
 You can optionally use the `ItemClass` attribute to specify the message class of the item, and the `IncludeSubClasses` attribute to specify whether the rule should be **true** when the item is a subclass of the specified class.
 

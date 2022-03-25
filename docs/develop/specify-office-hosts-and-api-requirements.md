@@ -86,7 +86,7 @@ Requirement sets are versioned. For example, the APIs that support [Dialog Boxes
 Requirement set support varies by Office application, the version of the Office application, and the platform on which it is running. For example, DialogApi 1.2 is not supported on one-time purchase versions of Office before Office 2021, but DialogApi 1.1 is supported on all one-time purchase versions back to Office 2013. You want your add-in to be installable on every combination of platform and Office version that supports the APIs that it uses, so you should always specify in the manifest the *minimum* version of each requirement set that your add-in requires. Details about how to do this are later in this article.
 
 > [!TIP]
-> For more information about requirement set versioning, see [Office requirement sets availability](office-versions-and-requirement-sets.md#office-requirement-sets-availability), and for the complete lists of requirement sets and information about the APIs in each, start with [Office Add-in requirement sets](/javascript/api/requirement-sets/office-add-in-requirement-sets.md). The reference topics for most Office.js APIs also specify the requirement set they belong to (if any).
+> For more information about requirement set versioning, see [Office requirement sets availability](office-versions-and-requirement-sets.md#office-requirement-sets-availability), and for the complete lists of requirement sets and information about the APIs in each, start with [Office Add-in requirement sets](/javascript/api/requirement-sets/office-add-in-requirement-sets). The reference topics for most Office.js APIs also specify the requirement set they belong to (if any).
 
 > [!NOTE]
 > Some requirement sets also have manifest elements associated with them. See [Specifying requirements in a VersionOverrides element](#specify-requirements-in-a-versionoverrides-element) for information about when this fact is relevant to your add-in design.
@@ -102,7 +102,7 @@ Use the [Requirements](/javascript/api/manifest/requirements) element and its ch
 If the Office application or platform doesn't support the requirement sets or API members specified in the **Requirements** element, the add-in won't run in that application or platform, and won't display in **My Add-ins**. .
 
 > [!NOTE]
-> The **Requirements** element is optional for all add-ins, except for Outlook add-ins. When the `xsi:type` attribute of the root `OfficeApp` element is `MailBox`, there must be a **Requirements** element that specifies the minimum version of the MailBox requirement set that the add-in requires. For more information, see [Outlook JavaScript API requirement sets](/javascript/api/requirement-sets/outlook-api-requirement-sets.md).
+> The **Requirements** element is optional for all add-ins, except for Outlook add-ins. When the `xsi:type` attribute of the root `OfficeApp` element is `MailBox`, there must be a **Requirements** element that specifies the minimum version of the MailBox requirement set that the add-in requires. For more information, see [Outlook JavaScript API requirement sets](/javascript/api/requirement-sets/outlook-api-requirement-sets).
 
 The following code example shows how to configure an add-in that is installable in all Office applications that support the following:
 
@@ -162,7 +162,7 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 ```
 About this code, note:
 
-- The first parameter is required. It's a string that represents the name of the requirement set. For more information about available requirement sets, see [Office Add-in requirement sets](/javascript/api/requirement-sets/office-add-in-requirement-sets.md).
+- The first parameter is required. It's a string that represents the name of the requirement set. For more information about available requirement sets, see [Office Add-in requirement sets](/javascript/api/requirement-sets/office-add-in-requirement-sets).
 - The second parameter is optional. It's a string that specifies the minimum requirement set version that the Office application must support in order for the code within the `if` statement to run (e.g., "**1.9**"). If not used, version "1.1" is assumed.
 
 > [!WARNING]
@@ -194,7 +194,7 @@ else
 > [!NOTE] 
 > The `isSetSupported` method and the requirement sets for these applications are available in the latest Office.js file on the CDN. If you don't use Office.js from the CDN, your add-in might generate exceptions if you are using an old version of the library in which `isSetSupported` is undefined. For more information, see [Use the latest Office JavaScript API library](#use-the-latest-office-javascript-api-library).
 
-When your add-in depends on a method that isn't part of a requirement set, use the runtime check to determine whether the method is supported by the Office application, as shown in the following code example. For a complete list of methods that don't belong to a requirement set, see [Office Add-in requirement sets](/javascript/api/requirement-sets/office-add-in-requirement-sets.md#methods-that-arent-part-of-a-requirement-set).
+When your add-in depends on a method that isn't part of a requirement set, use the runtime check to determine whether the method is supported by the Office application, as shown in the following code example. For a complete list of methods that don't belong to a requirement set, see [Office Add-in requirement sets](/javascript/api/requirement-sets/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set).
 
 > [!NOTE]
 > We recommend that you limit the use of this type of runtime check in your add-in's code.
@@ -248,5 +248,5 @@ The following is an example.
 ## See also
 
 - [Office Add-ins XML manifest](add-in-manifests.md)
-- [Office Add-in requirement sets](/javascript/api/requirement-sets/office-add-in-requirement-sets.md)
+- [Office Add-in requirement sets](/javascript/api/requirement-sets/office-add-in-requirement-sets)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)

@@ -28,7 +28,7 @@ The following table shows supported client-server combinations for the on-send f
 |Web browser:<br>classic Outlook UI|Not applicable|Yes|Yes|
 
 > [!NOTE]
-> The on-send feature was officially released in requirement set 1.8 (see [current server and client support](/javascript/api/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details). However, note that the feature's support matrix is a superset of the requirement set's.
+> The on-send feature was officially released in requirement set 1.8 (see [current server and client support](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details). However, note that the feature's support matrix is a superset of the requirement set's.
 
 > [!IMPORTANT]
 > Add-ins that use the on-send feature aren't allowed in [AppSource](https://appsource.microsoft.com).
@@ -519,7 +519,7 @@ The following are the parameters for the `addAsync` method.
 To signal that the add-in has finished processing the `ItemSend` event triggered by the send operation, call the `event.completed({allowEvent:Boolean})` method. The `allowEvent` property is a Boolean. If set to `true`, send is allowed. If set to `false`, the email message is blocked from sending.
 
 > [!NOTE]
-> For more information, see [notificationMessages](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item.md#properties) and [completed](/javascript/api/office/office.addincommands.event).
+> For more information, see [notificationMessages](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [completed](/javascript/api/office/office.addincommands.event).
 
 ### `replaceAsync`, `removeAsync`, and `getAllAsync` methods
 

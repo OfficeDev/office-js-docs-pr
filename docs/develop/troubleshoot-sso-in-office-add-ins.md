@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 This article provides some guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and how to make your SSO-enabled add-in robustly handle special conditions or errors.
 
 > [!NOTE]
-> The Single Sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](/javascript/api/requirement-sets/identity-api-requirement-sets.md).
+> The Single Sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](/javascript/api/requirement-sets/identity-api-requirement-sets).
 > If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## Debugging tools
@@ -93,7 +93,7 @@ The user is running the add-in in Office on Microsoft Edge. The user's Microsoft
 
 There are several possible causes.
 
-- The add-in is running on a platform that does not support the `getAccessToken` API. For example, it is not supported on iPad. See also [Identity API requirement sets](/javascript/api/requirement-sets/identity-api-requirement-sets.md).
+- The add-in is running on a platform that does not support the `getAccessToken` API. For example, it is not supported on iPad. See also [Identity API requirement sets](/javascript/api/requirement-sets/identity-api-requirement-sets).
 - The `forMSGraphAccess` option was passed in the call to `getAccessToken` and the user obtained the add-in from AppSource. In this scenario, the tenant admin has not granted consent to the add-in for the Microsoft Graph scopes (permissions) that it needs. Recalling `getAccessToken` with the `allowConsentPrompt` will not solve the problem because Office is allowed to prompt the user for consent to only the AAD `profile` scope.
 
 Your code should fall back to an alternate system of user authentication.

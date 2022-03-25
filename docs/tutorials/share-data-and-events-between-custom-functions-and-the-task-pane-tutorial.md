@@ -28,7 +28,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
 
 1. Start Visual Studio Code and open the add-in project you generated.
 1. Open the **manifest.xml** file.
-1. Replace (or add) the following `<Requirements>` section XML to require the [shared runtime requirement set](/javascript/api/requirement-sets/shared-runtime-requirement-sets.md).
+1. Replace (or add) the following `<Requirements>` section XML to require the [shared runtime requirement set](/javascript/api/requirement-sets/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>

@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Enable shared folders and shared mailbox scenarios in an Outlook add-in
 
-This article describes how to enable shared folders (also known as delegate access) and shared mailbox (now in [preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)) scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
+This article describes how to enable shared folders (also known as delegate access) and shared mailbox (now in [preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#shared-mailboxes)) scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
 
 ## Supported clients and platforms
 
@@ -21,7 +21,7 @@ The following table shows supported client-server combinations for this feature,
 |Web browser:<br>classic Outlook UI|Not applicable|No|No|No|
 
 > [!IMPORTANT]
-> Support for this feature was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8.md) (for details, refer to [clients and platforms](/javascript/api/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). However, note that the feature's support matrix is a superset of the requirement set's.
+> Support for this feature was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (for details, refer to [clients and platforms](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). However, note that the feature's support matrix is a superset of the requirement set's.
 
 ## Supported setups
 
@@ -143,7 +143,7 @@ The following example shows the `SupportsSharedFolders` element set to `true` in
 
 ## Perform an operation as delegate or shared mailbox user
 
-You can get an item's shared properties in Compose or Read mode by calling the [item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item.md#methods) method. This returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that currently provides the user's permissions, the owner's email address, the REST API's base URL, and the target mailbox.
+You can get an item's shared properties in Compose or Read mode by calling the [item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method. This returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that currently provides the user's permissions, the owner's email address, the REST API's base URL, and the target mailbox.
 
 The following example shows how to get the shared properties of a message or appointment, check if the delegate or shared mailbox user has **Write** permission, and make a REST call.
 

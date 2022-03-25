@@ -12,7 +12,7 @@ The [task pane](add-in-commands-for-outlook.md#launching-a-task-pane) UX shape f
 However, by default, if a user has an add-in task pane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable task panes, your add-in can give the user that option.
 
 > [!NOTE]
-> Although the pinnable task panes feature was introduced in [requirement set 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5.md), it's currently only available to Microsoft 365 subscribers using the following:
+> Although the pinnable task panes feature was introduced in [requirement set 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), it's currently only available to Microsoft 365 subscribers using the following:
 >
 > - Outlook 2016 or later on Windows (build 7668.2000 or later for users in the Current or Office Insider Channels, build 7900.xxxx or later for users in Deferred channels)
 > - Outlook 2016 or later on Mac (version 16.13.503 or later)
@@ -84,7 +84,7 @@ function itemChanged(eventArgs) {
 
 ### Register the event handler
 
-Use the [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.md#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your task pane.
+Use the [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your task pane.
 
 ```js
 Office.initialize = function (reason) {
