@@ -1,7 +1,7 @@
 ---
 title: Action element in the manifest file
 description: This element specifies the action to perform when the user selects a button or menu control.
-ms.date: 02/25/2022
+ms.date: 03/25/2022
 ms.localizationpriority: medium
 ---
 
@@ -46,8 +46,10 @@ This attribute specifies the kind of action performed when the user selects the 
 - `ExecuteFunction`
 - `ShowTaskpane`
 
+Once the user selects a button that kicks off the `ExecuteFunction` action, the add-in times out after 5 minutes if it hasn't completed by then.
+
 > [!IMPORTANT]
-> Registering [Mailbox](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) and [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) events is not available when **xsi:type** is `ExecuteFunction`.
+> Outlook: Registering [Mailbox](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) and [Item](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) events is not available when **xsi:type** is `ExecuteFunction`.
 
 ## FunctionName
 
