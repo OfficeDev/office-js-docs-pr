@@ -141,12 +141,12 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
     (function () {
 
         Office.onReady(function() {
-            // Office is ready
+            // Office is ready.
             $(document).ready(function () {
-                // The document is ready
+                // The document is ready.
                 // Use this to check whether the API is supported in the Word client.
                 if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
-                    // Do something that is only available via the new APIs
+                    // Do something that is only available via the new APIs.
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);

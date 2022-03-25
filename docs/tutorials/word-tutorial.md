@@ -382,7 +382,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
    - The difference between "End" and "After" is that "End" inserts the new text inside the end of the existing range, but "After" creates a new range with the string and inserts the new range after the existing range. Similarly, "Start" inserts text inside the beginning of the existing range and "Before" inserts a new range. "Replace" replaces the text of the existing range with the string in the first parameter.
 
-   - You saw in an earlier stage of the tutorial that the insert* methods of the body object do not have the "Before" and "After" options. This is because you can't put content outside of the document's body.
+   - You saw in an earlier stage of the tutorial that the insert* methods of the body object don't have the "Before" and "After" options. This is because you can't put content outside of the document's body.
 
     ```js
     const doc = context.document;
@@ -400,11 +400,11 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
 In all previous functions in this series of tutorials, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method which sends the queued commands to the document to be executed. But the code you added in the last step calls the `originalRange.text` property, and this is a significant difference from the earlier functions you wrote, because the `originalRange` object is only a proxy object that exists in your task pane's script. It doesn't know what the actual text of the range in the document is, so its `text` property can't have a real value. It is necessary to first fetch the text value of the range from the document and use it to set the value of `originalRange.text`. Only then can `originalRange.text` be called without causing an exception to be thrown. This fetching process has three steps.
 
-   1. Queue a command to load (that is; fetch) the properties that your code needs to read.
+1. Queue a command to load (that is, fetch) the properties that your code needs to read.
 
-   1. Call the context object's `sync` method to send the queued command to the document for execution and return the requested information.
+1. Call the context object's `sync` method to send the queued command to the document for execution and return the requested information.
 
-   1. Because the `sync` method is asynchronous, ensure that it has completed before your code calls the properties that were fetched.
+1. Because the `sync` method is asynchronous, ensure that it has completed before your code calls the properties that were fetched.
 
 These steps must be completed whenever your code needs to *read* information from the Office document.
 
@@ -751,7 +751,7 @@ Complete the following steps to define the image that you'll insert into the doc
     }
     ```
 
-1. Within the `insertTable()` function, replace `TODO1` with the following code. Note that this line uses the `ParagraphCollection.getFirst` method to get a reference ot the first paragraph and then uses the `Paragraph.getNext` method to get a reference to the second paragraph.
+1. Within the `insertTable()` function, replace `TODO1` with the following code. Note that this line uses the `ParagraphCollection.getFirst` method to get a reference to the first paragraph and then uses the `Paragraph.getNext` method to get a reference to the second paragraph.
 
     ```js
     const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
