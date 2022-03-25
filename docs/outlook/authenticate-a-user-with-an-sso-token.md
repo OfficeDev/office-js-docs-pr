@@ -30,7 +30,7 @@ When you are developing an add-in, you will have to provide consent in advance. 
 
 ## Update the add-in manifest
 
-The next step to enable SSO in the add-in is to add a `WebApplicationInfo` element at the end of the `VersionOverridesV1_1` [VersionOverrides](/javascript/api/manifest/versionoverrides.md) element. For more information, see [Configure the add-in](../develop/sso-in-office-add-ins.md#configure-the-add-in).
+The next step to enable SSO in the add-in is to add a `WebApplicationInfo` element at the end of the `VersionOverridesV1_1` [VersionOverrides](/javascript/api/manifest/versionoverrides) element. For more information, see [Configure the add-in](../develop/sso-in-office-add-ins.md#configure-the-add-in).
 
 ## Get the SSO token
 

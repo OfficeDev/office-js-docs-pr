@@ -136,4 +136,4 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 ## See also
 
 - [Outlook permissions](understanding-outlook-add-in-permissions.md)
-- [Permissions element in the manifest](/javascript/api/manifest/permissions.md)
+- [Permissions element in the manifest](/javascript/api/manifest/permissions)

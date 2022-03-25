@@ -39,7 +39,7 @@ Your add-in should load the most current version of the Office JavaScript API li
 
 By default, an add-in is installable in all Office applications supported by the specified add-in type (that is, Mail, Task pane, or Content). For example, a task pane add-in is installable by default on Access, Excel, OneNote, PowerPoint, Project, and Word. 
 
-To ensure that your add-in is installable in a subset of Office applications, use the [Hosts](/javascript/api/manifest/hosts.md) and [Host](/javascript/api/manifest/host.md) elements in the manifest.
+To ensure that your add-in is installable in a subset of Office applications, use the [Hosts](/javascript/api/manifest/hosts) and [Host](/javascript/api/manifest/host) elements in the manifest.
 
 For example, the following **Hosts** and **Host** declaration specifies that the add-in can install on any release of Excel, which includes Excel on the web, Windows, and iPad, but cannot be installed on any other Office application.
 
@@ -62,7 +62,7 @@ The **Hosts** element can contain one or more **Host** elements. There should be
 | Workbook      | Excel on the web, Windows, Mac, iPad           | Task pane, Content     |
 
 > [!NOTE]
-> Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You usually can't specify which platform can be used to run your add-in. For example, if you specify `Workbook`, both Excel on the web and on Windows can be used to run your add-in. However, if you specify `Mailbox`, your add-in won't run on Outlook mobile clients unless you define the [mobile extension point](/javascript/api/manifest/extensionpoint.md#mobilemessagereadcommandsurface).
+> Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You usually can't specify which platform can be used to run your add-in. For example, if you specify `Workbook`, both Excel on the web and on Windows can be used to run your add-in. However, if you specify `Mailbox`, your add-in won't run on Outlook mobile clients unless you define the [mobile extension point](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface).
 
 > [!NOTE]
 > It isn't possible for an add-in manifest to apply to more than one type: Mail, Task pane, or Content. This means that if you want your add-in to be installable on Outlook and on one of the other Office applications, you must create *two* add-ins, one with a Mail type manifest and the other with a Task pane or Content type manifest.
@@ -97,7 +97,7 @@ All APIs in the application specific models are in requirement sets, but some of
 
 ### Requirements element
 
-Use the [Requirements](/javascript/api/manifest/requirements.md) element and its child elements [Sets](/javascript/api/manifest/sets.md) and [Methods](/javascript/api/manifest/methods.md) to specify the minimum requirement sets or API members that must be supported by the Office application to install your add-in. 
+Use the [Requirements](/javascript/api/manifest/requirements) element and its child elements [Sets](/javascript/api/manifest/sets) and [Methods](/javascript/api/manifest/methods) to specify the minimum requirement sets or API members that must be supported by the Office application to install your add-in. 
 
 If the Office application or platform doesn't support the requirement sets or API members specified in the **Requirements** element, the add-in won't run in that application or platform, and won't display in **My Add-ins**. .
 
@@ -129,15 +129,15 @@ Note the following about this example.
 
 - The **Requirements** element contains the **Sets** and **Methods** child elements.
 - The **Sets** element can contain one or more **Set** elements. `DefaultMinVersion` specifies the default `MinVersion` value of all child **Set** elements.
-- A [Set](/javascript/api/manifest/set.md) element specifies a requirement set that the Office application must support to make the add-in installable. The `Name` attribute specifies the name of the requirement set. The `MinVersion` specifies the minimum version of the requirement set. `MinVersion` overrides the value of the `DefaultMinVersion` attribute in the parent **Sets**.
-- The **Methods** element can contain one or more [Method](/javascript/api/manifest/method.md) elements. You can't use the **Methods** element with Outlook add-ins.
+- A [Set](/javascript/api/manifest/set) element specifies a requirement set that the Office application must support to make the add-in installable. The `Name` attribute specifies the name of the requirement set. The `MinVersion` specifies the minimum version of the requirement set. `MinVersion` overrides the value of the `DefaultMinVersion` attribute in the parent **Sets**.
+- The **Methods** element can contain one or more [Method](/javascript/api/manifest/method) elements. You can't use the **Methods** element with Outlook add-ins.
 - The **Method** element specifies an individual method that the Office application must support to make the add-in installable. The `Name` attribute is required and specifies the name of the method qualified with its parent object.
 
 ## Design for alternate experiences
 
 The extensibility features that the Office Add-in platform provides can be usefully divided into three kinds:
 
-- Extensibility features that are available immediately after the add-in is installed. You can make use of this kind of feature by configuring a [VersionOverrides](/javascript/api/manifest/versionoverrides.md) element in the manifest. An example of this kind of feature is [Add-in Commands](../design/add-in-commands.md), which are custom ribbon buttons and menus.
+- Extensibility features that are available immediately after the add-in is installed. You can make use of this kind of feature by configuring a [VersionOverrides](/javascript/api/manifest/versionoverrides) element in the manifest. An example of this kind of feature is [Add-in Commands](../design/add-in-commands.md), which are custom ribbon buttons and menus.
 - Extensibility features that are available only when the add-in is running and that are implemented with Office.js JavaScript APIs; for example, [Dialog Boxes](../design/dialog-boxes.md).
 - Extensibility features that are available only at runtime but are implemented with a combination of Office.js JavaScript and configuration in a **VersionOverrides** element. Examples of these are [Excel custom functions](../excel/custom-functions-overview.md), [single sign-on](sso-in-office-add-ins.md), and [custom contextual tabs](../design/contextual-tabs.md).
 
@@ -210,9 +210,9 @@ if (Office.context.document.setSelectedDataAsync)
 
 ### Specify requirements in a VersionOverrides element
 
-The [VersionOverrides](/javascript/api/manifest/versionoverrides.md) element was added to the manifest schema primarily, but not exclusively, to support features that must be available immediately after an add-in is installed, such as add-in commands (custom ribbon buttons and menus). Office must know about these features when it parses the add-in manifest. 
+The [VersionOverrides](/javascript/api/manifest/versionoverrides) element was added to the manifest schema primarily, but not exclusively, to support features that must be available immediately after an add-in is installed, such as add-in commands (custom ribbon buttons and menus). Office must know about these features when it parses the add-in manifest. 
 
-Suppose your add-in uses one of these features, but the add-in is valuable, and should be installable, even on Office versions that don't support the feature. In this scenario, identify the feature using a [Requirements](/javascript/api/manifest/requirements.md) element (and its child [Sets](/javascript/api/manifest/sets.md) and [Methods](/javascript/api/manifest/methods.md) elements) that you include as a child of the **VersionOverrides** element itself instead of as a child of the base `OfficeApp` element. The effect of doing this is that Office will allow the add-in to be installed, but Office will ignore certain of the child elements of the **VersionOverrides** element on Office versions where the feature isn't supported.
+Suppose your add-in uses one of these features, but the add-in is valuable, and should be installable, even on Office versions that don't support the feature. In this scenario, identify the feature using a [Requirements](/javascript/api/manifest/requirements) element (and its child [Sets](/javascript/api/manifest/sets) and [Methods](/javascript/api/manifest/methods) elements) that you include as a child of the **VersionOverrides** element itself instead of as a child of the base `OfficeApp` element. The effect of doing this is that Office will allow the add-in to be installed, but Office will ignore certain of the child elements of the **VersionOverrides** element on Office versions where the feature isn't supported.
 
 Specifically, the child elements of the **VersionOverrides** that override elements in the base manifest, such as a **Hosts** element, are ignored and the corresponding elements of the base manifest are used instead. However, there can be child elements in a **VersionOverrides** that actually implement additional features rather than override settings in the base manifest. Two examples are the `WebApplicationInfo` and `EquivalentAddins`. These parts of the **VersionOverrides** will *not* be ignored, assuming the platform and version of Office support the corresponding feature.  
 

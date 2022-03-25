@@ -19,17 +19,17 @@ The following figure shows Outlook add-ins activated in the add-in bar for the m
 
 To have Outlook activate an add-in for specific conditions, specify activation rules in the add-in manifest by using one of the following `Rule` elements.
 
-- [Rule element (MailApp complexType)](/javascript/api/manifest/rule.md) - Specifies an individual rule.
-- [Rule element (RuleCollection complexType)](/javascript/api/manifest/rule.md#rulecollection) - Combines multiple rules using logical operations.
+- [Rule element (MailApp complexType)](/javascript/api/manifest/rule) - Specifies an individual rule.
+- [Rule element (RuleCollection complexType)](/javascript/api/manifest/rule#rulecollection) - Combines multiple rules using logical operations.
 
 
  > [!NOTE]
- > The `Rule` element that you use to specify an individual rule is of the abstract [Rule](/javascript/api/manifest/rule.md) complex type. Each of the following types of rules extends this abstract `Rule` complex type. So when you specify an individual rule in a manifest, you must use the [xsi:type](https://www.w3.org/TR/xmlschema-1/) attribute to further define one of the following types of rules.
+ > The `Rule` element that you use to specify an individual rule is of the abstract [Rule](/javascript/api/manifest/rule) complex type. Each of the following types of rules extends this abstract `Rule` complex type. So when you specify an individual rule in a manifest, you must use the [xsi:type](https://www.w3.org/TR/xmlschema-1/) attribute to further define one of the following types of rules.
  > 
- > For example, the following rule defines an [ItemIs](/javascript/api/manifest/rule.md#itemis-rule) rule.
+ > For example, the following rule defines an [ItemIs](/javascript/api/manifest/rule#itemis-rule) rule.
  > `<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
- > The `FormType` attribute applies to activation rules in the manifest v1.1 but is not defined in `VersionOverrides` v1.0. So it can't be used when [ItemIs](/javascript/api/manifest/rule.md#itemis-rule) is used in the `VersionOverrides` node.
+ > The `FormType` attribute applies to activation rules in the manifest v1.1 but is not defined in `VersionOverrides` v1.0. So it can't be used when [ItemIs](/javascript/api/manifest/rule#itemis-rule) is used in the `VersionOverrides` node.
 
 The following table lists the types of rules that are available. You can find more information following the table and in the specified articles under [Create Outlook add-ins for read forms](read-scenario.md).
 

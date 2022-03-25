@@ -61,7 +61,7 @@ The following table lists the parts of the identity token payload.
 
 | Claim | Description |
 |:-----|:-----|
-| `aud` | The URL of the add-in that requested the token. A token is only valid if it is sent from the add-in that is running in the client's browser. If the add-in uses the Office Add-ins manifests schema v1.1, this URL is the URL specified in the first `SourceLocation` element, under the form type `ItemRead` or `ItemEdit`, whichever occurs first as part of the [FormSettings](/javascript/api/manifest/formsettings.md) element in the add-in manifest. |
+| `aud` | The URL of the add-in that requested the token. A token is only valid if it is sent from the add-in that is running in the client's browser. If the add-in uses the Office Add-ins manifests schema v1.1, this URL is the URL specified in the first `SourceLocation` element, under the form type `ItemRead` or `ItemEdit`, whichever occurs first as part of the [FormSettings](/javascript/api/manifest/formsettings) element in the add-in manifest. |
 | `iss` | A unique identifier for the Exchange server that issued the token. All tokens issued by this Exchange server will have the same identifier. |
 | `nbf` | The date and time that the token is valid starting from. The value is the number of seconds since January 1, 1970. |
 | `exp` | The date and time that the token is valid until. The value is the number of seconds since January 1, 1970. |
