@@ -64,7 +64,7 @@ The following table is a list of errors that the API may return.
 |`AccessDenied` |You cannot perform the requested operation.| |
 |`ActivityLimitReached`|Activity limit has been reached.| |
 |`ApiNotAvailable`|The requested API is not available.| |
-|`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of Excel. See the [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md) article for more information.| |
+|`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of Excel. See the [Excel JavaScript API requirement sets](/javascript/api/requirement-sets/excel-api-requirement-sets) article for more information.| |
 |`BadPassword`|The password you supplied is incorrect.| |
 |`Conflict`|Request could not be processed because of a conflict.| |
 |`ContentLengthRequired`|A `Content-length` HTTP header is missing.| |

@@ -11,7 +11,7 @@ This article describes the software and device requirements for running Office A
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-For a high-level view of where Office Add-ins are currently supported, see [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md).
+For a high-level view of where Office Add-ins are currently supported, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
 
 ## Server requirements
 
@@ -79,10 +79,19 @@ Specifically for Outlook running on smartphones and non-Windows tablet devices, 
 >
 > <sup>2</sup> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins.
 
-[!INCLUDE [How to distinguish between classic and modern Outlook on the web](../includes/classic-versus-modern-Outlook-on-the-web.md)]
+> [!TIP]
+> You can distinguish between classic and modern Outlook in a web browser by checking your mailbox toolbar.
+>
+> **modern**
+>
+> ![Partial screenshot of the modern Outlook toolbar.](../images/outlook-on-the-web-new-toolbar.png)
+>
+> **classic**
+>
+> ![Partial screenshot of the classic Outlook toolbar.](../images/outlook-on-the-web-classic-toolbar.png)
 
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md)
+- [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)
 - [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md)

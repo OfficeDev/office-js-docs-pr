@@ -38,7 +38,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
 1. Open the **manifest.xml** file.
-1. If you generated an Excel add-in, update the requirements section to use the [shared runtime](../reference/requirement-sets/shared-runtime-requirement-sets.md) instead of the custom function runtime. The XML should appear as follows.
+1. If you generated an Excel add-in, update the requirements section to use the [shared runtime](/javascript/api/requirement-sets/shared-runtime-requirement-sets) instead of the custom function runtime. The XML should appear as follows.
 
     ```xml
     <Hosts>
@@ -198,7 +198,7 @@ When you add the `Runtime` element, you also specify a lifetime with a value of 
 ```
 
 > [!NOTE]
-> If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+> If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## About the shared JavaScript runtime
 

@@ -44,7 +44,7 @@ The Word JavaScript APIs give your application access to the objects and metadat
 * Word 2016 or later on Mac
 * Word on iPad
 
-Write your add-in once, and it will run in all versions of Word across multiple platforms. For details, see [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md).
+Write your add-in once, and it will run in all versions of Word across multiple platforms. For details, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
 
 ## JavaScript APIs for Word
 
@@ -52,7 +52,7 @@ You can use two sets of JavaScript APIs to interact with the objects and metadat
 
 The second is the [Word JavaScript API](/javascript/api/word). This is a [application-specific API model](../develop/application-specific-api-model.md) that was introduced with Word 2016. It's a strongly-typed object model that you can use to create Word add-ins that target Word 2016 and later on Mac and on Windows. This object model uses promises and provides access to Word-specific objects like [body](/javascript/api/word/word.body), [content controls](/javascript/api/word/word.contentcontrol), [inline pictures](/javascript/api/word/word.inlinepicture), and [paragraphs](/javascript/api/word/word.paragraph). The Word JavaScript API includes TypeScript definitions and vsdoc files so that you can get code hints in your IDE.
 
-Currently, all Word clients support the shared Office JavaScript API, and most clients support the Word JavaScript API. For details about supported clients, see [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md).
+Currently, all Word clients support the shared Office JavaScript API, and most clients support the Word JavaScript API. For details about supported clients, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
 
 We recommend that you start with the Word JavaScript API because the object model is easier to use. Use the Word JavaScript API if you need to:
 
