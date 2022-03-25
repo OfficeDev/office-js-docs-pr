@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 You can use add-in commands in your Office Add-in to extend the Office UI by adding buttons to the Office app ribbon. When users click your command button, an action occurs, such as opening a task pane.
 
-Some scenarios require that a task pane open automatically when a document opens, without explicit user interaction. You can use the autoopen task pane feature, introduced in the [AddInCommands 1.1 requirement set](../reference/requirement-sets/add-in-commands-requirement-sets.md), to automatically open a task pane when your scenario requires it.
+Some scenarios require that a task pane open automatically when a document opens, without explicit user interaction. You can use the autoopen task pane feature, introduced in the [AddInCommands 1.1 requirement set](/javascript/api/requirement-sets/add-in-commands-requirement-sets), to automatically open a task pane when your scenario requires it.
 
 ## How is the autoopen feature different from inserting a task pane?
 
@@ -52,7 +52,7 @@ Apply the following best practices when you use the autoopen feature.
 
 ### Step 1: Specify the task pane to open
 
-To specify the task pane to open automatically, set the [TaskpaneId](../reference/manifest/action.md#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
+To specify the task pane to open automatically, set the [TaskpaneId](/javascript/api/manifest/action#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
 
 The following example shows the TaskPaneId value set to Office.AutoShowTaskpaneWithDocument.
 

@@ -21,7 +21,7 @@ This documentation explains how to build and configure Office Add-ins to success
 
 ## SSO scenarios
 
-Using Single Sign-on (SSO) is convenient for the user because they only have to sign in once to Office. They do not need to sign in separately to your add-in. SSO is not supported on all versions of Office, so you'll still need to implement an alternative sign-in approach, by [using the Microsoft identity platform](#authenticate-with-the-microsoft-identity-platform). For more information on supported Office versions, see [Identity API requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md)
+Using Single Sign-on (SSO) is convenient for the user because they only have to sign in once to Office. They do not need to sign in separately to your add-in. SSO is not supported on all versions of Office, so you'll still need to implement an alternative sign-in approach, by [using the Microsoft identity platform](#authenticate-with-the-microsoft-identity-platform). For more information on supported Office versions, see [Identity API requirement sets](/javascript/api/requirement-sets/identity-api-requirement-sets)
 
 ### Get the user's identity through SSO
 

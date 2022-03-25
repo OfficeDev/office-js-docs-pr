@@ -30,7 +30,7 @@ When you are developing an add-in, you will have to provide consent in advance. 
 
 ## Update the add-in manifest
 
-The next step to enable SSO in the add-in is to add a `WebApplicationInfo` element at the end of the `VersionOverridesV1_1` [VersionOverrides](../reference/manifest/versionoverrides.md) element. For more information, see [Configure the add-in](../develop/sso-in-office-add-ins.md#configure-the-add-in).
+The next step to enable SSO in the add-in is to add a `WebApplicationInfo` element at the end of the `VersionOverridesV1_1` [VersionOverrides](/javascript/api/manifest/versionoverrides) element. For more information, see [Configure the add-in](../develop/sso-in-office-add-ins.md#configure-the-add-in).
 
 ## Get the SSO token
 
@@ -52,5 +52,5 @@ There are additional steps to take if your add-in uses event-based activation. F
 - [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1))
 - For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [Outlook Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
 - [SSO API reference](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
-- [IdentityAPI requirement set](../reference/requirement-sets/identity-api-requirement-sets.md)
+- [IdentityAPI requirement set](/javascript/api/requirement-sets/identity-api-requirement-sets)
 - [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md)

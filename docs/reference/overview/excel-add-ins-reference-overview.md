@@ -52,5 +52,5 @@ Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quick
 * [Excel add-ins documentation](../../excel/index.yml)
 * [Excel add-ins overview](../../excel/excel-add-ins-overview.md)
 * [Excel JavaScript API reference](/javascript/api/excel)
-* [Office client application and platform availability for Office Add-ins](../../overview/office-add-in-availability.md)
+* [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)
 * [Using the application-specific API model](../../develop/application-specific-api-model.md)

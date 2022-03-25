@@ -28,7 +28,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
 
 1. Start Visual Studio Code and open the add-in project you generated.
 1. Open the **manifest.xml** file.
-1. Replace (or add) the following `<Requirements>` section XML to require the [shared runtime requirement set](../reference/requirement-sets/shared-runtime-requirement-sets.md).
+1. Replace (or add) the following `<Requirements>` section XML to require the [shared runtime requirement set](/javascript/api/requirement-sets/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>
@@ -75,7 +75,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
     ```
     
     > [!NOTE]
-    > If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+    > If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 1. Find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
 

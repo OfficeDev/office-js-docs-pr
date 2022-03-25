@@ -25,7 +25,7 @@ The schema that defines the JSON format is [extended-manifest schema](https://de
 
 ## Tell Office where to find the JSON file
 
-Use the manifest to tell Office where to find the JSON file. Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. Set the `Url` attribute to the full URL of a JSON file. The following is an example of the simplest possible `<ExtendedOverrides>` element.
+Use the manifest to tell Office where to find the JSON file. Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of a JSON file. The following is an example of the simplest possible `<ExtendedOverrides>` element.
 
 ```xml
     ...

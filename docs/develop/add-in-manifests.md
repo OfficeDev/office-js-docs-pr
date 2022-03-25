@@ -65,53 +65,53 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 
 <!-- Links for above table -->
 
-[officeapp]: ../reference/manifest/officeapp.md
-[id]: ../reference/manifest/id.md
-[version]: ../reference/manifest/version.md
-[providername]: ../reference/manifest/providername.md
-[defaultlocale]: ../reference/manifest/defaultlocale.md
-[displayname]: ../reference/manifest/displayname.md
-[description]: ../reference/manifest/description.md
-[iconurl]: ../reference/manifest/iconurl.md
-[supporturl]: ../reference/manifest/supporturl.md
-[defaultsettings (contentapp)]: ../reference/manifest/defaultsettings.md
-[defaultsettings (taskpaneapp)]: ../reference/manifest/defaultsettings.md
-[sourcelocation (contentapp)]: ../reference/manifest/sourcelocation.md
-[sourcelocation (taskpaneapp)]: ../reference/manifest/sourcelocation.md
+[officeapp]: /javascript/api/manifest/officeapp
+[id]: /javascript/api/manifest/id
+[version]: /javascript/api/manifest/version
+[providername]: /javascript/api/manifest/providername
+[defaultlocale]: /javascript/api/manifest/defaultlocale
+[displayname]: /javascript/api/manifest/displayname
+[description]: /javascript/api/manifest/description
+[iconurl]: /javascript/api/manifest/iconurl
+[supporturl]: /javascript/api/manifest/supporturl
+[defaultsettings (contentapp)]: /javascript/api/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings
+[sourcelocation (contentapp)]: /javascript/api/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: /javascript/api/manifest/sourcelocation
 [desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
 [sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
-[permissions (contentapp)]: ../reference/manifest/permissions.md
-[permissions (taskpaneapp)]: ../reference/manifest/permissions.md
-[permissions (mailapp)]: ../reference/manifest/permissions.md
-[rule (rulecollection)]: ../reference/manifest/rule.md
-[rule (mailapp)]: ../reference/manifest/rule.md
-[requirements (mailapp)*]: ../reference/manifest/requirements.md
-[set*]: ../reference/manifest/set.md
-[sets (mailapprequirements)*]: ../reference/manifest/sets.md
-[form*]: ../reference/manifest/form.md
-[formsettings*]: ../reference/manifest/formsettings.md
-[sets (requirements)*]: ../reference/manifest/sets.md
-[hosts*]: ../reference/manifest/hosts.md
+[permissions (contentapp)]: /javascript/api/manifest/permissions
+[permissions (taskpaneapp)]: /javascript/api/manifest/permissions
+[permissions (mailapp)]: /javascript/api/manifest/permissions
+[rule (rulecollection)]: /javascript/api/manifest/rule
+[rule (mailapp)]: /javascript/api/manifest/rule
+[requirements (mailapp)*]: /javascript/api/manifest/requirements
+[set*]: /javascript/api/manifest/set
+[sets (mailapprequirements)*]: /javascript/api/manifest/sets
+[form*]: /javascript/api/manifest/form
+[formsettings*]: /javascript/api/manifest/formsettings
+[sets (requirements)*]: /javascript/api/manifest/sets
+[hosts*]: /javascript/api/manifest/hosts
 
 ## Hosting requirements
 
 All image URIs, such as those used for [add-in commands](create-addin-commands.md), must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
 
-All URLs, such as the source file locations specified in the [SourceLocation](../reference/manifest/sourcelocation.md) element, should be **SSL-secured (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
+All URLs, such as the source file locations specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## Best practices for submitting to AppSource
 
 Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
-Add-ins submitted to AppSource must also include the [SupportUrl](../reference/manifest/supporturl.md) element. For more information, see [Validation policies for apps and add-ins submitted to AppSource](/legal/marketplace/certification-policies).
+Add-ins submitted to AppSource must also include the [SupportUrl](/javascript/api/manifest/supporturl) element. For more information, see [Validation policies for apps and add-ins submitted to AppSource](/legal/marketplace/certification-policies).
 
-Only use the [AppDomains](../reference/manifest/appdomains.md) element to specify domains other than the one specified in the [SourceLocation](../reference/manifest/sourcelocation.md) element for authentication scenarios.
+Only use the [AppDomains](/javascript/api/manifest/appdomains) element to specify domains other than the one specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element for authentication scenarios.
 
 ## Specify domains you want to open in the add-in window
 
-When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](../reference/manifest/sourcelocation.md) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office application.
+When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office application.
 
-To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](../reference/manifest/appdomains.md) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
+To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the list of domains specified in the [AppDomains](/javascript/api/manifest/appdomains) element of the manifest file. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
 
 > [!NOTE]
 > There are two exceptions to this behavior.
@@ -119,7 +119,7 @@ To override this (desktop Office) behavior, specify each domain you want to open
 > - It applies only to the root pane of the add-in. If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
 > - When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
 
-The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](../reference/manifest/appdomain.md) element within the **AppDomains** element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
+The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/javascript/api/manifest/appdomain) element within the **AppDomains** element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -144,7 +144,7 @@ The following XML manifest example hosts its main add-in page in the `https://ww
 
 ## Version overrides in the manifest
 
-The optional [VersionOverrides](../reference/manifest/versionoverrides.md) element deserves special mention. It contains child markup that enables additional add-in features. Some of these are:
+The optional [VersionOverrides](/javascript/api/manifest/versionoverrides) element deserves special mention. It contains child markup that enables additional add-in features. Some of these are:
 
  - Customizing the Office ribbon and menus.
  - Customizing how Office works with the embedded browser runtime in which add-ins run.
@@ -195,7 +195,7 @@ For an example of a manifest that includes a `VersionOverrides` element, see [Ma
 
 ## Specify domains from which Office.js API calls are made
 
-Your add-in can make Office.js API calls from the domain referenced in the [SourceLocation](../reference/manifest/sourcelocation.md) element of the manifest file. If you have other IFrames within your add-in that need to access Office.js APIs, add the domain of that source URL to the list specified in the [AppDomains](../reference/manifest/appdomains.md) element of the manifest file. If an IFrame with a source not contained in the `AppDomains` list attempts to make an Office.js API call, then the add-in will receive a [permission denied error](../reference/javascript-api-for-office-error-codes.md).
+Your add-in can make Office.js API calls from the domain referenced in the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the manifest file. If you have other IFrames within your add-in that need to access Office.js APIs, add the domain of that source URL to the list specified in the [AppDomains](/javascript/api/manifest/appdomains) element of the manifest file. If an IFrame with a source not contained in the `AppDomains` list attempts to make an Office.js API call, then the add-in will receive a [permission denied error](../reference/javascript-api-for-office-error-codes.md).
 
 ## Manifest v1.1 XML file examples and schemas
 
