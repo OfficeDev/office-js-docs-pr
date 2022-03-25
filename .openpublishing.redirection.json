@@ -934,14 +934,6 @@
         "redirect_url": "/javascript/api/manifest/enabled"
       },
       {
-        "source_path": "docs/reference/manifest/equivalentaddin.md",
-        "redirect_url": "/javascript/api/manifest/equivalentaddin"
-      },
-      {
-        "source_path": "docs/reference/manifest/equivalentaddins.md",
-        "redirect_url": "/javascript/api/manifest/equivalentaddins"
-      },
-      {
         "source_path": "docs/reference/manifest/event.md", 
         "redirect_url": "/javascript/api/manifest/event"
       },
@@ -968,10 +960,6 @@
       {
         "source_path": "docs/reference/manifest/group.md", 
         "redirect_url": "/javascript/api/manifest/group"
-      },
-      {
-        "source_path": "docs/reference/manifest/hosts.md", 
-        "redirect_url": "/javascript/api/manifest/hosts"
       },
       {
         "source_path": "docs/reference/manifest/icon.md", 
