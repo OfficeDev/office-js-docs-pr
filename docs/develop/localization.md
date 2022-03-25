@@ -488,17 +488,17 @@ Once running, the strings in the add-in UI change to match the language used by 
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Language identifiers and OptionState Id values in Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:         /javascript/api/manifest/defaultlocale.md
-[Description]:           /javascript/api/manifest/description.md
-[DisplayName]:           /javascript/api/manifest/displayname.md
-[IconUrl]:               /javascript/api/manifest/iconurl.md
-[HighResolutionIconUrl]: /javascript/api/manifest/highresolutioniconurl.md
-[Resources]:             /javascript/api/manifest/resources.md
-[SourceLocation]:        /javascript/api/manifest/sourcelocation.md
-[Override]:              /javascript/api/manifest/override.md
-[DesktopSettings]:       /javascript/api/manifest/desktopsettings.md
-[TabletSettings]:        /javascript/api/manifest/tabletsettings.md
-[PhoneSettings]:         /javascript/api/manifest/phonesettings.md
+[DefaultLocale]:         /javascript/api/manifest/defaultlocale
+[Description]:           /javascript/api/manifest/description
+[DisplayName]:           /javascript/api/manifest/displayname
+[IconUrl]:               /javascript/api/manifest/iconurl
+[HighResolutionIconUrl]: /javascript/api/manifest/highresolutioniconurl
+[Resources]:             /javascript/api/manifest/resources
+[SourceLocation]:        /javascript/api/manifest/sourcelocation
+[Override]:              /javascript/api/manifest/override
+[DesktopSettings]:       /javascript/api/manifest/desktopsettings
+[TabletSettings]:        /javascript/api/manifest/tabletsettings
+[PhoneSettings]:         /javascript/api/manifest/phonesettings
 [displayLanguage]:       /javascript/api/office/office.context#displayLanguage
 [contentLanguage]:       /javascript/api/office/office.context#contentLanguage
 [RFC 3066]:              https://www.rfc-editor.org/info/rfc3066
