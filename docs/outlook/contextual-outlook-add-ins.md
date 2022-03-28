@@ -19,7 +19,7 @@ The following are examples of contextual add-ins.
 > [!NOTE]
 > Contextual add-ins are not currently available in Outlook on Android and iOS. This functionality will be made available in the future.
 >
-> Support for this feature was introduced in requirement set 1.6. See [clients and platforms](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in requirement set 1.6. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## How to make a contextual add-in
 

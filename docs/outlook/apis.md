@@ -44,7 +44,7 @@ if (item.somePropertyOrFunction) {
 > These checks are not needed for any APIs that are in the requirement set version specified in the manifest.
 
 Specify the minimum requirement set that supports the critical set of APIs for your scenario, without which features of your add-in won't work. You specify the requirement set in the manifest in the `<Requirements>` element. For more information, see [Outlook add-in manifests](manifests.md) and
-[Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook-api-requirement-sets).
+[Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
 The `<Methods>` element doesn't apply to Outlook add-ins, so you can't declare support for specific methods.
 
@@ -70,5 +70,5 @@ In general, you should specify the minimum permission needed for your add-in. Pe
 ## See also
 
 - [Outlook add-in manifests](manifests.md)
-- [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook-api-requirement-sets)
+- [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
