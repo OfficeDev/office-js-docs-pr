@@ -69,10 +69,8 @@ To use SSO with Office, you need to create an app registration in the Azure port
     > The `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID pre-authorizes all the following IDs. You can enter the following IDs individually if you prefer.
     >
     > - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    > - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
     > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
-
 
 1. Select the **Add a client application** button and then, in the panel that opens, set the `[app-id-guid]` to the Application (client) ID and check the box for `api://localhost:44355/[app-id-guid]/access_as_user`.
 

@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: 'Learn how to create a Node.js-based add-in that uses Office Single Sign-on'
-ms.date: 01/25/2022
+ms.date: 03/28/2022
 ms.localizationpriority: medium
 ---
 
@@ -93,23 +93,22 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     > [!NOTE]
     > The domain part of the **Scope** name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
-1. In the **Authorized client applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized.
+1. In the **Authorized client applications** section, enter the following ID to pre-authorize all Microsoft Office application endpoints.
 
-    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
-    * `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
-    * `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
+   - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (All Microsoft Office application endpoints)
 
     > [!NOTE]
-    > The ID ea5a67f6-b6f3-4338-b240-c655ddc3cc8e includes all of the other IDs listed and can be used singularly to pre-authorize all of the Office host endpoints for use with your service in the Office add-in SSO flow.
+    > The `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID pre-authorizes all the following IDs. You can enter the following IDs individually if you prefer.
+    >
+    > - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
+    > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
     For each ID, take these steps.
 
-    a. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/$App ID GUID$/access_as_user`.
+1. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/$App ID GUID$/access_as_user`.
 
-    b. Select **Add application**.
+1. Select **Add application**.
 
 1. Select **API permissions** under **Manage** and select **Add a permission**. On the panel that opens, choose **Microsoft Graph** and then choose **Delegated permissions**.
 
