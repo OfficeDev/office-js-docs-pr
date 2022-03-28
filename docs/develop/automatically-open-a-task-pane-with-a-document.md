@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 You can use add-in commands in your Office Add-in to extend the Office UI by adding buttons to the Office app ribbon. When users click your command button, an action occurs, such as opening a task pane.
 
-Some scenarios require that a task pane open automatically when a document opens, without explicit user interaction. You can use the autoopen task pane feature, introduced in the [AddInCommands 1.1 requirement set](/javascript/api/requirement-sets/add-in-commands-requirement-sets), to automatically open a task pane when your scenario requires it.
+Some scenarios require that a task pane open automatically when a document opens, without explicit user interaction. You can use the autoopen task pane feature, introduced in the [AddInCommands 1.1 requirement set](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), to automatically open a task pane when your scenario requires it.
 
 ## How is the autoopen feature different from inserting a task pane?
 
