@@ -1,5 +1,5 @@
 ---
-title: "Single sign-on (SSO) quick start"
+title: Single sign-on (SSO) quick start
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on.
 ms.date: 01/25/2022
 ms.prod: non-product-specific
@@ -19,7 +19,7 @@ The Yeoman generator simplifies the process of creating an SSO add-in, by automa
 
 - [Node.js](https://nodejs.org) (the latest [LTS](https://nodejs.org/about/releases) version).
 
-- The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt.
+- The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). To install these tools globally, run the following command via the command prompt.
 
     ```command&nbsp;line
     npm install -g yo generator-office

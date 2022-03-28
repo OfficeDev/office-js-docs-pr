@@ -1,6 +1,6 @@
 ---
 title: Use custom tags on presentations, slides, and shapes in PowerPoint
-description: 'Learn how to use tags for custom metadata about presentations, slides, and shapes.'
+description: Learn how to use tags for custom metadata about presentations, slides, and shapes.
 ms.date: 12/14/2021
 ms.localizationpriority: medium
 ---

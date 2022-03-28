@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
-description: 'In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.'
-ms.date: 01/06/2022
+description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
+ms.date: 02/23/2022
 ms.prod: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -23,16 +23,9 @@ In this tutorial, you will:
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)
+[!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt.
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) or your preferred code editor
 
 - Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web
 
@@ -120,7 +113,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
 1. This add-in will use the following libraries.
 
-    - [Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML
+    - [Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML.
     - [URI.js](https://github.com/medialize/URI.js) library to build relative URLs.
     - [jquery](https://jquery.com/) library to simplify DOM interactions.
 
@@ -130,6 +123,10 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
     npm install showdown urijs jquery --save
     ```
 
+1. Open your project in VS Code or your preferred code editor.
+
+    [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
 ### Update the manifest
 
 The manifest for an add-in controls how it appears in Outlook. It defines the way the add-in appears in the add-in list and the buttons that appear on the ribbon, and it sets the URLs for the HTML and JavaScript files used by the add-in.
@@ -138,13 +135,13 @@ The manifest for an add-in controls how it appears in Outlook. It defines the wa
 
 Make the following updates in the **manifest.xml** file to specify some basic information about the add-in.
 
-1. Locate the `ProviderName` element and replace the default value with your company name.
+1. Locate the **ProviderName** element and replace the default value with your company name.
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. Locate the `Description` element, replace the default value with a description of the add-in, and save the file.
+1. Locate the **Description** element, replace the default value with a description of the add-in, and save the file.
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
@@ -162,7 +159,13 @@ Before going any further, let's test the basic add-in that the generator created
     npm start
     ```
 
-1. In Outlook, open an existing message and select the **Show Taskpane** button. If everything's been set up correctly, the task pane will open and render the add-in's welcome page.
+1. In Outlook, open an existing message and select the **Show Taskpane** button.
+
+1. When prompted with the **WebView Stop On Load** dialog box, select **OK**.
+
+    [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
+
+    If everything's been set up correctly, the task pane will open and render the add-in's welcome page.
 
     ![Screenshot of the "Show Taskpane" button and Git the gist task pane added by the sample.](../images/button-and-pane.png)
 
@@ -176,21 +179,21 @@ Now that you've verified the base add-in works, you can customize it to add more
 
 ### Remove the MessageReadCommandSurface extension point
 
-Open the **manifest.xml** file and locate the `ExtensionPoint` element with type `MessageReadCommandSurface`. Delete this `ExtensionPoint` element (including its closing tag) to remove the buttons from the read message window.
+Open the **manifest.xml** file and locate the **ExtensionPoint** element with type **MessageReadCommandSurface**. Delete this **ExtensionPoint** element (including its closing tag) to remove the buttons from the read message window.
 
 ### Add the MessageComposeCommandSurface extension point
 
 Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately before this line, insert the following XML markup. Note the following about this markup.
 
-- The `ExtensionPoint` with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.
+- The **ExtensionPoint** with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.
 
-- By using an `OfficeTab` element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.
+- By using an **OfficeTab** element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.
 
-- The `Group` element defines the grouping for the new buttons, with a label set by the `groupLabel` resource.
+- The **Group** element defines the grouping for the new buttons, with a label set by the **groupLabel** resource.
 
-- The first `Control` element contains an `Action` element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.
+- The first **Control** element contains an **Action** element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.
 
-- The second `Control` element contains an `Action` element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.
+- The second **Control** element contains an **Action** element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.
 
 ```xml
 <!-- Message Compose -->
@@ -235,11 +238,11 @@ Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately b
 
 ### Update resources in the manifest
 
-The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the `Resources` section of the manifest.
+The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the **Resources** section of the manifest.
 
-1. Locate the `Resources` element in the manifest file and delete the entire element (including its closing tag).
+1. Locate the **Resources** element in the manifest file and delete the entire element (including its closing tag).
 
-1. In that same location, add the following markup to replace the `Resources` element you just removed.
+1. In that same location, add the following markup to replace the **Resources** element you just removed.
 
     ```xml
     <Resources>
@@ -270,15 +273,15 @@ The previous code references labels, tooltips, and URLs that you need to define 
 
 ### Reinstall the add-in
 
-Since you previously installed the add-in from a file, you must reinstall it in order for the manifest changes to take effect.
+You must reinstall the add-in for the manifest changes to take effect.
 
-1. Follow the instructions to remove **Git the gist** from [sideloaded add-ins](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
+1. If the web server is running, close the node command window.
 
-1. Close the **My add-ins** window.
+1. Run the following command to start the local web server and automatically sideload your add-in.
 
-1. The custom button should disappear from the ribbon momentarily.
-
-1. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to reinstall the add-in using the updated **manifest.xml** file.
+    ```command&nbsp;line
+    npm start
+    ```
 
 After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Insert gist** and **Insert default gist** in a compose message window. Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.
 
@@ -296,7 +299,7 @@ This add-in needs to be able to read gists from the user's GitHub account and id
 
 ### Collect data from the user
 
-Let's start by creating the UI for the dialog itself. Within the **./src** folder, create a new subfolder named **settings**. In the **./src/settings** folder, create a file named **dialog.html**, and add the following markup to define a very basic form with a text input for a GitHub username and an empty list for gists that'll be populated via JavaScript.
+Let's start by creating the UI for the dialog itself. Within the **./src** folder, create a new subfolder named **settings**. In the **./src/settings** folder, create a file named **dialog.html**, and add the following markup to define a basic form with a text input for a GitHub username and an empty list for gists that'll be populated via JavaScript.
 
 ```html
 <!DOCTYPE html>
@@ -361,7 +364,6 @@ Let's start by creating the UI for the dialog itself. Within the **./src** folde
       </div>
     </section>
   </main>
-  <script type="text/javascript" src="../../node_modules/core-js/client/core.js"></script>
   <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="../helpers/gist-api.js"></script>
   <script type="text/javascript" src="dialog.js"></script>
@@ -369,6 +371,8 @@ Let's start by creating the UI for the dialog itself. Within the **./src** folde
 
 </html>
 ```
+
+You may have noticed that the HTML file references a JavaScript file, **gist-api.js**, that doesn't yet exist. This file will be created in the [Fetch data from GitHub](#fetch-data-from-github) section below.
 
 Next, create a file in the **./src/settings** folder named **dialog.css**, and add the following code to specify the styles that are used by **dialog.html**.
 
@@ -405,7 +409,7 @@ ul {
 }
 ```
 
-Now that you've defined the dialog UI, you can write the code that makes it actually do something. Create a file in the **./src/settings** folder named **dialog.js** and add the following code. Note that this code uses jQuery to register events and uses the `messageParent` function to send the user's choices back to the caller.
+Now that you've defined the dialog UI, you can write the code that makes it actually do something. Create a file in the **./src/settings** folder named **dialog.js** and add the following code. Note that this code uses jQuery to register events and uses the **messageParent** function to send the user's choices back to the caller.
 
 ```js
 (function(){
@@ -511,62 +515,70 @@ Now that you've defined the dialog UI, you can write the code that makes it actu
 
 #### Update webpack config settings
 
-Finally, open the file **webpack.config.js** file in the root directory of the project and complete the following steps.
+Finally, open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
 
 1. Locate the `entry` object within the `config` object and add a new entry for `dialog`.
 
     ```js
-    dialog: "./src/settings/dialog.js"
+    dialog: "./src/settings/dialog.js",
     ```
 
     After you've done this, the new `entry` object will look like this:
 
     ```js
     entry: {
-      polyfill: "@babel/polyfill",
+      polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
       taskpane: "./src/taskpane/taskpane.js",
       commands: "./src/commands/commands.js",
-      dialog: "./src/settings/dialog.js"
+      dialog: "./src/settings/dialog.js",
     },
     ```
 
-1. Locate the `plugins` array within the `config` object. In the `patterns` array of the `new CopyWebpackPlugin` object, add a new entry after the `taskpane.css` entry.
+1. Locate the `plugins` array within the `config` object. In the `patterns` array of the `new CopyWebpackPlugin` object, add new entries for **taskpane.css** and **dialog.css**.
 
     ```js
     {
+      from: "./src/taskpane/taskpane.css",
+      to: "taskpane.css",
+    },
+    {
+      from: "./src/settings/dialog.css",
       to: "dialog.css",
-      from: "./src/settings/dialog.css"
     },
     ```
 
     After you've done this, the `new CopyWebpackPlugin` object will look like this:
 
     ```js
-      new CopyWebpackPlugin({
-        patterns: [
-        {
-          to: "taskpane.css",
-          from: "./src/taskpane/taskpane.css"
-        },
-        {
-          to: "dialog.css",
-          from: "./src/settings/dialog.css"
-        },
-        {
-          to: "[name]." + buildType + ".[ext]",
-          from: "manifest*.xml",
-          transform(content) {
-            if (dev) {
-              return content;
-            } else {
-              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
-            }
+    new CopyWebpackPlugin({
+      patterns: [
+      {
+        from: "./src/taskpane/taskpane.css",
+        to: "taskpane.css",
+      },
+      {
+        from: "./src/settings/dialog.css",
+        to: "dialog.css",
+      },
+      {
+        from: "assets/*",
+        to: "assets/[name][ext][query]",
+      },
+      {
+        from: "manifest*.xml",
+        to: "[name]." + buildType + "[ext]",
+        transform(content) {
+          if (dev) {
+            return content;
+          } else {
+            return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
           }
-        }
-      ]}),
+        },
+      },
+    ]}),
     ```
 
-1. Locate the `plugins` array within the `config` object and add this new object to the end of that array.
+1. In the same `plugins` array within the `config` object, add this new object to the end of the array.
 
     ```js
     new HtmlWebpackPlugin({
@@ -580,38 +592,42 @@ Finally, open the file **webpack.config.js** file in the root directory of the p
 
     ```js
     plugins: [
-      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
         template: "./src/taskpane/taskpane.html",
-        chunks: ["polyfill", "taskpane"]
+        chunks: ["polyfill", "taskpane"],
       }),
       new CopyWebpackPlugin({
         patterns: [
-        {
-          to: "taskpane.css",
-          from: "./src/taskpane/taskpane.css"
-        },
-        {
-          to: "dialog.css",
-          from: "./src/settings/dialog.css"
-        },
-        {
-          to: "[name]." + buildType + ".[ext]",
-          from: "manifest*.xml",
-          transform(content) {
-            if (dev) {
-              return content;
-            } else {
-              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
-            }
-          }
-        }
-      ]}),
+          {
+            from: "./src/taskpane/taskpane.css",
+            to: "taskpane.css",
+          },
+          {
+            from: "./src/settings/dialog.css",
+            to: "dialog.css",
+          },
+          {
+            from: "assets/*",
+            to: "assets/[name][ext][query]",
+          },
+          {
+            from: "manifest*.xml",
+            to: "[name]." + buildType + "[ext]",
+            transform(content) {
+              if (dev) {
+                return content;
+              } else {
+                return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+              }
+            },
+          },
+        ],
+      }),
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
-        chunks: ["polyfill", "commands"]
+        chunks: ["polyfill", "commands"],
       }),
       new HtmlWebpackPlugin({
         filename: "dialog.html",
@@ -621,23 +637,9 @@ Finally, open the file **webpack.config.js** file in the root directory of the p
     ],
     ```
 
-1. If the web server is running, close the node command window.
-
-1. Run the following command to rebuild the project.
-
-    ```command&nbsp;line
-    npm run build
-    ```
-
-1. Run the following command to start the web server and sideload your add-in.
-
-    ```command&nbsp;line
-    npm start
-    ```
-
 ### Fetch data from GitHub
 
-The **dialog.js** file you just created specifies that the add-in should load gists when the `change` event fires for the GitHub username field. To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).
+The **dialog.js** file you just created specifies that the add-in should load gists when the **change** event fires for the GitHub username field. To retrieve the user's gists from GitHub, you'll use the [GitHub Gists API](https://developer.github.com/v3/gists/).
 
 Within the **./src** folder, create a new subfolder named **helpers**. In the **./src/helpers** folder, create a file named **gist-api.js**, and add the following code to retrieve the user's gists from GitHub and build the list of gists.
 
@@ -709,8 +711,11 @@ function buildFileList(files) {
 }
 ```
 
-> [!NOTE]
-> You may have noticed that there's no button to invoke the settings dialog. Instead, the add-in will check whether it has been configured when the user selects either the **Insert default gist** button or the **Insert gist** button. If the add-in has not yet been configured, the settings dialog will prompt the user to configure before proceeding.
+Run the following command to rebuild the project.
+
+```command&nbsp;line
+npm run build
+```
 
 ## Implement a UI-less button
 
@@ -722,7 +727,7 @@ This add-in's **Insert default gist** button is a UI-less button that will invok
 
 ### Update the function file (HTML)
 
-A function that's invoked by a UI-less button must be defined in the file that's specified by the `FunctionFile` element in the manifest for the corresponding form factor. This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.
+A function that's invoked by a UI-less button must be defined in the file that's specified by the **FunctionFile** element in the manifest for the corresponding form factor. This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.
 
 Open the file **./src/commands/commands.html** and replace the entire contents with the following markup.
 
@@ -737,11 +742,11 @@ Open the file **./src/commands/commands.html** and replace the entire contents w
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="../node_modules/showdown/dist/showdown.min.js"></script>
-    <script type="text/javascript" src="../node_modules/urijs/src/URI.min.js"></script>
-    <script type="text/javascript" src="../src/helpers/addin-config.js"></script>
-    <script type="text/javascript" src="../src/helpers/gist-api.js"></script>
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/urijs/src/URI.min.js"></script>
+    <script type="text/javascript" src="../helpers/addin-config.js"></script>
+    <script type="text/javascript" src="../helpers/gist-api.js"></script>
 </head>
 
 <body>
@@ -752,9 +757,11 @@ Open the file **./src/commands/commands.html** and replace the entire contents w
 </html>
 ```
 
+You may have noticed that the HTML file references a JavaScript file, **addin-config.js**, that doesn't yet exist. This file will be created in the [Create a file to manage configuration settings](#create-a-file-to-manage-configuration-settings) section later in this tutorial.
+
 ### Update the function file (JavaScript)
 
-Open the file **./src/commands/commands.js** and replace the entire contents with the following code. Note that if the `insertDefaultGist` function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL. Doing so makes the settings dialog render the message bar that's defined in **./settings/dialog.html**, to tell the user why they're seeing the dialog.
+Open the file **./src/commands/commands.js** and replace the entire contents with the following code. Note that if the **insertDefaultGist** function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL. Doing so makes the settings dialog render the message bar that's defined in **./src/settings/dialog.html**, to tell the user why they're seeing the dialog.
 
 ```js
 var config;
@@ -811,7 +818,7 @@ function insertDefaultGist(event) {
     btnEvent = event;
     // Not configured yet, display settings dialog with
     // warn=1 to display warning.
-    var url = new URI('../src/settings/dialog.html?warn=1').absoluteTo(window.location).toString();
+    var url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
     var dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
@@ -853,7 +860,7 @@ g.insertDefaultGist = insertDefaultGist;
 
 ### Create a file to manage configuration settings
 
-The HTML function file references a file named **addin-config.js**, which doesn't yet exist. Create a file named **addin-config.js** in the **./src/helpers** folder and add the following code. This code uses the [RoamingSettings object](/javascript/api/outlook/office.roamingsettings) to get and set configuration values.
+The HTML function file references a file named **addin-config.js**, which doesn't yet exist. In the **./src/helpers** folder, create a file named **addin-config.js** and add the following code. This code uses the [RoamingSettings object](/javascript/api/outlook/office.roamingsettings) to get and set configuration values.
 
 ```js
 function getConfig() {
@@ -877,7 +884,7 @@ function setConfig(config, callback) {
 
 Next, open the **./src/helpers/gist-api.js** file and add the following functions. Note the following:
 
-- If the gist contains HTML, the add-in will insert the HTML as-is into the body of the message.
+- If the gist contains HTML, the add-in will insert the HTML as is into the body of the message.
 
 - If the gist contains Markdown, the add-in will use the [Showdown](https://github.com/showdownjs/showdown) library to convert the Markdown to HTML, and will then insert the resulting HTML into the body of the message.
 
@@ -907,7 +914,7 @@ function buildBodyContent(gist, callback) {
         // We have a winner.
         switch (file.language) {
           case 'HTML':
-            // Insert as-is.
+            // Insert as is.
             callback(file.content);
             break;
           case 'Markdown':
@@ -931,7 +938,7 @@ function buildBodyContent(gist, callback) {
 }
 ```
 
-### Test the button
+### Test the Insert default gist button
 
 Save all of your changes and run `npm start` from the command prompt, if the server isn't already running. Then complete the following steps to test the **Insert default gist** button.
 
@@ -941,7 +948,7 @@ Save all of your changes and run `npm start` from the command prompt, if the ser
 
     ![Screenshot of the dialog prompt to configure the add-in.](../images/addin-prompt-configure.png)
 
-1. In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the `change` event, which should load your list of public gists. Select a gist to be the default, and select **Done**.
+1. In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the **change** event, which should load your list of public gists. Select a gist to be the default, and select **Done**.
 
     ![Screenshot of the add-in's settings dialog.](../images/addin-settings.png)
 
@@ -1007,11 +1014,11 @@ In the project that you've created, the task pane HTML is specified in the file 
       <i class="ms-Icon enlarge ms-Icon--Settings ms-fontColor-white"></i>
     </div>
   </footer>
-  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="../node_modules/showdown/dist/showdown.min.js"></script>
-  <script type="text/javascript" src="../node_modules/urijs/src/URI.min.js"></script>
-  <script type="text/javascript" src="../src/helpers/addin-config.js"></script>
-  <script type="text/javascript" src="../src/helpers/gist-api.js"></script>
+  <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
+  <script type="text/javascript" src="../../node_modules/urijs/src/URI.min.js"></script>
+  <script type="text/javascript" src="../helpers/addin-config.js"></script>
+  <script type="text/javascript" src="../helpers/gist-api.js"></script>
   <script type="text/javascript" src="taskpane.js"></script>
 </body>
 
@@ -1138,11 +1145,8 @@ ul {
       -webkit-flex: 1 0 0px;
               flex: 1 0 0px;
       padding: 20px; }
-      .ms-landing-page__footer--left:active, .ms-landing-page__footer--left:hover {
-        background: #005ca4;
-        cursor: pointer; }
       .ms-landing-page__footer--left:active {
-        background: #005ca4; }
+        cursor: default; }
       .ms-landing-page__footer--left--disabled {
         opacity: 0.6;
         pointer-events: none;
@@ -1231,7 +1235,7 @@ In the project that you've created, the task pane JavaScript is specified in the
       // When the settings icon is selected, open the settings dialog.
       $('#settings-icon').on('click', function(){
         // Display settings dialog.
-        var url = new URI('../src/settings/dialog.html').absoluteTo(window.location).toString();
+        var url = new URI('dialog.html').absoluteTo(window.location).toString();
         if (config) {
           // If the add-in has already been configured, pass the existing values
           // to the dialog.
@@ -1292,7 +1296,7 @@ In the project that you've created, the task pane JavaScript is specified in the
 })();
 ```
 
-### Test the button
+### Test the Insert gist button
 
 Save all of your changes and run `npm start` from the command prompt, if the server isn't already running. Then complete the following steps to test the **Insert gist** button.
 

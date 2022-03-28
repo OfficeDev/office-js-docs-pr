@@ -1,6 +1,6 @@
 ---
 title: Position a custom tab on the ribbon
-description: 'Learn how to control where a custom tab appears on the Office ribbon and whether it has focus by default.'
+description: Learn how to control where a custom tab appears on the Office ribbon and whether it has focus by default.
 ms.date: 01/22/2022
 ms.localizationpriority: medium
 ---
@@ -18,7 +18,7 @@ You can specify where you want your add-in's custom tab to appear on the Office 
 > - The add-in feature and markup described in this article is *only available in PowerPoint on the web*.
 > - The markup described in this article only works on platforms that support requirement set **AddinCommands 1.3**. See [Behavior on unsupported platforms](#behavior-on-unsupported-platforms) below.
 
-Specify where you want a custom tab to appear by identifying which built-in Office tab you want it to be next to and specifying whether it should be on the left or right side of the built-in tab. Make these specifications by including either an [InsertBefore](../reference/manifest/customtab.md#insertbefore) (left) or an [InsertAfter](../reference/manifest/customtab.md#insertafter) (right) element in the [CustomTab](../reference/manifest/customtab.md) element of your add-in's manifest. (You cannot have both elements.)
+Specify where you want a custom tab to appear by identifying which built-in Office tab you want it to be next to and specifying whether it should be on the left or right side of the built-in tab. Make these specifications by including either an [InsertBefore](/javascript/api/manifest/customtab#insertbefore) (left) or an [InsertAfter](/javascript/api/manifest/customtab#insertafter) (right) element in the [CustomTab](/javascript/api/manifest/customtab) element of your add-in's manifest. (You cannot have both elements.)
 
 In the following example, the custom tab is configured to appear *just after* the **Review** tab. Note that the value of the **InsertAfter** element is the ID of the built-in Office tab. 
 
@@ -51,4 +51,4 @@ Office always gives default focus to the tab that is immediately to the right of
 
 ## Behavior on unsupported platforms
 
-If your add-in is installed on a platform that doesn't support [requirement set AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md), then the markup described in this article is ignored and your custom tab will appear as the rightmost tab on the ribbon. To prevent your add-in from being installed on platforms that don't support the markup, add a reference to the requirement set in the **Requirements** section of the manifest. For instructions, see [Specify which Office versions and platforms can host your add-in](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Alternatively, design your add-in to have an alternate experience when **AddinCommands 1.3** is not supported, as described in [Design for alternate experiences](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). For example, if your add-in contains instructions that assume the custom tab is where you want it, you could have an alternate version that assumes the tab is the rightmost.
+If your add-in is installed on a platform that doesn't support [requirement set AddinCommands 1.3](/javascript/api/requirement-sets/add-in-commands-requirement-sets), then the markup described in this article is ignored and your custom tab will appear as the rightmost tab on the ribbon. To prevent your add-in from being installed on platforms that don't support the markup, add a reference to the requirement set in the **Requirements** section of the manifest. For instructions, see [Specify which Office versions and platforms can host your add-in](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Alternatively, design your add-in to have an alternate experience when **AddinCommands 1.3** is not supported, as described in [Design for alternate experiences](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). For example, if your add-in contains instructions that assume the custom tab is where you want it, you could have an alternate version that assumes the tab is the rightmost.

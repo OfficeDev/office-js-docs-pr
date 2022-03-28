@@ -1,6 +1,6 @@
 ---
 title: Work with OneNote page content
-description: 'Learn how to work with OneNote page content using the JavaScript API.'
+description: Learn how to work with OneNote page content using the JavaScript API.
 ms.date: 03/19/2019
 ms.localizationpriority: medium
 ---

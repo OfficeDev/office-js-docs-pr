@@ -1,6 +1,6 @@
 ---
 title: Update to the latest Office JavaScript API library and version 1.1 add-in manifest schema
-description: 'Update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.'
+description: Update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.
 ms.date: 01/14/2022
 ms.localizationpriority: medium
 ---
@@ -69,7 +69,7 @@ In your add-in's manifest file, update the **xmlns** attribute of the **OfficeAp
 ```
 
 > [!NOTE]
-> After updating the version of the add-in manifest schema to 1.1, you will need to remove the **Capabilities** and **Capability** elements, and replace them with either the [Hosts](../reference/manifest/hosts.md) and [Host](../reference/manifest/host.md) elements or the [Requirements and Requirement elements](specify-office-hosts-and-api-requirements.md).
+> After updating the version of the add-in manifest schema to 1.1, you will need to remove the **Capabilities** and **Capability** elements, and replace them with either the [Hosts](/javascript/api/manifest/hosts) and [Host](/javascript/api/manifest/host) elements or the [Requirements and Requirement elements](specify-office-hosts-and-api-requirements.md).
 
 ## Updating an Office Add-in project created with a text editor or other IDE
 
@@ -111,7 +111,7 @@ In your add-in's manifest file, update the **xmlns** attribute of the **OfficeAp
 ```
 
 > [!NOTE]
-> After updating the version of the add-in manifest schema to 1.1, you will need to remove the **Capabilities** and **Capability** elements, and replace them with either the [Hosts](../reference/manifest/hosts.md) and [Host](../reference/manifest/host.md) elements or the [Requirements and Requirement elements](specify-office-hosts-and-api-requirements.md).
+> After updating the version of the add-in manifest schema to 1.1, you will need to remove the **Capabilities** and **Capability** elements, and replace them with either the [Hosts](/javascript/api/manifest/hosts) and [Host](/javascript/api/manifest/host) elements or the [Requirements and Requirement elements](specify-office-hosts-and-api-requirements.md).
 
 ## See also
 

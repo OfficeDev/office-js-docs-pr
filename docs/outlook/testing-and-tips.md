@@ -91,7 +91,7 @@ Alternatively, you can opt to pay for and use a service that hosts and manages o
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
 - [Hostway](https://hostway.com/microsoft-exchange/)
 
-Furthermore, if you don't want your add-ins to be available for users who are connected to on-premises Exchange, you can set the [requirement set](../reference/requirement-sets/outlook-api-requirement-sets.md#exchange-server-support) in the add-in manifest to be 1.6 or higher. Such add-ins will not be tested or validated on the classic Outlook on the web UI.
+Furthermore, if you don't want your add-ins to be available for users who are connected to on-premises Exchange, you can set the [requirement set](/javascript/api/requirement-sets/outlook-api-requirement-sets#exchange-server-support) in the add-in manifest to be 1.6 or higher. Such add-ins will not be tested or validated on the classic Outlook on the web UI.
 
 ## See also
 

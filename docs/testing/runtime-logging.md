@@ -1,6 +1,6 @@
 ---
 title: Debug your add-in with runtime logging
-description: 'Learn how to use runtime logging to debug your add-in.'
+description: Learn how to use runtime logging to debug your add-in.
 ms.date: 11/04/2021
 ms.localizationpriority: medium
 ---

@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
-description: 'In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.'
-ms.date: 01/13/2022
+description: In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
+ms.date: 03/23/2022
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ms.localizationpriority: high
@@ -13,7 +13,7 @@ Custom functions enable you to add new functions to Excel by defining those func
 
 In this tutorial, you will:
 > [!div class="checklist"]
-> - Create a custom function add-in using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office).
+> - Create a custom function add-in using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 > - Use a prebuilt custom function to perform a simple calculation.
 > - Create a custom function that gets data from the web.
 > - Create a custom function that streams real-time data from the web.
@@ -22,11 +22,14 @@ In this tutorial, you will:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel on Windows (version 1904 or later) or Excel on the web.
+- Office connected to a Microsoft 365 subscription (including Office on the web).
+
+  > [!NOTE]
+  > If you don't already have Office, you can [join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
 
 ## Create a custom functions project
 
- To start, create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out. If you've already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.
+ To start, create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) will set up your project with some prebuilt custom functions that you can try out. If you've already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.
 
 > [!NOTE]
 > If you recreate the yo office project, you may get an error because the Office cache already has an instance of a function with the same name. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`.
@@ -37,7 +40,7 @@ In this tutorial, you will:
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `starcount`
 
-    ![Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.](../images/starcountPrompt.png)
+    :::image type="content" source="../images/starcountPrompt.png" alt-text="Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
 
     The Yeoman generator will create the project files and install supporting Node components.
 
@@ -58,7 +61,7 @@ In this tutorial, you will:
     > [!NOTE]
     > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run `npm run build`, accept the prompt to install the certificate that the Yeoman generator provides.
 
-1. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel on the web or Windows.
+1. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel.
 
 # [Excel on Windows or Mac](#tab/excel-windows)
 
@@ -68,11 +71,15 @@ To test your add-in in Excel on Windows or Mac, run the following command. When 
 npm run start:desktop
 ```
 
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
+
 # [Excel on the web](#tab/excel-online)
 
-To test your add-in in Excel on a browser, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
+To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
 [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 ---
 
@@ -87,6 +94,8 @@ Next, try out the `ADD` custom function by completing the following steps.
 1. Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.
 
 The `ADD` custom function computes the sum of the two numbers that you provided and returns the result of **210**.
+
+[!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 
 ## Create a custom function that requests data from the web
 
@@ -135,15 +144,18 @@ Integrating data from the Web is a great way to extend Excel through custom func
 1. Close Excel and then reopen Excel.
 
 1. In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.
-    ![Screenshot of the Insert ribbon in Excel on Windows, with the My Add-ins down-arrow highlighted.](../images/select-insert.png)
+
+    :::image type="content" source="../images/select-insert.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the My Add-ins down-arrow highlighted.":::
 
 1. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
-    ![Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list.](../images/list-starcount.png)
+
+    :::image type="content" source="../images/list-starcount.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list.":::
 
 # [Excel on the web](#tab/excel-online)
 
 1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
-    ![Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted.](../images/excel-cf-online-register-add-in-1.png)
+
+    :::image type="content" source="../images/excel-cf-online-register-add-in-1.png" alt-text="Screenshot of the Insert ribbon in Excel on the web, with the My Add-ins button highlighted.":::
 
 1. Choose **Manage My Add-ins** and select **Upload My Add-in**.
 
@@ -151,7 +163,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
-5. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
+1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
-description: 'Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) in VS Code.'
-ms.date: 02/01/2022
+description: Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) in VS Code.
+ms.date: 02/18/2022
 ms.localizationpriority: high
 ---
 # Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
@@ -27,11 +27,11 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 
 ## Use the Visual Studio Code debugger
 
-These instructions assume you have experience using the command line, understand basic JavaScript, and have created an Office Add-in project before using the Yo Office generator. If you haven't done this before, consider visiting one of our tutorials, such as the [Excel Office Add-in tutorial](../tutorials/excel-tutorial.md).
+These instructions assume you have experience using the command line, understand basic JavaScript, and have created an Office Add-in project before using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). If you haven't done this before, consider visiting one of our tutorials, such as the [Excel Office Add-in tutorial](../tutorials/excel-tutorial.md).
 
 1. The first step depends on the project and how it was created.
 
-   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). Use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this. 
+   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). Use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this. 
    - If you want to debug an existing project that was created with Yo Office, skip to the next step.
    - If you want to debug an existing project that was not created with Yo Office, complete the procedure in the [Appendix A](#appendix-a) and then return to the next step of this procedure.
 
@@ -62,8 +62,7 @@ These instructions assume you have experience using the command line, understand
 
    Select **OK**.
 
-   > [!NOTE]
-   > If you select **Cancel**, the dialog won't be shown again while this instance of the add-in is running. However, if you restart your add-in, you'll see the dialog again.
+   [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
 
 1. You're now able to set breakpoints in your project's code and debug. To set breakpoints in Visual Studio Code, hover next to a line of code and select the red circle that appears.
 

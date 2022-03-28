@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Share data and events between Excel custom functions and the task pane"
-description: 'Learn how to share data and events between custom functions and the task pane in Excel.'
+title: 'Tutorial: Share data and events between Excel custom functions and the task pane'
+description: Learn how to share data and events between custom functions and the task pane in Excel.
 ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
@@ -8,11 +8,11 @@ ms.localizationpriority: high
 
 # Tutorial: Share data and events between Excel custom functions and the task pane
 
-Share global data and send events between the task pane and custom functions of your Excel add-in with a shared runtime. We recommend using a shared runtime for most custom functions scenarios, unless you have a specific reason to use a non-task pane (UI-less) custom function. This tutorial assumes you're familiar with using the Yo Office generator to create add-in projects. Consider completing the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), if you haven't already.
+Share global data and send events between the task pane and custom functions of your Excel add-in with a shared runtime. We recommend using a shared runtime for most custom functions scenarios, unless you have a specific reason to use a non-task pane (UI-less) custom function. This tutorial assumes you're familiar with using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create add-in projects. Consider completing the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), if you haven't already.
 
 ## Create the add-in project
 
-Use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) to create the Excel add-in project.
+Use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create the Excel add-in project.
 
 - To generate an Excel add-in with custom functions, run the following command.
     
@@ -28,7 +28,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
 
 1. Start Visual Studio Code and open the add-in project you generated.
 1. Open the **manifest.xml** file.
-1. Replace (or add) the following `<Requirements>` section XML to require the [shared runtime requirement set](../reference/requirement-sets/shared-runtime-requirement-sets.md).
+1. Replace (or add) the following `<Requirements>` section XML to require the [shared runtime requirement set](/javascript/api/requirement-sets/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>
@@ -75,7 +75,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
     ```
     
     > [!NOTE]
-    > If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](../reference/manifest/runtimes.md) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+    > If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 1. Find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
 

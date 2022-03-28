@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins on Windows using Visual Studio Code and Microsoft Edge legacy WebView (EdgeHTML)
-description: 'Learn how to debug Office Add-ins that use Microsoft Edge Legacy WebView (EdgeHTML) by using the Office Add-in Debugger Extension in VS Code.'
-ms.date: 02/01/2022
+description: Learn how to debug Office Add-ins that use Microsoft Edge Legacy WebView (EdgeHTML) by using the Office Add-in Debugger Extension in VS Code.
+ms.date: 02/15/2022
 ms.localizationpriority: medium
 ---
 
@@ -28,11 +28,11 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 
 ## Install and use the debugger
 
-These instructions assume you have experience using the command line, understand basic JavaScript, and have created an Office Add-in project before using the Yo Office generator. If you haven't done this before, consider visiting one of our tutorials, like this [Excel Office Add-in tutorial](../tutorials/excel-tutorial.md).
+These instructions assume you have experience using the command line, understand basic JavaScript, and have created an Office Add-in project before using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). If you haven't done this before, consider visiting one of our tutorials, like this [Excel Office Add-in tutorial](../tutorials/excel-tutorial.md).
 
 1. The first step depends on the project and how it was created.
 
-   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). Use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this. 
+   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). Use any one of our quick start guides, such as the [Outlook add-in quickstart](../quickstarts/outlook-quickstart.md), in order to do this. 
    - If you want to debug an existing project that was created with Yo Office, skip to the next step.
    - If you want to debug an existing project that was not created with Yo Office, carry out the procedure in the [Appendix](#appendix) and then return to the next step of this procedure.
 
@@ -94,19 +94,19 @@ If your project was not created with Yo Office, you need to create a debug confi
 
     ```json
     {
-      "name": "$HOST$ Desktop (Edge Legacy)",
+      "name": "HOST Desktop (Edge Legacy)",
       "type": "office-addin",
       "request": "attach",
-      "url": "https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$$$$0",
+      "url": "https://localhost:3000/taskpane.html?_host_Info=HOST$Win32$16.01$en-US$$$$0",
       "port": 9222,
       "timeout": 600000,
       "webRoot": "${workspaceRoot}",
-      "preLaunchTask": "Debug: Excel Desktop",
+      "preLaunchTask": "Debug: HOST Desktop",
       "postDebugTask": "Stop Debug"
     }
     ```
 
-1. Replace the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
+1. Replace the placeholder `HOST` in all three places with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
 1. Save and close the file.
 
 ## See also

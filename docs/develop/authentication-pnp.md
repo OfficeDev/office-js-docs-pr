@@ -1,8 +1,8 @@
 ---
 ms.date: 01/24/2020
 ms.prod: non-product-specific
-description: 'Authentication resources and samples.'
-title: 'Authentication resources and samples'
+description: Authentication resources and code samples.
+title: Authentication resources and samples
 ms.localizationpriority: medium
 ---
 

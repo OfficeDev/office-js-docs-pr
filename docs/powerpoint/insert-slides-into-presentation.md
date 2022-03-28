@@ -1,6 +1,6 @@
 ---
 title: Insert slides in a PowerPoint presentation
-description: 'Learn how to insert slides from one presentation into another.'
+description: Learn how to insert slides from one presentation into another.
 ms.date: 03/07/2021
 ms.localizationpriority: medium
 ---

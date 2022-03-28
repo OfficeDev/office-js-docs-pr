@@ -1,6 +1,6 @@
 ---
 ms.date: 03/30/2021
-description: 'Troubleshoot common problems with Excel custom functions.'
+description: Troubleshoot common problems with Excel custom functions.
 title: Troubleshoot custom functions
 ms.localizationpriority: medium
 ---

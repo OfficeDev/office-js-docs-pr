@@ -1,6 +1,6 @@
 ---
 title: Debug add-ins using developer tools for Microsoft Edge Legacy
-description: 'Debug add-ins using the developer tools in Microsoft Edge Legacy.'
+description: Debug add-ins using the developer tools in Microsoft Edge Legacy.
 ms.date: 11/02/2021
 ms.localizationpriority: medium
 ---

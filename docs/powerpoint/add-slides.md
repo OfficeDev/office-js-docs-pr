@@ -1,6 +1,6 @@
 ---
 title: Add and delete slides in PowerPoint
-description: 'Learn how to add and delete slides and specify the master and layout of new slides.'
+description: Learn how to add and delete slides and specify the master and layout of new slides.
 ms.date: 12/14/2021
 ms.localizationpriority: medium
 ---
