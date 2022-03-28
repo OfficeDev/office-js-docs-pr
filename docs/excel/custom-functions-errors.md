@@ -130,5 +130,5 @@ Learn how to [troubleshoot problems with your custom functions](custom-functions
 ## See also
 
 * [Custom functions debugging](custom-functions-debugging.md)
-* [Custom functions requirement sets](/javascript/api/requirement-sets/custom-functions-requirement-sets)
+* [Custom functions requirement sets](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
 * [Create custom functions in Excel](custom-functions-overview.md)

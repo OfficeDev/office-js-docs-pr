@@ -104,4 +104,4 @@ APIs introduced in requirement set 1.6 or later are not supported by Outlook Mob
 
 ## See also
 
-[Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+[Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
