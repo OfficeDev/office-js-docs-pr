@@ -1,6 +1,6 @@
 ---
 ms.date: 11/06/2020
-description: 'Localize your Excel custom functions.'
+description: Localize your Excel custom functions.
 title: Localize custom functions
 ms.localizationpriority: medium
 ---

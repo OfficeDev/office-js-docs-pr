@@ -1,6 +1,6 @@
 ---
 title: Authenticate a user with an identity token in an add-in
-description: 'Learn about using the identity token provided by an Outlook add-in to implement SSO with your service.'
+description: Learn about using the identity token provided by an Outlook add-in to implement SSO with your service.
 ms.date: 10/12/2021
 ms.localizationpriority: medium
 ---
@@ -14,7 +14,7 @@ Exchange user identity tokens provide a way for your add-in to uniquely identify
 
 ## Send the ID token with each request
 
-The first step is for your add-in to obtain the Exchange user identity token from the server by calling [getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods). Then the add-in sends this token with every request it makes to your back-end. This could be in a header, or as part of the request body.
+The first step is for your add-in to obtain the Exchange user identity token from the server by calling [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods). Then the add-in sends this token with every request it makes to your back-end. This could be in a header, or as part of the request body.
 
 ## Validate the token
 

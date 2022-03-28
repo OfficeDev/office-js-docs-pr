@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 02/03/2022
+ms.date: 03/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -13,7 +13,7 @@ Without the event-based activation feature, a user has to explicitly launch an a
 By the end of this walkthrough, you'll have an add-in that runs whenever a new item is created and sets the subject.
 
 > [!NOTE]
-> Support for this feature was introduced in [requirement set 1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md). See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10). See [clients and platforms](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Supported events
 
@@ -24,17 +24,17 @@ The following table lists events that are currently available and the supported 
 
 |Event|Description|Minimum requirement set and supported clients|
 |---|---|---|
-|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)<br><br>- Windows<br>- Web browser<br>- New Mac UI preview|
-|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)<br><br>- Windows<br>- Web browser<br>- New Mac UI preview|
-|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.<br><br>Event-specific data object: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web browser|
-|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.<br><br>Event-specific data object: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web browser|
-|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web browser|
-|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web browser|
-|`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.<br><br>Event-specific data object: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web browser|
-|`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.<br><br>Event-specific data object: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web browser|
-|`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.<br><br>Event-specific data object: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Web browser|
-|`OnMessageSend`|On sending a message item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)<br><br>- Windows|
-|`OnAppointmentSend`|On sending an appointment item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)<br><br>- Windows|
+|`OnNewMessageCompose`|On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<br>- Web browser<br>- New Mac UI preview|
+|`OnNewAppointmentOrganizer`|On creating a new appointment but not on editing an existing one.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<br>- Web browser<br>- New Mac UI preview|
+|`OnMessageAttachmentsChanged`|On adding or removing attachments while composing a message.<br><br>Event-specific data object: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Web browser|
+|`OnAppointmentAttachmentsChanged`|On adding or removing attachments while composing an appointment.<br><br>Event-specific data object: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Web browser|
+|`OnMessageRecipientsChanged`|On adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Web browser|
+|`OnAppointmentAttendeesChanged`|On adding or removing attendees while composing an appointment.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Web browser|
+|`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.<br><br>Event-specific data object: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Web browser|
+|`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.<br><br>Event-specific data object: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Web browser|
+|`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.<br><br>Event-specific data object: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Web browser|
+|`OnMessageSend`|On sending a message item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows|
+|`OnAppointmentSend`|On sending an appointment item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows|
 
 ### How to preview
 
@@ -43,17 +43,12 @@ We invite you to try out the events now in preview! Let us know your scenarios a
 To preview these events where available:
 
 - For Outlook on the web:
-  - [Configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
+  - [Configure targeted release on your Microsoft 365 tenant.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Reference the **beta** library on the CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`.
 - For Outlook on the new Mac UI preview:
   - The minimum required build is 16.54 (21101001). Join the [Office Insider program](https://insider.office.com/join/Mac) and choose the **Beta Channel** for access to Office beta builds.
 - For Outlook on Windows:
   - The minimum required build is 16.0.14511.10000. Join the [Office Insider program](https://insider.office.com/join/windows) and choose the **Beta Channel** for access to Office beta builds.
-  - Configure the registry. Outlook includes a local copy of the production and beta versions of Office.js instead of loading from the content delivery network (CDN). By default, the local production copy of the API is referenced. To switch to the local beta copy of the Outlook JavaScript APIs, you need to add this registry entry, otherwise beta APIs may not be found.
-    1. Create the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`.
-    1. Add an entry named `EnableBetaAPIsInJavaScript` and set the value to `1`. The following image shows what the registry should look like.
-
-        ![Screenshot of the registry editor with an EnableBetaAPIsInJavaScript registry key value.](../images/outlook-beta-registry-key.png)
 
 ## Set up your environment
 
@@ -61,7 +56,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To enable event-based activation of your add-in, you must configure the [Runtimes](../reference/manifest/runtimes.md) element and [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent) extension point in the `VersionOverridesV1_1` node of the manifest. For now, `DesktopFormFactor` is the only supported form factor.
+To enable event-based activation of your add-in, you must configure the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point in the `VersionOverridesV1_1` node of the manifest. For now, `DesktopFormFactor` is the only supported form factor.
 
 1. In your code editor, open the quick start project.
 
@@ -135,6 +130,9 @@ To enable event-based activation of your add-in, you must configure the [Runtime
             <LaunchEvents>
               <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
               <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+              
+              <!-- Other available events (currently released) -->
+              <!--
               <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
               <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />
               <LaunchEvent Type="OnMessageRecipientsChanged" FunctionName="onMessageRecipientsChangedHandler" />
@@ -142,8 +140,13 @@ To enable event-based activation of your add-in, you must configure the [Runtime
               <LaunchEvent Type="OnAppointmentTimeChanged" FunctionName="onAppointmentTimeChangedHandler" />
               <LaunchEvent Type="OnAppointmentRecurrenceChanged" FunctionName="onAppointmentRecurrenceChangedHandler" />
               <LaunchEvent Type="OnInfoBarDismissClicked" FunctionName="onInfobarDismissClickedHandler" />
+              -->
+
+              <!-- Other available events (currently in preview) -->
+              <!--
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
               <LaunchEvent Type="OnAppointmentSend" FunctionName="onAppointmentSendHandler" SendMode="PromptUser" />
+              -->
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
             <SourceLocation resid="WebViewRuntime.Url"/>
@@ -162,7 +165,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
         <!-- Entry needed for Outlook Desktop. -->
-        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/src/commands/commands.js" />
+        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
@@ -189,11 +192,18 @@ You have to implement handling for your selected events.
 
 In this scenario, you'll add handling for composing new items.
 
-1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
+1. From the same quick start project, create a new folder named **launchevent** under the **./src** directory.
 
-1. After the `action` function, insert the following JavaScript functions.
+1. In the **./src/launchevent** folder, create a new file named **launchevent.js**.
+
+1. Open the file **./src/launchevent/launchevent.js** in your code editor and add the following JavaScript code.
 
     ```js
+    /*
+    * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+    * See LICENSE in the project root for license information.
+    */
+
     function onMessageComposeHandler(event) {
       setSubject(event);
     }
@@ -204,23 +214,19 @@ In this scenario, you'll add handling for composing new items.
       Office.context.mailbox.item.subject.setAsync(
         "Set by an event-based add-in!",
         {
-          "asyncContext" : event
+          "asyncContext": event
         },
         function (asyncResult) {
           // Handle success or error.
           if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
             console.error("Failed to set subject: " + JSON.stringify(asyncResult.error));
           }
-    
+
           // Call event.completed() after all work is done.
           asyncResult.asyncContext.completed();
         });
     }
-    ```
 
-1. Add the following JavaScript code at the end of the file.
-
-    ```js
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
     Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
     Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
@@ -231,10 +237,44 @@ In this scenario, you'll add handling for composing new items.
 > [!IMPORTANT]
 > Windows: At present, imports are not supported in the JavaScript file where you implement the handling for event-based activation.
 
+## Update the commands HTML file
+
+1. In the **./src/commands** folder, open **commands.html**.
+
+1. Immediately before the closing **head** tag (`<\head>`), add a script entry to include the event-handling JavaScript code.
+
+    ```html
+    <script type="text/javascript" src="../launchevent/launchevent.js"></script>
+    ```
+
+1. Save your changes.
+
+## Update webpack config settings
+
+1. Open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
+
+1. Locate the `plugins` array within the `config` object and add this new object at the beginning of the array.
+
+    ```js
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "./src/launchevent/launchevent.js",
+          to: "launchevent.js",
+        },
+      ],
+    }),
+    ```
+
+1. Save your changes.
+
 ## Try it out
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running) and your add-in will be sideloaded.
+1. Run the following commands in the root directory of your project. When you run `npm start`, the local web server will start (if it's not already running) and your add-in will be sideloaded.
 
+    ```command&nbsp;line
+    npm run build
+    ```
     ```command&nbsp;line
     npm start
     ```
@@ -254,35 +294,18 @@ In this scenario, you'll add handling for composing new items.
 
     ![Screenshot of a message window in Outlook on Windows with the subject set on compose.](../images/outlook-win-autolaunch.png)
 
-    > [!NOTE]
-    > If you're running your add-in from localhost and see the error "We're sorry, we couldn't access *{your-add-in-name-here}*. Make sure you have a network connection. If the problem continues, please try again later.", you may need to enable a loopback exemption.
-    >
-    > 1. Close Outlook.
-    > 1. Open the **Task Manager** and ensure that the **msoadfsb.exe** process is not running.
-    > 1. If you're using `https://localhost` (the default version in the manifest), run the following command.
-    >
-    >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
-    >    ```
-    >
-    > 1. If you're using `http://localhost`, run the following command.
-    >
-    >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
-    >    ```
-    >
-    > 1. Restart Outlook.
-
 ## Debug
 
 As you make changes to launch-event handling in your add-in, you should be aware that:
 
-- If you updated the manifest, [remove the add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) then sideload it again.
+- If you updated the manifest, [remove the add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in), then sideload it again. If you're using Outlook on Windows, then close and reopen it.
 - If you made changes to files other than the manifest, close and reopen Outlook on Windows, or refresh the browser tab running Outlook on the web.
 
 While implementing your own functionality, you may need to debug your code. For guidance on how to debug event-based add-in activation, see [Debug your event-based Outlook add-in](debug-autolaunch.md).
 
 Runtime logging is also available for this feature on Windows. For more information, see [Debug your add-in with runtime logging](../testing/runtime-logging.md#runtime-logging-on-windows).
+
+[!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## Deploy to users
 
@@ -340,5 +363,6 @@ Full CORS support is coming soon.
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
 - [Smart Alerts and OnMessageSend walkthrough](smart-alerts-onmessagesend-walkthrough.md)
 - PnP samples:
+  - [Use Outlook event-based activation to encrypt attachments, process meeting request attendees and react to appointment date/time changes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
   - [Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
   - [Use Outlook event-based activation to tag external recipients](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)

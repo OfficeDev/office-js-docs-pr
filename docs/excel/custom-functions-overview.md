@@ -1,5 +1,5 @@
 ---
-description: 'Create an Excel custom function for your Office Add-in.'
+description: Create an Excel custom function for your Office Add-in.
 title: Create custom functions in Excel
 ms.date: 08/04/2021
 ms.topic: overview
@@ -34,7 +34,7 @@ function sphereVolume(radius) {
 
 ## How a custom function is defined in code
 
-If you use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create an Excel custom functions add-in project, it creates files which control your functions and task pane. We'll concentrate on the files that are important to custom functions.
+If you use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create an Excel custom functions add-in project, it creates files which control your functions and task pane. We'll concentrate on the files that are important to custom functions.
 
 | File | File format | Description |
 |------|-------------|-------------|
@@ -64,15 +64,15 @@ function add(first, second){
 
 ### Manifest file
 
-The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the Yo Office generator creates) does several things.
+The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) creates) does several things.
 
 - Defines the namespace for your custom functions. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.
 - Uses `<ExtensionPoint>` and `<Resources>` elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.
 - Specifies which runtime to use for your custom function. We recommend always using a shared runtime unless you have a specific need for another runtime, because a shared runtime allows for the sharing of data between functions and the task pane.
 
-If you are using the Yo Office generator to create files, we recommend adjusting your manifest to use a shared runtime, as this is not the default for these files. To change your manifest, follow the instructions in [Configure your Excel add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+If you are using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create files, we recommend adjusting your manifest to use a shared runtime, as this is not the default for these files. To change your manifest, follow the instructions in [Configure your Excel add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
-To see a full working manifest from a sample add-in, see [this Github repository](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).
+To see a full working manifest from a sample add-in, see the manifest in the [one of our Office Add-in samples Github repositories](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
@@ -91,7 +91,7 @@ Another easy way to try out custom functions is to use [Script Lab](https://apps
 ## See also
 
 * [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
-* [Custom functions requirement sets](../reference/requirement-sets/custom-functions-requirement-sets.md)
+* [Custom functions requirement sets](/javascript/api/requirement-sets/custom-functions-requirement-sets)
 * [Custom functions naming guidelines](custom-functions-naming.md)
 * [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
 * [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

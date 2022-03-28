@@ -1,6 +1,6 @@
 ---
 title: Basic concepts for add-in commands
-description: 'Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.'
+description: Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.
 ms.date: 12/13/2021
 ms.localizationpriority: high
 ---
@@ -120,4 +120,4 @@ Apply the following best practices when you develop add-in commands.
 
 The best way to get started using add-in commands is to take a look at the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
 
-For more information about specifying add-in commands in your manifest, see [Create add-in commands in your manifest](../develop/create-addin-commands.md) and the [VersionOverrides](../reference/manifest/versionoverrides.md) reference content.
+For more information about specifying add-in commands in your manifest, see [Create add-in commands in your manifest](../develop/create-addin-commands.md) and the [VersionOverrides](/javascript/api/manifest/versionoverrides) reference content.

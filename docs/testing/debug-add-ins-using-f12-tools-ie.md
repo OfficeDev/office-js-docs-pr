@@ -1,6 +1,6 @@
 ---
 title: Debug add-ins using developer tools for Internet Explorer
-description: 'Debug add-ins using the developer tools in Internet Explorer.'
+description: Debug add-ins using the developer tools in Internet Explorer.
 ms.date: 11/02/2021
 ms.localizationpriority: medium
 ---

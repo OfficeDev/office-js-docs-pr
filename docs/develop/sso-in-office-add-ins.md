@@ -1,6 +1,6 @@
 ---
 title: Enable single sign-on (SSO) in an Office Add-in
-description: 'Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.'
+description: Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.
 ms.date: 01/25/2022
 ms.localizationpriority: high
 ---
@@ -102,7 +102,7 @@ The following is an example of the markup.
 
 ### Include the Identity API requirement set
 
-To use SSO your add-in requires the Identity API 1.3 requirement set. For more information, see [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
+To use SSO your add-in requires the Identity API 1.3 requirement set. For more information, see [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets).
 
 ### Add client-side code
 
@@ -243,4 +243,4 @@ There are some small, but important differences in using SSO in an Outlook add-i
 
 - [Microsoft identity platform documentation](/azure/active-directory/develop/)
 - [Requirement sets](specify-office-hosts-and-api-requirements.md)
-- [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)
+- [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)

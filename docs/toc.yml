@@ -49,14 +49,15 @@ items:
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Office versions and requirement sets
       href: develop/office-versions-and-requirement-sets.md
-    - name: Office application and platform availability
-      href: overview/office-add-in-availability.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Requirements for running add-ins
       href: concepts/requirements-for-running-office-add-ins.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
+      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Browsers used by Office Add-ins
+      href: concepts/browsers-used-by-office-web-add-ins.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Support Internet Explorer 11
       href: develop/support-ie-11.md
@@ -66,6 +67,8 @@ items:
     - name: Overview
       href: develop/develop-overview.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: API reference
+      href: reference/javascript-api-for-office.md
     - name: Understanding the Office JavaScript API
       href: develop/understanding-the-javascript-api-for-office.md
     - name: Using the application-specific API model
@@ -82,6 +85,8 @@ items:
         href: develop/persisting-add-in-state-and-settings.md
       - name: Bind to regions in a document or spreadsheet
         href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
+      - name: Common API error codes
+        href: reference/javascript-api-for-office-error-codes.md
     - name: Setup and run your add-in
       items:
       - name: Reference Office.js
@@ -104,6 +109,8 @@ items:
       items:
       - name: Overview
         href: develop/add-in-manifests.md
+      - name: Manifest reference
+        href: reference/manifest-reference.md
       - name: Extended overrides
         href: develop/extended-overrides.md
       - name: Find the proper order of manifest elements
@@ -119,6 +126,8 @@ items:
         href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
       - name: ITP and third-party cookies
         href: develop/itp-and-third-party-cookies.md
+      - name: Address same origin policy limitations
+        href: develop/addressing-same-origin-policy-limitations.md
     - name: Authentication and authorization
       items:
       - name: Overview
@@ -245,19 +254,19 @@ items:
         href: develop/show-hide-add-in.md  
       - name: Localization
         href: develop/localization.md
-    - name: Frameworks and IDEs
+    - name: Frameworks, IDEs, and other tools
       items:
       - name: Develop add-ins with Angular
         href: develop/add-ins-with-angular2.md
+      - name: Create add-ins with the Yeoman Generator
+        href: develop/yeoman-generator-overview.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
-      - name: Develop add-ins with Visual Studio
+      - name: Create and Develop add-ins with Visual Studio
         items:
         - name: Overview
           href: develop/develop-add-ins-visual-studio.md
           displayName: Visual Studio
-        - name: Debug Office Add-ins in Visual Studio
-          href: develop/debug-office-add-ins-in-visual-studio.md
         - name: Get JavaScript IntelliSense in Visual Studio
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript projects to TypeScript
@@ -286,11 +295,14 @@ items:
         href: testing/debug-add-ins-using-devtools-edge-chromium.md
       - name: Debug using Visual Studio Code and Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
-        displayName: debug, windows
       - name: Debug using Visual Studio Code and Edge Legacy WebView
         href: testing/debug-with-vs-extension.md
+      - name: Debug Office Add-ins in Visual Studio
+        href: develop/debug-office-add-ins-in-visual-studio.md
       - name: Test with Internet Explorer 11
         href: testing/ie-11-testing.md
+      - name: Unsupported window objects
+        href: reference/window-objects-unsupported-in-add-ins.md
     - name: Web browser
       items:
       - name: Sideload Add-ins in Office on the web
@@ -344,234 +356,6 @@ items:
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
 
-  - name: Reference
-    items:
-    - name: API reference documentation
-      href: reference/javascript-api-for-office.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
-    - name: API requirement sets (Common)
-      items:
-      - name: Add-in commands requirement sets
-        href: reference/requirement-sets/add-in-commands-requirement-sets.md
-      - name: Dialog API requirement sets
-        href: reference/requirement-sets/dialog-api-requirement-sets.md
-      - name: Dialog Origin requirement sets
-        href: reference/requirement-sets/dialog-origin-requirement-sets.md        
-      - name: Identity API requirement sets
-        href: reference/requirement-sets/identity-api-requirement-sets.md
-      - name: Image Coercion requirement sets
-        href: reference/requirement-sets/image-coercion-requirement-sets.md
-      - name: Keyboard Shortcuts requirement sets
-        href: reference/requirement-sets/keyboard-shortcuts-requirement-sets.md
-      - name: Office Common API requirement sets
-        href: reference/requirement-sets/office-add-in-requirement-sets.md
-      - name: Open Browser Window requirement sets
-        href: reference/requirement-sets/open-browser-window-api-requirement-sets.md
-      - name: Ribbon API requirement sets
-        href: reference/requirement-sets/ribbon-api-requirement-sets.md
-      - name: Shared Runtime requirement sets
-        href: reference/requirement-sets/shared-runtime-requirement-sets.md
-
-    - name: Office Add-in manifest reference
-      items:
-      - name: AllowSnapshot
-        href: reference/manifest/allowsnapshot.md
-      - name: AlternateId
-        href: reference/manifest/alternateid.md
-      - name: AppDomain
-        href: reference/manifest/appdomain.md
-      - name: AppDomains
-        href: reference/manifest/appdomains.md
-      - name: CitationText
-        href: reference/manifest/citationtext.md
-      - name: DefaultLocale
-        href: reference/manifest/defaultlocale.md
-      - name: DefaultSettings
-        href: reference/manifest/defaultsettings.md
-      - name: Description
-        href: reference/manifest/description.md
-      - name: DesktopSettings
-        href: reference/manifest/desktopsettings.md
-      - name: Dictionary
-        href: reference/manifest/dictionary.md
-      - name: DictionaryHomePage
-        href: reference/manifest/dictionaryhomepage.md
-      - name: DisableEntityHighlighting
-        href: reference/manifest/disableentityhighlighting.md
-      - name: DisplayName
-        href: reference/manifest/displayname.md
-      - name: EquivalentAddin
-        href: reference/manifest/equivalentaddin.md
-      - name: EquivalentAddins
-        href: reference/manifest/equivalentaddins.md
-      - name: ExtendedOverrides
-        href: reference/manifest/extendedoverrides.md
-      - name: FileName
-        href: reference/manifest/filename.md
-      - name: Form
-        href: reference/manifest/form.md
-      - name: FormSettings
-        href: reference/manifest/formsettings.md
-      - name: HighResolutionIconUrl
-        href: reference/manifest/highresolutioniconurl.md
-      - name: Host
-        href: reference/manifest/host.md
-      - name: Hosts
-        href: reference/manifest/hosts.md
-      - name: IconUrl
-        href: reference/manifest/iconurl.md
-      - name: Id
-        href: reference/manifest/id.md
-      - name: Metadata
-        href: reference/manifest/metadata.md
-      - name: Method
-        href: reference/manifest/method.md
-      - name: Methods
-        href: reference/manifest/methods.md
-      - name: Namespace
-        href: reference/manifest/namespace.md
-      - name: OfficeApp
-        href: reference/manifest/officeapp.md
-      - name: Override
-        href: reference/manifest/override.md
-      - name: Permissions
-        href: reference/manifest/permissions.md
-      - name: PhoneSettings
-        href: reference/manifest/phonesettings.md
-      - name: ProgId
-        href: reference/manifest/progid.md
-      - name: ProviderName
-        href: reference/manifest/providername.md
-      - name: QueryUri
-        href: reference/manifest/queryuri.md
-      - name: RequestedHeight
-        href: reference/manifest/requestedheight.md
-      - name: RequestedWidth
-        href: reference/manifest/requestedwidth.md
-      - name: Requirements
-        href: reference/manifest/requirements.md
-      - name: Rule
-        href: reference/manifest/rule.md
-      - name: Set
-        href: reference/manifest/set.md
-      - name: Sets
-        href: reference/manifest/sets.md
-      - name: SourceLocation
-        href: reference/manifest/sourcelocation.md
-      - name: SupportUrl
-        href: reference/manifest/supporturl.md
-      - name: TabletSettings
-        href: reference/manifest/tabletsettings.md
-      - name: TargetDialect
-        href: reference/manifest/targetdialect.md
-      - name: TargetDialects
-        href: reference/manifest/targetdialects.md
-      - name: Tokens
-        href: reference/manifest/tokens.md
-      - name: Token
-        href: reference/manifest/token.md
-      - name: Type
-        href: reference/manifest/type.md
-      - name: Version
-        href: reference/manifest/version.md
-      - name: VersionOverrides
-        items:
-        - name: VersionOverrides Overview
-          href: reference/manifest/versionoverrides.md
-        - name: VersionOverrides 1.0 TaskPane
-          href: reference/manifest/versionoverrides-1-0-taskpane.md
-        - name: VersionOverrides 1.0 Content
-          href: reference/manifest/versionoverrides-1-0-content.md
-        - name: VersionOverrides 1.0 Mail
-          href: reference/manifest/versionoverrides-1-0-mail.md
-        - name: VersionOverrides 1.1 Mail
-          href: reference/manifest/versionoverrides-1-1-mail.md
-        - name: Action
-          href: reference/manifest/action.md
-        - name: AllFormFactors
-          href: reference/manifest/allformfactors.md
-        - name: Control
-          href: reference/manifest/control.md
-        - name: Control (Button)
-          href: reference/manifest/control-button.md
-        - name: Control (Menu)
-          href: reference/manifest/control-menu.md
-        - name: Control (MobileButton)
-          href: reference/manifest/control-mobilebutton.md
-        - name: CustomTab
-          href: reference/manifest/customtab.md
-        - name: DesktopFormFactor
-          href: reference/manifest/desktopformfactor.md
-        - name: Enabled
-          href: reference/manifest/enabled.md
-        - name: EquivalentAddin
-          href: reference/manifest/equivalentaddin.md
-        - name: EquivalentAddins
-          href: reference/manifest/equivalentaddins.md
-        - name: Event
-          href: reference/manifest/event.md
-        - name: ExtendedPermission
-          href: reference/manifest/extendedpermission.md
-        - name: ExtendedPermissions
-          href: reference/manifest/extendedpermissions.md
-        - name: ExtensionPoint
-          href: reference/manifest/extensionpoint.md
-        - name: FunctionFile
-          href: reference/manifest/functionfile.md
-        - name: GetStarted
-          href: reference/manifest/getstarted.md
-        - name: Group
-          href: reference/manifest/group.md
-        - name: Hosts
-          href: reference/manifest/hosts.md
-        - name: Icon
-          href: reference/manifest/icon.md
-        - name: Item
-          href: reference/manifest/item.md
-        - name: Items
-          href: reference/manifest/items.md
-        - name: LaunchEvent
-          href: reference/manifest/launchevent.md
-        - name: LaunchEvents
-          href: reference/manifest/launchevents.md
-        - name: MobileFormFactor
-          href: reference/manifest/mobileformfactor.md
-        - name: OfficeMenu
-          href: reference/manifest/officemenu.md
-        - name: OfficeTab
-          href: reference/manifest/officetab.md
-        - name: OverriddenByRibbonApi
-          href: reference/manifest/overriddenbyribbonapi.md
-        - name: Page
-          href: reference/manifest/page.md
-        - name: Resources
-          href: reference/manifest/resources.md
-        - name: Runtime
-          href: reference/manifest/runtime.md
-        - name: Runtimes
-          href: reference/manifest/runtimes.md
-        - name: Scopes
-          href: reference/manifest/scopes.md
-        - name: Script
-          href: reference/manifest/script.md
-        - name: SourceLocation (custom functions)
-          href: reference/manifest/customfunctionssourcelocation.md
-        - name: Supertip
-          href: reference/manifest/supertip.md
-        - name: SupportsSharedFolders
-          href: reference/manifest/supportssharedfolders.md
-        - name: WebApplicationInfo
-          href: reference/manifest/webapplicationinfo.md
-    - name: Address same origin policy limitations
-      href: develop/addressing-same-origin-policy-limitations.md
-    - name: Browsers used by Office Add-ins
-      href: concepts/browsers-used-by-office-web-add-ins.md
-      displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Office Common API error codes
-      href: reference/javascript-api-for-office-error-codes.md
-    - name: Unsupported window objects
-      href: reference/window-objects-unsupported-in-add-ins.md
-
 - name: Excel
   items: 
   - name: Excel add-ins documentation
@@ -602,58 +386,6 @@ items:
     - name: Overview
       href: reference/overview/excel-add-ins-reference-overview.md
       displayName: Excel
-    - name: API requirement sets
-      items:
-      - name: Overview
-        href: reference/requirement-sets/excel-api-requirement-sets.md
-        displayName: Excel
-      - name: Excel preview APIs
-        href: reference/requirement-sets/excel-preview-apis.md
-        displayName: Excel
-      - name: ExcelApi online-only requirement set
-        href: reference/requirement-sets/excel-api-online-requirement-set.md
-        displayName: Excel
-      - name: ExcelApi 1.14 requirement set
-        href: reference/requirement-sets/excel-api-1-14-requirement-set.md
-      - name: ExcelApi 1.13 requirement set
-        href: reference/requirement-sets/excel-api-1-13-requirement-set.md
-        displayName: Excel 
-      - name: ExcelApi 1.12 requirement set
-        href: reference/requirement-sets/excel-api-1-12-requirement-set.md
-        displayName: Excel
-      - name: ExcelApi 1.11 requirement set
-        href: reference/requirement-sets/excel-api-1-11-requirement-set.md
-        displayName: Excel
-      - name: ExcelApi 1.10 requirement set
-        href: reference/requirement-sets/excel-api-1-10-requirement-set.md
-        displayName: Excel
-      - name: ExcelApi 1.9 requirement set
-        href: reference/requirement-sets/excel-api-1-9-requirement-set.md
-        displayName: Excel
-      - name: ExcelApi 1.8 requirement set
-        href: reference/requirement-sets/excel-api-1-8-requirement-set.md
-        displayName: Excel
-      - name: ExcelApi 1.7 requirement set
-        href: reference/requirement-sets/excel-api-1-7-requirement-set.md
-        displayName: Excel
-      - name: ExcelApi 1.6 requirement set
-        href: reference/requirement-sets/excel-api-1-6-requirement-set.md
-        displayName: Excel
-      - name: ExcelApi 1.5 requirement set
-        href: reference/requirement-sets/excel-api-1-5-requirement-set.md
-        displayName: Excel
-      - name: ExcelApi 1.4 requirement set
-        href: reference/requirement-sets/excel-api-1-4-requirement-set.md
-        displayName: Excel
-      - name: ExcelApi 1.3 requirement set
-        href: reference/requirement-sets/excel-api-1-3-requirement-set.md
-        displayName: Excel
-      - name: ExcelApi 1.2 requirement set
-        href: reference/requirement-sets/excel-api-1-2-requirement-set.md
-        displayName: Excel
-      - name: ExcelApi 1.1 requirement set
-        href: reference/requirement-sets/excel-api-1-1-requirement-set.md
-        displayName: Excel
     - name: API reference
       href: reference/excel-api-reference.md
       displayName: Excel
@@ -780,9 +512,6 @@ items:
     - name: Overview
       href: excel/custom-functions-overview.md
       displayName: Excel, Custom Functions
-    - name: CustomFunctionsRuntime API requirement sets
-      href: reference/requirement-sets/custom-functions-requirement-sets.md
-      displayName: Excel, Custom Functions
     - name: Tutorials
       items:
       - name: Build your first custom functions add-in
@@ -861,9 +590,6 @@ items:
     - name: Overview
       href: reference/overview/onenote-add-ins-javascript-reference.md
       displayName: OneNote
-    - name: API requirement sets
-      href: reference/requirement-sets/onenote-api-requirement-sets.md
-      displayName: OneNote
     - name: API reference
       href: reference/onenote-api-reference.md
       displayName: OneNote
@@ -891,180 +617,6 @@ items:
     - name: Overview
       href: outlook/apis.md
       displayName: Outlook
-    - name: API requirement sets
-      displayName: Outlook
-      items:
-      - name: Overview
-        href: reference/requirement-sets/outlook-api-requirement-sets.md
-        displayName: Outlook
-      - name: Mailbox preview requirement set
-        items:
-        - name: Overview
-          href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
-        - name: Office
-          href: reference/objectmodel/preview-requirement-set/office.md
-        - name: Office.context
-          href: reference/objectmodel/preview-requirement-set/Office.context.md
-        - name: Office.context.mailbox
-          href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.md
-        - name: Office.context.mailbox.item
-          href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.item.md
-        - name: Outlook Preview API Reference
-          href: reference/outlook-api-reference-preview.md
-      - name: Mailbox requirement set 1.11
-        items:
-        - name: Overview
-          href: reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md
-        - name: Office
-          href: reference/objectmodel/requirement-set-1.11/office.md
-        - name: Office.context
-          href: reference/objectmodel/requirement-set-1.11/Office.context.md
-        - name: Office.context.mailbox
-          href: reference/objectmodel/requirement-set-1.11/Office.context.mailbox.md
-        - name: Office.context.mailbox.item
-          href: reference/objectmodel/requirement-set-1.11/Office.context.mailbox.item.md
-        - name: Outlook 1.11 API Reference
-          href: reference/outlook-api-reference-1-11.md
-      - name: Mailbox requirement set 1.10
-        items:
-        - name: Overview
-          href: reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md
-        - name: Office
-          href: reference/objectmodel/requirement-set-1.10/office.md
-        - name: Office.context
-          href: reference/objectmodel/requirement-set-1.10/Office.context.md
-        - name: Office.context.mailbox
-          href: reference/objectmodel/requirement-set-1.10/Office.context.mailbox.md
-        - name: Office.context.mailbox.item
-          href: reference/objectmodel/requirement-set-1.10/Office.context.mailbox.item.md
-        - name: Outlook 1.10 API Reference
-          href: reference/outlook-api-reference-1-10.md
-      - name: Mailbox requirement set 1.9
-        items:
-        - name: Overview
-          href: reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md
-        - name: Office
-          href: reference/objectmodel/requirement-set-1.9/office.md
-        - name: Office.context
-          href: reference/objectmodel/requirement-set-1.9/Office.context.md
-        - name: Office.context.mailbox
-          href: reference/objectmodel/requirement-set-1.9/Office.context.mailbox.md
-        - name: Office.context.mailbox.item
-          href: reference/objectmodel/requirement-set-1.9/Office.context.mailbox.item.md
-        - name: Outlook 1.9 API Reference
-          href: reference/outlook-api-reference-1-9.md
-      - name: Mailbox requirement set 1.8
-        items:
-        - name: Overview
-          href: reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md
-        - name: Office
-          href: reference/objectmodel/requirement-set-1.8/office.md
-        - name: Office.context
-          href: reference/objectmodel/requirement-set-1.8/Office.context.md
-        - name: Office.context.mailbox
-          href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.md
-        - name: Office.context.mailbox.item
-          href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.item.md
-        - name: Outlook 1.8 API Reference
-          href: reference/outlook-api-reference-1-8.md
-      - name: Mailbox requirement set 1.7
-        items:
-        - name: Overview
-          href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
-        - name: Office
-          href: reference/objectmodel/requirement-set-1.7/office.md
-        - name: Office.context
-          href: reference/objectmodel/requirement-set-1.7/Office.context.md
-        - name: Office.context.mailbox
-          href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.md
-        - name: Office.context.mailbox.item
-          href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.item.md
-        - name: Outlook 1.7 API Reference
-          href: reference/outlook-api-reference-1-7.md
-      - name: Mailbox requirement set 1.6
-        items:
-        - name: Overview
-          href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
-        - name: Office
-          href: reference/objectmodel/requirement-set-1.6/office.md
-        - name: Office.context
-          href: reference/objectmodel/requirement-set-1.6/Office.context.md
-        - name: Office.context.mailbox
-          href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.md
-        - name: Office.context.mailbox.item
-          href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.item.md
-        - name: Outlook 1.6 API Reference
-          href: reference/outlook-api-reference-1-6.md
-      - name: Mailbox requirement set 1.5
-        items:
-        - name: Overview
-          href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
-        - name: Office
-          href: reference/objectmodel/requirement-set-1.5/office.md
-        - name: Office.context
-          href: reference/objectmodel/requirement-set-1.5/Office.context.md
-        - name: Office.context.mailbox
-          href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.md
-        - name: Office.context.mailbox.item
-          href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.item.md
-        - name: Outlook 1.5 API Reference
-          href: reference/outlook-api-reference-1-5.md
-      - name: Mailbox requirement set 1.4
-        items:
-        - name: Overview
-          href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
-        - name: Office
-          href: reference/objectmodel/requirement-set-1.4/office.md
-        - name: Office.context
-          href: reference/objectmodel/requirement-set-1.4/Office.context.md
-        - name: Office.context.mailbox
-          href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.md
-        - name: Office.context.mailbox.item
-          href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.item.md
-        - name: Outlook 1.4 API Reference
-          href: reference/outlook-api-reference-1-4.md
-      - name: Mailbox requirement set 1.3
-        items:
-        - name: Overview
-          href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
-        - name: Office
-          href: reference/objectmodel/requirement-set-1.3/office.md
-        - name: Office.context
-          href: reference/objectmodel/requirement-set-1.3/Office.context.md
-        - name: Office.context.mailbox
-          href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.md
-        - name: Office.context.mailbox.item
-          href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.item.md
-        - name: Outlook 1.3 API Reference
-          href: reference/outlook-api-reference-1-3.md
-      - name: Mailbox requirement set 1.2
-        items:
-        - name: Overview
-          href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
-        - name: Office
-          href: reference/objectmodel/requirement-set-1.2/office.md
-        - name: Office.context
-          href: reference/objectmodel/requirement-set-1.2/Office.context.md
-        - name: Office.context.mailbox
-          href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.md
-        - name: Office.context.mailbox.item
-          href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.item.md
-        - name: Outlook 1.2 API Reference
-          href: reference/outlook-api-reference-1-2.md
-      - name: Mailbox requirement set 1.1
-        items:
-        - name: Overview
-          href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
-        - name: Office
-          href: reference/objectmodel/requirement-set-1.1/office.md
-        - name: Office.context
-          href: reference/objectmodel/requirement-set-1.1/Office.context.md
-        - name: Office.context.mailbox
-          href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.md
-        - name: Office.context.mailbox.item
-          href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
-        - name: Outlook 1.1 API Reference
-          href: reference/outlook-api-reference-1-1.md
     - name: API reference - latest release
       href: reference/outlook-api-reference-1-11.md
       displayName: Outlook
@@ -1218,23 +770,6 @@ items:
     - name: Overview
       href: reference/overview/powerpoint-add-ins-reference-overview.md
       displayName: PowerPoint
-    - name: API requirement sets
-      items:
-      - name: Overview
-        href: reference/requirement-sets/powerpoint-api-requirement-sets.md
-        displayName: PowerPoint
-      - name: PowerPointApi preview requirement set
-        href: reference/requirement-sets/powerpoint-preview-apis.md
-        displayName: PowerPoint
-      - name: PowerPointApi 1.3 requirement set
-        href: reference/requirement-sets/powerpoint-api-1-3-requirement-set.md
-        displayName: PowerPoint
-      - name: PowerPointApi 1.2 requirement set
-        href: reference/requirement-sets/powerpoint-api-1-2-requirement-set.md
-        displayName: PowerPoint
-      - name: PowerPointApi 1.1 requirement set
-        href: reference/requirement-sets/powerpoint-api-1-1-requirement-set.md
-        displayName: PowerPoint
     - name: API reference
       href: reference/powerpoint-api-reference.md
       displayName: PowerPoint
@@ -1311,23 +846,6 @@ items:
     - name: Overview
       href: reference/overview/word-add-ins-reference-overview.md
       displayName: Word
-    - name: API requirement sets
-      items:
-      - name: Overview
-        href: reference/requirement-sets/word-api-requirement-sets.md
-        displayName: Word
-      - name: Word preview APIs
-        href: reference/requirement-sets/word-preview-apis.md
-        displayName: Word
-      - name: WordApi 1.3 requirement set
-        href: reference/requirement-sets/word-api-1-3-requirement-set.md
-        displayName: Word
-      - name: WordApi 1.2 requirement set
-        href: reference/requirement-sets/word-api-1-2-requirement-set.md
-        displayName: Word
-      - name: WordApi 1.1 requirement set
-        href: reference/requirement-sets/word-api-1-1-requirement-set.md
-        displayName: Word
     - name: API reference
       href: reference/word-api-reference.md
       displayName: Word
@@ -1345,6 +863,9 @@ items:
       displayName: Word
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
+      displayName: Word
+    - name: Null values
+      href: word/null-values.md
       displayName: Word
     - name: Use search options to find text in your Word add-in
       href: word/search-option-guidance.md

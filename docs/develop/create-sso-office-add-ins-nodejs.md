@@ -1,6 +1,6 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
-description: 'Learn how to create a Node.js-based add-in that uses Office Single Sign-on'
+description: Learn how to create a Node.js-based add-in that uses Office Single Sign-on.
 ms.date: 03/28/2022
 ms.localizationpriority: medium
 ---
@@ -103,8 +103,6 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     > - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
     > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
-
-    For each ID, take these steps.
 
 1. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/$App ID GUID$/access_as_user`.
 

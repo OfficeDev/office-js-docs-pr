@@ -1,6 +1,6 @@
 ---
 title: OneNote JavaScript API programming overview
-description: 'Learn about the OneNote JavaScript API for OneNote add-ins on the web.'
+description: Learn about the OneNote JavaScript API for OneNote add-ins on the web.
 ms.date: 10/14/2020
 ms.topic: overview
 ms.custom: scenarios:getting-started
@@ -50,33 +50,24 @@ Use the `Application` object to access OneNote objects such as **Notebook**, **S
 For example:
 
 ```js
-function getPagesInSection() {
-    OneNote.run(function (context) {
+async function getPagesInSection() {
+    await OneNote.run(async (context) => {
 
         // Get the pages in the current section.
-        var pages = context.application.getActiveSection().pages;
+        const pages = context.application.getActiveSection().pages;
 
         // Queue a command to load the id and title for each page.
         pages.load('id,title');
 
         // Run the queued commands, and return a promise to indicate task completion.
-        return context.sync()
-            .then(function () {
-
-                // Read the id and title of each page.
-                $.each(pages.items, function(index, page) {
-                    var pageId = page.id;
-                    var pageTitle = page.title;
-                    console.log(pageTitle + ': ' + pageId);
-                });
-            })
-            .catch(function (error) {
-                app.showNotification("Error: " + error);
-                console.log("Error: " + error);
-                if (error instanceof OfficeExtension.Error) {
-                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                }
-            });
+        await context.sync();
+            
+        // Read the id and title of each page.
+        $.each(pages.items, function(index, page) {
+            let pageId = page.id;
+            let pageTitle = page.title;
+            console.log(pageTitle + ': ' + pageId);
+        });
     });
 }
 ```
@@ -87,7 +78,7 @@ You can find supported OneNote objects and operations in the [API reference](../
 
 #### OneNote JavaScript API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](../reference/requirement-sets/onenote-api-requirement-sets.md).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote-api-requirement-sets).
 
 ### Accessing the Common API through the *Document* object
 

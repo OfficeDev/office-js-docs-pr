@@ -1,6 +1,6 @@
 ---
 title: Layout guidelines for Office Add-ins
-description: 'Get guidelines for how to layout a task pane or dialog in an Office Add-in.'
+description: Get guidelines for how to layout a task pane or dialog in an Office Add-in.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
 ---

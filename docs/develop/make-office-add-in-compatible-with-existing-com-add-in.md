@@ -1,6 +1,6 @@
 ---
 title: Make your Office Add-in compatible with an existing COM add-in
-description: 'Enable compatibility between your Office Add-in and equivalent COM add-in.'
+description: Enable compatibility between your Office Add-in and equivalent COM add-in.
 ms.date: 09/24/2021
 ms.localizationpriority: medium
 ---
@@ -22,7 +22,7 @@ You can configure your Office Add-in so that when the equivalent COM add-in is a
 
 To enable compatibility between your Office Add-in and COM add-in, identify the equivalent COM add-in in the [manifest](add-in-manifests.md) of your Office Add-in. Then Office on Windows will use the COM add-in instead of the Office Add-in, if they're both installed.
 
-The following example shows the portion of the manifest that specifies a COM add-in as an equivalent add-in. The value of the `ProgId` element identifies the COM add-in and the [EquivalentAddins](../reference/manifest/equivalentaddins.md) element must be positioned immediately before the closing `VersionOverrides` tag.
+The following example shows the portion of the manifest that specifies a COM add-in as an equivalent add-in. The value of the `ProgId` element identifies the COM add-in and the [EquivalentAddins](/javascript/api/manifest/equivalentaddins) element must be positioned immediately before the closing `VersionOverrides` tag.
 
 ```xml
 <VersionOverrides>

@@ -1,6 +1,6 @@
 ---
 title: Office UI elements for Office Add-ins
-description: 'Get an overview of the different kinds of UI elements in an Office Add-in.'
+description: Get an overview of the different kinds of UI elements in an Office Add-in.
 ms.date: 12/24/2019
 ms.localizationpriority: medium
 ---

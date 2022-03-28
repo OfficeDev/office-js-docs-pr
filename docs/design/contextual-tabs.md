@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
-description: 'Learn how to add custom contextual tabs to your Office Add-in.'
-ms.date: 02/11/2022
+description: Learn how to add custom contextual tabs to your Office Add-in.
+ms.date: 03/12/2022
 ms.localizationpriority: medium
 ---
 
@@ -18,13 +18,14 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 > Custom contextual tabs are currently only supported on Excel and only on these platforms and builds.
 >
 > - Excel on Windows (Microsoft 365 subscription only): Version 2102 (Build 13801.20294) or later.
+> - Excel on Mac: Version 16.53.806.0 or later.
 > - Excel on the web
 
 > [!NOTE]
 > Custom contextual tabs work only on platforms that support the following requirement sets. For more about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 >
-> - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
-> - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
+> - [RibbonApi 1.2](/javascript/api/requirement-sets/ribbon-api-requirement-sets)
+> - [SharedRuntime 1.1](/javascript/api/requirement-sets/shared-runtime-requirement-sets)
 >
 > You can use the runtime checks in your code to test whether the user's host and platform combination supports these requirement sets as described in [Runtime checks for method and requirement set support](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (The technique of specifying the requirement sets in the manifest, which is also described in that article, does not currently work for RibbonApi 1.2.) Alternatively, you can [implement an alternate UI experience when custom contextual tabs are not supported](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 
@@ -56,7 +57,7 @@ Adding custom contextual tabs requires your add-in to use the shared runtime. Fo
 Unlike custom core tabs, which are defined with XML in the manifest, custom contextual tabs are defined at runtime with a JSON blob. Your code parses the blob into a JavaScript object, and then passes the object to the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) method. Custom contextual tabs are only present in documents on which your add-in is currently running. This is different from custom core tabs which are added to the Office application ribbon when the add-in is installed and remain present when another document is opened. Also, the `requestCreateControls` method may be run only once in a session of your add-in. If it is called again, an error is thrown.
 
 > [!NOTE]
-> The structure of the JSON blob's properties and subproperties (and the key names) is roughly parallel to the structure of the [CustomTab](../reference/manifest/customtab.md) element and its descendant elements in the manifest XML.
+> The structure of the JSON blob's properties and subproperties (and the key names) is roughly parallel to the structure of the [CustomTab](/javascript/api/manifest/customtab) element and its descendant elements in the manifest XML.
 
 We'll construct an example of a contextual tabs JSON blob step-by-step. The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). If you are working in Visual Studio Code, you can use this file to get IntelliSense and to validate your JSON. For more information, see [Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
 
@@ -524,9 +525,9 @@ Some combinations of platform, Office application, and Office build don't suppor
 
 #### Use noncontextual tabs or controls
 
-There is a manifest element, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), that is designed to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs.
+There is a manifest element, [OverriddenByRibbonApi](/javascript/api/manifest/overriddenbyribbonapi), that is designed to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs.
 
-The simplest strategy for using this element is to define one or more custom core tabs (that is, *noncontextual* custom tabs) in the manifest that duplicate the ribbon customizations of the custom contextual tabs in your add-in. But you add `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` as the first child element of the duplicate [Group](../reference/manifest/group.md), [Control](../reference/manifest/control.md), and menu **Item** elements on the custom core tabs. The effect of doing so is the following:
+The simplest strategy for using this element is to define one or more custom core tabs (that is, *noncontextual* custom tabs) in the manifest that duplicate the ribbon customizations of the custom contextual tabs in your add-in. But you add `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` as the first child element of the duplicate [Group](/javascript/api/manifest/group), [Control](/javascript/api/manifest/control), and menu **Item** elements on the custom core tabs. The effect of doing so is the following:
 
 - If the add-in runs on an application and platform that support custom contextual tabs, then the custom core groups and controls won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.
 - If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the elements do appear on the custom core tabs.
@@ -555,7 +556,7 @@ The following is an example. Note that "MyButton" will appear on the custom core
 </OfficeApp>
 ```
 
-For more examples, see [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md).
+For more examples, see [OverriddenByRibbonApi](/javascript/api/manifest/overriddenbyribbonapi).
 
 When a parent group, or menu is marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`, then it isn't visible, and all of its child markup is ignored when custom contextual tabs aren't supported. So, it doesn't matter if any of those child elements have the **OverriddenByRibbonApi** element or what its value is. The implication of this is that if a menu item or control must be visible in all contexts, then not only should it not be marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`, but *its ancestor menu and group must also not be marked this way*.
 

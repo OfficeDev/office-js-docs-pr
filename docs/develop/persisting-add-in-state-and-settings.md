@@ -1,6 +1,6 @@
 ---
 title: Persist add-in state and settings
-description: 'Learn to persist data in Office Add-in web applications running in the stateless environment of a browser control.'
+description: Learn to persist data in Office Add-in web applications running in the stateless environment of a browser control.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---
@@ -24,7 +24,7 @@ This article focuses on how to use the Office JavaScript API to persist add-in s
 
 ## Persist add-in state and settings with the Office JavaScript API
 
-The Office JavaScript API provides the [Settings](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings), and [CustomProperties](/javascript/api/outlook/office.customproperties) objects for saving add-in state across sessions as described in the following table. In all cases, the saved settings values are associated with the [Id](../reference/manifest/id.md) of the add-in that created them.
+The Office JavaScript API provides the [Settings](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings), and [CustomProperties](/javascript/api/outlook/office.customproperties) objects for saving add-in state across sessions as described in the following table. In all cases, the saved settings values are associated with the [Id](/javascript/api/manifest/id) of the add-in that created them.
 
 |**Object**|**Add-in type support**|**Storage location**|**Office application support**|
 |:-----|:-----|:-----|:-----|

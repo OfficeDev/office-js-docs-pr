@@ -1,7 +1,7 @@
 ---
 title: Work with formula precedents and dependents using the Excel JavaScript API
-description: 'Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.' 
-ms.date: 11/30/2021
+description: Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -32,38 +32,37 @@ The following code sample shows how to work with the `Range.getPrecedents` and `
 ```js
 // This code sample shows how to find and highlight the precedents 
 // and direct precedents of the currently selected cell.
-Excel.run(function (context) {
-  var range = context.workbook.getActiveCell();
+await Excel.run(async (context) => {
+  let range = context.workbook.getActiveCell();
   // Precedents are all cells that provide data to the selected formula.
-  var precedents = range.getPrecedents();
+  let precedents = range.getPrecedents();
   // Direct precedents are the parent cells, or the first preceding group of cells that provide data to the selected formula.    
-  var directPrecedents = range.getDirectPrecedents();
+  let directPrecedents = range.getDirectPrecedents();
 
   range.load("address");
   precedents.areas.load("address");
   directPrecedents.areas.load("address");
   
-  return context.sync()
-    .then(function () {
-      console.log(`All precedent cells of ${range.address}:`);
-      
-      // Use the precedents API to loop through all precedents of the active cell.
-      for (var i = 0; i < precedents.areas.items.length; i++) {
-        // Highlight and print out the address of all precedent cells.
-        precedents.areas.items[i].format.fill.color = "Orange";
-        console.log(`  ${precedents.areas.items[i].address}`);
-      }
+  await context.sync();
 
-      console.log(`Direct precedent cells of ${range.address}:`);
+  console.log(`All precedent cells of ${range.address}:`);
+  
+  // Use the precedents API to loop through all precedents of the active cell.
+  for (let i = 0; i < precedents.areas.items.length; i++) {
+    // Highlight and print out the address of all precedent cells.
+    precedents.areas.items[i].format.fill.color = "Orange";
+    console.log(`  ${precedents.areas.items[i].address}`);
+  }
 
-      // Use the direct precedents API to loop through direct precedents of the active cell.
-      for (var i = 0; i < directPrecedents.areas.items.length; i++) {
-        // Highlight and print out the address of each direct precedent cell.
-        directPrecedents.areas.items[i].format.fill.color = "Yellow";
-        console.log(`  ${directPrecedents.areas.items[i].address}`);
-      }
-    });
-}).catch(errorHandlerFunction);
+  console.log(`Direct precedent cells of ${range.address}:`);
+
+  // Use the direct precedents API to loop through direct precedents of the active cell.
+  for (let i = 0; i < directPrecedents.areas.items.length; i++) {
+    // Highlight and print out the address of each direct precedent cell.
+    directPrecedents.areas.items[i].format.fill.color = "Yellow";
+    console.log(`  ${directPrecedents.areas.items[i].address}`);
+  }
+});
 ```
 
 ## Get the direct dependents of a formula
@@ -81,25 +80,23 @@ The following code sample gets the direct dependents for the active range and th
 
 ```js
 // This code sample shows how to find and highlight the dependents of the currently selected cell.
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Direct dependents are cells that contain formulas that refer to other cells.
-    var range = context.workbook.getActiveCell();
-    var directDependents = range.getDirectDependents();
+    let range = context.workbook.getActiveCell();
+    let directDependents = range.getDirectDependents();
     range.load("address");
     directDependents.areas.load("address");
     
-    return context.sync()
-        .then(function () {
-            console.log(`Direct dependent cells of ${range.address}:`);
-    
-            // Use the direct dependents API to loop through direct dependents of the active cell.
-            for (var i = 0; i < directDependents.areas.items.length; i++) {
-              // Highlight and print the address of each dependent cell.
-              directDependents.areas.items[i].format.fill.color = "Yellow";
-              console.log(`  ${directDependents.areas.items[i].address}`);
-            }
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`Direct dependent cells of ${range.address}:`);
+
+    // Use the direct dependents API to loop through direct dependents of the active cell.
+    for (let i = 0; i < directDependents.areas.items.length; i++) {
+      // Highlight and print the address of each dependent cell.
+      directDependents.areas.items[i].format.fill.color = "Yellow";
+      console.log(`  ${directDependents.areas.items[i].address}`);
+    }
+});
 ```
 
 ## See also

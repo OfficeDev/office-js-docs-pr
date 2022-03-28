@@ -1,6 +1,6 @@
 ---
 title: Register an Office Add-in that uses SSO with the Microsoft identity platform
-description: 'Learn how to register an Office Add-in with the Microsoft identity platform to use SSO with Word, Excel, PowerPoint, and Outlook.'
+description: Learn how to register an Office Add-in with the Microsoft identity platform to use SSO with Word, Excel, PowerPoint, and Outlook.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---

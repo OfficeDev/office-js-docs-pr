@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
-description: 'In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.'
-ms.date: 05/12/2021
+description: In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
+ms.date: 02/18/2022
 ms.prod: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -37,6 +37,11 @@ Complete the following steps to create a PowerPoint add-in project using Visual 
 5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
      ![Screenshot of the Visual Studio Solution Explorer window showing HelloWorld and HelloWorldWeb, the 2 projects in the HelloWorld solution.](../images/powerpoint-tutorial-solution-explorer.png)
+
+6. The following NuGet packages must installed. Install them using the **NuGet Package Manager** in Visual Studio. See Visual Studio help for instructions. The second of these may be installed automatically when you install the first.
+
+   - Microsoft.AspNet.WebApi.WebHost
+   - Microsoft.AspNet.WebApi.Core
 
 ### Explore the Visual Studio solution
 

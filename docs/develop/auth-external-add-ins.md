@@ -1,13 +1,13 @@
 ---
 title: Authorization with non-Microsoft identity providers
-description: 'Get authorization to non-Microsoft data sources using OAuth 2.0, the Authorization Code and Implicit flows.'
+description: Get authorization to non-Microsoft data sources using OAuth 2.0 and the Authorization Code and Implicit flows.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---
 
 # Authorization with non-Microsoft identity providers
 
-There are many popular identity providing services, in addition to the Microsoft identity platform, that you can use in your add-in. They give users, and applications such as your Office add-in, access to the users' accounts in other applications.
+There are many popular identity providing services, in addition to the Microsoft identity platform, that you can use in your add-in. They give users, and applications such as your Office Add-in, access to the users' accounts in other applications.
 
 The industry standard framework for enabling web application access to an online service is **OAuth 2.0**. In most situations, you don't need to know the details of how the framework works to use it in your add-in. Many libraries are available that simplify the details for you.
 

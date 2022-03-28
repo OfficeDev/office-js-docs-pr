@@ -1,6 +1,6 @@
 ---
 title: Task panes in Office Add-ins
-description: 'Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source.'
+description: Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
 ---
@@ -49,7 +49,7 @@ The following images show the various task pane sizes with the Office app ribbon
 
 ## Personality menu
 
-Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
+Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac. (The personality menu isn't supported in Outlook.)
 
 For Windows, the personality menu measures 12x32 pixels, as shown.
 

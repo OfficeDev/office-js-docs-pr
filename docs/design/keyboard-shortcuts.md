@@ -1,6 +1,6 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
-description: 'Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.'
+description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
 ms.date: 11/22/2021
 localization_priority: Normal
 ---
@@ -30,7 +30,7 @@ Adding custom keyboard shortcuts requires your add-in to use the shared runtime.
 
 ### Link the mapping file to the manifest
 
-Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step.
+Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step.
 
 ```xml
     ...
@@ -41,7 +41,7 @@ Immediately *below* (not inside) the `<VersionOverrides>` element in the manifes
 
 ## Create or edit the shortcuts JSON file
 
-Create a JSON file in your project. Be sure the path of the file matches the location you specified for the `Url` attribute of the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. This file will describe your keyboard shortcuts, and the actions that they will invoke.
+Create a JSON file in your project. Be sure the path of the file matches the location you specified for the `Url` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. This file will describe your keyboard shortcuts, and the actions that they will invoke.
 
 1. Inside the JSON file, there are two arrays. The actions array will contain objects that define the actions to be invoked and the shortcuts array will contain objects that map key combinations onto actions. Here is an example.
     ```json
@@ -265,7 +265,7 @@ Your add-in can enable users to reassign the actions of the add-in to alternate 
 > A good way to try out preview features is by using a Microsoft 365 subscription. If you don't already have a Microsoft 365 subscription, you can get one by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 > [!NOTE]
-> The APIs described in this section require the [KeyboardShortcuts 1.1](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) requirement set.
+> The APIs described in this section require the [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/keyboard-shortcuts-requirement-sets) requirement set.
 
 Use the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) method to assign a user's custom keyboard combinations to your add-ins actions. The method takes a parameter of type `{[actionId:string]: string|null}`, where the `actionId`s are a subset of the action IDs that must be defined in the add-in's extended manifest JSON. The values are the user's preferred key combinations. The value can also be `null`, which will remove any customization for that `actionId` and revert back to the default keyboard combination that is defined in the add-in's extended manifest JSON.
 

@@ -1,6 +1,6 @@
 ---
 title: Authorize to Microsoft Graph with SSO
-description: 'Learn how users of an Office Add-in can use single sign-on (SSO) to fetch data from Microsoft Graph.'
+description: Learn how users of an Office Add-in can use single sign-on (SSO) to fetch data from Microsoft Graph.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
 ---
@@ -77,4 +77,4 @@ For Outlook add-ins, be sure to enable Modern Authentication for the Microsoft 3
 
 * [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)
 * [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
-* [IdentityAPI requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md)
+* [IdentityAPI requirement sets](/javascript/api/requirement-sets/identity-api-requirement-sets)

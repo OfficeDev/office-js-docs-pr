@@ -1,6 +1,6 @@
 ---
 ms.date: 07/08/2021
-description: 'Batch custom functions together to reduce network calls to a remote service.'
+description: Batch custom functions together to reduce network calls to a remote service.
 title: Batching custom function calls for a remote service
 ms.localizationpriority: medium
 ---
@@ -15,9 +15,9 @@ For example, if someone used your custom function in 100 cells in a spreadsheet,
 
 ## View the completed sample
 
-You can follow this article and paste the code examples into your own project. For example, you can use the [Yo Office generator](https://github.com/OfficeDev/generator-office) to create a new custom function project for TypeScript, then add all the code from this article to the project. You can then run the code and try it out.
+To view the completed sample, follow this article and paste the code examples into your own project. For example, to create a new custom function project for TypeScript use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), then add all the code from this article to the project. Run the code and try it out.
 
-Also, you can download or view the complete sample project at [Custom function batching pattern](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching). If you want to view the code in whole before reading any further, take a look at the [script file](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
+Alternatively, download or view the complete sample project at [Custom function batching pattern](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching). If you want to view the code in whole before reading any further, take a look at the [script file](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
 
 ## Create the batching pattern in this article
 
@@ -27,7 +27,7 @@ To set up batching for your custom functions you'll need to write three main sec
 2. A function to make the remote request when the batch is ready.
 3. Server code to respond to the batch request, calculate all of the operation results, and return the values.
 
-In the following sections you will be shown how to construct the code one example at a time. You'll add each code example to your **functions.ts** file. It's recommended you create a brand new custom functions project using the Yo Office generator. To create a new project see [Get started developing Excel custom functions](../quickstarts/excel-custom-functions-quickstart.md) and use TypeScript instead of JavaScript.
+In the following sections you'll learn how to construct the code one example at a time. You'll add each code example to your **functions.ts** file. It's recommended you create a brand-new custom functions project using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) generator. To create a new project, see [Get started developing Excel custom functions](../quickstarts/excel-custom-functions-quickstart.md) and use TypeScript instead of JavaScript.
 
 ## Batch each call to your custom function
 

@@ -1,7 +1,7 @@
 ---
 ms.date: 02/09/2021
 ms.prod: non-product-specific
-description: 'Tutorial on how to share code between a VSTO Add-in and an Office Add-in.'
+description: Tutorial on how to share code between a VSTO Add-in and an Office Add-in.
 title: 'Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library'
 ms.localizationpriority: high
 ---
@@ -240,7 +240,7 @@ When you create the Office Add-in, it will make a call to the REST API. But firs
 
 ### Add the Office Add-in project
 
-To keep things simple, keep all the code in one solution. Add the Office Add-in project to the existing Visual Studio solution. However, if you are familiar with the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) and Visual Studio Code you can also run `yo office` to build the project. The steps are very similar.
+To keep things simple, keep all the code in one solution. Add the Office Add-in project to the existing Visual Studio solution. However, if you are familiar with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) and Visual Studio Code you can also run `yo office` to build the project. The steps are very similar.
 
 1. In **Solution Explorer**, right-click the **Cell-Analyzer** solution, and choose **Add > New Project**.
 1. In the **Add a new project dialog**, choose **Excel Web Add-in**, and choose **Next**.
