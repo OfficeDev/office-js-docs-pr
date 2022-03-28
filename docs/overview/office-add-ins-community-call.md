@@ -11,7 +11,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for April 13th call
 
-The agenda for March will be posted about a week before the call.
+The agenda for April will be posted about a week before the call.
 
 ## Previous calls
 
