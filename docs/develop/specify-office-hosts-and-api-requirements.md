@@ -99,7 +99,7 @@ All APIs in the application specific models are in requirement sets, but some of
 
 Use the [Requirements](/javascript/api/manifest/requirements) element and its child elements [Sets](/javascript/api/manifest/sets) and [Methods](/javascript/api/manifest/methods) to specify the minimum requirement sets or API members that must be supported by the Office application to install your add-in. 
 
-If the Office application or platform doesn't support the requirement sets or API members specified in the **Requirements** element, the add-in won't run in that application or platform, and won't display in **My Add-ins**. .
+If the Office application or platform doesn't support the requirement sets or API members specified in the **Requirements** element, the add-in won't run in that application or platform, and won't display in **My Add-ins**.
 
 > [!NOTE]
 > The **Requirements** element is optional for all add-ins, except for Outlook add-ins. When the `xsi:type` attribute of the root `OfficeApp` element is `MailBox`, there must be a **Requirements** element that specifies the minimum version of the MailBox requirement set that the add-in requires. For more information, see [Outlook JavaScript API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
