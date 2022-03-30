@@ -152,7 +152,7 @@ You can confirm that you are using the shared JavaScript runtime correctly by us
       document.getElementById("sideload-msg").style.display = "none";
       document.getElementById("app-body").style.display = "flex";
 
-      updateCount(); //Update count on first open
+      updateCount(); // Update count on first open.
       Office.addin.onVisibilityModeChanged(function (args) {
         if (args.visibilityMode === "Taskpane") {
           updateCount(); //Update count on subsequent opens
