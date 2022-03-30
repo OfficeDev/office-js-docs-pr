@@ -36,7 +36,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 1. Start Visual Studio Code and open your add-in project.
 1. Open the **manifest.xml** file.
-1. If you generated an Excel add-in with custom functions, update the requirements section to use the [shared runtime](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets) instead of the custom function runtime. The XML should appear as follows.
+1. Update the requirements section to include the [shared runtime](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets). The XML should appear as follows.
 
     ```xml
     <Hosts>
@@ -49,6 +49,9 @@ Follow these steps for a new or existing project to configure it to use a shared
     </Requirements>
     <DefaultSettings>
     ```
+
+> [!NOTE]
+> If your add-in is an Excel add-in with custom functions, be sure to remove the `CustomFunctionsRuntime` requirement.
 
 1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the ` <bt:Urls>` section near the bottom of the **manifest.xml** file.
 
