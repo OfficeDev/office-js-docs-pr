@@ -14,16 +14,16 @@ You can configure your Office Add-in to run all of its code in a single shared J
 
 ## Create the add-in project
 
-If you are starting a new project, use the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md) to create an Excel, Word, or PowerPoint add-in project.
+If you are starting a new project, use the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md) to create an Excel, PowerPoint, or Word add-in project.
 
 Run the command `yo office --projectType taskpane --name my-office-add-in --host <host> --js true`, where `<host>` is one of the following values:
 
-    - excel
-    - powerpoint
-    - word
+- excel
+- powerpoint
+- word
 
     > [!NOTE]
-    > You can use different options for the **--projecttype**, **--name**, and **--js** command-line options. For the full list of options see [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
+    > You can use different options for the **--projecttype**, **--name**, and **--js** command-line options. For the full list of options, see [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
 
 The generator will create the project and install supporting Node components.
 
