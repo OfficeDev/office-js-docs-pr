@@ -66,7 +66,7 @@ To use SSO with Office, you need to create an app registration in the Azure port
    - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (All Microsoft Office application endpoints)
 
     > [!NOTE]
-    > The `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID pre-authorizes all the following IDs. You can enter the following IDs individually if you prefer.
+    > The `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID pre-authorizes Office on all the following platforms. Alternatively, you can enter a proper subset of the following IDs if for any reason you want to deny authorization to Office on some platforms. Just leave out the IDs of the platforms from which you want to withhold authorization. Users of your add-in on those platforms will not be able to call your Web APIs, but other functionality in your add-in will still work.
     >
     > - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
