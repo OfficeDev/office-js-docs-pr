@@ -83,9 +83,9 @@ Office.onReady(function() {
 });
 ```
 
-However, there are exceptions to this practice. For example, suppose you want to open your add-in in a browser (instead of sideload it in an Office application) in order to debug your UI with browser tools. Since Office.js won't load in the browser, `onReady` won't run and the `$(document).ready` won't run if it's called inside the Office `onReady`. 
+However, there are exceptions to this practice. For example, suppose you want to open your add-in in a browser (instead of sideload it in an Office application) in order to debug your UI with browser tools. In this scenario, once Office.js determines that it is running outside of an Office host application, it will call the callback and resolve the promise with `null` for both the host and platform.
 
-Another exception would be if you want a progress indicator to appear in the task pane while the add-in is loading. In this scenario, your code should call the jQuery `ready` and use its callback to render the progress indicator. Then the Office `onReady`'s callback can replace the progress indicator with the final UI. 
+Another exception would be if you want a progress indicator to appear in the task pane while the add-in is loading. In this scenario, your code should call the jQuery `ready` and use its callback to render the progress indicator. Then the Office `onReady`'s callback can replace the progress indicator with the final UI.
 
 ## Initialize with Office.initialize
 
