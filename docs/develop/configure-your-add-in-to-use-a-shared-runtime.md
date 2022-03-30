@@ -50,8 +50,8 @@ Follow these steps for a new or existing project to configure it to use a shared
     <DefaultSettings>
     ```
 
-> [!NOTE]
-> Don't add the shared runtime requirement for a Word add-in. It will cause an error when loading the add-in
+    > [!NOTE]
+    > Don't add the shared runtime requirement for a Word add-in. It will cause an error when loading the add-in
 
 1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
 
@@ -95,7 +95,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 The **webpack.config.js** will build multiple runtime loaders. You need to modify it to load only the shared JavaScript runtime via the **taskpane.html** file.
 
-1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
+1. Start Visual Studio Code and open the add-in project you generated.
 1. Open the **webpack.config.js** file.
 1. If your **webpack.config.js** file has the following **functions.html** plugin code, remove it.
 
@@ -179,7 +179,7 @@ Each time you open the task pane, the count of how many times it has been opened
 When you add the `Runtime` element, you also specify a lifetime with a value of `long` or `short`. Set this value to `long` to take advantage of features such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions.
 
 > [!NOTE]
-> The default lifetime value is `short`, but we recommend using `long` in Excel add-ins. If you set your runtime to `short` in this example, your Excel add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly, your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
+> The default lifetime value is `short`, but we recommend using `long` in Excel, PowerPoint, and Word add-ins. If you set your runtime to `short` in this example, your add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly, your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
 
 ```xml
 <Runtimes>
