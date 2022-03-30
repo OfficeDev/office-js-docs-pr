@@ -36,7 +36,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 1. Start Visual Studio Code and open your add-in project.
 1. Open the **manifest.xml** file.
-1. Update the requirements section to include the [shared runtime](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets). The XML should appear as follows.
+1. If you are working with an Excel add-in, update the requirements section to include the [shared runtime](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets). Be sure to remove the `CustomFunctionsRuntime` requirement if it is present. The XML should appear as follows.
 
     ```xml
     <Hosts>
@@ -51,9 +51,9 @@ Follow these steps for a new or existing project to configure it to use a shared
     ```
 
 > [!NOTE]
-> If your add-in is an Excel add-in with custom functions, be sure to remove the `CustomFunctionsRuntime` requirement.
+> For Word and PowerPoint add-ins do not use the shared runtime requirement or you will get an error when loading the add-in.
 
-1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the ` <bt:Urls>` section near the bottom of the **manifest.xml** file.
+1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
 
     > [!IMPORTANT]
     > The `<Runtimes>` section must be entered after the `<Host>` element in the exact order shown in the following XML.
@@ -140,40 +140,31 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
 
 You can confirm that you are using the shared JavaScript runtime correctly by using the following instructions.
 
-1. Open the **manifest.xml** file.
-1. Find the `<Control xsi:type="Button" id="TaskpaneButton">` section and change the following `<Action ...>` XML.
-
-    from:
-
-    ```xml
-    <Action xsi:type="ShowTaskpane">
-      <TaskpaneId>ButtonId1</TaskpaneId>
-      <SourceLocation resid="Taskpane.Url"/>
-    </Action>
-    ```
-
-    to:
-
-    ```xml
-    <Action xsi:type="ExecuteFunction">
-      <FunctionName>action</FunctionName>
-    </Action>
-    ```
-
-1. Open the **./src/commands/commands.js** file.
-1. Replace the **action** function with the code below. This will update the function to open and modify the task pane button to increment a counter. Opening and accessing the task pane DOM from a command only works with the shared JavaScript runtime.
+1. Open the **taskpane.js** file.
+1. Replace the entire contents of the file with the following code. This will display a count of how many times the task pane has been opened. Adding the onVisibilityModeChanged event is only supported in a shared JavaScript runtime.
 
     ```javascript
-    var _count=0;
+    /*global document, Office*/
+
+    var _count = 0;
     
-    function action(event) {
-      // Your code goes here.
+    Office.onReady((info) => {
+      if (info.host === Office.HostType.Word) {
+        document.getElementById("sideload-msg").style.display = "none";
+        document.getElementById("app-body").style.display = "flex";
+    
+        updateCount(); //Update count on first open
+        Office.addin.onVisibilityModeChanged(function (args) {
+          if (args.visibilityMode === "Taskpane") {
+            updateCount(); //Update count on subsequent opens
+          }
+        });
+      }
+    });
+    
+    function updateCount() {
       _count++;
-      Office.addin.showAsTaskpane();
-      document.getElementById("run").textContent="Go"+_count;
-    
-      // Be sure to indicate when the add-in command function is complete.
-      event.completed();
+    document.getElementById("run").textContent = "Task pane opened " +_count + " times.";
     }
     ```
 
@@ -183,7 +174,7 @@ You can confirm that you are using the shared JavaScript runtime correctly by us
    npm start
    ```
 
-Each time you select the add-ins button, it will change the **run** button text to **go** and increment a counter after it.
+Each time you open the task pane, the count of how many times it has been opened will be incremented. The value of **_count** will not be lost because the shared runtime keeps your code running even when the task pane is closed.
 
 ## Runtime lifetime
 
