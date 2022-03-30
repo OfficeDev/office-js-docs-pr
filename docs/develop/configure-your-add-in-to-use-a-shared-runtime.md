@@ -36,7 +36,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 1. Start Visual Studio Code and open your add-in project.
 1. Open the **manifest.xml** file.
-1. If you are working with an Excel add-in, update the requirements section to include the [shared runtime](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets). Be sure to remove the `CustomFunctionsRuntime` requirement if it is present. The XML should appear as follows.
+1. For an Excel or PowerPoint add-in, update the requirements section to include the [shared runtime](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets). Be sure to remove the `CustomFunctionsRuntime` requirement if it is present. The XML should appear as follows.
 
     ```xml
     <Hosts>
@@ -51,7 +51,7 @@ Follow these steps for a new or existing project to configure it to use a shared
     ```
 
 > [!NOTE]
-> For Word and PowerPoint add-ins do not use the shared runtime requirement or you will get an error when loading the add-in.
+> Don't add the shared runtime requirement for a Word add-in. It will cause an error when loading the add-in
 
 1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
 
@@ -147,24 +147,22 @@ You can confirm that you are using the shared JavaScript runtime correctly by us
     /*global document, Office*/
 
     var _count = 0;
-    
-    Office.onReady((info) => {
-      if (info.host === Office.HostType.Word) {
-        document.getElementById("sideload-msg").style.display = "none";
-        document.getElementById("app-body").style.display = "flex";
-    
-        updateCount(); //Update count on first open
-        Office.addin.onVisibilityModeChanged(function (args) {
-          if (args.visibilityMode === "Taskpane") {
-            updateCount(); //Update count on subsequent opens
-          }
-        });
-      }
+
+    Office.onReady(() => {
+      document.getElementById("sideload-msg").style.display = "none";
+      document.getElementById("app-body").style.display = "flex";
+
+      updateCount(); //Update count on first open
+      Office.addin.onVisibilityModeChanged(function (args) {
+        if (args.visibilityMode === "Taskpane") {
+          updateCount(); //Update count on subsequent opens
+        }
+      });
     });
-    
+
     function updateCount() {
       _count++;
-    document.getElementById("run").textContent = "Task pane opened " +_count + " times.";
+      document.getElementById("run").textContent = "Task pane opened " + _count + " times.";
     }
     ```
 
