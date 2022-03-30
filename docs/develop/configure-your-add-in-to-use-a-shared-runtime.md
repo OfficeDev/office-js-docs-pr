@@ -1,5 +1,5 @@
 ---
-ms.date: 03/23/2022
+ms.date: 03/30/2022
 title: Configure your Office Add-in to use a shared JavaScript runtime
 ms.prod: non-product-specific
 description: Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.
@@ -14,18 +14,16 @@ You can configure your Office Add-in to run all of its code in a single shared J
 
 ## Create the add-in project
 
-If you are starting a new project, follow these steps to use the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md) to create an Excel or PowerPoint add-in project.
+If you are starting a new project, use the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md) to create an Excel, Word, or PowerPoint add-in project.
 
-Do one of the following:
+Run the command `yo office --projectType taskpane --name my-office-add-in --host <host> --js true`, where `<host>` is one of the following values:
 
-- To generate an Excel add-in with custom functions, run the command `yo office --projectType excel-functions --name "NAME OF YOUR PROJECT HERE" --host excel --js true`.
+    - excel
+    - powerpoint
+    - word
 
-    or
-
-- To generate a PowerPoint add-in, run the command `yo office --projectType taskpane --name "NAME OF YOUR PROJECT HERE" --host powerpoint --js true`.
-
-> [!IMPORTANT]
-> The `--name` argument value must be in double quotation marks, even if it has no spaces.
+    > [!NOTE]
+    > You can use different options for the **--projecttype**, **--name**, and **--js** command-line options. For the full list of options see [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
 
 The generator will create the project and install supporting Node components.
 
@@ -36,9 +34,9 @@ The generator will create the project and install supporting Node components.
 
 Follow these steps for a new or existing project to configure it to use a shared runtime. These steps assume you have generated your project using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md).
 
-1. Start Visual Studio Code and open the Excel or PowerPoint add-in project you generated.
+1. Start Visual Studio Code and open your add-in project.
 1. Open the **manifest.xml** file.
-1. If you generated an Excel add-in, update the requirements section to use the [shared runtime](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets) instead of the custom function runtime. The XML should appear as follows.
+1. If you generated an Excel add-in with custom functions, update the requirements section to use the [shared runtime](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets) instead of the custom function runtime. The XML should appear as follows.
 
     ```xml
     <Hosts>
