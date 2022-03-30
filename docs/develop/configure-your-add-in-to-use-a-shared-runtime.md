@@ -155,7 +155,7 @@ You can confirm that you are using the shared JavaScript runtime correctly by us
       updateCount(); // Update count on first open.
       Office.addin.onVisibilityModeChanged(function (args) {
         if (args.visibilityMode === "Taskpane") {
-          updateCount(); //Update count on subsequent opens
+          updateCount(); // Update count on subsequent opens.
         }
       });
     });
