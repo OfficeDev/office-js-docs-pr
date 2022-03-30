@@ -16,7 +16,7 @@ You can configure your Office Add-in to run all of its code in a single shared J
 
 If you are starting a new project, use the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md) to create an Excel, PowerPoint, or Word add-in project.
 
-Run the command `yo office --projectType taskpane --name my-office-add-in --host <host> --js true`, where `<host>` is one of the following values:
+Run the command `yo office --projectType taskpane --name my-office-add-in --host <host> --js true`, where `<host>` is one of the following values.
 
 - excel
 - powerpoint
