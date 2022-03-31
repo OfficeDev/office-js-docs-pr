@@ -22,13 +22,9 @@ Run the command `yo office --projectType taskpane --name my-office-add-in --host
 - powerpoint
 - word
 
-    > [!NOTE]
-    > You can use different options for the **--projecttype**, **--name**, and **--js** command-line options. For the full list of options, see [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
+You can use different options for the **--projecttype**, **--name**, and **--js** command-line options. For the full list of options, see [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
 
-The generator will create the project and install supporting Node components.
-
-> [!NOTE]
-> You can also use the steps in this article to update an existing Visual Studio project to use the shared runtime. However, you may need to update the XML schemas for the manifest. For more information, see [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+The generator will create the project and install supporting Node components. You can also use the steps in this article to update a Visual Studio project to use the shared runtime. However, you may need to update the XML schemas for the manifest. For more information, see [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
 
 ## Configure the manifest
 
@@ -198,13 +194,13 @@ However, you can configure your Office Add-in to share code in the same JavaScri
 
 Configuring a shared runtime enables the following scenarios.
 
-- Your Office Add-in can use additional UI features:
-  - [Add Custom keyboard shortcuts to your Office Add-ins (preview)](../design/keyboard-shortcuts.md)
-  - [Create custom contextual tabs in Office Add-ins (preview)](../design/contextual-tabs.md)
+- Your Office Add-in can use additional UI features.
   - [Enable and Disable Add-in Commands](../design/disable-add-in-commands.md)
   - [Run code in your Office Add-in when the document opens](run-code-on-document-open.md)
   - [Show or hide the task pane of your Office Add-in](show-hide-add-in.md)
-- For Excel add-ins:
+- For Excel add-ins.
+  - [Add Custom keyboard shortcuts to your Office Add-ins (preview)](../design/keyboard-shortcuts.md)
+  - [Create custom contextual tabs in Office Add-ins (preview)](../design/contextual-tabs.md)
   - Custom functions will have full CORS support.
   - Custom functions can call Office.js APIs to read spreadsheet document data.
 
