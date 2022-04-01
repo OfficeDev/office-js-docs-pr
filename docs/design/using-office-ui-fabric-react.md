@@ -1,7 +1,7 @@
 ---
 title: Fluent UI React in Office Add-ins
 description: Learn how to use Fluent UI React in Office Add-ins.
-ms.date: 01/13/2022
+ms.date: 04/01/2022
 ms.localizationpriority: medium
 ---
 
