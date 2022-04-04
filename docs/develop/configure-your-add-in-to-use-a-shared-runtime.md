@@ -1,5 +1,5 @@
 ---
-ms.date: 03/30/2022
+ms.date: 04/04/2022
 title: Configure your Office Add-in to use a shared JavaScript runtime
 ms.prod: non-product-specific
 description: Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.
@@ -16,11 +16,14 @@ You can configure your Office Add-in to run all of its code in a single shared J
 
 If you are starting a new project, use the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md) to create an Excel, PowerPoint, or Word add-in project.
 
-Run the command `yo office --projectType taskpane --name my-office-add-in --host <host> --js true`, where `<host>` is one of the following values.
+Run the command `yo office --projectType taskpane --name "my office add in" --host <host> --js true`, where `<host>` is one of the following values.
 
 - excel
 - powerpoint
 - word
+
+> [!IMPORTANT]
+> The `--name` argument value must be in double quotation marks, even if it has no spaces.
 
 You can use different options for the **--projecttype**, **--name**, and **--js** command-line options. For the full list of options, see [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
 
@@ -215,10 +218,6 @@ When using a shared runtime, you can't use Visual Studio Code to debug custom fu
 ### Multiple task panes
 
 Don't design your add-in to use multiple task panes if you are planning to use a shared runtime. A shared runtime only supports the use of one task pane. Note that any task pane without a `<TaskpaneID>` is considered a different task pane.
-
-## Give us feedback
-
-We'd love to hear your feedback on this feature. If you find any bugs, issues, or have requests on this feature, please let us know by creating a GitHub issue in the [office-js repo](https://github.com/OfficeDev/office-js).
 
 ## See also
 
