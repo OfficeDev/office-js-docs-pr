@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using developer tools for Internet Explorer
-description: 'Debug add-ins using the developer tools in Internet Explorer.'
-ms.date: 10/20/2021
+description: Debug add-ins using the developer tools in Internet Explorer.
+ms.date: 11/02/2021
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +18,7 @@ To determine which browser is being used on your computer, see [Browsers used by
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
 > [!NOTE]
-> To install a version of Office that uses the Internet Explorer webview, see [Install a version of Office that uses Internet Explorer](#install-a-version-of-office-that-uses-internet-explorer).
+> To install a version of Office that uses the Internet Explorer webview or to force your current version to use Internet Explorer, see [Switch to the Internet Explorer 11 webview](#switch-to-the-internet-explorer-11-webview).
 
 ## Debug a task pane add-in using the F12 tools
 
@@ -79,7 +79,19 @@ If your add-in uses the Office Dialog API, the dialog runs in a separate process
 1. Open the dialog and then select the **Refresh** button in the tools. The dialog process is shown. Its name is the file name of the file that is open in the dialog.
 1. Select the process to open it and debug just as described in the section [Debug a task pane add-in using the F12 tools](#debug-a-task-pane-add-in-using-the-f12-tools).
 
-## Install a version of Office that uses Internet Explorer
+## Switch to the Internet Explorer 11 webview
+
+There are two ways to switch the Internet Explorer webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Internet Explorer by default. We recommend the first method. But you should use the second in the following scenarios.
+
+- Your project was developed with Visual Studio and IIS. It isn't node.js-based.
+- You want to be absolutely robust in your testing.
+- If for any reason the command line tool doesn't work.
+
+### Switch via the command line
+
+[!INCLUDE [Steps to switch browsers with the command line tool](../includes/use-legacy-edge-or-ie.md)]
+
+### Install a version of Office that uses Internet Explorer
 
 [!INCLUDE [Steps to install Office that uses Edge Legacy or Internet Explorer](../includes/install-office-that-uses-legacy-edge-or-ie.md)]
 

@@ -1,13 +1,15 @@
 ---
 title: Authenticate and authorize with the Office dialog API
-description: 'Learn how to use the Office dialog API to enable users to sign-on to Google, Facebook, Microsoft 365, and other services protected by Microsoft Identity Platform.'
-ms.date: 07/22/2021
+description: Learn how to use the Office dialog API to enable users to sign-on to Google, Facebook, Microsoft 365, and other services protected by Microsoft Identity Platform.
+ms.date: 01/25/2022
 ms.localizationpriority: high
 ---
 
 # Authenticate and authorize with the Office dialog API
 
-Many identity authorities, also called Secure Token Services (STS), prevent their login page from opening in an iframe. These include Google, Facebook, and services protected by Microsoft Identity Platform (formerly Azure AD V 2.0) such as a Microsoft account, a Microsoft 365 Education or work account, or other common account. This creates a problem for Office Add-ins because when the add-in is running in **Office on the web**, the task pane is an iframe. Users of an add-in can only login to one of these services if the add-in can open an entirely separate browser instance. This is why Office provides its [Office dialog API](dialog-api-in-office-add-ins.md), specifically the [displayDialogAsync](/javascript/api/office/office.ui) method.
+Always use the Office dialog API to authenticate and authorize users with your Office Add-in. You should also use the Office dialog API if you're implementing fallback authentication when single sign-on (SSO) cannot be used.
+
+Many identity authorities, also called Secure Token Services (STS), prevent their login page from opening in an iframe. These include Google, Facebook, and services protected by Microsoft identity platform (formerly Azure AD V 2.0) such as a Microsoft account, a Microsoft 365 Education or work account, or other common account. This creates a problem for Office Add-ins because when the add-in is running in **Office on the web**, the task pane is an iframe. Users of an add-in can only sign in to one of these services if the add-in can open an entirely separate browser instance. This is why Office provides its [Office dialog API](dialog-api-in-office-add-ins.md), specifically the [displayDialogAsync](/javascript/api/office/office.ui) method.
 
 > [!NOTE]
 > This article assumes that you are familiar with [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
@@ -20,13 +22,12 @@ The dialog box that is opened with this API has the following characteristics.
   - There is no shared execution environment with the task pane.
   - It does not share the same session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property) as the task pane.
 - The first page opened in the dialog box must be hosted in the same domain as the task pane, including protocol, subdomains, and port, if any.
-- The dialog box can send information back to the task pane by using the [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) method. We recommend that this method be called only from a page that is hosted in the same domain as the task pane, including protocol, subdomains, and port. Otherwise, there are complications in how you call the method and process the message. For more information, see [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
+- The dialog box can send information back to the task pane by using the [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) method. We recommend that this method be called only from a page that is hosted in the same domain as the task pane, including protocol, subdomains, and port. Otherwise, there are complications in how you call the method and process the message. For more information, see [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
 
-
-By default the dialog box opens in an entirely new web view control, not an iframe. This ensures that it can open the login page of an identity provider. As you'll see later in this article, the characteristics of the Office dialog box have implications for how you use authentication or authorization libraries such as MSAL and Passport.
+By default, the dialog box opens in a new web view control, not in an iframe. This ensures that it can open the sign-in page of an identity provider. As you'll see later in this article, the characteristics of the Office dialog box have implications for how you use authentication or authorization libraries such as Microsoft Authentication Library (MSAL) and Passport.
 
 > [!NOTE]
-> To configure the dialog box to open in a floating iframe pass the `displayInIframe: true` option in the call to `displayDialogAsync`. Do *not* do this when you are using the Office dialog API for login.
+> To configure the dialog box to open in a floating iframe, pass the `displayInIframe: true` option in the call to `displayDialogAsync`. Do *not* do this when you're using the Office dialog API for sign in.
 
 ## Authentication flow with the Office dialog box
 
@@ -56,13 +57,13 @@ When a user invokes a function in the application that accesses the user's data 
 You can use the Office dialog API to manage this process by using a flow that is similar to the one described for users to sign in. The only differences are:
 
 - If the user hasn't previously granted the application the permissions it needs, the user is prompted to do so in the dialog box after signing in.
-- The dialog box window sends the access token to the host window either by using `messageParent` to send the stringified access token or by storing the access token where the host window can retrieve it (and using `messageParent` to tell the host window that the token is available). The token has a time limit, but while it lasts, the host window can use it to directly access the user's resources without any further prompting.
+- Your code in the dialog box window sends the access token to the host window either by using `messageParent` to send the stringified access token or by storing the access token where the host window can retrieve it (and using `messageParent` to tell the host window that the token is available). The token has a time limit, but while it lasts, the host window can use it to directly access the user's resources without any further prompting.
 
 Some authentication sample add-ins that use the Office dialog API for this purpose are listed in [Samples](#samples).
 
-## Using authentication libraries with the dialog box
+## Use authentication libraries with the dialog box
 
-The fact that the Office dialog box and the task pane run in different browser, and JavaScript runtime, instances means that you must use many authentication/authorization libraries in the way that is different from how they are used when authentication and authorization can take place in the same window. The following sections describe the main ways that you usually can't use these libraries and the way that you *can* use them.
+Because the Office dialog box and the task pane run in different browser and JavaScript runtime instances, you must use authentication/authorization libraries differently from how they are used when authentication and authorization take place in the same window. The following sections describe the ways that you can and can't use these libraries.
 
 ### You usually cannot use the library's internal cache to store tokens
 
@@ -83,15 +84,15 @@ These auth-context objects, and the methods that create them, are not usable in 
 
 ### How you can use libraries with the Office dialog API
 
-In addition to, or instead of, monolithic "auth context" objects, most libraries provide APIs at a lower level of abstraction that enable your code to create less monolithic helper objects. For example, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) v. 3.x.x has an API to construct a login URL, and another API that constructs an AuthResult object that contains an access token in a property that is accessible to your code. For examples of MSAL.NET in an Office Add-in see: [Office Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) and [Outlook Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET). For an example of using [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) in an add-in, see [Office Add-in Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React).
+In addition to, or instead of, monolithic "auth context" objects, most libraries provide APIs at a lower level of abstraction that enable your code to create less monolithic helper objects. For example, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) v. 3.x.x has an API to construct a login URL, and another API that constructs an AuthResult object that contains an access token in a property that is accessible to your code. For examples of MSAL.NET in an Office Add-in see: [Office Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) and [Outlook Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET). For an example of using [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) in an add-in, see [Office Add-in Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React).
 
 For more information about authentication and authorization libraries, see [Microsoft Graph: Recommended libraries](authorize-to-microsoft-graph-without-sso.md#recommended-libraries-and-samples) and [Other external services: Libraries](auth-external-add-ins.md#libraries).
 
 ## Samples
 
-- [Office Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET): An ASP.NET based add-in (Excel, Word, or PowerPoint) that uses the MSAL.NET library and the Authorization Code Flow to sign in and get an access token for Microsoft Graph data.
-- [Outlook Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET): Just like the one above, but the Office application is Outlook.
-- [Office Add-in Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React): A NodeJS based add-in (Excel, Word, or PowerPoint) that uses the msal.js library and the Implicit Flow to sign in and get an access token for Microsoft Graph data.
+- [Office Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET): An ASP.NET based add-in (Excel, Word, or PowerPoint) that uses the MSAL.NET library and the Authorization Code Flow to sign in and get an access token for Microsoft Graph data.
+- [Outlook Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET): Just like the one above, but the Office application is Outlook.
+- [Office Add-in Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React): A NodeJS based add-in (Excel, Word, or PowerPoint) that uses the msal.js library and the Implicit Flow to sign in and get an access token for Microsoft Graph data.
 
 ## See also
 

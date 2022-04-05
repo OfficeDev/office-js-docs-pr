@@ -1,7 +1,7 @@
 ---
 ms.date: 02/09/2021
 ms.prod: non-product-specific
-description: 'Tutorial on how to share code between a VSTO Add-in and an Office Add-in.'
+description: Tutorial on how to share code between a VSTO Add-in and an Office Add-in.
 title: 'Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library'
 ms.localizationpriority: high
 ---
@@ -50,12 +50,12 @@ You also need the following:
 
 ## The Cell analyzer VSTO Add-in
 
-This tutorial uses the [VSTO Add-in shared library for Office Add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP solution. The **/start** folder contains the VSTO Add-in solution that you will migrate. Your goal is to migrate the VSTO Add-in to a modern Office Add-in by sharing code when possible.
+This tutorial uses the [VSTO Add-in shared library for Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) PnP solution. The **/start** folder contains the VSTO Add-in solution that you will migrate. Your goal is to migrate the VSTO Add-in to a modern Office Add-in by sharing code when possible.
 
 > [!NOTE]
 > The sample uses C# but you can apply the techniques in this tutorial to a VSTO Add-in written in any .NET language.
 
-1. Download the [VSTO Add-in shared library for Office Add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP solution to a working folder on your computer.
+1. Download the [VSTO Add-in shared library for Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) PnP solution to a working folder on your computer.
 1. Start Visual Studio 2019 and open the **/start/Cell-Analyzer.sln** solution.
 1. On the **Debug** menu, choose **Start Debugging**.
 1. In **Solution Explorer**, right-click the **Cell-Analyzer** project, and choose **Properties**.
@@ -240,7 +240,7 @@ When you create the Office Add-in, it will make a call to the REST API. But firs
 
 ### Add the Office Add-in project
 
-To keep things simple, keep all the code in one solution. Add the Office Add-in project to the existing Visual Studio solution. However, if you are familiar with the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) and Visual Studio Code you can also run `yo office` to build the project. The steps are very similar.
+To keep things simple, keep all the code in one solution. Add the Office Add-in project to the existing Visual Studio solution. However, if you are familiar with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) and Visual Studio Code you can also run `yo office` to build the project. The steps are very similar.
 
 1. In **Solution Explorer**, right-click the **Cell-Analyzer** solution, and choose **Add > New Project**.
 1. In the **Add a new project dialog**, choose **Excel Web Add-in**, and choose **Next**.
@@ -280,10 +280,10 @@ Two projects will be created:
     })();
 
     function showUnicode() {
-      Excel.run(function (ctx) {
-        const range = ctx.workbook.getSelectedRange();
+      Excel.run(function (context) {
+        const range = context.workbook.getSelectedRange();
         range.load("values");
-        return ctx.sync(range).then(function (range) {
+        return context.sync(range).then(function (range) {
           const url = "https://localhost:<ssl port number>/api/analyzeunicode?value=" + range.values[0][0];
           $.ajax({
             type: "GET",

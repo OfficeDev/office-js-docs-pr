@@ -1,6 +1,6 @@
 ---
 title: Localization for Office Add-ins
-description: 'Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.'
+description: Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
 ---
@@ -139,9 +139,9 @@ For Outlook add-ins, the [SourceLocation] element also aligns to the form factor
 
 ## Localize extended overrides
 
-Some extensibility features of Office Add-ins, such as keyboard shortcuts, are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest. This section assumes that you're familiar with extended overrides. See [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element.
+Some extensibility features of Office Add-ins, such as keyboard shortcuts, are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest. This section assumes that you're familiar with extended overrides. See [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element.
 
-Use the `ResourceUrl` attribute of the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element to point Office to a file of localized resources. The following is an example.
+Use the `ResourceUrl` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element to point Office to a file of localized resources. The following is an example.
 
 ```xml
     ...
@@ -488,17 +488,17 @@ Once running, the strings in the add-in UI change to match the language used by 
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Language identifiers and OptionState Id values in Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:         ../reference/manifest/defaultlocale.md
-[Description]:           ../reference/manifest/description.md
-[DisplayName]:           ../reference/manifest/displayname.md
-[IconUrl]:               ../reference/manifest/iconurl.md
-[HighResolutionIconUrl]: ../reference/manifest/highresolutioniconurl.md
-[Resources]:             ../reference/manifest/resources.md
-[SourceLocation]:        ../reference/manifest/sourcelocation.md
-[Override]:              ../reference/manifest/override.md
-[DesktopSettings]:       ../reference/manifest/desktopsettings.md
-[TabletSettings]:        ../reference/manifest/tabletsettings.md
-[PhoneSettings]:         ../reference/manifest/phonesettings.md
+[DefaultLocale]:         /javascript/api/manifest/defaultlocale
+[Description]:           /javascript/api/manifest/description
+[DisplayName]:           /javascript/api/manifest/displayname
+[IconUrl]:               /javascript/api/manifest/iconurl
+[HighResolutionIconUrl]: /javascript/api/manifest/highresolutioniconurl
+[Resources]:             /javascript/api/manifest/resources
+[SourceLocation]:        /javascript/api/manifest/sourcelocation
+[Override]:              /javascript/api/manifest/override
+[DesktopSettings]:       /javascript/api/manifest/desktopsettings
+[TabletSettings]:        /javascript/api/manifest/tabletsettings
+[PhoneSettings]:         /javascript/api/manifest/phonesettings
 [displayLanguage]:       /javascript/api/office/office.context#displayLanguage
 [contentLanguage]:       /javascript/api/office/office.context#contentLanguage
 [RFC 3066]:              https://www.rfc-editor.org/info/rfc3066

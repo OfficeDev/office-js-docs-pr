@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript object model in Office Add-ins
-description: 'Learn the key object types in the Excel JavaScript APIs and how to use them to build add-ins for Excel.'
-ms.date: 04/05/2021
+description: Learn the key object types in the Excel JavaScript APIs and how to use them to build add-ins for Excel.
+ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: high
 ---
@@ -53,42 +53,42 @@ Ranges have three core properties: `values`, `formulas`, and `format`. These pro
 The following sample shows how to create sales records. This function uses `Range` objects to set the values, formulas, and formats.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // Create the headers and format them to stand out.
-    var headers = [
+    let headers = [
       ["Product", "Quantity", "Unit Price", "Totals"]
     ];
-    var headerRange = sheet.getRange("B2:E2");
+    let headerRange = sheet.getRange("B2:E2");
     headerRange.values = headers;
     headerRange.format.fill.color = "#4472C4";
     headerRange.format.font.color = "white";
 
     // Create the product data rows.
-    var productData = [
+    let productData = [
       ["Almonds", 6, 7.5],
       ["Coffee", 20, 34.5],
       ["Chocolate", 10, 9.56],
     ];
-    var dataRange = sheet.getRange("B3:D5");
+    let dataRange = sheet.getRange("B3:D5");
     dataRange.values = productData;
 
     // Create the formulas to total the amounts sold.
-    var totalFormulas = [
+    let totalFormulas = [
       ["=C3 * D3"],
       ["=C4 * D4"],
       ["=C5 * D5"],
       ["=SUM(E3:E5)"]
     ];
-    var totalRange = sheet.getRange("E3:E6");
+    let totalRange = sheet.getRange("E3:E6");
     totalRange.formulas = totalFormulas;
     totalRange.format.font.bold = true;
 
     // Display the totals as US dollar amounts.
     totalRange.numberFormat = [["$0.00"]];
 
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -109,10 +109,10 @@ Create tables by using data-filled ranges. Formatting and table controls (such a
 The following sample creates a table using the ranges from the previous sample.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.tables.add("B2:E5", true);
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -129,11 +129,11 @@ Create charts to visualize the data in a range. The APIs support dozens of chart
 The following sample creates a simple column chart for three items and places it 100 pixels below the top of the worksheet.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var chart = sheet.charts.add(Excel.ChartType.columnStacked, sheet.getRange("B3:C5"));
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let chart = sheet.charts.add(Excel.ChartType.columnStacked, sheet.getRange("B3:C5"));
     chart.top = 100;
-    return context.sync();
+    await context.sync();
 });
 ```
 

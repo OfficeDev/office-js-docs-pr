@@ -2,13 +2,13 @@
 title: Use Smart Alerts and the OnMessageSend event in your Outlook add-in (preview)
 description: Learn how to handle the send message event in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 11/01/2021
+ms.date: 03/07/2022
 ms.localizationpriority: medium
 ---
 
 # Use Smart Alerts and the OnMessageSend event in your Outlook add-in (preview)
 
-The `OnMessageSend` event takes advantage of Smart Alerts which allow you to run logic after a user selects **Send** in their Outlook message. Your event handler allows you to give your users the opportunity to improve their emails before they're sent. The `OnAppointmentSend` event is similar but applies to an appointment.
+The `OnMessageSend` event takes advantage of Smart Alerts which allows you to run logic after a user selects **Send** in their Outlook message. Your event handler allows you to give your users the opportunity to improve their emails before they're sent. The `OnAppointmentSend` event is similar but applies to an appointment.
 
 By the end of this walkthrough, you'll have an add-in that runs whenever a message is being sent and checks if the user forgot to add a document or picture they mentioned in their email.
 
@@ -29,7 +29,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML, then save your changes.
+1. Select the entire **VersionOverrides** node (including open and close tags) and replace it with the following XML, then save your changes.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -44,7 +44,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web. -->
+               This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
@@ -114,7 +114,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
         <!-- Entry needed for Outlook Desktop. -->
-        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/src/commands/commands.js" />
+        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
@@ -132,7 +132,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 > [!TIP]
 >
-> - For **SendMode** options available with the `OnMessageSend` event, refer to [Available SendMode options](../reference/manifest/launchevent.md#available-sendmode-options-preview).
+> - For **SendMode** options available with the `OnMessageSend` event, refer to [Available SendMode options](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
 > - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
 ## Implement event handling
@@ -141,76 +141,113 @@ You have to implement handling for your selected event.
 
 In this scenario, you'll add handling for sending a message. Your add-in will check for certain keywords in the message. If any of those keywords are found, it will then check if there are any attachments. If there are no attachments, your add-in will recommend to the user to add the possibly missing attachment.
 
-1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
+1. From the same quick start project, create a new folder named **launchevent** under the **./src** directory.
 
-1. After the `action` function, insert the following JavaScript functions.
+1. In the **./src/launchevent** folder, create a new file named **launchevent.js**.
+
+1. Open the file **./src/launchevent/launchevent.js** in your code editor and add the following JavaScript code.
 
     ```js
+    /*
+    * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+    * See LICENSE in the project root for license information.
+    */
+
     function onMessageSendHandler(event) {
       Office.context.mailbox.item.body.getAsync(
-        "text",
-        { "asyncContext": event },
-        function (asyncResult) {
-          var event = asyncResult.asyncContext;
-          var body = "";
-          if (asyncResult.status !== Office.AsyncResultStatus.Failed && asyncResult.value !== undefined) {
-            body = asyncResult.value;
-          }
-        
-          var arrayOfTerms = ["send", "picture", "document", "attachment"];
-          for (var index = 0; index < arrayOfTerms.length; index++) {
-            var term = arrayOfTerms[index].trim();
-            const regex = RegExp(term, 'i');
-            if (regex.test(body)) {
-              matches.push(term);
-            }
-          }
-        
-          if (matches.length > 0) {
-            // Let's verify if there's an attachment!
-            Office.context.mailbox.item.getAttachmentsAsync(
-              { "asyncContext": event },
-              function(result){
-                var event = asyncResult.asyncContext;
-                if (result.value.length <= 0) {
-                  var message = "Looks like you're forgetting to include an attachment?";
-                  event.completed({ allowEvent: false, errorMessage: message });
-                } else {
-                  for (var i=0;i<result.value.length;i++) {
-                    if(result.value[i].isInline == false) {
-                      event.completed({ allowEvent: true });
-                      return;
-                    }
-                  }
-                    
-                  var message = "Looks like you're forgetting to include an attachment?";
-                  event.completed({ allowEvent: false, errorMessage: message });
-                }
-              });
-            } else {
-              event.completed({ allowEvent: true });
-            }
-          }
-        );
+        "text",
+        { asyncContext: event },
+        getBodyCallback
+      );
     }
-    ```
 
-1. Add the following JavaScript code at the end of the file.
+    function getBodyCallback(asyncResult){
+      let event = asyncResult.asyncContext;
+      let body = "";
+      if (asyncResult.status !== Office.AsyncResultStatus.Failed && asyncResult.value !== undefined) {
+        body = asyncResult.value;
+      } else {
+        let message = "Failed to get body text";
+        console.error(message);
+        event.completed({ allowEvent: false, errorMessage: message });
+        return;
+      }
 
-    ```js
+      let matches = hasMatches(body);
+      if (matches) {
+        Office.context.mailbox.item.getAttachmentsAsync(
+          { asyncContext: event },
+          getAttachmentsCallback);
+      } else {
+        event.completed({ allowEvent: true });
+      }
+    }
+
+    function hasMatches(body) {
+      if (body == null || body == "") {
+        return false;
+      }
+
+      const arrayOfTerms = ["send", "picture", "document", "attachment"];
+      for (let index = 0; index < arrayOfTerms.length; index++) {
+        const term = arrayOfTerms[index].trim();
+        const regex = RegExp(term, 'i');
+        if (regex.test(body)) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    function getAttachmentsCallback(asyncResult) {
+      let event = asyncResult.asyncContext;
+      if (asyncResult.value.length > 0) {
+        for (let i = 0; i < asyncResult.value.length; i++) {
+          if (asyncResult.value[i].isInline == false) {
+            event.completed({ allowEvent: true });
+            return;
+          }
+        }
+
+        event.completed({ allowEvent: false, errorMessage: "Looks like you forgot to include an attachment?" });
+      } else {
+        event.completed({ allowEvent: false, errorMessage: "Looks like you're forgetting to include an attachment?" });
+      }
+    }
+
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
     Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
     ```
 
 1. Save your changes.
 
-> [!IMPORTANT]
-> Windows: At present, imports are not supported in the JavaScript file where you implement the handling for event-based activation.
+## Update webpack config settings
+
+1. Open the **webpack.config.js** file found in the root directory of the project and complete the following steps.
+
+1. Locate the `plugins` array within the `config` object and add this new object to the beginning of the array.
+
+    ```js
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "./src/launchevent/launchevent.js",
+          to: "launchevent.js",
+        },
+      ],
+    }),
+    ```
+
+1. Save your changes.
 
 ## Try it out
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running) and your add-in will be sideloaded.
+1. Run the following commands in the root directory of your project. When you run `npm start`, the local web server will start (if it's not already running) and your add-in will be sideloaded.
 
+    ```command&nbsp;line
+    npm run build
+    ```
     ```command&nbsp;line
     npm start
     ```
@@ -220,20 +257,10 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 1. In Outlook on Windows, create a new message and set the subject. In the body, add text like "Hey, check out this picture of my dog!".
 1. Send the message. A dialog should pop up with a recommendation for you to add an attachment.
-1. Add an attachment then send the message again. There should be no alert this time.
 
-> [!NOTE]
-> If you're running your add-in from localhost and see the error "We're sorry, we couldn't access *{your-add-in-name-here}*. Make sure you have a network connection. If the problem continues, please try again later.", you may need to enable a loopback exemption.
->
-> 1. Close Outlook.
-> 1. Open the **Task Manager** and ensure that the **msoadfsb.exe** process is not running.
-> 1. Run the following command.
->
->    ```command&nbsp;line
->    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
->    ```
->
-> 1. Restart Outlook.
+    ![Screenshot of a message window in Outlook on Windows with dialog.](../images/outlook-win-smart-alert.png)
+
+1. Add an attachment then send the message again. There should be no alert this time.
 
 ## See also
 

@@ -14,7 +14,7 @@ Your Outlook add-in can access information from anywhere on the Internet, whethe
 Single sign-on access tokens provide a seamless way for your add-in to authenticate and obtain access tokens to call the [Microsoft Graph API](/graph/overview). This capability reduces friction since the user is not required to enter their credentials.
 
 > [!NOTE]
-> The Single Sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md).
+> The Single Sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
 > If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Consider using SSO access tokens if your add-in:
@@ -35,7 +35,7 @@ For a more detailed overview, see the [full overview of the SSO authentication m
 
 For details on using the SSO token in an Outlook add-in, see [Authenticate a user with an single-sign-on token in an Outlook add-in](authenticate-a-user-with-an-sso-token.md).
 
-For a sample add-in that uses the SSO token, see [Outlook Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO).
+For a sample add-in that uses the SSO token, see [Outlook Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
 
 ## Exchange user identity token
 
@@ -45,7 +45,7 @@ Exchange user identity tokens provide a way for your add-in to establish the ide
 - When the add-in needs access to a non-Microsoft service that you control.
 - As a fallback authentication when the add-in is running on a version of Office that doesn't support SSO.
 
-Your add-in can call [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getCallbackTokenAsync_callback__userContext_) to get Exchange user identity tokens. For details on using these tokens, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md).
+Your add-in can call [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getuseridentitytokenasync-member(1)) to get Exchange user identity tokens. For details on using these tokens, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## Access tokens obtained via OAuth2 flows
 
@@ -53,7 +53,7 @@ Add-ins can also access third-party services that support OAuth2 for authorizati
 
 - Needs access to a third-party service outside of your control
 
-Using this method, your add-in prompts the user to sign-in to the service either by using the [displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_) method to initialize the OAuth2 flow, or by using the [office-js-helpers library](https://github.com/OfficeDev/office-js-helpers) to the OAuth2 Implicit flow.
+Using this method, your add-in prompts the user to sign-in to the service either by using the [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) method to initialize the OAuth2 flow, or by using the [office-js-helpers library](https://github.com/OfficeDev/office-js-helpers) to the OAuth2 Implicit flow.
 
 ## Callback tokens
 
@@ -61,4 +61,4 @@ Callback tokens provide access to the user's mailbox from your server back-end, 
 
 - Needs access to the user's mailbox from your server back-end.
 
-Add-ins obtain callback tokens using one of the [getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) methods. The level of access is controlled by the permissions specified in the add-in manifest.
+Add-ins obtain callback tokens using one of the [getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) methods. The level of access is controlled by the permissions specified in the add-in manifest.

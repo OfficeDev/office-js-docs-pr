@@ -1,7 +1,7 @@
 ---
 title: Validate an Office Add-in's manifest
-description: 'Learn how to validate the manifest of an Office Add-in using the XML schema and other tools.'
-ms.date: 10/29/2020
+description: Learn how to validate the manifest of an Office Add-in using the XML schema and other tools.
+ms.date: 03/24/2022
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +14,7 @@ You may want to validate your add-in's manifest file to ensure that it's correct
 
 ## Validate your manifest with the Yeoman generator for Office Add-ins
 
-If you used the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can also use it to validate your project's manifest file. Run the following command in the root directory of your project.
+If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can also use it to validate your project's manifest file. Run the following command in the root directory of your project.
 
 ```command&nbsp;line
 npm run validate
@@ -23,11 +23,13 @@ npm run validate
 ![Animated GIF that shows the Yo Office validator being run at the command line and generating results that show Validation Passed.](../images/yo-office-validator.gif)
 
 > [!NOTE]
-> To have access to this functionality, your add-in project must have been created by using [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) version 1.1.17 or later.
+> To access this functionality, your add-in project must be created using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) version 1.1.17 or later.
+
+[!INCLUDE [validate also runs Office Store validation](../includes/office-store-validate.md)]
 
 ## Validate your manifest with office-addin-manifest
 
-If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
+If you didn't use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
 
 1. Install [Node.js](https://nodejs.org/download/).
 
@@ -49,6 +51,14 @@ If you didn't use the [Yeoman generator for Office Add-ins](https://www.npmjs.co
     > ```command&nbsp;line
     > npx office-addin-manifest validate MANIFEST_FILE
     > ```
+
+[!INCLUDE [validate also runs Office Store validation](../includes/office-store-validate.md)]
+
+If you're having trouble with that command, try the following (replacing `MANIFEST_FILE` with the name of the manifest file).
+
+```command&nbsp;line
+npx office-addin-manifest validate -p MANIFEST_FILE
+```
 
 ## Validate your manifest against the XML schema
 
@@ -72,3 +82,4 @@ You can validate the manifest file against the [XML Schema Definition (XSD)](/op
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
+- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)

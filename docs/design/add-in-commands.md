@@ -1,16 +1,13 @@
 ---
 title: Basic concepts for add-in commands
-description: 'Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.'
-ms.date: 10/08/2021
+description: Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.
+ms.date: 12/13/2021
 ms.localizationpriority: high
 ---
-
 
 # Add-in commands for Excel, PowerPoint, and Word
 
 Add-in commands are UI elements that extend the Office UI and start actions in your add-in. You can use add-in commands to add a button on the ribbon or an item to a context menu. When users select an add-in command, they initiate actions such as running JavaScript code, or showing a page of the add-in in a task pane. Add-in commands help users find and use your add-in, which can help increase your add-in's adoption and reuse, and improve customer retention.
-
-For an overview of the feature, see the video [Add-in Commands in the Office app ribbon](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
 > SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing.
@@ -123,4 +120,4 @@ Apply the following best practices when you develop add-in commands.
 
 The best way to get started using add-in commands is to take a look at the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
 
-For more information about specifying add-in commands in your manifest, see [Create add-in commands in your manifest](../develop/create-addin-commands.md) and the [VersionOverrides](../reference/manifest/versionoverrides.md) reference content.
+For more information about specifying add-in commands in your manifest, see [Create add-in commands in your manifest](../develop/create-addin-commands.md) and the [VersionOverrides](/javascript/api/manifest/versionoverrides) reference content.

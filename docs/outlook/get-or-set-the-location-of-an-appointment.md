@@ -9,19 +9,19 @@ ms.localizationpriority: medium
 
 The Office JavaScript API provides properties and methods to manage the location of an appointment that the user is composing. Currently, there are two properties that provide an appointment's location:
 
-- [item.location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): Basic API that allows you to get and set the location.
-- [item.enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): Enhanced API that allows you to get and set the location, and includes specifying the [location type](/javascript/api/outlook/office.mailboxenums.locationtype). The type is `LocationType.Custom` if you set the location using `item.location`.
+- [item.location](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties): Basic API that allows you to get and set the location.
+- [item.enhancedLocation](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties): Enhanced API that allows you to get and set the location, and includes specifying the [location type](/javascript/api/outlook/office.mailboxenums.locationtype). The type is `LocationType.Custom` if you set the location using `item.location`.
 
 The following table lists the location APIs and the modes (i.e., Compose or Read) where they are available.
 
 | API | Applicable appointment modes |
 |---|---|
-| [item.location](/javascript/api/outlook/office.appointmentread#location) | Attendee/Read |
-| [item.location.getAsync](/javascript/api/outlook/office.location#getAsync_options__callback_) | Organizer/Compose |
-| [item.location.setAsync](/javascript/api/outlook/office.location#setAsync_location__options__callback_) | Organizer/Compose |
-| [item.enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#getAsync_options__callback_) | Organizer/Compose,<br>Attendee/Read |
-| [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#addAsync_locationIdentifiers__options__callback_) | Organizer/Compose |
-| [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#removeAsync_locationIdentifiers__options__callback_) | Organizer/Compose |
+| [item.location](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-location-member) | Attendee/Read |
+| [item.location.getAsync](/javascript/api/outlook/office.location#outlook-office-location-getasync-member(1)) | Organizer/Compose |
+| [item.location.setAsync](/javascript/api/outlook/office.location#outlook-office-location-setasync-member(1)) | Organizer/Compose |
+| [item.enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-getasync-member(1)) | Organizer/Compose,<br>Attendee/Read |
+| [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) | Organizer/Compose |
+| [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) | Organizer/Compose |
 
 To use the methods that are available only to compose add-ins, configure the add-in manifest to activate the add-in in Organizer/Compose mode. See [Create Outlook add-ins for compose forms](compose-scenario.md) for more details.
 
@@ -31,7 +31,7 @@ You can use the `enhancedLocation` API to get and set an appointment's location.
 
 ### Add location
 
-The following example shows how to add a location by calling [addAsync](/javascript/api/outlook/office.enhancedlocation#addAsync_locationIdentifiers__options__callback_) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedLocation).
+The following example shows how to add a location by calling [addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-enhancedlocation-member).
 
 ```js
 var item;
@@ -55,7 +55,7 @@ Office.initialize = function () {
 
 ### Get location
 
-The following example shows how to get the location by calling [getAsync](/javascript/api/outlook/office.enhancedlocation#getAsync_options__callback_) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentread#enhancedLocation).
+The following example shows how to get the location by calling [getAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-getasync-member(1)) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-enhancedlocation-member).
 
 ```js
 var item;
@@ -83,7 +83,7 @@ function callbackFunction(asyncResult) {
 
 ### Remove location
 
-The following example shows how to remove the location by calling [removeAsync](/javascript/api/outlook/office.enhancedlocation#removeAsync_locationIdentifiers__options__callback_) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedLocation).
+The following example shows how to remove the location by calling [removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-enhancedlocation-member).
 
 ```js
 var item;
@@ -114,7 +114,7 @@ You can use the `location` API to get and set an appointment's location.
 
 This section shows a code sample that gets the location of the appointment that the user is composing, and displays the location.
 
-To use `item.location.getAsync`, provide a callback method that checks for the status and result of the asynchronous call. You can provide any necessary arguments to the callback method through the `asyncContext` optional parameter. You can obtain status, results, and any error using the output parameter `asyncResult` of the callback. If the asynchronous call is successful, you can get the location as a string using the [AsyncResult.value](/javascript/api/office/office.asyncresult#value) property.
+To use `item.location.getAsync`, provide a callback method that checks for the status and result of the asynchronous call. You can provide any necessary arguments to the callback method through the `asyncContext` optional parameter. You can obtain status, results, and any error using the output parameter `asyncResult` of the callback. If the asynchronous call is successful, you can get the location as a string using the [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) property.
 
 ```js
 var item;

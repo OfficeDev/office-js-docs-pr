@@ -1,7 +1,7 @@
 ---
 title: Manually create JSON metadata for custom functions in Excel
-description: 'Define JSON metadata for custom functions in Excel and associate your function ID and name properties.'
-ms.date: 11/01/2021
+description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
+ms.date: 12/28/2021
 ms.localizationpriority: medium
 ---
 
@@ -21,10 +21,10 @@ However, you can make a custom functions project from scratch. This process requ
 
 The following image explains the differences between using `yo office` scaffold files and writing JSON from scratch.
 
-![Image of differences between using Yo Office and writing your own JSON.](../images/custom-functions-json.png)
+![Image of differences between using the Yeoman generator for Office Add-ins and writing your own JSON.](../images/custom-functions-json.png)
 
 > [!NOTE]
-> Remember to connect your manifest to the JSON file you create, through the `<Resources>` section in your XML manifest file if you do not use the `yo office` generator.
+> Remember to connect your manifest to the JSON file you create, through the `<Resources>` section in your XML manifest file if you do not use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Authoring metadata and connecting to the manifest
 
@@ -142,7 +142,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 >
 > To try out this property in Office on Windows, you must have an Excel build number greater than or equal to 16.0.14623.20002. To use this feature, you need to join the [Office Insider Program](https://insider.office.com/) and then choose the **Beta Channel** Insider level. To learn more, see [Join the Office Insider Program](https://insider.office.com/join/windows).
 
-The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting this value to `true` allows a custom function to accept data types as parameters and return values. To learn more, see [Custom functions and data types core concepts](/custom-functions-data-types-concepts.md).
+The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting this value to `true` allows a custom function to accept data types as parameters and return values. To learn more, see [Custom functions and data types](custom-functions-data-types-concepts.md).
 
 Unlike most of the other JSON metadata properties, `allowCustomDataForDataTypeAny` is a top-level property and contains no sub-properties. See the preceding [JSON metadata code sample](#json-metadata-example) for an example of how to format this property.
 

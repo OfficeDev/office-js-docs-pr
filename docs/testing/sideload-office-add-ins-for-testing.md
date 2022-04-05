@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins in Office on the web for testing
-description: 'Test your Office Add-in in Office on the web by sideloading.'
-ms.date: 08/02/2021
+description: Test your Office Add-in in Office on the web by sideloading.
+ms.date: 02/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +18,7 @@ Sideloading varies between host applications (for example, Excel).
 
 ## Sideload an Office Add-in in Office on the web
 
-This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word** only. For other host applications, see the manual sideloading instructions in the following section. This example project assumes that you are using a project created with [the Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
+This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word** only. For other host applications, see the manual sideloading instructions in the following section. This example project assumes that you are using a project created with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 1. Open [Office on the web](https://office.live.com/). Using the **Create** option, make a document in **Excel**, **OneNote**, **PowerPoint**, or **Word**. In this new document, select **Share** in the ribbon, select **Copy Link**, and copy the URL.
 
@@ -41,7 +41,9 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
     > If you are using the Yeoman generator, adding this information is not necessary as the Yeoman tooling appends this information automatically.
     > Note that in both cases, however, you can only load manifests from localhost.
 
-1. In the command line starting at the root directory of your project, run the following command: `npm run start:web`.
+1. In the command line starting at the root directory of your project, run the following command. Replace "{url}" with the URL of an Office document on your OneDrive or a SharePoint library to which you have permissions.
+
+    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. The first time you use this method to sideload an add-in on the web, you'll see a dialog asking you to enable developer mode. Select the checkbox for **Enable Developer Mode now** and select **OK**.
 
@@ -53,7 +55,7 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 This method doesn't use the command line and can be accomplished using commands only within the host application (such as Excel).
 
-1. Open [Office on the web](https://office.live.com/). Open a document in **Excel**, **Word**, or **PowerPoint**. On the **Insert** tab on the ribbon in the **Add-ins** section, choose **Office Add-ins**.
+1. Open [Office on the web](https://office.com/). Open a document in **Excel**, **OneNote**, **PowerPoint**, or  **Word**. On the **Insert** tab on the ribbon in the **Add-ins** section, choose **Office Add-ins**.
 
 1. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
 
@@ -68,11 +70,13 @@ This method doesn't use the command line and can be accomplished using commands 
 > [!NOTE]
 > To test your Office Add-in with Microsoft Edge with the original WebView (EdgeHTML), an additional configuration step is required. In a Windows Command Prompt, run the following line: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`. This is not required when Office is using the Chromium-based Edge WebView2. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
+[!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
+
 ## Sideload an Office Add-in
 
 1. Sign in to your Microsoft 365 account.
 
-1. Open the App Launcher on the left end of the toolbar and select **Excel**, **Word**, or **PowerPoint**, and then create a new document.
+1. Open the App Launcher on the left end of the toolbar and select **Excel**, **PowerPoint**, or **Word**, and then create a new document.
 
 1. Steps 3 - 6 are the same as in the preceding section **Sideload an Office Add-in in Office on the web**.
 

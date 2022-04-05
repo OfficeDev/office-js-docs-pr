@@ -1,6 +1,6 @@
 ---
 title: Bind to regions in a document or spreadsheet
-description: 'Learn how to use binding to ensure consistent access a specific region or element of a document or spreadsheet through an identifier.'
+description: Learn how to use binding to ensure consistent access a specific region or element of a document or spreadsheet through an identifier.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
 ---

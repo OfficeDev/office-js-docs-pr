@@ -1,6 +1,6 @@
 ---
 title: Monoline style icon guidelines for Office Add-ins
-description: 'Guidelines for using Monoline style icons in Office Add-ins.'
+description: Guidelines for using Monoline style icons in Office Add-ins.
 ms.date: 03/30/2021
 ms.localizationpriority: medium
 ---
@@ -204,7 +204,7 @@ The final icons should be saved as .png image files. Use PNG format with a trans
 
 ## See also
 
-- [Icon manifest element](../reference/manifest/icon.md)
-- [IconUrl manifest element](../reference/manifest/iconurl.md)
-- [HighResolutionIconUrl manifest element](../reference/manifest/highresolutioniconurl.md)
+- [Icon manifest element](/javascript/api/manifest/icon)
+- [IconUrl manifest element](/javascript/api/manifest/iconurl)
+- [HighResolutionIconUrl manifest element](/javascript/api/manifest/highresolutioniconurl)
 - [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)

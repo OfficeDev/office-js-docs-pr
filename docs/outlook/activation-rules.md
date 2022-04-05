@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in activation rules
-description: 'Outlook activates some types of add-ins if the message or appointment that the user is reading or composing satisfies the activation rules of the add-in.'
-ms.date: 09/22/2020
+description: Outlook activates some types of add-ins if the message or appointment that the user is reading or composing satisfies the activation rules of the add-in.
+ms.date: 12/09/2021
 ms.localizationpriority: medium
 ---
 
@@ -19,17 +19,17 @@ The following figure shows Outlook add-ins activated in the add-in bar for the m
 
 To have Outlook activate an add-in for specific conditions, specify activation rules in the add-in manifest by using one of the following `Rule` elements.
 
-- [Rule element (MailApp complexType)](../reference/manifest/rule.md) - Specifies an individual rule.
-- [Rule element (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) - Combines multiple rules using logical operations.
+- [Rule element (MailApp complexType)](/javascript/api/manifest/rule) - Specifies an individual rule.
+- [Rule element (RuleCollection complexType)](/javascript/api/manifest/rule#rulecollection) - Combines multiple rules using logical operations.
 
 
  > [!NOTE]
- > The `Rule` element that you use to specify an individual rule is of the abstract [Rule](../reference/manifest/rule.md) complex type. Each of the following types of rules extends this abstract `Rule` complex type. So when you specify an individual rule in a manifest, you must use the [xsi:type](https://www.w3.org/TR/xmlschema-1/) attribute to further define one of the following types of rules.
+ > The `Rule` element that you use to specify an individual rule is of the abstract [Rule](/javascript/api/manifest/rule) complex type. Each of the following types of rules extends this abstract `Rule` complex type. So when you specify an individual rule in a manifest, you must use the [xsi:type](https://www.w3.org/TR/xmlschema-1/) attribute to further define one of the following types of rules.
  > 
- > For example, the following rule defines an [ItemIs](../reference/manifest/rule.md#itemis-rule) rule.
+ > For example, the following rule defines an [ItemIs](/javascript/api/manifest/rule#itemis-rule) rule.
  > `<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
- > The `FormType` attribute applies to activation rules in the manifest v1.1 but is not defined in `VersionOverrides` v1.0. So it can't be used when [ItemIs](../reference/manifest/rule.md#itemis-rule) is used in the `VersionOverrides` node.
+ > The `FormType` attribute applies to activation rules in the manifest v1.1 but is not defined in `VersionOverrides` v1.0. So it can't be used when [ItemIs](/javascript/api/manifest/rule#itemis-rule) is used in the `VersionOverrides` node.
 
 The following table lists the types of rules that are available. You can find more information following the table and in the specified articles under [Create Outlook add-ins for read forms](read-scenario.md).
 
@@ -62,7 +62,7 @@ The `FormType` attribute is used to specify the mode (read or compose) in which 
  > [!NOTE]
  > The ItemIs `FormType` attribute is defined in schema v1.1 and later but not in `VersionOverrides` v1.0. Do not include the `FormType` attribute when defining add-in commands.
 
-After an add-in is activated, you can use the [mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) property to obtain the currently selected item in Outlook, and the [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) property to obtain the type of the current item.
+After an add-in is activated, you can use the [mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) property to obtain the currently selected item in Outlook, and the [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) property to obtain the type of the current item.
 
 You can optionally use the `ItemClass` attribute to specify the message class of the item, and the `IncludeSubClasses` attribute to specify whether the rule should be **true** when the item is a subclass of the specified class.
 
@@ -187,7 +187,7 @@ To provide a satisfactory experience with Outlook add-ins, you should adhere to 
 |Manifest Size|No larger than 256 KB.|
 |Rules|No more than 15 rules.|
 |ItemHasKnownEntity|An Outlook rich client will apply the rule against the first 1 MB of the body, and not to the rest of the body.|
-|Regular Expressions|For ItemHasKnownEntity or ItemHasRegularExpressionMatch rules for all Outlook applications:<br><ul><li>Specify no more than 5 regular expressions in activation rules for an Outlook add-in. You cannot install an add-in if you exceed that limit.</li><li>Specify regular expressions whose anticipated results are returned by the <b>getRegExMatches</b> method call within the first 50 matches. </li><li>Specify look-ahead assertions in regular expressions, but not look-behind, `(?<=text)`, and negative look-behind `(?<!text)`.</li><li>Specify regular expressions whose match does not exceed the limits in the table below.<br/><br/><table><tr><th>Limit on length of a regex match</th><th>Outlook rich clients</th><th>Outlook on iOS and Android</th></tr><tr><td>Item body is plain text</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>Item body it HTML</td><td>3 KB</td><td>3 KB</td></tr></table>|
+|Regular Expressions|For ItemHasKnownEntity or ItemHasRegularExpressionMatch rules for all Outlook applications:<br><ul><li>Specify no more than 5 regular expressions in activation rules for an Outlook add-in. You cannot install an add-in if you exceed that limit.</li><li>Specify regular expressions whose anticipated results are returned by the <b>getRegExMatches</b> method call within the first 50 matches. </li><li>**Important**: Text is highlighted based on strings that result from matching the regular expression. However, the highlighted occurrences may not exactly match what should result from actual regular expression assertions like negative look-ahead `(?!text)`, look-behind `(?<=text)`, and negative look-behind `(?<!text)`. For example, if you use the regular expression `under(?!score)` on "Like under, under score, and underscore", the string "under" is highlighted for all occurrences instead of just the first two.</li><li>Specify regular expressions whose match does not exceed the limits in the following table.<br/><br/><table><tr><th>Limit on length of a regex match</th><th>Outlook rich clients</th><th>Outlook on iOS and Android</th></tr><tr><td>Item body is plain text</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>Item body it HTML</td><td>3 KB</td><td>3 KB</td></tr></table>|
 
 ## See also
 

@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 By the end of this walkthrough, you'll have an Outlook add-in that can insert a disclaimer when a message is sent.
 
 > [!NOTE]
-> Support for this feature was introduced in requirement set 1.9. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in requirement set 1.9. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Set up your environment
 
@@ -19,7 +19,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To enable the append-on-send feature in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](../reference/manifest/extendedpermissions.md).
+To enable the append-on-send feature in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](/javascript/api/manifest/extendedpermissions).
 
 For this scenario, instead of running the `action` function on choosing the **Perform an action** button, you'll be running the `appendOnSend` function.
 

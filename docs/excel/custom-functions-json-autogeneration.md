@@ -1,6 +1,6 @@
 ---
 ms.date: 07/08/2021
-description: 'Use JSDoc tags to dynamically create your custom functions JSON metadata.'
+description: Use JSDoc tags to dynamically create your custom functions JSON metadata.'
 title: Autogenerate JSON metadata for custom functions
 ms.localizationpriority: medium
 ---

@@ -1,11 +1,11 @@
 ---
-title: Test and debug Office Add-ins
-description: 'Learn how to test and debug your Office Add-in'
-ms.date: 09/24/2021
+title: Test Office Add-ins
+description: Learn how to test your Office Add-in.
+ms.date: 12/02/2021
 ms.localizationpriority: high
 ---
 
-# Test and debug Office Add-ins
+# Test Office Add-ins
 
 This article contains guidance about testing, debugging, and troubleshooting issues with Office Add-ins.
 
@@ -17,7 +17,7 @@ Office Add-ins run across major platforms, so you need to test an add-in in all 
 > On Windows computers, the version of Windows and Office will determine which browser control is used by add-ins. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!IMPORTANT]
-> Add-ins marketed through AppSource go through a validation process that includes testing on all platforms. In addition, add-ins are tested for Office on the web with all major modern browsers, including Microsoft Edge (Chromium-based WebView2), Chrome, and Safari. Accordingly, you should test on these platforms and browsers before you submit to AppSource. For more information about validation, see [Commercial marketplace certification policies](/legal/marketplace/certification-policies), especially [section 1120.3](/legal/marketplace/certification-policies#11203-functionality), and the [Office Add-in application and availability page](../overview/office-add-in-availability.md).
+> Add-ins marketed through AppSource go through a validation process that includes testing on all platforms. In addition, add-ins are tested for Office on the web with all major modern browsers, including Microsoft Edge (Chromium-based WebView2), Chrome, and Safari. Accordingly, you should test on these platforms and browsers before you submit to AppSource. For more information about validation, see [Commercial marketplace certification policies](/legal/marketplace/certification-policies), especially [section 1120.3](/legal/marketplace/certification-policies#11203-functionality), and the [Office Add-in application and availability page](/javascript/api/requirement-sets).
 >
 > AppSource does not use Internet Explorer or the legacy version of Microsoft Edge (WebView1) to test add-ins in Office on the web. But if a significant number of your users will use legacy Edge to open Office on the web, then you should test with it. (Office on the web will not open in Internet Explorer, so you cannot, and do not need to, test Office on the web with Internet Explorer.) For more information, see [Support Internet Explorer 11](../develop/support-ie-11.md) and [Troubleshooting Microsoft Edge issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues). Office still supports these browsers for add-in runtimes, so if you think you've encountered a bug in how add-ins run in them, please create an issue for the [office-js](https://github.com/OfficeDev/office-js/issues/new/choose) repo.
 
@@ -33,16 +33,13 @@ You can use sideloading to install an Office Add-in for testing without having t
 
 - [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
 
+## Unit testing
+
+For information about how to add unit tests to your add-in project, see [Unit testing in Office Add-ins](unit-testing.md).
+
 ## Debug an Office Add-in
 
-The procedure for debugging an Office Add-in varies by platform as well. Each of the following articles describes how to debug Office Add-ins on a specific platform.
-
-- [Attach a debugger from the task pane (on Windows)](attach-debugger-from-task-pane.md)
-- [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
-- [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
-- [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
-- [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md)
-- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
+The procedure for debugging an Office Add-in varies based on your platform and environment. For more information, see [Debug Office Add-ins](debug-add-ins-overview.md).
 
 ## Validate an Office Add-in manifest
 

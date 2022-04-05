@@ -1,6 +1,6 @@
 ---
 ms.date: 03/08/2021
-description: 'Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.'
+description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.
 title: Options for Excel custom functions
 ms.localizationpriority: medium
 ---
@@ -229,7 +229,7 @@ Every custom function is automatically passed an `invocation` argument as the la
 > [!NOTE]
 > The `invocation` parameter doesn't appear as a custom function argument for users in Excel.
 
-The following sample shows how to use the `invocation` parameter to return the address of the cell that invoked your custom function. This sample uses the [address](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) property of the `Invocation` object. To access the `Invocation` object, first declare `CustomFunctions.Invocation` as a parameter in your JSDoc. Next, declare `@requiresAddress` in your JSDoc to access the `address` property of the `Invocation` object. Finally, within the function, retrieve and then return the `address` property. 
+The following sample shows how to use the `invocation` parameter to return the address of the cell that invoked your custom function. This sample uses the [address](/javascript/api/custom-functions-runtime/customfunctions.invocation#custom-functions-runtime-customfunctions-invocation-address-member) property of the `Invocation` object. To access the `Invocation` object, first declare `CustomFunctions.Invocation` as a parameter in your JSDoc. Next, declare `@requiresAddress` in your JSDoc to access the `address` property of the `Invocation` object. Finally, within the function, retrieve and then return the `address` property. 
 
 ```js
 /**
@@ -252,12 +252,12 @@ The `invocation` parameter can also be used to send information to Excel. See [M
 
 ## Detect the address of a parameter
 
-In combination with the [invocation parameter](#invocation-parameter), you can use the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object to retrieve the address of a custom function input parameter. When invoked, the [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#parameterAddresses) property of the `Invocation` object allows a function to return the addresses of all input parameters. 
+In combination with the [invocation parameter](#invocation-parameter), you can use the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object to retrieve the address of a custom function input parameter. When invoked, the [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#custom-functions-runtime-customfunctions-invocation-parameteraddresses-member) property of the `Invocation` object allows a function to return the addresses of all input parameters. 
 
 This is useful in scenarios where input data types may vary. The address of an input parameter can be used to check the number format of the input value. The number format can then be adjusted prior to input, if necessary. The address of an input parameter can also be used to detect whether the input value has any related properties that may be relevant to subsequent calculations. 
 
 >[!NOTE]
-> If you're working with [manually-created JSON metadata](custom-functions-json.md) to return parameter addresses instead of the Yo Office generator, the `options` object must have the `requiresParameterAddresses` property set to `true`, and the `result` object must have the `dimensionality` property set to `matrix`.
+> If you're working with [manually-created JSON metadata](custom-functions-json.md) to return parameter addresses instead of the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), the `options` object must have the `requiresParameterAddresses` property set to `true`, and the `result` object must have the `dimensionality` property set to `matrix`.
 
 The following custom function takes in three input parameters, retrieves the `parameterAddresses` property of the `Invocation` object for each parameter, and then returns the addresses. 
 

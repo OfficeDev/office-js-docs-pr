@@ -1,6 +1,6 @@
 ---
 title: Run code in your Office Add-in when the document opens
-description: 'Learn how to run code in your Office Add-in add-in when the document opens.'
+description: Learn how to run code in your Office Add-in add-in when the document opens.
 ms.date: 09/17/2021
 ms.localizationpriority: medium
 ---
@@ -50,12 +50,11 @@ Office.initialize = () => {
  * @param event The event information from Excel
  */
 async function onChange(event) {
-  return Excel.run(function(context) {
-    return context.sync().then(function() {
-      console.log("Change type of event: " + event.changeType);
-      console.log("Address of event: " + event.address);
-      console.log("Source of event: " + event.source);
-    });
+    await Excel.run(async (context) => {    
+        await context.sync();
+        console.log("Change type of event: " + event.changeType);
+        console.log("Address of event: " + event.address);
+        console.log("Source of event: " + event.source);
   });
 }
 ```

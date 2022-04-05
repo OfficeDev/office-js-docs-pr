@@ -1,6 +1,6 @@
 ---
 title: Outlook add-in commands
-description: 'Outlook add-in commands provide ways to initiate specific add-in actions from the ribbon by adding buttons or drop-down menus.'
+description: Outlook add-in commands provide ways to initiate specific add-in actions from the ribbon by adding buttons or drop-down menus.
 ms.date: 07/07/2020
 ms.localizationpriority: high
 ---
@@ -23,7 +23,7 @@ Add-in commands are only available for add-ins that do not use [ItemHasAttachmen
 
 ## Creating the add-in command
 
-Add-in commands are declared in the add-in manifest in the [VersionOverrides element](../reference/manifest/versionoverrides.md). This element is an addition to the manifest schema v1.1 that ensures backward compatibility. In a client that doesn't support `VersionOverrides`, existing add-ins will continue to function as they did without add-in commands.
+Add-in commands are declared in the add-in manifest in the [VersionOverrides element](/javascript/api/manifest/versionoverrides). This element is an addition to the manifest schema v1.1 that ensures backward compatibility. In a client that doesn't support `VersionOverrides`, existing add-ins will continue to function as they did without add-in commands.
 
 The `VersionOverrides` manifest entries specify many things for the add-in, such as the application, types of controls to add to the ribbon, the text, the icons, and any associated functions.
 

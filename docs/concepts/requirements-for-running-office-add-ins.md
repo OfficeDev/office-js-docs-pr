@@ -1,7 +1,7 @@
 ---
 title: Requirements for running Office Add-ins
-description: 'Learn about the client and server requirements that an end user needs to run Office Add-ins.'
-ms.date: 09/23/2021
+description: Learn about the client and server requirements that an end user needs to run Office Add-ins.
+ms.date: 02/15/2022
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +11,7 @@ This article describes the software and device requirements for running Office A
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-For a high-level view of where Office Add-ins are currently supported, see [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md).
+For a high-level view of where Office Add-ins are currently supported, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
 
 ## Server requirements
 
@@ -63,24 +63,35 @@ The following are the minimum client versions of Office on Mac that support Offi
 
 Any browser, except Internet Explorer, that supports ECMAScript 5.1, HTML5, and CSS3, such as Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
 
+## Client requirements: Non-Windows smartphone and tablet
 
-## Client requirements: non-Windows smartphone and tablet
-
-Specifically for Outlook running in a browser on smartphones and non-Windows tablet devices, the following software is required for testing and running Outlook add-ins.
-
+Specifically for Outlook running on smartphones and non-Windows tablet devices, the following software is required for testing and running Outlook add-ins.
 
 | Office application | Device | Operating system | Exchange account | Mobile browser |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook on Android|Android tablets and smartphones|Android 4.4 KitKat later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Native app for Android, browser not applicable|
-|Outlook on iOS|iPad tablets, iPhone smartphones|iOS 11 or later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Native app for iOS, browser not applicable|
-|Outlook on the web|iPhone 4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Microsoft 365, Exchange Online, or on premises on Exchange Server 2013 or later|Safari|
+|Outlook on Android|- Android tablets<br>- Android smartphones|- Android 4.4 KitKat or later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for Android.<sup>1</sup>|
+|Outlook on iOS|- iPad tablets<br>- iPhone smartphones|- iOS 11 or later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for iOS.<sup>1</sup>|
+|Outlook on the web (modern)<sup>2</sup>|- iPad 2 or later<br>- Android tablets |- iOS 5 or later<br>- Android 4.4 KitKat or later|On Microsoft 365, Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
+|Outlook on the web (classic)|- iPhone 4 or later<br>- iPad 2 or later<br>- iPod Touch 4 or later|- iOS 5 or later|On on-premises Exchange Server 2013 or later|- Safari|
 
 > [!NOTE]
-> The native apps OWA for Android, OWA for iPad, and OWA for iPhone have been [deprecated](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b) and are no longer required or available for testing Outlook add-ins.
+> <sup>1</sup> OWA for Android, OWA for iPad, and OWA for iPhone native apps have been [deprecated](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
+>
+> <sup>2</sup> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins.
 
+> [!TIP]
+> You can distinguish between classic and modern Outlook in a web browser by checking your mailbox toolbar.
+>
+> **modern**
+>
+> ![Partial screenshot of the modern Outlook toolbar.](../images/outlook-on-the-web-new-toolbar.png)
+>
+> **classic**
+>
+> ![Partial screenshot of the classic Outlook toolbar.](../images/outlook-on-the-web-classic-toolbar.png)
 
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md)
+- [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)
 - [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md)

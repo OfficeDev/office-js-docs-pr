@@ -1,6 +1,6 @@
 ---
 title: Install the latest version of Office
-description: 'Information about how to opt in to getting the latest builds of Office.'
+description: Information about how to opt in to getting the latest builds of Office.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
 ---
@@ -34,10 +34,10 @@ When the installation process finishes, you will have the latest Office applicat
 
 ## Minimum Office builds for Office JavaScript API requirement sets
 
-- [Excel JavaScript API requirement sets](../reference/requirement-sets/excel-api-requirement-sets.md)
-- [OneNote JavaScript API requirement sets](../reference/requirement-sets/onenote-api-requirement-sets.md)
-- [Outlook JavaScript API requirement sets](../reference/requirement-sets/outlook-api-requirement-sets.md)
-- [PowerPoint JavaScript API requirement sets](../reference/requirement-sets/powerpoint-api-requirement-sets.md)
-- [Word JavaScript API requirement sets](../reference/requirement-sets/word-api-requirement-sets.md)
-- [Dialog API requirement sets](../reference/requirement-sets/dialog-api-requirement-sets.md)
-- [Office Common API requirement sets](../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Excel JavaScript API requirement sets](/javascript/api/requirement-sets/excel/excel-api-requirement-sets)
+- [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets)
+- [Outlook JavaScript API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
+- [PowerPoint JavaScript API requirement sets](/javascript/api/requirement-sets/powerpoint/powerpoint-api-requirement-sets)
+- [Word JavaScript API requirement sets](/javascript/api/requirement-sets/word/word-api-requirement-sets)
+- [Dialog API requirement sets](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
+- [Office Common API requirement sets](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)

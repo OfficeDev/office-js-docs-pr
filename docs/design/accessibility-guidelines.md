@@ -1,6 +1,6 @@
 ---
 title: Accessibility guidelines for Office Add-ins
-description: 'Learn how to make your Office Add-in accessible to all users.'
+description: Learn how to make your Office Add-in accessible to all users.
 ms.date: 09/24/2018
 ms.localizationpriority: medium
 ---

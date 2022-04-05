@@ -8,4 +8,5 @@
 > [!NOTE]
 > Keyboard shortcuts work only on platforms that support the following requirement sets. For more about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 >
-> - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
+> - [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
+> - Also needed if the add-in enables the user to customize keyboard shortcuts: [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)

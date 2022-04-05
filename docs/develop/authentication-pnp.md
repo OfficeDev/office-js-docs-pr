@@ -1,8 +1,8 @@
 ---
 ms.date: 01/24/2020
 ms.prod: non-product-specific
-description: 'Authentication resources and samples.'
-title: 'Authentication resources and samples'
+description: Authentication resources and code samples.
+title: Authentication resources and samples
 ms.localizationpriority: medium
 ---
 
@@ -17,6 +17,6 @@ The following articles and samples are provided to help with authentication scen
 
 ## Code samples
 
-- [Get OneDrive data using Microsoft Graph and MSAL.NET in an Office Add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
-- [Get OneDrive data using Microsoft Graph and msal.js in an Office Add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
-- [Get Excel workbooks using Microsoft Graph and MSAL in an Outlook Add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
+- [Get OneDrive data using Microsoft Graph and MSAL.NET in an Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
+- [Get OneDrive data using Microsoft Graph and msal.js in an Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)
+- [Get Excel workbooks using Microsoft Graph and MSAL in an Outlook Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)

@@ -1,7 +1,7 @@
 ---
 title: Convert an Office Add-in project in Visual Studio to TypeScript
-description: 'Learn how to convert an Office Add-in project in Visual Studio to use TypeScript.'
-ms.date: 07/08/2021
+description: Learn how to convert an Office Add-in project in Visual Studio to use TypeScript.
+ms.date: 02/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -10,24 +10,24 @@ ms.localizationpriority: medium
 You can use the Office Add-in template in Visual Studio to create an add-in that uses JavaScript, and then convert that add-in project to TypeScript. This article describes this conversion process for an Excel add-in. You can use the same process to convert other types of Office Add-in projects from JavaScript to TypeScript in Visual Studio.
 
 > [!IMPORTANT]
-> This article describes the *minimal* steps necessary to ensure that, when you press F5, the code will be transpiled to JavaScript which is then sideloaded automatically into Office. However, the code is not very "TypeScripty". For example, variables are declared with the `var` keyword instead of `let` and they are not declared with a specified type. To take full advantage of the strong typing of TypeScript, consider making further changes to the code. 
+> This article describes the *minimal* steps necessary to ensure that, when you press F5, the code will be transpiled to JavaScript which is then sideloaded automatically into Office. However, the code is not very "TypeScripty". For example, variables are declared with the `var` keyword instead of `let` and they are not declared with a specified type. To take full advantage of the strong typing of TypeScript, consider making further changes to the code.
 
 > [!NOTE]
-> To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Yeoman generator" section of any [5-minute quick start](../index.yml) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
+> To create an Office Add-in TypeScript project without using Visual Studio, follow the instructions in the "Yeoman generator" section of any [5-minute quick start](../index.yml) and choose `TypeScript` when prompted by the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md).
 
 ## Prerequisites
 
-- [Visual Studio 2019](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
+- [Visual Studio 2019 or later](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
 
     > [!TIP]
-    > If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-workloads).
+    > If you've previously installed Visual Studio, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed. If this workload is not yet installed, use the Visual Studio Installer to [install it](/visualstudio/install/modify-visual-studio#modify-workloads).
 
-- TypeScript SDK version 2.3 or later (for Visual Studio 2019)
+- TypeScript SDK version 2.3 or later.
 
     > [!TIP]
     > In the [Visual Studio Installer](/visualstudio/install/modify-visual-studio), select the **Individual components** tab and then scroll down to the **SDKs, libraries, and frameworks** section. Within that section, ensure that at least one of the **TypeScript SDK** components (version 2.3 or later) is selected. If none of the **TypeScript SDK** components are selected, select the latest available version of the SDK and then choose **Modify** to [install that individual component](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components).
 
-- Excel 2016 or later
+- Excel 2016 or later.
 
 ## Create the add-in project
 
@@ -232,4 +232,4 @@ For your reference, the following code snippet shows the contents of the **Home.
 ## See also
 
 - [Promise implementation discussion on StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-- [Office Add-in samples on GitHub](https://github.com/officedev)
+- [Office Add-in samples on GitHub](https://github.com/OfficeDev/Office-Add-in-samples)

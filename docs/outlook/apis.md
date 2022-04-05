@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in APIs
-description: 'Learn how to reference the Outlook add-in APIs and declare permissions in your Outlook add-in.'
-ms.date: 02/21/2021
+description: Learn how to reference the Outlook add-in APIs and declare permissions in your Outlook add-in.
+ms.date: 01/14/2022
 ms.localizationpriority: medium
 ---
 
@@ -11,13 +11,14 @@ To use APIs in your Outlook add-in, you must specify the location of the Office.
 
 ## Office.js library
 
-To interact with the Outlook add-in API, you need to use the JavaScript APIs in Office.js. The CDN for the library is `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Add-ins submitted to AppSource must reference Office.js by this CDN; they can't use a local reference.
+To interact with the Outlook add-in API, you need to use the JavaScript APIs in Office.js. The content delivery network (CDN) for the library is `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Add-ins submitted to AppSource must reference Office.js by this CDN; they can't use a local reference.
 
 Reference the CDN in a `<script>` tag in the `<head>` tag of the web page (.html, .aspx, or .php file) that implements the UI of your add-in.
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
+
 As we add new APIs, the URL to Office.js will stay the same. We will change the version in the URL only if we break an existing API behavior.
 
 > [!IMPORTANT]
@@ -43,7 +44,7 @@ if (item.somePropertyOrFunction) {
 > These checks are not needed for any APIs that are in the requirement set version specified in the manifest.
 
 Specify the minimum requirement set that supports the critical set of APIs for your scenario, without which features of your add-in won't work. You specify the requirement set in the manifest in the `<Requirements>` element. For more information, see [Outlook add-in manifests](manifests.md) and
-[Understanding Outlook API requirement sets](../reference/requirement-sets/outlook-api-requirement-sets.md).
+[Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
 The `<Methods>` element doesn't apply to Outlook add-ins, so you can't declare support for specific methods.
 
@@ -58,7 +59,7 @@ Your add-in requires the appropriate permissions to use the APIs that it needs. 
 | **Restricted** | Allows use of entities but not regular expressions. |
 | **Read item** | In addition to what is allowed in **Restricted**, it allows:<ul><li>regular expressions</li><li>Outlook add-in API read access</li><li>getting the item properties and the callback token</li></ul> |
 | **Read/write** | In addition to what is allowed in **Read item**, it allows:<ul><li>full Outlook add-in API access except `makeEwsRequestAsync`</li><li>setting the item properties</li></ul> |
-| **Read/write mailbox** | In addition to what is allowed in **Read/write**, it allows:<ul><li>creating, reading, writing items and folders</li><li>sending items</li><li>calling [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)</li></ul> |
+| **Read/write mailbox** | In addition to what is allowed in **Read/write**, it allows:<ul><li>creating, reading, writing items and folders</li><li>sending items</li><li>calling [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
 
 In general, you should specify the minimum permission needed for your add-in. Permissions are declared in the `<Permissions>` element in the manifest. For more information, see [Outlook add-in manifests](manifests.md). For information about security issues, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md).
 
@@ -69,5 +70,5 @@ In general, you should specify the minimum permission needed for your add-in. Pe
 ## See also
 
 - [Outlook add-in manifests](manifests.md)
-- [Understanding Outlook API requirement sets](../reference/requirement-sets/outlook-api-requirement-sets.md)
+- [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)

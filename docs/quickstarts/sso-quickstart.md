@@ -1,12 +1,12 @@
 ---
-title: Use the Yeoman generator to create an Office Add-in that uses SSO
+title: Single sign-on (SSO) quick start
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on.
-ms.date: 11/03/2020
+ms.date: 01/25/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
 ---
 
-# Use the Yeoman generator to create an Office Add-in that uses single sign-on
+# Single sign-on (SSO) quick start
 
 In this article, you'll walk through the process of using the Yeoman generator to create an Office Add-in for Excel, Outlook, Word, or PowerPoint that uses single sign-on (SSO) when possible, and uses an alternate method of user authentication when SSO is not supported.
 
@@ -19,7 +19,7 @@ The Yeoman generator simplifies the process of creating an SSO add-in, by automa
 
 - [Node.js](https://nodejs.org) (the latest [LTS](https://nodejs.org/about/releases) version).
 
-- The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt.
+- The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). To install these tools globally, run the following command via the command prompt.
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -57,7 +57,7 @@ The add-in project that you've created with the Yeoman generator contains code f
 
 At this point, your add-in project has been created and contains the code that's necessary to facilitate the SSO process. Next, complete the following steps to configure SSO for your add-in.
 
-1. Navigate to the root folder of the project.
+1. Go to the root folder of the project.
 
     ```command&nbsp;line
     cd "My SSO Office Add-in"
@@ -89,8 +89,7 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
 
 1. When the SSO configuration process completes, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 
-    > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
@@ -121,8 +120,7 @@ Complete the following steps to try out an Outlook add-in.
 
 1. When the SSO configuration process completes, run the following command to build the project and start the local web server.
 
-    > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start

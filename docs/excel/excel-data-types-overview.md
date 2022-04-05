@@ -1,7 +1,7 @@
 ---
 title: Overview of data types in Excel add-ins
-description: 'Data types in the Excel JavaScript API enable Office Add-in developers to work with formatted number values, web images, entity values, arrays within entity values, and enhanced errors as data types.'
-ms.date: 11/01/2021
+description: Data types in the Excel JavaScript API enable Office Add-in developers to work with formatted number values, web images, entity values, arrays within entity values, and enhanced errors as data types.
+ms.date: 12/27/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -11,10 +11,14 @@ ms.localizationpriority: high
 # Overview of data types in Excel add-ins (preview)
 
 > [!NOTE]
-> Data types APIs are currently only available in public preview. Preview APIs are subject to change and are not intended for use in a production environment. Do not use preview APIs in a production environment or within business-critical documents.
-
-> [!IMPORTANT]
-> Some of the data types APIs, such as `Range.valuesAsJSON` are in active development and are not yet available in public preview. This article is intended as a conceptual introduction. Concepts described in this article that are not yet in public preview will be released to preview soon.
+> Data types APIs are currently only available in public preview. Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview APIs in a production environment or within business-critical documents.
+>
+> To use preview APIs:
+>
+> - You must reference the **beta** library on the content delivery network (CDN) (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`. For additional information, see the [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) NPM package readme.
+> - You may need to join the [Office Insider program](https://insider.office.com) for access to more recent Office builds.
+>
+> To try out data types in Office on Windows, you must have an Excel build number greater than or equal to 16.0.14626.10000. To try out data types in Office on Mac, you must have an Excel build number greater than or equal to 16.55.21102600.
 
 Data types in the Excel JavaScript API enable add-in developers to organize complex data structures as objects, such as formatted number values, web images, and entity values.
 
@@ -26,10 +30,10 @@ Data types expand Excel JavaScript API support beyond the four original data typ
 
 [!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
 
-Data types enhance the power of custom functions. Custom functions accept data types as both inputs to custom functions and outputs of custom functions, and custom functions use the same JSON schema for data types as the Excel JavaScript API. This data types JSON schema is maintained as custom functions calculate and evaluate. To learn more about integrating data types with your custom functions, see [Custom functions and data types core concepts](/custom-functions-data-types-concepts.md).
+Data types enhance the power of custom functions. Custom functions accept data types as both inputs to custom functions and outputs of custom functions, and custom functions use the same JSON schema for data types as the Excel JavaScript API. This data types JSON schema is maintained as custom functions calculate and evaluate. To learn more about integrating data types with your custom functions, see [Custom functions and data types](custom-functions-data-types-concepts.md).
 
 ## See also
 
-* [Excel data types core concepts](/excel-data-types-concepts.md)
-* [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
-* [Custom functions and data types overview](/custom-functions-data-types-overview.md)
+- [Excel data types core concepts](excel-data-types-concepts.md)
+- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
+- [Custom functions and data types](custom-functions-data-types-concepts.md)

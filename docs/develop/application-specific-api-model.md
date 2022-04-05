@@ -1,19 +1,19 @@
 ---
 title: Using the application-specific API model
-description: 'Learn about the promise-based API model for Excel, OneNote, and Word add-ins.'
-ms.date: 07/08/2021
+description: Learn about the promise-based API model for Excel, OneNote, and Word add-ins.
+ms.date: 02/11/2022
 ms.localizationpriority: medium
 ---
 
 # Application-specific API model
 
-This article describes how to use the API model for building add-ins in Excel, Word, and OneNote. It introduces core concepts that are fundamental to using the promise-based APIs.
+This article describes how to use the API model for building add-ins in Excel, Word, PowerPoint, and OneNote. It introduces core concepts that are fundamental to using the promise-based APIs.
 
 > [!NOTE]
-> This model is not supported by Office 2013 clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those Office versions. For full platform availability notes, see [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md).
+> This model is not supported by Office 2013 clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those Office versions. For full platform availability notes, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
 
 > [!TIP]
-> The examples in this page use the Excel JavaScript APIs, but the concepts also apply to OneNote, Visio, and Word JavaScript APIs.
+> The examples in this page use the Excel JavaScript APIs, but the concepts also apply to OneNote, PowerPoint, Visio, and Word JavaScript APIs.
 
 ## Asynchronous nature of the promise-based APIs
 
@@ -90,18 +90,11 @@ Calling the `sync()` method on the request context synchronizes the state betwee
 The following example shows a batch function that defines a local JavaScript proxy object (`selectedRange`), loads a property of that object, and then uses the JavaScript promises pattern to call `context.sync()` to synchronize the state between proxy objects and objects in the Excel document.
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     var selectedRange = context.workbook.getSelectedRange();
     selectedRange.load('address');
-    return context.sync()
-      .then(function () {
-        console.log('The selected range is: ' + selectedRange.address);
-    });
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    await context.sync();
+    console.log('The selected range is: ' + selectedRange.address);
 });
 ```
 
@@ -118,25 +111,18 @@ In the Excel JavaScript API, `sync()` is the only asynchronous operation, and it
 Before you can read the properties of a proxy object, you must explicitly load the properties to populate the proxy object with data from the Office document, and then call `context.sync()`. For example, if you create a proxy object to reference a selected range, and then want to read the selected range's `address` property, you need to load the `address` property before you can read it. To request properties of a proxy object be loaded, call the `load()` method on the object and specify the properties to load. The following example shows the `Range.address` property being loaded for `myRange`.
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     var sheetName = 'Sheet1';
     var rangeAddress = 'A1:B2';
     var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
     myRange.load('address');
+    await context.sync();
+      
+    console.log (myRange.address);   // ok
+    //console.log (myRange.values);  // not ok as it was not loaded
 
-    return context.sync()
-      .then(function () {
-        console.log (myRange.address);   // ok
-        //console.log (myRange.values);  // not ok as it was not loaded
-        });
-    }).then(function () {
-        console.log('done');
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    console.log('done');
 });
 ```
 
@@ -179,11 +165,10 @@ var tableCount = context.workbook.tables.getCount();
 
 // This sync call implicitly loads tableCount.value.
 // Any other ClientResult values are loaded too.
-return context.sync()
-    .then(function () {
-        // Trying to log the value before calling sync would throw an error.
-        console.log (tableCount.value);
-    });
+await context.sync();
+
+// Trying to log the value before calling sync would throw an error.
+console.log (tableCount.value);
 ```
 
 ### set()
@@ -193,8 +178,8 @@ Setting properties on an object with nested navigation properties can be cumbers
 The following code sample sets several format properties of a range by calling the `set()` method and passing in a JavaScript object with property names and types that mirror the structure of properties in the `Range` object. This example assumes that there is data in range **B2:E2**.
 
 ```js
-Excel.run(function (ctx) {
-    var sheet = ctx.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    var sheet = context.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:E2");
     range.set({
         format: {
@@ -209,12 +194,7 @@ Excel.run(function (ctx) {
     });
     range.format.autofitColumns();
 
-    return ctx.sync();
-}).catch(function(error) {
-    console.log("Error: " + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log("Debug info: " + JSON.stringify(error.debugInfo));
-    }
+    await context.sync();
 });
 ```
 
@@ -229,7 +209,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 In the previous example, you would ***not*** be able to directly assign `zoom` a value: `sheet.pageLayout.zoom.scale = 200;`. That statement throws an error because `zoom` is not loaded. Even if `zoom` were to be loaded, the set of scale will not take effect. All context operations happen on `zoom`, refreshing the proxy object in the add-in and overwriting locally set values.
 
-This behavior differs from [navigational properties](application-specific-api-model.md#scalar-and-navigation-properties) like [Range.format](/javascript/api/excel/excel.range#format). Properties of `format` can be set using object navigation, as shown here.
+This behavior differs from [navigational properties](application-specific-api-model.md#scalar-and-navigation-properties) like [Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member). Properties of `format` can be set using object navigation, as shown here.
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.
@@ -250,20 +230,21 @@ For example, you can call the `getItemOrNullObject()` method on a collection suc
 > [!NOTE]
 > The `*OrNullObject` variations do not ever return the JavaScript value `null`. They return ordinary Office proxy objects. If the the entity that the object represents does not exist then the `isNullObject` property of the object is set to `true`. Do not test the returned object for nullity or falsity. It is never `null`, `false`, or `undefined`.
 
-The following code sample attempts to retrieve an Excel worksheet named "Data" by using the `getItemOrNullObject()` method. If a worksheet with that name does not exist, a new sheet is created. Note that the code does not load the `isNullObject` property. Office automatically loads this property when `context.sync` is called, so you do not need to explicitly load it with something like `datasheet.load('isNullObject')`.
+The following code sample attempts to retrieve an Excel worksheet named "Data" by using the `getItemOrNullObject()` method. If a worksheet with that name does not exist, a new sheet is created. Note that the code does not load the `isNullObject` property. Office automatically loads this property when `context.sync` is called, so you do not need to explicitly load it with something like `dataSheet.load('isNullObject')`.
 
 ```js
-var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
-
-return context.sync()
-    .then(function () {
-        if (dataSheet.isNullObject) {
-            dataSheet = context.workbook.worksheets.add("Data");
-        }
-
-        // Set `dataSheet` to be the second worksheet in the workbook.
-        dataSheet.position = 1;
-    });
+await Excel.run(async (context) => {
+    var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
+    
+    await context.sync();
+    
+    if (dataSheet.isNullObject) {
+        dataSheet = context.workbook.worksheets.add("Data");
+    }
+    
+    // Set `dataSheet` to be the second worksheet in the workbook.
+    dataSheet.position = 1;
+});
 ```
 
 ## See also

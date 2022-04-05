@@ -1,7 +1,7 @@
 ---
 title: UI-less custom functions debugging
 description: Learn how to debug your Excel custom functions that don't use a task pane.
-ms.date: 07/08/2021
+ms.date: 01/13/2022
 ms.localizationpriority: medium
 ---
 
@@ -30,7 +30,7 @@ On Mac:
 
 ## Requirements
 
-This debugging process works **only** for UI-less custom functions, which don't use a task pane or other UI elements. A UI-less custom function can be created by following the steps in the [Create custom functions in Excel](../tutorials/excel-tutorial-create-custom-functions.md) tutorial, and then removing all of the task pane and UI elements that are installed by the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office).
+This debugging process works **only** for UI-less custom functions, which don't use a task pane or other UI elements. To create a UI-less custom function, follow the steps in the [Create custom functions in Excel](../tutorials/excel-tutorial-create-custom-functions.md) tutorial, and then remove all of the task pane and UI elements that are installed by the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 Note that this debugging process is not compatible with custom functions projects using a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
@@ -63,7 +63,7 @@ At this point, execution will stop on the line of code where you set the breakpo
 
 ## Use the VS Code debugger for Excel in Microsoft Edge
 
-You can use VS Code to debug UI-less custom functions in Excel on the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Debugger for Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) extension.
+You can use VS Code to debug UI-less custom functions in Excel on the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Microsoft Edge DevTools extension for Visual Studio Code](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension).
 
 ### Run your add-in from VS Code
 
@@ -144,9 +144,9 @@ If you are not using VS Code, you can use the command line (such as bash, or Pow
   
     Or if you prefer to start your add-in in Excel on the web run the following command.
   
-    `npm run start:web`
+    `npm run start:web -- --document {url}` (where `{url}` is the URL of an Excel file on OneDrive or SharePoint)
   
-    For Excel on the web you also need to sideload your add-in. Follow the steps in [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
+    If your add-in does not sideload in the document, follow the steps in [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
   
 4. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
 5. In developer tools, open your source code script file (**functions.js** or **functions.ts**). Your custom functions code may be located near the end of the file.
@@ -166,7 +166,7 @@ There are several build tasks available.
 You can use the following tasks to start debugging on desktop or online.
 
 - `npm run start:desktop`: Starts Excel on desktop and sideloads your add-in.
-- `npm run start:web`: Starts Excel on the web and sideloads your add-in.
+- `npm run start:web -- --document {url}` (where `{url}` is the URL of an Excel file on OneDrive or SharePoint): Starts Excel on the web and sideloads your add-in.
 - `npm run stop`: Stops Excel and debugging.
 
 ## Next steps

@@ -2,6 +2,7 @@
 title: Outlook add-ins overview
 description: Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. 
 ms.date: 07/16/2021
+ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
 ---
@@ -46,7 +47,7 @@ Outlook add-ins activate when the user is composing or reading a message or appo
   >
   > - Add-ins activate on digitally signed messages in Outlook associated with a Microsoft 365 subscription. On Windows, this support was introduced with build 8711.1000.
   >
-  > - Starting with Outlook build 13229.10000 on Windows, add-ins can now activate on items protected by IRM. For more information about this feature in preview, refer to [Add-in activation on items protected by Information Rights Management (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+  > - Starting with Outlook build 13229.10000 on Windows, add-ins can now activate on items protected by IRM. For more information about this feature in preview, refer to [Add-in activation on items protected by Information Rights Management (IRM)](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 - A delivery report or notification that has the message class IPM.Report.*, including delivery and Non-Delivery Report (NDR) reports, and read, non-read, and delay notifications.
 
@@ -57,7 +58,7 @@ Outlook add-ins activate when the user is composing or reading a message or appo
 - In a [group mailbox](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), in a shared mailbox\*, in another user's mailbox\*, in an [archive mailbox](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox), or in a public folder.
 
   > [!IMPORTANT]
-  > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in [requirement set 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). Shared mailbox support is now in preview. To learn more, refer to [Enable shared folders and shared mailbox scenarios](delegate-access.md).
+  > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8). Shared mailbox support is now in preview. To learn more, refer to [Enable shared folders and shared mailbox scenarios](delegate-access.md).
 
 - Using a custom form.
 
@@ -69,7 +70,7 @@ Currently, there are additional considerations when designing and implementing a
 
 ## Supported clients
 
-Outlook add-ins are supported in Outlook 2013 or later on Windows, Outlook 2016 or later on Mac, Outlook on the web for Exchange 2013 on-premises and later versions, Outlook on iOS, Outlook on Android, and Outlook on the web and Outlook.com. Not all of the newest features are supported in all [clients](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) at the same time. Please refer to articles and API references for those features to see which applications they may or may not be supported in.
+Outlook add-ins are supported in Outlook 2013 or later on Windows, Outlook 2016 or later on Mac, Outlook on the web for Exchange 2013 on-premises and later versions, Outlook on iOS, Outlook on Android, and Outlook on the web and Outlook.com. Not all of the newest features are supported in all [clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) at the same time. Please refer to articles and API references for those features to see which applications they may or may not be supported in.
 
 ## Get started building Outlook add-ins
 

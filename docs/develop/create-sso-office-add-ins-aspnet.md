@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
-ms.date: 09/03/2021
+ms.date: 03/28/2022
 ms.localizationpriority: medium
 ---
 
@@ -10,12 +10,11 @@ ms.localizationpriority: medium
 When users are signed in to Office, your add-in can use the same credentials to permit users to access multiple applications without requiring them to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with ASP.NET.
 
-> [!NOTE]
-> For a similar article about a Node.js-based add-in, see [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md).
-
 ## Prerequisites
 
 * Visual Studio 2019 or later.
+
+* The **Office/SharePoint development** workload when configuring Visual studio.
 
 * [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
@@ -23,11 +22,11 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.
 
-* A Microsoft Azure subscription. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* An Azure account with an active subscription - [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 ## Set up the starter project
 
-Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
+Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 > [!NOTE]
 > There are two versions of the sample.
@@ -35,73 +34,79 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/Offi
 > * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
 > * The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Complete" and skip the sections **Code the client side** and **Code the server side**.
 
-## Register the add-in with Azure AD v2.0 endpoint
+## Register the add-in through an app registration
 
-1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
+First, complete the steps in [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app) to register the add-in.
 
-1. Sign in with the ***admin*** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
+Use the following settings for your app registration.
 
-1. Select **New registration**. On the **Register an application** page, set the values as follows.
-
-    * Set **Name** to `Office-Add-in-ASPNET-SSO`.
-    * Set **Supported account types** to **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**. (If you want the add-in to be usable only by users in the tenancy where you are registering it, you can choose **Accounts in this organizational directory only ...** instead, but you will need to go through some additional setup steps. See **Setup for single-tenant** below.)
-    * In the **Redirect URI** section, ensure that **Web** is selected in the drop down and then set the URI to` https://localhost:44355/AzureADAuth/Authorize`.
-    * Choose **Register**.
-
-1. On the **Office-Add-in-ASPNET-SSO** page, copy and save the value for the **Application (client) ID**. You'll need it in later procedures.
+* Name: `Office-Add-in-ASPNET-SSO`
+* Supported account types: **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**
 
     > [!NOTE]
-    > This **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
+    >  If you want the add-in to be usable only by users in the tenancy where you are registering it, you can choose **Accounts in this organizational directory only ...** instead, but you'll need to go through some additional setup steps. See **Setup for single-tenant** later in this article.
 
-1. Under **Manage**, select **Certificates & secrets**. Select the **New client secret** button. Enter a value for **Description**, then select an appropriate option for **Expires** and choose **Add**. *Copy the client secret value (not the Secret ID) immediately and save it with the application ID* before proceeding as you'll need it in a later procedure.
+* Platform: **Web**
+* Redirect URI: **https://localhost:44355/AzureADAuth/Authorize**
+* Client secret: `*********` (record this value after creation - it's shown only once)
 
-1. Under **Manage**, select **Expose an API**. Select the **Set** link to generate the Application ID URI in the form "api://$App ID GUID$", where $App ID GUID$ is the **Application (client) ID**. Insert `localhost:44355/` (note the forward slash "/" appended to the end) after the `//` and before the GUID. The entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
+### Expose a web API
 
-1. Select **Save** on the dialog.
+1. In the app registration you created, select **Expose an API > Add a scope**.
+   You're prompted to set an **Application ID URI** if you haven't yet configured one.
 
-1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **Scope** name.
+    The App ID URI acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. Use the form `api://localhost:44355/[application-id-guid]`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
-1. Set **Who can consent?** to **Admins and users**.
+1. Specify the scope's attributes in the **Add a scope** pane.
 
-1. Fill in the fields for configuring the admin and user consent prompts with values that are appropriate for the `access_as_user` scope which enables the Office client application to use your add-in's web APIs with the same rights as the current user. Suggestions:
+    |Field          |Value  |
+    |---------------|---------|
+    |**Scope name** | `access_as_user`|
+    |**Who can consent** | **Admins and users**|
+    |**Admin consent display name** | Office can act as the user.|
+    |**Admin consent description** | Enable Office to call the add-in's web APIs with the same rights as the current user.|
+    |**User consent display name** | Office can act as you.|
+    |**User consent description** | Enable Office to call the add-in's web APIs with the same rights that you have.|
 
-    * **Admin consent display name**: Office can act as the user.
-    * **Admin consent description**: Enable Office to call the add-in's web APIs with the same rights as the current user.
-    * **User consent display name**: Office can act as you.
-    * **User consent description**: Enable Office to call the add-in's web APIs with the same rights that you have.
-
-1. Ensure that **State** is set to **Enabled**.
-
-1. Select **Add scope** .
+1. Set the **State** to **Enabled**, and then select **Add scope**.
 
     > [!NOTE]
     > The domain part of the **Scope** name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
-1. In the **Authorized client applications** section, you identify the applications that you want to authorize to your add-in's web application. Each of the following IDs needs to be pre-authorized.
+1. In the **Authorized client applications** section, enter the following ID to pre-authorize all Microsoft Office application endpoints.
 
-    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office on the web)
-    * `08e18876-6177-487e-b8b5-cf950c1e598c` (Office on the web)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
+   - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (All Microsoft Office application endpoints)
 
-    For each ID, take these steps.
+    > [!NOTE]
+    > The `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID pre-authorizes Office on all the following platforms. Alternatively, you can enter a proper subset of the following IDs if for any reason you want to deny authorization to Office on some platforms. Just leave out the IDs of the platforms from which you want to withhold authorization. Users of your add-in on those platforms will not be able to call your Web APIs, but other functionality in your add-in will still work.
+    >
+    > - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
+    > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
-    a. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/$App ID GUID$/access_as_user`.
+1. Select **Add a client application**. In the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/[application-id-guid]/access_as_user`.
 
-    b. Select **Add application**.
+1. Select **Add application**.
 
-1. Under **Manage**, select **API permissions** and then select **Add a permission**. On the panel that opens, choose **Microsoft Graph** and then choose **Delegated permissions**.
+### Configure Microsoft Graph permissions
 
-1. Use the **Select permissions** search box to search for the permissions your add-in needs. Select the following. Only the first is really required by your add-in itself; but the `profile` permission is required for the Office application to get a token to your add-in web application.
+1. Select **API permissions > Add a permission > Microsoft Graph**.
 
-    * Files.Read.All
-    * profile
+1. Select **Delegated permissions**. Microsoft Graph exposes many permissions, with the most commonly used shown at the top of the list.
+
+1. Under **Select permissions**, select the following permissions.
+
+    |Permission     |Description  |
+    |---------------|-------------|
+    |Files.Read.All |Read all files that user can access. |
+    |profile        |View users' basic profile. Required for the Office application to get a token to your add-in web application. |
 
     > [!NOTE]
     > The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.
 
-1. Select the check box for each permission as it appears. After selecting the permissions that your add-in needs, select the **Add permissions** button at the bottom of the panel.
+1. Select **Add permissions** to complete the process.
+
+Whenever you configure permissions, users of your app are asked at sign-in for their consent to allow your app to access the resource API on their behalf. As an admin, you can also grant consent on behalf of all users so they're not prompted to do so.
 
 1. On the same page, choose the **Grant admin consent for [tenant name]** button, and then select **Accept** for the confirmation that appears.
 
@@ -161,7 +166,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     * An assignment to the `Office.initialize` method that, in turn, assigns a handler to the `getGraphAccessTokenButton` button click event.
     * A `showResult` method that will display data returned from Microsoft Graph (or an error message) at the bottom of the task pane.
     * A `logErrors` method that will log to console errors that are not intended for the end user.
-    * Code that implements the fallback authorization system that the add-in will use in scenarios where SSO is not supported or has errored.
+    * Code that implements the fallback authorization system that the add-in will use in scenarios where SSO is not supported or an error occurred.
 
 1. Below the assignment to `Office.initialize`, add the code below. About this code, note:
 
@@ -179,12 +184,15 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Below the `getGraphData` function add the following function. Note that you create the `handleClientSideErrors` function in a later step.
 
+    > [!NOTE]
+    > To distinguish between the two access tokens you work with in this article, the token returned from getAccessToken() is referred to as a bootstrap token. It is later exchanged through the On-Behalf-Of flow for a new token with access to Microsoft Graph.
+
     ```javascript
     async function getDataWithToken(options) {
         try {
 
             // TODO 1: Get the bootstrap token and send it to the server to exchange
-            //         for an access token to Microsoft Graph and then get the data
+            //         for a new access token to Microsoft Graph and then get the data
             //         from Microsoft Graph.
 
         }
@@ -198,6 +206,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         }
     }
     ```
+
 
 1. Replace `TODO 1` with the following code to get the access token from the Office host. The **options** parameter contains the following settings passed from the previous **getGraphData()** function.
 
@@ -484,9 +493,9 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         // TODO 2: Assemble all the information that is needed to get a
         //         token for Microsoft Graph using the on-behalf-of flow.
 
-        // TODO 3: Get the access token for Microsoft Graph.
+        // TODO 3: Get a new access token for Microsoft Graph.
 
-        // TODO 4: Use the token to call Microsoft Graph.
+        // TODO 4: Use the new access token to call Microsoft Graph.
     }
     ```
 

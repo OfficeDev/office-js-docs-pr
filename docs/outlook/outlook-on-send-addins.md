@@ -28,7 +28,7 @@ The following table shows supported client-server combinations for the on-send f
 |Web browser:<br>classic Outlook UI|Not applicable|Yes|Yes|
 
 > [!NOTE]
-> The on-send feature was officially released in requirement set 1.8 (see [current server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details). However, note that the feature's support matrix is a superset of the requirement set's.
+> The on-send feature was officially released in requirement set 1.8 (see [current server and client support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details). However, note that the feature's support matrix is a superset of the requirement set's.
 
 > [!IMPORTANT]
 > Add-ins that use the on-send feature aren't allowed in [AppSource](https://appsource.microsoft.com).
@@ -58,7 +58,7 @@ The following screenshot shows an information bar that notifies the sender that 
 
 The on-send feature currently has the following limitations.
 
-- **Append-on-send** feature &ndash; If you call [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) in the on-send handler, an error is returned.
+- **Append-on-send** feature &ndash; If you call [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1)) in the on-send handler, an error is returned.
 - **AppSource** &ndash; You can't publish Outlook add-ins that use the on-send feature to [AppSource](https://appsource.microsoft.com) as they will fail AppSource validation. Add-ins that use the on-send feature should be deployed by administrators.
 - **Manifest** &ndash; Only one `ItemSend` event is supported per add-in. If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.
 - **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
@@ -379,10 +379,10 @@ While on-send add-ins are processing an item, the user can edit the item by addi
 
 In your on-send handler:
 
-1. Call [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displayDialogAsync_startAddress__options__callback_) to open a dialog so that mouse clicks and keystrokes are disabled.
+1. Call [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#office-office-ui-displaydialogasync-member(1)) to open a dialog so that mouse clicks and keystrokes are disabled.
 
     > [!IMPORTANT]
-    > To get this behavior in classic Outlook on the web, you should set the [displayInIframe property](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayInIframe) to `true` in the `options` parameter of the `displayDialogAsync` call.
+    > To get this behavior in classic Outlook on the web, you should set the [displayInIframe property](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#office-office-dialogoptions-displayiniframe-member) to `true` in the `options` parameter of the `displayDialogAsync` call.
 
 1. Implement processing of the item.
 1. Close the dialog. Also, handle what happens if the user closes the dialog.
@@ -480,7 +480,7 @@ function validateBody(event) {
 The `validateBody` function gets the current body in the specified format (HTML) and passes the `ItemSend` event object that the code wants to access in the callback method. In addition to the `getAsync` method, the `Body` object also provides a `setAsync` method that you can use to replace the body with the specified text.
 
 > [!NOTE]
-> For more information, see [Event Object](/javascript/api/office/office.addincommands.event) and [Body.getAsync](/javascript/api/outlook/office.body#getAsync_coercionType__options__callback_).
+> For more information, see [Event Object](/javascript/api/office/office.addincommands.event) and [Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1)).
   
 
 ### `NotificationMessages` object and `event.completed` method
@@ -519,11 +519,11 @@ The following are the parameters for the `addAsync` method.
 To signal that the add-in has finished processing the `ItemSend` event triggered by the send operation, call the `event.completed({allowEvent:Boolean})` method. The `allowEvent` property is a Boolean. If set to `true`, send is allowed. If set to `false`, the email message is blocked from sending.
 
 > [!NOTE]
-> For more information, see [notificationMessages](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) and [completed](/javascript/api/office/office.addincommands.event).
+> For more information, see [notificationMessages](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [completed](/javascript/api/office/office.addincommands.event).
 
 ### `replaceAsync`, `removeAsync`, and `getAllAsync` methods
 
-In addition to the `addAsync` method, the `NotificationMessages` object also includes `replaceAsync`, `removeAsync`, and `getAllAsync` methods.  These methods are not used in this code sample.  For more information, see [NotificationMessages](/javascript/api/outlook/office.NotificationMessages).
+In addition to the `addAsync` method, the `NotificationMessages` object also includes `replaceAsync`, `removeAsync`, and `getAllAsync` methods.  These methods are not used in this code sample.  For more information, see [NotificationMessages](/javascript/api/outlook/office.notificationmessages).
 
 
 ### Subject and CC checker code
