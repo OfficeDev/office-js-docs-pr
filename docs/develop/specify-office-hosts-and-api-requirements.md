@@ -1,7 +1,7 @@
 ---
 title: Specify Office hosts and API requirements
 description: Learn how to specify Office applications and API requirements for your add-in to work as expected.
-ms.date: 01/26/2022
+ms.date: 04/04/2022
 ms.localizationpriority: medium
 ---
 
@@ -102,7 +102,7 @@ Use the [Requirements](/javascript/api/manifest/requirements) element and its ch
 If the Office application or platform doesn't support the requirement sets or API members specified in the **Requirements** element, the add-in won't run in that application or platform, and won't display in **My Add-ins**.
 
 > [!NOTE]
-> The **Requirements** element is optional for all add-ins, except for Outlook add-ins. When the `xsi:type` attribute of the root `OfficeApp` element is `MailBox`, there must be a **Requirements** element that specifies the minimum version of the MailBox requirement set that the add-in requires. For more information, see [Outlook JavaScript API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
+> The **Requirements** element is optional for all add-ins, except for Outlook add-ins. When the `xsi:type` attribute of the root `OfficeApp` element is `MailApp`, there must be a **Requirements** element that specifies the minimum version of the Mailbox requirement set that the add-in requires. For more information, see [Outlook JavaScript API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
 The following code example shows how to configure an add-in that is installable in all Office applications that support the following:
 

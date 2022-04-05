@@ -1,7 +1,7 @@
 ---
 title: Fluent UI React in Office Add-ins
 description: Learn how to use Fluent UI React in Office Add-ins.
-ms.date: 01/13/2022
+ms.date: 04/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -80,8 +80,8 @@ At this point, you've created a very basic task pane add-in that's built using R
 
 ```typescript
 import * as React from 'react';
-import { PrimaryButton, IButtonProps } from '@fluentui/react/lib/components/Button';
-import { Label } from '@fluentui/react/lib/components/Label';
+import { PrimaryButton, IButtonProps } from '@fluentui/react/lib/Button';
+import { Label } from '@fluentui/react/lib/Label';
 
 export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
   public constructor(props) {
