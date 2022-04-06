@@ -2,7 +2,7 @@
 title: Log appointments to a CRM application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointments to a CRM application.
 ms.topic: article
-ms.date: 11/02/2021
+ms.date: 04/06/2022
 ms.localizationpriority: medium
 ---
 
@@ -21,13 +21,13 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](../reference/manifest/extensionpoint.md#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors are not supported.
+To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors are not supported.
 
 1. In your code editor, open the quick start project.
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.
+1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML. Make sure to replace all references to **Contoso** with your company's information.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -43,25 +43,49 @@ To enable users to log appointment notes with your add-in, you must configure th
         <MobileFormFactor>
           <FunctionFile resid="residFunctionFile"/>
           <ExtensionPoint xsi:type="MobileLogEventAppointmentAttendee">
-            <Control xsi:type="MobileButton" id="appointmentReadFunctionButton">
-              <Label resid="residLabel"/>
-              <Icon>
-                <bt:Image size="25" scale="1" resid="icon-16"/>
-                <bt:Image size="25" scale="2" resid="icon-16"/>
-                <bt:Image size="25" scale="3" resid="icon-16"/>
-
-                <bt:Image size="32" scale="1" resid="icon-32"/>
-                <bt:Image size="32" scale="2" resid="icon-32"/>
-                <bt:Image size="32" scale="3" resid="icon-32"/>
-
-                <bt:Image size="48" scale="1" resid="icon-48"/>
-                <bt:Image size="48" scale="2" resid="icon-48"/>
-                <bt:Image size="48" scale="3" resid="icon-48"/>
-              </Icon>
-              <Action xsi:type="ExecuteFunction">
-                <FunctionName>logAppointmentDetails</FunctionName>
-              </Action>
-            </Control>
+            <OfficeTab id="TabDefault">
+              <Group id="mobileLogGroup">
+                <Label reside="GroupLabel"/>
+                <Control xsi:type="MobileButton" id="mobileLogEventButton">
+                  <Label resid="FunctionButton.Label"/>
+                  <Icon>
+                    <bt:Image size="25" scale="1" resid="icon-16"/>
+                    <bt:Image size="25" scale="2" resid="icon-16"/>
+                    <bt:Image size="25" scale="3" resid="icon-16"/>
+    
+                    <bt:Image size="32" scale="1" resid="icon-32"/>
+                    <bt:Image size="32" scale="2" resid="icon-32"/>
+                    <bt:Image size="32" scale="3" resid="icon-32"/>
+    
+                    <bt:Image size="48" scale="1" resid="icon-48"/>
+                    <bt:Image size="48" scale="2" resid="icon-48"/>
+                    <bt:Image size="48" scale="3" resid="icon-48"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>logAppointmentDetails</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="MobileButton" id="mobileViewButton">
+                  <Label resid="TaskpaneButton.Label"/>
+                  <Icon>
+                    <bt:Image size="25" scale="1" resid="icon-16"/>
+                    <bt:Image size="25" scale="2" resid="icon-16"/>
+                    <bt:Image size="25" scale="3" resid="icon-16"/>
+    
+                    <bt:Image size="32" scale="1" resid="icon-32"/>
+                    <bt:Image size="32" scale="2" resid="icon-32"/>
+                    <bt:Image size="32" scale="3" resid="icon-32"/>
+    
+                    <bt:Image size="48" scale="1" resid="icon-48"/>
+                    <bt:Image size="48" scale="2" resid="icon-48"/>
+                    <bt:Image size="48" scale="3" resid="icon-48"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="residTaskPaneUrl" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
           </ExtensionPoint>
         </MobileFormFactor>
       </Host>
@@ -76,6 +100,7 @@ To enable users to log appointment notes with your add-in, you must configure th
       </bt:Images>
       <bt:Urls>
         <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+        <bt:Url id="residTaskPaneUrl" DefaultValue="https://contoso.com/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="residDescription" DefaultValue="Log appointment details and notes to Contoso CRM"/>
@@ -92,7 +117,7 @@ To enable users to log appointment notes with your add-in, you must configure th
 > [!TIP]
 > To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
 
-## Implement capturing appointment details
+## Implement capturing appointment details using a UI-less command
 
 In this section, learn how your add-in can extract appointment details when the user taps the **Log** button.
 
@@ -101,16 +126,31 @@ In this section, learn how your add-in can extract appointment details when the 
 1. Replace the entire content of the **commands.js** file with the following JavaScript.
 
     ```js
-    var mailboxItem;
-
     // Office is ready.
     Office.onReady(function () {
-            mailboxItem = Office.context.mailbox.item;
-        }
+        // Add any initialization code here.
+      }
     );
 
-    /* TODO: To update!!! */
-    /* Code code code */
+    function logCRMEvent(appointmentEvent) {
+      getEventProperties(appointmentEvent);
+    }
+
+    function getEventProperties() {
+      console.log(`Subject: ${Office.context.mailbox.item.subject}`);
+      Office.context.mailbox.item.body.getAsync(
+        "html",
+        { asyncContext: "This is passed to the callback" },
+        function callback(result) {
+          if (result.status === Office.AsyncResultStatus.Succeeded) {
+            event.completed({ allowEvent: true });
+          } else {
+            console.error("Failed to get body.");
+            event.completed({ allowEvent: false });
+          }
+        }
+      );
+    }
 
     function getGlobal() {
       return typeof self !== "undefined"
@@ -125,35 +165,66 @@ In this section, learn how your add-in can extract appointment details when the 
     const g = getGlobal();
 
     // The add-in command functions need to be available in global scope.
-    g.logAppointmentDetails = logAppointmentDetails;
+    g.logAppointmentDetails = logCRMEvent;
     ```
 
 ## Implement viewing appointment details in a task pane
 
 In this section, learn how to display the logged appointment details in a task pane when the user taps the **View** button.
 
+1. From the same quick start project, open the file **./src/taskpane/taskapne.js** in your code editor.
+
+1. Replace the entire content of the **taskpane.js** file with the following JavaScript.
+
+    ```js
+    // Office is ready.
+    Office.onReady(function () {
+        // Add any initialization code here.
+      }
+    );
+
+    function getEventData() {
+      console.log(`Subject: ${Office.context.mailbox.item.subject}`);
+      Office.context.mailbox.item.body.getAsync(
+        "html",
+        function callback(result) {
+          if (result.)
+        }
+      );
+    }
+    ```
+
+## Implement toggling button from Log to View
+
+You can change the button label from **Log** to **View** if the add-in successfully logged the event by setting the custom properties on the event as shown in the following sample.
+
 ```js
-/* TODO: To update!!! */
-/* Code code code */
+function updateCustomProperties() {
+  Office.context.mailbox.item.loadCustomPropertiesAsync(
+    function callback(customPropertiesResult) {
+      if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
+        let customProperties = customPropertiesResult.value;
+        customProperties.set("EventLogged", true);
+        customProperties.saveAsync(
+          function callback(setSaveAsyncResult) {
+            if (setSaveAsyncResult.status === Office.AsyncResultStatus.Succeeded) {
+              console.log("event is logged successfully");
+            }
+          }
+        );
+      }
+    }
+  );
+}
 ```
 
 ## Implement viewing appointment details in a dialog
 
-Alternatively, you can display the logged appointment details in a dialog when the user taps the **View** button. This section describes that implementation.
-
-```js
-/* TODO: To update!!! */
-/* Code code code */
-```
+If you implemented a UI-less command, you can display the logged appointment details in a dialog when the user taps the **View** button. For details on using dialogs, refer to [Use the Office dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
 
 ## Implement deleting a log
 
-To delete the appointment log, use Microsoft Graph to clear the customer properties object when the user taps **Delete log**.
-
-```js
-/* TODO: To update!!! */
-/* Code code code */
-```
+To delete the appointment log or delete the logged event so it can be save another record, use Microsoft Graph to [clear the customer properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0) when the user taps **Delete log** in the task pane.
 
 ## Testing and validation
 
