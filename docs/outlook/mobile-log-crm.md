@@ -224,7 +224,7 @@ If you implemented a UI-less command, you can display the logged appointment det
 
 ## Implement deleting a log
 
-To delete the appointment log or delete the logged event so it can be save another record, use Microsoft Graph to [clear the customer properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0) when the user taps **Delete log** in the task pane.
+To delete the appointment log or delete the logged event so it can be save another record, use Microsoft Graph to [clear the customer properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user taps **Delete log** in the task pane.
 
 ## Testing and validation
 
