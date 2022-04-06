@@ -201,7 +201,7 @@ Configuring a shared runtime enables the following scenarios.
   - [Enable and Disable Add-in Commands](../design/disable-add-in-commands.md)
   - [Run code in your Office Add-in when the document opens](run-code-on-document-open.md)
   - [Show or hide the task pane of your Office Add-in](show-hide-add-in.md)
-- For Excel add-ins.
+- The following are available for Excel add-ins only.
   - [Add Custom keyboard shortcuts to your Office Add-ins (preview)](../design/keyboard-shortcuts.md)
   - [Create custom contextual tabs in Office Add-ins (preview)](../design/contextual-tabs.md)
   - Custom functions will have full CORS support.
