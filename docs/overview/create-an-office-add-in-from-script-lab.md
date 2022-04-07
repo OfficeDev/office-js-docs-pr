@@ -1,8 +1,8 @@
 ---
 ms.date: 04/07/2022
-title: Create an add-in from your Script Lab code
+title: Create a standalone add-in from your Script Lab code
 ms.prod: non-product-specific
-description: Create an add-in from your Script Lab code
+description: Learn how to move your snippet from Script Lab into a Yo Office project
 ms.localizationpriority: high
 ---
 
