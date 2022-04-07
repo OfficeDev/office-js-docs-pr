@@ -1,12 +1,12 @@
 ---
-title: Log appointments to a CRM application in Outlook mobile add-ins
+title: Log appointments to a customer relationship management (CRM) application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointments to a CRM application.
 ms.topic: article
-ms.date: 04/06/2022
+ms.date: 04/07/2022
 ms.localizationpriority: medium
 ---
 
-# Log appointments to a CRM application in Outlook mobile add-ins
+# Log appointments to a customer relationship management (CRM) application in Outlook mobile add-ins
 
 Saving your appointment details and related notes to a CRM or note-taking application can help you keep track of meetings you've attended.
 
@@ -132,11 +132,7 @@ In this section, learn how your add-in can extract appointment details when the 
       }
     );
 
-    function logCRMEvent(appointmentEvent) {
-      getEventProperties(appointmentEvent);
-    }
-
-    function getEventProperties() {
+    function logCRMEvent(event) {
       console.log(`Subject: ${Office.context.mailbox.item.subject}`);
       Office.context.mailbox.item.body.getAsync(
         "html",
@@ -163,16 +159,13 @@ In this section, learn how your add-in can extract appointment details when the 
     }
 
     const g = getGlobal();
-
-    // The add-in command functions need to be available in global scope.
-    g.logAppointmentDetails = logCRMEvent;
     ```
 
 ## Implement viewing appointment details in a task pane
 
 In this section, learn how to display the logged appointment details in a task pane when the user taps the **View** button.
 
-1. From the same quick start project, open the file **./src/taskpane/taskapne.js** in your code editor.
+1. From the same quick start project, open the file **./src/taskpane/taskpane.js** in your code editor.
 
 1. Replace the entire content of the **taskpane.js** file with the following JavaScript.
 
