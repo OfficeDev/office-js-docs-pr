@@ -1,14 +1,14 @@
 ---
-title: Log appointments to a customer relationship management (CRM) application in Outlook mobile add-ins
-description: Learn how to set up an Outlook mobile add-in to log appointments to a CRM application.
+title: Log appointment details to an external application in Outlook mobile add-ins
+description: Learn how to set up an Outlook mobile add-in to log appointments to an external application.
 ms.topic: article
-ms.date: 04/07/2022
+ms.date: 04/11/2022
 ms.localizationpriority: medium
 ---
 
-# Log appointments to a customer relationship management (CRM) application in Outlook mobile add-ins
+# Log appointment details to an external application in Outlook mobile add-ins
 
-Saving your appointment details and related notes to a CRM or note-taking application can help you keep track of meetings you've attended.
+Saving your appointment details and related notes to a customer relationship management (CRM) or note-taking application can help you keep track of meetings you've attended.
 
 In this article, you'll learn how to set up your Outlook mobile add-in to enable users to log details and notes about their appointments to your CRM or note-taking application. Throughout this article, we'll be using a fictional service provider, "Contoso".
 
@@ -189,7 +189,7 @@ In this section, learn how to display the logged appointment details in a task p
 
 ## Implement toggling button from Log to View
 
-You can change the button label from **Log** to **View** if the add-in successfully logged the event by setting the custom properties on the event as shown in the following sample.
+You can change the button label from **Log** to **View** if the add-in successfully logged the appointment by setting the custom properties on the appointment as shown in the following sample.
 
 ```js
 function updateCustomProperties() {
@@ -197,11 +197,11 @@ function updateCustomProperties() {
     function callback(customPropertiesResult) {
       if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
         let customProperties = customPropertiesResult.value;
-        customProperties.set("EventLogged", true);
+        customProperties.set("AppointmentLogged", true);
         customProperties.saveAsync(
           function callback(setSaveAsyncResult) {
             if (setSaveAsyncResult.status === Office.AsyncResultStatus.Succeeded) {
-              console.log("event is logged successfully");
+              console.log("appointment logged successfully");
             }
           }
         );
@@ -217,7 +217,7 @@ If you implemented a UI-less command, you can display the logged appointment det
 
 ## Implement deleting a log
 
-To delete the appointment log or delete the logged event so it can be save another record, use Microsoft Graph to [clear the customer properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user taps **Delete log** in the task pane.
+To delete the appointment log or delete the logged appointment so it can be save another record, use Microsoft Graph to [clear the customer properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user taps **Delete log** in the task pane.
 
 ## Testing and validation
 
