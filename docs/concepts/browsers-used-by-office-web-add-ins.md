@@ -27,8 +27,8 @@ The following table shows which browser is used for the various platforms and op
 |OS|Office version|Edge WebView2 (Chromium-based) installed?|Browser|
 |:-----|:-----|:-----|:-----|
 |any|Office on the web|Not applicable|The browser in which Office is opened.<br>(But note that Office on the web will not open in Internet Explorer.<br>Attempting to do so opens Office on the web in Edge.) |
-|Mac|any|Not applicable|Safari|
-|iOS|any|Not applicable|Safari|
+|Mac|any|Not applicable|Safari with WKWebView|
+|iOS|any|Not applicable|Safari with WKWebView|
 |Android|any|Not applicable|Chrome|
 |Windows 7, 8.1, 10, 11 | non-subscription Office 2013 to Office 2019|Doesn't matter|Internet Explorer 11|
 |Windows 10, 11 | non-subscription Office 2021 or later|Yes|Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
