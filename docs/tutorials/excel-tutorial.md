@@ -884,7 +884,11 @@ Open the file **webpack.config.js** in the root directory of the project and com
     ],
     ```
 
-1. If the local web server is running, stop it by closing the node command window.
+1. If the local web server is running, stop it by entering the following command in the command prompt. This should close the node command window.
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. Run the following command to rebuild the project.
 
