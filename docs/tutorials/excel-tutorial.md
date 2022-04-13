@@ -715,9 +715,9 @@ These steps must be completed whenever your code needs to *read* information fro
 
 1. If the local web server is already running, stop it by entering the following command in the command prompt. This should close the node command window.
 
-```command&nbsp;line
-npm stop
-```
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. Because your manifest file has been updated, you must sideload your add-in again, using the updated manifest file. Start the local web server and sideload your add-in:
 
