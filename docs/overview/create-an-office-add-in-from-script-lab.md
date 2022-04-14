@@ -51,7 +51,7 @@ In the next steps you'll copy code from several tabs in Script Lab.
 
 ### Copy task pane code
 
-1. Open the **/src/taskpane/taskpane.ts** file. If you are using a JavaScript project, the filename is **taskpane.js**.
+1. In VS Code, open the **/src/taskpane/taskpane.ts** file. If you are using a JavaScript project, the filename is **taskpane.js**.
 1. In Script Lab, select the **Script** tab.
 1. Copy all of the code in the **Script** tab to the clipboard. Replace the entire contents of **taskpane.ts** (or **taskpane.js** for javaScript) with the code you copied.
 
@@ -65,7 +65,7 @@ In the next steps you'll copy code from several tabs in Script Lab.
 
 1. In VS Code, open the **/src/taskpane/taskpane.css** file.
 1. In Script Lab, select the **CSS** tab.
-1. Copy all of the CSS in the **CSS**tab to the clipboard. Replace the entire contents of **taskpane.css** with the CSS you copied.
+1. Copy all of the CSS in the **CSS** tab to the clipboard. Replace the entire contents of **taskpane.css** with the CSS you copied.
 1. Save all changes to the files you updated in previous steps.
 
 ## Add jQuery support
@@ -92,7 +92,7 @@ If you created a snippet that has additional library dependencies, be sure to ad
 
 ## Handle initialization
 
-Script Lab handles the **Office.onReady** initialization automatically. You'll need to modify the code to provide your own **Office.onReady** handler.
+Script Lab handles the `Office.onReady` initialization automatically. You'll need to modify the code to provide your own `Office.onReady` handler.
 
 1. Open the **taskpane.ts** (or **taskpane.js** for JavaScript) file.
 1. For Excel, or Word, replace:
