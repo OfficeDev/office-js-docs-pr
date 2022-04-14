@@ -47,7 +47,7 @@ The following software is required for developing an Office Add-in for the suppo
   > Internet Explorer's Enhanced Security Configuration (ESC) must be turned off for Office Web Add-ins to work. If you are using a Windows Server computer as your client when developing add-ins, note that ESC is turned on by default in Windows Server.
 
 - One of the following as the default browser: Internet Explorer 11, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
-- An HTML and JavaScript editor such as Notepad, [Visual Studio and the Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs), or a third-party web development tool.
+- An HTML and JavaScript editor such as [Visual Studio Code](https://code.visualstudio.com/), [Visual Studio and the Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs), or non-Microsoft web development tool.
 
 ## Client requirements: OS X desktop
 
