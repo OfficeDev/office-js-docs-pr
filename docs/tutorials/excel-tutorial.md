@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 02/26/2022
+ms.date: 04/13/2022
 ms.prod: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 ms.localizationpriority: high
@@ -713,7 +713,11 @@ These steps must be completed whenever your code needs to *read* information fro
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
-1. If the local web server is already running, stop it by closing the node command window.
+1. If the local web server is already running, stop it by entering the following command in the command prompt. This should close the node command window.
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. Because your manifest file has been updated, you must sideload your add-in again, using the updated manifest file. Start the local web server and sideload your add-in:
 
@@ -880,7 +884,11 @@ Open the file **webpack.config.js** in the root directory of the project and com
     ],
     ```
 
-1. If the local web server is running, stop it by closing the node command window.
+1. If the local web server is running, stop it by entering the following command in the command prompt. This should close the node command window.
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. Run the following command to rebuild the project.
 
