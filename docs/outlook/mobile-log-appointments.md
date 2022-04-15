@@ -1,16 +1,16 @@
 ---
-title: Log appointment details to an external application in Outlook mobile add-ins
-description: Learn how to set up an Outlook mobile add-in to log appointments to an external application.
+title: Log appointment notes to an external application in Outlook mobile add-ins
+description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
 ms.topic: article
-ms.date: 04/11/2022
+ms.date: 04/15/2022
 ms.localizationpriority: medium
 ---
 
-# Log appointment details to an external application in Outlook mobile add-ins
+# Log appointment notes to an external application in Outlook mobile add-ins
 
-Saving your appointment details and related notes to a customer relationship management (CRM) or note-taking application can help you keep track of meetings you've attended.
+Saving your appointment notes and other details to a customer relationship management (CRM) or note-taking application can help you keep track of meetings you've attended.
 
-In this article, you'll learn how to set up your Outlook mobile add-in to enable users to log details and notes about their appointments to your CRM or note-taking application. Throughout this article, we'll be using a fictional service provider, "Contoso".
+In this article, you'll learn how to set up your Outlook mobile add-in to enable users to log notes and other details about their appointments to your CRM or note-taking application. You have the option to implement a UI-less command or task pane. After setting up your environment, select the tab for the one you'd like to use and then follow the instructions to update your add-in. Throughout this article, we'll be using a fictional CRM service provider named "Contoso".
 
 > [!IMPORTANT]
 > This feature is only supported on Android with a Microsoft 365 subscription.
@@ -19,7 +19,11 @@ In this article, you'll learn how to set up your Outlook mobile add-in to enable
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.
 
-## Configure the manifest
+# [UI-less add-in command](#tab/noui)
+
+This option shows how to enable a user to log and view their notes and other details about their appointments when they select a UI-less add-in command from the ribbon.
+
+### Configure the manifest
 
 To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors are not supported.
 
@@ -28,6 +32,508 @@ To enable users to log appointment notes with your add-in, you must configure th
 1. Open the **manifest.xml** file located at the root of your project.
 
 1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML. Make sure to replace all references to **Contoso** with your company's information.
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0"> 
+
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1"> 
+
+        <Description resid="residDescription"></Description> 
+
+        <Requirements> 
+
+            <bt:Sets> 
+
+                <bt:Set Name="Mailbox" MinVersion="1.3"/> 
+
+            </bt:Sets> 
+
+        </Requirements> 
+
+        <Hosts> 
+
+            <Host xsi:type="MailHost"> 
+
+                <DesktopFormFactor> 
+
+                    <FunctionFile resid="residFunctionFile"/> 
+
+                    <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface"> 
+
+                        <OfficeTab id="TabDefault"> 
+
+                            <Group id="apptReadGroup"> 
+
+                                <Label resid="residDescription"/> 
+
+                                <Control xsi:type="Button" id="apptReadOpenPaneButton"> 
+
+                                    <Label resid="residLabel"/> 
+
+                                    <Supertip> 
+
+                                        <Title resid="residLabel"/> 
+
+                                        <Description resid="residTooltip"/> 
+
+                                    </Supertip> 
+
+                                    <Icon> 
+
+                                        <bt:Image size="16" resid="icon-16"/> 
+
+                                        <bt:Image size="32" resid="icon-32"/> 
+
+                                        <bt:Image size="80" resid="icon-80"/> 
+
+                                    </Icon> 
+
+                                    <Action xsi:type="ExecuteFunction"> 
+
+                                        <FunctionName>saveAppointment</FunctionName> 
+
+                                    </Action> 
+
+                                </Control> 
+
+                            </Group> 
+
+                        </OfficeTab> 
+
+                    </ExtensionPoint> 
+
+                </DesktopFormFactor> 
+
+                <MobileFormFactor> 
+
+                    <FunctionFile resid="residFunctionFile"/> 
+
+                    <ExtensionPoint xsi:type="MobileLogEventAppointmentAttendee"> 
+
+                        <Control xsi:type="MobileButton" id="appointmentReadFunctionButton"> 
+
+                            <Label resid="residLabel"/> 
+
+                            <Icon> 
+
+                                <bt:Image size="25" scale="1" resid="icon-16"/> 
+
+                                <bt:Image size="25" scale="2" resid="icon-16"/> 
+
+                                <bt:Image size="25" scale="3" resid="icon-16"/> 
+
+ 
+
+                                <bt:Image size="32" scale="1" resid="icon-32"/> 
+
+                                <bt:Image size="32" scale="2" resid="icon-32"/> 
+
+                                <bt:Image size="32" scale="3" resid="icon-32"/> 
+ 
+
+                                <bt:Image size="48" scale="1" resid="icon-48"/> 
+
+                                <bt:Image size="48" scale="2" resid="icon-48"/> 
+
+                                <bt:Image size="48" scale="3" resid="icon-48"/> 
+
+                            </Icon> 
+
+                            <Action xsi:type="ExecuteFunction"> 
+
+                                <FunctionName>logCRMEvent</FunctionName> 
+
+                            </Action> 
+
+                        </Control> 
+
+                    </ExtensionPoint> 
+
+                </MobileFormFactor> 
+
+            </Host> 
+
+        </Hosts> 
+
+        <Resources> 
+
+            <bt:Images> 
+
+                <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/> 
+
+                <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/> 
+
+                <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/> 
+
+                <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/> 
+
+            </bt:Images> 
+
+            <bt:Urls> 
+
+                <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/> 
+
+            </bt:Urls> 
+
+            <bt:ShortStrings> 
+
+                <bt:String id="residDescription" DefaultValue="Contoso meeting"/> 
+
+                <bt:String id="residLabel" DefaultValue="Add a contoso meeting"/> 
+
+            </bt:ShortStrings> 
+
+            <bt:LongStrings> 
+
+                <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/> 
+
+            </bt:LongStrings> 
+
+        </Resources> 
+
+    </VersionOverrides> 
+
+</VersionOverrides> 
+``` 
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    <Description resid="residDescription"></Description>
+    <Requirements>
+      <bt:Sets>
+        <bt:Set Name="Mailbox" MinVersion="1.3"/>
+      </bt:Sets>
+    </Requirements>
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <MobileFormFactor>
+          <FunctionFile resid="residFunctionFile"/>
+          <ExtensionPoint xsi:type="MobileLogEventAppointmentAttendee">
+            <OfficeTab id="TabDefault">
+              <Group id="mobileLogGroup">
+                <Label reside="GroupLabel"/>
+                <Control xsi:type="MobileButton" id="mobileLogEventButton">
+                  <Label resid="FunctionButton.Label"/>
+                  <Icon>
+                    <bt:Image size="25" scale="1" resid="icon-16"/>
+                    <bt:Image size="25" scale="2" resid="icon-16"/>
+                    <bt:Image size="25" scale="3" resid="icon-16"/>
+    
+                    <bt:Image size="32" scale="1" resid="icon-32"/>
+                    <bt:Image size="32" scale="2" resid="icon-32"/>
+                    <bt:Image size="32" scale="3" resid="icon-32"/>
+    
+                    <bt:Image size="48" scale="1" resid="icon-48"/>
+                    <bt:Image size="48" scale="2" resid="icon-48"/>
+                    <bt:Image size="48" scale="3" resid="icon-48"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>logAppointmentDetails</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="MobileButton" id="mobileViewButton">
+                  <Label resid="TaskpaneButton.Label"/>
+                  <Icon>
+                    <bt:Image size="25" scale="1" resid="icon-16"/>
+                    <bt:Image size="25" scale="2" resid="icon-16"/>
+                    <bt:Image size="25" scale="3" resid="icon-16"/>
+    
+                    <bt:Image size="32" scale="1" resid="icon-32"/>
+                    <bt:Image size="32" scale="2" resid="icon-32"/>
+                    <bt:Image size="32" scale="3" resid="icon-32"/>
+    
+                    <bt:Image size="48" scale="1" resid="icon-48"/>
+                    <bt:Image size="48" scale="2" resid="icon-48"/>
+                    <bt:Image size="48" scale="3" resid="icon-48"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="residTaskPaneUrl" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </MobileFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
+        <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
+        <bt:Image id="icon-64" DefaultValue="https://contoso.com/assets/icon-64.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+        <bt:Url id="residTaskPaneUrl" DefaultValue="https://contoso.com/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="residDescription" DefaultValue="Log appointment notes and other details to Contoso CRM."/>
+        <bt:String id="residLabel" DefaultValue="Log to Contoso CRM"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="residTooltip" DefaultValue="Log notes to Contoso CRM for this appointment."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</VersionOverrides>
+```
+
+> [!TIP]
+> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
+
+### Implement capturing appointment notes
+
+In this section, learn how your add-in can extract appointment details when the user taps the **Log** button.
+
+1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
+
+1. Replace the entire content of the **commands.js** file with the following JavaScript.
+
+    ```js
+    // Office is ready.
+    Office.onReady(function () {
+        // Add any initialization code here.
+      }
+    );
+
+    function logCRMEvent(event) {
+      console.log(`Subject: ${Office.context.mailbox.item.subject}`);
+      Office.context.mailbox.item.body.getAsync(
+        "html",
+        { asyncContext: "This is passed to the callback" },
+        function callback(result) {
+          if (result.status === Office.AsyncResultStatus.Succeeded) {
+            event.completed({ allowEvent: true });
+          } else {
+            console.error("Failed to get body.");
+            event.completed({ allowEvent: false });
+          }
+        }
+      );
+    }
+
+    function getGlobal() {
+      return typeof self !== "undefined"
+        ? self
+        : typeof window !== "undefined"
+        ? window
+        : typeof global !== "undefined"
+        ? global
+        : undefined;
+    }
+
+    const g = getGlobal();
+    ```
+
+### Implement viewing appointment notes
+
+The **Log** button can be toggled to display **View**. Then when the user the user selects the **View** button, they can look at their logged notes for this appointment.
+
+Add the following function to **./src/commands/commands.js** then call it after the add-in successfully logs the appointment notes. This function sets the **EventLogged** custom property on the current appointment item.
+
+```js
+function updateCustomProperties() {
+  Office.context.mailbox.item.loadCustomPropertiesAsync(
+    function callback(customPropertiesResult) {
+      if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
+        let customProperties = customPropertiesResult.value;
+        customProperties.set("EventLogged", true);
+        customProperties.saveAsync(
+          function callback(setSaveAsyncResult) {
+            if (setSaveAsyncResult.status === Office.AsyncResultStatus.Succeeded) {
+              console.log("EventLogged custom property saved successfully.");
+            }
+          }
+        );
+      }
+    }
+  );
+}
+```
+
+Your add-in defines the log viewing experience. For example, you can display the logged appointment notes in a dialog when the user taps the **View** button. For details on using dialogs, refer to [Use the Office dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
+
+# [Task pane](#tab/taskpane)
+
+## Option 2: Implement capturing and viewing appointment notes using a task pane
+
+This option shows how to enable a user to log and view their notes and other details about their appointments from a task pane.
+
+### Configure the manifest
+
+To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors are not supported.
+
+1. In your code editor, open the quick start project.
+
+1. Open the **manifest.xml** file located at the root of your project.
+
+1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML. Make sure to replace all references to **Contoso** with your company's information.
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0"> 
+
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1"> 
+
+        <Description resid="residDescription"></Description> 
+
+        <Requirements> 
+
+            <bt:Sets> 
+
+                <bt:Set Name="Mailbox" MinVersion="1.3"/> 
+
+            </bt:Sets> 
+
+        </Requirements> 
+
+        <Hosts> 
+
+            <Host xsi:type="MailHost"> 
+
+                <DesktopFormFactor> 
+
+                    <FunctionFile resid="residFunctionFile"/> 
+
+                    <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface"> 
+
+                        <OfficeTab id="TabDefault"> 
+
+                            <Group id="apptReadGroup"> 
+
+                                <Label resid="residDescription"/> 
+
+                                <Control xsi:type="Button" id="apptReadOpenPaneButton"> 
+
+                                    <Label resid="residLabel"/> 
+
+                                    <Supertip> 
+
+                                        <Title resid="residLabel"/> 
+
+                                        <Description resid="residTooltip"/> 
+
+                                    </Supertip> 
+
+                                    <Icon> 
+
+                                        <bt:Image size="16" resid="icon-16"/> 
+
+                                        <bt:Image size="32" resid="icon-32"/> 
+
+                                        <bt:Image size="80" resid="icon-80"/> 
+
+                                    </Icon> 
+
+                                    <Action xsi:type="ExecuteFunction"> 
+
+                                        <FunctionName>saveAppointment</FunctionName> 
+
+                                    </Action> 
+
+                                </Control> 
+
+                            </Group> 
+
+                        </OfficeTab> 
+
+                    </ExtensionPoint> 
+
+                </DesktopFormFactor> 
+
+                <MobileFormFactor> 
+
+                    <FunctionFile resid="residFunctionFile"/> 
+
+                    <ExtensionPoint xsi:type="MobileLogEventAppointmentAttendee"> 
+
+                        <Control xsi:type="MobileButton" id="appointmentReadFunctionButton"> 
+
+                            <Label resid="residLabel"/> 
+
+                            <Icon> 
+
+                                <bt:Image size="25" scale="1" resid="icon-16"/> 
+
+                                <bt:Image size="25" scale="2" resid="icon-16"/> 
+
+                                <bt:Image size="25" scale="3" resid="icon-16"/> 
+
+ 
+
+                                <bt:Image size="32" scale="1" resid="icon-32"/> 
+
+                                <bt:Image size="32" scale="2" resid="icon-32"/> 
+
+                                <bt:Image size="32" scale="3" resid="icon-32"/> 
+ 
+
+                                <bt:Image size="48" scale="1" resid="icon-48"/> 
+
+                                <bt:Image size="48" scale="2" resid="icon-48"/> 
+
+                                <bt:Image size="48" scale="3" resid="icon-48"/> 
+
+                            </Icon> 
+
+                            <Action xsi:type="ExecuteFunction"> 
+
+                                <FunctionName>logCRMEvent</FunctionName> 
+
+                            </Action> 
+
+                        </Control> 
+
+                    </ExtensionPoint> 
+
+                </MobileFormFactor> 
+
+            </Host> 
+
+        </Hosts> 
+
+        <Resources> 
+
+            <bt:Images> 
+
+                <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/> 
+
+                <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/> 
+
+                <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/> 
+
+                <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/> 
+
+            </bt:Images> 
+
+            <bt:Urls> 
+
+                <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/> 
+
+            </bt:Urls> 
+
+            <bt:ShortStrings> 
+
+                <bt:String id="residDescription" DefaultValue="Contoso meeting"/> 
+
+                <bt:String id="residLabel" DefaultValue="Add a contoso meeting"/> 
+
+            </bt:ShortStrings> 
+
+            <bt:LongStrings> 
+
+                <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/> 
+
+            </bt:LongStrings> 
+
+        </Resources> 
+
+    </VersionOverrides> 
+
+</VersionOverrides> 
+``` 
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -117,53 +623,9 @@ To enable users to log appointment notes with your add-in, you must configure th
 > [!TIP]
 > To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
 
-## Implement capturing appointment details using a UI-less command
+### Implement capturing appointment notes
 
-In this section, learn how your add-in can extract appointment details when the user taps the **Log** button.
-
-1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
-
-1. Replace the entire content of the **commands.js** file with the following JavaScript.
-
-    ```js
-    // Office is ready.
-    Office.onReady(function () {
-        // Add any initialization code here.
-      }
-    );
-
-    function logCRMEvent(event) {
-      console.log(`Subject: ${Office.context.mailbox.item.subject}`);
-      Office.context.mailbox.item.body.getAsync(
-        "html",
-        { asyncContext: "This is passed to the callback" },
-        function callback(result) {
-          if (result.status === Office.AsyncResultStatus.Succeeded) {
-            event.completed({ allowEvent: true });
-          } else {
-            console.error("Failed to get body.");
-            event.completed({ allowEvent: false });
-          }
-        }
-      );
-    }
-
-    function getGlobal() {
-      return typeof self !== "undefined"
-        ? self
-        : typeof window !== "undefined"
-        ? window
-        : typeof global !== "undefined"
-        ? global
-        : undefined;
-    }
-
-    const g = getGlobal();
-    ```
-
-## Implement viewing appointment details in a task pane
-
-In this section, learn how to display the logged appointment details in a task pane when the user taps the **View** button.
+In this section, learn how to display the logged appointment notes and other details in a task pane when the user taps the **Log** button.
 
 1. From the same quick start project, open the file **./src/taskpane/taskpane.js** in your code editor.
 
@@ -187,9 +649,11 @@ In this section, learn how to display the logged appointment details in a task p
     }
     ```
 
-## Implement toggling button from Log to View
+### Implement viewing appointment notes
 
-You can change the button label from **Log** to **View** if the add-in successfully logged the appointment by setting the custom properties on the appointment as shown in the following sample.
+The **Log** button can be toggled to display **View**. Then when the user the user selects the **View** button, they can look at their logged notes for this appointment. Your add-in defines the log viewing experience.
+
+Add the following function to **./src/taskpane/taskpane.js** then call it after the add-in successfully logs the appointment notes. This function sets the **EventLogged** custom property on the current appointment item.
 
 ```js
 function updateCustomProperties() {
@@ -197,11 +661,11 @@ function updateCustomProperties() {
     function callback(customPropertiesResult) {
       if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
         let customProperties = customPropertiesResult.value;
-        customProperties.set("AppointmentLogged", true);
+        customProperties.set("EventLogged", true);
         customProperties.saveAsync(
           function callback(setSaveAsyncResult) {
             if (setSaveAsyncResult.status === Office.AsyncResultStatus.Succeeded) {
-              console.log("appointment logged successfully");
+              console.log("EventLogged custom property saved successfully.");
             }
           }
         );
@@ -211,13 +675,11 @@ function updateCustomProperties() {
 }
 ```
 
-## Implement viewing appointment details in a dialog
+### Implement deleting the appointment log
 
-If you implemented a UI-less command, you can display the logged appointment details in a dialog when the user taps the **View** button. For details on using dialogs, refer to [Use the Office dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
+To undo logging or delete the logged appointment notes so a replacement log can be saved, use Microsoft Graph to [clear the custom properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user taps **Delete log** in the task pane.
 
-## Implement deleting a log
-
-To delete the appointment log or delete the logged appointment so it can be save another record, use Microsoft Graph to [clear the customer properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user taps **Delete log** in the task pane.
+---
 
 ## Testing and validation
 
@@ -225,15 +687,15 @@ To delete the appointment log or delete the logged appointment so it can be save
 - After [sideloading](sideload-outlook-add-ins-for-testing.md) in Outlook on the web, Windows, or Mac, restart Outlook on your Android mobile device.
 - Open an appointment as an attendee then verify that under the Meeting Insights card, there's a new card with your add-in's name alongside the **Log** button.
 
-### UI: Log appointment details
+### UI: Log the appointment notes
 
 As a meeting attendee, you should see a screen similar to the following image when you open a meeting.
 
 ![Screenshot showing the Log button on an appointment screen on Android.](../images/outlook-android-log-appointment-details.png)
 
-### UI: View appointment log
+### UI: View the appointment log
 
-After successfully logging the appointment details, the button should now display the name **View** instead of **Log**. You should see a screen similar to the following image.
+After successfully logging the appointment notes, the button should now be labeled **View** instead of **Log**. You should see a screen similar to the following image.
 
 ![Screenshot showing the View button on an appointment screen on Android.](../images/outlook-android-view-appointment-log.png)
 
