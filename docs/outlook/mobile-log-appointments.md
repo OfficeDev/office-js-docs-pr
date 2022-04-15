@@ -156,7 +156,7 @@ In this section, learn how your add-in can extract appointment details when the 
     function getGlobal() {
       return typeof self !== "undefined"
         ? self
-        : typeof window !== "undefined"
+        : typeof window !== "undefined".
         ? window
         : typeof global !== "undefined"
         ? global
@@ -279,19 +279,19 @@ To enable users to log appointment notes with your add-in, you must configure th
         </bt:Images>
         <bt:Urls>
           <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+          <bt:Url id="Taskpane.Url" DefaultValue="https://contoso.com/taskpane.html"/>
         </bt:Urls>
         <bt:ShortStrings>
-          <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
-          <bt:String id="residLabel" DefaultValue="Add a contoso meeting"/>
+          <bt:String id="residDescription" DefaultValue="Log appointment notes and other details to Contoso CRM."/>
+          <bt:String id="residLabel" DefaultValue="Add a Contoso CRM"/>
         </bt:ShortStrings>
         <bt:LongStrings>
-          <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/>
+          <bt:String id="residTooltip" DefaultValue="Log notes to Contoso CRM for this appointment."/>
         </bt:LongStrings>
       </Resources>
     </VersionOverrides>
 </VersionOverrides>
 ```
-
 
 > [!TIP]
 > To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
@@ -307,7 +307,7 @@ In this section, learn how to display the logged appointment notes and other det
     ```js
     // Office is ready.
     Office.onReady(function () {
-        // Add any initialization code here.
+        getEventData();
       }
     );
 
@@ -316,7 +316,9 @@ In this section, learn how to display the logged appointment notes and other det
       Office.context.mailbox.item.body.getAsync(
         "html",
         function callback(result) {
-          if (result.)
+          if (result.status === Office.AsyncResultStatus.Succeeded) {
+            console.log("event logged successfully");
+          }
         }
       );
     }
@@ -391,7 +393,7 @@ The following APIs are available for this feature.
 
 Several restrictions apply.
 
-- The **Log** action button name cannot be changed.
+- The **Log** button name cannot be changed. However, there is a way for a different label to be displayed by setting a custom property on the appointment item. For more details, refer to the **Implement viewing appointment notes** section for [UI-less](?tabs=noui#implement-viewing-appointment-notes) or [task pane](?tabs=taskpane#implement-viewing-appointment-notes-1) as appropriate.
 - The add-in icon should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
 - The add-in should extract the meeting details from the appointment form within the one-minute timeout period. However, any time spent in a dialog box the add-in opened for authentication, etc. is excluded from the timeout period.
 
