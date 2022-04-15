@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 Saving your appointment notes and other details to a customer relationship management (CRM) or note-taking application can help you keep track of meetings you've attended.
 
-In this article, you'll learn how to set up your Outlook mobile add-in to enable users to log notes and other details about their appointments to your CRM or note-taking application. You have the option to implement a UI-less command or task pane. After setting up your environment, select the tab for the one you'd like to use and then follow the instructions to update your add-in. Throughout this article, we'll be using a fictional CRM service provider named "Contoso".
+In this article, you'll learn how to set up your Outlook mobile add-in to enable users to log notes and other details about their appointments to your CRM or note-taking application. Throughout this article, we'll be using a fictional CRM service provider named "Contoso".
 
 > [!IMPORTANT]
 > This feature is only supported on Android with a Microsoft 365 subscription.
@@ -18,6 +18,10 @@ In this article, you'll learn how to set up your Outlook mobile add-in to enable
 ## Set up your environment
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.
+
+## Implement capturing and viewing appointment notes
+
+You can opt to implement a UI-less command or task pane. Select the tab for the one you'd like to use and then follow the instructions to update your add-in.
 
 # [UI-less add-in command](#tab/noui)
 
