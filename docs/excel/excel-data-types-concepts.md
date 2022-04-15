@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 02/15/2022
+ms.date: 04/15/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -25,6 +25,22 @@ This article describes how to use the [Excel JavaScript API](../reference/overvi
 ## Core concepts
 
 Use the [`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) property to work with data type values. This property is similar to [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member), but `Range.values` only returns the four basic types: string, number, boolean, or error values. `Range.valuesAsJson` can return expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
+
+The `.valuesAsJson` property can return the following [CellValue](/javascript/api/excel/excel.cellvalue) types.
+
+- [ArrayCellValue](/javascript/api/excel/excel.arraycellvalue)
+- [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)
+- [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)
+- [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)
+- [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)
+- [ErrorCellValue](/javascript/api/excel/excel.errorcellvalue)
+- [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)
+- [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue)
+- [ReferenceCellValue](/javascript/api/excel/excel.referencecellvalue)
+- [StringCellValue](/javascript/api/excel/excel.stringcellvalue)
+- [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)
+- [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)
+- [CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties)
 
 ### JSON schema
 
