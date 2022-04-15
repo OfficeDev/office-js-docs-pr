@@ -79,7 +79,7 @@ Specifically for Outlook running on smartphones and non-Windows tablet devices, 
 >
 > <sup>2</sup> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins.
 >
-> <sup>3</sup> Add-ins aren't supported for on-premises Exchange accounts on Outlook on Android, on iOS, and on modern mobile web.
+> <sup>3</sup> Add-ins aren't supported in Outlook on Android, on iOS, and modern mobile web with on-premises Exchange accounts.
 
 > [!TIP]
 > You can distinguish between classic and modern Outlook in a web browser by checking your mailbox toolbar.

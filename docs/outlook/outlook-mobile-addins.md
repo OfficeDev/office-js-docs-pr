@@ -64,7 +64,7 @@ After your add-in is working, make sure to test it on different screen sizes, in
 Troubleshooting on mobile can be hard since you may not have the tools you're used to. However, one option for troubleshooting on iOS is to use Fiddler (check out [this tutorial on using it with an iOS device](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
 
 > [!NOTE]
-> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins. Additionally, add-ins aren't supported on Outlook on Android, on iOS, and modern mobile web for on-premises Exchange accounts. Certain iOS devices still support add-ins for on-premises Exchange accounts on  classic Outlook on the web. For information about supported devices, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
+> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins. Additionally, add-ins aren't supported in Outlook on Android, on iOS, and modern mobile web with on-premises Exchange accounts. Certain iOS devices still support add-ins when using on-premises Exchange accounts with classic Outlook on the web. For information about supported devices, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
 ## Next steps
 
