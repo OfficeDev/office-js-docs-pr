@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 04/08/2022
+ms.date: 04/14/2022
 ms.localizationpriority: medium
 ---
 
@@ -9,11 +9,9 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 8:00 AM Pacific Time. You can download the calendar invite at https://aka.ms/officeaddinscommunitycall.
 
-## Agenda for April 13th call
+## Agenda for May 11th call
 
-- Ribbon API updates
-- PowerPoint selection APIs
-- Add-ins on Appointment read on Outlook Mobile
+The agenda for May will be posted about a week before the call.
 
 ## Previous calls
 
