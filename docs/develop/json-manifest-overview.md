@@ -7,7 +7,7 @@ ms.localizationpriority: high
 
 # JSON-formatted manifest for Office Add-ins (preview)
 
-Microsoft of making a number of improvements to the Microsoft 365 developer platform. These improvements will provide more consistency in the development, deployment, installation, and administration of all types of extension of Micrsoft 365, including Office Add-ins. These changes are not breaking, so no existing extension will be broken. 
+Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements will provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes will not break existing add-ins. 
 
 Two of the most important improvements are:
 
@@ -42,15 +42,15 @@ This section describes the preview JSON manifest for readers that are familiar w
       "text": "Some text"
   }
   ```
-- There are many places in the current XML manifest where an element has a plural name and children with the singular version of the same name. For example, there is a **Tabs** element which can have multiple **Tab** element children. The JSON equivalent of these plural elements is a property with an array as its value. The members of the array are *anonymous* objects, not properties named "tab" or "tab1", "tab2", etc. The following is an example.
+- There are many places in the current XML manifest where an element with a plural name has children with the singular version of the same name. For example, the markup to configure a custom menu includes an **Items** element which can have multiple **Item** element children. The JSON equivalent of these plural elements is a property with an array as its value. The members of the array are *anonymous* objects, not properties named "item" or "item1", "item2", etc. The following is an example.
 
   ```json
-  "tabs": [
+  "items": [
       {
-          -- markup for a tab is here --
+          -- markup for a menu item is here --
       },
       {
-          -- markup for another tab is here --
+          -- markup for another menu item is here --
       }
   ]
   ```
@@ -59,14 +59,14 @@ This section describes the preview JSON manifest for readers that are familiar w
 
 The root level of the preview JSON manifest, which roughly corresponds to the **OfficeApp** element in the current XML manifest, is an anonymous object. 
 
-Just as the children of **OfficeApp** are notionally divided into the base manifest and the **VersionOverrides** element; so too, the preview JSON manifest has a top-level "extension" property that roughly corresponds in its purposes and child properties to the **VersionOverrides** element, and the preview JSON manifest has over 10 other top-level properties, that collectively serve largely the same purposes as the child elements of **OfficeApp** other than  **VersionOverrides**. These other properties can be thought of collectively as the base manifest. 
+The children of **OfficeApp** are commonly divided into two notional categories. The **VersionOverrides** element is one category. The other consists of all the other children of **OfficeApp** which are collectively referred to as the base manifest. So too, the preview JSON manifest has a similar division. There is a top-level "extension" property that roughly corresponds in its purposes and child properties to the **VersionOverrides** element. The preview JSON manifest also has over 10 other top-level properties that collectively serve the same purposes as the base manifest of the XML manifest. So, these other properties can be thought of collectively as the base manifest of the JSON manifest. 
 
 > [!NOTE]
-> When it becomes possible to combine an add-in with other Microsoft 365 extension types in a single web app, then there will be other top-level properties that don't fit into the notion of the base manifest. Roughly speaking, there will be a top-level property for every kind of Microsoft 365 extension type, such as "configurableTabs", "bots" and "connectors". For examples, see the [Teams manifest documentation](/microsoftteams/platform/resources/schema/manifest-schema). This structure reveals that *the "extension" property represents "Office add-ins" from the perspective of Microsoft 365 as a whole*, in addition to corresponding to **VersionOverrides** from the narrow perspective of Office add-ins alone.
+> When it becomes possible to combine an add-in with other Microsoft 365 extension types in a single web app, then there will be other top-level properties that don't fit into the notion of the base manifest. Roughly speaking, there will be a top-level property for every kind of Microsoft 365 extension type, such as "configurableTabs", "bots" and "connectors". For examples, see the [Teams manifest documentation](/microsoftteams/platform/resources/schema/manifest-schema). This structure makes clear that the "extension" property represents an Office add-in as one type of Microsoft 365 extension.
 
 #### Base manifest
 
-The base manifest properties specify characteristics of the add-in that *any* type of extension of Microsoft 365, including Teams tabs or message extensions, would be expected to have, not just Office add-ins. These characteristics include a public name and a unique ID. The following table shows an approximate mapping of some critical top level properties in the preview JSON manifest to the XML elements in the current manifest, where the mapping principle is the *purpose* of the markup.
+The base manifest properties specify characteristics of the add-in that *any* type of extension of Microsoft 365, including Teams tabs or message extensions, would be expected to have, not just Office add-ins. These characteristics include a public name and a unique ID. The following table shows a mapping of some critical top level properties in the preview JSON manifest to the XML elements in the current manifest, where the mapping principle is the *purpose* of the markup.
 
 |JSON property|Purpose|XML element(s)|Comments|
 |:-----|:-----|:-----|:-----|
@@ -82,44 +82,44 @@ The base manifest properties specify characteristics of the add-in that *any* ty
 |"webApplicationInfo"| Identifies the add-in's web app as it is known in Azure Active Directory. | **WebApplicationInfo** | In the current XML manifest, the **WebApplicationInfo** element is inside **VersionOverrides**, not the base manifest. |
 |"authorization"| Identifies any Microsoft Graph permissions that the add-in needs. | **WebApplicationInfo** | See comment in preceding row. ||
 
-The concepts and purposes associated with the **Hosts**, **Requirements**, and **ExtendedOverrides** elements in the current XML manifest are configured inside the "extension" property of the preview JSON manifest. 
+The **Hosts**, **Requirements**, and **ExtendedOverrides** elements are part of the base manifest in the current XML manifest. But concepts and purposes associated with these elements are configured inside the "extension" property of the preview JSON manifest. 
 
 #### "extension" property
 
-The "extension" property in the preview JSON manifest primarily represents characteristics of the add-in that would not be relevant to other kinds of Microsoft 365 extensions, such as the Office applications that the add-in extends (such as, Excel, PowerPoint, Word, and Outlook) and customizations of the Office application ribbon. Its purposes closely match those of the **VersionOverrides** element in the current XML manifest.
+The "extension" property in the preview JSON manifest primarily represents characteristics of the add-in that would not be relevant to other kinds of Microsoft 365 extensions. For example, the Office applications that the add-in extends (such as, Excel, PowerPoint, Word, and Outlook) are specified inside the "extension" property as are customizations of the Office application ribbon. The property's purposes closely match those of the **VersionOverrides** element in the current XML manifest.
 
 > [!NOTE]
-> The **VersionOverrides** section of the manifest has a "double jump" system for many string resources. Strings, including URLs, are specified and assigned an ID in the **Resources** child of **VersionOverrides**. Elements that require a string have a `resid` attribute that matches the ID of a string in the **Resources** element. The "extension" property of the preview JSON manifest simplifies things by defining strings directly as property values. 
+> The **VersionOverrides** section of the manifest has a "double jump" system for many string resources. Strings, including URLs, are specified and assigned an ID in the **Resources** child of **VersionOverrides**. Elements that require a string have a `resid` attribute that matches the ID of a string in the **Resources** element. The "extension" property of the preview JSON manifest simplifies things by defining strings directly as property values. There is nothing equivalent to the **Resources** element.
 
-The following table shows an approximate mapping of some high level child properties of the "extension" property in the preview JSON manifest to XML elements in the current manifest. Dot notation is used to reference child properties.
+The following table shows a mapping of some high level child properties of the "extension" property in the preview JSON manifest to XML elements in the current manifest. Dot notation is used to reference child properties.
 
 |JSON property|Purpose|XML element(s)|Comments|
 |:-----|:-----|:-----|:-----|
 | "requirements.capabilities" | Identifies the requirement sets that the add-in needs to be installable. | **Requirements** and **Sets** | |
 | "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. | **Hosts** |  |
 | "getStartedMessages" | Provides information used by the callout that appears when the add-in is installed. | **GetStarted** | |
-| "keyboards" | Defines keyboard shortcuts for the add-in. |  | The current XML manifest has an **ExtendedOverrides** element that references a JSON-formatted file that configures keyboard shortcuts. The "keyboards" property of the JSON manifest duplicates that file. |
-| "ribbons" | The ribbons that the add-in customizes. | **Hosts**, various **\*FormFactor**, and **ExtensionPoints** | The "ribbons" property is an array of anonymous objects that each merge the purposes of the these three elements. See ["ribbons" and "menus" tables](#"ribbons"-and-"menus"-tables).|
-| "contextMenus" | Configures custom context menus. | **ExtensionPoint** of type ContextMenu | The "contextMenus" property is an array of anonymous objects. Each of these objects, in turn, has a "menus" array of anonymous objects that define a custom menu. See ["ribbons" and "menus" tables](#"ribbons"-and-"menus"-tables). |  |
+| "keyboards" | Defines keyboard shortcuts for the add-in. |  | The current XML manifest has an **ExtendedOverrides** element that references a JSON-formatted file that configures keyboard shortcuts. The "keyboards" property of the JSON manifest replaces that file. Accordingly, the the JSON manifest has nothing equivalent to **ExtendedOverrides**.|
+| "ribbons" | The ribbons that the add-in customizes. | **Hosts**, **ExtensionPoints**, and various **\*FormFactor** elements | The "ribbons" property is an array of anonymous objects that each merge the purposes of the these three elements. See ["ribbons" and "menus" tables](#ribbons-and-menus-tables).|
+| "contextMenus" | Configures custom context menus. | **ExtensionPoint** (of type ContextMenu) | The "contextMenus" property is an array of anonymous objects. Each of these objects, in turn, has a "menus" array of anonymous objects that define a custom menu. See ["ribbons" and "menus" tables](#ribbons-and-menus-tables). |  |
 | "alternatives" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. | **EquivalentAddins** | See the [EquivalentAddins - See also](/javascript/api/manifest/equivalentaddins#see-also) for background information. |
-| "runtimes"  | Configures various kinds of "UI-less" add-ins such as custom functions and functions run directly from custom ribbon buttons. | **Runtimes**. **FunctionFile**, and **ExtensionPoint** of type CustomFunctions |  |
-| "autoRunEvents" | This extension point adds an event handler for a specified event. | **Event** and **ExtensionPoint** of type Events |  ||
+| "runtimes"  | Configures various kinds of "UI-less" add-ins such as custom functions and functions run directly from custom ribbon buttons. | **Runtimes**. **FunctionFile**, and **ExtensionPoint** (of type CustomFunctions) |  |
+| "autoRunEvents" | Configures an event handler for a specified event. | **Event** and **ExtensionPoint** (of type Events) |  ||
 
 ##### "ribbons" and "menus" tables
 
-The following table shows an approximate mapping of some high level child properties of the anonymous child objects in the "ribbons" array to XML elements in the current manifest. 
+The following table maps the child properties of the anonymous child objects in the "ribbons" array onto XML elements in the current manifest. 
 
 |JSON property|Purpose|XML element(s)|Comments|
 |:-----|:-----|:-----|:-----|
-| "contexts" | The command surfaces that the add-in customizes. | various **\*CommandSurface** elements, such as **PrimaryCommandSurface** and **MessageReadCommandSurface** |  |
+| "contexts" | Specifies the command surfaces that the add-in customizes. | various **\*CommandSurface** elements, such as **PrimaryCommandSurface** and **MessageReadCommandSurface** |  |
 | "tabs" | Configures custom ribbon tabs. | **CustomTab** | The names and hierarchy of the descendant properties of "tabs" closely match the descendants of **CustomTab**.  ||
 
-The following table shows an approximate mapping of some high level child properties of the anonymous child objects in the "menus" array to XML elements in the current manifest.
+The following table maps the child properties of the anonymous child objects in the "menus" array onto XML elements in the current manifest.
 
 |JSON property|Purpose|XML element(s)|Comments|
 |:-----|:-----|:-----|:-----|
 | "type" | Specifies the type of context where the menu appears, for example, "cell". | The `id` attribute of the **OfficeMenu** element. |  |
-| "control" | Configures custom menu. | **Control** of type Menu | The names and hierarchy of the descendant properties of "control" closely match the descendants of [Control element of type Menu](/javascript/api/manifest/control-menu.md).  ||
+| "control" | Configures acustom menu. | **Control** (of type Menu) | The names and hierarchy of the descendant properties of "control" closely match the descendants of [Control element of type Menu](/javascript/api/manifest/control-menu.md).  ||
 
 ## Sample preview JSON manifest
 
