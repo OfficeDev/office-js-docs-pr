@@ -19,6 +19,9 @@ The new manifest is available for preview and we encourage experienced add-in de
 - The preview JSON manifest only supports Outlook add-ins. We're working on extending support to Excel, PowerPoint, and Word.
 - It is not yet possible to combine an add-in with other Microsoft 365 extension types, such as a Teams tab. We're working on this too.
 
+> [!TIP]
+> Anxious to get started with the preview JSON manifest? Begin with [Build an Outlook add-in with a JSON manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
+
 ## Overview of the preview JSON manifest
 
 ### Schemas and general points
@@ -872,3 +875,7 @@ The following is an example of a preview JSON-manifest for an add-in.
     }
 }
 ```
+
+## Next steps
+
+- [Build an Outlook add-in with a JSON manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
