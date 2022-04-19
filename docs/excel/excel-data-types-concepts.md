@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 04/15/2022
+ms.date: 04/19/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -26,7 +26,7 @@ This article describes how to use the [Excel JavaScript API](../reference/overvi
 
 Use the [`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) property to work with data type values. This property is similar to [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member), but `Range.values` only returns the four basic types: string, number, boolean, or error values. `Range.valuesAsJson` returns expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
 
-The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.cellvalue) object, which is a union of the following data types.
+The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.cellvalue) type alias, which is a [union](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types) of the following data types.
 
 - [ArrayCellValue](/javascript/api/excel/excel.arraycellvalue)
 - [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)
@@ -40,7 +40,8 @@ The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.ce
 - [StringCellValue](/javascript/api/excel/excel.stringcellvalue)
 - [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)
 - [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)
-- [CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties)
+
+The [CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) object is also a member of the `CellValue` type union, but it's not a data type. The properties of the `CellValueExtraProperties` object are used with all data types to specify details related to overwriting cell values.
 
 ### JSON schema
 
