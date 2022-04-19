@@ -1,14 +1,14 @@
 ---
-title: Build an Outlook add-in with a JSON manifest (preview)
+title: Build an Outlook add-in with a Teams manifest (preview)
 description: Learn how to build a simple Outlook task pane add-in with a JSON manifest.
 ms.date: 05/24/2022
 ms.prod: outlook
 ms.localizationpriority: high
 ---
 
-# Build an Outlook add-in with a JSON manifest (preview)
+# Build an Outlook add-in with a Teams manifest (preview)
 
-In this article, you'll walk through the process of building an Outlook task pane add-in that displays at least one property of a selected message. This add-in will use the preview JSON manifest instead of the current XML manifest. For more information about the JSON manifest, see [JSON-formatted manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+In this article, you'll walk through the process of building an Outlook task pane add-in that displays at least one property of a selected message. This add-in will use a preview version of the JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use.  For more information about this manifest, see [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
 The new manifest is available for preview and we encourage experienced add-in developers to experiment with it. It should not be used in production add-ins. 
 
@@ -33,11 +33,11 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - **Choose a project type** - `[Preview] Outlook Add-in with JSON manifest`
+    - **Choose a project type** - `Outlook Add-in with Teams Manifest (Developer preview)`
 
     - **Choose a script type** - `JavaScript`
 
-    - **What do you want to name your add-in?** - `Outlook Add-in with JSON Manifest`
+    - **What do you want to name your add-in?** - `Outlook Add-in with Teams Manifest`
 
     - **Which Office client application would you like to support?** - `Outlook`
 
@@ -50,7 +50,7 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 1. Navigate to the root folder of the web application project.
 
     ```command&nbsp;line
-    cd "Outlook Add-in with JSON Manifest"
+    cd "Outlook Add-in with Teams Manifest"
     ```
 
 ### Explore the project

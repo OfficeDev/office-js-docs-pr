@@ -1,11 +1,11 @@
 ---
-title: JSON-formatted manifest for Office Add-ins
+title: Teams manifest for Office Add-ins (preview)
 description: Get an overview of the preview JSON manifest.
 ms.date: 05/24/2022
 ms.localizationpriority: high
 ---
 
-# JSON-formatted manifest for Office Add-ins (preview)
+# Teams manifest for Office Add-ins (preview)
 
 Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements will provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes will not break existing add-ins. 
 
@@ -16,18 +16,17 @@ Two of the most important improvements are:
 
 The new manifest is available for preview and we encourage experienced add-in developers to experiment with it. It should not be used in production add-ins. During the early preview period, the following limitations apply:
 
-- The preview JSON manifest only supports Outlook add-ins. We're working on extending support to Excel, PowerPoint, and Word.
-- It is not yet possible to combine an add-in with other Microsoft 365 extension types, such as a Teams tab. We're working on this too.
+- The preview version of the Teams manifest only supports Outlook add-ins. We're working on extending support to Excel, PowerPoint, and Word.
+- It is not yet possible to combine an add-in with Teams apps, such as a custom Teams tab, or any other Microsoft 365 extension types. We're working on this too.
 
 > [!TIP]
-> Anxious to get started with the preview JSON manifest? Begin with [Build an Outlook add-in with a JSON manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
+> Anxious to get started with the preview Teams manifest? Begin with [Build an Outlook add-in with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
 
-## Overview of the preview JSON manifest
+## Overview of the JSON manifest
 
 ### Schemas and general points
 
 There are a total of 7 [Schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) to define the current XML manifest. There is just one schema for the [preview JSON manifest](/microsoftteams/platform/resources/dev-preview/developer-preview-intro.md). 
-
 
 ### Conceptual mapping of the preview JSON and current XML manifests
 
@@ -878,4 +877,4 @@ The following is an example of a preview JSON-manifest for an add-in.
 
 ## Next steps
 
-- [Build an Outlook add-in with a JSON manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
+- [Build an Outlook add-in with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
