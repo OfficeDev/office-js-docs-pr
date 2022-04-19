@@ -26,7 +26,7 @@ This article describes how to use the [Excel JavaScript API](../reference/overvi
 
 Use the [`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) property to work with data type values. This property is similar to [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member), but `Range.values` only returns the four basic types: string, number, boolean, or error values. `Range.valuesAsJson` returns expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
 
-The `valuesAsJson` property returns the [CellValue](/javascript/api/excel/excel.cellvalue) type, which contains the following data type objects.
+The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.cellvalue) object, which is a union of the following data types.
 
 - [ArrayCellValue](/javascript/api/excel/excel.arraycellvalue)
 - [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)
