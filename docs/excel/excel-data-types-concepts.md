@@ -41,7 +41,7 @@ The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.ce
 - [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)
 - [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)
 
-The [CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) object is an intersection with rest of the `*CellValue` types. It's not a data type itself. The properties of the `CellValueExtraProperties` object are used with all data types to specify details related to overwriting cell values.
+The [CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) object is an [intersection](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types) with the rest of the `*CellValue` types. It's not a data type itself. The properties of the `CellValueExtraProperties` object are used with all data types to specify details related to overwriting cell values.
 
 ### JSON schema
 
