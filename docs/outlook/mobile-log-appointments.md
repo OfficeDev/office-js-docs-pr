@@ -2,7 +2,7 @@
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
 ms.topic: article
-ms.date: 04/15/2022
+ms.date: 04/20/2022
 ms.localizationpriority: medium
 ---
 
@@ -66,7 +66,7 @@ To enable users to log appointment notes with your add-in, you must configure th
                     <bt:Image size="80" resid="icon-80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
-                    <FunctionName>saveAppointment</FunctionName>
+                    <FunctionName>logCRMEvent</FunctionName>
                   </Action>
                 </Control>
               </Group>
@@ -109,7 +109,7 @@ To enable users to log appointment notes with your add-in, you must configure th
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="residDescription" DefaultValue="Log appointment notes and other details to Contoso CRM."/>
-        <bt:String id="residLabel" DefaultValue="Add a Contoso CRM"/>
+        <bt:String id="residLabel" DefaultValue="Log to Contoso CRM"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="residTooltip" DefaultValue="Log notes to Contoso CRM for this appointment."/>
@@ -156,7 +156,7 @@ In this section, learn how your add-in can extract appointment details when the 
     function getGlobal() {
       return typeof self !== "undefined"
         ? self
-        : typeof window !== "undefined".
+        : typeof window !== "undefined"
         ? window
         : typeof global !== "undefined"
         ? global
@@ -164,6 +164,7 @@ In this section, learn how your add-in can extract appointment details when the 
     }
 
     const g = getGlobal();
+    g.logCRMEvent = logCRMEvent;
     ```
 
 ### Implement viewing appointment notes
@@ -193,6 +194,38 @@ function updateCustomProperties() {
 ```
 
 Your add-in defines the log viewing experience. For example, you can display the logged appointment notes in a dialog when the user taps the **View** button. For details on using dialogs, refer to [Use the Office dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
+
+### Implement deleting the appointment log
+
+If you'd like to enable your users to undo logging or delete the logged appointment notes so a replacement log can be saved, use Microsoft Graph to [clear the custom properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user selects the appropriate button in the ribbon.
+
+Add the following function to **./src/commands/commands.js** to clear the **EventLogged** custom property on the current appointment item.
+
+```js
+function clearCustomProperties() {
+  Office.context.mailbox.item.loadCustomPropertiesAsync(
+    function callback(customPropertiesResult) {
+      if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
+        var customProperties = customPropertiesResult.value;
+        customProperties.remove("EventLogged");
+        customProperties.saveAsync(
+          function callback(removeSaveAsyncResult) {
+            try {
+              if (removeSaveAsyncResult.status === Office.AsyncResultStatus.Succeeded) {
+                console.log("Custom properties cleared");
+                event.completed({ allowEvent: true });
+                event = undefined;
+                }
+            } catch (e) {
+              completeEventWithError(e);
+            }
+          }
+        );
+      }
+    }
+  );
+}
+```
 
 # [Task pane](#tab/taskpane)
 
@@ -236,8 +269,8 @@ To enable users to log appointment notes with your add-in, you must configure th
                       <bt:Image size="32" resid="icon-32"/>
                       <bt:Image size="80" resid="icon-80"/>
                     </Icon>
-                    <Action xsi:type="ExecuteFunction">
-                      <FunctionName>saveAppointment</FunctionName>
+                    <Action xsi:type="ShowTaskpane">
+                      <SourceLocation resid="Taskpane.Url"/>
                     </Action>
                   </Control>
                 </Group>
@@ -283,7 +316,7 @@ To enable users to log appointment notes with your add-in, you must configure th
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="residDescription" DefaultValue="Log appointment notes and other details to Contoso CRM."/>
-          <bt:String id="residLabel" DefaultValue="Add a Contoso CRM"/>
+          <bt:String id="residLabel" DefaultValue="Log to Contoso CRM"/>
         </bt:ShortStrings>
         <bt:LongStrings>
           <bt:String id="residTooltip" DefaultValue="Log notes to Contoso CRM for this appointment."/>
@@ -352,7 +385,35 @@ function updateCustomProperties() {
 
 ### Implement deleting the appointment log
 
-To undo logging or delete the logged appointment notes so a replacement log can be saved, use Microsoft Graph to [clear the custom properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user selects the appropriate button in the task pane.
+If you'd like to enable your users to undo logging or delete the logged appointment notes so a replacement log can be saved, use Microsoft Graph to [clear the custom properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user selects the appropriate button in the task pane.
+
+Add the following function to **./src/taskpane/taskpane.js** to clear the **EventLogged** custom property on the current appointment item.
+
+```js
+function clearCustomProperties() {
+  Office.context.mailbox.item.loadCustomPropertiesAsync(
+    function callback(customPropertiesResult) {
+      if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
+        var customProperties = customPropertiesResult.value;
+        customProperties.remove("EventLogged");
+        customProperties.saveAsync(
+          function callback(removeSaveAsyncResult) {
+            try {
+              if (removeSaveAsyncResult.status === Office.AsyncResultStatus.Succeeded) {
+                console.log("Custom properties cleared");
+                event.completed({ allowEvent: true });
+                event = undefined;
+                }
+            } catch (e) {
+              completeEventWithError(e);
+            }
+          }
+        );
+      }
+    }
+  );
+}
+```
 
 ---
 
