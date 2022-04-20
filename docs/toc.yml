@@ -666,8 +666,6 @@ items:
         href: outlook/add-mobile-support.md
     - name: Add-in requirements
       href: outlook/add-in-requirements.md
-    - name: Add-in APIs
-      href: outlook/apis.md
     - name: Call Outlook REST APIs
       href: outlook/use-rest-api.md
     - name: Call Exchange web services
@@ -880,6 +878,8 @@ items:
   - name: Open in Excel
     href: excel/pnp-open-in-excel.md
     displayName: Excel
+  - name: Copy Script Lab snippet to Yo Office
+    href: overview/create-an-office-add-in-from-script-lab.md
 - name: Resources
   items:
   - name: Glossary
