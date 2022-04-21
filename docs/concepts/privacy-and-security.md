@@ -233,7 +233,7 @@ Developers should also take note of the following security practices.
 
 - Before publishing an add-in, developers should make sure that any personal identifiable information that they expose in their add-in files is secure.
 
-- Developers shouldn't embed keys that they use to access external APIs or services (such as Bing, Google, or Facebook) directly in the HTML pages of their add-in. Instead, they should create a custom web service or store the keys in some other form of secure web storage that they can then call to pass the key value to their add-in.
+- Developers shouldn't embed keys that they use to access APIs or services from Microsoft and others (such as Bing, Google, or Facebook) directly in the HTML pages of their add-in. Instead, they should create a custom web service or store the keys in some other form of secure web storage that they can then call to pass the key value to their add-in.
 
 - Developers should do the following when submitting an add-in to AppSource.
 

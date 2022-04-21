@@ -15,7 +15,7 @@ You can use the Office Add-ins platform to build solutions that extend Office ap
 
 Office Add-ins can do almost anything a webpage can do inside a browser. Use the Office Add-ins platform to:
 
-- **Add new functionality to Office clients** - Bring external data into Office, automate Office documents, expose external functionality in Office clients, and more. For example, use Microsoft Graph API to connect to data that drives productivity.
+- **Add new functionality to Office clients** - Bring external data into Office, automate Office documents, expose functionality from Microsoft and others in Office clients, and more. For example, use Microsoft Graph API to connect to data that drives productivity.
 
 - **Create new rich, interactive objects that can be embedded in Office documents** - Embed maps, charts, and interactive visualizations that users can add to their own Excel spreadsheets and PowerPoint presentations.
 

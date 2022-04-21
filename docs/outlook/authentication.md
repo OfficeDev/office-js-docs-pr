@@ -49,7 +49,7 @@ Your add-in can call [getUserIdentityTokenAsync](/javascript/api/outlook/office.
 
 ## Access tokens obtained via OAuth2 flows
 
-Add-ins can also access services that support OAuth2 for authorization. Consider using OAuth2 tokens if your add-in:
+Add-ins can also access services from Microsoft and others that support OAuth2 for authorization. Consider using OAuth2 tokens if your add-in:
 
 - Needs access to a service outside of your control.
 
