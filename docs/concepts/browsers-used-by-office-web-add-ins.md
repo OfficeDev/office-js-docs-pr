@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: Specifies how the operating system and Office version determine what browser is used by Office Add-ins.
-ms.date: 10/22/2021
+ms.date: 05/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -17,10 +17,13 @@ Which browser is used depends on:
 > [!IMPORTANT]
 > **Internet Explorer still used in Office Add-ins**
 >
-> Microsoft is ending support for Internet Explorer, but this doesn't significantly affect Office Add-ins. Some combinations of platforms and Office versions, including one-time-purchase versions through Office 2019, will continue to use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in this article. Moreover, support for these combinations, and hence for Internet Explorer, is still required for add-ins submitted to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center). Two things *are* changing:
+> Some combinations of platforms and Office versions, including one-time-purchase versions through Office 2019, still use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in this article. We recommend (but do not require) that you continue to support these combinations, at least in a minimal way by providing users of your add-in a graceful failure message when your add-in is launched in the Internet Explorer webview. Keep these additional points in mind:
 >
-> - Office on the web no longer opens in Internet Explorer. Consequently, AppSource no longer tests add-ins in Office on the web using Internet Explorer as the browser. But AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer.
+> - Office on the web no longer opens in Internet Explorer. Consequently, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) no longer tests add-ins in Office on the web using Internet Explorer as the browser.
+> - AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer, however it only issues a warning when the add-in does not support Internet Explorer; the add-in is not rejected by AppSource.
 > - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Internet Explorer.
+>
+> For more information about supporting Internet Explorer and about graceful failure, see [Support Internet Explorer 11](../develop/support-ie-11.md).
 
 The following table shows which browser is used for the various platforms and operating systems.
 

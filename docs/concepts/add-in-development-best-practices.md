@@ -1,7 +1,7 @@
 ---
 title: Best practices for developing Office Add-ins
 description: Apply the best practices when developing to create Office Add-ins.
-ms.date: 01/14/2022
+ms.date: 05/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -128,9 +128,9 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Create a website to help users find and use your add-in.
 
-## Use JavaScript that supports Internet Explorer
+## Support Internet Explorer (Recommended but not required)
 
-[!INCLUDE [How to support IE](../includes/es5-support.md)]
+See [Support Internet Explorer 11](../develop/support-ie-11.md).
 
 ## See also
 
