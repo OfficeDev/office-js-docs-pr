@@ -21,6 +21,8 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 
 ### Prerequisites
 
+[.NET runtime](https://dotnet.microsoft.com/download/dotnet/6.0/runtime) for your operating system. One of the tools used in the preview runs on .NET.
+
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
