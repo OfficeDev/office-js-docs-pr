@@ -2,7 +2,7 @@
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
 ms.topic: article
-ms.date: 04/20/2022
+ms.date: 04/22/2022
 ms.localizationpriority: medium
 ---
 
@@ -124,7 +124,7 @@ To enable users to log appointment notes with your add-in, you must configure th
 
 ### Implement capturing appointment notes
 
-In this section, learn how your add-in can extract appointment details when the user taps the **Log** button.
+In this section, learn how your add-in can extract appointment details when the user selects the **Log** button.
 
 1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
 
@@ -169,12 +169,12 @@ In this section, learn how your add-in can extract appointment details when the 
 
 ### Implement viewing appointment notes
 
-The **Log** button can be toggled to display **View**. Then when the user the user selects the **View** button, they can look at their logged notes for this appointment.
+The **Log** button can be toggled to display **View** by setting the **EventLogged** custom property reserved for this purpose. Then when the user the user selects the **View** button, they can look at their logged notes for this appointment.
 
-Add the following function to **./src/commands/commands.js** then call it after the add-in successfully logs the appointment notes. This function sets the **EventLogged** custom property on the current appointment item.
+Add the following function to **./src/commands/commands.js**. This function sets the **EventLogged** custom property on the current appointment item.
 
 ```js
-function updateCustomProperties() {
+function updateCustomProperties(event) {
   Office.context.mailbox.item.loadCustomPropertiesAsync(
     function callback(customPropertiesResult) {
       if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
@@ -193,7 +193,28 @@ function updateCustomProperties() {
 }
 ```
 
-Your add-in defines the log viewing experience. For example, you can display the logged appointment notes in a dialog when the user taps the **View** button. For details on using dialogs, refer to [Use the Office dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
+You can then call it after the add-in successfully logs the appointment notes. For example, you can call it from **LogCRMEvent** as follows.
+
+```js
+function logCRMEvent(event) {
+  console.log(`Subject: ${Office.context.mailbox.item.subject}`);
+  Office.context.mailbox.item.body.getAsync(
+    "html",
+    { asyncContext: "This is passed to the callback" },
+    function callback(result) {
+      if (result.status === Office.AsyncResultStatus.Succeeded) {
+        // Replace `event.completed({ allowEvent: true });` with the following statement.
+        updateCustomProperties(event);
+      } else {
+        console.error("Failed to get body.");
+        event.completed({ allowEvent: false });
+      }
+    }
+  );
+}
+```
+
+Your add-in defines the log viewing experience. For example, you can display the logged appointment notes in a dialog when the user selects the **View** button. For details on using dialogs, refer to [Use the Office dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
 
 ### Implement deleting the appointment log
 
@@ -202,7 +223,7 @@ If you'd like to enable your users to undo logging or delete the logged appointm
 Add the following function to **./src/commands/commands.js** to clear the **EventLogged** custom property on the current appointment item.
 
 ```js
-function clearCustomProperties() {
+function clearCustomProperties(event) {
   Office.context.mailbox.item.loadCustomPropertiesAsync(
     function callback(customPropertiesResult) {
       if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
@@ -215,12 +236,33 @@ function clearCustomProperties() {
                 console.log("Custom properties cleared");
                 event.completed({ allowEvent: true });
                 event = undefined;
-                }
+              }
             } catch (e) {
               completeEventWithError(e);
             }
           }
         );
+      }
+    }
+  );
+}
+```
+
+You can then call it when you want to clear the custom property. For example, you can call it from **LogCRMEvent** if setting the log failed in some way as shown next.
+
+```js
+function logCRMEvent(event) {
+  console.log(`Subject: ${Office.context.mailbox.item.subject}`);
+  Office.context.mailbox.item.body.getAsync(
+    "html",
+    { asyncContext: "This is passed to the callback" },
+    function callback(result) {
+      if (result.status === Office.AsyncResultStatus.Succeeded) {
+        updateCustomProperties(event);
+      } else {
+        console.error("Failed to get body.");
+        // Replace `event.completed({ allowEvent: false });` with the following statement.
+        clearCustomProperties(event);
       }
     }
   );
@@ -331,7 +373,7 @@ To enable users to log appointment notes with your add-in, you must configure th
 
 ### Implement capturing appointment notes
 
-In this section, learn how to display the logged appointment notes and other details in a task pane when the user taps the **Log** button.
+In this section, learn how to display the logged appointment notes and other details in a task pane when the user selects the **Log** button.
 
 1. From the same quick start project, open the file **./src/taskpane/taskpane.js** in your code editor.
 
@@ -351,6 +393,10 @@ In this section, learn how to display the logged appointment notes and other det
         function callback(result) {
           if (result.status === Office.AsyncResultStatus.Succeeded) {
             console.log("event logged successfully");
+            event.completed({ allowEvent: true });
+          } else {
+            console.error("Failed to get body.");
+            event.completed({ allowEvent: false });
           }
         }
       );
@@ -359,9 +405,9 @@ In this section, learn how to display the logged appointment notes and other det
 
 ### Implement viewing appointment notes
 
-The **Log** button can be toggled to display **View**. Then when the user the user selects the **View** button, they can look at their logged notes for this appointment. Your add-in defines the log viewing experience.
+The **Log** button can be toggled to display **View** by setting the **EventLogged** custom property reserved for this purpose. Then when the user the user selects the **View** button, they can look at their logged notes for this appointment. Your add-in defines the log viewing experience.
 
-Add the following function to **./src/taskpane/taskpane.js** then call it after the add-in successfully logs the appointment notes. This function sets the **EventLogged** custom property on the current appointment item.
+Add the following function to **./src/taskpane/taskpane.js**. This function sets the **EventLogged** custom property on the current appointment item.
 
 ```js
 function updateCustomProperties() {
@@ -383,6 +429,27 @@ function updateCustomProperties() {
 }
 ```
 
+You can then call it after the add-in successfully logs the appointment notes. For example, you can call it from **LogCRMEvent** as follows.
+
+```js
+function getEventData() {
+  console.log(`Subject: ${Office.context.mailbox.item.subject}`);
+  Office.context.mailbox.item.body.getAsync(
+    "html",
+    function callback(result) {
+      if (result.status === Office.AsyncResultStatus.Succeeded) {
+        console.log("event logged successfully");
+        // Replace `event.completed({ allowEvent: true });` with the following statement.
+        updateCustomProperties(event);
+      } else {
+        console.error("Failed to get body.");
+        event.completed({ allowEvent: false });
+      }
+    }
+  );
+}
+```
+
 ### Implement deleting the appointment log
 
 If you'd like to enable your users to undo logging or delete the logged appointment notes so a replacement log can be saved, use Microsoft Graph to [clear the custom properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user selects the appropriate button in the task pane.
@@ -390,7 +457,7 @@ If you'd like to enable your users to undo logging or delete the logged appointm
 Add the following function to **./src/taskpane/taskpane.js** to clear the **EventLogged** custom property on the current appointment item.
 
 ```js
-function clearCustomProperties() {
+function clearCustomProperties(event) {
   Office.context.mailbox.item.loadCustomPropertiesAsync(
     function callback(customPropertiesResult) {
       if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
@@ -403,12 +470,33 @@ function clearCustomProperties() {
                 console.log("Custom properties cleared");
                 event.completed({ allowEvent: true });
                 event = undefined;
-                }
+              }
             } catch (e) {
               completeEventWithError(e);
             }
           }
         );
+      }
+    }
+  );
+}
+```
+
+You can then call it when you want to clear the custom property. For example, you can call it from **getEventData** if setting the log failed in some way as shown next.
+
+```js
+function getEventData() {
+  console.log(`Subject: ${Office.context.mailbox.item.subject}`);
+  Office.context.mailbox.item.body.getAsync(
+    "html",
+    function callback(result) {
+      if (result.status === Office.AsyncResultStatus.Succeeded) {
+        console.log("event logged successfully");
+        updateCustomProperties(event);
+      } else {
+        console.error("Failed to get body.");
+        // Replace `event.completed({ allowEvent: false });` with the following statement.
+        clearCustomProperties(event);
       }
     }
   );
@@ -455,6 +543,7 @@ The following APIs are available for this feature.
 Several restrictions apply.
 
 - The **Log** button name cannot be changed. However, there is a way for a different label to be displayed by setting a custom property on the appointment item. For more details, refer to the **Implement viewing appointment notes** section for [UI-less](?tabs=noui#implement-viewing-appointment-notes) or [task pane](?tabs=taskpane#implement-viewing-appointment-notes-1) as appropriate.
+- The **EventLogged** custom property must be used if you want to toggle the label of the **Log** button to **View** and back.
 - The add-in icon should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
 - The add-in should extract the meeting details from the appointment form within the one-minute timeout period. However, any time spent in a dialog box the add-in opened for authentication, etc. is excluded from the timeout period.
 
