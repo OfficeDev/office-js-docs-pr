@@ -128,7 +128,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Create a website to help users find and use your add-in.
 
-## Support Internet Explorer (Recommended but not required)
+## Support Internet Explorer (recommended but not required)
 
 See [Support Internet Explorer 11](../develop/support-ie-11.md).
 

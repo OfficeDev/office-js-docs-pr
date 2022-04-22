@@ -41,10 +41,10 @@ The following software is required for developing an Office Add-in for the suppo
 
   If you have a valid Microsoft 365 subscription and you do not have access to the Office client, you can [download and install the latest version of Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658).
 
-- Microsoft Edge must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Microsoft Edge.
+- Microsoft Edge must be installed, but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Microsoft Edge.
 
   > [!NOTE]
-  > - Strictly speaking, it is possible to develop add-ins on a machine that has Internet Explorer 11, but not Microsoft Edge installed. But IE is used to run add-ins only on certain older combinations of Windows and Office versions. See [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md) for more details. We don't recommend using such old environments as your primary add-in development environment. However, if you are likely to have customers of your add-in that are working in these older combinations, we recommend that you support Internet Explorer. For more information, see [Support Internet Explorer 11](../develop/support-ie-11.md).
+  > - Strictly speaking, it is possible to develop add-ins on a machine that has Internet Explorer 11 installed, but not Microsoft Edge. However, IE is used to run add-ins only on certain older combinations of Windows and Office versions. See [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md) for more details. We don't recommend using such old environments as your primary add-in development environment. However, if you are likely to have customers of your add-in that are working in these older combinations, we recommend that you support Internet Explorer. For more information, see [Support Internet Explorer 11](../develop/support-ie-11.md).
   > 
   > - Internet Explorer's Enhanced Security Configuration (ESC) must be turned off for Office Web Add-ins to work. If you are using a Windows Server computer as your client when developing add-ins, note that ESC is turned on by default in Windows Server.
 
