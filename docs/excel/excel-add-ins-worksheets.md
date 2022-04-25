@@ -395,7 +395,7 @@ await Excel.run(async (context) => {
     });
 
     await context.sync();
-    foundRanges.format.fill.color = "green"
+    foundRanges.format.fill.color = "green";
 });
 ```
 
