@@ -2,7 +2,7 @@
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
 ms.topic: article
-ms.date: 04/22/2022
+ms.date: 04/25/2022
 ms.localizationpriority: medium
 ---
 
@@ -131,13 +131,14 @@ In this section, learn how your add-in can extract appointment details when the 
 1. Replace the entire content of the **commands.js** file with the following JavaScript.
 
     ```js
-    // Office is ready.
-    Office.onReady(function () {
-        // Add any initialization code here.
-      }
-    );
+    var event;
 
-    function logCRMEvent(event) {
+    Office.initialize = function (reason) {
+      // Add any initialization code here.
+    };
+
+    function logCRMEvent(appointmentEvent) {
+      event = appointmentEvent;
       console.log(`Subject: ${Office.context.mailbox.item.subject}`);
       Office.context.mailbox.item.body.getAsync(
         "html",
@@ -169,12 +170,14 @@ In this section, learn how your add-in can extract appointment details when the 
 
 ### Implement viewing appointment notes
 
-The **Log** button can be toggled to display **View** by setting the **EventLogged** custom property reserved for this purpose. Then when the user the user selects the **View** button, they can look at their logged notes for this appointment.
+The **Log** button label can be toggled to display **View** by setting the **EventLogged** custom property reserved for this purpose. Then when the user selects the **View** button, they can look at their logged notes for this appointment.
+
+Your add-in defines the log viewing experience. For example, you can display the logged appointment notes in a dialog when the user selects the **View** button. For details on using dialogs, refer to [Use the Office dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
 
 Add the following function to **./src/commands/commands.js**. This function sets the **EventLogged** custom property on the current appointment item.
 
 ```js
-function updateCustomProperties(event) {
+function updateCustomProperties() {
   Office.context.mailbox.item.loadCustomPropertiesAsync(
     function callback(customPropertiesResult) {
       if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
@@ -184,6 +187,8 @@ function updateCustomProperties(event) {
           function callback(setSaveAsyncResult) {
             if (setSaveAsyncResult.status === Office.AsyncResultStatus.Succeeded) {
               console.log("EventLogged custom property saved successfully.");
+              event.completed({ allowEvent: true });
+              event = undefined;
             }
           }
         );
@@ -196,7 +201,8 @@ function updateCustomProperties(event) {
 You can then call it after the add-in successfully logs the appointment notes. For example, you can call it from **LogCRMEvent** as follows.
 
 ```js
-function logCRMEvent(event) {
+function logCRMEvent(appointmentEvent) {
+  event = appointmentEvent;
   console.log(`Subject: ${Office.context.mailbox.item.subject}`);
   Office.context.mailbox.item.body.getAsync(
     "html",
@@ -204,7 +210,7 @@ function logCRMEvent(event) {
     function callback(result) {
       if (result.status === Office.AsyncResultStatus.Succeeded) {
         // Replace `event.completed({ allowEvent: true });` with the following statement.
-        updateCustomProperties(event);
+        updateCustomProperties();
       } else {
         console.error("Failed to get body.");
         event.completed({ allowEvent: false });
@@ -214,60 +220,56 @@ function logCRMEvent(event) {
 }
 ```
 
-Your add-in defines the log viewing experience. For example, you can display the logged appointment notes in a dialog when the user selects the **View** button. For details on using dialogs, refer to [Use the Office dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
-
 ### Implement deleting the appointment log
 
-If you'd like to enable your users to undo logging or delete the logged appointment notes so a replacement log can be saved, use Microsoft Graph to [clear the custom properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user selects the appropriate button in the ribbon.
+If you'd like to enable your users to undo logging or delete the logged appointment notes so a replacement log can be saved, you have a couple of options.
 
-Add the following function to **./src/commands/commands.js** to clear the **EventLogged** custom property on the current appointment item.
+1. Use Microsoft Graph to [clear the custom properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user selects the appropriate button in the ribbon.
+1. Add the following function to **./src/commands/commands.js** to clear the **EventLogged** custom property on the current appointment item.
 
-```js
-function clearCustomProperties(event) {
-  Office.context.mailbox.item.loadCustomPropertiesAsync(
-    function callback(customPropertiesResult) {
-      if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
-        var customProperties = customPropertiesResult.value;
-        customProperties.remove("EventLogged");
-        customProperties.saveAsync(
-          function callback(removeSaveAsyncResult) {
-            try {
-              if (removeSaveAsyncResult.status === Office.AsyncResultStatus.Succeeded) {
-                console.log("Custom properties cleared");
-                event.completed({ allowEvent: true });
-                event = undefined;
+    ```js
+    function clearCustomProperties() {
+      Office.context.mailbox.item.loadCustomPropertiesAsync(
+        function callback(customPropertiesResult) {
+          if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
+            var customProperties = customPropertiesResult.value;
+            customProperties.remove("EventLogged");
+            customProperties.saveAsync(
+              function callback(removeSaveAsyncResult) {
+                if (removeSaveAsyncResult.status === Office.AsyncResultStatus.Succeeded) {
+                  console.log("Custom properties cleared");
+                  event.completed({ allowEvent: true });
+                  event = undefined;
+                }
               }
-            } catch (e) {
-              completeEventWithError(e);
-            }
+            );
           }
-        );
-      }
+        }
+      );
     }
-  );
-}
-```
+    ```
 
-You can then call it when you want to clear the custom property. For example, you can call it from **LogCRMEvent** if setting the log failed in some way as shown next.
+    You can then call it when you want to clear the custom property. For example, you can call it from **LogCRMEvent** if setting the log failed in some way as shown next.
 
-```js
-function logCRMEvent(event) {
-  console.log(`Subject: ${Office.context.mailbox.item.subject}`);
-  Office.context.mailbox.item.body.getAsync(
-    "html",
-    { asyncContext: "This is passed to the callback" },
-    function callback(result) {
-      if (result.status === Office.AsyncResultStatus.Succeeded) {
-        updateCustomProperties(event);
-      } else {
-        console.error("Failed to get body.");
-        // Replace `event.completed({ allowEvent: false });` with the following statement.
-        clearCustomProperties(event);
-      }
+    ```js
+    function logCRMEvent(appointmentEvent) {
+      event = appointmentEvent;
+      console.log(`Subject: ${Office.context.mailbox.item.subject}`);
+      Office.context.mailbox.item.body.getAsync(
+        "html",
+        { asyncContext: "This is passed to the callback" },
+        function callback(result) {
+          if (result.status === Office.AsyncResultStatus.Succeeded) {
+            updateCustomProperties();
+          } else {
+            console.error("Failed to get body.");
+            // Replace `event.completed({ allowEvent: false });` with the following statement.
+            clearCustomProperties();
+          }
+        }
+      );
     }
-  );
-}
-```
+    ```
 
 # [Task pane](#tab/taskpane)
 
@@ -295,7 +297,6 @@ To enable users to log appointment notes with your add-in, you must configure th
       <Hosts>
         <Host xsi:type="MailHost">
           <DesktopFormFactor>
-            <FunctionFile resid="residFunctionFile"/>
             <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
               <OfficeTab id="TabDefault">
                 <Group id="apptReadGroup">
@@ -320,7 +321,6 @@ To enable users to log appointment notes with your add-in, you must configure th
             </ExtensionPoint>
           </DesktopFormFactor>
           <MobileFormFactor>
-            <FunctionFile resid="residFunctionFile"/>
             <ExtensionPoint xsi:type="MobileLogEventAppointmentAttendee">
               <Control xsi:type="MobileButton" id="appointmentReadFunctionButton">
                 <Label resid="residLabel"/>
@@ -393,10 +393,8 @@ In this section, learn how to display the logged appointment notes and other det
         function callback(result) {
           if (result.status === Office.AsyncResultStatus.Succeeded) {
             console.log("event logged successfully");
-            event.completed({ allowEvent: true });
           } else {
             console.error("Failed to get body.");
-            event.completed({ allowEvent: false });
           }
         }
       );
@@ -405,7 +403,7 @@ In this section, learn how to display the logged appointment notes and other det
 
 ### Implement viewing appointment notes
 
-The **Log** button can be toggled to display **View** by setting the **EventLogged** custom property reserved for this purpose. Then when the user the user selects the **View** button, they can look at their logged notes for this appointment. Your add-in defines the log viewing experience.
+The **Log** button label can be toggled to display **View** by setting the **EventLogged** custom property reserved for this purpose. Then when the user the user selects the **View** button, they can look at their logged notes for this appointment. Your add-in defines the log viewing experience.
 
 Add the following function to **./src/taskpane/taskpane.js**. This function sets the **EventLogged** custom property on the current appointment item.
 
@@ -439,11 +437,9 @@ function getEventData() {
     function callback(result) {
       if (result.status === Office.AsyncResultStatus.Succeeded) {
         console.log("event logged successfully");
-        // Replace `event.completed({ allowEvent: true });` with the following statement.
-        updateCustomProperties(event);
+        updateCustomProperties();
       } else {
         console.error("Failed to get body.");
-        event.completed({ allowEvent: false });
       }
     }
   );
@@ -452,56 +448,50 @@ function getEventData() {
 
 ### Implement deleting the appointment log
 
-If you'd like to enable your users to undo logging or delete the logged appointment notes so a replacement log can be saved, use Microsoft Graph to [clear the custom properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user selects the appropriate button in the task pane.
+If you'd like to enable your users to undo logging or delete the logged appointment notes so a replacement log can be saved, you have a couple of options.
 
-Add the following function to **./src/taskpane/taskpane.js** to clear the **EventLogged** custom property on the current appointment item.
+1. Use Microsoft Graph to [clear the custom properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user selects the appropriate button in the task pane.
+1. Add the following function to **./src/taskpane/taskpane.js** to clear the **EventLogged** custom property on the current appointment item.
 
-```js
-function clearCustomProperties(event) {
-  Office.context.mailbox.item.loadCustomPropertiesAsync(
-    function callback(customPropertiesResult) {
-      if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
-        var customProperties = customPropertiesResult.value;
-        customProperties.remove("EventLogged");
-        customProperties.saveAsync(
-          function callback(removeSaveAsyncResult) {
-            try {
-              if (removeSaveAsyncResult.status === Office.AsyncResultStatus.Succeeded) {
-                console.log("Custom properties cleared");
-                event.completed({ allowEvent: true });
-                event = undefined;
+    ```js
+    function clearCustomProperties() {
+      Office.context.mailbox.item.loadCustomPropertiesAsync(
+        function callback(customPropertiesResult) {
+          if (customPropertiesResult.status === Office.AsyncResultStatus.Succeeded) {
+            var customProperties = customPropertiesResult.value;
+            customProperties.remove("EventLogged");
+            customProperties.saveAsync(
+              function callback(removeSaveAsyncResult) {
+                if (removeSaveAsyncResult.status === Office.AsyncResultStatus.Succeeded) {
+                  console.log("Custom properties cleared");
+                }
               }
-            } catch (e) {
-              completeEventWithError(e);
-            }
+            );
           }
-        );
-      }
+        }
+      );
     }
-  );
-}
-```
+    ```
 
-You can then call it when you want to clear the custom property. For example, you can call it from **getEventData** if setting the log failed in some way as shown next.
+    You can then call it when you want to clear the custom property. For example, you can call it from **getEventData** if setting the log failed in some way as shown next.
 
-```js
-function getEventData() {
-  console.log(`Subject: ${Office.context.mailbox.item.subject}`);
-  Office.context.mailbox.item.body.getAsync(
-    "html",
-    function callback(result) {
-      if (result.status === Office.AsyncResultStatus.Succeeded) {
-        console.log("event logged successfully");
-        updateCustomProperties(event);
-      } else {
-        console.error("Failed to get body.");
-        // Replace `event.completed({ allowEvent: false });` with the following statement.
-        clearCustomProperties(event);
-      }
+    ```js
+    function getEventData() {
+      console.log(`Subject: ${Office.context.mailbox.item.subject}`);
+      Office.context.mailbox.item.body.getAsync(
+        "html",
+        function callback(result) {
+          if (result.status === Office.AsyncResultStatus.Succeeded) {
+            console.log("event logged successfully");
+            updateCustomProperties();
+          } else {
+            console.error("Failed to get body.");
+            clearCustomProperties();
+          }
+        }
+      );
     }
-  );
-}
-```
+    ```
 
 ---
 
