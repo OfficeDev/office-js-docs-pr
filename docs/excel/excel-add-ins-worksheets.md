@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.
-ms.date: 02/17/2022
+ms.date: 04/25/2022
 ms.localizationpriority: medium
 ---
 
@@ -382,14 +382,16 @@ await Excel.run(async (context) => {
 
 ## Find all cells with matching text
 
-The `Worksheet` object has a `find` method to search for a specified string within the worksheet. It returns a `RangeAreas` object, which is a collection of `Range` objects that can be edited all at once. The following code sample finds all cells with values equal to the string **Complete** and colors them green. Note that `findAll` will throw an `ItemNotFound` error if the specified string doesn't exist in the worksheet. If you expect that the specified string may not exist in the worksheet, use the [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) method instead, so your code gracefully handles that scenario.
+The `Worksheet` object has a [`findAll` method](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-findall-member(1)) to search for a specified string within the worksheet. It returns a `RangeAreas` object, which is a collection of `Range` objects that can be edited all at once.
+
+The following code sample finds all cells with values equal to the string **Complete** and colors them green. Note that `findAll` will throw an `ItemNotFound` error if the specified string doesn't exist in the worksheet. If it's uncertain whether the specified string exists in the worksheet, use the [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) method to gracefully handles that scenario.
 
 ```js
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getItem("Sample");
     let foundRanges = sheet.findAll("Complete", {
-        completeMatch: true, // findAll will match the whole cell value
-        matchCase: false // findAll will not match case
+        completeMatch: true, /* Match the whole cell value, not any part of the text. */
+        matchCase: false /* Make the search case-insensitive. */
     });
 
     await context.sync();
