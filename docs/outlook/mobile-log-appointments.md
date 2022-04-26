@@ -2,7 +2,7 @@
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
 ms.topic: article
-ms.date: 04/25/2022
+ms.date: 04/26/2022
 ms.localizationpriority: medium
 ---
 
@@ -198,7 +198,7 @@ function updateCustomProperties() {
 }
 ```
 
-You can then call it after the add-in successfully logs the appointment notes. For example, you can call it from **LogCRMEvent** as follows.
+You can then call it after the add-in successfully logs the appointment notes. For example, you can call it from **logCRMEvent** as follows.
 
 ```js
 function logCRMEvent(appointmentEvent) {
@@ -249,7 +249,7 @@ If you'd like to enable your users to undo logging or delete the logged appointm
     }
     ```
 
-    You can then call it when you want to clear the custom property. For example, you can call it from **LogCRMEvent** if setting the log failed in some way as shown next.
+    You can then call it when you want to clear the custom property. For example, you can call it from **logCRMEvent** if setting the log failed in some way as shown next.
 
     ```js
     function logCRMEvent(appointmentEvent) {
@@ -403,7 +403,7 @@ In this section, learn how to display the logged appointment notes and other det
 
 ### Implement viewing appointment notes
 
-The **Log** button label can be toggled to display **View** by setting the **EventLogged** custom property reserved for this purpose. Then when the user the user selects the **View** button, they can look at their logged notes for this appointment. Your add-in defines the log viewing experience.
+The **Log** button label can be toggled to display **View** by setting the **EventLogged** custom property reserved for this purpose. Then when the user selects the **View** button, they can look at their logged notes for this appointment. Your add-in defines the log viewing experience.
 
 Add the following function to **./src/taskpane/taskpane.js**. This function sets the **EventLogged** custom property on the current appointment item.
 
@@ -427,7 +427,7 @@ function updateCustomProperties() {
 }
 ```
 
-You can then call it after the add-in successfully logs the appointment notes. For example, you can call it from **LogCRMEvent** as follows.
+You can then call it after the add-in successfully logs the appointment notes. For example, you can call it from **getEventData** as follows.
 
 ```js
 function getEventData() {
@@ -519,6 +519,7 @@ The following APIs are available for this feature.
 
 - [Dialog APIs](../develop/dialog-api-in-office-add-ins.md)
 - [Office.AddinCommands.Event](/javascript/api/office/office.addincommands.event?view=outlook-js-preview&preserve-view=true)
+- [Office.CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true)
 - [Office.RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true)
 - [Appointment Read (attendee) APIs](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true) **except** the following:
   - [Office.context.mailbox.item.categories](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#categories)
