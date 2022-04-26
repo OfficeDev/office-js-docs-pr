@@ -382,9 +382,9 @@ await Excel.run(async (context) => {
 
 ## Find all cells with matching text
 
-The `Worksheet` object has a [`findAll` method](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-findall-member(1)) to search for a specified string within the worksheet. It returns a `RangeAreas` object, which is a collection of `Range` objects that can be edited all at once.
+The `Worksheet` object has a [`findAll`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-findall-member(1)) method to search for a specified string within the worksheet. It returns a `RangeAreas` object, which is a collection of `Range` objects that can be edited all at once.
 
-The following code sample finds all cells with values equal to the string **Complete** and colors them green. Note that `findAll` will throw an `ItemNotFound` error if the specified string doesn't exist in the worksheet. If it's uncertain whether the specified string exists in the worksheet, use the [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) method to gracefully handle that scenario.
+The following code sample finds all cells with values equal to the string **Complete** and colors them green. Note that `findAll` throws an `ItemNotFound` error if the specified string doesn't exist in the worksheet. If you're uncertain whether the specified string exists in the worksheet, use the [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) method to gracefully handle that scenario.
 
 ```js
 await Excel.run(async (context) => {
