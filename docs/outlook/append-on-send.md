@@ -153,6 +153,12 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
       event.completed();
     }
     ```
+    
+1. Immediately below the function add the following line to register the function.
+
+    ```js
+    Office.actions.associate("appendDisclaimerOnSend", appendDisclaimerOnSend);
+    ```
 
 1. At the end of the file, add the following statement.
 

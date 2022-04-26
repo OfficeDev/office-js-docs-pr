@@ -620,6 +620,12 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
         args.completed();
     }
     ```
+    
+1. Add the following line immediately below the function to register it.
+
+    ```js
+    Office.actions.associate("toggleProtection", toggleProtection);
+    ```
 
 1. Add the following line to the end of the file:
 
