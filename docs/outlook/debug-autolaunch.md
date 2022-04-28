@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Debug your event-based Outlook add-in
 
-This article provides debugging guidance as you implement [event-based activation](autolaunch.md) in your add-in. The event-based activation feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10?view=outlook-js-1.10) with additional events now available in preview. For more information, refer to [Supported events](autolaunch.md#supported-events).
+This article provides debugging guidance as you implement [event-based activation](autolaunch.md) in your add-in. The event-based activation feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) with additional events now available in preview. For more information, refer to [Supported events](autolaunch.md#supported-events).
 
 > [!IMPORTANT]
 > This debugging capability is only supported in Outlook on Windows with a Microsoft 365 subscription.
