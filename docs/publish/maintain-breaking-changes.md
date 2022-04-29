@@ -28,7 +28,7 @@ If you do encounter an app compatibility issue, App Assure engineers will work w
 - Engage with independent software vendors (ISVs) on your behalf to remediate some part of their app, so that it’s functional on the most modern version of our products.
 - Work with Microsoft product engineering teams to fix product bugs.
 
-Watch [this introductory video](https://techcommunity.microsoft.com/t5/video-hub/bring-your-apps-to-microsoft-edge-with-app-assure-tips-and/ba-p/2167619) to learn more about App Assure. To submit your request for app compatibility with App Assure, complete the [Microsoft FastTrack Registration form](https://aka.ms/AppAssureRequest) or send an email to [achelp@microsoft.com](mailto://achelp@microsoft.com).
+Watch [this introductory video](https://techcommunity.microsoft.com/t5/video-hub/bring-your-apps-to-microsoft-edge-with-app-assure-tips-and/ba-p/2167619) to learn more about App Assure. To submit your request for app compatibility with App Assure, complete the [Microsoft FastTrack Registration form](https://aka.ms/AppAssureRequest) or send an email to [achelp@microsoft.com](mailto:achelp@microsoft.com).
 
 ## Changes to Yeoman templates and web dependencies
 
