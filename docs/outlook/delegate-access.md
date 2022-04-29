@@ -50,7 +50,7 @@ The mailbox owner must first [provide access to a delegate](https://www.microsof
 
 #### Shared mailboxes
 
-Shared mailbox scenarios in Outlook add-ins are not currently supported on modern Outlook on the web.
+Shared mailbox scenarios in Outlook add-ins aren't currently supported in modern Outlook on the web.
 
 ### [Mac](#tab/unix)
 
