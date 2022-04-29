@@ -19,7 +19,7 @@ The Microsoft 365 Developer Platform is committed to ensuring the compatibility 
 
 ### App Assure
 
-Microsoft’s [App Assure](https://www.microsoft.com/fasttrack/microsoft-365/app-assure) service fulfills Microsoft’s promise of application compatibility: your apps will work on Windows 11 and Microsoft 365 Apps. App Assure engineers are available to help resolve any issues you might experience at no additional cost.
+Microsoft’s [App Assure](https://www.microsoft.com/fasttrack/microsoft-365/app-assure) service fulfills Microsoft’s promise of application compatibility: your apps will work on Windows and Microsoft 365 Apps. App Assure engineers are available to help resolve any issues you might experience at no additional cost.
 
 If you do encounter an app compatibility issue, App Assure engineers will work with you to help you resolve the issue. Our experts will:
 
