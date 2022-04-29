@@ -17,8 +17,18 @@ The Microsoft 365 Developer Platform is committed to ensuring the compatibility 
 - If your add-in is published in [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), you'll be contacted through your provided information.
 - Where possible, admins of impacted Microsoft 365 tenants (including [developer tenants](https://developer.microsoft.com/microsoft-365/dev-program)) will be contacted through [Message Center](/microsoft-365/admin/manage/message-center). It's the responsibility of the admin to contact providers of add-in solutions published outside of AppSource.
 
-> [!IMPORTANT]
-> [App Assure](https://www.microsoft.com/fasttrack/microsoft-365/app-assure) guarantees our support to your add-in's compatibility as Microsoft products are updated.
+### App Assure
+
+Microsoft’s [App Assure](https://www.microsoft.com/fasttrack/microsoft-365/app-assure) service fulfills Microsoft’s promise of application compatibility: your apps will work on Windows 11 and Microsoft 365 Apps. App Assure engineers are available to help resolve any issues you might experience at no additional cost.
+
+If you do encounter an app compatibility issue, App Assure engineers will work with you to help you resolve the issue. Our experts will:
+
+- Help you troubleshoot and identify a root cause.
+- Provide guidance to help you remediate the application compatibility issue.
+- Engage with independent software vendors (ISVs) on your behalf to remediate some part of their app, so that it’s functional on the most modern version of our products.
+- Work with Microsoft product engineering teams to fix product bugs.
+
+Watch [this introductory video](https://techcommunity.microsoft.com/t5/video-hub/bring-your-apps-to-microsoft-edge-with-app-assure-tips-and/ba-p/2167619) to learn more about App Assure. To submit your request for app compatibility with App Assure, complete the [Microsoft FastTrack Registration form](aka.ms/AppAssureRequest) or send an email to [achelp@microsoft.com](mailto://achelp@microsoft.com).
 
 ## Changes to Yeoman templates and web dependencies
 
