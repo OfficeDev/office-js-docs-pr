@@ -37,87 +37,87 @@ To enable users to log appointment notes with your add-in, you must configure th
 
 1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML. Make sure to replace all references to **Contoso** with your company's information.
 
-```xml
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
-    <Description resid="residDescription"></Description>
-    <Requirements>
-      <bt:Sets>
-        <bt:Set Name="Mailbox" MinVersion="1.3"/>
-      </bt:Sets>
-    </Requirements>
-    <Hosts>
-      <Host xsi:type="MailHost">
-        <DesktopFormFactor>
-          <FunctionFile resid="residFunctionFile"/>
-          <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="apptReadGroup">
-                <Label resid="residDescription"/>
-                <Control xsi:type="Button" id="apptReadOpenPaneButton">
+    ```xml
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+      <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+        <Description resid="residDescription"></Description>
+        <Requirements>
+          <bt:Sets>
+            <bt:Set Name="Mailbox" MinVersion="1.3"/>
+          </bt:Sets>
+        </Requirements>
+        <Hosts>
+          <Host xsi:type="MailHost">
+            <DesktopFormFactor>
+              <FunctionFile resid="residFunctionFile"/>
+              <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
+                <OfficeTab id="TabDefault">
+                  <Group id="apptReadGroup">
+                    <Label resid="residDescription"/>
+                    <Control xsi:type="Button" id="apptReadOpenPaneButton">
+                      <Label resid="residLabel"/>
+                      <Supertip>
+                        <Title resid="residLabel"/>
+                        <Description resid="residTooltip"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="icon-16"/>
+                        <bt:Image size="32" resid="icon-32"/>
+                        <bt:Image size="80" resid="icon-80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>logCRMEvent</FunctionName>
+                      </Action>
+                    </Control>
+                  </Group>
+                </OfficeTab>
+              </ExtensionPoint>
+            </DesktopFormFactor>
+            <MobileFormFactor>
+              <FunctionFile resid="residFunctionFile"/>
+              <ExtensionPoint xsi:type="MobileLogEventAppointmentAttendee">
+                <Control xsi:type="MobileButton" id="appointmentReadFunctionButton">
                   <Label resid="residLabel"/>
-                  <Supertip>
-                    <Title resid="residLabel"/>
-                    <Description resid="residTooltip"/>
-                  </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="icon-16"/>
-                    <bt:Image size="32" resid="icon-32"/>
-                    <bt:Image size="80" resid="icon-80"/>
+                    <bt:Image size="25" scale="1" resid="icon-16"/>
+                    <bt:Image size="25" scale="2" resid="icon-16"/>
+                    <bt:Image size="25" scale="3" resid="icon-16"/>
+                    <bt:Image size="32" scale="1" resid="icon-32"/>
+                    <bt:Image size="32" scale="2" resid="icon-32"/>
+                    <bt:Image size="32" scale="3" resid="icon-32"/>
+                    <bt:Image size="48" scale="1" resid="icon-48"/>
+                    <bt:Image size="48" scale="2" resid="icon-48"/>
+                    <bt:Image size="48" scale="3" resid="icon-48"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>logCRMEvent</FunctionName>
                   </Action>
                 </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-        </DesktopFormFactor>
-        <MobileFormFactor>
-          <FunctionFile resid="residFunctionFile"/>
-          <ExtensionPoint xsi:type="MobileLogEventAppointmentAttendee">
-            <Control xsi:type="MobileButton" id="appointmentReadFunctionButton">
-              <Label resid="residLabel"/>
-              <Icon>
-                <bt:Image size="25" scale="1" resid="icon-16"/>
-                <bt:Image size="25" scale="2" resid="icon-16"/>
-                <bt:Image size="25" scale="3" resid="icon-16"/>
-                <bt:Image size="32" scale="1" resid="icon-32"/>
-                <bt:Image size="32" scale="2" resid="icon-32"/>
-                <bt:Image size="32" scale="3" resid="icon-32"/>
-                <bt:Image size="48" scale="1" resid="icon-48"/>
-                <bt:Image size="48" scale="2" resid="icon-48"/>
-                <bt:Image size="48" scale="3" resid="icon-48"/>
-              </Icon>
-              <Action xsi:type="ExecuteFunction">
-                <FunctionName>logCRMEvent</FunctionName>
-              </Action>
-            </Control>
-          </ExtensionPoint>
-        </MobileFormFactor>
-      </Host>
-    </Hosts>
-    <Resources>
-      <bt:Images>
-        <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
-        <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
-        <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
-        <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
-      </bt:Images>
-      <bt:Urls>
-        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
-      </bt:Urls>
-      <bt:ShortStrings>
-        <bt:String id="residDescription" DefaultValue="Log appointment notes and other details to Contoso CRM."/>
-        <bt:String id="residLabel" DefaultValue="Log to Contoso CRM"/>
-      </bt:ShortStrings>
-      <bt:LongStrings>
-        <bt:String id="residTooltip" DefaultValue="Log notes to Contoso CRM for this appointment."/>
-      </bt:LongStrings>
-    </Resources>
-  </VersionOverrides>
-</VersionOverrides>
-```
+              </ExtensionPoint>
+            </MobileFormFactor>
+          </Host>
+        </Hosts>
+        <Resources>
+          <bt:Images>
+            <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
+            <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
+            <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
+            <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
+          </bt:Images>
+          <bt:Urls>
+            <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+          </bt:Urls>
+          <bt:ShortStrings>
+            <bt:String id="residDescription" DefaultValue="Log appointment notes and other details to Contoso CRM."/>
+            <bt:String id="residLabel" DefaultValue="Log to Contoso CRM"/>
+          </bt:ShortStrings>
+          <bt:LongStrings>
+            <bt:String id="residTooltip" DefaultValue="Log notes to Contoso CRM for this appointment."/>
+          </bt:LongStrings>
+        </Resources>
+      </VersionOverrides>
+    </VersionOverrides>
+    ```
 
 > [!TIP]
 > To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
@@ -285,88 +285,88 @@ To enable users to log appointment notes with your add-in, you must configure th
 
 1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML. Make sure to replace all references to **Contoso** with your company's information.
 
-```xml
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
-    <Description resid="residDescription"></Description>
-      <Requirements>
-        <bt:Sets>
-          <bt:Set Name="Mailbox" MinVersion="1.3"/>
-        </bt:Sets>
-      </Requirements>
-      <Hosts>
-        <Host xsi:type="MailHost">
-          <DesktopFormFactor>
-            <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
-              <OfficeTab id="TabDefault">
-                <Group id="apptReadGroup">
-                  <Label resid="residDescription"/>
-                  <Control xsi:type="Button" id="apptReadOpenPaneButton">
+    ```xml
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+      <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+        <Description resid="residDescription"></Description>
+          <Requirements>
+            <bt:Sets>
+              <bt:Set Name="Mailbox" MinVersion="1.3"/>
+            </bt:Sets>
+          </Requirements>
+          <Hosts>
+            <Host xsi:type="MailHost">
+              <DesktopFormFactor>
+                <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
+                  <OfficeTab id="TabDefault">
+                    <Group id="apptReadGroup">
+                      <Label resid="residDescription"/>
+                      <Control xsi:type="Button" id="apptReadOpenPaneButton">
+                        <Label resid="residLabel"/>
+                        <Supertip>
+                          <Title resid="residLabel"/>
+                          <Description resid="residTooltip"/>
+                        </Supertip>
+                        <Icon>
+                          <bt:Image size="16" resid="icon-16"/>
+                          <bt:Image size="32" resid="icon-32"/>
+                          <bt:Image size="80" resid="icon-80"/>
+                        </Icon>
+                        <Action xsi:type="ShowTaskpane">
+                          <SourceLocation resid="Taskpane.Url"/>
+                        </Action>
+                      </Control>
+                    </Group>
+                  </OfficeTab>
+                </ExtensionPoint>
+              </DesktopFormFactor>
+              <MobileFormFactor>
+                <ExtensionPoint xsi:type="MobileLogEventAppointmentAttendee">
+                  <Control xsi:type="MobileButton" id="appointmentReadFunctionButton">
                     <Label resid="residLabel"/>
-                    <Supertip>
-                      <Title resid="residLabel"/>
-                      <Description resid="residTooltip"/>
-                    </Supertip>
                     <Icon>
-                      <bt:Image size="16" resid="icon-16"/>
-                      <bt:Image size="32" resid="icon-32"/>
-                      <bt:Image size="80" resid="icon-80"/>
+                      <bt:Image size="25" scale="1" resid="icon-16"/>
+                      <bt:Image size="25" scale="2" resid="icon-16"/>
+                      <bt:Image size="25" scale="3" resid="icon-16"/>
+    
+                      <bt:Image size="32" scale="1" resid="icon-32"/>
+                      <bt:Image size="32" scale="2" resid="icon-32"/>
+                      <bt:Image size="32" scale="3" resid="icon-32"/>
+    
+                      <bt:Image size="48" scale="1" resid="icon-48"/>
+                      <bt:Image size="48" scale="2" resid="icon-48"/>
+                      <bt:Image size="48" scale="3" resid="icon-48"/>
                     </Icon>
                     <Action xsi:type="ShowTaskpane">
                       <SourceLocation resid="Taskpane.Url"/>
-                    </Action>
+                    </Action> 
                   </Control>
-                </Group>
-              </OfficeTab>
-            </ExtensionPoint>
-          </DesktopFormFactor>
-          <MobileFormFactor>
-            <ExtensionPoint xsi:type="MobileLogEventAppointmentAttendee">
-              <Control xsi:type="MobileButton" id="appointmentReadFunctionButton">
-                <Label resid="residLabel"/>
-                <Icon>
-                  <bt:Image size="25" scale="1" resid="icon-16"/>
-                  <bt:Image size="25" scale="2" resid="icon-16"/>
-                  <bt:Image size="25" scale="3" resid="icon-16"/>
-
-                  <bt:Image size="32" scale="1" resid="icon-32"/>
-                  <bt:Image size="32" scale="2" resid="icon-32"/>
-                  <bt:Image size="32" scale="3" resid="icon-32"/>
-
-                  <bt:Image size="48" scale="1" resid="icon-48"/>
-                  <bt:Image size="48" scale="2" resid="icon-48"/>
-                  <bt:Image size="48" scale="3" resid="icon-48"/>
-                </Icon>
-                <Action xsi:type="ShowTaskpane">
-                  <SourceLocation resid="Taskpane.Url"/>
-                </Action> 
-              </Control>
-            </ExtensionPoint>
-          </MobileFormFactor>
-        </Host>
-      </Hosts>
-      <Resources>
-        <bt:Images>
-          <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
-          <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
-          <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
-          <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
-        </bt:Images>
-        <bt:Urls>
-          <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
-          <bt:Url id="Taskpane.Url" DefaultValue="https://contoso.com/taskpane.html"/>
-        </bt:Urls>
-        <bt:ShortStrings>
-          <bt:String id="residDescription" DefaultValue="Log appointment notes and other details to Contoso CRM."/>
-          <bt:String id="residLabel" DefaultValue="Log to Contoso CRM"/>
-        </bt:ShortStrings>
-        <bt:LongStrings>
-          <bt:String id="residTooltip" DefaultValue="Log notes to Contoso CRM for this appointment."/>
-        </bt:LongStrings>
-      </Resources>
+                </ExtensionPoint>
+              </MobileFormFactor>
+            </Host>
+          </Hosts>
+          <Resources>
+            <bt:Images>
+              <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
+              <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
+              <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
+              <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
+            </bt:Images>
+            <bt:Urls>
+              <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+              <bt:Url id="Taskpane.Url" DefaultValue="https://contoso.com/taskpane.html"/>
+            </bt:Urls>
+            <bt:ShortStrings>
+              <bt:String id="residDescription" DefaultValue="Log appointment notes and other details to Contoso CRM."/>
+              <bt:String id="residLabel" DefaultValue="Log to Contoso CRM"/>
+            </bt:ShortStrings>
+            <bt:LongStrings>
+              <bt:String id="residTooltip" DefaultValue="Log notes to Contoso CRM for this appointment."/>
+            </bt:LongStrings>
+          </Resources>
+        </VersionOverrides>
     </VersionOverrides>
-</VersionOverrides>
-```
+    ```
 
 > [!TIP]
 > To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
@@ -497,9 +497,9 @@ If you'd like to enable your users to undo logging or delete the logged appointm
 
 ## Testing and validation
 
-- Follow the usual guidance to [test and validate your add-in](testing-and-tips.md).
-- After [sideloading](sideload-outlook-add-ins-for-testing.md) in Outlook on the web, Windows, or Mac, restart Outlook on your Android mobile device.
-- Open an appointment as an attendee then verify that under the **Meeting Insights** card, there's a new card with your add-in's name alongside the **Log** button.
+1. Follow the usual guidance to [test and validate your add-in](testing-and-tips.md).
+1. After [sideloading](sideload-outlook-add-ins-for-testing.md) in Outlook on the web, Windows, or Mac, restart Outlook on your Android mobile device.
+1. Open an appointment as an attendee then verify that under the **Meeting Insights** card, there's a new card with your add-in's name alongside the **Log** button.
 
 ### UI: Log the appointment notes
 
