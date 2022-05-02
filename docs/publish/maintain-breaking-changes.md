@@ -57,6 +57,6 @@ The [office-js NPM package](https://www.npmjs.com/package/@microsoft/office-js) 
 
 While we strive to maintain backwards compatibility, the patterns and practices we recommend continually evolve. Our documentation strives to present the current best practices. To stay informed of new features that may improve your existing functionality, join our monthly [Office Add-ins Community Call](../overview/office-add-ins-community-call.md).
 
-## Feedback
+## Community engagement
 
 As updates are proposed for the Microsoft 365 Developer Platform, we will be listening for feedback. Please report concerns, potential consequences, or other questions to the channels listed in [Office Add-ins additional resources](../resources/resources-links-help.md).
