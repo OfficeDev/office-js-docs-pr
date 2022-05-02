@@ -16,10 +16,11 @@ Two of the most important improvements are:
 
 The new manifest is available for preview and we encourage experienced add-in developers to experiment with it. It should not be used in production add-ins. During the early preview period, the following limitations apply:
 
-- The preview version of the Teams manifest only supports Outlook add-ins. We're working on extending support to Excel, PowerPoint, and Word.
+- The preview version of the Teams manifest only supports Outlook add-ins and only on subscription Office for Windows. We're working on extending support to Excel, PowerPoint, and Word.
 - It is not yet possible to combine an add-in with Teams apps, such as a custom Teams tab, or any other Microsoft 365 extension types. We're working on this too.
 
 > [!TIP]
+
 > Anxious to get started with the preview Teams manifest? Begin with [Build an Outlook add-in with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
 
 ## Overview of the JSON manifest

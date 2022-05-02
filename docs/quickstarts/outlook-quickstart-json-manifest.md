@@ -10,7 +10,7 @@ ms.localizationpriority: high
 
 In this article, you'll walk through the process of building an Outlook task pane add-in that displays at least one property of a selected message. This add-in will use a preview version of the JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use.  For more information about this manifest, see [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
-The new manifest is available for preview and we encourage experienced add-in developers to experiment with it. It should not be used in production add-ins. 
+The new manifest is available for preview and we encourage experienced add-in developers to experiment with it. It should not be used in production add-ins. The preview is only supported on subscription Office on Windows. 
 
 > [!TIP]
 > If you want to build an Outlook add-in using the XML manifest, see [Build your first Outlook add-in](outlook-quickstart.md).
