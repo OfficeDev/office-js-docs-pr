@@ -41,7 +41,7 @@ This guidance also applies to copies of samples taken from the [Office Add-in co
 
 ### office.js NPM package
 
-The [office-js NPM package](https://www.npmjs.com/package/@microsoft/office-js) is a copy of what is hosted on the [Office.js content delivery network (CDN)](../develop/understanding-the-javascript-api-for-office.md#accessing-the-office-javascript-api-library). It's intended for scenarios where direct access to the CDN isn't possible. The NPM package isn't intended to provide versioned references to office.js. We strongly recommended always using the latest version.
+The [office-js NPM package](https://www.npmjs.com/package/@microsoft/office-js) is a copy of what is hosted on the [Office.js content delivery network (CDN)](../develop/understanding-the-javascript-api-for-office.md#accessing-the-office-javascript-api-library). It's intended for scenarios where direct access to the CDN isn't possible. The NPM package isn't intended to provide versioned references to office.js. We strongly recommend always using the CDN to ensure you're using the latest version of the Office JavaScript APIs.
 
 ## Current best practices
 
