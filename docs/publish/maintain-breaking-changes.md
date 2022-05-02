@@ -1,7 +1,7 @@
 ---
 title: Maintain your Office Add-in
 description: Understand our commitments to compatibility and how to keep your add-in up to date.
-ms.date: 04/29/2022
+ms.date: 05/02/2022
 ms.localizationpriority: medium
 ---
 
@@ -30,6 +30,16 @@ If you do encounter an app compatibility issue, App Assure engineers will work w
 
 To learn more about App Assure, watch [Bring your apps to Microsoft Edge with App Assure: tips and tricks](https://techcommunity.microsoft.com/t5/video-hub/bring-your-apps-to-microsoft-edge-with-app-assure-tips-and/ba-p/2167619). To submit your request for app compatibility with App Assure, complete the [Microsoft FastTrack Registration form](https://aka.ms/AppAssureRequest) or send an email to [achelp@microsoft.com](mailto:achelp@microsoft.com).
 
+## Deprecation policy
+
+APIs or tools with better alternatives may be deprecated. Microsoft declares something as deprecated at least 24 months in advance of retiring it. Similarly, for individual APIs that are generally available (GA), Microsoft declares an API as deprecated at least 24 months in advance of removing it from the GA version.
+
+Deprecation doesn't necessarily mean the feature or API will be removed and unusable by developers. It does show that after the 24-month time period, Microsoft will no longer support the API or feature.
+
+When an API is marked as deprecated, we strongly recommend that you migrate to the latest version as soon as possible. In some cases, we'll announce that new applications must start to use the new APIs a short time after the original APIs are deprecated. In those cases, only active applications that currently use the deprecated APIs can continue to use them.
+
+The 24-month deprecation period may be accelerated if waiting that long poses a security risk for your add-in or Microsoft.
+
 ## Changes to Yeoman templates and web dependencies
 
 The [Yeoman Generator for Office Add-ins](../develop/yeoman-generator-overview.md) relies on a number of libraries from Microsoft and others. These libraries are updated independently of any Microsoft 365 activity. Any projects created with the generator should be kept up to date as you develop, publish, and maintain your add-in. The following tools can help ensure your project is using secure versions of any dependent libraries.
@@ -46,3 +56,7 @@ The [office-js NPM package](https://www.npmjs.com/package/@microsoft/office-js) 
 ## Current best practices
 
 While we strive to maintain backwards compatibility, the patterns and practices we recommend continually evolve. Our documentation strives to present the current best practices. To stay informed of new features that may improve your existing functionality, join our monthly [Office Add-ins Community Call](../overview/office-add-ins-community-call.md).
+
+## Feedback
+
+As updates are proposed for the Microsoft 365 Developer Platform, we will be listening for feedback. Please report concerns, potential consequences, or other questions to the channels listed in [Office Add-ins additional resources](../resources/resources-links-help.md).
