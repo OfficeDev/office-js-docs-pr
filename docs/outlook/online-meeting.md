@@ -185,21 +185,6 @@ In this section, learn how your add-in script can update a user's meeting to inc
             }
         );
     }
-
-    function getGlobal() {
-      return typeof self !== "undefined"
-        ? self
-        : typeof window !== "undefined"
-        ? window
-        : typeof global !== "undefined"
-        ? global
-        : undefined;
-    }
-
-    const g = getGlobal();
-
-    // The add-in command functions need to be available in global scope.
-    g.insertContosoMeeting = insertContosoMeeting;
     ```
 
 ## Testing and validation

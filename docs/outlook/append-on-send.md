@@ -160,12 +160,6 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
     Office.actions.associate("appendDisclaimerOnSend", appendDisclaimerOnSend);
     ```
 
-1. At the end of the file, add the following statement.
-
-    ```js
-    g.appendDisclaimerOnSend = appendDisclaimerOnSend;
-    ```
-
 ## Try it out
 
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start if it's not already running and your add-in will be sideloaded. 

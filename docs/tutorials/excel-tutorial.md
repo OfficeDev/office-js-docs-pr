@@ -627,12 +627,6 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     Office.actions.associate("toggleProtection", toggleProtection);
     ```
 
-1. Add the following line to the end of the file:
-
-    ```js
-    g.toggleProtection = toggleProtection;
-    ```
-
 1. Within the `toggleProtection` function, replace `TODO1` with the following code. This code uses the worksheet object's protection property in a standard toggle pattern. The `TODO2` will be explained in the next section.
 
     ```js

@@ -847,18 +847,6 @@ function dialogClosed(message) {
   btnEvent.completed();
   btnEvent = null;
 }
-
-function getGlobal() {
-  return (typeof self !== "undefined") ? self :
-    (typeof window !== "undefined") ? window :
-    (typeof global !== "undefined") ? global :
-    undefined;
-}
-
-var g = getGlobal();
-
-// The add-in command functions need to be available in global scope.
-g.insertDefaultGist = insertDefaultGist;
 ```
 
 ### Create a file to manage configuration settings

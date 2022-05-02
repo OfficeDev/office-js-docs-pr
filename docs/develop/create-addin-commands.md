@@ -173,7 +173,7 @@ The following code shows how to implement the function used by **FunctionName**.
         };
     })();
 
-    // Your function must be in the global namespace.
+    // Define the function.
     function writeText(event) {
 
         // Implement your custom code here. The following code is a simple example.  
