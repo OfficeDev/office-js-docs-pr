@@ -48,7 +48,7 @@ function webRequest() {
 ```
 
 > [!NOTE]
-> Using `Fetch` avoids nested callbacks and may be preferable to XHR in some cases.
+> Using `fetch` avoids nested callbacks and may be preferable to XHR in some cases.
 
 ### XHR example
 
