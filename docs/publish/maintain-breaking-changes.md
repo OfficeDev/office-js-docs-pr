@@ -1,7 +1,7 @@
 ---
 title: Maintain your Office Add-in
 description: Understand our commitments to compatibility and how to keep your add-in up to date.
-ms.date: 05/02/2022
+ms.date: 05/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -17,6 +17,17 @@ The Microsoft 365 Developer Platform is committed to ensuring the compatibility 
 - If your add-in is published in [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), you'll be contacted through the information you provided.
 - Where possible, admins of impacted Microsoft 365 tenants (including [developer tenants](https://developer.microsoft.com/microsoft-365/dev-program)) will be contacted through [Message Center](/microsoft-365/admin/manage/message-center). It's the responsibility of the admin to contact providers of add-in solutions published outside of AppSource.
 
+### Deprecation policy
+
+APIs or tools with better alternatives may be deprecated. Microsoft undergoes a best effort to declare something as deprecated at least 24 months in advance of retiring it. Similarly, for individual APIs that are generally available (GA), Microsoft declares an API as deprecated at least 24 months in advance of removing it from the GA version.
+
+Deprecation doesn't necessarily mean the feature or API will be removed and unusable by developers. It does show that after the 24-month time period, Microsoft will no longer support the API or feature.
+
+When an API is marked as deprecated, we strongly recommend that you migrate to the latest version as soon as possible. In some cases, we'll announce that new applications must start to use the new APIs a short time after the original APIs are deprecated. In those cases, only active applications that currently use the deprecated APIs can continue to use them.
+
+> ![IMPORTANT]
+> The 24-month deprecation period will be accelerated if waiting that long poses a security risk for your add-in or Microsoft.
+
 ### App Assure
 
 Microsoft’s [App Assure](https://www.microsoft.com/fasttrack/microsoft-365/app-assure) service fulfills Microsoft’s promise of application compatibility: your apps will work on Windows and Microsoft 365 Apps. App Assure engineers are available to help resolve any issues you might experience at no additional cost.
@@ -29,16 +40,6 @@ If you do encounter an app compatibility issue, App Assure engineers will work w
 - Work with Microsoft product engineering teams to fix product bugs.
 
 To learn more about App Assure, watch [Bring your apps to Microsoft Edge with App Assure: tips and tricks](https://techcommunity.microsoft.com/t5/video-hub/bring-your-apps-to-microsoft-edge-with-app-assure-tips-and/ba-p/2167619). To submit your request for app compatibility with App Assure, complete the [Microsoft FastTrack Registration form](https://aka.ms/AppAssureRequest) or send an email to [achelp@microsoft.com](mailto:achelp@microsoft.com).
-
-## Deprecation policy
-
-APIs or tools with better alternatives may be deprecated. Microsoft declares something as deprecated at least 24 months in advance of retiring it. Similarly, for individual APIs that are generally available (GA), Microsoft declares an API as deprecated at least 24 months in advance of removing it from the GA version.
-
-Deprecation doesn't necessarily mean the feature or API will be removed and unusable by developers. It does show that after the 24-month time period, Microsoft will no longer support the API or feature.
-
-When an API is marked as deprecated, we strongly recommend that you migrate to the latest version as soon as possible. In some cases, we'll announce that new applications must start to use the new APIs a short time after the original APIs are deprecated. In those cases, only active applications that currently use the deprecated APIs can continue to use them.
-
-The 24-month deprecation period may be accelerated if waiting that long poses a security risk for your add-in or Microsoft.
 
 ## Changes to Yeoman templates and web dependencies
 
