@@ -29,7 +29,7 @@ When developing your own functions, you may want to perform an action if the web
 ```JS
 /**
  * Requests the names of the people currently on the International Space Station.
- * This function requests data from a hypothetical URL. In practice, replace the URL with a data source for your scenario.
+ * Note: This function requests data from a hypothetical URL. In practice, replace the URL with a data source for your scenario.
  * @customfunction
  */
 function webRequest() {
@@ -95,7 +95,7 @@ async function getStarCount(userName: string, repoName: string) {
 
 Streaming custom functions enable you to output data to cells that updates repeatedly, without requiring a user to explicitly refresh anything. This can be useful to check live data from a service online, like the function in [the custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md).
 
-To declare a streaming function, you can use either:
+To declare a streaming function, you can use either of the following two options.
 
 - The `@streaming` tag.
 - The `CustomFunctions.StreamingInvocation` invocation parameter.
@@ -103,9 +103,9 @@ To declare a streaming function, you can use either:
 The following code sample is a custom function that adds a number to the result every second. Note the following about this code.
 
 - Excel displays each new value automatically using the `setResult` method.
-- The second input parameter, invocation, is not displayed to end users in Excel when they select the function from the autocomplete menu.
-- The `onCanceled` callback defines the function that executes when the function is canceled.
-- Streaming isn't necessarily tied to making a web request: in this case, the function isn't making a web request but is still getting data at set intervals, so it requires the use of the streaming `invocation` parameter.
+- The second input parameter, `invocation`, is not displayed to end users in Excel when they select the function from the autocomplete menu.
+- The `onCanceled` callback defines the function that runs when the function is canceled.
+- Streaming isn't necessarily tied to making a web request. In this case, the function isn't making a web request but is still getting data at set intervals, so it requires the use of the streaming `invocation` parameter.
 
 ```JS
 /**
@@ -137,7 +137,8 @@ Excel cancels the execution of a function in the following situations.
 
 You can also consider setting a default streaming value to handle cases when a request is made but you are offline.
 
-Note that there are also a category of functions called cancelable functions, which are _not_ related to streaming functions. Only asynchronous custom functions which return one value are cancelable. Cancelable functions allow a web request to be terminated in the middle of a request, using a [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to decide what to do upon cancellation. Declare a cancelable function using the tag `@cancelable`.
+> [!NOTE]
+> There is also a category of functions called cancelable functions, and these are _not_ related to streaming functions. Only asynchronous custom functions which return one value are cancelable. Cancelable functions allow a web request to be terminated in the middle of a request, using a [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to decide what to do upon cancellation. Declare a cancelable function using the tag `@cancelable`.
 
 ### Use an invocation parameter
 
@@ -147,7 +148,7 @@ If you're using TypeScript, the invocation handler needs to be of type [`CustomF
 
 ## Receiving data via WebSockets
 
-Within a custom function, you can use WebSockets to exchange data over a persistent connection with a server. Using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.
+Within a custom function, you can use [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API) to exchange data over a persistent connection with a server. Using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.
 
 ### WebSockets example
 
