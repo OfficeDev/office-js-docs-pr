@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Receive and handle data with custom functions
 
-One of the ways that custom functions enhances Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through WebSockets). You can request external data through an API like [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
+One of the ways that custom functions enhances Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)). You can request external data through an API like [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -22,17 +22,18 @@ If a custom function retrieves data from an external source such as the web, it 
 
 ### Fetch example
 
-In the following code sample, the `webRequest` function reaches out to a hypothetical API that tracks the number of people currently on the International Space Station. The function returns a JavaScript `Promise` and uses fetch to request information from the API. The resulting data is transformed into JSON and the `names` property is converted into a string, which is used to resolve the promise.
+In the following code sample, the `webRequest` function reaches out to a hypothetical external API that tracks the number of people currently on the International Space Station. The function returns a JavaScript `Promise` and uses `fetch` to request information from the hypothetical API. The resulting data is transformed into JSON and the `names` property is converted into a string, which is used to resolve the promise.
 
 When developing your own functions, you may want to perform an action if the web request does not complete in a timely manner or consider [batching up multiple API requests](custom-functions-batching.md).
 
 ```JS
 /**
- * Requests the names of the people currently on the International Space Station from a hypothetical API.
+ * Requests the names of the people currently on the International Space Station.
+ * This function requests data from a hypothetical URL. In practice, replace the URL with a data source for your scenario.
  * @customfunction
  */
 function webRequest() {
-  let url = "https://www.contoso.com/NumberOfPeopleInSpace"; // This is a hypothetical URL. In practice, replace this URL with a data source for your scenario.
+  let url = "https://www.contoso.com/NumberOfPeopleInSpace"; // This is a hypothetical URL.
   return new Promise(function (resolve, reject) {
     fetch(url)
       .then(function (response){
