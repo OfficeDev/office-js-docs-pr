@@ -25,7 +25,7 @@ Deprecation doesn't necessarily mean the feature or API will be removed and unus
 
 When an API is marked as deprecated, we strongly recommend that you migrate to the latest version as soon as possible. In some cases, we'll announce that new applications must start to use the new APIs a short time after the original APIs are deprecated. In those cases, only active applications that currently use the deprecated APIs can continue to use them.
 
-> ![IMPORTANT]
+> [!IMPORTANT]
 > The 24-month deprecation period will be accelerated if waiting that long poses a security risk for your add-in or Microsoft.
 
 ### App Assure
