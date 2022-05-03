@@ -355,6 +355,8 @@ items:
       href: /legal/marketplace/certification-policies
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+    - name: Maintain your Office Add-in
+      href: publish/maintain-breaking-changes.md
 
 - name: Excel
   items: 
