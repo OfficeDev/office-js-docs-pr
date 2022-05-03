@@ -1,5 +1,5 @@
 ---
-ms.date: 07/08/2021
+ms.date: 05/02/2022
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel.
 title: Receive and handle data with custom functions
 ms.localizationpriority: medium
@@ -17,12 +17,12 @@ One of the ways that custom functions enhances Excel's power is by receiving dat
 
 If a custom function retrieves data from an external source such as the web, it must:
 
-1. Return a JavaScript Promise to Excel.
-2. Resolve the Promise with the final value using the callback function.
+1. Return a [JavaScript `Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) to Excel.
+2. Resolve the `Promise` with the final value using the callback function.
 
 ### Fetch example
 
-In the following code sample, the `webRequest` function reaches out to the hypothetical Contoso "Number of People in Space" API, which tracks the number of people currently on the International Space Station. The function returns a JavaScript Promise and uses fetch to request information from the API. The resulting data is transformed into JSON and the `names` property is converted into a string, which is used to resolve the Promise.
+In the following code sample, the `webRequest` function reaches out to a hypothetical API that tracks the number of people currently on the International Space Station. The function returns a JavaScript `Promise` and uses fetch to request information from the API. The resulting data is transformed into JSON and the `names` property is converted into a string, which is used to resolve the promise.
 
 When developing your own functions, you may want to perform an action if the web request does not complete in a timely manner or consider [batching up multiple API requests](custom-functions-batching.md).
 
@@ -32,7 +32,7 @@ When developing your own functions, you may want to perform an action if the web
  * @customfunction
  */
 function webRequest() {
-  let url = "https://www.contoso.com/NumberOfPeopleInSpace";
+  let url = "https://www.contoso.com/NumberOfPeopleInSpace"; // This is a hypothetical URL. In practice, replace this URL with a data source for your scenario.
   return new Promise(function (resolve, reject) {
     fetch(url)
       .then(function (response){
@@ -51,7 +51,7 @@ function webRequest() {
 
 ### XHR example
 
-In the following code sample, the `getStarCount` function calls the Github API to discover the amount of stars given to a particular user's repository. This is an asynchronous function which returns a JavaScript Promise. When data is obtained from the web call, the Promise is resolved which returns the data to the cell.
+In the following code sample, the `getStarCount` function calls the Github API to discover the amount of stars given to a particular user's repository. This is an asynchronous function which returns a JavaScript `Promise`. When data is obtained from the web call, the promise is resolved which returns the data to the cell.
 
 ```TS
 /**
