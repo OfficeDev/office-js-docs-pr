@@ -19,7 +19,7 @@ In this article, you'll learn how to set up your Outlook mobile add-in to enable
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) to create an add-in project with the Yeoman generator for Office Add-ins.
 
-## Implement capturing and viewing appointment notes
+## Capture and view appointment notes
 
 You can opt to implement a UI-less command or task pane. To update your add-in, select the tab for either UI-less command or task pane, then follow the instructions.
 
@@ -273,7 +273,7 @@ Then call it when you want to clear the custom property. For example, you can ca
 
 # [Task pane](#tab/taskpane)
 
-This option shows how to enable a user to log and view their notes and other details about their appointments from a task pane.
+This option will enable a user to log and view their notes and other details about their appointments from a task pane.
 
 ### Configure the manifest
 
