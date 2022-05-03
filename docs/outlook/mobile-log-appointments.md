@@ -198,7 +198,7 @@ function updateCustomProperties() {
 }
 ```
 
-Then call it after the add-in successfully logs the appointment notes. For example, you can call it from **logCRMEvent** as follows.
+Then call it after the add-in successfully logs the appointment notes. For example, you can call it from **logCRMEvent** as shown in the following function.
 
 ```js
 function logCRMEvent(appointmentEvent) {
@@ -249,7 +249,7 @@ If you'd like to enable your users to undo logging or delete the logged appointm
     }
     ```
 
-Then call it when you want to clear the custom property. For example, you can call it from **logCRMEvent** if setting the log failed in some way as shown next.
+Then call it when you want to clear the custom property. For example, you can call it from **logCRMEvent** if setting the log failed in some way as shown in the following function.
 
     ```js
     function logCRMEvent(appointmentEvent) {
@@ -498,7 +498,7 @@ Then call it when you want to clear the custom property. For example, you can ca
 ## Test and validate
 
 1. Follow the usual guidance to [test and validate your add-in](testing-and-tips.md).
-1. After you [sideload](sideload-outlook-add-ins-for-testing.md) in Outlook on the web, Windows, or Mac, restart Outlook on your Android mobile device.
+1. After you [sideload](sideload-outlook-add-ins-for-testing.md) the add-in in Outlook on the web, Windows, or Mac, restart Outlook on your Android mobile device.
 1. Open an appointment as an attendee then verify that under the **Meeting Insights** card, there's a new card with your add-in's name alongside the **Log** button.
 
 ### UI: Log the appointment notes
@@ -533,7 +533,7 @@ The following APIs are available for this feature.
 
 Several restrictions apply.
 
-- The **Log** button name cannot be changed. However, there is a way for a different label to be displayed by setting a custom property on the appointment item. For more details, refer to the **Implement viewing appointment notes** section for [UI-less](?tabs=noui#implement-viewing-appointment-notes) or [task pane](?tabs=taskpane#implement-viewing-appointment-notes-1) as appropriate.
+- The **Log** button name cannot be changed. However, there is a way for a different label to be displayed by setting a custom property on the appointment item. For more details, refer to the **View appointment notes** section for [UI-less](?tabs=noui#view-appointment-notes) or [task pane](?tabs=taskpane#view-appointment-notes-1) as appropriate.
 - The **EventLogged** custom property must be used if you want to toggle the label of the **Log** button to **View** and back.
 - The add-in icon should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
 - The add-in should extract the meeting details from the appointment form within the one-minute timeout period. However, any time spent in a dialog box the add-in opened for authentication is excluded from the timeout period.
