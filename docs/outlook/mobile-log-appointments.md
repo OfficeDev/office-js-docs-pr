@@ -251,25 +251,25 @@ If you'd like to enable your users to undo logging or delete the logged appointm
 
 Then call it when you want to clear the custom property. For example, you can call it from **logCRMEvent** if setting the log failed in some way as shown in the following function.
 
-    ```js
-    function logCRMEvent(appointmentEvent) {
-      event = appointmentEvent;
-      console.log(`Subject: ${Office.context.mailbox.item.subject}`);
-      Office.context.mailbox.item.body.getAsync(
-        "html",
-        { asyncContext: "This is passed to the callback" },
-        function callback(result) {
-          if (result.status === Office.AsyncResultStatus.Succeeded) {
-            updateCustomProperties();
-          } else {
-            console.error("Failed to get body.");
-            // Replace `event.completed({ allowEvent: false });` with the following statement.
-            clearCustomProperties();
-          }
+  ```js
+  function logCRMEvent(appointmentEvent) {
+    event = appointmentEvent;
+    console.log(`Subject: ${Office.context.mailbox.item.subject}`);
+    Office.context.mailbox.item.body.getAsync(
+      "html",
+      { asyncContext: "This is passed to the callback" },
+      function callback(result) {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
+          updateCustomProperties();
+        } else {
+          console.error("Failed to get body.");
+          // Replace `event.completed({ allowEvent: false });` with the following statement.
+          clearCustomProperties();
         }
-      );
-    }
-    ```
+      }
+    );
+  }
+  ```
 
 # [Task pane](#tab/taskpane)
 
@@ -475,23 +475,23 @@ If you'd like to enable your users to undo logging or delete the logged appointm
 
 Then call it when you want to clear the custom property. For example, you can call it from **getEventData** if setting the log failed in some way as shown in the following function.
 
-    ```js
-    function getEventData() {
-      console.log(`Subject: ${Office.context.mailbox.item.subject}`);
-      Office.context.mailbox.item.body.getAsync(
-        "html",
-        function callback(result) {
-          if (result.status === Office.AsyncResultStatus.Succeeded) {
-            console.log("event logged successfully");
-            updateCustomProperties();
-          } else {
-            console.error("Failed to get body.");
-            clearCustomProperties();
-          }
+  ```js
+  function getEventData() {
+    console.log(`Subject: ${Office.context.mailbox.item.subject}`);
+    Office.context.mailbox.item.body.getAsync(
+      "html",
+      function callback(result) {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
+          console.log("event logged successfully");
+          updateCustomProperties();
+        } else {
+          console.error("Failed to get body.");
+          clearCustomProperties();
         }
-      );
-    }
-    ```
+      }
+    );
+  }
+  ```
 
 ---
 
