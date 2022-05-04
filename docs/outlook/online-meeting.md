@@ -2,7 +2,7 @@
 title: Create an Outlook mobile add-in for an online-meeting provider
 description: Discusses how to set up an Outlook mobile add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 07/09/2021
+ms.date: 05/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -150,7 +150,7 @@ In this section, learn how your add-in script can update a user's meeting to inc
         }
     );
 
-    // 2. How to define a UI-less function named `insertContosoMeeting` (referenced in the manifest)
+    // 2. How to define and register a UI-less function named `insertContosoMeeting` (referenced in the manifest)
     //    to update the meeting body with the online meeting details.
     function insertContosoMeeting(event) {
         // Get HTML body from the client.
@@ -166,6 +166,8 @@ In this section, learn how your add-in script can update a user's meeting to inc
             }
         );
     }
+    // Register the function.
+    Office.actions.associate("insertContosoMeeting", insertContosoMeeting);
 
     // 3. How to implement a supporting function `updateBody`
     //    that appends the online meeting details to the current body of the meeting.
@@ -183,21 +185,6 @@ In this section, learn how your add-in script can update a user's meeting to inc
             }
         );
     }
-
-    function getGlobal() {
-      return typeof self !== "undefined"
-        ? self
-        : typeof window !== "undefined"
-        ? window
-        : typeof global !== "undefined"
-        ? global
-        : undefined;
-    }
-
-    const g = getGlobal();
-
-    // The add-in command functions need to be available in global scope.
-    g.insertContosoMeeting = insertContosoMeeting;
     ```
 
 ## Testing and validation
