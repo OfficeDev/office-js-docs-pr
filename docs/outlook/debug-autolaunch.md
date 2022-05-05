@@ -1,17 +1,17 @@
 ---
-title: Debug your event-based Outlook add-in (preview)
+title: Debug your event-based Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 05/14/2021
+ms.date: 04/28/2022
 ms.localizationpriority: medium
 ---
 
-# Debug your event-based Outlook add-in (preview)
+# Debug your event-based Outlook add-in
 
-This article provides debugging guidance as you implement [event-based activation](autolaunch.md) in your add-in. The event-based activation feature is currently in preview.
+This article provides debugging guidance as you implement [event-based activation](autolaunch.md) in your add-in. The event-based activation feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) with additional events now available in preview. For more information, refer to [Supported events](autolaunch.md#supported-events).
 
 > [!IMPORTANT]
-> This debugging capability is only supported for preview in Outlook on Windows with a Microsoft 365 subscription. For more information, see the [Preview debugging for the event-based activation feature](#preview-debugging-for-the-event-based-activation-feature) section in this article.
+> This debugging capability is only supported in Outlook on Windows with a Microsoft 365 subscription.
 
 In this article, we discuss the key stages to enable debugging.
 
@@ -21,12 +21,6 @@ In this article, we discuss the key stages to enable debugging.
 - [Debug](#debug)
 
 You have several options for creating your add-in project. Depending on the option you're using, the steps may vary. Where this is the case, if you used the Yeoman generator for Office Add-ins to create your add-in project (for example, by doing the [event-based activation walkthrough](autolaunch.md)), then follow the **yo office** steps, otherwise follow the **Other** steps. Visual Studio Code should be at least version 1.56.1.
-
-## Preview debugging for the event-based activation feature
-
-We invite you to try out the debugging capability for the event-based activation feature! Let us know your scenarios and how we can improve by giving us feedback through GitHub (see the **Feedback** section at the end of this page).
-
-To preview this capability for Outlook on Windows, the minimum required build is 16.0.13729.20000. For access to Office beta builds, join the [Office Insider program](https://insider.office.com).
 
 ## Mark your add-in for debugging
 

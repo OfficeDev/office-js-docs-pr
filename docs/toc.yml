@@ -355,6 +355,8 @@ items:
       href: /legal/marketplace/certification-policies
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+    - name: Maintain your Office Add-in
+      href: publish/maintain-breaking-changes.md
 
 - name: Excel
   items: 
@@ -664,8 +666,6 @@ items:
         href: outlook/add-mobile-support.md
     - name: Add-in requirements
       href: outlook/add-in-requirements.md
-    - name: Add-in APIs
-      href: outlook/apis.md
     - name: Call Outlook REST APIs
       href: outlook/use-rest-api.md
     - name: Call Exchange web services

@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.
-ms.date: 10/05/2021
+ms.date: 04/28/2022
 ms.localizationpriority: medium
 ---
 
@@ -48,14 +48,9 @@ An Exchange Server feature known as "automapping" is on by default which means t
 
 The mailbox owner must first [provide access to a delegate](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) by updating the mailbox folder permissions. The delegate must then follow the instructions outlined in the "Add another person’s mailbox to your folder list in Outlook Web App" section of the article [Access another person's mailbox](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081).
 
-#### Shared mailboxes (preview)
+#### Shared mailboxes
 
-Exchange server admins can create and manage shared mailboxes for sets of users to access. At present, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) is the only supported server version for this feature.
-
-After receiving access, a shared mailbox user must follow the steps outlined in the "Add the shared mailbox so it displays under your primary mailbox" section of the article [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
-
-> [!WARNING]
-> Do **NOT** use other options like "Open another mailbox". The feature APIs may not work properly then.
+Shared mailbox scenarios in Outlook add-ins aren't currently supported in modern Outlook on the web.
 
 ### [Mac](#tab/unix)
 
@@ -231,7 +226,7 @@ a. **Delegate access/Shared folders**
 1. They save the message then move it from their own **Drafts** folder to a folder shared with the delegate.
 1. The delegate opens the draft from the shared folder then continues composing.
 
-b. **Shared mailbox**
+b. **Shared mailbox (applies to Outlook on Windows only)**
 
 1. A shared mailbox user starts a message. This can be a new message, a reply, or a forward.
 1. They save the message then move it from their own **Drafts** folder to a folder in the shared mailbox.

@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands in your manifest for Excel, PowerPoint, and Word
 description: Use VersionOverrides in your manifest to define add-in commands for Excel, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 02/04/2022
+ms.date: 05/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -173,7 +173,7 @@ The following code shows how to implement the function used by **FunctionName**.
         };
     })();
 
-    // Your function must be in the global namespace.
+    // Define the function.
     function writeText(event) {
 
         // Implement your custom code here. The following code is a simple example.  
@@ -191,6 +191,9 @@ The following code shows how to implement the function used by **FunctionName**.
         // Calling event.completed is required. event.completed lets the platform know that processing has completed.
         event.completed();
     }
+    
+    // You must register the function with the following line.
+    Office.actions.associate("writeText", writeText);
 </script>
 ```
 

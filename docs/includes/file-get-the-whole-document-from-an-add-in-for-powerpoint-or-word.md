@@ -18,7 +18,7 @@ You can also create an add-in for PowerPoint by using [Visual Studio](../quickst
 
 ### Core concepts to know for creating a task pane add-in
 
-Before you begin creating this add-in for PowerPoint or Word, you should be familiar with building Office Add-ins and working with HTTP requests. This article does not discuss how to decode Base64-encoded text from an HTTP request on a web server.
+Before you begin creating this add-in for PowerPoint or Word, you should be familiar with building Office Add-ins and working with HTTP requests. This article doesn't discuss how to decode Base64-encoded text from an HTTP request on a web server.
 
 ## Create the manifest for the add-in
 

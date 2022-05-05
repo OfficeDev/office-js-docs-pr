@@ -2,7 +2,7 @@
 title: Implement append-on-send in your Outlook add-in
 description: Learn how to implement the append-on-send feature in your Outlook add-in.
 ms.topic: article
-ms.date: 02/01/2021
+ms.date: 05/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -153,11 +153,11 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
       event.completed();
     }
     ```
-
-1. At the end of the file, add the following statement.
+    
+1. Immediately below the function add the following line to register the function.
 
     ```js
-    g.appendDisclaimerOnSend = appendDisclaimerOnSend;
+    Office.actions.associate("appendDisclaimerOnSend", appendDisclaimerOnSend);
     ```
 
 ## Try it out

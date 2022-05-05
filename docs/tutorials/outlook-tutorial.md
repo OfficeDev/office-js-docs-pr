@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
-ms.date: 02/23/2022
+ms.date: 05/01/2022
 ms.prod: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -829,6 +829,9 @@ function insertDefaultGist(event) {
   }
 }
 
+// Register the function.
+Office.actions.associate("insertDefaultGist", insertDefaultGist);
+
 function receiveMessage(message) {
   config = JSON.parse(message.message);
   setConfig(config, function(result) {
@@ -844,18 +847,6 @@ function dialogClosed(message) {
   btnEvent.completed();
   btnEvent = null;
 }
-
-function getGlobal() {
-  return (typeof self !== "undefined") ? self :
-    (typeof window !== "undefined") ? window :
-    (typeof global !== "undefined") ? global :
-    undefined;
-}
-
-var g = getGlobal();
-
-// The add-in command functions need to be available in global scope.
-g.insertDefaultGist = insertDefaultGist;
 ```
 
 ### Create a file to manage configuration settings
