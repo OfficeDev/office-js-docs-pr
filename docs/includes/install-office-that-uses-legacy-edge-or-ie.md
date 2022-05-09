@@ -2,7 +2,8 @@ Use the following procedure to install either a version of subscription Office t
 
 1. In any Office application, open the **File** tab on the ribbon, and then select **Office Account** or **Account**. Select the **About _host-name_** button (for example, **About Word**).
 1. On the dialog that opens, find the full xx.x.xxxxx.xxxxx build number and make a copy of it somewhere.
-1. Download and install the [Office Deployment Tool](https://www.microsoft.com/download/details.aspx?id=49117).
+1. Download the [Office Deployment Tool](https://www.microsoft.com/download/details.aspx?id=49117).
+1. Run the downloaded file to extract the tool. You are prompted to choose where to install the tool.
 1. In the folder where you installed the tool (where the `setup.exe` file is located), create a text file with the name `config.xml` and add the following contents.
 
     ```xml
