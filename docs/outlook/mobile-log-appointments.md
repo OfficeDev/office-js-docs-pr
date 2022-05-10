@@ -536,7 +536,7 @@ Several restrictions apply.
 - The **Log** button name cannot be changed. However, there is a way for a different label to be displayed by setting a custom property on the appointment item. For more details, refer to the **View appointment notes** section for [UI-less](?tabs=noui#view-appointment-notes) or [task pane](?tabs=taskpane#view-appointment-notes-1) as appropriate.
 - The **EventLogged** custom property must be used if you want to toggle the label of the **Log** button to **View** and back.
 - The add-in icon should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
-- The add-in should extract the meeting details from the appointment form within the one-minute timeout period. However, any time spent in a dialog box the add-in opened for authentication is excluded from the timeout period.
+- The add-in should extract the meeting details from the appointment form within the one-minute timeout period. However, any time spent in a dialog box the add-in opened for authentication, for example, is excluded from the timeout period.
 
 ## See also
 
