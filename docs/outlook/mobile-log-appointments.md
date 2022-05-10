@@ -2,7 +2,7 @@
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
 ms.topic: article
-ms.date: 04/26/2022
+ms.date: 05/10/2022
 ms.localizationpriority: medium
 ---
 
@@ -166,6 +166,17 @@ In this section, learn how your add-in can extract appointment details when the 
 
     const g = getGlobal();
     g.logCRMEvent = logCRMEvent;
+    ```
+
+Next, update the **commands.html** file to reference **commands.js**.
+
+1. From the same quick start project, open the **./src/commands/commands.html** file in your code editor.
+
+1. Find and replace `<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>` with the following:
+
+    ```html
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <script type="text/javascript" src="commands.js"></script>
     ```
 
 ### View appointment notes
@@ -399,6 +410,17 @@ In this section, learn how to display the logged appointment notes and other det
         }
       );
     }
+    ```
+
+Next, update the **taskpane.html** file to reference **taskpane.js**.
+
+1. From the same quick start project, open the **./src/taskpane/taskpane.html** file in your code editor.
+
+1. Find and replace `<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>` with the following:
+
+    ```html
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <script type="text/javascript" src="taskpane.js"></script>
     ```
 
 ### View appointment notes
