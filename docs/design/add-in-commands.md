@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.
-ms.date: 12/13/2021
+ms.date: 05/10/2022
 ms.localizationpriority: high
 ---
 
@@ -59,14 +59,14 @@ You can specify where a custom tab appears on the Office application's ribbon, s
 > [!NOTE]
 > This feature is not supported in all Office applications or scenarios. For more information, see [Position a custom tab on the ribbon](custom-tab-placement.md).
 
-### Integration of built-in Office buttons (preview)
+### Integration of built-in Office buttons
 
 You can insert the built-in Office ribbon buttons into your custom command groups and custom ribbon tabs.
 
 > [!NOTE]
 > This feature is not supported in all Office applications or scenarios. For more information, see [Integrate built-in Office buttons into custom tabs](built-in-button-integration.md).
 
-### Contextual tabs (preview)
+### Contextual tabs
 
 You can specify that a tab is only visible on the ribbon in certain contexts, such as when a chart is selected in Excel.
 
