@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 02/18/2022
+ms.date: 05/11/2022
 ms.prod: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -20,7 +20,19 @@ In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add
 
 ## Prerequisites
 
-[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
+- [Visual Studio 2019, *version 16.10.3 or earlier*, or Visual Studio 2022](https://www.visualstudio.com/vs/), with the **Office/SharePoint development** workload installed. 
+
+    > [!IMPORTANT]
+    > Some versions of Visual Studio 2019 after 16.10.3 have a bug that prevents this tutorial from being completed. Use an earlier version of Visual Studio 2019 or use Visual Studio 2022.
+
+    > [!NOTE]
+    > If you've previously installed Visual Studio, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.
+
+- Office connected to a Microsoft 365 subscription (including Office on the web).
+
+    > [!NOTE]
+    > If you don't already have Office, you can [join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
+
 
 ## Create your add-in project
 
@@ -120,6 +132,9 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 3. In the **Add Scaffold** dialog window, select **Web API 2 Controller - Empty** and choose the **Add** button. 
 
 4. In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button. Visual Studio creates and opens the **PhotoController.cs** file.
+
+    > [!NOTE]
+    > The scaffolding process does not complete properly on some versions of Visual Studio 2019 after version 16.10.3. Visual Studio 2022 is not affected.
 
 5. Replace the entire contents of the **PhotoController.cs** file with the following code that calls the Bing service to retrieve the photo of the day as a Base64 encoded string. When you use the Office JavaScript API to insert an image into a document, the image data must be specified as a Base64 encoded string.
 
