@@ -133,8 +133,8 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
 4. In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button. Visual Studio creates and opens the **PhotoController.cs** file.
 
-> [!NOTE]
-> The scaffolding process does not complete properly on some versions of Visual Studio 2019 after version 16.10.3. Visual Studio 2022 is not affected.
+    > [!NOTE]
+    > The scaffolding process does not complete properly on some versions of Visual Studio 2019 after version 16.10.3. Visual Studio 2022 is not affected.
 
 5. Replace the entire contents of the **PhotoController.cs** file with the following code that calls the Bing service to retrieve the photo of the day as a Base64 encoded string. When you use the Office JavaScript API to insert an image into a document, the image data must be specified as a Base64 encoded string.
 
