@@ -122,7 +122,7 @@ The following table maps the child properties of the anonymous child objects in 
 |JSON property|Purpose|XML element(s)|Comments|
 |:-----|:-----|:-----|:-----|
 | "type" | Specifies the type of context where the menu appears, for example, "cell". | The `id` attribute of the **OfficeMenu** element. |  |
-| "control" | Configures acustom menu. | **Control** (of type Menu) | The names and hierarchy of the descendant properties of "control" closely match the descendants of [Control element of type Menu](/javascript/api/manifest/control-menu.md).  ||
+| "control" | Configures a custom menu. | **Control** (of type Menu) | The names and hierarchy of the descendant properties of "control" closely match the descendants of [Control element of type Menu](/javascript/api/manifest/control-menu.md).  ||
 
 ## Sample preview JSON manifest
 
@@ -133,7 +133,7 @@ The following is an example of a preview JSON-manifest for an add-in.
     "$schema": "../../schema/metaos.public.schema.json",
     "id": "82a9d9c3-4702-4322-bbc4-6fe7f9b01483",
     "version": "1.0.0",
-    "manifestVersion": "m365DevPreview",
+    "manifestVersion": "devPreview",
     "name": {
         "short": "Basic Office Example",
         "full": "Transform text to uppercase/lowercase."
