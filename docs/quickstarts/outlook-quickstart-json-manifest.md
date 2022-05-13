@@ -21,7 +21,7 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 
 ### Prerequisites
 
-[.NET runtime](https://dotnet.microsoft.com/download/dotnet/6.0/runtime) for your operating system. One of the tools used in the preview runs on .NET.
+[.NET runtime](https://dotnet.microsoft.com/download/dotnet/6.0/runtime) for Windows. One of the tools used in the preview runs on .NET.
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
@@ -29,7 +29,7 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 
 - [Visual Studio Code (VS Code)](https://code.visualstudio.com/) or your preferred code editor
 
-- Outlook on Windows (connected to a Microsoft 365 account) or Outlook on the web
+- Outlook on Windows (connected to a Microsoft 365 account)
 
 ### Create the add-in project
 
@@ -53,12 +53,14 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 
 ### Explore the project
 
-The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.
+The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in which also has a custom ribbon button that [executes a command](../develop/create-addin-commands?branch=outlook-json-manifest#step-5-add-the-functionfile-element).
 
 - The **./manifest.json** file in the root directory of the project defines the settings and capabilities of the add-in.
 - The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
 - The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
-- The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and Outlook.
+- The **./src/taskpane/taskpane.ts** file contains the Office JavaScript API code that facilitates interaction between the task pane and Outlook.
+- The **./src/command/command.html** file contains the HTML `<script>` tag that loads the JavaScript file that is transpiled from the command.ts file.
+- The **./src/command/command.ts** file contains the Office JavaScript API code that executes when the custom ribbon button is selected.
 
 ### Update the code
 
