@@ -1,7 +1,7 @@
 ---
 title: Maintain your Office Add-in
 description: Understand our commitments to compatibility and how to keep your add-in up to date.
-ms.date: 04/29/2022
+ms.date: 05/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -16,6 +16,17 @@ The Microsoft 365 Developer Platform is committed to ensuring the compatibility 
 - Announcements that describe the impacted features and recommended changes are made on the [Microsoft 365 Developer Blog](https://devblogs.microsoft.com/microsoft365dev/).
 - If your add-in is published in [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), you'll be contacted through the information you provided.
 - Where possible, admins of impacted Microsoft 365 tenants (including [developer tenants](https://developer.microsoft.com/microsoft-365/dev-program)) will be contacted through [Message Center](/microsoft-365/admin/manage/message-center). It's the responsibility of the admin to contact providers of add-in solutions published outside of AppSource.
+
+### Deprecation policy
+
+APIs or tools with better alternatives may be deprecated. Microsoft undergoes a best effort to declare something as deprecated at least 24 months in advance of retiring it. Similarly, for individual APIs that are generally available (GA), Microsoft declares an API as deprecated at least 24 months in advance of removing it from the GA version.
+
+Deprecation doesn't necessarily mean the feature or API will be removed and unusable by developers. It does show that after the 24-month time period, Microsoft will no longer support the API or feature.
+
+When an API is marked as deprecated, we strongly recommend that you migrate to the latest version as soon as possible. In some cases, we'll announce that new applications must start to use the new APIs a short time after the original APIs are deprecated. In those cases, only active applications that currently use the deprecated APIs can continue to use them.
+
+> [!IMPORTANT]
+> The 24-month deprecation period will be accelerated if waiting that long poses a security risk for your add-in or Microsoft.
 
 ### App Assure
 
@@ -46,3 +57,7 @@ The [office-js NPM package](https://www.npmjs.com/package/@microsoft/office-js) 
 ## Current best practices
 
 While we strive to maintain backwards compatibility, the patterns and practices we recommend continually evolve. Our documentation strives to present the current best practices. To stay informed of new features that may improve your existing functionality, join our monthly [Office Add-ins Community Call](../overview/office-add-ins-community-call.md).
+
+## Community engagement
+
+As updates are proposed for the Microsoft 365 Developer Platform, we will be listening for feedback. Please report concerns, potential consequences, or other questions to the channels listed in [Office Add-ins additional resources](../resources/resources-links-help.md).
