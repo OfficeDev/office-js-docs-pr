@@ -1,6 +1,6 @@
 ---
 title: Excel JavaScript API data types entity value card
-description: 
+description: ""
 ms.date: 05/17/2022
 ms.topic: conceptual
 ms.prod: excel
