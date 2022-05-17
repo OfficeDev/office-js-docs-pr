@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 08/03/2021
+ms.date: 05/16/2022
 ms.localizationpriority: medium
 ---
 
@@ -599,6 +599,34 @@ function subjectOnSendChange(subject, event) {
 ```
 
 To learn more about how to add a recipient to the CC line and verify that the email message includes a subject line on send, and to see the APIs you can use, see the [Outlook-Add-in-On-Send sample](https://github.com/OfficeDev/Outlook-Add-in-On-Send). The code is well commented.
+
+## Debug Outlook add-ins that use on-send
+
+To debug your on-send add-in, use the Office Add-in Debugger Extension in Visual Studio Code. If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, select the **yo office** tab below for further guidance. Otherwise, select the **Other** tab for instructions on marking your add-in for debugging and configuring the debugger.
+
+# [yo office](#tab/yoOffice)
+
+To debug your on-send add-in created using the Yeoman generator for Office Add-ins, select one of the following options that applies to your runtime.
+
+- If your add-in runs in the WebView runtime, refer to [Microsoft Office Add-in Debugger Extension for Visual Studio Code](../testing/debug-with-vs-extension.md).
+
+- If your add-in runs in the Microsoft Edge Chromium WebView2 runtime, refer to [Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)](../testing/debug-desktop-using-edge-chromium.md).
+
+# [Other](#tab/other)
+
+If you used another tool to create your on-send add-in, perform the following steps to debug your add-in.
+
+1. To mark your add-in for debugging, navigate to the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]` registry key. Replace `[Add-in ID]` with the **Id** from your add-in's manifest.
+
+    [!include[Developer registry key](../includes/developer-registry-key.md)]
+
+1. Set the key's `UseDirectDebugger` value to `1`.
+
+1. To configure and run the debugger, select one of the following options that applies to your runtime.
+
+    - If your add-in runs in the WebView runtime, refer to [Microsoft Office Add-in Debugger Extension for Visual Studio Code](../testing/debug-with-vs-extension.md).
+
+    - If your add-in runs in the Microsoft Edge Chromium WebView2 runtime, refer to [Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)](../testing/debug-desktop-using-edge-chromium.md).
 
 ## See also
 
