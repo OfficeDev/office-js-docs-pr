@@ -19,13 +19,101 @@ ms.localizationpriority: medium
 >
 > To try out data types in Office on Windows, you must have an Excel build number greater than or equal to 16.0.14626.10000. To try out data types in Office on Mac, you must have an Excel build number greater than or equal to 16.55.21102600.
 
-This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with the card component of data types entity values. An entity value is a container for data types, similar to an object in object oriented programming. The card component is an optional pop up window for an entity data type, displaying additional information about the entity in a cell. This article introduces layout options for the card, properties, and data attribution functionality.
+This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with the card component of data types entity values. An entity value is a container for data types, similar to an object in object oriented programming. The card component is an optional pop up window for an entity data type, displaying additional information about the entity value in a cell. This article introduces properties, layout options for the card, and data attribution functionality.
+
+## Properties
+
+```json
+const entity: Excel.EntityCellValue = {
+    type: Excel.CellValueType.entity,
+    text: productName,
+    properties: {
+        "Product ID": {
+            type: Excel.CellValueType.string,
+            basicValue: productID.toString() || ""
+        },
+        "Product Name": {
+            type: Excel.CellValueType.string,
+            basicValue: productName || ""
+        },
+        "Quantity Per Unit": {
+            type: Excel.CellValueType.string,
+            basicValue: product.quantityPerUnit || ""
+        },
+        // Add Unit Price as a formatted number.
+        "Unit Price": {
+            type: Excel.CellValueType.formattedNumber,
+            basicValue: product.unitPrice,
+            numberFormat: "$* #,##0.00"
+        },
+        Discontinued: {
+            type: Excel.CellValueType.boolean,
+            basicValue: product.discontinued || false
+        }
+    },
+    layouts: {
+        // Enter layout settings here.
+    }
+};
+```
 
 ## Card layout
 
+```json
+const entity: Excel.EntityCellValue = {
+    type: Excel.CellValueType.entity,
+    text: productName,
+    properties: {
+        // Enter property settings here.
+    },
+    layouts: {
+        card: {
+            title: { property: "Product Name" },
+            sections: [
+                {
+                    layout: "List",
+                    properties: ["Product ID"]
+                },
+                {
+                    layout: "List",
+                    title: "Quantity and price",
+                    collapsible: true,
+                    collapsed: false,
+                    properties: ["Quantity Per Unit", "Unit Price"]
+                },
+                {
+                    layout: "List",
+                    title: "Additional information",
+                    collapsed: true,
+                    properties: ["Discontinued"]
+                }
+            ]
+        }
+    }
+};
+```
 
 ## Data attribution
 
+The `provider` property offers the `description`, `logoSourceAddress`, and `logoTargetAddress` fields.
+
+```json
+const entity: Excel.EntityCellValue = {
+    type: Excel.CellValueType.entity,
+    text: productName,
+    properties: {
+        // Enter property settings here.
+    },
+    layouts: {
+        // Enter layout settings here.
+    },
+    provider: {
+        description: product.providerName, // Name of the data provider. Displays as a tooltip when hovering over the logo. Also displays as a fallback if the source address for the image is broken.
+        logoSourceAddress: product.sourceAddress, // Source URL of the logo to display.
+        logoTargetAddress: product.targetAddress // Destination URL that the logo navigates to when clicked.
+    }
+};
+```
 
 ## See also
 
