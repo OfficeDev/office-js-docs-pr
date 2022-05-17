@@ -628,6 +628,8 @@ If you used another tool to create your on-send add-in, perform the following st
 
     - If your add-in runs in the Microsoft Edge Chromium WebView2 runtime, refer to [Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)](../testing/debug-desktop-using-edge-chromium.md).
 
+---
+
 ## See also
 
 - [Overview of Outlook add-ins architecture and features](outlook-add-ins-overview.md)
