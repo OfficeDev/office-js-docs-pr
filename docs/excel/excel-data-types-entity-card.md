@@ -23,6 +23,8 @@ This article describes how to use the [Excel JavaScript API](../reference/overvi
 
 ## Properties
 
+The entity value [`properties`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-properties-member) property allows you to set customized information about your set of data types. The following code sample shows the JSON for an entity value with multiple custom properties. The `properties` field accepts `string` values, and each string value must have a `type` and `basicValue` setting.
+
 ```json
 const entity: Excel.EntityCellValue = {
     type: Excel.CellValueType.entity,
@@ -40,7 +42,7 @@ const entity: Excel.EntityCellValue = {
             type: Excel.CellValueType.string,
             basicValue: product.quantityPerUnit || ""
         },
-        // Add Unit Price as a formatted number.
+        // Set Unit Price as a formatted number.
         "Unit Price": {
             type: Excel.CellValueType.formattedNumber,
             basicValue: product.unitPrice,
@@ -58,6 +60,12 @@ const entity: Excel.EntityCellValue = {
 ```
 
 ## Card layout
+
+The entity value [`layouts`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-layouts-member) property allows the option to create a [`card`](/javascript/api/excel/excel.entityviewlayouts) for the entity. The `card` field offers properties of the [CardLayoutStandardProperties](/javascript/api/excel/excel.cardlayoutstandardproperties) object: `title`, `subTitle`, `sections`, and `mainImage`.
+
+The following JSON code sample shows a `card` layout with a `title` setting and three `sections` within the card. The `sections` field uses the [`CardLayoutSectionStandardProperties`](javascript/api/excel/excel.cardlayoutsectionstandardproperties) object. 
+
+Each card section can have a `layout`, `title`, and `properties`. The `layout` field uses the [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) object and accepts the property `list`. The `title` field accepts `string` values, and the `properties` field accepts arrays of strings. Sections can also be collapsible, and can be defined as collapsed or not collapsed when the entity card is opened in the Excel UI.
 
 ```json
 const entity: Excel.EntityCellValue = {
@@ -78,13 +86,13 @@ const entity: Excel.EntityCellValue = {
                     layout: "List",
                     title: "Quantity and price",
                     collapsible: true,
-                    collapsed: false,
+                    collapsed: false, // This section will not be collapsed when the card is opened.
                     properties: ["Quantity Per Unit", "Unit Price"]
                 },
                 {
                     layout: "List",
                     title: "Additional information",
-                    collapsed: true,
+                    collapsed: true, // This section will be collapsed when the card is opened.
                     properties: ["Discontinued"]
                 }
             ]
