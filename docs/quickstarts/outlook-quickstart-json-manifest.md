@@ -81,13 +81,13 @@ The add-in project that you've created with the Yeoman generator contains sample
     </main>
     ```
 
-1. In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
+1. In your code editor, open the file **./src/taskpane/taskpane.ts** and add the following code within the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
 
     ```typescript
-    // Get a reference to the current message
+    // Get a reference to the current message.
     let item = Office.context.mailbox.item;
 
-    // Write message property value to the task pane
+    // Write a message property value to the task pane.
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
     ```
 
@@ -101,11 +101,11 @@ The add-in project that you've created with the Yeoman generator contains sample
     npm start
     ```
 
-1. In Outlook, be sure you are using the Classic Ribbon. The remainder of these instructions assume this.  
+1. Use the Classic Ribbon in Outlook. The remainder of these instructions assume this.  
 
 1. View a message in the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0), or open the message in its own window. A new control group named **Contoso Add-in** appears on the Outlook **Home** tab (or the **Message** tab if you opened the message in a new window). The group has a button named **Show Taskpane** and one named **Perform an action**.
 
-1. Select the **Perform an action** button. It [executes a command](../develop/create-addin-commands.md?branch=outlook-json-manifest#step-5-add-the-functionfile-element), specifically, a small informational notification appears at the bottom of the message header, just below the message body.
+1. Select the **Perform an action** button. It [executes a command](../develop/create-addin-commands.md?branch=outlook-json-manifest#step-5-add-the-functionfile-element) to generate a small informational notification at the bottom of the message header, just below the message body.
 
 1. Choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
@@ -159,7 +159,7 @@ Let's add a custom button to the ribbon that inserts text into a message body.
 
 1. To write to a message, the add-in's permissions need to be raised. Scroll to the property `authorization.permissions.resourceSpecific[0].name` and change the value to "MailboxItem.ReadWrite.User".
 
-1. When an add-in command executes code instead of opening a task pane, it must run the code in a JavaScript runtime that is separate from the embedded webview in which task pane code runs. So the manifest must specify an additional runtime. Scroll to the property `extension.runtimes` and add the following object to the `runtimes` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup:
+1. When an add-in command runs code instead of opening a task pane, it must run the code in a JavaScript runtime that is separate from the embedded webview in which task pane code runs. So the manifest must specify an additional runtime. Scroll to the property `extension.runtimes` and add the following object to the `runtimes` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup:
 
     - The value of the `actions.items[1].id` property is "Contoso.insertHelloWorld". In a later step, you will refer to the item by this ID.
     - The value of the `actions.items[1].name` property must be exactly the same as the name of the function that you added to the **commands.ts** file, in this case "insertHelloWorld".
