@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types entity value card
 description: Learn how to use entity value cards with data types in your Excel add-in.
-ms.date: 05/17/2022
+ms.date: 05/18/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
@@ -19,15 +19,15 @@ ms.localizationpriority: medium
 >
 > To try out data types in Office on Windows, you must have an Excel build number greater than or equal to 16.0.14626.10000. To try out data types in Office on Mac, you must have an Excel build number greater than or equal to 16.55.21102600.
 
-This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with the card component of data types entity values. An entity value is a container for data types, similar to an object in object oriented programming. The card component is an optional pop up window for an entity data type, displaying additional information about the entity value in a cell. This article introduces card properties, layout options for the card, and card data attribution functionality.
+This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with the card component of data types entity values. An entity value is a container for data types, similar to an object in object oriented programming. The card component is a pop up window for an entity data type, displaying additional information about the entity value in a cell. This article introduces card properties, layout options for the card, and card data attribution functionality.
 
-The following screenshot shows a list of grocery store products and an open entity value card for the **Tofu** product.
+The following screenshot shows a list of grocery store products and an open entity value card for the **Tofu** product from the list.
 
-:::image type="content" source="../images/excel-data-types-entity-card-tofu.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed.":::
+:::image type="content" source="../images/excel-data-types-entity-card-tofu.png" alt-text="A screenshot showing an entity value data type with the card window displayed.":::
 
 ## Card properties
 
-The entity value [`properties`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-properties-member) property allows you to set customized information about your set of data types. The following code snippet shows the JSON for an entity value with multiple custom properties. The `properties` field accepts `string` values, and each property must have a `type` and `basicValue` setting.
+The entity value [`properties`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-properties-member) property allows you to set customized information about your set of data types. The `properties` field accepts nested data types. Each nested property, or data type, must have a `type` and `basicValue` setting. The following code snippet shows the JSON for an entity value with multiple custom properties.
 
 ```json
 const entity: Excel.EntityCellValue = {
@@ -69,11 +69,11 @@ The following screenshot shows an entity value card that uses the preceding code
 
 ## Card layout
 
-The entity value [`layouts`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-layouts-member) property allows the option to create a [`card`](/javascript/api/excel/excel.entityviewlayouts) for the entity. The `card` field offers properties of the [CardLayoutStandardProperties](/javascript/api/excel/excel.cardlayoutstandardproperties) object: `title`, `subTitle`, `sections`, and `mainImage`.
+The entity value [`layouts`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-layouts-member) property allows the option to create a [`card`](/javascript/api/excel/excel.entityviewlayouts) for the entity. Nested within the `card` property you can use the [`CardLayoutStandardProperties`](/javascript/api/excel/excel.cardlayoutstandardproperties) object, which offers the `title`, `subTitle`, `sections`, and `mainImage` properties.
 
-The following JSON code snippet shows a `card` layout with a `title` setting and three `sections` within the card. The `sections` field uses the [`CardLayoutSectionStandardProperties`](javascript/api/excel/excel.cardlayoutsectionstandardproperties) object. 
+The following JSON entity value code snippet shows a `card` layout with a `title` setting and three `sections` within the card. The `sections` property takes a nested array and uses the [`CardLayoutSectionStandardProperties`](javascript/api/excel/excel.cardlayoutsectionstandardproperties) object to define each section.
 
-Each card section can have a `layout`, `title`, and `properties`. The `layout` field uses the [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) object and accepts the property `list`. The `title` field accepts `string` values, and the `properties` field accepts arrays of strings. Sections can also be collapsible, and can be defined as collapsed or not collapsed when the entity card is opened in the Excel UI.
+Within each card section, you can specify `layout`, `title`, and `properties`. The `layout` key uses the [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) object and accepts the value `list`. The `title` key accepts `string` values, and the `properties` key accepts arrays of strings. Sections can also be collapsible, and can be defined with boolean values as collapsed or not collapsed when the entity card is opened in the Excel UI.
 
 ```json
 const entity: Excel.EntityCellValue = {
@@ -84,7 +84,9 @@ const entity: Excel.EntityCellValue = {
     },
     layouts: {
         card: {
-            title: { property: "Product Name" },
+            title: { 
+                property: "Product Name" 
+            },
             sections: [
                 {
                     layout: "List",
@@ -110,13 +112,13 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the `title` property, which uses the **Product Name** from `properties` and is set to **Pavolova**. The screenshot also shows `section` fields. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and collapsed when the card is opened.
+The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the `title` property, which uses the **Product Name** and is set to **Pavolova**. The screenshot also shows `section` fields. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and collapsed when the card is opened.
 
 :::image type="content" source="../images/excel-data-types-entity-card-sections.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the card title and sections.":::
 
 ## Card data attribution
 
-The `provider` property uses the [`CellValueProviderAttributes`](javascript/api/excel/excel.cellvalueproviderattributes) object, which offers the `description`, `logoSourceAddress`, and `logoTargetAddress` fields.
+The `provider` property uses the [`CellValueProviderAttributes`](javascript/api/excel/excel.cellvalueproviderattributes) object, which allows you to define `description`, `logoSourceAddress`, and `logoTargetAddress` values.
 
 ```json
 const entity: Excel.EntityCellValue = {
