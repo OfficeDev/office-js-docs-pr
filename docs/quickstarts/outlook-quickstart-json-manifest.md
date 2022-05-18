@@ -210,7 +210,7 @@ Let's add a custom button to the ribbon that [executes a command](../develop/cre
 
 1. In Outlook, open a new message window (or reply to an existing message). A new control group named **Contoso Add-in** will appear on the Outlook **Home** tab. The group has a button named **Insert text**.
 
-1. Put the cursor anywhere in the message body and choose the **Insert Text** button. The phrase "Hello World" will be inserted at the cursor.
+1. Put the cursor anywhere in the message body and choose the **Insert Text** button.
 
     > [!NOTE]
     > If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
@@ -219,6 +219,8 @@ Let's add a custom button to the ribbon that [executes a command](../develop/cre
 
     [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
 
+    The phrase "Hello World" will be inserted at the cursor.
+    
 1. End the debugging session with the following command:
 
     ```command&nbsp;line
