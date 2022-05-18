@@ -29,7 +29,8 @@ The following screenshot shows a list of grocery store products and an open enti
 
 The entity value [`properties`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-properties-member) property allows you to set customized information about your data types. The `properties` key accepts nested data types. Each nested property, or data type, must have a `type` and `basicValue` setting.
 
-The nested `properties` data types are used in combination with the [Card layout](#card-layout) values described in the subsequent article section. After defining a nested data type in `properties`, it must be assigned in the `layouts` property to display on the card.
+> [!IMPORTANT]
+> The nested `properties` data types are used in combination with the [Card layout](#card-layout) values described in the subsequent article section. After defining a nested data type in `properties`, it must be assigned in the `layouts` property to display on the card.
 
 The following code snippet shows the JSON for an entity value with multiple custom properties.
 
@@ -75,11 +76,14 @@ The following screenshot shows an entity value card that uses the preceding code
 
 ## Card layout
 
-The entity value [`layouts`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-layouts-member) property allows the option to create a [`card`](/javascript/api/excel/excel.entityviewlayouts) for the entity and then specify the appearance of that card. Nested within the `card` property you use the [`CardLayoutStandardProperties`](/javascript/api/excel/excel.cardlayoutstandardproperties) object which offers the `title`, `subTitle`, `sections`, and `mainImage` properties.
+The entity value [`layouts`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-layouts-member) property creates a [`card`](/javascript/api/excel/excel.entityviewlayouts) for the entity and then specifies the appearance of that card. Nested within the `card` property, use the [`CardLayoutStandardProperties`](/javascript/api/excel/excel.cardlayoutstandardproperties) object. The `CardLayoutStandardProperties` object offers the `title`, `subTitle`, `sections`, and `mainImage` properties.
 
 The following entity value JSON code snippet shows a `card` layout with a nested `title` JSON object and three `sections` within the card. The `sections` property takes a nested array and uses the [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) object to define the appearance of each section.
 
-Within each card section you may specify `layout`, `title`, and `properties`. The `layout` key uses the [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) object and accepts the value `list`. The `title` key of the `sections` property accepts `string` values, and the `properties` key accepts an array of strings. Sections can also be collapsible and can be defined with boolean values as collapsed or not collapsed when the entity card is opened in the Excel UI.
+Within each card section you can specify `layout`, `title`, and `properties`. The `layout` key uses the [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) object and accepts the value `"List"`. The `title` key of the `sections` property accepts `string` values, and the `properties` key accepts an array of strings. Sections can also be collapsible and can be defined with boolean values as collapsed or not collapsed when the entity card is opened in the Excel UI.
+
+> [!IMPORTANT]
+> The nested `layouts` values are used in combination with the [Card properties](#card-properties) data types described in the preceding article section. A nested data type must be defined in `properties` before it can be assigned in `layouts` to display on the card.
 
 > [!NOTE]
 > The following code snippet is an excerpt. To see the complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) repository.
