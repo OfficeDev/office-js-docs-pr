@@ -21,9 +21,9 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 
 ### Prerequisites
 
-[.NET runtime](https://dotnet.microsoft.com/download/dotnet/6.0/runtime) for Windows. One of the tools used in the preview runs on .NET.
-
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
+
+- [.NET runtime](https://dotnet.microsoft.com/download/dotnet/6.0/runtime) for Windows. One of the tools used in the preview runs on .NET.
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
@@ -126,16 +126,16 @@ Let's add a custom button to the ribbon that [executes a command](../develop/cre
 1. Open the file **./manifest/manifest.json**.
 
     > [!NOTE]
-    > When referring to nested JSON properties, this article uses dot-notation. When an item in an array is referenced, the bracketed zero-based number of the item is used. 
+    > When referring to nested JSON properties, this article uses dot notation. When an item in an array is referenced, the bracketed zero-based number of the item is used. 
 
-1. To write to a message, the add-ins permissions need to be raised. Scroll to the property `authorization.permissions.resourceSpecific[0].name` and change the value to "MailboxItem.ReadWrite.User".
+1. To write to a message, the add-in's permissions need to be raised. Scroll to the property `authorization.permissions.resourceSpecific[0].name` and change the value to "MailboxItem.ReadWrite.User".
 
-1. When an add-in command executes code instead of opening a task pane, it must run the code in a JavaScript runtime that is separate from the embedded webview in which task pane code runs. So the manifest must specify an additional runtime. Scroll to the property `extension.runtimes` and add the following object to the `runtimes` array. Be sure to put a comma after the object that is already in the array. Note the following about this code:
+1. When an add-in command executes code instead of opening a task pane, it must run the code in a JavaScript runtime that is separate from the embedded webview in which task pane code runs. So the manifest must specify an additional runtime. Scroll to the property `extension.runtimes` and add the following object to the `runtimes` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup:
 
     - The value of the `actions.items[1].id` property is "Contoso.insertHelloWorld". In a later step, you will refer to the item by this ID.
     - The value of the `actions.items[1].name` property must be exactly the same as the name of the function that you added to the **commands.ts** file, in this case "insertHelloWorld".
 
-    ```js
+    ```json
     {
         "id": "CustomButtonRuntime",
         "type": "general",
@@ -161,7 +161,7 @@ Let's add a custom button to the ribbon that [executes a command](../develop/cre
     - The only value in the `contexts` array is "composeMail", so the button will appear when in a compose (or reply) window but not in a message read window where the **Show Taskpane** button appears. Compare this value with the `contexts` array in the existing ribbon object, whose value is `["readMail"]`.
     - The value of the `tabs[0].groups[0].controls[0].actionId` must be exactly the same as the value of `actions.items[1].id` property in the runtime object you created in an earlier step.
 
-    ```js
+    ```json
     {
         "contexts": ["composeMail"],
         "tabs": [
@@ -210,7 +210,7 @@ Let's add a custom button to the ribbon that [executes a command](../develop/cre
 
 1. In Outlook, open a new message window (or reply to an existing message). A new control group named **Contoso Add-in** will appear on the Outlook **Home** tab. The group has a button named **Insert text**.
 
-1. Put the cursor anywhere in the message body and choose the **Insert Text** button.
+1. Put the cursor anywhere in the message body and choose the **Insert Text** button. The phrase "Hello World" will be inserted at the cursor.
 
     > [!NOTE]
     > If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
@@ -218,8 +218,6 @@ Let's add a custom button to the ribbon that [executes a command](../develop/cre
 1. When prompted with the **WebView Stop On Load** dialog box, select **OK**.
 
     [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
-
-1. The phrase "Hello World" will be inserted at the cursor.
 
 1. End the debugging session with the following command:
 
