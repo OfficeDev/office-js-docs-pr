@@ -121,7 +121,7 @@ The following is an example of a preview JSON-manifest for an add-in.
 
 ```json
 {
-    "$schema": "../../schema/metaos.public.schema.json",
+    "$schema": "https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/op/extensions/MicrosoftTeams.schema.json",
     "id": "82a9d9c3-4702-4322-bbc4-6fe7f9b01483",
     "version": "1.0.0",
     "manifestVersion": "devPreview",
