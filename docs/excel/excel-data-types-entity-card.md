@@ -32,7 +32,7 @@ The entity value [`properties`](/javascript/api/excel/excel.entitycellvalue#exce
 > [!IMPORTANT]
 > The nested `properties` data types are used in combination with the [Card layout](#card-layout) values described in the subsequent article section. After defining a nested data type in `properties`, it must be assigned in the `layouts` property to display on the card.
 
-The following code snippet shows the JSON for an entity value with multiple custom properties.
+The following code snippet shows the JSON for an entity value with multiple data types nested within `properties`.
 
 > [!NOTE]
 > The following code snippet is an excerpt. To see the complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) repository.
@@ -135,7 +135,7 @@ The following screenshot shows an entity value card that uses the preceding code
 
 Entity value cards can display a data attribution to give credit to the provider of the information in the entity card. The entity value [`provider`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-provider-member) property uses the [`CellValueProviderAttributes`](/javascript/api/excel/excel.cellvalueproviderattributes) object, which  defines the `description`, `logoSourceAddress`, and `logoTargetAddress` values.
 
-The data provider property displays an image in the lower left corner of the entity card, using the `logoSourceAddress` to specify the image. The `logoTargetAddress` value defines the URL destination if the logo image is selected or clicked. The `description` value displays as a tooltip when hovering over the logo. The `description` value also displays as a plain text fallback if the `logoSourceAddress` is not defined or if the source address for the image is broken.
+The data provider property displays an image in the lower left corner of the entity card, using the `logoSourceAddress` to specify a source URL for the image. The `logoTargetAddress` value defines the URL destination if the logo image is selected or clicked. The `description` value displays as a tooltip when hovering over the logo. The `description` value also displays as a plain text fallback if the `logoSourceAddress` is not defined or if the source address for the image is broken.
 
 The following JSON code snippet shows an entity value that uses the `provider` property to specify a data provider attribution for the entity.
 
