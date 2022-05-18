@@ -100,15 +100,12 @@ The following table shows a mapping of some high level child properties of the "
 |:-----|:-----|:-----|:-----|
 | "requirements.capabilities" | Identifies the requirement sets that the add-in needs to be installable. | **Requirements** and **Sets** | |
 | "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. | **Hosts** |  |
-| "getStartedMessages" | Provides information used by the callout that appears when the add-in is installed. | **GetStarted** | |
-| "keyboards" | Defines keyboard shortcuts for the add-in. |  | The current XML manifest has an **ExtendedOverrides** element that references a JSON-formatted file that configures keyboard shortcuts. The "keyboards" property of the JSON manifest replaces that file. Accordingly, the the JSON manifest has nothing equivalent to **ExtendedOverrides**. There is a slight difference in the schema for the old file and the "keyboards" property.|
-| "ribbons" | The ribbons that the add-in customizes. | **Hosts**, **ExtensionPoints**, and various **\*FormFactor** elements | The "ribbons" property is an array of anonymous objects that each merge the purposes of the these three elements. See ["ribbons" and "menus" tables](#ribbons-and-menus-tables).|
-| "contextMenus" | Configures custom context menus. | **ExtensionPoint** (of type ContextMenu) | The "contextMenus" property is an array of anonymous objects. Each of these objects, in turn, has a "menus" array of anonymous objects that define a custom menu. See ["ribbons" and "menus" tables](#ribbons-and-menus-tables). |  |
+| "ribbons" | The ribbons that the add-in customizes. | **Hosts**, **ExtensionPoints**, and various **\*FormFactor** elements | The "ribbons" property is an array of anonymous objects that each merge the purposes of the these three elements. See ["ribbons" table](#ribbons-table).|
 | "alternatives" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. | **EquivalentAddins** | See the [EquivalentAddins - See also](/javascript/api/manifest/equivalentaddins#see-also) for background information. |
 | "runtimes"  | Configures various kinds of "UI-less" add-ins such as custom functions and functions run directly from custom ribbon buttons. | **Runtimes**. **FunctionFile**, and **ExtensionPoint** (of type CustomFunctions) |  |
 | "autoRunEvents" | Configures an event handler for a specified event. | **Event** and **ExtensionPoint** (of type Events) |  ||
 
-##### "ribbons" and "menus" tables
+##### "ribbons" table
 
 The following table maps the child properties of the anonymous child objects in the "ribbons" array onto XML elements in the current manifest. 
 
@@ -116,13 +113,6 @@ The following table maps the child properties of the anonymous child objects in 
 |:-----|:-----|:-----|:-----|
 | "contexts" | Specifies the command surfaces that the add-in customizes. | various **\*CommandSurface** elements, such as **PrimaryCommandSurface** and **MessageReadCommandSurface** |  |
 | "tabs" | Configures custom ribbon tabs. | **CustomTab** | The names and hierarchy of the descendant properties of "tabs" closely match the descendants of **CustomTab**.  ||
-
-The following table maps the child properties of the anonymous child objects in the "menus" array onto XML elements in the current manifest.
-
-|JSON property|Purpose|XML element(s)|Comments|
-|:-----|:-----|:-----|:-----|
-| "type" | Specifies the type of context where the menu appears, for example, "cell". | The `id` attribute of the **OfficeMenu** element. |  |
-| "control" | Configures a custom menu. | **Control** (of type Menu) | The names and hierarchy of the descendant properties of "control" closely match the descendants of [Control element of type Menu](/javascript/api/manifest/control-menu.md).  ||
 
 ## Sample preview JSON manifest
 

@@ -8,7 +8,7 @@ ms.localizationpriority: high
 
 # Build an Outlook add-in with a Teams manifest (preview)
 
-In this article, you'll walk through the process of building an Outlook task pane add-in that displays at least one property of a selected message and that inserts text into a message. This add-in will use a preview version of the JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use.  For more information about this manifest, see [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+In this article, you'll walk through the process of building an Outlook task pane add-in that displays a property of a selected message, triggers a notification on the reading pane, and inserts text into a message on the compose pane. This add-in will use a preview version of the JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use. For more information about this manifest, see [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
 The new manifest is available for preview and we encourage experienced add-in developers to experiment with it. It should not be used in production add-ins. The preview is only supported on subscription Office on Windows. 
 
@@ -39,7 +39,7 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 
     - **What do you want to name your add-in?** - `Outlook Add-in with Teams Manifest`
 
-    SCREENSHOT HERE
+     ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface with JSON manifest option chosen.](../images/yo-office-outlook-json-manifest.png)
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
@@ -62,6 +62,33 @@ The add-in project that you've created with the Yeoman generator contains sample
 - The **./src/command/command.html** file will be edited by WebPack at build time to insert an HTML `<script>` tag that loads the JavaScript file that is transpiled from the command.ts file.
 - The **./src/command/command.ts** file has little code in it at first. Later in this article, you'll add code to it that calls the Office JavaScript library and that executes when a custom ribbon button is selected.
 
+### Update the code
+
+1. Open your project in VS Code or your preferred code editor.
+   [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
+1. Open the file **./src/taskpane/taskpane.html** and replace the entire **\<main\>** element (within the **\<body\>** element) with the following markup. This new markup adds a label where the script in **./src/taskpane/taskpane.ts** will write data.
+
+    ```html
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+        <h2 class="ms-font-xl"> Discover what Office Add-ins can do for you today! </h2>
+        <p><label id="item-subject"></label></p>
+        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Run</span>
+        </div>
+    </main>
+    ```
+
+1. In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
+
+    ```js
+    // Get a reference to the current message
+    let item = Office.context.mailbox.item;
+
+    // Write message property value to the task pane
+    document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
+    ```
+
 ### Try it out
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
@@ -72,11 +99,13 @@ The add-in project that you've created with the Yeoman generator contains sample
     npm start
     ```
 
-1. In Outlook, view a message in the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0), or open the message in its own window. A new control group named **Contoso Add-in** appears on the Outlook **Home** tab (or the **Message** tab if you opened the message in a new window). The group has a button named **Show Taskpane**.
+1. In Outlook, be sure you are using the Classic Ribbon. The remainder of these instructions assume this.  
+
+1. View a message in the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0), or open the message in its own window. A new control group named **Contoso Add-in** appears on the Outlook **Home** tab (or the **Message** tab if you opened the message in a new window). The group has a button named **Show Taskpane** and one named **Perform an action**.
+
+1. Select the **Perform an action** button. It [executes a command](../develop/create-addin-commands?branch=outlook-json-manifest#step-5-add-the-functionfile-element), specifically, a small informational notification appears at the bottom of the message header, just below the message body.
 
 1. Choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
-
-    ![Screenshot showing a message window in Outlook with the add-in ribbon button highlighted.](../images/quick-start-button-1.png)
 
     > [!NOTE]
     > If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
@@ -86,10 +115,6 @@ The add-in project that you've created with the Yeoman generator contains sample
     [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
 
 1. Scroll to the bottom of the task pane and choose the **Run** link to copy the message's subject to the task pane.
-
-    ![Screenshot showing the add-in's task pane with the Run link highlighted.](../images/quick-start-task-pane-2.png)
-
-    ![Screenshot of the add-in's task pane displaying message subject.](../images/quick-start-task-pane-3.png)
 
 1. End the debugging session with the following command:
 
@@ -104,7 +129,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Add a custom button to the ribbon
 
-Let's add a custom button to the ribbon that [executes a command](../develop/create-addin-commands?branch=outlook-json-manifest#step-5-add-the-functionfile-element), specifically inserts text into a message body.
+Let's add a custom button to the ribbon that inserts text into a message body.
 
 1. Open your project in VS Code or your preferred code editor.
    [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
@@ -119,8 +144,8 @@ Let's add a custom button to the ribbon that [executes a command](../develop/cre
         event.completed();
     }
 
-    // Register the function with Office
-    Office.actions.associate("insertHelloWorld", insertHelloWorld);
+    // Put the function on the global namespace
+    g.insertHelloWorld = insertHelloWorld;
     ```
 
 1. Open the file **./manifest/manifest.json**.
@@ -158,7 +183,7 @@ Let's add a custom button to the ribbon that [executes a command](../develop/cre
 
 1. The **Show Taskpane** button appears on the ribbon when the user is reading an email, but the button for adding text should only appear on the ribbon when the user is composing a new email (or replying to one). So the manifest must specify a new ribbon object. Scroll to the property `extension.ribbons` and add the following object to the `ribbons` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup:
 
-    - The only value in the `contexts` array is "composeMail", so the button will appear when in a compose (or reply) window but not in a message read window where the **Show Taskpane** button appears. Compare this value with the `contexts` array in the existing ribbon object, whose value is `["readMail"]`.
+    - The only value in the `contexts` array is "composeMail", so the button will appear when in a compose (or reply) window but not in a message read window where the **Show Taskpane** and **Perform an action** buttons appear. Compare this value with the `contexts` array in the existing ribbon object, whose value is `["readMail"]`.
     - The value of the `tabs[0].groups[0].controls[0].actionId` must be exactly the same as the value of `actions.items[1].id` property in the runtime object you created in an earlier step.
 
     ```json
@@ -210,7 +235,7 @@ Let's add a custom button to the ribbon that [executes a command](../develop/cre
 
 1. In Outlook, open a new message window (or reply to an existing message). A new control group named **Contoso Add-in** will appear on the Outlook **Home** tab. The group has a button named **Insert text**.
 
-1. Put the cursor anywhere in the message body and choose the **Insert Text** button.
+1. Put the cursor anywhere in the message body and choose the **Insert text** button.
 
     > [!NOTE]
     > If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
@@ -220,7 +245,7 @@ Let's add a custom button to the ribbon that [executes a command](../develop/cre
     [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
 
     The phrase "Hello World" will be inserted at the cursor.
-    
+
 1. End the debugging session with the following command:
 
     ```command&nbsp;line
