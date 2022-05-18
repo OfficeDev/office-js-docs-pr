@@ -7,7 +7,7 @@ ms.prod: excel
 ms.localizationpriority: medium
 ---
 
-# Excel data types entity value cards (preview)
+# Use cards with entity value data types (preview)
 
 > [!NOTE]
 > Data types APIs are currently only available in public preview. Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview APIs in a production environment or within business-critical documents.
@@ -19,9 +19,11 @@ ms.localizationpriority: medium
 >
 > To try out data types in Office on Windows, you must have an Excel build number greater than or equal to 16.0.14626.10000. To try out data types in Office on Mac, you must have an Excel build number greater than or equal to 16.55.21102600.
 
-This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with the card component of data types entity values. An entity value, or [EntityCellValue](/javascript/api/excel/excel.entitycellvalue), is a container for data types, similar to an object in object oriented programming. The card component is a pop up window for an entity data type that displays additional information about the entity value in a cell. This article introduces card properties, layout options for the card, and card data attribution functionality.
+This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with the card component of entity value data types. An entity value, or [EntityCellValue](/javascript/api/excel/excel.entitycellvalue), is a container for data types and similar to an object in object oriented programming.
 
-The following screenshot shows a list of grocery store products and an open entity value card for the **Tofu** product from the list.
+The card component displays as a modal window in the Excel UI and can display additional information contained within an entity value, beyond what's already visible in a cell. This article introduces card properties, layout options for the card, and card data attribution functionality.
+
+The following screenshot shows an example of an open entity value card for the **Tofu** product from a list of grocery store products.
 
 :::image type="content" source="../images/excel-data-types-entity-card-tofu.png" alt-text="A screenshot showing an entity value data type with the card window displayed.":::
 

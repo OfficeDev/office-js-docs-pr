@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 04/19/2022
+ms.date: 05/18/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -93,6 +93,8 @@ const myEntity: Excel.EntityCellValue = {
 };
 ```
 
+Entity values also offer a `layouts` property that creates a card for the entity. The card displays as a modal window in the Excel UI and can display additional information contained within the entity value, beyond what's visible in the cell. See [Use cards with entity value data types](excel-data-types-entity-card.md) to learn more.
+
 ## Web image values
 
 The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
@@ -137,5 +139,6 @@ Each of the error objects can access an enum through the `errorSubType` property
 ## See also
 
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
+- [Use cards with entity value data types](excel-data-types-entity-card.md)
 - [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
 - [Custom functions and data types](custom-functions-data-types-concepts.md)
