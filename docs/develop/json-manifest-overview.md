@@ -20,7 +20,6 @@ The new manifest is available for preview and we encourage experienced add-in de
 - It is not yet possible to combine an add-in with Teams apps, such as a custom Teams tab, or any other Microsoft 365 extension types. We're working on this too.
 
 > [!TIP]
-
 > Anxious to get started with the preview Teams manifest? Begin with [Build an Outlook add-in with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
 
 ## Overview of the JSON manifest

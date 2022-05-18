@@ -81,7 +81,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
 
-    ```js
+    ```typescript
     // Get a reference to the current message
     let item = Office.context.mailbox.item;
 
@@ -136,7 +136,7 @@ Let's add a custom button to the ribbon that inserts text into a message body.
 
 1. In your code editor, open the file **./src/command/command.ts** and add the following code to the end of the file. This function will insert "Hello World" at the cursor point in message body.
 
-    ```js
+    ```typescript
     function insertHelloWorld(event: Office.AddinCommands.Event) {
         Office.context.mailbox.item.body.setSelectedDataAsync("Hello World", {coercionType: Office.CoercionType.Text});
 
