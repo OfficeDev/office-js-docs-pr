@@ -7,7 +7,7 @@ ms.localizationpriority: high
 
 # Teams manifest for Office Add-ins (preview)
 
-Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements will provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes will not break existing add-ins. 
+Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes are compatible with existing add-ins. 
 
 Two of the most important features we are aiming at, *but are not yet available*:
 
@@ -16,25 +16,25 @@ Two of the most important features we are aiming at, *but are not yet available*
 
 We have taken an important first step toward these goals by making it possible for Outlook Add-ins, running on Windows only, to be created with a version of the Teams JSON manifest.
 
-The new manifest is available for preview and we encourage experienced add-in developers to experiment with it. It should not be used in production add-ins. During the early preview period, the following limitations apply:
+The new manifest is available for preview. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins. During the early preview period, the following limitations apply.
 
 - The preview version of the Teams manifest only supports Outlook add-ins and only on subscription Office for Windows. We're working on extending support to Excel, PowerPoint, and Word.
 - It is not yet possible to combine an add-in with Teams apps, such as a custom Teams tab, or any other Microsoft 365 extension types. So, you cannot yet add an add-in to an existing Teams app. We're working on this too.
 
 > [!TIP]
-> Anxious to get started with the preview Teams manifest? Begin with [Build an Outlook add-in with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
+> Ready to get started with the preview Teams manifest? Begin with [Build an Outlook add-in with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
 
 ## Overview of the JSON manifest
 
 ### Schemas and general points
 
-There are a total of 7 [Schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) to define the current XML manifest. There is just one schema for the [preview JSON manifest](/microsoftteams/platform/resources/dev-preview/developer-preview-intro.md). 
+There is just one schema for the [preview JSON manifest](/microsoftteams/platform/resources/dev-preview/developer-preview-intro.md), in contrast to the current XML manifest which has a total of 7 [Schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).  
 
 ### Conceptual mapping of the preview JSON and current XML manifests
 
 This section describes the preview JSON manifest for readers that are familiar with the current XML manifest. Some points to keep in mind: 
 
-- JSON does not have the XML distinction between attribute and element value. So typically the JSON that maps to an XML element makes both the element value and each of the attributes a child property. For example, the following shows some XML markup and its JSON equivalent.
+- JSON does not have the XML distinction between attribute and element value. Typically, the JSON that maps to an XML element makes both the element value and each of the attributes a child property. The following example shows some XML markup and its JSON equivalent.
   
   ```xml
   <MyThing color="blue">Some text</MyThing>
@@ -59,18 +59,18 @@ This section describes the preview JSON manifest for readers that are familiar w
   ]
   ```
 
-#### Top level structure
+#### Top-level structure
 
 The root level of the preview JSON manifest, which roughly corresponds to the **OfficeApp** element in the current XML manifest, is an anonymous object. 
 
-The children of **OfficeApp** are commonly divided into two notional categories. The **VersionOverrides** element is one category. The other consists of all the other children of **OfficeApp** which are collectively referred to as the base manifest. So too, the preview JSON manifest has a similar division. There is a top-level "extension" property that roughly corresponds in its purposes and child properties to the **VersionOverrides** element. The preview JSON manifest also has over 10 other top-level properties that collectively serve the same purposes as the base manifest of the XML manifest. So, these other properties can be thought of collectively as the base manifest of the JSON manifest. 
+The children of **OfficeApp** are commonly divided into two notional categories. The **VersionOverrides** element is one category. The other consists of all the other children of **OfficeApp**, which are collectively referred to as the base manifest. So too, the preview JSON manifest has a similar division. There is a top-level "extension" property that roughly corresponds in its purposes and child properties to the **VersionOverrides** element. The preview JSON manifest also has over 10 other top-level properties that collectively serve the same purposes as the base manifest of the XML manifest. These other properties can be thought of collectively as the base manifest of the JSON manifest. 
 
 > [!NOTE]
-> When it becomes possible to combine an add-in with other Microsoft 365 extension types in a single web app, then there will be other top-level properties that don't fit into the notion of the base manifest. Roughly speaking, there will be a top-level property for every kind of Microsoft 365 extension type, such as "configurableTabs", "bots" and "connectors". For examples, see the [Teams manifest documentation](/microsoftteams/platform/resources/schema/manifest-schema). This structure makes clear that the "extension" property represents an Office add-in as one type of Microsoft 365 extension.
+> When it becomes possible to combine an add-in with other Microsoft 365 extension types in a single web app, then there will be other top-level properties that don't fit into the notion of the base manifest. There will usually be a top-level property for every kind of Microsoft 365 extension type, such as "configurableTabs", "bots" and "connectors". For examples, see the [Teams manifest documentation](/microsoftteams/platform/resources/schema/manifest-schema). This structure makes clear that the "extension" property represents an Office add-in as one type of Microsoft 365 extension.
 
 #### Base manifest
 
-The base manifest properties specify characteristics of the add-in that *any* type of extension of Microsoft 365, including Teams tabs or message extensions, would be expected to have, not just Office add-ins. These characteristics include a public name and a unique ID. The following table shows a mapping of some critical top level properties in the preview JSON manifest to the XML elements in the current manifest, where the mapping principle is the *purpose* of the markup.
+The base manifest properties specify characteristics of the add-in that *any* type of extension of Microsoft 365 would be expected to have. This includes Teams tabs and message extensions, not just Office add-ins. These characteristics include a public name and a unique ID. The following table shows a mapping of some critical top-level properties in the preview JSON manifest to the XML elements in the current manifest, where the mapping principle is the *purpose* of the markup.
 
 |JSON property|Purpose|XML element(s)|Comments|
 |:-----|:-----|:-----|:-----|
@@ -84,16 +84,16 @@ The base manifest properties specify characteristics of the add-in that *any* ty
 |"developer"| Identifies the developer of the add-in. | **ProviderName** | |
 |"localizationInfo"| Configures the default locale and other supported locales. | **DefaultLocale** and **Override** | |
 |"webApplicationInfo"| Identifies the add-in's web app as it is known in Azure Active Directory. | **WebApplicationInfo** | In the current XML manifest, the **WebApplicationInfo** element is inside **VersionOverrides**, not the base manifest. |
-|"authorization"| Identifies any Microsoft Graph permissions that the add-in needs. | **WebApplicationInfo** | See comment in preceding row. |
+|"authorization"| Identifies any Microsoft Graph permissions that the add-in needs. | **WebApplicationInfo** | In the current XML manifest, the **WebApplicationInfo** element is inside **VersionOverrides**, not the base manifest. |
 
 The **Hosts**, **Requirements**, and **ExtendedOverrides** elements are part of the base manifest in the current XML manifest. But concepts and purposes associated with these elements are configured inside the "extension" property of the preview JSON manifest. 
 
 #### "extension" property
 
-The "extension" property in the preview JSON manifest primarily represents characteristics of the add-in that would not be relevant to other kinds of Microsoft 365 extensions. For example, the Office applications that the add-in extends (such as, Excel, PowerPoint, Word, and Outlook) are specified inside the "extension" property as are customizations of the Office application ribbon. The property's purposes closely match those of the **VersionOverrides** element in the current XML manifest.
+The "extension" property in the preview JSON manifest primarily represents characteristics of the add-in that would not be relevant to other kinds of Microsoft 365 extensions. For example, the Office applications that the add-in extends (such as, Excel, PowerPoint, Word, and Outlook) are specified inside the "extension" property, as are customizations of the Office application ribbon. The configuration purposes of the "extension" property closely match those of the **VersionOverrides** element in the current XML manifest.
 
 > [!NOTE]
-> The **VersionOverrides** section of the manifest has a "double jump" system for many string resources. Strings, including URLs, are specified and assigned an ID in the **Resources** child of **VersionOverrides**. Elements that require a string have a `resid` attribute that matches the ID of a string in the **Resources** element. The "extension" property of the preview JSON manifest simplifies things by defining strings directly as property values. There is nothing equivalent to the **Resources** element.
+> The **VersionOverrides** section of the current XML manifest has a "double jump" system for many string resources. Strings, including URLs, are specified and assigned an ID in the **Resources** child of **VersionOverrides**. Elements that require a string have a `resid` attribute that matches the ID of a string in the **Resources** element. The "extension" property of the preview JSON manifest simplifies things by defining strings directly as property values. There is nothing in the JSON manifest that is equivalent to the **Resources** element.
 
 The following table shows a mapping of some high level child properties of the "extension" property in the preview JSON manifest to XML elements in the current manifest. Dot notation is used to reference child properties.
 
