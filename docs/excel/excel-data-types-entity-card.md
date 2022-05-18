@@ -1,13 +1,13 @@
 ---
 title: Excel JavaScript API data types entity value card
-description: ""
+description: Learn how to use entity value cards with data types in your Excel add-in.
 ms.date: 05/17/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
 ---
 
-# Excel data types entity value card (preview)
+# Excel data types entity value cards (preview)
 
 > [!NOTE]
 > Data types APIs are currently only available in public preview. Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview APIs in a production environment or within business-critical documents.
@@ -21,7 +21,11 @@ ms.localizationpriority: medium
 
 This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with the card component of data types entity values. An entity value is a container for data types, similar to an object in object oriented programming. The card component is an optional pop up window for an entity data type, displaying additional information about the entity value in a cell. This article introduces card properties, layout options for the card, and card data attribution functionality.
 
-## Properties
+The following screenshot shows a list of grocery store products and an open entity value card for the **Tofu** product.
+
+:::image type="content" source="../images/excel-data-types-entity-card-tofu.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed.":::
+
+## Card properties
 
 The entity value [`properties`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-properties-member) property allows you to set customized information about your set of data types. The following code snippet shows the JSON for an entity value with multiple custom properties. The `properties` field accepts `string` values, and each property must have a `type` and `basicValue` setting.
 
@@ -61,7 +65,7 @@ const entity: Excel.EntityCellValue = {
 
 The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the **Product ID**, **Product Name**, **Quantity Per Unit**, and **Unit Price** information.
 
-:::image type="content" source="../images/excel-data-types-entity-card-tofu.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the product name, product ID, quantity per unit, and unit price information.":::
+:::image type="content" source="../images/excel-data-types-entity-card-properties.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the product name, product ID, quantity per unit, and unit price information.":::
 
 ## Card layout
 
@@ -96,6 +100,7 @@ const entity: Excel.EntityCellValue = {
                 {
                     layout: "List",
                     title: "Additional information",
+                    collapsible: true,
                     collapsed: true, // This section will be collapsed when the card is opened.
                     properties: ["Discontinued"]
                 }
@@ -105,7 +110,11 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-## Data attribution
+The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the `title` property, which uses the **Product Name** from `properties` and is set to **Pavolova**. The screenshot also shows `section` fields. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and collapsed when the card is opened.
+
+:::image type="content" source="../images/excel-data-types-entity-card-sections.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the card title and sections.":::
+
+## Card data attribution
 
 The `provider` property uses the [`CellValueProviderAttributes`](javascript/api/excel/excel.cellvalueproviderattributes) object, which offers the `description`, `logoSourceAddress`, and `logoTargetAddress` fields.
 
@@ -126,6 +135,10 @@ const entity: Excel.EntityCellValue = {
     }
 };
 ```
+
+The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the data provider attribution in the lower left corner. In this instance, the data provider is Microsoft and the Microsoft logo is displayed.
+
+:::image type="content" source="../images/excel-data-types-entity-card-attribution.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the data provider attribution in the lower left corner.":::
 
 ## See also
 
