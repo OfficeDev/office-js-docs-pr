@@ -241,9 +241,6 @@ Let's add a custom button to the ribbon that inserts text into a message body.
 
 1. Put the cursor anywhere in the message body and choose the **Insert text** button.
 
-    > [!NOTE]
-    > If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
-
 1. When prompted with the **WebView Stop On Load** dialog box, select **OK**.
 
     [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
