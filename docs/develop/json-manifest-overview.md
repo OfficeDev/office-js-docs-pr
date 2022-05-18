@@ -83,7 +83,7 @@ The base manifest properties specify characteristics of the add-in that *any* ty
 |"developer"| Identifies the developer of the add-in. | **ProviderName** | |
 |"localizationInfo"| Configures the default locale and other supported locales. | **DefaultLocale** and **Override** | |
 |"webApplicationInfo"| Identifies the add-in's web app as it is known in Azure Active Directory. | **WebApplicationInfo** | In the current XML manifest, the **WebApplicationInfo** element is inside **VersionOverrides**, not the base manifest. |
-|"authorization"| Identifies any Microsoft Graph permissions that the add-in needs. | **WebApplicationInfo** | See comment in preceding row. ||
+|"authorization"| Identifies any Microsoft Graph permissions that the add-in needs. | **WebApplicationInfo** | See comment in preceding row. |
 
 The **Hosts**, **Requirements**, and **ExtendedOverrides** elements are part of the base manifest in the current XML manifest. But concepts and purposes associated with these elements are configured inside the "extension" property of the preview JSON manifest. 
 
@@ -103,7 +103,7 @@ The following table shows a mapping of some high level child properties of the "
 | "ribbons" | The ribbons that the add-in customizes. | **Hosts**, **ExtensionPoints**, and various **\*FormFactor** elements | The "ribbons" property is an array of anonymous objects that each merge the purposes of the these three elements. See ["ribbons" table](#ribbons-table).|
 | "alternatives" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. | **EquivalentAddins** | See the [EquivalentAddins - See also](/javascript/api/manifest/equivalentaddins#see-also) for background information. |
 | "runtimes"  | Configures various kinds of "UI-less" add-ins such as custom functions and functions run directly from custom ribbon buttons. | **Runtimes**. **FunctionFile**, and **ExtensionPoint** (of type CustomFunctions) |  |
-| "autoRunEvents" | Configures an event handler for a specified event. | **Event** and **ExtensionPoint** (of type Events) |  ||
+| "autoRunEvents" | Configures an event handler for a specified event. | **Event** and **ExtensionPoint** (of type Events) |  |
 
 ##### "ribbons" table
 
@@ -112,7 +112,7 @@ The following table maps the child properties of the anonymous child objects in 
 |JSON property|Purpose|XML element(s)|Comments|
 |:-----|:-----|:-----|:-----|
 | "contexts" | Specifies the command surfaces that the add-in customizes. | various **\*CommandSurface** elements, such as **PrimaryCommandSurface** and **MessageReadCommandSurface** |  |
-| "tabs" | Configures custom ribbon tabs. | **CustomTab** | The names and hierarchy of the descendant properties of "tabs" closely match the descendants of **CustomTab**.  ||
+| "tabs" | Configures custom ribbon tabs. | **CustomTab** | The names and hierarchy of the descendant properties of "tabs" closely match the descendants of **CustomTab**.  |
 
 ## Sample preview JSON manifest
 
