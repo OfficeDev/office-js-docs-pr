@@ -9,10 +9,10 @@ ms.localizationpriority: high
 
 Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements will provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes will not break existing add-ins. 
 
-Two of the most important goals we are aiming at, *but are not yet available*:
+Two of the most important features we are aiming at, *but are not yet available*:
 
 - It should be possible to surface a single web app as multiple types of Microsoft 365 extensions. For example a web app can be both an Office Add-in and a custom tab in Teams.
-- All types of Microsoft 365 extensions will use the same manifest format (JSON) and schema. It will be based on the current Teams manifest schema. In support of the first bullet, it will be possible to specify multiple types of extensions in the manifest.  
+- All types of Microsoft 365 extensions should use the same manifest format (JSON) and schema. It will be based on the current Teams manifest schema. In support of the first bullet, it will be possible to specify multiple types of extensions in the manifest.  
 
 We have taken an important first step toward these goals by making it possible for Outlook Add-ins, running on Windows only, to be created with a version of the Teams JSON manifest.
 
