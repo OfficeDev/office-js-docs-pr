@@ -55,7 +55,7 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 
 The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.
 
-- The **./manifest.json** file in the root directory of the project defines the settings and capabilities of the add-in.
+- The **./manifest/manifest.json** file in the root directory of the project defines the settings and capabilities of the add-in.
 - The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
 - The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
 - The **./src/taskpane/taskpane.ts** file contains code that calls the Office JavaScript library to facilitate interaction between the task pane and Outlook.
@@ -65,7 +65,9 @@ The add-in project that you've created with the Yeoman generator contains sample
 ### Update the code
 
 1. Open your project in VS Code or your preferred code editor.
-   [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
+    > [!TIP]
+    > On Windows, you can navigate to the root directory of the project via the command line and then enter `code .` to open that folder in VS Code. 
 
 1. Open the file **./src/taskpane/taskpane.html** and replace the entire **\<main\>** element (within the **\<body\>** element) with the following markup. This new markup adds a label where the script in **./src/taskpane/taskpane.ts** will write data.
 
@@ -132,7 +134,9 @@ The add-in project that you've created with the Yeoman generator contains sample
 Let's add a custom button to the ribbon that inserts text into a message body.
 
 1. Open your project in VS Code or your preferred code editor.
-   [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
+    > [!TIP]
+    > On Windows, you can navigate to the root directory of the project via the command line and then enter `code .` to open that folder in VS Code. 
 
 1. In your code editor, open the file **./src/command/command.ts** and add the following code to the end of the file. This function will insert "Hello World" at the cursor point in message body.
 
