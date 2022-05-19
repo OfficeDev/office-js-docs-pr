@@ -1,7 +1,7 @@
 ---
 title: Work with tables using the Excel JavaScript API
 description: Code samples that show how to perform common tasks with tables using the Excel JavaScript API.
-ms.date: 05/18/2022
+ms.date: 05/19/2022
 ms.localizationpriority: medium
 ---
 
@@ -51,18 +51,20 @@ await Excel.run(async (context) => {
 
 ## Add rows to a table
 
-The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The `alwaysInsert` parameter of the [`add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)) method is set to `true`, which specifies that the new rows be inserted into the table, not below the table. The width of the columns and height of the rows are then set to best fit the current data in the table.
+The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The `index` parameter of the [`add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)) method is set to `null`, which specifies that the rows be added after the existing rows in the table. The `alwaysInsert` parameter is set to `true`, which indicates that the new rows be inserted into the table, not below the table. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 > [!NOTE]
 > The `index` property of a [TableRow](/javascript/api/excel/excel.tablerow) object indicates the index number of the row within the rows collection of the table. A `TableRow` object does not contain an `id` property that can be used as a unique key to identify the row.
 
 ```js
+// This code sample shows how to add rows to a table that already exists 
+// on a worksheet named Sample.
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getItem("Sample");
     let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.rows.add(
-        null, // Add rows to the end of the table.
+        null, // index, Adds rows to the end of the table.
         [
             ["1/16/2017", "THE PHONE COMPANY", "Communications", "$120"],
             ["1/20/2017", "NORTHWIND ELECTRIC CARS", "Transportation", "$142"],
@@ -72,7 +74,7 @@ await Excel.run(async (context) => {
             ["1/28/2017", "TREY RESEARCH", "Other", "$135"],
             ["1/31/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$97"]
         ], 
-        true, // Specify that the new rows be inserted into the table.
+        true, // alwaysInsert, Specifies that the new rows be inserted into the table.
     );
 
     sheet.getUsedRange().format.autofitColumns();
