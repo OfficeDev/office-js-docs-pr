@@ -107,6 +107,10 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. Select the **Perform an action** button. It [executes a command](../develop/create-addin-commands.md?branch=outlook-json-manifest#step-5-add-the-functionfile-element) to generate a small informational notification at the bottom of the message header, just below the message body.
 
+1. When prompted with the **WebView Stop On Load** dialog box, select **OK**.
+
+    [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
+
 1. Choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     > [!NOTE]
@@ -175,9 +179,9 @@ Let's add a custom button to the ribbon that inserts text into a message body.
         "lifetime": "short",
         "actions": [
             {
-                "id": "Contoso.insertHelloWorld",
-                "type": "execution",
-                "name": "insertHelloWorld"
+                "id": "insertHelloWorld",
+                "type": "executeFunction",
+                "displayName": "insertHelloWorld"
             }
         ]
     }
@@ -185,12 +189,12 @@ Let's add a custom button to the ribbon that inserts text into a message body.
 
 1. The **Show Taskpane** button appears on the ribbon when the user is reading an email, but the button for adding text should only appear on the ribbon when the user is composing a new email (or replying to one). So the manifest must specify a new ribbon object. Scroll to the property `extension.ribbons` and add the following object to the `ribbons` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup:
 
-    - The only value in the `contexts` array is "composeMail", so the button will appear when in a compose (or reply) window but not in a message read window where the **Show Taskpane** and **Perform an action** buttons appear. Compare this value with the `contexts` array in the existing ribbon object, whose value is `["readMail"]`.
-    - The value of the `tabs[0].groups[0].controls[0].actionId` must be exactly the same as the value of `actions.items[1].id` property in the runtime object you created in an earlier step.
+    - The only value in the `contexts` array is "mailCompose", so the button will appear when in a compose (or reply) window but not in a message read window where the **Show Taskpane** and **Perform an action** buttons appear. Compare this value with the `contexts` array in the existing ribbon object, whose value is `["mailRead"]`.
+    - The value of the `tabs[0].groups[0].controls[0].actionId` must be exactly the same as the value of `actions[0].id` property in the runtime object you created in an earlier step.
 
     ```json
     {
-        "contexts": ["composeMail"],
+        "contexts": ["mailCompose"],
         "tabs": [
             {
                 "builtInTabId": "TabDefault",
@@ -217,7 +221,7 @@ Let's add a custom button to the ribbon that inserts text into a message body.
                                     "title": "Insert text",
                                     "description": "Inserts some text."
                                 },
-                                "actionId": "Contoso.insertHelloWorld"
+                                "actionId": "insertHelloWorld"
                             }                  
                         ]
                     }
