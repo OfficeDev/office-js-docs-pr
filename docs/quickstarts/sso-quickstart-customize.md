@@ -1,7 +1,7 @@
 ---
 title: Add Microsoft Graph functionality to your SSO quick start project
 description: Learn how to add new Microsoft Graph functionality to the SSO-enabled add-in that you created.
-ms.date: 01/25/2022
+ms.date: 05/19/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
 ---
@@ -38,37 +38,29 @@ The add-in that you created with the SSO quick start uses Microsoft Graph to get
 
 ### Update app permissions in Azure
 
-Before the add-in can successfully read the contents of the user's OneDrive for Business, its app registration information in Azure must be updated with the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission and revoke the **User.Read** permission, which is no longer needed.
+Before the add-in can successfully read the contents of the user's OneDrive for Business, its app registration information in Azure must be updated with the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission.
 
 1. Sign in to the [Azure portal](https://portal.azure.com) with your **Microsoft 365 administrator credentials**.
 
-3. Go to the **App registrations** page, and choose the app registration that you created during the quick start.
+1. Go to the **App registrations** page, and choose the app registration that you created during the quick start.
     > [!TIP]
     > The **Display name** of the app matches the add-in name that you specified when you created the project with the Yeoman generator.
 
-4. Under **Manage**, choose **API permissions**.
+1. Under **Manage**, choose **API permissions**.
 
-5. In the **User.Read** row of the permissions table, choose the ellipsis and then select **Revoke admin consent** from the menu that appears.
+1. Select the **Add a permission** button.
 
-6. Select the **Yes, remove** button in response to the prompt that's displayed.
+1. On the panel that opens choose **Microsoft Graph** and then choose **Delegated permissions**.
 
-7. In the **User.Read** row of the permissions table, choose the ellipsis and then select **Remove permission** from the menu that appears.
-
-8. Select the **Yes, remove** button in response to the prompt that's displayed.
-
-9. Select the **Add a permission** button.
-
-10. On the panel that opens choose **Microsoft Graph** and then choose **Delegated permissions**.
-
-11. On the **Request API permissions** panel:
+1. On the **Request API permissions** panel:
 
     a. Under **Files**, select **Files.Read.All**.
 
     b. Select the **Add permissions** button at the bottom of the panel to save these permissions changes.
 
-12. Select the **Grant admin consent for [tenant name]** button.
+1. Select the **Grant admin consent for [tenant name]** button.
 
-13. Select the **Yes** button in response to the prompt that's displayed.
+1. Select the **Yes** button in response to the prompt that's displayed.
 
 ### Update code in the add-in project
 
@@ -88,15 +80,15 @@ Complete the following steps for your add-in, to change the Microsoft Graph URL,
 
 1. In the **./.ENV** file:
 
-    a. Replace `GRAPH_URL_SEGMENT=/me` with the following: `GRAPH_URL_SEGMENT=/me/drive/root/children`
+    a. Replace `GRAPH_URL_SEGMENT=/me` with `GRAPH_URL_SEGMENT=/me/drive/root/children`
 
-    b. Replace `QUERY_PARAM_SEGMENT=` with the following: `QUERY_PARAM_SEGMENT=?$select=name&$top=10`
+    b. Replace `QUERY_PARAM_SEGMENT=` with `QUERY_PARAM_SEGMENT=?$select=name&$top=10`
 
-    c. Replace `SCOPE=User.Read` with the following: `SCOPE=Files.Read.All`
+    c. Replace `SCOPE=User.Read` with `SCOPE=Files.Read.All`
 
-2. In **./manifest.xml**, find the line `<Scope>User.Read</Scope>` near the end of the file and replace it with the line `<Scope>Files.Read.All</Scope>`.
+1. In **./manifest.xml**, find the line `<Scope>User.Read</Scope>` near the end of the file and replace it with the line `<Scope>Files.Read.All</Scope>`.
 
-3. In **./src/helpers/fallbackauthdialog.js** (or in **./src/helpers/fallbackauthdialog.ts** for a TypeScript project), find the string `https://graph.microsoft.com/User.Read` and replace it with the string `https://graph.microsoft.com/Files.Read.All`, such that `requestObj` is defined as follows:
+1. In **./src/helpers/fallbackauthdialog.js** (or in **./src/helpers/fallbackauthdialog.ts** for a TypeScript project), find the string `https://graph.microsoft.com/User.Read` and replace it with the string `https://graph.microsoft.com/Files.Read.All`, such that `requestObj` is defined as follows:
 
     ```javascript
     var requestObj = {
@@ -110,7 +102,7 @@ Complete the following steps for your add-in, to change the Microsoft Graph URL,
     };
     ```
 
-4. In **./src/taskpane/taskpane.html**, find the element `<section class="ms-firstrun-instructionstep__header">` and update the text within that element to describe the add-in's new functionality.
+1. In **./src/taskpane/taskpane.html**, find the element `<section class="ms-firstrun-instructionstep__header">` and update the text within that element to describe the add-in's new functionality.
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -120,7 +112,7 @@ Complete the following steps for your add-in, to change the Microsoft Graph URL,
     </section>
     ```
 
-5. In **./src/taskpane/taskpane.html**, find and replace both occurrences of the string `Get My User Profile Information` with the string `Read my OneDrive for Business`.
+1. In **./src/taskpane/taskpane.html**, find both occurrences of the string `Get My User Profile Information` and replace it with `Read my OneDrive for Business`.
 
     ```html
     <li class="ms-ListItem">
@@ -137,7 +129,7 @@ Complete the following steps for your add-in, to change the Microsoft Graph URL,
     </p>
     ```
 
-6. In **./src/taskpane/taskpane.html**, find and replace the string `Your user profile information will be displayed in the document.` with the string `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`.
+1. In **./src/taskpane/taskpane.html**, find the string `Your user profile information will be displayed in the document.` and replace it with `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`.
 
     ```html
     <li class="ms-ListItem">
@@ -146,37 +138,16 @@ Complete the following steps for your add-in, to change the Microsoft Graph URL,
     </li>
     ```
 
-7. Update the code that parses the response from Microsoft Graph and writes it to the document or message, by following guidance in the section that corresponds to your type of add-in:
+1. Update the code that parses the response from Microsoft Graph and writes it to the document or message, by following guidance in the section that corresponds to your type of add-in:
 
-    - [Changes required for an Excel add-in (JavaScript)](#changes-required-for-an-excel-add-in-javascript)
-    - [Changes required for an Excel add-in (TypeScript)](#changes-required-for-an-excel-add-in-typescript)
-    - [Changes required for an Outlook add-in (JavaScript)](#changes-required-for-an-outlook-add-in-javascript)
-    - [Changes required for an Outlook add-in (TypeScript)](#changes-required-for-an-outlook-add-in-typescript)
-    - [Changes required for a PowerPoint add-in (JavaScript)](#changes-required-for-a-powerpoint-add-in-javascript)
-    - [Changes required for a PowerPoint add-in (TypeScript)](#changes-required-for-a-powerpoint-add-in-typescript)
-    - [Changes required for a Word add-in (JavaScript)](#changes-required-for-a-word-add-in-javascript)
-    - [Changes required for a Word add-in (TypeScript)](#changes-required-for-a-word-add-in-typescript)
+    - [Changes required for an Office Add-in (JavaScript)](#changes-required-for-an-office-add-in-javascript)
+    - [Changes required for an Office Add-in (TypeScript)](#changes-required-for-an-office-add-in-typescript)
 
-### Changes required for an Excel add-in (JavaScript)
+### Changes required for an Office Add-in (JavaScript)
 
-If your add-in is an Excel add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**.
+If your generated Office Add-in uses JavaScript, make the following changes in **./src/helpers/documentHelper.js**.
 
-1. Find the `writeDataToOfficeDocument` function and replace it with the following function.
-
-    ```javascript
-    export function writeDataToOfficeDocument(result) {
-      return new OfficeExtension.Promise(function(resolve, reject) {
-        try {
-          writeDataToExcel(result);
-          resolve();
-        } catch (error) {
-          reject(Error("Unable to write data to document. " + error.toString()));
-        }
-      });
-    }
-    ```
-
-2. Find the `filterUserProfileInfo` function and replace it with the following function.
+1. Find the `filterUserProfileInfo` function and replace it with the following function.
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -189,64 +160,30 @@ If your add-in is an Excel add-in that was created with JavaScript, make the fol
     }
     ```
 
-3. Find the `writeDataToExcel` function and replace it with the following function.
+1. Search for `filterUserProfileInfo` and replace it with `filterOneDriveInfo`. There should be four instances to replace.
 
-    ```javascript
-    function writeDataToExcel(result) {
-      return Excel.run(function (context) {
-        var sheet = context.workbook.worksheets.getActiveWorksheet();
-        let data = [];
-        let oneDriveInfo = filterOneDriveInfo(result);
-
-        for (let i = 0; i < oneDriveInfo.length; i++) {
-          if (oneDriveInfo[i] !== null) {
-            let innerArray = [];
-            innerArray.push(oneDriveInfo[i]);
-            data.push(innerArray);
-          }
-        }
-
-        const rangeAddress = `B5:B${5 + (data.length - 1)}`;
-        const range = sheet.getRange(rangeAddress);
-        range.values = data;
-        range.format.autofitColumns();
-
-        return context.sync();
-      });
-    }
-    ```
-
-4. Delete the `writeDataToOutlook` function.
-
-5. Delete the `writeDataToPowerPoint` function.
-
-6. Delete the `writeDataToWord` function.
+1. Save the changes.
 
 After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
 
-### Changes required for an Excel add-in (TypeScript)
+### Changes required for an Office Add-in (TypeScript)
 
-If your add-in is an Excel add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function.
+If your generated Office Add-in uses TypeScript, open **./src/taskpane/taskpane.ts**.
 
+1. Find the `writeDataToOfficeDocument` function and replace it with the following code depending on which Office host your add-in uses (Excel, Outlook, PowerPoint, or Word)
+
+#### Excel code
+    
 ```typescript
-export function writeDataToOfficeDocument(result: Object): Promise<any> {
-  return Excel.run(function(context) {
+  export function writeDataToOfficeDocument(result: Object): Promise<any> {
+  return Excel.run(function (context) {
     const sheet = context.workbook.worksheets.getActiveWorksheet();
-    let data: string[] = [];
+    let data: string[][];
 
-    let itemNames: string[] = [];
-    let oneDriveItems = result["value"];
-    for (let item of oneDriveItems) {
-      itemNames.push(item["name"]);
-    }
-
-    for (let i = 0; i < itemNames.length; i++) {
-      if (itemNames[i] !== null) {
-        let innerArray = [];
-        innerArray.push(itemNames[i]);
-        data.push(innerArray);
-      }
-    }
+    // Get just the filenames from results
+    data = result["value"].map((item) => {
+      return [item.name];
+    });
 
     const rangeAddress = `B5:B${5 + (data.length - 1)}`;
     const range = sheet.getRange(rangeAddress);
@@ -258,290 +195,15 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 }
 ```
 
-After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
-
-### Changes required for an Outlook add-in (JavaScript)
-
-If your add-in is an Outlook add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**.
-
-1. Find the `writeDataToOfficeDocument` function and replace it with the following function.
-
-    ```javascript
-    export function writeDataToOfficeDocument(result) {
-      return new OfficeExtension.Promise(function(resolve, reject) {
-        try {
-          writeDataToOutlook(result);
-          resolve();
-        } catch (error) {
-          reject(Error("Unable to write data to message. " + error.toString()));
-        }
-      });
-    }
-    ```
-
-2. Find the `filterUserProfileInfo` function and replace it with the following function.
-
-    ```javascript
-    function filterOneDriveInfo(result) {
-      let itemNames = [];
-      let oneDriveItems = result['value'];
-      for (let item of oneDriveItems) {
-        itemNames.push(item['name']);
-      }
-      return itemNames;
-    }
-    ```
-
-3. Find the `writeDataToOutlook` function and replace it with the following function.
-
-    ```javascript
-    function writeDataToOutlook(result) {
-      let data = [];
-      let oneDriveInfo = filterOneDriveInfo(result);
-
-      for (let i = 0; i < oneDriveInfo.length; i++) {
-        if (oneDriveInfo[i] !== null) {
-          data.push(oneDriveInfo[i]);
-        }
-      }
-
-      let objectNames = "";
-      for (let i = 0; i < data.length; i++) {
-        objectNames += data[i] + "<br/>";
-      }
-
-      Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
-    }
-    ```
-
-4. Delete the `writeDataToExcel` function.
-
-5. Delete the `writeDataToPowerPoint` function.
-
-6. Delete the `writeDataToWord` function.
-
-After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
-
-### Changes required for an Outlook add-in (TypeScript)
-
-If your add-in is an Outlook add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function.
-
-```typescript
-export function writeDataToOfficeDocument(result: Object): void {
-    let data: string[] = [];
-
-    let itemNames: string[] = [];
-    let oneDriveItems = result["value"];
-    for (let item of oneDriveItems) {
-        itemNames.push(item["name"]);
-    };
-
-    for (let i = 0; i < itemNames.length; i++) {
-        if (itemNames[i] !== null) {
-        data.push(itemNames[i]);
-        }
-    }
-
-    let objectNames: string = "";
-    for (let i = 0; i < data.length; i++) {
-        objectNames += data[i] + "<br/>";
-    }
-
-    Office.context.mailbox.item.body.setSelectedDataAsync(objectNames, { coercionType: Office.CoercionType.Html });
-}
-```
-
-After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
-
-### Changes required for a PowerPoint add-in (JavaScript)
-
-If your add-in is a PowerPoint add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**.
-
-1. Find the `writeDataToOfficeDocument` function and replace it with the following function.
-
-    ```javascript
-    export function writeDataToOfficeDocument(result) {
-      return new OfficeExtension.Promise(function(resolve, reject) {
-        try {
-          writeDataToPowerPoint(result);
-          resolve();
-        } catch (error) {
-          reject(Error("Unable to write data to document. " + error.toString()));
-        }
-      });
-    }
-    ```
-
-2. Find the `filterUserProfileInfo` function and replace it with the following function.
-
-    ```javascript
-    function filterOneDriveInfo(result) {
-      let itemNames = [];
-      let oneDriveItems = result['value'];
-      for (let item of oneDriveItems) {
-        itemNames.push(item['name']);
-      }
-      return itemNames;
-    }
-    ```
-
-3. Find the `writeDataToPowerPoint` function and replace it with the following function.
-
-    ```javascript
-    function writeDataToPowerPoint(result) {
-      let data = [];
-      let oneDriveInfo = filterOneDriveInfo(result);
-
-      for (let i = 0; i < oneDriveInfo.length; i++) {
-        if (oneDriveInfo[i] !== null) {
-          data.push(oneDriveInfo[i]);
-        }
-      }
-
-      let objectNames = "";
-      for (let i = 0; i < data.length; i++) {
-        objectNames += data[i] + "\n";
-      }
-
-      Office.context.document.setSelectedDataAsync(
-        objectNames, 
-        function(asyncResult) {
-          if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-            throw asyncResult.error.message;
-          }
-      });
-    }
-    ```
-
-4. Delete the `writeDataToExcel` function.
-
-5. Delete the `writeDataToOutlook` function.
-
-6. Delete the `writeDataToWord` function.
-
-After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
-
-### Changes required for a PowerPoint add-in (TypeScript)
-
-If your add-in is a PowerPoint add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function.
-
-```typescript
-export function writeDataToOfficeDocument(result: Object): void {
-  let data: string[] = [];
-
-  let itemNames: string[] = [];
-  let oneDriveItems = result["value"];
-  for (let item of oneDriveItems) {
-    itemNames.push(item["name"]);
-  };
-
-  for (let i = 0; i < itemNames.length; i++) {
-    if (itemNames[i] !== null) {
-      data.push(itemNames[i]);
-    }
-  }
-
-  let objectNames: string = "";
-  for (let i = 0; i < data.length; i++) {
-    objectNames += data[i] + "\n";
-  }
-
-  Office.context.document.setSelectedDataAsync(objectNames, function(asyncResult) {
-    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-      throw asyncResult.error.message;
-    }
-  });
-}
-```
-
-After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
-
-### Changes required for a Word add-in (JavaScript)
-
-If your add-in is a Word add-in that was created with JavaScript, make the following changes in **./src/helpers/documentHelper.js**.
-
-1. Find the `writeDataToOfficeDocument` function and replace it with the following function.
-
-    ```javascript
-    export function writeDataToOfficeDocument(result) {
-      return new OfficeExtension.Promise(function(resolve, reject) {
-        try {
-          writeDataToWord(result);
-          resolve();
-        } catch (error) {
-          reject(Error("Unable to write data to document. " + error.toString()));
-        }
-      });
-    }
-    ```
-
-2. Find the `filterUserProfileInfo` function and replace it with the following function.
-
-    ```javascript
-    function filterOneDriveInfo(result) {
-      let itemNames = [];
-      let oneDriveItems = result['value'];
-      for (let item of oneDriveItems) {
-        itemNames.push(item['name']);
-      }
-      return itemNames;
-    }
-    ```
-
-3. Find the `writeDataToWord` function and replace it with the following function.
-
-    ```javascript
-    function writeDataToWord(result) {
-      return Word.run(function (context) {
-        let data = [];
-        let oneDriveInfo = filterOneDriveInfo(result);
-
-        for (let i = 0; i < oneDriveInfo.length; i++) {
-          if (oneDriveInfo[i] !== null) {
-            data.push(oneDriveInfo[i]);
-          }
-        }
-
-        const documentBody = context.document.body;
-        for (let i = 0; i < data.length; i++) {
-          if (data[i] !== null) {
-            documentBody.insertParagraph(data[i], "End");
-          }
-        }
-
-        return context.sync();
-      });
-    }
-    ```
-
-4. Delete the `writeDataToExcel` function.
-
-5. Delete the `writeDataToOutlook` function.
-
-6. Delete the `writeDataToPowerPoint` function.
-
-After you've made these changes, skip ahead to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
-
-### Changes required for a Word add-in (TypeScript)
-
-If your add-in is a Word add-in that was created with TypeScript, open **./src/taskpane/taskpane.ts**, find the `writeDataToOfficeDocument` function, and replace it with the following function.
+#### Word code
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
-  return Word.run(function(context) {
-    let data: string[] = [];
-
-    let itemNames: string[] = [];
-    let oneDriveItems = result["value"];
-    for (let item of oneDriveItems) {
-      itemNames.push(item["name"]);
-    };
-
-    for (let i = 0; i < itemNames.length; i++) {
-      if (itemNames[i] !== null) {
-        data.push(itemNames[i]);
-      }
-    }
+  return Word.run(function (context) {
+    // Get just the filenames from results.
+    const data: string[] = result["value"].map((item) => {
+      return item.name;
+    });
 
     const documentBody: Word.Body = context.document.body;
     for (let i = 0; i < data.length; i++) {
@@ -554,7 +216,43 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 }
 ```
 
-After you've made these changes, continue to the [Try it out](#try-it-out) section of this article to try out your updated add-in.
+#### PowerPoint code
+
+```typescript
+export function writeDataToOfficeDocument(result: Object): void {
+  // Get just the filenames from results.
+  const data: string[] = result["value"].map((item) => {
+    return item.name;
+  });
+  let userInfo: string = "";
+  for (let i = 0; i < data.length; i++) {
+    userInfo += data[i] + "\n";
+  }
+
+  Office.context.document.setSelectedDataAsync(userInfo, function (asyncResult) {
+    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+      throw asyncResult.error.message;
+    }
+  });
+}
+```
+
+#### Outlook code
+
+```typescript
+export function writeDataToOfficeDocument(result: Object): void {
+  // Get just the filenames from results.
+  const data: string[] = result["value"].map((item) => {
+    return item.name;
+  });
+
+  let userInfo: string = "";
+  for (let i = 0; i < data.length; i++) {
+    userInfo += data[i] + "</br>";
+  }
+  Office.context.mailbox.item.body.setSelectedDataAsync(userInfo, { coercionType: Office.CoercionType.Html });
+}
+```
 
 ## Try it out
 
