@@ -161,27 +161,25 @@ Let's add a custom button to the ribbon that inserts text into a message body.
 
 1. When an add-in command runs code instead of opening a task pane, it must run the code in a JavaScript runtime that is separate from the embedded webview in which task pane code runs. So the manifest must specify an additional runtime. Scroll to the property `extension.runtimes` and add the following object to the `runtimes` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup:
 
-    - The value of the `actions.items[1].id` property is "Contoso.insertHelloWorld". In a later step, you will refer to the item by this ID.
-    - The value of the `actions.items[1].name` property must be exactly the same as the name of the function that you added to the **commands.ts** file, in this case "insertHelloWorld".
+    - The value of the `actions[0].id` property is "Contoso.insertHelloWorld". In a later step, you will refer to the item by this ID.
+    - The value of the `actions[0].name` property must be exactly the same as the name of the function that you added to the **commands.ts** file, in this case "insertHelloWorld".
 
     ```json
     {
-        "id": "CustomButtonRuntime",
+        "id": "ComposeCommandsRuntime",
         "type": "general",
         "code": {
             "page": "https://localhost:3000/commands.html",
             "script": "https://localhost:3000/commands.js"
         },
         "lifetime": "short",
-        "actions": {
-            "items": [
-                {
-                    "id": "Contoso.insertHelloWorld",
-                    "type": "execution",
-                    "name": "insertHelloWorld"
-                }
-            ]
-        }
+        "actions": [
+            {
+                "id": "Contoso.insertHelloWorld",
+                "type": "execution",
+                "name": "insertHelloWorld"
+            }
+        ]
     }
     ```
 
@@ -195,17 +193,17 @@ Let's add a custom button to the ribbon that inserts text into a message body.
         "contexts": ["composeMail"],
         "tabs": [
             {
-            "id": "TabDefault",
-            "groups": [
+                "builtInTabId": "TabDefault",
+                "groups": [
                     {
-                    "id": "msgWriteGroup",
-                    "label": "Contoso Add-in",
-                    "icons": [
-                        { "size": 16, "file": "https://localhost:3000/assets/icon-16.png" },
-                        { "size": 32, "file": "https://localhost:3000/assets/icon-32.png" },
-                        { "size": 80, "file": "https://localhost:3000/assets/icon-80.png" }
-                    ],
-                    "controls": [
+                        "id": "msgWriteGroup",
+                        "label": "Contoso Add-in",
+                        "icons": [
+                            { "size": 16, "file": "https://localhost:3000/assets/icon-16.png" },
+                            { "size": 32, "file": "https://localhost:3000/assets/icon-32.png" },
+                            { "size": 80, "file": "https://localhost:3000/assets/icon-80.png" }
+                        ],
+                        "controls": [
                             {
                                 "id": "HelloWorldButton",
                                 "type": "button",
