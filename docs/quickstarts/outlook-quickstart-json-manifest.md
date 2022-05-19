@@ -48,7 +48,7 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 1. Navigate to the root folder of the web application project.
 
     ```command&nbsp;line
-    cd "Outlook Add-in with Teams Manifest"
+    cd "Add-in with Teams Manifest"
     ```
 
 ### Explore the project
