@@ -81,15 +81,30 @@ The following screenshot shows the result of selecting the **Trace Dependents** 
 The following code sample gets the direct dependents for the active range and then changes the background color of those dependent cells to yellow.
 
 ```js
-// This code sample shows how to find and highlight the dependents of the currently selected cell.
+// This code sample shows how to find and highlight the dependents 
+// and direct dependents of the currently selected cell.
 await Excel.run(async (context) => {
-    // Direct dependents are cells that contain formulas that refer to other cells.
     let range = context.workbook.getActiveCell();
+    // Dependents are all cells that contain formulas that refer to other cells.
+    let dependents = range.getDependents();  
+    // Direct dependents are the child cells, or the first succeeding group of cells that contain formulas that refer to other cells.
     let directDependents = range.getDirectDependents();
+
     range.load("address");
+    dependents.areas.load("address");    
     directDependents.areas.load("address");
     
     await context.sync();
+
+    console.log(`All dependent cells of ${range.address}:`);
+    
+    // Use the dependent API to loop through all dependent of the active cell.
+    for (let i = 0; i < precedents.areas.items.length; i++) {
+      // Highlight and print out the address of all dependent cells.
+      dependents.areas.items[i].format.fill.color = "Orange";
+      console.log(`  ${dependents.areas.items[i].address}`);
+    }
+
     console.log(`Direct dependent cells of ${range.address}:`);
 
     // Use the direct dependents API to loop through direct dependents of the active cell.
