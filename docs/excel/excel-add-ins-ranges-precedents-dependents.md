@@ -1,7 +1,7 @@
 ---
 title: Work with formula precedents and dependents using the Excel JavaScript API
 description: Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.
-ms.date: 02/17/2022
+ms.date: 05/18/2022
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -65,16 +65,18 @@ await Excel.run(async (context) => {
 });
 ```
 
-## Get the direct dependents of a formula
+## Get the dependents of a formula
 
-Locate a formula's direct dependent cells with [Range.getDirectDependents](/javascript/api/excel/excel.range#excel-excel-range-getdirectdependents-member(1)). Like `Range.getDirectPrecedents`, `Range.getDirectDependents` also returns a `WorkbookRangeAreas` object. This object contains the addresses of all the direct dependents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula dependent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
+Locate a formula's dependent cells with [Range.getDependents](/javascript/api/excel/excel.range#excel-excel-range-getdependents-member(1)). Like `Range.getPrecedents`, `Range.getDependents` also returns a `WorkbookRangeAreas` object. This object contains the addresses of all the dependents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula dependent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
-The following screenshot shows the result of selecting the **Trace Dependents** button in the Excel UI. This button draws an arrow from dependent cells to the selected cell. The selected cell, **D3**, has cell **E3** as a dependent. **E3** contains the formula "=C3 * D3". Unlike the Excel UI button, the `getDirectDependents` method does not draw arrows.
+To locate only the direct dependent cells of a formula, use [Range.getDirectDependents](/javascript/api/excel/excel.range#excel-excel-range-getdirectdependents-member(1)). `Range.getDirectDependents` works like `Range.getDependents` and returns a `WorkbookRangeAreas` object containing the addresses of direct dependents.
+
+The following screenshot shows the result of selecting the **Trace Dependents** button in the Excel UI. This button draws an arrow from dependent cells to the selected cell. The selected cell, **D3**, has cell **E3** as a dependent. **E3** contains the formula "=C3 * D3". Unlike the Excel UI button, the `getDependents` and `getDirectDependents` methods don't draw arrows.
 
 ![Arrow tracing dependent cells in the Excel UI.](../images/excel-ranges-trace-dependents.png)
 
 > [!IMPORTANT]
-> The `getDirectDependents` method doesn't retrieve dependent cells across workbooks.
+> The `getDependents` and `getDirectDependents` methods don't retrieve precedent cells across workbooks.
 
 The following code sample gets the direct dependents for the active range and then changes the background color of those dependent cells to yellow.
 
