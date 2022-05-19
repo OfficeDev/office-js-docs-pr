@@ -21,7 +21,7 @@ ms.localizationpriority: medium
 
 This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with the card component of entity value data types. An entity value, or [EntityCellValue](/javascript/api/excel/excel.entitycellvalue), is a container for data types and similar to an object in object oriented programming.
 
-The card component displays as a modal window in the Excel UI and can show additional information contained within an entity value, beyond what's already visible in a cell. This article introduces card properties, layout options for the card, and card data attribution functionality.
+The card component displays as a modal window in the Excel UI. It shows additional information contained within an entity value, beyond what's already visible in a cell. This article introduces card properties, layout options for the card, and card data attribution functionality.
 
 The following screenshot shows an example of an open entity value card, in this case for the **Tofu** product from a list of grocery store products.
 
@@ -37,7 +37,7 @@ The entity value [`properties`](/javascript/api/excel/excel.entitycellvalue#exce
 The following code snippet shows the JSON for an entity value with multiple data types nested within `properties`.
 
 > [!NOTE]
-> The following code snippet is an excerpt. To see the complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) repository.
+> To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) repository.
 
 ```json
 const entity: Excel.EntityCellValue = {
@@ -90,7 +90,7 @@ The following entity value JSON code snippet shows a `card` layout with a nested
 Within each card section you can specify elements like `layout`, `title`, and `properties`. The `layout` key uses the [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) object and accepts the value `"List"`. The `properties` key accepts an array of strings. Note that the `properties` values, such as `"Product ID"`, have corresponding data types in the preceding [Card properties](#card-properties) article section. Sections can also be collapsible and can be defined with boolean values as collapsed or not collapsed when the entity card is opened in the Excel UI.
 
 > [!NOTE]
-> The following code snippet is an excerpt. To see the complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) repository.
+> To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) repository.
 
 ```json
 const entity: Excel.EntityCellValue = {
@@ -129,7 +129,7 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the `title` object, which uses the **Product Name** and is set to **Pavlova**. The screenshot also shows `sections`. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and is collapsed when the card is opened.
+The following screenshot shows an entity value card that uses the preceding code snippets. The screenshot shows the `title` object, which uses the **Product Name** and is set to **Pavlova**. The screenshot also shows `sections`. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and is collapsed when the card is opened.
 
 :::image type="content" source="../images/excel-data-types-entity-card-sections.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the card title and sections.":::
 
@@ -137,12 +137,12 @@ The following screenshot shows an entity value card that uses the preceding code
 
 Entity value cards can display a data attribution to give credit to the provider of the information in the entity card. The entity value [`provider`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-provider-member) property uses the [`CellValueProviderAttributes`](/javascript/api/excel/excel.cellvalueproviderattributes) object, which  defines the `description`, `logoSourceAddress`, and `logoTargetAddress` values.
 
-The data provider property displays an image in the lower left corner of the entity card, using the `logoSourceAddress` to specify a source URL for the image. The `logoTargetAddress` value defines the URL destination if the logo image is selected. The `description` value displays as a tooltip when hovering over the logo. The `description` value also displays as a plain text fallback if the `logoSourceAddress` is not defined or if the source address for the image is broken.
+The data provider property displays an image in the lower left corner of the entity card. It uses the `logoSourceAddress` to specify a source URL for the image. The `logoTargetAddress` value defines the URL destination if the logo image is selected. The `description` value displays as a tooltip when hovering over the logo. The `description` value also displays as a plain text fallback if the `logoSourceAddress` is not defined or if the source address for the image is broken.
 
 The following JSON code snippet shows an entity value that uses the `provider` property to specify a data provider attribution for the entity.
 
 > [!NOTE]
-> The following code snippet is an excerpt. To see the complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-attribution.yaml) repository.
+> To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-attribution.yaml) repository.
 
 ```json
 const entity: Excel.EntityCellValue = {
