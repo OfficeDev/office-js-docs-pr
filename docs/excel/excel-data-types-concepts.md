@@ -93,7 +93,7 @@ const myEntity: Excel.EntityCellValue = {
 };
 ```
 
-Entity values also offer a `layouts` property that creates a card for the entity. The card displays as a modal window in the Excel UI and can display additional information contained within the entity value, beyond what's visible in the cell. See [Use cards with entity value data types](excel-data-types-entity-card.md) to learn more.
+Entity values also offer a `layouts` property that creates a card for the entity. The card displays as a modal window in the Excel UI and can display additional information contained within the entity value, beyond what's visible in the cell. To learn more, see [Use cards with entity value data types](excel-data-types-entity-card.md).
 
 ## Web image values
 
