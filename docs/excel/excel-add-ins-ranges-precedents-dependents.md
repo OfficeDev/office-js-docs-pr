@@ -1,7 +1,7 @@
 ---
 title: Work with formula precedents and dependents using the Excel JavaScript API
 description: Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.
-ms.date: 05/18/2022
+ms.date: 05/19/2022
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -71,7 +71,7 @@ Locate a formula's dependent cells with [Range.getDependents](/javascript/api/ex
 
 To locate only the direct dependent cells of a formula, use [Range.getDirectDependents](/javascript/api/excel/excel.range#excel-excel-range-getdirectdependents-member(1)). `Range.getDirectDependents` works like `Range.getDependents` and returns a `WorkbookRangeAreas` object containing the addresses of direct dependents.
 
-The following screenshot shows the result of selecting the **Trace Dependents** button in the Excel UI. This button draws an arrow from dependent cells to the selected cell. The selected cell, **D3**, has cell **E3** as a dependent. **E3** contains the formula "=C3 * D3". Unlike the Excel UI button, the `getDependents` and `getDirectDependents` methods don't draw arrows.
+The following screenshot shows the result of selecting the **Trace Dependents** button in the Excel UI. This button draws an arrow from the selected cell to dependent cells. The selected cell, **D3**, has cell **E3** as a dependent. **E3** contains the formula "=C3 * D3". Unlike the Excel UI button, the `getDependents` and `getDirectDependents` methods don't draw arrows.
 
 ![Arrow tracing dependent cells in the Excel UI.](../images/excel-ranges-trace-dependents.png)
 
@@ -79,6 +79,8 @@ The following screenshot shows the result of selecting the **Trace Dependents** 
 > The `getDependents` and `getDirectDependents` methods don't retrieve dependent cells across workbooks.
 
 The following code sample gets the direct dependents for the active range and then changes the background color of those dependent cells to yellow.
+
+The following code sample shows how to work with the `Range.getDependents` and `Range.getDirectDependents` methods. The sample gets the dependents for the active range and then changes the background color of those dependent cells. The background color of the direct dependent cells is set to yellow and the background color of the other dependent cells is set to orange.
 
 ```js
 // This code sample shows how to find and highlight the dependents 
@@ -98,9 +100,9 @@ await Excel.run(async (context) => {
 
     console.log(`All dependent cells of ${range.address}:`);
     
-    // Use the dependent API to loop through all dependent of the active cell.
-    for (let i = 0; i < precedents.areas.items.length; i++) {
-      // Highlight and print out the address of all dependent cells.
+    // Use the dependents API to loop through all dependents of the active cell.
+    for (let i = 0; i < dependents.areas.items.length; i++) {
+      // Highlight and print out the addresses of all dependent cells.
       dependents.areas.items[i].format.fill.color = "Orange";
       console.log(`  ${dependents.areas.items[i].address}`);
     }
