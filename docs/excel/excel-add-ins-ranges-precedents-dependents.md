@@ -76,7 +76,7 @@ The following screenshot shows the result of selecting the **Trace Dependents** 
 ![Arrow tracing dependent cells in the Excel UI.](../images/excel-ranges-trace-dependents.png)
 
 > [!IMPORTANT]
-> The `getDependents` and `getDirectDependents` methods don't retrieve precedent cells across workbooks.
+> The `getDependents` and `getDirectDependents` methods don't retrieve dependent cells across workbooks.
 
 The following code sample gets the direct dependents for the active range and then changes the background color of those dependent cells to yellow.
 
@@ -87,7 +87,7 @@ await Excel.run(async (context) => {
     let range = context.workbook.getActiveCell();
     // Dependents are all cells that contain formulas that refer to other cells.
     let dependents = range.getDependents();  
-    // Direct dependents are the child cells, or the first succeeding group of cells that contain formulas that refer to other cells.
+    // Direct dependents are the child cells, or the first succeeding group of cells in a sequence of cells that refer to other cells.
     let directDependents = range.getDirectDependents();
 
     range.load("address");
