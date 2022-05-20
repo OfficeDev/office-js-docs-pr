@@ -16,7 +16,10 @@ Two important features we are aiming at, *but are not yet available*:
 
 We have taken an important first step toward these goals by making it possible for Outlook Add-ins, running on Windows only, to be created with a version of the Teams JSON manifest.
 
-The new manifest is available for preview. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins. During the early preview period, the following limitations apply.
+> [!NOTE]
+> The new manifest is available for preview and is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins. 
+
+During the early preview period, the following limitations apply.
 
 - The preview version of the Teams manifest only supports Outlook add-ins and only on subscription Office for Windows. We're working on extending support to Excel, PowerPoint, and Word.
 - It is not yet possible to combine an add-in with Teams apps, such as a custom Teams tab, or any other Microsoft 365 extension types. So, you cannot yet add an add-in to an existing Teams app. This will be available before release to general availability.
