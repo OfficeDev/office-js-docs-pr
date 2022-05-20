@@ -1,7 +1,7 @@
 ---
 title: Work with formula precedents and dependents using the Excel JavaScript API
 description: Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.
-ms.date: 02/17/2022
+ms.date: 05/19/2022
 ms.prod: excel
 ms.localizationpriority: medium
 ---
@@ -65,29 +65,48 @@ await Excel.run(async (context) => {
 });
 ```
 
-## Get the direct dependents of a formula
+## Get the dependents of a formula
 
-Locate a formula's direct dependent cells with [Range.getDirectDependents](/javascript/api/excel/excel.range#excel-excel-range-getdirectdependents-member(1)). Like `Range.getDirectPrecedents`, `Range.getDirectDependents` also returns a `WorkbookRangeAreas` object. This object contains the addresses of all the direct dependents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula dependent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
+Locate a formula's dependent cells with [Range.getDependents](/javascript/api/excel/excel.range#excel-excel-range-getdependents-member(1)). Like `Range.getPrecedents`, `Range.getDependents` also returns a `WorkbookRangeAreas` object. This object contains the addresses of all the dependents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula dependent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
-The following screenshot shows the result of selecting the **Trace Dependents** button in the Excel UI. This button draws an arrow from dependent cells to the selected cell. The selected cell, **D3**, has cell **E3** as a dependent. **E3** contains the formula "=C3 * D3". Unlike the Excel UI button, the `getDirectDependents` method does not draw arrows.
+To locate only the direct dependent cells of a formula, use [Range.getDirectDependents](/javascript/api/excel/excel.range#excel-excel-range-getdirectdependents-member(1)). `Range.getDirectDependents` works like `Range.getDependents` and returns a `WorkbookRangeAreas` object containing the addresses of direct dependents.
+
+The following screenshot shows the result of selecting the **Trace Dependents** button in the Excel UI. This button draws an arrow from the selected cell to dependent cells. The selected cell, **D3**, has cell **E3** as a dependent. **E3** contains the formula "=C3 * D3". Unlike the Excel UI button, the `getDependents` and `getDirectDependents` methods don't draw arrows.
 
 ![Arrow tracing dependent cells in the Excel UI.](../images/excel-ranges-trace-dependents.png)
 
 > [!IMPORTANT]
-> The `getDirectDependents` method doesn't retrieve dependent cells across workbooks.
+> The `getDependents` and `getDirectDependents` methods don't retrieve dependent cells across workbooks.
 
 The following code sample gets the direct dependents for the active range and then changes the background color of those dependent cells to yellow.
 
+The following code sample shows how to work with the `Range.getDependents` and `Range.getDirectDependents` methods. The sample gets the dependents for the active range and then changes the background color of those dependent cells. The background color of the direct dependent cells is set to yellow and the background color of the other dependent cells is set to orange.
+
 ```js
-// This code sample shows how to find and highlight the dependents of the currently selected cell.
+// This code sample shows how to find and highlight the dependents 
+// and direct dependents of the currently selected cell.
 await Excel.run(async (context) => {
-    // Direct dependents are cells that contain formulas that refer to other cells.
     let range = context.workbook.getActiveCell();
+    // Dependents are all cells that contain formulas that refer to other cells.
+    let dependents = range.getDependents();  
+    // Direct dependents are the child cells, or the first succeeding group of cells in a sequence of cells that refer to other cells.
     let directDependents = range.getDirectDependents();
+
     range.load("address");
+    dependents.areas.load("address");    
     directDependents.areas.load("address");
     
     await context.sync();
+
+    console.log(`All dependent cells of ${range.address}:`);
+    
+    // Use the dependents API to loop through all dependents of the active cell.
+    for (let i = 0; i < dependents.areas.items.length; i++) {
+      // Highlight and print out the addresses of all dependent cells.
+      dependents.areas.items[i].format.fill.color = "Orange";
+      console.log(`  ${dependents.areas.items[i].address}`);
+    }
+
     console.log(`Direct dependent cells of ${range.address}:`);
 
     // Use the direct dependents API to loop through direct dependents of the active cell.

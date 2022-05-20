@@ -1,7 +1,7 @@
 ---
 title: Work with tables using the Excel JavaScript API
 description: Code samples that show how to perform common tasks with tables using the Excel JavaScript API.
-ms.date: 02/17/2022
+ms.date: 05/19/2022
 ms.localizationpriority: medium
 ---
 
@@ -51,30 +51,34 @@ await Excel.run(async (context) => {
 
 ## Add rows to a table
 
-The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The new rows are added to the end of the table. If the Excel application where the code is running supports [requirement set](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The `index` parameter of the [`add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)) method is set to `null`, which specifies that the rows be added after the existing rows in the table. The `alwaysInsert` parameter is set to `true`, which indicates that the new rows be inserted into the table, not below the table. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 > [!NOTE]
 > The `index` property of a [TableRow](/javascript/api/excel/excel.tablerow) object indicates the index number of the row within the rows collection of the table. A `TableRow` object does not contain an `id` property that can be used as a unique key to identify the row.
 
 ```js
+// This code sample shows how to add rows to a table that already exists 
+// on a worksheet named Sample.
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getItem("Sample");
     let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    expensesTable.rows.add(null /*add rows to the end of the table*/, [
-        ["1/16/2017", "THE PHONE COMPANY", "Communications", "$120"],
-        ["1/20/2017", "NORTHWIND ELECTRIC CARS", "Transportation", "$142"],
-        ["1/20/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$27"],
-        ["1/21/2017", "COHO VINEYARD", "Restaurant", "$33"],
-        ["1/25/2017", "BELLOWS COLLEGE", "Education", "$350"],
-        ["1/28/2017", "TREY RESEARCH", "Other", "$135"],
-        ["1/31/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$97"]
-    ]);
+    expensesTable.rows.add(
+        null, // index, Adds rows to the end of the table.
+        [
+            ["1/16/2017", "THE PHONE COMPANY", "Communications", "$120"],
+            ["1/20/2017", "NORTHWIND ELECTRIC CARS", "Transportation", "$142"],
+            ["1/20/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$27"],
+            ["1/21/2017", "COHO VINEYARD", "Restaurant", "$33"],
+            ["1/25/2017", "BELLOWS COLLEGE", "Education", "$350"],
+            ["1/28/2017", "TREY RESEARCH", "Other", "$135"],
+            ["1/31/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$97"]
+        ], 
+        true, // alwaysInsert, Specifies that the new rows be inserted into the table.
+    );
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     await context.sync();
 });
@@ -93,7 +97,7 @@ These examples show how to add a column to a table. The first example populates 
 
 ### Add a column that contains static values
 
-The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added after all existing columns in the table and contains a header ("Day of the Week") as well as data to populate the cells in the column. If the Excel application where the code is running supports [requirement set](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added after all existing columns in the table and contains a header ("Day of the Week") as well as data to populate the cells in the column. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 ```js
 await Excel.run(async (context) => {
@@ -111,10 +115,8 @@ await Excel.run(async (context) => {
         ["Monday"]
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     await context.sync();
 });
@@ -126,7 +128,7 @@ await Excel.run(async (context) => {
 
 ### Add a column that contains formulas
 
-The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added to the end of the table, contains a header ("Type of the Day"), and uses a formula to populate each data cell in the column. If the Excel application where the code is running supports [requirement set](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added to the end of the table, contains a header ("Type of the Day"), and uses a formula to populate each data cell in the column. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 ```js
 await Excel.run(async (context) => {
@@ -144,10 +146,8 @@ await Excel.run(async (context) => {
         ['=IF(OR((TEXT([DATE], "dddd") = "Saturday"), (TEXT([DATE], "dddd") = "Sunday")), "Weekend", "Weekday")']
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     await context.sync();
 });
@@ -183,7 +183,7 @@ await Excel.run(async (context) => {
 
 ## Update column name
 
-The following code sample updates the name of the first column in the table to **Purchase date**. If the Excel application where the code is running supports [requirement set](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample updates the name of the first column in the table to **Purchase date**. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 ```js
 await Excel.run(async (context) => {
@@ -196,10 +196,8 @@ await Excel.run(async (context) => {
         
     expensesTable.columns.items[0].name = "Purchase date";
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     await context.sync();
 });
@@ -422,7 +420,7 @@ await Excel.run(async (context) => {
 
 ## Convert a range to a table
 
-The following code sample creates a range of data and then converts that range to a table.
+The following code sample creates a range of data and then converts that range to a table. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 ```js
 await Excel.run(async (context) => {
@@ -441,10 +439,8 @@ await Excel.run(async (context) => {
     let range = sheet.getRange("A1:E7");
     range.values = values;
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     sheet.activate();
 
@@ -466,7 +462,7 @@ await Excel.run(async (context) => {
 
 ## Import JSON data into a table
 
-The following code sample creates a table in the worksheet named **Sample** and then populates the table by using a JSON object that defines two rows of data. If the Excel application where the code is running supports [requirement set](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample creates a table in the worksheet named **Sample** and then populates the table by using a JSON object that defines two rows of data. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 ```js
 await Excel.run(async (context) => {
@@ -496,10 +492,8 @@ await Excel.run(async (context) => {
 
     expensesTable.rows.add(null, newData);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     sheet.activate();
 
