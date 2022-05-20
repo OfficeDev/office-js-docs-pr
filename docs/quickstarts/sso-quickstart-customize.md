@@ -38,7 +38,7 @@ The add-in that you created with the SSO quick start uses Microsoft Graph to get
 
 ### Update app permissions in Azure
 
-Before the add-in can successfully read the contents of the user's OneDrive for Business, its app registration information in Azure must be updated with the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission.
+Before the add-in can successfully read the contents of the user's OneDrive for Business, its app registration information in Azure must be updated with the appropriate permissions. Complete the following steps to grant the app the **Files.Read.All** permission and revoke the **User.Read** permission, which is no longer needed.
 
 1. Sign in to the [Azure portal](https://portal.azure.com) with your **Microsoft 365 administrator credentials**.
 
