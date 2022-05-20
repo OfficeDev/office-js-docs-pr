@@ -48,6 +48,18 @@ Before the add-in can successfully read the contents of the user's OneDrive for 
 
 1. Under **Manage**, choose **API permissions**.
 
+1. In the **User.Read** row of the permissions table, choose the ellipsis and then select **Revoke admin consent** from the menu that appears.
+
+    :::image type="content" source="../images/app-registration-revoke-admin-consent.png" alt-text="Screenshot of the revoke admin consent button on the API permissions page.":::
+
+1. Select the **Yes, remove** button in response to the prompt that's displayed.
+
+1. In the **User.Read** row of the permissions table, choose the ellipsis and then select **Remove permission** from the menu that appears.
+
+    :::image type="content" source="../images/app-registration-remove-permission.png" alt-text="Screenshot of the remove permission button on the API permissions page.":::
+
+1. Select the **Yes, remove** button in response to the prompt that's displayed.
+
 1. Select the **Add a permission** button.
 
 1. On the panel that opens choose **Microsoft Graph** and then choose **Delegated permissions**.
@@ -170,10 +182,10 @@ After you've made these changes, skip ahead to the [Try it out](#try-it-out) sec
 
 If your generated Office Add-in uses TypeScript, open **./src/taskpane/taskpane.ts**.
 
-1. Find the `writeDataToOfficeDocument` function and replace it with the following code depending on which Office host your add-in uses (Excel, Outlook, PowerPoint, or Word)
+1. Find the `writeDataToOfficeDocument` function and replace it with the following code depending on which Office host your add-in uses (Excel, Outlook, Word, or PowerPoint)
 
 #### Excel code
-    
+
 ```typescript
   export function writeDataToOfficeDocument(result: Object): Promise<any> {
   return Excel.run(function (context) {
@@ -192,6 +204,23 @@ If your generated Office Add-in uses TypeScript, open **./src/taskpane/taskpane.
 
     return context.sync();
   });
+}
+```
+
+#### Outlook code
+
+```typescript
+export function writeDataToOfficeDocument(result: Object): void {
+  // Get just the filenames from results.
+  const data: string[] = result["value"].map((item) => {
+    return item.name;
+  });
+
+  let userInfo: string = "";
+  for (let i = 0; i < data.length; i++) {
+    userInfo += data[i] + "</br>";
+  }
+  Office.context.mailbox.item.body.setSelectedDataAsync(userInfo, { coercionType: Office.CoercionType.Html });
 }
 ```
 
@@ -234,23 +263,6 @@ export function writeDataToOfficeDocument(result: Object): void {
       throw asyncResult.error.message;
     }
   });
-}
-```
-
-#### Outlook code
-
-```typescript
-export function writeDataToOfficeDocument(result: Object): void {
-  // Get just the filenames from results.
-  const data: string[] = result["value"].map((item) => {
-    return item.name;
-  });
-
-  let userInfo: string = "";
-  for (let i = 0; i < data.length; i++) {
-    userInfo += data[i] + "</br>";
-  }
-  Office.context.mailbox.item.body.setSelectedDataAsync(userInfo, { coercionType: Office.CoercionType.Html });
 }
 ```
 
