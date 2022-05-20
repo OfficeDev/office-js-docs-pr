@@ -41,6 +41,9 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 
      ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface with JSON manifest option chosen.](../images/yo-office-outlook-json-manifest.png)
 
+    > [!NOTE]
+    > For this preview, the add-in name cannot be more than 30 characters. 
+    
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
