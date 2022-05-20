@@ -259,7 +259,7 @@
         },
         {
             "source_path": "docs/develop/authentication-pnp.md",
-            "redirect_url": "/office/dev/add-ins/develop/authentication-pnp",
+            "redirect_url": "/office/dev/add-ins/overview/office-add-in-code-samples",
             "redirect_document_id": false
         },
         {
