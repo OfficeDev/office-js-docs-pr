@@ -1,7 +1,7 @@
 ---
 title: Best practices and rules for the Office dialog API
 description: Provides rules and best practices for the Office dialog API, such as best practices for a single-page application (SPA).
-ms.date: 07/22/2021
+ms.date: 05/19/2022
 ms.localizationpriority: medium
 ---
 
@@ -32,7 +32,7 @@ Because overlapping UI elements are discouraged, avoid opening a dialog box from
 
 ### Design a dialog box UI
 
-For best practices in dialog box design, see [Dialog boxes in Office Add-ins](../design/dialog-boxes.md).
+For best practices in dialog box design, see [Dialog boxes in Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
 
 ### Handle pop-up blockers with Office on the web
 

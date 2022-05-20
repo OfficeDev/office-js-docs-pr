@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 04/19/2022
+ms.date: 05/18/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -10,15 +10,7 @@ ms.localizationpriority: high
 
 # Excel data types core concepts (preview)
 
-> [!NOTE]
-> Data types APIs are currently only available in public preview. Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview APIs in a production environment or within business-critical documents.
->
-> To use preview APIs:
->
-> - You must reference the **beta** library on the content delivery network (CDN) (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`. For additional information, see the [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) NPM package readme.
-> - You may need to join the [Office Insider program](https://insider.office.com) for access to more recent Office builds.
->
-> To try out data types in Office on Windows, you must have an Excel build number greater than or equal to 16.0.14626.10000. To try out data types in Office on Mac, you must have an Excel build number greater than or equal to 16.55.21102600.
+[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
 
 This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with data types. It introduces core concepts that are fundamental to data type development.
 
@@ -55,7 +47,7 @@ The [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellva
 
 The following JSON code sample shows the complete schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI. If the minimum compatibility requirements for the data types feature aren't met, calculations use the `basicValue` in place of the formatted number.
 
-```json
+```TypeScript
 // This is an example of the complete JSON of a formatted number value.
 // In this case, the number is formatted as a date.
 const myDate: Excel.FormattedNumberCellValue = {
@@ -68,13 +60,13 @@ const myDate: Excel.FormattedNumberCellValue = {
 
 ## Entity values
 
-An entity value is a container for data types, similar to an object in object oriented programming. Entities also support arrays as properties of an entity value. The [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) object allows add-ins to define properties such as `type`, `text`, and `properties`. The `properties` property enables the entity value to define and contain additional data types.
+An entity value is a container for data types, similar to an object in object-oriented programming. Entities also support arrays as properties of an entity value. The [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) object allows add-ins to define properties such as `type`, `text`, and `properties`. The `properties` property enables the entity value to define and contain additional data types.
 
 The `basicType` and `basicValue` properties define how calculations read this entity data type if the minimum compatibility requirements to use data types aren't met. In that scenario, this entity data type displays as a **#VALUE!** error in the Excel UI.
 
 The following JSON code sample shows the complete schema of an entity value that contains text, an image, a date, and an additional text value.
 
-```json
+```TypeScript
 // This is an example of the complete JSON for an entity value.
 // The entity contains text and properties which contain an image, a date, and another text value.
 const myEntity: Excel.EntityCellValue = {
@@ -93,6 +85,8 @@ const myEntity: Excel.EntityCellValue = {
 };
 ```
 
+Entity values also offer a `layouts` property that creates a card for the entity. The card displays as a modal window in the Excel UI and can display additional information contained within the entity value, beyond what's visible in the cell. To learn more, see [Use cards with entity value data types](excel-data-types-entity-card.md).
+
 ## Web image values
 
 The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
@@ -101,7 +95,7 @@ The `basicType` and `basicValue` properties define how calculations read the web
 
 The following JSON code sample shows the complete schema of a web image.
 
-```json
+```TypeScript
 // This is an example of the complete JSON for a web image.
 const myImage: Excel.WebImageCellValue = {
     type: Excel.CellValueType.webImage,
@@ -137,5 +131,6 @@ Each of the error objects can access an enum through the `errorSubType` property
 ## See also
 
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
+- [Use cards with entity value data types](excel-data-types-entity-card.md)
 - [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
 - [Custom functions and data types](custom-functions-data-types-concepts.md)

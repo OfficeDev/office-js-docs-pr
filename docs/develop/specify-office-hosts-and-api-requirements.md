@@ -1,7 +1,7 @@
 ---
 title: Specify Office hosts and API requirements
 description: Learn how to specify Office applications and API requirements for your add-in to work as expected.
-ms.date: 04/04/2022
+ms.date: 05/19/2022
 ms.localizationpriority: medium
 ---
 
@@ -81,7 +81,7 @@ You can't explicitly specify the Office versions and builds or the platforms on 
 
 To simplify the process of specifying the APIs that your add-in needs, Office groups most APIs together in *requirement sets*. The APIs in the [Common API Object Model](understanding-the-javascript-api-for-office.md#api-models) are grouped by the development feature that they support. For example, all the APIs connected to table bindings are in the requirement set called "TableBindings 1.1". The APIs in the [Application specific object models](understanding-the-javascript-api-for-office.md#api-models) are grouped by when they were released for use in production add-ins.
 
-Requirement sets are versioned. For example, the APIs that support [Dialog Boxes](../design/dialog-boxes.md) are in the requirement set DialogApi 1.1. When additional APIs that enable messaging from a task pane to a dialog were released, they were grouped into DialogApi 1.2, along with all the APIs in DialogApi 1.1. *Each version of a requirement set is a superset of all earlier versions.*
+Requirement sets are versioned. For example, the APIs that support [Dialog Boxes](../develop/dialog-api-in-office-add-ins.md) are in the requirement set DialogApi 1.1. When additional APIs that enable messaging from a task pane to a dialog were released, they were grouped into DialogApi 1.2, along with all the APIs in DialogApi 1.1. *Each version of a requirement set is a superset of all earlier versions.*
 
 Requirement set support varies by Office application, the version of the Office application, and the platform on which it is running. For example, DialogApi 1.2 is not supported on one-time purchase versions of Office before Office 2021, but DialogApi 1.1 is supported on all one-time purchase versions back to Office 2013. You want your add-in to be installable on every combination of platform and Office version that supports the APIs that it uses, so you should always specify in the manifest the *minimum* version of each requirement set that your add-in requires. Details about how to do this are later in this article.
 
@@ -138,7 +138,7 @@ Note the following about this example.
 The extensibility features that the Office Add-in platform provides can be usefully divided into three kinds:
 
 - Extensibility features that are available immediately after the add-in is installed. You can make use of this kind of feature by configuring a [VersionOverrides](/javascript/api/manifest/versionoverrides) element in the manifest. An example of this kind of feature is [Add-in Commands](../design/add-in-commands.md), which are custom ribbon buttons and menus.
-- Extensibility features that are available only when the add-in is running and that are implemented with Office.js JavaScript APIs; for example, [Dialog Boxes](../design/dialog-boxes.md).
+- Extensibility features that are available only when the add-in is running and that are implemented with Office.js JavaScript APIs; for example, [Dialog Boxes](../develop/dialog-api-in-office-add-ins.md).
 - Extensibility features that are available only at runtime but are implemented with a combination of Office.js JavaScript and configuration in a **VersionOverrides** element. Examples of these are [Excel custom functions](../excel/custom-functions-overview.md), [single sign-on](sso-in-office-add-ins.md), and [custom contextual tabs](../design/contextual-tabs.md).
 
 If your add-in uses a specific extensibility feature for some of its functionality but has other useful functionality that doesn't require the extensibility feature, you should design the add-in so that it's installable on platform and Office version combinations that don't support the extensibility feature. It can provide a valuable, albeit diminished, experience on those combinations. 
