@@ -14,7 +14,7 @@ This article assumes that you already have an add-in project that you'd like to 
 
 ## Mark your add-in for debugging
 
-If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in project, skip to the [Configure and run the debugger](#configure-and-run-the-debugger) section below. When you run `npm start` to build your add-in and start the local server, the command also sets the `UseDirectDebugger` value of the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]` registry key to mark your add-in for debugging.
+If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in project, skip to the [Configure and run the debugger](#configure-and-run-the-debugger) section later in this article. When you run `npm start` to build your add-in and start the local server, the command also sets the `UseDirectDebugger` value of the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]` registry key to mark your add-in for debugging.
 
 Otherwise, if you used another tool to create your add-in, perform the following steps.
 
