@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 08/03/2021
+ms.date: 05/19/2022
 ms.localizationpriority: medium
 ---
 
@@ -599,6 +599,10 @@ function subjectOnSendChange(subject, event) {
 ```
 
 To learn more about how to add a recipient to the CC line and verify that the email message includes a subject line on send, and to see the APIs you can use, see the [Outlook-Add-in-On-Send sample](https://github.com/OfficeDev/Outlook-Add-in-On-Send). The code is well commented.
+
+## Debug Outlook add-ins that use on-send
+
+For instructions on how to debug your on-send add-in, refer to [Debug your UI-less Outlook add-in](debug-ui-less.md).
 
 ## See also
 
