@@ -47,7 +47,7 @@ The [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellva
 
 The following JSON code sample shows the complete schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI. If the minimum compatibility requirements for the data types feature aren't met, calculations use the `basicValue` in place of the formatted number.
 
-```ts
+```TypeScript
 // This is an example of the complete JSON of a formatted number value.
 // In this case, the number is formatted as a date.
 const myDate: Excel.FormattedNumberCellValue = {
@@ -66,7 +66,7 @@ The `basicType` and `basicValue` properties define how calculations read this en
 
 The following JSON code sample shows the complete schema of an entity value that contains text, an image, a date, and an additional text value.
 
-```ts
+```TypeScript
 // This is an example of the complete JSON for an entity value.
 // The entity contains text and properties which contain an image, a date, and another text value.
 const myEntity: Excel.EntityCellValue = {
@@ -95,7 +95,7 @@ The `basicType` and `basicValue` properties define how calculations read the web
 
 The following JSON code sample shows the complete schema of a web image.
 
-```ts
+```TypeScript
 // This is an example of the complete JSON for a web image.
 const myImage: Excel.WebImageCellValue = {
     type: Excel.CellValueType.webImage,

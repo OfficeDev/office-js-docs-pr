@@ -31,7 +31,7 @@ The following code snippet shows the JSON for an entity value with multiple data
 > [!NOTE]
 > To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) repository.
 
-```ts
+```TypeScript
 const entity: Excel.EntityCellValue = {
     type: Excel.CellValueType.entity,
     text: productName,
@@ -84,7 +84,7 @@ Within each card section you can specify elements like `layout`, `title`, and `p
 > [!NOTE]
 > To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) repository.
 
-```ts
+```TypeScript
 const entity: Excel.EntityCellValue = {
     type: Excel.CellValueType.entity,
     text: productName,
@@ -127,7 +127,7 @@ The following screenshot shows an entity value card that uses the preceding code
 
 ## Card data attribution
 
-Entity value cards can display a data attribution to give credit to the provider of the information in the entity card. The entity value [`provider`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-provider-member) property uses the [`CellValueProviderAttributes`](/javascript/api/excel/excel.cellvalueproviderattributes) object, which  defines the `description`, `logoSourceAddress`, and `logoTargetAddress` values.
+Entity value cards can display a data attribution to give credit to the provider of the information in the entity card. The entity value [`provider`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-provider-member) property uses the [`CellValueProviderAttributes`](/javascript/api/excel/excel.cellvalueproviderattributes) object, which defines the `description`, `logoSourceAddress`, and `logoTargetAddress` values.
 
 The data provider property displays an image in the lower left corner of the entity card. It uses the `logoSourceAddress` to specify a source URL for the image. The `logoTargetAddress` value defines the URL destination if the logo image is selected. The `description` value displays as a tooltip when hovering over the logo. The `description` value also displays as a plain text fallback if the `logoSourceAddress` is not defined or if the source address for the image is broken.
 
@@ -136,7 +136,7 @@ The following JSON code snippet shows an entity value that uses the `provider` p
 > [!NOTE]
 > To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-attribution.yaml) repository.
 
-```ts
+```TypeScript
 const entity: Excel.EntityCellValue = {
     type: Excel.CellValueType.entity,
     text: productName,
