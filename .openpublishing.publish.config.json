@@ -46,7 +46,8 @@
         "word-js-preview",
         "word-js-1.1",
         "word-js-1.2",
-        "word-js-1.3"
+        "word-js-1.3",
+        "word-js-online"
       ],
       "open_to_public_contributors": true,
       "type_mapping": {
