@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 [!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
 
-This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with the card component of entity value data types. An entity value, or [EntityCellValue](/javascript/api/excel/excel.entitycellvalue), is a container for data types and similar to an object in object oriented programming.
+This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with the card component of entity value data types. An entity value, or [EntityCellValue](/javascript/api/excel/excel.entitycellvalue), is a container for data types and similar to an object in object-oriented programming.
 
 The card component displays as a modal window in the Excel UI. It shows additional information contained within an entity value, beyond what's already visible in a cell. This article introduces card properties, layout options for the card, and card data attribution functionality.
 
