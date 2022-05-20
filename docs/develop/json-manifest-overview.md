@@ -393,11 +393,11 @@ The following is an example of a preview JSON-manifest for an add-in.
           "events": [
             {
               "type": "newMessageComposeCreated",
-              "actionId": "eventsRuntime.onNewMessageComposeCreated"
+              "actionId": "onNewMessageComposeCreated"
             },
             {
               "type": "messageSending",
-              "actionId": "eventsRuntime.onMessageSending",
+              "actionId": "onMessageSending",
               "options": {
                 "sendMode": "promptUser"
               }
