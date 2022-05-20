@@ -234,8 +234,6 @@ items:
           href: design/content-add-ins.md
         - name: Dialog boxes
           items:
-          - name: Overview
-            href: design/dialog-boxes.md
           - name: Use the Office dialog API in your Office Add-ins
             href: develop/dialog-api-in-office-add-ins.md
           - name: Best practices and rules for the Office dialog API
