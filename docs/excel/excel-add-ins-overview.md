@@ -1,7 +1,7 @@
 ---
 title: Excel add-ins overview
 description: Excel add-in allow you to extend Excel application functionality across multiple platforms including Windows, Mac, iPad, and in a browser.
-ms.date: 02/16/2022
+ms.date: 05/19/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -83,7 +83,7 @@ Dialog boxes are surfaces that float above the active Excel application window. 
 
 ![Add-in dialog box in Excel.](../images/excel-add-in-dialog-choose-number.png)
 
-For more information about dialog boxes and the Dialog API, see [Dialog boxes in Office Add-ins](../design/dialog-boxes.md) and [Use the Dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
+For more information about dialog boxes and the Dialog API, see [Use the Dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
 
 ### Content add-ins
 
