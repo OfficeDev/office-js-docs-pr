@@ -174,8 +174,7 @@ Let's add a custom button to the ribbon that inserts text into a message body.
 
 1. When an add-in command runs code instead of opening a task pane, it must run the code in a JavaScript runtime that is separate from the embedded webview in which task pane code runs. So the manifest must specify an additional runtime. Scroll to the property `extension.runtimes` and add the following object to the `runtimes` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup:
 
-    - The value of the `actions[0].id` property is `Contoso.insertHelloWorld`. In a later step, you will refer to the item by this ID.
-    - The value of the `actions[0].name` property must be exactly the same as the name of the function that you added to the **commands.ts** file, in this case `insertHelloWorld`.
+    - The value of the `actions[0].id` property must be exactly the same as the name of the function that you added to the **commands.ts** file, in this case `insertHelloWorld`. In a later step, you will refer to the item by this ID.
 
     ```json
     {
