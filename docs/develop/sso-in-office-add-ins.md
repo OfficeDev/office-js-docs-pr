@@ -7,7 +7,7 @@ ms.localizationpriority: high
 
 # Enable single sign-on (SSO) in an Office Add-in
 
-Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or work account. Take advantage of this and use single sign-on (SSO) to authenticate and authorize the user to your add-in without requiring them to sign in a second time.
+Users sign in to Office using either their personal Microsoft account or their Microsoft 365 Education or work account. Take advantage of this and use single sign-on (SSO) to authenticate and authorize the user to your add-in without requiring them to sign in a second time.
 
 ![An image showing the sign-in process for an add-in.](../images/sso-for-office-addins.png)
 
