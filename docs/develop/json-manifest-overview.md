@@ -19,7 +19,7 @@ We've taken an important first step toward these goals by making it possible for
 During the early preview period, the following limitations apply.
 
 - The preview version of the Teams manifest only supports Outlook add-ins and only on subscription Office for Windows. We're working on extending support to Excel, PowerPoint, and Word.
-- It is not yet possible to combine, and sideload, an add-in with a Teams app, such as a Teams personal tab, or other Microsoft 365 extension types. In the coming months, we will continue to extend the preview to support these scenarios and provide additional tools to update manifests to the preview format.
+- It isn't yet possible to combine, and sideload, an add-in with a Teams app, such as a Teams personal tab, or other Microsoft 365 extension types. In the coming months, we will continue to extend the preview to support these scenarios and provide additional tools to update manifests to the preview format.
 
 > [!TIP]
 > Ready to get started with the preview Teams manifest? Begin with [Build an Outlook add-in with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
@@ -80,7 +80,7 @@ The base manifest properties specify characteristics of the add-in that *any* ty
 |"manifestVersion"| Version of the manifest schema. |  attributes of **OfficeApp** | |
 |"name"| Public name of the add-in. | **DisplayName** | |
 |"description"| Public description of the add-in.  | **Description** | |
-|"accentColor"||| This property has no equivalent in the current XML manifest and is not used in the preview of the JSON manifest. But it must be present. |
+|"accentColor"||| This property has no equivalent in the current XML manifest and isn't used in the preview of the JSON manifest. But it must be present. |
 |"developer"| Identifies the developer of the add-in. | **ProviderName** | |
 |"localizationInfo"| Configures the default locale and other supported locales. | **DefaultLocale** and **Override** | |
 |"webApplicationInfo"| Identifies the add-in's web app as it is known in Azure Active Directory. | **WebApplicationInfo** | In the current XML manifest, the **WebApplicationInfo** element is inside **VersionOverrides**, not the base manifest. |
