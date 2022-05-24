@@ -9,10 +9,7 @@ ms.localizationpriority: high
 
 Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes are compatible with existing add-ins. 
 
-Two important features we are aiming at, *but are not yet available*:
-
-- It should be possible to surface a single web app as multiple types of Microsoft 365 extensions. For example, a web app can be both an Office Add-in and a custom tab in Teams.
-- All types of Microsoft 365 extensions should use the same manifest format and schema. It will be based on the current JSON-formatted Teams manifest schema. 
+One important improvement we are working on is the ability to create a single unit of distribution for all your Microsoft 365 extensions by using the same manifest format and schema, based on the current JSON-formatted Teams manifest.
 
 We have taken an important first step toward these goals by making it possible for Outlook Add-ins, running on Windows only, to be created with a version of the Teams JSON manifest.
 
@@ -22,7 +19,7 @@ We have taken an important first step toward these goals by making it possible f
 During the early preview period, the following limitations apply.
 
 - The preview version of the Teams manifest only supports Outlook add-ins and only on subscription Office for Windows. We're working on extending support to Excel, PowerPoint, and Word.
-- It is not yet possible to combine an add-in with Teams apps, such as a custom Teams tab, or any other Microsoft 365 extension types. So, you cannot yet add an add-in to an existing Teams app. This will be available before release to general availability.
+- It is not yet possible to combine, and sideload, an add-in with a Teams app, such as a Teams personal tab, or other Microsoft 365 extension types. In the coming months, we will continue to extend the preview to support these scenarios and provide additional tools to update manifests to the preview format.
 
 > [!TIP]
 > Ready to get started with the preview Teams manifest? Begin with [Build an Outlook add-in with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
@@ -69,7 +66,7 @@ The root level of the preview JSON manifest, which roughly corresponds to the **
 The children of **OfficeApp** are commonly divided into two notional categories. The **VersionOverrides** element is one category. The other consists of all the other children of **OfficeApp**, which are collectively referred to as the base manifest. So too, the preview JSON manifest has a similar division. There is a top-level "extension" property that roughly corresponds in its purposes and child properties to the **VersionOverrides** element. The preview JSON manifest also has over 10 other top-level properties that collectively serve the same purposes as the base manifest of the XML manifest. These other properties can be thought of collectively as the base manifest of the JSON manifest. 
 
 > [!NOTE]
-> When it becomes possible to combine an add-in with other Microsoft 365 extension types in a single web app, then there will be other top-level properties that don't fit into the notion of the base manifest. There will usually be a top-level property for every kind of Microsoft 365 extension type, such as "configurableTabs", "bots" and "connectors". For examples, see the [Teams manifest documentation](/microsoftteams/platform/resources/schema/manifest-schema). This structure makes clear that the "extension" property represents an Office add-in as one type of Microsoft 365 extension.
+> When it becomes possible combine an add-in with other Microsoft 365 extension types in a single manifest, then there will be other top-level properties that don't fit into the notion of the base manifest. There will usually be a top-level property for every kind of Microsoft 365 extension type, such as "configurableTabs", "bots" and "connectors". For examples, see the [Teams manifest documentation](/microsoftteams/platform/resources/schema/manifest-schema). This structure makes clear that the "extension" property represents an Office add-in as one type of Microsoft 365 extension.
 
 #### Base manifest
 
