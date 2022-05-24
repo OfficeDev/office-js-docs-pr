@@ -107,7 +107,7 @@ The add-in project that you've created with the Yeoman generator contains sample
     npm start
     ```
 
-1. Use the Classic Ribbon in Outlook. The remainder of these instructions assume this.  
+1. Use the classic ribbon in Outlook. The remainder of these instructions assume this.  
 
 1. View a message in the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0), or open the message in its own window. A new control group named **Contoso Add-in** appears on the Outlook **Home** tab (or the **Message** tab if you opened the message in a new window). The group has a button named **Show Taskpane** and one named **Perform an action**.
 
@@ -120,7 +120,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
 
-1. Choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. To open the add-in task pane, choose **Show Taskpane**.
 
     > [!NOTE]
     > If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
@@ -138,13 +138,13 @@ The add-in project that you've created with the Yeoman generator contains sample
     ```
 
     > [!IMPORTANT]
-    > Closing the web server window does not reliably shut down the web server. If it is not properly shut down, you'll encounter problems as you change and rerun the project.
+    > Closing the web server window doesn't reliably shut down the web server. If it isn't properly shut down, you'll encounter problems as you change and rerun the project.
 
 1. Close all instances of Outlook.
 
 ## Add a custom button to the ribbon
 
-Let's add a custom button to the ribbon that inserts text into a message body.
+Add a custom button to the ribbon that inserts text into a message body.
 
 1. Open your project in VS Code or your preferred code editor.
 
@@ -174,7 +174,7 @@ Let's add a custom button to the ribbon that inserts text into a message body.
 
 1. When an add-in command runs code instead of opening a task pane, it must run the code in a JavaScript runtime that is separate from the embedded webview in which task pane code runs. So the manifest must specify an additional runtime. Scroll to the property `extension.runtimes` and add the following object to the `runtimes` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup:
 
-    - The value of the `actions[0].id` property must be exactly the same as the name of the function that you added to the **commands.ts** file, in this case `insertHelloWorld`. In a later step, you will refer to the item by this ID.
+    - The value of the `actions[0].id` property must be exactly the same as the name of the function that you added to the **commands.ts** file, in this case `insertHelloWorld`. In a later step, you'll refer to the item by this ID.
 
     ```json
     {
@@ -195,7 +195,7 @@ Let's add a custom button to the ribbon that inserts text into a message body.
     }
     ```
 
-1. The **Show Taskpane** button appears on the ribbon when the user is reading an email, but the button for adding text should only appear on the ribbon when the user is composing a new email (or replying to one). So the manifest must specify a new ribbon object. Scroll to the property `extension.ribbons` and add the following object to the `ribbons` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup:
+1. The **Show Taskpane** button appears when the user is reading an email, but the button for adding text should only appear when the user is composing a new email (or replying to one). So the manifest must specify a new ribbon object. Scroll to the property `extension.ribbons` and add the following object to the `ribbons` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup:
 
     - The only value in the `contexts` array is "mailCompose", so the button will appear when in a compose (or reply) window but not in a message read window where the **Show Taskpane** and **Perform an action** buttons appear. Compare this value with the `contexts` array in the existing ribbon object, whose value is `["mailRead"]`.
     - The value of the `tabs[0].groups[0].controls[0].actionId` must be exactly the same as the value of `actions[0].id` property in the runtime object you created in an earlier step.
@@ -250,7 +250,7 @@ Let's add a custom button to the ribbon that inserts text into a message body.
 1. In Outlook, open a new message window (or reply to an existing message). A new control group named **Contoso Add-in** will appear on the Outlook **Message** tab. The group has a button named **Insert text**.
 
     > [!NOTE]
-    > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually - Outlook 2016 or later on Windows or Mac](../outlook/sideload-outlook-add-ins-for-testing.md#outlook-2016-or-later-on-windows-or-mac) to manually sideload the add-in in Outlook. When you are prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
+    > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually - Outlook 2016 or later on Windows or Mac](../outlook/sideload-outlook-add-ins-for-testing.md#outlook-2016-or-later-on-windows-or-mac) to manually sideload the add-in in Outlook. When you're prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
 
 1. Put the cursor anywhere in the message body and choose the **Insert text** button.
 

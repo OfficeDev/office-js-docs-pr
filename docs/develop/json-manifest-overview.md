@@ -11,7 +11,7 @@ Microsoft is making a number of improvements to the Microsoft 365 developer plat
 
 One important improvement we are working on is the ability to create a single unit of distribution for all your Microsoft 365 extensions by using the same manifest format and schema, based on the current JSON-formatted Teams manifest.
 
-We have taken an important first step toward these goals by making it possible for Outlook Add-ins, running on Windows only, to be created with a version of the Teams JSON manifest.
+We've taken an important first step toward these goals by making it possible for you to create Outlook Add-ins, running on Windows only, with a version of the Teams JSON manifest.
 
 > [!NOTE]
 > The new manifest is available for preview and is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins. 
@@ -28,13 +28,13 @@ During the early preview period, the following limitations apply.
 
 ### Schemas and general points
 
-There is just one schema for the [preview JSON manifest](/microsoftteams/platform/resources/dev-preview/developer-preview-intro.md), in contrast to the current XML manifest which has a total of 7 [Schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).  
+There is just one schema for the [preview JSON manifest](/microsoftteams/platform/resources/dev-preview/developer-preview-intro.md), in contrast to the current XML manifest which has a total of seven [Schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).  
 
 ### Conceptual mapping of the preview JSON and current XML manifests
 
-This section describes the preview JSON manifest for readers that are familiar with the current XML manifest. Some points to keep in mind: 
+This section describes the preview JSON manifest for readers who are familiar with the current XML manifest. Some points to keep in mind: 
 
-- JSON does not have the XML distinction between attribute and element value. Typically, the JSON that maps to an XML element makes both the element value and each of the attributes a child property. The following example shows some XML markup and its JSON equivalent.
+- JSON does not distinguish between attribute and element value like XML does. Typically, the JSON that maps to an XML element makes both the element value and each of the attributes a child property. The following example shows some XML markup and its JSON equivalent.
   
   ```xml
   <MyThing color="blue">Some text</MyThing>
@@ -66,11 +66,11 @@ The root level of the preview JSON manifest, which roughly corresponds to the **
 The children of **OfficeApp** are commonly divided into two notional categories. The **VersionOverrides** element is one category. The other consists of all the other children of **OfficeApp**, which are collectively referred to as the base manifest. So too, the preview JSON manifest has a similar division. There is a top-level "extension" property that roughly corresponds in its purposes and child properties to the **VersionOverrides** element. The preview JSON manifest also has over 10 other top-level properties that collectively serve the same purposes as the base manifest of the XML manifest. These other properties can be thought of collectively as the base manifest of the JSON manifest. 
 
 > [!NOTE]
-> When it becomes possible combine an add-in with other Microsoft 365 extension types in a single manifest, then there will be other top-level properties that don't fit into the notion of the base manifest. There will usually be a top-level property for every kind of Microsoft 365 extension type, such as "configurableTabs", "bots" and "connectors". For examples, see the [Teams manifest documentation](/microsoftteams/platform/resources/schema/manifest-schema). This structure makes clear that the "extension" property represents an Office add-in as one type of Microsoft 365 extension.
+> When it becomes possible to combine an add-in with other Microsoft 365 extension types in a single manifest, then there will be other top-level properties that don't fit into the notion of the base manifest. There will usually be a top-level property for every kind of Microsoft 365 extension type, such as "configurableTabs", "bots" and "connectors". For examples, see the [Teams manifest documentation](/microsoftteams/platform/resources/schema/manifest-schema). This structure makes clear that the "extension" property represents an Office add-in as one type of Microsoft 365 extension.
 
 #### Base manifest
 
-The base manifest properties specify characteristics of the add-in that *any* type of extension of Microsoft 365 would be expected to have. This includes Teams tabs and message extensions, not just Office add-ins. These characteristics include a public name and a unique ID. The following table shows a mapping of some critical top-level properties in the preview JSON manifest to the XML elements in the current manifest, where the mapping principle is the *purpose* of the markup.
+The base manifest properties specify characteristics of the add-in that *any* type of extension of Microsoft 365 is expected to have. This includes Teams tabs and message extensions, not just Office add-ins. These characteristics include a public name and a unique ID. The following table shows a mapping of some critical top-level properties in the preview JSON manifest to the XML elements in the current manifest, where the mapping principle is the *purpose* of the markup.
 
 |JSON property|Purpose|XML element(s)|Comments|
 |:-----|:-----|:-----|:-----|
