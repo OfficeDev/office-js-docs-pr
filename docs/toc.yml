@@ -109,6 +109,8 @@ items:
       items:
       - name: Overview
         href: develop/add-in-manifests.md
+      - name: Teams manifest for Office Add-ins (preview)
+        href: develop/json-manifest-overview.md
       - name: Manifest reference
         href: reference/manifest-reference.md
       - name: Extended overrides
@@ -611,6 +613,9 @@ items:
   - name: Build your first Outlook add-in
     href: quickstarts/outlook-quickstart.md
     displayName: Outlook
+  - name: Build an Outlook add-in with a Teams manifest (preview)
+    href: quickstarts/outlook-quickstart-json-manifest.md
+    displayName: Outlook   
   - name: Outlook add-in tutorial
     href: tutorials/outlook-tutorial.md
     displayName: Outlook
