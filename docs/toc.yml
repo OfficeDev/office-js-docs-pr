@@ -109,7 +109,7 @@ items:
       items:
       - name: Overview
         href: develop/add-in-manifests.md
-      - name: Teams manifest for Office Add-ins (preview)
+      - name: Teams manifest for Office Add-ins
         href: develop/json-manifest-overview.md
       - name: Manifest reference
         href: reference/manifest-reference.md
@@ -412,15 +412,15 @@ items:
     - name: Comments
       href: excel/excel-add-ins-comments.md
       displayName: Excel
-    - name: Data types (preview)
+    - name: Data types
       items:
-        - name: Overview (preview)
+        - name: Overview
           href: excel/excel-data-types-overview.md
           displayName: Excel
-        - name: Concepts (preview)
+        - name: Concepts
           href: excel/excel-data-types-concepts.md
           displayName: Excel
-        - name: Entity value cards (preview)
+        - name: Entity value cards
           href: excel/excel-data-types-entity-card.md
           displayName: Excel
     - name: Data validation
@@ -540,7 +540,7 @@ items:
     - name: Autogenerate JSON metadata
       href: excel/custom-functions-json-autogeneration.md
       displayName: Excel, Custom Functions
-    - name: Data types (preview)
+    - name: Data types
       href: excel/custom-functions-data-types-concepts.md
       displayName: Excel, Custom Functions
     - name: Call Excel JavaScript APIs
@@ -613,7 +613,7 @@ items:
   - name: Build your first Outlook add-in
     href: quickstarts/outlook-quickstart.md
     displayName: Outlook
-  - name: Build an Outlook add-in with a Teams manifest (preview)
+  - name: Build an Outlook add-in with a Teams manifest
     href: quickstarts/outlook-quickstart-json-manifest.md
     displayName: Outlook   
   - name: Outlook add-in tutorial
