@@ -7,8 +7,6 @@ ms.prod: excel
 ms.localizationpriority: medium
 ---
 
-# NOTES
-
 - valuesAsJson and a list of the objects that offer this property (Range, TableRow, TableColumn, etc.)
 - purpose of valuesAsJsonLocal
 - An explanation of the CellValue type alias as a union of multiple types
@@ -46,9 +44,9 @@ The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.ce
 
 All cell values returned by `valuesAsJson` have three fields in common, `type`, `basicType`, and `basicValue`. The `type` field allows us to inspect any cell value, even a cell value that is one of the four basic types (string, number, boolean, or error values), as though it were a complex type. Because Excel has a long history of processing simple data as only text, numbers, booleans, or errors, all cell values also have the `basicType` field. The `basicType` field only supports string, number, boolean, and error values. This approach, offering basic types, complex types, and complex types that can be used as simple types, aligns with most programming languages.
 
-## Cell Value Schema talking points
+## Programming approach to the cell value schemas
 
-Cell value interfaces are unrelated by inheritance, but all cell values have a `type` field which allows for type inference.
+Cell value interfaces are unrelated by [inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)), but all cell values have a `type` field which allows for [type inference](https://en.wikipedia.org/wiki/Type_inference).
 
 ```TypeScript
 value = range.valuesAsJson[0][0];
@@ -68,7 +66,7 @@ All cell values have three fields: `type`, `basicType`, and `basicValue`. The `t
 
 Example: If you want to sum a column of numbers you might be tempted to sum the values of all the cells where `type` was "Double". However, Excel also has formatted numbers which have "FormattedNumber" in their `type` property. Instead, check that `basicType` is "Double". Any cell value which wishes to be treated as a number will have a `basicType` of "Double".
 
-Cell values which shouldn't be treated as a basic type typically have a `basicType` of "Error" and `basicValue` of "#VALUE!".
+Some cell values shouldn't be treated Cell values which shouldn't be treated as a basic type typically have a `basicType` of "Error" and `basicValue` of "#VALUE!".
 
 If all three fields weren't present, or if `valuesAsJson` returned basic values in Excel as basic values in JavaScript, then add-in writers would need much more complex checks to identify the type of a value in a cell.
 
