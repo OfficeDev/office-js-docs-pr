@@ -89,7 +89,7 @@ Entity values also offer a `layouts` property that creates a card for the entity
 
 ### Linked entities
 
-Linked entity values, or [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) objects, are a type of entity value. These objects use the [**Stocks** and **Geography**](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) data sources available in the Excel UI. They integrate data provided by an external service and can display this data as an [entity card](excel-data-types-entity-card.md), like regular entity values.
+Linked entity values, or [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) objects, are a type of entity value. These objects integrate data provided by an external service and can display this data as an [entity card](excel-data-types-entity-card.md), like regular entity values. The [Stocks and Geography data types](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) available via the Excel UI are linked entity values.
 
 ## Web image values
 
