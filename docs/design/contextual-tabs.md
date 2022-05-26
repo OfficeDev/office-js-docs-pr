@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: Learn how to add custom contextual tabs to your Office Add-in.
-ms.date: 03/12/2022
+ms.date: 05/25/2022
 ms.localizationpriority: medium
 ---
 
@@ -527,10 +527,10 @@ Some combinations of platform, Office application, and Office build don't suppor
 
 There is a manifest element, [OverriddenByRibbonApi](/javascript/api/manifest/overriddenbyribbonapi), that is designed to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs.
 
-The simplest strategy for using this element is to define one or more custom core tabs (that is, *noncontextual* custom tabs) in the manifest that duplicate the ribbon customizations of the custom contextual tabs in your add-in. But you add `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` as the first child element of the duplicate [Group](/javascript/api/manifest/group), [Control](/javascript/api/manifest/control), and menu **Item** elements on the custom core tabs. The effect of doing so is the following:
+The simplest strategy for using this element is to define a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. But you add `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` as the first child element of the duplicate [Group](/javascript/api/manifest/group), [Control](/javascript/api/manifest/control), and menu **Item** elements on the custom core tabs. The effect of doing so is the following:
 
 - If the add-in runs on an application and platform that support custom contextual tabs, then the custom core groups and controls won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.
-- If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the elements do appear on the custom core tabs.
+- If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the elements do appear on the custom core tab.
 
 The following is an example. Note that "MyButton" will appear on the custom core tab only when custom contextual tabs are not supported. But the parent group and custom core tab will appear regardless of whether custom contextual tabs are supported.
 
