@@ -1,6 +1,6 @@
 ---
 title: Set up your development environment
-description:  'Set up your developer environment to build Office Add-ins.'
+description:  Set up your developer environment to build Office Add-ins.
 ms.date: 05/27/2022
 ms.localizationpriority: medium
 ---
@@ -18,12 +18,12 @@ You need a Microsoft 365 account. You can get a free, 90-day renewable Microsoft
 There are two kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the two environments is different, so if multiple people will be working on an add-in project, they must all use the same environment. 
 
 - **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called WebPack. The project creation and scaffolding tool, Yo Office, is updated frequently.
-- **Visual Studio environment**: Choose this environment only if your development computer is Windows, and you want to develop the server-side of the add-in with a .NET based language and framework, such as ASP.NET. The add-in project templates in Visual Studio aren't updated as frequently as those in the Node.js environment. Client-side code can't be debugged with the built-in Visual Studio debugger, but you can debug client-side code with your browser's development tools. More information is below on the **Visual Studio environment** tab.
+- **Visual Studio environment**: Choose this environment only if your development computer is Windows, and you want to develop the server-side of the add-in with a .NET based language and framework, such as ASP.NET. The add-in project templates in Visual Studio aren't updated as frequently as those in the Node.js environment. Client-side code can't be debugged with the built-in Visual Studio debugger, but you can debug client-side code with your browser's development tools. More information later on the **Visual Studio environment** tab.
 
 > [!NOTE]
 > Visual Studio for Mac doesn't include the project scaffolding templates for Office Add-ins, so if your development computer is a Mac, you should work with the Node.js environment.
 
-Click the tab for the environment you choose. 
+Select the tab for the environment you choose. 
 
 # [Node.js environment](#tab/yeomangenerator)
 
@@ -35,7 +35,7 @@ The main tools to be installed are:
 - Yo Office
 - The Office JavaScript linter
 
-This guide assumes that you know how to use a command line tool.
+This guide assumes that you know how to use a command-line tool.
 
 ### Install Node.js and npm
 
@@ -52,7 +52,7 @@ npm -v
 If, for any reason, you want to install it manually, run the following in the command line.
 
 ```command&nbsp;line
-    npm install npm -g
+npm install npm -g
 ```
 
 > [!TIP]
@@ -68,7 +68,7 @@ You can use any code editor or IDE that supports client-side development to buil
 
 ### Install the Yeoman generator &mdash; Yo Office
 
-The project creation and scaffolding tool is [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), affectionately known as **Yo Office**. You need to install latest version of [Yeoman](https://github.com/yeoman/yo) and Yo Office. To install these tools globally, run the following command via the command prompt.
+The project creation and scaffolding tool is [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), affectionately known as **Yo Office**. You need to install the latest version of [Yeoman](https://github.com/yeoman/yo) and Yo Office. To install these tools globally, run the following command via the command prompt.
 
   ```command&nbsp;line
   npm install -g yo generator-office
@@ -123,10 +123,10 @@ If your add-in project was created another way, take the following steps.
 If you do not have Visual Studio 2017 (for Windows) or later installed, install the latest version from [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/). Be sure to include the **Office/SharePoint development** workload when the installer asks you to specify workloads. Other workloads that you may need are **Web development tools for .NET**, **JavaScript and TypeScript language support** (for coding the client-side of the add-in), and ASP.NET-related workloads.
 
 > [!TIP]
-> As of summer, 2022, the XML schemas for the Office Add-in manifest that are installed with Visual Studio aren't the latest version. This may affect add-ins, depending on what add-in features they use. So, you may need to update the XML schemas for the manifest. For more information, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+> As of summer 2022, the XML schemas for the Office Add-in manifest that are installed with Visual Studio aren't the latest version. This may affect add-ins, depending on what add-in features they use. So, you may need to update the XML schemas for the manifest. For more information, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
 
 > [!NOTE]
-> For information about debugging client-side code when you're using the Visual Studio environment, see [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md). You debug the server-side code the same way you would any web application created in Visual Studio. See [Client-side or server-side](../testing/debug-add-ins-overview.md#server-side-or-client-side).
+> For information about debugging client-side code when you're using the Visual Studio environment, see [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md). Debug the server-side code the same way you would any web application created in Visual Studio. See [Client-side or server-side](../testing/debug-add-ins-overview.md#server-side-or-client-side).
 
 ---
 
