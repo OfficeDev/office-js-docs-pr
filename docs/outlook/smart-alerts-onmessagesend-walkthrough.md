@@ -1,27 +1,27 @@
 ---
-title: Use Smart Alerts and the OnMessageSend event in your Outlook add-in (preview)
-description: Learn how to handle the send message event in your Outlook add-in using event-based activation.
+title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in (preview)
+description: Learn how to handle the on-send events in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 03/07/2022
+ms.date: 05/26/2022
 ms.localizationpriority: medium
 ---
 
-# Use Smart Alerts and the OnMessageSend event in your Outlook add-in (preview)
+# Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in (preview)
 
-The `OnMessageSend` event takes advantage of Smart Alerts which allows you to run logic after a user selects **Send** in their Outlook message. Your event handler allows you to give your users the opportunity to improve their emails before they're sent. The `OnAppointmentSend` event is similar but applies to an appointment.
+The `OnMessageSend` and `OnAppointmentSend` events take advantage of Smart Alerts, which allows you to run logic after a user selects **Send** in their Outlook message or appointment. Your event handler allows you to give your users the opportunity to improve their emails and meeting invites before they're sent.
 
-By the end of this walkthrough, you'll have an add-in that runs whenever a message is being sent and checks if the user forgot to add a document or picture they mentioned in their email.
+The following walkthrough uses the `OnMessageSend` event. By the end of this walkthrough, you'll have an add-in that runs whenever a message is being sent and checks if the user forgot to add a document or picture they mentioned in their email.
 
 > [!IMPORTANT]
 > The `OnMessageSend` and `OnAppointmentSend` events are only available in preview with a Microsoft 365 subscription in Outlook on Windows. For more details, see [How to preview](autolaunch.md#how-to-preview). Preview events shouldn't be used in production add-ins.
 
 ## Prerequisites
 
-The `OnMessageSend` event is available through the event-based activation feature. To understand about configuring your add-in to use this feature, available events, how to preview this event, debugging, feature limitations, and more, refer to [Configure your Outlook add-in for event-based activation](autolaunch.md).
+The `OnMessageSend` event is available through the event-based activation feature. To understand how to configure your add-in to use this feature, use other available events, configure preview for this event, debug your add-in, and more, refer to [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the Yeoman generator for Office Add-ins.
 
 ## Configure the manifest
 
@@ -132,7 +132,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 > [!TIP]
 >
-> - For **SendMode** options available with the `OnMessageSend` event, refer to [Available SendMode options](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
+> - For **SendMode** options available with the `OnMessageSend` and `OnAppointmentSend` events, refer to [Available SendMode options](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
 > - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
 ## Implement event handling
@@ -248,6 +248,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     ```command&nbsp;line
     npm run build
     ```
+
     ```command&nbsp;line
     npm start
     ```
@@ -258,9 +259,62 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 1. In Outlook on Windows, create a new message and set the subject. In the body, add text like "Hey, check out this picture of my dog!".
 1. Send the message. A dialog should pop up with a recommendation for you to add an attachment.
 
-    ![Screenshot of a message window in Outlook on Windows with dialog.](../images/outlook-win-smart-alert.png)
+    ![Dialog recommending that the user include an attachment.](../images/outlook-win-smart-alert.png)
 
 1. Add an attachment then send the message again. There should be no alert this time.
+
+## Smart Alerts feature behavior and scenarios
+
+Descriptions of the **SendMode** options and recommendations for when to use them are detailed in [Available SendMode options](/javascript/api/manifest/launchevent). The following describes the feature's behavior for certain scenarios.
+
+### Add-in is unavailable
+
+If the add-in is unavailable when a message or appointment is being sent (for example, an error occurs that prevents the add-in from loading), the user is alerted. The options available to the user differ depending on the **SendMode** option applied to the add-in.
+
+If the `PromptUser` or `SoftBlock` option is used, the user can choose **Send Anyway** to send the item without the add-in checking it, or **Try Later** to let the item be checked by the add-in when it becomes available again.
+
+![Dialog that alerts the user that the add-in is unavailable and gives the user the option to send the item now or later.](../images/outlook-soft-block-promptUser-unavailable.png)
+
+If the `Block` option is used, the user can't send the item until the add-in becomes available.
+
+![Dialog that alerts the user that the add-in is unavailable. The user can only send the item when the add-in is available again.](../images/outlook-hard-block-unavailable.png)
+
+### Long-running add-in operations
+
+If the add-in runs for more than five seconds, but less than five minutes, the user is alerted that the add-in is taking longer than expected to process the message or appointment.
+
+If the `PromptUser` option is used, the user can choose **Send Anyway** to send the item without the add-in completing its check. Alternatively, the user can select **Don't Send** to stop the add-in from processing.
+
+![Dialog that alerts the user that the add-in is taking longer than expected to process the item. The user can choose to send the item without the add-in completing its check or stop the add-in from processing the item.](../images/outlook-promptUser-long-running.png)
+
+However, if the `SoftBlock` or `Block` option is used, the user will not be able to send the item until the add-in completes processing it.
+
+![Dialog that alerts the user that the add-in is taking longer than expected to process the item. The user must wait until the add-in completes processing the item before it can be sent.](../images/outlook-soft-hard-block-long-running.png)
+
+`OnMessageSend` and `OnAppointmentSend` add-ins should be short-running and lightweight. To avoid the long-running operation dialog, use other events to process conditional checks before the `OnMessageSend` or `OnAppointmentSend` event is activated. For example, if the user is required to encrypt attachments for every message or appointment, consider using the `OnMessageAttachmentsChanged` or `OnAppointmentAttachmentsChanged` event to perform the check.
+
+### Add-in timed out
+
+If the add-in runs for five minutes or more, it will time out. If the `PromptUser` option is used, the user can choose **Send Anyway** to send the item without the add-in completing its check. Alternatively, the user can choose **Don't Send**.
+
+![Dialog that alerts the user that the add-in process has timed out. The user can choose to send the item without the add-in completing its check, or not send the item.](../images/outlook-promptUser-timeout.png)
+
+If the `SoftBlock` or `Block` option is  used, the user can't send the item until the add-in completes its check. The user must attempt to send the item again to reactivate the add-in.
+
+![Dialog that alerts the user that the add-in process has timed out. The user must attempt to send the item again to activate the add-in before they can send the message or appointment.](../images/outlook-soft-hard-block-timeout.png)
+
+## Limitations
+
+Because the `OnMessageSend` and `OnAppointmentSend` events are supported through the event-based activation feature, the same feature limitations apply to add-ins that activate as a result of these events. For a description of these limitations, refer to [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
+
+In addition to these constraints, only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate manifest or add-in.
+
+While a Smart Alerts dialog message can be changed to suit your add-in scenario using the [errorMessage property](/javascript/api/office/office.addincommands.eventcompletedoptions) of the event.completed method, the following can't be customized.
+
+- The dialog's title bar. Your add-in's name is always displayed there.
+- The message's format. For example, you can't change the text's font size and color or insert a bulleted list.
+- The dialog options. For example, the **Send Anyway** and **Don't Send** options are fixed and depend on the [SendMode option](/javascript/api/manifest/launchevent) you select.
+- Event-based activation processing and progress information dialogs. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
 
 ## See also
 
