@@ -76,7 +76,7 @@ The project creation and scaffolding tool is [Yeoman generator for Office Add-in
 
 ### Install and use the Office JavaScript linter
 
-Microsoft provides a JavaScript linter to help you catch common errors when using the Office JavaScript library. To install the linter, run the following two commands (after you've [installed Node.js and npm](#install-node.js-and-npm)).
+Microsoft provides a JavaScript linter to help you catch common errors when using the Office JavaScript library. To install the linter, run the following two commands (after you've [installed Node.js and npm](#install-nodejs-and-npm)).
 
 ```command&nbsp;line
 npm install office-addin-lint --save-dev
@@ -126,7 +126,7 @@ If you do not have Visual Studio 2017 (for Windows) or later installed, install 
 > As of summer, 2022, the XML schemas for the Office Add-in manifest that are installed with Visual Studio aren't the latest version. This may affect add-ins, depending on what add-in features they use. So, you may need to update the XML schemas for the manifest. For more information, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
 
 > [!NOTE]
-> For information about debugging client-side code when you're using the Visual Studio environment, see [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md). You debug the server-side code the same way you would any web application created in Visual Studio. See [Client-side or server-side](../testing/debug-add-ins-overview.md#server-side-or-client-side.md).
+> For information about debugging client-side code when you're using the Visual Studio environment, see [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md). You debug the server-side code the same way you would any web application created in Visual Studio. See [Client-side or server-side](../testing/debug-add-ins-overview.md#server-side-or-client-side).
 
 ---
 
