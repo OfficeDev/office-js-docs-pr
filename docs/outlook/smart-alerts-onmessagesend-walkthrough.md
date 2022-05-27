@@ -1,6 +1,6 @@
 ---
 title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in (preview)
-description: Learn how to handle the send message and appointment events in your Outlook add-in using event-based activation.
+description: Learn how to handle the on-send events in your Outlook add-in using event-based activation.
 ms.topic: article
 ms.date: 05/26/2022
 ms.localizationpriority: medium
@@ -281,7 +281,7 @@ If the `Block` option is used, the user can't send the item until the add-in bec
 
 ### Long-running add-in operations
 
-If the add-in runs for more than five seconds (but less than five minutes), the user is alerted that the add-in is taking longer than expected to process the message or appointment.
+If the add-in runs for more than five seconds, but less than five minutes, the user is alerted that the add-in is taking longer than expected to process the message or appointment.
 
 If the `PromptUser` option is used, the user can choose **Send Anyway** to send the item without the add-in completing its check. Alternatively, the user can select **Don't Send** to stop the add-in from processing.
 
@@ -291,7 +291,7 @@ However, if the `SoftBlock` or `Block` option is used, the user will not be able
 
 ![Dialog that alerts the user that the add-in is taking longer to process the item. The user must wait until the add-in completes processing the item before it can be sent.](../images/outlook-soft-hard-block-long-running.png)
 
-`OnMessageSend` and `OnAppointmentSend` add-ins should be short-running and lightweight. To avoid the long-running operation dialog, use other events to pre-process conditional checks before the `OnMessageSend` or `OnAppointmentSend` event is activated. For example, if the user is required to encrypt attachments for every message or appointment, consider using the `OnMessageAttachmentsChanged` or `OnAppointmentAttachmentsChanged` event to perform the check.
+`OnMessageSend` and `OnAppointmentSend` add-ins should be short-running and lightweight. To avoid the long-running operation dialog, use other events to process conditional checks before the `OnMessageSend` or `OnAppointmentSend` event is activated. For example, if the user is required to encrypt attachments for every message or appointment, consider using the `OnMessageAttachmentsChanged` or `OnAppointmentAttachmentsChanged` event to perform the check.
 
 ### Add-in timed out
 
@@ -313,7 +313,7 @@ While a Smart Alerts dialog message can be changed to suit your add-in scenario 
 
 - The dialog's title bar. Your add-in's name is always displayed there.
 - The message's format. For example, you can't change the text's font size and color or insert a bulleted list.
-- The dialog options. For example, the **Send Anyway** and **Don't Send** options are fixed and are dependent on the [SendMode option](/javascript/api/manifest/launchevent) you select.
+- The dialog options. For example, the **Send Anyway** and **Don't Send** options are fixed and depend on the [SendMode option](/javascript/api/manifest/launchevent) you select.
 - Event-based activation processing and progress information dialogs. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
 
 ## See also
