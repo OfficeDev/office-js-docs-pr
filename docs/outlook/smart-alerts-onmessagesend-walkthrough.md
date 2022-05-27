@@ -259,7 +259,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 1. In Outlook on Windows, create a new message and set the subject. In the body, add text like "Hey, check out this picture of my dog!".
 1. Send the message. A dialog should pop up with a recommendation for you to add an attachment.
 
-    ![Dialog recommending the user to include an attachment.](../images/outlook-win-smart-alert.png)
+    ![Dialog recommending that the user include an attachment.](../images/outlook-win-smart-alert.png)
 
 1. Add an attachment then send the message again. There should be no alert this time.
 
@@ -285,11 +285,11 @@ If the add-in runs for more than five seconds, but less than five minutes, the u
 
 If the `PromptUser` option is used, the user can choose **Send Anyway** to send the item without the add-in completing its check. Alternatively, the user can select **Don't Send** to stop the add-in from processing.
 
-![Dialog that alerts the user that the add-in is taking longer to process the item. The user can choose to send the item without the add-in completing its check or stop the add-in from processing the item.](../images/outlook-promptUser-long-running.png)
+![Dialog that alerts the user that the add-in is taking longer than expected to process the item. The user can choose to send the item without the add-in completing its check or stop the add-in from processing the item.](../images/outlook-promptUser-long-running.png)
 
 However, if the `SoftBlock` or `Block` option is used, the user will not be able to send the item until the add-in completes processing it.
 
-![Dialog that alerts the user that the add-in is taking longer to process the item. The user must wait until the add-in completes processing the item before it can be sent.](../images/outlook-soft-hard-block-long-running.png)
+![Dialog that alerts the user that the add-in is taking longer than expected to process the item. The user must wait until the add-in completes processing the item before it can be sent.](../images/outlook-soft-hard-block-long-running.png)
 
 `OnMessageSend` and `OnAppointmentSend` add-ins should be short-running and lightweight. To avoid the long-running operation dialog, use other events to process conditional checks before the `OnMessageSend` or `OnAppointmentSend` event is activated. For example, if the user is required to encrypt attachments for every message or appointment, consider using the `OnMessageAttachmentsChanged` or `OnAppointmentAttachmentsChanged` event to perform the check.
 
@@ -297,7 +297,7 @@ However, if the `SoftBlock` or `Block` option is used, the user will not be able
 
 If the add-in runs for five minutes or more, it will time out. If the `PromptUser` option is used, the user can choose **Send Anyway** to send the item without the add-in completing its check. Alternatively, the user can choose **Don't Send**.
 
-![Dialog that alerts the user that the add-in process has timed out. The user can choose to send the item, without the add-in completing its check, or not send the item.](../images/outlook-promptUser-timeout.png)
+![Dialog that alerts the user that the add-in process has timed out. The user can choose to send the item without the add-in completing its check, or not send the item.](../images/outlook-promptUser-timeout.png)
 
 If the `SoftBlock` or `Block` option is  used, the user can't send the item until the add-in completes its check. The user must attempt to send the item again to reactivate the add-in.
 
