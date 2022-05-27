@@ -17,8 +17,8 @@ You need a Microsoft 365 account. You can get a free, 90-day renewable Microsoft
 
 There are two kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the two environments is different, so if multiple people will be working on an add-in project, they must all use the same environment. 
 
-- **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called WebPack. The project creation and scaffolding tool, Yo Office, is updated frequently.
-- **Visual Studio environment**: Choose this environment only if your development computer is Windows, and you want to develop the server side of the web application part of the add-in with a .NET based language and framework, such as ASP.NET. The add-in project templates in Visual Studio aren't updated as frequently as those in the Node.js environment. Client-side code can't be debugged with the built-in Visual Studio debugger, but you can debug client-side code with your browser's development tools. More information is below on the **Visual Studio environment** tab.
+- **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called WebPack. The project creation and scaffolding tool, Yo Office, is updated frequently.
+- **Visual Studio environment**: Choose this environment only if your development computer is Windows, and you want to develop the server-side of the add-in with a .NET based language and framework, such as ASP.NET. The add-in project templates in Visual Studio aren't updated as frequently as those in the Node.js environment. Client-side code can't be debugged with the built-in Visual Studio debugger, but you can debug client-side code with your browser's development tools. More information is below on the **Visual Studio environment** tab.
 
 > [!NOTE]
 > Visual Studio for Mac doesn't include the project scaffolding templates for Office Add-ins, so if your development computer is a Mac, you should work with the Node.js environment.
@@ -37,7 +37,7 @@ The main tools to be installed are:
 
 This guide assumes that you know how to use a command line tool.
 
-## Install Node.js and npm
+### Install Node.js and npm
 
 Node.js is a JavaScript runtime you use to develop modern Office Add-ins.
 
@@ -58,7 +58,7 @@ If, for any reason, you want to install it manually, run the following in the co
 > [!TIP]
 > You may wish to use a Node version manager to allow you to switch between multiple versions of Node.js and npm, but this isn't strictly necessary. For details on how to do this, [see npm's instructions](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
-## Install a code editor
+### Install a code editor
 
 You can use any code editor or IDE that supports client-side development to build your web part, such as:
 
@@ -66,15 +66,15 @@ You can use any code editor or IDE that supports client-side development to buil
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm)
 
-## Install the Yeoman generator &mdash; Yo Office
+### Install the Yeoman generator &mdash; Yo Office
 
-Install latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). To install these tools globally, run the following command via the command prompt.
+The project creation and scaffolding tool is [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), affectionately known as **Yo Office**. You need to install latest version of [Yeoman](https://github.com/yeoman/yo) and Yo Office. To install these tools globally, run the following command via the command prompt.
 
   ```command&nbsp;line
   npm install -g yo generator-office
   ```
 
-## Install and use the Office JavaScript linter
+### Install and use the Office JavaScript linter
 
 Microsoft provides a JavaScript linter to help you catch common errors when using the Office JavaScript library. To install the linter, run the following two commands (after you've [installed Node.js](#install-nodejs) and [npm](#install-npm)).
 
@@ -118,6 +118,8 @@ If your add-in project was created another way, take the following steps.
 
 # [Visual Studio environment](#tab/visualstudio)
 
+### Install Visual Studio
+
 If you do not have Visual Studio 2017 (for Windows) or later installed, install the latest version from [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/). Be sure to include the **Office/SharePoint development** workload when the installer asks you to specify workloads. Other workloads that you may need are **Web development tools for .NET**, **JavaScript and TypeScript language support** (for coding the client-side of the add-in), and ASP.NET-related workloads.
 
 > [!TIP]
@@ -130,7 +132,7 @@ If you do not have Visual Studio 2017 (for Windows) or later installed, install 
 
 ## Install Script Lab
 
-Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs. It's itself an Office Add-in and can be installed from AppSource at [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1). There's a version for Excel, PowerPoint, and Word, and a separate version for Outlook. For information about how to use Script Lab, see [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md).
+Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs. Script Lab is itself an Office Add-in and can be installed from AppSource at [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1). There's a version for Excel, PowerPoint, and Word, and a separate version for Outlook. For information about how to use Script Lab, see [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md).
 
 ## Next steps
 
