@@ -1,61 +1,82 @@
 ---
 title: Set up your development environment
-description:  'Set up your developer environment to build Office Add-ins.'
-ms.date: 10/26/2021
+description:  Set up your developer environment to build Office Add-ins.
+ms.date: 05/27/2022
 ms.localizationpriority: medium
 ---
 
 # Set up your development environment
 
-This guide helps you set up tools so you can create Office Add-ins by following our quick starts or tutorials. You'll need to install the tools from the list below. If you already have these installed, you are ready to begin a quick start, such as this [Excel React quick start](../quickstarts/excel-quickstart-react.md).
+This guide helps you set up tools so you can create Office Add-ins by following our quick starts or tutorials. If you already have these installed, you're ready to begin a quick start, such as this [Excel React quick start](../quickstarts/excel-quickstart-react.md).
+
+## Get Microsoft 365
+
+You need a Microsoft 365 account. You can get a free, 90-day renewable Microsoft 365 subscription that includes all Office apps by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+
+## Install the environment
+
+There are two kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the two environments is different, so if multiple people will be working on an add-in project, they must all use the same environment. 
+
+- **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called WebPack. The project creation and scaffolding tool, Yo Office, is updated frequently.
+- **Visual Studio environment**: Choose this environment only if your development computer is Windows, and you want to develop the server-side of the add-in with a .NET based language and framework, such as ASP.NET. The add-in project templates in Visual Studio aren't updated as frequently as those in the Node.js environment. Client-side code can't be debugged with the built-in Visual Studio debugger, but you can debug client-side code with your browser's development tools. More information later on the **Visual Studio environment** tab.
+
+> [!NOTE]
+> Visual Studio for Mac doesn't include the project scaffolding templates for Office Add-ins, so if your development computer is a Mac, you should work with the Node.js environment.
+
+Select the tab for the environment you choose. 
+
+# [Node.js environment](#tab/yeomangenerator)
+
+The main tools to be installed are:
 
 - Node.js
 - npm
-- A Microsoft 365 account which includes the subscription version of Office
 - A code editor of your choice
+- Yo Office
 - The Office JavaScript linter
 
-This guide assumes that you know how to use a command line tool.
+This guide assumes that you know how to use a command-line tool.
 
-## Install Node.js
+### Install Node.js and npm
 
-Node.js is a JavaScript runtime you will need to develop modern Office Add-ins.
+Node.js is a JavaScript runtime you use to develop modern Office Add-ins.
 
 Install Node.js by [downloading the latest recommended version from their website](https://nodejs.org). Follow the installation instructions for your operating system.
 
-## Install npm
-
-npm is an open source software registry from which to download the packages used in developing Office Add-ins.
-
-To install npm, run the following in the command line.
-
-```command&nbsp;line
-    npm install npm -g
-```
-
-To check if you already have npm installed and see the installed version, run the following in the command line.
+npm is an open source software registry from which to download the packages used in developing Office Add-ins. It's usually installed automatically when you install Node.js. To check if you already have npm installed and see the installed version, run the following in the command line.
 
 ```command&nbsp;line
 npm -v
 ```
 
-You may wish to use a Node version manager to allow you to switch between multiple versions of Node.js and npm, but this is not strictly necessary. For details on how to do this, [see npm's instructions](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+If, for any reason, you want to install it manually, run the following in the command line.
 
-## Get Microsoft 365
+```command&nbsp;line
+npm install npm -g
+```
 
-If you don't already have a Microsoft 365 account, you can get a free, 90-day renewable Microsoft 365 subscription that includes all Office apps by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+> [!TIP]
+> You may wish to use a Node version manager to allow you to switch between multiple versions of Node.js and npm, but this isn't strictly necessary. For details on how to do this, [see npm's instructions](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
-## Install a code editor
+### Install a code editor
 
 You can use any code editor or IDE that supports client-side development to build your web part, such as:
 
-- [Visual Studio Code](https://code.visualstudio.com/)
+- [Visual Studio Code](https://code.visualstudio.com/) (recommended)
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm)
 
-## Install and use the Office JavaScript linter
+### Install the Yeoman generator &mdash; Yo Office
 
-Microsoft provides a JavaScript linter to help you catch common errors when using the Office JavaScript library. To install the linter, run the following two commands (after you've [installed Node.js](#install-nodejs) and [npm](#install-npm)).
+The project creation and scaffolding tool is [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), affectionately known as **Yo Office**. You need to install the latest version of [Yeoman](https://github.com/yeoman/yo) and Yo Office. To install these tools globally, run the following command via the command prompt.
+
+  ```command&nbsp;line
+  npm install -g yo generator-office
+  ```
+
+### Install and use the Office JavaScript linter
+
+Microsoft provides a JavaScript linter to help you catch common errors when using the Office JavaScript library. To install the linter, run the following two commands (after you've [installed Node.js and npm](#install-nodejs-and-npm)).
 
 ```command&nbsp;line
 npm install office-addin-lint --save-dev
@@ -95,9 +116,27 @@ If your add-in project was created another way, take the following steps.
    npm run lint
    ```
 
+# [Visual Studio environment](#tab/visualstudio)
+
+### Install Visual Studio
+
+If you do not have Visual Studio 2017 (for Windows) or later installed, install the latest version from [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/). Be sure to include the **Office/SharePoint development** workload when the installer asks you to specify workloads. Other workloads that you may need are **Web development tools for .NET**, **JavaScript and TypeScript language support** (for coding the client-side of the add-in), and ASP.NET-related workloads.
+
+> [!TIP]
+> As of summer 2022, the XML schemas for the Office Add-in manifest that are installed with Visual Studio aren't the latest version. This may affect add-ins, depending on what add-in features they use. So, you may need to update the XML schemas for the manifest. For more information, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+
+> [!NOTE]
+> For information about debugging client-side code when you're using the Visual Studio environment, see [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md). Debug the server-side code the same way you would any web application created in Visual Studio. See [Client-side or server-side](../testing/debug-add-ins-overview.md#server-side-or-client-side).
+
+---
+
+## Install Script Lab
+
+Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs. Script Lab is itself an Office Add-in and can be installed from AppSource at [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1). There's a version for Excel, PowerPoint, and Word, and a separate version for Outlook. For information about how to use Script Lab, see [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md).
+
 ## Next steps
 
-Try creating your own add-in or use Script Lab to try built-in samples.
+Try creating your own add-in or use [Script Lab](explore-with-script-lab.md) to try built-in samples.
 
 ### Create an Office Add-in
 
