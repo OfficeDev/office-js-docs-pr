@@ -34,7 +34,7 @@ This debugging process works **only** for UI-less custom functions, which don't 
 
 Note that this debugging process is not compatible with custom functions projects using a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
-This debugging process does not work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article are not installed with that option. To debug an add-in that is created with this option, see the instructions in one of these articles, as appropriate. 
+This debugging process doesn't work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article aren't installed with that option. To debug an add-in that is created with this option, see the instructions in one of these articles, as appropriate. 
 
 - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md)
 - [Debug add-ins using developer tools in Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md)
