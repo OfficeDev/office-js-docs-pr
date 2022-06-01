@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 05/18/2022
+ms.date: 05/26/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -86,6 +86,10 @@ const myEntity: Excel.EntityCellValue = {
 ```
 
 Entity values also offer a `layouts` property that creates a card for the entity. The card displays as a modal window in the Excel UI and can display additional information contained within the entity value, beyond what's visible in the cell. To learn more, see [Use cards with entity value data types](excel-data-types-entity-card.md).
+
+### Linked entities
+
+Linked entity values, or [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) objects, are a type of entity value. These objects integrate data provided by an external service and can display this data as an [entity card](excel-data-types-entity-card.md), like regular entity values. The [Stocks and Geography data types](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) available via the Excel UI are linked entity values.
 
 ## Web image values
 
