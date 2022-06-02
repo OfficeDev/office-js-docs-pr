@@ -40,5 +40,5 @@ Missed a previous community call? Check out the following blog resources to catc
 - [Community call topic requests and questions](https://aka.ms/officeaddinsform)
 - [Microsoft 365 developer YouTube channel](https://aka.ms/m365devyoutube)
 - [Microsoft 365 community YouTube channel](https://aka.ms/m365pnp/videos )
-- [Microsoft 365 PnP on Tech Community](https://aka.ms/m365pnp/community)
-- [Microsoft 365 PnP tech community blog](https://aka.ms/m365pnp/community/blog)
+- [Microsoft 365 community site](https://aka.ms/m365pnp/community)
+- [Microsoft 365 community blog](https://aka.ms/m365pnp/community/blog)
