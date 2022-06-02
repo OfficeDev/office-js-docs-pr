@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in commands
 description: Outlook add-in commands provide ways to initiate specific add-in actions from the ribbon by adding buttons or drop-down menus.
-ms.date: 07/07/2020
+ms.date: 05/19/2022
 ms.localizationpriority: high
 ---
 
@@ -116,3 +116,5 @@ When using a module extension, add-in commands appear on the extension's custom 
 
 - [Add-in command demo Outlook add-in](https://github.com/officedev/outlook-add-in-command-demo)
 - [Create add-in commands in your manifest for Excel, PowerPoint, and Word](../develop/create-addin-commands.md)
+- [Debug your UI-less Outlook add-in](debug-ui-less.md)
+- [Tutorial: Build a message compose Outlook add-in](../tutorials/outlook-tutorial.md)

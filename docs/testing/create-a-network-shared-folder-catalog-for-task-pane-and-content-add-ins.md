@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins for testing from a network share
 description: Learn how to sideload an Office Add-in for testing from a network share.
-ms.date: 06/02/2020
+ms.date: 05/26/2022
 ms.localizationpriority: medium
 ---
 
@@ -13,7 +13,7 @@ You can test an Office Add-in in an Office client that is on Windows by publishi
 > Deployment by network share is not supported for production add-ins. This method has the following limitations.
 >
 > - The add-in can only be installed on Windows computers.
-> - If a new version of an add-in changes the ribbon, each user will have to reinstall the add-in.
+> - If a new version of an add-in changes the ribbon, such as by adding a custom tab or custom button to it, each user will have to reinstall the add-in.
 
 > [!NOTE]
 > If your add-in project was created with a sufficiently recent version of the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), the add-in will automatically sideload in the Office desktop client when you run `npm start`.

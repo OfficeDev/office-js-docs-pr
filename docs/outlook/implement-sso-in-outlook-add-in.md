@@ -1,7 +1,7 @@
 ---
 title: Scenario - Implement single sign-on to your service
 description: Learn about using the single-sign-on token and Exchange identity token provided by an Outlook add-in to implement SSO with your service.
-ms.date: 09/03/2021
+ms.date: 05/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -9,13 +9,9 @@ ms.localizationpriority: medium
 
 In this article we'll explore a recommended method of using the [single sign-on access token](authenticate-a-user-with-an-sso-token.md) and the [Exchange identity token](authenticate-a-user-with-an-identity-token.md) together to provide a single-sign on implementation to your own backend service. By using both tokens together, you can take advantage of the benefits of the SSO access token when it is available, while ensuring that your add-in will work when it is not, such as when the user switches to a client that does not support them, or if the user's mailbox is on an on-premises Exchange server.
 
-For a sample add-in that implements the ideas in this article, see [Outlook Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
-
-
 > [!NOTE]
 > The Single Sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
 > If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
-
 
 ## Why use the SSO access token?
 
@@ -76,9 +72,6 @@ The procedure for authorizing the backend Web API to call the Microsoft Graph AP
 Based on the response from the backend Web API, the add-in may need to authorize the user for the Microsoft Graph API, the Contoso Data API, or both. Since both APIs use OAuth2 authentication, the method is similar for both.
 
 1. The add-in notifies the user that it needs them to authorize their use of the API and asks them to click a link or button to start the process.
-
-    > [!NOTE]
-    > The example add-in at [Outlook Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO) shows how to use the [Dialog API](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) and the [office-js-helpers library](https://github.com/OfficeDev/office-js-helpers) as options to start the [OAuth2 Authorization Code flow](/azure/active-directory/develop/active-directory-protocols-oauth-code) for the API.
 
 1. Once the flow completes, the add-in sends the refresh token to the backend Web API and includes the SSO token (if available) or the Exchange identity token.
 

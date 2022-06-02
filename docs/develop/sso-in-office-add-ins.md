@@ -1,13 +1,13 @@
 ---
 title: Enable single sign-on (SSO) in an Office Add-in
 description: Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.
-ms.date: 01/25/2022
+ms.date: 05/05/2022
 ms.localizationpriority: high
 ---
 
 # Enable single sign-on (SSO) in an Office Add-in
 
-Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or work account. Take advantage of this and use single sign-on (SSO) to authenticate and authorize the user to your add-in without requiring them to sign in a second time.
+Users sign in to Office using either their personal Microsoft account or their Microsoft 365 Education or work account. Take advantage of this and use single sign-on (SSO) to authenticate and authorize the user to your add-in without requiring them to sign in a second time.
 
 ![An image showing the sign-in process for an add-in.](../images/sso-for-office-addins.png)
 
@@ -15,7 +15,7 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 
 The following diagram shows how the SSO process works. The blue elements represent Office or the Microsoft identity platform. The gray elements represent the code you write and include the client-side code (task pane) and the server-side code for your add-in.
 
-![A diagram that shows the SSO process.](../images/sso-overview-diagram.svg)
+:::image type="content" source="../images/sso-overview-diagram.svg" alt-text="A diagram that shows the SSO process." border="false":::
 
 1. In the add-in, your JavaScript code calls the Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). If the user is already signed in to Office, the Office host will return the access token with the claims of the signed in user.
 2. If the user is not signed in, the Office host application opens a dialog box for the user to sign in. Office redirects to the Microsoft identity platform to complete the sign-in process.
