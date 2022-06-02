@@ -2,7 +2,7 @@
 title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in (preview)
 description: Learn how to handle the on-send events in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 05/26/2022
+ms.date: 06/02/2022
 ms.localizationpriority: medium
 ---
 
@@ -322,3 +322,4 @@ While a Smart Alerts dialog message can be changed to suit your add-in scenario 
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
 - [How to debug event-based add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
+- [Office Add-ins code sample: Use Outlook Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
