@@ -1,5 +1,5 @@
 ---
-ms.date: 03/30/2021
+ms.date: 06/03/2022
 description: Troubleshoot common problems with Excel custom functions.
 title: Troubleshoot custom functions
 ms.localizationpriority: medium
@@ -11,6 +11,10 @@ When developing custom functions, you may encounter errors in the product while 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return).
+
+## Debugging custom functions
+
+To debug custom functions add-ins, see [Overview of debugging Office Add-ins](../testing/debug-add-ins-overview.md) and follow the general Office Add-ins debugging guidance. 
 
 ## Enable runtime logging
 
