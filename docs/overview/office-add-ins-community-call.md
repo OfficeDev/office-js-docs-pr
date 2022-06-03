@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 06/02/2022
+ms.date: 06/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +11,8 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for June 8th call
 
-The agenda for June will be posted about a week before the call.
+- Demo of Outlook Smart Alerts sample.
+- Demo of Excel add-in using .NET Blazor.
 
 ## Previous calls
 
