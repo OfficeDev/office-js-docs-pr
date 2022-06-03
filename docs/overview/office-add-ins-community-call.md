@@ -40,6 +40,6 @@ Missed a previous community call? Check out the following blog resources to catc
 - [Recurring, monthly community call calendar invite](https://aka.ms/officeaddinscommunitycall)
 - [Community call topic requests and questions](https://aka.ms/officeaddinsform)
 - [Microsoft 365 developer YouTube channel](https://aka.ms/m365devyoutube)
-- [Microsoft 365 community YouTube channel](https://aka.ms/m365pnp/videos )
+- [Microsoft 365 community YouTube channel](https://aka.ms/m365pnp/videos)
 - [Microsoft 365 community site](https://aka.ms/m365pnp/community)
 - [Microsoft 365 community blog](https://aka.ms/m365pnp/community/blog)
