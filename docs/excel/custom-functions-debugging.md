@@ -1,7 +1,7 @@
 ---
 title: UI-less custom functions debugging
 description: Learn how to debug your Excel custom functions that don't use a task pane.
-ms.date: 05/31/2022
+ms.date: 06/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -12,6 +12,20 @@ This article discusses debugging *only* for custom functions that don't use a ta
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
+
+## Requirements
+
+This debugging process works **only** for UI-less custom functions, which don't use a task pane or other UI elements. To create a UI-less custom function, follow the steps in the [Create custom functions in Excel](../tutorials/excel-tutorial-create-custom-functions.md) tutorial, and then remove all of the task pane and UI elements that are installed by the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+
+Note that this debugging process is not compatible with custom functions projects using a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+
+This debugging process doesn't work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article aren't installed with that option. To debug an add-in that is created with this option, see the instructions in one of these articles, as appropriate.
+
+- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md)
+- [Debug add-ins using developer tools in Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md)
+- [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+
+Use the following anchor links to see the article section relevant to your debugging scenario.
 
 On Windows:
 
@@ -28,17 +42,6 @@ On Mac:
 > [!NOTE]
 > For simplicity, this article shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [command line instructions](#commands-for-building-and-running-your-add-in) at the end of this article.
 
-## Requirements
-
-This debugging process works **only** for UI-less custom functions, which don't use a task pane or other UI elements. To create a UI-less custom function, follow the steps in the [Create custom functions in Excel](../tutorials/excel-tutorial-create-custom-functions.md) tutorial, and then remove all of the task pane and UI elements that are installed by the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
-
-Note that this debugging process is not compatible with custom functions projects using a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
-
-This debugging process doesn't work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article aren't installed with that option. To debug an add-in that is created with this option, see the instructions in one of these articles, as appropriate. 
-
-- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md)
-- [Debug add-ins using developer tools in Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md)
-- [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
 
 ## Use the VS Code debugger for Excel Desktop
 
