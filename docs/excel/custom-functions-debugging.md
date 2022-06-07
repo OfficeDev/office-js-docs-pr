@@ -25,7 +25,7 @@ This debugging process doesn't work with projects that are created with the **Of
 - [Debug add-ins using developer tools in Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md)
 - [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
 
-Use the following anchor links to see the article section relevant to your debugging scenario.
+Use the following anchor links to visit sections of this article that are relevant to your debugging scenario.
 
 On Windows:
 
@@ -59,7 +59,10 @@ You can use VS Code to debug UI-less custom functions in Office Excel on the des
 ### Start the VS Code debugger
 
 1. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
-1. From the Run drop-down menu, choose **Excel Desktop (Custom Functions)**.
+1. From the **Run and Debug** drop-down menu, choose **Excel Desktop (Custom Functions)**.
+
+    :::image type="content" source="../images/custom-functions-run-and-debug-menu.jpg" alt-text="A screenshot showing Excel Desktop (Custom Functions) in the Run and Debug drop-down menu.":::
+
 1. Select **F5** (or select **Run -> Start Debugging** from the menu) to begin debugging. A new Excel workbook will open with your add-in already sideloaded and ready to use.
 
 ### Start debugging
@@ -77,8 +80,8 @@ You can use VS Code to debug UI-less custom functions in Excel on the Microsoft 
 ### Run your add-in from VS Code
 
 1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
-2. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
-3. Choose **Terminal > Run Task** and type or select **Dev Server**.
+1. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
+1. Choose **Terminal > Run Task** and type or select **Dev Server**.
 
 ### Start the VS Code debugger
 
