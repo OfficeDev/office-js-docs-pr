@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: Learn how to create a Node.js-based add-in that uses Office Single Sign-on.
-ms.date: 03/28/2022
+ms.date: 06/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -47,7 +47,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Run the command `npm run install-dev-certs`. Select **Yes** to the prompt to install the certificate.
 
-## Register the add-in with Azure AD v2.0 endpoint
+## Register the add-in's middle-tier web server with Azure AD v2.0 endpoint
+
+You need to create an app registration in Azure that represents your web server's middle tier. This will enable authentication support so that proper access tokens can be issued to the client code in JavaScript.
 
 1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
 
@@ -60,7 +62,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     * Set the application type to **Web** and then set **Redirect URI** to `https://localhost:44355/dialog.html`.
     * Choose **Register**.
 
-1. On the **Office-Add-in-NodeJS-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
+1. On the **Office-Add-in-NodeJS-SSO-middle-tier** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
 
     > [!NOTE]
     > This **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
@@ -122,11 +124,59 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. On the same page, choose the **Grant admin consent for [tenant name]** button, and then select **Yes** for the confirmation that appears.
 
+## Register the client code as an SPA app for fallback authentication
+
+The add-in also needs to support a fallback authentication approach if SSO is unavailable, or fails. To do this you need an app registration that returns a valid access token for the middle-tier when the access token cannot be retrieved through SSO.
+
+1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
+
+1. Sign in with the ***admin*** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
+
+1. Select **New registration**. On the **Register an application** page, set the values as follows.
+
+    * Set **Name** to `Office-Add-in-NodeJS-Fallback`.
+    * Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**.
+    * Set the application type to **SPA** and then set **Redirect URI** to `https://localhost:44355/dialog.html`.
+    * Choose **Register**.
+
+1. On the **Office-Add-in-NodeJS-Fallback** page, copy and save the value for the **Application (client) ID**. You'll use it in later procedures.
+
+1. Select **Authentication** under **Manage**. In the **Implicit grant** section, enable the checkboxes for both **Access token** and **ID token**.
+
+1. Select **Save** at the top of the form.
+
+1. Select **API permissions** under **Manage** and select **Add a permission**. On the panel that opens, choose **Microsoft Graph** and then choose **Delegated permissions**.
+
+1. Use the **Select permissions** search box to search for the permissions your add-in needs. Select the following. Only the first is really required by your add-in itself; but the `profile` permission is required for the Office application to get a token to your add-in web application.
+
+    * offline_access
+    * openid
+    * profile
+
+    > [!NOTE]
+    > The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.
+
+1. Select the check box for each permission as it appears. After selecting the permissions that your add-in needs, select the **Add permissions** button at the bottom of the panel.
+
+1. Select **Add a permission** again. On the panel that opens, choose **APIs my organization uses**. Find and select the **Office-Add-in-NodeJS-SSO-middle-tier** that you created previously. Then choose **Delegated permissions**.
+1. Use the **Select permissions** search box to find the **access_as_user** permission and select it.
+
+1. On the same page, choose the **Grant admin consent for [tenant name]** button, and then select **Yes** for the confirmation that appears.
+
+## Grant access for fallback authentication
+
+To complete the configuration of the two app registrations you need to grant client application access from **Office-Add-in-NodeJS-Fallback** to **Office-Add-in-NodeJS-SSO-middle-tier**.
+
+1. Find and select the **Office-Add-in-NodeJS-SSO-middle-tier** on the **App registrations** page.
+1. Select **Expose an API** under **Manage** and select **Add a client application**.
+1. In the **Client ID** enter the client id you saved previously from the **Office-Add-in-NodeJS-Fallback** app registration.
+1. Select the check the box for `api://localhost:44355/$App ID GUID$/access_as_user` and choose **Add application**.
+
 ## Configure the add-in
 
 1. Open the `\Begin` folder in the cloned project in your code editor.
 
-1. Open the `.ENV` file and use the values that you copied earlier. Set the **CLIENT_ID** to your **Application (client) ID**, and set the **CLIENT_SECRET** to your client secret. The values should **not** be in quotation marks. When you are done, the file should be similar to the following:
+1. Open the `.ENV` file and use the values that you copied earlier from the **Office-Add-in-NodeJS-SSO-middle-tier** app registration. Set the **CLIENT_ID** to your **Application (client) ID**, and set the **CLIENT_SECRET** to your client secret. The values should **not** be in quotation marks. When you are done, the file should be similar to the following:
 
     ```javascript
     CLIENT_ID=8791c036-c035-45eb-8b0b-265f43cc4824
@@ -134,14 +184,12 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     NODE_ENV=development
     ```
 
-1. Open the `\public\javascripts\fallbackAuthDialog.js` file. In the `msalConfig` declaration, replace the placeholder $application_GUID here$ with the Application ID that you copied when you registered your add-in. The value should be in quotation marks.
-
 1. Open the add-in manifest file "manifest\manifest_local.xml" and then scroll to the bottom of the file. Just above the `</VersionOverrides>` end tag, you'll find the following markup.
 
     ```xml
     <WebApplicationInfo>
-      <Id>$application_GUID here$</Id>
-      <Resource>api://localhost:44355/$application_GUID here$</Resource>
+      <Id>$middle_tier_application_GUID here$</Id>
+      <Resource>api://localhost:44355/$middle_tier_application_GUID here$</Resource>
       <Scopes>
           <Scope>Files.Read.All</Scope>
           <Scope>profile</Scope>
@@ -149,10 +197,12 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     </WebApplicationInfo>
     ```
 
-1. Replace the placeholder "$application_GUID here$" *in both places* in the markup with the Application ID that you copied when you registered your add-in. The "$" symbols are not part of the ID, so do not include them. This is the same ID you used in for the CLIENT_ID and Audience in the .ENV file.
+1. Replace the placeholder "$middle_tier_application_GUID here$" *in both places* in the markup with the Application ID that you copied when you created the **Office-Add-in-NodeJS-SSO-middle-tier** app registration. The "$" symbols are not part of the ID, so do not include them. This is the same ID you used in for the CLIENT_ID and Audience in the .ENV file.
 
    > [!NOTE]
    > The **Resource** value is the **Application ID URI** you set when you registered the add-in. The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
+
+1. Open the `\public\javascripts\fallbackAuthDialog.js` file. Replace the placeholder $fallback_application_GUID here$ with the **Application (client) ID** that you saved from the **Office-Add-in-NodeJS-Fallback** you created previously.
 
 ## Code the client-side
 
