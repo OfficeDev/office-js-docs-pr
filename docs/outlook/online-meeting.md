@@ -21,7 +21,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To enable users to create online meetings with your add-in, you must configure the `<VersionOverrides>` node in the manifest. If you are creating an add-in that will only be supported in Outlook on the web and Mac, select the **Outlook on the web and Mac** tab for guidance. However, if your add-in will also be supported in Outlook on Android and iOS, select the **Mobile** tab.
+To enable users to create online meetings with your add-in, you must configure the `<VersionOverrides>` node in the manifest. If you're creating an add-in that will only be supported in Outlook on the web and Mac, select the **Outlook on the web and Mac** tab for guidance. However, if your add-in will also be supported in Outlook on Android and iOS, select the **Mobile** tab.
 
 # [Outlook on the web and Mac](#tab/owaMac)
 
