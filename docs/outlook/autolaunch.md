@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 06/02/2022
+ms.date: 06/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -37,7 +37,7 @@ The following table lists events that are currently available and the supported 
 |`OnAppointmentSend`|On sending an appointment item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup>|
 
 > [!NOTE]
-> <sup>1</sup> Event-based add-ins in Outlook on Windows require Windows 10 version 1809 (build 17763.2989) or later to run.
+> <sup>1</sup> Event-based add-ins in Outlook on Windows require a minimum of Windows 10 version 1903 (build 18362) or Windows Server 2019 version 1903 to run.
 
 ### How to preview
 
