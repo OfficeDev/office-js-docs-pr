@@ -30,13 +30,13 @@ Outlook add-ins are now supported on the new Mac UI (available from Outlook vers
 
 - API requirement set 1.11
 
-To learn more about the new Mac UI, see [The new Outlook for Mac](https://support.microsoft.com/en-us/office/the-new-outlook-for-mac-6283be54-e74d-434e-babb-b70cefc77439).
+To learn more about the new Mac UI, see [The new Outlook for Mac](https://support.microsoft.com/office/6283be54-e74d-434e-babb-b70cefc77439).
 
 You can determine which UI version you're on, as follows:
 
-**Current UI**
+**Classic UI**
 
-![Current UI on Mac.](../images/outlook-on-mac-classic.png)
+![Classic UI on Mac.](../images/outlook-on-mac-classic.png)
 
 **New UI**
 
