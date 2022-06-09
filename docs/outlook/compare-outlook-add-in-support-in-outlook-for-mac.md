@@ -26,7 +26,7 @@ For information about new UI support, see [Add-in support in Outlook on new Mac 
 
 ## Add-in support in Outlook on new Mac UI
 
-Outlook add-ins are now supported on the new Mac UI, up to requirement set 1.10. However, the following requirement sets and features are **NOT** supported yet.
+Outlook add-ins are now supported on the new Mac UI (available from Outlook version 16.38.506), up to requirement set 1.10. However, the following requirement sets and features are **NOT** supported yet.
 
 - API requirement set 1.11
 
