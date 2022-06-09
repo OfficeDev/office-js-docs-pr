@@ -2,7 +2,7 @@
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 06/08/2022
+ms.date: 06/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 Setting up an online meeting is a core experience for an Outlook user, and it's easy to [create a Teams meeting with Outlook](/microsoftteams/teams-add-in-for-outlook). However, creating an online meeting in Outlook with a non-Microsoft service can be cumbersome. By implementing this feature, service providers can streamline the online meeting creation and joining experience for their Outlook add-in users.
 
 > [!IMPORTANT]
-> This feature is only supported on Outlook on the web, Mac, Android, and iOS with a Microsoft 365 subscription.
+> This feature is supported on Outlook on the web, Windows, Mac, Android, and iOS with a Microsoft 365 subscription.
 
 In this article, you'll learn how to set up your Outlook add-in to enable users to organize and join a meeting using your online-meeting service. Throughout this article, we'll be using a fictional online-meeting service provider, "Contoso".
 
@@ -21,9 +21,9 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To enable users to create online meetings with your add-in, you must configure the `<VersionOverrides>` node in the manifest. If you're creating an add-in that will only be supported in Outlook on the web and Mac, select the **Outlook on the web and Mac** tab for guidance. However, if your add-in will also be supported in Outlook on Android and iOS, select the **Mobile** tab.
+To enable users to create online meetings with your add-in, you must configure the `<VersionOverrides>` node in the manifest. If you're creating an add-in that will only be supported in Outlook on the web, Windows, and Mac, select the **Windows, Mac, web** tab for guidance. However, if your add-in will also be supported in Outlook on Android and iOS, select the **Mobile** tab.
 
-# [Outlook on the web and Mac](#tab/owaMac)
+# [Windows, Mac, web](#tab/non-mobile)
 
 1. In your code editor, open the Outlook quick start project you created.
 
@@ -197,7 +197,7 @@ To allow users to create an online meeting from their mobile device, the [Mobile
 
 ## Implement adding online meeting details
 
-In this section, learn how your add-in script can update a user's meeting to include online meeting details. The following applies to Outlook on the web, Mac, Android, and iOS.
+In this section, learn how your add-in script can update a user's meeting to include online meeting details. The following applies to all supported platforms.
 
 1. From the same quick start project, open the file **./src/commands/commands.js** in your code editor.
 
@@ -265,13 +265,13 @@ In this section, learn how your add-in script can update a user's meeting to inc
 
 ## Testing and validation
 
-Follow the usual guidance to [test and validate your add-in](testing-and-tips.md), then [sideload](sideload-outlook-add-ins-for-testing.md) it in Outlook on the web, Mac, or Windows. If your add-in also supports mobile, restart Outlook on your Android or iOS device after sideloading. Once the add-in is sideloaded, create a new meeting and verify that the Microsoft Teams or Skype toggle is replaced with your own.
+Follow the usual guidance to [test and validate your add-in](testing-and-tips.md), then [sideload](sideload-outlook-add-ins-for-testing.md) it in Outlook on the web, Windows, or Mac. If your add-in also supports mobile, restart Outlook on your Android or iOS device after sideloading. Once the add-in is sideloaded, create a new meeting and verify that the Microsoft Teams or Skype toggle is replaced with your own.
 
 ### Create meeting UI
 
 As a meeting organizer, you should see screens similar to the following three images when you create a meeting.
 
-# [Outlook on the web and Mac](#tab/owaMac)
+# [Windows, Mac, web](#tab/non-mobile)
 
 //TODO
 
@@ -285,7 +285,9 @@ As a meeting organizer, you should see screens similar to the following three im
 
 As a meeting attendee, you should see a screen similar to the following image when you view the meeting.
 
-# [Outlook on the web and Mac](#tab/owaMac)
+# [Windows, Mac, web](#tab/non-mobile)
+
+//TODO
 
 # [Mobile](#tab/mobile)
 
@@ -294,11 +296,14 @@ As a meeting attendee, you should see a screen similar to the following image wh
 ---
 
 > [!IMPORTANT]
-> If you only see a meeting link, but don't see the **Join** button, it may be that the online-meeting template for your service is not registered on our servers. See the [Register your online-meeting template](#register-your-online-meeting-template) section for details.
+> The **Join** button is only supported on Outlook on the web, Mac, Android, and iOS. If you only see a meeting link, but don't see the **Join** button in a supported client, it may be that the online-meeting template for your service is not registered on our servers. See the [Register your online-meeting template](#register-your-online-meeting-template) section for details.
 
 ## Register your online-meeting template
 
 Registering your online-meeting add-in is optional and only applies if you want to surface the **Join** button in meetings, in addition to the meeting link. If you'd like to register, once you've developed your online-meeting add-in, create a GitHub issue using the following guidance. We'll contact you to coordinate a registration timeline.
+
+> [!IMPORTANT]
+> The **Join** button is only supported on Outlook on the web, Mac, Android, and iOS.
 
 1. Go to the **Feedback** section at the end of this article.
 1. Select **This page**.
