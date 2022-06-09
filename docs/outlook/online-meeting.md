@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Create an Outlook add-in for an online-meeting provider
 
-Setting up an online meeting is a core experience for an Outlook user, and it's easy to [create a Teams meeting with Outlook](/microsoftteams/teams-add-in-for-outlook). However, creating an online meeting in Outlook with a non-Microsoft service can be cumbersome. By implementing this feature, service providers can streamline the online meeting creation experience for their Outlook add-in users.
+Setting up an online meeting is a core experience for an Outlook user, and it's easy to [create a Teams meeting with Outlook](/microsoftteams/teams-add-in-for-outlook). However, creating an online meeting in Outlook with a non-Microsoft service can be cumbersome. By implementing this feature, service providers can streamline the online meeting creation and joining experience for their Outlook add-in users.
 
 > [!IMPORTANT]
 > This feature is only supported on Outlook on the web, Mac, Android, and iOS with a Microsoft 365 subscription.
