@@ -1,5 +1,5 @@
 ---
-ms.date: 03/23/2022
+ms.date: 06/10/2022
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -100,3 +100,4 @@ You may encounter issues if you run the quick start multiple times. If the Offic
 - [Custom functions overview](../excel/custom-functions-overview.md)
 - [Custom functions metadata](../excel/custom-functions-json.md)
 - [Runtime for Excel custom functions](../excel/custom-functions-runtime.md)
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code#using-visual-studio-code-to-publish.md)
