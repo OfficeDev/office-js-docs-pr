@@ -1,7 +1,7 @@
 ---
 title: Asynchronous programming in Office Add-ins
 description: Learn how the Office JavaScript library uses asynchronous programming in Office Add-ins.
-ms.date: 07/08/2021
+ms.date: 06/10/2022
 ms.localizationpriority: medium
 ---
 
@@ -233,9 +233,9 @@ The common syntax for all "Async" methods follows this pattern.
 
  _AsyncMethod_ `(` _RequiredParameters_ `, [` _OptionalParameters_ `],` _CallbackFunction_ `);`
 
-All asynchronous methods support optional parameters, which are passed in as a JavaScript Object Notation (JSON) object that contains one or more optional parameters. The JSON object containing the optional parameters is an unordered collection of key-value pairs with the ":" character separating the key and the value. Each pair in the object is comma-separated, and the entire set of pairs is enclosed in braces. The key is the parameter name, and value is the value to pass for that parameter.
+All asynchronous methods support optional parameters, which are passed in as a JavaScript object that contains one or more optional parameters. The object containing the optional parameters is an unordered collection of key-value pairs with the ":" character separating the key and the value. Each pair in the object is comma-separated, and the entire set of pairs is enclosed in braces. The key is the parameter name, and value is the value to pass for that parameter.
 
-You can create the JSON object that contains optional parameters inline, or by creating an `options` object and passing that in as the _options_ parameter.
+You can create the object that contains optional parameters inline, or by creating an `options` object and passing that in as the _options_ parameter.
 
 ### Pass optional parameters inline
 
@@ -246,7 +246,7 @@ For example, the syntax for calling the [Document.setSelectedDataAsync](/javascr
 
 ```
 
-In this form of the calling syntax, the two optional parameters, _coercionType_ and _asyncContext_, are defined as a JSON object inline enclosed in braces.
+In this form of the calling syntax, the two optional parameters, _coercionType_ and _asyncContext_, are defined as an anonymous JavaScript object inline enclosed in braces.
 
 The following example shows how to call to the `Document.setSelectedDataAsync` method by specifying optional parameters inline.
 
@@ -266,7 +266,7 @@ function write(message){
 ```
 
 > [!NOTE]
-> You can specify optional parameters in any order in the JSON object as long as their names are specified correctly.
+> You can specify optional parameters in any order in the parameter object as long as their names are specified correctly.
 
 ### Pass optional parameters in an options object
 
@@ -336,7 +336,7 @@ function write(message){
 }
 ```
 
-In both optional parameter examples, the _callback_ parameter is specified as the last parameter (following the inline optional parameters, or following the _options_ argument object). Alternatively, you can specify the _callback_ parameter inside either the inline JSON object, or in the `options` object. However, you can pass the _callback_ parameter in only one location: either in the _options_ object (inline or created externally), or as the last parameter, but not both.
+In both optional parameter examples, the _callback_ parameter is specified as the last parameter (following the inline optional parameters, or following the _options_ argument object). Alternatively, you can specify the _callback_ parameter inside either the inline JavaScript object, or in the `options` object. However, you can pass the _callback_ parameter in only one location: either in the _options_ object (inline or created externally), or as the last parameter, but not both.
 
 ## Wrap Common APIs in Promise-returning functions
 
