@@ -53,7 +53,7 @@ When an Excel JavaScript API request fails to run successfully, the API returns 
 - **debugInfo**: When present, the `debugInfo` property of the error message provides additional information that you can use to understand the root cause of the error.
 
 > [!NOTE]
-> If you use `console.log()` to print error messages to the console, those messages will only be visible on the server. End users will not see those error messages in the add-in task pane or anywhere in the Office application. To report errors to the user, see [Error notifications](#error-notifications).
+> If you use `console.log()` to print error messages to the console, those messages are only visible on the server. End users do not see those error messages in the add-in task pane or anywhere in the Office application. To report errors to the user, see [Error notifications](#error-notifications).
 
 ## Error Messages
 
@@ -105,9 +105,9 @@ The following table is a list of errors that the API may return.
 
 ## Error notifications
 
-How you report errors to users depends on the UI system you are using. If you're using React as the UI system, use the Fluent UI components and design elements. Pick an appropriate control from this [Fluent UI page](https://developer.microsoft.com/fluentui#/controls/web). We recommend that error messages be conveyed with a message bar, dialog, or modal. If the error is in the user's input, display the error in bold red near the input control. The sample [Office-Add-in-Microsoft-Graph-React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/0706cc67645675a48747f1fec1b1e5722b575b11/Samples/auth/Office-Add-in-Microsoft-Graph-React) uses a MessageBar, but modifies it to take account of the personality menu in an add-in task pane.
+How you report errors to users depends on the UI system you are using. If you're using React as the UI system, use the Fluent UI components and design elements. Pick an appropriate control from this [Fluent UI page](https://developer.microsoft.com/fluentui#/controls/web). We recommend that error messages be conveyed with a message bar, dialog, or modal. If the error is in the user's input, display the error in bold red near the input control. The sample [Office-Add-in-Microsoft-Graph-React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/0706cc67645675a48747f1fec1b1e5722b575b11/Samples/auth/Office-Add-in-Microsoft-Graph-React) uses a MessageBar element and modifies it to take account of the personality menu in an add-in task pane.
 
-If you're not using React for the UI, consider using the older Fabric UI components implemented directly in HTML and JavaScript. Some example templates are in the [Office-Add-in-UX-Design-Patterns-Code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates) repo. Take a look especially in the dialog and navigation subfolders. The sample [Excel-Add-in-SalesLeads](https://github.com/OfficeDev/Excel-Add-in-SalesLeads) uses a message banner.
+If you're not using React for the UI, consider using the older Fabric UI components implemented directly in HTML and JavaScript. Some example templates are in the [Office-Add-in-UX-Design-Patterns-Code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates) repository. Take a look especially in the dialog and navigation subfolders. The sample [Excel-Add-in-SalesLeads](https://github.com/OfficeDev/Excel-Add-in-SalesLeads) uses a message banner.
 
 ## See also
 
