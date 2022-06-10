@@ -157,4 +157,4 @@ Congratulations, you've successfully created a task pane add-in that uses SSO wh
 - [Customize your Node.js SSO-enabled add-in](sso-quickstart-customize.md)
 - [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md)
 - [Troubleshoot error messages for single sign-on (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
-- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code#using-visual-studio-code-to-publish.md)
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

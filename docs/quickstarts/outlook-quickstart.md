@@ -291,4 +291,4 @@ Congratulations, you've successfully created your first Outlook task pane add-in
 
 ## See also
 
-- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code#using-visual-studio-code-to-publish.md)
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

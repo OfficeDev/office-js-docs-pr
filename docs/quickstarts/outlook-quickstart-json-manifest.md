@@ -269,4 +269,4 @@ Add a custom button to the ribbon that inserts text into a message body.
 ## See also
 
 - [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md)
-- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code#using-visual-studio-code-to-publish.md)
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
