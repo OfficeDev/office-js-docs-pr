@@ -1,13 +1,13 @@
 ---
-title: UI-less custom functions debugging
-description: Learn how to debug your Excel custom functions that don't use a task pane.
-ms.date: 06/07/2022
+title: Custom functions debugging
+description: Learn how to debug your Excel custom functions that don't use a shared runtime.
+ms.date: 06/09/2022
 ms.localizationpriority: medium
 ---
 
-# UI-less custom functions debugging
+# Custom functions debugging
 
-This article discusses debugging *only* for custom functions that don't use a task pane or other user interface elements (UI-less custom functions).
+This article discusses debugging only for custom functions that **don't use a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)**.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -15,9 +15,7 @@ This article discusses debugging *only* for custom functions that don't use a ta
 
 ## Requirements
 
-This debugging process works **only** for UI-less custom functions, which don't use a task pane or other UI elements. To create a UI-less custom function, follow the steps in the [Create custom functions in Excel](../tutorials/excel-tutorial-create-custom-functions.md) tutorial, and then remove all of the task pane and UI elements that are installed by the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
-
-Note that this debugging process is not compatible with custom functions projects using a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+This debugging process works only for custom functions that **don't use a shared runtime**. To create a custom function that doesn't use a shared runtime, follow the steps in the [Create custom functions in Excel](../tutorials/excel-tutorial-create-custom-functions.md) tutorial and install an **Excel Custom Functions Add-in project** with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 This debugging process doesn't work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article aren't installed with that option. To debug an add-in that is created with this option, see the instructions in one of these articles, as appropriate.
 
@@ -42,10 +40,9 @@ On Mac:
 > [!NOTE]
 > For simplicity, this article shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [command line instructions](#commands-for-building-and-running-your-add-in) at the end of this article.
 
-
 ## Use the VS Code debugger for Excel Desktop
 
-You can use VS Code to debug UI-less custom functions in Office Excel on the desktop.
+You can use VS Code to debug custom functions that don't use a shared runtime in Office Excel on the desktop.
 
 > [!NOTE]
 > Desktop debugging for the Mac is not available but can be achieved [using the browser tools and command line to debug Excel on the web](#use-the-command-line-tools-to-debug)).
@@ -75,7 +72,7 @@ At this point, execution will stop on the line of code where you set the breakpo
 
 ## Use the VS Code debugger for Excel in Microsoft Edge
 
-You can use VS Code to debug UI-less custom functions in Excel on the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Microsoft Edge DevTools extension for Visual Studio Code](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension).
+You can use VS Code to debug custom functions that don't use a shared runtime in Excel on the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Microsoft Edge DevTools extension for Visual Studio Code](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension).
 
 ### Run your add-in from VS Code
 
@@ -111,7 +108,7 @@ You can use VS Code to debug UI-less custom functions in Excel on the Microsoft 
 
 ## Use the browser developer tools to debug custom functions in Excel on the web
 
-You can use the browser developer tools to debug UI-less custom functions in Excel on the web. The following steps work for both Windows and macOS.
+You can use the browser developer tools to debug custom functions that don't use a shared runtime in Excel on the web. The following steps work for both Windows and macOS.
 
 ### Run your add-in from Visual Studio Code
 
