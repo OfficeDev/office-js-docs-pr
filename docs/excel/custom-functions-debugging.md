@@ -44,6 +44,9 @@ On Mac:
 
 You can use VS Code to debug custom functions that don't use a shared runtime in Office Excel on the desktop.
 
+> [!IMPORTANT]
+> There is a known issue with the following debugging steps. The steps work for a project installed with the **Excel Custom Functions Add-in project** option in the Yeoman generator with **TypeScript** selected as the script type, but the steps do not work for a project installed with **JavaScript** selected as the script type. For additional information, see [GitHub issue #3355](https://github.com/OfficeDev/office-js-docs-pr/issues/3355).
+
 > [!NOTE]
 > Desktop debugging for the Mac is not available but can be achieved [using the browser tools and command line to debug Excel on the web](#use-the-command-line-tools-to-debug)).
 
