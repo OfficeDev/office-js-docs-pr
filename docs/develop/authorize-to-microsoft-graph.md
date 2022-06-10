@@ -1,13 +1,13 @@
 ---
 title: Authorize to Microsoft Graph with SSO
 description: Learn how users of an Office Add-in can use single sign-on (SSO) to fetch data from Microsoft Graph.
-ms.date: 01/25/2022
+ms.date: 06/10/2022
 ms.localizationpriority: medium
 ---
 
 # Authorize to Microsoft Graph with SSO
 
-Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or work account. The best way for an Office Add-in to get authorized access to [Microsoft Graph](https://developer.microsoft.com/graph/docs) is to use the credentials from the user's Office sign on. This enables them to access their Microsoft Graph data without needing to sign in a second time.
+Users sign in to Office using either their personal Microsoft account or their Microsoft 365 Education or work account. The best way for an Office Add-in to get authorized access to [Microsoft Graph](https://developer.microsoft.com/graph/docs) is to use the credentials from the user's Office sign on. This enables them to access their Microsoft Graph data without needing to sign in a second time.
 
 ## Add-in architecture for SSO and Microsoft Graph
 

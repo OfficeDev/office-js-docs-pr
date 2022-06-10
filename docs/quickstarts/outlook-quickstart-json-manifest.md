@@ -1,7 +1,7 @@
 ---
 title: Build an Outlook add-in with a Teams manifest (preview)
 description: Learn how to build a simple Outlook task pane add-in with a JSON manifest.
-ms.date: 05/24/2022
+ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
 ---
@@ -161,8 +161,8 @@ Add a custom button to the ribbon that inserts text into a message body.
         event.completed();
     }
 
-    // Put the function on the global namespace
-    g.insertHelloWorld = insertHelloWorld;
+    // Register the function with Office
+    Office.actions.associate("insertHelloWorld", insertHelloWorld);
     ```
 
 1. Open the file **./manifest/manifest.json**.
@@ -269,3 +269,4 @@ Add a custom button to the ribbon that inserts text into a message body.
 ## See also
 
 - [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md)
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

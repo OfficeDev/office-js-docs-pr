@@ -92,7 +92,13 @@ The add-in platform addresses end users' privacy concerns in the following ways.
 
 - When sharing a document, users also share add-ins that have been inserted in or associated with that document. If a user opens a document that contains an add-in that the user hasn't used before, the Office client application prompts the user to grant permission for the add-in to run in the document. In an organizational environment, the Office client application also prompts the user if the document comes from an external source.
 
-- Users can enable or disable the access to AppSource. For content and task pane add-ins, users manage access to trusted add-ins and catalogs from the **Trust Center** on the host Office client (opened from **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**). For Outlook add-ins, uses can manage add-ins by choosing the **Manage Add-ins** button: in Outlook on Windows, choose **File** > **Manage Add-ins**. In Outlook on Mac, choose the **Manage Add-ins** button on the add-in bar. In Outlook on the web, choose the **Settings** menu (gear icon) > **Manage add-ins**. Administrators can also manage this access [by using group policy](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Users can enable or disable the access to AppSource. For content and task pane add-ins, users manage access to trusted add-ins and catalogs from the **Trust Center** on the host Office client (opened from **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**). In Outlook, users can manage add-ins by choosing **Get Add-ins**.
+
+  - In Outlook on Windows, select **More Apps** from the ribbon, then choose **Get Add-ins**.
+  - In Outlook on Mac, select the ellipsis button (`...`) from the ribbon, then choose **Get Add-ins**.
+  - In Outlook on the web, choose **Get Add-ins** from the ribbon.
+
+  Administrators can also manage this access [by using group policy](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - The design of the add-in platform provides security and performance for end users in the following ways.
 
