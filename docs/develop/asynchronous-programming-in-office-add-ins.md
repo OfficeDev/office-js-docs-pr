@@ -233,7 +233,7 @@ The common syntax for all "Async" methods follows this pattern.
 
  _AsyncMethod_ `(` _RequiredParameters_ `, [` _OptionalParameters_ `],` _CallbackFunction_ `);`
 
-All asynchronous methods support optional parameters, which are passed in as a JavaScript objects that contain one or more optional parameters. The object containing the optional parameters is an unordered collection of key-value pairs with the ":" character separating the key and the value. Each pair in the object is comma-separated, and the entire set of pairs is enclosed in braces. The key is the parameter name, and value is the value to pass for that parameter.
+All asynchronous methods support optional parameters, which are passed in as a JavaScript object that contains one or more optional parameters. The object containing the optional parameters is an unordered collection of key-value pairs with the ":" character separating the key and the value. Each pair in the object is comma-separated, and the entire set of pairs is enclosed in braces. The key is the parameter name, and value is the value to pass for that parameter.
 
 You can create the object that contains optional parameters inline, or by creating an `options` object and passing that in as the _options_ parameter.
 
