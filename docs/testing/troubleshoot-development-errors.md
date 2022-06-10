@@ -100,10 +100,10 @@ You can repeat the previous process for any additional schemas that are out-of-d
 
 ## When working offline, no Office APIs work
 
-When you're loading the Office JavaScript Library from a local copy instead of from the CDN, the APIs may stop working if the library isn't up-to-date. If you have been away from a project for a while, reinstall the library to get the latest version. The process varies according to your IDE:
+When you're loading the Office JavaScript Library from a local copy instead of from the CDN, the APIs may stop working if the library isn't up-to-date. If you have been away from a project for a while, reinstall the library to get the latest version. The process varies according to your IDE. Choose one of the following options based on your environment.
 
 - **Visual Studio**: See [Update to the latest Office JavaScript API library](../develop/update-your-javascript-api-for-office-and-manifest-schema-version.md). 
-- **Any other IDE**: See [npm - @microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) and [npm - @types/office-js](https://www.npmjs.com/package/@types/office-js).
+- **Any other IDE**: See the npm packages [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) and [@types/office-js](https://www.npmjs.com/package/@types/office-js).
 
 ## See also
 
