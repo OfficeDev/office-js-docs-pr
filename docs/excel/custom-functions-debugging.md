@@ -15,7 +15,7 @@ This article discusses debugging only for custom functions that **don't use a [s
 
 ## Requirements
 
-This debugging process works only for custom functions that **don't use a shared runtime**. To create a custom function that doesn't use a shared runtime, follow the steps in the [Create custom functions in Excel](../tutorials/excel-tutorial-create-custom-functions.md) tutorial and install an **Excel Custom Functions Add-in project** with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+This debugging process works only for custom functions that **don't use a shared runtime**. A custom function that doesn't use a shared runtime is an **Excel Custom Functions Add-in project** created with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 This debugging process doesn't work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article aren't installed with that option. To debug an add-in that is created with this option, see the instructions in one of these articles, as appropriate.
 
