@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Custom functions debugging
 
-This article discusses debugging only for custom functions that **don't use a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)**.
+This article discusses debugging only for custom functions that **don't use a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)**. To debug custom functions add-ins that use a shared runtime, see [Configure your Office Add-in to use a shared JavaScript runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 

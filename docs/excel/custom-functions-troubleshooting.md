@@ -1,5 +1,5 @@
 ---
-ms.date: 06/03/2022
+ms.date: 06/09/2022
 description: Troubleshoot common problems with Excel custom functions.
 title: Troubleshoot custom functions
 ms.localizationpriority: medium
@@ -14,7 +14,9 @@ To resolve issues, you can [enable runtime logging to capture errors](#enable-ru
 
 ## Debugging custom functions
 
-To debug custom functions add-ins, see [Overview of debugging Office Add-ins](../testing/debug-add-ins-overview.md) and follow the general Office Add-ins debugging guidance. 
+To debug custom functions add-ins that use a shared runtime, see [Configure your Office Add-in to use a shared JavaScript runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
+
+To debug custom functions add-ins that don't use a shared runtime, see [Custom functions debugging](custom-functions-debugging.md).
 
 ## Enable runtime logging
 
@@ -93,9 +95,11 @@ If using Excel on Windows or Mac, you can report feedback to the Office extensib
 Feel free to submit an issue you encounter either through the "Content feedback" feature at the bottom of any documentation page, or by [filing a new issue directly to the custom functions repository](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## Next steps
+
 Learn how to [make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md).
 
 ## See also
 
-* [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
-* [Create custom functions in Excel](custom-functions-overview.md)
+- [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
+- [Custom functions debugging](custom-functions-debugging.md)
