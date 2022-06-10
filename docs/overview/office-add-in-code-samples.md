@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: A list of Office Add-in code samples to help you learn and build your own add-ins.
-ms.date: 06/02/2022
+ms.date: 06/10/2022
 localization_priority: high
 ---
 
@@ -23,6 +23,11 @@ The following samples show how to build the simplest Office Add-in with only a m
 ---
 
 ---
+
+## Blazor WebAssembly
+
+- [Create a Blazor Webassembly Excel add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/excel-blazor-add-in)
+- [Create a Blazor Webassembly Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/word-blazor-add-in)
 
 ## Excel
 
