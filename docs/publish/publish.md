@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 12/07/2021
+ms.date: 06/13/2022
 ms.localizationpriority: high
 ---
 
@@ -28,9 +28,9 @@ The deployment options that are available depend on the Office application that 
 
 | Extension point | Sideloading | Network share | AppSource | Microsoft 365 admin center | SharePoint catalog\* |
 |:----------------|:-----------:|:-------------:|:---------:|:--------------------------:|:--------------------:|
-| Content         | X           | X             | X         | X                          | X                    |
-| Task pane       | X           | X             | X         | X                          | X                    |
-| Command         | X           | X             | X         | X                          |                      |
+| Content         | Supported   | Supported     | Supported | Supported                  | Supported            |
+| Task pane       | Supported   | Supported     | Supported | Supported                  | Supported            |
+| Command         | Supported   | Supported     | Supported | Supported                  | Not available        |
 
 &#42; SharePoint catalogs do not support Office on Mac.
 
@@ -38,8 +38,8 @@ The deployment options that are available depend on the Office application that 
 
 | Extension point | Sideloading | AppSource | Exchange server |
 |:----------------|:-----------:|:---------:|:---------------:|
-| Mail app        | X           | X         | X               |
-| Command         | X           | X         | X               |
+| Mail app        | Supported   | Supported | Supported       |
+| Command         | Supported   | Supported | Supported       |
 
 ## Production deployment methods
 
@@ -86,5 +86,5 @@ To assign add-ins to tenants, use the Exchange admin center to upload a manifest
 - [Create effective AppSource listings](/office/dev/store/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 - [What is the Microsoft commercial marketplace?](/azure/marketplace/overview)
-
-[AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
+- [Microsoft Dev Center app publishing page](https://developer.microsoft.com/microsoft-teams/app-publishing)
+- [AppSource](https://appsource.microsoft.com/marketplace/apps?src=office&page=1)

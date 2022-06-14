@@ -39,28 +39,28 @@ The following table specifies the elements that are required for the three types
 
 ### Required elements by Office Add-in type
 
-| Element                                                                                      | Content | Task pane | Outlook |
-| :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
-| [OfficeApp][]                                                                                |    X    |     X     |    X    |
-| [Id][]                                                                                       |    X    |     X     |    X    |
-| [Version][]                                                                                  |    X    |     X     |    X    |
-| [ProviderName][]                                                                             |    X    |     X     |    X    |
-| [DefaultLocale][]                                                                            |    X    |     X     |    X    |
-| [DisplayName][]                                                                              |    X    |     X     |    X    |
-| [Description][]                                                                              |    X    |     X     |    X    |
-| [IconUrl][]                                                                                  |    X    |     X     |    X    |
-| [SupportUrl][]\*\*                                                                           |    X    |     X     |    X    |
-| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
-| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
-| [DesktopSettings][]                                                                          |         |           |    X    |
-| [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
-| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] |    X    |     X     |    X    |
-| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |         |           |    X    |
-| [Requirements (MailApp)*][]                                                                  |         |           |    X    |
-| [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |         |           |    X    |
-| [Form*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
-| [Sets (Requirements)*][]                                                                     |    X    |     X     |         |
-| [Hosts*][]                                                                                   |    X    |     X     |         |
+| Element                                                                                      | Content    | Task pane    | Outlook    |
+| :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------: |
+| [OfficeApp][]                                                                                | Required   | Required    | Required    |
+| [Id][]                                                                                       | Required   | Required    | Required    |
+| [Version][]                                                                                  | Required   | Required    | Required    |
+| [ProviderName][]                                                                             | Required   | Required    | Required    |
+| [DefaultLocale][]                                                                            | Required   | Required    | Required    |
+| [DisplayName][]                                                                              | Required   | Required    | Required    |
+| [Description][]                                                                              | Required   | Required    | Required    |
+| [IconUrl][]                                                                                  | Required   | Required    | Required    |
+| [SupportUrl][]\*\*                                                                           | Required   | Required    | Required    |
+| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       | Required   | Required    |             |
+| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         | Required   | Required    |             |
+| [DesktopSettings][]                                                                          |            |             | Required    |
+| [SourceLocation (MailApp)][]                                                                 |            |             | Required    |
+| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] | Required   | Required    | Required    |
+| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |            |             | Required    |
+| [Requirements (MailApp)*][]                                                                  |            |             | Required    |
+| [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |            |             | Required    |
+| [Form*][]<br/>[FormSettings*][]                                                              |            |             | Required    |
+| [Sets (Requirements)*][]                                                                     | Required   | Required    |             |
+| [Hosts*][]                                                                                   | Required   | Required    |             |
 
 _\*Added in the Office Add-in Manifest Schema version 1.1._
 
