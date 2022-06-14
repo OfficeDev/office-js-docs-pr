@@ -55,10 +55,10 @@ The following table specifies the elements that are required for the three types
 | [DesktopSettings][]                                                                          | Not available | Not available | Required |
 | [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] | Required   | Required     | Required     |
 | [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             | Not available | Not available | Required |
-| [Requirements (MailApp)*][]                                                                  | Optional   | Not available | Required    |
-| [Set*][]<br/>[Sets (Requirements)*][]<br/>[Sets (MailAppRequirements)*][]                    | Required   | Required     | Required     |
-| [Form*][]<br/>[FormSettings*][]                                                              | Not available | Not available | Required |
-| [Hosts*][]                                                                                   | Required   | Required     | Optional     |
+| [Requirements (MailApp)][]\*                                                                 | Not applicable| Not available | Required |
+| [Set][]\*<br/>[Sets (Requirements)][]\*<br/>[Sets (MailAppRequirements)][]\*                 | Required   | Required     | Required     |
+| [Form][]\*<br/>[FormSettings][]\*                                                            | Not available | Not available | Required |
+| [Hosts][]\*                                                                                  | Required   | Required     | Optional     |
 
 _\*Added in the Office Add-in Manifest Schema version 1.1._
 
@@ -86,13 +86,13 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 [permissions (mailapp)]: /javascript/api/manifest/permissions
 [rule (rulecollection)]: /javascript/api/manifest/rule
 [rule (mailapp)]: /javascript/api/manifest/rule
-[requirements (mailapp)*]: /javascript/api/manifest/requirements
-[set*]: /javascript/api/manifest/set
-[sets (mailapprequirements)*]: /javascript/api/manifest/sets
-[form*]: /javascript/api/manifest/form
-[formsettings*]: /javascript/api/manifest/formsettings
-[sets (requirements)*]: /javascript/api/manifest/sets
-[hosts*]: /javascript/api/manifest/hosts
+[requirements (mailapp)]: /javascript/api/manifest/requirements
+[set]: /javascript/api/manifest/set
+[sets (mailapprequirements)]: /javascript/api/manifest/sets
+[form]: /javascript/api/manifest/form
+[formsettings]: /javascript/api/manifest/formsettings
+[sets (requirements)]: /javascript/api/manifest/sets
+[hosts]: /javascript/api/manifest/hosts
 
 ## Hosting requirements
 
