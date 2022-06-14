@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 06/09/2022
+ms.date: 06/14/2022
 ms.localizationpriority: medium
 ---
 
@@ -327,7 +327,7 @@ Add-in launch-event handlers are expected to be short-running, lightweight, and 
 
 If the user has multiple add-ins that subscribed to the same event, the Outlook platform launches the add-ins in no particular order. Currently, only five event-based add-ins can be actively running.
 
-The user can switch or navigate away from the current mail item where the add-in started running. The add-in that was launched will finish its operation in the background.
+In Outlook on Windows and the web, the user can't switch or navigate away from the current mail item where the add-in started running. Navigating away from the item (for example, switching to another compose window or tab) terminates the add-in operation. The add-in also ceases operation when the user sends the message or appointment they're composing.
 
 Imports are not supported in the JavaScript file where you implement the handling for event-based activation in the Windows client.
 
