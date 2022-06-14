@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: Learn how to create a Node.js-based add-in that uses Office Single Sign-on.
-ms.date: 03/28/2022
+ms.date: 06/10/2022
 ms.localizationpriority: medium
 ---
 
@@ -69,8 +69,10 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Select **Save** at the top of the form.
 
-1. Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value for **Description** then select an appropriate option for **Expires** and choose **Add**. *Copy the client secret value immediately and save it with the application ID* before proceeding as you'll need it in a later procedure.
-
+1. Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value for **Description** then select an appropriate option for **Expires** and choose **Add**.
+    
+    The web application uses the client secret to prove its identity when it requests tokens. *Record this value for use in a later step - it's shown only once.*
+    
 1. Select **Expose an API** under **Manage**. Select the **Set** link. This will generate the Application ID URI in the form "api://$App ID GUID$", where $App ID GUID$ is the **Application (client) ID**.
 
 1. In the generated ID, insert `localhost:44355/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. When you are finished, the entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.

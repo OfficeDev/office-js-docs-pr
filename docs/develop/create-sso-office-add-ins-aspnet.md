@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
 description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
-ms.date: 03/28/2022
+ms.date: 06/10/2022
 ms.localizationpriority: medium
 ---
 
@@ -48,7 +48,7 @@ Use the following settings for your app registration.
 
 * Platform: **Web**
 * Redirect URI: **https://localhost:44355/AzureADAuth/Authorize**
-* Client secret: `*********` (record this value after creation - it's shown only once)
+* Client secret: `*********` (The web application uses the client secret to prove its identity when it requests tokens. *Record this value for use in a later step - it's shown only once.*)
 
 ### Expose a web API
 
