@@ -147,7 +147,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
     :::image type="content" source="../images/select-insert.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the My Add-ins down-arrow highlighted.":::
 
-1. In the list of available add-ins, find the **Developer Add-ins** section and select the **My custom functions add-in** add-in to register it.
+1. In the list of available add-ins, find the **Developer Add-ins** section and select **My custom functions add-in** to register it.
 
     :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the Excel custom functions add-in highlighted in the My Add-ins list.":::
 
