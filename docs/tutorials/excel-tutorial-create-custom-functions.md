@@ -40,7 +40,7 @@ In this tutorial, you will:
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `My custom functions add-in`
 
-    :::image type="content" source="../images/starcountPrompt.png" alt-text="Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
+    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
 
     The Yeoman generator will create the project files and install supporting Node components.
 
@@ -149,7 +149,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. In the list of available add-ins, find the **Developer Add-ins** section and select the **My custom functions add-in** add-in to register it.
 
-    :::image type="content" source="../images/list-starcount.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list.":::
+    :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the Excel custom functions add-in highlighted in the My Add-ins list.":::
 
 # [Excel on the web](#tab/excel-online)
 
