@@ -560,12 +560,12 @@ items:
     - name: Return a dynamic array
       href: excel/custom-functions-dynamic-arrays.md
       displayName: Excel, Custom Functions
-    - name: UI-less custom functions
+    - name: Custom functions without a shared runtime
       items: 
-        - name: Authentication for UI-less functions
+        - name: Authentication for custom functions without a shared runtime
           href: excel/custom-functions-authentication.md
           displayName: Excel, Custom Functions
-        - name: Runtime
+        - name: JavaScript-only runtime for custom functions
           href: excel/custom-functions-runtime.md
           displayName: Excel, Custom Functions
     - name: Volatile functions
