@@ -1,7 +1,7 @@
 ---
 title: Teams manifest for Office Add-ins (preview)
 description: Get an overview of the preview JSON manifest.
-ms.date: 05/24/2022
+ms.date: 06/15/2022
 ms.localizationpriority: high
 ---
 

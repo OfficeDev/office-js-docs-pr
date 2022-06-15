@@ -1,7 +1,7 @@
 ---
 title: Custom functions debugging
 description: Learn how to debug your Excel custom functions that don't use a shared runtime.
-ms.date: 06/09/2022
+ms.date: 06/15/2022
 ms.localizationpriority: medium
 ---
 
