@@ -1,5 +1,5 @@
 ---
-ms.date: 06/15/2020
+ms.date: 06/15/2022
 description: Authenticate users using custom functions that don't use a shared runtime.
 title: Authentication for custom functions without a shared runtime
 ms.localizationpriority: medium
@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Authentication for custom functions without a shared runtime
 
-In some scenarios a custom function, that doesn't use a shared runtime, will need to authenticate the user in order to access protected resources. Custom functions that don't use a shared runtime run in a JavaScript-only runtime. Because of this, if the add-in has a task pane, you'll need to pass data back and forth between the JavaScript-only runtime and the HTML-supporting runtime used by the task pane. You do this by using the [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) object and a special Dialog API.
+In some scenarios, a custom function that doesn't use a shared runtime will need to authenticate the user in order to access protected resources. Custom functions that don't use a shared runtime run in a JavaScript-only runtime. Because of this, if the add-in has a task pane, you'll need to pass data back and forth between the JavaScript-only runtime and the HTML-supporting runtime used by the task pane. You do this by using the [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) object and a special Dialog API.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
