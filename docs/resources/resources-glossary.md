@@ -133,7 +133,7 @@ See also: [quick start](#quick-start).
 
 ## custom functions-only add-in
 
-An add-in that contains a custom function, but no UI such as a task pane. The custom functions in this kind of add-in run in a JavaScript-only runtime. A custom function that does include a UI can use either a shared runtime or a combination of a JavaScript-only runtime and an HTML-supporting runtime.
+An add-in that contains a custom function, but no UI such as a task pane. The custom functions in this kind of add-in run in a JavaScript-only runtime. A custom function that does include a UI can use either a shared runtime or a combination of a JavaScript-only runtime and an HTML-supporting runtime. We recommend that if you have a UI, you use a shared runtime. 
 
 See also: [custom function](#custom-function), [custom functions runtime](#custom-functions-runtime).
 
