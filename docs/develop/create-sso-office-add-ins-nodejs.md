@@ -97,14 +97,14 @@ You need to create an app registration in Azure that represents your web server'
 
 1. In the **Authorized client applications** section, enter the following ID to pre-authorize all Microsoft Office application endpoints.
 
-   - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (All Microsoft Office application endpoints)
+   * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (All Microsoft Office application endpoints)
 
     > [!NOTE]
     > The `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID pre-authorizes Office on all the following platforms. Alternatively, you can enter a proper subset of the following IDs if for any reason you want to deny authorization to Office on some platforms. Just leave out the IDs of the platforms from which you want to withhold authorization. Users of your add-in on those platforms will not be able to call your Web APIs, but other functionality in your add-in will still work.
     >
-    > - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
-    > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
+    > * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    > * `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
+    > * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
 1. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/$App ID GUID$/access_as_user`.
 
@@ -176,11 +176,20 @@ To complete the configuration of the two app registrations you need to grant cli
 
 1. Open the `\Begin` folder in the cloned project in your code editor.
 
-1. Open the `.ENV` file and use the values that you copied earlier from the **Office-Add-in-NodeJS-SSO-middle-tier** app registration. Set the **CLIENT_ID** to your **Application (client) ID**, and set the **CLIENT_SECRET** to your client secret. The values should **not** be in quotation marks. When you are done, the file should be similar to the following:
+1. Open the `.ENV` file and use the values that you copied earlier from the **Office-Add-in-NodeJS-SSO-middle-tier** app registration. Set the values as follows:
+
+    |Name              |Value                          |
+    |------------------|-------------------------------|
+    |**CLIENT_ID**     |  **Application (client) ID** from app registration overview page. |
+    |**CLIENT_SECRET** |  Client secret saved from **Certificates & Secrets** page. |
+    |**DIRECTORY_ID**  |  **Directory (tenant) ID** from app registration overview page. |
+
+    The values should **not** be in quotation marks. When you are done, the file should be similar to the following:
 
     ```javascript
     CLIENT_ID=8791c036-c035-45eb-8b0b-265f43cc4824
     CLIENT_SECRET=X7szTuPwKNts41:-/fa3p.p@l6zsyI/p
+    DIRECTORY_ID=478aa78e-20ba-4c0d-9ffe-c4f62e5de3d5
     NODE_ENV=development
     ```
 
@@ -197,420 +206,405 @@ To complete the configuration of the two app registrations you need to grant cli
     </WebApplicationInfo>
     ```
 
-1. Replace the placeholder "$middle_tier_application_GUID here$" *in both places* in the markup with the Application ID that you copied when you created the **Office-Add-in-NodeJS-SSO-middle-tier** app registration. The "$" symbols are not part of the ID, so do not include them. This is the same ID you used in for the CLIENT_ID and Audience in the .ENV file.
+1. Replace the placeholder "$middle_tier_application_GUID here$" *in both places* in the markup with the Application ID that you copied when you created the **Office-Add-in-NodeJS-SSO-middle-tier** app registration. The "$" symbols are not part of the ID, so do not include them. This is the same ID you used for the CLIENT_ID in the .ENV file.
 
    > [!NOTE]
    > The **Resource** value is the **Application ID URI** you set when you registered the add-in. The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
 
-1. Open the `\public\javascripts\fallbackAuthDialog.js` file. Replace the placeholder $fallback_application_GUID here$ with the **Application (client) ID** that you saved from the **Office-Add-in-NodeJS-Fallback** you created previously.
+1. Open the `\public\javascripts\fallbackAuthDialog.js` file. Replace the placeholder $fallback_application_GUID_here$ with the **Application (client) ID** that you saved from the **Office-Add-in-NodeJS-Fallback** you created previously.
 
 ## Code the client-side
 
-### Create the SSO logic
+### Create client request and response handler
 
 1. In your code editor, open the file `public\javascripts\ssoAuthES6.js`. It already has code that ensures that Promises are supported, even in Internet Explorer 11, and an `Office.onReady` call to assign a handler to the add-in's only button.
 
    > [!NOTE]
    > As the name suggests, the ssoAuthES6.js uses JavaScript ES6 syntax because using `async` and `await` best shows the essential simplicity of the SSO API. When the localhost server is started, this file is transpiled to ES5 syntax so that the sample will run in Internet Explorer 11.
 
-1. Add the following code below the Office.onReady method.
+A key part of the sample code is the client request. The client request is an object that tracks information about the request for calling REST APIs on the middle-tier server. It's necessary because the client request state needs to be tracked or updated through the following scenarios:
 
-    > [!NOTE]
-    > To distinguish between the two access tokens you work with in this article, the token returned from getAccessToken() is referred to as a bootstrap token. It is later exchanged through the On-Behalf-Of flow for a new token with access to Microsoft Graph.
+* SSO retries where the REST API call fails because it needs additional consent. The sample code calls getAccessToken with updated Auth options, gets the required user consent, and then calls the REST API again. The goal is to not fail in scenarios where a REST API needs additional consent.
+* SSO fails and fallback auth is required. The access token is acquired through MSAL in a popup dialog box. The goal is to not fail in this scenario and gracefully fall back to the alternative auth approach.
+
+The client request object tracks the following data:
+
+* `authOptions` - [Auth configuration parameters](/javascript/api/office/office.authoptions) for SSO.
+* `authSSO` - true if using SSO, otherwise false.
+* `accessToken` - The access token to the server. The method to obtain this token is different for SSO than fallback auth.
+* `url` - The URL of the REST API to call on the server.
+* `callbackHandler` - The function to pass the results of the REST API call.
+* `callbackFunction` - The function to pass the client request to when ready.
+
+1. In the `createRequest` function, replace `TODO 1` with the following code to initialize the client request object:
 
     ```javascript
-    async function getGraphData() {
-        try {
-            
-            // TODO 1: Tell Office to get a bootstrap token from Azure AD.
-            
-            // TODO 2: Attempt to exchange the bootstrap token for a new
-            //         access token to Microsoft Graph.
+    const clientRequest = {
+    authOptions: {
+      allowSignInPrompt: true,
+      allowConsentPrompt: true,
+      forMSGraphAccess: true,
+    },
+    authSSO: authSSO,
+    accessToken: null,
+    url: url,
+    callbackRESTApiHandler: restApiCallback,
+    callbackFunction: callbackFunction,
 
-            // TODO 3: Handle case where Microsoft Graph requires an 
-            //         additional form of authentication.
-
-            // TODO 4: Use the access token in a call to Microsoft Graph 
-            //         or handle any error from the attempted token exchange.
-
-        }
-        catch(exception) {
-
-            // TODO 5: Respond to exceptions thrown by the
-            //         Office.auth.getAccessToken call.
-
-        }
+  };
     }
     ```
 
-1. Replace `TODO 1` with the following code. About this code, note the following:
+1. Replace `TODO 2` with the following code. About this code, note:
 
-    * `Office.auth.getAccessToken` instructs Office to get a bootstrap token from Azure AD. The bootstrap token is an ID token, but it also has a `scp` (scope) property with the value `access-as-user`. This token can be exchanged by a web application for an access token with permissions to Microsoft Graph.
-    * Setting the `allowSignInPrompt` option to true means that if no user is currently signed into Office, then Office will open a popup sign-in prompt.
-    * Setting the `allowConsentPrompt` option to true means that if the user has not consented to let the add-in access the user's AAD profile, then Office will open a consent prompt. (The prompt only allows the user to consent to the user's AAD profile, not to Microsoft Graph scopes.)
-    * Setting the `forMSGraphAccess` option to true signals to Office that the add-in intends to use the bootstrap token to get an additional access token with permissions to Microsoft Graph, instead of just using it as an ID token. If the tenant administrator has not granted consent to the add-in's access to Microsoft Graph, then `Office.auth.getAccessToken` returns error **13012**. The add-in can respond by falling back to an alternative system of authorization, which is necessary because Office can prompt only for consent to the user's Azure AD profile, not to any Microsoft Graph scopes. The fallback authorization system requires the user to sign in again and the user *can* be prompted to consent to Microsoft Graph scopes. So, the `forMSGraphAccess` option ensures that the add-in won't make a token exchange that will fail due to lack of consent. (Since you granted administrator consent in an earlier step, this scenario won't happen for this add-in. But the option is included here anyway to illustrate a best practice.)
+    * It checks if SSO is being used. The method to acquire the access token is different for SSO than for fallback auth.
+    * If SSO returns the access token, it calls the `callbackfunction` function. For fallback auth it calls `dialogFallback`, which will eventually call the callback function after the user signs in through MSAL.
 
     ```javascript
-    let bootstrapToken = await Office.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
-    ```
+    // Get access token.
 
-1. Replace `TODO 2` with the following code. You'll create the `getGraphToken` method in a later step.
-
-    ```javascript
-    let exchangeResponse = await getGraphToken(bootstrapToken);
-    ```
-
-1. Replace `TODO 3` with the following. About this code, note:
-
-    * If the Microsoft 365 tenant has been configured to require multifactor authentication, then the `exchangeResponse` will include a `claims` property with information about the additional required factors. In that case, `Office.auth.getAccessToken` should be called again with the `authChallenge` option set to the value of the claims property. This tells AAD to prompt the user for all required forms of authentication.
-
-    ```javascript
-    if (exchangeResponse.claims) {
-        let mfaBootstrapToken = await Office.auth.getAccessToken({ authChallenge: exchangeResponse.claims });
-        exchangeResponse = await getGraphToken(mfaBootstrapToken);
+  if (authSSO) {
+    try {
+      // Get access token from Office SSO.
+      clientRequest.accessToken = await getAccessTokenFromSSO(clientRequest.authOptions);
+      callbackFunction(clientRequest);
+    } catch {
+      // use fallback auth if SSO failed to get access token.
+      switchToFallbackAuth(clientRequest);
     }
+  } else {
+    // Use fallback auth to get access token.
+    dialogFallback(clientRequest);
+  }
     ```
 
-1. Replace `TODO 4` with the following. About this code, note:
+1. In the `getFileNameList` function, replace `TODO 3` with the following code. About this code, note:
 
-    * You'll create the `handleAADErrors` method in a later step. Azure AD errors are returned to the client as HTTP code 200 Responses. They do not throw errors, so they do not trigger the `catch` block of the `getGraphData` method.
-    * You'll create the `makeGraphApiCall` method in a later step. It makes an AJAX call to the MS Graph endpoint. Errors are caught in the `.fail` callback of that call, not in the `catch` block of the `getGraphData` method.
+    * The function `getFileNameList` is called when the user chooses the **Get OneDrive File Names** button on the task pane.
+    * It creates a client request to track information about the call, such as the URL of the REST API.
+    * When the REST API returns a result, it is passed to the `handleGetFileNameResponse` function. This callback is passed as a parameter to `createRequest` and will be tracked in `clientRequest.callbackRESTApiHandler`.
+    * The code calls `callWebServer` with the client request to perform next steps and call the REST API.
 
     ```javascript
-    if (exchangeResponse.error) {
-        handleAADErrors(exchangeResponse);
-    } 
-    else {
-        makeGraphApiCall(exchangeResponse.access_token);
+        createRequest("/getuserfilenames",handleGetFileNameResponse, async (clientRequest) => {
+    await callWebServer(clientRequest);
+
+  });
+    ```
+
+1. In the `handleGetFileNameResponse` function, replace `TODO 4` with the following code. About this code, note:
+
+    * The code passes the response (which contains a list of filenames) to `writeFileNamesToOfficeDocument` to write the filenames to the document.
+    * The code checks for errors. It shows a success message if the filenames are written, otherwise it shows an error.
+
+    ```javascript
+    if (response != null) {
+    try {
+      await writeFileNamesToOfficeDocument(response);
+      showMessage("Your OneDrive filenames are added to the document.");
+    } catch (error) {
+      // The error from writeFileNamesToOfficeDocument will begin
+      // "Unable to add filenames to document."
+      showMessage(error);
     }
+
+  } else
+    showMessage("A null response was returned to handleGetFileNameResponse.");
     ```
 
-1. Replace `TODO 5` with the following:
+### Get the SSO access token
 
-    * Errors from the call of `getAccessToken` will have a `code` property with an error number, typically in the 13xxx range. You'll create the `handleClientSideErrors` method in a later step.
-    * The `showMessage` method displays text on the task pane.
+1. In the `getAccessTokenFromSSO` function, replace `TODO 5` with the following code. About this code, note:
 
-    ```javascript
-    if (exception.code) { 
-        handleClientSideErrors(exception);
-    }
-    else {
-        showMessage("EXCEPTION: " + JSON.stringify(exception));
-    }
-    ```
-
-1. Below the `getGraphData` method, add the following function. Note that `/auth` is a server-side Express route that exchanges the bootstrap token with Azure AD for an access token with permissions to Microsoft Graph.
+    * It calls `Office.auth.getAccessToken` to get the access token from Office.
+    * If an error occurs it calls `handleSSOErrors` function. If the error could not be handled, it will throw an error to the caller. This is the indication to the caller to switch to fallback auth.
 
     ```javascript
-    async function getGraphToken(bootstrapToken) {
-        let response = await $.ajax({type: "GET", 
-            url: "/auth",
-            headers: {"Authorization": "Bearer " + bootstrapToken }, 
-            cache: false
-        });
-        return response;
-    }
-    ```
-
-1. Below the `getGraphToken` method, add the following function. Note that `error.code` is a number, usually in the range 13xxx.
-
-    ```javascript
-    function handleClientSideErrors(error) {
-        switch (error.code) {
-
-            // TODO 6: Handle errors where the add-in should NOT invoke 
-            //         the alternative system of authorization.
-
-            // TODO 7: Handle errors where the add-in should invoke 
-            //         the alternative system of authorization.
-
-        }
-    }
-    ```
-
-1. Replace `TODO 6` with the following code.
-For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md).
-
-    ```javascript
-    case 13001:
-        // No one is signed into Office. If the add-in cannot be effectively used when no one 
-        // is logged into Office, then the first call of getAccessToken should pass the 
-        // `allowSignInPrompt: true` option. Since this add-in does that, you should not see
-        // this error. 
-        showMessage("No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to sign in, press the Get OneDrive File Names button again.");  
-        break;
-    case 13002:
-        // Office.auth.getAccessToken was called with the allowConsentPrompt 
-        // option set to true. But, the user aborted the consent prompt. 
-        showMessage("You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."); 
-        break;
-    case 13006:
-        // Only seen in Office on the web.
-        showMessage("Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
-        break;
-    case 13008:
-        // The Office.auth.getAccessToken method has already been called and 
-        // that call has not completed yet. Only seen in Office on the web.
-        showMessage("Office is still working on the last operation. When it completes, try this operation again."); 
-        break;
-    case 13010:
-        // Only seen in Office on the web.
-        showMessage("Follow the instructions to change your browser's zone configuration.");
-        break;
-    ```
-
-1. Replace `TODO 7` with the following code. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). The function `dialogFallback` invokes the alternative system of authorization. In this add-in, the fallback system opens a dialog which requires the user to sign in, even if the user already is, and uses msal.js and the Implicit Flow to get an access token to Microsoft Graph.
-
-    ```javascript
-    default:
-    // For all other errors, including 13000, 13003, 13005, 13007, 13012, 
-    // and 50001, fall back to non-SSO sign-in.
-    dialogFallback();
-    break;
-    ```
-
-1. Below the `handleClientSideErrors` function, add the following function.
-
-    ```javascript
-    function handleAADErrors(exchangeResponse) {
-
-    // TODO 8: Handle case where the bootstrap token is expired.
-
-    // TODO 9: Handle all other Azure AD errors.
+     try {
+    // The access token returned from getAccessToken only has permissions to your web server APIs,
+    // and it contains the identity claims of the signed-in user.
     
-    }
+    const accessToken = await Office.auth.getAccessToken(authOptions);
+    return accessToken;
+
+  } catch (error) {
+    let fallbackRequired = handleSSOErrors(error);
+    if (fallbackRequired) throw error; // Rethrow the error and caller will switch to fallback auth.
+    return null; // Returning a null token indicates no need for fallback (an explanation about the error condition was shown by handleSSOErrors).
+  }
     ```
 
-1. On rare occasions the bootstrap token that Office has cached is unexpired when Office validates it but expires by the time it reaches Azure AD for exchange. Azure AD will respond with error **AADSTS500133**. In this case, the add-in should simply call `getGraphData` again. Since the cached bootstrap token is now expired, Office will get a new one from Azure AD. So, replace `TODO 8` with the following.
+1. In the `handleSSOErrors` function, replace `TODO 6` with the following code. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md).
+
+```javascript
+ let fallbackRequired = false;
+  switch (err.code) {
+    case 13001:
+      // No one is signed into Office. If the add-in cannot be effectively used when no one
+      // is logged into Office, then the first call of getAccessToken should pass the
+      // `allowSignInPrompt: true` option. Since this sample does that, you should not see
+      // this error.
+      showMessage(
+        "No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to log in, press the Get OneDrive File Names button again."
+      );
+      break;
+    case 13002:
+      // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
+      // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
+      showMessage(
+        "You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."
+      );
+      break;
+    case 13006:
+      // Only seen in Office on the web.
+      showMessage(
+        "Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."
+      );
+      break;
+    case 13008:
+      // Only seen in Office on the web.
+      showMessage(
+        "Office is still working on the last operation. When it completes, try this operation again."
+      );
+      break;
+    case 13010:
+      // Only seen in Office on the web.
+      showMessage(
+        "Follow the instructions to change your browser's zone configuration."
+      );
+      break;
+```
+
+1. Replace `TODO 7` with the following code. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). For any errors that can't be handled `true` is returned to the caller. This indicates the caller should switch to using MSAL as fallback auth.
+
+```javascript
+ default:
+      // For all other errors, including 13000, 13003, 13005, 13007, 13012, and 50001, fall back
+      // to non-SSO sign-in.
+      fallbackRequired = true;
+      break;
+  }
+  return fallbackRequired;
+```
+
+### Call the REST API on the middle tier server
+
+1. In the `callWebServer` function, replace `TODO 8` with the following code. About this code, note:
+
+    * The actual AJAX call will be made by the `ajaxCallToRESTApi` function.
+    * This function will attempt to get a new access token if the middle tier server returns an error indicating that the current token expired.
+    * If the AJAX call cannot be completed successfully, `switchToFallbackAuth` will be called to use MSAL auth instead of Office SSO.
 
     ```javascript
-    if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
-    {
-        getGraphData();
-    }
+    try {
+          await ajaxCallToRESTApi(clientRequest);
+        } catch (error) {
+          if (error.statusText === "Internal Server Error") {
+            const isTokenExpired = handleWebServerErrors(error);
+            if (isTokenExpired && clientRequest.authSSO) {
+              try {
+                clientRequest.accessToken = await getAccessTokenFromSSO(clientRequest.authOptions);
+                await ajaxCallToRESTApi(clientRequest);
+              } catch {
+                // If still an error go to fallback.
+                switchToFallbackAuth(clientRequest);
+                return;
+              }
+            } else {
+              // For unhandled errors using SSO, switch to fallback.
+              if (clientRequest.authSSO) {
+                switchToFallbackAuth(clientRequest);
+              } else {
+                console.log(JSON.stringify(error)); // Log any errors.
+                showMessage(error.responseText);
+              }
+            }
+          } else {
+            console.log(JSON.stringify(error)); // Log any errors.
+                showMessage(error.responseText);
+          }
+        }
     ```
 
-1. To ensure that the add-in doesn't enter an infinite loop of calls to `getGraphData`, the add-in should keep track of how many times `getGraphData` has been called and be sure that is not called recursively called more than once. So, create a counter variable in a scope that is global to the `handleAADErrors` and `getGraphData` functions. A good place for global variables is just below the `Office.onReady` method call.
+1. In the `ajaxCallToRESTApi` function, replace `TODO 9` with the following code. About this code, note:
 
-    ```javascript
-    let retryGetAccessToken = 0;
-    ```
+    * The function explicitly rethrows any errors for the caller to handle.
 
-1. Change the `if` structure in the `handleAADErrors` method so that it:
-
-    * Increments the counter just before it calls `getGraphData`.
-    * Tests to ensure that `getGraphData` has not already been called a second time.
-
-    So the final version of the `if` structure should look like the following:
-
-    ```javascript
-    if ((exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
-        &&
-        (retryGetAccessToken <= 0)) 
-    {
-        retryGetAccessToken++;
-        getGraphData();
-    }
-    ```
-
-1. Replace `TODO 9` with the following:
-
-    ```javascript
-    else {
-        dialogFallback();
-    }
-    ```
-
-1. Save and close the file.
-
-### Get the data and add it to the Office document
-
-1. In the `public\javascripts` folder, create a new file named `data.js`.
-
-1. Add the following function to the file. This is the function that is called by the `getGraphData` function when it has acquired an access token to Microsoft Graph.
-
-    ```javascript
-    function makeGraphApiCall(accessToken) {
-        $.ajax(
-
-            // TODO 10: Call an Express route on the add-in's server-side 
-            //          code and pass the access token to Microsoft Graph.
-
-        )
-        .done(function (response) {
-
-            // TODO 11: Write the data received from Microsoft Graph to 
-            //          the Office document.
-
-        })
-        .fail(function (errorResult) {
-            showMessage("Error from Microsoft Graph: " + JSON.stringify(errorResult));
-        });
-    }
-    ```
-
-1. Replace `TODO 10` with the following. About this code, note:
-
-    * This object is the parameter to the `$.ajax` method.
-    * The `/getuserdata` is an Express route on the add-in's server that you create in a later step. It will call a Microsoft Graph endpoint and include the access token in its call.
-
-    ```javascript
-    {
-        type: "GET",
-        url: "/getuserdata",
-        headers: {"access_token": accessToken },
-        cache: false
-    }
-    ```
-
-1. Replace `TODO11` with the following. About this code, note:
-
-    * The `writeFileNamesToOfficeDocument` will insert the data from Graph into the Office document. It is defined in the `public\javascripts\document.js` file.
-    * If `writeFileNamesToOfficeDocument` returns an error, it will begin with "Unable to add filenames to document."
-
-    ```javascript
-    writeFileNamesToOfficeDocument(response)
-    .then(function () {
-        showMessage("Your data has been added to the document.");
-    })
-    .catch(function (error) {
-        showMessage(error);
+```javascript
+try {
+    await $.ajax({
+      type: "GET",
+      url: clientRequest.url,
+      headers: { Authorization: "Bearer " + clientRequest.accessToken },
+      cache: false,
+      success: function (data) {
+        result = data;
+        // Send result to the callback handler.
+        clientRequest.callbackRESTApiHandler(result);
+      },
     });
-    ```
+  } catch (error) {
+    // This function explicitly requires the caller to handle any errors
+    throw error;
+  }
+```
 
-1. Save and close the file.
+1. In the `handleWebServerErrors` function, replace `TODO 10` with the following code. About this code, note:
 
-## Code the server-side
+* The error is returned by the middle tier server which will indicate the type of error to make it easier to handle here.
+* For **Microsoft Graph** errors, show the message on the task pane.
+* For the **AADSTS500133** error, return true so the caller knows the token expired and should get a new one.
+* For all other messages, show the message on the task pane.
 
-### Create the auth router and the token exchange logic
+```javascript
+ let returnValue = false;
+  // Our web server returns a type to help handle the known cases.
+  switch (err.responseJSON.type) {
+    case "Microsoft Graph":
+      // An error occurred when the web server called Microsoft Graph.
+      showMessage(
+        "Error from Microsoft Graph: " +
+        JSON.stringify(err.responseJSON.errorDetails)
+      );
+      returnValue = false;
+      break;
+    case "AADSTS500133": // expired token
+      // On rare occasions the access token could expire after it was sent to the server.
+      // Microsoft identity platform will respond with
+      // "The provided value for the 'assertion' is not valid. The assertion has expired."
+      // Return true to indicate to caller they should refresh the token.
+      returnValue = true;
+      break;
+    default:
+      showMessage(
+        "Unknown error from web server: " +
+        JSON.stringify(err.responseJSON.errorDetails)
+      );
+      returnValue = false;
+  }
+  return false;
+```
 
-1. Open the file `routes\authRoute.js` and add the following route function just below the `require` statements and above the `module.exports` statement. Note that the URL parameter of `router.get` is '/'. Since this route is being defined in a router that will handle all HTTP Requests for the URL '/auth', this route effectively handles all requests for '/auth'. The client-side `getGraphToken` function that you created earlier calls this route.  
+Fallback auth will use the MSAL library to sign in the user. The add-in itself is an SPA, and uses an SPA app registration to access the middle-tier server.
+
+1. In the `switchToFallbackAuth` function, replace `TODO 11` with the following code. About this code, note:
+
+    * It sets the global `authSSO` to false, and creates a new client request that uses MSAL for auth. The new request will have an MSAL access token to the middle tier server.
+    * Once the request is created it calls `callWebServer` to continue attempting to call the middle tier server successfully.
 
     ```javascript
-    router.get('/', async function(req, res, next) {
-
-        // TODO 12: Test for the presence of the Authorization header.
-
-        // TODO 13: Create the hidden form that will be sent to Azure AD 
-        //          to request the access token in exchange for the 
-        //          bootstrap token.
-
-        // TODO 14: Send the POST request to Azure AD and relay the 
-        //          access token (or an error) to the client.
-
-    });
+    showMessage("Switching from SSO to fallback auth.");
+      authSSO = false;
+      // Create a new request for fallback auth.
+      createRequest(clientRequest.url, clientRequest.callbackRESTApiHandler, async (fallbackRequest) => {
+        // Hand off to call using fallback auth.
+        await callWebServer(fallbackRequest);
+      });
     ```
 
-1. Replace `TODO 12` with the following code.
+## Code the middle tier server
+
+The middle tier server provides REST APIs for the client to call. For example the REST API `/getuserfilenames` will get a list of filenames from the user's OneDrive folder. Each REST API call requires an access token by the client to ensure the correct client is accessing their data. The access token is exchanged for a Microsoft Graph token through the On-Behalf-Of (OBO) flow. The new Microsoft Graph token is cached by the MSAL library for subsequent API calls. It is never sent outside of the middle tier server. For more information, see [Middle-tier access token request](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#middle-tier-access-token-request)
+
+### Create the route and implement On-Behalf-Of flow
+
+1. Open the file `routes\getFilesRoute.js` and replace `TODO 12` with the following code. Note that the code calls `authHelper.validateJwt`. This ensures the access token is valid and has not been tampered with. For more information, see [Validating tokens](/azure/active-directory/develop/access-tokens#validating-tokens).
 
     ```javascript
-    const authorization = req.get('Authorization');
-    if (authorization == null) {
-        let error = new Error('No Authorization header was found.');
-        next(error);
-    } 
+    router.get(
+      "/getuserfilenames",
+      authHelper.validateJwt,
+      async function (req, res) {
+    
+        // TODO 13: Exchange the access token for a Microsoft Graph token
+        //          by using the OBO flow.
+    
+      }
+    );
     ```
 
-1. Replace `TODO 13` with the following code. About this code, note the following:
+1. Replace `TODO 13` with the following code. About this code, note:
 
-    * This is the beginning of a long `else` block, but the closing `}` is not at the end yet because you will be adding more code to it.
-    * The `authorization` string is "Bearer " followed by the bootstrap token, so the first line of the `else` block is assigning the token to the `jwt`. ("JWT" stands for "JSON Web Token".)
-    * The two `process.env.*` values are the constants that you assigned when you configured the add-in.
-    * The `requested_token_use` form parameter is set to 'on_behalf_of'. This tells Azure AD that the add-in is requesting an access token to Microsoft Graph using the On-Behalf-Of flow (OBO). Azure responds by validating that the bootstrap token, which is assigned to `assertion` form parameter, has a `scp` property that is set to `access-as-user`.
-    * The `scope` form parameter is set to 'Files.Read.All' which is the only Microsoft Graph scope that the add-in needs.
+    * It only requests the minimum scopes it needs, such as `files.read.all`.
+    * It uses the MSAL authHelper to perform the OBO flow in the call to `acquireTokenOnBehalfOf`.
 
     ```javascript
-     else {
-        const [schema, jwt] = authorization.split(' ');
-        const formParams = {
-        client_id: process.env.CLIENT_ID,
-        client_secret: process.env.CLIENT_SECRET,
-        grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-        assertion: jwt,
-        requested_token_use: 'on_behalf_of',
-        scope: ['Files.Read.All'].join(' ')
+       const authHeader = req.headers.authorization;
+        let oboRequest = {
+          oboAssertion: authHeader.split(" ")[1],
+          scopes: ["files.read.all"],
         };
+    
+        const cca = authHelper.getConfidentialClientApplication();
+        cca
+          .acquireTokenOnBehalfOf(oboRequest)
+          .then(async (response) => {
+         // TODO 14: Call Microsoft Graph to get list of filenames.
+          })
+          .catch((err) => {
+          // TODO 15: Handle any errors.
+          });
     ```
 
-1. Replace `TODO 14` with the following code, which completes the `else` block. About this code, note the following:
+1. Replace `TODO 14` with the following code. About this code, note:
 
-    * The const `tenant` is set to 'common' because you configured the add-in as multitenant when you registered it with Azure AD; specifically when you set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**. If you had instead chosen to support only accounts in the same Microsoft 365 tenancy where the add-in is registered, then in this code `tenant` would be set to the GUID of the tenant.
-    * If the POST request does not error, then the response from Azure AD is converted to JSON and sent to the client. This JSON object has an `access_token` property to which Azure AD has assigned the access token to Microsoft Graph.
-
-    ```javascript
-        const stsDomain = 'https://login.microsoftonline.com';
-        const tenant = 'common';
-        const tokenURLSegment = 'oauth2/v2.0/token';
-
-        try {
-            const tokenResponse = await fetch(`${stsDomain}/${tenant}/${tokenURLSegment}`, {
-                method: 'POST',
-                body: formurlencoded(formParams),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            });
-            const json = await tokenResponse.json();
-
-            res.send(json);
-        }
-        catch(error) {
-            res.status(500).send(error);
-        }
-    }
-    ```
-
-1. Save and close the file.
-
-### Create the route that will fetch the data from Microsoft Graph
-
-1. Open the file `app.js` in the root of the project. Just below the route for '/dialog.html', add the following route. This route is called by the `makeGraphApiCall` function that you created in an earlier step.
+    * It constructs the URL for the Microsoft Graph API call and the makes the call via the `getGraphData` function.
+    * It returns errors by sending an HTTP 500 response along with details.
+    * On success it returns the JSON with the filename list to the client.
 
     ```javascript
-    app.get('/getuserdata', async function(req, res, next) {
+    console.log(response);
+    
+    // Minimize the data that must come from MS Graph by specifying only the property we need ("name")
+    // and only the top 10 folder or file names.
+    const rootUrl = "/me/drive/root/children";
+      
+    // Note that the last parameter, params, is hardcoded. If you reuse this code in
+    // a production add-in and any part of params comes from user input, be sure that it is
+    // sanitized so that it cannot be used in a Response header injection attack.
+    const params = "?$select=name&$top=10";
+    
+    let graphData = await getGraphData(
+        response.accessToken,
+        rootUrl,
+        params);
         
-        // TODO 15: Send a request to the Microsoft Graph REST endpoint.
-
-        // TODO 16: Trim excess information from the returned data and relay it
-        //          to the client.
-        
-    });
-    ```
-
-1. Replace `TODO 15` with the following. About this code, note:
-
-    * The caller of this route, `makeGraphApiCall`, added the access token to Microsoft Graph to the HTTP Request as a header named "access_token".
-    * The `getGraphData` function is defined in the `msgraph-helper.js` file. (This is not the same function as the client-side `getGraphData` function that you defined in the `ssoAuthES6.js` file.)
-    * The last parameter, for `queryParamsSegment`, is hardcoded. If you reuse this code in a production add-in and any part of `queryParamsSegment` comes from user input, be sure that it is sanitized so that it cannot be used in a Response header injection attack.
-    * The code minimizes the data that must come from Microsoft Graph by specifying only the property we need ("name") and only the top 10 folder or file names.
-
-    ```javascript
-    const graphToken = req.get('access_token');
-    const graphData = await getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=10");
-    ```
-
-1. Replace `TODO 16` with the following. About this code, note:
-
-    * If Microsoft Graph returns an error, such as invalid or expired token, there will be a code property in the returned object set to a HTTP status (e.g., 401). The code relays the error to the client. It will be caught in the `.fail` callback of `makeGraphApiCall`.
-    * Microsoft Graph data includes OData metadata and eTags that the add-in does not need, so the code constructs a new array containing only the file names to send to the client.
-
-    ```javascript
+    // If Microsoft Graph returns an error, such as invalid or expired token,
+    // there will be a code property in the returned object set to a HTTP status (e.g. 401).
+    // Return it to the client. On client side it will get handled in the fail callback of `makeWebServerApiCall`.
     if (graphData.code) {
-        next(createError(graphData.code, "Microsoft Graph error: " + JSON.stringify(graphData)));
-    }
-    else {
-        const itemNames = [];
-        const oneDriveItems = graphData['value'];
-        for (let item of oneDriveItems) {
-            itemNames.push(item['name']);
-        }
+      res
+        .status(500)
+        .send({ type: "Microsoft Graph", errorDetails: graphData });
+    } else {
+      // MS Graph data includes OData metadata and eTags that we don't need.
+      // Send only what is actually needed to the client: the item names.
+      const itemNames = [];
+      const oneDriveItems = graphData["value"];
+      for (let item of oneDriveItems) {
+        itemNames.push(item["name"]);
+      }
 
-        res.send(itemNames)
+      res.status(200).send(itemNames);
     }
     ```
 
-1. Save and close the file.
+1. Replace `TODO 15` with the following code. This code specifically checks if the token expired because the client can request a new token and call again.
+
+    ```javascript
+    // On rare occasions the SSO access token is unexpired when Office validates it,
+    // but expires by the time it is used in the OBO flow. Microsoft identity platform will respond
+    // with "The provided value for the 'assertion' is not valid. The assertion has expired."
+    // Construct an error message to return to the client so it can refresh the SSO token.
+    if (err.errorMessage.indexOf("AADSTS500133") !== -1) {
+      res.status(500).send({ type: "AADSTS500133", errorDetails: err });
+    } else {
+      res.status(500).send({ type: err.errorCode, errorDetails: err });
+    }
+    ```
+
+The sample must handle both fallback auth through MSAL and SSO auth through Office. The sample will try SSO first, and the `authSSO` boolean at the top of the file tracks if the sample is using SSO or has switched to fallback auth.
+
 
 ## Run the project
 
