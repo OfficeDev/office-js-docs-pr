@@ -240,19 +240,17 @@ The client request object tracks the following data:
 
     ```javascript
     const clientRequest = {
-    authOptions: {
-      allowSignInPrompt: true,
-      allowConsentPrompt: true,
-      forMSGraphAccess: true,
-    },
-    authSSO: authSSO,
-    accessToken: null,
-    url: url,
-    callbackRESTApiHandler: restApiCallback,
-    callbackFunction: callbackFunction,
-
-  };
-    }
+      authOptions: {
+        allowSignInPrompt: true,
+        allowConsentPrompt: true,
+        forMSGraphAccess: true,
+      },
+      authSSO: authSSO,
+      accessToken: null,
+      url: url,
+      callbackRESTApiHandler: restApiCallback,
+      callbackFunction: callbackFunction,
+    };
     ```
 
 1. Replace `TODO 2` with the following code. About this code, note:
@@ -262,20 +260,20 @@ The client request object tracks the following data:
 
     ```javascript
     // Get access token.
-
-  if (authSSO) {
-    try {
-      // Get access token from Office SSO.
-      clientRequest.accessToken = await getAccessTokenFromSSO(clientRequest.authOptions);
-      callbackFunction(clientRequest);
-    } catch {
-      // use fallback auth if SSO failed to get access token.
-      switchToFallbackAuth(clientRequest);
+  
+    if (authSSO) {
+      try {
+        // Get access token from Office SSO.
+        clientRequest.accessToken = await getAccessTokenFromSSO(clientRequest.authOptions);
+        callbackFunction(clientRequest);
+      } catch {
+        // use fallback auth if SSO failed to get access token.
+        switchToFallbackAuth(clientRequest);
+      }
+    } else {
+      // Use fallback auth to get access token.
+      dialogFallback(clientRequest);
     }
-  } else {
-    // Use fallback auth to get access token.
-    dialogFallback(clientRequest);
-  }
     ```
 
 1. In the `getFileNameList` function, replace `TODO 3` with the following code. About this code, note:
@@ -286,10 +284,9 @@ The client request object tracks the following data:
     * The code calls `callWebServer` with the client request to perform next steps and call the REST API.
 
     ```javascript
-        createRequest("/getuserfilenames",handleGetFileNameResponse, async (clientRequest) => {
-    await callWebServer(clientRequest);
-
-  });
+    createRequest("/getuserfilenames", handleGetFileNameResponse, async (clientRequest) => {
+      await callWebServer(clientRequest);
+    });
     ```
 
 1. In the `handleGetFileNameResponse` function, replace `TODO 4` with the following code. About this code, note:
@@ -299,17 +296,15 @@ The client request object tracks the following data:
 
     ```javascript
     if (response != null) {
-    try {
-      await writeFileNamesToOfficeDocument(response);
-      showMessage("Your OneDrive filenames are added to the document.");
-    } catch (error) {
-      // The error from writeFileNamesToOfficeDocument will begin
-      // "Unable to add filenames to document."
-      showMessage(error);
-    }
-
-  } else
-    showMessage("A null response was returned to handleGetFileNameResponse.");
+      try {
+        await writeFileNamesToOfficeDocument(response);
+        showMessage("Your OneDrive filenames are added to the document.");
+      } catch (error) {
+        // The error from writeFileNamesToOfficeDocument will begin
+        // "Unable to add filenames to document."
+        showMessage(error);
+      }
+    } else showMessage("A null response was returned to handleGetFileNameResponse.");
     ```
 
 ### Get the SSO access token
@@ -320,25 +315,24 @@ The client request object tracks the following data:
     * If an error occurs it calls `handleSSOErrors` function. If the error could not be handled, it will throw an error to the caller. This is the indication to the caller to switch to fallback auth.
 
     ```javascript
-     try {
-    // The access token returned from getAccessToken only has permissions to your web server APIs,
-    // and it contains the identity claims of the signed-in user.
-    
-    const accessToken = await Office.auth.getAccessToken(authOptions);
-    return accessToken;
-
-  } catch (error) {
-    let fallbackRequired = handleSSOErrors(error);
-    if (fallbackRequired) throw error; // Rethrow the error and caller will switch to fallback auth.
-    return null; // Returning a null token indicates no need for fallback (an explanation about the error condition was shown by handleSSOErrors).
-  }
+    try {
+      // The access token returned from getAccessToken only has permissions to your web server APIs,
+      // and it contains the identity claims of the signed-in user.
+  
+      const accessToken = await Office.auth.getAccessToken(authOptions);
+      return accessToken;
+    } catch (error) {
+      let fallbackRequired = handleSSOErrors(error);
+      if (fallbackRequired) throw error; // Rethrow the error and caller will switch to fallback auth.
+      return null; // Returning a null token indicates no need for fallback (an explanation about the error condition was shown by handleSSOErrors).
+    }
     ```
 
 1. In the `handleSSOErrors` function, replace `TODO 6` with the following code. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md).
 
-```javascript
- let fallbackRequired = false;
-  switch (err.code) {
+    ```javascript
+    let fallbackRequired = false;
+    switch (err.code) {
     case 13001:
       // No one is signed into Office. If the add-in cannot be effectively used when no one
       // is logged into Office, then the first call of getAccessToken should pass the
@@ -369,23 +363,23 @@ The client request object tracks the following data:
       break;
     case 13010:
       // Only seen in Office on the web.
-      showMessage(
-        "Follow the instructions to change your browser's zone configuration."
-      );
-      break;
-```
+        showMessage(
+          "Follow the instructions to change your browser's zone configuration."
+        );
+        break;
+    ```
 
 1. Replace `TODO 7` with the following code. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). For any errors that can't be handled `true` is returned to the caller. This indicates the caller should switch to using MSAL as fallback auth.
 
-```javascript
- default:
-      // For all other errors, including 13000, 13003, 13005, 13007, 13012, and 50001, fall back
-      // to non-SSO sign-in.
-      fallbackRequired = true;
-      break;
-  }
-  return fallbackRequired;
-```
+    ```javascript
+      default:
+        // For all other errors, including 13000, 13003, 13005, 13007, 13012, and 50001, fall back
+        // to non-SSO sign-in.
+        fallbackRequired = true;
+        break;
+    }
+    return fallbackRequired;
+    ```
 
 ### Call the REST API on the middle tier server
 
@@ -397,93 +391,87 @@ The client request object tracks the following data:
 
     ```javascript
     try {
-          await ajaxCallToRESTApi(clientRequest);
-        } catch (error) {
-          if (error.statusText === "Internal Server Error") {
-            const isTokenExpired = handleWebServerErrors(error);
-            if (isTokenExpired && clientRequest.authSSO) {
-              try {
-                clientRequest.accessToken = await getAccessTokenFromSSO(clientRequest.authOptions);
-                await ajaxCallToRESTApi(clientRequest);
-              } catch {
-                // If still an error go to fallback.
-                switchToFallbackAuth(clientRequest);
-                return;
-              }
-            } else {
-              // For unhandled errors using SSO, switch to fallback.
-              if (clientRequest.authSSO) {
-                switchToFallbackAuth(clientRequest);
-              } else {
-                console.log(JSON.stringify(error)); // Log any errors.
-                showMessage(error.responseText);
-              }
-            }
+      await ajaxCallToRESTApi(clientRequest);
+    } catch (error) {
+      if (error.statusText === "Internal Server Error") {
+        const isTokenExpired = handleWebServerErrors(error);
+        if (isTokenExpired && clientRequest.authSSO) {
+          try {
+            clientRequest.accessToken = await getAccessTokenFromSSO(clientRequest.authOptions);
+            await ajaxCallToRESTApi(clientRequest);
+          } catch {
+            // If still an error go to fallback.
+            switchToFallbackAuth(clientRequest);
+            return;
+          }
+        } else {
+          // For unhandled errors using SSO, switch to fallback.
+          if (clientRequest.authSSO) {
+            switchToFallbackAuth(clientRequest);
           } else {
             console.log(JSON.stringify(error)); // Log any errors.
-                showMessage(error.responseText);
+            showMessage(error.responseText);
           }
         }
+      } else {
+        console.log(JSON.stringify(error)); // Log any errors.
+        showMessage(error.responseText);
+      }
+    }
     ```
 
 1. In the `ajaxCallToRESTApi` function, replace `TODO 9` with the following code. About this code, note:
 
     * The function explicitly rethrows any errors for the caller to handle.
 
-```javascript
-try {
-    await $.ajax({
-      type: "GET",
-      url: clientRequest.url,
-      headers: { Authorization: "Bearer " + clientRequest.accessToken },
-      cache: false,
-      success: function (data) {
-        result = data;
-        // Send result to the callback handler.
-        clientRequest.callbackRESTApiHandler(result);
-      },
-    });
-  } catch (error) {
-    // This function explicitly requires the caller to handle any errors
-    throw error;
-  }
-```
+    ```javascript
+    try {
+      await $.ajax({
+        type: "GET",
+        url: clientRequest.url,
+        headers: { Authorization: "Bearer " + clientRequest.accessToken },
+        cache: false,
+        success: function (data) {
+          result = data;
+          // Send result to the callback handler.
+          clientRequest.callbackRESTApiHandler(result);
+        },
+      });
+    } catch (error) {
+      // This function explicitly requires the caller to handle any errors
+      throw error;
+    }
+    ```
 
 1. In the `handleWebServerErrors` function, replace `TODO 10` with the following code. About this code, note:
 
-* The error is returned by the middle tier server which will indicate the type of error to make it easier to handle here.
-* For **Microsoft Graph** errors, show the message on the task pane.
-* For the **AADSTS500133** error, return true so the caller knows the token expired and should get a new one.
-* For all other messages, show the message on the task pane.
+    * The error is returned by the middle tier server which will indicate the type of error to make it easier to handle here.
+    * For **Microsoft Graph** errors, show the message on the task pane.
+    * For the **AADSTS500133** error, return true so the caller knows the token expired and should get a new one.
+    * For all other messages, show the message on the task pane.
 
-```javascript
- let returnValue = false;
-  // Our web server returns a type to help handle the known cases.
-  switch (err.responseJSON.type) {
-    case "Microsoft Graph":
-      // An error occurred when the web server called Microsoft Graph.
-      showMessage(
-        "Error from Microsoft Graph: " +
-        JSON.stringify(err.responseJSON.errorDetails)
-      );
-      returnValue = false;
-      break;
-    case "AADSTS500133": // expired token
-      // On rare occasions the access token could expire after it was sent to the server.
-      // Microsoft identity platform will respond with
-      // "The provided value for the 'assertion' is not valid. The assertion has expired."
-      // Return true to indicate to caller they should refresh the token.
-      returnValue = true;
-      break;
-    default:
-      showMessage(
-        "Unknown error from web server: " +
-        JSON.stringify(err.responseJSON.errorDetails)
-      );
-      returnValue = false;
-  }
-  return false;
-```
+    ```javascript
+    let returnValue = false;
+    // Our web server returns a type to help handle the known cases.
+    switch (err.responseJSON.type) {
+      case "Microsoft Graph":
+        // An error occurred when the web server called Microsoft Graph.
+        showMessage("Error from Microsoft Graph: " + JSON.stringify(err.responseJSON.errorDetails));
+        returnValue = false;
+        break;
+      case "AADSTS500133": // expired token
+        // On rare occasions the access token could expire after it was sent to the server.
+        // Microsoft identity platform will respond with
+        // "The provided value for the 'assertion' is not valid. The assertion has expired."
+        // Return true to indicate to caller they should refresh the token.
+        returnValue = true;
+        break;
+      default:
+        showMessage("Unknown error from web server: " + JSON.stringify(err.responseJSON.errorDetails));
+        returnValue = false;
+    }
+    return returnValue;
+    ```
 
 Fallback auth will use the MSAL library to sign in the user. The add-in itself is an SPA, and uses an SPA app registration to access the middle-tier server.
 
@@ -494,12 +482,12 @@ Fallback auth will use the MSAL library to sign in the user. The add-in itself i
 
     ```javascript
     showMessage("Switching from SSO to fallback auth.");
-      authSSO = false;
-      // Create a new request for fallback auth.
-      createRequest(clientRequest.url, clientRequest.callbackRESTApiHandler, async (fallbackRequest) => {
-        // Hand off to call using fallback auth.
-        await callWebServer(fallbackRequest);
-      });
+    authSSO = false;
+    // Create a new request for fallback auth.
+    createRequest(clientRequest.url, clientRequest.callbackRESTApiHandler, async (fallbackRequest) => {
+      // Hand off to call using fallback auth.
+      await callWebServer(fallbackRequest);
+    });
     ```
 
 ## Code the middle tier server
@@ -511,16 +499,10 @@ The middle tier server provides REST APIs for the client to call. For example th
 1. Open the file `routes\getFilesRoute.js` and replace `TODO 12` with the following code. Note that the code calls `authHelper.validateJwt`. This ensures the access token is valid and has not been tampered with. For more information, see [Validating tokens](/azure/active-directory/develop/access-tokens#validating-tokens).
 
     ```javascript
-    router.get(
-      "/getuserfilenames",
-      authHelper.validateJwt,
-      async function (req, res) {
-    
-        // TODO 13: Exchange the access token for a Microsoft Graph token
-        //          by using the OBO flow.
-    
-      }
-    );
+    router.get("/getuserfilenames", authHelper.validateJwt, async function (req, res) {
+    // TODO 13: Exchange the access token for a Microsoft Graph token
+    //          by using the OBO flow.
+    });
     ```
 
 1. Replace `TODO 13` with the following code. About this code, note:
@@ -529,21 +511,21 @@ The middle tier server provides REST APIs for the client to call. For example th
     * It uses the MSAL authHelper to perform the OBO flow in the call to `acquireTokenOnBehalfOf`.
 
     ```javascript
-       const authHeader = req.headers.authorization;
-        let oboRequest = {
-          oboAssertion: authHeader.split(" ")[1],
-          scopes: ["files.read.all"],
-        };
-    
-        const cca = authHelper.getConfidentialClientApplication();
-        cca
-          .acquireTokenOnBehalfOf(oboRequest)
-          .then(async (response) => {
-         // TODO 14: Call Microsoft Graph to get list of filenames.
-          })
-          .catch((err) => {
-          // TODO 15: Handle any errors.
-          });
+    const authHeader = req.headers.authorization;
+    let oboRequest = {
+      oboAssertion: authHeader.split(" ")[1],
+      scopes: ["files.read.all"],
+    };
+  
+    const cca = authHelper.getConfidentialClientApplication();
+    cca
+      .acquireTokenOnBehalfOf(oboRequest)
+      .then(async (response) => {
+        // TODO 14: Call Microsoft Graph to get list of filenames.
+      })
+      .catch((err) => {
+        // TODO 15: Handle any errors.
+      });
     ```
 
 1. Replace `TODO 14` with the following code. About this code, note:
@@ -554,28 +536,23 @@ The middle tier server provides REST APIs for the client to call. For example th
 
     ```javascript
     console.log(response);
-    
+
     // Minimize the data that must come from MS Graph by specifying only the property we need ("name")
     // and only the top 10 folder or file names.
     const rootUrl = "/me/drive/root/children";
-      
+
     // Note that the last parameter, params, is hardcoded. If you reuse this code in
     // a production add-in and any part of params comes from user input, be sure that it is
     // sanitized so that it cannot be used in a Response header injection attack.
     const params = "?$select=name&$top=10";
-    
-    let graphData = await getGraphData(
-        response.accessToken,
-        rootUrl,
-        params);
-        
+
+    let graphData = await getGraphData(response.accessToken, rootUrl, params);
+
     // If Microsoft Graph returns an error, such as invalid or expired token,
     // there will be a code property in the returned object set to a HTTP status (e.g. 401).
     // Return it to the client. On client side it will get handled in the fail callback of `makeWebServerApiCall`.
     if (graphData.code) {
-      res
-        .status(500)
-        .send({ type: "Microsoft Graph", errorDetails: graphData });
+      res.status(500).send({ type: "Microsoft Graph", errorDetails: graphData });
     } else {
       // MS Graph data includes OData metadata and eTags that we don't need.
       // Send only what is actually needed to the client: the item names.
@@ -604,7 +581,6 @@ The middle tier server provides REST APIs for the client to call. For example th
     ```
 
 The sample must handle both fallback auth through MSAL and SSO auth through Office. The sample will try SSO first, and the `authSSO` boolean at the top of the file tracks if the sample is using SSO or has switched to fallback auth.
-
 
 ## Run the project
 
