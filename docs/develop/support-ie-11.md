@@ -74,9 +74,9 @@ if (navigator.userAgent.indexOf("Trident") === -1) {
 ```
 
 > [!IMPORTANT]
-> It is not usually a good practice to read the `userAgent` property. Be sure you are familiar with the article, [Browser detection using the user agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent), including the recommendations and alternatives to reading `userAgent`. In particular, if you are taking option 1 in the `else` clause above, consider using feature detection instead of testing for the user agent.
+> It is not usually a good practice to read the `userAgent` property. Be sure you are familiar with the article, [Browser detection using the user agent](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent), including the recommendations and alternatives to reading `userAgent`. In particular, if you are taking option 1 in the `else` clause above, consider using feature detection instead of testing for the user agent.
 >
-> As of September 30th, 2021, the text in the section [Which part of the user agent contains the information you are looking for?](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) dates from before Internet Explorer 11 was released. It is still generally accurate and the *tables* in the section of the English version of the article are up-to-date. Similarly, the text, and in most cases the tables, in the non-English versions of the article are out-of-date.
+> As of September 30th, 2021, the text in the section [Which part of the user agent contains the information you are looking for?](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) dates from before Internet Explorer 11 was released. It is still generally accurate and the *tables* in the section of the English version of the article are up-to-date. Similarly, the text, and in most cases the tables, in the non-English versions of the article are out-of-date.
 
 ## Test an add-in on Internet Explorer
 
