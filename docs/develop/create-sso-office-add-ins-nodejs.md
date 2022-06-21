@@ -72,9 +72,9 @@ You need to create an app registration in Azure that represents your web server'
 1. Select **Save** at the top of the form.
 
 1. Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value for **Description** then select an appropriate option for **Expires** and choose **Add**.
-    
+
     The web application uses the client secret to prove its identity when it requests tokens. *Record this value for use in a later step - it's shown only once.*
-    
+
 1. Select **Expose an API** under **Manage**. Select the **Set** link. This will generate the Application ID URI in the form "api://$App ID GUID$", where $App ID GUID$ is the **Application (client) ID**.
 
 1. In the generated ID, insert `localhost:44355/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. When you are finished, the entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
@@ -213,7 +213,11 @@ To complete the configuration of the two app registrations you need to grant cli
    > [!NOTE]
    > The **Resource** value is the **Application ID URI** you set when you registered the add-in. The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
 
-1. Open the `\public\javascripts\fallbackAuthDialog.js` file. Replace the placeholder $fallback_application_GUID_here$ with the **Application (client) ID** that you saved from the **Office-Add-in-NodeJS-Fallback** you created previously.
+1. Open the `\public\javascripts\fallback-msal\authConfig.js` file. In the `loginRequest` scopes, replace the placeholder $middle_tier_application_GUID here$ with the application ID that you saved from the **Office-Add-in-NodeJS-SSO-middle-tier** app registration you created previously.
+
+1. In the `msalConfig` declaration, replace the placeholder $fallback_application_GUID_here$ with the application ID that you saved from the **Office-Add-in-NodeJS-Fallback** app registration you created previously.
+
+1. Save the changes to the file.
 
 ## Code the client-side
 
@@ -590,7 +594,9 @@ The sample must handle both fallback auth through MSAL and SSO auth through Offi
 
 1. Open a command prompt in the root of the `\Begin` folder.
 
-1. Run the command `npm start`.
+1. Run the command `npm install` to install all package dependencies.
+
+1. Run the command `npm start` to start the middle tier web server.
 
 1. You need to sideload the add-in into an Office application (Excel, Word, or PowerPoint) to test it. The instructions depend on your platform. There are links to instructions at [Sideload an Office Add-in for Testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
