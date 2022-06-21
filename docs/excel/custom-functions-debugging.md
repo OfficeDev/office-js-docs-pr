@@ -1,7 +1,7 @@
 ---
 title: Custom functions debugging
 description: Learn how to debug your Excel custom functions that don't use a shared runtime.
-ms.date: 06/09/2022
+ms.date: 06/15/2022
 ms.localizationpriority: medium
 ---
 
@@ -183,7 +183,7 @@ You can use the following tasks to start debugging on desktop or online.
 
 ## Next steps
 
-Learn about [authentication practices for UI-less custom functions](custom-functions-authentication.md).
+Learn about [Authentication for custom functions without a shared runtime](custom-functions-authentication.md).
 
 ## See also
 
