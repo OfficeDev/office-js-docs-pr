@@ -560,12 +560,12 @@ items:
     - name: Return a dynamic array
       href: excel/custom-functions-dynamic-arrays.md
       displayName: Excel, Custom Functions
-    - name: UI-less custom functions
+    - name: Custom functions without a shared runtime
       items: 
-        - name: Authentication for UI-less functions
+        - name: Authentication for custom functions without a shared runtime
           href: excel/custom-functions-authentication.md
           displayName: Excel, Custom Functions
-        - name: Runtime
+        - name: JavaScript-only runtime for custom functions
           href: excel/custom-functions-runtime.md
           displayName: Excel, Custom Functions
     - name: Volatile functions
@@ -862,9 +862,6 @@ items:
     - name: Word object model
       href: word/word-add-ins-core-concepts.md
       displayName: Word
-    - name: Create better add-ins for Word with Office Open XML
-      href: word/create-better-add-ins-for-word-with-office-open-xml.md
-      displayName: Word
     - name: Dictionary task pane add-ins
       href: word/dictionary-task-pane-add-ins.md
       displayName: Word
@@ -874,11 +871,14 @@ items:
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
       displayName: Word
-    - name: Null values
+    - name: Understand null values
       href: word/null-values.md
       displayName: Word
-    - name: Use search options to find text in your Word add-in
+    - name: Use search options to find text
       href: word/search-option-guidance.md
+      displayName: Word
+    - name: When and how to use Office Open XML
+      href: word/create-better-add-ins-for-word-with-office-open-xml.md
       displayName: Word
 - name: Samples
   items:
