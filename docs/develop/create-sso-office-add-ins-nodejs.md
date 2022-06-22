@@ -11,9 +11,6 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 
 This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and Express. For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md).
 
-> [!NOTE]
-> As an alternative to completing the steps described in this article, you can use the Yeoman generator to create an SSO-enabled, Node.js Office Add-in. The Yeoman generator simplifies the process of creating an SSO-enabled add-in, by automating the steps required to configure SSO within Azure and generating the code that's necessary for an add-in to use SSO. For more information, see the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).
-
 ## Prerequisites
 
 * [Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)
@@ -28,18 +25,17 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.
 
-* A Microsoft Azure subscription. This add-in requires Azure Active Directory (AD). Azure AD provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* A Microsoft Azure subscription. This add-in uses the Microsoft identity platform for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## Set up the starter project
 
 1. Clone or download the repo at [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO).
 
     > [!NOTE]
-    > There are three versions of the sample:
+    > There are two versions of the sample:
     >
     > * The **Begin** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
-    > * The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Begin" with "Completed" and skip the sections **Code the client side** and **Code the server** side.
-    > * The **SSOAutoSetup** version is a completed sample that automates most of the steps to register the add-in with Azure AD and configure it. Use this version if you want to see a working add-in with SSO quickly. Just follow the steps in the Readme of the folder. We recommend that at some point you go through the manual registration and setup steps in this article to better understand the relationship between Azure AD and an add-in.
+    > * The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Begin" with "Completed" and skip the sections **Code the client side** and **Code the middle-tier server** side.
 
 1. Open a command prompt in the **Begin** folder.
 
@@ -47,9 +43,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Run the command `npm run install-dev-certs`. Select **Yes** to the prompt to install the certificate.
 
-## Register the add-in's middle-tier web server with Azure AD v2.0 endpoint
+## Register the add-in's middle-tier server with Microsoft identity platform
 
-You need to create an app registration in Azure that represents your web server's middle tier. This will enable authentication support so that proper access tokens can be issued to the client code in JavaScript.
+You need to create an app registration in Azure that represents your middle-tier server. This enables authentication support so that proper access tokens can be issued to the client code in JavaScript.
 
 1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
 
@@ -237,8 +233,8 @@ The client request object tracks the following data:
 
 * `authOptions` - [Auth configuration parameters](/javascript/api/office/office.authoptions) for SSO.
 * `authSSO` - true if using SSO, otherwise false.
-* `accessToken` - The access token to the server. The method to obtain this token is different for SSO than fallback auth.
-* `url` - The URL of the REST API to call on the server.
+* `accessToken` - The access token to the middle-tier server. The method to obtain this token is different for SSO than fallback auth.
+* `url` - The URL of the REST API to call on the middle-tier server.
 * `callbackHandler` - The function to pass the results of the REST API call.
 * `callbackFunction` - The function to pass the client request to when ready.
 
@@ -322,7 +318,7 @@ The client request object tracks the following data:
 
     ```javascript
     try {
-      // The access token returned from getAccessToken only has permissions to your web server APIs,
+      // The access token returned from getAccessToken only has permissions to your middle-tier server APIs,
       // and it contains the identity claims of the signed-in user.
   
       const accessToken = await Office.auth.getAccessToken(authOptions);
@@ -387,12 +383,12 @@ The client request object tracks the following data:
     return fallbackRequired;
     ```
 
-### Call the REST API on the middle tier server
+### Call the REST API on the middle-tier server
 
 1. In the `callWebServer` function, replace `TODO 8` with the following code. About this code, note:
 
     * The actual AJAX call will be made by the `ajaxCallToRESTApi` function.
-    * This function will attempt to get a new access token if the middle tier server returns an error indicating that the current token expired.
+    * This function will attempt to get a new access token if the middle-tier server returns an error indicating that the current token expired.
     * If the AJAX call cannot be completed successfully, `switchToFallbackAuth` will be called to use MSAL auth instead of Office SSO.
 
     ```javascript
@@ -451,29 +447,29 @@ The client request object tracks the following data:
 
 1. In the `handleWebServerErrors` function, replace `TODO 10` with the following code. About this code, note:
 
-    * The error is returned by the middle tier server which will indicate the type of error to make it easier to handle here.
+    * The error is returned by the middle-tier server which will indicate the type of error to make it easier to handle here.
     * For **Microsoft Graph** errors, show the message on the task pane.
     * For the **AADSTS500133** error, return true so the caller knows the token expired and should get a new one.
     * For all other messages, show the message on the task pane.
 
     ```javascript
     let returnValue = false;
-    // Our web server returns a type to help handle the known cases.
+    // Our middle-tier server returns a type to help handle the known cases.
     switch (err.responseJSON.type) {
       case "Microsoft Graph":
-        // An error occurred when the web server called Microsoft Graph.
+        // An error occurred when the middle-tier server called Microsoft Graph.
         showMessage("Error from Microsoft Graph: " + JSON.stringify(err.responseJSON.errorDetails));
         returnValue = false;
         break;
       case "AADSTS500133": // expired token
-        // On rare occasions the access token could expire after it was sent to the server.
+        // On rare occasions the access token could expire after it was sent to the middle-tier server.
         // Microsoft identity platform will respond with
         // "The provided value for the 'assertion' is not valid. The assertion has expired."
         // Return true to indicate to caller they should refresh the token.
         returnValue = true;
         break;
       default:
-        showMessage("Unknown error from web server: " + JSON.stringify(err.responseJSON.errorDetails));
+        showMessage("Unknown error from middle-tier server: " + JSON.stringify(err.responseJSON.errorDetails));
         returnValue = false;
     }
     return returnValue;
@@ -483,8 +479,8 @@ Fallback auth will use the MSAL library to sign in the user. The add-in itself i
 
 1. In the `switchToFallbackAuth` function, replace `TODO 11` with the following code. About this code, note:
 
-    * It sets the global `authSSO` to false, and creates a new client request that uses MSAL for auth. The new request will have an MSAL access token to the middle tier server.
-    * Once the request is created it calls `callWebServer` to continue attempting to call the middle tier server successfully.
+    * It sets the global `authSSO` to false, and creates a new client request that uses MSAL for auth. The new request will have an MSAL access token to the middle-tier server.
+    * Once the request is created it calls `callWebServer` to continue attempting to call the middle-tier server successfully.
 
     ```javascript
     showMessage("Switching from SSO to fallback auth.");
@@ -496,9 +492,9 @@ Fallback auth will use the MSAL library to sign in the user. The add-in itself i
     });
     ```
 
-## Code the middle tier server
+## Code the middle-tier server
 
-The middle tier server provides REST APIs for the client to call. For example the REST API `/getuserfilenames` will get a list of filenames from the user's OneDrive folder. Each REST API call requires an access token by the client to ensure the correct client is accessing their data. The access token is exchanged for a Microsoft Graph token through the On-Behalf-Of (OBO) flow. The new Microsoft Graph token is cached by the MSAL library for subsequent API calls. It is never sent outside of the middle tier server. For more information, see [Middle-tier access token request](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#middle-tier-access-token-request)
+The middle-tier server provides REST APIs for the client to call. For example the REST API `/getuserfilenames` will get a list of filenames from the user's OneDrive folder. Each REST API call requires an access token by the client to ensure the correct client is accessing their data. The access token is exchanged for a Microsoft Graph token through the On-Behalf-Of (OBO) flow. The new Microsoft Graph token is cached by the MSAL library for subsequent API calls. It is never sent outside of the middle-tier server. For more information, see [Middle-tier access token request](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#middle-tier-access-token-request)
 
 ### Create the route and implement On-Behalf-Of flow
 
@@ -596,7 +592,7 @@ The sample must handle both fallback auth through MSAL and SSO auth through Offi
 
 1. Run the command `npm install` to install all package dependencies.
 
-1. Run the command `npm start` to start the middle tier web server.
+1. Run the command `npm start` to start the middle-tier server.
 
 1. You need to sideload the add-in into an Office application (Excel, Word, or PowerPoint) to test it. The instructions depend on your platform. There are links to instructions at [Sideload an Office Add-in for Testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
