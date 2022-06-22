@@ -63,7 +63,7 @@ You need to create an app registration in Azure that represents your middle-tier
     > [!NOTE]
     > This **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
-1. Select **Authentication** under **Manage**. In the **Implicit grant** section, enable the checkboxes for both **Access token** and **ID token**. The sample has a fallback authorization system that is invoked when SSO is not available. This system uses the Implicit Flow.
+1. Select **Authentication** under **Manage**. In the **Implicit grant** section, enable the checkboxes for both **Access token** and **ID token**. The sample uses Microsoft Authentication Library (MSAL) for fallback authentication when SSO is not available.
 
 1. Select **Save** at the top of the form.
 
