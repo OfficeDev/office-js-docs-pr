@@ -122,9 +122,9 @@ You need to create an app registration in Azure that represents your middle-tier
 
 1. On the same page, choose the **Grant admin consent for [tenant name]** button, and then select **Yes** for the confirmation that appears.
 
-## Register the client code as an SPA app for fallback authentication
+## Register the client as a Single-Page Application (SPA) for fallback authentication
 
-The add-in also needs to support a fallback authentication approach if SSO is unavailable, or fails. To do this you need an app registration that returns a valid access token for the middle-tier when the access token cannot be retrieved through SSO.
+The add-in also needs to support a fallback authentication approach if SSO is unavailable, or fails. To do this you need an app registration that returns a valid access token for the middle-tier server when the access token cannot be retrieved through SSO. The client code is a Single-Page Application (SPA), so this requires a separate registration with SPA details.
 
 1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
 
@@ -226,8 +226,8 @@ To complete the configuration of the two app registrations you need to grant cli
 
 A key part of the sample code is the client request. The client request is an object that tracks information about the request for calling REST APIs on the middle-tier server. It's necessary because the client request state needs to be tracked or updated through the following scenarios:
 
-* SSO retries where the REST API call fails because it needs additional consent. The sample code calls getAccessToken with updated Auth options, gets the required user consent, and then calls the REST API again. The goal is to not fail in scenarios where a REST API needs additional consent.
-* SSO fails and fallback auth is required. The access token is acquired through MSAL in a popup dialog box. The goal is to not fail in this scenario and gracefully fall back to the alternative auth approach.
+* SSO retries where the REST API call fails because it needs additional consent. The sample code calls getAccessToken with updated authentication options, gets the required user consent, and then calls the REST API again. The goal is to not fail in scenarios where a REST API needs additional consent.
+* SSO fails and fallback authentication is required. The access token is acquired through MSAL in a popup dialog box. The goal is to not fail in this scenario and gracefully fall back to the alternative authentication approach.
 
 The client request object tracks the following data:
 
@@ -258,7 +258,7 @@ The client request object tracks the following data:
 1. Replace `TODO 2` with the following code. About this code, note:
 
     * It checks if SSO is being used. The method to acquire the access token is different for SSO than for fallback auth.
-    * If SSO returns the access token, it calls the `callbackfunction` function. For fallback auth it calls `dialogFallback`, which will eventually call the callback function after the user signs in through MSAL.
+    * If SSO returns the access token, it calls the `callbackfunction` function. For fallback authentication it calls `dialogFallback`, which will eventually call the callback function after the user signs in through MSAL.
 
     ```javascript
     // Get access token.
@@ -269,11 +269,11 @@ The client request object tracks the following data:
         clientRequest.accessToken = await getAccessTokenFromSSO(clientRequest.authOptions);
         callbackFunction(clientRequest);
       } catch {
-        // use fallback auth if SSO failed to get access token.
+        // use fallback authentication if SSO failed to get access token.
         switchToFallbackAuth(clientRequest);
       }
     } else {
-      // Use fallback auth to get access token.
+      // Use fallback authentication to get access token.
       dialogFallback(clientRequest);
     }
     ```
@@ -389,7 +389,7 @@ The client request object tracks the following data:
 
     * The actual AJAX call will be made by the `ajaxCallToRESTApi` function.
     * This function will attempt to get a new access token if the middle-tier server returns an error indicating that the current token expired.
-    * If the AJAX call cannot be completed successfully, `switchToFallbackAuth` will be called to use MSAL auth instead of Office SSO.
+    * If the AJAX call cannot be completed successfully, `switchToFallbackAuth` will be called to use MSAL authentication instead of Office SSO.
 
     ```javascript
     try {
@@ -475,7 +475,7 @@ The client request object tracks the following data:
     return returnValue;
     ```
 
-Fallback auth will use the MSAL library to sign in the user. The add-in itself is an SPA, and uses an SPA app registration to access the middle-tier server.
+Fallback authentication will use the MSAL library to sign in the user. The add-in itself is an SPA, and uses an SPA app registration to access the middle-tier server.
 
 1. In the `switchToFallbackAuth` function, replace `TODO 11` with the following code. About this code, note:
 
@@ -582,7 +582,7 @@ The middle-tier server provides REST APIs for the client to call. For example th
     }
     ```
 
-The sample must handle both fallback auth through MSAL and SSO auth through Office. The sample will try SSO first, and the `authSSO` boolean at the top of the file tracks if the sample is using SSO or has switched to fallback auth.
+The sample must handle both fallback authentication through MSAL and SSO authentication through Office. The sample will try SSO first, and the `authSSO` boolean at the top of the file tracks if the sample is using SSO or has switched to fallback auth.
 
 ## Run the project
 
