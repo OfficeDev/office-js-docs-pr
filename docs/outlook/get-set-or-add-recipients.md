@@ -48,14 +48,14 @@ Note that because the `getAsync` method is asynchronous, if there are subsequent
 > The `getAsync` method only returns recipients resolved by the Outlook client. A resolved recipient has the following characteristics.
 >
 > - If the recipient has a saved entry in the sender's address book, Outlook resolves the email address to the recipient's saved display name.
-> - A Teams Meeting status icon appears before the recipient's name or email address.
+> - A Teams meeting status icon appears before the recipient's name or email address.
 > - A semicolon appears after the recipient's name or email address.
 > - The recipient's name or email address is underlined or enclosed in a box.
 >
 > To resolve an email address once it's added to a mail item, the sender must use the **Tab** key or select a suggested contact or email address from the auto-complete list.
 
 > [!NOTE]
-> In Outlook on the web and Windows, if a user creates a new message by activating a contact's email address link from their contact or profile card, your add-in's `Recipients.getAsync` call returns the contact's email address in the `displayName` property of the associated `EmailAddressDetails` object instead of the contact's saved name.
+> In Outlook on the web and on Windows, if a user creates a new message by activating a contact's email address link from their contact or profile card, your add-in's `Recipients.getAsync` call returns the contact's email address in the `displayName` property of the associated `EmailAddressDetails` object instead of the contact's saved name.
 >
 > For more details, refer to the [related GitHub issue](https://github.com/OfficeDev/office-js/issues/2201).
 
