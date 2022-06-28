@@ -151,7 +151,7 @@ The XML you inserted contains the following elements and information.
 
 - **WebApplicationInfo** - The parent of the following elements.
 - **Id** - The client ID of the add-in This is an application ID that you obtain as part of registering the add-in. See [Register an Office Add-in that uses SSO with the Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
-- **Resource** - The URL of the add-in. This is the same URI (including the `api:` protocol) that you used when registering the add-in in AAD. The domain part of this URI must match the domain, including any subdomains, used in the URLs in the `<Resources>` section of the add-in's manifest and the URI must end with the client ID in the `<Id>`.
+- **Resource** - The URL of the add-in. This is the same URI (including the `api:` protocol) that you used when registering the add-in in AAD. The domain part of this URI must match the domain, including any subdomains, used in the URLs in the **Resources** section of the add-in's manifest and the URI must end with the client ID in the **Id**.
 - **Scopes** - The parent of one or more **Scope** elements.
 - **Scope** - Specifies a permission that the add-in needs to AAD. The `profile` and `openID` permissions are always needed and may be the only permissions needed, if your add-in does not access Microsoft Graph. If it does, you also need **Scope** elements for the required Microsoft Graph permissions; for example, `User.Read`, `Mail.Read`. Libraries that you use in your code to access Microsoft Graph may need additional permissions. For example, Microsoft Authentication Library (MSAL) for .NET requires `offline_access` permission. For more information, see [Authorize to Microsoft Graph from an Office Add-in](authorize-to-microsoft-graph.md).
 

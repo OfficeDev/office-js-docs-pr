@@ -65,7 +65,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML, then save your changes.
+1. Select the entire **VersionOverrides** node (including open and close tags) and replace it with the following XML, then save your changes.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">

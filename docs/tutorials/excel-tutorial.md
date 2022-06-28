@@ -505,7 +505,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
 
 1. Open the manifest file **./manifest.xml**.
 
-1. Locate the `<Control>` element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the closing `</Control>` tag and the closing `</Group>` tag, add the following markup.
+1. Locate the **Control** element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the closing `</Control>` tag and the closing `</Group>` tag, add the following markup.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
