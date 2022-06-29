@@ -312,8 +312,10 @@ items:
         href: testing/debug-add-ins-in-office-online.md
     - name: iPad and Mac
       items:
-      - name: Sideload Office Add-ins on iPad and Mac
-        href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
+      - name: Sideload Office Add-ins on Mac
+        href: testing/sideload-an-office-add-in-on-mac.md
+      - name: Sideload Office Add-ins on iPad
+        href: testing/sideload-an-office-add-in-on-ipad.md
       - name: Debug on Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
     - name: Clear the Office cache
