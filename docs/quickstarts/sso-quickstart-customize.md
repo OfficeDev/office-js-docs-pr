@@ -1,7 +1,7 @@
 ---
 title: Add Microsoft Graph functionality to your SSO quick start project
 description: Learn how to add new Microsoft Graph functionality to the SSO-enabled add-in that you created.
-ms.date: 05/19/2022
+ms.date: 06/10/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
 ---
@@ -344,3 +344,4 @@ Congratulations, you've successfully customized the functionality of the SSO-ena
 - [Single sign-on (SSO) quick start](sso-quickstart.md)
 - [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md)
 - [Troubleshoot error messages for single sign-on (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

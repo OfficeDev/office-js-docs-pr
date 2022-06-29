@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins
 description: Find the Office Add-in debugging guidance for your development environment.
-ms.date: 02/17/2022
+ms.date: 06/15/2022
 ms.localizationpriority: high
 ---
 
@@ -35,7 +35,7 @@ To find guidance for debugging client-side code, the first variable is the opera
 
 ## Debug on Windows
 
-The following provides general guidance to debugging on Windows. There are special instructions for debugging UI-less custom functions in Excel and event-based add-ins in Outlook. See [Special cases in Windows](#special-cases-in-windows) later in this section. Debugging on Windows depends on your IDE:
+The following provides general guidance to debugging on Windows. There are special instructions for debugging custom functions in Excel and event-based add-ins in Outlook. See [Special cases in Windows](#special-cases-in-windows) later in this section. Debugging on Windows depends on your IDE:
 
 - **Visual Studio**: Debug using the browser's F12 tools. See [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
 - **Visual Studio Code**: Debug using the [Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
@@ -52,20 +52,20 @@ For information about which browser runtime is being used, see [Browsers used by
 
 ### Special cases in Windows
 
-To debug UI-less custom functions on Windows, see [UI-less custom functions debugging](../excel/custom-functions-debugging.md).
+To debug custom functions without a shared runtime on Windows, see [Custom functions debugging](../excel/custom-functions-debugging.md).
 
 To debug event-based add-ins in Outlook, see [Debug your event-based Outlook add-in](../outlook/debug-autolaunch.md). The process requires Visual Studio Code.
 
 ## Debug on Mac
 
-The following provides general guidance to debugging on Mac. There are special instructions for debugging UI-less custom functions in Excel. See [Special cases in Mac](#special-cases-in-mac) later in this section.
+The following provides general guidance to debugging on Mac. There are special instructions for debugging custom functions without a shared runtime in Excel. See [Special cases in Mac](#special-cases-in-mac) later in this section.
 
 - If you're using Visual Studio Code, debug using the [Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
 - For any other IDE, use the Safari Web Inspector. Instructions are in [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md).
 
 ### Special cases in Mac
 
-To debug UI-less custom functions on Mac, see [UI-less custom functions debugging](../excel/custom-functions-debugging.md).
+To debug custom functions without a shared runtime on Mac, see [Custom functions debugging](../excel/custom-functions-debugging.md).
 
 ## Debug on Linux
 

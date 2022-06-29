@@ -1,12 +1,12 @@
 ---
-title: Create better add-ins for Word with Office Open XML
-description: Overview of how to improve your Word add-in with Office Open XML.
+title: Understand when and how to use Office Open XML in your Word add-in
+description: Overview of when and how to use Office Open XML in your Word add-in.
 ms.date: 02/15/2022
 ms.localizationpriority: medium
 ---
 
 
-# Create better add-ins for Word with Office Open XML
+# Understand when and how to use Office Open XML in your Word add-in
 
 **Provided by:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
