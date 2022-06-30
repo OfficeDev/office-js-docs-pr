@@ -265,7 +265,7 @@ In this section, learn how your add-in script can update a user's meeting to inc
 
 ## Testing and validation
 
-Follow the usual guidance to [test and validate your add-in](testing-and-tips.md), then [sideload](sideload-outlook-add-ins-for-testing.md) it in Outlook on the web, Windows, or Mac. If your add-in also supports mobile, restart Outlook on your Android or iOS device after sideloading. Once the add-in is sideloaded, create a new meeting and verify that the Microsoft Teams or Skype toggle is replaced with your own.
+Follow the usual guidance to [test and validate your add-in](testing-and-tips.md), then [sideload](sideload-outlook-add-ins-for-testing.md) the manifest in Outlook on the web, Windows, or Mac. If your add-in also supports mobile, restart Outlook on your Android or iOS device after sideloading. Once the add-in is sideloaded, create a new meeting and verify that the Microsoft Teams or Skype toggle is replaced with your own.
 
 ### Create meeting UI
 
@@ -290,7 +290,7 @@ Registering your online-meeting add-in is optional. It only applies if you want 
 > The **Join** button is only supported in Outlook on the web, Mac, Android, and iOS.
 
 1. Create a [new GitHub issue](https://github.com/OfficeDev/office-js/issues/new).
-1. Set the **Title** of the new issue to "Register the online-meeting template for my-service", replacing `my-service` with your service name.
+1. Set the **Title** of the new issue to "Outlook: Register the online-meeting template for my-service", replacing `my-service` with your service name.
 1. In the issue body, replace the existing text with the string you set in the `newBody` or similar variable from the [Implement adding online meeting details](#implement-adding-online-meeting-details) section earlier in this article.
 1. Click **Submit new issue**.
 
