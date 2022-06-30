@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 06/14/2022
+ms.date: 06/17/2022
 ms.localizationpriority: medium
 ---
 
@@ -314,7 +314,7 @@ Runtime logging is also available for this feature on Windows. For more informat
 
 You can deploy event-based add-ins by uploading the manifest through the Microsoft 365 admin center. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**. On the **Integrated apps** page, choose the **Upload custom apps** action.
 
-![Screenshot of the Integrated apps page on the Microsoft 365 admin center, including the Upload custom apps action.](../images/outlook-deploy-event-based-add-ins.png)
+![The Integrated apps page on the Microsoft 365 admin center, including the Upload custom apps action.](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource and in-app Office Store: The ability to deploy event-based add-ins or update existing add-ins to include the event-based activation feature should be available soon.
 
@@ -337,7 +337,7 @@ Some Office.js APIs that change or alter the UI are not allowed from event-based
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > `OfficeRuntime.auth` is supported. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
+    > [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all Outlook versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
 - Under `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`

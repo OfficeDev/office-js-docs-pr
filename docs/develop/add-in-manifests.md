@@ -14,17 +14,17 @@ The XML manifest file of an Office Add-in describes how your add-in should be ac
 
 An XML manifest file enables an Office Add-in to do the following:
 
-* Describe itself by providing an ID, version, description, display name, and default locale.
+- Describe itself by providing an ID, version, description, display name, and default locale.
 
-* Specify the images used for branding the add-in and iconography used for [add-in commands](create-addin-commands.md) in the Office app ribbon.
+- Specify the images used for branding the add-in and iconography used for [add-in commands](create-addin-commands.md) in the Office app ribbon.
 
-* Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.
+- Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.
 
-* Specify the requested default dimensions for content add-ins, and requested height for Outlook add-ins.
+- Specify the requested default dimensions for content add-ins, and requested height for Outlook add-ins.
 
-* Declare permissions that the Office Add-in requires, such as reading or writing to the document.
+- Declare permissions that the Office Add-in requires, such as reading or writing to the document.
 
-* For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
+- For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -39,28 +39,26 @@ The following table specifies the elements that are required for the three types
 
 ### Required elements by Office Add-in type
 
-| Element                                                                                      | Content    | Task pane    | Outlook    |
-| :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------: |
-| [OfficeApp][]                                                                                | Required   | Required    | Required    |
-| [Id][]                                                                                       | Required   | Required    | Required    |
-| [Version][]                                                                                  | Required   | Required    | Required    |
-| [ProviderName][]                                                                             | Required   | Required    | Required    |
-| [DefaultLocale][]                                                                            | Required   | Required    | Required    |
-| [DisplayName][]                                                                              | Required   | Required    | Required    |
-| [Description][]                                                                              | Required   | Required    | Required    |
-| [IconUrl][]                                                                                  | Required   | Required    | Required    |
-| [SupportUrl][]\*\*                                                                           | Required   | Required    | Required    |
-| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       | Required   | Required    |             |
-| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         | Required   | Required    |             |
-| [DesktopSettings][]                                                                          |            |             | Required    |
-| [SourceLocation (MailApp)][]                                                                 |            |             | Required    |
-| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] | Required   | Required    | Required    |
-| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |            |             | Required    |
-| [Requirements (MailApp)*][]                                                                  |            |             | Required    |
-| [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |            |             | Required    |
-| [Form*][]<br/>[FormSettings*][]                                                              |            |             | Required    |
-| [Sets (Requirements)*][]                                                                     | Required   | Required    |             |
-| [Hosts*][]                                                                                   | Required   | Required    |             |
+| Element                                                                                      | Content    | Task pane    | Outlook      |
+| :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------:   |
+| [OfficeApp][]                                                                                | Required   | Required     | Required     |
+| [Id][]                                                                                       | Required   | Required     | Required     |
+| [Version][]                                                                                  | Required   | Required     | Required     |
+| [ProviderName][]                                                                             | Required   | Required     | Required     |
+| [DefaultLocale][]                                                                            | Required   | Required     | Required     |
+| [DisplayName][]                                                                              | Required   | Required     | Required     |
+| [Description][]                                                                              | Required   | Required     | Required     |
+| [IconUrl][]                                                                                  | Required   | Required     | Required     |
+| [SupportUrl][]\*\*                                                                           | Required   | Required     | Required     |
+| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       | Required   | Required     | Not available|
+| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]<br/>[SourceLocation (MailApp)][]| Required | Required | Required   |
+| [DesktopSettings][]                                                                          | Not available | Not available | Required |
+| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] | Required   | Required     | Required     |
+| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             | Not available | Not available | Required |
+| [Requirements (MailApp)][]\*                                                                 | Not applicable| Not available | Required |
+| [Set][]\*<br/>[Sets (Requirements)][]\*<br/>[Sets (MailAppRequirements)][]\*                 | Required   | Required     | Required     |
+| [Form][]\*<br/>[FormSettings][]\*                                                            | Not available | Not available | Required |
+| [Hosts][]\*                                                                                  | Required   | Required     | Optional     |
 
 _\*Added in the Office Add-in Manifest Schema version 1.1._
 
@@ -81,20 +79,20 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 [defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings
 [sourcelocation (contentapp)]: /javascript/api/manifest/sourcelocation
 [sourcelocation (taskpaneapp)]: /javascript/api/manifest/sourcelocation
-[desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
-[sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
+[sourcelocation (mailapp)]: /javascript/api/manifest/sourcelocation
+[desktopsettings]: /javascript/api/manifest/desktopsettings
 [permissions (contentapp)]: /javascript/api/manifest/permissions
 [permissions (taskpaneapp)]: /javascript/api/manifest/permissions
 [permissions (mailapp)]: /javascript/api/manifest/permissions
 [rule (rulecollection)]: /javascript/api/manifest/rule
 [rule (mailapp)]: /javascript/api/manifest/rule
-[requirements (mailapp)*]: /javascript/api/manifest/requirements
-[set*]: /javascript/api/manifest/set
-[sets (mailapprequirements)*]: /javascript/api/manifest/sets
-[form*]: /javascript/api/manifest/form
-[formsettings*]: /javascript/api/manifest/formsettings
-[sets (requirements)*]: /javascript/api/manifest/sets
-[hosts*]: /javascript/api/manifest/hosts
+[requirements (mailapp)]: /javascript/api/manifest/requirements
+[set]: /javascript/api/manifest/set
+[sets (mailapprequirements)]: /javascript/api/manifest/sets
+[form]: /javascript/api/manifest/form
+[formsettings]: /javascript/api/manifest/formsettings
+[sets (requirements)]: /javascript/api/manifest/sets
+[hosts]: /javascript/api/manifest/hosts
 
 ## Hosting requirements
 
@@ -149,9 +147,9 @@ The following XML manifest example hosts its main add-in page in the `https://ww
 
 The optional [VersionOverrides](/javascript/api/manifest/versionoverrides) element deserves special mention. It contains child markup that enables additional add-in features. Some of these are:
 
- - Customizing the Office ribbon and menus.
- - Customizing how Office works with the embedded browser runtime in which add-ins run.
- - Configuring how the add-in interacts with Azure Active Directory and Microsoft Graph for Single Sign-on.
+- Customizing the Office ribbon and menus.
+- Customizing how Office works with the embedded browser runtime in which add-ins run.
+- Configuring how the add-in interacts with Azure Active Directory and Microsoft Graph for Single Sign-on.
 
 Some descendant elements of `VersionOverrides` have values that override values of the parent `OfficeApp` element. For example, the `Hosts` element in `VersionOverrides` overrides the `Hosts` element in `OfficeApp`.
 
@@ -543,12 +541,12 @@ For information about validating a manifest against the [XML Schema Definition (
 
 ## See also
 
-* [How to find the proper order of manifest elements](manifest-element-ordering.md)
-* [Create add-in commands in your manifest](create-addin-commands.md)
-* [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
-* [Localization for Office Add-ins](localization.md)
-* [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
-* [Update API and manifest version](update-your-javascript-api-for-office-and-manifest-schema-version.md)
-* [Identify an equivalent COM add-in](make-office-add-in-compatible-with-existing-com-add-in.md)
-* [Requesting permissions for API use in add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-* [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md)
+- [How to find the proper order of manifest elements](manifest-element-ordering.md)
+- [Create add-in commands in your manifest](create-addin-commands.md)
+- [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
+- [Localization for Office Add-ins](localization.md)
+- [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
+- [Update API and manifest version](update-your-javascript-api-for-office-and-manifest-schema-version.md)
+- [Identify an equivalent COM add-in](make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Requesting permissions for API use in add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md)
