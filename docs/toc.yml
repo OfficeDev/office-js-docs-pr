@@ -627,6 +627,9 @@ items:
     - name: Overview
       href: outlook/apis.md
       displayName: Outlook
+    - name: Mailbox requirement set
+      href: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
+      displayName: Outlook
     - name: API reference - latest release
       href: reference/outlook-api-reference-1-11.md
       displayName: Outlook
