@@ -76,7 +76,7 @@ You need to create an app registration in Azure that represents your middle-tier
 
 1. Select **Expose an API** under **Manage**. Select the **Set** link. This will generate the Application ID URI in the form "api://$App ID GUID$", where $App ID GUID$ is the **Application (client) ID**.
 
-1. In the generated ID, insert `localhost:44355/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. When you are finished, the entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
+1. In the generated ID, insert `localhost:44355/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. When you are finished, the entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`. Select **Save**.
 
 1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **Scope** name.
 
@@ -107,7 +107,7 @@ You need to create an app registration in Azure that represents your middle-tier
     > * `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
     > * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
-1. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID and check the box for `api://localhost:44355/$App ID GUID$/access_as_user`.
+1. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID from the previous step, and then check the box for `api://localhost:44355/$App ID GUID$/access_as_user`.
 
 1. Select **Add application**.
 
@@ -116,7 +116,7 @@ You need to create an app registration in Azure that represents your middle-tier
 1. Use the **Select permissions** search box to search for the permissions your add-in needs. Select the following. Only the first is really required by your add-in itself; but the `profile` permission is required for the Office application to get a token to your add-in web application.
 
     * Files.Read
-    * profile
+    * **profile** Required for the Office application to get a token to your add-in web application.
 
     > [!NOTE]
     > The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.
@@ -135,7 +135,7 @@ You need to create an app registration in Azure that represents your middle-tier
     |Name              |Value                          |
     |------------------|-------------------------------|
     |**CLIENT_ID**     |  **Application (client) ID** from app registration overview page. |
-    |**CLIENT_SECRET** |  Client secret saved from **Certificates & Secrets** page. |
+    |**CLIENT_SECRET** |  **Client secret** saved from Certificates & Secret* page. |
     |**DIRECTORY_ID**  |  **Directory (tenant) ID** from app registration overview page. |
 
     The values should **not** be in quotation marks. When you are done, the file should be similar to the following:
@@ -160,7 +160,7 @@ You need to create an app registration in Azure that represents your middle-tier
     </WebApplicationInfo>
     ```
 
-1. Replace the placeholder "$middle_tier_application_GUID here$" *in both places* in the markup with the Application ID that you copied when you created the **Office-Add-in-NodeJS-SSO-middle-tier** app registration. The "$" symbols are not part of the ID, so do not include them. This is the same ID you used for the CLIENT_ID in the .ENV file.
+1. Replace the placeholder "$middle_tier_application_GUID here$" *in both places* in the markup with the **Application ID** that you copied when you created the **Office-Add-in-NodeJS-SSO-middle-tier** app registration. The "$" symbols are not part of the ID, so don't include them. This is the same ID you used for the CLIENT_ID in the .ENV file.
 
    > [!NOTE]
    > The **Resource** value is the **Application ID URI** you set when you registered the add-in. The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
@@ -180,8 +180,8 @@ You need to create an app registration in Azure that represents your middle-tier
 
 A key part of the sample code is the client request. The client request is an object that tracks information about the request for calling REST APIs on the middle-tier server. It's necessary because the client request state needs to be tracked or updated through the following scenarios:
 
-* SSO retries where the REST API call fails because it needs additional consent. The sample code calls getAccessToken with updated authentication options, gets the required user consent, and then calls the REST API again. The goal is to not fail in scenarios where a REST API needs additional consent.
-* SSO fails and fallback authentication is required. The access token is acquired through MSAL in a popup dialog box. The goal is to not fail in this scenario and gracefully fall back to the alternative authentication approach.
+* SSO retries where the REST API call fails because it needs additional consent. The sample code calls `getAccessToken` with updated authentication options, gets the required user consent, and then calls the REST API again. The goal is to not fail in scenarios where a REST API needs additional consent.
+* SSO fails and fallback authentication is required. The access token is acquired through MSAL in a pop-up dialog box. The goal is to not fail in this scenario and gracefully fall back to the alternative authentication approach.
 
 The client request object tracks the following data:
 
@@ -192,7 +192,7 @@ The client request object tracks the following data:
 * `callbackHandler` - The function to pass the results of the REST API call.
 * `callbackFunction` - The function to pass the client request to when ready.
 
-1. In the `createRequest` function, replace `TODO 1` with the following code to initialize the client request object:
+1. To initialize the client request object, in the `createRequest` function, replace `TODO 1` with the following code.
 
     ```javascript
     const clientRequest = {
@@ -236,7 +236,7 @@ The client request object tracks the following data:
 
     * The function `getFileNameList` is called when the user chooses the **Get OneDrive File Names** button on the task pane.
     * It creates a client request to track information about the call, such as the URL of the REST API.
-    * When the REST API returns a result, it is passed to the `handleGetFileNameResponse` function. This callback is passed as a parameter to `createRequest` and will be tracked in `clientRequest.callbackRESTApiHandler`.
+    * When the REST API returns a result, it's passed to the `handleGetFileNameResponse` function. This callback is passed as a parameter to `createRequest` and will be tracked in `clientRequest.callbackRESTApiHandler`.
     * The code calls `callWebServer` with the client request to perform next steps and call the REST API.
 
     ```javascript
@@ -448,11 +448,13 @@ Fallback authentication will use the MSAL library to sign in the user. The add-i
 
 ## Code the middle-tier server
 
-The middle-tier server provides REST APIs for the client to call. For example the REST API `/getuserfilenames` will get a list of filenames from the user's OneDrive folder. Each REST API call requires an access token by the client to ensure the correct client is accessing their data. The access token is exchanged for a Microsoft Graph token through the On-Behalf-Of (OBO) flow. The new Microsoft Graph token is cached by the MSAL library for subsequent API calls. It is never sent outside of the middle-tier server. For more information, see [Middle-tier access token request](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#middle-tier-access-token-request)
+The middle-tier server provides REST APIs for the client to call. For example, the REST API `/getuserfilenames` will get a list of filenames from the user's OneDrive folder. Each REST API call requires an access token by the client to ensure the correct client is accessing their data. The access token is exchanged for a Microsoft Graph token through the On-Behalf-Of flow (OBO). The new Microsoft Graph token is cached by the MSAL library for subsequent API calls. It is never sent outside of the middle-tier server. For more information, see [Middle-tier access token request](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#middle-tier-access-token-request)
 
 ### Create the route and implement On-Behalf-Of flow
 
-1. Open the file `routes\getFilesRoute.js` and replace `TODO 12` with the following code. Note that the code calls `authHelper.validateJwt`. This ensures the access token is valid and has not been tampered with. For more information, see [Validating tokens](/azure/active-directory/develop/access-tokens#validating-tokens).
+1. Open the file `routes\getFilesRoute.js` and replace `TODO 12` with the following code. About this code, note:
+    * It calls `authHelper.validateJwt`. This ensures the access token is valid and hasn't been tampered with. 
+    * For more information, see [Validating tokens](/azure/active-directory/develop/access-tokens#validating-tokens).
 
     ```javascript
     router.get("/getuserfilenames", authHelper.validateJwt, async function (req, res) {
@@ -486,7 +488,7 @@ The middle-tier server provides REST APIs for the client to call. For example th
 
 1. Replace `TODO 14` with the following code. About this code, note:
 
-    * It constructs the URL for the Microsoft Graph API call and the makes the call via the `getGraphData` function.
+    * It constructs the URL for the Microsoft Graph API call and then makes the call via the `getGraphData` function.
     * It returns errors by sending an HTTP 500 response along with details.
     * On success it returns the JSON with the filename list to the client.
 
