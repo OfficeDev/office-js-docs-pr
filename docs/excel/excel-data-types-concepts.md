@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 06/30/2022
+ms.date: 07/01/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -20,9 +20,11 @@ The `valuesAsJson` property is integral to creating data types in Excel. This pr
 
 The following objects offer the `valuesAsJson` property.
 
-- [Range]()
-- [TableRow]()
-- [TableColumn]()
+- [Range](/javascript/api/excel/excel.range)
+- [RangeView](/javascript/api/excel/excel.rangeview)
+- [TableRow](/javascript/api/excel/excel.tablerow)
+- [TableColumn](/javascript/api/excel/excel.tablecolumn)
+- [NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)
 
 > [!NOTE]
 > Some cell values change based on a user's locale. The `valuesAsJsonLocal` property offers localization support and is available on all the same objects as `valuesAsJson`.
@@ -48,13 +50,13 @@ The `CellValue` type alias also returns the [CellValueExtraProperties](/javascri
 
 ### JSON schema
 
-Each cell value type returned by `valuesAsJson` uses a JSON metadata schema designed for that type. These JSON metadata schemas all have three properties in common (`type`, `basicType`, and `basicValue`), along with additional properties unique to each data type.
+Each cell value type returned by `valuesAsJson` uses a JSON metadata schema designed for that type. These JSON metadata schemas all have the `type`, `basicType`, and `basicValue` properties in common, along with additional properties unique to each data type.
 
 The `type` property defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data. The `basicType` property is always a readonly property and is used as a fallback when the data type isn't supported or is formatted incorrectly.
 
 The `basicValue` matches the value that would be returned by the `values` property. The `basicValue` is used as a fallback when calculations encounter incompatible scenarios, such as a version of Excel that doesn't meet the minimum build number requirement for the data types feature. The `basicValue` property is readonly for `ArrayCellValue`, `EntityCellValue`, `LinkedEntityCellValue`, and `WebImageCellValue` data types.
 
-In addition to the three fields that all data types share, each `*CellValue` has properties available according to that type. For example, the [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) type includes the `altText` and `attribution` properties, while the [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) type offers the `properties` and `text` fields.
+In addition to the three fields that all data types share, the JSON metadata schema for each `*CellValue` has properties available according to that type. For example, the [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) type includes the `altText` and `attribution` properties, while the [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) type offers the `properties` and `text` fields.
 
 The following sections show JSON code samples for the formatted number value, entity value, and web image data types.
 
