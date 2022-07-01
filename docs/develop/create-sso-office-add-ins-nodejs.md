@@ -9,7 +9,9 @@ ms.localizationpriority: medium
 
 Users can sign in to Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
 
-This article walks you through the process of enabling single sign-on (SSO) in an add-in that is built with Node.js and Express. For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md).
+This article walks you through the process of enabling single sign-on (SSO) in an add-in. The sample add-in you create has two parts; a task pane that loads in Microsoft Excel, and a middle-tier server that handles calls to Microsoft Graph for the task pane. The middle-tier server is built with Node.js and Express and exposes a single REST API, `/getuserfilenames`, that returns a list of the first 10 file names in the user's OneDrive folder. The task pane uses the `getAccessToken()` method to get an access token for the signed in user to the middle-tier server. The middle-tier server uses the On-Behalf-Of flow (OBO) to exchange the access token for a new one with access to Microsoft Graph. You can extend this pattern to access any Microsoft Graph data. The task pane always calls a middle-tier REST API (passing the access token) when it needs Microsoft Graph services. The middle-tier uses the token obtained via OBO to call Microsoft Graph services and return the results to the task pane.
+
+This article works with an add-in that uses Node.js and Express. For a similar article about an ASP.NET-based add-in, see [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md).
 
 ## Prerequisites
 
@@ -17,15 +19,11 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 - [Git Bash](https://git-scm.com/downloads) (or another git client)
 
-- TypeScript, version 3.6.2 or later
-
-[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
-
 - A code editor. We recommend Visual Studio Code.
 
 - At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.
 
-- Microsoft 365 - You can get a [free developer sandbox](https://developer.microsoft.com/microsoft-365/dev-program#Subscription) that provides a renewable 90-day Microsoft 365 E5 developer subscription. The developer sandbox includes a Microsoft Azure subscription that you can use for app registrations in later steps in this article. If you prefer, you can use a separate Microsoft Azure subscription for app registrations. Get a trial subscription at [Microsoft Azure](https://account.windowsazure.com/SignUp).
+- A build of Microsoft 365 that supports the [IdentityAPI 1.3 requirement set](/javascript/api/requirement-sets/common/identity-api-requirement-sets). You can get a [free developer sandbox](https://developer.microsoft.com/microsoft-365/dev-program#Subscription) that provides a renewable 90-day Microsoft 365 E5 developer subscription. The developer sandbox includes a Microsoft Azure subscription that you can use for app registrations in later steps in this article. If you prefer, you can use a separate Microsoft Azure subscription for app registrations. Get a trial subscription at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## Set up the starter project
 
@@ -35,7 +33,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
    > There are two versions of the sample:
    >
    > - The **Begin** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
-   > - The **Complete** folder contains the same sample with all coding steps from this article completed. To use the completed version, just follow the instructions in this article, but replace "Begin" with "Completed" and skip the sections **Code the client side** and **Code the middle-tier server** side.
+   > - The **Complete** folder contains the same sample with all coding steps from this article completed. To use the completed version, just follow the instructions in this article, but replace "Begin" with "Complete" and skip the sections **Code the client side** and **Code the middle-tier server** side.
 
 1. Open a command prompt in the **Begin** folder.
 
@@ -47,7 +45,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 You need to create an app registration in Azure that represents your middle-tier server. This enables authentication support so that proper access tokens can be issued to the client code in JavaScript. This registration will support both SSO in the client, and fallback authentication using the Microsoft Authentication Library (MSAL).
 
-1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
+1. To register your app, navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
 
 1. Sign in with the **_admin_** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
 
@@ -55,7 +53,7 @@ You need to create an app registration in Azure that represents your middle-tier
 
    - Set **Name** to `Office-Add-in-NodeJS-SSO`.
    - Set **Supported account types** to **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox).**.
-   - Set the application type to **Single-page application (SPA)** and then set **Redirect URI** to `https://localhost:44355/dialog.html`.
+   - In the **Redirect URI** section, set the platform to **Single-page application (SPA)** with a redirect URI value of `https://localhost:44355/dialog.html`.
    - Choose **Register**.
 
    > [!NOTE]
@@ -66,19 +64,19 @@ You need to create an app registration in Azure that represents your middle-tier
    > [!NOTE]
    > This **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
-1. Select **Authentication** under **Manage**. In the **Implicit grant and hybrid flows** section, enable the checkboxes for both **Access token** and **ID token**. The sample uses Microsoft Authentication Library (MSAL) for fallback authentication when SSO is not available.
+1. In the leftmost sidebar, select **Authentication** under **Manage**. In the **Implicit grant and hybrid flows** section, select both checkboxes for **Access tokens** and **ID tokens**. The sample uses the Microsoft Authentication Library (MSAL) for fallback authentication when SSO is not available.
 
-1. Select **Save**.
+1. Choose **Save**.
 
 1. Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value for **Description** then select an appropriate option for **Expires** and choose **Add**.
 
    The web application uses the client secret **Value** to prove its identity when it requests tokens. _Record this value for use in a later step - it's shown only once._
 
-1. Select **Expose an API** under **Manage**. Select the **Set** link. This will generate the Application ID URI in the form "api://$App ID GUID$", where $App ID GUID$ is the **Application (client) ID**.
+1. In the leftmost sidebar, select **Expose an API** under **Manage**. Select the **Set** link. This will generate the Application ID URI in the form "api://$App ID GUID$", where $App ID GUID$ is the **Application (client) ID**.
 
-1. In the generated ID, insert `localhost:44355/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. When you are finished, the entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`. Select **Save**.
+1. In the generated ID, insert `localhost:44355/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. When you are finished, the entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`. Then choose **Save**.
 
-1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **Scope** name.
+1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **Scope name**.
 
 1. Set **Who can consent?** to **Admins and users**.
 
@@ -96,9 +94,9 @@ You need to create an app registration in Azure that represents your middle-tier
    > [!NOTE]
    > The domain part of the **Scope** name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
-1. In the **Authorized client applications** section, enter the following ID to pre-authorize all Microsoft Office application endpoints.
+1. In the **Authorized client applications** section, select **Add a client application** button and then, in the panel that opens, set the Client ID to `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e`, and then select the **Authorized scopes** checkbox for `api://localhost:44355/$app-id-guid$/access_as_user`.
 
-   - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (All Microsoft Office application endpoints)
+1. Select **Add application**.
 
    > [!NOTE]
    > The `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID pre-authorizes all Microsoft Office application endpoints. It is also required if you want to support Microsoft accounts (MSA) on Office on Windows and Mac. Alternatively, you can enter a proper subset of the following IDs if for any reason you want to deny authorization to Office on some platforms. Just leave out the IDs of the platforms from which you want to withhold authorization. Users of your add-in on those platforms will not be able to call your Web APIs, but other functionality in your add-in will still work.
@@ -107,16 +105,13 @@ You need to create an app registration in Azure that represents your middle-tier
    > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
    > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
-1. Select **Add a client application** button and then, in the panel that opens, set the Client ID to the respective GUID from the previous step, and then check the box for `api://localhost:44355/$app-id-guid$/access_as_user`.
+1. In the leftmost sidebar, select **API permissions** under **Manage** and select **Add a permission**. On the panel that opens, choose **Microsoft Graph** and then choose **Delegated permissions**.
 
-1. Select **Add application**.
+1. Use the **Select permissions** search box to search for the permissions your add-in needs. Select the following. Only the first is really required by your add-in itself; but the `profile` and `openid` permissions are required for the Office application to get an access token with user identity to access the middle-tier server.
 
-1. Select **API permissions** under **Manage** and select **Add a permission**. On the panel that opens, choose **Microsoft Graph** and then choose **Delegated permissions**.
-
-1. Use the **Select permissions** search box to search for the permissions your add-in needs. Select the following. Only the first is really required by your add-in itself; but the `profile` permission is required for the Office application to get a token to your add-in web application.
-
-   - Files.Read
-   - **profile** Required for the Office application to get a token to your add-in web application.
+   - **Files.Read**
+   - **profile**
+   - **openid**
 
    > [!NOTE]
    > The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.
@@ -134,7 +129,7 @@ You need to create an app registration in Azure that represents your middle-tier
    | Name              | Value                                                            |
    | ----------------- | ---------------------------------------------------------------- |
    | **CLIENT_ID**     | **Application (client) ID** from app registration overview page. |
-   | **CLIENT_SECRET** | **Client secret** saved from Certificates & Secret\* page.       |
+   | **CLIENT_SECRET** | **Client secret** saved from **Certificates & Secrets** page.       |
    | **DIRECTORY_ID**  | **Directory (tenant) ID** from app registration overview page.   |
 
    The values should **not** be in quotation marks. When you are done, the file should be similar to the following:
@@ -178,19 +173,19 @@ You need to create an app registration in Azure that represents your middle-tier
    > [!NOTE]
    > As the name suggests, the ssoAuthES6.js uses JavaScript ES6 syntax because using `async` and `await` best shows the essential simplicity of the SSO API. When the localhost server is started, this file is transpiled to ES5 syntax so that the sample will support Internet Explorer 11.
 
-A key part of the sample code is the client request. The client request is an object that tracks information about the request for calling REST APIs on the middle-tier server. It's necessary because the client request state needs to be tracked or updated through the following scenarios:
+    A key part of the sample code is the client request. The client request is an object that tracks information about the request for calling REST APIs on the middle-tier server. It's necessary because the client request state needs to be tracked or updated through the following scenarios:
 
-- SSO retries where the REST API call fails because it needs additional consent. The sample code calls `getAccessToken` with updated authentication options, gets the required user consent, and then calls the REST API again. The goal is to not fail in scenarios where a REST API needs additional consent.
-- SSO fails and fallback authentication is required. The access token is acquired through MSAL in a pop-up dialog box. The goal is to not fail in this scenario and gracefully fall back to the alternative authentication approach.
+    - SSO retries where the REST API call fails because it needs additional consent. The sample code calls `getAccessToken` with updated authentication options, gets the required user consent, and then calls the REST API again. The goal is to not fail in scenarios where a REST API needs additional consent.
+    - SSO fails and fallback authentication is required. The access token is acquired through MSAL in a pop-up dialog box. The goal is to not fail in this scenario and gracefully fall back to the alternative authentication approach.
 
-The client request object tracks the following data:
+    The client request object tracks the following data:
 
-- `authOptions` - [Auth configuration parameters](/javascript/api/office/office.authoptions) for SSO.
-- `authSSO` - true if using SSO, otherwise false.
-- `accessToken` - The access token to the middle-tier server. The method to obtain this token is different for SSO than fallback auth.
-- `url` - The URL of the REST API to call on the middle-tier server.
-- `callbackHandler` - The function to pass the results of the REST API call.
-- `callbackFunction` - The function to pass the client request to when ready.
+    - `authOptions` - [Auth configuration parameters](/javascript/api/office/office.authoptions) for SSO.
+    - `authSSO` - true if using SSO, otherwise false.
+    - `accessToken` - The access token to the middle-tier server. The method to obtain this token is different for SSO than fallback auth.
+    - `url` - The URL of the REST API to call on the middle-tier server.
+    - `callbackHandler` - The function to pass the results of the REST API call.
+    - `callbackFunction` - The function to pass the client request to when ready.
 
 1. To initialize the client request object, in the `createRequest` function, replace `TODO 1` with the following code.
 
