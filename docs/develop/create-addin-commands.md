@@ -423,7 +423,7 @@ The following shows an example of how to use the **\<Resources\>** element. Each
 |**\<Images\>**/ **\<Image\>** <br/> | Provides the HTTPS URL to an image file. Each image must define the three required image sizes: <br/>  16×16 <br/>  32×32 <br/>  80×80 <br/>  The following image sizes are also supported, but not required: <br/>  20×20 <br/>  24×24 <br/>  40×40 <br/>  48×48 <br/>  64×64 <br/> |
 |**\<Urls\>**/ **\<Url\>** <br/> |Provides an HTTPS URL location. A URL can be a maximum of 2048 characters.  <br/> |
 |**\<ShortStrings\>**/ **\<String\>** <br/> |The text for **\<Label\>** and **Title** elements. Each **\<String\>** contains a maximum of 125 characters. <br/> |
-|**\<LongStrings\>**/ **\<String\>** <br/> |The text for **Tooltip** and **\<Description\>** elements. Each **\<String\>** contains a maximum of 250 characters. <br/> |
+|**\<LongStrings\>**/ **\<String\>** <br/> |The text for **\<Tooltip\>** and **\<Description\>** elements. Each **\<String\>** contains a maximum of 250 characters. <br/> |
 
 > [!NOTE]
 > You must use Secure Sockets Layer (SSL) for all URLs in the **\<Image\>** and **\<Url\>** elements.
