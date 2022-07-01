@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Office as part of an Office Add-in.
-ms.date: 05/10/2022
+ms.date: 05/25/2022
 ms.localizationpriority: high
 ---
 
@@ -32,7 +32,7 @@ The following command capabilities are currently supported.
 
 ### Extension points
 
-- Ribbon tabs - Extend built-in tabs or create a new custom tab.
+- Ribbon tabs - Extend built-in tabs or create a new custom tab. An add-in can have just one custom tab.
 - Context menus - Extend selected context menus.
 
 ### Control types
@@ -61,7 +61,7 @@ You can specify where a custom tab appears on the Office application's ribbon, s
 
 ### Integration of built-in Office buttons
 
-You can insert the built-in Office ribbon buttons into your custom command groups and custom ribbon tabs.
+You can insert the built-in Office ribbon buttons into your custom command groups and your custom ribbon tab.
 
 > [!NOTE]
 > This feature is not supported in all Office applications or scenarios. For more information, see [Integrate built-in Office buttons into custom tabs](built-in-button-integration.md).

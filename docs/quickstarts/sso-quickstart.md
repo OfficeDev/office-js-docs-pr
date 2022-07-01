@@ -1,7 +1,7 @@
 ---
 title: Single sign-on (SSO) quick start
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on.
-ms.date: 01/25/2022
+ms.date: 06/10/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
 ---
@@ -157,3 +157,4 @@ Congratulations, you've successfully created a task pane add-in that uses SSO wh
 - [Customize your Node.js SSO-enabled add-in](sso-quickstart-customize.md)
 - [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md)
 - [Troubleshoot error messages for single sign-on (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

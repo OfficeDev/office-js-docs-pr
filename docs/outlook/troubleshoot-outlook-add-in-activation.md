@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: Possible reasons your add-in doesn't activate as you expect.
-ms.date: 09/02/2020
+ms.date: 06/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -55,11 +55,11 @@ Any one of the Outlook rich clients can disable an add-in for performance reason
 
 Use one of the following approaches to verify whether an add-in is disabled.
 
-- In Outlook on the web, sign in directly to the email account, choose the Settings icon, and then choose **Manage add-ins** to go to the Exchange Admin Center, where you can verify whether the add-in is enabled.
+- In Outlook on the web, sign in directly to the email account, then choose **Get Add-ins** from the ribbon.
 
-- In Outlook on Windows, go to the Backstage view and choose **Manage add-ins**. Sign in to the Exchange Admin Center to verify whether the add-in is enabled.
+- In Outlook on Windows, choose **More Apps** from the ribbon, then select **Get Add-ins**.
 
-- In Outlook on Mac, choose **Manage add-ins** in the add-in bar. Sign in to the Exchange Admin Center to verify whether the add-in is enabled.
+- In Outlook on Mac, choose the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
 
 ## Does the tested item support Outlook add-ins? Is the selected item delivered by a version of Exchange Server that is at least Exchange 2013?
 

@@ -256,13 +256,9 @@ When using custom keyboard shortcuts on the web, some keyboard shortcuts that ar
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
-## Enable custom keyboard shortcuts for specific users (preview)
+## Enable custom keyboard shortcuts for specific users
 
 Your add-in can enable users to reassign the actions of the add-in to alternate keyboard combinations.
-
-> [!IMPORTANT]
-> The features described in this section are currently in preview and subject to change. They are not currently supported for use in production environments. To try the preview features, you'll need to [join the Office Insider Program](https://insider.office.com/join).
-> A good way to try out preview features is by using a Microsoft 365 subscription. If you don't already have a Microsoft 365 subscription, you can get one by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 > [!NOTE]
 > The APIs described in this section require the [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) requirement set.
