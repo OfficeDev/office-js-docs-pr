@@ -79,7 +79,7 @@ Follow these steps for a new or existing project to configure it to use a shared
    ...
    ```
 
-1. Find the `<FunctionFile ...>` tag and change the `resid` from **Commands.Url** to  **Taskpane.Url**. Note that if you don't have action commands, you won't have a **\<FunctionFile\>** entry, and can skip this step.
+1. Find the **\<FunctionFile\>** tag and change the `resid` from **Commands.Url** to  **Taskpane.Url**. Note that if you don't have action commands, you won't have a **\<FunctionFile\>** entry, and can skip this step.
 
     ```xml
     </GetStarted>

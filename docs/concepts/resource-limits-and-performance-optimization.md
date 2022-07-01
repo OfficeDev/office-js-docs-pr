@@ -81,7 +81,7 @@ For each event that the Telemetry Log tracks for an add-in, there is a date/time
 
 The following table lists the events that the Telemetry Log tracks for Office Add-ins in general.
 
-|**Event ID**|**Title**|**Severity**|**\<Description\>**|
+|**Event ID**|**Title**|**Severity**|**Description**|
 |:-----|:-----|:-----|:-----|
 |7|Add-in manifest downloaded successfully||The manifest of the Office Add-in was successfully loaded and read by the Office application.|
 |8|Add-in manifest did not download|Critical|The Office application was unable to load the manifest file for the Office Add-in from the SharePoint catalog, corporate catalog, or AppSource.|
