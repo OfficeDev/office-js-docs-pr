@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 05/18/2022
+ms.date: 06/30/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -14,9 +14,20 @@ ms.localizationpriority: high
 
 This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with data types. It introduces core concepts that are fundamental to data type development.
 
-## Core concepts
+## The `valuesAsJson` property
 
-Use the [`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) property to work with data type values. This property is similar to [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member), but `Range.values` only returns the four basic types: string, number, boolean, or error values. `Range.valuesAsJson` returns expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
+The `valuesAsJson` property is integral to creating data types in Excel. This property is an expansion of the `values` property available on multiple Excel JavaScript API objects (such as [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member)). Both the `values` and `valuesAsJson` properties are used to access the value in a cell, but the `values` property only returns one of the four basic types: string, number, boolean, or error values. In contrast, `valuesAsJson` returns expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
+
+The following objects offer the `valuesAsJson` property.
+
+- [Range]()
+- [TableRow]()
+- [TableColumn]()
+
+> [!NOTE]
+> Some cell values change based on a user's locale. The `valuesAsJsonLocal` property offers localization support and is available on all the same objects as `valuesAsJson`.
+
+## Cell values
 
 The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.cellvalue) type alias, which is a [union](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types) of the following data types.
 
@@ -33,13 +44,19 @@ The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.ce
 - [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)
 - [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)
 
-The [CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) object is an [intersection](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types) with the rest of the `*CellValue` types. It's not a data type itself. The properties of the `CellValueExtraProperties` object are used with all data types to specify details related to overwriting cell values.
+The `CellValue` type alias also returns the [CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) object, which is an [intersection](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types) with the rest of the `*CellValue` types. It's not a data type itself. The properties of the `CellValueExtraProperties` object are used with all data types to specify details related to overwriting cell values.
 
 ### JSON schema
 
-Each data type uses a JSON metadata schema designed for that type. This defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data and additional information about the cell, such as `basicValue`, `numberFormat`, or `address`. Each `CellValueType` has properties available according to that type. For example, the `webImage` type includes the [altText](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-alttext-member) and [attribution](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-attribution-member) properties. The following sections show JSON code samples for the formatted number value, entity value, and web image data types.
+Each cell value type returned by `valuesAsJson` uses a JSON metadata schema designed for that type. These JSON metadata schemas all have three properties in common (`type`, `basicType`, and `basicValue`), along with additional properties unique to each data type.
 
-The JSON metadata schema for each data type also includes one or more readonly properties that are used when calculations encounter incompatible scenarios, such as a version of Excel that doesn't meet the minimum build number requirement for the data types feature. The property `basicType` is part of the JSON metadata of every data type, and it's always a readonly property. The `basicType` property is used as a fallback when the data type isn't supported or is formatted incorrectly.
+The `type` property defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data. The `basicType` property is always a readonly property and is used as a fallback when the data type isn't supported or is formatted incorrectly.
+
+The `basicValue` matches the value that would be returned by the `values` property. The `basicValue` is used as a fallback when calculations encounter incompatible scenarios, such as a version of Excel that doesn't meet the minimum build number requirement for the data types feature. The `basicValue` property is readonly for `ArrayCellValue`, `EntityCellValue`, `LinkedEntityCellValue`, and `WebImageCellValue` data types.
+
+In addition to the three fields that all data types share, each `*CellValue` has properties available according to that type. For example, the [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) type includes the `altText` and `attribution` properties, while the [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) type offers the `properties` and `text` fields.
+
+The following sections show JSON code samples for the formatted number value, entity value, and web image data types.
 
 ## Formatted number values
 
