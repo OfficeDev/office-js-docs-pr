@@ -117,10 +117,10 @@ To override this (desktop Office) behavior, specify each domain you want to open
 > [!NOTE]
 > There are two exceptions to this behavior.
 >
-> - It applies only to the root pane of the add-in. If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **<AppDomains>**, even in desktop Office.
-> - When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **<AppDomains>**, even in desktop Office.
+> - It applies only to the root pane of the add-in. If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **\<AppDomains\>**, even in desktop Office.
+> - When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **\<AppDomains\>**, even in desktop Office.
 
-The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **<SourceLocation>** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/javascript/api/manifest/appdomain) element within the **<AppDomains>** element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
+The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **\<SourceLocation\>** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/javascript/api/manifest/appdomain) element within the **\<AppDomains\>** element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

@@ -27,7 +27,7 @@ For this scenario, instead of running the `action` function on choosing the **Pe
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire **<VersionOverrides>** node (including open and close tags) and replace it with the following XML.
+1. Select the entire **\<VersionOverrides\>** node (including open and close tags) and replace it with the following XML.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">

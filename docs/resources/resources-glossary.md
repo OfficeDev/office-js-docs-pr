@@ -75,7 +75,7 @@ See also: [JavaScript runtime](#javascript-runtime), [shared JavaScript runtime,
 
 ## host
 
-**<Host>** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
+**\<Host\>** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 
