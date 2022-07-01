@@ -72,7 +72,7 @@ You need to create an app registration in Azure that represents your middle-tier
 
 1. Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value for **Description** then select an appropriate option for **Expires** and choose **Add**.
 
-   The web application uses the client secret to prove its identity when it requests tokens. _Record this value for use in a later step - it's shown only once._
+   The web application uses the client secret **Value** to prove its identity when it requests tokens. _Record this value for use in a later step - it's shown only once._
 
 1. Select **Expose an API** under **Manage**. Select the **Set** link. This will generate the Application ID URI in the form "api://$App ID GUID$", where $App ID GUID$ is the **Application (client) ID**.
 
@@ -586,3 +586,13 @@ The sample must handle both fallback authentication through MSAL and SSO authent
 
 > [!NOTE]
 > If you were previously signed into Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to _close all other Office applications_ before you press **Get OneDrive File Names**.
+
+## Security notes
+
+* The `/getuserfilenames` route in `getFilesroute.js` uses a literal string to compose the call for Microsoft Graph. If you change the call such that any part of the string comes from user input, sanitize the input so that it cannot be used in a Response header injection attack.
+
+* In `app.js` the following content security policy is in place for scripts. You may want to specify additional restrictions depending on your add-in security needs.
+
+    `"Content-Security-Policy": "script-src https://appsforoffice.microsoft.com https://ajax.aspnetcdn.com https://alcdn.msauth.net " +  process.env.SERVER_SOURCE,`
+
+Always follow security best practices in the [Microsoft identity platform documentation](/azure/active-directory/develop/).
