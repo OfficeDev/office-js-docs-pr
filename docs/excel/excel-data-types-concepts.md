@@ -104,6 +104,10 @@ const myEntity: Excel.EntityCellValue = {
 
 Entity values also offer a `layouts` property that creates a card for the entity. The card displays as a modal window in the Excel UI and can display additional information contained within the entity value, beyond what's visible in the cell. To learn more, see [Use cards with entity value data types](excel-data-types-entity-card.md).
 
+### Linked entities
+
+Linked entity values, or [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) objects, are a type of entity value. These objects integrate data provided by an external service and can display this data as an [entity card](excel-data-types-entity-card.md), like regular entity values. The [Stocks and Geography data types](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) available via the Excel UI are linked entity values.
+
 ## Web image values
 
 The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
