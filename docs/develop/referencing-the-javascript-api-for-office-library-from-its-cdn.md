@@ -40,7 +40,7 @@ npm install --save-dev @types/office-js
 
 ## Preview APIs
 
-New JavaScript APIs are first introduced in "preview" and later become part of a specific numbered requirement set after sufficient testing occurs and user feedback is required.
+New JavaScript APIs are first introduced in "preview" and later become part of a specific numbered requirement set after sufficient testing occurs and user feedback is acquired.
 
 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
 
