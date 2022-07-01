@@ -104,7 +104,7 @@ For more information about the manifest, see [Office Add-ins XML manifest](../de
 
 1. In Visual Studio, open the HelloProjectOData.xml file.
 
-2. The default display name is the name of the Visual Studio project ("HelloProjectOData"). For example, change the default value of the **DisplayName** element to"Hello ProjectData".
+2. The default display name is the name of the Visual Studio project ("HelloProjectOData"). For example, change the default value of the **<DisplayName>** element to"Hello ProjectData".
 
 3. The default description is also "HelloProjectOData". For example, change the default value of the Description element to "Test REST queries of the ProjectData service".
 
@@ -120,7 +120,7 @@ The following steps show how to add an icon file to the Visual Studio solution.
 
     ![Icon for the HelloProjectOData app.](../images/pj15-hello-project-data-new-icon.jpg)
 
-3. In the HelloProjectOData.xml manifest, add an **IconUrl** element below the **Description** element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: `<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`. The HelloProjectOData.xml manifest file now contains the following (your **Id** value will be different):
+3. In the HelloProjectOData.xml manifest, add an **<IconUrl>** element below the **<Description>** element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: `<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`. The HelloProjectOData.xml manifest file now contains the following (your **<Id>** value will be different):
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -149,7 +149,7 @@ The following steps show how to add an icon file to the Visual Studio solution.
 
 The **HelloProjectOData** add-in is a sample that includes debugging and error output; it is not intended for production use. Before you start coding the HTML content, design the UI and user experience for the add-in, and outline the JavaScript functions that interact with the HTML code. For more information, see [Design guidelines for Office Add-ins](../design/add-in-design.md).
 
-The task pane shows the add-in display name at the top, which is the value of the **DisplayName** element in the manifest. The **body** element in the HelloProjectOData.html file contains the other UI elements, as follows:
+The task pane shows the add-in display name at the top, which is the value of the **<DisplayName>** element in the manifest. The **body** element in the HelloProjectOData.html file contains the other UI elements, as follows:
 
 - A subtitle indicates the general functionality or type of operation, for example, **ODATA REST QUERY**.
 

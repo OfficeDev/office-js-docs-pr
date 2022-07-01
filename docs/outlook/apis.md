@@ -43,10 +43,10 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > These checks are not needed for any APIs that are in the requirement set version specified in the manifest.
 
-Specify the minimum requirement set that supports the critical set of APIs for your scenario, without which features of your add-in won't work. You specify the requirement set in the manifest in the **Requirements** element. For more information, see [Outlook add-in manifests](manifests.md) and
+Specify the minimum requirement set that supports the critical set of APIs for your scenario, without which features of your add-in won't work. You specify the requirement set in the manifest in the **<Requirements>** element. For more information, see [Outlook add-in manifests](manifests.md) and
 [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
-The **Methods** element doesn't apply to Outlook add-ins, so you can't declare support for specific methods.
+The **<Methods>** element doesn't apply to Outlook add-ins, so you can't declare support for specific methods.
 
 ## Permissions
 
@@ -61,7 +61,7 @@ Your add-in requires the appropriate permissions to use the APIs that it needs. 
 | **Read/write** | In addition to what is allowed in **Read item**, it allows:<ul><li>full Outlook add-in API access except `makeEwsRequestAsync`</li><li>setting the item properties</li></ul> |
 | **Read/write mailbox** | In addition to what is allowed in **Read/write**, it allows:<ul><li>creating, reading, writing items and folders</li><li>sending items</li><li>calling [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
 
-In general, you should specify the minimum permission needed for your add-in. Permissions are declared in the **Permissions** element in the manifest. For more information, see [Outlook add-in manifests](manifests.md). For information about security issues, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md).
+In general, you should specify the minimum permission needed for your add-in. Permissions are declared in the **<Permissions>** element in the manifest. For more information, see [Outlook add-in manifests](manifests.md). For information about security issues, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md).
 
 ## Mailbox object
 

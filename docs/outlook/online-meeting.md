@@ -21,7 +21,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To enable users to create online meetings with your add-in, you must configure the **VersionOverrides** node in the manifest. If you're creating an add-in that will only be supported in Outlook on the web, Windows, and Mac, select the **Windows, Mac, web** tab for guidance. However, if your add-in will also be supported in Outlook on Android and iOS, select the **Mobile** tab.
+To enable users to create online meetings with your add-in, you must configure the **<VersionOverrides>** node in the manifest. If you're creating an add-in that will only be supported in Outlook on the web, Windows, and Mac, select the **Windows, Mac, web** tab for guidance. However, if your add-in will also be supported in Outlook on Android and iOS, select the **Mobile** tab.
 
 # [Windows, Mac, web](#tab/non-mobile)
 
@@ -29,7 +29,7 @@ To enable users to create online meetings with your add-in, you must configure t
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire **VersionOverrides** node (including open and close tags) and replace it with the following XML.
+1. Select the entire **<VersionOverrides>** node (including open and close tags) and replace it with the following XML.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -95,13 +95,13 @@ To enable users to create online meetings with your add-in, you must configure t
 
 # [Mobile](#tab/mobile)
 
-To allow users to create an online meeting from their mobile device, the [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) is configured in the manifest under the parent element **MobileFormFactor**. This extension point isn't supported in other form factors.
+To allow users to create an online meeting from their mobile device, the [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) is configured in the manifest under the parent element **<MobileFormFactor>**. This extension point isn't supported in other form factors.
 
 1. In your code editor, open the Outlook quick start project you created.
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire **VersionOverrides** node (including open and close tags) and replace it with the following XML.
+1. Select the entire **<VersionOverrides>** node (including open and close tags) and replace it with the following XML.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
