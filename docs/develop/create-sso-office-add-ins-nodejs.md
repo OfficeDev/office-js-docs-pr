@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: Learn how to create a Node.js-based add-in that uses Office Single Sign-on.
-ms.date: 06/10/2022
+ms.date: 07/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -25,7 +25,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 * At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.
 
-* A Microsoft Azure subscription. This add-in uses the Microsoft identity platform for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* Microsoft 365 - You can get a [free developer sandbox](https://developer.microsoft.com/microsoft-365/dev-program#Subscription) that provides a renewable 90-day Microsoft 365 E5 developer subscription. The developer sandbox includes a Microsoft Azure subscription that you can use for app registrations in later steps in this article. If you prefer, you can use a separate Microsoft Azure subscription for app registrations. Get a trial subscription at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## Set up the starter project
 
@@ -35,7 +35,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
     > There are two versions of the sample:
     >
     > * The **Begin** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
-    > * The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Begin" with "Completed" and skip the sections **Code the client side** and **Code the middle-tier server** side.
+    > * The **Complete** folder contains the same sample with all coding steps from this article completed. To use the completed version, just follow the instructions in this article, but replace "Begin" with "Completed" and skip the sections **Code the client side** and **Code the middle-tier server** side.
 
 1. Open a command prompt in the **Begin** folder.
 
@@ -43,9 +43,9 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. Run the command `npm run install-dev-certs`. Select **Yes** to the prompt to install the certificate.
 
-## Register the add-in's middle-tier server with Microsoft identity platform
+## Register the add-in with Microsoft identity platform
 
-You need to create an app registration in Azure that represents your middle-tier server. This enables authentication support so that proper access tokens can be issued to the client code in JavaScript.
+You need to create an app registration in Azure that represents your middle-tier server. This enables authentication support so that proper access tokens can be issued to the client code in JavaScript. This registration will support both SSO in the client, and fallback authentication using the Microsoft Authentication Library (MSAL).
 
 1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
 
@@ -54,18 +54,21 @@ You need to create an app registration in Azure that represents your middle-tier
 1. Select **New registration**. On the **Register an application** page, set the values as follows.
 
     * Set **Name** to `Office-Add-in-NodeJS-SSO`.
-    * Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**.
-    * Set the application type to **Web** and then set **Redirect URI** to `https://localhost:44355/dialog.html`.
+    * Set **Supported account types** to **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox).**.
+    * Set the application type to **Single-page application (SPA)** and then set **Redirect URI** to `https://localhost:44355/dialog.html`.
     * Choose **Register**.
 
-1. On the **Office-Add-in-NodeJS-SSO-middle-tier** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
+    > [!NOTE]
+    > The SPA application type is only used when the client uses MSAL for fallback authentication.
+
+1. On the **Office-Add-in-NodeJS-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
 
     > [!NOTE]
     > This **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
-1. Select **Authentication** under **Manage**. In the **Implicit grant** section, enable the checkboxes for both **Access token** and **ID token**. The sample uses Microsoft Authentication Library (MSAL) for fallback authentication when SSO is not available.
+1. Select **Authentication** under **Manage**. In the **Implicit grant and hybrid flows** section, enable the checkboxes for both **Access token** and **ID token**. The sample uses Microsoft Authentication Library (MSAL) for fallback authentication when SSO is not available.
 
-1. Select **Save** at the top of the form.
+1. Select **Save**.
 
 1. Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value for **Description** then select an appropriate option for **Expires** and choose **Add**.
 
@@ -112,7 +115,7 @@ You need to create an app registration in Azure that represents your middle-tier
 
 1. Use the **Select permissions** search box to search for the permissions your add-in needs. Select the following. Only the first is really required by your add-in itself; but the `profile` permission is required for the Office application to get a token to your add-in web application.
 
-    * Files.Read.All
+    * Files.Read
     * profile
 
     > [!NOTE]
@@ -122,53 +125,6 @@ You need to create an app registration in Azure that represents your middle-tier
 
 1. On the same page, choose the **Grant admin consent for [tenant name]** button, and then select **Yes** for the confirmation that appears.
 
-## Register the client as a Single-Page Application (SPA) for fallback authentication
-
-The add-in also needs to support a fallback authentication approach if SSO is unavailable, or fails. To do this you need an app registration that returns a valid access token for the middle-tier server when the access token cannot be retrieved through SSO. The client code is a Single-Page Application (SPA), so this requires a separate registration with SPA details.
-
-1. Navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
-
-1. Sign in with the ***admin*** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
-
-1. Select **New registration**. On the **Register an application** page, set the values as follows.
-
-    * Set **Name** to `Office-Add-in-NodeJS-Fallback`.
-    * Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**.
-    * Set the application type to **SPA** and then set **Redirect URI** to `https://localhost:44355/dialog.html`.
-    * Choose **Register**.
-
-1. On the **Office-Add-in-NodeJS-Fallback** page, copy and save the value for the **Application (client) ID**. You'll use it in later procedures.
-
-1. Select **Authentication** under **Manage**. In the **Implicit grant** section, enable the checkboxes for both **Access token** and **ID token**.
-
-1. Select **Save** at the top of the form.
-
-1. Select **API permissions** under **Manage** and select **Add a permission**. On the panel that opens, choose **Microsoft Graph** and then choose **Delegated permissions**.
-
-1. Use the **Select permissions** search box to search for the permissions your add-in needs. Select the following. Only the first is really required by your add-in itself; but the `profile` permission is required for the Office application to get a token to your add-in web application.
-
-    * offline_access
-    * openid
-    * profile
-
-    > [!NOTE]
-    > The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.
-
-1. Select the check box for each permission as it appears. After selecting the permissions that your add-in needs, select the **Add permissions** button at the bottom of the panel.
-
-1. Select **Add a permission** again. On the panel that opens, choose **APIs my organization uses**. Find and select the **Office-Add-in-NodeJS-SSO-middle-tier** that you created previously. Then choose **Delegated permissions**.
-1. Use the **Select permissions** search box to find the **access_as_user** permission and select it.
-
-1. On the same page, choose the **Grant admin consent for [tenant name]** button, and then select **Yes** for the confirmation that appears.
-
-## Grant access for fallback authentication
-
-To complete the configuration of the two app registrations you need to grant client application access from **Office-Add-in-NodeJS-Fallback** to **Office-Add-in-NodeJS-SSO-middle-tier**.
-
-1. Find and select the **Office-Add-in-NodeJS-SSO-middle-tier** on the **App registrations** page.
-1. Select **Expose an API** under **Manage** and select **Add a client application**.
-1. In the **Client ID** enter the client id you saved previously from the **Office-Add-in-NodeJS-Fallback** app registration.
-1. Select the check the box for `api://localhost:44355/$App ID GUID$/access_as_user` and choose **Add application**.
 
 ## Configure the add-in
 
@@ -198,7 +154,7 @@ To complete the configuration of the two app registrations you need to grant cli
       <Id>$middle_tier_application_GUID here$</Id>
       <Resource>api://localhost:44355/$middle_tier_application_GUID here$</Resource>
       <Scopes>
-          <Scope>Files.Read.All</Scope>
+          <Scope>Files.Read</Scope>
           <Scope>profile</Scope>
       </Scopes>
     </WebApplicationInfo>
@@ -209,9 +165,7 @@ To complete the configuration of the two app registrations you need to grant cli
    > [!NOTE]
    > The **Resource** value is the **Application ID URI** you set when you registered the add-in. The **Scopes** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
 
-1. Open the `\public\javascripts\fallback-msal\authConfig.js` file. In the `loginRequest` scopes, replace the placeholder $middle_tier_application_GUID here$ with the application ID that you saved from the **Office-Add-in-NodeJS-SSO-middle-tier** app registration you created previously.
-
-1. In the `msalConfig` declaration, replace the placeholder $fallback_application_GUID_here$ with the application ID that you saved from the **Office-Add-in-NodeJS-Fallback** app registration you created previously.
+1. Open the `\public\javascripts\fallback-msal\authConfig.js` file. Replace the placeholder $middle_tier_application_GUID here$ with the application ID that you saved from the **Office-Add-in-NodeJS-SSO** app registration you created previously.
 
 1. Save the changes to the file.
 
@@ -509,14 +463,14 @@ The middle-tier server provides REST APIs for the client to call. For example th
 
 1. Replace `TODO 13` with the following code. About this code, note:
 
-    * It only requests the minimum scopes it needs, such as `files.read.all`.
+    * It only requests the minimum scopes it needs, such as `files.read`.
     * It uses the MSAL authHelper to perform the OBO flow in the call to `acquireTokenOnBehalfOf`.
 
     ```javascript
     const authHeader = req.headers.authorization;
     let oboRequest = {
       oboAssertion: authHeader.split(" ")[1],
-      scopes: ["files.read.all"],
+      scopes: ["files.read"],
     };
   
     const cca = authHelper.getConfidentialClientApplication();
