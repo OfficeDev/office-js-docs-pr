@@ -77,7 +77,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 1. In the generated ID, insert `localhost:44355/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. When you are finished, the entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
-1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **Scope** name.
+1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **\<Scope\>** name.
 
 1. Set **Who can consent?** to **Admins and users**.
 
@@ -93,7 +93,7 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 1. Select **Add scope** .
 
     > [!NOTE]
-    > The domain part of the **Scope** name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
+    > The domain part of the **\<Scope\>** name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
 1. In the **Authorized client applications** section, enter the following ID to pre-authorize all Microsoft Office application endpoints.
 

@@ -20,7 +20,7 @@ You can specify where you want your add-in's custom tab to appear on the Office 
 
 Specify where you want a custom tab to appear by identifying which built-in Office tab you want it to be next to and specifying whether it should be on the left or right side of the built-in tab. Make these specifications by including either an [InsertBefore](/javascript/api/manifest/customtab#insertbefore) (left) or an [InsertAfter](/javascript/api/manifest/customtab#insertafter) (right) element in the [CustomTab](/javascript/api/manifest/customtab) element of your add-in's manifest. (You cannot have both elements.)
 
-In the following example, the custom tab is configured to appear *just after* the **Review** tab. Note that the value of the **InsertAfter** element is the ID of the built-in Office tab. 
+In the following example, the custom tab is configured to appear *just after* the **Review** tab. Note that the value of the **\<InsertAfter\>** element is the ID of the built-in Office tab. 
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
@@ -36,11 +36,11 @@ In the following example, the custom tab is configured to appear *just after* th
 
 Keep the following points in mind.
 
-- The **InsertBefore** and **InsertAfter** elements are optional. If you use neither, then your custom tab will appear as the rightmost tab on the ribbon.
-- The **InsertBefore** and **InsertAfter** elements are mutually exclusive. You cannot use both.
+- The **\<InsertBefore\>** and **\<InsertAfter\>** elements are optional. If you use neither, then your custom tab will appear as the rightmost tab on the ribbon.
+- The **\<InsertBefore\>** and **\<InsertAfter\>** elements are mutually exclusive. You cannot use both.
 - If the user installs more than one add-in whose custom tab is configured for the same place, say after the **Review** tab, then the tab for the most recently installed add-in will be located in that place. The tabs of the previously installed add-ins will be moved over one place. For example, the user installs add-ins A, B, and C in that order and all are configured to insert a tab after the **Review** tab, then the tabs will appear in this order: **Review**, **AddinCTab**, **AddinBTab**, **AddinATab**.
 - Users can customize the ribbon in the Office application. For example, a user can move or hide your add-in's tab. You cannot prevent this or detect that it has happened.
-- If a user moves one of the built-in tabs, then Office interprets the **InsertBefore** and **InsertAfter** elements in terms of *the default location of the built-in tab*. For example, if the user moves the **Review** tab to the right end of the ribbon, Office will interpret the markup in the previous example as meaning "put the custom tab just to the right of *where the **Review** tab would be by default*."
+- If a user moves one of the built-in tabs, then Office interprets the **\<InsertBefore\>** and **\<InsertAfter\>** elements in terms of *the default location of the built-in tab*. For example, if the user moves the **Review** tab to the right end of the ribbon, Office will interpret the markup in the previous example as meaning "put the custom tab just to the right of *where the **Review** tab would be by default*."
 
 ## Specify which tab has focus when the document opens
 
