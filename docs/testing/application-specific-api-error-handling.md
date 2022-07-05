@@ -1,21 +1,18 @@
 ---
-title: Error handling with the Excel JavaScript API
-description: Learn about Excel JavaScript API error handling logic to account for runtime errors.
-ms.date: 06/10/2022
+title: Error handling with the application-specific JavaScript APIs
+description: Learn about Excel, Word, PowerPoint, and other application-specific JavaScript API error handling logic to account for runtime errors.
+ms.date: 07/05/2022
 ms.localizationpriority: medium
 ---
 
 
-# Error handling with the Excel JavaScript API
+# Error handling with the application-specific JavaScript APIs
 
-When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the API.
-
-> [!NOTE]
-> For more information about the `sync()` method and the asynchronous nature of Excel JavaScript API, see [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md).
+When you build an add-in using the [application-specific Office JavaScript APIs](../develop/application-specific-api-model.md), be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the APIs.
 
 ## Best practices
 
-In our [code samples](https://github.com/OfficeDev/Office-Add-in-samples) and [Script Lab](../overview/explore-with-script-lab.md) snippets, you'll notice that every call to `Excel.run` is accompanied by a `catch` statement to catch any errors that occur within the `Excel.run`. We recommend that you use the same pattern when you build an add-in using the Excel JavaScript APIs.
+In our [code samples](https://github.com/OfficeDev/Office-Add-in-samples) and [Script Lab](../overview/explore-with-script-lab.md) snippets, you'll notice that every call to `Excel.run`, `PowerPoint.run`, or `Word.run` is accompanied by a `catch` statement to catch any errors. We recommend that you use the same pattern when you build an add-in using the application-specific APIs.
 
 ```js
 $("#run").click(() => tryCatch(run));
@@ -44,7 +41,7 @@ async function tryCatch(callback) {
 
 ## API errors
 
-When an Excel JavaScript API request fails to run successfully, the API returns an error object that contains the following properties.
+When an Office JavaScript API request fails to run successfully, the API returns an error object that contains the following properties.
 
 - **code**:  The `code` property of an error message contains a string that is part of the `OfficeExtension.ErrorCodes` or `Excel.ErrorCodes` list. For example, the error code "InvalidReference" indicates that the reference is not valid for the specified operation. Error codes are not localized.
 
@@ -64,7 +61,7 @@ The following table is a list of errors that the API may return.
 |`AccessDenied` |You cannot perform the requested operation.| |
 |`ActivityLimitReached`|Activity limit has been reached.| |
 |`ApiNotAvailable`|The requested API is not available.| |
-|`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of Excel. See the [Excel JavaScript API requirement sets](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) article for more information.| |
+|`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of Excel. See the [Excel JavaScript API requirement sets](/javascript/api/requirement-sets) article for more information.| |
 |`BadPassword`|The password you supplied is incorrect.| |
 |`Conflict`|Request could not be processed because of a conflict.| |
 |`ContentLengthRequired`|A `Content-length` HTTP header is missing.| |
@@ -86,7 +83,7 @@ The following table is a list of errors that the API may return.
 |`MemoryLimitReached`|The memory limit has been reached. Your action could not be completed.| |
 |`MergedRangeConflict`|Cannot complete the operation. A table can't overlap with another table, a PivotTable report, query results, merged cells, or an XML Map.|
 |`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.| |
-|`NotImplemented`|The requested feature isn't implemented.| |
+|`NotImplemented`|The requested feature isn't implemented.| This could mean the API is in preview or only supported on a particular platform (such as online-only). See [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets) for more information.|
 |`OperationCellsExceedLimit`|The attempted operation affects more than the limit of 33554000 cells.| If the `TableColumnCollection.add API` triggers this error, confirm that there is no unintentional data within the worksheet but outside of the table. In particular, check for data in the right-most columns of the worksheet. Remove the unintended data to resolve this error. One way to verify how many cells that an operation processes is to run the following calculation: `(number of table rows) x (16383 - (number of table columns))`. The number 16383 is the maximum number of columns that Excel supports. <br><br>This error only occurs in Excel on the web. |
 |`PivotTableRangeConflict`|The attempted operation causes a conflict with a PivotTable range.| |
 |`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.| |
@@ -101,7 +98,7 @@ The following table is a list of errors that the API may return.
 |`UnsupportedSheet`|This sheet type does not support this operation, since it is a Macro or Chart sheet.| |
 
 > [!NOTE]
-> The preceding table lists error messages you may encounter while using the Excel JavaScript API. If you are working with the Common API instead of the application-specific Excel JavaScript API, see [Office Common API error codes](../reference/javascript-api-for-office-error-codes.md) to learn about relevant error messages.
+> The preceding table lists error messages you may encounter while using the application-specific APIs. If you are working with the Common API, see [Office Common API error codes](../reference/javascript-api-for-office-error-codes.md) to learn about relevant error messages.
 
 ## Error notifications
 
@@ -111,6 +108,5 @@ If you're not using React for the UI, consider using the older Fabric UI compone
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [OfficeExtension.Error object (JavaScript API for Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)
 - [Office Common API error codes](../reference/javascript-api-for-office-error-codes.md)

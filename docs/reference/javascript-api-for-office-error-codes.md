@@ -137,6 +137,6 @@ The following table summarizes binding behavior in Word.
 
 - [Office Add-ins development lifecycle](../overview/office-add-ins.md)
 - [Understanding the Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
-- [Error handling with the Excel JavaScript API](../excel/excel-add-ins-error-handling.md)
+- [Error handling with the application-specific JavaScript APIs](../testing/application-specific-api-error-handling.md)
 - [Troubleshoot error messages for single sign-on (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
 - [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md)

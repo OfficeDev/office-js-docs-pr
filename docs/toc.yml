@@ -85,8 +85,6 @@ items:
         href: develop/persisting-add-in-state-and-settings.md
       - name: Bind to regions in a document or spreadsheet
         href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
-      - name: Common API error codes
-        href: reference/javascript-api-for-office-error-codes.md
     - name: Setup and run your add-in
       items:
       - name: Reference Office.js
@@ -321,16 +319,22 @@ items:
       displayName: uninstall, sideload
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
+    - name: Errors
+      items:
+      - name: Application-specific API error handling
+        href: testing/application-specific-api-error-handling.md
+      - name: Common API error codes
+        href: reference/javascript-api-for-office-error-codes.md
+      - name: Troubleshoot user errors
+        href: testing/testing-and-troubleshooting.md
+      - name: Troubleshoot development errors
+        href: testing/troubleshoot-development-errors.md
     - name: Performance
       items:
       - name: Avoid using the context.sync method in loops
         href: concepts/correlated-objects-pattern.md
       - name: Resource limits and performance optimization for Office Add-ins
         href: concepts/resource-limits-and-performance-optimization.md
-    - name: Troubleshoot user errors
-      href: testing/testing-and-troubleshooting.md
-    - name: Troubleshoot development errors
-      href: testing/troubleshoot-development-errors.md
     - name: Unit testing
       href: testing/unit-testing.md
     - name: Usability testing
@@ -427,9 +431,6 @@ items:
           displayName: Excel, preview
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
-      displayName: Excel
-    - name: Error handling
-      href: excel/excel-add-ins-error-handling.md
       displayName: Excel
     - name: Events
       href: excel/excel-add-ins-events.md
