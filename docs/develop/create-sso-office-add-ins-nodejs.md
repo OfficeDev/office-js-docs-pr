@@ -19,9 +19,9 @@ This article works with an add-in that uses Node.js and Express. For a similar a
 
 - [Git Bash](https://git-scm.com/downloads) (or another git client)
 
-- A code editor. We recommend Visual Studio Code.
+- A code editor - we recommend Visual Studio Code
 
-- At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.
+- At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription
 
 - A build of Microsoft 365 that supports the [IdentityAPI 1.3 requirement set](/javascript/api/requirement-sets/common/identity-api-requirement-sets). You can get a [free developer sandbox](https://developer.microsoft.com/microsoft-365/dev-program#Subscription) that provides a renewable 90-day Microsoft 365 E5 developer subscription. The developer sandbox includes a Microsoft Azure subscription that you can use for app registrations in later steps in this article. If you prefer, you can use a separate Microsoft Azure subscription for app registrations. Get a trial subscription at [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
@@ -43,7 +43,7 @@ This article works with an add-in that uses Node.js and Express. For a similar a
 
 ## Register the add-in with Microsoft identity platform
 
-You need to create an app registration in Azure that represents your middle-tier server. This enables authentication support so that proper access tokens can be issued to the client code in JavaScript. This registration will support both SSO in the client, and fallback authentication using the Microsoft Authentication Library (MSAL).
+You need to create an app registration in Azure that represents your middle-tier server. This enables authentication support so that proper access tokens can be issued to the client code in JavaScript. This registration supports both SSO in the client, and fallback authentication using the Microsoft Authentication Library (MSAL).
 
 1. To register your app, navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
 
@@ -62,13 +62,13 @@ You need to create an app registration in Azure that represents your middle-tier
 1. On the **Office-Add-in-NodeJS-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
 
    > [!NOTE]
-   > This **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
+   > This **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It's also the "client ID" of the application when it seeks authorized access to Microsoft Graph.
 
 1. In the leftmost sidebar, select **Authentication** under **Manage**. In the **Implicit grant and hybrid flows** section, select both checkboxes for **Access tokens** and **ID tokens**. The sample uses the Microsoft Authentication Library (MSAL) for fallback authentication when SSO is not available.
 
 1. Choose **Save**.
 
-1. Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value for **Description** then select an appropriate option for **Expires** and choose **Add**.
+1. Under **Manage**, select **Certificates & secrets** and select **New client secret**. Enter a value for **Description**, then select an appropriate option for **Expires** and choose **Add**.
 
    The web application uses the client secret **Value** to prove its identity when it requests tokens. _Record this value for use in a later step - it's shown only once._
 
@@ -89,7 +89,7 @@ You need to create an app registration in Azure that represents your middle-tier
 
 1. Ensure that **State** is set to **Enabled**.
 
-1. Select **Add scope** .
+1. Select **Add scope**.
 
    > [!NOTE]
    > The domain part of the **Scope** name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
@@ -99,7 +99,7 @@ You need to create an app registration in Azure that represents your middle-tier
 1. Select **Add application**.
 
    > [!NOTE]
-   > The `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID pre-authorizes all Microsoft Office application endpoints. It is also required if you want to support Microsoft accounts (MSA) on Office on Windows and Mac. Alternatively, you can enter a proper subset of the following IDs if for any reason you want to deny authorization to Office on some platforms. Just leave out the IDs of the platforms from which you want to withhold authorization. Users of your add-in on those platforms will not be able to call your Web APIs, but other functionality in your add-in will still work.
+   > The `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID pre-authorizes all Microsoft Office application endpoints. It's also required if you want to support Microsoft accounts (MSA) on Office on Windows and Mac. Alternatively, you can enter a proper subset of the following IDs if for any reason you want to deny authorization to Office on some platforms. Just leave out the IDs of the platforms from which you want to withhold authorization. Users of your add-in on those platforms will not be able to call your Web APIs, but other functionality in your add-in will still work.
    >
    > - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
    > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
@@ -114,7 +114,7 @@ You need to create an app registration in Azure that represents your middle-tier
    - **openid**
 
    > [!NOTE]
-   > The `User.Read` permission may already be listed by default. It is a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.
+   > The `User.Read` permission may already be listed by default. It's a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission if your add-in doesn't actually need it.
 
 1. Select the check box for each permission as it appears. After selecting the permissions that your add-in needs, select the **Add permissions** button at the bottom of the panel.
 
@@ -233,7 +233,7 @@ You need to create an app registration in Azure that represents your middle-tier
 
    - The function `getFileNameList` is called when the user chooses the **Get OneDrive File Names** button on the task pane.
    - It creates a client request to track information about the call, such as the URL of the REST API.
-   - When the REST API returns a result, it's passed to the `handleGetFileNameResponse` function. This callback is passed as a parameter to `createRequest` and will be tracked in `clientRequest.callbackRESTApiHandler`.
+   - When the REST API returns a result, it's passed to the `handleGetFileNameResponse` function. This callback is passed as a parameter to `createRequest` and is tracked in `clientRequest.callbackRESTApiHandler`.
    - The code calls `callWebServer` with the client request to perform next steps and call the REST API.
 
    ```javascript
@@ -460,7 +460,7 @@ Fallback authentication will use the MSAL library to sign in the user. The add-i
 
 ## Code the middle-tier server
 
-The middle-tier server provides REST APIs for the client to call. For example, the REST API `/getuserfilenames` will get a list of filenames from the user's OneDrive folder. Each REST API call requires an access token by the client to ensure the correct client is accessing their data. The access token is exchanged for a Microsoft Graph token through the On-Behalf-Of flow (OBO). The new Microsoft Graph token is cached by the MSAL library for subsequent API calls. It is never sent outside of the middle-tier server. For more information, see [Middle-tier access token request](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#middle-tier-access-token-request)
+The middle-tier server provides REST APIs for the client to call. For example, the REST API `/getuserfilenames` gets a list of filenames from the user's OneDrive folder. Each REST API call requires an access token by the client to ensure the correct client is accessing their data. The access token is exchanged for a Microsoft Graph token through the On-Behalf-Of flow (OBO). The new Microsoft Graph token is cached by the MSAL library for subsequent API calls. It's never sent outside of the middle-tier server. For more information, see [Middle-tier access token request](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#middle-tier-access-token-request)
 
 ### Create the route and implement On-Behalf-Of flow
 
@@ -577,14 +577,14 @@ The sample must handle both fallback authentication through MSAL and SSO authent
 
 1. In the Office application, on the **Home** ribbon, select the **Show Add-in** button in the **SSO Node.js** group to open the task pane add-in.
 
-1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Microsoft 365 Education or work account, or a Microsoft account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are inserted into the document. (It may take as much as 15 seconds the first time.) If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to sign in. After you sign in, the file and folder names appear.
+1. Click the **Get OneDrive File Names** button. If you're logged into Office with either a Microsoft 365 Education or work account, or a Microsoft account, and SSO is working as expected the first 10 file and folder names in your OneDrive for Business are inserted into the document. (It may take as much as 15 seconds the first time.) If you're not logged in, or you're in a scenario that doesn't support SSO, or SSO isn't working for any reason, you'll be prompted to sign in. After you sign in, the file and folder names appear.
 
 > [!NOTE]
 > If you were previously signed into Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to _close all other Office applications_ before you press **Get OneDrive File Names**.
 
 ## Security notes
 
-* The `/getuserfilenames` route in `getFilesroute.js` uses a literal string to compose the call for Microsoft Graph. If you change the call such that any part of the string comes from user input, sanitize the input so that it cannot be used in a Response header injection attack.
+* The `/getuserfilenames` route in `getFilesroute.js` uses a literal string to compose the call for Microsoft Graph. If you change the call so that any part of the string comes from user input, sanitize the input so that it cannot be used in a Response header injection attack.
 
 * In `app.js` the following content security policy is in place for scripts. You may want to specify additional restrictions depending on your add-in security needs.
 
