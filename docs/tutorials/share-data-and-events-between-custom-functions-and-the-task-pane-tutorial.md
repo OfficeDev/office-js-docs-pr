@@ -28,7 +28,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
 
 1. Start Visual Studio Code and open the add-in project you generated.
 1. Open the **manifest.xml** file.
-1. Replace (or add) the following `<Requirements>` section XML to require the [shared runtime requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
+1. Replace (or add) the following **\<Requirements\>** section XML to require the [shared runtime requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>
@@ -52,7 +52,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
     <DefaultSettings>
     ```
 
-1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
+1. Find the **\<VersionOverrides\>** section and add the following **\<Runtimes\>** section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
     
     ```xml
     <Runtimes>
@@ -61,7 +61,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
     ```
     
     > [!IMPORTANT]
-    > The `<Runtimes>` section must be entered after the `<Host xsi:type="...">` element in the exact order shown in the following XML.
+    > The **\<Runtimes\>** section must be entered after the `<Host xsi:type="...">` element in the exact order shown in the following XML.
 
     ```xml
     <VersionOverrides ...>
@@ -77,7 +77,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
     > [!NOTE]
     > If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-1. Find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
+1. Find the **\<Page\>** element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
 
    ```xml
    <AllFormFactors>
