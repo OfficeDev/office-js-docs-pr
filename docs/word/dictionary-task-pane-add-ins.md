@@ -248,11 +248,11 @@ Specifies settings for dictionary add-ins.
 
 **Parent element**
 
-`<OfficeApp>`
+**\<OfficeApp\>**
 
 **Child elements**
 
-`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`
+**\<TargetDialects\>**, **\<QueryUri\>**, **\<CitationText\>**, **\<Name\>**, **\<DictionaryHomePage\>**
 
 **Remarks**
 
@@ -264,11 +264,11 @@ Specifies the regional languages that this dictionary supports. Required for dic
 
 **Parent element**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Child element**
 
-`<TargetDialect>`
+**\<TargetDialect\>**
 
 **Remarks**
 
@@ -305,7 +305,7 @@ Specifies a regional language that this dictionary supports. Required for dictio
 
 **Parent element**
 
-`<TargetDialects>`
+**\<TargetDialects\>**
 
 **Remarks**
 
@@ -323,7 +323,7 @@ Specifies the endpoint for the dictionary query service. Required for dictionary
 
 **Parent element**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Remarks**
 
@@ -341,7 +341,7 @@ Specifies the text to use in citations. Required for dictionary add-ins.
 
 **Parent element**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Remarks**
 
@@ -361,7 +361,7 @@ Specifies the name of this dictionary. Required for dictionary add-ins.
 
 **Parent element**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Remarks**
 
@@ -381,7 +381,7 @@ Specifies the URL of the home page for the dictionary. Required for dictionary a
 
 **Parent element**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Remarks**
 
