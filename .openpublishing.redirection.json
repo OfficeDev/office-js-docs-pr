@@ -209,7 +209,7 @@
         },
         {
             "source_path": "docs/excel/excel-add-ins-error-handling.md",
-            "redirect_url": "/office/dev/add-ins/testing/application-specific-api-error-handling.md",
+            "redirect_url": "/office/dev/add-ins/testing/application-specific-api-error-handling",
             "redirect_document_id": true
         },
         {
