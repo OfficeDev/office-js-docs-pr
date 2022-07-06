@@ -26,7 +26,7 @@ As we add new APIs, the URL to Office.js will stay the same. We will change the 
 
 ## Requirement sets
 
-All Outlook APIs belong to the `Mailbox` [requirement set](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets). The `Mailbox` requirement set has versions, and each new set of APIs that are released belongs to a higher version of the set. Not all Outlook clients will support the newest set of APIs when they are released, but if an Outlook client declares support for a requirement set, it will support all the APIs in that requirement set.
+All Outlook APIs belong to the [Mailbox requirement set](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets). The `Mailbox` requirement set has versions, and each new set of APIs that are released belongs to a higher version of the set. Not all Outlook clients will support the newest set of APIs when they are released, but if an Outlook client declares support for a requirement set, it will support all the APIs in that requirement set.
 
 To control which Outlook clients the add-in appears in, specify a minimum requirement set version in the manifest. For example, if you specify requirement set version 1.3, the add-in will not show up in any Outlook client that doesn't support a minimum version of 1.3.
 
