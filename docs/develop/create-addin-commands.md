@@ -1,31 +1,20 @@
 ---
 title: Create add-in commands in your manifest for Excel, PowerPoint, and Word
 description: Use VersionOverrides in your manifest to define add-in commands for Excel, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 05/01/2022
+ms.date: 07/05/2022
 ms.localizationpriority: medium
 ---
 
 
 # Create add-in commands in your manifest for Excel, PowerPoint, and Word
 
-Use **[VersionOverrides](/javascript/api/manifest/versionoverrides)** in your manifest to define add-in commands for Excel, PowerPoint, and Word. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. You can use add-in commands to:
-
-- Create UI elements or entry points that make your add-in's functionality easier to use.
-- Add buttons or a drop-down list of buttons to the ribbon.
-- Add individual menu items — each containing optional submenus — to specific context (shortcut) menus.
-- Perform actions when your add-in command is chosen. You can:
-  - Show one or more task pane add-ins for users to interact with. Inside your task pane add-in, you can display HTML that uses Fluent UI to create a custom UI.
-
-     *or*
-
-  - Run JavaScript code, which normally runs without displaying any UI.
-
-This article describes how to edit your manifest to define add-in commands. The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
-
 > [!NOTE]
 > Add-in commands are also supported in Outlook. For more information, see [Add-in commands for Outlook](../outlook/add-in-commands-for-outlook.md)
 
-The following image is an overview of add-in commands elements in the manifest.
+Use **[VersionOverrides](/javascript/api/manifest/versionoverrides)** in your manifest to define add-in commands for Excel, PowerPoint, and Word. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md).
+
+This article describes how to edit your manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands). The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
+
 
 ![Overview of add-in commands elements in the manifest. The top node here is VersionOverrides with children Hosts and Resources. Under Hosts are Host then DesktopFormFactor. Under DesktopFormFactor are FunctionFile and ExtensionPoint. Under ExtensionPoint are CustomTab or OfficeTab and Office Menu. Under CustomTab or Office Tab are Group then Control then Action. Under Office Menu are Control then Action. Under Resources (child of VersionOverrides) are Images, Urls, ShortStrings, and LongStrings.](../images/version-overrides.png)
 
@@ -37,7 +26,7 @@ We recommend you create a project by following one of the quick starts such as [
 
 To start using add-in commands, you must first create a task pane add-in, and then modify the add-in's manifest as described in this article. You can't use add-in commands with content add-ins. If you're updating an existing manifest, you must add the appropriate **XML namespaces** as well as add the **\<VersionOverrides\>** element to the manifest as described in [Step 3: Add VersionOverrides element](#step-3-add-versionoverrides-element).
 
-The following example shows an Office 2013 add-in's manifest. There are no add-in commands in this manifest because there is no **\<VersionOverrides\>** element. Office 2013 doesn't support add-in commands, but by adding **\<VersionOverrides\>** to this manifest, your add-in will run in both Office 2013 and Office 2016. In Office 2013, your add-in won't display add-in commands, and uses the value of **\<SourceLocation\>** to run your add-in as a single task pane add-in. In Office 2016, if no **\<VersionOverrides\>** element is included, **\<SourceLocation\>** is used to run your add-in. If you include **\<VersionOverrides\>**, however, your add-in displays the add-in commands only, and doesn't display your add-in as a single task pane add-in.
+The following example shows an Office 2013 add-in's manifest. There are no add-in commands in this manifest because there is no **\<VersionOverrides\>** element. Office 2013 doesn't support add-in commands, but by adding **\<VersionOverrides\>** to this manifest, your add-in will run in both Office 2013 and Office 2016. In Office 2013, your add-in won't display add-in commands, and uses the value of **\<SourceLocation\>** to run your add-in as a single task pane add-in. In Office 2016, if no **\<VersionOverrides\>** element is included, the task pane of your add-in automatically opens to the URL specified in **\<SourceLocation\>**. If you include **\<VersionOverrides\>**, however, your add-in displays the add-in commands only, and doesn't initially display your add-in's task pane.
   
 ```xml
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
@@ -48,8 +37,8 @@ The following example shows an Office 2013 add-in's manifest. There are no add-i
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Contoso Add-in Commands" />
   <Description DefaultValue="Contoso Add-in Commands"/>
-  <IconUrl DefaultValue="~remoteAppUrl/Images/Icon_32.png" />
-  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
+  <IconUrl DefaultValue="https://www.contoso.com/Images/Icon_32.png" />
+  <SupportUrl DefaultValue="https://www.contoso.com/contact" />
   <AppDomains>
     <AppDomain>AppDomain1</AppDomain>
     <AppDomain>AppDomain2</AppDomain>
@@ -177,7 +166,7 @@ The following code shows how to implement the function used by **\<FunctionName\
     function writeText(event) {
 
         // Implement your custom code here. The following code is a simple example.  
-        Office.context.document.setSelectedDataAsync("ExecuteFunction works. Button ID=" + event.source.id,
+        Office.context.document.setSelectedDataAsync("Function command works. Button ID=" + event.source.id,
             function (asyncResult) {
                 var error = asyncResult.error;
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
@@ -308,7 +297,7 @@ A button performs a single action when the user selects it. It can either execut
 |**\<Tooltip\>** <br/> |Optional. The tooltip for the button. The **resid** attribute must be set to the value of the **id** attribute of a **\<String\>** element. The **\<String\>** element is a child element of the **\<LongStrings\>** element, which is a child element of the **\<Resources\>** element. <br/> |
 |**\<Supertip\>** <br/> | Required. The supertip for this button, which is defined by the following: <br/> **Title** <br/>  Required. The text for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **\<String\>** element. The **\<String\>** element is a child element of the **\<ShortStrings\>** element, which is a child element of the **\<Resources\>** element. <br/> **\<Description\>** <br/>  Required. The description for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **\<String\>** element. The **\<String\>** element is a child element of the **\<LongStrings\>** element, which is a child element of the **\<Resources\>** element. <br/> |
 |**\<Icon\>** <br/> | Required. Contains the **\<Image\>** elements for the button. Image files must be .png format. <br/> **\<Image\>** <br/>  Defines an image to display on the button. The **resid** attribute must be set to the value of the **id** attribute of an **\<Image\>** element. The **\<Image\>** element is a child element of the **\<Images\>** element, which is a child element of the **\<Resources\>** element. The **size** attribute indicates the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64. <br/> |
-|**\<Action\>** <br/> | Required. Specifies the action to perform when the user selects the button. You can specify one of the following values for the **xsi:type** attribute: <br/> **ExecuteFunction**, which runs a JavaScript function located in the file referenced by **\<FunctionFile\>**. **ExecuteFunction** does not display a UI. The **\<FunctionName\>** child element specifies the name of the function to execute. <br/> **ShowTaskPane**, which shows a task pane add-in. The **\<SourceLocation\>** child element specifies the source file location of the task pane add-in to display. The **resid** attribute must be set to the value of the **id** attribute of a **\<Url\>** element in the **\<Urls\>** element in the **\<Resources\>** element. <br/> |
+|**\<Action\>** <br/> | Required. Specifies the action to perform when the user selects the button. You can specify one of the following values for the **xsi:type** attribute: <br/> **ExecuteFunction**, which runs a JavaScript function located in the file referenced by **\<FunctionFile\>**. The **\<FunctionName\>** child element specifies the name of the function to execute. <br/> **ShowTaskPane**, which shows the add-in's task pane. The **\<SourceLocation\>** child element specifies the source file location of the page to display. The **resid** attribute must be set to the value of the **id** attribute of a **\<Url\>** element in the **\<Urls\>** element in the **\<Resources\>** element. <br/> |
 
 ### Menu controls
 
@@ -377,7 +366,7 @@ The following example shows how to define a menu item with two submenu items. Th
 |:-----|:-----|
 |**\<Label\>** <br/> |Required. The text of the root menu item. The **resid** attribute must be set to the value of the **id** attribute of a **\<String\>** element. The **\<String\>** element is a child element of the **\<ShortStrings\>** element, which is a child element of the **\<Resources\>** element. <br/> |
 |**\<Tooltip\>** <br/> |Optional. The tooltip for the menu. The **resid** attribute must be set to the value of the **id** attribute of a **\<String\>** element. The **\<String\>** element is a child element of the **\<LongStrings\>** element, which is a child element of the **\<Resources\>** element. <br/> |
-|**SuperTip** <br/> | Required. The supertip for the menu, which is defined by the following: <br/> **Title** <br/>  Required. The text of the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **\<String\>** element. The **\<String\>** element is a child element of the **\<ShortStrings\>** element, which is a child element of the **\<Resources\>** element. <br/> **\<Description\>** <br/>  Required. The description for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **\<String\>** element. The **\<String\>** element is a child element of the **\<LongStrings\>** element, which is a child element of the **\<Resources\>** element. <br/> |
+|**\<SuperTip\>** <br/> | Required. The supertip for the menu, which is defined by the following: <br/> **\<Title\>** <br/>  Required. The text of the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **\<String\>** element. The **\<String\>** element is a child element of the **\<ShortStrings\>** element, which is a child element of the **\<Resources\>** element. <br/> **\<Description\>** <br/>  Required. The description for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **\<String\>** element. The **\<String\>** element is a child element of the **\<LongStrings\>** element, which is a child element of the **\<Resources\>** element. <br/> |
 |**\<Icon\>** <br/> | Required. Contains the **\<Image\>** elements for the menu. Image files must be .png format. <br/> **\<Image\>** <br/>  An image for the menu. The **resid** attribute must be set to the value of the **id** attribute of an **\<Image\>** element. The **\<Image\>** element is a child element of the **\<Images\>** element, which is a child element of the **\<Resources\>** element. The **size** attribute indicates the size in pixels of the image. Three image sizes, in pixels, are required: 16, 32, and 80. Five optional sizes, in pixels, are also supported: 20, 24, 40, 48, and 64. <br/> |
 |**\<Items\>** <br/> |Required. Contains the **\<Item\>** elements for each submenu item. Each **\<Item\>** element contains the same child elements as [Button controls](/javascript/api/manifest/control-button).  <br/> |
 
@@ -422,7 +411,7 @@ The following shows an example of how to use the **\<Resources\>** element. Each
 |:-----|:-----|
 |**\<Images\>**/ **\<Image\>** <br/> | Provides the HTTPS URL to an image file. Each image must define the three required image sizes: <br/>  16×16 <br/>  32×32 <br/>  80×80 <br/>  The following image sizes are also supported, but not required: <br/>  20×20 <br/>  24×24 <br/>  40×40 <br/>  48×48 <br/>  64×64 <br/> |
 |**\<Urls\>**/ **\<Url\>** <br/> |Provides an HTTPS URL location. A URL can be a maximum of 2048 characters.  <br/> |
-|**\<ShortStrings\>**/ **\<String\>** <br/> |The text for **\<Label\>** and **Title** elements. Each **\<String\>** contains a maximum of 125 characters. <br/> |
+|**\<ShortStrings\>**/ **\<String\>** <br/> |The text for **\<Label\>** and **\<Title\>** elements. Each **\<String\>** contains a maximum of 125 characters. <br/> |
 |**\<LongStrings\>**/ **\<String\>** <br/> |The text for **\<Tooltip\>** and **\<Description\>** elements. Each **\<String\>** contains a maximum of 250 characters. <br/> |
 
 > [!NOTE]
