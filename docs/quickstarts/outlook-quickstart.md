@@ -239,11 +239,11 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 1. Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
 
-1. The **ProviderName** element has a placeholder value. Replace it with your name.
+1. The **\<ProviderName\>** element has a placeholder value. Replace it with your name.
 
-1. The **DefaultValue** attribute of the **DisplayName** element has a placeholder. Replace it with `My Office Add-in`.
+1. The **DefaultValue** attribute of the **\<DisplayName\>** element has a placeholder. Replace it with `My Office Add-in`.
 
-1. The **DefaultValue** attribute of the **Description** element has a placeholder. Replace it with `My First Outlook add-in`.
+1. The **DefaultValue** attribute of the **\<Description\>** element has a placeholder. Replace it with `My First Outlook add-in`.
 
 1. Save the file.
 

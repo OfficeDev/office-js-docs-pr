@@ -20,7 +20,7 @@ You can insert built-in Office buttons into your custom control groups on the Of
 
 ## Insert a built-in control group into a custom tab
 
-To insert a built-in Office control group into a tab, add an [OfficeGroup](/javascript/api/manifest/customtab#officegroup) element as a child element in the parent **CustomTab** element. The `id` attribute of the of the **OfficeGroup** element is set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
+To insert a built-in Office control group into a tab, add an [OfficeGroup](/javascript/api/manifest/customtab#officegroup) element as a child element in the parent **\<CustomTab\>** element. The `id` attribute of the of the **\<OfficeGroup\>** element is set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
 
 The following markup example adds the Office Paragraph control group to a custom tab and positions it to appear just after a custom group.
 
@@ -38,7 +38,7 @@ The following markup example adds the Office Paragraph control group to a custom
 
 ## Insert a built-in control into a custom group
 
-To insert a built-in Office control into a custom group, add an [OfficeControl](/javascript/api/manifest/group#officecontrol) element as a child element in the parent **Group** element. The `id` attribute of the **OfficeControl** element is set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
+To insert a built-in Office control into a custom group, add an [OfficeControl](/javascript/api/manifest/group#officecontrol) element as a child element in the parent **\<Group\>** element. The `id` attribute of the **\<OfficeControl\>** element is set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
 
 The following markup example adds the Office Superscript control to a custom group and positions it to appear just after a custom button.
 
@@ -72,4 +72,4 @@ The IDs for supported controls and control groups are in files in the repo [Offi
 
 ## Behavior on unsupported platforms
 
-If your add-in is installed on a platform that doesn't support [requirement set AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), then the markup described in this article is ignored and the built-in Office controls/groups will not appear in your custom groups/tabs. To prevent your add-in from being installed on platforms that don't support the markup, add a reference to the requirement set in the **Requirements** section of the manifest. For instructions, see [Specify which Office versions and platforms can host your add-in](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Alternatively, design your add-in to have an experience when **AddinCommands 1.3** isn't supported, as described in [Design for alternate experiences](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). For example, if your add-in contains instructions that assume the built-in buttons are in your custom groups, you could design a version that assumes that the built-in buttons are only in their usual places.
+If your add-in is installed on a platform that doesn't support [requirement set AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), then the markup described in this article is ignored and the built-in Office controls/groups will not appear in your custom groups/tabs. To prevent your add-in from being installed on platforms that don't support the markup, add a reference to the requirement set in the **\<Requirements\>** section of the manifest. For instructions, see [Specify which Office versions and platforms can host your add-in](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Alternatively, design your add-in to have an experience when **AddinCommands 1.3** isn't supported, as described in [Design for alternate experiences](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). For example, if your add-in contains instructions that assume the built-in buttons are in your custom groups, you could design a version that assumes that the built-in buttons are only in their usual places.

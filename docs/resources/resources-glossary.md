@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 02/11/2022
+ms.date: 06/15/2022
 ms.localizationpriority: medium
 ---
 
@@ -69,13 +69,13 @@ A **custom function** is a user-defined function that is packaged with an Excel 
 
 ## custom functions runtime
 
-A **custom functions runtime** is a JavaScript runtime that only runs custom functions. It has no UI and cannot interact with Office.js APIs. If your add-in only has custom functions, this is a good lightweight runtime to use. If your custom functions need to interact with the task pane or Office.js APIs, configure a shared JavaScript runtime. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
+A **custom functions runtime** is a JavaScript-only runtime that only runs custom functions. It has no UI and cannot interact with Office.js APIs. If your add-in only has custom functions, this is a good lightweight runtime to use. If your custom functions need to interact with the task pane or Office.js APIs, configure a shared JavaScript runtime. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
 
 See also: [JavaScript runtime](#javascript-runtime), [shared JavaScript runtime, shared runtime](#shared-javascript-runtime-shared-runtime).
 
 ## host
 
-**Host** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
+**\<Host\>** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 
@@ -131,9 +131,9 @@ A **tutorial** is a teaching aid designed to help people learn to use a product 
 
 See also: [quick start](#quick-start).
 
-## UI-less custom function
+## custom functions-only add-in
 
-**UI-less custom functions** run in the custom functions runtime. They have no UI and cannot interact with Office.js APIs.
+An add-in that contains a custom function, but no UI such as a task pane. The custom functions in this kind of add-in run in a JavaScript-only runtime. A custom function that does include a UI can use either a shared runtime or a combination of a JavaScript-only runtime and an HTML-supporting runtime. We recommend that if you have a UI, you use a shared runtime. 
 
 See also: [custom function](#custom-function), [custom functions runtime](#custom-functions-runtime).
 
