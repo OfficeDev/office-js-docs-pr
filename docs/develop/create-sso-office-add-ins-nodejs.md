@@ -139,7 +139,7 @@ You need to create an app registration in Azure that represents your middle-tier
    CLIENT_SECRET=X7szTuPwKNts41:-/fa3p.p@l6zsyI/p
    DIRECTORY_ID=478aa78e-20ba-4c0d-9ffe-c4f62e5de3d5
    NODE_ENV=development
-   ```
+SERVER_SOURCE=https://localhost:44355   
 
 1. Open the add-in manifest file "manifest\manifest_local.xml" and then scroll to the bottom of the file. Just above the `</VersionOverrides>` end tag, you'll find the following markup.
 
@@ -220,7 +220,7 @@ You need to create an app registration in Azure that represents your middle-tier
        );
        callbackFunction(clientRequest);
      } catch {
-       // use fallback authentication if SSO failed to get access token.
+       // Use fallback authentication if SSO failed to get access token.
        switchToFallbackAuth(clientRequest);
      }
    } else {
@@ -270,7 +270,7 @@ You need to create an app registration in Azure that represents your middle-tier
 1. In the `getAccessTokenFromSSO` function, replace `TODO 5` with the following code. About this code, note:
 
    - It calls `Office.auth.getAccessToken` to get the access token from Office.
-   - If an error occurs it calls `handleSSOErrors` function. If the error could not be handled, it will throw an error to the caller. This is the indication to the caller to switch to fallback auth.
+   - If an error occurs, it calls `handleSSOErrors` function. If the error could not be handled, it will throw an error to the caller. This is the indication to the caller to switch to fallback auth.
 
    ```javascript
    try {
@@ -327,7 +327,7 @@ You need to create an app registration in Azure that represents your middle-tier
        break;
    ```
 
-1. Replace `TODO 7` with the following code. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). For any errors that can't be handled `true` is returned to the caller. This indicates the caller should switch to using MSAL as fallback auth.
+1. Replace `TODO 7` with the following code. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). For any errors that can't be handled, `true` is returned to the caller. This indicates the caller should switch to using MSAL as fallback auth.
 
    ```javascript
      default:
@@ -397,7 +397,7 @@ You need to create an app registration in Azure that represents your middle-tier
 
 1. In the `handleWebServerErrors` function, replace `TODO 10` with the following code. About this code, note:
 
-   - The error is returned by the middle-tier server which will indicate the type of error to make it easier to handle here.
+   - The error is returned by the middle-tier server, which indicates the type of error and makes it easier to handle here.
    - For **Microsoft Graph** errors, show the message on the task pane.
    - For the **AADSTS500133** error, return true so the caller knows the token expired and should get a new one.
    - For all other messages, show the message on the task pane.
@@ -441,7 +441,7 @@ Fallback authentication will use the MSAL library to sign in the user. The add-i
 
 1. In the `switchToFallbackAuth` function, replace `TODO 11` with the following code. About this code, note:
 
-   - It sets the global `authSSO` to false, and creates a new client request that uses MSAL for auth. The new request will have an MSAL access token to the middle-tier server.
+   - It sets the global `authSSO` to false and creates a new client request that uses MSAL for auth. The new request has an MSAL access token to the middle-tier server.
    - Once the request is created it calls `callWebServer` to continue attempting to call the middle-tier server successfully.
 
    ```javascript
@@ -483,7 +483,7 @@ The middle-tier server provides REST APIs for the client to call. For example, t
 1. Replace `TODO 13` with the following code. About this code, note:
 
    - It only requests the minimum scopes it needs, such as `files.read`.
-   - It uses the MSAL authHelper to perform the OBO flow in the call to `acquireTokenOnBehalfOf`.
+   - It uses the MSAL `authHelper` to perform the OBO flow in the call to `acquireTokenOnBehalfOf`.
 
    ```javascript
    try {
