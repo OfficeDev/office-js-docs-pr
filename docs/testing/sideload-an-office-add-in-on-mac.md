@@ -28,11 +28,14 @@ To see how your add-in will run on Office on Mac, you can sideload your add-in's
 
 1. Use **Finder** to sideload the manifest file. Open **Finder** and enter Command+Shift+G to open the **Go to folder** dialog.
 
-1. Enter one of the following folders, based on the application you want to use for sideloading. If the `wef` folder doesn't exist on your computer, create it. The remaining steps describe how to sideload a Word add-in.
+1. Enter one of the following filepaths, based on the application you want to use for sideloading. If the `wef` folder doesn't exist on your computer, create it.
 
     - For Word:  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`
     - For Excel:  `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - For PowerPoint: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
+
+    > [!NOTE]
+    > The remaining steps describe how to sideload a Word add-in.
 
 1. Copy your add-in's manifest file to this `wef` folder.
 
