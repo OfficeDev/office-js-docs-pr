@@ -108,7 +108,8 @@ When you're loading the Office JavaScript Library from a local copy instead of f
 ## See also
 
 - [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
-- [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [Sideload an Office Add-in on Mac](sideload-an-office-add-in-on-mac.md)  
+- [Sideload an Office Add-in on iPad](sideload-an-office-add-in-on-ipad.md)  
 - [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)

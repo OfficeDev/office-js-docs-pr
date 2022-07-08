@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins on Mac for testing
 description: Test your Office Add-in on Mac by sideloading.
-ms.date: 06/29/2022
+ms.date: 07/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -26,26 +26,28 @@ To see how your add-in will run on Office on Mac, you can sideload your add-in's
 
 ## Sideload an add-in in Office on Mac
 
-1. Open **Terminal** and go to one of the following folders where you'll save your add-in's manifest file. If the `wef` folder doesn't exist on your computer, create it.
+1. Use **Finder** to sideload the manifest file. Open **Finder** and enter Command+Shift+G to open the **Go to folder** dialog.
+
+1. Enter one of the following folders, based on the application you want to use for sideloading. If the `wef` folder doesn't exist on your computer, create it. The remaining steps describe how to sideload a Word add-in.
 
     - For Word:  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`
     - For Excel:  `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - For PowerPoint: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
-2. Open the folder in **Finder** using the command `open .` (including the period or dot). Copy your add-in's manifest file to this folder.
+1. Copy your add-in's manifest file to this `wef` folder.
 
     ![Wef folder in Office on Mac.](../images/all-my-files.png)
 
-3. Open Word, and then open a document. Restart Word if it's already running.
+1. Open Word, and then open a document. Restart Word if it's already running.
 
-4. In Word, choose **Insert** > **Add-ins** > **My Add-ins** (drop-down menu), and then choose your add-in.
+1. In Word, choose **Insert** > **Add-ins** > **My Add-ins** (drop-down menu), and then choose your add-in.
 
     ![My Add-ins in Office on Mac.](../images/my-add-ins-wikipedia.png)
 
     > [!IMPORTANT]
     > Sideloaded add-ins will not show up in the My Add-ins dialog box. They are only visible within the drop-down menu (small down-arrow to the right of My Add-ins on the **Insert** tab). Sideloaded add-ins are listed under the **Developer Add-ins** heading in this menu.
 
-5. Verify that your add-in is displayed in Word.
+1. Verify that your add-in is displayed in Word.
 
     ![Office Add-in displayed in Office on Mac.](../images/lorem-ipsum-wikipedia.png)
 
