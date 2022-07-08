@@ -20,7 +20,7 @@ To see how your add-in will run on Office on Mac, you can sideload your add-in's
 
 - Excel on Mac version 15.19 (160206).
 
-- PowerPoint on Mac version 15.24 (160614)
+- PowerPoint on Mac version 15.24 (160614).
 
 - The manifest .xml file for the add-in you want to test.
 
