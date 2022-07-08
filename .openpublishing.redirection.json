@@ -1179,6 +1179,10 @@
         {
             "source_path": "docs/reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md",
             "redirect_url": "/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview"
+        },
+        {
+            "source_path": "docs/testing/sideload-an-office-add-in-on-ipad-and-mac.md",
+            "redirect_url": "/office/dev/add-ins/testing/sideload-an-office-add-in-on-mac"
         }
     ]
 }

@@ -102,6 +102,7 @@ You can remove a previously sideloaded add-in by clearing your browser's cache. 
 
 ## See also
 
-- [Sideload Office Add-ins on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Sideload Office Add-ins on Mac](sideload-an-office-add-in-on-mac.md)
+- [Sideload Office Add-ins on iPad](sideload-an-office-add-in-on-ipad.md)
 - [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
 - [Clear the Office cache](clear-cache.md)
