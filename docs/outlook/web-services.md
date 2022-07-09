@@ -1,7 +1,7 @@
 ---
 title: Use Exchange Web Services (EWS) from an Outlook add-in
 description: Provides an example that shows how an Outlook add-in can request information from Exchange Web Services.
-ms.date: 04/28/2020
+ms.date: 07/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -11,10 +11,7 @@ Your add-in can use Exchange Web Services (EWS) from a computer that is running 
 
 The way that you call a web service varies based on where the web service is located. Table 1 lists the different ways that you can call a web service based on location.
 
-
 **Table 1. Ways to call web services from an Outlook add-in**
-
-<br/>
 
 |**Web service location**|**Way to call the web service**|
 |:-----|:-----|
@@ -38,53 +35,50 @@ To use the `makeEwsRequestAsync` method to initiate an EWS operation, provide th
 
 When the EWS SOAP request is complete, Outlook calls the callback method with one argument, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. The callback method can access two properties of the `AsyncResult` object: the `value` property, which contains the XML SOAP response of the EWS operation, and optionally, the `asyncContext` property, which contains any data passed as the `userContext` parameter. Typically, the callback method then parses the XML in the SOAP response to get any relevant information, and processes that information accordingly.
 
-
 ## Tips for parsing EWS responses
 
 When parsing a SOAP response from an EWS operation, note the following browser-dependent issues.
-
 
 - Specify the prefix for a tag name when using the DOM method `getElementsByTagName`, to include support for Internet Explorer.
 
   `getElementsByTagName` behaves differently depending on browser type. For example, an EWS response can contain the following XML (formatted and abbreviated for display purposes).
 
    ```XML
-        <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
-        PropertyName="MyProperty" 
-        PropertyType="String"/>
-        <t:Value>{
-        ...
-        }</t:Value></t:ExtendedProperty>
+   <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
+   PropertyName="MyProperty" 
+   PropertyType="String"/>
+   <t:Value>{
+   ...
+   }</t:Value></t:ExtendedProperty>
    ```
 
    Code, as in the following, would work on a browser like Chrome to get the XML enclosed by the `ExtendedProperty` tags.
 
    ```js
-        var mailbox = Office.context.mailbox;
-        mailbox.makeEwsRequestAsync(mailbox.item.itemId, function(result) {
-            var response = $.parseXML(result.value);
-            var extendedProps = response.getElementsByTagName("ExtendedProperty")
-            });
+   const mailbox = Office.context.mailbox;
+   mailbox.makeEwsRequestAsync(mailbox.item.itemId, function(result) {
+       const response = $.parseXML(result.value);
+       const extendedProps = response.getElementsByTagName("ExtendedProperty")
+   });
    ```
 
    On Internet Explorer, you must include the `t:` prefix of the tag name, as follows.
 
    ```js
-        var mailbox = Office.context.mailbox;
-        mailbox.makeEwsRequestAsync(mailbox.item.itemId, function(result) {
-            var response = $.parseXML(result.value);
-            var extendedProps = response.getElementsByTagName("t:ExtendedProperty")
-            });
+   const mailbox = Office.context.mailbox;
+   mailbox.makeEwsRequestAsync(mailbox.item.itemId, function(result) {
+       const response = $.parseXML(result.value);
+       const extendedProps = response.getElementsByTagName("t:ExtendedProperty")
+   });
    ```
 
 - Use the DOM property `textContent` to get the contents of a tag in an EWS response, as follows.
 
    ```js
-      content = $.parseJSON(value.textContent);
+   content = $.parseJSON(value.textContent);
    ```
 
    Other properties such as `innerHTML` may not work on Internet Explorer for some tags in an EWS response.
-
 
 ## Example
 
@@ -96,50 +90,48 @@ The following example calls `makeEwsRequestAsync` to use the [GetItem](/exchange
 
 - `callback` &ndash; Processes the SOAP response which includes any subject and other information about the specified item.
 
-
 ```js
 function getSubjectRequest(id) {
    // Return a GetItem operation request for the subject of the specified item. 
-   var result = 
-'<?xml version="1.0" encoding="utf-8"?>' +
-'<soap:Envelope xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"' +
-'               xmlns:xsd="https://www.w3.org/2001/XMLSchema"' +
-'               xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"' +
-'               xmlns:t="http://schemas.microsoft.com/exchange/services/2006/types">' +
-'  <soap:Header>' +
-'    <RequestServerVersion Version="Exchange2013" xmlns="http://schemas.microsoft.com/exchange/services/2006/types" soap:mustUnderstand="0" />' +
-'  </soap:Header>' +
-'  <soap:Body>' +
-'    <GetItem xmlns="http://schemas.microsoft.com/exchange/services/2006/messages">' +
-'      <ItemShape>' +
-'        <t:BaseShape>IdOnly</t:BaseShape>' +
-'        <t:AdditionalProperties>' +
-'            <t:FieldURI FieldURI="item:Subject"/>' +
-'        </t:AdditionalProperties>' +
-'      </ItemShape>' +
-'      <ItemIds><t:ItemId Id="' + id + '"/></ItemIds>' +
-'    </GetItem>' +
-'  </soap:Body>' +
-'</soap:Envelope>';
+   const result = 
+    '<?xml version="1.0" encoding="utf-8"?>' +
+    '<soap:Envelope xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"' +
+    '               xmlns:xsd="https://www.w3.org/2001/XMLSchema"' +
+    '               xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"' +
+    '               xmlns:t="http://schemas.microsoft.com/exchange/services/2006/types">' +
+    '  <soap:Header>' +
+    '    <RequestServerVersion Version="Exchange2013" xmlns="http://schemas.microsoft.com/exchange/services/2006/types" soap:mustUnderstand="0" />' +
+    '  </soap:Header>' +
+    '  <soap:Body>' +
+    '    <GetItem xmlns="http://schemas.microsoft.com/exchange/services/2006/messages">' +
+    '      <ItemShape>' +
+    '        <t:BaseShape>IdOnly</t:BaseShape>' +
+    '        <t:AdditionalProperties>' +
+    '            <t:FieldURI FieldURI="item:Subject"/>' +
+    '        </t:AdditionalProperties>' +
+    '      </ItemShape>' +
+    '      <ItemIds><t:ItemId Id="' + id + '"/></ItemIds>' +
+    '    </GetItem>' +
+    '  </soap:Body>' +
+    '</soap:Envelope>';
 
    return result;
 }
 
 function sendRequest() {
    // Create a local variable that contains the mailbox.
-   var mailbox = Office.context.mailbox;
+   const mailbox = Office.context.mailbox;
 
    mailbox.makeEwsRequestAsync(getSubjectRequest(mailbox.item.itemId), callback);
 }
 
 function callback(asyncResult)  {
-   var result = asyncResult.value;
-   var context = asyncResult.context;
+   const result = asyncResult.value;
+   const context = asyncResult.context;
 
    // Process the returned response here.
 }
 ```
-
 
 ## EWS operations that add-ins support
 
@@ -160,8 +152,6 @@ The following describes how you can use the `makeEwsRequestAsync` method.
 The following table lists the EWS operations that add-ins support. To see examples of SOAP requests and responses, choose the link for each operation. For more information about EWS operations, see [EWS operations in Exchange](/exchange/client-developer/web-service-reference/ews-operations-in-exchange).
 
 **Table 2. Supported EWS operations**
-
-<br/>
 
 |**EWS operation**|**Description**|
 |:-----|:-----|
@@ -185,7 +175,6 @@ The following table lists the EWS operations that add-ins support. To see exampl
 
  > [!NOTE]
  > FAI (Folder Associated Information) items cannot be updated (or created) from an add-in. These hidden messages are stored in a folder and are used to store a variety of settings and auxiliary data.  Attempting to use the UpdateItem operation will throw an ErrorAccessDenied error: "Office extension is not allowed to update this type of item". As an alternative, you may use the [EWS Managed API](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications) to update these items from a Windows client or a server application. Caution is recommended as internal, service-type data structures are subject to change and could break your solution.
-
 
 ## Authentication and permission considerations for makeEwsRequestAsync
 
