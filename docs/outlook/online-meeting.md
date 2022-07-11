@@ -2,7 +2,7 @@
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 06/28/2022
+ms.date: 07/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -218,7 +218,7 @@ In this section, learn how your add-in script can update a user's meeting to inc
         '<a href="https://contoso.com/testmeeting" target="_blank">Join test meeting</a>' +
         '<br><br>';
 
-    var mailboxItem;
+    let mailboxItem;
 
     // Office is ready.
     Office.onReady(function () {

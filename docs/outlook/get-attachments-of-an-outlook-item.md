@@ -1,7 +1,7 @@
 ---
 title: Get attachments in an Outlook add-in
 description: Your add-in can use the attachments API to send information about the attachments to a remote service.
-ms.date: 09/03/2021
+ms.date: 07/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -73,21 +73,19 @@ The remote service that your add-in calls defines the specifics of how you shoul
 // Initialize a context object for the add-in.
 //   Set the fields that are used on the request
 //   object to default values.
- var serviceRequest = {
+ const serviceRequest = {
     attachmentToken: '',
     ewsUrl         : Office.context.mailbox.ewsUrl,
     attachments    : []
  };
 ```
 
-<br/>
-
 The `Office.context.mailbox.item.attachments` property contains a collection of `AttachmentDetails` objects, one for each attachment to the item. In most cases, the add-in can pass just the attachment ID property of an `AttachmentDetails` object to the remote service. If the remote service needs more details about the attachment, you can pass all or part of the `AttachmentDetails` object. The following code defines a method that puts the entire `AttachmentDetails` array in the `serviceRequest` object and sends a request to the remote service.
 
 ```js
 function makeServiceRequest() {
   // Format the attachment details for sending.
-  for (var i = 0; i < mailbox.item.attachments.length; i++) {
+  for (let i = 0; i < mailbox.item.attachments.length; i++) {
     serviceRequest.attachments[i] = JSON.parse(JSON.stringify(mailbox.item.attachments[i]));
   }
 
@@ -98,12 +96,12 @@ function makeServiceRequest() {
     contentType: 'application/json;charset=utf-8'
   }).done(function (response) {
     if (!response.isError) {
-      var names = "<h2>Attachments processed using " +
+      const names = "<h2>Attachments processed using " +
                     serviceRequest.service +
                     ": " +
                     response.attachmentsProcessed +
                     "</h2>";
-      for (i = 0; i < response.attachmentNames.length; i++) {
+      for (let i = 0; i < response.attachmentNames.length; i++) {
         names += response.attachmentNames[i] + "<br />";
       }
       document.getElementById("names").innerHTML = names;
@@ -215,7 +213,6 @@ private AttachmentSampleServiceResponse GetAtttachmentsFromExchangeServerUsingEW
 
 If you use EWS in your remote service, you need to construct a [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) SOAP request to get the attachments from the Exchange server. The following code returns a string that provides the SOAP request. The remote service uses the `String.Format` method to insert the attachment ID for an attachment into the string.
 
-
 ```cs
 private const string GetAttachmentSoapRequest =
 @"<?xml version=""1.0"" encoding=""utf-8""?>
@@ -237,8 +234,6 @@ xmlns:t=""http://schemas.microsoft.com/exchange/services/2006/types"">
   </soap:Body>
 </soap:Envelope>";
 ```
-
-<br/>
 
 Finally, the following method does the work of using an EWS `GetAttachment` request to get the attachments from the Exchange server. This implementation makes an individual request for each attachment, and returns the count of attachments processed. Each response is processed in a separate `ProcessXmlResponse` method, defined next.
 
@@ -314,8 +309,6 @@ private AttachmentSampleServiceResponse GetAttachmentsFromExchangeServerUsingEWS
   return response;
 }
 ```
-
-<br/>
 
 Each response from the `GetAttachment` operation is sent to the `ProcessXmlResponse` method. This method checks the response for errors. If it doesn't find any errors, it processes file attachments and item attachments. The `ProcessXmlResponse` method performs the bulk of the work to process the attachment.
 
