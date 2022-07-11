@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
-ms.date: 05/19/2022
+ms.date: 06/10/2022
 ms.prod: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -135,13 +135,13 @@ The manifest for an add-in controls how it appears in Outlook. It defines the wa
 
 Make the following updates in the **manifest.xml** file to specify some basic information about the add-in.
 
-1. Locate the **ProviderName** element and replace the default value with your company name.
+1. Locate the **\<ProviderName\>** element and replace the default value with your company name.
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. Locate the **Description** element, replace the default value with a description of the add-in, and save the file.
+1. Locate the **\<Description\>** element, replace the default value with a description of the add-in, and save the file.
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
@@ -179,21 +179,21 @@ Now that you've verified the base add-in works, you can customize it to add more
 
 ### Remove the MessageReadCommandSurface extension point
 
-Open the **manifest.xml** file and locate the **ExtensionPoint** element with type **MessageReadCommandSurface**. Delete this **ExtensionPoint** element (including its closing tag) to remove the buttons from the read message window.
+Open the **manifest.xml** file and locate the **\<ExtensionPoint\>** element with type **MessageReadCommandSurface**. Delete this **\<ExtensionPoint\>** element (including its closing tag) to remove the buttons from the read message window.
 
 ### Add the MessageComposeCommandSurface extension point
 
 Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately before this line, insert the following XML markup. Note the following about this markup.
 
-- The **ExtensionPoint** with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.
+- The **\<ExtensionPoint\>** with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.
 
-- By using an **OfficeTab** element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.
+- By using an **\<OfficeTab\>** element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.
 
-- The **Group** element defines the grouping for the new buttons, with a label set by the **groupLabel** resource.
+- The **\<Group\>** element defines the grouping for the new buttons, with a label set by the **groupLabel** resource.
 
-- The first **Control** element contains an **Action** element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.
+- The first **\<Control\>** element contains an **\<Action\>** element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.
 
-- The second **Control** element contains an **Action** element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.
+- The second **\<Control\>** element contains an **\<Action\>** element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.
 
 ```xml
 <!-- Message Compose -->
@@ -238,11 +238,11 @@ Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately b
 
 ### Update resources in the manifest
 
-The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the **Resources** section of the manifest.
+The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the **\<Resources\>** section of the manifest.
 
-1. Locate the **Resources** element in the manifest file and delete the entire element (including its closing tag).
+1. Locate the **\<Resources\>** element in the manifest file and delete the entire element (including its closing tag).
 
-1. In that same location, add the following markup to replace the **Resources** element you just removed.
+1. In that same location, add the following markup to replace the **\<Resources\>** element you just removed.
 
     ```xml
     <Resources>
@@ -727,7 +727,7 @@ This add-in's **Insert default gist** button is a UI-less button that will invok
 
 ### Update the function file (HTML)
 
-A function that's invoked by a UI-less button must be defined in the file that's specified by the **FunctionFile** element in the manifest for the corresponding form factor. This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.
+A function that's invoked by a UI-less button must be defined in the file that's specified by the **\<FunctionFile\>** element in the manifest for the corresponding form factor. This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.
 
 Open the file **./src/commands/commands.html** and replace the entire contents with the following markup.
 
@@ -768,10 +768,9 @@ var config;
 var btnEvent;
 
 // The initialize function must be run each time a new page is loaded.
-Office.initialize = function (reason) {
+Office.initialize = function () {
 };
 
-// Add any UI-less function here.
 function showError(error) {
   Office.context.mailbox.item.notificationMessages.replaceAsync('github-error', {
     type: 'errorMessage',
@@ -950,7 +949,7 @@ Save all of your changes and run `npm start` from the command prompt, if the ser
 
 ## Implement a task pane
 
-This add-in's **Insert gist** button will open a task pane and display the user's gists. The user can then select one of the gists to insert into the body of the message. If the user has not yet configured the add-in, they will be prompted to do so.
+This add-in's **Insert gist** button will open a task pane and display the user's gists. The user can then select one of the gists to insert into the body of the message. If the user hasn't yet configured the add-in, they'll be prompted to do so.
 
 ### Specify the HTML for the task pane
 
@@ -1094,83 +1093,97 @@ ul {
   -webkit-flex-wrap: nowrap;
           flex-wrap: nowrap;
   height: 100%; }
-  .ms-landing-page__main {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-            flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-    -webkit-flex: 1 1 0;
-            flex: 1 1 0;
-    height: 100%; }
 
-  .ms-landing-page__content {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-            flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-    height: 100%;
-    -webkit-flex: 1 1 0;
-            flex: 1 1 0;
-    padding: 20px; }
-    .ms-landing-page__content h2 {
-      margin-bottom: 20px; }
-  .ms-landing-page__footer {
-    display: -webkit-inline-flex;
-    display: inline-flex;
-    -webkit-justify-content: center;
-            justify-content: center;
-    -webkit-align-items: center;
-            align-items: center; }
-    .ms-landing-page__footer--left {
-      transition: background ease 0.1s, color ease 0.1s;
-      display: -webkit-inline-flex;
-      display: inline-flex;
-      -webkit-justify-content: flex-start;
-              justify-content: flex-start;
-      -webkit-align-items: center;
-              align-items: center;
-      -webkit-flex: 1 0 0px;
-              flex: 1 0 0px;
-      padding: 20px; }
-      .ms-landing-page__footer--left:active {
-        cursor: default; }
-      .ms-landing-page__footer--left--disabled {
-        opacity: 0.6;
-        pointer-events: none;
-        cursor: not-allowed; }
-        .ms-landing-page__footer--left--disabled:active, .ms-landing-page__footer--left--disabled:hover {
-          background: transparent; }
-      .ms-landing-page__footer--left img {
-        width: 40px;
-        height: 40px; }
-      .ms-landing-page__footer--left h1 {
-        -webkit-flex: 1 0 0px;
-                flex: 1 0 0px;
-        margin-left: 15px;
-        text-align: left;
-        width: auto;
-        max-width: auto;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis; }
-    .ms-landing-page__footer--right {
-      transition: background ease 0.1s, color ease 0.1s;
-      padding: 29px 20px; }
-      .ms-landing-page__footer--right:active, .ms-landing-page__footer--right:hover {
-        background: #005ca4;
-        cursor: pointer; }
-      .ms-landing-page__footer--right:active {
-        background: #005ca4; }
-      .ms-landing-page__footer--right--disabled {
-        opacity: 0.6;
-        pointer-events: none;
-        cursor: not-allowed; }
-        .ms-landing-page__footer--right--disabled:active, .ms-landing-page__footer--right--disabled:hover {
-          background: transparent; }
+.ms-landing-page__main {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-flex: 1 1 0;
+          flex: 1 1 0;
+  height: 100%; }
+
+.ms-landing-page__content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  height: 100%;
+  -webkit-flex: 1 1 0;
+          flex: 1 1 0;
+  padding: 20px; }
+
+.ms-landing-page__content h2 {
+  margin-bottom: 20px; }
+
+.ms-landing-page__footer {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center; }
+
+.ms-landing-page__footer--left {
+  transition: background ease 0.1s, color ease 0.1s;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-flex: 1 0 0px;
+          flex: 1 0 0px;
+  padding: 20px; }
+
+.ms-landing-page__footer--left:active {
+  cursor: default; }
+
+.ms-landing-page__footer--left--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed; }
+
+.ms-landing-page__footer--left--disabled:active, .ms-landing-page__footer--left--disabled:hover {
+  background: transparent; }
+
+.ms-landing-page__footer--left img {
+  width: 40px;
+  height: 40px; }
+
+.ms-landing-page__footer--left h1 {
+  -webkit-flex: 1 0 0px;
+          flex: 1 0 0px;
+  margin-left: 15px;
+  text-align: left;
+  width: auto;
+  max-width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.ms-landing-page__footer--right {
+  transition: background ease 0.1s, color ease 0.1s;
+  padding: 29px 20px; }
+
+.ms-landing-page__footer--right:active, .ms-landing-page__footer--right:hover {
+  background: #005ca4;
+  cursor: pointer; }
+
+.ms-landing-page__footer--right:active {
+  background: #005ca4; }
+
+.ms-landing-page__footer--right--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed; }
+
+.ms-landing-page__footer--right--disabled:active, .ms-landing-page__footer--right--disabled:hover {
+  background: transparent; }
 ```
 
 ### Specify the JavaScript for the task pane
@@ -1289,7 +1302,7 @@ In the project that you've created, the task pane JavaScript is specified in the
 
 ### Test the Insert gist button
 
-Save all of your changes and run `npm start` from the command prompt, if the server isn't already running. Then complete the following steps to test the **Insert gist** button.
+Save all of your changes and run `npm start` from the command prompt, if the server isn't already running. Then, complete the following steps to test the **Insert gist** button.
 
 1. Open Outlook and compose a new message.
 

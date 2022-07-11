@@ -24,7 +24,7 @@ You have several options for creating your add-in project. Depending on the opti
 
 ## Mark your add-in for debugging
 
-1. Set the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`. `[Add-in ID]` is the **Id** in the add-in manifest.
+1. Set the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`. `[Add-in ID]` is the **\<Id\>** in the add-in manifest.
 
     **yo office**: In a command line window, navigate to the root of your add-in folder then run the following command.
 
@@ -34,7 +34,7 @@ You have several options for creating your add-in project. Depending on the opti
 
     In addition to building the code and starting the local server, this command should set the `UseDirectDebugger` registry key for this add-in to `1`.
 
-    **Other**: Add the `UseDirectDebugger` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\`. Replace `[Add-in ID]` with the **Id** from the add-in manifest. Set the registry key to `1`.
+    **Other**: Add the `UseDirectDebugger` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\`. Replace `[Add-in ID]` with the **\<Id\>** from the add-in manifest. Set the registry key to `1`.
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
@@ -97,7 +97,7 @@ You have several options for creating your add-in project. Depending on the opti
 
 ## Attach Visual Studio Code
 
-1. To find the add-in's **bundle.js**, open the following folder in Windows Explorer and search for your add-in's **Id** (found in the manifest).
+1. To find the add-in's **bundle.js**, open the following folder in Windows Explorer and search for your add-in's **\<Id\>** (found in the manifest).
 
     ```text
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef

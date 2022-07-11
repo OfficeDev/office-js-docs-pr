@@ -208,6 +208,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/excel/excel-add-ins-error-handling.md",
+            "redirect_url": "/office/dev/add-ins/testing/application-specific-api-error-handling",
+            "redirect_document_id": true
+        },
+        {
             "source_path": "docs/excel/excel-add-ins-extend-excel.md",
             "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-overview",
             "redirect_document_id": true
@@ -1179,6 +1184,10 @@
         {
             "source_path": "docs/reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md",
             "redirect_url": "/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview"
+        },
+        {
+            "source_path": "docs/testing/sideload-an-office-add-in-on-ipad-and-mac.md",
+            "redirect_url": "/office/dev/add-ins/testing/sideload-an-office-add-in-on-mac"
         }
     ]
 }

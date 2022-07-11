@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 05/19/2022
+ms.date: 06/15/2022
 ms.localizationpriority: medium
 ---
 
@@ -48,11 +48,11 @@ Validation is done on the client side in Outlook when the send event is triggere
 
 The following screenshot shows an information bar that notifies the sender to add a subject.
 
-![Screenshot showing an error message prompting the user to enter a missing subject line.](../images/block-on-send-subject-cc-inforbar.png)
+![An error message prompting the user to enter a missing subject line.](../images/block-on-send-subject-cc-inforbar.png)
 
 The following screenshot shows an information bar that notifies the sender that blocked words were found.
 
-![Screenshot showing an error message telling the user that blocked words were found.](../images/block-on-send-body.png)
+![An error message telling the user that blocked words were found.](../images/block-on-send-body.png)
 
 ## Limitations
 
@@ -327,6 +327,12 @@ For compliance reasons, administrators may need to ensure that users cannot send
 ## On-send feature scenarios
 
 The following are the supported and unsupported scenarios for add-ins that use the on-send feature.
+
+### Event handlers are dynamically defined
+
+Your add-in's event handlers must be defined by the time `Office.initialize` or `Office.onReady()` is called (for further information, see [Startup of an Outlook add-in](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in) and [Initialize your Office Add-in](../develop/initialize-add-in.md)). If your handler code is dynamically defined by certain circumstances during initialization, you must create a stub function to call the handler once it's completely defined. The stub function must be referenced in the **\<Event\>** element's `FunctionName` attribute of your manifest. This workaround ensures that your handler is defined and ready to be referenced once `Office.initialize` or `Office.onReady()` runs.
+
+If your handler isn't defined once your add-in is initialized, the sender will be notified that "The callback function is unreachable" through an information bar in the mail item.
 
 ### User mailbox has the on-send add-in feature enabled but no add-ins are installed
 
@@ -603,6 +609,9 @@ To learn more about how to add a recipient to the CC line and verify that the em
 ## Debug Outlook add-ins that use on-send
 
 For instructions on how to debug your on-send add-in, refer to [Debug your UI-less Outlook add-in](debug-ui-less.md).
+
+> [!TIP]
+> If the error "The callback function is unreachable" appears when your users run your add-in and your add-in's event handler is dynamically defined, you must create a stub function as a workaround. See [Event handlers are dynamically defined](#event-handlers-are-dynamically-defined) for more information.
 
 ## See also
 

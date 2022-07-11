@@ -107,7 +107,7 @@ The add-in project that you've created with the Yeoman generator contains sample
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-1. Open **manifest.xml** and find the `<bt:Urls>` tags inside the `<Resources>` tag. Locate the `<bt:Url>` tag with the ID `Taskpane.Url` and update its `DefaultValue` attribute. The new `DefaultValue` is `https://localhost:3000/index.html`. The entire updated tag should match the following line.
+1. Open **manifest.xml** and find the `<bt:Urls>` tags inside the **\<Resources\>** tag. Locate the `<bt:Url>` tag with the ID `Taskpane.Url` and update its `DefaultValue` attribute. The new `DefaultValue` is `https://localhost:3000/index.html`. The entire updated tag should match the following line.
 
    ```html
    <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
@@ -209,7 +209,8 @@ The add-in project that you've created with the Yeoman generator contains sample
 
    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
    - Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
-   - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+   - iPad: [Sideload Office Add-ins on iPad](../testing/sideload-an-office-add-in-on-ipad.md)
+   - Mac: [Sideload Office Add-ins on Mac](../testing/sideload-an-office-add-in-on-mac.md)
 
 1. Open the add-in task pane in Excel. On the **Home** tab, choose the **Show Taskpane** button.
 

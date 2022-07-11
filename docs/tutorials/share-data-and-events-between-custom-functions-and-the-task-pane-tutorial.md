@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Share data and events between Excel custom functions and the task pane'
 description: Learn how to share data and events between custom functions and the task pane in Excel.
-ms.date: 11/29/2021
+ms.date: 06/15/2022
 ms.prod: excel
 ms.localizationpriority: high
 ---
 
 # Tutorial: Share data and events between Excel custom functions and the task pane
 
-Share global data and send events between the task pane and custom functions of your Excel add-in with a shared runtime. We recommend using a shared runtime for most custom functions scenarios, unless you have a specific reason to use a non-task pane (UI-less) custom function. This tutorial assumes you're familiar with using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create add-in projects. Consider completing the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), if you haven't already.
+Share global data and send events between the task pane and custom functions of your Excel add-in with a shared runtime. We recommend using a shared runtime for most custom functions scenarios, unless you have a specific reason to use a custom function-only add-in. This tutorial assumes you're familiar with using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create add-in projects. Consider completing the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), if you haven't already.
 
 ## Create the add-in project
 
@@ -28,7 +28,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
 
 1. Start Visual Studio Code and open the add-in project you generated.
 1. Open the **manifest.xml** file.
-1. Replace (or add) the following `<Requirements>` section XML to require the [shared runtime requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
+1. Replace (or add) the following **\<Requirements\>** section XML to require the [shared runtime requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>
@@ -52,7 +52,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
     <DefaultSettings>
     ```
 
-1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
+1. Find the **\<VersionOverrides\>** section and add the following **\<Runtimes\>** section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
     
     ```xml
     <Runtimes>
@@ -61,7 +61,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
     ```
     
     > [!IMPORTANT]
-    > The `<Runtimes>` section must be entered after the `<Host xsi:type="...">` element in the exact order shown in the following XML.
+    > The **\<Runtimes\>** section must be entered after the `<Host xsi:type="...">` element in the exact order shown in the following XML.
 
     ```xml
     <VersionOverrides ...>
@@ -77,7 +77,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
     > [!NOTE]
     > If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-1. Find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
+1. Find the **\<Page\>** element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
 
    ```xml
    <AllFormFactors>
