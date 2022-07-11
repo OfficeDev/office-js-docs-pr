@@ -1,7 +1,7 @@
 ---
 title: Add and remove attachments in an Outlook add-in
 description: Use various attachment APIs to manage the files or Outlook items attached to the item the user is composing.
-ms.date: 07/08/2021
+ms.date: 07/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -24,7 +24,7 @@ If there are tasks that depend on the action to complete, you should carry out t
 For example, you can define `options.asyncContext` as a JSON object that contains one or more key-value pairs. You can find more examples about passing optional parameters to asynchronous methods in the Office Add-ins platform in [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods). The following example shows how to use the `asyncContext` parameter to pass 2 arguments to a callback method.
 
 ```js
-var options = { asyncContext: { var1: 1, var2: 2}};
+const options = { asyncContext: { var1: 1, var2: 2}};
 
 Office.context.mailbox.item.addFileAttachmentAsync('https://contoso.com/rtm/icon.png', 'icon.png', options, callback);
 ```
@@ -61,7 +61,7 @@ Office.initialize = function () {
                     write(asyncResult.error.message);
                 } else {
                     // Get the ID of the attached file.
-                    var attachmentID = asyncResult.value;
+                    const attachmentID = asyncResult.value;
                     write('ID of added attachment: ' + attachmentID);
                 }
             });
@@ -99,7 +99,7 @@ function addItemAttachment(itemId) {
             if (asyncResult.status === Office.AsyncResultStatus.Failed){
                 write(asyncResult.error.message);
             } else {
-                var attachmentID = asyncResult.value;
+                const attachmentID = asyncResult.value;
                 write('ID of added attachment: ' + attachmentID);
             }
         });
@@ -125,13 +125,13 @@ You should provide a callback method to check for the status and any error by us
 The following JavaScript example gets the attachments and allows you to set up distinct handling for each supported attachment format.
 
 ```js
-var item = Office.context.mailbox.item;
-var options = {asyncContext: {currentItem: item}};
+const item = Office.context.mailbox.item;
+const options = {asyncContext: {currentItem: item}};
 item.getAttachmentsAsync(options, callback);
 
 function callback(result) {
   if (result.value.length > 0) {
-    for (i = 0 ; i < result.value.length ; i++) {
+    for (let i = 0 ; i < result.value.length ; i++) {
       result.asyncContext.currentItem.getAttachmentContentAsync(result.value[i].id, handleAttachmentsCallback);
     }
   }

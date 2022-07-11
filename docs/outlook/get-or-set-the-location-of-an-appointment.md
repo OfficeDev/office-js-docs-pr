@@ -1,7 +1,7 @@
 ---
 title: Get or set the location of an appointment in an add-in
 description: Learn how to get or set the location of an appointment in an Outlook add-in.
-ms.date: 10/31/2019
+ms.date: 07/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -34,8 +34,8 @@ You can use the `enhancedLocation` API to get and set an appointment's location.
 The following example shows how to add a location by calling [addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-enhancedlocation-member).
 
 ```js
-var item;
-var locations = [
+let item;
+const locations = [
     {
         "id": "Contoso",
         "type": Office.MailboxEnums.LocationType.Custom
@@ -58,7 +58,7 @@ Office.initialize = function () {
 The following example shows how to get the location by calling [getAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-getasync-member(1)) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-enhancedlocation-member).
 
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -86,7 +86,7 @@ function callbackFunction(asyncResult) {
 The following example shows how to remove the location by calling [removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) on [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-enhancedlocation-member).
 
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -101,7 +101,7 @@ Office.initialize = function () {
 function callbackFunction(asyncResult) {
     asyncResult.value.forEach(function (currentValue) {
         // Remove each location from the item being composed.
-        Office.context.mailbox.item.enhancedLocation.removeAsync([currentValue.locationIdentifier]);
+        item.enhancedLocation.removeAsync([currentValue.locationIdentifier]);
     });
 }
 ```
@@ -117,7 +117,7 @@ This section shows a code sample that gets the location of the appointment that 
 To use `item.location.getAsync`, provide a callback method that checks for the status and result of the asynchronous call. You can provide any necessary arguments to the callback method through the `asyncContext` optional parameter. You can obtain status, results, and any error using the output parameter `asyncResult` of the callback. If the asynchronous call is successful, you can get the location as a string using the [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) property.
 
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -159,7 +159,7 @@ To use `item.location.setAsync`, specify a string of up to 255 characters in the
 > You can set multiple locations by using a semi-colon as the separator (e.g., 'Conference room A; Conference room B').
 
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;

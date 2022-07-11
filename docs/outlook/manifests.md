@@ -224,7 +224,7 @@ An Outlook add-in consists of two components: the XML add-in manifest and a web 
 
 Not all Outlook clients support the latest features, and some Outlook users will have an older version of Outlook. Having schema versions lets developers build add-ins that are backwards compatible, using the newest features where they are available but still functioning on older versions.
 
-The **VersionOverrides** element in the manifest is an example of this. All elements defined inside **VersionOverrides** will override the same element in the other part of the manifest. This means that, whenever possible, Outlook will use what is in the **VersionOverrides** section to set up the add-in. However, if the version of Outlook doesn't support a certain version of **VersionOverrides**, Outlook will ignore it and depend on the information in the rest of the manifest. 
+The **\<VersionOverrides\>** element in the manifest is an example of this. All elements defined inside **\<VersionOverrides\>** will override the same element in the other part of the manifest. This means that, whenever possible, Outlook will use what is in the **\<VersionOverrides\>** section to set up the add-in. However, if the version of Outlook doesn't support a certain version of **\<VersionOverrides\>**, Outlook will ignore it and depend on the information in the rest of the manifest. 
 
 This approach means that developers don't have to create multiple individual manifests, but rather keep everything defined in one file.
 
@@ -234,18 +234,18 @@ The current versions of the schema are:
 |Version|Description|
 |:-----|:-----|
 |v1.0|Supports version 1.0 of the Office JavaScript API. For Outlook add-ins, this supports read form. |
-|v1.1|Supports version 1.1 of the Office JavaScript API and **VersionOverrides**. For Outlook add-ins, this adds support for compose form.|
-|**VersionOverrides** 1.0|Supports later versions of the Office JavaScript API. This supports add-in commands.|
-|**VersionOverrides** 1.1|Supports later versions of the Office JavaScript API. This supports add-in commands and adds support for newer features, such as [pinnable task panes](pinnable-taskpane.md) and mobile add-ins.|
+|v1.1|Supports version 1.1 of the Office JavaScript API and **\<VersionOverrides\>**. For Outlook add-ins, this adds support for compose form.|
+|**\<VersionOverrides\>** 1.0|Supports later versions of the Office JavaScript API. This supports add-in commands.|
+|**\<VersionOverrides\>** 1.1|Supports later versions of the Office JavaScript API. This supports add-in commands and adds support for newer features, such as [pinnable task panes](pinnable-taskpane.md) and mobile add-ins.|
 
-This article will cover the requirements for a v1.1 manifest. Even if your add-in manifest uses the **VersionOverrides** element, it is still important to include the v1.1 manifest elements to allow your add-in to work with older clients that do not support **VersionOverrides**.
+This article will cover the requirements for a v1.1 manifest. Even if your add-in manifest uses the **\<VersionOverrides\>** element, it is still important to include the v1.1 manifest elements to allow your add-in to work with older clients that do not support **\<VersionOverrides\>**.
 
 > [!NOTE]
 > Outlook uses a schema to validate manifests. The schema requires that elements in the manifest appear in a specific order. If you include elements out of the required order, you may get errors when sideloading your add-in. You can download the [XML Schema Definition (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) to help create your manifest with elements in the required order.
 
 ## Root element
 
-The root element for the Outlook add-in manifest is **OfficeApp**. This element also declares the default namespace, schema version and the type of add-in. Place all other elements in the manifest within its open and close tags. The following is an example of the root element.
+The root element for the Outlook add-in manifest is **\<OfficeApp\>**. This element also declares the default namespace, schema version and the type of add-in. Place all other elements in the manifest within its open and close tags. The following is an example of the root element.
 
 
 ```XML
@@ -269,7 +269,7 @@ If the add-in's requested permissions change, users will be prompted to upgrade 
 
 ## VersionOverrides
 
-The **VersionOverrides** element is the location of information for [add-in commands](add-in-commands-for-outlook.md).
+The **\<VersionOverrides\>** element is the location of information for [add-in commands](add-in-commands-for-outlook.md).
 
 This element is also where add-ins define support for [mobile add-ins](add-mobile-support.md).
 
@@ -277,7 +277,7 @@ For a discussion on this element, see [Create add-in commands in your manifest f
 
 ## Localization
 
-Some aspects of the add-in need to be localized for different locales, such as the name, description and the URL that's loaded. These elements can easily be localized by specifying the default value and then locale overrides in the **Resources** element within the **VersionOverrides** element. The following shows how to override an image, a URL, and a string.
+Some aspects of the add-in need to be localized for different locales, such as the name, description and the URL that's loaded. These elements can easily be localized by specifying the default value and then locale overrides in the **\<Resources\>** element within the **\<VersionOverrides\>** element. The following shows how to override an image, a URL, and a string.
 
 
 ```XML
@@ -309,7 +309,7 @@ The schema reference contains full information on which elements can be localize
 
 ## Hosts
 
-Outlook add-ins specify the **Hosts** element like the following:
+Outlook add-ins specify the **\<Hosts\>** element like the following:
 
 ```XML
 <OfficeApp>
@@ -321,15 +321,15 @@ Outlook add-ins specify the **Hosts** element like the following:
 </OfficeApp>
 ```
 
-This is separate from the **Hosts** element inside the **VersionOverrides** element, which is discussed in [Create add-in commands in your manifest for Excel, PowerPoint, and Word](../develop/create-addin-commands.md).
+This is separate from the **\<Hosts\>** element inside the **\<VersionOverrides\>** element, which is discussed in [Create add-in commands in your manifest for Excel, PowerPoint, and Word](../develop/create-addin-commands.md).
 
 ## Requirements
 
-The **Requirements** element specifies the set of APIs available to the add-in. For an Outlook add-in, the requirement set must be Mailbox and a value of 1.1 or above. Please refer to the API reference for the latest requirement set version. Refer to the [Outlook add-in APIs](apis.md) for more information on requirement sets.
+The **\<Requirements\>** element specifies the set of APIs available to the add-in. For an Outlook add-in, the requirement set must be Mailbox and a value of 1.1 or above. Please refer to the API reference for the latest requirement set version. Refer to the [Outlook add-in APIs](apis.md) for more information on requirement sets.
 
-The **Requirements** element can also appear in the **VersionOverrides** element, allowing the add-in to specify a different requirement when loaded in clients that support **VersionOverrides**.
+The **\<Requirements\>** element can also appear in the **\<VersionOverrides\>** element, allowing the add-in to specify a different requirement when loaded in clients that support **\<VersionOverrides\>**.
 
-The following example uses the **DefaultMinVersion** attribute of the **Sets** element to require office.js version 1.1 or higher, and the **MinVersion** attribute of the **Set** element to require the Mailbox requirement set version 1.1.
+The following example uses the **DefaultMinVersion** attribute of the **\<Sets\>** element to require office.js version 1.1 or higher, and the **MinVersion** attribute of the **\<Set\>** element to require the Mailbox requirement set version 1.1.
 
 ```XML
 <OfficeApp>
@@ -345,15 +345,15 @@ The following example uses the **DefaultMinVersion** attribute of the **Sets** e
 
 ## Form settings
 
-The **FormSettings** element is used by older Outlook clients, which only support schema 1.1 and not **VersionOverrides**. Using this element, developers define how the add-in will appear in such clients. There are two parts - **ItemRead** and **ItemEdit**. **ItemRead** is used to specify how the add-in appears when the user reads messages and appointments. **ItemEdit** describes how the add-in appears while the user is composing a reply, new message, new appointment or editing an appointment where they are the organizer.
+The **\<FormSettings\>** element is used by older Outlook clients, which only support schema 1.1 and not **\<VersionOverrides\>**. Using this element, developers define how the add-in will appear in such clients. There are two parts - **ItemRead** and **ItemEdit**. **ItemRead** is used to specify how the add-in appears when the user reads messages and appointments. **ItemEdit** describes how the add-in appears while the user is composing a reply, new message, new appointment or editing an appointment where they are the organizer.
 
-These settings are directly related to the activation rules in the **Rule** element. For example, if an add-in specifies that it should appear on a message in compose mode, an **ItemEdit** form must be specified.
+These settings are directly related to the activation rules in the **\<Rule\>** element. For example, if an add-in specifies that it should appear on a message in compose mode, an **ItemEdit** form must be specified.
 
 For more details, please refer to the [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md).
 
 ## App domains
 
-The domain of the add-in start page that you specify in the **SourceLocation** element is the default domain for the add-in. Without using the **AppDomains** and **AppDomain** elements, if your add-in attempts to navigate to another domain, the browser will open a new window outside of the add-in pane. In order to allow the add-in to navigate to another domain within the add-in pane, add an **AppDomains** element and include each additional domain in its own **AppDomain** sub-element in the add-in manifest.
+The domain of the add-in start page that you specify in the **\<SourceLocation\>** element is the default domain for the add-in. Without using the **\<AppDomains\>** and **\<AppDomain\>** elements, if your add-in attempts to navigate to another domain, the browser will open a new window outside of the add-in pane. In order to allow the add-in to navigate to another domain within the add-in pane, add an **\<AppDomains\>** element and include each additional domain in its own **\<AppDomain\>** sub-element in the add-in manifest.
 
 The following example specifies a domain  `https://www.contoso2.com` as a second domain that the add-in can navigate to within the add-in pane.
 
@@ -381,7 +381,7 @@ For more details, see the [Specify domains you want to open in the add-in window
 
 ## Permissions
 
-The **Permissions** element contains the required permissions for the add-in. In general, you should specify the minimum necessary permission that your add-in needs, depending on the exact methods that you plan to use. For example, a mail add-in that activates in compose forms and only reads but does not write to item properties like [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), and does not call [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) to access any Exchange Web Services operations should specify **ReadItem** permission. For details on the available permissions, see [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
+The **\<Permissions\>** element contains the required permissions for the add-in. In general, you should specify the minimum necessary permission that your add-in needs, depending on the exact methods that you plan to use. For example, a mail add-in that activates in compose forms and only reads but does not write to item properties like [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), and does not call [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) to access any Exchange Web Services operations should specify **ReadItem** permission. For details on the available permissions, see [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
 
 **Four-tier permissions model for mail add-ins**
 
@@ -397,12 +397,12 @@ The **Permissions** element contains the required permissions for the add-in. In
 
 ## Activation rules
 
-Activation rules are specified in the **Rule** element. The **Rule** element can appear as a child of the **OfficeApp** element in 1.1 manifests.
+Activation rules are specified in the **\<Rule\>** element. The **\<Rule\>** element can appear as a child of the **\<OfficeApp\>** element in 1.1 manifests.
 
 Activation rules can be used to activate an add-in based on one or more of the following conditions on the currently selected item.
 
 > [!NOTE]
-> Activation rules only apply to clients that do not support the **VersionOverrides** element.
+> Activation rules only apply to clients that do not support the **\<VersionOverrides\>** element.
 
 - The item type and/or message class
 

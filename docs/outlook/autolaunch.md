@@ -65,7 +65,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML, then save your changes.
+1. Select the entire **\<VersionOverrides\>** node (including open and close tags) and replace it with the following XML, then save your changes.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -327,7 +327,7 @@ Add-in launch-event handlers are expected to be short-running, lightweight, and 
 
 If the user has multiple add-ins that subscribed to the same event, the Outlook platform launches the add-ins in no particular order. Currently, only five event-based add-ins can be actively running.
 
-The user can switch or navigate away from the current mail item where the add-in started running. The add-in that was launched will finish its operation in the background.
+In all supported Outlook clients, the user must remain on the current mail item where the add-in was activated for it to complete running. Navigating away from the current item (for example, switching to another compose window or tab) terminates the add-in operation. The add-in also ceases operation when the user sends the message or appointment they're composing.
 
 Imports are not supported in the JavaScript file where you implement the handling for event-based activation in the Windows client.
 

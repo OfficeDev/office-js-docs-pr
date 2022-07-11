@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 06/15/2022
+ms.date: 07/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -330,7 +330,7 @@ The following are the supported and unsupported scenarios for add-ins that use t
 
 ### Event handlers are dynamically defined
 
-Your add-in's event handlers must be defined by the time `Office.initialize` or `Office.onReady()` is called (for further information, see [Startup of an Outlook add-in](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in) and [Initialize your Office Add-in](../develop/initialize-add-in.md)). If your handler code is dynamically defined by certain circumstances during initialization, you must create a stub function to call the handler once it's completely defined. The stub function must be referenced in the **Event** element's `FunctionName` attribute of your manifest. This workaround ensures that your handler is defined and ready to be referenced once `Office.initialize` or `Office.onReady()` runs.
+Your add-in's event handlers must be defined by the time `Office.initialize` or `Office.onReady()` is called (for further information, see [Startup of an Outlook add-in](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in) and [Initialize your Office Add-in](../develop/initialize-add-in.md)). If your handler code is dynamically defined by certain circumstances during initialization, you must create a stub function to call the handler once it's completely defined. The stub function must be referenced in the **\<Event\>** element's `FunctionName` attribute of your manifest. This workaround ensures that your handler is defined and ready to be referenced once `Office.initialize` or `Office.onReady()` runs.
 
 If your handler isn't defined once your add-in is initialized, the sender will be notified that "The callback function is unreachable" through an information bar in the mail item.
 
@@ -464,13 +464,12 @@ The on-send API requires `VersionOverrides v1_1`. The following shows you how to
 > - [Outlook add-in manifests](manifests.md)
 > - [Office Add-ins XML manifest](../develop/add-in-manifests.md)
 
-
 ### `Event` and `item` objects, and `body.getAsync` and `body.setAsync` methods
 
 To access the currently selected message or meeting item (in this example, the newly composed message), use the `Office.context.mailbox.item` namespace. The `ItemSend` event is automatically passed by the on-send feature to the function specified in the manifest&mdash;in this example, the `validateBody` function.
 
 ```js
-var mailboxItem;
+let mailboxItem;
 
 Office.initialize = function (reason) {
     mailboxItem = Office.context.mailbox.item;
@@ -488,7 +487,6 @@ The `validateBody` function gets the current body in the specified format (HTML)
 > [!NOTE]
 > For more information, see [Event Object](/javascript/api/office/office.addincommands.event) and [Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1)).
   
-
 ### `NotificationMessages` object and `event.completed` method
 
 The `checkBodyOnlyOnSendCallBack` function uses a regular expression to determine whether the message body contains blocked words. If it finds a match against an array of restricted words, it then blocks the email from being sent and notifies the sender via the information bar. To do this, it uses the `notificationMessages` property of the `Item` object to return a `NotificationMessages` object. It then adds a notification to the item by calling the `addAsync` method, as shown in the following example.
@@ -497,13 +495,13 @@ The `checkBodyOnlyOnSendCallBack` function uses a regular expression to determin
 // Determine whether the body contains a specific set of blocked words. If it contains the blocked words, block email from being sent. Otherwise allow sending.
 // <param name="asyncResult">ItemSend event passed from the calling function.</param>
 function checkBodyOnlyOnSendCallBack(asyncResult) {
-    var listOfBlockedWords = new Array("blockedword", "blockedword1", "blockedword2");
-    var wordExpression = listOfBlockedWords.join('|');
+    const listOfBlockedWords = new Array("blockedword", "blockedword1", "blockedword2");
+    const wordExpression = listOfBlockedWords.join('|');
 
     // \b to perform a "whole words only" search using a regular expression in the form of \bword\b.
     // i to perform case-insensitive search.
-    var regexCheck = new RegExp('\\b(' + wordExpression + ')\\b', 'i');
-    var checkBody = regexCheck.test(asyncResult.value);
+    const regexCheck = new RegExp('\\b(' + wordExpression + ')\\b', 'i');
+    const checkBody = regexCheck.test(asyncResult.value);
 
     if (checkBody) {
         mailboxItem.notificationMessages.addAsync('NoSend', { type: 'errorMessage', message: 'Blocked words have been found in the body of this email. Please remove them.' });
@@ -531,7 +529,6 @@ To signal that the add-in has finished processing the `ItemSend` event triggered
 
 In addition to the `addAsync` method, the `NotificationMessages` object also includes `replaceAsync`, `removeAsync`, and `getAllAsync` methods.  These methods are not used in this code sample.  For more information, see [NotificationMessages](/javascript/api/outlook/office.notificationmessages).
 
-
 ### Subject and CC checker code
 
 The following code example shows you how to add a recipient to the CC line and verify that the message includes a subject on send. This example uses the on-send feature to allow or disallow an email from sending.  
@@ -552,7 +549,7 @@ function shouldChangeSubjectOnSend(event) {
             addCCOnSend(asyncResult.asyncContext);
             //console.log(asyncResult.value);
             // Match string.
-            var checkSubject = (new RegExp(/\[Checked\]/)).test(asyncResult.value)
+            const checkSubject = (new RegExp(/\[Checked\]/)).test(asyncResult.value)
             // Add [Checked]: to subject line.
             subject = '[Checked]: ' + asyncResult.value;
 
