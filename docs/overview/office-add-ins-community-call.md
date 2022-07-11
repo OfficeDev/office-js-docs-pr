@@ -11,7 +11,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for July 13th call
 
-- Community engagment update
+- Community engagement update
 - Word APIs update
 - Outlook APIs update
 - SSO samples update
