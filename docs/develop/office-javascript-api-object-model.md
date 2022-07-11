@@ -1,7 +1,7 @@
 ---
 title: Common JavaScript API object model
 description: Learn about the Office JavaScript common API object model.
-ms.date: 07/08/2021
+ms.date: 07/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -130,20 +130,4 @@ The [Document.getFileAsync](/javascript/api/office/office.document#office-office
 
 **Applies to:** Outlook add-ins
 
-Outlook add-ins primarily use a subset of the API exposed through the [Mailbox](/javascript/api/outlook/office.mailbox) object. To access the objects and members specifically for use in Outlook add-ins, such as the [Item](/javascript/api/outlook/office.item) object, you use the [mailbox](/javascript/api/office/office.context#office-office-context-mailbox-member) property of the **Context** object to access the **Mailbox** object, as shown in the following line of code.
-
-```js
-// Access the Item object.
-var item = Office.context.mailbox.item;
-
-```
-
-Additionally, Outlook add-ins can use the following objects.
-
-- `Office` object: for initialization.
-
-- `Context` object: for access to content and display language properties.
-
-- `RoamingSettings` object: for saving Outlook add-in-specific custom settings to the user's mailbox where the add-in is installed.
-
-For information about using JavaScript in Outlook add-ins, see [Outlook add-ins](../outlook/outlook-add-ins-overview.md).
+[!INCLUDE [Mailbox object information](../includes/mailbox-object-desc.md)]

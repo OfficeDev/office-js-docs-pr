@@ -40,7 +40,7 @@ Apply the following best practices for developing add-ins that run on iPad.
 
 -  **Develop and debug the add-in on Windows or Mac and sideload it to an iPad.**
 
-    You can't develop the add-in directly on an iPad, but you can develop and debug it on a Windows or Mac computer and sideload it to an iPad for testing. Because an add-in that runs in Office on iOS or Mac supports the same APIs as an add-in running in Office on Windows, your add-in's code should run the same way on these platforms. For details, see [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md) and [Sideload Office Add-ins on iPad and Mac for testing](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
+    You can't develop the add-in directly on an iPad, but you can develop and debug it on a Windows or Mac computer and sideload it to an iPad for testing. Because an add-in that runs in Office on iOS or Mac supports the same APIs as an add-in running in Office on Windows, your add-in's code should run the same way on these platforms. For details, see [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md) and [Sideload Office Add-ins on iPad for testing](../testing/sideload-an-office-add-in-on-ipad.md).
 
 -  **Specify API requirements in your add-in's manifest or with runtime checks.**
 
