@@ -13,6 +13,10 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 - Community engagement update
 - Word APIs update
+- Outlook update
+  - v2.0 REST endpoint decommission update
+  - Support for shared folders on Exchange on-premises servers
+  - Item Multiselect coming soon
 - Outlook APIs update
 - SSO samples update
 
