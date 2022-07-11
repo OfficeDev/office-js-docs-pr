@@ -1,7 +1,7 @@
 ---
-title: Custom functions debugging
+title: Custom functions debugging in a non-shared runtime
 description: Learn how to debug your Excel custom functions that don't use a shared runtime.
-ms.date: 06/15/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -25,7 +25,7 @@ The process of debugging a custom function for add-ins that don't use a shared r
 | **Target platform** | **Visual Studio Code** | **Other IDE** |
 |--------------|-------------|-------------|
 | Excel on Windows | [Use the VS Code debugger for Excel on Windows](#use-the-vs-code-debugger-for-excel-on-windows) | Not supported. Debug against Excel on the web. |
-| Excel on the web | Windows development computer: [Use the VS Code debugger for Excel in Microsoft Edge](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)</br>Mac or Windows development computer: [Use VS Code and the browser development tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web) |   [Use the command line tools](#use-the-command-line-tools-to-debug)|
+| Excel on the web | Windows development computer: [Use the VS Code debugger for Excel in Microsoft Edge](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)</br>Mac or Windows development computer: [Use VS Code and the browser development tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web) | [Use the command line tools](#use-the-command-line-tools-to-debug)|
 | Excel on Mac |  Not supported. Debug against Excel on the web. | [Use the command line tools](#use-the-command-line-tools-to-debug)|
 
 > [!NOTE]
