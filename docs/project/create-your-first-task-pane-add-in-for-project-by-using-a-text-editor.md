@@ -11,9 +11,9 @@ You can create a task pane add-in for Project Standard 2013, Project Professiona
 
 Project uses the same add-in manifest schema that other Office clients use, and much of the same JavaScript API. The complete code for the add-in that is described in this article is available in the  `Samples\Apps` subdirectory of the Project 2013 SDK download.
 
-The Project OM Test sample add-in can get the GUID of a task and properties of the application and the active project. If Project Professional 2013 opens a project that is in a SharePoint library, the add-in can show the URL of the project. 
+The Project OM Test sample add-in can get the GUID of a task and properties of the application and the active project. If Project Professional 2013 opens a project that is in a SharePoint library, the add-in can show the URL of the project.
 
-The [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20) includes the complete source code. When you extract and install the SDK and samples that are in the Project2013SDK.msi file, see the `\Samples\Apps\Copy_to_AppManifests_FileShare` subdirectory for the manifest file and the `\Samples\Apps\Copy_to_AppSource_FileShare` subdirectory for the source code. 
+The [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435) includes the complete source code. When you extract and install the SDK and samples that are in the Project2013SDK.msi file, see the `\Samples\Apps\Copy_to_AppManifests_FileShare` subdirectory for the manifest file and the `\Samples\Apps\Copy_to_AppSource_FileShare` subdirectory for the source code.
 
 The JSOMCall.html sample uses JavaScript functions in the office.js file and project-15.js file, which are included. You can use the corresponding debug files (office.debug.js and project-15.debug.js) to examine the functions.
 
@@ -105,7 +105,6 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
    The following code gets the application context and document information by using functions in the Office.js file. The `text` object is the ID of the `textarea` control in the HTML file.
 
    The **\_projDoc** variable is initialized with a `ProjectDocument` object. The code includes some simple error handling functions, and the `getContextValues` function that gets application context and project document context properties. For more information about the JavaScript object model for Project, see [JavaScript API for Office](../reference/javascript-api-for-office.md).
-
 
     ```js
     /*
@@ -736,7 +735,7 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
 
    ![Using the Project OM Test app.](../images/pj15-create-simple-agave-project-om-test.png)
 
-1. Select the cell in the **Duration** column for the first task, and then choose the **getSelectedDataAsync** button in the **Project OM Test** add-in. The `getSelectedDataAsync` function sets the text box value to show `2 days`. 
+1. Select the cell in the **Duration** column for the first task, and then choose the **getSelectedDataAsync** button in the **Project OM Test** add-in. The `getSelectedDataAsync` function sets the text box value to show `2 days`.
 
 1. Select the three **Duration** cells for all three tasks. The `getSelectedDataAsync` function returns semicolon-separated text values for cells selected in different rows, for example, `2 days;4 days;0 days`.
 
@@ -1065,10 +1064,7 @@ To use the `throwError` function, include the JQuery library and the SurfaceErro
 
     <!-- . . . INVALID USE OF SYMBOLS . . . -->
 </head>
-
 ```
-
-<br/>
 
 ```js
 function logMethodError(methodName, errorName, errorMessage, actionMessage) {
@@ -1080,12 +1076,9 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 }
 ```
 
-<br/>
-
 *Figure 4. Functions in the SurfaceErrors.js file can show a "toast" notification*
 
 ![Using the SurfaceError routines to show an error.](../images/pj15-create-simple-agave-surface-error.png)
-
 
 ## See also
 
@@ -1093,4 +1086,4 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)
 - [Office JavaScript API Add-ins](../reference/javascript-api-for-office.md)
 - [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)
-- [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20)
+- [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435)
