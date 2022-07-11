@@ -11,7 +11,7 @@ You can use the asynchronous methods ([Body.getAsync](/javascript/api/outlook/of
 
 In Outlook, a user can create a message in text, HTML, or Rich Text Format (RTF), and can create an appointment in HTML format. Before inserting, you should always first verify the supported item format by calling **getTypeAsync**, as you may need to take additional steps. The value that **getTypeAsync** returns depends on the original item format, as well as the support of the device operating system and application to editing in HTML format (1). Then set the  _coercionType_ parameter of **prependAsync** or **setSelectedDataAsync** accordingly (2) to insert the data, as shown in the following table. If you don't specify an argument, **prependAsync** and **setSelectedDataAsync** assume the data to insert is in text format.
 
-|**Data to insert**|**Item format returned by getTypeAsync**|**Use this coercionType**|
+|Data to insert|Item format returned by getTypeAsync|Use this coercionType|
 |:-----|:-----|:-----|
 |Text|Text (1)|Text|
 |HTML|Text (1)|Text (2)|
@@ -120,7 +120,7 @@ function write(message){
 
 Alternatively, you can use **prependAsync** to insert data at the beginning of the item body and disregard the current cursor location. Other than the point of insertion, **prependAsync** and **setSelectedDataAsync** behave in similar ways:
 
-- If you are prepending HTML data in a message body, you should first check for the type of the message body to avoid prepending HTML data to a message in text format.
+- If you're prepending HTML data in a message body, you should first check for the type of the message body to avoid prepending HTML data to a message in text format.
 
 - Provide the following as input parameters to **prependAsync**: a data string in either text or HTML format, and optionally the format of the data to be inserted, a callback method and any of its parameters.
 
