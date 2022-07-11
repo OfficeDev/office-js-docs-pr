@@ -143,6 +143,10 @@ For more information, see [Office.initialize Event](/javascript/api/office) and 
 >Office.initialize = function () {};
 >```
 
+## Debug initialization
+
+For information about debugging the `Office.initialize` and `Office.onReady()` methods, see [Debug the initialize and onReady methods](../testing/debug-initialize-onready.md)
+
 ## See also
 
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)

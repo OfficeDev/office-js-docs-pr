@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 07/08/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -605,7 +605,7 @@ To learn more about how to add a recipient to the CC line and verify that the em
 
 ## Debug Outlook add-ins that use on-send
 
-For instructions on how to debug your on-send add-in, refer to [Debug your UI-less Outlook add-in](debug-ui-less.md).
+For instructions on how to debug your on-send add-in, refer to [Debug function commands in Outlook add-ins](debug-ui-less.md).
 
 > [!TIP]
 > If the error "The callback function is unreachable" appears when your users run your add-in and your add-in's event handler is dynamically defined, you must create a stub function as a workaround. See [Event handlers are dynamically defined](#event-handlers-are-dynamically-defined) for more information.

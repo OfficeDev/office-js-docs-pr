@@ -2,13 +2,13 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 06/17/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
 ---
 
 # Configure your Outlook add-in for event-based activation
 
-Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and UI-less functionality.
+Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks based on certain events, particularly for operations that apply to every item. You can also integrate with the task pane and function commands.
 
 By the end of this walkthrough, you'll have an add-in that runs whenever a new item is created and sets the subject.
 
