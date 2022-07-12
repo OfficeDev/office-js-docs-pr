@@ -20,13 +20,13 @@ This article discusses debugging only for custom functions that **don't use a [s
 > - [Debug add-ins using developer tools in Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md)
 > - [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
 
-The process of debugging a custom function for add-ins that don't use a shared runtime varies depending on the target platform (Windows, Mac, or web), whether you are using Visual Studio Code or a different IDE, and the operating system of your development computer. Use the links in the following table to to visit sections of this article that are relevant to your debugging scenario.
+The process of debugging a custom function for add-ins that don't use a shared runtime varies depending on the target platform (Windows, Mac, or web), whether you are using Visual Studio Code or a different IDE, and the operating system of your development computer. Use the links in the following table to to visit sections of this article that are relevant to your debugging scenario. In this table, "CF-NSR" refers to custom functions in a non-shared runtime.
 
 | **Target platform** | **Visual Studio Code** | **Other IDE** |
 |--------------|-------------|-------------|
-| Excel on Windows | [Use the VS Code debugger for Excel on Windows](#use-the-vs-code-debugger-for-excel-on-windows) | Not supported. Debug against Excel on the web. |
+| Excel on Windows | [Use the VS Code debugger for Excel on Windows](#use-the-vs-code-debugger-for-excel-on-windows) | Debugging CF-NSR outside VS Code isn't supported. Debug against Excel on the web. |
 | Excel on the web | Windows development computer: [Use the VS Code debugger for Excel in Microsoft Edge](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)</br>Mac or Windows development computer: [Use VS Code and the browser development tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web) | [Use the command line tools](#use-the-command-line-tools-to-debug)|
-| Excel on Mac |  Not supported. Debug against Excel on the web. | [Use the command line tools](#use-the-command-line-tools-to-debug)|
+| Excel on Mac |  VS Code debugging of CF-NSR isn't supported. Debug against Excel on the web. | [Use the command line tools](#use-the-command-line-tools-to-debug)|
 
 > [!NOTE]
 > This article primarily shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [Commands for building and running your add-in](#commands-for-building-and-running-your-add-in) at the end of this article.
@@ -133,7 +133,7 @@ If you need to change the code you can make edits in VS Code and save the change
 
 ## Use the command line tools to debug
 
-If you are not using VS Code, you can use the command line (such as bash, or PowerShell) to run your add-in. You'll need to use the browser developer tools to debug your code in Excel on the web. You cannot debug the desktop version of Excel using the command line.
+If you aren't using VS Code, you can use the command line (such as bash, or PowerShell) to run your add-in. You'll need to use the browser developer tools to debug your code in Excel on the web. You cannot debug the desktop version of Excel using the command line.
 
 1. From the command line run `npm run watch` to watch for and rebuild when code changes occur.
 2. Open a second command line window (the first one will be blocked while running the watch.)
@@ -146,7 +146,7 @@ If you are not using VS Code, you can use the command line (such as bash, or Pow
   
     `npm run start:web -- --document {url}` (where `{url}` is the URL of an Excel file on OneDrive or SharePoint)
   
-    If your add-in does not sideload in the document, follow the steps in [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
+    If your add-in doesn't sideload in the document, follow the steps in [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
   
 4. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
 5. In developer tools, open your source code script file (**functions.js** or **functions.ts**). Your custom functions code may be located near the end of the file.
