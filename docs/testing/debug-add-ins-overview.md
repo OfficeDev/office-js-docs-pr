@@ -33,7 +33,7 @@ There are some special cases in which the debugging process is different from wh
 
 - **Debugging the `Office.initialize` or `Office.onReady` methods**: [Debug the initialize and onReady methods](debug-initialize-onready.md).
 - **Debugging an Excel custom function in a _non-shared_ runtime**: [Custom functions debugging in a non-shared runtime](../excel/custom-functions-debugging.md).
-- **Debugging a [function command]((../design/add-in-commands.md#types-of-add-in-commands) in a _non-shared_ runtime**: 
+- **Debugging a [function command](../design/add-in-commands.md#types-of-add-in-commands) in a _non-shared_ runtime**: 
     - Outlook add-ins on a Windows development computer: [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md) 
     - Other Office application add-ins or Outlook on a Mac development computer: [Debug a function command with a non-shared runtime](debug-function-command.md).
 - **Debugging an event-based Outlook add-in**: [Debug your event-based Outlook add-in](../outlook/debug-autolaunch.md). 
