@@ -14,13 +14,13 @@ This article discusses debugging only for custom functions that **don't use a [s
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 > [!TIP]
-> This debugging process doesn't work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article aren't installed with that option. To debug an add-in that is created with this option, see the instructions in one of these articles, as appropriate.
+> This debugging process doesn't work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article aren't installed with that option. To debug an add-in that is created with this option, see the instructions in one of the following articles, as appropriate.
 >
 > - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md)
 > - [Debug add-ins using developer tools in Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md)
 > - [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
 
-The process of debugging a custom function for add-ins that don't use a shared runtime varies depending on the target platform (Windows, Mac, or web), whether you are using Visual Studio Code or a different IDE, and the operating system of your development computer. Use the links in the following table to to visit sections of this article that are relevant to your debugging scenario. In this table, "CF-NSR" refers to custom functions in a non-shared runtime.
+The process of debugging a custom function for add-ins that don't use a shared runtime varies depending on the target platform (Windows, Mac, or web), whether you are using Visual Studio Code or a different IDE, and the operating system of your development computer. Use the links in the following table to visit sections of this article that are relevant to your debugging scenario. In this table, "CF-NSR" refers to custom functions in a non-shared runtime.
 
 | **Target platform** | **Visual Studio Code** | **Other IDE** |
 |--------------|-------------|-------------|
@@ -29,7 +29,7 @@ The process of debugging a custom function for add-ins that don't use a shared r
 | Excel on Mac |  VS Code debugging of CF-NSR isn't supported. Debug against Excel on the web. | [Use the command line tools](#use-the-command-line-tools-to-debug)|
 
 > [!NOTE]
-> This article primarily shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you are using a different editor or command line tool, see the [Commands for building and running your add-in](#commands-for-building-and-running-your-add-in) at the end of this article.
+> This article primarily shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you're using a different editor or command line tool, see the [Commands for building and running your add-in](#commands-for-building-and-running-your-add-in) at the end of this article.
 
 ## Use the VS Code debugger for Excel on Windows
 

@@ -29,7 +29,7 @@ The rest of this article is concerned only with debugging client-side JavaScript
 
 ## Special cases
 
-There are some special cases in which the debugging process is different from what it normally is for a given combination of platform, Office application, and development environment. If you are debugging any of these special cases, use the links in this section to find the proper guidance. Otherwise, continue to [General guidance](#general-guidance).
+There are some special cases in which the debugging process is different from what it normally is for a given combination of platform, Office application, and development environment. If you're debugging any of these special cases, use the links in this section to find the proper guidance. Otherwise, continue to [General guidance](#general-guidance).
 
 - **Debugging the `Office.initialize` or `Office.onReady` methods**: [Debug the initialize and onReady methods](debug-initialize-onready.md).
 - **Debugging an Excel custom function in a _non-shared_ runtime**: [Custom functions debugging in a non-shared runtime](../excel/custom-functions-debugging.md).
@@ -48,7 +48,7 @@ To find guidance for debugging client-side code, the first variable is the opera
 
 ### Debug on Windows
 
-The following provides general guidance to debugging on Windows. Debugging on Windows depends on your IDE:
+The following provides general guidance to debugging on Windows. Debugging on Windows depends on your IDE.
 
 - **Visual Studio**: Debug using the browser's F12 tools. See [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
 - **Visual Studio Code**: Debug using the [Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).

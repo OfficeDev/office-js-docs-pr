@@ -21,8 +21,8 @@ Function commands don't have a UI, so a debugger cannot be attached to the proce
 1. Rerun the function command. The process stops on your breakpoints. 
 
 > [!TIP]
-> There is more detailed information in [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md).
+> For more detailed information, see [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md).
 
-## Debugging function commands in Outlook add-ins on Windows
+## Debug function commands in Outlook add-ins on Windows
 
 If your development computer is Windows, there is a way that you can debug a function command on Outlook desktop. See [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md).

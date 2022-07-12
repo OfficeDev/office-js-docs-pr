@@ -605,7 +605,7 @@ To learn more about how to add a recipient to the CC line and verify that the em
 
 ## Debug Outlook add-ins that use on-send
 
-For instructions on how to debug your on-send add-in, refer to [Debug function commands in Outlook add-ins](debug-ui-less.md).
+For instructions on how to debug your on-send add-in, see [Debug function commands in Outlook add-ins](debug-ui-less.md).
 
 > [!TIP]
 > If the error "The callback function is unreachable" appears when your users run your add-in and your add-in's event handler is dynamically defined, you must create a stub function as a workaround. See [Event handlers are dynamically defined](#event-handlers-are-dynamically-defined) for more information.

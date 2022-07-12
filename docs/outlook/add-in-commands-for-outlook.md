@@ -21,7 +21,7 @@ Outlook add-in commands provide ways to initiate specific add-in actions from th
 
 Add-in commands are only available for add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](activation-rules.md) to limit the types of items they activate on. However, [contextual add-ins](contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
 
-## Creating the add-in command
+## Create the add-in command
 
 Add-in commands are declared in the add-in manifest in the [VersionOverrides element](/javascript/api/manifest/versionoverrides). This element is an addition to the manifest schema v1.1 that ensures backward compatibility. In a client that doesn't support **\<VersionOverrides\>**, existing add-ins will continue to function as they did without add-in commands.
 
@@ -62,7 +62,7 @@ The UI for an add-in command consists of a ribbon button or an item in a drop-do
    - The function that is triggered can call the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) method to show a dialog, which is a good way to display an error, show progress, or prompt for input from the user.
    - The JavaScript runtime in which the function command runs is a full browser-based runtime. It can render HTML and call out to the Internet to send or get data.
 
-### Executing a function command
+### Execute a function command
 
 Use an add-in command button that executes a JavaScript function for scenarios where the user doesn't need to make any additional selections to initiate the action. This can be for actions such as track, remind me, or print, or scenarios when the user wants more in-depth information from a service.
 

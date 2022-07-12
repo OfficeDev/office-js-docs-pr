@@ -20,4 +20,4 @@ Fortunately, there is an exception. You can debug these methods using Office on 
 1. *Relaunch the add-in's task pane or the function command* just as you did in step 1. This action does *not* close the browser process or the debugger. The `Office.initialize` or `Office.onReady` method runs again and processing stops on your breakpoints.
 
 > [!TIP]
-> There is more detailed information in [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md). 
+> For more detailed information, see [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md). 
