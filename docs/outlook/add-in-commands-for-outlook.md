@@ -70,7 +70,7 @@ In module extensions, the add-in command button can execute JavaScript functions
 
 ![A button that executes a function on the Outlook ribbon.](../images/commands-uiless-button-1.png)
 
-### Launching a task pane
+### Launch a task pane
 
 Use an add-in command button to launch a task pane for scenarios where a user needs to interact with an add-in for a longer period of time. For example, the add-in requires changes to settings or the completion of many fields.
 
