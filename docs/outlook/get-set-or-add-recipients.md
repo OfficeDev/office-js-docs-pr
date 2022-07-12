@@ -1,7 +1,7 @@
 ---
 title: Get or modify recipients in an Outlook add-in
 description: Learn how to get, set, or add recipients of a message or appointment in an Outlook add-in.
-ms.date: 06/27/2022
+ms.date: 07/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -60,7 +60,7 @@ Note that because the `getAsync` method is asynchronous, if there are subsequent
 > For more details, refer to the [related GitHub issue](https://github.com/OfficeDev/office-js/issues/2201).
 
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -77,7 +77,7 @@ function getAllRecipients() {
     // Local objects to point to recipients of either
     // the appointment or message that is being composed.
     // bccRecipients applies to only messages, not appointments.
-    var toRecipients, ccRecipients, bccRecipients;
+    let toRecipients, ccRecipients, bccRecipients;
     // Verify if the composed item is an appointment or message.
     if (item.itemType == Office.MailboxEnums.ItemType.Appointment) {
         toRecipients = item.requiredAttendees;
@@ -138,7 +138,7 @@ function getAllRecipients() {
 // Recipients are in an array of EmailAddressDetails
 // objects passed in asyncResult.value.
 function displayAddresses (asyncResult) {
-    for (var i=0; i<asyncResult.value.length; i++)
+    for (let i=0; i<asyncResult.value.length; i++)
         write (asyncResult.value[i].emailAddress);
 }
 
@@ -161,7 +161,7 @@ When calling `setAsync`, provide an array as input argument for the  _recipients
 You can optionally provide a callback method as an input argument to the `setAsync` method, to make sure any code that depends on successfully setting the recipients would execute only when that happens. You can also provide any arguments for the callback method using the optional _asyncContext_ parameter. If you use a callback method, you can access an _asyncResult_ output parameter, and use the **status** and **error** properties of the `AsyncResult` parameter object to check for status and any error messages of the asynchronous call.
 
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -179,7 +179,7 @@ function setRecipients() {
     // Local objects to point to recipients of either
     // the appointment or message that is being composed.
     // bccRecipients applies to only messages, not appointments.
-    var toRecipients, ccRecipients, bccRecipients;
+    let toRecipients, ccRecipients, bccRecipients;
 
     // Verify if the composed item is an appointment or message.
     if (item.itemType == Office.MailboxEnums.ItemType.Appointment) {
@@ -264,7 +264,6 @@ function setRecipients() {
 function write(message){
     document.getElementById('message').innerText += message; 
 }
-
 ```
 
 ## Add recipients

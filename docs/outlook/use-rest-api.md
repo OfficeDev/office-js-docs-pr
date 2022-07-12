@@ -1,7 +1,7 @@
 ---
 title: Use the Outlook REST APIs from an Outlook add-in
 description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
-ms.date: 07/06/2022
+ms.date: 07/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -38,7 +38,7 @@ If your add-in will require write access to the current item or other items in t
 ```js
 Office.context.mailbox.getCallbackTokenAsync({isRest: true}, function(result){
   if (result.status === "succeeded") {
-    var accessToken = result.value;
+    const accessToken = result.value;
 
     // Use the access token.
     getCurrentItem(accessToken);
@@ -83,7 +83,7 @@ The final piece of information your add-in needs to call the REST API is the hos
 
 ```js
 // Example: https://outlook.office.com
-var restHost = Office.context.mailbox.restUrl;
+const restHost = Office.context.mailbox.restUrl;
 ```
 
 ## Call the API
@@ -96,12 +96,12 @@ After your add-in has the access token, item ID, and REST API URL, it can either
 ```js
 function getCurrentItem(accessToken) {
   // Get the item's REST ID.
-  var itemId = getItemRestId();
+  const itemId = getItemRestId();
 
   // Construct the REST URL to the current item.
   // Details for formatting the URL can be found at
   // https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations#get-messages.
-  var getMessageUrl = Office.context.mailbox.restUrl +
+  const getMessageUrl = Office.context.mailbox.restUrl +
     '/v2.0/me/messages/' + itemId;
 
   $.ajax({
@@ -110,7 +110,7 @@ function getCurrentItem(accessToken) {
     headers: { 'Authorization': 'Bearer ' + accessToken }
   }).done(function(item){
     // Message is passed in `item`.
-    var subject = item.Subject;
+    const subject = item.Subject;
     ...
   }).fail(function(error){
     // Handle error.

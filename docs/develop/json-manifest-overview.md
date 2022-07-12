@@ -103,7 +103,7 @@ The following table shows a mapping of some high level child properties of the "
 | "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. | **\<Hosts\>** |  |
 | "ribbons" | The ribbons that the add-in customizes. | **\<Hosts\>**, **ExtensionPoints**, and various **\*FormFactor** elements | The "ribbons" property is an array of anonymous objects that each merge the purposes of the these three elements. See ["ribbons" table](#ribbons-table).|
 | "alternatives" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. | **\<EquivalentAddins\>** | See the [EquivalentAddins - See also](/javascript/api/manifest/equivalentaddins#see-also) for background information. |
-| "runtimes"  | Configures various kinds of "UI-less" add-ins such as custom function-only add-ins and functions run directly from custom ribbon buttons. | **\<Runtimes\>**. **\<FunctionFile\>**, and **\<ExtensionPoint\>** (of type CustomFunctions) |  |
+| "runtimes"  | Configures various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). | **\<Runtimes\>**. **\<FunctionFile\>**, and **\<ExtensionPoint\>** (of type CustomFunctions) |  |
 | "autoRunEvents" | Configures an event handler for a specified event. | **\<Event\>** and **\<ExtensionPoint\>** (of type Events) |  |
 
 ##### "ribbons" table
