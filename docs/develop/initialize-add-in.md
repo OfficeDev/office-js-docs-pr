@@ -1,7 +1,7 @@
 ---
 title: Initialize your Office Add-in
 description: Learn how to initialize your Office Add-in.
-ms.date: 07/08/2021
+ms.date: 07/11/2022
 ms.localizationpriority: medium
 ---
 
