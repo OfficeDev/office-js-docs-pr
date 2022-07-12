@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > This article assumes that you are familiar with [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
-The paradox of debugging the [Office.initialize](/javascript/api/office#Office_initialize_reason_) and [Office.onReady](javascript/api/office#office-office-onready-function(1)) methods is that a debugger can only attach to a process that is running, but these methods run immediately as the add-in's runtime process starts up, before a debugger can attach. In most situations, restarting the add-in after a debugger is attached doesn't help because restarting the add-in closes the original runtime process *and the attached debugger* and starts a new process that has no debugger attached.
+The paradox of debugging the [Office.initialize](/javascript/api/office#Office_initialize_reason_) and [Office.onReady](/javascript/api/office#office-office-onready-function(1)) methods is that a debugger can only attach to a process that is running, but these methods run immediately as the add-in's runtime process starts up, before a debugger can attach. In most situations, restarting the add-in after a debugger is attached doesn't help because restarting the add-in closes the original runtime process *and the attached debugger* and starts a new process that has no debugger attached.
 
 Fortunately, there is an exception. You can debug these methods using Office on the web, with the following steps.
 
