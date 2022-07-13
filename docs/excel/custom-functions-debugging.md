@@ -29,7 +29,7 @@ The process of debugging a custom function for add-ins that don't use a shared r
 | Excel on Mac |  VS Code debugging of CF-NSR isn't supported. Debug against Excel on the web. | [Use the command line tools](#use-the-command-line-tools-to-debug)|
 
 > [!NOTE]
-> This article primarily shows debugging in the context of using Visual Studio Code to edit, run tasks, and in some cases use the debug view. If you're using a different editor or command line tool, see the [Commands for building and running your add-in](#commands-for-building-and-running-your-add-in) at the end of this article.
+> This article primarily shows debugging in the context of using Visual Studio Code to edit, run tasks, and use the debug view. If you're using a different editor or command line tool, see [Commands for building and running your add-in](#commands-for-building-and-running-your-add-in) at the end of this article.
 
 ## Use the VS Code debugger for Excel on Windows
 
