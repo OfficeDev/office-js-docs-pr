@@ -20,7 +20,7 @@ In this article, we discuss the key stages to enable debugging.
 - [Attach Visual Studio Code](#attach-visual-studio-code)
 - [Debug](#debug)
 
-If you used the Yeoman generator for Office Add-ins to create your add-in project (for example, by doing the [event-based activation walkthrough](autolaunch.md)), then follow the **Created with Yeoman generator** option throughout this article, otherwise follow the **Other** steps. Visual Studio Code should be at least version 1.56.1.
+If you used the Yeoman Generator for Office Add-ins to create your add-in project (for example, by doing the [event-based activation walkthrough](autolaunch.md)), then follow the **Created with Yeoman generator** option throughout this article. Otherwise, follow the **Other** steps. Visual Studio Code should be at least version 1.56.1.
 
 ## Mark your add-in for debugging
 

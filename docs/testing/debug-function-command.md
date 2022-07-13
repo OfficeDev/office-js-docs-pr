@@ -13,11 +13,11 @@ ms.localizationpriority: medium
 > [!NOTE]
 > This article assumes that you are familiar with [function commands](../design/add-in-commands.md#types-of-add-in-commands).
 
-Function commands don't have a UI, so a debugger cannot be attached to the process in which the function runs on desktop Office. (Outlook add-ins being developed on Windows are an exception to this. See [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md) later in this article.) So function commands, in add-ins with a non-shared runtime, must be debugged on Office on the web where the function runs in the overall browser process. Use the following steps.
+Function commands don't have a UI, so a debugger can't be attached to the process in which the function runs on desktop Office. (Outlook add-ins being developed on Windows are an exception to this. See [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md) later in this article.) So function commands, in add-ins with a non-shared runtime, must be debugged on Office on the web where the function runs in the overall browser process. Use the following steps.
 
 1. Sideload the add-in in Office on the web, and then select the button or menu item that runs the function command. This is necessary to load the code file for the function command. 
 1. Open the browser's developer tools. This is usually done by pressing F12. The debugger in the tools attaches to the browser process.
-1. Apply breakpoints as needed to the code for the function command.
+1. Apply breakpoints to the code as needed for the function command.
 1. Rerun the function command. The process stops on your breakpoints. 
 
 > [!TIP]
