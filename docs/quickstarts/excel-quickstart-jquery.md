@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API.
-ms.date: 06/10/2022
+ms.date: 07/12/2022
 ms.prod: excel
 ms.localizationpriority: high
 ---
@@ -18,7 +18,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
-## Prerequisites
+### Prerequisites
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
@@ -32,7 +32,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
 
-![Screenshot of the Yeoman Office Add-in generator command line interface.](../images/yo-office-excel.png)
+![The Yeoman Generator for Office Add-ins command line interface.](../images/yo-office-excel.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -54,13 +54,13 @@ After you complete the wizard, the generator creates the project and installs su
 
 3. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot showing the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
+    ![The Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
 
 4. Select any range of cells in the worksheet.
 
 5. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
 
-    ![Screenshot of Excel, with the add-in task pane open, and the Run button highlighted in the add-in task pane.](../images/excel-quickstart-addin-3c.png)
+    ![The add-in task pane open in Excel, with the Run button highlighted in the add-in task pane.](../images/excel-quickstart-addin-3c.png)
 
 ### Next steps
 
@@ -129,7 +129,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
         async function setColor() {
             await Excel.run(async (context) => {
-                var range = context.workbook.getSelectedRange();
+                const range = context.workbook.getSelectedRange();
                 range.format.fill.color = 'green';
 
                 await context.sync();
@@ -200,13 +200,13 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
+    ![The Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
 
 3. Select any range of cells in the worksheet.
 
 4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-    ![Screenshot of Excel, with the add-in task pane open.](../images/excel-quickstart-addin-2c.png)
+    ![The add-in task pane open in Excel.](../images/excel-quickstart-addin-2c.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
