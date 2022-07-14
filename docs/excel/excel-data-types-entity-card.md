@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types entity value card
 description: Learn how to use entity value cards with data types in your Excel add-in.
-ms.date: 05/19/2022
+ms.date: 07/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
@@ -43,6 +43,10 @@ const entity: Excel.EntityCellValue = {
         "Product Name": {
             type: Excel.CellValueType.string,
             basicValue: productName || ""
+        },
+        "Image": {
+            type: Excel.CellValueType.webImage,
+            address: product.productImage || ""
         },
         "Quantity Per Unit": {
             type: Excel.CellValueType.string,
@@ -95,6 +99,9 @@ const entity: Excel.EntityCellValue = {
         card: {
             title: { 
                 property: "Product Name" 
+            },
+            mainImage: { 
+                property: "Image" 
             },
             sections: [
                 {
