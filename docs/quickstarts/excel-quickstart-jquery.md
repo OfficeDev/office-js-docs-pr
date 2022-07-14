@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API.
-ms.date: 06/10/2022
+ms.date: 07/12/2022
 ms.prod: excel
 ms.localizationpriority: high
 ---
@@ -16,7 +16,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 # [Yeoman generator](#tab/yeomangenerator)
 
-## Prerequisites
+### Prerequisites
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
@@ -30,7 +30,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
 
-![Screenshot of the Yeoman Office Add-in generator command line interface.](../images/yo-office-excel.png)
+![The Yeoman Generator for Office Add-ins command line interface.](../images/yo-office-excel.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -48,17 +48,17 @@ After you complete the wizard, the generator creates the project and installs su
     cd "My Office Add-in"
     ```
 
-2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
+1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
-3. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot showing the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
+    ![The Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
 
-4. Select any range of cells in the worksheet.
+1. Select any range of cells in the worksheet.
 
-5. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
+1. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
 
-    ![Screenshot of Excel, with the add-in task pane open, and the Run button highlighted in the add-in task pane.](../images/excel-quickstart-addin-3c.png)
+    ![The add-in task pane open in Excel, with the Run button highlighted in the add-in task pane.](../images/excel-quickstart-addin-3c.png)
 
 ### Next steps
 
@@ -74,13 +74,13 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 1. In Visual Studio, choose **Create a new project**.
 
-2. Using the search box, enter **add-in**. Choose **Excel Web Add-in**, then select **Next**.
+1. Using the search box, enter **add-in**. Choose **Excel Web Add-in**, then select **Next**.
 
-3. Name your project **ExcelWebAddIn1** and select **Create**.
+1. Name your project **ExcelWebAddIn1** and select **Create**.
 
-4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.
+1. In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.
 
-5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+1. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
 ### Explore the Visual Studio solution
 
@@ -108,7 +108,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
     </body>
     ```
 
-2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
+1. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
     [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
@@ -127,7 +127,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
         async function setColor() {
             await Excel.run(async (context) => {
-                var range = context.workbook.getSelectedRange();
+                const range = context.workbook.getSelectedRange();
                 range.format.fill.color = 'green';
 
                 await context.sync();
@@ -141,7 +141,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
     })();
     ```
 
-3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
+1. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
@@ -174,13 +174,13 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 1. In **Solution Explorer**, go to the **ExcelWebAddIn1** add-in project and open the **ExcelWebAddIn1Manifest** directory. This directory contains your manifest file, **ExcelWebAddIn1.xml**. The XML manifest file defines the add-in's settings and capabilities. See the preceding section [Explore the Visual Studio solution](#explore-the-visual-studio-solution) for more information about the two projects created by your Visual Studio solution.
 
-2. The `ProviderName` element has a placeholder value. Replace it with your name.
+1. The `ProviderName` element has a placeholder value. Replace it with your name.
 
-3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
+1. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
 
-4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.
+1. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Excel**.
 
-5. Save the file.
+1. Save the file.
 
     ```xml
     ...
@@ -196,15 +196,15 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 1. Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS. If you are asked to trust a certificate, do so to allow the add-in to connect to its Office application.
 
-2. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
+    ![The Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
 
-3. Select any range of cells in the worksheet.
+1. Select any range of cells in the worksheet.
 
-4. In the task pane, choose the **Set color** button to set the color of the selected range to green.
+1. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-    ![Screenshot of Excel, with the add-in task pane open.](../images/excel-quickstart-addin-2c.png)
+    ![The add-in task pane open in Excel.](../images/excel-quickstart-addin-2c.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

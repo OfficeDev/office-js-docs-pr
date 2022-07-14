@@ -1,7 +1,7 @@
 ---
 title: Build your first Project task pane add-in
 description: Learn how to build a simple Project task pane add-in by using the Office JS API.
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: project
 ms.localizationpriority: high
 ---
@@ -26,7 +26,7 @@ In this article, you'll walk through the process of building a Project task pane
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Project`
 
-![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-project.png)
+![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-project.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -39,49 +39,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 - The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
 - The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
 - The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
-- The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application.
-
-## Update the code
-
-In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the `run` function. This code uses the Office JavaScript API to set the `Name` field and `Notes` field of the selected task.
-
-```js
-var taskGuid;
-
-// Get the GUID of the selected task
-Office.context.document.getSelectedTaskAsync(
-    function (result) {
-        if (result.status === Office.AsyncResultStatus.Succeeded) {
-            taskGuid = result.value;
-
-            // Set the specified fields for the selected task.
-            var targetFields = [Office.ProjectTaskFields.Name, Office.ProjectTaskFields.Notes];
-            var fieldValues = ['New task name', 'Notes for the task.'];
-
-            // Set the field value. If the call is successful, set the next field.
-            for (var i = 0; i < targetFields.length; i++) {
-                Office.context.document.setTaskFieldAsync(
-                    taskGuid,
-                    targetFields[i],
-                    fieldValues[i],
-                    function (result) {
-                        if (result.status === Office.AsyncResultStatus.Succeeded) {
-                            i++;
-                        }
-                        else {
-                            var err = result.error;
-                            console.log(err.name + ' ' + err.code + ' ' + err.message);
-                        }
-                    }
-                );
-            }
-        } else {
-            var err = result.error;
-            console.log(err.name + ' ' + err.code + ' ' + err.message);
-        }
-    }
-);
-```
+- The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application. In this quick start, the code sets the `Name` field and `Notes` field of the selected task of a project.
 
 ## Try it out
 
@@ -109,7 +67,7 @@ Office.context.document.getSelectedTaskAsync(
 
 1. At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.
 
-    ![Screenshot of the Project application with the task pane add-in loaded.](../images/project-quickstart-addin-1.png)
+    ![The Project application with the task pane add-in loaded.](../images/project-quickstart-addin-1.png)
 
 ## Next steps
 
