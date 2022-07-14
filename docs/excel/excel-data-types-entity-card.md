@@ -68,7 +68,7 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the **Product ID**, **Product Name**, **Quantity Per Unit**, and **Unit Price** information from the preceding code snippet.
+The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the **Product ID**, **Product Name**, **Image**, **Quantity Per Unit**, and **Unit Price** information from the preceding code snippet.
 
 :::image type="content" source="../images/excel-data-types-entity-card-properties.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the product name, product ID, quantity per unit, and unit price information.":::
 
@@ -81,7 +81,7 @@ The entity value [`layouts`](/javascript/api/excel/excel.entitycellvalue#excel-e
 
 Within the `card` property, use the [`CardLayoutStandardProperties`](/javascript/api/excel/excel.cardlayoutstandardproperties) object to define the components of the card like `title`, `subTitle`, and `sections`.
 
-The following entity value JSON code snippet shows a `card` layout with a nested `title` object and three `sections` within the card. Note that the `title` property `"Product Name"` has a corresponding data type in the preceding [Card properties](#card-properties) article section. The `sections` property takes a nested array and uses the [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) object to define the appearance of each section.
+The following entity value JSON code snippet shows a `card` layout with nested `title` and `mainImage` objects and three `sections` within the card. Note that the `title` property `"Product Name"` has a corresponding data type in the preceding [Card properties](#card-properties) article section. The `mainImage` property also has a corresponding `"Image"` data type in the preceding section. The `sections` property takes a nested array and uses the [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) object to define the appearance of each section.
 
 Within each card section you can specify elements like `layout`, `title`, and `properties`. The `layout` key uses the [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) object and accepts the value `"List"`. The `properties` key accepts an array of strings. Note that the `properties` values, such as `"Product ID"`, have corresponding data types in the preceding [Card properties](#card-properties) article section. Sections can also be collapsible and can be defined with boolean values as collapsed or not collapsed when the entity card is opened in the Excel UI.
 
