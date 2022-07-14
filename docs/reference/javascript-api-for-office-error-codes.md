@@ -45,7 +45,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |3004|Binding Creation Error|A binding cannot be created with the current selection and the specified binding type.|There are several conditions under which this might happen. Please see the "Binding creation error conditions" section later in this article.|
 |3005|Invalid Binding Operation|Operation is not supported on this binding type.|The developer sends a add row or add column operation on a binding type that is not  _table_.|
 |3006|Binding Creation Error|The named item does not exist.|The named item cannot be found. No content control or table with that name exists.|
-|3007|Binding Creation Error|Multiple objects with the same name were found.|Collision error: more than one content control with the same name exists, and fail on collision is set to **true**.|
+|3007|Binding Creation Error|Multiple objects with the same name were found.|Collision error: more than one content control with the same name exists, and fail on collision is set to `true`.|
 |3008|Binding Creation Error|The specified binding type is not compatible with the supplied named item.|Named item cannot be bound to type. For example, a content control contains text but the developer tried to bind by using coercion type  _table_.|
 |3009|Invalid Binding Operation|The binding type is not supported.|Used for backward compatibility.|
 |3010|Unsupported Binding Operation|The selected content needs to be in table format. Format the data as a table and try again.|The developer is trying to use the `addRowsAsync` or `deleteAllDataValuesAsync` methods of the `TableBinding` object on data of coercion type _matrix_.|
