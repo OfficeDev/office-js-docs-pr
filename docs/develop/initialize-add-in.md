@@ -1,7 +1,7 @@
 ---
 title: Initialize your Office Add-in
 description: Learn how to initialize your Office Add-in.
-ms.date: 07/08/2021
+ms.date: 07/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -142,6 +142,10 @@ For more information, see [Office.initialize Event](/javascript/api/office) and 
 >```js
 >Office.initialize = function () {};
 >```
+
+## Debug initialization
+
+For information about debugging the `Office.initialize` and `Office.onReady()` methods, see [Debug the initialize and onReady methods](../testing/debug-initialize-onready.md).
 
 ## See also
 
