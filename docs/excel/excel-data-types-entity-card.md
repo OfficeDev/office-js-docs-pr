@@ -128,7 +128,7 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-The following screenshot shows an entity value card that uses the preceding code snippets. The screenshot shows the `mainImage` object at the top, and then `title` object which uses the **Product Name** and is set to **Tofu**. The screenshot also shows `sections`. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and is collapsed when the card is opened.
+The following screenshot shows an entity value card that uses the preceding code snippets. The screenshot shows the `mainImage` object at the top, followed by the `title` object which uses the **Product Name** and is set to **Tofu**. The screenshot also shows `sections`. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and is collapsed when the card is opened.
 
 :::image type="content" source="../images/excel-data-types-entity-card-sections.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the card title and sections.":::
 
