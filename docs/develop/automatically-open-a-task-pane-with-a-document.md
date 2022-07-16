@@ -69,7 +69,7 @@ You can tag the document to trigger the autoopen feature in one of two ways. Pic
 
 #### Tag the document on the client side
 
-Use the Office.js [settings.set](/javascript/api/office/office.settings) method to set **Office.AutoShowTaskpaneWithDocument** to **true**, as shown in the following example.
+Use the Office.js [settings.set](/javascript/api/office/office.settings) method to set **Office.AutoShowTaskpaneWithDocument** to `true`, as shown in the following example.
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);

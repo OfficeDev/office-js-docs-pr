@@ -97,7 +97,7 @@ The on-send feature in Outlook requires that add-ins are configured for the send
 
 ### [Web browser - classic Outlook](#tab/classic)
 
-Add-ins for Outlook on the web (classic) that use the on-send feature will run for users who are assigned an Outlook on the web mailbox policy that has the *OnSendAddinsEnabled* flag set to **true**.
+Add-ins for Outlook on the web (classic) that use the on-send feature will run for users who are assigned an Outlook on the web mailbox policy that has the *OnSendAddinsEnabled* flag set to `true`.
 
 To install a new add-in, run the following Exchange Online PowerShell cmdlets.
 
@@ -127,13 +127,13 @@ To enable on-send add-ins for all users:
     > [!NOTE]
     > Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types. Unsupported mailboxes will be blocked from sending by default in Outlook on the web.
 
-2. Enable the on-send feature.
+1. Enable the on-send feature.
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Assign the policy to users.
+1. Assign the policy to users.
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -152,13 +152,13 @@ To enable the on-send feature for a specific group of users the steps are as fol
    > [!NOTE]
    > Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types (see [Mailbox type limitations](#multiple-on-send-add-ins) earlier in this article for more information). Unsupported mailboxes will be blocked from sending by default in Outlook on the web.
 
-2. Enable the on-send feature.
+1. Enable the on-send feature.
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Assign the policy to users.
+1. Assign the policy to users.
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
@@ -217,13 +217,13 @@ For all users, to disallow editing while on-send add-ins are processing:
     > [!NOTE]
     > Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types. Unsupported mailboxes will be blocked from sending by default in Outlook on the web.
 
-2. Enforce compliance on send.
+1. Enforce compliance on send.
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Assign the policy to users.
+1. Assign the policy to users.
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -242,13 +242,13 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
    > [!NOTE]
    > Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types (see [Mailbox type limitations](#multiple-on-send-add-ins) earlier in this article for more information). Unsupported mailboxes will be blocked from sending by default in Outlook on the web.
 
-2. Enforce compliance on send.
+1. Enforce compliance on send.
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Assign the policy to users.
+1. Assign the policy to users.
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
