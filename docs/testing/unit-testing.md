@@ -228,7 +228,7 @@ When you are testing functions that use the application-specific APIs, be sure t
 
 - Mock a [OfficeExtension.ClientRequestObject](/javascript/api/office/officeextension.clientrequestcontext). Do this when the function that is being tested meets both of the following conditions:
 
-  - It doesn't call a *Host*.`run` method, such as [Excel.run](/javascript/api/excel#Excel_run_batch_).
+  - It doesn't call a *Host*.`run` function, such as [Excel.run](/javascript/api/excel#Excel_run_batch_).
   - It doesn't reference any other direct property or method of a *Host* object.
 
 - Mock a *Host* object, such as [Excel](/javascript/api/excel) or [Word](/javascript/api/word). Do this when the preceding option isn't possible.
@@ -267,7 +267,7 @@ const mockData = {
       range: {
         address: "C2:G3",
       },
-      // Mock the Workbook.getSelectRange method.
+      // Mock the Workbook.getSelectedRange method.
       getSelectedRange: function () {
         return this.range;
       },
@@ -311,7 +311,7 @@ module.exports = myWordAddinFeature;
 The test file, named `my-word-add-in-feature.test.js` is in a subfolder, relative to the location of the add-in code file. The following shows the contents of the file. Note that the top level property is `context`, a `ClientRequestContext` object, so the object that is being mocked is the parent of this property: a `Word` object. Note the following about this code:
 
 - When the `OfficeMockObject` constructor creates the final mock object, it will ensure that the child `ClientRequestContext` object has `sync` and `load` methods.
-- The `OfficeMockObject` constructor does *not* add a `run` method to the mock `Word` object, so it must be added explicitly in the seed object.
+- The `OfficeMockObject` constructor does *not* add a `run` function to the mock `Word` object, so it must be added explicitly in the seed object.
 - The `OfficeMockObject` constructor does *not* add all of the Word enum classes to the mock `Word` object, so the `InsertLocation.end` value that is referenced in the add-in method must be added explicitly in the seed object.
 - Because the Office JavaScript library isn't loaded in the node process, the `Word` object that is referenced in the add-in code must be declared and initialized.
 
@@ -340,7 +340,7 @@ const mockData = {
   InsertLocation: {
     end: "end",
   },
-  // Mock the Word.run method.
+  // Mock the Word.run function.
   run: async function(callback) {
     await callback(this.context);
   },

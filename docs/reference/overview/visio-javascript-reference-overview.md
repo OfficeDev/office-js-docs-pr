@@ -40,7 +40,7 @@ session.init().then(function () {
 
 `Visio.run()` executes a batch script that performs actions on the Visio object model. The batch commands include definitions of local JavaScript proxy objects and `sync()` methods that synchronize the state between local and Visio objects and promise resolution. The advantage of batching requests in `Visio.run()` is that when the promise is resolved, any tracked page objects that were allocated during the execution will be automatically released.
 
-The run method takes in session and RequestContext object and returns a promise (typically, just the result of `context.sync()`). It is possible to run the batch operation outside of the `Visio.run()`. However, in such a scenario, any page object references needs to be manually tracked and managed.
+The run function takes in session and RequestContext object and returns a promise (typically, just the result of `context.sync()`). It is possible to run the batch operation outside of the `Visio.run()`. However, in such a scenario, any page object references needs to be manually tracked and managed.
 
 ## RequestContext
 
@@ -92,7 +92,7 @@ object.load(string: properties); //or object.load(array: properties); //or objec
 ## Example: Printing all shapes text in active page
 
 The following example shows you how to print shape text value from an array shapes object.
-The `Visio.run()` method contains a batch of instructions. As part of this batch, a proxy object is created that references shapes on the active document.
+The `Visio.run()` function contains a batch of instructions. As part of this batch, a proxy object is created that references shapes on the active document.
 
 All these commands are queued and run when `context.sync()` is called. The `sync()` method returns a promise that can be used to chain it with other operations.
 

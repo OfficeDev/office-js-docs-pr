@@ -33,9 +33,9 @@ For more details about the sequence of events when an add-in is initialized, see
 
 ## Initialize with Office.onReady()
 
-`Office.onReady()` is an asynchronous method that returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) object while it checks to see if the Office.js library is loaded. When the library is loaded, it resolves the Promise as an object that specifies the Office client application with an `Office.HostType` enum value (`Excel`, `Word`, etc.) and the platform with an `Office.PlatformType` enum value (`PC`, `Mac`, `OfficeOnline`, etc.). The Promise resolves immediately if the library is already loaded when `Office.onReady()` is called.
+`Office.onReady()` is an asynchronous function that returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) object while it checks to see if the Office.js library is loaded. When the library is loaded, it resolves the Promise as an object that specifies the Office client application with an `Office.HostType` enum value (`Excel`, `Word`, etc.) and the platform with an `Office.PlatformType` enum value (`PC`, `Mac`, `OfficeOnline`, etc.). The Promise resolves immediately if the library is already loaded when `Office.onReady()` is called.
 
-One way to call `Office.onReady()` is to pass it a callback method. Here's an example.
+One way to call `Office.onReady()` is to pass it a callback function. Here's an example.
 
 ```js
 Office.onReady(function(info) {
@@ -145,7 +145,7 @@ For more information, see [Office.initialize Event](/javascript/api/office) and 
 
 ## Debug initialization
 
-For information about debugging the `Office.initialize` and `Office.onReady()` methods, see [Debug the initialize and onReady methods](../testing/debug-initialize-onready.md).
+For information about debugging the `Office.initialize` and `Office.onReady()` functions, see [Debug the initialize and onReady functions](../testing/debug-initialize-onready.md).
 
 ## See also
 

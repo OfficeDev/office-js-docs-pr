@@ -31,7 +31,7 @@ The rest of this article is concerned only with debugging client-side JavaScript
 
 There are some special cases in which the debugging process differs from normal for a given combination of platform, Office application, and development environment. If you're debugging any of these special cases, use the links in this section to find the proper guidance. Otherwise, continue to [General guidance](#general-guidance).
 
-- **Debugging the `Office.initialize` or `Office.onReady` methods**: [Debug the initialize and onReady methods](debug-initialize-onready.md).
+- **Debugging the `Office.initialize` or `Office.onReady` function**: [Debug the initialize and onReady functions](debug-initialize-onready.md).
 - **Debugging an Excel custom function in a _non-shared_ runtime**: [Custom functions debugging in a non-shared runtime](../excel/custom-functions-debugging.md).
 - **Debugging a [function command](../design/add-in-commands.md#types-of-add-in-commands) in a _non-shared_ runtime**: 
     - Outlook add-ins on a Windows development computer: [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md) 

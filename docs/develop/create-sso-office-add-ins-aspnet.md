@@ -163,7 +163,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. Open the HomeES6.js file in the **Scripts** folder. It already has some code in it.
 
     * A polyfill that assigns the Office.Promise object to the global window object so that the add-in can run when Office is using Internet Explorer for the UI. (For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).)
-    * An assignment to the `Office.initialize` method that, in turn, assigns a handler to the `getGraphAccessTokenButton` button click event.
+    * An assignment to the `Office.initialize` function that, in turn, assigns a handler to the `getGraphAccessTokenButton` button click event.
     * A `showResult` method that will display data returned from Microsoft Graph (or an error message) at the bottom of the task pane.
     * A `logErrors` method that will log to console errors that are not intended for the end user.
     * Code that implements the fallback authorization system that the add-in will use in scenarios where SSO is not supported or an error occurred.

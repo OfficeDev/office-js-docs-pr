@@ -166,7 +166,7 @@ Next, Visual Studio does the following:
    - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md)
 
    > [!TIP]
-   > To debug code that runs in the `Office.initialize` method or an `Office.onReady` method that runs when the add-in opens, set your breakpoints, and then close and reopen the add-in. For more information about these methods, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
+   > To debug code that runs in the `Office.initialize` function or an `Office.onReady` function that runs when the add-in opens, set your breakpoints, and then close and reopen the add-in. For more information about these functions, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
 5. To make changes to your code, first stop the debugging session in Visual Studio and close the Outlook pages. Make your changes, and start a new debugging session.
 

@@ -53,7 +53,7 @@ Add-ins can also access services from Microsoft and others that support OAuth2 f
 
 - Needs access to a service outside of your control.
 
-Using this method, your add-in prompts the user to sign-in to the service either by using [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) method to initialize the OAuth2 flow.
+Using this method, your add-in prompts the user to sign-in to the service either by using the [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) method to initialize the OAuth2 flow.
 
 ## Callback tokens
 

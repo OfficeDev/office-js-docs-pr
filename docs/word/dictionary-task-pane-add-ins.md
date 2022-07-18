@@ -523,7 +523,7 @@ Office.initialize = function (reason) {
 }
 
 // Executes when event is raised on user's selection changes, and at initialization time. 
-// Gets the current selection and passes that to asynchronous callback method.
+// Gets the current selection and passes that to asynchronous callback function.
 function tryUpdatingSelectedWord() {
     _doc.getSelectedDataAsync(Office.CoercionType.Text, selectedTextCallback); 
 }

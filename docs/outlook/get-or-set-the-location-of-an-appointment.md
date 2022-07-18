@@ -114,7 +114,7 @@ You can use the `location` API to get and set an appointment's location.
 
 This section shows a code sample that gets the location of the appointment that the user is composing, and displays the location.
 
-To use `item.location.getAsync`, provide a callback method that checks for the status and result of the asynchronous call. You can provide any necessary arguments to the callback method through the `asyncContext` optional parameter. You can obtain status, results, and any error using the output parameter `asyncResult` of the callback. If the asynchronous call is successful, you can get the location as a string using the [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) property.
+To use `item.location.getAsync`, provide a callback function that checks for the status and result of the asynchronous call. You can provide any necessary arguments to the callback function through the `asyncContext` optional parameter. You can obtain status, results, and any error using the output parameter `asyncResult` of the callback. If the asynchronous call is successful, you can get the location as a string using the [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) property.
 
 ```js
 let item;
@@ -153,7 +153,7 @@ function write(message){
 
 This section shows a code sample that sets the location of the appointment that the user is composing.
 
-To use `item.location.setAsync`, specify a string of up to 255 characters in the data parameter. Optionally, you can provide a callback method and any arguments for the callback method in the `asyncContext` parameter. You should check the status, result, and any error message in the `asyncResult` output parameter of the callback. If the asynchronous call is successful, `setAsync` inserts the specified location string as plain text, overwriting any existing location for that item.
+To use `item.location.setAsync`, specify a string of up to 255 characters in the data parameter. Optionally, you can provide a callback function and any arguments for the callback function in the `asyncContext` parameter. You should check the status, result, and any error message in the `asyncResult` output parameter of the callback. If the asynchronous call is successful, `setAsync` inserts the specified location string as plain text, overwriting any existing location for that item.
 
 > [!NOTE]
 > You can set multiple locations by using a semi-colon as the separator (e.g., 'Conference room A; Conference room B').

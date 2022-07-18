@@ -303,7 +303,7 @@ Two projects will be created:
 
 1. In the previous code, enter the **sslPort** number you saved previously from the **launchSettings.json** file.
 
-In the previous code the returned string will be processed to replace carriage return line feeds with `<br>` HTML tags. You may occasionally run into situations where a return value that works perfectly fine for .NET in the VSTO Add-in will need to be adjusted on the Office Add-in side to work as expected. In this case the REST API and shared class library are only concerned with returning the string. The `showUnicode()` method is responsible for formatting return values correctly for presentation.
+In the previous code the returned string will be processed to replace carriage return line feeds with `<br>` HTML tags. You may occasionally run into situations where a return value that works perfectly fine for .NET in the VSTO Add-in will need to be adjusted on the Office Add-in side to work as expected. In this case the REST API and shared class library are only concerned with returning the string. The `showUnicode()` function is responsible for formatting return values correctly for presentation.
 
 ### Allow CORS from the Office Add-in
 
