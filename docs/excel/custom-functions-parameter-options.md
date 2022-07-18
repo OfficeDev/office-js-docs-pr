@@ -1,7 +1,7 @@
 ---
-ms.date: 03/08/2021
-description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.
 title: Options for Excel custom functions
+description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -114,7 +114,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 Your custom function may accept a range of cell data as an input parameter. A function can also return a range of data. Excel will pass a range of cell data as a two-dimensional array.
 
-For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, and the JSDOC syntax `number[][]` sets the parameter's `dimensionality` property to `matrix` in the JSON metadata for this function. 
+For example, suppose that your function returns the second highest value from a range of numbers stored in Excel. The following function accepts the parameter `values`, and the JSDOC syntax `number[][]` sets the parameter's `dimensionality` property to `matrix` in the JSON metadata for this function.
 
 ```js
 /**
@@ -125,8 +125,8 @@ For example, suppose that your function returns the second highest value from a 
 function secondHighest(values) {
   let highest = values[0][0],
     secondHighest = values[0][0];
-  for (var i = 0; i < values.length; i++) {
-    for (var j = 0; j < values[i].length; j++) {
+  for (let i = 0; i < values.length; i++) {
+    for (let j = 0; j < values[i].length; j++) {
       if (values[i][j] >= highest) {
         secondHighest = highest;
         highest = values[i][j];
@@ -169,7 +169,7 @@ function ADD(operands: number[][][]): number {
 
 This function shows `=CONTOSO.ADD([operands], [operands]...)` in the Excel workbook.
 
-<img alt="The ADD custom function being entered into cell of an Excel worksheet" src="../images/operands.png" />
+![The ADD custom function being entered into cell of an Excel worksheet](../images/operands.png)
 
 ### Repeating single value parameter
 
@@ -214,8 +214,8 @@ function addSingleRange(singleRange) {
 
 A repeating range parameter allows multiple ranges or numbers to be passed. For example, the user could enter ADD(5,B2,C3,8,E5:E8). Repeating ranges are usually specified with the type `number[][][]` as they are three-dimensional matrices. For a sample, see the main sample listed for [repeating parameters](#repeating-parameters).
 
-
 ### Declaring repeating parameters
+
 In Typescript, indicate that the parameter is multi-dimensional. For example,  `ADD(values: number[])` would indicate a one-dimensional array, `ADD(values:number[][])` would indicate a two-dimensional array, and so on.
 
 In JavaScript, use `@param values {number[]}` for one-dimensional arrays, `@param <name> {number[][]}` for two-dimensional arrays, and so on for more dimensions.
@@ -224,12 +224,12 @@ For hand-authored JSON, ensure your parameter is specified as `"repeating": true
 
 ## Invocation parameter
 
-Every custom function is automatically passed an `invocation` argument as the last input parameter, even if it's not explicitly declared. This `invocation` parameter corresponds to the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object. The `Invocation` object can be used to retrieve additional context, such as the address of the cell that invoked your custom function. To access the `Invocation` object, you must declare `invocation` as the last parameter in your custom function. 
+Every custom function is automatically passed an `invocation` argument as the last input parameter, even if it's not explicitly declared. This `invocation` parameter corresponds to the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object. The `Invocation` object can be used to retrieve additional context, such as the address of the cell that invoked your custom function. To access the `Invocation` object, you must declare `invocation` as the last parameter in your custom function.
 
 > [!NOTE]
 > The `invocation` parameter doesn't appear as a custom function argument for users in Excel.
 
-The following sample shows how to use the `invocation` parameter to return the address of the cell that invoked your custom function. This sample uses the [address](/javascript/api/custom-functions-runtime/customfunctions.invocation#custom-functions-runtime-customfunctions-invocation-address-member) property of the `Invocation` object. To access the `Invocation` object, first declare `CustomFunctions.Invocation` as a parameter in your JSDoc. Next, declare `@requiresAddress` in your JSDoc to access the `address` property of the `Invocation` object. Finally, within the function, retrieve and then return the `address` property. 
+The following sample shows how to use the `invocation` parameter to return the address of the cell that invoked your custom function. This sample uses the [address](/javascript/api/custom-functions-runtime/customfunctions.invocation#custom-functions-runtime-customfunctions-invocation-address-member) property of the `Invocation` object. To access the `Invocation` object, first declare `CustomFunctions.Invocation` as a parameter in your JSDoc. Next, declare `@requiresAddress` in your JSDoc to access the `address` property of the `Invocation` object. Finally, within the function, retrieve and then return the `address` property.
 
 ```js
 /**
@@ -241,25 +241,25 @@ The following sample shows how to use the `invocation` parameter to return the a
  * @requiresAddress 
  */
 function getAddress(first, second, invocation) {
-  var address = invocation.address;
+  const address = invocation.address;
   return address;
 }
 ```
 
-In Excel, a custom function calling the `address` property of the `Invocation` object will return the absolute address following the format `SheetName!RelativeCellAddress` in the cell that invoked the function. For example, if the input parameter is located on a sheet called **Prices** in cell F6, the returned parameter address value will be `Prices!F6`. 
+In Excel, a custom function calling the `address` property of the `Invocation` object will return the absolute address following the format `SheetName!RelativeCellAddress` in the cell that invoked the function. For example, if the input parameter is located on a sheet called **Prices** in cell F6, the returned parameter address value will be `Prices!F6`.
 
 The `invocation` parameter can also be used to send information to Excel. See [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function) to learn more.
 
 ## Detect the address of a parameter
 
-In combination with the [invocation parameter](#invocation-parameter), you can use the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object to retrieve the address of a custom function input parameter. When invoked, the [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#custom-functions-runtime-customfunctions-invocation-parameteraddresses-member) property of the `Invocation` object allows a function to return the addresses of all input parameters. 
+In combination with the [invocation parameter](#invocation-parameter), you can use the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object to retrieve the address of a custom function input parameter. When invoked, the [parameterAddresses](/javascript/api/custom-functions-runtime/customfunctions.invocation#custom-functions-runtime-customfunctions-invocation-parameteraddresses-member) property of the `Invocation` object allows a function to return the addresses of all input parameters.
 
-This is useful in scenarios where input data types may vary. The address of an input parameter can be used to check the number format of the input value. The number format can then be adjusted prior to input, if necessary. The address of an input parameter can also be used to detect whether the input value has any related properties that may be relevant to subsequent calculations. 
+This is useful in scenarios where input data types may vary. The address of an input parameter can be used to check the number format of the input value. The number format can then be adjusted prior to input, if necessary. The address of an input parameter can also be used to detect whether the input value has any related properties that may be relevant to subsequent calculations.
 
 >[!NOTE]
 > If you're working with [manually-created JSON metadata](custom-functions-json.md) to return parameter addresses instead of the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), the `options` object must have the `requiresParameterAddresses` property set to `true`, and the `result` object must have the `dimensionality` property set to `matrix`.
 
-The following custom function takes in three input parameters, retrieves the `parameterAddresses` property of the `Invocation` object for each parameter, and then returns the addresses. 
+The following custom function takes in three input parameters, retrieves the `parameterAddresses` property of the `Invocation` object for each parameter, and then returns the addresses.
 
 ```js
 /**
@@ -273,7 +273,7 @@ The following custom function takes in three input parameters, retrieves the `pa
  * @requiresParameterAddresses
  */
 function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
-  var addresses = [
+  const addresses = [
     [invocation.parameterAddresses[0]],
     [invocation.parameterAddresses[1]],
     [invocation.parameterAddresses[2]]
@@ -282,7 +282,7 @@ function getParameterAddresses(firstParameter, secondParameter, thirdParameter, 
 }
 ```
 
-When a custom function calling the `parameterAddresses` property runs, the parameter address is returned following the format `SheetName!RelativeCellAddress` in the cell that invoked the function. For example, if the input parameter is located on a sheet called **Costs** in cell D8, the returned parameter address value will be `Costs!D8`. If the custom function has multiple parameters and more than one parameter address is returned, the returned addresses will spill across multiple cells, descending vertically from the cell that invoked the function. 
+When a custom function calling the `parameterAddresses` property runs, the parameter address is returned following the format `SheetName!RelativeCellAddress` in the cell that invoked the function. For example, if the input parameter is located on a sheet called **Costs** in cell D8, the returned parameter address value will be `Costs!D8`. If the custom function has multiple parameters and more than one parameter address is returned, the returned addresses will spill across multiple cells, descending vertically from the cell that invoked the function.
 
 ## Next steps
 
@@ -290,8 +290,8 @@ Learn how to use [volatile values in your custom functions](custom-functions-vol
 
 ## See also
 
-* [Receive and handle data with custom functions](custom-functions-web-reqs.md)
-* [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
-* [Manually create JSON metadata for custom functions](custom-functions-json.md)
-* [Create custom functions in Excel](custom-functions-overview.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Receive and handle data with custom functions](custom-functions-web-reqs.md)
+- [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+- [Manually create JSON metadata for custom functions](custom-functions-json.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
+- [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

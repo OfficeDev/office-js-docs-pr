@@ -1,7 +1,7 @@
 ---
 title: Call Excel JavaScript APIs from a custom function
 description: Learn which Excel JavaScript APIs you can call from your custom function.
-ms.date: 08/30/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -29,10 +29,10 @@ The following code sample shows how to use `Excel.RequestContext` to get a value
  **/
 async function getRangeValue(address) {
  // Retrieve the context object. 
- var context = new Excel.RequestContext();
+ const context = new Excel.RequestContext();
  
  // Use the context object to access the cell at the input address. 
- var range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
+ const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
  range.load("values");
  await context.sync();
  

@@ -1,7 +1,7 @@
 ---
-ms.date: 06/15/2022
-description: Authenticate users using custom functions that don't use a shared runtime.
 title: Authentication for custom functions without a shared runtime
+description: Authenticate users using custom functions that don't use a shared runtime.
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -68,8 +68,8 @@ When the task pane needs the access token, it can retrieve the token from the `O
  * @customfunction GETTOKEN
  */
 function receiveTokenFromCustomFunction() {
-  var key = "token";
-  var tokenSendStatus = document.getElementById('tokenSendStatus');
+  const key = "token";
+  const tokenSendStatus = document.getElementById('tokenSendStatus');
   OfficeRuntime.storage.getItem(key).then(function (result) {
      tokenSendStatus.value = "Success: Item with key '" + key + "' read from storage.";
      document.getElementById('tokenTextBox2').value = result;
@@ -103,7 +103,7 @@ function getTokenViaDialog(url) {
       // Can only have one dialog box open at once. Wait for previous dialog box's token.
       let timeout = 5;
       let count = 0;
-      var intervalId = setInterval(function () {
+      const intervalId = setInterval(function () {
         count++;
         if(_cachedToken) {
           resolve(_cachedToken);
@@ -142,5 +142,5 @@ Learn how to [debug custom functions](custom-functions-debugging.md).
 
 ## See also
 
-* [JavaScript-only runtime for custom functions](custom-functions-runtime.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+- [JavaScript-only runtime for custom functions](custom-functions-runtime.md)
+- [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
