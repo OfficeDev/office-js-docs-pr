@@ -208,3 +208,5 @@ const recurrenceType = recurrence.recurrenceType;
 [interval link]: /javascript/api/outlook/office.recurrenceproperties#interval
 [month link]: /javascript/api/outlook/office.recurrenceproperties#month
 [weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weekNumber
+
+[SeriesTime link]: /javascript/api/outlook/office.seriestime
