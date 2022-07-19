@@ -353,3 +353,30 @@ function removeEventHandlerFromBinding() {
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Asynchronous programming in Office Add-ins](asynchronous-programming-in-office-add-ins.md)
 - [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+
+[Binding]: 				 /javascript/api/office/office.binding
+[MatrixBinding]:		 /javascript/api/office/office.matrixbinding
+[TableBinding]: 		 /javascript/api/office/office.tablebinding
+[TextBinding]: 			 /javascript/api/office/office.textbinding
+[getDataAsync]: 		 /javascript/api/office/office.binding#getDataAsync_options__callback_
+[setDataAsync]: 		 /javascript/api/office/office.binding#setDataAsync_data__options__callback_
+[SelectionChanged]: 	 /javascript/api/office/office.bindingselectionchangedeventargs
+[addHandlerAsync]: 		 /javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_
+[removeHandlerAsync]: 	 /javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_
+
+[Bindings]:				 /javascript/api/office/office.bindings
+[getByIdAsync]: 		 /javascript/api/office/office.bindings#getByIdAsync_id__options__callback_
+[getAllAsync]: 			 /javascript/api/office/office.bindings#getAllAsync_options__callback_
+[addFromNamedItemAsync]: /javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_
+[addFromSelectionAsync]: /javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_
+[addFromPromptAsync]: 	 /javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_
+[releaseByIdAsync]: 	 /javascript/api/office/office.bindings#releaseByIdAsync_id__options__callback_
+
+[AsyncResult]: 			/javascript/api/office/office.asyncresult
+[Office.BindingType]: 	/javascript/api/office/office.bindingtype
+[Office.select]:		/javascript/api/office 
+[Office.EventType]: 	/javascript/api/office/office.eventtype 
+[Document.bindings]: 	/javascript/api/office/office.document
+
+[TableBinding.rowCount]: /javascript/api/office/office.tablebinding
+[BindingSelectionChangedEventArgs]: /javascript/api/office/office.bindingselectionchangedeventargs

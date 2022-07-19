@@ -114,6 +114,8 @@ OneNote add-ins support only the following Common APIs.
 
 In general, you use the Common API to do something that isn't supported in the application-specific API. To learn more about using the Common API, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
+<a name="om-diagram"></a>
+
 ## OneNote object model diagram
 
 The following diagram represents what's currently available in the OneNote JavaScript API.

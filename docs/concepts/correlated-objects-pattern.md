@@ -1,7 +1,7 @@
 ---
 title: Avoid using the context.sync method in loops
 description: Learn how to use the split loop and correlated objects patterns to avoid calling context.sync in a loop.
-ms.date: 02/28/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
