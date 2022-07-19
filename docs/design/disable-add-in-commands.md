@@ -1,7 +1,7 @@
 ---
 title: Enable and Disable Add-in Commands
 description: Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.
-ms.date: 03/12/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -124,7 +124,7 @@ Second, assign handlers. This is commonly done in the **Office.onReady** functio
 ```javascript
 Office.onReady(async () => {
     await Excel.run(context => {
-        var charts = context.workbook.worksheets
+        const charts = context.workbook.worksheets
             .getActiveWorksheet()
             .charts;
         charts.onActivated.add(enableChartFormat);
@@ -138,19 +138,19 @@ Third, define the `enableChartFormat` handler. The following is a simple example
 
 ```javascript
 function enableChartFormat() {
-    var button = {
+    const button = {
                   id: "ChartFormatButton", 
                   enabled: true
                  };
-    var parentGroup = {
+    const parentGroup = {
                        id: "MyGroup",
                        controls: [button]
                       };
-    var parentTab = {
+    const parentTab = {
                      id: "CustomChartTab", 
                      groups: [parentGroup]
                     };
-    var ribbonUpdater = {tabs: [parentTab]};
+    const ribbonUpdater = {tabs: [parentTab]};
     Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
@@ -172,19 +172,19 @@ The following example shows a function that disables a button and records the bu
 
 ```javascript
 function disableChartFormat() {
-    var button = {
+    const button = {
                   id: "ChartFormatButton", 
                   enabled: false
                  };
-    var parentGroup = {
+    const parentGroup = {
                        id: "MyGroup",
                        controls: [button]
                       };
-    var parentTab = {
+    const parentTab = {
                      id: "CustomChartTab", 
                      groups: [parentGroup]
                     };
-    var ribbonUpdater = {tabs: [parentTab]};
+    const ribbonUpdater = {tabs: [parentTab]};
     Office.ribbon.requestUpdate(ribbonUpdater);
 
     chartFormatButtonEnabled = false;
@@ -214,19 +214,19 @@ In some scenarios, Office is unable to update the ribbon and will return an erro
 ```javascript
 function disableChartFormat() {
     try {
-        var button = {
+        const button = {
                       id: "ChartFormatButton", 
                       enabled: false
                      };
-        var parentGroup = {
+        const parentGroup = {
                            id: "MyGroup",
                            controls: [button]
                           };
-        var parentTab = {
+        const parentTab = {
                          id: "CustomChartTab", 
                          groups: [parentGroup]
                         };
-        var ribbonUpdater = {tabs: [parentTab]};
+        const ribbonUpdater = {tabs: [parentTab]};
         Office.ribbon.requestUpdate(ribbonUpdater);
 
         chartFormatButtonEnabled = false;

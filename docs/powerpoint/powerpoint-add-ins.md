@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-ins
 description: Learn how to use PowerPoint add-ins to build engaging solutions for presentations across platforms including Windows, iPad, Mac, and in a browser.
-ms.date: 10/14/2020
+ms.date: 07/18/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -39,13 +39,12 @@ In the following code sample:
 
 - The  `registerActiveViewChanged` function calls the [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) method to register a handler for the [Document.ActiveViewChanged](/javascript/api/office/office.document) event.
 
-
 ```js
 //general Office.initialize function. Fires on load of the add-in.
 Office.initialize = function(){
 
     //Gets whether the current view is edit or read.
-    var currentView = getActiveFileView();
+    const currentView = getActiveFileView();
 
     //register for the active view changed handler
     registerActiveViewChanged();
@@ -126,10 +125,10 @@ In the following code sample, the `goToSlideByIndex` function calls the `Documen
 
 ```js
 function goToSlideByIndex() {
-    var goToFirst = Office.Index.First;
-    var goToLast = Office.Index.Last;
-    var goToPrevious = Office.Index.Previous;
-    var goToNext = Office.Index.Next;
+    const goToFirst = Office.Index.First;
+    const goToLast = Office.Index.Last;
+    const goToPrevious = Office.Index.Previous;
+    const goToNext = Office.Index.Next;
 
     Office.context.document.goToByIdAsync(goToNext, Office.GoToType.Index, function (asyncResult) {
         if (asyncResult.status == "failed") {
@@ -150,7 +149,7 @@ In the following code sample, the  `getFileUrl` function calls the [Document.get
 function getFileUrl() {
     //Get the URL of the current file.
     Office.context.document.getFilePropertiesAsync(function (asyncResult) {
-        var fileUrl = asyncResult.value.url;
+        const fileUrl = asyncResult.value.url;
         if (fileUrl == "") {
             app.showNotification("The file hasn't been saved yet. Save the file and try again");
         }
@@ -172,13 +171,13 @@ PowerPoint.createPresentation();
 The `createPresentation` method can also create a copy of an existing presentation. The method accepts a base64-encoded string representation of an .pptx file as an optional parameter. The resulting presentation will be a copy of that file, assuming the string argument is a valid .pptx file. The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example.
 
 ```js
-var myFile = document.getElementById("file");
-var reader = new FileReader();
+const myFile = document.getElementById("file");
+const reader = new FileReader();
 
 reader.onload = function (event) {
     // strip off the metadata before the base64-encoded string
-    var startIndex = reader.result.toString().indexOf("base64,");
-    var copyBase64 = reader.result.toString().substr(startIndex + 7);
+    const startIndex = reader.result.toString().indexOf("base64,");
+    const copyBase64 = reader.result.toString().substr(startIndex + 7);
 
     PowerPoint.createPresentation(copyBase64);
 };

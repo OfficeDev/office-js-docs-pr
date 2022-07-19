@@ -1,7 +1,7 @@
 ---
 title: Avoid using the context.sync method in loops
 description: Learn how to use the split loop and correlated objects patterns to avoid calling context.sync in a loop.
-ms.date: 02/28/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -20,7 +20,7 @@ For some programming scenarios in Office Add-ins that use one of the application
 > - `for of`
 > - `while`
 > - `do while`
-> 
+>
 > They also apply to any array method to which a function is passed and applied to the items in the array, including the following:
 >
 > - `Array.every`
@@ -53,7 +53,7 @@ await Word.run(async function (context) {
   // Record the system time.
   startTime = performance.now();
 
-  for (var i = 0; i < searchResults.items.length; i++) {
+  for (let i = 0; i < searchResults.items.length; i++) {
     searchResults.items[i].font.highlightColor = '#FFFF00';
 
     await context.sync(); // SYNCHRONIZE IN EACH ITERATION
@@ -72,7 +72,7 @@ The preceding code took 1 full second to complete in a document with 200 instanc
 > [!NOTE]
 > It's worth asking whether the synchronize-inside-the-loop version would execute faster if the synchronizations ran concurrently, which could be done by simply removing the `await` keyword from the front of the `context.sync()`. This would cause the runtime to initiate the synchronization and then immediately start the next iteration of the loop without waiting for the synchronization to complete. However, this is not as good a solution as moving the `context.sync` out of the loop entirely for these reasons.
 >
-> - Just as the commands in a synchronization batch job are queued, the batch jobs themselves are queued in Office, but Office supports no more than 50 batch jobs in the queue. Any more triggers errors. So, if there are more than 50 iterations in a loop, there is a chance that the queue size is exceeded. The greater the number of iterations, the greater the chance of this happening. 
+> - Just as the commands in a synchronization batch job are queued, the batch jobs themselves are queued in Office, but Office supports no more than 50 batch jobs in the queue. Any more triggers errors. So, if there are more than 50 iterations in a loop, there is a chance that the queue size is exceeded. The greater the number of iterations, the greater the chance of this happening.
 > - "Concurrently" does not mean simultaneously. It would still take longer to execute multiple synchronization operations than to execute one.
 > - Concurrent operations are not guaranteed to complete in the same order in which they started. In the preceding example, it doesn't matter what order the  word "the" gets highlighted, but there are scenarios where it's important that the items in the collection be processed in order.
 

@@ -1,20 +1,20 @@
 ---
 title: Get JavaScript IntelliSense in Visual Studio
 description: Learn how to use JSDoc to create IntelliSense for your JavaScript variables, objects, parameters, and return values.
-ms.date: 04/03/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
 
 # Get JavaScript IntelliSense in Visual Studio
 
-When you use Visual Studio 2019 and later to develop Office Add-ins, you can use JSDoc to enable IntelliSense for your JavaScript variables, objects, parameters, and return values. This article provides an overview of JSDoc and how you can use it to create IntellSense in Visual Studio. For more details, see [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) and [JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
+When you use Visual Studio 2019 and later to develop Office Add-ins, you can use JSDoc to enable IntelliSense for your JavaScript variables, objects, parameters, and return values. This article provides an overview of JSDoc and how you can use it to create IntellSense in Visual Studio. For more details, see [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) and [JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript).
 
 ## Office.js type definitions
 
 You need to provide the definitions of the types in Office.js to Visual Studio. To do this, you can:
 
-- Have a local copy of the Office.js files in a folder in your solution named `\Office\1\`. The Office Add-in project templates in Visual Studio add this local copy when you create an add-in project. 
+- Have a local copy of the Office.js files in a folder in your solution named `\Office\1\`. The Office Add-in project templates in Visual Studio add this local copy when you create an add-in project.
 - Use an online version of Office.js by adding a tsconfig.json file to the root of the web application project in the add-in solution. The file should include the following content.
 
     ```json
@@ -42,10 +42,10 @@ The basic technique is to precede the variable (or parameter, and so on) with a 
 
 ```js
 /** @type {Excel.Range} */
-var subsetRange;
+let subsetRange;
 ```
 
-![Screenshot showing excerpt of IntelliSense for `subsetRange` variable.](../images/intellisense-vs17-var.png)
+![Excerpt of IntelliSense for `subsetRange` variable.](../images/intellisense-vs22-var.png)
 
 ### Parameter
 
@@ -56,7 +56,7 @@ function myFunc(paragraphs){
 }
 ```
 
-![Screenshot showing excerpt of IntelliSense for `paras` parameter (`paragraphs` parameter in JavaScript example).](../images/intellisense-vs17-param.png)
+![Excerpt of IntelliSense for `paras` parameter (`paragraphs` parameter in JavaScript example).](../images/intellisense-vs17-param.png)
 
 ### Return value
 
@@ -67,7 +67,7 @@ function myFunc() {
 }
 ```
 
-![Screenshot showing excerpt of IntelliSense for `myFunc()` return value.](../images/intellisense-vs17-return.png)
+![Excerpt of IntelliSense for `myFunc()` return value.](../images/intellisense-vs17-return.png)
 
 ### Complex types
 
@@ -80,7 +80,7 @@ function myFunc() {
 }
 ```
 
-![Screenshot showing IntelliSense for complex type declaration of `var myVar;` for example.](../images/intellisense-vs17-complex-type.png)
+![IntelliSense for complex type declaration of `let myVar;` for example.](../images/intellisense-vs22-complex-type.png)
 
 ## See also
 
