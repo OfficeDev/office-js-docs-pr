@@ -36,12 +36,12 @@ In the following example, the phrase "Calculates the volume of a sphere." is the
 The following JSDoc tags are supported in Excel custom functions.
 
 - [@cancelable](#cancelable)
-- [@customfunction](#customfunction) id name
-- [@helpurl](#helpurl) url
-- [@param](#param) _{type}_ name description
+- [@customfunction](#customfunction) *id* *name*
+- [@helpurl](#helpurl) *url*
+- [@param](#param) *{type}* *name* *description*
 - [@requiresAddress](#requiresAddress)
 - [@requiresParameterAddresses](#requiresParameterAddresses)
-- [@returns](#returns) _{type}_
+- [@returns](#returns) *{type}*
 - [@streaming](#streaming)
 - [@volatile](#volatile)
 
@@ -57,6 +57,8 @@ The last function parameter must be of type `CustomFunctions.CancelableInvocatio
 If the last function parameter is of type `CustomFunctions.CancelableInvocation`, it will be considered `@cancelable` even if the tag isn't present.
 
 A function can't have both `@cancelable` and `@streaming` tags.
+
+<a id="customfunction"></a>
 
 ### @customfunction
 
@@ -124,6 +126,7 @@ In the following example, the phrase "A function that adds two numbers" is the d
  * ...
  */
 ```
+
 <a id="helpurl"></a>
 
 ### @helpurl
@@ -149,7 +152,7 @@ In the following example, the `helpurl` is `www.contoso.com/weatherhelp`.
 
 #### JavaScript
 
-JavaScript Syntax: @param {type} name *description*
+JavaScript Syntax: @param {type} *name* *description*
 
 - `{type}` specifies the type info within curly braces. See the [Types](#types) section for more information about the types which may be used. If no type is specified, the default type `any` will be used.
 - `name` specifies the parameter that the @param tag applies to. It is required.
@@ -175,7 +178,7 @@ The following example shows an ADD function that adds two or three numbers, with
 
 #### TypeScript
 
-TypeScript Syntax: @param name *description*
+TypeScript Syntax: @param *name* *description*
 
 - `name` specifies the parameter that the @param tag applies to. It is required.
 - `description` provides the description which appears in Excel for the function parameter. It is optional.
