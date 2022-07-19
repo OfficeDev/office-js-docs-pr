@@ -1,7 +1,7 @@
 ---
 title: Bind to regions in a document or spreadsheet
 description: Learn how to use binding to ensure consistent access a specific region or element of a document or spreadsheet through an identifier.
-ms.date: 07/08/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -26,11 +26,11 @@ There are [three different types of bindings][Office.BindingType] that you speci
 
     In Word, most contiguous selections are valid, while in Excel only single cell selections can be the target of a text binding. In Excel, only plain text is supported. In Word, three formats are supported: plain text, HTML, and Open XML for Office.
 
-2. **[Matrix Binding][MatrixBinding]** - Binds to a fixed region of a document that contains tabular data without headers.Data in a matrix binding is written or read as a two dimensional **Array**, which in JavaScript is implemented as an array of arrays. For example, two rows of **string** values in two columns can be written or read as `[['a', 'b'], ['c', 'd']]`, and a single column of three rows can be written or read as `[['a'], ['b'], ['c']]`.
+1. **[Matrix Binding][MatrixBinding]** - Binds to a fixed region of a document that contains tabular data without headers.Data in a matrix binding is written or read as a two dimensional **Array**, which in JavaScript is implemented as an array of arrays. For example, two rows of **string** values in two columns can be written or read as `[['a', 'b'], ['c', 'd']]`, and a single column of three rows can be written or read as `[['a'], ['b'], ['c']]`.
 
     In Excel, any contiguous selection of cells can be used to establish a matrix binding. In Word, only tables support matrix binding.
 
-3. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](/javascript/api/office/office.tabledata) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
+1. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](/javascript/api/office/office.tabledata) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
 
     Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding.
 
@@ -96,7 +96,7 @@ Figure 1 shows the built-in range selection prompt in Excel.
 
 *Figure 1. Excel Select Data UI*
 
-![Screenshot showing the Select Data dialog.](../images/agave-api-overview-excel-selection-ui.png)
+![The Select Data dialog.](../images/agave-api-overview-excel-selection-ui.png)
 
 ## Add a binding to a named item
 
@@ -182,8 +182,8 @@ The following example shows how to get all bindings in a document by using the B
 
 ```js
 Office.context.document.bindings.getAllAsync(function (asyncResult) {
-    var bindingString = '';
-    for (var i in asyncResult.value) {
+    let bindingString = '';
+    for (let i in asyncResult.value) {
         bindingString += asyncResult.value[i].id + '\n';
     }
     write('Existing bindings: ' + bindingString);

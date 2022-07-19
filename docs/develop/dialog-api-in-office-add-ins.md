@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: Learn the basics of creating a dialog box in an Office Add-in.
-ms.date: 01/22/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -25,7 +25,7 @@ Consider opening a dialog box from a task pane or content add-in or [add-in comm
 
 The following image shows an example of a dialog box.
 
-![Screenshot showing dialog with 3 sign-in options displayed in front of Word.](../images/auth-o-dialog-open.png)
+![Dialog with 3 sign-in options displayed in front of Word.](../images/auth-o-dialog-open.png)
 
 Note that the dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the Office application and with the page in the task pane, if there is one.
 
@@ -42,6 +42,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
+>
 > - The URL uses the HTTP**S** protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
 > - The dialog box's domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](/javascript/api/manifest/functionfile) of an add-in command. This is required: the page, controller method, or other resource that is passed to the `displayDialogAsync` method must be in the same domain as the host page.
 
@@ -92,6 +93,7 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
+>
 > - The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box.
 > - The other JS API that can be called in the dialog box is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md). However, in the dialog box, this API isn't supported in Outlook 2016 one-time purchase (that is, the MSI version).
 
@@ -106,7 +108,7 @@ if (loginSuccess) {
 The host page must be configured to receive the message. You do this by adding a callback parameter to the original call of `displayDialogAsync`. The callback assigns a handler to the `DialogMessageReceived` event. The following is an example.
 
 ```js
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20},
     function (asyncResult) {
         dialog = asyncResult.value;
@@ -126,7 +128,7 @@ The following is a simple example of a handler for the `DialogMessageReceived` e
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     showUserName(messageFromDialog.name);
 }
 ```
@@ -171,14 +173,14 @@ Because you can send multiple `messageParent` calls from the dialog box, but you
 
 ```js
 if (loginSuccess) {
-    var userProfile = getProfile();
-    var messageObject = {messageType: "signinSuccess", profile: userProfile};
-    var jsonMessage = JSON.stringify(messageObject);
+    const userProfile = getProfile();
+    const messageObject = {messageType: "signinSuccess", profile: userProfile};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 } else {
-    var errorDetails = getError();
-    var messageObject = {messageType: "signinFailure", error: errorDetails};
-    var jsonMessage = JSON.stringify(messageObject);
+    const errorDetails = getError();
+    const messageObject = {messageType: "signinFailure", error: errorDetails};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
 ```
@@ -193,7 +195,7 @@ The handler code in the host page uses the value of the `messageType` property t
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     if (messageFromDialog.messageType === "signinSuccess") {
         dialog.close();
         showUserName(messageFromDialog.profile.name);
@@ -251,7 +253,7 @@ When you call the Office dialog API to open a dialog box, a [Dialog](/javascript
 method because the object will be referenced by other methods. The following is an example.
 
 ```javascript
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
     function (asyncResult) {
         dialog = asyncResult.value;
@@ -273,7 +275,7 @@ Consider a scenario in which the UI of the dialog is related to the currently ac
 
 ```javascript
 function sheetPropertiesChanged() {
-    var messageToDialog = JSON.stringify({
+    const messageToDialog = JSON.stringify({
                                name: "My Sheet",
                                position: 2
                            });
@@ -299,7 +301,7 @@ Then, define the `onMessageFromParent` handler. The following code continues the
 
 ```javascript
 function onMessageFromParent(arg) {
-    var messageFromParent = JSON.parse(arg.message);
+    const messageFromParent = JSON.parse(arg.message);
     $('h1').text(messageFromParent.name);
 }
 ```
@@ -334,7 +336,7 @@ Because you can make multiple `messageChild` calls from the host page, but you h
 
 ### Cross-domain messaging to the dialog runtime
 
-Either the dialog or the parent JavaScript runtime may navigate away from the add-in's domain after the dialog opens. If either of these things happens, then calls to `messageChild` will fail unless your code specifies the domain of the dialog runtime. You do this by adding a [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) parameter to the call of `messageChild`. This object has a `targetOrigin` property that specifies the domain to which the message should be sent. If the parameter isn't used, Office assumes that the target is the same domain that the parent runtime is currently hosting. 
+Either the dialog or the parent JavaScript runtime may navigate away from the add-in's domain after the dialog opens. If either of these things happens, then calls to `messageChild` will fail unless your code specifies the domain of the dialog runtime. You do this by adding a [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) parameter to the call of `messageChild`. This object has a `targetOrigin` property that specifies the domain to which the message should be sent. If the parameter isn't used, Office assumes that the target is the same domain that the parent runtime is currently hosting.
 
 > [!NOTE]
 > Using `messageChild` to send a cross-domain message requires the [Dialog Origin 1.1 requirement set](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets). The `DialogMessageOptions` parameter is ignored on older versions of Office that do not support the requirement set, so the behavior of the method is unaffected if you pass it.
@@ -383,8 +385,8 @@ You can implement a button in the dialog box that will close it. To do this, the
 
 ```js
 function closeButtonClick() {
-    var messageObject = {messageType: "dialogClosed"};
-    var jsonMessage = JSON.stringify(messageObject);
+    const messageObject = {messageType: "dialogClosed"};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
 ```
@@ -393,7 +395,7 @@ The host page handler for `DialogMessageReceived` would call `dialog.close`, as 
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     if (messageFromDialog.messageType === "dialogClosed") {
        dialog.close();
     }
