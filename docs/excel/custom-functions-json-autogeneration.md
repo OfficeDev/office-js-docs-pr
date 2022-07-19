@@ -38,14 +38,15 @@ The following JSDoc tags are supported in Excel custom functions.
 - [@cancelable](#cancelable)
 - [@customfunction](#customfunction) id name
 - [@helpurl](#helpurl) url
-- [@param](#param)  *{type}* name description
-- [@requiresAddress](#requiresaddress)
-- [@requiresParameterAddresses](#requiresparameteraddresses)
-- [@returns](#returns) *{type}*
+- [@param](#param) _{type}_ name description
+- [@requiresAddress](#requiresAddress)
+- [@requiresParameterAddresses](#requiresParameterAddresses)
+- [@returns](#returns) _{type}_
 - [@streaming](#streaming)
 - [@volatile](#volatile)
 
 ---
+<a id="cancelable"></a>
 
 ### @cancelable
 
@@ -123,6 +124,7 @@ In the following example, the phrase "A function that adds two numbers" is the d
  * ...
  */
 ```
+<a id="helpurl"></a>
 
 ### @helpurl
 
@@ -140,6 +142,8 @@ In the following example, the `helpurl` is `www.contoso.com/weatherhelp`.
  * ...
  */
 ```
+
+<a id="param"></a>
 
 ### @param
 
@@ -203,6 +207,8 @@ function add(first: number, second: number): number {
 }
 ```
 
+<a id="requiresAddress"></a>
+
 ### @requiresAddress
 
 Indicates that the address of the cell where the function is being evaluated should be provided.
@@ -225,6 +231,8 @@ function getAddress(first, second, invocation) {
   return address;
 }
 ```
+
+<a id="requiresParameterAddresses"></a>
 
 ### @requiresParameterAddresses
 
@@ -257,6 +265,8 @@ function getParameterAddresses(firstParameter, secondParameter, thirdParameter, 
 }
 ```
 
+<a id="returns"></a>
+
 ### @returns
 
 Syntax: @returns {*type*}
@@ -280,6 +290,8 @@ function add(first: number, second: number): number {
 }
 ```
 
+<a id="streaming"></a>
+
 ### @streaming
 
 Used to indicate that a custom function is a streaming function.
@@ -292,6 +304,8 @@ Streaming functions don't return values directly, instead they call `setResult(r
 Exceptions thrown by a streaming function are ignored. `setResult()` may be called with Error to indicate an error result. For an example of a streaming function and more information, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function).
 
 Streaming functions can't be marked as [@volatile](#volatile).
+
+<a id="volatile"></a>
 
 ### @volatile
 
