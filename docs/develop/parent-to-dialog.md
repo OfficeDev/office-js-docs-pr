@@ -1,7 +1,7 @@
 ---
 title: Alternative ways of passing messages to a dialog box from its host page
 description: Learn workarounds to use when the messageChild method isn't supported.
-ms.date: 07/08/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -26,9 +26,9 @@ localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
 Code in the dialog box reads the item when it's needed, as in the following example.
 
 ```js
-var clientID = localStorage.getItem("clientID");
+const clientID = localStorage.getItem("clientID");
 // You can also use property syntax:
-// var clientID = localStorage.clientID;
+// const clientID = localStorage.clientID;
 ```
 
 ## Use query parameters

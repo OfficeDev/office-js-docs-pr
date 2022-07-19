@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
 description: Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.
-ms.date: 07/08/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,7 @@ The Office JavaScript API provides two properties that support displaying or int
 
     ```js
     function sayHelloWithDisplayLanguage() {
-        var myLanguage = Office.context.displayLanguage;
+        const myLanguage = Office.context.displayLanguage;
         switch (myLanguage) {
             case 'en-US':
                 write('Hello!');
@@ -37,7 +37,7 @@ The Office JavaScript API provides two properties that support displaying or int
 - [Context.contentLanguage][contentLanguage] specifies the locale (or language) of the data. Extending the last code sample, instead of checking the [displayLanguage] property, assign `myLanguage` the value of the [contentLanguage] property, and use the rest of the same code to display a greeting based on the locale of the data.
 
     ```js
-    var myLanguage = Office.context.contentLanguage;
+    const myLanguage = Office.context.contentLanguage;
     ```
 
 ## Control localization from the manifest
@@ -272,11 +272,11 @@ You'll need to create a Visual Studio 2019 Office Add-in project.
 
 1. Choose **Create a new project**.
 
-2. Using the search box, enter **add-in**. Choose **Word Web Add-in**, then select **Next**.
+1. Using the search box, enter **add-in**. Choose **Word Web Add-in**, then select **Next**.
 
-3. Name your project **WorldReadyAddIn** and select **Create**.
+1. Name your project **WorldReadyAddIn** and select **Create**.
 
-4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+1. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
 ### Localize the text used in your add-in
 
@@ -290,7 +290,7 @@ The text that you want to localize for another language appears in two areas.
 
 1. In **Solution Explorer**, expand **WorldReadyAddIn**, **WorldReadyAddInManifest**, and then choose **WorldReadyAddIn.xml**.
 
-2. In WorldReadyAddInManifest.xml, replace the [DisplayName] and [Description] elements with the following block of code.
+1. In WorldReadyAddInManifest.xml, replace the [DisplayName] and [Description] elements with the following block of code.
 
     > [!NOTE]
     > You can replace the Spanish language localized strings used in this example for the [DisplayName] and [Description] elements with the localized strings for any other language.
@@ -304,13 +304,13 @@ The text that you want to localize for another language appears in two areas.
     </Description>
     ```
 
-3. When you change the display language for Office 2013 from English to Spanish, for example, and then run the add-in, the add-in display name and description are shown with localized text.
+1. When you change the display language for Office 2013 from English to Spanish, for example, and then run the add-in, the add-in display name and description are shown with localized text.
 
 #### Lay out the add-in UI
 
 1. In Visual Studio, in **Solution Explorer**, choose **Home.html**.
 
-2. Replace the `<body>` element contents in Home.html with the following HTML, and save the file.
+1. Replace the `<body>` element contents in Home.html with the following HTML, and save the file.
 
     ```html
     <body>
@@ -346,20 +346,20 @@ To enable localized strings for the heading and paragraph, you place the strings
 
 1. In **Solution Explorer** in Visual Studio, right-click the **WorldReadyAddInWeb** project and choose **Add** > **New Item**.
 
-2. In the **Add New Item** dialog box, choose **JavaScript File**.
+1. In the **Add New Item** dialog box, choose **JavaScript File**.
 
-3. Enter **UIStrings.js** as the file name and choose **Add**.
+1. Enter **UIStrings.js** as the file name and choose **Add**.
 
-4. Add the following code to the UIStrings.js file, and save the file.
+1. Add the following code to the UIStrings.js file, and save the file.
 
     ```js
     /* Store the locale-specific strings */
 
-    var UIStrings = (function ()
+    const UIStrings = (function ()
     {
         "use strict";
 
-        var UIStrings = {};
+        const UIStrings = {};
 
         // JSON object for English strings
         UIStrings.EN =
@@ -377,7 +377,7 @@ To enable localized strings for the heading and paragraph, you place the strings
 
         UIStrings.getLocaleStrings = function (locale)
         {
-            var text;
+            let text;
 
             // Get the resource strings that match the language.
             switch (locale)
@@ -422,7 +422,7 @@ After you know the language the application is using, you can use **UIStrings** 
 Replace the code in the Home.js file with the following code. The code shows how you can change the strings used in the UI elements on Home.html based on either the display language of the application or the editing language of the application.
 
 > [!NOTE]
-> To switch between changing the localization of the add-in based on the language used for editing, uncomment the line of code  `var myLanguage = Office.context.contentLanguage;` and comment out the line of code `var myLanguage = Office.context.displayLanguage;`
+> To switch between changing the localization of the add-in based on the language used for editing, uncomment the line of code  `const myLanguage = Office.context.contentLanguage;` and comment out the line of code `const myLanguage = Office.context.displayLanguage;`
 
 ```js
 /// <reference path="../App.js" />
@@ -440,11 +440,11 @@ Replace the code in the Home.js file with the following code. The code shows how
             // Get the language setting for editing document content.
             // To test this, uncomment the following line and then comment out the
             // line that uses Office.context.displayLanguage.
-            // var myLanguage = Office.context.contentLanguage;
+            // const myLanguage = Office.context.contentLanguage;
 
             // Get the language setting for UI display in the Office application.
-            var myLanguage = Office.context.displayLanguage;
-            var UIText;
+            const myLanguage = Office.context.displayLanguage;
+            let UIText;
 
             // Get the resource strings that match the language.
             // Use the UIStrings object from the UIStrings.js file

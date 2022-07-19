@@ -1,7 +1,7 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
 description: Learn about the resource limits of the Office Add-in platform, including CPU and memory.
-ms.date: 08/17/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -127,13 +127,13 @@ The following Excel code sample fills a selected range with data, one cell at a 
 
 ```js
 Excel.run(async (context) => {
-    var largeRange = context.workbook.getSelectedRange();
+    const largeRange = context.workbook.getSelectedRange();
     largeRange.load(["rowCount", "columnCount"]);
     await context.sync();
 
-    for (var i = 0; i < largeRange.rowCount; i++) {
-        for (var j = 0; j < largeRange.columnCount; j++) {
-            var cell = largeRange.getCell(i, j);
+    for (let i = 0; i < largeRange.rowCount; i++) {
+        for (let j = 0; j < largeRange.columnCount; j++) {
+            let cell = largeRange.getCell(i, j);
             cell.values = [[i *j]];
 
             // Call untrack() to release the range from memory.

@@ -1,7 +1,7 @@
 ---
 title: Addressing same-origin policy limitations in Office Add-ins
 description: Learn how to accommodate same-origin policy limitations with JSONP, CORS, IFRAMEs, and other techniques.
-ms.date: 10/17/2019
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -24,7 +24,7 @@ The following is an example of JSONP that uses a technique that will work in any
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
 function loadVideoDetails(videoIndex) {
     // Dynamically create a new HTML SCRIPT element in the webpage.
-    var script = document.createElement("script");
+    const script = document.createElement("script");
     // Specify the URL to retrieve the indicated video from a feed of a current list of videos,
     // as the value of the src attribute of the SCRIPT element. 
     script.setAttribute("src", "https://gdata.youtube.com/feeds/api/videos/" + 
@@ -32,28 +32,20 @@ function loadVideoDetails(videoIndex) {
     // Insert the SCRIPT element at the end of the HEAD section.
     document.getElementsByTagName('head')[0].appendChild(script);
 }
-
 ```
-
 
 ## Implement server-side code using a token-based authorization scheme
 
-Another way to address same-origin policy limitations is to provide server-side code that uses [OAuth 2.0](https://oauth.net/2/) flows to enable one domain to get authorized access to resources hosted on another. 
-
+Another way to address same-origin policy limitations is to provide server-side code that uses [OAuth 2.0](https://oauth.net/2/) flows to enable one domain to get authorized access to resources hosted on another.
 
 ## Use cross-origin resource sharing (CORS)
 
-
 For an example of using the cross-origin resource sharing feature of [XmlHttpRequest2](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html), see the "Cross Origin Resource Sharing (CORS)" section of [New Tricks in XMLHttpRequest2](https://www.html5rocks.com/en/tutorials/file/xhr2/).
-
 
 ## Build your own proxy using IFRAME and POST MESSAGE (Cross-Window Messaging)
 
-
 For an example of how to build your own proxy using IFRAME and POST MESSAGE, see [Cross-Window Messaging](http://ejohn.org/blog/cross-window-messaging/).
-
 
 ## See also
 
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
-    

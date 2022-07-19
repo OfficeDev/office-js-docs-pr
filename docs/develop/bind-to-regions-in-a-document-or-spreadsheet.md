@@ -1,7 +1,7 @@
 ---
 title: Bind to regions in a document or spreadsheet
 description: Learn how to use binding to ensure consistent access a specific region or element of a document or spreadsheet through an identifier.
-ms.date: 07/08/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -26,11 +26,11 @@ There are [three different types of bindings][Office.BindingType] that you speci
 
     In Word, most contiguous selections are valid, while in Excel only single cell selections can be the target of a text binding. In Excel, only plain text is supported. In Word, three formats are supported: plain text, HTML, and Open XML for Office.
 
-2. **[Matrix Binding][MatrixBinding]** - Binds to a fixed region of a document that contains tabular data without headers.Data in a matrix binding is written or read as a two dimensional **Array**, which in JavaScript is implemented as an array of arrays. For example, two rows of **string** values in two columns can be written or read as `[['a', 'b'], ['c', 'd']]`, and a single column of three rows can be written or read as `[['a'], ['b'], ['c']]`.
+1. **[Matrix Binding][MatrixBinding]** - Binds to a fixed region of a document that contains tabular data without headers.Data in a matrix binding is written or read as a two dimensional **Array**, which in JavaScript is implemented as an array of arrays. For example, two rows of **string** values in two columns can be written or read as `[['a', 'b'], ['c', 'd']]`, and a single column of three rows can be written or read as `[['a'], ['b'], ['c']]`.
 
     In Excel, any contiguous selection of cells can be used to establish a matrix binding. In Word, only tables support matrix binding.
 
-3. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](/javascript/api/office/office.tabledata) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
+1. **[Table Binding][TableBinding]** - Binds to a region of a document that contains a table with headers.Data in a table binding is written or read as a [TableData](/javascript/api/office/office.tabledata) object. The `TableData` object exposes the data through the `headers` and `rows` properties.
 
     Any Excel or Word table can be the basis for a table binding. After you establish a table binding, each new row or column a user adds to the table is automatically included in the binding.
 
@@ -96,7 +96,7 @@ Figure 1 shows the built-in range selection prompt in Excel.
 
 *Figure 1. Excel Select Data UI*
 
-![Screenshot showing the Select Data dialog.](../images/agave-api-overview-excel-selection-ui.png)
+![The Select Data dialog.](../images/agave-api-overview-excel-selection-ui.png)
 
 ## Add a binding to a named item
 
@@ -182,8 +182,8 @@ The following example shows how to get all bindings in a document by using the B
 
 ```js
 Office.context.document.bindings.getAllAsync(function (asyncResult) {
-    var bindingString = '';
-    for (var i in asyncResult.value) {
+    let bindingString = '';
+    for (let i in asyncResult.value) {
         bindingString += asyncResult.value[i].id + '\n';
     }
     write('Existing bindings: ' + bindingString);
@@ -353,30 +353,3 @@ function removeEventHandlerFromBinding() {
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Asynchronous programming in Office Add-ins](asynchronous-programming-in-office-add-ins.md)
 - [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
-
-[Binding]: 				 /javascript/api/office/office.binding
-[MatrixBinding]:		 /javascript/api/office/office.matrixbinding
-[TableBinding]: 		 /javascript/api/office/office.tablebinding
-[TextBinding]: 			 /javascript/api/office/office.textbinding
-[getDataAsync]: 		 /javascript/api/office/office.binding#getDataAsync_options__callback_
-[setDataAsync]: 		 /javascript/api/office/office.binding#setDataAsync_data__options__callback_
-[SelectionChanged]: 	 /javascript/api/office/office.bindingselectionchangedeventargs
-[addHandlerAsync]: 		 /javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_
-[removeHandlerAsync]: 	 /javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_
-
-[Bindings]:				 /javascript/api/office/office.bindings
-[getByIdAsync]: 		 /javascript/api/office/office.bindings#getByIdAsync_id__options__callback_
-[getAllAsync]: 			 /javascript/api/office/office.bindings#getAllAsync_options__callback_
-[addFromNamedItemAsync]: /javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_
-[addFromSelectionAsync]: /javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_
-[addFromPromptAsync]: 	 /javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_
-[releaseByIdAsync]: 	 /javascript/api/office/office.bindings#releaseByIdAsync_id__options__callback_
-
-[AsyncResult]: 			/javascript/api/office/office.asyncresult
-[Office.BindingType]: 	/javascript/api/office/office.bindingtype
-[Office.select]:		/javascript/api/office 
-[Office.EventType]: 	/javascript/api/office/office.eventtype 
-[Document.bindings]: 	/javascript/api/office/office.document
-
-[TableBinding.rowCount]: /javascript/api/office/office.tablebinding
-[BindingSelectionChangedEventArgs]: /javascript/api/office/office.bindingselectionchangedeventargs

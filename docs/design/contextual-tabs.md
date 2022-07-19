@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: Learn how to add custom contextual tabs to your Office Add-in.
-ms.date: 05/25/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -87,7 +87,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
       "type": "ExecuteFunction",
       "functionName": "writeData"
     }
-   ```
+    ```
 
 1. Add the following as the only member of the `tabs` array. About this markup, note:
 
@@ -276,7 +276,7 @@ Office.onReady(async () => {
     await Office.ribbon.requestCreateControls(contextualTab);
 
     await Excel.run(context => {
-        var charts = context.workbook.worksheets
+        const charts = context.workbook.worksheets
             .getActiveWorksheet()
             .charts;
         charts.onActivated.add(showDataTab);
@@ -471,7 +471,7 @@ The JSON blob that is passed to `requestCreateControls` is not localized the sam
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
-    var displayLanguage = Office.context.displayLanguage;
+    const displayLanguage = Office.context.displayLanguage;
 
         switch (displayLanguage) {
             case 'en-US':
@@ -514,7 +514,7 @@ function GetContextualTabsJsonSupportedLocale () {
 Then your code calls the function to get the localized blob that is passed to `requestCreateControls`, as in the following example.
 
 ```javascript
-var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
+const contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 ```
 
 ## Best practices for custom contextual tabs

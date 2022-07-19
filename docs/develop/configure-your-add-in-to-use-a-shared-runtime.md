@@ -1,8 +1,8 @@
 ---
-ms.date: 04/04/2022
 title: Configure your Office Add-in to use a shared JavaScript runtime
-ms.prod: non-product-specific
 description: Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.
+ms.date: 07/18/2022
+ms.prod: non-product-specific
 ms.localizationpriority: high
 ---
 
@@ -145,7 +145,7 @@ You can confirm that you are using the shared JavaScript runtime correctly by us
     ```javascript
     /*global document, Office*/
 
-    var _count = 0;
+    let _count = 0;
 
     Office.onReady(() => {
       document.getElementById("sideload-msg").style.display = "none";
