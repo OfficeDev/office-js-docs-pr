@@ -91,7 +91,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.none);
 
 ## Get the current load behavior
 
-To determine what the current startup behavior is, run the following function, which returns an `Office.StartupBehavior` object.
+To determine what the current startup behavior is, run the following method, which returns an `Office.StartupBehavior` object.
 
 ```JavaScript
 let behavior = await Office.addin.getStartupBehavior();

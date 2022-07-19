@@ -41,7 +41,7 @@ You can also use the `Document` object to interact with data in Project document
 
 All these forms of data access start from an instance of the abstract `Document` object.
 
-You can access an instance of the `Document` object when the task pane or content add-in is initialized by using the [document](/javascript/api/office/office.context#office-office-context-document-member) property of the `Context` object. The `Document` object defines common data access functions shared across Word and Excel documents, and also provides access to the `CustomXmlParts` object for Word documents.
+You can access an instance of the `Document` object when the task pane or content add-in is initialized by using the [document](/javascript/api/office/office.context#office-office-context-document-member) property of the `Context` object. The `Document` object defines common data access methods shared across Word and Excel documents, and also provides access to the `CustomXmlParts` object for Word documents.
 
 The `Document` object supports four ways for developers to access document contents.
 

@@ -72,7 +72,7 @@ Here is the same example using the `async` and `await` keywords in TypeScript.
 })();
 ```
 
-If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the response to `Office.onReady()`. For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
+If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the response to `Office.onReady()`. For example, [JQuery's](https://jquery.com) `$(document).ready()` method would be referenced as follows:
 
 ```js
 Office.onReady(function() {
@@ -99,7 +99,7 @@ Office.initialize = function () {
 };
 ```
 
-If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the `Office.initialize` event (the exceptions described in the **Initialize with Office.onReady()** section earlier apply in this case also). For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
+If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the `Office.initialize` event (the exceptions described in the **Initialize with Office.onReady()** section earlier apply in this case also). For example, [JQuery's](https://jquery.com) `$(document).ready()` method would be referenced as follows:
 
 ```js
 Office.initialize = function () {
@@ -134,7 +134,7 @@ For more information, see [Office.initialize Event](/javascript/api/office) and 
 > [!NOTE]
 > Even if you have no start-up logic, you should either call `Office.onReady()` or assign an empty function to `Office.initialize` when your add-in JavaScript loads. Some Office application and platform combinations won't load the task pane until one of these happens. The following examples show these two approaches.
 >
->```js    
+>```js
 >Office.onReady();
 >```
 >

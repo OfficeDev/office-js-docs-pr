@@ -186,7 +186,7 @@ if (loginSuccess) {
 > [!NOTE]
 >
 > - The `loginSuccess` variable would be initialized by reading the HTTP response from the identity provider.
-> - The the implementation of the `getProfile` and `getError` functions are not not shown. They each get data from a query parameter or from the body of the HTTP response.
+> - The implementation of the `getProfile` and `getError` functions is not shown. They each get data from a query parameter or from the body of the HTTP response.
 > - Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
 
 The handler code in the host page uses the value of the `messageType` property to branch as shown in the following example. Note that the `showUserName` function is the same as in the previous example and `showNotification` function displays the error in the host page's UI.

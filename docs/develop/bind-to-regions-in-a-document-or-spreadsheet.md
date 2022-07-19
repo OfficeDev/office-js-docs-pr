@@ -63,7 +63,7 @@ In this example, the specified binding type is text. This means that a [TextBind
 
 The second optional parameter is an object that specifies the ID of the new binding being created. If an ID is not specified, one is generated automatically.
 
-The anonymous function that is passed into the function as the final  _callback_ parameter is executed when the creation of the binding is complete. The function is called with a single parameter, `asyncResult`, which provides access to an [AsyncResult] object that provides the status of the call. The `AsyncResult.value` property contains a reference to a [Binding] object of the type that is specified for the newly created binding. You can use this [Binding] object to get and set data.
+The anonymous function that is passed into the method as the final  _callback_ parameter is executed when the creation of the binding is complete. The function is called with a single parameter, `asyncResult`, which provides access to an [AsyncResult] object that provides the status of the call. The `AsyncResult.value` property contains a reference to a [Binding] object of the type that is specified for the newly created binding. You can use this [Binding] object to get and set data.
 
 ## Add a binding from a prompt
 
@@ -90,7 +90,7 @@ In this example, the specified binding type is text. This means that a [TextBind
 
 The second parameter is an object that contains the ID of the new binding being created. If an ID is not specified, one is generated automatically.
 
-The anonymous function passed into the function as the third _callback_ parameter is executed when the creation of the binding is complete. When the callback function executes, the [AsyncResult] object contains the status of the call and the newly created binding.
+The anonymous function passed into the method as the third _callback_ parameter is executed when the creation of the binding is complete. When the callback function executes, the [AsyncResult] object contains the status of the call and the newly created binding.
 
 Figure 1 shows the built-in range selection prompt in Excel.
 
@@ -195,7 +195,7 @@ function write(message){
 }
 ```
 
-The anonymous function that is passed into the function as the `callback` parameter is executed when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains an array of the bindings in the document. The array is iterated to build a string that contains the IDs of the bindings. The string is then displayed in a message box.
+The anonymous function that is passed into the method as the `callback` parameter is executed when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains an array of the bindings in the document. The array is iterated to build a string that contains the IDs of the bindings. The string is then displayed in a message box.
 
 ## Get a binding by ID using the getByIdAsync method of the Bindings object
 
@@ -219,7 +219,7 @@ function write(message){
 
 In the example, the first `id` parameter is the ID of the binding to retrieve.
 
-The anonymous function that is passed into the function as the second _callback_ parameter is executed when the operation is completed. The function is called with a single parameter, _asyncResult_, which contains the status of the call and the binding with the ID "myBinding".
+The anonymous function that is passed into the method as the second _callback_ parameter is executed when the operation is completed. The function is called with a single parameter, _asyncResult_, which contains the status of the call and the binding with the ID "myBinding".
 
 ## Get a binding by ID using the select function of the Office object
 
@@ -260,7 +260,7 @@ function write(message){
 
 In the example, the first `id` parameter is the ID of the binding to release.
 
-The anonymous function that is passed into the function as the second parameter is a callback that is executed when the operation is complete. The function is called with a single parameter,  [asyncResult], which contains the status of the call.
+The anonymous function that is passed into the method as the second parameter is a callback that is executed when the operation is complete. The function is called with a single parameter,  [asyncResult], which contains the status of the call.
 
 ## Read data from a binding
 
@@ -287,7 +287,7 @@ function write(message){
 Office.select("bindings#myBindingID").getDataAsync
 ```
 
-The anonymous function that is passed into the function is a callback that is executed when the operation is complete. The [AsyncResult].value property contains the data within `myBinding`. The type of the value depends on the binding type. The binding in this example is a text binding. Therefore, the value will contain a string. For additional examples of working with matrix and table bindings, see the [getDataAsync] method topic.
+The anonymous function that is passed into the method is a callback that is executed when the operation is complete. The [AsyncResult].value property contains the data within `myBinding`. The type of the value depends on the binding type. The binding in this example is a text binding. Therefore, the value will contain a string. For additional examples of working with matrix and table bindings, see the [getDataAsync] method topic.
 
 ## Write data to a binding
 
@@ -301,7 +301,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
 In the example, the first parameter is the value to set on `myBinding`. Because this is a text binding, the value is a `string`. Different binding types accept different types of data.
 
-The anonymous function that is passed into the function is a callback that is executed when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains the status of the result.
+The anonymous function that is passed into the method is a callback that is executed when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains the status of the result.
 
 > [!NOTE]
 > Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel on the web, you can now [set formatting when writing and updating data in bound tables](../excel/excel-add-ins-tables.md).
@@ -328,7 +328,7 @@ The `myBinding` is a variable that contains an existing text binding in the docu
 
 The first _eventType_ parameter of the [addHandlerAsync] method specifies the name of the event to subscribe to. [Office.EventType] is an enumeration of available event type values. `Office.EventType.BindingDataChanged` evaluates to the string "bindingDataChanged".
 
-The `dataChanged` function that is passed into the function as the second _handler_ parameter is an event handler that is executed when the data in the binding is changed. The function is called with a single parameter, _eventArgs_, which contains a reference to the binding. This binding can be used to retrieve the updated data.
+The `dataChanged` function that is passed into the method as the second _handler_ parameter is an event handler that is executed when the data in the binding is changed. The function is called with a single parameter, _eventArgs_, which contains a reference to the binding. This binding can be used to retrieve the updated data.
 
 Similarly, you can detect when a user changes selection in a binding by attaching an event handler to the [SelectionChanged] event of a binding. To do that, specify the `eventType` parameter of the [addHandlerAsync] method as `Office.EventType.BindingSelectionChanged` or `"bindingSelectionChanged"`.
 
