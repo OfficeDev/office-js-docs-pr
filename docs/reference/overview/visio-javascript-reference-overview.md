@@ -1,7 +1,7 @@
 ---
 title: Visio JavaScript API overview
 description: Overview of the Visio JavaScript API.
-ms.date: 06/03/2020
+ms.date: 07/18/2022
 ms.prod: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
@@ -30,7 +30,7 @@ This article describes how to use the Visio JavaScript APIs with Visio on the we
 The EmbeddedSession object initializes communication between the developer frame and the Visio frame in the browser.
 
 ```js
-var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
+const session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
 session.init().then(function () {
     window.console.log("Session successfully initialized");
 });
@@ -49,7 +49,7 @@ The RequestContext object facilitates requests to the Visio application. Because
 ```js
 function hideToolbars() {
     Visio.run(session, function(context){
-        var app = context.document.application;
+        const app = context.document.application;
         app.showToolbars = false;
         return context.sync().then(function () {
             window.console.log("Toolbars Hidden");
@@ -68,7 +68,7 @@ The Visio JavaScript objects declared and used in an embedded session are proxy 
 For example, the local JavaScript object getActivePage is declared to reference the selected page. This can be used to queue the setting of its properties and invoking methods. The actions on such objects are not realized until the `sync()` method is run.
 
 ```js
-var activePage = context.document.getActivePage();
+const activePage = context.document.getActivePage();
 ```
 
 ## sync()
@@ -98,12 +98,12 @@ All these commands are queued and run when `context.sync()` is called. The `sync
 
 ```js
 Visio.run(session, function (context) {
-    var page = context.document.getActivePage();
-    var shapes = page.shapes;
+    const page = context.document.getActivePage();
+    const shapes = page.shapes;
     shapes.load();
     return context.sync().then(function () {
-        for(var i=0; i<shapes.items.length;i++) {
-            var shape = shapes.items[i];
+        for(let i=0; i<shapes.items.length;i++) {
+            let shape = shapes.items[i];
             window.console.log("Shape Text: " + shape.text );
         }
     });
@@ -145,11 +145,11 @@ document.write("<textarea id='ResultOutput' style='width:350px;height:60px'> </t
 document.write("<div id='iframeHost' />");
 
 let session; // Global variable to store the session and pass it afterwards in Visio.run()
-var textArea;
+let textArea;
 // Loads the Visio application and Initializes communication between developer frame and Visio online frame
 function initEmbeddedFrame() {
     textArea = document.getElementById('ResultOutput');
-    var url = document.getElementById('fileUrl').value;
+    let url = document.getElementById('fileUrl').value;
     if (!url) {
         window.alert("File URL should not be empty");
     }
@@ -169,13 +169,13 @@ function initEmbeddedFrame() {
 // Code for getting selected Shape Text using the shapes collection object
 function getSelectedShapeText() {
     Visio.run(session, function (context) {
-        var page = context.document.getActivePage();
-        var shapes = page.shapes;
+        const page = context.document.getActivePage();
+        const shapes = page.shapes;
         shapes.load();
         return context.sync().then(function () {
             textArea.value = "Please select a Shape in the Diagram";
-            for(var i=0; i<shapes.items.length;i++) {
-                var shape = shapes.items[i];
+            for(let i=0; i<shapes.items.length;i++) {
+                let shape = shapes.items[i];
                 if ( shape.select == true) {
                     textArea.value = shape.text;
                     return;

@@ -1,7 +1,7 @@
 ---
 title: Using the application-specific API model
 description: Learn about the promise-based API model for Excel, OneNote, and Word add-ins.
-ms.date: 02/11/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -49,7 +49,7 @@ The Office JavaScript objects that you declare and use with the promise-based AP
 For example, the following code snippet declares the local JavaScript [Excel.Range](/javascript/api/excel/excel.range) object, `selectedRange`, to reference a selected range in the Excel workbook, and then sets some properties on that object. The `selectedRange` object is a proxy object, so the properties that are set and the method that is invoked on that object will not be reflected in the Excel document until your add-in calls `context.sync()`.
 
 ```js
-var selectedRange = context.workbook.getSelectedRange();
+const selectedRange = context.workbook.getSelectedRange();
 selectedRange.format.fill.color = "#4472C4";
 selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
@@ -66,7 +66,7 @@ worksheet.getRange("A1").numberFormat = "0.00%";
 worksheet.getRange("A1").values = [[1]];
 
 // GOOD: Create the range proxy object once and assign to a variable.
-var range = worksheet.getRange("A1")
+const range = worksheet.getRange("A1");
 range.format.fill.color = "red";
 range.numberFormat = "0.00%";
 range.values = [[1]];
@@ -91,7 +91,7 @@ The following example shows a batch function that defines a local JavaScript pro
 
 ```js
 await Excel.run(async (context) => {
-    var selectedRange = context.workbook.getSelectedRange();
+    const selectedRange = context.workbook.getSelectedRange();
     selectedRange.load('address');
     await context.sync();
     console.log('The selected range is: ' + selectedRange.address);
@@ -112,9 +112,9 @@ Before you can read the properties of a proxy object, you must explicitly load t
 
 ```js
 await Excel.run(async (context) => {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:B2';
-    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    const sheetName = 'Sheet1';
+    const rangeAddress = 'A1:B2';
+    const myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
     myRange.load('address');
     await context.sync();
@@ -161,7 +161,7 @@ Methods in the promise-based APIs that return primitive types have a similar pat
 The following code gets the total number of tables in an Excel workbook and logs that number to the console.
 
 ```js
-var tableCount = context.workbook.tables.getCount();
+const tableCount = context.workbook.tables.getCount();
 
 // This sync call implicitly loads tableCount.value.
 // Any other ClientResult values are loaded too.
@@ -179,8 +179,8 @@ The following code sample sets several format properties of a range by calling t
 
 ```js
 await Excel.run(async (context) => {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:E2");
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const range = sheet.getRange("B2:E2");
     range.set({
         format: {
             fill: {
@@ -234,7 +234,7 @@ The following code sample attempts to retrieve an Excel worksheet named "Data" b
 
 ```js
 await Excel.run(async (context) => {
-    var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
+    let dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
     
     await context.sync();
     
@@ -249,5 +249,5 @@ await Excel.run(async (context) => {
 
 ## See also
 
-* [Common JavaScript API object model](office-javascript-api-object-model.md)
-* [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
+- [Common JavaScript API object model](office-javascript-api-object-model.md)
+- [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)

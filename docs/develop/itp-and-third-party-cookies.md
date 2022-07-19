@@ -1,7 +1,7 @@
 ---
 title: Develop your Office Add-in to work with ITP when using third-party cookies
 description: How to work with ITP and Office Add-ins when using third-party cookies
-ms.date: 07/8/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -12,7 +12,7 @@ If your Office Add-in requires third-party cookies, those cookies are blocked if
 If your Office Add-in and website must rely on third-party cookies, use the following steps to work with ITP.
 
 1. Set up [OAuth 2.0 Authorization](https://tools.ietf.org/html/rfc6749) so that the authenticating domain (in your case, the third-party that expects cookies) forwards an authorization token to your website. Use the token to establish a first-party login session with a server-set Secure and [HttpOnly cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies).
-2. Use the [Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) so that the third-party can request permission to get access to its first-party cookies. Current versions of Office on Mac and Office on the web both support this API.
+1. Use the [Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) so that the third-party can request permission to get access to its first-party cookies. Current versions of Office on Mac and Office on the web both support this API.
     > [!NOTE]
     > If you're using cookies for purposes other than authentication, then consider using `localStorage` for your scenario.
 
@@ -20,7 +20,7 @@ The following code sample shows how to use the Storage Access API.
 
 ```javascript
 function displayLoginButton() {
-  var button = createLoginButton();
+  const button = createLoginButton();
   button.addEventListener("click", function(ev) {
     document.requestStorageAccess().then(function() {
       authenticateWithCookies(); 

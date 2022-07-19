@@ -1,7 +1,7 @@
 ---
 title: Show or hide the task pane of your Office Add-in
 description: Learn how to programmatically hide or show the user interface of an add-in while it runs continuously.
-ms.date: 07/08/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -50,7 +50,7 @@ The `hide()` and `showAsTaskpane()` methods only change the *visibility* of the 
 
 Consider the following scenario: A task pane is designed with tabs. The **Home** tab is open when the add-in is first launched. Suppose a user opens the **Settings** tab and, later, code in the task pane calls `hide()` in response to some event. Still later code calls `showAsTaskpane()` in response to another event. The task pane will reappear, and the **Settings** tab is still selected.
 
-![A screenshot of task pane that has four tabs labelled Home, Settings, Favorites, and Accounts.](../images/TaskpaneWithTabs.png)
+![A task pane that has four tabs labelled Home, Settings, Favorites, and Accounts.](../images/TaskpaneWithTabs.png)
 
 In addition, any event listeners that are registered in the task pane continue to run even when the task pane is hidden.
 
@@ -75,7 +75,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 The function returns another function that *deregisters* the handler. Here is a simple, but not robust, example.
 
 ```javascript
-var removeVisibilityModeHandler =
+const removeVisibilityModeHandler =
     Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
             // Code that runs whenever the task pane is made visible.
@@ -92,7 +92,7 @@ The `onVisibilityModeChanged` method is asynchronous and returns a promise, whic
 ```javascript
 // await the promise from onVisibilityModeChanged and assign
 // the returned deregister handler to removeVisibilityModeHandler.
-var removeVisibilityModeHandler =
+const removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
             // Code that runs whenever the task pane is made visible.
