@@ -66,7 +66,7 @@ worksheet.getRange("A1").numberFormat = "0.00%";
 worksheet.getRange("A1").values = [[1]];
 
 // GOOD: Create the range proxy object once and assign to a variable.
-const range = worksheet.getRange("A1")
+const range = worksheet.getRange("A1");
 range.format.fill.color = "red";
 range.numberFormat = "0.00%";
 range.values = [[1]];
