@@ -38,7 +38,7 @@ The following JSDoc tags are supported in Excel custom functions.
 - [@cancelable](#cancelable)
 - [@customfunction](#customfunction) id name
 - [@helpurl](#helpurl) url
-- [@param](#param) *{type}* name description
+- [@param](#param)  *{type}* name description
 - [@requiresAddress](#requiresaddress)
 - [@requiresParameterAddresses](#requiresparameteraddresses)
 - [@returns](#returns) *{type}*
