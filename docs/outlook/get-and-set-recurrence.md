@@ -196,3 +196,15 @@ const recurrenceType = recurrence.recurrenceType;
 - [RecurrenceChanged event](/javascript/api/office/office.eventtype)
 - [Recurrence object](/javascript/api/outlook/office.recurrence)
 - [SeriesTime object](/javascript/api/outlook/office.seriestime)
+
+[getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
+[item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties
+[setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
+
+[dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth
+[dayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#dayOfWeek
+[days link]: /javascript/api/outlook/office.recurrenceproperties#days
+[firstDayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#firstDayOfWeek
+[interval link]: /javascript/api/outlook/office.recurrenceproperties#interval
+[month link]: /javascript/api/outlook/office.recurrenceproperties#month
+[weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weekNumber
