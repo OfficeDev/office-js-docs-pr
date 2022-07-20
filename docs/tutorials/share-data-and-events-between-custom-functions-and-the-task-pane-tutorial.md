@@ -157,99 +157,99 @@ Now that custom functions run in the same context as your task pane code, they c
 ### Create custom functions to get or store shared state
 
 1. In Visual Studio Code open the file **src/functions/functions.js**.
-2. On line 1, insert the following code at the very top. This will initialize a global variable named **sharedState**.
+1. On line 1, insert the following code at the very top. This will initialize a global variable named **sharedState**.
 
-   ```js
-   window.sharedState = "empty";
-   ```
+    ```js
+    window.sharedState = "empty";
+    ```
 
-3. Add the following code to create a custom function that stores values to the **sharedState** variable.
+1. Add the following code to create a custom function that stores values to the **sharedState** variable.
 
-   ```js
-   /**
-    * Saves a string value to shared state with the task pane
-    * @customfunction STOREVALUE
-    * @param {string} value String to write to shared state with task pane.
-    * @return {string} A success value
-    */
-   function storeValue(sharedValue) {
-     window.sharedState = sharedValue;
-     return "value stored";
-   }
-   ```
+    ```js
+    /**
+     * Saves a string value to shared state with the task pane
+     * @customfunction STOREVALUE
+     * @param {string} value String to write to shared state with task pane.
+     * @return {string} A success value
+     */
+    function storeValue(sharedValue) {
+      window.sharedState = sharedValue;
+      return "value stored";
+    }
+    ```
 
-4. Add the following code to create a custom function that gets the current value of the **sharedState** variable.
+1. Add the following code to create a custom function that gets the current value of the **sharedState** variable.
 
-   ```js
-   /**
-    * Gets a string value from shared state with the task pane
-    * @customfunction GETVALUE
-    * @returns {string} String value of the shared state with task pane.
-    */
-   function getValue() {
-     return window.sharedState;
-   }
-   ```
+    ```js
+    /**
+     * Gets a string value from shared state with the task pane
+     * @customfunction GETVALUE
+     * @returns {string} String value of the shared state with task pane.
+     */
+    function getValue() {
+      return window.sharedState;
+    }
+    ```
 
-5. Save the file.
+1. Save the file.
 
 ### Create task pane controls to work with global data
 
 1. Open the file **src/taskpane/taskpane.html**.
-2. Add the following script element just before the closing `</head>` element.
+1. Add the following script element just before the closing `</head>` element.
 
-   ```html
-   <script src="../functions/functions.js"></script>
-   ```
+    ```HTML
+    <script src="../functions/functions.js"></script>
+    ```
 
-3. After the closing `</main>` element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
+1. After the closing `</main>` element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
 
-   ```html
-   <ol>
-     <li>
-       Enter a value to send to the custom function and select
-       <strong>Store</strong>.
-     </li>
-     <li>
-       Enter <strong>=CONTOSO.GETVALUE()</strong> into a cell to retrieve it.
-     </li>
-     <li>
-       To send data to the task pane, in a cell, enter
-       <strong>=CONTOSO.STOREVALUE("new value")</strong>
-     </li>
-     <li>Select <strong>Get</strong> to display the value in the task pane.</li>
-   </ol>
+    ```HTML
+    <ol>
+      <li>
+        Enter a value to send to the custom function and select
+        <strong>Store</strong>.
+      </li>
+      <li>
+        Enter <strong>=CONTOSO.GETVALUE()</strong> into a cell to retrieve it.
+      </li>
+      <li>
+        To send data to the task pane, in a cell, enter
+        <strong>=CONTOSO.STOREVALUE("new value")</strong>
+      </li>
+      <li>Select <strong>Get</strong> to display the value in the task pane.</li>
+    </ol>
 
-   <p>Store new value to shared state</p>
-   <div>
-     <input type="text" id="storeBox" />
-     <button onclick="storeSharedValue()">Store</button>
-   </div>
+    <p>Store new value to shared state</p>
+    <div>
+      <input type="text" id="storeBox" />
+      <button onclick="storeSharedValue()">Store</button>
+    </div>
 
-   <p>Get shared state value</p>
-   <div>
-     <input type="text" id="getBox" />
-     <button onclick="getSharedValue()">Get</button>
-   </div>
-   ```
+    <p>Get shared state value</p>
+    <div>
+      <input type="text" id="getBox" />
+      <button onclick="getSharedValue()">Get</button>
+    </div>
+    ```
 
-4. Before the closing `</body>` element, add the following script. This code will handle the button click events when the user wants to store or get global data.
+1. Before the closing `</body>` element, add the following script. This code will handle the button click events when the user wants to store or get global data.
 
-   ```js
-   <script>
-   function storeSharedValue() {
-     let sharedValue = document.getElementById('storeBox').value;
-     window.sharedState = sharedValue;
-   }
+    ```HTML
+    <script>
+      function storeSharedValue() {
+        let sharedValue = document.getElementById('storeBox').value;
+        window.sharedState = sharedValue;
+      }
 
-   function getSharedValue() {
-     document.getElementById('getBox').value = window.sharedState;
-   }
+      function getSharedValue() {
+        document.getElementById('getBox').value = window.sharedState;
+      }
    </script>
    ```
 
-5. Save the file.
-6. Build the project
+1. Save the file.
+1. Build the project
 
    ```command line
    npm run build
@@ -257,11 +257,11 @@ Now that custom functions run in the same context as your task pane code, they c
 
 ### Try sharing data between the custom functions and task pane
 
-- Start the project by using the following command.
+Start the project by using the following command.
 
-  ```command line
-  npm run start
-  ```
+```command line
+npm run start
+```
 
 Once Excel starts, you can use the task pane buttons to store or get shared data. Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data. Or use `=CONTOSO.STOREVALUE("new value")` to change the shared data to a new value.
 

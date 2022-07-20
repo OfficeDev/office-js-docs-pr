@@ -18,10 +18,10 @@ An embedded Visio diagram is a diagram that is stored in a SharePoint document l
 
 You can use the Visio JavaScript APIs to:
 
-* Interact with Visio diagram elements like pages and shapes.
-* Create visual markup on the Visio diagram canvas.
-* Write custom handlers for mouse events within the drawing.
-* Expose diagram data, such as shape text, shape data, and hyperlinks, to your solution.
+- Interact with Visio diagram elements like pages and shapes.
+- Create visual markup on the Visio diagram canvas.
+- Write custom handlers for mouse events within the drawing.
+- Expose diagram data, such as shape text, shape data, and hyperlinks, to your solution.
 
 This article describes how to use the Visio JavaScript APIs with Visio on the web to build your solutions for SharePoint Online. It introduces key concepts that are fundamental to using the APIs, such as `EmbeddedSession`, `RequestContext`, and JavaScript proxy objects, and the `sync()`, `Visio.run()`, and `load()` methods. The code examples show you how to apply these concepts.
 
@@ -40,7 +40,7 @@ session.init().then(function () {
 
 `Visio.run()` executes a batch script that performs actions on the Visio object model. The batch commands include definitions of local JavaScript proxy objects and `sync()` methods that synchronize the state between local and Visio objects and promise resolution. The advantage of batching requests in `Visio.run()` is that when the promise is resolved, any tracked page objects that were allocated during the execution will be automatically released.
 
-The run function takes in session and RequestContext object and returns a promise (typically, just the result of `context.sync()`). It is possible to run the batch operation outside of the `Visio.run()`. However, in such a scenario, any page object references needs to be manually tracked and managed.
+The `run` function takes in session and RequestContext object and returns a promise (typically, just the result of `context.sync()`). It is possible to run the batch operation outside of the `Visio.run()`. However, in such a scenario, any page object references needs to be manually tracked and managed.
 
 ## RequestContext
 
@@ -132,7 +132,7 @@ Errors are returned using an error object that consists of a code and a message.
 
 You can use the example in this section to get started. This example shows you how to programmatically display the shape text of the selected shape in a Visio diagram. To begin, create a classic page in SharePoint Online or edit an existing page. Add a script editor webpart on the page and copy-paste the following code.
 
-```js
+```HTML
 <script src='https://appsforoffice.microsoft.com/embedded/1.0/visio-web-embedded.js' type='text/javascript'></script>
 
 Enter Visio File Url:<br/>

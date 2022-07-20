@@ -46,7 +46,7 @@ The following methods are available on the `Storage` object.
 
 ### OfficeRuntime.storage example
 
-The following code sample calls the `OfficeRuntime.storage.setItem` function to set a key and value into `storage`.
+The following code sample calls the `OfficeRuntime.storage.setItem` method to set a key and value into `storage`.
 
 ```js
 function StoreValue(key, value) {
@@ -65,6 +65,6 @@ Learn how to [debug custom functions](custom-functions-debugging.md).
 
 ## See also
 
-* [Authentication for custom functions without a shared runtime](custom-functions-authentication.md)
-* [Create custom functions in Excel](custom-functions-overview.md)
-* [Custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Authentication for custom functions without a shared runtime](custom-functions-authentication.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
+- [Custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

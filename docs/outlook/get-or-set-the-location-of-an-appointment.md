@@ -44,7 +44,7 @@ const locations = [
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Check for the DOM to load using the jQuery ready function.
+    // Check for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Add to the location of the item being composed.
@@ -62,7 +62,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the location of the item being composed.
@@ -90,7 +90,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the location of the item being composed.
@@ -121,7 +121,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the location of the item being composed.
@@ -163,7 +163,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Check for the DOM to load using the jQuery ready function.
+    // Check for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set the location of the item being composed.

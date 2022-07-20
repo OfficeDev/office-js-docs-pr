@@ -507,7 +507,7 @@ const xmlServiceUrl = "WebService.asmx/Define?Word=";
 // Initialize the add-in.
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
     // After the DOM is loaded, app-specific code can run.
     // Store a reference to the current document.

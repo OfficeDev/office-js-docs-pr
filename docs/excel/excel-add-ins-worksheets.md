@@ -400,7 +400,7 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> This section describes how to find cells and ranges using the `Worksheet` object's functions. More range retrieval information can be found in object-specific articles.
+> This section describes how to find cells and ranges using the `Worksheet` object's methods. More range retrieval information can be found in object-specific articles.
 >
 > - For examples that show how to get a range within a worksheet using the `Range` object, see [Get a range using the Excel JavaScript API](excel-add-ins-ranges-get.md).
 > - For examples that show how to get ranges from a `Table` object, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md).

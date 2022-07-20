@@ -42,7 +42,7 @@ The following JavaScript example is a compose add-in that attaches a file, pictu
 
 ```js
 Office.initialize = function () {
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Add the specified file attachment to the item
