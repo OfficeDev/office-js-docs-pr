@@ -188,7 +188,7 @@ if (loginSuccess) {
 > [!NOTE]
 >
 > - The `loginSuccess` variable would be initialized by reading the HTTP response from the identity provider.
-> - The the implementation of the `getProfile` and `getError` functions are not not shown. They each get data from a query parameter or from the body of the HTTP response.
+> - The implementation of the `getProfile` and `getError` functions is not shown. They each get data from a query parameter or from the body of the HTTP response.
 > - Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
 
 The handler code in the host page uses the value of the `messageType` property to branch as shown in the following example. Note that the `showUserName` function is the same as in the previous example and `showNotification` function displays the error in the host page's UI.
@@ -286,7 +286,7 @@ function sheetPropertiesChanged() {
 
 ### Handle DialogParentMessageReceived in the dialog box
 
-In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event with the [UI.addHandlerAsync](/javascript/api/office/office.ui#office-office-ui-addhandlerasync-member(1)) method. This is typically done in the [Office.onReady or Office.initialize methods](initialize-add-in.md), as shown in the following. (A more robust example is below.)
+In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event with the [UI.addHandlerAsync](/javascript/api/office/office.ui#office-office-ui-addhandlerasync-member(1)) method. This is typically done in the [Office.onReady or Office.initialize function](initialize-add-in.md), as shown in the following. (A more robust example is included later in this article.)
 
 ```javascript
 Office.onReady()
@@ -366,7 +366,7 @@ function onMessageFromParent(arg) {
 }
 ```
 
-For example, your code could use the [Office.onReady or Office.initialize methods](initialize-add-in.md) to store an array of trusted domains in a global variable. The `arg.origin` property could then be checked against that list in the handler.
+For example, your code could use the [Office.onReady or Office.initialize function](initialize-add-in.md) to store an array of trusted domains in a global variable. The `arg.origin` property could then be checked against that list in the handler.
 
 > [!TIP]
 > The `DialogMessageOptions` parameter was added to the `messageChild` method as a required parameter in mid-2021. Older add-ins that send a cross-domain message with the method no longer work until they are updated to use the new parameter. Until the add-in is updated, *on Office for Windows only*, users and system administrators can enable those add-ins to continue working by specifying the trusted domain(s) with a registry setting: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. To do this, create a file with a `.reg` extension, save it to the Windows computer, and then double-click it to run it. The following is an example of the contents of such a file.

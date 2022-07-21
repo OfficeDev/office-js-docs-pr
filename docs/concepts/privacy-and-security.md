@@ -15,7 +15,7 @@ Office Add-ins are secured by an add-in runtime environment, a multiple-tier per
 
 - Only indirect access to the Office client application's UI thread is allowed.
 
-- Modal interactions aren't allowed - for example, calls to JavaScript `alert`, `confirm`, and `prompt` functions aren't allowed because they're modal.
+- Modal interactions aren't allowed - for example, calls to JavaScript `alert`, `confirm`, and `prompt` methods aren't allowed because they're modal.
 
 Further, the runtime framework provides the following benefits to ensure that an Office Add-in can't damage the user's environment.
 

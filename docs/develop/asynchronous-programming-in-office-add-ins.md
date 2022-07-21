@@ -186,7 +186,7 @@ function write(message){
 
 Instead of passing a callback function and waiting for the function to return before execution continues, the promises programming pattern immediately returns a promise object that represents its intended result. However, unlike true synchronous programming, under the covers the fulfillment of the promised result is actually deferred until the Office Add-ins runtime environment can complete the request. An *onError* handler is provided to cover situations when the request can't be fulfilled.
 
-The Office JavaScript API provides the [Office.select](/javascript/api/office#Office_select_expression__callback_) method to support the promises pattern for working with existing binding objects. The promise object returned to the `Office.select` method supports only the four methods that you can access directly from the [Binding](/javascript/api/office/office.binding) object: [getDataAsync](/javascript/api/office/office.binding#office-office-binding-getdataasync-member(1)), [setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1)), [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)), and [removeHandlerAsync](/javascript/api/office/office.binding#office-office-binding-removehandlerasync-member(1)).
+The Office JavaScript API provides the [Office.select](/javascript/api/office#Office_select_expression__callback_) function to support the promises pattern for working with existing binding objects. The promise object returned to the `Office.select` function supports only the four methods that you can access directly from the [Binding](/javascript/api/office/office.binding) object: [getDataAsync](/javascript/api/office/office.binding#office-office-binding-getdataasync-member(1)), [setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1)), [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)), and [removeHandlerAsync](/javascript/api/office/office.binding#office-office-binding-removehandlerasync-member(1)).
 
 The promises pattern for working with bindings takes this form.
 
@@ -194,7 +194,7 @@ The promises pattern for working with bindings takes this form.
 
 The *selectorExpression* parameter takes the form `"bindings#bindingId"`, where *bindingId* is the name ( `id`) of a binding that you created previously in the document or spreadsheet (using one of the "addFrom" methods of the `Bindings` collection: `addFromNamedItemAsync`, `addFromPromptAsync`, or `addFromSelectionAsync`). For example, the selector expression `bindings#cities` specifies that you want to access the binding with an **id** of 'cities'.
 
-The *onError* parameter is an error handling function which takes a single parameter of type `AsyncResult` that can be used to access an `Error` object, if the `select` method fails to access the specified binding. The following example shows a basic error handler function that can be passed to the *onError* parameter.
+The *onError* parameter is an error handling function which takes a single parameter of type `AsyncResult` that can be used to access an `Error` object, if the `select` function fails to access the specified binding. The following example shows a basic error handler function that can be passed to the *onError* parameter.
 
 ```js
 function onError(result){
@@ -212,7 +212,7 @@ Replace the *BindingObjectAsyncMethod* placeholder with a call to any of the fou
 
 After a `Binding` object promise is fulfilled, it can be reused in the chained method call as if it were a binding (the add-in runtime won't asynchronously retry fulfilling the promise). If the `Binding` object promise can't be fulfilled, the add-in runtime will try again to access the binding object the next time one of its asynchronous methods is invoked.
 
-The following code example uses the `select` method to retrieve a binding with the `id` "`cities`" from the `Bindings` collection, and then calls the [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) method to add an event handler for the [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) event of the binding.
+The following code example uses the `select` function to retrieve a binding with the `id` "`cities`" from the `Bindings` collection, and then calls the [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) method to add an event handler for the [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) event of the binding.
 
 ```js
 function addBindingDataChangedEventHandler() {
@@ -225,7 +225,7 @@ function addBindingDataChangedEventHandler() {
 ```
 
 > [!IMPORTANT]
-> The `Binding` object promise returned by the `Office.select` method provides access to only the four methods of the `Binding` object. If you need to access any of the other members of the `Binding` object, instead you must use the `Document.bindings` property and `Bindings.getByIdAsync` or `Bindings.getAllAsync` methods to retrieve the `Binding` object. For example, if you need to access any of the `Binding` object's properties (the `document`, `id`, or `type` properties), or need to access the properties of the [MatrixBinding](/javascript/api/office/office.matrixbinding) or [TableBinding](/javascript/api/office/office.tablebinding) objects, you must use the `getByIdAsync` or `getAllAsync` methods to retrieve a `Binding` object.
+> The `Binding` object promise returned by the `Office.select` function provides access to only the four methods of the `Binding` object. If you need to access any of the other members of the `Binding` object, instead you must use the `Document.bindings` property and `Bindings.getByIdAsync` or `Bindings.getAllAsync` methods to retrieve the `Binding` object. For example, if you need to access any of the `Binding` object's properties (the `document`, `id`, or `type` properties), or need to access the properties of the [MatrixBinding](/javascript/api/office/office.matrixbinding) or [TableBinding](/javascript/api/office/office.tablebinding) objects, you must use the `getByIdAsync` or `getAllAsync` methods to retrieve a `Binding` object.
 
 ## Pass optional parameters to asynchronous methods
 
@@ -358,10 +358,10 @@ function getDocumentFilePath() {
 }
 ```
 
-When this method needs to be awaited, it can be called either with the `await` keyword or as the function passed to a `then` function.
+When this function needs to be awaited, it can be either called with the `await` keyword or passed to a `then` function.
 
 > [!NOTE]
-> This technique is especially useful when you need to call one of the Common APIs inside a call of the `run` method in one of the application-specific object models. For an example of the function above being used in this way, see the file [Home.js in the sample Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js).
+> This technique is especially useful when you need to call a Common API inside a call of the `run` function in an application-specific object model. For an example of the `getDocumentFilePath` function being used in this way, see the file [Home.js in the sample Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js).
 
 The following is an example using TypeScript.
 

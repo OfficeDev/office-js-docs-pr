@@ -317,7 +317,7 @@ items:
       href: testing/runtime-logging.md
     - name: Debug a function command with a non-shared runtime
       href: testing/debug-function-command.md
-    - name: Debug the initialize and onReady methods
+    - name: Debug the initialize and onReady functions
       href: testing/debug-initialize-onready.md
     - name: Errors
       items:

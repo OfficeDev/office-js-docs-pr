@@ -507,7 +507,7 @@ const xmlServiceUrl = "WebService.asmx/Define?Word=";
 // Initialize the add-in.
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
     // After the DOM is loaded, app-specific code can run.
     // Store a reference to the current document.
@@ -520,7 +520,7 @@ Office.initialize = function (reason) {
 }
 
 // Executes when event is raised on user's selection changes, and at initialization time. 
-// Gets the current selection and passes that to asynchronous callback method.
+// Gets the current selection and passes that to asynchronous callback function.
 function tryUpdatingSelectedWord() {
     _doc.getSelectedDataAsync(Office.CoercionType.Text, selectedTextCallback); 
 }

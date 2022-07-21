@@ -95,7 +95,7 @@ let _customProps;
 
 // The initialize function is required for all add-ins.
 Office.initialize = function () {
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
     // After the DOM is loaded, add-in-specific code can run.
     _mailbox = Office.context.mailbox;

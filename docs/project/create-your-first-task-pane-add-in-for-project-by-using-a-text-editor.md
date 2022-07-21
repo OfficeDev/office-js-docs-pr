@@ -102,7 +102,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
 1. Create a JavaScript file named JSOM_Sample.js in the same directory as the JSOMCall.html file.
 
-   The following code gets the application context and document information by using functions in the Office.js file. The `text` object is the ID of the `textarea` control in the HTML file.
+   The following code gets the application context and document information by using methods in the Office.js file. The `text` object is the ID of the `textarea` control in the HTML file.
 
    The **\_projDoc** variable is initialized with a `ProjectDocument` object. The code includes some simple error handling functions, and the `getContextValues` function that gets application context and project document context properties. For more information about the JavaScript object model for Project, see [JavaScript API for Office](../reference/javascript-api-for-office.md).
 
@@ -119,7 +119,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
     // The initialize function is required for all add-ins.
     Office.initialize = function (reason) {
-        // Checks for the DOM to load using the jQuery ready function.
+        // Checks for the DOM to load using the jQuery ready method.
         $(document).ready(function () {
             // After the DOM is loaded, app-specific code can run.
             _projDoc = Office.context.document;
@@ -168,25 +168,25 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
    For information about the functions in the Office.debug.js file, see [Office JavaScript API](../reference/javascript-api-for-office.md). For example, the `getDocumentUrl` function gets the URL or file path of the open project.
 
-1. Add JavaScript functions that call asynchronous functions in Office.js and Project-15.js to get selected data:
+1. Add JavaScript functions that call asynchronous methods in Office.js and Project-15.js to get selected data:
 
-   - For example, `getSelectedDataAsync` is a general function in Office.js that gets unformatted text for the selected data. For more information, see [AsyncResult object](/javascript/api/office/office.asyncresult).
+   - For example, `getSelectedDataAsync` is a general method in Office.js that gets unformatted text for the selected data. For more information, see [Document object](/javascript/api/office/office.document#office-office-document-getselectedtaskasync-member(1)).
 
    - The `getSelectedTaskAsync` function in Project-15.js gets the GUID of the selected task. Similarly, the `getSelectedResourceAsync` function gets the GUID of the selected resource. If you call those functions when a task or a resource is not selected, the functions show an undefined error.
 
    - The `getTaskAsync` function gets the task name and the names of the assigned resources. If the task is in a synchronized SharePoint task list, `getTaskAsync` gets the task ID in the SharePoint list; otherwise, the SharePoint task ID is 0.
 
      > [!NOTE]
-     > For demonstration purposes, the example code includes a bug. If `taskGuid` is undefined, the `getTaskAsync` function errors off. If you get a valid task GUID and then select a different task, the `getTaskAsync` function gets data for the most recent task that was operated on by the `getSelectedTaskAsync` function.
+     > For demonstration purposes, the example code includes a bug. If `taskGuid` is undefined, the `getTaskAsync` function errors out. If you get a valid task GUID and then select a different task, the `getTaskAsync` function gets data for the most recent task that was operated on by the `getSelectedTaskAsync` function.
   
    - `getTaskFields`, `getResourceFields`, and `getProjectFields` are local functions that call `getTaskFieldAsync`, `getResourceFieldAsync`, or `getProjectFieldAsync` multiple times to get specified fields of a task or a resource. In the project-15.debug.js file, the `ProjectTaskFields` enumeration and the `ProjectResourceFields` enumeration show which fields are supported.
 
    - The `getSelectedViewAsync` function gets the type of view (defined in the `ProjectViewTypes` enumeration in project-15.debug.js) and the name of the view.
 
-   - If the project is synchronized with a SharePoint tasks list, the `getWSSUrlAsync` function gets the URL and the name of the tasks list. If the project is not synchronized with a SharePoint tasks list, the `getWSSUrlAsync` function errors off.
+   - If the project is synchronized with a SharePoint tasks list, the `getWSSUrlAsync` function gets the URL and the name of the tasks list. If the project is not synchronized with a SharePoint tasks list, the `getWSSUrlAsync` function errors out.
 
      > [!NOTE]
-     > To get the SharePoint URL and name of the tasks list, we recommend that you use the `getProjectFieldAsync` function with the `WSSUrl` and `WSSList` constants in the [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) enumeration.
+     > To get the SharePoint URL and name of the tasks list, we recommend that you use the `getProjectFieldAsync` method with the `WSSUrl` and `WSSList` constants in the [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) enumeration.
 
    Each of the functions in the following code includes an anonymous function that is specified by  `function (asyncResult)`, which is a callback that gets the asynchronous result. Instead of anonymous functions, you could use named functions, which can help with maintainability of complex add-ins.
 
@@ -543,9 +543,9 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     }
     ```
 
-1. Add JavaScript event handler callbacks and functions to register the task selection, resource selection, and view selection change event handlers and to unregister the event handlers. The `manageEventHandlerAsync` function adds or removes the specified event handler, depending on the _operation_ parameter. The operation can be `addHandlerAsync` or `removeHandlerAsync`.
+1. Add JavaScript event handler callbacks and functions to register the task selection, resource selection, and view selection change event handlers and to unregister the event handlers. The `manageEventHandlerAsync` function adds or removes the specified event handler, depending on the *operation* parameter. The operation can be `addHandlerAsync` or `removeHandlerAsync`.
 
-   The `manageTaskEventHandler`, `manageResourceEventHandler`, and `manageViewEventHandler` functions can add or remove an event handler, as specified by the _docMethod_ parameter.
+   The `manageTaskEventHandler`, `manageResourceEventHandler`, and `manageViewEventHandler` functions can add or remove an event handler, as specified by the *docMethod* parameter.
 
     ```js
     // Task selection changed event handler.
@@ -754,7 +754,7 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
     - WSS Id: `0`
     - ResourceNames: `R1[50%],R2[50%]`
 
-1. Select the **Get Task Fields** button. The `getTaskFields` function calls the `getTaskfieldAsync` function multiple times for the task name, index, start date, duration, priority, and task notes.
+1. Select the **Get Task Fields** button. The `getTaskFields` function calls the `getTaskFieldAsync` method multiple times for the task name, index, start date, duration, priority, and task notes.
 
     - Name: `T2`
     - ID: `2`

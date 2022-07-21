@@ -57,7 +57,7 @@ Sometimes when running `npm start` you may see an error that the dev server is a
 
 ### My functions won't load: associate functions
 
-In cases where your JSON has not been registered and you have authored your own JSON metadata, you may see a `#VALUE!` error or receive a notification that your add-in cannot be loaded. This usually means you need to associate each custom function with its `id` property specified in the [JSON metadata file](custom-functions-json.md). This is done by using the `CustomFunctions.associate()` method. Typically this method call is made after each function or at the end of the script file. If a custom function is not associated, it will not work.
+In cases where your JSON has not been registered and you have authored your own JSON metadata, you may see a `#VALUE!` error or receive a notification that your add-in cannot be loaded. This usually means you need to associate each custom function with its `id` property specified in the [JSON metadata file](custom-functions-json.md). This is done by using the `CustomFunctions.associate()` function. Typically this function call is made after each function or at the end of the script file. If a custom function is not associated, it will not work.
 
 The following example shows an add function, followed by the function's name `add` being associated with the corresponding JSON id `ADD`.
 
