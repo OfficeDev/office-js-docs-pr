@@ -29,11 +29,11 @@ To use the `makeEwsRequestAsync` method to initiate an EWS operation, provide th
 
 - The XML for the SOAP request for that EWS operation, as an argument to the  _data_ parameter
 
-- A callback method (as the  _callback_ argument)
+- A callback function (as the  _callback_ argument)
 
-- Any optional input data for that callback method (as the  _userContext_ argument)
+- Any optional input data for that callback function (as the  _userContext_ argument)
 
-When the EWS SOAP request is complete, Outlook calls the callback method with one argument, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. The callback method can access two properties of the `AsyncResult` object: the `value` property, which contains the XML SOAP response of the EWS operation, and optionally, the `asyncContext` property, which contains any data passed as the `userContext` parameter. Typically, the callback method then parses the XML in the SOAP response to get any relevant information, and processes that information accordingly.
+When the EWS SOAP request is complete, Outlook calls the callback function with one argument, which is an [AsyncResult](/javascript/api/office/office.asyncresult) object. The callback function can access two properties of the `AsyncResult` object: the `value` property, which contains the XML SOAP response of the EWS operation, and optionally, the `asyncContext` property, which contains any data passed as the `userContext` parameter. Typically, the callback function then parses the XML in the SOAP response to get any relevant information, and processes that information accordingly.
 
 ## Tips for parsing EWS responses
 
@@ -86,7 +86,7 @@ The following example calls `makeEwsRequestAsync` to use the [GetItem](/exchange
 
 - `getSubjectRequest` &ndash; Takes an item ID as input, and returns the XML for the SOAP request to call `GetItem` for the specified item.
 
-- `sendRequest` &ndash; Calls  `getSubjectRequest` to get the SOAP request for the selected item, then passes the SOAP request and the callback method, `callback`, to `makeEwsRequestAsync` to get the subject of the specified item.
+- `sendRequest` &ndash; Calls  `getSubjectRequest` to get the SOAP request for the selected item, then passes the SOAP request and the callback function, `callback`, to `makeEwsRequestAsync` to get the subject of the specified item.
 
 - `callback` &ndash; Processes the SOAP response which includes any subject and other information about the specified item.
 
@@ -143,9 +143,9 @@ The following describes how you can use the `makeEwsRequestAsync` method.
 
 1. Include the SOAP request as an argument for the  _data_ parameter of `makeEwsRequestAsync`.
 
-1. Specify a callback method and call `makeEwsRequestAsync`.
+1. Specify a callback function and call `makeEwsRequestAsync`.
 
-1. In the callback method, verify the results of the operation in the SOAP response.
+1. In the callback function, verify the results of the operation in the SOAP response.
 
 1. Use the results of the EWS operation according to your needs.
 

@@ -71,7 +71,7 @@ Use the following settings for your app registration.
 1. Set the **State** to **Enabled**, and then select **Add scope**.
 
     > [!NOTE]
-    > The domain part of the **\<Scope\>** name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
+    > The domain part of the **\<Scope\>** name displayed just after the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
 1. In the **Authorized client applications** section, enter the following ID to pre-authorize all Microsoft Office application endpoints.
 
@@ -163,12 +163,12 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. Open the HomeES6.js file in the **Scripts** folder. It already has some code in it.
 
     - A polyfill that assigns the Office.Promise object to the global window object so that the add-in can run when Office is using Internet Explorer for the UI. (For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).)
-    - An assignment to the `Office.initialize` method that, in turn, assigns a handler to the `getGraphAccessTokenButton` button click event.
+    - An assignment to the `Office.initialize` function that, in turn, assigns a handler to the `getGraphAccessTokenButton` button click event.
     - A `showResult` method that will display data returned from Microsoft Graph (or an error message) at the bottom of the task pane.
     - A `logErrors` method that will log to console errors that are not intended for the end user.
     - Code that implements the fallback authorization system that the add-in will use in scenarios where SSO is not supported or an error occurred.
 
-1. Below the assignment to `Office.initialize`, add the code below. About this code, note:
+1. After the assignment to `Office.initialize`, add the following code. About this code, note:
 
     - The error-handling in the add-in will sometimes automatically attempt a second time to get an access token, using a different set of options. The counter variable `retryGetAccessToken` is used to ensure that the user isn't cycled repeatedly through failed attempts to get a token.
     - The `getGraphData` function is defined with the ES6 `async` keyword. Using ES6 syntax makes the SSO API in Office Add-ins much easier to to use. This is the only file in the solution that will use syntax that is not supported by Internet Explorer. We put 'ES6' in the filename as a reminder. The solution uses the tsc transpiler to transpile this file to ES5, so that the add-in can run when Office is using Internet Explorer for the UI. (See the tsconfig.json file in the root of the project.)
@@ -181,7 +181,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     }
     ```
 
-1. Below the `getGraphData` function add the following function. Note that you create the `handleClientSideErrors` function in a later step.
+1. After the `getGraphData` function, add the following function. Note that you create the `handleClientSideErrors` function in a later step.
 
     > [!NOTE]
     > To distinguish between the two access tokens you work with in this article, the token returned from getAccessToken() is referred to as a bootstrap token. It is later exchanged through the On-Behalf-Of flow for a new token with access to Microsoft Graph.
@@ -206,7 +206,8 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     }
     ```
 
-1. Replace `TODO 1` with the following code to get the access token from the Office host. The **options** parameter contains the following settings passed from the previous **getGraphData()** function.
+
+1. Replace `TODO 1` with the following code to get the access token from the Office host. The *options* parameter contains the following settings passed from the previous `getGraphData()` function.
 
     - `allowSignInPrompt` is set to true. This tells Office to prompt the user to sign in if the user isn't already signed into Office.
     - `allowConsentPrompt` is set to true. This tells Office to prompt the user to consent to letting the add-in access the user's Microsoft Azure Active Directory profile, if consent has not already been granted. (The resulting prompt does *not* allow the user to consent to any Microsoft Graph scopes.)
@@ -223,7 +224,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     getData("/api/values", bootstrapToken);
     ```
 
-1. Below the `getGraphData` function, add the following. About this code, note:
+1. After the `getGraphData` function, add the following. About this code, note:
 
     - It is used by both the SSO and the fallback authorization systems.
     - The `relativeUrl` parameter is a server-side controller.
@@ -256,7 +257,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 ### Handle client-side errors
 
-1. Below the `getData` function, add the following function. Note that `error.code` is a number, usually in the range 13xxx.
+1. After the `getData` function, add the following function. Note that `error.code` is a number, usually in the range 13xxx.
 
     ```javascript
     function handleClientSideErrors(error) {
@@ -279,12 +280,12 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         // No one is signed into Office. If the add-in cannot be effectively used when no one
         // is logged into Office, then the first call of getAccessToken should pass the
         // `allowSignInPrompt: true` option.
-        showResult(["No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to sign in, press the Get OneDrive File Names button again."]);
+        showResult(["No one is signed into Office. But you can use many of the add-in's functions anyway. If you want to sign in, press the Get OneDrive File Names button again."]);
         break;
     case 13002:
         // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
         // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
-        showResult(["You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."]);
+        showResult(["You can use many of the add-in's functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."]);
         break;
     case 13006:
         // Only seen in Office on the web.
@@ -310,7 +311,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 ### Handle server-side errors
 
-1. Below the `handleClientSideErrors` function, add the following function.
+1. After the `handleClientSideErrors` function, add the following function.
 
     ```javascript
     function handleServerSideErrors(result) {

@@ -443,7 +443,7 @@ Complete the following steps to add code that navigates between the slides of a 
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-1. In the **Home.js** file, replace `TODO9` with the following code to define the navigation functions. Each of these functions uses the `goToByIdAsync` function to select a slide based upon its position in the document (first, last, previous, and next).
+1. In the **Home.js** file, replace `TODO9` with the following code to define the navigation functions. Each of these functions uses the `goToByIdAsync` method to select a slide based upon its position in the document (first, last, previous, and next).
 
     ```js
     function goToFirstSlide() {

@@ -22,7 +22,7 @@ The following are the prerequisites for creating a Project task pane add-in that
     > [!NOTE]
     > Project Standard 2013 can also host task pane add-ins, but cannot sign in to Project Web App.
 
-- Visual Studio 2015 with Office Developer Tools for Visual Studio includes templates for creating Office and SharePoint Add-ins. Ensure that you have installed the most recent version of Office Developer Tools; see the  _Tools_ section of the [Office Add-ins and SharePoint downloads](https://developer.microsoft.com/office/docs).
+- Visual Studio 2015 with Office Developer Tools for Visual Studio includes templates for creating Office and SharePoint Add-ins. Ensure that you have installed the most recent version of Office Developer Tools; see the  *Tools* section of the [Office Add-ins and SharePoint downloads](https://developer.microsoft.com/office/docs).
 
 - The procedures and code examples in this article access the **ProjectData** service of Project Server 2013 in a local domain. The jQuery methods in this article do not work with Project on the web.
 
@@ -168,12 +168,12 @@ The task pane shows the add-in display name at the top, which is the value of th
 
 1. In the **head** element of the Home.html file, add any additional **link** elements for CSS files that your add-in uses. The Visual Studio project template includes a link for the App.css file that you can use for custom CSS styles.
 
-1. Add any additional **script** elements for JavaScript libraries that your add-in uses. The project template includes links for the jQuery- _[version]_.js, office.js, and MicrosoftAjax.js files in the **Scripts** folder.
+1. Add any additional **script** elements for JavaScript libraries that your add-in uses. The project template includes links for the jQuery- *[version]*.js, office.js, and MicrosoftAjax.js files in the **Scripts** folder.
 
     > [!NOTE]
     > Before you deploy the add-in, change the office.js reference and the jQuery reference to the content delivery network (CDN) reference. The CDN reference provides the most recent version and better performance.
 
-    The **HelloProjectOData** add-in also uses the SurfaceErrors.js file, which displays errors in a pop-up message. You can copy the code from the _Robust Programming_ section of [Create your first task pane add-in for Project 2013 by using a text editor](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md), and then add a SurfaceErrors.js file in the **Scripts\Office** folder of the **HelloProjectODataWeb** project.
+    The **HelloProjectOData** add-in also uses the SurfaceErrors.js file, which displays errors in a pop-up message. You can copy the code from the *Robust Programming* section of [Create your first task pane add-in for Project 2013 by using a text editor](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md), and then add a SurfaceErrors.js file in the **Scripts\Office** folder of the **HelloProjectODataWeb** project.
 
     Following is the updated HTML code for the **head** element, with the additional line for the SurfaceErrors.js file.
 
@@ -294,14 +294,14 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
 
     // The initialize function is required for all add-ins.
     Office.initialize = function (reason) {
-        // Checks for the DOM to load using the jQuery ready function.
+        // Checks for the DOM to load using the jQuery ready method.
         $(document).ready(function () {
             // After the DOM is loaded, app-specific code can run.
         });
     }
     ```
 
-1. Add `setOdataUrl` and related functions. The `setOdataUrl` function calls `getProjectGuid` and `getDocumentUrl` to initialize the global variables. In the [getProjectFieldAsync method](/javascript/api/office/office.document), the anonymous function for the  _callback_ parameter enables the **Compare All Projects** button by using the `removeAttr` method in the jQuery library, and then displays the URL of the **ProjectData** service. If Project is not connected with Project Web App, the function throws an error, which displays a pop-up error message. The SurfaceErrors.js file includes the `throwError` method.
+1. Add `setOdataUrl` and related functions. The `setOdataUrl` function calls `getProjectGuid` and `getDocumentUrl` to initialize the global variables. In the [getProjectFieldAsync method](/javascript/api/office/office.document), the anonymous function for the  *callback* parameter enables the **Compare All Projects** button by using the `removeAttr` method in the jQuery library, and then displays the URL of the **ProjectData** service. If Project is not connected with Project Web App, the function throws an error, which displays a pop-up error message. The SurfaceErrors.js file includes the `throwError` function.
 
    > [!NOTE]
    > If you run Visual Studio on the Project Server computer, to use **F5** debugging, uncomment the code after the line that initializes the `_pwa` global variable. To enable using the jQuery `ajax` method when debugging on the Project Server computer, you must set the `localhost` value for the PWA URL.If you run Visual Studio on a remote computer, the `localhost` URL is not required. Before you deploy the add-in, comment out that code.
@@ -367,7 +367,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
    > [!NOTE]
    > The following code works with an on-premises installation of Project Server 2013. For Project on the web, you can use OAuth for token-based authentication. For more information, see [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
 
-   In the `ajax` call, you can use either the _headers_ parameter or the _beforeSend_ parameter. The _complete_ parameter is an anonymous function so that it is in the same scope as the variables in `retrieveOData`. The function for the  _complete_ parameter displays results in the `odataText` control and also calls the `parseODataResult` method to parse and display the JSON response. The _error_ parameter specifies the named `getProjectDataErrorHandler` function, which writes an error message to the `odataText` control and also uses the `throwError` method to display a pop-up message.
+   In the `ajax` call, you can use either the *headers* parameter or the *beforeSend* parameter. The *complete* parameter is an anonymous function so that it is in the same scope as the variables in `retrieveOData`. The function for the  *complete* parameter displays results in the `odataText` control and also calls the `parseODataResult` method to parse and display the JSON response. The *error* parameter specifies the named `getProjectDataErrorHandler` function, which writes an error message to the `odataText` control and also uses the `throwError` function to display a pop-up message.
 
     ```js
     // Functions to get and parse the Project Server reporting data./
@@ -423,7 +423,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
     }
     ```
 
-1. Add the `parseODataResult` method, which deserializes and processes the JSON response from the OData service. The `parseODataResult` method calculates average values of the cost and work data to an accuracy of one or two decimal places, formats values with the correct color and adds a unit ( **$**, **hrs**, or **%**), and then displays the values in specified table cells.
+1. Add the `parseODataResult` function, which deserializes and processes the JSON response from the OData service. The `parseODataResult` function calculates average values of the cost and work data to an accuracy of one or two decimal places, formats values with the correct color and adds a unit ( **$**, **hrs**, or **%**), and then displays the values in specified table cells.
 
    If the GUID of the active project matches the `ProjectId` value, the `myProjectIndex` variable is set to the project index. If `myProjectIndex` indicates the active project is published on Project Server, the `parseODataResult` method formats and displays cost and work data for that project. If the active project is not published, values for the active project are displayed as a blue **NA**.
 
@@ -574,7 +574,7 @@ Basic tests should include the following:
 
     ![View results of the REST query.](../images/pj15-hello-project-data-rest-results.png)
 
-1. Examine output in the text box. It should show the document path, REST query, status information, and JSON results from the calls to `ajax` and `parseODataResult`. The output helps to understand, create, and debug code in the `parseODataResult` method such as `projCost += Number(res.d.results[i].ProjectCost);`.
+1. Examine output in the text box. It should show the document path, REST query, status information, and JSON results from the calls to `ajax` and `parseODataResult`. The output helps to understand, create, and debug code in the `parseODataResult` function such as `projCost += Number(res.d.results[i].ProjectCost);`.
 
     Following is an example of the output with line breaks and spaces added to the text for clarity, for three projects in a Project Web App instance.
 
@@ -761,7 +761,7 @@ var _odataUrl = ""; // URL of the OData service: http[s]://ServerName /ProjectSe
 
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
     });
@@ -1088,7 +1088,7 @@ You can copy code for the SurfaceErrors.js file from the _Robust Programming_ se
 
 ## Next steps
 
-If **HelloProjectOData** were a production add-in to be sold in AppSource or distributed in a SharePoint app catalog, it would be designed differently. For example, there would be no debug output in a text box, and probably no button to get the **ProjectData** endpoint. You would also have to rewrite the `retireveOData` function to handle Project Web App instances that have more than 100 projects.
+If **HelloProjectOData** were a production add-in to be sold in AppSource or distributed in a SharePoint app catalog, it would be designed differently. For example, there would be no debug output in a text box, and probably no button to get the **ProjectData** endpoint. You would also have to rewrite the `retrieveOData` function to handle Project Web App instances that have more than 100 projects.
 
 The add-in should contain additional error checks, plus logic to catch and explain or show edge cases. For example, if a Project Web App instance has 1000 projects with an average duration of five days and average cost of $2400, and the active project is the only one that has a duration longer than 20 days, the cost and work comparison would be skewed. That could be shown with a frequency graph. You could add options to display duration, compare similar length projects, or compare projects from the same or different departments. Or, add a way for the user to select from a list of fields to display.
 

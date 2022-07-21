@@ -1,6 +1,6 @@
 ---
 title: Delay execution while cell is being edited
-description: Learn how to delay the execution of the Excel.run method when a cell is being edited.
+description: Learn how to delay the execution of the Excel.run function when a cell is being edited.
 ms.date: 02/16/2022
 ms.localizationpriority: medium
 ---
