@@ -65,8 +65,8 @@ There are four levels of permissions. For more details, see [Understanding Outlo
 |:-----|:-----|:-----|
 | **Restricted** | **MailboxItem.Restricted.User** | Allows use of entities but not regular expressions. |
 | **ReadItem** | **MailboxItem.Read.User** | In addition to what is allowed in **Restricted**, it allows:<ul><li>regular expressions</li><li>Outlook add-in API read access</li><li>getting the item properties and the callback token</li></ul> |
-| **ReadWriteItem** | **MailboxItem.ReadWrite.User** | In addition to what is allowed in **Read item**, it allows:<ul><li>full Outlook add-in API access except `makeEwsRequestAsync`</li><li>setting the item properties</li></ul> |
-| **ReadWriteMailbox** | **Mailbox.ReadWrite.User** | In addition to what is allowed in **Read/write**, it allows:<ul><li>creating, reading, writing items and folders</li><li>sending items</li><li>calling [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
+| **ReadWriteItem** | **MailboxItem.ReadWrite.User** | In addition to what is allowed in **ReadItem**, it allows:<ul><li>full Outlook add-in API access except `makeEwsRequestAsync`</li><li>setting the item properties</li></ul> |
+| **ReadWriteMailbox** | **Mailbox.ReadWrite.User** | In addition to what is allowed in **ReadWriteItem**, it allows:<ul><li>creating, reading, writing items and folders</li><li>sending items</li><li>calling [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
 
 > [!NOTE]
 > There is an supplementary permission that is needed for add-ins that use the append-on-send feature. With the XML manifest, you specify the permission in the [ExtendedPermissions](/javascript/api/manifest/extendedpermissions) element. For details see [Implement append-on-send in your Outlook add-in](append-on-send.md). With the Teams manifest (preview), you specify this permission with the name **Mailbox.AppendOnSend.User** in an additional object in the "authorization.permissions.resourceSpecific" array.
