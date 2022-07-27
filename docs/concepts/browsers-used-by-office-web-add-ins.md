@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: Specifies how the operating system and Office version determine what browser is used by Office Add-ins.
-ms.date: 05/01/2022
+ms.date: 07/27/2022
 ms.localizationpriority: medium
 ---
 
@@ -12,12 +12,13 @@ Office Add-ins are web applications that are displayed using iFrames when runnin
 Which browser is used depends on:
 
 - The computer's operating system.
-- Whether the add-in is running in Office on the web, Microsoft 365, or non-subscription Office 2013 or later.
+- Whether the add-in is running in Office on the web, Microsoft 365, or perpetual (also called "non-subscription" or "one-time purchase") Office 2013 or later.
+- Within the perpetual versions of Office, whether the add-in is running in the "consumer" or "commercial" (also called "volume-licensed" or "LTSC") variation.
 
 > [!IMPORTANT]
 > **Internet Explorer still used in Office Add-ins**
 >
-> Some combinations of platforms and Office versions, including one-time-purchase versions through Office 2019, still use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in this article. We recommend (but don't require) that you continue to support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in the Internet Explorer webview. Keep these additional points in mind:
+> Some combinations of platforms and Office versions, including perpetual versions through Office 2019, still use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in this article. We recommend (but don't require) that you continue to support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in the Internet Explorer webview. Keep these additional points in mind:
 >
 > - Office on the web no longer opens in Internet Explorer. Consequently, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) no longer tests add-ins in Office on the web using Internet Explorer as the browser.
 > - AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer, however it only issues a warning when the add-in does not support Internet Explorer; the add-in is not rejected by AppSource.
@@ -25,16 +26,44 @@ Which browser is used depends on:
 >
 > For more information about supporting Internet Explorer and configuring a graceful failure message on your add-in, see [Support Internet Explorer 11](../develop/support-ie-11.md).
 
-The following table shows which browser is used for the various platforms and operating systems.
+The following sections specify which browser is used for the various platforms and operating systems.
+
+## Non-Windows Platforms
+
+For these platforms, the platform alone determines the browser that is used.
+
+|OS|Office version|Browser|
+|:-----|:-----|:-----|
+|any|Office on the web|The browser in which Office is opened.<br>(But note that Office on the web will not open in Internet Explorer.<br>Attempting to do so opens Office on the web in Edge.) |
+|Mac|any|Safari with WKWebView|
+|iOS|any|Safari with WKWebView|
+|Android|any|Chrome|
+
+## Perpetual Windows
+
+For perpetual licensed Windows, the browser that is used is determined by the operating system, the Office version, whether the license is consumer or commercial, and wether the Edge WebView2 (Chromium-based) is installed.
+
+|OS|Office version|Consumer vs. Commercial|Edge WebView2 (Chromium-based) installed?|Browser|
+|:-----|:-----|:-----|:-----|:-----|
+|Windows 7, 8.1, 10, 11 | Office 2013 | Doesn't matter |Doesn't matter|Internet Explorer 11|
+|Windows 7, 8.1, 10, 11 | Office 2016| Commercial</br>(Build number form is `16.0.xxxx.xxxxx`,</br> ending with two blocks of 4 digits, </br> e.g., 16.0.5197.1000.) |Doesn't matter|Internet Explorer 11|
+|Windows 7, 8.1, 10, 11 | Office 2019| Commercial</br>(Build number form is `1808 (xxxxx.xxxxxx)`,</br> ending with two blocks of 5 digits, </br> e.g., 1808 (Build 10388.20027).)   |Doesn't matter|Internet Explorer 11|
+|Windows 7, 8.1, 10, 11 | Office 2016 to Office 2019| Consumer (Build number form is `YYMM (xxxxx.xxxxxx)`,</br> ending with two blocks of 5 digits, </br> e.g., 2206 (Build 15330.20264).)  |No |Microsoft Edge<sup>1, 2</sup> with original WebView (EdgeHTML)|
+|Windows 7, 8.1, 10, 11 | Office 2016 to Office 2019|  Consumer (Build number form is same as preceding row.)  |Yes<sup>3</sup>|Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
+|Windows 10, 11 | Office 2021| Doesn't matter |Yes<sup>3</sup> |Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
+
+<sup>1</sup> When Microsoft Edge is being used, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. When Internet Explorer 11 is being used, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
+
+<sup>2</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it will not use Microsoft Edge with the original WebView (EdgeHTML). If the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, then the add-in uses that browser. Otherwise, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes).
+
+<sup>3</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with Microsoft 365, version 2101 or later, and with one-time purchase Office 2021 or later; but it isn't automatically installed with Microsoft Edge. If you have an earlier version of Microsoft 365 or one-time purchase Office, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). On Microsoft 365 builds before 16.0.14326.xxxxx, you must also create the registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2** and set its value to `dword:00000001`.
+
+## Microsoft 365 Subscription on Windows
+
+For perpetual licensed Windows, the browser that is used is determined by the operating system, the Office version, and wether the Edge WebView2 (Chromium-based) is installed.
 
 |OS|Office version|Edge WebView2 (Chromium-based) installed?|Browser|
 |:-----|:-----|:-----|:-----|
-|any|Office on the web|Not applicable|The browser in which Office is opened.<br>(But note that Office on the web will not open in Internet Explorer.<br>Attempting to do so opens Office on the web in Edge.) |
-|Mac|any|Not applicable|Safari with WKWebView|
-|iOS|any|Not applicable|Safari with WKWebView|
-|Android|any|Not applicable|Chrome|
-|Windows 7, 8.1, 10, 11 | non-subscription Office 2013 to Office 2019|Doesn't matter|Internet Explorer 11|
-|Windows 10, 11 | non-subscription Office 2021 or later|Yes|Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
 |Windows 7 | Microsoft 365| Doesn't matter | Internet Explorer 11|
 |Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | No| Internet Explorer 11|
 |Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>2</sup>| Doesn't matter|Internet Explorer 11|
@@ -50,15 +79,16 @@ The following table shows which browser is used for the various platforms and op
 
 <sup>4</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with Microsoft 365, version 2101 or later, and with one-time purchase Office 2021 or later; but it isn't automatically installed with Microsoft Edge. If you have an earlier version of Microsoft 365 or one-time purchase Office, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). On Microsoft 365 builds before 16.0.14326.xxxxx, you must also create the registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2** and set its value to `dword:00000001`.
 
-> [!IMPORTANT]
-> Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you have two options.
->
-> - Write your code in ECMAScript 2015 (also called ES6) or later JavaScript, or in TypeScript, and then compile your code to ES5 JavaScript using a compiler such as [babel](https://babeljs.io/) or [tsc](https://www.typescriptlang.org/index.html).
-> - Write in ECMAScript 2015 or later JavaScript, but also load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library such as [core-js](https://github.com/zloirock/core-js) that enables IE to run your code.
->
-> For more information about these options, see [Support Internet Explorer 11](../develop/support-ie-11.md).
->
-> Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location. To learn more, see [Determine at runtime if the add-in is running in Internet Explorer](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
+## Working with Internet Explorer
+
+Internet Explorer 11 does not support JavaScript versions later than ES5. If any of your add-in's users have platforms that use Internet Explorer 11, then to use the syntax and features of ECMAScript 2015 or later, you have two options.
+
+- Write your code in ECMAScript 2015 (also called ES6) or later JavaScript, or in TypeScript, and then compile your code to ES5 JavaScript using a compiler such as [babel](https://babeljs.io/) or [tsc](https://www.typescriptlang.org/index.html).
+- Write in ECMAScript 2015 or later JavaScript, but also load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library such as [core-js](https://github.com/zloirock/core-js) that enables IE to run your code.
+
+For more information about these options, see [Support Internet Explorer 11](../develop/support-ie-11.md).
+
+Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location. To learn more, see [Determine at runtime if the add-in is running in Internet Explorer](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
 
 ## Troubleshooting Microsoft Edge issues
 
