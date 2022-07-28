@@ -39,9 +39,9 @@ For these platforms, the platform alone determines the browser that is used.
 |iOS|any|Safari with WKWebView|
 |Android|any|Chrome|
 
-## Perpetual Windows
+## Perpetual Office on Windows
 
-For perpetual licensed Windows, the browser that is used is determined by the operating system, the Office version, whether the license is consumer or commercial, and whether the Edge WebView2 (Chromium-based) is installed.
+For perpetual Office on Windows, the browser that is used is determined by the operating system, the Office version, whether the license is consumer or commercial, and whether the Edge WebView2 (Chromium-based) is installed.
 
 |OS|Office version|Consumer vs. Commercial|Edge WebView2 (Chromium-based) installed?|Browser|
 |:-----|:-----|:-----|:-----|:-----|
