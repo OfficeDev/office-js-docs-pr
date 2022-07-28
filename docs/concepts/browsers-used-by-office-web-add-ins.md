@@ -71,7 +71,7 @@ For subscription Office on Windows, the browser that is used is determined by th
 |Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Window 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>2</sup>| No |Microsoft Edge<sup>1, 3</sup> with original WebView (EdgeHTML)|
 |Windows 8.1<br>Windows 10,<br>Windows 11| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>2</sup>| Yes<sup>4</sup>|  Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based) |
 
-<sup>1</sup> When Microsoft Edge is being used, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. When Internet Explorer 11 is being used, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
+<sup>1</sup> When you use Microsoft Edge, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Internet Explorer 11, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
 
 <sup>2</sup> See the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19) for more details.
 

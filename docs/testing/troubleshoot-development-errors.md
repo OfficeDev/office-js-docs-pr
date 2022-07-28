@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot development errors with Office Add-ins
 description: Learn how to troubleshoot development errors in Office Add-ins.
-ms.date: 06/10/2022
+ms.date: 07/28/2022
 ms.localizationpriority: medium
 ---
 
@@ -67,7 +67,7 @@ The following are some of the causes of this error. If you discover additional c
 
 ## Add-in doesn't work on Edge but it works on other browsers
 
-See [Troubleshooting Microsoft Edge issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues).
+See [Troubleshooting Microsoft Edge issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-microsoft-edge-issues).
 
 ## Excel add-in throws errors, but not consistently
 
