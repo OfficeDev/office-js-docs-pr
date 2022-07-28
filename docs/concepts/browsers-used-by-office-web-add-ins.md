@@ -28,7 +28,7 @@ Which browser is used depends on:
 
 The following sections specify which browser is used for the various platforms and operating systems.
 
-## Non-Windows Platforms
+## Non-Windows platforms
 
 For these platforms, the platform alone determines the browser that is used.
 
@@ -39,9 +39,9 @@ For these platforms, the platform alone determines the browser that is used.
 |iOS|any|Safari with WKWebView|
 |Android|any|Chrome|
 
-## Perpetual Office on Windows
+## Perpetual versions of Office on Windows
 
-For perpetual Office on Windows, the browser that is used is determined by the operating system, the Office version, whether the license is consumer or commercial, and whether the Edge WebView2 (Chromium-based) is installed.
+For perpetual versions of Office on Windows, the browser that is used is determined by the operating system, the Office version, whether the license is consumer or commercial, and whether the Edge WebView2 (Chromium-based) is installed.
 
 |OS|Office version|Consumer vs. Commercial|Edge WebView2 (Chromium-based) installed?|Browser|
 |:-----|:-----|:-----|:-----|:-----|
@@ -52,11 +52,11 @@ For perpetual Office on Windows, the browser that is used is determined by the o
 |Windows 7, 8.1, 10, 11 | Office 2016 to Office 2019|  Consumer (Build number form is same as preceding row.)  |Yes<sup>3</sup>|Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
 |Windows 10, 11 | Office 2021| Doesn't matter |Yes<sup>3</sup> |Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
 
-<sup>1</sup> When Microsoft Edge is being used, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. When Internet Explorer 11 is being used, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
+<sup>1</sup> When you use Microsoft Edge, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Internet Explorer 11, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
 
 <sup>2</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it will not use Microsoft Edge with the original WebView (EdgeHTML). If the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, then the add-in uses that browser. Otherwise, it uses Internet Explorer 11. For more information, see [Runtimes](/javascript/api/manifest/runtimes).
 
-<sup>3</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with Microsoft 365, version 2101 or later, and with one-time purchase Office 2021 or later; but it isn't automatically installed with Microsoft Edge. If you have an earlier version of Microsoft 365 or one-time purchase Office, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). On Microsoft 365 builds before 16.0.14326.xxxxx, you must also create the registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2** and set its value to `dword:00000001`.
+<sup>3</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with Microsoft 365, version 2101 or later, and with one-time purchase Office 2021 or later; but it isn't automatically installed with Microsoft Edge. If you have an earlier version of Microsoft 365 or a perpetual version of Office, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). On Microsoft 365 builds before 16.0.14326.xxxxx, you must also create the registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2** and set its value to `dword:00000001`.
 
 ## Microsoft 365 Subscription on Windows
 
@@ -90,7 +90,7 @@ For more information about these options, see [Support Internet Explorer 11](../
 
 Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location. To learn more, see [Determine at runtime if the add-in is running in Internet Explorer](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
 
-## Troubleshooting Microsoft Edge issues
+## Troubleshoot Microsoft Edge issues
 
 ### Service Workers are not working
 
