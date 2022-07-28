@@ -41,16 +41,24 @@ For these platforms, the platform alone determines the browser that is used.
 
 ## Perpetual versions of Office on Windows
 
-For perpetual versions of Office on Windows, the browser that is used is determined by the operating system, the Office version, whether the license is consumer or commercial, and whether the Edge WebView2 (Chromium-based) is installed.
+For perpetual versions of Office on Windows, the browser that is used is determined by the Office version, whether the license is consumer or commercial, and whether the Edge WebView2 (Chromium-based) is installed. The version of Windows doesn't matter, but note that Office Web Add-ins are not supported on versions earlier than Windows 7 and Office 2021 is not supported on versions earlier than Windows 10.
 
-|OS|Office version|Consumer vs. Commercial|Edge WebView2 (Chromium-based) installed?|Browser|
+To determine whether Office 2016 or Office 2019 is consumer or commercial, use the format of the Office version and build number. (For Office 2013 and Office 2021, the distinction between commercial and consumer doesn't matter.)
+
+- **Consumer**: For both Office 2016 and 2019, the format is `YYMM (xxxxx.xxxxxx)`, ending with two blocks of five digits; for example, `2206 (Build 15330.20264`.
+- **Commercial**: 
+
+    - For Office 2016, the format is `16.0.xxxx.xxxxx`, ending with two blocks of *four* digits; for example, `16.0.5197.1000`.
+    - For Office 2019, the format is `1808 (xxxxx.xxxxxx)`, ending with two blocks of *five* digits; for example, `1808 (Build 10388.20027)`. Note that the year and month is always `1808`.
+
+|Office version|Consumer vs. Commercial|Edge WebView2 (Chromium-based) installed?|Browser|
 |:-----|:-----|:-----|:-----|:-----|
-|Windows 7, 8.1, 10, 11 | Office 2013 | Doesn't matter |Doesn't matter|Internet Explorer 11|
-|Windows 7, 8.1, 10, 11 | Office 2016| Commercial</br>(Build number form is `16.0.xxxx.xxxxx`,</br> ending with two blocks of 4 digits, </br> e.g., 16.0.5197.1000.) |Doesn't matter|Internet Explorer 11|
-|Windows 7, 8.1, 10, 11 | Office 2019| Commercial</br>(Build number form is `1808 (xxxxx.xxxxxx)`,</br> ending with two blocks of 5 digits, </br> e.g., 1808 (Build 10388.20027).)   |Doesn't matter|Internet Explorer 11|
-|Windows 7, 8.1, 10, 11 | Office 2016 to Office 2019| Consumer (Build number form is `YYMM (xxxxx.xxxxxx)`,</br> ending with two blocks of 5 digits, </br> e.g., 2206 (Build 15330.20264).)  |No |Microsoft Edge<sup>1, 2</sup> with original WebView (EdgeHTML)|
-|Windows 7, 8.1, 10, 11 | Office 2016 to Office 2019|  Consumer (Build number form is same as preceding row.)  |Yes<sup>3</sup>|Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
-|Windows 10, 11 | Office 2021| Doesn't matter |Yes<sup>3</sup> |Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
+|Office 2013 | Doesn't matter |Doesn't matter|Internet Explorer 11|
+|Office 2016| Commercial |Doesn't matter|Internet Explorer 11|
+|Office 2019| Commercial |Doesn't matter|Internet Explorer 11|
+|Office 2016 to Office 2019| Consumer |No |Microsoft Edge<sup>1, 2</sup> with original WebView (EdgeHTML)|
+|Office 2016 to Office 2019|  Consumer |Yes<sup>3</sup>|Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
+|Office 2021| Doesn't matter |Yes<sup>3</sup> |Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
 
 <sup>1</sup> When you use Microsoft Edge, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Internet Explorer 11, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
 
@@ -60,7 +68,7 @@ For perpetual versions of Office on Windows, the browser that is used is determi
 
 ## Microsoft 365 Subscription on Windows
 
-For subscription Office on Windows, the browser that is used is determined by the operating system, the Office version, and wether the Edge WebView2 (Chromium-based) is installed.
+For subscription Office on Windows, the browser that is used is determined by the operating system, the Office version, and whether the Edge WebView2 (Chromium-based) is installed.
 
 |OS|Office version|Edge WebView2 (Chromium-based) installed?|Browser|
 |:-----|:-----|:-----|:-----|
