@@ -41,7 +41,7 @@ For these platforms, the platform alone determines the browser that is used.
 
 ## Perpetual Windows
 
-For perpetual licensed Windows, the browser that is used is determined by the operating system, the Office version, whether the license is consumer or commercial, and wether the Edge WebView2 (Chromium-based) is installed.
+For perpetual licensed Windows, the browser that is used is determined by the operating system, the Office version, whether the license is consumer or commercial, and whether the Edge WebView2 (Chromium-based) is installed.
 
 |OS|Office version|Consumer vs. Commercial|Edge WebView2 (Chromium-based) installed?|Browser|
 |:-----|:-----|:-----|:-----|:-----|
@@ -60,7 +60,7 @@ For perpetual licensed Windows, the browser that is used is determined by the op
 
 ## Microsoft 365 Subscription on Windows
 
-For perpetual licensed Windows, the browser that is used is determined by the operating system, the Office version, and wether the Edge WebView2 (Chromium-based) is installed.
+For subscription Office on Windows, the browser that is used is determined by the operating system, the Office version, and wether the Edge WebView2 (Chromium-based) is installed.
 
 |OS|Office version|Edge WebView2 (Chromium-based) installed?|Browser|
 |:-----|:-----|:-----|:-----|
