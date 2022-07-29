@@ -74,9 +74,11 @@ The following screenshot shows an entity value card that uses the preceding code
 
 ### Property metadata
 
-Entity properties have an optional `propertyMetadata` field, which uses the [`CellValuePropertyMetadata`](/javascript/api/excel/excel.cellvaluepropertymetadata) object and offers the properties `attribution`, `excludeFrom`, and `sublabel`. The following code snippet shows how to add a `sublabel` to the `"Unit Price"` property from the preceding code snippet.
+Entity properties have an optional `propertyMetadata` field that uses the [`CellValuePropertyMetadata`](/javascript/api/excel/excel.cellvaluepropertymetadata) object and offers the properties `attribution`, `excludeFrom`, and `sublabel`. The following code snippet shows how to add a `sublabel` to the `"Unit Price"` property from the preceding code snippet.
 
 ```TypeScript
+// This code snippet is an excerpt from the `properties` field of the preceding `EntityCellValue` snippet. "Unit Price" is a property of an entity value.
+
         "Unit Price": {
             type: Excel.CellValueType.formattedNumber,
             basicValue: product.unitPrice,
