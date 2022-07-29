@@ -74,7 +74,10 @@ The following screenshot shows an entity value card that uses the preceding code
 
 ### Property metadata
 
-Entity properties have an optional `propertyMetadata` field that uses the [`CellValuePropertyMetadata`](/javascript/api/excel/excel.cellvaluepropertymetadata) object and offers the properties `attribution`, `excludeFrom`, and `sublabel`. The following code snippet shows how to add a `sublabel` to the `"Unit Price"` property from the preceding code snippet.
+Entity properties have an optional `propertyMetadata` field that uses the [`CellValuePropertyMetadata`](/javascript/api/excel/excel.cellvaluepropertymetadata) object and offers the properties `attribution`, `excludeFrom`, and `sublabel`. The following code snippet shows how to add a `sublabel` to the `"Unit Price"` property from the preceding code snippet. In this case, the sublabel identifies the currency type.
+
+> [!NOTE]
+> The `propertyMetadata` field is only available on data types that are nested within entity properties.
 
 ```TypeScript
 // This code snippet is an excerpt from the `properties` field of the 
@@ -93,9 +96,6 @@ Entity properties have an optional `propertyMetadata` field that uses the [`Cell
 The following screenshot shows an entity value card that uses the preceding code snippet, displaying the property metadata `sublabel` of **USD** next to the **Unit Price** property.
 
 :::image type="content" source="../images/excel-data-types-entity-card-property-metadata.png" alt-text="A screenshot showing the sublabel USD next to the Unit Price.":::
-
-> [!NOTE]
-> The `propertyMetadata` field is only available on entity properties. It's not available for other data types, such as formatted numbers or web images.
 
 ## Card layout
 
