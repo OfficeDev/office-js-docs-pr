@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 07/27/2022
+ms.date: 07/11/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -56,9 +56,6 @@ The `type` defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype
 
 In addition to the three fields that all data types share, the JSON metadata schema for each `*CellValue` has properties available according to that type. For example, the [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) type includes the `altText` and `attribution` properties, while the [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) type offers the `properties` and `text` fields.
 
-> [!NOTE]
-> All data types also share the optional `propertyMetadata` field, which uses the [`CellValuePropertyMetadata`](/javascript/api/excel/excel.cellvaluepropertymetadata) object and offers the properties `attribution`, `excludeFrom`, and `sublabel`. The [Formatted nubmer values](#formatted-number-values) section shows how to use the `sublabel` property.
-
 The following sections show JSON code samples for the formatted number value, entity value, and web image data types.
 
 ## Formatted number values
@@ -74,10 +71,7 @@ const myDate: Excel.FormattedNumberCellValue = {
     type: Excel.CellValueType.formattedNumber,
     basicValue: 32889.0,
     basicType: Excel.RangeValueType.double, // A readonly property. Used as a fallback in incompatible scenarios.
-    numberFormat: "m/d/yyyy",
-    propertyMetadata: {
-        sublabel: "ISK"
-    }
+    numberFormat: "m/d/yyyy"
 };
 ```
 
