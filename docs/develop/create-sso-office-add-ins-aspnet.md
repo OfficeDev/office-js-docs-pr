@@ -118,20 +118,6 @@ You need to create an app registration in Azure that represents your middle-tier
 
 1. Under **Common Properties**, select **Startup Project**, and then **Multiple startup projects**. Ensure that the **Action** for both projects is set to **Start**, and that the **Office-Add-in-ASPNET-SSO-web** project is listed first. Close the dialog.
 
-1. Open the **appsettings.json** file. Replace the placeholder **$app-id-guid$** with the **Application (client) ID** value you saved previously.
-
-    > [!NOTE]
-    > The **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It is also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
-
-1. Replace the placeholder **$client-secret$** with the client secret you saved previously.
-
-1. Replace the **$publisher-domain$** with the domain name of your app registration. You can find your publisher domain by going to the App registration you created previously. In the leftmost sidebar, select **Manifest** under **Manage**. Search for the **publisherDomain** value in the manifest JSON.
-
-    > [!NOTE]
-    > You can also change the **TenantId** to support single-tenant if you configured your app registration for single-tenant. Replace the **Common** value with the **Application (client) ID** for single-tenant support.
-
-1. Save and close the appsettings.json file.
-
 1. In **Solution Explorer**, choose the **Office-Add-in-ASPNET-SSO-manifest** project and open the add-in manifest file “Office-Add-in-ASPNET-SSO.xml” and then scroll to the bottom of the file. Just above the end `</VersionOverrides>` tag, you'll find the following markup.
 
     ```xml
@@ -153,11 +139,30 @@ You need to create an app registration in Azure that represents your middle-tier
 
 1. Save and close the manifest file.
 
+1. In **Solution Explorer**, choose the **Office-Add-in-ASPNET-SSO-web** project and open the **appsettings.json** file.
+
+1. Replace the placeholder **$app-id-guid$** with the **Application (client) ID** value you saved previously.
+
+1. Replace the placeholder **$client-secret$** with the client secret value you saved previously.
+
+1. Replace the **$publisher-domain$** with the domain name of your app registration. You can find your publisher domain by going to the App registration you created previously. In the leftmost sidebar, select **Manifest** under **Manage**. Search for the **publisherDomain** value in the manifest JSON.
+
+    > [!NOTE]
+    > You can also change the **TenantId** to support single-tenant if you configured your app registration for single-tenant. Replace the **Common** value with the **Application (client) ID** for single-tenant support.
+
+1. Save and close the appsettings.json file.
+
+1. Open the **wwwroot/js/fallback-msal/authConfig.js** file. This file specifies the configuration for using MSAL for fallback authentication.
+
+1. Replace the placeholder **$app-id-guid$** with the **Application (client) ID** value you saved previously.
+
+1. Save and close the **authConfig.js** file.
+
 ## Code the client side
 
 ### Create client request and response handler
 
-1. Open the **wwwroot\js\ssoAuthES6.js** file.  It already has code that ensures that Promises are supported, even in Internet Explorer 11, and an `Office.onReady` call to assign a handler to the add-in's only button.
+1. In the **Office-Add-in-ASPNET-SSO-web** project, open the **wwwroot\js\ssoAuthES6.js** file.  It already has code that ensures that Promises are supported, even in Internet Explorer 11, and an `Office.onReady` call to assign a handler to the add-in's only button.
 
    > [!NOTE]
    > As the name suggests, the ssoAuthES6.js uses JavaScript ES6 syntax because using `async` and `await` best shows the essential simplicity of the SSO API. When the localhost server is started, this file is transpiled to ES5 syntax so that the sample will support Internet Explorer 11.
@@ -171,6 +176,7 @@ You need to create an app registration in Azure that represents your middle-tier
 
     - `authOptions` - [Auth configuration parameters](/javascript/api/office/office.authoptions) for SSO.
     - `authSSO` - true if using SSO, otherwise false.
+    - `verb` - REST API verb such as GET, POST...
     - `accessToken` - The access token to the middle-tier server. The method to obtain this token is different for SSO than fallback auth.
     - `url` - The URL of the REST API to call on the middle-tier server.
     - `callbackHandler` - The function to pass the results of the REST API call.
@@ -285,7 +291,7 @@ You need to create an app registration in Azure that represents your middle-tier
     // Check for expired token. Refresh and retry the call if it expired.
         if (error.getResponseHeader !== undefined) {
             const responseHeader = error.getResponseHeader("www-authenticate");
-            if (responseHeader !== undefined && responseHeader.includes("The token expired") && authSSO) {
+            if (responseHeader !== null && responseHeader.includes("The token expired") && authSSO) {
                 try {
                     clientRequest.accessToken = await Office.auth.getAccessToken(clientRequest.authOptions);
                     const data = await $.ajax({
@@ -312,7 +318,7 @@ You need to create an app registration in Azure that represents your middle-tier
         // For all other error scenarios, display the message and use fallback auth.
         showMessage(
             "Unknown error from web server: " +
-            JSON.stringify(err.responseJSON.errorDetails)
+            JSON.stringify(error.responseJSON.errorDetails)
         );
         if (clientRequest.authSSO) switchToFallbackAuth(clientRequest);
     ```
