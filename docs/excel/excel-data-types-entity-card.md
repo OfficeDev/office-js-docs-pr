@@ -87,7 +87,7 @@ Entity properties have an optional `propertyMetadata` field, which uses the [`Ce
         },
 ```
 
-The following screenshot shows the property metadata `sublabel` of **USD** next to the **Unit Price** property.
+The following screenshot shows an entity value card that uses the preceding code snippet, displaying the property metadata `sublabel` of **USD** next to the **Unit Price** property.
 
 :::image type="content" source="../images/excel-data-types-entity-card-property-metadata.png" alt-text="A screenshot showing the sublabel USD next to the Unit Price.":::
 
