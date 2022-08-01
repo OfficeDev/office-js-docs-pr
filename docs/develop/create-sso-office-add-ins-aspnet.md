@@ -7,11 +7,14 @@ ms.localizationpriority: medium
 
 # Create an ASP.NET Office Add-in that uses single sign-on
 
-Users can sign in to Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign in a second time. For an overview, see [Enable SSO in an Office Add-in](sso-in-office-add-ins.md).
+Users can sign in to Office, and your Office Web Add-in can take advantage of this sign-in process to authorize users to your add-in and to Microsoft Graph without requiring users to sign in a second time. This article walks you through the process of enabling single sign-on (SSO) in an add-in.
 
-This article walks you through the process of enabling single sign-on (SSO) in an add-in. The sample add-in you create has two parts; a task pane that loads in Microsoft Excel, and a middle-tier server that handles calls to Microsoft Graph for the task pane. The middle-tier server is built ASP.NET core and exposes a single REST API, `/api/filenames`, that returns a list of the first 10 file names in the user's OneDrive folder. The task pane uses the `getAccessToken()` method to get an access token for the signed in user to the middle-tier server. The middle-tier server uses the On-Behalf-Of flow (OBO) to exchange the access token for a new one with access to Microsoft Graph. You can extend this pattern to access any Microsoft Graph data. The task pane always calls a middle-tier REST API (passing the access token) when it needs Microsoft Graph services. The middle-tier uses the token obtained via OBO to call Microsoft Graph services and return the results to the task pane.
+The sample shows you how to build the following parts:
 
-This article works with an add-in that uses ASP.NET Core. For a similar article about a Node.js add-in, see [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md).
+- Client-side code that provides a task pane that loads in Microsoft Excel. The client-side code calls the Office JS API `getAccessToken()` to get the SSO access token to call server-side REST APIs. If this fails, it will fallback and use the Microsoft Authentication library [MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) to obtain the access token.
+- Server-side code that uses ASP.NET Core to provide a single REST API `/api/filenames`. The server-side code uses [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for all token handling, authentication, and authorization.
+
+The sample uses SSO and the On-Behalf-Of (OBO) flow to obtain correct access tokens and call Microsoft Graph APIs. If you are unfamiliar with how this flow works, see [How SSO works at runtime](authorize-to-microsoft-graph.md#how-it-works-at-runtime) for more detail.
 
 ## Prerequisites
 
@@ -31,11 +34,11 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/Offi
 > There are two versions of the sample.
 >
 > - The **Begin** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
-> - The **Complete** folder contains the same sample with all coding steps from this article completed. To use the completed version, just follow the instructions in this article, but replace "Begin" with "Complete" and skip the sections **Code the client side** and **Code the middle-tier server**.
+> - The **Complete** folder contains the same sample with all coding steps from this article completed. To use the completed version, just follow the instructions in this article, but replace "Begin" with "Complete" and skip the sections **Code the client side** and **Code the server side**.
 
 ## Register the add-in with Microsoft identity platform
 
-You need to create an app registration in Azure that represents your middle-tier server. This enables authentication support so that proper access tokens can be issued to the client code in JavaScript. This registration supports both SSO in the client, and fallback authentication using the Microsoft Authentication Library (MSAL).
+You need to create an app registration in Azure that represents your ASP.NET Core server. This enables authentication support so that proper access tokens can be issued to the client code in JavaScript. The app registration is used for SSO requests from Office, and also fallback authentication if SSO fails.
 
 1. To register your app, navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
 
@@ -49,14 +52,14 @@ You need to create an app registration in Azure that represents your middle-tier
    - Choose **Register**.
 
    > [!NOTE]
-   > The SPA application type is only used when the client uses MSAL for fallback authentication.
+   > The SPA application type is only used when the client uses MSAL.js for fallback authentication.
 
 1. On the **Office-Add-in-ASPNET-SSO** page, copy and save the **Application (client) ID**. You'll use it in later procedures.
 
    > [!NOTE]
    > This **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It's also the "client ID" of the application when it seeks authorized access to Microsoft Graph.
 
-1. In the leftmost sidebar, select **Authentication** under **Manage**. In the **Implicit grant and hybrid flows** section, select both checkboxes for **Access tokens** and **ID tokens**. The sample uses the Microsoft Authentication Library (MSAL) for fallback authentication when SSO is not available.
+1. In the leftmost sidebar, select **Authentication** under **Manage**. In the **Implicit grant and hybrid flows** section, select both checkboxes for **Access tokens** and **ID tokens**.
 
 1. Choose **Save**.
 
@@ -99,7 +102,7 @@ You need to create an app registration in Azure that represents your middle-tier
 
 1. In the leftmost sidebar, select **API permissions** under **Manage** and select **Add a permission**. On the panel that opens, choose **Microsoft Graph** and then choose **Delegated permissions**.
 
-1. Use the **Select permissions** search box to search for the permissions your add-in needs. Select the following. Only the first is really required by your add-in itself; but the `profile` and `openid` permissions are required for the Office application to get an access token with user identity to access the middle-tier server.
+1. Use the **Select permissions** search box to search for the permissions your add-in needs. Select the following. Only the first is really required by your add-in itself; but the `profile` and `openid` permissions are required for the Office application to get an access token with user identity to access the ASP.NET Core server.
 
    - **Files.Read**
    - **profile**
@@ -152,7 +155,7 @@ You need to create an app registration in Azure that represents your middle-tier
 
 1. Save and close the appsettings.json file.
 
-1. Open the **wwwroot/js/fallback-msal/authConfig.js** file. This file specifies the configuration for using MSAL for fallback authentication.
+1. Open the **wwwroot/js/fallback-msal/authConfig.js** file. This file specifies the configuration for MSAL.js to use for fallback authentication.
 
 1. Replace the placeholder **$app-id-guid$** with the **Application (client) ID** value you saved previously.
 
@@ -167,18 +170,18 @@ You need to create an app registration in Azure that represents your middle-tier
    > [!NOTE]
    > As the name suggests, the ssoAuthES6.js uses JavaScript ES6 syntax because using `async` and `await` best shows the essential simplicity of the SSO API. When the localhost server is started, this file is transpiled to ES5 syntax so that the sample will support Internet Explorer 11.
 
-    A key part of the sample code is the client request. The client request is an object that tracks information about the request for calling REST APIs on the middle-tier server. It's necessary because the client request state needs to be tracked or updated through the following scenarios:
+    A key part of the sample code is the client request. The client request is an object that tracks information about the request for calling REST APIs on the server. It's necessary because the client request state needs to be tracked or updated through the following scenarios:
 
     - SSO retries where the REST API call fails because it needs additional consent. The sample code calls `getAccessToken` with updated authentication options, gets the required user consent, and then calls the REST API again. The goal is to not fail in scenarios where a REST API needs additional consent.
-    - SSO fails and fallback authentication is required. The access token is acquired through MSAL in a pop-up dialog box. The goal is to not fail in this scenario and gracefully fall back to the alternative authentication approach.
+    - SSO fails and fallback authentication is required. The access token is acquired through MSAL.js in a pop-up dialog box. The goal is to not fail in this scenario and gracefully fall back to the alternative authentication approach.
 
     The client request object tracks the following data:
 
     - `authOptions` - [Auth configuration parameters](/javascript/api/office/office.authoptions) for SSO.
     - `authSSO` - true if using SSO, otherwise false.
     - `verb` - REST API verb such as GET, POST...
-    - `accessToken` - The access token to the middle-tier server. The method to obtain this token is different for SSO than fallback auth.
-    - `url` - The URL of the REST API to call on the middle-tier server.
+    - `accessToken` - The access token to the ASP.NET Core server. The method to obtain this token is different for SSO than fallback auth.
+    - `url` - The URL of the REST API to call on the ASP.NET Core server.
     - `callbackHandler` - The function to pass the results of the REST API call.
     - `callbackFunction` - The function to pass the client request to when ready.
 
@@ -204,7 +207,7 @@ You need to create an app registration in Azure that represents your middle-tier
 
    - It checks if SSO is being used by checking `authSSO`. If so, it calls `getAccessToken` to get the SSO access token.
    - If SSO returns the access token, it calls the `callbackfunction` function. However, if `getAccessToken` failed, it handles the error through the `handleSSOErrors()` function and switches to fallback if required.
-   - If `authSSO` is false, then fallback auth is in use, so it calls the `dialogFallback` function, which will eventually call the callback function after the user signs in through MSAL.
+   - If `authSSO` is false, then fallback auth is in use, so it calls the `dialogFallback` function, which will eventually call the callback function after the user signs in through MSAL.js.
 
    ```javascript
    if (authSSO) {
@@ -284,7 +287,7 @@ You need to create an app registration in Azure that represents your middle-tier
 1. In the `callWebServer` function, replace `TODO 6` with the following code. About this code, note:
 
     - In the rare case the original SSO token is expired, it will detect this error condition and request a refreshed token by calling `getAccessToken` again. It will retry the call, but if there is still an error it switches to fallback auth.
-    - It checks if the call from the middle-tier to Microsoft Graph failed, in which case the error status is a bad request (403). In this case it displays the error, but there is no need to switch to fallback auth.
+    - It checks if the call from the server to Microsoft Graph failed, in which case the error status is a bad request (403). In this case it displays the error, but there is no need to switch to fallback auth.
     - For all other errors it displays them in the task pane.
 
     ```javascript
@@ -364,7 +367,7 @@ You need to create an app registration in Azure that represents your middle-tier
             break;
    ```
 
-1. Replace `TODO 8` with the following code. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). For any errors that can't be handled, `true` is returned to the caller. This indicates the caller should switch to using MSAL as fallback auth.
+1. Replace `TODO 8` with the following code. For more information about these errors, see [Troubleshoot SSO in Office Add-ins](troubleshoot-sso-in-office-add-ins.md). For any errors that can't be handled, `true` is returned to the caller. This indicates the caller should switch to using MSAL.js as fallback auth.
 
    ```javascript
     default:
@@ -376,14 +379,14 @@ You need to create an app registration in Azure that represents your middle-tier
     return fallbackRequired;
    ```
 
-### Add fallback to MSAL auth
+### Add fallback to .js authentication
 
-Fallback authentication uses the MSAL library to sign in the user. The add-in itself is an SPA, and uses an SPA app registration to access the middle-tier server.
+Fallback authentication uses the [MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) library to sign in the user. The add-in itself is an SPA, and uses an SPA app registration to access the ASP.NET Core server.
 
 1. In the `switchToFallbackAuth` function, replace `TODO 9` with the following code. About this code, note:
 
-   - It sets the global `authSSO` to false and creates a new client request that uses MSAL for auth. The new request has an MSAL access token to the middle-tier server.
-   - Once the request is created it calls `callWebServer` to continue attempting to call the middle-tier server successfully.
+   - It sets the global `authSSO` to false and creates a new client request that uses MSAL.js for authentication. The new request has an MSAL.js access token to the server.
+   - Once the request is created it calls `callWebServer` to continue attempting to call the server successfully.
 
    ```javascript
    // Guard against accidental call to this function when fallback is already in use.
@@ -403,9 +406,9 @@ Fallback authentication uses the MSAL library to sign in the user. The add-in it
     );
    ```
 
-## Code the middle-tier server
+## Code the server side
 
-The middle-tier server provides REST APIs for the client to call. For example, the REST API `/api/filenames` gets a list of filenames from the user's OneDrive folder. Each REST API call requires an access token by the client to ensure the correct client is accessing their data. The access token is exchanged for a Microsoft Graph token through the On-Behalf-Of flow (OBO). The new Microsoft Graph token is cached by the MSAL library for subsequent API calls. It's never sent outside of the middle-tier server. For more information, see [Middle-tier access token request](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#middle-tier-access-token-request)
+The server-side code is an ASP.NET Core server that provides REST APIs for the client to call. For example, the REST API `/api/filenames` gets a list of filenames from the user's OneDrive folder. Each REST API call requires an access token by the client to ensure the correct client is accessing their data. The access token is exchanged for a Microsoft Graph token through the On-Behalf-Of flow (OBO). The new Microsoft Graph token is cached by the MSAL.NET library for subsequent API calls. It's never sent outside of the server-side code. Microsoft identity documentation refers to this server as the middle-tier server because it is in the middle of the flow from client-side code to Microsoft services. For more information, see [Middle-tier access token request](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#middle-tier-access-token-request)
 
 ### Configure Microsoft Graph and OBO flow
 
@@ -460,7 +463,7 @@ The middle-tier server provides REST APIs for the client to call. For example, t
 1. Replace `TODO 12` with the following code. About this code, note:
 
     - It creates the `/api/filenames` REST API.
-    - It has error handlers, including for MSAL exceptions.
+    - It has error handlers, including for MSAL.NET exceptions.
 
     ```csharp
     [HttpGet]
@@ -531,4 +534,9 @@ When you are ready to deploy to a staging or production server, be sure to updat
 - Update any references to `localhost:7283` throughout your project to use your staging or production URL.
 - Update any references to `localhost:7283` in your Azure App registration, or create a new registration for use in staging or production.
 
-For more information, see [Host and deploy ASP.NET Core](/aspnet/core/host-and-deploy/)
+For more information, see [Host and deploy ASP.NET Core](/aspnet/core/host-and-deploy/).
+
+## See also
+
+- [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md).
+- [Authorize to Microsoft Graph with SSO](authorize-to-microsoft-graph).
