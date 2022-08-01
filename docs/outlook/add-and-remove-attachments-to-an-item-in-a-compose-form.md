@@ -74,7 +74,7 @@ function write(message){
 }
 ```
 
-To add an inline base64 image to the body of a message being composed, you must get the current message body using the `Office.context.mailbox.item.body.getAsync` method before inserting the image using the `addFileAttachmentFromBase64Async` method. Otherwise, the image will not render in the message once it's inserted. For guidance, see the following JavaScript example, which adds an inline base64 image to the beginning of a message body.
+To add an inline base64 image to the body of a message being composed, you must first get the current message body using the `Office.context.mailbox.item.body.getAsync` method before inserting the image using the `addFileAttachmentFromBase64Async` method. Otherwise, the image will not render in the message once it's inserted. For guidance, see the following JavaScript example, which adds an inline base64 image to the beginning of a message body.
 
 ```js
 const mailItem = Office.context.mailbox.item;
