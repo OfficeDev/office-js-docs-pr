@@ -539,4 +539,4 @@ For more information, see [Host and deploy ASP.NET Core](/aspnet/core/host-and-d
 ## See also
 
 - [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md).
-- [Authorize to Microsoft Graph with SSO](authorize-to-microsoft-graph).
+- [Authorize to Microsoft Graph with SSO](authorize-to-microsoft-graph.md).
