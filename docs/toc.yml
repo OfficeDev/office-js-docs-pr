@@ -315,6 +315,10 @@ items:
       displayName: uninstall, sideload
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
+    - name: Debug a function command with a non-shared runtime
+      href: testing/debug-function-command.md
+    - name: Debug the initialize and onReady functions
+      href: testing/debug-initialize-onready.md
     - name: Errors
       items:
       - name: Application-specific API error handling
@@ -756,7 +760,7 @@ items:
         href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
       - name: Troubleshoot add-in activation
         href: outlook/troubleshoot-outlook-add-in-activation.md
-      - name: Debug UI-less add-ins
+      - name: Debug function commands
         href: outlook/debug-ui-less.md
       - name: Debug event-based activation
         href: outlook/debug-autolaunch.md

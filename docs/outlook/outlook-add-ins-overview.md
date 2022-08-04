@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. 
-ms.date: 06/08/2022
+ms.date: 07/11/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -29,7 +29,7 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
     **An add-in with command buttons on the ribbon**
 
-    ![Add-in Command UI-less shape.](../images/uiless-command-shape.png)
+    ![Add-in function command.](../images/uiless-command-shape.png)
 
 - Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
 

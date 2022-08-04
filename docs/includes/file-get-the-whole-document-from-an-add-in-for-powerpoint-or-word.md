@@ -128,10 +128,10 @@ The following code example shows the event handler for the `Office.initialize` e
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
 
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
 
-        // Execute sendFile when submit is clicked
+        // Execute sendFile when submit is clicked.
         $('#submit').click(function () {
             sendFile();
         });
@@ -183,8 +183,8 @@ function sendFile() {
 }
 ```
 
-The local function `getSlice` makes a call to the `File.getSliceAsync` method to retrieve a slice from the `File` object. The `getSliceAsync` method returns a `Slice` object from the collection of slices. It has two required parameters, _sliceIndex_ and _callback_. The  _sliceIndex_ parameter takes an integer as an indexer into the collection of slices. Like other functions in the JavaScript API for Office, the `getSliceAsync` method also takes a callback function as a parameter to handle the results from the method call.
-ion `getSlice` makes a call to the **File.getSliceAsync** method to retrieve a slice from the **File** object. The **getSliceAsync** method returns a **Slice** object from the collection of slices. It has two required parameters, _sliceIndex_ and _callback_. The  _sliceIndex_ parameter takes an integer as an indexer into the collection of slices. Like other functions in the Office JavaScript API, the **getSliceAsync** method also takes a callback function as a parameter to handle the results from the method call.
+The local function `getSlice` makes a call to the `File.getSliceAsync` method to retrieve a slice from the `File` object. The `getSliceAsync` method returns a `Slice` object from the collection of slices. It has two required parameters, _sliceIndex_ and _callback_. The  _sliceIndex_ parameter takes an integer as an indexer into the collection of slices. Like other methods in the JavaScript API for Office, the `getSliceAsync` method also takes a callback function as a parameter to handle the results from the method call.
+ion `getSlice` makes a call to the **File.getSliceAsync** method to retrieve a slice from the **File** object. The **getSliceAsync** method returns a **Slice** object from the collection of slices. It has two required parameters, _sliceIndex_ and _callback_. The  _sliceIndex_ parameter takes an integer as an indexer into the collection of slices. Like other methods in the Office JavaScript API, the **getSliceAsync** method also takes a callback function as a parameter to handle the results from the method call.
 
 The `Slice` object gives you access to the data contained in the file. Unless otherwise specified in the _options_ parameter of the `getFileAsync` method, the `Slice` object is 4 MB in size. The `Slice` object exposes three properties: [size](/javascript/api/office/office.slice#office-office-slice-size-member), [data](/javascript/api/office/office.slice#office-office-slice-data-member), and [index](/javascript/api/office/office.slice#office-office-slice-index-member). The `size` property gets the size, in bytes, of the slice. The `index` property gets an integer that represents the slice's position in the collection of slices.
 

@@ -210,7 +210,7 @@ Office.initialize = function () {
     // and body of the current item.
     MyEntities = _Item.getEntities();
     
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
     // After the DOM is loaded, app-specific code can run.
     });
@@ -572,7 +572,7 @@ Office.initialize = function () {
     // and body of the current item.
     _MyEntities = _Item.getEntities();
 
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
     // After the DOM is loaded, app-specific code can run.
     });

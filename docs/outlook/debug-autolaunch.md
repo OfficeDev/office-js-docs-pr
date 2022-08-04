@@ -2,7 +2,7 @@
 title: Debug your event-based Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 04/28/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -20,13 +20,13 @@ In this article, we discuss the key stages to enable debugging.
 - [Attach Visual Studio Code](#attach-visual-studio-code)
 - [Debug](#debug)
 
-You have several options for creating your add-in project. Depending on the option you're using, the steps may vary. Where this is the case, if you used the Yeoman generator for Office Add-ins to create your add-in project (for example, by doing the [event-based activation walkthrough](autolaunch.md)), then follow the **yo office** steps, otherwise follow the **Other** steps. Visual Studio Code should be at least version 1.56.1.
+If you used the Yeoman Generator for Office Add-ins to create your add-in project (for example, by doing the [event-based activation walkthrough](autolaunch.md)), then follow the **Created with Yeoman generator** option throughout this article. Otherwise, follow the **Other** steps. Visual Studio Code should be at least version 1.56.1.
 
 ## Mark your add-in for debugging
 
 1. Set the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`. `[Add-in ID]` is the **\<Id\>** in the add-in manifest.
 
-    **yo office**: In a command line window, navigate to the root of your add-in folder then run the following command.
+    **Created with Yeoman generator**: In a command line window, navigate to the root of your add-in folder then run the following command.
 
     ```command&nbsp;line
     npm start
@@ -45,7 +45,7 @@ You have several options for creating your add-in project. Depending on the opti
 
 ## Configure Visual Studio Code
 
-### yo office
+### Created with Yeoman generator
 
 1. Back in the command line window, open Visual Studio Code.
 

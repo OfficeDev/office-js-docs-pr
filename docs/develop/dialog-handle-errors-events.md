@@ -1,7 +1,7 @@
 ---
 title: Handling errors and events in the Office dialog box 
 description: Learn how to trap and handle errors when opening and using the Office dialog box.
-ms.date: 07/08/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +11,7 @@ This article describes how to trap and handle errors when opening the dialog box
 
 > [!NOTE]
 > This article presupposes that you are familiar with the basics of using the Office dialog API as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
-> 
+>
 > See also [Best practices and rules for the Office dialog API](dialog-best-practices.md).
 
 Your code should handle two categories of events.
@@ -33,7 +33,7 @@ In addition to general platform and system errors, four errors are specific to c
 When `displayDialogAsync` is called, it passes an [AsyncResult](/javascript/api/office/office.asyncresult) object to its callback function. When the call is successful, the dialog box is opened, and the `value` property of the `AsyncResult` object is a [Dialog](/javascript/api/office/office.dialog) object. For an example of this, see [Send information from the dialog box to the host page](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page). When the call to `displayDialogAsync` fails, the dialog box is not created, the `status` property of the `AsyncResult` object is set to `Office.AsyncResultStatus.Failed`, and the `error` property of the object is populated. You should always provide a callback that tests the `status` and responds when it's an error. For an example that reports the error message regardless of its code number, see the following code. (The `showNotification` function, not defined in this article, either displays or logs the error. For an example of how you can implement this function within your add-in, see [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).)
 
 ```js
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
 function (asyncResult) {
     if (asyncResult.status === Office.AsyncResultStatus.Failed) {
@@ -58,7 +58,7 @@ Three errors and events in the dialog box will raise a `DialogEventReceived` eve
 Your code can assign a handler for the `DialogEventReceived` event in the call to `displayDialogAsync`. The following is a simple example.
 
 ```js
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
     function (result) {
         dialog = result.value;

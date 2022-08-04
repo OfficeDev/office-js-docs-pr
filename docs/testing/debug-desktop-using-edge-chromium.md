@@ -71,7 +71,7 @@ These instructions assume you have experience using the command line, understand
 1. Run functionality in your add-in that calls the lines with breakpoints. You'll see that breakpoints have been hit and you can inspect local variables.
 
    > [!NOTE]
-   > Breakpoints in calls of `Office.initialize` or `Office.onReady` are ignored. For details about these methods, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
+   > Breakpoints in calls of `Office.initialize` or `Office.onReady` are ignored. For details about these functions, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
 > [!IMPORTANT]
 > The best way to stop a debugging session is to select **Shift+F5** or choose **Run > Stop Debugging** from the menu. This action should close the Node server window and attempt to close the host application, but there will be a prompt on the host application asking you whether to save the document or not. Make an appropriate choice and let the host application close. Avoid manually closing the Node window or host application. Doing so can cause bugs especially when you are stopping and starting debugging sessions repeatedly.

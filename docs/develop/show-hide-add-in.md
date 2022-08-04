@@ -1,7 +1,7 @@
 ---
 title: Show or hide the task pane of your Office Add-in
 description: Learn how to programmatically hide or show the user interface of an add-in while it runs continuously.
-ms.date: 07/08/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-You can show the task pane of your Office Add-in by calling the `Office.addin.showAsTaskpane()` function.
+You can show the task pane of your Office Add-in by calling the `Office.addin.showAsTaskpane()` method.
 
 ```javascript
 function onCurrentQuarter() {
@@ -23,7 +23,7 @@ function onCurrentQuarter() {
 
 The previous code assumes a scenario where there is an Excel worksheet named **CurrentQuarterSales**. The add-in will make the task pane visible whenever this worksheet is activated. The method `onCurrentQuarter` is a handler for the [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-onactivated-member) event which has been registered for the worksheet.
 
-You can also hide the task pane by calling the `Office.addin.hide()` function.
+You can also hide the task pane by calling the `Office.addin.hide()` method.
 
 ```javascript
 function onCurrentQuarterDeactivated() {
@@ -38,7 +38,7 @@ The previous code is a handler that is registered for the [Office.Worksheet.onDe
 When you call `Office.addin.showAsTaskpane()`, Office will display in a task pane the file that you assigned as the resource ID (`resid`) value of the task pane. This `resid` value can be assigned or changed by opening your **manifest.xml** file and locating **\<SourceLocation\>** inside the `<Action xsi:type="ShowTaskpane">` element.
 (See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md) for additional details.)
 
-Since `Office.addin.showAsTaskpane()` is an asynchronous method, your code will continue running until the function is complete. Wait for this completion with either the `await` keyword or a `then()` method, depending on which JavaScript syntax you are using.
+Since `Office.addin.showAsTaskpane()` is an asynchronous method, your code will continue running until the method is complete. Wait for this completion with either the `await` keyword or a `then()` method, depending on which JavaScript syntax you are using.
 
 ## Configure your add-in to use the shared runtime
 
@@ -50,7 +50,7 @@ The `hide()` and `showAsTaskpane()` methods only change the *visibility* of the 
 
 Consider the following scenario: A task pane is designed with tabs. The **Home** tab is open when the add-in is first launched. Suppose a user opens the **Settings** tab and, later, code in the task pane calls `hide()` in response to some event. Still later code calls `showAsTaskpane()` in response to another event. The task pane will reappear, and the **Settings** tab is still selected.
 
-![A screenshot of task pane that has four tabs labelled Home, Settings, Favorites, and Accounts.](../images/TaskpaneWithTabs.png)
+![A task pane that has four tabs labelled Home, Settings, Favorites, and Accounts.](../images/TaskpaneWithTabs.png)
 
 In addition, any event listeners that are registered in the task pane continue to run even when the task pane is hidden.
 
@@ -75,7 +75,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 The function returns another function that *deregisters* the handler. Here is a simple, but not robust, example.
 
 ```javascript
-var removeVisibilityModeHandler =
+const removeVisibilityModeHandler =
     Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
             // Code that runs whenever the task pane is made visible.
@@ -92,7 +92,7 @@ The `onVisibilityModeChanged` method is asynchronous and returns a promise, whic
 ```javascript
 // await the promise from onVisibilityModeChanged and assign
 // the returned deregister handler to removeVisibilityModeHandler.
-var removeVisibilityModeHandler =
+const removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
             // Code that runs whenever the task pane is made visible.

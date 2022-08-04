@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 07/08/2022
+ms.date: 07/14/2022
 ms.localizationpriority: medium
 ---
 
@@ -60,6 +60,10 @@ The on-send feature currently has the following limitations.
 
 - **Append-on-send** feature &ndash; If you call [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1)) in the on-send handler, an error is returned.
 - **AppSource** &ndash; You can't publish Outlook add-ins that use the on-send feature to [AppSource](https://appsource.microsoft.com) as they will fail AppSource validation. Add-ins that use the on-send feature should be deployed by administrators.
+  
+  > [!IMPORTANT]
+  > When running `npm run validate` to [validate your add-in's manifest](../testing/troubleshoot-manifest.md), you'll receive the error, "Mailbox add-in containing ItemSend event is invalid. Mailbox add-in manifest contains ItemSend event in VersionOverrides which is not allowed." This message appears because add-ins that use the `ItemSend` event, which is required for this version of the on-send feature, can't be published to AppSource. You'll still be able to sideload and run your add-in, provided that no other validation errors are found.
+
 - **Manifest** &ndash; Only one `ItemSend` event is supported per add-in. If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.
 - **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
 - **Send Later** (Mac only) &ndash; If there are on-send add-ins, the **Send Later** feature will be unavailable.
@@ -93,7 +97,7 @@ The on-send feature in Outlook requires that add-ins are configured for the send
 
 ### [Web browser - classic Outlook](#tab/classic)
 
-Add-ins for Outlook on the web (classic) that use the on-send feature will run for users who are assigned an Outlook on the web mailbox policy that has the *OnSendAddinsEnabled* flag set to **true**.
+Add-ins for Outlook on the web (classic) that use the on-send feature will run for users who are assigned an Outlook on the web mailbox policy that has the *OnSendAddinsEnabled* flag set to `true`.
 
 To install a new add-in, run the following Exchange Online PowerShell cmdlets.
 
@@ -123,13 +127,13 @@ To enable on-send add-ins for all users:
     > [!NOTE]
     > Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types. Unsupported mailboxes will be blocked from sending by default in Outlook on the web.
 
-2. Enable the on-send feature.
+1. Enable the on-send feature.
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Assign the policy to users.
+1. Assign the policy to users.
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -148,13 +152,13 @@ To enable the on-send feature for a specific group of users the steps are as fol
    > [!NOTE]
    > Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types (see [Mailbox type limitations](#multiple-on-send-add-ins) earlier in this article for more information). Unsupported mailboxes will be blocked from sending by default in Outlook on the web.
 
-2. Enable the on-send feature.
+1. Enable the on-send feature.
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Assign the policy to users.
+1. Assign the policy to users.
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
@@ -213,13 +217,13 @@ For all users, to disallow editing while on-send add-ins are processing:
     > [!NOTE]
     > Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types. Unsupported mailboxes will be blocked from sending by default in Outlook on the web.
 
-2. Enforce compliance on send.
+1. Enforce compliance on send.
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Assign the policy to users.
+1. Assign the policy to users.
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -238,13 +242,13 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
    > [!NOTE]
    > Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types (see [Mailbox type limitations](#multiple-on-send-add-ins) earlier in this article for more information). Unsupported mailboxes will be blocked from sending by default in Outlook on the web.
 
-2. Enforce compliance on send.
+1. Enforce compliance on send.
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Assign the policy to users.
+1. Assign the policy to users.
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
@@ -482,7 +486,7 @@ function validateBody(event) {
 }
 ```
 
-The `validateBody` function gets the current body in the specified format (HTML) and passes the `ItemSend` event object that the code wants to access in the callback method. In addition to the `getAsync` method, the `Body` object also provides a `setAsync` method that you can use to replace the body with the specified text.
+The `validateBody` function gets the current body in the specified format (HTML) and passes the `ItemSend` event object that the code wants to access in the callback function. In addition to the `getAsync` method, the `Body` object also provides a `setAsync` method that you can use to replace the body with the specified text.
 
 > [!NOTE]
 > For more information, see [Event Object](/javascript/api/office/office.addincommands.event) and [Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1)).
@@ -605,7 +609,7 @@ To learn more about how to add a recipient to the CC line and verify that the em
 
 ## Debug Outlook add-ins that use on-send
 
-For instructions on how to debug your on-send add-in, refer to [Debug your UI-less Outlook add-in](debug-ui-less.md).
+For instructions on how to debug your on-send add-in, see [Debug function commands in Outlook add-ins](debug-ui-less.md).
 
 > [!TIP]
 > If the error "The callback function is unreachable" appears when your users run your add-in and your add-in's event handler is dynamically defined, you must create a stub function as a workaround. See [Event handlers are dynamically defined](#event-handlers-are-dynamically-defined) for more information.

@@ -43,12 +43,12 @@ The following table lists the error codes, names, and messages displayed, and th
 |3002|Invalid Binding Error|The specified binding does not exist.|The developer tries to bind to a non-existing or removed binding.|
 |3003|Binding Creation Error|Noncontiguous selections are not supported.|The user is making multiple selections.|
 |3004|Binding Creation Error|A binding cannot be created with the current selection and the specified binding type.|There are several conditions under which this might happen. Please see the "Binding creation error conditions" section later in this article.|
-|3005|Invalid Binding Operation|Operation is not supported on this binding type.|The developer sends a add row or add column operation on a binding type that is not  _table_.|
+|3005|Invalid Binding Operation|Operation is not supported on this binding type.|The developer sends an add row or add column operation on a binding type that is not  of coercion type `table`.|
 |3006|Binding Creation Error|The named item does not exist.|The named item cannot be found. No content control or table with that name exists.|
-|3007|Binding Creation Error|Multiple objects with the same name were found.|Collision error: more than one content control with the same name exists, and fail on collision is set to **true**.|
-|3008|Binding Creation Error|The specified binding type is not compatible with the supplied named item.|Named item cannot be bound to type. For example, a content control contains text but the developer tried to bind by using coercion type  _table_.|
+|3007|Binding Creation Error|Multiple objects with the same name were found.|Collision error: more than one content control with the same name exists, and fail on collision is set to `true`.|
+|3008|Binding Creation Error|The specified binding type is not compatible with the supplied named item.|Named item can't be bound to type. For example, a content control contains text, but the developer tried to bind by using coercion type `table`.|
 |3009|Invalid Binding Operation|The binding type is not supported.|Used for backward compatibility.|
-|3010|Unsupported Binding Operation|The selected content needs to be in table format. Format the data as a table and try again.|The developer is trying to use the `addRowsAsync` or `deleteAllDataValuesAsync` methods of the `TableBinding` object on data of coercion type _matrix_.|
+|3010|Unsupported Binding Operation|The selected content needs to be in table format. Format the data as a table and try again.|The developer is trying to use the `addRowsAsync` or `deleteAllDataValuesAsync` method of the `TableBinding` object on data of coercion type `matrix`.|
 |4000|Read Settings Error|The specified setting name does not exist.|A nonexistent setting name is supplied.|
 |4001|Save Settings Error|The settings could not be saved.|Settings could not be saved.|
 |4002|Settings Stale Error|Settings could not be saved because they are stale.|Settings are stale and developer indicated not to override settings.|
@@ -100,8 +100,8 @@ The following table summarizes binding behavior in Excel.
 
 |**Specified Binding Type**|**Actual Selection**|**Behavior**|
 |:-----|:-----|:-----|
-|Matrix|Range of cells (including within a table, and single cell)|A binding of type  _matrix_ is created on the selected cells. No modification in the document is expected.|
-|Matrix|Text selected in the cell|A binding of type  _matrix_ is created on the whole cell. No modification in the document is expected.|
+|Matrix|Range of cells (including within a table, and single cell)|A binding of type `matrix` is created on the selected cells. No modification in the document is expected.|
+|Matrix|Text selected in the cell|A binding of type `matrix` is created on the whole cell. No modification in the document is expected.|
 |Matrix|Multiple selection/invalid selection (For example, user selects a picture, object, or Word Art.)|The binding cannot be created.|
 |Table|Range of cells (includes single cell)|The binding cannot be created.|
 |Table|Range of cell within a table (includes single cell within a table, or the whole table, or text within a cell in a table)|A binding is created in the whole table.|
@@ -110,9 +110,9 @@ The following table summarizes binding behavior in Excel.
 |Table|Multiple selection/invalid selection (For example, user selects a picture, object, Word Art, etc.)|The binding cannot be created.|
 |Text|Range of cells|The binding cannot be created.|
 |Text|Range of cells within a table|The binding cannot be created.|
-|Text|Single cell|A binding of type  _text_ is created.|
-|Text|Single cell within a table|A binding of type  _text_ is created.|
-|Text|Text selected in the cell|A binding of type  _text_ in the whole cell is created.|
+|Text|Single cell|A binding of type `text` is created.|
+|Text|Single cell within a table|A binding of type `text` is created.|
+|Text|Text selected in the cell|A binding of type `text` in the whole cell is created.|
 
 ### Behavior in Word
 
@@ -121,16 +121,16 @@ The following table summarizes binding behavior in Word.
 |**Specified Binding Type**|**Actual Selection**|**Behavior**|
 |:-----|:-----|:-----|
 |Matrix|Text|The binding cannot be created.|
-|Matrix|Whole table|A binding of type  _matrix_ is created.Document is changed and a content control must wrap the table. |
+|Matrix|Whole table|A binding of type `matrix` is created.Document is changed and a content control must wrap the table. |
 |Matrix|Range within a table|The binding cannot be created.|
 |Matrix|Invalid selection (for example, multiple, invalid objects, etc.)|The binding cannot be created.|
 |Table|Text|The binding cannot be created.|
-|Table|Whole table|A binding of type  _text_ is created.|
+|Table|Whole table|A binding of type `text` is created.|
 |Table|Range within a table|The binding cannot be created.|
 |Table|Invalid selection (for example, multiple, invalid objects, etc.)|The binding cannot be created.|
-|Text|Whole table|A binding of type  _text_ is created.|
+|Text|Whole table|A binding of type `text` is created.|
 |Text|Range within a table|The binding cannot be created.|
-|Text|Multiple selection|The last selection will be wrapped with a content control and a binding to that control. A content control of type  _text_ is created.|
+|Text|Multiple selection|The last selection will be wrapped with a content control and a binding to that control. A content control of type `text` is created.|
 |Text|Invalid selection (for example, multiple, invalid objects, etc.)|The binding cannot be created.|
 
 ## See also

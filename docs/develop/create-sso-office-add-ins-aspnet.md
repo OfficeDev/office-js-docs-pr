@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on
-description: 'A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).'
-ms.date: 06/10/2022
+description: A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -12,17 +12,17 @@ This article walks you through the process of enabling single sign-on (SSO) in a
 
 ## Prerequisites
 
-* Visual Studio 2019 or later.
+- Visual Studio 2019 or later.
 
-* The **Office/SharePoint development** workload when configuring Visual studio.
+- The **Office/SharePoint development** workload when configuring Visual studio.
 
-* [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx)
+- [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
-* At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.
+- At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.
 
-* An Azure account with an active subscription - [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription - [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 ## Set up the starter project
 
@@ -31,8 +31,8 @@ Clone or download the repo at [Office Add-in ASPNET SSO](https://github.com/Offi
 > [!NOTE]
 > There are two versions of the sample.
 >
-> * The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
-> * The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Complete" and skip the sections **Code the client side** and **Code the server side**.
+> - The **Before** folder is a starter project. The UI and other aspects of the add-in that are not directly connected to SSO or authorization are already done. Later sections of this article walk you through the process of completing it.
+> - The **Complete** version of the sample is just like the add-in that you would have if you completed the procedures of this article, except that the completed project has code comments that would be redundant with the text of this article. To use the completed version, just follow the instructions in this article, but replace "Before" with "Complete" and skip the sections **Code the client side** and **Code the server side**.
 
 ## Register the add-in through an app registration
 
@@ -40,15 +40,15 @@ First, complete the steps in [Quickstart: Register an application with the Micro
 
 Use the following settings for your app registration.
 
-* Name: `Office-Add-in-ASPNET-SSO`
-* Supported account types: **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**
+- Name: `Office-Add-in-ASPNET-SSO`
+- Supported account types: **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**
 
     > [!NOTE]
     >  If you want the add-in to be usable only by users in the tenancy where you are registering it, you can choose **Accounts in this organizational directory only ...** instead, but you'll need to go through some additional setup steps. See **Setup for single-tenant** later in this article.
 
-* Platform: **Web**
-* Redirect URI: **https://localhost:44355/AzureADAuth/Authorize**
-* Client secret: `*********` (The web application uses the client secret to prove its identity when it requests tokens. *Record this value for use in a later step - it's shown only once.*)
+- Platform: **Web**
+- Redirect URI: **https://localhost:44355/AzureADAuth/Authorize**
+- Client secret: `*********` (The web application uses the client secret to prove its identity when it requests tokens. *Record this value for use in a later step - it's shown only once.*)
 
 ### Expose a web API
 
@@ -71,7 +71,7 @@ Use the following settings for your app registration.
 1. Set the **State** to **Enabled**, and then select **Add scope**.
 
     > [!NOTE]
-    > The domain part of the **\<Scope\>** name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
+    > The domain part of the **\<Scope\>** name displayed just after the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
 1. In the **Authorized client applications** section, enter the following ID to pre-authorize all Microsoft Office application endpoints.
 
@@ -162,27 +162,26 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Open the HomeES6.js file in the **Scripts** folder. It already has some code in it.
 
-    * A polyfill that assigns the Office.Promise object to the global window object so that the add-in can run when Office is using Internet Explorer for the UI. (For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).)
-    * An assignment to the `Office.initialize` method that, in turn, assigns a handler to the `getGraphAccessTokenButton` button click event.
-    * A `showResult` method that will display data returned from Microsoft Graph (or an error message) at the bottom of the task pane.
-    * A `logErrors` method that will log to console errors that are not intended for the end user.
-    * Code that implements the fallback authorization system that the add-in will use in scenarios where SSO is not supported or an error occurred.
+    - A polyfill that assigns the Office.Promise object to the global window object so that the add-in can run when Office is using Internet Explorer for the UI. (For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).)
+    - An assignment to the `Office.initialize` function that, in turn, assigns a handler to the `getGraphAccessTokenButton` button click event.
+    - A `showResult` method that will display data returned from Microsoft Graph (or an error message) at the bottom of the task pane.
+    - A `logErrors` method that will log to console errors that are not intended for the end user.
+    - Code that implements the fallback authorization system that the add-in will use in scenarios where SSO is not supported or an error occurred.
 
-1. Below the assignment to `Office.initialize`, add the code below. About this code, note:
+1. After the assignment to `Office.initialize`, add the following code. About this code, note:
 
-
-    * The error-handling in the add-in will sometimes automatically attempt a second time to get an access token, using a different set of options. The counter variable `retryGetAccessToken` is used to ensure that the user isn't cycled repeatedly through failed attempts to get a token.
-    * The `getGraphData` function is defined with the ES6 `async` keyword. Using ES6 syntax makes the SSO API in Office Add-ins much easier to to use. This is the only file in the solution that will use syntax that is not supported by Internet Explorer. We put 'ES6' in the filename as a reminder. The solution uses the tsc transpiler to transpile this file to ES5, so that the add-in can run when Office is using Internet Explorer for the UI. (See the tsconfig.json file in the root of the project.)
+    - The error-handling in the add-in will sometimes automatically attempt a second time to get an access token, using a different set of options. The counter variable `retryGetAccessToken` is used to ensure that the user isn't cycled repeatedly through failed attempts to get a token.
+    - The `getGraphData` function is defined with the ES6 `async` keyword. Using ES6 syntax makes the SSO API in Office Add-ins much easier to to use. This is the only file in the solution that will use syntax that is not supported by Internet Explorer. We put 'ES6' in the filename as a reminder. The solution uses the tsc transpiler to transpile this file to ES5, so that the add-in can run when Office is using Internet Explorer for the UI. (See the tsconfig.json file in the root of the project.)
 
     ```javascript
-    var retryGetAccessToken = 0;
+    let retryGetAccessToken = 0;
 
     async function getGraphData() {
         await getDataWithToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true });
     }
     ```
 
-1. Below the `getGraphData` function add the following function. Note that you create the `handleClientSideErrors` function in a later step.
+1. After the `getGraphData` function, add the following function. Note that you create the `handleClientSideErrors` function in a later step.
 
     > [!NOTE]
     > To distinguish between the two access tokens you work with in this article, the token returned from getAccessToken() is referred to as a bootstrap token. It is later exchanged through the On-Behalf-Of flow for a new token with access to Microsoft Graph.
@@ -208,16 +207,16 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     ```
 
 
-1. Replace `TODO 1` with the following code to get the access token from the Office host. The **options** parameter contains the following settings passed from the previous **getGraphData()** function.
+1. Replace `TODO 1` with the following code to get the access token from the Office host. The *options* parameter contains the following settings passed from the previous `getGraphData()` function.
 
-    * `allowSignInPrompt` is set to true. This tells Office to prompt the user to sign in if the user isn't already signed into Office.
-    * `allowConsentPrompt` is set to true. This tells Office to prompt the user to consent to letting the add-in access the user's Microsoft Azure Active Directory profile, if consent has not already been granted. (The resulting prompt does *not* allow the user to consent to any Microsoft Graph scopes.)
-    * `forMSGraphAccess` is set to true. This informs Office to return an error (code 13012) if the user or administrator has not granted consent to Graph scopes for the add-in. To access Microsoft Graph the add-in must exchange the access token for a new access token through the on-behalf-of flow. Setting `forMSGraphAccess` to true helps avoid the scenario where **getAccessToken()** is successful, but then the on-behalf-of flow fails later for Microsoft Graph. The add-in's client-side code can respond to the 13012 by branching to a fallback authorization system.
+    - `allowSignInPrompt` is set to true. This tells Office to prompt the user to sign in if the user isn't already signed into Office.
+    - `allowConsentPrompt` is set to true. This tells Office to prompt the user to consent to letting the add-in access the user's Microsoft Azure Active Directory profile, if consent has not already been granted. (The resulting prompt does *not* allow the user to consent to any Microsoft Graph scopes.)
+    - `forMSGraphAccess` is set to true. This informs Office to return an error (code 13012) if the user or administrator has not granted consent to Graph scopes for the add-in. To access Microsoft Graph the add-in must exchange the access token for a new access token through the on-behalf-of flow. Setting `forMSGraphAccess` to true helps avoid the scenario where **getAccessToken()** is successful, but then the on-behalf-of flow fails later for Microsoft Graph. The add-in's client-side code can respond to the 13012 by branching to a fallback authorization system.
 
     Also note for the following code:
 
-    * You create the `getData` function in a later step.
-    * The `/api/values` parameter is the URL of a server-side controller that will use the on-behalf-of flow to exchange the token for a new access token to call Microsoft Graph.
+    - You create the `getData` function in a later step.
+    - The `/api/values` parameter is the URL of a server-side controller that will use the on-behalf-of flow to exchange the token for a new access token to call Microsoft Graph.
 
     ```javascript
     let bootstrapToken = await Office.auth.getAccessToken(options);
@@ -225,13 +224,13 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     getData("/api/values", bootstrapToken);
     ```
 
-1. Below the `getGraphData` function, add the following. About this code, note:
+1. After the `getGraphData` function, add the following. About this code, note:
 
-    * It is used by both the SSO and the fallback authorization systems.
-    * The `relativeUrl` parameter is a server-side controller.
-    * The `accessToken` parameter can be a bootstrap token or a full access token.
-    * The `writeFileNamesToOfficeDocument` is already part of the project.
-    * You create the `handleServerSideErrors` function in a later step.
+    - It is used by both the SSO and the fallback authorization systems.
+    - The `relativeUrl` parameter is a server-side controller.
+    - The `accessToken` parameter can be a bootstrap token or a full access token.
+    - The `writeFileNamesToOfficeDocument` is already part of the project.
+    - You create the `handleServerSideErrors` function in a later step.
 
     ```javascript
     function getData(relativeUrl, accessToken) {
@@ -258,7 +257,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 ### Handle client-side errors
 
-1. Below the `getData` function, add the following function. Note that `error.code` is a number, usually in the range 13xxx.
+1. After the `getData` function, add the following function. Note that `error.code` is a number, usually in the range 13xxx.
 
     ```javascript
     function handleClientSideErrors(error) {
@@ -281,12 +280,12 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
         // No one is signed into Office. If the add-in cannot be effectively used when no one
         // is logged into Office, then the first call of getAccessToken should pass the
         // `allowSignInPrompt: true` option.
-        showResult(["No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to sign in, press the Get OneDrive File Names button again."]);
+        showResult(["No one is signed into Office. But you can use many of the add-in's functions anyway. If you want to sign in, press the Get OneDrive File Names button again."]);
         break;
     case 13002:
         // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
         // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
-        showResult(["You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."]);
+        showResult(["You can use many of the add-in's functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."]);
         break;
     case 13006:
         // Only seen in Office on the web.
@@ -312,7 +311,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 ### Handle server-side errors
 
-1. Below the `handleClientSideErrors` function, add the following function.
+1. After the `handleClientSideErrors` function, add the following function.
 
     ```javascript
     function handleServerSideErrors(result) {
@@ -330,8 +329,8 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 1. Replace `TODO 4` with the following. About this code, note that ASP.NET error classes were created before there was such a thing as MFA. As a side-effect of how our server-side logic handles the requests for a second authentication factor, the server-side error sent to the client has a **Message** property but no **ExceptionMessage** property. But all other errors will have a **ExceptionMessage** property, so the client-side code has to parse the response for both. Either one or the other variable will be undefined.
 
     ```javascript
-    var message = JSON.parse(result.responseText).Message;
-    var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
+    const message = JSON.parse(result.responseText).Message;
+    const exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
     ```
 
 1. Replace `TODO 5` with the following. When Microsoft Graph requires an additional form of authentication, it sends error AADSTS50076. It includes information about the additional requirement in the **Message.Claims** property. To handle this, the code makes a second attempt to get the bootstrap token, but this time it includes the request for an additional factor as the value of the `authChallenge` option, which tells Azure AD to prompt the user for all required forms of authentication.
@@ -339,8 +338,8 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     ```javascript
     if (message) {
         if (message.indexOf("AADSTS50076") !== -1) {
-            var claims = JSON.parse(message).Claims;
-            var claimsAsString = JSON.stringify(claims);
+            const claims = JSON.parse(message).Claims;
+            const claimsAsString = JSON.stringify(claims);
             getDataWithToken({ authChallenge: claimsAsString });
             return;
         }
@@ -429,10 +428,10 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Replace the `TODO 1` with the following. About this code, note:
 
-    * The code instructs OWIN to ensure that the audience specified in the bootstrap token that comes from the Office application must match the value specified in the web.config.
-    * Microsoft accounts have an issuer GUID that is different from any organizational tenant GUID, so to support both kinds of accounts, we do not validate the issuer.
-    * Setting `SaveSigninToken` to `true` causes OWIN to save the raw bootstrap token from the Office application. The add-in needs it to obtain an access token to Microsoft Graph with the on-behalf-of flow.
-    * Scopes are not validated by the OWIN middleware. The scopes of the bootstrap token, which should include `access_as_user`, is validated in the controller.
+    - The code instructs OWIN to ensure that the audience specified in the bootstrap token that comes from the Office application must match the value specified in the web.config.
+    - Microsoft accounts have an issuer GUID that is different from any organizational tenant GUID, so to support both kinds of accounts, we do not validate the issuer.
+    - Setting `SaveSigninToken` to `true` causes OWIN to save the raw bootstrap token from the Office application. The add-in needs it to obtain an access token to Microsoft Graph with the on-behalf-of flow.
+    - Scopes are not validated by the OWIN middleware. The scopes of the bootstrap token, which should include `access_as_user`, is validated in the controller.
 
     ```csharp
     TokenValidationParameters tvps = new TokenValidationParameters
@@ -445,8 +444,8 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Replace `TODO 2` with the following. About this code, note:
 
-    * The method `UseOAuthBearerAuthentication` is called instead of the more common `UseWindowsAzureActiveDirectoryBearerAuthentication` because the latter is not compatible with the Azure AD V2 endpoint.
-    * The URL that is passed to the method is where the OWIN middleware obtains instructions for getting the key it needs to verify the signature on the bootstrap token received from the Office application. The Authority segment of the URL comes from the web.config. It is either the string "common" or, for a single-tenant add-in, a GUID.
+    - The method `UseOAuthBearerAuthentication` is called instead of the more common `UseWindowsAzureActiveDirectoryBearerAuthentication` because the latter is not compatible with the Azure AD V2 endpoint.
+    - The URL that is passed to the method is where the OWIN middleware obtains instructions for getting the key it needs to verify the signature on the bootstrap token received from the Office application. The Authority segment of the URL comes from the web.config. It is either the string "common" or, for a single-tenant add-in, a GUID.
 
     ```csharp
     string[] endAuthoritySegments = { "oauth2/v2.0" };
@@ -501,7 +500,6 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Replace `TODO1` with the following code to validate that the scopes that are specified in the token include `access_as_user`. Note that the second parameter of the `SendErrorToClient` method is an **Exception** object. In this case, the code passes `null` because including the **Exception** object blocks the inclusion of the **Message** property in the HTTP Response that is generated.
 
-
     ```csharp
     string[] addinScopes = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Split(' ');
     if (!(addinScopes.Contains("access_as_user")))
@@ -512,10 +510,10 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Replace `TODO 2` with the following code to assemble all the information that is needed to get a token for Microsoft Graph using the "on behalf of" flow. About this code, note:
 
-    * Your add-in is no longer playing the role of a resource (or audience) to which the Office application and user need access. Now it is itself a client that needs access to Microsoft Graph. `ConfidentialClientApplication` is the MSAL “client context” object.
-    * Beginning with MSAL.NET 3.x.x, the `bootstrapContext` is just the bootstrap token itself.
-    * The Authority comes from the web.config. It is either the string "common" or, for a single-tenant add-in, a GUID.
-    * MSAL will throw an error if your code requests `profile`, which is really only used when the Office client application gets the token to your add-in's web application. So only `Files.Read.All` is explicitly requested.
+    - Your add-in is no longer playing the role of a resource (or audience) to which the Office application and user need access. Now it is itself a client that needs access to Microsoft Graph. `ConfidentialClientApplication` is the MSAL “client context” object.
+    - Beginning with MSAL.NET 3.x.x, the `bootstrapContext` is just the bootstrap token itself.
+    - The Authority comes from the web.config. It is either the string "common" or, for a single-tenant add-in, a GUID.
+    - MSAL will throw an error if your code requests `profile`, which is really only used when the Office client application gets the token to your add-in's web application. So only `Files.Read.All` is explicitly requested.
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();
@@ -532,8 +530,8 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Replace `TODO 3` with the following code. About this code, note:
 
-    * The `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` method will first look in the MSAL cache, which is in memory, for a matching access token. Only if there isn't one, does it initiate the on-behalf-of flow with the Azure AD V2 endpoint.
-    * Any exceptions that are not of type `MsalServiceException` are intentionally not caught, so they will propagate to the client as `500 Server Error` messages.
+    - The `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` method will first look in the MSAL cache, which is in memory, for a matching access token. Only if there isn't one, does it initiate the on-behalf-of flow with the Azure AD V2 endpoint.
+    - Any exceptions that are not of type `MsalServiceException` are intentionally not caught, so they will propagate to the client as `500 Server Error` messages.
 
     ```csharp
     AcquireTokenOnBehalfOfParameterBuilder parameterBuilder = null;
@@ -555,10 +553,10 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Replace `TODO 3a` with the following code. About this code, note:
 
-    * If multi-factor authentication is required by the Microsoft Graph resource and the user has not yet provided it, Azure AD will return "400 Bad Request" with error `AADSTS50076` and a **Claims** property. MSAL throws a **MsalUiRequiredException** (which inherits from **MsalServiceException**) with this information.
-    * The **Claims** property value must be passed to the client which should pass it to the Office application, which then includes it in a request for a new bootstrap token. Azure AD will prompt the user for all required forms of authentication.
-    * The APIs that create HTTP Responses from exceptions don't know about the **Claims** property, so they don't include it in the response object. We have to manually create a message that includes it. A custom **Message** property, however, blocks the creation of an **ExceptionMessage** property, so the only way to get the error ID `AADSTS50076` to the client is to add it to the custom **Message**. JavaScript in the client will need to discover if a response has a **Message** or **ExceptionMessage**, so it knows which to read.
-    * The custom message is formatted as JSON so that the client-side JavaScript can parse it with well-known JavaScript `JSON` object methods.
+    - If multi-factor authentication is required by the Microsoft Graph resource and the user has not yet provided it, Azure AD will return "400 Bad Request" with error `AADSTS50076` and a **Claims** property. MSAL throws a **MsalUiRequiredException** (which inherits from **MsalServiceException**) with this information.
+    - The **Claims** property value must be passed to the client which should pass it to the Office application, which then includes it in a request for a new bootstrap token. Azure AD will prompt the user for all required forms of authentication.
+    - The APIs that create HTTP Responses from exceptions don't know about the **Claims** property, so they don't include it in the response object. We have to manually create a message that includes it. A custom **Message** property, however, blocks the creation of an **ExceptionMessage** property, so the only way to get the error ID `AADSTS50076` to the client is to add it to the custom **Message**. JavaScript in the client will need to discover if a response has a **Message** or **ExceptionMessage**, so it knows which to read.
+    - The custom message is formatted as JSON so that the client-side JavaScript can parse it with well-known JavaScript `JSON` object methods.
 
     ```csharp
     if (e.Message.StartsWith("AADSTS50076"))
@@ -570,10 +568,10 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
 
 1. Replace `TODO 3b` with the following code. About this code, note:
 
-    * If the call to Azure AD contained at least one scope (permission) for which neither the user nor a tenant administrator has consented (or consent was revoked), Azure AD will return "400 Bad Request" with error `AADSTS65001`. MSAL throws a **MsalUiRequiredException** with this information.
-    * If the call to Azure AD contained at least one scope that Azure AD does not recognize, AAD returns "400 Bad Request" with error `AADSTS70011`. MSAL throws a **MsalUiRequiredException** with this information.
-    * The entire description is included because 70011 is returned in other conditions and it should only be handled in this add-in when it means that there is an invalid scope.
-    * The **MsalUiRequiredException** object is passed to `SendErrorToClient`. This ensures that an **ExceptionMessage** property that contains the error information is included in the HTTP Response.
+    - If the call to Azure AD contained at least one scope (permission) for which neither the user nor a tenant administrator has consented (or consent was revoked), Azure AD will return "400 Bad Request" with error `AADSTS65001`. MSAL throws a **MsalUiRequiredException** with this information.
+    - If the call to Azure AD contained at least one scope that Azure AD does not recognize, AAD returns "400 Bad Request" with error `AADSTS70011`. MSAL throws a **MsalUiRequiredException** with this information.
+    - The entire description is included because 70011 is returned in other conditions and it should only be handled in this add-in when it means that there is an invalid scope.
+    - The **MsalUiRequiredException** object is passed to `SendErrorToClient`. This ensures that an **ExceptionMessage** property that contains the error information is included in the HTTP Response.
 
     ```csharp
     if ((e.Message.StartsWith("AADSTS65001")) || (e.Message.StartsWith("AADSTS70011: The provided value for the input parameter 'scope' is not valid.")))

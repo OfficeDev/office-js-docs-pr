@@ -12,7 +12,14 @@ The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/previ
 > [!IMPORTANT]
 > **The Outlook REST APIs are deprecated**
 >
-> The Outlook REST endpoints will be fully decommissioned in November 2022 (for more details, refer to the [November 2020 announcement](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). You should migrate existing add-ins to use [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Also, [Compare Microsoft Graph and Outlook REST API endpoints](/outlook/rest/compare-graph).
+> The Outlook REST endpoints will be fully decommissioned on November 30, 2022 (for more details, see the [November 2020 announcement](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). You should migrate existing add-ins to use [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). For guidance, see [Compare Microsoft Graph and Outlook REST API endpoints](/outlook/rest/compare-graph).
+>
+> To assist you with the migration, active add-ins that use the REST service prior to November 30, 2022 are eligible for an exemption to keep using the service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). This exemption is based on the add-in's manifest ID and applies to privately released and AppSource-hosted add-ins. Add-ins must meet the following conditions to be eligible for the exemption.
+>
+> - The add-in's [ID](/javascript/api/manifest/id) must be valid and unique. Add-ins hosted in AppSource are automatically assigned a GUID, while privately released add-ins must be manually assigned one in the manifest.
+> - If your add-in caters to multiple customers and isn't hosted in AppSource, the add-in instance used by each customer must use the same manifest ID. If your add-in uses a different ID per customer, it isn't eligible for an exemption and must be migrated to Microsoft Graph prior to November 2022.
+>
+> To ensure your add-in's exemption, complete the [REST API add-in verification form](https://aka.ms/RESTCheck) prior to November 2022. For more information, see the [Office Add-ins February 2022 community call blog post](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-february-9-2022/).
 
 ## Get an access token
 

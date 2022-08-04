@@ -1,7 +1,7 @@
 ---
 title: Special requirements for add-ins on the iPad
 description: Learn some requirements for creating an Office Add-in that runs on an iPad.
-ms.date: 09/03/2020
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -27,8 +27,8 @@ The following table lists the tasks to perform.
 > [!NOTE]
 > Your add-in can serve an alternate UI based on the device that it is running on. To detect whether your add-in is running on an iPad, you can use the following APIs.
 >
-> - var isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member)
-> - var allowCommerce = [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member)
+> - const isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member)
+> - const allowCommerce = [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member)
 >
 > On an iPad, `touchEnabled` returns `true` and `commerceAllowed` returns `false`.
 >
@@ -38,10 +38,10 @@ The following table lists the tasks to perform.
 
 Apply the following best practices for developing add-ins that run on iPad.
 
--  **Develop and debug the add-in on Windows or Mac and sideload it to an iPad.**
+- **Develop and debug the add-in on Windows or Mac and sideload it to an iPad.**
 
     You can't develop the add-in directly on an iPad, but you can develop and debug it on a Windows or Mac computer and sideload it to an iPad for testing. Because an add-in that runs in Office on iOS or Mac supports the same APIs as an add-in running in Office on Windows, your add-in's code should run the same way on these platforms. For details, see [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md) and [Sideload Office Add-ins on iPad for testing](../testing/sideload-an-office-add-in-on-ipad.md).
 
--  **Specify API requirements in your add-in's manifest or with runtime checks.**
+- **Specify API requirements in your add-in's manifest or with runtime checks.**
 
     When you specify API requirements in your add-in's manifest, Office will determine if the Office client application supports those API members. If the API members are available in the application, then your add-in will be available. Alternatively, you can perform a runtime check to determine if a method is available in the application before using it in your add-in. Runtime checks ensure that your add-in is always available in the application, and provides additional functionality if the methods are available. For more information, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md).

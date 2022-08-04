@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: Learn how to add custom contextual tabs to your Office Add-in.
-ms.date: 05/25/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -87,7 +87,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
       "type": "ExecuteFunction",
       "functionName": "writeData"
     }
-   ```
+    ```
 
 1. Add the following as the only member of the `tabs` array. About this markup, note:
 
@@ -248,7 +248,7 @@ The following is the complete example of the JSON blob.
 
 ## Register the contextual tab with Office with requestCreateControls
 
-The contextual tab is registered with Office by calling the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) method. This is typically done in either the function that is assigned to `Office.initialize` or with the `Office.onReady` method. For more about these methods and initializing the add-in, see [Initialize your Office Add-in](../develop/initialize-add-in.md). You can, however, call the method anytime after initialization.
+The contextual tab is registered with Office by calling the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) method. This is typically done in either the function that is assigned to `Office.initialize` or with the `Office.onReady` function. For more about these functions and initializing the add-in, see [Initialize your Office Add-in](../develop/initialize-add-in.md). You can, however, call the method anytime after initialization.
 
 > [!IMPORTANT]
 > The `requestCreateControls` method may be called only once in a given session of an add-in. An error is thrown if it is called again.
@@ -267,7 +267,7 @@ Office.onReady(async () => {
 
 Typically, a custom contextual tab should appear when a user-initiated event changes the add-in context. Consider a scenario in which the tab should be visible when, and only when, a chart (on the default worksheet of an Excel workbook) is activated.
 
-Begin by assigning handlers. This is commonly done in the `Office.onReady` method as in the following example which assigns handlers (created in a later step) to the `onActivated` and `onDeactivated` events of all the charts in the worksheet.
+Begin by assigning handlers. This is commonly done in the `Office.onReady` function as in the following example which assigns handlers (created in a later step) to the `onActivated` and `onDeactivated` events of all the charts in the worksheet.
 
 ```javascript
 Office.onReady(async () => {
@@ -276,7 +276,7 @@ Office.onReady(async () => {
     await Office.ribbon.requestCreateControls(contextualTab);
 
     await Excel.run(context => {
-        var charts = context.workbook.worksheets
+        const charts = context.workbook.worksheets
             .getActiveWorksheet()
             .charts;
         charts.onActivated.add(showDataTab);
@@ -471,7 +471,7 @@ The JSON blob that is passed to `requestCreateControls` is not localized the sam
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
-    var displayLanguage = Office.context.displayLanguage;
+    const displayLanguage = Office.context.displayLanguage;
 
         switch (displayLanguage) {
             case 'en-US':
@@ -514,7 +514,7 @@ function GetContextualTabsJsonSupportedLocale () {
 Then your code calls the function to get the localized blob that is passed to `requestCreateControls`, as in the following example.
 
 ```javascript
-var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
+const contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 ```
 
 ## Best practices for custom contextual tabs

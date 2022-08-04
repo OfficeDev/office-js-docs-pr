@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands in your manifest for Excel, PowerPoint, and Word
 description: Use VersionOverrides in your manifest to define add-in commands for Excel, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 07/05/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +14,6 @@ ms.localizationpriority: medium
 Use **[VersionOverrides](/javascript/api/manifest/versionoverrides)** in your manifest to define add-in commands for Excel, PowerPoint, and Word. Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md).
 
 This article describes how to edit your manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands). The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
-
 
 ![Overview of add-in commands elements in the manifest. The top node here is VersionOverrides with children Hosts and Resources. Under Hosts are Host then DesktopFormFactor. Under DesktopFormFactor are FunctionFile and ExtensionPoint. Under ExtensionPoint are CustomTab or OfficeTab and Office Menu. Under CustomTab or Office Tab are Group then Control then Action. Under Office Menu are Control then Action. Under Resources (child of VersionOverrides) are Images, Urls, ShortStrings, and LongStrings.](../images/version-overrides.png)
 
@@ -153,7 +152,7 @@ The JavaScript in the HTML file referenced by the **\<FunctionFile\>** element m
 
 The following code shows how to implement the function used by **\<FunctionName\>**.
 
-```js
+```html
 <script>
     // The initialize function must be run each time a new page is loaded.
     (function () {
@@ -168,7 +167,7 @@ The following code shows how to implement the function used by **\<FunctionName\
         // Implement your custom code here. The following code is a simple example.  
         Office.context.document.setSelectedDataAsync("Function command works. Button ID=" + event.source.id,
             function (asyncResult) {
-                var error = asyncResult.error;
+                const error = asyncResult.error;
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                     // Show error message.
                 }

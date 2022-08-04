@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
 ---
@@ -80,7 +80,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     ```js
     // Get a reference to the current message
-    var item = Office.context.mailbox.item;
+    const item = Office.context.mailbox.item;
 
     // Write message property value to the task pane
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
@@ -155,7 +155,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 ### Update the code
 
 1. **MessageRead.html** specifies the HTML that will be rendered in the add-in's task pane. In **MessageRead.html**, replace the **\<body\>** element with the following markup and save the file.
- 
+
     ```HTML
     <body class="ms-font-m ms-welcome">
         <div class="ms-Fabric content-main">
@@ -270,15 +270,15 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 1. Within the message, locate the ellipsis for the overflow menu containing the add-in's button.
 
-    ![Screenshot of a message window in Outlook on the web with the ellipsis highlighted.](../images/quick-start-button-owa-1.png)
+    ![A message window in Outlook on the web with the ellipsis highlighted.](../images/quick-start-button-owa-1.png)
 
 1. Within the overflow menu, locate the add-in's button.
 
-    ![Screenshot of a message window in Outlook on the web with the add-in button highlighted.](../images/quick-start-button-owa-2.png)
+    ![A message window in Outlook on the web with the add-in button highlighted.](../images/quick-start-button-owa-2.png)
 
 1. Click the button to open the add-in's task pane.
 
-    ![Screenshot of the add-in's task pane in Outlook on the web displaying message properties.](../images/quick-start-task-pane-owa-1.png)
+    ![The add-in's task pane in Outlook on the web displaying message properties.](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
     > If the task pane doesn't load, try to verify by opening it in a browser on the same machine.
