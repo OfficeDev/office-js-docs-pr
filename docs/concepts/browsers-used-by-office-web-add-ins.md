@@ -16,7 +16,7 @@ Which browser is used depends on:
 - Within the perpetual versions of Office, whether the add-in is running in the "consumer" or "commercial" (also called "volume-licensed" or "LTSC") variation.
 
 > [!NOTE]
-> This article assumes that the add-in is running in a document that is *not* protected with [Windows Information Protection (WIP)](/windows/uwp/enterprise/wip-hub). For WIP-enabled documents, there are some exceptions to the information in this document. For details, see [WIP-protected documents](#wip-protected-documents).
+> This article assumes that the add-in is running in a document that is *not* protected with [Windows Information Protection (WIP)](/windows/uwp/enterprise/wip-hub). For WIP-protected documents, there are some exceptions to the information in this article. For more information, see [WIP-protected documents](#wip-protected-documents).
 
 > [!IMPORTANT]
 > **Internet Explorer still used in Office Add-ins**
@@ -125,7 +125,7 @@ Directly downloading blobs as PDF files in an add-in is not supported when Edge 
 
 ## WIP-protected documents
 
-Add-ins that are running in a [WIP-protected](/windows/uwp/enterprise/wip-hub) document never use **Microsoft Edge with WebView2 (Chromium-based)**. In the sections [Perpetual versions of Office on Windows](#perpetual-versions-of-office-on-windows) and [Microsoft 365 Subscription on Windows](#microsoft-365-subscription-on-windows) earlier in this article, substitute **Microsoft Edge with original WebView (EdgeHTML)** for **Microsoft Edge with WebView2 (Chromium-based)** wherever the latter appears when the add-in is running in a WIP-protected document.
+Add-ins that are running in a [WIP-protected](/windows/uwp/enterprise/wip-hub) document never use **Microsoft Edge with WebView2 (Chromium-based)**. In the sections [Perpetual versions of Office on Windows](#perpetual-versions-of-office-on-windows) and [Microsoft 365 Subscription on Windows](#microsoft-365-subscription-on-windows) earlier in this article, substitute **Microsoft Edge with original WebView (EdgeHTML)** for **Microsoft Edge with WebView2 (Chromium-based)** wherever the latter appears.
 
 To determine if a document is WIP-protected, follow these steps:
 
