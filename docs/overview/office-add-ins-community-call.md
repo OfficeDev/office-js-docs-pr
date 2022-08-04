@@ -11,8 +11,8 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for August 10th call
 
-- OOXML libraries for JavaScript
-- Integrate your web site with Excel add-ins
+- Demo of OOXML libraries.
+- Integrate your web site with Excel add-ins.
 
 ## Previous calls
 
