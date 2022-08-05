@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: Specifies how the operating system and Office version determine what browser is used by Office Add-ins.
-ms.date: 07/27/2022
+ms.date: 08/04/2022
 ms.localizationpriority: medium
 ---
 
@@ -15,10 +15,13 @@ Which browser is used depends on:
 - Whether the add-in is running in Office on the web, Microsoft 365, or perpetual (also called "non-subscription" or "one-time purchase") Office 2013 or later.
 - Within the perpetual versions of Office, whether the add-in is running in the "consumer" or "commercial" (also called "volume-licensed" or "LTSC") variation.
 
+> [!NOTE]
+> This article assumes that the add-in is running in a document that is *not* protected with [Windows Information Protection (WIP)](/windows/uwp/enterprise/wip-hub). For WIP-protected documents, there are some exceptions to the information in this article. For more information, see [WIP-protected documents](#wip-protected-documents).
+
 > [!IMPORTANT]
 > **Internet Explorer still used in Office Add-ins**
 >
-> Some combinations of platforms and Office versions, including perpetual versions through Office 2019, still use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in this article. We recommend (but don't require) that you continue to support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in the Internet Explorer webview. Keep these additional points in mind:
+> Some combinations of platforms and Office versions, including commercial perpetual versions through Office 2019, still use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in this article. We recommend (but don't require) that you continue to support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in the Internet Explorer webview. Keep these additional points in mind:
 >
 > - Office on the web no longer opens in Internet Explorer. Consequently, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) no longer tests add-ins in Office on the web using Internet Explorer as the browser.
 > - AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer, however it only issues a warning when the add-in does not support Internet Explorer; the add-in is not rejected by AppSource.
@@ -119,6 +122,17 @@ One known cause is that Microsoft Edge requires that localhost be given a loopba
 ### Get errors trying to download a PDF file
 
 Directly downloading blobs as PDF files in an add-in is not supported when Edge is the browser. The workaround is to create a simple web application that downloads blobs as PDF files. In your add-in, call the `Office.context.ui.openBrowserWindow(url)` method and pass the URL of the web application. This will open the web application in a browser window outside of Office.
+
+## WIP-protected documents
+
+Add-ins that are running in a [WIP-protected](/windows/uwp/enterprise/wip-hub) document never use **Microsoft Edge with WebView2 (Chromium-based)**. In the sections [Perpetual versions of Office on Windows](#perpetual-versions-of-office-on-windows) and [Microsoft 365 Subscription on Windows](#microsoft-365-subscription-on-windows) earlier in this article, substitute **Microsoft Edge with original WebView (EdgeHTML)** for **Microsoft Edge with WebView2 (Chromium-based)** wherever the latter appears.
+
+To determine if a document is WIP-protected, follow these steps:
+
+1. Open the file.
+1. Select the **File** tab on the ribbon.
+1. Select **Info**.
+1. In the upper left of the **Info** page, just below the file name, a WIP-enable document will have briefcase icon followed by **Managed by Work (…)**.
 
 ## See also
 
