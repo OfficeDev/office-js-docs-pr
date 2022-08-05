@@ -2,7 +2,7 @@
 title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in
 description: Learn how to handle the on-send events in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 07/21/2022
+ms.date: 08/05/2022
 ms.localizationpriority: medium
 ---
 
@@ -46,7 +46,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
-            <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+            <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
           </Runtime>
         </Runtimes>
@@ -113,7 +113,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Entry needed for Outlook Desktop. -->
+        <!-- Entry needed for Outlook on Windows. -->
         <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
@@ -219,6 +219,18 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
     Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
     ```
+
+1. Save your changes.
+
+## Update the commands HTML file
+
+1. In the **./src/commands** folder, open **commands.html**.
+
+1. Immediately before the closing **head** tag (`</head>`), add a script entry for the event-handling JavaScript code.
+
+   ```js
+   <script type="text/javascript" src="../launchevent/launchevent.js"></script> 
+   ```
 
 1. Save your changes.
 

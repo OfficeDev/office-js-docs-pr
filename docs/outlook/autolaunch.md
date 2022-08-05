@@ -84,7 +84,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and Outlook on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
-            <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+            <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
           </Runtime>
         </Runtimes>
@@ -167,7 +167,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Entry needed for Outlook Desktop. -->
+        <!-- Entry needed for Outlook on Windows. -->
         <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
@@ -244,7 +244,7 @@ In this scenario, you'll add handling for composing new items.
 
 1. In the **./src/commands** folder, open **commands.html**.
 
-1. Immediately before the closing **head** tag (`<\head>`), add a script entry to include the event-handling JavaScript code.
+1. Immediately before the closing **head** tag (`</head>`), add a script entry to include the event-handling JavaScript code.
 
     ```html
     <script type="text/javascript" src="../launchevent/launchevent.js"></script>
