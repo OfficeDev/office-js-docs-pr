@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 07/27/2021
+ms.date: 08/09/2022
 ms.localizationpriority: high
 ---
 
@@ -40,7 +40,7 @@ The following figure shows the four levels of permissions and describes the capa
 
 **Relating the four-tier permission model to the end user, developer, and administrator**
 
-![4-tier permissions model for mail apps schema v1.1.](../images/add-in-permission-tiers.png)
+![Diagram of the four-tier permissions model for mail apps schema v1.1.](../images/add-in-permission-tiers.png)
 
 ## AppSource: Add-in integrity
 
@@ -56,9 +56,9 @@ The following figure shows the four levels of permissions and describes the capa
 
 ## Optional connected experiences
 
-End users and IT admins can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Outlook add-ins, the impact of disabling the **Optional connected experiences** setting depends on the client but usually means that user-installed add-ins and access to the Office Store are not allowed. Add-ins deployed by an organization's IT admin through [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) will still be available.
+End users and IT admins can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Outlook add-ins, the impact of disabling the **Optional connected experiences** setting depends on the client but usually means that user-installed add-ins and access to the Office Store aren't allowed. Add-ins deployed by an organization's IT admin through [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) will still be available.
 
-- Windows\*, Mac: The **Get Add-ins** button is not displayed so users can no longer manage their add-ins or access the Office Store.
+- Windows\*, Mac: The **Get Add-ins** button isn't displayed so users can no longer manage their add-ins or access the Office Store.
 - Android, iOS: The **Get Add-ins** dialog shows only admin-deployed add-ins.
 - Browser: Availability of add-ins and access to the Store are unaffected so users can continue to [manage their add-ins](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce), including admin-deployed ones.
 
@@ -71,16 +71,13 @@ For general add-in behavior, see [Privacy and security for Office Add-ins](../co
 
 The security model addresses security, privacy, and performance concerns of end users in the following ways.
 
-- End user's messages that are protected by Outlook's Information Rights Management (IRM) do not interact with Outlook add-ins.
+- End user's messages that are protected by Outlook's Information Rights Management (IRM) don't interact with Outlook add-ins in Outlook on Mac and on the web.
 
-  > [!IMPORTANT]
-  > - Add-ins activate on digitally signed messages in Outlook associated with a Microsoft 365 subscription. On Windows, this support was introduced with build 8711.1000.
-  >
-  > - Starting with Outlook build 13229.10000 on Windows, add-ins can now activate on items protected by IRM. For more information about this feature in preview, see [Add-in activation on items protected by Information Rights Management (IRM)](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm).
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 - Before installing an add-in from AppSource, end users can see the access and actions that the add-in can make on their data and must explicitly confirm to proceed. No Outlook add-in is automatically pushed onto a client computer without manual validation by the user or administrator.
 
-- Granting the **restricted** permission allows the Outlook add-in to have limited access on only the current item. Granting the **read item** permission allows the Outlook add-in to access personal identifiable information, such as sender and recipient names and email addresses, on only the current item,.
+- Granting the **restricted** permission allows the Outlook add-in to have limited access on only the current item. Granting the **read item** permission allows the Outlook add-in to access personal identifiable information, such as sender and recipient names and email addresses, on only the current item.
 
 - An end user can install an Outlook add-in for only himself or herself. Outlook add-ins that affect an organization are installed by an administrator.
 
@@ -125,7 +122,7 @@ Developers should follow the tiered permissions model to provide transparency an
     <Permissions>ReadItem</Permissions>
   ```
 
-- Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook items (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body. For example, the following rule activates the Outlook add-in if one or more of three entities - phone number, postal address, or URL - are found in the subject or body of the current message.
+- Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body. For example, the following rule activates the Outlook add-in if one or more of three entities - phone number, postal address, or URL - are found in the subject or body of the current message.
 
   ```XML
     <Permissions>Restricted</Permissions>
@@ -139,7 +136,7 @@ Developers should follow the tiered permissions model to provide transparency an
     </Rule>
   ```
 
-- Developers should request the **read item** permission if the Outlook add-in needs to read properties of the current item other than the default extracted entities, or write custom properties set by the add-in on the current item, but does not require reading or writing to other items, or creating or sending a message in the user's mailbox. For example, a developer should request **read item** permission if an Outlook add-in needs to look for an entity like a meeting suggestion, task suggestion, email address, or contact name in the item's subject or body, or uses a regular expression to activate.
+- Developers should request the **read item** permission if the Outlook add-in needs to read properties of the current item other than the default extracted entities, or write custom properties set by the add-in on the current item, but doesn't require reading or writing to other items, or creating or sending a message in the user's mailbox. For example, a developer should request **read item** permission if an Outlook add-in needs to look for an entity like a meeting suggestion, task suggestion, email address, or contact name in the item's subject or body, or uses a regular expression to activate.
 
 - Developers should request the **read/write item** permission if the Outlook add-in needs to write to properties of the composed item, such as recipient names, email addresses, body, and subject, or needs to add or remove item attachments.
 
@@ -157,7 +154,7 @@ Developers should be aware of resource usage limits for activation, incorporate 
 
 Developers should be aware of and plan for the following as well.
 
-- Developers cannot use ActiveX controls in add-ins because they are not supported.
+- Developers can't use ActiveX controls in add-ins because they're not supported.
 
 - Developers should do the following when submitting an Outlook add-in to AppSource.
 
