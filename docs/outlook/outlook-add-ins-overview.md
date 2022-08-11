@@ -41,7 +41,7 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
 Outlook add-ins activate when the user is composing or reading a message or appointment, but not other item types. However, add-ins are *not* activated if the current message item, in a compose or read form, is one of the following:
 
-- Protected by Information Rights Management (IRM) or encrypted in other ways for protection and accessed from Outlook on Mac or on the web. A digitally signed message is an example since digital signing relies on one of these mechanisms.
+- Protected by Information Rights Management (IRM) or encrypted in other ways for protection and accessed from Outlook on non-Windows clients. A digitally signed message is an example since digital signing relies on one of these mechanisms.
 
 [!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
