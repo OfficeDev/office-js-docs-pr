@@ -98,9 +98,9 @@ A browser runtime lifespan varies depending on the feature that it implements.
 - When a function command is executed (which happens when a user selects its button or menu item), a browser runtime starts, unless it is a shared runtime that is already running. If it is a shared runtime it shuts down when the add-in is closed. If it is an unshared runtime, it shuts down when the first of the following occurs:
  
   - The function command calls the `completed` method of its event parameter.
-  - 5 minutes has elapsed since the triggering event.
+  - 5 minutes has elapsed since the triggering event. (If a dialog was opened in the custom function and it is still open when the parent runtime times-out, the dialog runtime stays running until the dialog is closed.)
 
-- When an Excel custom function is using a shared runtime, then a browser type runtime starts when the custom function calculates, if the shared runtime has not already started for some other reason. It shuts down when the add-in is closed.
+- When an Excel custom function is using a shared runtime, then a browser type runtime starts when the custom function calculates if the shared runtime has not already started for some other reason. It shuts down when the add-in is closed.
 
 > [!NOTE]
 > When a runtime is being [shared](#shared-runtime), it is possible to close the task pane without shutting down the add-in. See [Show or hide the task pane of your Office Add-in](../develop/show-hide-add-in.md) for more information.
