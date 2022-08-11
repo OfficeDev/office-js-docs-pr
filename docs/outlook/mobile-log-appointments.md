@@ -2,7 +2,7 @@
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
 ms.topic: article
-ms.date: 05/10/2022
+ms.date: 08/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -21,11 +21,11 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Capture and view appointment notes
 
-You can opt to implement a UI-less command or task pane. To update your add-in, select the tab for either UI-less command or task pane, then follow the instructions.
+You can opt to implement a function command or task pane. To update your add-in, select the tab for either function command or task pane, then follow the instructions.
 
-# [UI-less add-in command](#tab/noui)
+# [Function command](#tab/noui)
 
-This option will enable a user to log and view their notes and other details about their appointments when they select a UI-less add-in command from the ribbon.
+This option will enable a user to log and view their notes and other details about their appointments when they select a function command from the ribbon.
 
 ### Configure the manifest
 
@@ -555,7 +555,7 @@ The following APIs are available for this feature.
 
 Several restrictions apply.
 
-- The **Log** button name cannot be changed. However, there is a way for a different label to be displayed by setting a custom property on the appointment item. For more details, refer to the **View appointment notes** section for [UI-less](?tabs=noui#view-appointment-notes) or [task pane](?tabs=taskpane#view-appointment-notes-1) as appropriate.
+- The **Log** button name cannot be changed. However, there is a way for a different label to be displayed by setting a custom property on the appointment item. For more details, refer to the **View appointment notes** section for [function command](?tabs=noui#view-appointment-notes) or [task pane](?tabs=taskpane#view-appointment-notes-1) as appropriate.
 - The **EventLogged** custom property must be used if you want to toggle the label of the **Log** button to **View** and back.
 - The add-in icon should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
 - The add-in should extract the meeting details from the appointment form within the one-minute timeout period. However, any time spent in a dialog box the add-in opened for authentication, for example, is excluded from the timeout period.
