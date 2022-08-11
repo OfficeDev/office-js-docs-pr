@@ -2,7 +2,7 @@
 title: Implement append-on-send in your Outlook add-in
 description: Learn how to implement the append-on-send feature in your Outlook add-in.
 ms.topic: article
-ms.date: 02/01/2021
+ms.date: 07/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -27,7 +27,7 @@ For this scenario, instead of running the `action` function on choosing the **Pe
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.
+1. Select the entire **\<VersionOverrides\>** node (including open and close tags) and replace it with the following XML.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -132,7 +132,7 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
 
     ```js
     function appendDisclaimerOnSend(event) {
-      var appendText =
+      const appendText =
         '<p style = "color:blue"> <i>This and subsequent emails on the same topic are for discussion and information purposes only. Only those matters set out in a fully executed agreement are legally binding. This email may contain confidential information and should not be shared with any third party without the prior written agreement of Contoso. If you are not the intended recipient, take no action and contact the sender immediately.<br><br>Contoso Limited (company number 01624297) is a company registered in England and Wales whose registered office is at Contoso Campus, Thames Valley Park, Reading RG6 1WG</i></p>';  
       /**
         *************************************************************
@@ -154,15 +154,15 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
     }
     ```
 
-1. At the end of the file, add the following statement.
+1. Immediately below the function add the following line to register the function.
 
     ```js
-    g.appendDisclaimerOnSend = appendDisclaimerOnSend;
+    Office.actions.associate("appendDisclaimerOnSend", appendDisclaimerOnSend);
     ```
 
 ## Try it out
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server will start if it's not already running and your add-in will be sideloaded. 
+1. Run the following command in the root directory of your project. When you run this command, the local web server will start if it's not already running and your add-in will be sideloaded.
 
     ```command&nbsp;line
     npm start
@@ -174,7 +174,7 @@ For this scenario, you'll implement appending a disclaimer to the item when the 
 
 1. Send the message, then open it from your **Inbox** or **Sent Items** folder to view the appended disclaimer.
 
-    ![A screenshot of an example message with the disclaimer appended on send in Outlook on the web.](../images/outlook-web-append-disclaimer.png)
+    ![A sample message with the disclaimer appended on send in Outlook on the web.](../images/outlook-web-append-disclaimer.png)
 
 ## See also
 

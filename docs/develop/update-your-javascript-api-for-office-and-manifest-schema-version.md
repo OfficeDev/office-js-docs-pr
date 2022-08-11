@@ -55,7 +55,7 @@ You'll need to take a few additional steps to complete the update. In the **head
 
 ### Update the manifest file in your project to use schema version 1.1
 
-In your add-in's manifest file, update the **xmlns** attribute of the **OfficeApp** element changing the version value to `1.1` (leaving attributes other than the **xmlns** attribute unchanged).
+In your add-in's manifest file, update the **xmlns** attribute of the **\<OfficeApp\>** element changing the version value to `1.1` (leaving attributes other than the **xmlns** attribute unchanged).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -97,7 +97,7 @@ You don't need local copies of the Office JavaScript API files (Office.js and ap
 
 ### Update the manifest file in your project to use schema version 1.1
 
-In your add-in's manifest file, update the **xmlns** attribute of the **OfficeApp** element changing the version value to `1.1` (leaving attributes other than the **xmlns** attribute unchanged).
+In your add-in's manifest file, update the **xmlns** attribute of the **\<OfficeApp\>** element changing the version value to `1.1` (leaving attributes other than the **xmlns** attribute unchanged).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

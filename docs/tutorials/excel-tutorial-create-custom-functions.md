@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 03/23/2022
+ms.date: 06/10/2022
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ms.localizationpriority: high
@@ -38,9 +38,9 @@ In this tutorial, you will:
 
     - **Choose a project type:** `Excel Custom Functions Add-in project`
     - **Choose a script type:** `JavaScript`
-    - **What do you want to name your add-in?** `starcount`
+    - **What do you want to name your add-in?** `My custom functions add-in`
 
-    :::image type="content" source="../images/starcountPrompt.png" alt-text="Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
+    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
 
     The Yeoman generator will create the project files and install supporting Node components.
 
@@ -49,7 +49,7 @@ In this tutorial, you will:
 1. Navigate to the root folder of the project.
 
     ```command&nbsp;line
-    cd starcount
+    cd "My custom functions add-in"
     ```
 
 1. Build the project.
@@ -101,7 +101,7 @@ The `ADD` custom function computes the sum of the two numbers that you provided 
 
 Integrating data from the Web is a great way to extend Excel through custom functions. Next you'll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.
 
-1. In the **starcount** project, find the file **./src/functions/functions.js** and open it in your code editor.
+1. In the **My custom functions add-in** project, find the file **./src/functions/functions.js** and open it in your code editor.
 
 1. In **function.js**, add the following code.
 
@@ -147,9 +147,9 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
     :::image type="content" source="../images/select-insert.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the My Add-ins down-arrow highlighted.":::
 
-1. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
+1. In the list of available add-ins, find the **Developer Add-ins** section and select **My custom functions add-in** to register it.
 
-    :::image type="content" source="../images/list-starcount.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list.":::
+    :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the Excel custom functions add-in highlighted in the My Add-ins list.":::
 
 # [Excel on the web](#tab/excel-online)
 
@@ -173,7 +173,7 @@ The `getStarCount` function returns the number of stars a repository has at a sp
 
 In the following code sample, notice that there are two functions, `currentTime` and `clock`. The `currentTime` function is a static function that doesn't use streaming. It returns the date as a string. The `clock` function uses the `currentTime` function to provide the new time every second to a cell in Excel. It uses `invocation.setResult` to deliver the time to the Excel cell and `invocation.onCanceled` to handle function cancellation. 
 
-The **starcount** project already contains the following two functions in the **./src/functions/functions.js** file.
+The **My custom functions add-in** project already contains the following two functions in the **./src/functions/functions.js** file.
 
 ```JS
 /**

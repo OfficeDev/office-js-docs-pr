@@ -69,7 +69,7 @@ You can tag the document to trigger the autoopen feature in one of two ways. Pic
 
 #### Tag the document on the client side
 
-Use the Office.js [settings.set](/javascript/api/office/office.settings) method to set **Office.AutoShowTaskpaneWithDocument** to **true**, as shown in the following example.
+Use the Office.js [settings.set](/javascript/api/office/office.settings) method to set **Office.AutoShowTaskpaneWithDocument** to `true`, as shown in the following example.
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -108,7 +108,7 @@ The `webextension` part also includes a reference to the store or catalog with a
 |`storeType` value|`id` value|`store` value|`version` value|
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|The AppSource asset ID of the add-in (see Note).|The locale of AppSource; for example, "en-us".|The version in the AppSource catalog (see Note).|
-|WOPICatalog (third-party [WOPI](/microsoft-365/cloud-storage-partner-program/online/) hosts)| The AppSource asset ID of the add-in (see Note). | "wopicatalog". Use this value for add-ins that are published in App Source and are installed in third-party WOPI hosts. For more information, see [Integrating with Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | The version in the add-in manifest.|
+|WOPICatalog (partner [WOPI](/microsoft-365/cloud-storage-partner-program/online/) hosts)| The AppSource asset ID of the add-in (see Note). | "wopicatalog". Use this value for add-ins that are published in App Source and are installed in WOPI hosts. For more information, see [Integrating with Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | The version in the add-in manifest.|
 |FileSystem (a network share)|The GUID of the add-in in the add-in manifest.|The path of the network share; for example, "\\\\MyComputer\\MySharedFolder".|The version in the add-in manifest.|
 |EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog". EXCatalog row is the row to use with add-ins that use Centralized Deployment in the Microsoft 365 admin center.|The version in the add-in manifest.|
 |Registry (System registry)|The GUID of the add-in in the add-in manifest.|"developer"|The version in the add-in manifest.|

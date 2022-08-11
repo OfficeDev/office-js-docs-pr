@@ -1,7 +1,7 @@
 ---
 title: Visio JavaScript API overview
 description: Overview of the Visio JavaScript API.
-ms.date: 06/03/2020
+ms.date: 07/18/2022
 ms.prod: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
@@ -18,10 +18,10 @@ An embedded Visio diagram is a diagram that is stored in a SharePoint document l
 
 You can use the Visio JavaScript APIs to:
 
-* Interact with Visio diagram elements like pages and shapes.
-* Create visual markup on the Visio diagram canvas.
-* Write custom handlers for mouse events within the drawing.
-* Expose diagram data, such as shape text, shape data, and hyperlinks, to your solution.
+- Interact with Visio diagram elements like pages and shapes.
+- Create visual markup on the Visio diagram canvas.
+- Write custom handlers for mouse events within the drawing.
+- Expose diagram data, such as shape text, shape data, and hyperlinks, to your solution.
 
 This article describes how to use the Visio JavaScript APIs with Visio on the web to build your solutions for SharePoint Online. It introduces key concepts that are fundamental to using the APIs, such as `EmbeddedSession`, `RequestContext`, and JavaScript proxy objects, and the `sync()`, `Visio.run()`, and `load()` methods. The code examples show you how to apply these concepts.
 
@@ -30,7 +30,7 @@ This article describes how to use the Visio JavaScript APIs with Visio on the we
 The EmbeddedSession object initializes communication between the developer frame and the Visio frame in the browser.
 
 ```js
-var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
+const session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
 session.init().then(function () {
     window.console.log("Session successfully initialized");
 });
@@ -40,7 +40,7 @@ session.init().then(function () {
 
 `Visio.run()` executes a batch script that performs actions on the Visio object model. The batch commands include definitions of local JavaScript proxy objects and `sync()` methods that synchronize the state between local and Visio objects and promise resolution. The advantage of batching requests in `Visio.run()` is that when the promise is resolved, any tracked page objects that were allocated during the execution will be automatically released.
 
-The run method takes in session and RequestContext object and returns a promise (typically, just the result of `context.sync()`). It is possible to run the batch operation outside of the `Visio.run()`. However, in such a scenario, any page object references needs to be manually tracked and managed.
+The `run` function takes in session and RequestContext object and returns a promise (typically, just the result of `context.sync()`). It is possible to run the batch operation outside of the `Visio.run()`. However, in such a scenario, any page object references needs to be manually tracked and managed.
 
 ## RequestContext
 
@@ -49,7 +49,7 @@ The RequestContext object facilitates requests to the Visio application. Because
 ```js
 function hideToolbars() {
     Visio.run(session, function(context){
-        var app = context.document.application;
+        const app = context.document.application;
         app.showToolbars = false;
         return context.sync().then(function () {
             window.console.log("Toolbars Hidden");
@@ -68,7 +68,7 @@ The Visio JavaScript objects declared and used in an embedded session are proxy 
 For example, the local JavaScript object getActivePage is declared to reference the selected page. This can be used to queue the setting of its properties and invoking methods. The actions on such objects are not realized until the `sync()` method is run.
 
 ```js
-var activePage = context.document.getActivePage();
+const activePage = context.document.getActivePage();
 ```
 
 ## sync()
@@ -92,18 +92,18 @@ object.load(string: properties); //or object.load(array: properties); //or objec
 ## Example: Printing all shapes text in active page
 
 The following example shows you how to print shape text value from an array shapes object.
-The `Visio.run()` method contains a batch of instructions. As part of this batch, a proxy object is created that references shapes on the active document.
+The `Visio.run()` function contains a batch of instructions. As part of this batch, a proxy object is created that references shapes on the active document.
 
 All these commands are queued and run when `context.sync()` is called. The `sync()` method returns a promise that can be used to chain it with other operations.
 
 ```js
 Visio.run(session, function (context) {
-    var page = context.document.getActivePage();
-    var shapes = page.shapes;
+    const page = context.document.getActivePage();
+    const shapes = page.shapes;
     shapes.load();
     return context.sync().then(function () {
-        for(var i=0; i<shapes.items.length;i++) {
-            var shape = shapes.items[i];
+        for(let i=0; i<shapes.items.length;i++) {
+            let shape = shapes.items[i];
             window.console.log("Shape Text: " + shape.text );
         }
     });
@@ -132,7 +132,7 @@ Errors are returned using an error object that consists of a code and a message.
 
 You can use the example in this section to get started. This example shows you how to programmatically display the shape text of the selected shape in a Visio diagram. To begin, create a classic page in SharePoint Online or edit an existing page. Add a script editor webpart on the page and copy-paste the following code.
 
-```js
+```HTML
 <script src='https://appsforoffice.microsoft.com/embedded/1.0/visio-web-embedded.js' type='text/javascript'></script>
 
 Enter Visio File Url:<br/>
@@ -145,11 +145,11 @@ document.write("<textarea id='ResultOutput' style='width:350px;height:60px'> </t
 document.write("<div id='iframeHost' />");
 
 let session; // Global variable to store the session and pass it afterwards in Visio.run()
-var textArea;
+let textArea;
 // Loads the Visio application and Initializes communication between developer frame and Visio online frame
 function initEmbeddedFrame() {
     textArea = document.getElementById('ResultOutput');
-    var url = document.getElementById('fileUrl').value;
+    let url = document.getElementById('fileUrl').value;
     if (!url) {
         window.alert("File URL should not be empty");
     }
@@ -169,13 +169,13 @@ function initEmbeddedFrame() {
 // Code for getting selected Shape Text using the shapes collection object
 function getSelectedShapeText() {
     Visio.run(session, function (context) {
-        var page = context.document.getActivePage();
-        var shapes = page.shapes;
+        const page = context.document.getActivePage();
+        const shapes = page.shapes;
         shapes.load();
         return context.sync().then(function () {
             textArea.value = "Please select a Shape in the Diagram";
-            for(var i=0; i<shapes.items.length;i++) {
-                var shape = shapes.items[i];
+            for(let i=0; i<shapes.items.length;i++) {
+                let shape = shapes.items[i];
                 if ( shape.select == true) {
                     textArea.value = shape.text;
                     return;

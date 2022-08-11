@@ -17,4 +17,4 @@ The Office JavaScript API includes two distinct models:
 - **Common** APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), which allow you to specify only one operation in each request sent to the Office application. Common APIs were introduced with Office 2013 and can be used to interact with Office 2013 or later. For details about the Common API object model, which includes APIs for interacting with Outlook, PowerPoint, and Project, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 > [!NOTE]
-> Some Excel custom functions run within a unique runtime that prioritizes execution of calculations and don't have a task pane. These functions use a slightly different programming model and are called UI-less functions.
+>Custom functions without a shared runtime run in a JavaScript-only runtime that prioritizes execution of calculations. These functions use a slightly different programming model.

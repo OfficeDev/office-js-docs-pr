@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins
 description: Find the Office Add-in debugging guidance for your development environment.
-ms.date: 02/17/2022
+ms.date: 07/11/2022
 ms.localizationpriority: high
 ---
 
@@ -27,15 +27,28 @@ Debugging the server-side code of an Office Add-in is the same as debugging the 
 
 The rest of this article is concerned only with debugging client-side JavaScript (which may be transpiled from TypeScript).
 
+## Special cases
+
+There are some special cases in which the debugging process differs from normal for a given combination of platform, Office application, and development environment. If you're debugging any of these special cases, use the links in this section to find the proper guidance. Otherwise, continue to [General guidance](#general-guidance).
+
+- **Debugging the `Office.initialize` or `Office.onReady` function**: [Debug the initialize and onReady functions](debug-initialize-onready.md).
+- **Debugging an Excel custom function in a _non-shared_ runtime**: [Custom functions debugging in a non-shared runtime](../excel/custom-functions-debugging.md).
+- **Debugging a [function command](../design/add-in-commands.md#types-of-add-in-commands) in a _non-shared_ runtime**: 
+    - Outlook add-ins on a Windows development computer: [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md) 
+    - Other Office application add-ins or Outlook on a Mac development computer: [Debug a function command with a non-shared runtime](debug-function-command.md).
+- **Debugging an event-based Outlook add-in**: [Debug your event-based Outlook add-in](../outlook/debug-autolaunch.md). 
+ 
+## General guidance
+
 To find guidance for debugging client-side code, the first variable is the operating system of your development computer.
 
 - [Windows](#debug-on-windows)
 - [Mac](#debug-on-mac)
 - [Linux or other Unix variant](#debug-on-linux)
 
-## Debug on Windows
+### Debug on Windows
 
-The following provides general guidance to debugging on Windows. There are special instructions for debugging UI-less custom functions in Excel and event-based add-ins in Outlook. See [Special cases in Windows](#special-cases-in-windows) later in this section. Debugging on Windows depends on your IDE:
+The following provides general guidance to debugging on Windows. Debugging on Windows depends on your IDE.
 
 - **Visual Studio**: Debug using the browser's F12 tools. See [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
 - **Visual Studio Code**: Debug using the [Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
@@ -50,24 +63,15 @@ For information about which browser runtime is being used, see [Browsers used by
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-### Special cases in Windows
+### Debug on Mac
 
-To debug UI-less custom functions on Windows, see [UI-less custom functions debugging](../excel/custom-functions-debugging.md).
-
-To debug event-based add-ins in Outlook, see [Debug your event-based Outlook add-in](../outlook/debug-autolaunch.md). The process requires Visual Studio Code.
-
-## Debug on Mac
-
-The following provides general guidance to debugging on Mac. There are special instructions for debugging UI-less custom functions in Excel. See [Special cases in Mac](#special-cases-in-mac) later in this section.
+The following provides general guidance to debugging on Mac.
 
 - If you're using Visual Studio Code, debug using the [Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
 - For any other IDE, use the Safari Web Inspector. Instructions are in [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md).
 
-### Special cases in Mac
 
-To debug UI-less custom functions on Mac, see [UI-less custom functions debugging](../excel/custom-functions-debugging.md).
-
-## Debug on Linux
+### Debug on Linux
 
 There is no desktop version of Office for Linux, so you'll need to [sideload the add-in to Office on the web](sideload-office-add-ins-for-testing.md) to test and debug it. Debugging guidance is in [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md).
 

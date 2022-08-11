@@ -1,7 +1,7 @@
 ---
 title: Get and set recurrence in an Outlook add-in
 description: This topic shows you how to use the Office JavaScript API to get and set various recurrence properties of an item in an Outlook add-in.
-ms.date: 08/18/2020
+ms.date: 07/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 Sometimes you need to create and update a recurring appointment, such as a weekly status meeting for a team project or a yearly birthday reminder. You can use the Office JavaScript API to manage the recurrence patterns of an appointment series in your add-in.
 
 > [!NOTE]
-> Support for this feature was introduced in requirement set 1.7. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in [requirement set 1.7](/javascript/api/requirement-sets/outlook/requirement-set-1.7/outlook-requirement-set-1.7). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Available recurrence patterns
 
@@ -51,13 +51,13 @@ Along with the recurrence pattern, you also need to determine the start and end 
 The appointment organizer can specify the recurrence pattern for an appointment series in compose mode only. In the following example, the appointment series is set to occur from 10:30 AM to 11:00 AM PST every Tuesday and Thursday during the period November 2, 2019 to December 2, 2019.
 
 ```js
-var seriesTimeObject = new Office.SeriesTime();
+const seriesTimeObject = new Office.SeriesTime();
 seriesTimeObject.setStartDate(2019,10,2);
 seriesTimeObject.setEndDate(2019,11,2);
 seriesTimeObject.setStartTime(10,30);
 seriesTimeObject.setDuration(30);
 
-var pattern = {
+const pattern = {
     "seriesTime": seriesTimeObject,
     "recurrenceType": "weekly",
     "recurrenceProperties": {"interval": 1, "days": ["tue", "thu"]},
@@ -79,7 +79,7 @@ In the following example, in compose mode, the appointment organizer gets the re
 Office.context.mailbox.item.recurrence.getAsync(callback);
 
 function callback(asyncResult) {
-  var recurrencePattern = asyncResult.value;
+  const recurrencePattern = asyncResult.value;
   recurrencePattern.seriesTime.setDuration(60);
   Office.context.mailbox.item.recurrence.setAsync(recurrencePattern, (asyncResult) => {
     if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
@@ -102,8 +102,8 @@ In the following example, in compose mode, the appointment organizer gets the re
 Office.context.mailbox.item.recurrence.getAsync(callback);
 
 function callback(asyncResult){
-    var context = asyncResult.context;
-    var recurrence = asyncResult.value;
+    const context = asyncResult.context;
+    const recurrence = asyncResult.value;
 
     if (recurrence == null) {
         console.log("Non-recurring meeting");
@@ -139,8 +139,8 @@ In the following example, an appointment attendee can get the recurrence object 
 outputRecurrence(Office.context.mailbox.item);
 
 function outputRecurrence(item) {
-    var recurrence = item.recurrence;
-    var seriesId = item.seriesId;
+    const recurrence = item.recurrence;
+    const seriesId = item.seriesId;
 
     if (recurrence == null) {
         console.log("Non-recurring item");
@@ -174,26 +174,28 @@ After you've retrieved the recurrence object (either from the `getAsync` callbac
 
 ```js
 // Get series date and time info
-var seriesTime = recurrence.seriesTime;
-var startTime = recurrence.seriesTime.getStartTime();
-var endTime = recurrence.seriesTime.getEndTime();
-var startDate = recurrence.seriesTime.getStartDate();
-var endDate = recurrence.seriesTime.getEndDate();
-var duration = recurrence.seriesTime.getDuration();
+const seriesTime = recurrence.seriesTime;
+const startTime = recurrence.seriesTime.getStartTime();
+const endTime = recurrence.seriesTime.getEndTime();
+const startDate = recurrence.seriesTime.getStartDate();
+const endDate = recurrence.seriesTime.getEndDate();
+const duration = recurrence.seriesTime.getDuration();
 
 // Get series time zone
-var timeZone = recurrence.recurrenceTimeZone;
+const timeZone = recurrence.recurrenceTimeZone;
 
 // Get recurrence properties
-var recurrenceProperties = recurrence.recurrenceProperties;
+const recurrenceProperties = recurrence.recurrenceProperties;
 
 // Get recurrence type
-var recurrenceType = recurrence.recurrenceType;
+const recurrenceType = recurrence.recurrenceType;
 ```
 
 ## See also
 
-[RecurrenceChanged event](/javascript/api/office/office.eventtype)
+- [RecurrenceChanged event](/javascript/api/office/office.eventtype)
+- [Recurrence object](/javascript/api/outlook/office.recurrence)
+- [SeriesTime object](/javascript/api/outlook/office.seriestime)
 
 [getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
 [item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties

@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
-ms.date: 02/23/2022
+ms.date: 07/13/2022
 ms.prod: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -99,7 +99,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yeoman-prompts-2.png)
+    ![The prompts and answers for the Yeoman generator in a command line interface.](../images/yeoman-prompts-2.png)
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
@@ -135,13 +135,13 @@ The manifest for an add-in controls how it appears in Outlook. It defines the wa
 
 Make the following updates in the **manifest.xml** file to specify some basic information about the add-in.
 
-1. Locate the **ProviderName** element and replace the default value with your company name.
+1. Locate the **\<ProviderName\>** element and replace the default value with your company name.
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. Locate the **Description** element, replace the default value with a description of the add-in, and save the file.
+1. Locate the **\<Description\>** element, replace the default value with a description of the add-in, and save the file.
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
@@ -167,7 +167,7 @@ Before going any further, let's test the basic add-in that the generator created
 
     If everything's been set up correctly, the task pane will open and render the add-in's welcome page.
 
-    ![Screenshot of the "Show Taskpane" button and Git the gist task pane added by the sample.](../images/button-and-pane.png)
+    ![The Show Taskpane button and Git the gist task pane added by the sample.](../images/button-and-pane.png)
 
 ## Define buttons
 
@@ -179,21 +179,21 @@ Now that you've verified the base add-in works, you can customize it to add more
 
 ### Remove the MessageReadCommandSurface extension point
 
-Open the **manifest.xml** file and locate the **ExtensionPoint** element with type **MessageReadCommandSurface**. Delete this **ExtensionPoint** element (including its closing tag) to remove the buttons from the read message window.
+Open the **manifest.xml** file and locate the **\<ExtensionPoint\>** element with type **MessageReadCommandSurface**. Delete this **\<ExtensionPoint\>** element (including its closing tag) to remove the buttons from the read message window.
 
 ### Add the MessageComposeCommandSurface extension point
 
 Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately before this line, insert the following XML markup. Note the following about this markup.
 
-- The **ExtensionPoint** with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.
+- The **\<ExtensionPoint\>** with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.
 
-- By using an **OfficeTab** element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.
+- By using an **\<OfficeTab\>** element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.
 
-- The **Group** element defines the grouping for the new buttons, with a label set by the **groupLabel** resource.
+- The **\<Group\>** element defines the grouping for the new buttons, with a label set by the **groupLabel** resource.
 
-- The first **Control** element contains an **Action** element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.
+- The first **\<Control\>** element contains an **\<Action\>** element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.
 
-- The second **Control** element contains an **Action** element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.
+- The second **\<Control\>** element contains an **\<Action\>** element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.
 
 ```xml
 <!-- Message Compose -->
@@ -238,11 +238,11 @@ Locate the line in the manifest that reads `</DesktopFormFactor>`. Immediately b
 
 ### Update resources in the manifest
 
-The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the **Resources** section of the manifest.
+The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the **\<Resources\>** section of the manifest.
 
-1. Locate the **Resources** element in the manifest file and delete the entire element (including its closing tag).
+1. Locate the **\<Resources\>** element in the manifest file and delete the entire element (including its closing tag).
 
-1. In that same location, add the following markup to replace the **Resources** element you just removed.
+1. In that same location, add the following markup to replace the **\<Resources\>** element you just removed.
 
     ```xml
     <Resources>
@@ -287,11 +287,11 @@ After you've reinstalled the add-in, you can verify that it installed successful
 
 - If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons in the ribbon of the compose message window: **Insert gist** and **Insert default gist**.
 
-    ![Screenshot of the ribbon overflow menu in Outlook on Windows with the add-in's buttons highlighted.](../images/add-in-buttons-in-windows.png)
+    ![The ribbon overflow menu in Outlook on Windows with the add-in's buttons highlighted.](../images/add-in-buttons-in-windows.png)
 
 - If you're running this add-in in Outlook on the web, you should see a new button at the bottom of the compose message window. Select that button to see the options **Insert gist** and **Insert default gist**.
 
-    ![Screenshot of the message compose form in Outlook on the web with the add-in button and pop-up menu highlighted.](../images/add-in-buttons-in-owa.png)
+    ![The message compose form in Outlook on the web with the add-in button and pop-up menu highlighted.](../images/add-in-buttons-in-owa.png)
 
 ## Implement a first-run experience
 
@@ -409,7 +409,7 @@ ul {
 }
 ```
 
-Now that you've defined the dialog UI, you can write the code that makes it actually do something. Create a file in the **./src/settings** folder named **dialog.js** and add the following code. Note that this code uses jQuery to register events and uses the **messageParent** function to send the user's choices back to the caller.
+Now that you've defined the dialog UI, you can write the code that makes it actually do something. Create a file in the **./src/settings** folder named **dialog.js** and add the following code. Note that this code uses jQuery to register events and uses the `messageParent` method to send the user's choices back to the caller.
 
 ```js
 (function(){
@@ -420,14 +420,14 @@ Now that you've defined the dialog UI, you can write the code that makes it actu
     jQuery(document).ready(function(){
       if (window.location.search) {
         // Check if warning should be displayed.
-        var warn = getParameterByName('warn');
+        const warn = getParameterByName('warn');
         if (warn) {
           $('.not-configured-warning').show();
         } else {
           // See if the config values were passed.
           // If so, pre-populate the values.
-          var user = getParameterByName('gitHubUserName');
-          var gistId = getParameterByName('defaultGistId');
+          const user = getParameterByName('gitHubUserName');
+          const gistId = getParameterByName('defaultGistId');
 
           $('#github-user').val(user);
           loadGists(user, function(success){
@@ -446,7 +446,7 @@ Now that you've defined the dialog UI, you can write the code that makes it actu
       // try to load gists.
       $('#github-user').on('change', function(){
         $('#gist-list').empty();
-        var ghUser = $('#github-user').val();
+        const ghUser = $('#github-user').val();
         if (ghUser.length > 0) {
           loadGists(ghUser);
         }
@@ -456,11 +456,11 @@ Now that you've defined the dialog UI, you can write the code that makes it actu
       // values back to the caller as a serialized
       // object.
       $('#settings-done').on('click', function() {
-        var settings = {};
+        const settings = {};
 
         settings.gitHubUserName = $('#github-user').val();
 
-        var selectedGist = $('.ms-ListItem.is-selected');
+        const selectedGist = $('.ms-ListItem.is-selected');
         if (selectedGist) {
           settings.defaultGistId = selectedGist.val();
 
@@ -504,7 +504,7 @@ Now that you've defined the dialog UI, you can write the code that makes it actu
       url = window.location.href;
     }
     name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
       results = regex.exec(url);
     if (!results) return null;
     if (!results[2]) return '';
@@ -645,7 +645,7 @@ Within the **./src** folder, create a new subfolder named **helpers**. In the **
 
 ```js
 function getUserGists(user, callback) {
-  var requestUrl = 'https://api.github.com/users/' + user + '/gists';
+  const requestUrl = 'https://api.github.com/users/' + user + '/gists';
 
   $.ajax({
     url: requestUrl,
@@ -660,10 +660,10 @@ function getUserGists(user, callback) {
 function buildGistList(parent, gists, clickFunc) {
   gists.forEach(function(gist) {
 
-    var listItem = $('<div/>')
+    const listItem = $('<div/>')
       .appendTo(parent);
 
-    var radioItem = $('<input>')
+    const radioItem = $('<input>')
       .addClass('ms-ListItem')
       .addClass('is-selectable')
       .attr('type', 'radio')
@@ -672,19 +672,19 @@ function buildGistList(parent, gists, clickFunc) {
       .val(gist.id)
       .appendTo(listItem);
 
-    var desc = $('<span/>')
+    const descPrimary = $('<span/>')
       .addClass('ms-ListItem-primaryText')
       .text(gist.description)
       .appendTo(listItem);
 
-    var desc = $('<span/>')
+    const descSecondary = $('<span/>')
       .addClass('ms-ListItem-secondaryText')
       .text(' - ' + buildFileList(gist.files))
       .appendTo(listItem);
 
-    var updated = new Date(gist.updated_at);
+    const updated = new Date(gist.updated_at);
 
-    var desc = $('<span/>')
+    const descTertiary = $('<span/>')
       .addClass('ms-ListItem-tertiaryText')
       .text(' - Last updated ' + updated.toLocaleString())
       .appendTo(listItem);
@@ -695,9 +695,9 @@ function buildGistList(parent, gists, clickFunc) {
 
 function buildFileList(files) {
 
-  var fileList = '';
+  let fileList = '';
 
-  for (var file in files) {
+  for (let file in files) {
     if (files.hasOwnProperty(file)) {
       if (fileList.length > 0) {
         fileList = fileList + ', ';
@@ -727,7 +727,7 @@ This add-in's **Insert default gist** button is a UI-less button that will invok
 
 ### Update the function file (HTML)
 
-A function that's invoked by a UI-less button must be defined in the file that's specified by the **FunctionFile** element in the manifest for the corresponding form factor. This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.
+A function that's invoked by a UI-less button must be defined in the file that's specified by the **\<FunctionFile\>** element in the manifest for the corresponding form factor. This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.
 
 Open the file **./src/commands/commands.html** and replace the entire contents with the following markup.
 
@@ -764,14 +764,13 @@ You may have noticed that the HTML file references a JavaScript file, **addin-co
 Open the file **./src/commands/commands.js** and replace the entire contents with the following code. Note that if the **insertDefaultGist** function determines the add-in has not yet been configured, it adds the `?warn=1` parameter to the dialog URL. Doing so makes the settings dialog render the message bar that's defined in **./src/settings/dialog.html**, to tell the user why they're seeing the dialog.
 
 ```js
-var config;
-var btnEvent;
+let config;
+let btnEvent;
 
 // The initialize function must be run each time a new page is loaded.
-Office.initialize = function (reason) {
+Office.initialize = function () {
 };
 
-// Add any UI-less function here.
 function showError(error) {
   Office.context.mailbox.item.notificationMessages.replaceAsync('github-error', {
     type: 'errorMessage',
@@ -780,7 +779,7 @@ function showError(error) {
   });
 }
 
-var settingsDialog;
+let settingsDialog;
 
 function insertDefaultGist(event) {
 
@@ -818,8 +817,8 @@ function insertDefaultGist(event) {
     btnEvent = event;
     // Not configured yet, display settings dialog with
     // warn=1 to display warning.
-    var url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
-    var dialogOptions = { width: 20, height: 40, displayInIframe: true };
+    const url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
+    const dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
       settingsDialog = result.value;
@@ -828,6 +827,9 @@ function insertDefaultGist(event) {
     });
   }
 }
+
+// Register the function.
+Office.actions.associate("insertDefaultGist", insertDefaultGist);
 
 function receiveMessage(message) {
   config = JSON.parse(message.message);
@@ -844,18 +846,6 @@ function dialogClosed(message) {
   btnEvent.completed();
   btnEvent = null;
 }
-
-function getGlobal() {
-  return (typeof self !== "undefined") ? self :
-    (typeof window !== "undefined") ? window :
-    (typeof global !== "undefined") ? global :
-    undefined;
-}
-
-var g = getGlobal();
-
-// The add-in command functions need to be available in global scope.
-g.insertDefaultGist = insertDefaultGist;
 ```
 
 ### Create a file to manage configuration settings
@@ -864,7 +854,7 @@ The HTML function file references a file named **addin-config.js**, which doesn'
 
 ```js
 function getConfig() {
-  var config = {};
+  const config = {};
 
   config.gitHubUserName = Office.context.roamingSettings.get('gitHubUserName');
   config.defaultGistId = Office.context.roamingSettings.get('defaultGistId');
@@ -892,7 +882,7 @@ Next, open the **./src/helpers/gist-api.js** file and add the following function
 
 ```js
 function getGist(gistId, callback) {
-  var requestUrl = 'https://api.github.com/gists/' + gistId;
+  const requestUrl = 'https://api.github.com/gists/' + gistId;
 
   $.ajax({
     url: requestUrl,
@@ -907,9 +897,9 @@ function getGist(gistId, callback) {
 function buildBodyContent(gist, callback) {
   // Find the first non-truncated file in the gist
   // and use it.
-  for (var filename in gist.files) {
+  for (let filename in gist.files) {
     if (gist.files.hasOwnProperty(filename)) {
-      var file = gist.files[filename];
+      const file = gist.files[filename];
       if (!file.truncated) {
         // We have a winner.
         switch (file.language) {
@@ -919,13 +909,13 @@ function buildBodyContent(gist, callback) {
             break;
           case 'Markdown':
             // Convert Markdown to HTML.
-            var converter = new showdown.Converter();
-            var html = converter.makeHtml(file.content);
+            const converter = new showdown.Converter();
+            const html = converter.makeHtml(file.content);
             callback(html);
             break;
           default:
             // Insert contents as a <code> block.
-            var codeBlock = '<pre><code>';
+            let codeBlock = '<pre><code>';
             codeBlock = codeBlock + file.content;
             codeBlock = codeBlock + '</code></pre>';
             callback(codeBlock);
@@ -946,11 +936,11 @@ Save all of your changes and run `npm start` from the command prompt, if the ser
 
 1. In the compose message window, select the **Insert default gist** button. You should see a dialog where you can configure the add-in, starting with the prompt to set your GitHub username.
 
-    ![Screenshot of the dialog prompt to configure the add-in.](../images/addin-prompt-configure.png)
+    ![The dialog prompt to configure the add-in.](../images/addin-prompt-configure.png)
 
 1. In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the **change** event, which should load your list of public gists. Select a gist to be the default, and select **Done**.
 
-    ![Screenshot of the add-in's settings dialog.](../images/addin-settings.png)
+    ![The add-in's settings dialog.](../images/addin-settings.png)
 
 1. Select the **Insert default gist** button again. This time, you should see the contents of the gist inserted into the body of the email.
 
@@ -959,7 +949,7 @@ Save all of your changes and run `npm start` from the command prompt, if the ser
 
 ## Implement a task pane
 
-This add-in's **Insert gist** button will open a task pane and display the user's gists. The user can then select one of the gists to insert into the body of the message. If the user has not yet configured the add-in, they will be prompted to do so.
+This add-in's **Insert gist** button will open a task pane and display the user's gists. The user can then select one of the gists to insert into the body of the message. If the user hasn't yet configured the add-in, they'll be prompted to do so.
 
 ### Specify the HTML for the task pane
 
@@ -1103,83 +1093,97 @@ ul {
   -webkit-flex-wrap: nowrap;
           flex-wrap: nowrap;
   height: 100%; }
-  .ms-landing-page__main {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-            flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-    -webkit-flex: 1 1 0;
-            flex: 1 1 0;
-    height: 100%; }
 
-  .ms-landing-page__content {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-            flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-    height: 100%;
-    -webkit-flex: 1 1 0;
-            flex: 1 1 0;
-    padding: 20px; }
-    .ms-landing-page__content h2 {
-      margin-bottom: 20px; }
-  .ms-landing-page__footer {
-    display: -webkit-inline-flex;
-    display: inline-flex;
-    -webkit-justify-content: center;
-            justify-content: center;
-    -webkit-align-items: center;
-            align-items: center; }
-    .ms-landing-page__footer--left {
-      transition: background ease 0.1s, color ease 0.1s;
-      display: -webkit-inline-flex;
-      display: inline-flex;
-      -webkit-justify-content: flex-start;
-              justify-content: flex-start;
-      -webkit-align-items: center;
-              align-items: center;
-      -webkit-flex: 1 0 0px;
-              flex: 1 0 0px;
-      padding: 20px; }
-      .ms-landing-page__footer--left:active {
-        cursor: default; }
-      .ms-landing-page__footer--left--disabled {
-        opacity: 0.6;
-        pointer-events: none;
-        cursor: not-allowed; }
-        .ms-landing-page__footer--left--disabled:active, .ms-landing-page__footer--left--disabled:hover {
-          background: transparent; }
-      .ms-landing-page__footer--left img {
-        width: 40px;
-        height: 40px; }
-      .ms-landing-page__footer--left h1 {
-        -webkit-flex: 1 0 0px;
-                flex: 1 0 0px;
-        margin-left: 15px;
-        text-align: left;
-        width: auto;
-        max-width: auto;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis; }
-    .ms-landing-page__footer--right {
-      transition: background ease 0.1s, color ease 0.1s;
-      padding: 29px 20px; }
-      .ms-landing-page__footer--right:active, .ms-landing-page__footer--right:hover {
-        background: #005ca4;
-        cursor: pointer; }
-      .ms-landing-page__footer--right:active {
-        background: #005ca4; }
-      .ms-landing-page__footer--right--disabled {
-        opacity: 0.6;
-        pointer-events: none;
-        cursor: not-allowed; }
-        .ms-landing-page__footer--right--disabled:active, .ms-landing-page__footer--right--disabled:hover {
-          background: transparent; }
+.ms-landing-page__main {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-flex: 1 1 0;
+          flex: 1 1 0;
+  height: 100%; }
+
+.ms-landing-page__content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  height: 100%;
+  -webkit-flex: 1 1 0;
+          flex: 1 1 0;
+  padding: 20px; }
+
+.ms-landing-page__content h2 {
+  margin-bottom: 20px; }
+
+.ms-landing-page__footer {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center; }
+
+.ms-landing-page__footer--left {
+  transition: background ease 0.1s, color ease 0.1s;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-flex: 1 0 0px;
+          flex: 1 0 0px;
+  padding: 20px; }
+
+.ms-landing-page__footer--left:active {
+  cursor: default; }
+
+.ms-landing-page__footer--left--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed; }
+
+.ms-landing-page__footer--left--disabled:active, .ms-landing-page__footer--left--disabled:hover {
+  background: transparent; }
+
+.ms-landing-page__footer--left img {
+  width: 40px;
+  height: 40px; }
+
+.ms-landing-page__footer--left h1 {
+  -webkit-flex: 1 0 0px;
+          flex: 1 0 0px;
+  margin-left: 15px;
+  text-align: left;
+  width: auto;
+  max-width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.ms-landing-page__footer--right {
+  transition: background ease 0.1s, color ease 0.1s;
+  padding: 29px 20px; }
+
+.ms-landing-page__footer--right:active, .ms-landing-page__footer--right:hover {
+  background: #005ca4;
+  cursor: pointer; }
+
+.ms-landing-page__footer--right:active {
+  background: #005ca4; }
+
+.ms-landing-page__footer--right--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed; }
+
+.ms-landing-page__footer--right--disabled:active, .ms-landing-page__footer--right--disabled:hover {
+  background: transparent; }
 ```
 
 ### Specify the JavaScript for the task pane
@@ -1190,8 +1194,8 @@ In the project that you've created, the task pane JavaScript is specified in the
 (function(){
   'use strict';
 
-  var config;
-  var settingsDialog;
+  let config;
+  let settingsDialog;
 
   Office.initialize = function(reason){
 
@@ -1211,7 +1215,7 @@ In the project that you've created, the task pane JavaScript is specified in the
       // When insert button is selected, build the content
       // and insert into the body.
       $('#insert-button').on('click', function(){
-        var gistId = $('.ms-ListItem.is-selected').val();
+        const gistId = $('.ms-ListItem.is-selected').val();
         getGist(gistId, function(gist, error) {
           if (gist) {
             buildBodyContent(gist, function (content, error) {
@@ -1235,14 +1239,14 @@ In the project that you've created, the task pane JavaScript is specified in the
       // When the settings icon is selected, open the settings dialog.
       $('#settings-icon').on('click', function(){
         // Display settings dialog.
-        var url = new URI('dialog.html').absoluteTo(window.location).toString();
+        let url = new URI('dialog.html').absoluteTo(window.location).toString();
         if (config) {
           // If the add-in has already been configured, pass the existing values
           // to the dialog.
           url = url + '?gitHubUserName=' + config.gitHubUserName + '&defaultGistId=' + config.defaultGistId;
         }
 
-        var dialogOptions = { width: 20, height: 40, displayInIframe: true };
+        const dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
         Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
           settingsDialog = result.value;
@@ -1298,7 +1302,7 @@ In the project that you've created, the task pane JavaScript is specified in the
 
 ### Test the Insert gist button
 
-Save all of your changes and run `npm start` from the command prompt, if the server isn't already running. Then complete the following steps to test the **Insert gist** button.
+Save all of your changes and run `npm start` from the command prompt, if the server isn't already running. Then, complete the following steps to test the **Insert gist** button.
 
 1. Open Outlook and compose a new message.
 
@@ -1306,7 +1310,7 @@ Save all of your changes and run `npm start` from the command prompt, if the ser
 
 1. In the task pane, select the **Hello World Html** gist and select **Insert** to insert that gist into the body of the message.
 
-![Screenshot of the add-in task pane and the selected gist content displayed in the message body.](../images/addin-taskpane.png)
+![The add-in task pane and the selected gist content displayed in the message body.](../images/addin-taskpane.png)
 
 ## Next steps
 
@@ -1314,3 +1318,10 @@ In this tutorial, you've created an Outlook add-in that can be used in message c
 
 > [!div class="nextstepaction"]
 > [Outlook add-in APIs](../outlook/apis.md)
+
+## See also
+
+- [Outlook add-in manifests](../outlook/manifests.md)
+- [Outlook add-in design guidelines](../outlook/outlook-addin-design.md)
+- [Add-in commands for Outlook](../outlook/add-in-commands-for-outlook.md)
+- [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md)

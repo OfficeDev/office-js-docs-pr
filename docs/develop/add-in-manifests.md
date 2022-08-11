@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins XML manifest
 description: Get an overview of the Office Add-in manifest and its uses.
-ms.date: 09/28/2021
+ms.date: 05/24/2022
 ms.localizationpriority: high
 ---
 
@@ -9,19 +9,22 @@ ms.localizationpriority: high
 
 The XML manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications.
 
+> [!TIP]
+> This article describes the current XML-formatted manifest. There is also a JSON-formatted Teams manifest that is available in preview. For more information, see [Teams manifest for Office Add-ins (preview)](json-manifest-overview.md).
+
 An XML manifest file enables an Office Add-in to do the following:
 
-* Describe itself by providing an ID, version, description, display name, and default locale.
+- Describe itself by providing an ID, version, description, display name, and default locale.
 
-* Specify the images used for branding the add-in and iconography used for [add-in commands](create-addin-commands.md) in the Office app ribbon.
+- Specify the images used for branding the add-in and iconography used for [add-in commands](create-addin-commands.md) in the Office app ribbon.
 
-* Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.
+- Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.
 
-* Specify the requested default dimensions for content add-ins, and requested height for Outlook add-ins.
+- Specify the requested default dimensions for content add-ins, and requested height for Outlook add-ins.
 
-* Declare permissions that the Office Add-in requires, such as reading or writing to the document.
+- Declare permissions that the Office Add-in requires, such as reading or writing to the document.
 
-* For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
+- For Outlook add-ins, define the rule or rules that specify the context in which they will be activated and interact with a message, appointment, or meeting request item.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -36,28 +39,26 @@ The following table specifies the elements that are required for the three types
 
 ### Required elements by Office Add-in type
 
-| Element                                                                                      | Content | Task pane | Outlook |
-| :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
-| [OfficeApp][]                                                                                |    X    |     X     |    X    |
-| [Id][]                                                                                       |    X    |     X     |    X    |
-| [Version][]                                                                                  |    X    |     X     |    X    |
-| [ProviderName][]                                                                             |    X    |     X     |    X    |
-| [DefaultLocale][]                                                                            |    X    |     X     |    X    |
-| [DisplayName][]                                                                              |    X    |     X     |    X    |
-| [Description][]                                                                              |    X    |     X     |    X    |
-| [IconUrl][]                                                                                  |    X    |     X     |    X    |
-| [SupportUrl][]\*\*                                                                           |    X    |     X     |    X    |
-| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
-| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
-| [DesktopSettings][]                                                                          |         |           |    X    |
-| [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
-| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] |    X    |     X     |    X    |
-| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |         |           |    X    |
-| [Requirements (MailApp)*][]                                                                  |         |           |    X    |
-| [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |         |           |    X    |
-| [Form*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
-| [Sets (Requirements)*][]                                                                     |    X    |     X     |         |
-| [Hosts*][]                                                                                   |    X    |     X     |         |
+| Element                                                                                      | Content    | Task pane    | Outlook      |
+| :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------:   |
+| [OfficeApp][]                                                                                | Required   | Required     | Required     |
+| [Id][]                                                                                       | Required   | Required     | Required     |
+| [Version][]                                                                                  | Required   | Required     | Required     |
+| [ProviderName][]                                                                             | Required   | Required     | Required     |
+| [DefaultLocale][]                                                                            | Required   | Required     | Required     |
+| [DisplayName][]                                                                              | Required   | Required     | Required     |
+| [Description][]                                                                              | Required   | Required     | Required     |
+| [IconUrl][]                                                                                  | Required   | Required     | Required     |
+| [SupportUrl][]\*\*                                                                           | Required   | Required     | Required     |
+| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       | Required   | Required     | Not available|
+| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]<br/>[SourceLocation (MailApp)][]| Required | Required | Required   |
+| [DesktopSettings][]                                                                          | Not available | Not available | Required |
+| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] | Required   | Required     | Required     |
+| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             | Not available | Not available | Required |
+| [Requirements (MailApp)][]\*                                                                 | Not applicable| Not available | Required |
+| [Set][]\*<br/>[Sets (Requirements)][]\*<br/>[Sets (MailAppRequirements)][]\*                 | Required   | Required     | Required     |
+| [Form][]\*<br/>[FormSettings][]\*                                                            | Not available | Not available | Required |
+| [Hosts][]\*                                                                                  | Required   | Required     | Optional     |
 
 _\*Added in the Office Add-in Manifest Schema version 1.1._
 
@@ -78,20 +79,20 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 [defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings
 [sourcelocation (contentapp)]: /javascript/api/manifest/sourcelocation
 [sourcelocation (taskpaneapp)]: /javascript/api/manifest/sourcelocation
-[desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
-[sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
+[sourcelocation (mailapp)]: /javascript/api/manifest/sourcelocation
+[desktopsettings]: /javascript/api/manifest/desktopsettings
 [permissions (contentapp)]: /javascript/api/manifest/permissions
 [permissions (taskpaneapp)]: /javascript/api/manifest/permissions
 [permissions (mailapp)]: /javascript/api/manifest/permissions
 [rule (rulecollection)]: /javascript/api/manifest/rule
 [rule (mailapp)]: /javascript/api/manifest/rule
-[requirements (mailapp)*]: /javascript/api/manifest/requirements
-[set*]: /javascript/api/manifest/set
-[sets (mailapprequirements)*]: /javascript/api/manifest/sets
-[form*]: /javascript/api/manifest/form
-[formsettings*]: /javascript/api/manifest/formsettings
-[sets (requirements)*]: /javascript/api/manifest/sets
-[hosts*]: /javascript/api/manifest/hosts
+[requirements (mailapp)]: /javascript/api/manifest/requirements
+[set]: /javascript/api/manifest/set
+[sets (mailapprequirements)]: /javascript/api/manifest/sets
+[form]: /javascript/api/manifest/form
+[formsettings]: /javascript/api/manifest/formsettings
+[sets (requirements)]: /javascript/api/manifest/sets
+[hosts]: /javascript/api/manifest/hosts
 
 ## Hosting requirements
 
@@ -116,10 +117,10 @@ To override this (desktop Office) behavior, specify each domain you want to open
 > [!NOTE]
 > There are two exceptions to this behavior.
 >
-> - It applies only to the root pane of the add-in. If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
-> - When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **AppDomains**, even in desktop Office.
+> - It applies only to the root pane of the add-in. If there is an iframe embedded in the add-in page, the iframe can be directed to any URL regardless of whether it is listed in **\<AppDomains\>**, even in desktop Office.
+> - When a dialog is opened with the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) API, the URL that is passed to the method must be in the same domain as the add-in, but the dialog can then be directed to any URL regardless of whether it is listed in **\<AppDomains\>**, even in desktop Office.
 
-The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **SourceLocation** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/javascript/api/manifest/appdomain) element within the **AppDomains** element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
+The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **\<SourceLocation\>** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/javascript/api/manifest/appdomain) element within the **\<AppDomains\>** element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -146,9 +147,9 @@ The following XML manifest example hosts its main add-in page in the `https://ww
 
 The optional [VersionOverrides](/javascript/api/manifest/versionoverrides) element deserves special mention. It contains child markup that enables additional add-in features. Some of these are:
 
- - Customizing the Office ribbon and menus.
- - Customizing how Office works with the embedded browser runtime in which add-ins run.
- - Configuring how the add-in interacts with Azure Active Directory and Microsoft Graph for Single Sign-on.
+- Customizing the Office ribbon and menus.
+- Customizing how Office works with the embedded browser runtime in which add-ins run.
+- Configuring how the add-in interacts with Azure Active Directory and Microsoft Graph for Single Sign-on.
 
 Some descendant elements of `VersionOverrides` have values that override values of the parent `OfficeApp` element. For example, the `Hosts` element in `VersionOverrides` overrides the `Hosts` element in `OfficeApp`.
 
@@ -540,12 +541,12 @@ For information about validating a manifest against the [XML Schema Definition (
 
 ## See also
 
-* [How to find the proper order of manifest elements](manifest-element-ordering.md)
-* [Create add-in commands in your manifest](create-addin-commands.md)
-* [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
-* [Localization for Office Add-ins](localization.md)
-* [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
-* [Update API and manifest version](update-your-javascript-api-for-office-and-manifest-schema-version.md)
-* [Identify an equivalent COM add-in](make-office-add-in-compatible-with-existing-com-add-in.md)
-* [Requesting permissions for API use in add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-* [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md)
+- [How to find the proper order of manifest elements](manifest-element-ordering.md)
+- [Create add-in commands in your manifest](create-addin-commands.md)
+- [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
+- [Localization for Office Add-ins](localization.md)
+- [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
+- [Update API and manifest version](update-your-javascript-api-for-office-and-manifest-schema-version.md)
+- [Identify an equivalent COM add-in](make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Requesting permissions for API use in add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md)

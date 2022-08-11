@@ -6,9 +6,9 @@ If the `CONTOSO` namespace isn't available in the autocomplete menu, take the fo
 
     :::image type="content" source="../images/select-insert.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the My Add-ins down-arrow highlighted.":::
 
-1. In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.
+1. In the list of available add-ins, find the **Developer Add-ins** section and select **My custom functions add-in** to register it.
 
-    :::image type="content" source="../images/list-starcount.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list.":::
+    :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the Excel Custom Functions add-in highlighted in the My Add-ins list.":::
 
 # [Excel on the web](#tab/excel-online)
 

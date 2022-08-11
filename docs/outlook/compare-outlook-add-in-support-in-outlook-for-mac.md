@@ -1,7 +1,7 @@
 ---
 title: Compare Outlook add-in support in Outlook on Mac
 description: Learn how add-in support in Outlook on Mac compares with other Outlook clients.
-ms.date: 12/13/2021
+ms.date: 06/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +11,7 @@ You can create and run an Outlook add-in the same way in Outlook on Mac as in th
 
 For more information, see [Deploy and install Outlook add-ins for testing](testing-and-tips.md).
 
-For information about new UI support, see [Add-in support in Outlook on new Mac UI](#add-in-support-in-outlook-on-new-mac-ui-preview).
+For information about new UI support, see [Add-in support in Outlook on new Mac UI](#add-in-support-in-outlook-on-new-mac-ui).
 
 | Area | Outlook on the web, Windows, and mobile devices | Outlook on Mac |
 |:-----|:-----|:-----|
@@ -24,20 +24,20 @@ For information about new UI support, see [Add-in support in Outlook on new Mac 
 | String representing the time zone in the `dateTimeCreated` and `dateTimeModified` properties |As an example: `Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | As an example: `Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |
 | Time accuracy of `dateTimeCreated` and `dateTimeModified` | If an add-in uses the following code, the accuracy is up to a millisecond.<br/>`JSON.stringify(Office.context.mailbox.item, null, 4);`| The accuracy is up to only a second. |
 
-## Add-in support in Outlook on new Mac UI (preview)
+## Add-in support in Outlook on new Mac UI
 
-Outlook add-ins are now supported on the new Mac UI (preview), up to requirement set 1.10. However, the following requirement sets and features are **NOT** supported yet.
+Outlook add-ins are now supported on the new Mac UI (available from Outlook version 16.38.506), up to requirement set 1.10. However, the following requirement sets and features are **NOT** supported yet.
 
 - API requirement set 1.11
 
-We encourage you to preview Outlook on the new Mac UI, available from version 16.38.506. To learn more about how to try it out, see [Outlook for Mac - Release notes for Insider Fast builds](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
+To learn more about the new Mac UI, see [The new Outlook for Mac](https://support.microsoft.com/office/6283be54-e74d-434e-babb-b70cefc77439).
 
 You can determine which UI version you're on, as follows:
 
-**Current UI**
+**Classic UI**
 
-![Current UI on Mac.](../images/outlook-on-mac-classic.png)
+![Classic UI on Mac.](../images/outlook-on-mac-classic.png)
 
-**New UI (preview)**
+**New UI**
 
-![New UI in preview on Mac.](../images/outlook-on-mac-new.png)
+![New UI on Mac.](../images/outlook-on-mac-new.png)

@@ -1,5 +1,5 @@
 ---
-ms.date: 03/23/2022
+ms.date: 06/10/2022
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -28,16 +28,16 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
     - **Choose a project type:** `Excel Custom Functions Add-in project`
     - **Choose a script type:** `JavaScript`
-    - **What do you want to name your add-in?** `starcount`
+    - **What do you want to name your add-in?** `My custom functions add-in`
 
-    :::image type="content" source="../images/starcountPrompt.png" alt-text="Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
+    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
 
     The Yeoman generator will create the project files and install supporting Node components.
 
 1. The Yeoman generator will give you some instructions in your command line about what to do with the project, but ignore them and continue to follow our instructions. Navigate to the root folder of the project.
 
     ```command&nbsp;line
-    cd starcount
+    cd "My custom functions add-in"
     ```
 
 1. Build the project.
@@ -100,3 +100,4 @@ You may encounter issues if you run the quick start multiple times. If the Offic
 - [Custom functions overview](../excel/custom-functions-overview.md)
 - [Custom functions metadata](../excel/custom-functions-json.md)
 - [Runtime for Excel custom functions](../excel/custom-functions-runtime.md)
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

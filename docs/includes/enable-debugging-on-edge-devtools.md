@@ -1,5 +1,5 @@
-When the add-in is running in Microsoft Edge, UI-less code will not be able to attach to a debugger by default.
-UI-less code is any code running while the task pane is not visible, such as add-in commands. To enable debugging, you need to run the following [Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell) commands.
+When the add-in is running in Microsoft Edge, "UI-less" code will not be able to attach to a debugger by default.
+UI-less code is any code running while the task pane is not visible, such as [function commands](../design/add-in-commands.md#types-of-add-in-commands). To enable debugging, you need to run the following [Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell) commands.
 
 1. Run the following command to get information for the **Microsoft.Win32WebViewHost** app package.
     

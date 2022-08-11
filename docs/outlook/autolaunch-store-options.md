@@ -2,7 +2,7 @@
 title: AppSource listing options for your event-based Outlook add-in
 description: Learn about the AppSource listing options available for your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 08/05/2021
+ms.date: 07/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -45,7 +45,7 @@ To deploy the add-in, the admin can use the following steps.
 
 ## Unrestricted AppSource listing
 
-If your add-in doesn't use event-based activation for critical scenarios (that is, your add-in works well without automatic invocation), consider listing your add-in in AppSource without any special flight codes. If an end-user gets your add-in from AppSource, automatic activation won't happen for the user. However, they can use other components of your add-in such as a task pane or UI-less command.
+If your add-in doesn't use event-based activation for critical scenarios (that is, your add-in works well without automatic invocation), consider listing your add-in in AppSource without any special flight codes. If an end-user gets your add-in from AppSource, automatic activation won't happen for the user. However, they can use other components of your add-in such as a task pane or function command.
 
 > [!IMPORTANT]
 > This is a temporary restriction. In future, we plan to enable event-based add-in activation for end-users who directly acquire your add-in.

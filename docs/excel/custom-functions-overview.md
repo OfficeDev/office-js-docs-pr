@@ -67,7 +67,7 @@ function add(first, second){
 The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) creates) does several things.
 
 - Defines the namespace for your custom functions. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.
-- Uses `<ExtensionPoint>` and `<Resources>` elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.
+- Uses **\<ExtensionPoint\>** and **\<Resources\>** elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.
 - Specifies which runtime to use for your custom function. We recommend always using a shared runtime unless you have a specific need for another runtime, because a shared runtime allows for the sharing of data between functions and the task pane.
 
 If you are using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create files, we recommend adjusting your manifest to use a shared runtime, as this is not the default for these files. To change your manifest, follow the instructions in [Configure your Excel add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).

@@ -27,8 +27,6 @@ items:
       href: quickstarts/project-quickstart.md
     - name: Word add-in
       href: quickstarts/word-quickstart.md
-    - name: Single sign-on (SSO)
-      href: quickstarts/sso-quickstart.md
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
@@ -85,8 +83,6 @@ items:
         href: develop/persisting-add-in-state-and-settings.md
       - name: Bind to regions in a document or spreadsheet
         href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
-      - name: Common API error codes
-        href: reference/javascript-api-for-office-error-codes.md
     - name: Setup and run your add-in
       items:
       - name: Reference Office.js
@@ -109,6 +105,9 @@ items:
       items:
       - name: Overview
         href: develop/add-in-manifests.md
+      - name: Teams manifest for Office Add-ins
+        href: develop/json-manifest-overview.md
+        displayName: preview
       - name: Manifest reference
         href: reference/manifest-reference.md
       - name: Extended overrides
@@ -136,10 +135,6 @@ items:
         items:
         - name: Enable SSO in an Office Add-in
           href: develop/sso-in-office-add-ins.md
-        - name: Quick start
-          href: quickstarts/sso-quickstart.md
-        - name: Customize the quick start
-          href: quickstarts/sso-quickstart-customize.md
         - name: Register with Microsoft identity platform
           href: develop/register-sso-add-in-aad-v2.md
         - name: Grant administrator consent
@@ -234,8 +229,6 @@ items:
           href: design/content-add-ins.md
         - name: Dialog boxes
           items:
-          - name: Overview
-            href: design/dialog-boxes.md
           - name: Use the Office dialog API in your Office Add-ins
             href: develop/dialog-api-in-office-add-ins.md
           - name: Best practices and rules for the Office dialog API
@@ -311,8 +304,10 @@ items:
         href: testing/debug-add-ins-in-office-online.md
     - name: iPad and Mac
       items:
-      - name: Sideload Office Add-ins on iPad and Mac
-        href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
+      - name: Sideload Office Add-ins on Mac
+        href: testing/sideload-an-office-add-in-on-mac.md
+      - name: Sideload Office Add-ins on iPad
+        href: testing/sideload-an-office-add-in-on-ipad.md
       - name: Debug on Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
     - name: Clear the Office cache
@@ -320,16 +315,26 @@ items:
       displayName: uninstall, sideload
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
+    - name: Debug a function command with a non-shared runtime
+      href: testing/debug-function-command.md
+    - name: Debug the initialize and onReady functions
+      href: testing/debug-initialize-onready.md
+    - name: Errors
+      items:
+      - name: Application-specific API error handling
+        href: testing/application-specific-api-error-handling.md
+      - name: Common API error codes
+        href: reference/javascript-api-for-office-error-codes.md
+      - name: Troubleshoot user errors
+        href: testing/testing-and-troubleshooting.md
+      - name: Troubleshoot development errors
+        href: testing/troubleshoot-development-errors.md
     - name: Performance
       items:
       - name: Avoid using the context.sync method in loops
         href: concepts/correlated-objects-pattern.md
       - name: Resource limits and performance optimization for Office Add-ins
         href: concepts/resource-limits-and-performance-optimization.md
-    - name: Troubleshoot user errors
-      href: testing/testing-and-troubleshooting.md
-    - name: Troubleshoot development errors
-      href: testing/troubleshoot-development-errors.md
     - name: Unit testing
       href: testing/unit-testing.md
     - name: Usability testing
@@ -355,6 +360,8 @@ items:
       href: /legal/marketplace/certification-policies
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+    - name: Maintain your Office Add-in
+      href: publish/maintain-breaking-changes.md
 
 - name: Excel
   items: 
@@ -410,19 +417,20 @@ items:
     - name: Comments
       href: excel/excel-add-ins-comments.md
       displayName: Excel
-    - name: Data types (preview)
+    - name: Data types
+      displayName: preview
       items:
-        - name: Overview (preview)
+        - name: Overview
           href: excel/excel-data-types-overview.md
-          displayName: Excel
-        - name: Concepts (preview)
+          displayName: Excel, preview
+        - name: Concepts
           href: excel/excel-data-types-concepts.md
-          displayName: Excel
+          displayName: Excel, preview
+        - name: Entity value cards
+          href: excel/excel-data-types-entity-card.md
+          displayName: Excel, preview
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
-      displayName: Excel
-    - name: Error handling
-      href: excel/excel-add-ins-error-handling.md
       displayName: Excel
     - name: Events
       href: excel/excel-add-ins-events.md
@@ -535,9 +543,9 @@ items:
     - name: Autogenerate JSON metadata
       href: excel/custom-functions-json-autogeneration.md
       displayName: Excel, Custom Functions
-    - name: Data types (preview)
+    - name: Data types
       href: excel/custom-functions-data-types-concepts.md
-      displayName: Excel, Custom Functions
+      displayName: Excel, Custom Functions, preview
     - name: Call Excel JavaScript APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
@@ -553,15 +561,12 @@ items:
     - name: Return a dynamic array
       href: excel/custom-functions-dynamic-arrays.md
       displayName: Excel, Custom Functions
-    - name: UI-less custom functions
+    - name: Custom functions without a shared runtime
       items: 
-        - name: Authentication for UI-less functions
+        - name: Authentication for custom functions without a shared runtime
           href: excel/custom-functions-authentication.md
           displayName: Excel, Custom Functions
-        - name: Debugging for UI-less functions
-          href: excel/custom-functions-debugging.md
-          displayName: Excel, Custom Functions
-        - name: Runtime
+        - name: JavaScript-only runtime for custom functions
           href: excel/custom-functions-runtime.md
           displayName: Excel, Custom Functions
     - name: Volatile functions
@@ -569,6 +574,9 @@ items:
       displayName: Excel, Custom Functions
     - name: Web requests
       href: excel/custom-functions-web-reqs.md
+      displayName: Excel, Custom Functions
+    - name: Debugging
+      href: excel/custom-functions-debugging.md
       displayName: Excel, Custom Functions
     - name: Troubleshooting
       href: excel/custom-functions-troubleshooting.md
@@ -608,6 +616,9 @@ items:
   - name: Build your first Outlook add-in
     href: quickstarts/outlook-quickstart.md
     displayName: Outlook
+  - name: Build an Outlook add-in with a Teams manifest
+    href: quickstarts/outlook-quickstart-json-manifest.md
+    displayName: Outlook, preview
   - name: Outlook add-in tutorial
     href: tutorials/outlook-tutorial.md
     displayName: Outlook
@@ -616,6 +627,9 @@ items:
     items:
     - name: Overview
       href: outlook/apis.md
+      displayName: Outlook
+    - name: Mailbox requirement set
+      href: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
       displayName: Outlook
     - name: API reference - latest release
       href: reference/outlook-api-reference-1-11.md
@@ -630,7 +644,7 @@ items:
       href: outlook/extension-module-outlook-add-ins.md
     - name: Add-ins for Outlook Mobile
       href: outlook/outlook-mobile-addins.md
-    - name: Online meeting on mobile
+    - name: Create an online meeting add-in
       href: outlook/online-meeting.md
     - name: Log appointment notes on mobile
       href: outlook/mobile-log-appointments.md
@@ -748,6 +762,8 @@ items:
         href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
       - name: Troubleshoot add-in activation
         href: outlook/troubleshoot-outlook-add-in-activation.md
+      - name: Debug function commands
+        href: outlook/debug-ui-less.md
       - name: Debug event-based activation
         href: outlook/debug-autolaunch.md
   
@@ -852,9 +868,6 @@ items:
     - name: Word object model
       href: word/word-add-ins-core-concepts.md
       displayName: Word
-    - name: Create better add-ins for Word with Office Open XML
-      href: word/create-better-add-ins-for-word-with-office-open-xml.md
-      displayName: Word
     - name: Dictionary task pane add-ins
       href: word/dictionary-task-pane-add-ins.md
       displayName: Word
@@ -864,11 +877,14 @@ items:
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
       displayName: Word
-    - name: Null values
+    - name: Understand null values
       href: word/null-values.md
       displayName: Word
-    - name: Use search options to find text in your Word add-in
+    - name: Use search options to find text
       href: word/search-option-guidance.md
+      displayName: Word
+    - name: When and how to use Office Open XML
+      href: word/create-better-add-ins-for-word-with-office-open-xml.md
       displayName: Word
 - name: Samples
   items:

@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: Learn how to troubleshoot user errors in Office Add-ins.
-ms.date: 09/23/2021
+ms.date: 06/10/2022
 ms.localizationpriority: medium
 ---
 
@@ -25,8 +25,8 @@ The following table lists common error messages that users might encounter and s
 ## When installing an add-in, you see "Error loading add-in" in the status bar
 
 1. Close Office.
-1. Verify that the manifest is valid
-1. Restart the add-in
+1. Verify that the manifest is valid. See [Validate an Office Add-in's manifest](troubleshoot-manifest.md).
+1. Restart the add-in.
 1. Install the add-in again.
 
 You can also give us feedback: if using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File** | **Feedback** | **Send a Frown**. Sending a frown provides the necessary logs to understand the issue.

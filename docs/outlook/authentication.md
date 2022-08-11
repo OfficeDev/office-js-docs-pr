@@ -49,11 +49,11 @@ Your add-in can call [getUserIdentityTokenAsync](/javascript/api/outlook/office.
 
 ## Access tokens obtained via OAuth2 flows
 
-Add-ins can also access third-party services that support OAuth2 for authorization. Consider using OAuth2 tokens if your add-in:
+Add-ins can also access services from Microsoft and others that support OAuth2 for authorization. Consider using OAuth2 tokens if your add-in:
 
-- Needs access to a third-party service outside of your control
+- Needs access to a service outside of your control.
 
-Using this method, your add-in prompts the user to sign-in to the service either by using the [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) method to initialize the OAuth2 flow, or by using the [office-js-helpers library](https://github.com/OfficeDev/office-js-helpers) to the OAuth2 Implicit flow.
+Using this method, your add-in prompts the user to sign-in to the service either by using the [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) method to initialize the OAuth2 flow.
 
 ## Callback tokens
 

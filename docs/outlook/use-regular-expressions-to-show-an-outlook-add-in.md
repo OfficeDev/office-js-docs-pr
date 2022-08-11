@@ -1,7 +1,7 @@
 ---
 title: Use regular expression activation rules to show an add-in
 description: Learn how to use regular expression activation rules for Outlook contextual add-ins.
-ms.date: 07/28/2020
+ms.date: 07/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -12,8 +12,6 @@ You can specify regular expression rules to have a [contextual add-in](contextua
 You can specify a regular expression as part of an [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule or [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) rule in the add-in XML manifest. The rules are specified in a [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity) extension point.
 
 Outlook evaluates regular expressions based on the rules for the JavaScript interpreter used by the browser on the client computer. Outlook supports the same list of special characters that all XML processors also support. The following table lists these special characters. You can use these characters in a regular expression by specifying the escaped sequence for the corresponding character, as described in the following table.
-
-<br/>
 
 |Character|Description|Escape sequence to use|
 |:-----|:-----|:-----|
@@ -26,8 +24,6 @@ Outlook evaluates regular expressions based on the rules for the JavaScript inte
 ## ItemHasRegularExpressionMatch rule
 
 An  `ItemHasRegularExpressionMatch` rule is useful in controlling activation of an add-in based on specific values of a supported property. The `ItemHasRegularExpressionMatch` rule has the following attributes.
-
-<br/>
 
 |Attribute name|Description|
 |:-----|:-----|
@@ -62,8 +58,6 @@ The following `ItemHasRegularExpressionMatch` rule activates the add-in whenever
 />
 ```
 
-<br/>
-
 The following is another way to specify the same regular expression using the  `IgnoreCase` attribute.
 
 ```XML
@@ -74,8 +68,6 @@ The following is another way to specify the same regular expression using the  `
     IgnoreCase="true"
 />
 ```
-
-<br/>
 
 The following `ItemHasRegularExpressionMatch` rule activates the add-in whenever a stock symbol is included in the body of the current item.
 
@@ -95,8 +87,6 @@ An `ItemHasKnownEntity` rule activates an add-in based on the existence of an en
 > Outlook can only extract entity strings in English regardless of the default locale specified in the manifest. Only messages support the `MeetingSuggestion` entity type; appointments do not. You cannot extract entities from items in the **Sent Items** folder, nor can you use an `ItemHasKnownEntity` rule to activate an add-in for items in the **Sent Items** folder.
 
 The `ItemHasKnownEntity` rule supports the attributes in the following table. Note that while specifying a regular expression is optional in an `ItemHasKnownEntity` rule, if you choose to use a regular expression as an entity filter, you must specify both the `RegExFilter` and `FilterName` attributes.
-
-<br/>
 
 |Attribute name|Description|
 |:-----|:-----|
@@ -143,38 +133,32 @@ The following is an example of a rule collection that contains an  `ItemHasRegul
 </Rule>
 ```
 
-<br/>
-
 The following example uses `getRegExMatches` of the current item to set a variable `videos` to the results of the preceding `ItemHasRegularExpressionMatch` rule.
 
 ```js
-var videos = Office.context.mailbox.item.getRegExMatches().videoURL;
+const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
 ```
-
-<br/>
 
 Multiple matches are stored as array elements in that object. The following code example shows how to iterate over the matches for a regular expression named  `reg1` to build a string to display as HTML.
 
 ```js
 function initDialer()
 {
-    var myEntities;
-    var myString;
-    var myCell;
+    let myEntities;
+    let myString;
+    let myCell;
     myEntities = Office.context.mailbox.item.getRegExMatches();
 
     myString = "";
     myCell = document.getElementById('dialerholder');
     // Loop over the myEntities collection.
-    for (var i in myEntities.reg1) {
+    for (let i in myEntities.reg1) {
         myString += "<p><a href='callto:tel:" + myEntities.reg1[i] + "'>" + myEntities.reg1[i] + "</a></p>";
     }
 
     myCell.innerHTML = myString;
 }
 ```
-
-<br/>
 
 The following is an example of an `ItemHasKnownEntity` rule that specifies the `MeetingSuggestion` entity and a regular expression named `CampSuggestion`. Outlook activates the add-in if it detects that the currently selected item contains a meeting suggestion, and the subject or body contains the term `WonderCamp`.
 
@@ -186,12 +170,10 @@ The following is an example of an `ItemHasKnownEntity` rule that specifies the `
     IgnoreCase="false"/>
 ```
 
-<br/>
-
 The following code example uses `getFilteredEntitiesByName` on the current item to set a variable `suggestions` to an array of detected meeting suggestions for the preceding `ItemHasKnownEntity` rule.
 
 ```js
-var suggestions = Office.context.mailbox.item.getFilteredEntitiesByName("CampSuggestion");
+const suggestions = Office.context.mailbox.item.getFilteredEntitiesByName("CampSuggestion");
 ```
 
 ## See also

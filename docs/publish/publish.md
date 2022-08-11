@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 12/07/2021
+ms.date: 06/13/2022
 ms.localizationpriority: high
 ---
 
@@ -13,7 +13,7 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |:---------|:------------|
 |[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser. (Not for production add-ins.)|
 |[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows after you have published the add-in to a server other than localhost. (Not for production add-ins or for testing on iPad, Mac, or the web.)|
-|[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|To distribute your add-in publicly to users.|
+|[AppSource][AppSource]|To distribute your add-in publicly to users.|
 |[Microsoft 365 admin center](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)|In a cloud deployment, to distribute your add-in to users in your organization by using the Microsoft 365 admin center. This is done through [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins). |
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
@@ -28,9 +28,9 @@ The deployment options that are available depend on the Office application that 
 
 | Extension point | Sideloading | Network share | AppSource | Microsoft 365 admin center | SharePoint catalog\* |
 |:----------------|:-----------:|:-------------:|:---------:|:--------------------------:|:--------------------:|
-| Content         | X           | X             | X         | X                          | X                    |
-| Task pane       | X           | X             | X         | X                          | X                    |
-| Command         | X           | X             | X         | X                          |                      |
+| Content         | Supported   | Supported     | Supported | Supported                  | Supported            |
+| Task pane       | Supported   | Supported     | Supported | Supported                  | Supported            |
+| Command         | Supported   | Supported     | Supported | Supported                  | Not available        |
 
 &#42; SharePoint catalogs do not support Office on Mac.
 
@@ -38,8 +38,8 @@ The deployment options that are available depend on the Office application that 
 
 | Extension point | Sideloading | AppSource | Exchange server |
 |:----------------|:-----------:|:---------:|:---------------:|
-| Mail app        | X           | X         | X               |
-| Command         | X           | X         | X               |
+| Mail app        | Supported   | Supported | Supported       |
+| Command         | Supported   | Supported | Supported       |
 
 ## Production deployment methods
 
@@ -82,9 +82,11 @@ To assign add-ins to tenants, use the Exchange admin center to upload a manifest
 
 - [Sideload Outlook add-ins for testing](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Submit to AppSource][AppSource]
+- [AppSource](https://appsource.microsoft.com/marketplace/apps?src=office&page=1)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Create effective AppSource listings](/office/dev/store/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 - [What is the Microsoft commercial marketplace?](/azure/marketplace/overview)
+- [Microsoft Dev Center app publishing page](https://developer.microsoft.com/microsoft-teams/app-publishing)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center

@@ -8,7 +8,7 @@ metadata:
   description: Resources for learning about Outlook add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.prod: outlook #Required
   ms.topic: landing-page # Required
-  ms.date: 03/29/2021 #Required; mm/dd/yyyy format.
+  ms.date: 06/30/2022 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -33,6 +33,8 @@ landingContent:
         links:
           - text: Use the Outlook JavaScript API to interact with objects
             url: apis.md
+          - text: Navigate and use the Mailbox requirement sets
+            url: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
           - text: Test and debug an Outlook add-in
             url: ../testing/test-debug-office-add-ins.md
           - text: Deploy and publish an Outlook add-in

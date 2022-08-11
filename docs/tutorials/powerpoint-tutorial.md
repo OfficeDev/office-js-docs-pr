@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 02/18/2022
+ms.date: 07/13/2022
 ms.prod: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -20,7 +20,18 @@ In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add
 
 ## Prerequisites
 
-[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
+- [Visual Studio 2019, *version 16.10.3 or earlier*, or Visual Studio 2022](https://www.visualstudio.com/vs/), with the **Office/SharePoint development** workload installed.
+
+    > [!IMPORTANT]
+    > Some versions of Visual Studio 2019 after 16.10.3 have a bug that prevents this tutorial from being completed. Use an earlier version of Visual Studio 2019 or use Visual Studio 2022.
+
+    > [!NOTE]
+    > If you've previously installed Visual Studio, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.
+
+- Office connected to a Microsoft 365 subscription (including Office on the web).
+
+    > [!NOTE]
+    > If you don't already have Office, you can [join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
 
 ## Create your add-in project
 
@@ -28,17 +39,17 @@ Complete the following steps to create a PowerPoint add-in project using Visual 
 
 1. Choose **Create a new project**.
 
-2. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
+1. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
 
-3. Name the project `HelloWorld`, and select **Create**.
+1. Name the project `HelloWorld`, and select **Create**.
 
-4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
+1. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
 
-5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+1. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
-     ![Screenshot of the Visual Studio Solution Explorer window showing HelloWorld and HelloWorldWeb, the 2 projects in the HelloWorld solution.](../images/powerpoint-tutorial-solution-explorer.png)
+     ![The Visual Studio Solution Explorer window showing HelloWorld and HelloWorldWeb, the two projects in the HelloWorld solution.](../images/powerpoint-tutorial-solution-explorer.png)
 
-6. The following NuGet packages must installed. Install them using the **NuGet Package Manager** in Visual Studio. See Visual Studio help for instructions. The second of these may be installed automatically when you install the first.
+1. The following NuGet packages must installed. Install them using the **NuGet Package Manager** in Visual Studio. See Visual Studio help for instructions. The second of these may be installed automatically when you install the first.
 
    - Microsoft.AspNet.WebApi.WebHost
    - Microsoft.AspNet.WebApi.Core
@@ -65,18 +76,18 @@ Edit the add-in code as follows to create the framework that you'll use to imple
     </div>
     ```
 
-2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
+1. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     (function () {
         "use strict";
 
-        var messageBanner;
+        let messageBanner;
 
         Office.onReady(function () {
             $(document).ready(function () {
                 // Initialize the FabricUI notification mechanism and hide it
-                var element = document.querySelector('.MessageBanner');
+                const element = document.querySelector('.MessageBanner');
                 messageBanner = new components.MessageBanner(element);
                 messageBanner.hideBanner();
 
@@ -113,15 +124,18 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
 1. Using Solution Explorer, add a new folder named **Controllers** to the **HelloWorldWeb** project.
 
-    ![Screenshot of the Visual Studio Solution Explorer window showing the Controllers folder highlighted in the HelloWorldWeb project.](../images/powerpoint-tutorial-solution-explorer-controllers.png)
+    ![The Visual Studio Solution Explorer window showing the Controllers folder highlighted in the HelloWorldWeb project.](../images/powerpoint-tutorial-solution-explorer-controllers.png)
 
-2. Right-click the **Controllers** folder and select **Add > New Scaffolded Item...**.
+1. Right-click the **Controllers** folder and select **Add > New Scaffolded Item...**.
 
-3. In the **Add Scaffold** dialog window, select **Web API 2 Controller - Empty** and choose the **Add** button. 
+1. In the **Add Scaffold** dialog window, select **Web API 2 Controller - Empty** and choose the **Add** button.
 
-4. In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button. Visual Studio creates and opens the **PhotoController.cs** file.
+1. In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button. Visual Studio creates and opens the **PhotoController.cs** file.
 
-5. Replace the entire contents of the **PhotoController.cs** file with the following code that calls the Bing service to retrieve the photo of the day as a Base64 encoded string. When you use the Office JavaScript API to insert an image into a document, the image data must be specified as a Base64 encoded string.
+    > [!NOTE]
+    > The scaffolding process does not complete properly on some versions of Visual Studio 2019 after version 16.10.3. Visual Studio 2022 is not affected.
+
+1. Replace the entire contents of the **PhotoController.cs** file with the following code that calls the Bing service to retrieve the photo of the day as a Base64 encoded string. When you use the Office JavaScript API to insert an image into a document, the image data must be specified as a Base64 encoded string.
 
     ```csharp
     using System;
@@ -169,7 +183,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
     }
     ```
 
-6. In the **Home.html** file, replace `TODO1` with the following markup. This markup defines the **Insert Image** button that will appear within the add-in's task pane.
+1. In the **Home.html** file, replace `TODO1` with the following markup. This markup defines the **Insert Image** button that will appear within the add-in's task pane.
 
     ```html
     <button class="Button Button--primary" id="insert-image">
@@ -179,13 +193,13 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
     </button>
     ```
 
-7. In the **Home.js** file, replace `TODO1` with the following code to assign the event handler for the **Insert Image** button.
+1. In the **Home.js** file, replace `TODO1` with the following code to assign the event handler for the **Insert Image** button.
 
     ```js
     $('#insert-image').click(insertImage);
     ```
 
-8. In the **Home.js** file, replace `TODO2` with the following code to define the `insertImage` function. This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.
+1. In the **Home.js** file, replace `TODO2` with the following code to define the `insertImage` function. This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.
 
     ```js
     function insertImage() {
@@ -200,7 +214,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
     }
     ```
 
-9. In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function. This function uses the Office JavaScript API to insert the image into the document. Note:
+1. In the **Home.js** file, replace `TODO3` with the following code to define the `insertImageFromBase64String` function. This function uses the Office JavaScript API to insert the image into the document. Note:
 
     - The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsync` request indicates the type of data being inserted.
 
@@ -224,19 +238,19 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
 1. Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-    ![Screenshot showing the Start button highlighted in Visual Studio.](../images/powerpoint-tutorial-start.png)
+    ![The Start button highlighted in Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot displaying the Show Taskpane button highlighted on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![The Show Taskpane button highlighted on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide.
+1. In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide.
 
-    ![Screenshot of the PowerPoint add-in with the Insert Image button highlighted.](../images/powerpoint-tutorial-insert-image-button.png)
+    ![The PowerPoint add-in with the Insert Image button highlighted.](../images/powerpoint-tutorial-insert-image-button.png)
 
-4. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+1. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
-    ![Screenshot showing the Stop button highlighted in Visual Studio.](../images/powerpoint-tutorial-stop.png)
+    ![The Stop button highlighted in Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## Customize User Interface (UI) elements
 
@@ -256,25 +270,25 @@ Complete the following steps to add markup that customizes the task pane UI.
     </div>
     ```
 
-2. In the **Home.html** file, find the **div** with `class="footer"` and delete that entire **div** to remove the footer section from the task pane.
+1. In the **Home.html** file, find the **div** with `class="footer"` and delete that entire **div** to remove the footer section from the task pane.
 
 ### Test the add-in
 
 1. Using Visual Studio, test the PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-    ![Screenshot displaying the Start button highlighted in Visual Studio.](../images/powerpoint-tutorial-start.png)
+    ![The Start button highlighted in Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot displaying the Show Taskpane button highlighted on the PowerPoint Home ribbon.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![The Show Taskpane button highlighted on the PowerPoint Home ribbon.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. Notice that the task pane now contains a header section and title, and no longer contains a footer section.
+1. Notice that the task pane now contains a header section and title, and no longer contains a footer section.
 
-    ![Screenshot of the PowerPoint add-in with Insert Image button.](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![The PowerPoint add-in with Insert Image button.](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
-4. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+1. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
-    ![Screenshot displaying the Stop button highlighted in Visual Studio.](../images/powerpoint-tutorial-stop.png)
+    ![The Stop button highlighted in Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## Insert text
 
@@ -291,13 +305,13 @@ Complete the following steps to add code that inserts text into the title slide 
         </button>
     ```
 
-2. In the **Home.js** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.
+1. In the **Home.js** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.
 
     ```js
     $('#insert-text').click(insertText);
     ```
 
-3. In the **Home.js** file, replace `TODO5` with the following code to define the `insertText` function. This function inserts text into the current slide.
+1. In the **Home.js** file, replace `TODO5` with the following code to define the `insertText` function. This function inserts text into the current slide.
 
     ```js
     function insertText() {
@@ -314,23 +328,23 @@ Complete the following steps to add code that inserts text into the title slide 
 
 1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-    ![Screenshot of the Start button highlighted in Visual Studio.](../images/powerpoint-tutorial-start.png)
+    ![The Start button highlighted in Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot highlighting the Show Taskpane button on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![The Show Taskpane button on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide and choose a design for the slide that contains a text box for the title.
+1. In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide and choose a design for the slide that contains a text box for the title.
 
-    ![Screenshot of PowerPoint with the current slide highlighted, and the Insert Image button highlighted in the add-in.](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![The selected PowerPoint title slide and the Insert Image button highlighted in the add-in.](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
-4. Put your cursor in the text box on the title slide and then in the task pane, choose the **Insert Text** button to add text to the slide.
+1. Put your cursor in the text box on the title slide and then in the task pane, choose the **Insert Text** button to add text to the slide.
 
-    ![Screenshot of PowerPoint with the Insert Text button highlighted in the add-in.](../images/powerpoint-tutorial-insert-text.png)
+    ![The selected PowerPoint title slide with the Insert Text button highlighted in the add-in.](../images/powerpoint-tutorial-insert-text.png)
 
-5. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+1. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
-    ![Screenshot of the Stop button highlighted in Visual Studio.](../images/powerpoint-tutorial-stop.png)
+    ![The Stop button highlighted in Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## Get slide metadata
 
@@ -347,13 +361,13 @@ Complete the following steps to add code that retrieves metadata for the selecte
     </button>
     ```
 
-2. In the **Home.js** file, replace `TODO6` with the following code to assign the event handler for the **Get Slide Metadata** button.
+1. In the **Home.js** file, replace `TODO6` with the following code to assign the event handler for the **Get Slide Metadata** button.
 
     ```js
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
-3. In the **Home.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slide(s) and writes it to a popup dialog window within the add-in task pane.
+1. In the **Home.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slide(s) and writes it to a popup dialog window within the add-in task pane.
 
     ```js
     function getSlideMetadata() {
@@ -373,19 +387,19 @@ Complete the following steps to add code that retrieves metadata for the selecte
 
 1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-    ![Screenshot highlighting the Start button in Visual Studio.](../images/powerpoint-tutorial-start.png)
+    ![The Start button in Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot highlighting the Show Taskpane button on the PowerPoint Home ribbon.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![The Show Taskpane button on the PowerPoint Home ribbon.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. In the task pane, choose the **Get Slide Metadata** button to get the metadata for the selected slide. The slide metadata is written to the popup dialog window at the bottom of the task pane. In this case, the `slides` array within the JSON metadata contains one object that specifies the `id`, `title`, and `index` of the selected slide. If multiple slides had been selected when you retrieved slide metadata, the `slides` array within the JSON metadata would contain one object for each selected slide.
+1. In the task pane, choose the **Get Slide Metadata** button to get the metadata for the selected slide. The slide metadata is written to the popup dialog window at the bottom of the task pane. In this case, the `slides` array within the JSON metadata contains one object that specifies the `id`, `title`, and `index` of the selected slide. If multiple slides had been selected when you retrieved slide metadata, the `slides` array within the JSON metadata would contain one object for each selected slide.
 
-    ![Screenshot of PowerPoint with the Get Slide Metadata button highlighted in the add-in.](../images/powerpoint-tutorial-get-slide-metadata.png)
+    ![The Get Slide Metadata button highlighted in the add-in.](../images/powerpoint-tutorial-get-slide-metadata.png)
 
-4. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+1. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
-    ![Screenshot highlighting the Stop button in Visual Studio.](../images/powerpoint-tutorial-stop.png)
+    ![The Stop button in Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## Navigate between slides
 
@@ -420,7 +434,7 @@ Complete the following steps to add code that navigates between the slides of a 
     </button>
     ```
 
-2. In the **Home.js** file, replace `TODO8` with the following code to assign the event handlers for the four navigation buttons.
+1. In the **Home.js** file, replace `TODO8` with the following code to assign the event handlers for the four navigation buttons.
 
     ```js
     $('#go-to-first-slide').click(goToFirstSlide);
@@ -429,7 +443,7 @@ Complete the following steps to add code that navigates between the slides of a 
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-3. In the **Home.js** file, replace `TODO9` with the following code to define the navigation functions. Each of these functions uses the `goToByIdAsync` function to select a slide based upon its position in the document (first, last, previous, and next).
+1. In the **Home.js** file, replace `TODO9` with the following code to define the navigation functions. Each of these functions uses the `goToByIdAsync` method to select a slide based upon its position in the document (first, last, previous, and next).
 
     ```js
     function goToFirstSlide() {
@@ -473,33 +487,33 @@ Complete the following steps to add code that navigates between the slides of a 
 
 1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-    ![Screenshot showing the Start button highlighted on the Visual Studio toolbar.](../images/powerpoint-tutorial-start.png)
+    ![The Start button highlighted on the Visual Studio toolbar.](../images/powerpoint-tutorial-start.png)
 
-2. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot showing the Show Taskpane button highlighted on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![The Show Taskpane button highlighted on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. Use the **New Slide** button in the ribbon of the **Home** tab to add two new slides to the document.
+1. Use the **New Slide** button in the ribbon of the **Home** tab to add two new slides to the document.
 
-4. In the task pane, choose the **Go to First Slide** button. The first slide in the document is selected and displayed.
+1. In the task pane, choose the **Go to First Slide** button. The first slide in the document is selected and displayed.
 
-    ![Screenshot of PowerPoint with the Go to First Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-first-slide.png)
+    ![The Go to First Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-first-slide.png)
 
-5. In the task pane, choose the **Go to Next Slide** button. The next slide in the document is selected and displayed.
+1. In the task pane, choose the **Go to Next Slide** button. The next slide in the document is selected and displayed.
 
-    ![Screenshot of PowerPoint with the Go to Next Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-next-slide.png)
+    ![The Go to Next Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-next-slide.png)
 
-6. In the task pane, choose the **Go to Previous Slide** button. The previous slide in the document is selected and displayed.
+1. In the task pane, choose the **Go to Previous Slide** button. The previous slide in the document is selected and displayed.
 
-    ![Screenshot of PowerPoint with the Go to Previous Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-previous-slide.png)
+    ![The Go to Previous Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-previous-slide.png)
 
-7. In the task pane, choose the **Go to Last Slide** button. The last slide in the document is selected and displayed.
+1. In the task pane, choose the **Go to Last Slide** button. The last slide in the document is selected and displayed.
 
-    ![Screenshot of PowerPoint with the Go to Last Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-last-slide.png)
+    ![The Go to Last Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-last-slide.png)
 
-8. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+1. In Visual Studio, stop the add-in by pressing **Shift + F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
-    ![Screenshot showing the Stop button highlighted on the Visual Studio toolbar.](../images/powerpoint-tutorial-stop.png)
+    ![The Stop button highlighted on the Visual Studio toolbar.](../images/powerpoint-tutorial-stop.png)
 
 ## Next steps
 

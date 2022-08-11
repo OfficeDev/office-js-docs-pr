@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 04/19/2022
+ms.date: 07/11/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -10,29 +10,34 @@ ms.localizationpriority: high
 
 # Excel data types core concepts (preview)
 
-> [!NOTE]
-> Data types APIs are currently only available in public preview. Preview APIs are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview APIs in a production environment or within business-critical documents.
->
-> To use preview APIs:
->
-> - You must reference the **beta** library on the content delivery network (CDN) (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). The [type definition file](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) for TypeScript compilation and IntelliSense is found at the CDN and [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). You can install these types with `npm install --save-dev @types/office-js-preview`. For additional information, see the [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) NPM package readme.
-> - You may need to join the [Office Insider program](https://insider.office.com) for access to more recent Office builds.
->
-> To try out data types in Office on Windows, you must have an Excel build number greater than or equal to 16.0.14626.10000. To try out data types in Office on Mac, you must have an Excel build number greater than or equal to 16.55.21102600.
+[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
 
 This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with data types. It introduces core concepts that are fundamental to data type development.
 
-## Core concepts
+## The `valuesAsJson` property
 
-Use the [`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) property to work with data type values. This property is similar to [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member), but `Range.values` only returns the four basic types: string, number, boolean, or error values. `Range.valuesAsJson` returns expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
+The `valuesAsJson` property is integral to creating data types in Excel. This property is an expansion of `values` properties, such as [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member). Both the `values` and `valuesAsJson` properties are used to access the value in a cell, but the `values` property only returns one of the four basic types: string, number, boolean, or error (as a string). In contrast, `valuesAsJson` returns expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
+
+The following objects offer the `valuesAsJson` property.
+
+- [NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)
+- [Range](/javascript/api/excel/excel.range)
+- [RangeView](/javascript/api/excel/excel.rangeview)
+- [TableColumn](/javascript/api/excel/excel.tablecolumn)
+- [TableRow](/javascript/api/excel/excel.tablerow)
+
+> [!NOTE]
+> Some cell values change based on a user's locale. The `valuesAsJsonLocal` property offers localization support and is available on all the same objects as `valuesAsJson`.
+
+## Cell values
 
 The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.cellvalue) type alias, which is a [union](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types) of the following data types.
 
 - [ArrayCellValue](/javascript/api/excel/excel.arraycellvalue)
 - [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)
 - [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)
-- [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)
 - [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)
+- [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)
 - [ErrorCellValue](/javascript/api/excel/excel.errorcellvalue)
 - [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)
 - [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue)
@@ -41,13 +46,17 @@ The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.ce
 - [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)
 - [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)
 
-The [CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) object is an [intersection](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types) with the rest of the `*CellValue` types. It's not a data type itself. The properties of the `CellValueExtraProperties` object are used with all data types to specify details related to overwriting cell values.
+The `CellValue` type alias also returns the [CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) object, which is an [intersection](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types) with the rest of the `*CellValue` types. It's not a data type itself. The properties of the `CellValueExtraProperties` object are used with all data types to specify details related to overwriting cell values.
 
 ### JSON schema
 
-Each data type uses a JSON metadata schema designed for that type. This defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data and additional information about the cell, such as `basicValue`, `numberFormat`, or `address`. Each `CellValueType` has properties available according to that type. For example, the `webImage` type includes the [altText](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-alttext-member) and [attribution](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-attribution-member) properties. The following sections show JSON code samples for the formatted number value, entity value, and web image data types.
+Each cell value type returned by `valuesAsJson` uses a JSON metadata schema designed for that type. Along with additional properties unique to each data type, these JSON metadata schemas all have the `type`, `basicType`, and `basicValue` properties in common.
 
-The JSON metadata schema for each data type also includes one or more readonly properties that are used when calculations encounter incompatible scenarios, such as a version of Excel that doesn't meet the minimum build number requirement for the data types feature. The property `basicType` is part of the JSON metadata of every data type, and it's always a readonly property. The `basicType` property is used as a fallback when the data type isn't supported or is formatted incorrectly.
+The `type` defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data. The `basicType` is always readonly and is used as a fallback when the data type isn't supported or is formatted incorrectly. The `basicValue` matches the value that would be returned by the `values` property. The `basicValue` is used as a fallback when calculations encounter incompatible scenarios, such as an older version of Excel that doesn't support the data types feature. The `basicValue` is readonly for `ArrayCellValue`, `EntityCellValue`, `LinkedEntityCellValue`, and `WebImageCellValue` data types.
+
+In addition to the three fields that all data types share, the JSON metadata schema for each `*CellValue` has properties available according to that type. For example, the [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) type includes the `altText` and `attribution` properties, while the [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) type offers the `properties` and `text` fields.
+
+The following sections show JSON code samples for the formatted number value, entity value, and web image data types.
 
 ## Formatted number values
 
@@ -55,7 +64,7 @@ The [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellva
 
 The following JSON code sample shows the complete schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI. If the minimum compatibility requirements for the data types feature aren't met, calculations use the `basicValue` in place of the formatted number.
 
-```json
+```TypeScript
 // This is an example of the complete JSON of a formatted number value.
 // In this case, the number is formatted as a date.
 const myDate: Excel.FormattedNumberCellValue = {
@@ -68,13 +77,13 @@ const myDate: Excel.FormattedNumberCellValue = {
 
 ## Entity values
 
-An entity value is a container for data types, similar to an object in object oriented programming. Entities also support arrays as properties of an entity value. The [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) object allows add-ins to define properties such as `type`, `text`, and `properties`. The `properties` property enables the entity value to define and contain additional data types.
+An entity value is a container for data types, similar to an object in object-oriented programming. Entities also support arrays as properties of an entity value. The [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) object allows add-ins to define properties such as `type`, `text`, and `properties`. The `properties` property enables the entity value to define and contain additional data types.
 
 The `basicType` and `basicValue` properties define how calculations read this entity data type if the minimum compatibility requirements to use data types aren't met. In that scenario, this entity data type displays as a **#VALUE!** error in the Excel UI.
 
 The following JSON code sample shows the complete schema of an entity value that contains text, an image, a date, and an additional text value.
 
-```json
+```TypeScript
 // This is an example of the complete JSON for an entity value.
 // The entity contains text and properties which contain an image, a date, and another text value.
 const myEntity: Excel.EntityCellValue = {
@@ -93,6 +102,12 @@ const myEntity: Excel.EntityCellValue = {
 };
 ```
 
+Entity values also offer a `layouts` property that creates a card for the entity. The card displays as a modal window in the Excel UI and can display additional information contained within the entity value, beyond what's visible in the cell. To learn more, see [Use cards with entity value data types](excel-data-types-entity-card.md).
+
+### Linked entities
+
+Linked entity values, or [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) objects, are a type of entity value. These objects integrate data provided by an external service and can display this data as an [entity card](excel-data-types-entity-card.md), like regular entity values. The [Stocks and Geography data types](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) available via the Excel UI are linked entity values.
+
 ## Web image values
 
 The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
@@ -101,7 +116,7 @@ The `basicType` and `basicValue` properties define how calculations read the web
 
 The following JSON code sample shows the complete schema of a web image.
 
-```json
+```TypeScript
 // This is an example of the complete JSON for a web image.
 const myImage: Excel.WebImageCellValue = {
     type: Excel.CellValueType.webImage,
@@ -137,5 +152,6 @@ Each of the error objects can access an enum through the `errorSubType` property
 ## See also
 
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
+- [Use cards with entity value data types](excel-data-types-entity-card.md)
 - [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
 - [Custom functions and data types](custom-functions-data-types-concepts.md)

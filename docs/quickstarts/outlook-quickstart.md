@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 02/28/2022
+ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
 ---
@@ -80,7 +80,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     ```js
     // Get a reference to the current message
-    var item = Office.context.mailbox.item;
+    const item = Office.context.mailbox.item;
 
     // Write message property value to the task pane
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
@@ -155,7 +155,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 ### Update the code
 
 1. **MessageRead.html** specifies the HTML that will be rendered in the add-in's task pane. In **MessageRead.html**, replace the **\<body\>** element with the following markup and save the file.
- 
+
     ```HTML
     <body class="ms-font-m ms-welcome">
         <div class="ms-Fabric content-main">
@@ -239,11 +239,11 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 1. Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
 
-1. The **ProviderName** element has a placeholder value. Replace it with your name.
+1. The **\<ProviderName\>** element has a placeholder value. Replace it with your name.
 
-1. The **DefaultValue** attribute of the **DisplayName** element has a placeholder. Replace it with `My Office Add-in`.
+1. The **DefaultValue** attribute of the **\<DisplayName\>** element has a placeholder. Replace it with `My Office Add-in`.
 
-1. The **DefaultValue** attribute of the **Description** element has a placeholder. Replace it with `My First Outlook add-in`.
+1. The **DefaultValue** attribute of the **\<Description\>** element has a placeholder. Replace it with `My First Outlook add-in`.
 
 1. Save the file.
 
@@ -270,15 +270,15 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 1. Within the message, locate the ellipsis for the overflow menu containing the add-in's button.
 
-    ![Screenshot of a message window in Outlook on the web with the ellipsis highlighted.](../images/quick-start-button-owa-1.png)
+    ![A message window in Outlook on the web with the ellipsis highlighted.](../images/quick-start-button-owa-1.png)
 
 1. Within the overflow menu, locate the add-in's button.
 
-    ![Screenshot of a message window in Outlook on the web with the add-in button highlighted.](../images/quick-start-button-owa-2.png)
+    ![A message window in Outlook on the web with the add-in button highlighted.](../images/quick-start-button-owa-2.png)
 
 1. Click the button to open the add-in's task pane.
 
-    ![Screenshot of the add-in's task pane in Outlook on the web displaying message properties.](../images/quick-start-task-pane-owa-1.png)
+    ![The add-in's task pane in Outlook on the web displaying message properties.](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
     > If the task pane doesn't load, try to verify by opening it in a browser on the same machine.
@@ -288,3 +288,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 Congratulations, you've successfully created your first Outlook task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
 ---
+
+## See also
+
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

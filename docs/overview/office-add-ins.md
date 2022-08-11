@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 10/14/2020
+ms.date: 04/14/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -9,15 +9,15 @@ ms.localizationpriority: high
 
 # Office Add-ins platform overview
 
-You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook. Your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser.
+You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Outlook, Excel, Word, PowerPoint, OneNote, and Project. Your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser.
 
 ![Office application plus an embedded website (add-in) make endless  extensibility possibilities.](../images/addins-overview.png)
 
 Office Add-ins can do almost anything a webpage can do inside a browser. Use the Office Add-ins platform to:
 
--  **Add new functionality to Office clients** - Bring external data into Office, automate Office documents, expose third-party functionality in Office clients, and more. For example, use Microsoft Graph API to connect to data that drives productivity.
+- **Add new functionality to Office clients** - Bring external data into Office, automate Office documents, expose functionality from Microsoft and others in Office clients, and more. For example, use Microsoft Graph API to connect to data that drives productivity.
 
--  **Create new rich, interactive objects that can be embedded in Office documents** - Embed maps, charts, and interactive visualizations that users can add to their own Excel spreadsheets and PowerPoint presentations.
+- **Create new rich, interactive objects that can be embedded in Office documents** - Embed maps, charts, and interactive visualizations that users can add to their own Excel spreadsheets and PowerPoint presentations.
 
 ## How are Office Add-ins different from COM and VSTO add-ins?
 
@@ -53,8 +53,6 @@ The manifest is an XML file that specifies settings and capabilities of the add-
 
 The most basic Office Add-in consists of a static HTML page that is displayed inside an Office application, but that doesn't interact with either the Office document or any other Internet resource. However, to create an experience that interacts with Office documents or allows the user to interact with online resources from an Office client application, you can use any technologies, both client and server side, that your hosting provider supports (such as ASP.NET, PHP, or Node.js). To interact with Office clients and documents, you use the Office.js JavaScript APIs.
 
-*Figure 2. Components of a Hello World Office Add-in*
-
 ![Components of a Hello World add-in.](../images/about-addins-componentshelloworldoffice.png)
 
 ## Extending and interacting with Office clients
@@ -64,7 +62,7 @@ Office Add-ins can do the following within an Office client application.
 - Extend functionality (any Office application)
 
 - Create new objects (Excel or PowerPoint)
- 
+
 ### Extend Office functionality
 
 You can add new functionality to Office applications via the following:  
@@ -79,15 +77,11 @@ Custom UI and task panes are specified in the add-in manifest.  
 
 You can add custom ribbon buttons and menu items to the ribbon in Office on the web and on Windows. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
 
-*Figure 3. Add-in commands in the ribbon*
-
 ![Custom buttons and menu commands.](../images/about-addins-addincommands.png)
 
 #### Task panes  
 
 You can use task panes in addition to add-in commands to enable users to interact with your solution. Clients that do not support add-in commands (Office 2013 and Office on iPad) run your add-in as a task pane. Users launch task pane add-ins via the **My Add-ins** button on the **Insert** tab.
-
-*Figure 4. Task pane*
 
 ![Use task panes in addition to add-in commands.](../images/about-addins-taskpane.png)
 
@@ -102,8 +96,6 @@ For an overview of Outlook add-ins, see [Outlook add-ins overview](../outlook/ou
 ### Create new objects in Office documents
 
 You can embed web-based objects called content add-ins within Excel and PowerPoint documents. With content add-ins, you can integrate rich, web-based data visualizations, media (such as a YouTube video player or a picture gallery), and other external content.
-
-*Figure 5. Content add-in*
 
 ![Embed web-based objects called content add-ins.](../images/about-addins-contentaddin.png)
 

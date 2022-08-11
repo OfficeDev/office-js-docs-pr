@@ -1,7 +1,7 @@
 ---
 title: Best practices and rules for the Office dialog API
 description: Provides rules and best practices for the Office dialog API, such as best practices for a single-page application (SPA).
-ms.date: 07/22/2021
+ms.date: 05/19/2022
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +18,7 @@ This article provides rules, gotchas, and best practices for the Office dialog A
 
 - The dialog box can only navigate to HTTPS URLs, not HTTP.
 - The URL passed to the [displayDialogAsync](/javascript/api/office/office.ui) method must be in the exact same domain as the add-in itself. It cannot be a subdomain. But the page that is passed to it can redirect to a page in another domain.
-- A host window, which can be a task pane or the UI-less [function file](/javascript/api/manifest/functionfile) of an add-in command, can have only one dialog box open at a time.
+- A host page can have only one dialog box open at a time. The host page could be either a task pane or the [function file](/javascript/api/manifest/functionfile) of a [function command](../design/add-in-commands.md#types-of-add-in-commands).
 - Only two Office APIs can be called in the dialog box:
   - The [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) function.
   - `Office.context.requirements.isSetSupported` (For more information, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md).)
@@ -32,7 +32,7 @@ Because overlapping UI elements are discouraged, avoid opening a dialog box from
 
 ### Design a dialog box UI
 
-For best practices in dialog box design, see [Dialog boxes in Office Add-ins](../design/dialog-boxes.md).
+For best practices in dialog box design, see [Dialog boxes in Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
 
 ### Handle pop-up blockers with Office on the web
 
@@ -52,7 +52,7 @@ Office automatically adds a query parameter called `_host_info` to the URL that 
 
 You can't have more than one dialog open from a given host page, so your code should call [Dialog.close](/javascript/api/office/office.dialog#office-office-dialog-close-member(1)) on an open dialog before it calls `displayDialogAsync` to open another dialog. The `close` method is asynchronous. For this reason, if you call `displayDialogAsync` immediately after a call of `close`, the first dialog may not have completely closed when Office attempts to open the second. If that happens, Office will return a [12007](dialog-handle-errors-events.md#12007) error: "The operation failed because this add-in already has an active dialog."
 
-The `close` method doesn't accept a callback parameter, and it doesn't return a Promise object so it cannot be awaited with either the `await` keyword or with a `then` method. For this reason, we suggest the following technique when you need to open a new dialog immediately after closing a dialog: encapsulate the code to open the new dialog in a method and design the method to recursively call itself if the call of `displayDialogAsync` returns `12007`. The following is an example.
+The `close` method doesn't accept a callback parameter, and it doesn't return a Promise object so it cannot be awaited with either the `await` keyword or with a `then` method. For this reason, we suggest the following technique when you need to open a new dialog immediately after closing a dialog: encapsulate the code to open the new dialog in a function and design the function to recursively call itself if the call of `displayDialogAsync` returns `12007`. The following is an example.
 
 ```javascript
 function openFirstDialog() {

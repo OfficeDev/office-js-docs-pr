@@ -30,7 +30,7 @@ Adding custom keyboard shortcuts requires your add-in to use the shared runtime.
 
 ### Link the mapping file to the manifest
 
-Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step.
+Immediately *below* (not inside) the **\<VersionOverrides\>** element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step.
 
 ```xml
     ...
@@ -84,7 +84,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
 
 ## Create a mapping of actions to their functions
 
-1. In your project, open the JavaScript file loaded by your HTML page in the `<FunctionFile>` element.
+1. In your project, open the JavaScript file loaded by your HTML page in the **\<FunctionFile\>** element.
 1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map each action that you specified in the JSON file to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
 
     - The first parameter is one of the actions from the JSON file.
@@ -256,13 +256,9 @@ When using custom keyboard shortcuts on the web, some keyboard shortcuts that ar
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
-## Enable custom keyboard shortcuts for specific users (preview)
+## Enable custom keyboard shortcuts for specific users
 
 Your add-in can enable users to reassign the actions of the add-in to alternate keyboard combinations.
-
-> [!IMPORTANT]
-> The features described in this section are currently in preview and subject to change. They are not currently supported for use in production environments. To try the preview features, you'll need to [join the Office Insider Program](https://insider.office.com/join).
-> A good way to try out preview features is by using a Microsoft 365 subscription. If you don't already have a Microsoft 365 subscription, you can get one by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
 
 > [!NOTE]
 > The APIs described in this section require the [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) requirement set.

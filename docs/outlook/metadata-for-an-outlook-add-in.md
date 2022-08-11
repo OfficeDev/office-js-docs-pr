@@ -1,7 +1,7 @@
 ---
 title: Get and set metadata in an Outlook add-in
 description: Manage custom data in your Outlook add-in by using either roaming settings or custom properties.
-ms.date: 10/31/2019
+ms.date: 07/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -20,13 +20,11 @@ You can specify data specific to a user's Exchange mailbox using the [RoamingSet
 
 Changes to this data are stored on an in-memory copy of those settings for the current Outlook session. You should explicitly save all the roaming settings after updating them so that they will be available the next time the user opens your add-in, on the same or any other supported device.
 
-
 ### Roaming settings format
 
-The data in a **RoamingSettings** object is stored as a serialized JavaScript Object Notation (JSON) string. 
+The data in a **RoamingSettings** object is stored as a serialized JavaScript Object Notation (JSON) string.
 
 The following is an example of the structure, assuming there are three defined roaming settings named `add-in_setting_name_0`,  `add-in_setting_name_1`, and  `add-in_setting_name_2`.
-
 
 ```json
 {
@@ -36,17 +34,15 @@ The following is an example of the structure, assuming there are three defined r
 }
 ```
 
-
 ### Loading roaming settings
 
-A mail add-in typically loads roaming settings in the [Office.initialize](/javascript/api/office#Office_initialize_reason_) event handler. The following JavaScript code example shows how to load existing roaming settings and get the values of 2 settings, **customerName** and **customerBalance**.
-
+A mail add-in typically loads roaming settings in the [Office.initialize](/javascript/api/office#Office_initialize_reason_) event handler. The following JavaScript code example shows how to load existing roaming settings and get the values of two settings, **customerName** and **customerBalance**.
 
 ```js
-var _mailbox;
-var _settings;
-var _customerName;
-var _customerBalance;
+let _mailbox;
+let _settings;
+let _customerName;
+let _customerBalance;
 
 // The initialize function is required for all add-ins.
 Office.initialize = function () {
@@ -56,15 +52,13 @@ Office.initialize = function () {
   _customerName = _settings.get("customerName");
   _customerBalance = _settings.get("customerBalance");
 }
-
 ```
-
 
 ### Creating or assigning a roaming setting
 
 Continuing with the preceding example, the following JavaScript function,  `setAddInSetting`, shows how to use the [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings) method to set a setting named `cookie` with today's date, and persist the data by using the [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-saveasync-member(1)) method to save all the roaming settings back to the server.
 
-The `set` method creates the setting if the setting does not already exist, and assigns the setting to the specified value. The `saveAsync` method saves roaming settings asynchronously. This code sample passes a callback method, `saveMyAddInSettingsCallback`, to `saveAsync` When the asynchronous call finishes,  `saveMyAddInSettingsCallback` is called by using one parameter, _asyncResult_. This parameter is an [AsyncResult](/javascript/api/office/office.asyncresult) object that contains the result of and any details about the asynchronous call. You can use the optional _userContext_ parameter to pass any state information from the asynchronous call to the callback function.
+The `set` method creates the setting if the setting does not already exist, and assigns the setting to the specified value. The `saveAsync` method saves roaming settings asynchronously. This code sample passes a callback function, `saveMyAddInSettingsCallback`, to `saveAsync` When the asynchronous call finishes,  `saveMyAddInSettingsCallback` is called by using one parameter, _asyncResult_. This parameter is an [AsyncResult](/javascript/api/office/office.asyncresult) object that contains the result of and any details about the asynchronous call. You can use the optional _userContext_ parameter to pass any state information from the asynchronous call to the callback function.
 
 ```js
 // Set a roaming setting.
@@ -76,7 +70,7 @@ function setAddInSetting() {
   _settings.saveAsync(saveMyAddInSettingsCallback);
 }
 
-// Callback method after saving custom roaming settings.
+// Callback function after saving custom roaming settings.
 function saveMyAddInSettingsCallback(asyncResult) {
   if (asyncResult.status == Office.AsyncResultStatus.Failed) {
     // Handle the failure.
@@ -84,11 +78,9 @@ function saveMyAddInSettingsCallback(asyncResult) {
 }
 ```
 
-
 ### Removing a roaming setting
 
 Also extending the preceding examples, the following JavaScript function,  `removeAddInSetting`, shows how to use the [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-remove-member(1)) method to remove the `cookie` setting and save all the roaming settings back to the Exchange Server.
-
 
 ```js
 // Remove an add-in setting.
@@ -102,7 +94,6 @@ function removeAddInSetting()
 }
 ```
 
-
 ## Custom data per item in a mailbox: custom properties
 
 You can specify data specific to an item in the user's mailbox using the [CustomProperties](/javascript/api/outlook/office.customproperties) object. For example, your mail add-in could categorize certain messages and note the category using a custom property `messageCategory`. Or, if your mail add-in creates appointments from meeting suggestions in a message, you can use a custom property to track each of these appointments. This ensures that if the user opens the message again, your mail add-in doesn't offer to create the appointment a second time.
@@ -115,18 +106,14 @@ These add-in-specific, item-specific custom properties can only be accessed by u
 
 Before you can use custom properties, you must load them by calling the [loadCustomPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method. After you have created the property bag, you can use the [set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) and [get](/javascript/api/outlook/office.customproperties) methods to add and retrieve custom properties. You must use the [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) method to save any changes that you make to the property bag.
 
-
  > [!NOTE]
  > Because Outlook on Mac doesn't cache custom properties, if the user's network goes down, mail add-ins in Outlook on Mac would not be able to access their custom properties.
 
-
 ### Custom properties example
 
+The following example shows a simplified set of functions and methods for an Outlook add-in that uses custom properties. You can use this example as a starting point for your add-in that uses custom properties.
 
-The following example shows a simplified set of methods for an Outlook add-in that uses custom properties. You can use this example as a starting point for your add-in that uses custom properties.
-
-This example includes the following methods.
-
+This example includes the following functions and methods.
 
 - [Office.initialize](/javascript/api/office#Office_initialize_reason_) -- Initializes the add-in and loads the custom property bag from the Exchange server.
 
@@ -136,10 +123,9 @@ This example includes the following methods.
 
 - **removeProperty** -- Removes a specific property from the property bag, and then saves the removal to the server.
 
-
 ```js
-var _mailbox;
-var _customProps;
+let _mailbox;
+let _customProps;
 
 // The initialize function is required for all add-ins.
 Office.initialize = function () {
@@ -161,7 +147,7 @@ function customPropsCallback(asyncResult) {
 
 // Get individual custom property.
 function getProperty() {
-  var myProp = _customProps.get("myProp");
+  const myProp = _customProps.get("myProp");
 }
 
 // Set individual custom property.

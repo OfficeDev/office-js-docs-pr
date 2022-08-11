@@ -1,8 +1,8 @@
 ---
-ms.date: 04/04/2022
 title: Configure your Office Add-in to use a shared JavaScript runtime
-ms.prod: non-product-specific
 description: Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.
+ms.date: 07/18/2022
+ms.prod: non-product-specific
 ms.localizationpriority: high
 ---
 
@@ -52,10 +52,10 @@ Follow these steps for a new or existing project to configure it to use a shared
     > [!NOTE]
     > Don't add the `SharedRuntime` requirement set to the manifest for a Word add-in. It will cause an error when loading the add-in which is a known issue at this time.
 
-1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
+1. Find the **\<VersionOverrides\>** section and add the following **\<Runtimes\>** section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
 
     > [!IMPORTANT]
-    > The `<Runtimes>` section must be entered after the `<Host>` element in the exact order shown in the following XML.
+    > The **\<Runtimes\>** section must be entered after the **\<Host\>** element in the exact order shown in the following XML.
 
    ```xml
    <VersionOverrides ...>
@@ -68,7 +68,7 @@ Follow these steps for a new or existing project to configure it to use a shared
        </Host>
    ```
 
-1. If you generated an Excel add-in with custom functions, find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
+1. If you generated an Excel add-in with custom functions, find the **\<Page\>** element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
 
    ```xml
    <AllFormFactors>
@@ -79,7 +79,7 @@ Follow these steps for a new or existing project to configure it to use a shared
    ...
    ```
 
-1. Find the `<FunctionFile ...>` tag and change the `resid` from **Commands.Url** to  **Taskpane.Url**. Note that if you don't have action commands, you won't have a **FunctionFile** entry, and can skip this step.
+1. Find the **\<FunctionFile\>** tag and change the `resid` from **Commands.Url** to  **Taskpane.Url**. Note that if you don't have action commands, you won't have a **\<FunctionFile\>** entry, and can skip this step.
 
     ```xml
     </GetStarted>
@@ -145,7 +145,7 @@ You can confirm that you are using the shared JavaScript runtime correctly by us
     ```javascript
     /*global document, Office*/
 
-    var _count = 0;
+    let _count = 0;
 
     Office.onReady(() => {
       document.getElementById("sideload-msg").style.display = "none";

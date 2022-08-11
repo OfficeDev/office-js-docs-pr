@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.
-ms.date: 02/17/2022
+ms.date: 04/25/2022
 ms.localizationpriority: medium
 ---
 
@@ -382,23 +382,25 @@ await Excel.run(async (context) => {
 
 ## Find all cells with matching text
 
-The `Worksheet` object has a `find` method to search for a specified string within the worksheet. It returns a `RangeAreas` object, which is a collection of `Range` objects that can be edited all at once. The following code sample finds all cells with values equal to the string **Complete** and colors them green. Note that `findAll` will throw an `ItemNotFound` error if the specified string doesn't exist in the worksheet. If you expect that the specified string may not exist in the worksheet, use the [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) method instead, so your code gracefully handles that scenario.
+The `Worksheet` object has a [`findAll`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-findall-member(1)) method to search for a specified string within the worksheet. It returns a `RangeAreas` object, which is a collection of `Range` objects that can be edited all at once.
+
+The following code sample finds all cells with values equal to the string **Complete** and colors them green. Note that `findAll` throws an `ItemNotFound` error if the specified string doesn't exist in the worksheet. If you're uncertain whether the specified string exists in the worksheet, use the [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) method to gracefully handle that scenario.
 
 ```js
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getItem("Sample");
     let foundRanges = sheet.findAll("Complete", {
-        completeMatch: true, // findAll will match the whole cell value
-        matchCase: false // findAll will not match case
+        completeMatch: true, /* Match the whole cell value, not any part of the text. */
+        matchCase: false /* Make the search case-insensitive. */
     });
 
     await context.sync();
-    foundRanges.format.fill.color = "green"
+    foundRanges.format.fill.color = "green";
 });
 ```
 
 > [!NOTE]
-> This section describes how to find cells and ranges using the `Worksheet` object's functions. More range retrieval information can be found in object-specific articles.
+> This section describes how to find cells and ranges using the `Worksheet` object's methods. More range retrieval information can be found in object-specific articles.
 >
 > - For examples that show how to get a range within a worksheet using the `Range` object, see [Get a range using the Excel JavaScript API](excel-add-ins-ranges-get.md).
 > - For examples that show how to get ranges from a `Table` object, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md).
@@ -495,7 +497,7 @@ The protection state of a worksheet can be changed by an add-in or through the E
 The following code sample shows how to register the `onProtectionChanged` event handler and use the `WorksheetProtectionChangedEventArgs` object to retrieve the `isProtected`, `worksheetId`, and `source` properties of the event.
 
 ```js
-// This method registers an event handler for the onProtectionChanged event of a worksheet.
+// This function registers an event handler for the onProtectionChanged event of a worksheet.
 async function run() {
     await Excel.run(async (context) => {
         // Retrieve the worksheet named "Sample".
@@ -507,7 +509,7 @@ async function run() {
     });
 }
 
-// This method is an event handler that returns the protection state of a worksheet 
+// This function is an event handler that returns the protection state of a worksheet 
 // and information about the changed worksheet.
 async function checkProtection(event) {
     await Excel.run(async (context) => {

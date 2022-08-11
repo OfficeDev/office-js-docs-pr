@@ -1,13 +1,13 @@
 ---
 title: Enable single sign-on (SSO) in an Office Add-in
 description: Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.
-ms.date: 01/25/2022
+ms.date: 05/05/2022
 ms.localizationpriority: high
 ---
 
 # Enable single sign-on (SSO) in an Office Add-in
 
-Users sign in to Office (online, mobile, and desktop platforms) using either their personal Microsoft account or their Microsoft 365 Education or work account. Take advantage of this and use single sign-on (SSO) to authenticate and authorize the user to your add-in without requiring them to sign in a second time.
+Users sign in to Office using either their personal Microsoft account or their Microsoft 365 Education or work account. Take advantage of this and use single sign-on (SSO) to authenticate and authorize the user to your add-in without requiring them to sign in a second time.
 
 ![An image showing the sign-in process for an add-in.](../images/sso-for-office-addins.png)
 
@@ -15,7 +15,7 @@ Users sign in to Office (online, mobile, and desktop platforms) using either the
 
 The following diagram shows how the SSO process works. The blue elements represent Office or the Microsoft identity platform. The gray elements represent the code you write and include the client-side code (task pane) and the server-side code for your add-in.
 
-![A diagram that shows the SSO process.](../images/sso-overview-diagram.svg)
+:::image type="content" source="../images/sso-overview-diagram.svg" alt-text="A diagram that shows the SSO process." border="false":::
 
 1. In the add-in, your JavaScript code calls the Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). If the user is already signed in to Office, the Office host will return the access token with the claims of the signed in user.
 2. If the user is not signed in, the Office host application opens a dialog box for the user to sign in. Office redirects to the Microsoft identity platform to complete the sign-in process.
@@ -55,9 +55,6 @@ This section describes the tasks involved in creating an Office Add-in that uses
 - [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md)
 - [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md)
 
-> [!NOTE]
-> You can use the Yeoman generator to create an SSO-enabled, Node.js Office Add-in. The Yeoman generator simplifies the process of creating an SSO-enabled add-in, by automating the steps required to configure SSO within Azure and generating the code that's necessary for an add-in to use SSO. For more information, see the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).
-
 ### Register your add-in with the Microsoft identity platform
 
 To work with SSO you need to register your add-in with the Microsoft identity platform. This will enable the Microsoft identity platform to provide authentication and authorization services for your add-in. Creating the app registration includes the following tasks.
@@ -74,11 +71,11 @@ For more details about this process, see [Register an Office Add-in that uses SS
 
 Add new markup to the add-in manifest.
 
-- **WebApplicationInfo** - The parent of the following elements.
-- **Id** - The application (client) ID you received when you registered the add-in with the Microsoft identity platform. For more information, see [Register an Office Add-in that uses SSO with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
-- **Resource** - The URI of the add-in. This is the same URI (including the `api:` protocol) that you used when registering the add-in with the Microsoft identity platform. The domain part of this URI must match the domain, including any subdomains, used in the URLs in the `<Resources>` section of the add-in's manifest and the URI must end with the client ID specified in the `<Id>` element.
-- **Scopes** - The parent of one or more **Scope** elements.
-- **Scope** - Specifies a permission that the add-in needs. The `profile` and `openID` permissions are always needed and may be the only permissions needed. If your add-in needs access to Microsoft Graph or other Microsoft 365 resources, you'll need additional **Scope** elements. For example, for Microsoft Graph permissions you might request the `User.Read` and `Mail.Read` scopes. Libraries that you use in your code to access Microsoft Graph may need additional permissions. For more information, see [Authorize to Microsoft Graph from an Office Add-in](authorize-to-microsoft-graph.md).
+- **\<WebApplicationInfo\>** - The parent of the following elements.
+- **\<Id\>** - The application (client) ID you received when you registered the add-in with the Microsoft identity platform. For more information, see [Register an Office Add-in that uses SSO with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
+- **\<Resource\>** - The URI of the add-in. This is the same URI (including the `api:` protocol) that you used when registering the add-in with the Microsoft identity platform. The domain part of this URI must match the domain, including any subdomains, used in the URLs in the **\<Resources\>** section of the add-in's manifest and the URI must end with the client ID specified in the **\<Id\>** element.
+- **\<Scopes\>** - The parent of one or more **\<Scope\>** elements.
+- **\<Scope\>** - Specifies a permission that the add-in needs. The `profile` and `openID` permissions are always needed and may be the only permissions needed. If your add-in needs access to Microsoft Graph or other Microsoft 365 resources, you'll need additional **\<Scope\>** elements. For example, for Microsoft Graph permissions you might request the `User.Read` and `Mail.Read` scopes. Libraries that you use in your code to access Microsoft Graph may need additional permissions. For more information, see [Authorize to Microsoft Graph from an Office Add-in](authorize-to-microsoft-graph.md).
 
 For Word, Excel, and PowerPoint add-ins, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook add-ins, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 

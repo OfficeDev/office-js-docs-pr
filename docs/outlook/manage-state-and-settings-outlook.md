@@ -1,7 +1,7 @@
 ---
 title: Manage state and settings for an Outlook add-in
 description: Learn how to persist add-in state and settings for an Outlook add-in.
-ms.date: 05/17/2021
+ms.date: 07/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -26,7 +26,7 @@ An Outlook add-in can use the [RoamingSettings](/javascript/api/outlook/office.r
 The following JavaScript code example shows how to load existing roaming settings.
 
 ```js
-var _settings = Office.context.roamingSettings;
+const _settings = Office.context.roamingSettings;
 ```
 
 ### Creating or assigning a roaming setting
@@ -76,7 +76,7 @@ The following example shows a simplified set of functions for an Outlook add-in 
 An Outlook add-in that uses these functions retrieves any custom properties by calling the **get** method on the `_customProps` variable, as shown in the following example.
 
 ```js
-var property = _customProps.get("propertyName");
+const property = _customProps.get("propertyName");
 ```
 
 This example includes the following functions.
@@ -90,12 +90,12 @@ This example includes the following functions.
 | `saveCallback`|Callback for calls to the **saveAsync** method in the `updateProperty` and `removeProperty` functions.|
 
 ```js
-var _mailbox;
-var _customProps;
+let _mailbox;
+let _customProps;
 
 // The initialize function is required for all add-ins.
-Office.initialize = function (reason) {
-    // Checks for the DOM to load using the jQuery ready function.
+Office.initialize = function () {
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
     // After the DOM is loaded, add-in-specific code can run.
     _mailbox = Office.context.mailbox;

@@ -58,7 +58,7 @@ The **Restricted** permission is the most basic level of permission. Specify **R
 
 ## ReadItem permission
 
-The **ReadItem** permission is the next level of permission in the permissions model. Specify **ReadItem** in the **Permissions** element in the manifest to request this permission.
+The **ReadItem** permission is the next level of permission in the permissions model. Specify **ReadItem** in the **\<Permissions\>** element in the manifest to request this permission.
 
 ### Can do
 
@@ -122,7 +122,7 @@ The **ReadItem** permission is the next level of permission in the permissions m
 
 ## ReadWriteItem permission
 
-Specify **ReadWriteItem** in the **Permissions** element in the manifest to request this permission. Mail add-ins activated in compose forms that use write methods (**Message.to.addAsync** or **Message.to.setAsync**) must use at least this level of permission.
+Specify **ReadWriteItem** in the **\<Permissions\>** element in the manifest to request this permission. Mail add-ins activated in compose forms that use write methods (**Message.to.addAsync** or **Message.to.setAsync**) must use at least this level of permission.
 
 ### Can do
 
@@ -142,7 +142,7 @@ Specify **ReadWriteItem** in the **Permissions** element in the manifest to requ
 
 ## ReadWriteMailbox permission
 
-The **ReadWriteMailbox** permission is the highest level of permission. Specify **ReadWriteMailbox** in the **Permissions** element in the manifest to request this permission.
+The **ReadWriteMailbox** permission is the highest level of permission. Specify **ReadWriteMailbox** in the **\<Permissions\>** element in the manifest to request this permission.
 
 In addition to what the **ReadWriteItem** permission supports, the token provided by **mailbox.getCallbackTokenAsync** provides access to use Exchange Web Services (EWS) operations or Outlook REST APIs to do the following:
 

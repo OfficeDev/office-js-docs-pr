@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: Possible reasons your add-in doesn't activate as you expect.
-ms.date: 09/02/2020
+ms.date: 08/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -55,24 +55,23 @@ Any one of the Outlook rich clients can disable an add-in for performance reason
 
 Use one of the following approaches to verify whether an add-in is disabled.
 
-- In Outlook on the web, sign in directly to the email account, choose the Settings icon, and then choose **Manage add-ins** to go to the Exchange Admin Center, where you can verify whether the add-in is enabled.
+- In Outlook on the web, sign in directly to the email account, then choose **Get Add-ins** from the ribbon.
 
-- In Outlook on Windows, go to the Backstage view and choose **Manage add-ins**. Sign in to the Exchange Admin Center to verify whether the add-in is enabled.
+- In Outlook on Windows, choose **More Apps** from the ribbon, then select **Get Add-ins**.
 
-- In Outlook on Mac, choose **Manage add-ins** in the add-in bar. Sign in to the Exchange Admin Center to verify whether the add-in is enabled.
+- In Outlook on Mac, choose the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
 
 ## Does the tested item support Outlook add-ins? Is the selected item delivered by a version of Exchange Server that is at least Exchange 2013?
 
-If your Outlook add-in is a read add-in and is supposed to be activated when the user is viewing a message (including email messages, meeting requests, responses, and cancellations) or appointment, even though these items generally support add-ins, there are exceptions. Check if the selected item is one of those [listed where Outlook add-ins do not activate](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins).
+If your Outlook add-in is a read add-in and is supposed to be activated when the user is viewing a message (including email messages, meeting requests, responses, and cancellations) or appointment, even though these items generally support add-ins, there are exceptions. Check if the selected item is one of those [listed where Outlook add-ins don't activate](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins).
 
-Also, because appointments are always saved in Rich Text Format, an [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule that specifies a **PropertyName** value of **BodyAsHTML** would not activate an add-in on an appointment or message that is saved in plain text or Rich Text Format.
+Also, because appointments are always saved in Rich Text Format, an [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule that specifies a **PropertyName** value of **BodyAsHTML** wouldn't activate an add-in on an appointment or message that's saved in plain text or Rich Text Format.
 
-Even if a mail item is not one of the above types, if the item was not delivered by a version of Exchange Server that is at least Exchange 2013, known entities and properties such as sender's SMTP address would not be identified on the item. Any activation rules that rely on these entities or properties would not be satisfied, and the add-in would not be activated.
+Even if a mail item is not one of the above types, if the item wasn't delivered by a version of Exchange Server that's at least Exchange 2013, known entities and properties, such as sender's SMTP address, wouldn't be identified on the item. Any activation rules that rely on these entities or properties wouldn't be satisfied, and the add-in wouldn't be activated.
 
-If your add-in is a compose add-in and is supposed to be activated when the user is authoring a message or meeting request, make sure the item is not protected by IRM. However, there are a couple of exceptions.
+In Outlook on clients besides Windows, if your add-in activates when the user is composing a message or meeting request, make sure the item isn't protected by Information Rights Management (IRM).
 
-1. Add-ins activate on digitally signed messages in Outlook associated with a Microsoft 365 subscription. On Windows, this support was introduced with build 8711.1000.
-1. Starting with Outlook build 13229.10000 on Windows, add-ins can now activate on items protected by IRM.  For more information about this support in preview, see [Add-in activation on items protected by Information Rights Management (IRM)](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm).
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 ## Is the add-in manifest installed properly, and does Outlook have a cached copy?
 
