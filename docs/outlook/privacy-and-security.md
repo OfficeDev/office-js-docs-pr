@@ -71,7 +71,7 @@ For general add-in behavior, see [Privacy and security for Office Add-ins](../co
 
 The security model addresses security, privacy, and performance concerns of end users in the following ways.
 
-- End user's messages that are protected by Outlook's Information Rights Management (IRM) don't interact with Outlook add-ins in Outlook on Mac and on the web.
+- End user's messages that are protected by Outlook's Information Rights Management (IRM) don't interact with Outlook add-ins on non-Windows clients.
 
 [!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
