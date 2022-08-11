@@ -154,18 +154,8 @@ In this section, learn how your add-in can extract appointment details when the 
       );
     }
 
-    function getGlobal() {
-      return typeof self !== "undefined"
-        ? self
-        : typeof window !== "undefined"
-        ? window
-        : typeof global !== "undefined"
-        ? global
-        : undefined;
-    }
-
-    const g = getGlobal();
-    g.logCRMEvent = logCRMEvent;
+    // Register the function.
+    Office.actions.associate("logCRMEvent", logCRMEvent);
     ```
 
 Next, update the **commands.html** file to reference **commands.js**.
