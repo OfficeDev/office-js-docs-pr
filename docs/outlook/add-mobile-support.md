@@ -1,7 +1,7 @@
 ---
 title: Add mobile support to an Outlook add-in
-description: Adding support for Outlook Mobile requires updating the add-in manifest and possibly changing your code for mobile scenarios.
-ms.date: 07/16/2021
+description: Learn how to add support for Outlook Mobile including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
+ms.date: 04/15/2022
 ms.localizationpriority: medium
 ---
 
@@ -79,7 +79,10 @@ In Outlook Mobile, task panes take up the entire screen and by default require t
 
 ### Compose mode and appointments
 
-Currently, add-ins in Outlook Mobile only support activation when reading messages. Add-ins are not activated when composing messages or when viewing or composing appointments. However, online meeting provider integrated add-ins can be activated in Appointment Organizer mode. For more about this exception (including available APIs), refer to [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md#available-apis).
+Currently, add-ins in Outlook Mobile only support activation when reading messages. Add-ins are not activated when composing messages or when viewing or composing appointments. However, there are two exceptions:
+
+1. Online meeting provider integrated add-ins can be activated in Appointment Organizer mode. For more about this exception (including available APIs), refer to [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md#available-apis).
+1. Add-ins that log appointment notes and other details to customer relationship management (CRM) or note-taking services can be activated in Appointment Attendee mode. For more about this exception (including available APIs), refer to [Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md#available-apis).
 
 ### Unsupported APIs
 
