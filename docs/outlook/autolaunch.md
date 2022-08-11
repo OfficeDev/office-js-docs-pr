@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 08/10/2022
 ms.localizationpriority: medium
 ---
 
@@ -33,8 +33,10 @@ The following table lists events that are currently available and the supported 
 |`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.<br><br>Event-specific data object: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web browser|
 |`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.<br><br>Event-specific data object: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web browser|
 |`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.<br><br>Event-specific data object: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web browser|
-|`OnMessageSend`|On sending a message item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup>|
-|`OnAppointmentSend`|On sending an appointment item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup>|
+|`OnMessageSend`|On sending a message item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web browser|
+|`OnAppointmentSend`|On sending an appointment item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web browser|
+|`OnMessageCompose`|On composing a new message (includes reply, reply all, and forward) or editing a draft.|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web browser|
+|`OnAppointmentOrganizer`|On creating a new appointment or editing an existing one.|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web browser|
 
 > [!NOTE]
 > <sup>1</sup> Event-based add-ins in Outlook on Windows require a minimum of Windows 10 version 1903 (build 18362) or Windows Server 2019 version 1903 to run.
@@ -71,7 +73,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.3">
+      <bt:Sets DefaultMinVersion="1.10">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -82,7 +84,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and Outlook on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
-            <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+            <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
           </Runtime>
         </Runtimes>
@@ -167,7 +169,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Entry needed for Outlook Desktop. -->
+        <!-- Entry needed for Outlook on Windows. -->
         <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
@@ -315,8 +317,6 @@ Runtime logging is also available for this feature on Windows. For more informat
 You can deploy event-based add-ins by uploading the manifest through the Microsoft 365 admin center. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**. On the **Integrated apps** page, choose the **Upload custom apps** action.
 
 ![The Integrated apps page on the Microsoft 365 admin center, including the Upload custom apps action.](../images/outlook-deploy-event-based-add-ins.png)
-
-AppSource and in-app Office Store: The ability to deploy event-based add-ins or update existing add-ins to include the event-based activation feature should be available soon.
 
 > [!IMPORTANT]
 > Event-based add-ins are restricted to admin-managed deployments only. For now, users can't get event-based add-ins from AppSource or in-app Office Store. To learn more, refer to [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
