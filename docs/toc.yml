@@ -646,6 +646,8 @@ items:
       href: outlook/outlook-mobile-addins.md
     - name: Create an online meeting add-in
       href: outlook/online-meeting.md
+    - name: Log appointment notes on mobile
+      href: outlook/mobile-log-appointments.md
     - name: On-send add-ins
       href: outlook/outlook-on-send-addins.md
     - name: Append on send
