@@ -39,7 +39,7 @@ The following table shows the same information organized by which type of runtim
 |function command | browser | browser | browser |
 
 > [!NOTE]
-> In Office on the web, everything always runs in a browser type runtime. In fact, with one exception, everything in an add-in on the web runs in the *same* browser process: the browser process in which the user has opened Office on the web. The exception is that when a dialog is opened with a call of [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) and the [DialogOptions.displayInIFrame](/javascript/api/office/office.dialogoptions#office-office-dialogoptions-displayiniframe-member) option is *not* passed and set to `true`. When the option is not passed (so it has the default `false` value), the dialog opens in its own process. The same principle applies to the [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) method and the [OfficeRuntime.DisplayWebDialogOptions.displayInIFrame](/javascript/api/office-runtime/officeruntime.displaywebdialogoptions#office-runtime-officeruntime-displaywebdialogoptions-displayiniframe-member) option.
+> In Office on the web, everything always runs in a browser type runtime. In fact, with one exception, everything in an add-in on the web runs in the *same* browser process: the browser process in which the user has opened Office on the web. The exception is when a dialog is opened with a call of [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) and the [DialogOptions.displayInIFrame](/javascript/api/office/office.dialogoptions#office-office-dialogoptions-displayiniframe-member) option is *not* passed and set to `true`. When the option is not passed (so it has the default `false` value), the dialog opens in its own process. The same principle applies to the [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) method and the [OfficeRuntime.DisplayWebDialogOptions.displayInIFrame](/javascript/api/office-runtime/officeruntime.displaywebdialogoptions#office-runtime-officeruntime-displaywebdialogoptions-displayiniframe-member) option.
 
 When an add-in is running on a platform other than the web, the following principles apply: 
 
@@ -96,7 +96,7 @@ For Excel, PowerPoint, and Word add-ins, we recommend using a [Shared runtime](#
 - To share data between an Outlook event-based task and a task pane or function command, you must branch your code by the value of of the [Office.context.platform](/javascript/api/office/office.context#office-office-context-platform-member) property. 
 
     - When the value is `PC` (Windows), store and retrieve data using the [Office.sessionData](/javascript/api/outlook/office.sessiondata) APIs.
-    - For any other platform, use `Window.localStorage` as described earlier in this list.
+    - When the value is `Mac`, use `Window.localStorage` as described earlier in this list.
 
 Other ways to share data include the following:
 
@@ -128,7 +128,7 @@ All of these runtimes include an HTML rendering engine and provide support for [
 
 A browser runtime lifespan varies depending on the feature that it implements and on whether it is being shared or not.
 
-- When an add-in with a task pane is launched, a browser runtime starts. It shuts down when the task pane is closed, unless the runtime is being shared, in which case it shuts down when the document is closed.
+- When an add-in with a task pane is launched, a browser runtime starts, unless it is a shared runtime that is already running. If it is a shared runtime it shuts down when the document is closed. If it is an unshared runtime, it shuts down when the task pane is closed.
 - When a dialog is opened, a browser runtime starts. It shuts down when the dialog is closed.
 - When a function command is executed (which happens when a user selects its button or menu item), a browser runtime starts, unless it is a shared runtime that is already running. If it is a shared runtime it shuts down when the document is closed. If it is an unshared runtime, it shuts down when the first of the following occurs:
  
