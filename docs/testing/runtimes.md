@@ -13,7 +13,7 @@ As an interpreted language, JavaScript must run in a JavaScript engine. As a sin
 
 There are two types of runtimes used by Office Add-ins:
 
-- **JavaScript-only runtime**: A JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage). 
+- **JavaScript-only runtime**: A JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage). 
 - **Browser runtime**: Includes all the features of a JavaScript-only runtime and adds a [rendering engine](https://developer.mozilla.org/docs/Glossary/Rendering_engine) that renders HTML.
 
 Details about these types are later in this article at [JavaScript-only runtime](#javascript-only-runtime) and [Browser runtime](#browser-runtime).
@@ -29,7 +29,7 @@ A dialog always runs in its own process. So does an Outlook event-based task, al
 
 Depending on the host Office application and the features used in the add-in, there may be as many as six runtimes in an add-in, each running in its own process (but not necessarily running simultaneously). The following are examples.
 
-- A PowerPoint or Word add-in that that doesn't share any runtimes, and includes the following features, has three runtimes.
+- A PowerPoint or Word add-in that doesn't share any runtimes, and includes the following features, has three runtimes.
 
   - A task pane
   - A function command
@@ -62,7 +62,7 @@ For Excel, PowerPoint, and Word add-ins, we recommend using a [Shared runtime](#
     > Data in `Window.localStorage` persists between sessions of the add-in and is shared by add-ins with the same origin. Both of these characteristics are often undesirable for an add-in. You can ensure that each session of a given add-in starts fresh by calling the [Window.localStorage.clear](https://developer.mozilla.org/docs/Web/API/Storage/clear) method when the add-in starts. To allow some stored values to persist, but reinitialize other values, you can use [Window.localStorage.setItem](https://developer.mozilla.org/docs/Web/API/Storage/setItem) when the add-in starts for each item that should be reset to an initial value. You can also call [Window.localStorage.removeItem](https://developer.mozilla.org/docs/Web/API/Storage/removeItem) to delete an item entirely.
 
 - To share data between an Excel custom function and any other runtime, use [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage).
-- To share data between an Outlook event-based task and any other runtime, use [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage).
+- To share data between an Outlook event-based task and any other runtime, use [Office.sessionData](/javascript/api/outlook/office.sessiondata).
 
     > [!NOTE]
     > The `OfficeRuntime.storage` methods cannot be called in a dialog, so this is not an option for sharing data between a dialog and another runtime. 
@@ -70,13 +70,13 @@ For Excel, PowerPoint, and Word add-ins, we recommend using a [Shared runtime](#
 Other ways to share data include the following:
 
 - Store shared data in an online database that is accessible to all the runtimes.
-- Store shared data in a cookie for the add-in's domain.
+- Store shared data in a cookie for the add-in's domain to share it between browser runtimes. JavaScript-only runtimes do not support cookies.
 
 For more information, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md) and [Manage state and settings for an Outlook add-in](../outlook/manage-state-and-settings-outlook.md).
 
 ## JavaScript-only runtime
 
-The JavaScript-only runtime that is used in Office add-ins is a modification of an open source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage). It doesn't have a rendering engine. 
+The JavaScript-only runtime that is used in Office add-ins is a modification of an open source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage). It doesn't have a rendering engine, and it doesn't support cookies.
 
 This type of runtime is used in Outlook event-based (autolaunch) tasks and in Excel custom functions *except* when the custom function is [sharing a runtime](#shared-runtime). 
 
@@ -91,7 +91,7 @@ This type of runtime is used in Outlook event-based (autolaunch) tasks and in Ex
 
 Office add-ins use a different browser type runtime depending on the platform in which Office is running (web, Mac, or Windows), and on the version and build of Windows and Office. For example, if the user is running Office on the web in a FireFox browser, then the Firefox runtime is used. If the user is running Office on Mac, then the Safari runtime is used. If the user is running Office on Windows, then either an Edge or Internet Explorer provides the runtime, depending on the version of Windows and Office. Details can be found in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-All of these runtimes include an HTML rendering engine and provide support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage). 
+All of these runtimes include an HTML rendering engine and provide support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), and cookies. 
 
 A browser runtime lifespan varies depending on the feature that it implements.
 
