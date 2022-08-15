@@ -25,7 +25,7 @@ The following table shows which possible features of an add-in use each type of 
 
 | Type of runtime | Add-in feature |
 |:-----|:-----|
-| JavaScript-only | Excel [custom functions](../excel/custom-functions-overview.md)</br>(except when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based (autolaunched) task](../outlook/autolaunch.md)</br>(except when the add-in is running in Outlook on Mac or Outlook on the web)|
+| JavaScript-only | Excel [custom functions](../excel/custom-functions-overview.md)</br>(except when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(only when the add-in is running in Outlook on Windows)|
 | browser | [task pane](../design/task-pane-add-ins.md)</br></br>[dialog](../develop/dialog-api-in-office-add-ins.md)</br></br>[function command](../design/add-in-commands.md#types-of-add-in-commands)</br></br>Excel [custom functions](../excel/custom-functions-overview.md)</br>(when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(when the add-in is running in Outlook on Mac or Outlook on the web)|
 
 The following table shows the same information organized by which type of runtime is used for the various possible features of an add-in.
@@ -109,7 +109,7 @@ For more information, see [Persist add-in state and settings](../develop/persist
 
 The JavaScript-only runtime that is used in Office Add-ins is a modification of an open source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage). It doesn't have a rendering engine, and it doesn't support cookies.
 
-This type of runtime is used in Outlook event-based (autolaunch) tasks in Office on Windows (but not in Office on Mac) and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime). 
+This type of runtime is used in Outlook event-based tasks in Office on Windows only and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime). 
 
 - When used for an Excel custom function, the runtime starts up when either the worksheet recalculates or the custom function calculates. It doesn't shut down until the workbook is closed.  
 - When used in an Outlook event-based task, the runtime starts up when the event occurs. It ends when the first of the following occurs.
