@@ -91,7 +91,7 @@ For Excel, PowerPoint, and Word add-ins, use a [Shared runtime](#shared-runtime)
     > [!NOTE]
     > LocalStorage isn't accessible in a JavaScript-only runtime and, thus, it isn't available in Excel custom functions. It also can't be used to share data with an Outlook event-based tasks (since those tasks use a JavaScript-only runtime on some platforms).
 
-    > [!NOTE]
+    > [!TIP]
     > Data in `Window.localStorage` persists between sessions of the add-in and is shared by add-ins with the same origin. Both of these characteristics are often undesirable for an add-in. 
     >
     > - To ensure that each session of a given add-in starts fresh call the [Window.localStorage.clear](https://developer.mozilla.org/docs/Web/API/Storage/clear) method when the add-in starts. 
