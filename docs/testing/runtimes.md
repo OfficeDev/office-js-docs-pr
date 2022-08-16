@@ -88,8 +88,8 @@ For Excel, PowerPoint, and Word add-ins, use a [Shared runtime](#shared-runtime)
     > The `OfficeRuntime.storage` methods cannot be called in a dialog, so this is not an option for sharing data between a dialog and another runtime. 
 
 - To share data between a task pane and a function command, store data in [Window.localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), which is shared across all runtimes that access the same specific [origin](https://developer.mozilla.org/docs/Glossary/Origin). 
-> [!NOTE]
-> LocalStorage isn't accessible in a JavaScript-only runtime and, thus, it isn't available in Excel custom functions. It also can't be used to share data with an Outlook event-based tasks (since those tasks use a JavaScript-only runtime on some platforms).
+    > [!NOTE]
+    > LocalStorage isn't accessible in a JavaScript-only runtime and, thus, it isn't available in Excel custom functions. It also can't be used to share data with an Outlook event-based tasks (since those tasks use a JavaScript-only runtime on some platforms).
 
     > [!NOTE]
     > Data in `Window.localStorage` persists between sessions of the add-in and is shared by add-ins with the same origin. Both of these characteristics are often undesirable for an add-in. 
