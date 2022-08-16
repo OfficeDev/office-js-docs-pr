@@ -47,7 +47,7 @@ When an add-in is running on a platform other than the web, the following princi
 - An Outlook event-based task runs in its own runtime process. 
 - By default, task panes, function commands, and Excel custom functions each run in their own runtime process. However, for some Office host applications, the add-in manifest can be configured so that any two, or all three, can run in the same runtime. See [Shared runtime](#shared-runtime).
 
-Depending on the host Office application and the features used in the add-in, there may be many runtimes in an add-in, each running in its own process (but not necessarily running simultaneously). The following are examples.
+Depending on the host Office application and the features used in the add-in, there may be many runtimes in an add-in. Each usually will run in its own process but not necessarily simultaneously. The following are examples.
 
 - A PowerPoint or Word add-in that doesn't share any runtimes, and includes the following features, has as many as three runtimes.
 
@@ -92,7 +92,11 @@ For Excel, PowerPoint, and Word add-ins, use a [Shared runtime](#shared-runtime)
 > LocalStorage isn't accessible in a JavaScript-only runtime and, thus, it isn't available in Excel custom functions. It also can't be used to share data with an Outlook event-based tasks (since those tasks use a JavaScript-only runtime on some platforms).
 
     > [!NOTE]
-    > Data in `Window.localStorage` persists between sessions of the add-in and is shared by add-ins with the same origin. Both of these characteristics are often undesirable for an add-in. You can ensure that each session of a given add-in starts fresh by calling the [Window.localStorage.clear](https://developer.mozilla.org/docs/Web/API/Storage/clear) method when the add-in starts. To allow some stored values to persist, but reinitialize other values, you can use [Window.localStorage.setItem](https://developer.mozilla.org/docs/Web/API/Storage/setItem) when the add-in starts for each item that should be reset to an initial value. You can also call [Window.localStorage.removeItem](https://developer.mozilla.org/docs/Web/API/Storage/removeItem) to delete an item entirely.
+    > Data in `Window.localStorage` persists between sessions of the add-in and is shared by add-ins with the same origin. Both of these characteristics are often undesirable for an add-in. 
+    >
+    > - To ensure that each session of a given add-in starts fresh call the [Window.localStorage.clear](https://developer.mozilla.org/docs/Web/API/Storage/clear) method when the add-in starts. 
+    > - To allow some stored values to persist, but reinitialize other values, use [Window.localStorage.setItem](https://developer.mozilla.org/docs/Web/API/Storage/setItem) when the add-in starts for each item that should be reset to an initial value. 
+    > - To delete an item entirely, call [Window.localStorage.removeItem](https://developer.mozilla.org/docs/Web/API/Storage/removeItem).
 
 - To share data between an Excel custom function and any other runtime, use [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage).
 - To share data between an Outlook event-based task and a task pane or function command, you must branch your code by the value of the [Office.context.platform](/javascript/api/office/office.context#office-office-context-platform-member) property. 
