@@ -41,11 +41,11 @@ The following table shows the same information organized by which type of runtim
 > [!NOTE]
 > In Office on the web, everything always runs in a browser type runtime. In fact, with one exception, everything in an add-in on the web runs in the *same* browser process: the browser process in which the user has opened Office on the web. The exception is when a dialog is opened with a call of [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) and the [DialogOptions.displayInIFrame](/javascript/api/office/office.dialogoptions#office-office-dialogoptions-displayiniframe-member) option is *not* passed and set to `true`. When the option is not passed (so it has the default `false` value), the dialog opens in its own process. The same principle applies to the [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) method and the [OfficeRuntime.DisplayWebDialogOptions.displayInIFrame](/javascript/api/office-runtime/officeruntime.displaywebdialogoptions#office-runtime-officeruntime-displaywebdialogoptions-displayiniframe-member) option.
 
-When an add-in is running on a platform other than the web, the following principles apply: 
+When an add-in is running on a platform other than the web, the following principles apply.
 
 - A dialog runs in its own runtime process. 
 - An Outlook event-based task runs in its own runtime process. 
-- By default, task panes, function commands, and Excel custom functions each run in their own runtime process. However, for some Office host applications, the add-in manifest can be configured so that any two, or all three, of these run in the same runtime. See [Shared runtime](#shared-runtime).
+- By default, task panes, function commands, and Excel custom functions each run in their own runtime process. However, for some Office host applications, the add-in manifest can be configured so that any two, or all three, can run in the same runtime. See [Shared runtime](#shared-runtime).
 
 Depending on the host Office application and the features used in the add-in, there may be many runtimes in an add-in, each running in its own process (but not necessarily running simultaneously). The following are examples.
 
@@ -58,7 +58,7 @@ Depending on the host Office application and the features used in the add-in, th
       > [!NOTE]
       > It's not a good practice to have multiple dialogs open simultaneously, but if the add-in enables the user to open one from the task pane and another from the function command at the same time, this add-in would have four runtimes. A task pane, and a given invocation of a function command can have only one open dialog at a time; but if the function command is invoked multiple times, a new dialog is opened on top of its predecessor with each invocation, so there could be many runtimes. The remainder of this list ignores the possibility of multiple open dialogs.
 
-- An Excel add-in that doesn't share any runtimes, and includes the following features, has as many as four runtimes.
+- An Excel add-in that doesn't share any runtimes, and includes the following features, has as many as *four* runtimes.
 
   - A task pane
   - A function command
@@ -67,7 +67,7 @@ Depending on the host Office application and the features used in the add-in, th
 
 - An Excel add-in with the same features and is configured to share the same runtime across the task pane, function command, and custom function, has *two* runtimes. A shared runtime can open only one dialog at a time.
 - An Excel add-in with the same features, except that it has no dialog, and is configured to share the same runtime across the task pane, function command, and custom function, has *one* runtime.
-- An Outlook add-in that has the following features has as many as four runtimes. (Runtimes cannot be shared in Outlook.)
+- An Outlook add-in that has the following features has as many as *four* runtimes. (Runtimes cannot be shared in Outlook.)
 
   - A task pane
   - A function command
@@ -80,14 +80,16 @@ Depending on the host Office application and the features used in the add-in, th
 > - If you know that your add-in will only be used in Office on the web and that it will not open any dialogs with the `displayInIFrame` option set to `true`, then you can ignore this section. Since everything in your add-in runs in the same runtime process, you can just use global variables to share data between features.
 > - As noted above in [Types of runtimes](#types-of-runtimes), the type of runtime used by a feature varies partly by platform. It's a good practice to avoid having add-in code that branches based on platform, so the guidance in this section recommends techniques that will work cross-platform. There is only one case, noted below, in which branching code is required. 
 
-For Excel, PowerPoint, and Word add-ins, we recommend using a [Shared runtime](#shared-runtime) when any two or more features, except dialogs, need to share data. In Outlook, or scenarios where sharing a runtime isn't feasible, you need alternative methods. The parts of the add-in that are in separate runtime processes don't share global data automatically and are treated by the add-in's web application server as separate sessions, so [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) cannot be used to share data between them. *The following guidance assumes that you are not using a shared runtime.*
+For Excel, PowerPoint, and Word add-ins, use a [Shared runtime](#shared-runtime) when any two or more features, except dialogs, need to share data. In Outlook, or scenarios where sharing a runtime isn't feasible, you need alternative methods. The parts of the add-in that are in separate runtime processes don't share global data automatically and are treated by the add-in's web application server as separate sessions, so [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) cannot be used to share data between them. *The following guidance assumes that you're not using a shared runtime.*
 
 - Pass data between a dialog and its parent task pane, function command, or custom function by using the [Office.ui.messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) and [Dialog.messageChild](/javascript/api/office/office.dialog#office-office-dialog-messagechild-member(1)) methods. 
 
     > [!NOTE]
     > The `OfficeRuntime.storage` methods cannot be called in a dialog, so this is not an option for sharing data between a dialog and another runtime. 
 
-- To share data between a task pane and a function command, store data in [Window.localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), which is shared across all runtimes that access the same specific [origin](https://developer.mozilla.org/docs/Glossary/Origin). *LocalStorage isn't accessible in a JavaScript-only runtime and, thus, it isn't available in Excel custom functions. It also can't be used to share data with an Outlook event-based tasks (since those tasks use a JavaScript-only runtime on some platforms).*
+- To share data between a task pane and a function command, store data in [Window.localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), which is shared across all runtimes that access the same specific [origin](https://developer.mozilla.org/docs/Glossary/Origin). 
+> [!NOTE]
+> LocalStorage isn't accessible in a JavaScript-only runtime and, thus, it isn't available in Excel custom functions. It also can't be used to share data with an Outlook event-based tasks (since those tasks use a JavaScript-only runtime on some platforms).
 
     > [!NOTE]
     > Data in `Window.localStorage` persists between sessions of the add-in and is shared by add-ins with the same origin. Both of these characteristics are often undesirable for an add-in. You can ensure that each session of a given add-in starts fresh by calling the [Window.localStorage.clear](https://developer.mozilla.org/docs/Web/API/Storage/clear) method when the add-in starts. To allow some stored values to persist, but reinitialize other values, you can use [Window.localStorage.setItem](https://developer.mozilla.org/docs/Web/API/Storage/setItem) when the add-in starts for each item that should be reset to an initial value. You can also call [Window.localStorage.removeItem](https://developer.mozilla.org/docs/Web/API/Storage/removeItem) to delete an item entirely.
