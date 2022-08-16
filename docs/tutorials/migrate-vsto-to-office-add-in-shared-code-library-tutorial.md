@@ -58,10 +58,6 @@ This tutorial uses the [VSTO Add-in shared library for Office Add-in](https://gi
 1. Download the [VSTO Add-in shared library for Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) PnP solution to a working folder on your computer.
 1. Start Visual Studio 2019 and open the **/start/Cell-Analyzer.sln** solution.
 1. On the **Debug** menu, choose **Start Debugging**.
-1. In **Solution Explorer**, right-click the **Cell-Analyzer** project, and choose **Properties**.
-1. Choose the **Signing** category in the properties.
-1. Choose **Sign the ClickOnce manifests**, and then chose **Create Test Certificate**.
-1. In the **Create Test Certificate** dialog, enter and confirm a password. Then choose **OK**.
 
 The add-in is a custom task pane for Excel. You can select any cell with text, and then choose the **Show unicode** button. In the **Result** section, the add-in will display a list of each character in the text along with its corresponding Unicode number.
 
