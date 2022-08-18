@@ -192,7 +192,7 @@ Outlook on Windows uses a JavaScript file, while Outlook on the web and on the n
 
 > [!TIP]
 > 
-> - To learn about runtimes in add-ins, see [Runtimes in Office Add-ins](../testing/runtimes.md))
+> - To learn about runtimes in add-ins, see [Runtimes in Office Add-ins](../testing/runtimes.md)).
 > - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
 ## Implement event handling
