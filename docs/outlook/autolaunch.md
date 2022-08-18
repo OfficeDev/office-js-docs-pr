@@ -367,7 +367,7 @@ A [simple CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS#simple_requests
 - Can't use `ReadableStream` objects in requests.
 
 > [!NOTE]
-> Full CORS support is now available in Outlook on Windows starting in version 2201 (build 16.0.14813.10000).
+> Full CORS support is available in Outlook on the web, Mac, and Windows (starting in version 2201, build 16.0.14813.10000).
 
 ## See also
 
