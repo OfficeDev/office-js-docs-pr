@@ -1,7 +1,7 @@
 ---
 title: Publish an add-in using Visual Studio Code and Azure
 description: How to publish an add-in using Visual Studio Code and Azure Active Directory
-ms.date: 02/22/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
 ---
 
@@ -27,8 +27,8 @@ When your add-in is working as desired, you can publish it directly through Visu
 
 1. Open your project from its root folder in Visual Studio Code (VS Code).
 2. From the Extensions view in VS Code, search for the Azure Storage extension and install it.
-3. Once installed, an Azure icon is added to the Activity Bar. Select it to access the extension. If your Activity Bar is hidden, you won't be able to access the extension. Show the Activity Bar by selecting **View > Appearance > Show Activity Bar**.
-4. When in the extension, sign in to your Azure account by selecting **Sign in to Azure**. You can also create an Azure account if you don't already have one by selecting **Create a free Azure account**. Follow the provided steps to set up your account.
+3. Once installed, an Azure icon is added to the Activity Bar. Select it to access the extension. If your Activity Bar is hidden, you won't be able to access the extension. Show the Activity Bar by selecting **View > Appearance > Activity Bar**.
+4. When in the extension, sign in to your Azure account by selecting **Sign in to Azure**. You can also create an Azure account if you don't already have one by selecting **Create an Azure account**. Follow the provided steps to set up your account.
 5. Once you have signed in to your Azure account, you'll see your Azure storage accounts appear in the extension. If you don't already have a storage account, create one using the **Create Storage Account** option in the command palette. Name your storage account a globally unique name, using only 'a-z' and '0-9'. Note that by default, this creates a storage account and a resource group with the same name. It automatically puts the storage account in West US. This can be adjusted online through [your Azure account](https://portal.azure.com/).
 6. Select and hold (right-click) your storage account, choosing **Configure Static Website**. You'll be asked to enter the index document name and the 404 document name. Change the index document name from the default `index.html` to **`taskpane.html`**. You may also change the 404 document name but are not required to.
 7. Select and hold (right-click) your storage again, this time choosing **Browse Static Website**. Copy the website URL from the browser window that opens.
@@ -43,9 +43,9 @@ When your add-in is working as desired, you can publish it directly through Visu
 
 10. To deploy, select the Files explorer, select and hold (right-click) your **dist** folder, and choose **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously.
 
-    ![Deploying to a static website.](../images/deploy-to-static-website.png)
+:::image type="content" source="../images/deploy-to-static-website.png" alt-text="Selecting the dist folder, right-clicking, and choosing Deploy to Static Website via Azure Storage.":::
 
-11. When deployment is complete, a **Browse to website** message appears which you can select to open the primary endpoint of the deployed app code.
+11. When deployment is complete, right-click the storage account that you created previously, and choose **Browse Static Website**. This will open the static web site and display the task pane.
 
 ## Deploy custom functions for Excel
 
