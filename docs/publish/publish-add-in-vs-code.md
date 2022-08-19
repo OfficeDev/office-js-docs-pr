@@ -43,7 +43,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 
 10. To deploy, select the Files explorer, select and hold (right-click) your **dist** folder, and choose **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously.
 
-:::image type="content" source="../images/deploy-to-static-website.png" alt-text="Selecting the dist folder, right-clicking, and choosing Deploy to Static Website via Azure Storage.":::
+    :::image type="content" source="../images/deploy-to-static-website.png" alt-text="Selecting the dist folder, right-clicking, and choosing Deploy to Static Website via Azure Storage.":::
 
 11. When deployment is complete, right-click the storage account that you created previously, and choose **Browse Static Website**. This will open the static web site and display the task pane.
 
