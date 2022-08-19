@@ -92,7 +92,7 @@ To clear the Office cache on iOS, call `window.location.reload(true)` from JavaS
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
-- [Debug your add-in with runtime logging](runtime-logging.md)
+- [Debug your add-in with Configure your Office Add-in to use a shared runtime logging](Configure your Office Add-in to use a shared runtime-logging.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
 - [Office Add-ins XML manifest](../develop/add-in-manifests.md)
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)

@@ -18,7 +18,7 @@ The projects that the tool creates have the following characteristics.
 - By default, all dependencies are installed by the tool, but you can postpone the installation with a command line argument.
 - They include a complete add-in manifest.
 - They have a "Hello World"-level add-in that is ready run as soon as the tool has finished.
-- They include a polyfill and a transpiler that is configured to transpile TypeScript, and recent versions of JavaScript, to ES5 JavaScript. These features ensure that the add-in is supported in all browser runtimes that Office Add-ins might run in, including Internet Explorer.
+- They include a polyfill and a transpiler that is configured to transpile TypeScript, and recent versions of JavaScript, to ES5 JavaScript. These features ensure that the add-in is supported in all Configure your Office Add-in to use a shared runtimes that Office Add-ins might run in, including Internet Explorer.
 
 > [!TIP]
 > If you want to deviate from these choices significantly, such as using a different task runner or a different server, we recommend that when you run the tool you choose the [Manifest-only option](#manifest-only-option).

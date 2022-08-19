@@ -1,17 +1,17 @@
 ---
-title: Custom functions debugging in a non-shared runtime
-description: Learn how to debug your Excel custom functions that don't use a shared runtime.
+title: Custom functions debugging in a non-shared Configure your Office Add-in to use a shared runtime
+description: Learn how to debug your Excel custom functions that don't use a shared Configure your Office Add-in to use a shared runtime.
 ms.date: 07/11/2022
 ms.localizationpriority: medium
 ---
 
 # Custom functions debugging
 
-This article discusses debugging only for custom functions that **don't use a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)**. To debug custom functions add-ins that use a shared runtime, see [Configure your Office Add-in to use a shared JavaScript runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
+This article discusses debugging only for custom functions that **don't use a [shared Configure your Office Add-in to use a shared runtime](../testing/Configure your Office Add-in to use a shared runtimes.md#shared-Configure your Office Add-in to use a shared runtime)**. To debug custom functions add-ins that use a shared Configure your Office Add-in to use a shared runtime, see [Configure your Office Add-in to use a shared Configure your Office Add-in to use a shared runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-Configure your Office Add-in to use a shared runtime.md#debug).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-[!include[Shared runtime note](../includes/shared-runtime-note.md)]
+[!include[Shared Configure your Office Add-in to use a shared runtime note](../includes/shared-Configure your Office Add-in to use a shared runtime-note.md)]
 
 > [!TIP]
 > This debugging process doesn't work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article aren't installed with that option. To debug an add-in that is created with this option, see the instructions in one of the following articles, as appropriate.
@@ -20,7 +20,7 @@ This article discusses debugging only for custom functions that **don't use a [s
 > - [Debug add-ins using developer tools in Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md)
 > - [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
 
-The process of debugging a custom function for add-ins that don't use a shared runtime varies depending on the target platform (Windows, Mac, or web), whether you are using Visual Studio Code or a different IDE, and the operating system of your development computer. Use the links in the following table to visit sections of this article that are relevant to your debugging scenario. In this table, "CF-NSR" refers to custom functions in a non-shared runtime.
+The process of debugging a custom function for add-ins that don't use a shared Configure your Office Add-in to use a shared runtime varies depending on the target platform (Windows, Mac, or web), whether you are using Visual Studio Code or a different IDE, and the operating system of your development computer. Use the links in the following table to visit sections of this article that are relevant to your debugging scenario. In this table, "CF-NSR" refers to custom functions in a non-shared Configure your Office Add-in to use a shared runtime.
 
 | **Target platform** | **Visual Studio Code** | **Other IDE** |
 |--------------|-------------|-------------|
@@ -33,7 +33,7 @@ The process of debugging a custom function for add-ins that don't use a shared r
 
 ## Use the VS Code debugger for Excel on Windows
 
-You can use VS Code to debug custom functions that don't use a shared runtime in Office Excel on the desktop.
+You can use VS Code to debug custom functions that don't use a shared Configure your Office Add-in to use a shared runtime in Office Excel on the desktop.
 
 > [!IMPORTANT]
 > There is a known issue with the following debugging steps. The steps work for a project installed with the **Excel Custom Functions Add-in project** option in the Yeoman generator with **TypeScript** selected as the script type, but the steps do not work for a project installed with **JavaScript** selected as the script type. For additional information, see [OfficeDev/office-js-docs-pr issue #3355](https://github.com/OfficeDev/office-js-docs-pr/issues/3355).
@@ -63,7 +63,7 @@ At this point, execution will stop on the line of code where you set the breakpo
 
 ## Use the VS Code debugger for Excel in Microsoft Edge
 
-You can use VS Code to debug custom functions that don't use a shared runtime in Excel on the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Microsoft Edge DevTools extension for Visual Studio Code](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension).
+You can use VS Code to debug custom functions that don't use a shared Configure your Office Add-in to use a shared runtime in Excel on the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Microsoft Edge DevTools extension for Visual Studio Code](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension).
 
 ### Run your add-in from VS Code
 
@@ -99,7 +99,7 @@ You can use VS Code to debug custom functions that don't use a shared runtime in
 
 ## Use the browser developer tools to debug custom functions in Excel on the web
 
-You can use the browser developer tools to debug custom functions that don't use a shared runtime in Excel on the web. The following steps work for both Windows and macOS.
+You can use the browser developer tools to debug custom functions that don't use a shared Configure your Office Add-in to use a shared runtime in Excel on the web. The following steps work for both Windows and macOS.
 
 ### Run your add-in from Visual Studio Code
 
@@ -171,10 +171,11 @@ You can use the following tasks to start debugging on desktop or online.
 
 ## Next steps
 
-Learn about [Authentication for custom functions without a shared runtime](custom-functions-authentication.md).
+Learn about [Authentication for custom functions without a shared Configure your Office Add-in to use a shared runtime](custom-functions-authentication.md).
 
 ## See also
 
-* [Custom functions troubleshooting](custom-functions-troubleshooting.md)
-* [Error handling for custom functions in Excel](custom-functions-errors.md)
-* [Create custom functions in Excel](custom-functions-overview.md)
+- [Custom functions troubleshooting](custom-functions-troubleshooting.md)
+- [Error handling for custom functions in Excel](custom-functions-errors.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
+- [JavaScript-only Configure your Office Add-in to use a shared runtime](../testing/Configure your Office Add-in to use a shared runtimes.md#javascript-only-Configure your Office Add-in to use a shared runtime)

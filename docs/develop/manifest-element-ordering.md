@@ -156,8 +156,8 @@ The following sections show the manifest elements in the order in which they mus
             <Set>
     <Hosts>
         <Host>
-            <Runtimes>
-                <Runtime>
+            <Configure your Office Add-in to use a shared runtimes>
+                <Configure your Office Add-in to use a shared runtime>
             <AllFormFactors>
                 <ExtensionPoint>
                     <Script>

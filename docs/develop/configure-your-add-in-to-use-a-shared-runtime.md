@@ -1,16 +1,16 @@
 ---
-title: Configure your Office Add-in to use a shared JavaScript runtime
-description: Configure your Office Add-in to use a shared JavaScript runtime to support additional ribbon, task pane, and custom function features.
+title: Configure your Office Add-in to use a shared Configure your Office Add-in to use a shared runtime
+description: Configure your Office Add-in to use a shared Configure your Office Add-in to use a shared runtime to support additional ribbon, task pane, and custom function features.
 ms.date: 07/18/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
 ---
 
-# Configure your Office Add-in to use a shared JavaScript runtime
+# Configure your Office Add-in to use a shared Configure your Office Add-in to use a shared runtime
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared JavaScript Configure your Office Add-in to use a shared runtime requirements](../includes/shared-Configure your Office Add-in to use a shared runtime-requirements-note.md)]
 
-You can configure your Office Add-in to run all of its code in a single shared JavaScript runtime (also known as a shared runtime). This enables better coordination across your add-in and access to the DOM and CORS from all parts of your add-in. It also enables additional features such as running code when the document opens, or enabling or disabling ribbon buttons. To configure your add-in to use a shared JavaScript runtime, follow the instructions in this article.
+You can configure your Office Add-in to run all of its code in a single [shared Configure your Office Add-in to use a shared runtime](../testing/Configure your Office Add-in to use a shared runtimes.md#shared-Configure your Office Add-in to use a shared runtime). This enables better coordination across your add-in and access to the DOM and CORS from all parts of your add-in. It also enables additional features such as running code when the document opens, or enabling or disabling ribbon buttons. To configure your add-in to use a shared JavaScript Configure your Office Add-in to use a shared runtime, follow the instructions in this article.
 
 ## Create the add-in project
 
@@ -27,15 +27,15 @@ Run the command `yo office --projectType taskpane --name "my office add in" --ho
 
 You can use different options for the **--projecttype**, **--name**, and **--js** command-line options. For the full list of options, see [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
 
-The generator will create the project and install supporting Node components. You can also use the steps in this article to update a Visual Studio project to use the shared runtime. However, you may need to update the XML schemas for the manifest. For more information, see [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+The generator will create the project and install supporting Node components. You can also use the steps in this article to update a Visual Studio project to use the shared Configure your Office Add-in to use a shared runtime. However, you may need to update the XML schemas for the manifest. For more information, see [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
 
 ## Configure the manifest
 
-Follow these steps for a new or existing project to configure it to use a shared runtime. These steps assume you have generated your project using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md).
+Follow these steps for a new or existing project to configure it to use a shared Configure your Office Add-in to use a shared runtime. These steps assume you have generated your project using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md).
 
 1. Start Visual Studio Code and open your add-in project.
 1. Open the **manifest.xml** file.
-1. For an Excel or PowerPoint add-in, update the requirements section to include the [shared runtime](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets). Be sure to remove the `CustomFunctionsRuntime` requirement if it is present. The XML should appear as follows.
+1. For an Excel or PowerPoint add-in, update the requirements section to include the [shared Configure your Office Add-in to use a shared runtime](/javascript/api/requirement-sets/common/shared-Configure your Office Add-in to use a shared runtime-requirement-sets). Be sure to remove the `CustomFunctionsConfigure your Office Add-in to use a shared runtime` requirement if it is present. The XML should appear as follows.
 
     ```xml
     <Hosts>
@@ -43,27 +43,27 @@ Follow these steps for a new or existing project to configure it to use a shared
     </Hosts>
     <Requirements>
       <Sets DefaultMinVersion="1.1">
-        <Set Name="SharedRuntime" MinVersion="1.1"/>
+        <Set Name="SharedConfigure your Office Add-in to use a shared runtime" MinVersion="1.1"/>
       </Sets>
     </Requirements>
     <DefaultSettings>
     ```
 
     > [!NOTE]
-    > Don't add the `SharedRuntime` requirement set to the manifest for a Word add-in. It will cause an error when loading the add-in which is a known issue at this time.
+    > Don't add the `SharedConfigure your Office Add-in to use a shared runtime` requirement set to the manifest for a Word add-in. It will cause an error when loading the add-in which is a known issue at this time.
 
-1. Find the **\<VersionOverrides\>** section and add the following **\<Runtimes\>** section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
+1. Find the **\<VersionOverrides\>** section and add the following **\<Configure your Office Add-in to use a shared runtimes\>** section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
 
     > [!IMPORTANT]
-    > The **\<Runtimes\>** section must be entered after the **\<Host\>** element in the exact order shown in the following XML.
+    > The **\<Configure your Office Add-in to use a shared runtimes\>** section must be entered after the **\<Host\>** element in the exact order shown in the following XML.
 
    ```xml
    <VersionOverrides ...>
      <Hosts>
        <Host ...>
-         <Runtimes>
-           <Runtime resid="Taskpane.Url" lifetime="long" />
-         </Runtimes>
+         <Configure your Office Add-in to use a shared runtimes>
+           <Configure your Office Add-in to use a shared runtime resid="Taskpane.Url" lifetime="long" />
+         </Configure your Office Add-in to use a shared runtimes>
        ...
        </Host>
    ```
@@ -92,7 +92,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
 ## Configure the webpack.config.js file
 
-The **webpack.config.js** will build multiple runtime loaders. You need to modify it to load only the shared JavaScript runtime via the **taskpane.html** file.
+The **webpack.config.js** will build multiple Configure your Office Add-in to use a shared runtime loaders. You need to modify it to load only the shared JavaScript Configure your Office Add-in to use a shared runtime via the **taskpane.html** file.
 
 1. Start Visual Studio Code and open the add-in project you generated.
 1. Open the **webpack.config.js** file.
@@ -133,14 +133,14 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
    ```
 
 > [!NOTE]
-> If your project has a **functions.html** file or **commands.html** file, they can be removed. The **taskpane.html** will load the **functions.js** and **commands.js** code into the shared JavaScript runtime via the webpack updates you just made.
+> If your project has a **functions.html** file or **commands.html** file, they can be removed. The **taskpane.html** will load the **functions.js** and **commands.js** code into the shared JavaScript Configure your Office Add-in to use a shared runtime via the webpack updates you just made.
 
 ## Test your Office Add-in changes
 
-You can confirm that you are using the shared JavaScript runtime correctly by using the following instructions.
+You can confirm that you are using the shared JavaScript Configure your Office Add-in to use a shared runtime correctly by using the following instructions.
 
 1. Open the **taskpane.js** file.
-1. Replace the entire contents of the file with the following code. This will display a count of how many times the task pane has been opened. Adding the onVisibilityModeChanged event is only supported in a shared JavaScript runtime.
+1. Replace the entire contents of the file with the following code. This will display a count of how many times the task pane has been opened. Adding the onVisibilityModeChanged event is only supported in a shared JavaScript Configure your Office Add-in to use a shared runtime.
 
     ```javascript
     /*global document, Office*/
@@ -171,31 +171,31 @@ You can confirm that you are using the shared JavaScript runtime correctly by us
    npm start
    ```
 
-Each time you open the task pane, the count of how many times it has been opened will be incremented. The value of **_count** will not be lost because the shared runtime keeps your code running even when the task pane is closed.
+Each time you open the task pane, the count of how many times it has been opened will be incremented. The value of **_count** will not be lost because the shared Configure your Office Add-in to use a shared runtime keeps your code running even when the task pane is closed.
 
-## Runtime lifetime
+## Configure your Office Add-in to use a shared runtime lifetime
 
-When you add the `Runtime` element, you also specify a lifetime with a value of `long` or `short`. Set this value to `long` to take advantage of features such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions.
+When you add the `Configure your Office Add-in to use a shared runtime` element, you also specify a lifetime with a value of `long` or `short`. Set this value to `long` to take advantage of features such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions.
 
 > [!NOTE]
-> The default lifetime value is `short`, but we recommend using `long` in Excel, PowerPoint, and Word add-ins. If you set your runtime to `short` in this example, your add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly, your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
+> The default lifetime value is `short`, but we recommend using `long` in Excel, PowerPoint, and Word add-ins. If you set your Configure your Office Add-in to use a shared runtime to `short` in this example, your add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly, your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
 
 ```xml
-<Runtimes>
-  <Runtime resid="ContosoAddin.Url" lifetime="long" />
-</Runtimes>
+<Configure your Office Add-in to use a shared runtimes>
+  <Configure your Office Add-in to use a shared runtime resid="ContosoAddin.Url" lifetime="long" />
+</Configure your Office Add-in to use a shared runtimes>
 ```
 
 > [!NOTE]
-> If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+> If your add-in includes the `Configure your Office Add-in to use a shared runtimes` element in the manifest (required for a shared Configure your Office Add-in to use a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Configure your Office Add-in to use a shared runtimes](/javascript/api/manifest/Configure your Office Add-in to use a shared runtimes) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-## About the shared JavaScript runtime
+## About the shared JavaScript Configure your Office Add-in to use a shared runtime
 
-On Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript runtime environments. This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.
+On Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate JavaScript Configure your Office Add-in to use a shared runtime environments. This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.
 
-However, you can configure your Office Add-in to share code in the same JavaScript runtime (also referred to as a shared runtime). This enables better coordination across your add-in and access to the task pane DOM and CORS from all parts of your add-in.
+However, you can configure your Office Add-in to share code in the same JavaScript Configure your Office Add-in to use a shared runtime (also referred to as a shared Configure your Office Add-in to use a shared runtime). This enables better coordination across your add-in and access to the task pane DOM and CORS from all parts of your add-in.
 
-Configuring a shared runtime enables the following scenarios.
+Configuring a shared Configure your Office Add-in to use a shared runtime enables the following scenarios.
 
 - Your Office Add-in can use additional UI features.
   - [Enable and Disable Add-in Commands](../design/disable-add-in-commands.md)
@@ -207,17 +207,17 @@ Configuring a shared runtime enables the following scenarios.
   - Custom functions will have full CORS support.
   - Custom functions can call Office.js APIs to read spreadsheet document data.
 
-For Office on Windows, the shared runtime uses Microsoft Edge with WebView2 (Chromium-based) if the conditions for using it are met as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Otherwise, it uses Internet Explorer 11. Additionally, any buttons that your add-in displays on the ribbon will run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same JavaScript runtime.
+For Office on Windows, the shared Configure your Office Add-in to use a shared runtime uses Microsoft Edge with WebView2 (Chromium-based) if the conditions for using it are met as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Otherwise, it uses Internet Explorer 11. Additionally, any buttons that your add-in displays on the ribbon will run in the same shared Configure your Office Add-in to use a shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same JavaScript Configure your Office Add-in to use a shared runtime.
 
-![Diagram of a custom function, task pane, and ribbon buttons all running in a shared browser runtime in Excel.](../images/custom-functions-in-browser-runtime.png)
+![Diagram of a custom function, task pane, and ribbon buttons all running in a shared browser Configure your Office Add-in to use a shared runtime in Excel.](../images/custom-functions-in-browser-Configure your Office Add-in to use a shared runtime.png)
 
 ### Debug
 
-When using a shared runtime, you can't use Visual Studio Code to debug custom functions in Excel on Windows at this time. You'll need to use developer tools instead. For more information, see [Debug add-ins using developer tools for Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md) or [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md).
+When using a shared Configure your Office Add-in to use a shared runtime, you can't use Visual Studio Code to debug custom functions in Excel on Windows at this time. You'll need to use developer tools instead. For more information, see [Debug add-ins using developer tools for Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md) or [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md).
 
 ### Multiple task panes
 
-Don't design your add-in to use multiple task panes if you are planning to use a shared runtime. A shared runtime only supports the use of one task pane. Note that any task pane without a `<TaskpaneID>` is considered a different task pane.
+Don't design your add-in to use multiple task panes if you are planning to use a shared Configure your Office Add-in to use a shared runtime. A shared Configure your Office Add-in to use a shared runtime only supports the use of one task pane. Note that any task pane without a `<TaskpaneID>` is considered a different task pane.
 
 ## See also
 
@@ -228,3 +228,4 @@ Don't design your add-in to use multiple task panes if you are planning to use a
 - [Run code in your Office Add-in when the document opens](run-code-on-document-open.md)
 - [Show or hide the task pane of your Office Add-in](show-hide-add-in.md)
 - [Tutorial: Share data and events between Excel custom functions and the task pane](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Configure your Office Add-in to use a shared runtimes in Office Add-ins](../testing/Configure your Office Add-in to use a shared runtimes.md)

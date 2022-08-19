@@ -17,7 +17,7 @@ You need a Microsoft 365 account. You can get a free, 90-day renewable Microsoft
 
 There are two kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the two environments is different, so if multiple people will be working on an add-in project, they must all use the same environment. 
 
-- **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called WebPack. The project creation and scaffolding tool, Yo Office, is updated frequently.
+- **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js Configure your Office Add-in to use a shared runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called WebPack. The project creation and scaffolding tool, Yo Office, is updated frequently.
 - **Visual Studio environment**: Choose this environment only if your development computer is Windows, and you want to develop the server-side of the add-in with a .NET based language and framework, such as ASP.NET. The add-in project templates in Visual Studio aren't updated as frequently as those in the Node.js environment. Client-side code can't be debugged with the built-in Visual Studio debugger, but you can debug client-side code with your browser's development tools. More information later on the **Visual Studio environment** tab.
 
 > [!NOTE]
@@ -39,7 +39,7 @@ This guide assumes that you know how to use a command-line tool.
 
 ### Install Node.js and npm
 
-Node.js is a JavaScript runtime you use to develop modern Office Add-ins.
+Node.js is a JavaScript Configure your Office Add-in to use a shared runtime you use to develop modern Office Add-ins.
 
 Install Node.js by [downloading the latest recommended version from their website](https://nodejs.org). Follow the installation instructions for your operating system.
 

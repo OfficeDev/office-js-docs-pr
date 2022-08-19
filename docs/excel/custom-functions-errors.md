@@ -30,7 +30,7 @@ function getCity(zipCode: string): string {
 
 ## The CustomFunctions.Error object
 
-The [CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error) object is used to return an error back to the cell. When you create the object, specify which error you want to use by choosing one of the following `ErrorCode` enum values.
+The [CustomFunctions.Error](/javascript/api/custom-functions-Configure your Office Add-in to use a shared runtime/customfunctions.error) object is used to return an error back to the cell. When you create the object, specify which error you want to use by choosing one of the following `ErrorCode` enum values.
 
 |ErrorCode enum value  |Excel cell value  |Description  |
 |---------------|---------|---------|

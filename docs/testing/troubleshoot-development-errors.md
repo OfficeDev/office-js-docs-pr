@@ -14,7 +14,7 @@ Here's a list of common issues you may encounter while developing an Office Add-
 
 ## Add-in doesn't load in task pane or other issues with the add-in manifest
 
-See [Validate an Office Add-in's manifest](troubleshoot-manifest.md) and [Debug your add-in with runtime logging](runtime-logging.md) to debug add-in manifest issues.
+See [Validate an Office Add-in's manifest](troubleshoot-manifest.md) and [Debug your add-in with Configure your Office Add-in to use a shared runtime logging](Configure your Office Add-in to use a shared runtime-logging.md) to debug add-in manifest issues.
 
 ## Changes to add-in commands including ribbon buttons and menu items do not take effect
 
@@ -75,9 +75,9 @@ See [Troubleshoot Excel add-ins](../excel/excel-add-ins-troubleshooting.md) for 
 
 ## Manifest schema validation errors in Visual Studio projects
 
-If you are using newer features that require changes to the manifest file, you may get validation errors in Visual Studio. For example, when adding the **\<Runtimes\>** element to implement the shared JavaScript runtime, you may see the following validation error.
+If you are using newer features that require changes to the manifest file, you may get validation errors in Visual Studio. For example, when adding the **\<Configure your Office Add-in to use a shared runtimes\>** element to implement the [shared Configure your Office Add-in to use a shared runtime](Configure your Office Add-in to use a shared runtimes.md#shared-Configure your Office Add-in to use a shared runtime), you may see the following validation error.
 
-**The element 'Host' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides' has invalid child element 'Runtimes' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides'**
+**The element 'Host' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides' has invalid child element 'Configure your Office Add-in to use a shared runtimes' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides'**
 
 If this occurs, you can update the XSD files that Visual Studio uses to the latest versions. The latest schema versions are at [[MS-OWEMXML]: Appendix A: Full XML Schema](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
 
@@ -113,6 +113,7 @@ When you're loading the Office JavaScript Library from a local copy instead of f
 - [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
-- [Debug your add-in with runtime logging](runtime-logging.md)
+- [Debug your add-in with Configure your Office Add-in to use a shared runtime logging](Configure your Office Add-in to use a shared runtime-logging.md)
 - [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)
+- [Configure your Office Add-in to use a shared runtimes in Office Add-ins](Configure your Office Add-in to use a shared runtimes.md)
 - [Microsoft Q&A (office-js-dev)](/answers/topics/office-js-dev.html)

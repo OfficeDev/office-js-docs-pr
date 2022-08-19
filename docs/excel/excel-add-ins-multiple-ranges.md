@@ -107,7 +107,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-This example applies to scenarios in which you can hard code the range addresses that you pass to `getRanges` or easily calculate them at runtime. Some of the scenarios in which this would be true include:
+This example applies to scenarios in which you can hard code the range addresses that you pass to `getRanges` or easily calculate them at Configure your Office Add-in to use a shared runtime. Some of the scenarios in which this would be true include:
 
 - The code runs in the context of a known template.
 - The code runs in the context of imported data where the schema of the data is known.

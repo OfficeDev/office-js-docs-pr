@@ -1,15 +1,15 @@
 ---
 title: Privacy and security for Office Add-ins
 description: Learn about the privacy and security aspects of the Office Add-ins platform.
-ms.date: 07/18/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
 ---
 
 # Privacy and security for Office Add-ins
 
-## Understanding the add-in runtime
+## Process security
 
-Office Add-ins are secured by an add-in runtime environment, a multiple-tier permissions model, and performance governors. This framework protects the user's experience in the following ways.
+Office Add-ins are secured by an add-in Configure your Office Add-in to use a shared runtime environment, a multiple-tier permissions model, and performance governors. This framework protects the user's experience in the following ways.
 
 - Access to the Office client application's UI frame is managed.
 
@@ -17,7 +17,7 @@ Office Add-ins are secured by an add-in runtime environment, a multiple-tier per
 
 - Modal interactions aren't allowed - for example, calls to JavaScript `alert`, `confirm`, and `prompt` methods aren't allowed because they're modal.
 
-Further, the runtime framework provides the following benefits to ensure that an Office Add-in can't damage the user's environment.
+Further, the Configure your Office Add-in to use a shared runtime framework provides the following benefits to ensure that an Office Add-in can't damage the user's environment.
 
 - Isolates the process the add-in runs in.
 
@@ -27,29 +27,32 @@ Further, the runtime framework provides the following benefits to ensure that an
 
 Also, the use of memory, CPU, and network resources by Office Add-ins is governable to ensure that good performance and reliability are maintained.
 
-The following sections briefly describe how the runtime architecture supports running add-ins in Office clients on Windows-based devices, on Mac OS X devices, and in web browsers.
+> [!NOTE]
+> In some scenarios, different features of an add-in run in separate Configure your Office Add-in to use a shared runtimes. For simplicity, this article uses the singular "Configure your Office Add-in to use a shared runtime." For more information, see [Configure your Office Add-in to use a shared runtimes in Office Add-ins](../testing/Configure your Office Add-in to use a shared runtimes.md). 
+
+The following sections briefly describe how the Configure your Office Add-in to use a shared runtime architecture supports running add-ins in Office clients on Windows-based devices, on Mac OS X devices, and in web browsers.
 
 ### Clients on Windows and OS X devices
 
-In supported clients for desktop and tablet devices, such as Excel on Windows, and Outlook on Windows and Mac, Office Add-ins are supported by integrating an in-process component, the Office Add-ins runtime, which manages the add-in lifecycle and enables interoperability between the add-in and the client application. The add-in webpage itself is hosted out-of-process. As shown in figure 1, on a Windows desktop or tablet device, [the add-in webpage is hosted inside an Internet Explorer or Microsoft Edge control](browsers-used-by-office-web-add-ins.md) which, in turn, is hosted inside an add-in runtime process that provides security and performance isolation.
+In supported clients for desktop and tablet devices, such as Excel on Windows, and Outlook on Windows and Mac, Office Add-ins are supported by integrating an in-process component, the Office Add-ins Configure your Office Add-in to use a shared runtime, which manages the add-in lifecycle and enables interoperability between the add-in and the client application. The add-in webpage itself is hosted out-of-process. As shown in figure 1, on a Windows desktop or tablet device, [the add-in webpage is hosted inside an Internet Explorer or Microsoft Edge control](browsers-used-by-office-web-add-ins.md) which, in turn, is hosted inside an add-in Configure your Office Add-in to use a shared runtime process that provides security and performance isolation.
 
 On Windows desktops, Protected Mode in Internet Explorer must be enabled for the Restricted Site Zone. This is typically enabled by default. If it is disabled, an [error will occur](/office/troubleshoot/office-suite-issues/apps-for-office-not-start) when you try to launch an add-in.
 
-*Figure 1. Office Add-ins runtime environment in Windows-based desktop and tablet clients*
+*Figure 1. Office Add-ins Configure your Office Add-in to use a shared runtime environment in Windows-based desktop and tablet clients*
 
 ![Diagram showing rich-client infrastructure.](../images/dk2-agave-overview-02.png)
 
-As shown in the following figure, on a Mac OS X desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection.
+As shown in the following figure, on a Mac OS X desktop, the add-in web page is hosted inside a sandboxed WebKit Configure your Office Add-in to use a shared runtime host process which helps provide similar level of security and performance protection.
 
-*Figure 2. Office Add-ins runtime environment in Mac OS X clients*
+*Figure 2. Office Add-ins Configure your Office Add-in to use a shared runtime environment in Mac OS X clients*
 
-![Diagram showing apps for Office runtime environment on Mac OS X.](../images/dk2-agave-overview-mac-02.png)
+![Diagram showing apps for Office Configure your Office Add-in to use a shared runtime environment on Mac OS X.](../images/dk2-agave-overview-mac-02.png)
 
-The Office Add-ins runtime manages interprocess communication, the translation of JavaScript API calls and events into native ones, as well as UI remoting support to enable the add-in to be rendered inside the document, in a task pane, or adjacent to an email message, meeting request, or appointment.
+The Office Add-ins Configure your Office Add-in to use a shared runtime manages interprocess communication, the translation of JavaScript API calls and events into native ones, as well as UI remoting support to enable the add-in to be rendered inside the document, in a task pane, or adjacent to an email message, meeting request, or appointment.
 
 ### Web clients
 
-In supported web clients, Office Add-ins are hosted in an **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. The following figure shows the infrastructure that supports add-ins in Office running in the browser, and the relevant components (the web client, **iframe**, Office Add-ins runtime, and JavaScript API for Office) that are required to support them.
+In supported web clients, Office Add-ins are hosted in an **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. The following figure shows the infrastructure that supports add-ins in Office running in the browser, and the relevant components (the web client, **iframe**, Office Add-ins Configure your Office Add-in to use a shared runtime, and JavaScript API for Office) that are required to support them.
 
 *Figure 3. Infrastructure that supports Office Add-ins in Office web clients*
 
@@ -102,7 +105,7 @@ The add-in platform addresses end users' privacy concerns in the following ways.
 
 - The design of the add-in platform provides security and performance for end users in the following ways.
 
-  - An Office Add-in runs in a web browser control that is hosted in an add-in runtime environment separate from the Office client application. This design provides both security and performance isolation from the client application.
+  - An Office Add-in runs in a web browser control that is hosted in an add-in Configure your Office Add-in to use a shared runtime environment separate from the Office client application. This design provides both security and performance isolation from the client application.
 
   - Running in a web browser control allows the add-in to do almost anything a regular web page running in a browser can do but, at the same time, restricts the add-in to observe the same-origin policy for domain isolation and security zones.
 

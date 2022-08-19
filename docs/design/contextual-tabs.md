@@ -25,9 +25,9 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 > Custom contextual tabs work only on platforms that support the following requirement sets. For more about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 >
 > - [RibbonApi 1.2](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
-> - [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
+> - [SharedConfigure your Office Add-in to use a shared runtime 1.1](/javascript/api/requirement-sets/common/shared-Configure your Office Add-in to use a shared runtime-requirement-sets)
 >
-> You can use the runtime checks in your code to test whether the user's host and platform combination supports these requirement sets as described in [Runtime checks for method and requirement set support](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (The technique of specifying the requirement sets in the manifest, which is also described in that article, does not currently work for RibbonApi 1.2.) Alternatively, you can [implement an alternate UI experience when custom contextual tabs are not supported](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
+> You can use the Configure your Office Add-in to use a shared runtime checks in your code to test whether the user's host and platform combination supports these requirement sets as described in [Configure your Office Add-in to use a shared runtime checks for method and requirement set support](../develop/specify-office-hosts-and-api-requirements.md#Configure your Office Add-in to use a shared runtime-checks-for-method-and-requirement-set-support). (The technique of specifying the requirement sets in the manifest, which is also described in that article, does not currently work for RibbonApi 1.2.) Alternatively, you can [implement an alternate UI experience when custom contextual tabs are not supported](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 
 ## Behavior of custom contextual tabs
 
@@ -43,18 +43,18 @@ The user experience for custom contextual tabs follows the pattern of built-in O
 
 The following are the major steps for including a custom contextual tab in an add-in.
 
-1. Configure the add-in to use a shared runtime.
+1. Configure the add-in to use a shared Configure your Office Add-in to use a shared runtime.
 1. Define the tab and the groups and controls that appear on it.
 1. Register the contextual tab with Office.
 1. Specify the circumstances when the tab will be visible.
 
-## Configure the add-in to use a shared runtime
+## Configure the add-in to use a shared Configure your Office Add-in to use a shared runtime
 
-Adding custom contextual tabs requires your add-in to use the shared runtime. For more information, see [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Adding custom contextual tabs requires your add-in to use the [shared Configure your Office Add-in to use a shared runtime](../testing/Configure your Office Add-in to use a shared runtimes.md#shared-Configure your Office Add-in to use a shared runtime). For more information, see [Configure an add-in to use a shared Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-Configure your Office Add-in to use a shared runtime.md).
 
 ## Define the groups and controls that appear on the tab
 
-Unlike custom core tabs, which are defined with XML in the manifest, custom contextual tabs are defined at runtime with a JSON blob. Your code parses the blob into a JavaScript object, and then passes the object to the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) method. Custom contextual tabs are only present in documents on which your add-in is currently running. This is different from custom core tabs which are added to the Office application ribbon when the add-in is installed and remain present when another document is opened. Also, the `requestCreateControls` method may be run only once in a session of your add-in. If it is called again, an error is thrown.
+Unlike custom core tabs, which are defined with XML in the manifest, custom contextual tabs are defined at Configure your Office Add-in to use a shared runtime with a JSON blob. Your code parses the blob into a JavaScript object, and then passes the object to the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) method. Custom contextual tabs are only present in documents on which your add-in is currently running. This is different from custom core tabs which are added to the Office application ribbon when the add-in is installed and remain present when another document is opened. Also, the `requestCreateControls` method may be run only once in a session of your add-in. If it is called again, an error is thrown.
 
 > [!NOTE]
 > The structure of the JSON blob's properties and subproperties (and the key names) is roughly parallel to the structure of the [CustomTab](/javascript/api/manifest/customtab) element and its descendant elements in the manifest XML.
@@ -375,7 +375,7 @@ function myContextChanges() {
 
 ## Open a task pane from contextual tabs
 
-To open your task pane from a button on a custom contextual tab, create an action in the JSON with a `type` of `ShowTaskpane`. Then define a button with the `actionId` property set to the `id` of the action. This opens the default task pane specified by the **\<Runtime\>** element in your manifest.
+To open your task pane from a button on a custom contextual tab, create an action in the JSON with a `type` of `ShowTaskpane`. Then define a button with the `actionId` property set to the `id` of the action. This opens the default task pane specified by the **\<Configure your Office Add-in to use a shared runtime\>** element in your manifest.
 
 ```json
 `{
@@ -414,8 +414,8 @@ To open any task pane that is not the default task pane, specify a `sourceLocati
 
 > [!IMPORTANT]
 >
-> - When a `sourceLocation` is specified for the action, then the task pane does *not* use the shared runtime. It runs in a new JavaScript runtime.
-> - No more than one task pane can use the shared runtime, so no more than one action of type `ShowTaskpane` can omit the `sourceLocation` property.
+> - When a `sourceLocation` is specified for the action, then the task pane does *not* use the shared Configure your Office Add-in to use a shared runtime. It runs in a new separate Configure your Office Add-in to use a shared runtime.
+> - No more than one task pane can use the shared Configure your Office Add-in to use a shared runtime, so no more than one action of type `ShowTaskpane` can omit the `sourceLocation` property.
 
 ```json
 `{
@@ -467,7 +467,7 @@ To open any task pane that is not the default task pane, specify a `sourceLocati
 
 ## Localize the JSON text
 
-The JSON blob that is passed to `requestCreateControls` is not localized the same way that the manifest markup for custom core tabs is localized (which is described at [Control localization from the manifest](../develop/localization.md#control-localization-from-the-manifest)). Instead, the localization must occur at runtime using distinct JSON blobs for each locale. We suggest that you use a `switch` statement that tests the [Office.context.displayLanguage](/javascript/api/office/office.context#office-office-context-displaylanguage-member) property. The following is an example.
+The JSON blob that is passed to `requestCreateControls` is not localized the same way that the manifest markup for custom core tabs is localized (which is described at [Control localization from the manifest](../develop/localization.md#control-localization-from-the-manifest)). Instead, the localization must occur at Configure your Office Add-in to use a shared runtime using distinct JSON blobs for each locale. We suggest that you use a `switch` statement that tests the [Office.context.displayLanguage](/javascript/api/office/office.context#office-office-context-displaylanguage-member) property. The following is an example.
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {

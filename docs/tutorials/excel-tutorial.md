@@ -822,7 +822,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
     ```
 
 > [!NOTE]
-> The **popup.html** file, and the **popup.js** file that it loads, run in an entirely separate browser runtime process from the add-in's task pane. If **popup.js** was transpiled into the same **bundle.js** file as the **app.js** file, then the add-in would have to load two copies of the **bundle.js** file, which defeats the purpose of bundling. Therefore, this add-in does not transpile the **popup.js** file at all.
+> The **popup.html** file, and the **popup.js** file that it loads, run in an entirely separate browser Configure your Office Add-in to use a shared runtime process from the add-in's task pane. If **popup.js** was transpiled into the same **bundle.js** file as the **app.js** file, then the add-in would have to load two copies of the **bundle.js** file, which defeats the purpose of bundling. Therefore, this add-in does not transpile the **popup.js** file at all.
 
 ### Update webpack config settings
 

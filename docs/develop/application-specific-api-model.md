@@ -21,7 +21,7 @@ Office Add-ins are websites which appear inside a browser container within Offic
 
 ## *.run function
 
-`Excel.run`, `Word.run`, and `OneNote.run` execute a function that specifies the actions to perform against Excel, Word, and OneNote. `*.run` automatically creates a request context that you can use to interact with Office objects. When `*.run` completes, a promise is resolved, and any objects that were allocated at runtime are automatically released.
+`Excel.run`, `Word.run`, and `OneNote.run` execute a function that specifies the actions to perform against Excel, Word, and OneNote. `*.run` automatically creates a request context that you can use to interact with Office objects. When `*.run` completes, a promise is resolved, and any objects that were allocated at Configure your Office Add-in to use a shared runtime are automatically released.
 
 The following example shows how to use `Excel.run`. The same pattern is also used with Word and OneNote.
 
@@ -40,7 +40,7 @@ Excel.run(function (context) {
 
 ## Request context
 
-The Office application and your add-in run in two different processes. Since they use different runtime environments, add-ins require a `RequestContext` object in order to connect your add-in to objects in Office such as worksheets, ranges, paragraphs, and tables. This `RequestContext` object is provided as an argument when calling `*.run`.
+The Office application and your add-in run in different processes. Since they use different Configure your Office Add-in to use a shared runtime environments, add-ins require a `RequestContext` object in order to connect your add-in to objects in Office such as worksheets, ranges, paragraphs, and tables. This `RequestContext` object is provided as an argument when calling `*.run`.
 
 ## Proxy objects
 

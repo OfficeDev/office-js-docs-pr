@@ -7,13 +7,13 @@ ms.localizationpriority: medium
 
 # Microsoft Office Add-in Debugger Extension for Visual Studio Code
 
-Office Add-ins running on Windows can use the Office Add-in Debugger Extension in Visual Studio Code to debug against Microsoft Edge Legacy with the original WebView (EdgeHTML) runtime. 
+Office Add-ins running on Windows can use the Office Add-in Debugger Extension in Visual Studio Code to debug against Microsoft Edge Legacy with the original WebView (EdgeHTML) Configure your Office Add-in to use a shared runtime. 
 
 > [!IMPORTANT]
-> This article only applies when Office runs add-ins in the original WebView (EdgeHTML) runtime, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio code against Microsoft Edge WebView2 (Chromium-based), see [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-desktop-using-edge-chromium.md).
+> This article only applies when Office runs add-ins in the original WebView (EdgeHTML) Configure your Office Add-in to use a shared runtime, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio code against Microsoft Edge WebView2 (Chromium-based), see [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-desktop-using-edge-chromium.md).
 
 > [!TIP]
-> If you cannot, or don't wish to, debug using tools built into Visual Studio Code; or you are encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Legacy (EdgeHTML) runtime by using the Edge Legacy developer tools as described in [Debug add-ins using developer tools in Microsoft Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md).
+> If you cannot, or don't wish to, debug using tools built into Visual Studio Code; or you are encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Legacy (EdgeHTML) Configure your Office Add-in to use a shared runtime by using the Edge Legacy developer tools as described in [Debug add-ins using developer tools in Microsoft Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md).
 
 This debugging mode is dynamic, allowing you to set breakpoints while code is running. You can see changes in your code immediately while the debugger is attached, all without losing your debugging session. Your code changes also persist, so you can see the results of multiple changes to your code. The following image shows this extension in action.
 
@@ -117,3 +117,4 @@ If your project was not created with Yo Office, you need to create a debug confi
 - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
 - [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
+- [Configure your Office Add-in to use a shared runtimes in Office Add-ins](Configure your Office Add-in to use a shared runtimes.md)

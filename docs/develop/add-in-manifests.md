@@ -148,7 +148,7 @@ The following XML manifest example hosts its main add-in page in the `https://ww
 The optional [VersionOverrides](/javascript/api/manifest/versionoverrides) element deserves special mention. It contains child markup that enables additional add-in features. Some of these are:
 
 - Customizing the Office ribbon and menus.
-- Customizing how Office works with the embedded browser runtime in which add-ins run.
+- Customizing how Office works with the embedded Configure your Office Add-in to use a shared runtimes in which add-ins run.
 - Configuring how the add-in interacts with Azure Active Directory and Microsoft Graph for Single Sign-on.
 
 Some descendant elements of `VersionOverrides` have values that override values of the parent `OfficeApp` element. For example, the `Hosts` element in `VersionOverrides` overrides the `Hosts` element in `OfficeApp`.

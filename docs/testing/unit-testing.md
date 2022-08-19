@@ -68,7 +68,7 @@ npm install office-addin-mock --save-dev
 
    - It is a simplified mock of an [OfficeExtension.ClientRequestContext](/javascript/api/office/officeextension.clientrequestcontext) object.
    - The mock object has all the members of the data object and also has mock implementations of the `load` and `sync` methods.
-   - The mock object will mimic crucial error behavior of the `ClientRequestContext` object. For example, if the Office API you are testing tries to read a property without first loading the property and calling `sync`, then the test will fail with an error similar to what would be thrown in production runtime: "Error, property not loaded".
+   - The mock object will mimic crucial error behavior of the `ClientRequestContext` object. For example, if the Office API you are testing tries to read a property without first loading the property and calling `sync`, then the test will fail with an error similar to what would be thrown in production Configure your Office Add-in to use a shared runtime: "Error, property not loaded".
 
    ```javascript
    const contextMock = new OfficeAddinMock.OfficeMockObject(mockData);

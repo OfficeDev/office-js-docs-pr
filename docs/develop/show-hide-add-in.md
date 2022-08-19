@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Show or hide the task pane of your Office Add-in
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared JavaScript Configure your Office Add-in to use a shared runtime requirements](../includes/shared-Configure your Office Add-in to use a shared runtime-requirements-note.md)]
 
 You can show the task pane of your Office Add-in by calling the `Office.addin.showAsTaskpane()` method.
 
@@ -36,13 +36,13 @@ The previous code is a handler that is registered for the [Office.Worksheet.onDe
 ## Additional details on showing the task pane
 
 When you call `Office.addin.showAsTaskpane()`, Office will display in a task pane the file that you assigned as the resource ID (`resid`) value of the task pane. This `resid` value can be assigned or changed by opening your **manifest.xml** file and locating **\<SourceLocation\>** inside the `<Action xsi:type="ShowTaskpane">` element.
-(See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md) for additional details.)
+(See [Configure your Office Add-in to use a shared Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-Configure your Office Add-in to use a shared runtime.md) for additional details.)
 
 Since `Office.addin.showAsTaskpane()` is an asynchronous method, your code will continue running until the method is complete. Wait for this completion with either the `await` keyword or a `then()` method, depending on which JavaScript syntax you are using.
 
-## Configure your add-in to use the shared runtime
+## Configure your add-in to use the shared Configure your Office Add-in to use a shared runtime
 
-To use the `showAsTaskpane()` and `hide()` methods, your add-in must use the shared runtime. For more information, see [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).
+To use the `showAsTaskpane()` and `hide()` methods, your add-in must use the [shared Configure your Office Add-in to use a shared runtime](../testing/Configure your Office Add-in to use a shared runtimes.md#shared-Configure your Office Add-in to use a shared runtime). For more information, see [Configure your Office Add-in to use a shared Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-Configure your Office Add-in to use a shared runtime.md).
 
 ## Preservation of state and event listeners
 
@@ -110,5 +110,5 @@ await removeVisibilityModeHandler();
 
 ## See also
 
-- [Configure your Office Add-in to use a shared JavaScript runtime](configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configure your Office Add-in to use a shared JavaScript Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-Configure your Office Add-in to use a shared runtime.md)
 - [Run code in your Office Add-in when the document opens](run-code-on-document-open.md)

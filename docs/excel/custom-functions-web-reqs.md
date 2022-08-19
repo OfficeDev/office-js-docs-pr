@@ -138,13 +138,13 @@ Excel cancels the execution of a function in the following situations.
 You can also consider setting a default streaming value to handle cases when a request is made but you are offline.
 
 > [!NOTE]
-> There is also a category of functions called cancelable functions, and these are _not_ related to streaming functions. Only asynchronous custom functions which return one value are cancelable. Cancelable functions allow a web request to be terminated in the middle of a request, using a [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to decide what to do upon cancellation. Declare a cancelable function using the tag `@cancelable`.
+> There is also a category of functions called cancelable functions, and these are _not_ related to streaming functions. Only asynchronous custom functions which return one value are cancelable. Cancelable functions allow a web request to be terminated in the middle of a request, using a [`CancelableInvocation`](/javascript/api/custom-functions-Configure your Office Add-in to use a shared runtime/customfunctions.cancelableinvocation) to decide what to do upon cancellation. Declare a cancelable function using the tag `@cancelable`.
 
 ### Use an invocation parameter
 
 The `invocation` parameter is the last parameter of any custom function by default. The `invocation` parameter gives context about the cell (such as its address and contents) and allows you to use the `setResult` method and `onCanceled` event to define what a function does when it streams (`setResult`) or is canceled (`onCanceled`).
 
-If you're using TypeScript, the invocation handler needs to be of type [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) or [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation).
+If you're using TypeScript, the invocation handler needs to be of type [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-Configure your Office Add-in to use a shared runtime/customfunctions.streaminginvocation) or [`CancelableInvocation`](/javascript/api/custom-functions-Configure your Office Add-in to use a shared runtime/customfunctions.cancelableinvocation).
 
 ## Receiving data via WebSockets
 

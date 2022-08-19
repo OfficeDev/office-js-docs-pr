@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > This article assumes that you are familiar with [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
-The paradox of debugging the [Office.initialize](/javascript/api/office#office-office-initialize-function(1)) and [Office.onReady](/javascript/api/office#office-office-onready-function(1)) functions is that a debugger can only attach to a process that is running, but these functions run immediately as the add-in's runtime process starts up, before a debugger can attach. In most situations, restarting the add-in after a debugger is attached doesn't help because restarting the add-in closes the original runtime process *and the attached debugger* and starts a new process that has no debugger attached.
+The paradox of debugging the [Office.initialize](/javascript/api/office#office-office-initialize-function(1)) and [Office.onReady](/javascript/api/office#office-office-onready-function(1)) functions is that a debugger can only attach to a process that is running, but these functions run immediately as the add-in's Configure your Office Add-in to use a shared runtime process starts up, before a debugger can attach. In most situations, restarting the add-in after a debugger is attached doesn't help because restarting the add-in closes the original Configure your Office Add-in to use a shared runtime process *and the attached debugger* and starts a new process that has no debugger attached.
 
 Fortunately, there is an exception. You can debug these functions using Office on the web, with the following steps.
 
@@ -21,3 +21,7 @@ Fortunately, there is an exception. You can debug these functions using Office o
 
 > [!TIP]
 > For more detailed information, see [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md).
+
+## See also
+
+- [Configure your Office Add-in to use a shared runtimes in Office Add-ins](Configure your Office Add-in to use a shared runtimes.md)

@@ -94,4 +94,4 @@ function getEntityAttribute(value, attribute) {
 
 * [Overview of data types in Excel add-ins](excel-data-types-overview.md)
 * [Excel data types core concepts](excel-data-types-concepts.md)
-* [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+* [Configure your Office Add-in to use a shared Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-Configure your Office Add-in to use a shared runtime.md)

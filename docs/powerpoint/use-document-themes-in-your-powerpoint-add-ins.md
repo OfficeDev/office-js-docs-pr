@@ -171,7 +171,7 @@ The following shows a simple example of HTML in a content add-in that uses the O
 </body>
 ```
 
-At runtime, when inserted into a presentation that uses the default **Office Theme**, the content add-in is rendered like this.
+At Configure your Office Add-in to use a shared runtime, when inserted into a presentation that uses the default **Office Theme**, the content add-in is rendered like this.
 
 ![Content app running with Office theme.](../images/office15-app-content-app-office-theme.png)
 

@@ -48,7 +48,7 @@ Some requirement sets contain APIs that can be used by any Office application. F
 - [Keyboard Shortcuts requirement sets](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)
 - [Open Browser Window requirement sets](/javascript/api/requirement-sets/common/open-browser-window-api-requirement-sets)
 - [Ribbon API requirement sets](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
-- [Shared Runtime requirement sets](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
+- [Shared Configure your Office Add-in to use a shared runtime requirement sets](/javascript/api/requirement-sets/common/shared-Configure your Office Add-in to use a shared runtime-requirement-sets)
 
 The version number of a requirement set, such as the "1.1" in `ExcelApi 1.1`, is relative to the Office application. The version number of a given requirement set (e.g., `ExcelApi 1.1`) does not correspond to the version number of Office.js or to requirement sets for other Office applications (e.g., Word, Outlook, etc.).  Requirement sets for the different Office applications are released at different rates. For example, `ExcelApi 1.5` was released before the `WordApi 1.3` requirement set.
 

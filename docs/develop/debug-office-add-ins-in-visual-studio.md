@@ -58,7 +58,7 @@ The following table describes the properties of the web application project that
 |**SSL URL**|Specifies the secure HTTPS URL for the site. Read-only.|
 |**URL**|Specifies the HTTP URL for the site. Read-only.|
 |**Project File**|Specifies the name of the file containing build, configuration, and other information about the project.|
-|**Project Folder**|Specifies the location of the project file. Read-only. The manifest file that Visual Studio generates at runtime is written to the `bin\Debug\OfficeAppManifests` folder in this location.|
+|**Project Folder**|Specifies the location of the project file. Read-only. The manifest file that Visual Studio generates at Configure your Office Add-in to use a shared runtime is written to the `bin\Debug\OfficeAppManifests` folder in this location.|
 
 ## Debug an Excel, PowerPoint, or Word add-in project
 

@@ -33,7 +33,7 @@ The Office JavaScript API provides the [Settings](/javascript/api/office/office.
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|Outlook|The message, appointment, or meeting request item the add-in is working with. Outlook add-in item custom properties are available only to the add-in that created them, and only from the item where they are saved.|Outlook|
 |[CustomXmlParts](/javascript/api/office/office.customxmlparts)|task pane|The document, spreadsheet, or presentation the add-in is working with. Task pane add-in settings are available to the add-in that created them from the document where they are saved.<br/><br/>**Important:** Don't store passwords and other sensitive personally identifiable information (PII) in a custom XML part. The data saved isn't visible to end users, but it is stored as part of the document, which is accessible by reading the document's file format directly. You should limit your add-in's use of PII and store any PII required by your add-in only on the server hosting your add-in as a user-secured resource.|Word (using the Office JavaScript Common API) Excel (using the application-specific Excel JavaScript API|
 
-## Settings data is managed in memory at runtime
+## Settings data is managed in memory at Configure your Office Add-in to use a shared runtime
 
 > [!NOTE]
 > The following two sections discuss settings in the context of the Office Common JavaScript API. The application-specific Excel JavaScript API also provides access to the custom settings. The Excel APIs and programming patterns are somewhat different. For more information, see [Excel SettingCollection](/javascript/api/excel/excel.settingcollection).

@@ -106,7 +106,7 @@ function makeServiceRequest() {
       }
       document.getElementById("names").innerHTML = names;
     } else {
-      app.showNotification("Runtime error", response.message);
+      app.showNotification("Configure your Office Add-in to use a shared runtime error", response.message);
     }
   }).fail(function (status) {
 

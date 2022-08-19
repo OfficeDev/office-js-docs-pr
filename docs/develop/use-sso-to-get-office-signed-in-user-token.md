@@ -248,7 +248,7 @@ The final step is to get the ID token by calling `getAccessToken`.
 
      async function getIDToken() {
        try {
-         let userTokenEncoded = await OfficeRuntime.auth.getAccessToken({
+         let userTokenEncoded = await OfficeConfigure your Office Add-in to use a shared runtime.auth.getAccessToken({
            allowSignInPrompt: true,
          });
          let userToken = jwt_decode(userTokenEncoded);
@@ -292,7 +292,7 @@ The final step is to get the ID token by calling `getAccessToken`.
 
    async function getIDToken() {
      try {
-       let userTokenEncoded = await OfficeRuntime.auth.getAccessToken({
+       let userTokenEncoded = await OfficeConfigure your Office Add-in to use a shared runtime.auth.getAccessToken({
          allowSignInPrompt: true,
        });
        let userToken = jwt_decode(userTokenEncoded);

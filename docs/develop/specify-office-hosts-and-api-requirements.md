@@ -140,18 +140,18 @@ The extensibility features that the Office Add-in platform provides can be usefu
 
 - Extensibility features that are available immediately after the add-in is installed. You can make use of this kind of feature by configuring a [VersionOverrides](/javascript/api/manifest/versionoverrides) element in the manifest. An example of this kind of feature is [Add-in Commands](../design/add-in-commands.md), which are custom ribbon buttons and menus.
 - Extensibility features that are available only when the add-in is running and that are implemented with Office.js JavaScript APIs; for example, [Dialog Boxes](../develop/dialog-api-in-office-add-ins.md).
-- Extensibility features that are available only at runtime but are implemented with a combination of Office.js JavaScript and configuration in a **\<VersionOverrides\>** element. Examples of these are [Excel custom functions](../excel/custom-functions-overview.md), [single sign-on](sso-in-office-add-ins.md), and [custom contextual tabs](../design/contextual-tabs.md).
+- Extensibility features that are available only at Configure your Office Add-in to use a shared runtime but are implemented with a combination of Office.js JavaScript and configuration in a **\<VersionOverrides\>** element. Examples of these are [Excel custom functions](../excel/custom-functions-overview.md), [single sign-on](sso-in-office-add-ins.md), and [custom contextual tabs](../design/contextual-tabs.md).
 
 If your add-in uses a specific extensibility feature for some of its functionality but has other useful functionality that doesn't require the extensibility feature, you should design the add-in so that it's installable on platform and Office version combinations that don't support the extensibility feature. It can provide a valuable, albeit diminished, experience on those combinations.
 
 You implement this design differently depending on how the extensibility feature is implemented:
 
-- For features implemented entirely with JavaScript, see [Runtime checks for method and requirement set support](#runtime-checks-for-method-and-requirement-set-support).
+- For features implemented entirely with JavaScript, see [Configure your Office Add-in to use a shared runtime checks for method and requirement set support](#Configure your Office Add-in to use a shared runtime-checks-for-method-and-requirement-set-support).
 - For features that require you to configure a **\<VersionOverrides\>** element, see [Specifying requirements in a VersionOverrides element](#specify-requirements-in-a-versionoverrides-element).
 
-### Runtime checks for method and requirement set support
+### Configure your Office Add-in to use a shared runtime checks for method and requirement set support
 
-You test at runtime to discover whether the user's Office supports a requirement set with the [isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-issetsupported-member(1)) method. Pass the requirement set's name and the minimum version as parameters. If the requirement set is supported, `isSetSupported` returns `true`. The following code shows an example.
+You test at Configure your Office Add-in to use a shared runtime to discover whether the user's Office supports a requirement set with the [isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-issetsupported-member(1)) method. Pass the requirement set's name and the minimum version as parameters. If the requirement set is supported, `isSetSupported` returns `true`. The following code shows an example.
 
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
@@ -196,10 +196,10 @@ else
 > [!NOTE]
 > The `isSetSupported` method and the requirement sets for these applications are available in the latest Office.js file on the CDN. If you don't use Office.js from the CDN, your add-in might generate exceptions if you are using an old version of the library in which `isSetSupported` is undefined. For more information, see [Use the latest Office JavaScript API library](#use-the-latest-office-javascript-api-library).
 
-When your add-in depends on a method that isn't part of a requirement set, use the runtime check to determine whether the method is supported by the Office application, as shown in the following code example. For a complete list of methods that don't belong to a requirement set, see [Office Add-in requirement sets](/javascript/api/requirement-sets/common/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set).
+When your add-in depends on a method that isn't part of a requirement set, use the Configure your Office Add-in to use a shared runtime check to determine whether the method is supported by the Office application, as shown in the following code example. For a complete list of methods that don't belong to a requirement set, see [Office Add-in requirement sets](/javascript/api/requirement-sets/common/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set).
 
 > [!NOTE]
-> We recommend that you limit the use of this type of runtime check in your add-in's code.
+> We recommend that you limit the use of this type of Configure your Office Add-in to use a shared runtime check in your add-in's code.
 
 The following code example checks whether the Office application supports `document.setSelectedDataAsync`.
 
@@ -242,7 +242,7 @@ The following is an example.
 ```
 
 > [!WARNING]
-> Use great care before using a **\<Requirements\>** element in a **\<VersionOverrides\>**, because on platform and version combinations that don't support the requirement, *none* of the add-in commands will be installed, *even those that invoke functionality that doesn't need the requirement*. Consider, for example, an add-in that has two custom ribbon buttons. One of them calls Office JavaScript APIs that are available in requirement set **ExcelApi 1.4** (and later). The other calls APIs that are only available in **ExcelApi 1.9** (and later). If you put a requirement for **ExcelApi 1.9** in the **\<VersionOverrides\>**, then when 1.9 is not supported *neither* button will appear on the ribbon. A better strategy in this scenario would be to use the technique described in [Runtime checks for method and requirement set support](#runtime-checks-for-method-and-requirement-set-support). The code invoked by the second button first uses `isSetSupported` to check for support of **ExcelApi 1.9**. If it isn't supported, the code gives the user a message saying that this feature of the add-in is not available on their version of Office.
+> Use great care before using a **\<Requirements\>** element in a **\<VersionOverrides\>**, because on platform and version combinations that don't support the requirement, *none* of the add-in commands will be installed, *even those that invoke functionality that doesn't need the requirement*. Consider, for example, an add-in that has two custom ribbon buttons. One of them calls Office JavaScript APIs that are available in requirement set **ExcelApi 1.4** (and later). The other calls APIs that are only available in **ExcelApi 1.9** (and later). If you put a requirement for **ExcelApi 1.9** in the **\<VersionOverrides\>**, then when 1.9 is not supported *neither* button will appear on the ribbon. A better strategy in this scenario would be to use the technique described in [Configure your Office Add-in to use a shared runtime checks for method and requirement set support](#Configure your Office Add-in to use a shared runtime-checks-for-method-and-requirement-set-support). The code invoked by the second button first uses `isSetSupported` to check for support of **ExcelApi 1.9**. If it isn't supported, the code gives the user a message saying that this feature of the add-in is not available on their version of Office.
 
 > [!TIP]
 > There's no point to repeating a **Requirement** element in a **\<VersionOverrides\>** that already appears in the base manifest. If the requirement is specified in the base manifest, then the add-in can't install where the requirement isn't supported so Office doesn't even parse the **\<VersionOverrides\>** element.

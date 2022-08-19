@@ -41,15 +41,15 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
     </Requirements>
     <Hosts>
       <Host xsi:type="MailHost">
-        <!-- Event-based activation happens in a lightweight runtime.-->
-        <Runtimes>
+        <!-- Event-based activation happens in a lightweight Configure your Office Add-in to use a shared runtime.-->
+        <Configure your Office Add-in to use a shared runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and on the new Mac UI. -->
-          <Runtime resid="WebViewRuntime.Url">
+          <Configure your Office Add-in to use a shared runtime resid="WebViewConfigure your Office Add-in to use a shared runtime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
-            <Override type="javascript" resid="JSRuntime.Url"/>
-          </Runtime>
-        </Runtimes>
+            <Override type="javascript" resid="JSConfigure your Office Add-in to use a shared runtime.Url"/>
+          </Configure your Office Add-in to use a shared runtime>
+        </Configure your Office Add-in to use a shared runtimes>
         <DesktopFormFactor>
           <FunctionFile resid="Commands.Url" />
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
@@ -97,8 +97,8 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
             <LaunchEvents>
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
             </LaunchEvents>
-            <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
-            <SourceLocation resid="WebViewRuntime.Url"/>
+            <!-- Identifies the Configure your Office Add-in to use a shared runtime to be used (also referenced by the Configure your Office Add-in to use a shared runtime element). -->
+            <SourceLocation resid="WebViewConfigure your Office Add-in to use a shared runtime.Url"/>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
@@ -112,9 +112,9 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
       <bt:Urls>
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
-        <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
+        <bt:Url id="WebViewConfigure your Office Add-in to use a shared runtime.Url" DefaultValue="https://localhost:3000/commands.html" />
         <!-- Entry needed for Outlook on Windows. -->
-        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
+        <bt:Url id="JSConfigure your Office Add-in to use a shared runtime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>

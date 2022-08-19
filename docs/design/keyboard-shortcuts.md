@@ -18,15 +18,15 @@ There are three steps to add keyboard shortcuts to an add-in.
 
 1. [Configure the add-in's manifest](#configure-the-manifest).
 1. [Create or edit the shortcuts JSON file](#create-or-edit-the-shortcuts-json-file) to define actions and their keyboard shortcuts.
-1. [Add one or more runtime calls](#create-a-mapping-of-actions-to-their-functions) of the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map a function to each action.
+1. [Add one or more Configure your Office Add-in to use a shared runtime calls](#create-a-mapping-of-actions-to-their-functions) of the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map a function to each action.
 
 ## Configure the manifest
 
-There are two small changes to the manifest to make. One is to enable the add-in to use a shared runtime and the other is to point to a JSON-formatted file where you defined the keyboard shortcuts.
+There are two small changes to the manifest to make. One is to enable the add-in to use a shared Configure your Office Add-in to use a shared runtime and the other is to point to a JSON-formatted file where you defined the keyboard shortcuts.
 
-### Configure the add-in to use a shared runtime
+### Configure the add-in to use a shared Configure your Office Add-in to use a shared runtime
 
-Adding custom keyboard shortcuts requires your add-in to use the shared runtime. For more information, [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Adding custom keyboard shortcuts requires your add-in to use the [shared Configure your Office Add-in to use a shared runtime](../testing/Configure your Office Add-in to use a shared runtimes.md#shared-Configure your Office Add-in to use a shared runtime). For more information, [Configure an add-in to use a shared Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-Configure your Office Add-in to use a shared runtime.md).
 
 ### Link the mapping file to the manifest
 
