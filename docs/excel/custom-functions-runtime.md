@@ -13,7 +13,7 @@ Custom functions that don't use a shared runtime use a [JavaScript-only runtime]
 
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
-This JavaScript-only runtime provides access to APIs in the `Officeruntime` namespace that can be used by custom functions and the task pane (which runs in a different runtime) to store data.
+This JavaScript-only runtime provides access to APIs in the `OfficeRuntime` namespace that can be used by custom functions and the task pane (which runs in a different runtime) to store data.
 
 ## Request external data
 
@@ -25,7 +25,7 @@ A simple CORS implementation cannot use cookies and only supports simple methods
 
 ## Store and access data
 
-Within a custom function that doesn't use a shared runtime, you can store and access data by using the [Officeruntime.storage](/javascript/api/office-runtime/officeruntime.storage) object. The `Storage` object is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), which cannot be used by custom functions that use the JavaScript-only runtime. The `Storage` object offers 10 MB of data per domain. Domains can be shared by more than one add-in.
+Within a custom function that doesn't use a shared runtime, you can store and access data by using the [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) object. The `Storage` object is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), which cannot be used by custom functions that use the JavaScript-only runtime. The `Storage` object offers 10 MB of data per domain. Domains can be shared by more than one add-in.
 
 The `Storage` object is a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in the `Storage` object because it can be accessed by both a custom function (using the JavaScript-only runtime) and a task pane (using a full webview runtime). Similarly, if two add-ins share the same domain (for example, `www.contoso.com/addin1`, `www.contoso.com/addin2`), they are also permitted to share information back and forth through the `Storage` object. Note that add-ins which have different subdomains will have different instances of `Storage` (for example, `subdomain.contoso.com/addin1`, `differentsubdomain.contoso.com/addin2`).
 
@@ -44,14 +44,14 @@ The following methods are available on the `Storage` object.
 > [!NOTE]
 > There's no method for clearing all information (such as `clear`). Instead, you should instead use `removeItems` to remove multiple entries at a time.
 
-### Officeruntime.storage example
+### OfficeRuntime.storage example
 
-The following code sample calls the `Officeruntime.storage.setItem` method to set a key and value into `storage`.
+The following code sample calls the `OfficeRuntime.storage.setItem` method to set a key and value into `storage`.
 
 ```js
 function StoreValue(key, value) {
 
-  return Officeruntime.storage.setItem(key, value).then(function (result) {
+  return OfficeRuntime.storage.setItem(key, value).then(function (result) {
       return "Success: Item with key '" + key + "' saved to storage.";
   }, function (error) {
       return "Error: Unable to save item with key '" + key + "' to storage. " + error;

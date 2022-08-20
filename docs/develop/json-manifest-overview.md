@@ -186,7 +186,7 @@ The following is an example of a preview JSON-manifest for an add-in.
               }
             ]
           },
-          "id": "eventsruntime",
+          "id": "eventsRuntime",
           "type": "general",
           "code": {
             "page": "https://contoso.com/events.html",
@@ -212,7 +212,7 @@ The following is an example of a preview JSON-manifest for an add-in.
               }
             ]
           },
-          "id": "commandsruntime",
+          "id": "commandsRuntime",
           "type": "general",
           "code": {
             "page": "https://contoso.com/commands.html",

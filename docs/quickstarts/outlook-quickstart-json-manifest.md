@@ -178,7 +178,7 @@ Add a custom button to the ribbon that inserts text into a message body.
 
     ```json
     {
-        "id": "ComposeCommandsruntime",
+        "id": "ComposeCommandsRuntime",
         "type": "general",
         "code": {
             "page": "https://localhost:3000/commands.html",

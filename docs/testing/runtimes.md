@@ -39,7 +39,7 @@ The following table shows the same information organized by which type of runtim
 |function command | browser | browser | browser |
 
 
-In Office on the web, everything always runs in a browser type runtime. In fact, with one exception, everything in an add-in on the web runs in the *same* browser process: the browser process in which the user has opened Office on the web. The exception is when a dialog is opened with a call of [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) and the [DialogOptions.displayInIFrame](/javascript/api/office/office.dialogoptions#office-office-dialogoptions-displayiniframe-member) option is *not* passed and set to `true`. When the option is not passed (so it has the default `false` value), the dialog opens in its own process. The same principle applies to the [Officeruntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) method and the [Officeruntime.DisplayWebDialogOptions.displayInIFrame](/javascript/api/office-runtime/officeruntime.displaywebdialogoptions#office-runtime-officeruntime-displaywebdialogoptions-displayiniframe-member) option.
+In Office on the web, everything always runs in a browser type runtime. In fact, with one exception, everything in an add-in on the web runs in the *same* browser process: the browser process in which the user has opened Office on the web. The exception is when a dialog is opened with a call of [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) and the [DialogOptions.displayInIFrame](/javascript/api/office/office.dialogoptions#office-office-dialogoptions-displayiniframe-member) option is *not* passed and set to `true`. When the option is not passed (so it has the default `false` value), the dialog opens in its own process. The same principle applies to the [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) method and the [OfficeRuntime.DisplayWebDialogOptions.displayInIFrame](/javascript/api/office-runtime/officeruntime.displaywebdialogoptions#office-runtime-officeruntime-displaywebdialogoptions-displayiniframe-member) option.
 
 When an add-in is running on a platform other than the web, the following principles apply.
 
@@ -85,7 +85,7 @@ For Excel, PowerPoint, and Word add-ins, use a [Shared runtime](#shared-runtime)
 - Pass data between a dialog and its parent task pane, function command, or custom function by using the [Office.ui.messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) and [Dialog.messageChild](/javascript/api/office/office.dialog#office-office-dialog-messagechild-member(1)) methods. 
 
     > [!NOTE]
-    > The `Officeruntime.storage` methods cannot be called in a dialog, so this is not an option for sharing data between a dialog and another runtime. 
+    > The `OfficeRuntime.storage` methods cannot be called in a dialog, so this is not an option for sharing data between a dialog and another runtime. 
 
 - To share data between a task pane and a function command, store data in [Window.localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), which is shared across all runtimes that access the same specific [origin](https://developer.mozilla.org/docs/Glossary/Origin). 
     > [!NOTE]
@@ -98,7 +98,7 @@ For Excel, PowerPoint, and Word add-ins, use a [Shared runtime](#shared-runtime)
     > - To allow some stored values to persist, but reinitialize other values, use [Window.localStorage.setItem](https://developer.mozilla.org/docs/Web/API/Storage/setItem) when the add-in starts for each item that should be reset to an initial value. 
     > - To delete an item entirely, call [Window.localStorage.removeItem](https://developer.mozilla.org/docs/Web/API/Storage/removeItem).
 
-- To share data between an Excel custom function and any other runtime, use [Officeruntime.storage](/javascript/api/office-runtime/officeruntime.storage).
+- To share data between an Excel custom function and any other runtime, use [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage).
 - To share data between an Outlook event-based task and a task pane or function command, you must branch your code by the value of the [Office.context.platform](/javascript/api/office/office.context#office-office-context-platform-member) property. 
 
     - When the value is `PC` (Windows), store and retrieve data using the [Office.sessionData](/javascript/api/outlook/office.sessiondata) APIs.

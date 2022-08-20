@@ -41,7 +41,7 @@ To set up your development environment:
     - Office/SharePoint development
     - The following **Individual** components.
         - Visual Studio Tools for Office (VSTO).
-        - .NET Core 3.0 runtime.
+        - .NET Core 3.0 Runtime.
 
 You also need the following:
 

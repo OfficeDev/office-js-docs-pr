@@ -57,7 +57,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
     ```xml
     <Runtimes>
       <Runtime resid="Taskpane.Url" lifetime="long" />
-    </runtimes>
+    </Runtimes>
     ```
 
     > [!IMPORTANT]
@@ -69,7 +69,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
         <Host xsi:type="...">
           <Runtimes>
             <Runtime resid="Taskpane.Url" lifetime="long" />
-          </runtimes>
+          </Runtimes>
         ...
         </Host>
     ```

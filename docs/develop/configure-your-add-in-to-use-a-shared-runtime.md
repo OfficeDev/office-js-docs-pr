@@ -63,7 +63,7 @@ Follow these steps for a new or existing project to configure it to use a shared
        <Host ...>
          <Runtimes>
            <Runtime resid="Taskpane.Url" lifetime="long" />
-         </runtimes>
+         </Runtimes>
        ...
        </Host>
    ```
@@ -183,7 +183,7 @@ When you add the **\<Runtime\>** element, you also specify a lifetime with a val
 ```xml
 <Runtimes>
   <Runtime resid="ContosoAddin.Url" lifetime="long" />
-</runtimes>
+</Runtimes>
 ```
 
 > [!NOTE]

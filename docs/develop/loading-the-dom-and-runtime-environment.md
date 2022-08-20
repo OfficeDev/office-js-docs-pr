@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Loading the DOM and runtime environment
 
-An add-in must ensure that both the DOM and the Office Add-ins [Runtime](../testing/runtimes.md) environment are loaded before running its own custom logic.
+An add-in must ensure that both the DOM and the Office Add-ins [runtime](../testing/runtimes.md) environment are loaded before running its own custom logic.
 
 ## Startup of a content or task pane add-in
 

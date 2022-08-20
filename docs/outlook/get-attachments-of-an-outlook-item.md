@@ -106,7 +106,7 @@ function makeServiceRequest() {
       }
       document.getElementById("names").innerHTML = names;
     } else {
-      app.showNotification("runtime error", response.message);
+      app.showNotification("Runtime error", response.message);
     }
   }).fail(function (status) {
 

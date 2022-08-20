@@ -83,7 +83,7 @@ To create the web app using the Azure portal, complete the following steps.
 
       - Choose whether to publish using code or a docker container.
 
-      - Specify a **runtime stack**.
+      - Specify a **Runtime stack**.
 
       - Choose the **OS** for your site.
 

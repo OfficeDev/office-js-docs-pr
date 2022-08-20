@@ -248,7 +248,7 @@ The final step is to get the ID token by calling `getAccessToken`.
 
      async function getIDToken() {
        try {
-         let userTokenEncoded = await Officeruntime.auth.getAccessToken({
+         let userTokenEncoded = await OfficeRuntime.auth.getAccessToken({
            allowSignInPrompt: true,
          });
          let userToken = jwt_decode(userTokenEncoded);
@@ -292,7 +292,7 @@ The final step is to get the ID token by calling `getAccessToken`.
 
    async function getIDToken() {
      try {
-       let userTokenEncoded = await Officeruntime.auth.getAccessToken({
+       let userTokenEncoded = await OfficeRuntime.auth.getAccessToken({
          allowSignInPrompt: true,
        });
        let userToken = jwt_decode(userTokenEncoded);

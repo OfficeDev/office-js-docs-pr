@@ -55,18 +55,18 @@ Enabling runtime logging from the command line is the fastest way to use this lo
 
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later.
 
-2. Add the `runtimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`.
+2. Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`.
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-3. Set the default value of the **runtimeLogging** key to the full path of the file where you want the log to be written. For an example, see [EnableruntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/runtimeLogging/EnableruntimeLogging.zip).
+3. Set the default value of the **RuntimeLogging** key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip).
 
     > [!NOTE]
     > The directory in which the log file will be written must already exist, and you must have write permissions to it.
 
-The following image shows what the registry should look like. To turn the feature off, remove the `runtimeLogging` key from the registry.
+The following image shows what the registry should look like. To turn the feature off, remove the `RuntimeLogging` key from the registry.
 
-![Screenshot of the registry editor with a runtimeLogging registry key.](../images/runtime-logging-registry.png)
+![Screenshot of the registry editor with a RuntimeLogging registry key.](../images/runtime-logging-registry.png)
 
 ## Runtime logging on Mac
 
@@ -75,7 +75,7 @@ The following image shows what the registry should look like. To turn the featur
 2. Open **Terminal** and set a runtime logging preference by using the `defaults` command:
 
     ```command&nbsp;line
-    defaults write <bundle id> CEFruntimeLoggingFile -string <file_name>
+    defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
     ```
 
     `<bundle id>` identifies which the host for which to enable runtime logging. `<file_name>` is the name of the text file to which the log will be written.
@@ -90,7 +90,7 @@ The following image shows what the registry should look like. To turn the featur
 The following example enables runtime logging for Word and then opens the log file.
 
 ```command&nbsp;line
-defaults write com.microsoft.Word CEFruntimeLoggingFile -string "runtime_logs.txt"
+defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
 open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
 ```
 
@@ -100,13 +100,13 @@ open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
 To turn off runtime logging, use the `defaults delete` command:
 
 ```command&nbsp;line
-defaults delete <bundle id> CEFruntimeLoggingFile
+defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
 The following example will turn off runtime logging for Word.
 
 ```command&nbsp;line
-defaults delete com.microsoft.Word CEFruntimeLoggingFile
+defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 ```
 
 ## Use runtime logging to troubleshoot issues with your manifest

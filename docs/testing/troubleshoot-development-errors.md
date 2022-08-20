@@ -77,7 +77,7 @@ See [Troubleshoot Excel add-ins](../excel/excel-add-ins-troubleshooting.md) for 
 
 If you are using newer features that require changes to the manifest file, you may get validation errors in Visual Studio. For example, when adding the **\<Runtimes\>** element to implement the [shared runtime](runtimes.md#shared-runtime), you may see the following validation error.
 
-**The element 'Host' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides' has invalid child element 'runtimes' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides'**
+**The element 'Host' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides' has invalid child element 'Runtimes' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides'**
 
 If this occurs, you can update the XSD files that Visual Studio uses to the latest versions. The latest schema versions are at [[MS-OWEMXML]: Appendix A: Full XML Schema](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
 

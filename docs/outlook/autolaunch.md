@@ -88,8 +88,8 @@ To enable event-based activation of your add-in, you must configure the [Runtime
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
-          </runtime>
-        </runtimes>
+          </Runtime>
+        </Runtimes>
         <DesktopFormFactor>
           <FunctionFile resid="Commands.Url" />
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
@@ -155,7 +155,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
               <LaunchEvent Type="OnAppointmentSend" FunctionName="onAppointmentSendHandler" SendMode="PromptUser" />
               -->
             </LaunchEvents>
-            <!-- Identifies the runtime to be used (also referenced by the runtime element). -->
+            <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
             <SourceLocation resid="WebViewRuntime.Url"/>
           </ExtensionPoint>
         </DesktopFormFactor>
@@ -341,7 +341,7 @@ Some Office.js APIs that change or alter the UI are not allowed from event-based
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > [Officeruntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all Outlook versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
+    > [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all Outlook versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
 - Under `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`

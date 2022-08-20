@@ -48,8 +48,8 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
-          </runtime>
-        </runtimes>
+          </Runtime>
+        </Runtimes>
         <DesktopFormFactor>
           <FunctionFile resid="Commands.Url" />
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
@@ -97,7 +97,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
             <LaunchEvents>
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
             </LaunchEvents>
-            <!-- Identifies the runtime to be used (also referenced by the runtime element). -->
+            <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
             <SourceLocation resid="WebViewRuntime.Url"/>
           </ExtensionPoint>
         </DesktopFormFactor>
