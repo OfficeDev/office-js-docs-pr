@@ -1,2 +1,2 @@
 > [!NOTE]
-> This article requires that your Office Add-in is configured to use a [shared Configure your Office Add-in to use a shared runtime](..testing/Configure your Office Add-in to use a shared runtimes.md#shared-Configure your Office Add-in to use a shared runtime). For more information, see [Configure your Office Add-in to use a shared Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-Configure your Office Add-in to use a shared runtime.md).
+> This article requires that your Office Add-in is configured to use a [shared runtime](..testing/runtimes.md#shared-runtime). For more information, see [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).

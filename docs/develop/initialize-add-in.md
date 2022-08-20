@@ -29,7 +29,7 @@ However, an Office Add-in cannot successfully call any Office JavaScript APIs un
 > 
 > For information about the differences in these techniques, see [Major differences between Office.initialize and Office.onReady()](#major-differences-between-officeinitialize-and-officeonready).
 
-For more details about the sequence of events when an add-in is initialized, see [Loading the DOM and Configure your Office Add-in to use a shared runtime environment](loading-the-dom-and-Configure your Office Add-in to use a shared runtime-environment.md).
+For more details about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
 
 ## Initialize with Office.onReady()
 
@@ -150,4 +150,4 @@ For information about debugging the `Office.initialize` and `Office.onReady()` f
 ## See also
 
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
-- [Loading the DOM and Configure your Office Add-in to use a shared runtime environment](loading-the-dom-and-Configure your Office Add-in to use a shared runtime-environment.md)
+- [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md)

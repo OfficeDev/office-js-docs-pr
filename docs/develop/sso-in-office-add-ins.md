@@ -11,13 +11,13 @@ Users sign in to Office using either their personal Microsoft account or their M
 
 ![An image showing the sign-in process for an add-in.](../images/sso-for-office-addins.png)
 
-## How SSO works at Configure your Office Add-in to use a shared runtime
+## How SSO works at runtime
 
 The following diagram shows how the SSO process works. The blue elements represent Office or the Microsoft identity platform. The gray elements represent the code you write and include the client-side code (task pane) and the server-side code for your add-in.
 
 :::image type="content" source="../images/sso-overview-diagram.svg" alt-text="A diagram that shows the SSO process." border="false":::
 
-1. In the add-in, your JavaScript code calls the Office.js API [getAccessToken](/javascript/api/office-Configure your Office Add-in to use a shared runtime/officeConfigure your Office Add-in to use a shared runtime.auth#office-Configure your Office Add-in to use a shared runtime-officeConfigure your Office Add-in to use a shared runtime-auth-getaccesstoken-member(1)). If the user is already signed in to Office, the Office host will return the access token with the claims of the signed in user.
+1. In the add-in, your JavaScript code calls the Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). If the user is already signed in to Office, the Office host will return the access token with the claims of the signed in user.
 2. If the user is not signed in, the Office host application opens a dialog box for the user to sign in. Office redirects to the Microsoft identity platform to complete the sign-in process.
 3. If this is the first time the current user has used your add-in, they are prompted to consent.
 4. The Office host application requests the **access token** from the Microsoft identity platform for the current user.
@@ -30,7 +30,7 @@ The following diagram shows how the SSO process works. The blue elements represe
 
 ### Don't cache the access token
 
-Never cache or store the access token in your client-side code. Always call [getAccessToken](/javascript/api/office-Configure your Office Add-in to use a shared runtime/officeConfigure your Office Add-in to use a shared runtime.auth#office-Configure your Office Add-in to use a shared runtime-officeConfigure your Office Add-in to use a shared runtime-auth-getaccesstoken-member(1)) when you need an access token. Office will cache the access token (or request a new one if it expired.) This will help to avoid accidentally leaking the token from your add-in.
+Never cache or store the access token in your client-side code. Always call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) when you need an access token. Office will cache the access token (or request a new one if it expired.) This will help to avoid accidentally leaking the token from your add-in.
 
 ### Enable modern authentication for Outlook
 
@@ -105,7 +105,7 @@ To use SSO your add-in requires the Identity API 1.3 requirement set. For more i
 
 Add JavaScript to the add-in to:
 
-- Call [getAccessToken](/javascript/api/office-Configure your Office Add-in to use a shared runtime/officeConfigure your Office Add-in to use a shared runtime.auth#office-Configure your Office Add-in to use a shared runtime-officeConfigure your Office Add-in to use a shared runtime-auth-getaccesstoken-member(1)).
+- Call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)).
 - Parse the access token or pass it to the add-in’s server-side code.
 
 The following code shows a simple example of calling `getAccessToken` and parsing the token for the user name and other credentials.
@@ -116,7 +116,7 @@ The following code shows a simple example of calling `getAccessToken` and parsin
 ```js
 async function getUserData() {
     try {
-        let userTokenEncoded = await OfficeConfigure your Office Add-in to use a shared runtime.auth.getAccessToken();
+        let userTokenEncoded = await Officeruntime.auth.getAccessToken();
         let userToken = jwt_decode(userTokenEncoded); // Using the https://www.npmjs.com/package/jwt-decode library.
         console.log(userToken.name); // user name
         console.log(userToken.preferred_username); // email
@@ -136,7 +136,7 @@ async function getUserData() {
 
 #### When to call getAccessToken
 
-If your add-in requires a signed in user, then you should call `getAccessToken` from inside `Office.initialize`. You should also pass `allowSignInPrompt: true` in the `options` parameter of `getAccessToken`. For example; `OfficeConfigure your Office Add-in to use a shared runtime.auth.getAccessToken( { allowSignInPrompt: true });` This will ensure that if the user is not yet signed in, that Office prompts the user through the UI to sign in now.
+If your add-in requires a signed in user, then you should call `getAccessToken` from inside `Office.initialize`. You should also pass `allowSignInPrompt: true` in the `options` parameter of `getAccessToken`. For example; `Officeruntime.auth.getAccessToken( { allowSignInPrompt: true });` This will ensure that if the user is not yet signed in, that Office prompts the user through the UI to sign in now.
 
 If the add-in has some functionality that doesn't require a signed in user, then you can call `getAccessToken` *when the user takes an action that requires a signed in user*. There is no significant performance degradation with redundant calls of `getAccessToken` because Office caches the access token and will reuse it, until it expires, without making another call to the [Microsoft identity platform](/azure/active-directory/develop/) whenever `getAccessToken` is called. So you can add calls of `getAccessToken` to all functions and handlers that initiate an action where the token is needed.
 

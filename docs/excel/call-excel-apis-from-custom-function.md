@@ -13,7 +13,7 @@ Call Excel JavaScript APIs from your custom functions to get range data and obta
 - A custom function will set the cell's number format for the return values after calculation.
 
 > [!IMPORTANT]
-> To call Excel JavaScript APIs from your custom function, you'll need to use a [shared Configure your Office Add-in to use a shared runtime](../testing/Configure your Office Add-in to use a shared runtimes.md#shared-Configure your Office Add-in to use a shared runtime). See [Configure your Office Add-in to use a shared JavaScript Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-Configure your Office Add-in to use a shared runtime.md) to learn more.
+> To call Excel JavaScript APIs from your custom function, you'll need to use a [shared runtime](../testing/runtimes.md#shared-runtime). See [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
 
 ## Code sample
 
@@ -63,4 +63,4 @@ Instead, make changes to Excel from the context of a ribbon button, or task pane
 ## See also
 
 - [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [Configure your Office Add-in to use a shared JavaScript Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-Configure your Office Add-in to use a shared runtime.md)
+- [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

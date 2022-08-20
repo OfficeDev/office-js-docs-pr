@@ -1,6 +1,6 @@
 ---
 title: Error handling with the application-specific JavaScript APIs
-description: Learn about Excel, Word, PowerPoint, and other application-specific JavaScript API error handling logic to account for Configure your Office Add-in to use a shared runtime errors.
+description: Learn about Excel, Word, PowerPoint, and other application-specific JavaScript API error handling logic to account for runtime errors.
 ms.date: 07/05/2022
 ms.localizationpriority: medium
 ---
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Error handling with the application-specific JavaScript APIs
 
-When you build an add-in using the [application-specific Office JavaScript APIs](../develop/application-specific-api-model.md), be sure to include error handling logic to account for Configure your Office Add-in to use a shared runtime errors. Doing so is critical, due to the asynchronous nature of the APIs.
+When you build an add-in using the [application-specific Office JavaScript APIs](../develop/application-specific-api-model.md), be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the APIs.
 
 ## Best practices
 

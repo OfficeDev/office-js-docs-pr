@@ -21,7 +21,7 @@ Office Add-ins are web applications that are displayed inside IFrames when runni
 If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser control that is based on Internet Explorer 11 (IE11). For information about which combinations of Windows and Office use the IE11-based browser control, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!IMPORTANT]
-> Internet Explorer 11 doesn't support some HTML5 features such as media, recording, and location. If your add-in must support Internet Explorer 11, then you must either design the add-in to avoid these unsupported features or the add-in must detect when Internet Explorer is being used and provide an alternate experience that doesn't use the unsupported features. For more information, see [Determine at Configure your Office Add-in to use a shared runtime if the add-in is running in Internet Explorer](#determine-at-Configure your Office Add-in to use a shared runtime-if-the-add-in-is-running-in-internet-explorer).
+> Internet Explorer 11 doesn't support some HTML5 features such as media, recording, and location. If your add-in must support Internet Explorer 11, then you must either design the add-in to avoid these unsupported features or the add-in must detect when Internet Explorer is being used and provide an alternate experience that doesn't use the unsupported features. For more information, see [Determine at runtime if the add-in is running in Internet Explorer](#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
 
 ## Support for recent versions of JavaScript
 
@@ -51,7 +51,7 @@ Importing the entire core-js library will import all core-js features. You can a
 
 For a sample add-in that uses core.js, see [Word Add-in Angular2 StyleChecker](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
-## Determine at Configure your Office Add-in to use a shared runtime if the add-in is running in Internet Explorer
+## Determine at runtime if the add-in is running in Internet Explorer
 
 Your add-in can discover if it is running in Internet Explorer by reading the [window.navigator.userAgent](https://developer.mozilla.org/docs/Web/API/Navigator/userAgent) property. This enables the add-in to either provide an alternate experience or gracefully fail. The following is an example. Note that Internet Explorer sends a string beginning with "Trident" as the value of userAgent.
 

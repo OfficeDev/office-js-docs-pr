@@ -1,19 +1,19 @@
 ---
 ms.date: 06/15/2022
-description: Understand Excel custom functions that don't use a shared Configure your Office Add-in to use a shared runtime and their specific JavaScript Configure your Office Add-in to use a shared runtime.
-title: JavaScript-only Configure your Office Add-in to use a shared runtime for custom functions
+description: Understand Excel custom functions that don't use a shared runtime and their specific JavaScript runtime.
+title: JavaScript-only runtime for custom functions
 ms.localizationpriority: medium
 ---
 
-# JavaScript-only Configure your Office Add-in to use a shared runtime for custom functions
+# JavaScript-only runtime for custom functions
 
-Custom functions that don't use a shared Configure your Office Add-in to use a shared runtime use a [JavaScript-only Configure your Office Add-in to use a shared runtime](../testing/Configure your Office Add-in to use a shared runtimes.md#javascript-only-Configure your Office Add-in to use a shared runtime) that is designed to optimize performance of calculations.
+Custom functions that don't use a shared runtime use a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime) that is designed to optimize performance of calculations.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-[!include[Shared Configure your Office Add-in to use a shared runtime note](../includes/shared-Configure your Office Add-in to use a shared runtime-note.md)]
+[!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
-This JavaScript Configure your Office Add-in to use a shared runtime provides access to APIs in the `OfficeConfigure your Office Add-in to use a shared runtime` namespace that can be used by custom functions and the task pane (which runs in a different Configure your Office Add-in to use a shared runtime) to store data.
+This JavaScript runtime provides access to APIs in the `Officeruntime` namespace that can be used by custom functions and the task pane (which runs in a different runtime) to store data.
 
 ## Request external data
 
@@ -25,9 +25,9 @@ A simple CORS implementation cannot use cookies and only supports simple methods
 
 ## Store and access data
 
-Within a custom function that doesn't use a shared Configure your Office Add-in to use a shared runtime, you can store and access data by using the [OfficeConfigure your Office Add-in to use a shared runtime.storage](/javascript/api/office-Configure your Office Add-in to use a shared runtime/officeConfigure your Office Add-in to use a shared runtime.storage) object. The `Storage` object is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), which cannot be used by custom functions that use the JavaScript-only Configure your Office Add-in to use a shared runtime. The `Storage` object offers 10 MB of data per domain. Domains can be shared by more than one add-in.
+Within a custom function that doesn't use a shared runtime, you can store and access data by using the [Officeruntime.storage](/javascript/api/office-runtime/officeruntime.storage) object. The `Storage` object is a persistent, unencrypted, key-value storage system that provides an alternative to [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), which cannot be used by custom functions that use the JavaScript-only runtime. The `Storage` object offers 10 MB of data per domain. Domains can be shared by more than one add-in.
 
-The `Storage` object is a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in the `Storage` object because it can be accessed by both a custom function (using the JavaScript-only Configure your Office Add-in to use a shared runtime) and a task pane (using a full webview Configure your Office Add-in to use a shared runtime). Similarly, if two add-ins share the same domain (for example, `www.contoso.com/addin1`, `www.contoso.com/addin2`), they are also permitted to share information back and forth through the `Storage` object. Note that add-ins which have different subdomains will have different instances of `Storage` (for example, `subdomain.contoso.com/addin1`, `differentsubdomain.contoso.com/addin2`).
+The `Storage` object is a shared storage solution, meaning multiple parts of an add-in are able to access the same data. For example, tokens for user authentication may be stored in the `Storage` object because it can be accessed by both a custom function (using the JavaScript-only runtime) and a task pane (using a full webview runtime). Similarly, if two add-ins share the same domain (for example, `www.contoso.com/addin1`, `www.contoso.com/addin2`), they are also permitted to share information back and forth through the `Storage` object. Note that add-ins which have different subdomains will have different instances of `Storage` (for example, `subdomain.contoso.com/addin1`, `differentsubdomain.contoso.com/addin2`).
 
 Because the `Storage` object can be a shared location, it is important to realize that it is possible to override key-value pairs.
 
@@ -44,14 +44,14 @@ The following methods are available on the `Storage` object.
 > [!NOTE]
 > There's no method for clearing all information (such as `clear`). Instead, you should instead use `removeItems` to remove multiple entries at a time.
 
-### OfficeConfigure your Office Add-in to use a shared runtime.storage example
+### Officeruntime.storage example
 
-The following code sample calls the `OfficeConfigure your Office Add-in to use a shared runtime.storage.setItem` method to set a key and value into `storage`.
+The following code sample calls the `Officeruntime.storage.setItem` method to set a key and value into `storage`.
 
 ```js
 function StoreValue(key, value) {
 
-  return OfficeConfigure your Office Add-in to use a shared runtime.storage.setItem(key, value).then(function (result) {
+  return Officeruntime.storage.setItem(key, value).then(function (result) {
       return "Success: Item with key '" + key + "' saved to storage.";
   }, function (error) {
       return "Error: Unable to save item with key '" + key + "' to storage. " + error;
@@ -65,7 +65,7 @@ Learn how to [debug custom functions](custom-functions-debugging.md).
 
 ## See also
 
-- [Authentication for custom functions without a shared Configure your Office Add-in to use a shared runtime](custom-functions-authentication.md)
+- [Authentication for custom functions without a shared runtime](custom-functions-authentication.md)
 - [Create custom functions in Excel](custom-functions-overview.md)
 - [Custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
-- [JavaScript-only Configure your Office Add-in to use a shared runtime](../testing/Configure your Office Add-in to use a shared runtimes.md#javascript-only-Configure your Office Add-in to use a shared runtime)
+- [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime)

@@ -63,7 +63,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To enable event-based activation of your add-in, you must configure the [Configure your Office Add-in to use a shared runtimes](/javascript/api/manifest/Configure your Office Add-in to use a shared runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point in the `VersionOverridesV1_1` node of the manifest. For now, `DesktopFormFactor` is the only supported form factor.
+To enable event-based activation of your add-in, you must configure the [runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point in the `VersionOverridesV1_1` node of the manifest. For now, `DesktopFormFactor` is the only supported form factor.
 
 1. In your code editor, open the quick start project.
 
@@ -81,15 +81,15 @@ To enable event-based activation of your add-in, you must configure the [Configu
     </Requirements>
     <Hosts>
       <Host xsi:type="MailHost">
-        <!-- Event-based activation happens in a lightweight Configure your Office Add-in to use a shared runtime.-->
-        <Configure your Office Add-in to use a shared runtimes>
+        <!-- Event-based activation happens in a lightweight runtime.-->
+        <runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and Outlook on the new Mac UI. -->
-          <Configure your Office Add-in to use a shared runtime resid="WebViewConfigure your Office Add-in to use a shared runtime.Url">
+          <runtime resid="WebViewruntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
-            <Override type="javascript" resid="JSConfigure your Office Add-in to use a shared runtime.Url"/>
-          </Configure your Office Add-in to use a shared runtime>
-        </Configure your Office Add-in to use a shared runtimes>
+            <Override type="javascript" resid="JSruntime.Url"/>
+          </runtime>
+        </runtimes>
         <DesktopFormFactor>
           <FunctionFile resid="Commands.Url" />
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
@@ -155,8 +155,8 @@ To enable event-based activation of your add-in, you must configure the [Configu
               <LaunchEvent Type="OnAppointmentSend" FunctionName="onAppointmentSendHandler" SendMode="PromptUser" />
               -->
             </LaunchEvents>
-            <!-- Identifies the Configure your Office Add-in to use a shared runtime to be used (also referenced by the Configure your Office Add-in to use a shared runtime element). -->
-            <SourceLocation resid="WebViewConfigure your Office Add-in to use a shared runtime.Url"/>
+            <!-- Identifies the runtime to be used (also referenced by the runtime element). -->
+            <SourceLocation resid="WebViewruntime.Url"/>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
@@ -170,9 +170,9 @@ To enable event-based activation of your add-in, you must configure the [Configu
       <bt:Urls>
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
-        <bt:Url id="WebViewConfigure your Office Add-in to use a shared runtime.Url" DefaultValue="https://localhost:3000/commands.html" />
+        <bt:Url id="WebViewruntime.Url" DefaultValue="https://localhost:3000/commands.html" />
         <!-- Entry needed for Outlook on Windows. -->
-        <bt:Url id="JSConfigure your Office Add-in to use a shared runtime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
+        <bt:Url id="JSruntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
@@ -188,11 +188,11 @@ To enable event-based activation of your add-in, you must configure the [Configu
 </VersionOverrides>
 ```
 
-Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the `Configure your Office Add-in to use a shared runtime` element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
+Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the `runtime` element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
 
 > [!TIP]
 > 
-> - To learn about Configure your Office Add-in to use a shared runtimes in add-ins, see [Configure your Office Add-in to use a shared runtimes in Office Add-ins](../testing/Configure your Office Add-in to use a shared runtimes.md).
+> - To learn about runtimes in add-ins, see [runtimes in Office Add-ins](../testing/runtimes.md).
 > - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
 ## Implement event handling
@@ -312,7 +312,7 @@ As you make changes to launch-event handling in your add-in, you should be aware
 
 While implementing your own functionality, you may need to debug your code. For guidance on how to debug event-based add-in activation, see [Debug your event-based Outlook add-in](debug-autolaunch.md).
 
-Configure your Office Add-in to use a shared runtime logging is also available for this feature on Windows. For more information, see [Debug your add-in with Configure your Office Add-in to use a shared runtime logging](../testing/Configure your Office Add-in to use a shared runtime-logging.md#Configure your Office Add-in to use a shared runtime-logging-on-windows).
+runtime logging is also available for this feature on Windows. For more information, see [Debug your add-in with runtime logging](../testing/runtime-logging.md#runtime-logging-on-windows).
 
 [!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
@@ -341,7 +341,7 @@ Some Office.js APIs that change or alter the UI are not allowed from event-based
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > [OfficeConfigure your Office Add-in to use a shared runtime.auth](/javascript/api/office-Configure your Office Add-in to use a shared runtime/officeConfigure your Office Add-in to use a shared runtime.auth) is supported in all Outlook versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
+    > [Officeruntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all Outlook versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
 - Under `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`

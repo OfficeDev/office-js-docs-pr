@@ -74,12 +74,12 @@ The following samples show how to build the simplest Office Add-in with only a m
 | [Single Sign-on (SSO) Office Add-in with ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on ASP.NET. |
 | [Single Sign-on (SSO) Office Add-in with Node.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on Node.js.|
 
-## Shared Configure your Office Add-in to use a shared runtime
+## Shared runtime
 
 | Name                | Description         |
 |:--------------------|:--------------------|
-| [Share global data with a shared Configure your Office Add-in to use a shared runtime](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-Configure your Office Add-in to use a shared runtime-global-state) | Set up a basic project that uses the shared Configure your Office Add-in to use a shared runtime to run code for ribbon buttons, task pane, and custom functions in a single browser Configure your Office Add-in to use a shared runtime. |
-| [Manage ribbon and task pane UI, and run code on doc open](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-Configure your Office Add-in to use a shared runtime-scenario) | Create contextual ribbon buttons that are enabled based on the state of your add-in. |
+| [Share global data with a shared runtime](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-global-state) | Set up a basic project that uses the shared runtime to run code for ribbon buttons, task pane, and custom functions in a single browser runtime. |
+| [Manage ribbon and task pane UI, and run code on doc open](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-scenario) | Create contextual ribbon buttons that are enabled based on the state of your add-in. |
 
 <br>
 

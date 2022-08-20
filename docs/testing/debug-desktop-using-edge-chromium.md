@@ -6,13 +6,13 @@ ms.localizationpriority: high
 ---
 # Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 
-Office Add-ins running on Windows can debug against the Edge Chromium WebView2 Configure your Office Add-in to use a shared runtime directly in Visual Studio Code.
+Office Add-ins running on Windows can debug against the Edge Chromium WebView2 runtime directly in Visual Studio Code.
 
 > [!IMPORTANT]
-> This article only applies when Office runs add-ins in the Microsoft Edge Chromium WebView2 Configure your Office Add-in to use a shared runtime, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio Code against Microsoft Edge Legacy with the original WebView (EdgeHTML) Configure your Office Add-in to use a shared runtime, see [Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
+> This article only applies when Office runs add-ins in the Microsoft Edge Chromium WebView2 runtime, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio Code against Microsoft Edge Legacy with the original WebView (EdgeHTML) runtime, see [Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
 
 > [!TIP]
-> If you cannot, or don't wish to, debug using tools built into Visual Studio Code; or you are encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Chromium WebView2 Configure your Office Add-in to use a shared runtime by using the Edge (Chromium-based) developer tools as described in [Debug add-ins using developer tools for Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
+> If you cannot, or don't wish to, debug using tools built into Visual Studio Code; or you are encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Chromium WebView2 runtime by using the Edge (Chromium-based) developer tools as described in [Debug add-ins using developer tools for Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
 
 This debugging mode is dynamic, allowing you to set breakpoints while code is running. See changes in your code immediately while the debugger is attached, all without losing your debugging session. Your code changes also persist, so you see the results of multiple changes to your code. The following image shows this extension in action.
 
@@ -139,4 +139,4 @@ If your project was not created with Yo Office, you need to create a debug confi
 - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
 - [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
-- [Configure your Office Add-in to use a shared runtimes in Office Add-ins](Configure your Office Add-in to use a shared runtimes.md)
+- [runtimes in Office Add-ins](runtimes.md)

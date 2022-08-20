@@ -94,8 +94,8 @@ For this scenario, instead of running the `action` function on choosing the **Pe
           <bt:Urls>
             <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
             <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
-            <bt:Url id="WebViewConfigure your Office Add-in to use a shared runtime.Url" DefaultValue="https://localhost:3000/commands.html" />
-            <bt:Url id="JSConfigure your Office Add-in to use a shared runtime.Url" DefaultValue="https://localhost:3000/Configure your Office Add-in to use a shared runtime.js" />
+            <bt:Url id="WebViewruntime.Url" DefaultValue="https://localhost:3000/commands.html" />
+            <bt:Url id="JSruntime.Url" DefaultValue="https://localhost:3000/runtime.js" />
           </bt:Urls>
           <bt:ShortStrings>
             <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>

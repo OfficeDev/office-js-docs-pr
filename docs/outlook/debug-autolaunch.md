@@ -127,4 +127,4 @@ To prevent the **Debug Event-based handler** dialog from popping up and stop deb
 ## See also
 
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
-- [Debug your add-in with Configure your Office Add-in to use a shared runtime logging](../testing/Configure your Office Add-in to use a shared runtime-logging.md#Configure your Office Add-in to use a shared runtime-logging-on-windows)
+- [Debug your add-in with runtime logging](../testing/runtime-logging.md#runtime-logging-on-windows)

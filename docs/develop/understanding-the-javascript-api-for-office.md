@@ -26,7 +26,7 @@ An Office Add-in can use the Office JavaScript APIs to interact with content in 
 ## See also
 
 - [Office JavaScript API reference](../reference/javascript-api-for-office.md)
-- [Loading the DOM and Configure your Office Add-in to use a shared runtime environment](loading-the-dom-and-Configure your Office Add-in to use a shared runtime-environment.md)
+- [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md)
 - [Referencing the Office JavaScript API library](referencing-the-javascript-api-for-office-library-from-its-cdn.md)
 - [Initialize your Office Add-in](initialize-add-in.md)
-- [Configure your Office Add-in to use a shared runtimes in Office Add-ins](../testing/Configure your Office Add-in to use a shared runtimes.md)
+- [runtimes in Office Add-ins](../testing/runtimes.md)

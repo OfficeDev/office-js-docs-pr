@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 You may want to validate your add-in's manifest file to ensure that it's correct and complete. Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in. This article describes multiple ways to validate the manifest file.
 
 > [!NOTE]
-> For details about using Configure your Office Add-in to use a shared runtime logging to troubleshoot issues with your add-in's manifest, see [Debug your add-in with Configure your Office Add-in to use a shared runtime logging](Configure your Office Add-in to use a shared runtime-logging.md).
+> For details about using runtime logging to troubleshoot issues with your add-in's manifest, see [Debug your add-in with runtime logging](runtime-logging.md).
 
 ## Validate your manifest with the Yeoman generator for Office Add-ins
 
@@ -78,7 +78,7 @@ You can validate the manifest file against the [XML Schema Definition (XSD)](/op
 
 - [Office Add-ins XML manifest](../develop/add-in-manifests.md)
 - [Clear the Office cache](clear-cache.md)
-- [Debug your add-in with Configure your Office Add-in to use a shared runtime logging](Configure your Office Add-in to use a shared runtime-logging.md)
+- [Debug your add-in with runtime logging](runtime-logging.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)

@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 > - AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer, however it only issues a warning when the add-in does not support Internet Explorer; the add-in is not rejected by AppSource.
 > - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Internet Explorer.
 
-If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser control that is based on Internet Explorer 11 (IE11). You can use a command line to switch from more modern Configure your Office Add-in to use a shared runtimes used by add-ins to the Internet Explorer 11 Configure your Office Add-in to use a shared runtime for this testing. For information about which versions of Windows and Office use the Internet Explorer 11 web view control, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser control that is based on Internet Explorer 11 (IE11). You can use a command line to switch from more modern runtimes used by add-ins to the Internet Explorer 11 runtime for this testing. For information about which versions of Windows and Office use the Internet Explorer 11 web view control, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!IMPORTANT]
 > Internet Explorer 11 does not support JavaScript versions later than ES5. If you want to use the syntax and features of ECMAScript 2015 or later, you have two options:
@@ -26,7 +26,7 @@ If you plan to support older versions of Windows and Office, your add-in must wo
 >
 > For more information about these options, see [Support Internet Explorer 11](../develop/support-ie-11.md).
 >
-> Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location. To learn more, see [Determine at Configure your Office Add-in to use a shared runtime if the add-in is running in Internet Explorer](../develop/support-ie-11.md#determine-at-Configure your Office Add-in to use a shared runtime-if-the-add-in-is-running-in-internet-explorer).
+> Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location. To learn more, see [Determine at runtime if the add-in is running in Internet Explorer](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
 
 > [!NOTE]
 > - Office on the web cannot be opened in Internet Explorer 11, so you cannot (and do not need to) test your add-in on Office on the web with Internet Explorer.
@@ -58,4 +58,4 @@ There are two ways to switch the Internet Explorer webview. You can run a simple
 - [Sideload Office Add-ins for testing](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
-- [Configure your Office Add-in to use a shared runtimes in Office Add-ins](Configure your Office Add-in to use a shared runtimes.md)
+- [runtimes in Office Add-ins](runtimes.md)

@@ -27,7 +27,7 @@ Add-ins consist of two basic components:
 
 ## Using the JavaScript API
 
-Add-ins use the Configure your Office Add-in to use a shared runtime context of the Office application to access the JavaScript API. The API has two layers:
+Add-ins use the runtime context of the Office application to access the JavaScript API. The API has two layers:
 
 - A **application-specific API** for OneNote-specific operations, accessed through the `Application` object.
 - A **Common API** that's shared across Office applications, accessed through the `Document` object.
@@ -78,7 +78,7 @@ You can find supported OneNote objects and operations in the [API reference](../
 
 #### OneNote JavaScript API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a Configure your Office Add-in to use a shared runtime check to determine whether an Office application supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets).
 
 ### Accessing the Common API through the *Document* object
 

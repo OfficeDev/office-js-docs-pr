@@ -41,7 +41,7 @@ To set up your development environment:
     - Office/SharePoint development
     - The following **Individual** components.
         - Visual Studio Tools for Office (VSTO).
-        - .NET Core 3.0 Configure your Office Add-in to use a shared runtime.
+        - .NET Core 3.0 runtime.
 
 You also need the following:
 
@@ -325,7 +325,7 @@ The Office.js library requires CORS on outgoing calls, such as the one made from
     ```
 
     > [!NOTE]
-    > Leave the trailing `/` from the end of the URL when you use it in the `builder.WithOrigins` method. For example, it should appear similar to `https://localhost:44000`. Otherwise you will get a CORS error at Configure your Office Add-in to use a shared runtime.
+    > Leave the trailing `/` from the end of the URL when you use it in the `builder.WithOrigins` method. For example, it should appear similar to `https://localhost:44000`. Otherwise you will get a CORS error at runtime.
 
 1. Add the following field to the `Startup` class.
 
@@ -371,7 +371,7 @@ public class Startup
         services.AddControllers();
     }
 
-    // This method gets called by the Configure your Office Add-in to use a shared runtime. Use this method to configure the HTTP request pipeline.
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         if (env.IsDevelopment())

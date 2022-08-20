@@ -83,7 +83,7 @@ To create the web app using the Azure portal, complete the following steps.
 
       - Choose whether to publish using code or a docker container.
 
-      - Specify a **Configure your Office Add-in to use a shared runtime stack**.
+      - Specify a **runtime stack**.
 
       - Choose the **OS** for your site.
 

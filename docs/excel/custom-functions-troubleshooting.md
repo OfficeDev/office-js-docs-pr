@@ -10,17 +10,17 @@ When developing custom functions, you may encounter errors in the product while 
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-To resolve issues, you can [enable Configure your Office Add-in to use a shared runtime logging to capture errors](#enable-Configure your Office Add-in to use a shared runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return).
+To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return).
 
 ## Debugging custom functions
 
-To debug custom functions add-ins that use a [shared Configure your Office Add-in to use a shared runtime](..testing/Configure your Office Add-in to use a shared runtimes.md#shared-Configure your Office Add-in to use a shared runtime), see [Configure your Office Add-in to use a shared Configure your Office Add-in to use a shared runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-Configure your Office Add-in to use a shared runtime.md#debug).
+To debug custom functions add-ins that use a [shared runtime](..testing/runtimes.md#shared-runtime), see [Configure your Office Add-in to use a shared runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
 
-To debug custom functions add-ins that don't use a shared Configure your Office Add-in to use a shared runtime, see [Custom functions debugging](custom-functions-debugging.md).
+To debug custom functions add-ins that don't use a shared runtime, see [Custom functions debugging](custom-functions-debugging.md).
 
-## Enable Configure your Office Add-in to use a shared runtime logging
+## Enable runtime logging
 
-If you're testing your add-in in Office on Windows, you should [enable Configure your Office Add-in to use a shared runtime logging](../testing/Configure your Office Add-in to use a shared runtime-logging.md). Configure your Office Add-in to use a shared runtime logging delivers `console.log` statements to a separate log file you create to help you uncover issues. The statements cover a variety of errors, including errors pertaining to your add-in's XML manifest file, Configure your Office Add-in to use a shared runtime conditions, or installation of your custom functions. For more information about Configure your Office Add-in to use a shared runtime logging, see [Debug your add-in with Configure your Office Add-in to use a shared runtime logging](../testing/Configure your Office Add-in to use a shared runtime-logging.md).
+If you're testing your add-in in Office on Windows, you should [enable runtime logging](../testing/runtime-logging.md). runtime logging delivers `console.log` statements to a separate log file you create to help you uncover issues. The statements cover a variety of errors, including errors pertaining to your add-in's XML manifest file, runtime conditions, or installation of your custom functions. For more information about runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
 
 ### Check for Excel error messages
 
@@ -43,9 +43,9 @@ Information about custom functions is cached by Office. Sometimes while developi
 
 If you see the error "We can't open this add-in from localhost," you will need to enable a local loopback exemption. For details on how to do this, see [this Microsoft support article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
-### Configure your Office Add-in to use a shared runtime logging reports "TypeError: Network request failed" on Excel on Windows
+### runtime logging reports "TypeError: Network request failed" on Excel on Windows
 
-If you see the error "TypeError: Network request failed" in your [Configure your Office Add-in to use a shared runtime log](custom-functions-troubleshooting.md#enable-Configure your Office Add-in to use a shared runtime-logging) while making calls to your localhost server, you'll need to enable a local loopback exception. For details on how to do this, see *Option #2* in [this Microsoft support article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
+If you see the error "TypeError: Network request failed" in your [runtime log](custom-functions-troubleshooting.md#enable-runtime-logging) while making calls to your localhost server, you'll need to enable a local loopback exception. For details on how to do this, see *Option #2* in [this Microsoft support article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 ### Ensure promises return
 

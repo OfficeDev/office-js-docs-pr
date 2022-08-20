@@ -28,7 +28,7 @@ For examples of the error handling described in this section, see:
 
 ### 13000
 
-The [getAccessToken](/javascript/api/office-Configure your Office Add-in to use a shared runtime/officeConfigure your Office Add-in to use a shared runtime.auth#office-Configure your Office Add-in to use a shared runtime-officeConfigure your Office Add-in to use a shared runtime-auth-getaccesstoken-member(1)) API is not supported by the add-in or the Office version.
+The [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) API is not supported by the add-in or the Office version.
 
 - The version of Office does not support SSO. The required version is Microsoft 365 subscription, in any monthly channel.
 - The add-in manifest is missing the proper [WebApplicationInfo](/javascript/api/manifest/webapplicationinfo) section.

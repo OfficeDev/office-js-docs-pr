@@ -133,18 +133,18 @@ async function remove() {
 The performance of an add-in may be improved by disabling events.
 For example, your app might never need to receive events, or it could ignore events while performing batch-edits of multiple entities.
 
-Events are enabled and disabled at the [Configure your Office Add-in to use a shared runtime](/javascript/api/excel/excel.Configure your Office Add-in to use a shared runtime) level.
+Events are enabled and disabled at the [runtime](/javascript/api/excel/excel.runtime) level.
 The `enableEvents` property determines if events are fired and their handlers are activated.
 
 The following code sample shows how to toggle events on and off.
 
 ```js
 await Excel.run(async (context) => {
-    context.Configure your Office Add-in to use a shared runtime.load("enableEvents");
+    context.runtime.load("enableEvents");
     await context.sync();
 
-    let eventBoolean = !context.Configure your Office Add-in to use a shared runtime.enableEvents;
-    context.Configure your Office Add-in to use a shared runtime.enableEvents = eventBoolean;
+    let eventBoolean = !context.runtime.enableEvents;
+    context.runtime.enableEvents = eventBoolean;
     if (eventBoolean) {
         console.log("Events are currently on.");
     } else {

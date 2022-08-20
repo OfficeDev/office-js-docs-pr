@@ -23,7 +23,7 @@ Support for this asynchronous design in both rich and web clients is part of the
 
 ## Write the callback function for an "Async" method
 
-The callback function you pass as the *callback* argument to an "Async" method must declare a single parameter that the add-in Configure your Office Add-in to use a shared runtime will use to provide access to an [AsyncResult](/javascript/api/office/office.asyncresult) object when the callback function executes. You can write:
+The callback function you pass as the *callback* argument to an "Async" method must declare a single parameter that the add-in runtime will use to provide access to an [AsyncResult](/javascript/api/office/office.asyncresult) object when the callback function executes. You can write:
 
 - An anonymous function that must be written and passed directly in line with the call to the "Async" method as the *callback* parameter of the "Async" method.
 
@@ -184,7 +184,7 @@ function write(message){
 
 ### Asynchronous programming using the promises pattern to access data in bindings
 
-Instead of passing a callback function and waiting for the function to return before execution continues, the promises programming pattern immediately returns a promise object that represents its intended result. However, unlike true synchronous programming, under the covers the fulfillment of the promised result is actually deferred until the Office Add-ins Configure your Office Add-in to use a shared runtime environment can complete the request. An *onError* handler is provided to cover situations when the request can't be fulfilled.
+Instead of passing a callback function and waiting for the function to return before execution continues, the promises programming pattern immediately returns a promise object that represents its intended result. However, unlike true synchronous programming, under the covers the fulfillment of the promised result is actually deferred until the Office Add-ins runtime environment can complete the request. An *onError* handler is provided to cover situations when the request can't be fulfilled.
 
 The Office JavaScript API provides the [Office.select](/javascript/api/office#Office_select_expression__callback_) function to support the promises pattern for working with existing binding objects. The promise object returned to the `Office.select` function supports only the four methods that you can access directly from the [Binding](/javascript/api/office/office.binding) object: [getDataAsync](/javascript/api/office/office.binding#office-office-binding-getdataasync-member(1)), [setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1)), [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)), and [removeHandlerAsync](/javascript/api/office/office.binding#office-office-binding-removehandlerasync-member(1)).
 
@@ -210,7 +210,7 @@ function write(message){
 
 Replace the *BindingObjectAsyncMethod* placeholder with a call to any of the four `Binding` object methods supported by the promise object: `getDataAsync`, `setDataAsync`, `addHandlerAsync`, or `removeHandlerAsync`. Calls to these methods don't support additional promises. You must call them using the [nested callback function pattern](#asynchronous-programming-using-nested-callback-functions).
 
-After a `Binding` object promise is fulfilled, it can be reused in the chained method call as if it were a binding (the add-in Configure your Office Add-in to use a shared runtime won't asynchronously retry fulfilling the promise). If the `Binding` object promise can't be fulfilled, the add-in Configure your Office Add-in to use a shared runtime will try again to access the binding object the next time one of its asynchronous methods is invoked.
+After a `Binding` object promise is fulfilled, it can be reused in the chained method call as if it were a binding (the add-in runtime won't asynchronously retry fulfilling the promise). If the `Binding` object promise can't be fulfilled, the add-in runtime will try again to access the binding object the next time one of its asynchronous methods is invoked.
 
 The following code example uses the `select` function to retrieve a binding with the `id` "`cities`" from the `Bindings` collection, and then calls the [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) method to add an event handler for the [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) event of the binding.
 
@@ -393,4 +393,4 @@ readDocumentFileAsync(): Promise<any> {
 
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
-- [Configure your Office Add-in to use a shared runtimes in Office Add-ins](../testing/Configure your Office Add-in to use a shared runtimes.md)
+- [runtimes in Office Add-ins](../testing/runtimes.md)

@@ -527,7 +527,7 @@ Finally, open the **webpack.config.js** file found in the root directory of the 
 
     ```js
     entry: {
-      polyfill: ["core-js/stable", "regenerator-Configure your Office Add-in to use a shared runtime/Configure your Office Add-in to use a shared runtime"],
+      polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
       taskpane: "./src/taskpane/taskpane.js",
       commands: "./src/commands/commands.js",
       dialog: "./src/settings/dialog.js",

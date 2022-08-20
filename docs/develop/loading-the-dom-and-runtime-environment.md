@@ -1,20 +1,20 @@
 ---
-title: Loading the DOM and Configure your Office Add-in to use a shared runtime environment
-description: Load the DOM and Office Add-ins Configure your Office Add-in to use a shared runtime environment.
+title: Loading the DOM and runtime environment
+description: Load the DOM and Office Add-ins runtime environment.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
 ---
 
 
-# Loading the DOM and Configure your Office Add-in to use a shared runtime environment
+# Loading the DOM and runtime environment
 
-An add-in must ensure that both the DOM and the Office Add-ins [Configure your Office Add-in to use a shared runtime](../testing/Configure your Office Add-in to use a shared runtimes.md) environment are loaded before running its own custom logic.
+An add-in must ensure that both the DOM and the Office Add-ins [runtime](../testing/runtimes.md) environment are loaded before running its own custom logic.
 
 ## Startup of a content or task pane add-in
 
 The following figure shows the flow of events involved in starting a content or task pane add-in in Excel, PowerPoint, Project, or Word.
 
-![Flow of events when starting a content or task pane add-in.](../images/office15-app-sdk-loading-dom-agave-Configure your Office Add-in to use a shared runtime.png)
+![Flow of events when starting a content or task pane add-in.](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
 The following events occur when a content or task pane add-in starts.
 
@@ -24,11 +24,11 @@ The following events occur when a content or task pane add-in starts.
 
 3. The Office client application opens the add-in's HTML page in a browser control.
 
-    The next two steps, steps 4 and 5, occur asynchronously and in parallel. For this reason, your add-in's code must make sure that both the DOM and the add-in Configure your Office Add-in to use a shared runtime environment have finished loading before proceeding.
+    The next two steps, steps 4 and 5, occur asynchronously and in parallel. For this reason, your add-in's code must make sure that both the DOM and the add-in runtime environment have finished loading before proceeding.
 
 4. The browser control loads the DOM and HTML body, and calls the event handler for the `window.onload` event.
 
-5. The Office client application loads the Configure your Office Add-in to use a shared runtime environment, which downloads and caches the Office JavaScript API library files from the content distribution network (CDN) server, and then calls the add-in's event handler for the [initialize](/javascript/api/office#Office_initialize_reason_) event of the [Office](/javascript/api/office) object, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` method) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initialize your add-in](initialize-add-in.md).
+5. The Office client application loads the runtime environment, which downloads and caches the Office JavaScript API library files from the content distribution network (CDN) server, and then calls the add-in's event handler for the [initialize](/javascript/api/office#Office_initialize_reason_) event of the [Office](/javascript/api/office) object, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` method) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initialize your add-in](initialize-add-in.md).
 
 6. When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.
 
@@ -36,7 +36,7 @@ The following events occur when a content or task pane add-in starts.
 
 The following figure shows the flow of events involved in starting an Outlook add-in running on the desktop, tablet, or smartphone.
 
-![Flow of events when starting Outlook add-in.](../images/outlook15-loading-dom-agave-Configure your Office Add-in to use a shared runtime.png)
+![Flow of events when starting Outlook add-in.](../images/outlook15-loading-dom-agave-runtime.png)
 
 The following events occur when an Outlook add-in starts.
 
@@ -50,7 +50,7 @@ The following events occur when an Outlook add-in starts.
 
 5. The browser control loads the DOM and HTML body, and calls the event handler for the `onload` event.
 
-6. Outlook loads the Configure your Office Add-in to use a shared runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the event handler for the [initialize](/javascript/api/office#Office_initialize_reason_) event of the [Office](/javascript/api/office) object of the add-in, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` methods) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initialize your add-in](initialize-add-in.md).
+6. Outlook loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the event handler for the [initialize](/javascript/api/office#Office_initialize_reason_) event of the [Office](/javascript/api/office) object of the add-in, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` methods) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initialize your add-in](initialize-add-in.md).
 
 7. When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.
 
@@ -58,4 +58,4 @@ The following events occur when an Outlook add-in starts.
 
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Initialize your Office Add-in](initialize-add-in.md)
-- [Configure your Office Add-in to use a shared runtimes in Office Add-ins](../testing/Configure your Office Add-in to use a shared runtimes.md)
+- [runtimes in Office Add-ins](../testing/runtimes.md)
