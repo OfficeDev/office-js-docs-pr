@@ -30,7 +30,7 @@ function sphereVolume(radius) {
 ```
 
 > [!TIP]
-> If your custom function add-in will use a task pane or a ribbon button, in addition to running custom function code, you will need to set up a [shared runtime](..testing/runtimes.md#shared-runtime). To learn more, see [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+> If your custom function add-in will use a task pane or a ribbon button, in addition to running custom function code, you will need to set up a [shared runtime](../testing/runtimes.md#shared-runtime). To learn more, see [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## How a custom function is defined in code
 
@@ -95,4 +95,4 @@ Another easy way to try out custom functions is to use [Script Lab](https://apps
 - [Custom functions naming guidelines](custom-functions-naming.md)
 - [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
 - [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
-- [Runtimes in Office Add-ins](runtimes.md)
+- [Runtimes in Office Add-ins](../testing/runtimes.md)
