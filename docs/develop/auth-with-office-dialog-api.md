@@ -18,7 +18,7 @@ The dialog box that is opened with this API has the following characteristics.
 
 - It is [nonmodal](https://en.wikipedia.org/wiki/Dialog_box).
 - It is a completely separate browser instance from the task pane, meaning:
-  - It has its own JavaScript runtime environment and window object and global variables.
+  - It has its own runtime environment and window object and global variables.
   - There is no shared execution environment with the task pane.
   - It does not share the same session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property) as the task pane.
 - The first page opened in the dialog box must be hosted in the same domain as the task pane, including protocol, subdomains, and port, if any.

@@ -7,17 +7,17 @@ ms.localizationpriority: medium
 
 # Debug your add-in with runtime logging
 
-You can use runtime logging to debug your add-in's manifest as well as several installation errors. This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs. runtime logging is particularly  useful for debugging add-ins that implement add-in commands and Excel custom functions.
+You can use runtime logging to debug your add-in's manifest as well as several installation errors. This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs. Runtime logging is particularly  useful for debugging add-ins that implement add-in commands and Excel custom functions.
 
 > [!NOTE]
 > The runtime logging feature is currently available for Office 2016 or later on desktop.
 
 > [!IMPORTANT]
-> runtime Logging affects performance. Turn it on only when you need to debug issues with your add-in manifest.
+> Runtime Logging affects performance. Turn it on only when you need to debug issues with your add-in manifest.
 
 ## Use runtime logging from the command line
 
-Enabling runtime logging from the command line is the fastest way to use this logging tool. These use npx, which is provided by default as part of npm@5.2.0+. If you have an earlier version of [npm](https://www.npmjs.com/), try [runtime logging on Windows](#runtime-logging-on-windows) or [runtime logging on Mac](#runtime-logging-on-mac) instructions, or [install npx](https://www.npmjs.com/package/npx).
+Enabling runtime logging from the command line is the fastest way to use this logging tool. These use npx, which is provided by default as part of npm@5.2.0+. If you have an earlier version of [npm](https://www.npmjs.com/), try [Runtime logging on Windows](#runtime-logging-on-windows) or [Runtime logging on Mac](#runtime-logging-on-mac) instructions, or [install npx](https://www.npmjs.com/package/npx).
 
 [!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
@@ -51,7 +51,7 @@ Enabling runtime logging from the command line is the fastest way to use this lo
     npx office-addin-dev-settings runtime-log --help
     ```
 
-## runtime logging on Windows
+## Runtime logging on Windows
 
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later.
 
@@ -68,7 +68,7 @@ The following image shows what the registry should look like. To turn the featur
 
 ![Screenshot of the registry editor with a runtimeLogging registry key.](../images/runtime-logging-registry.png)
 
-## runtime logging on Mac
+## Runtime logging on Mac
 
 1. Make sure that you are running Office 2016 desktop build **16.27** (19071500) or later.
 
@@ -141,4 +141,4 @@ You might see messages in the log file that are confusing or that are classified
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md) 
-- [runtimes in Office Add-ins](runtimes.md)
+- [Runtimes in Office Add-ins](runtimes.md)

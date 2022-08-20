@@ -1,13 +1,13 @@
 ---
-title: runtimes in Office Add-ins
-description: Learn about the JavaScript runtimes that are used by Office Add-ins.
+title: Runtimes in Office Add-ins
+description: Learn about the runtimes that are used by Office Add-ins.
 ms.date: 08/10/2022
 ms.localizationpriority: medium
 ---
 
-# runtimes in Office Add-ins
+# Runtimes in Office Add-ins
 
-Office Add-ins execute in JavaScript runtimes embedded in Office. As an interpreted language, JavaScript must run in a JavaScript engine. As a single-threaded, synchronous language, JavaScript has no inherent capacity for concurrent execution; but modern JavaScript engines can request concurrent operations (including networking communication) from the host operating system and receive data from the OS in response. This kind of engine makes JavaScript *effectively* asynchronous. In this article, engines of this sort are called *runtimes*. [Node.js](https://nodejs.org) and modern browsers are examples of such runtimes. 
+Office Add-ins execute in runtimes embedded in Office. As an interpreted language, JavaScript must run in a JavaScript engine. As a single-threaded, synchronous language, JavaScript has no inherent capacity for concurrent execution; but modern JavaScript engines can request concurrent operations (including networking communication) from the host operating system and receive data from the OS in response. This kind of engine makes JavaScript *effectively* asynchronous. In this article, engines of this sort are called *runtimes*. [Node.js](https://nodejs.org) and modern browsers are examples of such runtimes. 
 
 ## Types of runtimes
 
@@ -67,7 +67,7 @@ Depending on the host Office application and the features used in the add-in, th
 
 - An Excel add-in with the same features and is configured to share the same runtime across the task pane, function command, and custom function, has *two* runtimes. A shared runtime can open only one dialog at a time.
 - An Excel add-in with the same features, except that it has no dialog, and is configured to share the same runtime across the task pane, function command, and custom function, has *one* runtime.
-- An Outlook add-in that has the following features has as many as *four* runtimes. (runtimes cannot be shared in Outlook.)
+- An Outlook add-in that has the following features has as many as *four* runtimes. (Runtimes cannot be shared in Outlook.)
 
   - A task pane
   - A function command

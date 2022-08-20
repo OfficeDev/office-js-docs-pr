@@ -24,4 +24,4 @@ Fortunately, there is an exception. You can debug these functions using Office o
 
 ## See also
 
-- [runtimes in Office Add-ins](runtimes.md)
+- [Runtimes in Office Add-ins](runtimes.md)

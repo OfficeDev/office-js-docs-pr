@@ -42,12 +42,12 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
     <Hosts>
       <Host xsi:type="MailHost">
         <!-- Event-based activation happens in a lightweight runtime.-->
-        <runtimes>
+        <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and on the new Mac UI. -->
-          <runtime resid="WebViewruntime.Url">
+          <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
-            <Override type="javascript" resid="JSruntime.Url"/>
+            <Override type="javascript" resid="JSRuntime.Url"/>
           </runtime>
         </runtimes>
         <DesktopFormFactor>
@@ -98,7 +98,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the runtime element). -->
-            <SourceLocation resid="WebViewruntime.Url"/>
+            <SourceLocation resid="WebViewRuntime.Url"/>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
@@ -112,9 +112,9 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
       <bt:Urls>
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
-        <bt:Url id="WebViewruntime.Url" DefaultValue="https://localhost:3000/commands.html" />
+        <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
         <!-- Entry needed for Outlook on Windows. -->
-        <bt:Url id="JSruntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
+        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>

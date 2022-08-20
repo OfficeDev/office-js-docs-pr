@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Develop your Office Add-in to work with ITP when using third-party cookies
 
-If your Office Add-in requires third-party cookies, those cookies are blocked if Intelligent Tracking Prevention (ITP) is used by the [runtime](../testing/runtimes.md) that loaded your add-in. You may be using third-party cookies to authenticate users, or for other scenarios, such as storing settings.
+If your Office Add-in requires third-party cookies, those cookies are blocked if Intelligent Tracking Prevention (ITP) is used by the [Runtime](../testing/runtimes.md) that loaded your add-in. You may be using third-party cookies to authenticate users, or for other scenarios, such as storing settings.
 
 If your Office Add-in and website must rely on third-party cookies, use the following steps to work with ITP.
 

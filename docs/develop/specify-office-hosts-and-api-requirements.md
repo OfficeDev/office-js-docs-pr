@@ -146,10 +146,10 @@ If your add-in uses a specific extensibility feature for some of its functionali
 
 You implement this design differently depending on how the extensibility feature is implemented:
 
-- For features implemented entirely with JavaScript, see [runtime checks for method and requirement set support](#runtime-checks-for-method-and-requirement-set-support).
+- For features implemented entirely with JavaScript, see [Runtime checks for method and requirement set support](#runtime-checks-for-method-and-requirement-set-support).
 - For features that require you to configure a **\<VersionOverrides\>** element, see [Specifying requirements in a VersionOverrides element](#specify-requirements-in-a-versionoverrides-element).
 
-### runtime checks for method and requirement set support
+### Runtime checks for method and requirement set support
 
 You test at runtime to discover whether the user's Office supports a requirement set with the [isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-issetsupported-member(1)) method. Pass the requirement set's name and the minimum version as parameters. If the requirement set is supported, `isSetSupported` returns `true`. The following code shows an example.
 
@@ -242,7 +242,7 @@ The following is an example.
 ```
 
 > [!WARNING]
-> Use great care before using a **\<Requirements\>** element in a **\<VersionOverrides\>**, because on platform and version combinations that don't support the requirement, *none* of the add-in commands will be installed, *even those that invoke functionality that doesn't need the requirement*. Consider, for example, an add-in that has two custom ribbon buttons. One of them calls Office JavaScript APIs that are available in requirement set **ExcelApi 1.4** (and later). The other calls APIs that are only available in **ExcelApi 1.9** (and later). If you put a requirement for **ExcelApi 1.9** in the **\<VersionOverrides\>**, then when 1.9 is not supported *neither* button will appear on the ribbon. A better strategy in this scenario would be to use the technique described in [runtime checks for method and requirement set support](#runtime-checks-for-method-and-requirement-set-support). The code invoked by the second button first uses `isSetSupported` to check for support of **ExcelApi 1.9**. If it isn't supported, the code gives the user a message saying that this feature of the add-in is not available on their version of Office.
+> Use great care before using a **\<Requirements\>** element in a **\<VersionOverrides\>**, because on platform and version combinations that don't support the requirement, *none* of the add-in commands will be installed, *even those that invoke functionality that doesn't need the requirement*. Consider, for example, an add-in that has two custom ribbon buttons. One of them calls Office JavaScript APIs that are available in requirement set **ExcelApi 1.4** (and later). The other calls APIs that are only available in **ExcelApi 1.9** (and later). If you put a requirement for **ExcelApi 1.9** in the **\<VersionOverrides\>**, then when 1.9 is not supported *neither* button will appear on the ribbon. A better strategy in this scenario would be to use the technique described in [Runtime checks for method and requirement set support](#runtime-checks-for-method-and-requirement-set-support). The code invoked by the second button first uses `isSetSupported` to check for support of **ExcelApi 1.9**. If it isn't supported, the code gives the user a message saying that this feature of the add-in is not available on their version of Office.
 
 > [!TIP]
 > There's no point to repeating a **Requirement** element in a **\<VersionOverrides\>** that already appears in the base manifest. If the requirement is specified in the base manifest, then the add-in can't install where the requirement isn't supported so Office doesn't even parse the **\<VersionOverrides\>** element.

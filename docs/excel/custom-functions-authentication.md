@@ -26,7 +26,7 @@ When you need to authenticate from a custom function add-in that doesn't use a s
 If a token doesn't exist, you should use the `Officeruntime.dialog` API to ask the user to sign in. After a user enters their credentials, the resulting access token can be stored as an item in `Officeruntime.storage`.
 
 > [!NOTE]
-> The JavaScript-only runtime uses a dialog object that is slightly different from the dialog object in the browser engine runtime used by task panes. They're both referred to as the "Dialog API", but use [Officeruntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) to authenticate users in the JavaScript-only runtime, *not* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)).
+> The JavaScript-only runtime uses a dialog object that is slightly different from the dialog object in the browser runtime used by task panes. They're both referred to as the "Dialog API", but use [Officeruntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) to authenticate users in the JavaScript-only runtime, *not* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)).
 
 The following diagram outlines this basic process. The dotted line indicates that custom functions and your add-in's task pane are both part of your add-in as a whole, though they use separate runtimes.
 

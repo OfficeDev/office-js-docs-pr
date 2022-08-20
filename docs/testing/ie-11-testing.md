@@ -58,4 +58,4 @@ There are two ways to switch the Internet Explorer webview. You can run a simple
 - [Sideload Office Add-ins for testing](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
-- [runtimes in Office Add-ins](runtimes.md)
+- [Runtimes in Office Add-ins](runtimes.md)

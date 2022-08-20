@@ -58,7 +58,7 @@ The following provides general guidance to debugging on Windows. Debugging on Wi
     - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
     - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
 
-For information about which runtime is being used, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [runtimes in Office Add-ins](runtimes.md).
+For information about which runtime is being used, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [Runtimes in Office Add-ins](runtimes.md).
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
@@ -84,4 +84,4 @@ To debug an add-in that is already in staging or production, attach a debugger f
 
 ## See also
 
-- [runtimes in Office Add-ins](runtimes.md)
+- [Runtimes in Office Add-ins](runtimes.md)

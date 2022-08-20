@@ -65,7 +65,7 @@ To determine whether Office 2016 or Office 2019 is consumer or commercial, use t
 
 <sup>1</sup> When you use Microsoft Edge, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Internet Explorer 11, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
 
-<sup>2</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it will not use Microsoft Edge with the original WebView (EdgeHTML). If the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, then the add-in uses that browser. Otherwise, it uses Internet Explorer 11. For more information, see [runtimes](/javascript/api/manifest/runtimes).
+<sup>2</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it will not use Microsoft Edge with the original WebView (EdgeHTML). If the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, then the add-in uses that browser. Otherwise, it uses Internet Explorer 11. For more information, see [Runtimes](/javascript/api/manifest/runtimes).
 
 <sup>3</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with perpetual Office 2021 or later; but it isn't automatically installed with Microsoft Edge. If you have an earlier version of perpetual Office, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
@@ -86,7 +86,7 @@ For subscription Office on Windows, the browser that is used is determined by th
 
 <sup>2</sup> See the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19) for more details.
 
-<sup>3</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it will not use Microsoft Edge with the original WebView (EdgeHTML). If the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, then the add-in uses that browser. Otherwise, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [runtimes](/javascript/api/manifest/runtimes).
+<sup>3</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it will not use Microsoft Edge with the original WebView (EdgeHTML). If the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, then the add-in uses that browser. Otherwise, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes).
 
 <sup>4</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with Microsoft 365, version 2101 or later, but it isn't automatically installed with Microsoft Edge. If you have an earlier version of Microsoft 365, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). On Microsoft 365 builds before 16.0.14326.xxxxx, you must also create the registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2** and set its value to `dword:00000001`.
 
@@ -137,4 +137,4 @@ To determine if a document is WIP-protected, follow these steps:
 ## See also
 
 - [Requirements for Running Office Add-ins](requirements-for-running-office-add-ins.md)
-- [runtimes in Office Add-ins](../testing/runtimes.md)
+- [Runtimes in Office Add-ins](../testing/runtimes.md)

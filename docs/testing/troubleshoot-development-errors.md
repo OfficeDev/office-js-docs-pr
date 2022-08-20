@@ -115,5 +115,5 @@ When you're loading the Office JavaScript Library from a local copy instead of f
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
 - [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)
-- [runtimes in Office Add-ins](runtimes.md)
+- [Runtimes in Office Add-ins](runtimes.md)
 - [Microsoft Q&A (office-js-dev)](/answers/topics/office-js-dev.html)

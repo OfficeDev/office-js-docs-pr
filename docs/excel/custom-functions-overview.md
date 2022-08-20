@@ -94,5 +94,5 @@ Another easy way to try out custom functions is to use [Script Lab](https://apps
 - [Custom functions requirement sets](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
 - [Custom functions naming guidelines](custom-functions-naming.md)
 - [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)
-- [Configure your Office Add-in to use a JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
-- [runtimes in Office Add-ins](runtimes.md)
+- [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Runtimes in Office Add-ins](runtimes.md)

@@ -117,4 +117,4 @@ If your project was not created with Yo Office, you need to create a debug confi
 - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
 - [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
-- [runtimes in Office Add-ins](runtimes.md)
+- [Runtimes in Office Add-ins](runtimes.md)

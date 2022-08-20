@@ -29,4 +29,4 @@ If your development computer is Windows, there is a way that you can debug a fun
 
 ## See also
 
-- [runtimes in Office Add-ins](runtimes.md)
+- [Runtimes in Office Add-ins](runtimes.md)

@@ -99,5 +99,5 @@ You may encounter issues if you run the quick start multiple times. If the Offic
 
 - [Custom functions overview](../excel/custom-functions-overview.md)
 - [Custom functions metadata](../excel/custom-functions-json.md)
-- [runtime for Excel custom functions](../excel/custom-functions-runtime.md)
+- [Runtime for Excel custom functions](../excel/custom-functions-runtime.md)
 - [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
