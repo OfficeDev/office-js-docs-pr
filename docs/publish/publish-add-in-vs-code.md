@@ -107,7 +107,7 @@ Next you need to add a MIME type for JSON files.
 
     When the build completes, the **dist** folder in the root directory of your add-in project will contain the files that you'll deploy.
 
-1. To deploy, select the Files explorer, select and hold (right-click) your **dist** folder, and choose **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously. If you already deployed the **dist** folder, you'll be prompted if you want to overwrite the files in the Azure storage with the latest changes.
+1. To deploy, in the **File Explorer**, select and hold (right-click) your **dist** folder, and choose **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously. If you already deployed the **dist** folder, you'll be prompted if you want to overwrite the files in the Azure storage with the latest changes.
 
 ## See also
 
