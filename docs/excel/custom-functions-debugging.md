@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Custom functions debugging
 
-This article discusses debugging only for custom functions that **don't use a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)**. To debug custom functions add-ins that use a shared runtime, see [Configure your Office Add-in to use a shared JavaScript runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
+This article discusses debugging only for custom functions that **don't use a [shared runtime](../testing/runtimes.md#shared-runtime)**. To debug custom functions add-ins that use a shared runtime, see [Configure your Office Add-in to use a shared runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -175,6 +175,7 @@ Learn about [Authentication for custom functions without a shared runtime](custo
 
 ## See also
 
-* [Custom functions troubleshooting](custom-functions-troubleshooting.md)
-* [Error handling for custom functions in Excel](custom-functions-errors.md)
-* [Create custom functions in Excel](custom-functions-overview.md)
+- [Custom functions troubleshooting](custom-functions-troubleshooting.md)
+- [Error handling for custom functions in Excel](custom-functions-errors.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
+- [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime)

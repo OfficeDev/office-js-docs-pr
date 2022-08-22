@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Authentication for custom functions without a shared runtime
 
-In some scenarios, a custom function that doesn't use a shared runtime will need to authenticate the user in order to access protected resources. Custom functions that don't use a shared runtime run in a JavaScript-only runtime. Because of this, if the add-in has a task pane, you'll need to pass data back and forth between the JavaScript-only runtime and the HTML-supporting runtime used by the task pane. You do this by using the [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) object and a special Dialog API.
+In some scenarios, a custom function that doesn't use a [shared runtime](../testing/runtimes.md#shared-runtime) will need to authenticate the user in order to access protected resources. Custom functions that don't use a shared runtime run in a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). Because of this, if the add-in has a task pane, you'll need to pass data back and forth between the JavaScript-only runtime and the HTML-supporting runtime used by the task pane. You do this by using the [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) object and a special Dialog API.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -26,7 +26,7 @@ When you need to authenticate from a custom function add-in that doesn't use a s
 If a token doesn't exist, you should use the `OfficeRuntime.dialog` API to ask the user to sign in. After a user enters their credentials, the resulting access token can be stored as an item in `OfficeRuntime.storage`.
 
 > [!NOTE]
-> The JavaScript-only runtime uses a dialog object that is slightly different from the dialog object in the browser engine runtime used by task panes. They're both referred to as the "Dialog API", but use [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) to authenticate users in the JavaScript-only runtime, *not* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)).
+> The JavaScript-only runtime uses a dialog object that is slightly different from the dialog object in the browser runtime used by task panes. They're both referred to as the "Dialog API", but use [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) to authenticate users in the JavaScript-only runtime, *not* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)).
 
 The following diagram outlines this basic process. The dotted line indicates that custom functions and your add-in's task pane are both part of your add-in as a whole, though they use separate runtimes.
 
@@ -144,3 +144,4 @@ Learn how to [debug custom functions](custom-functions-debugging.md).
 
 - [JavaScript-only runtime for custom functions](custom-functions-runtime.md)
 - [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+- [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime)

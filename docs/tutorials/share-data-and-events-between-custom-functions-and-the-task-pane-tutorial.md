@@ -28,7 +28,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
 
 1. Start Visual Studio Code and open the add-in project you generated.
 1. Open the **manifest.xml** file.
-1. Replace (or add) the following **\<Requirements\>** section XML to require the [shared runtime requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
+1. Replace (or add) the following **\<Requirements\>** section XML to require the [Shared Runtime requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>
@@ -75,7 +75,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
     ```
 
     > [!NOTE]
-    > If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+    > If your add-in includes the **\<Runtimes\>** element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 1. Find the **\<Page\>** element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
 
@@ -101,7 +101,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
 
 ## Configure the webpack.config.js file
 
-The **webpack.config.js** will build multiple runtime loaders. You need to modify it to load only the shared JavaScript runtime via the **taskpane.html** file.
+The **webpack.config.js** will build multiple runtime loaders. You need to modify it to load only the shared runtime via the **taskpane.html** file.
 
 1. Open the **webpack.config.js** file.
 1. Go to the `plugins:` section.
@@ -142,7 +142,7 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
     ```
 
     > [!NOTE]
-    > You can also remove the **functions.html** and **commands.html** files. The **taskpane.html** loads the **functions.js** and **commands.js** code into the shared JavaScript runtime via the webpack updates you just made.
+    > You can also remove the **functions.html** and **commands.html** files. The **taskpane.html** loads the **functions.js** and **commands.js** code into the shared runtime via the webpack updates you just made.
 
 1. Save your changes and run the project. Ensure that it loads and runs with no errors.
 
@@ -270,4 +270,4 @@ Once Excel starts, you can use the task pane buttons to store or get shared data
 
 ## See also
 
-- [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

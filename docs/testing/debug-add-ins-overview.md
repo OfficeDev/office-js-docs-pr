@@ -58,7 +58,7 @@ The following provides general guidance to debugging on Windows. Debugging on Wi
     - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
     - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
 
-For information about which browser runtime is being used, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+For information about which runtime is being used, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [Runtimes in Office Add-ins](runtimes.md).
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
@@ -81,3 +81,7 @@ There is no desktop version of Office for Linux, so you'll need to [sideload the
 ## Debug add-ins in staging or production
 
 To debug an add-in that is already in staging or production, attach a debugger from the UI of the add-in. For instructions, see [Attach a debugger from the task pane](attach-debugger-from-task-pane.md).
+
+## See also
+
+- [Runtimes in Office Add-ins](runtimes.md)

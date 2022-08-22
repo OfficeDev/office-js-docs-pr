@@ -1,19 +1,19 @@
 ---
 ms.date: 06/15/2022
-description: Understand Excel custom functions that don't use a shared runtime and their specific JavaScript runtime.
+description: Understand Excel custom functions that don't use a shared runtime and their specific JavaScript-only runtime.
 title: JavaScript-only runtime for custom functions
 ms.localizationpriority: medium
 ---
 
 # JavaScript-only runtime for custom functions
 
-Custom functions that don't use a shared runtime use a JavaScript-only runtime that is designed to optimize performance of calculations.
+Custom functions that don't use a shared runtime use a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime) that is designed to optimize performance of calculations.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
-This JavaScript runtime provides access to APIs in the `OfficeRuntime` namespace that can be used by custom functions and the task pane (which runs in a different runtime) to store data.
+This JavaScript-only runtime provides access to APIs in the `OfficeRuntime` namespace that can be used by custom functions and the task pane (which runs in a different runtime) to store data.
 
 ## Request external data
 
@@ -68,3 +68,4 @@ Learn how to [debug custom functions](custom-functions-debugging.md).
 - [Authentication for custom functions without a shared runtime](custom-functions-authentication.md)
 - [Create custom functions in Excel](custom-functions-overview.md)
 - [Custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+- [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime)

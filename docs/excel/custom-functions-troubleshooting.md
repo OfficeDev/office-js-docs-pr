@@ -14,7 +14,7 @@ To resolve issues, you can [enable runtime logging to capture errors](#enable-ru
 
 ## Debugging custom functions
 
-To debug custom functions add-ins that use a shared runtime, see [Configure your Office Add-in to use a shared JavaScript runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
+To debug custom functions add-ins that use a [shared runtime](../testing/runtimes.md#shared-runtime), see [Configure your Office Add-in to use a shared runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
 
 To debug custom functions add-ins that don't use a shared runtime, see [Custom functions debugging](custom-functions-debugging.md).
 

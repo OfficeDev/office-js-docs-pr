@@ -137,3 +137,4 @@ To determine if a document is WIP-protected, follow these steps:
 ## See also
 
 - [Requirements for Running Office Add-ins](requirements-for-running-office-add-ins.md)
+- [Runtimes in Office Add-ins](../testing/runtimes.md)
