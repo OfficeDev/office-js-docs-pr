@@ -50,7 +50,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 
 ## Deploy custom functions for Excel
 
-If your add-in has custom functions there are a few more steps to enable them on the Azure Storage account. First you need to enable CORS so that Office can access the functions.json file.
+If your add-in has custom functions, there are a few more steps to enable them on the Azure Storage account. First, enable CORS so that Office can access the functions.json file.
 
 1. Right-click the Azure storage account and choose **Open in Portal**.
 1. In the Settings group, choose **Resource sharing (CORS)**. You can also use the search box to find this.
@@ -69,7 +69,7 @@ If your add-in has custom functions there are a few more steps to enable them on
 > [!CAUTION]
 > This CORS configuration assumes all files on your server are publicly available to all domains.  
 
-Next you need to add a MIME type for JSON files.
+Next, add a MIME type for JSON files.
 
 1. Create a new file in the /src folder named **web.config**.
 1. Insert the following XML and save the file.
@@ -99,7 +99,7 @@ Next you need to add a MIME type for JSON files.
     }),
     ```
 
-1. Open a command line prompt and go to the root directory of your add-in project. Then run the following command to prepare all files for deployment.
+1. Open a command line prompt and go to the root directory of your add-in project. Then, run the following command to prepare all files for deployment.
 
     ```command&nbsp;line
     npm run build
@@ -107,7 +107,7 @@ Next you need to add a MIME type for JSON files.
 
     When the build completes, the **dist** folder in the root directory of your add-in project will contain the files that you'll deploy.
 
-1. To deploy, in the **File Explorer**, select and hold (right-click) your **dist** folder, and choose **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously. If you already deployed the **dist** folder, you'll be prompted if you want to overwrite the files in the Azure storage with the latest changes.
+1. To deploy, in the **File Explorer**, select and hold (or right-click) the **dist** folder, and choose **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously. If you already deployed the **dist** folder, you'll be prompted if you want to overwrite the files in the Azure storage with the latest changes.
 
 ## See also
 
