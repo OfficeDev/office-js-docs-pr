@@ -30,7 +30,7 @@ function sphereVolume(radius) {
 ```
 
 > [!TIP]
-> If your custom function add-in will use a task pane or a ribbon button, in addition to running custom function code, you will need to set up a [shared runtime](../testing/runtimes.md#shared-runtime). To learn more, see [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+> If your custom function add-in will use a task pane or a ribbon button, in addition to running custom function code, you'll need to set up a [shared runtime](../testing/runtimes.md#shared-runtime). To learn more, see [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## How a custom function is defined in code
 
@@ -70,7 +70,7 @@ The XML manifest file for an add-in that defines custom functions (**./manifest.
 - Uses **\<ExtensionPoint\>** and **\<Resources\>** elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.
 - Specifies which runtime to use for your custom function. We recommend always using a shared runtime unless you have a specific need for another runtime, because a shared runtime allows for the sharing of data between functions and the task pane.
 
-If you are using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create files, we recommend adjusting your manifest to use a shared runtime, as this is not the default for these files. To change your manifest, follow the instructions in [Configure your Excel add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+If you're using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create files, we recommend adjusting your manifest to use a shared runtime, as this is not the default for these files. To change your manifest, follow the instructions in [Configure your Excel add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 To see a full working manifest from a sample add-in, see the manifest in the [one of our Office Add-in samples Github repositories](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).
 
