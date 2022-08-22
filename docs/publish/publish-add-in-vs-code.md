@@ -42,7 +42,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 
     When the build completes, the **dist** folder in the root directory of your add-in project will contain the files that you'll deploy in subsequent steps.
 
-10. To deploy, select the Files explorer, select and hold (right-click) your **dist** folder, and choose **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously.
+10. To deploy, select File Explorer, select and hold (right-click) your **dist** folder, and choose **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously.
 
     :::image type="content" source="../images/deploy-to-static-website.png" alt-text="Selecting the dist folder, right-clicking, and choosing Deploy to Static Website via Azure Storage.":::
 
