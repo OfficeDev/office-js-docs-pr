@@ -40,7 +40,7 @@ Excel.run(function (context) {
 
 ## Request context
 
-The Office application and your add-in run in two different processes. Since they use different runtime environments, add-ins require a `RequestContext` object in order to connect your add-in to objects in Office such as worksheets, ranges, paragraphs, and tables. This `RequestContext` object is provided as an argument when calling `*.run`.
+The Office application and your add-in run in different processes. Since they use different runtime environments, add-ins require a `RequestContext` object in order to connect your add-in to objects in Office such as worksheets, ranges, paragraphs, and tables. This `RequestContext` object is provided as an argument when calling `*.run`.
 
 ## Proxy objects
 

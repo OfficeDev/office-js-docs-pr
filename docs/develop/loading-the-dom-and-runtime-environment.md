@@ -6,9 +6,9 @@ ms.localizationpriority: medium
 ---
 
 
-# Loading the DOM and runtime environment
+# Load the DOM and runtime environment
 
-An add-in must ensure that both the DOM and the Office Add-ins runtime environment are loaded before running its own custom logic.
+Before running its own custom logic, an add-in must ensure that both the DOM and the Office Add-ins [runtime](../testing/runtimes.md) environment are loaded.
 
 ## Startup of a content or task pane add-in
 
@@ -58,3 +58,4 @@ The following events occur when an Outlook add-in starts.
 
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Initialize your Office Add-in](initialize-add-in.md)
+- [Runtimes in Office Add-ins](../testing/runtimes.md)

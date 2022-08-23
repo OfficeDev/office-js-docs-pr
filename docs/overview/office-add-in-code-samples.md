@@ -74,7 +74,7 @@ The following samples show how to build the simplest Office Add-in with only a m
 | [Single Sign-on (SSO) Office Add-in with ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on ASP.NET. |
 | [Single Sign-on (SSO) Office Add-in with Node.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on Node.js.|
 
-## Shared JavaScript runtime
+## Shared runtime
 
 | Name                | Description         |
 |:--------------------|:--------------------|

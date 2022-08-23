@@ -393,3 +393,4 @@ readDocumentFileAsync(): Promise<any> {
 
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
+- [Runtimes in Office Add-ins](../testing/runtimes.md)

@@ -18,7 +18,7 @@ The dialog box that is opened with this API has the following characteristics.
 
 - It is [nonmodal](https://en.wikipedia.org/wiki/Dialog_box).
 - It is a completely separate browser instance from the task pane, meaning:
-  - It has its own JavaScript runtime environment and window object and global variables.
+  - It has its own runtime environment and window object and global variables.
   - There is no shared execution environment with the task pane.
   - It does not share the same session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property) as the task pane.
 - The first page opened in the dialog box must be hosted in the same domain as the task pane, including protocol, subdomains, and port, if any.
@@ -63,7 +63,7 @@ Some authentication sample add-ins that use the Office dialog API for this purpo
 
 ## Use authentication libraries with the dialog box
 
-Because the Office dialog box and the task pane run in different browser and JavaScript runtime instances, you must use authentication/authorization libraries differently from how they are used when authentication and authorization take place in the same window. The following sections describe the ways that you can and can't use these libraries.
+Because the Office dialog box and the task pane run in different [browser runtime instances](../testing/runtimes.md#browser-runtime), you must use authentication/authorization libraries differently from how they are used when authentication and authorization take place in the same window. The following sections describe the ways that you can and can't use these libraries.
 
 ### You usually cannot use the library's internal cache to store tokens
 

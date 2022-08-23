@@ -1,13 +1,13 @@
 ---
 title: Runtimes in Office Add-ins
-description: Learn about the JavaScript runtimes that are used by Office Add-ins.
+description: Learn about the runtimes that are used by Office Add-ins.
 ms.date: 08/10/2022
 ms.localizationpriority: medium
 ---
 
 # Runtimes in Office Add-ins
 
-Office Add-ins execute in JavaScript runtimes embedded in Office. As an interpreted language, JavaScript must run in a JavaScript engine. As a single-threaded, synchronous language, JavaScript has no inherent capacity for concurrent execution; but modern JavaScript engines can request concurrent operations (including networking communication) from the host operating system and receive data from the OS in response. This kind of engine makes JavaScript *effectively* asynchronous. In this article, engines of this sort are called *runtimes*. [Node.js](https://nodejs.org) and modern browsers are examples of such runtimes. 
+Office Add-ins execute in runtimes embedded in Office. As an interpreted language, JavaScript must run in a JavaScript engine. As a single-threaded, synchronous language, JavaScript has no inherent capacity for concurrent execution; but modern JavaScript engines can request concurrent operations (including networking communication) from the host operating system and receive data from the OS in response. This kind of engine makes JavaScript *effectively* asynchronous. In this article, engines of this sort are called *runtimes*. [Node.js](https://nodejs.org) and modern browsers are examples of such runtimes. 
 
 ## Types of runtimes
 
