@@ -1,7 +1,7 @@
 ---
 title: Use the Outlook REST APIs from an Outlook add-in
 description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
-ms.date: 08/10/2022
+ms.date: 08/23/2022
 ms.localizationpriority: medium
 ---
 
@@ -19,7 +19,7 @@ The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/previ
 > - The add-in's [ID](/javascript/api/manifest/id) must be valid and unique. Add-ins hosted in AppSource are automatically assigned a GUID, while privately released add-ins must be manually assigned one in the manifest.
 > - If your add-in caters to multiple customers and isn't hosted in AppSource, the add-in instance used by each customer must use the same manifest ID. If your add-in uses a different ID per customer, it isn't eligible for an exemption and must be migrated to Microsoft Graph prior to November 2022.
 >
-> To ensure your add-in's exemption, complete the [REST API add-in verification form](https://aka.ms/RESTCheck) prior to November 2022. For more information, see the [Office Add-ins February 2022 community call blog post](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-february-9-2022/).
+> Automatic traffic identification of Outlook add-ins that use the REST service is currently being tested for exemption validation. If you'd like to participate in this testing phase, please complete the [REST API add-in verification form](https://aka.ms/RESTCheck) prior to November 2022. For more information, see the [Office Add-ins August 2022 community call blog post](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-august-10-2022/).
 
 ## Get an access token
 
