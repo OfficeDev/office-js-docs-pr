@@ -118,7 +118,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-Comment replies have a readonly `resolved` property. Its value is always equal to that of the rest of the thread.
+Comment replies have a read-only `resolved` property. Its value is always equal to that of the rest of the thread.
 
 ## Comment metadata
 

@@ -52,7 +52,7 @@ The `CellValue` type alias also returns the [CellValueExtraProperties](/javascri
 
 Each cell value type returned by `valuesAsJson` uses a JSON metadata schema designed for that type. Along with additional properties unique to each data type, these JSON metadata schemas all have the `type`, `basicType`, and `basicValue` properties in common.
 
-The `type` defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data. The `basicType` is always readonly and is used as a fallback when the data type isn't supported or is formatted incorrectly. The `basicValue` matches the value that would be returned by the `values` property. The `basicValue` is used as a fallback when calculations encounter incompatible scenarios, such as an older version of Excel that doesn't support the data types feature. The `basicValue` is readonly for `ArrayCellValue`, `EntityCellValue`, `LinkedEntityCellValue`, and `WebImageCellValue` data types.
+The `type` defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data. The `basicType` is always read-only and is used as a fallback when the data type isn't supported or is formatted incorrectly. The `basicValue` matches the value that would be returned by the `values` property. The `basicValue` is used as a fallback when calculations encounter incompatible scenarios, such as an older version of Excel that doesn't support the data types feature. The `basicValue` is read-only for `ArrayCellValue`, `EntityCellValue`, `LinkedEntityCellValue`, and `WebImageCellValue` data types.
 
 In addition to the three fields that all data types share, the JSON metadata schema for each `*CellValue` has properties available according to that type. For example, the [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) type includes the `altText` and `attribution` properties, while the [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) type offers the `properties` and `text` fields.
 
@@ -70,7 +70,7 @@ The following JSON code sample shows the complete schema of a formatted number v
 const myDate: Excel.FormattedNumberCellValue = {
     type: Excel.CellValueType.formattedNumber,
     basicValue: 32889.0,
-    basicType: Excel.RangeValueType.double, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.double, // A read-only property. Used as a fallback in incompatible scenarios.
     numberFormat: "m/d/yyyy"
 };
 ```
@@ -97,8 +97,8 @@ const myEntity: Excel.EntityCellValue = {
             basicValue: "I love llamas."
         }
     }, 
-    basicType: Excel.RangeValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
-    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.error, // A read-only property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A read-only property. Used as a fallback in incompatible scenarios.
 };
 ```
 
@@ -121,8 +121,8 @@ The following JSON code sample shows the complete schema of a web image.
 const myImage: Excel.WebImageCellValue = {
     type: Excel.CellValueType.webImage,
     address: "https://bit.ly/2YGOwtw", 
-    basicType: Excel.RangeValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
-    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.error, // A read-only property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A read-only property. Used as a fallback in incompatible scenarios.
 };
 ```
 
