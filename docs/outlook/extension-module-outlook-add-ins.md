@@ -1,13 +1,16 @@
 ---
 title: Module extension Outlook add-ins
 description: Create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
-ms.date: 05/27/2020
+ms.date: 08/30/2022
 ms.localizationpriority: medium
 ---
 
 # Module extension Outlook add-ins
 
 Module extension add-ins appear in the Outlook navigation bar, right alongside mail, tasks, and calendars. A module extension is not limited to using mail and appointment information. You can create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
+
+> [!TIP]
+> Module extensions aren't supported in the [Teams manifest (preview)](../develop/json-manifest-overview.md), but you can create a very similar experience for users by making a [personal tab that opens in Outlook](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab). In the early preview period for the Teams manifest in Outlook Add-ins, it isn't possible to combine an Outlook Add-in and a personal tab in the same manifest and install them as a unit. We're working on this, but in the meantime, you must create separate apps for the add-in and the personal tab. They can both use files on the same domain.
 
 > [!NOTE]
 > Module extensions are only supported by Outlook 2016 or later on Windows.  
@@ -26,7 +29,9 @@ When more than one add-in is loaded, it shows the word **Add-ins**. Clicking eit
 
 ![Shows the expanded navigation bar when more than on module extension is loaded in Outlook.](../images/outlook-module-navigationbar-more.png)
 
-When you click on an extension, Outlook replaces the built-in module with your custom module so that your users can interact with the add-in. You can use all of the features of the Outlook JavaScript API in your add-in, and can create command buttons in the Outlook ribbon that will interact with the add-in content. The following screenshot shows an add-in that is integrated in the Outlook navigation bar and has ribbon commands that will update the content of the add-in.
+When you click on an extension, Outlook replaces the built-in module with your custom module so that your users can interact with the add-in. You can use some of the features of the Outlook JavaScript API in your add-in. APIs that logically assume a specific Outlook item, such as a message or appointment, don't work in module extensions. The module can also include function commands in the Outlook ribbon that interact with the add-in's page. To facilitate this, your function commands call the [Office.onReady or Office.initialize method](../develop/initialize-add-in.md) and the [Event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) method. To walk through how a module extension Outlook add-in is configured, see the [Outlook module extensions billable hours sample](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension).
+
+The following screenshot shows an add-in that is integrated in the Outlook navigation bar and has ribbon commands that will update the page of the add-in.
 
 ![Shows the user interface of a module extension.](../images/outlook-module-extension.png)
 
