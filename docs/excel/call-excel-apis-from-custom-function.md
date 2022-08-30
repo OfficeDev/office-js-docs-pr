@@ -43,7 +43,7 @@ async function getRangeValue(address) {
 
 ## Limitations of calling Excel JavaScript APIs through a custom function
 
-A custom functions add-in can call Excel JavaScript APIs, but you should be cautious about which APIs it calls. Don't call Excel JavaScript APIs from a custom function that change cells outside of the cell running the custom function. Changing other cells or the Excel environment can result in poor performance, time outs, and infinite loops in the Excel application. This means your custom functions shouldn't do any of the following.
+A custom functions add-in can call Excel JavaScript APIs, but you should be cautious about which APIs it calls. Don't call Excel JavaScript APIs from a custom function that change cells outside of the cell running the custom function. Changing other cells or the Excel environment can result in poor performance, time outs, and infinite loops in the Excel application. This means your custom functions shouldn't do any of the following:
 
 - Insert, delete, or format cells on the spreadsheet.
 - Change another cell's value.
