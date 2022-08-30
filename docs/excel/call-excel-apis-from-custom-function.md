@@ -52,7 +52,7 @@ A custom functions add-in has the ability to call Excel JavaScript APIs, but you
 - Set properties.
 - Change any of the Excel environment options, such as calculation mode or screen views.
 
-Your custom functions add-in can retrieve information from cells outside the cell running the custom function, but it shouldn't perform write operations to other cells. Instead, make changes to other cells or to the Excel environment from the context of a ribbon button or a task pane. In addition, custom function calculations shouldn't run while an Excel recalculation is taking place, as this will result in unpredictable results.
+Your custom functions add-in can retrieve information from cells outside the cell running the custom function, but it shouldn't perform write operations to other cells. Instead, make changes to other cells or to the Excel environment from the context of a ribbon button or a task pane. In addition, custom function calculations shouldn't run while an Excel recalculation is taking place, as this scenario creates unpredictable results.
 
 ## Next steps
 
