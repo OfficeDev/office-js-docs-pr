@@ -13,7 +13,7 @@ Office Add-ins execute in runtimes embedded in Office. As an interpreted languag
 
 There are two types of runtimes used by Office Add-ins:
 
-- **JavaScript-only runtime**: A JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and client side storage of data. (It doesn't support [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or cookies.) 
+- **JavaScript-only runtime**: A JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and client-side storage of data. (It doesn't support [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or cookies.) 
 - **Browser runtime**: Includes all the features of a JavaScript-only runtime and adds support for [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), [rendering engine](https://developer.mozilla.org/docs/Glossary/Rendering_engine) that renders HTML, and cookies.
 
 Details about these types are later in this article at [JavaScript-only runtime](#javascript-only-runtime) and [Browser runtime](#browser-runtime).
