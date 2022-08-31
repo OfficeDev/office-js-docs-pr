@@ -1,7 +1,7 @@
 ---
 title: Office Common API error codes
 description: This article documents the error messages you might encounter while using the Office Common API.
-ms.date: 02/08/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -88,6 +88,7 @@ The following table lists the error codes, names, and messages displayed, and th
 |12006|||The dialog box was closed, usually because the user chooses the **X** button. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
 |12007|||A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time. Thrown by call of `displayDialogAsync`.|
 |12009|||The user chose to ignore the dialog box. This error can occur in online versions of Office, where users may choose not to allow an add-in to present a dialog. Thrown by call of `displayDialogAsync`.|
+|12011|||The user's browser is configured is configured in a way that blocks popups. This error can occur in online versions of Office if the browser is Safari and it is configured to block popus or the browser is Edge Legacy and the add-in domain is in a different security zone as the domain the dialog is trying to open. Thrown by call of `displayDialogAsync`.|
 |13nnn|||See [Causes and handling of errors from getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
 
 ## Binding creation error conditions
