@@ -135,7 +135,7 @@ Currently, internet headers are a finite resource on a user's mailbox. When the 
 
 Apply the following guidelines when you create internet headers in your add-in.
 
-- Create the minimum number of headers required. The header quota is based on the total size of headers applied to a message. In Exchange Online, the header limit is capped at 256 KB, while in an Exchange on-premises environment, the limit is determined by your organization's administrator. For further information on header limits, see [Exchange Online message limits](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#message-limits) and [Exchange Server message limits](/exchange/mail-flow/message-size-limits?view=exchserver-2019).
+- Create the minimum number of headers required. The header quota is based on the total size of headers applied to a message. In Exchange Online, the header limit is capped at 256 KB, while in an Exchange on-premises environment, the limit is determined by your organization's administrator. For further information on header limits, see [Exchange Online message limits](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#message-limits) and [Exchange Server message limits](/exchange/mail-flow/message-size-limits).
 - Name headers so that you can reuse and update their values later. As such, avoid naming headers in a variable manner (for example, based on user input, timestamp, etc.).
 
 ## See also
