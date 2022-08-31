@@ -18,7 +18,7 @@ To learn more about where add-ins do and don't activate, refer to the [Mailbox i
 
 ## Limits for activation rules
 
-Follow these guidelines when designing activation rules for Outlook add-ins.
+Follow these guidelines when designing activation rules for Outlook add-ins:
 
 - Limit the size of the manifest to 256 KB. You can't install the Outlook add-in for an Exchange mailbox if you exceed that limit.
 

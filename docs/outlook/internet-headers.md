@@ -19,7 +19,7 @@ Both types of properties aren't preserved after the item leaves the Exchange ser
 While there's a way for you to set the internet headers through Exchange Web Services (EWS) requests, in some scenarios, making an EWS request won't work. For example, in Compose mode on Outlook desktop, the item ID isn't synced on `saveAsync` in cached mode.
 
 > [!TIP]
-> See [Get and set add-in metadata for an Outlook add-in](metadata-for-an-outlook-add-in.md) to learn more about using these options.
+> To learn more about using these options, see [Get and set add-in metadata for an Outlook add-in](metadata-for-an-outlook-add-in.md).
 
 ## Purpose of the internet headers API
 
