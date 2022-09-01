@@ -97,6 +97,9 @@ items:
       - name: Automatically open a task pane with a document
         href: develop/automatically-open-a-task-pane-with-a-document.md
         displayName: manifest
+      - name: Automatically open a task pane at add-in installation
+        href: develop/automatically-open-on-installation.md
+        displayName: manifest
       - name: Configure your add-in to use a shared runtime
         href: develop/configure-your-add-in-to-use-a-shared-runtime.md
       - name: Run code on document open
