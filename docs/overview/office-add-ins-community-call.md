@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 08/11/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -17,6 +17,8 @@ The agenda for the September call will be posted about a week before the call.
 
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
+- [August 10, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-08-10/)
+- [July 13, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-07-13/)
 - [June 8, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-06-08/)
 - [May 11, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-05-11/)
 - [April 13, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-04-13/)
