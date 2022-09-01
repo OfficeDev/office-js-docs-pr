@@ -33,25 +33,6 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 1. Open [Office on the web](https://office.live.com/) or OneDrive. Using the **Create** option, make a document in **Excel**, **OneNote**, **PowerPoint**, or **Word**. In this new document, select **Share** in the ribbon, select **Copy Link**, and copy the URL.
 
-1. In the root directory of your yo office project files, open the **package.json** file. Within the **config** section of this file, create a `"document"` property. Paste the URL you copied as the value for the `"document"` property. For example, yours will look something like this:
-
-    ```json
-      "config": {
-        "document": "<YOUR URL>",
-        ...
-      }
-    ```
-
-    > [!TIP]
-    > If you are creating an add-in not using our Yeoman generator, you can add query parameters to your document's URL, by appending the following to the existing URL.
-    >
-    > - The dev server port, such as `&wdaddindevserverport=3000`.
-    > - The manifest file name, such as `&wdaddinmanifestfile=manifest1.xml`.
-    > - The manifest GUID, such as `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143`.
-    >
-    > If you are using the Yeoman generator, adding this information is not necessary as the Yeoman tooling appends this information automatically.
-    > Note that in both cases, however, you can only load manifests from localhost.
-
 1. In the command line starting at the root directory of your project, run the following command. Replace "{url}" with the URL that you copied.
 
     [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
