@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 05/27/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -123,7 +123,7 @@ If your add-in project was created another way, take the following steps.
 If you do not have Visual Studio 2017 (for Windows) or later installed, install the latest version from [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/). Be sure to include the **Office/SharePoint development** workload when the installer asks you to specify workloads. Other workloads that you may need are **Web development tools for .NET**, **JavaScript and TypeScript language support** (for coding the client-side of the add-in), and ASP.NET-related workloads.
 
 > [!TIP]
-> As of summer 2022, the XML schemas for the Office Add-in manifest that are installed with Visual Studio aren't the latest version. This may affect add-ins, depending on what add-in features they use. So, you may need to update the XML schemas for the manifest. For more information, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+> As of June, 2022, the XML schemas for the Office Add-in manifest that are installed with Visual Studio aren't the latest version. This may affect add-ins, depending on what add-in features they use. So, you may need to update the XML schemas for the manifest. For more information, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
 
 > [!NOTE]
 > For information about debugging client-side code when you're using the Visual Studio environment, see [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md). Debug the server-side code the same way you would any web application created in Visual Studio. See [Client-side or server-side](../testing/debug-add-ins-overview.md#server-side-or-client-side).
