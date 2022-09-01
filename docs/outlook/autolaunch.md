@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 08/16/2022
 ms.localizationpriority: medium
 ---
 
@@ -13,7 +13,9 @@ Without the event-based activation feature, a user has to explicitly launch an a
 By the end of this walkthrough, you'll have an add-in that runs whenever a new item is created and sets the subject.
 
 > [!NOTE]
-> Support for this feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now supported in [requirement set 1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+>
+> Event-based activation isn't supported in Outlook on iOS or Android.
 
 ## Supported events
 
@@ -33,8 +35,10 @@ The following table lists events that are currently available and the supported 
 |`OnAppointmentTimeChanged`|On changing date/time while composing an appointment.<br><br>Event-specific data object: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web browser|
 |`OnAppointmentRecurrenceChanged`|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event will also be fired.<br><br>Event-specific data object: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web browser|
 |`OnInfoBarDismissClicked`|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.<br><br>Event-specific data object: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web browser|
-|`OnMessageSend`|On sending a message item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup>|
-|`OnAppointmentSend`|On sending an appointment item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup>|
+|`OnMessageSend`|On sending a message item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web browser|
+|`OnAppointmentSend`|On sending an appointment item. To learn more, refer to the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web browser|
+|`OnMessageCompose`|On composing a new message (includes reply, reply all, and forward) or editing a draft.|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web browser|
+|`OnAppointmentOrganizer`|On creating a new appointment or editing an existing one.|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web browser|
 
 > [!NOTE]
 > <sup>1</sup> Event-based add-ins in Outlook on Windows require a minimum of Windows 10 version 1903 (build 18362) or Windows Server 2019 version 1903 to run.
@@ -71,7 +75,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.3">
+      <bt:Sets DefaultMinVersion="1.10">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -82,7 +86,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and Outlook on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
-            <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+            <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
           </Runtime>
         </Runtimes>
@@ -167,7 +171,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Entry needed for Outlook Desktop. -->
+        <!-- Entry needed for Outlook on Windows. -->
         <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
@@ -184,10 +188,12 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 </VersionOverrides>
 ```
 
-Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the `Runtime` element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
+Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the **\<Runtime\>** element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
+> 
+> - To learn about runtimes in add-ins, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+> - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
 ## Implement event handling
 
@@ -316,8 +322,6 @@ You can deploy event-based add-ins by uploading the manifest through the Microso
 
 ![The Integrated apps page on the Microsoft 365 admin center, including the Upload custom apps action.](../images/outlook-deploy-event-based-add-ins.png)
 
-AppSource and in-app Office Store: The ability to deploy event-based add-ins or update existing add-ins to include the event-based activation feature should be available soon.
-
 > [!IMPORTANT]
 > Event-based add-ins are restricted to admin-managed deployments only. For now, users can't get event-based add-ins from AppSource or in-app Office Store. To learn more, refer to [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
 
@@ -351,13 +355,21 @@ Some Office.js APIs that change or alter the UI are not allowed from event-based
 
 ### Requesting external data
 
-You can request external data by using an API like [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using [XmlHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
+You can request external data by using an API like [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using [XMLHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
 
-Be aware that you must use additional security measures when making XmlHttpRequests, requiring [Same Origin Policy](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).
+Be aware that you must use additional security measures when using XMLHttpRequest objects, requiring [Same Origin Policy](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) and simple [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS).
 
-A simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST). Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`. You can also use a `Content-Type` header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
+A [simple CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS#simple_requests) implementation:
 
-Full CORS support is coming soon.
+- Can't use cookies.
+- Only supports simple methods, such as `GET`, `HEAD`, and `POST`.
+- Accepts simple headers with field names `Accept`, `Accept-Language`, or `Content-Language`.
+- Can use the `Content-Type`, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
+- Can't have event listeners registered on the object returned by `XMLHttpRequest.upload`.
+- Can't use `ReadableStream` objects in requests.
+
+> [!NOTE]
+> Full CORS support is available in Outlook on the web, Mac, and Windows (starting in version 2201, build 16.0.14813.10000).
 
 ## See also
 

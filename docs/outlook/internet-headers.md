@@ -1,7 +1,7 @@
 ---
 title: Get and set internet headers
 description: How to get and set internet headers on a message in an Outlook add-in.
-ms.date: 04/28/2020
+ms.date: 08/30/2022
 ms.localizationpriority: medium
 ---
 
@@ -14,12 +14,12 @@ A common requirement in Outlook add-ins development is to store custom propertie
 - Item level - For properties that apply to a specific item, use the [CustomProperties](/javascript/api/outlook/office.customproperties) object. For example, store a customer code associated with the person who sent the email.
 - Mailbox level - For properties that apply to all the mail items in the user's mailbox, use the [RoamingSettings](/javascript/api/outlook/office.roamingsettings) object. For example, store a user's preference to show the temperature in a particular scale.
 
-Both types of properties are not preserved after the item leaves the Exchange server so the email recipients can't get any properties set on the item. Therefore, developers can't access those settings or other MIME properties to enable better read scenarios.
+Both types of properties aren't preserved after the item leaves the Exchange server, so the email recipients can't get any properties set on the item. Therefore, developers can't access those settings or other Multipurpose Internet Mail Extensions (MIME) properties to enable better read scenarios.
 
-While there's a way for you to set the internet headers through EWS requests, in some scenarios making an EWS request won't work. For example, in Compose mode on Outlook desktop, the item id isn't synced on `saveAsync` in cached mode.
+While there's a way for you to set the internet headers through Exchange Web Services (EWS) requests, in some scenarios, making an EWS request won't work. For example, in Compose mode on Outlook desktop, the item ID isn't synced on `saveAsync` in cached mode.
 
 > [!TIP]
-> See [Get and set add-in metadata for an Outlook add-in](metadata-for-an-outlook-add-in.md) to learn more about using these options.
+> To learn more about using these options, see [Get and set add-in metadata for an Outlook add-in](metadata-for-an-outlook-add-in.md).
 
 ## Purpose of the internet headers API
 
@@ -33,11 +33,11 @@ Introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/req
 
 ## Set internet headers while composing a message
 
-Try using the [item.internetHeaders](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-internetheaders-member) property to manage the custom internet headers you place on the current message in Compose mode.
+Use the [item.internetHeaders](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-internetheaders-member) property to manage the custom internet headers you place on the current message in Compose mode.
 
-### Set, get, and remove custom headers example
+### Set, get, and remove custom internet headers example
 
-The following example shows how to set, get, and remove custom headers.
+The following example shows how to set, get, and remove custom internet headers.
 
 ```js
 // Set custom internet headers.
@@ -102,7 +102,7 @@ Selected headers: {"x-preferred-fruit":"orange","x-preferred-vegetable":"broccol
 
 ## Get internet headers while reading a message
 
-Try calling [item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getallinternetheadersasync-member(1)) to get internet headers on the current message in Read mode.
+Call [item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getallinternetheadersasync-member(1)) to get internet headers on the current message in Read mode.
 
 ### Get sender preferences from current MIME headers example
 
@@ -135,7 +135,7 @@ Currently, internet headers are a finite resource on a user's mailbox. When the 
 
 Apply the following guidelines when you create internet headers in your add-in.
 
-- Create the minimum number of headers required.
+- Create the minimum number of headers required. The header quota is based on the total size of headers applied to a message. In Exchange Online, the header limit is capped at 256 KB, while in an Exchange on-premises environment, the limit is determined by your organization's administrator. For further information on header limits, see [Exchange Online message limits](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#message-limits) and [Exchange Server message limits](/exchange/mail-flow/message-size-limits).
 - Name headers so that you can reuse and update their values later. As such, avoid naming headers in a variable manner (for example, based on user input, timestamp, etc.).
 
 ## See also

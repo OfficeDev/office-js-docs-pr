@@ -1,13 +1,13 @@
 ---
 title: Privacy and security for Office Add-ins
 description: Learn about the privacy and security aspects of the Office Add-ins platform.
-ms.date: 07/18/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
 ---
 
 # Privacy and security for Office Add-ins
 
-## Understanding the add-in runtime
+## Process security
 
 Office Add-ins are secured by an add-in runtime environment, a multiple-tier permissions model, and performance governors. This framework protects the user's experience in the following ways.
 
@@ -26,6 +26,9 @@ Further, the runtime framework provides the following benefits to ensure that an
 - Makes add-ins easy to install and uninstall.
 
 Also, the use of memory, CPU, and network resources by Office Add-ins is governable to ensure that good performance and reliability are maintained.
+
+> [!NOTE]
+> In some scenarios, different features of an add-in run in separate runtimes. For simplicity, this article uses the singular "runtime." For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md). 
 
 The following sections briefly describe how the runtime architecture supports running add-ins in Office clients on Windows-based devices, on Mac OS X devices, and in web browsers.
 

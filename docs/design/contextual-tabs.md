@@ -50,7 +50,7 @@ The following are the major steps for including a custom contextual tab in an ad
 
 ## Configure the add-in to use a shared runtime
 
-Adding custom contextual tabs requires your add-in to use the shared runtime. For more information, see [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Adding custom contextual tabs requires your add-in to use the [shared runtime](../testing/runtimes.md#shared-runtime). For more information, see [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## Define the groups and controls that appear on the tab
 
@@ -414,7 +414,7 @@ To open any task pane that is not the default task pane, specify a `sourceLocati
 
 > [!IMPORTANT]
 >
-> - When a `sourceLocation` is specified for the action, then the task pane does *not* use the shared runtime. It runs in a new JavaScript runtime.
+> - When a `sourceLocation` is specified for the action, then the task pane does *not* use the shared runtime. It runs in a new separate runtime.
 > - No more than one task pane can use the shared runtime, so no more than one action of type `ShowTaskpane` can omit the `sourceLocation` property.
 
 ```json

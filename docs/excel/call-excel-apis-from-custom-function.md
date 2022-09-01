@@ -1,7 +1,7 @@
 ---
 title: Call Excel JavaScript APIs from a custom function
 description: Learn which Excel JavaScript APIs you can call from your custom function.
-ms.date: 07/18/2022
+ms.date: 08/30/2022
 ms.localizationpriority: medium
 ---
 
@@ -13,7 +13,7 @@ Call Excel JavaScript APIs from your custom functions to get range data and obta
 - A custom function will set the cell's number format for the return values after calculation.
 
 > [!IMPORTANT]
-> To call Excel JavaScript APIs from your custom function, you'll need to use a shared JavaScript runtime. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
+> To call Excel JavaScript APIs from your custom function, you'll need to use a [shared runtime](../testing/runtimes.md#shared-runtime). See [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
 
 ## Code sample
 
@@ -43,18 +43,16 @@ async function getRangeValue(address) {
 
 ## Limitations of calling Excel JavaScript APIs through a custom function
 
-Don't call Excel JavaScript APIs from a custom function that change the environment of Excel. This means your custom functions should not do any of the following:
+A custom functions add-in can call Excel JavaScript APIs, but you should be cautious about which APIs it calls. Don't call Excel JavaScript APIs from a custom function that change cells outside of the cell running the custom function. Changing other cells or the Excel environment can result in poor performance, time outs, and infinite loops in the Excel application. This means your custom functions shouldn't do any of the following:
 
 - Insert, delete, or format cells on the spreadsheet.
 - Change another cell's value.
 - Move, rename, delete, or add sheets to a workbook.
-- Change any of the environment options, such as calculation mode or screen views.
 - Add names to a workbook.
-- Set properties or execute most methods.
+- Set properties.
+- Change any of the Excel environment options, such as calculation mode or screen views.
 
-Changing Excel can result in poor performance, time outs, and infinite loops. Custom function calculations shouldn't run while an Excel recalculation is taking place as it will result in unpredictable results.
-
-Instead, make changes to Excel from the context of a ribbon button, or task pane.
+Your custom functions add-in can read information from cells outside the cell running the custom function, but it shouldn't perform write operations to other cells. Instead, make changes to other cells or to the Excel environment from the context of a ribbon button or a task pane. In addition, custom function calculations shouldn't run while an Excel recalculation is taking place, as this scenario creates unpredictable results.
 
 ## Next steps
 
@@ -63,4 +61,4 @@ Instead, make changes to Excel from the context of a ribbon button, or task pane
 ## See also
 
 - [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

@@ -26,7 +26,7 @@ There are two small changes to the manifest to make. One is to enable the add-in
 
 ### Configure the add-in to use a shared runtime
 
-Adding custom keyboard shortcuts requires your add-in to use the shared runtime. For more information, [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Adding custom keyboard shortcuts requires your add-in to use the [shared runtime](../testing/runtimes.md#shared-runtime). For more information, [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ### Link the mapping file to the manifest
 
