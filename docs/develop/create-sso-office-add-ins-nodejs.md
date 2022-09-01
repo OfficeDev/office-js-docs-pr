@@ -401,7 +401,7 @@ You need to create an app registration in Azure that represents your middle-tier
 
 Fallback authentication uses the MSAL library to sign in the user. The add-in itself is an SPA, and uses an SPA app registration to access the middle-tier server.
 
-1. In the `switchToFallbackAuth` function, replace `TODO 11` with the following code. About this code, note:
+1. In the `switchToFallbackAuth` function, replace `TODO 10` with the following code. About this code, note:
 
     - It sets the global `authSSO` to false and creates a new client request that uses MSAL for auth. The new request has an MSAL access token to the middle-tier server.
     - Once the request is created it calls `callWebServer` to continue attempting to call the middle-tier server successfully.
