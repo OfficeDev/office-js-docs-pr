@@ -16,7 +16,7 @@ By default, when a task pane add-in that does *not* include any [add-in commands
 > 
 > - This feature is currently available only in Office on the web. We are working to bring this behavior to other platforms, but currently they still exhibit the historic default behavior described earlier.
 > - This feature applies only to add-ins installed by an end-user, not to centrally deployed add-ins.
-> - This feature doesn't apply to Content add-ins.
+> - This feature doesn't apply to Content add-ins or Mail (Outlook) add-ins.
 > - This feature applies only to add-ins that have at least one add-in command of [the type "task pane command"](../design/add-in-commands.md#types-of-add-in-commands).
 
 ## New behavior
