@@ -17,13 +17,13 @@ By default, when a task pane add-in that does *not* include any [add-in commands
 > - This feature is currently available only in Office on the web. We are working to bring this behavior to other platforms, but currently they still exhibit the historic default behavior described earlier.
 > - This feature applies only to add-ins installed by an end-user, not to centrally deployed add-ins.
 > - This feature doesn't apply to Content add-ins.
-> - This feature applies only to add-ins that have at least one add-in command of [the type "task pane command"](../design/add-in-commands#types-of-add-in-commands).
+> - This feature applies only to add-ins that have at least one add-in command of [the type "task pane command"](../design/add-in-commands.md#types-of-add-in-commands).
 
 ## New behavior
 
 The new behavior is as follows:
 
-- If the add-in has just one [task pane command](../design/add-in-commands#types-of-add-in-commands), then the add-in's ribbon tab is selected and the task pane opens automatically upon installation. You don't need to configure anything.
+- If the add-in has just one [task pane command](../design/add-in-commands.md#types-of-add-in-commands), then the add-in's ribbon tab is selected and the task pane opens automatically upon installation. You don't need to configure anything.
 - If the add-in has multiple task pane commands, and one is configured to be the default (see [Configure default task pane](#configure-default-task-pane)), then the add-in's ribbon tab is selected and the default task pane opens automatically upon installation.
 - If the add-in has multiple task pane commands, but none is configured to be the default, then the add-in's ribbon tab is selected automatically upon installation and a callout appears near it notifying the user of the new add-in, but no task pane is opened. This is the same as the historic default behavior.
 
