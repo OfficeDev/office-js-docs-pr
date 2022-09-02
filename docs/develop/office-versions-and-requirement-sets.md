@@ -1,25 +1,29 @@
 ---
 title: Office versions and requirement sets
 description: Supported Office.js platforms using JavaScript API.
-ms.date: 05/26/2022
+ms.date: 09/02/2022
 ms.localizationpriority: high
 ---
 
 # Office versions and requirement sets
 
-There are many versions of Office on several platforms, and they don't all support every API in Office JavaScript API (Office.js). You may not always have control over the version of Office your users have installed.  To handle this situation, we provide a system called requirement sets to help you determine whether an Office application supports the capabilities you need in your Office Add-in.
+There are many versions of Office on several platforms, and they don't all support every API in Office JavaScript API (Office.js). You may not always have control over the version of Office your users have installed. To handle this situation, we provide a system called requirement sets to help you determine whether an Office application supports the capabilities you need in your Office Add-in.
 
 > [!NOTE]
 >
 > - Office runs across multiple platforms, including Windows, in a browser, Mac, and iPad.
-> - Examples of Office applications are Office Products: Excel, Word, PowerPoint, Outlook, OneNote, and so forth.  
-> - A requirement set is a named group of API members e.g., `ExcelApi 1.5`, `WordApi 1.3`, and so on.  
+> - Examples of Office applications are Office products: Excel, Word, PowerPoint, Outlook, OneNote, and so forth.
+> - Office is available by a Microsoft 365 subscription or perpetual license. The perpetual version is available by volume-licensing agreement or retail.
+> - A requirement set is a named group of API members, for example, `ExcelApi 1.5`, `WordApi 1.3`, and so on.
 
 ## How to check your Office version
 
-To identify the Office version that you're using, from within an Office application, select the **File** menu, and then choose **Account**. The version of Office will appear in the **Product Information** section. For example, the following screenshot indicates Office Version 1802 (Build 9026.1000).
+To identify the Office version that you're using, from within an Office application, select the **File** menu, and then choose **Account**. The version of Office appears in the **Product Information** section. For example, the following screenshot indicates Office Version 1802 (Build 9026.1000).
 
 ![Checking your Office version.](../images/office-version.png)
+
+> [!NOTE]
+> If your version of Office is different from this, see [What version of Outlook do I have?](https://support.microsoft.com/office/b3a9568c-edb5-42b9-9825-d48d82b2257c) or [About Office: What version of Office am I using?](https://support.microsoft.com/topic/932788b8-a3ce-44bf-bb09-e334518b8b19) to understand how to get this information for your version.
 
 ## Office requirement sets availability
 

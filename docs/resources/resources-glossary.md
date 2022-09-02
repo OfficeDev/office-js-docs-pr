@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 06/15/2022
+ms.date: 09/02/2022
 ms.localizationpriority: medium
 ---
 
@@ -39,6 +39,12 @@ See also: [Common API](#common-api).
 
 See also: [application](#application), [host](#host), [Office application, Office client](#office-application-office-client).
 
+## commercial
+
+**Commercial** refers to perpetual versions of Office available through a volume-licensing agreement between Microsoft and your company.
+
+See also: [perpetual](#perpetual), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing)
+
 ## Common API
 
 Common APIs are used to access features such as UI, dialogs, and client settings that are common across multiple Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), which allow you to specify only one operation in each request sent to the Office application.
@@ -48,6 +54,12 @@ Common APIs were introduced with Office 2013 and are used to interact with Offic
 Other Common APIs, such as the Common APIs related to Outlook, UI, and authentication, are the modern and preferred APIs for these purposes. For details about the Common API object model, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 See also: [application-specific API](#application-specific-api).
+
+## consumer
+
+**Consumer** refers to perpetual versions of Office available through retail channels. This usually excludes versions available through a volume-licensing agreement or through a Microsoft 365 subscription.
+
+See also: [perpetual](#perpetual), [retail](#retail), [one-time purchase](#one-time-purchase), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing)
 
 ## content add-in
 
@@ -73,6 +85,12 @@ A **custom functions runtime** is a JavaScript-only runtime that only runs custo
 
 See also: [JavaScript runtime](#javascript-runtime), [shared JavaScript runtime, shared runtime](#shared-javascript-runtime-shared-runtime).
 
+## custom functions-only add-in
+
+An add-in that contains a custom function, but no UI such as a task pane. The custom functions in this kind of add-in run in a JavaScript-only runtime. A custom function that does include a UI can use either a shared runtime or a combination of a JavaScript-only runtime and an HTML-supporting runtime. We recommend that if you have a UI, you use a shared runtime.
+
+See also: [custom function](#custom-function), [custom functions runtime](#custom-functions-runtime).
+
 ## host
 
 **\<Host\>** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
@@ -85,11 +103,29 @@ The **JavaScript runtime** is the browser host environment that the add-in runs 
 
 See also: [custom functions runtime](#custom-functions-runtime), [shared JavaScript runtime, shared runtime](#shared-javascript-runtime-shared-runtime), [webview](#webview).
 
+## non-subscription
+
+**Non-subscription** refers to perpetual versions of Office. These are versions that are not provided by a Microsoft 365 subscription.
+
+See also: [one-time purchase](#one-time-purchase), [perpetual](#perpetual), [subscription](#subscription)
+
 ## Office application, Office client
 
 **Office client** refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
 See also: [application](#application), [client](#client), [host](#host).
+
+## one-time purchase
+
+**One-time purchase** refers to perpetual versions of Office. These are versions that are not available through a Microsoft 365 subscription.
+
+See also: [non-subscription](#non-subscription), [perpetual](#perpetual), [subscription](#subscription)
+
+## perpetual
+
+**Perpetual** refers to versions of Office available through a volume-licensing agreement or retail channels.
+
+See also: [retail](#retail), [volume-licensed, volume-licensing](#volume-licensed-volume-licensing)
 
 ## platform
 
@@ -105,6 +141,12 @@ See also: [tutorial](#tutorial).
 
 [!include[Requirement set note](../includes/office-js-requirement-sets.md)]
 
+## retail, retail perpetual
+
+**Retail** refers to perpetual versions of Office available through retail channels. These do not include versions provided by a Microsoft 365 subscription nor volume-licensing agreement.
+
+See also: [perpetual](#perpetual)
+
 ## ribbon, ribbon button
 
 A **ribbon** is a command bar that organizes an application's features into a series of tabs or buttons at the top of a window. A **ribbon button** is one of the buttons within this series. See [Show or hide the ribbon in Office](https://support.microsoft.com/office/d946b26e-0c8c-402d-a0f7-c6efa296b527#ID0EBBD=Newer_Versions) for more information.
@@ -119,6 +161,10 @@ A **shared JavaScript runtime**, or **shared runtime**, enables all code in your
 
 See also: [custom functions runtime](#custom-functions-runtime), [JavaScript runtime](#javascript-runtime).
 
+## subscription
+
+**Subscription** refers to versions of Office available with a Microsoft 365 subscription.
+
 ## task pane
 
 Task panes are interface surfaces, or webviews, that typically appear on the right side of the window within Excel, Outlook, PowerPoint, and Word. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to or can't embed functionality directly into the document. See [Task panes in Office Add-ins](../design/task-pane-add-ins.md) to learn more.
@@ -131,11 +177,11 @@ A **tutorial** is a teaching aid designed to help people learn to use a product 
 
 See also: [quick start](#quick-start).
 
-## custom functions-only add-in
+## volume-licensed, volume-licensed perpetual, volume licensing
 
-An add-in that contains a custom function, but no UI such as a task pane. The custom functions in this kind of add-in run in a JavaScript-only runtime. A custom function that does include a UI can use either a shared runtime or a combination of a JavaScript-only runtime and an HTML-supporting runtime. We recommend that if you have a UI, you use a shared runtime. 
+**Volume-licensed** refers to a perpetual version of Office available through a volume-licensing agreement between Microsoft and your company.
 
-See also: [custom function](#custom-function), [custom functions runtime](#custom-functions-runtime).
+See also: [perpetual](#perpetual)
 
 ## web add-in
 
