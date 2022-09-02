@@ -16,11 +16,11 @@ This article describes how to use the [Excel JavaScript API](../reference/overvi
 
 ## The `valuesAsJson` property
 
-The `valuesAsJson` property (or `valueAsJson` for the `NamedItem` object) is integral to creating data types in Excel. This property is an expansion of `values` properties, such as [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member). Both the `values` and `valuesAsJson` properties are used to access the value in a cell, but the `values` property only returns one of the four basic types: string, number, boolean, or error (as a string). In contrast, `valuesAsJson` returns expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
+The `valuesAsJson` property (or `valueAsJson` for [NamedItem](/javascript/api/excel/excel.nameditem)) is integral to creating data types in Excel. This property is an expansion of `values` properties, such as [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member). Both the `values` and `valuesAsJson` properties are used to access the value in a cell, but the `values` property only returns one of the four basic types: string, number, boolean, or error (as a string). In contrast, `valuesAsJson` returns expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
 
 The following objects offer the `valuesAsJson` property.
 
-- [NamedItem](/javascript/api/excel/excel.nameditem#excel-excel-nameditem-valueasjson-member) *(As `valueAsJson`)*
+- [NamedItem](/javascript/api/excel/excel.nameditem) *(as `valueAsJson`)*
 - [NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)
 - [Range](/javascript/api/excel/excel.range)
 - [RangeView](/javascript/api/excel/excel.rangeview)
