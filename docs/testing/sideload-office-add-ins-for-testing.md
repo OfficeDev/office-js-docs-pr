@@ -48,12 +48,19 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 If you're using Visual Studio to develop your add-in, pressing F5 will automatically open an Office document in *desktop* Office, create a blank document, and sideload the add-in. When you want to sideload to *Office on the web*, the process to sideload is similar to manual sideloading to the web. The only difference is that you must update the value of the **SourceURL** element, and possibly other elements, in your manifest to include the full URL where the add-in is deployed.
 
 1. In Visual Studio, show the **Properties** window by choosing **View** > **Properties Window**.
+
 1. In the **Solution Explorer**, select the web project. This will display properties for the project in the **Properties** window.
+
 1. In the Properties window, copy the **SSL URL**.
+
 1. In the add-in project, open the manifest XML file. Be sure you are editing the source XML. For some project types, Visual Studio will open a visual view of the XML which won't work for the next step.
+
 1. Search and replace all instances of **~remoteAppUrl/** with the SSL URL you just copied. You'll see several replacements depending on the project type, and the new URLs will appear similar to `https://localhost:44300/Home.html`.
+
 1. Save the XML file.
-1. Open the context menu of the web project (for example, by right clicking on it) then choose **Debug** > **Start new instance**. This runs the web project without launching Office.
+
+1. In the **Solution Explorer**, open the context menu of the web project (for example, by right clicking on it) then choose **Debug** > **Start new instance**. This runs the web project without launching Office.
+
 1. From Office on the web, sideload the add-in using steps described in [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web).
 
 ## Manually sideload an add-in to Office on the web
