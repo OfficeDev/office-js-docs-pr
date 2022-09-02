@@ -24,7 +24,7 @@ Go to the section or article that matches your scenario:
 - If the add-in was created with Visual Studio, see [Sideload an add-in on the web when using Visual Studio](#sideload-an-add-in-on-the-web-when-using-visual-studio).
 - For all other cases, see one of these sections:
 
-  - If you are sideloading to retail Office on the web, see [Sideload an add-in to Office on the web manually](#sideload-an-add-in-to-office-on-the-web-manually).
+  - If you are sideloading to retail Office on the web, see [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web).
   - If you are sideloading to Office in a Microsoft 365 tenancy, see [Sideload an add-in to Microsoft 365](#sideload-an-add-in-to-microsoft-365).
 
 ## Sideload a Yeoman-created add-in to Office on the web
@@ -54,9 +54,9 @@ If you're using Visual Studio to develop your add-in, pressing F5 will automatic
 1. Search and replace all instances of **~remoteAppUrl/** with the SSL URL you just copied. You'll see several replacements depending on the project type, and the new URLs will appear similar to `https://localhost:44300/Home.html`.
 1. Save the XML file.
 1. Open the context menu of the web project (for example, by right clicking on it) then choose **Debug** > **Start new instance**. This runs the web project without launching Office.
-1. From Office on the web, sideload the add-in using steps previously described in [Sideload an add-in to Office on the web manually](#sideload-an-add-in-to-office-on-the-web-manually).
+1. From Office on the web, sideload the add-in using steps previously described in [Manually sideload an add-in to Office on the web manually](#manually-sideload-an-add-in-to-office-on-the-web).
 
-## Sideload an add-in to Office on the web manually
+## Manually sideload an add-in to Office on the web
 
 This method doesn't use the command line and can be accomplished using commands only within the host application (such as Excel).
 
@@ -70,7 +70,7 @@ This method doesn't use the command line and can be accomplished using commands 
 
     ![The upload add-in dialog with buttons for browse, upload, and cancel.](../images/upload-add-in.png)
 
-1. Verify that your add-in is installed. For example, if it has an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in that has no add-in commands, the task pane should appear.
+1. Verify that your add-in is installed. For example, if it has an add-in command, it should appear on either the ribbon or the context menu. If it's a task pane add-in that has no add-in commands, the task pane should appear.
 
 > [!NOTE]
 > To test your Office Add-in with Microsoft Edge with the original WebView (EdgeHTML), an additional configuration step is required. In a Windows Command Prompt, run the following line: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`. This is not required when Office is using the Chromium-based Edge WebView2. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
@@ -83,7 +83,7 @@ This method doesn't use the command line and can be accomplished using commands 
 
 1. Open the App Launcher on the left end of the toolbar and select **Excel**, **PowerPoint**, or **Word**, and then create a new document.
 
-1. Steps 3 - 6 are the same as in the section [Sideload an add-in to Office on the web manually](#sideload-an-add-in-to-office-on-the-web-manually)..
+1. Steps 3 - 6 are the same as in the section [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web)..
 
 ## Remove a sideloaded add-in
 
