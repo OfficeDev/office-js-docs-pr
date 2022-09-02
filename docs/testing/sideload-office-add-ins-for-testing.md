@@ -54,13 +54,15 @@ If you're using Visual Studio to develop your add-in, pressing F5 will automatic
 1. Search and replace all instances of **~remoteAppUrl/** with the SSL URL you just copied. You'll see several replacements depending on the project type, and the new URLs will appear similar to `https://localhost:44300/Home.html`.
 1. Save the XML file.
 1. Open the context menu of the web project (for example, by right clicking on it) then choose **Debug** > **Start new instance**. This runs the web project without launching Office.
-1. From Office on the web, sideload the add-in using steps previously described in [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web).
+1. From Office on the web, sideload the add-in using steps described in [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web).
 
 ## Manually sideload an add-in to Office on the web
 
 This method doesn't use the command line and can be accomplished using commands only within the host application (such as Excel).
 
-1. Open [Office on the web](https://office.com/). Open a document in **Excel**, **OneNote**, **PowerPoint**, or  **Word**. On the **Insert** tab on the ribbon in the **Add-ins** section, choose **Office Add-ins**.
+1. Open [Office on the web](https://office.com/). Open a document in **Excel**, **OneNote**, **PowerPoint**, or  **Word**. 
+
+1. On the **Insert** tab on the ribbon in the **Add-ins** section, choose **Office Add-ins**.
 
 1. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
 
@@ -81,9 +83,11 @@ This method doesn't use the command line and can be accomplished using commands 
 
 1. Sign in to your Microsoft 365 account.
 
-1. Open the App Launcher on the left end of the toolbar and select **Excel**, **PowerPoint**, or **Word**, and then create a new document.
+1. Open the App Launcher on the left end of the toolbar and select **Excel**, **OneNote**, **PowerPoint**, or **Word**, and then create a new document.
 
-1. Steps 3 - 6 are the same as in the section [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web).
+1. On the **Insert** tab on the ribbon select the **Add-ins** button.
+
+1. Follow steps 3 - 5 of the section [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web).
 
 ## Remove a sideloaded add-in
 
