@@ -24,7 +24,7 @@ Go to the section or article that matches your scenario:
 - If the add-in was created with Visual Studio, see [Sideload an add-in on the web when using Visual Studio](#sideload-an-add-in-on-the-web-when-using-visual-studio).
 - For all other cases, see one of these sections:
 
-  - If you are sideloading to retail Office on the web, see [Sideload an add-in in Office on the web manually](#sideload-an-add-in-to-office-on-the-web-manually).
+  - If you are sideloading to retail Office on the web, see [Sideload an add-in to Office on the web manually](#sideload-an-add-in-to-office-on-the-web-manually).
   - If you are sideloading to Office in a Microsoft 365 tenancy, see [Sideload an add-in to Microsoft 365](#sideload-an-add-in-to-microsoft-365).
 
 ## Sideload a Yeoman-created add-in to Office on the web
@@ -41,7 +41,7 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 1. You will see a second dialog box, asking if you wish to register an Office Add-in manifest from your computer. You should select **Yes**.
 
-1. Your add-in is installed. If it has an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in withour any add-in commands, the task pane should appear.
+1. Your add-in is installed. If it has an add-in command, it should appear on either the ribbon or the context menu. If it's a task pane add-in without any add-in commands, the task pane should appear.
 
 ## Sideload an add-in on the web when using Visual Studio
 
@@ -50,10 +50,10 @@ If you're using Visual Studio to develop your add-in, pressing F5 will automatic
 1. In Visual Studio, show the **Properties** window by choosing **View** > **Properties Window**.
 1. In the **Solution Explorer**, select the web project. This will display properties for the project in the **Properties** window.
 1. In the Properties window, copy the **SSL URL**.
-1. In the add-in project, open the manifest XML file. Be sure you are editing the source XML. For some project types Visual Studio will open a visual view of the XML which will not work for the next step.
-1. Search and replace all instances of **~remoteAppUrl/** with the SSL URL you just copied. You will see several replacements depending on the project type, and the new URLs will appear similar to `https://localhost:44300/Home.html`.
+1. In the add-in project, open the manifest XML file. Be sure you are editing the source XML. For some project types, Visual Studio will open a visual view of the XML which won't work for the next step.
+1. Search and replace all instances of **~remoteAppUrl/** with the SSL URL you just copied. You'll see several replacements depending on the project type, and the new URLs will appear similar to `https://localhost:44300/Home.html`.
 1. Save the XML file.
-1. Right click the web project and choose **Debug** > **Start new instance**. This will run the web project without launching Office.
+1. Open the context menu of the web project (for example, by right clicking on it) then choose **Debug** > **Start new instance**. This runs the web project without launching Office.
 1. From Office on the web, sideload the add-in using steps previously described in [Sideload an add-in to Office on the web manually](#sideload-an-add-in-to-office-on-the-web-manually).
 
 ## Sideload an add-in to Office on the web manually
@@ -87,7 +87,7 @@ This method doesn't use the command line and can be accomplished using commands 
 
 ## Remove a sideloaded add-in
 
-You can remove an add-in sideloaded to Office on the web by clearing your browser's cache. If you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you may need to clear your browser's cache and then re-sideload the add-in using the updated manifest. Doing so will allow Office on the web to render the add-in as it's described by the updated manifest.
+You can remove an add-in sideloaded to Office on the web by clearing your browser's cache. If you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you may need to clear your browser's cache and then re-sideload the add-in using the updated manifest. Doing so allows Office on the web to render the add-in as it's described by the updated manifest.
 
 ## See also
 
