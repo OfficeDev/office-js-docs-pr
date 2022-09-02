@@ -157,6 +157,10 @@ A **shared runtime**, enables all code in your add-in, including task pane, add-
 
 See also: [custom functions runtime](#custom-functions-runtime), [runtime](#runtime).
 
+## subscription
+
+**Subscription** refers to versions of Office available with a Microsoft 365 subscription.
+
 ## task pane
 
 Task panes are interface surfaces, or webviews, that typically appear on the right side of the window within Excel, Outlook, PowerPoint, and Word. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to or can't embed functionality directly into the document. See [Task panes in Office Add-ins](../design/task-pane-add-ins.md) to learn more.
