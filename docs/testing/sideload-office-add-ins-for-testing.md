@@ -15,7 +15,7 @@ The steps to sideload an add-in on the web vary based on these factors:
 
 - The host application (for example, Excel, Word, Outlook).
 - What tool created the add-in project (for example, Visual Studio, Yeoman generator for Office Add-ins, or neither)
-- Whether you are sideloading to retail Office on the web or to a Microsoft 365 tenancy.
+- Whether you are sideloading to Office on the web with a Microsoft Account or with an account in a Microsoft 365 tenant.
 
 Go to the section or article that matches your scenario:
 
@@ -24,8 +24,8 @@ Go to the section or article that matches your scenario:
 - If the add-in was created with Visual Studio, see [Sideload an add-in on the web when using Visual Studio](#sideload-an-add-in-on-the-web-when-using-visual-studio).
 - For all other cases, see one of these sections:
 
-  - If you are sideloading to retail Office on the web, see [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web).
-  - If you are sideloading to Office in a Microsoft 365 tenancy, see [Sideload an add-in to Microsoft 365](#sideload-an-add-in-to-microsoft-365).
+  - If you are sideloading to Office on the web with a Microsoft Account, see [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web).
+  - If you are sideloading to Office on the web with an account in a Microsoft 365 tenant, see [Sideload an add-in to Microsoft 365](#sideload-an-add-in-to-microsoft-365).
 
 ## Sideload a Yeoman-created add-in to Office on the web
 
