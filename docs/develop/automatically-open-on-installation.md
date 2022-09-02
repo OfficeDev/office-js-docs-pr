@@ -46,4 +46,4 @@ To designate a task pane as the default, add a [TaskpaneId](/javascript/api/mani
 
 ## See also
 
-- [Automatically open a task pane with a document](automatically-open-a-task-pane-with-a-document)
+- [Automatically open a task pane with a document](automatically-open-a-task-pane-with-a-document.md)
