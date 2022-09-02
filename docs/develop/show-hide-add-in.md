@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Show or hide the task pane of your Office Add-in
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
 You can show the task pane of your Office Add-in by calling the `Office.addin.showAsTaskpane()` method.
 
@@ -42,7 +42,7 @@ Since `Office.addin.showAsTaskpane()` is an asynchronous method, your code will 
 
 ## Configure your add-in to use the shared runtime
 
-To use the `showAsTaskpane()` and `hide()` methods, your add-in must use the shared runtime. For more information, see [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).
+To use the `showAsTaskpane()` and `hide()` methods, your add-in must use the [shared runtime](../testing/runtimes.md#shared-runtime). For more information, see [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## Preservation of state and event listeners
 
@@ -110,5 +110,5 @@ await removeVisibilityModeHandler();
 
 ## See also
 
-- [Configure your Office Add-in to use a shared JavaScript runtime](configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md)
 - [Run code in your Office Add-in when the document opens](run-code-on-document-open.md)

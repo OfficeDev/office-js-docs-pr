@@ -31,7 +31,7 @@ The enable/disable APIs belong to the [RibbonApi 1.1](/javascript/api/requiremen
 
 ## Shared runtime required
 
-The APIs and manifest markup described in this article require that the add-in's manifest specify that it should use a shared runtime. To do this, take the following steps.
+The APIs and manifest markup described in this article require that the add-in's manifest specify that it should use a [shared runtime](../testing/runtimes.md#shared-runtime). To do this, take the following steps.
 
 1. In the [Runtimes](/javascript/api/manifest/runtimes) element in the manifest, add the following child element: `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (If there isn't already a **\<Runtimes\>** element in the manifest, create it as the first child under the **\<Host\>** element in the **\<VersionOverrides\>** section.)
 2. In the [Resources.Urls](/javascript/api/manifest/resources) section of the manifest, add the following child element: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, where `{MyDomain}` is the domain of the add-in and `{path-to-start-page}` is the path for the start page of the add-in; for example: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.
