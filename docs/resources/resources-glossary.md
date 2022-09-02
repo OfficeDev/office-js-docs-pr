@@ -59,7 +59,7 @@ See also: [application-specific API](#application-specific-api).
 
 **Consumer** refers to perpetual versions of Office available through retail channels. This usually excludes versions available through a volume-licensing agreement or through a Microsoft 365 subscription.
 
-See also: [perpetual](#perpetual), [retail](#retail), [one-time purchase](#one-time-purchase), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing)
+See also: [perpetual](#perpetual), [retail](#retail-retail-perpetual), [one-time purchase](#one-time-purchase), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing)
 
 ## content add-in
 
@@ -119,7 +119,7 @@ See also: [non-subscription](#non-subscription), [perpetual](#perpetual), [subsc
 
 **Perpetual** refers to versions of Office available through a volume-licensing agreement or retail channels.
 
-See also: [retail](#retail), [volume-licensed, volume-licensing](#volume-licensed-volume-licensing)
+See also: [retail, retail perpetual](#retail-retail-perpetual), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing)
 
 ## platform
 
