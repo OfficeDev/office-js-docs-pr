@@ -44,3 +44,6 @@ To designate a task pane as the default, add a [TaskpaneId](/javascript/api/mani
 > [!TIP]
 > If you want your add-in to automatically launch whenever the user reopens the document, you need to take further configuration steps. For details and advice about when to use this feature, see [Automatically open a task pane with a document](automatically-open-a-task-pane-with-a-document.md). 
 
+## See also
+
+- [Automatically open a task pane with a document](automatically-open-a-task-pane-with-a-document)
