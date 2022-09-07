@@ -27,6 +27,8 @@ items:
       href: quickstarts/project-quickstart.md
     - name: Word add-in
       href: quickstarts/word-quickstart.md
+    - name: Single sign-on (SSO)
+      href: quickstarts/sso-quickstart.md
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
@@ -135,6 +137,8 @@ items:
         items:
         - name: Enable SSO in an Office Add-in
           href: develop/sso-in-office-add-ins.md
+        - name: Quick start
+          href: quickstarts/sso-quickstart.md
         - name: Register with Microsoft identity platform
           href: develop/register-sso-add-in-aad-v2.md
         - name: Grant administrator consent
