@@ -2,7 +2,7 @@
 title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in
 description: Learn how to handle the on-send events in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 08/05/2022
+ms.date: 09/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,7 @@ The following walkthrough uses the `OnMessageSend` event. By the end of this wal
 
 ## Prerequisites
 
-The `OnMessageSend` event is available through the event-based activation feature. To understand how to configure your add-in to use this feature, use other available events, debug your add-in, and more, refer to [Configure your Outlook add-in for event-based activation](autolaunch.md).
+The `OnMessageSend` event is available through the event-based activation feature. To understand how to configure your add-in to use this feature, use other available events, debug your add-in, and more, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 ## Set up your environment
 
@@ -132,7 +132,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 > [!TIP]
 >
-> - For **SendMode** options available with the `OnMessageSend` and `OnAppointmentSend` events, refer to [Available SendMode options](/javascript/api/manifest/launchevent#available-sendmode-options).
+> - For **SendMode** options available with the `OnMessageSend` and `OnAppointmentSend` events, see [Available SendMode options](/javascript/api/manifest/launchevent#available-sendmode-options).
 > - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
 ## Implement event handling
@@ -275,6 +275,13 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 1. Add an attachment then send the message again. There should be no alert this time.
 
+## Deploy to users
+
+Similar to other event-based add-ins, add-ins that use the Smart Alerts feature must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see [Deploy to users](autolaunch.md#deploy-to-users).
+
+> [!IMPORTANT]
+> Add-ins that use the Smart Alerts feature can only be published to AppSource if the manifest's [SendMode property](/javascript/api/manifest/launchevent?view=excel-js-preview) is set to the `SoftBlock` or `PromptUser` option. If an add-in's **SendMode** property is set to `Block`, it can only be deployed by an organization's admin as it will fail AppSource validation. To learn more about publishing your event-based add-in to AppSource, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
+
 ## Smart Alerts feature behavior and scenarios
 
 Descriptions of the **SendMode** options and recommendations for when to use them are detailed in [Available SendMode options](/javascript/api/manifest/launchevent#available-sendmode-options). The following describes the feature's behavior for certain scenarios.
@@ -317,7 +324,7 @@ If the `SoftBlock` or `Block` option is  used, the user can't send the item unti
 
 ## Limitations
 
-Because the `OnMessageSend` and `OnAppointmentSend` events are supported through the event-based activation feature, the same feature limitations apply to add-ins that activate as a result of these events. For a description of these limitations, refer to [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
+Because the `OnMessageSend` and `OnAppointmentSend` events are supported through the event-based activation feature, the same feature limitations apply to add-ins that activate as a result of these events. For a description of these limitations, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
 
 In addition to these constraints, only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate manifest or add-in.
 
