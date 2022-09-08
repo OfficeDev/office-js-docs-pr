@@ -300,8 +300,6 @@ You can deploy event-based add-ins by uploading the manifest through the Microso
 
 ![The Integrated apps page on the Microsoft 365 admin center, including the Upload custom apps action.](../images/outlook-deploy-event-based-add-ins.png)
 
-AppSource and in-app Office Store: The ability to deploy event-based add-ins or update existing add-ins to include the event-based activation feature should be available soon.
-
 > [!IMPORTANT]
 > Event-based add-ins are restricted to admin-managed deployments only. For now, users can't activate event-based add-ins from AppSource or in-app Office Store. To learn more, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
 

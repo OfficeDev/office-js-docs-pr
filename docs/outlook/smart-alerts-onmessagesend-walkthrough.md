@@ -220,8 +220,6 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
     ```
 
-1. Save your changes.
-
 ## Update the commands HTML file
 
 1. In the **./src/commands** folder, open **commands.html**.
