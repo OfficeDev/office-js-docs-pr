@@ -1,6 +1,6 @@
 # Office Add-ins documentation
 
-Welcome to the Office Add-ins documentation repo. In this repository, you can find the documentation source files for Office JavaScript API concepts, quick starts, tutorials, and how-to guides. For the best experience, we recommend you view this content on [docs.microsoft.com](https://docs.microsoft.com/office/dev/add-ins).
+Welcome to the Office Add-ins documentation repo. In this repository, you can find the documentation source files for Office JavaScript API concepts, quick starts, tutorials, and how-to guides. For the best experience, we recommend you view this content on the [Microsoft Docs](https://docs.microsoft.com/office/dev/add-ins) site.
 
 > **Note**: You can find the Office JavaScript API reference documentation source files in the [office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference) repository.
 
