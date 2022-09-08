@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 # Debug a function command with a non-shared runtime
 
 > [!IMPORTANT]
-> If your add-in is [configured to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md), you debug the code behind the function command just as you would the code behind a task pane. See [Debug Office Add-ins](debug-add-ins-overview.md) and note that a function command in an add-in with a shared runtime is *not* a special case as described in that article. 
+> If your add-in is [configured to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md), you debug the code behind the function command just as you would the code behind a task pane. See [Debug Office Add-ins](debug-add-ins-overview.md) and note that a function command in an add-in with a [shared runtime](runtimes.md#shared-runtime) is *not* a special case as described in that article. 
 
 > [!NOTE]
 > This article assumes that you are familiar with [function commands](../design/add-in-commands.md#types-of-add-in-commands).
@@ -26,3 +26,7 @@ Function commands don't have a UI, so a debugger can't be attached to the proces
 ## Debug function commands in Outlook add-ins on Windows
 
 If your development computer is Windows, there is a way that you can debug a function command on Outlook desktop. See [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md).
+
+## See also
+
+- [Runtimes in Office Add-ins](runtimes.md)

@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 06/15/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
 ---
 
@@ -69,9 +69,9 @@ A **custom function** is a user-defined function that is packaged with an Excel 
 
 ## custom functions runtime
 
-A **custom functions runtime** is a JavaScript-only runtime that only runs custom functions. It has no UI and cannot interact with Office.js APIs. If your add-in only has custom functions, this is a good lightweight runtime to use. If your custom functions need to interact with the task pane or Office.js APIs, configure a shared JavaScript runtime. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
+A **custom functions runtime** is a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime) that runs custom functions on some combinations of Office host and platform. It has no UI and cannot interact with Office.js APIs. If your add-in only has custom functions, this is a good lightweight runtime to use. If your custom functions need to interact with the task pane or Office.js APIs, configure a [shared runtime](../testing/runtimes.md#shared-runtime). See [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
 
-See also: [JavaScript runtime](#javascript-runtime), [shared JavaScript runtime, shared runtime](#shared-javascript-runtime-shared-runtime).
+See also: [runtime](#runtime), [shared runtime](#shared-runtime).
 
 ## host
 
@@ -79,11 +79,7 @@ See also: [JavaScript runtime](#javascript-runtime), [shared JavaScript runtime,
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 
-## JavaScript runtime
 
-The **JavaScript runtime** is the browser host environment that the add-in runs in. In Office on Windows and Office on Mac, the JavaScript runtime is an embedded browser control (or webview) such as Internet Explorer, Edge Legacy, Edge WebView2, or Safari. Different parts of an add-in run in separate JavaScript runtimes. For example, add-in commands, custom functions, and task pane code typically use separate JavaScript runtimes unless you configure a shared JavaScript runtime. See [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) for more information.
-
-See also: [custom functions runtime](#custom-functions-runtime), [shared JavaScript runtime, shared runtime](#shared-javascript-runtime-shared-runtime), [webview](#webview).
 
 ## Office application, Office client
 
@@ -111,13 +107,15 @@ A **ribbon** is a command bar that organizes an application's features into a se
 
 ## runtime
 
-See: [JavaScript runtime](#javascript-runtime).
+A **runtime** is the host environment (including a JavaScript engine and usually also an HTML rendering engine) that the add-in runs in. In Office on Windows and Office on Mac, the runtime is an embedded browser control (or webview) such as Internet Explorer, Edge Legacy, Edge WebView2, or Safari. Different parts of an add-in run in separate runtimes. For example, add-in commands, custom functions, and task pane code typically use separate runtimes unless you configure a [shared runtime](../testing/runtimes.md#shared-runtime). See [Runtimes in Office Add-ins](../testing/runtimes.md) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) for more information.
 
-## shared JavaScript runtime, shared runtime
+See also: [custom functions runtime](#custom-functions-runtime), [shared runtime](#shared-runtime), [webview](#webview).
 
-A **shared JavaScript runtime**, or **shared runtime**, enables all code in your add-in, including task pane, add-in commands, and custom functions, to run in the same JavaScript runtime and continue running even when the task pane is closed. See [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) and [Tips for using the shared JavaScript runtime in your Office Add-in](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) to learn more.
+## shared runtime
 
-See also: [custom functions runtime](#custom-functions-runtime), [JavaScript runtime](#javascript-runtime).
+A **shared runtime**, enables all code in your add-in, including task pane, add-in commands, and custom functions, to run in the same runtime and continue running even when the task pane is closed. See [shared runtime](../testing/runtimes.md#shared-runtime) and [Tips for using the shared runtime in your Office Add-in](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) to learn more.
+
+See also: [custom functions runtime](#custom-functions-runtime), [runtime](#runtime).
 
 ## task pane
 
@@ -133,7 +131,7 @@ See also: [quick start](#quick-start).
 
 ## custom functions-only add-in
 
-An add-in that contains a custom function, but no UI such as a task pane. The custom functions in this kind of add-in run in a JavaScript-only runtime. A custom function that does include a UI can use either a shared runtime or a combination of a JavaScript-only runtime and an HTML-supporting runtime. We recommend that if you have a UI, you use a shared runtime. 
+An add-in that contains a custom function, but no UI such as a task pane. The custom functions in this kind of add-in run in a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). A custom function that does include a UI can use either a shared runtime or a combination of a JavaScript-only runtime and an HTML-supporting runtime. We recommend that if you have a UI, you use a shared runtime. 
 
 See also: [custom function](#custom-function), [custom functions runtime](#custom-functions-runtime).
 

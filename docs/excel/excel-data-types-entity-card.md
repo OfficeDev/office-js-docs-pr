@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types entity value card
 description: Learn how to use entity value cards with data types in your Excel add-in.
-ms.date: 07/14/2022
+ms.date: 07/28/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
@@ -71,6 +71,31 @@ const entity: Excel.EntityCellValue = {
 The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the **Product ID**, **Product Name**, **Image**, **Quantity Per Unit**, and **Unit Price** information from the preceding code snippet.
 
 :::image type="content" source="../images/excel-data-types-entity-card-properties.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the product name, product ID, quantity per unit, and unit price information.":::
+
+### Property metadata
+
+Entity properties have an optional `propertyMetadata` field that uses the [`CellValuePropertyMetadata`](/javascript/api/excel/excel.cellvaluepropertymetadata) object and offers the properties `attribution`, `excludeFrom`, and `sublabel`. The following code snippet shows how to add a `sublabel` to the `"Unit Price"` property from the preceding code snippet. In this case, the sublabel identifies the currency type.
+
+> [!NOTE]
+> The `propertyMetadata` field is only available on data types that are nested within entity properties.
+
+```TypeScript
+// This code snippet is an excerpt from the `properties` field of the 
+// preceding `EntityCellValue` snippet. "Unit Price" is a property of 
+// an entity value.
+        "Unit Price": {
+            type: Excel.CellValueType.formattedNumber,
+            basicValue: product.unitPrice,
+            numberFormat: "$* #,##0.00",
+            propertyMetadata: {
+              sublabel: "USD"
+            }
+        },
+```
+
+The following screenshot shows an entity value card that uses the preceding code snippet, displaying the property metadata `sublabel` of **USD** next to the **Unit Price** property.
+
+:::image type="content" source="../images/excel-data-types-entity-card-property-metadata.png" alt-text="A screenshot showing the sublabel USD next to the Unit Price.":::
 
 ## Card layout
 

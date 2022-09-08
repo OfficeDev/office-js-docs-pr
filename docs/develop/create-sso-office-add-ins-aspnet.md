@@ -346,7 +346,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     }
     ```
 
-1. Replace `TODO 6` with the following.
+1. Replace `TODO 6` with the following:
 
     ```javascript
     if (exceptionMessage) {
@@ -368,7 +368,7 @@ If you chose "Accounts in this organizational directory only" for **SUPPORTED AC
     }
     ```
 
-1. Replace `TODO 8` with the following.
+1. Replace `TODO 8` with the following:
 
     ```javascript
     else {
