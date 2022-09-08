@@ -41,7 +41,7 @@ If you used the Yeoman Generator for Office Add-ins to create your add-in projec
 1. Start Outlook desktop (or restart Outlook if it's already open).
 1. Compose a new message or appointment. You should see the following dialog. Do *not* interact with the dialog yet.
 
-    ![The Debug Event-based handler dialog on Windows.](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![The Debug Event-based handler dialog in Windows.](../images/outlook-win-autolaunch-debug-dialog.png)
 
 ## Configure Visual Studio Code
 

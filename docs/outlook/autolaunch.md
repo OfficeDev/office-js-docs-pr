@@ -14,6 +14,7 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 
 > [!NOTE]
 > Support for this feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in [requirement set 1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11) and [requirement set 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support these requirement sets.
+>
 > Event-based activation isn't supported in Outlook on iOS or Android.
 
 ## Supported events
@@ -120,7 +121,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
               <LaunchEvent Type="OnNewMessageCompose" FunctionName="onNewMessageComposeHandler"/>
               <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onNewAppointmentComposeHandler"/>
               
-              <!-- Other available events (currently released) -->
+              <!-- Other available events -->
               <!--
               <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
               <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />

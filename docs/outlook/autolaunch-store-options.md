@@ -33,7 +33,7 @@ Users and admins can't explicitly search for an add-in by its name in AppSource 
 
 To specify the flight code you want for your add-in, share that information in the **Notes for certification** when you're publishing your add-in. _**Important**:_ Flight codes are case-sensitive.
 
-![A sample request for flight code in Notes for certification screen during publishing process.](../images/outlook-publish-notes-for-certification-1.png)
+:::image type="content" source="../images/outlook-publish-notes-for-certification-1.png" alt-text="A sample request for flight code in Notes for certification screen during publishing process." lightbox="../images/outlook-publish-notes-for-certification-1.png":::
 
 ## Deploy add-in with flight code
 
@@ -58,7 +58,7 @@ You can update your existing add-in to include event-based activation then resub
 
 After the updated add-in is approved, organization admins who have previously deployed the add-in will receive an update message in the **Integrated apps** section of the admin center. The message advises the admin about the event-based activation changes. After the admin accepts the changes, the update will be deployed to end-users.
 
-![An app update notification on the "Integrated apps" screen.](../images/outlook-deploy-update-notification.png)
+:::image type="content" source="../images/outlook-deploy-update-notification.png" alt-text="An app update notification on the "Integrated apps" screen." lightbox="../images/outlook-deploy-update-notification.png":::
 
 For end-users who installed the add-in on their own, the event-based activation feature won't work even after the add-in has been updated.
 
@@ -66,13 +66,13 @@ For end-users who installed the add-in on their own, the event-based activation 
 
 Whenever an event-based add-in is deployed from the **Integrated Apps** screen, the admin gets details about the add-in's event-based activation capabilities in the deployment wizard. The details appear in the **App Permissions and Capabilities** section. The admin should see all the events where the add-in can automatically activate.
 
-![The "Accept permissions requests" screen when deploying a new app.](../images/outlook-deploy-accept-permissions-requests.png)
+:::image type="content" source="../images/outlook-deploy-accept-permissions-requests.png" alt-text="The "Accept permissions requests" screen when deploying a new app." lightbox="../images/outlook-deploy-accept-permissions-requests.png":::
 
 Similarly, when an existing add-in is updated to event-based functionality, the admin sees an "Update Pending" status on the add-in. The updated add-in is deployed only if the admin consents to the changes noted in the **App Permissions and Capabilities** section, including the set of events where the add-in can automatically activate.
 
 Each time you add any new `LaunchEvent Type` to your add-in, admins will see the update flow in the admin portal and need to provide consent for additional events.
 
-![The "Updates" flow when deploying an updated app.](../images/outlook-deploy-update-flow.png)
+:::image type="content" source="../images/outlook-deploy-update-flow.png" alt-text="The "Updates" flow when deploying an updated app." lightbox="../images/outlook-deploy-update-flow.png":::
 
 ## See also
 
