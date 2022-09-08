@@ -898,6 +898,9 @@ items:
     displayName: Excel
   - name: Copy Script Lab snippet to Yo Office
     href: overview/create-an-office-add-in-from-script-lab.md
+  - name: Batching custom function remote calls
+    href: excel/custom-functions-batching.md
+    displayName: Excel, Custom Functions
 - name: Resources
   items:
   - name: Glossary
