@@ -35,9 +35,9 @@ In this article, you'll use the Yeoman generator for Office Add-ins to create an
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project supporting single sign-on (localhost)`
-- **Choose a script type:** `Javascript`
+- **Choose a script type:** `JavaScript`
 - **What do you want to name your add-in?** `My SSO Office Add-in`
-- **Which Office client application would you like to support?** `Excel`
+- **Which Office client application would you like to support?** Choose `Excel`, `Outlook`, `Word`, or `Powerpoint`.
 
 :::image type="content" source="../images/yo-office-sso-excel.png" alt-text="Prompts and answers for the Yeoman generator in a command line interface.":::
 
