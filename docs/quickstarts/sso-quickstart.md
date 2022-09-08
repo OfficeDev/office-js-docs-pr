@@ -36,7 +36,7 @@ In this article, you'll use the Yeoman generator for Office Add-ins to create an
 
 - **Choose a project type:** `Office Add-in Task Pane project supporting single sign-on (localhost)`
 - **Choose a script type:** `JavaScript`
-- **What do you want to name your add-in?** `My SSO Office Add-in`
+- **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** Choose `Excel`, `Outlook`, `Word`, or `Powerpoint`.
 
 :::image type="content" source="../images/yo-office-sso-excel.png" alt-text="Prompts and answers for the Yeoman generator in a command line interface.":::
@@ -58,7 +58,7 @@ At this point, your add-in project has been created and contains the code that's
 1. Go to the root folder of the project.
 
     ```command&nbsp;line
-    cd "My SSO Office Add-in"
+    cd "My Office Add-in"
     ```
 
 2. Run the following command to configure SSO for the add-in.
