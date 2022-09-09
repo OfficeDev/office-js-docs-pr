@@ -20,7 +20,7 @@ The following samples show how to build the simplest Office Add-in with only a m
 
 ## Blazor WebAssembly
 
-If your development background is in building VSTO Add-ins, the following samples show how to build Office Web Add-ins using .NET Blazor Webassembly. You can keep much of your code in C# and Visual Studio.
+If your development background is in building VSTO Add-ins, the following samples show how to build Office Web Add-ins using .NET Blazor WebAssembly. You can keep much of your code in C# and Visual Studio.
 
 - [Create a Blazor WebAssembly Excel add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/excel-blazor-add-in)
 - [Create a Blazor WebAssembly Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/word-blazor-add-in)
