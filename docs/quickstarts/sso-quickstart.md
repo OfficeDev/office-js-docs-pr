@@ -11,7 +11,7 @@ ms.localizationpriority: high
 In this article, you'll use the Yeoman generator for Office Add-ins to create an Office Add-in for Excel, Outlook, Word, or PowerPoint that uses single sign-on (SSO).
 
 > [!NOTE]
-> The SSO template provided by the Yeoman generator for Office Add-ins only runs on localhost and cannot be deployed. If you are building a new Office Add-in with SSO for production purposes, follow the instructions in [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md).
+> The SSO template provided by the Yeoman generator for Office Add-ins only runs on localhost and cannot be deployed. If you're building a new Office Add-in with SSO for production purposes, follow the instructions in [Create a Node.js Office Add-in that uses single sign-on](../develop/create-sso-office-add-ins-nodejs.md).
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ In this article, you'll use the Yeoman generator for Office Add-ins to create an
 ## Create the add-in project
 
 > [!TIP]
-> The Yeoman generator can create an SSO-enabled Office Add-in for Excel, Outlook, Word, or PowerPoint, and can be created with script type of JavaScript or TypeScript. The following instructions specify `JavaScript` and `Excel`, but you should choose the script type and Office client application that best suits your scenario.
+> The Yeoman generator can create an SSO-enabled Office Add-in for Excel, Outlook, Word, or PowerPoint with script type of JavaScript or TypeScript. The following instructions specify `JavaScript` and `Excel`, but you should choose the script type and Office client application that best suits your scenario.
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
@@ -53,7 +53,7 @@ The add-in project that you've created with the Yeoman generator contains code f
 
 ## Configure SSO
 
-At this point, your add-in project has been created and contains the code that's necessary to facilitate the SSO process. Next, complete the following steps to configure SSO for your add-in.
+Now that your add-in project is created and contains the code that's necessary to facilitate the SSO process, complete the following steps to configure SSO for your add-in.
 
 1. Go to the root folder of the project.
 
@@ -77,13 +77,13 @@ At this point, your add-in project has been created and contains the code that's
 
 4. After you enter your credentials, close the browser window and return to the command prompt. As the SSO configuration process continues, you'll see status messages being written to the console. As described in the console messages, files within the add-in project that the Yeoman generator created are automatically updated with data that's required by the SSO process.
 
-## Try it out
+## Test your add-in
 
-If you've created an Excel, Word, or PowerPoint add-in, complete the steps in the following section to try it out. If you've created an Outlook add-in, complete the steps in the [Outlook](#outlook) section instead.
+If you've created an Excel, Word, or PowerPoint add-in, complete the steps in the following section to try it. If you've created an Outlook add-in, complete the steps in the [Outlook](#outlook) section instead.
 
 ### Excel, Word, and PowerPoint
 
-Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
+Complete the following steps to test an Excel, Word, or PowerPoint add-in.
 
 1. When the SSO configuration process completes, run the following command to build the project, start the local web server, and sideload your add-in in the previously selected Office client application.
 
@@ -93,9 +93,9 @@ Complete the following steps to try out an Excel, Word, or PowerPoint add-in.
     npm start
     ```
 
-2. In the Office client application that opens when you run the previous command (i.e., Excel, Word or PowerPoint), make sure that you're signed in with a user account that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed.
+2. When Excel, Word, or PowerPoint opens when you run the previous command, make sure you're signed in with a user account that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed.
 
-3. In the Office client application, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. The following image shows this button in Excel.
+3. In the Office client application, choose the **Home** tab, and then choose **Show Taskpane** to open the add-in task pane.
 
     :::image type="content" source="../images/excel-quickstart-addin-3b.png" alt-text="Excel add-in button.":::
 
@@ -128,7 +128,7 @@ Complete the following steps to try out an Outlook add-in.
 
 3. In Outlook, compose a new message.
 
-4. In the message compose window, choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+4. In the message compose window, choose the **Show Taskpane** button to open the add-in task pane.
 
     ![Screenshot showing highlighted add-in ribbon button in Outlook compose message window.](../images/outlook-sso-ribbon-button.png)
 
