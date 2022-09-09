@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # AppSource listing options for your event-based Outlook add-in
 
-At present, add-ins must be deployed by an organization's admins for end-users to access the event-based feature functionality. We're restricting event-based activation if the end-user acquired the add-in directly from [AppSource](https://appsource.microsoft.com). For example, if the Contoso add-in includes the `LaunchEvent` extension point with at least one defined `LaunchEvent Type` under the `LaunchEvents` node, the automatic invocation of the add-in only happens if the add-in was installed for the end-user by their organization's admin. Otherwise, the automatic invocation of the add-in is blocked. See the following excerpt from an example add-in manifest.
+Add-ins must be deployed by an organization's admins for end-users to access the event-based feature functionality. Event-based activation is restricted if the end-user acquired the add-in directly from [AppSource](https://appsource.microsoft.com). For example, if the Contoso add-in includes the `LaunchEvent` extension point with at least one defined `LaunchEvent Type` under the `LaunchEvents` node, the automatic invocation of the add-in only happens if the add-in was installed for the end-user by their organization's admin. Otherwise, the automatic invocation of the add-in is blocked. See the following excerpt from an example add-in manifest.
 
 ```xml
 ...
@@ -31,7 +31,7 @@ Users and admins can't explicitly search for an add-in by its name in AppSource 
 
 ## Specify a flight code
 
-To specify the flight code you want for your add-in, share that information in the **Notes for certification** when you're publishing your add-in. _**Important**:_ Flight codes are case-sensitive.
+To specify the flight code for your add-in, share the code in the **Notes for certification** when you publish your add-in. **Important**: Flight codes are case-sensitive.
 
 ![A sample request for flight code in Notes for certification screen during publishing process.](../images/outlook-publish-notes-for-certification-1.png)
 
