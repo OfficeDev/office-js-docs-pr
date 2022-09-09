@@ -101,7 +101,7 @@ Complete the following steps to test an Excel, Word, or PowerPoint add-in.
 
 4. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process.
 
-5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose the **Accept** button in the dialog window to continue.
+5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed in to Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose **Accept** to continue.
 
     ![Screenshot showing permissions requested dialog with Accept button highlighted.](../images/sso-permissions-request.png)
 
@@ -134,7 +134,7 @@ Complete the following steps to try out an Outlook add-in.
 
 5. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process.
 
-6. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed into Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose the **Accept** button in the dialog window to continue.
+6. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed in to Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose **Accept** to continue.
 
     ![Screenshot of permissions requested dialog with Accept button highlighted.](../images/sso-permissions-request.png)
 
