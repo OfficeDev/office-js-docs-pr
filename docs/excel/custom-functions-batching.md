@@ -1,5 +1,5 @@
 ---
-ms.date: 09/00/2022
+ms.date: 09/09/2022
 description: Batch custom functions together to reduce network calls to a remote service.
 title: Batching custom function calls for a remote service
 ms.localizationpriority: medium
