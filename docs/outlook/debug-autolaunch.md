@@ -2,7 +2,7 @@
 title: Debug your event-based Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 08/12/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -13,7 +13,7 @@ This article provides debugging guidance as you implement [event-based activatio
 > [!IMPORTANT]
 > This debugging capability is only supported in Outlook on Windows with a Microsoft 365 subscription.
 
-In this article, we discuss the key stages to enable debugging.
+This article discusses the key stages to enable debugging.
 
 - [Mark the add-in for debugging](#mark-your-add-in-for-debugging)
 - [Configure Visual Studio Code](#configure-visual-studio-code)

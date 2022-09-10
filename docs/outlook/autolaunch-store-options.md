@@ -2,7 +2,7 @@
 title: AppSource listing options for your event-based Outlook add-in
 description: Learn about the AppSource listing options available for your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 09/07/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -24,10 +24,10 @@ An end-user or admin can acquire add-ins through AppSource or the in-app Office 
 
 Users and admins can't explicitly search for an add-in by its name in AppSource or the in-app Office Store when a flight code is enabled for it. As the add-in creator, you can privately share these flight codes with organization admins for add-in deployment.
 
-[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
-
 > [!NOTE]
 > While end-users can install the add-in using a flight code, the add-in won't include event-based activation.
+
+[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
 
 ## Specify a flight code
 
