@@ -33,7 +33,7 @@ Users and admins can't explicitly search for an add-in by its name in AppSource 
 
 To specify the flight code for your add-in, share the code in the **Notes for certification** when you publish your add-in. **Important**: Flight codes are case-sensitive.
 
-![A sample request for flight code in Notes for certification screen during publishing process.](../images/outlook-publish-notes-for-certification-1.png)
+![A sample request for flight code in Notes for certification screen during publishing process.](../images/outlook-publish-notes-for-certification.png)
 
 ## Deploy add-in with flight code
 
@@ -58,7 +58,7 @@ You can update your existing add-in to include event-based activation then resub
 
 After the updated add-in is approved, organization admins who have previously deployed the add-in will receive an update message in the **Integrated apps** section of the admin center. The message advises the admin about the event-based activation changes. After the admin accepts the changes, the update will be deployed to end-users.
 
-![An app update notification on the "Integrated apps" screen.](../images/outlook-deploy-update-notification.png)
+![App update notifications on the "Integrated apps" screen.](../images/outlook-deploy-update-notification.png)
 
 For end-users who installed the add-in on their own, the event-based activation feature won't work even after the add-in has been updated.
 

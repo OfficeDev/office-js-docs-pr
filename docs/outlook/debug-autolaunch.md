@@ -74,7 +74,7 @@ If you used the Yeoman Generator for Office Add-ins to create your add-in projec
 1. Go to **File** > **Open Folder**, navigate to the folder you just created, then choose **Select Folder**.
 1. On the Activity Bar, select **Run and Debug** (Ctrl+Shift+D).
 
-    ![The Debug icon on the Activity Bar.](../images/vs-code-debug.png)
+    ![The Run and Debug icon on the Activity Bar.](../images/vs-code-debug.png)
 
 1. Select the **create a launch.json file** link.
 
@@ -108,7 +108,7 @@ If you used the Yeoman Generator for Office Add-ins to create your add-in projec
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
 1. Place breakpoints in bundle.js where you want the debugger to stop.
-1. In the **DEBUG** dropdown, select the name **Direct Debugging**, then select **Run**.
+1. In the **DEBUG** dropdown, select **Direct Debugging**, then select the **Start Debugging** icon.
 
     ![The Direct Debugging option selected from configuration options in the Visual Studio Code Debug dropdown.](../images/outlook-win-autolaunch-debug-vsc.png)
 
