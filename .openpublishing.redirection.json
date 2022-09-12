@@ -37,8 +37,8 @@
             "redirect_url": "/javascript/api/onenote?view=onenote-js-1.1"
         },
         {
-            "source_path": "docs/reference/outlook-api-reference-1-11.md",
-            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.11"
+            "source_path": "docs/reference/outlook-api-reference-latest.md",
+            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.12"
         },
         {
             "source_path": "docs/reference/powerpoint-api-reference.md",

@@ -634,7 +634,7 @@ items:
       href: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
       displayName: Outlook
     - name: API reference - latest release
-      href: reference/outlook-api-reference-1-11.md
+      href: reference/outlook-api-reference-latest.md
       displayName: Outlook
     - name: Outlook add-in design guidelines
       href: outlook/outlook-addin-design.md
