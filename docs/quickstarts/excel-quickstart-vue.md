@@ -208,7 +208,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. Run your add-in and sideload the add-in within Excel. Follow the instructions for the platform you'll be using:
 
    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-   - Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+   - Web browser: [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-a-yeoman-created-add-in-to-office-on-the-web)
    - iPad: [Sideload Office Add-ins on iPad](../testing/sideload-an-office-add-in-on-ipad.md)
    - Mac: [Sideload Office Add-ins on Mac](../testing/sideload-an-office-add-in-on-mac.md)
 
