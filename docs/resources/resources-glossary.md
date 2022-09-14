@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 09/02/2022
+ms.date: 09/14/2022
 ms.localizationpriority: medium
 ---
 
@@ -39,12 +39,6 @@ See also: [Common API](#common-api).
 
 See also: [application](#application), [host](#host), [Office application, Office client](#office-application-office-client).
 
-## commercial
-
-**Commercial** refers to perpetual versions of Office available through a volume-licensing agreement between Microsoft and your company.
-
-See also: [perpetual](#perpetual), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing)
-
 ## Common API
 
 Common APIs are used to access features such as UI, dialogs, and client settings that are common across multiple Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), which allow you to specify only one operation in each request sent to the Office application.
@@ -54,12 +48,6 @@ Common APIs were introduced with Office 2013 and are used to interact with Offic
 Other Common APIs, such as the Common APIs related to Outlook, UI, and authentication, are the modern and preferred APIs for these purposes. For details about the Common API object model, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 See also: [application-specific API](#application-specific-api).
-
-## consumer
-
-**Consumer** refers to perpetual versions of Office available through retail channels. This usually excludes versions available through a volume-licensing agreement or through a Microsoft 365 subscription.
-
-See also: [perpetual](#perpetual), [retail](#retail-retail-perpetual), [one-time purchase](#one-time-purchase), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing)
 
 ## content add-in
 
@@ -97,27 +85,17 @@ See also: [custom function](#custom-function), [custom functions runtime](#custo
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 
-## non-subscription
-
-**Non-subscription** refers to perpetual versions of Office. These are versions that are not provided by a Microsoft 365 subscription.
-
-See also: [one-time purchase](#one-time-purchase), [perpetual](#perpetual), [subscription](#subscription)
-
 ## Office application, Office client
 
 **Office client** refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
 See also: [application](#application), [client](#client), [host](#host).
 
-## one-time purchase
-
-**One-time purchase** refers to perpetual versions of Office. These are versions that are not available through a Microsoft 365 subscription.
-
-See also: [non-subscription](#non-subscription), [perpetual](#perpetual), [subscription](#subscription)
-
 ## perpetual
 
 **Perpetual** refers to versions of Office available through a volume-licensing agreement or retail channels.
+
+Other Microsoft content may use the term **non-subscription** to represent this concept.
 
 See also: [retail, retail perpetual](#retail-retail-perpetual), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing)
 
@@ -138,6 +116,8 @@ See also: [tutorial](#tutorial).
 ## retail, retail perpetual
 
 **Retail** refers to perpetual versions of Office available through retail channels. These do not include versions provided by a Microsoft 365 subscription nor volume-licensing agreement.
+
+Other Microsoft content may use the term **one-time purchase** or **consumer** to represent this concept.
 
 See also: [perpetual](#perpetual)
 
@@ -176,6 +156,8 @@ See also: [quick start](#quick-start).
 ## volume-licensed, volume-licensed perpetual, volume licensing
 
 **Volume-licensed** refers to a perpetual version of Office available through a volume-licensing agreement between Microsoft and your company.
+
+Other Microsoft content may use the term **commercial** to represent this concept.
 
 See also: [perpetual](#perpetual)
 

@@ -1,13 +1,13 @@
 ---
 title: Office versions and requirement sets
 description: Supported Office.js platforms using JavaScript API.
-ms.date: 09/08/2022
+ms.date: 09/14/2022
 ms.localizationpriority: high
 ---
 
 # Office versions and requirement sets
 
-There are many versions of Office on several platforms, and they don't all support every API in Office JavaScript API (Office.js). For example, Office 2013 on Windows was the earliest version of Office that supported Office Add-ins. You may not always have control over the version of Office your users have installed. To handle this situation, we provide a system called requirement sets to help you determine whether an Office application supports the capabilities you need in your Office Add-in.
+There are many versions of Office on several platforms, and they don't all support every API in Office JavaScript API (Office.js). Office 2013 on Windows was the earliest version of Office that supported Office Add-ins. You may not always have control over the version of Office your users have installed. To handle this situation, we provide a system called requirement sets to help you determine whether an Office application supports the capabilities you need in your Office Add-in.
 
 > [!NOTE]
 >
