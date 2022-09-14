@@ -18,7 +18,7 @@ This article assumes that you have an add-in project that needs to be debugged. 
 
 To debug your add-in by using Office on the web:
 
-1. Run the project on localhost and sideload it to a document in Office on the web. For detailed sideloading instructions, see [Sideload Office Add-ins on the web](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually).
+1. Run the project on localhost and sideload it to a document in Office on the web. For detailed sideloading instructions, see [Manually sideload Office Add-ins on the web](sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web).
 
 2. Open the browser's developer tools. This is usually done by pressing F12. Open the debugger tool and use it to set breakpoints and watch variables. For detailed help in using your browser's tool, see one of the following:
 
