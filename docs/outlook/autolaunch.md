@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 09/09/2022
+ms.date: 09/16/2022
 ms.localizationpriority: medium
 ---
 
@@ -172,7 +172,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the **\<Runtime\>** element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
 
 > [!TIP]
-> 
+>
 > - To learn about runtimes in add-ins, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 > - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
@@ -225,7 +225,7 @@ In this scenario, you'll add handling for composing new items.
 1. Save your changes.
 
 > [!IMPORTANT]
-> Windows: At present, imports are not supported in the JavaScript file where you implement the handling for event-based activation.
+> Windows: At present, imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
 
 ## Update the commands HTML file
 
@@ -311,15 +311,15 @@ You can deploy event-based add-ins by uploading the manifest through the Microso
 
 ## Event-based activation behavior and limitations
 
-Add-in launch-event handlers are expected to be short-running, lightweight, and as noninvasive as possible. After activation, your add-in will time out within approximately 300 seconds, the maximum length of time allowed for running event-based add-ins. To signal that your add-in has completed processing a launch event, we recommend you have the associated handler call the `event.completed` method. (Note that code included after the `event.completed` statement is not guaranteed to run.) Each time an event that your add-in handles is triggered, the add-in is reactivated and runs the associated event handler, and the timeout window is reset. The add-in ends after it times out, or the user closes the compose window or sends the item.
+Add-in launch-event handlers are expected to be short-running, lightweight, and as noninvasive as possible. After activation, your add-in will time out within approximately 300 seconds, the maximum length of time allowed for running event-based add-ins. To signal that your add-in has completed processing a launch event, your associated event handler must call the `event.completed` method. (Note that code included after the `event.completed` statement isn't guaranteed to run.) Each time an event that your add-in handles is triggered, the add-in is reactivated and runs the associated event handler, and the timeout window is reset. The add-in ends after it times out, or the user closes the compose window or sends the item.
 
 If the user has multiple add-ins that subscribed to the same event, the Outlook platform launches the add-ins in no particular order. Currently, only five event-based add-ins can be actively running.
 
 In all supported Outlook clients, the user must remain on the current mail item where the add-in was activated for it to complete running. Navigating away from the current item (for example, switching to another compose window or tab) terminates the add-in operation. The add-in also ceases operation when the user sends the message or appointment they're composing.
 
-Imports are not supported in the JavaScript file where you implement the handling for event-based activation in the Windows client.
+Imports aren't supported in the JavaScript file where you implement the handling for event-based activation in the Windows client.
 
-Some Office.js APIs that change or alter the UI are not allowed from event-based add-ins. The following are the blocked APIs.
+Some Office.js APIs that change or alter the UI aren't allowed from event-based add-ins. The following are the blocked APIs.
 
 - Under `Office.context.auth`:
   - `getAccessToken`

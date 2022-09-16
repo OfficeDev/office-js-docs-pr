@@ -73,13 +73,17 @@ A **custom functions runtime** is a [JavaScript-only runtime](../testing/runtime
 
 See also: [runtime](#runtime), [shared runtime](#shared-runtime).
 
+## custom functions-only add-in
+
+An add-in that contains a custom function, but no UI such as a task pane. The custom functions in this kind of add-in run in a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). A custom function that does include a UI can use either a shared runtime or a combination of a JavaScript-only runtime and an HTML-supporting runtime. We recommend that if you have a UI, you use a shared runtime.
+
+See also: [custom function](#custom-function), [custom functions runtime](#custom-functions-runtime).
+
 ## host
 
 **\<Host\>** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
-
-
 
 ## Office application, Office client
 
@@ -128,12 +132,6 @@ See also: [webview](#webview).
 A **tutorial** is a teaching aid designed to help people learn to use a product or procedure. In the Office Add-ins context, a tutorial guides an add-in developer through the complete add-in development process for a particular application, such as Excel. This involves following 20 or more steps and is a greater time investment than a [quick start](#quick-start).
 
 See also: [quick start](#quick-start).
-
-## custom functions-only add-in
-
-An add-in that contains a custom function, but no UI such as a task pane. The custom functions in this kind of add-in run in a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). A custom function that does include a UI can use either a shared runtime or a combination of a JavaScript-only runtime and an HTML-supporting runtime. We recommend that if you have a UI, you use a shared runtime. 
-
-See also: [custom function](#custom-function), [custom functions runtime](#custom-functions-runtime).
 
 ## web add-in
 
