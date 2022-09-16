@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: A list of Office Add-in code samples to help you learn and build your own add-ins.
-ms.date: 06/10/2022
+ms.date: 09/16/2022
 localization_priority: high
 ---
 
@@ -33,6 +33,7 @@ The following samples show how to build the simplest Office Add-in with only a m
 
 | Name                | Description         |
 |:--------------------|:--------------------|
+| [Data types explorer](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) (preview) | Builds an Excel add-in that allows you to create and explore data types in your workbooks. Data types enable add-in developers to organize complex data structures as objects, such as formatted number values, web images, and entity values. |
 | [Open in Teams](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-open-in-teams) | Create a new Excel spreadsheet in Microsoft Teams containing data you define.|
 | [Insert an external Excel file and populate it with JSON data](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-insert-file)  | Insert an existing template from an external Excel file into the currently open Excel workbook. Then, populate the template with data from a JSON web service. |
 | [Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs) | Create a custom contextual tab on the ribbon in the Office UI. The sample creates a table, and when the user moves the focus inside the table, the custom tab is displayed. When the user moves outside the table, the custom tab is hidden. |
