@@ -1,7 +1,7 @@
 ---
 title: Using the application-specific API model
 description: Learn about the promise-based API model for Excel, OneNote, and Word add-ins.
-ms.date: 07/18/2022
+ms.date: 09/23/2022
 ms.localizationpriority: medium
 ---
 
@@ -21,9 +21,9 @@ Office Add-ins are websites which appear inside a browser container within Offic
 
 ## *.run function
 
-`Excel.run`, `Word.run`, and `OneNote.run` execute a function that specifies the actions to perform against Excel, Word, and OneNote. `*.run` automatically creates a request context that you can use to interact with Office objects. When `*.run` completes, a promise is resolved, and any objects that were allocated at runtime are automatically released.
+`Excel.run`, `OneNote.run`, `PowerPoint.run`, and `Word.run` execute a function that specifies the actions to perform against Excel, Word, and OneNote. `*.run` automatically creates a request context that you can use to interact with Office objects. When `*.run` completes, a promise is resolved, and any objects that were allocated at runtime are automatically released.
 
-The following example shows how to use `Excel.run`. The same pattern is also used with Word and OneNote.
+The following example shows how to use `Excel.run`. The same pattern is also used with OneNote, PowerPoint, and Word.
 
 ```js
 Excel.run(function (context) {
