@@ -45,7 +45,7 @@ Table 2 lists the limits and describes the differences in the portion of the ite
 
 **Table 2. Limits on the size of the item body evaluated**
 
-||Outlook rich client|Outlook on mobile devices|Outlook on the web|
+|&mdash;|Outlook rich client|Outlook on mobile devices|Outlook on the web|
 |:-----|:-----|:-----|:-----|
 |**Form factor**|Any supported device.|Android smartphones, iPad, or iPhone.|Any supported device other than Android smartphones, iPad, and iPhone.|
 |**Plain text item body**|Applies the regex on the first 1 MB of the data of the body, but not on the rest of the body over that limit.|Activates the add-in only if the body < 16,000 characters.|Activates the add-in only if the body < 500,000 characters.|
@@ -55,7 +55,7 @@ Table 3 lists the limits and describes the differences in the matches that each 
 
 **Table 3. Limits on the matches returned**
 
-||Outlook rich client|Outlook on the web or mobile devices|
+|&mdash;|Outlook rich client|Outlook on the web or mobile devices|
 |:-----|:-----|:-----|
 |**Order of returned matches**|Assume `getRegExMatches` returns matches for the same regular expression applied on the same item to be different in an Outlook rich client than in Outlook on the web or mobile devices.|Assume `getRegExMatches` returns matches in different order in an Outlook rich client than in Outlook on the web or mobile devices.|
 |**Plain text item body**|`getRegExMatches` returns any matches that are up to 1,536 (1.5 KB) characters, for a maximum of 50 matches.<br/><br/>**Note**: `getRegExMatches` doesn't return matches in any specific order in the returned array. In general, assume the order of matches in an Outlook rich client for the same regular expression applied on the same item is different from that in Outlook on the web and mobile devices.|`getRegExMatches` returns any matches that are up to 3,072 (3 KB) characters, for a maximum of 50 matches.|

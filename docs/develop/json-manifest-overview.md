@@ -74,19 +74,19 @@ The base manifest properties specify characteristics of the add-in that *any* ty
 
 |JSON property|Purpose|XML element(s)|Comments|
 |:-----|:-----|:-----|:-----|
-|"$schema"| Identifies the manifest schema. | attributes of **\<OfficeApp\>** and **\<VersionOverrides\>** | |
-|"id"| GUID of the add-in. | **\<Id\>**| |
-|"version"| Version of the add-in. | **\<Version\>** | |
-|"manifestVersion"| Version of the manifest schema. |  attributes of **\<OfficeApp\>** | |
-|"name"| Public name of the add-in. | **\<DisplayName\>** | |
-|"description"| Public description of the add-in.  | **\<Description\>** | |
-|"accentColor"||| This property has no equivalent in the current XML manifest and isn't used in the preview of the JSON manifest. But it must be present. |
-|"developer"| Identifies the developer of the add-in. | **\<ProviderName\>** | |
-|"localizationInfo"| Configures the default locale and other supported locales. | **\<DefaultLocale\>** and **\<Override\>** | |
+|"$schema"| Identifies the manifest schema. | attributes of **\<OfficeApp\>** and **\<VersionOverrides\>** |*None.* |
+|"id"| GUID of the add-in. | **\<Id\>**|*None.* |
+|"version"| Version of the add-in. | **\<Version\>** |*None.* |
+|"manifestVersion"| Version of the manifest schema. |  attributes of **\<OfficeApp\>** |*None.* |
+|"name"| Public name of the add-in. | **\<DisplayName\>** |*None.* |
+|"description"| Public description of the add-in.  | **\<Description\>** |*None.* |
+|"accentColor"|*None.* |*None.* | This property has no equivalent in the current XML manifest and isn't used in the preview of the JSON manifest. But it must be present. |
+|"developer"| Identifies the developer of the add-in. | **\<ProviderName\>** |*None.* |
+|"localizationInfo"| Configures the default locale and other supported locales. | **\<DefaultLocale\>** and **\<Override\>** |*None.* |
 |"webApplicationInfo"| Identifies the add-in's web app as it is known in Azure Active Directory. | **\<WebApplicationInfo\>** | In the current XML manifest, the **\<WebApplicationInfo\>** element is inside **\<VersionOverrides\>**, not the base manifest. |
 |"authorization"| Identifies any Microsoft Graph permissions that the add-in needs. | **\<WebApplicationInfo\>** | In the current XML manifest, the **\<WebApplicationInfo\>** element is inside **\<VersionOverrides\>**, not the base manifest. |
 
-The **\<Hosts\>**, **\<Requirements\>**, and **\<ExtendedOverrides\>** elements are part of the base manifest in the current XML manifest. But concepts and purposes associated with these elements are configured inside the "extension" property of the preview JSON manifest. 
+The **\<Hosts\>**, **\<Requirements\>**, and **\<ExtendedOverrides\>** elements are part of the base manifest in the current XML manifest. But concepts and purposes associated with these elements are configured inside the "extension" property of the preview JSON manifest.
 
 #### "extension" property
 
@@ -99,12 +99,12 @@ The following table shows a mapping of some high level child properties of the "
 
 |JSON property|Purpose|XML element(s)|Comments|
 |:-----|:-----|:-----|:-----|
-| "requirements.capabilities" | Identifies the requirement sets that the add-in needs to be installable. | **\<Requirements\>** and **\<Sets\>** | |
-| "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. | **\<Hosts\>** |  |
+| "requirements.capabilities" | Identifies the requirement sets that the add-in needs to be installable. | **\<Requirements\>** and **\<Sets\>** |*None.* |
+| "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. | **\<Hosts\>** |*None.* |
 | "ribbons" | The ribbons that the add-in customizes. | **\<Hosts\>**, **ExtensionPoints**, and various **\*FormFactor** elements | The "ribbons" property is an array of anonymous objects that each merge the purposes of the these three elements. See ["ribbons" table](#ribbons-table).|
 | "alternatives" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. | **\<EquivalentAddins\>** | See the [EquivalentAddins - See also](/javascript/api/manifest/equivalentaddins#see-also) for background information. |
-| "runtimes"  | Configures various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). | **\<Runtimes\>**. **\<FunctionFile\>**, and **\<ExtensionPoint\>** (of type CustomFunctions) |  |
-| "autoRunEvents" | Configures an event handler for a specified event. | **\<Event\>** and **\<ExtensionPoint\>** (of type Events) |  |
+| "runtimes"  | Configures various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). | **\<Runtimes\>**. **\<FunctionFile\>**, and **\<ExtensionPoint\>** (of type CustomFunctions) |*None.* |
+| "autoRunEvents" | Configures an event handler for a specified event. | **\<Event\>** and **\<ExtensionPoint\>** (of type Events) |*None.* |
 
 ##### "ribbons" table
 
@@ -112,7 +112,7 @@ The following table maps the child properties of the anonymous child objects in 
 
 |JSON property|Purpose|XML element(s)|Comments|
 |:-----|:-----|:-----|:-----|
-| "contexts" | Specifies the command surfaces that the add-in customizes. | various **\*CommandSurface** elements, such as **PrimaryCommandSurface** and **MessageReadCommandSurface** |  |
+| "contexts" | Specifies the command surfaces that the add-in customizes. | various **\*CommandSurface** elements, such as **PrimaryCommandSurface** and **MessageReadCommandSurface** |*None.* |
 | "tabs" | Configures custom ribbon tabs. | **\<CustomTab\>** | The names and hierarchy of the descendant properties of "tabs" closely match the descendants of **\<CustomTab\>**.  |
 
 ## Sample preview JSON manifest

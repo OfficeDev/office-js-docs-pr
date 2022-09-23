@@ -76,19 +76,19 @@ For each event that the Telemetry Log tracks for an add-in, there is a date/time
 
 |**Date/Time**|**Event ID**|**Severity**|**Title**|**File**|**ID**|**Application**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|10/8/2012 5:57:10 PM|7||add-in manifest downloaded successfully|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|10/8/2012 5:57:01 PM|7||add-in manifest downloaded successfully|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+|10/8/2012 5:57:10 PM|7|(Not applicable)|add-in manifest downloaded successfully|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|10/8/2012 5:57:01 PM|7|(Not applicable)|add-in manifest downloaded successfully|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 The following table lists the events that the Telemetry Log tracks for Office Add-ins in general.
 
 |**Event ID**|**Title**|**Severity**|**Description**|
 |:-----|:-----|:-----|:-----|
-|7|Add-in manifest downloaded successfully||The manifest of the Office Add-in was successfully loaded and read by the Office application.|
+|7|Add-in manifest downloaded successfully|(Not applicable)|The manifest of the Office Add-in was successfully loaded and read by the Office application.|
 |8|Add-in manifest did not download|Critical|The Office application was unable to load the manifest file for the Office Add-in from the SharePoint catalog, corporate catalog, or AppSource.|
 |9|Add-in markup could not be parsed|Critical|The Office application loaded the Office Add-in manifest, but could not read the HTML markup of the app.|
 |10|Add-in used too much CPU|Critical|The Office Add-in used more than 90% of the CPU resources over a finite period of time.|
-|15|Add-in disabled due to string search time-out||Outlook add-ins search the subject line and message of an e-mail to determine whether they should be displayed by using a regular expression. The Outlook add-in listed in the **File** column was disabled by Outlook because it timed out repeatedly while trying to match a regular expression.|
-|18|Add-in closed successfully||The Office application was able to close the Office Add-in successfully.|
+|15|Add-in disabled due to string search time-out|(Not applicable)|Outlook add-ins search the subject line and message of an e-mail to determine whether they should be displayed by using a regular expression. The Outlook add-in listed in the **File** column was disabled by Outlook because it timed out repeatedly while trying to match a regular expression.|
+|18|Add-in closed successfully|(Not applicable)|The Office application was able to close the Office Add-in successfully.|
 |19|Add-in encountered runtime error|Critical|The Office Add-in had a problem that caused it to fail. For more details, look at the **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
 |20|Add-in failed to verify licensing|Critical|The licensing information for the Office Add-in could not be verified and may have expired. For more details, look at the **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
 
