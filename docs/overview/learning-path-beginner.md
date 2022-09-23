@@ -40,7 +40,7 @@ You can't learn to drive by reading the owner's manual, so start coding with thi
 
 ## Step 4: Understand the JavaScript library
 
-First, get the big picture of the Office JavaScript library with this tutorial from Microsoft Learn: [Understand the Office JavaScript APIs](/learn/modules/understand-office-javascript-apis/index).
+First, get the big picture of the Office JavaScript library with this tutorial from Microsoft Learn training: [Understand the Office JavaScript APIs](/training/modules/understand-office-javascript-apis/index).
 
 Then explore the Office JavaScript APIs with our [the Script Lab tool](explore-with-script-lab.md) -- a sandbox for running and exploring the APIs.
 
