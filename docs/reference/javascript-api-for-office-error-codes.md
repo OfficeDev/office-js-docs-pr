@@ -15,7 +15,7 @@ See [API models](../develop/understanding-the-javascript-api-for-office.md#api-m
 
 The following table lists the error codes, names, and messages displayed, and the conditions they indicate.
 
-|**Error.code**|**Error.name**|**Error.message**|**Condition**|
+|Error.code|Error.name|Error.message|Condition|
 |:-----|:-----|:-----|:-----|
 |1000|Invalid Coercion Type|The specified coercion type is not supported|The coercion type is not supported in the Office application. (For example, OOXML and HTML coercion types are not supported in Excel.)|
 |1001|Data Read Error|The current selection is not supported.|The user's current selection is not supported (that is, it is something different than the supported coercion types).|
@@ -99,7 +99,7 @@ When a binding is created in the API, indicate the binding type that you want to
 
 The following table summarizes binding behavior in Excel.
 
-|**Specified Binding Type**|**Actual Selection**|**Behavior**|
+|Specified Binding Type|Actual Selection|Behavior|
 |:-----|:-----|:-----|
 |Matrix|Range of cells (including within a table, and single cell)|A binding of type `matrix` is created on the selected cells. No modification in the document is expected.|
 |Matrix|Text selected in the cell|A binding of type `matrix` is created on the whole cell. No modification in the document is expected.|
@@ -119,7 +119,7 @@ The following table summarizes binding behavior in Excel.
 
 The following table summarizes binding behavior in Word.
 
-|**Specified Binding Type**|**Actual Selection**|**Behavior**|
+|Specified Binding Type|Actual Selection|Behavior|
 |:-----|:-----|:-----|
 |Matrix|Text|The binding cannot be created.|
 |Matrix|Whole table|A binding of type `matrix` is created.Document is changed and a content control must wrap the table. |
