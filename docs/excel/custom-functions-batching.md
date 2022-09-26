@@ -52,7 +52,7 @@ function div2(dividend, divisor) {
 }
 ```
 
-### Add global variables for tracking batch requests. 
+### Add global variables for tracking batch requests
 
 Next, add two global variables to your **functions.js** or **functions.ts** file. `_isBatchedRequestScheduled` is important later for timing batch calls to the remote service.
 
