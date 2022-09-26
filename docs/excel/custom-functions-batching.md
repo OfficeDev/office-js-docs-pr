@@ -52,7 +52,9 @@ function div2(dividend, divisor) {
 }
 ```
 
-Add global variables for tracking batch requests. `_isBatchedRequestSchedule` is important later for timing batch calls to the remote service.
+### Add global variables for tracking batch requests. 
+
+Next, add two global variables to your **functions.js** or **functions.ts** file. `_isBatchedRequestScheduled` is important later for timing batch calls to the remote service.
 
 ```javascript
 let _batch = [];
@@ -167,14 +169,14 @@ The `_makeRemoteRequest` function calls `_fetchFromRemoteService` which, as you'
 
 ## Process the batch call on the remote service
 
-The last step is to handle the batch call in the remote service. The following code sample shows the `_fetchFromRemoteService` function. This function unpacks each operation, performs the specified operation, and returns the results. For learning purposes in this article, the `_fetchFromRemoteService` function is designed to run in your web add-in and mock a remote service. You can add this code to your **functions.ts** file so that you can study and run all the code in this article without having to set up an actual remote service.
+The last step is to handle the batch call in the remote service. The following code sample shows the `_fetchFromRemoteService` function. This function unpacks each operation, performs the specified operation, and returns the results. For learning purposes in this article, the `_fetchFromRemoteService` function is designed to run in your web add-in and mock a remote service. You can add this code to your **functions.js** or **functions.ts** file so that you can study and run all the code in this article without having to set up an actual remote service.
 
 Add the following code to your **functions.js** or **functions.ts** file.
 
 ```javascript
 // This function simulates the work of a remote service. Because each service
 // differs, you will need to modify this function appropriately to work with the service you are using. 
-// This function takes a batch of argument sets and returns a [promise of] batch of values.
+// This function takes a batch of argument sets and returns a promise that may contain a batch of values.
 // NOTE: When implementing this function on a server, also apply an appropriate authentication mechanism
 //       to ensure only the correct callers can access it.
 async function _fetchFromRemoteService(requestBatch) {
