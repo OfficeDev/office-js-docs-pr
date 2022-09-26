@@ -308,7 +308,7 @@ By default, the on-send policy is disabled. Administrators can enable the on-sen
 
 Add-ins for Outlook on Mac that use the on-send feature should run for any users who have them installed. However, if users are required to run the add-in to meet compliance standards, then the following mailbox setting must be applied on each user's machine. This setting or key is CFPreference-compatible, which means that it can be set by using enterprise management software for Mac, such as Jamf Pro.
 
-|&mdash;|Value|
+||Value|
 |:---|:---|
 |**Domain**|com.microsoft.outlook|
 |**Key**|OnSendAddinsWaitForLoad|

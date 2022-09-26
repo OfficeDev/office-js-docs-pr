@@ -72,7 +72,7 @@ The children of **\<OfficeApp\>** are commonly divided into two notional categor
 
 The base manifest properties specify characteristics of the add-in that *any* type of extension of Microsoft 365 is expected to have. This includes Teams tabs and message extensions, not just Office add-ins. These characteristics include a public name and a unique ID. The following table shows a mapping of some critical top-level properties in the preview JSON manifest to the XML elements in the current manifest, where the mapping principle is the *purpose* of the markup.
 
-|JSON property|Purpose|XML element(s)|Comments|
+|JSON property|Purpose|XML elements|Comments|
 |:-----|:-----|:-----|:-----|
 |"$schema"| Identifies the manifest schema. | attributes of **\<OfficeApp\>** and **\<VersionOverrides\>** |*None.* |
 |"id"| GUID of the add-in. | **\<Id\>**|*None.* |
@@ -97,7 +97,7 @@ The "extension" property in the preview JSON manifest primarily represents chara
 
 The following table shows a mapping of some high level child properties of the "extension" property in the preview JSON manifest to XML elements in the current manifest. Dot notation is used to reference child properties.
 
-|JSON property|Purpose|XML element(s)|Comments|
+|JSON property|Purpose|XML elements|Comments|
 |:-----|:-----|:-----|:-----|
 | "requirements.capabilities" | Identifies the requirement sets that the add-in needs to be installable. | **\<Requirements\>** and **\<Sets\>** |*None.* |
 | "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. | **\<Hosts\>** |*None.* |
@@ -110,7 +110,7 @@ The following table shows a mapping of some high level child properties of the "
 
 The following table maps the child properties of the anonymous child objects in the "ribbons" array onto XML elements in the current manifest. 
 
-|JSON property|Purpose|XML element(s)|Comments|
+|JSON property|Purpose|XML elements|Comments|
 |:-----|:-----|:-----|:-----|
 | "contexts" | Specifies the command surfaces that the add-in customizes. | various **\*CommandSurface** elements, such as **PrimaryCommandSurface** and **MessageReadCommandSurface** |*None.* |
 | "tabs" | Configures custom ribbon tabs. | **\<CustomTab\>** | The names and hierarchy of the descendant properties of "tabs" closely match the descendants of **\<CustomTab\>**.  |

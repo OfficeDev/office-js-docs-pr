@@ -74,14 +74,14 @@ Office provides a Telemetry Log that maintains a record of certain events (loadi
 
 For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. You can refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log.
 
-|**Date/Time**|**Event ID**|**Severity**|**Title**|**File**|**ID**|**Application**|
+|Date/Time|Event ID|Severity|Title|File|ID|Application|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |10/8/2012 5:57:10 PM|7|*Not applicable*|add-in manifest downloaded successfully|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
 |10/8/2012 5:57:01 PM|7|*Not applicable*|add-in manifest downloaded successfully|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 The following table lists the events that the Telemetry Log tracks for Office Add-ins in general.
 
-|**Event ID**|**Title**|**Severity**|**Description**|
+|Event ID|Title|Severity|Description|
 |:-----|:-----|:-----|:-----|
 |7|Add-in manifest downloaded successfully|*Not applicable*|The manifest of the Office Add-in was successfully loaded and read by the Office application.|
 |8|Add-in manifest did not download|Critical|The Office application was unable to load the manifest file for the Office Add-in from the SharePoint catalog, corporate catalog, or AppSource.|
