@@ -1,14 +1,13 @@
 ---
-title: Use search options to find text in your Word add-in 
+title: Use search options in your Word add-in to find text 
 description: Learn to use search options in your Word add-in.
 ms.date: 02/28/2022
 ms.localizationpriority: medium
 ---
 
-# Use search options to find text in your Word add-in
+# Use search options in your Word add-in to find text
 
-Add-ins frequently need to act based on the text of a document.
-A search function is exposed by every content control (this includes [Body](/javascript/api/word/word.body), [Paragraph](/javascript/api/word/word.paragraph), [Range](/javascript/api/word/word.range), [Table](/javascript/api/word/word.table), [TableRow](/javascript/api/word/word.tablerow), and the base [ContentControl](/javascript/api/word/word.contentcontrol) object). This function takes in a string (or wildcard expression) representing the text you are searching for and a [SearchOptions](/javascript/api/word/word.searchoptions) object. It returns a collection of ranges which match the search text.
+Add-ins frequently need to act based on the text of a document. A search method is exposed by every content control (this includes [Body](/javascript/api/word/word.body), [Paragraph](/javascript/api/word/word.paragraph), [Range](/javascript/api/word/word.range), [Table](/javascript/api/word/word.table), [TableRow](/javascript/api/word/word.tablerow), and the base [ContentControl](/javascript/api/word/word.contentcontrol) object). This method takes in a string (or wildcard expression) representing the text you are searching for and a [SearchOptions](/javascript/api/word/word.searchoptions) object. It returns a collection of ranges which match the search text.
 
 ## Search options
 

@@ -216,6 +216,6 @@ Learn about [the various parameters](custom-functions-parameter-options.md) you 
 
 ## See also
 
-* [Volatile values in functions](custom-functions-volatile.md)
-* [Create custom functions in Excel](custom-functions-overview.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Volatile values in functions](custom-functions-volatile.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
+- [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

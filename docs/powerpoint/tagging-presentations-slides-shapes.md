@@ -57,7 +57,7 @@ To delete a tag, call the `delete` method on it's parent `TagsCollection` object
 
 Consider the following scenario: Contoso Consulting has a presentation they show to all new customers. But some slides should only be shown to customers that have paid for "premium" status. Before showing the presentation to non-premium customers, they make a copy of it and delete the slides that only premium customers should see. An add-in enables Contoso to tag which slides are for premium customers and to delete these slides when needed. The following list outlines the major coding steps to create this functionality.
 
-1. Create a method that tags the currently selected slide as intended for `Premium` customers. About this code, note:
+1. Create a function that tags the currently selected slide as intended for `Premium` customers. About this code, note:
 
     - The `getSelectedSlideIndex` function is defined in the next step. It returns the 1-based index of the currently selected slide.
     - The value returned by the `getSelectedSlideIndex` function has to be decremented because the [SlideCollection.getItemAt](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-getitemat-member(1)) method is 0-based.
@@ -101,7 +101,7 @@ Consider the following scenario: Contoso Consulting has a presentation they show
     }
     ```
 
-3. The following code creates a method to delete slides that are tagged for premium customers. About this code, note:
+3. The following code creates a function to delete slides that are tagged for premium customers. About this code, note:
 
     - Because the `key` and `value` properties of the tags are going to be read after the `context.sync`, they must be loaded first.
 

@@ -82,7 +82,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Ensure that your add-in works in both portrait and landscape modes. Be aware that on touch devices, part of your add-in might be hidden by the soft keyboard.
 
-- Test your add-in on a real device by using [sideloading](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
+- Test your add-in on a real device by using [sideloading](../testing/sideload-an-office-add-in-on-ipad.md).
 
 > [!NOTE]
 > If you're using [Fluent UI React](../design/using-office-ui-fabric-react.md) for your design elements, many of these elements are built into the design system.

@@ -12,17 +12,17 @@ This article describes how to use Office on the web to debug your add-ins. Use t
 - To debug add-ins on a computer that isn't running Windows or the Office desktop client&mdash;for example, if you're developing on a Mac or Linux.
 - As a alternative debugging process if you cannot, or don't wish to, debug in an IDE, such as Visual Studio or Visual Studio Code.
 
-This article assumes that you have an add-in project that needs to be debugged. If you just want to practice debugging on the web, create a new project using one of the quickstarts for specific Office applications, such as this [quick start for Word](../quickstarts/word-quickstart.md).
+This article assumes that you have an add-in project that needs to be debugged. If you just want to practice debugging on the web, create a new project using one of the quick starts for specific Office applications, such as this [quick start for Word](../quickstarts/word-quickstart.md).
 
 ## Debug your add-in
 
 To debug your add-in by using Office on the web:
 
-1. Run the project on localhost and sideload it to a document in Office on the web. For detailed sideloading instructions, see [Sideload Office Add-ins on the web](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually).
+1. Run the project on localhost and sideload it to a document in Office on the web. For detailed sideloading instructions, see [Manually sideload Office Add-ins on the web](sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web).
 
-2. Open the browser's developer tools. This is usually done by pressing F12. Open the debugger tool and use it to set breakpoints and watch variables. For detailed help in using your browser's tool, see one of the following.  
+2. Open the browser's developer tools. This is usually done by pressing F12. Open the debugger tool and use it to set breakpoints and watch variables. For detailed help in using your browser's tool, see one of the following:
 
-   - [Firefox](https://developer.mozilla.org/en-US/docs/Tools)
+   - [Firefox](https://firefox-source-docs.mozilla.org/devtools-user/index.html)
    - [Safari](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac)
    - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
    - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)

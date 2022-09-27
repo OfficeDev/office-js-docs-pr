@@ -37,8 +37,8 @@
             "redirect_url": "/javascript/api/onenote?view=onenote-js-1.1"
         },
         {
-            "source_path": "docs/reference/outlook-api-reference-1-11.md",
-            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.11"
+            "source_path": "docs/reference/outlook-api-reference-latest.md",
+            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.12"
         },
         {
             "source_path": "docs/reference/powerpoint-api-reference.md",
@@ -206,6 +206,11 @@
             "source_path": "docs/develop/define-add-in-commands.md",
             "redirect_url": "/office/dev/add-ins/develop/create-addin-commands",
             "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/excel/excel-add-ins-error-handling.md",
+            "redirect_url": "/office/dev/add-ins/testing/application-specific-api-error-handling",
+            "redirect_document_id": true
         },
         {
             "source_path": "docs/excel/excel-add-ins-extend-excel.md",
@@ -1179,6 +1184,19 @@
         {
             "source_path": "docs/reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md",
             "redirect_url": "/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview"
+        },
+        {
+            "source_path": "docs/testing/sideload-an-office-add-in-on-ipad-and-mac.md",
+            "redirect_url": "/office/dev/add-ins/testing/sideload-an-office-add-in-on-mac"
+        },
+        {
+            "source_path": "docs/quickstarts/sso-quickstart.md",
+            "redirect_url": "/office/dev/add-ins/develop/sso-in-office-add-ins"
+        },
+        {
+            "source_path": "docs/quickstarts/sso-quickstart-customize.md",
+            "redirect_url": "/office/dev/add-ins/develop/sso-in-office-add-ins"
         }
+        
     ]
 }

@@ -1,12 +1,12 @@
 ---
-title: Create better add-ins for Word with Office Open XML
-description: Overview of how to improve your Word add-in with Office Open XML.
-ms.date: 02/15/2022
+title: Understand when and how to use Office Open XML in your Word add-in
+description: Overview of when and how to use Office Open XML in your Word add-in.
+ms.date: 07/15/2022
 ms.localizationpriority: medium
 ---
 
 
-# Create better add-ins for Word with Office Open XML
+# Understand when and how to use Office Open XML in your Word add-in
 
 **Provided by:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
@@ -19,7 +19,7 @@ If APIs aren't yet available, you can use HTML for inserting some types of rich 
 Because Office Open XML is the language in which Word documents (such as .docx and .dotx) are written, you can insert virtually any type of content that a user can add to a Word document, with virtually any type of formatting the user can apply. Determining the Office Open XML markup you need to get it done is easier than you might think.
 
 > [!NOTE]
-> Office Open XML is also the language behind PowerPoint and Excel (and, as of Office 2013, Visio) documents. However, currently, you can coerce content as Office Open XML only in Office Add-ins created for Word. For more information about Office Open XML, including the complete language reference documentation, refer to the [See also](#see-also) section.
+> Office Open XML is also the language behind PowerPoint and Excel (and, as of Office 2013, Visio) documents. However, currently, you can coerce content as Office Open XML only in Office Add-ins created for Word. For more information about Office Open XML, including the complete language reference documentation, see the [See also](#see-also) section.
 
 To begin, take a look at some of the content types you can insert using Office Open XML coercion.
 Download the code sample [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml), which contains the Office Open XML markup and Office.js code required for inserting any of the following examples into Word.
@@ -41,7 +41,7 @@ Use a style to automatically coordinate the look of text you insert with the use
 
 *Figure 3. A simple image*
 
-![Image of a logo.](../images/office15-app-create-wd-app-using-ooxml-fig03.png)
+![A sample logo.](../images/office15-app-create-wd-app-using-ooxml-fig03.png)
 
 Use the same method for inserting any Office-supported image format.
 
@@ -197,12 +197,12 @@ Once you save the preceding Office Open XML as an XML file that's accessible fro
 In this function, notice that all but the last line are used to get your saved markup for use in the [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) method call at the end of the function. `setSelectedDataASync` requires only that you specify the content to be inserted and the coercion type.
 
 > [!NOTE]
-> Replace  _yourXMLfilename_ with the name and path of the XML file as you've saved it in your solution. If you aren't sure where to include XML files in your solution or how to reference them in your code, see the [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) code sample for examples of that and a working example of the markup and JavaScript shown here.
+> Replace  *yourXMLfilename* with the name and path of the XML file as you've saved it in your solution. If you aren't sure where to include XML files in your solution or how to reference them in your code, see the [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) code sample for examples of that and a working example of the markup and JavaScript shown here.
 
 ```js
 function writeContent() {
-    var myOOXMLRequest = new XMLHttpRequest();
-    var myXML;
+    const myOOXMLRequest = new XMLHttpRequest();
+    let myXML;
     myOOXMLRequest.open('GET', 'yourXMLfilename', false);
     myOOXMLRequest.send();
     if (myOOXMLRequest.status === 200) {
@@ -211,6 +211,7 @@ function writeContent() {
     Office.context.document.setSelectedDataAsync(myXML, { coercionType: 'ooxml' });
 }
 ```
+
 ## Create your own markup: best practices
 
 Let's take a closer look at the markup you need to insert the preceding formatted text example.
@@ -464,8 +465,8 @@ function addAndBindControl() {
     Office.context.document.bindings.addFromNamedItemAsync("MyContentControlTitle", "text", { id: 'myBinding' }, function (result) {
         if (result.status == "failed") {
             if (result.error.message == "The named item does not exist.")
-                var myOOXMLRequest = new XMLHttpRequest();
-                var myXML;
+                const myOOXMLRequest = new XMLHttpRequest();
+                let myXML;
                 myOOXMLRequest.open('GET', '../../Snippets_BindAndPopulate/ContentControl.xml', false);
                 myOOXMLRequest.send();
                 if (myOOXMLRequest.status === 200) {
@@ -503,8 +504,8 @@ The code for writing content to a binding is similar to that for writing content
 
 ```js
 function populateBinding(filename) {
-  var myOOXMLRequest = new XMLHttpRequest();
-  var myXML;
+  const myOOXMLRequest = new XMLHttpRequest();
+  let myXML;
   myOOXMLRequest.open('GET', filename, false);
   myOOXMLRequest.send();
   if (myOOXMLRequest.status === 200) {

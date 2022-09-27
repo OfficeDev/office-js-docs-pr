@@ -73,7 +73,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - Locate and delete the entire `run()` function.
 
-1. Within the `Office.onReady` method call, locate the line `if (info.host === Office.HostType.Excel) {` and add the following code immediately after that line. Note:
+1. Within the `Office.onReady` function call, locate the line `if (info.host === Office.HostType.Excel) {` and add the following code immediately after that line. Note:
 
     - The first part of this code determines whether the user's version of Excel supports a version of Excel.js that includes all the APIs that this series of tutorials will use. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still make use of the parts of the add-in that are supported by their version of Excel.
 
@@ -221,7 +221,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 1. Open the file **./src/taskpane/taskpane.js**.
 
-1. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-table` button, and add the following code after that line.
+1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `create-table` button, and add the following code after that line.
 
     ```js
     document.getElementById("filter-table").onclick = filterTable;
@@ -272,7 +272,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 1. Open the file **./src/taskpane/taskpane.js**.
 
-1. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `filter-table` button, and add the following code after that line.
+1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `filter-table` button, and add the following code after that line.
 
     ```js
     document.getElementById("sort-table").onclick = sortTable;
@@ -348,7 +348,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 1. Open the file **./src/taskpane/taskpane.js**.
 
-1. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `sort-table` button, and add the following code after that line.
+1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `sort-table` button, and add the following code after that line.
 
     ```js
     document.getElementById("create-chart").onclick = createChart;
@@ -443,7 +443,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 1. Open the file **./src/taskpane/taskpane.js**.
 
-1. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-chart` button, and add the following code after that line.
+1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `create-chart` button, and add the following code after that line.
 
     ```js
     document.getElementById("freeze-header").onclick = freezeHeader;
@@ -505,7 +505,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
 
 1. Open the manifest file **./manifest.xml**.
 
-1. Locate the `<Control>` element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the closing `</Control>` tag and the closing `</Group>` tag, add the following markup.
+1. Locate the **\<Control\>** element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the closing **\</Control\>** tag and the closing **\</Group\>** tag, add the following markup.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -733,7 +733,7 @@ These steps must be completed whenever your code needs to *read* information fro
         npm run start:web
         ```
 
-        To use your add-in, open a document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+        To use your add-in, open a document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-a-yeoman-created-add-in-to-office-on-the-web).
 
 1. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in the following screenshot.
 
@@ -788,7 +788,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 
 1. Add the following code to **popup.js**. Note the following about this code.
 
-   - *Every page that calls APIs in the Office.js library must first ensure that the library is fully initialized.* The best way to do that is to call the `Office.onReady()` method. If your add-in has its own initialization tasks, the code should go in a `then()` method that is chained to the call of `Office.onReady()`. The call of `Office.onReady()` must run before any calls to Office.js; hence the assignment is in a script file that is loaded by the page, as it is in this case.
+   - *Every page that calls APIs in the Office.js library must first ensure that the library is fully initialized.* The best way to do that is to call the `Office.onReady()` function. If your add-in has its own initialization tasks, the code should go in a `then()` method that is chained to the call of `Office.onReady()`. The call of `Office.onReady()` must run before any calls to Office.js; hence the assignment is in a script file that is loaded by the page, as it is in this case.
 
     ```js
     (function () {
@@ -914,7 +914,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 1. Open the file **./src/taskpane/taskpane.js**.
 
-1. Within the `Office.onReady` method call, locate the line that assigns a click handler to the `freeze-header` button, and add the following code after that line. You'll create the `openDialog` method in a later step.
+1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `freeze-header` button, and add the following code after that line. You'll create the `openDialog` method in a later step.
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;

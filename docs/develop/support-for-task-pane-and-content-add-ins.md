@@ -102,7 +102,7 @@ You can also use the [CustomXmlParts.getByIdAsync](/javascript/api/office/office
 
 To add a new custom XML part to a document, use the `Document.customXmlParts` property to get the custom XML parts that are in the document, and call the [CustomXmlParts.addAsync](/javascript/api/office/office.customxmlparts#office-office-customxmlparts-addasync-member(1)) method.
 
-For detailed information about how to work with custom XML parts with a task pane add-in, see [Creating Better Add-ins for Word with Office Open XML](../word/create-better-add-ins-for-word-with-office-open-xml.md).
+For detailed information about how to manage custom XML parts with a task pane add-in, see [Understand when and how to use Office Open XML in your Word add-in](../word/create-better-add-ins-for-word-with-office-open-xml.md).
 
 ## Persisting add-in settings
 
@@ -147,3 +147,4 @@ For more information, see [Requesting permissions for API use in add-ins](reques
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
 - [Schema reference for Office Add-ins manifests](../develop/add-in-manifests.md)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
+- [Runtimes in Office Add-ins](../testing/runtimes.md)

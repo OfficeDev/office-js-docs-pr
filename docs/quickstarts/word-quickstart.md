@@ -16,8 +16,6 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 # [Yeoman generator](#tab/yeomangenerator)
 
-[!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
-
 ### Prerequisites
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]

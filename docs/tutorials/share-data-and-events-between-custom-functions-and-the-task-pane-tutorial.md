@@ -1,21 +1,21 @@
 ---
 title: 'Tutorial: Share data and events between Excel custom functions and the task pane'
 description: Learn how to share data and events between custom functions and the task pane in Excel.
-ms.date: 11/29/2021
+ms.date: 06/15/2022
 ms.prod: excel
 ms.localizationpriority: high
 ---
 
 # Tutorial: Share data and events between Excel custom functions and the task pane
 
-Share global data and send events between the task pane and custom functions of your Excel add-in with a shared runtime. We recommend using a shared runtime for most custom functions scenarios, unless you have a specific reason to use a non-task pane (UI-less) custom function. This tutorial assumes you're familiar with using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create add-in projects. Consider completing the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), if you haven't already.
+Share global data and send events between the task pane and custom functions of your Excel add-in with a shared runtime. We recommend using a shared runtime for most custom functions scenarios, unless you have a specific reason to use a custom function-only add-in. This tutorial assumes you're familiar with using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create add-in projects. Consider completing the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), if you haven't already.
 
 ## Create the add-in project
 
 Use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create the Excel add-in project.
 
 - To generate an Excel add-in with custom functions, run the following command.
-    
+
     ```command&nbsp;line
     yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true
     ```
@@ -28,7 +28,7 @@ Follow these steps to configure the add-in project to use a shared runtime.
 
 1. Start Visual Studio Code and open the add-in project you generated.
 1. Open the **manifest.xml** file.
-1. Replace (or add) the following `<Requirements>` section XML to require the [shared runtime requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
+1. Replace (or add) the following **\<Requirements\>** section XML to require the [Shared Runtime requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>
@@ -52,16 +52,16 @@ Follow these steps to configure the add-in project to use a shared runtime.
     <DefaultSettings>
     ```
 
-1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
-    
+1. Find the **\<VersionOverrides\>** section and add the following **\<Runtimes\>** section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
+
     ```xml
     <Runtimes>
       <Runtime resid="Taskpane.Url" lifetime="long" />
     </Runtimes>
     ```
-    
+
     > [!IMPORTANT]
-    > The `<Runtimes>` section must be entered after the `<Host xsi:type="...">` element in the exact order shown in the following XML.
+    > The **\<Runtimes\>** section must be entered after the `<Host xsi:type="...">` element in the exact order shown in the following XML.
 
     ```xml
     <VersionOverrides ...>
@@ -73,20 +73,20 @@ Follow these steps to configure the add-in project to use a shared runtime.
         ...
         </Host>
     ```
-    
+
     > [!NOTE]
-    > If your add-in includes the `Runtimes` element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+    > If your add-in includes the **\<Runtimes\>** element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-1. Find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
+1. Find the **\<Page\>** element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
 
-   ```xml
-   <AllFormFactors>
-   ...
-   <Page>
-     <SourceLocation resid="Taskpane.Url"/>
-   </Page>
-   ...
-   ```
+    ```xml
+    <AllFormFactors>
+    ...
+    <Page>
+      <SourceLocation resid="Taskpane.Url"/>
+    </Page>
+    ...
+    ```
 
 1. Find the `<FunctionFile ...>` tag and change the `resid` from **Commands.Url** to  **Taskpane.Url**.
 
@@ -101,12 +101,12 @@ Follow these steps to configure the add-in project to use a shared runtime.
 
 ## Configure the webpack.config.js file
 
-The **webpack.config.js** will build multiple runtime loaders. You need to modify it to load only the shared JavaScript runtime via the **taskpane.html** file.
+The **webpack.config.js** will build multiple runtime loaders. You need to modify it to load only the shared runtime via the **taskpane.html** file.
 
 1. Open the **webpack.config.js** file.
 1. Go to the `plugins:` section.
 1. Remove the following `functions.html` plugin if it exists.
-    
+
     ```javascript
     new HtmlWebpackPlugin({
         filename: "functions.html",
@@ -126,7 +126,7 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
     ```
 
 1. If you removed the `functions` or `commands` plugin, add them as `chunks`. The following JavaScript shows the updated entry if you removed both `functions` and `commands` plugins.
-    
+
     ```javascript
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
@@ -134,18 +134,18 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
         chunks: ["polyfill", "taskpane", "commands", "functions"]
       })
     ```
-    
+
 1. Save your changes and rebuild the project.
 
-   ```command&nbsp;line
-   npm run build
-   ```
-    
+    ```command&nbsp;line
+    npm run build
+    ```
+
     > [!NOTE]
-    > You can also remove the **functions.html** and **commands.html** files. The **taskpane.html** loads the **functions.js** and **commands.js** code into the shared JavaScript runtime via the webpack updates you just made.
-    
+    > You can also remove the **functions.html** and **commands.html** files. The **taskpane.html** loads the **functions.js** and **commands.js** code into the shared runtime via the webpack updates you just made.
+
 1. Save your changes and run the project. Ensure that it loads and runs with no errors.
-    
+
    ```command&nbsp;line
    npm run start
    ```
@@ -157,99 +157,99 @@ Now that custom functions run in the same context as your task pane code, they c
 ### Create custom functions to get or store shared state
 
 1. In Visual Studio Code open the file **src/functions/functions.js**.
-2. On line 1, insert the following code at the very top. This will initialize a global variable named **sharedState**.
+1. On line 1, insert the following code at the very top. This will initialize a global variable named **sharedState**.
 
-   ```js
-   window.sharedState = "empty";
-   ```
+    ```js
+    window.sharedState = "empty";
+    ```
 
-3. Add the following code to create a custom function that stores values to the **sharedState** variable.
+1. Add the following code to create a custom function that stores values to the **sharedState** variable.
 
-   ```js
-   /**
-    * Saves a string value to shared state with the task pane
-    * @customfunction STOREVALUE
-    * @param {string} value String to write to shared state with task pane.
-    * @return {string} A success value
-    */
-   function storeValue(sharedValue) {
-     window.sharedState = sharedValue;
-     return "value stored";
-   }
-   ```
+    ```js
+    /**
+     * Saves a string value to shared state with the task pane
+     * @customfunction STOREVALUE
+     * @param {string} value String to write to shared state with task pane.
+     * @return {string} A success value
+     */
+    function storeValue(sharedValue) {
+      window.sharedState = sharedValue;
+      return "value stored";
+    }
+    ```
 
-4. Add the following code to create a custom function that gets the current value of the **sharedState** variable.
+1. Add the following code to create a custom function that gets the current value of the **sharedState** variable.
 
-   ```js
-   /**
-    * Gets a string value from shared state with the task pane
-    * @customfunction GETVALUE
-    * @returns {string} String value of the shared state with task pane.
-    */
-   function getValue() {
-     return window.sharedState;
-   }
-   ```
+    ```js
+    /**
+     * Gets a string value from shared state with the task pane
+     * @customfunction GETVALUE
+     * @returns {string} String value of the shared state with task pane.
+     */
+    function getValue() {
+      return window.sharedState;
+    }
+    ```
 
-5. Save the file.
+1. Save the file.
 
 ### Create task pane controls to work with global data
 
 1. Open the file **src/taskpane/taskpane.html**.
-2. Add the following script element just before the closing `</head>` element.
+1. Add the following script element just before the closing `</head>` element.
 
-   ```html
-   <script src="../functions/functions.js"></script>
-   ```
+    ```HTML
+    <script src="../functions/functions.js"></script>
+    ```
 
-3. After the closing `</main>` element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
+1. After the closing `</main>` element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
 
-   ```html
-   <ol>
-     <li>
-       Enter a value to send to the custom function and select
-       <strong>Store</strong>.
-     </li>
-     <li>
-       Enter <strong>=CONTOSO.GETVALUE()</strong> into a cell to retrieve it.
-     </li>
-     <li>
-       To send data to the task pane, in a cell, enter
-       <strong>=CONTOSO.STOREVALUE("new value")</strong>
-     </li>
-     <li>Select <strong>Get</strong> to display the value in the task pane.</li>
-   </ol>
+    ```HTML
+    <ol>
+      <li>
+        Enter a value to send to the custom function and select
+        <strong>Store</strong>.
+      </li>
+      <li>
+        Enter <strong>=CONTOSO.GETVALUE()</strong> into a cell to retrieve it.
+      </li>
+      <li>
+        To send data to the task pane, in a cell, enter
+        <strong>=CONTOSO.STOREVALUE("new value")</strong>
+      </li>
+      <li>Select <strong>Get</strong> to display the value in the task pane.</li>
+    </ol>
 
-   <p>Store new value to shared state</p>
-   <div>
-     <input type="text" id="storeBox" />
-     <button onclick="storeSharedValue()">Store</button>
-   </div>
+    <p>Store new value to shared state</p>
+    <div>
+      <input type="text" id="storeBox" />
+      <button onclick="storeSharedValue()">Store</button>
+    </div>
 
-   <p>Get shared state value</p>
-   <div>
-     <input type="text" id="getBox" />
-     <button onclick="getSharedValue()">Get</button>
-   </div>
-   ```
+    <p>Get shared state value</p>
+    <div>
+      <input type="text" id="getBox" />
+      <button onclick="getSharedValue()">Get</button>
+    </div>
+    ```
 
-4. Before the closing `</body>` element, add the following script. This code will handle the button click events when the user wants to store or get global data.
+1. Before the closing `</body>` element, add the following script. This code will handle the button click events when the user wants to store or get global data.
 
-   ```js
-   <script>
-   function storeSharedValue() {
-     let sharedValue = document.getElementById('storeBox').value;
-     window.sharedState = sharedValue;
-   }
+    ```HTML
+    <script>
+      function storeSharedValue() {
+        let sharedValue = document.getElementById('storeBox').value;
+        window.sharedState = sharedValue;
+      }
 
-   function getSharedValue() {
-     document.getElementById('getBox').value = window.sharedState;
-   }
+      function getSharedValue() {
+        document.getElementById('getBox').value = window.sharedState;
+      }
    </script>
    ```
 
-5. Save the file.
-6. Build the project
+1. Save the file.
+1. Build the project.
 
    ```command line
    npm run build
@@ -259,9 +259,9 @@ Now that custom functions run in the same context as your task pane code, they c
 
 - Start the project by using the following command.
 
-  ```command line
-  npm run start
-  ```
+    ```command line
+    npm run start
+    ```
 
 Once Excel starts, you can use the task pane buttons to store or get shared data. Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data. Or use `=CONTOSO.STOREVALUE("new value")` to change the shared data to a new value.
 
@@ -270,4 +270,4 @@ Once Excel starts, you can use the task pane buttons to store or get shared data
 
 ## See also
 
-- [Configure your Office Add-in to use a shared JavaScript runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

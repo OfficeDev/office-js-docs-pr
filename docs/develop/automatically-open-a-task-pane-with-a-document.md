@@ -1,7 +1,7 @@
 ---
 title: Automatically open a task pane with a document
 description: Learn how to configure an Office Add-in to open automatically when a document opens.
-ms.date: 09/14/2021
+ms.date: 09/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -11,6 +11,9 @@ ms.localizationpriority: medium
 You can use add-in commands in your Office Add-in to extend the Office UI by adding buttons to the Office app ribbon. When users click your command button, an action occurs, such as opening a task pane.
 
 Some scenarios require that a task pane open automatically when a document opens, without explicit user interaction. You can use the autoopen task pane feature, introduced in the [AddInCommands 1.1 requirement set](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), to automatically open a task pane when your scenario requires it.
+
+> [!NOTE]
+> To configure a task pane to open immediately when the add-in is installed, but not necessarily whenever the document is opened later, see [Automatically open a task pane when an add-in is installed](automatically-open-on-installation.md).
 
 ## How is the autoopen feature different from inserting a task pane?
 
@@ -69,7 +72,7 @@ You can tag the document to trigger the autoopen feature in one of two ways. Pic
 
 #### Tag the document on the client side
 
-Use the Office.js [settings.set](/javascript/api/office/office.settings) method to set **Office.AutoShowTaskpaneWithDocument** to **true**, as shown in the following example.
+Use the Office.js [settings.set](/javascript/api/office/office.settings) method to set **Office.AutoShowTaskpaneWithDocument** to `true`, as shown in the following example.
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -156,4 +159,5 @@ You can test the previous example by using your Microsoft 365 subscription to tr
 ## See also
 
 - For a sample that shows you how to use the autoopen feature, see [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
+- [Automatically open a task pane when an add-in is installed](automatically-open-on-installation.md)
 - [Join the Microsoft 365 developer program.](/office/developer-program/office-365-developer-program)

@@ -26,11 +26,11 @@ There are two small changes to the manifest to make. One is to enable the add-in
 
 ### Configure the add-in to use a shared runtime
 
-Adding custom keyboard shortcuts requires your add-in to use the shared runtime. For more information, [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Adding custom keyboard shortcuts requires your add-in to use the [shared runtime](../testing/runtimes.md#shared-runtime). For more information, [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ### Link the mapping file to the manifest
 
-Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step.
+Immediately *below* (not inside) the **\<VersionOverrides\>** element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step.
 
 ```xml
     ...
@@ -84,7 +84,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
 
 ## Create a mapping of actions to their functions
 
-1. In your project, open the JavaScript file loaded by your HTML page in the `<FunctionFile>` element.
+1. In your project, open the JavaScript file loaded by your HTML page in the **\<FunctionFile\>** element.
 1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map each action that you specified in the JSON file to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
 
     - The first parameter is one of the actions from the JSON file.

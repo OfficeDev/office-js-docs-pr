@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in commands
 description: Outlook add-in commands provide ways to initiate specific add-in actions from the ribbon by adding buttons or drop-down menus.
-ms.date: 05/19/2022
+ms.date: 07/11/2022
 ms.localizationpriority: high
 ---
 
@@ -21,11 +21,11 @@ Outlook add-in commands provide ways to initiate specific add-in actions from th
 
 Add-in commands are only available for add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](activation-rules.md) to limit the types of items they activate on. However, [contextual add-ins](contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
 
-## Creating the add-in command
+## Create the add-in command
 
-Add-in commands are declared in the add-in manifest in the [VersionOverrides element](/javascript/api/manifest/versionoverrides). This element is an addition to the manifest schema v1.1 that ensures backward compatibility. In a client that doesn't support `VersionOverrides`, existing add-ins will continue to function as they did without add-in commands.
+Add-in commands are declared in the add-in manifest in the [VersionOverrides element](/javascript/api/manifest/versionoverrides). This element is an addition to the manifest schema v1.1 that ensures backward compatibility. In a client that doesn't support **\<VersionOverrides\>**, existing add-ins will continue to function as they did without add-in commands.
 
-The `VersionOverrides` manifest entries specify many things for the add-in, such as the application, types of controls to add to the ribbon, the text, the icons, and any associated functions.
+The **\<VersionOverrides\>** manifest entries specify many things for the add-in, such as the application, types of controls to add to the ribbon, the text, the icons, and any associated functions.
 
 When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the `FunctionFile` node of the manifest.
 
@@ -33,7 +33,7 @@ Developers should define icons for all required sizes so that the add-in command
 
 ## How do add-in commands appear?
 
-An add-in command appears on the ribbon as a button. When a user installs an add-in, its commands appear in the UI as a group of buttons. This can either be on the ribbon's default tab or on a custom tab. For messages, the default is either the **Home** or **Message** tab. For the calendar, the default is the **Meeting**, **Meeting Occurrence**, **Meeting Series**, or **Appointment** tab. For module extensions,
+An add-in command appears on the ribbon as a button or an item in a drop-down menu. When a user installs an add-in, its commands appear in the UI as a group of buttons. This can either be on the ribbon's default tab or on a custom tab. For messages, the default is either the **Home** or **Message** tab. For the calendar, the default is the **Meeting**, **Meeting Occurrence**, **Meeting Series**, or **Appointment** tab. For module extensions,
 the default is a custom tab. On the default tab, each add-in can have one ribbon group with up to 6 commands. On custom tabs, the add-in can have up to 10 groups, each with 6 commands. Add-ins are limited to only one custom tab.
 
 As the ribbon gets more crowded, add-in commands will be displayed in the overflow menu. The add-in commands for an add-in are usually grouped together.
@@ -52,15 +52,17 @@ In Outlook on the web, the add-in name is displayed in an overflow menu. If the 
 
 ![Overflow menu displaying add-in command buttons.](../images/commands-overflow-menu-expand-web.png)
 
-## What UX shapes exist for add-in commands?
+## What are the types of add-in commands?
 
-The UX shape for an add-in command consists of a ribbon tab in the Office application that contains buttons that can perform various functions. Currently, three UI shapes are supported:
+The UI for an add-in command consists of a ribbon button or an item in a drop-down menu. There are two types of add-in commands, based on the kind of action that the command triggers.
 
-- A button that executes a JavaScript function
-- A button that launches a task pane
-- A button that shows a drop-down menu with one or more buttons of the other two types
+- **Task pane commands**: The button or menu item opens the add-in's task pane. You add this kind of add-in command with markup in the manifest. The "code behind" the command is provided by Office.
+- **Function commands**: The button or menu item runs any arbitrary JavaScript. The code almost always calls APIs in the Office JavaScript Library, but it doesn't have to. This type of add-in typically displays no UI other than the button or menu item itself. Note the following about function commands:
 
-### Executing a JavaScript function
+   - The function that is triggered can call the [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) method to show a dialog, which is a good way to display an error, show progress, or prompt for input from the user.
+   - The runtime in which the function command runs is a full [browser-based runtime](../testing/runtimes.md#browser-runtime). It can render HTML and call out to the Internet to send or get data.
+
+### Run a function command
 
 Use an add-in command button that executes a JavaScript function for scenarios where the user doesn't need to make any additional selections to initiate the action. This can be for actions such as track, remind me, or print, or scenarios when the user wants more in-depth information from a service.
 
@@ -68,7 +70,7 @@ In module extensions, the add-in command button can execute JavaScript functions
 
 ![A button that executes a function on the Outlook ribbon.](../images/commands-uiless-button-1.png)
 
-### Launching a task pane
+### Launch a task pane
 
 Use an add-in command button to launch a task pane for scenarios where a user needs to interact with an add-in for a longer period of time. For example, the add-in requires changes to settings or the completion of many fields.
 
@@ -84,7 +86,7 @@ If a user chooses another add-in command that opens a task pane, the task pane i
 
 ### Drop-down menu
 
-A drop-down menu add-in command defines a static list of buttons. The buttons within the menu can be any mix of buttons that execute a function or buttons that open a task pane. Submenus are not supported.
+A drop-down menu add-in command defines a static list of items. The menu can be any mix of items that execute a function or that open a task pane. Submenus are not supported.
 
 ![A button that drops down a menu on the Outlook ribbon.](../images/commands-menu-button-1.png)
 
@@ -116,5 +118,5 @@ When using a module extension, add-in commands appear on the extension's custom 
 
 - [Add-in command demo Outlook add-in](https://github.com/officedev/outlook-add-in-command-demo)
 - [Create add-in commands in your manifest for Excel, PowerPoint, and Word](../develop/create-addin-commands.md)
-- [Debug your UI-less Outlook add-in](debug-ui-less.md)
+- [Debug function commands in Outlook add-ins](debug-ui-less.md)
 - [Tutorial: Build a message compose Outlook add-in](../tutorials/outlook-tutorial.md)

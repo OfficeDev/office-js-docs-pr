@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot development errors with Office Add-ins
 description: Learn how to troubleshoot development errors in Office Add-ins.
-ms.date: 06/10/2022
+ms.date: 07/28/2022
 ms.localizationpriority: medium
 ---
 
@@ -61,13 +61,13 @@ The following are some of the causes of this error. If you discover additional c
 - If you are using Visual Studio, there may be a problem with the sideloading. Close all instances of the Office host and Visual Studio. Restart Visual Studio and try pressing F5 again.
 - The add-in's manifest has been removed from its deployment location, such as Centralized Deployment, a SharePoint catalog, or a network share.
 - The value of the [ID](/javascript/api/manifest/id) element in the manifest has been changed directly in the deployed copy. If for any reason, you want to change this ID, first remove the add-in from the Office host, then replace the original manifest with the changed manifest. You many need to clear the Office cache to remove all traces of the original. See the [Clear the Office cache](clear-cache.md) article for instructions on clearing the cache for your operating system.
-- The add-in's manifest has a `resid` that is not defined anywhere in the [Resources](/javascript/api/manifest/resources) section of the manifest, or there is a mismatch in the spelling of the `resid` between where it is used and where it is defined in the `<Resources>` section.
-- There is a `resid` attribute somewhere in the manifest with more than 32 characters. A `resid` attribute, and the `id` attribute of the corresponding resource in the `<Resources>` section, cannot be more than 32 characters.
+- The add-in's manifest has a `resid` that is not defined anywhere in the [Resources](/javascript/api/manifest/resources) section of the manifest, or there is a mismatch in the spelling of the `resid` between where it is used and where it is defined in the **\<Resources\>** section.
+- There is a `resid` attribute somewhere in the manifest with more than 32 characters. A `resid` attribute, and the `id` attribute of the corresponding resource in the **\<Resources\>** section, cannot be more than 32 characters.
 - The add-in has a custom Add-in Command but you are trying to run it on a platform that doesn't support them. For more information, see [Add-in commands requirement sets](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
 
 ## Add-in doesn't work on Edge but it works on other browsers
 
-See [Troubleshooting Microsoft Edge issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues).
+See [Troubleshooting Microsoft Edge issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-microsoft-edge-issues).
 
 ## Excel add-in throws errors, but not consistently
 
@@ -75,7 +75,7 @@ See [Troubleshoot Excel add-ins](../excel/excel-add-ins-troubleshooting.md) for 
 
 ## Manifest schema validation errors in Visual Studio projects
 
-If you are using newer features that require changes to the manifest file, you may get validation errors in Visual Studio. For example, when adding the `<Runtimes>` element to implement the shared JavaScript runtime, you may see the following validation error.
+If you're using newer features that require changes to the manifest file, you may get validation errors in Visual Studio. For example, when adding the **\<Runtimes\>** element to implement the [shared runtime](runtimes.md#shared-runtime), you may see the following validation error.
 
 **The element 'Host' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides' has invalid child element 'Runtimes' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides'**
 
@@ -108,10 +108,12 @@ When you're loading the Office JavaScript Library from a local copy instead of f
 ## See also
 
 - [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md)
-- [Sideload an Office Add-in on iPad and Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [Sideload an Office Add-in on Mac](sideload-an-office-add-in-on-mac.md)  
+- [Sideload an Office Add-in on iPad](sideload-an-office-add-in-on-ipad.md)  
 - [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
 - [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)
+- [Runtimes in Office Add-ins](runtimes.md)
 - [Microsoft Q&A (office-js-dev)](/answers/topics/office-js-dev.html)

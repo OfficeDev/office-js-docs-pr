@@ -1,7 +1,7 @@
 ---
 title: Create a dictionary task pane add-in
 description: Learn how to create a dictionary task pane add-in.
-ms.date: 09/26/2019
+ms.date: 07/15/2022
 ms.localizationpriority: medium
 ---
 
@@ -27,22 +27,19 @@ Figure 2 shows the **Define** command in the context menu that enables users to 
 
 ![Define context menu.](../images/dictionary-agave-02.jpg)
 
-
 *Figure 3. Definitions in the Spelling and Grammar panes*
 
 ![Definitions in the Spelling and Grammar panes.](../images/dictionary-agave-03.jpg)
-
 
 *Figure 4. Definitions in the Thesaurus pane*
 
 ![Definitions in the Thesaurus pane.](../images/dictionary-agave-04.jpg)
 
-
 *Figure 5. Definitions in Reading Mode*
 
 ![Definitions in Reading Mode.](../images/dictionary-agave-05.jpg)
 
-To create a task pane add-in that provides a dictionary lookup, you create two main components: 
+To create a task pane add-in that provides a dictionary lookup, you create two main components:
 
 - An XML web service that looks up definitions from a dictionary service, and then returns those values in an XML format that can be consumed and displayed by the dictionary add-in.
 - A task pane add-in that submits the user's current selection to the dictionary web service, displays definitions, and can optionally insert those values into the document.
@@ -248,11 +245,11 @@ Specifies settings for dictionary add-ins.
 
 **Parent element**
 
-`<OfficeApp>`
+**\<OfficeApp\>**
 
 **Child elements**
 
-`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`
+**\<TargetDialects\>**, **\<QueryUri\>**, **\<CitationText\>**, **\<Name\>**, **\<DictionaryHomePage\>**
 
 **Remarks**
 
@@ -264,11 +261,11 @@ Specifies the regional languages that this dictionary supports. Required for dic
 
 **Parent element**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Child element**
 
-`<TargetDialect>`
+**\<TargetDialect\>**
 
 **Remarks**
 
@@ -305,7 +302,7 @@ Specifies a regional language that this dictionary supports. Required for dictio
 
 **Parent element**
 
-`<TargetDialects>`
+**\<TargetDialects\>**
 
 **Remarks**
 
@@ -323,11 +320,11 @@ Specifies the endpoint for the dictionary query service. Required for dictionary
 
 **Parent element**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Remarks**
 
-This is the URI of the XML web service for the dictionary provider. The properly escaped query will be appended to this URI. 
+This is the URI of the XML web service for the dictionary provider. The properly escaped query will be appended to this URI.
 
 **Example**
 
@@ -341,7 +338,7 @@ Specifies the text to use in citations. Required for dictionary add-ins.
 
 **Parent element**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Remarks**
 
@@ -361,7 +358,7 @@ Specifies the name of this dictionary. Required for dictionary add-ins.
 
 **Parent element**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Remarks**
 
@@ -381,7 +378,7 @@ Specifies the URL of the home page for the dictionary. Required for dictionary a
 
 **Parent element**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Remarks**
 
@@ -485,32 +482,32 @@ a:hover, a:active
 
 ### Writing the JavaScript implementation
 
-The following example shows the JavaScript implementation in the Dictionary.js file that is called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the  `xmlServiceURL` variable at the top of the file, and then replacing the Bing API key for pronunciations with a properly registered one.
+The following example shows the JavaScript implementation in the Dictionary.js file that is called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the `xmlServiceURL` variable at the top of the file, and then replacing the Bing API key for pronunciations with a properly registered one.
 
 The primary members of the Office JavaScript API (Office.js) that are called from this implementation are as follows:
 
 - The [initialize](/javascript/api/office) event of the `Office` object, which is raised when the add-in context is initialized, and provides access to a [Document](/javascript/api/office/office.document) object instance that represents the document the add-in is interacting with.
 - The [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) method of the `Document` object, which is called in the `initialize` function to add an event handler for the [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) event of the document to listen for user selection changes.
 - The [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) method of the `Document` object, which is called in the `tryUpdatingSelectedWord()` function when the `SelectionChanged` event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.
-- When the  `selectTextCallback` asynchronous callback function that is passed as the _callback_ argument of the `getSelectedDataAsync` method executes, it gets the value of the selected text when the callback returns. It gets that value from the callback's _selectedText_ argument (which is of type [AsyncResult](/javascript/api/office/office.asyncresult)) by using the [value](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) property of the returned `AsyncResult` object.
+- When the  `selectTextCallback` asynchronous callback function that is passed as the *callback* argument of the `getSelectedDataAsync` method executes, it gets the value of the selected text when the callback returns. It gets that value from the callback's *selectedText* argument (which is of type [AsyncResult](/javascript/api/office/office.asyncresult)) by using the [value](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) property of the returned `AsyncResult` object.
 - The rest of the code in the  `selectedTextCallback` function queries the XML web service for definitions. It also calls into the Microsoft Translator APIs to provide the URL of a .wav file that has the selected word's pronunciation.
 - The remaining code in Dictionary.js displays the list of definitions and the pronunciation link in the add-in's HTML UI.
 
 ```js
 // The document the dictionary add-in is interacting with.
-var _doc;
+let _doc;
 // The last looked-up word, which is also the currently displayed word.
-var lastLookup;
+let lastLookup;
 // For demo purposes only!! Get an AppID if you intend to use the Pronunciation service for your feature.
-var appID="3D8D4E1888B88B975484F0CA25CDD24AAC457ED8";
+const appID="3D8D4E1888B88B975484F0CA25CDD24AAC457ED8";
 
 // The base URL for the OfficeDefinitions-conforming XML web service to query for definitions.
-var xmlServiceUrl = "WebService.asmx/Define?Word=";
+const xmlServiceUrl = "WebService.asmx/Define?Word=";
 
 // Initialize the add-in.
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
     // After the DOM is loaded, app-specific code can run.
     // Store a reference to the current document.
@@ -523,7 +520,7 @@ Office.initialize = function (reason) {
 }
 
 // Executes when event is raised on user's selection changes, and at initialization time. 
-// Gets the current selection and passes that to asynchronous callback method.
+// Gets the current selection and passes that to asynchronous callback function.
 function tryUpdatingSelectedWord() {
     _doc.getSelectedDataAsync(Office.CoercionType.Text, selectedTextCallback); 
 }

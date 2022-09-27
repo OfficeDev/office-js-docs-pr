@@ -22,7 +22,7 @@ See [Word JavaScript object model in Office Add-ins](../../word/word-add-ins-cor
 
 ## Learn about API capabilities
 
-Use other articles in this section of the documentation to learn how to [get the whole document from an add-in](../../word/get-the-whole-document-from-an-add-in-for-word.md), [use search options to find text in your Word add-in](../../word/search-option-guidance.md), and more. See the table of contents for the complete list of available articles.
+Use other articles in this section of the documentation to learn how to [get the whole document from an add-in](../../word/get-the-whole-document-from-an-add-in-for-word.md), [use search options in your Word add-in to find text](../../word/search-option-guidance.md), and more. See the table of contents for the complete list of available articles.
 
 For hands-on experience using the Word JavaScript API to access objects in Word, complete the [Word add-in tutorial](../../tutorials/word-tutorial.md).
 

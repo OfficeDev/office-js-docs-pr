@@ -1,7 +1,7 @@
 ---
 title: Use Vue to build an Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and Vue.
-ms.date: 06/10/2022
+ms.date: 07/12/2022
 ms.prod: excel
 ms.localizationpriority: high
 ---
@@ -56,7 +56,7 @@ Each add-in requires a manifest file to define its settings and capabilities.
     - **What do you want to name your add-in?** `My Office Add-in`
     - **Which Office client application would you like to support?** `Excel`
 
-    ![Screenshot of the Yeoman Office Add-in generator command line interface, with project type set to manifest only.](../images/yo-office-manifest-only-vue.png)
+    ![The Yeoman Generator for Office Add-ins command line interface, with project type set to manifest only.](../images/yo-office-manifest-only-vue.png)
 
 After completion, the wizard creates a **My Office Add-in** folder containing a **manifest.xml** file. You'll use the manifest to sideload and test your add-in.
 
@@ -70,9 +70,9 @@ After completion, the wizard creates a **My Office Add-in** folder containing a 
 1. Enable HTTPS for your app. In the root folder of the Vue project, create a **vue.config.js** file with the following contents.
 
     ```js
-    var fs = require("fs");
-    var path = require("path");
-    var homedir = require('os').homedir()
+    const fs = require("fs");
+    const path = require("path");
+    const homedir = require('os').homedir()
   
     module.exports = {
       devServer: {
@@ -107,7 +107,7 @@ The add-in project that you've created with the Yeoman generator contains sample
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-1. Open **manifest.xml** and find the `<bt:Urls>` tags inside the `<Resources>` tag. Locate the `<bt:Url>` tag with the ID `Taskpane.Url` and update its `DefaultValue` attribute. The new `DefaultValue` is `https://localhost:3000/index.html`. The entire updated tag should match the following line.
+1. Open **manifest.xml** and find the `<bt:Urls>` tags inside the **\<Resources\>** tag. Locate the `<bt:Url>` tag with the ID `Taskpane.Url` and update its `DefaultValue` attribute. The new `DefaultValue` is `https://localhost:3000/index.html`. The entire updated tag should match the following line.
 
    ```html
    <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
@@ -208,18 +208,19 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. Run your add-in and sideload the add-in within Excel. Follow the instructions for the platform you'll be using:
 
    - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-   - Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
-   - iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+   - Web browser: [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-a-yeoman-created-add-in-to-office-on-the-web)
+   - iPad: [Sideload Office Add-ins on iPad](../testing/sideload-an-office-add-in-on-ipad.md)
+   - Mac: [Sideload Office Add-ins on Mac](../testing/sideload-an-office-add-in-on-mac.md)
 
 1. Open the add-in task pane in Excel. On the **Home** tab, choose the **Show Taskpane** button.
 
-   ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
+   ![The Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
 
 1. Select any range of cells in the worksheet.
 
 1. Set the color of the selected range to green. In your add-in's task pane, choose the **Set color** button.
 
-   ![Screenshot of Excel, with the add-in task pane open.](../images/excel-quickstart-addin-2c.png)
+   ![The add-in task pane open in Excel.](../images/excel-quickstart-addin-2c.png)
 
 ## Next steps
 

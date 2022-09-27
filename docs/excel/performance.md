@@ -241,6 +241,6 @@ async function run() {
 ## See also
 
 * [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-* [Error handling with the Excel JavaScript API](excel-add-ins-error-handling.md)
+* [Error handling with the application-specific JavaScript APIs](../testing/application-specific-api-error-handling.md)
 * [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
 * [Worksheet Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.functions)

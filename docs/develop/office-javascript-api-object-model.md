@@ -1,7 +1,7 @@
 ---
 title: Common JavaScript API object model
 description: Learn about the Office JavaScript common API object model.
-ms.date: 07/08/2021
+ms.date: 07/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -41,7 +41,7 @@ You can also use the `Document` object to interact with data in Project document
 
 All these forms of data access start from an instance of the abstract `Document` object.
 
-You can access an instance of the `Document` object when the task pane or content add-in is initialized by using the [document](/javascript/api/office/office.context#office-office-context-document-member) property of the `Context` object. The `Document` object defines common data access functions shared across Word and Excel documents, and also provides access to the `CustomXmlParts` object for Word documents.
+You can access an instance of the `Document` object when the task pane or content add-in is initialized by using the [document](/javascript/api/office/office.context#office-office-context-document-member) property of the `Context` object. The `Document` object defines common data access methods shared across Word and Excel documents, and also provides access to the `CustomXmlParts` object for Word documents.
 
 The `Document` object supports four ways for developers to access document contents.
 
@@ -98,7 +98,7 @@ Binding-based data access enables content and task pane add-ins to consistently 
 
 Establishing a binding also allows you to subscribe to data and selection change events that are scoped to that particular region of the document or spreadsheet. This means that the add-in is only notified of changes that happen within the bound region as opposed to general changes across the whole document or spreadsheet.
 
-The [Bindings](/javascript/api/office/office.bindings) object exposes a [getAllAsync](/javascript/api/office/office.bindings#office-office-bindings-getallasync-member(1)) method that gives access to the set of all bindings established on the document or spreadsheet. An individual binding can be accessed by its ID using either the [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-getbyidasync-member(1)) or [Office.select](/javascript/api/office) methods. You can establish new bindings as well as remove existing ones by using one of the following methods of the `Bindings` object: [addFromSelectionAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromselectionasync-member(1)), [addFromPromptAsync](/javascript/api/office/office.bindings#office-office-bindings-addfrompromptasync-member(1)), [addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1)), or [releaseByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-releasebyidasync-member(1)).
+The [Bindings](/javascript/api/office/office.bindings) object exposes a [getAllAsync](/javascript/api/office/office.bindings#office-office-bindings-getallasync-member(1)) method that gives access to the set of all bindings established on the document or spreadsheet. An individual binding can be accessed by its ID using either the [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-getbyidasync-member(1)) method or [Office.select](/javascript/api/office) function. You can establish new bindings as well as remove existing ones by using one of the following methods of the `Bindings` object: [addFromSelectionAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromselectionasync-member(1)), [addFromPromptAsync](/javascript/api/office/office.bindings#office-office-bindings-addfrompromptasync-member(1)), [addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1)), or [releaseByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-releasebyidasync-member(1)).
 
 There are three different types of bindings that you specify with the  _bindingType_ parameter when you create a binding with the `addFromSelectionAsync`, `addFromPromptAsync` or `addFromNamedItemAsync` methods.
 
@@ -130,20 +130,4 @@ The [Document.getFileAsync](/javascript/api/office/office.document#office-office
 
 **Applies to:** Outlook add-ins
 
-Outlook add-ins primarily use a subset of the API exposed through the [Mailbox](/javascript/api/outlook/office.mailbox) object. To access the objects and members specifically for use in Outlook add-ins, such as the [Item](/javascript/api/outlook/office.item) object, you use the [mailbox](/javascript/api/office/office.context#office-office-context-mailbox-member) property of the **Context** object to access the **Mailbox** object, as shown in the following line of code.
-
-```js
-// Access the Item object.
-var item = Office.context.mailbox.item;
-
-```
-
-Additionally, Outlook add-ins can use the following objects.
-
-- `Office` object: for initialization.
-
-- `Context` object: for access to content and display language properties.
-
-- `RoamingSettings` object: for saving Outlook add-in-specific custom settings to the user's mailbox where the add-in is installed.
-
-For information about using JavaScript in Outlook add-ins, see [Outlook add-ins](../outlook/outlook-add-ins-overview.md).
+[!INCLUDE [Mailbox object information](../includes/mailbox-object-desc.md)]

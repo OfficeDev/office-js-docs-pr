@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Run code in your Office Add-in when the document opens
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
 You can configure your Office Add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.
 
@@ -91,7 +91,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.none);
 
 ## Get the current load behavior
 
-To determine what the current startup behavior is, run the following function, which returns an `Office.StartupBehavior` object.
+To determine what the current startup behavior is, run the following method, which returns an `Office.StartupBehavior` object.
 
 ```JavaScript
 let behavior = await Office.addin.getStartupBehavior();
@@ -99,6 +99,7 @@ let behavior = await Office.addin.getStartupBehavior();
 
 ## See also
 
-- [Configure your Office Add-in to use a shared JavaScript runtime](configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md)
 - [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
 - [Work with Events using the Excel JavaScript API](../excel/excel-add-ins-events.md)
+- [Runtimes in Office Add-ins](../testing/runtimes.md)

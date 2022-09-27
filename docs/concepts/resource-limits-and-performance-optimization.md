@@ -1,7 +1,7 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
 description: Learn about the resource limits of the Office Add-in platform, including CPU and memory.
-ms.date: 08/17/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -74,21 +74,21 @@ Office provides a Telemetry Log that maintains a record of certain events (loadi
 
 For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. You can refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log.
 
-|**Date/Time**|**Event ID**|**Severity**|**Title**|**File**|**ID**|**Application**|
+|Date/Time|Event ID|Severity|Title|File|ID|Application|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|10/8/2012 5:57:10 PM|7||add-in manifest downloaded successfully|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|10/8/2012 5:57:01 PM|7||add-in manifest downloaded successfully|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+|10/8/2012 5:57:10 PM|7|*Not applicable*|add-in manifest downloaded successfully|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|10/8/2012 5:57:01 PM|7|*Not applicable*|add-in manifest downloaded successfully|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 The following table lists the events that the Telemetry Log tracks for Office Add-ins in general.
 
-|**Event ID**|**Title**|**Severity**|**Description**|
+|Event ID|Title|Severity|Description|
 |:-----|:-----|:-----|:-----|
-|7|Add-in manifest downloaded successfully||The manifest of the Office Add-in was successfully loaded and read by the Office application.|
+|7|Add-in manifest downloaded successfully|*Not applicable*|The manifest of the Office Add-in was successfully loaded and read by the Office application.|
 |8|Add-in manifest did not download|Critical|The Office application was unable to load the manifest file for the Office Add-in from the SharePoint catalog, corporate catalog, or AppSource.|
 |9|Add-in markup could not be parsed|Critical|The Office application loaded the Office Add-in manifest, but could not read the HTML markup of the app.|
 |10|Add-in used too much CPU|Critical|The Office Add-in used more than 90% of the CPU resources over a finite period of time.|
-|15|Add-in disabled due to string search time-out||Outlook add-ins search the subject line and message of an e-mail to determine whether they should be displayed by using a regular expression. The Outlook add-in listed in the **File** column was disabled by Outlook because it timed out repeatedly while trying to match a regular expression.|
-|18|Add-in closed successfully||The Office application was able to close the Office Add-in successfully.|
+|15|Add-in disabled due to string search time-out|*Not applicable*|Outlook add-ins search the subject line and message of an e-mail to determine whether they should be displayed by using a regular expression. The Outlook add-in listed in the **File** column was disabled by Outlook because it timed out repeatedly while trying to match a regular expression.|
+|18|Add-in closed successfully|*Not applicable*|The Office application was able to close the Office Add-in successfully.|
 |19|Add-in encountered runtime error|Critical|The Office Add-in had a problem that caused it to fail. For more details, look at the **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
 |20|Add-in failed to verify licensing|Critical|The licensing information for the Office Add-in could not be verified and may have expired. For more details, look at the **Microsoft Office Alerts** log using the Windows Event Viewer on the computer that encountered the error.|
 
@@ -127,13 +127,13 @@ The following Excel code sample fills a selected range with data, one cell at a 
 
 ```js
 Excel.run(async (context) => {
-    var largeRange = context.workbook.getSelectedRange();
+    const largeRange = context.workbook.getSelectedRange();
     largeRange.load(["rowCount", "columnCount"]);
     await context.sync();
 
-    for (var i = 0; i < largeRange.rowCount; i++) {
-        for (var j = 0; j < largeRange.columnCount; j++) {
-            var cell = largeRange.getCell(i, j);
+    for (let i = 0; i < largeRange.rowCount; i++) {
+        for (let j = 0; j < largeRange.columnCount; j++) {
+            let cell = largeRange.getCell(i, j);
             cell.values = [[i *j]];
 
             // Call untrack() to release the range from memory.

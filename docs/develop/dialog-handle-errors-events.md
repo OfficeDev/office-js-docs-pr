@@ -1,7 +1,7 @@
 ---
 title: Handling errors and events in the Office dialog box 
 description: Learn how to trap and handle errors when opening and using the Office dialog box.
-ms.date: 07/08/2021
+ms.date: 09/01/2022
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +11,7 @@ This article describes how to trap and handle errors when opening the dialog box
 
 > [!NOTE]
 > This article presupposes that you are familiar with the basics of using the Office dialog API as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
-> 
+>
 > See also [Best practices and rules for the Office dialog API](dialog-best-practices.md).
 
 Your code should handle two categories of events.
@@ -29,11 +29,12 @@ In addition to general platform and system errors, four errors are specific to c
 |12005|The URL passed to `displayDialogAsync` uses the HTTP protocol. HTTPS is required. (In some versions of Office, the error message text returned with 12005 is the same one returned for 12004.)|
 |<span id="12007">12007</span><!-- The span is needed because office-js-helpers has an error message that links to this table row. -->|A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time.|
 |12009|The user chose to ignore the dialog box. This error can occur in Office on the web, where users may choose not to allow an add-in to present a dialog box. For more information, see [Handling pop-up blockers with Office on the web](dialog-best-practices.md#handle-pop-up-blockers-with-office-on-the-web).|
+|12011| The add-in is running in Office on the web and the user's browser configuration is blocking popups. This most commonly happens when the browser is Edge Legacy and the domain of the add-in is in different security zone from the domain that the dialog is trying to open. Another scenario which triggers this error is that the browser is Safari and it's configured to block all popups. Consider responding to this error with a prompt to the user to change their browser configuration or use a different browser.|
 
 When `displayDialogAsync` is called, it passes an [AsyncResult](/javascript/api/office/office.asyncresult) object to its callback function. When the call is successful, the dialog box is opened, and the `value` property of the `AsyncResult` object is a [Dialog](/javascript/api/office/office.dialog) object. For an example of this, see [Send information from the dialog box to the host page](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page). When the call to `displayDialogAsync` fails, the dialog box is not created, the `status` property of the `AsyncResult` object is set to `Office.AsyncResultStatus.Failed`, and the `error` property of the object is populated. You should always provide a callback that tests the `status` and responds when it's an error. For an example that reports the error message regardless of its code number, see the following code. (The `showNotification` function, not defined in this article, either displays or logs the error. For an example of how you can implement this function within your add-in, see [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).)
 
 ```js
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
 function (asyncResult) {
     if (asyncResult.status === Office.AsyncResultStatus.Failed) {
@@ -58,7 +59,7 @@ Three errors and events in the dialog box will raise a `DialogEventReceived` eve
 Your code can assign a handler for the `DialogEventReceived` event in the call to `displayDialogAsync`. The following is a simple example.
 
 ```js
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
     function (result) {
         dialog = result.value;

@@ -13,7 +13,7 @@ Users sign in to Office using either their personal Microsoft account or their M
 
 In addition to hosting the pages and JavaScript of the web application, the add-in must also host, at the same [fully qualified domain name](/windows/desktop/DNS/f-gly#_dns_fully_qualified_domain_name_fqdn__gly), one or more web APIs that will get an access token to Microsoft Graph and make requests to it.
 
-The add-in manifest contains a **WebApplicationInfo** element that provides important Azure app registration information to Office, including the permissions to Microsoft Graph that the add-in requires.
+The add-in manifest contains a **\<WebApplicationInfo\>** element that provides important Azure app registration information to Office, including the permissions to Microsoft Graph that the add-in requires.
 
 ### How it works at runtime
 
