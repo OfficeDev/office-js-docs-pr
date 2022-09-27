@@ -37,7 +37,7 @@ In the following code, the custom function performs division but relies on a rem
 
 ### Add the div2 custom function
 
-Add the following code to your **functions.js** or **functions.ts** file (depending on if you used JavaScript or TypeScript.)
+Add the following code to your **functions.js** or **functions.ts** file (depending on if you used JavaScript or TypeScript).
 
 ```javascript
 /**
