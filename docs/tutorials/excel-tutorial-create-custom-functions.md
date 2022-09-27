@@ -36,7 +36,7 @@ In this tutorial, you will:
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - **Choose a project type:** `Excel Custom Functions Add-in project`
+    - **Choose a project type:** `Excel Custom Functions using a Shared Runtime`
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `My custom functions add-in`
 
