@@ -15,13 +15,13 @@ The following table shows supported client-server combinations for this feature,
 
 | Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2013 on-premises |
 |---|:---:|:---:|:---:|:---:|
-|Windows:<br>version 1910 (build 12130.20272) or later|Yes|Yes\*|Yes\*|Yes\*|
+|Windows:<br>Version 1910 (Build 12130.20272) or later|Yes|Yes\*|Yes\*|Yes\*|
 |Mac:<br>build 16.47 or later|Yes|Yes|Yes|Yes|
 |Web browser:<br>modern Outlook UI|Yes|Not applicable|Not applicable|Not applicable|
 |Web browser:<br>classic Outlook UI|Not applicable|No|No|No|
 
 > [!NOTE]
-> \* Support for this feature in an on-premises Exchange environment is available starting in version 2206 (build 15330.20000) for the Current Channel and version 2207 (build 15427.20000) for the Monthly Enterprise Channel.
+> \* Support for this feature in an on-premises Exchange environment is available starting in Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
 
 > [!IMPORTANT]
 > Support for this feature was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (for details, refer to [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). However, note that the feature's support matrix is a superset of the requirement set's.

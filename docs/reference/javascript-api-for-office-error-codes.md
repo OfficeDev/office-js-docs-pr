@@ -15,7 +15,7 @@ See [API models](../develop/understanding-the-javascript-api-for-office.md#api-m
 
 The following table lists the error codes, names, and messages displayed, and the conditions they indicate.
 
-|**Error.code**|**Error.name**|**Error.message**|**Condition**|
+|Error.code|Error.name|Error.message|Condition|
 |:-----|:-----|:-----|:-----|
 |1000|Invalid Coercion Type|The specified coercion type is not supported|The coercion type is not supported in the Office application. (For example, OOXML and HTML coercion types are not supported in Excel.)|
 |1001|Data Read Error|The current selection is not supported.|The user's current selection is not supported (that is, it is something different than the supported coercion types).|
@@ -81,15 +81,15 @@ The following table lists the error codes, names, and messages displayed, and th
 |9022|Message In Different Store Error|The EWS ID cannot be retrieved because the message is saved in another store.|The EWS ID for the current message couldn't be retrieved as the message may have been moved or the sending mailbox may have changed.|
 |9041|Network error|The user is no longer connected to the network. Please check your network connection and try again.|The user no longer has network or internet access.|
 |9043|Attachment Type Not Supported|The attachment type is not supported.|The API doesn't support the attachment type. For example, `item.getAttachmentContentAsync` throws this error if the attachment is an embedded image in Rich Text Format, or if it's an item type other than an email or calendar item (such as a contact or task item).|
-|12002|||One of the following:<br> - No page exists at the URL that was passed to `displayDialogAsync`.<br> - The page that was passed to `displayDialogAsync` loaded, but the dialog box was directed to a page that it cannot find or load, or it has been directed to a URL with invalid syntax. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
-|12003|||The dialog box was directed to a URL with the HTTP protocol. HTTPS is required. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
-|12004|||The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be the same domain as the host page (including protocol and port number). Thrown by call of `displayDialogAsync`.|
-|12005|||The URL passed to `displayDialogAsync` uses the HTTP protocol. HTTPS is required. Thrown by call of `displayDialogAsync`. (In some versions of Office, the error message returned with 12005 is the same one returned for 12004.)|
-|12006|||The dialog box was closed, usually because the user chooses the **X** button. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
-|12007|||A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time. Thrown by call of `displayDialogAsync`.|
-|12009|||The user chose to ignore the dialog box. This error can occur in online versions of Office, where users may choose not to allow an add-in to present a dialog. Thrown by call of `displayDialogAsync`.|
-|12011|||The user's browser is configured in a way that blocks popups. This error can occur in Office on the web if the browser is Safari and it's configured to block popups or the browser is Edge Legacy and the add-in domain is in a different security zone from the domain the dialog is trying to open. Thrown by call of `displayDialogAsync`.|
-|13nnn|||See [Causes and handling of errors from getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
+|12002|*Not applicable.*|*Not applicable.*|One of the following:<br> - No page exists at the URL that was passed to `displayDialogAsync`.<br> - The page that was passed to `displayDialogAsync` loaded, but the dialog box was directed to a page that it cannot find or load, or it has been directed to a URL with invalid syntax. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
+|12003|*Not applicable.*|*Not applicable.*|The dialog box was directed to a URL with the HTTP protocol. HTTPS is required. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
+|12004|*Not applicable.*|*Not applicable.*|The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be the same domain as the host page (including protocol and port number). Thrown by call of `displayDialogAsync`.|
+|12005|*Not applicable.*|*Not applicable.*|The URL passed to `displayDialogAsync` uses the HTTP protocol. HTTPS is required. Thrown by call of `displayDialogAsync`. (In some versions of Office, the error message returned with 12005 is the same one returned for 12004.)|
+|12006|*Not applicable.*|*Not applicable.*|The dialog box was closed, usually because the user chooses the **X** button. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
+|12007|*Not applicable.*|*Not applicable.*|A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time. Thrown by call of `displayDialogAsync`.|
+|12009|*Not applicable.*|*Not applicable.*|The user chose to ignore the dialog box. This error can occur in online versions of Office, where users may choose not to allow an add-in to present a dialog. Thrown by call of `displayDialogAsync`.|
+|12011|*Not applicable.*|*Not applicable.*|The user's browser is configured in a way that blocks popups. This error can occur in Office on the web if the browser is Safari and it's configured to block popups or the browser is Edge Legacy and the add-in domain is in a different security zone from the domain the dialog is trying to open. Thrown by call of `displayDialogAsync`.|
+|13nnn|*Not applicable.*|*Not applicable.*|See [Causes and handling of errors from getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
 
 ## Binding creation error conditions
 
@@ -99,7 +99,7 @@ When a binding is created in the API, indicate the binding type that you want to
 
 The following table summarizes binding behavior in Excel.
 
-|**Specified Binding Type**|**Actual Selection**|**Behavior**|
+|Specified Binding Type|Actual Selection|Behavior|
 |:-----|:-----|:-----|
 |Matrix|Range of cells (including within a table, and single cell)|A binding of type `matrix` is created on the selected cells. No modification in the document is expected.|
 |Matrix|Text selected in the cell|A binding of type `matrix` is created on the whole cell. No modification in the document is expected.|
@@ -119,7 +119,7 @@ The following table summarizes binding behavior in Excel.
 
 The following table summarizes binding behavior in Word.
 
-|**Specified Binding Type**|**Actual Selection**|**Behavior**|
+|Specified Binding Type|Actual Selection|Behavior|
 |:-----|:-----|:-----|
 |Matrix|Text|The binding cannot be created.|
 |Matrix|Whole table|A binding of type `matrix` is created.Document is changed and a content control must wrap the table. |
