@@ -38,7 +38,7 @@ The following table lists events that are currently available and the supported 
 |`OnAppointmentOrganizer`|On creating a new appointment or editing an existing one.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web browser|
 
 > [!NOTE]
-> <sup>1</sup> Event-based add-ins in Outlook on Windows require a minimum of Windows 10 version 1903 (build 18362) or Windows Server 2019 version 1903 to run.
+> <sup>1</sup> Event-based add-ins in Outlook on Windows require a minimum of Windows 10 Version 1903 (Build 18362) or Windows Server 2019 Version 1903 to run.
 
 ## Set up your environment
 
