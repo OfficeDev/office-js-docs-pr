@@ -22,7 +22,7 @@ The following table shows supported client-server combinations for the on-send f
 
 | Client | Exchange Online | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) |
 |---|:---:|:---:|:---:|
-|Windows:<br>version 1910 (build 12130.20272) or later|Yes|Yes|Yes|
+|Windows:<br>Version 1910 (Build 12130.20272) or later|Yes|Yes|Yes|
 |Mac:<br>build 16.47 or later|Yes|Yes|Yes|
 |Web browser:<br>modern Outlook UI|Yes|Not applicable|Not applicable|
 |Web browser:<br>classic Outlook UI|Not applicable|Yes|Yes|
