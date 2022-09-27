@@ -61,49 +61,49 @@ The following tables list the errors that application-specific APIs may return.
 
 |Error code | Error message | Notes |
 |:----------|:--------------|:------|
-|`AccessDenied` |You cannot perform the requested operation.| |
-|`ActivityLimitReached`|Activity limit has been reached.| |
-|`ApiNotAvailable`|The requested API is not available.| |
-|`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of Excel. See the [Excel JavaScript API requirement sets](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) article for more information.| |
-|`BadPassword`|The password you supplied is incorrect.| |
-|`Conflict`|Request could not be processed because of a conflict.| |
-|`ContentLengthRequired`|A `Content-length` HTTP header is missing.| |
-|`GeneralException`|There was an internal error while processing the request.| |
-|`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.| |
-|`InvalidArgument` |The argument is invalid or missing or has an incorrect format.| |
-|`InvalidBinding` |This object binding is no longer valid due to previous updates.| |
-|`InvalidOperation`|The operation attempted is invalid on the object.| |
-|`InvalidOperationInCellEditMode`|The operation isn't available while Excel is in Edit cell mode. Exit Edit mode by using the **Enter** or **Tab** keys, or by selecting another cell, and then try again.| |
-|`InvalidReference`|This reference is not valid for the current operation.| |
-|`InvalidRequest`  |Cannot process the request.| |
-|`InvalidSelection`|The current selection is invalid for this operation.| |
-|`ItemAlreadyExists`|The resource being created already exists.| |
-|`ItemNotFound` |The requested resource doesn't exist.| |
-|`MemoryLimitReached`|The memory limit has been reached. Your action could not be completed.| |
+|`AccessDenied` |You cannot perform the requested operation.|*None.* |
+|`ActivityLimitReached`|Activity limit has been reached.|*None.* |
+|`ApiNotAvailable`|The requested API is not available.|*None.* |
+|`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of Excel. See the [Excel JavaScript API requirement sets](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) article for more information.|*None.* |
+|`BadPassword`|The password you supplied is incorrect.|*None.* |
+|`Conflict`|Request could not be processed because of a conflict.|*None.* |
+|`ContentLengthRequired`|A `Content-length` HTTP header is missing.|*None.* |
+|`GeneralException`|There was an internal error while processing the request.|*None.* |
+|`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|*None.* |
+|`InvalidArgument` |The argument is invalid or missing or has an incorrect format.|*None.* |
+|`InvalidBinding` |This object binding is no longer valid due to previous updates.|*None.* |
+|`InvalidOperation`|The operation attempted is invalid on the object.|*None.* |
+|`InvalidOperationInCellEditMode`|The operation isn't available while Excel is in Edit cell mode. Exit Edit mode by using the **Enter** or **Tab** keys, or by selecting another cell, and then try again.|*None.* |
+|`InvalidReference`|This reference is not valid for the current operation.|*None.* |
+|`InvalidRequest`  |Cannot process the request.|*None.* |
+|`InvalidSelection`|The current selection is invalid for this operation.|*None.* |
+|`ItemAlreadyExists`|The resource being created already exists.|*None.* |
+|`ItemNotFound` |The requested resource doesn't exist.|*None.* |
+|`MemoryLimitReached`|The memory limit has been reached. Your action could not be completed.|*None.* |
 |`NotImplemented`|The requested feature isn't implemented.| This could mean the API is in preview or only supported on a particular platform (such as online-only). See [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets) for more information.|
-|`RequestAborted`|The request was aborted during run time.| |
+|`RequestAborted`|The request was aborted during run time.|*None.* |
 |`RequestPayloadSizeLimitExceeded`|The request payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.| This error only occurs in Office on the web.|
 |`ResponsePayloadSizeLimitExceeded`|The response payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|  This error only occurs in Office on the web.|
-|`ServiceNotAvailable`|The service is unavailable.| |
-|`Unauthenticated` |Required authentication information is either missing or invalid.| |
-|`UnsupportedFeature`|The operation failed because the source worksheet contains one or more unsupported features.| |
-|`UnsupportedOperation`|The operation being attempted is not supported.| |
+|`ServiceNotAvailable`|The service is unavailable.|*None.* |
+|`Unauthenticated` |Required authentication information is either missing or invalid.|*None.* |
+|`UnsupportedFeature`|The operation failed because the source worksheet contains one or more unsupported features.|*None.* |
+|`UnsupportedOperation`|The operation being attempted is not supported.|*None.* |
 
 ### Excel-specific error codes and messages
 
 |Error code | Error message | Notes |
 |:----------|:--------------|:------|
-|`EmptyChartSeries`|The attempted operation failed because the chart series is empty.| |
-|`FilteredRangeConflict`|The attempted operation causes a conflict with a filtered range.| |
+|`EmptyChartSeries`|The attempted operation failed because the chart series is empty.|*None.* |
+|`FilteredRangeConflict`|The attempted operation causes a conflict with a filtered range.|*None.* |
 |`FormulaLengthExceedsLimit`|The bytecode of the applied formula exceeds the maximum length limit. For Office on 32-bit machines, the bytecode length limit is 16384 characters. On 64-bit machines, the bytecode length limit is 32768 characters.| This error occurs in both Excel on the web and on desktop.|
-|`InactiveWorkbook`|The operation failed because multiple workbooks are open and the workbook being called by this API has lost focus.| |
-|`MergedRangeConflict`|Cannot complete the operation. A table can't overlap with another table, a PivotTable report, query results, merged cells, or an XML Map.|
-|`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.| |
+|`InactiveWorkbook`|The operation failed because multiple workbooks are open and the workbook being called by this API has lost focus.|*None.* |
+|`MergedRangeConflict`|Cannot complete the operation. A table can't overlap with another table, a PivotTable report, query results, merged cells, or an XML Map.|*None.* |
+|`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|*None.* |
 |`OperationCellsExceedLimit`|The attempted operation affects more than the limit of 33554000 cells.| If the `TableColumnCollection.add API` triggers this error, confirm that there is no unintentional data within the worksheet but outside of the table. In particular, check for data in the right-most columns of the worksheet. Remove the unintended data to resolve this error. One way to verify how many cells that an operation processes is to run the following calculation: `(number of table rows) x (16383 - (number of table columns))`. The number 16383 is the maximum number of columns that Excel supports. <br><br>This error only occurs in Excel on the web. |
-|`PivotTableRangeConflict`|The attempted operation causes a conflict with a PivotTable range.| |
-|`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.| |
-|`RefreshWorkbookLinksBlocked`|The operation failed because the user hasn't granted permission to refresh external workbook links.| |
-|`UnsupportedSheet`|This sheet type does not support this operation, since it is a Macro or Chart sheet.| |
+|`PivotTableRangeConflict`|The attempted operation causes a conflict with a PivotTable range.|*None.* |
+|`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|*None.* |
+|`RefreshWorkbookLinksBlocked`|The operation failed because the user hasn't granted permission to refresh external workbook links.|*None.* |
+|`UnsupportedSheet`|This sheet type does not support this operation, since it is a Macro or Chart sheet.|*None.* |
 
 ## Error notifications
 
