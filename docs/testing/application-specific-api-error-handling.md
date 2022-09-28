@@ -52,7 +52,7 @@ When an Office JavaScript API request fails to run successfully, the API returns
 > [!NOTE]
 > If you use `console.log()` to print error messages to the console, those messages are only visible on the server. End users do not see those error messages in the add-in task pane or anywhere in the Office application. To report errors to the user, see [Error notifications](#error-notifications).
 
-## Error Codes and messages
+## Error codes and messages
 
 The following tables list the errors that application-specific APIs may return.
 
