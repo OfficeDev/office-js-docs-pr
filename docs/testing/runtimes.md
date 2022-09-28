@@ -13,8 +13,8 @@ Office Add-ins execute in runtimes embedded in Office. As an interpreted languag
 
 There are two types of runtimes used by Office Add-ins:
 
-- **JavaScript-only runtime**: A JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and client-side storage of data. It doesn't support [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or cookies. It doesn't support any of the Office JavaScript Library APIs in the [Office](/javascript/api/office) namespace.
-- **Browser runtime**: Includes all the features of a JavaScript-only runtime and adds support for Office JavaScript Library APIs in the [Office](/javascript/api/office) namespace, [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), a [rendering engine](https://developer.mozilla.org/docs/Glossary/Rendering_engine) that renders HTML, and cookies.
+- **JavaScript-only runtime**: A JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and client-side storage of data. It doesn't support [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or cookies.
+- **Browser runtime**: Includes all the features of a JavaScript-only runtime and adds support for [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), a [rendering engine](https://developer.mozilla.org/docs/Glossary/Rendering_engine) that renders HTML, and cookies.
 
 Details about these types are later in this article at [JavaScript-only runtime](#javascript-only-runtime) and [Browser runtime](#browser-runtime).
 
@@ -110,7 +110,7 @@ For more information, see [Persist add-in state and settings](../develop/persist
 
 ## JavaScript-only runtime
 
-The JavaScript-only runtime that is used in Office Add-ins is a modification of an open source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). It doesn't have a rendering engine, and it doesn't support cookies or [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage). It also doesn't support the Office JavaScript Library APIs in the [Office](/javascript/api/office) namespace. To get access to these APIs, you can open a dialog with the [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) method. The dialog runs in a browser-based runtime that has access to all the Office JavaScript Library APIs.
+The JavaScript-only runtime that is used in Office Add-ins is a modification of an open source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). It doesn't have a rendering engine, and it doesn't support cookies or [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage). 
 
 This type of runtime is used in Outlook event-based tasks in Office on Windows only and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime). 
 
@@ -127,7 +127,7 @@ A JavaScript-runtime uses less memory and starts up faster than a browser runtim
 
 Office Add-ins use a different browser type runtime depending on the platform in which Office is running (web, Mac, or Windows), and on the version and build of Windows and Office. For example, if the user is running Office on the web in a FireFox browser, then the Firefox runtime is used. If the user is running Office on Mac, then the Safari runtime is used. If the user is running Office on Windows, then either an Edge or Internet Explorer provides the runtime, depending on the version of Windows and Office. Details can be found in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-All of these runtimes include an HTML rendering engine and provide support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), and cookies. They also support *all* Office JavaScript Library APIs, including those in the [Office](/javascript/api/office) namespace.
+All of these runtimes include an HTML rendering engine and provide support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), and cookies.
 
 A browser runtime lifespan varies depending on the feature that it implements and on whether it's being shared or not.
 
