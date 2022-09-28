@@ -27,7 +27,7 @@ To set up batching for your custom functions you'll need to write three main sec
 2. A [function to make the remote request](#make-the-remote-request) when the batch is ready.
 3. [Server code to respond to the batch request](#process-the-batch-call-on-the-remote-service), calculate all of the operation results, and return the values.
 
-In the following sections you'll learn how to construct the code one example at a time. It's recommended you create a brand-new custom functions project using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) generator. To create a new project, see [Get started developing Excel custom functions](../quickstarts/excel-custom-functions-quickstart.md). You can use TypeScript or JavaScript.
+In the following sections, you'll learn how to construct the code one example at a time. It's recommended you create a brand-new custom functions project using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) generator. To create a new project, see [Get started developing Excel custom functions](../quickstarts/excel-custom-functions-quickstart.md). You can use TypeScript or JavaScript.
 
 ## Batch each call to your custom function
 
@@ -79,7 +79,7 @@ function _pushOperation(op, args) {
   // Create an entry for your custom function.
   console.log("pushOperation");
   const invocationEntry = {
-    operation: op, // e.g. sum
+    operation: op, // e.g., sum
     args: args,
     resolve: undefined,
     reject: undefined,
@@ -96,7 +96,7 @@ function _pushOperation(op, args) {
   _batch.push(invocationEntry);
 
   // If a remote request hasn't been scheduled yet,
-  // schedule it after a certain timeout, e.g. 100 ms.
+  // schedule it after a certain timeout, e.g., 100 ms.
   if (!_isBatchedRequestScheduled) {
     console.log("schedule remote request");
     _isBatchedRequestScheduled = true;
@@ -180,7 +180,7 @@ Add the following code to your **functions.js** or **functions.ts** file.
 // NOTE: When implementing this function on a server, also apply an appropriate authentication mechanism
 //       to ensure only the correct callers can access it.
 async function _fetchFromRemoteService(requestBatch) {
-  // Simulate a slow network request to the server;
+  // Simulate a slow network request to the server.
   console.log("_fetchFromRemoteService");
   await pause(1000);
   console.log("postpause");
