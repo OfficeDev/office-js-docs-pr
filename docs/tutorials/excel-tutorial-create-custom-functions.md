@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 06/10/2022
+ms.date: 09/28/2022
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ms.localizationpriority: high
@@ -36,7 +36,7 @@ In this tutorial, you will:
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - **Choose a project type:** `Excel Custom Functions Add-in project`
+    - **Choose a project type:** `Excel Custom Functions using a Shared Runtime`
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `My custom functions add-in`
 

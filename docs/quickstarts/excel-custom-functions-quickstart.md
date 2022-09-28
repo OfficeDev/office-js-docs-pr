@@ -1,5 +1,5 @@
 ---
-ms.date: 06/10/2022
+ms.date: 09/28/2022
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
 ms.prod: excel
@@ -26,7 +26,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - **Choose a project type:** `Excel Custom Functions Add-in project`
+    - **Choose a project type:** `Excel Custom Functions using a Shared Runtime`
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `My custom functions add-in`
 
