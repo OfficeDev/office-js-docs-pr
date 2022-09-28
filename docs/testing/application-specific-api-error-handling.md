@@ -1,7 +1,7 @@
 ---
 title: Error handling with the application-specific JavaScript APIs
 description: Learn about Excel, Word, PowerPoint, and other application-specific JavaScript API error handling logic to account for runtime errors.
-ms.date: 07/05/2022
+ms.date: 09/27/2022
 ms.localizationpriority: medium
 ---
 
@@ -96,6 +96,7 @@ The following tables list the errors that application-specific APIs may return.
 |`EmptyChartSeries`|The attempted operation failed because the chart series is empty.|*None.* |
 |`FilteredRangeConflict`|The attempted operation causes a conflict with a filtered range.|*None.* |
 |`FormulaLengthExceedsLimit`|The bytecode of the applied formula exceeds the maximum length limit. For Office on 32-bit machines, the bytecode length limit is 16384 characters. On 64-bit machines, the bytecode length limit is 32768 characters.| This error occurs in both Excel on the web and on desktop.|
+|`GeneralException`|*Various.*|The data types APIs return `GeneralException` errors with dynamic error messages. These dynamic messages reference the cell that is the source of the error, and the problem that is causing the error, such as: "Cell A1 is missing the required property `type`."|
 |`InactiveWorkbook`|The operation failed because multiple workbooks are open and the workbook being called by this API has lost focus.|*None.* |
 |`MergedRangeConflict`|Cannot complete the operation. A table can't overlap with another table, a PivotTable report, query results, merged cells, or an XML Map.|*None.* |
 |`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|*None.* |
