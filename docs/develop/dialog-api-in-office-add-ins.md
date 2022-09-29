@@ -95,7 +95,7 @@ if (loginSuccess) {
 > [!IMPORTANT]
 >
 > - The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box.
-> - The other JS API that can be called in the dialog box is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md). However, in the dialog box, this API isn't supported in Outlook 2016 one-time purchase (that is, the MSI version).
+> - The other JS API that can be called in the dialog box is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md). However, in the dialog box, this API isn't supported in volume-licensed perpetual Outlook 2016 (that is, the MSI version).
 
 In the next example, `googleProfile` is a stringified version of the user's Google profile.
 
