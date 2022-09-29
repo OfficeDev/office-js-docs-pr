@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 08/19/2022
+ms.date: 09/14/2022
 ms.localizationpriority: medium
 ---
 
@@ -91,6 +91,14 @@ See also: [application](#application), [client](#client), [Office application, O
 
 See also: [application](#application), [client](#client), [host](#host).
 
+## perpetual
+
+**Perpetual** refers to versions of Office available through a volume-licensing agreement or retail channels.
+
+Other Microsoft content may use the term **non-subscription** to represent this concept.
+
+See also: [retail, retail perpetual](#retail-retail-perpetual), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing)
+
 ## platform
 
 A **platform** usually refers to the operating system running the Office application. Platforms that support Office Add-ins include Windows, Mac, iPad, and web browsers.
@@ -104,6 +112,14 @@ See also: [tutorial](#tutorial).
 ## requirement set
 
 [!include[Requirement set note](../includes/office-js-requirement-sets.md)]
+
+## retail, retail perpetual
+
+**Retail** refers to perpetual versions of Office available through retail channels. These do not include versions provided by a Microsoft 365 subscription nor volume-licensing agreement.
+
+Other Microsoft content may use the term **one-time purchase** or **consumer** to represent this concept.
+
+See also: [perpetual](#perpetual)
 
 ## ribbon, ribbon button
 
@@ -121,6 +137,10 @@ A **shared runtime**, enables all code in your add-in, including task pane, add-
 
 See also: [custom functions runtime](#custom-functions-runtime), [runtime](#runtime).
 
+## subscription
+
+**Subscription** refers to versions of Office available with a Microsoft 365 subscription.
+
 ## task pane
 
 Task panes are interface surfaces, or webviews, that typically appear on the right side of the window within Excel, Outlook, PowerPoint, and Word. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to or can't embed functionality directly into the document. See [Task panes in Office Add-ins](../design/task-pane-add-ins.md) to learn more.
@@ -132,6 +152,14 @@ See also: [webview](#webview).
 A **tutorial** is a teaching aid designed to help people learn to use a product or procedure. In the Office Add-ins context, a tutorial guides an add-in developer through the complete add-in development process for a particular application, such as Excel. This involves following 20 or more steps and is a greater time investment than a [quick start](#quick-start).
 
 See also: [quick start](#quick-start).
+
+## volume-licensed, volume-licensed perpetual, volume licensing
+
+**Volume-licensed** refers to a perpetual version of Office available through a volume-licensing agreement between Microsoft and your company.
+
+Other Microsoft content may use the term **commercial** to represent this concept.
+
+See also: [perpetual](#perpetual)
 
 ## web add-in
 
