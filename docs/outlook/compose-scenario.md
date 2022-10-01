@@ -1,13 +1,13 @@
 ---
 title: Create Outlook add-ins for compose forms
 description: Learn about scenarios and capabilities of Outlook add-ins for compose forms.
-ms.date: 02/09/2021
+ms.date: 10/03/2022
 ms.localizationpriority: high
 ---
 
 # Create Outlook add-ins for compose forms
 
-Starting with version 1.1 of the schema for Office Add-ins manifests and v1.1 of Office.js, you can create compose add-ins, which are Outlook add-ins activated in compose forms. In contrast with read add-ins (Outlook add-ins that are activated in read mode when a user is viewing a message or appointment), compose add-ins are available in the following user scenarios.
+You can create compose add-ins, which are Outlook add-ins activated in compose forms. In contrast with read add-ins (Outlook add-ins that are activated in read mode when a user is viewing a message or appointment), compose add-ins are available in the following user scenarios.
 
 - Composing a new message, meeting request, or appointment in a compose form.
 
