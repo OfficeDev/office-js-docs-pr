@@ -1,25 +1,31 @@
 ---
 title: Understanding Outlook add-in permissions
-description: Outlook add-ins specify the required permission level in their manifest, which include Restricted, ReadItem, ReadWriteItem, or ReadWriteMailbox. 
-ms.date: 02/19/2020
+description: Outlook add-ins specify the required permission level in their manifest, which include restricted, read item, read/write item, or read/write mailbox. 
+ms.date: 10/03/2022
 ms.localizationpriority: medium
 ---
 
 # Understanding Outlook add-in permissions
 
-Outlook add-ins specify the required permission level in their manifest. The available levels are **Restricted**, **ReadItem**, **ReadWriteItem**, or **ReadWriteMailbox**. These levels of permissions are cumulative: **Restricted** is the lowest level, and each higher level includes the permissions of all the lower levels. **ReadWriteMailbox** includes all the supported permissions.
+Outlook add-ins specify the required permission level in their manifest. There are four available levels.
+
+[!include[Table of Outlook permissions](../includes/outlook-permission-levels-table.md)]
+
+The four levels of permissions are cumulative: the **read/write mailbox** permission includes the permissions of **read/write item**, **read item** and **restricted**, **read/write item** includes **read item** and **restricted**, and the **read item** permission includes **restricted**.
 
 You can see the permissions requested by a mail add-in before installing it from [AppSource](https://appsource.microsoft.com). You can also see the required permissions of installed add-ins in the Exchange Admin Center.
 
-## Restricted permission
+## restricted permission
 
-The **Restricted** permission is the most basic level of permission. Specify **Restricted** in the [Permissions](/javascript/api/manifest/permissions) element in the manifest to request this permission. Outlook assigns this permission to a mail add-in by default if the add-in does not request a specific permission in its manifest.
+The **restricted** permission is the most basic level of permission. Outlook assigns this permission to a mail add-in by default if the add-in does not request a specific permission in its manifest.
 
 ### Can do
 
 - [Get only specific entities](match-strings-in-an-item-as-well-known-entities.md) (phone number, address, URL) from the item's subject or body.
 
 - Specify an [ItemIs activation rule](activation-rules.md#itemis-rule) that requires the current item in a read or compose form to be a specific item type, or [ItemHasKnownEntity rule](match-strings-in-an-item-as-well-known-entities.md) that matches any of a smaller subset of supported well-known entities (phone number, address, URL) in the selected item.
+
+  [!include[Rule features not supported with JSON manifest](../includes/rule-not-supported-json.md)]
 
 - Access any properties and methods that do **not** pertain to specific information about the user or item (see the next section for the list of members that do).
 
@@ -56,9 +62,9 @@ The **Restricted** permission is the most basic level of permission. Specify **R
   - [Subject](/javascript/api/outlook/office.subject) and all its child members
   - [Time](/javascript/api/outlook/office.time) and all its child members
 
-## ReadItem permission
+## read item permission
 
-The **ReadItem** permission is the next level of permission in the permissions model. Specify **ReadItem** in the **\<Permissions\>** element in the manifest to request this permission.
+The **read item** permission is the next level of permission in the permissions model.
 
 ### Can do
 
@@ -71,6 +77,8 @@ The **ReadItem** permission is the next level of permission in the permissions m
 - [Get all existing well-known entities](match-strings-in-an-item-as-well-known-entities.md), not just a subset, from the item's subject or body.
 
 - Use all the [well-known entities](activation-rules.md#itemhasknownentity-rule) in [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) rules, or [regular expressions](activation-rules.md#itemhasregularexpressionmatch-rule) in [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rules. The following example follows schema v1.1. It shows a rule that activates the add-in if one or more of the well-known entities are found in the subject or body of the selected message.
+
+  [!include[Rule features not supported with JSON manifest](../includes/rule-not-supported-json.md)]
 
   ```XML
     <Permissions>ReadItem</Permissions>
@@ -90,6 +98,8 @@ The **ReadItem** permission is the next level of permission in the permissions m
             <Rule xsi:type="ItemHasKnownEntity" EntityType="Contact" />
     </Rule>
   ```
+
+[!include[Rule features not supported with JSON manifest](../includes/rule-not-supported-json.md)]
 
 ### Can't do
 
@@ -120,9 +130,9 @@ The **ReadItem** permission is the next level of permission in the permissions m
   - [item.to.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
   - [item.to.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
 
-## ReadWriteItem permission
+## read/write item permission
 
-Specify **ReadWriteItem** in the **\<Permissions\>** element in the manifest to request this permission. Mail add-ins activated in compose forms that use write methods (**Message.to.addAsync** or **Message.to.setAsync**) must use at least this level of permission.
+Specify **read/write item** permission in the manifest to request this permission. Mail add-ins activated in compose forms that use write methods (**Message.to.addAsync** or **Message.to.setAsync**) must use at least this level of permission.
 
 ### Can do
 
@@ -140,11 +150,11 @@ Specify **ReadWriteItem** in the **\<Permissions\>** element in the manifest to 
 
 - Use **mailbox.makeEWSRequestAsync**.
 
-## ReadWriteMailbox permission
+## read/write mailbox permission
 
-The **ReadWriteMailbox** permission is the highest level of permission. Specify **ReadWriteMailbox** in the **\<Permissions\>** element in the manifest to request this permission.
+The **read/write mailbox** permission is the highest level of permission. 
 
-In addition to what the **ReadWriteItem** permission supports, the token provided by **mailbox.getCallbackTokenAsync** provides access to use Exchange Web Services (EWS) operations or Outlook REST APIs to do the following:
+In addition to what the **read/write item** permission supports, the token provided by **mailbox.getCallbackTokenAsync** provides access to use Exchange Web Services (EWS) operations or Outlook REST APIs to do the following:
 
 - Read and write all properties of any item in the user's mailbox.
 - Create, read, and write to any folder or item in that mailbox.

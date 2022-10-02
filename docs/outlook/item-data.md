@@ -1,7 +1,7 @@
 ---
 title: Get or set item data in an Outlook add-in
 description: Depending on whether an add-in is activated in a read or compose form, the properties that are available to the add-in on an item differ.
-ms.date: 12/10/2019
+ms.date: 10/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -51,12 +51,12 @@ For the remaining item-level properties available in compose forms, because the 
 
 If your Outlook add-in is activated in read forms, you can get an Exchange callback token. This token can be used in server-side code to access the full item via Exchange Web Services (EWS).
 
-By specifying the **ReadItem** permission in the add-in manifest, you can use the [mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to get an Exchange callback token, the [mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) property to get the URL of the EWS endpoint for the user's mailbox, and [item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) to get the EWS ID for the selected item. You can then pass the callback token, EWS endpoint URL, and the EWS item ID to server-side code to access the [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation, to get more properties of the item.
+By specifying the **read item** permission in the add-in manifest, you can use the [mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to get an Exchange callback token, the [mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) property to get the URL of the EWS endpoint for the user's mailbox, and [item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) to get the EWS ID for the selected item. You can then pass the callback token, EWS endpoint URL, and the EWS item ID to server-side code to access the [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation, to get more properties of the item.
 
 
 ## Access EWS from a read or compose add-in
 
-You can also use the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to access the Exchange Web Services (EWS) operations [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) and [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation) directly from the add-in. You can use these operations to get and set many properties of a specified item. This method is available to Outlook add-ins regardless of whether the add-in has been activated in a read or compose form, as long as you specify the **ReadWriteMailbox** permission in the add-in manifest.
+You can also use the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to access the Exchange Web Services (EWS) operations [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) and [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation) directly from the add-in. You can use these operations to get and set many properties of a specified item. This method is available to Outlook add-ins regardless of whether the add-in has been activated in a read or compose form, as long as you specify the **read/write mailbox** permission in the add-in manifest. For more information about the **read/write mailbox** permission, see [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md)
 
 For more information about using **makeEwsRequestAsync** to access EWS operations, see [Call web services from an Outlook add-in](web-services.md).
 

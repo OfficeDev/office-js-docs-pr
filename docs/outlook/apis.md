@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in APIs
 description: Learn how to reference the Outlook add-in APIs and declare permissions in your Outlook add-in.
-ms.date: 07/26/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -52,24 +52,13 @@ For more information, see [Outlook add-in manifests](manifests.md),  and [Unders
 
 ## Permissions
 
-Your add-in requires the appropriate permissions to use the APIs that it needs. In general, you should specify the minimum permission needed for your add-in. Permissions are declared in the manifest. The markup varies depending on the type of manifest.
-
-- **XML manifest**:  Use the **\<Permissions\>** element.
-- **Teams manifest (preview)**: Use the "authorization.permissions.resourceSpecific" property. 
+Your add-in requires the appropriate permissions to use the APIs that it needs. In general, you should specify the minimum permission needed for your add-in.
 
 There are four levels of permissions. For more details, see [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
 
 <br/>
 
-|Permission level</br>XML manifest name|Permission level</br>Teams manifest name|Description|
-|:-----|:-----|:-----|
-| **Restricted** | **MailboxItem.Restricted.User** | Allows use of entities but not regular expressions. |
-| **ReadItem** | **MailboxItem.Read.User** | In addition to what is allowed in **Restricted**, it allows:<ul><li>regular expressions</li><li>Outlook add-in API read access</li><li>getting the item properties and the callback token</li></ul> |
-| **ReadWriteItem** | **MailboxItem.ReadWrite.User** | In addition to what is allowed in **ReadItem**, it allows:<ul><li>full Outlook add-in API access except `makeEwsRequestAsync`</li><li>setting the item properties</li></ul> |
-| **ReadWriteMailbox** | **Mailbox.ReadWrite.User** | In addition to what is allowed in **ReadWriteItem**, it allows:<ul><li>creating, reading, writing items and folders</li><li>sending items</li><li>calling [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
-
-> [!NOTE]
-> There is an supplementary permission that is needed for add-ins that use the append-on-send feature. With the XML manifest, you specify the permission in the [ExtendedPermissions](/javascript/api/manifest/extendedpermissions) element. For details see [Implement append-on-send in your Outlook add-in](append-on-send.md). With the Teams manifest (preview), you specify this permission with the name **Mailbox.AppendOnSend.User** in an additional object in the "authorization.permissions.resourceSpecific" array.
+[!include[Table of Outlook permissions](../includes/outlook-permission-levels-table.md)]
 
 For more information, see [Outlook add-in manifests](manifests.md). For information about security issues, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md).
 

@@ -1,7 +1,7 @@
 ---
 title: Use Exchange Web Services (EWS) from an Outlook add-in
 description: Provides an example that shows how an Outlook add-in can request information from Exchange Web Services.
-ms.date: 07/08/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -183,7 +183,12 @@ When you use the `makeEwsRequestAsync` method, the request is authenticated by u
 > [!NOTE]
 > The server administrator must use the [New-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) or the [Set-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) cmdlet to set the _OAuthAuthentication_ parameter to `true` on the Client Access server EWS directory in order to enable the `makeEwsRequestAsync` method to make EWS requests.
 
-Your add-in must specify the `ReadWriteMailbox` permission in its add-in manifest to use the `makeEwsRequestAsync` method. For information about using the `ReadWriteMailbox` permission, see the section [ReadWriteMailbox permission](understanding-outlook-add-in-permissions.md#readwritemailbox-permission) in [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
+To use the `makeEwsRequestAsync` method, your add-in must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
+
+- **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
+- **Teams manifest (preview)**: Set the "authorization.permissions.resourceSpecific" property to "Mailbox.ReadWrite.User".
+
+For information about using the **read/write mailbox** permission, see [Read/write mailbox permission](understanding-outlook-add-in-permissions.md#read-write-mailbox-permission).
 
 ## See also
 

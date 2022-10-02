@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 08/09/2022
+ms.date: 10/03/2022
 ms.localizationpriority: high
 ---
 
@@ -23,16 +23,9 @@ This article describes the possible permissions that Outlook add-ins can request
 
 Because customers' perception of add-in security can affect add-in adoption, Outlook add-in security relies on a tiered permissions model. An Outlook add-in would disclose the level of permissions it needs, identifying the possible access and actions that the add-in can make on the customer's mailbox data.
 
-Manifest schema version 1.1 includes four levels of permissions.
+There are four levels of permissions.
 
-**Table 1. Add-in permission levels**
-
-|**Permission level**|**Value in Outlook add-in manifest**|
-|:-----|:-----|
-|Restricted|Restricted|
-|Read item|ReadItem|
-|Read/write item|ReadWriteItem|
-|Read/write mailbox|ReadWriteMailbox|
+[!include[Table of Outlook permissions](../includes/outlook-permission-levels-table.md)]
 
 The four levels of permissions are cumulative: the **read/write mailbox** permission includes the permissions of **read/write item**, **read item** and **restricted**, **read/write item** includes **read item** and **restricted**, and the **read item** permission includes **restricted**.
 
@@ -111,18 +104,23 @@ Developers should follow the tiered permissions model to provide transparency an
 
 - Developers request an appropriate level of permission for an Outlook add-in, based on how the Outlook add-in should be activated, and its need to read or write certain properties of an item, or to create and send an item.
 
-- Developers request permission by using the [Permissions](/javascript/api/manifest/permissions) element in the manifest of the Outlook add-in, by assigning a value of **Restricted**, **ReadItem**, **ReadWriteItem** or **ReadWriteMailbox**, as appropriate.
+- As noted above, developers request permission in the manifest.
 
-  > [!NOTE]
-  > Note that the **ReadWriteItem** permission is available starting in manifest schema v1.1.
-
-  The following example requests the **read item** permission.
+  The following example requests the **read item** permission in the XML manifest.
 
   ```XML
-    <Permissions>ReadItem</Permissions>
+  <Permissions>ReadItem</Permissions>
+  ```
+
+  The following example requests the **read item** permission in the Teams manifest (preview).
+
+  ```json
+  "resourceSpecific": "MailboxItem.Read.User"
   ```
 
 - Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body. For example, the following rule activates the Outlook add-in if one or more of three entities - phone number, postal address, or URL - are found in the subject or body of the current message.
+
+[!include[Rule features not supported with JSON manifest](../includes/rule-not-supported-json.md)]
 
   ```XML
     <Permissions>Restricted</Permissions>
