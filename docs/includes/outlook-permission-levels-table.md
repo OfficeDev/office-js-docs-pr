@@ -8,7 +8,7 @@
 Permissions are declared in the manifest. The markup varies depending on the type of manifest.
 
 - **XML manifest**:  Use the **\<Permissions\>** element.
-- **Teams manifest (preview)**: Use the "authorization.permissions.resourceSpecific" property.
+- **Teams manifest (preview)**: Use the "name" property of an object in the "authorization.permissions.resourceSpecific" array.
 
 > [!NOTE]
 >
