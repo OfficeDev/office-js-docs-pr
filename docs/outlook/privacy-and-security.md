@@ -114,9 +114,19 @@ Developers should follow the tiered permissions model to provide transparency an
 
   The following example requests the **read item** permission in the Teams manifest (preview).
 
-  ```json
-  "resourceSpecific": "MailboxItem.Read.User"
-  ```
+```json
+"authorization": {
+  "permissions": {
+    "resourceSpecific": [
+      ...
+      {
+        "name": "MailboxItem.Read.User",
+        "type": "Delegated"
+      },
+    ]
+  }
+},
+```
 
 - Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body. For example, the following rule activates the Outlook add-in if one or more of three entities - phone number, postal address, or URL - are found in the subject or body of the current message.
 

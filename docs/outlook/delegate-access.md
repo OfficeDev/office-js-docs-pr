@@ -113,7 +113,7 @@ To enable shared folders and shared mailbox scenarios in your add-in, you must e
 First, to support REST calls from a delegate, the add-in must request the **read/write mailbox** permission. The markup varies depending on the type of manifest.
 
 - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-- **Teams manifest (preview)**: Set the "authorization.permissions.resourceSpecific" property to "Mailbox.ReadWrite.User".
+- **Teams manifest (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
 Second, enable support for shared folders, The markup varies depending on the type of manifest.
 
@@ -267,9 +267,9 @@ The message is now in a shared context and add-ins that support these shared sce
 ### REST and EWS
 
 Your add-in can use REST. To enable REST access to the owner's mailbox or to the shared mailbox as applicable, the add-in must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
->
-> - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-> - **Teams manifest (preview)**: Set the "authorization.permissions.resourceSpecific" property to "Mailbox.ReadWrite.User".
+
+- **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
+- **Teams manifest (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
 EWS is not supported.
 

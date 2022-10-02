@@ -56,7 +56,17 @@ The following example requests the **read item** permission in the XML manifest.
 The following example requests the **read item** permission in the Teams manifest (preview).
 
 ```json
-"resourceSpecific": "MailboxItem.Read.User"
+"authorization": {
+  "permissions": {
+    "resourceSpecific": [
+      ...
+      {
+        "name": "MailboxItem.Read.User",
+        "type": "Delegated"
+      },
+    ]
+  }
+},
 ```
 
 ## Retrieving entities in your add-in
