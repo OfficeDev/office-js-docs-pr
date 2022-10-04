@@ -30,7 +30,10 @@ When your add-in is working as desired, you can publish it directly through Visu
 1. Select **View > Extensions** (Ctrl+Shift+X) to open the Extensions view.
 1. Search for the **Azure Storage** extension and install it.
 1. Once installed, an Azure icon is added to the **Activity Bar**. Select it to access the extension. If the **Activity Bar** is hidden, open it by selecting **View > Appearance > Activity Bar**.
-1. Run the extension and select **Sign in to Azure** to sign in to your Azure account. If you don't already have an Azure account, create one by selecting **Create an Azure Account**. Follow the provided steps to set up your account.
+1. Select **Sign in to Azure** to sign in to your Azure account. If you don't already have an Azure account, create one by selecting **Create an Azure Account**. Follow the provided steps to set up your account.
+
+    :::image type="content" source="../images/azure-extension-sign-in.png" alt-text="Sign in to Azure button selected in the Azure extension.":::
+
 1. Once you're signed in, you'll see your Azure storage accounts appear in the extension. If you don't already have a storage account, create one using the **Create Storage Account** option in the command palette. Name your storage account a globally unique name, using only 'a-z' and '0-9'. Note that by default, this creates a storage account and a resource group with the same name. It automatically puts the storage account in West US. This can be adjusted online through [your Azure account](https://portal.azure.com/).
 
     :::image type="content" source="../images/azure-extension-create-storage-account.png" alt-text="Selecting Storage accounts > Create Storage Account in the Azure extension.":::
