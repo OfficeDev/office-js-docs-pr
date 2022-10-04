@@ -40,7 +40,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 
 1. Right-click your storage account and select **Configure Static Website**. You'll be asked to enter the index document name and the 404 document name. Change the index document name from the default `index.html` to **`taskpane.html`**. You may also change the 404 document name but are not required to.
 1. Right-click your storage account again and this time select **Browse Static Website**. From the browser window that opens, copy the website URL.
-1. In VS Code, open your project's manifest file (`manifest.xml`) and change all references to your localhost URL (such as `https://localhost:3000`) to the URL you've copied. This endpoint is the static website URL for your newly created storage account. Save the changes to your manifest file.
+1. Open your project's manifest file (`manifest.xml`) and change all references to your localhost URL (such as `https://localhost:3000`) to the URL you've copied. This endpoint is the static website URL for your newly created storage account. Save the changes to your manifest file.
 1. Open a command line prompt or terminal window and go to the root directory of your add-in project. Run the following command to prepare all files for production deployment.
 
     ```command&nbsp;line
