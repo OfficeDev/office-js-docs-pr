@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot development errors with Office Add-ins
 description: Learn how to troubleshoot development errors in Office Add-ins.
-ms.date: 07/28/2022
+ms.date: 09/30/2022
 ms.localizationpriority: medium
 ---
 
@@ -85,8 +85,11 @@ If this occurs, you can update the XSD files that Visual Studio uses to the late
 
 1. Open your project in Visual Studio.
 1. In **Solution Explorer**, open the manifest.xml file. The manifest is typically in the first project under your solution.
-1. Choose **View** > **Properties Window** (F4).
-1. In the **Properties Window**, choose the ellipsis (...) to open the **XML Schemas** editor. Here you can find the exact folder location of all schema files your project uses.
+1. Select **View** > **Properties Window** (F4).
+1. Set the cursor selection in the manifest.xml so that the **Properties** window shows the **XML Document** properties.
+1. In the **Properties** window, select the **Schemas** property, then select the ellipsis (...) to open the **XML Schemas** editor. Here you can find the exact folder location of all schema files your project uses.
+
+:::image type="content" source="../images/visual-studio-xml-document-properties.png" alt-text="Properties window showing the XML document properties.":::
 
 ### Update the XSD files
 
