@@ -1,7 +1,7 @@
 ---
 title: Use the Outlook REST APIs from an Outlook add-in
 description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
-ms.date: 09/02/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -26,9 +26,10 @@ By setting the `isRest` option to `true`, you can request a token compatible wit
 
 ### Add-in permissions and token scope
 
-It is important to consider what level of access your add-in will need via the REST APIs. In most cases, the token returned by `getCallbackTokenAsync` will provide read-only access to the current item only. This is true even if your add-in specifies the `ReadWriteItem` permission level in its manifest.
+It is important to consider what level of access your add-in will need via the REST APIs. In most cases, the token returned by `getCallbackTokenAsync` will provide read-only access to the current item only. This is true even if your add-in specifies the [read/write item permission](understanding-outlook-add-in-permissions.md#readwrite-item-permission) level in its manifest.
 
-If your add-in will require write access to the current item or other items in the user's mailbox, your add-in must specify the `ReadWriteMailbox` permission level in its manifest. In this case, the token returned will contain read/write access to the user's messages, events, and contacts.
+If your add-in will require write access to the current item or other items in the user's mailbox, your add-in must specify the [read/write mailbox permission](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission).
+ level in its manifest. In this case, the token returned will contain read/write access to the user's messages, events, and contacts.
 
 ### Example
 
