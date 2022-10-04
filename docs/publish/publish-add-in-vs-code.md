@@ -51,7 +51,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 
 1. In VS Code, go to the Explorer and Right-click the **dist** folder, and select **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously.
 
-    :::image type="content" source="../images/deploy-to-static-website.png" alt-text="Selecting the dist folder, right-clicking, and choosing Deploy to Static Website via Azure Storage.":::
+    :::image type="content" source="../images/deploy-to-static-website.png" alt-text="Select the dist folder, right-click, and select Deploy to Static Website via Azure Storage.":::
 
 1. When deployment is complete, right-click the storage account that you created previously and select **Browse Static Website**. This opens the static web site and displays the task pane.
 
