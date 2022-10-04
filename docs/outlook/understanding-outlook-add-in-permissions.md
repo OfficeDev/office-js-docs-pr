@@ -17,7 +17,7 @@ You can see the permissions requested by a mail add-in before installing it from
 
 ## restricted permission
 
-The **restricted** permission is the most basic level of permission. Outlook assigns this permission to a mail add-in by default if the add-in does not request a specific permission in its manifest.
+The **restricted** permission is the most basic level of permission. Outlook assigns this permission to a mail add-in by default if the add-in doesn't request a specific permission in its manifest.
 
 ### Can do
 

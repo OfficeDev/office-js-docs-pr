@@ -115,11 +115,11 @@ First, to support REST calls from a delegate, the add-in must request the **read
 - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
 - **Teams manifest (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
-Second, enable support for shared folders, The markup varies depending on the type of manifest.
+Second, enable support for shared folders. The markup varies depending on the type of manifest.
 
 # [XML Manifest](#tab/xmlmanifest)
 
-Set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors are not supported.
+Set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors aren't supported.
 
 ```XML
 ...
@@ -271,7 +271,7 @@ Your add-in can use REST. To enable REST access to the owner's mailbox or to the
 - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
 - **Teams manifest (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
-EWS is not supported.
+EWS isn't supported.
 
 ### User or shared mailbox hidden from an address list
 
