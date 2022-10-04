@@ -54,13 +54,7 @@ For more information, see [Outlook add-in manifests](manifests.md),  and [Unders
 
 Your add-in requires the appropriate permissions to use the APIs that it needs. In general, you should specify the minimum permission needed for your add-in.
 
-There are four levels of permissions. For more details, see [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
-
-<br/>
-
-[!include[Table of Outlook permissions](../includes/outlook-permission-levels-table.md)]
-
-For more information, see [Outlook add-in manifests](manifests.md). For information about security issues, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md).
+There are four levels of permissions; **restricted**, **read item**, **read/write item**, and **read/write mailbox**. For more details. For more details, see [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
 
 ## Mailbox object
 
@@ -70,4 +64,5 @@ For more information, see [Outlook add-in manifests](manifests.md). For informat
 
 - [Outlook add-in manifests](manifests.md)
 - [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
+- [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
