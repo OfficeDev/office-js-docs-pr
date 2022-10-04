@@ -1,7 +1,7 @@
 ---
 title: Match strings as well-known entities in an Outlook add-in
 description: Using the Office JavaScript API, you can get strings that match specific well-known entities for further processing.
-ms.date: 07/08/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -45,12 +45,31 @@ The following figure describes how Exchange Server and Outlook support well-know
 
 To extract entities in your JavaScript code or to have your add-in activated based on the existence of certain well-known entities, make sure you have requested the appropriate permissions in the add-in manifest.
 
-Specifying the default restricted permission allows your add-in to extract the `Address`, `MeetingSuggestion`, or `TaskSuggestion` entity. To extract any of the other entities, specify read item, read/write item, or read/write mailbox permission. To do that in the manifest, use the [Permissions](/javascript/api/manifest/permissions) element and specify the appropriate permission&mdash;**Restricted**, **ReadItem**, **ReadWriteItem**, or **ReadWriteMailbox**&mdash;as in the following example.
+Specifying the default **restricted** permission allows your add-in to extract the `Address`, `MeetingSuggestion`, or `TaskSuggestion` entity. To extract any of the other entities, specify **read item**, **read/write item**, or **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
 
-```xml
+The following example requests the **read item** permission in the XML manifest.
+
+```XML
 <Permissions>ReadItem</Permissions>
 ```
 
+The following example requests the **read item** permission in the Teams manifest (preview).
+
+```json
+"authorization": {
+  "permissions": {
+    "resourceSpecific": [
+      ...
+      {
+        "name": "MailboxItem.Read.User",
+        "type": "Delegated"
+      },
+    ]
+  }
+},
+```
+
+To learn more about Outlook add-in permissions, see [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
 ## Retrieving entities in your add-in
 
 As long as the subject or body of the item that is being viewed by the user contains strings that Exchange and Outlook can recognize as well-known entities, these instances are available to add-ins. They are available even if an add-in is not activated based on well-known entities. With the appropriate permission, you can use the `getEntities` or `getEntitiesByType` method to retrieve well-known entities that are present in the current message or appointment.
@@ -77,6 +96,8 @@ if (null != entities && null != entities.addresses && undefined != entities.addr
 ## Activating an add-in based on the existence of an entity
 
 Another way to use well-known entities is to have Outlook activate your add-in based on the existence of one or more types of entities in the subject or body of the currently viewed item. You can do so by specifying an `ItemHasKnownEntity` rule in the add-in manifest. The [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) simple type represents the different types of well-known entities supported by `ItemHasKnownEntity` rules. After your add-in is activated, you can also retrieve the instances of such entities for your purposes, as described in the previous section [Retrieving entities in your add-in](#retrieving-entities-in-your-add-in).
+
+[!include[Rule features not supported with JSON manifest](../includes/rule-not-supported-json.md)]
 
 You can optionally apply a regular expression in an `ItemHasKnownEntity` rule, so as to further filter instances of an entity and have Outlook activate an add-in only on a subset of the instances of the entity. For example, you can specify a filter for the street address entity in a message that contains a Washington state zip code beginning with "98". To apply a filter on the entity instances, use the `RegExFilter` and `FilterName` attributes in the `Rule` element of the [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) type.
 
