@@ -225,11 +225,11 @@ Item multi-select supports [Conversations view](https://support.microsoft.com/of
 |------|------|------|
 |**Conversation header is selected**|If the conversation header is the only item selected, an add-in supporting multi-select doesn't activate. However, if other non-header messages are also selected, the add-in will only activate on those and not the selected header.|The newest message (that is, the first message in the conversation stack) is included in the message selection.<br><br>If the newest message in the conversation is located in another folder from the one currently in view, the subsequent message in the stack located in the current folder is included in the selection.|
 |**Selected conversation messages are located in the same folder as the one currently in view**|All chosen conversation messages are included in the selection.|Not applicable. Only the conversation header is available for selection in collapsed conversation view.|
-|**Selected conversation messages are located in a different folder from the one in view** |All chosen conversation messages are included in the selection.|Not applicable. Only the conversation header is available for selection in collapsed conversation view.|
+|**Selected conversation messages are located in different folders from the one currently in view** |All chosen conversation messages are included in the selection.|Not applicable. Only the conversation header is available for selection in collapsed conversation view.|
 
 ## Next steps
 
-Now that you've enabled your add-in to operate on multiple selected messages, you can extend your add-in's capabilities and further enhance the user experience. Explore using the multi-select feature to perform more complex operations by using the selected messages' item IDs with services such as [Exchange Web Services (EWS)](web-services.md) and [Microsoft Graph](/graph/overview).
+Now that you've enabled your add-in to operate on multiple selected messages, you can extend your add-in's capabilities and further enhance the user experience. Explore performing more complex operations by using the selected messages' item IDs with services such as [Exchange Web Services (EWS)](web-services.md) and [Microsoft Graph](/graph/overview).
 
 ## See also
 
