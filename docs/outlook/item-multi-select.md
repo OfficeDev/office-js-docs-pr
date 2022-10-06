@@ -25,7 +25,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To enable your add-in to activate on multiple selected messages, you must add the [SupportsMultiSelect](/javascript/api/manifest/action?view=outlook-js-preview#supportsmultiselect&preserve-view=true) child element to the **\<Action\>** element and set its value to `true`. As item multi-select only supports messages at this time, the **\<ExtensionPoint\>** element's `xsi:type` attribute value must be set to `MessageReadCommandSurface` or `MessageComposeCommandSurface`.
+To enable your add-in to activate on multiple selected messages, you must add the [SupportsMultiSelect](/javascript/api/manifest/action?view=outlook-js-preview&preserve-view=true#supportsmultiselect) child element to the **\<Action\>** element and set its value to `true`. As item multi-select only supports messages at this time, the **\<ExtensionPoint\>** element's `xsi:type` attribute value must be set to `MessageReadCommandSurface` or `MessageComposeCommandSurface`.
 
 1. In your preferred code editor, open the Outlook quick start project you created.
 
@@ -155,7 +155,7 @@ To alert your add-in when the `SelectedItemsChanged` event occurs, you must regi
 
 ## Retrieve the subject line of selected messages
 
-Now that you've registered an event handler, you then call the [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#outlook-office-mailbox-getSelectedItemsAsync-member(1)&preserve-view=true) method to retrieve the subject line of the selected messages and log them to the task pane. The `getSelectedItemsAsync` method can also be used to get other message properties, such as the item ID, item type (`Message` is the only supported type at this time), and item mode (`Read` or `Compose`).
+Now that you've registered an event handler, you then call the [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#outlook-office-mailbox-getSelectedItemsAsync-member(1)) method to retrieve the subject line of the selected messages and log them to the task pane. The `getSelectedItemsAsync` method can also be used to get other message properties, such as the item ID, item type (`Message` is the only supported type at this time), and item mode (`Read` or `Compose`).
 
 1. In **taskpane.js**, navigate to the `run` function and insert the following code.
 
@@ -194,7 +194,7 @@ Now that you've registered an event handler, you then call the [getSelectedItems
     > [!TIP]
     > If your add-in doesn't automatically sideload, follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md?tabs=windows#outlook-on-the-desktop) to manually sideload it in Outlook.
 
-1. In Outlook, ensure the Reading Pane is enabled. To enable the Reading Pane, see [Use and configure the Reading Pane to preview messages](https://support.microsoft.com/office/use-and-configure-the-reading-pane-to-preview-messages-2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0).
+1. In Outlook, ensure the Reading Pane is enabled. To enable the Reading Pane, see [Use and configure the Reading Pane to preview messages](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0).
 
 1. Navigate to your inbox and choose multiple messages by holding **Ctrl** while selecting messages.
 
@@ -211,7 +211,7 @@ Item multi-select only supports messages within an Exchange mailbox in both read
 - The messages must be selected from one Exchange mailbox at a time. Non-Exchange mailboxes aren't supported.
 - The messages must be selected from one mailbox folder at a time. An add-in doesn't activate on multiple messages if they're located in different folders, unless Conversations view is enabled. For more information, see [Multi-select in conversations](#multi-select-in-conversations).
 - An add-in must implement a task pane in order to detect the `SelectedItemsChanged` event.
-- The [Reading Pane](https://support.microsoft.com/office/use-and-configure-the-reading-pane-to-preview-messages-2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) in Outlook must be enabled.
+- The [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) in Outlook must be enabled.
 - A maximum of 100 messages can be selected at a time.
 
 > [!NOTE]
