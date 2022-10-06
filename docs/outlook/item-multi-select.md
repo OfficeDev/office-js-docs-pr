@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Activate your Outlook add-in on multiple messages (preview)
 
-With the item multi-select feature, your Outlook add-in can now activate and perform operations on multiple selected messages in one go. Certain operations, such as uploading messages to your CRM system or categorizing numerous items, can now be easily completed with a single click.
+With the item multi-select feature, your Outlook add-in can now activate and perform operations on multiple selected messages in one go. Certain operations, such as uploading messages to your Customer Relationship Management (CRM) system or categorizing numerous items, can now be easily completed with a single click.
 
 The following sections walk you through how to configure your add-in to retrieve the subject line of multiple messages in read mode.
 
@@ -221,7 +221,7 @@ Item multi-select only supports messages within an Exchange mailbox in both read
 
 Item multi-select supports [Conversations view](https://support.microsoft.com/office/view-email-messages-by-conversation-0eeec76c-f59b-4834-98e6-05cfdfa9fb07) whether it's enabled on your mailbox or on specific folders. The following table describes expected behaviors when conversations are expanded or collapsed, when the conversation header is selected, and when conversation messages are located in a different folder from the one currently in view.
 
-||Expanded conversation view|Collapsed conversation view|
+|Selection|Expanded conversation view|Collapsed conversation view|
 |------|------|------|
 |**Conversation header is selected**|If the conversation header is the only item selected, an add-in supporting multi-select doesn't activate. However, if other non-header messages are also selected, the add-in will only activate on those and not the selected header.|The newest message (that is, the first message in the conversation stack) is included in the message selection.<br><br>If the newest message in the conversation is located in another folder from the one currently in view, the subsequent message in the stack located in the current folder is included in the selection.|
 |**Selected conversation messages are located in the same folder as the one currently in view**|All chosen conversation messages are included in the selection.|Not applicable. Only the conversation header is available for selection in collapsed conversation view.|
