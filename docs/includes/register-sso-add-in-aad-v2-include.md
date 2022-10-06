@@ -64,7 +64,7 @@ Sometimes called an _application password_, a client secret is a string value yo
 
 1. Select **Set** to generate an application ID URI.
 
-    :::image type="content" source="../images/azure-portal-set-api-uri.png" alt-text="An app registration's Expose an API pane.":::
+    :::image type="content" source="../images/azure-portal-set-api-uri.png" alt-text="Set button in the app registration's Expose an API pane.":::
 
     The section for setting the application ID URI appears with a generated Application ID URI in the form `api://<app-id>`.
 
@@ -77,7 +77,7 @@ Sometimes called an _application password_, a client secret is a string value yo
     * Insert the `fully-qualified-domain-name` between `api://` and `<app-id>` (which is a GUID). For example, `api://contoso.com/<app-id>`.
     * If you are using localhost, then the format should be `api://localhost:<port>/<app-id>`. For example, `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
-    For additional application ID URI details, see [Application manifest identifierUris attribute](https://learn.microsoft.com/azure/active-directory/develop/reference-app-manifest#identifieruris-attribute)
+    For additional application ID URI details, see [Application manifest identifierUris attribute](/azure/active-directory/develop/reference-app-manifest.md#identifieruris-attribute).
 
     > [!NOTE]
     > If you get an error saying that the domain is already owned but you own it, follow the procedure at [Quickstart: Add a custom domain name to Azure Active Directory](/azure/active-directory/add-custom-domain) to register it, and then repeat this step. (This error can also occur if you are not signed in with credentials of an admin in the Microsoft 365 tenancy. See step 2. Sign out and sign in again with admin credentials and repeat the process from step 3.)
@@ -145,7 +145,7 @@ Sometimes called an _application password_, a client secret is a string value yo
 
 1. Select **Add a permission**.
 
-    :::image type="content" source="../images/azure-portal-add-a-permission.png" alt-text="The API permissions pane.":::
+    :::image type="content" source="../images/azure-portal-add-a-permission.png" alt-text="Adding a permission on the API permissions pane.":::
 
     The **Request API permissions** pane opens.
 
