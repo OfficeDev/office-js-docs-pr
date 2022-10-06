@@ -219,7 +219,7 @@ Item multi-select only supports messages within an Exchange mailbox in both read
 
 ### Multi-select in conversations
 
-Item multi-select supports [Conversations view](https://support.microsoft.com/office/view-email-messages-by-conversation-0eeec76c-f59b-4834-98e6-05cfdfa9fb07) whether it's enabled on your mailbox or on specific folders. The following table describes expected behaviors when conversations are expanded or collapsed, when the conversation header is selected, and when conversation messages are located in a different folder from the one currently in view.
+Item multi-select supports [Conversations view](https://support.microsoft.com/office/0eeec76c-f59b-4834-98e6-05cfdfa9fb07) whether it's enabled on your mailbox or on specific folders. The following table describes expected behaviors when conversations are expanded or collapsed, when the conversation header is selected, and when conversation messages are located in a different folder from the one currently in view.
 
 |Selection|Expanded conversation view|Collapsed conversation view|
 |------|------|------|
