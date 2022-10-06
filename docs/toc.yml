@@ -649,6 +649,7 @@ items:
       href: outlook/extension-module-outlook-add-ins.md
     - name: Item multi-select
       href: outlook/item-multi-select.md
+      displayName: preview
     - name: Pinnable task pane
       href: outlook/pinnable-taskpane.md
     - name: Add-ins for Outlook Mobile

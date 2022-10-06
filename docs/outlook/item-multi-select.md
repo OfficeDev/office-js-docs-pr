@@ -17,7 +17,7 @@ The following sections walk you through how to configure your add-in to retrieve
 
 ## Prerequisites to preview item multi-select
 
-To preview the multi-select feature, install Outlook on Windows (Version 2209 build 15629.20110 or later). Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
+To preview the multi-select feature, install Outlook on Windows, starting with Version 2209 (Build 15629.20110). Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
 
 ## Set up your environment
 
@@ -133,7 +133,7 @@ To alert your add-in when the `SelectedItemsChanged` event occurs, you must regi
 
 1. From the **./src/taskpane** folder, open **taskpane.js**.
 
-1. In the `Office.onReady()` callback function, replace the existing code with the following.
+1. In the `Office.onReady()` callback function, replace the existing code with the following:
 
     ```javascript
     if (info.host === Office.HostType.Outlook) {
@@ -155,7 +155,7 @@ To alert your add-in when the `SelectedItemsChanged` event occurs, you must regi
 
 ## Retrieve the subject line of selected messages
 
-Now that you've registered an event handler, you then call the [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#outlook-office-mailbox-getSelectedItemsAsync-member(1)&preserve-view=true) method to retrieve the subject line of the selected messages and log them to the task pane. The `getSelectedItemsAsync` method can also be used to get other message properties, such as the item ID, item type (Message is the only supported type at this time), and item mode (Read or Compose).
+Now that you've registered an event handler, you then call the [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#outlook-office-mailbox-getSelectedItemsAsync-member(1)&preserve-view=true) method to retrieve the subject line of the selected messages and log them to the task pane. The `getSelectedItemsAsync` method can also be used to get other message properties, such as the item ID, item type (`Message` is the only supported type at this time), and item mode (`Read` or `Compose`).
 
 1. In **taskpane.js**, navigate to the `run` function and insert the following code.
 
