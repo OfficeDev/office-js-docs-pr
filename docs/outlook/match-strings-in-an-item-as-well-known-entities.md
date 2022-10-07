@@ -9,9 +9,9 @@ ms.localizationpriority: medium
 
 Before sending a message or meeting request item, Exchange Server parses the contents of the item, identifies and stamps certain strings in the subject and body that resemble entities well-known to Exchange, for example, email addresses, phone numbers, and URLs. Messages and meeting requests are delivered by Exchange Server in an Outlook Inbox with well-known entities stamped.
 
-[!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
-
 Using the Office JavaScript API, you can get these strings that match specific well-known entities for further processing. You can also specify a well-known entity in a rule in the add-in manifest so that Outlook can activate your add-in when the user is viewing an item that contains matches for that entity. You can then extract and take action on matches for the entity.
+
+[!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
 
 Being able to identify or extract such instances from a selected message or appointment is convenient. For example, you can build a reverse phone look-up service as an Outlook add-in. The add-in can extract strings in the item subject or body that resemble a phone number, do a reverse lookup, and display the registered owner of each phone number.
 
