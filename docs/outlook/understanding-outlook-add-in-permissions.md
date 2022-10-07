@@ -1,7 +1,7 @@
 ---
 title: Understanding Outlook add-in permissions
 description: Outlook add-ins specify the required permission level in their manifest, which include restricted, read item, read/write item, or read/write mailbox. 
-ms.date: 10/03/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -25,7 +25,7 @@ The **restricted** permission is the most basic level of permission. Outlook ass
 
 - Specify an [ItemIs activation rule](activation-rules.md#itemis-rule) that requires the current item in a read or compose form to be a specific item type, or [ItemHasKnownEntity rule](match-strings-in-an-item-as-well-known-entities.md) that matches any of a smaller subset of supported well-known entities (phone number, address, URL) in the selected item.
 
-  [!include[Rule features not supported with JSON manifest](../includes/rule-not-supported-json.md)]
+  [!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
 
 - Access any properties and methods that do **not** pertain to specific information about the user or item (see the next section for the list of members that do).
 
@@ -78,7 +78,7 @@ The **read item** permission is the next level of permission in the permissions 
 
 - Use all the [well-known entities](activation-rules.md#itemhasknownentity-rule) in [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) rules, or [regular expressions](activation-rules.md#itemhasregularexpressionmatch-rule) in [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rules. The following example follows schema v1.1. It shows a rule that activates the add-in if one or more of the well-known entities are found in the subject or body of the selected message.
 
-  [!include[Rule features not supported with JSON manifest](../includes/rule-not-supported-json.md)]
+  [!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
 
   ```XML
     <Permissions>ReadItem</Permissions>
@@ -99,7 +99,7 @@ The **read item** permission is the next level of permission in the permissions 
     </Rule>
   ```
 
-[!include[Rule features not supported with JSON manifest](../includes/rule-not-supported-json.md)]
+[!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
 
 ### Can't do
 

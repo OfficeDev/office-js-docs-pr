@@ -1,13 +1,16 @@
 ---
 title: Extract entity strings from an Outlook item
 description: Learn how to extract entity strings from an Outlook item in an Outlook add-in.
-ms.date: 07/07/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
 ---
 
 # Extract entity strings from an Outlook item
 
 This article describes how to create a **Display entities** Outlook add-in that extracts string instances of supported well-known entities in the subject and body of the selected Outlook item. This item can be an appointment, email message, or meeting request, response, or cancellation.
+
+> [!NOTE]
+> The Outlook Add-in feature described in this article uses activation rules, which are not supported in add-ins that use a [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
 The supported entities include:
 

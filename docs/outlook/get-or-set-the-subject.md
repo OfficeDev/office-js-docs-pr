@@ -1,13 +1,13 @@
 ---
 title: Get or set the subject in an Outlook add-in
 description: Learn how to get or set the subject of a message or appointment in an Outlook add-in.
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
 ---
 
 # Get or set the subject when composing an appointment or message in Outlook
 
-The Office JavaScript API provides asynchronous methods ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) and [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) to get and set the subject of an appointment or message that the user is composing. These asynchronous methods are available only to compose add-ins. To use these methods, make sure you have set up the add-in manifest appropriately for Outlook to activate the add-in in compose forms.
+The Office JavaScript API provides asynchronous methods ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) and [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) to get and set the subject of an appointment or message that the user is composing. These asynchronous methods are available only to compose add-ins. To use these methods, make sure you have set up the add-in XML manifest appropriately for Outlook to activate the add-in in compose forms. Activation rules are not supported in an add-ins that use a [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
 The **subject** property is available for read access in both compose and read forms of appointments and messages. In a read form, you can access the property directly from the parent object, as in:
 
@@ -27,7 +27,7 @@ As with most asynchronous methods in the Office JavaScript API, **getAsync** and
 
 ## Get the subject
 
-This section shows a code sample that gets the subject of the appointment or message that the user is composing, and displays the subject. This code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment or message, as shown below.
+This section shows a code sample that gets the subject of the appointment or message that the user is composing, and displays the subject. This code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment or message, as shown below. Activation rules are not supported in an add-ins that use a [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="Or">
@@ -73,7 +73,7 @@ function write(message){
 
 ## Set the subject
 
-This section shows a code sample that sets the subject of the appointment or message that the user is composing. Similar to the previous example, this code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment or message.
+This section shows a code sample that sets the subject of the appointment or message that the user is composing. Similar to the previous example, this code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment or message. Activation rules are not supported in an add-ins that use a [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
 To use **item.subject.setAsync**, specify a string of up to 255 characters in the data parameter. Optionally, you can provide a callback function and any arguments for the callback function in the  _asyncContext_ parameter. You should check the status, result and any error message in the _asyncResult_ output parameter of the callback. If the asynchronous call is successful, **setAsync** inserts the specified subject string as plain text, overwriting any existing subject for that item.
 

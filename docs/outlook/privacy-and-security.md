@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 10/03/2022
+ms.date: 10/07/2022
 ms.localizationpriority: high
 ---
 
@@ -130,7 +130,8 @@ Developers should follow the tiered permissions model to provide transparency an
 
 - Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body. For example, the following rule activates the Outlook add-in if one or more of three entities - phone number, postal address, or URL - are found in the subject or body of the current message.
 
-[!include[Rule features not supported with JSON manifest](../includes/rule-not-supported-json.md)]
+> [!NOTE]
+> Activation rules as seen in this example are not supported in add-ins that use the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
   ```XML
     <Permissions>Restricted</Permissions>
