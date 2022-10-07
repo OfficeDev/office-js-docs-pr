@@ -1,7 +1,7 @@
 ---
 title: Limits for activation and API usage in Outlook add-ins
 description: Be aware of certain activation and API usage guidelines, and implement your add-ins to stay within these limits.
-ms.date: 08/30/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -17,6 +17,8 @@ To provide a satisfactory experience for users of Outlook add-ins, you should be
 To learn more about where add-ins do and don't activate, refer to the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page.
 
 ## Limits for activation rules
+
+[!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
 
 Follow these guidelines when designing activation rules for Outlook add-ins:
 

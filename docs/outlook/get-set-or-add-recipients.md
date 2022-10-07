@@ -1,13 +1,13 @@
 ---
 title: Get or modify recipients in an Outlook add-in
 description: Learn how to get, set, or add recipients of a message or appointment in an Outlook add-in.
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
 ---
 
 # Get, set, or add recipients when composing an appointment or message in Outlook
 
-The Office JavaScript API provides asynchronous methods ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)), [Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)), or [Recipients.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))) to respectively get, set, or add recipients in a compose form of an appointment or message. These asynchronous methods are available to only compose add-ins. To use these methods, make sure you have set up the add-in manifest appropriately for Outlook to activate the add-in in compose forms, as described in [Create Outlook add-ins for compose forms](compose-scenario.md).
+The Office JavaScript API provides asynchronous methods ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)), [Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)), or [Recipients.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))) to respectively get, set, or add recipients in a compose form of an appointment or message. These asynchronous methods are available to only compose add-ins. To use these methods, make sure you have set up the add-in manifest appropriately for Outlook to activate the add-in in compose forms, as described in [Create Outlook add-ins for compose forms](compose-scenario.md). Activation rules aren't supported in add-ins that use a [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
 Some of the properties that represent recipients in an appointment or message are available for read access in a compose form and in a read form. These properties include  [optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) for appointments, and [cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), and  [to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) for messages.
 

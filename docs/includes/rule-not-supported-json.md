@@ -1,2 +1,0 @@
-  > [!NOTE]
-  > The Teams manifest (preview) doesn't yet have an equivalent of the XML manifest's **\<Rule\>** element. Extensibility features that implement this element aren't yet supported for add-ins that use the Teams manifest. We're working to add this support soon.
