@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in activation rules
 description: Outlook activates some types of add-ins if the message or appointment that the user is reading or composing satisfies the activation rules of the add-in.
-ms.date: 10/07/2021
+ms.date: 10/07/2022
 ms.localizationpriority: medium
 ---
 

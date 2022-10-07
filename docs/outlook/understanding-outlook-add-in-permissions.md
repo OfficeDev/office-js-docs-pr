@@ -99,7 +99,6 @@ The **read item** permission is the next level of permission in the permissions 
     </Rule>
   ```
 
-[!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
 
 ### Can't do
 
