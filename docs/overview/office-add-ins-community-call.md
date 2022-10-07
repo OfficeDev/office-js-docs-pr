@@ -17,6 +17,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
+- [September 14, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-09-14/)
 - [August 10, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-08-10/)
 - [July 13, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-07-13/)
 - [June 8, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-06-08/)
