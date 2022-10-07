@@ -67,8 +67,8 @@ if (navigator.userAgent.indexOf("Trident") === -1) {
     //     features that are not supported in IE.
     //  2. Enable the add-in to gracefully fail by putting a message in the UI that
     //     says something similar to: 
-    //      "This add-in won't run in your version of Office. Please upgrade to 
-    //      either one-time purchase Office 2021 or to a Microsoft 365 account."          
+    //      "This add-in won't run in your version of Office. Please upgrade 
+    //      either to perpetual Office 2021 or to a Microsoft 365 account."          
 
 }
 ```
