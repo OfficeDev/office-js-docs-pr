@@ -2,7 +2,7 @@
 title: Implement append-on-send in your Outlook add-in
 description: Learn how to implement the append-on-send feature in your Outlook add-in.
 ms.topic: article
-ms.date: 07/07/2022
+ms.date: 10/13/2022
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,14 @@ By the end of this walkthrough, you'll have an Outlook add-in that can insert a 
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.
 
+> [!NOTE]
+> If you want to use the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md), then complete the alternate quick start in [Outlook quick start with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md), but skip all sections after the **Try it out** section.
+
 ## Configure the manifest
+
+To configure the manifest, open the tab for the type of manifest you are using.
+
+# [XML Manifest](#tab/xmlmanifest)
 
 To enable the append-on-send feature in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](/javascript/api/manifest/extendedpermissions).
 
@@ -33,7 +40,7 @@ For this scenario, instead of running the `action` function on choosing the **Pe
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
       <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
         <Requirements>
-          <bt:Sets DefaultMinVersion="1.3">
+          <bt:Sets DefaultMinVersion="1.9">
             <bt:Set Name="Mailbox" />
           </bt:Sets>
         </Requirements>
@@ -113,6 +120,58 @@ For this scenario, instead of running the `action` function on choosing the **Pe
       </VersionOverrides>
     </VersionOverrides>
     ```
+
+# [Teams Manifest (developer preview)](#tab/jsonmanifest)
+
+1. Open the manifest.json file.
+
+1. Add the following object to the "extensions.runtimes" array. Note the following about this code:
+
+   - The "minVersion" of the Mailbox requirement set is set to "1.9" so the add-in cannot be installed on platforms and Office versions where this feature is not supported. 
+   - The "id" of the runtime is set to the descriptive name "function_command_runtime".
+   - The "code.page" property is set to the URL of UI-less HTML file that will load the function command.
+   - The "lifetime" property is set to "short" which means that the runtime starts up when one of the function command button is selected and and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - There is an action to run a function named appendDisclaimerOnSend. You will create this function in a later step.
+
+    ```json
+    {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.9"
+                }
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "id": "function_command_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "appendDisclaimerOnSend",
+                "type": "executeFunction",
+                "displayName": "appendDisclaimerOnSend"
+            }
+        ]
+    }
+    ```
+
+1. In the "authorization.permissions.resourceSpecific" array add the following object. Be sure it is separated from other objects in the array with a comma.
+
+    ```json
+    {
+      "name": "Mailbox.AppendOnSend.User",
+      "type": "Delegated"
+    }
+    ```
+
+---
 
 > [!TIP]
 > To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
