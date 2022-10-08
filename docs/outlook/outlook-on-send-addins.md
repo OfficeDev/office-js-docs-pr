@@ -12,7 +12,7 @@ The on-send feature for Outlook add-ins provides a way to handle a message or me
 > [!NOTE]
 > The on-send feature is not supported in add-ins that use the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). But you can achieve the same effects by using [event-based activation](autolaunch.md) and implementing a handler for the **OnMessageSend** or **OnAppointmentSend** events, or both.
 
-For example, you can use the on-send feature to:
+For example, use the on-send feature to:
 
 - Prevent a user from sending sensitive information or leaving the subject line blank.  
 - Add a specific recipient to the CC line in messages, or to the optional recipients line in meetings.

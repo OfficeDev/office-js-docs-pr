@@ -184,79 +184,79 @@ Outlook on Windows uses a JavaScript file, while Outlook on the web and on the n
 
 1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
 
-  - The "minVersion" of the Mailbox requirement set has been set to "1.10" because the table at the top of this article specifies that this is the lowest version of the requirement set that supports the **OnNewMessageCompose** and **OnNewAppointmentCompose** events.
-  - The "id" of the runtime has been set to the descriptive name "autorun_runtime".
-  - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that has been set to a JavaScript file. You will create or edit these files in later steps. The reason that both are needed is that the event handlers are executed in a JavaScript-only runtime (that must load a JavaScript file directly) on Outlook for Windows, but run in a browser runtime (which must load an HTML file) on all other platforms. For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-  - The "lifetime" property is set to "short" which means that the runtime will shut down when the handler completes. If either of the two events that are being handled in this add-in occur again, a new runtime starts up, runs to completion, and shuts down.
-  - There are two types of "actions" that can run in the runtime. You will create functions to correspond to these actions in a later step.
+   - The "minVersion" of the Mailbox requirement set has been set to "1.10" because the table at the top of this article specifies that this is the lowest version of the requirement set that supports the **OnNewMessageCompose** and **OnNewAppointmentCompose** events.
+   - The "id" of the runtime has been set to the descriptive name "autorun_runtime".
+   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that has been set to a JavaScript file. You will create or edit these files in later steps. The reason that both are needed is that the event handlers are executed in a JavaScript-only runtime (that must load a JavaScript file directly) on Outlook for Windows, but run in a browser runtime (which must load an HTML file) on all other platforms. For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+   - The "lifetime" property is set to "short" which means that the runtime will shut down when the handler completes. If either of the two events that are being handled in this add-in occur again, a new runtime starts up, runs to completion, and shuts down.
+   - There are two types of "actions" that can run in the runtime. You will create functions to correspond to these actions in a later step.
 
-```json
- {
-    "requirements": {
-        "capabilities": [
+    ```json
+     {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.10"
+                }
+            ]
+        },
+        "id": "autorun_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html",
+            "script": "https://localhost:3000/launchevent.js"
+        },
+        "lifetime": "short",
+        "actions": [
             {
-                "name": "Mailbox",
-                "minVersion": "1.10"
+                "id": "onNewMessageComposeHandler",
+                "type": "executeFunction",
+                "displayName": "onNewMessageComposeHandler"
+            },
+            {
+                "id": "onNewAppointmentComposeHandler",
+                "type": "executeFunction",
+                "displayName": "onNewAppointmentComposeHandler"
             }
         ]
-    },
-    "id": "autorun_runtime",
-    "type": "general",
-    "code": {
-        "page": "https://localhost:3000/commands.html",
-        "script": "https://localhost:3000/launchevent.js"
-    },
-    "lifetime": "short",
-    "actions": [
-        {
-            "id": "onNewMessageComposeHandler",
-            "type": "executeFunction",
-            "displayName": "onNewMessageComposeHandler"
-        },
-        {
-            "id": "onNewAppointmentComposeHandler",
-            "type": "executeFunction",
-            "displayName": "onNewAppointmentComposeHandler"
-        }
-    ]
-}
-```
+    }
+    ```
 
 1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
 
-```json
-"autoRunEvents": [
-
-]
-```
+    ```json
+    "autoRunEvents": [
+    
+    ]
+    ```
 
 1. Add the following object to the "autoRunEvents" array. The "events" array maps handlers to events as described in the table near the top of this article. The handler names must match those used in the "actions" array in an earlier step.
 
-```json
-  {
-      "requirements": {
-          "capabilities": [
-              {
-                  "name": "Mailbox",
-                  "minVersion": "1.10"
-              }
-          ],
-          "scopes": [
-              "mail"
-          ]
-      },
-      "events": [
-          {
-              "type": "newMessageComposeCreated",
-              "actionId": "onNewMessageComposeHandler"
+    ```json
+      {
+          "requirements": {
+              "capabilities": [
+                  {
+                      "name": "Mailbox",
+                      "minVersion": "1.10"
+                  }
+              ],
+              "scopes": [
+                  "mail"
+              ]
           },
-          {
-              "type": "newAppointmentOrganizerCreated",
-              "actionId": "onNewAppointmentComposeHandler"
-          }
-      ]
-  }
-```
+          "events": [
+              {
+                  "type": "newMessageComposeCreated",
+                  "actionId": "onNewMessageComposeHandler"
+              },
+              {
+                  "type": "newAppointmentOrganizerCreated",
+                  "actionId": "onNewAppointmentComposeHandler"
+              }
+          ]
+      }
+    ```
 
 ---
 
