@@ -186,8 +186,11 @@ Outlook on Windows uses a JavaScript file, while Outlook on the web and on the n
 
    - The "minVersion" of the Mailbox requirement set has been set to "1.10" because the table at the top of this article specifies that this is the lowest version of the requirement set that supports the **OnNewMessageCompose** and **OnNewAppointmentCompose** events.
    - The "id" of the runtime has been set to the descriptive name "autorun_runtime".
-   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that has been set to a JavaScript file. You will create or edit these files in later steps. The reason that both are needed is that the event handlers are executed in a JavaScript-only runtime (that must load a JavaScript file directly) on Outlook for Windows, but run in a browser runtime (which must load an HTML file) on all other platforms. For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-   - The "lifetime" property is set to "short" which means that the runtime will shut down when the handler completes. If either of the two events that are being handled in this add-in occur again, a new runtime starts up, runs to completion, and shuts down.
+   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that has been set to a JavaScript file. You will create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
+       - Office on Windows executes the event handlers in a JavaScript-only runtime, which must load a JavaScript file directly.
+       - Office on Mac and the web execute the handlers in a browser runtime, which must load an HTML file. That file, in turn, contains a `<script>` tag that will load the JavaScript file.
+     For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+   - The "lifetime" property is set to "short" which means that the runtime starts up when, and only when, one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
    - There are two types of "actions" that can run in the runtime. You will create functions to correspond to these actions in a later step.
 
     ```json
