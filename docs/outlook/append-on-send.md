@@ -130,8 +130,8 @@ For this scenario, instead of running the `action` function on choosing the **Pe
    - The "minVersion" of the Mailbox requirement set is set to "1.9" so the add-in cannot be installed on platforms and Office versions where this feature is not supported. 
    - The "id" of the runtime is set to the descriptive name "function_command_runtime".
    - The "code.page" property is set to the URL of UI-less HTML file that will load the function command.
-   - The "lifetime" property is set to "short" which means that the runtime starts up when one of the function command button is selected and and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There is an action to run a function named appendDisclaimerOnSend. You will create this function in a later step.
+   - The "lifetime" property is set to "short" which means that the runtime starts up when the function command button is selected and and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - There is an action to run a function named "appendDisclaimerOnSend". You will create this function in a later step.
 
     ```json
     {
