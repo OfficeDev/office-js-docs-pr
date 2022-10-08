@@ -190,7 +190,7 @@ Outlook on Windows uses a JavaScript file, while Outlook on the web and on the n
        - Office on Windows executes the event handlers in a JavaScript-only runtime, which must load a JavaScript file directly.
        - Office on Mac and the web execute the handlers in a browser runtime, which must load an HTML file. That file, in turn, contains a `<script>` tag that will load the JavaScript file.
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-   - The "lifetime" property is set to "short" which means that the runtime starts up when, and only when, one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - The "lifetime" property is set to "short" which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
    - There are two types of "actions" that can run in the runtime. You will create functions to correspond to these actions in a later step.
 
     ```json
