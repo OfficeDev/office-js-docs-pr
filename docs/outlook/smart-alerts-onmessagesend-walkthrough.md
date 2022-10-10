@@ -150,7 +150,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 
    - The "minVersion" of the Mailbox requirement set is set to "1.12" because the [supported events table](autolaunch.md#supported-events) specifies that this is the lowest version of the requirement set that supports the `OnMessageSend` event.
    - The "id" of the runtime is set to the descriptive name "autorun_runtime".
-   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that has been set to a JavaScript file. You will create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
+   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
        - Office on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
        - Office on Mac and the web execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
