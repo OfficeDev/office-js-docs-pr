@@ -233,7 +233,7 @@ Outlook on Windows uses a JavaScript file, while Outlook on the web and on the n
     ]
     ```
 
-1. Add the following object to the "autoRunEvents" array. The "events" property maps handlers to events as described in the table earlier in this article. The handler names must match those used in the "actions" array in an earlier step.
+1. Add the following object to the "autoRunEvents" array. The "events" property maps handlers to events as described in the table earlier in this article. The handler names must match those used in the "id" properties of the objects in the "actions" array in an earlier step.
 
     ```json
       {

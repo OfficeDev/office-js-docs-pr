@@ -194,7 +194,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Add the following object to the "autoRunEvents" array. Note the following about this code:
 
-   - The event object assigns a handler function to the `OnMessageSend` event (using the event's Teams manifest name, "messageSending", as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in "actionId" must match the name used in the "actions" array in an earlier step.
+   - The event object assigns a handler function to the `OnMessageSend` event (using the event's Teams manifest name, "messageSending", as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in "actionId" must match the name used in the "id" property of the object in the "actions" array in an earlier step.
    - The "sendMode" option is set to "promptUser". This means that if the message doesn't meet the conditions that the add-in sets for sending, the user will be prompted to either cancel sending or to send anyway.
 
     ```json
