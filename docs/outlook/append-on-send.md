@@ -125,13 +125,13 @@ For this scenario, instead of running the `action` function on choosing the **Pe
 
 1. Open the manifest.json file.
 
-1. Add the following object to the "extensions.runtimes" array. Note the following about this code:
+1. Add the following object to the "extensions.runtimes" array. Note the following about this code.
 
    - The "minVersion" of the Mailbox requirement set is set to "1.9" so the add-in cannot be installed on platforms and Office versions where this feature is not supported. 
    - The "id" of the runtime is set to the descriptive name "function_command_runtime".
    - The "code.page" property is set to the URL of UI-less HTML file that will load the function command.
    - The "lifetime" property is set to "short" which means that the runtime starts up when the function command button is selected and and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There is an action to run a function named "appendDisclaimerOnSend". You will create this function in a later step.
+   - There's an action to run a function named "appendDisclaimerOnSend". You'll create this function in a later step.
 
     ```json
     {
@@ -162,7 +162,7 @@ For this scenario, instead of running the `action` function on choosing the **Pe
     }
     ```
 
-1. In the "authorization.permissions.resourceSpecific" array add the following object. Be sure it is separated from other objects in the array with a comma.
+1. In the "authorization.permissions.resourceSpecific" array, add the following object. Be sure it's separated from other objects in the array with a comma.
 
     ```json
     {
