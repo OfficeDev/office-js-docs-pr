@@ -1,4 +1,4 @@
-Use the following procedure to install either a version of subscription Office that uses the Microsoft Edge Legacy webview (EdgeHTML) to run add-ins or a version that uses Internet Explorer (Trident).
+Use the following procedure to install either a version of Microsoft 365 subscription Office that uses the Microsoft Edge Legacy webview (EdgeHTML) to run add-ins or a version that uses Internet Explorer (Trident).
 
 1. In any Office application, open the **File** tab on the ribbon, and then select **Office Account** or **Account**. Select the **About _host-name_** button (for example, **About Word**).
 1. On the dialog that opens, find the full xx.x.xxxxx.xxxxx build number and make a copy of it somewhere.
