@@ -185,7 +185,7 @@ Outlook on Windows uses a JavaScript file, while Outlook on the web and on the n
 1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
 
    - The "minVersion" of the Mailbox requirement set is set to "1.10" because the table earlier in this article specifies that this is the lowest version of the requirement set that supports the `OnNewMessageCompose` and `OnNewAppointmentCompose` events.
-   - The "id" of the runtime has been set to the descriptive name "autorun_runtime".
+   - The "id" of the runtime is set to the descriptive name "autorun_runtime".
    - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
        - Office on Windows executes the event handlers in a JavaScript-only runtime, which loads a JavaScript file directly.
        - Office on Mac and the web execute the handlers in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
