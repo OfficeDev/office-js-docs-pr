@@ -1,7 +1,7 @@
 ---
 title: Implement a pinnable task pane in an Outlook add-in
 description: The task pane UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions.
-ms.date: 10/13/2020
+ms.date: 10/13/2022
 ms.localizationpriority: medium
 ---
 
@@ -25,7 +25,7 @@ However, by default, if a user has an add-in task pane open for a message in the
 > - Outlook.com
 
 > [!TIP]
-> If you plan to [publish](../publish/publish.md) your Outlook add-in to [AppSource](https://appsource.microsoft.com), and it is configured for a pinnable task pane, in order to pass [AppSource validation](/legal/marketplace/certification-policies), your add-in content must not be static and it must clearly display data related to the message that is open or selected in the mailbox.
+> If you plan to [publish](../publish/publish.md) your Outlook add-in to [AppSource](https://appsource.microsoft.com), and it's configured for a pinnable task pane, in order to pass [AppSource validation](/legal/marketplace/certification-policies), your add-in content must not be static and it must clearly display data related to the message that is open or selected in the mailbox.
 
 ## Support task pane pinning
 
