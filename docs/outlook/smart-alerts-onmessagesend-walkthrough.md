@@ -155,7 +155,7 @@ To configure the manifest, open the tab for the type of manifest you are using.
        - Office on Mac and the web execute the handler in a browser runtime, which must load an HTML file. That file, in turn, contains a `<script>` tag that will load the JavaScript file.
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
    - The "lifetime" property is set to "short" which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There is an action to run a handler for the **OnMessageSendHandler** event. You will create the handler function in a later step.
+   - There is an action to run a handler for the **OnMessageSend** event. You will create the handler function in a later step.
 
     ```json
      {
