@@ -49,7 +49,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To configure the manifest, open the tab for the type of manifest you are using.
+To configure the manifest, select the tab for the type of manifest you are using.
 
 # [XML Manifest](#tab/xmlmanifest)
 
@@ -180,18 +180,18 @@ Outlook on Windows uses a JavaScript file, while Outlook on the web and on the n
 
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
 
-1. Open the manifest.json file.
+1. Open the **manifest.json** file.
 
 1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
 
-   - The "minVersion" of the Mailbox requirement set has been set to "1.10" because the table at the top of this article specifies that this is the lowest version of the requirement set that supports the **OnNewMessageCompose** and **OnNewAppointmentCompose** events.
+   - The "minVersion" of the Mailbox requirement set is set to "1.10" because the table earlier in this article specifies that this is the lowest version of the requirement set that supports the `OnNewMessageCompose` and `OnNewAppointmentCompose` events.
    - The "id" of the runtime has been set to the descriptive name "autorun_runtime".
-   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that has been set to a JavaScript file. You will create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
-       - Office on Windows executes the event handlers in a JavaScript-only runtime, which must load a JavaScript file directly.
-       - Office on Mac and the web execute the handlers in a browser runtime, which must load an HTML file. That file, in turn, contains a `<script>` tag that will load the JavaScript file.
+   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
+       - Office on Windows executes the event handlers in a JavaScript-only runtime, which loads a JavaScript file directly.
+       - Office on Mac and the web execute the handlers in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-   - The "lifetime" property is set to "short" which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There are two types of "actions" that can run in the runtime. You will create functions to correspond to these actions in a later step.
+   - The "lifetime" property is set to "short", which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - There are two types of "actions" that can run in the runtime. You'll create functions to correspond to these actions in a later step.
 
     ```json
      {
@@ -233,7 +233,7 @@ Outlook on Windows uses a JavaScript file, while Outlook on the web and on the n
     ]
     ```
 
-1. Add the following object to the "autoRunEvents" array. The "events" property maps handlers to events as described in the table near the top of this article. The handler names must match those used in the "actions" array in an earlier step.
+1. Add the following object to the "autoRunEvents" array. The "events" property maps handlers to events as described in the table earlier in this article. The handler names must match those used in the "actions" array in an earlier step.
 
     ```json
       {

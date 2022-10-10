@@ -28,7 +28,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To configure the manifest, open the tab for the type of manifest you are using.
+To configure the manifest, select the tab for the type of manifest you are using.
 
 # [XML Manifest](#tab/xmlmanifest)
 
@@ -144,18 +144,18 @@ To configure the manifest, open the tab for the type of manifest you are using.
 
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
 
-1. Open the manifest.json file.
+1. Open the **manifest.json** file.
 
 1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
 
-   - The "minVersion" of the Mailbox requirement set has been set to "1.12" because the table at the top of this article specifies that this is the lowest version of the requirement set that supports the **OnMessageSend** event.
-   - The "id" of the runtime has been set to the descriptive name "autorun_runtime".
+   - The "minVersion" of the Mailbox requirement set is set to "1.12" because the [supported events table](autolaunch.md#supported-events) specifies that this is the lowest version of the requirement set that supports the `OnMessageSend` event.
+   - The "id" of the runtime is set to the descriptive name "autorun_runtime".
    - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that has been set to a JavaScript file. You will create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
-       - Office on Windows executes the event handler in a JavaScript-only runtime, which must load a JavaScript file directly.
-       - Office on Mac and the web execute the handler in a browser runtime, which must load an HTML file. That file, in turn, contains a `<script>` tag that will load the JavaScript file.
+       - Office on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
+       - Office on Mac and the web execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-   - The "lifetime" property is set to "short" which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There is an action to run a handler for the **OnMessageSend** event. You will create the handler function in a later step.
+   - The "lifetime" property is set to "short", which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - There is an action to run a handler for the `OnMessageSend` event. You'll create the handler function in a later step.
 
     ```json
      {
@@ -194,8 +194,8 @@ To configure the manifest, open the tab for the type of manifest you are using.
 
 1. Add the following object to the "autoRunEvents" array. Note the following about this code:
 
-   - The event object assigns a handler function to the **OnMessageSend** event (using the event's Teams manifest name "messageSending" event as described in the table near the top of this article). The function name must match the name used in the "actions" array in an earlier step.
-   - The "sendMode" option has been set to "promptUser". This means that if the message does not meet the conditions that the add-in sets for sending, the user will be prompted to either cancel sending or to send anyway.
+   - The event object assigns a handler function to the `OnMessageSend` event (using the event's Teams manifest name, "messageSending", as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in "actionId" must match the name used in the "actions" array in an earlier step.
+   - The "sendMode" option is set to "promptUser". This means that if the message doesn't meet the conditions that the add-in sets for sending, the user will be prompted to either cancel sending or to send anyway.
 
     ```json
       {

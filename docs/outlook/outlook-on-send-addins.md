@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send.
 
 > [!NOTE]
-> The on-send feature is not supported in add-ins that use the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). But you can achieve the same effects by using [event-based activation](autolaunch.md) and implementing a handler for the **OnMessageSend** or **OnAppointmentSend** events, or both.
+> The on-send feature isn't supported in add-ins that use the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). Achieve similar effects by using [event-based activation](autolaunch.md) and implementing a handler for the **OnMessageSend** or **OnAppointmentSend** events, or both.
 
 For example, use the on-send feature to:
 
