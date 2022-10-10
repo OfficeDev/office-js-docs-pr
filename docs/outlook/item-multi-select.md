@@ -2,7 +2,7 @@
 title: Activate your Outlook add-in on multiple messages (preview)
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
 ms.topic: article
-ms.date: 10/05/2022
+ms.date: 10/10/2022
 ms.localizationpriority: medium
 ---
 
@@ -14,6 +14,9 @@ The following sections walk you through how to configure your add-in to retrieve
 
 > [!IMPORTANT]
 > The item multi-select feature is only available in preview with a Microsoft 365 subscription in Outlook on Windows. Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+
+> [!NOTE]
+> The item multi-select feature isn't currently supported in the [Teams manifest (preview)](../develop/json-manifest-overview.md), but the feature crew is working on making this available.
 
 ## Prerequisites to preview item multi-select
 
