@@ -30,7 +30,7 @@ To use this feature, you need to manually update your JSON metadata. For more te
 
 Custom functions projects include a JSON metadata file. This JSON metadata file differs from the JSON schema used by data types APIs. To use the data types integration with custom functions, the custom functions JSON metadata file must be manually updated to include the property `allowCustomDataForDataTypeAny`. Set this property to `true`.
 
-For a full description of the manual JSON creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview) for additional details about this property.
+For a full description of the manual JSON creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) for additional details about this property.
 
 ### Script Lab option
 

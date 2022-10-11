@@ -139,7 +139,8 @@ The following example shows the contents of a JSON metadata file for an add-in t
 
 The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting this value to `true` allows a custom function to accept data types as parameters and return values. To learn more, see [Custom functions and data types](custom-functions-data-types-concepts.md).
 
-Unlike most of the other JSON metadata properties, `allowCustomDataForDataTypeAny` is a top-level property and contains no sub-properties. See the preceding [JSON metadata code sample](#json-metadata-example) for an example of how to format this property.
+> [!NOTE]
+> Unlike most of the other JSON metadata properties, `allowCustomDataForDataTypeAny` is a top-level property and contains no sub-properties. See the preceding [JSON metadata code sample](#json-metadata-example) for an example of how to format this property.
 
 ### allowErrorForDataTypeAny
 
