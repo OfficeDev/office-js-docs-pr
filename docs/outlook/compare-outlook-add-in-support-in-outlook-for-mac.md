@@ -1,7 +1,7 @@
 ---
 title: Compare Outlook add-in support in Outlook on Mac
 description: Learn how add-in support in Outlook on Mac compares with other Outlook clients.
-ms.date: 09/21/2022
+ms.date: 10/11/2022
 ms.localizationpriority: medium
 ---
 
@@ -15,7 +15,7 @@ For information about new UI support, see [Add-in support in Outlook on new Mac 
 
 | Area | Outlook on the web, Windows, and mobile devices | Outlook on Mac |
 |:-----|:-----|:-----|
-| Supported versions of office.js and Office Add-ins manifest schema | All APIs in Office.js and schema v1.1. | All APIs in Office.js and schema v1.1.<br><br>**NOTE**: In Outlook on Mac, only build 16.35.308 or later supports saving a meeting. Otherwise, the `saveAsync` method fails when called from a meeting in compose mode. See [Cannot save a meeting as a draft in Outlook for Mac by using Office JS API](https://support.microsoft.com/help/4505745) for a workaround. |
+| Supported versions of office.js| All APIs in Office.js. | All APIs in Office.js.<br><br>**NOTE**: In Outlook on Mac, only build 16.35.308 or later supports saving a meeting. Otherwise, the `saveAsync` method fails when called from a meeting in compose mode. See [Cannot save a meeting as a draft in Outlook for Mac by using Office JS API](https://support.microsoft.com/help/4505745) for a workaround. |
 | Instances of a recurring appointment series | <ul><li>Can get the item ID and other properties of a master appointment or appointment instance of a recurring series.</li><li>Can use [mailbox.displayAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) to display an instance or the master of a recurring series.</li></ul> | <ul><li>Can get the item ID and other properties of the master appointment, but not those of an instance of a recurring series.</li><li>Can display the master appointment of a recurring series. Without the item ID, cannot display an instance of a recurring series.</li></ul> |
 | Recipient type of an appointment attendee | Can use [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#outlook-office-emailaddressdetails-recipienttype-member) to identify the recipient type of an attendee. | `EmailAddressDetails.recipientType` returns `undefined` for appointment attendees. |
 | Version string of the client application | The format of the version string returned by [diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) depends on the actual type of client. For example:<ul><li>Outlook on Windows: `15.0.4454.1002`</li><li>Outlook on the web: `15.0.918.2`</li></ul> |An example of the version string returned by `Diagnostics.hostVersion` on Outlook on Mac: `15.0 (140325)` |
