@@ -10,7 +10,7 @@ ms.localizationpriority: high
 
 # Overview of data types in Excel add-ins
 
-Data types in the Excel JavaScript API enable add-in developers to organize complex data structures as objects, such as formatted number values, web images, and entities as [entity cards](excel-data-types-entity-card.md).
+Data types organize complex data structures as objects. This includes formatted number values, web images, and entities as [entity cards](excel-data-types-entity-card.md).
 
 Prior to the data types addition, the Excel JavaScript API supported string, number, boolean, and error data types. The Excel UI formatting layer is capable of adding currency, date, and other types of formatting to cells that contain the four original data types, but this formatting layer only controls the display of the original data types in the Excel UI. The underlying number value is not changed, even when a cell in the Excel UI is formatted as currency or a date. This gap between an underlying value and the formatted display in the Excel UI can result in confusion and errors during add-in calculations. The data types APIs are a solution to this gap.
 
