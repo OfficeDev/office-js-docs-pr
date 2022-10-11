@@ -1,16 +1,14 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 09/01/2022
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
 ---
 
-# Excel data types core concepts (preview)
-
-[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
+# Excel data types core concepts
 
 This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with data types. It introduces core concepts that are fundamental to data type development.
 

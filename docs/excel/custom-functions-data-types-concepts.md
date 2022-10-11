@@ -1,15 +1,13 @@
 ---
 title: Custom functions and data types
 description: Use Excel data types with your custom functions and Office Add-ins.
-ms.date: 12/27/2021
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
 ---
 
-# Use data types with custom functions in Excel (preview)
-
-[!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
+# Use data types with custom functions in Excel
 
 Data types expand the Excel JavaScript API to support data types beyond the original four cell value types (string, number, boolean, and error). Data types include support for web images, formatted number values, entity values, and arrays within entity values.
 
@@ -32,7 +30,7 @@ To use this feature, you need to manually update your JSON metadata. For more te
 
 Custom functions projects include a JSON metadata file. This JSON metadata file differs from the JSON schema used by data types APIs. To use the data types integration with custom functions, the custom functions JSON metadata file must be manually updated to include the property `allowCustomDataForDataTypeAny`. Set this property to `true`.
 
-For a full description of the manual JSON creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview) for additional details about this property.
+For a full description of the manual JSON creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) for additional details about this property.
 
 ### Script Lab option
 
