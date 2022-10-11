@@ -1,4 +1,0 @@
-> [!NOTE]
-> The custom functions integration with data types is currently in public preview and is only compatible with Office on Windows. Preview features are subject to change and are not intended for use in a production environment. We recommend that you try them out in test and development environments only. Do not use preview features in a production environment or within business-critical documents.
->
-> To try out the custom functions integration with data types in Office on Windows, you must have an Excel build number greater than or equal to 16.0.14623.20002. To use this feature, you need to join the [Office Insider Program](https://insider.office.com/) and then choose the **Beta Channel** Insider level. To learn more, see [Join the Office Insider Program](https://insider.office.com/join/windows).
