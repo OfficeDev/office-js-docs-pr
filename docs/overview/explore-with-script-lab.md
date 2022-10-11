@@ -1,7 +1,7 @@
 ---
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
-ms.date: 01/14/2022
+ms.date: 09/27/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -52,20 +52,20 @@ You can import a snippet into Script Lab either by specifying the URL to the pub
 
 Script Lab is supported for Excel, Word, and PowerPoint on the following clients.
 
-- Microsoft 365 Office subscription
+- Office on Windows\*
 - Office 2016 or later on Mac
 - Office on the web
 
 Script Lab for Outlook is available on the following clients.
 
-- Microsoft 365 Office subscription
+- Outlook on Windows\*
 - Outlook 2016 or later on Mac
 - Outlook on the web when using Chrome, Microsoft Edge, or Safari browsers
 
-For more details on Script Lab for Outlook, see the related [blog post](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/).
+For more details on Script Lab for Outlook, see the related [blog post](https://devblogs.microsoft.com/microsoft365dev/script-lab-now-supports-outlook/).
 
 > [!IMPORTANT]
-> Script Lab no longer works with combinations of platform and Office version that use Internet Explorer to host add-ins. This includes one-time purchase Office versions through Office 2019. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+> \* Script Lab no longer works with combinations of platform and Office version that use Internet Explorer to host add-ins. This includes perpetual versions of Office through Office 2019. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## Next steps
 

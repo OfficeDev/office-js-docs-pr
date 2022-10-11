@@ -27,6 +27,8 @@ items:
       href: quickstarts/project-quickstart.md
     - name: Word add-in
       href: quickstarts/word-quickstart.md
+    - name: Single sign-on (SSO)
+      href: quickstarts/sso-quickstart.md
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
@@ -57,6 +59,8 @@ items:
     - name: Browsers used by Office Add-ins
       href: concepts/browsers-used-by-office-web-add-ins.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Runtimes in Office Add-ins
+      href: testing/runtimes.md
     - name: Support Internet Explorer 11
       href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
@@ -138,6 +142,8 @@ items:
         items:
         - name: Enable SSO in an Office Add-in
           href: develop/sso-in-office-add-ins.md
+        - name: Quick start
+          href: quickstarts/sso-quickstart.md
         - name: Register with Microsoft identity platform
           href: develop/register-sso-add-in-aad-v2.md
         - name: Grant administrator consent
@@ -344,8 +350,6 @@ items:
       href: develop/usability-testing.md
     - name: Validate an add-in's manifest
       href: testing/troubleshoot-manifest.md
-    - name: Runtimes in Office Add-ins
-      href: testing/runtimes.md
 
   - name: Publish
     items:
@@ -904,6 +908,9 @@ items:
     displayName: Excel
   - name: Copy Script Lab snippet to Yo Office
     href: overview/create-an-office-add-in-from-script-lab.md
+  - name: Batching custom function remote calls
+    href: excel/custom-functions-batching.md
+    displayName: Excel, Custom Functions
 - name: Resources
   items:
   - name: Glossary
