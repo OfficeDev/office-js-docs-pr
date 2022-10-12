@@ -1,7 +1,7 @@
 ---
 title: Internet Explorer 11 testing
 description: Test your Office Add-in on Internet Explorer 11.
-ms.date: 05/01/2022
+ms.date: 10/12/2022
 ms.localizationpriority: medium
 ---
 
@@ -42,6 +42,8 @@ There are two ways to switch the Internet Explorer webview. You can run a simple
 
 - Your project was developed with Visual Studio and IIS. It isn't node.js-based.
 - You want to be absolutely robust in your testing.
+- You can't use the Beta channel for the Microsoft 365 on your development computer.
+- You're developing on a Mac. 
 - If for any reason the command line tool doesn't work.
 
 ### Switch via the command line
