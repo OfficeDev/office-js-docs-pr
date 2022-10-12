@@ -3,7 +3,7 @@ If your project is node.js-based (that is, not developed with Visual Studio and 
 1. If your project was *not* created with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) tool, you need to install the office-addin-dev-settings tool. Run the following command in a command prompt.
 
    > [!NOTE]
-   > This `webview` switch of this tool that you use (see the next step) is supported only in the Beta subscription channel of Microsoft 365. Join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.See also [About Office: What version of Office am I using?](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
+   > This `webview` switch of this tool that you use (see the next step) is supported only in the Beta subscription channel of Microsoft 365. Join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds. See also [About Office: What version of Office am I using?](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
 
     ```command&nbsp;line
     npm install office-addin-dev-settings --save-dev
