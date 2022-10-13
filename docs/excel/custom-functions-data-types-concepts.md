@@ -1,10 +1,10 @@
 ---
 title: Custom functions and data types
 description: Use Excel data types with your custom functions and Office Add-ins.
-ms.date: 10/10/2022
+ms.date: 10/13/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Use data types with custom functions in Excel
@@ -31,16 +31,6 @@ To use this feature, you need to manually update your JSON metadata. For more te
 Custom functions projects include a JSON metadata file. This JSON metadata file differs from the JSON schema used by data types APIs. To use the data types integration with custom functions, the custom functions JSON metadata file must be manually updated to include the property `allowCustomDataForDataTypeAny`. Set this property to `true`.
 
 For a full description of the manual JSON creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) for additional details about this property.
-
-### Script Lab option
-
-The custom functions integration with data types is available for testing with Script Lab, in addition to the manual JSON metadata update described in the preceding section. To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md). To test this feature with Script Lab, update the settings using the following steps.
-
-1. Open the Script Lab **Code** task pane.
-1. In the lower right corner, select the **Settings** button.
-1. Go to the **User Settings** tab and enter `allowCustomDataForDataTypeAny: true`.
-
-![Screenshot showing the steps to enable data types for custom functions in Script Lab.](../images/custom-functions-script-lab-data-type.png)
 
 ## Output a formatted number value
 
