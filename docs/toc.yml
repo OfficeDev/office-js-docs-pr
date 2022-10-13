@@ -427,17 +427,17 @@ items:
       href: excel/excel-add-ins-comments.md
       displayName: Excel
     - name: Data types
-      displayName: preview
+      displayName: Excel
       items:
         - name: Overview
           href: excel/excel-data-types-overview.md
-          displayName: Excel, preview
+          displayName: Excel
         - name: Concepts
           href: excel/excel-data-types-concepts.md
-          displayName: Excel, preview
+          displayName: Excel
         - name: Entity value cards
           href: excel/excel-data-types-entity-card.md
-          displayName: Excel, preview
+          displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
       displayName: Excel
@@ -554,7 +554,7 @@ items:
       displayName: Excel, Custom Functions
     - name: Data types
       href: excel/custom-functions-data-types-concepts.md
-      displayName: Excel, Custom Functions, preview
+      displayName: Excel, Custom Functions
     - name: Call Excel JavaScript APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
@@ -651,6 +651,11 @@ items:
       href: outlook/contextual-outlook-add-ins.md
     - name: Module extension add-ins
       href: outlook/extension-module-outlook-add-ins.md
+    - name: Item multi-select
+      href: outlook/item-multi-select.md
+      displayName: preview
+    - name: Pinnable task pane
+      href: outlook/pinnable-taskpane.md
     - name: Add-ins for Outlook Mobile
       href: outlook/outlook-mobile-addins.md
     - name: Create an online meeting add-in
@@ -674,8 +679,6 @@ items:
       - name: AppSource options
         href: outlook/autolaunch-store-options.md
         displayName: event-based activation
-    - name: Pinnable task pane
-      href: outlook/pinnable-taskpane.md
     - name: Shared folders and shared mailboxes
       href: outlook/delegate-access.md
       displayName: delegate access

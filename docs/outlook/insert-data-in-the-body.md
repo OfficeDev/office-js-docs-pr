@@ -1,7 +1,7 @@
 ---
 title: Insert data in the body in an Outlook add-in
 description: Learn how to insert data into the body of a message or appointment in an Outlook add-in.
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -35,6 +35,8 @@ You must pass a data string as an input parameter to **setSelectedDataAsync**. D
 If the user hasn't placed the cursor in the item body, **setSelectedDataAsync** inserts the data at the top of the body. If the user has selected text in the item body, **setSelectedDataAsync** replaces the selected text by the data you specify. Note that **setSelectedDataAsync** can fail if the user is simultaneously changing the cursor position while composing the item. The maximum number of characters you can insert at one time is 1,000,000 characters.
 
 This code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment or message, as shown below.
+
+[!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="Or">
