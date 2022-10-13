@@ -1,15 +1,13 @@
 ---
 title: Excel JavaScript API data types entity value card
 description: Learn how to use entity value cards with data types in your Excel add-in.
-ms.date: 07/28/2022
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
 ---
 
-# Use cards with entity value data types (preview)
-
-[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
+# Use cards with entity value data types
 
 This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to create card modal windows in the Excel UI with entity value data types. These cards can display additional information contained within an entity value, beyond what's already visible in a cell, such as related images, product category information, and data attributions.
 
