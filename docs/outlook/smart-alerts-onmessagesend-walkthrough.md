@@ -335,18 +335,18 @@ While a Smart Alerts dialog message can be changed to suit your add-in scenario 
 
 ## Differences between Smart Alerts and the on-send feature
 
-While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide your users the opportunity to improve their messages and meeting invites before they're sent, Smart Alerts is a newer feature that provides more flexibility with how your users are prompted for further action. Key differences between the two features are outlined in the following table.
+While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide your users the opportunity to improve their messages and meeting invites before they're sent, Smart Alerts is a newer feature that offers you more flexibility with how you prompt your users for further action. Key differences between the two features are outlined in the following table.
 
 |Attribute|Smart Alerts|On-send|
 |-----|-----|-----|
 |**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
-|**Supported Outlook clients**|- Windows<br>- Web browser|- Windows<br>- Web browser (classic and modern UI)<br>- Mac (classic and new UI) |
+|**Supported Outlook clients**|- Windows<br>- Web browser (modern UI)|- Windows<br>- Web browser (classic and modern UI)<br>- Mac (classic and new UI) |
 |**Supported events**|- `OnMessageSend`<br>- `OnAppointmentSend`|`ItemSend`|
 |**Manifest extension point**|`LaunchEvent`|`Events`|
 |**Send mode options**|- Prompt user<br>- Soft block<br>- Block|Block|
 |**Maximum number of supported events in an add-in**|One `OnMessageSend` and one `OnAppointmentSend` event|One `ItemSend` event|
-|**Deployment**|Add-in can be published to AppSource if its `SendMode` property is set to the `SoftBlock` or `PromptUser` option. Otherwise, the add-in must be deployed by an organization's administrator.|Add-in can't be published to AppSource. It must be deployed by an organization's administrator.|
-|**Additional installation configuration**|None.|Depending on the organization's compliance standards and the Outlook client used, certain mailbox policies must be configured to install the add-in.|
+|**Add-in deployment**|Add-in can be published to AppSource if its `SendMode` property is set to the `SoftBlock` or `PromptUser` option. Otherwise, the add-in must be deployed by an organization's administrator.|Add-in can't be published to AppSource. It must be deployed by an organization's administrator.|
+|**Additional configuration for add-in installation**|No additional configuration is needed once the manifest is uploaded to the Microsoft 365 admin center.|Depending on the organization's compliance standards and the Outlook client used, certain mailbox policies must be configured to install the add-in.|
 
 ## See also
 
