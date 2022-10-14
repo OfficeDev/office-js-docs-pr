@@ -43,7 +43,7 @@ The next step to enable SSO in the add-in is to add some information to the mani
    ```
 
   > [!NOTE]
-  > SSO-enabled add-ins that the Teams manifest can be sideloaded, but can't be deployed in any other way at this time.
+  > SSO-enabled add-ins that use the Teams manifest can be sideloaded, but can't be deployed in any other way at this time.
 
 ## Get the SSO token
 
