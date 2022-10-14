@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 07/14/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
 ---
 
@@ -15,6 +15,14 @@ The on-send feature for Outlook add-ins provides a way to handle a message or me
 The on-send feature is triggered by the `ItemSend` event type and is UI-less.
 
 For information about limitations related to the on-send feature, see [Limitations](#limitations) later in this article.
+
+> [!NOTE]
+> [Smart Alerts](smart-alerts-onmessagesend-walkthrough.md) is a new alternative to the on-send feature. It was released in [requirement set 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12) and introduced the `OnMessageSend` and `OnAppointmentSend` events. Similar to the on-send feature, Smart Alerts enables your add-in to check that certain conditions are met before a mail item is sent. Smart Alerts differentiates itself from the on-send feature as follows:
+>
+> - It offers [send mode options](/javascript/api/manifest/launchevent) when you want to provide your users with optional recommendations instead of mandatory conditions.
+> - It allows your add-in to be published to AppSource if the manifest's **SendMode** property is set to the `SoftBlock` or `PromptUser` option. To learn more about publishing an event-based add-in, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
+>
+> For more information on the differences between Smart Alerts and the on-send feature, see [Differences between Smart Alerts and the on-send feature](smart-alerts-onmessagesend-walkthrough.md#differences-between-smart-alerts-and-the-on-send-feature). We invite you to [try out Smart Alerts by completing the walkthrough](smart-alerts-onmessagesend-walkthrough.md).
 
 ## Supported clients and platforms
 
