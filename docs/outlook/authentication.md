@@ -27,7 +27,7 @@ Consider using SSO access tokens if your add-in:
 The SSO authentication method uses the [OAuth2 On-Behalf-Of flow provided by Azure Active Directory](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of). It requires that the add-in register in the [Application Registration Portal](https://apps.dev.microsoft.com/) and specify any required Microsoft Graph scopes in its manifest.
 
 > [!NOTE]
-> If the add-in is using the [Teams manifest for Office Add-ins (preview)](json-manifest-overview.md), there is some manifest configuration, but Microsoft Graph scopes aren't specified. SSO-enabled add-ins that use the Teams manifest can be sideloaded, but can't be deployed in any other way at this time.
+> If the add-in is using the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md), there is some manifest configuration, but Microsoft Graph scopes aren't specified. SSO-enabled add-ins that use the Teams manifest can be sideloaded, but can't be deployed in any other way at this time.
 
 Using this method, your add-in can obtain an access token scoped to your server back-end API. The add-in uses this as a bearer token in the `Authorization` header to authenticate a call back to your API. At that point your server can:
 
