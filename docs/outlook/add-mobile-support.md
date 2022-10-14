@@ -1,7 +1,7 @@
 ---
 title: Add mobile support to an Outlook add-in
 description: Learn how to add support for Outlook Mobile including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
-ms.date: 04/15/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
 ---
 
@@ -10,6 +10,8 @@ ms.localizationpriority: medium
 Using add-in commands in Outlook Mobile allows your users to access the same functionality (with some [limitations](#code-considerations)) that they already have in Outlook on the web, Windows, and Mac. Adding support for Outlook Mobile requires updating the add-in manifest and possibly changing your code for mobile scenarios.
 
 ## Updating the manifest
+
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 The first step to enabling add-in commands in Outlook Mobile is to define them in the add-in manifest. The [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 schema defines a new form factor for mobile, [MobileFormFactor](/javascript/api/manifest/mobileformfactor).
 
