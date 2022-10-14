@@ -16,7 +16,7 @@ The following sections walk you through how to configure your add-in to retrieve
 > The item multi-select feature is only available in preview with a Microsoft 365 subscription in Outlook on Windows. Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 > [!NOTE]
-> The item multi-select feature isn't currently supported in the [Teams manifest (preview)](../develop/json-manifest-overview.md), but the feature crew is working on making this available.
+> The item multi-select feature isn't currently supported in the [Teams manifest (preview)](../develop/json-manifest-overview.md), but the team is working on making this available.
 
 ## Prerequisites to preview item multi-select
 
