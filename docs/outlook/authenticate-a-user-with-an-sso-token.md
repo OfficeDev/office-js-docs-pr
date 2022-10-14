@@ -1,7 +1,7 @@
 ---
 title: Authenticate a user with a single-sign-on token
 description: Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.
-ms.date: 01/25/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
 ---
 
@@ -30,7 +30,20 @@ When you are developing an add-in, you will have to provide consent in advance. 
 
 ## Update the add-in manifest
 
-The next step to enable SSO in the add-in is to add a `WebApplicationInfo` element at the end of the `VersionOverridesV1_1` [VersionOverrides](/javascript/api/manifest/versionoverrides) element. For more information, see [Configure the add-in](../develop/sso-in-office-add-ins.md#configure-the-add-in).
+The next step to enable SSO in the add-in is to add some information to the manifest from the add-in's Microsoft identity platform registration. The markup varies depending on the type of manifest.
+
+- **XML manifest**: Add a `WebApplicationInfo` element at the end of the `VersionOverridesV1_1` [VersionOverrides](/javascript/api/manifest/versionoverrides) element. Then, add its required child elements. For detailed information about the markup, see [Configure the add-in](../develop/sso-in-office-add-ins.md#configure-the-add-in).
+- **Teams manifest (preview)**: Add a "webApplicationInfo" property to the root `{ ... }` object in the manifest. Give this object a child "id" property set to the application ID of the add-in's web app as it was generated in the Azure portal when you registered the add-in. (See the section [Register your add-in](#register-your-add-in) earlier in this article.) Also give it a child "resource" property that is set to the same **Application ID URI** that you set when you registered the add-in. This URI should have the form `api://<fully-qualified-domain-name>/<application-id>`. The following is an example.
+
+   ```json
+   "webApplicationInfo": {
+        "id": "a661fed9-f33d-4e95-b6cf-624a34a2f51d",
+        "resource": "api://addin.contoso.com/a661fed9-f33d-4e95-b6cf-624a34a2f51d"
+    },
+   ```
+
+  > [!NOTE]
+  > SSO-enabled add-ins that use the Teams manifest can be sideloaded, but can't be deployed in any other way at this time.
 
 ## Get the SSO token
 
