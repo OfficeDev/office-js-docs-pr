@@ -29,7 +29,7 @@ The following code snippet shows the JSON for an entity value with multiple data
 > [!NOTE]
 > To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) repository.
 >
-> To experiment with the code sample in a functional environment, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Create entity cards from data in a table** snippet in our **Samples** library.
+> To experiment with this code sample in a functional environment, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Create entity cards from data in a table** snippet in our **Samples** library.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -113,7 +113,7 @@ Within each card section you can specify elements like `layout`, `title`, and `p
 > [!NOTE]
 > To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) repository.
 >
-> To experiment with the code sample in a functional environment, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Create entity cards from data in a table** snippet in our **Samples** library.
+> To experiment with this code sample in a functional environment, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Create entity cards from data in a table** snippet in our **Samples** library.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -170,7 +170,7 @@ The following JSON code snippet shows an entity value that uses the `provider` p
 > [!NOTE]
 > To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml) repository.
 >
-> To experiment with the code sample in a functional environment, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Entity value attribution properties** snippet in our **Samples** library.
+> To experiment with this code sample in a functional environment, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Entity value attribution properties** snippet in our **Samples** library.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
