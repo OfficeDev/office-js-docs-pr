@@ -24,14 +24,14 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To enable users to create online meetings with your add-in, you must configure the manifest. The markup varies depending on two facts.
+To enable users to create online meetings with your add-in, you must configure the manifest. The markup differs depending on two variables:
 
-- The type of platform; either mobile or non-mobile.
+- The type of target platform; either mobile or non-mobile.
 - The type of manifest; either XML or [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
-If you're add-in uses an XML manifest, and the add-in will only be supported in Outlook on the web, Windows, and Mac, select the **Windows, Mac, web** tab for guidance. However, if your add-in will also be supported in Outlook on Android and iOS, select the **Mobile** tab.
+If your add-in uses an XML manifest, and the add-in will only be supported in Outlook on the web, Windows, and Mac, select the **Windows, Mac, web** tab for guidance. However, if your add-in will also be supported in Outlook on Android and iOS, select the **Mobile** tab.
 
-If you're using the Teams manifest (preview), select the # **Teams Manifest (developer preview)** tab.
+If the add-in uses the Teams manifest (preview), select the **Teams Manifest (developer preview)** tab.
 
 > [!NOTE]
 > The Teams manifest (preview) is currently supported only in Outlook on Windows. We're working to bring support to other platforms, including mobile platforms.
@@ -217,7 +217,7 @@ To allow users to create an online meeting from their mobile device, the [Mobile
 
 1. Add the following object to the "extensions.runtimes" array. Note the following about this code.
 
-   - The "minVersion" of the Mailbox requirement set is set to "1.3" so the add-in cannot be installed on platforms and Office versions where this feature is not supported.
+   - The "minVersion" of the Mailbox requirement set is set to "1.3" so the runtime won't launch on platforms and Office versions where this feature is not supported.
    - The "id" of the runtime is set to the descriptive name "online_meeting_runtime".
    - The "code.page" property is set to the URL of UI-less HTML file that will load the function command.
    - The "lifetime" property is set to "short" which means that the runtime starts up when the function command button is selected and and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
@@ -254,8 +254,9 @@ To allow users to create an online meeting from their mobile device, the [Mobile
 
 1. Replace the "extensions.ribbons" array with the following. Note the following about this markup.
 
-   - The "contexts" array specifies that the ribbon is only available in the meeting details organizer window.
-   - There will be a custom control group on the tab labelled **Contoso meeting**.
+   - The "minVersion" of the Mailbox requirement set is set to "1.3" so the the ribbon customizations won't appear on platforms and Office versions where this feature is not supported.
+   - The "contexts" array specifies that the ribbon is available only in the meeting details organizer window.
+   - There will be a custom control group on the default ribbon tab (of the meeting details organizer window) labelled **Contoso meeting**.
    - The group will have a button labelled **Add a Contoso meeting**.
    - The button's "actionId" has been set to "insertContosoMeeting", which matches the "id" of the action you created in the previous step.
 
