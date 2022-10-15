@@ -207,6 +207,15 @@ To allow users to create an online meeting from their mobile device, the [Mobile
 
 1. Open the manifest.json file.
 
+1. Find the *first* object in the "authorization.permissions.resourceSpecific" array and set its "name" property to "MailboxItem.ReadWrite.User". It should look like this when you're done.
+
+    ```json
+    {
+        "name": "MailboxItem.ReadWrite.User",
+        "type": "Delegated"
+    }
+    ```
+
 1. In the "validDomains" array, change the URL to "https://contoso.com", which is the URL of the fictional online meeting provider. The array should look like this when you're done.
 
     ```json
@@ -285,7 +294,6 @@ To allow users to create an online meeting from their mobile device, the [Mobile
                 "builtInTabId": "TabDefault",
                 "groups": [
                     {
-                        "overriddenByRibbonApi": false,
                         "id": "apptComposeGroup",
                         "label": "Contoso meeting",
                         "controls": [
@@ -316,8 +324,6 @@ To allow users to create an online meeting from their mobile device, the [Mobile
                                     "description": "Add a Contoso meeting to this appointment."
                                 },
                                 "actionId": "insertContosoMeeting",
-                                "overriddenByRibbonApi": false,
-                                "enabled": true
                             }
                         ]
                     }
