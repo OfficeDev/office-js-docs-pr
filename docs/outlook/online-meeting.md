@@ -2,7 +2,7 @@
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 08/11/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
 ---
 
@@ -19,9 +19,22 @@ In this article, you'll learn how to set up your Outlook add-in to enable users 
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.
 
+> [!NOTE]
+> If you want to use the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md), then complete the alternate quick start in [Outlook quick start with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md), but skip all sections after the **Try it out** section.
+
 ## Configure the manifest
 
-To enable users to create online meetings with your add-in, you must configure the **\<VersionOverrides\>** node in the manifest. If you're creating an add-in that will only be supported in Outlook on the web, Windows, and Mac, select the **Windows, Mac, web** tab for guidance. However, if your add-in will also be supported in Outlook on Android and iOS, select the **Mobile** tab.
+To enable users to create online meetings with your add-in, you must configure the manifest. The markup varies depending on two facts.
+
+- The type of platform; either mobile or non-mobile.
+- The type of manifest; either XML or [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+
+If you're add-in uses an XML manifest, and the add-in will only be supported in Outlook on the web, Windows, and Mac, select the **Windows, Mac, web** tab for guidance. However, if your add-in will also be supported in Outlook on Android and iOS, select the **Mobile** tab.
+
+If you're using the Teams manifest (preview), select the # **Teams Manifest (developer preview)** tab.
+
+> [!NOTE]
+> The Teams manifest (preview) is currently supported only in Outlook on Windows. We're working to bring support to other platforms, including mobile platforms.
 
 # [Windows, Mac, web](#tab/non-mobile)
 
@@ -189,6 +202,130 @@ To allow users to create an online meeting from their mobile device, the [Mobile
   </VersionOverrides>
 </VersionOverrides>
 ```
+
+# [Teams Manifest (developer preview)](#tab/jsonmanifest)
+
+1. Open the manifest.json file.
+
+1. In the "validDomains" array, change the URL to "https://contoso.com", which is the URL of the fictional online meeting provider. The array should look like this when you're done.
+
+    ```json
+    "validDomains": [
+        "https://contoso.com"
+    ],
+    ```
+
+1. Add the following object to the "extensions.runtimes" array. Note the following about this code.
+
+   - The "minVersion" of the Mailbox requirement set is set to "1.3" so the add-in cannot be installed on platforms and Office versions where this feature is not supported.
+   - The "id" of the runtime is set to the descriptive name "online_meeting_runtime".
+   - The "code.page" property is set to the URL of UI-less HTML file that will load the function command.
+   - The "lifetime" property is set to "short" which means that the runtime starts up when the function command button is selected and and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - There's an action to run a function named "insertContosoMeeting". You'll create this function in a later step.
+
+    ```json
+    {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.3"
+                }
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "id": "online_meeting_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://contoso.com/commands.html"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "insertContosoMeeting",
+                "type": "executeFunction",
+                "displayName": "insertContosoMeeting"
+            }
+        ]
+    }
+    ```
+
+1. Replace the "extensions.ribbons" array with the following. Note the following about this markup.
+
+   - The "contexts" array specifies that the ribbon is only available in the meeting details organizer window.
+   - There will be a custom control group on the tab labelled **Contoso meeting**.
+   - The group will have a button labelled **Add a Contoso meeting**.
+   - The button's "actionId" has been set to "insertContosoMeeting", which matches the "id" of the action you created in the previous step.
+
+    ```json
+    "ribbons": [
+      {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.3"
+                }
+            ],
+            "scopes": [
+                "mail"
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "contexts": [
+            "meetingDetailsOrganizer"
+        ],
+        "tabs": [
+            {
+                "builtInTabId": "TabDefault",
+                "groups": [
+                    {
+                        "overriddenByRibbonApi": false,
+                        "id": "apptComposeGroup",
+                        "label": "Contoso meeting",
+                        "controls": [
+                            {
+                                "id": "insertMeetingButton",
+                                "type": "button",
+                                "label": "Add a Contoso meeting",
+                                "icons": [
+                                    {
+                                        "size": 16,
+                                        "file": "icon-16.png"
+                                    },
+                                    {
+                                        "size": 32,
+                                        "file": "icon-32.png"
+                                    },
+                                    {
+                                        "size": 64,
+                                        "file": "icon-64_02.png"
+                                    },
+                                    {
+                                        "size": 80,
+                                        "file": "icon-80.png"
+                                    }
+                                ],
+                                "supertip": {
+                                    "title": "Add a Contoso meeting",
+                                    "description": "Add a Contoso meeting to this appointment."
+                                },
+                                "actionId": "insertContosoMeeting",
+                                "overriddenByRibbonApi": false,
+                                "enabled": true
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+      }
+    ]
+    ```
 
 ---
 
