@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types entity value card
 description: Learn how to use entity value cards with data types in your Excel add-in.
-ms.date: 10/10/2022
+ms.date: 10/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
@@ -27,7 +27,9 @@ The entity value [`properties`](/javascript/api/excel/excel.entitycellvalue#exce
 The following code snippet shows the JSON for an entity value with multiple data types nested within `properties`.
 
 > [!NOTE]
-> To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) repository.
+> To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) repository.
+>
+> To experiment with the code sample in a functional environment, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Create entity cards from data in a table** snippet in our **Samples** library.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -109,7 +111,9 @@ The following entity value JSON code snippet shows a `card` layout with nested `
 Within each card section you can specify elements like `layout`, `title`, and `properties`. The `layout` key uses the [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) object and accepts the value `"List"`. The `properties` key accepts an array of strings. Note that the `properties` values, such as `"Product ID"`, have corresponding data types in the preceding [Card properties](#card-properties) article section. Sections can also be collapsible and can be defined with boolean values as collapsed or not collapsed when the entity card is opened in the Excel UI.
 
 > [!NOTE]
-> To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) repository.
+> To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) repository.
+>
+> To experiment with the code sample in a functional environment, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Create entity cards from data in a table** snippet in our **Samples** library.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -164,7 +168,9 @@ The data provider property displays an image in the lower left corner of the ent
 The following JSON code snippet shows an entity value that uses the `provider` property to specify a data provider attribution for the entity.
 
 > [!NOTE]
-> To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-attribution.yaml) repository.
+> To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml) repository.
+>
+> To experiment with the code sample in a functional environment, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Entity value attribution properties** snippet in our **Samples** library.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -192,4 +198,5 @@ The following screenshot shows an entity value card that uses the preceding code
 
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
 - [Excel data types core concepts](excel-data-types-concepts.md)
+- [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
 - [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
