@@ -1,7 +1,7 @@
 ---
 title: Custom functions and data types
 description: Use Excel data types with your custom functions and Office Add-ins.
-ms.date: 10/13/2022
+ms.date: 10/17/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -73,6 +73,10 @@ function getEntityAttribute(value, attribute) {
     }
 }
 ```
+
+## Next steps
+
+To experiment with custom functions and data types, install [Script Lab](../overview/explore-with-script-lab.md) in Excel and try out the [Data types: Custom functions](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/16-custom-functions/data-types-custom-functions.yaml) snippet in our **Samples** library.
 
 ## See also
 

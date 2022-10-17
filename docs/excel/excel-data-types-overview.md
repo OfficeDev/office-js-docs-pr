@@ -19,7 +19,7 @@ Data types expand Excel JavaScript API support beyond the four original data typ
 To learn how to use data types APIs, start with the [Excel data types core concepts](excel-data-types-concepts.md) article.
 
 > [!NOTE]
-> To start experimenting with data types right away, install [Script Lab] in Excel and check out the **Data types** section in our **Samples** library. You can also explore the Script Lab samples in our [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/tree/prod/samples/excel/20-data-types) repository.
+> To start experimenting with data types right away, install [Script Lab](../overview/explore-with-script-lab.md) in Excel and check out the **Data types** section in our **Samples** library. You can also explore the Script Lab samples in our [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/tree/prod/samples/excel/20-data-types) repository.
 
 ## Data types and custom functions
 
