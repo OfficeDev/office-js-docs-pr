@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types entity value card
 description: Learn how to use entity value cards with data types in your Excel add-in.
-ms.date: 10/14/2022
+ms.date: 10/17/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
@@ -29,7 +29,7 @@ The following code snippet shows the JSON for an entity value with multiple data
 > [!NOTE]
 > To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) repository.
 >
-> To experiment with this code sample in a functional environment, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Create entity cards from data in a table** snippet in our **Samples** library.
+> To experiment with this code sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Create entity cards from data in a table** snippet in our **Samples** library.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -113,7 +113,7 @@ Within each card section you can specify elements like `layout`, `title`, and `p
 > [!NOTE]
 > To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) repository.
 >
-> To experiment with this code sample in a functional environment, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Create entity cards from data in a table** snippet in our **Samples** library.
+> To experiment with this code sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Create entity cards from data in a table** snippet in our **Samples** library.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -170,7 +170,7 @@ The following JSON code snippet shows an entity value that uses the `provider` p
 > [!NOTE]
 > To see how to use this JSON in a complete code sample, visit the [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml) repository.
 >
-> To experiment with this code sample in a functional environment, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Entity value attribution properties** snippet in our **Samples** library.
+> To experiment with this code sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select the **Data types: Entity value attribution properties** snippet in our **Samples** library.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -193,6 +193,10 @@ const entity: Excel.EntityCellValue = {
 The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the data provider attribution in the lower left corner. In this instance, the data provider is Microsoft and the Microsoft logo is displayed.
 
 :::image type="content" source="../images/excel-data-types-entity-card-attribution.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the data provider attribution in the lower left corner.":::
+
+## Next steps
+
+Try out the [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) sample in our [OfficeDev/Office-Add-in-samples](https://github.com/OfficeDev/Office-Add-in-samples) repository. This sample guides you through building and then sideloading an add-in that creates and edits data types in a workbook.
 
 ## See also
 

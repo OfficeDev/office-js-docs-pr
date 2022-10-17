@@ -74,7 +74,7 @@ const myDate: Excel.FormattedNumberCellValue = {
 };
 ```
 
-To begin experimenting with formatted number values, open [Script Lab](../overview/explore-with-script-lab.md) and check out the [Data types: Formatted numbers](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-formatted-number.yaml) snippet in our **Samples** library.
+Begin experimenting with formatted number values by opening [Script Lab](../overview/explore-with-script-lab.md) and checking out the [Data types: Formatted numbers](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-formatted-number.yaml) snippet in our **Samples** library.
 
 ## Entity values
 
@@ -129,7 +129,7 @@ const myImage: Excel.WebImageCellValue = {
 };
 ```
 
-To try out web image data types, open [Script Lab](../overview/explore-with-script-lab.md) and select the [Data types: Web images](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-web-image.yaml) snippet in our **Samples** library.
+Try out web image data types by opening [Script Lab](../overview/explore-with-script-lab.md) and selecting the [Data types: Web images](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-web-image.yaml) snippet in our **Samples** library.
 
 ## Improved error support
 
@@ -154,7 +154,7 @@ The following is a list of all the error objects with expanded support through d
 
 Each of the error objects can access an enum through the `errorSubType` property, and this enum contains additional data about the error. For example, the `BlockedErrorCellValue` error object can access the [BlockedErrorCellValueSubType](/javascript/api/excel/excel.blockederrorcellvaluesubtype) enum. The `BlockedErrorCellValueSubType` enum offers additional data about what caused the error.
 
-To learn more about the data types error objects, check out the [Data types: Set error values](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-error-values.yaml) snippet in our [Script Lab](../overview/explore-with-script-lab.md) **Samples** library.
+Learn more about the data types error objects by checking out the [Data types: Set error values](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-error-values.yaml) snippet in our [Script Lab](../overview/explore-with-script-lab.md) **Samples** library.
 
 ## Next steps
 
