@@ -1,7 +1,7 @@
 ---
 title: Guidance for deploying on government clouds
-description: Learn how to get your add-in to work in secure, government cloud environments
-ms.date: 10/12/2022
+description: Learn how to deploy your Office Add-in to secure, government cloud environments
+ms.date: 10/17/2022
 ms.localizationpriority: medium
 ---
 
@@ -23,15 +23,15 @@ For all government cloud (i.e. Sovereign Cloud) environments, the public Office 
 
 ## US Government Community Cloud (GCC)
 
-In addition to the above requirements applicable to all Sovereign Clouds, each Sovereign Cloud environment has its own considerations that may affect Office Add-ins targeting the environment. GCC is the least restrictive of the government cloud environments and some of the resources required by solutions built on top of Office are available from their usual production endpoints in this environment. One such resource is the office.js library. Solution partners should be able to continue to reference the public office.js resource as they do with their public production solution.
+In addition to requirements applicable to all Sovereign Clouds, each Sovereign Cloud environment has its own considerations that may affect Office Add-ins targeting the environment. GCC is the least restrictive of the government cloud environments and some of the resources required by the add-in are available from their usual production endpoints in this environment. One such resource is the office.js library. Solution partners can continue to reference the public office.js resource as they do with their public production solution.
 
 ## GCC High (GCCH), US Department of Defense (DOD), or other sovereign managed clouds
 
-These government clouds remain internet-connected, but the set of public endpoints made available from these clouds is severely restricted. One such restricted endpoint is the public endpoint for loading the office.js library. The public CDN location for this resource will not be accessible from within these environments. However, there will be an internal per cloud Microsoft Office CDN provisioned with the same resource. This means the endpoint URL to access this resource will be different within these environments. Your Office Add-in may need some level of customization to run within these environments. Given the additional restrictions in these environments, it's likely that any solution provided to customers in these clouds will require hosting provider services within the environment as well, necessitating additional customizations beyond the access of the office.js library. You'll need to determine the best way to provide your solution to customers in these environments, such that it conforms to the additional restrictions these environments impose on services running within their boundaries.
+These government clouds remain internet-connected, but the set of public endpoints made available is severely restricted. One such restricted endpoint is the public endpoint for loading the office.js library. The public CDN location for office.js will not be accessible from within these environments. However, there will be an internal, per-cloud Microsoft Office CDN provisioned with the same resource. This means the endpoint URL to access office.js will be different and your Office Add-in may need some level of customization to run. Given the additional restrictions, it's likely that any solution provided to customers will require hosting provider services within the environment as well, necessitating additional customizations. You'll need to determine the best way to provide your solution to customers, such that it conforms to the additional restrictions imposed on services running within the boundaries of these environments.
 
 ## Airgapped sovereign clouds
 
-These government clouds are essentially disconnected from the public internet entirely. Any resource that would normally be accessed from public resources must instead be custom-provisioned inside these cloud environments. In the GCCH and DOD clouds mentioned earlier, while most (if not all) solution providers will need to provision their services and resources inside the cloud, there is an option to make firewall exceptions in these environments that allows access to public services and resources. This bypass is not possible in airgapped clouds. As with the GCCH and DOD clouds, there will be a Microsoft Office CDN provisioned inside each cloud environment that hosts required resources such as the office.js library. However, you'll need to work closely with customer tenant administrators to determine the best way to provide your services and resources in a way that conforms to the strict access requirements for these clouds.
+These government clouds are essentially disconnected from the public internet entirely. Any resource that would normally be accessed from public resources must instead be custom-provisioned inside these cloud environments. In the GCCH and DOD clouds mentioned previously, most (if not all) solution providers will need to provision their services and resources inside the cloud. There is an option to make firewall exceptions that allows access to public services and resources. However, this bypass is not possible in airgapped clouds. As with the GCCH and DOD clouds, there will be a Microsoft Office CDN provisioned inside each cloud environment that hosts required resources such as the office.js library. You'll need to work closely with customer tenant administrators to determine the best way to provide your services and resources in a way that conforms to the strict access requirements for airgapped Sovereign Clouds.
 
 ## See also
 
