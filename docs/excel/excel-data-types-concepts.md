@@ -158,9 +158,9 @@ Learn more about the data types error objects by checking out the [Data types: S
 
 ## Next steps
 
-Use the [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) sample in our [OfficeDev/Office-Add-in-samples](https://github.com/OfficeDev/Office-Add-in-samples) repository to experiment more deeply with data types by building and sideloading an add-in that creates and edits data types in a workbook.
+Learn how entity data types extend the potential of Excel add-ins beyond a 2-dimensional grid with the [Use cards with entity value data types](excel-data-types-entity-card.md) article.
 
-To learn how entity data types extend the potential of Excel add-ins beyond a 2-dimensional grid, see [Use cards with entity value data types](excel-data-types-entity-card.md).
+Use the [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) sample in our [OfficeDev/Office-Add-in-samples](https://github.com/OfficeDev/Office-Add-in-samples) repository to experiment more deeply with data types by building and sideloading an add-in that creates and edits data types in a workbook.
 
 ## See also
 
