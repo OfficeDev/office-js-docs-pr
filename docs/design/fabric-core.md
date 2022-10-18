@@ -1,18 +1,20 @@
 ---
 title: Fabric Core in Office Add-ins 
 description: Get an overview of how to use Fabric Core, and Fabric UI components in Office Add-ins.
-ms.date: 01/14/2022
+ms.date: 10/18/2022
 ms.localizationpriority: medium
 ---
 
 # Fabric Core in Office Add-ins
 
-Fabric Core is an open-source collection of CSS classes and SASS mixins that's *intended for use in non-React* Office Add-ins. Fabric Core contains basic elements of the Fluent UI design language such as icons, colors, typefaces, and grids. Fabric Core is framework independent, so it can be used with any single-page application or any server-side web UI framework. (It's called "Fabric Core" instead of "Fluent Core" for historical reasons.)
+Fabric Core is an open-source collection of CSS classes and Sass mixins that's *intended for use in non-React* Office Add-ins. Fabric Core contains basic elements of the Fluent UI design language such as icons, colors, typefaces, and grids. Fabric Core is framework independent, so it can be used with any single-page application or any server-side web UI framework. (It's called "Fabric Core" instead of "Fluent Core" for historical reasons.)
 
-If your add-in's UI is not React-based, you can also make use of a set of non-React components. See [Use Office UI Fabric JS components](#use-office-ui-fabric-js-components).
+If your add-in's UI isn't React-based, you can also make use of a set of non-React components. See [Use Office UI Fabric JS components](#use-office-ui-fabric-js-components).
 
 > [!NOTE]
-> This article describes the use of Fabric Core in the context of Office Add-ins. But it's also used in a wide range of Microsoft 365 apps and extensions. For more information, see [Fabric Core](https://developer.microsoft.com/fluentui#/get-started/web#fabric-core) and the open source repo [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core).
+> This article describes the use of Fabric Core in the context of Office Add-ins, but it's also used in a wide range of Microsoft 365 apps and extensions. For more information, see [Fabric Core](https://developer.microsoft.com/fluentui#/get-started/web#fabric-core) and the open source repo [Office UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core).
+
+[!INCLUDE [alert-fluent-ui-web-components](../includes/alert-fluent-ui-web-components.md)]
 
 ## Use Fabric Core: icons, fonts, colors
 
