@@ -1,7 +1,7 @@
 ---
 title: Overview of data types in Excel add-ins
 description: Data types in the Excel JavaScript API enable Office Add-in developers to work with formatted number values, web images, entities, arrays within entities, and enhanced errors as data types.
-ms.date: 10/10/2022
+ms.date: 10/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -18,6 +18,9 @@ Data types expand Excel JavaScript API support beyond the four original data typ
 
 To learn how to use data types APIs, start with the [Excel data types core concepts](excel-data-types-concepts.md) article.
 
+> [!NOTE]
+> To start experimenting with data types right away, install [Script Lab](../overview/explore-with-script-lab.md) in Excel and check out the **Data types** section in our **Samples** library. You can also explore the Script Lab samples in our [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/tree/prod/samples/excel/20-data-types) repository.
+
 ## Data types and custom functions
 
 Data types enhance the power of custom functions. Custom functions accept data types as both inputs to custom functions and outputs of custom functions, and custom functions use the same JSON schema for data types as the Excel JavaScript API. This data types JSON schema is maintained as custom functions calculate and evaluate. To learn more about integrating data types with your custom functions, see [Custom functions and data types](custom-functions-data-types-concepts.md).
@@ -26,5 +29,6 @@ Data types enhance the power of custom functions. Custom functions accept data t
 
 - [Excel data types core concepts](excel-data-types-concepts.md)
 - [Use cards with entity value data types](excel-data-types-entity-card.md)
-- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
 - [Custom functions and data types](custom-functions-data-types-concepts.md)
+- [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
+- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
