@@ -441,7 +441,7 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 |Attribute|Smart Alerts|On-send|
 |-----|-----|-----|
 |**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
-|**Supported Outlook clients**|- Windows<br>- Web browser (modern UI)|- Windows<br>- Web browser (classic and modern UI)<br>- Mac (classic and new UI) |
+|**Supported Outlook clients**|- Windows<br>- Web browser (modern UI)<br>- Mac (new UI)|- Windows<br>- Web browser (classic and modern UI)<br>- Mac (classic and new UI) |
 |**Supported events**|**XML manifest**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Teams manifest (preview)**<br>- "messageSending"<br>- "appointmentSending"|**XML manifest**<br>- `ItemSend`<br><br>**Teams manifest (preview)**<br>- Not supported|
 |**Manifest extension property**|**XML manifest**<br>- `LaunchEvent`<br><br>**Teams manifest (preview)**<br>- "autoRunEvents"|**XML manifest**<br>- `Events`<br><br>**Teams manifest (preview)**<br>- Not supported|
 |**Supported send mode options**|- Prompt user<br>- Soft block<br>- Block (not supported if the add-in uses a Teams manifest (preview))|Block|
