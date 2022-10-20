@@ -434,6 +434,21 @@ While a Smart Alerts dialog message can be changed to suit your add-in scenario 
 - The dialog options. For example, the **Send Anyway** and **Don't Send** options are fixed and depend on the [SendMode option](/javascript/api/manifest/launchevent#available-sendmode-options) you select.
 - Event-based activation processing and progress information dialogs. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
 
+## Differences between Smart Alerts and the on-send feature
+
+While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide your users the opportunity to improve their messages and meeting invites before they're sent, Smart Alerts is a newer feature that offers you more flexibility with how you prompt your users for further action. Key differences between the two features are outlined in the following table.
+
+|Attribute|Smart Alerts|On-send|
+|-----|-----|-----|
+|**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
+|**Supported Outlook clients**|- Windows<br>- Web browser (modern UI)|- Windows<br>- Web browser (classic and modern UI)<br>- Mac (classic and new UI) |
+|**Supported events**|**XML manifest**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Teams manifest (preview)**<br>- "messageSending"<br>- "appointmentSending"|**XML manifest**<br>- `ItemSend`<br><br>**Teams manifest (preview)**<br>- Not supported|
+|**Manifest extension property**|**XML manifest**<br>- `LaunchEvent`<br><br>**Teams manifest (preview)**<br>- "autoRunEvents"|**XML manifest**<br>- `Events`<br><br>**Teams manifest (preview)**<br>- Not supported|
+|**Supported send mode options**|- Prompt user<br>- Soft block<br>- Block (not supported if the add-in uses a Teams manifest (preview))|Block|
+|**Maximum number of supported events in an add-in**|One `OnMessageSend` and one `OnAppointmentSend` event.|One `ItemSend` event.|
+|**Add-in deployment**|Add-in can be published to AppSource if its `SendMode` property is set to the `SoftBlock` or `PromptUser` option. Otherwise, the add-in must be deployed by an organization's administrator.|Add-in can't be published to AppSource. It must be deployed by an organization's administrator.|
+|**Additional configuration for add-in installation**|No additional configuration is needed once the manifest is uploaded to the Microsoft 365 admin center.|Depending on the organization's compliance standards and the Outlook client used, certain mailbox policies must be configured to install the add-in.|
+
 ## See also
 
 - [Outlook add-in manifests](manifests.md)
