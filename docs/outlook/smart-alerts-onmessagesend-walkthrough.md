@@ -2,7 +2,7 @@
 title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in
 description: Learn how to handle the on-send events in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 10/13/2022
+ms.date: 10/20/2022
 ms.localizationpriority: medium
 ---
 
@@ -18,6 +18,18 @@ The following walkthrough uses the `OnMessageSend` event. By the end of this wal
 ## Prerequisites
 
 The `OnMessageSend` event is available through the event-based activation feature. To understand how to configure your add-in to use this feature, use other available events, debug your add-in, and more, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
+
+### Supported clients and platforms
+
+The following table lists supported client-server combinations for the Smart Alerts feature, including the minimum required Cumulative Update where applicable. Excluded combinations aren't supported.
+
+|Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later) |
+|-----|-----|-----|-----|
+|**Windows**<br>Version 2206 (Build 15330.20196) or later|Yes|Not applicable|Not applicable|
+|**Mac**<br>Version 16.65.827.0 or later|Yes|Not applicable|Not applicable|
+|**Web browser (modern UI)**|Yes|Not applicable|Not applicable|
+|**iOS**|Not applicable|Not applicable|Not applicable|
+|**Android**|Not applicable|Not applicable|Not applicable|
 
 ## Set up your environment
 
