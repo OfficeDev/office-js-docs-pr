@@ -121,7 +121,7 @@ For this scenario, instead of running the `action` function on choosing the **Pe
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
 
 > [!IMPORTANT]
-> Append on send isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
+> Append-on-send isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
 
 1. Open the manifest.json file.
 

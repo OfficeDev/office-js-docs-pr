@@ -142,7 +142,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
 
 > [!IMPORTANT]
-> Smart alerts aren't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
+> Smart Alerts aren't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
 
 1. Open the **manifest.json** file.
 
