@@ -23,9 +23,6 @@ The `OnMessageSend` event is available through the event-based activation featur
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
-> [!NOTE]
-> If you want to use the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md), then complete the alternate quick start in [Outlook quick start with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md), but skip all sections after the **Try it out** section.
-
 ## Configure the manifest
 
 To configure the manifest, select the tab for the type of manifest you are using.
@@ -143,6 +140,9 @@ To configure the manifest, select the tab for the type of manifest you are using
 > - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
+
+> [!IMPORTANT]
+> Smart alerts aren't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
 
 1. Open the **manifest.json** file.
 
