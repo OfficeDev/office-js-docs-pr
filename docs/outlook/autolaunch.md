@@ -17,6 +17,9 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 >
 > Event-based activation isn't supported in Outlook on iOS or Android.
 
+> [!IMPORTANT]
+> Event based activation isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). We are working on providing that support soon.
+
 ## Supported events
 
 The following table lists events that are currently available and the supported clients for each event. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Description** column includes a link to the related object where applicable.
