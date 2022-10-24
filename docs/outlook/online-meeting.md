@@ -31,7 +31,7 @@ If your add-in uses an XML manifest, and the add-in will only be supported in Ou
 If the add-in uses the Teams manifest (preview), select the **Teams Manifest (developer preview)** tab.
 
 > [!IMPORTANT]
-> Online meeting providers aren't yet supported for the Teams manifest (preview). We are working on providing that support soon.
+> Online meeting providers aren't yet supported for the Teams manifest (preview). We're working on providing that support soon.
 
 # [Windows, Mac, web](#tab/non-mobile)
 
