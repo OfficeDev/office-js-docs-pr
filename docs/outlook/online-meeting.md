@@ -2,7 +2,7 @@
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
 ms.topic: article
-ms.date: 10/17/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
 ---
 
@@ -19,9 +19,6 @@ In this article, you'll learn how to set up your Outlook add-in to enable users 
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.
 
-> [!NOTE]
-> If you want to use the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md), then complete the alternate quick start in [Outlook quick start with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md), but skip all sections after the **Try it out** section.
-
 ## Configure the manifest
 
 To enable users to create online meetings with your add-in, you must configure the manifest. The markup differs depending on two variables:
@@ -33,8 +30,8 @@ If your add-in uses an XML manifest, and the add-in will only be supported in Ou
 
 If the add-in uses the Teams manifest (preview), select the **Teams Manifest (developer preview)** tab.
 
-> [!NOTE]
-> The Teams manifest (preview) is currently supported only in Outlook on Windows. We're working to bring support to other platforms, including mobile platforms.
+> [!IMPORTANT]
+> Online meeting providers aren't yet supported for the Teams manifest (preview). We're working on providing that support soon.
 
 # [Windows, Mac, web](#tab/non-mobile)
 
@@ -204,6 +201,9 @@ To allow users to create an online meeting from their mobile device, the [Mobile
 ```
 
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
+
+> [!IMPORTANT]
+> Online meeting providers aren't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
 
 1. Open the **manifest.json** file.
 
