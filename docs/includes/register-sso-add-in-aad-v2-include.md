@@ -10,7 +10,7 @@ You need to create an app registration in Azure that represents your web server.
 
     The **App registrations** page appears.
 
-1. Select the **New registration** icon.
+1. Select **New registration**.
 
     :::image type="content" source="../images/azure-portal-select-new-registration.png" alt-text="New registration on the App registrations pane.":::
 
