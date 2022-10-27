@@ -166,7 +166,7 @@ Sometimes called an _application password_, a client secret is a string value yo
     > [!NOTE]
     > The `User.Read` permission may already be listed by default. It's a good practice to only request permissions that are needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.
 
-1. Select the checkbox for each permission as it appears (note that the permissions will not remain visible in the list as you select each one). After selecting the permissions that your add-in needs, select the **Add permissions** button.
+1. Select the checkbox for each permission as it appears. Note that the permissions will not remain visible in the list as you select each one. After selecting the permissions that your add-in needs, select **Add permissions**.
 
     :::image type="content" source="../images/azure-portal-request-api-permissions-add-permissions.png" alt-text="The Request API permissions pane with some permissions selected.":::
 
