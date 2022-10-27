@@ -4,7 +4,7 @@ You need to create an app registration in Azure that represents your web server.
 
 
 1. Sign in to the [Azure portal](https://portal.azure.com/) with the ***admin*** credentials to your Microsoft 365 tenancy. For example, **MyName@contoso.onmicrosoft.com**.
-1. Select the **App registrations** icon. If you don't see the icon, search for "app registration" in the search bar.
+1. Select **App registrations**. If you don't see the icon, search for "app registration" in the search bar.
 
     :::image type="content" source="../images/azure-portal-select-app-registration.png" alt-text="The Azure portal home page.":::
 
