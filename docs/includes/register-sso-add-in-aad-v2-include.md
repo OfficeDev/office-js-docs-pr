@@ -129,7 +129,7 @@ Sometimes called an _application password_, a client secret is a string value yo
     > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
     > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
-1. Select the checkbox for `api://localhost:44355/<app-id>/access_as_user` in **Authorized scopes**.
+1. in **Authorized scopes**, select the `api://localhost:44355/<app-id>/access_as_user` checkbox.
 
 1. Select **Add application**.
 
