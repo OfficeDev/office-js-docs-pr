@@ -75,7 +75,7 @@ Sometimes called an _application password_, a client secret is a string value yo
     * The **Application ID URI** is pre-filled with app ID (GUID) in the format `api://<app-id>`.
     * The application ID URI format should be: `api://<fully-qualified-domain-name>/<app-id>`
     * Insert the `fully-qualified-domain-name` between `api://` and `<app-id>` (which is a GUID). For example, `api://contoso.com/<app-id>`.
-    * If you are using localhost, then the format should be `api://localhost:<port>/<app-id>`. For example, `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
+    * If you're using localhost, then the format should be `api://localhost:<port>/<app-id>`. For example, `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
     For additional application ID URI details, see [Application manifest identifierUris attribute](/azure/active-directory/develop/reference-app-manifest.md#identifieruris-attribute).
 
