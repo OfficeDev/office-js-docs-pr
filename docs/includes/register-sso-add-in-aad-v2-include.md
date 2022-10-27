@@ -90,7 +90,7 @@ Sometimes called an _application password_, a client secret is a string value yo
 
     The **Add a scope** pane opens.
 
-1. Specify the scope's attributes in the **Add a scope** pane.
+1. In the **Add a scope** pane, specify the scope's attributes .
 
     :::image type="content" source="../images/azure-portal-add-a-scope-details.png" alt-text="Add a scope pane with example values.":::
 
