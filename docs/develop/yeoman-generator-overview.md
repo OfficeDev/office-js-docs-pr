@@ -1,13 +1,13 @@
 ---
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
-ms.date: 03/11/2022
+ms.date: 08/19/2022
 ms.localizationpriority: high
 ---
 
 # Create Office Add-in projects using the Yeoman Generator
 
-The Yeoman Generator for Office Add-ins (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. We recommend that you use this tool to create add-in projects except when you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS). In either of the latter two situations, [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
+The [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. We recommend that you use this tool to create add-in projects except when you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS). In either of the latter two situations, [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
 
 The projects that the tool creates have the following characteristics.
 
@@ -18,7 +18,7 @@ The projects that the tool creates have the following characteristics.
 - By default, all dependencies are installed by the tool, but you can postpone the installation with a command line argument.
 - They include a complete add-in manifest.
 - They have a "Hello World"-level add-in that is ready run as soon as the tool has finished.
-- They include a polyfill and a transpiler that is configured to transpile TypeScript, and recent versions of JavaScript, to ES5 JavaScript. These features ensure that the add-in is supported in all browser runtimes that Office Add-ins might run in, including Internet Explorer.
+- They include a polyfill and a transpiler that is configured to transpile TypeScript, and recent versions of JavaScript, to ES5 JavaScript. These features ensure that the add-in is supported in all runtimes that Office Add-ins might run in, including Internet Explorer.
 
 > [!TIP]
 > If you want to deviate from these choices significantly, such as using a different task runner or a different server, we recommend that when you run the tool you choose the [Manifest-only option](#manifest-only-option).

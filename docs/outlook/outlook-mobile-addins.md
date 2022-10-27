@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins for Outlook Mobile
 description: Outlook mobile add-ins are supported on all Microsoft 365 business accounts and Outlook.com accounts.
-ms.date: 04/14/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
 ---
 
@@ -27,7 +27,11 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
   - The add-in **MUST** adhere to the [UI guidelines](outlook-addin-design.md).
   - The scenario for the add-in **MUST** [make sense on mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- In general, only Message Read mode is supported at this time. That means `MobileMessageReadCommandSurface` is the only [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) you should declare in the mobile section of your manifest. However, Appointment Organizer mode is supported for online meeting provider integrated add-ins which instead declare the [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface). See the [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md) article for more about this scenario.
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
+
+- In general, only Message Read mode is supported at this time. That means `MobileMessageReadCommandSurface` is the only [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) you should declare in the mobile section of your manifest. However, there are a couple of exceptions:
+  1. Appointment Organizer mode is supported for online meeting provider integrated add-ins which instead declare the [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface). See the [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md) article for more about this scenario.
+  1. Appointment Attendee mode is supported for integrated add-ins created by providers of note-taking and customer relationship management (CRM) applications. Such add-ins should instead declare the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee). See the [Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md) article for more about this scenario.
 
 - The [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) API is not supported on mobile since the mobile app uses REST APIs to communicate with the server. If your app backend needs to connect to the Exchange server, you can use the callback token to make REST API calls. For details, see [Use the Outlook REST APIs from an Outlook add-in](use-rest-api.md).
 

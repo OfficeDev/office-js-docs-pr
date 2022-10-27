@@ -311,6 +311,38 @@ You need to create an app registration in Azure that represents your ASP.NET Cor
                 }
             }
         }
+    }
+    ```
+
+1. Replace `TODO 6` with the following:
+
+    ```javascript
+    if (exceptionMessage) {
+
+        // TODO 7: Handle case where bootstrap token has expired.
+
+        // TODO 8: Handle all other Azure AD errors.
+    }
+    ```
+
+1. Replace `TODO 7` with the following. Note that on rare occasions the bootstrap token is unexpired when Office validates it, but expires by the time it is sent to Azure AD for exchange. Azure AD will respond with error AADSTS500133. When this happens, the code  recalls the SSO API (but no more than once). This time Office returns a new unexpired bootstrap token.
+
+    ```javascript
+    if ((exceptionMessage.indexOf("AADSTS500133") !== -1)
+        && (retryGetAccessToken <= 0)) {
+
+        retryGetAccessToken++;
+        getGraphData();
+    }
+    ```
+
+1. Replace `TODO 8` with the following:
+
+    ```javascript
+    else {
+        dialogFallback();
+    }
+    ```
 
         // Check for a Microsoft Graph API call error. which is returned as bad request (403)
         if (error.status === 403) {

@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. 
-ms.date: 07/11/2022
+ms.date: 08/09/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -41,13 +41,9 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
 Outlook add-ins activate when the user is composing or reading a message or appointment, but not other item types. However, add-ins are *not* activated if the current message item, in a compose or read form, is one of the following:
 
-- Protected by Information Rights Management (IRM) or encrypted in other ways for protection. A digitally signed message is an example since digital signing relies on one of these mechanisms.
+- Protected by Information Rights Management (IRM) or encrypted in other ways for protection and accessed from Outlook on non-Windows clients. A digitally signed message is an example since digital signing relies on one of these mechanisms.
 
-  > [!IMPORTANT]
-  >
-  > - Add-ins activate on digitally signed messages in Outlook associated with a Microsoft 365 subscription. On Windows, this support was introduced with build 8711.1000.
-  >
-  > - Starting with Outlook build 13229.10000 on Windows, add-ins can now activate on items protected by IRM. For more information about this feature in preview, refer to [Add-in activation on items protected by Information Rights Management (IRM)](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm).
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 - A delivery report or notification that has the message class IPM.Report.*, including delivery and Non-Delivery Report (NDR) reports, and read, non-read, and delay notifications.
 
@@ -55,18 +51,18 @@ Outlook add-ins activate when the user is composing or reading a message or appo
 
 - A .msg or .eml file opened from the file system.
 
-- In a [group mailbox](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), in a shared mailbox\*, in another user's mailbox\*, in an [archive mailbox](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox), or in a public folder.
+- In a [group mailbox](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), in a shared mailbox\*, in another user's mailbox\*, in an [archive mailbox](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-client-and-compliance-&-security-feature-details?tabs=Archive-features#archive-mailbox), or in a public folder.
 
   > [!IMPORTANT]
-  > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8). Shared mailbox support is now in preview in Outlook on Windows and on Mac. To learn more, refer to [Enable shared folders and shared mailbox scenarios](delegate-access.md).
+  > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8). Shared mailbox support is now in preview in Outlook on Windows and on Mac. To learn more, see [Enable shared folders and shared mailbox scenarios](delegate-access.md).
 
 - Using a custom form.
 
 - Created through Simple MAPI. Simple MAPI is used when an Office user creates or sends an email from an Office application on Windows while Outlook is closed. For example, a user can create an Outlook email while working in Word which triggers an Outlook compose window without launching the full Outlook application. If, however, Outlook is already running when the user creates the email from Word, that isn't a Simple MAPI scenario so Outlook add-ins work in the compose form as long as other activation requirements are met.
 
-In general, Outlook can activate add-ins in read form for items in the Sent Items folder, with the exception of add-ins that activate based on string matches of well-known entities. For more information about the reasons behind this, see "Support for well-known entities" in [Match strings in an Outlook item as well-known entities](match-strings-in-an-item-as-well-known-entities.md).
+In general, Outlook can activate add-ins in read form for items in the Sent Items folder, with the exception of add-ins that activate based on string matches of well-known entities. For more information about the reasons behind this, see [Support for well-known entities](match-strings-in-an-item-as-well-known-entities.md#support-for-well-known-entities).
 
-Currently, there are additional considerations when designing and implementing add-ins for mobile clients. To learn more, refer to [Add mobile support to an Outlook add-in](add-mobile-support.md#compose-mode-and-appointments).
+Currently, there are additional considerations when designing and implementing add-ins for mobile clients. To learn more, see [Add mobile support to an Outlook add-in](add-mobile-support.md#compose-mode-and-appointments).
 
 ## Supported clients
 

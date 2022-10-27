@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in commands
 description: Outlook add-in commands provide ways to initiate specific add-in actions from the ribbon by adding buttons or drop-down menus.
-ms.date: 07/11/2022
+ms.date: 10/11/2022
 ms.localizationpriority: high
 ---
 
@@ -19,15 +19,29 @@ Outlook add-in commands provide ways to initiate specific add-in actions from th
 >
 > Support for add-in commands in Exchange 2016 requires [Cumulative Update 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 
-Add-in commands are only available for add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](activation-rules.md) to limit the types of items they activate on. However, [contextual add-ins](contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
+> [!TIP]
+> If your add-in uses an XML manifest, then add-in commands are only available for add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](activation-rules.md) to limit the types of items they activate on. However, [contextual add-ins](contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
 
-## Create the add-in command
+## Create the UI for the add-in command
 
-Add-in commands are declared in the add-in manifest in the [VersionOverrides element](/javascript/api/manifest/versionoverrides). This element is an addition to the manifest schema v1.1 that ensures backward compatibility. In a client that doesn't support **\<VersionOverrides\>**, existing add-ins will continue to function as they did without add-in commands.
+Add-in commands are declared in the add-in manifest. The markup depends on the type of manifest.
+
+# [XML Manifest](#tab/xmlmanifest)
+
+Add-in commands are declared in the [VersionOverrides element](/javascript/api/manifest/versionoverrides). This element is an addition to the XML manifest schema v1.1 that ensures backward compatibility. In a client that doesn't support **\<VersionOverrides\>**, existing add-ins will continue to function as they did without add-in commands.
 
 The **\<VersionOverrides\>** manifest entries specify many things for the add-in, such as the application, types of controls to add to the ribbon, the text, the icons, and any associated functions.
 
 When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the `FunctionFile` node of the manifest.
+
+# [Teams Manifest (developer preview)](#tab/jsonmanifest)
+
+Add-in commands are declared with the "extensions.runtimes" and "extensions.ribbons" properties. These properties specify many things for the add-in, such as the application, types of controls to add to the ribbon, the text, the icons, and any associated functions.
+
+When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the "runtimes.code.page" property of the manifest.
+
+---
+### Icons
 
 Developers should define icons for all required sizes so that the add-in commands will adjust smoothly along with the ribbon. The required icon sizes are 80 x 80 pixels, 32 x 32 pixels, and 16 x 16 pixels for desktop, and 48 x 48 pixels, 32 x 32 pixels, and 25 x 25 pixels for mobile.
 
@@ -60,7 +74,7 @@ The UI for an add-in command consists of a ribbon button or an item in a drop-do
 - **Function commands**: The button or menu item runs any arbitrary JavaScript. The code almost always calls APIs in the Office JavaScript Library, but it doesn't have to. This type of add-in typically displays no UI other than the button or menu item itself. Note the following about function commands:
 
    - The function that is triggered can call the [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) method to show a dialog, which is a good way to display an error, show progress, or prompt for input from the user.
-   - The JavaScript runtime in which the function command runs is a full browser-based runtime. It can render HTML and call out to the Internet to send or get data.
+   - The runtime in which the function command runs is a full [browser-based runtime](../testing/runtimes.md#browser-runtime). It can render HTML and call out to the Internet to send or get data.
 
 ### Run a function command
 

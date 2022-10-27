@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot development errors with Office Add-ins
 description: Learn how to troubleshoot development errors in Office Add-ins.
-ms.date: 06/10/2022
+ms.date: 09/30/2022
 ms.localizationpriority: medium
 ---
 
@@ -67,7 +67,7 @@ The following are some of the causes of this error. If you discover additional c
 
 ## Add-in doesn't work on Edge but it works on other browsers
 
-See [Troubleshooting Microsoft Edge issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues).
+See [Troubleshooting Microsoft Edge issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-microsoft-edge-issues).
 
 ## Excel add-in throws errors, but not consistently
 
@@ -75,7 +75,7 @@ See [Troubleshoot Excel add-ins](../excel/excel-add-ins-troubleshooting.md) for 
 
 ## Manifest schema validation errors in Visual Studio projects
 
-If you are using newer features that require changes to the manifest file, you may get validation errors in Visual Studio. For example, when adding the **\<Runtimes\>** element to implement the shared JavaScript runtime, you may see the following validation error.
+If you're using newer features that require changes to the manifest file, you may get validation errors in Visual Studio. For example, when adding the **\<Runtimes\>** element to implement the [shared runtime](runtimes.md#shared-runtime), you may see the following validation error.
 
 **The element 'Host' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides' has invalid child element 'Runtimes' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides'**
 
@@ -85,8 +85,11 @@ If this occurs, you can update the XSD files that Visual Studio uses to the late
 
 1. Open your project in Visual Studio.
 1. In **Solution Explorer**, open the manifest.xml file. The manifest is typically in the first project under your solution.
-1. Choose **View** > **Properties Window** (F4).
-1. In the **Properties Window**, choose the ellipsis (...) to open the **XML Schemas** editor. Here you can find the exact folder location of all schema files your project uses.
+1. Select **View** > **Properties Window** (F4).
+1. Set the cursor selection in the manifest.xml so that the **Properties** window shows the **XML Document** properties.
+1. In the **Properties** window, select the **Schemas** property, then select the ellipsis (...) to open the **XML Schemas** editor. Here you can find the exact folder location of all schema files your project uses.
+
+:::image type="content" source="../images/visual-studio-xml-document-properties.png" alt-text="Properties window showing the XML document properties.":::
 
 ### Update the XSD files
 
@@ -115,4 +118,5 @@ When you're loading the Office JavaScript Library from a local copy instead of f
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
 - [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)
+- [Runtimes in Office Add-ins](runtimes.md)
 - [Microsoft Q&A (office-js-dev)](/answers/topics/office-js-dev.html)

@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> Add-ins that use the [Smart Alerts feature](../outlook/smart-alerts-onmessagesend-walkthrough.md) can only be published to AppSource if the manifest's [SendMode property](/javascript/api/manifest/launchevent#available-sendmode-options) is set to the `SoftBlock` or `PromptUser` option. If an add-in's **SendMode** property is set to `Block`, it can only be deployed by an organization's admin as it will fail AppSource validation.

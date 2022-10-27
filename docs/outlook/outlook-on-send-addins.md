@@ -1,13 +1,18 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 07/14/2022
+ms.date: 10/19/2022
 ms.localizationpriority: medium
 ---
 
 # On-send feature for Outlook add-ins
 
-The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send. For example, you can use the on-send feature to:
+The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send.
+
+> [!NOTE]
+> The on-send feature isn't supported in add-ins that use the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). Achieve similar effects by using [event-based activation](autolaunch.md) and implementing a handler for the **OnMessageSend** or **OnAppointmentSend** events, or both.
+
+For example, use the on-send feature to:
 
 - Prevent a user from sending sensitive information or leaving the subject line blank.  
 - Add a specific recipient to the CC line in messages, or to the optional recipients line in meetings.
@@ -16,13 +21,21 @@ The on-send feature is triggered by the `ItemSend` event type and is UI-less.
 
 For information about limitations related to the on-send feature, see [Limitations](#limitations) later in this article.
 
+> [!NOTE]
+> [Smart Alerts](smart-alerts-onmessagesend-walkthrough.md) is a newer version of the on-send feature. It was released in [requirement set 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12) and introduced the `OnMessageSend` and `OnAppointmentSend` events. Similar to the on-send feature, Smart Alerts enables your add-in to check that certain conditions are met before a mail item is sent. Smart Alerts differentiates itself from the on-send feature as follows:
+>
+> - It offers [send mode options](/javascript/api/manifest/launchevent#available-sendmode-options) when you want to provide your users with optional recommendations instead of mandatory conditions.
+> - It allows your add-in to be published to AppSource if the manifest's **SendMode** property is set to the `SoftBlock` or `PromptUser` option. To learn more about publishing an event-based add-in, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
+>
+> For more information on the differences between Smart Alerts and the on-send feature, see [Differences between Smart Alerts and the on-send feature](smart-alerts-onmessagesend-walkthrough.md#differences-between-smart-alerts-and-the-on-send-feature). We invite you to [try out Smart Alerts by completing the walkthrough](smart-alerts-onmessagesend-walkthrough.md).
+
 ## Supported clients and platforms
 
 The following table shows supported client-server combinations for the on-send feature, including the minimum required Cumulative Update where applicable. Excluded combinations are not supported.
 
 | Client | Exchange Online | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) |
 |---|:---:|:---:|:---:|
-|Windows:<br>version 1910 (build 12130.20272) or later|Yes|Yes|Yes|
+|Windows:<br>Version 1910 (Build 12130.20272) or later|Yes|Yes|Yes|
 |Mac:<br>build 16.47 or later|Yes|Yes|Yes|
 |Web browser:<br>modern Outlook UI|Yes|Not applicable|Not applicable|
 |Web browser:<br>classic Outlook UI|Not applicable|Yes|Yes|
@@ -59,7 +72,7 @@ The following screenshot shows an information bar that notifies the sender that 
 The on-send feature currently has the following limitations.
 
 - **Append-on-send** feature &ndash; If you call [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1)) in the on-send handler, an error is returned.
-- **AppSource** &ndash; You can't publish Outlook add-ins that use the on-send feature to [AppSource](https://appsource.microsoft.com) as they will fail AppSource validation. Add-ins that use the on-send feature should be deployed by administrators.
+- **AppSource** &ndash; You can't publish Outlook add-ins that use the on-send feature to [AppSource](https://appsource.microsoft.com) as they will fail AppSource validation. Add-ins that use the on-send feature should be deployed by administrators. If you want the option to publish your add-in to AppSource, consider using Smart Alerts instead, which is a newer version of the on-send feature. To learn more about Smart Alerts and how to deploy these add-ins, see [Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in](smart-alerts-onmessagesend-walkthrough.md) and [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
   
   > [!IMPORTANT]
   > When running `npm run validate` to [validate your add-in's manifest](../testing/troubleshoot-manifest.md), you'll receive the error, "Mailbox add-in containing ItemSend event is invalid. Mailbox add-in manifest contains ItemSend event in VersionOverrides which is not allowed." This message appears because add-ins that use the `ItemSend` event, which is required for this version of the on-send feature, can't be published to AppSource. You'll still be able to sideload and run your add-in, provided that no other validation errors are found.

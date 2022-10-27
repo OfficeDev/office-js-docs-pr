@@ -11,9 +11,9 @@ ms.localizationpriority: high
 In this article, you'll walk through the process of building an Outlook task pane add-in that displays a property of a selected message, triggers a notification on the reading pane, and inserts text into a message on the compose pane. This add-in will use a preview version of the JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use. For more information about this manifest, see [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
 > [!NOTE]
-> The new manifest is available for preview and is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins. 
+> The new manifest is available for preview and is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins.
 
-The preview is only supported on subscription Office on Windows. 
+The preview is only supported on Microsoft 365 subscription Office on Windows.
 
 > [!TIP]
 > If you want to build an Outlook add-in using the XML manifest, see [Build your first Outlook add-in](outlook-quickstart.md).
@@ -172,7 +172,7 @@ Add a custom button to the ribbon that inserts text into a message body.
 
 1. To write to a message, the add-in's permissions need to be raised. Scroll to the property `authorization.permissions.resourceSpecific[0].name` and change the value to `MailboxItem.ReadWrite.User`.
 
-1. When an add-in command runs code instead of opening a task pane, it must run the code in a JavaScript runtime that is separate from the embedded webview in which task pane code runs. So the manifest must specify an additional runtime. Scroll to the property `extension.runtimes` and add the following object to the `runtimes` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup:
+1. When an add-in command runs code instead of opening a task pane, it must run the code in a runtime that is separate from the embedded webview where the task pane code runs. So the manifest must specify an additional runtime. Scroll to the property `extension.runtimes` and add the following object to the `runtimes` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup.
 
     - The value of the `actions[0].id` property must be exactly the same as the name of the function that you added to the **commands.ts** file, in this case `insertHelloWorld`. In a later step, you'll refer to the item by this ID.
 

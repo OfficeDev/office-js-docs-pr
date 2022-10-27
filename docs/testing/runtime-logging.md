@@ -141,3 +141,4 @@ You might see messages in the log file that are confusing or that are classified
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md) 
+- [Runtimes in Office Add-ins](runtimes.md)

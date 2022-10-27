@@ -36,7 +36,7 @@ For best practices in dialog box design, see [Dialog boxes in Office Add-ins](..
 
 ### Handle pop-up blockers with Office on the web
 
-Attempting to display a dialog box while using Office on the web may cause the browser's pop-up blocker to block the dialog box. If this happens, then Office on the web will open a prompt similar to the following.
+Attempting to display a dialog box while using Office on the web may cause the browser's pop-up blocker to block the dialog box. If this happens, then Office on the web will open a prompt similar to the following:
 
 ![Screenshot showing the prompt with a brief description and Allow and Ignore buttons that an add-in can generate to avoid in-browser pop-up blockers](../images/dialog-prompt-before-open.png)
 

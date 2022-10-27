@@ -8,7 +8,7 @@ metadata:
   description: Resources for learning about Outlook add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.prod: outlook #Required
   ms.topic: landing-page # Required
-  ms.date: 06/30/2022 #Required; mm/dd/yyyy format.
+  ms.date: 10/10/2022 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -27,6 +27,8 @@ landingContent:
         links:
           - text: Build your first Outlook add-in
             url: ../quickstarts/outlook-quickstart.md
+          - text: Build your first Outlook add-in with a Teams manifest (preview)
+            url: ../quickstarts/outlook-quickstart-json-manifest.md
           - text: Explore Office JavaScript API using Script Lab
             url: ../overview/explore-with-script-lab.md
       - linkListType: how-to-guide
@@ -35,6 +37,10 @@ landingContent:
             url: apis.md
           - text: Navigate and use the Mailbox requirement sets
             url: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
+          - text: Build an event-based add-in
+            url: autolaunch.md
+          - text: Use Microsoft Graph to extend your add-in's capabilities
+            url: /graph/overview
           - text: Test and debug an Outlook add-in
             url: ../testing/test-debug-office-add-ins.md
           - text: Deploy and publish an Outlook add-in

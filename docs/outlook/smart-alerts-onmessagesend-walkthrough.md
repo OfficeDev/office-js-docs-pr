@@ -1,29 +1,33 @@
 ---
-title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in (preview)
+title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in
 description: Learn how to handle the on-send events in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 06/09/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
 ---
 
-# Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in (preview)
+# Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in
 
 The `OnMessageSend` and `OnAppointmentSend` events take advantage of Smart Alerts, which allows you to run logic after a user selects **Send** in their Outlook message or appointment. Your event handler allows you to give your users the opportunity to improve their emails and meeting invites before they're sent.
 
 The following walkthrough uses the `OnMessageSend` event. By the end of this walkthrough, you'll have an add-in that runs whenever a message is being sent and checks if the user forgot to add a document or picture they mentioned in their email.
 
-> [!IMPORTANT]
-> The `OnMessageSend` and `OnAppointmentSend` events are only available in preview with a Microsoft 365 subscription in Outlook on Windows. For more details, see [How to preview](autolaunch.md#how-to-preview). Preview events shouldn't be used in production add-ins.
+> [!NOTE]
+> The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets) that support this requirement set.
 
 ## Prerequisites
 
-The `OnMessageSend` event is available through the event-based activation feature. To understand how to configure your add-in to use this feature, use other available events, configure preview for this event, debug your add-in, and more, refer to [Configure your Outlook add-in for event-based activation](autolaunch.md).
+The `OnMessageSend` event is available through the event-based activation feature. To understand how to configure your add-in to use this feature, use other available events, debug your add-in, and more, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the Yeoman generator for Office Add-ins.
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
+
+To configure the manifest, select the tab for the type of manifest you are using.
+
+# [XML Manifest](#tab/xmlmanifest)
 
 1. In your code editor, open the quick start project.
 
@@ -35,7 +39,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.3">
+      <bt:Sets DefaultMinVersion="1.12">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -46,7 +50,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
-            <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+            <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
           </Runtime>
         </Runtimes>
@@ -113,7 +117,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Entry needed for Outlook Desktop. -->
+        <!-- Entry needed for Outlook on Windows. -->
         <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
@@ -132,8 +136,93 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 > [!TIP]
 >
-> - For **SendMode** options available with the `OnMessageSend` and `OnAppointmentSend` events, refer to [Available SendMode options](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
+> - For **SendMode** options available with the `OnMessageSend` and `OnAppointmentSend` events, see [Available SendMode options](/javascript/api/manifest/launchevent#available-sendmode-options).
 > - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
+
+# [Teams Manifest (developer preview)](#tab/jsonmanifest)
+
+> [!IMPORTANT]
+> Smart Alerts aren't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
+
+1. Open the **manifest.json** file.
+
+1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
+
+   - The "minVersion" of the Mailbox requirement set is set to "1.12" because the [supported events table](autolaunch.md#supported-events) specifies that this is the lowest version of the requirement set that supports the `OnMessageSend` event.
+   - The "id" of the runtime is set to the descriptive name "autorun_runtime".
+   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
+       - Office on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
+       - Office on Mac and the web execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
+     For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+   - The "lifetime" property is set to "short", which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - There is an action to run a handler for the `OnMessageSend` event. You'll create the handler function in a later step.
+
+    ```json
+     {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.12"
+                }
+            ]
+        },
+        "id": "autorun_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html",
+            "script": "https://localhost:3000/launchevent.js"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "onMessageSendHandler",
+                "type": "executeFunction",
+                "displayName": "onMessageSendHandler"
+            }
+        ]
+    }
+    ```
+
+1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+
+    ```json
+    "autoRunEvents": [
+    
+    ]
+    ```
+
+1. Add the following object to the "autoRunEvents" array. Note the following about this code:
+
+   - The event object assigns a handler function to the `OnMessageSend` event (using the event's Teams manifest name, "messageSending", as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in "actionId" must match the name used in the "id" property of the object in the "actions" array in an earlier step.
+   - The "sendMode" option is set to "promptUser". This means that if the message doesn't meet the conditions that the add-in sets for sending, the user will be prompted to either cancel sending or to send anyway.
+
+    ```json
+      {
+          "requirements": {
+              "capabilities": [
+                  {
+                      "name": "Mailbox",
+                      "minVersion": "1.12"
+                  }
+              ],
+              "scopes": [
+                  "mail"
+              ]
+          },
+          "events": [
+            {
+                "type": "messageSending",
+                "actionId": "onMessageSendHandler",
+                "options": {
+                    "sendMode": "promptUser"
+                }
+            }
+          ]
+      }
+    ```
+
+---
 
 ## Implement event handling
 
@@ -220,6 +309,16 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
     ```
 
+## Update the commands HTML file
+
+1. In the **./src/commands** folder, open **commands.html**.
+
+1. Immediately before the closing **head** tag (`</head>`), add a script entry for the event-handling JavaScript code.
+
+   ```js
+   <script type="text/javascript" src="../launchevent/launchevent.js"></script> 
+   ```
+
 1. Save your changes.
 
 ## Update webpack config settings
@@ -263,9 +362,16 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 1. Add an attachment then send the message again. There should be no alert this time.
 
+## Deploy to users
+
+Similar to other event-based add-ins, add-ins that use the Smart Alerts feature must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the **Deploy to users** section in [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
+
+> [!IMPORTANT]
+> Add-ins that use the Smart Alerts feature can only be published to AppSource if the manifest's [SendMode property](/javascript/api/manifest/launchevent#available-sendmode-options) is set to the `SoftBlock` or `PromptUser` option. If an add-in's **SendMode** property is set to `Block`, it can only be deployed by an organization's admin as it will fail AppSource validation. To learn more about publishing your event-based add-in to AppSource, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
+
 ## Smart Alerts feature behavior and scenarios
 
-Descriptions of the **SendMode** options and recommendations for when to use them are detailed in [Available SendMode options](/javascript/api/manifest/launchevent). The following describes the feature's behavior for certain scenarios.
+Descriptions of the **SendMode** options and recommendations for when to use them are detailed in [Available SendMode options](/javascript/api/manifest/launchevent#available-sendmode-options). The following describes the feature's behavior for certain scenarios.
 
 ### Add-in is unavailable
 
@@ -275,7 +381,7 @@ If the `PromptUser` or `SoftBlock` option is used, the user can choose **Send An
 
 ![Dialog that alerts the user that the add-in is unavailable and gives the user the option to send the item now or later.](../images/outlook-soft-block-promptUser-unavailable.png)
 
-If the `Block` option is used, the user can't send the item until the add-in becomes available.
+If the `Block` option is used, the user can't send the item until the add-in becomes available. (The `Block` option is not supported if the add-in uses a Teams manifest (preview).)
 
 ![Dialog that alerts the user that the add-in is unavailable. The user can only send the item when the add-in is available again.](../images/outlook-hard-block-unavailable.png)
 
@@ -305,16 +411,34 @@ If the `SoftBlock` or `Block` option is  used, the user can't send the item unti
 
 ## Limitations
 
-Because the `OnMessageSend` and `OnAppointmentSend` events are supported through the event-based activation feature, the same feature limitations apply to add-ins that activate as a result of these events. For a description of these limitations, refer to [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
+Because the `OnMessageSend` and `OnAppointmentSend` events are supported through the event-based activation feature, the same feature limitations apply to add-ins that activate as a result of these events. For a description of these limitations, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
 
-In addition to these constraints, only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate manifest or add-in.
+In addition to these constraints, only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate add-in.
 
 While a Smart Alerts dialog message can be changed to suit your add-in scenario using the [errorMessage property](/javascript/api/office/office.addincommands.eventcompletedoptions) of the event.completed method, the following can't be customized.
 
 - The dialog's title bar. Your add-in's name is always displayed there.
 - The message's format. For example, you can't change the text's font size and color or insert a bulleted list.
-- The dialog options. For example, the **Send Anyway** and **Don't Send** options are fixed and depend on the [SendMode option](/javascript/api/manifest/launchevent) you select.
+- The dialog options. For example, the **Send Anyway** and **Don't Send** options are fixed and depend on the [SendMode option](/javascript/api/manifest/launchevent#available-sendmode-options) you select.
 - Event-based activation processing and progress information dialogs. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
+
+## Differences between Smart Alerts and the on-send feature
+
+While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide your users the opportunity to improve their messages and meeting invites before they're sent, Smart Alerts is a newer feature that offers you more flexibility with how you prompt your users for further action. Key differences between the two features are outlined in the following table.
+
+> [!IMPORTANT]
+> Smart Alerts aren't yet supported for the Teams manifest (preview). We're working on providing that support soon.
+
+|Attribute|Smart Alerts|On-send|
+|-----|-----|-----|
+|**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
+|**Supported Outlook clients**|- Windows<br>- Web browser (modern UI)<br>- Mac (new UI)|- Windows<br>- Web browser (classic and modern UI)<br>- Mac (classic and new UI) |
+|**Supported events**|**XML manifest**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Teams manifest (preview)**<br>- "messageSending"<br>- "appointmentSending"|**XML manifest**<br>- `ItemSend`<br><br>**Teams manifest (preview)**<br>- Not supported|
+|**Manifest extension property**|**XML manifest**<br>- `LaunchEvent`<br><br>**Teams manifest (preview)**<br>- "autoRunEvents"|**XML manifest**<br>- `Events`<br><br>**Teams manifest (preview)**<br>- Not supported|
+|**Supported send mode options**|- Prompt user<br>- Soft block<br>- Block (not supported if the add-in uses a Teams manifest (preview))|Block|
+|**Maximum number of supported events in an add-in**|One `OnMessageSend` and one `OnAppointmentSend` event.|One `ItemSend` event.|
+|**Add-in deployment**|Add-in can be published to AppSource if its `SendMode` property is set to the `SoftBlock` or `PromptUser` option. Otherwise, the add-in must be deployed by an organization's administrator.|Add-in can't be published to AppSource. It must be deployed by an organization's administrator.|
+|**Additional configuration for add-in installation**|No additional configuration is needed once the manifest is uploaded to the Microsoft 365 admin center.|Depending on the organization's compliance standards and the Outlook client used, certain mailbox policies must be configured to install the add-in.|
 
 ## See also
 

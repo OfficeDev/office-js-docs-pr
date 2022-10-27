@@ -29,11 +29,11 @@ highlightedContent:
       # Card 3
     - itemType: learn
       title: 'Microsoft Learn: Introduction to Office client customization with add-ins'
-      url: /learn/modules/intro-office-add-ins
+      url: /training/modules/intro-office-add-ins
     # Card 4
     - itemType: learn
       title: 'Microsoft Learn: Extend Office clients with Office Add-ins'
-      url: /learn/paths/m365-office-add-in-associate
+      url: /training/paths/m365-office-add-in-associate
     # Card 5
     - itemType: sample
       title: Samples for Office Add-ins

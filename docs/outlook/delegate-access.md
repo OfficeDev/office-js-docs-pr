@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.
-ms.date: 07/11/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -15,13 +15,13 @@ The following table shows supported client-server combinations for this feature,
 
 | Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2013 on-premises |
 |---|:---:|:---:|:---:|:---:|
-|Windows:<br>version 1910 (build 12130.20272) or later|Yes|In preview\*|In preview\*|In preview\*|
+|Windows:<br>Version 1910 (Build 12130.20272) or later|Yes|Yes\*|Yes\*|Yes\*|
 |Mac:<br>build 16.47 or later|Yes|Yes|Yes|Yes|
 |Web browser:<br>modern Outlook UI|Yes|Not applicable|Not applicable|Not applicable|
 |Web browser:<br>classic Outlook UI|Not applicable|No|No|No|
 
 > [!NOTE]
-> \* Support for this feature in an on-premises Exchange environment is currently in preview starting from version 2205 (build 15228.10000).
+> \* Support for this feature in an on-premises Exchange environment is available starting in Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
 
 > [!IMPORTANT]
 > Support for this feature was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (for details, refer to [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). However, note that the feature's support matrix is a superset of the requirement set's.
@@ -38,7 +38,7 @@ The mailbox owner must first [provide access to a delegate](https://support.micr
 
 #### Shared mailboxes (preview)
 
-Exchange server admins can create and manage shared mailboxes for sets of users to access. [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) and [on-premises Exchange environments (in preview)](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes) are supported.
+Exchange server admins can create and manage shared mailboxes for sets of users to access. [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) and [on-premises Exchange environments](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes) are supported.
 
 An Exchange Server feature known as "automapping" is on by default which means that subsequently the [shared mailbox should automatically appear](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) in a user's Outlook app after Outlook has been closed and reopened. However, if an admin turned off automapping, the user must follow the manual steps outlined in the "Add a shared mailbox to Outlook" section of the article [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
@@ -108,11 +108,18 @@ However, if REST or Exchange Web Services (EWS) operations were used to set an e
 
 ## Configure the manifest
 
-To enable shared folders and shared mailbox scenarios in your add-in, you must set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors are not supported.
+To enable shared folders and shared mailbox scenarios in your add-in, you must enable the required permissions in the manifest.
 
-To support REST calls from a delegate, set the [Permissions](/javascript/api/manifest/permissions) node in the manifest to `ReadWriteMailbox`.
+First, to support REST calls from a delegate, the add-in must request the **read/write mailbox** permission. The markup varies depending on the type of manifest.
 
-The following example shows the `SupportsSharedFolders` element set to `true` in a section of the manifest.
+- **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
+- **Teams manifest (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+
+Second, enable support for shared folders. The markup varies depending on the type of manifest.
+
+# [XML Manifest](#tab/xmlmanifest)
+
+Set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors aren't supported.
 
 ```XML
 ...
@@ -138,6 +145,26 @@ The following example shows the `SupportsSharedFolders` element set to `true` in
 </VersionOverrides>
 ...
 ```
+
+# [Teams Manifest (developer preview)](#tab/jsonmanifest)
+
+Add an additional object to the "authorization.permissions.resourceSpecific" array and set its "name" property to "Mailbox.SharedFolder".
+
+```json
+"authorization": {
+  "permissions": {
+    "resourceSpecific": [
+      ...
+      {
+        "name": "Mailbox.SharedFolder",
+        "type": "Delegated"
+      },
+    ]
+  }
+},
+```
+
+---
 
 ## Perform an operation as delegate or shared mailbox user
 
@@ -209,7 +236,7 @@ if (item.getSharedPropertiesAsync) {
   // Perform operation for shared item.
 } else {
   // In general, this is not a shared item, so construct the REST URL using info from the Call REST APIs article:
-  // https://docs.microsoft.com/office/dev/add-ins/outlook/use-rest-api
+  // https://learn.microsoft.com/office/dev/add-ins/outlook/use-rest-api
 
   // Perform operation for non-shared item.
 }
@@ -239,7 +266,12 @@ The message is now in a shared context and add-ins that support these shared sce
 
 ### REST and EWS
 
-Your add-in can use REST and the add-in's permission must be set to `ReadWriteMailbox` to enable REST access to the owner's mailbox or to the shared mailbox as applicable. EWS is not supported.
+Your add-in can use REST. To enable REST access to the owner's mailbox or to the shared mailbox as applicable, the add-in must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
+
+- **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
+- **Teams manifest (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+
+EWS isn't supported.
 
 ### User or shared mailbox hidden from an address list
 

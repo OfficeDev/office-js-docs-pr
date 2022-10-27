@@ -1,13 +1,13 @@
 ---
 title: Custom functions debugging in a non-shared runtime
 description: Learn how to debug your Excel custom functions that don't use a shared runtime.
-ms.date: 07/11/2022
+ms.date: 10/04/2022
 ms.localizationpriority: medium
 ---
 
 # Custom functions debugging
 
-This article discusses debugging only for custom functions that **don't use a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)**. To debug custom functions add-ins that use a shared runtime, see [Configure your Office Add-in to use a shared JavaScript runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
+This article discusses debugging only for custom functions that **don't use a [shared runtime](../testing/runtimes.md#shared-runtime)**. To debug custom functions add-ins that use a shared runtime, see [Configure your Office Add-in to use a shared runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -146,6 +146,8 @@ If you aren't using VS Code, you can use the command line (such as bash, or Powe
   
     `npm run start:web -- --document {url}` (where `{url}` is the URL of an Excel file on OneDrive or SharePoint)
   
+    [!include[Mac command line note](../includes/mac-command-line.md)]
+  
     If your add-in doesn't sideload in the document, follow the steps in [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
   
 4. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
@@ -167,6 +169,9 @@ You can use the following tasks to start debugging on desktop or online.
 
 - `npm run start:desktop`: Starts Excel on desktop and sideloads your add-in.
 - `npm run start:web -- --document {url}` (where `{url}` is the URL of an Excel file on OneDrive or SharePoint): Starts Excel on the web and sideloads your add-in.
+
+  [!include[Mac command line note](../includes/mac-command-line.md)]
+
 - `npm run stop`: Stops Excel and debugging.
 
 ## Next steps
@@ -175,6 +180,7 @@ Learn about [Authentication for custom functions without a shared runtime](custo
 
 ## See also
 
-* [Custom functions troubleshooting](custom-functions-troubleshooting.md)
-* [Error handling for custom functions in Excel](custom-functions-errors.md)
-* [Create custom functions in Excel](custom-functions-overview.md)
+- [Custom functions troubleshooting](custom-functions-troubleshooting.md)
+- [Error handling for custom functions in Excel](custom-functions-errors.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
+- [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime)

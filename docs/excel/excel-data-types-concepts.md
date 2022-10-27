@@ -1,25 +1,24 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 07/11/2022
+ms.date: 10/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
 ---
 
-# Excel data types core concepts (preview)
-
-[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
+# Excel data types core concepts
 
 This article describes how to use the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) to work with data types. It introduces core concepts that are fundamental to data type development.
 
 ## The `valuesAsJson` property
 
-The `valuesAsJson` property is integral to creating data types in Excel. This property is an expansion of `values` properties, such as [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member). Both the `values` and `valuesAsJson` properties are used to access the value in a cell, but the `values` property only returns one of the four basic types: string, number, boolean, or error (as a string). In contrast, `valuesAsJson` returns expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
+The `valuesAsJson` property (or the singular `valueAsJson` for [NamedItem](/javascript/api/excel/excel.nameditem)) is integral to creating data types in Excel. This property is an expansion of `values` properties, such as [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member). Both the `values` and `valuesAsJson` properties are used to access the value in a cell, but the `values` property only returns one of the four basic types: string, number, boolean, or error (as a string). In contrast, `valuesAsJson` returns expanded information about the four basic types, and this property can return data types such as formatted number values, entities, and web images.
 
 The following objects offer the `valuesAsJson` property.
 
+- [NamedItem](/javascript/api/excel/excel.nameditem) (as `valueAsJson`)
 - [NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)
 - [Range](/javascript/api/excel/excel.range)
 - [RangeView](/javascript/api/excel/excel.rangeview)
@@ -52,7 +51,7 @@ The `CellValue` type alias also returns the [CellValueExtraProperties](/javascri
 
 Each cell value type returned by `valuesAsJson` uses a JSON metadata schema designed for that type. Along with additional properties unique to each data type, these JSON metadata schemas all have the `type`, `basicType`, and `basicValue` properties in common.
 
-The `type` defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data. The `basicType` is always readonly and is used as a fallback when the data type isn't supported or is formatted incorrectly. The `basicValue` matches the value that would be returned by the `values` property. The `basicValue` is used as a fallback when calculations encounter incompatible scenarios, such as an older version of Excel that doesn't support the data types feature. The `basicValue` is readonly for `ArrayCellValue`, `EntityCellValue`, `LinkedEntityCellValue`, and `WebImageCellValue` data types.
+The `type` defines the [CellValueType](/javascript/api/excel/excel.cellvaluetype) of the data. The `basicType` is always read-only and is used as a fallback when the data type isn't supported or is formatted incorrectly. The `basicValue` matches the value that would be returned by the `values` property. The `basicValue` is used as a fallback when calculations encounter incompatible scenarios, such as an older version of Excel that doesn't support the data types feature. The `basicValue` is read-only for `ArrayCellValue`, `EntityCellValue`, `LinkedEntityCellValue`, and `WebImageCellValue` data types.
 
 In addition to the three fields that all data types share, the JSON metadata schema for each `*CellValue` has properties available according to that type. For example, the [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) type includes the `altText` and `attribution` properties, while the [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) type offers the `properties` and `text` fields.
 
@@ -70,10 +69,12 @@ The following JSON code sample shows the complete schema of a formatted number v
 const myDate: Excel.FormattedNumberCellValue = {
     type: Excel.CellValueType.formattedNumber,
     basicValue: 32889.0,
-    basicType: Excel.RangeValueType.double, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.double, // A read-only property. Used as a fallback in incompatible scenarios.
     numberFormat: "m/d/yyyy"
 };
 ```
+
+Begin experimenting with formatted number values by opening [Script Lab](../overview/explore-with-script-lab.md) and checking out the [Data types: Formatted numbers](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-formatted-number.yaml) snippet in our **Samples** library.
 
 ## Entity values
 
@@ -97,12 +98,14 @@ const myEntity: Excel.EntityCellValue = {
             basicValue: "I love llamas."
         }
     }, 
-    basicType: Excel.RangeValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
-    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.error, // A read-only property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A read-only property. Used as a fallback in incompatible scenarios.
 };
 ```
 
 Entity values also offer a `layouts` property that creates a card for the entity. The card displays as a modal window in the Excel UI and can display additional information contained within the entity value, beyond what's visible in the cell. To learn more, see [Use cards with entity value data types](excel-data-types-entity-card.md).
+
+To explore entity data types, start by going to [Script Lab](../overview/explore-with-script-lab.md) in Excel and opening the [Data types: Create entity cards from data in a table](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) snippet in our **Samples** library. The [Data types: Entity values with references](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-references.yaml) and [Data types: Entity value attribution properties](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml) snippets offer a deeper look at entity features.
 
 ### Linked entities
 
@@ -121,10 +124,12 @@ The following JSON code sample shows the complete schema of a web image.
 const myImage: Excel.WebImageCellValue = {
     type: Excel.CellValueType.webImage,
     address: "https://bit.ly/2YGOwtw", 
-    basicType: Excel.RangeValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
-    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.error, // A read-only property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A read-only property. Used as a fallback in incompatible scenarios.
 };
 ```
+
+Try out web image data types by opening [Script Lab](../overview/explore-with-script-lab.md) and selecting the [Data types: Web images](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-web-image.yaml) snippet in our **Samples** library.
 
 ## Improved error support
 
@@ -149,9 +154,18 @@ The following is a list of all the error objects with expanded support through d
 
 Each of the error objects can access an enum through the `errorSubType` property, and this enum contains additional data about the error. For example, the `BlockedErrorCellValue` error object can access the [BlockedErrorCellValueSubType](/javascript/api/excel/excel.blockederrorcellvaluesubtype) enum. The `BlockedErrorCellValueSubType` enum offers additional data about what caused the error.
 
+Learn more about the data types error objects by checking out the [Data types: Set error values](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-error-values.yaml) snippet in our [Script Lab](../overview/explore-with-script-lab.md) **Samples** library.
+
+## Next steps
+
+Learn how entity data types extend the potential of Excel add-ins beyond a 2-dimensional grid with the [Use cards with entity value data types](excel-data-types-entity-card.md) article.
+
+Use the [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) sample in our [OfficeDev/Office-Add-in-samples](https://github.com/OfficeDev/Office-Add-in-samples) repository to experiment more deeply with data types by building and sideloading an add-in that creates and edits data types in a workbook.
+
 ## See also
 
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
 - [Use cards with entity value data types](excel-data-types-entity-card.md)
-- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
+- [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
 - [Custom functions and data types](custom-functions-data-types-concepts.md)
+- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)

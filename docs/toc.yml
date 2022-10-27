@@ -27,6 +27,8 @@ items:
       href: quickstarts/project-quickstart.md
     - name: Word add-in
       href: quickstarts/word-quickstart.md
+    - name: Single sign-on (SSO)
+      href: quickstarts/sso-quickstart.md
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
@@ -57,6 +59,8 @@ items:
     - name: Browsers used by Office Add-ins
       href: concepts/browsers-used-by-office-web-add-ins.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Runtimes in Office Add-ins
+      href: testing/runtimes.md
     - name: Support Internet Explorer 11
       href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
@@ -97,6 +101,9 @@ items:
       - name: Automatically open a task pane with a document
         href: develop/automatically-open-a-task-pane-with-a-document.md
         displayName: manifest
+      - name: Automatically open a task pane at add-in installation
+        href: develop/automatically-open-on-installation.md
+        displayName: manifest
       - name: Configure your add-in to use a shared runtime
         href: develop/configure-your-add-in-to-use-a-shared-runtime.md
       - name: Run code on document open
@@ -135,6 +142,8 @@ items:
         items:
         - name: Enable SSO in an Office Add-in
           href: develop/sso-in-office-add-ins.md
+        - name: Quick start
+          href: quickstarts/sso-quickstart.md
         - name: Register with Microsoft identity platform
           href: develop/register-sso-add-in-aad-v2.md
         - name: Grant administrator consent
@@ -360,6 +369,8 @@ items:
       href: /legal/marketplace/certification-policies
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+    - name: Guidance for deploying on government clouds
+      href: publish/government-cloud-guidance.md
     - name: Maintain your Office Add-in
       href: publish/maintain-breaking-changes.md
 
@@ -418,17 +429,17 @@ items:
       href: excel/excel-add-ins-comments.md
       displayName: Excel
     - name: Data types
-      displayName: preview
+      displayName: Excel
       items:
         - name: Overview
           href: excel/excel-data-types-overview.md
-          displayName: Excel, preview
+          displayName: Excel
         - name: Concepts
           href: excel/excel-data-types-concepts.md
-          displayName: Excel, preview
+          displayName: Excel
         - name: Entity value cards
           href: excel/excel-data-types-entity-card.md
-          displayName: Excel, preview
+          displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
       displayName: Excel
@@ -545,7 +556,7 @@ items:
       displayName: Excel, Custom Functions
     - name: Data types
       href: excel/custom-functions-data-types-concepts.md
-      displayName: Excel, Custom Functions, preview
+      displayName: Excel, Custom Functions
     - name: Call Excel JavaScript APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
@@ -632,7 +643,7 @@ items:
       href: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
       displayName: Outlook
     - name: API reference - latest release
-      href: reference/outlook-api-reference-1-11.md
+      href: reference/outlook-api-reference-latest.md
       displayName: Outlook
     - name: Outlook add-in design guidelines
       href: outlook/outlook-addin-design.md
@@ -642,10 +653,17 @@ items:
       href: outlook/contextual-outlook-add-ins.md
     - name: Module extension add-ins
       href: outlook/extension-module-outlook-add-ins.md
+    - name: Item multi-select
+      href: outlook/item-multi-select.md
+      displayName: preview
+    - name: Pinnable task pane
+      href: outlook/pinnable-taskpane.md
     - name: Add-ins for Outlook Mobile
       href: outlook/outlook-mobile-addins.md
     - name: Create an online meeting add-in
       href: outlook/online-meeting.md
+    - name: Log appointment notes on mobile
+      href: outlook/mobile-log-appointments.md
     - name: On-send add-ins
       href: outlook/outlook-on-send-addins.md
     - name: Append on send
@@ -663,8 +681,6 @@ items:
       - name: AppSource options
         href: outlook/autolaunch-store-options.md
         displayName: event-based activation
-    - name: Pinnable task pane
-      href: outlook/pinnable-taskpane.md
     - name: Shared folders and shared mailboxes
       href: outlook/delegate-access.md
       displayName: delegate access
@@ -894,6 +910,9 @@ items:
     displayName: Excel
   - name: Copy Script Lab snippet to Yo Office
     href: overview/create-an-office-add-in-from-script-lab.md
+  - name: Batching custom function remote calls
+    href: excel/custom-functions-batching.md
+    displayName: Excel, Custom Functions
 - name: Resources
   items:
   - name: Glossary

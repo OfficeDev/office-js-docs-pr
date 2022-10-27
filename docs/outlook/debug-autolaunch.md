@@ -2,18 +2,18 @@
 title: Debug your event-based Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 10/11/2022
 ms.localizationpriority: medium
 ---
 
 # Debug your event-based Outlook add-in
 
-This article provides debugging guidance as you implement [event-based activation](autolaunch.md) in your add-in. The event-based activation feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) with additional events now available in preview. For more information, refer to [Supported events](autolaunch.md#supported-events).
+This article provides debugging guidance as you implement [event-based activation](autolaunch.md) in your add-in. The event-based activation feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For more information, see [Supported events](autolaunch.md#supported-events).
 
 > [!IMPORTANT]
 > This debugging capability is only supported in Outlook on Windows with a Microsoft 365 subscription.
 
-In this article, we discuss the key stages to enable debugging.
+This article discusses the key stages to enable debugging.
 
 - [Mark the add-in for debugging](#mark-your-add-in-for-debugging)
 - [Configure Visual Studio Code](#configure-visual-studio-code)
@@ -24,7 +24,10 @@ If you used the Yeoman Generator for Office Add-ins to create your add-in projec
 
 ## Mark your add-in for debugging
 
-1. Set the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`. `[Add-in ID]` is the **\<Id\>** in the add-in manifest.
+1. Set the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`. Replace `[Add-in ID]` with the add-in's ID from the manifest.
+
+    - **XML manifest**: Use the value of the **\<Id\>** element child of the root **\<OfficeApp\>** element.
+    - **Teams manifest (preview)**: Use the value of the "id" property of the root anonymous `{ ... }` object.
 
     **Created with Yeoman generator**: In a command line window, navigate to the root of your add-in folder then run the following command.
 
@@ -38,10 +41,10 @@ If you used the Yeoman Generator for Office Add-ins to create your add-in projec
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-1. Start Outlook desktop (or restart Outlook if it's already open).
-1. Compose a new message or appointment. You should see the following dialog. Do *not* interact with the dialog yet.
+1. Start Outlook or restart it if it's already open.
+1. Compose a new message or appointment. The Debug Event-based handler dialog box should appear. Do *not* interact with the dialog yet.
 
-    ![Screenshot of Debug Event-based handler dialog.](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![The Debug Event-based handler dialog in Windows.](../images/outlook-win-autolaunch-debug-dialog.png)
 
 ## Configure Visual Studio Code
 
@@ -72,13 +75,13 @@ If you used the Yeoman Generator for Office Add-ins to create your add-in projec
 1. Create a new folder called **Debugging** (perhaps in your **Desktop** folder).
 1. Open Visual Studio Code.
 1. Go to **File** > **Open Folder**, navigate to the folder you just created, then choose **Select Folder**.
-1. On the Activity Bar, select the **Debug** item (Ctrl+Shift+D).
+1. On the Activity Bar, select **Run and Debug** (Ctrl+Shift+D).
 
-    ![Screenshot of Debug icon on the Activity Bar.](../images/vs-code-debug.png)
+    ![The Run and Debug icon on the Activity Bar.](../images/vs-code-debug.png)
 
 1. Select the **create a launch.json file** link.
 
-    ![Screenshot of link to create a launch.json file in Visual Studio Code.](../images/vs-code-create-launch.json.png)
+    ![The link located under the Run and Debug option to create a launch.json file in Visual Studio Code.](../images/vs-code-create-launch.json.png)
 
 1. In the **Select Environment** dropdown, select **Edge: Launch** to create a launch.json file.
 1. Add the following excerpt to your list of configurations. Save your changes.
@@ -108,9 +111,9 @@ If you used the Yeoman Generator for Office Add-ins to create your add-in projec
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
 1. Place breakpoints in bundle.js where you want the debugger to stop.
-1. In the **DEBUG** dropdown, select the name **Direct Debugging**, then select **Run**.
+1. In the **DEBUG** dropdown, select **Direct Debugging**, then select the **Start Debugging** icon.
 
-    ![Screenshot of selecting Direct Debugging from configuration options in the Visual Studio Code Debug dropdown.](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![The Direct Debugging option selected from configuration options in the Visual Studio Code Debug dropdown.](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## Debug
 

@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: A list of Office Add-in code samples to help you learn and build your own add-ins.
-ms.date: 06/10/2022
+ms.date: 09/16/2022
 localization_priority: high
 ---
 
@@ -18,21 +18,19 @@ The following samples show how to build the simplest Office Add-in with only a m
 - [PowerPoint "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world)
 - [Word "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world)
 
-<br>
-
----
-
----
-
 ## Blazor WebAssembly
 
+If your development background is in building VSTO Add-ins, the following samples show how to build Office Web Add-ins using .NET Blazor WebAssembly. You can keep much of your code in C# and Visual Studio.
+
 - [Create a Blazor WebAssembly Excel add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/excel-blazor-add-in)
+- [Create a Blazor WebAssembly Outlook add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/outlook-blazor-add-in)
 - [Create a Blazor WebAssembly Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/word-blazor-add-in)
 
 ## Excel
 
 | Name                | Description         |
 |:--------------------|:--------------------|
+| [Data types explorer](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) (preview) | Builds an Excel add-in that allows you to create and explore data types in your workbooks. Data types enable add-in developers to organize complex data structures as objects, such as formatted number values, web images, and entity values. |
 | [Open in Teams](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-open-in-teams) | Create a new Excel spreadsheet in Microsoft Teams containing data you define.|
 | [Insert an external Excel file and populate it with JSON data](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-insert-file)  | Insert an existing template from an external Excel file into the currently open Excel workbook. Then, populate the template with data from a JSON web service. |
 | [Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs) | Create a custom contextual tab on the ribbon in the Office UI. The sample creates a table, and when the user moves the focus inside the table, the custom tab is displayed. When the user moves outside the table, the custom tab is hidden. |
@@ -57,12 +55,6 @@ The following samples show how to build the simplest Office Add-in with only a m
 | [Get, edit, and set OOXML content in a Word document with a Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-get-set-edit-openxml) | This sample shows how to get, edit, and set OOXML content in a Word document. The sample add-in provides a scratch pad to get Office Open XML for your own content and test your own edited Office Open XML snippets.|
 | [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)  | This sample add-in shows you how to add a variety of rich content types to a Word document using the setSelectedDataAsync method with ooxml coercion type. The add-in also gives you the ability to show the Office Open XML markup for each sample content type right on the page. |
 
-<br>
-
----
-
----
-
 ## Authentication, authorization, and single sign-on (SSO)
 
 | Name                | Description         |
@@ -74,7 +66,13 @@ The following samples show how to build the simplest Office Add-in with only a m
 | [Single Sign-on (SSO) Office Add-in with ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on ASP.NET. |
 | [Single Sign-on (SSO) Office Add-in with Node.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | Use the `getAccessToken` API in Office.js to give the add-in access to Microsoft Graph data. This sample is built on Node.js.|
 
-## Shared JavaScript runtime
+## Office
+
+| Name                | Description         |
+|:--------------------|:--------------------|
+| [Save custom settings in your Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-save-custom-settings) | Save custom settings inside an Office Add-in. The add-in stores data as key-value pairs, using the JavaScript API for Office property bag, browser cookies, web storage (localStorage and sessionStorage), or by storing the data in a hidden div in the document. |
+
+## Shared runtime
 
 | Name                | Description         |
 |:--------------------|:--------------------|

@@ -37,8 +37,8 @@
             "redirect_url": "/javascript/api/onenote?view=onenote-js-1.1"
         },
         {
-            "source_path": "docs/reference/outlook-api-reference-1-11.md",
-            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.11"
+            "source_path": "docs/reference/outlook-api-reference-latest.md",
+            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.12"
         },
         {
             "source_path": "docs/reference/powerpoint-api-reference.md",
@@ -1190,13 +1190,8 @@
             "redirect_url": "/office/dev/add-ins/testing/sideload-an-office-add-in-on-mac"
         },
         {
-            "source_path": "docs/quickstarts/sso-quickstart.md",
-            "redirect_url": "/office/dev/add-ins/develop/sso-in-office-add-ins"
-        },
-        {
             "source_path": "docs/quickstarts/sso-quickstart-customize.md",
             "redirect_url": "/office/dev/add-ins/develop/sso-in-office-add-ins"
         }
-        
     ]
 }

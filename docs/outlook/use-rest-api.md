@@ -1,7 +1,7 @@
 ---
 title: Use the Outlook REST APIs from an Outlook add-in
 description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
-ms.date: 07/08/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
 ---
 
@@ -14,12 +14,9 @@ The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/previ
 >
 > The Outlook REST endpoints will be fully decommissioned on November 30, 2022 (for more details, see the [November 2020 announcement](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). You should migrate existing add-ins to use [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). For guidance, see [Compare Microsoft Graph and Outlook REST API endpoints](/outlook/rest/compare-graph).
 >
-> To assist you with the migration, active add-ins that use the REST service prior to November 30, 2022 are eligible for an exemption to keep using the service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). This exemption is based on the add-in's manifest ID and applies to privately released and AppSource-hosted add-ins. Add-ins must meet the following conditions to be eligible for the exemption.
+> To assist you with the migration, active add-ins that use the REST service are eligible for an exemption to keep using the service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). This includes new add-ins developed after November 30, 2022. The exemption is based on the add-in's manifest ID and applies to privately released and AppSource-hosted add-ins.
 >
-> - The add-in's [ID](/javascript/api/manifest/id) must be valid and unique. Add-ins hosted in AppSource are automatically assigned a GUID, while privately released add-ins must be manually assigned one in the manifest.
-> - If your add-in caters to multiple customers and isn't hosted in AppSource, the add-in instance used by each customer must use the same manifest ID. If your add-in uses a different ID per customer, it isn't eligible for an exemption and must be migrated to Microsoft Graph prior to November 2022.
->
-> To ensure your add-in's exemption, complete the [REST API add-in verification form](https://aka.ms/RESTCheck) prior to November 2022. For more information, see the [Office Add-ins February 2022 community call blog post](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-february-9-2022/).
+> Automatic traffic identification of Outlook add-ins that use the REST service is currently being tested for exemption validation. If you'd like to participate in this testing phase, please complete the [REST API add-in verification form](https://aka.ms/RESTCheck) prior to November 2022. For more information, see the [Office Add-ins August 2022 community call blog post](https://pnp.github.io/blog/office-add-ins-community-call/2022-08-10/).
 
 ## Get an access token
 
@@ -29,9 +26,10 @@ By setting the `isRest` option to `true`, you can request a token compatible wit
 
 ### Add-in permissions and token scope
 
-It is important to consider what level of access your add-in will need via the REST APIs. In most cases, the token returned by `getCallbackTokenAsync` will provide read-only access to the current item only. This is true even if your add-in specifies the `ReadWriteItem` permission level in its manifest.
+It is important to consider what level of access your add-in will need via the REST APIs. In most cases, the token returned by `getCallbackTokenAsync` will provide read-only access to the current item only. This is true even if your add-in specifies the [read/write item permission](understanding-outlook-add-in-permissions.md#readwrite-item-permission) level in its manifest.
 
-If your add-in will require write access to the current item or other items in the user's mailbox, your add-in must specify the `ReadWriteMailbox` permission level in its manifest. In this case, the token returned will contain read/write access to the user's messages, events, and contacts.
+If your add-in will require write access to the current item or other items in the user's mailbox, your add-in must specify the [read/write mailbox permission](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission).
+ level in its manifest. In this case, the token returned will contain read/write access to the user's messages, events, and contacts.
 
 ### Example
 
@@ -100,7 +98,7 @@ function getCurrentItem(accessToken) {
 
   // Construct the REST URL to the current item.
   // Details for formatting the URL can be found at
-  // https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations#get-messages.
+  // https://learn.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations#get-messages.
   const getMessageUrl = Office.context.mailbox.restUrl +
     '/v2.0/me/messages/' + itemId;
 
