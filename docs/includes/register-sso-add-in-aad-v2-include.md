@@ -99,7 +99,7 @@ Sometimes called an _application password_, a client secret is a string value yo
     | **Scope name** | The name of your scope. A common scope naming convention is `resource.operation.constraint`. | For SSO this must be set to `access_as_user`. |
     | **Who can consent** | Whether this scope can be consented to by users or if admin consent is required. Select **Admins only** for higher-privileged permissions. | For learning SSO and samples, we recommend you set this to **Admins and users**. |
     | **Admin consent display name** | A short description of the scope's purpose that only admins will see. | `Read-only access to user files and profiles.` |
-    | **Admin consent description** | A more detailed description of the permission granted by the scope that only admins will see. | `Allow Office to have read-only access to all user files and profiles. Office can call the app's web APIs as the current user.` |
+    | **Admin consent description** | A more detailed description of the permission granted by the scope that only admins see. | `Allow Office to have read-only access to all user files and profiles. Office can call the app's web APIs as the current user.` |
     | **User consent display name** | A short description of the scope's purpose. Shown to users only if you set **Who can consent** to **Admins and users**. | `Read-only access to your files and profile.` |
     | **User consent description** | A more detailed description of the permission granted by the scope. Shown to users only if you set **Who can consent** to **Admins and users**. | `Allow Office to have read-only access to your files and user profile.` |
 
