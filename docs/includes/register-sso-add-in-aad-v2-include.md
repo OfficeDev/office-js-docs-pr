@@ -176,7 +176,7 @@ You must define the access token version that is acceptable for your app. This c
 
 ### Define the access token version
 
-the access token version can change if you chose an account type other than **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**. Use the following steps to ensure the access token version is correct for Office SSO usage.
+The access token version can change if you chose an account type other than **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**. Use the following steps to ensure the access token version is correct for Office SSO usage.
 
 1. Select **Manage** > **Manifest** from the left pane.
 
