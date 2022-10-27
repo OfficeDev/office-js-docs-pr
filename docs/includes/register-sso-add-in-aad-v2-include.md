@@ -84,7 +84,7 @@ Sometimes called an _application password_, a client secret is a string value yo
 
 ## Add a scope
 
-1. Select the **Add a scope** button.
+1. Select **Add a scope**.
 
     :::image type="content" source="../images/azure-portal-add-a-scope.png" alt-text="Select Add a scope button.":::
 
