@@ -1,7 +1,7 @@
 ---
 title: Error handling with the application-specific JavaScript APIs
 description: Learn about Excel, Word, PowerPoint, and other application-specific JavaScript API error handling logic to account for runtime errors.
-ms.date: 10/26/2022
+ms.date: 10/27/2022
 ms.localizationpriority: medium
 ---
 
@@ -83,8 +83,6 @@ The following tables list the errors that application-specific APIs may return.
 |`RequestAborted`|The request was aborted during run time.|*None.* |
 |`RequestPayloadSizeLimitExceeded`|The request payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.| This error only occurs in Office on the web.|
 |`ResponsePayloadSizeLimitExceeded`|The response payload size has exceeded the limit. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|  This error only occurs in Office on the web.|
-|`SearchDialogIsOpen`|The search dialog is open.|*None.* |
-|`SearchStringInvalidOrTooLong`|The search string is invalid or too long.|*None.* |
 |`ServiceNotAvailable`|The service is unavailable.|*None.* |
 |`Unauthenticated` |Required authentication information is either missing or invalid.|*None.* |
 |`UnsupportedFeature`|The operation failed because the source worksheet contains one or more unsupported features.|*None.* |
@@ -107,6 +105,13 @@ The following tables list the errors that application-specific APIs may return.
 |`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|*None.* |
 |`RefreshWorkbookLinksBlocked`|The operation failed because the user hasn't granted permission to refresh external workbook links.|*None.* |
 |`UnsupportedSheet`|This sheet type does not support this operation, since it is a Macro or Chart sheet.|*None.* |
+
+### Word-specific error codes and messages
+
+|Error code | Error message | Notes |
+|:----------|:--------------|:------|
+|`SearchDialogIsOpen`|The search dialog is open.|*None.* |
+|`SearchStringInvalidOrTooLong`|The search string is invalid or too long.| The search string maximum is 255 characters. |
 
 ## Error notifications
 
