@@ -157,7 +157,7 @@ Sometimes called an _application password_, a client secret is a string value yo
 
     :::image type="content" source="../images/azure-portal-request-api-permissions-delegated.png" alt-text="The Request API permissions pane with delegated permissions button.":::
 
-1. Use the **Select permissions** search box to search for the permissions your add-in needs. The following are typical values used in the samples.
+1. In the **Select permissions** search box, search for the permissions your add-in needs. The following are typical values used in the samples.
 
     * Files.Read
     * openid
