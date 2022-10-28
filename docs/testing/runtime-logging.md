@@ -70,7 +70,7 @@ The following image shows what the registry should look like. To turn the featur
 
 ## Runtime logging on Mac
 
-1. Make sure that you are running Office 2016 desktop build **16.27** (19071500) or later.
+1. Make sure that you are running Office 2016 desktop build **16.27.19071500** or later.
 
 2. Open **Terminal** and set a runtime logging preference by using the `defaults` command:
 

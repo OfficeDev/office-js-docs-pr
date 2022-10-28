@@ -19,7 +19,7 @@ This article describes how to edit your manifest to define add-in commands and h
 
 ## Step 1: Create the project
 
-We recommend you create a project by following one of the quick starts such as [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md). Each quick start for Excel, Word, and PowerPoint generates a project that already contains an add-in command (button) to show the task pane. Ensure that you have read [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands.md) before using add-in commands.
+We recommend you create a project by following one of the quick starts such as [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md). Each quick start for Excel, PowerPoint, and Word generates a project that already contains an add-in command (button) to show the task pane. Ensure that you have read [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md) before using add-in commands.
 
 ## Step 2: Create a task pane add-in
 

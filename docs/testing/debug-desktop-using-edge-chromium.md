@@ -23,7 +23,7 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js (version 10+)](https://nodejs.org/)
 - Windows 10, 11
-- A combination of platform and Office application that supports Microsoft Edge with WebView2 (Chromium-based) as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your version of Microsoft 365 is earlier than 2101, you will need to install WebView2. Use the instructions for installing it at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+- A combination of platform and Office application that supports Microsoft Edge with WebView2 (Chromium-based) as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your version of Microsoft 365 subscription Office is earlier than 2101, you will need to install WebView2. Use the instructions for installing it at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 ## Use the Visual Studio Code debugger
 
@@ -37,9 +37,9 @@ These instructions assume you have experience using the command line, understand
 
 1. Open VS Code and open your project in it. 
 
-1. Choose  **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
+1. Choose  **View** > **Run** or enter **Ctrl+Shift+D** to switch to debug view.
 
-1. From the **RUN AND DEBUG** options, choose the Edge Chromium option for your host application, such as **Outlook Desktop (Edge Chromium)**. Select **F5** or choose **Run > Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
+1. From the **RUN AND DEBUG** options, choose the Edge Chromium option for your host application, such as **Outlook Desktop (Edge Chromium)**. Select **F5** or choose **Run** > **Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
 
    > [!TIP]
    > If you aren't using a project created with Yo Office, you may be prompted to adjust a registry key. While in the root folder of your project, run the following in the command line.
@@ -54,7 +54,7 @@ These instructions assume you have experience using the command line, understand
    > ![Error that says Configured debug type edge is not supported.](../images/configured-debug-type-error.jpg)
    >
    > Complete the tasks in [Appendix B](#appendix-b) and then restart this procedure.
-   
+
 1. In the host application, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear with text similar to the following:
 
    > WebView Stop On Load.
@@ -74,28 +74,28 @@ These instructions assume you have experience using the command line, understand
    > Breakpoints in calls of `Office.initialize` or `Office.onReady` are ignored. For details about these functions, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
 > [!IMPORTANT]
-> The best way to stop a debugging session is to select **Shift+F5** or choose **Run > Stop Debugging** from the menu. This action should close the Node server window and attempt to close the host application, but there will be a prompt on the host application asking you whether to save the document or not. Make an appropriate choice and let the host application close. Avoid manually closing the Node window or host application. Doing so can cause bugs especially when you are stopping and starting debugging sessions repeatedly.
+> The best way to stop a debugging session is to select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu. This action should close the Node server window and attempt to close the host application, but there will be a prompt on the host application asking you whether to save the document or not. Make an appropriate choice and let the host application close. Avoid manually closing the Node window or host application. Doing so can cause bugs especially when you are stopping and starting debugging sessions repeatedly.
 >
 > If debugging stops working; for example, if breakpoints are being ignored; stop debugging. Then, if necessary, close all host application windows and the Node window. Finally, close Visual Studio Code and reopen it.
 
 ### Appendix A
 
-If your project was not created with Yo Office, you need to create a debug configuration for Visual Studio Code. 
+If your project was not created with Yo Office, you need to create a debug configuration for Visual Studio Code.
 
-1. Create a file named `launch.json` in the `\.vscode` folder of the project if there isn't one there already. 
+1. Create a file named `launch.json` in the `\.vscode` folder of the project if there isn't one there already.
 1. Ensure that the file has a `configurations` array. The following is a simple example of a `launch.json`.
 
    ```json
    {
-     // other properities may be here.
+     // Other properties may be here.
    
      "configurations": [
    
-       // configuration objects may be here.
+       // Configuration objects may be here.
    
      ]
    
-     //other properies may be here.
+     // Other properties may be here.
    }
    ```
 
@@ -121,11 +121,11 @@ If your project was not created with Yo Office, you need to create a debug confi
 ### Appendix B
 
 1. In the error dialog box, select the **Cancel** button.
-1. If debugging doesn't stop automatically, select **Shift+F5** or choose **Run > Stop Debugging** from the menu. 
+1. If debugging doesn't stop automatically, select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu.
 1. Close the Node window where the local server is running, if it doesn't close automatically.
 1. Close the Office application if it doesn't close automatically.
 1. Open the `\.vscode\launch.json` file in the project. 
-1. In the `configurations` array, there are several configuration objects. Find the one whose name has the pattern `$HOST$ Desktop (Edge Chromium)`, where $HOST$ is an Office application that your add-in runs in; for example, `Outlook Desktop (Edge Chromium)` or `Word Desktop (Edge Chromium)`. 
+1. In the `configurations` array, there are several configuration objects. Find the one whose name has the pattern `$HOST$ Desktop (Edge Chromium)`, where $HOST$ is an Office application that your add-in runs in; for example, `Outlook Desktop (Edge Chromium)` or `Word Desktop (Edge Chromium)`.
 1. Change the value of the `"type"` property from `"edge"` to `"pwa-msedge"`.
 1. Change the value of the `"useWebView"` property from the string `"advanced"` to the boolean `true` (note there are no quotation marks around the `true`).
 1. Save the file.

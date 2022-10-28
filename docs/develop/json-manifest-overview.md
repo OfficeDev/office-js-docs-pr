@@ -11,7 +11,7 @@ Microsoft is making a number of improvements to the Microsoft 365 developer plat
 
 One important improvement we are working on is the ability to create a single unit of distribution for all your Microsoft 365 extensions by using the same manifest format and schema, based on the current JSON-formatted Teams manifest.
 
-We've taken an important first step toward these goals by making it possible for you to create Outlook Add-ins, running on Windows only, with a version of the Teams JSON manifest.
+We've taken an important first step toward these goals by making it possible for you to create Outlook add-ins, running on Windows only, with a version of the Teams JSON manifest.
 
 > [!NOTE]
 > The new manifest is available for preview and is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins.

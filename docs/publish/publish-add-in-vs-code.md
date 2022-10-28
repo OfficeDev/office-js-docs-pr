@@ -27,9 +27,9 @@ When your add-in is working as desired, you can publish it directly through Visu
 > These steps only work for projects created with the Yeoman generator.
 
 1. Open your project from its root folder in Visual Studio Code (VS Code).
-1. Select **View > Extensions** (Ctrl+Shift+X) to open the Extensions view.
+1. Select **View** > **Extensions** (Ctrl+Shift+X) to open the Extensions view.
 1. Search for the **Azure Storage** extension and install it.
-1. Once installed, an Azure icon is added to the **Activity Bar**. Select it to access the extension. If the **Activity Bar** is hidden, open it by selecting **View > Appearance > Activity Bar**.
+1. Once installed, an Azure icon is added to the **Activity Bar**. Select it to access the extension. If the **Activity Bar** is hidden, open it by selecting **View** > **Appearance** > **Activity Bar**.
 1. Select **Sign in to Azure** to sign in to your Azure account. If you don't already have an Azure account, create one by selecting **Create an Azure Account**. Follow the provided steps to set up your account.
 
     :::image type="content" source="../images/azure-extension-sign-in.png" alt-text="Sign in to Azure button selected in the Azure extension.":::
