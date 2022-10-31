@@ -12,7 +12,7 @@ Users can sign in to Office, and your Office Web Add-in can take advantage of th
 The sample shows you how to build the following parts:
 
 - Client-side code that provides a task pane that loads in Microsoft Excel, Word, or PowerPoint. The client-side code calls the Office JS API `getAccessToken()` to get the SSO access token to call server-side REST APIs.
-- Server-side code that uses ASP.NET Core to provide a single REST API `/api/files`. The server-side code uses [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for all token handling, authentication, and authorization.
+- Server-side code that uses ASP.NET Core to provide a single REST API `/api/files`. The server-side code uses the [Microsoft Authentication Library for .NET (MSAL.NET)](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) for all token handling, authentication, and authorization.
 
 The sample uses SSO and the On-Behalf-Of (OBO) flow to obtain correct access tokens and call Microsoft Graph APIs. If you are unfamiliar with how this flow works, see [How SSO works at runtime](authorize-to-microsoft-graph.md#how-it-works-at-runtime) for more detail.
 
@@ -80,7 +80,7 @@ Use the following values for placeholders for the subsequent app registration st
 1. Replace the placeholder **Enter_client_secret_here** with the client secret value you saved previously.
 
     > [!NOTE]
-    > You can also change the **TenantId** to support single-tenant if you configured your app registration for single-tenant. Replace the **Common** value with the **Application (client) ID** for single-tenant support.
+    > You must also change the **TenantId** to support single-tenant if you configured your app registration for single-tenant. Replace the **Common** value with the **Application (client) ID** for single-tenant support.
 
 1. Save and close the appsettings.json file.
 
