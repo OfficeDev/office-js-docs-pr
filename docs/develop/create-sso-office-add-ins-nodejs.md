@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: Learn how to create a Node.js-based add-in that uses Office Single Sign-on.
-ms.date: 08/31/2022
+ms.date: 10/06/2022
 ms.localizationpriority: medium
 ---
 
@@ -41,84 +41,15 @@ This article works with an add-in that uses Node.js and Express. For a similar a
 
 1. Run the command `npm run install-dev-certs`. Select **Yes** to the prompt to install the certificate.
 
-## Register the add-in with Microsoft identity platform
+Use the following values for placeholders for the subsequent app registration steps.
 
-You need to create an app registration in Azure that represents your middle-tier server. This enables authentication support so that proper access tokens can be issued to the client code in JavaScript. This registration supports both SSO in the client, and fallback authentication using the Microsoft Authentication Library (MSAL).
+| Placeholder           | Value                                 |
+|-----------------------|---------------------------------------|
+| `<add-in-name>`       | **Office-Add-in-NodeJS-SSO**          |
+| `<redirect-platform>` | **Single-page application (SPA)**     |
+| `<redirect-uri>`      | `https://localhost:44355/dialog.html` |
 
-1. To register your app, navigate to the [Azure portal - App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) page to register your app.
-
-1. Sign in with the **_admin_** credentials to your Microsoft 365 tenancy. For example, MyName@contoso.onmicrosoft.com.
-
-1. Select **New registration**. On the **Register an application** page, set the values as follows.
-
-   - Set **Name** to `Office-Add-in-NodeJS-SSO`.
-   - Set **Supported account types** to **Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox).**.
-   - In the **Redirect URI** section, set the platform to **Single-page application (SPA)** with a redirect URI value of `https://localhost:44355/dialog.html`.
-   - Choose **Register**.
-
-   > [!NOTE]
-   > The SPA application type is only used when the client uses MSAL for fallback authentication.
-
-1. On the **Office-Add-in-NodeJS-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
-
-   > [!NOTE]
-   > This **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It's also the "client ID" of the application when it seeks authorized access to Microsoft Graph.
-
-1. In the leftmost sidebar, select **Authentication** under **Manage**. In the **Implicit grant and hybrid flows** section, select both checkboxes for **Access tokens** and **ID tokens**. The sample uses the Microsoft Authentication Library (MSAL) for fallback authentication when SSO is not available.
-
-1. Choose **Save**.
-
-1. Under **Manage**, select **Certificates & secrets** and select **New client secret**. Enter a value for **Description**, then select an appropriate option for **Expires** and choose **Add**.
-
-   The web application uses the client secret **Value** to prove its identity when it requests tokens. _Record this value for use in a later step - it's shown only once._
-
-1. In the leftmost sidebar, select **Expose an API** under **Manage**. Select the **Set** link. This will generate the Application ID URI in the form "api://$App ID GUID$", where $App ID GUID$ is the **Application (client) ID**.
-
-1. In the generated ID, insert `localhost:44355/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. When you are finished, the entire ID should have the form `api://localhost:44355/$App ID GUID$`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`. Then choose **Save**.
-
-1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **Scope name**.
-
-1. Set **Who can consent?** to **Admins and users**.
-
-1. Fill in the fields for configuring the admin and user consent prompts with values that are appropriate for the `access_as_user` scope which enables the Office client application to use your add-in's web APIs with the same rights as the current user. Suggestions:
-
-   - **Admin consent display name**: Office can act as the user.
-   - **Admin consent description**: Enable Office to call the add-in's web APIs with the same rights as the current user.
-   - **User consent display name**: Office can act as you.
-   - **User consent description**: Enable Office to call the add-in's web APIs with the same rights that you have.
-
-1. Ensure that **State** is set to **Enabled**.
-
-1. Select **Add scope**.
-
-   > [!NOTE]
-   > The domain part of the **Scope** name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
-
-1. In the **Authorized client applications** section, select **Add a client application** button and then, in the panel that opens, set the Client ID to `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e`, and then select the **Authorized scopes** checkbox for `api://localhost:44355/$app-id-guid$/access_as_user`.
-
-1. Select **Add application**.
-
-   > [!NOTE]
-   > The `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID pre-authorizes all Microsoft Office application endpoints. It's also required if you want to support Microsoft accounts (MSA) on Office on Windows and Mac. Alternatively, you can enter a proper subset of the following IDs if for any reason you want to deny authorization to Office on some platforms. Just leave out the IDs of the platforms from which you want to withhold authorization. Users of your add-in on those platforms will not be able to call your Web APIs, but other functionality in your add-in will still work.
-   >
-   > - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-   > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
-   > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
-
-1. In the leftmost sidebar, select **API permissions** under **Manage** and select **Add a permission**. On the panel that opens, choose **Microsoft Graph** and then choose **Delegated permissions**.
-
-1. Use the **Select permissions** search box to search for the permissions your add-in needs. Select the following. Only the first is really required by your add-in itself; but the `profile` and `openid` permissions are required for the Office application to get an access token with user identity to access the middle-tier server.
-
-   - **Files.Read**
-   - **profile**
-   - **openid**
-
-   > [!NOTE]
-   > The `User.Read` permission may already be listed by default. It's a good practice not to ask for permissions that are not needed, so we recommend that you uncheck the box for this permission if your add-in doesn't actually need it.
-
-1. Select the check box for each permission as it appears. After selecting the permissions that your add-in needs, select the **Add permissions** button at the bottom of the panel.
-
-1. On the same page, choose the **Grant admin consent for [tenant name]** button, and then select **Yes** for the confirmation that appears.
+[!INCLUDE [register-sso-add-in-aad-v2-include](../includes/register-sso-add-in-aad-v2-include.md)]
 
 ## Configure the add-in
 
