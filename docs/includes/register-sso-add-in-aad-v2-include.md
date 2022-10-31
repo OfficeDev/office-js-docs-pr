@@ -170,6 +170,8 @@ Sometimes called an _application password_, a client secret is a string value yo
 
     :::image type="content" source="../images/azure-portal-request-api-permissions-add-permissions.png" alt-text="The Request API permissions pane with some permissions selected.":::
 
+1. Select **Grant admin consent for [tenant name]**. Select **Yes** for the confirmation that appears.
+
 ## Configure access token version
 
 You must define the access token version that is acceptable for your app. This configuration is made in the Azure Active Directory application manifest.

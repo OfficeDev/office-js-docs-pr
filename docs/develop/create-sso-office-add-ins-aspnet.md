@@ -41,8 +41,8 @@ Use the following values for placeholders for the subsequent app registration st
 | Placeholder           | Value                                           |
 |-----------------------|-------------------------------------------------|
 | `<add-in-name>`       | **Office-Add-in-ASPNET-SSO**                    |
-| `<redirect-platform>` | **Web**                                         |
-| `<redirect-uri>`      | `https://localhost:44355/AzureADAuth/Authorize` |
+| `<redirect-platform>` | Leave this blank. The SSO sample does not use a redirect URI. |
+| `<redirect-uri>`      | Leave this blank. The SSO sample does not use a redirect URI. |
 
 [!INCLUDE [register-sso-add-in-aad-v2-include](../includes/register-sso-add-in-aad-v2-include.md)]
 
@@ -50,14 +50,14 @@ Use the following values for placeholders for the subsequent app registration st
 
 1. In the root of the **Begin** folder, open the solution (.sln) file in **Visual Studio**. Right-click the top node in **Solution Explorer** (the Solution node, not either of the project nodes), and then select **Set startup projects**.
 
-1. Under **Common Properties**, select **Startup Project**, and then **Multiple startup projects**. Ensure that the **Action** for both projects is set to **Start**, and that the **Office-Add-in-ASPNET-SSO-web** project is listed first. Close the dialog.
+1. Under **Common Properties**, select **Startup Project**, and then **Multiple startup projects**. Ensure that the **Action** for both projects is set to **Start**, and that the **Office-Add-in-ASPNETCoreWebAPI** project is listed first. Close the dialog.
 
 1. In **Solution Explorer**, choose the **Office-Add-in-ASPNET-SSO-manifest** project and open the add-in manifest file “Office-Add-in-ASPNET-SSO.xml” and then scroll to the bottom of the file. Just above the end `</VersionOverrides>` tag, you'll find the following markup.
 
     ```xml
     <WebApplicationInfo>
-	    <Id>$app-id-guid$</Id>
-		<Resource>api://localhost:7080/$app-id-guid$</Resource>
+	    <Id>Enter_client_ID_here</Id>
+		<Resource>api://localhost:44355/Enter_client_ID_here</Resource>
 		<Scopes>
             <Scope>Files.Read</Scope>
 			<Scope>profile</Scope>
@@ -66,7 +66,7 @@ Use the following values for placeholders for the subsequent app registration st
 	</WebApplicationInfo>
     ```
 
-1. Replace the placeholder "$app-id-guid$" _in both places_ in the markup with the **Application ID** that you copied when you created the **Office-Add-in-ASPNET-SSO** app registration. The "$" symbols are not part of the ID, so don't include them. This is the same ID you used for the application ID in the appsettings.json file.
+1. Replace the placeholder "Enter_client_ID_here" _in both places_ in the markup with the **Application ID** that you copied when you created the **Office-Add-in-ASPNET-SSO** app registration. This is the same ID you used for the application ID in the appsettings.json file.
 
    > [!NOTE]
    > The **\<Resource\>** value is the **Application ID URI** you set when you registered the add-in. The **\<Scopes\>** section is used only to generate a consent dialog box if the add-in is sold through AppSource.
@@ -75,9 +75,9 @@ Use the following values for placeholders for the subsequent app registration st
 
 1. In **Solution Explorer**, choose the **Office-Add-in-ASPNET-SSO-web** project and open the **appsettings.json** file.
 
-1. Replace the placeholder **$app-id-guid$** with the **Application (client) ID** value you saved previously.
+1. Replace the placeholder **Enter_client_id_here** with the **Application (client) ID** value you saved previously.
 
-1. Replace the placeholder **$client-secret$** with the client secret value you saved previously.
+1. Replace the placeholder **Enter_client_secret_here** with the client secret value you saved previously.
 
     > [!NOTE]
     > You can also change the **TenantId** to support single-tenant if you configured your app registration for single-tenant. Replace the **Common** value with the **Application (client) ID** for single-tenant support.
@@ -277,7 +277,7 @@ The server-side code is an ASP.NET Core server that provides REST APIs for the c
     - The constructor initializes the `_graphServiceClient` object to make calling Microsoft Graph REST APIs easier.
 
     ```csharp
-  [Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [RequiredScope("access_as_user")]
     public class FilesController : Controller
@@ -371,7 +371,7 @@ The server-side code is an ASP.NET Core server that provides REST APIs for the c
 
     :::image type="content" source="../images/select-host.png" alt-text="Choose the desired Office client application: Excel, PowerPoint, or Word.":::
 
-1. Press F5.
+1. Press F5. Or select **Debug > Start Debugging**.
 1. In the Office application, on the **Home** ribbon, select the **Show Add-in** in the **SSO ASP.NET** group to open the task pane add-in.
 1. Click the **Get OneDrive File Names** button. If you are logged into Office with either a Microsoft 365 Education or work account, or a Microsoft account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are displayed on the task pane. If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to sign in. After you sign in, the file and folder names appear.
 
