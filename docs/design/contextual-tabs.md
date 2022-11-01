@@ -17,7 +17,7 @@ A contextual tab is a hidden tab control in the Office ribbon that is displayed 
 > [!IMPORTANT]
 > Custom contextual tabs are currently only supported on Excel and only on these platforms and builds.
 >
-> - Excel on Windows (Microsoft 365 subscription only): Version 2102 (Build 13801.20294) or later.
+> - Excel on Windows: Version 2102 (Build 13801.20294) or later.
 > - Excel on Mac: Version 16.53.806.0 or later.
 > - Excel on the web
 

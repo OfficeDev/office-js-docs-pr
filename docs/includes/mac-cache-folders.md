@@ -6,7 +6,7 @@ You can clear the cache by using the personality menu of any task pane add-in. H
 
 - Choose the personality menu. Then choose **Clear Web Cache**.
     > [!NOTE]
-    > You must run macOS version 10.13.6 or later to see the personality menu.
+    > You must run macOS Version 10.13.6 or later to see the personality menu.
 
     ![Screenshot of clear web cache option on personality menu.](../images/mac-clear-cache-menu.png)
 

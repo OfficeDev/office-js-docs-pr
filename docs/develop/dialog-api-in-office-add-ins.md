@@ -224,7 +224,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "https://resourc
 ```
 
 > [!NOTE]
-> The `DialogMessageOptions` parameter was released approximately July 19th, 2021. For about 30 days after that date, in Office on the web, the first time that `messageParent` is called without the `DialogMessageOptions` parameter and the parent is a different domain from the dialog, the user will be prompted to approve sending data to the target domain. If the user approves, the user's answer is cached for 24 hours. The user isn't prompted again during this period when `messageParent` is called with the same target domain.
+> The `DialogMessageOptions` parameter was released approximately July 19, 2021. For about 30 days after that date, in Office on the web, the first time that `messageParent` is called without the `DialogMessageOptions` parameter and the parent is a different domain from the dialog, the user will be prompted to approve sending data to the target domain. If the user approves, the user's answer is cached for 24 hours. The user isn't prompted again during this period when `messageParent` is called with the same target domain.
 
 If the message doesn't include sensitive data, you can set the `targetOrigin` to "\*" which allows it to be sent to any domain. The following is an example.
 
@@ -233,7 +233,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 ```
 
 > [!TIP]
-> The `DialogMessageOptions` parameter was added to the `messageParent` method as a required parameter in mid-2021. Older add-ins that send a cross-domain message with the method no longer work until they are updated to use the new parameter. Until the add-in is updated, *on Office for Windows only*, users and system administrators can enable those add-ins to continue working by specifying the trusted domain(s) with a registry setting: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. To do this, create a file with a `.reg` extension, save it to the Windows computer, and then double-click it to run it. The following is an example of the contents of such a file.
+> The `DialogMessageOptions` parameter was added to the `messageParent` method as a required parameter in mid-2021. Older add-ins that send a cross-domain message with the method no longer work until they are updated to use the new parameter. Until the add-in is updated, *in Office on Windows only*, users and system administrators can enable those add-ins to continue working by specifying the trusted domains with a registry setting: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. To do this, create a file with a `.reg` extension, save it to the Windows computer, and then double-click it to run it. The following is an example of the contents of such a file.
 >
 > ```
 > Windows Registry Editor Version 5.00
@@ -369,7 +369,7 @@ function onMessageFromParent(arg) {
 For example, your code could use the [Office.onReady or Office.initialize function](initialize-add-in.md) to store an array of trusted domains in a global variable. The `arg.origin` property could then be checked against that list in the handler.
 
 > [!TIP]
-> The `DialogMessageOptions` parameter was added to the `messageChild` method as a required parameter in mid-2021. Older add-ins that send a cross-domain message with the method no longer work until they are updated to use the new parameter. Until the add-in is updated, *on Office for Windows only*, users and system administrators can enable those add-ins to continue working by specifying the trusted domain(s) with a registry setting: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. To do this, create a file with a `.reg` extension, save it to the Windows computer, and then double-click it to run it. The following is an example of the contents of such a file.
+> The `DialogMessageOptions` parameter was added to the `messageChild` method as a required parameter in mid-2021. Older add-ins that send a cross-domain message with the method no longer work until they are updated to use the new parameter. Until the add-in is updated, *in Office on Windows only*, users and system administrators can enable those add-ins to continue working by specifying the trusted domains with a registry setting: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. To do this, create a file with a `.reg` extension, save it to the Windows computer, and then double-click it to run it. The following is an example of the contents of such a file.
 >
 > ```
 > Windows Registry Editor Version 5.00
