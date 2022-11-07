@@ -20,7 +20,7 @@ You need to create an app registration in Azure that represents your web server.
 
     * Set **Name** to `<add-in-name>`.
     * Set **Supported account types** to **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
-    * Set **Redirect URI** to use the platform `<redirect-platform>` and the URI to `<redirect-uri>`.
+    * If your sample project is using Node.js, set **Redirect URI** to use the platform `<redirect-platform>` and the URI to `<redirect-uri>`. For the ASP.NET server sample, leave this blank.
 
     :::image type="content" source="../images/azure-portal-register-an-application.png" alt-text="Register an application pane with name and supported account completed.":::
 

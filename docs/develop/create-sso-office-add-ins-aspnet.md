@@ -1,5 +1,5 @@
 ---
-title: Create an ASP.NET Office Add-in that uses single sign-on
+title: Create an ASP.NET Office Add-in that uses single sign-on (SSO)
 description: A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).
 ms.date: 10/27/2022
 ms.localizationpriority: medium
@@ -41,8 +41,6 @@ Use the following values for placeholders for the subsequent app registration st
 | Placeholder           | Value                                           |
 |-----------------------|-------------------------------------------------|
 | `<add-in-name>`       | **Office-Add-in-ASPNET-SSO**                    |
-| `<redirect-platform>` | Leave this blank. The SSO sample does not use a redirect URI. |
-| `<redirect-uri>`      | Leave this blank. The SSO sample does not use a redirect URI. |
 
 [!INCLUDE [register-sso-add-in-aad-v2-include](../includes/register-sso-add-in-aad-v2-include.md)]
 
@@ -247,6 +245,8 @@ Use the following values for placeholders for the subsequent app registration st
     showMessage(errorResponse.responseJSON.value);
     ```
 
+1. Save the file.
+
 ## Code the server side
 
 The server-side code is an ASP.NET Core server that provides REST APIs for the client to call. For example, the REST API `/api/files` gets a list of filenames from the user's OneDrive folder. Each REST API call requires an access token by the client to ensure the correct client is accessing their data. The access token is exchanged for a Microsoft Graph token through the On-Behalf-Of flow (OBO). The new Microsoft Graph token is cached by the MSAL.NET library for subsequent API calls. It's never sent outside of the server-side code. Microsoft identity documentation refers to this server as the middle-tier server because it is in the middle of the flow from client-side code to Microsoft services. For more information, see [Middle-tier access token request](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow#middle-tier-access-token-request)
@@ -364,8 +364,7 @@ The server-side code is an ASP.NET Core server that provides REST APIs for the c
 
 ## Run the solution
 
-1. Open the Visual Studio solution file.
-1. On the **Build** menu, select **Clean Solution**. When it finishes, open the **Build** menu again and select **Build Solution**.
+1. In Visual Studio, on the **Build** menu, select **Clean Solution**. When it finishes, open the **Build** menu again and select **Build Solution**.
 1. In **Solution Explorer**, select the **Office-Add-in-ASPNET-SSO-manifest** project node.
 1. In the **Properties** pane, open the **Start Document** drop down and choose one of the three options (Excel, Word, or PowerPoint).
 
