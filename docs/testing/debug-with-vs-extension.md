@@ -37,7 +37,7 @@ These instructions assume you have experience using the command line, understand
    - If you want to debug an existing project that was not created with Yo Office, carry out the procedure in the [Appendix](#appendix) and then return to the next step of this procedure.
 
 
-1. Open VS Code and open your project in it. 
+1. Open VS Code and open your project in it.
 
 1. Within VS Code, select **Ctrl+Shift+X** to open the Extensions bar. Search for the "Microsoft Office Add-in Debugger" extension and install it.
 
@@ -65,28 +65,28 @@ These instructions assume you have experience using the command line, understand
    > Breakpoints in calls of `Office.initialize` or `Office.onReady` are ignored. For details about these methods, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
 > [!IMPORTANT]
-> The best way to stop a debugging session is to select **Shift+F5** or choose **Run > Stop Debugging** from the menu. This action should close the Node server window and attempt to close the host application, but there will be a prompt on the host application asking you whether to save the document or not. Make an appropriate choice and let the host application close. Avoid manually closing the Node window or host application. Doing so can cause bugs especially when you are stopping and starting debugging sessions repeatedly.
+> The best way to stop a debugging session is to select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu. This action should close the Node server window and attempt to close the host application, but there will be a prompt on the host application asking you whether to save the document or not. Make an appropriate choice and let the host application close. Avoid manually closing the Node window or host application. Doing so can cause bugs especially when you are stopping and starting debugging sessions repeatedly.
 >
 > If debugging stops working; for example, if breakpoints are being ignored; stop debugging. Then, if necessary, close all host application windows and the Node window. Finally, close Visual Studio Code and reopen it.
 
 ### Appendix
 
-If your project was not created with Yo Office, you need to create a debug configuration for Visual Studio Code. 
+If your project was not created with Yo Office, you need to create a debug configuration for Visual Studio Code.
 
-1. Create a file named `launch.json` in the `\.vscode` folder of the project if there isn't one there already. 
+1. Create a file named `launch.json` in the `\.vscode` folder of the project if there isn't one there already.
 1. Ensure that the file has a `configurations` array. The following is a simple example of a `launch.json`.
 
     ```json
     {
-      // other properities may be here.
+      // Other properties may be here.
 
       "configurations": [
 
-        // configuration objects may be here.
+        // Configuration objects may be here.
 
       ]
 
-      //other properies may be here.
+      // Other properties may be here.
     }
     ```
 

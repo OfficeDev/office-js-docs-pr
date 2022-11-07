@@ -19,7 +19,7 @@ The following table lists common error messages that users might encounter and s
 |:-----|:-----|
 |App error: Catalog could not be reached|Verify firewall settings."Catalog" refers to AppSource. This message indicates that the user cannot access AppSource.|
 |APP ERROR: This app could not be started. Close this dialog to ignore the problem or click "Restart" to try again.|Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/kb/2986156/).|
-|Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to Tools > **Compatibility View Settings**.|
+|Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to **Tools** > **Compatibility View Settings**.|
 |Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md).|
 
 ## When installing an add-in, you see "Error loading add-in" in the status bar
@@ -29,13 +29,13 @@ The following table lists common error messages that users might encounter and s
 1. Restart the add-in.
 1. Install the add-in again.
 
-You can also give us feedback: if using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File** | **Feedback** | **Send a Frown**. Sending a frown provides the necessary logs to understand the issue.
+You can also give us feedback: if using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File** > **Feedback** > **Send a Frown**. Sending a frown provides the necessary logs to understand the issue.
 
 ## Outlook add-in doesn't work correctly
 
 If an Outlook add-in running on Windows and [using Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) is not working correctly, try turning on script debugging in Internet Explorer.
 
-- Go to Tools > **Internet Options** > **Advanced**.
+- Go to **Tools** > **Internet Options** > **Advanced**.
 - Under **Browsing**, uncheck **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)**.
 
 We recommend that you uncheck these settings only to troubleshoot the issue. If you leave them unchecked, you will get prompts when you browse. After the issue is resolved, check **Disable script debugging (Internet Explorer)** and **Disable script debugging (Other)** again.
@@ -60,7 +60,7 @@ When using an Office Add-in, the user is asked to allow a dialog box to be displ
 
 ![Screenshot of the dialog box error message.](../images/dialog-prevented.png)
 
-|**Affected browsers**|**Affected platforms**|
+|Affected browsers|Affected platforms|
 |:--------------------|:---------------------|
 |Microsoft Edge|Office on the web|
 

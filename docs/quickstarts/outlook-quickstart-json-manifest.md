@@ -13,7 +13,7 @@ In this article, you'll walk through the process of building an Outlook task pan
 > [!NOTE]
 > The new manifest is available for preview and is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins.
 
-The preview is only supported on Microsoft 365 subscription Office on Windows.
+The preview is only supported in Office downloaded from a Microsoft 365 subscription and installed on Windows.
 
 > [!TIP]
 > If you want to build an Outlook add-in using the XML manifest, see [Build your first Outlook add-in](outlook-quickstart.md).

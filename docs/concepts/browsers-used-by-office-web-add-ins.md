@@ -68,7 +68,7 @@ To determine whether Office 2016 or Office 2019 is retail or volume-licensed, us
 
 <sup>3</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with perpetual Office 2021 or later; but it isn't automatically installed with Microsoft Edge. If you have an earlier version of perpetual Office, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
-## Microsoft 365 subscription Office on Windows
+## Microsoft 365 subscription versions of Office on Windows
 
 For subscription Office on Windows, the browser that is used is determined by the operating system, the Office version, and whether the Edge WebView2 (Chromium-based) is installed.
 
@@ -124,7 +124,7 @@ Directly downloading blobs as PDF files in an add-in is not supported when Edge 
 
 ## WIP-protected documents
 
-Add-ins that are running in a [WIP-protected](/windows/uwp/enterprise/wip-hub) document never use **Microsoft Edge with WebView2 (Chromium-based)**. In the sections [Perpetual versions of Office on Windows](#perpetual-versions-of-office-on-windows) and [Microsoft 365 Subscription Office on Windows](#microsoft-365-subscription-office-on-windows) earlier in this article, substitute **Microsoft Edge with original WebView (EdgeHTML)** for **Microsoft Edge with WebView2 (Chromium-based)** wherever the latter appears.
+Add-ins that are running in a [WIP-protected](/windows/uwp/enterprise/wip-hub) document never use **Microsoft Edge with WebView2 (Chromium-based)**. In the sections [Perpetual versions of Office on Windows](#perpetual-versions-of-office-on-windows) and [Microsoft 365 subscription versions of Office on Windows](#microsoft-365-subscription-versions-of-office-on-windows) earlier in this article, substitute **Microsoft Edge with original WebView (EdgeHTML)** for **Microsoft Edge with WebView2 (Chromium-based)** wherever the latter appears.
 
 To determine if a document is WIP-protected, follow these steps:
 

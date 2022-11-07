@@ -2,7 +2,7 @@
 title: Implement append-on-send in your Outlook add-in
 description: Learn how to implement the append-on-send feature in your Outlook add-in.
 ms.topic: article
-ms.date: 10/13/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
 ---
 
@@ -16,9 +16,6 @@ By the end of this walkthrough, you'll have an Outlook add-in that can insert a 
 ## Set up your environment
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.
-
-> [!NOTE]
-> If you want to use the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md), then complete the alternate quick start in [Outlook quick start with a Teams manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md), but skip all sections after the **Try it out** section.
 
 ## Configure the manifest
 
@@ -122,6 +119,9 @@ For this scenario, instead of running the `action` function on choosing the **Pe
     ```
 
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
+
+> [!IMPORTANT]
+> Append-on-send isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
 
 1. Open the manifest.json file.
 
