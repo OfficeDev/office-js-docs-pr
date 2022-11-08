@@ -20,7 +20,7 @@ You need to create an app registration in Azure that represents your web server.
 
     * Set **Name** to `<add-in-name>`.
     * Set **Supported account types** to **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
-    * Set **Redirect URI** to use the platform `<redirect-platform>` and the URI to `<redirect-uri>`.
+    * If your sample project is using Node.js, set **Redirect URI** to use the platform `<redirect-platform>` and the URI to `<redirect-uri>`. For the ASP.NET server sample, leave this blank.
 
     :::image type="content" source="../images/azure-portal-register-an-application.png" alt-text="Register an application pane with name and supported account completed.":::
 
@@ -169,6 +169,8 @@ Sometimes called an _application password_, a client secret is a string value yo
 1. Select the checkbox for each permission as it appears. Note that the permissions will not remain visible in the list as you select each one. After selecting the permissions that your add-in needs, select **Add permissions**.
 
     :::image type="content" source="../images/azure-portal-request-api-permissions-add-permissions.png" alt-text="The Request API permissions pane with some permissions selected.":::
+
+1. Select **Grant admin consent for [tenant name]**. Select **Yes** for the confirmation that appears.
 
 ## Configure access token version
 
