@@ -1,7 +1,7 @@
 ---
 title: Get or set the location of an appointment in an add-in
 description: Learn how to get or set the location of an appointment in an Outlook add-in.
-ms.date: 10/07/2022
+ms.date: 11/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -80,6 +80,9 @@ function callbackFunction(asyncResult) {
     });
 }
 ```
+
+> [!NOTE]
+> [Personal contact groups](https://support.microsoft.com/office/88ff6c60-0a1d-4b54-8c9d-9e1a71bc3023) added as appointment locations aren't returned by the [enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-getasync-member(1)) method.
 
 ### Remove location
 
