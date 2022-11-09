@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Authorize to Microsoft Graph from an Office Add-in
 
-Your add-in can get authorization to Microsoft Graph data by obtaining an access token to Microsoft Graph from the Microsoft identity platform. Use either the Authorization Code flow or the Implicit flow just as you would in other web applications but with one exception: The Microsoft identity platform does not allow its sign-in page to open in an iframe. When an Office Add-in is running on *Office on the web*, the task pane is an iframe. This means you'll need to open the sign-in page in a dialog box by using the Office dialog API. This affects how you use authentication and authorization helper libraries. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
+Your add-in can get authorization to Microsoft Graph data by obtaining an access token to Microsoft Graph from the Microsoft identity platform. Use either the Authorization Code flow or the Implicit flow just as you would in other web applications but with one exception: The Microsoft identity platform does not allow its sign-in page to open in an iframe. When an Office Add-in is running in *Office on the web*, the task pane is an iframe. This means you'll need to open the sign-in page in a dialog box by using the Office dialog API. This affects how you use authentication and authorization helper libraries. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
 
 > [!NOTE]
 > If you're implementing SSO and plan to access Microsoft Graph, see [Authorize to Microsoft Graph with SSO](authorize-to-microsoft-graph.md).

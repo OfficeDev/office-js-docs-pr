@@ -15,16 +15,16 @@ The steps to sideload an add-in on the web vary based on the following factors.
 
 - The host application (for example, Excel, Word, Outlook)
 - What tool created the add-in project (for example, Visual Studio, Yeoman generator for Office Add-ins, or neither)
-- Whether you are sideloading to Office on the web with a Microsoft Account or with an account in a Microsoft 365 tenant
+- Whether you are sideloading to Office on the web with a Microsoft account or with an account in a Microsoft 365 tenant
 
 In the following list, go to the section or article that matches your scenario. Note the first scenario in the list applies to Outlook add-ins. The remaining scenarios apply to non-Outlook add-ins.
 
-- If you're sideloading an Outlook add-in, see the article [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md). 
+- If you're sideloading an Outlook add-in, see the article [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
 - If you created the add-in using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), see [Sideload a Yeoman-created add-in to Office on the web](#sideload-a-yeoman-created-add-in-to-office-on-the-web).
 - If you created the add-in using Visual Studio, see [Sideload an add-in on the web when using Visual Studio](#sideload-an-add-in-on-the-web-when-using-visual-studio).
 - For all other cases, see one of the following sections.
 
-  - If you're sideloading to Office on the web with a Microsoft Account, see [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web).
+  - If you're sideloading to Office on the web with a Microsoft account, see [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web).
   - If you're sideloading to Office on the web with an account in a Microsoft 365 tenant, see [Sideload an add-in to Microsoft 365](#sideload-an-add-in-to-microsoft-365).
 
 ## Sideload a Yeoman-created add-in to Office on the web
