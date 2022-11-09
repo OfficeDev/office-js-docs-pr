@@ -311,7 +311,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     ```
 
 > [!IMPORTANT]
-> To ensure that add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest's **\<LaunchEvent>** element to its JavaScript counterpart. If this call isn't included in your JavaScript file and the **SendMode** property of your manifest's **\<LaunchEvent>** property is set to `SoftBlock` or isn't specified, your users will be blocked from sending messages or appointments.
+> To ensure that your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest's **\<LaunchEvent>** element to its JavaScript counterpart. If this call isn't included in your JavaScript file and the **SendMode** property of your manifest's **\<LaunchEvent>** property is set to `SoftBlock` or isn't specified, your users will be blocked from sending messages or appointments.
 
 ## Update the commands HTML file
 
