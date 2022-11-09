@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 10/24/2022
+ms.date: 11/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -312,6 +312,7 @@ In this scenario, you'll add handling for composing new items.
         });
     }
 
+    // IMPORTANT: Remember to map the event handler name specified in the manifest's LaunchEvent element to its JavaScript counterpart.
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
     Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
     Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
