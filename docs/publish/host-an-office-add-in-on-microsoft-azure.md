@@ -5,8 +5,6 @@ ms.date: 07/07/2020
 ms.localizationpriority: medium
 ---
 
-
-
 # Host an Office Add-in on Microsoft Azure
 
 The simplest Office Add-in is made up of an XML manifest file and an HTML page. The XML manifest file describes the add-in's characteristics, such as its name, what Office desktop clients it can run in, and the URL for the add-in's HTML page. The HTML page is contained in a web app that users interact with when they install and run your add-in within an Office client application. You can host the web app of an Office Add-in on any web hosting platform, including Azure.
@@ -76,9 +74,9 @@ To create the web app using the Azure portal, complete the following steps.
 3. On the **App Service** page, select **Add**. Provide this information:
 
       - Choose the **Subscription** to use for creating this site.
-      
+
       - Choose the **Resource Group** for your site. If you create a new group, you also need to name it.
-      
+
       - Enter a unique **App name** for your site. Azure verifies that the site name is unique across the azureweb apps.net domain.
 
       - Choose whether to publish using code or a docker container.

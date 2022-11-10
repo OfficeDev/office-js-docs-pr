@@ -20,7 +20,7 @@ Content add-ins are surfaces that can be embedded directly into Excel or PowerPo
 
 ## Variants
 
-Content add-in sizes for Excel and PowerPoint in Office desktop and Microsoft 365 are user specified.
+Content add-in sizes for Excel and PowerPoint in Office desktop and in a web browser are user specified.
 
 ## Personality menu
 

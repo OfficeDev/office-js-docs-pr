@@ -85,7 +85,7 @@ A best practice is to use the Fluent UI to help your users transition between Mi
     <asp:Image  src="https://static2.sharepointonline.com/files/fabric/assets/brand-icons/product/svg/excel_48x1.svg" width="48" height="48" ID="btnDownload" runat="server" OnClick="btnDownload_Click" AlternateText="Open in Microsoft Excel" role="button" ImageUrl=""/>  
     ```
 
-1. Press **F5** (or **Debug > Start Debugging**). You'll see the icon appear when the home page loads.
+1. Press **F5** (or **Debug** > **Start Debugging**). You'll see the icon appear when the home page loads.
 
 For more information, see [Office Brand Icons](https://developer.microsoft.com/fluentui#/styles/web/office-brand-icons) on the Fluent UI developer portal.  
 
@@ -160,7 +160,7 @@ We recommend uploading new documents to OneDrive if your customer uses OneDrive.
         }
     ```
 
-1. Press **F5** (or **Debug > Start Debugging**). The web application will start.
+1. Press **F5** (or **Debug** > **Start Debugging**). The web application will start.
 1. Choose **Click here to sign in**, and sign in.
 1. Choose **Click here to create a new file on OneDrive**.
 1. Open a new browser tab and sign in to your OneDrive account. You'll see the test.txt file in the root folder.
