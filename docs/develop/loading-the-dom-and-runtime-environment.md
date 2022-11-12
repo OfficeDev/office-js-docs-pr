@@ -52,8 +52,8 @@ The following events occur when an Outlook add-in starts.
 
 1. Outlook loads the runtime environment, which downloads and caches the JavaScript API for JavaScript library files from the content distribution network (CDN) server, and then calls the event handler for the [initialize](/javascript/api/office#Office_initialize_reason_) event of the [Office](/javascript/api/office) object of the add-in, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` methods) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initialize your add-in](initialize-add-in.md).
 
-> [!NOTE]
-> Event-based add-ins running in Outlook on Windows don't run code included in the `Office.onReady()` and `Office.initialize` functions. For more information, see [Event-based activation behavior and limitations](../outlook/autolaunch.md#event-based-activation-behavior-and-limitations).
+    > [!NOTE]
+    > Event-based add-ins running in Outlook on Windows don't run code included in the `Office.onReady()` and `Office.initialize` functions. For more information, see [Event-based activation behavior and limitations](../outlook/autolaunch.md#event-based-activation-behavior-and-limitations).
 
 1. When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.
 
