@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: Specifies how the operating system and Office version determine what browser is used by Office Add-ins.
-ms.date: 08/04/2022
+ms.date: 09/29/2022
 ms.localizationpriority: medium
 ---
 
@@ -12,8 +12,8 @@ Office Add-ins are web applications that are displayed using iFrames when runnin
 Which browser is used depends on:
 
 - The computer's operating system.
-- Whether the add-in is running in Office on the web, Microsoft 365, or perpetual (also called "non-subscription" or "one-time purchase") Office 2013 or later.
-- Within the perpetual versions of Office, whether the add-in is running in the "consumer" or "commercial" (also called "volume-licensed" or "LTSC") variation.
+- Whether the add-in is running in Office on the web, in Office downloaded from a Microsoft 365 subscription, or in perpetual Office 2013 or later.
+- Within the perpetual versions of Office on Windows, whether the add-in is running in the "retail" or "volume-licensed" variation.
 
 > [!NOTE]
 > This article assumes that the add-in is running in a document that is *not* protected with [Windows Information Protection (WIP)](/windows/uwp/enterprise/wip-hub). For WIP-protected documents, there are some exceptions to the information in this article. For more information, see [WIP-protected documents](#wip-protected-documents).
@@ -21,10 +21,10 @@ Which browser is used depends on:
 > [!IMPORTANT]
 > **Internet Explorer still used in Office Add-ins**
 >
-> Some combinations of platforms and Office versions, including commercial perpetual versions through Office 2019, still use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in this article. We recommend (but don't require) that you continue to support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in the Internet Explorer webview. Keep these additional points in mind:
+> Some combinations of platforms and Office versions, including volume-licensed perpetual versions through Office 2019, still use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in this article. We recommend (but don't require) that you continue to support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in the Internet Explorer webview. Keep these additional points in mind:
 >
 > - Office on the web no longer opens in Internet Explorer. Consequently, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) no longer tests add-ins in Office on the web using Internet Explorer as the browser.
-> - AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer, however it only issues a warning when the add-in does not support Internet Explorer; the add-in is not rejected by AppSource.
+> - AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer. However, it only issues a warning when the add-in doesn't support Internet Explorer; the add-in is not rejected by AppSource.
 > - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Internet Explorer.
 >
 > For more information about supporting Internet Explorer and configuring a graceful failure message on your add-in, see [Support Internet Explorer 11](../develop/support-ie-11.md).
@@ -44,24 +44,23 @@ For these platforms, the platform alone determines the browser that is used.
 
 ## Perpetual versions of Office on Windows
 
-For perpetual versions of Office on Windows, the browser that is used is determined by the Office version, whether the license is consumer or commercial, and whether the Edge WebView2 (Chromium-based) is installed. The version of Windows doesn't matter, but note that Office Web Add-ins are not supported on versions earlier than Windows 7 and Office 2021 is not supported on versions earlier than Windows 10.
+For perpetual versions of Office on Windows, the browser that is used is determined by the Office version, whether the license is retail or volume-licensed, and whether the Edge WebView2 (Chromium-based) is installed. The version of Windows doesn't matter, but note that Office Web Add-ins are not supported on versions earlier than Windows 7 and Office 2021 is not supported on versions earlier than Windows 10.
 
-To determine whether Office 2016 or Office 2019 is consumer or commercial, use the format of the Office version and build number. (For Office 2013 and Office 2021, the distinction between commercial and consumer doesn't matter.)
+To determine whether Office 2016 or Office 2019 is retail or volume-licensed, use the format of the Office version and build number. (For Office 2013 and Office 2021, the distinction between volume-licensed and retail doesn't matter.)
 
-- **Consumer**: For both Office 2016 and 2019, the format is `YYMM (xxxxx.xxxxxx)`, ending with two blocks of five digits; for example, `2206 (Build 15330.20264`.
-- **Commercial**: 
+- **Retail**: For both Office 2016 and 2019, the format is `YYMM (xxxxx.xxxxxx)`, ending with two blocks of five digits; for example, `2206 (Build 15330.20264`.
+- **Volume-licensed**:
+  - For Office 2016, the format is `16.0.xxxx.xxxxx`, ending with two blocks of *four* digits; for example, `16.0.5197.1000`.
+  - For Office 2019, the format is `1808 (xxxxx.xxxxxx)`, ending with two blocks of *five* digits; for example, `1808 (Build 10388.20027)`. Note that the year and month is always `1808`.
 
-    - For Office 2016, the format is `16.0.xxxx.xxxxx`, ending with two blocks of *four* digits; for example, `16.0.5197.1000`.
-    - For Office 2019, the format is `1808 (xxxxx.xxxxxx)`, ending with two blocks of *five* digits; for example, `1808 (Build 10388.20027)`. Note that the year and month is always `1808`.
-
-|Office version|Consumer vs. Commercial|Edge WebView2 (Chromium-based) installed?|Browser|
-|:-----|:-----|:-----|:-----|:-----|
-|Office 2013 | Doesn't matter |Doesn't matter|Internet Explorer 11|
-|Office 2016| Commercial |Doesn't matter|Internet Explorer 11|
-|Office 2019| Commercial |Doesn't matter|Internet Explorer 11|
-|Office 2016 to Office 2019| Consumer |No |Microsoft Edge<sup>1, 2</sup> with original WebView (EdgeHTML)</br>If Edge is not installed, Internet Explorer 11 is used.|
-|Office 2016 to Office 2019|  Consumer |Yes<sup>3</sup>|Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
-|Office 2021| Doesn't matter |Yes<sup>3</sup> |Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based)|
+| Office version | Retail vs. Volume-licensed | Edge WebView2 (Chromium-based) installed? | Browser |
+|:-----|:-----|:-----|:-----|
+| Office 2013 | Doesn't matter | Doesn't matter | Internet Explorer 11 |
+| Office 2016 | Volume-licensed | Doesn't matter | Internet Explorer 11 |
+| Office 2019 | Volume-licensed | Doesn't matter | Internet Explorer 11 |
+| Office 2016 to Office 2019 | Retail | No | Microsoft Edge<sup>1, 2</sup> with original WebView (EdgeHTML)</br>If Edge is not installed, Internet Explorer 11 is used. |
+| Office 2016 to Office 2019 | Retail | Yes<sup>3</sup> | Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based) |
+| Office 2021 | Doesn't matter | Yes<sup>3</sup> | Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based) |
 
 <sup>1</sup> When you use Microsoft Edge, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Internet Explorer 11, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
 
@@ -69,7 +68,7 @@ To determine whether Office 2016 or Office 2019 is consumer or commercial, use t
 
 <sup>3</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with perpetual Office 2021 or later; but it isn't automatically installed with Microsoft Edge. If you have an earlier version of perpetual Office, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
-## Microsoft 365 Subscription on Windows
+## Microsoft 365 subscription versions of Office on Windows
 
 For subscription Office on Windows, the browser that is used is determined by the operating system, the Office version, and whether the Edge WebView2 (Chromium-based) is installed.
 
@@ -88,7 +87,7 @@ For subscription Office on Windows, the browser that is used is determined by th
 
 <sup>3</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it will not use Microsoft Edge with the original WebView (EdgeHTML). If the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, then the add-in uses that browser. Otherwise, it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes).
 
-<sup>4</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with Microsoft 365, version 2101 or later, but it isn't automatically installed with Microsoft Edge. If you have an earlier version of Microsoft 365, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). On Microsoft 365 builds before 16.0.14326.xxxxx, you must also create the registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2** and set its value to `dword:00000001`.
+<sup>4</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with Microsoft 365, Version 2101 or later, but it isn't automatically installed with Microsoft Edge. If you have an earlier version of Microsoft 365, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). On Microsoft 365 builds before 16.0.14326.xxxxx, you must also create the registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2** and set its value to `dword:00000001`.
 
 ## Working with Internet Explorer
 
@@ -125,7 +124,7 @@ Directly downloading blobs as PDF files in an add-in is not supported when Edge 
 
 ## WIP-protected documents
 
-Add-ins that are running in a [WIP-protected](/windows/uwp/enterprise/wip-hub) document never use **Microsoft Edge with WebView2 (Chromium-based)**. In the sections [Perpetual versions of Office on Windows](#perpetual-versions-of-office-on-windows) and [Microsoft 365 Subscription on Windows](#microsoft-365-subscription-on-windows) earlier in this article, substitute **Microsoft Edge with original WebView (EdgeHTML)** for **Microsoft Edge with WebView2 (Chromium-based)** wherever the latter appears.
+Add-ins that are running in a [WIP-protected](/windows/uwp/enterprise/wip-hub) document never use **Microsoft Edge with WebView2 (Chromium-based)**. In the sections [Perpetual versions of Office on Windows](#perpetual-versions-of-office-on-windows) and [Microsoft 365 subscription versions of Office on Windows](#microsoft-365-subscription-versions-of-office-on-windows) earlier in this article, substitute **Microsoft Edge with original WebView (EdgeHTML)** for **Microsoft Edge with WebView2 (Chromium-based)** wherever the latter appears.
 
 To determine if a document is WIP-protected, follow these steps:
 

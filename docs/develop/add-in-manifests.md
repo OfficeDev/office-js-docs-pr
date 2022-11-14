@@ -39,7 +39,7 @@ The following table specifies the elements that are required for the three types
 
 ### Required elements by Office Add-in type
 
-| Element                                                                                      | Content    | Task pane    | Outlook      |
+| Element                                                                                      | Content    | Task pane    | Mail<br>(Outlook)      |
 | :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------:   |
 | [OfficeApp][]                                                                                | Required   | Required     | Required     |
 | [Id][]                                                                                       | Required   | Required     | Required     |
@@ -200,7 +200,7 @@ Your add-in can make Office.js API calls from the domain referenced in the [Sour
 
 ## Manifest v1.1 XML file examples and schemas
 
-The following sections show examples of manifest v1.1 XML files for content, task pane, and Outlook add-ins.
+The following sections show examples of manifest v1.1 XML files for content, task pane, and mail (Outlook) add-ins.
 
 # [Task pane](#tab/tabid-1)
 

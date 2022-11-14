@@ -109,8 +109,8 @@ On average, it takes about 5 minutes to walk users through how to install an add
 
 1. Open Microsoft PowerPoint.
 1. Select **Blank Presentation.**
-1. Go to **Insert > My Add-ins.**
-1. In the popup window, choose **Store.**
+1. Go to **Insert** > **My Add-ins**.
+1. In the popup window, choose **Store**.
 1. Type (Add-in name) in the search box.
 1. Choose (Add-in name).
 1. Take a moment to look at the Store page to familiarize yourself with the add-in.

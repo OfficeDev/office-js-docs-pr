@@ -1,13 +1,17 @@
 ---
 title: Outlook add-in manifests
-description: The manifest describes how an Outlook add-in integrates across Outlook clients; includes an example.
-ms.date: 05/27/2020
+description: Get an overview of the two kinds of manifests available for Outlook Add-ins.
+ms.date: 10/18/2022
 ms.localizationpriority: high
 ---
 
 # Outlook add-in manifests
 
-An Outlook add-in consists of two components: the XML add-in manifest and a web page supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients. The following is an example.
+An Outlook add-in consists of two components: the add-in manifest and a web app supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients.
+
+There are two possible formats for the manifest: XML and JSON. You can learn about the JSON manifest at [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This article is about the XML manifest.
+
+The following is an example of the XML manifest.
 
  > [!NOTE]
  > All URL values in the following sample begin with "https://appdemo.contoso.com". This value is a placeholder. In an actual valid manifest, these values would contain valid https web URLs.
@@ -374,7 +378,7 @@ The following table describes browser behavior when your add-in attempts to navi
 |Outlook client|Domain defined<br>in AppDomains?|Browser behavior|
 |---|---|---|
 |All clients|Yes|Link opens in add-in task pane.|
-|Outlook 2016 on Windows (one-time purchase)<br>Outlook 2013 on Windows|No|Link opens in Internet Explorer 11.|
+|- Outlook 2016 on Windows (volume-licensed perpetual)<br>- Outlook 2013 on Windows (perpetual)|No|Link opens in Internet Explorer 11.|
 |Other clients|No|Link opens in user's default browser.|
 
 For more details, see the [Specify domains you want to open in the add-in window](../develop/add-in-manifests.md?tabs=tabid-1#specify-domains-you-want-to-open-in-the-add-in-window).
@@ -413,7 +417,6 @@ Activation rules can be used to activate an add-in based on one or more of the f
 - The presence of an attachment
 
 For details and samples of activation rules, see [Activation rules for Outlook add-ins](activation-rules.md).
-
 
 ## Next steps: Add-in commands
 
