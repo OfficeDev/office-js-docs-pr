@@ -151,6 +151,8 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
     :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the Excel custom functions add-in highlighted in the My Add-ins list.":::
 
+1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
+
 # [Excel on the web](#tab/excel-online)
 
 1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
@@ -163,9 +165,9 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
----
-
 1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
+
+---
 
 ## Create a streaming asynchronous custom function
 
