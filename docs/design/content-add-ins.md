@@ -1,7 +1,7 @@
 ---
 title: Content Office Add-ins
 description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
-ms.date: 05/12/2021
+ms.date: 11/15/2022
 ms.localizationpriority: medium
 ---
 
@@ -39,6 +39,11 @@ For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from
 ![34x32-pixel personality menu on Mac desktop.](../images/personality-menu-mac.png)
 
 ## Implementation
+
+There are minor differences in the manifests between content add-ins and add-ins that use task panes.
+
+- For the **\<[OfficeApp](/javascript/api/manifest/officeapp)\>** element, set the `xsi:type` attribute to `"ContentApp"`.
+- In the **\<[DefaultSettings](/javascript/api/manifest/defaultsettings)\>** element, add the **\<[RequestedHeight](/javascript/api/manifest/requestedheight)\>** and  **\<[RequestedWidth](/javascript/api/manifest/requestedwidth)\>** elements.
 
 For a sample that implements a content add-in, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) in GitHub.
 
