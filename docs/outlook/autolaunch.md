@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 11/09/2022
+ms.date: 11/14/2022
 ms.localizationpriority: medium
 ---
 
@@ -323,6 +323,9 @@ In this scenario, you'll add handling for composing new items.
 > [!IMPORTANT]
 > Windows: At present, imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
 
+> [!TIP]
+> Event-based add-ins running in Outlook on Windows don't run code included in the `Office.onReady()` and `Office.initialize` functions. We recommend adding your add-in startup logic, such as checking the user's Outlook version, to your event handlers instead.
+
 ## Update the commands HTML file
 
 1. In the **./src/commands** folder, open **commands.html**.
@@ -413,7 +416,10 @@ If the user has multiple add-ins that subscribed to the same event, the Outlook 
 
 In all supported Outlook clients, the user must remain on the current mail item where the add-in was activated for it to complete running. Navigating away from the current item (for example, switching to another compose window or tab) terminates the add-in operation. The add-in also ceases operation when the user sends the message or appointment they're composing.
 
-Imports aren't supported in the JavaScript file where you implement the handling for event-based activation in the Windows client.
+When developing an event-based add-in to run in the Outlook on Windows client, be mindful of the following:
+
+- Imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
+- Add-ins don't run code included in `Office.onReady()` and `Office.initialize`. We recommend adding any startup logic, such as checking the user's Outlook version, to your event handlers instead.
 
 Some Office.js APIs that change or alter the UI aren't allowed from event-based add-ins. The following are the blocked APIs.
 
