@@ -2,7 +2,7 @@
 title: Debug your event-based Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 10/11/2022
+ms.date: 11/16/2022
 ms.localizationpriority: medium
 ---
 
@@ -10,15 +10,9 @@ ms.localizationpriority: medium
 
 This article provides debugging guidance as you implement [event-based activation](autolaunch.md) in your add-in. The event-based activation feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For more information, see [Supported events](autolaunch.md#supported-events).
 
-> [!IMPORTANT]
-> This debugging capability is only supported in Outlook on Windows with a Microsoft 365 subscription.
+This article discusses the key stages to enable and run debugging on your preferred Outlook client. Select the client for which you're debugging.
 
-This article discusses the key stages to enable debugging.
-
-- [Mark the add-in for debugging](#mark-your-add-in-for-debugging)
-- [Configure Visual Studio Code](#configure-visual-studio-code)
-- [Attach Visual Studio Code](#attach-visual-studio-code)
-- [Debug](#debug)
+# [Windows](#tab/windows)
 
 If you used the Yeoman Generator for Office Add-ins to create your add-in project (for example, by doing the [event-based activation walkthrough](autolaunch.md)), then follow the **Created with Yeoman generator** option throughout this article. Otherwise, follow the **Other** steps. Visual Studio Code should be at least version 1.56.1.
 
@@ -115,17 +109,27 @@ If you used the Yeoman Generator for Office Add-ins to create your add-in projec
 
     ![The Direct Debugging option selected from configuration options in the Visual Studio Code Debug dropdown.](../images/outlook-win-autolaunch-debug-vsc.png)
 
-## Debug
+## Run the debugger
 
 1. After confirming that the debugger is attached, return to Outlook, and in the **Debug Event-based handler** dialog, choose **OK** .
 
 1. You can now hit your breakpoints in Visual Studio Code, enabling you to debug your event-based activation code.
 
-## Stop debugging
+## Stop the debugger
 
-To stop debugging for the rest of the current Outlook desktop session, in the **Debug Event-based handler** dialog, choose **Cancel**. To re-enable debugging, restart Outlook desktop.
+To stop debugging the rest of the current Outlook on Windows session, in the **Debug Event-based handler** dialog, choose **Cancel**. To re-enable debugging, restart Outlook.
 
 To prevent the **Debug Event-based handler** dialog from popping up and stop debugging for subsequent Outlook sessions, delete the associated registry key or set its value to `0`: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`.
+
+# [Mac](#tab/mac)
+
+To debug your event-based add-in in Outlook on the web, see [Debug add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md).
+
+# [Web](#tab/web)
+
+To debug your event-based add-in in the new Outlook on the Mac UI, see [Debug Office Add-ins on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+
+---
 
 ## See also
 
