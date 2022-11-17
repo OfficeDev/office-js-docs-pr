@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 06/10/2022
+ms.date: 11/16/2022
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ms.localizationpriority: high
@@ -36,7 +36,7 @@ In this tutorial, you will:
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - **Choose a project type:** `Excel Custom Functions Add-in project`
+    - **Choose a project type:** `Excel Custom Functions using a Shared Runtime`
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `My custom functions add-in`
 
@@ -97,6 +97,9 @@ The `ADD` custom function computes the sum of the two numbers that you provided 
 
 [!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 
+> [!NOTE]
+> See the [Troubleshooting](#troubleshooting) section of this article if you encounter errors when sideloading the add-in.
+
 ## Create a custom function that requests data from the web
 
 Integrating data from the Web is a great way to extend Excel through custom functions. Next you'll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.
@@ -151,6 +154,8 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
     :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the Excel custom functions add-in highlighted in the My Add-ins list.":::
 
+1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Office-Add-in-Samples")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Office-Add-in-Samples repository](https://github.com/OfficeDev/Office-Add-in-Samples).
+
 # [Excel on the web](#tab/excel-online)
 
 1. In Excel, choose the **Insert** tab and then choose **Add-ins**.
@@ -166,6 +171,9 @@ Integrating data from the Web is a great way to extend Excel through custom func
 1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
 
 ---
+
+> [!NOTE]
+> See the [Troubleshooting](#troubleshooting) section of this article if you encounter errors when sideloading the add-in.
 
 ## Create a streaming asynchronous custom function
 
@@ -203,9 +211,14 @@ function clock(invocation) {
 
 To try out the functions, type the text **=CONTOSO.CLOCK()** in cell **C1** and press enter. You should see the current date, which streams an update every second. While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.
 
+## Troubleshooting
+
+You may encounter issues if you run the tutorial multiple times. If the Office cache already has an instance of a function with the same name, your add-in gets an error when it sideloads.
+
+You can prevent this conflict by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`. If your npm process is already running, enter `npm stop`, clear the Office cache, and then restart npm.
+
+:::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="An error message in Excel titled 'Error installing functions'. It contains the text 'This add-in wasn't installed because a custom function with the same name already exists'.":::
+
 ## Next steps
 
-Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data. Next, you can modify your project to use a shared runtime, making it easier for your function to interact with the task pane. Follow the steps in the following article.
-
-> [!div class="nextstepaction"]
-> [Configure your add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data. Next, learn about [Custom functions naming guidelines](../excel/custom-functions-naming.md).
