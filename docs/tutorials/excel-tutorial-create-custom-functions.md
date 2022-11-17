@@ -167,6 +167,9 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
 
+> [!NOTE]
+> See the [Troubleshooting](#troubleshooting) section of this article if you encounter errors when sideloading the add-in.
+
 ---
 
 ## Create a streaming asynchronous custom function
@@ -204,6 +207,12 @@ function clock(invocation) {
 ```
 
 To try out the functions, type the text **=CONTOSO.CLOCK()** in cell **C1** and press enter. You should see the current date, which streams an update every second. While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.
+
+## Troubleshooting
+
+You may encounter issues if you run the tutorial multiple times. If the Office cache already has an instance of a function with the same name, your add-in gets an error when it sideloads. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`.
+
+:::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="An error message in Excel titled 'Error installing functions'. It contains the text 'This add-in wasn't installed because a custom function with the same name already exists'.":::
 
 ## Next steps
 
