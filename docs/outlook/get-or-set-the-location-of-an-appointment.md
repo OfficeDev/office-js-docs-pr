@@ -1,7 +1,7 @@
 ---
 title: Get or set the location of an appointment in an add-in
 description: Learn how to get or set the location of an appointment in an Outlook add-in.
-ms.date: 07/08/2022
+ms.date: 11/08/2022
 ms.localizationpriority: medium
 ---
 
@@ -23,7 +23,7 @@ The following table lists the location APIs and the modes (i.e., Compose or Read
 | [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) | Organizer/Compose |
 | [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) | Organizer/Compose |
 
-To use the methods that are available only to compose add-ins, configure the add-in manifest to activate the add-in in Organizer/Compose mode. See [Create Outlook add-ins for compose forms](compose-scenario.md) for more details.
+To use the methods that are available only to compose add-ins, configure the add-in XML manifest to activate the add-in in Organizer/Compose mode. See [Create Outlook add-ins for compose forms](compose-scenario.md) for more details. Activation rules aren't supported in add-ins that use a [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
 ## Use the `enhancedLocation` API
 
@@ -80,6 +80,9 @@ function callbackFunction(asyncResult) {
     });
 }
 ```
+
+> [!NOTE]
+> [Personal contact groups](https://support.microsoft.com/office/88ff6c60-0a1d-4b54-8c9d-9e1a71bc3023) added as appointment locations aren't returned by the [enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-getasync-member(1)) method.
 
 ### Remove location
 

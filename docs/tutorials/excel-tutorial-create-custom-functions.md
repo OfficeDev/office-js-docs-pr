@@ -151,6 +151,8 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
     :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="Screenshot of the Insert ribbon in Excel on Windows, with the Excel custom functions add-in highlighted in the My Add-ins list.":::
 
+1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Office-Add-in-Samples")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Office-Add-in-Samples repository](https://github.com/OfficeDev/Office-Add-in-Samples).
+
 # [Excel on the web](#tab/excel-online)
 
 1. In Excel, choose the **Insert** tab and then choose **Add-ins**.

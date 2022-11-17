@@ -1,27 +1,24 @@
 ---
 title: Runtimes in Office Add-ins
 description: Learn about the runtimes that are used by Office Add-ins.
-ms.date: 08/29/2022
+ms.date: 09/28/2022
 ms.localizationpriority: medium
 ---
 
 # Runtimes in Office Add-ins
 
-Office Add-ins execute in runtimes embedded in Office. As an interpreted language, JavaScript must run in a JavaScript engine. As a single-threaded, synchronous language, JavaScript has no inherent capacity for concurrent execution; but modern JavaScript engines can request concurrent operations (including networking communication) from the host operating system and receive data from the OS in response. This kind of engine makes JavaScript *effectively* asynchronous. In this article, engines of this sort are called *runtimes*. [Node.js](https://nodejs.org) and modern browsers are examples of such runtimes. 
+Office Add-ins execute in runtimes embedded in Office. As an interpreted language, JavaScript must run in a JavaScript runtime. [Node.js](https://nodejs.org) and modern browsers are examples of such runtimes. 
 
 ## Types of runtimes
 
 There are two types of runtimes used by Office Add-ins:
 
-- **JavaScript-only runtime**: A JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and client-side storage of data. (It doesn't support [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or cookies.) 
-- **Browser runtime**: Includes all the features of a JavaScript-only runtime and adds support for [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), [rendering engine](https://developer.mozilla.org/docs/Glossary/Rendering_engine) that renders HTML, and cookies.
+- **JavaScript-only runtime**: A JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and client-side storage of data. It doesn't support [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or cookies.
+- **Browser runtime**: Includes all the features of a JavaScript-only runtime and adds support for [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), a [rendering engine](https://developer.mozilla.org/docs/Glossary/Rendering_engine) that renders HTML, and cookies.
 
 Details about these types are later in this article at [JavaScript-only runtime](#javascript-only-runtime) and [Browser runtime](#browser-runtime).
 
 The following table shows which possible features of an add-in use each type of runtime. 
-
-> [!NOTE]
-> The choice of which type of runtime to use is an implementation detail that Microsoft could change at any time. The Office JavaScript Library doesn't assume that the same type of runtime will always be used for a given feature and your add-in architecture shouldn't assume this either.
 
 | Type of runtime | Add-in feature |
 |:-----|:-----|
@@ -113,7 +110,7 @@ For more information, see [Persist add-in state and settings](../develop/persist
 
 ## JavaScript-only runtime
 
-The JavaScript-only runtime that is used in Office Add-ins is a modification of an open source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). It doesn't have a rendering engine, and it doesn't support cookies or [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage).
+The JavaScript-only runtime that is used in Office Add-ins is a modification of an open source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). It doesn't have a rendering engine, and it doesn't support cookies or [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage). 
 
 This type of runtime is used in Outlook event-based tasks in Office on Windows only and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime). 
 
@@ -130,7 +127,7 @@ A JavaScript-runtime uses less memory and starts up faster than a browser runtim
 
 Office Add-ins use a different browser type runtime depending on the platform in which Office is running (web, Mac, or Windows), and on the version and build of Windows and Office. For example, if the user is running Office on the web in a FireFox browser, then the Firefox runtime is used. If the user is running Office on Mac, then the Safari runtime is used. If the user is running Office on Windows, then either an Edge or Internet Explorer provides the runtime, depending on the version of Windows and Office. Details can be found in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-All of these runtimes include an HTML rendering engine and provide support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), and cookies. 
+All of these runtimes include an HTML rendering engine and provide support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), and cookies.
 
 A browser runtime lifespan varies depending on the feature that it implements and on whether it's being shared or not.
 

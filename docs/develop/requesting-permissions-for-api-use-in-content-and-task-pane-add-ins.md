@@ -8,7 +8,10 @@ ms.localizationpriority: medium
 
 # Requesting permissions for API use in add-ins
 
-This article describes the different permission levels that you can declare in your content or task pane add-in's manifest to specify the level of JavaScript API access your add-in requires for its features. 
+This article describes the different permission levels that you can declare in your content or task pane add-in's manifest to specify the level of JavaScript API access your add-in requires for its features.
+
+> [!NOTE]
+> To learn about permission levels for mail (Outlook) add-ins, see [Outlook permissions model](../outlook/privacy-and-security.md#permissions-model).
 
 ## Permissions model
 

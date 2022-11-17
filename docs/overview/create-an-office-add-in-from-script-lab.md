@@ -53,7 +53,7 @@ In the next steps you'll copy code from several tabs in Script Lab.
 
 1. In VS Code, open the **/src/taskpane/taskpane.ts** file. If you are using a JavaScript project, the filename is **taskpane.js**.
 1. In Script Lab, select the **Script** tab.
-1. Copy all of the code in the **Script** tab to the clipboard. Replace the entire contents of **taskpane.ts** (or **taskpane.js** for javaScript) with the code you copied.
+1. Copy all of the code in the **Script** tab to the clipboard. Replace the entire contents of **taskpane.ts** (or **taskpane.js** for JavaScript) with the code you copied.
 
 ### Copy task pane HTML
 
@@ -169,7 +169,7 @@ If your snippet uses custom functions, you need to use the Yo Office custom func
 1. In the Script Lab task pane, choose **Samples**, and then choose the **Basic custom function** sample.
 1. Open the **/src/functions/functions.ts** file. If you're using a JavaScript project, the filename is **functions.js**.
 1. In Script Lab, select the **Script** tab.
-1. Copy all of the code in the **Script** tab to the clipboard. Paste the code at the top of the **functions.ts** (or **functions.js** for javaScript) with the code you copied.
+1. Copy all of the code in the **Script** tab to the clipboard. Paste the code at the top of the **functions.ts** (or **functions.js** for JavaScript) with the code you copied.
 1. Save the file.
 
 ## Test the standalone add-in

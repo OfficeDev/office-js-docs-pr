@@ -1,7 +1,7 @@
 ---
 title: Get and set categories
 description: How to manage categories on mailbox and item.
-ms.date: 07/07/2022
+ms.date: 11/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,10 @@ In Outlook, a user can apply categories to messages and appointments as a means 
 Only categories in the master list on your mailbox are available for you to apply to a message or appointment. You can use the API to add, get, and remove master categories.
 
 > [!IMPORTANT]
-> For the add-in to manage the categories master list, you must set the `Permissions` node in the manifest to `ReadWriteMailbox`.
+> For the add-in to manage the categories master list, it must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
+>
+> - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
+> - **Teams manifest (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
 ### Add master categories
 
@@ -81,7 +84,7 @@ You can use the API to add, get, and remove categories for a message or appointm
 > [!IMPORTANT]
 > Only categories in the master list on your mailbox are available for you to apply to a message or appointment. See the earlier section [Manage categories in the master list](#manage-categories-in-the-master-list) for more information.
 >
-> In Outlook on the web, you can't use the API to manage categories on a message in Read mode.
+> In Outlook on the web, you can't use the API to manage categories on a message in Compose mode.
 
 ### Add categories to an item
 
@@ -136,4 +139,3 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 ## See also
 
 - [Outlook permissions](understanding-outlook-add-in-permissions.md)
-- [Permissions element in the manifest](/javascript/api/manifest/permissions)
