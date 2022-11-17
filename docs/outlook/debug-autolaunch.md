@@ -10,7 +10,9 @@ ms.localizationpriority: medium
 
 This article provides debugging guidance as you implement [event-based activation](autolaunch.md) in your add-in. The event-based activation feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For more information, see [Supported events](autolaunch.md#supported-events).
 
-This article discusses the key stages to enable and run debugging on your preferred Outlook client. Select the client for which you're debugging.
+This article discusses the key stages to enable and set breakpoints in your code for debugging. Before you proceed, review the [event-based troubleshooting checklist](autolaunch.md#troubleshooting-checklist) for additional troubleshooting guidance.
+
+To begin, select the client for which you're debugging.
 
 # [Windows](#tab/windows)
 
@@ -94,7 +96,7 @@ If you used the Yeoman Generator for Office Add-ins to create your add-in projec
 
 ## Attach Visual Studio Code
 
-1. To find the add-in's **bundle.js**, open the following folder in Windows Explorer and search for your add-in's **\<Id\>** (found in the manifest).
+1. To find the add-in's **bundle.js**, open the following folder in File Explorer and search for your add-in's **\<Id\>** (found in the manifest).
 
     ```text
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef
@@ -102,7 +104,7 @@ If you used the Yeoman Generator for Office Add-ins to create your add-in projec
 
     Open the folder prefixed with this ID and copy its full path. In Visual Studio Code, open **bundle.js** from that folder. The pattern of the file path should be as follows:
 
-    `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
+    `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[Outlook mail account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
 1. Place breakpoints in bundle.js where you want the debugger to stop.
 1. In the **DEBUG** dropdown, select **Direct Debugging**, then select the **Start Debugging** icon.
@@ -134,4 +136,5 @@ To debug your event-based add-in in the new Outlook on the Mac UI, see [Debug Of
 ## See also
 
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Event-based activation troubleshooting checklist](autolaunch.md#troubleshooting-checklist)
 - [Debug your add-in with runtime logging](../testing/runtime-logging.md#runtime-logging-on-windows)
