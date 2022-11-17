@@ -213,7 +213,9 @@ To try out the functions, type the text **=CONTOSO.CLOCK()** in cell **C1** and 
 
 ## Troubleshooting
 
-You may encounter issues if you run the tutorial multiple times. If the Office cache already has an instance of a function with the same name, your add-in gets an error when it sideloads. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`.
+You may encounter issues if you run the tutorial multiple times. If the Office cache already has an instance of a function with the same name, your add-in gets an error when it sideloads.
+
+You can prevent this conflict by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`. If your npm process is already running, enter `npm stop`, clear the Office cache, and then restart npm.
 
 :::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="An error message in Excel titled 'Error installing functions'. It contains the text 'This add-in wasn't installed because a custom function with the same name already exists'.":::
 
