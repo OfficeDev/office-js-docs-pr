@@ -97,6 +97,9 @@ The `ADD` custom function computes the sum of the two numbers that you provided 
 
 [!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 
+> [!NOTE]
+> See the [Troubleshooting](#troubleshooting) section of this article if you encounter errors when sideloading the add-in.
+
 ## Create a custom function that requests data from the web
 
 Integrating data from the Web is a great way to extend Excel through custom functions. Next you'll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.
@@ -167,10 +170,10 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
 
+---
+
 > [!NOTE]
 > See the [Troubleshooting](#troubleshooting) section of this article if you encounter errors when sideloading the add-in.
-
----
 
 ## Create a streaming asynchronous custom function
 
