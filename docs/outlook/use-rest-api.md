@@ -1,7 +1,7 @@
 ---
 title: Use the Outlook REST APIs from an Outlook add-in
 description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
-ms.date: 10/03/2022
+ms.date: 11/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -12,11 +12,9 @@ The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/previ
 > [!IMPORTANT]
 > **The Outlook REST APIs are deprecated**
 >
-> The Outlook REST endpoints will be fully decommissioned on November 30, 2022 (for more details, see the [November 2020 announcement](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). You should migrate existing add-ins to use [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). For guidance, see [Compare Microsoft Graph and Outlook REST API endpoints](/outlook/rest/compare-graph).
+> It was previously announced that the Outlook REST endpoints will be fully decommissioned on November 30, 2022 (see the [November 2020 announcement](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). However, the decommission date has been postponed and the new date will be announced soon on the [Microsoft 365 Developer Blog](https://devblogs.microsoft.com/microsoft365dev/). Although the decommission date has been postponed, we highly encourage you to migrate your add-ins to use [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). For guidance, see [Compare Microsoft Graph and Outlook REST API endpoints](/outlook/rest/compare-graph).
 >
-> To assist you with the migration, active add-ins that use the REST service are eligible for an exemption to keep using the service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). This includes new add-ins developed after November 30, 2022. The exemption is based on the add-in's manifest ID and applies to privately released and AppSource-hosted add-ins.
->
-> Automatic traffic identification of Outlook add-ins that use the REST service is currently being tested for exemption validation. If you'd like to participate in this testing phase, please complete the [REST API add-in verification form](https://aka.ms/RESTCheck) prior to November 2022. For more information, see the [Office Add-ins August 2022 community call blog post](https://pnp.github.io/blog/office-add-ins-community-call/2022-08-10/).
+> To assist you with the migration, active add-ins are able to keep using the REST service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). Add-in traffic that uses the service will be automatically identified for exemption based on the add-in's manifest ID. This exemption applies to privately released and AppSource-hosted add-ins. It also includes new add-ins developed after the decommission date.
 
 ## Get an access token
 
