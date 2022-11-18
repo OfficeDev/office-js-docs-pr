@@ -1,7 +1,7 @@
 ---
 title: Custom functions debugging in a non-shared runtime
 description: Learn how to debug your Excel custom functions that don't use a shared runtime.
-ms.date: 10/04/2022
+ms.date: 11/21/2022
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +14,7 @@ This article discusses debugging only for custom functions that **don't use a [s
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 > [!TIP]
-> This debugging process doesn't work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article aren't installed with that option. To debug an add-in that is created with this option, see the instructions in one of the following articles, as appropriate.
+> This debugging techinques that are described in this article don't work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article aren't installed with that option. To debug an add-in that is created with this option, see the instructions in one of the following articles, as appropriate.
 >
 > - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md)
 > - [Debug add-ins using developer tools in Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md)
@@ -24,42 +24,9 @@ The process of debugging a custom function for add-ins that don't use a shared r
 
 | **Target platform** | **Visual Studio Code** | **Other IDE** |
 |--------------|-------------|-------------|
-| Excel on Windows | [Use the VS Code debugger for Excel on Windows](#use-the-vs-code-debugger-for-excel-on-windows) | Debugging CF-NSR outside VS Code isn't supported. Debug against Excel on the web. |
+| Excel on Windows | [Use the VS Code debugger for Excel in Microsoft Edge](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)</br>or [Use VS Code and the browser development tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web) | Debugging CF-NSR that are running in Excel on Windows outside VS Code isn't supported. Debug against Excel on the web. |
 | Excel on the web | Windows development computer: [Use the VS Code debugger for Excel in Microsoft Edge](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)</br>Mac or Windows development computer: [Use VS Code and the browser development tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web) | [Use the command line tools](#use-the-command-line-tools-to-debug)|
-| Excel on Mac |  VS Code debugging of CF-NSR isn't supported. Debug against Excel on the web. | [Use the command line tools](#use-the-command-line-tools-to-debug)|
-
-> [!NOTE]
-> This article primarily shows debugging in the context of using Visual Studio Code to edit, run tasks, and use the debug view. If you're using a different editor or command line tool, see [Commands for building and running your add-in](#commands-for-building-and-running-your-add-in) at the end of this article.
-
-## Use the VS Code debugger for Excel on Windows
-
-You can use VS Code to debug custom functions that don't use a shared runtime in Office Excel on the desktop.
-
-> [!IMPORTANT]
-> There is a known issue with the following debugging steps. The steps work for a project installed with the **Excel Custom Functions Add-in project** option in the Yeoman generator with **TypeScript** selected as the script type, but the steps do not work for a project installed with **JavaScript** selected as the script type. For additional information, see [OfficeDev/office-js-docs-pr issue #3355](https://github.com/OfficeDev/office-js-docs-pr/issues/3355).
-
-### Run your add-in from VS Code
-
-1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
-1. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
-1. Choose **Terminal > Run Task** and type or select **Dev Server**.
-
-### Start the VS Code debugger
-
-1. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
-1. From the **Run and Debug** drop-down menu, choose **Excel Desktop (Custom Functions)**.
-
-    :::image type="content" source="../images/custom-functions-run-and-debug-menu.jpg" alt-text="A screenshot showing Excel Desktop (Custom Functions) in the Run and Debug drop-down menu.":::
-
-1. Select **F5** (or select **Run -> Start Debugging** from the menu) to begin debugging. A new Excel workbook will open with your add-in already sideloaded and ready to use.
-
-### Start debugging
-
-1. In VS Code, open your source code script file (**functions.js** or **functions.ts**).
-2. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code.
-3. In the Excel workbook, enter a formula that uses your custom function.
-
-At this point, execution will stop on the line of code where you set the breakpoint. Now you can step through your code, set watches, and use any VS Code debugging features you need.
+| Excel on Mac |  VS Code debugging of CF-NSR that are running in Excel on Mac isn't supported. Debug against Excel on the web. | [Use the command line tools](#use-the-command-line-tools-to-debug)|
 
 ## Use the VS Code debugger for Excel in Microsoft Edge
 
