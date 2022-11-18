@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 11/17/2022
+ms.date: 11/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -388,36 +388,47 @@ In this scenario, you'll add handling for composing new items.
 
 As you develop your event-based add-in, you may need to troubleshoot issues, such as your add-in not loading or the event not occurring. If you run into development issues, refer to the following checklist for troubleshooting guidance.
 
-### Event-based activation prerequisites
+### Review event-based activation prerequisites
 
 - Verify that the add-in is installed on a supported Outlook client. Event-based activation isn't supported in Outlook on iOS or Android at this time.
 - Verify that your supported Outlook client supports the minimum requirement set needed to handle the event. Event-based activation was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now supported in subsequent requirements sets. For more information, see [Supported events](#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients). If you're developing an add-in that uses the [Smart Alerts](smart-alerts-onmessagesend-walkthrough.md) feature, see the "Supported clients and platform" section of the [walkthrough](smart-alerts-onmessagesend-walkthrough.md#supported-clients-and-platforms).
-- Review the expected behavior and limitations of [event-based activation](#event-based-activation-behavior-and-limitations) and [Smart Alerts](smart-alerts-onmessagesend-walkthrough.md#smart-alerts-feature-behavior-and-scenarios).
+- Review the expected behavior and limitations of the [event-based activation](#event-based-activation-behavior-and-limitations) and [Smart Alerts](smart-alerts-onmessagesend-walkthrough.md#smart-alerts-feature-behavior-and-scenarios) features.
 
-### Manifest and JavaScript requirements
+### Check manifest and JavaScript requirements
 
 - Ensure that the following conditions are met in your add-in's manifest.
-  
-  - Verify that your add-in's source file location URL is publicly available and not blocked by a firewall. This URL is specified in your manifest's [SourceLocation element](/javascript/api/manifest/sourcelocation).
+  - Verify that your add-in's source file location URL is publicly available and isn't blocked by a firewall. This URL is specified in your manifest's [SourceLocation element](/javascript/api/manifest/sourcelocation).
   - Verify that the **\<Runtimes>** element correctly references the HTML or JavaScript file containing the event handlers. Outlook on Windows uses the JavaScript file during runtime, while Outlook on the web and new Mac UI use the HTML file. For an example of how this is configured in the manifest, see [Configure the manifest](#configure-the-manifest).
 - Verify that `Office.actions.associate` is called from the JavaScript file where your event handlers are implemented. This ensures that the event handler name specified in the manifest's **\<LaunchEvent>** element is mapped to its JavaScript counterpart.
-- When developing an event-based add-in on Outlook on Windows, note that its JavaScript code must be compatible with [ECMAScript 2016](https://262.ecma-international.org/7.0/) or earlier specifications. Examples of programming syntax to avoid are as follows.
-  
+- As you develop an event-based add-in to run on Outlook on Windows, note that your JavaScript code must be compatible with [ECMAScript 2016](https://262.ecma-international.org/7.0/) or earlier specifications. Some examples of programming syntax to avoid are as follows.
   - Avoid the use of `async` and `await` statements in your code. Including these in your JavaScript code will cause the add-in to time out.
   - Avoid the use of the [conditional (ternary) operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) as it will prevent your add-in from loading.
 
-### Other troubleshooting actions
+### Debug your add-in
 
 - As you make changes to your add-in, be aware that:
-
   - If you updated the manifest, [remove the add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in), then sideload it again. If you're using Outlook on Windows, then close and reopen Outlook.
   - If you made changes to files other than the manifest, close and reopen the Outlook desktop client, or refresh the browser tab running Outlook on the web.
-- When using Outlook on Windows, verify that the **bundle.js** file is downloaded to the following folder in File Explorer.
+  - If you're still unable to see your changes after performing these steps, [clear your Office cache](../testing/clear-cache.md).
+- As you test your add-in in Outlook on Windows:
+  - Check [Event Viewer](/shows/inside/event-viewer) for any reported add-in errors.
+    1. In Event Viewer, select **Windows Logs** > **Application**.
+    1. From the **Actions** panel, select **Filter Current Log**.
+    1. From the **Logged** dropdown, select your preferred log time frame.
+    1. Select the **Error** checkbox.
+    1. From the **Event sources** dropdown, select **Outlook**.
+    1. Select **OK** to apply your filters.
+
+    :::image type="content" source="../images/outlook-event-based-logs.png" alt-text="A sample of Event Viewer's Filter Current Log settings configured to only show Outlook errors that occurred in the last hour.":::
+
+  - Verify that the **bundle.js** file is downloaded to the following folder in File Explorer. Replace text enclosed in `[]` with your applicable information.
   
   ```text
   %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[Outlook mail account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
   ```
-- When using Outlook on Windows or Mac, enable runtime logging to identify possible manifest and add-in installation issues. For guidance on using runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
+
+  If the **bundle.js** file doesn't appear in the folder, [remove your add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) from Outlook, then sideload it again.
+- As you test your add-in in Outlook on Windows or Mac, enable runtime logging to identify possible manifest and add-in installation issues. For guidance on how to use runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
 - Set breakpoints in your code to debug your add-in. For platform-specific instructions, see [Debug your event-based Outlook add-in](debug-autolaunch.md).
 
 ## Deploy to users

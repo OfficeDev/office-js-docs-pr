@@ -2,7 +2,7 @@
 title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in
 description: Learn how to handle the on-send events in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 11/09/2022
+ms.date: 11/18/2022
 ms.localizationpriority: medium
 ---
 
@@ -371,7 +371,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     > [!NOTE]
     > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
 
-1. In Outlook on Windows, create a new message and set the subject. In the body, add text like "Hey, check out this picture of my dog!".
+1. In your preferred Outlook client, create a new message and set the subject. In the body, add text like "Hey, check out this picture of my dog!".
 1. Send the message. A dialog should pop up with a recommendation for you to add an attachment.
 
     ![Dialog recommending that the user include an attachment.](../images/outlook-win-smart-alert.png)
@@ -380,7 +380,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 ## Debug your add-in
 
-For guidance on how to debug your Smart Alerts add-in, see the "Debug" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#debug).
+For guidance on how to troubleshoot your Smart Alerts add-in, see the "Troubleshooting checklist" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#troubleshooting-checklist).
 
 ## Deploy to users
 
