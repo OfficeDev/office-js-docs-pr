@@ -14,7 +14,7 @@ This article discusses debugging only for custom functions that **don't use a [s
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 > [!TIP]
-> This debugging techinques that are described in this article don't work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article aren't installed with that option. To debug an add-in that is created with this option, see the instructions in one of the following articles, as appropriate.
+> The debugging techniques that are described in this article don't work with projects that are created with the **Office Add-in project containing the manifest only** option in the Yeoman generator. The scripts that are referred to later in this article aren't installed with that option. To debug an add-in that is created with this option, see the instructions in one of the following articles, as appropriate.
 >
 > - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md)
 > - [Debug add-ins using developer tools in Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md)
