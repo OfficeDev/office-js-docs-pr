@@ -1,5 +1,5 @@
 ---
-ms.date: 05/02/2022
+ms.date: 11/30/2022
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel.
 title: Receive and handle data with custom functions
 ms.localizationpriority: medium
@@ -62,7 +62,6 @@ In the following code sample, the `getStarCount` function calls the Github API t
  * @param repoName string name of the repository.
  * @return number of stars.
  */
-
 async function getStarCount(userName: string, repoName: string) {
 
   const url = "https://api.github.com/repos/" + userName + "/" + repoName;
@@ -126,6 +125,9 @@ function increment(incrementBy, invocation) {
   };
 }
 ```
+
+> [!NOTE]
+> For an example of how to return a dynamic spill array from a streaming function, see [Return multiple results from your custom function: Code samples](custom-functions-dynamic-arrays.md#code-samples).
 
 ## Cancel a function
 

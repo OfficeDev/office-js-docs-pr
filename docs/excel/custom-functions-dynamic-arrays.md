@@ -17,7 +17,7 @@ To create a custom function that is a dynamic array formula, it must return a tw
 
 ## Code samples
 
-The following example shows how to return a dynamic array that spills down.
+The first example shows how to return a dynamic array that spills down.
 
 ```javascript
 /**
@@ -60,17 +60,16 @@ function spillRectangle() {
 }
 ```
 
-The fourth example shows how to return a dynamic spill array from a streaming function. To learn more about streaming functions, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). 
+The fourth example shows how to return a dynamic spill array from a streaming function. The results spill down, like the first example, and increment once a second based on the `amount` parameter. To learn more about streaming functions, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function).
 
 ```javascript
     /** @CustomFunction
-     * @description Increments the cell with a given amount at a specified interval in milliseconds.
+     * @description Increment the cells with a given amount every 1000 milliseconds.
      * @param {number} amount The amount to add to the cell value on each increment.
-     * @param {number} interval The time in milliseconds to wait before the next increment on the cell.
      * @param {CustomFunctions.StreamingInvocation<number[][]>} invocation Parameter to send results to Excel or respond to the user canceling the function. A dynamic array.
      * @returns An incrementing value. Returns a dynamic spilled array with multiple results.
      */
-    function increment(amount: number, interval: number, invocation: CustomFunctions.StreamingInvocation<number[][]>): void {
+    function increment(amount: number, invocation: CustomFunctions.StreamingInvocation<number[][]>): void {
       let firstResult = 0;
       let secondResult = 1;
       let thirdResult = 2;
@@ -80,7 +79,11 @@ The fourth example shows how to return a dynamic spill array from a streaming fu
         secondResult += amount;
         thirdResult += amount;
         invocation.setResult([[firstResult], [secondResult], [thirdResult]]);
-      }, interval);
+      }, 1000);
+
+      invocation.onCanceled = () => {
+        clearInterval(timer);
+      };
     }
 ```
 
