@@ -30,7 +30,7 @@ function spillDown() {
 }
 ```
 
-The next example shows how to return a dynamic array that spills right.
+The second example shows how to return a dynamic array that spills right.
 
 ```javascript
 /**
