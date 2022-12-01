@@ -1,6 +1,6 @@
 ---
-ms.date: 05/11/2020
-description: Return multiple results from your custom function in an Office Excel add-in.
+ms.date: 11/30/2022
+description: Return multiple results from your custom function in an Excel add-in.
 title: Return multiple results from your custom function
 ms.localizationpriority: medium
 ---
@@ -15,6 +15,8 @@ The following image shows how the `SORT` function spills down into neighboring c
 
 To create a custom function that is a dynamic array formula, it must return a two-dimensional array of values. If the results spill into neighboring cells that already have values, the formula will display a `#SPILL!` error.
 
+## Code samples
+
 The following example shows how to return a dynamic array that spills down.
 
 ```javascript
@@ -28,7 +30,7 @@ function spillDown() {
 }
 ```
 
-The following example shows how to return a dynamic array that spills right.
+The next example shows how to return a dynamic array that spills right.
 
 ```javascript
 /**
@@ -41,7 +43,7 @@ function spillRight() {
 }
 ```
 
-The following example shows how to return a dynamic array that spills both down and right.
+The third example shows how to return a dynamic array that spills both down and right.
 
 ```javascript
 /**
@@ -56,6 +58,30 @@ function spillRectangle() {
     ['pears', 5, 'crates']
   ];
 }
+```
+
+The fourth example shows how to return a dynamic spill array from a streaming function. To learn more about streaming functions, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). 
+
+```javascript
+    /** @CustomFunction
+     * @description Increments the cell with a given amount at a specified interval in milliseconds.
+     * @param {number} amount The amount to add to the cell value on each increment.
+     * @param {number} interval The time in milliseconds to wait before the next increment on the cell.
+     * @param {CustomFunctions.StreamingInvocation<number[][]>} invocation Parameter to send results to Excel or respond to the user canceling the function. A dynamic array.
+     * @returns An incrementing value. Returns a dynamic spilled array with multiple results.
+     */
+    function increment(amount: number, interval: number, invocation: CustomFunctions.StreamingInvocation<number[][]>): void {
+      let firstResult = 0;
+      let secondResult = 1;
+      let thirdResult = 2;
+
+      const timer = setInterval(() => {
+        firstResult += amount;
+        secondResult += amount;
+        thirdResult += amount;
+        invocation.setResult([[firstResult], [secondResult], [thirdResult]]);
+      }, interval);
+    }
 ```
 
 ## See also
