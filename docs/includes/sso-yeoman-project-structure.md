@@ -28,4 +28,4 @@ The following files facilitate the SSO process and write data to the Office docu
 
 - The **./src/helpers/fallbackauthhelper.js** file contains the task pane JavaScript that invokes the fallback authentication strategy in scenarios when SSO authentication is not supported.
 
-- The **./src/helpers/ssoauthhelper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the access token, initiates the swap of the access token for a new access token with permissions to Microsoft Graph, and calls to Microsoft Graph for the data.
+- The **./src/middle-tier/ssoauth-helper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the access token, initiates the swap of the access token for a new access token with permissions to Microsoft Graph, and calls to Microsoft Graph for the data.
