@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 11/18/2022
+ms.date: 12/07/2022
 ms.localizationpriority: medium
 ---
 
@@ -416,10 +416,10 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
     1. From the **Actions** panel, select **Filter Current Log**.
     1. From the **Logged** dropdown, select your preferred log time frame.
     1. Select the **Error** checkbox.
-    1. From the **Event sources** dropdown, select **Outlook**.
+    1. In the **Event IDs** field, enter **63**.
     1. Select **OK** to apply your filters.
 
-    :::image type="content" source="../images/outlook-event-based-logs.png" alt-text="A sample of Event Viewer's Filter Current Log settings configured to only show Outlook errors that occurred in the last hour.":::
+    :::image type="content" source="../images/outlook-event-based-logs.png" alt-text="A sample of Event Viewer's Filter Current Log settings configured to only show Outlook errors with event ID 63 that occurred in the last hour.":::
 
   - Verify that the **bundle.js** file is downloaded to the following folder in File Explorer. Replace text enclosed in `[]` with your applicable information.
   
