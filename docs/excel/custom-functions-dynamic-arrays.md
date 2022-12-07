@@ -63,7 +63,13 @@ function spillRectangle() {
 The fourth example shows how to return a dynamic spill array from a streaming function. The results spill down, like the first example, and increment once a second based on the `amount` parameter. To learn more about streaming functions, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function).
 
 ```javascript
-    /** @CustomFunction
+    /**
+ * Increment the cells with a given amount every second. Creates a dynamic spilled array with multiple results
+ * @customfunction
+ * @param {number} amount The amount to add to the cell value on each increment.
+ * @param {CustomFunctions.StreamingInvocation<number[][]>} invocation Parameter to send results to Excel or respond to the user canceling the function. A dynamic array.
+ * 
+ */
      * @description Increment the cells with a given amount every 1000 milliseconds.
      * @param {number} amount The amount to add to the cell value on each increment.
      * @param {CustomFunctions.StreamingInvocation<number[][]>} invocation Parameter to send results to Excel or respond to the user canceling the function. A dynamic array.
