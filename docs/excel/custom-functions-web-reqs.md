@@ -1,5 +1,5 @@
 ---
-ms.date: 11/30/2022
+ms.date: 12/07/2022
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel.
 title: Receive and handle data with custom functions
 ms.localizationpriority: medium
@@ -140,7 +140,9 @@ Excel cancels the execution of a function in the following situations.
 You can also consider setting a default streaming value to handle cases when a request is made but you are offline.
 
 > [!NOTE]
-> There is also a category of functions called cancelable functions, and these are _not_ related to streaming functions. Only asynchronous custom functions which return one value are cancelable. Cancelable functions allow a web request to be terminated in the middle of a request, using a [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to decide what to do upon cancellation. Declare a cancelable function using the tag `@cancelable`.
+> There is also a category of functions called cancelable functions which use the `@cancelable` JSDoc tag. A function can't use both `@cancelable` and `@streaming` tags. Only asynchronous custom functions which return one value are cancelable.
+>
+> Cancelable functions allow a web request to be terminated in the middle of a request, using a [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to decide what to do upon cancellation. See [Autogenerate JSON metadata: @cancelable](custom-functions-json-autogeneration.md#cancelable) to learn more about the `@cancelable` tag.
 
 ### Use an invocation parameter
 

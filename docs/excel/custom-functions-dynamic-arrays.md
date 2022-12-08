@@ -1,5 +1,5 @@
 ---
-ms.date: 11/30/2022
+ms.date: 12/07/2022
 description: Return multiple results from your custom function in an Excel add-in.
 title: Return multiple results from your custom function
 ms.localizationpriority: medium
@@ -68,7 +68,6 @@ The fourth example shows how to return a dynamic spill array from a streaming fu
  * @customfunction
  * @param {number} amount The amount to add to the cell value on each increment.
  * @param {CustomFunctions.StreamingInvocation<number[][]>} invocation Parameter to send results to Excel or respond to the user canceling the function. A dynamic array.
- * @returns An incrementing value. Returns a dynamic spilled array with multiple results.
  */
 function increment(amount: number, invocation: CustomFunctions.StreamingInvocation<number[][]>): void {
   let firstResult = 0;
