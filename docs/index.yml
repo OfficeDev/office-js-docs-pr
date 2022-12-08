@@ -49,7 +49,7 @@ highlightedContent:
     # Card 8
     - itemType: whats-new
       title: Microsoft 365 Developer Blog
-      url: https://developer.microsoft.com/office/blogs/technology/office-add-ins
+      url: https://devblogs.microsoft.com/microsoft365dev/category/office-add-ins/
 
 
 # conceptualContent section (optional)
