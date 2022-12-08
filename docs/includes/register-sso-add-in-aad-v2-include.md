@@ -96,7 +96,7 @@ Sometimes called an _application password_, a client secret is a string value yo
     :::image type="content" source="../images/azure-portal-add-a-scope-details.png" alt-text="Add a scope pane with example values.":::
 
     | Field | Description | Values |
-    |-------|-------------|---------|
+    |--|--|--|
     | **Scope name** | The name of your scope. A common scope naming convention is `resource.operation.constraint`. | For SSO this must be set to `access_as_user`. |
     | **Who can consent** |  Determines if admin consent is required or if users can consent without an admin approval. | For learning SSO and samples, we recommend you set this to **Admins and users**. <br><br>Select **Admins only** for higher-privileged permissions.|
     | **Admin consent display name** | A short description of the scope's purpose visible to admins only. | `Read-only access to user files and profiles.` |
@@ -111,7 +111,7 @@ Sometimes called an _application password_, a client secret is a string value yo
     :::image type="content" source="../images/azure-portal-add-a-scope-details.png" alt-text="Add a scope pane with example values.":::
 
     | Field | Description | Values |
-    |-------|-------------|---------|
+    |--|--|--|
     | **Scope name** | The name of your scope. A common scope naming convention is `resource.operation.constraint`. | For SSO this must be set to `access_as_user`. |
     | **Who can consent** |  Determines if admin consent is required or if users can consent without an admin approval. | For learning SSO and samples, we recommend you set this to **Admins and users**. <br><br>Select **Admins only** for higher-privileged permissions.|
     | **Admin consent display name** | A short description of the scope's purpose visible to admins only. | `Read and write access to user files. Read-only access to user mail and profiles.` |
