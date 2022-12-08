@@ -140,9 +140,9 @@ Excel cancels the execution of a function in the following situations.
 You can also consider setting a default streaming value to handle cases when a request is made but you are offline.
 
 > [!NOTE]
-> There is also a category of functions called cancelable functions which use the `@cancelable` JSDoc tag. A function can't use both `@cancelable` and `@streaming` tags. Only asynchronous custom functions which return one value are cancelable.
+> There is also a category of functions called cancelable functions which use the `@cancelable` JSDoc tag. Cancelable functions allow a web request to be terminated in the middle of the request.
 >
-> Cancelable functions allow a web request to be terminated in the middle of a request, using a [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to decide what to do upon cancellation. See [Autogenerate JSON metadata: @cancelable](custom-functions-json-autogeneration.md#cancelable) to learn more about the `@cancelable` tag.
+> A streaming function can't use the `@cancelable` tag, but streaming functions can include an `onCanceled` callback function. Only asynchronous custom functions which return one value can use the `@cancelable` JSDoc tag. See [Autogenerate JSON metadata: @cancelable](custom-functions-json-autogeneration.md#cancelable) to learn more about the `@cancelable` tag.
 
 ### Use an invocation parameter
 
