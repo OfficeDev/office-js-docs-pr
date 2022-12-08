@@ -89,39 +89,20 @@ Sometimes called an _application password_, a client secret is a string value yo
 
     The **Add a scope** pane opens.
 
-1. In the **Add a scope** pane, specify the scope's attributes.
+1. In the **Add a scope** pane, specify the scope's attributes. The following table shows example values for profile, openid, Files.ReadWrite, and Mail.Read permissions.
 
-#### [Office Add-in](#tab/office)
+    | Field | Description | Values |
+    |--|--|--|
+    | **Scope name** | The name of your scope. A common scope naming convention is `resource.operation.constraint`. | For SSO this must be set to `access_as_user`. |
+    | **Who can consent** |  Determines if admin consent is required or if users can consent without an admin approval. | For learning SSO and samples, we recommend you set this to **Admins and users**. <br><br>Select **Admins only** for higher-privileged permissions.|
+    | **Admin consent display name** | A short description of the scope's purpose visible to admins only. | Example: `Read/write permissions to user files. Read permissions to user mail and profiles.` |
+    | **Admin consent description** | A more detailed description of the permission granted by the scope that only admins see. | Example: `Allow Office to have read/write permissions to all user files and read permissions to all user mail. Office can call the app's web APIs as the current user.` |
+    | **User consent display name** | A short description of the scope's purpose. Shown to users only if you set **Who can consent** to **Admins and users**. | `Read/write permissions to your files. Read permissions to your mail and profile.` |
+    | **User consent description** | A more detailed description of the permission granted by the scope. Shown to users only if you set **Who can consent** to **Admins and users**. | `Allow Office to have read/write permissions to your files, and read permissions to your mail and profile.` |
 
-| Field | Description | Values |
-|--|--|--|
-| **Scope name** | The name of your scope. A common scope naming convention is `resource.operation.constraint`. | For SSO this must be set to `access_as_user`. |
-| **Who can consent** |  Determines if admin consent is required or if users can consent without an admin approval. | For learning SSO and samples, we recommend you set this to **Admins and users**. <br><br>Select **Admins only** for higher-privileged permissions.|
-| **Admin consent display name** | A short description of the scope's purpose visible to admins only. | `Read-only access to user files and profiles.` |
-| **Admin consent description** | A more detailed description of the permission granted by the scope that only admins see. | `Allow Office to have read-only access to all user files and profiles. Office can call the app's web APIs as the current user.` |
-| **User consent display name** | A short description of the scope's purpose. Shown to users only if you set **Who can consent** to **Admins and users**. | `Read-only access to your files and profile.` |
-| **User consent description** | A more detailed description of the permission granted by the scope. Shown to users only if you set **Who can consent** to **Admins and users**. | `Allow Office to have read-only access to your files and user profile.` |
+    Your settings should appear similar to the following image.
 
-Your settings should appear similar to the following image.
-
-:::image type="content" source="../images/azure-portal-add-a-scope-details.png" alt-text="Add a scope pane with example values.":::
-
-#### [Outlook add-in](#tab/outlook)
-
-| Field | Description | Values |
-|--|--|--|
-| **Scope name** | The name of your scope. A common scope naming convention is `resource.operation.constraint`. | For SSO this must be set to `access_as_user`. |
-| **Who can consent** |  Determines if admin consent is required or if users can consent without an admin approval. | For learning SSO and samples, we recommend you set this to **Admins and users**. <br><br>Select **Admins only** for higher-privileged permissions.|
-| **Admin consent display name** | A short description of the scope's purpose visible to admins only. | `Read and write access to user files. Read-only access to user mail and profiles.` |
-| **Admin consent description** | A more detailed description of the permission granted by the scope that only admins see. | `Allow Outlook to have read-only access to all user email and profiles. Allow Outlook to have read and write access to all user files. Outlook can call the app's web APIs as the current user.` |
-| **User consent display name** | A short description of the scope's purpose. Shown to users only if you set **Who can consent** to **Admins and users**. | `Read and write access to your files. Read-only access to your profile and mail.` |
-| **User consent description** | A more detailed description of the permission granted by the scope. Shown to users only if you set **Who can consent** to **Admins and users**. | `Allow Outlook to have read and write access to your files, and read-only access to your profile and mail.`  |
-
-Your settings should appear similar to the following image.
-
-:::image type="content" source="../images/azure-portal-add-a-scope-details.png" alt-text="Add a scope pane with example values.":::
-
----
+    :::image type="content" source="../images/azure-portal-add-a-scope-details.png" alt-text="Add a scope pane with example values.":::
 
 1. Set the **State** to **Enabled**, and then select **Add scope**.
 
@@ -177,28 +158,10 @@ Your settings should appear similar to the following image.
 
     :::image type="content" source="../images/azure-portal-request-api-permissions-delegated.png" alt-text="The Request API permissions pane with delegated permissions button.":::
 
-1. In the **Select permissions** search box, search for the permissions your add-in needs.
-
-#### [Office Add-in](#tab/office)
-
-* Files.Read
-* openid
-* profile
+1. In the **Select permissions** search box, search for the permissions your add-in needs. For example, profile, openid, Files.ReadWrite, and Mail.Read
 
 > [!NOTE]
 > The `User.Read` permission may already be listed by default. It's a good practice to only request permissions that are needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.
-
-#### [Outlook add-in](#tab/outlook)
-
-* Files.ReadWrite
-* Mail.Read
-* openid
-* profile
-
-> [!NOTE]
-> The `User.Read` permission may already be listed by default. It's a good practice to only request permissions that are needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.
-
----
 
 1. Select the checkbox for each permission as it appears. Note that the permissions will not remain visible in the list as you select each one. After selecting the permissions that your add-in needs, select **Add permissions**.
 
