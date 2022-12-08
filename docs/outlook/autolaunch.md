@@ -399,10 +399,23 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 - Ensure that the following conditions are met in your add-in's manifest.
   - Verify that your add-in's source file location URL is publicly available and isn't blocked by a firewall. This URL is specified in your manifest's [SourceLocation element](/javascript/api/manifest/sourcelocation).
   - Verify that the **\<Runtimes>** element correctly references the HTML or JavaScript file containing the event handlers. Outlook on Windows uses the JavaScript file during runtime, while Outlook on the web and new Mac UI use the HTML file. For an example of how this is configured in the manifest, see [Configure the manifest](#configure-the-manifest).
-- Verify that `Office.actions.associate` is called from the JavaScript file where your event handlers are implemented. This ensures that the event handler name specified in the manifest's **\<LaunchEvent>** element is mapped to its JavaScript counterpart.
-- As you develop an event-based add-in to run on Outlook on Windows, note that your JavaScript code must be compatible with [ECMAScript 2016](https://262.ecma-international.org/7.0/) or earlier specifications. Some examples of programming syntax to avoid are as follows.
-  - Avoid the use of `async` and `await` statements in your code. Including these in your JavaScript code will cause the add-in to time out.
-  - Avoid the use of the [conditional (ternary) operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) as it will prevent your add-in from loading.
+- Verify that your event-handling JavaScript file referenced by the Outlook on Windows client calls `Office.actions.associate`. This ensures that the event handler name specified in the manifest's **\<LaunchEvent>** element is mapped to its JavaScript counterpart.
+
+  > [!TIP]
+  > If your event-based add-in only has one JavaScript file referenced by Outlook on the web, Windows, and Mac, it's recommended to check on which platform the add-in is running to determine when to call `Office.actions.associate`, as shown in the following code.
+  >
+  > ```javascript
+  > if (Office.context.platform === Office.PlatformType.PC) {
+  >     Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
+  >     Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
+  > }
+  > ```
+
+- The JavaScript code of event-based add-ins that run in Outlook on Windows only supports [ECMAScript 2016](https://262.ecma-international.org/7.0/) and earlier specifications. Some examples of programming syntax to avoid are as follows.
+  - The use of `async` and `await` statements in your code. Including these in your JavaScript code will cause the add-in to time out.
+  - The use of the [conditional (ternary) operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) as it will prevent your add-in from loading.
+  
+  If your add-in only has one JavaScript file referenced by Outlook on the web, Windows, and Mac, you must limit your code to ECMAScript 2016 to ensure that your add-in runs in Outlook on Windows. However, if you have a separate JavaScript file referenced by Outlook on the web and Mac, you can implement a later ECMAScript specification in that file.
 
 ### Debug your add-in
 
