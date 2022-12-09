@@ -393,7 +393,7 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 ### Review event-based activation prerequisites
 
 - Verify that the add-in is installed on a supported Outlook client. Event-based activation isn't supported in Outlook on iOS or Android at this time.
-- Verify that your supported Outlook client supports the minimum requirement set needed to handle the event. Event-based activation was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now supported in subsequent requirements sets. For more information, see [Supported events](#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients). If you're developing an add-in that uses the [Smart Alerts](smart-alerts-onmessagesend-walkthrough.md) feature, see the "Supported clients and platform" section of the [walkthrough](smart-alerts-onmessagesend-walkthrough.md#supported-clients-and-platforms).
+- Verify that your Outlook client supports the minimum requirement set needed to handle the event. Event-based activation was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now supported in subsequent requirements sets. For more information, see [Supported events](#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients). If you're developing an add-in that uses the [Smart Alerts](smart-alerts-onmessagesend-walkthrough.md) feature, see the "Supported clients and platform" section of the [walkthrough](smart-alerts-onmessagesend-walkthrough.md#supported-clients-and-platforms).
 - Review the expected behavior and limitations of the [event-based activation](#event-based-activation-behavior-and-limitations) and [Smart Alerts](smart-alerts-onmessagesend-walkthrough.md#smart-alerts-feature-behavior-and-scenarios) features.
 
 ### Check manifest and JavaScript requirements
@@ -422,8 +422,8 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 ### Debug your add-in
 
 - As you make changes to your add-in, be aware that:
-  - If you updated the manifest, [remove the add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in), then sideload it again. If you're using Outlook on Windows, then close and reopen Outlook.
-  - If you made changes to files other than the manifest, close and reopen the Outlook desktop client, or refresh the browser tab running Outlook on the web.
+  - If you update the manifest, [remove the add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in), then sideload it again. If you're using Outlook on Windows, then close and reopen Outlook.
+  - If you make changes to files other than the manifest, close and reopen the Outlook desktop client, or refresh the browser tab running Outlook on the web.
   - If you're still unable to see your changes after performing these steps, [clear your Office cache](../testing/clear-cache.md).
 - As you test your add-in in Outlook on Windows:
   - Check [Event Viewer](/shows/inside/event-viewer) for any reported add-in errors.
