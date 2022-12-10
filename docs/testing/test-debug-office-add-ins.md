@@ -1,7 +1,7 @@
 ---
 title: Test Office Add-ins
 description: Learn how to test your Office Add-in.
-ms.date: 07/28/2022
+ms.date: 12/12/2022
 ms.localizationpriority: high
 ---
 
@@ -17,9 +17,17 @@ Office Add-ins run across major platforms, so you need to test an add-in in all 
 > On Windows computers, the version of Windows and Office will determine which browser control is used by add-ins. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!IMPORTANT]
-> Add-ins marketed through AppSource go through a validation process that includes testing on all platforms. In addition, add-ins are tested for Office on the web with all major modern browsers, including Microsoft Edge (Chromium-based WebView2), Chrome, and Safari. Accordingly, you should test on these platforms and browsers before you submit to AppSource. For more information about validation, see [Commercial marketplace certification policies](/legal/marketplace/certification-policies), especially [section 1120.3](/legal/marketplace/certification-policies#11203-functionality), and the [Office Add-in application and availability page](/javascript/api/requirement-sets).
+> Add-ins marketed through AppSource go through a validation process that includes testing on all platforms.
 >
-> AppSource does not use Internet Explorer or the legacy version of Microsoft Edge (WebView1) to test add-ins in Office on the web. But if a significant number of your users will use legacy Edge to open Office on the web, then you should test with it. (Office on the web will not open in Internet Explorer, so you cannot, and do not need to, test Office on the web with Internet Explorer.) For more information, see [Support Internet Explorer 11](../develop/support-ie-11.md) and [Troubleshooting Microsoft Edge issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-microsoft-edge-issues). Office still supports these browsers for add-in runtimes, so if you think you've encountered a bug in how add-ins run in them, please create an issue for the [office-js](https://github.com/OfficeDev/office-js/issues/new/choose) repo.
+> ***Add-ins tested for Office on the web***
+>
+> Add-ins are tested for Office on the web with all major modern browsers, including Microsoft Edge (Chromium-based WebView2), Chrome, and Safari. Accordingly, you should test on these platforms and browsers before you submit to AppSource. For more information about validation, see [Commercial marketplace certification policies](/legal/marketplace/certification-policies), especially [section 1120.3](/legal/marketplace/certification-policies#11203-functionality), and the [Office Add-in application and availability page](/javascript/api/requirement-sets).
+>
+> AppSource doesn't use Internet Explorer or Microsoft Edge Legacy (EdgeHTML) to test add-ins in Office on the web. However, if a significant number of your users will use Edge Legacy to open Office on the web, then you should test with it. (Office on the web will not open in Internet Explorer, so you can't, and don't need to, test Office on the web with Internet Explorer.) For more information, see [Support Internet Explorer 11 and Microsoft Edge Legacy](../develop/support-ie-11.md) and [Troubleshooting Microsoft Edge issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-microsoft-edge-issues). Office still supports these browsers for add-in runtimes, so if you think you've encountered a bug in how add-ins run in them, please create an issue for the [office-js](https://github.com/OfficeDev/office-js/issues/new/choose) repo.
+>
+> ***Add-ins tested for Office on Windows***
+>
+> Because some Office versions on Windows still use the webview controls that come with Internet Explorer and Microsoft Edge Legacy, AppSource tests whether your add-in supports these browsers. If your add-in doesn't support these browsers, AppSource only issues a warning and doesn't reject your add-in. In this instance, we recommend configuring a graceful failure message on your add-in for a smoother user experience. For further guidance, see [Support Internet Explorer 11 and Microsoft Edge Legacy](../develop/support-ie-11.md).
 
 ## Sideload an Office Add-in for testing
 

@@ -19,31 +19,32 @@ ms.localizationpriority: medium
 If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser control that is based on Internet Explorer 11 (IE11). You can use a command line to switch from more modern runtimes used by add-ins to the Internet Explorer 11 runtime for this testing. For information about which versions of Windows and Office use the Internet Explorer 11 web view control, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!IMPORTANT]
-> Internet Explorer 11 does not support JavaScript versions later than ES5. If you want to use the syntax and features of ECMAScript 2015 or later, you have two options:
+> Internet Explorer 11 doesn't support JavaScript versions later than ES5. If you want to use the syntax and features of ECMAScript 2015 or later, you have two options:
 >
 > - Write your code in ECMAScript 2015 (also called ES6) or later JavaScript, or in TypeScript, and then compile your code to ES5 JavaScript using a compiler such as [babel](https://babeljs.io/) or [tsc](https://www.typescriptlang.org/index.html).
 > - Write in ECMAScript 2015 or later JavaScript, but also load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library such as [core-js](https://github.com/zloirock/core-js) that enables IE to run your code.
 >
-> For more information about these options, see [Support Internet Explorer 11](../develop/support-ie-11.md).
+> For more information about these options, see [Support Internet Explorer 11 and Microsoft Edge Legacy](../develop/support-ie-11.md).
 >
-> Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location. To learn more, see [Determine at runtime if the add-in is running in Internet Explorer](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
+> Also, Internet Explorer 11 doesn't support some HTML5 features such as media, recording, and location. To learn more, see [Determine at runtime if the add-in is running in IE11 or Microsoft Edge Legacy](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-ie11-or-microsoft-edge-legacy).
 
 > [!NOTE]
-> - Office on the web cannot be opened in Internet Explorer 11, so you cannot (and do not need to) test your add-in on Office on the web with Internet Explorer.
 >
-> - Internet Explorer's Enhanced Security Configuration (ESC) must be turned off for Office Web Add-ins to work. If you are using a Windows Server computer as your client when developing add-ins, note that ESC is turned on by default in Windows Server.
+> - Office on the web can't be opened in Internet Explorer 11, so you can't (and don't need to) test your add-in on Office on the web with Internet Explorer.
+>
+> - Internet Explorer's Enhanced Security Configuration (ESC) must be turned off for Office Web Add-ins to work. If you're using a Windows Server computer as your client when developing add-ins, note that ESC is turned on by default in Windows Server.
 
 ## Switch to the Internet Explorer 11 webview
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-There are two ways to switch the Internet Explorer webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Internet Explorer by default. We recommend the first method. But you should use the second in the following scenarios.
+There are two ways to switch the Internet Explorer webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Internet Explorer by default. We recommend the first method, but you should use the second in the following scenarios.
 
 - Your project was developed with Visual Studio and IIS. It isn't node.js-based.
 - You want to be absolutely robust in your testing.
 - You can't use the Beta channel for Microsoft 365 on your development computer.
-- You're developing on a Mac. 
+- You're developing on a Mac.
 - If for any reason the command line tool doesn't work.
 
 ### Switch via the command line

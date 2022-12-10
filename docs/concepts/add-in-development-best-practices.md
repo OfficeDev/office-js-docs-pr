@@ -1,7 +1,7 @@
 ---
 title: Best practices for developing Office Add-ins
 description: Apply the best practices when developing to create Office Add-ins.
-ms.date: 05/01/2022
+ms.date: 12/12/2022
 ms.localizationpriority: medium
 ---
 
@@ -31,17 +31,17 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - Provide teaching UI to guide users and make your UI personal.
 
-  ![Screenshot showing a "Do" vs. "Don't" comparison. The "Do" example shows an add-in that includes a button users can click to get started. The "Don't" example shows an add-in with no introductory steps or buttons.](../images/contoso-part-catalog-do-dont.png)
+  ![A "Do" versus "Don't" comparison on how to guide your users to use the UI. The "Do" example shows an add-in that includes a button users can click to get started. The "Don't" example shows an add-in with no introductory steps or buttons.](../images/contoso-part-catalog-do-dont.png)
 
 - If your content add-in binds to data in the user's document, include sample data or a template to show users the data format to use.
 
-  ![Screenshot showing a "Do" vs. "Don't" comparison. The "Do" example shows an add-in that includes a button users can click to insert sample data. The "Don't" example shows an add-in without sample data or buttons.](../images/add-in-title.png)
+  ![A "Do" versus "Don't" comparison on how to include sample data to your add-in. The "Do" example shows an add-in that includes a button users can click to insert sample data. The "Don't" example shows an add-in without sample data or buttons.](../images/add-in-title.png)
 
 - Offer [free trials](/office/dev/store/decide-on-a-pricing-model). If your add-in requires a subscription, make some functionality available without a subscription.
 
-- Make signup simple. Prefill information (email, display name) and skip email verifications.
+- Make the sign-up experience simple. Prefill information, such as email and display name, and skip email verifications.
 
-- Avoid pop ups. If you have to use them, guide the user to enable your pop up.
+- Avoid pop-up windows. If you have to use them, guide the user to enable your pop-up window.
 
 For patterns that you can apply as you develop your first-run experience, see [UX design patterns for Office Add-ins](../design/first-run-experience-patterns.md).
 
@@ -61,7 +61,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Avoid scrolling. Optimize for 1366 x 768 resolution.
 
-- Do not include unlicensed images.
+- Don't include unlicensed images.
 
 - Use [clear and simple language](../design/voice-guidelines.md) in your add-in.
 
@@ -74,11 +74,11 @@ For patterns that you can apply as you develop your first-run experience, see [U
 - Use the [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) property to detect whether the Office application that your add-in runs on is touch enabled.
 
   > [!NOTE]
-  > This property is not supported in Outlook.
+  > This property isn't supported in Outlook.
 
 - Ensure that all controls are appropriately sized for touch interaction. For example, buttons have adequate touch targets, and input boxes are large enough for users to enter input.
 
-- Do not rely on non-touch input methods like hover or right-click.
+- Don't rely on non-touch input methods like hover or right-click.
 
 - Ensure that your add-in works in both portrait and landscape modes. Be aware that on touch devices, part of your add-in might be hidden by the soft keyboard.
 
@@ -128,9 +128,9 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Create a website to help users find and use your add-in.
 
-## Support Internet Explorer (recommended but not required)
+## Support Internet Explorer and Microsoft Edge Legacy (recommended but not required)
 
-See [Support Internet Explorer 11](../develop/support-ie-11.md).
+See [Support Internet Explorer 11 and Microsoft Edge Legacy](../develop/support-ie-11.md).
 
 ## See also
 
