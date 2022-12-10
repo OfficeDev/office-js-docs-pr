@@ -382,7 +382,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 ## Debug your add-in
 
-For guidance on how to troubleshoot your Smart Alerts add-in, see the "Troubleshooting guide" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#troubleshooting-checklist).
+For guidance on how to troubleshoot your Smart Alerts add-in, see the "Troubleshooting guide" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#troubleshooting-guide).
 
 ## Deploy to users
 
@@ -466,6 +466,7 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 
 - [Outlook add-in manifests](manifests.md)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Event-based activation troubleshooting guide](autolaunch.md#troubleshooting-guide)
 - [How to debug event-based add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
 - [Office Add-ins code sample: Use Outlook Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)

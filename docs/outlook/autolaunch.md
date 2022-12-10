@@ -446,7 +446,7 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 - As you test your add-in in Outlook on Windows or Mac, enable runtime logging to identify possible manifest and add-in installation issues. For guidance on how to use runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
 - Set breakpoints in your code to debug your add-in. For platform-specific instructions, see [Debug your event-based Outlook add-in](debug-autolaunch.md).
 
-### Seek further assistance
+### Seek additional help
 
 If you still need help after performing the recommended troubleshooting steps, [open a GitHub issue](https://github.com/OfficeDev/office-js/issues/new?assignees=&labels=&template=bug_report.md&title=). Include screenshots, video recordings, or runtime logs to supplement your report.
 
