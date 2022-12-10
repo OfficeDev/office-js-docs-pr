@@ -317,7 +317,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
       }
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook on Windows client, remember to map the event handler name specified in the manifest's LaunchEvent element to its JavaScript counterpart.
+    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest's LaunchEvent element to its JavaScript counterpart.
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
     if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
       Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
@@ -373,7 +373,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     > [!NOTE]
     > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
 
-1. In your preferred Outlook client, create a new message and set the subject. In the body, add text like "Hey, check out this picture of my dog!".
+1. In your preferred Outlook client, create a new message and set the subject. In the body, add some text. For example, "Hey, here's a picture of my dog!".
 1. Send the message. A dialog should pop up with a recommendation for you to add an attachment.
 
     ![Dialog recommending that the user include an attachment.](../images/outlook-win-smart-alert.png)
@@ -382,7 +382,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 ## Debug your add-in
 
-For guidance on how to troubleshoot your Smart Alerts add-in, see the "Troubleshooting checklist" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#troubleshooting-checklist).
+For guidance on how to troubleshoot your Smart Alerts add-in, see the "Troubleshooting guide" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#troubleshooting-checklist).
 
 ## Deploy to users
 

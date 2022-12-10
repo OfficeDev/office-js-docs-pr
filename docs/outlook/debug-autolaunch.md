@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Debug your event-based Outlook add-in
 
-This article discusses the key debugging stages to enable and set breakpoints in your code as you implement [event-based activation](autolaunch.md) in your add-in. The event-based activation feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For more information, see [Supported events](autolaunch.md#supported-events). Before you proceed, review the [event-based troubleshooting checklist](autolaunch.md#troubleshooting-checklist) for additional troubleshooting guidance.
+This article discusses the key debugging stages to enable and set breakpoints in your code as you implement [event-based activation](autolaunch.md) in your add-in. The event-based activation feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For more information, see [Supported events](autolaunch.md#supported-events). Before you proceed, review the [event-based troubleshooting guide](autolaunch.md#troubleshooting-checklist) for additional guidance.
 
 To begin debugging, select the tab for your applicable client.
 
