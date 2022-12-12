@@ -1,7 +1,7 @@
 ---
 title: Addressing same-origin policy limitations in Office Add-ins
 description: Learn how to accommodate same-origin policy limitations with JSONP, CORS, IFRAMEs, and other techniques.
-ms.date: 07/18/2022
+ms.date: 12/12/2022
 ms.localizationpriority: medium
 ---
 
@@ -40,7 +40,7 @@ Another way to address same-origin policy limitations is to provide server-side 
 
 ## Use cross-origin resource sharing (CORS)
 
-For an example of using the cross-origin resource sharing feature of [XmlHttpRequest2](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html), see the "Cross Origin Resource Sharing (CORS)" section of [New Tricks in XMLHttpRequest2](https://www.html5rocks.com/en/tutorials/file/xhr2/).
+To learn more about cross-origin resource sharing, see the many resources available on the web, such as [Cross-Origin Resource Sharing (CORS)](https://web.dev/cross-origin-resource-sharing/).
 
 ## Build your own proxy using IFRAME and POST MESSAGE (Cross-Window Messaging)
 
