@@ -107,7 +107,7 @@ If your project was not created with Yo Office, you need to create a debug confi
       "type": "pwa-msedge",
       "request": "attach",
       "useWebView": true,
-      "port": 9223,
+      "port": 9229,
       "timeout": 600000,
       "webRoot": "${workspaceRoot}",
       "preLaunchTask": "Debug: Excel Desktop",
