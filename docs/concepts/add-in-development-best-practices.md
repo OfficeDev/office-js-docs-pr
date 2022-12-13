@@ -130,7 +130,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 ## Support Internet Explorer and Microsoft Edge Legacy (recommended but not required)
 
-See [Support Internet Explorer 11 and Microsoft Edge Legacy](../develop/support-ie-11.md).
+See [Support older Microsoft browsers and Office versions](../develop/support-ie-11.md).
 
 ## See also
 

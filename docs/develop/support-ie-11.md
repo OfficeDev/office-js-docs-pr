@@ -1,26 +1,65 @@
 ---
-title: Support Internet Explorer 11 and Microsoft Edge Legacy
-description: Learn how to support Internet Explorer 11 and Microsoft Edge Legacy in your add-in.
+title: Support older Microsoft browsers and Office versions
+description: Learn how to support support older Microsoft browsers and Office versions in your add-in.
 ms.date: 12/12/2022
 ms.localizationpriority: medium
 ---
 
-# Support Internet Explorer 11 and Microsoft Edge Legacy
+# Support older Microsoft browsers and Office versions
 
 > [!IMPORTANT]
 > **Internet Explorer and Microsoft Edge Legacy are still used in Office Add-ins**
 >
 > Some combinations of platforms and Office versions, including perpetual versions through Office 2019, still use the webview controls that come with Internet Explorer 11 and Microsoft Edge Legacy (EdgeHTML-based) to host add-ins, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). We recommend (but don't require) that you support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in these webviews. Keep these additional points in mind:
 >
-> - [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) no longer tests add-ins in Office on the web using Internet Explorer or Microsoft Edge Legacy. Office on the web no longer opens in Internet Explorer.
+> - Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on the web on these browsers.
 > - AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer and Microsoft Edge Legacy. However, it only issues a warning when the add-in doesn't support these browsers. The add-in isn't rejected by AppSource.
 > - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Internet Explorer.
 
 Office Add-ins are web applications that are displayed inside IFrames when running on Office on the web. Office Add-ins are displayed using embedded browser controls when running in Office on Windows or Office on the Mac. The embedded browser controls are supplied by the operating system or by a browser installed on the user's computer.
 
-If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser control that is based on Internet Explorer 11 (IE11) or Microsoft Edge Legacy (EdgeHTML-based). For information about which combinations of Windows and Office use these browser controls, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser controls used by these versions. For example, browser controls based on Internet Explorer 11 (IE11) or Microsoft Edge Legacy (EdgeHTML-based). For information about which combinations of Windows and Office use these browser controls, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-For more information on how to support each browser, select the applicable tab.
+## Determine the browser the add-in is running in at runtime
+
+Your add-in can discover the browser it's running in by reading the [window.navigator.userAgent](https://developer.mozilla.org/docs/Web/API/Navigator/userAgent) property. This enables the add-in to either provide an alternate experience or gracefully fail. The following is an example that determines whether the add-in is running in IE11 or Microsoft Edge Legacy.
+
+```javascript
+if (navigator.userAgent.indexOf("Trident") !== -1) {
+    /*
+       IE11 is the browser in use. Do one of the following:
+        1. Provide an alternate add-in experience that doesn't use any of the HTML5
+           features that aren't supported in IE11.
+        2. Enable the add-in to gracefully fail by adding a message to the UI that
+           says something similar to:
+           "This add-in won't run in your version of Office. Please upgrade either to
+           perpetual Office 2021 or to a Microsoft 365 account."
+    */
+} else if (navigator.userAgent.indexOf("Edge") !== -1) {
+    /*
+       Microsoft Edge Legacy is the browser in use. Do one of the following:
+        1. Provide an alternate add-in experience that's supported in Microsoft Edge Legacy.
+        2. Enable the add-in to gracefully fail by adding a message to the UI that
+           says something similar to:
+           "This add-in won't run in your version of Office. Please upgrade either to
+           perpetual Office 2021 or to a Microsoft 365 account."
+    */
+} else {
+    /* 
+       Another browser, other than IE11 or Microsoft Edge Legacy, is in use.
+       Provide a full-featured version of the add-in here.
+    */
+}
+```
+
+> [!IMPORTANT]
+> It's not usually a good practice to read the `userAgent` property. Be sure you're familiar with the article, [Browser detection using the user agent](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent), including the recommendations and alternatives to reading `userAgent`. In particular, if you're providing an alternate add-in experience to support the use of Internet Explorer 11, consider using feature detection instead of testing for the user agent.
+>
+> As of September 30th, 2021, the text in the section [Which part of the user agent contains the information you are looking for?](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) dates from before Internet Explorer 11 was released. It's still generally accurate and the *tables* in the section of the English version of the article are up-to-date. Similarly, the text, and in most cases the tables, in the non-English versions of the article are out-of-date.
+
+## Review browser and Office version support information
+
+For more information on how to support specific browsers and Office versions, select the applicable tab.
 
 # [Internet Explorer](#tab/ie)
 
@@ -73,43 +112,6 @@ To debug your add-in that supports Microsoft Edge Legacy, use one of the followi
 - [Debug add-ins using the Microsoft Office Add-in Debugger Extension for Visual Studio Code](../testing/debug-with-vs-extension.md)
 
 ---
-
-## Determine at runtime if the add-in is running in IE11 or Microsoft Edge Legacy
-
-Your add-in can discover if it's running in IE11 or Microsoft Edge Legacy by reading the [window.navigator.userAgent](https://developer.mozilla.org/docs/Web/API/Navigator/userAgent) property. This enables the add-in to either provide an alternate experience or gracefully fail. The following is an example.
-
-```javascript
-if (navigator.userAgent.indexOf("Trident") !== -1) {
-    /*
-       IE11 is the browser in use. Do one of the following:
-        1. Provide an alternate add-in experience that doesn't use any of the HTML5
-           features that aren't supported in IE11.
-        2. Enable the add-in to gracefully fail by adding a message to the UI that
-           says something similar to:
-           "This add-in won't run in your version of Office. Please upgrade either to
-           perpetual Office 2021 or to a Microsoft 365 account."
-    */
-} else if (navigator.userAgent.indexOf("Edge") !== -1) {
-    /*
-       Microsoft Edge Legacy is the browser in use. Do one of the following:
-        1. Provide an alternate add-in experience that's supported in Microsoft Edge Legacy.
-        2. Enable the add-in to gracefully fail by adding a message to the UI that
-           says something similar to:
-           "This add-in won't run in your version of Office. Please upgrade either to
-           perpetual Office 2021 or to a Microsoft 365 account."
-    */
-} else {
-    /* 
-       Another browser, other than IE11 or Microsoft Edge Legacy, is in use.
-       Provide a full-featured version of the add-in here.
-    */
-}
-```
-
-> [!IMPORTANT]
-> It's not usually a good practice to read the `userAgent` property. Be sure you're familiar with the article, [Browser detection using the user agent](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent), including the recommendations and alternatives to reading `userAgent`. In particular, if you're providing an alternate add-in experience to support the use of Internet Explorer 11, consider using feature detection instead of testing for the user agent.
->
-> As of September 30th, 2021, the text in the section [Which part of the user agent contains the information you are looking for?](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) dates from before Internet Explorer 11 was released. It's still generally accurate and the *tables* in the section of the English version of the article are up-to-date. Similarly, the text, and in most cases the tables, in the non-English versions of the article are out-of-date.
 
 ## See also
 

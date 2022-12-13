@@ -3,4 +3,4 @@ For [some versions of Office and Windows](../concepts/browsers-used-by-office-we
 - Write your code in [ECMAScript 2015](https://www.w3schools.com/Js/js_es6.asp) (also called ES6) or later JavaScript, or in TypeScript, and then compile your code to ES5 JavaScript using a compiler such as [babel](https://babeljs.io/) or [tsc](https://www.typescriptlang.org/index.html).
 - Write in ECMAScript 2015 or later JavaScript, but also load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library such as [core-js](https://github.com/zloirock/core-js) that enables IE to run your code.
 
-For more information about these options, see [Support Internet Explorer 11 and Microsoft Edge Legacy](../develop/support-ie-11.md).
+For more information about these options, see [Support older Microsoft browsers and Office versions](../develop/support-ie-11.md).

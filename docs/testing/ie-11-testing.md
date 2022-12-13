@@ -24,7 +24,7 @@ If you plan to support older versions of Windows and Office, your add-in must wo
 > - Write your code in ECMAScript 2015 (also called ES6) or later JavaScript, or in TypeScript, and then compile your code to ES5 JavaScript using a compiler such as [babel](https://babeljs.io/) or [tsc](https://www.typescriptlang.org/index.html).
 > - Write in ECMAScript 2015 or later JavaScript, but also load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library such as [core-js](https://github.com/zloirock/core-js) that enables IE to run your code.
 >
-> For more information about these options, see [Support Internet Explorer 11 and Microsoft Edge Legacy](../develop/support-ie-11.md).
+> For more information about these options, see [Support older Microsoft browsers and Office versions](../develop/support-ie-11.md).
 >
 > Also, Internet Explorer 11 doesn't support some HTML5 features such as media, recording, and location. To learn more, see [Determine at runtime if the add-in is running in IE11 or Microsoft Edge Legacy](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-ie11-or-microsoft-edge-legacy).
 

@@ -61,7 +61,7 @@ items:
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Runtimes in Office Add-ins
       href: testing/runtimes.md
-    - name: Support IE 11 and Microsoft Edge Legacy
+    - name: Support older Microsoft browsers and Office versions
       href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Develop
