@@ -61,7 +61,7 @@ items:
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Runtimes in Office Add-ins
       href: testing/runtimes.md
-    - name: Support Internet Explorer 11
+    - name: Support older Microsoft browsers and Office versions
       href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Develop
@@ -291,7 +291,7 @@ items:
         href: testing/attach-debugger-from-task-pane.md
       - name: Debug using developer tools for Internet Explorer
         href: testing/debug-add-ins-using-f12-tools-ie.md
-      - name: Debug using developer tools for Edge legacy
+      - name: Debug using developer tools for Edge Legacy
         href: testing/debug-add-ins-using-devtools-edge-legacy.md
       - name: Debug using developer tools for Edge Chromium WebView2
         href: testing/debug-add-ins-using-devtools-edge-chromium.md
