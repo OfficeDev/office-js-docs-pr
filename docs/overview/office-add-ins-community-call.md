@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 11/14/2022
+ms.date: 12/13/2022
 ms.localizationpriority: medium
 ---
 
@@ -12,9 +12,10 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 ## Agenda for December 14, 2022 call
 
 The agenda for the December call is the following:
-- Marketplace leads for Office plugins will now be available in the refferals workspace. 
-- Auto-launch for Word and Excel.
-- Top 5 AppSource Validation Errors.
+
+- Marketplace leads for Office plugins will now be available in the referrals workspace. 
+- Autolaunch for Word and Excel.
+- Top 5 AppSource validation errors.
 
 ## Previous calls
 
