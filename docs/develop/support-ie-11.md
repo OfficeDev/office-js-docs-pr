@@ -70,7 +70,7 @@ If you encounter issues as you develop your add-in to support Microsoft Edge Leg
 To debug your add-in that supports Microsoft Edge Legacy, use one of the following options.
 
 - [Debug add-ins using developer tools in Microsoft Edge Legacy](../testing/debug-add-ins-using-devtools-edge-legacy.md)
-- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](../testing/debug-with-vs-extension.md)
+- [Debug add-ins using the Microsoft Office Add-in Debugger Extension for Visual Studio Code](../testing/debug-with-vs-extension.md)
 
 ---
 

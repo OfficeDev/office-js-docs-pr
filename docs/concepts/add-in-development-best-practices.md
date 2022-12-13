@@ -35,7 +35,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
 - If your content add-in binds to data in the user's document, include sample data or a template to show users the data format to use.
 
-  ![A "Do" versus "Don't" comparison on how to include sample data to your add-in. The "Do" example shows an add-in that includes a button users can click to insert sample data. The "Don't" example shows an add-in without sample data or buttons.](../images/add-in-title.png)
+  ![A "Do" versus "Don't" comparison on including an option to insert sample data in your add-in. The "Do" example shows an add-in that includes a button users can click to insert sample data. The "Don't" example shows an add-in without sample data or buttons.](../images/add-in-title.png)
 
 - Offer [free trials](/office/dev/store/decide-on-a-pricing-model). If your add-in requires a subscription, make some functionality available without a subscription.
 
