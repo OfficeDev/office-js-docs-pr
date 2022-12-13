@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 # Support Internet Explorer 11 and Microsoft Edge Legacy
 
 > [!IMPORTANT]
-> **Internet Explorer and Microsoft Edge Legacy still used in Office Add-ins**
+> **Internet Explorer and Microsoft Edge Legacy are still used in Office Add-ins**
 >
-> Some combinations of platforms and Office versions, including perpetual versions through Office 2019, still use the webview controls that come with Internet Explorer 11 and Microsoft Edge Legacy (EdgeHTML-based) to host add-ins, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). We recommend (but don't require) that you continue to support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in these webviews. Keep these additional points in mind:
+> Some combinations of platforms and Office versions, including perpetual versions through Office 2019, still use the webview controls that come with Internet Explorer 11 and Microsoft Edge Legacy (EdgeHTML-based) to host add-ins, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). We recommend (but don't require) that you support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in these webviews. Keep these additional points in mind:
 >
 > - [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) no longer tests add-ins in Office on the web using Internet Explorer or Microsoft Edge Legacy. Office on the web no longer opens in Internet Explorer.
-> - AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer and Microsoft Edge Legacy. However, it only issues a warning when the add-in doesn't support these browsers; the add-in isn't rejected by AppSource.
+> - AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer and Microsoft Edge Legacy. However, it only issues a warning when the add-in doesn't support these browsers. The add-in isn't rejected by AppSource.
 > - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Internet Explorer.
 
 Office Add-ins are web applications that are displayed inside IFrames when running on Office on the web. Office Add-ins are displayed using embedded browser controls when running in Office on Windows or Office on the Mac. The embedded browser controls are supplied by the operating system or by a browser installed on the user's computer.

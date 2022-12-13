@@ -104,7 +104,7 @@ Also, Internet Explorer 11 doesn't support some HTML5 features such as media, re
 
 ### Service Workers aren't working
 
-Office Add-ins don't support Service Workers when Microsoft Edge Legacy's WebView, [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML), is used. They're supported with the [Chromium-based Edge WebView2](/microsoft-edge/hosting/webview2).
+Office Add-ins don't support Service Workers when the Microsoft Edge Legacy WebView, [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML), is used. They're supported with the [Chromium-based Edge WebView2](/microsoft-edge/hosting/webview2).
 
 ### Scroll bar doesn't appear in task pane
 
