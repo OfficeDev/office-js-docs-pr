@@ -98,7 +98,7 @@ Internet Explorer 11 doesn't support JavaScript versions later than ES5. If any 
 
 For more information about these options, see [Support older Microsoft browsers and Office versions](../develop/support-ie-11.md).
 
-Also, Internet Explorer 11 doesn't support some HTML5 features such as media, recording, and location. To learn more, see [Determine at runtime if the add-in is running in IE11 or Microsoft Edge Legacy](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-ie11-or-microsoft-edge-legacy).
+Also, Internet Explorer 11 doesn't support some HTML5 features such as media, recording, and location. To learn more, see [Determine the browser the add-in is running in at runtime](../develop/support-ie-11.md#determine-the-browser-the-add-in-is-running-in-at-runtime).
 
 ## Troubleshoot Microsoft Edge issues
 

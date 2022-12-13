@@ -64,7 +64,7 @@ For more information on how to support specific browsers and Office versions, se
 # [Internet Explorer](#tab/ie)
 
 > [!IMPORTANT]
-> Internet Explorer 11 doesn't support some HTML5 features such as media, recording, and location. If your add-in must support Internet Explorer 11, then you must either design the add-in to avoid these unsupported features or the add-in must detect when Internet Explorer is being used and provide an alternate experience that doesn't use the unsupported features. For more information, see [Determine at runtime if the add-in is running in IE11 or Microsoft Edge Legacy](#determine-at-runtime-if-the-add-in-is-running-in-ie11-or-microsoft-edge-legacy).
+> Internet Explorer 11 doesn't support some HTML5 features such as media, recording, and location. If your add-in must support Internet Explorer 11, then you must either design the add-in to avoid these unsupported features or the add-in must detect when Internet Explorer is being used and provide an alternate experience that doesn't use the unsupported features. For more information, see [Determine the browser the add-in is running in at runtime](#determine-the-browser-the-add-in-is-running-in-at-runtime).
 
 ## Support for recent versions of JavaScript
 
