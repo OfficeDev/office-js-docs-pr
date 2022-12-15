@@ -1192,6 +1192,10 @@
         {
             "source_path": "docs/quickstarts/sso-quickstart-customize.md",
             "redirect_url": "/office/dev/add-ins/develop/sso-in-office-add-ins"
+        },
+        {
+            "source_path": "docs/outlook/manage-state-and-settings-outlook.md",
+            "redirect_url": "office/dev/add-ins/outlook/metadata-for-an-outlook-add-in"
         }
     ]
 }
