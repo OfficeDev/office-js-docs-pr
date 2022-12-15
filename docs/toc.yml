@@ -708,8 +708,6 @@ items:
       href: outlook/get-and-set-recurrence.md
     - name: Get or set add-in metadata
       href: outlook/metadata-for-an-outlook-add-in.md
-    - name: Manage add-in state and settings
-      href: outlook/manage-state-and-settings-outlook.md
     - name: Read scenario
       items:
       - name: Overview

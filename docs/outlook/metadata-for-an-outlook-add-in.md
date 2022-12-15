@@ -1,7 +1,7 @@
 ---
 title: Get and set metadata in an Outlook add-in
 description: Manage custom data in your Outlook add-in by using either roaming settings or custom properties.
-ms.date: 07/08/2022
+ms.date: 12/14/2022
 ms.localizationpriority: medium
 ---
 
@@ -12,7 +12,7 @@ You can manage custom data in your Outlook add-in by using either of the followi
 - Roaming settings, which manage custom data for a user's mailbox.
 - Custom properties, which manage custom data for an item in a user's mailbox.
 
-Both of these give access to custom data that is only accessible by your Outlook add-in, but each method stores the data separately from the other. That is, the data stored through roaming settings is not accessible by custom properties, and vice versa. The data is stored on the server for that mailbox, and is accessible in subsequent Outlook sessions on all the form factors that the add-in supports.
+Both of these give access to custom data that is only accessible by your Outlook add-in, but each method stores the data separately from the other. That is, the data stored through roaming settings is not accessible by custom properties, and vice versa. Roaming settings are stored on the user's mailbox while custom properties are stored on a message or appointment. Stored data is accessible in subsequent Outlook sessions on all the form factors that the add-in supports.
 
 ## Custom data per mailbox: roaming settings
 
@@ -58,15 +58,13 @@ Office.initialize = function () {
 
 Continuing with the preceding example, the following JavaScript function,  `setAddInSetting`, shows how to use the [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings) method to set a setting named `cookie` with today's date, and persist the data by using the [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-saveasync-member(1)) method to save all the roaming settings back to the server.
 
-The `set` method creates the setting if the setting does not already exist, and assigns the setting to the specified value. The `saveAsync` method saves roaming settings asynchronously. This code sample passes a callback function, `saveMyAddInSettingsCallback`, to `saveAsync` When the asynchronous call finishes,  `saveMyAddInSettingsCallback` is called by using one parameter, _asyncResult_. This parameter is an [AsyncResult](/javascript/api/office/office.asyncresult) object that contains the result of and any details about the asynchronous call. You can use the optional _userContext_ parameter to pass any state information from the asynchronous call to the callback function.
+The `set` method creates the setting if the setting doesn't already exist, and assigns the setting to the specified value. The `saveAsync` method saves roaming settings asynchronously. This code sample passes a callback function, `saveMyAddInSettingsCallback`, to `saveAsync`. When the asynchronous call finishes, `saveMyAddInSettingsCallback` is called by using one parameter, *asyncResult*. This parameter is an [AsyncResult](/javascript/api/office/office.asyncresult) object that contains the result of and any details about the asynchronous call. You can use the optional *userContext* parameter to pass any state information from the asynchronous call to the callback function.
 
 ```js
 // Set a roaming setting.
 function setAddInSetting() {
   _settings.set("cookie", Date());
-  // Save roaming settings for the mailbox
-  // to the server so that they will be available
-  // in the next session.
+  // Save roaming settings to the mailbox, so that they'll be available in the next session.
   _settings.saveAsync(saveMyAddInSettingsCallback);
 }
 
@@ -80,16 +78,14 @@ function saveMyAddInSettingsCallback(asyncResult) {
 
 ### Removing a roaming setting
 
-Also extending the preceding examples, the following JavaScript function,  `removeAddInSetting`, shows how to use the [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-remove-member(1)) method to remove the `cookie` setting and save all the roaming settings back to the Exchange Server.
+Also extending the preceding examples, the following JavaScript function, `removeAddInSetting`, shows how to use the [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-remove-member(1)) method to remove the `cookie` setting and save all the roaming settings to the mailbox.
 
 ```js
 // Remove an add-in setting.
 function removeAddInSetting()
 {
   _settings.remove("cookie");
-  // Save changes to the roaming settings for the mailbox
-  // to the server so that they will be available
-  // in the next session.
+  // Save changes to the roaming settings for the mailbox, so that they'll be available in the next session.
   _settings.saveAsync(saveMyAddInSettingsCallback);
 }
 ```
@@ -100,14 +96,20 @@ You can specify data specific to an item in the user's mailbox using the [Custom
 
 Similar to roaming settings, changes to custom properties are stored on in-memory copies of the properties for the current Outlook session. To make sure these custom properties will be available in the next session, use [CustomProperties.saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)).
 
-These add-in-specific, item-specific custom properties can only be accessed by using the `CustomProperties` object. These properties are different from the custom, MAPI-based [UserProperties](/office/vba/api/Outlook.UserProperties) in the Outlook object model, and extended properties in Exchange Web Services (EWS). You cannot directly access `CustomProperties` by using the Outlook object model, EWS, or REST. To learn how to access `CustomProperties` using EWS or REST, see the section [Get custom properties using EWS or REST](#get-custom-properties-using-ews-or-rest).
+These add-in-specific, item-specific custom properties can only be accessed by using the `CustomProperties` object. These properties are different from the custom, MAPI-based [UserProperties](/office/vba/api/Outlook.UserProperties) in the Outlook object model, and extended properties in Exchange Web Services (EWS). You can't directly access `CustomProperties` by using the Outlook object model, EWS, or REST. To learn how to access `CustomProperties` using EWS or REST, see the section [Get custom properties using EWS or REST](#get-custom-properties-using-ews-or-rest).
+
+> [!NOTE]
+> Custom properties are only available to the add-in that created them and only through the mail item in which they were saved. Because of this, properties set while in compose mode aren't transmitted to recipients of the mail item. When a message or appointment with custom properties is sent, its properties can be accessed from the item in the Sent Items folder. To allow recipients to receive the custom data your add-in sets, consider using [InternetHeaders](internet-headers.md) instead.
 
 ### Using custom properties
 
-Before you can use custom properties, you must load them by calling the [loadCustomPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method. After you have created the property bag, you can use the [set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) and [get](/javascript/api/outlook/office.customproperties) methods to add and retrieve custom properties. You must use the [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) method to save any changes that you make to the property bag.
+Before you can use custom properties, you must load them by calling the [loadCustomPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method. After you've created the property bag, you can use the [set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) and [get](/javascript/api/outlook/office.customproperties) methods to add and retrieve custom properties. You must use the [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) method to save any changes that you make to the property bag.
 
  > [!NOTE]
- > Because Outlook on Mac doesn't cache custom properties, if the user's network goes down, mail add-ins in Outlook on Mac would not be able to access their custom properties.
+ > When using custom properties in Outlook add-ins, keep in mind that:
+ >
+ > - Outlook on Mac doesn't cache custom properties. If the user's network goes down, add-ins in Outlook on Mac wouldn't be able to access their custom properties.
+ > - In Outlook on Windows, custom properties saved while in compose mode only persist after the item being composed is closed or after `Office.context.mailbox.item.saveAsync` is called.
 
 ### Custom properties example
 
@@ -153,14 +155,14 @@ function getProperty() {
 // Set individual custom property.
 function updateProperty(name, value) {
   _customProps.set(name, value);
-  // Save all custom properties to server.
+  // Save all custom properties to the mail item.
   _customProps.saveAsync(saveCallback);
 }
 
 // Remove a custom property.
 function removeProperty(name) {
   _customProps.remove(name);
-  // Save all custom properties to server.
+  // Save all custom properties to the mail item.
   _customProps.saveAsync(saveCallback);
 }
 
@@ -178,7 +180,7 @@ To get **CustomProperties** using EWS or REST, you should first determine the na
 
 #### How custom properties are stored on an item
 
-Custom properties set by an add-in are not equivalent to normal MAPI-based properties. Add-in APIs serialize all your add-in's `CustomProperties` as a JSON payload and then save them in a single MAPI-based extended property whose name is `cecp-<app-guid>` (`<app-guid>` is your add-in's ID) and property set GUID is `{00020329-0000-0000-C000-000000000046}`. (For more information about this object, see [MS-OXCEXT 2.2.5 Mail App Custom Properties](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481).) You can then use EWS or REST to get this MAPI-based property.
+Custom properties set by an add-in aren't equivalent to normal MAPI-based properties. Add-in APIs serialize all your add-in's `CustomProperties` as a JSON payload and then save them in a single MAPI-based extended property whose name is `cecp-<app-guid>` (`<app-guid>` is your add-in's ID) and property set GUID is `{00020329-0000-0000-C000-000000000046}`. (For more information about this object, see [MS-OXCEXT 2.2.5 Mail App Custom Properties](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481).) You can then use EWS or REST to get this MAPI-based property.
 
 #### Get custom properties using EWS
 
@@ -304,6 +306,25 @@ Office.context.mailbox.getCallbackTokenAsync(
 );
 ```
 
+### Platform behavior in messages
+
+The following table summarizes saved custom properties behavior in messages for various Outlook clients.
+
+|Scenario|Outlook on Windows|Outlook on the web|Outlook on Mac|
+|---|---|---|---|
+|New compose|null|null|null|
+|Reply, reply all|null|null|null|
+|Forward|Loads parent's properties|null|null|
+|Sent item from new compose|null|null|null|
+|Sent item from reply or reply all|null|null|null|
+|Sent item from forward|Removes parent's properties if not saved|null|null|
+
+To handle the situation in Outlook on Windows:
+
+1. Check for existing properties on initializing your add-in, and keep them or clear them as needed.
+1. When setting custom properties, include an additional property to indicate whether the custom properties were added in read mode. This will help you differentiate if the property was created in compose mode or inherited from the parent.
+1. To check if the user is forwarding or replying to a message, you can use [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getcomposetypeasync-member(1)) (available from requirement set 1.10).
+
 ## See also
 
 - [MAPI Property Overview](/office/client-developer/outlook/mapi/mapi-property-overview)
@@ -312,3 +333,4 @@ Office.context.mailbox.getCallbackTokenAsync(
 - [Call web services from an Outlook add-in](web-services.md)
 - [Properties and extended properties in EWS in Exchange](/exchange/client-developer/exchange-web-services/properties-and-extended-properties-in-ews-in-exchange)
 - [Property sets and response shapes in EWS in Exchange](/exchange/client-developer/exchange-web-services/property-sets-and-response-shapes-in-ews-in-exchange)
+- [Get and set internet headers on a message in an Outlook add-in](internet-headers.md)
