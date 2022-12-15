@@ -12,13 +12,13 @@ You can manage custom data in your Outlook add-in by using either of the followi
 - Roaming settings, which manage custom data for a user's mailbox.
 - Custom properties, which manage custom data for an item in a user's mailbox.
 
-Both of these give access to custom data that is only accessible by your Outlook add-in, but each method stores the data separately from the other. That is, the data stored through roaming settings is not accessible by custom properties, and vice versa. Roaming settings are stored on the user's mailbox while custom properties are stored on a message or appointment. Stored data is accessible in subsequent Outlook sessions on all the form factors that the add-in supports.
+Both of these give access to custom data that's only accessible by your Outlook add-in, but each method stores the data separately from the other. That is, the data stored through roaming settings isn't accessible by custom properties, and vice versa. Roaming settings are stored on the user's mailbox while custom properties are stored on a message or appointment. Stored data is accessible in subsequent Outlook sessions on all the form factors that the add-in supports.
 
 ## Custom data per mailbox: roaming settings
 
 You can specify data specific to a user's Exchange mailbox using the [RoamingSettings](/javascript/api/outlook/office.roamingsettings) object. Examples of such data include the user's personal data and preferences. Your mail add-in can access roaming settings when it roams on any device it's designed to run on (desktop, tablet, or smartphone).
 
-Changes to this data are stored on an in-memory copy of those settings for the current Outlook session. You should explicitly save all the roaming settings after updating them so that they will be available the next time the user opens your add-in, on the same or any other supported device.
+Changes to this data are stored on an in-memory copy of those settings for the current Outlook session. You should explicitly save all the roaming settings after updating them so that they'll be available the next time the user opens your add-in, on the same or any other supported device.
 
 ### Roaming settings format
 
@@ -56,7 +56,7 @@ Office.initialize = function () {
 
 ### Creating or assigning a roaming setting
 
-Continuing with the preceding example, the following JavaScript function,  `setAddInSetting`, shows how to use the [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings) method to set a setting named `cookie` with today's date, and persist the data by using the [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-saveasync-member(1)) method to save all the roaming settings back to the server.
+Continuing with the preceding example, the following JavaScript function, `setAddInSetting`, shows how to use the [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings) method to set a setting named `cookie` with today's date, and persist the data by using the [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-saveasync-member(1)) method to save all the roaming settings to the user's mailbox.
 
 The `set` method creates the setting if the setting doesn't already exist, and assigns the setting to the specified value. The `saveAsync` method saves roaming settings asynchronously. This code sample passes a callback function, `saveMyAddInSettingsCallback`, to `saveAsync`. When the asynchronous call finishes, `saveMyAddInSettingsCallback` is called by using one parameter, *asyncResult*. This parameter is an [AsyncResult](/javascript/api/office/office.asyncresult) object that contains the result of and any details about the asynchronous call. You can use the optional *userContext* parameter to pass any state information from the asynchronous call to the callback function.
 
@@ -119,11 +119,11 @@ This example includes the following functions and methods.
 
 - [Office.initialize](/javascript/api/office#Office_initialize_reason_) -- Initializes the add-in and loads the custom property bag from the Exchange server.
 
-- **customPropsCallback** -- Gets the custom property bag that is returned from the server and saves it for later use.
+- **customPropsCallback** -- Gets the custom property bag that's returned from the server and saves it locally for later use.
 
-- **updateProperty** -- Sets or updates a specific property, and then saves the change to the server.
+- **updateProperty** -- Sets or updates a specific property, and then saves the change to the local property bag.
 
-- **removeProperty** -- Removes a specific property from the property bag, and then saves the removal to the server.
+- **removeProperty** -- Removes a specific property from the property bag, and then saves these changes.
 
 ```js
 let _mailbox;

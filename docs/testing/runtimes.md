@@ -106,7 +106,7 @@ Other ways to share data include the following:
 - Store shared data in an online database that is accessible to all the runtimes.
 - Store shared data in a cookie for the add-in's domain to share it between browser runtimes. JavaScript-only runtimes don't support cookies.
 
-For more information, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md) and [Get and set add-in metadata for an Outlook add-in](../outlook/metadata-for-an-outlook-add-in.md)
+For more information, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md) and [Get and set add-in metadata for an Outlook add-in](../outlook/metadata-for-an-outlook-add-in.md).
 
 ## JavaScript-only runtime
 
