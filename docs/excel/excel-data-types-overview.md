@@ -1,7 +1,7 @@
 ---
 title: Overview of data types in Excel add-ins
 description: Data types in the Excel JavaScript API enable Office Add-in developers to work with formatted number values, web images, entities, arrays within entities, and enhanced errors as data types.
-ms.date: 12/08/2022
+ms.date: 12/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
@@ -21,7 +21,10 @@ The following screenshot highlights one of the primary features of data types: a
 
 Prior to the data types addition, the Excel JavaScript API supported string, number, boolean, and error data types. The Excel UI formatting layer is capable of adding currency, date, and other types of formatting to cells that contain the four original data types, but this formatting layer only controls the display of the original data types in the Excel UI. The underlying number value is not changed, even when a cell in the Excel UI is formatted as currency or a date. This gap between an underlying value and the formatted display in the Excel UI can result in confusion and errors during add-in calculations. The data types APIs are a solution to this gap.
 
-Data types expand Excel JavaScript API support beyond the four original data types (string, number, boolean, and error) to include [web images](excel-data-types-concepts.md#web-image-values), [formatted number values](excel-data-types-concepts.md#formatted-number-values), [entities](excel-data-types-concepts.md#entity-values), arrays within entities, and improved [error data types](excel-data-types-concepts.md#improved-error-support) as flexible data structures. These types, which power many [linked data types](https://support.microsoft.com/office/what-linked-data-types-are-available-in-excel-6510ab58-52f6-4368-ba0f-6a76c0190772) experiences, allow for precision and simplicity during add-in calculations and extend the potential of Excel add-ins beyond a 2-dimensional grid. Check out examples of **linked data types**, which are available to all Excel users, in the following sample workbook: [Linked-data-types-sample-workbook.xlsx](../files/Linked-data-types-sample-workbook.xlsx).
+Data types expand Excel JavaScript API support beyond the four original data types (string, number, boolean, and error) to include [web images](excel-data-types-concepts.md#web-image-values), [formatted number values](excel-data-types-concepts.md#formatted-number-values), [entities](excel-data-types-concepts.md#entity-values), arrays within entities, and improved [error data types](excel-data-types-concepts.md#improved-error-support) as flexible data structures. These types, which power many [linked data types](https://support.microsoft.com/office/what-linked-data-types-are-available-in-excel-6510ab58-52f6-4368-ba0f-6a76c0190772) experiences, allow for precision and simplicity during add-in calculations and extend the potential of Excel add-ins beyond a 2-dimensional grid.
+
+> [!TIP]
+> Check out examples of **linked data types**, which are available to all Excel users, in the following sample workbook: [linked-data-types-sample-workbook.xlsx](../files/linked-data-types-sample-workbook.xlsx).
 
 ## Resources
 
