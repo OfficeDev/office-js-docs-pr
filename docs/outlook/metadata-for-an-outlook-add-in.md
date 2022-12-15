@@ -99,7 +99,7 @@ Similar to roaming settings, changes to custom properties are stored on in-memor
 These add-in-specific, item-specific custom properties can only be accessed by using the `CustomProperties` object. These properties are different from the custom, MAPI-based [UserProperties](/office/vba/api/Outlook.UserProperties) in the Outlook object model, and extended properties in Exchange Web Services (EWS). You can't directly access `CustomProperties` by using the Outlook object model, EWS, or REST. To learn how to access `CustomProperties` using EWS or REST, see the section [Get custom properties using EWS or REST](#get-custom-properties-using-ews-or-rest).
 
 > [!NOTE]
-> Custom properties are only available to the add-in that created them and only through the mail item in which they were saved. Because of this, properties set while in compose mode aren't transmitted to recipients of the mail item. When a message or appointment with custom properties is sent, its properties can be accessed from the item in the Sent Items folder. To allow recipients to receive the custom data your add-in sets, consider using [InternetHeaders](internet-headers.md) instead.
+> Custom properties are only available to the add-in that created them and only through the mail item in which they were saved. Because of this, properties set while in compose mode aren't transmitted to recipients of the mail item. When a message or appointment with custom properties is sent, its properties can be accessed from the item in the **Sent Items** folder. To allow recipients to receive the custom data your add-in sets, consider using [InternetHeaders](internet-headers.md) instead.
 
 ### Using custom properties
 
