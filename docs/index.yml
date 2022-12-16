@@ -85,6 +85,9 @@ conceptualContent:
         - url: tutorials/outlook-tutorial.md
           itemType: tutorial
           text: Develop a full Outlook add-in
+        - url: tutorials/word-tutorial.md
+          itemType: tutorial
+          text: Develop a full Word add-in
         - url: /javascript/api/overview
           itemType: reference
           text: Read API reference documentation
