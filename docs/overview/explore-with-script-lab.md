@@ -12,10 +12,10 @@ ms.localizationpriority: high
 Script Lab is a free tool for anyone to learn how to develop Office Add-ins. Script Lab lets you to code and run the Office JavaScript APIs alongside your document in Excel, Outlook, PowerPoint, and Word. Use this convenient tool to prototype and verify the functionality you want in your own add-in.
 
 > [!div class="nextstepaction"]
-> [Download Script Lab for Excel, PowerPoint, and Word](https://appsource.microsoft.com/product/office/WA104380862)
+> [Get Script Lab for Excel, PowerPoint, and Word](https://appsource.microsoft.com/product/office/WA104380862)
 
 > [!div class="nextstepaction"]
-> [Download Script Lab for Outlook](https://appsource.microsoft.com/product/office/WA200001603)
+> [Get Script Lab for Outlook](https://appsource.microsoft.com/product/office/WA200001603)
 
 See Script Lab in action in this one-minute YouTube video.
 [![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
