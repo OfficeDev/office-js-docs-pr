@@ -1,7 +1,7 @@
 ---
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
-ms.date: 09/27/2022
+ms.date: 12/16/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -9,15 +9,18 @@ ms.localizationpriority: high
 
 # Explore Office JavaScript API using Script Lab
 
-The [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) and [Script Lab for Outlook](https://appsource.microsoft.com/product/office/WA200001603) add-ins, available free from AppSource, enable you to explore the Office JavaScript API while you're working in an Office program such as Excel or Outlook. Script Lab is a convenient tool to add to your development toolkit as you prototype and verify functionality you want in your own add-in.
+> [!div class="nextstepaction"]
+> Download [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) and
+> [Script Lab for Outlook](https://appsource.microsoft.com/product/office/WA200001603)
+
+Script Lab is a free tool for anyone who wants to learn how to develop Office Add-ins. Script Lab lets you to code and run Office JavaScript APIs along side your document in Excel, Outlook, PowerPoint, or Word. Use this convenient tool to prototype and verify the functionality you want in your own add-in.
+
+See Script Lab in action in this one-minute video.
+[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
 
 ## What is Script Lab?
 
-Script Lab is a tool for anyone who wants to learn how to develop Office Add-ins using the Office JavaScript API in Excel, Outlook, Word, and PowerPoint. It provides IntelliSense so you can see what's available and is built on the Monaco framework, the same framework used by Visual Studio Code. Through Script Lab, you can access a library of samples to quickly try out features or you can use a sample as the starting point for your own code. You can even use Script Lab to try preview APIs.
-
-Sounds good so far? Take a look at this one-minute video to see Script Lab in action.
-
-[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
+Script Lab is an add-in for prototyping add-ins. It uses the Office JavaScript API in Excel, Outlook, Word, and PowerPoint and sits in a task pane inside your document, spreadsheet, or email. It has an IntelliSense-enabled code editor, built on the Monaco framework: the same framework used by Visual Studio Code. Through Script Lab, you can access a library of samples to quickly try out features or you can use a sample as the starting point for your own code. You can even use Script Lab to try upcoming APIs that are still in developer preview.
 
 ## Key features
 
@@ -53,13 +56,13 @@ You can import a snippet into Script Lab either by specifying the URL to the pub
 Script Lab is supported for Excel, Word, and PowerPoint on the following clients.
 
 - Office on Windows\*
-- Office 2016 or later on Mac
+- Office on Mac
 - Office on the web
 
 Script Lab for Outlook is available on the following clients.
 
 - Outlook on Windows\*
-- Outlook 2016 or later on Mac
+- Outlook on Mac
 - Outlook on the web when using Chrome, Microsoft Edge, or Safari browsers
 
 For more details on Script Lab for Outlook, see the related [blog post](https://devblogs.microsoft.com/microsoft365dev/script-lab-now-supports-outlook/).
@@ -81,7 +84,5 @@ When you're ready to create your first Office Add-in, try out the quick start fo
 
 - [Get Script Lab for Excel, Word, or Powerpoint](https://appsource.microsoft.com/product/office/WA104380862)
 - [Get Script Lab for Outlook](https://appsource.microsoft.com/product/office/wa200001603)
-- [Learn more about Script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
-- [Join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program)
+- [Script Lab on GitHub](https://github.com/OfficeDev/script-lab)
 - [Developing Office Add-ins](../develop/develop-overview.md)
-- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
