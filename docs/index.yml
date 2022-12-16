@@ -18,19 +18,19 @@ metadata:
 # Maximum of 8 items
 highlightedContent:
   items:
-      # Card 1
+    # Card 1
     - itemType: overview
       title: Office Add-ins platform overview
       url: overview/office-add-ins.md
-      # Card 2
+    # Card 2
     - itemType: quickstart
       title: Set up an Excel add-in in 5 minutes
       url: quickstarts/excel-quickstart-jquery.md
-      # Card 3
+    # Card 3
     - itemType: quickstart
       title: Set up an Outlook add-in in 5 minutes
       url: quickstarts/outlook-quickstart.md
-      # Card 4
+    # Card 4
     - itemType: quickstart
       title: Set up a Word add-in in 5 minutes
       url: quickstarts/word-quickstart.md
