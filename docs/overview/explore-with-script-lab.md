@@ -10,17 +10,17 @@ ms.localizationpriority: high
 # Explore Office JavaScript API using Script Lab
 
 > [!div class="nextstepaction"]
-> Download [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) and
-> [Script Lab for Outlook](https://appsource.microsoft.com/product/office/WA200001603)
+> [Download Script Lab](https://appsource.microsoft.com/product/office/WA104380862)
+> [and Script Lab for Outlook](https://appsource.microsoft.com/product/office/WA200001603)
 
-Script Lab is a free tool for anyone who wants to learn how to develop Office Add-ins. Script Lab lets you to code and run Office JavaScript APIs along side your document in Excel, Outlook, PowerPoint, or Word. Use this convenient tool to prototype and verify the functionality you want in your own add-in.
+Script Lab is a free tool for anyone to learn how to develop Office Add-ins. Script Lab lets you to code and run the Office JavaScript APIs alongside your document in Excel, Outlook, PowerPoint, and Word. Use this convenient tool to prototype and verify the functionality you want in your own add-in.
 
 See Script Lab in action in this one-minute video.
 [![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
 
 ## What is Script Lab?
 
-Script Lab is an add-in for prototyping add-ins. It uses the Office JavaScript API in Excel, Outlook, Word, and PowerPoint and sits in a task pane inside your document, spreadsheet, or email. It has an IntelliSense-enabled code editor, built on the Monaco framework: the same framework used by Visual Studio Code. Through Script Lab, you can access a library of samples to quickly try out features or you can use a sample as the starting point for your own code. You can even use Script Lab to try upcoming APIs that are still in developer preview.
+Script Lab is an add-in for prototyping add-ins. It uses the Office JavaScript API in Excel, Outlook, Word, and PowerPoint and sits in a task pane inside your document, spreadsheet, or email. It has an IntelliSense-enabled code editor, built on the [same framework used by Visual Studio Code](https://microsoft.github.io/monaco-editor/). Through Script Lab, you can access a library of samples to quickly try out features or use those samples as the starting point for your own code. You can even try upcoming APIs in Script Lab that are still in developer preview.
 
 ## Key features
 
