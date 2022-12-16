@@ -17,7 +17,7 @@ Script Lab is a free tool for anyone to learn how to develop Office Add-ins. Scr
 > [!div class="nextstepaction"]
 > [Download Script Lab for Outlook](https://appsource.microsoft.com/product/office/WA200001603)
 
-See Script Lab in action in this one-minute video.
+See Script Lab in action in this one-minute YouTube video.
 [![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
 
 ## What is Script Lab?
