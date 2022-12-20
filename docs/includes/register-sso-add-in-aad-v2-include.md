@@ -89,7 +89,7 @@ Sometimes called an _application password_, a client secret is a string value yo
 
     The **Add a scope** pane opens.
 
-1. In the **Add a scope** pane, specify the scope's attributes. The following table shows example values for and Outlook add-in requiring the `profile`, `openid`, `Files.ReadWrite`, and `Mail.Read` permissions. Modify the text to match the permissions you are using for your add-in.
+1. In the **Add a scope** pane, specify the scope's attributes. The following table shows example values for and Outlook add-in requiring the `profile`, `openid`, `Files.ReadWrite`, and `Mail.Read` permissions. Modify the text to match the permissions your add-in needs.
 
     | Field | Description | Values |
     |--|--|--|
@@ -154,7 +154,7 @@ Sometimes called an _application password_, a client secret is a string value yo
 
     :::image type="content" source="../images/azure-portal-request-api-permissions-delegated.png" alt-text="The Request API permissions pane with delegated permissions button.":::
 
-1. In the **Select permissions** search box, search for the permissions your add-in needs. For example, for an Outlook add-in, you might use profile, openid, Files.ReadWrite, and Mail.Read.
+1. In the **Select permissions** search box, search for the permissions your add-in needs. For example, for an Outlook add-in, you might use `profile`, `openid`, `Files.ReadWrite`, and `Mail.Read`.
 
     > [!NOTE]
     > The `User.Read` permission may already be listed by default. It's a good practice to only request permissions that are needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.
