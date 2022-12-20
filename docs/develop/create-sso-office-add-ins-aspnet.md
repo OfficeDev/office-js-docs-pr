@@ -1,7 +1,7 @@
 ---
 title: Create an ASP.NET Office Add-in that uses single sign-on (SSO)
 description: A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).
-ms.date: 10/27/2022
+ms.date: 12/20/2022
 ms.localizationpriority: medium
 ---
 
@@ -41,6 +41,8 @@ Use the following values for placeholders for the subsequent app registration st
 | Placeholder           | Value                                           |
 |-----------------------|-------------------------------------------------|
 | `<add-in-name>`       | **Office-Add-in-ASPNET-SSO**                    |
+| `<fully-qualified-domain-name>` | `localhost:44355` |
+| Microsoft Graph permissions | profile, openid, Files.Read |
 
 [!INCLUDE [register-sso-add-in-aad-v2-include](../includes/register-sso-add-in-aad-v2-include.md)]
 
