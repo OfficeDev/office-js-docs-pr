@@ -1,7 +1,7 @@
 ---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: Learn how to create a Node.js-based add-in that uses Office Single Sign-on.
-ms.date: 10/06/2022
+ms.date: 12/20/2022
 ms.localizationpriority: medium
 ---
 
@@ -46,8 +46,8 @@ Use the following values for placeholders for the subsequent app registration st
 | Placeholder           | Value                                 |
 |-----------------------|---------------------------------------|
 | `<add-in-name>`       | **Office-Add-in-NodeJS-SSO**          |
-| `<redirect-platform>` | **Single-page application (SPA)**     |
-| `<redirect-uri>`      | `https://localhost:44355/dialog.html` |
+| `<fully-qualified-domain-name>` | `localhost:44355` |
+| Microsoft Graph permissions | profile, openid, Files.Read |
 
 [!INCLUDE [register-sso-add-in-aad-v2-include](../includes/register-sso-add-in-aad-v2-include.md)]
 
