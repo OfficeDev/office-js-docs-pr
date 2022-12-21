@@ -10,8 +10,8 @@ ms.localizationpriority: medium
 
 Applying the correct signature to messages when using multiple Exchange accounts is now made easier with the addition of the `OnMessageFromChanged` event to the [event-based activation](autolaunch.md) feature. The `OnMessageFromChanged` event allows your add-in to detect when the account in the **From** field of a message being composed is changed. This event further extends the capabilities of signature add-ins and allows them to:
 
-- Provide ease of use for users as they apply custom signatures on different accounts.
-- Enable mailbox delegates to more accurately and efficiently manage outgoing messages across multiple mailboxes.
+- Provide users with the convenience to apply custom signatures for each of their accounts.
+- Enable mailbox delegates to more accurately and efficiently manage outgoing messages from multiple mailboxes.
 - Ensure that users' messages meet their organization's communication and marketing policies.
 
 The following sections walk you through how to develop an event-based add-in that handles the `OnMessageFromChanged` event to automatically update a message's signature when the mail account in the **From** field is changed.
@@ -159,7 +159,7 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
 
 ## Implement the event handlers
 
-Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFromChanged` events. The `onNewMessageComposeHandler` function adds a signature to a newly created message if a default one isn't already configured on the current account. When the account in the **From** field is changed, the `onMessageFromChanged` function updates the signature based on this newly selected account.
+Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFromChanged` events. The `onNewMessageComposeHandler` function adds a signature to a newly created message if a default one isn't already configured on the current account. When the account in the **From** field is changed, the `onMessageFromChangedHandler` function updates the signature based on this newly selected account.
 
 1. From the same quick start project, navigate to the **./src** directory, then create a new folder named **launchevent**.
 
@@ -315,20 +315,20 @@ For guidance on how to troubleshoot your event-based activation add-in, see the 
 
 ## Deploy to users
 
-Similar to other event-based add-ins, add-ins that use the `OnMessageFromChanged` event must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section in [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
+Similar to other event-based add-ins, add-ins that use the `OnMessageFromChanged` event must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
 
 ## Event behavior and limitations
 
 Because the `OnMessageFromChanged` event is supported through the event-based activation feature, the same behavior and limitations apply to add-ins that activate as a result of this event. For a detailed description, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
 
-In addition to these characteristics, the following aspects also apply when an add-ins activates on the `OnMessageFromChanged` event.
+In addition to these characteristics, the following aspects also apply when an add-in activates on the `OnMessageFromChanged` event.
 
 - The `OnMessageFromChanged` event is only supported in message compose mode.
 - The `OnMessageFromChanged` event only supports Exchange accounts. The Exchange account can be selected from the **From** field dropdown or manually entered in the field. Non-Exchange accounts aren't supported. If a user switches to a non-supported account in the **From** field, the Outlook client automatically clears out the signature set by the previously selected account.
 - Delegate and shared mailbox scenarios are supported.
 - When switching to an Exchange account in the **From** field, the add-ins for the previously selected account, if any, are terminated, and the add-ins associated with the newly selected account are loaded before the `OnMessageFromChanged` event is initiated.
 - Email account aliases are supported. When an alias for the current account is selected in the **From** field, the `OnMessageFromChanged` event occurs without reloading the account's add-ins.
-- When the **From** field dropdown is opened by mistake or the selected account is the one that already appears in the **From** field, the `OnMessageFromChanged` event occurs, but the account's add-ins aren't terminated or reloaded.
+- When the **From** field dropdown is opened by mistake or the same account that appears in the **From** field is reselected, the `OnMessageFromChanged` event occurs, but the account's add-ins aren't terminated or reloaded.
 
 ## See also
 
