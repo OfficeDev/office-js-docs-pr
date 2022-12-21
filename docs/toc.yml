@@ -676,6 +676,9 @@ items:
       - name: Smart Alerts and OnMessageSend event walkthrough
         href: outlook/smart-alerts-onmessagesend-walkthrough.md
         displayName: event-based activation
+      - name: Update your signature when switching between accounts
+        href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
+        displayName: event-based activation
       - name: Debug event-based activation
         href: outlook/debug-autolaunch.md
       - name: AppSource options
