@@ -179,19 +179,19 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     
         // Check if a default Outlook signature is already configured.
         item.isClientSignatureEnabledAsync({ asyncContext: event }, (result) => {
-        if (result.status === Office.AsyncResultStatus.Failed) {
-            console.log(result.error.message);
-            return;
-        }
+            if (result.status === Office.AsyncResultStatus.Failed) {
+                console.log(result.error.message);
+                return;
+            }
     
-        // Add a signature if there's no default Outlook signature configured.
-        if (result.value === false) {
-            item.body.setSignatureAsync(
-            "<i>This is a sample signature.</i>",
-            { asyncContext: result.asyncContext, coercionType: Office.CoercionType.Html },
-            addSignatureCallback
-            );
-        }
+            // Add a signature if there's no default Outlook signature configured.
+            if (result.value === false) {
+                item.body.setSignatureAsync(
+                    "<i>This is a sample signature.</i>",
+                    { asyncContext: result.asyncContext, coercionType: Office.CoercionType.Html },
+                    addSignatureCallback
+                );
+            }
         });
     }
     
@@ -208,23 +208,23 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
                 return;
             }
     
-        // Create a signature based on the currently selected From account.
-        const name = result.value.displayName;
-        const options = { asyncContext: { event: result.asyncContext, name: name }, isInline: true };
-        item.addFileAttachmentFromBase64Async(signatureIcon, "signatureIcon.png", options, (result) => {
-            if (result.status === Office.AsyncResultStatus.Failed) {
-                console.log(result.error.message);
-                return;
-            }
-    
-            // Add the created signature to the mail item.
-            const signature = "<img src='cid:signatureIcon.png'>" + result.asyncContext.name;
-            item.body.setSignatureAsync(
-                signature,
-                { asyncContext: result.asyncContext.event, coercionType: Office.CoercionType.Html },
-                addSignatureCallback
-            );
-        });
+            // Create a signature based on the currently selected From account.
+            const name = result.value.displayName;
+            const options = { asyncContext: { event: result.asyncContext, name: name }, isInline: true };
+            item.addFileAttachmentFromBase64Async(signatureIcon, "signatureIcon.png", options, (result) => {
+                if (result.status === Office.AsyncResultStatus.Failed) {
+                    console.log(result.error.message);
+                    return;
+                }
+        
+                // Add the created signature to the mail item.
+                const signature = "<img src='cid:signatureIcon.png'>" + result.asyncContext.name;
+                item.body.setSignatureAsync(
+                    signature,
+                    { asyncContext: result.asyncContext.event, coercionType: Office.CoercionType.Html },
+                    addSignatureCallback
+                );
+            });
         });
     }
     
