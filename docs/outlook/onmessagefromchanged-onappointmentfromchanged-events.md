@@ -38,7 +38,7 @@ The following table lists client-server combinations that support the `OnMessage
 
 To test the `OnMessageFromChanged` event while it's in preview, install Outlook on Windows, starting with Version 2212 (Build 15919.10000). Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
 
-You must also have another Exchange account to test the walkthrough.
+To test the walkthrough, you must also have at least two Exchange accounts.
 
 ## Set up your environment
 
@@ -203,26 +203,26 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     
         // Get the currently selected From account.
         item.from.getAsync({ asyncContext: event }, (result) => {
-        if (result.status === Office.AsyncResultStatus.Failed) {
-            console.log(result.error.message);
-            return;
-        }
+            if (result.status === Office.AsyncResultStatus.Failed) {
+                console.log(result.error.message);
+                return;
+            }
     
         // Create a signature based on the currently selected From account.
         const name = result.value.displayName;
         const options = { asyncContext: { event: result.asyncContext, name: name }, isInline: true };
         item.addFileAttachmentFromBase64Async(signatureIcon, "signatureIcon.png", options, (result) => {
             if (result.status === Office.AsyncResultStatus.Failed) {
-            console.log(result.error.message);
-            return;
+                console.log(result.error.message);
+                return;
             }
     
             // Add the created signature to the mail item.
             const signature = "<img src='cid:signatureIcon.png'>" + result.asyncContext.name;
             item.body.setSignatureAsync(
-            signature,
-            { asyncContext: result.asyncContext.event, coercionType: Office.CoercionType.Html },
-            addSignatureCallback
+                signature,
+                { asyncContext: result.asyncContext.event, coercionType: Office.CoercionType.Html },
+                addSignatureCallback
             );
         });
         });
@@ -231,8 +231,8 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     // Callback function to add a signature to the mail item.
     function addSignatureCallback(result) {
         if (result.status === Office.AsyncResultStatus.Failed) {
-        console.log(result.error.message);
-        return;
+            console.log(result.error.message);
+            return;
         }
     
         console.log("Successfully added signature.");
@@ -259,7 +259,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 
 1. Replace the existing **script** tag with the following reference to the beta library on the content delivery network (CDN).
 
-   ```js
+   ```html
    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
    ```
 
