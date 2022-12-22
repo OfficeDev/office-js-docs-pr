@@ -325,7 +325,10 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     ```
 
 > [!IMPORTANT]
-> To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs in Outlook on Windows, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest's **\<LaunchEvent\>** element to its JavaScript counterpart. If this call isn't included in your JavaScript file and the **SendMode** property of your manifest's **\<LaunchEvent>** property is set to `SoftBlock` or isn't specified, your users will be blocked from sending messages or appointments.
+> When developing your Smart Alerts add-in to run in Outlook on Windows, keep the following in mind.
+>
+> - Imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
+> - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs in Outlook on Windows, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest's **\<LaunchEvent\>** element to its JavaScript counterpart. If this call isn't included in your JavaScript file and the **SendMode** property of your manifest's **\<LaunchEvent\>** property is set to `SoftBlock` or isn't specified, your users will be blocked from sending messages or meetings.
 
 ## Update the commands HTML file
 
@@ -386,7 +389,7 @@ For guidance on how to troubleshoot your Smart Alerts add-in, see the "Troublesh
 
 ## Deploy to users
 
-Similar to other event-based add-ins, add-ins that use the Smart Alerts feature must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the **Deploy to users** section in [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
+Similar to other event-based add-ins, add-ins that use the Smart Alerts feature must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section in [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
 
 > [!IMPORTANT]
 > Add-ins that use the Smart Alerts feature can only be published to AppSource if the manifest's [SendMode property](/javascript/api/manifest/launchevent#available-sendmode-options) is set to the `SoftBlock` or `PromptUser` option. If an add-in's **SendMode** property is set to `Block`, it can only be deployed by an organization's admin as it will fail AppSource validation. To learn more about publishing your event-based add-in to AppSource, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
