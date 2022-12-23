@@ -33,9 +33,6 @@ These steps set up a basic deployment of the Office Add-in. There are multiple w
     :::image type="content" source="../images/azure-extension-sign-in.png" alt-text="Sign in to Azure button selected in the Azure extension.":::
 
 1. Once you are signed in to your Azure account, right-click **App Services** and select **Create New Web App...(Advanced)**.
-
-    :::image type="content" source="../images/azure-extension-create-resource-button.png" alt-text="Create resource.":::
-
 1. On step 1 of **Create new web app**, enter a globally unique name for your app service; for example, **username-sso-add-in**.
 1. On step 2 of **Create new web app**, select the resource group you created for this deployment.
 1. On step 3 of **Create new web app**, select **Node 16 LTS** for the runtime stack.
@@ -232,7 +229,7 @@ If you make additional code change, you will need to run `npm run build:deploy` 
 
 ## Test the deployment
 
-Sideload the **manifest-deployment.xml** and test the functionality of the add-in in Office. For more information, see [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing.md).
+Sideload the **manifest-deployment.xml** and test the functionality of the add-in in Office. For more information, see [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
 If you encounter any deployment issues, see the [Azure App Service troubleshooting documentation](/troubleshoot/azure/app-service/welcome-app-service).
 
