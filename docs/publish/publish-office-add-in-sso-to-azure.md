@@ -11,15 +11,20 @@ To deploy an Office Add-in using SSO to Azure, you need to create an Azure app s
 
 ## Requirements
 
-This article assumes that you created an Office Add-in using the [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) using the `Office Add-in Task Pane project supporting single sign-on (localhost)` project type. Be sure you have configured the add-in project so that it runs on localhost successfully.
+The steps in this article work for an Office Add-in created by the [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) using the `Office Add-in Task Pane project supporting single sign-on (localhost)` project type. Be sure you have configured the add-in project so that it runs on localhost successfully. For more information, see the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).
 
 The steps in this article also require:
 - [Azure Account extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) for VS Code.
 - [Azure App Service extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) for VS Code.
+- An [Azure resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) for the region you are in.
+- An [Azure App Service plan](/azure/app-service/overview-hosting-plans) configured to use the Windows OS and the previous resource group. Any pricing tier should work. The steps in this article are for the Windows OS, although you can deploy Office Add-ins to Linux as well.
 
 ## Create the Azure app service
 
 These steps set up a basic deployment of the Office Add-in. There are multiple ways to configure deployment that are not covered in this documentation. For additional options on how you may want to configure your deployment, see [Deployment Best Practices](/azure/app-service/deploy-best-practices)
+
+> [!NOTE]
+> The following steps are based on [Create a Node.js web app in Azure](/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode).
 
 1. Open your Office Add-in project in VS Code.
 1. Select the Azure icon in the Activity Bar. If the Activity Bar is hidden, open it by selecting **View** > **Appearance** > **Activity Bar**.
@@ -41,8 +46,16 @@ These steps set up a basic deployment of the Office Add-in. There are multiple w
 
     Azure will create the app service and it will appear under **App Services** on Azure in the Activity Bar. Don't deploy the add-in yet.
 
-1. Right-click your app service and select **Browse Website**.
-1. When the browser for your new web site opens, copy the URL and save it. You'll need it in later steps.
+1. Right-click your app service and select **Open in Portal**.
+1. When the portal opens in the browser, copy the URL of the web site from the **Overview** pane and save it. You'll need it in later steps.
+1. In the **App Service** explorer in Visual Studio code, expand the node for the new app, right-click **Application Settings**, and select **Add New Setting**:
+
+    :::image type="content" source="../images/add-setting.png" alt-text="Add app setting command":::
+
+1. Enter `SCM_DO_BUILD_DURING_DEPLOYMENT` for the setting key.
+1. Enter `true` for the setting value.
+
+    This app setting enables build automation at deploy time, which automatically detects the start script and generates the web.config with it.
 
 ## Update manifest
 
@@ -55,7 +68,9 @@ It's useful to maintain multiple manifests for testing across localhost, staging
 
 ## Update package.json
 
-1. In the Visual Studio Code terminal, run the command `npm pkg set 'scripts.start'='node middletier.js'`. This will configure the start script to run Node JS on deployment.
+1. In the Visual Studio Code terminal, run the command `npm pkg set scripts.build=" " scripts.build:deploy="webpack --mode production" scripts.start="node middletier.js"`.
+
+    For the previous command, the `build` script is empty because Azure will automatically call this script on deployment. We'll build locally so a server build is not needed. You'll use the `build:deploy` script any time you have source updates that need to be build and deployed to Azure. the `start` script will be called by Azure when you deploy so it needs to run the node server.
 
 ## Update webpack.config.js
 
@@ -90,11 +105,9 @@ It's useful to maintain multiple manifests for testing across localhost, staging
 
 1. Save the file.
 
-## Update fallbackauthdialog.js
+## Update fallbackauthdialog.js (or fallbackauthdialog.ts)
 
-The following steps also work for fallbackauthdialog.ts if you created a TypeScript project.
-
-1. Open the **src/helpers/fallbackauthdialog.js** file.
+1. Open the **src/helpers/fallbackauthdialog.js** file, or **src/helpers/fallbackauthdialog.ts** if your project uses TypeScript.
 1. Find the `redirectUri` on line 24 and change the value to use the app service URL you saved previously. For example, `redirectUri: "https://contoso-sso.azurewebsites.net/fallbackauthdialog.html",`
 1. Save the file.
 
@@ -107,11 +120,9 @@ The **.ENV** file contains a client secret. For the purposes of learning in this
 1. Change `NODE_ENV` to have the value `production`.
 1. Save the file.
 
-## Update app.js
+## Update app.js (or app.ts)
 
-The following steps also work for app.ts if you created a TypeScript project.
-
-1. Open the **src/middle-tier/app.js** file.
+1. Open the **src/middle-tier/app.js** file, or **src/middle-tier/app.ts** if your project uses TypeScript.
 1. Replace the entire file contents with the following code.
 
     ```javascript
@@ -211,27 +222,23 @@ We recommend you create multiple app registrations for localhost, staging, and d
 
 Once the files and app registration are updated, you can deploy the add-in.
 
-1. In VS Code open the terminal and run the command `npm run build`. This will build a folder named `dist` that you can deploy.
+1. In VS Code open the terminal and run the command `npm run build:deploy`. This will build a folder named `dist` that you can deploy.
 1. In the VS Code **Explorer** browse to the `dist` folder. Right-click the `dist` folder and select **Deploy to Web App..**.
 1. When prompted to select a resource, select the app service you created previously.
 1. When prompted if you are sure, select **Deploy**.
 1. When prompted to always deploy the workspace, choose **Yes**.
 
-## Guidelines for any project
-
-Replace all localhost reference in your project with references to the app service URL.
-Use Azure Key Vault for secrets.
-Remove any port literal numbers, such as `3000`. Use the `process.env.PORT` environment variable that Azure app service provides to your add-in.
-Replace any URL or domain references such as `https://localhost:3000` with the URL of your app service.
-Use multiple app registrations and manifests for localhost, staging, and deployment testing.
-
-
-For additional help see Azure help.
+If you make additional code change, you will need to run `npm run build:deploy` again and redeploy the project.
 
 ## Test the deployment
 
-To check that the deployment is working as expected, open a browser and go to the URL for your app service. It should return the taskpane.html page (although it will not function without Office.)
-
-You can also sideload the manifest-deployment.xml and test the functionality of the add-in in Office. For more information, see [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
+Sideload the **manifest-deployment.xml** and test the functionality of the add-in in Office. For more information, see [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing.md).
 
 For additional support on Azure, see [Azure App Service FAQ](/troubleshoot/azure/app-service/create-delete-resources-faq#contact-us-for-help),
+
+## Next steps
+
+- [Deploy to App Service using GitHub Actions](/azure/app-service/deploy-github-actions?tabs=applevel)
+- [Deployment Best Practices](/azure/app-service/deploy-best-practices)
+- [App Service documentation](/azure/app-service)
+- [Azure community support](/answers/products/azure?product=all)
