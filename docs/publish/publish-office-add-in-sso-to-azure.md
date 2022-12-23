@@ -234,7 +234,7 @@ If you make additional code change, you will need to run `npm run build:deploy` 
 
 Sideload the **manifest-deployment.xml** and test the functionality of the add-in in Office. For more information, see [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing.md).
 
-For additional support on Azure, see [Azure App Service FAQ](/troubleshoot/azure/app-service/create-delete-resources-faq#contact-us-for-help),
+If you encounter any deployment issues, see the [Azure App Service troubleshooting documentation](/troubleshoot/azure/app-service/welcome-app-service).
 
 ## Next steps
 
