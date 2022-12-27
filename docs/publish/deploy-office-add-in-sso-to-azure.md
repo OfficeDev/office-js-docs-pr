@@ -1,13 +1,13 @@
 ---
-title: Deploy an Office Add-in using SSO to a Microsoft Azure app service | Microsoft Docs
-description: Learn how to deploy an Office Add-in using SSO to an Azure app service.
+title: Deploy an Office Add-in that uses single sign-on (SSO) to Microsoft Azure App Service | Microsoft Docs
+description: Learn how to deploy an Office Add-in that uses single sign-on (SSO) to Microsoft Azure App Service from Visual Studio Code.
 ms.date: 12/20/2020
 ms.localizationpriority: medium
 ---
 
-# Deploy an Office Add-in using SSO to a Microsoft Azure app service
+# Deploy an Office Add-in that uses single sign-on (SSO) to Microsoft Azure App Service
 
-To deploy an Office Add-in using SSO to Azure, you need to create an Azure app service. The steps in this article will deploy your Office Add-in to a Microsoft Azure app service for staging or deployment.
+Office Add-ins that use SSO require a web service that supports running the REST APIs and server-side code in the project. You can't deploy to a static web site. Follow the steps in this article to deploy your Office Add-in to Azure App Service for staging or deployment.
 
 ## Requirements
 
@@ -19,7 +19,7 @@ The steps in this article also require:
 - An [Azure resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) for the region you are in.
 - An [Azure App Service plan](/azure/app-service/overview-hosting-plans) configured to use the Windows OS and the previous resource group. Any pricing tier should work. The steps in this article are for the Windows OS, although you can deploy Office Add-ins to Linux as well.
 
-## Create the Azure app service
+## Create the App Service
 
 These steps set up a basic deployment of the Office Add-in. There are multiple ways to configure deployment that are not covered in this documentation. For additional options on how you may want to configure your deployment, see [Deployment Best Practices](/azure/app-service/deploy-best-practices)
 
@@ -59,13 +59,15 @@ These steps set up a basic deployment of the Office Add-in. There are multiple w
 It's useful to maintain multiple manifests for testing across localhost, staging, and deployment. We recommend you copy the existing file and create a new manifest named **manifest-deployment.xml**.
 
 1. Open the **manifest-deployment.xml** file.
-1. Find all instances of the text `localhost:3000` and replace it with the domain of the app service URL you saved previously.
-1. In the `<AppDomains>` section, add an `<AppDomain>` entry for the app service from the URL you saved previously. For example `<AppDomain>https://contoso-sso.azurewebsites.net</AppDomain>`.
+1. Find all instances of the text `localhost:3000` and replace it with the domain of your app service URL you saved previously.
+1. In the `<AppDomains>` section, add an `<AppDomain>` entry for your app service from the URL you saved previously. For example `<AppDomain>https://contoso-sso.azurewebsites.net</AppDomain>`.
 1. Save the file.
 
 ## Update package.json
 
 1. In the Visual Studio Code terminal, run the command `npm pkg set scripts.build=" " scripts.build:deploy="webpack --mode production" scripts.start="node middletier.js"`.
+1. 
+1. tbd add prestart to this for linux
 
     For the previous command, the `build` script is empty because Azure will automatically call this script on deployment. We'll build locally so a server build is not needed. You'll use the `build:deploy` script any time you have source updates that need to be build and deployed to Azure. the `start` script will be called by Azure when you deploy so it needs to run the node server.
 
@@ -105,7 +107,7 @@ It's useful to maintain multiple manifests for testing across localhost, staging
 ## Update fallbackauthdialog.js (or fallbackauthdialog.ts)
 
 1. Open the **src/helpers/fallbackauthdialog.js** file, or **src/helpers/fallbackauthdialog.ts** if your project uses TypeScript.
-1. Find the `redirectUri` on line 24 and change the value to use the app service URL you saved previously. For example, `redirectUri: "https://contoso-sso.azurewebsites.net/fallbackauthdialog.html",`
+1. Find the `redirectUri` on line 24 and change the value to use your app service URL you saved previously. For example, `redirectUri: "https://contoso-sso.azurewebsites.net/fallbackauthdialog.html",`
 1. Save the file.
 
 ## Update .ENV
@@ -113,7 +115,7 @@ It's useful to maintain multiple manifests for testing across localhost, staging
 The **.ENV** file contains a client secret. For the purposes of learning in this article you can deploy the **.ENV** file to Azure. However for a production deployment, you should move the secret and any other confidential data into [Azure Key Vault](/azure/key-vault/general/basic-concepts).
 
 1. Open the **.ENV** file.
-1. Remove the entry for `PORT=3000`. Azure app service will provide a PORT variable to your project when deployed.
+1. Remove the entry for `PORT=3000`. Azure App Service will provide a PORT variable to your project when deployed.
 1. Change `NODE_ENV` to have the value `production`.
 1. Save the file.
 
@@ -212,7 +214,7 @@ We recommend you create multiple app registrations for localhost, staging, and d
 1. On the **Authentication** pane, find the `https://localhost:3000/fallbackauthdialog.html` and change it to use the app service URL you saved previously. For example, `https://contoso.sso.azurewebsites.net/fallbackauthdialog.html`.
 1. Save the change.
 1. In the left sidebar, select **Expose an API**.
-1. Change the **Application ID URI** to use the app service URL you saved previously. For example, `api://contoso-sso.azurewebsites.net/628050c7-8d46-4f8f-a393-ac22eb688477`.
+1. Change the **Application ID URI** to use your app service URL you saved previously. For example, `api://contoso-sso.azurewebsites.net/628050c7-8d46-4f8f-a393-ac22eb688477`.
 1. Save the changes.
 
 ## Build and deploy
