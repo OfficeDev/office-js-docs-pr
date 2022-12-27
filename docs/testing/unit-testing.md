@@ -37,7 +37,7 @@ npm install office-addin-mock --save-dev
 
 ## Basic usage
 
-1. Your project will have one or more test files. (See the instructions for your test framework and the example test files in Examples(#examples) below.) Import the library, with either the `require` or `import` keyword, to any test file that has a test of a function that calls the Office JavaScript APIs, as shown in the following example.
+1. Your project will have one or more test files. (See the instructions for your test framework and the example test files in [Examples](#examples) below.) Import the library, with either the `require` or `import` keyword, to any test file that has a test of a function that calls the Office JavaScript APIs, as shown in the following example.
 
    ```javascript
    const OfficeAddinMock = require("office-addin-mock");
