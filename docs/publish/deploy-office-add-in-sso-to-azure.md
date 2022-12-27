@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Deploy an Office Add-in that uses single sign-on (SSO) to Microsoft Azure App Service
 
-Office Add-ins that use SSO require a web service that supports running the REST APIs and server-side code in the project. You can't deploy to a static web site. Follow the steps in this article to deploy your Office Add-in to Azure App Service for staging or deployment.
+Office Add-ins that use SSO require a web service that supports running the REST APIs and server-side code in the project. You can't deploy to a static website. Follow the steps in this article to deploy your Office Add-in to Azure App Service for staging or deployment.
 
 ## Requirements
 
@@ -19,12 +19,9 @@ The steps in this article also require:
 - An [Azure resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) for the region you are in.
 - An [Azure App Service plan](/azure/app-service/overview-hosting-plans) configured to use the Windows OS and the previous resource group. Any pricing tier should work. The steps in this article are for the Windows OS, although you can deploy Office Add-ins to Linux as well.
 
-## Create the App Service
+## Create the app service
 
-These steps set up a basic deployment of the Office Add-in. There are multiple ways to configure deployment that are not covered in this documentation. For additional options on how you may want to configure your deployment, see [Deployment Best Practices](/azure/app-service/deploy-best-practices)
-
-> [!NOTE]
-> The following steps are based on [Create a Node.js web app in Azure](/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode).
+The following steps set up a basic deployment of the Office Add-in. There are multiple ways to configure deployment that are not covered in this documentation. For additional options on how you may want to configure your deployment, see [Deployment Best Practices](/azure/app-service/deploy-best-practices)
 
 1. Open your Office Add-in project in VS Code.
 1. Select the Azure icon in the Activity Bar. If the Activity Bar is hidden, open it by selecting **View** > **Appearance** > **Activity Bar**.
@@ -241,3 +238,4 @@ If you encounter any deployment issues, see the [Azure App Service troubleshooti
 - [Deployment Best Practices](/azure/app-service/deploy-best-practices)
 - [App Service documentation](/azure/app-service)
 - [Azure community support](/answers/products/azure?product=all)
+- [Create a Node.js web app in Azure](/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode)
