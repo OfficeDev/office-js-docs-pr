@@ -22,8 +22,8 @@ The steps in this article also require:
 The following steps set up a basic deployment of the Office Add-in. There are multiple ways to configure deployment that are not covered in this documentation. For additional options on how you may want to configure your deployment, see [Deployment Best Practices](/azure/app-service/deploy-best-practices)
 
 1. Open your Office Add-in project in VS Code.
-1. Select the Azure icon in the Activity Bar. If the Activity Bar is hidden, open it by selecting **View** > **Appearance** > **Activity Bar**.
-1. Select **Sign in to Azure** to sign in to your Azure account. If you don't already have an Azure account, create one by selecting **Create an Azure Account**. Follow the provided steps to set up your account.
+1. Select the Azure logo in the [Activity Bar](https://code.visualstudio.com/docs/getstarted/userinterface). If the Activity Bar is hidden, open it by selecting **View** > **Appearance** > **Activity Bar**.
+1. In the **App Service** explorer, select **Sign in to Azure...** and follow the instructions.
 
     :::image type="content" source="../images/azure-extension-sign-in.png" alt-text="Sign in to Azure button selected in the Azure extension.":::
 
