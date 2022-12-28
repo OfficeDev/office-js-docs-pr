@@ -16,8 +16,6 @@ The steps in this article work for an Office Add-in created by the [Yeoman Gener
 The steps in this article also require:
 - [Azure Account extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) for VS Code.
 - [Azure App Service extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) for VS Code.
-- An [Azure resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) for the region you are in.
-- An [Azure App Service plan](/azure/app-service/overview-hosting-plans) configured to use the Windows OS and the previous resource group. Any pricing tier should work. The steps in this article are for the Windows OS, although you can deploy Office Add-ins to Linux as well.
 
 ## Create the app service
 
@@ -29,27 +27,36 @@ The following steps set up a basic deployment of the Office Add-in. There are mu
 
     :::image type="content" source="../images/azure-extension-sign-in.png" alt-text="Sign in to Azure button selected in the Azure extension.":::
 
-1. Once you are signed in to your Azure account, right-click **App Services** and select **Create New Web App...(Advanced)**.
-1. On step 1 of **Create new web app**, enter a globally unique name for your app service; for example, **username-sso-add-in**.
-1. On step 2 of **Create new web app**, select the resource group you created for this deployment.
-1. On step 3 of **Create new web app**, select **Node 16 LTS** for the runtime stack.
-1. On step 4 of **Create new web app**, select **Windows** for the OS.
-1. On step 5 of **Create new web app**, select a location in your region.
-1. On step 6 of **Create new web app**, select the Windows App Service plan you created for this deployment.
-1. On step 7 of **Create new web app**, select **Skip for now**.
+# [Deploy to Linux](#tab/linux)
 
-    Azure will create the app service and it will appear under **App Services** on Azure in the Activity Bar. Don't deploy the add-in yet.
+1. Right-click on App Services and select **Create new Web App**. A Linux container is used by default.
+1. Type a globally unique name for your web app and press **Enter**. The name must be unique across all of Azure and use only alphanumeric characters ('A-Z', 'a-z', and '0-9') and hyphens ('-').
+1. In Select a runtime stack, select the **Node 16 LTS** runtime stack.
+1. In Select a pricing tier, select **Free (F1)** and wait for the resources to be provisioned in Azure. When prompted to deploy, don't deploy the add-in yet. You'll do that in a later step.
 
-1. Right-click your app service and select **Open in Portal**.
-1. When the portal opens in the browser, copy the URL of the web site from the **Overview** pane and save it. You'll need it in later steps.
+# [Deploy to Windows](#tab/windows)
+
+1. Right-click on App Services and select **Create new Web App... Advanced**.
+1. Type a globally unique name for your web app and press **Enter**. The name must be unique across all of Azure and use only alphanumeric characters ('A-Z', 'a-z', and '0-9') and hyphens ('-').
+1. Select the resource group you wan to use. If you don't have a resource group, select **Create a new resource group**, then enter a name for the resource group, such as *AppServiceQS-rg*.
+1. Select the **Node 16 LTS** runtime stack.
+1. Select **Windows** for the operating system.
+1. Select the location you want to serve your app from. For example, *West Europe*.
+1. Select the App Service plan you want to use. If you don't have an App Service plan, select **Create new App Service plan**, then enter a name for the plan (such as *AppServiceQS-plan*), then select **F1 Free**.
+1. For **Select an Application Insights resource for your app**, select **Skip for now** and wait the resources to be provisioned in Azure. When prompted to deploy, don't deploy the add-in yet. You'll do that in a later step.
 1. In the **App Service** explorer in Visual Studio code, expand the node for the new app, right-click **Application Settings**, and select **Add New Setting**:
 
-    :::image type="content" source="../images/add-setting.png" alt-text="Add app setting command":::
+:::image type="content" source="../images/azure-app-service-add-setting.png" alt-text="Add app setting command.":::
 
 1. Enter `SCM_DO_BUILD_DURING_DEPLOYMENT` for the setting key.
 1. Enter `true` for the setting value.
 
-    This app setting enables build automation at deploy time, which automatically detects the start script and generates the web.config with it.
+    This app setting enables build automation at deploy time, which automatically detects the start script and generates the *web.config* with it.
+
+-----
+
+1. Right-click your app service and select **Open in Portal**.
+1. When the portal opens in the browser, copy the URL of the web site from the **Overview** pane and save it. You'll need it in later steps.
 
 ## Update manifest
 
@@ -62,11 +69,17 @@ It's useful to maintain multiple manifests for testing across localhost, staging
 
 ## Update package.json
 
-1. In the Visual Studio Code terminal, run the command `npm pkg set scripts.build=" " scripts.build:deploy="webpack --mode production" scripts.start="node middletier.js"`.
-1. 
-1. tbd add prestart to this for linux
+1. In the Visual Studio Code terminal, run the following command to modify the package to start the Node JS server when deployed.
 
-    For the previous command, the `build` script is empty because Azure will automatically call this script on deployment. We'll build locally so a server build is not needed. You'll use the `build:deploy` script any time you have source updates that need to be build and deployed to Azure. the `start` script will be called by Azure when you deploy so it needs to run the node server.
+    ```command
+    `npm pkg set start="node middletier.js"`.
+    ```
+
+1. Run the following command to remove the `prestart` script which is not needed.
+
+    ```command
+    `npm pkg delete scripts.prestart`
+    ```
 
 ## Update webpack.config.js
 
@@ -112,8 +125,7 @@ It's useful to maintain multiple manifests for testing across localhost, staging
 The **.ENV** file contains a client secret. For the purposes of learning in this article you can deploy the **.ENV** file to Azure. However for a production deployment, you should move the secret and any other confidential data into [Azure Key Vault](/azure/key-vault/general/basic-concepts).
 
 1. Open the **.ENV** file.
-1. Remove the entry for `PORT=3000`. Azure App Service will provide a PORT variable to your project when deployed.
-1. Change `NODE_ENV` to have the value `production`.
+1. Set the `NODE_ENV` variable to the value `production`.
 1. Save the file.
 
 ## Update app.js (or app.ts)
@@ -218,13 +230,13 @@ We recommend you create multiple app registrations for localhost, staging, and d
 
 Once the files and app registration are updated, you can deploy the add-in.
 
-1. In VS Code open the terminal and run the command `npm run build:deploy`. This will build a folder named `dist` that you can deploy.
+1. In VS Code open the terminal and run the command `npm run build`. This will build a folder named `dist` that you can deploy.
 1. In the VS Code **Explorer** browse to the `dist` folder. Right-click the `dist` folder and select **Deploy to Web App..**.
 1. When prompted to select a resource, select the app service you created previously.
 1. When prompted if you are sure, select **Deploy**.
 1. When prompted to always deploy the workspace, choose **Yes**.
 
-If you make additional code change, you will need to run `npm run build:deploy` again and redeploy the project.
+If you make additional code change, you will need to run `npm run build` again and redeploy the project.
 
 ## Test the deployment
 
