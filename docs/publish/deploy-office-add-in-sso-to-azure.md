@@ -19,15 +19,21 @@ The steps in this article also require:
 - [Azure Account extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) for VS Code.
 - [Azure App Service extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) for VS Code.
 
-## Create the app service
+## Create the App Service app
 
 The following steps set up a basic deployment of the Office Add-in. There are multiple ways to configure deployment that are not covered in this documentation. For additional options on how you may want to configure your deployment, see [Deployment Best Practices](/azure/app-service/deploy-best-practices)
+
+### Sign in to Azure
 
 1. Open your Office Add-in project in VS Code.
 1. Select the Azure logo in the [Activity Bar](https://code.visualstudio.com/docs/getstarted/userinterface). If the Activity Bar is hidden, open it by selecting **View** > **Appearance** > **Activity Bar**.
 1. In the **App Service** explorer, select **Sign in to Azure...** and follow the instructions.
 
     :::image type="content" source="../images/azure-extension-sign-in.png" alt-text="Sign in to Azure button selected in the Azure extension.":::
+
+### Configure the App Service app
+
+App Service supports various versions of Node.js on both Linux and Windows. Select the tab for the one you'd like to use and then follow the instructions to create your App Service app.
 
 # [Deploy to Linux](#tab/linux)
 
@@ -57,7 +63,7 @@ The following steps set up a basic deployment of the Office Add-in. There are mu
 
 -----
 
-1. Right-click your app service and select **Open in Portal**.
+1. Right-click your App Service app and select **Open in Portal**.
 1. When the portal opens in the browser, copy the domain name of the **URL** (not the `https://` part) from the **Overview** pane and save it. You'll need it in later steps.
 
 ## Update manifest
@@ -65,8 +71,8 @@ The following steps set up a basic deployment of the Office Add-in. There are mu
 It's useful to maintain multiple manifests for testing across localhost, staging, and deployment. We recommend you copy the existing file and create a new manifest named **manifest-deployment.xml**.
 
 1. Open the **manifest-deployment.xml** file.
-1. Find all instances of the text `localhost:3000` and replace it with the domain of your app service URL you saved previously.
-1. In the `<AppDomains>` section, add an `<AppDomain>` entry for your app service from the URL you saved previously. For example `<AppDomain>https://contoso-sso.azurewebsites.net</AppDomain>`.
+1. Find all instances of the text `localhost:3000` and replace it with the domain of your App Service app URL you saved previously.
+1. In the `<AppDomains>` section, add an `<AppDomain>` entry for your App Service app from the URL you saved previously. For example `<AppDomain>https://contoso-sso.azurewebsites.net</AppDomain>`.
 1. Save the file.
 
 ## Update package.json
@@ -119,7 +125,7 @@ It's useful to maintain multiple manifests for testing across localhost, staging
 ## Update fallbackauthdialog.js (or fallbackauthdialog.ts)
 
 1. Open the **src/helpers/fallbackauthdialog.js** file, or **src/helpers/fallbackauthdialog.ts** if your project uses TypeScript.
-1. Find the `redirectUri` on line 24 and change the value to use your app service URL you saved previously. For example, `redirectUri: "https://contoso-sso.azurewebsites.net/fallbackauthdialog.html",`
+1. Find the `redirectUri` on line 24 and change the value to use your App Service app URL you saved previously. For example, `redirectUri: "https://contoso-sso.azurewebsites.net/fallbackauthdialog.html",`
 1. Save the file.
 
 ## Update .ENV
@@ -219,17 +225,17 @@ The app.js (or app.ts) requires several minor changes to run correctly in a depl
 
 ## Update app registration
 
-We recommend you create multiple app registrations for localhost, staging, and deployment testing. The following steps ensure that the app registration you use for deployment correctly uses the app service URL.
+We recommend you create multiple app registrations for localhost, staging, and deployment testing. The following steps ensure that the app registration you use for deployment correctly uses the App Service app URL.
 
-1. In the Azure portal, open your app registration. Note that the app registration may be in a different account than your app service. Be sure to sign in to the correct account.
+1. In the Azure portal, open your app registration. Note that the app registration may be in a different account than your App Service app. Be sure to sign in to the correct account.
 1. In the left sidebar, select **Authentication**.
 
 :::image type="content" source="../images/azure-portal-authentication-page.png" alt-text="The authentication page in the Azure app registration.":::
 
-1. On the **Authentication** pane, find the `https://localhost:3000/fallbackauthdialog.html` and change it to use the app service URL you saved previously. For example, `https://contoso.sso.azurewebsites.net/fallbackauthdialog.html`.
+1. On the **Authentication** pane, find the `https://localhost:3000/fallbackauthdialog.html` and change it to use the App Service app URL you saved previously. For example, `https://contoso.sso.azurewebsites.net/fallbackauthdialog.html`.
 1. Save the change.
 1. In the left sidebar, select **Expose an API**.
-1. Edit the **Application ID URI** field and replace `localhost:3000` with the domain from the app service URL you saved previously.
+1. Edit the **Application ID URI** field and replace `localhost:3000` with the domain from the App Service app URL you saved previously.
 1. Save the changes.
 
 ## Build and deploy
@@ -238,7 +244,7 @@ Once the files and app registration are updated, you can deploy the add-in.
 
 1. In VS Code open the terminal and run the command `npm run build`. This will build a folder named `dist` that you can deploy.
 1. In the VS Code **Explorer** browse to the `dist` folder. Right-click the `dist` folder and select **Deploy to Web App..**.
-1. When prompted to select a resource, select the app service you created previously.
+1. When prompted to select a resource, select the App Service app you created previously.
 1. When prompted if you are sure, select **Deploy**.
 1. When prompted to always deploy the workspace, choose **Yes**.
 
