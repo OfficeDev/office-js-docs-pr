@@ -14,6 +14,8 @@ Office Add-ins that use SSO require a web service that supports running the REST
 The steps in this article work for an Office Add-in created by the [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) using the `Office Add-in Task Pane project supporting single sign-on (localhost)` project type. Be sure you have configured the add-in project so that it runs on localhost successfully. For more information, see the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).
 
 The steps in this article also require:
+
+- An Azure account. Get a trial subscription at [Microsoft Azure](https://azure.microsoft.com/en-us/free/).
 - [Azure Account extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) for VS Code.
 - [Azure App Service extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) for VS Code.
 
@@ -56,7 +58,7 @@ The following steps set up a basic deployment of the Office Add-in. There are mu
 -----
 
 1. Right-click your app service and select **Open in Portal**.
-1. When the portal opens in the browser, copy the URL of the web site from the **Overview** pane and save it. You'll need it in later steps.
+1. When the portal opens in the browser, copy the domain name of the **URL** (not the `https://` part) from the **Overview** pane and save it. You'll need it in later steps.
 
 ## Update manifest
 
@@ -130,6 +132,8 @@ The **.ENV** file contains a client secret. For the purposes of learning in this
 
 ## Update app.js (or app.ts)
 
+The app.js (or app.ts) requires several minor changes to run correctly in a deployment. It's easiest to just replace the file with an updated version for deployment.
+
 1. Open the **src/middle-tier/app.js** file, or **src/middle-tier/app.ts** if your project uses TypeScript.
 1. Replace the entire file contents with the following code.
 
@@ -182,8 +186,7 @@ The **.ENV** file contains a client secret. For the purposes of learning in this
     }
     
     const indexRouter = express.Router();
-    indexRouter.get("/", function (req, res) {
-      //   res.render("/taskpane.html");
+    indexRouter.get("/", function (req, res) {      
       res.sendFile("/taskpane.html", { root: __dirname });
     });
     
@@ -220,10 +223,13 @@ We recommend you create multiple app registrations for localhost, staging, and d
 
 1. In the Azure portal, open your app registration. Note that the app registration may be in a different account than your app service. Be sure to sign in to the correct account.
 1. In the left sidebar, select **Authentication**.
+
+:::image type="content" source="../images/azure-portal-authentication-page.png" alt-text="The authentication page in the Azure app registration.":::
+
 1. On the **Authentication** pane, find the `https://localhost:3000/fallbackauthdialog.html` and change it to use the app service URL you saved previously. For example, `https://contoso.sso.azurewebsites.net/fallbackauthdialog.html`.
 1. Save the change.
 1. In the left sidebar, select **Expose an API**.
-1. Change the **Application ID URI** to use your app service URL you saved previously. For example, `api://contoso-sso.azurewebsites.net/628050c7-8d46-4f8f-a393-ac22eb688477`.
+1. Edit the **Application ID URI** field and replace `localhost:3000` with the domain from the app service URL you saved previously.
 1. Save the changes.
 
 ## Build and deploy
