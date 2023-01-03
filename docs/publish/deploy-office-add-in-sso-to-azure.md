@@ -15,7 +15,7 @@ The steps in this article work for an Office Add-in created by the [Yeoman Gener
 
 The steps in this article also require:
 
-- An Azure account. Get a trial subscription at [Microsoft Azure](https://azure.microsoft.com/en-us/free/).
+- An Azure account. Get a trial subscription at [Microsoft Azure](https://azure.microsoft.com/free/).
 - [Azure Account extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) for VS Code.
 - [Azure App Service extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) for VS Code.
 
