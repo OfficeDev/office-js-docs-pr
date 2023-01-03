@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 Office Add-ins that use SSO require a web service that supports running the REST APIs and server-side code in the project. You can't deploy to a static website. Follow the steps in this article to deploy your Office Add-in to Azure App Service for staging or deployment.
 
-## Requirements
+## Prerequisites
 
 The steps in this article work for an Office Add-in created by the [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) using the `Office Add-in Task Pane project supporting single sign-on (localhost)` project type. Be sure you have configured the add-in project so that it runs on localhost successfully. For more information, see the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).
 
