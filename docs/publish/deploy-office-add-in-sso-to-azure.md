@@ -38,7 +38,7 @@ The following steps set up a basic deployment of the Office Add-in. There are mu
 
 1. Right-click on App Services and select **Create new Web App... Advanced**.
 1. Type a globally unique name for your web app and press **Enter**. The name must be unique across all of Azure and use only alphanumeric characters ('A-Z', 'a-z', and '0-9') and hyphens ('-').
-1. Select the resource group you wan to use. If you don't have a resource group, select **Create a new resource group**, then enter a name for the resource group, such as *AppServiceQS-rg*.
+1. Select the resource group you want to use. If you don't have a resource group, select **Create a new resource group**, then enter a name for the resource group, such as *AppServiceQS-rg*.
 1. Select the **Node 16 LTS** runtime stack.
 1. Select **Windows** for the operating system.
 1. Select the location you want to serve your app from. For example, *West Europe*.
@@ -72,13 +72,13 @@ It's useful to maintain multiple manifests for testing across localhost, staging
 1. In the Visual Studio Code terminal, run the following command to modify the package to start the Node JS server when deployed.
 
     ```command
-    `npm pkg set start="node middletier.js"`.
+    npm pkg set start="node middletier.js"
     ```
 
 1. Run the following command to remove the `prestart` script which is not needed.
 
     ```command
-    `npm pkg delete scripts.prestart`
+    npm pkg delete scripts.prestart
     ```
 
 ## Update webpack.config.js
@@ -236,7 +236,7 @@ Once the files and app registration are updated, you can deploy the add-in.
 1. When prompted if you are sure, select **Deploy**.
 1. When prompted to always deploy the workspace, choose **Yes**.
 
-If you make additional code change, you will need to run `npm run build` again and redeploy the project.
+If you make additional code changes, you'll need to run `npm run build` again and redeploy the project.
 
 ## Test the deployment
 
