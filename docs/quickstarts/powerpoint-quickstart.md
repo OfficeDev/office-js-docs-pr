@@ -242,6 +242,10 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
+## Code samples
+
+- [PowerPoint "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
+
 ### Next steps
 
 Congratulations, you've successfully created a PowerPoint task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
