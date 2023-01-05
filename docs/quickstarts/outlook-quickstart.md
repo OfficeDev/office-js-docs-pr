@@ -283,6 +283,10 @@ When you've completed the wizard, Visual Studio creates a solution that contains
     > [!NOTE]
     > If the task pane doesn't load, try to verify by opening it in a browser on the same machine.
 
+## Code samples
+
+- [Outlook "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/outlook-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
+
 ### Next steps
 
 Congratulations, you've successfully created your first Outlook task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
