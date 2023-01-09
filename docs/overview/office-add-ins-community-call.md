@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 12/13/2022
+ms.date: 01/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -9,18 +9,18 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 8:00 AM Pacific Time. You can download the calendar invite at https://aka.ms/officeaddinscommunitycall.
 
-## Agenda for December 14, 2022 call
+## Agenda for January 11, 2022 call
 
-The agenda for the December call is the following:
+The agenda for the January call is the following:
 
-- Marketplace leads for Office plugins will now be available in the referrals workspace. 
-- Autolaunch for Word and Excel.
-- Top 5 AppSource validation errors.
+- Deploy an Office Add-in to Azure App Service.
 
 ## Previous calls
 
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
+- [December 14, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-12-14/)
+- [November 9, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-11-09/)
 - [October 12, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-10-12/)
 - [September 14, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-09-14/)
 - [August 10, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-08-10/)
