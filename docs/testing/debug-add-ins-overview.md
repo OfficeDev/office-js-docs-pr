@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins
 description: Find the Office Add-in debugging guidance for your development environment.
-ms.date: 07/11/2022
+ms.date: 11/15/2022
 ms.localizationpriority: high
 ---
 
@@ -65,11 +65,7 @@ For information about which runtime is being used, see [Browsers used by Office 
 
 ### Debug on Mac
 
-The following provides general guidance to debugging on Mac.
-
-- If you're using Visual Studio Code, debug using the [Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
-- For any other IDE, use the Safari Web Inspector. Instructions are in [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md).
-
+Use the Safari Web Inspector. Instructions are in [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md).
 
 ### Debug on Linux
 

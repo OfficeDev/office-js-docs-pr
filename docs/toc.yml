@@ -61,7 +61,7 @@ items:
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Runtimes in Office Add-ins
       href: testing/runtimes.md
-    - name: Support Internet Explorer 11
+    - name: Support older Microsoft browsers and Office versions
       href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Develop
@@ -291,7 +291,7 @@ items:
         href: testing/attach-debugger-from-task-pane.md
       - name: Debug using developer tools for Internet Explorer
         href: testing/debug-add-ins-using-f12-tools-ie.md
-      - name: Debug using developer tools for Edge legacy
+      - name: Debug using developer tools for Edge Legacy
         href: testing/debug-add-ins-using-devtools-edge-legacy.md
       - name: Debug using developer tools for Edge Chromium WebView2
         href: testing/debug-add-ins-using-devtools-edge-chromium.md
@@ -676,6 +676,9 @@ items:
       - name: Smart Alerts and OnMessageSend event walkthrough
         href: outlook/smart-alerts-onmessagesend-walkthrough.md
         displayName: event-based activation
+      - name: Update your signature when switching between accounts
+        href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
+        displayName: event-based activation
       - name: Debug event-based activation
         href: outlook/debug-autolaunch.md
       - name: AppSource options
@@ -708,8 +711,6 @@ items:
       href: outlook/get-and-set-recurrence.md
     - name: Get or set add-in metadata
       href: outlook/metadata-for-an-outlook-add-in.md
-    - name: Manage add-in state and settings
-      href: outlook/manage-state-and-settings-outlook.md
     - name: Read scenario
       items:
       - name: Overview

@@ -12,28 +12,28 @@ metadata:
   ms.topic: hub-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 02/10/2022 #Required; mm/dd/yyyy format.
+  ms.date: 12/16/2022 #Required; mm/dd/yyyy format.
 
 # highlightedContent section
 # Maximum of 8 items
 highlightedContent:
   items:
-      # Card 1
+    # Card 1
     - itemType: overview
       title: Office Add-ins platform overview
       url: overview/office-add-ins.md
-      # Card 2
-    - itemType: quickstart 
+    # Card 2
+    - itemType: quickstart
       title: Set up an Excel add-in in 5 minutes
       url: quickstarts/excel-quickstart-jquery.md
-      # Card 3
-    - itemType: learn
-      title: 'Microsoft Learn: Introduction to Office client customization with add-ins'
-      url: /training/modules/intro-office-add-ins
+    # Card 3
+    - itemType: quickstart
+      title: Set up an Outlook add-in in 5 minutes
+      url: quickstarts/outlook-quickstart.md
     # Card 4
-    - itemType: learn
-      title: 'Microsoft Learn: Extend Office clients with Office Add-ins'
-      url: /training/paths/m365-office-add-in-associate
+    - itemType: quickstart
+      title: Set up a Word add-in in 5 minutes
+      url: quickstarts/word-quickstart.md
     # Card 5
     - itemType: sample
       title: Samples for Office Add-ins
@@ -43,13 +43,13 @@ highlightedContent:
       title: Office Add-ins Beginner's guide
       url: overview/learning-path-beginner.md
     # Card 7
+    - itemType: sample
+      title: Test and experiment with APIs using Script Lab
+      url: overview/explore-with-script-lab.md
+    # Card 8
     - itemType: reference
       title: Office JavaScript API reference documentation
       url: /javascript/api/overview
-    # Card 8
-    - itemType: whats-new
-      title: Microsoft 365 Developer Blog
-      url: https://developer.microsoft.com/office/blogs/technology/office-add-ins
 
 
 # conceptualContent section (optional)
@@ -64,15 +64,18 @@ conceptualContent:
         - url: overview/learning-path-beginner.md
           itemType: get-started
           text: Get started with Office Add-ins
-        - url: overview/explore-with-script-lab.md
-          itemType: sample
-          text: Test and experiment with Script Lab
-        - url: quickstarts/outlook-quickstart.md
-          itemType: quickstart
-          text: Set up an Outlook add-in in 5 minutes
         - url: quickstarts/powerpoint-quickstart.md
           itemType: quickstart
           text: Set up a PowerPoint add-in in 5 minutes
+        - url: /training/modules/intro-office-add-ins
+          itemType: learn
+          text: Introduction to Office client customization with add-ins
+        - url: /training/paths/m365-office-add-in-associate
+          itemType: learn
+          text: Extend Office clients with Office Add-ins
+        - url: https://devblogs.microsoft.com/microsoft365dev/category/office-add-ins/
+          itemType: whats-new
+          text: Microsoft 365 Developer Blog
     # Card 2
     - title: Build
       links:
@@ -81,10 +84,10 @@ conceptualContent:
           text: Develop a full Excel add-in
         - url: tutorials/outlook-tutorial.md
           itemType: tutorial
-          text: Discover the Outlook add-in tutorial
-        - url: overview/patterns-and-practices-overview.md
-          itemType: sample
-          text: Use common Patterns and Practices
+          text: Develop a full Outlook add-in
+        - url: tutorials/word-tutorial.md
+          itemType: tutorial
+          text: Develop a full Word add-in
         - url: /javascript/api/overview
           itemType: reference
           text: Read API reference documentation
@@ -92,6 +95,9 @@ conceptualContent:
     # Card 3
     - title: Test and debug
       links:
+        - url: testing/clear-cache.md
+          itemType: how-to-guide
+          text: Clear the Office cache
         - url: testing/test-debug-office-add-ins.md
           itemType: overview
           text: Check out the debugging overview

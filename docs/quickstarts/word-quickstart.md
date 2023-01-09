@@ -300,6 +300,10 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 ---
 
+## Code samples
+
+- [Word "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
+
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

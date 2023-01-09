@@ -2,7 +2,6 @@
 
 You need to create an app registration in Azure that represents your web server. This enables authentication support so that proper access tokens can be issued to the client code in JavaScript. This registration supports both SSO in the client, and fallback authentication using the Microsoft Authentication Library (MSAL).
 
-
 1. Sign in to the [Azure portal](https://portal.azure.com/) with the ***admin*** credentials to your Microsoft 365 tenancy. For example, **MyName@contoso.onmicrosoft.com**.
 1. Select **App registrations**. If you don't see the icon, search for "app registration" in the search bar.
 
@@ -20,7 +19,7 @@ You need to create an app registration in Azure that represents your web server.
 
     * Set **Name** to `<add-in-name>`.
     * Set **Supported account types** to **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
-    * If your sample project is using Node.js, set **Redirect URI** to use the platform `<redirect-platform>` and the URI to `<redirect-uri>`. For the ASP.NET server sample, leave this blank.
+    * Set **Redirect URI** to use the platform **Single-page application (SPA)** and the URI to `https://localhost:44355/dialog.html`.
 
     :::image type="content" source="../images/azure-portal-register-an-application.png" alt-text="Register an application pane with name and supported account completed.":::
 
@@ -90,18 +89,16 @@ Sometimes called an _application password_, a client secret is a string value yo
 
     The **Add a scope** pane opens.
 
-1. In the **Add a scope** pane, specify the scope's attributes .
-
-    :::image type="content" source="../images/azure-portal-add-a-scope-details.png" alt-text="Add a scope pane with example values.":::
+1. In the **Add a scope** pane, specify the scope's attributes. The following table shows example values for and Outlook add-in requiring the `profile`, `openid`, `Files.ReadWrite`, and `Mail.Read` permissions. Modify the text to match the permissions your add-in needs.
 
     | Field | Description | Values |
-    |-------|-------------|---------|
+    |--|--|--|
     | **Scope name** | The name of your scope. A common scope naming convention is `resource.operation.constraint`. | For SSO this must be set to `access_as_user`. |
     | **Who can consent** |  Determines if admin consent is required or if users can consent without an admin approval. | For learning SSO and samples, we recommend you set this to **Admins and users**. <br><br>Select **Admins only** for higher-privileged permissions.|
-    | **Admin consent display name** | A short description of the scope's purpose visible to admins only. | `Read-only access to user files and profiles.` |
-    | **Admin consent description** | A more detailed description of the permission granted by the scope that only admins see. | `Allow Office to have read-only access to all user files and profiles. Office can call the app's web APIs as the current user.` |
-    | **User consent display name** | A short description of the scope's purpose. Shown to users only if you set **Who can consent** to **Admins and users**. | `Read-only access to your files and profile.` |
-    | **User consent description** | A more detailed description of the permission granted by the scope. Shown to users only if you set **Who can consent** to **Admins and users**. | `Allow Office to have read-only access to your files and user profile.` |
+    | **Admin consent display name** | A short description of the scope's purpose visible to admins only. | `Read/write permissions to user files. Read permissions to user mail and profiles.` |
+    | **Admin consent description** | A more detailed description of the permission granted by the scope that only admins see. | `Allow Office to have read/write permissions to all user files and read permissions to all user mail. Office can call the app's web APIs as the current user.` |
+    | **User consent display name** | A short description of the scope's purpose. Shown to users only if you set **Who can consent** to **Admins and users**. | `Read/write permissions to your files. Read permissions to your mail and profile.` |
+    | **User consent description** | A more detailed description of the permission granted by the scope. Shown to users only if you set **Who can consent** to **Admins and users**. | `Allow Office to have read/write permissions to your files, and read permissions to your mail and profile.` |
 
 1. Set the **State** to **Enabled**, and then select **Add scope**.
 
@@ -157,11 +154,7 @@ Sometimes called an _application password_, a client secret is a string value yo
 
     :::image type="content" source="../images/azure-portal-request-api-permissions-delegated.png" alt-text="The Request API permissions pane with delegated permissions button.":::
 
-1. In the **Select permissions** search box, search for the permissions your add-in needs. The following are typical values used in the samples.
-
-    * Files.Read
-    * openid
-    * profile
+1. In the **Select permissions** search box, search for the permissions your add-in needs. For example, for an Outlook add-in, you might use `profile`, `openid`, `Files.ReadWrite`, and `Mail.Read`.
 
     > [!NOTE]
     > The `User.Read` permission may already be listed by default. It's a good practice to only request permissions that are needed, so we recommend that you uncheck the box for this permission if your add-in does not actually need it.

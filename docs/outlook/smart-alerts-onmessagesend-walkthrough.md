@@ -2,7 +2,7 @@
 title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in
 description: Learn how to handle the on-send events in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 11/09/2022
+ms.date: 12/09/2022
 ms.localizationpriority: medium
 ---
 
@@ -317,13 +317,18 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
       }
     }
 
-    // IMPORTANT: Remember to map the event handler name specified in the manifest's LaunchEvent element to its JavaScript counterpart.
+    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest's LaunchEvent element to its JavaScript counterpart.
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
-    Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
+    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
+      Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
+    }
     ```
 
 > [!IMPORTANT]
-> To ensure that your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest's **\<LaunchEvent>** element to its JavaScript counterpart. If this call isn't included in your JavaScript file and the **SendMode** property of your manifest's **\<LaunchEvent>** property is set to `SoftBlock` or isn't specified, your users will be blocked from sending messages or appointments.
+> When developing your Smart Alerts add-in to run in Outlook on Windows, keep the following in mind.
+>
+> - Imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
+> - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs in Outlook on Windows, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest's **\<LaunchEvent\>** element to its JavaScript counterpart. If this call isn't included in your JavaScript file and the **SendMode** property of your manifest's **\<LaunchEvent\>** property is set to `SoftBlock` or isn't specified, your users will be blocked from sending messages or meetings.
 
 ## Update the commands HTML file
 
@@ -371,7 +376,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     > [!NOTE]
     > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
 
-1. In Outlook on Windows, create a new message and set the subject. In the body, add text like "Hey, check out this picture of my dog!".
+1. In your preferred Outlook client, create a new message and set the subject. In the body, add some text. For example, "Hey, here's a picture of my dog!".
 1. Send the message. A dialog should pop up with a recommendation for you to add an attachment.
 
     ![Dialog recommending that the user include an attachment.](../images/outlook-win-smart-alert.png)
@@ -380,11 +385,11 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 ## Debug your add-in
 
-For guidance on how to debug your Smart Alerts add-in, see the "Debug" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#debug).
+For guidance on how to troubleshoot your Smart Alerts add-in, see the "Troubleshooting guide" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#troubleshooting-guide).
 
 ## Deploy to users
 
-Similar to other event-based add-ins, add-ins that use the Smart Alerts feature must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the **Deploy to users** section in [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
+Similar to other event-based add-ins, add-ins that use the Smart Alerts feature must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section in [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
 
 > [!IMPORTANT]
 > Add-ins that use the Smart Alerts feature can only be published to AppSource if the manifest's [SendMode property](/javascript/api/manifest/launchevent#available-sendmode-options) is set to the `SoftBlock` or `PromptUser` option. If an add-in's **SendMode** property is set to `Block`, it can only be deployed by an organization's admin as it will fail AppSource validation. To learn more about publishing your event-based add-in to AppSource, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
@@ -464,6 +469,7 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 
 - [Outlook add-in manifests](manifests.md)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Event-based activation troubleshooting guide](autolaunch.md#troubleshooting-guide)
 - [How to debug event-based add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
 - [Office Add-ins code sample: Use Outlook Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
