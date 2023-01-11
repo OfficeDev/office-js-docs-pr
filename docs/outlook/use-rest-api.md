@@ -1,7 +1,7 @@
 ---
 title: Use the Outlook REST APIs from an Outlook add-in
 description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
-ms.date: 11/18/2022
+ms.date: 01/11/2023
 ms.localizationpriority: medium
 ---
 
@@ -12,7 +12,7 @@ The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/previ
 > [!IMPORTANT]
 > **The Outlook REST APIs are deprecated**
 >
-> It was previously announced that the Outlook REST endpoints will be fully decommissioned on November 30, 2022 (see the [November 2020 announcement](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). However, the decommission date has been postponed and the new date will be announced soon on the [Microsoft 365 Developer Blog](https://devblogs.microsoft.com/microsoft365dev/). Although the decommission date has been postponed, we highly encourage you to migrate your add-ins to use [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). For guidance, see [Compare Microsoft Graph and Outlook REST API endpoints](/outlook/rest/compare-graph).
+> It was previously announced that the Outlook REST endpoints will be fully decommissioned on November 30, 2022 (see the [November 2020 announcement](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). However, the decommission date has been postponed. The new date in 2023 will be announced six months before the decommission is enforced through the [Microsoft 365 Developer Blog](https://devblogs.microsoft.com/microsoft365dev/). For more information on this recent update, see the [November 2022 announcement](https://devblogs.microsoft.com/microsoft365dev/outlook-rest-api-v2-0-beta-deprecation-update/). Although the decommission date has been postponed, we highly encourage you to migrate your add-ins to use [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). For guidance, see [Compare Microsoft Graph and Outlook REST API endpoints](/outlook/rest/compare-graph).
 >
 > To assist you with the migration, active add-ins are able to keep using the REST service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). Add-in traffic that uses the service will be automatically identified for exemption based on the add-in's manifest ID. This exemption applies to privately released and AppSource-hosted add-ins. It also includes new add-ins developed after the decommission date.
 
