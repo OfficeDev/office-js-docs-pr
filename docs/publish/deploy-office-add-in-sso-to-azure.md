@@ -82,11 +82,10 @@ App Service supports various versions of Node.js on both Linux and Windows. Sele
 1. Open the **webpack.config.js** file.
 1. Set the `urlDev` and `urlProd` constants to the following values (without the `https` protocol portion). This will cause webpack to replace `localhost:3000` with your web site domain name in the `/dest/manifest.xml` file.
 
-```javascript
-const urlDev = "localhost:3000";
-const urlProd = "<your-web-site-domain-name>";
-
-```
+    ```javascript
+    const urlDev = "localhost:3000";
+    const urlProd = "<your-web-site-domain-name>";   
+    ```
 
 1. Find the first `CopyWebpackPlugin` section and update it to also copy the package.json file to the dist folder as shown in the following example.
 
@@ -245,7 +244,7 @@ We recommend you create multiple app registrations for localhost, staging, and d
 1. In the Azure portal, open your app registration. Note that the app registration may be in a different account than your App Service app. Be sure to sign in to the correct account.
 1. In the left sidebar, select **Authentication**.
 
-:::image type="content" source="../images/azure-portal-authentication-page.png" alt-text="The authentication page in the Azure app registration.":::
+    :::image type="content" source="../images/azure-portal-authentication-page.png" alt-text="The authentication page in the Azure app registration.":::
 
 1. On the **Authentication** pane, find the `https://localhost:3000/fallbackauthdialog.html` and change it to use the App Service app URL you saved previously. For example, `https://contoso.sso.azurewebsites.net/fallbackauthdialog.html`.
 1. Save the change.
