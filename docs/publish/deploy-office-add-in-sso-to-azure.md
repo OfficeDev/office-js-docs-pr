@@ -54,7 +54,7 @@ App Service supports various versions of Node.js on both Linux and Windows. Sele
 1. For **Select an Application Insights resource for your app**, select **Skip for now** and wait the resources to be provisioned in Azure. When prompted to deploy, don't deploy the add-in yet. You'll do that in a later step.
 1. In the **App Service** explorer in Visual Studio code, expand the node for the new app, right-click **Application Settings**, and select **Add New Setting**:
 
-:::image type="content" source="../images/azure-app-service-add-setting.png" alt-text="Add app setting command.":::
+    :::image type="content" source="../images/azure-app-service-add-setting.png" alt-text="Add app setting command.":::
 
 1. Enter `SCM_DO_BUILD_DURING_DEPLOYMENT` for the setting key.
 1. Enter `true` for the setting value.
