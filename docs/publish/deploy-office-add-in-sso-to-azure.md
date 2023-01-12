@@ -268,6 +268,9 @@ If you make additional code changes, you'll need to run `npm run build` again an
 
 Sideload the **manifest-deployment.xml** and test the functionality of the add-in in Office. For more information, see [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
+> [!NOTE]
+> If your app registration is on a different tenant than where you sideload the add-in, the add-in will not have admin consent for Microsoft Graph. To test in this scenario you need an admin to centrally deploy the add-in on the Microsoft 365 tenant. For more information, see [Deploy add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-deployment-of-add-ins)
+
 If you encounter any deployment issues, see the [Azure App Service troubleshooting documentation](/troubleshoot/azure/app-service/welcome-app-service).
 
 ## Next steps
