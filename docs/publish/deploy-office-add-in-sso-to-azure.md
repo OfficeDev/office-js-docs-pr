@@ -1,7 +1,7 @@
 ---
 title: Deploy an Office Add-in that uses single sign-on (SSO) to Microsoft Azure App Service | Microsoft Docs
 description: Learn how to deploy an Office Add-in that uses single sign-on (SSO) to Microsoft Azure App Service from Visual Studio Code.
-ms.date: 12/20/2020
+ms.date: 01/12/2020
 ms.localizationpriority: medium
 ---
 
@@ -66,59 +66,72 @@ App Service supports various versions of Node.js on both Linux and Windows. Sele
 1. Right-click your App Service app and select **Open in Portal**.
 1. When the portal opens in the browser, copy the domain name of the **URL** (not the `https://` part) from the **Overview** pane and save it. You'll need it in later steps.
 
-## Update manifest
-
-It's useful to maintain multiple manifests for testing across localhost, staging, and deployment. We recommend you copy the existing file and create a new manifest named **manifest-deployment.xml**.
-
-1. Open the **manifest-deployment.xml** file.
-1. Find all instances of the text `localhost:3000` and replace it with the domain of your App Service app URL you saved previously.
-1. In the `<AppDomains>` section, add an `<AppDomain>` entry for your App Service app from the URL you saved previously. For example `<AppDomain>https://contoso-sso.azurewebsites.net</AppDomain>`.
-1. Save the file.
-
 ## Update package.json
 
-1. In the Visual Studio Code terminal, run the following command to modify the package to start the Node JS server when deployed.
+1. Open the package.json file. Then replace the `start` command in the `"scripts"` section with the following entry.
 
-    ```command
-    npm pkg set start="node middletier.js"
+    ```json
+    "start": "node middletier.js",
     ```
 
-1. Run the following command to remove the `prestart` script which is not needed.
-
-    ```command
-    npm pkg delete scripts.prestart
-    ```
+1. Find the `"prestart"` entry in the '"scripts"' section and delete it. This section is not needed for this deployment.
+1. Save the file.
 
 ## Update webpack.config.js
 
 1. Open the **webpack.config.js** file.
+1. Set the `urlDev` and `urlProd` constants to the following values (without the `https` protocol portion). This will cause webpack to replace `localhost:3000` with your web site domain name in the `/dest/manifest.xml` file.
+
+```javascript
+const urlDev = "localhost:3000";
+const urlProd = "<your-web-site-domain-name>";
+
+```
+
 1. Find the first `CopyWebpackPlugin` section and update it to also copy the package.json file to the dist folder as shown in the following example.
 
-   ```javascript
+    ```javascript
     new CopyWebpackPlugin({
-          patterns: [
-            {
-              from: "assets/*",
-              to: "assets/[name][ext][query]",
-            },
-            {
-              from: "package.json",
-              to: "package.json",
-            },
-            {
-              from: "manifest*.xml",
-              to: "[name]" + "[ext]",
-              transform(content) {
+        patterns: [
+        {
+            from: "assets/*",
+            to: "assets/[name][ext][query]",
+        },
+        {
+            from: "package.json",
+            to: "package.json",
+        },
+        {
+            from: "manifest*.xml",
+            to: "[name]" + "[ext]",
+            transform(content) {
                 if (dev) {
-                  return content;
+                    return content;
                 } else {
-                  return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+                    return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
                 }
-              },
             },
-          ],
-        }),
-   ```
+        },
+      ],
+    }),
+    ```
+
+1. Save the file.
+
+## Update manifest
+
+1. Open the **manifest-deployment.xml** file.
+1. Replace `<SupportUrl DefaultValue="https://www.contoso.com/help"/>` with the URL of your web site help page.
+1. Replace `<AppDomain>https://www.contoso.com</AppDomain>` with the URL of your web site.
+1. In the `<Scopes>` section near the bottom of the file, add the `openid` scope as shown in the following XML.
+
+    ```xml
+    <Scopes>
+        <Scope>User.Read</Scope>
+        <Scope>profile</Scope>
+        <Scope>openid</Scope>
+    </Scopes>
+    ```
 
 1. Save the file.
 
@@ -192,23 +205,25 @@ The app.js (or app.ts) requires several minor changes to run correctly in a depl
     }
     
     const indexRouter = express.Router();
-    indexRouter.get("/", function (req, res) {      
+    indexRouter.get("/", function (req, res) {
       res.sendFile("/taskpane.html", { root: __dirname });
     });
     
-    app.use("/", indexRouter);
+    // Route APIs
+    indexRouter.get("/getuserdata", validateJwt, getUserData);
     
-    app.get("/getuserdata", validateJwt, getUserData);
+    app.use("/", indexRouter);
     
     // Catch 404 and forward to error handler
     app.use(function (req, res, next) {
+      console.log("error 404");
       next(createError(404));
     });
     
     // error handler
     app.use(function (err, req, temp, res) {
       // set locals, only providing error in development
-    
+      console.log("error 500");
       res.locals.message = err.message;
       res.locals.error = req.app.get("env") === "development" ? err : {};
     
@@ -218,7 +233,7 @@ The app.js (or app.ts) requires several minor changes to run correctly in a depl
       });
     });
     
-    app.listen(process.env.PORT, () => console.log("Server listening on port: " + process.env.PORT));
+    app.listen(process.env.PORT, () => console.log("Server listening on port: " + process.env.PORT));    
     ```
 
 1. Save the file.
