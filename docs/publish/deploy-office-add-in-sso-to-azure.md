@@ -21,7 +21,7 @@ The steps in this article also require:
 
 ## Create the App Service app
 
-The following steps set up a basic deployment of the Office Add-in. There are multiple ways to configure deployment that are not covered in this documentation. For additional options on how you may want to configure your deployment, see [Deployment Best Practices](/azure/app-service/deploy-best-practices)
+The following steps set up a basic deployment of the Office Add-in. There are multiple ways to configure deployment that aren't covered in this documentation. For additional options on how to configure your deployment, see [Deployment Best Practices](/azure/app-service/deploy-best-practices).
 
 ### Sign in to Azure
 
