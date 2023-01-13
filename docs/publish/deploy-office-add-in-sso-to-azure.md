@@ -119,7 +119,7 @@ App Service supports various versions of Node.js on both Linux and Windows. Sele
 
 ## Update manifest
 
-1. Open the **manifest-deployment.xml** file.
+1. Open the **manifest.xml** file.
 1. Replace `<SupportUrl DefaultValue="https://www.contoso.com/help"/>` with the URL of your web site help page.
 1. Replace `<AppDomain>https://www.contoso.com</AppDomain>` with the URL of your web site.
 1. In the `<Scopes>` section near the bottom of the file, add the `openid` scope as shown in the following XML.
@@ -266,7 +266,7 @@ If you make additional code changes, you'll need to run `npm run build` again an
 
 ## Test the deployment
 
-Sideload the **manifest-deployment.xml** and test the functionality of the add-in in Office. For more information, see [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
+Sideload the **./dist/manifest.xml** file and test the functionality of the add-in in Office. For more information, see [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
 > [!NOTE]
 > If your app registration is on a different tenant than where you sideload the add-in, the add-in will not have admin consent for Microsoft Graph. To test in this scenario you need an admin to centrally deploy the add-in on the Microsoft 365 tenant. For more information, see [Deploy add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-deployment-of-add-ins)
