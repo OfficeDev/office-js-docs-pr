@@ -1,13 +1,13 @@
 ---
-title: Deploy an Office Add-in that uses single sign-on (SSO) to Microsoft Azure App Service | Microsoft Docs
+title: Deploy a single sign-on (SSO) Office Add-in to Microsoft Azure App Service | Microsoft Docs
 description: Learn how to deploy an Office Add-in that uses single sign-on (SSO) to Microsoft Azure App Service from Visual Studio Code.
 ms.date: 01/12/2020
 ms.localizationpriority: medium
 ---
 
-# Deploy an Office Add-in that uses single sign-on (SSO) to Microsoft Azure App Service
+# Deploy a single sign-on (SSO) Office Add-in to Microsoft Azure App Service
 
-Office Add-ins that use SSO require a web service that supports running the REST APIs and server-side code in the project. You can't deploy to a static website. Follow the steps in this article to deploy your Office Add-in to Azure App Service for staging or deployment.
+Office Add-ins that use SSO require server-side code. To support server-side code in deployment you need to use Azure App Service. Follow the steps in this article to deploy your Office Add-in to Azure App Service for staging or deployment.
 
 ## Prerequisites
 
