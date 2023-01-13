@@ -355,8 +355,12 @@ items:
     items:
     - name: Publish Office Add-ins
       href: publish/publish.md
-    - name: Publish your add-in (VS Code)
-      href: publish/publish-add-in-vs-code.md
+    - name: Visual Studio Code
+      items:
+      - name: Deploy an add-in that uses static content
+        href: publish/publish-add-in-vs-code.md
+      - name: Deploy an add-in that uses SSO
+        href: publish/deploy-office-add-in-sso-to-azure.md
     - name: Visual Studio
       items:
       - name: Publish your add-in (Visual Studio)
