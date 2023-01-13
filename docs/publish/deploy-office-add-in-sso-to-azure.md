@@ -271,7 +271,7 @@ Sideload the **./dist/manifest.xml** file and test the functionality of the add-
 > [!NOTE]
 > If your app registration is on a different tenant than where you sideload the add-in, the add-in will not have admin consent for Microsoft Graph. To test in this scenario you need an admin to centrally deploy the add-in on the Microsoft 365 tenant. For more information, see [Deploy add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-deployment-of-add-ins)
 
-If you encounter any deployment issues, see the [Azure App Service troubleshooting documentation](/troubleshoot/azure/app-service/welcome-app-service).
+If you encounter any deployment issues, see the [Azure App Service troubleshooting documentation](/troubleshoot/azure/app-service/welcome-app-service). If you use central deployment, or plan to deploy to App Source, we recommend you [validate the Office Add-in's manifest](../testing/troubleshoot-manifest.md#office-store-validation) using the '-p' option for production.
 
 ## Next steps
 
