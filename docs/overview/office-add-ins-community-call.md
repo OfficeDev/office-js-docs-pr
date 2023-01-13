@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 01/09/2022
+ms.date: 01/12/2022
 ms.localizationpriority: medium
 ---
 
@@ -9,16 +9,15 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 8:00 AM Pacific Time. You can download the calendar invite at https://aka.ms/officeaddinscommunitycall.
 
-## Agenda for January 11, 2022 call
+## Agenda for February 8, 2022 call
 
-The agenda for the January call is the following:
-
-- Deploy an Office Add-in to Azure App Service.
+The agenda for the February call will be posted week of the call.
 
 ## Previous calls
 
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
+- January 11, 2023 (coming soon)
 - [December 14, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-12-14/)
 - [November 9, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-11-09/)
 - [October 12, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-10-12/)
