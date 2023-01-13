@@ -17,6 +17,7 @@ The agenda for the February call will be posted week of the call.
 
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
+- January 11, 2023 (coming soon)
 - [December 14, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-12-14/)
 - [November 9, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-11-09/)
 - [October 12, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-10-12/)
