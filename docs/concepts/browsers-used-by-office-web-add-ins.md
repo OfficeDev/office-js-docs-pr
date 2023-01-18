@@ -43,7 +43,7 @@ For these platforms, the platform alone determines the browser that is used.
 |Android|any|Chrome|
 
 > [!IMPORTANT]
-> [Conditional Access](/azure/active-directory/conditional-access/overview) is not supported for Office Add-ins on iOS. Those add-ins use embedded Safari, not Edge.
+> [Conditional Access](/azure/active-directory/conditional-access/overview) is not supported for Office Add-ins on iOS. Those add-ins use the Safari-based WKWebView, not an Edge-based browser control.
 
 ## Perpetual versions of Office on Windows
 
