@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: Specifies how the operating system and Office version determine what browser is used by Office Add-ins.
-ms.date: 12/12/2022
+ms.date: 01/18/2023
 ms.localizationpriority: medium
 ---
 
@@ -41,6 +41,9 @@ For these platforms, the platform alone determines the browser that is used.
 |Mac|any|Safari with WKWebView|
 |iOS|any|Safari with WKWebView|
 |Android|any|Chrome|
+
+> [!IMPORTANT]
+> [Conditional Access](/azure/active-directory/conditional-access/overview) is not supported for Office Add-ins on iOS. Those add-ins use the Safari-based WKWebView, not an Edge-based browser control.
 
 ## Perpetual versions of Office on Windows
 
