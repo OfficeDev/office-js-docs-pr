@@ -82,7 +82,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     ```js
     // Assign event handlers and other initialization logic.
-    document.getElementById("create-table").onclick = (() => tryCatch(createTable));
+    document.getElementById("create-table").onclick = () => tryCatch(createTable);
     ```
 
 1. Add the following functions to the end of the file. Note:
@@ -91,7 +91,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - The `context.sync` method sends all queued commands to Excel for execution.
 
-    - The `tryCatch` function will be used by all the functions interacting with the workbook from the taskpane. Catching Office JavaScript errors in this fashion is the recommended best practice.
+    - The `tryCatch` function will be used by all the functions interacting with the workbook from the taskpane. Catching Office JavaScript errors in this fashion is a convenient way to generically handle any uncaught errors.
 
     [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
@@ -224,7 +224,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `create-table` button, and add the following code after that line.
 
     ```js
-    document.getElementById("filter-table").onclick = (() => tryCatch(filterTable));
+    document.getElementById("filter-table").onclick = () => tryCatch(filterTable);
     ```
 
 1. Add the following function to the end of the file.
@@ -269,7 +269,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `filter-table` button, and add the following code after that line.
 
     ```js
-    document.getElementById("sort-table").onclick = (() => tryCatch(sortTable));
+    document.getElementById("sort-table").onclick = () => tryCatch(sortTable);
     ```
 
 1. Add the following function to the end of the file.
@@ -339,7 +339,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `sort-table` button, and add the following code after that line.
 
     ```js
-    document.getElementById("create-chart").onclick = (() => tryCatch(createChart));
+    document.getElementById("create-chart").onclick = () => tryCatch(createChart);
     ```
 
 1. Add the following function to the end of the file.
@@ -428,7 +428,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `create-chart` button, and add the following code after that line.
 
     ```js
-    document.getElementById("freeze-header").onclick = (() => tryCatch(freezeHeader));
+    document.getElementById("freeze-header").onclick = () => tryCatch(freezeHeader);
     ```
 
 1. Add the following function to the end of the file.
@@ -597,7 +597,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     }
     ```
 
-1. Add the following line immediately below the function to register it.
+1. Add the following line immediately after the function to register it.
 
     ```js
     Office.actions.associate("toggleProtection", toggleProtection);
@@ -768,7 +768,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
 1. Replace `TODO1` with the following code. You'll create the `sendStringToParentPage` function in the next step.
 
     ```js
-    document.getElementById("ok-button").onclick = (() => tryCatch(sendStringToParentPage));
+    document.getElementById("ok-button").onclick = () => tryCatch(sendStringToParentPage);
     ```
 
 1. Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter must be a string, which includes anything that can be serialized as a string, such as XML or JSON, or any type that can be cast to a string. This also adds the same `tryCatch` method used in **taskpane.js** for error handling.
