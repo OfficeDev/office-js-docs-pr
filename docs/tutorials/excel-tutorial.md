@@ -597,7 +597,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     }
     ```
 
-1. Add the following line immediately below the function to register it.
+1. Add the following line immediately after the function to register it.
 
     ```js
     Office.actions.associate("toggleProtection", toggleProtection);
