@@ -45,7 +45,7 @@ In this tutorial, you'll create an Excel task pane add-in that:
 
 ![Screenshot of the Yeoman Office Add-in generator command line interface.](../images/yo-office-excel.png)
 
-After you complete the wizard, the generator creates the project and installs supporting Node components.
+After you complete the wizard, the generator creates the project and installs supporting Node components. You may need to manually run `npm install` in the root folder of your project if something fails during the initial setup.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -673,21 +673,9 @@ These steps must be completed whenever your code needs to *read* information fro
 
 ### Test the add-in
 
-1. Close all Office applications, including Excel.
+1. Close all Office applications, including Excel (or close the browser tab if you're using Excel on the web).
 
-1. Delete the Office cache by deleting the contents (all the files and subfolders) of the cache folder. This is necessary to completely clear the old version of the add-in from the client application.
-
-    - For Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
-
-    - For Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
-
-      > [!NOTE]
-      > If that folder doesn't exist, check for the following folders and if found, delete the contents of the folder.
-      >
-      >  - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office application (e.g., `Excel`)
-      >  - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office application (e.g., `Excel`)
-      >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
-      >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
+1. Clear the Office cache. This is necessary to completely clear the old version of the add-in from the client application. Instructions for this process are in the article [Clear the Office cache](../testing/clear-cache.md).
 
 1. If the local web server is already running, stop it by entering the following command in the command prompt. This should close the node command window.
 
@@ -697,25 +685,28 @@ These steps must be completed whenever your code needs to *read* information fro
 
 1. Because your manifest file has been updated, you must sideload your add-in again, using the updated manifest file. Start the local web server and sideload your add-in:
 
+    > [!TIP]
+    > If you're testing your add-in on Mac, run the following command in the root directory of your project before proceeding. When you run this command, the local web server starts.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
     - To test your add-in in Excel, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Excel with your add-in loaded.
 
         ```command&nbsp;line
         npm start
         ```
 
-    - To test your add-in in Excel on the web, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+    - To test your add-in in Excel on the web, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        To use your add-in, open a document in Excel on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-a-yeoman-created-add-in-to-office-on-the-web).
+        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in the following screenshot.
 
     ![Screenshot of the Excel ribbon with the Toggle Worksheet Protection button highlighted and enabled. Most other buttons appear gray and disabled.](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
-1. Choose a cell as you would if you wanted to change its content. Excel displays an error message indicating that the worksheet is protected.
+1. Select a cell and try to edit its content. Excel displays an error message indicating that the worksheet is protected.
 
 1. Choose the **Toggle Worksheet Protection** button again, and the controls are reenabled, and you can change cell values again.
 
