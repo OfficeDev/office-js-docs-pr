@@ -683,14 +683,7 @@ These steps must be completed whenever your code needs to *read* information fro
     npm stop
     ```
 
-1. Because your manifest file has been updated, you must sideload your add-in again, using the updated manifest file. Start the local web server and sideload your add-in:
-
-    > [!TIP]
-    > If you're testing your add-in on Mac, run the following command in the root directory of your project before proceeding. When you run this command, the local web server starts.
-    >
-    > ```command&nbsp;line
-    > npm run dev-server
-    > ```
+1. Because your manifest file has been updated, you must sideload your add-in again, using the updated manifest file. Start the local web server and sideload your add-in.
 
     - To test your add-in in Excel, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Excel with your add-in loaded.
 
