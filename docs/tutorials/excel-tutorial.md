@@ -892,7 +892,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
     ```js
     function openDialog() {
-        // TODO1: Call the Office Common API that opens a dialog
+        // TODO1: Call the Office Common API that opens a dialog.
     }
     ```
 
@@ -953,7 +953,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 1. In the dialog, enter a name and choose the **OK** button. The name appears on the task pane and the dialog closes.
 
-1. Optionally, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
+1. Optionally, in the **./src/taskpane/taskpane.js** file, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
 
     ![Screenshot of Excel, with an Open Dialog button visible in the add-in task pane and a dialog box displayed over the worksheet.](../images/excel-tutorial-dialog-open-2.png)
 
