@@ -91,7 +91,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - The `context.sync` method sends all queued commands to Excel for execution.
 
-    - The `tryCatch` function will be used by all the functions interacting with the workbook from the taskpane. Catching Office JavaScript errors in this fashion is a convenient way to generically handle any uncaught errors.
+    - The `tryCatch` function will be used by all the functions interacting with the workbook from the task pane. Catching Office JavaScript errors in this fashion is a convenient way to generically handle any uncaught errors.
 
     [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
@@ -755,7 +755,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
         // TODO1: Assign handler to the OK button.
     });
 
-    // TODO2: Create the OK button handler
+    // TODO2: Create the OK button handler.
     ```
 
 1. Replace `TODO1` with the following code. You'll create the `sendStringToParentPage` function in the next step.
