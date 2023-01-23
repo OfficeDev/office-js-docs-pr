@@ -162,7 +162,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
         > [!NOTE]
         > Excel.js collection objects, such as `TableCollection`, `WorksheetCollection`, and `TableColumnCollection` have an `items` property that is an array of the child object types, such as `Table` or `Worksheet` or `TableColumn`; but a `*Collection` object is not itself an array.
 
-    - The code then formats the range of the **Amount** column as Euros to the second decimal.
+    - The code then formats the range of the **Amount** column as Euros to the second decimal. Learn more about the Excel number format syntax in the article [Number format codes](https://support.microsoft.com/office/5026bbd6-04bc-48cd-bf33-80f18b4eae68)/
 
     - Finally, it ensures that the width of the columns and height of the rows is big enough to fit the longest (or tallest) data item. Notice that the code must get `Range` objects to format. `TableColumn` and `TableRow` objects do not have format properties.
 
