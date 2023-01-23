@@ -2,7 +2,7 @@
 title: AppSource listing options for your event-based Outlook add-in
 description: Learn about the AppSource listing options available for your Outlook add-in that implements event-based activation.
 ms.topic: article
-ms.date: 10/13/2022
+ms.date: 01/20/2023
 ms.localizationpriority: medium
 ---
 
@@ -48,7 +48,7 @@ If your add-in doesn't use event-based activation for critical scenarios (that i
 
 You can update your existing add-in to include event-based activation then resubmit it for validation and decide if you want a restricted or unrestricted AppSource listing.
 
-After the updated add-in is approved, organization admins who have previously deployed the add-in will receive an update message in the **Integrated apps** section of the admin center. The message advises the admin about the event-based activation changes. After the admin accepts the changes, the update will be deployed to end-users.
+After the updated add-in is approved, organization admins who have previously deployed the add-in will receive an update message in the **Integrated apps** section of the admin center. The message advises the admin about the event-based activation changes. After the admin accepts the changes, the update will be deployed to end-users. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](#admin-consent-for-installing-event-based-add-ins).
 
 ![App update notifications on the "Integrated apps" screen.](../images/outlook-deploy-update-notification.png)
 
@@ -62,7 +62,7 @@ Whenever an event-based add-in is deployed from the **Integrated Apps** screen, 
 
 Similarly, when an existing add-in is updated to event-based functionality, the admin sees an "Update Pending" status on the add-in. The updated add-in is deployed only if the admin consents to the changes noted in the **App Permissions and Capabilities** section, including the set of events where the add-in can automatically activate.
 
-Each time you add any new event-based activation function to your add-in, admins will see the update flow in the admin portal and need to provide consent for additional events.
+Each time you add any new event-based activation function to your add-in, admins will see the update flow in the admin portal and need to provide consent for additional events. To learn more about the update and consent process, see [Manage apps in the Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps#manage-apps-in-the-integrated-apps-portal).
 
 ![The "Updates" flow when deploying an updated app.](../images/outlook-deploy-update-flow.png)
 
