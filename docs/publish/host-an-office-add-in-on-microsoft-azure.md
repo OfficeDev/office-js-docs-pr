@@ -1,7 +1,7 @@
 ---
 title: Host an Office Add-in on Microsoft Azure | Microsoft Docs
 description: Learn how to deploy an add-in web app to Azure and sideload the add-in for testing in an Office client application.
-ms.date: 07/07/2020
+ms.date: 01/23/2023
 ms.localizationpriority: medium
 ---
 
@@ -153,6 +153,8 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 5. On the ribbon of the **Home** tab, choose the **Show Taskpane** button. The add-in opens in a task pane to the right of the current document.
 
 6. Verify that the add-in works by selecting some text in the document and choosing the **Highlight!** button in the task pane.
+
+[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
 
 ## See also
 

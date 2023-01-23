@@ -1,7 +1,7 @@
 ---
 title: Deploy a single sign-on (SSO) Office Add-in to Microsoft Azure App Service | Microsoft Docs
 description: Learn how to deploy an Office Add-in that uses single sign-on (SSO) to Microsoft Azure App Service from Visual Studio Code.
-ms.date: 01/12/2020
+ms.date: 01/23/2023
 ms.localizationpriority: medium
 ---
 
@@ -272,6 +272,8 @@ Sideload the **./dist/manifest.xml** file and test the functionality of the add-
 > If your app registration is on a different tenant than where you sideload the add-in, the add-in will not have admin consent for Microsoft Graph. To test in this scenario you need an admin to centrally deploy the add-in on the Microsoft 365 tenant. For more information, see [Deploy add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-deployment-of-add-ins)
 
 If you encounter any deployment issues, see the [Azure App Service troubleshooting documentation](/troubleshoot/azure/app-service/welcome-app-service). If you use central deployment, or plan to deploy to App Source, we recommend you [validate the Office Add-in's manifest](../testing/troubleshoot-manifest.md#office-store-validation) using the '-p' option for production.
+
+[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
 
 ## Next steps
 
