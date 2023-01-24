@@ -118,6 +118,8 @@ Next, add a MIME type for JSON files.
 
 1. To deploy, in the VS Code **Explorer**, Right-click the **dist** folder, and select **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously. If you already deployed the **dist** folder, you'll be prompted if you want to overwrite the files in the Azure storage with the latest changes.
 
+## Deploy updates
+
 [!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
 
 ## See also

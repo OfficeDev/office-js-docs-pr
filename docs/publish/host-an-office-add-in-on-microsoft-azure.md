@@ -154,6 +154,8 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 6. Verify that the add-in works by selecting some text in the document and choosing the **Highlight!** button in the task pane.
 
+## Deploy updates
+
 [!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
 
 ## See also

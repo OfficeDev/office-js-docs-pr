@@ -42,6 +42,8 @@ You can now upload your XML manifest to the appropriate location to [publish you
 
  `%UserProfile%\Documents\Visual Studio 2019\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
 
+## Deploy updates
+
 [!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
 
 ## See also
