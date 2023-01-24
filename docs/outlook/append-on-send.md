@@ -324,7 +324,7 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 ## Update the commands HTML file
 
-1. From the **./src/commands** folder, open **commands.html**.
+1. From the **./src/commands** folder, open the **commands.html** file.
 
 1. Replace the existing **script** tag with the following reference to the beta library on the content delivery network (CDN). This retrieve the definitions of the prepend-on-send API that's in preview.
 
