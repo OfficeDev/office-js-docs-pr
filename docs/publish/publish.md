@@ -45,11 +45,9 @@ The deployment options that are available depend on the Office application that 
 
 The following sections provide additional information about the deployment methods that are most commonly used to distribute production Office Add-ins to users within an organization.
 
-> [!IMPORTANT]
-> If you deploy updates to an already deployed add-in, some changes in the manifest require admin consent. Users are unable to use the updated add-in until consent is granted. The following changes in the manifest will require the admin to consent to them.
-> - Changes to requested [permissions](/javascript/api/manifest/permissions).
-> - Adding new [scopes](/javascript/api/manifest/scopes).
-> - Adding new [Outlook events](../outlook/autolaunch.md).
+### Deploy updates
+
+[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
 
 For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.microsoft.com/office/82e665c4-6700-4b56-a3f3-ef5441996862).
 
