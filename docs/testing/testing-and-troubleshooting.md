@@ -84,11 +84,11 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 
 ## Add-in won't upgrade
 
-You may see the following error when deploying an updated manifest for your add-in. `ADD-IN WARNING: This add-in is currently upgrading. Please close the current message or appointment, and re-open in a few moments.` If your add-in is deployed by one or more admins to their organizations, some manifest changes require the admin to consent to the updates. Users will be blocked from the add-in and see this error message until consent is granted. The following manifest changes require the admin to consent again.
+You may see the following error when deploying an updated manifest for your add-in: `ADD-IN WARNING: This add-in is currently upgrading. Please close the current message or appointment, and re-open in a few moments.` If your add-in is deployed by one or more admins to their organizations, some manifest changes require the admin to consent to the updates. Users will be blocked from the add-in and see this error message until consent is granted. The following manifest changes require the admin to consent again.
 
 - Changes to requested [permissions](/javascript/api/manifest/permissions).
-- Adding new [scopes](/javascript/api/manifest/scopes).
-- Adding new [Outlook events](../outlook/autolaunch.md).
+- Additional [scopes](/javascript/api/manifest/scopes).
+- Additional [Outlook events](../outlook/autolaunch.md).
 
 ## See also
 
