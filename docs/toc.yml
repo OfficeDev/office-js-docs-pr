@@ -637,6 +637,9 @@ items:
   - name: Outlook add-in tutorial
     href: tutorials/outlook-tutorial.md
     displayName: Outlook
+  - name: Develop Outlook add-ins for One Outlook
+    href: outlook/one-outlook.md
+    displayName: Outlook
   - name: Outlook JavaScript API
     displayName: Outlook
     items:
