@@ -666,7 +666,7 @@ items:
       href: outlook/mobile-log-appointments.md
     - name: On-send add-ins
       href: outlook/outlook-on-send-addins.md
-    - name: Append on send
+    - name: Prepend or append content on send
       href: outlook/append-on-send.md
     - name: Event-based activation
       items:

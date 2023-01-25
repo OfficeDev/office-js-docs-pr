@@ -14,7 +14,7 @@ The prepend-on-send and append-on-send features enable your Outlook add-in to in
 - Insert disclaimers for legal purposes.
 - Add standardized headers for marketing and communication purposes.
 
-By the end of this walkthrough, you'll have an add-in that adds a header and disclaimer when a message is sent.
+In this walkthrough, you'll develop an add-in that prepends a header and appends a disclaimer when a message is sent.
 
 > [!NOTE]
 > Support for the append-on-send feature was introduced in requirement set 1.9. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
@@ -35,9 +35,7 @@ To configure the manifest, select the tab for the type of manifest you'll use.
 
 # [XML Manifest](#tab/xmlmanifest)
 
-To enable the prepend-on-send and append-on-send feature in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](/javascript/api/manifest/extendedpermissions).
-
-In this walkthrough, you'll be configuring function commands to prepend and append content to the message body.
+To enable the prepend-on-send and append-on-send feature in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](/javascript/api/manifest/extendedpermissions). Additionally, you'll configure function commands to prepend and append content to the message body.
 
 1. In your code editor, open the quick start project you created.
 
