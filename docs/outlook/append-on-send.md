@@ -19,7 +19,7 @@ In this walkthrough, you'll develop an add-in that prepends a header and appends
 > [!NOTE]
 > Support for the append-on-send feature was introduced in requirement set 1.9. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 >
->The prepend-on-send feature is only available in preview in Outlook on Windows. Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> The prepend-on-send feature is only available in preview in Outlook on Windows. Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 ## Prerequisites to preview prepend-on-send
 
@@ -35,7 +35,7 @@ To configure the manifest, select the tab for the type of manifest you'll use.
 
 # [XML Manifest](#tab/xmlmanifest)
 
-To enable the prepend-on-send and append-on-send feature in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](/javascript/api/manifest/extendedpermissions). Additionally, you'll configure function commands to prepend and append content to the message body.
+To enable the prepend-on-send and append-on-send features in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](/javascript/api/manifest/extendedpermissions). Additionally, you'll configure function commands to prepend and append content to the message body.
 
 1. In your code editor, open the quick start project you created.
 
@@ -153,7 +153,7 @@ To enable the prepend-on-send and append-on-send feature in your add-in, you mus
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
 
 > [!IMPORTANT]
-> Append-on-send and prepend-on-send aren't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
+> Prepend-on-send and append-on-send features aren't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
 
 1. Open the **manifest.json** file.
 
@@ -219,7 +219,7 @@ In this section, you'll implement the JavaScript code to prepend a sample compan
 
 1. Navigate to the **./src/commands** folder of your project and open the **commands.js** file.
 
-1. Insert the following function to the end of the file.
+1. Insert the following function at the end of the file.
 
     ```javascript
     function prependHeaderOnSend(event) {
@@ -271,7 +271,7 @@ In this section, you'll implement the JavaScript code to append a sample company
 
     ```javascript
     function appendDisclaimerOnSend(event) { 
-      // It's recommended to call the getTypeAsync method and pass its returned value to the options.coercionType parameter of the appendOnSendAsync call.
+      // Calls the getTypeAsync method and passes its returned value to the options.coercionType parameter of the appendOnSendAsync call.
       Office.context.mailbox.item.body.getTypeAsync(
         {
           asyncContext: event
@@ -324,7 +324,7 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 1. From the **./src/commands** folder, open the **commands.html** file.
 
-1. Replace the existing **script** tag with the following reference to the beta library on the content delivery network (CDN). This retrieve the definitions of the prepend-on-send API that's in preview.
+1. Replace the existing **script** tag with the following reference to the beta library on the content delivery network (CDN). This retrieves the definitions of the prepend-on-send API that's in preview.
 
     ```html
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
@@ -360,7 +360,7 @@ As you implement prepend-on-send and append-on-send in your add-in, keep the fol
 
 - The string to be prepended or appended must not exceed 5,000 characters.
 
-- HTML can't be prepended or appended to a plain text body of a message or appointment. Conversely, plain text can be added to an HTML-formatted body of a message or appointment.
+- HTML can't be prepended or appended to a plain text body of a message or appointment. However, plain text can be added to an HTML-formatted body of a message or appointment.
 
 - Any formatting applied to prepended or appended content doesn't affect the style of the rest of the mail item's body.
 
@@ -368,7 +368,7 @@ As you implement prepend-on-send and append-on-send in your add-in, keep the fol
 
 - When implementing Smart Alerts in the same add-in, the prepend-on-send and append-on-send operations occur before the `OnMessageSend` and `OnAppointmentSend` event handler operations.
 
-- If multiple active add-ins use prepend-on-send or append-on-send, the order of the content to be inserted depends on the order in which the add-in ran. For prepend-on-send, the content of the add-in that runs last appears at the top of the mail item above the previously prepended content. For append-on-send, the content of the add-in that runs last appears at the bottom of the mail item below the previously appended content.
+- If multiple active add-ins use prepend-on-send or append-on-send, the order of the content to be inserted depends on the order in which the add-in ran. For prepend-on-send, the content of the add-in that runs last appears at the top of the mail item body before the previously prepended content. For append-on-send, the content of the add-in that runs last appears at the bottom of the mail item body after the previously appended content.
 
 - Delegate and shared mailbox scenarios are supported as long as the add-in that implements prepend-on-send or append-on-send is enabled on the shared mailbox or delegator's account.
 
@@ -379,7 +379,7 @@ If you encounter an error while implementing the prepend-on-send and append-on-s
 |Error|Description|Resolution|
 |-----|-----|-----|
 |`DataExceedsMaximumSize`|The content to be appended or prepended is longer than 5,000 characters.|Shorten the string you pass to the `data` parameter of your `prependOnSendAsync` or `appendOnSendAsync` call.|
-|`InvalidFormatError`|The message or appointment body is in plain text format, but the `coercionType` passed to the `prependOnSendAsync` or `appendOnSendAsync` method is set to `Office.CoercionType.Html`.|Only plain text can be inserted into a plain text body of a message or appointment. To verify the format of the mail item being composed, it's recommended to call `Office.context.mailbox.item.body.getTypeAsync`, then pass its returned value to your `prependOnSendAsync` or `appendOnSendAsync` call.|
+|`InvalidFormatError`|The message or appointment body is in plain text format, but the `coercionType` passed to the `prependOnSendAsync` or `appendOnSendAsync` method is set to `Office.CoercionType.Html`.|Only plain text can be inserted into a plain text body of a message or appointment. To verify the format of the mail item being composed, call `Office.context.mailbox.item.body.getTypeAsync`, then pass its returned value to your `prependOnSendAsync` or `appendOnSendAsync` call.|
 
 ## See also
 
