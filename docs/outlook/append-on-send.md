@@ -370,7 +370,7 @@ As you implement prepend-on-send and append-on-send in your add-in, keep the fol
 
 - If multiple active add-ins use prepend-on-send or append-on-send, the order of the content to be inserted depends on the order in which the add-in ran. For prepend-on-send, the content of the add-in that runs last appears at the top of the mail item body before the previously prepended content. For append-on-send, the content of the add-in that runs last appears at the bottom of the mail item body after the previously appended content.
 
-- Delegate and shared mailbox scenarios are supported as long as the add-in that implements prepend-on-send or append-on-send is enabled on the shared mailbox or delegator's account.
+- Delegate and shared mailbox scenarios are supported as long as the add-in that implements prepend-on-send or append-on-send is enabled on the shared mailbox or owner's account.
 
 ## Troubleshoot your add-in
 
