@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types entity value card
 description: Learn how to use entity value cards with data types in your Excel add-in.
-ms.date: 10/21/2022
+ms.date: 01/26/2023
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
@@ -100,10 +100,12 @@ The following screenshot shows an entity value card that uses the preceding code
 
 ## Card layout
 
-The entity value [`layouts`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-layouts-member) property creates a [`card`](/javascript/api/excel/excel.entityviewlayouts) for the entity and then specifies the appearance of that card, such as the title of the card, an image for the card, and the number of sections to display.
+The entity value [`layouts`](/javascript/api/excel/excel.entitycellvalue#excel-excel-entitycellvalue-layouts-member) property defines the appearance of the entity. Use `layouts` to specify attributes such as an entity icon, card title, image for a card, and the number of sections to display.
 
 > [!IMPORTANT]
 > The nested `layouts` values are used in combination with the [Card properties](#card-properties) data types described in the preceding article section. A nested data type must be defined in `properties` before it can be assigned in `layouts` to display on the card.
+
+The `layouts` property contains two direct subproperties, `compact` and `card`. The `card` property specifies the appearance of a card when the entity card is open. The `compact` property only defines the icon for an entity, and this icon only displays when the card is in its compact, or unopened state. See the [`EntityCompactLayoutIcons`](/javascript/api/excel/excel.entitycompactlayouticons) enum for a full list of available icons. The following code snippet shows how to display the `shoppingBag` icon.
 
 Within the `card` property, use the [`CardLayoutStandardProperties`](/javascript/api/excel/excel.cardlayoutstandardproperties) object to define the components of the card like `title`, `subTitle`, and `sections`.
 
@@ -122,6 +124,9 @@ const entity: Excel.EntityCellValue = {
         // Enter property settings here.
     },
     layouts: {
+        compact: {
+            icon: Excel.EntityCompactLayoutIcons.shoppingBag
+        },
         card: {
             title: { 
                 property: "Product Name" 
@@ -154,9 +159,9 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-The following screenshot shows an entity value card that uses the preceding code snippets. The screenshot shows the `mainImage` object at the top, followed by the `title` object which uses the **Product Name** and is set to **Tofu**. The screenshot also shows `sections`. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and is collapsed when the card is opened.
+The following screenshot shows an entity value card that uses the preceding code snippets. In the screenshot, the `shoppingBag` icon displays alongside the product names in the spreadsheet. In the entity card, the `mainImage` object displays at the top, followed by the `title` object which uses the **Product Name** and is set to **Chef Anton's Gumbo Mix**. The screenshot also shows `sections`. The **Category** section displays the `branch` icon. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and is collapsed when the card is opened.
 
-:::image type="content" source="../images/excel-data-types-entity-card-sections.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the card title and sections.":::
+:::image type="content" source="../images/excel-data-types-entity-card-sections-gumbo.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the card title and sections.":::
 
 ## Card data attribution
 
