@@ -1,7 +1,7 @@
 ---
 title: Custom functions debugging in a non-shared runtime
 description: Learn how to debug your Excel custom functions that don't use a shared runtime.
-ms.date: 11/21/2022
+ms.date: 01/26/2023
 ms.localizationpriority: medium
 ---
 
@@ -24,45 +24,9 @@ The process of debugging a custom function for add-ins that don't use a shared r
 
 | **Target platform** | **Visual Studio Code** | **Other IDE** |
 |--------------|-------------|-------------|
-| Excel on Windows | [Use the VS Code debugger for Excel in Microsoft Edge](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)</br>or [Use VS Code and the browser development tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web) | Debugging CF-NSR that are running in Excel on Windows outside VS Code isn't supported. Debug against Excel on the web. |
+| Excel on Windows | [Use VS Code and the browser development tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web) | Debugging CF-NSR that are running in Excel on Windows outside VS Code isn't supported. Debug against Excel on the web. |
 | Excel on the web | Windows development computer: [Use the VS Code debugger for Excel in Microsoft Edge](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)</br>Mac or Windows development computer: [Use VS Code and the browser development tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web) | [Use the command line tools](#use-the-command-line-tools-to-debug)|
 | Excel on Mac |  VS Code debugging of CF-NSR that are running in Excel on Mac isn't supported. Debug against Excel on the web. | [Use the command line tools](#use-the-command-line-tools-to-debug)|
-
-## Use the VS Code debugger for Excel in Microsoft Edge
-
-You can use VS Code to debug custom functions that don't use a shared runtime in Excel on the Microsoft Edge browser. To use VS Code with Microsoft Edge, you must install the [Microsoft Edge DevTools extension for Visual Studio Code](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension).
-
-### Run your add-in from VS Code
-
-1. Open your custom functions root project folder in [VS Code](https://code.visualstudio.com/).
-1. Choose **Terminal > Run Task** and type or select **Watch**. This will monitor and rebuild for any file changes.
-1. Choose **Terminal > Run Task** and type or select **Dev Server**.
-
-### Start the VS Code debugger
-
-1. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
-1. From the Debug options, choose **Office Online (Edge Chromium)**.
-1. Open Excel in the Microsoft Edge browser and create a new workbook.
-1. Choose **Share** in the ribbon and copy the link for the URL for this new workbook.
-1. Select **F5** (or select **Run > Start Debugging** from the menu) to begin debugging. A prompt will appear, which asks for the URL of your document.
-1. Paste in the URL for your workbook and press Enter.
-
-### Sideload your add-in
-
-1. Select the **Insert** tab on the ribbon and in the **Add-ins** section, choose **Office Add-ins**.
-2. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
-  
-    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
-
-3. **Browse** to the add-in manifest file and then select **Upload**.
-  
-    ![The upload add-in dialog with buttons for browse, upload, and cancel.](../images/upload-add-in.png)
-
-### Set breakpoints
-
-1. In VS Code, open your source code script file (**functions.js** or **functions.ts**).
-2. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code.
-3. In the Excel workbook, enter a formula that uses your custom function.
 
 ## Use the browser developer tools to debug custom functions in Excel on the web
 
