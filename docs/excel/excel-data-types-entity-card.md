@@ -16,9 +16,9 @@ This article describes how to use the [Excel JavaScript API](../reference/overvi
 
 An entity value, or [EntityCellValue](/javascript/api/excel/excel.entitycellvalue), is a container for data types and similar to an object in object-oriented programming. This article shows how to use entity value card properties, layout options, and data attribution functionality to create entity values that display as cards.
 
-The following screenshot shows an example of an open entity value card, in this case for the **Tofu** product from a list of grocery store products.
+The following screenshot shows an example of an open entity value card, in this case for the **Chef Anton's Gumbo Mix** product from a list of grocery store products.
 
-:::image type="content" source="../images/excel-data-types-entity-card-tofu.png" alt-text="A screenshot showing an entity value data type with the card window displayed.":::
+:::image type="content" source="../images/excel-data-types-entity-card-gumbo.png" alt-text="A screenshot showing an entity value data type with the card window displayed.":::
 
 ## Card properties
 
@@ -71,7 +71,7 @@ const entity: Excel.EntityCellValue = {
 
 The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the **Product ID**, **Product Name**, **Image**, **Quantity Per Unit**, and **Unit Price** information from the preceding code snippet.
 
-:::image type="content" source="../images/excel-data-types-entity-card-properties.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the product name, product ID, quantity per unit, and unit price information.":::
+:::image type="content" source="../images/excel-data-types-entity-card-properties-gumbo.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the product name, product ID, quantity per unit, and unit price information.":::
 
 ### Property metadata
 
@@ -160,6 +160,9 @@ const entity: Excel.EntityCellValue = {
 ```
 
 The following screenshot shows an entity value card that uses the preceding code snippets. In the screenshot, the `shoppingBag` icon displays alongside the product names in the spreadsheet. In the entity card, the `mainImage` object displays at the top, followed by the `title` object which uses the **Product Name** and is set to **Chef Anton's Gumbo Mix**. The screenshot also shows `sections`. The **Category** section displays the `branch` icon. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and is collapsed when the card is opened.
+
+> [!NOTE]
+> In Excel on Mac, nested icons (the icons that display inside an entity card, like the **Category** icon in the following screenshot) always display as the default icon, even when another icon is selected with the `EntityCompactLayoutIcons` enum. This is a known issue.
 
 :::image type="content" source="../images/excel-data-types-entity-card-sections-gumbo.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the card title and sections.":::
 
