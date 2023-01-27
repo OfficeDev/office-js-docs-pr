@@ -30,7 +30,7 @@ The entity value [`properties`](/javascript/api/excel/excel.entitycellvalue#exce
 The following code snippet shows the JSON for an entity value with multiple data types nested within `properties`.
 
 > [!NOTE]
-> To experiment with this JSON code snippet in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Data types: Create entity cards from data in a table](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) in our **Samples** library.
+> To experiment with this code snippet in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Data types: Create entity cards from data in a table](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) in our **Samples** library.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -114,7 +114,7 @@ The entity value JSON in the next code snippet shows a `card` layout with nested
 Within each card section you can specify elements like `layout`, `title`, and `properties`. The `layout` key uses the [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) object and accepts the value `"List"`. The `properties` key accepts an array of strings. Note that the `properties` values, such as `"Product ID"`, have corresponding data types in the preceding [Card properties](#card-properties) article section. Sections can also be collapsible and can be defined with boolean values as collapsed or not collapsed when the entity card is opened in the Excel UI.
 
 > [!NOTE]
-> To experiment with this JSON code snippet in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Data types: Create entity cards from data in a table](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) in our **Samples** library.
+> To experiment with this code snippet in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Data types: Create entity cards from data in a table](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) in our **Samples** library.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -174,10 +174,10 @@ Entity value cards can display a data attribution to give credit to the provider
 
 The data provider property displays an image in the lower left corner of the entity card. It uses the `logoSourceAddress` to specify a source URL for the image. The `logoTargetAddress` value defines the URL destination if the logo image is selected. The `description` value displays as a tooltip when hovering over the logo. The `description` value also displays as a plain text fallback if the `logoSourceAddress` is not defined or if the source address for the image is broken.
 
-The following JSON code snippet shows an entity value that uses the `provider` property to specify a data provider attribution for the entity.
+The JSON in the following code snippet shows an entity value that uses the `provider` property to specify a data provider attribution for the entity.
 
 > [!NOTE]
-> To experiment with this JSON code snippet in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Data types: Entity value attribution properties](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml) in our **Samples** library.
+> To experiment with this code snippet in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Data types: Entity value attribution properties](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml) in our **Samples** library.
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
