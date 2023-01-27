@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types entity value card
 description: Learn how to use entity value cards with data types in your Excel add-in.
-ms.date: 01/26/2023
+ms.date: 01/27/2023
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
@@ -105,11 +105,11 @@ The entity value [`layouts`](/javascript/api/excel/excel.entitycellvalue#excel-e
 > [!IMPORTANT]
 > The nested `layouts` values are used in combination with the [Card properties](#card-properties) data types described in the preceding article section. A nested data type must be defined in `properties` before it can be assigned in `layouts` to display on the card.
 
-The `layouts` property contains two direct subproperties, `compact` and `card`. The `card` property specifies the appearance of a card when the entity card is open. The `compact` property only defines the icon for an entity, and this icon only displays when the card is in its compact, or unopened state. See the [`EntityCompactLayoutIcons`](/javascript/api/excel/excel.entitycompactlayouticons) enum for a full list of available icons. The following code snippet shows how to display the `shoppingBag` icon.
+The `layouts` property contains two direct subproperties, `compact` and `card`. The `card` property specifies the appearance of a card when the entity card is open. The `compact` property only defines the icon for an entity, and this icon only displays when the card is in its compact, or unopened state. See the [`EntityCompactLayoutIcons`](/javascript/api/excel/excel.entitycompactlayouticons) enum for a full list of available icons. The next code snippet shows how to display the `shoppingBag` icon.
 
 Within the `card` property, use the [`CardLayoutStandardProperties`](/javascript/api/excel/excel.cardlayoutstandardproperties) object to define the components of the card like `title`, `subTitle`, and `sections`.
 
-The following entity value JSON code snippet shows a `card` layout with nested `title` and `mainImage` objects, as well as three `sections` within the card. Note that the `title` property `"Product Name"` has a corresponding data type in the preceding [Card properties](#card-properties) article section. The `mainImage` property also has a corresponding `"Image"` data type in the preceding section. The `sections` property takes a nested array and uses the [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) object to define the appearance of each section.
+The entity value JSON in the next code snippet shows a `card` layout with nested `title` and `mainImage` objects, as well as three `sections` within the card. Note that the `title` property `"Product Name"` has a corresponding data type in the preceding [Card properties](#card-properties) article section. The `mainImage` property also has a corresponding `"Image"` data type in the preceding section. The `sections` property takes a nested array and uses the [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) object to define the appearance of each section.
 
 Within each card section you can specify elements like `layout`, `title`, and `properties`. The `layout` key uses the [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) object and accepts the value `"List"`. The `properties` key accepts an array of strings. Note that the `properties` values, such as `"Product ID"`, have corresponding data types in the preceding [Card properties](#card-properties) article section. Sections can also be collapsible and can be defined with boolean values as collapsed or not collapsed when the entity card is opened in the Excel UI.
 
@@ -159,12 +159,14 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-The following screenshot shows an entity value card that uses the preceding code snippets. In the screenshot, the `shoppingBag` icon displays alongside the product names in the spreadsheet. In the entity card, the `mainImage` object displays at the top, followed by the `title` object which uses the **Product Name** and is set to **Chef Anton's Gumbo Mix**. The screenshot also shows `sections`. The **Category** section displays the `branch` icon. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and is collapsed when the card is opened.
-
-> [!NOTE]
-> In Excel on Mac, nested icons (the icons that display inside an entity card, like the **Category** icon in the following screenshot) always display as the default icon, even when another icon is selected with the `EntityCompactLayoutIcons` enum. This is a known issue.
+The following screenshot shows an entity value card that uses the preceding code snippets. In the screenshot, the `shoppingBag` icon displays alongside the product names in the spreadsheet. In the entity card, the `mainImage` object displays at the top, followed by the `title` object which uses the **Product Name** and is set to **Chef Anton's Gumbo Mix**. The screenshot also shows `sections`. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and is collapsed when the card is opened.
 
 :::image type="content" source="../images/excel-data-types-entity-card-sections-gumbo.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the card title and sections.":::
+
+> [!NOTE]
+> In the preceding screenshot, the `branch` icon displays alongside **Condiments** in the **Category** section. See the [Data types: Create entity cards from data in a table](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) sample to learn how to set nested icons like the **Category** section icon.
+>
+> There is a known issue with nested icons in Excel on Mac. In that environment, nested icons will always display as the `generic` icon, regardless of which icon is selected with the `EntityCompactLayoutIcons` enum.
 
 ## Card data attribution
 
