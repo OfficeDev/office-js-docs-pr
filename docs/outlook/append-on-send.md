@@ -236,6 +236,8 @@ In this section, you'll implement the JavaScript code to prepend a sample compan
             
           // Sets the header to be prepended to the body of the message on send.
           const bodyFormat = asyncResult.value;
+          // Because of the various ways in which HTML text can be formatted, the content may render differently when it's prepended to the mail item body.
+          // In this scenario, a <br> tag is added to the end of the HTML string to preserve its format.
           const header = '<div style="border:3px solid #000;padding:15px;"><h1 style="text-align:center;">Contoso Limited</h1></div><br>';
     
           Office.context.mailbox.item.body.prependOnSendAsync(
