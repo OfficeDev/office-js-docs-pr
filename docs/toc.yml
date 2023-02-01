@@ -896,14 +896,14 @@ items:
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
       displayName: Word
-    - name: Understand null values
-      href: word/null-values.md
-      displayName: Word
     - name: Use search options to find text
       href: word/search-option-guidance.md
       displayName: Word
     - name: When and how to use Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
+      displayName: Word
+    - name: Troubleshoot Word add-ins
+      href: word/word-add-ins-troubleshooting.md
       displayName: Word
 - name: Samples
   items:
