@@ -15,7 +15,7 @@ This issue may occur in the following case.
 
 1. There is at least one content control in the header and at least one in the footer of the Word document.
 1. The cursor is inside a content control in the header.
-1. Call [insertHtml](/javascript/api/word/word.contentcontrolv#word-word-contentcontrol-inserthtml-member(1)) to set the content control in the footer.
+1. Call [insertHtml](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-inserthtml-member(1)) to set the content control in the footer.
 
 The footer is unexpectedly mixed with the header. To avoid this, clear the content control in the footer before setting it, as shown in the following code sample.
 
