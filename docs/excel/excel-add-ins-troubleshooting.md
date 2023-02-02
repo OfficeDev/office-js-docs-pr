@@ -43,7 +43,7 @@ See [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md) for pattern
 
 ## Known Issues
 
-### Binding events return temporary `Binding` obects
+### Binding events return temporary `Binding` objects
 
 Both [BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingdatachangedeventargs#excel-excel-bindingdatachangedeventargs-binding-member) and [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#excel-excel-bindingselectionchangedeventargs-binding-member) return a temporary `Binding` object that contains the ID of the `Binding` object that raised the event. Use this ID with `BindingCollection.getItem(id)` to retrieve the `Binding` object that raised the event.
 
