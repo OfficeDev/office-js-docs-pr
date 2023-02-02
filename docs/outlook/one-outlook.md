@@ -2,7 +2,7 @@
 title: Develop Outlook add-ins for new Outlook on Windows (preview)
 description: Learn about the new Outlook on Windows that's in preview and how to develop Outlook add-ins that are compatible with it.
 ms.topic: article
-ms.date: 01/30/2023
+ms.date: 02/02/2023
 ms.localizationpriority: medium
 ---
 
