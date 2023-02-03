@@ -5,61 +5,74 @@ ms.date: 01/23/2023
 ms.localizationpriority: medium
 ---
 
-# Open Excel from your web page and embed your Office Add-in
+# Integrate data with Microsoft Excel and your Office Add-in
 
-:::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Image of Excel button on your web page opening up a new Excel document with your add-in embedded and auto-opening.":::
+We've learned from Microsoft partners with SaaS web applications that often their customers want to open their data from a web page, into a Microsoft Excel spreadsheet. They use Excel to do analysis on the data, or other types of number crunching. Then they upload the data back to the web site.
 
-Extend your SaaS web application so that your customers can open their data from a web page directly to Microsoft Excel.
+A common approach is that customers export the data from the web site to a .csv file. Then they import the .csv file into Excel. When they are done working with the data, they export the data from Excel and upload it to the web site. This is a clunky process with lots of steps for the customer. We can simplify this process down to one button click and make this much easier for the customer.
 
-## Contoso success story: Integrate web site data with an Excel add-in
+This article shows how to add an Excel button to your web site. When a customer chooses the button, it automatically creates a new spreadsheet with the requested data, uploads it to the customer's OneDrive, and opens it in Excel on a new browser tab. With one click the requested data is opened in Excel and formatted correctly. Additionally the pattern embeds your own Office Add-in inside the spreadsheet so that customers can still access your services from the context of Excel.
 
-At Contoso, we built an add-in that helps our customers manage their financial data in Excel. We also have a web site that provides customers with the ability to connect their data from any location and manage it in one location. We learned that frequently customers wanted to query data on our web site, and then open it in Excel to take advantage of the many analysis features available in Excel.
-
-to open their data in Excel, they first exported to a .csv file. Then they imported it into Excel. If they made changes they needed to export from Excel, and then import back into our web site. This was a clunky process to say the least. Also they weren't always taking advantage of our Excel add-in to work with the data once in Excel.
-
-We fixed this by adding an Excel icon/button to our web site. When the customer chooses the button, it automatically creates a new spreadsheet with the requested data, uploads it to the customer's OneDrive, and opens it in Excel on a new tab. Their data is already there, and formatted correctly. As a bonus we embed our own add-in in the spreadsheet so the customer can still access functionality from the Contoso web site.
-
-This experience is much better for our customers. They click once, and a new spreadsheet opens with their data already there. We also noticed more usage of our add-in once customers were aware it was already available in the new spreadsheet.
+Microsoft partners that implemented this pattern have seen increased customer satisfaction by making this process easier. They've also seen a significant increase in engagement with their add-ins by embedding them in the Excel spreadsheet. We recommend that if you have a web site for customers to work with data, that you consider implementing this pattern in your own solution.
 
 ## Prerequisites
 
 - [Visual Studio 2022 or later](https://aka.ms/VSDownload). Add the Office/SharePoint development workload when configuring Visual Studio.
 - [Visual Studio Code](https://code.visualstudio.com/Download).
 - Microsoft 365. You can get a free developer sandbox that provides a renewable 90-day Microsoft 365 E5 developer subscription. The developer sandbox includes a Microsoft Azure subscription that you can use for app registrations in later steps in this article. If you prefer, you can use a separate Microsoft Azure subscription for app registrations. Get a trial subscription at Microsoft Azure.
+- One or more files and folders on OneDrive in the Microsoft 365 account.
 
-## Add an Excel button to the web site
+## Run the sample code
 
-The sample contains a web application that will display mock data from a Contoso web site. You need to add an Excel button to the web application to open the data in a new Excel spreadsheet.
+The sample code for this article is named [Create a spreadsheet from your web site, populate it with data, and embed your Excel add-in](https://github.com/OfficeDev/Office-Add-in-samples/pull/475) To run the sample, follow the instructions in the [readme](https://github.com/OfficeDev/Office-Add-in-samples/pull/475).
 
-1. Add an image to the navigation pane using the Fluent UI Excel icon.
-1. Add a function to call an Azure function. Pass the data to the Azure function, and the function will return a byte array that is the new spreadsheet.
+## Solution architecture
 
-## Upload the spreadsheet to OneDrive
+:::image type="content" source="../images/open-in-excel-architecture.svg" alt-text="The sequence of steps to create a spreadsheet, populate it with data, and open it on a new browser tab for the user.":::
 
-1. Get a Microsoft Graph client.
-1. Call the REST API to put a new spreadsheet on the server.
+The solution described in this article adds an **Open in Microsoft Excel** button to the web site and interacts with Azure Functions, and the Microsoft Graph API. The following sequence of events occurs when the user wants to open their data in a new Excel spreadsheet.
 
-## Open the new spreadsheet
+1. The user chooses the **Open in Microsoft Excel** button. The web page passes the data to a function in an Azure Functions app.
+1. The function uses the Open XML SDK to create a new Excel spreadsheet in memory. It populates the spreadsheet with the data, and embeds your Office Add-in.
+1. The function returns the spreadsheet as a Base64 encoded string to the web page.
+1. The web page calls the Microsoft Graph API to upload the spreadsheet to the user's OneDrive.
+1. Microsoft Graph returns the web url location of the new spreadsheet file.
+1. The web page opens a new browser tab to open the spreadsheet at the web url. The spreadsheet contains the data, and your add-in.
 
-1. Enter the following code to open a new tab with the new spreadsheet.
+## Key parts of the solution
 
-## How the sample works
+The solution has two projects that you build:
 
-The sample code is built on the identity sample at. Refer to these samples for the platform you are using.
+- An Azure Functions app containing a `FunctionCreateSpreadsheet` function.
+- A Node.js web application project.
 
-Architecture diagram (Azure function, web app, Open XML SDK, VS Code, VS, )
+The following sections describe important concepts and implementation details for constructing the solution. A full reference implementation can be found in the [sample code](https://github.com/OfficeDev/Office-Add-in-samples/pull/475) for additional implementation details.
 
-### Create the spreadsheet
+### Excel button and Fluent UI
 
-The sample code uses the OOXML SDK to embed the Script Lab add-in to the Excel document that you choose. The following information is taken from the [**About the code** section](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) in the readme file.
+:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Fluent UI icons for Word, Excel, and PowerPoint.":::
 
-- Contains mainly code that was generated by the Open XML 2.5 SDK Productivity Tools which are available at the link for the [Open XML 2.5 SDK](/office/open-xml/open-xml-sdk).
+You need a button on the web site that creates the Excel spreadsheet. A best practice is to use the Fluent UI to help your users transition between Microsoft products. You should always use an Office icon to indicate which Office application will be launched from your web page. For more information, see [Office Brand Icons](https://developer.microsoft.com/fluentui#/styles/web/office-brand-icons) on the Fluent UI developer portal.  
+
+### Sign in the user
+
+The sample code is built from the Microsoft identity sample named [Vanilla JavaScript single-page application using MSAL.js to authenticate users to call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/blob/main/2-Authorization-I/1-call-graph/README.md). All authentication code and UI is from this sample. Please refer to this sample for more information about writing code for authentication and authorization. For a full list of identity samples for a wide range of platforms, see [Microsoft identity platform code samples](./azure/active-directory/develop/sample-v2-code).
+
+### Create the spreadsheet with the Open XML SDK
+
+The sample code uses the [Open XML SDK](./office/open-xml/open-xml-sdk) to create the spreadsheet. Because the Open XML SDK uses .NET it is encapsulated in an Azure Functions app named `FunctionCreateSpreadsheet`. You can call this function from your Node.js web application. `FunctionCreateSpreadsheet` uses the `SpreadsheetBuilder` helper class to create a new spreadsheet in memory. The code is based on [Create a spreadsheet document by providing a file name (Open XML SDK)](.office/open-xml/how-to-create-a-spreadsheet-document-by-providing-a-file-name).
 
 ### Populate the spreadsheet with data
 
-### Embed your add-in
+The `FunctionCreateSpreadsheet` function accepts a JSON body containing the row and column data. This is passed to the `SpreadsheetBuilder.InsertData` method which iterates through all rows and columns and adds them to the worksheet.
 
-he **GenerateWebExtensionPart1Content** method in the **OOXMLHelper.cs** file sets the reference to the ID of Script Lab in Microsoft AppSource:
+Much of the `SpreadsheetBuilder` class contains code that was generated by the Open XML 2.5 SDK Productivity Tools. These are available at the link for the [Open XML 2.5 SDK](/office/open-xml/open-xml-sdk).
+
+### Embed your Office Add-in inside the spreadsheet
+
+The `SpreadsheetBuilder` class also embeds the Script Lab add-in inside the spreadsheet and configures to display when the document is opened. 
+
+The **SpreadsheetBuilder.GenerateWebExtensionPart1Content** method in the **SpreadsheetBuilder.cs** file sets the reference to the ID of Script Lab in Microsoft AppSource:
 
 ```csharp
 We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionStoreReference() { Id = "wa104380862", Version = "1.1.0.0", Store = "en-US", StoreType = "OMEX" };
@@ -69,27 +82,19 @@ We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionS
 - The **Store** value is "en-US" found in the Microsoft AppSource culture section for Script Lab.
 - The **Id** value is the Microsoft AppSource asset ID for Script Lab.
 
-If you are setting up an add-in from a file share catalog for auto-open, you will use different values:
+You can change these values to embed your own Office Add-in. This makes it discoverable to the user and increases engagement with your add-in and web services. If your add-in is deployed through central deployment, use the following values instead.
 
-The **StoreType** value is "FileSystem".
+```csharp
+We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionStoreReference() { Id = "<Your add-in GUID>", Version = "<Your version>", Store = "excatalog", StoreType = "excatalog" };
+We.WebExtensionStoreReference webExtensionStoreReference2 = new We.WebExtensionStoreReference() { Id = "<Your add-in GUID>", Version = "<Your version>", Store = "omex", StoreType = "omex" };            
+webExtensionReferenceList1.Append(webExtensionStoreReference2);
+```
 
-- The **Store** value is the URL of the network share; for example, "\\\\MyComputer\\MySharedFolder". This should be the exact URL that appears as the share's Trusted Catalog Address in the Office Trust Center.
-- The **Id** value is the app ID in the add-ins manifest.
-> [!NOTE]
-> For more information about alternative values for these attributes, see [Automatically open a task pane with a document](../develop/automatically-open-a-task-pane-with-a-document.md).
+For more information about alternative values for these attributes, see [Automatically open a task pane with a document](../develop/automatically-open-a-task-pane-with-a-document.md) and [\[MS-OWEXML\]\: CT_OsfWebExtensionReference](./openspecs/office_standards/ms-owexml/d4081e0b-5711-45de-b708-1dfa1b943ad1)
 
 ### Upload the spreadsheet to OneDrive
 
-### Open the spreadsheet in a new tab
-
-
-## Use the Fluent UI
-
-:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Fluent UI icons for Word, Excel, and PowerPoint.":::
-
-A best practice is to use the Fluent UI to help your users transition between Microsoft products. You should always use an Office icon to indicate which Office application will be launched from your web page. For more information, see [Office Brand Icons](https://developer.microsoft.com/fluentui#/styles/web/office-brand-icons) on the Fluent UI developer portal.  
-
-
+When the spreadsheet is fully constructed the `FunctionCreateSpreadsheet` function returns a Base64 encoded string version of the spreadsheet to the web application. Then the web application uses the Microsoft Graph API to upload the spreadsheet to the user's OneDrive. The web application creates the file at `\openinexcel\spreadsheet.xlsx`, but you can modify the code to use any folder and filename you prefer.
 
 ## Additional considerations for your solution
 
@@ -97,19 +102,30 @@ Everyone’s solution is different in terms of technologies and approaches. The 
 
 ### Read custom properties when your add-in starts
 
-The code sample stores a snippet ID in the new Excel document using the OOXML SDK. Script Lab reads the snippet ID from the Excel document and then displays that snippet code when it opens. You may need to send custom properties to your own add-in (such as a query string, or temporary authentication token.) See **Persisting add-in state and settings** for complete details on how to read custom properties when your add-in starts.
+When you embed your add-in inside the spreadsheet, you can include custom properties. The `SpreadsheetBuilder.cs` file includes commented code that shows how to insert a user name if you have a `userName` variable.
 
-### Working with the OOXML SDK
+```csharp
+    // CUSTOM MODIFICATION BEGIN
+    // Uncomment the following code to add your own custom name/value pair properties for the add-in.
+    // We.WebExtensionProperty webExtensionProperty2 = new We.WebExtensionProperty() { Name = "userName", Value = userName };
+    // webExtensionPropertyBag1.Append(webExtensionProperty2);
+    // CUSTOM MODIFICATION END
+```
 
-The OOXML SDK is based on .NET. If your web application does not .NET, you’ll need to look for an alternative way to work with OOXML.
+Uncomment the code and change it to add any customer properties you need. In your add-in, use the [Office Settings get method](/javascript/api/office/office.settings?view=common-js-preview#office-office-settings-get-member(1)) to retrieve a custom property. The following sample shows how to get the user name property from the spreadsheet.
 
-You can place the OOXML code in an Azure function to separate the .NET code from the rest of your web application. Then call the Azure function (to generate the Excel document) from your Web application. For more information on Azure functions, see [An introduction to Azure Functions](/azure/azure-functions/functions-overview).
+```javascript
+let userName = Office.context.document.settings.get('userName'));
+```
 
-TBD List OOXML JS libraries here.
+> [!CAUTION]
+> Don't store sensitive information in custom properties such as auth tokens or connection strings. Properties in the spreadsheet are not encrypted or protected.
+
+See [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins) for complete details on how to read custom properties when your add-in starts.
 
 ### Use single sign-on
 
-To simplify authentication, we recommend your add-in implements single sign-on. For more information, see [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md)
+To simplify authentication, we recommend your add-in implements single sign-on. This ensure the user does not need to sign in a second time to access your add-in. For more information, see [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md)
 
 ## See also
 
