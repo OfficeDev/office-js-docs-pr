@@ -5,7 +5,9 @@ ms.date: 01/23/2023
 ms.localizationpriority: medium
 ---
 
-# Integrate data with Microsoft Excel and your Office Add-in
+# Create an Excel spreadsheet from your web page, populate it with data, and embed your Office Add-in
+
+:::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Image of Excel button on your web page opening up a new Excel document with your add-in embedded and auto-opening.":::
 
 We've learned from Microsoft partners with SaaS web applications that often their customers want to open their data from a web page, into a Microsoft Excel spreadsheet. They use Excel to do analysis on the data, or other types of number crunching. Then they upload the data back to the web site.
 
