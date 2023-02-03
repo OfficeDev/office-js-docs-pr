@@ -2,7 +2,7 @@
 title: Implement append-on-send in your Outlook add-in
 description: Learn how to implement the append-on-send feature in your Outlook add-in.
 ms.topic: article
-ms.date: 10/24/2022
+ms.date: 02/03/2023
 ms.localizationpriority: medium
 ---
 
@@ -119,9 +119,6 @@ For this scenario, instead of running the `action` function on choosing the **Pe
     ```
 
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
-
-> [!IMPORTANT]
-> Append-on-send isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
 
 1. Open the manifest.json file.
 
