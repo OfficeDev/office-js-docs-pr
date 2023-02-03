@@ -1,7 +1,7 @@
 ---
 title: Browsers used by Office Add-ins
 description: Specifies how the operating system and Office version determine what browser is used by Office Add-ins.
-ms.date: 01/18/2023
+ms.date: 02/03/2023
 ms.localizationpriority: medium
 ---
 
@@ -78,11 +78,11 @@ For subscription Office on Windows, the browser that is used is determined by th
 |OS|Office version|Edge WebView2 (Chromium-based) installed?|Browser|
 |:-----|:-----|:-----|:-----|
 |Windows 7 | Microsoft 365| Doesn't matter | Internet Explorer 11|
-|Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp;1903| Microsoft 365 | No| Internet Explorer 11|
-|Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>2</sup>| Doesn't matter|Internet Explorer 11|
-|Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;*AND*&nbsp;<&nbsp;16.0.13530.20424<sup>2</sup>| Doesn't matter|Microsoft Edge Legacy (EdgeHTML)<sup>1, 3</sup>|
-|Windows 10 ver.&nbsp;>=&nbsp;1903,<br>Window 11 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>2</sup>| No |Microsoft Edge Legacy (EdgeHTML)<sup>1, 3</sup>|
-|Windows 8.1<br>Windows 10,<br>Windows 11| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>2</sup>| Yes<sup>4</sup>|  Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based) |
+|Windows 10 ver.&nbsp;<&nbsp;1903,<br>Windows 8.1| Microsoft 365 | No| Internet Explorer 11|
+|Windows 11,<br>Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>2</sup>| Doesn't matter|Internet Explorer 11|
+|Windows 11,<br>Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;*AND*&nbsp;<&nbsp;16.0.13530.20424<sup>2</sup>| Doesn't matter|Microsoft Edge Legacy (EdgeHTML)<sup>1, 3</sup>|
+|Window 11,<br>Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>2</sup>| No |Microsoft Edge Legacy (EdgeHTML)<sup>1, 3</sup>|
+|Windows 11,<br>Windows 10,<br>Windows 8.1,<br>Windows Server 2022,<br>Windows Server 2019,<br>Windows Server 2016| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>2</sup>| Yes<sup>4</sup>|  Microsoft Edge<sup>1</sup> with WebView2 (Chromium-based) |
 
 <sup>1</sup> When you use Microsoft Edge, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Internet Explorer 11, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
 
