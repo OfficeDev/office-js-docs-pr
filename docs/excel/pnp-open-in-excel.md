@@ -62,7 +62,7 @@ The sample code is built from the Microsoft identity sample named [Vanilla JavaS
 
 ### Create the spreadsheet with the Open XML SDK
 
-The sample code uses the [Open XML SDK](/office/open-xml/open-xml-sdk) to create the spreadsheet. Because the Open XML SDK uses .NET it is encapsulated in an Azure Functions app named `FunctionCreateSpreadsheet`. You can call this function from your Node.js web application. `FunctionCreateSpreadsheet` uses the `SpreadsheetBuilder` helper class to create a new spreadsheet in memory. The code is based on [Create a spreadsheet document by providing a file name (Open XML SDK)](.office/open-xml/how-to-create-a-spreadsheet-document-by-providing-a-file-name).
+The sample code uses the [Open XML SDK](/office/open-xml/open-xml-sdk) to create the spreadsheet. Because the Open XML SDK uses .NET it is encapsulated in an Azure Functions app named `FunctionCreateSpreadsheet`. You can call this function from your Node.js web application. `FunctionCreateSpreadsheet` uses the `SpreadsheetBuilder` helper class to create a new spreadsheet in memory. The code is based on [Create a spreadsheet document by providing a file name (Open XML SDK)](/office/open-xml/how-to-create-a-spreadsheet-document-by-providing-a-file-name).
 
 ### Populate the spreadsheet with data
 
