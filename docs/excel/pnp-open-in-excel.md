@@ -58,11 +58,11 @@ You need a button on the web site that creates the Excel spreadsheet. A best pra
 
 ### Sign in the user
 
-The sample code is built from the Microsoft identity sample named [Vanilla JavaScript single-page application using MSAL.js to authenticate users to call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/blob/main/2-Authorization-I/1-call-graph/README.md). All authentication code and UI is from this sample. Please refer to this sample for more information about writing code for authentication and authorization. For a full list of identity samples for a wide range of platforms, see [Microsoft identity platform code samples](./azure/active-directory/develop/sample-v2-code).
+The sample code is built from the Microsoft identity sample named [Vanilla JavaScript single-page application using MSAL.js to authenticate users to call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/blob/main/2-Authorization-I/1-call-graph/README.md). All authentication code and UI is from this sample. Please refer to this sample for more information about writing code for authentication and authorization. For a full list of identity samples for a wide range of platforms, see [Microsoft identity platform code samples](/azure/active-directory/develop/sample-v2-code).
 
 ### Create the spreadsheet with the Open XML SDK
 
-The sample code uses the [Open XML SDK](./office/open-xml/open-xml-sdk) to create the spreadsheet. Because the Open XML SDK uses .NET it is encapsulated in an Azure Functions app named `FunctionCreateSpreadsheet`. You can call this function from your Node.js web application. `FunctionCreateSpreadsheet` uses the `SpreadsheetBuilder` helper class to create a new spreadsheet in memory. The code is based on [Create a spreadsheet document by providing a file name (Open XML SDK)](.office/open-xml/how-to-create-a-spreadsheet-document-by-providing-a-file-name).
+The sample code uses the [Open XML SDK](/office/open-xml/open-xml-sdk) to create the spreadsheet. Because the Open XML SDK uses .NET it is encapsulated in an Azure Functions app named `FunctionCreateSpreadsheet`. You can call this function from your Node.js web application. `FunctionCreateSpreadsheet` uses the `SpreadsheetBuilder` helper class to create a new spreadsheet in memory. The code is based on [Create a spreadsheet document by providing a file name (Open XML SDK)](.office/open-xml/how-to-create-a-spreadsheet-document-by-providing-a-file-name).
 
 ### Populate the spreadsheet with data
 
@@ -92,7 +92,7 @@ We.WebExtensionStoreReference webExtensionStoreReference2 = new We.WebExtensionS
 webExtensionReferenceList1.Append(webExtensionStoreReference2);
 ```
 
-For more information about alternative values for these attributes, see [Automatically open a task pane with a document](../develop/automatically-open-a-task-pane-with-a-document.md) and [\[MS-OWEXML\]\: CT_OsfWebExtensionReference](./openspecs/office_standards/ms-owexml/d4081e0b-5711-45de-b708-1dfa1b943ad1)
+For more information about alternative values for these attributes, see [Automatically open a task pane with a document](../develop/automatically-open-a-task-pane-with-a-document.md) and [\[MS-OWEXML\]\: CT_OsfWebExtensionReference](/openspecs/office_standards/ms-owexml/d4081e0b-5711-45de-b708-1dfa1b943ad1)
 
 ### Upload the spreadsheet to OneDrive
 
@@ -114,7 +114,7 @@ When you embed your add-in inside the spreadsheet, you can include custom proper
     // CUSTOM MODIFICATION END
 ```
 
-Uncomment the code and change it to add any customer properties you need. In your add-in, use the [Office Settings get method](/javascript/api/office/office.settings?view=common-js-preview#office-office-settings-get-member(1)) to retrieve a custom property. The following sample shows how to get the user name property from the spreadsheet.
+Uncomment the code and change it to add any customer properties you need. In your add-in, use the [Office Settings get method](/javascript/api/office/office.settings#office-office-settings-get-member(1)) to retrieve a custom property. The following sample shows how to get the user name property from the spreadsheet.
 
 ```javascript
 let userName = Office.context.document.settings.get('userName'));
@@ -123,7 +123,7 @@ let userName = Office.context.document.settings.get('userName'));
 > [!CAUTION]
 > Don't store sensitive information in custom properties such as auth tokens or connection strings. Properties in the spreadsheet are not encrypted or protected.
 
-See [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins) for complete details on how to read custom properties when your add-in starts.
+See [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins) for complete details on how to read custom properties when your add-in starts.
 
 ### Use single sign-on
 
