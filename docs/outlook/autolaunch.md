@@ -2,7 +2,7 @@
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
 ms.topic: article
-ms.date: 01/24/2023
+ms.date: 02/03/2023
 ms.localizationpriority: medium
 ---
 
@@ -16,9 +16,6 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 > Support for this feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For details about an event's minimum requirement set and the clients and platforms that support it, see [Supported events](#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 >
 > Event-based activation isn't supported in Outlook on iOS or Android.
-
-> [!IMPORTANT]
-> Event-based activation isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). We are working on providing that support soon.
 
 ## Supported events
 
@@ -180,9 +177,6 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the **\<Runtime\>** element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
 
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
-
-> [!IMPORTANT]
-> Event based activation isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
 
 1. Open the **manifest.json** file.
 
