@@ -55,7 +55,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 1. Find the **\<VersionOverrides\>** section and add the following **\<Runtimes\>** section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
 
     > [!IMPORTANT]
-    > You can change the `resid` to use a different value than **Taskpane.Url** but note that in all following steps, the `resid` must use the same value or shared runtime won't load.
+    > Shared runtime won't load if the `resid` uses different values in the manifest. If you change the value to something other than **Taskpane.Url** be sure to also change the value in all locations show in the following steps in this article.
     > Also, the **\<Runtimes\>** section must be entered after the **\<Host\>** element in the exact order shown in the following XML.
 
    ```xml
