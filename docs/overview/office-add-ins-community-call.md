@@ -9,15 +9,18 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 8:00 AM Pacific Time. You can download the calendar invite at https://aka.ms/officeaddinscommunitycall.
 
-## Agenda for February 8, 2022 call
+## Agenda for February 8, 2023 call
 
-The agenda for the February call will be posted week of the call.
+The agenda for February's Office Add-ins community call is the following:
+David Chesnut will be going over how to create an Excel spreadsheet from your website, then embed your add-in, and populate it with data. 
+Yun Wang will be providing us with updates on new Word apis that are now available. 
+Nikita Mittal and Juan Balmori Labra will be providing us with updates on the new Outlook extensibility. 
 
 ## Previous calls
 
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
-- January 11, 2023 (coming soon)
+- [January 11, 2023](https://pnp.github.io/blog/office-add-ins-community-call/2023-01-11/)
 - [December 14, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-12-14/)
 - [November 9, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-11-09/)
 - [October 12, 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-10-12/)
