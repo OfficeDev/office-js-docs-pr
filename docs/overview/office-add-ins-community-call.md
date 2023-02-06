@@ -12,7 +12,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 ## Agenda for February 8, 2023 call
 
 The agenda for February's Office Add-ins community call is the following:
-David Chesnut will be going over how to create an Excel spreadsheet from your website, then embed your add-in, and populate it with data. 
+David Chesnut will be going over how to create an Excel spreadsheet from your website, populate it with data, and embed your add-in. 
 Yun Wang will be providing us with updates on new Word apis that are now available. 
 Nikita Mittal and Juan Balmori Labra will be providing us with updates on the new Outlook extensibility. 
 
