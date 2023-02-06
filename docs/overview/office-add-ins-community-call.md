@@ -14,7 +14,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 The agenda for February's Office Add-ins community call is the following:
 David Chesnut will be going over how to create an Excel spreadsheet from your website, populate it with data, and embed your add-in. 
 Yun Wang will be updating us on new Word APIs that are now available. 
-Nikita Mittal and Juan Balmori Labra will be providing us with updates on the new Outlook extensibility. 
+Nikita Mittal and Juan Balmori Labra will be updating us on the new Outlook extensibility. 
 
 ## Previous calls
 
