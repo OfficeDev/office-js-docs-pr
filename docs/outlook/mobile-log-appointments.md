@@ -14,7 +14,7 @@ In this article, you'll learn how to set up your Outlook mobile add-in to enable
 
 ## Supported clients
 
-Logging notes to an external application from an Outlook mobile add-in is supported in Outlook on Android and iOS with a Microsoft 365 subscription.
+Logging notes to an external application from an Outlook mobile add-in is supported in Outlook on Android and on iOS with a Microsoft 365 subscription.
 
 ## Set up your environment
 
