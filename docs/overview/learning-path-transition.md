@@ -14,7 +14,7 @@ So, you've made some VSTO add-ins for Office applications that run on Windows an
 
 Your understanding of the object models for the Excel, Word, and the other Office applications will be a huge help because the object models in Office Web Add-ins follow similar patterns. But there are going to be some challenges:
 
-- You'll be working with a different language (either JavaScript or TypeScript) instead of C# or Visual Basic .NET. (There is also a way, described below, to reuse some of your existing code in a web add-in.)
+- You'll be working with a different language (either JavaScript or TypeScript) instead of C# or Visual Basic .NET. (There is also a way, described later, to reuse some of your existing code in a web add-in.)
 - Office Web Add-ins are deployed differently from VSTO add-ins.
 - Office Web Add-ins are web applications that run in a simplified browser window that is embedded in the Office application, so you need to gain a basic understanding of web applications and how they're hosted on web servers or cloud accounts.
 

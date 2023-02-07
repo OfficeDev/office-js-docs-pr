@@ -12,7 +12,7 @@ The new Outlook on Windows desktop client unifies the Windows and web codebases 
 
 ## Impact on VSTO and COM add-ins
 
-Because the new Outlook on Windows is based on the Outlook on the web codebase, VSTO and COM add-ins aren't supported. To ensure your add-in continues to work in the new Outlook on Windows, you must migrate your VSTO or COM add-in to an Outlook web add-in. Migrating to an Outlook web add-in not only enables compatibility with the new Outlook on Windows; it also makes your solution available to users on other platforms, such as Outlook on Mac, on mobile, or on the web.
+Because the new Outlook on Windows is based on the Outlook on the web codebase, VSTO and COM add-ins aren't supported. To ensure your add-in continues to work in the new Outlook on Windows, you must migrate your VSTO or COM add-in to an Outlook web add-in. Migrating to an Outlook web add-in not only enables compatibility with the new Outlook on Windows, it also makes your solution available to users on other platforms, such as Outlook on Mac, on mobile, or on the web.
 
 To help get you started on the migration process, review the following guidance.
 
@@ -40,14 +40,14 @@ The following table identifies key Outlook scenarios and their support status in
 |Content reuse|Enable users to transfer and retrieve text and other content types from third-party systems.|Supported.|
 |Mail item transformation|Enable users to transform mail items into other formats.|Supported.|
 |Project management|Enable users to create and track project work items from third-party systems.|Supported.|
-|Attachment management|Enable users to import or export attachments from third-party locations.|Partially supported. Essential features are yet to be addressed to create a similar experience to the VSTO or COM add-in.|
+|Attachment management|Enable users to import or export attachments from third-party locations.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
 |Message encryption|Enable users to encrypt and decrypt messages.|Partially supported. Essential features are yet to be addressed to create a similar experience to the VSTO or COM add-in.|
 |Data loss prevention|Prevent users from forwarding mail items that contain highly sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to the VSTO or COM add-in.|
 |Mail item classification|Enable users to identify and classify messages that contain sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to the VSTO or COM add-in.|
 |Data sync service|Enable bidirectional synchronization of mail items with third-party systems.|Partially supported. Essential features are yet to be addressed to create a similar experience to the VSTO or COM add-in.|
 |Proofing mail items|Provide users with real-time proofreading assistance as they compose messages.|Not currently supported.|
 
-There are various possibilities to extend the Outlook functionality through add-ins. If your VSTO or COM add-in solution doesn't quite fit any of the scenarios in the table, [complete the survey to share your scenario](https://aka.ms/DevNewOutlook).
+There are various possibilities for extending the Outlook functionality through add-ins. If your VSTO or COM add-in solution doesn't quite fit any of the scenarios in the table, [complete the survey to share your scenario](https://aka.ms/DevNewOutlook).
 
 ## Support for classic Outlook on Windows
 
@@ -55,15 +55,15 @@ The classic Outlook on Windows desktop client will continue to support the devel
 
 ## Test your add-in in the new Outlook on Windows
 
-Test your Outlook web add-in in the new Outlook on Windows today! To switch to the new Outlook on Windows that's in preview, you must:
+Test your Outlook web add-in in the new Outlook on Windows today! To switch to the new Outlook on Windows that's in preview, you must meet the following requirements.
 
-- Have an Exchange-backed Microsoft 365 work or school account. The new client doesn't currently support on-premises, hybrid, or sovereign Exchange accounts.
+- Have a Microsoft 365 work or school account connected to Exchange Online. The new client doesn't currently support on-premises, hybrid, or sovereign Exchange accounts.
 
 - Have a minimum OS installation of Windows 10 Version 1809 (Build 17763).
 
 - Be a member of the [Office Insider Program](https://insider.office.com/join/windows).
 
-To help you sign up and install the desktop client, see [Getting started with the new Outlook for Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
+To help you sign up and install the Outlook desktop client, see [Getting started with the new Outlook for Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
 For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
 

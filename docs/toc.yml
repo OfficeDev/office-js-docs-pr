@@ -637,9 +637,9 @@ items:
   - name: Outlook add-in tutorial
     href: tutorials/outlook-tutorial.md
     displayName: Outlook
-  - name: Develop Outlook add-ins for the new Outlook on Windows (preview)
+  - name: Develop Outlook add-ins for the new Outlook on Windows
     href: outlook/one-outlook.md
-    displayName: Outlook
+    displayName: preview
   - name: Outlook JavaScript API
     displayName: Outlook
     items:
