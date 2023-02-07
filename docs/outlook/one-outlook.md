@@ -1,6 +1,6 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows (preview)
-description: Learn about the new Outlook on Windows that's in preview and how to develop Outlook add-ins that are compatible with it.
+description: Learn how to develop add-ins that are compatible with the new Outlook on Windows (preview).
 ms.topic: article
 ms.date: 02/07/2023
 ms.localizationpriority: medium
@@ -37,14 +37,14 @@ The following table identifies key Outlook scenarios and their support status in
 |Meeting enhancements|Provide additional services for users when they schedule meetings, such as location selection, catering services, and room lighting and temperature adjustments.|Supported.|
 |Online signatures|Automatically add themed signatures to messages and appointments.|Supported.|
 |Customer relationship management (CRM) and tracking services|Enable users to send and retrieve information from their CRM system to track communications with existing and potential customers.|Supported.|
-|Content reuse|Enable users to transfer and retrieve text and other content types from third-party systems.|Supported.|
+|Content reuse|Enable users to transfer and retrieve text and other content types from partner systems.|Supported.|
 |Mail item transformation|Enable users to transform mail items into other formats.|Supported.|
-|Project management|Enable users to create and track project work items from third-party systems.|Supported.|
-|Attachment management|Enable users to import or export attachments from third-party locations.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
+|Project management|Enable users to create and track project work items from partner systems.|Supported.|
+|Attachment management|Enable users to import or export attachments from partner locations.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
 |Message encryption|Enable users to encrypt and decrypt messages.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
 |Data loss prevention|Prevent users from forwarding mail items that contain highly sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
 |Mail item classification|Enable users to identify and classify messages that contain sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
-|Data sync service|Enable bidirectional synchronization of mail items with third-party systems.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
+|Data sync service|Enable bidirectional synchronization of mail items with partner systems.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
 |Proofing mail items|Provide users with real-time proofreading assistance as they compose messages.|Not currently supported.|
 
 There are various possibilities for extending the Outlook functionality through add-ins. If your VSTO or COM add-in solution doesn't quite fit any of the scenarios in the table, [complete the survey to share your scenario](https://aka.ms/DevNewOutlook).
@@ -69,7 +69,7 @@ For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for t
 
 ## Development experience feedback
 
-As you test your Outlook web add-in in the new Outlook on Windows, share feedback on your development experience through [GitHub](https://github.com/OfficeDev/office-js/issues/new/choose).
+As you test your Outlook web add-in in the new Outlook on Windows, share feedback on your experience with the developer community through [GitHub](https://github.com/OfficeDev/office-js/issues/new/choose).
 
 ## See also
 

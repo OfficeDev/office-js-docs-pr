@@ -308,7 +308,7 @@ In the previous code, the returned string will be processed to replace carriage 
 The Office.js library requires CORS on outgoing calls, such as the one made from the `ajax` call to the REST API server. Use the following steps to allow calls from the Office Add-in to the REST API.
 
 1. In **Solution Explorer**, select the **CellAnalyzerOfficeAddinWeb** project.
-1. From the **View** menu, choose **Properties Window** (if the window isn't already displayed).
+1. From the **View** menu, choose **Properties Window**, if the window isn't already displayed.
 1. In the properties window, copy the value of the **SSL URL**, and save it somewhere. This is the URL that you need to allow through CORS.
 1. In the **CellAnalyzerRESTAPI** project, open the **Startup.cs** file.
 1. Add the following code to the top of the `ConfigureServices` method. Be sure to substitute the URL SSL you copied previously for the `builder.WithOrigins` call.
