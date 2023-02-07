@@ -18,7 +18,7 @@ Your understanding of the object models for the Excel, Word, and the other Offic
 - Office Web Add-ins are deployed differently from VSTO add-ins.
 - Office Web Add-ins are web applications that run in a simplified browser window that is embedded in the Office application, so you need to gain a basic understanding of web applications and how they're hosted on web servers or cloud accounts.
 
-For these reasons, much of this article duplicates our learning path for [Beginner's guide to Office extensions](learning-path-beginner.md). What we've added are some additional learning resources to help VSTO add-in developers leverage their experience, and also help them reuse their existing code.
+For these reasons, much of this article duplicates our [Beginner's guide to Office extensions](learning-path-beginner.md). What we've added are some learning resources to help VSTO add-in developers leverage their experience, and also help them reuse their existing code.
 
 ## Step 0: Prerequisites
 
