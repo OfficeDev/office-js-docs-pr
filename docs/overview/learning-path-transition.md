@@ -1,7 +1,7 @@
 ---
 title: VSTO add-in developer's guide to Office Web Add-ins
 description:  A recommended path for experienced VSTO add-in developers to learning resources for Office Web Add-ins.
-ms.date: 02/02/2023
+ms.date: 02/07/2023
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
 ---
