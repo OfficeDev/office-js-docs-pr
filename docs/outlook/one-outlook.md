@@ -1,12 +1,12 @@
 ---
-title: Develop Outlook add-ins for new Outlook on Windows (preview)
+title: Develop Outlook add-ins for the new Outlook on Windows (preview)
 description: Learn about the new Outlook on Windows that's in preview and how to develop Outlook add-ins that are compatible with it.
 ms.topic: article
 ms.date: 02/07/2023
 ms.localizationpriority: medium
 ---
 
-# Develop Outlook add-ins for new Outlook on Windows (preview)
+# Develop Outlook add-ins for the new Outlook on Windows (preview)
 
 The new Outlook on Windows desktop client unifies the Windows and web codebases to create a more consistent Outlook experience for users and administrators. Its modern and simplified interface has added capabilities and aims to improve productivity, organization, and collaboration for users. More importantly, the new Outlook on Windows supports Outlook web add-ins, so that you can continue to extend Outlook's functionality.
 
