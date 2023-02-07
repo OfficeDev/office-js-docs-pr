@@ -11,11 +11,11 @@ This article discusses troubleshooting issues that are unique to Word. Use the f
 
 ## Layout breaks when using `insertHtml` while cursor is in content control in header
 
-This issue may occur under the following conditions.
+This issue may occur when the following three conditions are met.
 
 1. Have at least one content control in the header and at least one in the footer of the Word document.
 1. Ensure the cursor is inside a content control in the header.
-1. Call [insertHtml](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-inserthtml-member(1)) to set the content control in the footer.
+1. Call [insertHtml](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-inserthtml-member(1)) to set a content control in the footer.
 
 The footer is then unexpectedly mixed with the header. To avoid this, clear the content control in the footer before setting it, as shown in the following code sample.
 
