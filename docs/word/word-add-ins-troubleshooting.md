@@ -1,11 +1,11 @@
 ---
-title: Troubleshooting Word add-ins
+title: Troubleshoot Word add-ins
 description: Learn how to troubleshoot development errors in Word add-ins.
 ms.date: 02/01/2023
 ms.localizationpriority: medium
 ---
 
-# Troubleshooting Word add-ins
+# Troubleshoot Word add-ins
 
 This article discusses troubleshooting issues that are unique to Word. Use the feedback tool at the end of the page to suggest other issues that can be added to the article.
 
