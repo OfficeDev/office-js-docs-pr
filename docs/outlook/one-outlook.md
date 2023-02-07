@@ -12,7 +12,7 @@ The new Outlook on Windows desktop client unifies the Windows and web codebases 
 
 ## Impact on VSTO and COM add-ins
 
-Because the new Outlook on Windows is based on the Outlook on the web codebase, VSTO and COM add-ins aren't supported. To ensure your add-in continues to work in the new Outlook on Windows, you must migrate your VSTO or COM add-in to an Outlook web add-in. Migrating to an Outlook web add-in not only enables compatibility with the new Outlook on Windows, it also makes your solution available to users on other platforms, such as Outlook on Mac, on mobile, or on the web.
+The new Outlook on Windows aims to unify the extensibility experience across all Outlook platforms. To provide a more reliable and stable add-in experience, VSTO and COM add-ins aren't supported in the new Outlook on Windows. To ensure your add-in continues to work in the new Outlook on Windows, you must migrate your VSTO or COM add-in to an Outlook web add-in. Migrating to an Outlook web add-in not only enables compatibility with the new Outlook on Windows, it also makes your solution available to users on other platforms, such as Outlook on Mac, on mobile, or on the web.
 
 To help get you started on the migration process, review the following guidance.
 

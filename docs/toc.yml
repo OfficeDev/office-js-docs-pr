@@ -933,7 +933,7 @@ items:
     href: overview/office-add-ins-community-call.md
   - name: VSTO and COM transition resources
     items: 
-    - name: VSTO add-in developers' guide
+    - name: VSTO add-in developers' guide to Office Add-ins
       href: overview/learning-path-transition.md
     - name: Share code from VSTO Add-in to Office Add-in
       href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
