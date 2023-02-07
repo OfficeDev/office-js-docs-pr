@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Word add-ins
 description: Learn how to troubleshoot development errors in Word add-ins.
-ms.date: 02/01/2023
+ms.date: 02/07/2023
 ms.localizationpriority: medium
 ---
 
@@ -11,13 +11,13 @@ This article discusses troubleshooting issues that are unique to Word. Use the f
 
 ## Layout breaks when using `insertHtml` while cursor is in content control in header
 
-This issue may occur in the following case.
+This issue may occur under the following conditions.
 
-1. There is at least one content control in the header and at least one in the footer of the Word document.
-1. The cursor is inside a content control in the header.
+1. Have at least one content control in the header and at least one in the footer of the Word document.
+1. Ensure the cursor is inside a content control in the header.
 1. Call [insertHtml](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-inserthtml-member(1)) to set the content control in the footer.
 
-The footer is unexpectedly mixed with the header. To avoid this, clear the content control in the footer before setting it, as shown in the following code sample.
+The footer is then unexpectedly mixed with the header. To avoid this, clear the content control in the footer before setting it, as shown in the following code sample.
 
 ```TypeScript
 await Word.run(async (context) => {
