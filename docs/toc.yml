@@ -637,6 +637,9 @@ items:
   - name: Outlook add-in tutorial
     href: tutorials/outlook-tutorial.md
     displayName: Outlook
+  - name: Develop Outlook add-ins for the new Outlook on Windows
+    href: outlook/one-outlook.md
+    displayName: preview
   - name: Outlook JavaScript API
     displayName: Outlook
     items:
@@ -896,14 +899,14 @@ items:
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
       displayName: Word
-    - name: Understand null values
-      href: word/null-values.md
-      displayName: Word
     - name: Use search options to find text
       href: word/search-option-guidance.md
       displayName: Word
     - name: When and how to use Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
+      displayName: Word
+    - name: Troubleshoot Word add-ins
+      href: word/word-add-ins-troubleshooting.md
       displayName: Word
 - name: Samples
   items:
@@ -930,7 +933,7 @@ items:
     href: overview/office-add-ins-community-call.md
   - name: VSTO and COM transition resources
     items: 
-    - name: VSTO add-in developers' guide
+    - name: VSTO add-in developers' guide to Office Add-ins
       href: overview/learning-path-transition.md
     - name: Share code from VSTO Add-in to Office Add-in
       href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
