@@ -637,6 +637,9 @@ items:
   - name: Outlook add-in tutorial
     href: tutorials/outlook-tutorial.md
     displayName: Outlook
+  - name: Develop Outlook add-ins for the new Outlook on Windows
+    href: outlook/one-outlook.md
+    displayName: preview
   - name: Outlook JavaScript API
     displayName: Outlook
     items:
@@ -930,7 +933,7 @@ items:
     href: overview/office-add-ins-community-call.md
   - name: VSTO and COM transition resources
     items: 
-    - name: VSTO add-in developers' guide
+    - name: VSTO add-in developers' guide to Office Add-ins
       href: overview/learning-path-transition.md
     - name: Share code from VSTO Add-in to Office Add-in
       href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
