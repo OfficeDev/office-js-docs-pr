@@ -2,7 +2,7 @@
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
 ms.topic: article
-ms.date: 01/23/2023
+ms.date: 02/03/2023
 ms.localizationpriority: medium
 ---
 
@@ -152,10 +152,7 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
 
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
 
-> [!IMPORTANT]
-> Prepend-on-send and append-on-send features aren't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
-
-1. Open the **manifest.json** file.
+1. Open the manifest.json file.
 
 1. Add the following object to the "extensions.runtimes" array. Note the following about this code.
 

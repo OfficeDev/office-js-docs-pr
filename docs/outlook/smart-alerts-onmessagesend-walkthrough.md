@@ -2,7 +2,7 @@
 title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in
 description: Learn how to handle the on-send events in your Outlook add-in using event-based activation.
 ms.topic: article
-ms.date: 12/09/2022
+ms.date: 02/03/2023
 ms.localizationpriority: medium
 ---
 
@@ -152,9 +152,6 @@ To configure the manifest, select the tab for the type of manifest you are using
 > - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
-
-> [!IMPORTANT]
-> Smart Alerts aren't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
 
 1. Open the **manifest.json** file.
 
@@ -450,9 +447,6 @@ While a Smart Alerts dialog message can be changed to suit your add-in scenario 
 ## Differences between Smart Alerts and the on-send feature
 
 While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide your users the opportunity to improve their messages and meeting invites before they're sent, Smart Alerts is a newer feature that offers you more flexibility with how you prompt your users for further action. Key differences between the two features are outlined in the following table.
-
-> [!IMPORTANT]
-> Smart Alerts aren't yet supported for the Teams manifest (preview). We're working on providing that support soon.
 
 |Attribute|Smart Alerts|On-send|
 |-----|-----|-----|
