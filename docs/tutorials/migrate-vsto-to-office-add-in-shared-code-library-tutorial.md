@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library'
 description: Tutorial on how to share code between a VSTO Add-in and an Office Add-in.
-ms.date: 02/02/2023
+ms.date: 02/07/2023
 ms.prod: non-product-specific
 ms.localizationpriority: high
 ---
 
 # Tutorial: Share code between both a VSTO Add-in and an Office Add-in with a shared code library
 
-Visual Studio Tools for Office (VSTO) Add-ins are great for extending Office to provide solutions for your business or others. They've been around for a long time and there are thousands of solutions built with VSTO. However, they only run on Office on Windows. You can't run VSTO Add-ins on Mac, online, or mobile platforms.
+Visual Studio Tools for Office (VSTO) Add-ins are great for extending Office to provide solutions for your business or others. They've been around for a long time and there are thousands of solutions built with VSTO. However, they only run on Office on Windows. You can't run VSTO Add-ins on Mac, on the web, or on mobile platforms.
 
 [!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
 

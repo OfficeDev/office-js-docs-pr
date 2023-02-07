@@ -41,10 +41,10 @@ The following table identifies key Outlook scenarios and their support status in
 |Mail item transformation|Enable users to transform mail items into other formats.|Supported.|
 |Project management|Enable users to create and track project work items from third-party systems.|Supported.|
 |Attachment management|Enable users to import or export attachments from third-party locations.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
-|Message encryption|Enable users to encrypt and decrypt messages.|Partially supported. Essential features are yet to be addressed to create a similar experience to the VSTO or COM add-in.|
-|Data loss prevention|Prevent users from forwarding mail items that contain highly sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to the VSTO or COM add-in.|
-|Mail item classification|Enable users to identify and classify messages that contain sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to the VSTO or COM add-in.|
-|Data sync service|Enable bidirectional synchronization of mail items with third-party systems.|Partially supported. Essential features are yet to be addressed to create a similar experience to the VSTO or COM add-in.|
+|Message encryption|Enable users to encrypt and decrypt messages.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
+|Data loss prevention|Prevent users from forwarding mail items that contain highly sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
+|Mail item classification|Enable users to identify and classify messages that contain sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
+|Data sync service|Enable bidirectional synchronization of mail items with third-party systems.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
 |Proofing mail items|Provide users with real-time proofreading assistance as they compose messages.|Not currently supported.|
 
 There are various possibilities for extending the Outlook functionality through add-ins. If your VSTO or COM add-in solution doesn't quite fit any of the scenarios in the table, [complete the survey to share your scenario](https://aka.ms/DevNewOutlook).
