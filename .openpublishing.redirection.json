@@ -138,6 +138,11 @@
             "redirect_document_id": true
         },
         {
+            "source_path": "docs/word/null-values.md",
+            "redirect_url": "/office/dev/add-ins/word/word-add-ins-troubleshooting",
+            "redirect_document_id": true
+        },
+        {
             "source_path": "docs/overview/add-in-changelog.md",
             "redirect_url": "/office/dev/add-ins/overview/office-add-ins",
             "redirect_document_id": true
