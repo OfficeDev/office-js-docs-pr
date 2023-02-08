@@ -1,7 +1,7 @@
 ---
 title: Maintain your Office Add-in
 description: Understand our commitments to compatibility and how to keep your add-in up to date.
-ms.date: 05/03/2022
+ms.date: 01/23/2023
 ms.localizationpriority: medium
 ---
 
@@ -57,6 +57,10 @@ The [office-js NPM package](https://www.npmjs.com/package/@microsoft/office-js) 
 ## Current best practices
 
 While we strive to maintain backwards compatibility, the patterns and practices we recommend continually evolve. Our documentation strives to present the current best practices. To stay informed of new features that may improve your existing functionality, join our monthly [Office Add-ins Community Call](../overview/office-add-ins-community-call.md).
+
+## Deploy updates
+
+[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
 
 ## Community engagement
 
