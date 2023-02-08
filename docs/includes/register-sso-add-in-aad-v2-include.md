@@ -21,6 +21,9 @@ You need to create an app registration in Azure that represents your web server.
     * Set **Supported account types** to **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
     * Set **Redirect URI** to use the platform **Single-page application (SPA)** and the URI to `https://localhost:44355/dialog.html`.
 
+    > [!NOTE]
+    > The samples use port 44355, but you can use any port you prefer when creating your own Office Add-ins with SSO.
+
     :::image type="content" source="../images/azure-portal-register-an-application.png" alt-text="Register an application pane with name and supported account completed.":::
 
 1. Select **Register**. A message is displayed stating that the application registration was created.
