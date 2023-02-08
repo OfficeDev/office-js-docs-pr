@@ -26,7 +26,7 @@ Microsoft partners who implemented this pattern have seen increased customer sat
 
 ## Run the sample code
 
-The sample code for this article is named [Create a spreadsheet from your web site, populate it with data, and embed your Excel add-in](https://github.com/OfficeDev/Office-Add-in-samples/pull/475) To run the sample, follow the instructions in the [readme](https://github.com/OfficeDev/Office-Add-in-samples/pull/475).
+The sample code for this article is named [Create a spreadsheet from your web site, populate it with data, and embed your Excel add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-create-worksheet-from-web-site) To run the sample, follow the instructions in the [readme](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-create-worksheet-from-web-site).
 
 ## Solution architecture
 
@@ -48,7 +48,7 @@ The solution has two projects that you build:
 - An Azure Functions app containing a `FunctionCreateSpreadsheet` function.
 - A Node.js web application project.
 
-The following sections describe important concepts and implementation details for constructing the solution. A full reference implementation can be found in the [sample code](https://github.com/OfficeDev/Office-Add-in-samples/pull/475) for additional implementation details.
+The following sections describe important concepts and implementation details for constructing the solution. A full reference implementation can be found in the [sample code](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-create-worksheet-from-web-site) for additional implementation details.
 
 ### Excel button and Fluent UI
 
