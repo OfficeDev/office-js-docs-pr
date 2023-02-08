@@ -7,15 +7,15 @@ ms.localizationpriority: medium
 
 # Create an Excel spreadsheet from your web page, populate it with data, and embed your Office Add-in
 
-:::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Image of Excel button on your web page opening up a new Excel document with your add-in embedded and auto-opening.":::
+:::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Diagram illustrating how the Excel button on your web page opens a new Excel document and AutoOpens your add-in in the right pane.":::
 
-We've learned from Microsoft partners with SaaS web applications that often their customers want to open their data from a web page, into a Microsoft Excel spreadsheet. They use Excel to do analysis on the data, or other types of number crunching. Then they upload the data back to the web site.
+Microsoft partners with SaaS web applications know that their customers often want to open their data from a web page in an Excel spreadsheet. They use Excel to do analysis on the data, or other types of number crunching. Then they upload the data back to the web site.
 
-A common approach is that customers export the data from the web site to a .csv file. Then they import the .csv file into Excel. When they are done working with the data, they export the data from Excel and upload it to the web site. This is a clunky process with lots of steps for the customer. We can simplify this process down to one button click and make this much easier for the customer.
+Instead of multiple steps to export the data from the web site to a .csv file, import the .csv file into Excel, work with the data, then export it from Excel, and upload it back to the web site, we can simplify this process to one button click.
 
 This article shows how to add an Excel button to your web site. When a customer chooses the button, it automatically creates a new spreadsheet with the requested data, uploads it to the customer's OneDrive, and opens it in Excel on a new browser tab. With one click the requested data is opened in Excel and formatted correctly. Additionally the pattern embeds your own Office Add-in inside the spreadsheet so that customers can still access your services from the context of Excel.
 
-Microsoft partners that implemented this pattern have seen increased customer satisfaction by making this process easier. They've also seen a significant increase in engagement with their add-ins by embedding them in the Excel spreadsheet. We recommend that if you have a web site for customers to work with data, that you consider implementing this pattern in your own solution.
+Microsoft partners who implemented this pattern have seen increased customer satisfaction. They've also seen a significant increase in engagement with their add-ins by embedding them in the Excel spreadsheet. We recommend that if you have a web site for customers to work with data, that you consider implementing this pattern in your own solution.
 
 ## Prerequisites
 
