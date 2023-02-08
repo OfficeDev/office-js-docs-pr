@@ -2,7 +2,7 @@
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
 ms.topic: article
-ms.date: 10/17/2022
+ms.date: 02/06/2023
 ms.localizationpriority: medium
 ---
 
@@ -12,8 +12,9 @@ Saving your appointment notes and other details to a customer relationship manag
 
 In this article, you'll learn how to set up your Outlook mobile add-in to enable users to log notes and other details about their appointments to your CRM or note-taking application. Throughout this article, we'll be using a fictional CRM service provider named "Contoso".
 
-> [!IMPORTANT]
-> This feature is only supported on Android with a Microsoft 365 subscription.
+## Supported clients
+
+Logging notes to an external application from an Outlook mobile add-in is supported in Outlook on Android and on iOS with a Microsoft 365 subscription.
 
 ## Set up your environment
 
@@ -29,7 +30,7 @@ This option will enable a user to log and view their notes and other details abo
 
 ### Configure the manifest
 
-To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors are not supported.
+To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors aren't supported.
 
 [!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
@@ -201,7 +202,7 @@ function updateCustomProperties() {
 }
 ```
 
-Then call it after the add-in successfully logs the appointment notes. For example, you can call it from **logCRMEvent** as shown in the following function.
+Then, call it after the add-in successfully logs the appointment notes. For example, you can call it from **logCRMEvent** as shown in the following function.
 
 ```js
 function logCRMEvent(appointmentEvent) {
@@ -252,7 +253,7 @@ If you'd like to enable your users to undo logging or delete the logged appointm
     }
     ```
 
-Then call it when you want to clear the custom property. For example, you can call it from **logCRMEvent** if setting the log failed in some way as shown in the following function.
+Then, call it when you want to clear the custom property. For example, you can call it from **logCRMEvent** if setting the log failed in some way as shown in the following function.
 
   ```js
   function logCRMEvent(appointmentEvent) {
@@ -280,7 +281,7 @@ This option will enable a user to log and view their notes and other details abo
 
 ### Configure the manifest
 
-To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors are not supported.
+To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors aren't supported.
 
 [!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
@@ -443,7 +444,7 @@ function updateCustomProperties() {
 }
 ```
 
-Then call it after the add-in successfully logs the appointment notes. For example, you can call it from **getEventData** as shown in the following function.
+Then, call it after the add-in successfully logs the appointment notes. For example, you can call it from **getEventData** as shown in the following function.
 
 ```js
 function getEventData() {
@@ -489,7 +490,7 @@ If you'd like to enable your users to undo logging or delete the logged appointm
     }
     ```
 
-Then call it when you want to clear the custom property. For example, you can call it from **getEventData** if setting the log failed in some way as shown in the following function.
+Then, call it when you want to clear the custom property. For example, you can call it from **getEventData** if setting the log failed in some way as shown in the following function.
 
   ```js
   function getEventData() {
@@ -514,20 +515,20 @@ Then call it when you want to clear the custom property. For example, you can ca
 ## Test and validate
 
 1. Follow the usual guidance to [test and validate your add-in](testing-and-tips.md).
-1. After you [sideload](sideload-outlook-add-ins-for-testing.md) the add-in in Outlook on the web, Windows, or Mac, restart Outlook on your Android mobile device.
-1. Open an appointment as an attendee then verify that under the **Meeting Insights** card, there's a new card with your add-in's name alongside the **Log** button.
+1. After you [sideload](sideload-outlook-add-ins-for-testing.md) the add-in in Outlook on the web, Windows, or Mac, restart Outlook on your Android or iOS mobile device.
+1. Open an appointment as an attendee, then verify that under the **Meeting Insights** card, there's a new card with your add-in's name alongside the **Log** button.
 
 ### UI: Log the appointment notes
 
 As a meeting attendee, you should see a screen similar to the following image when you open a meeting.
 
-![Screenshot showing the Log button on an appointment screen on Android.](../images/outlook-android-log-appointment-details.jpg)
+![The Log button on an appointment screen on Android.](../images/outlook-android-log-appointment-details.jpg)
 
 ### UI: View the appointment log
 
 After successfully logging the appointment notes, the button should now be labeled **View** instead of **Log**. You should see a screen similar to the following image.
 
-![Screenshot showing the View button on an appointment screen on Android.](../images/outlook-android-view-appointment-log.jpg)
+![The View button on an appointment screen on Android.](../images/outlook-android-view-appointment-log.jpg)
 
 ## Available APIs
 
@@ -549,7 +550,7 @@ The following APIs are available for this feature.
 
 Several restrictions apply.
 
-- The **Log** button name cannot be changed. However, there is a way for a different label to be displayed by setting a custom property on the appointment item. For more details, refer to the **View appointment notes** section for [function command](?tabs=noui#view-appointment-notes) or [task pane](?tabs=taskpane#view-appointment-notes-1) as appropriate.
+- The **Log** button name can't be changed. However, there's a way for a different label to be displayed by setting a custom property on the appointment item. For more details, refer to the **View appointment notes** section for [function command](?tabs=noui#view-appointment-notes) or [task pane](?tabs=taskpane#view-appointment-notes-1) as appropriate.
 - The **EventLogged** custom property must be used if you want to toggle the label of the **Log** button to **View** and back.
 - The add-in icon should be in grayscale using hex code `#919191` or its equivalent in [other color formats](https://convertingcolors.com/hex-color-919191.html).
 - The add-in should extract the meeting details from the appointment form within the one-minute timeout period. However, any time spent in a dialog box the add-in opened for authentication, for example, is excluded from the timeout period.
