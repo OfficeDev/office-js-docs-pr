@@ -1,7 +1,7 @@
 ---
 title: Publish an add-in using Visual Studio Code and Azure
 description: How to publish an add-in using Visual Studio Code and Azure Active Directory
-ms.date: 09/07/2022
+ms.date: 01/23/2023
 ms.custom: vscode-azure-extension-update-completed
 ms.localizationpriority: medium
 ---
@@ -117,6 +117,10 @@ Next, add a MIME type for JSON files.
     When the build completes, the **dist** folder in the root directory of your add-in project will contain the files that you'll deploy.
 
 1. To deploy, in the VS Code **Explorer**, Right-click the **dist** folder, and select **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously. If you already deployed the **dist** folder, you'll be prompted if you want to overwrite the files in the Azure storage with the latest changes.
+
+## Deploy updates
+
+[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
 
 ## See also
 
