@@ -1,7 +1,6 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.topic: article
 ms.date: 02/03/2023
 ms.localizationpriority: medium
 ---
