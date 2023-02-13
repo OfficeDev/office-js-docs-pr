@@ -30,7 +30,7 @@ The sample code for this article is named [Create a spreadsheet from your web si
 
 ## Solution architecture
 
-:::image type="content" source="../images/open-in-excel-architecture.svg" alt-text="The sequence of steps to create a spreadsheet, populate it with data, and open it on a new browser tab for the user.":::
+:::image type="content" source="../images/open-in-excel-architecture.jpg" alt-text="The sequence of steps to create a spreadsheet, populate it with data, and open it on a new browser tab for the user.":::
 
 The solution described in this article adds an **Open in Microsoft Excel** button to the web site and interacts with Azure Functions, and the Microsoft Graph API. The following sequence of events occurs when the user wants to open their data in a new Excel spreadsheet.
 
