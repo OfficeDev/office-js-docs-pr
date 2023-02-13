@@ -1,7 +1,6 @@
 ---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.topic: article
 ms.date: 10/24/2022
 ms.localizationpriority: medium
 ---
