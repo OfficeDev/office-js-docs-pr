@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins on Mac for testing
 description: Test your Office Add-in on Mac by sideloading.
-ms.date: 07/07/2022
+ms.date: 02/17/2023
 ms.localizationpriority: medium
 ---
 
