@@ -43,7 +43,7 @@ To see how your add-in will run on Office on Mac, you can sideload your add-in's
 
 1. Open Word, and then open a document. Restart Word if it's already running.
 
-1. In Word, choose **Insert** > **Add-ins** > **My Add-ins** (drop-down menu), and then choose your add-in.
+1. On the Word ribbon, choose the **Insert** tab, and then select **My Add-ins** (drop-down menu) in the **Add-ins** group. On the drop down menu, choose your add-in.
 
     ![My Add-ins in Office on Mac.](../images/my-add-ins-wikipedia.png)
 
