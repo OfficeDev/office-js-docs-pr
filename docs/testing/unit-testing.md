@@ -1,7 +1,7 @@
 ---
 title: Unit testing in Office Add-ins
 description: Learn how to unit test code that calls the Office JavaScript APIs.
-ms.date: 02/07/2022
+ms.date: 02/17/2023
 ms.localizationpriority: medium
 ---
 
@@ -234,6 +234,9 @@ When you are testing functions that use the application-specific APIs, be sure t
 - Mock a *Host* object, such as [Excel](/javascript/api/excel) or [Word](/javascript/api/word). Do this when the preceding option isn't possible.
 
 Examples of both types of tests are in the subsections below.
+
+> [!NOTE]
+> The Office-Addin-Mock library doesn't currently support mocking collection type objects. We are working hard on adding this support to the library.
 
 #### Mocking a ClientRequestContext object
 
