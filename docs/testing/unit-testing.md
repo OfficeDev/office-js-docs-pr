@@ -236,7 +236,7 @@ When you are testing functions that use the application-specific APIs, be sure t
 Examples of both types of tests are in the subsections below.
 
 > [!NOTE]
-> The Office-Addin-Mock library doesn't currently support mocking collection type objects. We are working hard on adding this support to the library.
+> The Office-Addin-Mock library doesn't currently support mocking collection type objects, which are all the objects in the application-specific APIs that are named on the pattern *Collection, such as WorksheetCollection. We are working hard to add this support to the library.
 
 #### Mocking a ClientRequestContext object
 
