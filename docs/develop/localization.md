@@ -143,7 +143,7 @@ For Outlook add-ins, the [SourceLocation] element also aligns to the form factor
 
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
 
-When using the Teams manifest (preview), localize the public-facing strings in the manifest as described in [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization#localize-strings-in-your-app-manifest). The examples in that article are of Teams tabs and bots. The following is an example for an Outlook add-in. First is the "localizationInfo" object in the manifest. Below that is the fr-fr.json file with the translated strings. The add-in has a task pane (with a French version of the home page), localized French icons, and a custom ribbon button that opens a video player in a dialog box. 
+When using the Teams manifest (preview), localize the public-facing strings in the manifest as described in [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization#localize-strings-in-your-app-manifest). The following is an example for an Outlook add-in. First is the "localizationInfo" object in the manifest. Below that is the fr-fr.json file with the translated strings. The add-in has a task pane (with a French version of the home page), localized French icons, and a custom ribbon button that opens a video player in a dialog box. 
 
 ```json
 "localizationInfo": {
