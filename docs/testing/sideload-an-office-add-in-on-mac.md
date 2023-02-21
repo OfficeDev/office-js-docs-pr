@@ -41,7 +41,7 @@ To see how your add-in will run on Office on Mac, you can sideload your add-in's
 
     ![Wef folder in Office on Mac.](../images/all-my-files.png)
 
-1. Open Word, and then open a document. Restart Word if it's already running.
+1. Open Word (or restart Word if it's already running), then open a document.
 
 1. On the Word ribbon, choose the **Insert** tab, and then select **My Add-ins** (dropdown menu) in the **Add-ins** group. On the dropdown menu, choose your add-in.
 
