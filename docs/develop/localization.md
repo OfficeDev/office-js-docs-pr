@@ -1,13 +1,13 @@
 ---
 title: Localization for Office Add-ins
 description: Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.
-ms.date: 07/18/2022
+ms.date: 02/21/2023
 ms.localizationpriority: medium
 ---
 
 # Localization for Office Add-ins
 
-You can implement any localization scheme that's appropriate for your Office Add-in. The JavaScript API and manifest schema of the Office Add-ins platform provide some choices. You can use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data. You can use the manifest to specify locale-specific add-in file location and descriptive information. Alternatively, you can use Microsoft Ajax script to support globalization and localization.
+You can implement any localization scheme that's appropriate for your Office Add-in. The JavaScript API and manifest schema of the Office Add-ins platform provide some choices. You can use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data. You can use the manifest to specify locale-specific add-in file location and descriptive information. Alternatively, you can use Visual Studio and Microsoft Ajax script to support globalization and localization.
 
 ## Use the JavaScript API to determine locale-specific strings
 
@@ -41,6 +41,10 @@ The Office JavaScript API provides two properties that support displaying or int
     ```
 
 ## Control localization from the manifest
+
+The techniques for localizing with the manifest differ depending on whether you are using the XML manifest or the Teams manifest (preview).
+
+# [XML Manifest](#tab/xmlmanifest)
 
 Every Office Add-in specifies a [DefaultLocale] element and a locale in its manifest. By default, the Office Add-in platform and Office client applications apply the values of the [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl], and [SourceLocation] elements to all locales. You can optionally support specific values for specific locales, by specifying an [Override] child element for each additional locale, for any of these five elements. The value for the [DefaultLocale] element and for the `Locale` attribute of the [Override] element is specified according to [RFC 3066], "Tags for the Identification of Languages." Table 1 describes the localizing support for these elements.
 
@@ -137,7 +141,46 @@ For Outlook add-ins, the [SourceLocation] element also aligns to the form factor
 </PhoneSettings>
 ```
 
+# [Teams Manifest (developer preview)](#tab/jsonmanifest)
+
+When using the Teams manifest (preview), localize the public-facing strings in the manifest as described in [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization#localize-strings-in-your-app-manifest). The examples in that article are of Teams tabs and bots. The following is an example for an Outlook add-in. First is the "localizationInfo" object in the manifest. Below that is the fr-fr.json file with the translated strings. The add-in has a task pane (with a French version of the home page), localized French icons, and a custom ribbon button that opens a video player in a dialog box. 
+
+```json
+"localizationInfo": {
+  "defaultLanguageTag": "en",
+  "additionalLanguages": [
+    {
+      "languageTag": "fr-fr",
+      "file": "fr-fr.json"
+    }
+  ]
+}
+```
+
+```json
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.16/MicrosoftTeams.Localization.schema.json",
+  "name.short": "Lecteur vidéo",
+  "name.full": "Lecteur vidéo pour Outlook",
+  "description.short": "Voir les vidéos YouTube dans Outlook via les mails.",
+  "description.full": "Visualisez les vidéos YouTube référencées dans vos courriers électronique directement depuis Outlook.",
+  "icons.color": "https://localhost:3000/assets/fr-fr/icon-128.png",
+  "extensions[0].audienceClaimUrl": "https://localhost:3000/fr-fr/taskpane.html",
+  "extensions[0].ribbons[0].tabs[0].groups[0].label": "Outils de médias",
+  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].icons[0].file": "https://localhost:3000/assets/fr-fr/player-icon.png",
+  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].label": "Ouvrir le lecteur vidéo",
+  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.description": "Cliquez pour ouvrir le lecteur vidéo.",
+  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.title": "Ouvrir le lecteur vidéo",
+}
+```
+
+
+---
+
 ## Localize extended overrides
+
+> [!NOTE]
+> This section is not applicable if you are using the Teams manifest (preview).
 
 Some extensibility features of Office Add-ins, such as keyboard shortcuts, are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest. This section assumes that you're familiar with extended overrides. See [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element.
 
@@ -240,7 +283,7 @@ You can get the locale of the user interface of the Office client application by
 
 You can get the locale of the data of the Office client application by using the [contentLanguage] property. Based on this value, you can then appropriately interpret or display date/time strings. For example, the `jp-JP` locale expresses data/time values as `yyyy/MM/dd`, and the `fr-FR` locale, `dd/MM/yyyy`.
 
-## Use Ajax for globalization and localization
+## Use Visual Studio to create a localized and globalized add-in
 
 If you use Visual Studio to create Office Add-ins, the .NET Framework and Ajax provide ways to globalize and localize client script files.
 
@@ -248,14 +291,14 @@ You can globalize and use the [Date](/previous-versions/bb310850(v=vs.140)) and 
 
 You can include localized resource strings directly in standalone JavaScript files to provide client script files for different locales, which are set on the browser or provided by the user. Create a separate script file for each supported locale. In each script file, include an object in JSON format that contains the resource strings for that locale. The localized values are applied when the script runs in the browser.
 
-## Example: Build a localized Office Add-in
+### Example: Build a localized Office Add-in
 
 This section provides examples that show you how to localize an Office Add-in description, display name, and UI.
 
 > [!NOTE]
-> To download Visual Studio 2019, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
+> To download Visual Studio, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
 
-### Configure Office to use additional languages for display or editing
+#### Configure Office to use additional languages for display or editing
 
 To run the sample code provided, configure Office on your computer to use additional languages so that you can test your add-in by switching the language used for display in menus and commands, for editing and proofing, or both.
 
@@ -263,12 +306,12 @@ You can use an Office Language pack to install an additional language. For more 
 
 After you install the Language Accessory Pack, you can configure Office to use the installed language for display in the UI, for editing document content, or both. The example in this article uses an installation of Office that has the Spanish Language Pack applied.
 
-### Create an Office Add-in project
+#### Create an Office Add-in project
 
-You'll need to create a Visual Studio 2019 Office Add-in project.
+You'll need to create a Visual Studio Office Add-in project.
 
 > [!NOTE]
-> If you haven't installed Visual Studio 2019, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/) for download instructions. During installation you'll need to select the Office/SharePoint development workload. If you have previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio/) to ensure that the Office/SharePoint development workload is installed.
+> If you haven't installed Visual Studio, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/) for download instructions. During installation you'll need to select the Office/SharePoint development workload. If you have previously installed Visual Studio 2019 or later, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio/) to ensure that the Office/SharePoint development workload is installed.
 
 1. Choose **Create a new project**.
 
@@ -278,7 +321,7 @@ You'll need to create a Visual Studio 2019 Office Add-in project.
 
 1. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
-### Localize the text used in your add-in
+#### Localize the text used in your add-in
 
 The text that you want to localize for another language appears in two areas.
 
@@ -286,7 +329,7 @@ The text that you want to localize for another language appears in two areas.
 
 - **Add-in UI**. You can localize the strings that appear in your add-in UI by using JavaScript code, for example, by using a separate resource file that contains the localized strings.
 
-#### Localize the add-in display name and description
+##### Localize the add-in display name and description
 
 1. In **Solution Explorer**, expand **WorldReadyAddIn**, **WorldReadyAddInManifest**, and then choose **WorldReadyAddIn.xml**.
 
@@ -306,7 +349,7 @@ The text that you want to localize for another language appears in two areas.
 
 1. When you change the display language for Office 2013 from English to Spanish, for example, and then run the add-in, the add-in display name and description are shown with localized text.
 
-#### Lay out the add-in UI
+##### Lay out the add-in UI
 
 1. In Visual Studio, in **Solution Explorer**, choose **Home.html**.
 
@@ -336,13 +379,13 @@ The following figure shows the heading (h1) element and the paragraph (p) elemen
 
 ![App user interface with sections highlighted.](../images/office15-app-how-to-localize-fig03.png)
 
-### Add the resource file that contains the localized strings
+#### Add the resource file that contains the localized strings
 
 The JavaScript resource file contains the strings used for the add-in UI. The HTML for the sample add-in UI contains an `<h1>` element that displays a greeting, and a `<p>` element that introduces the add-in to the user.
 
 To enable localized strings for the heading and paragraph, you place the strings in a separate resource file. The resource file creates a JavaScript object that contains a separate JavaScript Object Notation (JSON) object for each set of localized strings. The resource file also provides a method for getting back the appropriate JSON object for a given locale.
 
-### Add the resource file to the add-in project
+#### Add the resource file to the add-in project
 
 1. In **Solution Explorer** in Visual Studio, right-click the **WorldReadyAddInWeb** project and choose **Add** > **New Item**.
 
@@ -402,7 +445,7 @@ To enable localized strings for the heading and paragraph, you place the strings
 
 The UIStrings.js resource file creates an object, **UIStrings**, which contains the localized strings for your add-in UI.
 
-### Localize the text used for the add-in UI
+#### Localize the text used for the add-in UI
 
 To use the resource file in your add-in, you'll need to add a script tag for it on Home.html. When Home.html is loaded, UIStrings.js executes and the **UIStrings** object that you use to get the strings is available to your code. Add the following HTML in the head tag for Home.html to make **UIStrings** available to your code.
 
@@ -459,7 +502,7 @@ Replace the code in the Home.js file with the following code. The code shows how
 })();
 ```
 
-### Test your localized add-in
+#### Test your localized add-in
 
 To test your localized add-in, change the language used for display or editing in the Office application and then run your add-in.
 
