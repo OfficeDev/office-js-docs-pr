@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.
-ms.date: 01/25/2022
+ms.date: 01/04/2023
 ms.localizationpriority: medium
 ---
 
@@ -75,11 +75,7 @@ Client Error. This error is only seen in **Office on the web**. Your code should
 The Office application was unable to get an access token to the add-in's web service.
 
 - If this error occurs during development, be sure that your add-in registration and add-in manifest specify the `profile` permission (and the `openid` permission, if you are using MSAL.NET). For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
-- In production, there are several things that can cause this error. Some of them are:
-  - The user has a Microsoft account identity.
-  - Some situations that would cause one of the other 13xxx errors with a Microsoft 365 Education or work account will cause a 13007 when a MSA is used.
-
-  For all of these cases, your code should fall back to an alternate system of user authentication.
+- In production, an account mismatch could cause this error. For example, if the user attempts to sign in with a personal Microsoft account (MSA) when a Work or school account was expected. For these cases, your code should fall back to an alternate system of user authentication. For more information on account types, see [Identity and account types for single- and multi-tenant apps](/security/zero-trust/develop/identity-supported-account-types)
 
 ### 13008
 

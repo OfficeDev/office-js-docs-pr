@@ -1,8 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.topic: article
-ms.date: 12/20/2022
+ms.date: 02/03/2023
 ms.localizationpriority: medium
 ---
 
@@ -16,9 +15,6 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 > Support for this feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For details about an event's minimum requirement set and the clients and platforms that support it, see [Supported events](#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 >
 > Event-based activation isn't supported in Outlook on iOS or Android.
-
-> [!IMPORTANT]
-> Event-based activation isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). We are working on providing that support soon.
 
 ## Supported events
 
@@ -180,9 +176,6 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the **\<Runtime\>** element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
 
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
-
-> [!IMPORTANT]
-> Event based activation isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This tab is for future use.
 
 1. Open the **manifest.json** file.
 
@@ -453,14 +446,17 @@ If you still need help after performing the recommended troubleshooting steps, [
 
 ## Deploy to users
 
-You can deploy event-based add-ins by uploading the manifest through the Microsoft 365 admin center. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**. On the **Integrated apps** page, choose the **Upload custom apps** action.
+Event-based add-ins are restricted to admin-managed deployments only, even if they're acquired from AppSource. If users acquire the add-in from AppSource or the in-app Office Store, they won't be able to activate the event-based function of the add-in. To learn more about listing your event-based add-in in AppSource, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
+
+Admin deployments are done by uploading the manifest to the Microsoft 365 admin center. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**. On the **Integrated apps** page, choose the **Upload custom apps** action.
 
 ![The Integrated apps page on the Microsoft 365 admin center with the Upload custom apps action highlighted.](../images/outlook-deploy-event-based-add-ins.png)
 
-> [!IMPORTANT]
-> Event-based add-ins are restricted to admin-managed deployments only. Users can't activate event-based add-ins from AppSource or in-app Office Store. To learn more, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
-
 [!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
+
+### Deploy manifest updates
+
+Because event-based add-ins are deployed by admins, any change you make to the manifest requires admin consent through the Microsoft 365 admin center. Until the admin accepts your changes, users in their organization are blocked from using the add-in. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](autolaunch-store-options.md#admin-consent-for-installing-event-based-add-ins).
 
 ## Event-based activation behavior and limitations
 

@@ -73,6 +73,10 @@ See [Troubleshooting Microsoft Edge issues](../concepts/browsers-used-by-office-
 
 See [Troubleshoot Excel add-ins](../excel/excel-add-ins-troubleshooting.md) for possible causes.
 
+## Word add-in throws errors or displays broken behavior
+
+See [Troubleshoot Word add-ins](../word/word-add-ins-troubleshooting.md) for possible causes.
+
 ## Manifest schema validation errors in Visual Studio projects
 
 If you're using newer features that require changes to the manifest file, you may get validation errors in Visual Studio. For example, when adding the **\<Runtimes\>** element to implement the [shared runtime](runtimes.md#shared-runtime), you may see the following validation error.
