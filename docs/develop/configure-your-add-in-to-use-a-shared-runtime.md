@@ -49,9 +49,6 @@ Follow these steps for a new or existing project to configure it to use a shared
     <DefaultSettings>
     ```
 
-    > [!NOTE]
-    > Don't add the `SharedRuntime` requirement set to the manifest for a Word add-in. It will cause an error when loading the add-in which is a known issue at this time.
-
 1. Find the **\<VersionOverrides\>** section and add the following **\<Runtimes\>** section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
 
     > [!IMPORTANT]
