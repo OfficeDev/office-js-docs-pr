@@ -19,7 +19,7 @@ You need to create an app registration in Azure that represents your web server.
 
     * Set **Name** to `<add-in-name>`.
     * Set **Supported account types** to **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
-    * Set **Redirect URI** to use the platform **Single-page application (SPA)** and the URI to `https://localhost:44355/dialog.html`.
+    * Set **Redirect URI** to use the platform **Single-page application (SPA)** and the URI to `https://<fully-qualified-domain-name>/dialog.html`.
 
     :::image type="content" source="../images/azure-portal-register-an-application.png" alt-text="Register an application pane with name and supported account completed.":::
 
@@ -67,14 +67,14 @@ Sometimes called an _application password_, a client secret is a string value yo
 
     The section for setting the application ID URI appears with a generated Application ID URI in the form `api://<app-id>`.
 
-1. Update the application ID URI to `api://localhost:44355/<app-id>`.
+1. Update the application ID URI to `api://<fully-qualified-domain-name>/<app-id>`.
 
     :::image type="content" source="../images/azure-portal-app-id-uri-details.png" alt-text="Edit the App ID URI pane with localhost port set to 44355.":::
 
     * The **Application ID URI** is pre-filled with app ID (GUID) in the format `api://<app-id>`.
     * The application ID URI format should be: `api://<fully-qualified-domain-name>/<app-id>`
     * Insert the `fully-qualified-domain-name` between `api://` and `<app-id>` (which is a GUID). For example, `api://contoso.com/<app-id>`.
-    * If you're using localhost, then the format should be `api://localhost:<port>/<app-id>`. For example, `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
+    * If you're using localhost, then the format should be `api://localhost:<port>/<app-id>`. For example, `api://<fully-qualified-domain-name>/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
     For additional application ID URI details, see [Application manifest identifierUris attribute](/azure/active-directory/develop/reference-app-manifest#identifieruris-attribute).
 
@@ -126,7 +126,7 @@ Sometimes called an _application password_, a client secret is a string value yo
     > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
     > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
-1. in **Authorized scopes**, select the `api://localhost:44355/<app-id>/access_as_user` checkbox.
+1. in **Authorized scopes**, select the `api://<fully-qualified-domain-name>/<app-id>/access_as_user` checkbox.
 
 1. Select **Add application**.
 
