@@ -65,7 +65,7 @@ Suggest a feature or vote up existing feature requests.
 
 The following books and classes provide add-ins information from a different perspective.
 
-|**Resource type**|**Guidance**|
+|**Resource**|**More information**|
 |-----------------|------------|
 |**Pluralsight course about Office Add-ins**| <a href="https://www.pluralsight.com/courses/build-office-addins-js-api" target="_blank">John Brown's course "Fundamentals of Building Office Add-ins with Office JavaScript APIs"</a> teaches you how to develop a PowerPoint add-in from scratch, including information about how to communicate with Trello and publish the add-in to the Office Store.|
 |**LinkedIn course about Office Add-ins**| <a href="https://www.linkedin.com/learning/microsoft-office-add-ins-for-developers/microsoft-office-add-ins?u=3322">Bill Ayer's course "Microsoft Office Add-Ins for Developers"</a> gives an overview of the platform and explains many of the major concepts of Office Add-ins.|
