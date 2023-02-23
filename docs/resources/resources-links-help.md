@@ -21,7 +21,7 @@ Use **Azure Admin Center** or **Microsoft 365 Admin Center** for any **business-
 
 ## Developer community help
 
-Our community of developers use Stack Overflow and Microsoft Q&A to connect with other developers to ideate, get clarifications, and submit queries. In addition, you can also use other contacts or sites, depending on the type of community help required to raise issues, limitations, and general questions.
+Our community of developers use Stack Overflow, GitHub, and Microsoft Q&A to connect with other developers to ideate, get clarifications, and submit queries.
 
 ### Developer community forums
 
@@ -29,18 +29,20 @@ Post your questions and help other community members by sharing and responding t
 
 | **Community channel**|   **Contact**  |
 |:---------------------|:---------------|
-| **Office JavaScript API questions** | Post API questions to [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js) using the `office-js` tag, and also include the `outlook-web-addins` tag if your question relates to Outlook add-ins. Please note that Stack Overflow has guidelines such as requiring a descriptive title, a complete and concise problem statement, and sufficient details to reproduce your issue. Feature requests or overly broad questions are off-topic; new users should visit the [Stack Overflow Help Center](https://stackoverflow.com/help/how-to-ask) for more details.|
+| **Office Add-in / Office JavaScript API questions** | <ul> <li> Post API questions to [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js) using the `office-js` tag, and also include the `outlook-web-addins` tag if your question relates to Outlook add-ins. Please note that Stack Overflow has guidelines such as requiring a descriptive title, a complete and concise problem statement, and sufficient details to reproduce your issue. Feature requests or overly broad questions are off-topic; new users should visit the [Stack Overflow Help Center](https://stackoverflow.com/help/how-to-ask) for more details. </li> <li> You can also post questions using the `Office Development` tag on [Microsoft Q&A](/answers/tags/321/office-development)</li> |
 | **Documentation gaps** | If the documentation is missing something that would help you understand how to create add-ins, please submit an issue to the [Office Add-ins documentation GitHub repository](https://github.com/officedev/office-js-docs-pr/issues)|
 
 ### Report issues
 
-Submit issues and ask general questions related to SDK and samples using the community help channels.
+Submit issues and ask general questions related to add-ins, documentation, and samples using the community help channels.
 
 | **Community channel** | **Contact** |
 |:----------------------|:------------|
-| **Platform outages** | ??? |
-| **Samples** | Submit issues with samples to the [Office Add-ins code samples](https://github.com/OfficeDev/Office-Add-in-samples) repository.|
-|**Office JavaScript API issues**| If you encounter an issue (bug) with the Office JavaScript API, please submit an issue to the [Office JavaScript APIs GitHub repository](https://github.com/officedev/office-js/issues)|
+| **Office Add-in / Office JavaScript API issues** | If you encounter an issue (bug) with the Office JavaScript API, please submit an issue to the [Office JavaScript APIs GitHub repository](https://github.com/officedev/office-js/issues)|
+|**Documentation issues**| If you encounter an issue (bug) with the documentation, please submit an issue to the [Office Add-ins documentation GitHub repository](https://github.com/officedev/office-js-docs-pr/issues)|
+| **Issues with code samples** | Submit issues with samples to the [Office Add-ins code samples](https://github.com/OfficeDev/Office-Add-in-samples) repository. |
+
+
 
 ### Documentation feedback
 
@@ -57,9 +59,8 @@ Suggest a feature or vote up existing feature requests.
 
 | **Community channel** | **Contact** |
 |:----------------------|:------------|
-|**Office JavaScript API feature requests**| To submit a feature request for the Office JavaScript API, please post your idea to the [Microsoft 365 Developer Platform Tech Community](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform).|
-| **General questions** | ???? |
-| **Feedback interview** | ??? |
+|**Office Addin / Office JavaScript API feature requests**| To submit a feature request for the Office JavaScript API, please post your idea to the [Microsoft 365 Developer Platform Tech Community](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform).|
+| **General questions** | Send general questions about the Office add-in platform to [Office Add-in Community Help](mailto:officeaddin. We encourage posting questions on the channels mentioned here and using email only if no other mode of communication is applicable. |
 
 ## External learning resources
 
