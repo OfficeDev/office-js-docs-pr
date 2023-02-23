@@ -56,6 +56,7 @@ Follow these steps for a new or existing project to configure it to use a shared
 
     > [!IMPORTANT]
     > The shared runtime won't load if the `resid` uses different values in the manifest. If you change the value to something other than **Taskpane.Url** be sure to also change the value in all locations shown in the following steps in this article.
+    >
     > Also, the **\<Runtimes\>** section must be entered after the **\<Host\>** element in the exact order shown in the following XML.
 
    ```xml
