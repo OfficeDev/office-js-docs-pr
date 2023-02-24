@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins additional resources
 description: Useful resources about Office Add-ins.
-ms.date: 02/22/2023
+ms.date: 02/24/2023
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +11,7 @@ These resources provide additional information and support for developing Office
 
 ## Product support and service issues
 
-Use **Azure Admin Center** or **Microsoft 365 Admin Center** for any **business-critical issues** that need SLA-based support.
+Use **Microsoft 365 Admin Center** or **Azure Admin Center**  for any **business-critical issues** that need SLA-based support.
 
 | Product support | Contact |
 |:------------|:------------|
@@ -58,7 +58,7 @@ Suggest a feature or vote up existing feature requests.
 | Support need | Contact |
 |:----------------------|:------------|
 |**Office Add-ins or Office JavaScript API feature requests**| To submit a feature request for the Office JavaScript API, please post your idea to the [Microsoft 365 Developer Platform Tech Community](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform).|
-| **General questions** | Send general questions about the Office Add-ins platform to [Office Add-ins Community Help](mailto:officeaddin). We encourage posting questions on the channels mentioned here and using email only if no other mode of communication is applicable. |
+| **General questions** | Send general questions about the Office Add-ins platform to [Office Add-ins Community Help](mailto:officeaddinsdev@microsoft.com). We encourage posting questions on the channels mentioned here and using email only if no other mode of communication is applicable. |
 
 ## External learning resources
 
