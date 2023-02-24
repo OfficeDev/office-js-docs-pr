@@ -1,7 +1,7 @@
 ---
 title: Use search options in your Word add-in to find text 
 description: Learn to use search options in your Word add-in.
-ms.date: 02/28/2022
+ms.date: 02/24/2023
 ms.localizationpriority: medium
 ---
 
@@ -162,4 +162,11 @@ await Word.run(async (context) => {
 });
 ```
 
-More information can be found in the [Word JavaScript Reference API](../reference/overview/word-add-ins-reference-overview.md).
+## See also
+
+More information can be found in the following:
+
+- [Word JavaScript Reference API](../reference/overview/word-add-ins-reference-overview.md)
+- [Script Lab](../overview/explore-with-script-lab.md) Word samples
+  - [Search](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/prod/samples/word/25-paragraph/search.yaml)
+  - [Get word count](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/prod/samples/word/25-paragraph/get-word-count.yaml)
