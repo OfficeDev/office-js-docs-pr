@@ -1,13 +1,13 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 03/17/2022
+ms.date: 02/24/2023
 ms.localizationpriority: medium
 ---
 
 # Sideload Outlook add-ins for testing
 
-You can use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
+Sideload your Outlook add-in testing without having to first put it in an add-in catalog.
 
 > [!IMPORTANT]
 > If your Outlook add-in supports mobile, sideload the manifest using the instructions in this article for your Outlook client on the web, Windows, or Mac, then follow the guidance in the **Testing your add-ins on mobile** section of the [Add-ins for Outlook Mobile](outlook-mobile-addins.md#testing-your-add-ins-on-mobile) article.
@@ -48,19 +48,22 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 1. Go to [Outlook on the web](https://outlook.office.com).
 
-1. Create a new message.
+1. Select **Get add-ins** from the ribbon.
 
-1. Choose **...** from the bottom of the new message and then select **Get Add-ins** from the menu that appears.
+    ![The Get add-ins button is selected from the ribbon in Outlook on the web.](../images/outlook-sideload-ribbon-web.png)
 
-    ![Message compose window in the new Outlook on the web with Get Add-ins option highlighted.](../images/outlook-on-the-web-new-get-add-ins.png)
+    > [!IMPORTANT]
+    > If you don't see **Get add-ins** in the ribbon, you may have the simplified ribbon layout enabled. To manage your add-ins, select the ellipsis button (`...`) from the ribbon. Then, select **Get Add-ins**.
+    >
+    > ![The Get Add-ins option is selected from the ellipsis button in Outlook on the web.](../images/outlook-sideload-simplified-ribbon-web.png)
 
 1. In the **Add-Ins for Outlook** dialog box, select **My add-ins**.
 
-    ![Add-ins for Outlook dialog box in the new Outlook on the web with My add-ins selected.](../images/outlook-on-the-web-new-my-add-ins.png)
+    ![The My add-ins option selected in the Add-Ins for Outlook dialog.](../images/outlook-sideload-my-add-ins-owa.png)
 
-1. Locate the **Custom add-ins** section at the bottom of the dialog box. Select the **Add a custom add-in** link, and then select **Add from file**.
+1. Locate the **Custom add-ins** section at the bottom of the dialog box. Select the **Add a custom add-in** link, and then select **Add from File**.
 
-    ![Manage add-ins screenshot pointing to Add from a file option.](../images/outlook-sideload-desktop-add-from-file.png)
+    ![The Add from File option is selected in the Custom Add-ins section.](../images/outlook-sideload-custom-add-in.png)
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
@@ -70,15 +73,15 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 1. Choose the gear icon in the top-right section of the toolbar and select **Manage add-ins**.
 
-    ![Outlook on the web screenshot pointing to Manage add-ins option.](../images/outlook-sideload-web-manage-integrations.png)
+    ![The Manage add-ins option is selected in classic Outlook on the web.](../images/outlook-sideload-web-manage-integrations.png)
 
 1. On the **Manage add-ins** page, select **Add-Ins**, and then select **My add-ins**.
 
-    ![Outlook on the web store dialog with My add-ins selected.](../images/outlook-sideload-store-select-add-ins.png)
+    ![Outlook on the web add-ins dialog with My add-ins selected.](../images/outlook-sideload-my-add-ins.png)
 
-1. Locate the **Custom add-ins** section at the bottom of the dialog box. Select the **Add a custom add-in** link, and then select **Add from file**.
+1. Locate the **Custom add-ins** section at the bottom of the dialog box. Select the **Add a custom add-in** link, and then select **Add from File**.
 
-    ![Manage add-ins screenshot pointing to Add from a file option.](../images/outlook-sideload-desktop-add-from-file.png)
+    ![The Add from File option is selected in the Custom Add-ins section.](../images/outlook-sideload-custom-add-in.png)
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
@@ -88,48 +91,53 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 1. Open Outlook 2016 or later on Windows or Mac.
 
-1. Select the **Get Add-ins** button on the ribbon.
+1. Depending on your Outlook client and version, select **Get Add-ins** or **All Apps** from the ribbon.
+
+    > [!NOTE]
+    > Starting in Outlook on Windows Version 2302 (Build 16215.10000), the **All Apps** button is used to manage your add-ins and access AppSource.
 
     # [Windows](#tab/windows)
 
-    ![Outlook on Windows ribbon pointing to the Get Add-ins button.](../images/outlook-sideload-desktop-windows.png)
+    ![The Get Add-ins button is selected in an older version of Outlook on Windows.](../images/outlook-sideload-win32-get-add-ins.png)
+
+    ![The All Apps button is selected in Outlook on Windows.](../images/outlook-sideload-win32-all-apps.png)
 
     # [Mac](#tab/mac)
 
-    ![Outlook on Mac ribbon pointing to the Get Add-ins button.](../images/outlook-sideload-mac-classic.png)
+    ![The Get Add-ins button is selected in Outlook on Mac.](../images/outlook-sideload-mac-classic.png)
 
     ---
 
     > [!IMPORTANT]
-    > If you don't see the **Get Add-ins** button in your version of Outlook, do one of the following:
+    > If you don't see **Get Add-ins** or **All Apps** in your version of Outlook, do one of the following:
     >
     > # [Windows](#tab/windows)
     >
-    > - If you configured your ribbon layout to Simplified Ribbon, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
+    > - If you configured your ribbon layout to Simplified Ribbon, select the ellipsis button (`...`) from the ribbon. Then, depending on your Outlook version, select **Get Add-ins** or **All Apps**.
     >
-    >   ![Outlook on Windows pointing to the Get Add-ins button from the ellipsis button.](../images/outlook-sideload-simplified-ribbon.png)
+    >   ![The Get Add-ins or All Apps option is selected from the ellipsis button in Outlook on Windows.](../images/outlook-sideload-simplified-ribbon-windows.png)
     >
-    > - Select the **Store** button on the ribbon, if available.
+    > - Select **Store** from the ribbon, if available.
     >
-    > - Select the **File** menu, then select the **Manage Add-ins** button on the **Info** tab to open the **Add-ins** dialog in Outlook on the web. You can see more about the web experience in the previous section [Sideload an add-in in Outlook on the web](#outlook-on-the-web).
+    > - Select the **File** menu, then select **Manage Add-ins** from the **Info** tab to open the **Add-ins** dialog in Outlook on the web. To learn more about the web experience, see [Sideload an add-in in Outlook on the web](../outlook/sideload-outlook-add-ins-for-testing.md#outlook-on-the-web).
     >
     > # [Mac](#tab/mac)
     >
     > - Select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
     >
-    >   ![Outlook on Mac pointing to the Get Add-ins button from the ellipsis button.](../images/outlook-sideload-deskop-mac.png)
+    >   ![The Get Add-ins option is selected from the ellipsis button in Outlook on Mac.](../images/outlook-sideload-new-mac.png)
     >
-    > - Select the **Store** button on the ribbon, if available.
+    > - Select **Store** from the ribbon, if available.
     >
     > ---
 
-1. If there are tabs near the top of the dialog, ensure that the **Add-ins** tab is selected. Choose **My add-ins**.
+1. If there are tabs near the top of the dialog, ensure that the **Add-ins** tab is selected. Then, choose **My add-ins**.
 
-    ![Outlook 2016 store dialog with My add-ins selected.](../images/outlook-sideload-store-select-add-ins.png)
+    ![Outlook 2016 add-ins dialog with My add-ins selected.](../images/outlook-sideload-my-add-ins.png)
 
-1. Locate the **Custom add-ins** section at the bottom of the dialog. Select the **Add a custom add-in** link, and then select **Add from file**.
+1. Locate the **Custom add-ins** section at the bottom of the dialog. Select the **Add a custom add-in** link, and then select **Add from File**.
 
-    ![Store screenshot pointing to Add from a file option.](../images/outlook-sideload-desktop-add-from-file.png)
+    ![The Add from File option is selected in the Custom add-ins section.](../images/outlook-sideload-custom-add-in.png)
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
@@ -137,7 +145,7 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
 
 1. Open Outlook 2013 on Windows.
 
-1. Select the **File** menu, then select the **Manage Add-ins** button on the **Info** tab. Outlook will open the web version in a browser.
+1. Select the **File** menu, then select **Manage Add-ins** from the **Info** tab. Outlook will open the web version in a browser.
 
 1. Follow the steps in the [Sideload an add-in in Outlook on the web](#outlook-on-the-web) section according to your version of Outlook on the web.
 
