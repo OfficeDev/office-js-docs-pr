@@ -28,7 +28,7 @@ Further, the runtime framework provides the following benefits to ensure that an
 Also, the use of memory, CPU, and network resources by Office Add-ins is governable to ensure that good performance and reliability are maintained.
 
 > [!NOTE]
-> In some scenarios, different features of an add-in run in separate runtimes. For simplicity, this article uses the singular "runtime." For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md). 
+> In some scenarios, different features of an add-in run in separate runtimes. For simplicity, this article uses the singular "runtime." For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 
 The following sections briefly describe how the runtime architecture supports running add-ins in Office clients on Windows-based devices, on Mac OS X devices, and in web browsers.
 
