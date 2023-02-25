@@ -1,7 +1,7 @@
 ---
 description: Create an Excel custom function for your Office Add-in.
 title: Create custom functions in Excel
-ms.date: 08/04/2021
+ms.date: 02/24/2023
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -9,6 +9,9 @@ ms.localizationpriority: high
 # Create custom functions in Excel
 
 Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`.
+
+> [!NOTE]
+> “Custom function” is a general term that is interchangeable with “user-defined function”. Both terms apply to VBA, COM, and Office.js add-ins. The Office Add-ins documentation only uses the term “custom function” when referring to custom functions that use Office.js APIs.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
