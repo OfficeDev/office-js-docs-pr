@@ -68,7 +68,7 @@ A **content delivery network** or **CDN** is a distributed network of servers an
 A **custom function** is a user-defined function that is packaged with an Excel add-in. Custom functions enable developers to add new functions, beyond the typical Excel features, by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel. See [Create custom functions in Excel](../excel/custom-functions-overview.md) to learn more.
 
 > [!NOTE]
-> **Custom function** is a general term that is interchangeable with “user-defined function”. Both terms apply to VBA, COM, and Office.js add-ins. The Office Add-ins documentation only uses the term **custom function** when referring to custom functions that use Office.js APIs.
+> **Custom function** is a general term that is interchangeable with **user-defined function**. Both terms apply to VBA, COM, and Office.js add-ins. The Office Add-ins documentation only uses the term **custom function** when referring to custom functions that use Office.js APIs.
 
 ## custom functions runtime
 
