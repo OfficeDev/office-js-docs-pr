@@ -262,6 +262,8 @@ items:
         href: develop/add-ins-with-angular2.md
       - name: Create add-ins with the Yeoman Generator
         href: develop/yeoman-generator-overview.md
+      - name: Create add-ins with the Teams Toolkit (preview)
+        href: develop/teams-toolkit-overview.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
       - name: Create and Develop add-ins with Visual Studio
