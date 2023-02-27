@@ -32,7 +32,7 @@ Install the prerelease version of Teams Toolkit into Visual Studio Code as descr
 1. Before you make changes to the project, verify that Outlook add-in sideloading from Visual Studio Code works. Use the following steps:
 
     <ol type="a">
-      <li>Ensure that your account in your Microsoft 365 developer tenancy is also an email account in desktop Outlook. If it isn't, follow the guidance in <a href="https://support.microsoft.com/office/add-an-email-account-to-outlook-e9da47c4-9b89-4b49-b945-a204aeea6726">Add an email account to Outlook</a></li>
+      <li>Ensure that your account in your Microsoft 365 developer tenancy is also an email account in desktop Outlook. If it isn't, follow the guidance in <a href="https://support.microsoft.com/office/add-an-email-account-to-outlook-e9da47c4-9b89-4b49-b945-a204aeea6726">Add an email account to Outlook</a>.</li>
       <li><i>Close Outlook desktop.</i></li>
       <li>In Visual Studio Code, open the Teams Toolkit.</li>
       <li>In the <b>ACCOUNTS</b> section, verify that you're signed into Microsoft 365.</li>
