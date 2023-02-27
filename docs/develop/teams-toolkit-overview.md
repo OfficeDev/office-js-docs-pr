@@ -7,7 +7,7 @@ ms.localizationpriority: high
 
 # Create Office Add-in projects with Teams Toolkit (preview)
 
-Extensions to the Microsoft 365 Platform and known collectively as "Teams Apps", even if the extension is for a part of Microsoft 365 outside of the Teams application itself. A primary tool for developing Teams Apps is the Teams Toolkit. You can create Office Add-ins with the Teams Toolkit subject to the following restrictions:
+Extensions to the Microsoft 365 Platform are called "Teams Apps", even if the extension is for a part of Microsoft 365 outside of the Teams application itself. A primary tool for developing Teams Apps is the Teams Toolkit. You can create Office Add-ins with the Teams Toolkit subject to the following restrictions:
 
 - Only Outlook Add-ins can be created at this time. We're working hard to enable support in Teams Toolkit for add-ins to other Office applications.
 - Add-ins created with Teams Toolkit use the unified Microsoft 365 manifest which is currently in preview. We encourage you to experiment with creating add-ins using the toolkit but don't use the unified manifest for production add-ins.
@@ -32,7 +32,7 @@ Install the prerelease version of Teams Toolkit into Visual Studio Code as descr
 1. Before you make changes to the project, verify that Outlook add-in sideloading from Visual Studio Code works. Use the following steps:
 
     <ol type="a">
-      <li>Ensure that your account in your Microsoft 365 developer tenancy is also an email account in desktop Outlook. If it isn't, follow the guidance in [Add an email account to Outlook](https://support.microsoft.com/office/add-an-email-account-to-outlook-e9da47c4-9b89-4b49-b945-a204aeea6726)</li>
+      <li>Ensure that your account in your Microsoft 365 developer tenancy is also an email account in desktop Outlook. If it isn't, follow the guidance in <a href="https://support.microsoft.com/office/add-an-email-account-to-outlook-e9da47c4-9b89-4b49-b945-a204aeea6726">Add an email account to Outlook</a></li>
       <li><i>Close Outlook desktop.</i></li>
       <li>In Visual Studio Code, open the Teams Toolkit.</li>
       <li>In the <b>ACCOUNTS</b> section, verify that you're signed into Microsoft 365.</li>
