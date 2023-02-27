@@ -7,7 +7,7 @@ ms.localizationpriority: high
 
 # Create Office Add-in projects with Teams Toolkit (preview)
 
-Extensions to the Microsoft 365 Platform are called "Teams Apps", even if the extension is for a part of Microsoft 365 outside of the Teams application itself. A primary tool for developing Teams Apps is the Teams Toolkit. You can create Office Add-ins with the Teams Toolkit subject to the following restrictions:
+Extensions to the Microsoft 365 Platform are now included under "Teams Apps". Even if the extension is fully outside of the Teams application itself, the Teams Toolkit has support for Office Add-ins. A primary tool for developing Teams Apps is the Teams Toolkit. You can create Office Add-ins with the Teams Toolkit, with the following restrictions:
 
 - Only Outlook Add-ins can be created at this time. We're working hard to enable support in Teams Toolkit for add-ins to other Office applications.
 - Add-ins created with Teams Toolkit use the unified Microsoft 365 manifest which is currently in preview. We encourage you to experiment with creating add-ins using the toolkit but don't use the unified manifest for production add-ins.
@@ -18,7 +18,7 @@ Install the prerelease version of Teams Toolkit into Visual Studio Code as descr
 
 1. Open Visual Studio Code and select the Teams Toolkit icon in the **Activity Bar**.
 
-    ![Screenshot showing the Teams Toolkit icon.](../images/teams-toolkit-icon.png)
+    ![The Teams Toolkit icon.](../images/teams-toolkit-icon.png)
 
 1. Select **Create a new app**.
 1. In the **Select an option** drop down, select **Start with an Outlook add-in**.
@@ -32,7 +32,7 @@ Install the prerelease version of Teams Toolkit into Visual Studio Code as descr
 1. In the **Workspace folder** dialog that opens, select the folder where you want to create the project.
 1. Give a name to the project (with no spaces) when prompted. Teams Toolkit will create the project with basic files and scaffolding. It will then open the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
 1. In the Visual Studio Code **TERMINAL** navigate to the root of the project and run `npm install`.
-1. Before you make changes to the project, verify that Outlook add-in sideloading from Visual Studio Code works. Use the following steps:
+1. Before you make changes to the project, verify that you can sideload your Outlook add-in sideloading from Visual Studio Code. Use the following steps:
 
     <ol type="a">
       <li>Ensure that your account in your Microsoft 365 developer tenancy is also an email account in desktop Outlook. If it isn't, follow the guidance in <a href="https://support.microsoft.com/office/add-an-email-account-to-outlook-e9da47c4-9b89-4b49-b945-a204aeea6726">Add an email account to Outlook</a>.</li>
