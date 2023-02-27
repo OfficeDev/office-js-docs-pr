@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Sideload Outlook add-ins for testing
 
-Sideload your Outlook add-in testing without having to first put it in an add-in catalog.
+Sideload your Outlook add-in for testing without having to first put it in an add-in catalog.
 
 > [!IMPORTANT]
 > If your Outlook add-in supports mobile, sideload the manifest using the instructions in this article for your Outlook client on the web, Windows, or Mac, then follow the guidance in the **Testing your add-ins on mobile** section of the [Add-ins for Outlook Mobile](outlook-mobile-addins.md#testing-your-add-ins-on-mobile) article.
