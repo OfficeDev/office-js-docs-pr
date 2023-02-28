@@ -34,7 +34,7 @@ Install the prerelease version of Teams Toolkit into Visual Studio Code as descr
 1. In the Visual Studio Code **TERMINAL** navigate to the root of the project and run `npm install`.
 1. Before you make changes to the project, verify that you can sideload your Outlook add-in sideloading from Visual Studio Code. Use the following steps:
     1. Ensure that your account in your Microsoft 365 developer tenancy is also an email account in desktop Outlook. If it isn't, follow the guidance in [Add an email account to Outlook](https://support.microsoft.com/office/add-an-email-account-to-outlook-e9da47c4-9b89-4b49-b945-a204aeea6726).
-    1. Close Outlook desktop.
+    1. **Close Outlook desktop**.
     1. In Visual Studio Code, open Teams Toolkit.
     1. In the **ACCOUNTS** section, verify that you're signed into Microsoft 365.
     1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** drop down menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press F5. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, Outlook desktop will open.
