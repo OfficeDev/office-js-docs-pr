@@ -32,7 +32,7 @@ Install the prerelease version of Teams Toolkit into Visual Studio Code as descr
 1. In the **Workspace folder** dialog that opens, select the folder where you want to create the project.
 1. Give a name to the project (with no spaces) when prompted. Teams Toolkit will create the project with basic files and scaffolding. It will then open the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
 1. In the Visual Studio Code **TERMINAL** navigate to the root of the project and run `npm install`.
-1. Before you make changes to the project, verify that you can sideload your Outlook add-in sideloading from Visual Studio Code. Use the following steps:
+1. Before you make changes to the project, verify that you can sideload your Outlook add-in from Visual Studio Code. Use the following steps:
     1. Ensure that your account in your Microsoft 365 developer tenancy is also an email account in desktop Outlook. If it isn't, follow the guidance in [Add an email account to Outlook](https://support.microsoft.com/office/add-an-email-account-to-outlook-e9da47c4-9b89-4b49-b945-a204aeea6726).
     1. **Close Outlook desktop**.
     1. In Visual Studio Code, open Teams Toolkit.
