@@ -135,7 +135,7 @@ Syntax: @helpurl *url*
 
 The provided *url* is displayed in Excel.
 
-In the following example, the `helpurl` is `www.contoso.com/weatherhelp`.
+In the following example, the `helpurl` is `http://www.contoso.com/weatherhelp`.
 
 ```js
 /**
