@@ -1,7 +1,7 @@
 ---
 title: Autogenerate JSON metadata for custom functions
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
-ms.date: 07/18/2022
+ms.date: 02/28/2023
 ms.localizationpriority: medium
 ---
 
@@ -135,13 +135,13 @@ Syntax: @helpurl *url*
 
 The provided *url* is displayed in Excel.
 
-In the following example, the `helpurl` is `www.contoso.com/weatherhelp`.
+In the following example, the `helpurl` is `http://www.contoso.com/weatherhelp`.
 
 ```js
 /**
  * A function which streams the temperature in a town you specify.
  * @customfunction getTemperature
- * @helpurl www.contoso.com/weatherhelp
+ * @helpurl http://www.contoso.com/weatherhelp
  * ...
  */
 ```
