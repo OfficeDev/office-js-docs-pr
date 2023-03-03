@@ -12,17 +12,24 @@ ms.localizationpriority: medium
 
 If you're building Office Add-ins to run in Word, you might already know that the Office JavaScript API (Office.js) offers several formats for reading and writing document content. These are called coercion types, and they include plain text, tables, HTML, and Office Open XML.
 
-So what are your options when you need to add rich content to a document, such as images, formatted tables, charts, or even just formatted text? Start with the APIs available through the [WordApi requirement sets](/javascript/api/requirement-sets/word/word-api-requirement-sets) to see if they provide what you need. For an example, see the [Insert formatted text](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) code snippet in [Script Lab](https://appsource.microsoft.com/product/office/wa104380862) on Word.
+So what are your options when you need to add rich content to a document, such as images, formatted tables, charts, or even just formatted text?
 
-If APIs aren't yet available, you can use HTML for inserting some types of rich content, such as pictures. Depending on your scenario, there can be drawbacks to HTML coercion, such as limitations in the formatting and positioning options available to your content.
+1. **Word JavaScript APIs.** Start with the APIs available through the [WordApi requirement sets](/javascript/api/requirement-sets/word/word-api-requirement-sets) to see if they provide what you need. For an example, see the [Insert formatted text](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) code snippet. You can try this and other snippets in the [Script Lab add-in](https://appsource.microsoft.com/product/office/wa104380862) on Word! To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
 
-Because Office Open XML is the language in which Word documents (such as .docx and .dotx) are written, you can insert virtually any type of content that a user can add to a Word document, with virtually any type of formatting the user can apply. Determining the Office Open XML markup you need to get it done is easier than you might think.
+1. **HTML coercion.** If APIs aren't yet available, you can use HTML for inserting some types of rich content, such as pictures. Depending on your scenario, there can be drawbacks to HTML coercion, such as limitations in the formatting and positioning options available to your content.
+
+1. **Office Open XML.** Because Office Open XML is the language in which Word documents (such as .docx and .dotx) are written, you can insert virtually any type of content that a user can add to a Word document, with virtually any type of formatting the user can apply. Determining the Office Open XML markup you need to get it done is easier than you might think.
 
 > [!NOTE]
 > Office Open XML is also the language behind PowerPoint and Excel (and, as of Office 2013, Visio) documents. However, currently, you can coerce content as Office Open XML only in Office Add-ins created for Word. For more information about Office Open XML, including the complete language reference documentation, see the [See also](#see-also) section.
 
-To begin, take a look at some of the content types you can insert using Office Open XML coercion.
+## Download the companion code sample
+
 Download the code sample [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml), which contains the Office Open XML markup and Office.js code required for inserting any of the following examples into Word.
+
+## Learn about content types
+
+To begin, take a look at some of the content types you can insert using Office Open XML coercion.
 
 > [!NOTE]
 > Throughout this article, the terms **content types** and **rich content** refer to the types of rich content you can insert into a Word document.
@@ -372,7 +379,7 @@ When you use content controls with your add-in, you can also greatly expand the 
 > [!NOTE]
 > Don't confuse XML data binding in Word with the ability to bind to a control via your add-in. These are completely separate features. However, you can include named content controls in the content you insert via your add-in using OOXML coercion and then use code in the add-in to bind to those controls.
 
-Also be aware that both XML data binding and Office.js can interact with custom XML parts in your app, so it's possible to integrate these powerful tools. To learn about working with custom XML parts in the Office JavaScript API, see the [Additional resources](#see-also) section of this topic.
+Also be aware that both XML data binding and Office.js can interact with custom XML parts in your app, so it's possible to integrate these powerful tools. To learn about working with custom XML parts in the Office JavaScript API, see the [See also](#see-also) section of this topic.
 
 Working with bindings in your Word add-in is covered in the next section of the topic. First, take a look at an example of the Office Open XML required for inserting a rich text content control that you can bind to using your add-in.
 
@@ -736,4 +743,9 @@ When using templates with your app, whether the add-in will be resident in the t
 
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
 - The complete language reference and related documentation on Open XML: [Standard ECMA-376: Office Open XML File Formats](https://www.ecma-international.org/publications/standards/Ecma-376.htm)
+- [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)
 - [Exploring the Office JavaScript API: Data Binding and Custom XML Parts](/archive/msdn-magazine/2013/april/microsoft-office-exploring-the-javascript-api-for-office-data-binding-and-custom-xml-parts)
+- Companion code sample: [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)
+- Other code samples referenced in this article:
+  - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)
+  - [Word-Add-in-JavaScript-AddPopulateBindings](https://github.com/OfficeDev/Word-Add-in-JavaScript-AddPopulateBindings)
