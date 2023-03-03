@@ -35,4 +35,4 @@ These government clouds are essentially disconnected from the public internet en
 
 ## Office 365 operated by 21Vianet
 
-To provide Microsoft 365 cloud services in China that conform to local laws, [21Vianet operates and manages an Office 365 service powered by licensed Microsoft technologies](/microsoft-365/admin/services-in-china/services-in-china?view=o365-21vianet). Add-ins developed for use within this cloud environment should use corresponding CDN. Use `https://appsforoffice.cdn.partner.office365.cn/appsforoffice/lib/1/hosted/office.js` instead of the [standard CDN reference](../develop/understanding-the-javascript-api-for-office.md#accessing-the-office-javascript-api-library). This ensures continued compliance and provides better add-in performance.
+[!INCLUDE [Information about the China-specific CDN](../includes/21Vianet-CDN.md)]
