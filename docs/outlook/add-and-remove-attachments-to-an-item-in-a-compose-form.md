@@ -1,7 +1,7 @@
 ---
 title: Add and remove attachments in an Outlook add-in
 description: Use various attachment APIs to manage the files or Outlook items attached to the item the user is composing.
-ms.date: 08/03/2022
+ms.date: 02/27/2023
 ms.localizationpriority: medium
 ---
 
@@ -13,15 +13,15 @@ The Office JavaScript API provides several APIs you can use to manage an item's 
 
 You can attach a file or Outlook item to a compose form by using the method that's appropriate for the type of attachment.
 
-- [addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach a file
-- [addFileAttachmentFromBase64Async](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach a file using its base64 string
-- [addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach an Outlook item
+- [addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach a file.
+- [addFileAttachmentFromBase64Async](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach a file using its Base64-encoded string.
+- [addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach an Outlook item.
 
 These are asynchronous methods, which means execution can go on without waiting for the action to complete. Depending on the original location and size of the attachment being added, the asynchronous call may take a while to complete.
 
 If there are tasks that depend on the action to complete, you should carry out those tasks in a callback function. This callback function is optional and is invoked when the attachment upload has completed. The callback function takes an [AsyncResult](/javascript/api/office/office.asyncresult) object as an output parameter that provides any status, error, and returned value from adding the attachment. If the callback requires any extra parameters, you can specify them in the optional `options.asyncContext` parameter. `options.asyncContext` can be of any type that your callback function expects.
 
-For example, you can define `options.asyncContext` as a JSON object that contains one or more key-value pairs. You can find more examples about passing optional parameters to asynchronous methods in the Office Add-ins platform in [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods). The following example shows how to use the `asyncContext` parameter to pass 2 arguments to a callback function.
+For example, you can define `options.asyncContext` as a JSON object that contains one or more key-value pairs. You can find more examples about passing optional parameters to asynchronous methods in the Office Add-ins platform in [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods). The following example shows how to use the `asyncContext` parameter to pass two arguments to a callback function.
 
 ```js
 const options = { asyncContext: { var1: 1, var2: 2}};
@@ -34,9 +34,12 @@ You can check for success or error of an asynchronous method call in the callbac
 > [!NOTE]
 > The attachment ID is valid only within the same session and isn't guaranteed to map to the same attachment across sessions. Examples of when a session is over include when the user closes the add-in, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.
 
+> [!TIP]
+> There are limits to the files or Outlook items you can attach to a mail item, such as the number of attachments and their size. For further guidance, see [Limits for JavaScript API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md#limits-for-javascript-api).
+
 ### Attach a file
 
-You can attach a file to a message or appointment in a compose form by using the `addFileAttachmentAsync` method and specifying the URI of the file. You can also use the `addFileAttachmentFromBase64Async` method but specify the base64 string as input. If the file is protected, you can include an appropriate identity or authentication token as a URI query string parameter. Exchange will make a call to the URI to get the attachment, and the web service which protects the file will need to use the token as a means of authentication.
+You can attach a file to a message or appointment in a compose form by using the `addFileAttachmentAsync` method and specifying the URI of the file. You can also use the `addFileAttachmentFromBase64Async` method, specifying the Base64-encoded string as input. If the file is protected, you can include an appropriate identity or authentication token as a URI query string parameter. Exchange will make a call to the URI to get the attachment, and the web service which protects the file will need to use the token as a means of authentication.
 
 The following JavaScript example is a compose add-in that attaches a file, picture.png, from a web server to the message or appointment being composed. The callback function takes `asyncResult` as a parameter, checks for the result status, and gets the attachment ID if the method succeeds.
 
@@ -74,7 +77,7 @@ function write(message){
 }
 ```
 
-To add an inline base64 image to the body of a message or appointment being composed, you must first get the current item body using the `Office.context.mailbox.item.body.getAsync` method before inserting the image using the `addFileAttachmentFromBase64Async` method. Otherwise, the image will not render in the body once it's inserted. For guidance, see the following JavaScript example, which adds an inline base64 image to the beginning of an item body.
+To add an inline base64 image to the body of a message or appointment being composed, you must first get the current item body using the `Office.context.mailbox.item.body.getAsync` method before inserting the image using the `addFileAttachmentFromBase64Async` method. Otherwise, the image will not render in the body once it's inserted. For guidance, see the following JavaScript example, which adds an inline Base64 image to the beginning of an item body.
 
 ```js
 const mailItem = Office.context.mailbox.item;
@@ -84,7 +87,7 @@ const base64String =
 // Get the current body of the message or appointment.
 mailItem.body.getAsync(Office.CoercionType.Html, (bodyResult) => {
   if (bodyResult.status === Office.AsyncResultStatus.Succeeded) {
-    // Insert the base64 image to the beginning of the body.
+    // Insert the Base64 image to the beginning of the body.
     const options = { isInline: true, asyncContext: bodyResult.value };
     mailItem.addFileAttachmentFromBase64Async(base64String, "sample.png", options, (attachResult) => {
       if (attachResult.status === Office.AsyncResultStatus.Succeeded) {
@@ -92,7 +95,7 @@ mailItem.body.getAsync(Office.CoercionType.Html, (bodyResult) => {
         body = body.replace("<p class=MsoNormal>", `<p class=MsoNormal><img src="cid:sample.png">`);
         mailItem.body.setAsync(body, { coercionType: Office.CoercionType.Html }, (setResult) => {
           if (setResult.status === Office.AsyncResultStatus.Succeeded) {
-            console.log("Inline base64 image added to the body.");
+            console.log("Inline Base64 image added to the body.");
           } else {
             console.log(setResult.error.message);
           }
@@ -171,7 +174,7 @@ function callback(result) {
 }
 
 function handleAttachmentsCallback(result) {
-  // Parse string to be a url, an .eml file, a base64-encoded string, or an .icalendar file.
+  // Parse string to be a url, an .eml file, a Base64-encoded string, or an .icalendar file.
   switch (result.value.format) {
     case Office.MailboxEnums.AttachmentContentFormat.Base64:
       // Handle file attachment.
@@ -227,3 +230,4 @@ function removeAttachment(attachmentId) {
 
 - [Create Outlook add-ins for compose forms](compose-scenario.md)
 - [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)
+- [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
