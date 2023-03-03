@@ -52,3 +52,4 @@ New JavaScript APIs are first introduced in "preview" and later become part of a
 
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
+- [Guidance for deploying Office Add-ins on government clouds](../publish/government-cloud-guidance.md)
