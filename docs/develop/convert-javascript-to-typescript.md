@@ -71,7 +71,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
 ### Update the JavaScript files
 
-Change your JavaScript files (.js) to TypeScript files (.ts). Then, make the necessary changes for them to compile. This section walks through the default files in a new project.
+Change your JavaScript files (**.js**) to TypeScript files (**.ts**). Then, make the necessary changes for them to compile. This section walks through the default files in a new project.
 
 1. Find the **Home.js** file and rename it to **Home.ts**.
 
