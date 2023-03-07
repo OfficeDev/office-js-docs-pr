@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Automatically update your signature when switching between Exchange accounts (preview)
 
-Applying the correct signature to messages when using multiple Exchange accounts is now made easier with the addition of the `OnMessageFromChanged` and `OnAppointmentFromChanged` event to the [event-based activation](autolaunch.md) feature. The `OnMessageFromChanged` event occurs when the account in the **From** field of a message being composed is changed, while the `OnAppointmentFromChanged` event occurs when the organizer of a meeting being composed is changed. These events further extend the capabilities of signature add-ins and allow them to:
+Applying the correct signature to messages when using multiple Exchange accounts is now made easier with the addition of the `OnMessageFromChanged` and `OnAppointmentFromChanged` events to the [event-based activation](autolaunch.md) feature. The `OnMessageFromChanged` event occurs when the account in the **From** field of a message being composed is changed, while the `OnAppointmentFromChanged` event occurs when the organizer of a meeting being composed is changed. These events further extend the capabilities of signature add-ins and allow them to:
 
 - Provide users with the convenience to apply custom signatures for each of their accounts.
 - Enable mailbox delegates to more accurately and efficiently manage outgoing messages and meeting requests from multiple mailboxes.
@@ -302,7 +302,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     > [!NOTE]
     > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
 
-1. Create a new message. If you don't have a default Outlook signature configured, the add-in adds one to the newly created message.
+1. In your preferred Outlook client, create a new message. If you don't have a default Outlook signature configured, the add-in adds one to the newly created message.
 
    :::image type="content" source="../images/OnMessageFromChanged_create_signature.png" alt-text="A sample signature added to a newly composed message when a default Outlook signature isn't configured on the account.":::
 
@@ -327,14 +327,12 @@ Because the `OnMessageFromChanged` and `OnAppointmentFromChanged` events are sup
 In addition to these characteristics, the following aspects also apply when an add-in activates on these events.
 
 - The `OnMessageFromChanged` event is only supported in message compose mode, while the `OnAppointmentFromChanged` event is only supported in appointment compose mode.
-- Only the `OnMessageFromChanged` event is supported in Outlook on Windows.
-- The `OnMessageFromChanged` and `OnAppointmentFromChanged` events only support Exchange accounts. In messages being composed, the Exchange account is selected from the **From** field dropdown list or manually entered in the field. In appointments being composed, the Exchange account is selected from the appointment organizer field dropdown list.
-  
-  Non-Exchange accounts aren't supported. If a user switches to a non-supported account in the **From** field of a message, the Outlook client automatically clears out the signature set by the previously selected account.
+- In Outlook on Windows, only the `OnMessageFromChanged` event is supported.
+- The `OnMessageFromChanged` and `OnAppointmentFromChanged` events only support Exchange accounts. In messages being composed, the Exchange account is selected from the **From** field dropdown list or manually entered in the field. In appointments being composed, the Exchange account is selected from the organizer field dropdown list. If a user switches to a non-Exchange account in the **From** or organizer field, the Outlook client automatically clears out the signature set by the previously selected account.
 - Delegate and shared mailbox scenarios are supported.
-- When switching to another Exchange account in the **From** or appointment organizer field, the add-ins for the previously selected account, if any, are terminated, and the add-ins associated with the newly selected account are loaded before the `OnMessageFromChanged` or `OnAppointmentFromChanged` event is initiated.
-- Email account aliases are supported. When an alias for the current account is selected in the **From** or appointment organizer field, the `OnMessageFromChanged` or `OnAppointmentFromChanged` event occurs without reloading the account's add-ins.
-- When the **From** or appointment organizer field dropdown list is opened by mistake or the same account that appears in the **From** or appointment organizer field is reselected, the `OnMessageFromChanged` or `OnAppointmentFromChanged` event occurs, but the account's add-ins aren't terminated or reloaded.
+- When switching to another Exchange account in the **From** or organizer field, the add-ins for the previously selected account, if any, are terminated, and the add-ins associated with the newly selected account are loaded before the `OnMessageFromChanged` or `OnAppointmentFromChanged` event is initiated.
+- Email account aliases are supported. When an alias for the current account is selected in the **From** or organizer field, the `OnMessageFromChanged` or `OnAppointmentFromChanged` event occurs without reloading the account's add-ins.
+- When the **From** or organizer field dropdown list is opened by mistake or the same account that appears in the **From** or organizer field is reselected, the `OnMessageFromChanged` or `OnAppointmentFromChanged` event occurs, but the account's add-ins aren't terminated or reloaded.
 
 ## See also
 
