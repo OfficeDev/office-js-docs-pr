@@ -11,9 +11,9 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for March 8, 2023 call
 
-The agenda for February's Office Add-ins community call is the following:
-Yun Wang will be providing us with an update on Word extensibility.  
+The agenda for March's Office Add-ins community call is the following:
 
+Yun Wang will be providing us with an update on Word extensibility.
 
 ## Previous calls
 
