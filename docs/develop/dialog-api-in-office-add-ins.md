@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: Learn the basics of creating a dialog box in an Office Add-in.
-ms.date: 07/18/2022
+ms.date: 03/06/2023
 ms.localizationpriority: medium
 ---
 
@@ -43,7 +43,8 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 >
-> - The URL uses the HTTP**S** protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
+> - To open a dialog box using the `displayDialogAsync` method, the Office JavaScript API library must first be loaded in the host page. To learn more, see [Initialize your Office Add-in](initialize-add-in.md).
+> - The URL uses the HTTPS protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
 > - The dialog box's domain is the same as the domain of the host page, which can be the page in a task pane or the [function file](/javascript/api/manifest/functionfile) of an add-in command. This is required: the page, controller method, or other resource that is passed to the `displayDialogAsync` method must be in the same domain as the host page.
 
 > [!IMPORTANT]
@@ -82,7 +83,7 @@ The default value is `false`, which is the same as omitting the property entirel
 > [!NOTE]
 >
 > - For clarity, in this section we call the message target the host *page*, but strictly speaking the messages are going to the [Runtime](../testing/runtimes.md) in the task pane (or the runtime that is hosting a [function file](/javascript/api/manifest/functionfile)). The distinction is only significant in the case of cross-domain messaging. For more information, see [Cross-domain messaging to the host runtime](#cross-domain-messaging-to-the-host-runtime).
-> - The dialog box can't communicate with the host page in the task pane unless the Office JavaScript API library is loaded in the page. (Like any page that uses the Office JavaScript API library, script for the page must initialize the add-in. For details, see [Initialize your Office Add-in](initialize-add-in.md).)
+> - The dialog box can't communicate with the host page in the task pane unless the Office JavaScript API library is first loaded in the page. (Like any page that uses the Office JavaScript API library, the script for the page must initialize the add-in. For details, see [Initialize your Office Add-in](initialize-add-in.md).)
 
 Code in the dialog box uses the [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) function to send a string message to the host page. The string can be a word, sentence, XML blob, stringified JSON, or anything else that can be serialized to a string or cast to a string. The following is an example.
 
