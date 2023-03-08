@@ -2,6 +2,7 @@
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
 ms.date: 02/24/2023
+ms.topic: glossary
 ms.localizationpriority: medium
 ---
 
