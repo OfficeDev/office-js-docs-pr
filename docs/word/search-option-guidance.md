@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Use search options in your Word add-in to find text
 
-Add-ins frequently need to act based on the text of a document. A search method is exposed by every content control (this includes [Body](/javascript/api/word/word.body), [Paragraph](/javascript/api/word/word.paragraph), [Range](/javascript/api/word/word.range), [Table](/javascript/api/word/word.table), [TableRow](/javascript/api/word/word.tablerow), and the base [ContentControl](/javascript/api/word/word.contentcontrol) object). This method takes in a string (or wildcard expression) representing the text you are searching for and a [SearchOptions](/javascript/api/word/word.searchoptions) object. It returns a collection of ranges which match the search text.
+Add-ins frequently need to act based on the text of a document. A search method is exposed by every content control (this includes [Body](/javascript/api/word/word.body#word-word-body-search-member(1)), [Paragraph](/javascript/api/word/word.paragraph#word-word-paragraph-search-member(1)), [Range](/javascript/api/word/word.range#word-word-range-search-member(1)), [Table](/javascript/api/word/word.table#word-word-table-search-member(1)), [TableRow](/javascript/api/word/word.tablerow#word-word-tablerow-search-member(1)), and the base [ContentControl](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-search-member(1)) object). This method takes in a string (or wildcard expression) representing the text you are searching for and a [SearchOptions](/javascript/api/word/word.searchoptions) object. It returns a collection of ranges which match the search text.
 
 ## Search options
 
@@ -162,11 +162,15 @@ await Word.run(async (context) => {
 });
 ```
 
+## Try the code examples in Script Lab
+
+Get the [Script Lab add-in](https://appsource.microsoft.com/product/office/wa104380862) and try out the code examples provided in this article. To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
+
 ## See also
 
 More information can be found in the following:
 
 - [Word JavaScript Reference API](../reference/overview/word-add-ins-reference-overview.md)
-- [Script Lab](../overview/explore-with-script-lab.md) Word samples
+- Related Word code samples available in [Script Lab](../overview/explore-with-script-lab.md):
   - [Search](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/prod/samples/word/25-paragraph/search.yaml)
   - [Get word count](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/prod/samples/word/25-paragraph/get-word-count.yaml)
