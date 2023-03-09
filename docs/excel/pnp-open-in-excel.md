@@ -2,6 +2,7 @@
 title: Create an Excel spreadsheet from your web page, populate it with data, and embed your Office Add-in
 description: Create an Excel spreadsheet from your web page, populate it with data, and embed your Office Add-in.
 ms.date: 01/23/2023
+ms.topic: sample
 ms.localizationpriority: medium
 ---
 
