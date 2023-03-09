@@ -21,17 +21,29 @@ The following sections walk you through how to develop an event-based add-in tha
 > [!IMPORTANT]
 > The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
-## Supported clients
+## Supported clients and platforms
 
-The following table lists the clients that support the `OnMessageFromChanged` and `OnAppointmentFromChanged` events.
+The following tables list client-server combinations that support the `OnMessageFromChanged` and `OnAppointmentFromChanged` events. Select the tab for the applicable event.
 
-|Client|`OnMessageFromChanged` event|`OnAppointmentFromChanged` event|
-|-----|-----|-----|
-|**Windows**<br>Version 2212 (Build 15919.10000) or later|Supported|Not applicable|
-|**Mac**|Not applicable|Not applicable|
-|**Web browser (modern UI)**|Supported|Supported|
-|**iOS**|Not applicable|Not applicable|
-|**Android**|Not applicable|Not applicable|
+# [OnMessageFromChanged event](#tab/message)
+
+|Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
+|-----|-----|-----|-----|
+|**Windows**<br>Version 2212 (Build 15919.10000) or later|Supported|Supported|Supported|
+|**Mac**|Not applicable|Not applicable|Not applicable|
+|**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
+|**iOS**|Not applicable|Not applicable|Not applicable|
+|**Android**|Not applicable|Not applicable|Not applicable|
+
+# [OnAppointmentFromChanged event](#tab/appointment)
+
+|Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
+|-----|-----|-----|-----|
+|**Windows**<br>Version 2212 (Build 15919.10000) or later|Not applicable|Not applicable|Not applicable|
+|**Mac**|Not applicable|Not applicable|Not applicable|
+|**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
+|**iOS**|Not applicable|Not applicable|Not applicable|
+|**Android**|Not applicable|Not applicable|Not applicable|
 
 ## Prerequisites
 
