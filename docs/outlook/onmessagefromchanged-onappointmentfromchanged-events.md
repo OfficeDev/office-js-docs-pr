@@ -45,6 +45,8 @@ The following tables list client-server combinations that support the `OnMessage
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 
+---
+
 ## Prerequisites
 
 To preview the `OnMessageFromChanged` and `OnAppointmentFromChanged` events, set up your preferred client accordingly.
