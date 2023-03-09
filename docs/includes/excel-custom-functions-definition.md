@@ -1,0 +1,2 @@
+> [!NOTE]
+> **Custom function** is a general term that is interchangeable with **user-defined function**. Both terms apply to VBA, COM, and Office.js add-ins. The Office Add-ins documentation uses the term **custom function** when referring to custom functions that use Office JavaScript APIs.
