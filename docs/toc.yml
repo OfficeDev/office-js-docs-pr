@@ -745,6 +745,8 @@ items:
         href: outlook/get-or-set-the-time-of-an-appointment.md
       - name: Get and set location
         href: outlook/get-or-set-the-location-of-an-appointment.md
+      - name: Manage sensitivity labels
+        href: outlook/sensitivity-label.md
     - name: Privacy and security
       items:
       - name: Overview
