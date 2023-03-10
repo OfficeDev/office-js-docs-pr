@@ -431,7 +431,7 @@ async function insertTextIntoRange() {
 
         const doc = context.document;
         const originalRange = doc.getSelection();
-        originalRange.insertText(" (C2R)", "End");
+        originalRange.insertText(" (M365)", "End");
 
         originalRange.load("text");
         await context.sync();
