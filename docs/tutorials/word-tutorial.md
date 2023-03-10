@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 01/13/2022
+ms.date: 03/10/2023
 ms.prod: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
 ms.localizationpriority: high
@@ -36,7 +36,7 @@ In this tutorial, you'll create a Word task pane add-in that:
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `Javascript`
+- **Choose a script type:** `JavaScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
@@ -89,7 +89,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 1. Add the following function to the end of the file. Note:
 
-   - Your Word.js business logic will be added to the function that is passed to `Word.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.
+   - Your Word.js business logic will be added to the function that is passed to `Word.run`. This logic does not execute immediately. Instead, it's added to a queue of pending commands.
 
    - The `context.sync` method sends all queued commands to Word for execution.
 
@@ -141,7 +141,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     > npm run dev-server
     > ```
 
-    - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
+    - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it isn't already running) and opens Word with your add-in loaded.
 
         ```command&nbsp;line
         npm start
@@ -151,7 +151,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
         [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-1. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In Word, if the "My Office Add-in" task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Screenshot displaying the Show Taskpane button highlighted in Word.](../images/word-quickstart-addin-2b.png)
 
@@ -374,7 +374,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
 1. Within the `insertTextIntoRange()` function, replace `TODO1` with the following code. Note:
 
-   - The function is intended to insert the abbreviation ["(C2R)"] into the end of the Range whose text is "Click-to-Run". It makes a simplifying assumption that the string is present and the user has selected it.
+   - The function is intended to insert the abbreviation ["(M365)"] into the end of the Range whose text is "Microsoft 365". It makes a simplifying assumption that the string is present and the user has selected it.
 
    - The first parameter of the `Range.insertText` method is the string to insert into the `Range` object.
 
@@ -387,7 +387,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
     ```js
     const doc = context.document;
     const originalRange = doc.getSelection();
-    originalRange.insertText(" (C2R)", "End");
+    originalRange.insertText(" (M365)", "End");
     ```
 
 1. We'll skip over `TODO2` until the next section. Within the `insertTextIntoRange()` function, replace `TODO3` with the following code. This code is similar to the code you created in the first stage of the tutorial, except that now you are inserting a new paragraph at the end of the document instead of at the start. This new paragraph will demonstrate that the new text is now part of the original range.
@@ -398,7 +398,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
 
 ### Add code to fetch document properties into the task pane's script objects
 
-In all previous functions in this series of tutorials, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method which sends the queued commands to the document to be executed. But the code you added in the last step calls the `originalRange.text` property, and this is a significant difference from the earlier functions you wrote, because the `originalRange` object is only a proxy object that exists in your task pane's script. It doesn't know what the actual text of the range in the document is, so its `text` property can't have a real value. It is necessary to first fetch the text value of the range from the document and use it to set the value of `originalRange.text`. Only then can `originalRange.text` be called without causing an exception to be thrown. This fetching process has three steps.
+In all previous functions in this tutorial, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method which sends the queued commands to the document to be executed. But the code you added in the last step calls the `originalRange.text` property, and this is a significant difference from the earlier functions you wrote, because the `originalRange` object is only a proxy object that exists in your task pane's script. It doesn't know what the actual text of the range in the document is, so its `text` property can't have a real value. It's necessary to first fetch the text value of the range from the document and use it to set the value of `originalRange.text`. Only then can `originalRange.text` be called without causing an exception to be thrown. This fetching process has three steps.
 
 1. Queue a command to load (that is, fetch) the properties that your code needs to read.
 
@@ -581,11 +581,11 @@ async function insertTextIntoRange() {
 
 1. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
 
-1. In the task pane, choose the **Insert Paragraph** button to ensure that there is a paragraph at the start of the document.
+1. In the task pane, choose the **Insert Paragraph** button to ensure that there's a paragraph at the start of the document.
 
-1. Within the document, select the phrase "Click-to-Run". *Be careful not to include the preceding space or following comma in the selection.*
+1. Within the document, select the phrase "Microsoft 365 subscription". *Be careful not to include the preceding space or following comma in the selection.*
 
-1. Choose the **Insert Abbreviation** button. Note that " (C2R)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.
+1. Choose the **Insert Abbreviation** button. Note that " (M365)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.
 
 1. Within the document, select the phrase "Microsoft 365". *Be careful not to include the preceding or following space in the selection.*
 
@@ -607,7 +607,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. In the root of the project, create a new file named **base64Image.js**.
 
-1. Open the file **base64Image.js** and add the following code to specify the base64-encoded string that represents an image.
+1. Open the file **base64Image.js** and add the following code to specify the Base64-encoded string that represents an image.
 
     ```js
     export const base64Image =
@@ -657,7 +657,7 @@ Complete the following steps to define the image that you'll insert into the doc
     }
     ```
 
-1. Within the `insertImage()` function, replace `TODO1` with the following code. Note that this line inserts the base 64 encoded image at the end of the document. (The `Paragraph` object also has an `insertInlinePictureFromBase64` method and other `insert*` methods. See the following insertHTML section for an example.)
+1. Within the `insertImage()` function, replace `TODO1` with the following code. Note that this line inserts the Base64-encoded image at the end of the document. (The `Paragraph` object also has an `insertInlinePictureFromBase64` method and other `insert*` methods. See the following insertHTML section for an example.)
 
     ```js
     context.document.body.insertInlinePictureFromBase64(base64Image, "End");
@@ -704,7 +704,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
    - The first line adds a blank paragraph to the end of the document.
 
-   - The second line inserts a string of HTML at the end of the paragraph; specifically two paragraphs, one formatted with Verdana font, the other with the default styling of the Word document. (As you saw in the `insertImage` method earlier, the `context.document.body` object also has the `insert*` methods.)
+   - The second line inserts a string of HTML at the end of the paragraph; specifically two paragraphs, one formatted with the Verdana font, the other with the default styling of the Word document. (As you saw in the `insertImage` method earlier, the `context.document.body` object also has the `insert*` methods.)
 
     ```js
     const blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
@@ -736,7 +736,7 @@ Complete the following steps to define the image that you'll insert into the doc
         await Word.run(async (context) => {
 
             // TODO1: Queue commands to get a reference to the paragraph
-            //        that will proceed the table.
+            //        that will precede the table.
 
             // TODO2: Queue commands to create a table and populate it with data.
 
@@ -788,7 +788,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. Choose the **Insert Image** button and note that an image is inserted at the end of the document.
 
-1. Choose the **Insert HTML** button and note that two paragraphs are inserted at the end of the document, and that the first one has Verdana font.
+1. Choose the **Insert HTML** button and note that two paragraphs are inserted at the end of the document, and that the first one has the Verdana font.
 
 1. Choose the **Insert Table** button and note that a table is inserted after the second paragraph.
 
@@ -916,7 +916,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 1. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
 
-1. In the task pane, choose the **Insert Paragraph** button to ensure that there is a paragraph with "Microsoft 365" at the top of the document.
+1. In the task pane, choose the **Insert Paragraph** button to ensure that there's a paragraph with "Microsoft 365" at the top of the document.
 
 1. In the document, select the text "Microsoft 365" and then choose the **Create Content Control** button. Note that the phrase is wrapped in tags labelled "Service Name".
 
