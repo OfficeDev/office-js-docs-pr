@@ -49,13 +49,12 @@ Follow these steps for a new or existing project to configure it to use a shared
     <DefaultSettings>
     ```
 
-    > [!NOTE]
-    > Don't add the `SharedRuntime` requirement set to the manifest for a Word add-in. It will cause an error when loading the add-in which is a known issue at this time.
-
 1. Find the **\<VersionOverrides\>** section and add the following **\<Runtimes\>** section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
 
     > [!IMPORTANT]
-    > The **\<Runtimes\>** section must be entered after the **\<Host\>** element in the exact order shown in the following XML.
+    > The shared runtime won't load if the `resid` uses different values in the manifest. If you change the value to something other than **Taskpane.Url**, be sure to also change the value in all locations shown in the following steps in this article.
+    >
+    > Also, the **\<Runtimes\>** section must be entered after the **\<Host\>** element in the exact order shown in the following XML.
 
    ```xml
    <VersionOverrides ...>
@@ -182,7 +181,7 @@ When you add the **\<Runtime\>** element, you also specify a lifetime with a val
 
 ```xml
 <Runtimes>
-  <Runtime resid="ContosoAddin.Url" lifetime="long" />
+  <Runtime resid="Taskpane.Url" lifetime="long" />
 </Runtimes>
 ```
 

@@ -1,7 +1,6 @@
 ---
 title: AppSource listing options for your event-based Outlook add-in
 description: Learn about the AppSource listing options available for your Outlook add-in that implements event-based activation.
-ms.topic: article
 ms.date: 01/20/2023
 ms.localizationpriority: medium
 ---

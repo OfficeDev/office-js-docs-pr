@@ -1,18 +1,17 @@
 ---
 title: Automatically update your signature when switching between Exchange accounts (preview)
-description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged event in your event-based activation Outlook add-in.
-ms.topic: article
-ms.date: 12/20/2022
+description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
+ms.date: 03/06/2023
 ms.localizationpriority: medium
 ---
 
 # Automatically update your signature when switching between Exchange accounts (preview)
 
-Applying the correct signature to messages when using multiple Exchange accounts is now made easier with the addition of the `OnMessageFromChanged` event to the [event-based activation](autolaunch.md) feature. The `OnMessageFromChanged` event allows your add-in to detect when the account in the **From** field of a message being composed is changed. This event further extends the capabilities of signature add-ins and allows them to:
+Applying the correct signature to messages when using multiple Exchange accounts is now made easier with the addition of the `OnMessageFromChanged` and `OnAppointmentFromChanged` events to the [event-based activation](autolaunch.md) feature. The `OnMessageFromChanged` event occurs when the account in the **From** field of a message being composed is changed, while the `OnAppointmentFromChanged` event occurs when the organizer of a meeting being composed is changed. These events further extend the capabilities of signature add-ins and allow them to:
 
 - Provide users with the convenience to apply custom signatures for each of their accounts.
-- Enable mailbox delegates to more accurately and efficiently manage outgoing messages from multiple mailboxes.
-- Ensure that users' messages meet their organization's communication and marketing policies.
+- Enable mailbox delegates to more accurately and efficiently manage outgoing messages and meeting requests from multiple mailboxes.
+- Ensure that users' messages and appointments meet their organization's communication and marketing policies.
 
 The following sections walk you through how to develop an event-based add-in that handles the `OnMessageFromChanged` event to automatically update a message's signature when the mail account in the **From** field is changed.
 
@@ -20,23 +19,40 @@ The following sections walk you through how to develop an event-based add-in tha
 > Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 > [!IMPORTANT]
-> The `OnMessageFromChanged` event isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
 ## Supported clients and platforms
 
-The following table lists client-server combinations that support the `OnMessageFromChanged` event.
+The following tables list client-server combinations that support the `OnMessageFromChanged` and `OnAppointmentFromChanged` events. Select the tab for the applicable event.
 
-|Client|Exchange Online|
-|-----|-----|
-|**Windows**<br>Version 2212 (Build 15919.10000) or later|Yes|
-|**Mac**|Not applicable|
-|**Web browser (modern UI)**|Not applicable|
-|**iOS**|Not applicable|
-|**Android**|Not applicable|
+# [OnMessageFromChanged event](#tab/message)
+
+|Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
+|-----|-----|-----|-----|
+|**Windows**<br>Version 2212 (Build 15919.10000) or later|Supported|Supported|Supported|
+|**Mac**|Not applicable|Not applicable|Not applicable|
+|**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
+|**iOS**|Not applicable|Not applicable|Not applicable|
+|**Android**|Not applicable|Not applicable|Not applicable|
+
+# [OnAppointmentFromChanged event](#tab/appointment)
+
+|Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
+|-----|-----|-----|-----|
+|**Windows**<br>Version 2212 (Build 15919.10000) or later|Not applicable|Not applicable|Not applicable|
+|**Mac**|Not applicable|Not applicable|Not applicable|
+|**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
+|**iOS**|Not applicable|Not applicable|Not applicable|
+|**Android**|Not applicable|Not applicable|Not applicable|
+
+---
 
 ## Prerequisites
 
-To test the `OnMessageFromChanged` event while it's in preview, install Outlook on Windows, starting with Version 2212 (Build 15919.10000). Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
+To preview the `OnMessageFromChanged` and `OnAppointmentFromChanged` events, set up your preferred client accordingly.
+
+- For Outlook on Windows, install Version 2212 (Build 15919.10000) or later. Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
+- For Outlook on the web, ensure that the Targeted release option is set up on your Microsoft 365 tenant. To learn more, see the "Targeted release" section of [Set up the Standard or Targeted release options](/microsoft-365/admin/manage/release-options-in-office-365#targeted-release).
 
 To test the walkthrough, you must also have at least two Exchange accounts.
 
@@ -48,7 +64,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 To enable the add-in to activate when the `OnMessageFromChanged` event occurs, the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point must be configured in the `VersionOverridesV1_1` node of the manifest.
 
-In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event is also configured in the manifest, so that a signature can be added to a message being composed if a default Outlook signature isn't already configured on the current account.
+In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event is also configured in the manifest, so that a signature is added to a message being composed if a default Outlook signature isn't already configured on the current account.
 
 1. In your code editor, open the quick start project.
 
@@ -257,10 +273,11 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 
 1. From the **./src/commands** folder, open **commands.html**.
 
-1. Replace the existing **script** tag with the following reference to the beta library on the content delivery network (CDN).
+1. Replace the existing **script** tag with the following code.
 
    ```html
    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
+   <script type="text/javascript" src="../launchevent/launchevent.js"></script>
    ```
 
 1. Save your changes.
@@ -299,7 +316,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     > [!NOTE]
     > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
 
-1. In Outlook on Windows, create a new message. If you don't have a default Outlook signature configured, the add-in adds one to the newly created message.
+1. In your preferred Outlook client, create a new message. If you don't have a default Outlook signature configured, the add-in adds one to the newly created message.
 
    :::image type="content" source="../images/OnMessageFromChanged_create_signature.png" alt-text="A sample signature added to a newly composed message when a default Outlook signature isn't configured on the account.":::
 
@@ -315,20 +332,22 @@ For guidance on how to troubleshoot your event-based activation add-in, see the 
 
 ## Deploy to users
 
-Similar to other event-based add-ins, add-ins that use the `OnMessageFromChanged` event must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
+Similar to other event-based add-ins, add-ins that use the `OnMessageFromChanged` and `OnAppointmentFromChanged` events must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
 
 ## Event behavior and limitations
 
-Because the `OnMessageFromChanged` event is supported through the event-based activation feature, the same behavior and limitations apply to add-ins that activate as a result of this event. For a detailed description, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
+Because the `OnMessageFromChanged` and `OnAppointmentFromChanged` events are supported through the event-based activation feature, the same behavior and limitations apply to add-ins that activate as a result of this event. For a detailed description, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
 
-In addition to these characteristics, the following aspects also apply when an add-in activates on the `OnMessageFromChanged` event.
+In addition to these characteristics, the following aspects also apply when an add-in activates on these events.
 
-- The `OnMessageFromChanged` event is only supported in message compose mode.
-- The `OnMessageFromChanged` event only supports Exchange accounts. The Exchange account can be selected from the **From** field dropdown or manually entered in the field. Non-Exchange accounts aren't supported. If a user switches to a non-supported account in the **From** field, the Outlook client automatically clears out the signature set by the previously selected account.
+- The `OnMessageFromChanged` event is only supported in message compose mode, while the `OnAppointmentFromChanged` event is only supported in appointment compose mode.
+- In Outlook on Windows, only the `OnMessageFromChanged` event is supported.
+- The `OnMessageFromChanged` and `OnAppointmentFromChanged` events only support Exchange accounts. In messages being composed, the Exchange account is selected from the **From** field dropdown list or manually entered in the field. In appointments being composed, the Exchange account is selected from the organizer field dropdown list. If a user switches to a non-Exchange account in the **From** or organizer field, the Outlook client automatically clears out the signature set by the previously selected account.
 - Delegate and shared mailbox scenarios are supported.
-- When switching to an Exchange account in the **From** field, the add-ins for the previously selected account, if any, are terminated, and the add-ins associated with the newly selected account are loaded before the `OnMessageFromChanged` event is initiated.
-- Email account aliases are supported. When an alias for the current account is selected in the **From** field, the `OnMessageFromChanged` event occurs without reloading the account's add-ins.
-- When the **From** field dropdown is opened by mistake or the same account that appears in the **From** field is reselected, the `OnMessageFromChanged` event occurs, but the account's add-ins aren't terminated or reloaded.
+- The `OnAppointmentFromChanged` event isn't supported in [Microsoft 365 group calendars](https://support.microsoft.com/office/0cf1ad68-1034-4306-b367-d75e9818376a#Outlook=Web). If a user switches from their Exchange account to a Microsoft 365 group calendar account in the organizer field, the Outlook client automatically clears out the signature set by the Exchange account.
+- When switching to another Exchange account in the **From** or organizer field, the add-ins for the previously selected account, if any, are terminated, and the add-ins associated with the newly selected account are loaded before the `OnMessageFromChanged` or `OnAppointmentFromChanged` event is initiated.
+- Email account aliases are supported. When an alias for the current account is selected in the **From** or organizer field, the `OnMessageFromChanged` or `OnAppointmentFromChanged` event occurs without reloading the account's add-ins.
+- When the **From** or organizer field dropdown list is opened by mistake or the same account that appears in the **From** or organizer field is reselected, the `OnMessageFromChanged` or `OnAppointmentFromChanged` event occurs, but the account's add-ins aren't terminated or reloaded.
 
 ## See also
 

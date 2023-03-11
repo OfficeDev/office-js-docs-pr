@@ -22,7 +22,7 @@ Before you begin creating this add-in for PowerPoint or Word, you should be fami
 
 ## Create the manifest for the add-in
 
-The XML manifest file for the add-in for PowerPoint provides important information about the add-in: what applications can host it, the location of the HTML file, the add-in title and description, and many other characteristics.
+The XML manifest file for an Office Add-in provides important information about the add-in: what applications can host it, the location of the HTML file, the add-in title and description, and many other characteristics.
 
 1. In a text editor, add the following code to the manifest file.
 
@@ -50,7 +50,7 @@ The XML manifest file for the add-in for PowerPoint provides important informati
     </OfficeApp>
     ```
 
-2. Save the file as GetDoc_App.xml using UTF-8 encoding to a network location or to an add-in catalog.
+1. Save the file as GetDoc_App.xml using UTF-8 encoding to a network location or to an add-in catalog.
 
 ## Create the user interface for the add-in
 
@@ -86,14 +86,14 @@ Use the following procedure to create a simple user interface for the add-in tha
     </html>
     ```
 
-2. Save the file as GetDoc_App.html using UTF-8 encoding to a network location or to a web server.
+1. Save the file as GetDoc_App.html using UTF-8 encoding to a network location or to a web server.
 
     > [!NOTE]
     > Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the office.js file.
 
     We'll use some CSS to give the add-in a simple, yet modern and professional appearance. Use the following CSS to define the style of the add-in.
 
-3. In a new file in the text editor, add the following CSS.
+1. In a new file in the text editor, add the following CSS.
 
     ```css  
     body
@@ -116,7 +116,7 @@ Use the following procedure to create a simple user interface for the add-in tha
     }
     ```
 
-4. Save the file as Program.css using UTF-8 encoding to the network location or to the web server where the GetDoc_App.html file is located.
+1. Save the file as Program.css using UTF-8 encoding to the network location or to the web server where the GetDoc_App.html file is located.
 
 ## Add the JavaScript to get the document
 

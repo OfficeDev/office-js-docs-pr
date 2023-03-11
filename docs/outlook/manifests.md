@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in manifests
 description: Get an overview of the two kinds of manifests available for Outlook Add-ins.
-ms.date: 10/18/2022
+ms.date: 01/23/2023
 ms.localizationpriority: high
 ---
 
@@ -269,7 +269,7 @@ The root element for the Outlook add-in manifest is **\<OfficeApp\>**. This elem
 
 This is the version of the specific add-in. If a developer updates something in the manifest, the version must be incremented as well. This way, when the new manifest is installed, it will overwrite the existing one and the user will get the new functionality. If this add-in was submitted to the store, the new manifest will have to be re-submitted and re-validated. Then, users of this add-in will get the new updated manifest automatically in a few hours, after it is approved.
 
-If the add-in's requested permissions change, users will be prompted to upgrade and re-consent to the add-in. If the admin installed this add-in for the entire organization, the admin will have to re-consent first. Users will continue to see old functionality in the meantime.
+If the add-in's requested permissions change, users will be prompted to upgrade and re-consent to the add-in. If the admin installed this add-in for the entire organization, the admin will have to re-consent first. Users will be unable to use the add-in until consent is granted.
 
 ## VersionOverrides
 

@@ -1,7 +1,8 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 09/14/2022
+ms.date: 02/24/2023
+ms.topic: glossary
 ms.localizationpriority: medium
 ---
 
@@ -66,6 +67,8 @@ A **content delivery network** or **CDN** is a distributed network of servers an
 ## custom function
 
 A **custom function** is a user-defined function that is packaged with an Excel add-in. Custom functions enable developers to add new functions, beyond the typical Excel features, by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel. See [Create custom functions in Excel](../excel/custom-functions-overview.md) to learn more.
+
+[!include[Excel custom functions definition](../includes/excel-custom-functions-definition.md)]
 
 ## custom functions runtime
 

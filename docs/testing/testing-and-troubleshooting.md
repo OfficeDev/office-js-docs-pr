@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
 description: Learn how to troubleshoot user errors in Office Add-ins.
-ms.date: 06/10/2022
+ms.date: 01/23/2023
 ms.localizationpriority: medium
 ---
 
@@ -81,6 +81,12 @@ This issue occurs when the Dialog API is used in pop-up mode. To prevent this is
 ```js
 Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
 ```
+
+## Add-in won't upgrade
+
+You may see the following error when deploying an updated manifest for your add-in: `ADD-IN WARNING: This add-in is currently upgrading. Please close the current message or appointment, and re-open in a few moments.`
+
+[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
 
 ## See also
 

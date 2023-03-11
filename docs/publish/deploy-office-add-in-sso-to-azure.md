@@ -1,7 +1,7 @@
 ---
 title: Deploy a single sign-on (SSO) Office Add-in to Microsoft Azure App Service | Microsoft Docs
 description: Learn how to deploy an Office Add-in that uses single sign-on (SSO) to Microsoft Azure App Service from Visual Studio Code.
-ms.date: 01/12/2020
+ms.date: 01/23/2023
 ms.localizationpriority: medium
 ---
 
@@ -263,6 +263,10 @@ Once the files and app registration are updated, you can deploy the add-in.
 1. When prompted to always deploy the workspace, choose **Yes**.
 
 If you make additional code changes, you'll need to run `npm run build` again and redeploy the project.
+
+### Deploy updates
+
+[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
 
 ## Test the deployment
 

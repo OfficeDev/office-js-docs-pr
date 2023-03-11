@@ -1,7 +1,7 @@
 ---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: Enable compatibility between your Office Add-in and equivalent COM add-in.
-ms.date: 09/24/2021
+ms.date: 02/07/2023
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,9 @@ ms.localizationpriority: medium
 
 If you have an existing COM add-in, you can build equivalent functionality in your Office Add-in, thereby enabling your solution to run on other platforms such as Office on the web or Mac. In some cases, your Office Add-in may not be able to provide all of the functionality that's available in the corresponding COM add-in. In these situations, your COM add-in may provide a better user experience on Windows than the corresponding Office Add-in can provide.
 
-You can configure your Office Add-in so that when the equivalent COM add-in is already installed on a user's computer, Office on Windows runs the COM add-in instead of the Office Add-in. The COM add-in is called "equivalent" because Office will seamlessly transition between the COM add-in and the Office Add-in according to which one is installed a user's computer.
+[!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
+
+You can configure your Office Add-in so that when the equivalent COM add-in is already installed on a user's computer, Office on Windows runs the COM add-in instead of the Office Add-in. The COM add-in is called "equivalent" because Office will seamlessly transition between the COM add-in and the Office Add-in according to which one is installed on a user's computer.
 
 [!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
@@ -20,7 +22,7 @@ You can configure your Office Add-in so that when the equivalent COM add-in is a
 > [!IMPORTANT]
 > Applies to Excel, Outlook, PowerPoint, and Word.
 
-To enable compatibility between your Office Add-in and COM add-in, identify the equivalent COM add-in in the [manifest](add-in-manifests.md) of your Office Add-in. Then Office on Windows will use the COM add-in instead of the Office Add-in, if they're both installed.
+To enable compatibility between your Office Add-in and COM add-in, identify the equivalent COM add-in in the [manifest](add-in-manifests.md) of your Office Add-in. Then, Office on Windows will use the COM add-in instead of the Office Add-in, if they're both installed.
 
 The following example shows the portion of the manifest that specifies a COM add-in as an equivalent add-in. The value of the `ProgId` element identifies the COM add-in and the [EquivalentAddins](/javascript/api/manifest/equivalentaddins) element must be positioned immediately before the closing `VersionOverrides` tag.
 
@@ -44,7 +46,7 @@ The following example shows the portion of the manifest that specifies a COM add
 > [!IMPORTANT]
 > Applies to Outlook only.
 
-To declare compatibility between your Outlook web add-in and COM/VSTO add-in, identify the equivalent COM add-in in the group policy **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** by configuring on the user's machine. Then Outlook on Windows will use the COM add-in instead of the web add-in, if they're both installed.
+To declare compatibility between your Outlook web add-in and COM/VSTO add-in, identify the equivalent COM add-in in the group policy **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** by configuring it on the user's machine. Then, Outlook on Windows will use the COM add-in instead of the web add-in, if they're both installed.
 
 1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030), paying attention to the tool's **Install Instructions**.
 1. Open the Local Group Policy Editor (**gpedit.msc**).
@@ -55,17 +57,18 @@ To declare compatibility between your Outlook web add-in and COM/VSTO add-in, id
     1. Set **Value name** to the `Id` found in the web add-in's manifest. **Important**: Do *not* add curly braces `{}` around the entry.
     1. Set **Value** to the `ProgId` of the equivalent COM/VSTO add-in.
     1. Select **OK** to put the update into effect.
-    ![Screenshot showing the dialog "Outlook web add-ins to deactivate".](../images/outlook-deactivate-gpo-dialog.png)
+
+    ![The "Outlook web add-ins to deactivate" dialog.](../images/outlook-deactivate-gpo-dialog.png)
 
 ## Equivalent behavior for users
 
-When an [equivalent COM add-in is specified](#specify-an-equivalent-com-add-in), Office on Windows will not display your Office Add-in's user interface (UI) if the equivalent COM add-in is installed. Office only hides the ribbon buttons of the Office Add-in and does not prevent installation. Therefore your Office Add-in will still appear in the following locations within the UI.
+When an [equivalent COM add-in is specified](#specify-an-equivalent-com-add-in), Office on Windows will not display your Office Add-in's user interface (UI) if the equivalent COM add-in is installed. Office only hides the ribbon buttons of the Office Add-in and doesn't prevent installation. Therefore, your Office Add-in will still appear in the following locations within the UI.
 
-- Under **My add-ins**
-- As an entry in the ribbon manager (Excel, Word, and PowerPoint only)
+- Under **My add-ins**.
+- As an entry in the ribbon manager (Excel, Word, and PowerPoint only).
 
 > [!NOTE]
-> Specifying an equivalent COM add-in in the manifest has no effect on other platforms like Office on the web or on Mac.
+> Specifying an equivalent COM add-in in the manifest has no effect on other platforms, like Office on the web or on Mac.
 
 The following scenarios describe what happens depending on how the user acquires the Office Add-in.
 
