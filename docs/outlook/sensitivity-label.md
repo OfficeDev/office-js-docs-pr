@@ -48,9 +48,6 @@ To be able to use the sensitivity feature in your Outlook add-in project, you mu
 
 If your add-in will detect and handle the `OnSensitivityLabelChanged` event, additional manifest configurations are required to enable the event-based activation feature. To learn more, see [Detect sensitivity label changes with the OnSensitivityLabelChanged event](#detect-sensitivity-label-changes-with-the-onsensitivitylabelchanged-event).
 
-> [!IMPORTANT]
-> The sensitivity label feature isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
-
 ## Verify the status of the catalog of sensitivity labels
 
 Sensitivity labels and their policies are configured by an organization's administrator through the [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center). For guidance on how to configure sensitivity labels in your tenant, see [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels).
@@ -109,7 +106,7 @@ Office.context.sensitivityLabelsCatalog.getIsEnabledAsync((asyncResult) => {
 
 ## Get the sensitivity label of a message or appointment
 
-To get the sensitivity label currently applied to a message or appointment in compose mode, call [item.sensitivityLabel.getAsync](/javascript/api/outlook/office.sensitivitylabel?view=outlook-js-preview&preserve-view=true#outlook-office-sensitivitylabel-getasync-member(1)) as shown in the following example. This returns the GUID of the sensitivity label currently applied.
+To get the sensitivity label currently applied to a message or appointment in compose mode, call [item.sensitivityLabel.getAsync](/javascript/api/outlook/office.sensitivitylabel?view=outlook-js-preview&preserve-view=true#outlook-office-sensitivitylabel-getasync-member(1)) as shown in the following example. This returns the GUID of the sensitivity label.
 
 ```javascript
 // It's recommended to check the status of the catalog of sensitivity labels before
