@@ -431,7 +431,7 @@
             "redirect_url": "/javascript/api/requirement-sets/excel/custom-functions-requirement-sets"
         },
         {
-            "source_path": "docs/outlook/add-in-commands-for-outlook.md.md",
+            "source_path": "docs/outlook/add-in-commands-for-outlook.md",
             "redirect_url": "/office/dev/add-ins/develop/create-addin-commands"
         },
         {
