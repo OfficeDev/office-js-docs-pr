@@ -1,6 +1,7 @@
 ---
 title: Work with extended overrides of the manifest
 description: Learn how to configure extensibility features with extended overrides of the manifest.
+ms.topic: how-to
 ms.date: 02/23/2021
 ms.localizationpriority: medium
 ---
