@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Create add-in commands
 
-Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md).
+Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands](../design/add-in-commands.md).
 
 This article describes how to edit your manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands). The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
 
@@ -352,7 +352,7 @@ If your add-in uses an XML manifest, then add-in commands are only available for
 
 ## See also
 
-- [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md)
+- [Add-in commands](../design/add-in-commands.md)
 - [Sample: Create an Excel add-in with command buttons](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/excel)
 - [Sample: Create an Word add-in with command buttons](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word)
 - [Sample: Create an PowerPoint add-in with command buttons](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/powerpoint)
