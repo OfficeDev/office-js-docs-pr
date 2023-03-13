@@ -117,7 +117,7 @@ Add-in commands are currently supported on the following platforms, except for l
 - Office 2019 or later on Windows or Mac
 
 > [!NOTE]
-> For information about support in Outlook, see [Add-in commands for Outlook](../outlook/add-in-commands-for-outlook.md).
+> For information about support in Outlook, see [Outlook support notes](../develop/create-addin-commands.md).
 
 ## Debug
 
