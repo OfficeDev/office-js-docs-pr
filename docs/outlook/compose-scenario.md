@@ -34,7 +34,7 @@ The following figure shows the add-in selection pane consisting of two compose a
 
 ## Types of add-ins available in compose mode
 
-Compose add-ins are implemented as [Add-in commands for Outlook](add-in-commands-for-outlook.md). To activate add-ins for composing email or meeting responses, add-ins include a [MessageComposeCommandSurface extension point element](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface) in the manifest. To activate add-ins for composing or editing appointments or meetings where the user is the organizer, add-ins include a [AppointmentOrganizerCommandSurface extension point element](/javascript/api/manifest/extensionpoint#appointmentorganizercommandsurface).
+Compose add-ins are implemented as [Add-in commands](../design/add-in-commands.md) for Outlook. To activate add-ins for composing email or meeting responses, add-ins include a [MessageComposeCommandSurface extension point element](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface) in the manifest. To activate add-ins for composing or editing appointments or meetings where the user is the organizer, add-ins include a [AppointmentOrganizerCommandSurface extension point element](/javascript/api/manifest/extensionpoint#appointmentorganizercommandsurface).
 
 > [!NOTE]
 > Add-ins developed for servers or clients that do not support add-in commands use [activation rules](activation-rules.md) in a [Rule](/javascript/api/manifest/rule) element contained in the [OfficeApp](/javascript/api/manifest/officeapp) element. Unless the add-in is being specifically developed for older clients and servers, new add-ins should use add-in commands.

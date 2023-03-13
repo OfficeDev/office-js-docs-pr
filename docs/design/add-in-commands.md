@@ -117,7 +117,7 @@ Add-in commands are currently supported on the following platforms, except for l
 - Office 2019 or later on Windows or Mac
 
 > [!NOTE]
-> For information about support in Outlook, see [Outlook support notes](../develop/create-addin-commands.md).
+> For information about support in Outlook, see [Outlook support notes](../develop/create-addin-commands.md#outlook-support-notes).
 
 ## Debug
 
@@ -153,4 +153,4 @@ Apply the following best practices when you develop add-in commands.
 
 The best way to get started using add-in commands is to take a look at the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
 
-For more information about specifying add-in commands in your manifest, see [Create add-in commands in your manifest](../develop/create-addin-commands.md) and the [VersionOverrides](/javascript/api/manifest/versionoverrides) reference content.
+For more information about specifying add-in commands in your manifest, see [Create add-in commands](../develop/create-addin-commands.md) and the [VersionOverrides](/javascript/api/manifest/versionoverrides) reference content.

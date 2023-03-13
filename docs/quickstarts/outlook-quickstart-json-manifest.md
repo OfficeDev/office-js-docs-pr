@@ -114,7 +114,7 @@ The add-in project that you've created with the Yeoman generator contains sample
     > [!NOTE]
     > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually - Outlook 2016 or later on Windows or Mac](../outlook/sideload-outlook-add-ins-for-testing.md#outlook-2016-or-later-on-windows-or-mac) to manually sideload the add-in in Outlook. When you are prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
 
-1. Select the **Perform an action** button. It [executes a command](../develop/create-addin-commands.md?branch=outlook-json-manifest#step-5-add-the-functionfile-element) to generate a small informational notification at the bottom of the message header, just above the message body.
+1. Select the **Perform an action** button. It [executes a command](../develop/create-addin-commands.md?branch=outlook-json-manifest#step-3-add-the-functionfile-element) to generate a small informational notification at the bottom of the message header, just above the message body.
 
 1. When prompted with the **WebView Stop On Load** dialog box, select **OK**.
 
