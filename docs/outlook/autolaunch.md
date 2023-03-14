@@ -492,7 +492,7 @@ Some Office.js APIs that change or alter the UI aren't allowed from event-based 
 
 ### Preview features in event handlers (Outlook on Windows)
 
-Outlook on Windows includes a local copy of the production and beta versions of Office.js instead of loading from the content delivery network (CDN). By default, the local production copy of the API is referenced. To reference the local beta copy of the API, you must configure your computer's registry. This will enable you to test [Outlook features that are in preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview) in event handlers on Outlook on Windows.
+Outlook on Windows includes a local copy of the production and beta versions of Office.js instead of loading from the content delivery network (CDN). By default, the local production copy of the API is referenced. To reference the local beta copy of the API, you must configure your computer's registry. This will enable you to test [preview features](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview) in your event handlers in Outlook on Windows.
 
 1. In the registry, navigate to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`. If the key doesn't exist, create it.
 1. Create an entry named `EnableBetaAPIsInJavaScript` and set its value to `1`.
