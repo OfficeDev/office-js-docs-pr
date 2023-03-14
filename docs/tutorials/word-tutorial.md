@@ -84,11 +84,11 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 1. Add the following functions to the end of the file. Note:
 
-   - Your Word.js business logic will be added to the function that's passed to `Word.run`. This logic doesn't execute immediately. Instead, it's added to a queue of pending commands.
+   - Your Word.js business logic will be added to the function passed to `Word.run`. This logic doesn't execute immediately. Instead, it's added to a queue of pending commands.
 
    - The `context.sync` method sends all queued commands to Word for execution.
 
-   - The `tryCatch` function will be used by all the functions interacting with the workbook from the task pane. Catching Office JavaScript errors in this fashion is a convenient way to generically handle any uncaught errors.
+   - The `tryCatch` function will be used by all the functions interacting with the workbook from the task pane. Catching Office JavaScript errors in this fashion is a convenient way to generically handle uncaught errors.
 
     ```js
     async function insertParagraph() {
