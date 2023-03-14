@@ -82,9 +82,9 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     document.getElementById("insert-paragraph").onclick = () => tryCatch(insertParagraph);
     ```
 
-1. Add the following function to the end of the file. Note:
+1. Add the following functions to the end of the file. Note:
 
-   - Your Word.js business logic will be added to the function that is passed to `Word.run`. This logic does not execute immediately. Instead, it's added to a queue of pending commands.
+   - Your Word.js business logic will be added to the function that's passed to `Word.run`. This logic doesn't execute immediately. Instead, it's added to a queue of pending commands.
 
    - The `context.sync` method sends all queued commands to Word for execution.
 
@@ -379,7 +379,7 @@ In all previous functions in this tutorial, you queued commands to *write* to th
 
 1. Because the `sync` method is asynchronous, ensure that it has completed before your code calls the properties that were fetched.
 
-These steps must be completed whenever your code needs to *read* information from the Office document.
+The following step must be completed whenever your code needs to *read* information from the Office document.
 
 1. Within the `insertTextIntoRange()` function, replace `TODO2` with the following code.
   
@@ -444,7 +444,7 @@ async function insertTextIntoRange() {
 
 1. Within the `insertTextBeforeRange()` function, replace `TODO1` with the following code. Note:
 
-   - The function is intended to add a range whose text is "Office 2019, " before the range with text "Microsoft 365". It makes a simplifying assumption that the string is present and the user has selected it.
+   - The function is intended to add a range whose text is "Office 2019, " before the range with text "Microsoft 365". It makes an assumption that the string is present and the user has selected it.
 
    - The first parameter of the `Range.insertText` method is the string to add.
 
@@ -598,7 +598,7 @@ Complete the following steps to define the image that you'll insert into the doc
     }
     ```
 
-1. Within the `insertImage()` function, replace `TODO1` with the following code. Note that this line inserts the Base64-encoded image at the end of the document. (The `Paragraph` object also has an `insertInlinePictureFromBase64` method and other `insert*` methods. See the following insertHTML section for an example.)
+1. Within the `insertImage()` function, replace `TODO1` with the following code. Note that this line inserts the Base64-encoded image at the end of the document. (The `Paragraph` object also has an `insertInlinePictureFromBase64` method and other `insert*` methods. See the following "Insert HTML" section for an example.)
 
     ```js
     context.document.body.insertInlinePictureFromBase64(base64Image, Word.InsertLocation.end);
