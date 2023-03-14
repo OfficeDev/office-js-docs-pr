@@ -1,6 +1,7 @@
 ---
 title: Automatically open a task pane with a document
 description: Learn how to configure an Office Add-in to open automatically when a document opens.
+ms.topic: how-to
 ms.date: 09/01/2022
 ms.localizationpriority: medium
 ---

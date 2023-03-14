@@ -1,6 +1,7 @@
 ---
 title: Common JavaScript API object model
 description: Learn about the Office JavaScript common API object model.
+ms.topic: overview
 ms.date: 07/07/2022
 ms.localizationpriority: medium
 ---

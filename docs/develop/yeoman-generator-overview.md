@@ -1,6 +1,7 @@
 ---
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
+ms.topic: tutorial
 ms.date: 08/19/2022
 ms.localizationpriority: high
 ---

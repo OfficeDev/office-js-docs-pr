@@ -73,7 +73,9 @@
       "ms.topic": {
         "quickstarts/*.md": "quickstart",
         "tutorials/*.md": "tutorial",
-        "reference/*.md": "reference"
+        "reference/*.md": "reference",
+        "publish/*.md": "how-to",
+        "testing/*.md": "how-to"
       },
       "ms.custom": {
         "quickstarts/*.md": "scenarios:getting-started; languages:JavaScript,TypeScript",

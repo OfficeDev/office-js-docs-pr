@@ -1,6 +1,7 @@
 ---
 title: Maintain your Office Add-in
 description: Understand our commitments to compatibility and how to keep your add-in up to date.
+ms.topic: best-practice
 ms.date: 01/23/2023
 ms.localizationpriority: medium
 ---

@@ -1,6 +1,7 @@
 ---
 title: Error handling with the application-specific JavaScript APIs
 description: Learn about Excel, Word, PowerPoint, and other application-specific JavaScript API error handling logic to account for runtime errors.
+ms.topic: error-reference
 ms.date: 10/27/2022
 ms.localizationpriority: medium
 ---
