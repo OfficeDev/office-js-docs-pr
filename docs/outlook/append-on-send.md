@@ -1,7 +1,7 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 02/03/2023
+ms.date: 03/13/2023
 ms.localizationpriority: medium
 ---
 
@@ -378,6 +378,7 @@ If you encounter an error while implementing the prepend-on-send and append-on-s
 |-----|-----|-----|
 |`DataExceedsMaximumSize`|The content to be appended or prepended is longer than 5,000 characters.|Shorten the string you pass to the `data` parameter of your `prependOnSendAsync` or `appendOnSendAsync` call.|
 |`InvalidFormatError`|The message or appointment body is in plain text format, but the `coercionType` passed to the `prependOnSendAsync` or `appendOnSendAsync` method is set to `Office.CoercionType.Html`.|Only plain text can be inserted into a plain text body of a message or appointment. To verify the format of the mail item being composed, call `Office.context.mailbox.item.body.getTypeAsync`, then pass its returned value to your `prependOnSendAsync` or `appendOnSendAsync` call.|
+|`The feature prependOnSendAsync is only enabled on the beta api endpoint`|The prepend-on-send feature that's in preview is implemented in an event-based activation handler.|To preview the prepend-on-send feature in an event handler in Outlook on Windows, your registry must be configured accordingly. For guidance on how to configure your registry, see [Preview features in event handlers (Outlook on Windows)](autolaunch.md#preview-features-in-event-handlers-outlook-on-windows).|
 
 ## See also
 
