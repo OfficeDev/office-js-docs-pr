@@ -159,7 +159,7 @@ When using the Teams manifest (preview), localize the public-facing strings in t
 
 ```json
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.16/MicrosoftTeams.Localization.schema.json",
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.Localization.schema.json",
   "name.short": "Lecteur vidéo",
   "name.full": "Lecteur vidéo pour Outlook",
   "description.short": "Voir les vidéos YouTube dans Outlook via les mails.",
