@@ -19,7 +19,7 @@ All the task pane add-ins created by [yo office](yeoman-generator-overview.md) h
 
 ## Important parts of an add-in command
 
-The following steps explain how to add add-in commands to an existing add-in. These steps assume you're using an XML manifest. If you're working with the JSON-based Teams manifest, see [Add-in commands in a Teams Manifest (developer preview)](#add-in-commands-in-a-teams-manifest-developer-preview).
+The following steps explain how to add add-in commands to an existing add-in. These steps assume you're using an XML manifest. If you're working with the JSON-based Teams manifest, see [Add-in commands in a Teams Manifest for Outlook Add-ins (developer preview)](#add-in-commands-in-a-teams-manifest-for-outlook-add-ins-developer-preview).
 
 ### Step 1: Add VersionOverrides element
 
