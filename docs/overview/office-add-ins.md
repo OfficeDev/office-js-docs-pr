@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 03/10/2023
+ms.date: 03/14/2023
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -23,9 +23,7 @@ Office Add-ins can do almost anything a webpage can do inside a browser. Use the
 
 COM and VSTO add-ins are earlier Office integration solutions that run only in Office on Windows. Unlike COM and VSTO add-ins, Office Add-ins are web add-ins and don't involve code that runs on the user's device or in the Office client. For an Office Add-in, the application (for example, Excel), reads the add-in manifest and hooks up the add-in's custom ribbon buttons and menu commands in the UI. When needed, it loads the add-in's JavaScript and HTML code, which executes in the context of a browser in a sandbox.
 
-![The reasons to use Office Add-ins: cross-platform, centralized deployment, easy access via AppSource, and built on standard web technologies.](../images/why.png)
-
-[!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
+![A four-quadrant diagram showing the focus areas for different Office extensibility solutions. Office Web Add-ins along with COM and VSTO add-ins target professional developers, while VBA targets end users. Office Web Add-ins are focused on cross-platform experiences and collaboration while COM and VSTO add-ins and VBA cater to the individual's experience on Windows.](../images/office-programmability-diagram.png)
 
 Office Add-ins provide the following advantages over add-ins built using VBA, COM, or VSTO.
 
@@ -37,7 +35,9 @@ Office Add-ins provide the following advantages over add-ins built using VBA, CO
 
 - Based on standard web technology. You can use any library you like to build Office Add-ins.
 
-![A four-quadrant diagram showing the focus areas for different Office extensibility solutions. Office Web Add-ins along with COM and VSTO add-ins target professional developers, while VBA targets end users. Office Web Add-ins are focused on cross-platform experiences and collaboration while COM and VSTO add-ins and VBA cater to the individual's experience on Windows.](../images/office-programmability-diagram.png)
+![The reasons to use Office Add-ins: cross-platform, centralized deployment, easy access via AppSource, and built on standard web technologies.](../images/why.png)
+
+[!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
 
 ## Components of an Office Add-in
 
