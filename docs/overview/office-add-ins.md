@@ -27,13 +27,13 @@ COM and VSTO add-ins are earlier Office integration solutions that run only in O
 
 Office Add-ins provide the following advantages over add-ins built using VBA, COM, or VSTO.
 
-- Cross-platform support. Office Add-ins run in Office on the web, Windows, Mac, and iPad.
+- Cross-platform support: Office Add-ins run in Office on the web, Windows, Mac, and iPad.
 
-- Centralized deployment and distribution. Admins can deploy Office Add-ins centrally across an organization.
+- Centralized deployment and distribution: Admins can deploy Office Add-ins centrally across an organization.
 
-- Easy access via AppSource. You can make your solution available to a broad audience by submitting it to AppSource.
+- Easy access via AppSource: You can make your solution available to a broad audience by submitting it to AppSource.
 
-- Based on standard web technology. You can use any library you like to build Office Add-ins.
+- Based on standard web technology: You can use any library you like to build Office Add-ins.
 
 ![The reasons to use Office Add-ins: cross-platform, centralized deployment, easy access via AppSource, and built on standard web technologies.](../images/why.png)
 
@@ -71,9 +71,9 @@ Office Add-ins can do the following within an Office client application.
 
 You can add new functionality to Office applications via the following:  
 
-- Custom ribbon buttons and menu commands (collectively called “add-in commands”)
+- Custom ribbon buttons and menu commands (collectively called "add-in commands").
 
-- Insertable task panes
+- Insertable task panes.
 
 Custom UI and task panes are specified in the add-in manifest.  
 
@@ -105,11 +105,11 @@ You can embed web-based objects called content add-ins within Excel and PowerPoi
 
 ## Office JavaScript APIs
 
-The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. There is a common object model that is shared by Excel, Outlook, Word, PowerPoint, OneNote, and Project. There are also more extensive application-specific object models for Excel and Word. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific application.
+The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. There's a common object model that's shared by Excel, Outlook, Word, PowerPoint, OneNote, and Project. There are also more extensive application-specific object models for Excel and Word. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific application.
 
 ## Code samples
 
-Learn how to build the simplest Office Add-in with only a manifest, HTML web page, and a logo. The following samples will help you get started in the Office host you are interested in.
+Learn how to build the simplest Office Add-in with only a manifest, HTML web page, and a logo. The following samples will help you get started in the Office application you're interested in.
 
 - [Excel "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/excel-hello-world)
 - [Outlook "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/outlook-hello-world)
