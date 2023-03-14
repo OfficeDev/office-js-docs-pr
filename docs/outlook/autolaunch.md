@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 03/06/2023
+ms.date: 03/13/2023
 ms.localizationpriority: medium
 ---
 
@@ -490,7 +490,16 @@ Some Office.js APIs that change or alter the UI aren't allowed from event-based 
   - `displayDialogAsync`
   - `messageParent`
 
-### Requesting external data
+### Preview features in event handlers (Outlook on Windows)
+
+Outlook on Windows includes a local copy of the production and beta versions of Office.js instead of loading from the content delivery network (CDN). By default, the local production copy of the API is referenced. To reference the local beta copy of the API, you must configure your computer's registry. This will enable you to test [preview features](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview) in your event handlers in Outlook on Windows.
+
+1. In the registry, navigate to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`. If the key doesn't exist, create it.
+1. Create an entry named `EnableBetaAPIsInJavaScript` and set its value to `1`.
+
+    ![The EnableBetaAPIsInJavaScript registry value is set to 1."](../images/outlook-beta-registry-key.png)
+
+### Request external data
 
 You can request external data by using an API like [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using [XMLHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
 
