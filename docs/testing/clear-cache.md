@@ -52,7 +52,7 @@ To remove a sideloaded add-in from Outlook, use the steps outlined in [Sideload 
 
 If this add-in removal doesn't work, then delete the contents of the `Wef` folder as noted previously for Excel, Word, and PowerPoint.
 
-If your Outlook Add-in uses the [Teams manifest (preview)](../develop/json-manifest-overview.md), also delete the following folder.
+If your Outlook add-in uses the [Teams manifest (preview)](../develop/json-manifest-overview.md), also delete the following folder.
 
 ```
 %userprofile%\AppData\Local\Microsoft\Outlook\HubAppFileCache
