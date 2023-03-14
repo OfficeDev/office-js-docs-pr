@@ -330,17 +330,19 @@ The following shows an example of how to use the **\<Resources\>** element. Each
 > [!NOTE]
 > You must use Secure Sockets Layer (SSL) for all URLs in the **\<Image\>** and **\<Url\>** elements.
 
-## Add-in commands in a Teams Manifest (developer preview)
+## Add-in commands in a Teams Manifest for Outlook Add-ins (developer preview)
 
 Add-in commands are declared with the "extensions.runtimes" and "extensions.ribbons" properties. These properties specify many things for the add-in, such as the application, types of controls to add to the ribbon, the text, the icons, and any associated functions.
 
 When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the "runtimes.code.page" property of the manifest.
 
+Learn more about how to use a Teams manifest in the article [Teams manifest in Office Add-ins (preview)](json-manifest-overview.md).
+
 ## Outlook support notes
 
 Add-in commands are available only in Outlook 2013 or later on Windows, Outlook 2016 or later on Mac, Outlook on iOS, Outlook on Android, Outlook on the web for Exchange 2016 or later, and Outlook on the web for Microsoft 365 and Outlook.com.
 
-Support for add-in commands in Outlook 2013 requires three updates:
+Support for add-in commands in Outlook 2013 requires three updates.
 
 - [March 8, 2016 security update for Outlook](https://support.microsoft.com/kb/3114829)
 - [March 8, 2016 security update for Office (KB3114816)](https://support.microsoft.com/topic/3d3eb171-78c2-0e61-62a2-85723bc4bcc0)
