@@ -259,7 +259,7 @@ In this section, you'll implement the JavaScript code to prepend a sample compan
 1. Save your changes.
 
 > [!TIP]
-> The `prependOnSendAsync` method must be activated by the user through a task pane or function command button. If you want content to be prepended on send without additional action from the user, you can call `prependOnSendAsync` from an [event-based activated handler](autolaunch.md).
+> The [prependOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-prependasync-member(1)) method must be activated by the user through a task pane or function command button. If you want content to be prepended on send without additional action from the user, you can call `prependOnSendAsync` from an [event-based activated handler](autolaunch.md).
 
 ## Implement the append-on-send handler
 
@@ -308,7 +308,7 @@ In this section, you'll implement the JavaScript code to append a sample company
 1. Save your changes.
 
 > [!TIP]
-> The `appendOnSendAsync` method must be activated by the user through a task pane or function command button. If you want content to be appended on send without additional action from the user, you can call `appendOnSendAsync` from an [event-based activated handler](autolaunch.md).
+> The [appendOnSendAsync](/javascript/api/outlook/office.body#outlook-office-body-appendonsendasync-member(1)) method must be activated by the user through a task pane or function command button. If you want content to be appended on send without additional action from the user, you can call `appendOnSendAsync` from an [event-based activated handler](autolaunch.md).
 
 ## Register the JavaScript functions
 
