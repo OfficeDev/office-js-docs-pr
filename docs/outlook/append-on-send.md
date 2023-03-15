@@ -207,6 +207,9 @@ The following shows how to configure your JSON manifest to enable the append-on-
 ---
 
 > [!TIP]
+> The prepend-on-send and append-on-send features must be activated by the user through a task pane or function command button. If you want content to be prepended or appended on send without additional action from the user, you can implement these features in an [event-based activation add-in](autolaunch.md).
+
+> [!TIP]
 > To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
 ## Implement the prepend-on-send handler (preview)
@@ -258,9 +261,6 @@ In this section, you'll implement the JavaScript code to prepend a sample compan
 
 1. Save your changes.
 
-> [!TIP]
-> The [prependOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-prependasync-member(1)) method must be activated by the user through a task pane or function command button. If you want content to be prepended on send without additional action from the user, you can call `prependOnSendAsync` from an [event-based activated handler](autolaunch.md).
-
 ## Implement the append-on-send handler
 
 In this section, you'll implement the JavaScript code to append a sample company disclaimer to a mail item when it's sent.
@@ -306,9 +306,6 @@ In this section, you'll implement the JavaScript code to append a sample company
     ```
 
 1. Save your changes.
-
-> [!TIP]
-> The [appendOnSendAsync](/javascript/api/outlook/office.body#outlook-office-body-appendonsendasync-member(1)) method must be activated by the user through a task pane or function command button. If you want content to be appended on send without additional action from the user, you can call `appendOnSendAsync` from an [event-based activated handler](autolaunch.md).
 
 ## Register the JavaScript functions
 
