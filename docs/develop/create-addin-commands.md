@@ -15,7 +15,7 @@ This article describes how to edit your manifest to define add-in commands and h
 
 ## Sample commands
 
-All the task pane add-ins created by [yo office](yeoman-generator-overview.md) have add-in commands. They contain an add-in command (button) to show the task pane. Generate these projects by following one of the quick starts such as [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md). Ensure that you have read [Add-in commands](../design/add-in-commands.md) to understand command capabilities.
+All the task pane add-ins created by [yo office](yeoman-generator-overview.md) have add-in commands. They contain an add-in command (button) to show the task pane. Generate these projects by following one of the quick starts, such as [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md). Ensure that you have read [Add-in commands](../design/add-in-commands.md) to understand command capabilities.
 
 ## Important parts of an add-in command
 
@@ -80,7 +80,7 @@ The following example shows the **\<Hosts\>**, **\<Host\>**, and **\<DesktopForm
 The [**\<FunctionFile\>** element](/javascript/api/manifest/functionfile) specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action. The **\<FunctionFile\>** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a [**\<Url\>** element](/javascript/api/manifest/url) in the [**\<Resources\>** element](/javascript/api/manifest/resources).
 
 > [!NOTE]
-> The yo office projects use WebPack to avoid manually adding the JavaScript to the HTML.
+> The yo office projects use [webpack](https://webpack.js.org/concepts/) to avoid manually adding the JavaScript to the HTML.
 
 The following is an example of the **\<FunctionFile\>** element.
   
@@ -96,7 +96,7 @@ The following is an example of the **\<FunctionFile\>** element.
 ```
 
 > [!IMPORTANT]
-> Office.js must be initialized before the add-in command logic runs. See [Initialize your Office Add-in](initialize-add-in.md) for more information.
+> Office.js must be initialized before the add-in command logic runs. For more information, see [Initialize your Office Add-in](initialize-add-in.md).
 
 The following code shows an example function used by **\<FunctionName\>**. Note the call to **event.completed**, This signals that you have successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls **event.completed**, the next queued call to that function runs. You must implement **event.completed**, otherwise your function will not run.
 
