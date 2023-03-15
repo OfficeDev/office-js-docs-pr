@@ -35,7 +35,7 @@ As the ribbon gets more crowded, add-in commands will be displayed in the overfl
 
 The default tab depends on the application and context. For Excel, PowerPoint, and Word, the default tab is **Home**.
 
-![Screenshot showing add-in commands highlighted in the Excel ribbon.](../images/add-in-commands-1.png)
+![Sample add-in commands highlighted in the Excel ribbon.](../images/add-in-commands-1.png)
 
 ### Outlook
 
