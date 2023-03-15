@@ -1,7 +1,7 @@
 ---
 title: Work with shapes using the PowerPoint JavaScript API
 description: Learn how to add, remove, and format shapes on PowerPoint slides.
-ms.date: 06/13/2022
+ms.date: 03/14/2023
 ms.localizationpriority: medium
 ---
 
@@ -47,7 +47,7 @@ The following code sample creates a straight line on the slide.
 // This sample creates a straight line on the first slide.
 await PowerPoint.run(async (context) => {
     const shapes = context.presentation.slides.getItemAt(0).shapes;
-    const line = shapes.addLine(Excel.ConnectorType.straight, {left: 200, top: 50, height: 300, width: 150});
+    const line = shapes.addLine(PowerPoint.ConnectorType.straight, {left: 200, top: 50, height: 300, width: 150});
     line.name = "StraightLine";
     await context.sync();
 });
