@@ -1,6 +1,7 @@
 ---
 title: Work with extended overrides of the manifest
 description: Learn how to configure extensibility features with extended overrides of the manifest.
+ms.topic: how-to
 ms.date: 02/23/2021
 ms.localizationpriority: medium
 ---
@@ -18,7 +19,8 @@ The following table specifies the extensibility features that require an extende
 | :----- | :----- |
 | Keyboard shortcuts | [Add Custom keyboard shortcuts to your Office Add-ins](../design/keyboard-shortcuts.md) |
 
-The schema that defines the JSON format is [extended-manifest schema](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
+<!-- In the following link, the "en-us" must be present or the link breaks. -->
+The schema that defines the JSON format is [extended-manifest schema](https://developer.microsoft.com/en-us/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!TIP]
 > This article is somewhat abstract. Consider reading one of the articles in the table to add clarity to the concepts.

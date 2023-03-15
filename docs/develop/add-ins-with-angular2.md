@@ -1,6 +1,7 @@
 ---
 title: Develop Office Add-ins with Angular
 description: Use Angular to create an Office Add-in as a single page application.
+ms.topic: best-practice
 ms.date: 07/08/2021
 ms.localizationpriority: medium
 ---
