@@ -59,7 +59,7 @@ The following table lists the search notation for certain special characters.
 
 The following table provides guidance around the Word JavaScript API's search wildcards.
 
-| To find:         | Wildcard |  Sample |
+| To find         | Wildcard |  Sample |
 |:-----------------|:--------|:----------|
 |Any single character| ? |s?t finds sat and set. |
 |Any string of characters| * |s*d finds sad and started.|
