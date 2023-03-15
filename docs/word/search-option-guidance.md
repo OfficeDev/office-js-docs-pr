@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 Add-ins frequently need to act based on the text of a document. A search method is exposed by every content control (this includes [Body](/javascript/api/word/word.body#word-word-body-search-member(1)), [Paragraph](/javascript/api/word/word.paragraph#word-word-paragraph-search-member(1)), [Range](/javascript/api/word/word.range#word-word-range-search-member(1)), [Table](/javascript/api/word/word.table#word-word-table-search-member(1)), [TableRow](/javascript/api/word/word.tablerow#word-word-tablerow-search-member(1)), and the base [ContentControl](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-search-member(1)) object). This method takes in a string (or wildcard expression) representing the text you are searching for and a [SearchOptions](/javascript/api/word/word.searchoptions) object. It returns a collection of ranges which match the search text.
 
 > [!IMPORTANT]
-> Available search options may be restricted by Word client UI support. For more details about current support, see [Find and replace text](https://support.microsoft.com/office/c6728c16-469e-43cd-afe4-7708c6c779b7).
+> The Word client may limit the available search options. For more details about current support, see [Find and replace text](https://support.microsoft.com/office/c6728c16-469e-43cd-afe4-7708c6c779b7).
 
 ## Search options
 
@@ -30,7 +30,7 @@ The search options are a collection of boolean values defining how the search pa
 
 The following table lists the search notation for certain special characters.
 
-| To find:            | Notation |
+| To find             | Notation |
 |:--------------------|:---------|
 | Paragraph mark      | ^p       |
 | Tab mark            | ^t       |
