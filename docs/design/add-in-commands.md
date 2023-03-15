@@ -29,7 +29,7 @@ There are two types of add-in commands, based on the kind of action that the com
 
 An add-in command appears on the ribbon as a button or an item in a drop-down menu. When a user installs an add-in, its commands appear in the UI as a group of buttons. This can either be on the ribbon's default tab or on a custom tab. The default tab depends on the application and context. For Excel, PowerPoint, and Word, the default tab is **Home**.
 
-![Screenshot showing add-in commands highlighted in the Excel ribbon.](../images/add-in-commands-1.png)
+![Sample add-in commands highlighted in the Excel ribbon.](../images/add-in-commands-1.png)
 
 For Outlook, the default add-in command location is based on the current Outlook mode.
 
