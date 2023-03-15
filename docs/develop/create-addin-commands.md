@@ -98,48 +98,13 @@ The following is an example of the **\<FunctionFile\>** element.
 > [!IMPORTANT]
 > Office.js must be initialized before the add-in command logic runs. See [Initialize your Office Add-in](initialize-add-in.md) for more information.
 
-The following code shows an example function used by **\<FunctionName\>**. Note the call to **event.completed**, This signals that you have successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls **event.completed**, the next queued call to that function runs. You must implement **event.completed**, otherwise your function will not run.
-
-```js
-// Initialize the Office Add-in.
-Office.onReady(() => {
-  // If needed, Office.js is ready to be called
-});
-
-// The command function.
-async function highlightSelection(event) {
-
-    // Implement your custom code here. The following code is a simple Excel example.  
-    try {
-          await Excel.run(async (context) => {
-              const range = context.workbook.getSelectedRange();
-              range.format.fill.color = "yellow";
-              await context.sync();
-          });
-      } catch (error) {
-          // Note: In a production add-in, you'd want to notify the user through your add-in's UI.
-          console.error(error);
-      }
-
-    // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-    event.completed();
-}
-
-// You must register the function with the following line.
-Office.actions.associate("highlightSelection", highlightSelection);
-
-```
-
 #### Outlook notifications
 
 When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the `FunctionFile` node of the manifest.
 
 ### Step 4: Add ExtensionPoint elements
 
-The [**\<ExtensionPoint\>** element](/javascript/api/manifest/extensionpoint) defines where add-in commands should appear in the Office UI. You can define **\<ExtensionPoint\>** elements with these **xsi:type** values.
-
-- **PrimaryCommandSurface**: The ribbon in Office.
-- **ContextMenu**: The shortcut menu that appears when you right-click in the Office UI.
+The [**\<ExtensionPoint\>** element](/javascript/api/manifest/extensionpoint) defines where add-in commands should appear in the Office UI.
 
 The following examples show how to use the **\<ExtensionPoint\>** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.
 
@@ -204,7 +169,7 @@ A [button control](/javascript/api/manifest/control-button) performs a single ac
     <bt:Image size="80" resid="icon1_32x32" />
   </Icon>
   <Action xsi:type="ExecuteFunction">
-    <FunctionName>getData</FunctionName>
+    <FunctionName>highlightSelection</FunctionName>
   </Action>
 </Control>
 
@@ -225,6 +190,38 @@ A [button control](/javascript/api/manifest/control-button) performs a single ac
     <SourceLocation resid="residUnitConverterUrl" />
   </Action>
 </Control>
+```
+
+The following code shows an example function used by **\<FunctionName\>**. Note the call to [`event.completed`](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)), This signals that you have successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls `event.completed`, the next queued call to that function runs. You must implement `event.completed`, otherwise your function won't run.
+
+```js
+// Initialize the Office Add-in.
+Office.onReady(() => {
+  // If needed, Office.js is ready to be called
+});
+
+// The command function.
+async function highlightSelection(event) {
+
+    // Implement your custom code here. The following code is a simple Excel example.  
+    try {
+          await Excel.run(async (context) => {
+              const range = context.workbook.getSelectedRange();
+              range.format.fill.color = "yellow";
+              await context.sync();
+          });
+      } catch (error) {
+          // Note: In a production add-in, you'd want to notify the user through your add-in's UI.
+          console.error(error);
+      }
+
+    // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+    event.completed();
+}
+
+// You must register the function with the following line.
+Office.actions.associate("highlightSelection", highlightSelection);
+
 ```
 
 #### Menu controls
@@ -340,7 +337,14 @@ Learn more about how to use a Teams manifest in the article [Teams manifest in O
 
 ## Outlook support notes
 
-Add-in commands are available only in Outlook 2013 or later on Windows, Outlook 2016 or later on Mac, Outlook on iOS, Outlook on Android, Outlook on the web for Exchange 2016 or later, and Outlook on the web for Microsoft 365 and Outlook.com.
+Add-in commands are available in the following Outlook versions.
+
+- Outlook 2013 or later on Windows
+- Outlook 2016 or later on Mac
+- Outlook on iOS
+- Outlook on Android
+- Outlook on the web for Exchange 2016 or later
+- Outlook on the web for Microsoft 365 and Outlook.com.
 
 Support for add-in commands in Outlook 2013 requires three updates.
 
