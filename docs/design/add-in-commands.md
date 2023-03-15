@@ -19,17 +19,25 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 There are two types of add-in commands, based on the kind of action that the command triggers.
 
 - **Task pane commands**: The button or menu item opens the add-in's [task pane](task-pane-add-ins.md). You add this kind of add-in command with markup in the manifest. The "code behind" the command is provided by Office.
-  ![A button that opens a task pane on the Outlook ribbon.](../images/commands-task-pane-button-1.png)
 - **Function commands**: The button or menu item runs any arbitrary JavaScript. The code almost always calls APIs in the Office JavaScript Library, but it doesn't have to. This type of add-in typically displays no UI other than the button or menu item itself. Note the following about function commands:
   - The function that is triggered can call the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) method to show a dialog, which is a good way to display an error, show progress, or prompt for input from the user. If the add-in is configured to use a [shared runtime](../testing/runtimes.md#shared-runtime), the function can also call the [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) method.
   - The runtime in which the function command runs is a full [browser-based runtime](../testing/runtimes.md#browser-runtime). It can render HTML and call out to the Internet to send or get data.
-![A button that executes a function on the Outlook ribbon.](../images/commands-uiless-button-1.png)
 
 ## How do add-in commands appear?
 
-An add-in command appears on the ribbon as a button or an item in a drop-down menu. When a user installs an add-in, its commands appear in the UI as a group of buttons. This can either be on the ribbon's default tab or on a custom tab. The default tab depends on the application and context. For Excel, PowerPoint, and Word, the default tab is **Home**.
+An add-in command appears on the ribbon as a button or an item in a drop-down menu. When a user installs an add-in, its commands appear in the UI as a group of buttons. This can either be on the ribbon's default tab or on a custom tab. If you're using the simplified ribbon layout, the add-in name is removed from the app bar. Only the add-in command button on the ribbon remains.
+
+As the ribbon gets more crowded, add-in commands will be displayed in the overflow menu. The add-in commands for an add-in are usually grouped together.
+
+![Add-in command buttons on ribbon and in overflow menu.](../images/commands-collapsed.png)
+
+### Excel, PowerPoint, and Word
+
+The default tab depends on the application and context. For Excel, PowerPoint, and Word, the default tab is **Home**.
 
 ![Screenshot showing add-in commands highlighted in the Excel ribbon.](../images/add-in-commands-1.png)
+
+### Outlook
 
 For Outlook, the default add-in command location is based on the current Outlook mode.
 
@@ -42,14 +50,6 @@ For Outlook, the default add-in command location is based on the current Outlook
 | Using a module extension | The extension's custom tab. |
 
 <sup>1</sup> If a user selects an item in the calendar but doesn't open the pop-out, the add-in's ribbon group won't be visible in the ribbon.
-
-![Add-in command buttons on ribbon.](../images/commands-normal.png)
-
-As the ribbon gets more crowded, add-in commands will be displayed in the overflow menu. The add-in commands for an add-in are usually grouped together.
-
-![Add-in command buttons on ribbon and in overflow menu.](../images/commands-collapsed.png)
-
-When an add-in command is added to an add-in, the add-in name is removed from the app bar. Only the add-in command button on the ribbon remains.
 
 ### Modern Outlook on the web
 
@@ -121,7 +121,7 @@ Add-in commands are currently supported on the following platforms, except for l
 
 ## Debug
 
-To debug an Add-in Command, you must run it in Office on the web. For details, see [Debug add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md).
+To debug an add-in command, you must run it in Office on the web. For details, see [Debug add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md).
 
 ## Best practices
 
