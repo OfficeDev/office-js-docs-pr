@@ -1,7 +1,7 @@
 ---
 title: Manage the sensitivity label of your message or appointment in compose mode (preview)
 description: Learn how to manage the sensitivity label of your message or appointment in compose mode.
-ms.date: 03/10/2023
+ms.date: 03/15/2023
 ms.localizationpriority: medium
 ---
 
@@ -25,7 +25,7 @@ The following table lists client-server combinations that support the use of the
 |Client|Exchange Online|
 |------|------|
 |**Windows**<br>Version 2302 (Build 16130.20020) or later|Supported|
-|**Mac**|Supported|
+|**Mac**|Not applicable|
 |**Web browser (modern UI)**|Supported|
 |**iOS**|Not applicable|
 |**Android**|Not applicable|
@@ -35,12 +35,11 @@ The following table lists client-server combinations that support the use of the
 To test the sensitivity label feature in your add-in while it's in preview, set up your preferred Outlook client accordingly.
 
 - For Outlook on Windows, install Version 2302 (Build 16130.20020) or later. Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
-- For Outlook on Mac, install Build <> or later. Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
 - For Outlook on the web, ensure that the Targeted release option is set up on your Microsoft 365 tenant. To learn more, see the "Targeted release" section of [Set up the Standard or Targeted release options](/microsoft-365/admin/manage/release-options-in-office-365).
 
 ## Configure the manifest
 
-To be able to use the sensitivity feature in your Outlook add-in project, you must set the [\<Permissions\> element](/javascript/api/manifest/permissions) of the XML manifest to **ReadWriteItem**.
+To use the sensitivity feature in your Outlook add-in project, you must set the [\<Permissions\> element](/javascript/api/manifest/permissions) of the XML manifest to **ReadWriteItem**.
 
 ```xml
 <Permissions>ReadWriteItem</Permissions>
@@ -48,9 +47,12 @@ To be able to use the sensitivity feature in your Outlook add-in project, you mu
 
 If your add-in will detect and handle the `OnSensitivityLabelChanged` event, additional manifest configurations are required to enable the event-based activation feature. To learn more, see [Detect sensitivity label changes with the OnSensitivityLabelChanged event](#detect-sensitivity-label-changes-with-the-onsensitivitylabelchanged-event).
 
+> [!IMPORTANT]
+> The sensitivity label feature isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+
 ## Verify the status of the catalog of sensitivity labels
 
-Sensitivity labels and their policies are configured by an organization's administrator through the [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center). For guidance on how to configure sensitivity labels in your tenant, see [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels).
+Sensitivity labels and its policies are configured by an organization's administrator through the [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center). For guidance on how to configure sensitivity labels in your tenant, see [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels).
 
 Before you can get or set the sensitivity label on a message or appointment, you must first ensure that the catalog of sensitivity labels is enabled on the mailbox where the add-in is installed. To check the status of the catalog of sensitivity labels, call [context.sensitivityLabelsCatalog.getIsEnabledAsync](/javascript/api/outlook/office.sensitivitylabelscatalog?view=outlook-js-preview&preserve-view=true#outlook-office-sensitivitylabelscatalog-getisenabledasync-member(1)) in compose mode.
 
