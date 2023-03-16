@@ -1,7 +1,7 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 03/13/2023
+ms.date: 03/14/2023
 ms.localizationpriority: medium
 ---
 
@@ -124,8 +124,6 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
           <bt:Urls>
             <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
             <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
-            <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-            <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/runtime.js" />
           </bt:Urls>
           <bt:ShortStrings>
             <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
@@ -150,6 +148,11 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
 1. Save your changes.
 
 # [Teams Manifest (developer preview)](#tab/jsonmanifest)
+
+The following shows how to configure your JSON manifest to enable the append-on-send feature.
+
+> [!IMPORTANT]
+> The prepend-on-send feature in preview isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
 
 1. Open the manifest.json file.
 
@@ -204,14 +207,14 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
 ---
 
 > [!TIP]
+> The prepend-on-send and append-on-send features must be activated by the user through a task pane or function command button. If you want content to be prepended or appended on send without additional action from the user, you can implement these features in an [event-based activation add-in](autolaunch.md).
+
+> [!TIP]
 > To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
 ## Implement the prepend-on-send handler (preview)
 
 In this section, you'll implement the JavaScript code to prepend a sample company header to a mail item when it's sent.
-
-> [!IMPORTANT]
-> The prepend-on-send feature isn't supported in an add-in that implements an [ItemSend event handler](outlook-on-send-addins.md). As an alternative, consider using [Smart Alerts](smart-alerts-onmessagesend-walkthrough.md), the newer version of the on-send feature.
 
 1. Navigate to the **./src/commands** folder of your project and open the **commands.js** file.
 
@@ -261,9 +264,6 @@ In this section, you'll implement the JavaScript code to prepend a sample compan
 ## Implement the append-on-send handler
 
 In this section, you'll implement the JavaScript code to append a sample company disclaimer to a mail item when it's sent.
-
-> [!IMPORTANT]
-> The append-on-send feature isn't supported in an add-in that implements an [ItemSend event handler](outlook-on-send-addins.md). As an alternative, consider using [Smart Alerts](smart-alerts-onmessagesend-walkthrough.md), the newer version of the on-send feature.
 
 1. In the same **commands.js** file, insert the following function after the `prependHeaderOnSend` function.
 
@@ -349,6 +349,9 @@ In this section, you'll implement the JavaScript code to append a sample company
 1. Send the message, then open it from your **Inbox** or **Sent Items** folder to view the inserted content.
 
     ![A sample of a sent message with the Contoso header prepended and the disclaimer appended to its body.](../images/outlook-prepend-append-on-send.png)
+
+    > [!TIP]
+    > Because content is only prepended or appended once the message is sent, the sender will only be able to view the added content from their **Inbox** or **Sent Items** folder. If you require the sender to view the added content before the message is sent, see [Insert data in the body when composing an appointment or message in Outlook](insert-data-in-the-body.md).
 
 ## Review feature behavior and limitations
 
