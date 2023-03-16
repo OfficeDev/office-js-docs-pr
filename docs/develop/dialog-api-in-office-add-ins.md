@@ -222,9 +222,6 @@ The following is an example of using `messageParent` to send a cross-domain mess
 Office.context.ui.messageParent("Some message", { targetOrigin: "https://resource.contoso.com" });
 ```
 
-> [!NOTE]
-> The `DialogMessageOptions` parameter was released approximately July 19, 2021. For about 30 days after that date, in Office on the web, the first time that `messageParent` is called without the `DialogMessageOptions` parameter and the parent is a different domain from the dialog, the user will be prompted to approve sending data to the target domain. If the user approves, the user's answer is cached for 24 hours. The user isn't prompted again during this period when `messageParent` is called with the same target domain.
-
 If the message doesn't include sensitive data, you can set the `targetOrigin` to "\*" which allows it to be sent to any domain. The following is an example.
 
 ```js
