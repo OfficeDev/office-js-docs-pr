@@ -34,7 +34,7 @@ The **\<VersionOverrides\>** manifest entries specify many things for the add-in
 
 When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the `FunctionFile` node of the manifest.
 
-# [Teams Manifest (developer preview)](#tab/jsonmanifest)
+# [Unified Microsoft 365 manifest (developer preview)](#tab/jsonmanifest)
 
 Add-in commands are declared with the "extensions.runtimes" and "extensions.ribbons" properties. These properties specify many things for the add-in, such as the application, types of controls to add to the ribbon, the text, the icons, and any associated functions.
 

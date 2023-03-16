@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 You can specify regular expression rules to have a [contextual add-in](contextual-outlook-add-ins.md) activated when a match is found in specific fields of the message. Contextual add-ins activate only in read mode. Outlook doesn't activate contextual add-ins when the user is composing an item. There are also other scenarios where Outlook doesn't activate add-ins, for example, digitally signed items. For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
 
-[!include[JSON manifest does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
+[!include[Unified Microsoft 365 manifest does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
 You can specify a regular expression as part of an [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule or [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) rule in the add-in XML manifest. The rules are specified in a [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity) extension point.
 

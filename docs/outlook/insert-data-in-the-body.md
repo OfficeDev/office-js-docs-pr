@@ -36,7 +36,7 @@ If the user hasn't placed the cursor in the item body, **setSelectedDataAsync** 
 
 This code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment or message, as shown below.
 
-[!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
+[!include[Rule features not supported by the unified Microsoft 365 manifest](../includes/rules-not-supported-json-note.md)]
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="Or">

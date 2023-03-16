@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 Outlook activates some types of add-ins if the message or appointment that the user is reading or composing satisfies the activation rules of the add-in. This is true for all add-ins that use the 1.1 manifest schema. The user can then choose the add-in from the Outlook UI to start it for the current item.
 
-[!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
+[!include[Rule features not supported with unified Microsoft 365 manifest](../includes/rules-not-supported-json-note.md)]
 
 The following figure shows Outlook add-ins activated in the add-in bar for the message in the Reading Pane.
 
