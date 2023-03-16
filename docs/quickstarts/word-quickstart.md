@@ -1,6 +1,6 @@
 ---
 title: Build your first Word task pane add-in
-description: Learn how to build a simple Word task pane add-in by using the Office JS API.
+description: Learn how to build a simple Word task pane add-in by using the Office JavaScript API.
 ms.date: 06/10/2022
 ms.prod: word
 ms.localizationpriority: high
@@ -26,7 +26,7 @@ In this article, you'll walk through the process of building a Word task pane ad
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `Javascript`
+- **Choose a script type:** `JavaScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
@@ -69,7 +69,7 @@ After you complete the wizard, the generator creates the project and installs su
 
         [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-1. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In Word, if the "My Office Add-in" task pane isn't already open, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Screenshot showing the Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-2b.png)
 
@@ -79,7 +79,10 @@ After you complete the wizard, the generator creates the project and installs su
 
 ### Next steps
 
-Congratulations, you've successfully created a Word task pane add-in! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the [Word add-in tutorial](../tutorials/word-tutorial.md).
+Congratulations, you've successfully created a Word task pane add-in! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the Word add-in tutorial.
+
+> [!div class="nextstepaction"]
+> [Word add-in tutorial](../tutorials/word-tutorial.md)
 
 # [Visual Studio](#tab/visualstudio)
 
@@ -296,7 +299,10 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 ### Next steps
 
-Congratulations, you've successfully created a Word task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
+Congratulations, you've successfully created a Word task pane add-in! Next, learn more about developing Office Add-ins with Visual Studio, continue to the following article.
+
+> [!div class="nextstepaction"]
+> [Develop Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md)
 
 ---
 
