@@ -750,6 +750,7 @@ items:
         href: outlook/get-or-set-the-location-of-an-appointment.md
       - name: Manage sensitivity labels
         href: outlook/sensitivity-label.md
+        displayName: preview
     - name: Privacy and security
       items:
       - name: Overview

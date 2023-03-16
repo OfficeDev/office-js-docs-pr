@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Manage the sensitivity label of your message or appointment in compose mode (preview)
 
-Collaboration at the workplace not only occurs within the organization, but extends to external partners as well. With information being shared beyond an organization's network, it's important to establish measures to prevent data loss and enforce compliance policies. [Microsoft Purview Information Protection](/microsoft-365/compliance/information-protection) helps you implement solutions to classify and protect sensitive information. The use of sensitivity labels in Outlook is a capability you can configure to protect your data.
+Collaboration in the workplace not only occurs within the organization, but extends to external partners as well. With information being shared beyond an organization's network, it's important to establish measures to prevent data loss and enforce compliance policies. [Microsoft Purview Information Protection](/microsoft-365/compliance/information-protection) helps you implement solutions to classify and protect sensitive information. The use of sensitivity labels in Outlook is a capability you can configure to protect your data.
 
 You can use the Office JavaScript API to implement sensitivity label solutions in your Outlook add-in projects and support the following scenarios.
 
@@ -16,7 +16,7 @@ You can use the Office JavaScript API to implement sensitivity label solutions i
 - Add a header or footer to a message or appointment based on its sensitivity label to comply with business and legal policies.
 
 > [!IMPORTANT]
-> Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 ## Supported clients and platforms
 
@@ -32,10 +32,10 @@ The following table lists client-server combinations that support the use of the
 
 ## Preview the sensitivity label feature
 
-To test the sensitivity label feature in your add-in while it's in preview, set up your preferred Outlook client accordingly.
+To test the sensitivity label feature in your add-in while it's in preview, set up your preferred Outlook client.
 
-- For Outlook on Windows, install Version 2302 (Build 16130.20020) or later. Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
-- For Outlook on the web, ensure that the Targeted release option is set up on your Microsoft 365 tenant. To learn more, see the "Targeted release" section of [Set up the Standard or Targeted release options](/microsoft-365/admin/manage/release-options-in-office-365).
+- For Outlook on Windows, install Version 2302 (Build 16130.20020) or later. Then, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
+- For Outlook on the web, ensure that the **Targeted release** option is set up on your Microsoft 365 tenant. To learn more, see the "Targeted release" section of [Set up the Standard or Targeted release options](/microsoft-365/admin/manage/release-options-in-office-365#targeted-release).
 
 ## Configure the manifest
 
@@ -52,7 +52,7 @@ If your add-in will detect and handle the `OnSensitivityLabelChanged` event, add
 
 ## Verify the status of the catalog of sensitivity labels
 
-Sensitivity labels and its policies are configured by an organization's administrator through the [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center). For guidance on how to configure sensitivity labels in your tenant, see [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels).
+Sensitivity labels and policies are configured by an organization's administrator through the [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center). For guidance on how to configure sensitivity labels in your tenant, see [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels).
 
 Before you can get or set the sensitivity label on a message or appointment, you must first ensure that the catalog of sensitivity labels is enabled on the mailbox where the add-in is installed. To check the status of the catalog of sensitivity labels, call [context.sensitivityLabelsCatalog.getIsEnabledAsync](/javascript/api/outlook/office.sensitivitylabelscatalog?view=outlook-js-preview&preserve-view=true#outlook-office-sensitivitylabelscatalog-getisenabledasync-member(1)) in compose mode.
 
