@@ -299,7 +299,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 ### Next steps
 
-Congratulations, you've successfully created a Word task pane add-in! Next, learn more about developing Office Add-ins with Visual Studio, continue to the following article.
+Congratulations, you've successfully created a Word task pane add-in! Next, to learn more about developing Office Add-ins with Visual Studio, continue to the following article.
 
 > [!div class="nextstepaction"]
 > [Develop Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md)
