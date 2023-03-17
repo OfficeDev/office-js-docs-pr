@@ -1,6 +1,6 @@
 ---
 title:  Unified Microsoft 365 manifest (preview)
-description: Get an overview of the preview unified Microsoft 365 manifest.
+description: Get an overview of the preview JSON-formatted unified Microsoft 365 manifest.
 ms.topic: overview
 ms.date: 06/15/2022
 ms.localizationpriority: high
@@ -117,9 +117,9 @@ The following table maps the child properties of the anonymous child objects in 
 | "contexts" | Specifies the command surfaces that the add-in customizes. | various **\*CommandSurface** elements, such as **PrimaryCommandSurface** and **MessageReadCommandSurface** |*None.* |
 | "tabs" | Configures custom ribbon tabs. | **\<CustomTab\>** | The names and hierarchy of the descendant properties of "tabs" closely match the descendants of **\<CustomTab\>**.  |
 
-## Sample preview unified  manifest
+## Sample preview unified manifest
 
-The following is an example of a preview JSON-manifest for an add-in.
+The following is an example of a preview unified manifest for an add-in.
 
 ```json
 {
