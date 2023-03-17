@@ -112,7 +112,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. View a message in the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0), or open the message in its own window. A new control group named **Contoso Add-in** appears on the Outlook **Home** tab (or the **Message** tab if you opened the message in a new window). The group has a button named **Show Taskpane** and one named **Perform an action**.
 
     > [!NOTE]
-    > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually](sideload-outlook-add-ins-for-testing.md?tabs=windows#sideload-manually) to manually sideload the add-in in Outlook. When you are prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
+    > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually](../outlook/sideload-outlook-add-ins-for-testing.md?tabs=windows#sideload-manually) to manually sideload the add-in in Outlook. When you are prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
 
 1. Select the **Perform an action** button. It [executes a command](../develop/create-addin-commands.md?branch=outlook-json-manifest#step-5-add-the-functionfile-element) to generate a small informational notification at the bottom of the message header, just above the message body.
 
@@ -250,7 +250,7 @@ Add a custom button to the ribbon that inserts text into a message body.
 1. In Outlook, open a new message window (or reply to an existing message). A new control group named **Contoso Add-in** will appear on the Outlook **Message** tab. The group has a button named **Insert text**.
 
     > [!NOTE]
-    > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually](sideload-outlook-add-ins-for-testing.md?tabs=windows#sideload-manually) to manually sideload the add-in in Outlook. When you're prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
+    > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually](../outlook/sideload-outlook-add-ins-for-testing.md?tabs=windows#sideload-manually) to manually sideload the add-in in Outlook. When you're prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
 
 1. Put the cursor anywhere in the message body and choose the **Insert text** button.
 
