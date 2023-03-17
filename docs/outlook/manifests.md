@@ -9,7 +9,7 @@ ms.localizationpriority: high
 
 An Outlook add-in consists of two components: the add-in manifest and a web app supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients.
 
-There are two possible formats for the manifest: XML and JSON. You can learn about the JSON manifest at [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This article is about the XML manifest.
+There are two possible formats for the manifest: XML and JSON. You can learn about the JSON manifest at [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md). This article is about the XML manifest.
 
 The following is an example of the XML manifest.
 
