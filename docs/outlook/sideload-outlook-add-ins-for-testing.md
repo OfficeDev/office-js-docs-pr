@@ -109,9 +109,26 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
     >
     > - Select **Store** from the ribbon, if available.
     >
-    > - Select the **File** menu, then select **Manage Add-ins** from the **Info** tab. This opens the **Add-ins** dialog in Outlook on the web. To learn more about the web experience, select the **Web** tab in [Sideload manually](#sideload-manually).
+    > - Select **File** > **Info** > **Manage Add-ins**. This opens the **Add-Ins for Outlook** dialog in Outlook on the web. To learn more about the web experience, select the **Web** tab in [Sideload manually](#sideload-manually).
 
-1. If there are tabs near the top of the dialog, ensure that the **Add-ins** tab is selected. Then, choose **My add-ins**.
+1. In the flyout that appears, select **Get Add-ins**.
+
+    ![The Get Add-ins option is selected in the flyout.](../images/outlook-sideload-win32-flyout.png)
+
+    > [!IMPORTANT]
+    > If you see the **Add Apps** option instead of **Get Add-ins** in your version of Outlook, you must manually sideload your add-in through Outlook on the web.
+    >
+    > ![The Add Apps option is selected in the flyout.](../images/outlook-sideload-win32-add-apps.png)
+    >
+    > To access the **Add-Ins for Outlook** dialog in Outlook on the web, do one of the following:
+    >
+    > - In Outlook on Windows, select **File** > **Info** > **Manage Add-ins**.
+    >
+    > - Open the [Add-Ins for Outlook](https://outlook.office365.com/owa/?path=/options/manageapps) dialog.
+    >
+    > When the dialog opens in Outlook on the web, follow the succeeding steps to sideload your add-in.
+
+1. If there are tabs near the top of the dialog that opens, ensure that the **Add-ins** tab is selected. Then, choose **My add-ins**.
 
     ![Outlook 2016 add-ins dialog with My add-ins selected.](../images/outlook-sideload-my-add-ins.png)
 
@@ -125,7 +142,9 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
 
 1. Open Outlook 2013 on Windows.
 
-1. Select the **File** menu, then select **Manage Add-ins** from the **Info** tab. Outlook will open the web version in a browser.
+1. Select **File** > **Info** > **Manage Add-ins**. Outlook will open the web version in a browser.
+
+    ![The Manage Add-ins option is selected in Outlook 2013 on Windows.](../images/outlook-sideload-win32-manage-add-ins.png)
 
 1. Follow the steps in the [Sideload an add-in in Outlook on the web](#outlook-on-the-web) section according to your version of Outlook on the web.
 
@@ -160,7 +179,7 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
 
 On all versions of Outlook, the key to removing a sideloaded add-in is the **My Add-ins** dialog, which lists your installed add-ins. To access the **My Add-ins** dialog on your Outlook client, use the last steps listed for [manual sideloading](#sideload-manually) in the previous section of this article.
 
-To remove a sideloaded add-in from Outlook, in the *My Add-ins** dialog, navigate to the **Custom add-ins** section. Choose the ellipsis (`...`) for the add-in, then choose **Remove**.
+To remove a sideloaded add-in from Outlook, in the **My Add-ins** dialog, navigate to the **Custom add-ins** section. Choose the ellipsis (`...`) for the add-in, then choose **Remove**.
 
 ## See also
 
