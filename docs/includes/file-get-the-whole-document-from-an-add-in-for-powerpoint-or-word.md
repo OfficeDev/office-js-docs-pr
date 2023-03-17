@@ -47,11 +47,11 @@ The XML manifest file for an Office Add-in provides important information about 
         <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
         <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
         <Hosts>
-        <Host Name="Document" />
-        <Host Name="Presentation" />
+            <Host Name="Document" />
+            <Host Name="Presentation" />
         </Hosts>
         <DefaultSettings>
-        <SourceLocation DefaultValue="[Network location of app]/GetDoc_App.html" />
+            <SourceLocation DefaultValue="[Network location of app]/GetDoc_App.html" />
         </DefaultSettings>
         <Permissions>ReadWriteDocument</Permissions>
     </OfficeApp>
@@ -82,15 +82,15 @@ Use the following procedure to create a simple user interface for the add-in tha
             <script src="GetDoc_App.js"></script>
         </head>
         <body>
-        <form>
-            <h1>Publish presentation</h1>
-            <br />
-            <div><input id='submit' type="button" value="Submit" /></div>
-            <br />
-            <div><h2>Status</h2> 
-                <div id="status"></div>
-            </div>
-        </form>
+            <form>
+                <h1>Publish presentation</h1>
+                <br />
+                <div><input id='submit' type="button" value="Submit" /></div>
+                <br />
+                <div><h2>Status</h2>
+                    <div id="status"></div>
+                </div>
+            </form>
         </body>
     </html>
     ```
@@ -130,9 +130,9 @@ Use the following procedure to create a simple user interface for the add-in tha
     > [!NOTE]
     > Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the office.js file.
 
-    We'll use some CSS to give the add-in a simple, yet modern and professional appearance. Use the following CSS to define the style of the add-in.
+1. We'll use some CSS to give the add-in a simple yet modern and professional appearance. Use the following CSS to define the style of the add-in.
 
-1. In a new file in the text editor, add the following CSS.
+    In a new file in the text editor, add the following CSS.
 
     ```css  
     body
@@ -209,7 +209,7 @@ function sendFile() {
         { sliceSize: 100000 },
         function (result) {
 
-            if (result.status == Office.AsyncResultStatus.Succeeded) {
+            if (result.status === Office.AsyncResultStatus.Succeeded) {
 
                 // Get the File object from the result.
                 var myFile = result.value;
