@@ -146,7 +146,7 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
 
     ![The Manage Add-ins option is selected in Outlook 2013 on Windows.](../images/outlook-sideload-win32-manage-add-ins.png)
 
-1. Follow the steps in the [Sideload an add-in in Outlook on the web](#outlook-on-the-web) section according to your version of Outlook on the web.
+1. Depending on your version of Outlook on the web, follow the steps in the **Web** tab of [Sideload manually](#sideload-manually).
 
 # [Mac](#tab/mac)
 
