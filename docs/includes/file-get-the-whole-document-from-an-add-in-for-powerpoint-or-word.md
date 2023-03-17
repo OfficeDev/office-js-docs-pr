@@ -14,7 +14,7 @@ This article assumes that you are using a text editor to create the task pane ad
 
 - An XML manifest file (**GetDoc_App.xml**) for the add-in, available on a shared network folder or add-in catalog. The manifest file must point to the location of the HTML file mentioned previously.
 
-You can also create an add-in for your Office application using one of the following:
+Alternatively, you can create an add-in for your Office application using one of the following options. You won't have to create new files as the equivalent of each required file will be available for you to update. For example, the Yeoman generator options include **./src/taskpane/taskpane.html**, **./src/taskpane/taskpane.js**, **./src/taskpane/taskpane.css**, and **./manifest.xml**.
 
 - PowerPoint
   - [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
@@ -61,7 +61,7 @@ The XML manifest file for an Office Add-in provides important information about 
 
 ## Create the user interface for the add-in
 
-For the user interface of the add-in, you can use HTML, written directly into the **GetDoc_App.html** file. The programming logic and functionality of the add-in must be contained in a JavaScript file (for example, **GetDoc_App.js**).
+For the user interface of the add-in, you can use HTML written directly into the **GetDoc_App.html** file. The programming logic and functionality of the add-in must be contained in a JavaScript file (for example, **GetDoc_App.js**).
 
 Use the following procedure to create a simple user interface for the add-in that includes a heading and a single button.
 
@@ -189,7 +189,7 @@ function updateStatus(message) {
 
 When you choose the **Submit** button in the UI, the add-in calls the `sendFile` function, which contains a call to the [Document.getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) method. The `getFileAsync` method uses the asynchronous pattern, similar to other methods in the Office JavaScript API. It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_.
 
-The _fileType_ parameter expects one of three constants from the [FileType](/javascript/api/office/office.filetype) enumeration: `Office.FileType.Compressed` ("compressed"), `Office.FileType.PDF` ("pdf"), or `Office.FileType.Text` ("text"). The current file type support for each platform is listed under the [Document.getFileType](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) remarks. When you pass in **Compressed** for the _fileType_ parameter, the `getFileAsync` method returns the document as a PowerPoint presentation file (\*.pptx) or Word document file (\*.docx) by creating a temporary copy of the file on the local computer.
+The _fileType_ parameter expects one of three constants from the [FileType](/javascript/api/office/office.filetype) enumeration: `Office.FileType.Compressed` ("compressed"), `Office.FileType.PDF` ("pdf"), or `Office.FileType.Text` ("text"). The current file type support for each platform is listed under the [Document.getFileType](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) remarks. When you pass in **Compressed** for the _fileType_ parameter, the `getFileAsync` method returns the current document as a PowerPoint presentation file (\*.pptx) or Word document file (\*.docx) by creating a temporary copy of the file on the local computer.
 
 The `getFileAsync` method returns a reference to the file as a [File](/javascript/api/office/office.file) object. The `File` object exposes the following four members.
 
@@ -200,7 +200,7 @@ The `getFileAsync` method returns a reference to the file as a [File](/javascrip
 
 The `size` property returns the number of bytes in the file. The `sliceCount` returns the number of [Slice](/javascript/api/office/office.slice) objects (discussed later in this article) in the file.
 
-Use the following code to get the PowerPoint or Word document as a `File` object using the `Document.getFileAsync` method and then make a call to the locally defined `getSlice` function. Note that the `File` object, a counter variable, and the total number of slices in the file are passed along in the call to `getSlice` in an anonymous object.
+Use the following code to get the current PowerPoint or Word document as a `File` object using the `Document.getFileAsync` method and then make a call to the locally defined `getSlice` function. Note that the `File` object, a counter variable, and the total number of slices in the file are passed along in the call to `getSlice` in an anonymous object.
 
 ```js
 // Get all of the content from a PowerPoint or Word document in 100-KB chunks of text.
