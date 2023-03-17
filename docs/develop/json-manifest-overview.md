@@ -10,7 +10,7 @@ ms.localizationpriority: high
 
 Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes are compatible with existing add-ins.
 
-One important improvement we are working on is the ability to create a single unit of distribution for all your Microsoft 365 extensions by using the same manifest format and schema, based on the current JSON-formatted Unified Microsoft 365 manifest.
+One important improvement we are working on is the ability to create a single unit of distribution for all your Microsoft 365 extensions by using the same manifest format and schema, based on the current JSON-formatted unified Microsoft 365 manifest.
 
 We've taken an important first step toward these goals by making it possible for you to create Outlook add-ins, running on Windows only, with a unified Microsoft 365 manifest.
 
