@@ -45,8 +45,8 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
      ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface with JSON manifest option chosen.](../images/yo-office-outlook-json-manifest.png)
 
     > [!NOTE]
-    > For this preview, the add-in name cannot be more than 30 characters. 
-    
+    > For this preview, the add-in name cannot be more than 30 characters.
+
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
@@ -73,7 +73,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. Open your project in VS Code or your preferred code editor.
 
     > [!TIP]
-    > On Windows, you can navigate to the root directory of the project via the command line and then enter `code .` to open that folder in VS Code. 
+    > On Windows, you can navigate to the root directory of the project via the command line and then enter `code .` to open that folder in VS Code.
 
 1. Open the file **./src/taskpane/taskpane.html** and replace the entire **\<main\>** element (within the **\<body\>** element) with the following markup. This new markup adds a label where the script in **./src/taskpane/taskpane.ts** will write data.
 
@@ -101,7 +101,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server starts and your add-in will be [sideloaded](../outlook/sideload-outlook-add-ins-for-testing.md). 
+1. Run the following command in the root directory of your project. When you run this command, the local web server starts and your add-in will be [sideloaded](../outlook/sideload-outlook-add-ins-for-testing.md).
 
     ```command&nbsp;line
     npm start
@@ -112,7 +112,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. View a message in the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0), or open the message in its own window. A new control group named **Contoso Add-in** appears on the Outlook **Home** tab (or the **Message** tab if you opened the message in a new window). The group has a button named **Show Taskpane** and one named **Perform an action**.
 
     > [!NOTE]
-    > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually - Outlook 2016 or later on Windows or Mac](../outlook/sideload-outlook-add-ins-for-testing.md#outlook-2016-or-later-on-windows-or-mac) to manually sideload the add-in in Outlook. When you are prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
+    > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually](sideload-outlook-add-ins-for-testing.md?tabs=windows#sideload-manually) to manually sideload the add-in in Outlook. When you are prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
 
 1. Select the **Perform an action** button. It [executes a command](../develop/create-addin-commands.md?branch=outlook-json-manifest#step-5-add-the-functionfile-element) to generate a small informational notification at the bottom of the message header, just above the message body.
 
@@ -149,7 +149,7 @@ Add a custom button to the ribbon that inserts text into a message body.
 1. Open your project in VS Code or your preferred code editor.
 
     > [!TIP]
-    > On Windows, you can navigate to the root directory of the project via the command line and then enter `code .` to open that folder in VS Code. 
+    > On Windows, you can navigate to the root directory of the project via the command line and then enter `code .` to open that folder in VS Code.
 
 1. In your code editor, open the file **./src/command/command.ts** and add the following code to the end of the file. This function will insert `Hello World` at the cursor point in message body.
 
@@ -168,7 +168,7 @@ Add a custom button to the ribbon that inserts text into a message body.
 1. Open the file **./manifest/manifest.json**.
 
     > [!NOTE]
-    > When referring to nested JSON properties, this article uses dot notation. When an item in an array is referenced, the bracketed zero-based number of the item is used. 
+    > When referring to nested JSON properties, this article uses dot notation. When an item in an array is referenced, the bracketed zero-based number of the item is used.
 
 1. To write to a message, the add-in's permissions need to be raised. Scroll to the property `authorization.permissions.resourceSpecific[0].name` and change the value to `MailboxItem.ReadWrite.User`.
 
@@ -250,7 +250,7 @@ Add a custom button to the ribbon that inserts text into a message body.
 1. In Outlook, open a new message window (or reply to an existing message). A new control group named **Contoso Add-in** will appear on the Outlook **Message** tab. The group has a button named **Insert text**.
 
     > [!NOTE]
-    > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually - Outlook 2016 or later on Windows or Mac](../outlook/sideload-outlook-add-ins-for-testing.md#outlook-2016-or-later-on-windows-or-mac) to manually sideload the add-in in Outlook. When you're prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
+    > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually](sideload-outlook-add-ins-for-testing.md?tabs=windows#sideload-manually) to manually sideload the add-in in Outlook. When you're prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
 
 1. Put the cursor anywhere in the message body and choose the **Insert text** button.
 
