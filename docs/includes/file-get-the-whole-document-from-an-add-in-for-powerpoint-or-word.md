@@ -110,15 +110,15 @@ Use the following procedure to create a simple user interface for the add-in tha
             <script src="GetDoc_App.js"></script>
         </head>
         <body>
-        <form>
-            <h1>Publish document</h1>
-            <br />
-            <div><input id='submit' type="button" value="Submit" /></div>
-            <br />
-            <div><h2>Status</h2> 
-                <div id="status"></div>
-            </div>
-        </form>
+            <form>
+                <h1>Publish document</h1>
+                <br />
+                <div><input id='submit' type="button" value="Submit" /></div>
+                <br />
+                <div><h2>Status</h2>
+                    <div id="status"></div>
+                </div>
+            </form>
         </body>
     </html>
     ```
