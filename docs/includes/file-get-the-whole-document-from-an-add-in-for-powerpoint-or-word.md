@@ -128,7 +128,7 @@ Use the following procedure to create a simple user interface for the add-in tha
 1. Save the file as GetDoc_App.html using UTF-8 encoding to a network location or to a web server.
 
     > [!NOTE]
-    > Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the office.js file.
+    > Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the Office.js file.
 
 1. We'll use some CSS to give the add-in a simple yet modern and professional appearance. Use the following CSS to define the style of the add-in.
 
