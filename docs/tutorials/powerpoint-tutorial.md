@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 07/13/2022
+ms.date: 03/17/2023
 ms.prod: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -74,6 +74,12 @@ Edit the add-in code as follows to create the framework that you'll use to imple
             <!-- TODO5: Create the go-to-slide buttons. -->
         </div>
     </div>
+    ```
+
+1. In **Home.html**, find the **script** call that loads jQuery. Make sure it calls jQuery version 3.6.4 and then save the file.
+
+    ```html 
+    <script src="Scripts/jquery-3.6.4.js" type="text/javascript"></script>
     ```
 
 1. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
