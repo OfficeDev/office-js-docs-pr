@@ -1,6 +1,7 @@
 ---
 title: Guidance for deploying Office Add-ins on government clouds
 description: Learn how to deploy your Office Add-in to secure, government cloud environments
+ms.topic: best-practice
 ms.date: 10/17/2022
 ms.localizationpriority: medium
 ---
@@ -32,3 +33,7 @@ These government clouds remain internet-connected, but the set of public endpoin
 ## Airgapped Sovereign Clouds
 
 These government clouds are essentially disconnected from the public internet entirely. Any resource that would normally be accessed from public resources must instead be custom-provisioned inside these cloud environments. In the GCCH and DOD clouds mentioned previously, most (if not all) solution providers will need to provision their services and resources inside the cloud. There is an option to make firewall exceptions that allows access to public services and resources. However, this bypass is not possible in airgapped clouds. As with the GCCH and DOD clouds, there will be a Microsoft Office CDN provisioned inside each cloud environment that hosts required resources such as the Office.js library. You'll need to work closely with customer tenant administrators to determine the best way to provide your services and resources in a way that conforms to the strict access requirements for airgapped Sovereign Clouds.
+
+## Office 365 operated by 21Vianet
+
+[!INCLUDE [Information about the China-specific CDN](../includes/21Vianet-CDN.md)]

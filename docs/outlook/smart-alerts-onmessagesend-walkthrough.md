@@ -150,7 +150,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 > - For **SendMode** options available with the `OnMessageSend` and `OnAppointmentSend` events, see [Available SendMode options](/javascript/api/manifest/launchevent#available-sendmode-options).
 > - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
 
-# [Teams Manifest (developer preview)](#tab/jsonmanifest)
+# [Unified Microsoft 365 manifest (developer preview)](#tab/jsonmanifest)
 
 1. Open the **manifest.json** file.
 
@@ -202,7 +202,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Add the following object to the "autoRunEvents" array. Note the following about this code:
 
-   - The event object assigns a handler function to the `OnMessageSend` event (using the event's Teams manifest name, "messageSending", as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in "actionId" must match the name used in the "id" property of the object in the "actions" array in an earlier step.
+   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, "messageSending", as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in "actionId" must match the name used in the "id" property of the object in the "actions" array in an earlier step.
    - The "sendMode" option is set to "promptUser". This means that if the message doesn't meet the conditions that the add-in sets for sending, the user will be prompted to either cancel sending or to send anyway.
 
     ```json
@@ -402,7 +402,7 @@ If the `PromptUser` or `SoftBlock` option is used, the user can choose **Send An
 
 ![Dialog that alerts the user that the add-in is unavailable and gives the user the option to send the item now or later.](../images/outlook-soft-block-promptUser-unavailable.png)
 
-If the `Block` option is used, the user can't send the item until the add-in becomes available. (The `Block` option is not supported if the add-in uses a Teams manifest (preview).)
+If the `Block` option is used, the user can't send the item until the add-in becomes available. (The `Block` option is not supported if the add-in uses a unified manifest (preview).)
 
 ![Dialog that alerts the user that the add-in is unavailable. The user can only send the item when the add-in is available again.](../images/outlook-hard-block-unavailable.png)
 
@@ -451,9 +451,9 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 |-----|-----|-----|
 |**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
 |**Supported Outlook clients**|- Windows<br>- Web browser (modern UI)<br>- Mac (new UI)|- Windows<br>- Web browser (classic and modern UI)<br>- Mac (classic and new UI) |
-|**Supported events**|**XML manifest**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Teams manifest (preview)**<br>- "messageSending"<br>- "appointmentSending"|**XML manifest**<br>- `ItemSend`<br><br>**Teams manifest (preview)**<br>- Not supported|
-|**Manifest extension property**|**XML manifest**<br>- `LaunchEvent`<br><br>**Teams manifest (preview)**<br>- "autoRunEvents"|**XML manifest**<br>- `Events`<br><br>**Teams manifest (preview)**<br>- Not supported|
-|**Supported send mode options**|- Prompt user<br>- Soft block<br>- Block (not supported if the add-in uses a Teams manifest (preview))|Block|
+|**Supported events**|**XML manifest**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Unified Microsoft 365 manifest (preview)**<br>- "messageSending"<br>- "appointmentSending"|**XML manifest**<br>- `ItemSend`<br><br>**Unified Microsoft 365 manifest (preview)**<br>- Not supported|
+|**Manifest extension property**|**XML manifest**<br>- `LaunchEvent`<br><br>**Unified Microsoft 365 manifest (preview)**<br>- "autoRunEvents"|**XML manifest**<br>- `Events`<br><br>**Unified Microsoft 365 manifest (preview)**<br>- Not supported|
+|**Supported send mode options**|- Prompt user<br>- Soft block<br>- Block (not supported if the add-in uses a unified manifest (preview))|Block|
 |**Maximum number of supported events in an add-in**|One `OnMessageSend` and one `OnAppointmentSend` event.|One `ItemSend` event.|
 |**Add-in deployment**|Add-in can be published to AppSource if its `SendMode` property is set to the `SoftBlock` or `PromptUser` option. Otherwise, the add-in must be deployed by an organization's administrator.|Add-in can't be published to AppSource. It must be deployed by an organization's administrator.|
 |**Additional configuration for add-in installation**|No additional configuration is needed once the manifest is uploaded to the Microsoft 365 admin center.|Depending on the organization's compliance standards and the Outlook client used, certain mailbox policies must be configured to install the add-in.|

@@ -2,6 +2,7 @@
 ms.date: 06/09/2022
 description: Troubleshoot common problems with Excel custom functions.
 title: Troubleshoot custom functions
+ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
 # Troubleshoot custom functions

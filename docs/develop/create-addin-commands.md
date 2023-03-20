@@ -19,7 +19,7 @@ All the task pane add-ins created by [yo office](yeoman-generator-overview.md) h
 
 ## Important parts of an add-in command
 
-The following steps explain how to add add-in commands to an existing add-in. These steps assume you're using an XML manifest. If you're working with the JSON-based Teams manifest, see [Add-in commands in a Teams Manifest for Outlook Add-ins (developer preview)](#add-in-commands-in-a-teams-manifest-for-outlook-add-ins-developer-preview).
+The following steps explain how to add add-in commands to an existing add-in. These steps assume you're using an XML manifest. If you're working with the JSON-based unified Microsoft 365 manifest, see [Add-in commands in a Unified Microsoft 365 manifest for Outlook add-ins (developer preview)](#add-in-commands-in-a-unified-microsoft-365-manifest-for-outlook-add-ins-developer-preview).
 
 ### Step 1: Add VersionOverrides element
 
@@ -333,7 +333,7 @@ Add-in commands are declared with the "extensions.runtimes" and "extensions.ribb
 
 When an add-in needs to provide status updates, such as progress indicators or error messages, it must use the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the "runtimes.code.page" property of the manifest.
 
-To learn more about how to use a unified Microsoft 365 manifest, see [Unified Microsoft 365 manifest in Office Add-ins (preview)](json-manifest-overview.md).
+To learn more about how to use a unified Microsoft 365 manifest, see [Unified Microsoft 365 manifest (preview)](json-manifest-overview.md).
 
 ## Outlook support notes
 

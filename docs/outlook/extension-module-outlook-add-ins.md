@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 Module extension add-ins appear in the Outlook navigation bar, right alongside mail, tasks, and calendars. A module extension is not limited to using mail and appointment information. You can create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
 
 > [!TIP]
-> Module extensions aren't supported in the [Teams manifest (preview)](../develop/json-manifest-overview.md), but you can create a very similar experience for users by making a [personal tab that opens in Outlook](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab). In the early preview period for the Teams manifest in Outlook Add-ins, it isn't possible to combine an Outlook Add-in and a personal tab in the same manifest and install them as a unit. We're working on this, but in the meantime, you must create separate apps for the add-in and the personal tab. They can both use files on the same domain.
+> Module extensions aren't supported in the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md), but you can create a very similar experience for users by making a [personal tab that opens in Outlook](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab). In the early preview period for the unified manifest in Outlook Add-ins, it isn't possible to combine an Outlook Add-in and a personal tab in the same manifest and install them as a unit. We're working on this, but in the meantime, you must create separate apps for the add-in and the personal tab. They can both use files on the same domain.
 
 > [!NOTE]
 > Module extensions are only supported by Outlook 2016 or later on Windows.  

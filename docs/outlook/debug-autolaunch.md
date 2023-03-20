@@ -20,7 +20,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 1. Set the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`. Replace `[Add-in ID]` with your add-in's ID from the manifest.
 
     - **XML manifest**: Use the value of the **\<Id\>** element child of the root **\<OfficeApp\>** element.
-    - **Teams manifest (preview)**: Use the value of the "id" property of the root anonymous `{ ... }` object.
+    - **Unified Microsoft 365 manifest (preview)**: Use the value of the "id" property of the root anonymous `{ ... }` object.
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
