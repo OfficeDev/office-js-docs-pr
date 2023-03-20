@@ -327,13 +327,13 @@ The following shows an example of how to use the **\<Resources\>** element. Each
 > [!NOTE]
 > You must use Secure Sockets Layer (SSL) for all URLs in the **\<Image\>** and **\<Url\>** elements.
 
-## Add-in commands in a Teams manifest for Outlook add-ins (developer preview)
+## Add-in commands in a Unified Microsoft 365 manifest for Outlook add-ins (developer preview)
 
 Add-in commands are declared with the "extensions.runtimes" and "extensions.ribbons" properties. These properties specify many things for the add-in, such as the application, types of controls to add to the ribbon, the text, the icons, and any associated functions.
 
 When an add-in needs to provide status updates, such as progress indicators or error messages, it must use the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the "runtimes.code.page" property of the manifest.
 
-To learn more about how to use a Teams manifest, see [Teams manifest in Office Add-ins (preview)](json-manifest-overview.md).
+To learn more about how to use a unified Microsoft 365 manifest, see [Unified Microsoft 365 manifest in Office Add-ins (preview)](json-manifest-overview.md).
 
 ## Outlook support notes
 
