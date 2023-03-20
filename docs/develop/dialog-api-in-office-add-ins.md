@@ -59,7 +59,7 @@ You can open only one dialog box from a host window. An attempt to open another 
 The `displayInIframe` property is an additional property in the configuration object that you can pass to `displayDialogAsync`. When this property is set to `true`, and the add-in is running in a document opened in Office on the web, the dialog box will open as a floating iframe rather than an independent window, which makes it open faster. The following is an example.
 
 ```js
-Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
+Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', {height: 30, width: 20, displayInIframe: true});
 ```
 
 The default value is `false`, which is the same as omitting the property entirely. If the add-in isn't running in Office on the web, the `displayInIframe` is ignored.
