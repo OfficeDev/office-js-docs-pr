@@ -125,7 +125,7 @@ Use the following procedure to create a simple user interface for the add-in tha
 
     ---
 
-1. Save the file as GetDoc_App.html using UTF-8 encoding to a network location or to a web server.
+1. Save the file as **GetDoc_App.html** using UTF-8 encoding to a network location or to a web server.
 
     > [!NOTE]
     > Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the Office.js file.
@@ -170,7 +170,7 @@ Office.initialize = function (reason) {
     // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
 
-        // Execute sendFile when Submit is clicked.
+        // Run sendFile when Submit is clicked.
         $('#submit').click(function () {
             sendFile();
         });
