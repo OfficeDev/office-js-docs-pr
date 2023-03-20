@@ -331,7 +331,7 @@ The following shows an example of how to use the **\<Resources\>** element. Each
 
 Add-in commands are declared with the "extensions.runtimes" and "extensions.ribbons" properties. These properties specify many things for the add-in, such as the application, types of controls to add to the ribbon, the text, the icons, and any associated functions.
 
-When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the "runtimes.code.page" property of the manifest.
+When an add-in needs to provide status updates, such as progress indicators or error messages, it must use the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the "runtimes.code.page" property of the manifest.
 
 Learn more about how to use a Teams manifest in the article [Teams manifest in Office Add-ins (preview)](json-manifest-overview.md).
 
