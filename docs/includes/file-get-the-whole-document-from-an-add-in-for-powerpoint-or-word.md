@@ -221,8 +221,7 @@ function sendFile() {
 
                 updateStatus("Getting file of " + myFile.size + " bytes");
                 getSlice(state);
-            }
-            else {
+            } else {
                 updateStatus(result.status);
             }
         });
@@ -240,8 +239,7 @@ function getSlice(state) {
         if (result.status == Office.AsyncResultStatus.Succeeded) {
             updateStatus("Sending piece " + (state.counter + 1) + " of " + state.sliceCount);
             sendSlice(result.value, state);
-        }
-        else {
+        } else {
             updateStatus(result.status);
         }
     });
@@ -286,8 +284,7 @@ function sendSlice(slice, state) {
 
                 if (state.counter < state.sliceCount) {
                     getSlice(state);
-                }
-                else {
+                } else {
                     closeFile(state);
                 }
             }
