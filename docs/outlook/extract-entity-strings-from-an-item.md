@@ -208,10 +208,10 @@ let _MyEntities;
 Office.initialize = function () {
     const _mailbox = Office.context.mailbox;
     // Obtains the current item.
-    Item = _mailbox.item;
+    _Item = _mailbox.item;
     // Reads all instances of supported entities from the subject 
     // and body of the current item.
-    MyEntities = _Item.getEntities();
+    _MyEntities = _Item.getEntities();
     
     // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
