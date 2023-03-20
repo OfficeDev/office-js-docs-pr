@@ -234,4 +234,4 @@ More information can be found in the following:
 - Related Word code samples available in [Script Lab](../overview/explore-with-script-lab.md):
   - [Search](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/prod/samples/word/25-paragraph/search.yaml)
   - [Get word count](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/prod/samples/word/25-paragraph/get-word-count.yaml)
-- [Find and replace text](https://support.microsoft.com/office/c6728c16-469e-43cd-afe4-7708c6c779b7)
+- [Find and replace text in Word](https://support.microsoft.com/office/c6728c16-469e-43cd-afe4-7708c6c779b7)
