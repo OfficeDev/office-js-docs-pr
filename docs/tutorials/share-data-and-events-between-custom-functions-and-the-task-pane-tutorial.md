@@ -1,158 +1,18 @@
 ---
-title: 'Tutorial: Share data and events between Excel custom functions and the task pane'
+title: 'Tutorial: Share custom function data with the task pane tutorial'
 description: Learn how to share data and events between custom functions and the task pane in Excel.
-ms.date: 06/15/2022
+ms.date: 03/20/2023
 ms.prod: excel
 ms.localizationpriority: high
 ---
 
-# Tutorial: Share data and events between Excel custom functions and the task pane
+# Tutorial: Share custom function data with the task pane tutorial
 
-Share global data and send events between the task pane and custom functions of your Excel add-in with a shared runtime. We recommend using a shared runtime for most custom functions scenarios, unless you have a specific reason to use a custom function-only add-in. This tutorial assumes you're familiar with using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create add-in projects. Consider completing the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), if you haven't already.
-
-## Create the add-in project
-
-Use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create the Excel add-in project.
-
-- To generate an Excel add-in with custom functions, run the following command.
-
-    ```command&nbsp;line
-    yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true
-    ```
-
-The generator creates the project and installs supporting Node components.
-
-## Configure the manifest
-
-Follow these steps to configure the add-in project to use a shared runtime.
-
-1. Start Visual Studio Code and open the add-in project you generated.
-1. Open the **manifest.xml** file.
-1. Replace (or add) the following **\<Requirements\>** section XML to require the [Shared Runtime requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
-
-    ```xml
-    <Requirements>
-      <Sets DefaultMinVersion="1.1">
-        <Set Name="SharedRuntime" MinVersion="1.1"/>
-      </Sets>
-    </Requirements>
-    ```
-
-    After updating, your manifest XML should appear in the following order.
-
-    ```xml
-    <Hosts>
-      <Host Name="..."/>
-    </Hosts>
-    <Requirements>
-      <Sets DefaultMinVersion="1.1">
-        <Set Name="SharedRuntime" MinVersion="1.1"/>
-      </Sets>
-    </Requirements>
-    <DefaultSettings>
-    ```
-
-1. Find the **\<VersionOverrides\>** section and add the following **\<Runtimes\>** section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
-
-    ```xml
-    <Runtimes>
-      <Runtime resid="Taskpane.Url" lifetime="long" />
-    </Runtimes>
-    ```
-
-    > [!IMPORTANT]
-    > The **\<Runtimes\>** section must be entered after the `<Host xsi:type="...">` element in the exact order shown in the following XML.
-
-    ```xml
-    <VersionOverrides ...>
-      <Hosts>
-        <Host xsi:type="...">
-          <Runtimes>
-            <Runtime resid="Taskpane.Url" lifetime="long" />
-          </Runtimes>
-        ...
-        </Host>
-    ```
-
-    > [!NOTE]
-    > If your add-in includes the **\<Runtimes\>** element in the manifest (required for a shared runtime) and the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met, it uses that WebView2 control. If the conditions are not met, then it uses Internet Explorer 11 regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
-
-1. Find the **\<Page\>** element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
-
-    ```xml
-    <AllFormFactors>
-    ...
-    <Page>
-      <SourceLocation resid="Taskpane.Url"/>
-    </Page>
-    ...
-    ```
-
-1. Find the `<FunctionFile ...>` tag and change the `resid` from **Commands.Url** to  **Taskpane.Url**.
-
-    ```xml
-    </GetStarted>
-    ...
-    <FunctionFile resid="Taskpane.Url"/>
-    ...
-    ```
-
-1. Save the **manifest.xml** file.
-
-## Configure the webpack.config.js file
-
-The **webpack.config.js** will build multiple runtime loaders. You need to modify it to load only the shared runtime via the **taskpane.html** file.
-
-1. Open the **webpack.config.js** file.
-1. Go to the `plugins:` section.
-1. Remove the following `functions.html` plugin if it exists.
-
-    ```javascript
-    new HtmlWebpackPlugin({
-        filename: "functions.html",
-        template: "./src/functions/functions.html",
-        chunks: ["polyfill", "functions"]
-      })
-    ```
-
-1. Remove the following `commands.html` plugin if it exists.
-
-    ```javascript
-    new HtmlWebpackPlugin({
-        filename: "commands.html",
-        template: "./src/commands/commands.html",
-        chunks: ["polyfill", "commands"]
-      })
-    ```
-
-1. If you removed the `functions` or `commands` plugin, add them as `chunks`. The following JavaScript shows the updated entry if you removed both `functions` and `commands` plugins.
-
-    ```javascript
-      new HtmlWebpackPlugin({
-        filename: "taskpane.html",
-        template: "./src/taskpane/taskpane.html",
-        chunks: ["polyfill", "taskpane", "commands", "functions"]
-      })
-    ```
-
-1. Save your changes and rebuild the project.
-
-    ```command&nbsp;line
-    npm run build
-    ```
-
-    > [!NOTE]
-    > You can also remove the **functions.html** and **commands.html** files. The **taskpane.html** loads the **functions.js** and **commands.js** code into the shared runtime via the webpack updates you just made.
-
-1. Save your changes and run the project. Ensure that it loads and runs with no errors.
-
-   ```command&nbsp;line
-   npm run start
-   ```
+Share global data and send events between the task pane and custom functions of your Excel add-in with a shared runtime.
 
 ## Share state between custom function and task pane code
 
-Now that custom functions run in the same context as your task pane code, they can share state directly without using the **Storage** object. The following instructions show how to share a global variable between custom function and task pane code.
+The following instructions show how to share a global variable between custom function and task pane code. This tutorial assumes that you've completed the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md). Use the add-in you created in that tutorial to complete the following instructions.
 
 ### Create custom functions to get or store shared state
 
