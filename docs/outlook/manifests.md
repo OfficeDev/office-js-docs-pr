@@ -416,7 +416,7 @@ Activation rules can be used to activate an add-in based on one or more of the f
 
 For details and samples of activation rules, see [Activation rules for Outlook add-ins](activation-rules.md).
 
-## Next steps: Add-in commands
+## Next steps: add-in commands
 
 After defining a basic manifest, define add-in commands for your add-in. Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands](../design/add-in-commands.md).
 

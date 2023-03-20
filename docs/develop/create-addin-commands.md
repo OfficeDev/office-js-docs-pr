@@ -23,7 +23,7 @@ The following steps explain how to add add-in commands to an existing add-in. Th
 
 ### Step 1: Add VersionOverrides element
 
-The [**\<VersionOverrides\>** element](/javascript/api/manifest/versionoverrides) is the root element that contains the definition of your add-in command. Details on the valid attributes and implications are found the [Version overrides in the manifest](add-in-manifests.md?tabs=tabid-1#version-overrides-in-the-manifest).
+The [**\<VersionOverrides\>** element](/javascript/api/manifest/versionoverrides) is the root element that contains the definition of your add-in command. Details on the valid attributes and implications are found in [Version overrides in the manifest](add-in-manifests.md?tabs=tabid-1#version-overrides-in-the-manifest).
 
 The following example shows the **\<VersionOverrides\>** element and its child elements.
 
@@ -192,7 +192,7 @@ A [button control](/javascript/api/manifest/control-button) performs a single ac
 </Control>
 ```
 
-The following code shows an example function used by **\<FunctionName\>**. Note the call to [`event.completed`](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)), This signals that you have successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls `event.completed`, the next queued call to that function runs. You must implement `event.completed`, otherwise your function won't run.
+The following code shows an example function used by **\<FunctionName\>**. Note the call to [`event.completed`](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)). This signals that you've successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls `event.completed`, the next queued call to that function runs. You must implement `event.completed`, otherwise your function won't run.
 
 ```js
 // Initialize the Office Add-in.
@@ -211,7 +211,7 @@ async function highlightSelection(event) {
               await context.sync();
           });
       } catch (error) {
-          // Note: In a production add-in, you'd want to notify the user through your add-in's UI.
+          // Note: In a production add-in, notify the user through your add-in's UI.
           console.error(error);
       }
 
@@ -327,13 +327,13 @@ The following shows an example of how to use the **\<Resources\>** element. Each
 > [!NOTE]
 > You must use Secure Sockets Layer (SSL) for all URLs in the **\<Image\>** and **\<Url\>** elements.
 
-## Add-in commands in a Teams Manifest for Outlook Add-ins (developer preview)
+## Add-in commands in a Teams manifest for Outlook add-ins (developer preview)
 
 Add-in commands are declared with the "extensions.runtimes" and "extensions.ribbons" properties. These properties specify many things for the add-in, such as the application, types of controls to add to the ribbon, the text, the icons, and any associated functions.
 
 When an add-in needs to provide status updates, such as progress indicators or error messages, it must use the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the "runtimes.code.page" property of the manifest.
 
-Learn more about how to use a Teams manifest in the article [Teams manifest in Office Add-ins (preview)](json-manifest-overview.md).
+To learn more about how to use a Teams manifest, see [Teams manifest in Office Add-ins (preview)](json-manifest-overview.md).
 
 ## Outlook support notes
 
