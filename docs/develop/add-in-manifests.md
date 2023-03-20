@@ -543,7 +543,7 @@ For information about validating a manifest against the [XML Schema Definition (
 ## See also
 
 - [How to find the proper order of manifest elements](manifest-element-ordering.md)
-- [Create add-in commands in your manifest](create-addin-commands.md)
+- [Create add-in commands](create-addin-commands.md)
 - [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
 - [Localization for Office Add-ins](localization.md)
 - [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)

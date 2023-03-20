@@ -31,7 +31,7 @@ In each of these read scenarios, Outlook activates add-ins when their activation
 
 Read add-ins can be any combination of the following types.
 
-- [Add-in commands for Outlook](add-in-commands-for-outlook.md)
+- [Add-in commands](../design/add-in-commands.md)
 - [Contextual Outlook add-ins](contextual-outlook-add-ins.md)
 
 ## API features available to read add-ins

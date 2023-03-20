@@ -654,8 +654,6 @@ items:
       displayName: Outlook
     - name: Outlook add-in design guidelines
       href: outlook/outlook-addin-design.md
-    - name: Add-in commands
-      href: outlook/add-in-commands-for-outlook.md
     - name: Contextual add-ins
       href: outlook/contextual-outlook-add-ins.md
     - name: Module extension add-ins
