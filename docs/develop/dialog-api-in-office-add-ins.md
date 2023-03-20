@@ -395,24 +395,6 @@ function processMessage(arg) {
 
 Even when you don't have your own close-dialog UI, an end user can close the dialog box by choosing the **X** in the upper-right corner. This action triggers the `DialogEventReceived` event. If your host pane needs to know when this happens, it should declare a handler for this event. See the section [Errors and events in the dialog box](dialog-handle-errors-events.md#errors-and-events-in-the-dialog-box) for details.
 
-## Advanced topics and special scenarios
-
-### Use the dialog API to show a video
-
-See [Use the Office dialog box to show a video](dialog-video.md).
-
-### Use the dialog API in an authentication flow
-
-See [Authenticate with the Office dialog API](auth-with-office-dialog-api.md).
-
-### Use the dialog API with single-page applications (SPA) and client-side routing
-
-SPAs and client-side routing need to be handled with care when you are using the Office dialog API. Please see [Best practices for using the Office dialog API in an SPA](dialog-best-practices.md#best-practices-for-using-the-office-dialog-api-in-an-spa).
-
-## Next steps
-
-Learn about gotchas and best practices for the Office dialog API in [Best practices and rules for the Office dialog API](dialog-best-practices.md).
-
 ## Code samples
 
 All of the following samples use `displayDialogAsync`. Some have NodeJS-based servers and others have ASP.NET/IIS-based servers, but the logic of using the method is the same regardless of how the server-side of the add-in is implemented.
@@ -434,5 +416,8 @@ All of the following samples use `displayDialogAsync`. Some have NodeJS-based se
 ## See also
 
 - [Dialog API requirement sets](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
+- [Best practices and rules for the Office dialog API](dialog-best-practices.md)
+- [Authenticate with the Office dialog API](auth-with-office-dialog-api.md)
+- [Use the Office dialog box to show a video](dialog-video.md)
 - [Handling errors and events in the Office dialog box](dialog-handle-errors-events.md)
 - [Runtimes in Office Add-ins](../testing/runtimes.md)
