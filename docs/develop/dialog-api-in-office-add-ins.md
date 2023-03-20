@@ -99,8 +99,7 @@ function userProfileSignedIn(profile) {
 }
 ```
 
-> [!NOTE]
-> The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box. The other JS API that can be called in the dialog box is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md). However, in the dialog box, this API isn't supported in volume-licensed perpetual Outlook 2016 (that is, the MSI version).
+The `messageParent` function is one of *only* two Office JS APIs that can be called in the dialog box. The other JS API that can be called in the dialog box is `Office.context.requirements.isSetSupported`. For information about it, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md). However, in the dialog box, this API isn't supported in volume-licensed perpetual Outlook 2016 (that is, the MSI version).
 
 The host page must be configured to receive the message. You do this by adding a callback parameter to the original call of `displayDialogAsync`. The callback assigns a handler to the `DialogMessageReceived` event. The following is an example.
 
@@ -185,11 +184,11 @@ if (loginSuccess) {
 }
 ```
 
-> [!NOTE]
->
-> - The `loginSuccess` variable would be initialized by reading the HTTP response from the identity provider.
-> - The implementation of the `getProfile` and `getError` functions is not shown. They each get data from a query parameter or from the body of the HTTP response.
-> - Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
+About the previous example, note:
+
+- The `loginSuccess` variable would be initialized by reading the HTTP response from the identity provider.
+- The implementation of the `getProfile` and `getError` functions is not shown. They each get data from a query parameter or from the body of the HTTP response.
+- Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
 
 The handler code in the host page uses the value of the `messageType` property to branch as shown in the following example. Note that the `showUserName` function is the same as in the previous example and `showNotification` function displays the error in the host page's UI.
 
