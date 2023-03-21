@@ -1,15 +1,15 @@
 ---
-title: Office JavaScript API support for content and task pane add-ins in Office 2013
-description: Use the Office JavaScript API to create a task pane in Office 2013.
-ms.date: 07/08/2021
+title: Office JavaScript API support for content and task pane add-ins
+description: Use the Office JavaScript API to create a task pane or content add-in.
+ms.date: 03/21/2023
 ms.localizationpriority: medium
 ---
 
-# Office JavaScript API support for content and task pane add-ins in Office 2013
+# Office JavaScript API support for content and task pane add-ins
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-You can use the [Office JavaScript API](../reference/javascript-api-for-office.md) to create task pane or content add-ins for Office 2013 client applications. The objects and methods that content and task pane add-ins support are categorized as follows:
+You can use the [Office JavaScript API](../reference/javascript-api-for-office.md) to create task pane or content add-ins for Office client applications. The objects and methods that content and task pane add-ins support are categorized as follows:
 
 1. **Common objects shared with other Office Add-ins.** These objects include [Office](/javascript/api/office), [Context](/javascript/api/office/office.context), and [AsyncResult](/javascript/api/office/office.asyncresult). The `Office` object is the root object of the Office JavaScript API. The `Context` object represents the add-in's runtime environment. Both `Office` and `Context` are the fundamental objects for any Office Add-in. The `AsyncResult` object represents the results of an asynchronous operation, such as the data returned to the `getSelectedDataAsync` method, which reads what a user has selected in a document.
 
@@ -122,7 +122,7 @@ For more details about working with custom data using the methods of the `Settin
 
 If your task pane add-in runs in Project, your add-in can read data from some of the project fields, resource, and task fields in the active project. To do that, you use the methods and events of the [ProjectDocument](/javascript/api/office/office.document) object, which extends the `Document` object to provide additional Project-specific functionality.
 
-For examples of reading Project data, see [Create your first task pane add-in for Project 2013 by using a text editor](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
+For examples of reading Project data, see [Create your first task pane add-in for Project](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
 ## Permissions model and governance
 

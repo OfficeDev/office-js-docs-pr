@@ -2,7 +2,7 @@
 title: Automatically open a task pane with a document
 description: Learn how to configure an Office Add-in to open automatically when a document opens.
 ms.topic: how-to
-ms.date: 09/01/2022
+ms.date: 03/21/2023
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +18,7 @@ Some scenarios require that a task pane open automatically when a document opens
 
 ## How is the autoopen feature different from inserting a task pane?
 
-When a user launches add-ins that don't use add-in commands - for example, add-ins that run in Office 2013 - they are inserted into the document, and persist in that document. As a result, when other users open the document, they are prompted to install the add-in, and the task pane opens. The challenge with this model is that in many cases, users don't want the add-in to persist in the document. For example, a student who uses a dictionary add-in in a Word document might not want their classmates or teachers to be prompted to install that add-in when they open the document.
+When a user launches add-ins that don't use add-in commands, they are inserted into the document, and persist in that document. As a result, when other users open the document, they are prompted to install the add-in, and the task pane opens. The challenge with this model is that in many cases, users don't want the add-in to persist in the document. For example, a student who uses a dictionary add-in in a Word document might not want their classmates or teachers to be prompted to install that add-in when they open the document.
 
 With the autoopen feature, you can explicitly define or allow the user to define whether a specific task pane add-in persists in a specific document.
 

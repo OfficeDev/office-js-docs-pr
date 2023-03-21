@@ -1,7 +1,7 @@
 ---
 title: Asynchronous programming in Office Add-ins
 description: Learn how the Office JavaScript library uses asynchronous programming in Office Add-ins.
-ms.date: 07/18/2022
+ms.date: 03/21/2023
 ms.localizationpriority: medium
 ---
 
@@ -13,13 +13,13 @@ Why does the Office Add-ins API use asynchronous programming? Because JavaScript
 
 The names of all asynchronous methods in the API end with "Async", such as the `Document.getSelectedDataAsync`, `Binding.getDataAsync`, or `Item.loadCustomPropertiesAsync` methods. When an "Async" method is called, it executes immediately and any subsequent script execution can continue. The optional callback function you pass to an "Async" method executes as soon as the data or requested operation is ready. This generally occurs promptly, but there can be a slight delay before it returns.
 
-The following diagram shows the flow of execution for a call to an "Async" method that reads the data the user selected in a document open in the server-based Word or Excel. At the point when the "Async" call is made, the JavaScript execution thread is free to perform any additional client-side processing (although none are shown in the diagram). When the "Async" method returns, the callback resumes execution on the thread, and the add-in can the access data, do something with it, and display the result. The same asynchronous execution pattern holds when working with the Office rich client applications, such as Word 2013 or Excel 2013.
+The following diagram shows the flow of execution for a call to an "Async" method that reads the data the user selected in a document open in the server-based Word or Excel. At the point when the "Async" call is made, the JavaScript execution thread is free to perform any additional client-side processing (although none are shown in the diagram). When the "Async" method returns, the callback resumes execution on the thread, and the add-in can the access data, do something with it, and display the result. The same asynchronous execution pattern holds when working with Office client applications on Windows or Mac.
 
 *Figure 1. Asynchronous programming execution flow*
 
 ![Diagram showing the command execution interaction over time with the user, the add-in page, and the web app server hosting the add-in.](../images/office-addins-asynchronous-programming-flow.png)
 
-Support for this asynchronous design in both rich and web clients is part of the "write once-run cross-platform" design goals of the Office Add-ins development model. For example, you can create a content or task pane add-in with a single code base that will run in both Excel 2013 and Excel on the web.
+Support for this asynchronous design in both rich and web clients is part of the "write once-run cross-platform" design goals of the Office Add-ins development model. For example, you can create a content or task pane add-in with a single code base that will run in both Excel on Windows and Excel on the web.
 
 ## Write the callback function for an "Async" method
 
@@ -37,7 +37,7 @@ The following anonymous callback function declares a single parameter named `res
 
 ```js
 function (result) {
-        write('Selected data: ' + result.value);
+    write('Selected data: ' + result.value);
 }
 ```
 

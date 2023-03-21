@@ -1,7 +1,7 @@
 ---
 title: Privacy and security for Office Add-ins
 description: Learn about the privacy and security aspects of the Office Add-ins platform.
-ms.date: 08/19/2022
+ms.date: 03/21/2023
 ms.localizationpriority: medium
 ---
 
@@ -100,7 +100,7 @@ The add-in platform addresses end users' privacy concerns in the following ways.
   - For instructions on how to manage add-ins in Outlook on Windows or on Mac, see [Get an Office Add-in for Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
   - In Outlook on the web, select **Get Add-ins** from the ribbon. To learn more, see [Using add-ins in Outlook on the web](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce).
 
-  Administrators can also manage this access [by using group policy](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+  Administrators can also manage to AppSource [through the admin center](/microsoft-365/admin/manage/manage-addins-in-the-admin-center).
 
 - The design of the add-in platform provides security and performance for end users in the following ways.
 
@@ -255,16 +255,13 @@ Other than resource usage rules, developers for Outlook add-ins should also make
 
 In a corporate setting, IT administrators have ultimate authority over enabling or disabling access to AppSource and any private catalogs.
 
-The management and enforcement of Office settings is done with group policy settings. These are configurable through the [Office Deployment Tool](/deployoffice/overview-of-the-office-2016-deployment-tool), in conjunction with the [Office Customization Tool](/deployoffice/overview-of-the-office-customization-tool-for-click-to-run).
+The management and enforcement of Office settings is done with group policy settings. These are configurable through the [Office Deployment Tool](/deployoffice/overview-office-deployment-tool), in conjunction with the [Office Customization Tool](/deployoffice/admincenter/overview-office-customization-tool).
 
 | Setting name | Description |
 |--------------|-------------|
 | Allow Unsecure web add-ins and Catalogs | Allows users to run non-secure Office Add-ins, which are Office Add-ins that have webpage or catalog locations that are not SSL-secured (https://) and are not in users' Internet zones. |
 | Block Web Add-ins | Allows you to prevent users from running Office Add-ins that use web technologies. |
 | Block the Office Store |  Allows you to prevent users from getting or running Office Add-ins that come from the Office Store. |
-
-> [!IMPORTANT]
-> If your working groups are using multiple releases of Office, group policy settings must be configured for each release. Please refer to the [Using Group Policy to manage how users can install and use apps for Office](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) of the [Overview of apps for Office 2013](/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15)) article for details on group policy settings for Office 2013.
 
 ## See also
 

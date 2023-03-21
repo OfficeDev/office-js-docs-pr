@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript object model in Office Add-ins
 description: Learn the key object types in the Excel JavaScript APIs and how to use them to build add-ins for Excel.
-ms.date: 02/16/2022
+ms.date: 03/21/2023
 ms.prod: excel
 ms.topic: concept-article
 ms.localizationpriority: high
@@ -18,11 +18,9 @@ This article describes how to use the [Excel JavaScript API](../reference/overvi
 
 An Excel add-in interacts with objects in Excel by using the Office JavaScript API, which includes two JavaScript object models:
 
-* **Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more.
+[!include[The roles of the Common and application-specific APIs](../includes/excel-api-models.md)]
 
-* **Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.
-
-While you'll likely use the Excel JavaScript API to develop the majority of functionality in add-ins that target Excel 2016 or later, you'll also use objects in the Common API. For example:
+While you'll likely use the Excel JavaScript API to develop the majority of functionality, you'll also use objects in the Common API. For example:
 
 * [Context](/javascript/api/office/office.context): The `Context` object represents the runtime environment of the add-in and provides access to key objects of the API. It consists of workbook configuration details such as `contentLanguage` and `officeTheme` and also provides information about the add-in's runtime environment such as `host` and `platform`. Additionally, it provides the `requirements.isSetSupported()` method, which you can use to check whether the specified requirement set is supported by the Excel application where the add-in is running.
 * [Document](/javascript/api/office/office.document): The `Document` object provides the `getFileAsync()` method, which you can use to download the Excel file where the add-in is running.

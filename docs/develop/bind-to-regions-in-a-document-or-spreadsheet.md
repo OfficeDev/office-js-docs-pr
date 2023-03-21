@@ -1,7 +1,7 @@
 ---
 title: Bind to regions in a document or spreadsheet
 description: Learn how to use binding to ensure consistent access a specific region or element of a document or spreadsheet through an identifier.
-ms.date: 07/18/2022
+ms.date: 03/21/2023
 ms.localizationpriority: medium
 ---
 
@@ -302,9 +302,6 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 In the example, the first parameter is the value to set on `myBinding`. Because this is a text binding, the value is a `string`. Different binding types accept different types of data.
 
 The anonymous function that is passed into the method is a callback that is executed when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains the status of the result.
-
-> [!NOTE]
-> Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel on the web, you can now [set formatting when writing and updating data in bound tables](../excel/excel-add-ins-tables.md).
 
 ## Detect changes to data or the selection in a binding
 

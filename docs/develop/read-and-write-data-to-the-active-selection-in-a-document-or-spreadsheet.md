@@ -1,7 +1,7 @@
 ---
 title: Read and write data to the active selection in a document or spreadsheet
 description: Learn how to read and write data to the active selection in a Word document or Excel spreadsheet.
-ms.date: 01/31/2022
+ms.date: 03/21/2023
 ms.localizationpriority: medium
 ---
 
@@ -61,9 +61,6 @@ function write(message){
 Passing in different object types for the  _data_ parameter will have different results. The result depends on what is currently selected in the document, which Office client application is hosting your add-in, and whether the data passed in can be coerced to the current selection.
 
 The anonymous function passed into the [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) method as the _callback_ parameter is executed when the asynchronous call is completed. When you write data to the selection by using the `setSelectedDataAsync` method, the _asyncResult_ parameter of the callback provides access only to the status of the call, and to the [Error](/javascript/api/office/office.error) object if the call fails.
-
-> [!NOTE]
-> Starting with the release of the Excel 2013 SP1 and the corresponding build of Excel on the web, you can now [set formatting when writing a table to the current selection](../excel/excel-add-ins-tables.md).
 
 ## Detect changes in the selection
 
