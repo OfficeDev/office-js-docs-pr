@@ -6,11 +6,11 @@ ms.prod: excel
 ms.localizationpriority: high
 ---
 
-# Tutorial: Share custom function data with the task pane tutorial
+# Tutorial: Share custom function data with the task pane
 
 Share global data and send events between the task pane and custom functions of your Excel add-in with a shared runtime.
 
-## Share state between custom function and task pane code
+## Share a state between custom function and task pane code
 
 The following instructions show how to share a global variable between custom function and task pane code. This tutorial assumes that you've completed the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md). Use the add-in you created in that tutorial to complete the following instructions.
 
@@ -126,7 +126,7 @@ The following instructions show how to share a global variable between custom fu
 Once Excel starts, you can use the task pane buttons to store or get shared data. Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data. Or use `=CONTOSO.STOREVALUE("new value")` to change the shared data to a new value.
 
 > [!NOTE]
-> Configuring your project as shown in this article will share context between custom functions and the task pane. Calling some Office APIs from custom functions is possible. [See Call Microsoft Excel APIs from a custom function](../excel/call-excel-apis-from-custom-function.md) for more details.
+> Calling some Office APIs from custom functions using a shared runtime is possible. [See Call Microsoft Excel APIs from a custom function](../excel/call-excel-apis-from-custom-function.md) for more details.
 
 ## See also
 
