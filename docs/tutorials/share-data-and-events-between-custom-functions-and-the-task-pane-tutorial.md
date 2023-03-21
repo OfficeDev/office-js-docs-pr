@@ -56,12 +56,6 @@ The following instructions show how to share a global variable between custom fu
 ### Create task pane controls to work with global data
 
 1. Open the file **src/taskpane/taskpane.html**.
-1. Add the following script element just before the closing `</head>` element.
-
-    ```HTML
-    <script src="../functions/functions.js"></script>
-    ```
-
 1. After the closing `</main>` element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
 
     ```HTML
