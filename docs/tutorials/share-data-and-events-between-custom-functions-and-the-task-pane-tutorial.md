@@ -1,12 +1,12 @@
 ---
-title: 'Tutorial: Share custom function data with the task pane tutorial'
+title: 'Tutorial: Share data and events between Excel custom functions and the task pane'
 description: Learn how to share data and events between custom functions and the task pane in Excel.
 ms.date: 03/20/2023
 ms.prod: excel
 ms.localizationpriority: high
 ---
 
-# Tutorial: Share custom function data with the task pane
+# Tutorial: Share data and events between Excel custom functions and the task pane
 
 Share global data and send events between the task pane and custom functions of your Excel add-in with a shared runtime.
 
