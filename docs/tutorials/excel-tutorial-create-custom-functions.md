@@ -221,4 +221,4 @@ You can prevent this conflict by [clearing the Office cache](../testing/clear-ca
 
 ## Next steps
 
-Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data. Next, learn how to [Share custom function data with the task pane](share-data-and-events-between-custom-functions-and-the-task-pane.md).
+Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data. Next, learn how to [Share custom function data with the task pane](share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md).
