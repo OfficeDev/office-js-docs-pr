@@ -189,7 +189,7 @@ When you use the `makeEwsRequestAsync` method, the request is authenticated by u
 To use the `makeEwsRequestAsync` method, your add-in must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
 
 - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-- **Teams manifest (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+- **Unified Microsoft 365 manifest (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
 For information about using the **read/write mailbox** permission, see [read/write mailbox permission](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission).
 

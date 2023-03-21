@@ -44,7 +44,12 @@ New JavaScript APIs are first introduced in "preview" and later become part of a
 
 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
 
+## CDN references for other Microsoft 365 environments
+
+[!INCLUDE [Information about the China-specific CDN](../includes/21Vianet-CDN.md)]
+
 ## See also
 
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
+- [Guidance for deploying Office Add-ins on government clouds](../publish/government-cloud-guidance.md)

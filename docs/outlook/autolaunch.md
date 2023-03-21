@@ -20,7 +20,7 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 
 The following table lists events that are currently available and the supported clients for each event. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Description** column includes a link to the related object where applicable.
 
-|Event canonical name</br>and XML manifest name|Teams manifest name|Description|Minimum requirement set and supported clients|
+|Event canonical name</br>and XML manifest name|Unified Microsoft 365 manifest name|Description|Minimum requirement set and supported clients|
 |---|---|---|---|
 |`OnNewMessageCompose`| newMessageComposeCreated |On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI |
 |`OnNewAppointmentOrganizer`|newAppointmentOrganizerCreated|On creating a new appointment but not on editing an existing one.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI |
@@ -177,7 +177,7 @@ To enable event-based activation of your add-in, you must configure the [Runtime
 
 Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the **\<Runtime\>** element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
 
-# [Teams Manifest (developer preview)](#tab/jsonmanifest)
+# [Unified Microsoft 365 manifest (developer preview)](#tab/jsonmanifest)
 
 1. Open the **manifest.json** file.
 

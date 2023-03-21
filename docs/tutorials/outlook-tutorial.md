@@ -1323,5 +1323,4 @@ In this tutorial, you've created an Outlook add-in that can be used in message c
 
 - [Outlook add-in manifests](../outlook/manifests.md)
 - [Outlook add-in design guidelines](../outlook/outlook-addin-design.md)
-- [Add-in commands for Outlook](../outlook/add-in-commands-for-outlook.md)
 - [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md)

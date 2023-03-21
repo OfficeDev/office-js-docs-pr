@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > The technique in this article can be used only on a Windows development computer. If you're developing on a Mac, see [Debug function commands](../testing/debug-function-command.md).
 
-This article describes how to use the Office Add-in Debugger Extension in Visual Studio Code to debug [function commands](add-in-commands-for-outlook.md#run-a-function-command). Function commands are initiated through an add-in command button in the ribbon. For more information about add-in commands, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
+This article describes how to use the Office Add-in Debugger Extension in Visual Studio Code to debug [function commands](../design/add-in-commands.md#types-of-add-in-commands). Function commands are initiated through an add-in command button in the ribbon. For more information about add-in commands, see [Add-in commands](../design/add-in-commands.md).
 
 This article assumes that you already have an add-in project that you'd like to debug. To create an add-in with a function command to practice debugging, follow the steps in [Tutorial: Build a message compose Outlook add-in](../tutorials/outlook-tutorial.md).
 
@@ -36,6 +36,6 @@ Now that you've enabled debugging on your add-in, you're ready to configure and 
 
 ## See also
 
-- [Add-in commands for Outlook](add-in-commands-for-outlook.md)
+- [Add-in commands](../design/add-in-commands.md)
 - [Overview of debugging Office Add-ins](../testing/debug-add-ins-overview.md)
 - [Debug your event-based Outlook add-in](debug-autolaunch.md)

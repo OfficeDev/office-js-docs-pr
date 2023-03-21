@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 Outlook contextual add-in activation is based on the activation rules in an XML manifest for the add-in. When conditions for the currently selected item satisfy the activation rules for the add-in, the application activates and displays the add-in button in the Outlook UI (add-in selection pane for compose add-ins, add-in bar for read add-ins). However, if your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
 
-[!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
+[!include[Rule features not supported by the unified Microsoft 365 manifest](../includes/rules-not-supported-json-note.md)]
 
 ## Is user mailbox on a version of Exchange Server that is at least Exchange 2013?
 

@@ -18,7 +18,7 @@ To learn more about where add-ins do and don't activate, refer to the [Mailbox i
 
 ## Limits for activation rules
 
-[!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
+[!include[Rule features not supported by the unified Microsoft 365 manifest](../includes/rules-not-supported-json-note.md)]
 
 Follow these guidelines when designing activation rules for Outlook add-ins:
 
