@@ -2,7 +2,7 @@
 title:  Unified Microsoft 365 manifest (preview)
 description: Get an overview of the preview JSON-formatted unified Microsoft 365 manifest.
 ms.topic: overview
-ms.date: 06/15/2022
+ms.date: 03/21/2023
 ms.localizationpriority: high
 ---
 
@@ -10,17 +10,14 @@ ms.localizationpriority: high
 
 Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes are compatible with existing add-ins.
 
-One important improvement we are working on is the ability to create a single unit of distribution for all your Microsoft 365 extensions by using the same manifest format and schema, based on the current JSON-formatted unified Microsoft 365 manifest.
+One important improvement we're working on is the ability to create a single unit of distribution for all your Microsoft 365 extensions by using the same manifest format and schema, based on the JSON-formatted unified Microsoft 365 manifest.
 
 We've taken an important first step toward these goals by making it possible for you to create Outlook add-ins, running on Windows only, with a unified Microsoft 365 manifest.
 
 > [!NOTE]
-> The new manifest is available for preview and is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins.
-
-During the early preview period, the following limitations apply.
-
-- The preview version of the unified manifest only supports Outlook add-ins and only in Office downloaded from a Microsoft 365 subscription then installed on Windows. We're working on extending support to Excel, PowerPoint, and Word.
-- It isn't yet possible to combine, and sideload, an add-in with a Teams app, such as a Teams personal tab, or other Microsoft 365 extension types. In the coming months, we will continue to extend the preview to support these scenarios and provide additional tools to update manifests to the preview format.
+> - The unified manifest is available for preview and is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The unified manifest shouldn't be used in production add-ins.
+> - The preview version of the unified manifest only supports Outlook add-ins and only in Office downloaded from a Microsoft 365 subscription and installed on Windows. We're working on extending support to Excel, PowerPoint, and Word, as well as other platforms.
+> - The unified manifest requires Office Version 2304 (Build 16320.00000) or later. Your Microsoft 365 subscription channel must be "Beta".
 
 > [!TIP]
 > Ready to get started with the preview unified manifest? Begin with [Build an Outlook add-in with the unified Microsoft 365 manifest (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
