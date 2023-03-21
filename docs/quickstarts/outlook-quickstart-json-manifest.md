@@ -1,7 +1,7 @@
 ---
 title: Build an Outlook add-in with the unified Microsoft 365 manifest (preview)
 description: Learn how to build a simple Outlook task pane add-in with the unified Microsoft 365 manifest.
-ms.date: 06/06/2022
+ms.date: 03/21/2023
 ms.prod: outlook
 ms.localizationpriority: high
 ---
@@ -38,7 +38,7 @@ You can create an Office Add-in with the unified manifest by using the [Yeoman g
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - **Choose a project type** - `Outlook Add-in with Unified Microsoft 365 Manifest (preview)` or `Outlook Add-in with Teams Manifest (preview)`
+    - **Choose a project type** - `Outlook Add-in with unified Microsoft 365 Manifest (preview)`
 
     - **What do you want to name your add-in?** - `Add-in with Unified Manifest`
 
