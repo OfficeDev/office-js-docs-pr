@@ -12,7 +12,7 @@ Share global data and send events between the task pane and custom functions of 
 
 ## Share a state between custom function and task pane code
 
-The following instructions show how to share a global variable between custom function and task pane code. This tutorial assumes that you've completed the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md). Use the add-in you created in that tutorial to complete the following instructions.
+The following instructions show how to share a global variable between custom function and task pane code. This tutorial assumes that you've completed the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), with a **Excel Custom Functions using a Shared Runtime** project using the script type **JavaScript**. Use the add-in you created in that tutorial to complete the following instructions.
 
 ### Create custom functions to get or store shared state
 
@@ -130,4 +130,5 @@ Once Excel starts, you can use the task pane buttons to store or get shared data
 
 ## See also
 
+- [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md)
 - [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
