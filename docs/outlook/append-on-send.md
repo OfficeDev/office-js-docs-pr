@@ -1,7 +1,8 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 03/14/2023
+ms.date: 03/22/2023
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -22,7 +23,10 @@ In this walkthrough, you'll develop an add-in that prepends a header and appends
 
 ## Prerequisites to preview prepend-on-send
 
-To preview the prepend-on-send feature, install Outlook on Windows, starting with Version 2209 (Build 15707.36127). Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
+To preview the prepend-on-send feature, set up your preferred Outlook client.
+
+- For Outlook on Windows, install Version 2209 (Build 15707.36127) or later. Then, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
+- For Outlook on the web, ensure that the **Targeted release** option is set up on your Microsoft 365 tenant. To learn more, see the "Targeted release" section of [Set up the Standard or Targeted release options](/microsoft-365/admin/manage/release-options-in-office-365#targeted-release).
 
 ## Set up your environment
 
@@ -337,6 +341,9 @@ In this section, you'll implement the JavaScript code to append a sample company
     ```command&nbsp;line
     npm start
     ```
+
+    > [!NOTE]
+    > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
 
 1. Create a new message, and add yourself to the **To** line.
 
