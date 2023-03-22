@@ -1,2 +1,2 @@
 > [!NOTE]
-> Add-ins using the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md) aren't currently supported on mobile devices.
+> Add-ins using the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md) aren't currently supported on mobile devices.

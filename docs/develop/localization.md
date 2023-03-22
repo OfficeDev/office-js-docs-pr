@@ -42,7 +42,7 @@ The Office JavaScript API provides two properties that support displaying or int
 
 ## Control localization from the manifest
 
-The techniques for localizing with the manifest differ depending on whether you are using the XML manifest or the Teams manifest (preview).
+The techniques for localizing with the manifest differ depending on whether you are using the XML manifest or the unified Microsoft 365 manifest (preview).
 
 # [XML Manifest](#tab/xmlmanifest)
 
@@ -141,9 +141,9 @@ For Outlook add-ins, the [SourceLocation] element also aligns to the form factor
 </PhoneSettings>
 ```
 
-# [Teams Manifest (developer preview)](#tab/jsonmanifest)
+# [Unified manifest (developer preview)](#tab/jsonmanifest)
 
-When using the Teams manifest (preview), localize the public-facing strings in the manifest as described in [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization#localize-strings-in-your-app-manifest). The following is an example for an Outlook add-in. First is the "localizationInfo" object in the manifest. Below that is the fr-fr.json file with the translated strings. The add-in has a task pane (with a French version of the home page), localized French icons, and a custom ribbon button that opens a video player in a dialog box. 
+When using the unified manifest (preview), localize the public-facing strings in the manifest as described in [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization#localize-strings-in-your-app-manifest). The following is an example for an Outlook add-in. First is the "localizationInfo" object in the manifest. Below that is the fr-fr.json file with the translated strings. The add-in has a task pane (with a French version of the home page), localized French icons, and a custom ribbon button that opens a video player in a dialog box. 
 
 ```json
 "localizationInfo": {
@@ -159,7 +159,7 @@ When using the Teams manifest (preview), localize the public-facing strings in t
 
 ```json
 {
-  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.Localization.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.16/MicrosoftTeams.Localization.schema.json",
   "name.short": "Lecteur vidéo",
   "name.full": "Lecteur vidéo pour Outlook",
   "description.short": "Voir les vidéos YouTube dans Outlook via les mails.",
@@ -180,7 +180,7 @@ When using the Teams manifest (preview), localize the public-facing strings in t
 ## Localize extended overrides
 
 > [!NOTE]
-> This section is not applicable if you are using the Teams manifest (preview).
+> This section is not applicable if you are using the unified manifest (preview).
 
 Some extensibility features of Office Add-ins, such as keyboard shortcuts, are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest. This section assumes that you're familiar with extended overrides. See [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element.
 

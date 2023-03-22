@@ -59,7 +59,7 @@ Unlike custom core tabs, which are defined with XML in the manifest, custom cont
 > [!NOTE]
 > The structure of the JSON blob's properties and subproperties (and the key names) is roughly parallel to the structure of the [CustomTab](/javascript/api/manifest/customtab) element and its descendant elements in the manifest XML.
 
-We'll construct an example of a contextual tabs JSON blob step-by-step. The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/en-us/json-schemas/office-js/dynamic-ribbon.schema.json). If you are working in Visual Studio Code, you can use this file to get IntelliSense and to validate your JSON. For more information, see [Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
+We'll construct an example of a contextual tabs JSON blob step-by-step. The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). If you are working in Visual Studio Code, you can use this file to get IntelliSense and to validate your JSON. For more information, see [Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
 
 1. Begin by creating a JSON string with two array properties named `actions` and `tabs`. The `actions` array is a specification of all the functions that can be executed by controls on the contextual tab. The `tabs` array defines one or more contextual tabs, *up to a maximum of 20*.
 

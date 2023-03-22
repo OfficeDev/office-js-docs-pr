@@ -9,7 +9,7 @@ ms.localizationpriority: high
 
 An Outlook add-in consists of two components: the add-in manifest and a web app supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients.
 
-There are two possible formats for the manifest: XML and JSON. You can learn about the JSON manifest at [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md). This article is about the XML manifest.
+There are two possible formats for the manifest: XML and JSON. You can learn about the JSON manifest at [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md). This article is about the XML manifest.
 
 The following is an example of the XML manifest.
 
@@ -273,11 +273,9 @@ If the add-in's requested permissions change, users will be prompted to upgrade 
 
 ## VersionOverrides
 
-The **\<VersionOverrides\>** element is the location of information for [add-in commands](add-in-commands-for-outlook.md).
+The **\<VersionOverrides\>** element is the location of information for [add-in commands](../design/add-in-commands.md).
 
 This element is also where add-ins define support for [mobile add-ins](add-mobile-support.md).
-
-For a discussion on this element, see [Create add-in commands in your manifest for Excel, PowerPoint, and Word](../develop/create-addin-commands.md).
 
 ## Localization
 
@@ -325,7 +323,7 @@ Outlook add-ins specify the **\<Hosts\>** element like the following:
 </OfficeApp>
 ```
 
-This is separate from the **\<Hosts\>** element inside the **\<VersionOverrides\>** element, which is discussed in [Create add-in commands in your manifest for Excel, PowerPoint, and Word](../develop/create-addin-commands.md).
+This is separate from the **\<Hosts\>** element inside the **\<VersionOverrides\>** element, which is discussed in [Create add-in commands](../develop/create-addin-commands.md).
 
 ## Requirements
 
@@ -418,9 +416,9 @@ Activation rules can be used to activate an add-in based on one or more of the f
 
 For details and samples of activation rules, see [Activation rules for Outlook add-ins](activation-rules.md).
 
-## Next steps: Add-in commands
+## Next steps: add-in commands
 
-After defining a basic manifest, define add-in commands for your add-in. Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
+After defining a basic manifest, define add-in commands for your add-in. Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands](../design/add-in-commands.md).
 
 For an example add-in that defines add-in commands, see [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo).
 

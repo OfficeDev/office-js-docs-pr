@@ -259,7 +259,7 @@ The following sample shows the JSON metadata that corresponds to the functions d
 
 ```json
 {
-  "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
   "functions": [
     {
       "id": "ADD",

@@ -11,7 +11,7 @@ Using add-in commands in Outlook Mobile allows your users to access the same fun
 
 ## Updating the manifest
 
-[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
+[!INCLUDE [Unified Microsoft 365 manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 The first step to enabling add-in commands in Outlook Mobile is to define them in the add-in manifest. The [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 schema defines a new form factor for mobile, [MobileFormFactor](/javascript/api/manifest/mobileformfactor).
 

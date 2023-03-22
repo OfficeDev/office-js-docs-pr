@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 This article describes how to create a **Display entities** Outlook add-in that extracts string instances of supported well-known entities in the subject and body of the selected Outlook item. This item can be an appointment, email message, or meeting request, response, or cancellation.
 
 > [!NOTE]
-> The Outlook Add-in feature described in this article uses activation rules, which aren't supported in add-ins that use a [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+> The Outlook Add-in feature described in this article uses activation rules, which aren't supported in add-ins that use a [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md).
 
 The supported entities include:
 
@@ -208,10 +208,10 @@ let _MyEntities;
 Office.initialize = function () {
     const _mailbox = Office.context.mailbox;
     // Obtains the current item.
-    Item = _mailbox.item;
+    _Item = _mailbox.item;
     // Reads all instances of supported entities from the subject 
     // and body of the current item.
-    MyEntities = _Item.getEntities();
+    _MyEntities = _Item.getEntities();
     
     // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {

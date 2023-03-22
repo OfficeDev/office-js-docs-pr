@@ -1,14 +1,14 @@
 ---
-title: Build an Outlook add-in with a Teams manifest (preview)
-description: Learn how to build a simple Outlook task pane add-in with a JSON manifest.
-ms.date: 06/06/2022
+title: Build an Outlook add-in with the unified Microsoft 365 manifest (preview)
+description: Learn how to build a simple Outlook task pane add-in with the unified Microsoft 365 manifest.
+ms.date: 03/21/2023
 ms.prod: outlook
 ms.localizationpriority: high
 ---
 
-# Build an Outlook add-in with a Teams manifest (preview)
+# Build an Outlook add-in with the unified Microsoft 365 manifest (preview)
 
-In this article, you'll walk through the process of building an Outlook task pane add-in that displays a property of a selected message, triggers a notification on the reading pane, and inserts text into a message on the compose pane. This add-in will use a preview version of the JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use. For more information about this manifest, see [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+In this article, you'll walk through the process of building an Outlook task pane add-in that displays a property of a selected message, triggers a notification on the reading pane, and inserts text into a message on the compose pane. This add-in will use a preview version of the JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use. For more information about this manifest, see [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md).
 
 > [!NOTE]
 > The new manifest is available for preview and is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins.
@@ -20,7 +20,7 @@ The preview is only supported in Office downloaded from a Microsoft 365 subscrip
 
 ## Create the add-in
 
-You can create an Office Add-in with a JSON manifest by using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor.
+You can create an Office Add-in with the unified manifest by using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor.
 
 ### Prerequisites
 
@@ -38,11 +38,11 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - **Choose a project type** - `Outlook Add-in with Teams Manifest (Developer preview)`
+    - **Choose a project type** - `Outlook Add-in with unified Microsoft 365 Manifest (preview)`
 
-    - **What do you want to name your add-in?** - `Add-in with Teams Manifest`
+    - **What do you want to name your add-in?** - `Add-in with Unified Manifest`
 
-     ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface with JSON manifest option chosen.](../images/yo-office-outlook-json-manifest.png)
+     ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface with unified manifest option chosen.](../images/yo-office-outlook-json-manifest.png)
 
     > [!NOTE]
     > For this preview, the add-in name cannot be more than 30 characters.
@@ -54,7 +54,7 @@ You can create an Office Add-in with a JSON manifest by using the [Yeoman genera
 1. Navigate to the root folder of the web application project.
 
     ```command&nbsp;line
-    cd "Add-in with Teams Manifest"
+    cd "Add-in with Unified Manifest"
     ```
 
 ### Explore the project
@@ -114,7 +114,7 @@ The add-in project that you've created with the Yeoman generator contains sample
     > [!NOTE]
     > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually](../outlook/sideload-outlook-add-ins-for-testing.md?tabs=windows#sideload-manually) to manually sideload the add-in in Outlook. When you are prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
 
-1. Select the **Perform an action** button. It [executes a command](../develop/create-addin-commands.md?branch=outlook-json-manifest#step-5-add-the-functionfile-element) to generate a small informational notification at the bottom of the message header, just above the message body.
+1. Select the **Perform an action** button. It [executes a command](../develop/create-addin-commands.md?branch=outlook-json-manifest#step-3-add-the-functionfile-element) to generate a small informational notification at the bottom of the message header, just above the message body.
 
 1. When prompted with the **WebView Stop On Load** dialog box, select **OK**.
 
@@ -268,5 +268,5 @@ Add a custom button to the ribbon that inserts text into a message body.
 
 ## See also
 
-- [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md)
+- [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md)
 - [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

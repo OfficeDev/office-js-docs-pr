@@ -18,7 +18,7 @@ Office Add-ins differ from VBA, COM, and VSTO add-ins because they offer cross-p
 
 ## add-in commands
 
-**Add-in commands** are UI elements, such as buttons and menus, that extend the Office UI for your add-in. When users select an add-in command element, they initiate actions such as running JavaScript code or displaying the add-in in a task pane. Add-in commands let your add-in look and feel like a part of Office, which gives users more confidence in your add-in. See [Add-in commands for Excel, PowerPoint, and Word](../design/add-in-commands.md) and [Add-in commands for Outlook](../outlook/add-in-commands-for-outlook.md) to learn more.
+**Add-in commands** are UI elements, such as buttons and menus, that extend the Office UI for your add-in. When users select an add-in command element, they initiate actions such as running JavaScript code or displaying the add-in in a task pane. Add-in commands let your add-in look and feel like a part of Office, which gives users more confidence in your add-in. See [Add-in commands](../design/add-in-commands.md) to learn more.
 
 See also: [ribbon, ribbon button](#ribbon-ribbon-button).
 
