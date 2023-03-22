@@ -475,18 +475,14 @@ The following sections show the manifest elements in the order in which they mus
                         <Icon>
                             <Image>
                         <Action>
-                            <TaskpaneId>
                             <SourceLocation>
-                            <Title>
                             <FunctionName>
                 <Control>
                     <Label>
                     <Icon>
                         <Image>
                     <Action>
-                        <TaskpaneId>
                         <SourceLocation>
-                        <Title>
                         <FunctionName>
     <Resources>
         <Images>
