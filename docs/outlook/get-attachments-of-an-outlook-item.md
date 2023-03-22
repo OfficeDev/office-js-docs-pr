@@ -221,7 +221,7 @@ xmlns:xsd=""https://www.w3.org/2001/XMLSchema""
 xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/""
 xmlns:t=""http://schemas.microsoft.com/exchange/services/2006/types"">
 <soap:Header>
-<t:RequestServerVersion Version=""Exchange2013"" />
+<t:RequestServerVersion Version=""Exchange2016"" />
 </soap:Header>
   <soap:Body>
     <GetAttachment xmlns=""http://schemas.microsoft.com/exchange/services/2006/messages""
