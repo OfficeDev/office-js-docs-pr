@@ -470,81 +470,17 @@ The following sections show the manifest elements in the order in which they mus
         <MobileFormFactor>
             <ExtensionPoint>
                 <Group>
-                <Control>
-                <Event>
-                <OfficeTab>
-                    <Group>
-                        <Label>
-                        <Control>
-                            <Label>
-                            <Supertip>
-                                <Title>
-                                <Description>
-                            <Icon>
-                                <Image>
-                            <Action>
-                                <SourceLocation>
-                                <FunctionName>
-                <CustomTab>
-                    <Group>
+                    <Label>
+                    <Control>
                         <Label>
                         <Icon>
                             <Image>
-                        <Control>
-                            <Label>
-                            <Supertip>
-                                <Title>
-                                <Description>
-                            <Icon>
-                                <Image>  
-                            <Action>
-                                <TaskpaneId>
-                                <SourceLocation>
-                                <Title>
-                                <FunctionName>
-                            <Items>
-                                <Item>
-                                    <Label>
-                                    <Supertip>
-                                        <Title>
-                                        <Description>
-                                    <Action>
-                                        <TaskpaneId>
-                                        <SourceLocation>
-                                        <Title>
-                                        <FunctionName>
-                    <Label>
-                <OfficeMenu>
-                    <Control>
-                        <Label>
-                        <Supertip>
-                            <Title>
-                            <Description>
-                        <Icon>
-                            <Image>  
                         <Action>
-                            <TaskpaneId>
-                            <SourceLocation>
-                            <Title>
-                            <FunctionName>
-                        <Items>
-                            <Item>
-                                <Label>
-                                <Supertip>
-                                    <Title>
-                                    <Description>
-                                <Action>
-                                    <TaskpaneId>
-                                    <SourceLocation>
-                                    <Title>
-                                    <FunctionName>
-                                    <SourceLocation>
-                <LaunchEvents>
-                    <LaunchEvent>
-                <SourceLocation>
-                <Label>
-                <Rule>
-                <CommandSurface>        
+                <Control>
+                    <Label>
+                    <Icon>
+                        <Image>
+                    <Action>
     <Resources>
         <Images>
             <Image>
