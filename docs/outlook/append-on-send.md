@@ -19,7 +19,7 @@ In this walkthrough, you'll develop an add-in that prepends a header and appends
 > [!NOTE]
 > Support for the append-on-send feature was introduced in requirement set 1.9. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 >
-> The prepend-on-send feature is only available in preview in Outlook on Windows. Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> The prepend-on-send feature is only available in preview in Outlook on Windows and on the web. Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 ## Prerequisites to preview prepend-on-send
 
@@ -343,7 +343,7 @@ In this section, you'll implement the JavaScript code to append a sample company
     ```
 
     > [!NOTE]
-    > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
+    > If your add-in wasn't automatically sideloaded, follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
 
 1. Create a new message, and add yourself to the **To** line.
 
