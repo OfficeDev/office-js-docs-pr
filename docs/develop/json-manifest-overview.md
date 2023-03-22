@@ -2,7 +2,7 @@
 title:  Unified Microsoft 365 manifest (preview)
 description: Get an overview of the preview JSON-formatted unified Microsoft 365 manifest.
 ms.topic: overview
-ms.date: 03/21/2023
+ms.date: 03/22/2023
 ms.localizationpriority: high
 ---
 
@@ -45,6 +45,7 @@ This section describes the preview unified manifest for readers who are familiar
       "text": "Some text"
   }
   ```
+
 - There are many places in the current XML manifest where an element with a plural name has children with the singular version of the same name. For example, the markup to configure a custom menu includes an **\<Items\>** element which can have multiple **\<Item\>** element children. The JSON equivalent of these plural elements is a property with an array as its value. The members of the array are *anonymous* objects, not properties named "item" or "item1", "item2", etc. The following is an example.
 
   ```json
@@ -63,9 +64,6 @@ This section describes the preview unified manifest for readers who are familiar
 The root level of the preview unified manifest, which roughly corresponds to the **\<OfficeApp\>** element in the current XML manifest, is an anonymous object. 
 
 The children of **\<OfficeApp\>** are commonly divided into two notional categories. The **\<VersionOverrides\>** element is one category. The other consists of all the other children of **\<OfficeApp\>**, which are collectively referred to as the base manifest. So too, the preview unified manifest has a similar division. There is a top-level "extension" property that roughly corresponds in its purposes and child properties to the **\<VersionOverrides\>** element. The preview unified manifest also has over 10 other top-level properties that collectively serve the same purposes as the base manifest of the XML manifest. These other properties can be thought of collectively as the base manifest of the unified manifest. 
-
-> [!NOTE]
-> When it becomes possible to combine an add-in with other Microsoft 365 extension types in a single manifest, then there will be other top-level properties that don't fit into the notion of the base manifest. There will usually be a top-level property for every kind of Microsoft 365 extension type, such as "configurableTabs", "bots" and "connectors". For examples, see the [unified manifest documentation](/microsoftteams/platform/resources/schema/manifest-schema). This structure makes clear that the "extension" property represents an Office add-in as one type of Microsoft 365 extension.
 
 #### Base manifest
 
