@@ -16,7 +16,6 @@ Read add-ins are Outlook add-ins that are activated in the Reading Pane or read 
 
 - View a meeting item in which the user is an attendee.
 
-- View a meeting item in which the user is the organizer.
 
 In each of these read scenarios, Outlook activates add-ins when their activation conditions are fulfilled, and users can choose and open activated add-ins in the add-in bar in the Reading Pane or read inspector. The following figure shows the **Bing Maps** add-in activated and opened as the user is reading a message that contains a geographic address.
 

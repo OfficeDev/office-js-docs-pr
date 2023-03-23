@@ -85,7 +85,7 @@ You can add custom ribbon buttons and menu items to the ribbon in Office on the 
 
 #### Task panes  
 
-You can use task panes in addition to add-in commands to enable users to interact with your solution. Clients that do not support add-in commands (Office on iPad) run your add-in as a task pane. Users launch task pane add-ins via the **My Add-ins** button on the **Insert** tab.
+You can use task panes in addition to add-in commands to enable users to interact with your solution. Clients that don't support add-in commands (Office on iPad) run your add-in as a task pane. Users launch task pane add-ins via the **My Add-ins** button on the **Insert** tab.
 
 ![Use task panes in addition to add-in commands.](../images/about-addins-taskpane.png)
 

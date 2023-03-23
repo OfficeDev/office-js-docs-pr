@@ -77,7 +77,7 @@ For each event that the Telemetry Log tracks for an add-in, there is a date/time
 |Date/Time|Event ID|Severity|Title|File|ID|Application|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |10/8/2022 5:57:10 PM|7|*Not applicable*|add-in manifest downloaded successfully|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|10/8/2012 5:57:01 PM|7|*Not applicable*|add-in manifest downloaded successfully|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+|10/8/2022 5:57:01 PM|7|*Not applicable*|add-in manifest downloaded successfully|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 The following table lists the events that the Telemetry Log tracks for Office Add-ins in general.
 

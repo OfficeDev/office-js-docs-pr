@@ -100,7 +100,7 @@ The add-in platform addresses end users' privacy concerns in the following ways.
   - For instructions on how to manage add-ins in Outlook on Windows or on Mac, see [Get an Office Add-in for Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
   - In Outlook on the web, select **Get Add-ins** from the ribbon. To learn more, see [Using add-ins in Outlook on the web](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce).
 
-  Administrators can also manage to AppSource [through the admin center](/microsoft-365/admin/manage/manage-addins-in-the-admin-center).
+  Administrators can also manage access to AppSource [through the admin center](/microsoft-365/admin/manage/manage-addins-in-the-admin-center).
 
 - The design of the add-in platform provides security and performance for end users in the following ways.
 

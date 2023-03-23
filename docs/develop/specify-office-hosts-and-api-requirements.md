@@ -159,7 +159,7 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.2'))
 {
    // Code that uses API members from the WordApi 1.2 requirement set.
 } else {
-   // Provide diminished experience here. E.g., run alternate code when the user's Word is perpetual Word 2016 (which does not support WordApi 1.2).
+   // Provide diminished experience here. E.g., run alternate code when the user's Word is volume-licensed perpetual Word 2016 (which doesn't support WordApi 1.2).
 }
 ```
 
