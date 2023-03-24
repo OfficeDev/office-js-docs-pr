@@ -1,7 +1,7 @@
 ---
 title: Call Excel JavaScript APIs from a custom function
 description: Learn which Excel JavaScript APIs you can call from your custom function.
-ms.date: 08/30/2022
+ms.date: 03/20/2023
 ms.localizationpriority: medium
 ---
 
@@ -13,7 +13,7 @@ Call Excel JavaScript APIs from your custom functions to get range data and obta
 - A custom function will set the cell's number format for the return values after calculation.
 
 > [!IMPORTANT]
-> To call Excel JavaScript APIs from your custom function, you'll need to use a [shared runtime](../testing/runtimes.md#shared-runtime). See [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
+> To call Excel JavaScript APIs from your custom function, you'll need to use a [shared runtime](../testing/runtimes.md#shared-runtime). Use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to install an **Excel Custom Functions using a Shared Runtime** project or see [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
 
 ## Code sample
 

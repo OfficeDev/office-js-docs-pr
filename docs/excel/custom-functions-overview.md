@@ -1,7 +1,7 @@
 ---
 description: Create an Excel custom function for your Office Add-in.
 title: Create custom functions in Excel
-ms.date: 02/24/2023
+ms.date: 03/20/2023
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -31,9 +31,6 @@ function sphereVolume(radius) {
 }
 ```
 
-> [!TIP]
-> If your custom function add-in will use a task pane or a ribbon button, in addition to running custom function code, you'll need to set up a [shared runtime](../testing/runtimes.md#shared-runtime). To learn more, see [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
-
 ## How a custom function is defined in code
 
 If you use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create an Excel custom functions add-in project, it creates files which control your functions and task pane. We'll concentrate on the files that are important to custom functions.
@@ -43,6 +40,9 @@ If you use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator
 | **./src/functions/functions.js**<br/>or<br/>**./src/functions/functions.ts** | JavaScript<br/>or<br/>TypeScript | Contains the code that defines custom functions. |
 | **./src/functions/functions.html** | HTML | Provides a &lt;script&gt; reference to the JavaScript file that defines custom functions. |
 | **./manifest.xml** | XML | Specifies the location of multiple files that your custom function use, such as the custom functions JavaScript, JSON, and HTML files. It also lists the locations of task pane files, command files, and specifies which runtime your custom functions should use. |
+
+> [!TIP]
+> The Yeoman generator for Office Add-ins offers multiple **Excel Custom Functions** projects. We recommend selecting the project type **Excel Custom Functions using a Shared Runtime** and the script type **JavaScript**.
 
 ### Script file
 
@@ -71,8 +71,6 @@ The XML manifest file for an add-in that defines custom functions (**./manifest.
 - Defines the namespace for your custom functions. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.
 - Uses **\<ExtensionPoint\>** and **\<Resources\>** elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.
 - Specifies which runtime to use for your custom function. We recommend always using a shared runtime unless you have a specific need for another runtime, because a shared runtime allows for the sharing of data between functions and the task pane.
-
-If you're using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create files, we recommend adjusting your manifest to use a shared runtime, as this is not the default for these files. To change your manifest, follow the instructions in [Configure your Excel add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 To see a full working manifest from a sample add-in, see the manifest in the [one of our Office Add-in samples Github repositories](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).
 
