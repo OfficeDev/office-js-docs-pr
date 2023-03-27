@@ -1,7 +1,7 @@
 ---
 title: Manage the sensitivity label of your message or appointment in compose mode (preview)
 description: Learn how to manage the sensitivity label of your message or appointment in compose mode.
-ms.date: 03/15/2023
+ms.date: 03/27/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -26,7 +26,7 @@ The following table lists client-server combinations that support the use of the
 |Client|Exchange Online|
 |------|------|
 |**Windows**<br>Version 2302 (Build 16130.20020) or later|Supported|
-|**Mac**|Not applicable|
+|**Mac**<br>Version 16.71.312.0 or later|Supported|
 |**Web browser (modern UI)**|Supported|
 |**iOS**|Not applicable|
 |**Android**|Not applicable|
@@ -36,6 +36,7 @@ The following table lists client-server combinations that support the use of the
 To test the sensitivity label feature in your add-in while it's in preview, set up your preferred Outlook client.
 
 - For Outlook on Windows, install Version 2302 (Build 16130.20020) or later. Then, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
+- For Outlook on Mac, install Version 16.71.312.0 or later. Then, join the [Office Insider program](https://insider.office.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
 - For Outlook on the web, ensure that the **Targeted release** option is set up on your Microsoft 365 tenant. To learn more, see the "Targeted release" section of [Set up the Standard or Targeted release options](/microsoft-365/admin/manage/release-options-in-office-365#targeted-release).
 
 ## Configure the manifest

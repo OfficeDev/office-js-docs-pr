@@ -2,13 +2,16 @@
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
 ms.topic: tutorial
-ms.date: 03/20/2023
+ms.date: 03/27/2023
 ms.localizationpriority: high
 ---
 
 # Create Office Add-in projects using the Yeoman Generator
 
 The [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. We recommend that you use this tool to create add-in projects except when you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS). In either of the latter two situations, [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
+
+> [!NOTE]
+> Office add-ins can also be created with the Teams Toolkit (Prerelease version). For more information about how to do this and the limitations, see [Create Office Add-in projects using the Teams Toolkit (preview)](teams-toolkit-overview.md).
 
 The projects that the tool creates have the following characteristics.
 
@@ -42,12 +45,12 @@ A lot needs to load, so it may take 20 seconds before the tool starts. The tool 
 The first question asks you to choose between eight types of projects. The options are:
 
 - **Office Add-in Task Pane project**
-- **Office Add-in Task Pane project using React framework**
 - **Office Add-in Task Pane project using Angular framework**
+- **Office Add-in Task Pane project using React framework**
 - **Excel Custom Functions using a Shared Runtime**
 - **Excel Custom Functions using a JavaScript-only Runtime**
 - **Office Add-in Task Pane project supporting single sign-on**
-- **Office Add-in with Teams Manifest (preview)**
+- **Outlook Add-in with the unified Microsoft 365 manifest (preview)**
 - **Office Add-in project containing the manifest only**
 
 ![Screenshot showing the prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
