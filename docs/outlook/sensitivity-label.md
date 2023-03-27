@@ -2,6 +2,7 @@
 title: Manage the sensitivity label of your message or appointment in compose mode (preview)
 description: Learn how to manage the sensitivity label of your message or appointment in compose mode.
 ms.date: 03/15/2023
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
