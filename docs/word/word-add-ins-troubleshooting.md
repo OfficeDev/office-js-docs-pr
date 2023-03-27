@@ -2,6 +2,7 @@
 title: Troubleshoot Word add-ins
 description: Learn how to troubleshoot development errors in Word add-ins.
 ms.date: 02/07/2023
+ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
 

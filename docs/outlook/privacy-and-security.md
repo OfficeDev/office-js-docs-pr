@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 10/07/2022
+ms.date: 02/24/2023
 ms.localizationpriority: high
 ---
 
@@ -49,14 +49,18 @@ The following figure shows the four levels of permissions and describes the capa
 
 ## Optional connected experiences
 
-End users and IT admins can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Outlook add-ins, the impact of disabling the **Optional connected experiences** setting depends on the client but usually means that user-installed add-ins and access to the Office Store aren't allowed. Add-ins deployed by an organization's IT admin through [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) will still be available.
+End users and IT admins can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Outlook add-ins, the impact of disabling the **Optional connected experiences** setting depends on the client, but it usually means that user-installed add-ins and access to the AppSource aren't allowed. Add-ins deployed by an organization's IT admin through [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) will still be available.
 
-- Windows\*, Mac: The **Get Add-ins** button isn't displayed so users can no longer manage their add-ins or access the Office Store.
-- Android, iOS: The **Get Add-ins** dialog shows only admin-deployed add-ins.
-- Browser: Availability of add-ins and access to the Store are unaffected so users can continue to [manage their add-ins](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce), including admin-deployed ones.
+|Client|Behavior when optional connected experiences is disabled|
+|-----|-----|
+|- Windows<sup>1</sup><br>- Mac|The **Get Add-ins** or **All Apps**<sup>2</sup> button isn't displayed, so users aren't able to manage their add-ins or access AppSource.|
+|- Android<br>- iOS|The **Get Add-ins** dialog shows only admin-deployed add-ins.|
+|Web browser|Availability of add-ins and access to AppSource are unaffected, so users can continue to [manage their add-ins](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce) including admin-deployed ones.|
 
-  > [!NOTE]
-  > \* For Windows, support for this experience/behavior is available from Version 2008 (Build 13127.20296). For more details according to your version, see the update history page for [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
+> [!NOTE]
+> <sup>1</sup> On Windows, support for this experience is available from Version 2008 (Build 13127.20296). For more details on your client version, see the update history page for [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).<br>
+>
+> <sup>2</sup> Starting in Outlook on Windows Version 2302 (Build 16215.10000), the **All Apps** button is used to manage add-ins and access AppSource.
 
 For general add-in behavior, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md#optional-connected-experiences).
 
@@ -112,7 +116,7 @@ Developers should follow the tiered permissions model to provide transparency an
   <Permissions>ReadItem</Permissions>
   ```
 
-  The following example requests the **read item** permission in the Teams manifest (preview).
+  The following example requests the **read item** permission in the Unified Microsoft 365 manifest (preview).
 
 ```json
 "authorization": {
@@ -131,7 +135,7 @@ Developers should follow the tiered permissions model to provide transparency an
 - Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body. For example, the following rule activates the Outlook add-in if one or more of three entities - phone number, postal address, or URL - are found in the subject or body of the current message.
 
 > [!NOTE]
-> Activation rules, as seen in this example, aren't supported in add-ins that use the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+> Activation rules, as seen in this example, aren't supported in add-ins that use the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md).
 
   ```XML
     <Permissions>Restricted</Permissions>

@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins additional resources
 description: Useful resources about Office Add-ins.
-ms.date: 02/24/2023
+ms.date: 02/27/2023
 ms.localizationpriority: medium
 ---
 
@@ -21,7 +21,7 @@ Use **Microsoft 365 Admin Center** or **Azure Admin Center**  for any **business
 
 ## Developer community help
 
-Our community of developers use Stack Overflow, GitHub, and Microsoft Q&A to connect with other developers to ideate, get clarifications, and submit queries.
+Our community of developers use Stack Overflow, GitHub, and Microsoft Q&A to connect with other developers to ideate, get clarifications, and submit queries. You can also get latest updates in our [Microsoft Office Add-ins community call](../overview/office-add-ins-community-call.md).
 
 ### Developer community forums
 
@@ -29,7 +29,7 @@ Post your questions and help other community members by sharing and responding t
 
 | Developer need | Contact |
 |:---------------------|:---------------|
-| **Office Add-in / Office JavaScript API questions** | <ul> <li> Post API questions to [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js) using the `office-js` tag, and also include the `outlook-web-addins` tag if your question relates to Outlook add-ins. Please note that Stack Overflow has guidelines such as requiring a descriptive title, a complete and concise problem statement, and sufficient details to reproduce your issue. Feature requests or overly broad questions are off-topic; new users should visit the [Stack Overflow Help Center](https://stackoverflow.com/help/how-to-ask) for more details. </li> <li> You can also post questions using the `Office Development` tag on [Microsoft Q&A](/answers/tags/321/office-development).</li></ul> |
+| **Office Add-in / Office JavaScript API questions** | <ul> <li> Post API questions to [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js) using the `office-js` tag, and also include the `outlook-web-addins` tag if your question relates to Outlook add-ins. Please note that Stack Overflow has guidelines such as requiring a descriptive title, a complete and concise problem statement, and sufficient details to reproduce your issue. Feature requests or overly broad questions are off-topic; new users should visit the [Stack Overflow Help Center](https://stackoverflow.com/help/how-to-ask) for more details. </li> <li> You can also post questions using the `Office Development` tag on [Microsoft Q&A](https://aka.ms/office-addins-dev-questions).</li></ul> |
 | **Documentation gaps** | If the documentation is missing something that would help you understand how to create add-ins, please submit an issue to the [Office Add-ins documentation GitHub repository](https://github.com/officedev/office-js-docs-pr/issues)|
 
 ### Report issues
@@ -57,7 +57,7 @@ Suggest a feature or vote up existing feature requests.
 
 | Support need | Contact |
 |:----------------------|:------------|
-|**Office Add-ins or Office JavaScript API feature requests**| To submit a feature request for the Office JavaScript API, please post your idea to the [Microsoft 365 Developer Platform Tech Community](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform).|
+|**Office Add-ins or Office JavaScript API feature requests**| To submit a feature request for the Office JavaScript API, please post your idea to the [Microsoft 365 Developer Platform Tech Community](https://aka.ms/m365dev-suggestions).|
 | **General questions** | Send general questions about the Office Add-ins platform to [Office Add-ins Community Help](mailto:officeaddinsdev@microsoft.com). We encourage posting questions on the channels mentioned here and using email only if no other mode of communication is applicable. |
 
 ## External learning resources
@@ -72,5 +72,5 @@ The following books and classes provide add-ins information from a different per
 
 ## See also
 
-- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
 - [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)

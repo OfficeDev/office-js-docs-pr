@@ -1,6 +1,7 @@
 ---
 title: Configure your Office Add-in to use a shared runtime
 description: Configure your Office Add-in to use a shared runtime to support additional ribbon, task pane, and custom function features.
+ms.topic: how-to
 ms.date: 07/18/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
@@ -48,9 +49,6 @@ Follow these steps for a new or existing project to configure it to use a shared
     </Requirements>
     <DefaultSettings>
     ```
-
-    > [!NOTE]
-    > Don't add the `SharedRuntime` requirement set to the manifest for a Word add-in. It will cause an error when loading the add-in which is a known issue at this time.
 
 1. Find the **\<VersionOverrides\>** section and add the following **\<Runtimes\>** section. The lifetime needs to be **long** so that your add-in code can run even when the task pane is closed. The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
 

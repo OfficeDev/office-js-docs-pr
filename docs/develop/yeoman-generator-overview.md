@@ -1,7 +1,8 @@
 ---
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
-ms.date: 02/27/2023
+ms.topic: tutorial
+ms.date: 03/27/2023
 ms.localizationpriority: high
 ---
 
@@ -41,20 +42,20 @@ yo office
 
 A lot needs to load, so it may take 20 seconds before the tool starts. The tool asks you a series of questions. For some, you just type an answer to the prompt. For others, you're given a list of possible answers. If given a list, select one and then select Enter.
 
-The first question asks you to choose between six types of projects. The options are:
+The first question asks you to choose between eight types of projects. The options are:
 
 - **Office Add-in Task Pane project**
-- **Office Add-in Task Pane project using Angular framework**
 - **Office Add-in Task Pane project using React framework**
+- **Office Add-in Task Pane project using Angular framework**
+- **Excel Custom Functions using a Shared Runtime**
+- **Excel Custom Functions using a JavaScript-only Runtime**
 - **Office Add-in Task Pane project supporting single sign-on**
+- **Office Add-in with Teams Manifest (preview)**
 - **Office Add-in project containing the manifest only**
-- **Excel Custom Functions Add-in project**
 
 ![Screenshot showing the prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
 
 > [!NOTE]
-> The **Office Add-in Task Pane project supporting single sign-on** option produces a project that can be used to see how single sign-on (SSO) works in an add-in. The project can't be used as the basis of a production add-in. To get an SSO-enabled project that can be a basis of a production add-in, see the "Complete" version of [one of the SSO samples in our samples repo](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth).
->
 > The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
 
 The next question asks you to choose between **TypeScript** and **JavaScript**. (This question is skipped if you chose the manifest-only option in the preceding question.)

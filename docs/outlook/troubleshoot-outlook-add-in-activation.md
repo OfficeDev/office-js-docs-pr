@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: Possible reasons your add-in doesn't activate as you expect.
-ms.date: 10/07/2022
+ms.date: 02/24/2023
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 Outlook contextual add-in activation is based on the activation rules in an XML manifest for the add-in. When conditions for the currently selected item satisfy the activation rules for the add-in, the application activates and displays the add-in button in the Outlook UI (add-in selection pane for compose add-ins, add-in bar for read add-ins). However, if your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
 
-[!include[Rule features not supported with JSON manifest](../includes/rules-not-supported-json-note.md)]
+[!include[Rule features not supported by the unified Microsoft 365 manifest](../includes/rules-not-supported-json-note.md)]
 
 ## Is user mailbox on a version of Exchange Server that is at least Exchange 2013?
 
@@ -55,13 +55,11 @@ Any one of the Outlook rich clients can disable an add-in for performance reason
 > [!NOTE]
 > Only Outlook rich clients monitor resource usage, but disabling an add-in in an Outlook rich client also disables the add-in in Outlook on the web and mobile devices.
 
-Use one of the following approaches to verify whether an add-in is disabled.
+Check your list of installed add-ins to verify whether an add-in is disabled.
 
-- In Outlook on the web, sign in directly to the email account, then choose **Get Add-ins** from the ribbon.
+- For instructions on how to view your add-ins in Outlook on Windows or on Mac, see [Get an Office Add-in for Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
-- In Outlook on Windows, choose **More Apps** from the ribbon, then select **Get Add-ins**.
-
-- In Outlook on Mac, choose the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
+- In Outlook on the web, select **Get Add-ins** from the ribbon. To learn more, see [Using add-ins in Outlook on the web](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce).
 
 ## Does the tested item support Outlook add-ins? Is the selected item delivered by a version of Exchange Server that is at least Exchange 2013?
 
@@ -202,16 +200,19 @@ If you use an **ItemHasRegularExpressionMatch** activation rule, verify whether 
         ```vb
         ?ActiveExplorer.Selection.Item(1).HTMLBody
         ```
+
         - The plain text body of the message or appointment item selected in the Outlook explorer:
 
         ```vb
         ?ActiveExplorer.Selection.Item(1).Body
         ```
+
         - The HTML body of the message or appointment item opened in the current Outlook inspector:
 
         ```vb
         ?ActiveInspector.CurrentItem.HTMLBody
         ```
+
         - The plain text body of the message or appointment item opened in the current Outlook inspector:
 
         ```vb
@@ -248,7 +249,7 @@ This section applies to all activation rules that use regular expressions -- par
     |Item body is plain text|1.5 KB|3 KB|
     |Item body is HTML|3 KB|3 KB|
 
-- Time spent on evaluating all regular expressions of a read add-in for an Outlook rich client: By default, for each read add-in, Outlook must finish evaluating all the regular expressions in its activation rules within 1 second. Otherwise Outlook retries up to three times and disables the add-in if Outlook cannot complete the evaluation. Outlook displays a message in the notification bar that the add-in has been disabled. The amount of time available for your regular expression can be modified by setting a group policy or a registry key. 
+- Time spent on evaluating all regular expressions of a read add-in for an Outlook rich client: By default, for each read add-in, Outlook must finish evaluating all the regular expressions in its activation rules within 1 second. Otherwise Outlook retries up to three times and disables the add-in if Outlook cannot complete the evaluation. Outlook displays a message in the notification bar that the add-in has been disabled. The amount of time available for your regular expression can be modified by setting a group policy or a registry key.
 
    > [!NOTE]
    > If the Outlook rich client disables a read add-in, the read add-in is not available for use for the same mailbox on the Outlook rich client, and Outlook on the web and mobile devices.

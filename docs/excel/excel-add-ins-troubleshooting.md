@@ -2,6 +2,7 @@
 title: Troubleshooting Excel add-ins
 description: Learn how to troubleshoot development errors in Excel add-ins.
 ms.date: 02/17/2022
+ms.topic: troubleshooting-error-codes
 ms.localizationpriority: medium
 ---
 
