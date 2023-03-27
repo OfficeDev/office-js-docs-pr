@@ -13,9 +13,9 @@ Your add-in can use Exchange Web Services (EWS) from a computer that is running 
 > [!IMPORTANT]
 > EWS calls and operations aren't supported in add-ins running in Outlook on iOS and Android.
 
-The way that you call a web service varies based on where the web service is located. The following tables lists the different ways that you can call a web service based on location.
+The way you call a web service varies based on where the web service is located. The following tables list the different ways you can call a web service based on location.
 
-|**Web service location**|**Way to call the web service**|
+|Web service location|Way to call the web service|
 |:-----|:-----|
 |The Exchange server that hosts the client mailbox|Use the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to call EWS operations that add-ins support. The Exchange server that hosts the mailbox also exposes EWS.|
 |The web server that provides the source location for the add-in UI|Call the web service by using standard JavaScript techniques. The JavaScript code in the UI frame runs in the context of the web server that provides the UI. Therefore, it can call web services on that server without causing a cross-site scripting error.|
@@ -153,7 +153,7 @@ The following describes how you can use the `makeEwsRequestAsync` method.
 
 The following table lists the EWS operations that add-ins support. To see examples of SOAP requests and responses, choose the link for each operation. For more information about EWS operations, see [EWS operations in Exchange](/exchange/client-developer/web-service-reference/ews-operations-in-exchange).
 
-|**EWS operation**|**Description**|
+|EWS operation|Description|
 |:-----|:-----|
 |[CopyItem operation](/exchange/client-developer/web-service-reference/copyitem-operation)|Copies the specified items and puts the new items in a designated folder in the Exchange store.|
 |[CreateFolder operation](/exchange/client-developer/web-service-reference/createfolder-operation)|Creates folders in the specified location in the Exchange store.|
