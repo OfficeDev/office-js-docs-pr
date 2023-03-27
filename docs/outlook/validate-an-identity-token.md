@@ -2,6 +2,7 @@
 title: Validate an Outlook add-in identity token
 description: Your Outlook add-in can send you an Exchange user identity token, but before you trust the request you must validate the token to ensure that it came from the Exchange server that you expect.
 ms.date: 10/11/2021
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

@@ -2,6 +2,7 @@
 title: Debug function commands in Outlook add-ins
 description: Learn how to debug function commands in Outlook add-ins.
 ms.date: 07/11/2022
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
