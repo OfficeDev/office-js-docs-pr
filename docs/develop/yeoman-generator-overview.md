@@ -45,12 +45,12 @@ A lot needs to load, so it may take 20 seconds before the tool starts. The tool 
 The first question asks you to choose between eight types of projects. The options are:
 
 - **Office Add-in Task Pane project**
-- **Office Add-in Task Pane project using React framework**
 - **Office Add-in Task Pane project using Angular framework**
+- **Office Add-in Task Pane project using React framework**
 - **Excel Custom Functions using a Shared Runtime**
 - **Excel Custom Functions using a JavaScript-only Runtime**
 - **Office Add-in Task Pane project supporting single sign-on**
-- **Office Add-in with Teams Manifest (preview)**
+- **Outlook Add-in with the unified Microsoft 365 manifest (preview)**
 - **Office Add-in project containing the manifest only**
 
 ![Screenshot showing the prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
