@@ -2,6 +2,7 @@
 title: Get and set internet headers
 description: How to get and set internet headers on a message in an Outlook add-in.
 ms.date: 08/30/2022
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

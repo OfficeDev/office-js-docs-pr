@@ -2,13 +2,16 @@
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
 ms.topic: tutorial
-ms.date: 08/19/2022
+ms.date: 03/27/2023
 ms.localizationpriority: high
 ---
 
 # Create Office Add-in projects using the Yeoman Generator
 
 The [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. We recommend that you use this tool to create add-in projects except when you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS). In either of the latter two situations, [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
+
+> [!NOTE]
+> Office add-ins can also be created with the Teams Toolkit (Prerelease version). For more information about how to do this and the limitations, see [Create Office Add-in projects using the Teams Toolkit (preview)](teams-toolkit-overview.md).
 
 The projects that the tool creates have the following characteristics.
 
@@ -39,20 +42,20 @@ yo office
 
 A lot needs to load, so it may take 20 seconds before the tool starts. The tool asks you a series of questions. For some, you just type an answer to the prompt. For others, you're given a list of possible answers. If given a list, select one and then select Enter.
 
-The first question asks you to choose between six types of projects. The options are:
+The first question asks you to choose between eight types of projects. The options are:
 
 - **Office Add-in Task Pane project**
 - **Office Add-in Task Pane project using Angular framework**
 - **Office Add-in Task Pane project using React framework**
+- **Excel Custom Functions using a Shared Runtime**
+- **Excel Custom Functions using a JavaScript-only Runtime**
 - **Office Add-in Task Pane project supporting single sign-on**
+- **Outlook Add-in with the unified Microsoft 365 manifest (preview)**
 - **Office Add-in project containing the manifest only**
-- **Excel Custom Functions Add-in project**
 
 ![Screenshot showing the prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
 
 > [!NOTE]
-> The **Office Add-in Task Pane project supporting single sign-on** option produces a project that can be used to see how single sign-on (SSO) works in an add-in. The project can't be used as the basis of a production add-in. To get an SSO-enabled project that can be a basis of a production add-in, see the "Complete" version of [one of the SSO samples in our samples repo](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth).
->
 > The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
 
 The next question asks you to choose between **TypeScript** and **JavaScript**. (This question is skipped if you chose the manifest-only option in the preceding question.)

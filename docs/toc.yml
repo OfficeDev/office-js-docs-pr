@@ -262,6 +262,8 @@ items:
         href: develop/add-ins-with-angular2.md
       - name: Create add-ins with the Yeoman Generator
         href: develop/yeoman-generator-overview.md
+      - name: Create add-ins with the Teams Toolkit (preview)
+        href: develop/teams-toolkit-overview.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
       - name: Create and Develop add-ins with Visual Studio
@@ -584,14 +586,14 @@ items:
         - name: JavaScript-only runtime for custom functions
           href: excel/custom-functions-runtime.md
           displayName: Excel, Custom Functions
+        - name: Debugging
+          href: excel/custom-functions-debugging.md
+          displayName: Excel, Custom Functions
     - name: Volatile functions
       href: excel/custom-functions-volatile.md
       displayName: Excel, Custom Functions
     - name: Web requests
       href: excel/custom-functions-web-reqs.md
-      displayName: Excel, Custom Functions
-    - name: Debugging
-      href: excel/custom-functions-debugging.md
       displayName: Excel, Custom Functions
     - name: Troubleshooting
       href: excel/custom-functions-troubleshooting.md

@@ -2,6 +2,7 @@
 title: Get or set the subject in an Outlook add-in
 description: Learn how to get or set the subject of a message or appointment in an Outlook add-in.
 ms.date: 10/07/2022
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

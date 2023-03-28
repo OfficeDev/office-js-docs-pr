@@ -1,7 +1,7 @@
 ---
 title: Publish an add-in using Visual Studio Code and Azure
 description: How to publish an add-in using Visual Studio Code and Azure Active Directory
-ms.date: 01/23/2023
+ms.date: 03/27/2023
 ms.custom: vscode-azure-extension-update-completed
 ms.localizationpriority: medium
 ---
@@ -11,7 +11,9 @@ ms.localizationpriority: medium
 This article describes how to publish an Office Add-in that you created using the Yeoman generator and developed with [Visual Studio Code (VS Code)](https://code.visualstudio.com) or any other editor.
 
 > [!NOTE]
-> For information about publishing an Office Add-in that you created using Visual Studio, see [Publish your add-in using Visual Studio](package-your-add-in-using-visual-studio.md).
+>
+> - For information about publishing an Office Add-in that you created using Visual Studio, see [Publish your add-in using Visual Studio](package-your-add-in-using-visual-studio.md).
+> - For information about publishing an Office Add-in that you created using Teams Toolkit, see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). This article is about Teams tab apps, but it is applicable to Office Add-ins created with Teams Toolkit.
 
 ## Publishing an add-in for other users to access
 
@@ -24,7 +26,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 ## Using Visual Studio Code to publish
 
 >[!NOTE]
-> These steps only work for projects created with the Yeoman generator.
+> These steps only work for projects created with the Yeoman generator, and that use the XML-formatted manifest. They do not apply if you created the add-in using the Teams Toolkit or created it with the Yeoman generator and it uses the unified Microsoft 365 manifest.
 
 1. Open your project from its root folder in Visual Studio Code (VS Code).
 1. Select **View** > **Extensions** (Ctrl+Shift+X) to open the Extensions view.

@@ -2,6 +2,7 @@
 title: Outlook add-in design
 description: Guidelines to help you design and build a compelling add-in, which brings the best of your app right into Outlook on Windows, Web, iOS, Mac, and Android.
 ms.date: 08/12/2021
+ms.topic: best-practice
 ms.localizationpriority: high
 ---
 
