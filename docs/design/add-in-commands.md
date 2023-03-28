@@ -143,6 +143,7 @@ Apply the following best practices when you develop add-in commands.
   > Add-ins that take up too much space might not pass [AppSource validation](/legal/marketplace/certification-policies).
 
 - For all icons, follow the [icon design guidelines](add-in-icons.md).
+- Provide a version of your add-in that works on Office applications or platforms (such as iPad) that don't support commands. A single add-in manifest can be used for these versions.
 
 ## Next steps
 
