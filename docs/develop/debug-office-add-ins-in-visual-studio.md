@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins in Visual Studio
 description: Use Visual Studio to debug Office Add-ins in the Office desktop client on Windows.
-ms.date: 02/17/2022
+ms.date: 03/28/2022
 ms.localizationpriority: medium
 ---
 
@@ -31,16 +31,16 @@ The following table describes the properties of the add-in project.
 |**Start Action**|Specifies the debug mode for your add-in. This should be set to **Microsoft Edge** for an Outlook add-in. For all other Office applications, it should be set to **Office Desktop Client**.|
 |**Start Document**<br/>(Excel, PowerPoint, and Word add-ins only)|Specifies what document to open when you start the project. In a new project, this is set to **[New Excel Workbook]**, **[New Word Document]**, or **[New PowerPoint Presentation]**. To specify a particular document, follow the steps in [Use an existing document to debug the add-in](#use-an-existing-document-to-debug-the-add-in).|
 |**Web Project**|Specifies the name of the web project associated with the add-in.|
-|**Email Address**<br/>(Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in. If left blank, you will be prompted for the email address when you start debugging.|
+|**Email Address**<br/>(Outlook add-ins only)|Specifies the email address of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in. If left blank, you'll be prompted for the email address when you start debugging.|
 |**EWS Url**<br/>(Outlook add-ins only)|Specifies the Exchange Web Services URL (For example: `https://www.contoso.com/ews/exchange.aspx`). This property can be left blank.|
 |**OWA Url**<br/>(Outlook add-ins only)|Specifies the Outlook on the web URL (For example: `https://www.contoso.com/owa`). This property can be left blank.|
-|**Use multi-factor auth**<br/>(Outlook add-ins only)|Specifies the boolean value that indicates whether multi-factor authentication should be used. The default is **false**, but the property has no practical effect. If you normally have to provide a second factor to login to the email account, you will be prompted to when you start debugging. |
+|**Use multi-factor auth**<br/>(Outlook add-ins only)|Specifies the boolean value that indicates whether multi-factor authentication should be used. The default is **false**, but the property has no practical effect. If you normally have to provide a second factor to login to the email account, you'll be prompted to when you start debugging. |
 |**User Name**<br/>(Outlook add-ins only)|Specifies the name of the user account in Exchange Server or Exchange Online that you want to use to test your Outlook add-in. This property can be left blank.|
 |**Project File**|Specifies the name of the file containing build, configuration, and other information about the project.|
 |**Project Folder**|Specifies the location of the project file.|
 
 > [!NOTE]
-> For an Outlook add-in, you may choose to specify values for one or more of the *Outlook add-in only* properties in the **Properties** window, but doing so is not required.
+> For an Outlook add-in, you may choose to specify values for one or more of the *Outlook add-in only* properties in the **Properties** window, but doing so isn't required.
 
 ### Web application project properties
 
@@ -96,10 +96,28 @@ Next, Visual Studio does the following:
 
 ### Debug the Excel, PowerPoint, or Word add-in
 
-1. Launch the add-in in the Office application. For example, if it is a task pane add-in, it will have added a button to the **Home** ribbon (for example, a **Show Taskpane** button). Select the button in the ribbon. 
+The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. To determine which webview control is being used, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your computer is using WebView2, see [Use the built-in Visual Studio debugger](#use-the-built-in-visual-studio-debugger). For any other webview control, see [Use the browser developer tools](#use-the-browser-developer-tools).
+
+#### Use the built-in Visual Studio debugger
+
+1. Set breakpoints, as needed, in the source JavaScript or TypeScript files. You can do this either before or after you start the add-in as described in the earlier section [Start the Excel, PowerPoint, or Word add-in project](#start-the-excel-powerpoint-or-word-add-in-project).
+
+1. When the add-in is running, use the add-in's UI to run the code that contains your breakpoints. 
+
+> [!IMPORTANT]
+> Breakpoints set in `Office.initialize` or `Office.onReady` aren't hit. To debug these methods, see [Debug the initialize and onReady functions](../testing/debug-initialize-onready.md).
+
+> [!TIP]
+> If you encounter any problems, there is more information at [Debug a JavaScript or TypeScript app in Visual Studio](https://learn.microsoft.com/visualstudio/javascript/debug-nodejs?view=vs-2022).
+
+#### Use the browser developer tools
+
+1. Follow the steps in the earlier section [Start the Excel, PowerPoint, or Word add-in project](#start-the-excel-powerpoint-or-word-add-in-project).
+
+1. Launch the add-in in the Office application if it isn't already open. For example, if it is a task pane add-in, it will have added a button to the **Home** ribbon (for example, a **Show Taskpane** button). Select the button in the ribbon. 
 
    > [!NOTE]
-   > If your add-in is not sideloaded by Visual Studio, you can sideload it manually. In Excel, PowerPoint, or Word, choose the **Insert** tab, and then choose the down-arrow located to the right of **My Add-ins**.
+   > If your add-in isn't sideloaded by Visual Studio, you can sideload it manually. In Excel, PowerPoint, or Word, choose the **Insert** tab, and then choose the down-arrow located to the right of **My Add-ins**.
    >
    > ![Screenshot showing Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted.](../images/excel-cf-register-add-in-1b.png)
    >
@@ -118,7 +136,7 @@ Next, Visual Studio does the following:
 
 ## Debug an Outlook add-in project
 
-This section describes how to start and debug an Outlook add-in.
+This section describes how to start and debug an Outlook add-in. Debugging is done in Outlook on the web, not Outlook on Windows.
 
 ### Start the Outlook add-in project
 
@@ -151,6 +169,21 @@ Next, Visual Studio does the following:
 4. Opens the Outlook page of your Microsoft 365 tenancy in Microsoft Edge.
 
 ### Debug the Outlook add-in
+
+The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. To determine which webview control is being used, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your computer is using WebView2, see [Use the built-in Visual Studio debugger](#use-the-built-in-visual-studio-debugger). For any other webview control, see [Use the browser developer tools](#use-the-browser-developer-tools).
+
+#### Use the built-in Visual Studio debugger
+
+1. Set breakpoints, as needed, in the source JavaScript or TypeScript files. You can do this either before or after you start the add-in as described in the earlier section [Start the Excel, PowerPoint, or Word add-in project](#start-the-excel-powerpoint-or-word-add-in-project).
+
+1. When the add-in is running, use the add-in's UI to run the code that contains your breakpoints. 
+
+> [!TIP]
+>
+> - Sometimes in Outlook on the web, the Visual Studio debugger doesn't attach. If you get errors by the breakpoints that indicate they won't be hit, use the browser developer tools to attach to the Visual Studio debugger: After you have pressed F5 to start debugging and Outlook on the web has opened, follow the first four steps in the [Use the browser developer tools in Outlook on the web](#use-the-browser-developer-tools-in-outlook-on-the-web). (Use the instructions for Microsoft Edge (Chromium-based).) After you set a breakpoint in the browser tools and it is hit, execution will pause on the breakpoint in *both* the browser tools *and* in Visual Studio. This indicates that the Visual Studio debugger is attached. At this point, you can close the browser tools and add breakpoints in Visual Studio as you normally would.
+> - If you encounter any problems, there is more information at [Debug a JavaScript or TypeScript app in Visual Studio](https://learn.microsoft.com/visualstudio/javascript/debug-nodejs?view=vs-2022).
+
+#### Use the browser developer tools in Outlook on the web
 
 1. In the Outlook page, select an email message or appointment item to open it in its own window. 
 
