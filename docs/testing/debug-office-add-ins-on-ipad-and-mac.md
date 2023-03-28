@@ -13,7 +13,7 @@ Because add-ins are developed using HTML and JavaScript, they are designed to wo
 
 If you have add-in that shows UI in a task pane or in a content add-in, you can debug an Office Add-in using Safari Web Inspector.
 
-To be able to debug Office Add-ins on Mac, you must have Mac OS High Sierra AND Mac Office Version 16.9.1 (Build 18012504) or later. If you don't have an Office on Mac build, you can get one by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+To be able to debug Office Add-ins on Mac, you must have Mac OS High Sierra AND Mac Office Version 16.9.1 (Build 18012504) or later. If you don't have an Office on Mac build, you can get one by joining the [Microsoft 365 developer program](https://aka.ms/M365devprogram).
 
 To start, open a terminal and set the `OfficeWebAddinDeveloperExtras` property for the relevant Office application as follows:
 
