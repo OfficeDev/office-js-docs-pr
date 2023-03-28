@@ -108,7 +108,7 @@ The best method for debugging an add-in in Visual Studio 2022 depends on whether
 > Breakpoints set in `Office.initialize` or `Office.onReady` aren't hit. To debug these methods, see [Debug the initialize and onReady functions](../testing/debug-initialize-onready.md).
 
 > [!TIP]
-> If you encounter any problems, there is more information at [Debug a JavaScript or TypeScript app in Visual Studio](../../../visualstudio/javascript/debug-nodejs).
+> If you encounter any problems, there is more information at [Debug a JavaScript or TypeScript app in Visual Studio](../../../visualstudio/javascript/debug-nodejs.md).
 
 #### Use the browser developer tools
 
@@ -181,7 +181,7 @@ The best method for debugging an add-in in Visual Studio 2022 depends on whether
 > [!TIP]
 >
 > - Sometimes in Outlook on the web, the Visual Studio debugger doesn't attach. If you get errors by the breakpoints that indicate they won't be hit, use the browser developer tools to attach to the Visual Studio debugger: After you have pressed F5 to start debugging and Outlook on the web has opened, follow the first four steps in the [Use the browser developer tools in Outlook on the web](#use-the-browser-developer-tools-in-outlook-on-the-web). (Use the instructions for Microsoft Edge (Chromium-based).) After you set a breakpoint in the browser tools and it is hit, execution will pause on the breakpoint in *both* the browser tools *and* in Visual Studio. This indicates that the Visual Studio debugger is attached. At this point, you can close the browser tools and add breakpoints in Visual Studio as you normally would.
-> - If you encounter any problems, there is more information at [Debug a JavaScript or TypeScript app in Visual Studio](../../../visualstudio/javascript/debug-nodejs).
+> - If you encounter any problems, there is more information at [Debug a JavaScript or TypeScript app in Visual Studio](../../../visualstudio/javascript/debug-nodejs.md).
 
 #### Use the browser developer tools in Outlook on the web
 
