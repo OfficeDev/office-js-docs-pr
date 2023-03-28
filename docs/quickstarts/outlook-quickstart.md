@@ -131,7 +131,7 @@ Congratulations, you've successfully created your first Outlook task pane add-in
 - Microsoft 365
 
     > [!NOTE]
-    > If you do not have a Microsoft 365 subscription, you can get a free one by signing up for the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+    > If you do not have a Microsoft 365 subscription, you can get a free one by signing up for the [Microsoft 365 developer program](https://aka.ms/M365devprogram).
 
 ### Create the add-in project
 

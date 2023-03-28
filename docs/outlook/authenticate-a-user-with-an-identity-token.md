@@ -2,6 +2,7 @@
 title: Authenticate a user with an identity token in an add-in
 description: Learn about using the identity token provided by an Outlook add-in to implement SSO with your service.
 ms.date: 10/12/2021
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

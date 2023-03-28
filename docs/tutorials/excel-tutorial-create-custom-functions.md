@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 11/16/2022
+ms.date: 03/20/2023
 ms.prod: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ms.localizationpriority: high
@@ -221,4 +221,4 @@ You can prevent this conflict by [clearing the Office cache](../testing/clear-ca
 
 ## Next steps
 
-Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data. Next, learn about [Custom functions naming guidelines](../excel/custom-functions-naming.md).
+Congratulations! You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data. Next, learn how to [Share custom function data with the task pane](share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md).

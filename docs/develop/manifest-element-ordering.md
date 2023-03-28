@@ -1,7 +1,7 @@
 ---
 title: How to find the proper order of manifest elements
 description: Learn how to find the correct order in which to place child elements in a parent element.
-ms.date: 10/25/2021
+ms.date: 03/20/2023
 ms.localizationpriority: medium
 ---
 
@@ -463,10 +463,27 @@ The following sections show the manifest elements in the order in which they mus
                                     <SourceLocation>
                                     <Title>
                                     <FunctionName>
-                                    <SourceLocation>
                 <SourceLocation>
                 <Label>
                 <CommandSurface>
+        <MobileFormFactor>
+            <ExtensionPoint>
+                <Group>
+                    <Label>
+                    <Control>
+                        <Label>
+                        <Icon>
+                            <Image>
+                        <Action>
+                            <SourceLocation>
+                            <FunctionName>
+                <Control>
+                    <Label>
+                    <Icon>
+                        <Image>
+                    <Action>
+                        <SourceLocation>
+                        <FunctionName>
     <Resources>
         <Images>
             <Image>
