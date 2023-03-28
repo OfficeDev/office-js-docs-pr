@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 This article describes how to update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.
 
 > [!NOTE]
-> Projects created in Visual Studio 2019+ will already use version 1.1. However, there are occasional minor updates to version 1.1 that you can apply by using the techniques in this article.
+> Projects created in Visual Studio 2019 or later will already use version 1.1. However, there are occasional minor updates to version 1.1 that you can apply by using the techniques in this article.
 
 ## Use the most up-to-date project files
 
