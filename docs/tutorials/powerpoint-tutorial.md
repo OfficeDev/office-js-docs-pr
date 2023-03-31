@@ -55,7 +55,7 @@ Complete the following steps to create a PowerPoint add-in project using Visual 
    - Microsoft.AspNet.WebApi.Core
    
    > [!IMPORTANT]
-   > When you're using the **NuGet Package Manager** to install these packages, do **not** install the recommended update to jQuery. The jQuery version installed with your Visual Studio solution matches the jQuery calls within the solution files. Updating 
+   > When you're using the **NuGet Package Manager** to install these packages, do **not** install the recommended update to jQuery. The jQuery version installed with your Visual Studio solution matches the jQuery call within the solution files. 
 
 ### Explore the Visual Studio solution
 
