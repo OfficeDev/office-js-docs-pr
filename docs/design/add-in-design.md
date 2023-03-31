@@ -2,6 +2,7 @@
 title: Design the UI of Office Add-ins
 description: Learn the best practices for the visual design of Office Add-ins.
 ms.date: 10/18/2022
+ms.topic: best-practice
 ms.localizationpriority: high
 ---
 
