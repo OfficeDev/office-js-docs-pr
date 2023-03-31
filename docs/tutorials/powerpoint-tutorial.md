@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 03/17/2023
+ms.date: 03/31/2023
 ms.prod: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -49,10 +49,13 @@ Complete the following steps to create a PowerPoint add-in project using Visual 
 
      ![The Visual Studio Solution Explorer window showing HelloWorld and HelloWorldWeb, the two projects in the HelloWorld solution.](../images/powerpoint-tutorial-solution-explorer.png)
 
-1. The following NuGet packages must installed. Install them using the **NuGet Package Manager** in Visual Studio. See Visual Studio help for instructions. The second of these may be installed automatically when you install the first.
+1. The following NuGet packages must be installed. Install them using the **NuGet Package Manager** in Visual Studio. See Visual Studio help for instructions. The second of these may be installed automatically when you install the first.
 
    - Microsoft.AspNet.WebApi.WebHost
    - Microsoft.AspNet.WebApi.Core
+   
+   > [!IMPORTANT]
+   > When you're using the **NuGet Package Manager** to install these packages, do **not** install the recommended update to jQuery. The jQuery version installed with your Visual Studio solution matches the jQuery calls within the solution files. Updating 
 
 ### Explore the Visual Studio solution
 
@@ -74,12 +77,6 @@ Edit the add-in code as follows to create the framework that you'll use to imple
             <!-- TODO5: Create the go-to-slide buttons. -->
         </div>
     </div>
-    ```
-
-1. In **Home.html**, find the **script** call that loads jQuery. Make sure it calls jQuery version 3.6.4 and then save the file.
-
-    ```html 
-    <script src="Scripts/jquery-3.6.4.js" type="text/javascript"></script>
     ```
 
 1. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
