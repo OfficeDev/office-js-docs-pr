@@ -1,11 +1,11 @@
 ---
-title: Create add-in commands
-description: Update your manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 03/13/2023
+title: Create add-in commands with the XML manifest
+description: Configure an XML manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
+ms.date: 04/04/2023
 ms.localizationpriority: medium
 ---
 
-# Create add-in commands
+# Create add-in commands with the XML manifest
 
 Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands](../design/add-in-commands.md).
 
