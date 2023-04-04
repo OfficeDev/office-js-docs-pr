@@ -2,6 +2,7 @@
 title: First-run experience patterns for Office Add-ins
 description: Learn the best practices for designing first-run experiences in Office Add-ins.
 ms.date: 07/08/2018
+ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 
