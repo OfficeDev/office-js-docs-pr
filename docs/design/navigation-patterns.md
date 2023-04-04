@@ -2,6 +2,7 @@
 title: Navigation patterns for Office Add-ins
 description: Learn best practices for using command bars, tab bars, and back buttons, to design the navigation of an Office Add-in.
 ms.date: 06/26/2018
+ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 

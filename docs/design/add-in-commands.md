@@ -2,6 +2,7 @@
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
 ms.date: 03/13/2023
+ms.topic: overview
 ms.localizationpriority: high
 ---
 
