@@ -2,6 +2,7 @@
 title: Handling errors and events in the Office dialog box 
 description: Learn how to trap and handle errors when opening and using the Office dialog box.
 ms.date: 09/01/2022
+ms.topic: error-reference
 ms.localizationpriority: medium
 ---
 

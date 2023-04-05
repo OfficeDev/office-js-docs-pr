@@ -2,6 +2,7 @@
 title: Position a custom tab on the ribbon
 description: Learn how to control where a custom tab appears on the Office ribbon and whether it has focus by default.
 ms.date: 01/22/2022
+ms-topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -20,7 +21,7 @@ You can specify where you want your add-in's custom tab to appear on the Office 
 
 Specify where you want a custom tab to appear by identifying which built-in Office tab you want it to be next to and specifying whether it should be on the left or right side of the built-in tab. Make these specifications by including either an [InsertBefore](/javascript/api/manifest/customtab#insertbefore) (left) or an [InsertAfter](/javascript/api/manifest/customtab#insertafter) (right) element in the [CustomTab](/javascript/api/manifest/customtab) element of your add-in's manifest. (You cannot have both elements.)
 
-In the following example, the custom tab is configured to appear *just after* the **Review** tab. Note that the value of the **\<InsertAfter\>** element is the ID of the built-in Office tab. 
+In the following example, the custom tab is configured to appear *just after* the **Review** tab. Note that the value of the **\<InsertAfter\>** element is the ID of the built-in Office tab.
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
