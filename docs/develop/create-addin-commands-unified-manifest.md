@@ -93,7 +93,7 @@ The following subsections explain how to include a task pane command in an add-i
     ]
     ```
 
-1. Ensure that the "contexts" array has strings that specify the windows or panes in which the UI for the task pane add-in command should appear. For example, "mailRead" means that it will appear in the reading pane or message window when an email message is open, but "mailCompose" means it will appear when a new message or a reply is being composed. The following is an example.
+1. Ensure that the "contexts" array has strings that specify the windows or panes in which the UI for the task pane command should appear. For example, "mailRead" means that it will appear in the reading pane or message window when an email message is open, but "mailCompose" means it will appear when a new message or a reply is being composed. The following is an example.
 
     ```json
     "contexts": [
@@ -101,36 +101,143 @@ The following subsections explain how to include a task pane command in an add-i
     ],
     ```
 
-1. Ensure that the "tabs" array has an object with "builtInTabId" string property that is set to the ID of ribbon tab in which you want your task pane add-in command to appear and a "groups" array with at least one object in it. The following is an example.
+1. Ensure that the "tabs" array has an object with "builtInTabId" string property that is set to the ID of ribbon tab in which you want your task pane command to appear and a "groups" array with at least one object in it. The following is an example.
 
     ```json
     "tabs": [
-        "builtInTabID": "defaultTab",
-        "groups: [
-            {
-
-            },
-        ]
-    ],
+        {
+            "builtInTabID": "TabDefault",
+            "groups": [
+                {
+                    // markup omitted                
+                }
+            ]
+        }
+    ]
     ```
 
     > [!NOTE]
-    > Only "tabDefault", which in Outlook is either the **Home**, **Message**, or **Meeting** tab, is currently supported for the "builtInTabID" property.
+    > Only "TabDefault", which in Outlook is either the **Home**, **Message**, or **Meeting** tab, is currently supported for the "builtInTabID" property.
 
-1. 
+1. Ensure that the "groups" array has an object to define the custom control group that will hold your add-in command UI controls. The following is an example. Note the following about this markup:
 
-#### Ribbon button
+    - The "id" must be unique across all groups in all ribbon objects in the manifest. Maximum length is 64 characters.
+    - The "label" appears on the group in the ribbon. Maximum length is 64 characters.
+    - One of the "icons" appears on the group only if the Office application window, and hence the ribbon, has been sized by the user too small for any of the controls in the group to appear. Office decides when to use one of these icons and which one to use based on the size of the window and the resolution of the device. You cannot control this. You must provide image files for 16, 32, and 80 pixels, while five other sizes are also supported (20, 24, 40, 48, and 64 pixels).
+    
+    > [!NOTE]
+    > The name of the "icons.file" property may change during the preview of the unified manifest for Office Add-ins. If you get intellisense or manifest validation errors, try replacing "file" with "url".
 
-#### Menu item
+
+    ```json
+    "groups": [
+        {
+            "id": "msgReadGroup",
+            "label": "Contoso Add-in",
+            "icons": [
+                {
+                    "size": 16,
+                    "file": "https://localhost:3000/assets/icon-16.png"
+                },
+                {
+                    "size": 32,
+                    "file": "https://localhost:3000/assets/icon-32.png"
+                },
+                {
+                    "size": 80,
+                    "file": "https://localhost:3000/assets/icon-80.png"
+                }
+            ],
+            "controls": [
+                {
+                    // markup omitted 
+                }
+            ]
+        }
+    ]
+    ```
+
+1. Ensure that there is a control object in the "controls" array for each button or custom menu you want. The following is an example. Note the following about this markup:
+
+    - The "id", "label", and "icons" properties have the same purpose and the same restrictions as the corresponding properties of a group object, except that they apply to a specific button or menu within the group.
+    - The "type" property is set to "button" which means that the control will be a ribbon button. You can also configure a task pane command to be executed from a menu item. See [Menu and menu items](#menu-and-menu-items).
+    - The "supertip.title" (maximum length: 64 characters) and "supertip.descrption" (maximum length: 128 characters) appear when the cursor is hovering over the button or menu.
+    - The "actionID" must be an exact match for the "ribbons.actions.id" that you set in [Configure the runtime](#configure-the-runtime).
+
+    ```json
+    {
+        "id": "msgReadOpenPaneButton",
+        "type": "button",
+        "label": "Show Task Pane",
+        "icons": [
+            {
+                "size": 16,
+                "file": "https://localhost:3000/assets/icon-16.png"
+            },
+            {
+                "size": 32,
+                "file": "https://localhost:3000/assets/icon-32.png"
+            },
+            {
+                "size": 80,
+                "file": "https://localhost:3000/assets/icon-80.png"
+            }
+        ],
+        "supertip": {
+            "title": "Show Contoso Task Pane",
+            "description": "Opens the Contoso task pane."
+        },
+        "actionId": "ShowTaskPane"
+    }
+    ```
+
+You have now completed adding a task pane command to your add-in.
 
 ## Add a function command
 
-### Configure the runtime
+### Create the code for the function command
 
-### Configure the UI
+### Configure the runtime for the function command
 
-#### Ribbon button
+### Configure the UI for the function command
 
-#### Menu item
+#### Ribbon button for a function command
 
-### Create the code for the function
+
+You have now completed adding a task pane command to your add-in.
+
+#### Menu and menu items
+
+To open a task pane from an item in a menu, take the following steps:
+
+1. Set the "type" property of the control object to "menu". The example control object in the preceding section would be look like the following.
+
+    ```json
+    {
+        "id": "msgContosoMenu",
+        "type": "menu",
+
+        // "label", "icons", "supertip" properties omitted.
+    }
+    ```
+
+1. Add an "items" array to the control object to represent the menu choices. It must have at least one object, but a menu normally has more than one item. The following is an example.
+
+    ```json
+    {
+        "id": "msgReadOpenPaneButton",
+        "type": "menu",
+
+        // "label", "icons", "supertip", and "actionId" properties omitted.
+
+        "items" [
+            {
+
+            },
+            {
+
+            }
+        ]
+    }
+    ```
+
