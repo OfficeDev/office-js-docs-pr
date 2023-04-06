@@ -1,7 +1,7 @@
 ---
 title: Build your first Word task pane add-in
 description: Learn how to build a simple Word task pane add-in by using the Office JavaScript API.
-ms.date: 06/10/2022
+ms.date: 04/06/2023
 ms.prod: word
 ms.localizationpriority: high
 ---
@@ -94,11 +94,11 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 1. In Visual Studio, choose **Create a new project**.
 
-2. Using the search box, enter **add-in**. Choose **Word Web Add-in**, then select **Next**.
+1. Using the search box, enter **add-in**. Choose **Word Web Add-in**, then select **Next**.
 
-3. Name your project and select **Create**.
+1. Name your project and select **Create**.
 
-4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+1. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
 ### Explore the Visual Studio solution
 
@@ -132,7 +132,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
     </body>
     ```
 
-2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
+1. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
     [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
@@ -152,8 +152,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
                     $('#supportedVersion').html('This code is using Word 2016 or later.');
-                }
-                else {
+                } else {
                     // Just letting you know that this code will not work with your version of Word.
                     $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
@@ -171,7 +170,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
                 const range = thisDocument.getSelection();
 
                 // Queue a command to replace the selected text.
-                range.insertText('"Hitch your wagon to a star."\n', Word.InsertLocation.replace);
+                range.insertText('"Hitch your wagon to a star." - Ralph Waldo Emerson\n', Word.InsertLocation.replace);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
@@ -193,7 +192,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
                 const body = context.document.body;
 
                 // Queue a command to insert text at the start of the document body.
-                body.insertText('"Knowledge is of no value unless you put it into practice."\n', Word.InsertLocation.start);
+                body.insertText('"Knowledge is of no value unless you put it into practice." - Anton Chekhov\n', Word.InsertLocation.start);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
@@ -215,7 +214,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
                 const body = context.document.body;
 
                 // Queue a command to insert text at the end of the document body.
-                body.insertText('"To know the road ahead, ask those coming back."\n', Word.InsertLocation.end);
+                body.insertText('"To know the road ahead, ask those coming back." - Chinese proverb\n', Word.InsertLocation.end);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
@@ -232,7 +231,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
     })();
     ```
 
-3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
+1. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
@@ -265,13 +264,13 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 1. Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
-2. The `ProviderName` element has a placeholder value. Replace it with your name.
+1. The `ProviderName` element has a placeholder value. Replace it with your name.
 
-3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
+1. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
 
-4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.
+1. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.
 
-5. Save the file.
+1. Save the file.
 
     ```xml
     ...
@@ -287,11 +286,11 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you're using the volume-licensed perpetual version of Office, instead of the Microsoft 365 version or a retail perpetual version, then custom buttons are not supported. Instead, the task pane will open immediately.)
+1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you're using the volume-licensed perpetual version of Office, instead of the Microsoft 365 version or a retail perpetual version, then custom buttons aren't supported. Instead, the task pane will open immediately.)
 
     ![Screenshot of the Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-0.png)
 
-3. In the task pane, choose any of the buttons to add boilerplate text to the document.
+1. In the task pane, choose any of the buttons to add boilerplate text to the document.
 
     ![Screenshot of the Word application with the boilerplate add-in loaded.](../images/word-quickstart-addin-1b.png)
 
