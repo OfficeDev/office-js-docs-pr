@@ -19,7 +19,7 @@ This article describes how to configure the [Unified Microsoft 365 manifest (pre
 
 ## Starting point and major steps
 
-Both of the tools that create add-in projects with a unified manifest &#8212; the [Office Yeoman generator](yeoman-generator-overview.md) and [Teams Toolkit](teams-toolkit-overview.md)  &#8212;  create projects with one or more add-in commands. The only time you won't already have an add-in command is if you are updating an add-in which previously didn't have one. 
+Both of the tools that create add-in projects with a unified manifest &#8212; the [Office Yeoman generator](yeoman-generator-overview.md) and [Teams Toolkit](teams-toolkit-overview.md) &#8212; create projects with one or more add-in commands. The only time you won't already have an add-in command is if you are updating an add-in which previously didn't have one. 
 
 ## Two decisions
 
@@ -93,10 +93,10 @@ The following subsections explain how to include a [task pane command](../design
 
 1. Ensure that the "contexts" array has strings that specify the windows or panes in which the UI for the task pane command should appear. For example, "mailRead" means that it will appear in the reading pane or message window when an email message is open, but "mailCompose" means it will appear when a new message or a reply is being composed. The following are the allowable values:
 
-    - mailRead
-    - mailCompose
-    - meetingDetailsOrganizer
-    - meetingDetailsAttendee
+    - "mailRead"
+    - "mailCompose"
+    - "meetingDetailsOrganizer"
+    - "meetingDetailsAttendee"
 
     The following is an example.
 
@@ -196,7 +196,7 @@ The following subsections explain how to include a [task pane command](../design
     }
     ```
 
-You've now completed adding a task pane command to your add-in.  [Sideload and test it](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
+You've now completed adding a task pane command to your add-in. [Sideload and test it](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
 ## Add a function command
 
@@ -266,7 +266,7 @@ The following subsections explain how to include a [function command](../design/
 
 1. Open the unified manifest and find the "extensions.runtimes" array.
 1. Ensure that there is a runtime object that has a "actions.type" property with the value "executeFunction".
-1. Ensure that the "requirements.capabilities" array contains objects that specify any [Requirement Set](office-versions-and-requirement-sets.md)s that are needed to support the APIs add-in commands. For Outlook, the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3). But if your function command calls that API that is part of later **Mailbox** requirement set, such as **Mailbox 1.5**, then you need to specify the later version (e.g., "1.5") as the "minVersion" value. 
+1. Ensure that the "requirements.capabilities" array contains objects that specify any [Requirement Sets](office-versions-and-requirement-sets.md) that are needed to support the APIs add-in commands. For Outlook, the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3). But if your function command calls that API that is part of later **Mailbox** requirement set, such as **Mailbox 1.5**, then you need to specify the later version (e.g., "1.5") as the "minVersion" value. 
 
     > [!NOTE]
     > When support for the unified manifest is extended to other Office host applications, the minimum requirement set for add-in commands in those other hosts will be [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
@@ -495,7 +495,6 @@ Carry out the steps of the following sections:
     
     > [!NOTE]
     > The name of the "icons.file" property may change during the preview of the unified manifest for Office Add-ins. If you get intellisense or manifest validation errors, try replacing "file" with "url".
-
 
     ```json
     "groups": [
