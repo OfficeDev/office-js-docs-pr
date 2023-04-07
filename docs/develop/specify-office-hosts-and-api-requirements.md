@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements
 description: Learn how to specify Office applications and API requirements for your add-in to work as expected.
 ms.topic: best-practice
-ms.date: 05/19/2022
+ms.date: 03/21/2023
 ms.localizationpriority: medium
 ---
 
@@ -155,11 +155,11 @@ You implement this design differently depending on how the extensibility feature
 You test at runtime to discover whether the user's Office supports a requirement set with the [isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-issetsupported-member(1)) method. Pass the requirement set's name and the minimum version as parameters. If the requirement set is supported, `isSetSupported` returns `true`. The following code shows an example.
 
 ```js
-if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
+if (Office.context.requirements.isSetSupported('WordApi', '1.2'))
 {
-   // Code that uses API members from the WordApi 1.1 requirement set.
+   // Code that uses API members from the WordApi 1.2 requirement set.
 } else {
-   // Provide diminished experience here. E.g., run alternate code when the user's Word is perpetual Word 2013 (which does not support WordApi 1.1).
+   // Provide diminished experience here. E.g., run alternate code when the user's Word is volume-licensed perpetual Word 2016 (which doesn't support WordApi 1.2).
 }
 ```
 

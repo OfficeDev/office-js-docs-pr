@@ -1,7 +1,7 @@
 ---
 title: Match strings as well-known entities in an Outlook add-in
 description: Using the Office JavaScript API, you can get strings that match specific well-known entities for further processing.
-ms.date: 10/07/2022
+ms.date: 03/21/2023
 ms.localizationpriority: medium
 ---
 
@@ -32,7 +32,7 @@ The following table lists the entities that Exchange Server and Outlook support 
 |**Address**|United States street addresses; for example: 1234 Main Street, Redmond, WA 07722. Generally, for an address to be recognized, it should follow the structure of a United States postal address, with most of the elements of a street number, street name, city, state, and zip code present. The address can be specified in one or multiple lines.|JavaScript **String** object|
 |**Contact**|A reference to a person's information as recognized in natural language. The recognition of a contact depends on the context. For example, a signature at the end of a message, or a person's name appearing in the vicinity of some of the following information: a phone number, address, email address, and URL.|[Contact](/javascript/api/outlook/office.contact) object|
 |**EmailAddress**|SMTP email addresses.|JavaScript `String` object|
-|**MeetingSuggestion**|A reference to an event or meeting. For example, Exchange 2013 would recognize the following text as a meeting suggestion:  _Let's meet tomorrow for lunch._|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) object|
+|**MeetingSuggestion**|A reference to an event or meeting. For example, Exchange would recognize the following text as a meeting suggestion:  _Let's meet tomorrow for lunch._|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) object|
 |**PhoneNumber**|United States telephone numbers; for example:  _(235) 555-0110_|[PhoneNumber](/javascript/api/outlook/office.phonenumber) object|
 |**TaskSuggestion**|Actionable sentences in an email. For example:  _Please update the spreadsheet._|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) object|
 |**Url**|A web address that explicitly specifies the network location and identifier for a web resource. Exchange Server does not require the access protocol in the web address, and does not recognize URLs that are embedded in link text as instances of the `Url` entity. Exchange Server can match the following examples: `www.youtube.com/user/officevideos` `https://www.youtube.com/user/officevideos` |JavaScript `String` object|

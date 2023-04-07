@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
 description: Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.
-ms.date: 02/21/2023
+ms.date: 03/21/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -61,7 +61,7 @@ Every Office Add-in specifies a [DefaultLocale] element and a locale in its mani
 |[SourceLocation]   |Users in each locale you specify can see a webpage that you specifically design for the add-in for that locale. |
 
 > [!NOTE]
-> You can localize the description and display name for only the locales that Office supports. See [Language identifiers and OptionState Id values in Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)) for a list of languages and locales for the current release of Office.
+> You can localize the description and display name for only the locales that Office supports. See [Overview of deploying languages for Microsoft 365 Apps](/deployoffice/overview-deploying-languages-microsoft-365-apps) for a list of languages and locales for the current release of Office.
 
 ### Examples
 
@@ -76,9 +76,9 @@ For example, an Office Add-in can specify the [DefaultLocale] as `en-us`. For th
 ```
 
 > [!NOTE]
-> If you need to localize for more than one area within a language family, such as `de-de` and `de-at`, we recommend that you use separate `Override` elements for each area. Using just the language name alone, in this case, `de`, is not supported across all combinations of Office client applications and platforms.
+> If you need to localize for more than one area within a language family, such as `de-de` and `de-at`, we recommend that you use separate `Override` elements for each area. Using the language name alone, in this case, `de`, is not supported across all combinations of Office client applications and platforms.
 
-This means that the add-in assumes the  `en-us` locale by default. Users see the English display name of "Video player" for all locales unless the client computer's locale is `fr-fr`, in which case users would see the French display name "Lecteur vidéo".
+This means that the add-in assumes the `en-us` locale by default. Users see the English display name of "Video player" for all locales unless the client computer's locale is `fr-fr`, in which case users would see the French display name "Lecteur vidéo".
 
 > [!NOTE]
 > You may only specify a single override per language, including for the default locale. For example, if your default locale is `en-us` you cannot not specify an  override for `en-us` as well.
@@ -348,7 +348,7 @@ The text that you want to localize for another language appears in two areas.
     </Description>
     ```
 
-1. When you change the display language for Office 2013 from English to Spanish, for example, and then run the add-in, the add-in display name and description are shown with localized text.
+1. When you change the display language for Microsoft 365 from English to Spanish, for example, and then run the add-in, the add-in display name and description are shown with localized text.
 
 ##### Lay out the add-in UI
 
@@ -530,7 +530,7 @@ Once running, the strings in the add-in UI change to match the language used by 
 ## See also
 
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
-- [Language identifiers and OptionState Id values in Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
+- [Overview of deploying languages for Microsoft 365 Apps](/deployoffice/overview-deploying-languages-microsoft-365-apps)
 
 [DefaultLocale]:         /javascript/api/manifest/defaultlocale
 [Description]:           /javascript/api/manifest/description

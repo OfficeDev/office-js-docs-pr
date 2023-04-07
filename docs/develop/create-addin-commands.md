@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands
 description: Update your manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 03/13/2023
+ms.date: 03/21/2023
 ms.localizationpriority: medium
 ---
 
@@ -345,12 +345,6 @@ Add-in commands are available in the following Outlook versions.
 - Outlook on Android
 - Outlook on the web for Exchange 2016 or later
 - Outlook on the web for Microsoft 365 and Outlook.com.
-
-Support for add-in commands in Outlook 2013 requires three updates.
-
-- [March 8, 2016 security update for Outlook](https://support.microsoft.com/kb/3114829)
-- [March 8, 2016 security update for Office (KB3114816)](https://support.microsoft.com/topic/3d3eb171-78c2-0e61-62a2-85723bc4bcc0)
-- [March 8, 2016 security update for Office (KB3114828)](https://support.microsoft.com/topic/54437016-d1e0-7aac-dbb7-4ecfbd57f5f0)
 
 Support for add-in commands in Exchange 2016 requires [Cumulative Update 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 

@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
-ms.date: 03/13/2023
+ms.date: 03/21/2023
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -144,11 +144,7 @@ Apply the following best practices when you develop add-in commands.
   > Add-ins that take up too much space might not pass [AppSource validation](/legal/marketplace/certification-policies).
 
 - For all icons, follow the [icon design guidelines](add-in-icons.md).
-- Provide a version of your add-in that also works on Office applications that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a task pane) applications.
-
-   *Figure 3. Task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016*
-
-   ![Screenshot comparing a task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016. In the 2013 version, the task pane must contain all commands, while in the 2016 version, commands can be in the ribbon.](../images/office-task-pane-add-ins.png)
+- Provide a version of your add-in that works on Office applications or platforms (such as iPad) that don't support commands. A single add-in manifest can be used for these versions.
 
 ## Next steps
 
