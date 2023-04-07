@@ -17,7 +17,7 @@ An XML manifest file enables an Office Add-in to do the following:
 
 - Describe itself by providing an ID, version, description, display name, and default locale.
 
-- Specify the images used for branding the add-in and iconography used for [add-in commands](create-addin-commands.md) in the Office app ribbon.
+- Specify the images used for branding the add-in and iconography used for [add-in commands](../design/add-in-commands.md) in the Office app ribbon.
 
 - Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.
 
@@ -97,7 +97,7 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 
 ## Hosting requirements
 
-All image URIs, such as those used for [add-in commands](create-addin-commands.md), must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
+All image URIs, such as those used for [add-in commands](../design/add-in-commands.md), must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
 
 All URLs, such as the source file locations specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
@@ -543,7 +543,8 @@ For information about validating a manifest against the [XML Schema Definition (
 ## See also
 
 - [How to find the proper order of manifest elements](manifest-element-ordering.md)
-- [Create add-in commands](create-addin-commands.md)
+- [Create add-in commands with the XML manifest](create-addin-commands.md)
+- [Create add-in commands with the unified Microsoft 365 manifest](create-addin-commands-unified-manifest.md)
 - [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
 - [Localization for Office Add-ins](localization.md)
 - [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)

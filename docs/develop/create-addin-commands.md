@@ -1,15 +1,20 @@
 ---
-title: Create add-in commands
-description: Update your manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 03/21/2023
+title: Create add-in commands with the XML manifest
+description: Configure an XML manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
+ms.date: 04/07/2023
 ms.localizationpriority: medium
 ---
 
-# Create add-in commands
+# Create add-in commands with the XML manifest
 
 Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands](../design/add-in-commands.md).
 
-This article describes how to edit your manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands). The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
+This article describes how to edit your XML manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands). 
+
+> [!TIP]
+> For instructions on how to create add-in commands with the unified Microsoft 365 manifest, see [Create add-in commands with the unified Microsoft 365 manifest](create-addin-commands-unified-manifest.md).
+
+The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
 
 ![Overview of add-in commands elements in the manifest. The top node here is VersionOverrides with children Hosts and Resources. Under Hosts are Host then DesktopFormFactor. Under DesktopFormFactor are FunctionFile and ExtensionPoint. Under ExtensionPoint are CustomTab or OfficeTab and Office Menu. Under CustomTab or Office Tab are Group then Control then Action. Under Office Menu are Control then Action. Under Resources (child of VersionOverrides) are Images, Urls, ShortStrings, and LongStrings.](../images/version-overrides.png)
 
@@ -19,7 +24,7 @@ All the task pane add-ins created by [yo office](yeoman-generator-overview.md) h
 
 ## Important parts of an add-in command
 
-The following steps explain how to add add-in commands to an existing add-in. These steps assume you're using an XML manifest. If you're working with the JSON-based unified Microsoft 365 manifest, see [Add-in commands in a Unified Microsoft 365 manifest for Outlook add-ins (developer preview)](#add-in-commands-in-a-unified-microsoft-365-manifest-for-outlook-add-ins-developer-preview).
+The following steps explain how to add add-in commands to an existing add-in.
 
 ### Step 1: Add VersionOverrides element
 
@@ -326,14 +331,6 @@ The following shows an example of how to use the **\<Resources\>** element. Each
 
 > [!NOTE]
 > You must use Secure Sockets Layer (SSL) for all URLs in the **\<Image\>** and **\<Url\>** elements.
-
-## Add-in commands in a Unified Microsoft 365 manifest for Outlook add-ins (developer preview)
-
-Add-in commands are declared with the "extensions.runtimes" and "extensions.ribbons" properties. These properties specify many things for the add-in, such as the application, types of controls to add to the ribbon, the text, the icons, and any associated functions.
-
-When an add-in needs to provide status updates, such as progress indicators or error messages, it must use the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the "runtimes.code.page" property of the manifest.
-
-To learn more about how to use a unified Microsoft 365 manifest, see [Unified Microsoft 365 manifest (preview)](json-manifest-overview.md).
 
 ## Outlook support notes
 

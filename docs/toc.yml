@@ -224,8 +224,10 @@ items:
           items:
           - name: Basic concepts for Add-in Commands
             href: design/add-in-commands.md
-          - name: Create add-in commands
+          - name: Create add-in commands with the XML manifest
             href: develop/create-addin-commands.md
+          - name: Create add-in commands with the unified Microsoft 365 manifest
+            href: develop/create-addin-commands-unified-manifest.md
           - name: Create custom contextual tabs
             href: design/contextual-tabs.md
           - name: Enable and Disable Add-in Commands
