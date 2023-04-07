@@ -9,23 +9,22 @@ ms.localizationpriority: medium
 
 Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands](../design/add-in-commands.md).
 
-This article describes how to configure the unified manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands). 
+This article describes how to configure the [Unified Microsoft 365 manifest (preview)](json-manifest-overview.md) to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands). 
 
 > [!TIP]
 > Instructions for creating add-in commands with the XML manifest are in [Create add-in commands with the XML manifest](create-addin-commands.md).
 
 > [!NOTE]
-> The unified manifest is currently supported only for Outlook Add-ins. It is in preview and shouldn't be used for production add-ins.
+> The unified manifest is currently supported only for Outlook Add-ins. It's in preview and not yet supported for production add-ins.
 
 ## Starting point and major steps
 
-Both of the tools that create add-in projects with a unified manifest &#8212; the [Office Yeoman generator](yeoman-generator-overview.md) and [Teams Toolkit](teams-toolkit-overview.md)  &#8212;  create projects that initially have one or more add-in commands. So, you'll almost always be working with an add-in project that already has at least one add-in command. One exception is if you are updating an add-in which previously didn't have an add-in command and from which the code and markup for any add-in commands has been removed. 
-
-This article applies to both scenarios, so we use the verb "ensure" for the most part, where "ensure" might mean "create", "add", "rename", or "verify" depending on what your starting point is. For example, "Ensure that there is a 'whatever' property in the 'something' object" means "Verify that there is a 'whatever' ..." when there already is a "whatever" property; but it means "Add a 'whatever' property ..." if there isn't one already.
+Both of the tools that create add-in projects with a unified manifest &#8212; the [Office Yeoman generator](yeoman-generator-overview.md) and [Teams Toolkit](teams-toolkit-overview.md)  &#8212;  create projects with one or more add-in commands. The only time you won't already have an add-in command is if you are updating an add-in which previously didn't have one. 
 
 ## Two decisions
 
-Decide which of two types of add-in commands you need: [Task pane or function](../design/add-in-commands.md#types-of-add-in-commands). Decide which kind of UI element you need: button or menu item. Then carry out the steps in the sections and subsections below that correspond to your decisions.
+- Decide which of two types of add-in commands you need: [Task pane or function](../design/add-in-commands.md#types-of-add-in-commands). 
+- Decide which kind of UI element you need: button or menu item. Then carry out the steps in the sections and subsections below that correspond to your decisions.
 
 ## Add a task pane command
 
@@ -34,7 +33,7 @@ The following subsections explain how to include a [task pane command](../design
 ### Configure the runtime for the task pane command
 
 1. Open the unified manifest and find the "extensions.runtimes" array.
-1. Ensure that there is a runtime object that has a "actions.type" property with the value "openPage". This is the type of runtime that opens a task pane.
+1. Ensure that there is a runtime object that has an "actions.type" property with the value "openPage". This type of runtime opens a task pane.
 1. Ensure that the "requirements.capabilities" array contains an object that specifies a [Requirement Set](office-versions-and-requirement-sets.md) that supports add-in commands. For Outlook the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3).  
 
     > [!NOTE]
@@ -44,7 +43,7 @@ The following subsections explain how to include a [task pane command](../design
 1. Ensure that the "code.page" property of the runtime object is set to the URL of the page that should open in the task pane, such as "https://localhost:3000/taskpane.html".
 1. Ensure that the "actions.view" of the runtime object has a name that describes the content of the page that you set in the preceding step, such as "homepage" or "dashboard". 
 1. Ensure that the "actions.id" of the runtime object has a descriptive name such as "ShowTaskPane" that indicates what happens when the user selects the add-in command button or menu item.
-1. Set the other properties and subproperties of the runtime object as shown in the following completed example of a runtime object. The "type" and "lifetime" properties are required and they always have the values shown in Outlook add-ins, which is the only host that currently supports the unified manifest.
+1. Set the other properties and subproperties of the runtime object as shown in the following completed example of a runtime object. The "type" and "lifetime" properties are required and in Outlook Add-ins (which is the only host that currently supports the unified manifest) they always have the values shown in this example.
 
     ```json
     "runtimes": [
@@ -76,23 +75,30 @@ The following subsections explain how to include a [task pane command](../design
 
 ### Configure the UI for the task pane command
 
-1. Ensure that the extension object for which you configured a runtime has a "ribbons" array property as a peer to the "runtimes" array. (There is typically only one extension object in the "extensions" array.)
-1. Ensure that the array has an object with array properties named "contexts" and "tabs" as shown in the following example.
+1. Ensure that the extension object for which you configured a runtime has a "ribbons" array property as a peer to the "runtimes" array. There is typically only one extension object in the "extensions" array.
+1. Ensure that the array has an object with array properties named "contexts" and "tabs", as shown in the following example.
 
     ```json
     "ribbons": [
         {
             "contexts": [
-                // markup omitted
+                // child objects omitted
             ],
             "tabs": [
-                // markup omitted
+                // child objects omitted
             ]
         }
     ]
     ```
 
-1. Ensure that the "contexts" array has strings that specify the windows or panes in which the UI for the task pane command should appear. For example, "mailRead" means that it will appear in the reading pane or message window when an email message is open, but "mailCompose" means it will appear when a new message or a reply is being composed. The following is an example.
+1. Ensure that the "contexts" array has strings that specify the windows or panes in which the UI for the task pane command should appear. For example, "mailRead" means that it will appear in the reading pane or message window when an email message is open, but "mailCompose" means it will appear when a new message or a reply is being composed. The following are the allowable values:
+
+    - mailRead
+    - mailCompose
+    - meetingDetailsOrganizer
+    - meetingDetailsAttendee
+
+    The following is an example.
 
     ```json
     "contexts": [
@@ -100,7 +106,7 @@ The following subsections explain how to include a [task pane command](../design
     ],
     ```
 
-1. Ensure that the "tabs" array has an object with "builtInTabId" string property that is set to the ID of ribbon tab in which you want your task pane command to appear and a "groups" array with at least one object in it. The following is an example.
+1. Ensure that the "tabs" array has an object with a "builtInTabId" string property that is set to the ID of ribbon tab in which you want your task pane command to appear. Also, ensure that there is a "groups" array with at least one object in it. The following is an example.
 
     ```json
     "tabs": [
@@ -108,7 +114,7 @@ The following subsections explain how to include a [task pane command](../design
             "builtInTabID": "TabDefault",
             "groups": [
                 {
-                    // markup omitted                
+                    // properties omitted                
                 }
             ]
         }
@@ -116,9 +122,9 @@ The following subsections explain how to include a [task pane command](../design
     ```
 
     > [!NOTE]
-    > Only "TabDefault", which in Outlook is either the **Home**, **Message**, or **Meeting** tab, is currently supported for the "builtInTabID" property.
+    > The only allowed value for the "builtInTabID" property is "TabDefault", which in Outlook is either the **Home**, **Message**, or **Meeting** tab. When support for the unified manifest is added to other Office host applications, there will be other possible values.
 
-1. Ensure that the "groups" array has an object to define the custom control group that will hold your add-in command UI controls. The following is an example. Note the following about this markup:
+1. Ensure that the "groups" array has an object to define the custom control group that will hold your add-in command UI controls. The following is an example. Note the following about this JSON:
 
     - The "id" must be unique across all groups in all ribbon objects in the manifest. Maximum length is 64 characters.
     - The "label" appears on the group in the ribbon. Maximum length is 64 characters.
@@ -149,17 +155,17 @@ The following subsections explain how to include a [task pane command](../design
             ],
             "controls": [
                 {
-                    // markup omitted 
+                    // properties omitted 
                 }
             ]
         }
     ]
     ```
 
-1. Ensure that there is a control object in the "controls" array for each button or custom menu you want. The following is an example. Note the following about this markup:
+1. Ensure that there is a control object in the "controls" array for each button or custom menu you want. The following is an example. Note the following about this JSON:
 
     - The "id", "label", and "icons" properties have the same purpose and the same restrictions as the corresponding properties of a group object, except that they apply to a specific button or menu within the group.
-    - The "type" property is set to "button" which means that the control will be a ribbon button. You can also configure a task pane command to be executed from a menu item. See [Menu and menu items](#menu-and-menu-items).
+    - The "type" property is set to "button" which means that the control will be a ribbon button. You can also configure a task pane command to be run from a menu item. See [Menu and menu items](#menu-and-menu-items).
     - The "supertip.title" (maximum length: 64 characters) and "supertip.description" (maximum length: 128 characters) appear when the cursor is hovering over the button or menu.
     - The "actionId" must be an exact match for the "runtimes.actions.id" that you set in [Configure the runtime for the task pane command](#configure-the-runtime-for-the-task-pane-command).
 
@@ -190,7 +196,7 @@ The following subsections explain how to include a [task pane command](../design
     }
     ```
 
-You have now completed adding a task pane command to your add-in.  [Sideload and test it](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
+You've now completed adding a task pane command to your add-in.  [Sideload and test it](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
 ## Add a function command
 
@@ -198,12 +204,12 @@ The following subsections explain how to include a [function command](../design/
 
 ### Create the code for the function command
 
-1. Ensure that your source code includes a JavaScript or Typescript file with the function that you want to execute with your function command. The following is an example. Since this article is about creating add-in commands, and not about teaching the Office JavaScript Library, we provide it with minimal comments, but do note the following:
+1. Ensure that your source code includes a JavaScript or Typescript file with the function that you want to run with your function command. The following is an example. Since this article is about creating add-in commands, and not about teaching the Office JavaScript Library, we provide it with minimal comments, but do note the following:
 
-    - For purposes of this article, the file is named commands.js.
+    - For purposes of this article, the file is named **commands.js**.
     - The function will cause a small notification to appear on an open email message with the text "Action performed".
-    - Like all code files that call APIs in the Office JavaScript Library, it must begin by [initializing the library](initialize-add-in.md). It does this by calling `Office.onReady`. 
-    - The last thing the file calls is [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) to tell Office which function in the file should be executed when the UI for your function command is invoked. The function maps the function name to an action id that you configure in the manifest in a later step. If you define multiple function commands in the same file, your code must call `associate` for each one.
+    - Like all code that call APIs in the Office JavaScript Library, it must begin by [initializing the library](initialize-add-in.md). It does this by calling `Office.onReady`. 
+    - The last thing the code calls is [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) to tell Office which function in the file should be run when the UI for your function command is invoked. The function maps the function name to an action ID that you configure in the manifest in a later step. If you define multiple function commands in the same file, your code must call `associate` for each one.
     - The function must take a parameter of type [Office.AddinCommands.Event](/javascript/api/office/office.addincommands.event). The last line of the function must call [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)).
 
     ```javascript
@@ -230,14 +236,14 @@ The following subsections explain how to include a [function command](../design/
     Office.actions.associate("SetNotification", setNotification);
     ```
 
-1. Ensure that your source code includes an HTML file that is configured to load the function file you created. The following is an example. Note the following about this markup:
+1. Ensure that your source code includes an HTML file that is configured to load the function file you created. The following is an example. Note the following about this JSON:
 
-    - For purposes of this article, the file is named commands.html.
+    - For purposes of this article, the file is named **commands.html**.
     - The `<body>` element is empty because the file has no UI. Its only purpose is to load JavaScript files.
-    - The Office JavaScript Library and the commands.js file that you created in the preceding step is explicitly loaded. 
+    - The Office JavaScript Library and the **commands.js** file that you created in the preceding step is explicitly loaded. 
 
         > [!NOTE]
-        > It is common in Office add-in development to use tools like WebPack and its plugins to automatically inject `<script>` tags into HTML files at build time. If you use such a tool, you shouldn't include any `<script>` tags in your source file that are going to be inserted by the tool.
+        > It's common in Office Add-in development to use tools like [webpack](https://webpack.js.org/) and its plugins to automatically inject `<script>` tags into HTML files at build time. If you use such a tool, you shouldn't include any `<script>` tags in your source file that are going to be inserted by the tool.
 
     ```html
     <!DOCTYPE html>
@@ -296,23 +302,30 @@ The following subsections explain how to include a [function command](../design/
 
 ### Configure the UI for the function command
 
-1. Ensure that the extension object for which you configured a runtime has a "ribbons" array property as a peer to the "runtimes" array. (There is typically only one extension object in the "extensions" array.)
-1. Ensure that the array has an object with array properties named "contexts" and "tabs" as shown in the following example.
+1. Ensure that the extension object for which you configured a runtime has a "ribbons" array property as a peer to the "runtimes" array. There is typically only one extension object in the "extensions" array.
+1. Ensure that the array has an object with array properties named "contexts" and "tabs", as shown in the following example.
 
     ```json
     "ribbons": [
         {
             "contexts": [
-                // markup omitted
+                // child objects omitted
             ],
             "tabs": [
-                // markup omitted
+                // child objects omitted
             ]
         }
     ]
     ```
 
-1. Ensure that the "contexts" array has strings that specify the windows or panes in which the UI for the function command should appear. For example, "mailRead" means that it will appear in the reading pane or message window when an email message is open, but "mailCompose" means it will appear when a new message or a reply is being composed. The following is an example.
+1. Ensure that the "contexts" array has strings that specify the windows or panes in which the UI for the function command should appear. For example, "mailRead" means that it will appear in the reading pane or message window when an email message is open, but "mailCompose" means it will appear when a new message or a reply is being composed. The following are the allowable values:
+
+    - mailRead
+    - mailCompose
+    - meetingDetailsOrganizer
+    - meetingDetailsAttendee
+
+    The following is an example.
 
     ```json
     "contexts": [
@@ -320,7 +333,7 @@ The following subsections explain how to include a [function command](../design/
     ],
     ```
 
-1. Ensure that the "tabs" array has an object with "builtInTabId" string property that is set to the ID of ribbon tab in which you want your function command to appear and a "groups" array with at least one object in it. The following is an example.
+1. Ensure that the "tabs" array has an object with a "builtInTabId" string property that is set to the ID of ribbon tab in which you want your function command to appear and a "groups" array with at least one object in it. The following is an example.
 
     ```json
     "tabs": [
@@ -328,7 +341,7 @@ The following subsections explain how to include a [function command](../design/
             "builtInTabID": "TabDefault",
             "groups": [
                 {
-                    // markup omitted                
+                    // properties omitted                
                 }
             ]
         }
@@ -336,9 +349,9 @@ The following subsections explain how to include a [function command](../design/
     ```
 
     > [!NOTE]
-    > Only "TabDefault", which in Outlook is either the **Home**, **Message**, or **Meeting** tab, is currently supported for the "builtInTabID" property.
+    > The only allowed value for the "builtInTabID" property is "TabDefault", which in Outlook is either the **Home**, **Message**, or **Meeting** tab. When support for the unified manifest is added to other Office host applications, there will be other possible values.
 
-1. Ensure that the "groups" array has an object to define the custom control group that will hold your add-in command UI controls. The following is an example. Note the following about this markup:
+1. Ensure that the "groups" array has an object to define the custom control group that will hold your add-in command UI controls. The following is an example. Note the following about this JSON:
 
     - The "id" must be unique across all groups in all ribbon objects in the manifest. Maximum length is 64 characters.
     - The "label" appears on the group in the ribbon. Maximum length is 64 characters.
@@ -346,7 +359,6 @@ The following subsections explain how to include a [function command](../design/
     
     > [!NOTE]
     > The name of the "icons.file" property may change during the preview of the unified manifest for Office Add-ins. If you get intellisense or manifest validation errors, try replacing "file" with "url".
-
 
     ```json
     "groups": [
@@ -369,17 +381,17 @@ The following subsections explain how to include a [function command](../design/
             ],
             "controls": [
                 {
-                    // markup omitted 
+                    // properties omitted 
                 }
             ]
         }
     ]
     ```
 
-1. Ensure that there is a control object in the "controls" array for each button or custom menu you want. The following is an example. Note the following about this markup:
+1. Ensure that there is a control object in the "controls" array for each button or custom menu you want. The following is an example. Note the following about this JSON:
 
     - The "id", "label", and "icons" properties have the same purpose and the same restrictions as the corresponding properties of a group object, except that they apply to a specific button or menu within the group.
-    - The "type" property is set to "button" which means that the control will be a ribbon button. You can also configure a function command to be executed from a menu item. See [Menu and menu items](#menu-and-menu-items).
+    - The "type" property is set to "button" which means that the control will be a ribbon button. You can also configure a function command to be run from a menu item. See [Menu and menu items](#menu-and-menu-items).
     - The "supertip.title" (maximum length: 64 characters) and "supertip.description" (maximum length: 128 characters) appear when the cursor is hovering over the button or menu.
     - The "actionId" must be an exact match for the "runtime.actions.id" that you set in [Configure the runtime for the function command](#configure-the-runtime-for-the-function-command).
 
@@ -410,11 +422,11 @@ The following subsections explain how to include a [function command](../design/
     }
     ```
 
-You have now completed adding a function command to your add-in. [Sideload and test it](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
+You've now completed adding a function command to your add-in. [Sideload and test it](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
 ## Menu and menu items
 
-In addition to custom buttons, you can also add custom drop down menus to the Office ribbon. This section explains how by using an example with two menu items; one invokes a task pane command and the other invokes a function command.
+In addition to custom buttons, you can also add custom drop down menus to the Office ribbon. This section explains how by using an example with two menu items. One invokes a task pane command. The other invokes a function command.
 
 ### Configure the runtimes and code
 
@@ -426,23 +438,30 @@ Carry out the steps of the following sections:
 
 ### Configure the UI for the menu
 
-1. Ensure that the extension object for which you configured a runtime has a "ribbons" array property as a peer to the "runtimes" array. (There is typically only one extension object in the "extensions" array.)
-1. Ensure that the array has an object with array properties named "contexts" and "tabs" as shown in the following example.
+1. Ensure that the extension object for which you configured a runtime has a "ribbons" array property as a peer to the "runtimes" array. There is typically only one extension object in the "extensions" array.
+1. Ensure that the array has an object with array properties named "contexts" and "tabs", as shown in the following example.
 
     ```json
     "ribbons": [
         {
             "contexts": [
-                // markup omitted
+                // child objects omitted
             ],
             "tabs": [
-                // markup omitted
+                // child objects omitted
             ]
         }
     ]
     ```
 
-1. Ensure that the "contexts" array has strings that specify the windows or panes in which the menu should appear on the ribbon. For example, "mailRead" means that it will appear in the reading pane or message window when an email message is open, but "mailCompose" means it will appear when a new message or a reply is being composed. The following is an example.
+1. Ensure that the "contexts" array has strings that specify the windows or panes in which the menu should appear on the ribbon. For example, "mailRead" means that it will appear in the reading pane or message window when an email message is open, but "mailCompose" means it will appear when a new message or a reply is being composed. The following are the allowable values:
+
+    - mailRead
+    - mailCompose
+    - meetingDetailsOrganizer
+    - meetingDetailsAttendee
+
+    The following is an example.
 
     ```json
     "contexts": [
@@ -450,7 +469,7 @@ Carry out the steps of the following sections:
     ],
     ```
 
-1. Ensure that the "tabs" array has an object with "builtInTabId" string property that is set to the ID of ribbon tab in which you want your task pane command to appear and a "groups" array with at least one object in it. The following is an example.
+1. Ensure that the "tabs" array has an object with a "builtInTabId" string property that is set to the ID of ribbon tab in which you want your task pane command to appear and a "groups" array with at least one object in it. The following is an example.
 
     ```json
     "tabs": [
@@ -458,7 +477,7 @@ Carry out the steps of the following sections:
             "builtInTabID": "TabDefault",
             "groups": [
                 {
-                    // markup omitted                
+                    // properties omitted                
                 }
             ]
         }
@@ -466,9 +485,9 @@ Carry out the steps of the following sections:
     ```
 
     > [!NOTE]
-    > Only "TabDefault", which in Outlook is either the **Home**, **Message**, or **Meeting** tab, is currently supported for the "builtInTabID" property.
+    > The only allowed value for the "builtInTabID" property is "TabDefault", which in Outlook is either the **Home**, **Message**, or **Meeting** tab. When support for the unified manifest is added to other Office host applications, there will be other possible values.
 
-1. Ensure that the "groups" array has an object to define the custom control group that will hold your drop down menu control. The following is an example. Note the following about this markup:
+1. Ensure that the "groups" array has an object to define the custom control group that will hold your drop down menu control. The following is an example. Note the following about this JSON:
 
     - The "id" must be unique across all groups in all ribbon objects in the manifest. Maximum length is 64 characters.
     - The "label" appears on the group in the ribbon. Maximum length is 64 characters.
@@ -499,19 +518,19 @@ Carry out the steps of the following sections:
             ],
             "controls": [
                 {
-                    // markup omitted 
+                    // properties omitted 
                 }
             ]
         }
     ]
     ```
 
-1. Ensure that there is a control object in the "controls" array. The following is an example. Note the following about this markup:
+1. Ensure that there is a control object in the "controls" array. The following is an example. Note the following about this JSON:
 
     - The "id", "label", and "icons" properties have the same purpose and the same restrictions as the corresponding properties of a group object, except that they apply to the drop down menu within the group.
     - The "type" property is set to "menu" which means that the control will be a drop down menu.
     - The "supertip.title" (maximum length: 64 characters) and "supertip.description" (maximum length: 128 characters) appear when the cursor is hovering over the menu.
-    - The "items" property contains the markup for the two menu options. The values are added in later steps.
+    - The "items" property contains the JSON for the two menu options. The values are added in later steps.
 
     ```json
     {
@@ -576,7 +595,7 @@ Carry out the steps of the following sections:
     },
     ```
 
-1. The second item executes a function command. The following is an example. Note the following about this code:
+1. The second item runs a function command. The following is an example. Note the following about this code:
 
     - The "actionId" must be an exact match for the "runtimes.actions.id" that you set in [Configure the runtime for the function command](#configure-the-runtime-for-the-function-command).
  
@@ -593,7 +612,7 @@ Carry out the steps of the following sections:
     }
     ```
 
-You have now completed adding a menu to your add-in. [Sideload and test it](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
+You've now completed adding a menu to your add-in. [Sideload and test it](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
 ## See also
 
