@@ -24,7 +24,7 @@ All the task pane add-ins created by [yo office](yeoman-generator-overview.md) h
 
 ## Important parts of an add-in command
 
-The following steps explain how to add add-in commands to an existing add-in. These steps assume you're using an XML manifest. If you're working with the JSON-based unified Microsoft 365 manifest, see [Add-in commands in a Unified Microsoft 365 manifest for Outlook add-ins (developer preview)](#add-in-commands-in-a-unified-microsoft-365-manifest-for-outlook-add-ins-developer-preview).
+The following steps explain how to add add-in commands to an existing add-in.
 
 ### Step 1: Add VersionOverrides element
 
