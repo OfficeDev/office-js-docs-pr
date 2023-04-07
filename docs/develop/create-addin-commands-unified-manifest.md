@@ -34,7 +34,7 @@ The following subsections explain how to include a [task pane command](../design
 ### Configure the runtime for the task pane command
 
 1. Open the unified manifest and find the "extensions.runtimes" array.
-1. Ensure that there is a runtime object that has a "actions.type" property with the value "openPage". (This is the type of runtime that opens a task pane.) There usually is one and it is usually the first object in the "runtimes" array.
+1. Ensure that there is a runtime object that has a "actions.type" property with the value "openPage". This is the type of runtime that opens a task pane.
 1. Ensure that the "requirements.capabilities" array contains an object that specifies a [Requirement Set](office-versions-and-requirement-sets.md) that supports add-in commands. For Outlook the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3).  
 
     > [!NOTE]
@@ -260,7 +260,7 @@ The following subsections explain how to include a [function command](../design/
 
 1. Open the unified manifest and find the "extensions.runtimes" array.
 1. Ensure that there is a runtime object that has a "actions.type" property with the value "executeFunction".
-1. Ensure that the "requirements.capabilities" array contains objects that specify any [Requirement Set](office-versions-and-requirement-sets.md)s that are needed to support the APIs add-in commands. For Outlook the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3). But if your function command calls that API that is part of **Mailbox 1.5**, then you need to specify "1.5" as the "minVersion" value. 
+1. Ensure that the "requirements.capabilities" array contains objects that specify any [Requirement Set](office-versions-and-requirement-sets.md)s that are needed to support the APIs add-in commands. For Outlook, the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3). But if your function command calls that API that is part of later **Mailbox** requirement set, such as **Mailbox 1.5**, then you need to specify the later version (e.g., "1.5") as the "minVersion" value. 
 
     > [!NOTE]
     > When support for the unified manifest is extended to other Office host applications, the minimum requirement set for add-in commands in those other hosts will be [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
@@ -273,7 +273,7 @@ The following subsections explain how to include a [function command](../design/
     > [!IMPORTANT]
     > The value of "actions.id" must exactly match the first parameter of the call to `Office.actions.associate` in the function file.
 
-1. Set the other properties and subproperties of the runtime object as shown in the following completed example of a runtime object.
+1. Set the other properties and subproperties of the runtime object as shown in the following completed example of a runtime object. The "type" and "lifetime" properties are required and they always have the values shown in Outlook add-ins, which is the only host that currently supports the unified manifest.
 
     ```json
     "runtimes": [
@@ -594,25 +594,6 @@ Carry out the steps of the following sections:
     ```
 
 You have now completed adding a menu to your add-in. [Sideload and test it](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
-
-## Outlook support notes
-
-Add-in commands are available in the following Outlook versions.
-
-- Outlook 2013 or later on Windows
-- Outlook 2016 or later on Mac
-- Outlook on iOS
-- Outlook on Android
-- Outlook on the web for Exchange 2016 or later
-- Outlook on the web for Microsoft 365 and Outlook.com.
-
-Support for add-in commands in Outlook 2013 requires three updates.
-
-- [March 8, 2016 security update for Outlook](https://support.microsoft.com/kb/3114829)
-- [March 8, 2016 security update for Office (KB3114816)](https://support.microsoft.com/topic/3d3eb171-78c2-0e61-62a2-85723bc4bcc0)
-- [March 8, 2016 security update for Office (KB3114828)](https://support.microsoft.com/topic/54437016-d1e0-7aac-dbb7-4ecfbd57f5f0)
-
-Support for add-in commands in Exchange 2016 requires [Cumulative Update 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 
 ## See also
 
