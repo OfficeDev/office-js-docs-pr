@@ -343,12 +343,6 @@ Add-in commands are available in the following Outlook versions.
 - Outlook on the web for Exchange 2016 or later
 - Outlook on the web for Microsoft 365 and Outlook.com.
 
-Support for add-in commands in Outlook 2013 requires three updates.
-
-- [March 8, 2016 security update for Outlook](https://support.microsoft.com/kb/3114829)
-- [March 8, 2016 security update for Office (KB3114816)](https://support.microsoft.com/topic/3d3eb171-78c2-0e61-62a2-85723bc4bcc0)
-- [March 8, 2016 security update for Office (KB3114828)](https://support.microsoft.com/topic/54437016-d1e0-7aac-dbb7-4ecfbd57f5f0)
-
 Support for add-in commands in Exchange 2016 requires [Cumulative Update 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 
 If your add-in uses an XML manifest, then add-in commands are only available for add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](../outlook/activation-rules.md) to limit the types of items they activate on. However, [contextual add-ins](../outlook/contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).

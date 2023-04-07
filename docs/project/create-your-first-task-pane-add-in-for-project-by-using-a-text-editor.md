@@ -1,11 +1,11 @@
 ---
-title: Create your first task pane add-in for Microsoft Project by using a text editor
+title: Create your first task pane add-in for Microsoft Project
 description: Create a task pane add-in for Project Standard 2013, Project Professional 2013, or later versions using the Yeoman generator for Office Add-ins.
 ms.date: 07/10/2020
 ms.localizationpriority: medium
 ---
 
-# Create your first task pane add-in for Microsoft Project by using a text editor
+# Create your first task pane add-in for Microsoft Project
 
 You can create a task pane add-in for Project Standard 2013, Project Professional 2013, or later versions using the Yeoman generator for Office Add-ins. This article describes how to create a simple add-in that uses an XML manifest that points to an HTML file on a file share. The Project OM Test sample add-in tests some JavaScript functions that use the object model for add-ins. After you use the **Trust Center** in Project to register the file share that contains the manifest file, you can open the task pane add-in from the **Project** tab on the ribbon. (The sample code in this article is based on a test application by Arvind Iyer, Microsoft Corporation.)
 

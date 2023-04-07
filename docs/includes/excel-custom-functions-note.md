@@ -11,4 +11,3 @@
 >
 > - Office on iPad
 > - volume-licensed perpetual versions of Office 2019 or earlier
-> - retail perpetual Office 2013

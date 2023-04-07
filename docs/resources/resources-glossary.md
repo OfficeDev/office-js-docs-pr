@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 02/24/2023
+ms.date: 03/21/2023
 ms.topic: glossary
 ms.localizationpriority: medium
 ---
@@ -44,7 +44,7 @@ See also: [application](#application), [host](#host), [Office application, Offic
 
 Common APIs are used to access features such as UI, dialogs, and client settings that are common across multiple Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), which allow you to specify only one operation in each request sent to the Office application.
 
-Common APIs were introduced with Office 2013 and are used to interact with Office 2013 or later. Some Common APIs are legacy APIs from the early 2010s. Excel, PowerPoint, and Word all have Common API functionality, but most of this functionality has been replaced or superseded by the application-specific API model. The application-specific APIs are preferred when possible.
+Common APIs were introduced with Office 2013. Some Common APIs are legacy APIs from the early 2010s. Excel, PowerPoint, and Word all have Common API functionality, but most of this functionality has been replaced or superseded by the application-specific API model. The application-specific APIs are preferred when possible.
 
 Other Common APIs, such as the Common APIs related to Outlook, UI, and authentication, are the modern and preferred APIs for these purposes. For details about the Common API object model, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
