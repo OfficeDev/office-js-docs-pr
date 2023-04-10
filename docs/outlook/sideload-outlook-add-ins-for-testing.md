@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 02/24/2023
+ms.date: 03/21/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -141,14 +141,6 @@ The process for sideloading an add-in in Outlook on the web depends upon whether
     ![The Add from File option is selected in the Custom add-ins section.](../images/outlook-sideload-custom-add-in.png)
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
-
-#### Outlook 2013 on Windows
-
-1. Open Outlook 2013 on Windows.
-
-1. Select the **File** menu, then select **Manage Add-ins** from the **Info** tab. Outlook will open the web version in a browser.
-
-1. Follow the steps in the [Sideload an add-in in Outlook on the web](#outlook-on-the-web) section according to your version of Outlook on the web.
 
 ## Remove a sideloaded add-in
 

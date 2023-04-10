@@ -2,6 +2,7 @@
 title: Use the Office dialog API in your Office Add-ins
 description: Learn the basics of creating a dialog box in an Office Add-in.
 ms.date: 03/13/2023
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -69,7 +70,7 @@ The default value is `false`, which is the same as omitting the property entirel
 
 ## Send information from the dialog box to the host page
 
-Code in the dialog box uses the [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) function to send a string message to the host page. The string can be a word, sentence, XML blob, stringified JSON, or anything else that can be serialized to a string or cast to a string. To use the `messageParent` method, the dialog box must first [initialize the Office JavaScript API](initialize-add-in.md). 
+Code in the dialog box uses the [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) function to send a string message to the host page. The string can be a word, sentence, XML blob, stringified JSON, or anything else that can be serialized to a string or cast to a string. To use the `messageParent` method, the dialog box must first [initialize the Office JavaScript API](initialize-add-in.md).
 
 > [!NOTE]
 > For clarity, in this section we call the message target the host *page*, but strictly speaking the messages are going to the [Runtime](../testing/runtimes.md) in the task pane (or the runtime that is hosting a [function file](/javascript/api/manifest/functionfile)). The distinction is only significant in the case of cross-domain messaging. For more information, see [Cross-domain messaging to the host runtime](#cross-domain-messaging-to-the-host-runtime).

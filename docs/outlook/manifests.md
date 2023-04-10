@@ -323,7 +323,7 @@ Outlook add-ins specify the **\<Hosts\>** element like the following:
 </OfficeApp>
 ```
 
-This is separate from the **\<Hosts\>** element inside the **\<VersionOverrides\>** element, which is discussed in [Create add-in commands](../develop/create-addin-commands.md).
+This is separate from the **\<Hosts\>** element inside the **\<VersionOverrides\>** element, which is discussed in [Create add-in commands with the XML manifest](../develop/create-addin-commands.md).
 
 ## Requirements
 
