@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 Because add-ins are developed using HTML and JavaScript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on a Mac.
 
 > [!IMPORTANT]
-> Debugging add-ins with Office on Mac is only possible if Office was installed on the Mac from [Office.com](www.office.com), *not* the Apple app store.
+> Debugging add-ins with Office on Mac is only possible if Office is installed on the Mac from [Office.com](www.office.com), *not* the Apple app store.
 
 ## Debugging with Safari Web Inspector on a Mac
 
