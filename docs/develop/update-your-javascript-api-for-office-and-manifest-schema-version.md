@@ -2,7 +2,7 @@
 title: Update to the latest Office JavaScript API library and version 1.1 add-in manifest schema
 description: Update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.
 ms.topic: how-to
-ms.date: 01/14/2022
+ms.date: 03/21/2023
 ms.localizationpriority: medium
 ---
 
@@ -11,23 +11,13 @@ ms.localizationpriority: medium
 This article describes how to update your JavaScript files (Office.js and app-specific .js files) and add-in manifest validation file in your Office Add-in project to version 1.1.
 
 > [!NOTE]
-> Projects created in Visual Studio 2019 will already use version 1.1. However there are occasional minor updates to version 1.1 that you can apply by using the techniques in this article.
+> Projects created in Visual Studio 2019 or later will already use version 1.1. However, there are occasional minor updates to version 1.1 that you can apply by using the techniques in this article.
 
 ## Use the most up-to-date project files
 
-If you use Visual Studio to develop your add-in, to use the newest API members of the Office JavaScript API and the [v1.1 features of the add-in manifest](../develop/add-in-manifests.md) (which is validated against offappmanifest-1.1.xsd), you need to download Visual Studio 2019. To download Visual Studio 2019, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
+If you use Visual Studio to develop your add-in, to use the newest API members of the Office JavaScript API and the [v1.1 features of the add-in manifest](../develop/add-in-manifests.md) (which is validated against offappmanifest-1.1.xsd), you need to download the latest version of Visual Studio. To download Visual Studio, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
 
 If you use a text editor or IDE other than Visual Studio to develop your add-in, you need to update the references to the content delivery network (CDN) for Office.js and the version of schema referenced in your add-in's manifest.
-
-To run an add-in developed using new and updated Office.js API and add-in manifest features, your customers must be running Office 2013 SP1 or later version on-premises products, and where applicable, SharePoint Server 2013 SP1 and related server products, Exchange Server 2013 Service Pack 1 (SP1), or the equivalent online hosted products: Microsoft 365, SharePoint Online, and Exchange Online.
-
-To download Office, SharePoint, and Exchange SP1 products, see the following:
-
-- [List of all Service Pack 1 (SP1) updates for Microsoft Office 2013 and related desktop products](https://support.microsoft.com/kb/2850036)
-
-- [List of all Service Pack 1 (SP1) updates for Microsoft SharePoint Server 2013 and related server products](https://support.microsoft.com/kb/2850035)
-
-- [Description of Exchange Server 2013 Service Pack 1](https://support.microsoft.com/kb/2926248)
 
 ## Updating an Office Add-in project created with Visual Studio
 
