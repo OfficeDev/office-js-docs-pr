@@ -64,7 +64,6 @@
         "project/*.md": "project",
         "publish/*.md": "non-product-specific",
         "reference/*.md": "non-product-specific",
-        "reference/objectmodel/**/*.md": "outlook",
         "resources/*.md": "non-product-specific",
         "testing/*.md": "non-product-specific",
         "visio/*.md": "visio",
