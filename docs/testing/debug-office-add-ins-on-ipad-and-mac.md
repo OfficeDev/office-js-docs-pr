@@ -1,13 +1,16 @@
 ---
 title: Debug Office Add-ins on a Mac
 description: Learn how to use a Mac to debug Office Add-ins.
-ms.date: 03/11/2022
+ms.date: 04/11/2023
 ms.localizationpriority: medium
 ---
 
 # Debug Office Add-ins on a Mac
 
 Because add-ins are developed using HTML and JavaScript, they are designed to work across platforms, but there might be subtle differences in how different browsers render the HTML. This article describes how to debug add-ins running on a Mac.
+
+> [!IMPORTANT]
+> Debugging add-ins with Office on Mac is only possible if Office is installed on the Mac from [Office.com](https://www.office.com), *not* the Apple app store.
 
 ## Debugging with Safari Web Inspector on a Mac
 
