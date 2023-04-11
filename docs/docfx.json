@@ -70,6 +70,14 @@
         "visio/*.md": "visio",
         "word/*.md": "word"
       },
+      "ms.service": {
+        "outlook/*.md": "outlook",
+        "reference/objectmodel/**/*.md": "outlook"
+      },
+      "ms.subservice": {
+        "outlook/*.md": "add-ins",
+        "reference/objectmodel/**/*.md": "add-ins"
+      },
       "ms.topic": {
         "quickstarts/*.md": "quickstart",
         "tutorials/*.md": "tutorial",

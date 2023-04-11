@@ -2,7 +2,7 @@
 title: Build an Outlook add-in with the unified Microsoft 365 manifest (preview)
 description: Learn how to build a simple Outlook task pane add-in with the unified Microsoft 365 manifest.
 ms.date: 03/21/2023
-ms.prod: outlook
+ms.service: outlook
 ms.localizationpriority: high
 ---
 
