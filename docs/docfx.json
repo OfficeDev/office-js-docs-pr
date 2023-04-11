@@ -58,7 +58,6 @@
         "develop/*.md": "non-product-specific",
         "excel/*.md": "excel",
         "onenote/*.md": "onenote",
-        "outlook/*.md": "outlook",
         "overview/*.md": "non-product-specific",
         "powerpoint/*.md": "powerpoint",
         "project/*.md": "project",
