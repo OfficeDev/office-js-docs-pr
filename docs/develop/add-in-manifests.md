@@ -11,7 +11,7 @@ ms.localizationpriority: high
 The XML manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications.
 
 > [!TIP]
-> This article describes the current XML-formatted manifest. There is also a JSON-formatted, unified Microsoft 365 manifest that is available in preview. For more information, see [Unified Microsoft 365 manifest(preview)](json-manifest-overview.md).
+> This article describes the current XML-formatted manifest. There is also a JSON-formatted, unified Microsoft 365 manifest that is available in preview. For more information, see [Unified Microsoft 365 manifest (preview)](json-manifest-overview.md).
 
 An XML manifest file enables an Office Add-in to do the following:
 
