@@ -111,7 +111,7 @@ Use the following values for placeholders for the subsequent app registration st
 
     ```javascript
     try {
-        const jsonResponse = await callServerAPI('GET', '/getuserfilenames');
+        const jsonResponse = await callWebServerAPI('GET', '/getuserfilenames');
         if (jsonResponse === null) {
             // Null is returned when a message was displayed to the user
             // regarding an authentication error that cannot be resolved.
