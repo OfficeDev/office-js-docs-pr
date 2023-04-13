@@ -1,5 +1,5 @@
 ---
-ms.date: 12/07/2022
+ms.date: 04/13/2023
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel.
 title: Receive and handle data with custom functions
 ms.localizationpriority: medium
