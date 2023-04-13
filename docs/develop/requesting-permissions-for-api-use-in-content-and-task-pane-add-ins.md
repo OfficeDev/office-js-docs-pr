@@ -1,14 +1,17 @@
 ---
 title: Requesting permissions for API use in add-ins
-description: 'Learn about different permission levels to declare in the manifest of a content or task pane add-in to specify the level of JavaScript API access.'
+description: Learn about different permission levels to declare in the manifest of a content or task pane add-in to specify the level of JavaScript API access.
 ms.date: 03/19/2019
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 
 # Requesting permissions for API use in add-ins
 
-This article describes the different permission levels that you can declare in your content or task pane add-in's manifest to specify the level of JavaScript API access your add-in requires for its features. 
+This article describes the different permission levels that you can declare in your content or task pane add-in's manifest to specify the level of JavaScript API access your add-in requires for its features.
+
+> [!NOTE]
+> To learn about permission levels for mail (Outlook) add-ins, see [Outlook permissions model](../outlook/privacy-and-security.md#permissions-model).
 
 ## Permissions model
 
@@ -18,7 +21,7 @@ A five-level JavaScript API access-permissions model provides the basis for priv
 
 ![Levels of permissions for task pane apps.](../images/office15-app-sdk-task-pane-app-permission.png)
 
-These permissions specify the subset of the API that the add-in runtime will allow your content or task pane add-in to use when a user inserts, and then activates (trusts) your add-in. To declare the permission level your content or task pane add-in requires, specify one of the permission text values in the [Permissions](../reference/manifest/permissions.md) element of your add-in's manifest. The following example requests the **WriteDocument** permission, which will allow only methods that can write to (but not read) the document.
+These permissions specify the subset of the API that the add-in [runtime](../testing/runtimes.md) will allow your content or task pane add-in to use when a user inserts, and then activates (trusts) your add-in. To declare the permission level your content or task pane add-in requires, specify one of the permission text values in the [Permissions](/javascript/api/manifest/permissions) element of your add-in's manifest. The following example requests the **WriteDocument** permission, which will allow only methods that can write to (but not read) the document.
 
 ```XML
 <Permissions>WriteDocument</Permissions>
@@ -30,7 +33,7 @@ The following table describes the subset of the JavaScript API that is enabled b
 
 |**Permission**|**Enabled subset of the API**|
 |:-----|:-----|
-|**Restricted**|The methods of the [Settings](/javascript/api/office/office.settings) object, and the [Document.getActiveViewAsync](/javascript/api/office/office.document#getActiveViewAsync_options__callback_) method.This is the minimum permission level that can be requested by a content or task pane add-in.|
+|**Restricted**|The methods of the [Settings](/javascript/api/office/office.settings) object, and the [Document.getActiveViewAsync](/javascript/api/office/office.document#office-office-document-getactiveviewasync-member(1)) method.This is the minimum permission level that can be requested by a content or task pane add-in.|
 |**ReadDocument**|In addition to the API allowed by the **Restricted** permission, adds access to the API members necessary to read the document and manage bindings.This includes the use of:<br/><ul><li>The <a href="/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_" target="_blank">Document.getSelectedDataAsync</a> method to get the selected text, HTML (Word only), or tabular data, but not the underlying Open Office XML (OOXML) code that contains all of the data in the document.</p></li><li><p>The <a href="/javascript/api/office/office.document#getFileAsync_fileType__options__callback_" target="_blank">Document.getFileAsync</a> method to get all of the text in the document, but not the underlying OOXML binary copy of the document.</p></li><li><p>The <a href="/javascript/api/office/office.binding#getDataAsync_options__callback_" target="_blank">Binding.getDataAsync</a> method for reading bound data in the document.</p></li><li><p>The <a href="/javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_" target="_blank">addFromNamedItemAsync</a>, <a href="/javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_" target="_blank">addFromPromptAsync</a>, <a href="/javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_" target="_blank">addFromSelectionAsync</a> methods of the <span class="keyword">Bindings</span> object for creating bindings in the document.</p></li><li><p>The <a href="/javascript/api/office/office.bindings#getAllAsync_options__callback_" target="_blank">getAllAsync</a>, <a href="/javascript/api/office/office.bindings#getByIdAsync_id__options__callback_" target="_blank">getByIdAsync</a>, and <a href="/javascript/api/office/office.bindings#releaseByIdAsync_id__options__callback_" target="_blank">releaseByIdAsync</a> methods of the <span class="keyword">Bindings</span> object for accessing and removing bindings in the document.</p></li><li><p>The <a href="/javascript/api/office/office.document#getFilePropertiesAsync_options__callback_" target="_blank">Document.getFilePropertiesAsync</a> method to access document file properties, such as the URL of the document.</p></li><li><p>The <a href="/javascript/api/office/office.document#goToByIdAsync_id__goToType__options__callback_" target="_blank">Document.goToByIdAsync</a> method to navigate to named objects and locations in the document.</p></li><li><p>For task pane add-ins for Project, all of the "get" methods of the <a href="/javascript/api/office/office.document" target="_blank">ProjectDocument</a> object. </p></li></ul>|
 |**ReadAllDocument**|In addition to the API allowed by the **Restricted** and **ReadDocument** permissions, allows the following additional access to document data.<br/><ul><li><p>The <span class="keyword">Document.getSelectedDataAsync</span> and <span class="keyword">Document.getFileAsync</span> methods can access the underlying OOXML code of the document (which in addition to the text may include formatting, links, embedded graphics, comments, revisions, and so forth).</p></li></ul>|
 |**WriteDocument**|In addition to the API allowed by the **Restricted** permission, adds access to the following API members.<br/><ul><li><p>The <a href="/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_" target="_blank">Document.setSelectedDataAsync</a> method to write to the user's selection in the document.</p></li></ul>|

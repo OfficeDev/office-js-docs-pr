@@ -1,13 +1,18 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 08/03/2021
-localization_priority: Normal
+ms.date: 10/19/2022
+ms.localizationpriority: medium
 ---
 
 # On-send feature for Outlook add-ins
 
-The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send. For example, you can use the on-send feature to:
+The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send.
+
+> [!NOTE]
+> The on-send feature isn't supported in add-ins that use the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md). Achieve similar effects by using [event-based activation](autolaunch.md) and implementing a handler for the **OnMessageSend** or **OnAppointmentSend** events, or both.
+
+For example, use the on-send feature to:
 
 - Prevent a user from sending sensitive information or leaving the subject line blank.  
 - Add a specific recipient to the CC line in messages, or to the optional recipients line in meetings.
@@ -16,19 +21,27 @@ The on-send feature is triggered by the `ItemSend` event type and is UI-less.
 
 For information about limitations related to the on-send feature, see [Limitations](#limitations) later in this article.
 
+> [!NOTE]
+> [Smart Alerts](smart-alerts-onmessagesend-walkthrough.md) is a newer version of the on-send feature. It was released in [requirement set 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12) and introduced the `OnMessageSend` and `OnAppointmentSend` events. Similar to the on-send feature, Smart Alerts enables your add-in to check that certain conditions are met before a mail item is sent. Smart Alerts differentiates itself from the on-send feature as follows:
+>
+> - It offers [send mode options](/javascript/api/manifest/launchevent#available-sendmode-options) when you want to provide your users with optional recommendations instead of mandatory conditions.
+> - It allows your add-in to be published to AppSource if the manifest's **SendMode** property is set to the `SoftBlock` or `PromptUser` option. To learn more about publishing an event-based add-in, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
+>
+> For more information on the differences between Smart Alerts and the on-send feature, see [Differences between Smart Alerts and the on-send feature](smart-alerts-onmessagesend-walkthrough.md#differences-between-smart-alerts-and-the-on-send-feature). We invite you to [try out Smart Alerts by completing the walkthrough](smart-alerts-onmessagesend-walkthrough.md).
+
 ## Supported clients and platforms
 
 The following table shows supported client-server combinations for the on-send feature, including the minimum required Cumulative Update where applicable. Excluded combinations are not supported.
 
 | Client | Exchange Online | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) |
 |---|:---:|:---:|:---:|
-|Windows:<br>version 1910 (build 12130.20272) or later|Yes|Yes|Yes|
+|Windows:<br>Version 1910 (Build 12130.20272) or later|Yes|Yes|Yes|
 |Mac:<br>build 16.47 or later|Yes|Yes|Yes|
 |Web browser:<br>modern Outlook UI|Yes|Not applicable|Not applicable|
 |Web browser:<br>classic Outlook UI|Not applicable|Yes|Yes|
 
 > [!NOTE]
-> The on-send feature was officially released in requirement set 1.8 (see [current server and client support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details). However, note that the feature's support matrix is a superset of the requirement set's.
+> The on-send feature was officially released in requirement set 1.8 (see [current server and client support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details). However, note that the feature's support matrix is a superset of the requirement set's.
 
 > [!IMPORTANT]
 > Add-ins that use the on-send feature aren't allowed in [AppSource](https://appsource.microsoft.com).
@@ -48,18 +61,22 @@ Validation is done on the client side in Outlook when the send event is triggere
 
 The following screenshot shows an information bar that notifies the sender to add a subject.
 
-![Screenshot showing an error message prompting the user to enter a missing subject line.](../images/block-on-send-subject-cc-inforbar.png)
+![An error message prompting the user to enter a missing subject line.](../images/block-on-send-subject-cc-inforbar.png)
 
 The following screenshot shows an information bar that notifies the sender that blocked words were found.
 
-![Screenshot showing an error message telling the user that blocked words were found.](../images/block-on-send-body.png)
+![An error message telling the user that blocked words were found.](../images/block-on-send-body.png)
 
 ## Limitations
 
 The on-send feature currently has the following limitations.
 
-- **Append-on-send** feature &ndash; If you call [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) in the on-send handler, an error is returned.
-- **AppSource** &ndash; You can't publish Outlook add-ins that use the on-send feature to [AppSource](https://appsource.microsoft.com) as they will fail AppSource validation. Add-ins that use the on-send feature should be deployed by administrators.
+- **Append-on-send** feature &ndash; If you call [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1)) in the on-send handler, an error is returned.
+- **AppSource** &ndash; You can't publish Outlook add-ins that use the on-send feature to [AppSource](https://appsource.microsoft.com) as they will fail AppSource validation. Add-ins that use the on-send feature should be deployed by administrators. If you want the option to publish your add-in to AppSource, consider using Smart Alerts instead, which is a newer version of the on-send feature. To learn more about Smart Alerts and how to deploy these add-ins, see [Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in](smart-alerts-onmessagesend-walkthrough.md) and [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
+  
+  > [!IMPORTANT]
+  > When running `npm run validate` to [validate your add-in's manifest](../testing/troubleshoot-manifest.md), you'll receive the error, "Mailbox add-in containing ItemSend event is invalid. Mailbox add-in manifest contains ItemSend event in VersionOverrides which is not allowed." This message appears because add-ins that use the `ItemSend` event, which is required for this version of the on-send feature, can't be published to AppSource. You'll still be able to sideload and run your add-in, provided that no other validation errors are found.
+
 - **Manifest** &ndash; Only one `ItemSend` event is supported per add-in. If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.
 - **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
 - **Send Later** (Mac only) &ndash; If there are on-send add-ins, the **Send Later** feature will be unavailable.
@@ -93,7 +110,7 @@ The on-send feature in Outlook requires that add-ins are configured for the send
 
 ### [Web browser - classic Outlook](#tab/classic)
 
-Add-ins for Outlook on the web (classic) that use the on-send feature will run for users who are assigned an Outlook on the web mailbox policy that has the *OnSendAddinsEnabled* flag set to **true**.
+Add-ins for Outlook on the web (classic) that use the on-send feature will run for users who are assigned an Outlook on the web mailbox policy that has the *OnSendAddinsEnabled* flag set to `true`.
 
 To install a new add-in, run the following Exchange Online PowerShell cmdlets.
 
@@ -123,13 +140,13 @@ To enable on-send add-ins for all users:
     > [!NOTE]
     > Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types. Unsupported mailboxes will be blocked from sending by default in Outlook on the web.
 
-2. Enable the on-send feature.
+1. Enable the on-send feature.
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Assign the policy to users.
+1. Assign the policy to users.
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -148,13 +165,13 @@ To enable the on-send feature for a specific group of users the steps are as fol
    > [!NOTE]
    > Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types (see [Mailbox type limitations](#multiple-on-send-add-ins) earlier in this article for more information). Unsupported mailboxes will be blocked from sending by default in Outlook on the web.
 
-2. Enable the on-send feature.
+1. Enable the on-send feature.
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Assign the policy to users.
+1. Assign the policy to users.
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
@@ -213,13 +230,13 @@ For all users, to disallow editing while on-send add-ins are processing:
     > [!NOTE]
     > Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types. Unsupported mailboxes will be blocked from sending by default in Outlook on the web.
 
-2. Enforce compliance on send.
+1. Enforce compliance on send.
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Assign the policy to users.
+1. Assign the policy to users.
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -238,13 +255,13 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
    > [!NOTE]
    > Administrators can use an existing policy, but on-send functionality is only supported on certain mailbox types (see [Mailbox type limitations](#multiple-on-send-add-ins) earlier in this article for more information). Unsupported mailboxes will be blocked from sending by default in Outlook on the web.
 
-2. Enforce compliance on send.
+1. Enforce compliance on send.
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Assign the policy to users.
+1. Assign the policy to users.
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
@@ -328,6 +345,12 @@ For compliance reasons, administrators may need to ensure that users cannot send
 
 The following are the supported and unsupported scenarios for add-ins that use the on-send feature.
 
+### Event handlers are dynamically defined
+
+Your add-in's event handlers must be defined by the time `Office.initialize` or `Office.onReady()` is called (for further information, see [Startup of an Outlook add-in](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in) and [Initialize your Office Add-in](../develop/initialize-add-in.md)). If your handler code is dynamically defined by certain circumstances during initialization, you must create a stub function to call the handler once it's completely defined. The stub function must be referenced in the **\<Event\>** element's `FunctionName` attribute of your manifest. This workaround ensures that your handler is defined and ready to be referenced once `Office.initialize` or `Office.onReady()` runs.
+
+If your handler isn't defined once your add-in is initialized, the sender will be notified that "The callback function is unreachable" through an information bar in the mail item.
+
 ### User mailbox has the on-send add-in feature enabled but no add-ins are installed
 
 In this scenario, the user will be able to send message and meeting items without any add-ins executing.
@@ -379,10 +402,10 @@ While on-send add-ins are processing an item, the user can edit the item by addi
 
 In your on-send handler:
 
-1. Call [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displayDialogAsync_startAddress__options__callback_) to open a dialog so that mouse clicks and keystrokes are disabled.
+1. Call [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#office-office-ui-displaydialogasync-member(1)) to open a dialog so that mouse clicks and keystrokes are disabled.
 
     > [!IMPORTANT]
-    > To get this behavior in classic Outlook on the web, you should set the [displayInIframe property](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayInIframe) to `true` in the `options` parameter of the `displayDialogAsync` call.
+    > To get this behavior in classic Outlook on the web, you should set the [displayInIframe property](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#office-office-dialogoptions-displayiniframe-member) to `true` in the `options` parameter of the `displayDialogAsync` call.
 
 1. Implement processing of the item.
 1. Close the dialog. Also, handle what happens if the user closes the dialog.
@@ -458,13 +481,12 @@ The on-send API requires `VersionOverrides v1_1`. The following shows you how to
 > - [Outlook add-in manifests](manifests.md)
 > - [Office Add-ins XML manifest](../develop/add-in-manifests.md)
 
-
 ### `Event` and `item` objects, and `body.getAsync` and `body.setAsync` methods
 
 To access the currently selected message or meeting item (in this example, the newly composed message), use the `Office.context.mailbox.item` namespace. The `ItemSend` event is automatically passed by the on-send feature to the function specified in the manifest&mdash;in this example, the `validateBody` function.
 
 ```js
-var mailboxItem;
+let mailboxItem;
 
 Office.initialize = function (reason) {
     mailboxItem = Office.context.mailbox.item;
@@ -477,12 +499,11 @@ function validateBody(event) {
 }
 ```
 
-The `validateBody` function gets the current body in the specified format (HTML) and passes the `ItemSend` event object that the code wants to access in the callback method. In addition to the `getAsync` method, the `Body` object also provides a `setAsync` method that you can use to replace the body with the specified text.
+The `validateBody` function gets the current body in the specified format (HTML) and passes the `ItemSend` event object that the code wants to access in the callback function. In addition to the `getAsync` method, the `Body` object also provides a `setAsync` method that you can use to replace the body with the specified text.
 
 > [!NOTE]
-> For more information, see [Event Object](/javascript/api/office/office.addincommands.event) and [Body.getAsync](/javascript/api/outlook/office.body#getAsync_coercionType__options__callback_).
+> For more information, see [Event Object](/javascript/api/office/office.addincommands.event) and [Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1)).
   
-
 ### `NotificationMessages` object and `event.completed` method
 
 The `checkBodyOnlyOnSendCallBack` function uses a regular expression to determine whether the message body contains blocked words. If it finds a match against an array of restricted words, it then blocks the email from being sent and notifies the sender via the information bar. To do this, it uses the `notificationMessages` property of the `Item` object to return a `NotificationMessages` object. It then adds a notification to the item by calling the `addAsync` method, as shown in the following example.
@@ -491,13 +512,13 @@ The `checkBodyOnlyOnSendCallBack` function uses a regular expression to determin
 // Determine whether the body contains a specific set of blocked words. If it contains the blocked words, block email from being sent. Otherwise allow sending.
 // <param name="asyncResult">ItemSend event passed from the calling function.</param>
 function checkBodyOnlyOnSendCallBack(asyncResult) {
-    var listOfBlockedWords = new Array("blockedword", "blockedword1", "blockedword2");
-    var wordExpression = listOfBlockedWords.join('|');
+    const listOfBlockedWords = new Array("blockedword", "blockedword1", "blockedword2");
+    const wordExpression = listOfBlockedWords.join('|');
 
     // \b to perform a "whole words only" search using a regular expression in the form of \bword\b.
     // i to perform case-insensitive search.
-    var regexCheck = new RegExp('\\b(' + wordExpression + ')\\b', 'i');
-    var checkBody = regexCheck.test(asyncResult.value);
+    const regexCheck = new RegExp('\\b(' + wordExpression + ')\\b', 'i');
+    const checkBody = regexCheck.test(asyncResult.value);
 
     if (checkBody) {
         mailboxItem.notificationMessages.addAsync('NoSend', { type: 'errorMessage', message: 'Blocked words have been found in the body of this email. Please remove them.' });
@@ -519,12 +540,11 @@ The following are the parameters for the `addAsync` method.
 To signal that the add-in has finished processing the `ItemSend` event triggered by the send operation, call the `event.completed({allowEvent:Boolean})` method. The `allowEvent` property is a Boolean. If set to `true`, send is allowed. If set to `false`, the email message is blocked from sending.
 
 > [!NOTE]
-> For more information, see [notificationMessages](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) and [completed](/javascript/api/office/office.addincommands.event).
+> For more information, see [notificationMessages](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [completed](/javascript/api/office/office.addincommands.event).
 
 ### `replaceAsync`, `removeAsync`, and `getAllAsync` methods
 
-In addition to the `addAsync` method, the `NotificationMessages` object also includes `replaceAsync`, `removeAsync`, and `getAllAsync` methods.  These methods are not used in this code sample.  For more information, see [NotificationMessages](/javascript/api/outlook/office.NotificationMessages).
-
+In addition to the `addAsync` method, the `NotificationMessages` object also includes `replaceAsync`, `removeAsync`, and `getAllAsync` methods.  These methods are not used in this code sample.  For more information, see [NotificationMessages](/javascript/api/outlook/office.notificationmessages).
 
 ### Subject and CC checker code
 
@@ -546,7 +566,7 @@ function shouldChangeSubjectOnSend(event) {
             addCCOnSend(asyncResult.asyncContext);
             //console.log(asyncResult.value);
             // Match string.
-            var checkSubject = (new RegExp(/\[Checked\]/)).test(asyncResult.value)
+            const checkSubject = (new RegExp(/\[Checked\]/)).test(asyncResult.value)
             // Add [Checked]: to subject line.
             subject = '[Checked]: ' + asyncResult.value;
 
@@ -599,6 +619,13 @@ function subjectOnSendChange(subject, event) {
 ```
 
 To learn more about how to add a recipient to the CC line and verify that the email message includes a subject line on send, and to see the APIs you can use, see the [Outlook-Add-in-On-Send sample](https://github.com/OfficeDev/Outlook-Add-in-On-Send). The code is well commented.
+
+## Debug Outlook add-ins that use on-send
+
+For instructions on how to debug your on-send add-in, see [Debug function commands in Outlook add-ins](debug-ui-less.md).
+
+> [!TIP]
+> If the error "The callback function is unreachable" appears when your users run your add-in and your add-in's event handler is dynamically defined, you must create a stub function as a workaround. See [Event handlers are dynamically defined](#event-handlers-are-dynamically-defined) for more information.
 
 ## See also
 

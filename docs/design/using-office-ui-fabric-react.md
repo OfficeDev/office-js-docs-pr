@@ -1,8 +1,9 @@
 ---
 title: Fluent UI React in Office Add-ins
-description: 'Learn how to use Fluent UI React in Office Add-ins.'
-ms.date: 07/08/2021
-localization_priority: Normal
+description: Learn how to use Fluent UI React in Office Add-ins.
+ms.date: 04/01/2022
+ms.topic: how-to
+ms.localizationpriority: medium
 ---
 
 # Use Fluent UI React in Office Add-ins
@@ -47,8 +48,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 2. Complete the following steps to start the local web server and sideload your add-in.
 
-    > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
@@ -57,19 +57,15 @@ After you complete the wizard, the generator creates the project and installs su
     > npm run dev-server
     > ```
 
-    - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens Word with your add-in loaded.
+    - To test your add-in in Word, run the following command in the root directory of your project. This starts the local web server and opens Word with your add-in loaded.
 
         ```command&nbsp;line
         npm start
         ```
 
-    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a Word document on your OneDrive or a SharePoint library to which you have permissions.
 
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 3. To open the add-in task pane, on the **Home** tab, choose the **Show Taskpane** button. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fluent UI React.
 
@@ -85,8 +81,8 @@ At this point, you've created a very basic task pane add-in that's built using R
 
 ```typescript
 import * as React from 'react';
-import { PrimaryButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
-import { Label } from 'office-ui-fabric-react/lib/Label';
+import { PrimaryButton, IButtonProps } from '@fluentui/react/lib/Button';
+import { Label } from '@fluentui/react/lib/Label';
 
 export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
   public constructor(props) {
@@ -136,11 +132,9 @@ Add the `ButtonPrimaryExample` component to your add-in by opening **src\compone
     import {ButtonPrimaryExample} from './Button';
     ```
 
-2. Remove the following two import statements.
+2. Remove the following import statement.
 
     ```typescript
-    import { Button, ButtonType } from 'office-ui-fabric-react';
-    ...
     import Progress from './Progress';
     ```
 

@@ -1,49 +1,34 @@
 ---
 title: Debug add-ins in Office on the web
-description: 'How to use Office on the web to test and debug your add-ins.'
-ms.date: 07/07/2020
-localization_priority: Normal
+description: How to use Office on the web to test and debug your add-ins.
+ms.date: 03/06/2022
+ms.localizationpriority: medium
 ---
 
 # Debug add-ins in Office on the web
 
-You can build and debug add-ins on a computer that isn't running Windows or the Office desktop client&mdash;for example, if you're developing on a Mac. This article describes how to use Office on the web to test and debug your add-ins. 
+This article describes how to use Office on the web to debug your add-ins. Use this technique:
 
-## Prerequisites
+- To debug add-ins on a computer that isn't running Windows or the Office desktop client&mdash;for example, if you're developing on a Mac or Linux.
+- As a alternative debugging process if you cannot, or don't wish to, debug in an IDE, such as Visual Studio or Visual Studio Code.
 
-To get started:
+This article assumes that you have an add-in project that needs to be debugged. If you just want to practice debugging on the web, create a new project using one of the quick starts for specific Office applications, such as this [quick start for Word](../quickstarts/word-quickstart.md).
 
-- Get a Microsoft 365 developer account if you don't already have one or have access to a SharePoint site.
-
-  > [!NOTE]
-  > To get a free, 90-day renewable Microsoft 365 developer subscription, join our [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program). 
-  > See the [Microsoft 365 developer program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Microsoft 365 developer program and configure your subscription.
-
-- Set up an app catalog on SharePoint Online. An app catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an app catalog document library. For more information, see [Publish task pane and content add-ins to an app catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
-
-
-## Debug your add-in from Excel or Word on the web
+## Debug your add-in
 
 To debug your add-in by using Office on the web:
 
-1. Deploy your add-in to a server that supports SSL.
+1. Run the project on localhost and sideload it to a document in Office on the web. For detailed sideloading instructions, see [Manually sideload Office Add-ins on the web](sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web).
 
-    > [!NOTE]
-    > We recommend that you use the [Yeoman generator](https://github.com/OfficeDev/generator-office) to create and host your add-in.
+2. Open the browser's developer tools. This is usually done by pressing F12. Open the debugger tool and use it to set breakpoints and watch variables. For detailed help in using your browser's tool, see one of the following:
 
-2. In your [add-in manifest file](../develop/add-in-manifests.md), update the **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:
+   - [Firefox](https://firefox-source-docs.mozilla.org/devtools-user/index.html)
+   - [Safari](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac)
+   - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
+   - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 
-    ```xml
-    <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
-    ```
-
-3. Upload the manifest to the Office Add-ins library in the app catalog on SharePoint.
-
-4. Launch Excel or Word on the web from the app launcher in Microsoft 365, and open a new document.
-
-5. On the Insert tab, choose **My Add-ins** or **Office Add-ins** to insert your add-in and test it in the app.
-
-6. Use your favorite browser tool debugger to debug your add-in.
+   > [!NOTE]
+   > Office on the web won't open in Internet Explorer.
 
 ## Potential issues
 
@@ -53,11 +38,9 @@ The following are some issues that you might encounter as you debug.
 
 - The browser might show an invalid certificate error that you will need to bypass. The process for doing this varies with the browser and the various browsers' UIs for doing this change periodically. You should search the browser's help or search online for instructions. (For example, search for "Microsoft Edge invalid certificate warning".) Most browsers will have a link on the warning page that enables you to click through to the add-in page. For example, Microsoft Edge has a link "Go on to the webpage (Not recommended)". But you will usually have to go through this link every time the add-in reloads. For a longer lasting bypass, see the help as suggested.
 
-- If you set breakpoints in your code, Office on the web might throw an error indicating that it is unable to save.
+- If you set breakpoints in your code, Office on the web might throw an error indicating that it's unable to save.
 
 ## See also
 
 - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
-- [AppSource validation policies](/legal/marketplace/certification-policies)  
-- [Create effective AppSource apps and add-ins](/office/dev/store/create-effective-office-store-listings)  
 - [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)

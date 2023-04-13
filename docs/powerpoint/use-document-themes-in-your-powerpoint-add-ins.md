@@ -1,13 +1,13 @@
 ---
 title: Use document themes in your PowerPoint add-ins
-description: 'Learn how to visually coordinate themes such as fonts and colors to apply to presentations, documents, worksheets, and emails.'
+description: Learn how to visually coordinate themes such as fonts and colors to apply to presentations, documents, worksheets, and emails.
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Use document themes in your PowerPoint add-ins
 
-An [Office theme](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6) consists, in part, of a visually coordinated set of fonts and colors that you can apply to presentations, documents, worksheets, and emails. To apply or customize the theme of a presentation in PowerPoint, you use the **Themes** and **Variants** groups on **Design** tab of the ribbon. PowerPoint assigns a new blank presentation with the default **Office Theme**, but you can choose other themes available on the **Design** tab, download additional themes from Office.com, or create and customize your own theme.
+An [Office theme](https://support.microsoft.com/office/83e68627-2c17-454a-9fd8-62deb81951a6) consists, in part, of a visually coordinated set of fonts and colors that you can apply to presentations, documents, worksheets, and emails. To apply or customize the theme of a presentation in PowerPoint, you use the **Themes** and **Variants** groups on **Design** tab of the ribbon. PowerPoint assigns a new blank presentation with the default **Office Theme**, but you can choose other themes available on the **Design** tab, download additional themes from Office.com, or create and customize your own theme.
 
 Using OfficeThemes.css, design add-ins that are coordinated with PowerPoint in two ways.
 

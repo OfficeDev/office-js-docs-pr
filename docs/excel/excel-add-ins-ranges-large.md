@@ -1,9 +1,10 @@
 ---
 title: Read or write to large ranges using the Excel JavaScript API
-description: 'Learn how to read or write to large ranges with the Excel JavaScript API.'
+description: Learn how to read or write to large ranges with the Excel JavaScript API.
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
+ms.topic: best-practice
+ms.localizationpriority: medium
 ---
 
 # Read or write to a large range using the Excel JavaScript API

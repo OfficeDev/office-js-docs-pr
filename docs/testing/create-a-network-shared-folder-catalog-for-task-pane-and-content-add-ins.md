@@ -1,8 +1,8 @@
 ---
 title: Sideload Office Add-ins for testing from a network share
-description: 'Learn how to sideload an Office Add-in for testing from a network share'
-ms.date: 06/02/2020
-localization_priority: Normal
+description: Learn how to sideload an Office Add-in for testing from a network share.
+ms.date: 05/26/2022
+ms.localizationpriority: medium
 ---
 
 # Sideload Office Add-ins for testing from a network share
@@ -13,15 +13,16 @@ You can test an Office Add-in in an Office client that is on Windows by publishi
 > Deployment by network share is not supported for production add-ins. This method has the following limitations.
 >
 > - The add-in can only be installed on Windows computers.
-> - If a new version of an add-in changes the ribbon, each user will have to reinstall the add-in.
+> - If a new version of an add-in changes the ribbon, such as by adding a custom tab or custom button to it, each user will have to reinstall the add-in.
 
 > [!NOTE]
-> If your add-in project was created with a sufficiently recent version of the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office), the add-in will automatically sideload in the Office desktop client when you run `npm start`.
+> If your add-in project was created with a sufficiently recent version of the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), the add-in will automatically sideload in the Office desktop client when you run `npm start`.
 
 This article applies only to testing Word, Excel, PowerPoint, and Project add-ins and only on Windows. If you want to test on another platform or want to test an Outlook add-in, see one of the following topics to sideload your add-in.
 
 - [Sideload Office Add-ins in Office on the web for testing](sideload-office-add-ins-for-testing.md)
-- [Sideload Office Add-ins on iPad and Mac for testing](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Sideload Office Add-ins on Mac for testing](sideload-an-office-add-in-on-mac.md)
+- [Sideload Office Add-ins on iPad for testing](sideload-an-office-add-in-on-ipad.md)
 - [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
 
 The following video walks you through the process of sideloading your add-in in Office on the web or desktop using a shared folder catalog.  
@@ -110,7 +111,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 ## Sideload your add-in
 
-1. Put the manifest XML file of any add-in that you are testing in the shared folder catalog. Note that you deploy the web application itself to a web server. Be sure to specify the URL in the **SourceLocation** element of the manifest file.
+1. Put the manifest XML file of any add-in that you are testing in the shared folder catalog. Note that you deploy the web application itself to a web server. Be sure to specify the URL in the **\<SourceLocation\>** element of the manifest file.
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]

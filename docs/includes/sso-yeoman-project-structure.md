@@ -6,7 +6,7 @@ The following files specify configuration settings for the add-in.
 
 - The **./.ENV** file in the root directory of the project defines constants that are used by the add-in project.
 
-### Task pane 
+### Task pane
 
 The following files define the add-in's task pane UI and functionality.
 
@@ -28,4 +28,4 @@ The following files facilitate the SSO process and write data to the Office docu
 
 - The **./src/helpers/fallbackauthhelper.js** file contains the task pane JavaScript that invokes the fallback authentication strategy in scenarios when SSO authentication is not supported.
 
-- The **./src/helpers/ssoauthhelper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the bootstrap token, initiates the swap of the bootstrap token for an access token to Microsoft Graph, and calls to Microsoft Graph for the data.
+- The **./src/middle-tier/ssoauth-helper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the access token, initiates the swap of the access token for a new access token with permissions to Microsoft Graph, and calls to Microsoft Graph for the data.

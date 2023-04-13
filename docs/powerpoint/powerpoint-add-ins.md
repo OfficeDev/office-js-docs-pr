@@ -1,10 +1,10 @@
 ---
 title: PowerPoint add-ins
-description: 'Learn how to use PowerPoint add-ins to build engaging solutions for presentations across platforms including Windows, iPad, Mac, and in a browser.'
-ms.date: 10/14/2020
-ms.topic: conceptual
+description: Learn how to use PowerPoint add-ins to build engaging solutions for presentations across platforms including Windows, iPad, Mac, and in a browser.
+ms.date: 07/18/2022
+ms.topic: overview
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # PowerPoint add-ins
@@ -35,17 +35,16 @@ If you are building a content add-in, you will need to get the presentation's ac
 
 In the following code sample:
 
-- The  `getActiveFileView` function calls the [Document.getActiveViewAsync](/javascript/api/office/office.document#getActiveViewAsync_options__callback_) method to return whether the presentation's current view is "edit" (any of the views in which you can edit slides, such as **Normal** or **Outline View**) or "read" (**Slide Show** or **Reading View**).
+- The  `getActiveFileView` function calls the [Document.getActiveViewAsync](/javascript/api/office/office.document#office-office-document-getactiveviewasync-member(1)) method to return whether the presentation's current view is "edit" (any of the views in which you can edit slides, such as **Normal** or **Outline View**) or "read" (**Slide Show** or **Reading View**).
 
-- The  `registerActiveViewChanged` function calls the [addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) method to register a handler for the [Document.ActiveViewChanged](/javascript/api/office/office.document) event.
-
+- The  `registerActiveViewChanged` function calls the [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) method to register a handler for the [Document.ActiveViewChanged](/javascript/api/office/office.document) event.
 
 ```js
 //general Office.initialize function. Fires on load of the add-in.
 Office.initialize = function(){
 
     //Gets whether the current view is edit or read.
-    var currentView = getActiveFileView();
+    const currentView = getActiveFileView();
 
     //register for the active view changed handler
     registerActiveViewChanged();
@@ -86,7 +85,7 @@ function registerActiveViewChanged() {
 
 ## Navigate to a particular slide in the presentation
 
-In the following code sample, the `getSelectedRange` function calls the [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) method to get the JSON object returned by `asyncResult.value`, which contains an array named `slides`. The `slides` array contains the ids, titles, and indexes of selected range of slides (or of the current slide, if multiple slides are not selected). It also saves the id of the first slide in the selected range to a global variable.
+In the following code sample, the `getSelectedRange` function calls the [Document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) method to get the JSON object returned by `asyncResult.value`, which contains an array named `slides`. The `slides` array contains the ids, titles, and indexes of selected range of slides (or of the current slide, if multiple slides are not selected). It also saves the id of the first slide in the selected range to a global variable.
 
 ```js
 function getSelectedRange() {
@@ -105,7 +104,7 @@ function getSelectedRange() {
 }
 ```
 
-In the following code sample, the `goToFirstSlide` function calls the [Document.goToByIdAsync](/javascript/api/office/office.document#goToByIdAsync_id__goToType__options__callback_) method to navigate to the first slide that was identified by the `getSelectedRange` function shown previously.
+In the following code sample, the `goToFirstSlide` function calls the [Document.goToByIdAsync](/javascript/api/office/office.document#office-office-document-gotobyidasync-member(1)) method to navigate to the first slide that was identified by the `getSelectedRange` function shown previously.
 
 ```js
 function goToFirstSlide() {
@@ -126,10 +125,10 @@ In the following code sample, the `goToSlideByIndex` function calls the `Documen
 
 ```js
 function goToSlideByIndex() {
-    var goToFirst = Office.Index.First;
-    var goToLast = Office.Index.Last;
-    var goToPrevious = Office.Index.Previous;
-    var goToNext = Office.Index.Next;
+    const goToFirst = Office.Index.First;
+    const goToLast = Office.Index.Last;
+    const goToPrevious = Office.Index.Previous;
+    const goToNext = Office.Index.Next;
 
     Office.context.document.goToByIdAsync(goToNext, Office.GoToType.Index, function (asyncResult) {
         if (asyncResult.status == "failed") {
@@ -144,13 +143,13 @@ function goToSlideByIndex() {
 
 ## Get the URL of the presentation
 
-In the following code sample, the  `getFileUrl` function calls the [Document.getFileProperties](/javascript/api/office/office.document#getFilePropertiesAsync_options__callback_) method to get the URL of the presentation file.
+In the following code sample, the  `getFileUrl` function calls the [Document.getFileProperties](/javascript/api/office/office.document#office-office-document-getfilepropertiesasync-member(1)) method to get the URL of the presentation file.
 
 ```js
 function getFileUrl() {
     //Get the URL of the current file.
     Office.context.document.getFilePropertiesAsync(function (asyncResult) {
-        var fileUrl = asyncResult.value.url;
+        const fileUrl = asyncResult.value.url;
         if (fileUrl == "") {
             app.showNotification("The file hasn't been saved yet. Save the file and try again");
         }
@@ -172,13 +171,13 @@ PowerPoint.createPresentation();
 The `createPresentation` method can also create a copy of an existing presentation. The method accepts a base64-encoded string representation of an .pptx file as an optional parameter. The resulting presentation will be a copy of that file, assuming the string argument is a valid .pptx file. The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example.
 
 ```js
-var myFile = document.getElementById("file");
-var reader = new FileReader();
+const myFile = document.getElementById("file");
+const reader = new FileReader();
 
 reader.onload = function (event) {
     // strip off the metadata before the base64-encoded string
-    var startIndex = reader.result.toString().indexOf("base64,");
-    var copyBase64 = reader.result.toString().substr(startIndex + 7);
+    const startIndex = reader.result.toString().indexOf("base64,");
+    const copyBase64 = reader.result.toString().substr(startIndex + 7);
 
     PowerPoint.createPresentation(copyBase64);
 };
@@ -191,7 +190,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 - [Developing Office Add-ins](../develop/develop-overview.md)
 - [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
-- [PowerPoint Code Samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
+- [PowerPoint Code Samples](https://developer.microsoft.com/microsoft-365/gallery/?filterBy=Samples,PowerPoint)
 - [How to save add-in state and settings per document for content and task pane add-ins](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Read and write data to the active selection in a document or spreadsheet](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 - [Get the whole document from an add-in for PowerPoint or Word](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)

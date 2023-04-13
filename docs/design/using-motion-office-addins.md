@@ -1,8 +1,9 @@
 ---
 title: Using motion in Office Add-ins
-description: 'Get best practices for using transitions, motion, or animation in Office Add-ins.'
+description: Get best practices for using transitions, motion, or animation in Office Add-ins.
 ms.date: 05/12/2021
-localization_priority: Normal
+ms.topic: best-practice
+ms.localizationpriority: medium
 ---
 
 # Using motion in Office Add-ins

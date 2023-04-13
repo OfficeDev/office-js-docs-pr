@@ -1,24 +1,19 @@
 ---
 title: Add and delete slides in PowerPoint
-description: 'Learn how to add and delete slides and specify the master and layout of new slides.'
-ms.date: 07/08/2021
-localization_priority: Normal
+description: Learn how to add and delete slides and specify the master and layout of new slides.
+ms.date: 12/14/2021
+ms.localizationpriority: medium
 ---
 
 # Add and delete slides in PowerPoint
 
 A PowerPoint add-in can add slides to the presentation and optionally specify which slide master, and which layout of the master, is used for the new slide. The add-in can also delete slides.
 
-> [!IMPORTANT]
-> The APIs for adding slides are in [preview](../reference/requirement-sets/powerpoint-preview-apis.md) and not available for production add-ins. The API for *deleting* slides has been released.
-
 The APIs for adding slides are primarily used in scenarios where the IDs of the slide masters and layouts in the presentation are known at coding time or can be found in a data source at runtime. In such a scenario, either you or the customer must create and maintain a data source that correlates the selection criterion (such as the names or images of slide masters and layouts) with the IDs of the slide masters and layouts. The APIs can also be used in scenarios where the user can insert slides that use the default slide master and the master's default layout, and in scenarios where the user can select an existing slide and create a new one with the same slide master and layout (but not the same content). See [Selecting which slide master and layout to use](#select-which-slide-master-and-layout-to-use) for more information about this.
 
-## Add a slide with SlideCollection.add (preview)
+## Add a slide with SlideCollection.add
 
-[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
-
-Add slides with the [SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) method. The following is a simple example in which a slide that uses the presentation's default slide master and the first layout of that master is added. The method always adds new slides to the end of the presentation. The following is an example.
+Add slides with the [SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-add-member(1)) method. The following is a simple example in which a slide that uses the presentation's default slide master and the first layout of that master is added. The method always adds new slides to the end of the presentation. The following is an example.
 
 ```javascript
 async function addSlide() {
@@ -62,9 +57,9 @@ Accordingly, the `AddSlideOptions` parameter is primarily used in scenarios in w
 
 If your add-in can be used in scenarios where the new slide should use the same combination of slide master and layout that is used by an *existing* slide, then your add-in can (1) prompt the user to select a slide and (2) read the IDs of the slide master and layout. The following steps show how to read the IDs and add a slide with a matching master and layout.
 
-1. Create a method to get the index of the selected slide. The following is an example. About this code, note:
+1. Create a function to get the index of the selected slide. The following is an example. About this code, note:
 
-    - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) method of the Common JavaScript APIs.
+    - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) method of the Common JavaScript APIs.
     - The call to `getSelectedDataAsync` is embedded in a Promise-returning function. For more information about why and how to do this, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` returns an array because multiple slides can be selected. In this scenario, the user has selected just one, so the code gets the first (0th) slide, which is the only one selected.
     - The `index` value of the slide is the 1-based value the user sees beside the slide in the thumbnails pane.

@@ -22,7 +22,8 @@
           "**/*.png",
           "**/*.jpg",
           "**/*.svg",
-          "**/*.gif"
+          "**/*.gif",
+          "**/*.xlsx"
         ],
         "exclude": [
           "**/obj/**",
@@ -63,7 +64,6 @@
         "project/*.md": "project",
         "publish/*.md": "non-product-specific",
         "reference/*.md": "non-product-specific",
-        "reference/manifest/*.md": "non-product-specific",
         "reference/objectmodel/**/*.md": "outlook",
         "resources/*.md": "non-product-specific",
         "testing/*.md": "non-product-specific",
@@ -74,9 +74,8 @@
         "quickstarts/*.md": "quickstart",
         "tutorials/*.md": "tutorial",
         "reference/*.md": "reference",
-        "reference/manifest/*.md": "reference",
-        "reference/objectmodel/**/*.md": "reference",
-        "reference/requirement-sets/*.md": "reference"
+        "publish/*.md": "how-to",
+        "testing/*.md": "how-to"
       },
       "ms.custom": {
         "quickstarts/*.md": "scenarios:getting-started; languages:JavaScript,TypeScript",

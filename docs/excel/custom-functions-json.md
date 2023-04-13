@@ -1,8 +1,8 @@
 ---
 title: Manually create JSON metadata for custom functions in Excel
-description: 'Define JSON metadata for custom functions in Excel and associate your function ID and name properties.'
-ms.date: 08/06/2021
-localization_priority: Normal
+description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
+ms.date: 10/10/2022
+ms.localizationpriority: medium
 ---
 
 # Manually create JSON metadata for custom functions
@@ -21,16 +21,16 @@ However, you can make a custom functions project from scratch. This process requ
 
 The following image explains the differences between using `yo office` scaffold files and writing JSON from scratch.
 
-![Image of differences between using Yo Office and writing your own JSON.](../images/custom-functions-json.png)
+![Image of differences between using the Yeoman generator for Office Add-ins and writing your own JSON.](../images/custom-functions-json.png)
 
 > [!NOTE]
-> Remember to connect your manifest to the JSON file you create, through the `<Resources>` section in your XML manifest file if you do not use the `yo office` generator.
+> Remember to connect your manifest to the JSON file you create, through the **\<Resources\>** section in your XML manifest file if you do not use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Authoring metadata and connecting to the manifest
 
 Create a JSON file in your project and provide all the details about your functions in it, such as the function's parameters. See the [following metadata example](#json-metadata-example) and [the metadata reference](#metadata-reference) for a complete list of function properties.
 
-Ensure your XML manifest file references your JSON file in the `<Resources>` section, similar to the following example.
+Ensure your XML manifest file references your JSON file in the **\<Resources\>** section, similar to the following example.
 
 ```json
 <Resources>
@@ -51,6 +51,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 
 ```json
 {
+  "allowCustomDataForDataTypeAny": true,
   "allowErrorForDataTypeAny": true,
   "functions": [
     {
@@ -134,6 +135,13 @@ The following example shows the contents of a JSON metadata file for an add-in t
 
 ## Metadata reference
 
+### allowCustomDataForDataTypeAny
+
+The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting this value to `true` allows a custom function to accept data types as parameters and return values. To learn more, see [Custom functions and data types](custom-functions-data-types-concepts.md).
+
+> [!NOTE]
+> Unlike most of the other JSON metadata properties, `allowCustomDataForDataTypeAny` is a top-level property and contains no sub-properties. See the preceding [JSON metadata code sample](#json-metadata-example) for an example of how to format this property.
+
 ### allowErrorForDataTypeAny
 
 The `allowErrorForDataTypeAny` property is a boolean data type. Setting the value to `true` allows a custom function to process errors as input values. All parameters with the type `any` or `any[][]` can accept errors as input values when `allowErrorForDataTypeAny` is set to `true`. The default `allowErrorForDataTypeAny` value is `false`.
@@ -164,7 +172,7 @@ The `options` object enables you to customize some aspects of how and when Excel
 | `cancelable`      | boolean   | No<br/><br/>Default value is `false`.  | If `true`, Excel calls the `CancelableInvocation` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. Cancelable functions are typically only used for asynchronous functions that return a single result and need to handle the cancellation of a request for data. A function can't use both the `stream` and `cancelable` properties. |
 | `requiresAddress` | boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the address of the cell that invoked it. The `address` property of the [invocation parameter](custom-functions-parameter-options.md#invocation-parameter) contains the address of the cell that invoked your custom function. A function can't use both the `stream` and `requiresAddress` properties. |
 | `requiresParameterAddresses` | boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the addresses of the function's input parameters. This property must be used in combination with the `dimensionality` property of the [result](#result) object, and `dimensionality` must be set to `matrix`. See [Detect the address of a parameter](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) for more information. |
-| `stream`          | boolean   | No<br/><br/>Default value is `false`.  | If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. The function should have no `return` statement. Instead, the result value is passed as the argument of the `StreamingInvocation.setResult` callback method. For more information, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). |
+| `stream`          | boolean   | No<br/><br/>Default value is `false`.  | If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. The function should have no `return` statement. Instead, the result value is passed as the argument of the `StreamingInvocation.setResult` callback function. For more information, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). |
 | `volatile`        | boolean   | No <br/><br/>Default value is `false`. | If `true`, the function recalculates each time Excel recalculates, instead of only when the formula's dependent values have changed. A function can't use both the `stream` and `volatile` properties. If the `stream` and `volatile` properties are both set to `true`, the volatile property will be ignored. |
 
 ### parameters
@@ -191,7 +199,7 @@ The `result` object defines the type of information that is returned by the func
 
 ## Associating function names with JSON metadata
 
-For a function to work properly, you need to associate the function's `id` property with the JavaScript implementation. Make sure there is an association, otherwise the function won't be registered and isn't useable in Excel. The following code sample shows how to make the association using the `CustomFunctions.associate()` method. The sample defines the custom function `add` and associates it with the object in the JSON metadata file where the value of the `id` property is **ADD**.
+For a function to work properly, you need to associate the function's `id` property with the JavaScript implementation. Make sure there is an association, otherwise the function won't be registered and isn't useable in Excel. The following code sample shows how to make the association using the `CustomFunctions.associate()` function. The sample defines the custom function `add` and associates it with the object in the JSON metadata file where the value of the `id` property is **ADD**.
 
 ```js
 /**

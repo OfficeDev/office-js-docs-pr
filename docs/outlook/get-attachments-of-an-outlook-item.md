@@ -1,8 +1,9 @@
 ---
 title: Get attachments in an Outlook add-in
 description: Your add-in can use the attachments API to send information about the attachments to a remote service.
-ms.date: 01/14/2021
-localization_priority: Normal
+ms.date: 03/21/2023
+ms.topic: how-to
+ms.localizationpriority: medium
 ---
 
 # Get attachments of an Outlook item from the server
@@ -13,17 +14,17 @@ You can get the attachments of an Outlook item in a couple of ways but which opt
 
     Your add-in can use the attachments API to send information about the attachments to the remote service. The service can then contact the Exchange server directly to retrieve the attachments.
 
-1. Use the [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) API, available from requirement set 1.8. Supported formats: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
+1. Use the [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) API, available from requirement set 1.8. Supported formats: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
 
     This API may be handy if EWS/REST is unavailable (for example, due to the admin configuration of your Exchange server), or your add-in wants to use the base64 content directly in HTML or JavaScript. Also, the `getAttachmentContentAsync` API is available in compose scenarios where the attachment may not have synced to Exchange yet; see [Manage an item's attachments in a compose form in Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md) to learn more.
 
-This article elaborates on the first option. To send attachment information to the remote service, use the following properties and function.
+This article elaborates on the first option. To send attachment information to the remote service, use the following properties and method.
 
 - [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities) property &ndash; Provides the URL of Exchange Web Services (EWS) on the Exchange server that hosts the mailbox. Your service uses this URL to call the [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) method, or the [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) EWS operation.
 
-- [Office.context.mailbox.item.attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) property &ndash; Gets an array of [AttachmentDetails](/javascript/api/outlook/office.attachmentdetails) objects, one for each attachment to the item.
+- [Office.context.mailbox.item.attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) property &ndash; Gets an array of [AttachmentDetails](/javascript/api/outlook/office.attachmentdetails) objects, one for each attachment to the item.
 
-- [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) function &ndash; Makes an asynchronous call to the Exchange server that hosts the mailbox to get a callback token that the server sends back to the Exchange server to authenticate a request for an attachment.
+- [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method &ndash; Makes an asynchronous call to the Exchange server that hosts the mailbox to get a callback token that the server sends back to the Exchange server to authenticate a request for an attachment.
 
 ## Using the attachments API
 
@@ -44,7 +45,7 @@ Each of these steps is covered in detail in the following sections using code fr
 
 ## Get a callback token
 
-The [Office.context.mailbox](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) object provides the `getCallbackTokenAsync` function to get a token that the remote server can use to authenticate with the Exchange server. The following code shows a function in an add-in that starts the asynchronous request to get the callback token, and the callback function that gets the response. The callback token is stored in the service request object that is defined in the next section.
+The [Office.context.mailbox](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox) object provides the `getCallbackTokenAsync` method to get a token that the remote server can use to authenticate with the Exchange server. The following code shows a function in an add-in that starts the asynchronous request to get the callback token, and the callback function that gets the response. The callback token is stored in the service request object that is defined in the next section.
 
 ```js
 function getAttachmentToken() {
@@ -67,27 +68,25 @@ function attachmentTokenCallback(asyncResult, userContext) {
 
 ## Send attachment information to the remote service
 
-The remote service that your add-in calls defines the specifics of how you should send the attachment information to the service. In this example, the remote service is a Web API application created by using Visual Studio 2013. The remote service expects the attachment information in a JSON object. The following code initializes an object that contains the attachment information.
+The remote service that your add-in calls defines the specifics of how you should send the attachment information to the service. In this example, the remote service is a Web API application created by using Visual Studio. The remote service expects the attachment information in a JSON object. The following code initializes an object that contains the attachment information.
 
 ```js
 // Initialize a context object for the add-in.
 //   Set the fields that are used on the request
 //   object to default values.
- var serviceRequest = {
+ const serviceRequest = {
     attachmentToken: '',
     ewsUrl         : Office.context.mailbox.ewsUrl,
     attachments    : []
  };
 ```
 
-<br/>
-
 The `Office.context.mailbox.item.attachments` property contains a collection of `AttachmentDetails` objects, one for each attachment to the item. In most cases, the add-in can pass just the attachment ID property of an `AttachmentDetails` object to the remote service. If the remote service needs more details about the attachment, you can pass all or part of the `AttachmentDetails` object. The following code defines a method that puts the entire `AttachmentDetails` array in the `serviceRequest` object and sends a request to the remote service.
 
 ```js
 function makeServiceRequest() {
   // Format the attachment details for sending.
-  for (var i = 0; i < mailbox.item.attachments.length; i++) {
+  for (let i = 0; i < mailbox.item.attachments.length; i++) {
     serviceRequest.attachments[i] = JSON.parse(JSON.stringify(mailbox.item.attachments[i]));
   }
 
@@ -98,12 +97,12 @@ function makeServiceRequest() {
     contentType: 'application/json;charset=utf-8'
   }).done(function (response) {
     if (!response.isError) {
-      var names = "<h2>Attachments processed using " +
+      const names = "<h2>Attachments processed using " +
                     serviceRequest.service +
                     ": " +
                     response.attachmentsProcessed +
                     "</h2>";
-      for (i = 0; i < response.attachmentNames.length; i++) {
+      for (let i = 0; i < response.attachmentNames.length; i++) {
         names += response.attachmentNames[i] + "<br />";
       }
       document.getElementById("names").innerHTML = names;
@@ -215,7 +214,6 @@ private AttachmentSampleServiceResponse GetAtttachmentsFromExchangeServerUsingEW
 
 If you use EWS in your remote service, you need to construct a [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) SOAP request to get the attachments from the Exchange server. The following code returns a string that provides the SOAP request. The remote service uses the `String.Format` method to insert the attachment ID for an attachment into the string.
 
-
 ```cs
 private const string GetAttachmentSoapRequest =
 @"<?xml version=""1.0"" encoding=""utf-8""?>
@@ -224,7 +222,7 @@ xmlns:xsd=""https://www.w3.org/2001/XMLSchema""
 xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/""
 xmlns:t=""http://schemas.microsoft.com/exchange/services/2006/types"">
 <soap:Header>
-<t:RequestServerVersion Version=""Exchange2013"" />
+<t:RequestServerVersion Version=""Exchange2016"" />
 </soap:Header>
   <soap:Body>
     <GetAttachment xmlns=""http://schemas.microsoft.com/exchange/services/2006/messages""
@@ -237,8 +235,6 @@ xmlns:t=""http://schemas.microsoft.com/exchange/services/2006/types"">
   </soap:Body>
 </soap:Envelope>";
 ```
-
-<br/>
 
 Finally, the following method does the work of using an EWS `GetAttachment` request to get the attachments from the Exchange server. This implementation makes an individual request for each attachment, and returns the count of attachments processed. Each response is processed in a separate `ProcessXmlResponse` method, defined next.
 
@@ -314,8 +310,6 @@ private AttachmentSampleServiceResponse GetAttachmentsFromExchangeServerUsingEWS
   return response;
 }
 ```
-
-<br/>
 
 Each response from the `GetAttachment` operation is sent to the `ProcessXmlResponse` method. This method checks the response for errors. If it doesn't find any errors, it processes file attachments and item attachments. The `ProcessXmlResponse` method performs the bulk of the work to process the attachment.
 
@@ -415,4 +409,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [Create Outlook add-ins for read forms](read-scenario.md)
 - [Explore the EWS Managed API, EWS, and web services in Exchange](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [Get started with EWS Managed API client applications](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlook Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)

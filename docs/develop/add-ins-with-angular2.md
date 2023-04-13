@@ -1,8 +1,9 @@
 ---
 title: Develop Office Add-ins with Angular
-description: 'Use Angular to create an Office Add-in as a single page application.'
+description: Use Angular to create an Office Add-in as a single page application.
+ms.topic: best-practice
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Develop Office Add-ins with Angular
@@ -24,9 +25,9 @@ npm install --save-dev @types/office-js
 
 ## Bootstrapping must be inside Office.initialize
 
-On any page that calls the Office, Word, or Excel JavaScript APIs, your code must first assign a method to the `Office.initialize` property. (If you have no initialization code, the method body can be just empty "`{}`" symbols, but you must not leave the `Office.initialize` property undefined. For details, see [Initialize your Office Add-in](initialize-add-in.md).) Office calls this method immediately after it has initialized the Office JavaScript libraries.
+On any page that calls the Office, Word, or Excel JavaScript APIs, your code must first assign a function to `Office.initialize`. (If you have no initialization code, the function body can just be empty "`{}`" symbols, but you must not leave the `Office.initialize` function undefined. For details, see [Initialize your Office Add-in](initialize-add-in.md).) Office calls this function immediately after it has initialized the Office JavaScript libraries.
 
-**Your Angular bootstrapping code must be called inside the method that you assign to `Office.initialize`** to ensure that the Office JavaScript libraries have initialized first. The following is a simple example that shows how to do this. This code should be in the main.ts file of the project.
+**Your Angular bootstrapping code must be called inside the function that you assign to `Office.initialize`** to ensure that the Office JavaScript libraries have initialized first. The following is a simple example that shows how to do this. This code should be in the main.ts file of the project.
 
 ```js
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -149,7 +150,7 @@ ng serve --aot
 
 ## Support Internet Explorer if you're dynamically loading Office.js
 
-Based on the Windows version and the Office desktop client where your add-in is running, your add-in may be using Internet Explorer 11. (For more details, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depends on a few `window.history` APIs but these APIs don't work in the IE runtime embedded in Windows desktop clients. When these APIs don't work, your add-in may not work properly, for example, it may load a blank task pane. To mitigate this, Office.js nullifies those APIs. However, if you're dynamically loading Office.js, AngularJS may load before Office.js. In that case, you should disable the `window.history` APIs by adding the following code to your add-in's **index.html** page.
+Based on the Windows version and the Office desktop client where your add-in is running, your add-in may be using Internet Explorer 11. (For more details, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular depends on a few `window.history` APIs but these APIs don't work in the IE runtime that is sometimes used to run Office Add-ins in Windows desktop clients. When these APIs don't work, your add-in may not work properly, for example, it may load a blank task pane. To mitigate this, Office.js nullifies those APIs. However, if you're dynamically loading Office.js, AngularJS may load before Office.js. In that case, you should disable the `window.history` APIs by adding the following code to your add-in's **index.html** page.
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

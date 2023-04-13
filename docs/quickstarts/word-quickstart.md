@@ -1,14 +1,12 @@
 ---
 title: Build your first Word task pane add-in
-description: Learn how to build a simple Word task pane add-in by using the Office JS API.
-ms.date: 08/04/2021
+description: Learn how to build a simple Word task pane add-in by using the Office JavaScript API.
+ms.date: 06/10/2022
 ms.prod: word
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Build your first Word task pane add-in
-
-_Applies to: Word 2016 or later on Windows, and Word on iPad and Mac_
 
 In this article, you'll walk through the process of building a Word task pane add-in.
 
@@ -17,8 +15,6 @@ In this article, you'll walk through the process of building a Word task pane ad
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
 # [Yeoman generator](#tab/yeomangenerator)
-
-[!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
 ### Prerequisites
 
@@ -30,7 +26,7 @@ In this article, you'll walk through the process of building a Word task pane ad
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `Javascript`
+- **Choose a script type:** `JavaScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
@@ -54,8 +50,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 1. Complete the following steps to start the local web server and sideload your add-in.
 
-    > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
@@ -70,15 +65,11 @@ After you complete the wizard, the generator creates the project and installs su
         npm start
         ```
 
-    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+    - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a Word document on your OneDrive or a SharePoint library to which you have permissions.
 
-        ```command&nbsp;line
-        npm run start:web
-        ```
+        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-        To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
-
-1. In Word, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In Word, if the "My Office Add-in" task pane isn't already open, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
     ![Screenshot showing the Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-2b.png)
 
@@ -88,7 +79,10 @@ After you complete the wizard, the generator creates the project and installs su
 
 ### Next steps
 
-Congratulations, you've successfully created a Word task pane add-in! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the [Word add-in tutorial](../tutorials/word-tutorial.md).
+Congratulations, you've successfully created a Word task pane add-in! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the Word add-in tutorial.
+
+> [!div class="nextstepaction"]
+> [Word add-in tutorial](../tutorials/word-tutorial.md)
 
 # [Visual Studio](#tab/visualstudio)
 
@@ -140,18 +134,20 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
+
     ```js
     'use strict';
 
     (function () {
 
         Office.onReady(function() {
-            // Office is ready
+            // Office is ready.
             $(document).ready(function () {
-                // The document is ready
+                // The document is ready.
                 // Use this to check whether the API is supported in the Word client.
                 if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
-                    // Do something that is only available via the new APIs
+                    // Do something that is only available via the new APIs.
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
@@ -164,24 +160,23 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
             });
         });
 
-        function insertEmersonQuoteAtSelection() {
-            Word.run(function (context) {
+        async function insertEmersonQuoteAtSelection() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document.
-                var thisDocument = context.document;
+                const thisDocument = context.document;
 
                 // Queue a command to get the current selection.
                 // Create a proxy range object for the selection.
-                var range = thisDocument.getSelection();
+                const range = thisDocument.getSelection();
 
                 // Queue a command to replace the selected text.
                 range.insertText('"Hitch your wagon to a star."\n', Word.InsertLocation.replace);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from Ralph Waldo Emerson.');
-                });
+                await context.sync();
+                console.log('Added a quote from Ralph Waldo Emerson.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -191,20 +186,19 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
             });
         }
 
-        function insertChekhovQuoteAtTheBeginning() {
-            Word.run(function (context) {
+        async function insertChekhovQuoteAtTheBeginning() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document body.
-                var body = context.document.body;
+                const body = context.document.body;
 
                 // Queue a command to insert text at the start of the document body.
                 body.insertText('"Knowledge is of no value unless you put it into practice."\n', Word.InsertLocation.start);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from Anton Chekhov.');
-                });
+                await context.sync();
+                console.log('Added a quote from Anton Chekhov.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -214,20 +208,19 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
             });
         }
 
-        function insertChineseProverbAtTheEnd() {
-            Word.run(function (context) {
+        async function insertChineseProverbAtTheEnd() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document body.
-                var body = context.document.body;
+                const body = context.document.body;
 
                 // Queue a command to insert text at the end of the document body.
                 body.insertText('"To know the road ahead, ask those coming back."\n', Word.InsertLocation.end);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from a Chinese proverb.');
-                });
+                await context.sync();
+                console.log('Added a quote from a Chinese proverb.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -292,9 +285,9 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 ### Try it out
 
-1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you are using the one-time purchase version of Office, instead of the Microsoft 365 version, then custom buttons are not supported. Instead, the task pane will open immediately.)
+2. In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you're using the volume-licensed perpetual version of Office, instead of the Microsoft 365 version or a retail perpetual version, then custom buttons are not supported. Instead, the task pane will open immediately.)
 
     ![Screenshot of the Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-0.png)
 
@@ -306,9 +299,16 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 ### Next steps
 
-Congratulations, you've successfully created a Word task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
+Congratulations, you've successfully created a Word task pane add-in! Next, to learn more about developing Office Add-ins with Visual Studio, continue to the following article.
+
+> [!div class="nextstepaction"]
+> [Develop Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md)
 
 ---
+
+## Code samples
+
+- [Word "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
 
 ## See also
 
@@ -317,3 +317,4 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 - [Word add-ins overview](../word/word-add-ins-programming-overview.md)
 - [Word add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Word)
 - [Word JavaScript API reference](../reference/overview/word-add-ins-reference-overview.md)
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

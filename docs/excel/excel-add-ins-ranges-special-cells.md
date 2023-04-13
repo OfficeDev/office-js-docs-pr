@@ -1,9 +1,9 @@
 ---
 title: Find special cells within a range using the Excel JavaScript API
-description: 'Learn how to use the Excel JavaScript API to find special cells, such as cells with formulas, errors, or numbers.' 
-ms.date: 07/08/2021
+description: Learn how to use the Excel JavaScript API to find special cells, such as cells with formulas, errors, or numbers.
+ms.date: 02/17/2022
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Find special cells within a range using the Excel JavaScript API
@@ -12,7 +12,7 @@ This article provides code samples that find special cells within a range using 
 
 ## Find ranges with special cells
 
-The [Range.getSpecialCells](/javascript/api/excel/excel.range#getSpecialCells_cellType__cellValueType_) and [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getSpecialCellsOrNullObject_cellType__cellValueType_) methods find ranges based on the characteristics of their cells and the types of values of their cells. Both of these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
+The [Range.getSpecialCells](/javascript/api/excel/excel.range#excel-excel-range-getspecialcells-member(1)) and [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#excel-excel-range-getspecialcellsornullobject-member(1)) methods find ranges based on the characteristics of their cells and the types of values of their cells. Both of these methods return `RangeAreas` objects. Here are the signatures of the methods from the TypeScript data types file:
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -28,14 +28,14 @@ The following code sample uses the `getSpecialCells` method to find all the cell
 - The `getSpecialCells` method returns a `RangeAreas` object, so all of the cells with formulas will be colored pink even if they are not all contiguous.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var usedRange = sheet.getUsedRange();
-    var formulaRanges = usedRange.getSpecialCells(Excel.SpecialCellType.formulas);
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let usedRange = sheet.getUsedRange();
+    let formulaRanges = usedRange.getSpecialCells(Excel.SpecialCellType.formulas);
     formulaRanges.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 If no cells with the targeted characteristic exist in the range, `getSpecialCells` throws an **ItemNotFound** error. This diverts the flow of control to a `catch` block, if there is one. If there isn't a `catch` block, the error halts the method.
@@ -47,20 +47,20 @@ If you expect that cells with the targeted characteristic should always exist, y
 - You can test this code by first selecting a range that has no formula cells and running it. Then select a range that has at least one cell with a formula and run it again.
 
 ```js
-Excel.run(function (context) {
-    var range = context.workbook.getSelectedRange();
-    var formulaRanges = range.getSpecialCellsOrNullObject(Excel.SpecialCellType.formulas);
-    return context.sync()
-        .then(function() {
-            if (formulaRanges.isNullObject) {
-                console.log("No cells have formulas");
-            }
-            else {
-                formulaRanges.format.fill.color = "pink";
-            }
-        })
-        .then(context.sync);
-})
+await Excel.run(async (context) => {
+    let range = context.workbook.getSelectedRange();
+    let formulaRanges = range.getSpecialCellsOrNullObject(Excel.SpecialCellType.formulas);
+    await context.sync();
+        
+    if (formulaRanges.isNullObject) {
+        console.log("No cells have formulas");
+    }
+    else {
+        formulaRanges.format.fill.color = "pink";
+    }
+    
+    await context.sync();
+});
 ```
 
 For simplicity, all other code samples in this article use the `getSpecialCells` method instead of  `getSpecialCellsOrNullObject`.
@@ -87,16 +87,16 @@ The following code sample finds special cells that are numerical constants and c
 - To test the code, be sure the worksheet has some cells with literal number values, some with other kinds of literal values, and some with formulas.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var usedRange = sheet.getUsedRange();
-    var constantNumberRanges = usedRange.getSpecialCells(
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let usedRange = sheet.getUsedRange();
+    let constantNumberRanges = usedRange.getSpecialCells(
         Excel.SpecialCellType.constants,
         Excel.SpecialCellValueType.numbers);
     constantNumberRanges.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 ### Test for multiple cell value types
@@ -104,16 +104,16 @@ Excel.run(function (context) {
 Sometimes you need to operate on more than one cell value type, such as all text-valued and all boolean-valued (`Excel.SpecialCellValueType.logical`) cells. The `Excel.SpecialCellValueType` enum has values with combined types. For example, `Excel.SpecialCellValueType.logicalText` targets all boolean and all text-valued cells. `Excel.SpecialCellValueType.all` is the default value, which does not limit the cell value types returned. The following code sample colors all cells with formulas that produce number or boolean value.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var usedRange = sheet.getUsedRange();
-    var formulaLogicalNumberRanges = usedRange.getSpecialCells(
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let usedRange = sheet.getUsedRange();
+    let formulaLogicalNumberRanges = usedRange.getSpecialCells(
         Excel.SpecialCellType.formulas,
         Excel.SpecialCellValueType.logicalNumbers);
     formulaLogicalNumberRanges.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 ## See also

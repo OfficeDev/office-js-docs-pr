@@ -1,8 +1,9 @@
 ---
 title: Task panes in Office Add-ins
-description: 'Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source.'
+description: Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source.
 ms.date: 05/12/2021
-localization_priority: Normal
+ms.topic: overview
+ms.localizationpriority: medium
 ---
 
 
@@ -18,10 +19,10 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 |Do|Don't|
 |:-----|:--------|
-|<ul><li>Include the name of your add-in in the title.</li></ul>|<ul><li>Don't append your company name to the title.</li></ul>|
-|<ul><li>Use short descriptive names in the title.</li></ul>|<ul><li>Don't append strings such as "add-in," "for Word," or "for Office" to the title of your add-in.</li></ul>|
-|<ul><li>Include some navigational or commanding element such as the CommandBar or Pivot at the top of your add-in.</li></ul>||
-|<ul><li>Include a branding element such as the BrandBar at the bottom of your add-in unless your add-in is to be used within Outlook.</li></ul>||
+|Include the name of your add-in in the title.|Don't append your company name to the title.|
+|Use short descriptive names in the title.|Don't append strings such as "add-in," "for Word," or "for Office" to the title of your add-in.|
+|Include some navigational or commanding element such as the CommandBar or Pivot at the top of your add-in.|*None.*|
+|Include a branding element such as the BrandBar at the bottom of your add-in unless your add-in is to be used within Outlook.|*None.*|
 
 ## Variants
 
@@ -49,7 +50,7 @@ The following images show the various task pane sizes with the Office app ribbon
 
 ## Personality menu
 
-Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
+Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac. (The personality menu isn't supported in Outlook.)
 
 For Windows, the personality menu measures 12x32 pixels, as shown.
 

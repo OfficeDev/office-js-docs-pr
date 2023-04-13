@@ -1,8 +1,9 @@
 ---
 title: Icon guidelines for Office Add-ins
-description: 'Get an overview of how to design icons and the Fresh and Monoline design styles for add-in commands.'
+description: Get an overview of how to design icons and the Fresh and Monoline design styles for add-in commands.
 ms.date: 05/12/2021
-localization_priority: Normal
+ms.topic: overview
+ms.localizationpriority: medium
 ---
 
 # Icons
@@ -18,10 +19,10 @@ Many HTML containers contain controls with iconography. Use Fabric Core’s cust
 [Add-in commands](add-in-commands.md) add buttons, text, and icons to the Office UI. Your add-in command buttons should provide meaningful icons and labels that clearly identify the action the user is taking when they use a command. The following articles provide stylistic and production guidelines to help you design icons that integrate seamlessly with Office.
 
 - For the Monoline style of Microsoft 365, see [Monoline style icon guidelines for Office Add-ins](add-in-icons-monoline.md).
-- For the Fresh style of non-subscription Office 2013+, see [Fresh style icon guidelines for Office Add-ins](add-in-icons-fresh.md).
+- For the Fresh style of perpetual Office 2013+, see [Fresh style icon guidelines for Office Add-ins](add-in-icons-fresh.md).
 
 > [!NOTE]
-> You must choose one style or the other and your add-in will use the same icons whether it is running in Microsoft 365 or non-subscription Office.
+> You must choose one style or the other and your add-in will use the same icons whether it is running in Microsoft 365 or perpetual Office.
 
 ## See also
 

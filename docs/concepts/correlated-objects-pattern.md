@@ -1,8 +1,9 @@
 ---
 title: Avoid using the context.sync method in loops
-description: 'Learn how to use the split loop and correlated objects patterns to avoid calling context.sync in a loop.'
-ms.date: 07/08/2021
-localization_priority: Normal
+description: Learn how to use the split loop and correlated objects patterns to avoid calling context.sync in a loop.
+ms.topic: best-practice
+ms.date: 07/18/2022
+ms.localizationpriority: medium
 ---
 
 
@@ -20,7 +21,7 @@ For some programming scenarios in Office Add-ins that use one of the application
 > - `for of`
 > - `while`
 > - `do while`
-> 
+>
 > They also apply to any array method to which a function is passed and applied to the items in the array, including the following:
 >
 > - `Array.every`
@@ -38,34 +39,33 @@ For some programming scenarios in Office Add-ins that use one of the application
 In the simplest case, you are only writing to members of a collection object, not reading their properties. For example, the following code highlights in yellow every instance of "the" in a Word document.
 
 > [!NOTE]
-> It's generally a good practice to put have a final `context.sync` just before the closing "}" character of the application `run` method (such as `Excel.run`, `Word.run`, etc.). This is because the `run` method makes a hidden call of `context.sync` as the last thing it does if, and only if, there are queued commands that have not yet been synchronized. The fact that this call is hidden can be confusing, so we generally recommend that you add the explicit `context.sync`. However, given that this article is about minimizing calls of `context.sync`, it is actually more confusing to add an entirely unnecessary final `context.sync`. So, in this article, we leave it out when there are no unsynchronized commands at the end of the `run`.
+> It's generally a good practice to put have a final `context.sync` just before the closing "}" character of the application `run` function (such as `Excel.run`, `Word.run`, etc.). This is because the `run` function makes a hidden call of `context.sync` as the last thing it does if, and only if, there are queued commands that have not yet been synchronized. The fact that this call is hidden can be confusing, so we generally recommend that you add the explicit `context.sync`. However, given that this article is about minimizing calls of `context.sync`, it is actually more confusing to add an entirely unnecessary final `context.sync`. So, in this article, we leave it out when there are no unsynchronized commands at the end of the `run`.
 
 ```javascript
-Word.run(async function (context) {
-    let startTime, endTime;
-    const docBody = context.document.body;
+await Word.run(async function (context) {
+  let startTime, endTime;
+  const docBody = context.document.body;
 
-    // search() returns an array of Ranges.
-    const searchResults = docBody.search('the', { matchWholeWord: true });
-    context.load(searchResults, 'items');
-    await context.sync();
+  // search() returns an array of Ranges.
+  const searchResults = docBody.search('the', { matchWholeWord: true });
+  searchResults.load('font');
+  await context.sync();
 
-    // Record the system time.
-    startTime = performance.now();
+  // Record the system time.
+  startTime = performance.now();
 
-    for (var i = 0; i < searchResults.items.length; i++) {
-      searchResults.items[i].font.highlightColor = '#FFFF00';
+  for (let i = 0; i < searchResults.items.length; i++) {
+    searchResults.items[i].font.highlightColor = '#FFFF00';
 
-      await context.sync(); // SYNCHRONIZE IN EACH ITERATION
-    }
-    
-    // await context.sync(); // SYNCHRONIZE AFTER THE LOOP
+    await context.sync(); // SYNCHRONIZE IN EACH ITERATION
+  }
+  
+  // await context.sync(); // SYNCHRONIZE AFTER THE LOOP
 
-    // Record the system time again then calculate how long the operation took.
-    endTime = performance.now();
-    console.log("The operation took: " + (endTime - startTime) + " milliseconds.");
-  })
-}
+  // Record the system time again then calculate how long the operation took.
+  endTime = performance.now();
+  console.log("The operation took: " + (endTime - startTime) + " milliseconds.");
+})
 ```
 
 The preceding code took 1 full second to complete in a document with 200 instances of "the" in Word on Windows. But when the `await context.sync();` line inside the loop is commented out and the same line just after the loop is uncommented, the operation took only a 1/10th of a second. In Word on the web (with Edge as the browser), it took 3 full seconds with the synchronization inside the loop and only 6/10ths of a second with the synchronization after the loop, about five times faster. In a document with 2000 instances of "the", it took (in Word on the web) 80 seconds with the synchronization inside the loop and only 4 seconds with the synchronization after the loop, about 20 times faster.
@@ -73,7 +73,7 @@ The preceding code took 1 full second to complete in a document with 200 instanc
 > [!NOTE]
 > It's worth asking whether the synchronize-inside-the-loop version would execute faster if the synchronizations ran concurrently, which could be done by simply removing the `await` keyword from the front of the `context.sync()`. This would cause the runtime to initiate the synchronization and then immediately start the next iteration of the loop without waiting for the synchronization to complete. However, this is not as good a solution as moving the `context.sync` out of the loop entirely for these reasons.
 >
-> - Just as the commands in a synchronization batch job are queued, the batch jobs themselves are queued in Office, but Office supports no more than 50 batch jobs in the queue. Any more triggers errors. So, if there are more than 50 iterations in a loop, there is a chance that the queue size is exceeded. The greater the number of iterations, the greater the chance of this happening. 
+> - Just as the commands in a synchronization batch job are queued, the batch jobs themselves are queued in Office, but Office supports no more than 50 batch jobs in the queue. Any more triggers errors. So, if there are more than 50 iterations in a loop, there is a chance that the queue size is exceeded. The greater the number of iterations, the greater the chance of this happening.
 > - "Concurrently" does not mean simultaneously. It would still take longer to execute multiple synchronization operations than to execute one.
 > - Concurrent operations are not guaranteed to complete in the same order in which they started. In the preceding example, it doesn't matter what order the  word "the" gets highlighted, but there are scenarios where it's important that the items in the collection be processed in order.
 

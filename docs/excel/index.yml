@@ -8,8 +8,8 @@ metadata:
   description: Resources for learning about Excel add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.prod: excel #Required
   ms.topic: landing-page # Required
-  ms.date: 03/29/2021 #Required; mm/dd/yyyy format.
-  localization_priority: Priority
+  ms.date: 02/24/2022 #Required; mm/dd/yyyy format.
+  ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -33,6 +33,8 @@ landingContent:
         links:
           - text: Use the Excel JavaScript API to interact with objects and workbook content
             url: ../reference/overview/excel-add-ins-reference-overview.md
+          - text: Use data types in an Excel add-in (preview)
+            url: excel-data-types-overview.md
           - text: Add custom functions to Excel
             url: custom-functions-overview.md           
           - text: Test and debug an Excel add-in

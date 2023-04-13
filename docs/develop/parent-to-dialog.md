@@ -1,13 +1,14 @@
 ---
 title: Alternative ways of passing messages to a dialog box from its host page
-description: 'Learn workarounds to use when the messageChild method is not supported.'
-ms.date: 07/08/2021
-localization_priority: Normal
+description: Learn workarounds to use when the messageChild method isn't supported.
+ms.date: 07/18/2022
+ms.topic: how-to
+ms.localizationpriority: medium
 ---
 
 # Alternative ways of passing messages to a dialog box from its host page
 
-The recommended way to pass data and messages from a parent page to a child dialog box is with the `messageChild` method as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box). If your add-in is running on a platform or host that does not support the [DialogApi 1.2 requirement set](../reference/requirement-sets/dialog-api-requirement-sets.md), there are two other ways that you can pass information to the dialog box.
+The recommended way to pass data and messages from a parent page to a child dialog box is with the `messageChild` method as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box). If your add-in is running on a platform or host that does not support the [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets), there are two other ways that you can pass information to the dialog box.
 
 - Add query parameters to the URL that is passed to `displayDialogAsync`.
 - Store the information somewhere that is accessible to both the host window and dialog box. The two windows do not share a common session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property), but *if they have the same domain* (including port number, if any), they share a common [Local Storage](https://www.w3schools.com/html/html5_webstorage.asp).\*
@@ -26,9 +27,9 @@ localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
 Code in the dialog box reads the item when it's needed, as in the following example.
 
 ```js
-var clientID = localStorage.getItem("clientID");
+const clientID = localStorage.getItem("clientID");
 // You can also use property syntax:
-// var clientID = localStorage.clientID;
+// const clientID = localStorage.clientID;
 ```
 
 ## Use query parameters

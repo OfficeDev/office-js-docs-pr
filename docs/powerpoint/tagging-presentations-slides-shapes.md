@@ -1,16 +1,13 @@
 ---
 title: Use custom tags on presentations, slides, and shapes in PowerPoint
-description: 'Learn how to use tags for custom metadata about presentations, slides, and shapes.'
-ms.date: 04/08/2021
-localization_priority: Normal
+description: Learn how to use tags for custom metadata about presentations, slides, and shapes.
+ms.date: 12/14/2021
+ms.localizationpriority: medium
 ---
 
 # Use custom tags for presentations, slides, and shapes in PowerPoint
 
 An add-in can attach custom metadata, in the form of key-value pairs, called "tags", to presentations, specific slides, and specific shapes on a slide.
-
-> [!IMPORTANT]
-> The APIs for tags are in preview. Please experiment with them in a development or testing environment but don't add them to a production add-in.
 
 There are two main scenarios for using tags:
 
@@ -23,9 +20,9 @@ A tag is a key-value pair, where the value is always of type `string` and is rep
 
 ### Add, update, and delete tags
 
-To add a tag to an object, call the [TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#add_key__value_) method of the parent object's `tags` property. The following code adds two tags to the first slide of a presentation. About this code, note:
+To add a tag to an object, call the [TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#powerpoint-powerpoint-tagcollection-add-member(1)) method of the parent object's `tags` property. The following code adds two tags to the first slide of a presentation. About this code, note:
 
-- The first parameter of the `add` method is the key in the key-value pair. 
+- The first parameter of the `add` method is the key in the key-value pair.
 - The second parameter is the value.
 - The key is in uppercase letters. This isn't strictly mandatory for the `add` method; however, the key is always stored by PowerPoint as uppercase, and *some tag-related methods do require that the key be expressed in uppercase*, so we recommend as a best practice that you always use uppercase in your code for a tag key.
 
@@ -60,10 +57,10 @@ To delete a tag, call the `delete` method on it's parent `TagsCollection` object
 
 Consider the following scenario: Contoso Consulting has a presentation they show to all new customers. But some slides should only be shown to customers that have paid for "premium" status. Before showing the presentation to non-premium customers, they make a copy of it and delete the slides that only premium customers should see. An add-in enables Contoso to tag which slides are for premium customers and to delete these slides when needed. The following list outlines the major coding steps to create this functionality.
 
-1. Create a method that tags the currently selected slide as intended for `Premium` customers. About this code, note:
+1. Create a function that tags the currently selected slide as intended for `Premium` customers. About this code, note:
 
     - The `getSelectedSlideIndex` function is defined in the next step. It returns the 1-based index of the currently selected slide.
-    - The value returned by the `getSelectedSlideIndex` function has to be decremented because the [SlideCollection.getItemAt](/javascript/api/powerpoint/powerpoint.slidecollection#getItemAt_index_) method is 0-based.
+    - The value returned by the `getSelectedSlideIndex` function has to be decremented because the [SlideCollection.getItemAt](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-getitemat-member(1)) method is 0-based.
 
     ```javascript
     async function addTagToSelectedSlide() {
@@ -80,7 +77,7 @@ Consider the following scenario: Contoso Consulting has a presentation they show
 
 2. The following code creates a method to get the index of the selected slide. About this code, note:
 
-    - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) method of the Common JavaScript APIs.
+    - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) method of the Common JavaScript APIs.
     - The call to `getSelectedDataAsync` is embedded in a promise-returning function. For more information about why and how to do this, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` returns an array because multiple slides can be selected. In this scenario, the user has selected just one, so the code gets the first (0th) slide, which is the only one selected.
     - The `index` value of the slide is the 1-based value the user sees beside the slide in the PowerPoint UI thumbnails pane.
@@ -104,7 +101,7 @@ Consider the following scenario: Contoso Consulting has a presentation they show
     }
     ```
 
-3. The following code creates a method to delete slides that are tagged for premium customers. About this code, note:
+3. The following code creates a function to delete slides that are tagged for premium customers. About this code, note:
 
     - Because the `key` and `value` properties of the tags are going to be read after the `context.sync`, they must be loaded first.
 

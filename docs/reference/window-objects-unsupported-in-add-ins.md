@@ -2,7 +2,7 @@
 title: Window objects that are unsupported in Office Add-ins
 description: This article specifies some of the window runtime objects that do not work in Office Add-ins.
 ms.date: 07/10/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Window objects that are unsupported in Office Add-ins

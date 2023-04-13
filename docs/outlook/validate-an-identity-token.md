@@ -1,8 +1,9 @@
 ---
 title: Validate an Outlook add-in identity token
 description: Your Outlook add-in can send you an Exchange user identity token, but before you trust the request you must validate the token to ensure that it came from the Exchange server that you expect.
-ms.date: 07/07/2020
-localization_priority: Normal
+ms.date: 10/11/2021
+ms.topic: how-to
+ms.localizationpriority: medium
 ---
 
 # Validate an Exchange identity token
@@ -13,7 +14,7 @@ We suggest that you use a four-step process to validate the identity token and o
 
 ## Extract the JSON Web Token
 
-The token returned from [getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) is an encoded string representation of the token. In this form, per RFC 7519, all JWTs have three parts, separated by a period. The format is as follows.
+The token returned from [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) is an encoded string representation of the token. In this form, per RFC 7519, all JWTs have three parts, separated by a period. The format is as follows.
 
 ```json
 {header}.{payload}.{signature}
@@ -42,7 +43,15 @@ To validate the token contents, you should check the following:
 
 ### Verify the domain
 
-When implementing the verification logic described previously in this section, you should also require that the domain of the `amurl` claim matches the Autodiscover domain for the user. To do so, you'll need to use or implement Autodiscover. To learn more, you can start with [Autodiscover for Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange).
+When implementing the verification logic described in the previous section, you must also require that the domain of the `amurl` claim matches the Autodiscover domain for the user. To do so, you'll need to use or implement [Autodiscover for Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange).
+
+- For Exchange Online, confirm that the `amurl` is a well-known domain (https://outlook.office365.com:443/autodiscover/metadata/json/1), or belongs to a geo-specific or specialty cloud ([Office 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide&preserve-view=true)).
+
+- If your add-in service has a preexisting configuration with the user's tenant, then you can establish if this `amurl` is trusted.
+
+- For an [Exchange hybrid deployment](/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide&preserve-view=true), use OAuth-based Autodiscover to verify the domain expected for the user. However, while the user will need to authenticate as part of the Autodiscover flow, your add-in should never collect the user's credentials and do basic authentication.
+
+If your add-in can't verify the `amurl` using any of these options, you may choose to have your add-in shut down gracefully with an appropriate notification to the user if authentication is necessary for the add-in's workflow.
 
 ## Validate the identity token signature
 
@@ -97,7 +106,7 @@ After you have the correct public key, verify the signature. The signed data is 
 
 ## Compute the unique ID for an Exchange account
 
-You can create a unique identifier for an Exchange account by concatenating the authentication metadata document URL with the Exchange identifier for the account. When you have this unique identifier, you can use it to create a single sign-on (SSO) system for your Outlook add-in web service. For details about using the unique identifier for SSO, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md).
+Create a unique identifier for an Exchange account by concatenating the authentication metadata document URL with the Exchange identifier for the account. When you have this unique identifier, use it to create a single sign-on (SSO) system for your Outlook add-in web service. For details about using the unique identifier for SSO, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## Use a library to validate the token
 

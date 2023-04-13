@@ -1,17 +1,18 @@
 ---
 title: Fresh style icon guidelines for Office Add-ins
-description: 'Guidelines for using Fresh style icons in Office Add-ins.'
+description: Guidelines for using Fresh style icons in Office Add-ins.
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.topic: best-practice
+ms.localizationpriority: medium
 ---
 
 # Fresh style icon guidelines for Office Add-ins
 
-The Office 2013+ (non-subscription) versions of Office use Microsoft's Fresh style iconography. If you would prefer that your icons match the Monoline style of Microsoft 365, see [Monoline style icon guidelines for Office Add-ins](add-in-icons-monoline.md).
+The Office 2013+ (perpetual) versions of Office use Microsoft's Fresh style iconography. If you would prefer that your icons match the Monoline style of Microsoft 365, see [Monoline style icon guidelines for Office Add-ins](add-in-icons-monoline.md).
 
 ## Office Fresh visual style
 
-The Fresh icons include only essential communicative elements. Non-essential elements including perspective, gradients, and light source are removed. The simplified icons support faster parsing of commands and controls. Follow this style to best fit with Office non-subscription clients.
+The Fresh icons include only essential communicative elements. Non-essential elements including perspective, gradients, and light source are removed. The simplified icons support faster parsing of commands and controls. Follow this style to best fit with Office perpetual clients.
 
 ## Best practices
 
@@ -24,8 +25,8 @@ Follow these guidelines when you create your icons.
 |Reuse common Office visual metaphors such as paintbrush for format or magnifying glass for find.|Don't reuse visual metaphors for different commands. Using the same icon for different behaviors and concepts can cause confusion. |
 |Redraw your icons to make them small or larger. Take the time to redraw cutouts, corners, and rounded edges to maximize line clarity. |Don't resize your icons by shrinking or enlarging in size. This can lead to poor visual quality and unclear actions. Complex icons created at a larger size may lose clarity if resized to be smaller without redraw. |
 |Use a white fill for accessibility. Most objects in your icons will require a white background to be legible across Office UI themes and in high-contrast modes.  |Avoid relying on your logo or brand to communicate what an add-in command does. Brand marks aren't always recognizable at smaller icon sizes and when modifiers are applied. Brand marks often conflict with Office app ribbon icon styles, and can compete for user attention in a saturated environment. |
-|Use the PNG format with a transparent background. ||
-|Avoid localizable content in your icons, including typographic characters, indications of paragraph rags, and question marks. ||
+|Use the PNG format with a transparent background. |*None.*|
+|Avoid localizable content in your icons, including typographic characters, indications of paragraph rags, and question marks. |*None.*|
 
 ## Icon size recommendations and requirements
 
@@ -127,7 +128,7 @@ Office icons are designed to render well in high contrast modes. Foreground elem
 
 ## See also
 
-- [Icon manifest element](../reference/manifest/icon.md)
-- [IconUrl manifest element](../reference/manifest/iconurl.md)
-- [HighResolutionIconUrl manifest element](../reference/manifest/highresolutioniconurl.md)
+- [Icon manifest element](/javascript/api/manifest/icon)
+- [IconUrl manifest element](/javascript/api/manifest/iconurl)
+- [HighResolutionIconUrl manifest element](/javascript/api/manifest/highresolutioniconurl)
 - [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)

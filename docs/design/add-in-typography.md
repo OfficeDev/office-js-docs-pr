@@ -1,8 +1,9 @@
 ---
 title: Typography guidelines for Office Add-ins
-description: 'Learn what typefaces and font sizes to use in Office Add-ins.'
+description: Learn what typefaces and font sizes to use in Office Add-ins.
 ms.date: 05/12/2021
-localization_priority: Normal
+ms.topic: best-practice
+ms.localizationpriority: medium
 ---
 
 # Typography

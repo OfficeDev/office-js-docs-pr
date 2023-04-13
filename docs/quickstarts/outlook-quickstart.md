@@ -1,9 +1,9 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 08/04/2021
+ms.date: 07/13/2022
 ms.prod: outlook
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Build your first Outlook add-in
@@ -12,7 +12,7 @@ In this article, you'll walk through the process of building an Outlook task pan
 
 ## Create the add-in
 
-You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) or Visual Studio. The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor, whereas Visual Studio creates a Visual Studio solution. Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally.
+You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) or Visual Studio. The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor, whereas Visual Studio creates a Visual Studio solution. Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally.
 
 # [Yeoman generator](#tab/yeomangenerator)
 
@@ -20,16 +20,11 @@ You can create an Office Add-in by using the [Yeoman generator for Office Add-in
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
-- [Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)
+[!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt.
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) or your preferred code editor
 
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.
+- Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web
 
 ### Create the add-in project
 
@@ -66,7 +61,10 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ### Update the code
 
-1. In your code editor, open the file **./src/taskpane/taskpane.html** and replace the entire `<main>` element (within the `<body>` element) with the following markup. This new markup adds a label where the script in **./src/taskpane/taskpane.js** will write data.
+1. Open your project in VS Code or your preferred code editor.
+   [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
+1. Open the file **./src/taskpane/taskpane.html** and replace the entire **\<main\>** element (within the **\<body\>** element) with the following markup. This new markup adds a label where the script in **./src/taskpane/taskpane.js** will write data.
 
     ```html
     <main id="app-body" class="ms-welcome__main" style="display: none;">
@@ -78,11 +76,11 @@ The add-in project that you've created with the Yeoman generator contains sample
     </main>
     ```
 
-1. In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the `run` function. This code uses the Office JavaScript API to get a reference to the current message and write its `subject` property value to the task pane.
+1. In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
 
     ```js
     // Get a reference to the current message
-    var item = Office.context.mailbox.item;
+    const item = Office.context.mailbox.item;
 
     // Write message property value to the task pane
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
@@ -90,16 +88,13 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ### Try it out
 
-> [!NOTE]
-> Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running) and your add-in will be sideloaded.
+1. Run the following command in the root directory of your project. When you run this command, the local web server starts and your add-in will be [sideloaded](../outlook/sideload-outlook-add-ins-for-testing.md).
 
     ```command&nbsp;line
     npm start
     ```
-
-1. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.
 
 1. In Outlook, view a message in the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0), or open the message in its own window.
 
@@ -109,6 +104,10 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     > [!NOTE]
     > If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
+
+1. When prompted with the **WebView Stop On Load** dialog box, select **OK**.
+
+    [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
 
 1. Scroll to the bottom of the task pane and choose the **Run** link to write the message subject to the task pane.
 
@@ -132,7 +131,7 @@ Congratulations, you've successfully created your first Outlook task pane add-in
 - Microsoft 365
 
     > [!NOTE]
-    > If you do not have a Microsoft 365 subscription, you can get a free one by signing up for the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+    > If you do not have a Microsoft 365 subscription, you can get a free one by signing up for the [Microsoft 365 developer program](https://aka.ms/M365devprogram).
 
 ### Create the add-in project
 
@@ -155,8 +154,8 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 ### Update the code
 
-1. **MessageRead.html** specifies the HTML that will be rendered in the add-in's task pane. In **MessageRead.html**, replace the `<body>` element with the following markup and save the file.
- 
+1. **MessageRead.html** specifies the HTML that will be rendered in the add-in's task pane. In **MessageRead.html**, replace the **\<body\>** element with the following markup and save the file.
+
     ```HTML
     <body class="ms-font-m ms-welcome">
         <div class="ms-Fabric content-main">
@@ -240,11 +239,11 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 1. Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
 
-1. The `ProviderName` element has a placeholder value. Replace it with your name.
+1. The **\<ProviderName\>** element has a placeholder value. Replace it with your name.
 
-1. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with `My Office Add-in`.
+1. The **DefaultValue** attribute of the **\<DisplayName\>** element has a placeholder. Replace it with `My Office Add-in`.
 
-1. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with `My First Outlook add-in`.
+1. The **DefaultValue** attribute of the **\<Description\>** element has a placeholder. Replace it with `My First Outlook add-in`.
 
 1. Save the file.
 
@@ -271,21 +270,29 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 1. Within the message, locate the ellipsis for the overflow menu containing the add-in's button.
 
-    ![Screenshot of a message window in Outlook on the web with the ellipsis highlighted.](../images/quick-start-button-owa-1.png)
+    ![A message window in Outlook on the web with the ellipsis highlighted.](../images/quick-start-button-owa-1.png)
 
 1. Within the overflow menu, locate the add-in's button.
 
-    ![Screenshot of a message window in Outlook on the web with the add-in button highlighted.](../images/quick-start-button-owa-2.png)
+    ![A message window in Outlook on the web with the add-in button highlighted.](../images/quick-start-button-owa-2.png)
 
 1. Click the button to open the add-in's task pane.
 
-    ![Screenshot of the add-in's task pane in Outlook on the web displaying message properties.](../images/quick-start-task-pane-owa-1.png)
+    ![The add-in's task pane in Outlook on the web displaying message properties.](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
     > If the task pane doesn't load, try to verify by opening it in a browser on the same machine.
+
+## Code samples
+
+- [Outlook "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/outlook-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
 
 ### Next steps
 
 Congratulations, you've successfully created your first Outlook task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
 ---
+
+## See also
+
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

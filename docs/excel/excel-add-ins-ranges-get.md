@@ -1,9 +1,9 @@
 ---
 title: Get a range using the Excel JavaScript API
-description: 'Learn how to retrieve a range using the Excel JavaScript API.'
-ms.date: 04/02/2021
+description: Learn how to retrieve a range using the Excel JavaScript API.
+ms.date: 02/17/2022
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Get a range using the Excel JavaScript API
@@ -17,16 +17,15 @@ This article provides examples that show different ways to get a range within a 
 The following code sample gets the range with address **B2:C5** from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:C5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    
+    let range = sheet.getRange("B2:C5");
     range.load("address");
-
-    return context.sync()
-        .then(function () {
-            console.log(`The address of the range B2:C5 is "${range.address}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    
+    console.log(`The address of the range B2:C5 is "${range.address}"`);
+});
 ```
 
 ## Get range by name
@@ -34,16 +33,15 @@ Excel.run(function (context) {
 The following code sample gets the range named `MyRange` from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("MyRange");
-    range.load("address");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The address of the range "MyRange" is "${range.address}"`);
-        });
-}).catch(errorHandlerFunction);
+    let range = sheet.getRange("MyRange");
+    range.load("address");
+    await context.sync();
+
+    console.log(`The address of the range "MyRange" is "${range.address}"`);
+});
 ```
 
 ## Get used range
@@ -51,16 +49,15 @@ Excel.run(function (context) {
 The following code sample gets the used range from the worksheet named **Sample**, loads its `address` property, and writes a message to the console. The used range is the smallest range that encompasses any cells in the worksheet that have a value or formatting assigned to them. If the entire worksheet is blank, the `getUsedRange()` method returns a range that consists of only the top-left cell.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getUsedRange();
-    range.load("address");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The address of the used range in the worksheet is "${range.address}"`);
-        });
-}).catch(errorHandlerFunction);
+    let range = sheet.getUsedRange();
+    range.load("address");
+    await context.sync();
+    
+    console.log(`The address of the used range in the worksheet is "${range.address}"`);
+});
 ```
 
 ## Get entire range
@@ -68,16 +65,15 @@ Excel.run(function (context) {
 The following code sample gets the entire worksheet range from the worksheet named **Sample**, loads its `address` property, and writes a message to the console.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange();
-    range.load("address");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The address of the entire worksheet range is "${range.address}"`);
-        });
-}).catch(errorHandlerFunction);
+    let range = sheet.getRange();
+    range.load("address");
+    await context.sync();
+    
+    console.log(`The address of the entire worksheet range is "${range.address}"`);
+});
 ```
 
 ## See also

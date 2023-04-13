@@ -1,9 +1,9 @@
 ---
 title: JavaScript API for Project
-description: 'Overview of the Project JavaScript API'
+description: Overview of the Project JavaScript API.
 ms.date: 07/05/2019
 ms.prod: project
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # JavaScript API for Project
@@ -19,4 +19,4 @@ For hands-on experience using the Common API to interact with content in Project
 - [Project add-ins documentation](../../project/index.yml)
 - [Project add-ins overview](../../project/project-add-ins.md)
 - [API Reference documentation](../javascript-api-for-office.md)
-- [Office client application and platform availability for Office Add-ins](../../overview/office-add-in-availability.md)
+- [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)

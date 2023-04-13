@@ -1,9 +1,9 @@
 ---
 title: Excel JavaScript API overview
-description: 'Learn more about the Excel JavaScript API'
-ms.date: 04/05/2021
+description: Learn more about the Excel JavaScript API.
+ms.date: 02/23/2022
 ms.prod: excel
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Excel JavaScript API overview
@@ -31,6 +31,7 @@ Each major Excel API feature has an article or set of articles exploring what th
 * [Conditional formatting](../../excel/excel-add-ins-conditional-formatting.md)
 * [Custom functions](../../excel/custom-functions-overview.md)
 * [Data validation](../../excel/excel-add-ins-data-validation.md)
+* [Data types](../../excel/excel-data-types-overview.md)
 * [Events](../../excel/excel-add-ins-events.md)
 * [PivotTables](../../excel/excel-add-ins-pivottables.md)
 * [Ranges](../../excel/excel-add-ins-ranges-get.md) and [Cells](../../excel/excel-add-ins-cells.md)
@@ -51,5 +52,5 @@ Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quick
 * [Excel add-ins documentation](../../excel/index.yml)
 * [Excel add-ins overview](../../excel/excel-add-ins-overview.md)
 * [Excel JavaScript API reference](/javascript/api/excel)
-* [Office client application and platform availability for Office Add-ins](../../overview/office-add-in-availability.md)
+* [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)
 * [Using the application-specific API model](../../develop/application-specific-api-model.md)

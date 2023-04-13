@@ -1,9 +1,9 @@
 ---
 title: Build your first PowerPoint task pane add-in
 description: Learn how to build a simple PowerPoint task pane add-in by using the Office JS API.
-ms.date: 08/04/2021
+ms.date: 06/10/2022
 ms.prod: powerpoint
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Build your first PowerPoint task pane add-in
@@ -15,8 +15,6 @@ In this article, you'll walk through the process of building a PowerPoint task p
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
 # [Yeoman generator](#tab/yeomangenerator)
-
-[!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
 ### Prerequisites
 
@@ -52,8 +50,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 2. Complete the following steps to start the local web server and sideload your add-in.
 
-    > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
@@ -68,13 +65,9 @@ After you complete the wizard, the generator creates the project and installs su
         npm start
         ```
 
-    - To test your add-in in PowerPoint on a browser, run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+    - To test your add-in in PowerPoint on a browser, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a PowerPoint document on your OneDrive or a SharePoint library to which you have permissions.
 
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        To use your add-in, open a new document in PowerPoint on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 3. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
@@ -249,6 +242,10 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
+## Code samples
+
+- [PowerPoint "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
+
 ### Next steps
 
 Congratulations, you've successfully created a PowerPoint task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
@@ -259,3 +256,4 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

@@ -1,9 +1,10 @@
 ---
 title: Beginner's guide to Office Add-ins
 description:  A recommended path for beginners through the learning resources for Office Add-ins.
-ms.date: 02/12/2021
+ms.date: 11/10/2022
+ms.topic: get-started
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Beginner's guide
@@ -24,6 +25,7 @@ We know you're eager to start coding, but there are some things about Office Add
 
 - [Office Add-ins Platform Overview](office-add-ins.md): Find out what Office Web Add-ins are and how they differ from older ways of extending Office, such as VSTO add-ins.
 - [Develop Office Add-ins](../develop/develop-overview.md): Get an overview of Office Add-in development and lifecycle including tooling, creating an add-in UI, and using the JavaScript APIs to interact with the Office document.
+- ["Hello world" samples](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world): Learn how to build the simplest Office Add-in with only a manifest, HTML web page, and a logo. These samples will help you understand the fundamental parts of an Office Add-in.
 
 There are a lot of links in those articles, but if you're a beginner with Office Add-ins, we recommend that you come back here when you've read them and continue with the next section.
 
@@ -40,7 +42,7 @@ You can't learn to drive by reading the owner's manual, so start coding with thi
 
 ## Step 4: Understand the JavaScript library
 
-First, get the big picture of the Office JavaScript library with this tutorial from Microsoft Learn: [Understand the Office JavaScript APIs](/learn/modules/understand-office-javascript-apis/index).
+First, get the big picture of the Office JavaScript library with this tutorial from Microsoft Learn training: [Understand the Office JavaScript APIs](/training/modules/understand-office-javascript-apis/index).
 
 Then explore the Office JavaScript APIs with our [the Script Lab tool](explore-with-script-lab.md) -- a sandbox for running and exploring the APIs.
 

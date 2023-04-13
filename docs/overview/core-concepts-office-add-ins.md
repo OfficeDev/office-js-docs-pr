@@ -2,9 +2,9 @@
 layout: LandingPage
 ms.topic: landing-page
 title: Development lifecycle overview
-description: 'Learn about the planning, developing, testing, and publishing lifecycle events.'
+description: Learn about the planning, developing, testing, and publishing lifecycle events.
 ms.date: 05/25/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Development lifecycle overview

@@ -1,11 +1,9 @@
 ---
 title: Host an Office Add-in on Microsoft Azure | Microsoft Docs
 description: Learn how to deploy an add-in web app to Azure and sideload the add-in for testing in an Office client application.
-ms.date: 07/07/2020
-localization_priority: Normal
+ms.date: 01/23/2023
+ms.localizationpriority: medium
 ---
-
-
 
 # Host an Office Add-in on Microsoft Azure
 
@@ -76,9 +74,9 @@ To create the web app using the Azure portal, complete the following steps.
 3. On the **App Service** page, select **Add**. Provide this information:
 
       - Choose the **Subscription** to use for creating this site.
-      
+
       - Choose the **Resource Group** for your site. If you create a new group, you also need to name it.
-      
+
       - Enter a unique **App name** for your site. Azure verifies that the site name is unique across the azureweb apps.net domain.
 
       - Choose whether to publish using code or a docker container.
@@ -128,7 +126,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 4. Visual Studio publishes the web project for your Office Add-in to your Azure web app. When Visual Studio finishes publishing the web project, your browser opens and shows a webpage with the text "Your App Service app has been created." This is the current default page for the web app.
 
-5. Copy the root URL (for example: https://YourDomain.azurewebsites.net); you'll need it when you edit the add-in manifest file later in this article.
+5. Copy the root URL (for example: `https://YourDomain.azurewebsites.net`); you'll need it when you edit the add-in manifest file later in this article.
 
 ## Step 6: Edit and deploy the add-in XML manifest file
 
@@ -136,7 +134,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 2. Expand the Office Add-in project (for example WordWebAddIn), right-click the manifest folder, and then choose **Open**. The add-in XML manifest file opens.
 
-3. In the XML manifest file, find and replace all instances of "~remoteAppUrl" with the root URL of the add-in web app on Azure. This is the URL that you copied earlier after you published the add-in web app to Azure (for example: https://YourDomain.azurewebsites.net). 
+3. In the XML manifest file, find and replace all instances of "~remoteAppUrl" with the root URL of the add-in web app on Azure. This is the URL that you copied earlier after you published the add-in web app to Azure (for example: `https://YourDomain.azurewebsites.net`).
 
 4. Choose **File** and then choose **Save All**. Next, Copy the add-in XML manifest file (for example, WordWebAddIn.xml).
 
@@ -155,6 +153,10 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 5. On the ribbon of the **Home** tab, choose the **Show Taskpane** button. The add-in opens in a task pane to the right of the current document.
 
 6. Verify that the add-in works by selecting some text in the document and choosing the **Highlight!** button in the task pane.
+
+## Deploy updates
+
+[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
 
 ## See also
 

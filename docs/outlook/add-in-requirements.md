@@ -1,8 +1,8 @@
 ---
 title: Outlook add-in requirements
-description: 'For Outlook add-ins to load and function properly, there are a number of requirements for both the servers and the clients.'
+description: For Outlook add-ins to load and function properly, there are a number of requirements for both the servers and the clients.
 ms.date: 02/09/2021
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Outlook add-in requirements
@@ -39,5 +39,5 @@ Add-in files (HTML, JavaScript, etc.) can be hosted on any web server platform d
 ## See also
 
 - [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md)
-- [Office client application and platform availability for Office Add-ins (Outlook section)](../overview/office-add-in-availability.md#outlook)
-- [Outlook JavaScript API requirement set support](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+- [Office client application and platform availability for Office Add-ins (Outlook section)](/javascript/api/requirement-sets#outlook)
+- [Outlook JavaScript API requirement set support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

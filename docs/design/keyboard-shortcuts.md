@@ -1,7 +1,8 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
-description: 'Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.'
-ms.date: 07/08/2021
+description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
+ms.date: 11/22/2021
+ms.topic: how-to
 localization_priority: Normal
 ---
 
@@ -12,13 +13,13 @@ Keyboard shortcuts, also known as key combinations, enable your add-in's users t
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> To start with a working version of an add-in with keyboard shortcuts already enabled, clone and run the sample [Excel Keyboard Shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts). When you are ready to add keyboard shortcuts to your own add-in, continue with this article.
+> To start with a working version of an add-in with keyboard shortcuts already enabled, clone and run the sample [Excel Keyboard Shortcuts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts). When you are ready to add keyboard shortcuts to your own add-in, continue with this article.
 
 There are three steps to add keyboard shortcuts to an add-in.
 
 1. [Configure the add-in's manifest](#configure-the-manifest).
 1. [Create or edit the shortcuts JSON file](#create-or-edit-the-shortcuts-json-file) to define actions and their keyboard shortcuts.
-1. [Add one or more runtime calls](#create-a-mapping-of-actions-to-their-functions) of the [Office.actions.associate](/javascript/api/office/office.actions#associate) API to map a function to each action.
+1. [Add one or more runtime calls](#create-a-mapping-of-actions-to-their-functions) of the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map a function to each action.
 
 ## Configure the manifest
 
@@ -26,11 +27,11 @@ There are two small changes to the manifest to make. One is to enable the add-in
 
 ### Configure the add-in to use a shared runtime
 
-Adding custom keyboard shortcuts requires your add-in to use the shared runtime. For more information, [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Adding custom keyboard shortcuts requires your add-in to use the [shared runtime](../testing/runtimes.md#shared-runtime). For more information, [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ### Link the mapping file to the manifest
 
-Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step.
+Immediately *below* (not inside) the **\<VersionOverrides\>** element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of a JSON file in your project that you will create in a later step.
 
 ```xml
     ...
@@ -41,7 +42,7 @@ Immediately *below* (not inside) the `<VersionOverrides>` element in the manifes
 
 ## Create or edit the shortcuts JSON file
 
-Create a JSON file in your project. Be sure the path of the file matches the location you specified for the `Url` attribute of the [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. This file will describe your keyboard shortcuts, and the actions that they will invoke.
+Create a JSON file in your project. Be sure the path of the file matches the location you specified for the `Url` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. This file will describe your keyboard shortcuts, and the actions that they will invoke.
 
 1. Inside the JSON file, there are two arrays. The actions array will contain objects that define the actions to be invoked and the shortcuts array will contain objects that map key combinations onto actions. Here is an example.
     ```json
@@ -84,8 +85,8 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
 
 ## Create a mapping of actions to their functions
 
-1. In your project, open the JavaScript file loaded by your HTML page in the `<FunctionFile>` element.
-1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#associate) API to map each action that you specified in the JSON file to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
+1. In your project, open the JavaScript file loaded by your HTML page in the **\<FunctionFile\>** element.
+1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map each action that you specified in the JSON file to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
 
     - The first parameter is one of the actions from the JSON file.
     - The second parameter is the function that runs when a user presses the key combination that is mapped to the action in the JSON file.
@@ -97,7 +98,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     ```
 
 1. To continue the example, use `'SHOWTASKPANE'` as the first parameter.
-1. For the body of the function, use the [Office.addin.showTaskpane](/javascript/api/office/office.addin#showAsTaskpane__) method to open the add-in's task pane. When you are done, the code should look like the following:
+1. For the body of the function, use the [Office.addin.showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) method to open the add-in's task pane. When you are done, the code should look like the following:
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -111,7 +112,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     });
     ```
 
-1. Add a second call of `Office.actions.associate` function to map the `HIDETASKPANE` action to a function that calls [Office.addin.hide](/javascript/api/office/office.addin#hide__). The following is an example.
+1. Add a second call of `Office.actions.associate` function to map the `HIDETASKPANE` action to a function that calls [Office.addin.hide](/javascript/api/office/office.addin#office-office-addin-hide-member(1)). The following is an example.
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -125,7 +126,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     });
     ```
 
-Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Alt+Up** and **Ctrl+Alt+Down**. The same behavior is shown in the [Excel keyboard shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) sample in the Office Add-ins PnP repo in GitHub.
+Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Alt+Up** and **Ctrl+Alt+Down**. The same behavior is shown in the [Excel keyboard shortcuts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) sample in the Office Add-ins PnP repo in GitHub.
 
 ## Details and restrictions
 
@@ -197,9 +198,9 @@ The complete schema for the shortcuts JSON is at [extended-manifest.schema.json]
 
 ## Avoid key combinations in use by other add-ins
 
-There are many keyboard shortcuts that are already in use by Office. Avoid registering keyboard shortcuts for your add-in that are already in use, however there may be some instances where it is necessary to override existing keyboard shortcuts or handle conflicts between multiple add-ins that have registered the same keyboard shortcut.
+There are many keyboard shortcuts that are already in use by Office. Avoid registering keyboard shortcuts for your add-in that are already in use, however there may be some instances where it's necessary to override existing keyboard shortcuts or handle conflicts between multiple add-ins that have registered the same keyboard shortcut.
 
-In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut, note that the action name that is displayed in this dialog is the `name` property in the action object in `shortcuts.json` file.
+In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut. Note that the text for the add-in option that is displayed in this dialog comes from the `name` property in the action object in `shortcuts.json` file.
 
 ![Illustration showing a conflict modal with two different actions for a single shortcut.](../images/add-in-shortcut-conflict-modal.png)
 
@@ -210,7 +211,7 @@ The user can select which action the keyboard shortcut will take. After making t
 For the best user experience, we recommend that you minimize conflicts with Excel with these good practices.
 
 - Use only keyboard shortcuts with the following pattern: **Ctrl+Shift+Alt+*x***, where *x* is some other key.
-- If you need more keyboard shortcuts, check the [list of Excel keyboard shortcuts](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f), and avoid using any of them in your add-in.
+- If you need more keyboard shortcuts, check the [list of Excel keyboard shortcuts](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f), and avoid using any of them in your add-in.
 - When the keyboard focus is inside the add-in UI, **Ctrl+Spacebar** and **Ctrl+Shift+F10** will not work as these are essential accessibility shortcuts.
 - On a Windows or Mac computer, if the "Reset Office Add-ins shortcut preferences" command is not available on the search menu, the user can manually add the command to the ribbon by customizing the ribbon through the context menu.
 
@@ -243,7 +244,7 @@ In the following example, the `default` key is the fallback key for any platform
 
 ## Localize the keyboard shortcuts JSON
 
-If your add-in supports multiple locales, you'll need to localize the `name` property of the action objects. Also, if any of the locales that the add-in supports have alphabets or different writing systems, and hence different keyboards, you may need to localize the shortcuts also. For information about how to localize the keyboard shortcuts JSON, see [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
+If your add-in supports multiple locales, you'll need to localize the `name` property of the action objects. Also, if any of the locales that the add-in supports have different alphabets or writing systems, and hence different keyboards, you may need to localize the shortcuts also. For information about how to localize the keyboard shortcuts JSON, see [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
 
 ## Browser shortcuts that cannot be overridden
 
@@ -256,7 +257,67 @@ When using custom keyboard shortcuts on the web, some keyboard shortcuts that ar
 - Ctrl+W
 - Ctrl+PgUp/PgDn
 
+## Enable custom keyboard shortcuts for specific users
+
+Your add-in can enable users to reassign the actions of the add-in to alternate keyboard combinations.
+
+> [!NOTE]
+> The APIs described in this section require the [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) requirement set.
+
+Use the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) method to assign a user's custom keyboard combinations to your add-ins actions. The method takes a parameter of type `{[actionId:string]: string|null}`, where the `actionId`s are a subset of the action IDs that must be defined in the add-in's extended manifest JSON. The values are the user's preferred key combinations. The value can also be `null`, which will remove any customization for that `actionId` and revert back to the default keyboard combination that is defined in the add-in's extended manifest JSON.
+
+If the user is logged into Office, the custom combinations are saved in the user's roaming settings per platform. Customizing shortcuts are currently not supported for anonymous users.
+
+```javascript
+const userCustomShortcuts = {
+    SHOWTASKPANE:"CTRL+SHIFT+1", 
+    HIDETASKPANE:"CTRL+SHIFT+2"
+};
+Office.actions.replaceShortcuts(userCustomShortcuts)
+    .then(function () {
+        console.log("Successfully registered.");
+    })
+    .catch(function (ex) {
+        if (ex.code == "InvalidOperation") {
+            console.log("ActionId does not exist or shortcut combination is invalid.");
+        }
+    });
+```
+
+To find out what shortcuts are already in use for the user, call the [Office.actions.getShortcuts](/javascript/api/office/office.actions#office-office-actions-getshortcuts-member) method. This method returns an object of type `[actionId:string]:string|null}`, where the values represent the current keyboard combination the user must use to invoke the specified action. The values can come from three different sources:
+
+- If there was a conflict with the shortcut and the user has chosen to use a different action (either native or another add-in) for that keyboard combination, the value returned will be `null` since the shortcut has been overridden and there is no keyboard combination the user can currently use to invoke that add-in action.
+- If the shortcut has been customized using the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) method, the value returned will be the customized keyboard combination.
+- If the shortcut has not been overridden or customized, it will return the value from the add-in's extended manifest JSON.
+
+The following is an example.
+
+```javascript
+Office.actions.getShortcuts()
+    .then(function (userShortcuts) {
+       for (const action in userShortcuts) {
+           let shortcut = userShortcuts[action];
+           console.log(action + ": " + shortcut);
+       }
+    });
+
+```
+
+As described in [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins), it is a good practice to avoid conflicts in shortcuts. To discover if one or more key combinations are already in use pass them as an array of strings to the [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member) method. The method returns a report containing key combinations that are already in use in the form of an array of objects of type `{shortcut: string, inUse: boolean}`. The `shortcut` property is a key combination, such as "CTRL+SHIFT+1". If the combination is already registered to another action, the `inUse` property is set to `true`. For example, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. The following code snippet is an example:
+
+```javascript
+const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];
+Office.actions.areShortcutsInUse(shortcuts)
+    .then(function (inUseArray) {
+        const availableShortcuts = inUseArray.filter(function (shortcut) { return !shortcut.inUse; });
+        console.log(availableShortcuts);
+        const usedShortcuts = inUseArray.filter(function (shortcut) { return shortcut.inUse; });
+        console.log(usedShortcuts);
+    });
+
+```
+
 ## Next Steps
 
-- See the [Excel keyboard shortcuts](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) sample add-in.
+- See the [Excel keyboard shortcuts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) sample add-in.
 - Get an overview of working with extended overrides in [Work with extended overrides of the manifest](../develop/extended-overrides.md).

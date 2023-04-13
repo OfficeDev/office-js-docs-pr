@@ -1,8 +1,8 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
-description: 'Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.'
-ms.date: 07/02/2021
-localization_priority: Normal
+description: Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.
+ms.date: 04/25/2022
+ms.localizationpriority: medium
 ---
 
 # Work with worksheets using the Excel JavaScript API
@@ -17,22 +17,22 @@ This article provides code samples that show how to perform common tasks with wo
 The following code sample gets the collection of worksheets, loads the `name` property of each worksheet, and writes a message to the console.
 
 ```js
-Excel.run(function (context) {
-    var sheets = context.workbook.worksheets;
+await Excel.run(async (context) => {
+    let sheets = context.workbook.worksheets;
     sheets.load("items/name");
 
-    return context.sync()
-        .then(function () {
-            if (sheets.items.length > 1) {
-                console.log(`There are ${sheets.items.length} worksheets in the workbook:`);
-            } else {
-                console.log(`There is one worksheet in the workbook:`);
-            }
-            sheets.items.forEach(function (sheet) {
-              console.log(sheet.name);
-            });
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    
+    if (sheets.items.length > 1) {
+        console.log(`There are ${sheets.items.length} worksheets in the workbook:`);
+    } else {
+        console.log(`There is one worksheet in the workbook:`);
+    }
+
+    sheets.items.forEach(function (sheet) {
+        console.log(sheet.name);
+    });
+});
 ```
 
 > [!NOTE]
@@ -43,15 +43,13 @@ Excel.run(function (context) {
 The following code sample gets the active worksheet, loads its `name` property, and writes a message to the console.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The active worksheet is "${sheet.name}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The active worksheet is "${sheet.name}"`);
+});
 ```
 
 ## Set the active worksheet
@@ -59,16 +57,14 @@ Excel.run(function (context) {
 The following code sample sets the active worksheet to the worksheet named **Sample**, loads its `name` property, and writes a message to the console. If there is no worksheet with that name, the `activate()` method throws an `ItemNotFound` error.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
     sheet.activate();
     sheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The active worksheet is "${sheet.name}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The active worksheet is "${sheet.name}"`);
+});
 ```
 
 ## Reference worksheets by relative position
@@ -80,15 +76,13 @@ These examples show how to reference a worksheet by its relative position.
 The following code sample gets the first worksheet in the workbook, loads its `name` property, and writes a message to the console.
 
 ```js
-Excel.run(function (context) {
-    var firstSheet = context.workbook.worksheets.getFirst();
+await Excel.run(async (context) => {
+    let firstSheet = context.workbook.worksheets.getFirst();
     firstSheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The name of the first worksheet is "${firstSheet.name}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The name of the first worksheet is "${firstSheet.name}"`);
+});
 ```
 
 ### Get the last worksheet
@@ -96,15 +90,13 @@ Excel.run(function (context) {
 The following code sample gets the last worksheet in the workbook, loads its `name` property, and writes a message to the console.
 
 ```js
-Excel.run(function (context) {
-    var lastSheet = context.workbook.worksheets.getLast();
+await Excel.run(async (context) => {
+    let lastSheet = context.workbook.worksheets.getLast();
     lastSheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The name of the last worksheet is "${lastSheet.name}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The name of the last worksheet is "${lastSheet.name}"`);
+});
 ```
 
 ### Get the next worksheet
@@ -112,16 +104,14 @@ Excel.run(function (context) {
 The following code sample gets the worksheet that follows the active worksheet in the workbook, loads its `name` property, and writes a message to the console. If there is no worksheet after the active worksheet, the `getNext()` method throws an `ItemNotFound` error.
 
 ```js
- Excel.run(function (context) {
-    var currentSheet = context.workbook.worksheets.getActiveWorksheet();
-    var nextSheet = currentSheet.getNext();
+await Excel.run(async (context) => {
+    let currentSheet = context.workbook.worksheets.getActiveWorksheet();
+    let nextSheet = currentSheet.getNext();
     nextSheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The name of the sheet that follows the active worksheet is "${nextSheet.name}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The name of the sheet that follows the active worksheet is "${nextSheet.name}"`);
+});
 ```
 
 ### Get the previous worksheet
@@ -129,16 +119,14 @@ The following code sample gets the worksheet that follows the active worksheet i
 The following code sample gets the worksheet that precedes the active worksheet in the workbook, loads its `name` property, and writes a message to the console. If there is no worksheet before the active worksheet, the `getPrevious()` method throws an `ItemNotFound` error.
 
 ```js
-Excel.run(function (context) {
-    var currentSheet = context.workbook.worksheets.getActiveWorksheet();
-    var previousSheet = currentSheet.getPrevious();
+await Excel.run(async (context) => {
+    let currentSheet = context.workbook.worksheets.getActiveWorksheet();
+    let previousSheet = currentSheet.getPrevious();
     previousSheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The name of the sheet that precedes the active worksheet is "${previousSheet.name}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The name of the sheet that precedes the active worksheet is "${previousSheet.name}"`);
+});
 ```
 
 ## Add a worksheet
@@ -146,17 +134,15 @@ Excel.run(function (context) {
 The following code sample adds a new worksheet named **Sample** to the workbook, loads its `name` and `position` properties, and writes a message to the console. The new worksheet is added after all existing worksheets.
 
 ```js
-Excel.run(function (context) {
-    var sheets = context.workbook.worksheets;
+await Excel.run(async (context) => {
+    let sheets = context.workbook.worksheets;
 
-    var sheet = sheets.add("Sample");
+    let sheet = sheets.add("Sample");
     sheet.load("name, position");
 
-    return context.sync()
-        .then(function () {
-            console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
+});
 ```
 
 ### Copy an existing worksheet
@@ -169,11 +155,11 @@ Excel.run(function (context) {
 The following code sample copies the current worksheet and inserts the new sheet directly after the current worksheet.
 
 ```js
-Excel.run(function (context) {
-    var myWorkbook = context.workbook;
-    var sampleSheet = myWorkbook.worksheets.getActiveWorksheet();
-    var copiedSheet = sampleSheet.copy(Excel.WorksheetPositionType.after, sampleSheet);
-    return context.sync();
+await Excel.run(async (context) => {
+    let myWorkbook = context.workbook;
+    let sampleSheet = myWorkbook.worksheets.getActiveWorksheet();
+    let copiedSheet = sampleSheet.copy(Excel.WorksheetPositionType.after, sampleSheet);
+    await context.sync();
 });
 ```
 
@@ -182,24 +168,22 @@ Excel.run(function (context) {
 The following code sample deletes the final worksheet in the workbook (as long as it's not the only sheet in the workbook) and writes a message to the console.
 
 ```js
-Excel.run(function (context) {
-    var sheets = context.workbook.worksheets;
+await Excel.run(async (context) => {
+    let sheets = context.workbook.worksheets;
     sheets.load("items/name");
 
-    return context.sync()
-        .then(function () {
-            if (sheets.items.length === 1) {
-                console.log("Unable to delete the only worksheet in the workbook");
-            } else {
-                var lastSheet = sheets.items[sheets.items.length - 1];
+    await context.sync();
+    if (sheets.items.length === 1) {
+        console.log("Unable to delete the only worksheet in the workbook");
+    } else {
+        let lastSheet = sheets.items[sheets.items.length - 1];
 
-                console.log(`Deleting worksheet named "${lastSheet.name}"`);
-                lastSheet.delete();
+        console.log(`Deleting worksheet named "${lastSheet.name}"`);
+        lastSheet.delete();
 
-                return context.sync();
-            };
-        });
-}).catch(errorHandlerFunction);
+        await context.sync();
+    }
+});
 ```
 
 > [!NOTE]
@@ -210,12 +194,12 @@ Excel.run(function (context) {
 The following code sample changes the name of the active worksheet to **New Name**.
 
 ```js
-Excel.run(function (context) {
-    var currentSheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let currentSheet = context.workbook.worksheets.getActiveWorksheet();
     currentSheet.name = "New Name";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## Move a worksheet
@@ -223,18 +207,15 @@ Excel.run(function (context) {
 The following code sample moves a worksheet from the last position in the workbook to the first position in the workbook.
 
 ```js
-Excel.run(function (context) {
-    var sheets = context.workbook.worksheets;
+await Excel.run(async (context) => {
+    let sheets = context.workbook.worksheets;
     sheets.load("items");
+    await context.sync();
 
-    return context.sync()
-        .then(function () {
-            var lastSheet = sheets.items[sheets.items.length - 1];
-            lastSheet.position = 0;
-
-            return context.sync();
-        });
-}).catch(errorHandlerFunction);
+    let lastSheet = sheets.items[sheets.items.length - 1];
+    lastSheet.position = 0;
+    await context.sync();
+});
 ```
 
 ## Set worksheet visibility
@@ -246,16 +227,14 @@ These examples show how to set the visibility of a worksheet.
 The following code sample sets the visibility of worksheet named **Sample** to hidden, loads its `name` property, and writes a message to the console.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
     sheet.visibility = Excel.SheetVisibility.hidden;
     sheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`Worksheet with name "${sheet.name}" is hidden`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`Worksheet with name "${sheet.name}" is hidden`);
+});
 ```
 
 ### Unhide a worksheet
@@ -263,16 +242,14 @@ Excel.run(function (context) {
 The following code sample sets the visibility of worksheet named **Sample** to visible, loads its `name` property, and writes a message to the console.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
     sheet.visibility = Excel.SheetVisibility.visible;
     sheet.load("name");
 
-    return context.sync()
-        .then(function () {
-            console.log(`Worksheet with name "${sheet.name}" is visible`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`Worksheet with name "${sheet.name}" is visible`);
+});
 ```
 
 ## Get a single cell within a worksheet
@@ -280,16 +257,14 @@ Excel.run(function (context) {
 The following code sample gets the cell that is located in row 2, column 5 of the worksheet named **Sample**, loads its `address` and `values` properties, and writes a message to the console. The values that are passed into the `getCell(row: number, column:number)` method are the zero-indexed row number and column number for the cell that is being retrieved.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var cell = sheet.getCell(1, 4);
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let cell = sheet.getCell(1, 4);
     cell.load("address, values");
 
-    return context.sync()
-        .then(function() {
-            console.log(`The value of the cell in row 2, column 5 is "${cell.values[0][0]}" and the address of that cell is "${cell.address}"`);
-        })
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(`The value of the cell in row 2, column 5 is "${cell.values[0][0]}" and the address of that cell is "${cell.address}"`);
+});
 ```
 
 ## Detect data changes
@@ -302,8 +277,8 @@ The `WorksheetChangedEventArgs` object provides information about the changes an
 // This function would be used as an event handler for the Worksheet.onChanged event.
 function onWorksheetChanged(eventArgs) {
     Excel.run(function (context) {
-        var details = eventArgs.details;
-        var address = eventArgs.address;
+        let details = eventArgs.details;
+        let address = eventArgs.address;
 
         // Print the before and after types and values to the console.
         console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
@@ -317,34 +292,36 @@ function onWorksheetChanged(eventArgs) {
 
 Your add-in can track changes to formulas in a worksheet. This is useful when a worksheet is connected to an external database. When the formula changes in the worksheet, the event in this scenario triggers corresponding updates in the external database.
 
-To detect changes to formulas, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the [onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged) event of a worksheet. Event handlers for the `onFormulaChanged` event receive a [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) object when the event fires.
+To detect changes to formulas, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the [onFormulaChanged](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onformulachanged-member) event of a worksheet. Event handlers for the `onFormulaChanged` event receive a [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) object when the event fires.
 
 > [!IMPORTANT]
 > The `onFormulaChanged` event detects when a formula itself changes, not the data value resulting from the formula's calculation.
 
-The following code sample shows how to register the `onFormulaChanged` event handler, use the `WorksheetFormulaChangedEventArgs` object to retrieve the [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails) array of the changed formula, and then print out details about the changed formula with the [FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) properties.
+The following code sample shows how to register the `onFormulaChanged` event handler, use the `WorksheetFormulaChangedEventArgs` object to retrieve the [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#excel-excel-worksheetformulachangedeventargs-formuladetails-member) array of the changed formula, and then print out details about the changed formula with the [FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) properties.
 
 > [!NOTE]
 > This code sample only works when a single formula is changed.
 
 ```js
-Excel.run(function (context) {
-    // Retrieve the worksheet named "Sample".
-    var sheet = context.workbook.worksheets.getItem("Sample");
+async function run() {
+    await Excel.run(async (context) => {
+        // Retrieve the worksheet named "Sample".
+        let sheet = context.workbook.worksheets.getItem("Sample");
+    
+        // Register the formula changed event handler for this worksheet.
+        sheet.onFormulaChanged.add(formulaChangeHandler);
+    
+        await context.sync();
+    });
+}
 
-    // Register the formula changed event handler for this worksheet.
-    sheet.onFormulaChanged.add(formulaChangeHandler);
-
-    return context.sync();
-});
-
-function formulaChangeHandler(event) {
-    Excel.run(function (context) {
+async function formulaChangeHandler(event) {
+    await Excel.run(async (context) => {
         // Retrieve details about the formula change event.
         // Note: This method assumes only a single formula is changed at a time. 
-        var cellAddress = event.formulaDetails[0].cellAddress;
-        var previousFormula = event.formulaDetails[0].previousFormula;
-        var source = event.source;
+        let cellAddress = event.formulaDetails[0].cellAddress;
+        let previousFormula = event.formulaDetails[0].previousFormula;
+        let source = event.source;
     
         // Print out the change event details.
         console.log(
@@ -380,14 +357,14 @@ If a left-to-right sort is performed on "**Quinces**" (the values in "**4**") on
 The following code sample shows how to register an event handler for the `Worksheet.onRowSorted` event. The handler's callback clears the fill color for the range, then fills the cells of the moved rows.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // This will fire whenever a row has been moved as the result of a sort action.
-    sheet.onRowSorted.add(function (event) {
-        return Excel.run(function (context) {
+    sheet.onRowSorted.add(async (event) => {
+        await Excel.run(async (context) => {
             console.log("Row sorted: " + event.address);
-            var sheet = context.workbook.worksheets.getActiveWorksheet();
+            let sheet = context.workbook.worksheets.getActiveWorksheet();
 
             // Clear formatting for section, then highlight the sorted area.
             sheet.getRange("A1:E5").format.fill.clear();
@@ -395,35 +372,36 @@ Excel.run(function (context) {
                 sheet.getRanges(event.address).format.fill.color = "yellow";
             }
 
-            return context.sync();
+            await context.sync();
         });
     });
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## Find all cells with matching text
 
-The `Worksheet` object has a `find` method to search for a specified string within the worksheet. It returns a `RangeAreas` object, which is a collection of `Range` objects that can be edited all at once. The following code sample finds all cells with values equal to the string **Complete** and colors them green. Note that `findAll` will throw an `ItemNotFound` error if the specified string doesn't exist in the worksheet. If you expect that the specified string may not exist in the worksheet, use the [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) method instead, so your code gracefully handles that scenario.
+The `Worksheet` object has a [`findAll`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-findall-member(1)) method to search for a specified string within the worksheet. It returns a `RangeAreas` object, which is a collection of `Range` objects that can be edited all at once.
+
+The following code sample finds all cells with values equal to the string **Complete** and colors them green. Note that `findAll` throws an `ItemNotFound` error if the specified string doesn't exist in the worksheet. If you're uncertain whether the specified string exists in the worksheet, use the [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) method to gracefully handle that scenario.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var foundRanges = sheet.findAll("Complete", {
-        completeMatch: true, // findAll will match the whole cell value
-        matchCase: false // findAll will not match case
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let foundRanges = sheet.findAll("Complete", {
+        completeMatch: true, /* Match the whole cell value, not any part of the text. */
+        matchCase: false /* Make the search case-insensitive. */
     });
 
-    return context.sync()
-        .then(function() {
-            foundRanges.format.fill.color = "green"
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    foundRanges.format.fill.color = "green";
+});
 ```
 
 > [!NOTE]
-> This section describes how to find cells and ranges using the `Worksheet` object's functions. More range retrieval information can be found in object-specific articles.
+> This section describes how to find cells and ranges using the `Worksheet` object's methods. More range retrieval information can be found in object-specific articles.
+>
 > - For examples that show how to get a range within a worksheet using the `Range` object, see [Get a range using the Excel JavaScript API](excel-add-ins-ranges-get.md).
 > - For examples that show how to get ranges from a `Table` object, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md).
 > - For examples that show how to search a large range for multiple sub-ranges based on cell characteristics, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
@@ -439,34 +417,52 @@ An [AutoFilter](/javascript/api/excel/excel.autofilter) applies data filters acr
 The first code sample shows how to add a filter to the worksheet's used range. This filter will hide entries that are not in the top 25%, based on the values in column **3**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var farmData = sheet.getUsedRange();
+// This method adds a custom AutoFilter to the active worksheet
+// and applies the filter to a column of the used range.
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let farmData = sheet.getUsedRange();
 
     // This filter will only show the rows with the top 25% of values in column 3.
     sheet.autoFilter.apply(farmData, 3, { criterion1: "25", filterOn: Excel.FilterOn.topPercent });
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 The next code sample shows how to refresh the auto-filter using the `reapply` method. This should be done when the data in the range changes.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+// This method refreshes the AutoFilter to ensure that changes are captured.
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.autoFilter.reapply();
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
+```
+
+The following code sample shows how to use the `clearColumnCriteria` method to clear the auto-filter from only one column, while leaving the filter active on other columns.
+
+```js
+// This method clears the AutoFilter setting from one column.
+await Excel.run(async (context) => {
+    // Retrieve the active worksheet.
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Clear the filter from only column 3.
+    sheet.autoFilter.clearColumnCriteria(3);
+    await context.sync();
+});
 ```
 
 The final auto-filter code sample shows how to remove the auto-filter from the worksheet with the `remove` method.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+// This method removes all AutoFilters from the active worksheet.
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.autoFilter.remove();
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 An `AutoFilter` can also be applied to individual tables. See [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md#autofilter) for more information.
@@ -476,16 +472,15 @@ An `AutoFilter` can also be applied to individual tables. See [Work with tables 
 Your add-in can control a user's ability to edit data in a worksheet. The worksheet's `protection` property is a [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection) object with a `protect()` method. The following example shows a basic scenario toggling the complete protection of the active worksheet.
 
 ```js
-Excel.run(function (context) {
-    var activeSheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let activeSheet = context.workbook.worksheets.getActiveWorksheet();
     activeSheet.load("protection/protected");
+    await context.sync();
 
-    return context.sync().then(function() {
-        if (!activeSheet.protection.protected) {
-            activeSheet.protection.protect();
-        }
-    })
-}).catch(errorHandlerFunction);
+    if (!activeSheet.protection.protected) {
+        activeSheet.protection.protect();
+    }
+});
 ```
 
 The `protect` method has two optional parameters:
@@ -493,7 +488,43 @@ The `protect` method has two optional parameters:
 - `options`: A [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) object defining specific editing restrictions.
 - `password`: A string representing the password needed for a user to bypass protection and edit the worksheet.
 
-The article [Protect a worksheet](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.
+The article [Protect a worksheet](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6) has more information about worksheet protection and how to change it through the Excel UI.
+
+### Detect changes to the worksheet protection state
+
+The protection state of a worksheet can be changed by an add-in or through the Excel UI. To detect changes to the protection state, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member) event of a worksheet. Event handlers for the `onProtectionChanged` event receive a [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) object when the event fires.
+
+The following code sample shows how to register the `onProtectionChanged` event handler and use the `WorksheetProtectionChangedEventArgs` object to retrieve the `isProtected`, `worksheetId`, and `source` properties of the event.
+
+```js
+// This function registers an event handler for the onProtectionChanged event of a worksheet.
+async function run() {
+    await Excel.run(async (context) => {
+        // Retrieve the worksheet named "Sample".
+        let sheet = context.workbook.worksheets.getItem("Sample");
+    
+        // Register the onProtectionChanged event handler.
+        sheet.onProtectionChanged.add(checkProtection);
+        await context.sync();
+    });
+}
+
+// This function is an event handler that returns the protection state of a worksheet 
+// and information about the changed worksheet.
+async function checkProtection(event) {
+    await Excel.run(async (context) => {
+        // Retrieve the protection, worksheet ID, and source properties of the event.
+        let protectionStatus = event.isProtected;
+        let worksheetId = event.worksheetId;
+        let source = event.source;
+
+        // Print the event properties to the console.
+        console.log("Protection status changed. Protection status is now: " + protectionStatus);
+        console.log("    ID of changed worksheet: " + worksheetId);
+        console.log("    Source of change event: " + source);    
+    });
+}
+```
 
 ## Page layout and print settings
 
@@ -502,11 +533,11 @@ Add-ins have access to page layout settings at a worksheet level. These control 
 `Worksheet.horizontalPageBreaks` and `Worksheet.verticalPageBreaks` are [PageBreakCollections](/javascript/api/excel/excel.pagebreakcollection). These are collections of [PageBreaks](/javascript/api/excel/excel.pagebreak), which specify ranges where manual page breaks are inserted. The following code sample adds a horizontal page break above row **21**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.horizontalPageBreaks.add("A21:E21"); // The page break is added above this range.
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 `Worksheet.pageLayout` is a [PageLayout](/javascript/api/excel/excel.pagelayout) object. This object contains layout and print settings that are not dependent any printer-specific implementation. These settings include margins, orientation, page numbering, title rows, and print area.
@@ -514,8 +545,8 @@ Excel.run(function (context) {
 The following code sample centers the page (both vertically and horizontally), sets a title row that will be printed at the top of every page, and sets the printed area to a subsection of the worksheet.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // Center the page in both directions.
     sheet.pageLayout.centerHorizontally = true;
@@ -527,8 +558,8 @@ Excel.run(function (context) {
     // Limit the area to be printed to the range "A1:D100".
     sheet.pageLayout.setPrintArea("A1:D100");
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## See also

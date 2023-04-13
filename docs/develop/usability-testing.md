@@ -1,8 +1,8 @@
 ---
 title: Usability testing for Office Add-ins
-description: 'Learn how to test your add-in design with real users.'
+description: Learn how to test your add-in design with real users.
 ms.date: 07/08/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 
@@ -22,7 +22,7 @@ These testing services help you to streamline test plan creation and remove the 
 You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
 > [!NOTE]
-> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to AppSource](/office/dev/store/submit-to-appsource-via-partner-center), it must work on all [platforms that support the methods that you define](../overview/office-add-in-availability.md).
+> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to AppSource](/office/dev/store/submit-to-appsource-via-partner-center), it must work on all [platforms that support the methods that you define](/javascript/api/requirement-sets).
 
 ## 1. Sign up for a testing service
 
@@ -109,8 +109,8 @@ On average, it takes about 5 minutes to walk users through how to install an add
 
 1. Open Microsoft PowerPoint.
 1. Select **Blank Presentation.**
-1. Go to **Insert > My Add-ins.**
-1. In the popup window, choose **Store.**
+1. Go to **Insert** > **My Add-ins**.
+1. In the popup window, choose **Store**.
 1. Type (Add-in name) in the search box.
 1. Choose (Add-in name).
 1. Take a moment to look at the Store page to familiarize yourself with the add-in.
@@ -137,5 +137,5 @@ In general, be careful about how you use your data to draw conclusions. Don’t 
 ## See also
 
 - [How to Conduct Usability Testing](https://whatpixel.com/howto-conduct-usability-testing/)  
-- [Best Practices for UserTesting](https://help.usertesting.com/hc/en-us/articles/115003370231-Best-practices-for-UserTesting)  
+- [Best Practices for UserTesting](https://help.usertesting.com/hc/articles/115003370231-Best-practices-for-UserTesting)  
 - [Minimizing Bias](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  

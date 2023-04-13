@@ -1,21 +1,21 @@
 ---
 title: Office Common API error codes
 description: This article documents the error messages you might encounter while using the Office Common API.
-ms.date: 02/09/2021
-localization_priority: Normal
+ms.date: 09/01/2022
+ms.localizationpriority: medium
 ---
 
 # Office Common API error codes
 
 This article documents the error messages you might encounter while using the Common API model. These error codes don't apply to application-specific APIs, such as the Excel JavaScript API or the Word JavaScript API.
 
-See [API models](../develop/understanding-the-javascript-api-for-office.md#api-models) to learn more about the differences between the Common API and application-specific API models. 
+See [API models](../develop/understanding-the-javascript-api-for-office.md#api-models) to learn more about the differences between the Common API and application-specific API models.
 
 ## Error codes
 
 The following table lists the error codes, names, and messages displayed, and the conditions they indicate.
 
-|**Error.code**|**Error.name**|**Error.message**|**Condition**|
+|Error.code|Error.name|Error.message|Condition|
 |:-----|:-----|:-----|:-----|
 |1000|Invalid Coercion Type|The specified coercion type is not supported|The coercion type is not supported in the Office application. (For example, OOXML and HTML coercion types are not supported in Excel.)|
 |1001|Data Read Error|The current selection is not supported.|The user's current selection is not supported (that is, it is something different than the supported coercion types).|
@@ -43,12 +43,12 @@ The following table lists the error codes, names, and messages displayed, and th
 |3002|Invalid Binding Error|The specified binding does not exist.|The developer tries to bind to a non-existing or removed binding.|
 |3003|Binding Creation Error|Noncontiguous selections are not supported.|The user is making multiple selections.|
 |3004|Binding Creation Error|A binding cannot be created with the current selection and the specified binding type.|There are several conditions under which this might happen. Please see the "Binding creation error conditions" section later in this article.|
-|3005|Invalid Binding Operation|Operation is not supported on this binding type.|The developer sends a add row or add column operation on a binding type that is not  _table_.|
+|3005|Invalid Binding Operation|Operation is not supported on this binding type.|The developer sends an add row or add column operation on a binding type that is not  of coercion type `table`.|
 |3006|Binding Creation Error|The named item does not exist.|The named item cannot be found. No content control or table with that name exists.|
-|3007|Binding Creation Error|Multiple objects with the same name were found.|Collision error: more than one content control with the same name exists, and fail on collision is set to **true**.|
-|3008|Binding Creation Error|The specified binding type is not compatible with the supplied named item.|Named item cannot be bound to type. For example, a content control contains text but the developer tried to bind by using coercion type  _table_.|
+|3007|Binding Creation Error|Multiple objects with the same name were found.|Collision error: more than one content control with the same name exists, and fail on collision is set to `true`.|
+|3008|Binding Creation Error|The specified binding type is not compatible with the supplied named item.|Named item can't be bound to type. For example, a content control contains text, but the developer tried to bind by using coercion type `table`.|
 |3009|Invalid Binding Operation|The binding type is not supported.|Used for backward compatibility.|
-|3010|Unsupported Binding Operation|The selected content needs to be in table format. Format the data as a table and try again.|The developer is trying to use the `addRowsAsync` or `deleteAllDataValuesAsync` methods of the `TableBinding` object on data of coercion type _matrix_.|
+|3010|Unsupported Binding Operation|The selected content needs to be in table format. Format the data as a table and try again.|The developer is trying to use the `addRowsAsync` or `deleteAllDataValuesAsync` method of the `TableBinding` object on data of coercion type `matrix`.|
 |4000|Read Settings Error|The specified setting name does not exist.|A nonexistent setting name is supplied.|
 |4001|Save Settings Error|The settings could not be saved.|Settings could not be saved.|
 |4002|Settings Stale Error|Settings could not be saved because they are stale.|Settings are stale and developer indicated not to override settings.|
@@ -76,18 +76,21 @@ The following table lists the error codes, names, and messages displayed, and th
 |8021|Out of range|The column index value is out of the allowed range. Use a positive value (0 or higher) that's less than the number of columns.|The column index is more than the biggest column index of the table or less than 0.|
 |8022|Out of range|The value is out of the allowed range.|Some of the values in the format are out of the supported ranges.|
 |9016|Permission denied|Permission denied|Access is denied.|
+|9020|Generic Response Error|An internal error has occurred.|Refers to an internal error condition, which can occur for any number of reasons.|
 |9021|Save Error|Connection error occurred while trying to save the item on the server.|The item couldn't be saved. This could be due to a server connection error if using Online Mode in Outlook desktop, or due to an attempt to re-save a draft item that was deleted from the Exchange server.|
 |9022|Message In Different Store Error|The EWS ID cannot be retrieved because the message is saved in another store.|The EWS ID for the current message couldn't be retrieved as the message may have been moved or the sending mailbox may have changed.|
 |9041|Network error|The user is no longer connected to the network. Please check your network connection and try again.|The user no longer has network or internet access.|
 |9043|Attachment Type Not Supported|The attachment type is not supported.|The API doesn't support the attachment type. For example, `item.getAttachmentContentAsync` throws this error if the attachment is an embedded image in Rich Text Format, or if it's an item type other than an email or calendar item (such as a contact or task item).|
-|12002|||One of the following:<br> - No page exists at the URL that was passed to `displayDialogAsync`.<br> - The page that was passed to `displayDialogAsync` loaded, but the dialog box was directed to a page that it cannot find or load, or it has been directed to a URL with invalid syntax. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
-|12003|||The dialog box was directed to a URL with the HTTP protocol. HTTPS is required. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
-|12004|||The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be the same domain as the host page (including protocol and port number). Thrown by call of `displayDialogAsync`.|
-|12005|||The URL passed to `displayDialogAsync` uses the HTTP protocol. HTTPS is required. Thrown by call of `displayDialogAsync`. (In some versions of Office, the error message returned with 12005 is the same one returned for 12004.)|
-|12006|||The dialog box was closed, usually because the user chooses the **X** button. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
-|12007|||A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time. Thrown by call of `displayDialogAsync`.|
-|12009|||The user chose to ignore the dialog box. This error can occur in online versions of Office, where users may choose not to allow an add-in to present a dialog. Thrown by call of `displayDialogAsync`.|
-|13nnn|||See [Causes and handling of errors from getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
+|9057|Size Limit Exceeded|A maximum of 32KB is available for the settings of each add-in.|When updating roaming settings via Office.context.roamingSettings.set, the size cannot exceed 32KB. See [Office.RoamingSettings interface](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-set-member(1)).
+|12002|*Not applicable.*|*Not applicable.*|One of the following:<br> - No page exists at the URL that was passed to `displayDialogAsync`.<br> - The page that was passed to `displayDialogAsync` loaded, but the dialog box was directed to a page that it cannot find or load, or it has been directed to a URL with invalid syntax. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
+|12003|*Not applicable.*|*Not applicable.*|The dialog box was directed to a URL with the HTTP protocol. HTTPS is required. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
+|12004|*Not applicable.*|*Not applicable.*|The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be the same domain as the host page (including protocol and port number). Thrown by call of `displayDialogAsync`.|
+|12005|*Not applicable.*|*Not applicable.*|The URL passed to `displayDialogAsync` uses the HTTP protocol. HTTPS is required. Thrown by call of `displayDialogAsync`. (In some versions of Office, the error message returned with 12005 is the same one returned for 12004.)|
+|12006|*Not applicable.*|*Not applicable.*|The dialog box was closed, usually because the user chooses the **X** button. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
+|12007|*Not applicable.*|*Not applicable.*|A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time. Thrown by call of `displayDialogAsync`.|
+|12009|*Not applicable.*|*Not applicable.*|The user chose to ignore the dialog box. This error can occur in online versions of Office, where users may choose not to allow an add-in to present a dialog. Thrown by call of `displayDialogAsync`.|
+|12011|*Not applicable.*|*Not applicable.*|The user's browser is configured in a way that blocks popups. This error can occur in Office on the web if the browser is Safari and it's configured to block popups or the browser is Edge Legacy and the add-in domain is in a different security zone from the domain the dialog is trying to open. Thrown by call of `displayDialogAsync`.|
+|13nnn|*Not applicable.*|*Not applicable.*|See [Causes and handling of errors from getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
 
 ## Binding creation error conditions
 
@@ -97,10 +100,10 @@ When a binding is created in the API, indicate the binding type that you want to
 
 The following table summarizes binding behavior in Excel.
 
-|**Specified Binding Type**|**Actual Selection**|**Behavior**|
+|Specified Binding Type|Actual Selection|Behavior|
 |:-----|:-----|:-----|
-|Matrix|Range of cells (including within a table, and single cell)|A binding of type  _matrix_ is created on the selected cells. No modification in the document is expected.|
-|Matrix|Text selected in the cell|A binding of type  _matrix_ is created on the whole cell. No modification in the document is expected.|
+|Matrix|Range of cells (including within a table, and single cell)|A binding of type `matrix` is created on the selected cells. No modification in the document is expected.|
+|Matrix|Text selected in the cell|A binding of type `matrix` is created on the whole cell. No modification in the document is expected.|
 |Matrix|Multiple selection/invalid selection (For example, user selects a picture, object, or Word Art.)|The binding cannot be created.|
 |Table|Range of cells (includes single cell)|The binding cannot be created.|
 |Table|Range of cell within a table (includes single cell within a table, or the whole table, or text within a cell in a table)|A binding is created in the whole table.|
@@ -109,32 +112,33 @@ The following table summarizes binding behavior in Excel.
 |Table|Multiple selection/invalid selection (For example, user selects a picture, object, Word Art, etc.)|The binding cannot be created.|
 |Text|Range of cells|The binding cannot be created.|
 |Text|Range of cells within a table|The binding cannot be created.|
-|Text|Single cell|A binding of type  _text_ is created.|
-|Text|Single cell within a table|A binding of type  _text_ is created.|
-|Text|Text selected in the cell|A binding of type  _text_ in the whole cell is created.|
+|Text|Single cell|A binding of type `text` is created.|
+|Text|Single cell within a table|A binding of type `text` is created.|
+|Text|Text selected in the cell|A binding of type `text` in the whole cell is created.|
 
 ### Behavior in Word
 
 The following table summarizes binding behavior in Word.
 
-|**Specified Binding Type**|**Actual Selection**|**Behavior**|
+|Specified Binding Type|Actual Selection|Behavior|
 |:-----|:-----|:-----|
 |Matrix|Text|The binding cannot be created.|
-|Matrix|Whole table|A binding of type  _matrix_ is created.Document is changed and a content control must wrap the table. |
+|Matrix|Whole table|A binding of type `matrix` is created.Document is changed and a content control must wrap the table. |
 |Matrix|Range within a table|The binding cannot be created.|
 |Matrix|Invalid selection (for example, multiple, invalid objects, etc.)|The binding cannot be created.|
 |Table|Text|The binding cannot be created.|
-|Table|Whole table|A binding of type  _text_ is created.|
+|Table|Whole table|A binding of type `text` is created.|
 |Table|Range within a table|The binding cannot be created.|
 |Table|Invalid selection (for example, multiple, invalid objects, etc.)|The binding cannot be created.|
-|Text|Whole table|A binding of type  _text_ is created.|
+|Text|Whole table|A binding of type `text` is created.|
 |Text|Range within a table|The binding cannot be created.|
-|Text|Multiple selection|The last selection will be wrapped with a content control and a binding to that control. A content control of type  _text_ is created.|
+|Text|Multiple selection|The last selection will be wrapped with a content control and a binding to that control. A content control of type `text` is created.|
 |Text|Invalid selection (for example, multiple, invalid objects, etc.)|The binding cannot be created.|
 
 ## See also
 
 - [Office Add-ins development lifecycle](../overview/office-add-ins.md)
 - [Understanding the Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
-- [Error handling with the Excel JavaScript API](../excel/excel-add-ins-error-handling.md)
+- [Error handling with the application-specific JavaScript APIs](../testing/application-specific-api-error-handling.md)
 - [Troubleshoot error messages for single sign-on (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
+- [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md)

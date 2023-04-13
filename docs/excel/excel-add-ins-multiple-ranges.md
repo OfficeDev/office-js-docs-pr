@@ -1,8 +1,8 @@
 ---
 title: Work with multiple ranges simultaneously in Excel add-ins
-description: 'Learn how the Excel JavaScript library enables your add-in to perform operations, and set properties, on multiple ranges simultaneously.'
-ms.date: 04/01/2021
-localization_priority: Normal
+description: Learn how the Excel JavaScript library enables your add-in to perform operations, and set properties, on multiple ranges simultaneously.
+ms.date: 02/16/2022
+ms.localizationpriority: medium
 ---
 
 # Work with multiple ranges simultaneously in Excel add-ins
@@ -26,9 +26,9 @@ Some examples:
 - `RangeAreas.getEntireColumn` and `RangeAreas.getEntireRow` return another `RangeAreas` object that represents all of the columns (or rows) in all the ranges in the `RangeAreas`. For example, if the `RangeAreas` represents "A1:C4" and "F14:L15", then `RangeAreas.getEntireColumn` returns a `RangeAreas` object that represents "A:C" and "F:L".
 - `RangeAreas.copyFrom` can take either a `Range` or a `RangeAreas` parameter representing the source range(s) of the copy operation.
 
-#### Complete list of Range members that are also available on RangeAreas
+### Complete list of Range members that are also available on RangeAreas
 
-##### Properties
+#### Properties
 
 Be familiar with [Read properties of RangeAreas](#read-properties-of-rangeareas) before you write code that reads any properties listed. There are subtleties to what gets returned.
 
@@ -44,7 +44,7 @@ Be familiar with [Read properties of RangeAreas](#read-properties-of-rangeareas)
 - `style`
 - `worksheet`
 
-##### Methods
+#### Methods
 
 - `calculate()`
 - `clear()`
@@ -74,7 +74,7 @@ The `RangeAreas` type has some properties and methods that are not on the `Range
 
 - `areas`: A `RangeCollection` object that contains all of the ranges represented by the `RangeAreas` object. The `RangeCollection` object is also new and is similar to other Excel collection objects. It has an `items` property which is an array of `Range` objects representing the ranges.
 - `areaCount`: The total number of ranges in the `RangeAreas`.
-- `getOffsetRangeAreas`: Works just like [Range.getOffsetRange](/javascript/api/excel/excel.range#getOffsetRange_rowOffset__columnOffset_), except that a `RangeAreas` is returned and it contains ranges that are each offset from one of the ranges in the original `RangeAreas`.
+- `getOffsetRangeAreas`: Works just like [Range.getOffsetRange](/javascript/api/excel/excel.range#excel-excel-range-getoffsetrange-member(1)), except that a `RangeAreas` is returned and it contains ranges that are each offset from one of the ranges in the original `RangeAreas`.
 
 ## Create RangeAreas
 
@@ -98,13 +98,13 @@ Setting a property on a `RangeAreas` object sets the corresponding property on a
 The following is an example of setting a property on multiple ranges. The function highlights the ranges **F3:F5** and **H3:H5**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var rangeAreas = sheet.getRanges("F3:F5, H3:H5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let rangeAreas = sheet.getRanges("F3:F5, H3:H5");
     rangeAreas.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 This example applies to scenarios in which you can hard code the range addresses that you pass to `getRanges` or easily calculate them at runtime. Some of the scenarios in which this would be true include:
@@ -126,22 +126,19 @@ When calling the `getSpecialCells` or `getSpecialCellsOrNullObject` method on a 
 Reading property values of `RangeAreas` requires care, because a given property may have different values for different ranges within the `RangeAreas`. The general rule is that if a consistent value *can* be returned it will be returned. For example, in the following code, the RGB code for pink (`#FFC0CB`) and `true` will be logged to the console because both the ranges in the `RangeAreas` object have a pink fill and both are entire columns.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // The ranges are the F column and the H column.
-    var rangeAreas = sheet.getRanges("F:F, H:H");  
+    let rangeAreas = sheet.getRanges("F:F, H:H");  
     rangeAreas.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn");
+    await context.sync();
 
-    return context.sync()
-        .then(function () {
-            console.log(rangeAreas.format.fill.color); // #FFC0CB
-            console.log(rangeAreas.isEntireColumn); // true
-        })
-        .then(context.sync);
-})
+    console.log(rangeAreas.format.fill.color); // #FFC0CB
+    console.log(rangeAreas.isEntireColumn); // true
+});
 ```
 
 Things get more complicated when consistency isn't possible. The behavior of `RangeAreas` properties follows these three principles:
@@ -153,23 +150,20 @@ Things get more complicated when consistency isn't possible. The behavior of `Ra
 For example, the following code creates a `RangeAreas` in which only one range is an entire column and only one is filled with pink. The console will show `null` for the fill color, `false` for the `isEntireRow` property, and "Sheet1!F3:F5, Sheet1!H:H" (assuming the sheet name is "Sheet1") for the `address` property.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var rangeAreas = sheet.getRanges("F3:F5, H:H");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let rangeAreas = sheet.getRanges("F3:F5, H:H");
 
-    var pinkColumnRange = sheet.getRange("H:H");
+    let pinkColumnRange = sheet.getRange("H:H");
     pinkColumnRange.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn, address");
+    await context.sync();
 
-    return context.sync()
-        .then(function () {
-            console.log(rangeAreas.format.fill.color); // null
-            console.log(rangeAreas.isEntireColumn); // false
-            console.log(rangeAreas.address); // "Sheet1!F3:F5, Sheet1!H:H"
-        })
-        .then(context.sync);
-})
+    console.log(rangeAreas.format.fill.color); // null
+    console.log(rangeAreas.isEntireColumn); // false
+    console.log(rangeAreas.address); // "Sheet1!F3:F5, Sheet1!H:H"
+});
 ```
 
 ## See also

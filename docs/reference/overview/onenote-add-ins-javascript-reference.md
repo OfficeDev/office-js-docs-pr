@@ -1,9 +1,9 @@
 ---
 title: OneNote JavaScript API overview
-description: 'Learn more about the OneNote JavaScript API'
+description: Learn more about the OneNote JavaScript API.
 ms.date: 07/28/2020
 ms.prod: onenote
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # OneNote JavaScript API overview
@@ -34,4 +34,4 @@ For detailed information about the OneNote JavaScript API object model, see the 
 * [OneNote add-ins documentation](../../onenote/index.yml)
 * [OneNote add-ins overview](../../onenote/onenote-add-ins-programming-overview.md)
 * [OneNote JavaScript API reference](/javascript/api/onenote)
-* [Office client application and platform availability for Office Add-ins](../../overview/office-add-in-availability.md)
+* [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)

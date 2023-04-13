@@ -1,43 +1,28 @@
 ---
 title: Attach a debugger from the task pane
-description: 'Learn how to attach a debugger from the task pane'
-ms.date: 07/08/2021
-localization_priority: Normal
+description: Learn how to attach a debugger from the task pane.
+ms.date: 01/27/2022
+ms.localizationpriority: medium
 ---
 
 # Attach a debugger from the task pane
 
-In Office 2016 on Windows, Build 77xx.xxxx or later, you can attach the debugger from the task pane. The attach debugger feature will directly attach the debugger to the correct Internet Explorer process for you. You can attach a debugger regardless of whether you are using Yeoman Generator, Visual Studio Code, Node.js, Angular, or another tool.
+In some environments, a debugger can be attached on an Office Add-in that is already running. This can be useful when you want to debug an add-in that is already in staging or production. If you are still developing and testing the add-in, see [Overview of debugging Office Add-ins](debug-add-ins-overview.md).
 
-To launch the **Attach Debugger** tool, choose the top right corner of the task pane to activate the **Personality** menu (as shown in the red circle in the following image).
+The technique described in this article can be used only when the following conditions are met.
 
-> [!NOTE]
-> - Currently, the only supported debugger tool is [Visual Studio 2015](https://www.visualstudio.com/downloads/) with [Update 3](/previous-versions/mt752379(v=vs.140)) or later. If you don't have Visual Studio installed, selecting the **Attach Debugger** option doesn't result in any action.
-> - You can only debug client-side JavaScript with the **Attach Debugger** tool. To debug server-side code, such as with a Node.js server, you have many options. For information on how to debug with Visual Studio Code, see [Node.js Debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). If you are not using Visual Studio Code, search for "debug Node.js" or "debug {name-of-server}".
+- The add-in is running in Office on Windows.
+- The computer is using a combination of Windows and Office versions that use the Edge (Chromium-based) webview control, WebView2. To determine which browser you're using, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+
+> [!TIP]
+> [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
+
+To launch the debugger, choose the top right corner of the task pane to activate the **Personality** menu (as shown in the red circle in the following image).
 
 ![Screenshot of Attach Debugger menu.](../images/attach-debugger.png)
 
-Select **Attach Debugger**. This launches the **Visual Studio Just-in-Time Debugger** dialog box, as shown in the following image.
-
-![Screenshot of Visual Studio JIT Debugger dialog.](../images/visual-studio-debugger.png)
-
-In Visual Studio, you will see the code files in **Solution Explorer**.   You can set breakpoints to the line of code you want to debug in Visual Studio.
-
-> [!NOTE]
-> If you don't see the Personality menu, you can debug your add-in using Visual Studio. Ensure your task pane add-in is open in Office, and then follow these steps.
->
-> 1. In Visual Studio, choose **DEBUG** > **Attach to Process**.
-> 2. In **Available processes**, choose *either* all of the available `Iexplore.exe` processes *or* all of the available `MicrosoftEdge*.exe` processes, depending on [whether your add-in is using Internet Explorer or Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md), and then choose the **Attach** button.
-
-For more information about debugging in Visual Studio, see the following:
-
-- To launch and use the DOM Explorer in Visual Studio, see Tip 4 in the [Tips and Tricks](/archive/blogs/officeapps/building-great-looking-apps-for-office-using-the-new-project-templates#tips_tricks) section of the [Building great-looking apps for Office using the new project templates](/archive/blogs/officeapps/building-great-looking-apps-for-office-using-the-new-project-templates) blog post.
-- To set breakpoints, see [Using Breakpoints](/visualstudio/debugger/using-breakpoints?view=vs-2015&preserve-view=true).
-- To use F12, see [Using the F12 developer tools](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
-- To use the Microsoft Edge Developer Tools, see [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
+Select **Attach Debugger**. This launches the Microsoft Edge (Chromium-based) developer tools. Use the tools as described in [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md).
 
 ## See also
 
-- [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md)
-- [Publish your Office Add-in](../publish/publish.md)
-- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
+- [Overview of debugging Office Add-ins](debug-add-ins-overview.md)

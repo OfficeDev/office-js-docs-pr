@@ -1,13 +1,16 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: Possible reasons your add-in doesn't activate as you expect.
-ms.date: 09/02/2020
-localization_priority: Normal
+ms.date: 02/24/2023
+ms.topic: troubleshooting
+ms.localizationpriority: medium
 ---
 
 # Troubleshoot Outlook add-in activation
 
-Outlook contextual add-in activation is based on the activation rules in the add-in manifest. When conditions for the currently selected item satisfy the activation rules for the add-in, the application activates and displays the add-in button in the Outlook UI (add-in selection pane for compose add-ins, add-in bar for read add-ins). However, if your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
+Outlook contextual add-in activation is based on the activation rules in an XML manifest for the add-in. When conditions for the currently selected item satisfy the activation rules for the add-in, the application activates and displays the add-in button in the Outlook UI (add-in selection pane for compose add-ins, add-in bar for read add-ins). However, if your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
+
+[!include[Rule features not supported by the unified Microsoft 365 manifest](../includes/rules-not-supported-json-note.md)]
 
 ## Is user mailbox on a version of Exchange Server that is at least Exchange 2013?
 
@@ -19,7 +22,7 @@ You can verify the version of Exchange 2013 by using one of the following approa
 
 - If you are testing the add-in on Outlook on the web or mobile devices, in a script debugger (for example, the JScript Debugger that comes with Internet Explorer), look for the **src** attribute of the **script** tag that specifies the location from which scripts are loaded. The path should contain a substring **owa/15.0.516.x/owa2/...**, where **15.0.516.x** represents the version of the Exchange Server, such as **15.0.516.2**.
 
-- Alternatively, you can use the [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostVersion) property to verify the version. On Outlook on the web and mobile devices, this property returns the version of the Exchange Server.
+- Alternatively, you can use the [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) property to verify the version. On Outlook on the web and mobile devices, this property returns the version of the Exchange Server.
 
 - If you can test the add-in on Outlook, you can use the following simple debugging technique that uses the Outlook object model and Visual Basic Editor.
 
@@ -53,26 +56,23 @@ Any one of the Outlook rich clients can disable an add-in for performance reason
 > [!NOTE]
 > Only Outlook rich clients monitor resource usage, but disabling an add-in in an Outlook rich client also disables the add-in in Outlook on the web and mobile devices.
 
-Use one of the following approaches to verify whether an add-in is disabled.
+Check your list of installed add-ins to verify whether an add-in is disabled.
 
-- In Outlook on the web, sign in directly to the email account, choose the Settings icon, and then choose **Manage add-ins** to go to the Exchange Admin Center, where you can verify whether the add-in is enabled.
+- For instructions on how to view your add-ins in Outlook on Windows or on Mac, see [Get an Office Add-in for Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
-- In Outlook on Windows, go to the Backstage view and choose **Manage add-ins**. Sign in to the Exchange Admin Center to verify whether the add-in is enabled.
-
-- In Outlook on Mac, choose **Manage add-ins** in the add-in bar. Sign in to the Exchange Admin Center to verify whether the add-in is enabled.
+- In Outlook on the web, select **Get Add-ins** from the ribbon. To learn more, see [Using add-ins in Outlook on the web](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce).
 
 ## Does the tested item support Outlook add-ins? Is the selected item delivered by a version of Exchange Server that is at least Exchange 2013?
 
-If your Outlook add-in is a read add-in and is supposed to be activated when the user is viewing a message (including email messages, meeting requests, responses, and cancellations) or appointment, even though these items generally support add-ins, there are exceptions. Check if the selected item is one of those [listed where Outlook add-ins do not activate](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins).
+If your Outlook add-in is a read add-in and is supposed to be activated when the user is viewing a message (including email messages, meeting requests, responses, and cancellations) or appointment, even though these items generally support add-ins, there are exceptions. Check if the selected item is one of those [listed where Outlook add-ins don't activate](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins).
 
-Also, because appointments are always saved in Rich Text Format, an [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) rule that specifies a **PropertyName** value of **BodyAsHTML** would not activate an add-in on an appointment or message that is saved in plain text or Rich Text Format.
+Also, because appointments are always saved in Rich Text Format, an [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule that specifies a **PropertyName** value of **BodyAsHTML** wouldn't activate an add-in on an appointment or message that's saved in plain text or Rich Text Format.
 
-Even if a mail item is not one of the above types, if the item was not delivered by a version of Exchange Server that is at least Exchange 2013, known entities and properties such as sender's SMTP address would not be identified on the item. Any activation rules that rely on these entities or properties would not be satisfied, and the add-in would not be activated.
+Even if a mail item is not one of the above types, if the item wasn't delivered by a version of Exchange Server that's at least Exchange 2013, known entities and properties, such as sender's SMTP address, wouldn't be identified on the item. Any activation rules that rely on these entities or properties wouldn't be satisfied, and the add-in wouldn't be activated.
 
-If your add-in is a compose add-in and is supposed to be activated when the user is authoring a message or meeting request, make sure the item is not protected by IRM. However, there are a couple of exceptions.
+In Outlook on clients besides Windows, if your add-in activates when the user is composing a message or meeting request, make sure the item isn't protected by Information Rights Management (IRM).
 
-1. Add-ins activate on digitally signed messages in Outlook associated with a Microsoft 365 subscription. On Windows, this support was introduced with build 8711.1000.
-1. Starting with Outlook build 13229.10000 on Windows, add-ins can now activate on items protected by IRM.  For more information about this support in preview, see [Add-in activation on items protected by Information Rights Management (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 ## Is the add-in manifest installed properly, and does Outlook have a cached copy?
 
@@ -158,7 +158,7 @@ See [Validate and troubleshoot issues with your manifest](../testing/troubleshoo
 
 ## Are you using the appropriate activation rules?
 
-Starting in version 1.1 of the Office Add-ins manifests schema, you can create add-ins that are activated when the user is in a compose form (compose add-ins) or in a read form (read add-ins). Make sure you specify the appropriate activation rules for each type of form that your add-in is supposed to activate in. For example, you can activate compose add-ins using only [ItemIs](../reference/manifest/rule.md#itemis-rule) rules with the **FormType** attribute set to **Edit** or **ReadOrEdit**, and you cannot use any of the other types of rules, such as [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) and [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) rules for compose add-ins. For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
+Starting in version 1.1 of the Office Add-ins manifests schema, you can create add-ins that are activated when the user is in a compose form (compose add-ins) or in a read form (read add-ins). Make sure you specify the appropriate activation rules for each type of form that your add-in is supposed to activate in. For example, you can activate compose add-ins using only [ItemIs](/javascript/api/manifest/rule#itemis-rule) rules with the **FormType** attribute set to **Edit** or **ReadOrEdit**, and you cannot use any of the other types of rules, such as [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) and [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rules for compose add-ins. For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
 
 ## If you use a regular expression, is it properly specified?
 
@@ -201,16 +201,19 @@ If you use an **ItemHasRegularExpressionMatch** activation rule, verify whether 
         ```vb
         ?ActiveExplorer.Selection.Item(1).HTMLBody
         ```
+
         - The plain text body of the message or appointment item selected in the Outlook explorer:
 
         ```vb
         ?ActiveExplorer.Selection.Item(1).Body
         ```
+
         - The HTML body of the message or appointment item opened in the current Outlook inspector:
 
         ```vb
         ?ActiveInspector.CurrentItem.HTMLBody
         ```
+
         - The plain text body of the message or appointment item opened in the current Outlook inspector:
 
         ```vb
@@ -247,7 +250,7 @@ This section applies to all activation rules that use regular expressions -- par
     |Item body is plain text|1.5 KB|3 KB|
     |Item body is HTML|3 KB|3 KB|
 
-- Time spent on evaluating all regular expressions of a read add-in for an Outlook rich client: By default, for each read add-in, Outlook must finish evaluating all the regular expressions in its activation rules within 1 second. Otherwise Outlook retries up to three times and disables the add-in if Outlook cannot complete the evaluation. Outlook displays a message in the notification bar that the add-in has been disabled. The amount of time available for your regular expression can be modified by setting a group policy or a registry key. 
+- Time spent on evaluating all regular expressions of a read add-in for an Outlook rich client: By default, for each read add-in, Outlook must finish evaluating all the regular expressions in its activation rules within 1 second. Otherwise Outlook retries up to three times and disables the add-in if Outlook cannot complete the evaluation. Outlook displays a message in the notification bar that the add-in has been disabled. The amount of time available for your regular expression can be modified by setting a group policy or a registry key.
 
    > [!NOTE]
    > If the Outlook rich client disables a read add-in, the read add-in is not available for use for the same mailbox on the Outlook rich client, and Outlook on the web and mobile devices.

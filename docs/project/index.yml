@@ -4,12 +4,12 @@ title: Project add-ins documentation # < 60 chars
 summary: With Project add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Project on Windows. Learn how to build, test, debug, and publish Project add-ins.  # < 160 chars
 
 metadata:
-  title: Project Add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  title: Project add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Resources for learning about Project add-ins.  # Required; article description that is displayed in search results. < 160 chars.
   ms.prod: project #Required
   ms.topic: landing-page # Required
   ms.date: 03/29/2021 #Required; mm/dd/yyyy format.
-  localization_priority: Priority
+  ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -31,9 +31,9 @@ landingContent:
             url: ../quickstarts/project-quickstart.md
       - linkListType: how-to-guide
         links:
-          - text: Test and debug a Project Add-ins
+          - text: Test and debug a Project add-in
             url: ../testing/test-debug-office-add-ins.md
-          - text: Deploy and publish a Project Add-ins
+          - text: Deploy and publish a Project add-in
             url: ../publish/publish.md
 
   # Card (optional)

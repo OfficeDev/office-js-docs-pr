@@ -1,550 +1,1210 @@
-{ 
-    "redirections": [   
-      {
-        "source_path": "docs/develop/dynamic-dpi.md",
-        "redirect_url": "/office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution"
-      },
-      {
-        "source_path": "docs/develop/create-and-debug-office-add-ins-in-visual-studio.md", 
-        "redirect_url": "/office/dev/add-ins/develop/create-office-add-ins-in-visual-studio"
-      },
-      {   
-        "source_path": "docs/overview/index.md", 
-        "redirect_url": "/office/dev/add-ins/overview/core-concepts-office-add-ins"
-      },
-      {   
-        "source_path": "docs/concepts/add-in-development-lifecycle.md", 
-        "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
-      },
-      {
-        "source_path": "docs/testing/sideload-office-addin-using-sideload-command.md",
-        "redirect_url": "/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins"
-      },
-
-
-      {	
-        "source_path": "docs/reference/excel-api-reference.md",	
-        "redirect_url": "/javascript/api/excel?view=excel-js-preview"	
-      },	
-      {	
-        "source_path": "docs/reference/onenote-api-reference.md",	
-        "redirect_url": "/javascript/api/onenote?view=onenote-js-1.1"	
-      },	
-      {	
-        "source_path": "docs/reference/outlook-api-reference-preview.md",	
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-preview"	
-      },	
-      {	
-        "source_path": "docs/reference/outlook-api-reference-1-1.md",	
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.1"	
-      },	
-      {	
-        "source_path": "docs/reference/outlook-api-reference-1-2.md",	
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.2"	
-      },	
-      {	
-        "source_path": "docs/reference/outlook-api-reference-1-3.md",	
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.3"	
-      },	
-      {	
-        "source_path": "docs/reference/outlook-api-reference-1-4.md",	
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.4"	
-      },	
-      {	
-        "source_path": "docs/reference/outlook-api-reference-1-5.md",	
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.5"	
-      },	
-      {	
-        "source_path": "docs/reference/outlook-api-reference-1-6.md",	
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.6"	
-      },	
-      {	
-        "source_path": "docs/reference/outlook-api-reference-1-7.md",	
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.7"	
-      },	
-      {	
-        "source_path": "docs/reference/outlook-api-reference-1-8.md",	
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.8"	
-      },	
-      {
-        "source_path": "docs/reference/outlook-api-reference-1-9.md",	
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.9"	
-      },
-      {
-        "source_path": "docs/reference/outlook-api-reference-1-10.md",	
-        "redirect_url": "/javascript/api/outlook?view=outlook-js-1.10"	
-      },
-      {	
-        "source_path": "docs/reference/powerpoint-api-reference.md",	
-        "redirect_url": "/javascript/api/powerpoint?view=powerpoint-js-1.1"	
-      },	
-      {	
-        "source_path": "docs/reference/visio-api-reference.md",	
-        "redirect_url": "/javascript/api/visio?view=visio-js-1.1"	
-      },	
-      {	
-        "source_path": "docs/reference/word-api-reference.md",	
-        "redirect_url": "/javascript/api/word?view=word-js-preview"	
-      },
-      {
-        "source_path": "docs/reference/common-api-reference.md",
-        "redirect_url": "/javascript/api/office?view=common-js"
-      },
-      
-      {
-        "source_path": "docs/excel/xll-compatibility-requirements.md",
-        "redirect_url": "/office/dev/add-ins/excel/make-custom-functions-compatible-with-xll-udf"
-      },
-      {
-        "source_path": "docs/reference/requirement-sets/powerpoint-and-project-note.md",
-        "redirect_url": "/office/dev/add-ins/reference/javascript-api-for-office"
-      },
-      {
-        "source_path": "docs/excel/excel-add-ins-get-started-overview.md",
-        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
-      },
-      {
-        "source_path": "docs/excel/excel-add-ins-get-started-vue.md",
-        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-vue"
-      },
-      {
-        "source_path": "docs/excel/excel-add-ins-get-started-react.md",
-        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-react"
-      },
-      {
-        "source_path": "docs/excel/excel-add-ins-get-started-jquery.md",
-        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
-      },
-      {
-        "source_path": "docs/excel/excel-add-ins-get-started-angular.md",
-        "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-angular"
-      },
-      {
-        "source_path": "docs/onenote/onenote-add-ins-get-started.md",
-        "redirect_url": "/office/dev/add-ins/quickstarts/onenote-quickstart"
-      },
-      {
-        "source_path": "docs/powerpoint/powerpoint-add-ins-get-started.md",
-        "redirect_url": "/office/dev/add-ins/quickstarts/powerpoint-quickstart"
-      },
-      {
-        "source_path": "docs/project/project-add-ins-get-started.md",
-        "redirect_url": "/office/dev/add-ins/quickstarts/project-quickstart"
-      },
-      {
-        "source_path": "docs/word/word-add-ins.md",
-        "redirect_url": "/office/dev/add-ins/quickstarts/word-quickstart"
-      },
-      {
-        "source_path": "docs/excel/excel-tutorial-custom-functions.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions"
-      },
-      {
-        "source_path": "docs/tutorials/word-tutorial-content-control.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
-      },
-      {
-        "source_path": "docs/tutorials/word-tutorial-format-text.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
-      },
-      {
-        "source_path": "docs/tutorials/word-tutorial-insert-image-html-table.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
-      },
-      {
-        "source_path": "docs/tutorials/word-tutorial-insert-text.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
-      },
-      {
-        "source_path": "docs/tutorials/word-tutorial-replace-text.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
-      },
-      {
-        "source_path": "docs/tutorials/word-tutorial-setup.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
-      },
-      {   
-          "source_path": "docs/excel/script-lab-test.md", 
-          "redirect_url": "/office/dev/add-ins/testing/test-debug-office-add-ins" 
-      },
-      {   
-          "source_path": "docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md", 
-          "redirect_url": "/office/dev/add-ins/word/get-the-whole-document-from-an-add-in-for-word", 
-          "redirect_document_id": true 
-      },
-      {   
-        "source_path": "docs/overview/add-in-changelog.md", 
-        "redirect_url": "/office/dev/add-ins/overview/office-add-ins", 
-        "redirect_document_id": true 
-      }, 
-      {   
-        "source_path": "docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md", 
-        "redirect_url": "/office/dev/add-ins/develop/create-and-debug-office-add-ins-in-visual-studio"
-      }, 
-      {   
-        "source_path": "docs/get-started/get-javascript-intellisense-in-visual-studio.md", 
-        "redirect_url": "/office/dev/add-ins/develop/get-javascript-intellisense-in-visual-studio"
-      }, 
-      {   
-        "source_path": "docs/get-started/create-an-office-add-in-using-any-editor.md", 
-        "redirect_url": "/office/dev/add-ins/index"
-      }, 
-      {   
-        "source_path": "docs/get-started/create-addin-commands.md", 
-        "redirect_url": "/office/dev/add-ins/develop/create-addin-commands", 
-        "redirect_document_id": true 
-      }, 
-      {   
-        "source_path": "docs/overview/requirements-for-running-office-add-ins.md", 
-        "redirect_url": "/office/dev/add-ins/concepts/requirements-for-running-office-add-ins", 
-        "redirect_document_id": true 
-      }, 
-      {   
-        "source_path": "docs/overview/add-in-development-best-practices.md", 
-        "redirect_url": "/office/dev/add-ins/concepts/add-in-development-best-practices", 
-        "redirect_document_id": true 
-      }, 
-      {   
-        "source_path": "docs/concepts/web-viewers-used-by-office-web-add-ins.md", 
-        "redirect_url": "/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins" 
-      }, 
-      {   
-        "source_path": "docs/overview/add-in-manifests.md", 
-        "redirect_url": "/office/dev/add-ins/develop/add-in-manifests", 
-        "redirect_document_id": true 
-      }, 
-      {   
-        "source_path": "docs/overview/specify-office-hosts-and-api-requirements.md", 
-        "redirect_url": "/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements", 
-        "redirect_document_id": true 
-      }, 
-      {   
-        "source_path": "docs/develop/add-in-development-lifecycle.md", 
-        "redirect_url": "/office/dev/add-ins/concepts/add-in-development-lifecycle", 
-        "redirect_document_id": true 
-      }, 
-      {   
-        "source_path": "docs/develop/privacy-and-security.md", 
-        "redirect_url": "/office/dev/add-ins/concepts/privacy-and-security", 
-        "redirect_document_id": true 
-      }, 
-      {   
-        "source_path": "docs/develop/resource-limits-and-performance-optimization.md", 
-        "redirect_url": "/office/dev/add-ins/concepts/resource-limits-and-performance-optimization", 
-        "redirect_document_id": true 
-      }, 
-      {   
-        "source_path": "docs/develop/define-add-in-commands.md", 
-        "redirect_url": "/office/dev/add-ins/develop/create-addin-commands", 
-        "redirect_document_id": false 
-      }, 
-      {   
-        "source_path": "docs/excel/excel-add-ins-extend-excel.md", 
-        "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-overview", 
-        "redirect_document_id": true 
-      },
-      {
-        "source_path": "docs/excel/custom-functions-shared-overview.md", 
-        "redirect_url": "/office/dev/add-ins/develop/configure-your-add-in-to-use-a-shared-runtime", 
-        "redirect_document_id": false 
-      },
-      {
-        "source_path": "docs/excel/configure-your-add-in-to-use-a-shared-runtime.md", 
-        "redirect_url": "/office/dev/add-ins/develop/configure-your-add-in-to-use-a-shared-runtime", 
-        "redirect_document_id": true 
-      },
-      {
-        "source_path": "docs/excel/run-code-on-document-open.md", 
-        "redirect_url": "/office/dev/add-ins/develop/run-code-on-document-open", 
-        "redirect_document_id": true 
-      },
-      {
-        "source_path": "docs/excel/show-hide-add-in.md", 
-        "redirect_url": "/office/dev/add-ins/develop/show-hide-add-in", 
-        "redirect_document_id": true 
-      },
-      {   
-        "source_path": "docs/excel/excel-add-ins-excel-add-ins-advanced-concepts.md", 
-        "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-core-concepts", 
-        "redirect_document_id": true 
-      }, 
-      {   
-        "source_path": "docs/access/access-web-app-add-ins.md", 
-        "redirect_url": "https://powerapps.microsoft.com", 
-        "redirect_document_id": false 
-      }, 
-      {   
-        "source_path": "docs/develop/implementation-details.md", 
-        "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office", 
-        "redirect_document_id": false 
-      }, 
-      {   
-        "source_path": "docs/develop/office-js-versioning.md", 
-        "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office", 
-        "redirect_document_id": false 
-      }, 
-      {   
-        "source_path": "docs/develop/office-versions.md", 
-        "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office", 
-        "redirect_document_id": false 
-      }, 
-      {   
-        "source_path": "docs/powerpoint/office-mix/configuring-and-editing-labsjs-labs-for-office-mix.md", 
-        "redirect_url": "https://mix.office.com/Home"
-      }, 
-      {   
-        "source_path": "docs/powerpoint/office-mix/creating-your-first-lab-for-office-mix.md", 
-        "redirect_url": "https://mix.office.com/Home"
-      }, 
-      {   
-        "source_path": "docs/powerpoint/office-mix/get-started-with-labsjs-for-office-mix.md", 
-        "redirect_url": "https://mix.office.com/Home"
-      }, 
-      {   
-        "source_path": "docs/powerpoint/office-mix/guidelines-for-creating-labs-for-mix-using-labsjs.md", 
-        "redirect_url": "https://mix.office.com/Home"
-      }, 
-      {   
-        "source_path": "docs/powerpoint/office-mix/labsjs-lab-components.md", 
-        "redirect_url": "https://mix.office.com/Home"
-      }, 
-      {   
-        "source_path": "docs/powerpoint/office-mix/labsjs-labs-for-office-mix-examples.md", 
-        "redirect_url": "https://mix.office.com/Home"
-      }, 
-      {   
-        "source_path": "docs/powerpoint/office-mix/office-mix-add-ins.md", 
-        "redirect_url": "https://mix.office.com/Home"
-      },
-      {   
-        "source_path": "docs/tutorials/create-an-office-add-in-using-any-editor.md", 
-        "redirect_url": "/office/dev/add-ins/index"
-      }, 
-      {   
-        "source_path": "docs/tutorials/get-javascript-intellisense-in-visual-studio.md", 
-        "redirect_url": "/office/dev/add-ins/develop/get-javascript-intellisense-in-visual-studio", 
-        "redirect_document_id": false 
-      }, 
-      {   
-        "source_path": "docs/tutorials/create-and-debug-office-add-ins-in-visual-studio.md", 
-        "redirect_url": "/office/dev/add-ins/develop/create-and-debug-office-add-ins-in-visual-studio", 
-        "redirect_document_id": false 
-      },
-      {
-         "source_path": "docs/design/office-ui-fabric.md",
-         "redirect_url": "/office/dev/add-ins/design/fabric-core",
-         "redirect_document_id": false
-      },
-      {
-         "source_path": "docs/design/ui-elements/using-office-ui-fabric.md",
-         "redirect_url": "/office/dev/add-ins/design/fabric-core",
-         "redirect_document_id": true
-      },
-      {
-         "source_path": "docs/design/ui-elements/ui-elements.md",
-         "redirect_url": "/office/dev/add-ins/design/interface-elements",
-         "redirect_document_id": false
-      },
-      {
+{
+    "redirections": [
+        {
+            "source_path": "docs/develop/dynamic-dpi.md",
+            "redirect_url": "/office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution"
+        },
+        {
+            "source_path": "docs/develop/create-and-debug-office-add-ins-in-visual-studio.md",
+            "redirect_url": "/office/dev/add-ins/develop/create-office-add-ins-in-visual-studio"
+        },
+        {
+            "source_path": "docs/testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md",
+            "redirect_url": "/office/dev/add-ins/testing/debug-add-ins-using-f12-developer-tools-on-windows"
+        },
+        {
+            "source_path": "docs/overview/index.md",
+            "redirect_url": "/office/dev/add-ins/overview/core-concepts-office-add-ins"
+        },
+        {
+            "source_path": "docs/concepts/add-in-development-lifecycle.md",
+            "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
+        },
+        {
+            "source_path": "docs/testing/sideload-office-addin-using-sideload-command.md",
+            "redirect_url": "/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins"
+        },
+        {
+            "source_path": "docs/testing/debug-add-ins-using-f12-developer-tools-on-windows.md",
+            "redirect_url": "/office/dev/add-ins/testing/debug-add-ins-using-f12-tools-ie"
+        },
+        {
+            "source_path": "docs/reference/excel-api-reference.md",
+            "redirect_url": "/javascript/api/excel?view=excel-js-preview"
+        },
+        {
+            "source_path": "docs/reference/onenote-api-reference.md",
+            "redirect_url": "/javascript/api/onenote?view=onenote-js-1.1"
+        },
+        {
+            "source_path": "docs/reference/outlook-api-reference-latest.md",
+            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.12"
+        },
+        {
+            "source_path": "docs/reference/powerpoint-api-reference.md",
+            "redirect_url": "/javascript/api/powerpoint?view=powerpoint-js-1.1"
+        },
+        {
+            "source_path": "docs/reference/visio-api-reference.md",
+            "redirect_url": "/javascript/api/visio?view=visio-js-1.1"
+        },
+        {
+            "source_path": "docs/reference/word-api-reference.md",
+            "redirect_url": "/javascript/api/word?view=word-js-preview"
+        },
+        {
+            "source_path": "docs/reference/manifest-reference.md",
+            "redirect_url": "/javascript/api/manifest"
+        },
+        {
+            "source_path": "docs/excel/xll-compatibility-requirements.md",
+            "redirect_url": "/office/dev/add-ins/excel/make-custom-functions-compatible-with-xll-udf"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/powerpoint-and-project-note.md",
+            "redirect_url": "/office/dev/add-ins/reference/javascript-api-for-office"
+        },
+        {
+            "source_path": "docs/excel/excel-add-ins-get-started-overview.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
+        },
+        {
+            "source_path": "docs/excel/excel-add-ins-get-started-vue.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-vue"
+        },
+        {
+            "source_path": "docs/excel/excel-add-ins-get-started-react.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-react"
+        },
+        {
+            "source_path": "docs/excel/excel-add-ins-get-started-jquery.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
+        },
+        {
+            "source_path": "docs/excel/excel-add-ins-get-started-angular.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-angular"
+        },
+        {
+            "source_path": "docs/onenote/onenote-add-ins-get-started.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/onenote-quickstart"
+        },
+        {
+            "source_path": "docs/powerpoint/powerpoint-add-ins-get-started.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/powerpoint-quickstart"
+        },
+        {
+            "source_path": "docs/project/project-add-ins-get-started.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/project-quickstart"
+        },
+        {
+            "source_path": "docs/word/word-add-ins.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/word-quickstart"
+        },
+        {
+            "source_path": "docs/excel/excel-tutorial-custom-functions.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions"
+        },
+        {
+            "source_path": "docs/tutorials/word-tutorial-content-control.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/word-tutorial-format-text.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/word-tutorial-insert-image-html-table.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/word-tutorial-insert-text.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/word-tutorial-replace-text.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/word-tutorial-setup.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/word-tutorial"
+        },
+        {
+            "source_path": "docs/excel/script-lab-test.md",
+            "redirect_url": "/office/dev/add-ins/testing/test-debug-office-add-ins"
+        },
+        {
+            "source_path": "docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md",
+            "redirect_url": "/office/dev/add-ins/word/get-the-whole-document-from-an-add-in-for-word",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/word/null-values.md",
+            "redirect_url": "/office/dev/add-ins/word/word-add-ins-troubleshooting",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/overview/add-in-changelog.md",
+            "redirect_url": "/office/dev/add-ins/overview/office-add-ins",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md",
+            "redirect_url": "/office/dev/add-ins/develop/create-and-debug-office-add-ins-in-visual-studio"
+        },
+        {
+            "source_path": "docs/get-started/get-javascript-intellisense-in-visual-studio.md",
+            "redirect_url": "/office/dev/add-ins/develop/get-javascript-intellisense-in-visual-studio"
+        },
+        {
+            "source_path": "docs/get-started/create-an-office-add-in-using-any-editor.md",
+            "redirect_url": "/office/dev/add-ins/index"
+        },
+        {
+            "source_path": "docs/get-started/create-addin-commands.md",
+            "redirect_url": "/office/dev/add-ins/develop/create-addin-commands",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/overview/requirements-for-running-office-add-ins.md",
+            "redirect_url": "/office/dev/add-ins/concepts/requirements-for-running-office-add-ins",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/overview/add-in-development-best-practices.md",
+            "redirect_url": "/office/dev/add-ins/concepts/add-in-development-best-practices",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/overview/patterns-and-practices-overview.md",
+            "redirect_url": "/office/dev/add-ins/overview/office-add-in-code-samples"
+        },
+        {
+            "source_path": "docs/concepts/web-viewers-used-by-office-web-add-ins.md",
+            "redirect_url": "/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins"
+        },
+        {
+            "source_path": "docs/overview/add-in-manifests.md",
+            "redirect_url": "/office/dev/add-ins/develop/add-in-manifests",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/overview/specify-office-hosts-and-api-requirements.md",
+            "redirect_url": "/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/develop/add-in-development-lifecycle.md",
+            "redirect_url": "/office/dev/add-ins/concepts/add-in-development-lifecycle",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/develop/privacy-and-security.md",
+            "redirect_url": "/office/dev/add-ins/concepts/privacy-and-security",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/develop/resource-limits-and-performance-optimization.md",
+            "redirect_url": "/office/dev/add-ins/concepts/resource-limits-and-performance-optimization",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/develop/define-add-in-commands.md",
+            "redirect_url": "/office/dev/add-ins/develop/create-addin-commands",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/excel/excel-add-ins-error-handling.md",
+            "redirect_url": "/office/dev/add-ins/testing/application-specific-api-error-handling",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/excel/excel-add-ins-extend-excel.md",
+            "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-overview",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/excel/custom-functions-shared-overview.md",
+            "redirect_url": "/office/dev/add-ins/develop/configure-your-add-in-to-use-a-shared-runtime",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/excel/configure-your-add-in-to-use-a-shared-runtime.md",
+            "redirect_url": "/office/dev/add-ins/develop/configure-your-add-in-to-use-a-shared-runtime",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/excel/run-code-on-document-open.md",
+            "redirect_url": "/office/dev/add-ins/develop/run-code-on-document-open",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/excel/show-hide-add-in.md",
+            "redirect_url": "/office/dev/add-ins/develop/show-hide-add-in",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/excel/excel-add-ins-excel-add-ins-advanced-concepts.md",
+            "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-core-concepts",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/access/access-web-app-add-ins.md",
+            "redirect_url": "https://powerapps.microsoft.com",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/develop/implementation-details.md",
+            "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/develop/office-js-versioning.md",
+            "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/develop/office-versions.md",
+            "redirect_url": "/office/dev/add-ins/develop/understanding-the-javascript-api-for-office",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/develop/authentication-pnp.md",
+            "redirect_url": "/office/dev/add-ins/overview/office-add-in-code-samples#authentication-authorization-and-single-sign-on-sso",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/powerpoint/office-mix/configuring-and-editing-labsjs-labs-for-office-mix.md",
+            "redirect_url": "https://mix.office.com/Home"
+        },
+        {
+            "source_path": "docs/powerpoint/office-mix/creating-your-first-lab-for-office-mix.md",
+            "redirect_url": "https://mix.office.com/Home"
+        },
+        {
+            "source_path": "docs/powerpoint/office-mix/get-started-with-labsjs-for-office-mix.md",
+            "redirect_url": "https://mix.office.com/Home"
+        },
+        {
+            "source_path": "docs/powerpoint/office-mix/guidelines-for-creating-labs-for-mix-using-labsjs.md",
+            "redirect_url": "https://mix.office.com/Home"
+        },
+        {
+            "source_path": "docs/powerpoint/office-mix/labsjs-lab-components.md",
+            "redirect_url": "https://mix.office.com/Home"
+        },
+        {
+            "source_path": "docs/powerpoint/office-mix/labsjs-labs-for-office-mix-examples.md",
+            "redirect_url": "https://mix.office.com/Home"
+        },
+        {
+            "source_path": "docs/powerpoint/office-mix/office-mix-add-ins.md",
+            "redirect_url": "https://mix.office.com/Home"
+        },
+        {
+            "source_path": "docs/tutorials/create-an-office-add-in-using-any-editor.md",
+            "redirect_url": "/office/dev/add-ins/index"
+        },
+        {
+            "source_path": "docs/tutorials/get-javascript-intellisense-in-visual-studio.md",
+            "redirect_url": "/office/dev/add-ins/develop/get-javascript-intellisense-in-visual-studio",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tutorials/create-and-debug-office-add-ins-in-visual-studio.md",
+            "redirect_url": "/office/dev/add-ins/develop/create-and-debug-office-add-ins-in-visual-studio",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/design/office-ui-fabric.md",
+            "redirect_url": "/office/dev/add-ins/design/fabric-core",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/design/ui-elements/using-office-ui-fabric.md",
+            "redirect_url": "/office/dev/add-ins/design/fabric-core",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/design/ui-elements/ui-elements.md",
+            "redirect_url": "/office/dev/add-ins/design/interface-elements",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/design/ui-elements/layout-for-task-pane-add-ins.md",
             "redirect_url": "/office/dev/add-ins/design/task-pane-add-ins",
             "redirect_document_id": true
-      },
-      {
+        },
+        {
             "source_path": "docs/design/ui-elements/interaction-patterns.md",
             "redirect_url": "/office/dev/add-ins/design/interface-elements",
             "redirect_document_id": false
-      },
-      {
+        },
+        {
             "source_path": "docs/design/ui-elements/layout-for-content-add-ins.md",
             "redirect_url": "/office/dev/add-ins/design/content-add-ins",
             "redirect_document_id": true
-      },
-      {
+        },
+        {
             "source_path": "docs/design/ui-elements/layout-for-outlook-add-ins.md",
             "redirect_url": "/office/dev/add-ins/outlook/outlook-add-ins-overview",
             "redirect_document_id": true
-      },
-      {
+        },
+        {
             "source_path": "docs/design/ui-elements/accessibility-guidelines.md",
             "redirect_url": "/office/dev/add-ins/design/accessibility-guidelines"
-      },
-      {
+        },
+        {
             "source_path": "docs/design/ui-elements/voice-guidelines.md",
             "redirect_url": "/office/dev/add-ins/design/voice-guidelines"
-      },
-      {
+        },
+        {
             "source_path": "docs/design/automatically-open-a-task-pane-with-a-document.md",
             "redirect_url": "/office/dev/add-ins/develop/automatically-open-a-task-pane-with-a-document",
             "redirect_document_id": true
-      },
-      {
-        "source_path": "docs/tutorials/powerpoint-tutorial-customize-ui.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
-      },
-      {
-        "source_path": "docs/tutorials/powerpoint-tutorial-get-slide-metadata.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
-      },
-      {
-        "source_path": "docs/tutorials/powerpoint-tutorial-insert-image.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
-      },
-      {
-        "source_path": "docs/tutorials/powerpoint-tutorial-insert-text.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
-      },
-      {
-        "source_path": "docs/tutorials/powerpoint-tutorial-navigate-slides.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
-      },
-      {
-        "source_path": "docs/tutorials/powerpoint-tutorial-setup.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
-      },
-      {
-        "source_path": "docs/tutorials/excel-tutorial-create-chart.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
-      }
-      ,
-      {
-        "source_path": "docs/tutorials/excel-tutorial-create-table.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
-      }
-      ,
-      {
-        "source_path": "docs/tutorials/excel-tutorial-filter-and-sort-table.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
-      }
-      ,
-      {
-        "source_path": "docs/tutorials/excel-tutorial-freeze-header.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
-      }
-      ,
-      {
-        "source_path": "docs/tutorials/excel-tutorial-open-dialog.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
-      }
-      ,
-      {
-        "source_path": "docs/tutorials/excel-tutorial-protect-worksheet.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
-      }
-      ,
-      {
-        "source_path": "docs/tutorials/excel-tutorial-setup.md",
-        "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
-      }
-      ,
-      {
-        "source_path": "docs/excel/excel-add-ins-ranges-precedents.md",
-        "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-ranges-precedents-dependents"
-      }
-      ,
-      {
-        "source_path": "docs/excel/excel-add-ins-ranges.md",
-        "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-core-concepts#ranges"
-      }
-      ,
-      {
-        "source_path": "docs/excel/excel-add-ins-ranges-advanced.md",
-        "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-core-concepts#ranges"
-      }
-      ,
-      {
-        "source_path": "docs/publish/publish/centralized-deployment.md",
-        "redirect_url": "/office/dev/add-ins/publish/publish"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.diagnostics.md",
-        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-preview"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.userprofile.md",
-        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-preview"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.mailbox.diagnostics.md",
-        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.8"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.mailbox.userprofile.md",
-        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.8"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.mailbox.diagnostics.md",
-        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.7"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.mailbox.userprofile.md",
-        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.7"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.mailbox.diagnostics.md",
-        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.6"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.mailbox.userprofile.md",
-        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.6"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.mailbox.diagnostics.md",
-        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.5"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.mailbox.userprofile.md",
-        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.5"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.mailbox.diagnostics.md",
-        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.4"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.mailbox.userprofile.md",
-        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.4"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.mailbox.diagnostics.md",
-        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.3"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.mailbox.userprofile.md",
-        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.3"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.mailbox.diagnostics.md",
-        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.2"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.mailbox.userprofile.md",
-        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.2"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.diagnostics.md",
-        "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.1"
-      }
-      ,
-      {
-        "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.userprofile.md",
-        "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.1"
-      }
-    ] 
+        },
+        {
+            "source_path": "docs/tutorials/powerpoint-tutorial-customize-ui.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/powerpoint-tutorial-get-slide-metadata.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/powerpoint-tutorial-insert-image.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/powerpoint-tutorial-insert-text.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/powerpoint-tutorial-navigate-slides.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/powerpoint-tutorial-setup.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/excel-tutorial-create-chart.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/excel-tutorial-create-table.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/excel-tutorial-filter-and-sort-table.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/excel-tutorial-freeze-header.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/excel-tutorial-open-dialog.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/excel-tutorial-protect-worksheet.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+        },
+        {
+            "source_path": "docs/tutorials/excel-tutorial-setup.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/excel-tutorial"
+        },
+        {
+            "source_path": "docs/excel/excel-add-ins-ranges-precedents.md",
+            "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-ranges-precedents-dependents"
+        },
+        {
+            "source_path": "docs/excel/excel-add-ins-ranges.md",
+            "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-core-concepts#ranges"
+        },
+        {
+            "source_path": "docs/excel/excel-add-ins-ranges-advanced.md",
+            "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-core-concepts#ranges"
+        },
+        {
+            "source_path": "docs/excel/custom-functions-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/excel/custom-functions-requirement-sets"
+        },
+        {
+            "source_path": "docs/outlook/add-in-commands-for-outlook.md",
+            "redirect_url": "/office/dev/add-ins/develop/create-addin-commands"
+        },
+        {
+            "source_path": "docs/publish/centralized-deployment.md",
+            "redirect_url": "/office/dev/add-ins/publish/publish"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.diagnostics.md",
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-preview"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.userprofile.md",
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-preview"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.mailbox.diagnostics.md",
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.8"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.mailbox.userprofile.md",
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.8"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.mailbox.diagnostics.md",
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.7"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.mailbox.userprofile.md",
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.7"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.mailbox.diagnostics.md",
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.6"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.mailbox.userprofile.md",
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.6"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.mailbox.diagnostics.md",
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.5"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.mailbox.userprofile.md",
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.5"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.mailbox.diagnostics.md",
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.4"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.mailbox.userprofile.md",
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.4"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.mailbox.diagnostics.md",
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.3"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.mailbox.userprofile.md",
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.3"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.mailbox.diagnostics.md",
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.2"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.mailbox.userprofile.md",
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.2"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.diagnostics.md",
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.1"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.userprofile.md",
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.1"
+        },
+        {
+            "source_path": "docs/excel/custom-functions-data-types-overview.md",
+            "redirect_url": "/office/dev/add-ins/excel/custom-functions-data-types-concepts"
+        },
+        {
+            "source_path": "docs/overview/office-add-in-availability.md",
+            "redirect_url": "/javascript/api/requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/add-in-commands-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/common/add-in-commands-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/dialog-api-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/common/dialog-api-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/dialog-origin-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/common/dialog-origin-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/identity-api-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/common/identity-api-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/image-coercion-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/common/image-coercion-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/keyboard-shortcuts-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/office-add-in-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/common/office-add-in-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/open-browser-window-api-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/common/open-browser-window-api-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/ribbon-api-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/common/ribbon-api-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/shared-runtime-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/common/shared-runtime-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/excel-api-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/excel/excel-api-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/excel-preview-apis.md",
+            "redirect_url": "/javascript/api/requirement-sets/excel/excel-preview-apis"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/excel-api-online-requirement-set.md",
+            "redirect_url": "/javascript/api/requirement-sets/excel/excel-api-online-requirement-set"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/custom-functions-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/excel/custom-functions-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/outlook-api-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/powerpoint-api-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/powerpoint/powerpoint-api-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/powerpoint-preview-apis.md",
+            "redirect_url": "/javascript/api/requirement-sets/powerpoint/powerpoint-preview-apis"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/word-api-requirement-sets.md",
+            "redirect_url": "/javascript/api/requirement-sets/word/word-api-requirement-sets"
+        },
+        {
+            "source_path": "docs/reference/requirement-sets/word-preview-apis.md",
+            "redirect_url": "/javascript/api/requirement-sets/word/word-preview-apis"
+        },
+        {
+            "source_path": "docs/reference/manifest/allowsnapshot.md",
+            "redirect_url": "/javascript/api/manifest/allowsnapshot"
+        },
+        {
+            "source_path": "docs/reference/manifest/alternateid.md",
+            "redirect_url": "/javascript/api/manifest/alternateid"
+        },
+        {
+            "source_path": "docs/reference/manifest/appdomain.md",
+            "redirect_url": "/javascript/api/manifest/appdomain"
+        },
+        {
+            "source_path": "docs/reference/manifest/appdomains.md",
+            "redirect_url": "/javascript/api/manifest/appdomains"
+        },
+        {
+            "source_path": "docs/reference/manifest/citationtext.md",
+            "redirect_url": "/javascript/api/manifest/citationtext"
+        },
+        {
+            "source_path": "docs/reference/manifest/defaultlocale.md",
+            "redirect_url": "/javascript/api/manifest/defaultlocale"
+        },
+        {
+            "source_path": "docs/reference/manifest/defaultsettings.md",
+            "redirect_url": "/javascript/api/manifest/defaultsettings"
+        },
+        {
+            "source_path": "docs/reference/manifest/description.md",
+            "redirect_url": "/javascript/api/manifest/description"
+        },
+        {
+            "source_path": "docs/reference/manifest/desktopsettings.md",
+            "redirect_url": "/javascript/api/manifest/desktopsettings"
+        },
+        {
+            "source_path": "docs/reference/manifest/dictionary.md",
+            "redirect_url": "/javascript/api/manifest/dictionary"
+        },
+        {
+            "source_path": "docs/reference/manifest/dictionaryhomepage.md",
+            "redirect_url": "/javascript/api/manifest/dictionaryhomepage"
+        },
+        {
+            "source_path": "docs/reference/manifest/disableentityhighlighting.md",
+            "redirect_url": "/javascript/api/manifest/disableentityhighlighting"
+        },
+        {
+            "source_path": "docs/reference/manifest/displayname.md",
+            "redirect_url": "/javascript/api/manifest/displayname"
+        },
+        {
+            "source_path": "docs/reference/manifest/equivalentaddin.md",
+            "redirect_url": "/javascript/api/manifest/equivalentaddin"
+        },
+        {
+            "source_path": "docs/reference/manifest/equivalentaddins.md",
+            "redirect_url": "/javascript/api/manifest/equivalentaddins"
+        },
+        {
+            "source_path": "docs/reference/manifest/extendedoverrides.md",
+            "redirect_url": "/javascript/api/manifest/extendedoverrides"
+        },
+        {
+            "source_path": "docs/reference/manifest/filename.md",
+            "redirect_url": "/javascript/api/manifest/filename"
+        },
+        {
+            "source_path": "docs/reference/manifest/form.md",
+            "redirect_url": "/javascript/api/manifest/form"
+        },
+        {
+            "source_path": "docs/reference/manifest/formsettings.md",
+            "redirect_url": "/javascript/api/manifest/formsettings"
+        },
+        {
+            "source_path": "docs/reference/manifest/highresolutioniconurl.md",
+            "redirect_url": "/javascript/api/manifest/highresolutioniconurl"
+        },
+        {
+            "source_path": "docs/reference/manifest/host.md",
+            "redirect_url": "/javascript/api/manifest/host"
+        },
+        {
+            "source_path": "docs/reference/manifest/hosts.md",
+            "redirect_url": "/javascript/api/manifest/hosts"
+        },
+        {
+            "source_path": "docs/reference/manifest/iconurl.md",
+            "redirect_url": "/javascript/api/manifest/iconurl"
+        },
+        {
+            "source_path": "docs/reference/manifest/id.md",
+            "redirect_url": "/javascript/api/manifest/id"
+        },
+        {
+            "source_path": "docs/reference/manifest/metadata.md",
+            "redirect_url": "/javascript/api/manifest/metadata"
+        },
+        {
+            "source_path": "docs/reference/manifest/method.md",
+            "redirect_url": "/javascript/api/manifest/method"
+        },
+        {
+            "source_path": "docs/reference/manifest/methods.md",
+            "redirect_url": "/javascript/api/manifest/methods"
+        },
+        {
+            "source_path": "docs/reference/manifest/namespace.md",
+            "redirect_url": "/javascript/api/manifest/namespace"
+        },
+        {
+            "source_path": "docs/reference/manifest/officeapp.md",
+            "redirect_url": "/javascript/api/manifest/officeapp"
+        },
+        {
+            "source_path": "docs/reference/manifest/override.md",
+            "redirect_url": "/javascript/api/manifest/override"
+        },
+        {
+            "source_path": "docs/reference/manifest/permissions.md",
+            "redirect_url": "/javascript/api/manifest/permissions"
+        },
+        {
+            "source_path": "docs/reference/manifest/phonesettings.md",
+            "redirect_url": "/javascript/api/manifest/phonesettings"
+        },
+        {
+            "source_path": "docs/reference/manifest/progid.md",
+            "redirect_url": "/javascript/api/manifest/progid"
+        },
+        {
+            "source_path": "docs/reference/manifest/providername.md",
+            "redirect_url": "/javascript/api/manifest/providername"
+        },
+        {
+            "source_path": "docs/reference/manifest/queryuri.md",
+            "redirect_url": "/javascript/api/manifest/queryuri"
+        },
+        {
+            "source_path": "docs/reference/manifest/requestedheight.md",
+            "redirect_url": "/javascript/api/manifest/requestedheight"
+        },
+        {
+            "source_path": "docs/reference/manifest/requestedwidth.md",
+            "redirect_url": "/javascript/api/manifest/requestedwidth"
+        },
+        {
+            "source_path": "docs/reference/manifest/requirements.md",
+            "redirect_url": "/javascript/api/manifest/requirements"
+        },
+        {
+            "source_path": "docs/reference/manifest/rule.md",
+            "redirect_url": "/javascript/api/manifest/rule"
+        },
+        {
+            "source_path": "docs/reference/manifest/set.md",
+            "redirect_url": "/javascript/api/manifest/set"
+        },
+        {
+            "source_path": "docs/reference/manifest/sets.md",
+            "redirect_url": "/javascript/api/manifest/sets"
+        },
+        {
+            "source_path": "docs/reference/manifest/sourcelocation.md",
+            "redirect_url": "/javascript/api/manifest/sourcelocation"
+        },
+        {
+            "source_path": "docs/reference/manifest/supporturl.md",
+            "redirect_url": "/javascript/api/manifest/supporturl"
+        },
+        {
+            "source_path": "docs/reference/manifest/tabletsettings.md",
+            "redirect_url": "/javascript/api/manifest/tabletsettings"
+        },
+        {
+            "source_path": "docs/reference/manifest/targetdialect.md",
+            "redirect_url": "/javascript/api/manifest/targetdialect"
+        },
+        {
+            "source_path": "docs/reference/manifest/targetdialects.md",
+            "redirect_url": "/javascript/api/manifest/targetdialects"
+        },
+        {
+            "source_path": "docs/reference/manifest/tokens.md",
+            "redirect_url": "/javascript/api/manifest/tokens"
+        },
+        {
+            "source_path": "docs/reference/manifest/token.md",
+            "redirect_url": "/javascript/api/manifest/token"
+        },
+        {
+            "source_path": "docs/reference/manifest/type.md",
+            "redirect_url": "/javascript/api/manifest/type"
+        },
+        {
+            "source_path": "docs/reference/manifest/version.md",
+            "redirect_url": "/javascript/api/manifest/version"
+        },
+        {
+            "source_path": "docs/reference/manifest/versionoverrides.md",
+            "redirect_url": "/javascript/api/manifest/versionoverrides"
+        },
+        {
+            "source_path": "docs/reference/manifest/versionoverrides-1-0-taskpane.md",
+            "redirect_url": "/javascript/api/manifest/versionoverrides-1-0-taskpane"
+        },
+        {
+            "source_path": "docs/reference/manifest/versionoverrides-1-0-content.md",
+            "redirect_url": "/javascript/api/manifest/versionoverrides-1-0-content"
+        },
+        {
+            "source_path": "docs/reference/manifest/versionoverrides-1-0-mail.md",
+            "redirect_url": "/javascript/api/manifest/versionoverrides-1-0-mail"
+        },
+        {
+            "source_path": "docs/reference/manifest/versionoverrides-1-1-mail.md",
+            "redirect_url": "/javascript/api/manifest/versionoverrides-1-1-mail"
+        },
+        {
+            "source_path": "docs/reference/manifest/action.md",
+            "redirect_url": "/javascript/api/manifest/action"
+        },
+        {
+            "source_path": "docs/reference/manifest/allformfactors.md",
+            "redirect_url": "/javascript/api/manifest/allformfactors"
+        },
+        {
+            "source_path": "docs/reference/manifest/control.md",
+            "redirect_url": "/javascript/api/manifest/control"
+        },
+        {
+            "source_path": "docs/reference/manifest/control-button.md",
+            "redirect_url": "/javascript/api/manifest/control-button"
+        },
+        {
+            "source_path": "docs/reference/manifest/control-menu.md",
+            "redirect_url": "/javascript/api/manifest/control-menu"
+        },
+        {
+            "source_path": "docs/reference/manifest/control-mobilebutton.md",
+            "redirect_url": "/javascript/api/manifest/control-mobilebutton"
+        },
+        {
+            "source_path": "docs/reference/manifest/customtab.md",
+            "redirect_url": "/javascript/api/manifest/customtab"
+        },
+        {
+            "source_path": "docs/reference/manifest/desktopformfactor.md",
+            "redirect_url": "/javascript/api/manifest/desktopformfactor"
+        },
+        {
+            "source_path": "docs/reference/manifest/enabled.md",
+            "redirect_url": "/javascript/api/manifest/enabled"
+        },
+        {
+            "source_path": "docs/reference/manifest/event.md",
+            "redirect_url": "/javascript/api/manifest/event"
+        },
+        {
+            "source_path": "docs/reference/manifest/extendedpermission.md",
+            "redirect_url": "/javascript/api/manifest/extendedpermission"
+        },
+        {
+            "source_path": "docs/reference/manifest/extendedpermissions.md",
+            "redirect_url": "/javascript/api/manifest/extendedpermissions"
+        },
+        {
+            "source_path": "docs/reference/manifest/extensionpoint.md",
+            "redirect_url": "/javascript/api/manifest/extensionpoint"
+        },
+        {
+            "source_path": "docs/reference/manifest/functionfile.md",
+            "redirect_url": "/javascript/api/manifest/functionfile"
+        },
+        {
+            "source_path": "docs/reference/manifest/getstarted.md",
+            "redirect_url": "/javascript/api/manifest/getstarted"
+        },
+        {
+            "source_path": "docs/reference/manifest/group.md",
+            "redirect_url": "/javascript/api/manifest/group"
+        },
+        {
+            "source_path": "docs/reference/manifest/icon.md",
+            "redirect_url": "/javascript/api/manifest/icon"
+        },
+        {
+            "source_path": "docs/reference/manifest/item.md",
+            "redirect_url": "/javascript/api/manifest/item"
+        },
+        {
+            "source_path": "docs/reference/manifest/items.md",
+            "redirect_url": "/javascript/api/manifest/items"
+        },
+        {
+            "source_path": "docs/reference/manifest/launchevent.md",
+            "redirect_url": "/javascript/api/manifest/launchevent"
+        },
+        {
+            "source_path": "docs/reference/manifest/launchevents.md",
+            "redirect_url": "/javascript/api/manifest/launchevents"
+        },
+        {
+            "source_path": "docs/reference/manifest/mobileformfactor.md",
+            "redirect_url": "/javascript/api/manifest/mobileformfactor"
+        },
+        {
+            "source_path": "docs/reference/manifest/officemenu.md",
+            "redirect_url": "/javascript/api/manifest/officemenu"
+        },
+        {
+            "source_path": "docs/reference/manifest/officetab.md",
+            "redirect_url": "/javascript/api/manifest/officetab"
+        },
+        {
+            "source_path": "docs/reference/manifest/overriddenbyribbonapi.md",
+            "redirect_url": "/javascript/api/manifest/overriddenbyribbonapi"
+        },
+        {
+            "source_path": "docs/reference/manifest/page.md",
+            "redirect_url": "/javascript/api/manifest/page"
+        },
+        {
+            "source_path": "docs/reference/manifest/resources.md",
+            "redirect_url": "/javascript/api/manifest/resources"
+        },
+        {
+            "source_path": "docs/reference/manifest/runtime.md",
+            "redirect_url": "/javascript/api/manifest/runtime"
+        },
+        {
+            "source_path": "docs/reference/manifest/runtimes.md",
+            "redirect_url": "/javascript/api/manifest/runtimes"
+        },
+        {
+            "source_path": "docs/reference/manifest/scopes.md",
+            "redirect_url": "/javascript/api/manifest/scopes"
+        },
+        {
+            "source_path": "docs/reference/manifest/script.md",
+            "redirect_url": "/javascript/api/manifest/script"
+        },
+        {
+            "source_path": "docs/reference/manifest/customfunctionssourcelocation.md",
+            "redirect_url": "/javascript/api/manifest/customfunctionssourcelocation"
+        },
+        {
+            "source_path": "docs/reference/manifest/supertip.md",
+            "redirect_url": "/javascript/api/manifest/supertip"
+        },
+        {
+            "source_path": "docs/reference/manifest/supportssharedfolders.md",
+            "redirect_url": "/javascript/api/manifest/supportssharedfolders"
+        },
+        {
+            "source_path": "docs/reference/manifest/webapplicationinfo.md",
+            "redirect_url": "/javascript/api/manifest/webapplicationinfo"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.item.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.1/office.context.mailbox.item"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.1/office.context.mailbox"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.1/office.context"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.1/office"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.1/outlook-requirement-set-1.1"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.mailbox.item.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.2/office.context.mailbox.item"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.mailbox.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.2/office.context.mailbox"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.2/office.context"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.2/office"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.2/outlook-requirement-set-1.2"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.mailbox.item.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.3/office.context.mailbox.item"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.mailbox.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.3/office.context.mailbox"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.3/office.context"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.3/office"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.mailbox.item.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.4/office.context.mailbox.item"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.mailbox.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.4/office.context.mailbox"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.4/office.context"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.4/office"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.4/outlook-requirement-set-1.4"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.mailbox.item.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.5/office.context.mailbox.item"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.mailbox.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.5/office.context.mailbox"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.5/office.context"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.5/office"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.mailbox.item.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.6/office.context.mailbox.item"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.mailbox.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.6/office.context.mailbox"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.6/office.context"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.6/office"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.6/outlook-requirement-set-1.6"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.mailbox.item.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.7/office.context.mailbox.item"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.mailbox.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.7/office.context.mailbox"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.7/office.context"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.7/office"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.7/outlook-requirement-set-1.7"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.mailbox.item.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.8/office.context.mailbox.item"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.mailbox.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.8/office.context.mailbox"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.8/office.context"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.8/office"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.9/office.context.mailbox.item.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.9/office.context.mailbox.item"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.9/office.context.mailbox.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.9/office.context.mailbox"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.9/office.context.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.9/office.context"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.9/office.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.9/office"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.9/outlook-requirement-set-1.9"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.10/office.context.mailbox.item.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.10/office.context.mailbox.item"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.10/office.context.mailbox.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.10/office.context.mailbox"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.10/office.context.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.10/office.context"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.10/office.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.10/office"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.11/office.context.mailbox.item.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.11/office.context.mailbox.item"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.11/office.context.mailbox.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.11/office.context.mailbox"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.11/office.context.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.11/office.context"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.11/office.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.11/office"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlookpreview-requirement-set/office.context.mailbox"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/preview-requirement-set/office.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/preview-requirement-set/office"
+        },
+        {
+            "source_path": "docs/reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview"
+        },
+        {
+            "source_path": "docs/testing/sideload-an-office-add-in-on-ipad-and-mac.md",
+            "redirect_url": "/office/dev/add-ins/testing/sideload-an-office-add-in-on-mac"
+        },
+        {
+            "source_path": "docs/quickstarts/sso-quickstart-customize.md",
+            "redirect_url": "/office/dev/add-ins/develop/sso-in-office-add-ins"
+        },
+        {
+            "source_path": "docs/outlook/manage-state-and-settings-outlook.md",
+            "redirect_url": "office/dev/add-ins/outlook/metadata-for-an-outlook-add-in"
+        }
+    ]
 }

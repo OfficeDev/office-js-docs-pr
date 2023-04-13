@@ -1,8 +1,9 @@
 ---
 title: Authenticate a user with an identity token in an add-in
-description: 'Learn about using the identity token provided by an Outlook add-in to implement SSO with your service.'
-ms.date: 10/31/2019
-localization_priority: Normal
+description: Learn about using the identity token provided by an Outlook add-in to implement SSO with your service.
+ms.date: 10/12/2021
+ms.topic: how-to
+ms.localizationpriority: medium
 ---
 
 # Authenticate a user with an identity token for Exchange
@@ -14,7 +15,7 @@ Exchange user identity tokens provide a way for your add-in to uniquely identify
 
 ## Send the ID token with each request
 
-The first step is for your add-in to obtain the Exchange user identity token from the server by calling [getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods). Then the add-in sends this token with every request it makes to your back-end. This could be in a header, or as part of the request body.
+The first step is for your add-in to obtain the Exchange user identity token from the server by calling [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods). Then the add-in sends this token with every request it makes to your back-end. This could be in a header, or as part of the request body.
 
 ## Validate the token
 
@@ -44,7 +45,7 @@ Your back-end service can calculate a unique user ID from the token and map it t
 
 ### Generate a unique ID
 
-We recommend that you use a combination of the `msexchuid` and `amurl` properties. For example, you could concatenate the two values together and generate a base 64-encoded string. This value can be reliably generated from the token every time, so you can map an Exchange user identity token back to the user in your system.
+Use a combination of the `msexchuid` and `amurl` properties. For example, you could concatenate the two values together and generate a base 64-encoded string. This value can be reliably generated from the token every time, so you can map an Exchange user identity token back to the user in your system.
 
 ### Check the user
 

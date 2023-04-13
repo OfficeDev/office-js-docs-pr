@@ -1,8 +1,8 @@
 ---
 title: Internet Explorer 11 testing
-description: 'Test your Office Add-in on Internet Explorer 11.'
-ms.date: 08/13/2021
-localization_priority: Normal
+description: Test your Office Add-in on Internet Explorer 11.
+ms.date: 10/12/2022
+ms.localizationpriority: medium
 ---
 
 # Test your Office Add-in on Internet Explorer 11
@@ -10,59 +10,55 @@ localization_priority: Normal
 > [!IMPORTANT]
 > **Internet Explorer still used in Office Add-ins**
 >
-> Microsoft is ending support for Internet Explorer, but this doesn't significantly affect Office Add-ins. Some combinations of platforms and Office versions, including all one-time-purchase versions through Office 2019, will continue to use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Moreover, support for these combinations, and hence for Internet Explorer, is still required for add-ins submitted to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center). Two things *are* changing:
+> Some combinations of platforms and Office versions, including perpetual versions through Office 2019, still use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). We recommend (but don't require) that you continue to support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in the Internet Explorer webview. Keep these additional points in mind:
 >
-> - AppSource no longer tests add-ins in Office on the web using Internet Explorer as the browser. But AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer.
+> - Office on the web no longer opens in Internet Explorer. Consequently, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) no longer tests add-ins in Office on the web using Internet Explorer as the browser.
+> - AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer, however it only issues a warning when the add-in does not support Internet Explorer; the add-in is not rejected by AppSource.
 > - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Internet Explorer.
 
-If you plan to market your add-in through AppSource or you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser control that is based on Internet Explorer 11 (IE11). You can use a command line to switch from more modern runtimes used by add-ins to the Internet Explorer 11 runtime for this testing. For information about which versions of Windows and Office use the Internet Explorer 11 web view control, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser control that is based on Internet Explorer 11 (IE11). You can use a command line to switch from more modern runtimes used by add-ins to the Internet Explorer 11 runtime for this testing. For information about which versions of Windows and Office use the Internet Explorer 11 web view control, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!IMPORTANT]
-> Internet Explorer 11 does not support JavaScript versions later than ES5. If you want to use the syntax and features of ECMAScript 2015 or later, you have two options:
+> Internet Explorer 11 doesn't support JavaScript versions later than ES5. If you want to use the syntax and features of ECMAScript 2015 or later, you have two options:
 >
 > - Write your code in ECMAScript 2015 (also called ES6) or later JavaScript, or in TypeScript, and then compile your code to ES5 JavaScript using a compiler such as [babel](https://babeljs.io/) or [tsc](https://www.typescriptlang.org/index.html).
 > - Write in ECMAScript 2015 or later JavaScript, but also load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library such as [core-js](https://github.com/zloirock/core-js) that enables IE to run your code.
 >
-> For more information about these options, see [Support Internet Explorer 11](../develop/support-ie-11.md).
+> For more information about these options, see [Support older Microsoft browsers and Office versions](../develop/support-ie-11.md).
 >
-> Also, Internet Explorer 11 does not support some HTML5 features such as media, recording, and location.
+> Also, Internet Explorer 11 doesn't support some HTML5 features such as media, recording, and location. To learn more, see [Determine the browser the add-in is running in at runtime](../develop/support-ie-11.md#determine-the-browser-the-add-in-is-running-in-at-runtime).
 
 > [!NOTE]
-> To test your add-in on the Internet Explorer 11 browser, open Office on the web in Internet Explorer and [sideload the add-in](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
+>
+> - Office on the web can't be opened in Internet Explorer 11, so you can't (and don't need to) test your add-in on Office on the web with Internet Explorer.
+>
+> - Internet Explorer's Enhanced Security Configuration (ESC) must be turned off for Office Web Add-ins to work. If you're using a Windows Server computer as your client when developing add-ins, note that ESC is turned on by default in Windows Server.
 
-## Prerequisites
-
-- [Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)
-
-These instructions assume you have set up a Yo Office generator project before. If you haven't done this before, consider reading a quick start, such as [this one for Excel add-ins](../quickstarts/excel-quickstart-jquery.md).
-
-## Switching to the Internet Explorer 11 webview
-
-1. Create a Yo Office generator project. It doesn't matter what kind of project you select, this tooling will work with all project types.
-
-    > [!NOTE]
-    > If you have an existing project and want to add this tooling without creating a new project, skip this step and move to the next step. 
-
-1. In the root folder of your project, run the following in the command line. This example assumes that your project's manifest file is in the root. If it isn't, specify the relative path to the manifest file. You should see a message in the command line that the web view type is now set to IE.
-
-    ```command&nbsp;line
-    npx office-addin-dev-settings webview manifest.xml ie
-    ```
+## Switch to the Internet Explorer 11 webview
 
 > [!TIP]
-> It isn't necessary to use this command, but it should help debug the majority of issues related to the Internet Explorer 11 runtime. For complete robustness, you should test using computers with various combinations of Windows 7, 8.1, and 10 and various versions of Office. For more information, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/how-to-revert-to-an-earlier-version-of-office-2bd5c457-a917-d57e-35a1-f709e3dda841).
+> [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-### Command options
+There are two ways to switch the Internet Explorer webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Internet Explorer by default. We recommend the first method, but you should use the second in the following scenarios.
 
-The `office-addin-dev-settings webview` command can also take a number of runtimes as arguments:
+- Your project was developed with Visual Studio and IIS. It isn't node.js-based.
+- You want to be absolutely robust in your testing.
+- You can't use the Beta channel for Microsoft 365 on your development computer.
+- You're developing on a Mac.
+- If for any reason the command line tool doesn't work.
 
-- ie
-- edge
-- default
+### Switch via the command line
+
+[!INCLUDE [Steps to switch browsers with the command line tool](../includes/use-legacy-edge-or-ie.md)]
+
+### Install a version of Office that uses Internet Explorer
+
+[!INCLUDE [Steps to install Office that uses Edge Legacy or Internet Explorer](../includes/install-office-that-uses-legacy-edge-or-ie.md)]
 
 ## See also
 
-* [Test and debug Office Add-ins](test-debug-office-add-ins.md)
-* [Sideload Office Add-ins for testing](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [Debug add-ins using developer tools on Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
-* [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
+- [Test and debug Office Add-ins](test-debug-office-add-ins.md)
+- [Sideload Office Add-ins for testing](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+- [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
+- [Runtimes in Office Add-ins](runtimes.md)

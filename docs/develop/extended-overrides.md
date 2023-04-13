@@ -1,8 +1,9 @@
 ---
 title: Work with extended overrides of the manifest
-description: 'Learn how to configure extensibility features with extended overrides of the manifest.'
+description: Learn how to configure extensibility features with extended overrides of the manifest.
+ms.topic: how-to
 ms.date: 02/23/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Work with Extended Overrides of the manifest
@@ -10,7 +11,7 @@ localization_priority: Normal
 Some extensibility features of Office Add-ins are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest.
 
 > [!NOTE]
-> This article assumes that you're familiar with Office add-in manifests and their role in add-ins. Please read [Office Add-ins XML manifest](add-in-manifests.md), if you haven't recently.
+> This article assumes that you're familiar with Office Add-in manifests and their role in add-ins. Please read [Office Add-ins XML manifest](add-in-manifests.md), if you haven't recently.
 
 The following table specifies the extensibility features that require an extended override along with links to documentation of the feature.
 
@@ -18,6 +19,7 @@ The following table specifies the extensibility features that require an extende
 | :----- | :----- |
 | Keyboard shortcuts | [Add Custom keyboard shortcuts to your Office Add-ins](../design/keyboard-shortcuts.md) |
 
+<!-- In the following link, the "en-us" must be present or the link breaks. -->
 The schema that defines the JSON format is [extended-manifest schema](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!TIP]
@@ -25,7 +27,7 @@ The schema that defines the JSON format is [extended-manifest schema](https://de
 
 ## Tell Office where to find the JSON file
 
-Use the manifest to tell Office where to find the JSON file. Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element. Set the `Url` attribute to the full URL of a JSON file. The following is an example of the simplest possible `<ExtendedOverrides>` element.
+Use the manifest to tell Office where to find the JSON file. Immediately *below* (not inside) the **\<VersionOverrides\>** element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of a JSON file. The following is an example of the simplest possible **\<ExtendedOverrides\>** element.
 
 ```xml
     ...
@@ -58,7 +60,7 @@ The following is an example of a very simple extended overrides JSON file. It as
 
 ## Localize the extended overrides file
 
-If your add-in supports multiple locales, you can use the `ResourceUrl` attribute of the `<ExtendedOverrides>` element to point Office to a file of localized resources. The following is an example.
+If your add-in supports multiple locales, you can use the `ResourceUrl` attribute of the **\<ExtendedOverrides\>** element to point Office to a file of localized resources. The following is an example.
 
 ```xml
     ...

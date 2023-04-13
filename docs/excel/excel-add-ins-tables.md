@@ -1,8 +1,8 @@
 ---
 title: Work with tables using the Excel JavaScript API
-description: 'Code samples that show how to perform common tasks with tables using the Excel JavaScript API.'
-ms.date: 07/02/2021
-localization_priority: Normal
+description: Code samples that show how to perform common tasks with tables using the Excel JavaScript API.
+ms.date: 05/19/2022
+ms.localizationpriority: medium
 ---
 
 # Work with tables using the Excel JavaScript API
@@ -11,15 +11,15 @@ This article provides code samples that show how to perform common tasks with ta
 
 ## Create a table
 
-The following code sample creates a table in the worksheet named **Sample**. The table has headers and contains four columns and seven rows of data. If the Excel application where the code is running supports [requirement set](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample creates a table in the worksheet named **Sample**. The table has headers and contains four columns and seven rows of data. If the Excel application where the code is running supports [requirement set](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
 
 > [!NOTE]
 > To specify a name for a table, you must first create the table and then set its `name` property, as shown in the following example.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.add("A1:D1", true /*hasHeaders*/);
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.add("A1:D1", true /*hasHeaders*/);
     expensesTable.name = "ExpensesTable";
 
     expensesTable.getHeaderRowRange().values = [["Date", "Merchant", "Category", "Amount"]];
@@ -41,49 +41,50 @@ Excel.run(function (context) {
 
     sheet.activate();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**New table**
+### New table
 
 ![New table in Excel.](../images/excel-tables-create.png)
 
 ## Add rows to a table
 
-The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The new rows are added to the end of the table. If the Excel application where the code is running supports [requirement set](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The `index` parameter of the [`add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)) method is set to `null`, which specifies that the rows be added after the existing rows in the table. The `alwaysInsert` parameter is set to `true`, which indicates that the new rows be inserted into the table, not below the table. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 > [!NOTE]
 > The `index` property of a [TableRow](/javascript/api/excel/excel.tablerow) object indicates the index number of the row within the rows collection of the table. A `TableRow` object does not contain an `id` property that can be used as a unique key to identify the row.
 
-> [!WARNING]
-> Adding rows to a table from a content add-in will result in a memory leak. See [GitHub Issue #1415](https://github.com/OfficeDev/office-js/issues/1415) for current status and additional information. 
-
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+// This code sample shows how to add rows to a table that already exists 
+// on a worksheet named Sample.
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    expensesTable.rows.add(null /*add rows to the end of the table*/, [
-        ["1/16/2017", "THE PHONE COMPANY", "Communications", "$120"],
-        ["1/20/2017", "NORTHWIND ELECTRIC CARS", "Transportation", "$142"],
-        ["1/20/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$27"],
-        ["1/21/2017", "COHO VINEYARD", "Restaurant", "$33"],
-        ["1/25/2017", "BELLOWS COLLEGE", "Education", "$350"],
-        ["1/28/2017", "TREY RESEARCH", "Other", "$135"],
-        ["1/31/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$97"]
-    ]);
+    expensesTable.rows.add(
+        null, // index, Adds rows to the end of the table.
+        [
+            ["1/16/2017", "THE PHONE COMPANY", "Communications", "$120"],
+            ["1/20/2017", "NORTHWIND ELECTRIC CARS", "Transportation", "$142"],
+            ["1/20/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$27"],
+            ["1/21/2017", "COHO VINEYARD", "Restaurant", "$33"],
+            ["1/25/2017", "BELLOWS COLLEGE", "Education", "$350"],
+            ["1/28/2017", "TREY RESEARCH", "Other", "$135"],
+            ["1/31/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$97"]
+        ], 
+        true, // alwaysInsert, Specifies that the new rows be inserted into the table.
+    );
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Table with new rows**
+### Table with new rows
 
 ![Table with new rows in Excel.](../images/excel-tables-add-rows.png)
 
@@ -96,12 +97,12 @@ These examples show how to add a column to a table. The first example populates 
 
 ### Add a column that contains static values
 
-The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added after all existing columns in the table and contains a header ("Day of the Week") as well as data to populate the cells in the column. If the Excel application where the code is running supports [requirement set](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added after all existing columns in the table and contains a header ("Day of the Week") as well as data to populate the cells in the column. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.columns.add(null /*add columns to the end of the table*/, [
         ["Day of the Week"],
@@ -114,27 +115,25 @@ Excel.run(function (context) {
         ["Monday"]
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Table with new column**
+#### Table with new column
 
 ![Table with new column in Excel.](../images/excel-tables-add-column.png)
 
 ### Add a column that contains formulas
 
-The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added to the end of the table, contains a header ("Type of the Day"), and uses a formula to populate each data cell in the column. If the Excel application where the code is running supports [requirement set](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample adds a new column to the table named **ExpensesTable** within the worksheet named **Sample**. The new column is added to the end of the table, contains a header ("Type of the Day"), and uses a formula to populate each data cell in the column. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.columns.add(null /*add columns to the end of the table*/, [
         ["Type of the Day"],
@@ -147,69 +146,64 @@ Excel.run(function (context) {
         ['=IF(OR((TEXT([DATE], "dddd") = "Saturday"), (TEXT([DATE], "dddd") = "Sunday")), "Weekend", "Weekday")']
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Table with new calculated column**
+#### Table with new calculated column
 
 ![Table with new calculated column in Excel.](../images/excel-tables-add-calculated-column.png)
 
 ## Resize a table
 
-Your add-in can resize a table without adding data to the table or changing cell values. To resize a table, use the [Table.resize](/javascript/api/excel/excel.table#resize_newRange_) method. The following code sample shows how to resize a table. This code sample uses the **ExpensesTable** from the [Create a table](#create-a-table) section earlier in this article and sets the new range of the table to **A1:D20**.
+Your add-in can resize a table without adding data to the table or changing cell values. To resize a table, use the [Table.resize](/javascript/api/excel/excel.table#excel-excel-table-resize-member(1)) method. The following code sample shows how to resize a table. This code sample uses the **ExpensesTable** from the [Create a table](#create-a-table) section earlier in this article and sets the new range of the table to **A1:D20**.
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Retrieve the worksheet and a table on that worksheet.
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     // Resize the table.
     expensesTable.resize("A1:D20");
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 > [!IMPORTANT]
 > The new range of the table must overlap with the original range, and the headers (or the top of the table) must be in the same row.
 
-**Table after resize** 
+### Table after resize
 
 ![Table with multiple empty rows in Excel.](../images/excel-tables-resize.png)
 
 ## Update column name
 
-The following code sample updates the name of the first column in the table to **Purchase date**. If the Excel application where the code is running supports [requirement set](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample updates the name of the first column in the table to **Purchase date**. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
     expensesTable.columns.load("items");
 
-    return context.sync()
-        .then(function () {
-            expensesTable.columns.items[0].name = "Purchase date";
+    await context.sync();
+        
+    expensesTable.columns.items[0].name = "Purchase date";
 
-            if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-                sheet.getUsedRange().format.autofitColumns();
-                sheet.getUsedRange().format.autofitRows();
-            }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
-            return context.sync();
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Table with new column name**
+### Table with new column name
 
 ![Table with new column name in Excel.](../images/excel-tables-update-column-name.png)
 
@@ -218,44 +212,43 @@ Excel.run(function (context) {
 The following code sample reads data from a table named **ExpensesTable** in the worksheet named **Sample** and then outputs that data below the table in the same worksheet.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    // Get data from the header row
-    var headerRange = expensesTable.getHeaderRowRange().load("values");
+    // Get data from the header row.
+    let headerRange = expensesTable.getHeaderRowRange().load("values");
 
-    // Get data from the table
-    var bodyRange = expensesTable.getDataBodyRange().load("values");
+    // Get data from the table.
+    let bodyRange = expensesTable.getDataBodyRange().load("values");
 
-    // Get data from a single column
-    var columnRange = expensesTable.columns.getItem("Merchant").getDataBodyRange().load("values");
+    // Get data from a single column.
+    let columnRange = expensesTable.columns.getItem("Merchant").getDataBodyRange().load("values");
 
-    // Get data from a single row
-    var rowRange = expensesTable.rows.getItemAt(1).load("values");
+    // Get data from a single row.
+    let rowRange = expensesTable.rows.getItemAt(1).load("values");
 
-    // Sync to populate proxy objects with data from Excel
-    return context.sync()
-        .then(function () {
-            var headerValues = headerRange.values;
-            var bodyValues = bodyRange.values;
-            var merchantColumnValues = columnRange.values;
-            var secondRowValues = rowRange.values;
+    // Sync to populate proxy objects with data from Excel.
+    await context.sync();
 
-            // Write data from table back to the sheet
-            sheet.getRange("A11:A11").values = [["Results"]];
-            sheet.getRange("A13:D13").values = headerValues;
-            sheet.getRange("A14:D20").values = bodyValues;
-            sheet.getRange("B23:B29").values = merchantColumnValues;
-            sheet.getRange("A32:D32").values = secondRowValues;
+    let headerValues = headerRange.values;
+    let bodyValues = bodyRange.values;
+    let merchantColumnValues = columnRange.values;
+    let secondRowValues = rowRange.values;
 
-            // Sync to update the sheet in Excel
-            return context.sync();
-        });
-}).catch(errorHandlerFunction);
+    // Write data from table back to the sheet
+    sheet.getRange("A11:A11").values = [["Results"]];
+    sheet.getRange("A13:D13").values = headerValues;
+    sheet.getRange("A14:D20").values = bodyValues;
+    sheet.getRange("B23:B29").values = merchantColumnValues;
+    sheet.getRange("A32:D32").values = secondRowValues;
+
+    // Sync to update the sheet in Excel.
+    await context.sync();
+});
 ```
 
-**Table and data output**
+### Table and data output
 
 ![Table data in Excel.](../images/excel-tables-get-data.png)
 
@@ -267,15 +260,15 @@ The `TableChangedEventArgs` object provides information about the changes and th
 
 ```js
 // This function would be used as an event handler for the Table.onChanged event.
-function onTableChanged(eventArgs) {
-    Excel.run(function (context) {
-        var details = eventArgs.details;
-        var address = eventArgs.address;
+async function onTableChanged(eventArgs) {
+    await Excel.run(async (context) => {
+        let details = eventArgs.details;
+        let address = eventArgs.address;
 
         // Print the before and after types and values to the console.
         console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
             + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
-        return context.sync();
+        await context.sync();
     });
 }
 ```
@@ -285,12 +278,12 @@ function onTableChanged(eventArgs) {
 The following code sample sorts table data in descending order according to the values in the fourth column of the table.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    // Queue a command to sort data by the fourth column of the table (descending)
-    var sortRange = expensesTable.getDataBodyRange();
+    // Queue a command to sort data by the fourth column of the table (descending).
+    let sortRange = expensesTable.getDataBodyRange();
     sortRange.sort.apply([
         {
             key: 3,
@@ -298,12 +291,12 @@ Excel.run(function (context) {
         },
     ]);
 
-    // Sync to run the queued command in Excel
-    return context.sync();
-}).catch(errorHandlerFunction);
+    // Sync to run the queued command in Excel.
+    await context.sync();
+});
 ```
 
-**Table data sorted by Amount (descending)**
+### Table data sorted by Amount (descending)
 
 ![Sorted table data in Excel.](../images/excel-tables-sort.png)
 
@@ -314,30 +307,30 @@ When data is sorted in a worksheet, an event notification fires. To learn more a
 The following code sample applies filters to the **Amount** column and the **Category** column within a table. As a result of the filters, only rows where **Category** is one of the specified values and **Amount** is below the average value for all rows is shown.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    // Queue a command to apply a filter on the Category column
-    filter = expensesTable.columns.getItem("Category").filter;
-    filter.apply({
-        filterOn: Excel.FilterOn.values,
-        values: ["Restaurant", "Groceries"]
+    // Queue a command to apply a filter on the Category column.
+    let categoryFilter = expensesTable.columns.getItem("Category").filter;
+    categoryFilter.apply({
+      filterOn: Excel.FilterOn.values,
+      values: ["Restaurant", "Groceries"]
     });
 
-    // Queue a command to apply a filter on the Amount column
-    var filter = expensesTable.columns.getItem("Amount").filter;
-    filter.apply({
-        filterOn: Excel.FilterOn.dynamic,
-        dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
+    // Queue a command to apply a filter on the Amount column.
+    let amountFilter = expensesTable.columns.getItem("Amount").filter;
+    amountFilter.apply({
+      filterOn: Excel.FilterOn.dynamic,
+      dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
     });
 
-    // Sync to run the queued commands in Excel
-    return context.sync();
-}).catch(errorHandlerFunction);
+    // Sync to run the queued commands in Excel.
+    await context.sync();
+});
 ```
 
-**Table data with filters applied for Category and Amount**
+### Table data with filters applied for Category and Amount
 
 ![Table data filtered in Excel.](../images/excel-tables-filters-apply.png)
 
@@ -346,17 +339,17 @@ Excel.run(function (context) {
 The following code sample clears any filters currently applied on the table.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.clearFilters();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Table data with no filters applied**
+### Table data with no filters applied
 
 ![Table data non-filtered in Excel.](../images/excel-tables-filters-clear.png)
 
@@ -365,18 +358,16 @@ Excel.run(function (context) {
 The following code sample gets a range that contains data only for cells that are currently visible within the specified table, and then writes the values of that range to the console. You can use the `getVisibleView()` method as shown below to get the visible contents of a table whenever column filters have been applied.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    var visibleRange = expensesTable.getDataBodyRange().getVisibleView();
+    let visibleRange = expensesTable.getDataBodyRange().getVisibleView();
     visibleRange.load("values");
 
-    return context.sync()
-        .then(function() {
-            console.log(visibleRange.values);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(visibleRange.values);
+});
 ```
 
 ## AutoFilter
@@ -386,9 +377,9 @@ An add-in can use the table's [AutoFilter](/javascript/api/excel/excel.autofilte
 The following code sample shows the same [data filtering as the earlier code sample](#apply-filters-to-a-table), but done entirely through the auto-filter.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.autoFilter.apply(expensesTable.getRange(), 2, {
         filterOn: Excel.FilterOn.values,
@@ -399,8 +390,8 @@ Excel.run(function (context) {
         dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
     });
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 An `AutoFilter` can also be applied to a range at the worksheet level. See [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#filter-data) for more information.
@@ -410,33 +401,33 @@ An `AutoFilter` can also be applied to a range at the worksheet level. See [Work
 The following code sample applies formatting to a table. It specifies different fill colors for the header row of the table, the body of the table, the second row of the table, and the first column of the table. For information about the properties you can use to specify format, see [RangeFormat Object (JavaScript API for Excel)](/javascript/api/excel/excel.rangeformat).
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.getHeaderRowRange().format.fill.color = "#C70039";
     expensesTable.getDataBodyRange().format.fill.color = "#DAF7A6";
     expensesTable.rows.getItemAt(1).getRange().format.fill.color = "#FFC300";
     expensesTable.columns.getItemAt(0).getDataBodyRange().format.fill.color = "#FFA07A";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Table after formatting is applied**
+### Table after formatting is applied
 
 ![Table after formatting is applied in Excel.](../images/excel-tables-formatting-after.png)
 
 ## Convert a range to a table
 
-The following code sample creates a range of data and then converts that range to a table.
+The following code sample creates a range of data and then converts that range to a table. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    // Define values for the range
-    var values = [["Product", "Qtr1", "Qtr2", "Qtr3", "Qtr4"],
+    // Define values for the range.
+    let values = [["Product", "Qtr1", "Qtr2", "Qtr3", "Qtr4"],
     ["Frames", 5000, 7000, 6544, 4377],
     ["Saddles", 400, 323, 276, 651],
     ["Brake levers", 12000, 8766, 8456, 9812],
@@ -444,46 +435,44 @@ Excel.run(function (context) {
     ["Mirrors", 225, 600, 923, 544],
     ["Spokes", 6005, 7634, 4589, 8765]];
 
-    // Create the range
-    var range = sheet.getRange("A1:E7");
+    // Create the range.
+    let range = sheet.getRange("A1:E7");
     range.values = values;
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     sheet.activate();
 
-    // Convert the range to a table
-    var expensesTable = sheet.tables.add('A1:E7', true);
+    // Convert the range to a table.
+    let expensesTable = sheet.tables.add('A1:E7', true);
     expensesTable.name = "ExpensesTable";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**Data in the range (before the range is converted to a table)**
+### Data in the range (before the range is converted to a table)
 
 ![Data in range in Excel.](../images/excel-ranges.png)
 
-**Data in the table (after the range is converted to a table)**
+### Data in the table (after the range is converted to a table)
 
 ![Data in table in Excel.](../images/excel-tables-from-range.png)
 
 ## Import JSON data into a table
 
-The following code sample creates a table in the worksheet named **Sample** and then populates the table by using a JSON object that defines two rows of data. If the Excel application where the code is running supports [requirement set](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**, the width of the columns and height of the rows are set to best fit the current data in the table.
+The following code sample creates a table in the worksheet named **Sample** and then populates the table by using a JSON object that defines two rows of data. The width of the columns and height of the rows are then set to best fit the current data in the table.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var expensesTable = sheet.tables.add("A1:D1", true /*hasHeaders*/);
+    let expensesTable = sheet.tables.add("A1:D1", true /*hasHeaders*/);
     expensesTable.name = "ExpensesTable";
     expensesTable.getHeaderRowRange().values = [["Date", "Merchant", "Category", "Amount"]];
 
-    var transactions = [
+    let transactions = [
       {
         "DATE": "1/1/2017",
         "MERCHANT": "The Phone Company",
@@ -498,23 +487,21 @@ Excel.run(function (context) {
       }
     ];
 
-    var newData = transactions.map(item =>
+    let newData = transactions.map(item =>
         [item.DATE, item.MERCHANT, item.CATEGORY, item.AMOUNT]);
 
     expensesTable.rows.add(null, newData);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     sheet.activate();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**New table**
+### New table
 
 ![New table from imported JSON data in Excel.](../images/excel-tables-create-from-json.png)
 

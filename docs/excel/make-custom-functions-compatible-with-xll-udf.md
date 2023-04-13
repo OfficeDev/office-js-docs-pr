@@ -1,30 +1,26 @@
 ---
 title: Extend custom functions with XLL user-defined functions
-description: 'Enable compatibility with Excel XLL user-defined functions that have equivalent functionality to your custom functions'
-ms.date: 03/09/2021
-localization_priority: Normal
+description: Enable compatibility with Excel XLL user-defined functions that have equivalent functionality to your custom functions.
+ms.date: 09/24/2021
+ms.localizationpriority: medium
 ---
 
 # Extend custom functions with XLL user-defined functions
 
-If you have existing Excel XLLs, you can build equivalent custom functions in an Excel add-in to extend your solution features to other platforms such as online or on a Mac. However, Excel add-ins don't have all of the functionality available in XLLs. Depending on the functionality your solution uses, the XLL may provide a better experience than the Excel add-in custom functions in Excel on Windows.
-
 > [!NOTE]
-> COM add-in and XLL UDF compatibility is supported by the following platforms, when connected to a Microsoft 365 subscription.
->
-> - Excel on the web
-> - Excel on Windows (version 1904 or later)
-> - Excel on Mac (version 13.329 or later)
->
-> To use COM add-in and XLL UDF compatibility within Excel on the web, login by using either your Microsoft 365 subscription or a [Microsoft account](https://account.microsoft.com/account). If you don't already have a Microsoft 365 subscription, you can a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+> An XLL add-in is an Excel add-in file with the file extension **.xll**. An XLL file is a type of dynamic link library (DLL) file that can only be opened by Excel. XLL add-in files must be written in C or C++. See [Developing Excel XLLs](/office/client-developer/excel/developing-excel-xlls) to learn more.
+
+If you have existing Excel XLL add-ins, you can build equivalent custom function add-ins using the Excel JavaScript API to extend your solution features to other platforms, such as Excel on the web or on a Mac. However, Excel JavaScript API add-ins don't have all of the functionality available in XLL add-ins. Depending on the functionality your solution uses, the XLL add-in may provide a better experience than the Excel JavaScript API add-in in Excel on Windows.
+
+[!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
 ## Specify equivalent XLL in the manifest
 
-To enable compatibility with an existing XLL, identify the equivalent XLL in the manifest of your Excel add-in. Excel will then use the XLL's functions instead of your Excel add-in custom functions when running on Windows.
+To enable compatibility with an existing XLL add-in, identify the equivalent XLL add-in in the manifest of your Excel JavaScript API add-in. Excel will then use the XLL add-in's functions instead of your Excel JavaScript API add-in custom functions when running on Windows.
 
-To set the equivalent XLL for your custom functions, specify the `FileName` of the XLL. When the user opens a workbook with functions from the XLL, Excel converts the functions to compatible functions. The workbook then uses the XLL when opened in Excel on Windows, and it will use custom functions from your Excel add-in when opened online or on a Mac.
+To set the equivalent XLL add-in for your custom functions, specify the `FileName` of the XLL file. When the user opens a workbook with functions from the XLL file, Excel converts the functions to compatible functions. The workbook then uses the XLL file when opened in Excel on Windows, and it will use custom functions from your Excel JavaScript API add-in when opened on the web or on a Mac.
 
-The following example shows how to specify both a COM add-in and an XLL as equivalent. Often you will specify both. For completeness, this example shows both in context. They are identified by their `ProgId` and `FileName` respectively. The `EquivalentAddins` element must be positioned immediately before the closing `VersionOverrides` tag. For more information on COM add-in compatibility, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+The following example shows how to specify both a COM add-in and an XLL add-in as equivalents in an Excel JavaScript API add-in manifest file. Often you will specify both. For completeness, this example shows both in context. They are identified by their `ProgId` and `FileName` respectively. The `EquivalentAddins` element must be positioned immediately before the closing `VersionOverrides` tag. For more information on COM add-in compatibility, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 ```xml
 <VersionOverrides>
@@ -44,15 +40,15 @@ The following example shows how to specify both a COM add-in and an XLL as equiv
 ```
 
 > [!NOTE]
-> If an add-in declares its custom functions to be XLL compatible, changing the manifest at a later time could break a user's workbook because it will change the file format.
+> If an Excel JavaScript API add-in declares its custom functions to be compatible with an XLL add-in, changing the manifest at a later time could break a user's workbook because it will change the file format.
 
 ## Custom function behavior for XLL compatible functions
 
-An add-in's XLL functions are converted to XLL compatible custom functions when a spreadsheet is opened and there is an equivalent add-in available. On the next save, the XLL functions are written to the file in a compatible mode so that they work with both the XLL and Excel add-in custom functions (when on other platforms).
+An add-in's XLL functions are converted to XLL compatible custom functions when a spreadsheet is opened and there is an equivalent add-in available. On the next save, the XLL functions are written to the file in a compatible mode so that they work with both the XLL add-in and Excel JavaScript API add-in custom functions (when on other platforms).
 
-The following table compares features across XLL user-defined functions, XLL compatible custom functions, and Excel add-in custom functions.
+The following table compares features across XLL user-defined functions, XLL compatible custom functions, and Excel JavaScript API add-in custom functions.
 
-|         |XLL user-defined function |XLL compatible custom functions |Excel add-in custom function |
+|         |XLL user-defined function |XLL compatible custom functions |Excel JavaScript API add-in custom function |
 |---------|---------|---------|---------|
 | **Supported platforms** | Windows | Windows, macOS, web browser | Windows, macOS, web browser |
 | **Supported file formats** | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |

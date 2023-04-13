@@ -1,8 +1,8 @@
 ---
 title: Referencing the Office JavaScript API library
-description: 'Learn how to reference the Office JavaScript API library and type definitions in your add-in.'
+description: Learn how to reference the Office JavaScript API library and type definitions in your add-in.
 ms.date: 02/18/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Referencing the Office JavaScript API library
@@ -40,11 +40,16 @@ npm install --save-dev @types/office-js
 
 ## Preview APIs
 
-New JavaScript APIs are first introduced in "preview" and later become part of a specific numbered requirement set after sufficient testing occurs and user feedback is required.
+New JavaScript APIs are first introduced in "preview" and later become part of a specific numbered requirement set after sufficient testing occurs and user feedback is acquired.
 
 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
+
+## CDN references for other Microsoft 365 environments
+
+[!INCLUDE [Information about the China-specific CDN](../includes/21Vianet-CDN.md)]
 
 ## See also
 
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
+- [Guidance for deploying Office Add-ins on government clouds](../publish/government-cloud-guidance.md)

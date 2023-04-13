@@ -1,18 +1,19 @@
 ---
 title: Implement a pinnable task pane in an Outlook add-in
 description: The task pane UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions.
-ms.date: 07/07/2020
-localization_priority: Normal
+ms.date: 10/13/2022
+ms.topic: how-to
+ms.localizationpriority: medium
 ---
 
 # Implement a pinnable task pane in Outlook
 
-The [task pane](add-in-commands-for-outlook.md#launching-a-task-pane) UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions (filling in multiple fields, etc.). This task pane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
+The [task pane](../design/add-in-commands.md#types-of-add-in-commands) UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions (filling in multiple fields, etc.). This task pane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
 
 However, by default, if a user has an add-in task pane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable task panes, your add-in can give the user that option.
 
 > [!NOTE]
-> Although the pinnable task panes feature was introduced in [requirement set 1.5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), it's currently only available to Microsoft 365 subscribers using the following:
+> Although the pinnable task panes feature was introduced in [requirement set 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), it's currently only available to Microsoft 365 subscribers using the following:
 >
 > - Outlook 2016 or later on Windows (build 7668.2000 or later for users in the Current or Office Insider Channels, build 7900.xxxx or later for users in Deferred channels)
 > - Outlook 2016 or later on Mac (version 16.13.503 or later)
@@ -24,14 +25,16 @@ However, by default, if a user has an add-in task pane open for a message in the
 > - Appointments/Meetings
 > - Outlook.com
 
+> [!TIP]
+> If you plan to [publish](../publish/publish.md) your Outlook add-in to [AppSource](https://appsource.microsoft.com), and it's configured for a pinnable task pane, in order to pass [AppSource validation](/legal/marketplace/certification-policies), your add-in content must not be static and it must clearly display data related to the message that is open or selected in the mailbox.
+
 ## Support task pane pinning
 
-The first step is to add pinning support, which is done in the add-in [manifest](manifests.md). This is done by adding the [SupportsPinning](../reference/manifest/action.md#supportspinning) element to the `Action` element that describes the task pane button.
+The first step is to add pinning support, which is done in the add-in manifest. The markup varies depending on the type of manifest.
 
-The `SupportsPinning` element is defined in the VersionOverrides v1.1 schema, so you will need to include a [VersionOverrides](../reference/manifest/versionoverrides.md) element both for v1.0 and v1.1.
+# [XML Manifest](#tab/xmlmanifest)
 
-> [!NOTE]
-> If you plan to [publish](../publish/publish.md) your Outlook add-in to [AppSource](https://appsource.microsoft.com), when you use the **SupportsPinning** element, in order to pass [AppSource validation](/legal/marketplace/certification-policies), your add-in content must not be static and it must clearly display data related to the message that is open or selected in the mailbox.
+Add the [SupportsPinning](/javascript/api/manifest/action#supportspinning) element to the **\<Action\>** element that describes the task pane button. The following is an example.
 
 ```xml
 <!-- Task pane button -->
@@ -52,6 +55,26 @@ The `SupportsPinning` element is defined in the VersionOverrides v1.1 schema, so
   </Action>
 </Control>
 ```
+
+The **\<SupportsPinning\>** element is defined in the VersionOverrides v1.1 schema, so you will need to include a [VersionOverrides](/javascript/api/manifest/versionoverrides) element both for v1.0 and v1.1.
+
+# [Unified Microsoft 365 manifest (developer preview)](#tab/jsonmanifest)
+
+Add a "pinnable" property, set to `true`, to the object in the "actions" array that defines the button or menu item that opens the task pane. The following is an example.
+
+```json
+"actions": [
+    {
+        "id": "OpenTaskPane",
+        "type": "openPage",
+        "view": "TaskPaneView",
+        "displayName": "OpenTaskPane",
+        "pinnable": true
+    }
+]
+```
+
+---
 
 For a full example, see the `msgReadOpenPaneButton` control in the [command-demo sample manifest](https://github.com/OfficeDev/outlook-add-in-command-demo/blob/master/command-demo-manifest.xml).
 
@@ -84,7 +107,7 @@ function itemChanged(eventArgs) {
 
 ### Register the event handler
 
-Use the [Office.context.mailbox.addHandlerAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your task pane.
+Use the [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your task pane.
 
 ```js
 Office.initialize = function (reason) {

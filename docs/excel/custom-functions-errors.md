@@ -2,7 +2,7 @@
 title: Handle and return errors from your custom function
 description: 'Handle and return errors like #NULL! from your custom function.'
 ms.date: 08/12/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Handle and return errors from your custom function
@@ -72,15 +72,15 @@ In addition to returning a single error, a custom function can output a dynamic 
 */
 function returnInvalidNumberError(first, second, third) {
   // Use the `CustomFunctions.Error` object to retrieve an invalid number error.
-  var error = new CustomFunctions.Error(
+  const error = new CustomFunctions.Error(
     CustomFunctions.ErrorCode.invalidNumber, // Corresponds to the #NUM! error in the Excel UI.
   );
 
   // Enter logic that processes the first, second, and third input parameters.
   // Imagine that the second calculation results in an invalid number error. 
-  var firstResult = first;
-  var secondResult =  error;
-  var thirdResult = third;
+  const firstResult = first;
+  const secondResult =  error;
+  const thirdResult = third;
 
   // Return the results of the first and third parameter calculations and a #NUM! error in place of the second result. 
   return [[firstResult], [secondResult], [thirdResult]];
@@ -130,5 +130,5 @@ Learn how to [troubleshoot problems with your custom functions](custom-functions
 ## See also
 
 * [Custom functions debugging](custom-functions-debugging.md)
-* [Custom functions requirements](custom-functions-requirement-sets.md)
+* [Custom functions requirement sets](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
 * [Create custom functions in Excel](custom-functions-overview.md)

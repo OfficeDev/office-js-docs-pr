@@ -1,8 +1,9 @@
 ---
 title: Branding patterns design guidelines for Office Add-ins
-description: 'Learn how to brand your Office Add-in while staying compatible with the visual design of Office.'
+description: Learn how to brand your Office Add-in while staying compatible with the visual design of Office.
 ms.date: 06/26/2018
-localization_priority: Normal
+ms.topic: best-practice
+ms.localizationpriority: medium
 ---
 
 # Branding patterns

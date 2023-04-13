@@ -1,8 +1,8 @@
 ---
 title: Publish your add-in using Visual Studio
 description: How to deploy your web project and package your add-in by using Visual Studio 2019.
-ms.date: 12/02/2019
-localization_priority: Normal
+ms.date: 01/23/2023
+ms.localizationpriority: medium
 ---
 
 # Publish your add-in using Visual Studio
@@ -41,6 +41,10 @@ Complete the following steps to package your add-in using Visual Studio 2019.
 You can now upload your XML manifest to the appropriate location to [publish your add-in](../publish/publish.md). You can find the XML manifest in `OfficeAppManifests` in the `app.publish` folder. For example:
 
  `%UserProfile%\Documents\Visual Studio 2019\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
+
+## Deploy updates
+
+[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
 
 ## See also
 

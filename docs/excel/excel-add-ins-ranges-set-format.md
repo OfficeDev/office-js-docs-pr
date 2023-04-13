@@ -1,9 +1,9 @@
 ---
 title: Set the format of a range using the Excel JavaScript API
-description: 'Learn how to use the Excel JavaScript API to set the format of a range.'
-ms.date: 04/02/2021
+description: Learn how to use the Excel JavaScript API to set the format of a range.
+ms.date: 02/17/2022
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Set range format using the Excel JavaScript API
@@ -17,15 +17,15 @@ This article provides code samples that set font color, fill color, and number f
 The following code sample sets the font color and fill color for cells in range **B2:E2**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var range = sheet.getRange("B2:E2");
+    let range = sheet.getRange("B2:E2");
     range.format.fill.color = "#4472C4";
     range.format.font.color = "white";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### Data in range before font color and fill color are set
@@ -41,20 +41,20 @@ Excel.run(function (context) {
 The following code sample sets the number format for the cells in range **D3:E5**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var formats = [
+    let formats = [
         ["0.00", "0.00"],
         ["0.00", "0.00"],
         ["0.00", "0.00"]
     ];
 
-    var range = sheet.getRange("D3:E5");
+    let range = sheet.getRange("D3:E5");
     range.numberFormat = formats;
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### Data in range before number format is set

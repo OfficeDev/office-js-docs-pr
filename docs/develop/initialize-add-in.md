@@ -1,8 +1,8 @@
 ---
 title: Initialize your Office Add-in
-description: 'Learn how to initialize your Office Add-in.'
-ms.date: 07/08/2021
-localization_priority: Normal
+description: Learn how to initialize your Office Add-in.
+ms.date: 07/11/2022
+ms.localizationpriority: medium
 ---
 
 # Initialize your Office Add-in
@@ -33,9 +33,9 @@ For more details about the sequence of events when an add-in is initialized, see
 
 ## Initialize with Office.onReady()
 
-`Office.onReady()` is an asynchronous method that returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) object while it checks to see if the Office.js library is loaded. When the library is loaded, it resolves the Promise as an object that specifies the Office client application with an `Office.HostType` enum value (`Excel`, `Word`, etc.) and the platform with an `Office.PlatformType` enum value (`PC`, `Mac`, `OfficeOnline`, etc.). The Promise resolves immediately if the library is already loaded when `Office.onReady()` is called.
+`Office.onReady()` is an asynchronous function that returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) object while it checks to see if the Office.js library is loaded. When the library is loaded, it resolves the Promise as an object that specifies the Office client application with an `Office.HostType` enum value (`Excel`, `Word`, etc.) and the platform with an `Office.PlatformType` enum value (`PC`, `Mac`, `OfficeOnline`, etc.). The Promise resolves immediately if the library is already loaded when `Office.onReady()` is called.
 
-One way to call `Office.onReady()` is to pass it a callback method. Here's an example.
+One way to call `Office.onReady()` is to pass it a callback function. Here's an example.
 
 ```js
 Office.onReady(function(info) {
@@ -72,7 +72,7 @@ Here is the same example using the `async` and `await` keywords in TypeScript.
 })();
 ```
 
-If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the response to `Office.onReady()`. For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
+If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the response to `Office.onReady()`. For example, [JQuery's](https://jquery.com) `$(document).ready()` method would be referenced as follows:
 
 ```js
 Office.onReady(function() {
@@ -83,9 +83,9 @@ Office.onReady(function() {
 });
 ```
 
-However, there are exceptions to this practice. For example, suppose you want to open your add-in in a browser (instead of sideload it in an Office application) in order to debug your UI with browser tools. Since Office.js won't load in the browser, `onReady` won't run and the `$(document).ready` won't run if it's called inside the Office `onReady`. 
+However, there are exceptions to this practice. For example, suppose you want to open your add-in in a browser (instead of sideload it in an Office application) in order to debug your UI with browser tools. In this scenario, once Office.js determines that it is running outside of an Office host application, it will call the callback and resolve the promise with `null` for both the host and platform.
 
-Another exception would be if you want a progress indicator to appear in the task pane while the add-in is loading. In this scenario, your code should call the jQuery `ready` and use its callback to render the progress indicator. Then the Office `onReady`'s callback can replace the progress indicator with the final UI. 
+Another exception would be if you want a progress indicator to appear in the task pane while the add-in is loading. In this scenario, your code should call the jQuery `ready` and use its callback to render the progress indicator. Then the `Office.onReady` callback can replace the progress indicator with the final UI.
 
 ## Initialize with Office.initialize
 
@@ -99,7 +99,7 @@ Office.initialize = function () {
 };
 ```
 
-If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the `Office.initialize` event (the exceptions described in the **Initialize with Office.onReady()** section earlier apply in this case also). For example, [JQuery's](https://jquery.com) `$(document).ready()` function would be referenced as follows:
+If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the `Office.initialize` event (the exceptions described in the **Initialize with Office.onReady()** section earlier apply in this case also). For example, [JQuery's](https://jquery.com) `$(document).ready()` method would be referenced as follows:
 
 ```js
 Office.initialize = function () {
@@ -134,7 +134,7 @@ For more information, see [Office.initialize Event](/javascript/api/office) and 
 > [!NOTE]
 > Even if you have no start-up logic, you should either call `Office.onReady()` or assign an empty function to `Office.initialize` when your add-in JavaScript loads. Some Office application and platform combinations won't load the task pane until one of these happens. The following examples show these two approaches.
 >
->```js    
+>```js
 >Office.onReady();
 >```
 >
@@ -142,6 +142,10 @@ For more information, see [Office.initialize Event](/javascript/api/office) and 
 >```js
 >Office.initialize = function () {};
 >```
+
+## Debug initialization
+
+For information about debugging the `Office.initialize` and `Office.onReady()` functions, see [Debug the initialize and onReady functions](../testing/debug-initialize-onready.md).
 
 ## See also
 

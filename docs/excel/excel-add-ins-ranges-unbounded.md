@@ -1,9 +1,9 @@
 ---
 title: Read or write to an unbounded range using the Excel JavaScript API
-description: 'Learn how to use the Excel JavaScript API to read or write to an unbounded range.'
-ms.date: 04/05/2021
+description: Learn how to use the Excel JavaScript API to read or write to an unbounded range.
+ms.date: 02/17/2022
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Read or write to an unbounded range using the Excel JavaScript API
@@ -12,8 +12,12 @@ This article describes how to read and write to an unbounded range with the Exce
 
 An unbounded range address is a range address that specifies either entire columns or entire rows. For example:
 
-- Range addresses comprised of entire columns:<ul><li>`C:C`</li><li>`A:F`</li></ul>
-- Range addresses comprised of entire rows:<ul><li>`2:2`</li><li>`1:4`</li></ul>
+- Range addresses comprised of entire columns.
+  - `C:C`
+  - `A:F`
+- Range addresses comprised of entire rows.
+  - `2:2`
+  - `1:4`
 
 ## Read an unbounded range
 
@@ -25,7 +29,7 @@ You cannot set cell-level properties such as `values`, `numberFormat`, and `form
 
 ```js
 // Note: This code sample attempts to specify `values` for an unbounded range, which is not a valid request. The sample will return an error. 
-var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+let range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
 range.values = 'Due Date';
 ```
 

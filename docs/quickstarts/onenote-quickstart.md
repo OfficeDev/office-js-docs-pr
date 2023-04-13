@@ -1,9 +1,9 @@
 ---
 title: Build your first OneNote task pane add-in
 description: Learn how to build a simple OneNote task pane add-in by using the Office JS API.
-ms.date: 08/04/2021
+ms.date: 07/12/2022
 ms.prod: onenote
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Build your first OneNote task pane add-in
@@ -24,7 +24,7 @@ In this article, you'll walk through the process of building a OneNote task pane
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `OneNote`
 
-![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-onenote.png)
+![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-onenote.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -45,20 +45,20 @@ In your code editor, open the file **./src/taskpane/taskpane.js** and add the fo
 
 ```js
 try {
-    await OneNote.run(async context => {
+    await OneNote.run(async (context) => {
 
         // Get the current page.
-        var page = context.application.getActivePage();
+        const page = context.application.getActivePage();
 
         // Queue a command to set the page title.
         page.title = "Hello World";
 
         // Queue a command to add an outline to the page.
-        var html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
+        const html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
         page.addOutline(40, 90, html);
 
-        // Run the queued commands, and return a promise to indicate task completion.
-        return context.sync();
+        // Run the queued commands.
+        await context.sync();
     });
 } catch (error) {
     console.log("Error: " + error);
@@ -73,23 +73,13 @@ try {
     cd "My Office Add-in"
     ```
 
-1. Start the local web server and sideload your add-in.
-
-    > [!NOTE]
-    > Office Add-ins should use HTTPS, not HTTP, even when you are developing. If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides. You may also have to run your command prompt or terminal as an administrator for the changes to be made.
-
-    > [!TIP]
-    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
-    >
-    > ```command&nbsp;line
-    > npm run dev-server
-    > ```
-
-    Run the following command in the root directory of your project. When you run this command, the local web server will start (if it's not already running).
+1. Start the local web server. Run the following command in the root directory of your project.
 
     ```command&nbsp;line
-    npm run start:web
+    npm run dev-server
     ```
+
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 1. In [OneNote on the web](https://www.onenote.com/notebooks), open a notebook and create a new page.
 
@@ -101,7 +91,7 @@ try {
 
     The following image shows the **MY ADD-INS** tab for consumer notebooks.
 
-    ![Screenshot of the Office Add-ins dialog showing the MY ADD-INS tab.](../images/onenote-office-add-ins-dialog.png)
+    ![The Office Add-ins dialog showing the MY ADD-INS tab.](../images/onenote-office-add-ins-dialog.png)
 
 1. In the Upload Add-in dialog, browse to **manifest.xml** in your project folder, and then choose **Upload**.
 
@@ -109,7 +99,7 @@ try {
 
 1. At the bottom of the task pane, choose the **Run** link to set the page title and add an outline to the body of the page.
 
-    ![Screenshot showing the add-in built from this walkthrough: Show Taskpane ribbon button and task pane in OneNote.](../images/onenote-first-add-in-4.png)
+    ![The add-in built from this walkthrough, where the Show Taskpane ribbon button was used to open the task pane in OneNote.](../images/onenote-first-add-in-4.png)
 
 ## Next steps
 
@@ -125,3 +115,4 @@ Congratulations, you've successfully created a OneNote task pane add-in! Next, l
 - [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

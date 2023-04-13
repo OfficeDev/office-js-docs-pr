@@ -1,8 +1,8 @@
 ---
 title: Debug your add-in with runtime logging
-description: 'Learn how to use runtime logging to debug your add-in.'
-ms.date: 07/08/2021
-localization_priority: Normal
+description: Learn how to use runtime logging to debug your add-in.
+ms.date: 11/04/2021
+ms.localizationpriority: medium
 ---
 
 # Debug your add-in with runtime logging
@@ -18,6 +18,8 @@ You can use runtime logging to debug your add-in's manifest as well as several i
 ## Use runtime logging from the command line
 
 Enabling runtime logging from the command line is the fastest way to use this logging tool. These use npx, which is provided by default as part of npm@5.2.0+. If you have an earlier version of [npm](https://www.npmjs.com/), try [Runtime logging on Windows](#runtime-logging-on-windows) or [Runtime logging on Mac](#runtime-logging-on-mac) instructions, or [install npx](https://www.npmjs.com/package/npx).
+
+[!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
 - To enable runtime logging:
 
@@ -68,7 +70,7 @@ The following image shows what the registry should look like. To turn the featur
 
 ## Runtime logging on Mac
 
-1. Make sure that you are running Office 2016 desktop build **16.27** (19071500) or later.
+1. Make sure that you are running Office 2016 desktop build **16.27.19071500** or later.
 
 2. Open **Terminal** and set a runtime logging preference by using the `defaults` command:
 
@@ -136,4 +138,7 @@ You might see messages in the log file that are confusing or that are classified
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Clear the Office cache](clear-cache.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
-- [Debug Office Add-ins](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
+- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md) 
+- [Runtimes in Office Add-ins](runtimes.md)

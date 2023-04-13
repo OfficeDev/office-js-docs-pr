@@ -1,8 +1,9 @@
 ---
-ms.date: 03/30/2021
-description: 'Troubleshoot common problems with Excel custom functions.'
+ms.date: 06/09/2022
+description: Troubleshoot common problems with Excel custom functions.
 title: Troubleshoot custom functions
-localization_priority: Normal
+ms.topic: troubleshooting
+ms.localizationpriority: medium
 ---
 # Troubleshoot custom functions
 
@@ -11,6 +12,12 @@ When developing custom functions, you may encounter errors in the product while 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return).
+
+## Debugging custom functions
+
+To debug custom functions add-ins that use a [shared runtime](../testing/runtimes.md#shared-runtime), see [Configure your Office Add-in to use a shared runtime: Debug](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
+
+To debug custom functions add-ins that don't use a shared runtime, see [Custom functions debugging](custom-functions-debugging.md).
 
 ## Enable runtime logging
 
@@ -39,7 +46,7 @@ If you see the error "We can't open this add-in from localhost," you will need t
 
 ### Runtime logging reports "TypeError: Network request failed" on Excel on Windows
 
-If you see the error "TypeError: Network request failed" in your [runtime log](custom-functions-troubleshooting.md#enable-runtime-logging) while making calls to your localhost server, you'll need to enable a local loopback exception. For details on how to do this, see *Option #2* in [this Microsoft support article](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work).
+If you see the error "TypeError: Network request failed" in your [runtime log](custom-functions-troubleshooting.md#enable-runtime-logging) while making calls to your localhost server, you'll need to enable a local loopback exception. For details on how to do this, see *Option #2* in [this Microsoft support article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 ### Ensure promises return
 
@@ -51,7 +58,7 @@ Sometimes when running `npm start` you may see an error that the dev server is a
 
 ### My functions won't load: associate functions
 
-In cases where your JSON has not been registered and you have authored your own JSON metadata, you may see a `#VALUE!` error or receive a notification that your add-in cannot be loaded. This usually means you need to associate each custom function with its `id` property specified in the [JSON metadata file](custom-functions-json.md). This is done by using the `CustomFunctions.associate()` method. Typically this method call is made after each function or at the end of the script file. If a custom function is not associated, it will not work.
+In cases where your JSON has not been registered and you have authored your own JSON metadata, you may see a `#VALUE!` error or receive a notification that your add-in cannot be loaded. This usually means you need to associate each custom function with its `id` property specified in the [JSON metadata file](custom-functions-json.md). This is done by using the `CustomFunctions.associate()` function. Typically this function call is made after each function or at the end of the script file. If a custom function is not associated, it will not work.
 
 The following example shows an add function, followed by the function's name `add` being associated with the corresponding JSON id `ADD`.
 
@@ -89,9 +96,11 @@ If using Excel on Windows or Mac, you can report feedback to the Office extensib
 Feel free to submit an issue you encounter either through the "Content feedback" feature at the bottom of any documentation page, or by [filing a new issue directly to the custom functions repository](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## Next steps
+
 Learn how to [make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md).
 
 ## See also
 
-* [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
-* [Create custom functions in Excel](custom-functions-overview.md)
+- [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
+- [Custom functions debugging](custom-functions-debugging.md)

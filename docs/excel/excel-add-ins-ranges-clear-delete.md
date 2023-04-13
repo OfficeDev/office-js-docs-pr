@@ -1,9 +1,9 @@
 ---
 title: Clear or delete ranges using the Excel JavaScript API
-description: 'Learn how to clear or delete ranges using the Excel JavaScript API.'
-ms.date: 04/02/2021
+description: Learn how to clear or delete ranges using the Excel JavaScript API.
+ms.date: 02/16/2022
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Clear or delete ranges using the Excel JavaScript API
@@ -17,14 +17,14 @@ This article provides code samples that clear and delete ranges with the Excel J
 The following code sample clears all contents and formatting of cells in the range **E2:E5**.  
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("E2:E5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let range = sheet.getRange("E2:E5");
 
     range.clear();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### Data before range is cleared
@@ -40,14 +40,14 @@ Excel.run(function (context) {
 The following code sample deletes the cells in the range **B4:E4** and shifts other cells up to fill the space that was vacated by the deleted cells.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B4:E4");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let range = sheet.getRange("B4:E4");
 
     range.delete(Excel.DeleteShiftDirection.up);
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### Data before range is deleted
@@ -57,7 +57,6 @@ Excel.run(function (context) {
 ### Data after range is deleted
 
 ![Data in Excel after range is deleted.](../images/excel-ranges-after-delete.png)
-
 
 ## See also
 

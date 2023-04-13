@@ -1,10 +1,10 @@
 ---
 title: OneNote JavaScript API programming overview
-description: 'Learn about the OneNote JavaScript API for OneNote add-ins on the web.'
-ms.date: 10/14/2020
-ms.topic: conceptual
+description: Learn about the OneNote JavaScript API for OneNote add-ins on the web.
+ms.date: 07/18/2022
+ms.topic: overview
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # OneNote JavaScript API programming overview
@@ -50,33 +50,24 @@ Use the `Application` object to access OneNote objects such as **Notebook**, **S
 For example:
 
 ```js
-function getPagesInSection() {
-    OneNote.run(function (context) {
+async function getPagesInSection() {
+    await OneNote.run(async (context) => {
 
         // Get the pages in the current section.
-        var pages = context.application.getActiveSection().pages;
+        const pages = context.application.getActiveSection().pages;
 
         // Queue a command to load the id and title for each page.
         pages.load('id,title');
 
         // Run the queued commands, and return a promise to indicate task completion.
-        return context.sync()
-            .then(function () {
-
-                // Read the id and title of each page.
-                $.each(pages.items, function(index, page) {
-                    var pageId = page.id;
-                    var pageTitle = page.title;
-                    console.log(pageTitle + ': ' + pageId);
-                });
-            })
-            .catch(function (error) {
-                app.showNotification("Error: " + error);
-                console.log("Error: " + error);
-                if (error instanceof OfficeExtension.Error) {
-                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                }
-            });
+        await context.sync();
+            
+        // Read the id and title of each page.
+        $.each(pages.items, function(index, page) {
+            let pageId = page.id;
+            let pageTitle = page.title;
+            console.log(pageTitle + ': ' + pageId);
+        });
     });
 }
 ```
@@ -87,12 +78,12 @@ You can find supported OneNote objects and operations in the [API reference](../
 
 #### OneNote JavaScript API requirement sets
 
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](../reference/requirement-sets/onenote-api-requirement-sets.md).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets).
 
 ### Accessing the Common API through the *Document* object
 
-Use the `Document` object to access the Common API, such as the [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_)
-and [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) methods.
+Use the `Document` object to access the Common API, such as the [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1))
+and [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) methods.
 
 For example:  
 
@@ -102,7 +93,7 @@ function getSelectionFromPage() {
         Office.CoercionType.Text,
         { valueFormat: "unformatted" },
         function (asyncResult) {
-            var error = asyncResult.error;
+            const error = asyncResult.error;
             if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                 console.log(error.message);
             }
@@ -115,16 +106,18 @@ OneNote add-ins support only the following Common APIs.
 
 | API | Notes |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) | `Office.CoercionType.Text` and `Office.CoercionType.Matrix` only |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) | `Office.CoercionType.Text`, `Office.CoercionType.Image`, and `Office.CoercionType.Html` only | 
-| [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#get_name_) | Settings are supported by content add-ins only | 
-| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set_name__value_) | Settings are supported by content add-ins only | 
-| [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
+| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) | `Office.CoercionType.Text` and `Office.CoercionType.Matrix` only |
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | `Office.CoercionType.Text`, `Office.CoercionType.Image`, and `Office.CoercionType.Html` only |
+| [const mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | Settings are supported by content add-ins only |
+| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | Settings are supported by content add-ins only |
+| [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) |*None.*|
 
 In general, you use the Common API to do something that isn't supported in the application-specific API. To learn more about using the Common API, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 <a name="om-diagram"></a>
+
 ## OneNote object model diagram
+
 The following diagram represents what's currently available in the OneNote JavaScript API.
 
   ![OneNote object model diagram.](../images/onenote-om.png)

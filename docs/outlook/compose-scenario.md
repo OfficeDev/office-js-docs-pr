@@ -1,20 +1,18 @@
 ---
 title: Create Outlook add-ins for compose forms
-description: 'Learn about scenarios and capabilities of Outlook add-ins for compose forms.'
-ms.date: 02/09/2021
-localization_priority: Priority
+description: Learn about scenarios and capabilities of Outlook add-ins for compose forms.
+ms.date: 03/21/2023
+ms.topic: overview
+ms.localizationpriority: high
 ---
 
 # Create Outlook add-ins for compose forms
 
-Starting with version 1.1 of the schema for Office Add-ins manifests and v1.1 of Office.js, you can create compose add-ins, which are Outlook add-ins activated in compose forms. In contrast with read add-ins (Outlook add-ins that are activated in read mode when a user is viewing a message or appointment), compose add-ins are available in the following user scenarios.
+You can create compose add-ins, which are Outlook add-ins activated in compose forms. In contrast with read add-ins (Outlook add-ins that are activated in read mode when a user is viewing a message or appointment), compose add-ins are available in the following user scenarios.
 
 - Composing a new message, meeting request, or appointment in a compose form.
 
 - Viewing or editing an existing appointment, or meeting item in which the user is the organizer.
-
-   > [!NOTE]
-   > If the user is on the RTM release of Outlook 2013 and Exchange 2013 and is viewing a meeting item organized by the user, the user can find read add-ins available. Starting in the Office 2013 SP1 release, there's a change such that in the same scenario, only compose add-ins can activate and be available.
 
 - Composing an inline response message or replying to a message in a separate compose form.
 
@@ -34,10 +32,12 @@ The following figure shows the add-in selection pane consisting of two compose a
 
 ## Types of add-ins available in compose mode
 
-Compose add-ins are implemented as [Add-in commands for Outlook](add-in-commands-for-outlook.md). To activate add-ins for composing email or meeting responses, add-ins include a [MessageComposeCommandSurface extension point element](../reference/manifest/extensionpoint.md#messagecomposecommandsurface) in the manifest. To activate add-ins for composing or editing appointments or meetings where the user is the organizer, add-ins include a [AppointmentOrganizerCommandSurface extension point element](../reference/manifest/extensionpoint.md#appointmentorganizercommandsurface).
+Compose add-ins are implemented as [add-in commands](../design/add-in-commands.md). To activate add-ins for composing email or meeting responses, add-ins include a [MessageComposeCommandSurface extension point element](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface) in the manifest. To activate add-ins for composing or editing appointments or meetings where the user is the organizer, add-ins include a [AppointmentOrganizerCommandSurface extension point element](/javascript/api/manifest/extensionpoint#appointmentorganizercommandsurface).
 
 > [!NOTE]
-> Add-ins developed for servers or clients that do not support add-in commands use [activation rules](activation-rules.md) in a [Rule](../reference/manifest/rule.md) element contained in the [OfficeApp](../reference/manifest/officeapp.md) element. Unless the add-in is being specifically developed for older clients and servers, new add-ins should use add-in commands.
+> Add-ins developed for servers or clients that do not support add-in commands use [activation rules](activation-rules.md) in a [Rule](/javascript/api/manifest/rule) element contained in the [OfficeApp](/javascript/api/manifest/officeapp) element. Unless the add-in is being specifically developed for older clients and servers, new add-ins should use add-in commands.
+>
+[!include[Rule features not supported with unified Microsoft 365 manifest](../includes/rules-not-supported-json-note.md)]
 
 ## API features available to compose add-ins
 

@@ -1,8 +1,8 @@
 ---
 title: Requirements for running Office Add-ins
-description: 'Learn about the client and server requirements that an end user needs to run Office Add-ins.'
-ms.date: 07/27/2021
-localization_priority: Normal
+description: Learn about the client and server requirements that an end user needs to run Office Add-ins.
+ms.date: 06/15/2022
+ms.localizationpriority: medium
 ---
 
 # Requirements for running Office Add-ins
@@ -11,7 +11,7 @@ This article describes the software and device requirements for running Office A
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-For a high-level view of where Office Add-ins are currently supported, see [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md).
+For a high-level view of where Office Add-ins are currently supported, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
 
 ## Server requirements
 
@@ -37,17 +37,19 @@ The following software is required for developing an Office Add-in for the suppo
 
 - For Windows x86 and x64 desktops, and tablets such as Surface Pro:
   - The 32- or 64-bit version of Office 2013 or a later version, running on Windows 7 or a later version.
-  - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you are testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
+  - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you're testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
 
-  If you have a valid Microsoft 365 subscription and you do not have access to the Office client, you can [download and install the latest version of Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
+  If you have a valid Microsoft 365 subscription and you don't have access to the Office client, you can [download and install the latest version of Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658).
 
-- Internet Explorer 11 or Microsoft Edge (depending on the Windows and Office versions) must be installed but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Internet Explorer 11 or Microsoft Edge. See [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md) for more details.
+- Microsoft Edge must be installed, but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses browser components that are part of Microsoft Edge.
 
   > [!NOTE]
-  > Internet Explorer's Enhanced Security Configuration (ESC) must be turned off for Office Web Add-ins to work. If you are using a Windows Server computer as your client when developing add-ins, note that ESC is turned on by default in Windows Server.
+  >
+  > - Strictly speaking, it's possible to develop add-ins on a machine that has Internet Explorer 11 (IE11) installed, but not Microsoft Edge. However, IE11 is used to run add-ins only on certain older combinations of Windows and Office versions. See [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md) for more details. We don't recommend using such old environments as your primary add-in development environment. However, if you are likely to have customers of your add-in that are working in these older combinations, we recommend that you support Internet Explorer. For more information, see [Support older Microsoft browsers and Office versions](../develop/support-ie-11.md).
+  > - Internet Explorer's Enhanced Security Configuration (ESC) must be turned off for Office Web Add-ins to work. If you are using a Windows Server computer as your client when developing add-ins, note that ESC is turned on by default in Windows Server.
 
 - One of the following as the default browser: Internet Explorer 11, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
-- An HTML and JavaScript editor such as Notepad, [Visual Studio and the Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs), or a third-party web development tool.
+- An HTML and JavaScript editor such as [Visual Studio Code](https://code.visualstudio.com/), [Visual Studio and the Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs), or non-Microsoft web development tool.
 
 ## Client requirements: OS X desktop
 
@@ -61,26 +63,39 @@ The following are the minimum client versions of Office on Mac that support Offi
 
 ## Client requirements: Browser support for Office web clients and SharePoint
 
-Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Internet Explorer 11, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
+Any browser, except Internet Explorer, that supports ECMAScript 5.1, HTML5, and CSS3, such as Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
 
+## Client requirements: Non-Windows smartphone and tablet
 
-## Client requirements: non-Windows smartphone and tablet
-
-Specifically for Outlook running in a browser on smartphones and non-Windows tablet devices, the following software is required for testing and running Outlook add-ins.
-
+Specifically for Outlook running on smartphones and non-Windows tablet devices, the following software is required for testing and running Outlook add-ins.
 
 | Office application | Device | Operating system | Exchange account | Mobile browser |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook on Android|Android tablets and smartphones|Android 4.4 KitKat later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Native app for Android, browser not applicable|
-|Outlook on iOS|iPad tablets, iPhone smartphones|iOS 11 or later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Native app for iOS, browser not applicable|
-|Outlook on the web|iPhone 4 or later, iPad 2 or later, iPod Touch 4 or later|iOS 5 or later|On Microsoft 365, Exchange Online, or on premises on Exchange Server 2013 or later|Safari|
+|Outlook on Android|- Android tablets<br>- Android smartphones|- Android 4.4 KitKat or later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for Android.<sup>1</sup>|
+|Outlook on iOS|- iPad tablets<br>- iPhone smartphones|- iOS 11 or later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for iOS.<sup>1</sup>|
+|Outlook on the web (modern)<sup>2</sup>|- iPad 2 or later<br>- Android tablets |- iOS 5 or later<br>- Android 4.4 KitKat or later|On Microsoft 365, Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
+|Outlook on the web (classic)|- iPhone 4 or later<br>- iPad 2 or later<br>- iPod Touch 4 or later|- iOS 5 or later|On on-premises Exchange Server 2013 or later<sup>3</sup>|- Safari|
 
 > [!NOTE]
-> The native apps OWA for Android, OWA for iPad, and OWA for iPhone have been [deprecated](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b) and are no longer required or available for testing Outlook add-ins.
+> <sup>1</sup> OWA for Android, OWA for iPad, and OWA for iPhone native apps have been [deprecated](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
+>
+> <sup>2</sup> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins.
+>
+> <sup>3</sup> Add-ins aren't supported in Outlook on Android, on iOS, and modern mobile web with on-premises Exchange accounts.
 
+> [!TIP]
+> You can distinguish between classic and modern Outlook in a web browser by checking your mailbox toolbar.
+>
+> **modern**
+>
+> ![Partial screenshot of the modern Outlook toolbar.](../images/outlook-on-the-web-new-toolbar.png)
+>
+> **classic**
+>
+> ![Partial screenshot of the classic Outlook toolbar.](../images/outlook-on-the-web-classic-toolbar.png)
 
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md)
+- [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)
 - [Browsers used by Office Add-ins](browsers-used-by-office-web-add-ins.md)

@@ -1,13 +1,15 @@
 ---
 title: Contextual Outlook add-ins
-description: 'Initiate tasks related to a message without leaving the message itself to result in an easier and richer user experience.'
-ms.date: 04/09/2020
-localization_priority: Normal
+description: Initiate tasks related to a message without leaving the message itself to result in an easier and richer user experience.
+ms.date: 10/03/2022
+ms.localizationpriority: medium
 ---
 
 # Contextual Outlook add-ins
 
 Contextual add-ins are Outlook add-ins that activate based on text in a message or appointment. By using contextual add-ins, a user can initiate tasks related to a message without leaving the message itself, which results in an easier and richer user experience.
+
+[!include[Unified Microsoft 365 manifest does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
 The following are examples of contextual add-ins.
 
@@ -19,11 +21,11 @@ The following are examples of contextual add-ins.
 > [!NOTE]
 > Contextual add-ins are not currently available in Outlook on Android and iOS. This functionality will be made available in the future.
 >
-> Support for this feature was introduced in requirement set 1.6. See [clients and platforms](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in requirement set 1.6. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## How to make a contextual add-in
 
-A contextual add-in's manifest must include an [ExtensionPoint](../reference/manifest/extensionpoint.md#detectedentity) element with an `xsi:type` attribute set to `DetectedEntity`. Within the **ExtensionPoint** element, the add-in specifies the entities or regular expression that can activate it. If an entity is specified, the entity can be any of the properties in the [Entities](/javascript/api/outlook/office.entities) object.
+A contextual add-in's manifest must include an [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) element with an `xsi:type` attribute set to `DetectedEntity`. Within the **\<ExtensionPoint\>** element, the add-in specifies the entities or regular expression that can activate it. If an entity is specified, the entity can be any of the properties in the [Entities](/javascript/api/outlook/office.entities) object.
 
 Thus, the add-in manifest must contain a rule of type **ItemHasKnownEntity** or **ItemHasRegularExpressionMatch**. The following example shows how to specify that an add-in should activate on messages with a detected entity that is a phone number.
 

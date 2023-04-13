@@ -1,9 +1,10 @@
 ---
 title: Authentication design guidelines for Office Add-ins
 ms.date: 02/09/2021
-description: 'Learn how to visually design a sign-on or sign-up page in an Office Add-in.'
+ms.topic: best-practice
+description: Learn how to visually design a sign-on or sign-up page in an Office Add-in.
 
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Authentication patterns
@@ -45,9 +46,9 @@ Add-ins may require users to sign-in or sign-up in order to access features and 
 ## Single Sign-On authentication flow
 
 > [!NOTE]
-> The single sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about single sign-on support, see [IdentityAPI requirement sets](../reference/requirement-sets/identity-api-requirement-sets.md). If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> The single sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about single sign-on support, see [IdentityAPI requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets). If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Use single sign-on for a smoother end-user experience. The user's identity within Office (either a Microsoft Account or a Microsoft 365 identity) is used to sign in to your add-in. As a result users only sign in once. This removes friction in the experience making it easier for your customers to get started.
+Use single sign-on for a smoother end-user experience. The user's identity within Office (either a Microsoft account or a Microsoft 365 identity) is used to sign in to your add-in. As a result users only sign in once. This removes friction in the experience making it easier for your customers to get started.
 
 1. As an add-in is being installed, a user will see a consent window similar to the one following:
 

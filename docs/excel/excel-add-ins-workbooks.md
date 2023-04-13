@@ -1,9 +1,9 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
-description: 'Learn how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.'
-ms.date: 06/07/2021
+description: Learn how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.
+ms.date: 02/17/2022
 ms.prod: excel
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Work with workbooks using the Excel JavaScript API
@@ -17,24 +17,23 @@ The Workbook object is the entry point for your add-in to interact with Excel. I
 The Workbook object contains two methods that get a range of cells the user or add-in has selected: `getActiveCell()` and `getSelectedRange()`. `getActiveCell()` gets the active cell from the workbook as a [Range object](/javascript/api/excel/excel.range). The following example shows a call to `getActiveCell()`, followed by the cell's address being printed to the console.
 
 ```js
-Excel.run(function (context) {
-    var activeCell = context.workbook.getActiveCell();
+await Excel.run(async (context) => {
+    let activeCell = context.workbook.getActiveCell();
     activeCell.load("address");
+    await context.sync();
 
-    return context.sync().then(function () {
-        console.log("The active cell is " + activeCell.address);
-    });
-}).catch(errorHandlerFunction);
+    console.log("The active cell is " + activeCell.address);
+});
 ```
 
 The `getSelectedRange()` method returns the currently selected single range. If multiple ranges are selected, an InvalidSelection error is thrown. The following example shows a call to `getSelectedRange()` that then sets the range's fill color to yellow.
 
 ```js
-Excel.run(function(context) {
-    var range = context.workbook.getSelectedRange();
+await Excel.run(async (context) => {
+    let range = context.workbook.getSelectedRange();
     range.format.fill.color = "yellow";
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## Create a workbook
@@ -47,22 +46,22 @@ Excel.createWorkbook();
 
 The `createWorkbook` method can also create a copy of an existing workbook. The method accepts a base64-encoded string representation of an .xlsx file as an optional parameter. The resulting workbook will be a copy of that file, assuming the string argument is a valid .xlsx file.
 
-You can get your add-in's current workbook as a base64-encoded string by using [file slicing](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example.
+You can get your add-in's current workbook as a base64-encoded string by using [file slicing](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
-var myFile = document.getElementById("file");
-var reader = new FileReader();
+let myFile = document.getElementById("file");
+let reader = new FileReader();
 
 reader.onload = (function (event) {
     Excel.run(function (context) {
         // Remove the metadata before the base64-encoded string.
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var externalWorkbook = reader.result.toString().substr(startIndex + 7);
+        let startIndex = reader.result.toString().indexOf("base64,");
+        let externalWorkbook = reader.result.toString().substr(startIndex + 7);
 
         Excel.createWorkbook(externalWorkbook);
         return context.sync();
-    }).catch(errorHandlerFunction);
+    });
 });
 
 // Read the file as a data URL so we can parse the base64-encoded string.
@@ -71,33 +70,33 @@ reader.readAsDataURL(myFile.files[0]);
 
 ### Insert a copy of an existing workbook into the current one
 
-The previous example shows a new workbook being created from an existing workbook. You can also copy some or all of an existing workbook into the one currently associated with your add-in. A [Workbook](/javascript/api/excel/excel.workbook) has the `insertWorksheetsFromBase64` method to insert copies of the target workbook's worksheets into itself. The other workbook's file is passed as a base64-encoded string, just like the `Excel.createWorkbook` call. 
+The previous example shows a new workbook being created from an existing workbook. You can also copy some or all of an existing workbook into the one currently associated with your add-in. A [Workbook](/javascript/api/excel/excel.workbook) has the `insertWorksheetsFromBase64` method to insert copies of the target workbook's worksheets into itself. The other workbook's file is passed as a base64-encoded string, just like the `Excel.createWorkbook` call.
 
 ```TypeScript
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
 > [!IMPORTANT]
-> The `insertWorksheetsFromBase64` method is supported for Excel on Windows, Mac, and the web. It's not supported for iOS. Additionally, in Excel on the web this method doesn't support source worksheets with PivotTable, Chart, Comment, or Slicer elements. If those objects are present, the `insertWorksheetsFromBase64` method returns the `UnsupportedFeature` error in Excel on the web. 
+> The `insertWorksheetsFromBase64` method is supported for Excel on Windows, Mac, and the web. It's not supported for iOS. Additionally, in Excel on the web this method doesn't support source worksheets with PivotTable, Chart, Comment, or Slicer elements. If those objects are present, the `insertWorksheetsFromBase64` method returns the `UnsupportedFeature` error in Excel on the web.
 
-The following code sample shows how to insert worksheets from another workbook into the current workbook. This code sample first processes a workbook file with a [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) object and extracts a base64-encoded string, and then it inserts this base64-encoded string into the current workbook. The new worksheets are inserted after the worksheet named **Sheet1**. Note that `[]` is passed as the parameter for the [InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#sheetNamesToInsert) property. This means that all the worksheets from the target workbook are inserted into the current workbook.
+The following code sample shows how to insert worksheets from another workbook into the current workbook. This code sample first processes a workbook file with a [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) object and extracts a base64-encoded string, and then it inserts this base64-encoded string into the current workbook. The new worksheets are inserted after the worksheet named **Sheet1**. Note that `[]` is passed as the parameter for the [InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#excel-excel-insertworksheetoptions-sheetnamestoinsert-member) property. This means that all the worksheets from the target workbook are inserted into the current workbook.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
-var myFile = document.getElementById("file");
-var reader = new FileReader();
+let myFile = document.getElementById("file");
+let reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
         // Remove the metadata before the base64-encoded string.
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var externalWorkbook = reader.result.toString().substr(startIndex + 7);
+        let startIndex = reader.result.toString().indexOf("base64,");
+        let externalWorkbook = reader.result.toString().substr(startIndex + 7);
             
         // Retrieve the current workbook.
-        var workbook = context.workbook;
+        let workbook = context.workbook;
             
         // Set up the insert options. 
-        var options = { 
+        let options = { 
             sheetNamesToInsert: [], // Insert all the worksheets from the source workbook.
             positionType: Excel.WorksheetPositionType.after, // Insert after the `relativeTo` sheet.
             relativeTo: "Sheet1" // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
@@ -118,16 +117,15 @@ reader.readAsDataURL(myFile.files[0]);
 Your add-in can control a user's ability to edit the workbook's structure. The Workbook object's `protection` property is a [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) object with a `protect()` method. The following example shows a basic scenario toggling the protection of the workbook's structure.
 
 ```js
-Excel.run(function (context) {
-    var workbook = context.workbook;
+await Excel.run(async (context) => {
+    let workbook = context.workbook;
     workbook.load("protection/protected");
+    await context.sync();
 
-    return context.sync().then(function() {
-        if (!workbook.protection.protected) {
-            workbook.protection.protect();
-        }
-    });
-}).catch(errorHandlerFunction);
+    if (!workbook.protection.protected) {
+        workbook.protection.protect();
+    }
+});
 ```
 
 The `protect` method accepts an optional string parameter. This string represents the password needed for a user to bypass protection and change the workbook's structure.
@@ -135,18 +133,18 @@ The `protect` method accepts an optional string parameter. This string represent
 Protection can also be set at the worksheet level to prevent unwanted data editing. For more information, see the **Data protection** section of the [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md#data-protection) article.
 
 > [!NOTE]
-> For more information about workbook protection in Excel, see the [Protect a workbook](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517) article.
+> For more information about workbook protection in Excel, see the [Protect a workbook](https://support.microsoft.com/office/7e365a4d-3e89-4616-84ca-1931257c1517) article.
 
 ## Access document properties
 
-Workbook objects have access to the Office file metadata, which is known as the [document properties](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75). The Workbook object's `properties` property is a [DocumentProperties](/javascript/api/excel/excel.documentproperties) object containing these metadata values. The following example shows how to set the `author` property.
+Workbook objects have access to the Office file metadata, which is known as the [document properties](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75). The Workbook object's `properties` property is a [DocumentProperties](/javascript/api/excel/excel.documentproperties) object containing these metadata values. The following example shows how to set the `author` property.
 
 ```js
-Excel.run(function (context) {
-    var docProperties = context.workbook.properties;
+await Excel.run(async (context) => {
+    let docProperties = context.workbook.properties;
     docProperties.author = "Alex";
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### Custom properties
@@ -154,24 +152,23 @@ Excel.run(function (context) {
 You can also define custom properties. The DocumentProperties object contains a `custom` property that represents a collection of key-value pairs for user-defined properties. The following example shows how to create a custom property named **Introduction** with the value "Hello", then retrieve it.
 
 ```js
-Excel.run(function (context) {
-    var customDocProperties = context.workbook.properties.custom;
+await Excel.run(async (context) => {
+    let customDocProperties = context.workbook.properties.custom;
     customDocProperties.add("Introduction", "Hello");
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 
 [...]
 
-Excel.run(function (context) {
-    var customDocProperties = context.workbook.properties.custom;
-    var customProperty = customDocProperties.getItem("Introduction");
+await Excel.run(async (context) => {
+    let customDocProperties = context.workbook.properties.custom;
+    let customProperty = customDocProperties.getItem("Introduction");
     customProperty.load(["key, value"]);
+    await context.sync();
 
-    return context.sync().then(function() {
-        console.log("Custom key  : " + customProperty.key); // "Introduction"
-        console.log("Custom value : " + customProperty.value); // "Hello"
-    });
-}).catch(errorHandlerFunction);
+    console.log("Custom key  : " + customProperty.key); // "Introduction"
+    console.log("Custom value : " + customProperty.value); // "Hello"
+});
 ```
 
 #### Worksheet-level custom properties
@@ -179,31 +176,31 @@ Excel.run(function (context) {
 Custom properties can also be set at the worksheet level. These are similar to document-level custom properties, except that the same key can be repeated across different worksheets. The following example shows how to create a custom property named **WorksheetGroup** with the value "Alpha" on the current worksheet, then retrieve it.
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Add the custom property.
-    var customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
+    let customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
     customWorksheetProperties.add("WorksheetGroup", "Alpha");
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 
 [...]
 
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Load the keys and values of all custom properties in the current worksheet.
-    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    let worksheet = context.workbook.worksheets.getActiveWorksheet();
     worksheet.load("name");
 
-    var customWorksheetProperties = worksheet.customProperties;
-    var customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
+    let customWorksheetProperties = worksheet.customProperties;
+    let customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
     customWorksheetProperty.load(["key", "value"]);
 
-    return context.sync().then(function() {
-        // Log the WorksheetGroup custom property to the console.
-        console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
-        console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    // Log the WorksheetGroup custom property to the console.
+    console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
+    console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
+});
 ```
 
 ## Access document settings
@@ -211,16 +208,15 @@ Excel.run(function (context) {
 A workbook's settings are similar to the collection of custom properties. The difference is settings are unique to a single Excel file and add-in pairing, whereas properties are solely connected to the file. The following example shows how to create and access a setting.
 
 ```js
-Excel.run(function (context) {
-    var settings = context.workbook.settings;
+await Excel.run(async (context) => {
+    let settings = context.workbook.settings;
     settings.add("NeedsReview", true);
-    var needsReview = settings.getItem("NeedsReview");
+    let needsReview = settings.getItem("NeedsReview");
     needsReview.load("value");
 
-    return context.sync().then(function() {
-        console.log("Workbook needs review : " + needsReview.value);
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log("Workbook needs review : " + needsReview.value);
+});
 ```
 
 ## Access application culture settings
@@ -229,32 +225,32 @@ A workbook has language and culture settings that affect how certain data is dis
 
 `Application.cultureInfo` defines the system culture settings as a [CultureInfo](/javascript/api/excel/excel.cultureinfo) object. This contains settings like the numerical decimal separator or the date format.
 
-Some culture settings can be [changed through the Excel UI](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). The system settings are preserved in the `CultureInfo` object. Any local changes are kept as [Application](/javascript/api/excel/excel.application)-level properties, such as `Application.decimalSeparator`.
+Some culture settings can be [changed through the Excel UI](https://support.microsoft.com/office/c093b545-71cb-4903-b205-aebb9837bd1e). The system settings are preserved in the `CultureInfo` object. Any local changes are kept as [Application](/javascript/api/excel/excel.application)-level properties, such as `Application.decimalSeparator`.
 
 The following sample changes the decimal separator character of a numerical string from a ',' to the character used by the system settings.
 
 ```js
 // This will convert a number like "14,37" to "14.37"
 // (assuming the system decimal separator is ".").
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var decimalSource = sheet.getRange("B2");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let decimalSource = sheet.getRange("B2");
+
     decimalSource.load("values");
     context.application.cultureInfo.numberFormat.load("numberDecimalSeparator");
+    await context.sync();
 
-    return context.sync().then(function() {
-        var systemDecimalSeparator =
-            context.application.cultureInfo.numberFormat.numberDecimalSeparator;
-        var oldDecimalString = decimalSource.values[0][0];
+    let systemDecimalSeparator =
+        context.application.cultureInfo.numberFormat.numberDecimalSeparator;
+    let oldDecimalString = decimalSource.values[0][0];
 
-        // This assumes the input column is standardized to use "," as the decimal separator.
-        var newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
+    // This assumes the input column is standardized to use "," as the decimal separator.
+    let newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
 
-        var resultRange = sheet.getRange("C2");
-        resultRange.values = [[newDecimalString]];
-        resultRange.format.autofitColumns();
-        return context.sync();
-    });
+    let resultRange = sheet.getRange("C2");
+    resultRange.values = [[newDecimalString]];
+    resultRange.format.autofitColumns();
+    await context.sync();
 });
 ```
 
@@ -267,39 +263,38 @@ A workbook contains a [CustomXmlPartCollection](/javascript/api/excel/excel.cust
 The following samples show how to use custom XML parts. The first code block demonstrates how to embed XML data in the document. It stores a list of reviewers, then uses the workbook's settings to save the XML's `id` for future retrieval. The second block shows how to access that XML later. The "ContosoReviewXmlPartId" setting is loaded and passed to the workbook's `customXmlParts`. The XML data is then printed to the console.
 
 ```js
-Excel.run(async (context) => {
+await Excel.run(async (context) => {
     // Add reviewer data to the document as XML
-    var originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
-    var customXmlPart = context.workbook.customXmlParts.add(originalXml);
+    let originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
+    let customXmlPart = context.workbook.customXmlParts.add(originalXml);
     customXmlPart.load("id");
+    await context.sync();
 
-    return context.sync().then(function() {
-        // Store the XML part's ID in a setting
-        var settings = context.workbook.settings;
-        settings.add("ContosoReviewXmlPartId", customXmlPart.id);
-    });
-}).catch(errorHandlerFunction);
+    // Store the XML part's ID in a setting
+    let settings = context.workbook.settings;
+    settings.add("ContosoReviewXmlPartId", customXmlPart.id);
+});
 ```
 
 ```js
-Excel.run(async (context) => {
+await Excel.run(async (context) => {
     // Retrieve the XML part's id from the setting
-    var settings = context.workbook.settings;
-    var xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
+    let settings = context.workbook.settings;
+    let xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
 
-    return context.sync().then(function () {
-        if (xmlPartIDSetting.value) {
-            var customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
-            var xmlBlob = customXmlPart.getXml();
+    await context.sync();
 
-            return context.sync().then(function () {
-                // Add spaces to make more human readable in the console
-                var readableXML = xmlBlob.value.replace(/></g, "> <");
-                console.log(readableXML);
-            });
-        }
-    });
-}).catch(errorHandlerFunction);
+    if (xmlPartIDSetting.value) {
+        let customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
+        let xmlBlob = customXmlPart.getXml();
+
+        await context.sync();
+
+        // Add spaces to make it more human-readable in the console.
+        let readableXML = xmlBlob.value.replace(/></g, "> <");
+        console.log(readableXML);
+    }
+});
 ```
 
 > [!NOTE]
@@ -324,7 +319,7 @@ The [Application](/javascript/api/excel/excel.application) object provides a met
 - `recalculate`: Recalculate formulas that have changed (or been programmatically marked for recalculation) since the last calculation, and formulas dependent on them, in all active workbooks.
 
 > [!NOTE]
-> For more information about recalculation, see the [Change formula recalculation, iteration, or precision](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4) article.
+> For more information about recalculation, see the [Change formula recalculation, iteration, or precision](https://support.microsoft.com/office/73fc7dac-91cf-4d36-86e8-67124f6bcce4) article.
 
 ### Temporarily suspend calculations
 
@@ -338,7 +333,7 @@ context.application.suspendApiCalculationUntilNextSync();
 
 Your add-in can detect when a workbook is activated. A workbook becomes *inactive* when the user switches focus to another workbook, to another application, or (in Excel on the web) to another tab of the web browser. A workbook is *activated* when the user returns focus to the workbook. The workbook activation can trigger callback functions in your add-in, such as refreshing workbook data.
 
-To detect when a workbook is activated, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the [onActivated](/javascript/api/excel/excel.workbook#onActivated) event of a workbook. Event handlers for the `onActivated` event receive a [WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) object when the event fires.
+To detect when a workbook is activated, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the [onActivated](/javascript/api/excel/excel.workbook#excel-excel-workbook-onactivated-member) event of a workbook. Event handlers for the `onActivated` event receive a [WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) object when the event fires.
 
 > [!IMPORTANT]
 > The `onActivated` event doesn't detect when a workbook is opened. This event only detects when a user switches focus back to an already open workbook.
@@ -346,26 +341,26 @@ To detect when a workbook is activated, [register an event handler](excel-add-in
 The following code sample shows how to register the `onActivated` event handler and set up a callback function.
 
 ```js
-Excel.run(function (context) {
-    // Retrieve the workbook.
-    var workbook = context.workbook;
+async function run() {
+    await Excel.run(async (context) => {
+        // Retrieve the workbook.
+        let workbook = context.workbook;
+    
+        // Register the workbook activated event handler.
+        workbook.onActivated.add(workbookActivated);
+        await context.sync();
+    });
+}
 
-    // Register the workbook activated event handler.
-    workbook.onActivated.add(workbookActivated);
-
-    return context.sync();
-});
-
-function workbookActivated(event) {
-    Excel.run(function (context) {
+async function workbookActivated(event) {
+    await Excel.run(async (context) => {
         // Retrieve the workbook and load the name.
-        var workbook = context.workbook;
-        workbook.load("name");
-        
-        return context.sync().then(function () {
-            // Callback function for when the workbook is activated.
-            console.log(`The workbook ${workbook.name} was activated.`);
-        });
+        let workbook = context.workbook;
+        workbook.load("name");        
+        await context.sync();
+
+        // Callback function for when the workbook is activated.
+        console.log(`The workbook ${workbook.name} was activated.`);
     });
 }
 ```

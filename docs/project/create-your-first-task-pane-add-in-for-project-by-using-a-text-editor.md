@@ -1,19 +1,19 @@
 ---
-title: Create your first task pane add-in for Microsoft Project by using a text editor
-description: 'Create a task pane add-in for Project Standard 2013, Project Professional 2013, or later versions using the Yeoman generator for Office Add-ins.'
+title: Create your first task pane add-in for Microsoft Project
+description: Create a task pane add-in for Project Standard 2013, Project Professional 2013, or later versions using the Yeoman generator for Office Add-ins.
 ms.date: 07/10/2020
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
-# Create your first task pane add-in for Microsoft Project by using a text editor
+# Create your first task pane add-in for Microsoft Project
 
 You can create a task pane add-in for Project Standard 2013, Project Professional 2013, or later versions using the Yeoman generator for Office Add-ins. This article describes how to create a simple add-in that uses an XML manifest that points to an HTML file on a file share. The Project OM Test sample add-in tests some JavaScript functions that use the object model for add-ins. After you use the **Trust Center** in Project to register the file share that contains the manifest file, you can open the task pane add-in from the **Project** tab on the ribbon. (The sample code in this article is based on a test application by Arvind Iyer, Microsoft Corporation.)
 
 Project uses the same add-in manifest schema that other Office clients use, and much of the same JavaScript API. The complete code for the add-in that is described in this article is available in the  `Samples\Apps` subdirectory of the Project 2013 SDK download.
 
-The Project OM Test sample add-in can get the GUID of a task and properties of the application and the active project. If Project Professional 2013 opens a project that is in a SharePoint library, the add-in can show the URL of the project. 
+The Project OM Test sample add-in can get the GUID of a task and properties of the application and the active project. If Project Professional 2013 opens a project that is in a SharePoint library, the add-in can show the URL of the project.
 
-The [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20) includes the complete source code. When you extract and install the SDK and samples that are in the Project2013SDK.msi file, see the `\Samples\Apps\Copy_to_AppManifests_FileShare` subdirectory for the manifest file and the `\Samples\Apps\Copy_to_AppSource_FileShare` subdirectory for the source code. 
+The [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435) includes the complete source code. When you extract and install the SDK and samples that are in the Project2013SDK.msi file, see the `\Samples\Apps\Copy_to_AppManifests_FileShare` subdirectory for the manifest file and the `\Samples\Apps\Copy_to_AppSource_FileShare` subdirectory for the source code.
 
 The JSOMCall.html sample uses JavaScript functions in the office.js file and project-15.js file, which are included. You can use the corresponding debug files (office.debug.js and project-15.debug.js) to examine the functions.
 
@@ -102,10 +102,9 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
 1. Create a JavaScript file named JSOM_Sample.js in the same directory as the JSOMCall.html file.
 
-   The following code gets the application context and document information by using functions in the Office.js file. The `text` object is the ID of the `textarea` control in the HTML file.
+   The following code gets the application context and document information by using methods in the Office.js file. The `text` object is the ID of the `textarea` control in the HTML file.
 
    The **\_projDoc** variable is initialized with a `ProjectDocument` object. The code includes some simple error handling functions, and the `getContextValues` function that gets application context and project document context properties. For more information about the JavaScript object model for Project, see [JavaScript API for Office](../reference/javascript-api-for-office.md).
-
 
     ```js
     /*
@@ -120,7 +119,7 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
     // The initialize function is required for all add-ins.
     Office.initialize = function (reason) {
-        // Checks for the DOM to load using the jQuery ready function.
+        // Checks for the DOM to load using the jQuery ready method.
         $(document).ready(function () {
             // After the DOM is loaded, app-specific code can run.
             _projDoc = Office.context.document;
@@ -169,25 +168,25 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
 
    For information about the functions in the Office.debug.js file, see [Office JavaScript API](../reference/javascript-api-for-office.md). For example, the `getDocumentUrl` function gets the URL or file path of the open project.
 
-1. Add JavaScript functions that call asynchronous functions in Office.js and Project-15.js to get selected data:
+1. Add JavaScript functions that call asynchronous methods in Office.js and Project-15.js to get selected data:
 
-   - For example, `getSelectedDataAsync` is a general function in Office.js that gets unformatted text for the selected data. For more information, see [AsyncResult object](/javascript/api/office/office.asyncresult).
+   - For example, `getSelectedDataAsync` is a general method in Office.js that gets unformatted text for the selected data. For more information, see [Document object](/javascript/api/office/office.document#office-office-document-getselectedtaskasync-member(1)).
 
    - The `getSelectedTaskAsync` function in Project-15.js gets the GUID of the selected task. Similarly, the `getSelectedResourceAsync` function gets the GUID of the selected resource. If you call those functions when a task or a resource is not selected, the functions show an undefined error.
 
    - The `getTaskAsync` function gets the task name and the names of the assigned resources. If the task is in a synchronized SharePoint task list, `getTaskAsync` gets the task ID in the SharePoint list; otherwise, the SharePoint task ID is 0.
 
      > [!NOTE]
-     > For demonstration purposes, the example code includes a bug. If `taskGuid` is undefined, the `getTaskAsync` function errors off. If you get a valid task GUID and then select a different task, the `getTaskAsync` function gets data for the most recent task that was operated on by the `getSelectedTaskAsync` function.
+     > For demonstration purposes, the example code includes a bug. If `taskGuid` is undefined, the `getTaskAsync` function errors out. If you get a valid task GUID and then select a different task, the `getTaskAsync` function gets data for the most recent task that was operated on by the `getSelectedTaskAsync` function.
   
    - `getTaskFields`, `getResourceFields`, and `getProjectFields` are local functions that call `getTaskFieldAsync`, `getResourceFieldAsync`, or `getProjectFieldAsync` multiple times to get specified fields of a task or a resource. In the project-15.debug.js file, the `ProjectTaskFields` enumeration and the `ProjectResourceFields` enumeration show which fields are supported.
 
    - The `getSelectedViewAsync` function gets the type of view (defined in the `ProjectViewTypes` enumeration in project-15.debug.js) and the name of the view.
 
-   - If the project is synchronized with a SharePoint tasks list, the `getWSSUrlAsync` function gets the URL and the name of the tasks list. If the project is not synchronized with a SharePoint tasks list, the `getWSSUrlAsync` function errors off.
+   - If the project is synchronized with a SharePoint tasks list, the `getWSSUrlAsync` function gets the URL and the name of the tasks list. If the project is not synchronized with a SharePoint tasks list, the `getWSSUrlAsync` function errors out.
 
      > [!NOTE]
-     > To get the SharePoint URL and name of the tasks list, we recommend that you use the `getProjectFieldAsync` function with the `WSSUrl` and `WSSList` constants in the [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) enumeration.
+     > To get the SharePoint URL and name of the tasks list, we recommend that you use the `getProjectFieldAsync` method with the `WSSUrl` and `WSSList` constants in the [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) enumeration.
 
    Each of the functions in the following code includes an anonymous function that is specified by  `function (asyncResult)`, which is a callback that gets the asynchronous result. Instead of anonymous functions, you could use named functions, which can help with maintainability of complex add-ins.
 
@@ -544,9 +543,9 @@ Procedure 2 shows how to create the HTML file that the JSOM_SimpleOMCalls.xml ma
     }
     ```
 
-1. Add JavaScript event handler callbacks and functions to register the task selection, resource selection, and view selection change event handlers and to unregister the event handlers. The `manageEventHandlerAsync` function adds or removes the specified event handler, depending on the _operation_ parameter. The operation can be `addHandlerAsync` or `removeHandlerAsync`.
+1. Add JavaScript event handler callbacks and functions to register the task selection, resource selection, and view selection change event handlers and to unregister the event handlers. The `manageEventHandlerAsync` function adds or removes the specified event handler, depending on the *operation* parameter. The operation can be `addHandlerAsync` or `removeHandlerAsync`.
 
-   The `manageTaskEventHandler`, `manageResourceEventHandler`, and `manageViewEventHandler` functions can add or remove an event handler, as specified by the _docMethod_ parameter.
+   The `manageTaskEventHandler`, `manageResourceEventHandler`, and `manageViewEventHandler` functions can add or remove an event handler, as specified by the *docMethod* parameter.
 
     ```js
     // Task selection changed event handler.
@@ -736,7 +735,7 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
 
    ![Using the Project OM Test app.](../images/pj15-create-simple-agave-project-om-test.png)
 
-1. Select the cell in the **Duration** column for the first task, and then choose the **getSelectedDataAsync** button in the **Project OM Test** add-in. The `getSelectedDataAsync` function sets the text box value to show `2 days`. 
+1. Select the cell in the **Duration** column for the first task, and then choose the **getSelectedDataAsync** button in the **Project OM Test** add-in. The `getSelectedDataAsync` function sets the text box value to show `2 days`.
 
 1. Select the three **Duration** cells for all three tasks. The `getSelectedDataAsync` function returns semicolon-separated text values for cells selected in different rows, for example, `2 days;4 days;0 days`.
 
@@ -755,7 +754,7 @@ Procedure 3 shows how to install and use the Project OM Test add-in features.
     - WSS Id: `0`
     - ResourceNames: `R1[50%],R2[50%]`
 
-1. Select the **Get Task Fields** button. The `getTaskFields` function calls the `getTaskfieldAsync` function multiple times for the task name, index, start date, duration, priority, and task notes.
+1. Select the **Get Task Fields** button. The `getTaskFields` function calls the `getTaskFieldAsync` method multiple times for the task name, index, start date, duration, priority, and task notes.
 
     - Name: `T2`
     - ID: `2`
@@ -1065,10 +1064,7 @@ To use the `throwError` function, include the JQuery library and the SurfaceErro
 
     <!-- . . . INVALID USE OF SYMBOLS . . . -->
 </head>
-
 ```
-
-<br/>
 
 ```js
 function logMethodError(methodName, errorName, errorMessage, actionMessage) {
@@ -1080,12 +1076,9 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 }
 ```
 
-<br/>
-
 *Figure 4. Functions in the SurfaceErrors.js file can show a "toast" notification*
 
 ![Using the SurfaceError routines to show an error.](../images/pj15-create-simple-agave-surface-error.png)
-
 
 ## See also
 
@@ -1093,4 +1086,4 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 - [Understanding the JavaScript API for add-ins](../develop/understanding-the-javascript-api-for-office.md)
 - [Office JavaScript API Add-ins](../reference/javascript-api-for-office.md)
 - [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)
-- [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435%20)
+- [Project 2013 SDK download](https://www.microsoft.com/download/details.aspx?id=30435)

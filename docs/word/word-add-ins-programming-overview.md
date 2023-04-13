@@ -1,10 +1,10 @@
 ---
 title: Word add-ins overview
-description: 'Learn the basics of Word Add-ins.'
-ms.date: 10/14/2020
-ms.topic: conceptual
+description: Learn the basics of Word add-ins.
+ms.date: 02/24/2023
+ms.topic: overview
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 # Word add-ins overview
@@ -21,16 +21,21 @@ The following figure shows an example of a Word add-in that runs in a task pane.
 
 ![Add-in running in a task pane in Word.](../images/word-add-in-show-host-client.png)
 
-The Word add-in (1) can send requests to the Word document (2) and can use JavaScript to access the paragraph object and update, delete, or move the paragraph. For example, the following code shows how to append a new sentence to that paragraph.
+The Word add-in can do the following:
+
+  1. Send requests to the Word document.
+  1. Use JavaScript to access the paragraph object and update, delete, or move the paragraph.
+
+For example, the following code shows how to append a new sentence to that paragraph.
 
 ```js
-Word.run(function (context) {
-    var paragraphs = context.document.getSelection().paragraphs;
+await Word.run(async (context) => {
+    const paragraphs = context.document.getSelection().paragraphs;
     paragraphs.load();
-    return context.sync().then(function () {
-        paragraphs.items[0].insertText(' New sentence in the paragraph.',
+    await context.sync();
+    paragraphs.items[0].insertText(' New sentence in the paragraph.',
                                        Word.InsertLocation.end);
-    }).then(context.sync);
+    await context.sync();
 });
 
 ```
@@ -44,35 +49,34 @@ The Word JavaScript APIs give your application access to the objects and metadat
 * Word 2016 or later on Mac
 * Word on iPad
 
-Write your add-in once, and it will run in all versions of Word across multiple platforms. For details, see [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md).
+Write your add-in once, and it will run in all versions of Word across multiple platforms. For details, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
 
 ## JavaScript APIs for Word
 
 You can use two sets of JavaScript APIs to interact with the objects and metadata in a Word document. The first is the [Common API](/javascript/api/office), which was introduced in Office 2013. Many of the objects in the Common API can be used in add-ins hosted by two or more Office clients. This API uses callbacks extensively.
 
-The second is the [Word JavaScript API](/javascript/api/word). This is a [application-specific API model](../develop/application-specific-api-model.md) that was introduced with Word 2016. It's a strongly-typed object model that you can use to create Word add-ins that target Word 2016 on Mac and Windows. This object model uses promises and provides access to Word-specific objects like [body](/javascript/api/word/word.body), [content controls](/javascript/api/word/word.contentcontrol), [inline pictures](/javascript/api/word/word.inlinepicture), and [paragraphs](/javascript/api/word/word.paragraph). The Word JavaScript API includes TypeScript definitions and vsdoc files so that you can get code hints in your IDE.
+The second is the [Word JavaScript API](/javascript/api/word). This is an [application-specific API model](../develop/application-specific-api-model.md) that was introduced with Word 2016. It's a strongly-typed object model that you can use to create Word add-ins that target Word 2016 and later on Mac and on Windows. This object model uses promises and provides access to Word-specific objects like [body](/javascript/api/word/word.body), [content controls](/javascript/api/word/word.contentcontrol), [inline pictures](/javascript/api/word/word.inlinepicture), and [paragraphs](/javascript/api/word/word.paragraph). The Word JavaScript API includes TypeScript definitions and vsdoc files so that you can get code hints in your IDE.
 
-Currently, all Word clients support the shared Office JavaScript API, and most clients support the Word JavaScript API. For details about supported clients, see [Office client application and platform availability for Office Add-ins](../overview/office-add-in-availability.md).
+Currently, all Word clients support the shared Office JavaScript API, and most clients support the Word JavaScript API. For details about supported clients, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
 
-We recommend that you start with the Word JavaScript API because the object model is easier to use. Use the Word JavaScript API if you need to:
+We recommend that you start with the Word JavaScript API because the object model is easier to use. Use the Word JavaScript API if you need to do the following:
 
 * Access the objects in a Word document.
 
-Use the shared Office JavaScript API when you need to:
+Use the shared Office JavaScript API when you need to do any of the following:
 
 * Target Word 2013.
 * Perform initial actions for the application.
 * Check the supported requirement set.
 * Access metadata, settings, and environmental information for the document.
 * Bind to sections in a document and capture events.
-* Use custom XML parts.
 * Open a dialog box.
 
 ## Next steps
 
-Ready to create your first Word add-in? See [Build your first Word add-in](../quickstarts/word-quickstart.md). Use the [add-in manifest](../develop/add-in-manifests.md) to describe where your add-in is hosted, how it is displayed, and define permissions and other information.
+Ready to create your first Word add-in? See [Build your first Word add-in](../quickstarts/word-quickstart.md). Use the [add-in manifest](../develop/add-in-manifests.md) to describe where your add-in is hosted, how it's displayed, and define permissions and other information.
 
-To learn more about how to design a world class Word add-in that creates a compelling experience for your users, see [Design guidelines](../design/add-in-design.md) and [Best practices](../concepts/add-in-development-best-practices.md).
+To learn more about how to design a world-class Word add-in that creates a compelling experience for your users, see [Design guidelines](../design/add-in-design.md) and [Best practices](../concepts/add-in-development-best-practices.md).
 
 After you develop your add-in, you can [publish](../publish/publish.md) it to a network share, an app catalog, or AppSource.
 

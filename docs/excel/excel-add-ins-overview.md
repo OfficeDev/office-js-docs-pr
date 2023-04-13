@@ -1,10 +1,10 @@
 ---
 title: Excel add-ins overview
-description: 'Excel add-in allow you to extend Excel application functionality across multiple platforms including Windows, Mac, iPad, and in a browser.'
-ms.date: 10/14/2020
-ms.topic: conceptual
+description: Excel add-in allow you to extend Excel application functionality across multiple platforms including Windows, Mac, iPad, and in a browser.
+ms.date: 03/21/2023
+ms.topic: overview
 ms.custom: scenarios:getting-started
-localization_priority: Priority
+ms.localizationpriority: high
 ---
 
 
@@ -57,8 +57,6 @@ In addition to interacting with the content in the workbook, Excel add-ins can a
 
 Add-in commands are UI elements that extend the Excel UI and start actions in your add-in. You can use add-in commands to add a button on the ribbon or an item to a context menu in Excel. When users select an add-in command, they initiate actions such as running JavaScript code, or showing a page of the add-in in a task pane.
 
-**Add-in commands**
-
 ![Add-in commands in Excel.](../images/excel-add-in-commands-script-lab.png)
 
 For more information about command capabilities, supported platforms, and best practices for developing add-in commands, see [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md).
@@ -66,8 +64,6 @@ For more information about command capabilities, supported platforms, and best p
 ### Task panes
 
 Task panes are interface surfaces that typically appear on the right side of the window within Excel. Task panes give users access to interface controls that run code to modify the Excel document or display data from a data source.
-
-**Task pane**
 
 ![Task pane add-in in Excel.](../images/excel-add-in-task-pane-insights.png)
 
@@ -77,8 +73,6 @@ For more information about task panes, see [Task panes in Office Add-ins](../des
 
 Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`.
 
-**Custom function**
-
 ![Animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet.](../images/SphereVolumeNew.gif)
 
 For more information about custom functions, see [Create custom functions in Excel](custom-functions-overview.md).
@@ -87,17 +81,13 @@ For more information about custom functions, see [Create custom functions in Exc
 
 Dialog boxes are surfaces that float above the active Excel application window. You can use dialog boxes for tasks such as displaying sign-in pages that can't be opened directly in a task pane, requesting that the user confirm an action, or hosting videos that might be too small if confined to a task pane. To open dialog boxes in your Excel add-in, use the [Dialog API](/javascript/api/office/office.ui).
 
-**Dialog box**
-
 ![Add-in dialog box in Excel.](../images/excel-add-in-dialog-choose-number.png)
 
-For more information about dialog boxes and the Dialog API, see [Dialog boxes in Office Add-ins](../design/dialog-boxes.md) and [Use the Dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
+For more information about dialog boxes and the Dialog API, see [Use the Dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
 
 ### Content add-ins
 
 Content add-ins are surfaces that you can embed directly into Excel documents. You can use content add-ins to embed rich, web-based objects such as charts, data visualizations, or media into a worksheet or to give users access to interface controls that run code to modify the Excel document or display data from a data source. Use content add-ins when you want to embed functionality directly into the document.
-
-**Content add-in**
 
 ![Content add-in in Excel.](../images/excel-add-in-content-map.png)
 
@@ -105,11 +95,7 @@ For more information about content add-ins, see [Content Office Add-ins](../desi
 
 ## JavaScript APIs to interact with workbook content
 
-An Excel add-in interacts with objects in Excel by using the [Office JavaScript API](../reference/javascript-api-for-office.md), which includes two JavaScript object models:
-
-- **Excel JavaScript API**: Introduced with Office 2016, the [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) provides strongly-typed Excel objects that you can use to access worksheets, ranges, tables, charts, and more.
-
-- **Common API**: Introduced with Office 2013, the Common API enables you to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications. Because the Common API does provide limited functionality for Excel interaction, you can use it if your add-in needs to run on Excel 2013.
+[!include[The roles of the Common and application-specific APIs](../includes/excel-api-models.md)]
 
 ## Next steps
 

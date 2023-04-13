@@ -8,8 +8,8 @@ metadata:
   description: Resources for learning about Word add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.prod: word #Required
   ms.topic: landing-page # Required
-  ms.date: 03/29/2021 #Required; mm/dd/yyyy format.
-  localization_priority: Priority
+  ms.date: 02/24/2023 #Required; mm/dd/yyyy format.
+  ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 

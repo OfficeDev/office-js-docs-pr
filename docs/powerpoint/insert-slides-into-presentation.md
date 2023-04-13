@@ -1,8 +1,8 @@
 ---
 title: Insert slides in a PowerPoint presentation
-description: 'Learn how to insert slides from one presentation into another.'
+description: Learn how to insert slides from one presentation into another.
 ms.date: 03/07/2021
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Insert slides in a PowerPoint presentation
@@ -36,7 +36,7 @@ There are many ways to convert a file to base64. Which programming language and 
     ![Screenshot showing an HTML file type input control preceded by an instructional sentence reading "Select a PowerPoint presentation from which to insert slides". The control consists of a button labelled "Choose file" followed by the sentence "No file chosen".](../images/powerpoint-html-file-input-control.png)
 
     > [!NOTE]
-    > There are many other ways to get a PowerPoint file. For example, if the file is stored on OneDrive or SharePoint, you can use Microsoft Graph to download it. For more information, see [Working with files in Microsoft Graph](/graph/api/resources/onedrive) and [Access Files with Microsoft Graph](/learn/modules/msgraph-access-file-data/).
+    > There are many other ways to get a PowerPoint file. For example, if the file is stored on OneDrive or SharePoint, you can use Microsoft Graph to download it. For more information, see [Working with files in Microsoft Graph](/graph/api/resources/onedrive) and [Access Files with Microsoft Graph](/training/modules/msgraph-access-file-data/).
 
 2. Add the following code to the add-in's JavaScript to assign a function to the input control's `change` event. (You create the `storeFileAsBase64` function in the next step.)
 
@@ -70,7 +70,7 @@ There are many ways to convert a file to base64. Which programming language and 
 
 ## Insert slides with insertSlidesFromBase64
 
-Your add-in inserts slides from another PowerPoint presentation into the current presentation with the [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertSlidesFromBase64_base64File__options_) method. The following is a simple example in which all of the slides from the source presentation are inserted at the beginning of the current presentation and the inserted slides keep the formatting of the source file. Note that `chosenFileBase64` is a global variable that holds a base64-encoded version of a PowerPoint presentation file.
+Your add-in inserts slides from another PowerPoint presentation into the current presentation with the [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)) method. The following is a simple example in which all of the slides from the source presentation are inserted at the beginning of the current presentation and the inserted slides keep the formatting of the source file. Note that `chosenFileBase64` is a global variable that holds a base64-encoded version of a PowerPoint presentation file.
 
 ```javascript
 async function insertAllSlides() {
@@ -103,7 +103,7 @@ async function insertSlidesDestinationFormatting() {
 
 Of course, you typically won't know at coding time the ID or creation ID of the target slide. More commonly, an add-in will ask users to select the target slide. The following steps show how to get the ***nnn*#** ID of the currently selected slide and use it as the target slide.
 
-1. Create a function that gets the ID of the currently selected slide by using the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) method of the Common JavaScript APIs. The following is an example. Note that the call to `getSelectedDataAsync` is embedded in a Promise-returning function. For more information about why and how to do this, see [Wrap Common-APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
+1. Create a function that gets the ID of the currently selected slide by using the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) method of the Common JavaScript APIs. The following is an example. Note that the call to `getSelectedDataAsync` is embedded in a Promise-returning function. For more information about why and how to do this, see [Wrap Common-APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
 
  
     ```javascript
