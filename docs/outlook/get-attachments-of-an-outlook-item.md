@@ -1,7 +1,8 @@
 ---
 title: Get attachments in an Outlook add-in
 description: Your add-in can use the attachments API to send information about the attachments to a remote service.
-ms.date: 07/08/2022
+ms.date: 03/21/2023
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -67,7 +68,7 @@ function attachmentTokenCallback(asyncResult, userContext) {
 
 ## Send attachment information to the remote service
 
-The remote service that your add-in calls defines the specifics of how you should send the attachment information to the service. In this example, the remote service is a Web API application created by using Visual Studio 2013. The remote service expects the attachment information in a JSON object. The following code initializes an object that contains the attachment information.
+The remote service that your add-in calls defines the specifics of how you should send the attachment information to the service. In this example, the remote service is a Web API application created by using Visual Studio. The remote service expects the attachment information in a JSON object. The following code initializes an object that contains the attachment information.
 
 ```js
 // Initialize a context object for the add-in.
@@ -221,7 +222,7 @@ xmlns:xsd=""https://www.w3.org/2001/XMLSchema""
 xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/""
 xmlns:t=""http://schemas.microsoft.com/exchange/services/2006/types"">
 <soap:Header>
-<t:RequestServerVersion Version=""Exchange2013"" />
+<t:RequestServerVersion Version=""Exchange2016"" />
 </soap:Header>
   <soap:Body>
     <GetAttachment xmlns=""http://schemas.microsoft.com/exchange/services/2006/messages""

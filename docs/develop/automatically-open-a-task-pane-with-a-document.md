@@ -2,7 +2,7 @@
 title: Automatically open a task pane with a document
 description: Learn how to configure an Office Add-in to open automatically when a document opens.
 ms.topic: how-to
-ms.date: 09/01/2022
+ms.date: 03/21/2023
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +18,7 @@ Some scenarios require that a task pane open automatically when a document opens
 
 ## How is the autoopen feature different from inserting a task pane?
 
-When a user launches add-ins that don't use add-in commands - for example, add-ins that run in Office 2013 - they are inserted into the document, and persist in that document. As a result, when other users open the document, they are prompted to install the add-in, and the task pane opens. The challenge with this model is that in many cases, users don't want the add-in to persist in the document. For example, a student who uses a dictionary add-in in a Word document might not want their classmates or teachers to be prompted to install that add-in when they open the document.
+When a user launches add-ins that don't use add-in commands, the add-ins are inserted into the document, and persist in that document. As a result, when other users open the document, they're prompted to install the add-in, and the task pane opens. The challenge with this model is that in many cases, users don't want the add-in to persist in the document. For example, a student who uses a dictionary add-in in a Word document might not want their classmates or teachers to be prompted to install that add-in when they open the document.
 
 With the autoopen feature, you can explicitly define or allow the user to define whether a specific task pane add-in persists in a specific document.
 
@@ -155,7 +155,7 @@ You can deploy a test version of your add-in that will automatically open a task
 </we:webextension>
 ```
 
-You can test the previous example by using your Microsoft 365 subscription to try out Centralized Deployment and verify that your add-in works as expected. If you don't already have a Microsoft 365 subscription, you can get a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+You can test the previous example by using your Microsoft 365 subscription to try out Centralized Deployment and verify that your add-in works as expected. If you don't already have a Microsoft 365 subscription, you can get a free, 90-day renewable Microsoft 365 subscription by joining the [Microsoft 365 developer program](https://aka.ms/M365devprogram).
 
 ## See also
 

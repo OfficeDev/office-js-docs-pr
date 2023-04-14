@@ -224,8 +224,10 @@ items:
           items:
           - name: Basic concepts for Add-in Commands
             href: design/add-in-commands.md
-          - name: Create add-in commands
+          - name: Create add-in commands with the XML manifest
             href: develop/create-addin-commands.md
+          - name: Create add-in commands with the unified Microsoft 365 manifest
+            href: develop/create-addin-commands-unified-manifest.md
           - name: Create custom contextual tabs
             href: design/contextual-tabs.md
           - name: Enable and Disable Add-in Commands
@@ -262,6 +264,8 @@ items:
         href: develop/add-ins-with-angular2.md
       - name: Create add-ins with the Yeoman Generator
         href: develop/yeoman-generator-overview.md
+      - name: Create add-ins with the Teams Toolkit (preview)
+        href: develop/teams-toolkit-overview.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
       - name: Create and Develop add-ins with Visual Studio
@@ -584,14 +588,14 @@ items:
         - name: JavaScript-only runtime for custom functions
           href: excel/custom-functions-runtime.md
           displayName: Excel, Custom Functions
+        - name: Debugging
+          href: excel/custom-functions-debugging.md
+          displayName: Excel, Custom Functions
     - name: Volatile functions
       href: excel/custom-functions-volatile.md
       displayName: Excel, Custom Functions
     - name: Web requests
       href: excel/custom-functions-web-reqs.md
-      displayName: Excel, Custom Functions
-    - name: Debugging
-      href: excel/custom-functions-debugging.md
       displayName: Excel, Custom Functions
     - name: Troubleshooting
       href: excel/custom-functions-troubleshooting.md
@@ -663,7 +667,7 @@ items:
       displayName: preview
     - name: Pinnable task pane
       href: outlook/pinnable-taskpane.md
-    - name: Add-ins for Outlook Mobile
+    - name: Add-ins for Outlook on mobile devices
       href: outlook/outlook-mobile-addins.md
     - name: Create an online meeting add-in
       href: outlook/online-meeting.md
@@ -698,7 +702,7 @@ items:
         href: outlook/manifests.md
       - name: Activation rules
         href: outlook/activation-rules.md
-      - name: Add support for Outlook Mobile
+      - name: Add support for Outlook on mobile devices
         href: outlook/add-mobile-support.md
     - name: Add-in requirements
       href: outlook/add-in-requirements.md

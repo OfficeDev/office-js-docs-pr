@@ -2,7 +2,7 @@
 title: Office Add-ins XML manifest
 description: Get an overview of the Office Add-in XML manifest and its uses.
 ms.topic: overview
-ms.date: 05/24/2022
+ms.date: 03/21/2023
 ms.localizationpriority: high
 ---
 
@@ -11,13 +11,13 @@ ms.localizationpriority: high
 The XML manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications.
 
 > [!TIP]
-> This article describes the current XML-formatted manifest. There is also a JSON-formatted, unified Microsoft 365 manifest that is available in preview. For more information, see [Unified Microsoft 365 manifest(preview)](json-manifest-overview.md).
+> This article describes the current XML-formatted manifest. There is also a JSON-formatted, unified Microsoft 365 manifest that is available in preview. For more information, see [Unified Microsoft 365 manifest (preview)](json-manifest-overview.md).
 
 An XML manifest file enables an Office Add-in to do the following:
 
 - Describe itself by providing an ID, version, description, display name, and default locale.
 
-- Specify the images used for branding the add-in and iconography used for [add-in commands](create-addin-commands.md) in the Office app ribbon.
+- Specify the images used for branding the add-in and iconography used for [add-in commands](../design/add-in-commands.md) in the Office app ribbon.
 
 - Specify how the add-in integrates with Office, including any custom UI, such as ribbon buttons the add-in creates.
 
@@ -97,7 +97,7 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 
 ## Hosting requirements
 
-All image URIs, such as those used for [add-in commands](create-addin-commands.md), must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
+All image URIs, such as those used for [add-in commands](../design/add-in-commands.md), must support caching. The server hosting the image should not return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
 
 All URLs, such as the source file locations specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element, should be **SSL-secured (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
@@ -227,7 +227,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-  <!--BeginTaskpaneMode integration. Office 2013 and any client that doesn't understand commands will use this section.
+  <!--BeginTaskpaneMode integration. Any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides -->
   <Hosts>
     <Host Name="Document"/>
@@ -543,7 +543,8 @@ For information about validating a manifest against the [XML Schema Definition (
 ## See also
 
 - [How to find the proper order of manifest elements](manifest-element-ordering.md)
-- [Create add-in commands](create-addin-commands.md)
+- [Create add-in commands with the XML manifest](create-addin-commands.md)
+- [Create add-in commands with the unified Microsoft 365 manifest](create-addin-commands-unified-manifest.md)
 - [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
 - [Localization for Office Add-ins](localization.md)
 - [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)

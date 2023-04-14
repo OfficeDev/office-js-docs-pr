@@ -2,6 +2,7 @@
 title: Insert data in the body in an Outlook add-in
 description: Learn how to insert data into the body of a message or appointment in an Outlook add-in.
 ms.date: 10/07/2022
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

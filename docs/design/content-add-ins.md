@@ -1,7 +1,8 @@
 ---
 title: Content Office Add-ins
 description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
-ms.date: 11/15/2022
+ms.date: 03/21/2023
+ms.topic: overview
 ms.localizationpriority: medium
 ---
 
@@ -51,7 +52,6 @@ For a sample that implements a content add-in, see [Excel Content Add-in Humongo
 
 - Check to see if your Office Add-in will work on a [specific Office application or platform](/javascript/api/requirement-sets).
 - Some content add-ins may require the user to "trust" the add-in to read and write to Excel or PowerPoint. You can declare what [level of permissions](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) you want your user to have in the add-in's manifest.  
-- Content add-ins are supported in Excel and PowerPoint in Office 2013 version and later. If you open an add-in in a version of Office that doesn't support Office web add-ins, the add-in will be displayed as an image.
 
 ## See also
 

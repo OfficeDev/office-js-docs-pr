@@ -1,7 +1,7 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
 description: Learn about the resource limits of the Office Add-in platform, including CPU and memory.
-ms.date: 07/18/2022
+ms.date: 03/21/2023
 ms.localizationpriority: medium
 ---
 
@@ -70,14 +70,14 @@ If any content or task pane add-in exceeds the preceding thresholds on CPU core 
 
 Office provides a Telemetry Log that maintains a record of certain events (loading, opening, closing, and errors) of Office solutions running on the local computer, including resource usage issues in an Office Add-in. If you have the Telemetry Log set up, you can use Excel to open the Telemetry Log in the following default location on your local drive.
 
-`%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
+`%Users%\<Current user>\AppData\Local\Microsoft\Office\16.0\Telemetry`
 
 For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. You can refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log.
 
 |Date/Time|Event ID|Severity|Title|File|ID|Application|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|10/8/2012 5:57:10 PM|7|*Not applicable*|add-in manifest downloaded successfully|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|10/8/2012 5:57:01 PM|7|*Not applicable*|add-in manifest downloaded successfully|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+|10/8/2022 5:57:10 PM|7|*Not applicable*|add-in manifest downloaded successfully|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|10/8/2022 5:57:01 PM|7|*Not applicable*|add-in manifest downloaded successfully|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 The following table lists the events that the Telemetry Log tracks for Office Add-ins in general.
 

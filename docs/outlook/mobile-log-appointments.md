@@ -2,6 +2,7 @@
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
 ms.date: 02/06/2023
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -122,7 +123,7 @@ To enable users to log appointment notes with your add-in, you must configure th
     ```
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ### Capture appointment notes
 
@@ -374,7 +375,7 @@ To enable users to log appointment notes with your add-in, you must configure th
     ```
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ### Capture appointment notes
 
@@ -556,5 +557,5 @@ Several restrictions apply.
 
 ## See also
 
-- [Add-ins for Outlook Mobile](outlook-mobile-addins.md)
-- [Add support for add-in commands for Outlook Mobile](add-mobile-support.md)
+- [Add-ins for Outlook on mobile devices](outlook-mobile-addins.md)
+- [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md)
