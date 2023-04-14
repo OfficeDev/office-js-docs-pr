@@ -18,7 +18,7 @@ The following high-level guidelines will help you design and build a compelling 
 
 The best designed add-ins are simple to use, focused, and provide real value to users. Because your add-in will run inside of Outlook, there is additional emphasis placed on this principle. Outlook is a productivity app&mdash;it's where people go to get things done.
 
-You'll be an extension of our experience and it's important to make sure the scenarios you enable feel like a natural fit inside Outlook. Think carefully about which of your common use cases will benefit the most from having hooks to them from within our email and calendaring experiences.
+Your add-in will be an extension of our experience and it's important to make sure the scenarios you enable feel like a natural fit inside Outlook. Think carefully about which of your common use cases will benefit the most from having hooks to them from within our email and calendaring experiences.
 
 An add-in shouldn't attempt to do everything your app does. The focus should be on the most frequently used, and appropriate, actions in the context of Outlook content. Think about your call to action and make it clear what the user should do when your task pane opens.
 
@@ -114,7 +114,7 @@ Typography usage is aligned to Outlook on iOS and is kept simple for scannabilit
 
 ### Color palette
 
-Color usage is subtle in Outlook on iOS.  To align, we ask that usage of color is localized to actions and error states, with only the brand bar using a unique color.
+Color usage is subtle in Outlook on iOS. To align, we ask that usage of color is localized to actions and error states, with only the brand bar using a unique color.
 
 ![Color palette for iOS.](../images/outlook-mobile-design-color-palette.png)
 
