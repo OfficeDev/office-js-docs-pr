@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 Sideload your Outlook add-in for testing without having to first put it in an add-in catalog.
 
 > [!IMPORTANT]
-> If your Outlook add-in supports mobile, sideload the manifest using the instructions in this article for your Outlook client on the web, Windows, or Mac, then follow the guidance in the **Testing your add-ins on mobile** section of the [Add-ins for Outlook Mobile](outlook-mobile-addins.md#testing-your-add-ins-on-mobile) article.
+> If your Outlook add-in supports mobile, sideload the manifest using the instructions in this article for your Outlook client on the web, on Windows, or on Mac, then follow the guidance in [Testing your add-ins on mobile](outlook-mobile-addins.md#testing-your-add-ins-on-mobile).
 
 ## Sideload automatically
 
@@ -152,4 +152,4 @@ To remove a sideloaded add-in from Outlook, use the steps previously described i
 
 ## See also
 
-- [Add-ins for Outlook Mobile](outlook-mobile-addins.md)
+- [Add-ins for Outlook on mobile devices](outlook-mobile-addins.md)

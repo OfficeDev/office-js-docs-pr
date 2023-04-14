@@ -64,7 +64,7 @@ Outlook add-ins activate when the user is composing or reading a message or appo
 
 In general, Outlook can activate add-ins in read form for items in the Sent Items folder, with the exception of add-ins that activate based on string matches of well-known entities. For more information about the reasons behind this, see [Support for well-known entities](match-strings-in-an-item-as-well-known-entities.md#support-for-well-known-entities).
 
-Currently, there are additional considerations when designing and implementing add-ins for mobile clients. To learn more, see [Add mobile support to an Outlook add-in](add-mobile-support.md#compose-mode-and-appointments).
+Currently, there are additional considerations when designing and implementing add-ins for mobile clients. To learn more, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## Supported clients
 
