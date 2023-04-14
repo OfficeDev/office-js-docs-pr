@@ -14,41 +14,41 @@ The following high-level guidelines will help you design and build a compelling 
 
 ## Principles
 
-1. **Focus on a few key tasks; do them well**
+### Focus on a few key tasks; do them well
 
-   The best designed add-ins are simple to use, focused, and provide real value to users. Because your add-in will run inside of Outlook, there is additional emphasis placed on this principle. Outlook is a productivity app&mdash;it's where people go to get things done.
+The best designed add-ins are simple to use, focused, and provide real value to users. Because your add-in will run inside of Outlook, there is additional emphasis placed on this principle. Outlook is a productivity app&mdash;it's where people go to get things done.
 
-   You will be an extension of our experience and it is important to make sure the scenarios you enable feel like a natural fit inside of Outlook. Think carefully about which of your common use cases will benefit the most from having hooks to them from within our email and calendaring experiences.
+Your add-in will be an extension of our experience and it's important to make sure the scenarios you enable feel like a natural fit inside Outlook. Think carefully about which of your common use cases will benefit the most from having hooks to them from within our email and calendaring experiences.
 
-   An add-in should not attempt to do everything your app does. The focus should be on the most frequently used, and appropriate, actions in the context of Outlook content. Think about your call to action and make it clear what the user should do when your task pane opens.
+An add-in shouldn't attempt to do everything your app does. The focus should be on the most frequently used, and appropriate, actions in the context of Outlook content. Think about your call to action and make it clear what the user should do when your task pane opens.
 
-2. **Make it feel as native as possible**
+### Make it feel as native as possible
 
-   Your add-in should be designed using patterns native to the platform that Outlook is running on. To achieve this, be sure to respect and implement the interaction and visual guidelines set forth by each platform. Outlook has its own guidelines and those are also important to consider. A well-designed add-in will be an appropriate blend of your experience, the platform, and Outlook.
+Your add-in should be designed using patterns native to the platform that Outlook is running on. To achieve this, be sure to respect and implement the interaction and visual guidelines set forth by each platform. Outlook has its own guidelines and those are also important to consider. A well-designed add-in will be an appropriate blend of your experience, the platform, and Outlook.
 
-   This does mean that your add-in will have to visually be different when it runs in Outlook on iOS versus Android. 
+This does mean that your add-in will have to visually be different when it runs in Outlook on iOS versus on Android.
 
-3. **Make it enjoyable to use and get the details right**
+### Make it enjoyable to use and get the details right
 
-   People enjoy using products that are both functionally and visually appealing. You can help ensure the success of your add-in by crafting an experience where you've carefully considered every interaction and visual detail. The necessary steps to complete a task must be clear and relevant. Ideally, no action should be further than a click or two away. 
-   
-   Try not to take a user out of context to complete an action. A user should easily be able to get in and out of your add-in and back to whatever she was doing before. An add-in is not meant to be a destination to spend a lot of time in&mdash;it is an enhancement to our core functionality. If done properly, your add-in will help us deliver on the goal of making people more productive.
+People enjoy using products that are both functionally and visually appealing. You can help ensure the success of your add-in by crafting an experience where you've carefully considered every interaction and visual detail. The necessary steps to complete a task must be clear and relevant. Ideally, no action should be further than a click or two away.
 
-4. **Brand wisely**
+Try not to take a user out of context to complete an action. A user should easily be able to get in and out of your add-in and back to whatever they were doing before. An add-in isn't meant to be a destination to spend a lot of time in&mdash;it's an enhancement to our core functionality. If done properly, your add-in will help us deliver on the goal of making people more productive.
 
-   We value great branding, and we know it is important to provide users with your unique experience. But we feel the best way to ensure your add-in's success is to build an intuitive experience that subtly incorporates elements of your brand versus displaying persistent or obtrusive brand elements that only distract a user from moving through your system in an unencumbered manner. 
-    
-   A good way to incorporate your brand in a meaningful way is through the use of your brand colors, icons, and voice&mdash;assuming these don't conflict with the preferred platform patterns or accessibility requirements. Strive to keep the focus on content and task completion, not brand attention. 
-    
-   > [!NOTE]
-   >  Ads should not be shown within add-ins on iOS or Android.
+### Brand wisely
+
+We value great branding, and we know it's important to provide users with your unique experience. But we feel the best way to ensure your add-in's success is to build an intuitive experience that subtly incorporates elements of your brand versus displaying persistent or obtrusive brand elements that only distract a user from moving through your system in an unencumbered manner.
+
+A good way to incorporate your brand in a meaningful way is through the use of your brand colors, icons, and voice&mdash;assuming these don't conflict with the preferred platform patterns or accessibility requirements. Strive to keep the focus on content and task completion, not brand attention.
+
+> [!NOTE]
+> Ads should not be shown within add-ins in Outlook on iOS or on Android.
 
 ## Design patterns
 
 > [!NOTE]
-> While the above principles apply to all endpoints/platforms, the following patterns and examples are specific to mobile add-ins on the iOS platform.
+> While the above principles apply to all endpoints/platforms, the following patterns and examples are specific to mobile add-ins in Outlook on iOS.
 
-To help you create a well-designed add-in, we have [templates](../design/ux-design-pattern-templates.md) that contain iOS mobile patterns that work within the Outlook Mobile environment. Leveraging these specific patterns will help ensure your add-in feels native to both the iOS platform and Outlook Mobile. These patterns are also detailed below. While not exhaustive, this is the start of a library that we will continue to build upon as we uncover additional paradigms partners wish to include in their add-ins.  
+To help you create a well-designed add-in, we have [templates](../design/ux-design-pattern-templates.md) that contain iOS mobile patterns that work within the Outlook mobile environment. Leveraging these specific patterns will help ensure your add-in feels native to both the iOS platform and Outlook mobile. These patterns are also detailed later in this article. While not exhaustive, this is the start of a library that we'll continue to build upon as we uncover additional paradigms partners wish to include in their add-ins.  
 
 ### Overview
 
@@ -69,7 +69,6 @@ When a user taps on your add-in, the UX should display as quickly as possible. I
 **An example of loading pages on Android**
 
 ![Examples of a progress bar and an activity indicator on Android.](../images/outlook-mobile-design-loading-android.jpg)
-
 
 ### Sign in/Sign up
 
@@ -97,13 +96,13 @@ The first screen of your add-in should include your branding element. Designed f
 
 ### Margins
 
-Mobile margins should be set to 15px (8% of screen) for each side, to align with Outlook iOS and 16px for each side to align with Outlook Android.
+Mobile margins should be set to 15px (8% of screen) for each side, to align with Outlook on iOS and 16px for each side to align with Outlook on Android.
 
 ![Examples of margins on iOS.](../images/outlook-mobile-design-margins.png)
 
 ### Typography
 
-Typography usage is aligned to Outlook iOS and is kept simple for scannability.
+Typography usage is aligned to Outlook on iOS and is kept simple for scannability.
 
 **Typography on iOS**
 
@@ -115,7 +114,7 @@ Typography usage is aligned to Outlook iOS and is kept simple for scannability.
 
 ### Color palette
 
-Color usage is subtle in Outlook iOS.  To align, we ask that usage of color is localized to actions and error states, with only the brand bar using a unique color.
+Color usage is subtle in Outlook on iOS. To align, we ask that usage of color is localized to actions and error states, with only the brand bar using a unique color.
 
 ![Color palette for iOS.](../images/outlook-mobile-design-color-palette.png)
 
@@ -187,7 +186,7 @@ Tabs can aid in content organization.
 
 ### Icons
 
-Icons should follow the current Outlook iOS design when possible. Use our standard size and color.
+Icons should follow the current Outlook on iOS design when possible. Use our standard size and color.
 
 **Examples of icons on iOS**
 
@@ -199,10 +198,10 @@ Icons should follow the current Outlook iOS design when possible. Use our standa
 
 ## End-to-end examples
 
-For our v1 Outlook Mobile Add-ins launch, we worked closely with our partners who were building add-ins. As a way to showcase the potential of their add-ins on Outlook Mobile, our designer put together end-to-end flows for each add-in, leveraging our guidelines and patterns.
+When Outlook mobile add-ins were launched, we worked closely with our partners who were building add-ins. As a way to showcase the potential of their add-ins on Outlook mobile, our designer put together end-to-end flows for each add-in, leveraging our guidelines and patterns.
 
 > [!IMPORTANT]
-> These examples are meant to highlight the ideal way to approach both the interaction and visual design of an add-in and may not match the exact feature sets in the shipped versions of the add-ins. 
+> These examples are meant to highlight the ideal way to approach both the interaction and visual design of an add-in and may not match the exact feature sets in the shipped versions of the add-ins.
 
 ### GIPHY
 

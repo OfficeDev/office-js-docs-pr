@@ -49,7 +49,7 @@ Office.context.mailbox.getCallbackTokenAsync({isRest: true}, function(result){
 
 To retrieve the current item via REST, your add-in will need the item's ID, properly formatted for REST. This is obtained from the [Office.context.mailbox.item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) property, but some checks should be made to ensure that it is a REST-formatted ID.
 
-- In Outlook Mobile, the value returned by `Office.context.mailbox.item.itemId` is a REST-formatted ID and can be used as-is.
+- In Outlook on mobile devices, the value returned by `Office.context.mailbox.item.itemId` is a REST-formatted ID and can be used as-is.
 - In other Outlook clients, the value returned by `Office.context.mailbox.item.itemId` is an EWS-formatted ID, and must be converted using the [Office.context.mailbox.convertToRestId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method.
 - Note you must also convert Attachment ID to a REST-formatted ID in order to use it. The reason the IDs must be converted is that EWS IDs can contain non-URL safe values which will cause problems for REST.
 
