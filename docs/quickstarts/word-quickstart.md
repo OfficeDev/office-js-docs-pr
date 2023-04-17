@@ -30,7 +30,7 @@ In this article, you'll walk through the process of building a Word task pane ad
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-word.png)
+![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-word.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -71,11 +71,11 @@ After you complete the wizard, the generator creates the project and installs su
 
 1. In Word, if the "My Office Add-in" task pane isn't already open, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
 
-    ![Screenshot showing the Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-2b.png)
+    ![The Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-2b.png)
 
 1. At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.
 
-    ![Screenshot of the Word application with the task pane add-in loaded.](../images/word-quickstart-addin-1c.png)
+    ![The Word application with the task pane add-in loaded.](../images/word-quickstart-addin-1c.png)
 
 ### Next steps
 
@@ -276,7 +276,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
     ...
     <ProviderName>John Doe</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+    <!-- The display name of your add-in. Used on the Store and various places of the Office UI such as the add-ins dialog. -->
     <DisplayName DefaultValue="My Office Add-in" />
     <Description DefaultValue="A task pane add-in for Word"/>
     ...
