@@ -153,7 +153,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
                     $('#proverb').click(insertChineseProverbAtTheEnd);
                     $('#supportedVersion').html('This code is using Word 2016 or later.');
                 } else {
-                    // Just letting you know that this code will not work with your version of Word.
+                    // Lets you know that this code will not work with your version of Word.
                     $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
@@ -288,11 +288,11 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you're using the volume-licensed perpetual version of Office, instead of the Microsoft 365 version or a retail perpetual version, then custom buttons aren't supported. Instead, the task pane will open immediately.)
 
-    ![Screenshot of the Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-0.png)
+    ![The Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-0.png)
 
 1. In the task pane, choose any of the buttons to add boilerplate text to the document.
 
-    ![Screenshot of the Word application with the boilerplate add-in loaded.](../images/word-quickstart-addin-1b.png)
+    ![The Word application with the boilerplate add-in loaded.](../images/word-quickstart-addin-1b.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
