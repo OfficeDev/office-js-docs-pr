@@ -667,7 +667,7 @@ items:
       displayName: preview
     - name: Pinnable task pane
       href: outlook/pinnable-taskpane.md
-    - name: Add-ins for Outlook Mobile
+    - name: Add-ins for Outlook on mobile devices
       href: outlook/outlook-mobile-addins.md
     - name: Create an online meeting add-in
       href: outlook/online-meeting.md
@@ -702,7 +702,7 @@ items:
         href: outlook/manifests.md
       - name: Activation rules
         href: outlook/activation-rules.md
-      - name: Add support for Outlook Mobile
+      - name: Add support for Outlook on mobile devices
         href: outlook/add-mobile-support.md
     - name: Add-in requirements
       href: outlook/add-in-requirements.md

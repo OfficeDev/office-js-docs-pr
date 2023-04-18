@@ -14,7 +14,7 @@ If your add-in uses only Office APIs that are supported on the iPad, then custom
 The following table lists the tasks to perform.
 
 > [!NOTE]
-> For information about designing Outlook add-ins that look good and work well on Outlook Mobile, see [Add-ins for Outlook Mobile](../outlook/outlook-mobile-addins.md).
+> For information about designing Outlook add-ins that look good and work well in Outlook on mobile devices, see [Add-ins for Outlook on mobile devices](../outlook/outlook-mobile-addins.md).
 
 |Task|Description|Resources|
 |:-----|:-----|:-----|

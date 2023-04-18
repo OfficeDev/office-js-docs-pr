@@ -228,12 +228,11 @@ The following is an example of the XML manifest.
 
 Not all Outlook clients support the latest features, and some Outlook users will have an older version of Outlook. Having schema versions lets developers build add-ins that are backwards compatible, using the newest features where they are available but still functioning on older versions.
 
-The **\<VersionOverrides\>** element in the manifest is an example of this. All elements defined inside **\<VersionOverrides\>** will override the same element in the other part of the manifest. This means that, whenever possible, Outlook will use what is in the **\<VersionOverrides\>** section to set up the add-in. However, if the version of Outlook doesn't support a certain version of **\<VersionOverrides\>**, Outlook will ignore it and depend on the information in the rest of the manifest. 
+The **\<VersionOverrides\>** element in the manifest is an example of this. All elements defined inside **\<VersionOverrides\>** will override the same element in the other part of the manifest. This means that, whenever possible, Outlook will use what is in the **\<VersionOverrides\>** section to set up the add-in. However, if the version of Outlook doesn't support a certain version of **\<VersionOverrides\>**, Outlook will ignore it and depend on the information in the rest of the manifest.
 
 This approach means that developers don't have to create multiple individual manifests, but rather keep everything defined in one file.
 
 The current versions of the schema are:
-
 
 |Version|Description|
 |:-----|:-----|
@@ -250,7 +249,6 @@ This article will cover the requirements for a v1.1 manifest. Even if your add-i
 ## Root element
 
 The root element for the Outlook add-in manifest is **\<OfficeApp\>**. This element also declares the default namespace, schema version and the type of add-in. Place all other elements in the manifest within its open and close tags. The following is an example of the root element.
-
 
 ```XML
 <OfficeApp
@@ -280,7 +278,6 @@ This element is also where add-ins define support for [mobile add-ins](add-mobil
 ## Localization
 
 Some aspects of the add-in need to be localized for different locales, such as the name, description and the URL that's loaded. These elements can easily be localized by specifying the default value and then locale overrides in the **\<Resources\>** element within the **\<VersionOverrides\>** element. The following shows how to override an image, a URL, and a string.
-
 
 ```XML
 <Resources>
@@ -424,7 +421,7 @@ For an example add-in that defines add-in commands, see [command-demo](https://g
 
 ## Next steps: Add mobile support
 
-Add-ins can optionally add support for Outlook mobile. Outlook mobile supports add-in commands in a similar fashion to Outlook on Windows and Mac. For more information, see [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
+Add-ins can optionally add support for Outlook mobile. Outlook mobile supports add-in commands in a similar fashion to Outlook on Windows and on Mac. For more information, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## See also
 
