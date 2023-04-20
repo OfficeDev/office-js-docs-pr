@@ -662,6 +662,9 @@ items:
       href: outlook/contextual-outlook-add-ins.md
     - name: Module extension add-ins
       href: outlook/extension-module-outlook-add-ins.md
+    - name: Activate add-in without Reading Pane or selected message
+      href: outlook/contextless.md
+      displayName: preview
     - name: Item multi-select
       href: outlook/item-multi-select.md
       displayName: preview

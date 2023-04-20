@@ -1,7 +1,7 @@
 ---
 title: Implement a pinnable task pane in an Outlook add-in
 description: The task pane UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions.
-ms.date: 10/13/2022
+ms.date: 04/21/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -24,9 +24,6 @@ However, by default, if a user has an add-in task pane open for a message in the
 >
 > - Appointments/Meetings
 > - Outlook.com
-
-> [!TIP]
-> If you plan to [publish](../publish/publish.md) your Outlook add-in to [AppSource](https://appsource.microsoft.com), and it's configured for a pinnable task pane, in order to pass [AppSource validation](/legal/marketplace/certification-policies), your add-in content must not be static and it must clearly display data related to the message that is open or selected in the mailbox.
 
 ## Support task pane pinning
 
@@ -78,6 +75,9 @@ Add a "pinnable" property, set to `true`, to the object in the "actions" array t
 
 For a full example, see the `msgReadOpenPaneButton` control in the [command-demo sample manifest](https://github.com/OfficeDev/outlook-add-in-command-demo/blob/master/command-demo-manifest.xml).
 
+> [!NOTE]
+> A pinnable task pane can also be enabled without the **\<SupportsPinning\>** element if the **\<SupportsNoItemContext\>** element is included in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected (preview)](contextless.md).
+
 ## Handling UI updates based on currently selected message
 
 To update your task pane's UI or internal variables based on the current item, you'll need to register an event handler to get notified of the change.
@@ -120,6 +120,10 @@ Office.initialize = function (reason) {
   });
 };
 ```
+
+## Deploy to users
+
+If you plan to [publish](../publish/publish.md) your Outlook add-in to [AppSource](https://appsource.microsoft.com), and it's configured with a pinnable task pane, your add-in content must not be static and must clearly display data related to the message that is open or selected in the mailbox. This ensures that your add-in will pass [AppSource validation](/legal/marketplace/certification-policies).
 
 ## See also
 
