@@ -104,37 +104,37 @@ To enable your add-in to activate with the Reading Pane turned off or without a 
 1. In your project, navigate to the **taskpane** folder, then open **taskpane.html**.
 1. Replace the entire **\<body\>** element with the following markup.
 
-```html
-<body class="ms-font-m ms-welcome ms-Fabric">
-    <header class="ms-welcome__header ms-bgColor-neutralLighter">
-        <img width="90" height="90" src="../../assets/logo-filled.png" alt="logo" title="Add-in logo" />
-        <h1 class="ms-font-su">Activate your add-in without enabling the Reading Pane or selecting a message</h1>
-    </header>
-    <section id="sideload-msg" class="ms-welcome__main">
-        <h2 class="ms-font-xl">Please <a target="_blank" href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing">sideload</a> your add-in to see app body.</h2>
-    </section>
-    <main id="app-body" class="ms-welcome__main" style="display: none;">
-        <ul class="ms-List ms-welcome__features">
-            <li class="ms-ListItem">
-                <i class="ms-Icon ms-Icon--CheckList ms-font-xl"></i>
-                <span class="ms-font-m">Item multi-select is automatically enabled when the <b>SupportsNoItemContext</b> manifest element is set to <code>true</code>. You can test this by selecting multiple messages in Outlook, then choosing <b>Show Taskpane</b> from the ribbon.</span>
-            </li>
-            <li class="ms-ListItem">
-                <i class="ms-Icon ms-Icon--Pin ms-font-xl"></i>
-                <span class="ms-font-m">Support to pin the task pane is also automatically enabled. You can test this by selecting the <b>pin</b> icon from the top right corner of the task pane.</span>
-            </li>
-            <li class="ms-ListItem">
-                <i class="ms-Icon ms-Icon--DockRight ms-font-xl"></i>
-                <span class="ms-font-m">This feature can only be implemented with a task pane.</span>
-            </li>
-            <li class="ms-ListItem">
-                <i class="ms-Icon ms-Icon--Design ms-font-xl"></i>
-                <span class="ms-font-m">Implement your scenario using this feature today! For example, enable your users to access content from different data sources, such as OneDrive or your customer relationship management (CRM) system, without first selecting a message.</span>
-            </li>
-        </ul>
-    </main>
-</body>
-```
+    ```html
+    <body class="ms-font-m ms-welcome ms-Fabric">
+        <header class="ms-welcome__header ms-bgColor-neutralLighter">
+            <img width="90" height="90" src="../../assets/logo-filled.png" alt="logo" title="Add-in logo" />
+            <h1 class="ms-font-su">Activate your add-in without enabling the Reading Pane or selecting a message</h1>
+        </header>
+        <section id="sideload-msg" class="ms-welcome__main">
+            <h2 class="ms-font-xl">Please <a target="_blank" href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing">sideload</a> your add-in to see app body.</h2>
+        </section>
+        <main id="app-body" class="ms-welcome__main" style="display: none;">
+            <ul class="ms-List ms-welcome__features">
+                <li class="ms-ListItem">
+                    <i class="ms-Icon ms-Icon--CheckList ms-font-xl"></i>
+                    <span class="ms-font-m">Item multi-select is automatically enabled when the <b>SupportsNoItemContext</b> manifest element is set to <code>true</code>. You can test this by selecting multiple messages in Outlook, then choosing <b>Show Taskpane</b> from the ribbon.</span>
+                </li>
+                <li class="ms-ListItem">
+                    <i class="ms-Icon ms-Icon--Pin ms-font-xl"></i>
+                    <span class="ms-font-m">Support to pin the task pane is also automatically enabled. You can test this by selecting the <b>pin</b> icon from the top right corner of the task pane.</span>
+                </li>
+                <li class="ms-ListItem">
+                    <i class="ms-Icon ms-Icon--DockRight ms-font-xl"></i>
+                    <span class="ms-font-m">This feature can only be implemented with a task pane.</span>
+                </li>
+                <li class="ms-ListItem">
+                    <i class="ms-Icon ms-Icon--Design ms-font-xl"></i>
+                    <span class="ms-font-m">Implement your scenario using this feature today! For example, enable your users to access content from different data sources, such as OneDrive or your customer relationship management (CRM) system, without first selecting a message.</span>
+                </li>
+            </ul>
+        </main>
+    </body>
+    ```
 
 1. Save your changes.
 
@@ -143,12 +143,12 @@ To enable your add-in to activate with the Reading Pane turned off or without a 
 1. From the **taskpane** folder, open **taskpane.js**.
 1. Navigate to the `Office.onReady` function and replace its contents with the following code.
 
-```javascript
-if (info.host === Office.HostType.Outlook) {
-    document.getElementById("sideload-msg").style.display = "none";
-    document.getElementById("app-body").style.display = "flex";
-}
-```
+    ```javascript
+    if (info.host === Office.HostType.Outlook) {
+        document.getElementById("sideload-msg").style.display = "none";
+        document.getElementById("app-body").style.display = "flex";
+    }
+    ```
 
 1. Save your changes.
 
