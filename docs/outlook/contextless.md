@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Activate your Outlook add-in without the Reading Pane enabled or a message selected (preview)
 
-With a simple manifest configuration, Outlook add-ins created for the Message Read surface can now activate a task pane without the Reading Pane enabled or a message first selected from the mailbox. Follow the walkthrough to learn more and unlock additional capabilities for your add-in. For example, you can enable your users to access content from different data sources, such as OneDrive or a customer relationship management (CRM) system, directly from their Outlook client.
+With a simple manifest configuration, you can create Outlook add-ins for the Message Read surface that activate a task pane without the Reading Pane enabled or a message first selected from the mailbox. Follow the walkthrough to learn more and unlock additional capabilities for your add-in. For example, you can enable your users to access content from different data sources, such as OneDrive or a customer relationship management (CRM) system, directly from their Outlook client.
 
 > [!IMPORTANT]
 > Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
@@ -26,7 +26,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To enable your add-in to activate with the Reading Pane turned off or without a message selected, you must add the [SupportsNoItemContext](/javascript/api/manifest/action?view=outlook-js-preview&preserve-view=true#supportsnoitemcontext-preview) child element to the **\<Action\>** element and set its value to `true`. As this feature can only be implemented with a task pane in Message Read mode, the following elements must also be configured.
+To activate your add-in with the Reading Pane turned off or without a message selected, you must add the [SupportsNoItemContext](/javascript/api/manifest/action?view=outlook-js-preview&preserve-view=true#supportsnoitemcontext-preview) child element to the **\<Action\>** element and set its value to `true`. As this feature can only be implemented with a task pane in Message Read mode, the following elements must also be configured.
 
 - The `xsi:type` attribute value of the **\<ExtensionPoint\>** element must be set to `MessageReadCommandSurface`.
 - The `xsi:type` attribute value of the **\<Action\>** element must be set to `ShowTaskpane`.
