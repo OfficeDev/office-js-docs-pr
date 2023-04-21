@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Activate your Outlook add-in without the Reading Pane enabled or a message selected (preview)
 
-With a simple manifest configuration, Outlook add-ins created for the Message Read surface can now activate a task pane without the Reading Pane enabled or a message first selected from the mailbox. Follow the walkthrough to learn more and unlock additional capabilities for your add-in, such as enabling users to access content from different data sources, such as OneDrive or a customer relationship management (CRM) system, directly from their Outlook client.
+With a simple manifest configuration, Outlook add-ins created for the Message Read surface can now activate a task pane without the Reading Pane enabled or a message first selected from the mailbox. Follow the walkthrough to learn more and unlock additional capabilities for your add-in. For example, you can enable your users to access content from different data sources, such as OneDrive or a customer relationship management (CRM) system, directly from their Outlook client.
 
 > [!IMPORTANT]
 > Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
