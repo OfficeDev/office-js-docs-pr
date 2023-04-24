@@ -2,7 +2,7 @@
 title: Guidance for deploying Office Add-ins on government clouds
 description: Learn how to deploy your Office Add-in to secure, government cloud environments
 ms.topic: best-practice
-ms.date: 10/17/2022
+ms.date: 04/24/2023
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +14,7 @@ For partners providing their Office Add-ins to customers in these restricted clo
 
 ## All sovereign environments
 
-For all government cloud (i.e. Sovereign Cloud) environments, the public Office Store is not available. This means that end-users cannot acquire Office Add-ins directly from the public store. Administrators are also unable to deploy Office Add-ins directly from the public store into their Admin Portal. Instead, you must work with administrators to ensure the following:
+For all government cloud (i.e. Sovereign Cloud) environments, the public Office Store isn't available by default. Administrators can enable this functionality from the M365 Admin Center, if they want their users to have access to add-ins from the public store. Otherwise, to deploy an add-in you must work with administrators to ensure the following:
 
 - The required resources and services for your solution are available inside the cloud boundary. Either you work with the tenant administrators to provision your service and resources inside of the cloud boundary, or you work with the network administrator to enable access to your resources that reside outside of the cloud boundary.
 
@@ -30,9 +30,13 @@ In addition to requirements applicable to all Sovereign Clouds, each Sovereign C
 
 These government clouds remain internet-connected, but the set of public endpoints made available is severely restricted. One such restricted endpoint is the public endpoint for loading the Office JavaScript API library. The public CDN location for Office.js will not be accessible from within these environments. However, there will be an internal, per-cloud Microsoft Office CDN provisioned with the same resource. This means the endpoint URL to access Office.js will be different and your Office Add-in may need some level of customization to run. Given the additional restrictions, it's likely that any solution provided to customers will require hosting provider services within the environment as well, necessitating additional customizations. You'll need to determine the best way to provide your solution to customers, such that it conforms to the additional restrictions imposed on services running within the boundaries of these environments.
 
+For all sovereign managed cloud environments, the public Office Store is not available. This means that end-users cannot acquire Office Add-ins directly from the public store. Administrators are also unable to deploy Office Add-ins directly from the public store into their Admin Portal.
+
 ## Airgapped Sovereign Clouds
 
 These government clouds are essentially disconnected from the public internet entirely. Any resource that would normally be accessed from public resources must instead be custom-provisioned inside these cloud environments. In the GCCH and DOD clouds mentioned previously, most (if not all) solution providers will need to provision their services and resources inside the cloud. There is an option to make firewall exceptions that allows access to public services and resources. However, this bypass is not possible in airgapped clouds. As with the GCCH and DOD clouds, there will be a Microsoft Office CDN provisioned inside each cloud environment that hosts required resources such as the Office.js library. You'll need to work closely with customer tenant administrators to determine the best way to provide your services and resources in a way that conforms to the strict access requirements for airgapped Sovereign Clouds.
+
+As with sovereign managed clouds, the Office Store isn't available in these cloud environments.
 
 ## Office 365 operated by 21Vianet
 
