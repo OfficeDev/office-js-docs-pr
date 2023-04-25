@@ -19,7 +19,7 @@ Office Add-ins are essentially web applications running in the stateless environ
     > [!NOTE]
     > Some browsers or the user's browser settings may block browser-based storage techniques. You should test for availability as documented in [Using the Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
 
-This article focuses on how to use the Office JavaScript API to persist add-in state to the current document. If you need to persist state across documents, such as tracking user preferences across any documents they open, you'll need to use a different approach. For example, you could use [SSO](use-sso-to-get-office-signed-in-user-token.md) to obtain the user identity, and then save the user ID and their settings to an online database.
+This article focuses on how to use the Office JavaScript API to persist add-in state to the current document. It's recommended that you use the application-specific object if it's available for your selected Office client instead of the Common Office JavaScript version. If you need to persist state across documents, such as tracking user preferences across any documents they open, you'll need to use a different approach. For example, you could use [SSO](use-sso-to-get-office-signed-in-user-token.md) to obtain the user identity, and then save the user ID and their settings to an online database.
 
 ## Persist add-in state and settings with the Office JavaScript API
 
