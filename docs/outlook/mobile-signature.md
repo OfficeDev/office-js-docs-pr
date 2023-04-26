@@ -193,7 +193,14 @@ To enable your add-in to complete tasks when the `OnNewMessageCompose` event occ
                     }
     
                     // Show a notification when the signature is added to the message.
-                    item.notificationMessages.addAsync("signature_notification", { type: Office.MailboxEnums.ItemNotificationMessageType.ProgressIndicator, message: "Company signature added." }, (result) => {
+                    // Important: Only the InformationalMessage type is supported in Outlook mobile at this time.
+                    const notification = {
+                        type: Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,
+                        message: "Company signature added.",
+                        icon: "none",
+                        persistent: false                        
+                    };
+                    item.notificationMessages.addAsync("signature_notification", notification, (result) => {
                         if (result.status === Office.AsyncResultStatus.Failed) {
                             console.log(result.error.message);
                             event.completed({ allowEvent: false });
