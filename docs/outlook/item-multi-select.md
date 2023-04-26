@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages (preview)
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 10/10/2022
+ms.date: 04/26/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -101,6 +101,9 @@ To enable your add-in to activate on multiple selected messages, you must add th
         </VersionOverrides>
     </VersionOverrides>
     ```
+
+    > [!NOTE]
+    > Item multi-select can also be enabled without the **\<SupportsMultiSelect\>** element if the **\<SupportsNoItemContext\>** element is included in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected (preview)](contextless.md).
 
 1. Save your changes.
 
@@ -214,7 +217,7 @@ Item multi-select only supports messages within an Exchange mailbox in both read
 - The messages must be selected from one Exchange mailbox at a time. Non-Exchange mailboxes aren't supported.
 - The messages must be selected from one mailbox folder at a time. An add-in doesn't activate on multiple messages if they're located in different folders, unless Conversations view is enabled. For more information, see [Multi-select in conversations](#multi-select-in-conversations).
 - An add-in must implement a task pane in order to detect the `SelectedItemsChanged` event.
-- The [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) in Outlook must be enabled.
+- The [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) in Outlook must be enabled. An exception to this is if the item multi-select feature is enabled through the **\<SupportsNoItemContext\>** element in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected (preview)](contextless.md).
 - A maximum of 100 messages can be selected at a time.
 
 > [!NOTE]
@@ -239,3 +242,4 @@ Now that you've enabled your add-in to operate on multiple selected messages, yo
 - [Outlook add-in manifests](manifests.md)
 - [Call web services from an Outlook add-in](web-services.md)
 - [Overview of Microsoft Graph](/graph/overview)
+- [Activate your Outlook add-in without the Reading Pane enabled or a message selected (preview)](contextless.md)
