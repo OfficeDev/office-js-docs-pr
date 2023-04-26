@@ -1,7 +1,7 @@
 ---
 title: Automatically update your signature when switching between Exchange accounts (preview)
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 04/11/2023
+ms.date: 04/18/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -53,7 +53,7 @@ The following tables list client-server combinations that support the `OnMessage
 To preview the `OnMessageFromChanged` and `OnAppointmentFromChanged` events, set up your preferred client accordingly.
 
 - For Outlook on Windows, install Version 2212 (Build 15919.10000) or later. Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
-- For Outlook on Mac, install Version 16.69.116 or later. Once installed, join the [Office Insider program](https://insider.office.com/join/Mac) and select the **Beta Channel** option.
+- For Outlook on Mac, install Version 16.69.116 or later.
 - For Outlook on the web, ensure that the Targeted release option is set up on your Microsoft 365 tenant. To learn more, see the "Targeted release" section of [Set up the Standard or Targeted release options](/microsoft-365/admin/manage/release-options-in-office-365#targeted-release).
 
 To test the walkthrough, you must also have at least two Exchange accounts.

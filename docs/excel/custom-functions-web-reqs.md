@@ -1,5 +1,5 @@
 ---
-ms.date: 12/07/2022
+ms.date: 04/13/2023
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel.
 title: Receive and handle data with custom functions
 ms.localizationpriority: medium
@@ -96,7 +96,7 @@ Streaming custom functions enable you to output data to cells that updates repea
 
 To declare a streaming function, you can use either of the following two options.
 
-- The `@streaming` tag.
+- The `@streaming` JSDoc tag.
 - The `CustomFunctions.StreamingInvocation` invocation parameter.
 
 The following code sample is a custom function that adds a number to the result every second. Note the following about this code.
@@ -148,7 +148,9 @@ You can also consider setting a default streaming value to handle cases when a r
 
 The `invocation` parameter is the last parameter of any custom function by default. The `invocation` parameter gives context about the cell (such as its address and contents) and allows you to use the `setResult` method and `onCanceled` event to define what a function does when it streams (`setResult`) or is canceled (`onCanceled`).
 
-If you're using TypeScript, the invocation handler needs to be of type [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) or [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation).
+The invocation handler needs to be of type [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) or [`CustomFunctions.CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) to process web requests.
+
+See [Invocation parameter](custom-functions-parameter-options.md#invocation-parameter) to learn about other potential uses of the `invocation` argument and how it corresponds with the [Invocation](/javascript/api/custom-functions-runtime/customfunctions.invocation) object.
 
 ## Receiving data via WebSockets
 

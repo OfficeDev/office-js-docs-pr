@@ -1,7 +1,7 @@
 ---
 title: Manage the sensitivity label of your message or appointment in compose mode (preview)
 description: Learn how to manage the sensitivity label of your message or appointment in compose mode.
-ms.date: 04/10/2023
+ms.date: 04/18/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -218,3 +218,4 @@ The `OnSensitivityLabelChanged` event is available through the event-based activ
 - [Get started with sensitivity labels](/microsoft-365/compliance/get-started-with-sensitivity-labels)
 - [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Office Add-ins code sample: Verify the sensitivity label of a message (preview)](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)
