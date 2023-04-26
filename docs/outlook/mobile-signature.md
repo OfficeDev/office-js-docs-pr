@@ -16,7 +16,7 @@ With the `OnNewMessageCompose` event now available in Outlook on mobile devices,
 The following sections walk you through how to develop an event-based add-in for Outlook mobile that automatically adds a signature to new messages being composed. If you want to learn how to implement an event-based add-in for Outlook desktop clients, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 > [!NOTE]
-> Outlook on Android and on iOS only support up to Mailbox requirement set 1.5. However, to support the event-based activation feature, some APIs from later requirement sets have been enabled for mobile clients. For more information, see [Additional supported APIs](#additional-supported-apis).
+> Outlook on Android and on iOS only support up to Mailbox requirement set 1.5. However, to support the event-based activation feature, some APIs from later requirement sets have been enabled on mobile clients. For more information on this exception, see [Additional supported APIs](#additional-supported-apis).
 
 ## Supported clients
 
