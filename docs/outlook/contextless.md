@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in without the Reading Pane enabled or a message selected (preview)
 description: Learn how to activate your Outlook add-in without enabling the Reading Pane or first selecting a message.
-ms.date: 04/21/2023
+ms.date: 04/26/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,9 +13,6 @@ With a simple manifest configuration, you can create Outlook add-ins for the Mes
 > [!IMPORTANT]
 > Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
-> [!NOTE]
-> This feature isn't currently supported in the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md), but the team is working on making this available.
-
 ## Prerequisites to preview the feature
 
 To preview this feature, install Outlook on Windows, starting with Version 2304 (Build 16313.10000). Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
@@ -25,6 +22,9 @@ To preview this feature, install Outlook on Windows, starting with Version 2304 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) to create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
+
+> [!NOTE]
+> This feature isn't currently supported in the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md), but the team is working on making this available.
 
 To activate your add-in with the Reading Pane turned off or without a message selected, you must add the [SupportsNoItemContext](/javascript/api/manifest/action?view=outlook-js-preview&preserve-view=true#supportsnoitemcontext-preview) child element to the **\<Action\>** element and set its value to `true`. As this feature can only be implemented with a task pane in Message Read mode, the following elements must also be configured.
 
