@@ -40,7 +40,7 @@ await Word.run(async (context) => {
 
 ```
 
-You can use any web server technology to host your Word add-in, such as ASP.NET, NodeJS, or Python. Use your favorite client-side framework -- Ember, Backbone, Angular, React -- or stick with VanillaJS to develop your solution, and you can use services like Azure to [authenticate](../develop/overview-authn-authz.md) and host your application.
+You can use any web server technology to host your Word add-in, such as ASP.NET, NodeJS, or Python. Use your favorite client-side framework -- Ember, Backbone, Angular, React -- or stick with vanilla or plain JavaScript to develop your solution. You can also use services like Azure to [authenticate](../develop/overview-authn-authz.md) and host your application.
 
 The Word JavaScript APIs give your application access to the objects and metadata found in a Word document. You can use these APIs to create add-ins that target:
 
