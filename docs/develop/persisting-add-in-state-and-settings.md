@@ -1,7 +1,7 @@
 ---
 title: Persist add-in state and settings
 description: Learn how to persist data in Office Web Add-in applications running in the stateless environment of a browser control.
-ms.date: 04/25/2023
+ms.date: 04/27/2023
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Office Add-ins are essentially web applications running in the stateless environment of a browser control. As a result, your add-in may need to persist data to maintain the continuity of certain operations or features across sessions of using your add-in. For example, your add-in may have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location. To do that, you can:
+Office Add-ins are essentially web applications running in the stateless environment of a browser control. When in use, your add-in may need to persist data to maintain the continuity of certain operations or features across sessions. For example, your add-in may have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location. To do that, you can:
 
 - Use members of the Office JavaScript API that store data as either:
   - Name/value pairs in a property bag stored in a location that depends on add-in type.
@@ -35,8 +35,7 @@ The Office JavaScript API provides objects, such as [Settings](/javascript/api/o
 
 ## Settings data is managed in memory at runtime
 
-> [!NOTE]
-> The following two sections discuss settings in the context of the Office Common JavaScript API. The application-specific JavaScript APIs for Excel and for Word also provide access to the custom settings. The application-specific APIs and programming patterns are somewhat different from the Common version. For more information, see [Excel.SettingCollection](/javascript/api/excel/excel.settingcollection) and [Word.SettingCollection](/javascript/api/word/word.settingcollection).
+The following two sections discuss settings in the context of the Office Common JavaScript API. The application-specific JavaScript APIs for Excel and for Word also provide access to the custom settings. The application-specific APIs and programming patterns are somewhat different from the Common version. For more information, see [Excel.SettingCollection](/javascript/api/excel/excel.settingcollection) and [Word.SettingCollection](/javascript/api/word/word.settingcollection).
 
 Internally, the data in the property bag accessed with the `Settings`, `CustomProperties`, or `RoamingSettings` objects is stored as a serialized JavaScript Object Notation (JSON) object that contains name/value pairs. The name (key) for each value must be a `string`, and the stored value can be a JavaScript `string`, `number`, `date`, or `object`, but not a **function**.
 
@@ -120,8 +119,7 @@ The anonymous function passed into the `saveAsync` method as the _callback_ para
 
 ## How to save custom XML to the document
 
-> [!NOTE]
-> This section discusses custom XML parts in the context of the Office Common JavaScript API which is supported in Word. The application-specific JavaScript APIs for Excel and for Word also provide access to the custom XML parts. The application-specific APIs and programming patterns are somewhat different from the Common version. For more information, see [Excel.CustomXmlPart](/javascript/api/excel/excel.customxmlpart) and [Word.CustomXmlPart](/javascript/api/word/word.customxmlpart).
+This section discusses custom XML parts in the context of the Office Common JavaScript API which is supported in Word. The application-specific JavaScript APIs for Excel and for Word also provide access to the custom XML parts. The application-specific APIs and programming patterns are somewhat different from the Common version. For more information, see [Excel.CustomXmlPart](/javascript/api/excel/excel.customxmlpart) and [Word.CustomXmlPart](/javascript/api/word/word.customxmlpart).
 
 There's an additional storage option when you need to store information that exceeds the size limits of the document settings or which has a structured character. You can persist custom XML markup in a task pane add-in for Word (and for Excel and Word using application-specific API as mentioned in the previous paragraph). In Word, you can use the [CustomXmlPart](/javascript/api/office/office.customxmlpart) object and its methods. The following code creates a custom XML part and displays its ID and then its content in divs on the page. Note that there must be an `xmlns` attribute in the XML string.
 
