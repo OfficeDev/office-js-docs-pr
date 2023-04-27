@@ -71,7 +71,7 @@ The following code example shows how to use the [Settings.set](/javascript/api/o
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
- The setting with the specified name is created if it doesn't already exist, or its value is updated if it does exist. Use the `Settings.saveAsync` method to persist the new or updated settings to the document.
+The setting with the specified name is created if it doesn't already exist, or its value is updated if it does exist. Use the `Settings.saveAsync` method to persist the new or updated settings to the document.
 
 ### Get the value of a setting
 
@@ -123,7 +123,7 @@ The anonymous function passed into the `saveAsync` method as the _callback_ para
 > [!NOTE]
 > This section discusses custom XML parts in the context of the Office Common JavaScript API which is supported in Word. The application-specific JavaScript APIs for Excel and for Word also provide access to the custom XML parts. The application-specific APIs and programming patterns are somewhat different from the Common version. For more information, see [Excel.CustomXmlPart](/javascript/api/excel/excel.customxmlpart) and [Word.CustomXmlPart](/javascript/api/word/word.customxmlpart).
 
-There's an additional storage option when you need to store information that exceeds the size limits of the document settings or which has a structured character. You can persist custom XML markup in a task pane add-in for Word (and for Excel and Word using application-specific API per the note at the beginning of this section). In Word, you can use the [CustomXmlPart](/javascript/api/office/office.customxmlpart) object and its methods (again, see the earlier note about application-specific APIs for Excel and Word). The following code creates a custom XML part and displays its ID and then its content in divs on the page. Note that there must be an `xmlns` attribute in the XML string.
+There's an additional storage option when you need to store information that exceeds the size limits of the document settings or which has a structured character. You can persist custom XML markup in a task pane add-in for Word (and for Excel and Word using application-specific API as mentioned in the previous paragraph). In Word, you can use the [CustomXmlPart](/javascript/api/office/office.customxmlpart) object and its methods. The following code creates a custom XML part and displays its ID and then its content in divs on the page. Note that there must be an `xmlns` attribute in the XML string.
 
 ```js
 function createCustomXmlPart() {
@@ -141,7 +141,7 @@ function createCustomXmlPart() {
 }
 ```
 
-To retrieve a custom XML part, use the [getByIdAsync](/javascript/api/office/office.customxmlparts#office-office-customxmlparts-getbyidasync-member(1)) method, but the ID is a GUID that is generated when the XML part is created, so you can't know when coding what the ID is. For that reason, it's a good practice when creating an XML part to immediately store the ID of the XML part as a setting and give it a memorable key. The following method shows how to do this. (But see earlier sections of this article for details and best practices when working with custom settings.)
+To retrieve a custom XML part, use the [getByIdAsync](/javascript/api/office/office.customxmlparts#office-office-customxmlparts-getbyidasync-member(1)) method, but the ID is a GUID that is generated when the XML part is created, so you can't know when coding what the ID is. For that reason, it's a good practice when creating an XML part to immediately store the ID of the XML part as a setting and give it a memorable key. The following method shows how to do this.
 
  ```js
 function createCustomXmlPartAndStoreId() {
