@@ -2,7 +2,7 @@
 title: Remove duplicates using the Excel JavaScript API
 description: Learn how to use the Excel JavaScript API to remove duplicates.
 ms.date: 02/17/2022
-ms.prod: excel
+ms.service: excel
 ms.localizationpriority: medium
 ---
 

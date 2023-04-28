@@ -6,7 +6,7 @@ summary: With Outlook add-ins, you can use familiar web technologies such as HTM
 metadata:
   title: Outlook add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Resources for learning about Outlook add-ins. # Required; article description that is displayed in search results. < 160 chars.
-  ms.prod: outlook #Required
+  ms.service: outlook #Required
   ms.topic: landing-page # Required
   ms.date: 10/10/2022 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high

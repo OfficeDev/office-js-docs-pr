@@ -2,7 +2,7 @@
 title: Work with dates using the Excel JavaScript API 
 description: Use the Moment-MSDate plug-in with the Excel JavaScript API to work with dates.
 ms.date: 02/16/2022
-ms.prod: excel
+ms.service: excel
 ms.localizationpriority: medium
 ---
 

@@ -2,7 +2,7 @@
 title: Excel JavaScript object model in Office Add-ins
 description: Learn the key object types in the Excel JavaScript APIs and how to use them to build add-ins for Excel.
 ms.date: 03/21/2023
-ms.prod: excel
+ms.service: excel
 ms.topic: concept-article
 ms.localizationpriority: high
 ---
