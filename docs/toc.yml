@@ -756,6 +756,9 @@ items:
       - name: Manage sensitivity labels
         href: outlook/sensitivity-label.md
         displayName: preview
+      - name: Manage delivery time of a message
+        href: outlook/delay-delivery.md
+        displayName: preview
     - name: Privacy and security
       items:
       - name: Overview
