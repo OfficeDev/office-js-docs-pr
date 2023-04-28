@@ -42,6 +42,7 @@ Office.context.mailbox.item.delayDeliveryTime.getAsync((asyncResult) => {
     const date = new Date(deliveryDate);
     console.log(`Message delivery date and time: ${date.toString()}`);
   }
+});
 ```
 
 ## Set the delivery date and time of a message
