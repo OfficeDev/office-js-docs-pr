@@ -15,7 +15,7 @@ With a simple manifest configuration, you can create Outlook add-ins for the Mes
 
 ## Prerequisites to preview the feature
 
-To preview this feature, install Outlook on Windows, starting with Version 2304 (Build 16313.10000). Once installed, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
+To preview this feature, install Outlook on Windows, starting with Version 2304 (Build 16313.10000). Once installed, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option to access Office beta builds.
 
 ## Set up your environment
 
