@@ -52,7 +52,7 @@ The following tables list client-server combinations that support the `OnMessage
 
 To preview the `OnMessageFromChanged` and `OnAppointmentFromChanged` events, set up your preferred client accordingly.
 
-- For Outlook on Windows, install Version 2212 (Build 15919.10000) or later. Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
+- For Outlook on Windows, install Version 2212 (Build 15919.10000) or later. Once installed, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
 - For Outlook on Mac, install Version 16.69.116 or later.
 - For Outlook on the web, ensure that the Targeted release option is set up on your Microsoft 365 tenant. To learn more, see the "Targeted release" section of [Set up the Standard or Targeted release options](/microsoft-365/admin/manage/release-options-in-office-365#targeted-release).
 

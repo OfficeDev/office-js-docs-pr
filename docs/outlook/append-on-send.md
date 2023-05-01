@@ -25,8 +25,8 @@ In this walkthrough, you'll develop an add-in that prepends a header and appends
 
 To preview the prepend-on-send feature, set up your preferred Outlook client.
 
-- For Outlook on Windows, install Version 2209 (Build 15707.36127) or later. Then, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
-- For Outlook on Mac, install Version 16.70.212.0 or later. Then, join the [Office Insider program](https://insider.office.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
+- For Outlook on Windows, install Version 2209 (Build 15707.36127) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
+- For Outlook on Mac, install Version 16.70.212.0 or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
 - For Outlook on the web, ensure that the **Targeted release** option is set up on your Microsoft 365 tenant. To learn more, see the "Targeted release" section of [Set up the Standard or Targeted release options](/microsoft-365/admin/manage/release-options-in-office-365#targeted-release).
 
 ## Set up your environment

@@ -1,7 +1,7 @@
 If your project is node.js-based (that is, not developed with Visual Studio and Internet Information server (IIS)), you can force Office on Windows to use Edge Legacy or Internet Explorer to run add-ins, even if you have a combination of Windows and Office versions that would normally use a more recent browser. For more information about which browsers are used by various combinations of Windows and Office versions, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!NOTE]
-> The tool that is used to force the change in browser is supported only in the Beta subscription channel of Microsoft 365. Join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office Beta builds. See also [About Office: What version of Office am I using?](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
+> The tool that is used to force the change in browser is supported only in the Beta subscription channel of Microsoft 365. Join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/windows) and select the **Beta Channel** option to access Office Beta builds. See also [About Office: What version of Office am I using?](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
 >
 > Strictly, it is the `webview` switch of this tool (see **Step 2**) that requires the Beta channel. The tool has other switches that do not have this requirement.
 
