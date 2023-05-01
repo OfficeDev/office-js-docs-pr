@@ -20,7 +20,7 @@ The following sections walk you through how to configure your add-in to retrieve
 
 ## Prerequisites to preview item multi-select
 
-To preview the multi-select feature, install Outlook on Windows, starting with Version 2209 (Build 15629.20110). Once installed, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
+To preview the multi-select feature, install Outlook on Windows, starting with Version 2209 (Build 15629.20110). Once installed, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option to access Office beta builds.
 
 ## Set up your environment
 

@@ -11,12 +11,12 @@ New developer features, including those still in preview, are delivered first to
 
 ## Opt in to getting the latest builds of Office
 
-- If you're a Microsoft 365 Family, Personal, or University subscriber, see [Be an Office Insider](https://insider.office.com).
+- If you're a Microsoft 365 Family, Personal, or University subscriber, see [Be a Microsoft 365 Insider](https://insider.microsoft365.com).
 - If you're a Microsoft 365 Apps for business customer, see [Install the First Release build for Microsoft 365 Apps for business customers](https://support.office.com/article/4dd8ba40-73c0-4468-b778-c7b744d03ead).
 - If you're running Office on a Mac:
   - Start an Office application.
   - Select **Check for Updates** on the Help menu.
-  - In the Microsoft AutoUpdate box, check the box to join the Office Insider program.
+  - In the Microsoft AutoUpdate box, check the box to join the Microsoft 365 Insider program.
 
 ## Get the latest build of Office
 
