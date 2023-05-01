@@ -2,7 +2,6 @@
 title: Handle dynamic arrays and range spilling using the Excel JavaScript API
 description: Learn how to handle dynamic arrays and range spilling with the Excel JavaScript API.
 ms.date: 02/17/2022
-ms.service: excel
 ms.localizationpriority: medium
 ---
 
