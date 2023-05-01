@@ -6,7 +6,7 @@ summary: With Word add-ins, you can use familiar web technologies such as HTML, 
 metadata:
   title: Word add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Resources for learning about Word add-ins. # Required; article description that is displayed in search results. < 160 chars.
-  ms.prod: word #Required
+  ms.service: word #Required
   ms.topic: landing-page # Required
   ms.date: 02/24/2023 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high

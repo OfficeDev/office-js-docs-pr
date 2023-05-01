@@ -2,7 +2,7 @@
 title: Excel JavaScript API overview
 description: Learn more about the Excel JavaScript API.
 ms.date: 02/23/2022
-ms.prod: excel
+ms.service: excel
 ms.localizationpriority: high
 ---
 
