@@ -60,7 +60,7 @@ Test your Outlook web add-in in the new Outlook on Windows today! To switch to t
 
 - Have a minimum OS installation of Windows 10 Version 1809 (Build 17763).
 
-- Be a member of the [Office Insider Program](https://insider.office.com/join/windows).
+- Be a member of the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows).
 
 To help you sign up and install the Outlook desktop client, see [Getting started with the new Outlook for Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 

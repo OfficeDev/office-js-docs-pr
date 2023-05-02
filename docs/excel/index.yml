@@ -6,7 +6,7 @@ summary: With Excel add-ins, you can use familiar web technologies such as HTML,
 metadata:
   title: Excel add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Resources for learning about Excel add-ins. # Required; article description that is displayed in search results. < 160 chars.
-  ms.prod: excel #Required
+  ms.service: excel #Required
   ms.topic: landing-page # Required
   ms.date: 02/24/2022 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high

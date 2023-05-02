@@ -3,7 +3,7 @@ title: Word JavaScript API overview
 description: Overview of the Word JavaScript API.
 ms.date: 02/24/2023
 ms.topic: concept-article
-ms.prod: word
+ms.service: word
 ms.localizationpriority: high
 ---
 

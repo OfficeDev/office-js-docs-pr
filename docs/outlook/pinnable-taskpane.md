@@ -15,8 +15,8 @@ However, by default, if a user has an add-in task pane open for a message in the
 > [!NOTE]
 > Although the pinnable task panes feature was introduced in [requirement set 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), it's currently only available to Microsoft 365 subscribers using the following:
 >
-> - Outlook 2016 or later on Windows (build 7668.2000 or later for users in the Current or Office Insider Channels, build 7900.xxxx or later for users in Deferred channels)
-> - Outlook 2016 or later on Mac (version 16.13.503 or later)
+> - Outlook 2016 or later on Windows (Build 7668.2000 or later for users in the Current or Microsoft 365 Insider Channels, Build 7900.xxxx or later for users in Deferred channels)
+> - Outlook 2016 or later on Mac (Version 16.13.503 or later)
 > - Modern Outlook on the web
 
 > [!IMPORTANT]

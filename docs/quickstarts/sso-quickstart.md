@@ -2,7 +2,7 @@
 title: Single sign-on (SSO) quick start
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on.
 ms.date: 09/07/2022
-ms.prod: non-product-specific
+ms.service: microsoft-365
 ms.localizationpriority: high
 ---
 
