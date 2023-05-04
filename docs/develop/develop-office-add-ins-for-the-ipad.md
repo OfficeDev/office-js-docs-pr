@@ -33,7 +33,7 @@ The following table lists the tasks to perform.
 >
 > On an iPad, `touchEnabled` returns `true` and `commerceAllowed` returns `false`.
 >
-> For information on the best UI design practices for iPad, see [Designing for iOS](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/).
+> For information on the best UI design practices for iPad, see [Designing for iOS](https://developer.apple.com/design/human-interface-guidelines/designing-for-ios).
 
 ## Best practices for developing Office Add-ins that can run on iPad
 
