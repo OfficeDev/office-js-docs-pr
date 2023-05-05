@@ -1,7 +1,7 @@
 ---
 title: Debug your add-in with runtime logging
 description: Learn how to use runtime logging to debug your add-in.
-ms.date: 11/04/2021
+ms.date: 05/05/2023
 ms.localizationpriority: medium
 ---
 
@@ -59,7 +59,12 @@ Enabling runtime logging from the command line is the fastest way to use this lo
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-3. Set the default value of the **RuntimeLogging** key to the full path of the file where you want the log to be written. For an example, see [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip).
+3. Set the default value of the **RuntimeLogging** key to the full path of the file where you want the log to be written. The following example run in a `.reg` file sets the logging to the `C:\ClientLogs\log.txt` folder.
+
+    ```registry
+    [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\RuntimeLogging]
+    @="C:\\ClientLogs\\log.txt"`
+    ```
 
     > [!NOTE]
     > The directory in which the log file will be written must already exist, and you must have write permissions to it.
