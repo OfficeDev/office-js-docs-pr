@@ -2,7 +2,6 @@
 title: Work with cells using the Excel JavaScript API
 description: Learn the Excel JavaScript API definition of a cell, and learn how to work with cells.
 ms.date: 04/16/2021
-ms.prod: excel
 ms.localizationpriority: medium
 ---
 

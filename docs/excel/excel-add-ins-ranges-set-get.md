@@ -2,7 +2,6 @@
 title: Set and get the selected range using the Excel JavaScript API
 description: Learn how to use the Excel JavaScript API to set and get the selected range using the Excel JavaScript API.
 ms.date: 02/17/2022
-ms.prod: excel
 ms.localizationpriority: medium
 ---
 

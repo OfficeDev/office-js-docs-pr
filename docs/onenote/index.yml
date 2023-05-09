@@ -6,7 +6,7 @@ summary: With OneNote add-ins, you can use familiar web technologies such as HTM
 metadata:
   title: OneNote add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Resources for learning about OneNote add-ins. # Required; article description that is displayed in search results. < 160 chars.
-  ms.prod: onenote #Required
+  ms.service: onenote #Required
   ms.topic: landing-page # Required
   ms.date: 03/29/2021 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high

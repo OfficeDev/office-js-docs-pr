@@ -1,7 +1,7 @@
 ---
 title: Referencing the Office JavaScript API library
 description: Learn how to reference the Office JavaScript API library and type definitions in your add-in.
-ms.date: 02/18/2021
+ms.date: 05/03/2023
 ms.localizationpriority: medium
 ---
 
@@ -53,3 +53,4 @@ New JavaScript APIs are first introduced in "preview" and later become part of a
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
 - [Guidance for deploying Office Add-ins on government clouds](../publish/government-cloud-guidance.md)
+- [Microsoft software license terms for the Microsoft Office JavaScript (Office.js) API library](https://github.com/OfficeDev/office-js/blob/release/LICENSE.md)
