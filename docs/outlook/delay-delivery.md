@@ -66,9 +66,9 @@ Office.context.mailbox.item.delayDeliveryTime.setAsync(timeDelay, (asyncResult) 
 
 ## Feature behavior and limitations
 
-When you use the native **Delay Delivery** option in the Outlook client, the delay is processed client-side. After you select **Send**, the scheduled message appears in the **Outbox** folder and will only be delivered at the specified time if the Outlook client from which the send was initiated is running. While the message is in the **Outbox** folder, you can choose to edit your message, update the delivery time, cancel the message, or opt to send the message immediately.
+When you schedule the delivery of a message using the `item.delayDeliveryTime.setAsync` method, the delay is processed on the server. This allows the message to be sent even if the Outlook client isn’t running. However, because of this, the message doesn't appear in the Outbox folder, so you won't be able to edit the message or cancel its delivery after selecting **Send**. You'll be able to review the message from the **Sent Items** folder once the message is sent.
 
-The behavior of a message scheduled using the `item.delayDeliveryTime.setAsync` method differs. The API relies on the server to process the delay, which allows the message to be sent even if the Outlook client isn't running. However, because of this, the message doesn't appear in the **Outbox** folder, so you won't be able to edit the message or cancel its delivery after selecting **Send**. You'll be able to review the message from the **Sent Items** folder once the message is sent.
+This behavior differs from a message scheduled using the native **Delay Delivery** option in the Outlook client, which processes the delay client-side. A message scheduled using this option appears in the **Outbox** folder and is only delivered if the Outlook client from which it was sent is running at the specified delivery time.
 
 ## Try sample snippets in Script Lab
 

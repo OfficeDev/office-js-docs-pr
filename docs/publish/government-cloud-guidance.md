@@ -2,7 +2,7 @@
 title: Guidance for deploying Office Add-ins on government clouds
 description: Learn how to deploy your Office Add-in to secure, government cloud environments
 ms.topic: best-practice
-ms.date: 10/17/2022
+ms.date: 04/26/2023
 ms.localizationpriority: medium
 ---
 
@@ -21,6 +21,8 @@ For all government cloud (i.e. Sovereign Cloud) environments, the public Office 
 - The resources the Office Add-in accesses conform to the requirements of the government cloud from which they are being accessed. They also must conform to any additional requirements from the customer tenant for which the solution is being provisioned. These requirements include the transfer, management, and storage of potentially sensitive data, as well as code and resource security and access vetting procedures.
 
 - The Office Add-in manifest that describes the solution and its source location as applicable to the particular government cloud deployment is obtained from the partner and ingested for deployment to the appropriate users via the Admin Portal.
+
+[Centralized deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) of add-ins outside of the store is still supported.
 
 ## US Government Community Cloud (GCC)
 
