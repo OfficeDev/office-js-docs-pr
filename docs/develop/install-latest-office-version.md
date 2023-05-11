@@ -1,7 +1,7 @@
 ---
 title: Install the latest version of Office
 description: Information about how to opt in to getting the latest builds of Office.
-ms.date: 07/08/2021
+ms.date: 05/05/2023
 ms.localizationpriority: medium
 ---
 
@@ -21,9 +21,44 @@ New developer features, including those still in preview, are delivered first to
 ## Get the latest build of Office
 
 1. Download the [Office Deployment Tool](https://www.microsoft.com/download/details.aspx?id=49117).
-2. Run the tool. This extracts the following two files: Setup.exe and configuration.xml.
-3. Replace the configuration.xml file with the [First Release Configuration File](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml).
-4. Run the following command as an administrator:  `setup.exe /configure configuration.xml`
+1. Run the tool. This extracts a **setup.exe** and configuration files.
+1. Create a new file named **configuration.xml** and add the following XML.
+
+    ```xml
+    <!-- Office 365 client configuration file sample. To be used for Office 365 ProPlus apps, 
+     Office 365 Business apps, Project Pro for Office 365 and Visio Pro for Office 365. 
+
+     For detailed information regarding configuration options visit: http://aka.ms/ODT. 
+     To use the configuration file be sure to remove the comments
+
+     The following sample allows you to download and install the 32 bit version of the Office 365 ProPlus apps 
+     and Visio Pro for Office 365 directly from the Office CDN using the First Release Branch
+     settings  -->
+
+    <Configuration>
+      <Add OfficeClientEdition="32" Branch="FirstReleaseCurrent">
+        <Product ID="O365ProPlusRetail">
+          <Language ID="en-us" />
+        </Product>
+      </Add>
+
+      <Updates Enabled="TRUE" /> 
+      <Display Level="None" AcceptEULA="TRUE" />  
+      <Logging Level="Standard" Path="%temp%" /> 
+
+      <!--  <Updates Enabled="TRUE" Branch="Current" /> -->
+
+      <!--  <Display Level="None" AcceptEULA="TRUE" />  -->
+
+      <!--  <Property Name="AUTOACTIVATE" Value="1" />  -->
+
+    </Configuration>
+    ```
+
+1. Run the following command as an administrator.
+    ```command&nbsp;line
+    setup.exe /configure configuration.xml
+    ```
 
 > [!NOTE]
 > The command might take a long time to run without indicating progress.
