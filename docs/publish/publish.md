@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 01/23/2023
+ms.date: 05/11/2023
 ms.localizationpriority: high
 ---
 
@@ -81,6 +81,14 @@ Outlook add-in deployment requires:
 - Outlook 2013 or later
 
 To assign add-ins to tenants, use the Exchange admin center to upload a manifest directly, either from a file or a URL, or add an add-in from AppSource. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Add-ins for Outlook in Exchange Server](/exchange/add-ins-for-outlook-2013-help).
+
+## GoDaddy M365 SKUs
+
+[Microsoft 365 subscriptions provided by GoDaddy](https://www.godaddy.com/business/office-365) have limited support for add-ins. The following options are **not** supported:
+
+- Deployment through the Microsoft Admin Center.
+- Deployment through Exchange Servers.
+- Acquiring add-ins from AppSource.
 
 ## See also
 
