@@ -55,7 +55,10 @@ New developer features, including those still in preview, are delivered first to
     </Configuration>
     ```
 
-1. Run the following command as an administrator:  `setup.exe /configure configuration.xml`
+1. Run the following command as an administrator.
+    ```command&nbsp;line
+    setup.exe /configure configuration.xml
+    ```
 
 > [!NOTE]
 > The command might take a long time to run without indicating progress.
