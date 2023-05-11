@@ -55,11 +55,11 @@ Enabling runtime logging from the command line is the fastest way to use this lo
 
 1. Make sure that you are running Office 2016 desktop build **16.0.7019** or later.
 
-2. Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`.
+1. Add the `RuntimeLogging` registry key under `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`.
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-3. Set the default value of the **RuntimeLogging** key to the full path of the file where you want the log to be written. The following example run in a `.reg` file sets the logging to the `C:\ClientLogs\log.txt` folder.
+1. Set the default value of the **RuntimeLogging** key to the full path of the file where you want the log to be written. The following example run in a `.reg` file sets the logging to the `C:\ClientLogs\log.txt` folder.
 
     ```registry
     [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\RuntimeLogging]
@@ -77,7 +77,7 @@ The following image shows what the registry should look like. To turn the featur
 
 1. Make sure that you are running Office 2016 desktop build **16.27.19071500** or later.
 
-2. Open **Terminal** and set a runtime logging preference by using the `defaults` command:
+1. Open **Terminal** and set a runtime logging preference by using the `defaults` command:
 
     ```command&nbsp;line
     defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
@@ -123,9 +123,9 @@ To use runtime logging to troubleshoot issues loading an add-in:
     > [!NOTE]
     > We recommend that you sideload only the add-in that you are testing to minimize the number of messages in the log file.
 
-2. If nothing happens and you don't see your add-in (and it's not appearing in the add-ins dialog box), open the log file.
+1. If nothing happens and you don't see your add-in (and it's not appearing in the add-ins dialog box), open the log file.
 
-3. Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`.
+1. Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`.
 
 ## Known issues with runtime logging
 
