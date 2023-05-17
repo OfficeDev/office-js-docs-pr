@@ -1,14 +1,14 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.
-ms.date: 03/03/2023
+ms.date: 05/19/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Enable shared folders and shared mailbox scenarios in an Outlook add-in
 
-This article describes how to enable shared folders (also known as delegate access) and shared mailbox (now in [preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#shared-mailboxes)) scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
+This article describes how to enable shared folders (also known as delegate access) and shared mailbox scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
 
 ## Supported clients and platforms
 
@@ -25,11 +25,11 @@ The following table shows supported client-server combinations for this feature,
 > \* Support for this feature in an on-premises Exchange environment is available starting in Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
 
 > [!IMPORTANT]
-> Support for this feature was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (for details, refer to [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). However, note that the feature's support matrix is a superset of the requirement set's.
+> Shared folder support was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support these requirement sets. However, note that the feature's support matrix is a superset of the requirement set's.
 
 ## Supported setups
 
-The following sections describe supported configurations for shared mailboxes (now in preview) and shared folders. The feature APIs may not work as expected in other configurations. Select the platform you'd like to learn how to configure.
+The following sections describe supported configurations for shared mailboxes and shared folders. The feature APIs may not work as expected in other configurations. Select the platform you'd like to learn how to configure.
 
 ### [Windows](#tab/windows)
 
@@ -45,7 +45,7 @@ The mailbox owner must first provide access to a delegate using one of the follo
 
 Once access is provided, the delegate must then follow the instructions outlined in the "Add another person's mailbox to your profile" section of the article [Manage another person's mail and calendar items](https://support.microsoft.com/office/afb79d6b-2967-43b9-a944-a6b953190af5).
 
-#### Shared mailboxes (preview)
+#### Shared mailboxes
 
 Exchange server admins can create and manage shared mailboxes for sets of users to access. [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) and [on-premises Exchange environments](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes) are supported.
 
@@ -74,11 +74,11 @@ Once access is provided, the delegate must then follow the instructions outlined
 
 #### Shared mailboxes
 
-Shared mailbox scenarios in Outlook add-ins aren't currently supported in modern Outlook on the web.
+Mail and calendar are shared with a delegate or shared mailbox user. Add-ins are available to the delegate or user in message and appointment read and compose modes.
 
 ### [Mac](#tab/unix)
 
-#### Shared mailboxes (preview)
+#### Shared mailboxes
 
 Mail and calendar are shared with a delegate or shared mailbox user. Add-ins are available to the delegate or user in message and appointment read and compose modes.
 
