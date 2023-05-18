@@ -27,7 +27,7 @@ The following tables list client-server combinations that support the `OnMessage
 
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
-|**Windows**<br>Version 2304 (Build 16313.10000) or later|Supported|Supported|Supported|
+|**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
 |**Mac**<br>Version 16.69.116|Supported|Not applicable|Not applicable|
 |**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
