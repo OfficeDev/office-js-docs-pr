@@ -33,7 +33,7 @@ Compose add-ins are implemented as [add-in commands](../design/add-in-commands.m
 > [!NOTE]
 > Add-ins developed for servers or clients that don't support add-in commands use [activation rules](activation-rules.md) in a [Rule](/javascript/api/manifest/rule) element contained in the [OfficeApp](/javascript/api/manifest/officeapp) element. Unless the add-in is being specifically developed for older clients and servers, new add-ins should use add-in commands.
 >
-> Add-ins that use activation rules aren't supported in an add-in that uses a [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md).
+> Add-ins that use activation rules aren't supported in an add-in that uses a [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
 
 ## API features available to compose add-ins
 

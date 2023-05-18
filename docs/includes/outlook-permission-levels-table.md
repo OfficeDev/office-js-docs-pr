@@ -1,4 +1,4 @@
-|**Permission level</br>canonical name**|**XML manifest name**|**unified Microsoft 365 manifest name**|**Summary description**|
+|**Permission level</br>canonical name**|**XML manifest name**|**unified manifest for Microsoft 365 name**|**Summary description**|
 |:-----|:-----|:-----|:-----|
 |**restricted**|Restricted|MailboxItem.Restricted.User|Allows use of entities, but not regular expressions. |
 |**read item**|ReadItem|MailboxItem.Read.User|In addition to what is allowed in **restricted**, it allows:<ul><li>regular expressions</li><li>Outlook add-in API read access</li><li>getting the item properties and the callback token</li><li>writing custom properties</li></ul> |
@@ -8,7 +8,7 @@
 Permissions are declared in the manifest. The markup varies depending on the type of manifest.
 
 - **XML manifest**:  Use the **\<Permissions\>** element.
-- **Unified Microsoft 365 manifest (preview)**: Use the "name" property of an object in the "authorization.permissions.resourceSpecific" array.
+- **Unified manifest for Microsoft 365 (preview)**: Use the "name" property of an object in the "authorization.permissions.resourceSpecific" array.
 
 > [!NOTE]
 >

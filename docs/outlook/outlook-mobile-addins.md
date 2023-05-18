@@ -27,7 +27,7 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
   - The add-in **MUST** adhere to the [UI guidelines](outlook-addin-design.md).
   - The scenario for the add-in **MUST** [make sense on mobile](#what-makes-a-good-scenario-for-outlook-mobile-add-ins).
 
-[!INCLUDE [Unified Microsoft 365 manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
+[!INCLUDE [Unified manifest for Microsoft 365 not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 - In general, only Message Read mode is supported at this time. That means `MobileMessageReadCommandSurface` is the only [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) you should declare in the mobile section of your manifest. However, there are a couple of exceptions.
   1. Appointment Organizer mode is supported for online meeting provider integrated add-ins which instead declare the [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface). See the [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md) article for more about this scenario.

@@ -50,7 +50,7 @@ The first question asks you to choose between eight types of projects. The optio
 - **Excel Custom Functions using a Shared Runtime**
 - **Excel Custom Functions using a JavaScript-only Runtime**
 - **Office Add-in Task Pane project supporting single sign-on**
-- **Outlook Add-in with the unified Microsoft 365 manifest (preview)**
+- **Outlook Add-in with the unified manifest for Microsoft 365 (preview)**
 - **Office Add-in project containing the manifest only**
 
 ![Screenshot showing the prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)

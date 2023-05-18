@@ -55,7 +55,7 @@ Add the [SupportsPinning](/javascript/api/manifest/action#supportspinning) eleme
 
 The **\<SupportsPinning\>** element is defined in the VersionOverrides v1.1 schema, so you will need to include a [VersionOverrides](/javascript/api/manifest/versionoverrides) element both for v1.0 and v1.1.
 
-# [Unified Microsoft 365 manifest (developer preview)](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
 
 Add a "pinnable" property, set to `true`, to the object in the "actions" array that defines the button or menu item that opens the task pane. The following is an example.
 
