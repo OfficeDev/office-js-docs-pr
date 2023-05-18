@@ -112,7 +112,7 @@ items:
       items:
       - name: Overview
         href: develop/add-in-manifests.md
-      - name: Unified Microsoft 365 manifest
+      - name: Unified manifest for Microsoft 365
         href: develop/json-manifest-overview.md
         displayName: preview
       - name: Manifest reference
@@ -226,7 +226,7 @@ items:
             href: design/add-in-commands.md
           - name: Create add-in commands with the XML manifest
             href: develop/create-addin-commands.md
-          - name: Create add-in commands with the unified Microsoft 365 manifest
+          - name: Create add-in commands with the unified manifest for Microsoft 365
             href: develop/create-addin-commands-unified-manifest.md
           - name: Create custom contextual tabs
             href: design/contextual-tabs.md
@@ -635,7 +635,7 @@ items:
   - name: Build your first Outlook add-in
     href: quickstarts/outlook-quickstart.md
     displayName: Outlook
-  - name: Build an Outlook add-in with the unified Microsoft 365 manifest
+  - name: Build an Outlook add-in with the unified manifest for Microsoft 365
     href: quickstarts/outlook-quickstart-json-manifest.md
     displayName: Outlook, preview
   - name: Outlook add-in tutorial

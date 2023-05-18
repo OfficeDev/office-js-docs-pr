@@ -20,7 +20,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 ## Configure the manifest
 
 > [!NOTE]
-> This feature isn't currently supported in the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md), but the team is working on making this available.
+> This feature isn't currently supported in the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md), but the team is working on making this available.
 
 To activate your add-in with the Reading Pane turned off or without a message selected, you must add the [SupportsNoItemContext](/javascript/api/manifest/action#supportsnoitemcontext) child element to the **\<Action\>** element and set its value to `true`. As this feature can only be implemented with a task pane in Message Read mode, the following elements must also be configured.
 
