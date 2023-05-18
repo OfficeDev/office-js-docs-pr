@@ -20,7 +20,7 @@ The following sections walk you through how to develop an event-based add-in tha
 > Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 > [!IMPORTANT]
-> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md).
+> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
 
 ## Supported clients and platforms
 
