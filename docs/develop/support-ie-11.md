@@ -104,7 +104,7 @@ See [Trident testing](../testing/ie-11-testing.md).
 
 ## Troubleshoot EdgeHTML issues
 
-If you encounter issues as you develop your add-in to support Microsoft Edge Legacy, see the "EdgeHTML and WebView2 (Microsoft Edge) issues" section of [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md#edgehtml-and-webview2-microsoft-edge-issues) for guidance.
+If you encounter issues as you develop your add-in to support Microsoft Edge Legacy, see the "EdgeHTML and WebView2 (Microsoft Edge) issues" section of [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-edgehtml-and-webview2-microsoft-edge-issues) for guidance.
 
 ## Debug an add-in that supports EdgeHTML (Microsoft Edge Legacy)
 
