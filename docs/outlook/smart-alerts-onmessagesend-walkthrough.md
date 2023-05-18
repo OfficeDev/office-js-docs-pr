@@ -467,4 +467,4 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 - [How to debug event-based add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
 - [Office Add-ins code sample: Use Outlook Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
-- [Office Add-ins code sample: Verify the sensitivity label of a message (preview)](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)
+- [Office Add-ins code sample: Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)
