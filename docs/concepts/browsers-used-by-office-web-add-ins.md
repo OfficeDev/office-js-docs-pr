@@ -112,7 +112,7 @@ Trident+ doesn't support JavaScript versions later than ES5. If any of your add-
 
 For more information about these options, see [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md).
 
-Also, Trident+ doesn't support some HTML5 features such as media, recording, and location. To learn more, see [Determine the browser the add-in is running in at runtime](../develop/support-ie-11.md#determine-the-browser-the-add-in-is-running-in-at-runtime).
+Also, Trident+ doesn't support some HTML5 features such as media, recording, and location. To learn more, see [Determine the webview the add-in is running in at runtime](../develop/support-ie-11.md#determine-the-webview-the-add-in-is-running-in-at-runtime).
 
 ## Troubleshoot EdgeHTML and WebView2 (Microsoft Edge) issues
 

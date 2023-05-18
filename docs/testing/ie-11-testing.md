@@ -25,7 +25,7 @@ If you plan to support older versions of Windows and Office, your add-in must wo
 > [!IMPORTANT]
 > Trident doesn't support JavaScript versions later than ES5. If you want to use the syntax and features of ECMAScript 2015 or later, you have to use a transpiler or polyfill or both. For more information about these options, see [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md).
 >
-> Also, Trident doesn't support some HTML5 features such as media, recording, and location. To learn more, see [Determine the browser the add-in is running in at runtime](../develop/support-ie-11.md#determine-the-browser-the-add-in-is-running-in-at-runtime).
+> Also, Trident doesn't support some HTML5 features such as media, recording, and location. To learn more, see [Determine the webview the add-in is running in at runtime](../develop/support-ie-11.md#determine-the-webview-the-add-in-is-running-in-at-runtime).
 
 > [!NOTE]
 >

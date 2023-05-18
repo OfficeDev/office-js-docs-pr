@@ -66,7 +66,7 @@ For more information on how to support specific webviews and Office versions, se
 # [Trident (Internet Explorer)](#tab/ie)
 
 > [!IMPORTANT]
-> Trident doesn't support some HTML5 features such as media, recording, and location. If your add-in must support Trident, then you must either design the add-in to avoid these unsupported features or the add-in must detect when Trident is being used and provide an alternate experience that doesn't use the unsupported features. For more information, see [Determine the browser the add-in is running in at runtime](#determine-the-browser-the-add-in-is-running-in-at-runtime).
+> Trident doesn't support some HTML5 features such as media, recording, and location. If your add-in must support Trident, then you must either design the add-in to avoid these unsupported features or the add-in must detect when Trident is being used and provide an alternate experience that doesn't use the unsupported features. For more information, see [Determine the webview the add-in is running in at runtime](#determine-the-webview-the-add-in-is-running-in-at-runtime).
 
 ## Support for recent versions of JavaScript
 
@@ -104,7 +104,7 @@ See [Trident testing](../testing/ie-11-testing.md).
 
 ## Troubleshoot EdgeHTML issues
 
-If you encounter issues as you develop your add-in to support Microsoft Edge Legacy, see the "EdgeHTML and WebView2 (Microsoft Edge) issues" section of [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md#edgehtml-and-webview2--microsoft-edge--issues) for guidance.
+If you encounter issues as you develop your add-in to support Microsoft Edge Legacy, see the "EdgeHTML and WebView2 (Microsoft Edge) issues" section of [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md#edgehtml-and-webview2-microsoft-edge-issues) for guidance.
 
 ## Debug an add-in that supports EdgeHTML (Microsoft Edge Legacy)
 
