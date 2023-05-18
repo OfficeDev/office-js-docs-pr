@@ -28,7 +28,7 @@ Use the UX pattern templates to:
 
 The patterns are organized by key actions or experiences that are common in an add-in. The main groups are:
 
-* [First run experience (FRE)](../design/first-run-experience-patterns.md)
+* [First-run experience (FRE)](../design/first-run-experience-patterns.md)
 * [Authentication](../design/authentication-patterns.md)
 * [Navigation](../design/navigation-patterns.md)
 * [Branding Design](../design/branding-patterns.md)

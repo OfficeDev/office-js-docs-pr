@@ -210,7 +210,7 @@ items:
             href: design/authentication-patterns.md
           - name: Branding
             href: design/branding-patterns.md
-          - name: First run experience
+          - name: First-run experience
             href: design/first-run-experience-patterns.md
           - name: Navigation
             href: design/navigation-patterns.md

@@ -18,13 +18,13 @@ Add-ins may require users to sign-in or sign-up in order to access features and 
 |Prior to sign-in, describe the value of your add-in or demonstrate functionality without requiring an account. |Expect users to sign-in without understanding the value and benefits of your add-in.|
 |Guide users through authentication flows with a primary, highly visible button on each screen. |Draw attention to secondary and tertiary tasks with competing buttons and calls to action.|
 |Use clear button labels that describe specific tasks like "Sign in" or "Create account". |Use vague button labels like "Submit" or "Get started" to guide users through authentication flows.|
-|Use a dialog to focus users' attention on authentication forms. |Overcrowd your task pane with a first run experience and authentication forms.|
+|Use a dialog to focus users' attention on authentication forms. |Overcrowd your task pane with a first-run experience and authentication forms.|
 |Find small efficiencies in the flow like auto-focusing on input boxes. |Add unnecessary steps to the interaction like requiring users to click into form fields.|
 |Provide a way for users to sign out and reauthenticate. |Force users to uninstall to switch identities.|
 
 ## Authentication flow
 
-1. First Run Placemat - Place your sign-in button as a clear call-to action inside your add-in's first run experience.
+1. First-Run Placemat - Place your sign-in button as a clear call-to action inside your add-in's first-run experience.
 
     ![Screenshot showing an add-in task pane in an Office application.](../images/add-in-fre-value-placemat.png)
 

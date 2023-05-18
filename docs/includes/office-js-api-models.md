@@ -2,10 +2,10 @@ The Office JavaScript API includes two distinct models:
 
 - **Application-specific** APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application. For example, you can use the Excel JavaScript APIs to access worksheets, ranges, tables, charts, and more. Application-specific APIs are currently available for the following Office applications.
 
-  - [Excel](../reference/overview/excel-add-ins-reference-overview.md)
-  - [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
-  - [PowerPoint](../reference/overview/powerpoint-add-ins-reference-overview.md)
-  - [Word](../reference/overview/word-add-ins-reference-overview.md)
+    - [Excel](../reference/overview/excel-add-ins-reference-overview.md)
+    - [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
+    - [PowerPoint](../reference/overview/powerpoint-add-ins-reference-overview.md)
+    - [Word](../reference/overview/word-add-ins-reference-overview.md)
 
     This API model uses [promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) and allows you to specify multiple operations in each request you send to the Office application. Batching operations in this manner can significantly improve add-in performance in Office applications on the web. Application-specific APIs were introduced with Office 2016.
 
