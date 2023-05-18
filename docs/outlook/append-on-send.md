@@ -19,6 +19,10 @@ In this walkthrough, you'll develop an add-in that prepends a header and appends
 > [!NOTE]
 > Support for the append-on-send feature was introduced in [requirement set 1.9](/javascript/api/requirement-sets/outlook/requirement-set-1.9/outlook-requirement-set-1.9), while support for the prepend-on-send feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support these requirement sets.
 
+## Preview prepend-on-send in Outlook on Mac
+
+To preview the prepend-on-send feature in Outlook on Mac, install Version 16.70.212.0 or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
+
 ## Set up your environment
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.
@@ -312,6 +316,18 @@ In this section, you'll implement the JavaScript code to append a sample company
     ```
 
 1. Save your changes.
+
+## Update the commands HTML file (for Outlook on Mac only)
+
+As the prepend-on-send feature is in preview in Outlook on Mac, you must update the referenced library in the **commands.html** file to be able to retrieve the API definitions.
+
+1. From the **./src/commands** folder, open the **commands.html** file.
+
+1. Replace the existing **script** tag with the following reference to the beta library on the content delivery network (CDN).
+
+    ```html
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
+    ```
 
 ## Try it out
 

@@ -27,7 +27,7 @@ The following tables list client-server combinations that support the `OnMessage
 
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
-|**Windows**<br>Version 2212 (Build 15919.10000) or later|Supported|Supported|Supported|
+|**Windows**<br>Version 2304 (Build 16313.10000) or later|Supported|Supported|Supported|
 |**Mac**<br>Version 16.69.116|Supported|Not applicable|Not applicable|
 |**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
@@ -47,7 +47,9 @@ The following tables list client-server combinations that support the `OnMessage
 
 ## Prerequisites
 
-To test the walkthrough, you must also have at least two Exchange accounts.
+To test the walkthrough, you must have at least two Exchange accounts.
+
+To preview the `OnMessageFromChanged` and `OnAppointmentFromChanged` events in Outlook on Mac, install Version 16.69.116 or later.
 
 ## Set up your environment
 
@@ -268,6 +270,12 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 ## Update the commands HTML file
 
 1. From the **./src/commands** folder, open **commands.html**.
+
+1. If you'll run the add-in in Outlook on Mac, replace the existing **script** tag with the following code. Otherwise, skip to the next step.
+
+   ```html
+   <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
+   ```
 
 1. Add the following code below the existing **script** tag.
 
