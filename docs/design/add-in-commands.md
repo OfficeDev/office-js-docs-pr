@@ -152,4 +152,4 @@ The best way to get started using add-in commands is to take a look at the [Offi
 
 For more information about specifying add-in commands in an XML manifest, see [Create add-in commands with the XML manifest](../develop/create-addin-commands.md) and the [VersionOverrides](/javascript/api/manifest/versionoverrides) reference content.
 
-For more information about specifying add-in commands in the unified Microsoft 365 manifest, see [Create add-in commands with the unified Microsoft 365 manifest](../develop/create-addin-commands-unified-manifest.md).
+For more information about specifying add-in commands in the unified manifest for Microsoft 365, see [Create add-in commands with the unified manifest for Microsoft 365](../develop/create-addin-commands-unified-manifest.md).
