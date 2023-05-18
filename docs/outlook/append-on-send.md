@@ -146,7 +146,7 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
 
 1. Save your changes.
 
-# [Unified Microsoft 365 manifest (developer preview)](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
 
 The following shows how to configure your unified manifest to enable the append-on-send feature.
 

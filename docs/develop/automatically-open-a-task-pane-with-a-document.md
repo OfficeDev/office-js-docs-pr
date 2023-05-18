@@ -2,7 +2,7 @@
 title: Automatically open a task pane with a document
 description: Learn how to configure an Office Add-in to open automatically when a document opens.
 ms.topic: how-to
-ms.date: 03/21/2023
+ms.date: 05/05/2023
 ms.localizationpriority: medium
 ---
 
@@ -159,6 +159,6 @@ You can test the previous example by using your Microsoft 365 subscription to tr
 
 ## See also
 
-- For a sample that shows you how to use the autoopen feature, see [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
+- For a sample that shows you how to use the autoopen feature, see [Auto-open a task pane with a document](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/auto-open-task-pane).
 - [Automatically open a task pane when an add-in is installed](automatically-open-on-installation.md)
 - [Join the Microsoft 365 developer program.](/office/developer-program/office-365-developer-program)
