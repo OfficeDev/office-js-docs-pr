@@ -1,7 +1,7 @@
 ---
 title: Persist add-in state and settings
 description: Learn how to persist data in Office Web Add-in applications running in the stateless environment of a browser control.
-ms.date: 05/11/2023
+ms.date: 05/20/2023
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Office Add-ins are essentially web applications running in the stateless environment of a browser control. When in use, your add-in may need to persist data to maintain the continuity of certain operations or features across sessions. For example, your add-in may have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location. To do that, you can:
+Office Add-ins are essentially web applications running in the stateless environment of a browser iFrame or a webview control. (For brevity hereafter, this article uses "browser control" to mean "browser or webview control".) When in use, your add-in may need to persist data to maintain the continuity of certain operations or features across sessions. For example, your add-in may have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location. To do that, you can:
 
 - Use members of the Office JavaScript API that store data as either:
   - Name/value pairs in a property bag stored in a location that depends on add-in type.

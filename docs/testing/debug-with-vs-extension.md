@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 Office Add-ins running on Windows can use the Office Add-in Debugger Extension in Visual Studio Code to debug against Microsoft Edge Legacy with the original WebView (EdgeHTML) runtime. 
 
 > [!IMPORTANT]
-> This article only applies when Office runs add-ins in the original WebView (EdgeHTML) runtime, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio code against Microsoft Edge WebView2 (Chromium-based), see [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-desktop-using-edge-chromium.md).
+> This article only applies when Office runs add-ins in the original WebView (EdgeHTML) runtime, as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio code against Microsoft Edge WebView2 (Chromium-based), see [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-desktop-using-edge-chromium.md).
 
 > [!TIP]
 > If you cannot, or don't wish to, debug using tools built into Visual Studio Code; or you are encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Legacy (EdgeHTML) runtime by using the Edge Legacy developer tools as described in [Debug add-ins using developer tools in Microsoft Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md).
@@ -24,7 +24,7 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js (version 10+)](https://nodejs.org/)
 - Windows 10, 11
-- [Microsoft Edge](https://www.microsoft.com/edge) A combination of platform and Office application that supports Microsoft Edge Legacy with with the original webview (EdgeHTML) as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+- [Microsoft Edge](https://www.microsoft.com/edge) A combination of platform and Office application that supports Microsoft Edge Legacy with with the original webview (EdgeHTML) as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## Install and use the debugger
 

@@ -56,12 +56,12 @@ items:
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Browsers used by Office Add-ins
+    - name: Browsers and webview controls used by Office Add-ins
       href: concepts/browsers-used-by-office-web-add-ins.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Runtimes in Office Add-ins
       href: testing/runtimes.md
-    - name: Support older Microsoft browsers and Office versions
+    - name: Support older Microsoft webviews and Office versions
       href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Develop
@@ -305,7 +305,7 @@ items:
         href: testing/debug-with-vs-extension.md
       - name: Debug Office Add-ins in Visual Studio
         href: develop/debug-office-add-ins-in-visual-studio.md
-      - name: Test with Internet Explorer 11
+      - name: Test with Trident
         href: testing/ie-11-testing.md
       - name: Unsupported window objects
         href: reference/window-objects-unsupported-in-add-ins.md

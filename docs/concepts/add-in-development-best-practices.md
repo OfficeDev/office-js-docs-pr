@@ -2,7 +2,7 @@
 title: Best practices for developing Office Add-ins
 description: Apply the best practices when developing to create Office Add-ins.
 ms.topic: best-practice
-ms.date: 12/12/2022
+ms.date: 05/20/2023
 ms.localizationpriority: medium
 ---
 
@@ -129,9 +129,9 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Create a website to help users find and use your add-in.
 
-## Support Internet Explorer and Microsoft Edge Legacy (recommended but not required)
+## Support older Microsoft webviews and Office versions (recommended but not required)
 
-See [Support older Microsoft browsers and Office versions](../develop/support-ie-11.md).
+See [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md).
 
 ## See also
 

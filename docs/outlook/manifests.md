@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in manifests
 description: Get an overview of the two kinds of manifests available for Outlook Add-ins.
-ms.date: 01/23/2023
+ms.date: 05/20/2023
 ms.localizationpriority: high
 ---
 
@@ -352,7 +352,7 @@ For more details, please refer to the [Schema reference for Office Add-ins manif
 
 ## App domains
 
-The domain of the add-in start page that you specify in the **\<SourceLocation\>** element is the default domain for the add-in. Without using the **\<AppDomains\>** and **\<AppDomain\>** elements, if your add-in attempts to navigate to another domain, the browser will open a new window outside of the add-in pane. In order to allow the add-in to navigate to another domain within the add-in pane, add an **\<AppDomains\>** element and include each additional domain in its own **\<AppDomain\>** sub-element in the add-in manifest.
+The domain of the add-in start page that you specify in the **\<SourceLocation\>** element is the default domain for the add-in. Without using the **\<AppDomains\>** and **\<AppDomain\>** elements, if your add-in attempts to navigate to another domain, the browser or webview control will open a new window outside of the add-in pane. In order to allow the add-in to navigate to another domain within the add-in pane, add an **\<AppDomains\>** element and include each additional domain in its own **\<AppDomain\>** sub-element in the add-in manifest.
 
 The following example specifies a domain  `https://www.contoso2.com` as a second domain that the add-in can navigate to within the add-in pane.
 
@@ -368,13 +368,13 @@ The following example specifies a domain  `https://www.contoso2.com` as a second
 
 App domains are also necessary to enable cookie sharing between the pop-out window and the add-in running in the rich client.
 
-The following table describes browser behavior when your add-in attempts to navigate to a URL outside of the add-in's default domain.
+The following table describes browser or webview control behavior when your add-in attempts to navigate to a URL outside of the add-in's default domain.
 
 |Outlook client|Domain defined<br>in AppDomains?|Browser behavior|
 |---|---|---|
 |All clients|Yes|Link opens in add-in task pane.|
-|- Outlook 2016 on Windows (volume-licensed perpetual)<br>- Outlook 2013 on Windows (perpetual)|No|Link opens in Internet Explorer 11.|
-|Other clients|No|Link opens in user's default browser.|
+|- Outlook 2016 on Windows (volume-licensed perpetual)<br>- Outlook 2013 on Windows (perpetual)|No|Link opens in Trident.|
+|Other clients|No|Link opens in user's default browser or webview control.|
 
 For more details, see the [Specify domains you want to open in the add-in window](../develop/add-in-manifests.md?tabs=tabid-1#specify-domains-you-want-to-open-in-the-add-in-window).
 

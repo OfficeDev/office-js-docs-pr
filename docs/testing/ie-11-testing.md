@@ -1,32 +1,31 @@
 ---
-title: Internet Explorer 11 testing
-description: Test your Office Add-in on Internet Explorer 11.
-ms.date: 10/12/2022
+title: Trident testing
+description: Test your Office Add-in on the Trident webview associated with Internet Explorer 11.
+ms.date: 05/20/2023
 ms.localizationpriority: medium
 ---
 
-# Test your Office Add-in on Internet Explorer 11
+# Test your Office Add-in on Trident
+
+If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser control called "Trident" that is provided by Internet Explorer 11. You can use a command line to switch from more modern webview used by add-ins to the Trident for this testing. For information about which versions of Windows and Office use the Internet Explorer 11 web view control, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). In this article, "webview" refers to the combination of a webview control and a JavaScript engine.
 
 > [!IMPORTANT]
-> **Internet Explorer still used in Office Add-ins**
+> **Webviews from Internet Explorer and Microsoft Edge Legacy are still used in Office Add-ins**
 >
-> Some combinations of platforms and Office versions, including perpetual versions through Office 2019, still use the webview control that comes with Internet Explorer 11 to host add-ins, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). We recommend (but don't require) that you continue to support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in the Internet Explorer webview. Keep these additional points in mind:
+> Some combinations of platforms and Office versions, including volume-licensed perpetual versions through Office 2019, still use the webview controls that come with Internet Explorer 11 (called "Trident") and Microsoft Edge Legacy (called "EdgeHTML") to host add-ins, as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Internet Explorer 11 was disabled in Windows 10 and Windows 11 in February, 2023, and the UI for launching it was removed; but it is still installed on with those operating systems. So, Trident and other functionality from Internet Explorer can still be called programmatically by Office.
 >
-> - Office on the web no longer opens in Internet Explorer. Consequently, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) no longer tests add-ins in Office on the web using Internet Explorer as the browser.
-> - AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer, however it only issues a warning when the add-in does not support Internet Explorer; the add-in is not rejected by AppSource.
-> - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Internet Explorer.
+> We recommend (but don't require) that you support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in these webviews. Keep these additional points in mind:
+>
+> - Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on the web on these browsers.
+> - AppSource still tests for combinations of platform and Office *desktop* versions that use Trident or EdgeHTML. However, it only issues a warning when the add-in doesn't support these webviews; the add-in isn't rejected by AppSource.
+> - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Trident.
 
-If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser control that is based on Internet Explorer 11 (IE11). You can use a command line to switch from more modern runtimes used by add-ins to the Internet Explorer 11 runtime for this testing. For information about which versions of Windows and Office use the Internet Explorer 11 web view control, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser control called "Trident" that is provided by Internet Explorer 11. You can use a command line to switch from more modern webview used by add-ins to the Trident for this testing. For information about which versions of Windows and Office use the Internet Explorer 11 web view control, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!IMPORTANT]
-> Internet Explorer 11 doesn't support JavaScript versions later than ES5. If you want to use the syntax and features of ECMAScript 2015 or later, you have two options:
+> Trident doesn't support JavaScript versions later than ES5. If you want to use the syntax and features of ECMAScript 2015 or later, you have to use a transpiler or polyfill or both. For more information about these options, see [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md).
 >
-> - Write your code in ECMAScript 2015 (also called ES6) or later JavaScript, or in TypeScript, and then compile your code to ES5 JavaScript using a compiler such as [babel](https://babeljs.io/) or [tsc](https://www.typescriptlang.org/index.html).
-> - Write in ECMAScript 2015 or later JavaScript, but also load a [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) library such as [core-js](https://github.com/zloirock/core-js) that enables IE to run your code.
->
-> For more information about these options, see [Support older Microsoft browsers and Office versions](../develop/support-ie-11.md).
->
-> Also, Internet Explorer 11 doesn't support some HTML5 features such as media, recording, and location. To learn more, see [Determine the browser the add-in is running in at runtime](../develop/support-ie-11.md#determine-the-browser-the-add-in-is-running-in-at-runtime).
+> Also, Trident doesn't support some HTML5 features such as media, recording, and location. To learn more, see [Determine the browser the add-in is running in at runtime](../develop/support-ie-11.md#determine-the-browser-the-add-in-is-running-in-at-runtime).
 
 > [!NOTE]
 >
@@ -34,12 +33,12 @@ If you plan to support older versions of Windows and Office, your add-in must wo
 >
 > - Internet Explorer's Enhanced Security Configuration (ESC) must be turned off for Office Web Add-ins to work. If you're using a Windows Server computer as your client when developing add-ins, note that ESC is turned on by default in Windows Server.
 
-## Switch to the Internet Explorer 11 webview
+## Switch to the Trident webview
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-There are two ways to switch the Internet Explorer webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Internet Explorer by default. We recommend the first method, but you should use the second in the following scenarios.
+There are two ways to switch the Trident webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Trident by default. We recommend the first method, but you should use the second in the following scenarios.
 
 - Your project was developed with Visual Studio and IIS. It isn't node.js-based.
 - You want to be absolutely robust in your testing.

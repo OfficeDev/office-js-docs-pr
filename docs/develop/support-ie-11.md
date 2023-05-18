@@ -1,35 +1,37 @@
 ---
-title: Support older Microsoft browsers and Office versions
-description: Learn how to support support older Microsoft browsers and Office versions in your add-in.
-ms.date: 12/12/2022
+title: Support older Microsoft webviews and Office versions
+description: Learn how to support support older Microsoft webviews and Office versions in your add-in.
+ms.date: 05/20/2023
 ms.localizationpriority: medium
 ---
 
-# Support older Microsoft browsers and Office versions
+# Support older Microsoft webviews and Office versions
+
+Office Add-ins are web applications that are displayed inside IFrames when running on Office on the web. Office Add-ins are displayed using an embedded browser control (also known as a webview) when running in Office on Windows or Office on the Mac. The embedded browser controls are supplied by the operating system or by a browser installed on the user's computer.
 
 > [!IMPORTANT]
-> **Internet Explorer and Microsoft Edge Legacy are still used in Office Add-ins**
+> **Webviews from Internet Explorer and Microsoft Edge Legacy are still used in Office Add-ins**
 >
-> Some combinations of platforms and Office versions, including perpetual versions through Office 2019, still use the webview controls that come with Internet Explorer 11 and Microsoft Edge Legacy (EdgeHTML-based) to host add-ins, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). We recommend (but don't require) that you support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in these webviews. Keep these additional points in mind:
+> Some combinations of platforms and Office versions, including volume-licensed perpetual versions through Office 2019, still use the webview controls that come with Internet Explorer 11 (called "Trident") and Microsoft Edge Legacy (called "EdgeHTML") to host add-ins, as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Internet Explorer 11 was disabled in Windows 10 and Windows 11 in February, 2023, and the UI for launching it was removed; but it is still installed on with those operating systems. So, Trident and other functionality from Internet Explorer can still be called programmatically by Office.
+>
+> We recommend (but don't require) that you support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in these webviews. Keep these additional points in mind:
 >
 > - Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on the web on these browsers.
-> - AppSource still tests for combinations of platform and Office *desktop* versions that use Internet Explorer and Microsoft Edge Legacy. However, it only issues a warning when the add-in doesn't support these browsers. The add-in isn't rejected by AppSource.
-> - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Internet Explorer.
+> - AppSource still tests for combinations of platform and Office *desktop* versions that use Trident or EdgeHTML. However, it only issues a warning when the add-in doesn't support these webviews; the add-in isn't rejected by AppSource.
+> - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Trident.
 
-Office Add-ins are web applications that are displayed inside IFrames when running on Office on the web. Office Add-ins are displayed using embedded browser controls when running in Office on Windows or Office on the Mac. The embedded browser controls are supplied by the operating system or by a browser installed on the user's computer.
+If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser controls used by these versions. For example, browser controls based on Internet Explorer 11 (IE11) or Microsoft Edge Legacy (EdgeHTML-based). For information about which combinations of Windows and Office use these browser controls, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser controls used by these versions. For example, browser controls based on Internet Explorer 11 (IE11) or Microsoft Edge Legacy (EdgeHTML-based). For information about which combinations of Windows and Office use these browser controls, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+## Determine the webview the add-in is running in at runtime
 
-## Determine the browser the add-in is running in at runtime
-
-Your add-in can discover the browser it's running in by reading the [window.navigator.userAgent](https://developer.mozilla.org/docs/Web/API/Navigator/userAgent) property. This enables the add-in to either provide an alternate experience or gracefully fail. The following is an example that determines whether the add-in is running in IE11 or Microsoft Edge Legacy.
+Your add-in can discover the webview that it's running in by reading the [window.navigator.userAgent](https://developer.mozilla.org/docs/Web/API/Navigator/userAgent) property. This enables the add-in to either provide an alternate experience or gracefully fail. The following is an example that determines whether the add-in is running in Trident or EdgeHTML.
 
 ```javascript
 if (navigator.userAgent.indexOf("Trident") !== -1) {
     /*
-       IE11 is the browser in use. Do one of the following:
+       Trident is the webview in use. Do one of the following:
         1. Provide an alternate add-in experience that doesn't use any of the HTML5
-           features that aren't supported in IE11.
+           features that aren't supported in Trident (Internet Explorer 11).
         2. Enable the add-in to gracefully fail by adding a message to the UI that
            says something similar to:
            "This add-in won't run in your version of Office. Please upgrade either to
@@ -37,8 +39,8 @@ if (navigator.userAgent.indexOf("Trident") !== -1) {
     */
 } else if (navigator.userAgent.indexOf("Edge") !== -1) {
     /*
-       Microsoft Edge Legacy is the browser in use. Do one of the following:
-        1. Provide an alternate add-in experience that's supported in Microsoft Edge Legacy.
+       EdgeHTML is the browser in use. Do one of the following:
+        1. Provide an alternate add-in experience that's supported in EdgeHTML (Microsoft Edge Legacy).
         2. Enable the add-in to gracefully fail by adding a message to the UI that
            says something similar to:
            "This add-in won't run in your version of Office. Please upgrade either to
@@ -46,29 +48,29 @@ if (navigator.userAgent.indexOf("Trident") !== -1) {
     */
 } else {
     /* 
-       Another browser, other than IE11 or Microsoft Edge Legacy, is in use.
+       Another webview, other than Trident or EdgeHTML, is in use.
        Provide a full-featured version of the add-in here.
     */
 }
 ```
 
 > [!IMPORTANT]
-> It's not usually a good practice to read the `userAgent` property. Be sure you're familiar with the article, [Browser detection using the user agent](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent), including the recommendations and alternatives to reading `userAgent`. In particular, if you're providing an alternate add-in experience to support the use of Internet Explorer 11, consider using feature detection instead of testing for the user agent.
+> It's not usually a good practice to read the `userAgent` property. Be sure you're familiar with the article, [Browser detection using the user agent](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent), including the recommendations and alternatives to reading `userAgent`. In particular, if you're providing an alternate add-in experience to support the use of Trident, consider using feature detection instead of testing for the user agent.
 >
-> As of September 30th, 2021, the text in the section [Which part of the user agent contains the information you are looking for?](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) dates from before Internet Explorer 11 was released. It's still generally accurate and the *tables* in the section of the English version of the article are up-to-date. Similarly, the text, and in most cases the tables, in the non-English versions of the article are out-of-date.
+> As of September 30th, 2021, the text in the section [Which part of the user agent contains the information you are looking for?](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) dates from before Internet Explorer 11 (and the latest version of Trident) was released. It's still generally accurate and the *tables* in the section of the English version of the article are up-to-date. The text, and in most cases the tables, in the non-English versions of the article are out-of-date.
 
-## Review browser and Office version support information
+## Review webview and Office version support information
 
-For more information on how to support specific browsers and Office versions, select the applicable tab.
+For more information on how to support specific webviews and Office versions, select the applicable tab.
 
-# [Internet Explorer](#tab/ie)
+# [Trident (Internet Explorer)](#tab/ie)
 
 > [!IMPORTANT]
-> Internet Explorer 11 doesn't support some HTML5 features such as media, recording, and location. If your add-in must support Internet Explorer 11, then you must either design the add-in to avoid these unsupported features or the add-in must detect when Internet Explorer is being used and provide an alternate experience that doesn't use the unsupported features. For more information, see [Determine the browser the add-in is running in at runtime](#determine-the-browser-the-add-in-is-running-in-at-runtime).
+> Trident doesn't support some HTML5 features such as media, recording, and location. If your add-in must support Trident, then you must either design the add-in to avoid these unsupported features or the add-in must detect when Trident is being used and provide an alternate experience that doesn't use the unsupported features. For more information, see [Determine the browser the add-in is running in at runtime](#determine-the-browser-the-add-in-is-running-in-at-runtime).
 
 ## Support for recent versions of JavaScript
 
-Internet Explorer 11 doesn't support JavaScript versions later than ES5. If you want to use the syntax and features of ECMAScript 2015 or later, or TypeScript, you have two options as described in this article. You can also combine these two techniques.
+The JavaScript engine associated with Trident doesn't support JavaScript versions later than ES5. If you want to use the syntax and features of ECMAScript 2015 or later, or TypeScript, you must use a transpiler or a polyfill or both. A transpiler will convert syntax or operators, such as the `=>` operator, that is unknown in ES5, to ES5. A polyfill replaces methods, types, and classes from ECMAScript 2015 (aka, ES6) or later into equivalent functionality in ES5.  
 
 ### Use a transpiler
 
@@ -86,7 +88,7 @@ See the documentation for either of them for information about installing and co
 
 ### Use a polyfill
 
-A [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) is earlier-version JavaScript that duplicates functionality from more recent versions of JavaScript. The polyfill works in browsers that don't support the later JavaScript versions. For example, the string method `startsWith` wasn't part of the ES5 version of JavaScript, and so it won't run in Internet Explorer 11. There are polyfill libraries, written in ES5, that define and implement a `startsWith` method. We recommend the [core-js](https://github.com/zloirock/core-js) polyfill library.
+A [polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) is earlier-version JavaScript that duplicates functionality from more recent versions of JavaScript. The polyfill works in webviews that don't support the later JavaScript versions. For example, the string method `startsWith` wasn't part of the ES5 version of JavaScript, and so it won't run in Trident (Internet Explorer 11). There are polyfill libraries, written in ES5, that define and implement a `startsWith` method. We recommend the [core-js](https://github.com/zloirock/core-js) polyfill library.
 
 To use a polyfill library, load it like any other JavaScript file or module. For example, you can use a `<script>` tag in the add-in's home page HTML file (for example `<script src="/js/core-js.js"></script>`), or you can use an `import` statement in a JavaScript file (for example, `import 'core-js';`). When the JavaScript engine sees a method like `startsWith`, it will first look to see if there's a method of that name built into the language. If there is, it will call the native method. If, and only if, the method isn't built-in, the engine will look in all loaded files for it. So, the polyfilled version isn't used in browsers that support the native version.
 
@@ -94,19 +96,19 @@ Importing the entire core-js library will import all core-js features. You can a
 
 For a sample add-in that uses core.js, see [Word Add-in Angular2 StyleChecker](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
-## Test an add-in on Internet Explorer
+## Test an add-in on Trident (Internet Explorer)
 
-See [Internet Explorer 11 testing](../testing/ie-11-testing.md).
+See [Trident testing](../testing/ie-11-testing.md).
 
-# [Microsoft Edge Legacy](#tab/edge)
+# [EdgeHTML (Microsoft Edge Legacy)](#tab/edge)
 
-## Troubleshoot Microsoft Edge Legacy issues
+## Troubleshoot EdgeHTML issues
 
-If you encounter issues as you develop your add-in to support Microsoft Edge Legacy, see the "Troubleshoot Microsoft Edge issues" section of [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-microsoft-edge-issues) for guidance.
+If you encounter issues as you develop your add-in to support Microsoft Edge Legacy, see the "EdgeHTML and WebView2 (Microsoft Edge) issues" section of [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md#edgehtml-and-webview2--microsoft-edge--issues) for guidance.
 
-## Debug an add-in that supports Microsoft Edge Legacy
+## Debug an add-in that supports EdgeHTML (Microsoft Edge Legacy)
 
-To debug your add-in that supports Microsoft Edge Legacy, use one of the following options.
+To debug your add-in that supports EdgeHTML, use one of the following options.
 
 - [Debug add-ins using developer tools in Microsoft Edge Legacy](../testing/debug-add-ins-using-devtools-edge-legacy.md)
 - [Debug add-ins using the Microsoft Office Add-in Debugger Extension for Visual Studio Code](../testing/debug-with-vs-extension.md)
@@ -115,6 +117,6 @@ To debug your add-in that supports Microsoft Edge Legacy, use one of the followi
 
 ## See also
 
-- [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md)
+- [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md)
 - [ECMAScript 6 compatibility table](https://kangax.github.io/compat-table/es6/)
 - [Can I use... Support tables for HTML5, CSS3, etc](https://caniuse.com/)

@@ -1,7 +1,7 @@
 ---
 title: Using the application-specific API model
 description: Learn about the promise-based API model for Excel, OneNote, and Word add-ins.
-ms.date: 03/21/2023
+ms.date: 05/20/2023
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,7 @@ This article describes how to use the API model for building add-ins in Excel, W
 
 ## Asynchronous nature of the promise-based APIs
 
-Office Add-ins are websites which appear inside a browser container within Office applications, such as Excel. This container is embedded within the Office application on desktop-based platforms, such as Office on Windows, and runs inside an HTML iFrame in Office on the web. Due to performance considerations, the Office.js APIs cannot interact synchronously with the Office applications across all platforms. Therefore, the `sync()` API call in Office.js returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) that is resolved when the Office application completes the requested read or write actions. Also, you can queue up multiple actions, such as setting properties or invoking methods, and run them as a batch of commands with a single call to `sync()`, rather than sending a separate request for each action. The following sections describe how to accomplish this using the `run()` and `sync()` APIs.
+Office Add-ins are websites which appear inside a webview control within Office applications, such as Excel. This control is embedded within the Office application on desktop-based platforms, such as Office on Windows, and runs inside an HTML iFrame in Office on the web. Due to performance considerations, the Office.js APIs cannot interact synchronously with the Office applications across all platforms. Therefore, the `sync()` API call in Office.js returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) that is resolved when the Office application completes the requested read or write actions. Also, you can queue up multiple actions, such as setting properties or invoking methods, and run them as a batch of commands with a single call to `sync()`, rather than sending a separate request for each action. The following sections describe how to accomplish this using the `run()` and `sync()` APIs.
 
 ## *.run function
 

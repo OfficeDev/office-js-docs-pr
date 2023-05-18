@@ -1,7 +1,7 @@
 ---
 title: Authenticate and authorize with the Office dialog API
 description: Learn how to use the Office dialog API to enable users to sign in to Google, Facebook, Microsoft 365, and other services protected by Microsoft Identity Platform.
-ms.date: 11/04/2022
+ms.date: 05/20/2023
 ms.localizationpriority: high
 ---
 
@@ -11,10 +11,12 @@ Always use the Office dialog API to authenticate and authorize users with your O
 
 Office Add-ins run in an iframe when opened in Office on the web. Many identity authorities, also called Secure Token Services (STS), prevent their sign-in page from opening in an iframe. These include Google, Facebook, and services protected by the Microsoft identity platform (formerly Azure AD V 2.0) such as a Microsoft account, a Microsoft 365 Education or work account, or other common account. Also security features implemented in the webview when Office Add-ins run in Office on Windows, or Office on Mac can prevent sign-in pages from working correctly.
 
-For authorization to work correctly, the sign-in page must open in a separate browser instance. This is why Office provides the [Office dialog API](dialog-api-in-office-add-ins.md), specifically the [displayDialogAsync](/javascript/api/office/office.ui) method.
+For authorization to work correctly, the sign-in page must open in a separate browser or webview control instance. This is why Office provides the [Office dialog API](dialog-api-in-office-add-ins.md), specifically the [displayDialogAsync](/javascript/api/office/office.ui) method. 
 
 > [!NOTE]
-> This article assumes that you are familiar with [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
+>
+> - This article assumes that you are familiar with [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
+> - For brevity hereafter, this article uses "browser instance" to mean "browser or webview instance". 
 
 The dialog box that is opened with this API has the following characteristics.
 
