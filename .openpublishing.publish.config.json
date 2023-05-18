@@ -54,8 +54,10 @@
         "word-js-1.2",
         "word-js-1.3",
         "word-js-1.4",
+        "word-js-1.5",
         "word-js-1.3-hidden-document",
         "word-js-1.4-hidden-document",
+        "word-js-1.5-hidden-document",
         "word-js-online"
       ],
       "open_to_public_contributors": true,
