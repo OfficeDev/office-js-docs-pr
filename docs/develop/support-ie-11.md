@@ -7,12 +7,12 @@ ms.localizationpriority: medium
 
 # Support older Microsoft webviews and Office versions
 
-Office Add-ins are web applications that are displayed inside IFrames when running on Office on the web. Office Add-ins are displayed using an embedded browser control (also known as a webview) when running in Office on Windows or Office on the Mac. The embedded browser controls are supplied by the operating system or by a browser installed on the user's computer.
+Office Add-ins are web applications that are displayed inside iframes when running on Office on the web. Office Add-ins are displayed using an embedded browser control (also known as a webview) when running in Office on Windows or Office on the Mac. The embedded browser controls are supplied by the operating system or by a browser installed on the user's computer.
 
 > [!IMPORTANT]
 > **Webviews from Internet Explorer and Microsoft Edge Legacy are still used in Office Add-ins**
 >
-> Some combinations of platforms and Office versions, including volume-licensed perpetual versions through Office 2019, still use the webview controls that come with Internet Explorer 11 (called "Trident") and Microsoft Edge Legacy (called "EdgeHTML") to host add-ins, as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Internet Explorer 11 was disabled in Windows 10 and Windows 11 in February, 2023, and the UI for launching it was removed; but it is still installed on with those operating systems. So, Trident and other functionality from Internet Explorer can still be called programmatically by Office.
+> Some combinations of platforms and Office versions, including volume-licensed perpetual versions through Office 2019, still use the webview controls that come with Internet Explorer 11 (called "Trident") and Microsoft Edge Legacy (called "EdgeHTML") to host add-ins, as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Internet Explorer 11 was disabled in Windows 10 and Windows 11 in February 2023, and the UI for launching it was removed; but it's still installed on with those operating systems. So, Trident and other functionality from Internet Explorer can still be called programmatically by Office.
 >
 > We recommend (but don't require) that you support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in these webviews. Keep these additional points in mind:
 >
@@ -48,7 +48,7 @@ if (navigator.userAgent.indexOf("Trident") !== -1) {
     */
 } else {
     /* 
-       Another webview, other than Trident or EdgeHTML, is in use.
+       A webview other than Trident or EdgeHTML is in use.
        Provide a full-featured version of the add-in here.
     */
 }

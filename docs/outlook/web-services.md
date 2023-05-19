@@ -64,7 +64,7 @@ When parsing a SOAP response from an EWS operation, note the following browser-d
    });
    ```
 
-   For the Tident (Internet Explorer) webview, you must include the `t:` prefix of the tag name, as follows.
+   For the Trident (Internet Explorer) webview, you must include the `t:` prefix of the tag name, as follows.
 
    ```js
    const mailbox = Office.context.mailbox;

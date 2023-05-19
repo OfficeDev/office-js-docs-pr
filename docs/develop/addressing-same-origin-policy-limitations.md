@@ -8,7 +8,8 @@ ms.localizationpriority: medium
 
 # Addressing same-origin policy limitations in Office Add-ins
 
-The same-origin policy enforced by the browser, or webview control, prevents a script loaded from one domain from getting or manipulating properties of a webpage from another domain. This means that, by default, the domain of a requested URL must be the same as the domain of the current webpage. For example, this policy will prevent a webpage in one domain from making [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) web-service calls to a domain other than the one where it is hosted.
+The same-origin policy enforced by the browser or webview control prevents a script loaded from one domain from getting or manipulating properties of a webpage from another domain. This means that, by default, the domain of a requested URL must be the same as the domain of the current webpage. For example, this policy will prevent a webpage in one domain from making [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) web-service calls to a domain other than the one where it is hosted.
+
 
 Because Office Add-ins are hosted in a webview control, the same-origin policy applies to script running in their web pages as well.
 

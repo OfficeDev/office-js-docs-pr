@@ -82,7 +82,7 @@ This method doesn't use the command line and can be accomplished using commands 
 1. Verify that your add-in is installed. For example, if it has an add-in command, it should appear on either the ribbon or the context menu. If it's a task pane add-in that has no add-in commands, the task pane should appear.
 
 > [!NOTE]
-> To test your Office Add-in with EdgeHTML (Microsoft Edge Legacy), an additional configuration step is required. In a Windows Command Prompt, run the following line: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`. This is not required when Office is using the Chromium-based Edge WebView2. For more information, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+> To test your Office Add-in with EdgeHTML (Microsoft Edge Legacy), an additional configuration step is required. In a Windows Command Prompt, run the following line: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`. This isn't required when Office is using the Chromium-based Edge WebView2. For more information, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 [!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 

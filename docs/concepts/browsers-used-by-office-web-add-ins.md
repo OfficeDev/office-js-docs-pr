@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Browsers and webview controls used by Office Add-ins
 
-Office Add-ins are web applications that are displayed using iFrames when running in Office on the web. In Office for desktop and mobile clients, Office Add-ins use an embedded browser control (also known as a webview). Add-ins also need a JavaScript engine to run the JavaScript. Both the embedded browser and the engine are supplied by a browser installed on the user's computer. In this article, "webview" refers to the combination of a webview control and a JavaScript engine.
+Office Add-ins are web applications that are displayed using iframes when running in Office on the web. In Office for desktop and mobile clients, Office Add-ins use an embedded browser control (also known as a webview). Add-ins also need a JavaScript engine to run the JavaScript. Both the embedded browser and the engine are supplied by a browser installed on the user's computer. In this article, "webview" refers to the combination of a webview control and a JavaScript engine.
 
 Which webview is used depends on:
 
@@ -22,7 +22,7 @@ Which webview is used depends on:
 > [!IMPORTANT]
 > **Webviews from Internet Explorer and Microsoft Edge Legacy are still used in Office Add-ins**
 >
-> Some combinations of platforms and Office versions, including volume-licensed perpetual versions through Office 2019, still use the webview controls that come with Internet Explorer 11 (called "Trident") and Microsoft Edge Legacy (called "EdgeHTML") to host add-ins, as explained in this article. Internet Explorer 11 was disabled in Windows 10 and Windows 11 in February, 2023, and the UI for launching it was removed; but it is still installed on with those operating systems. So, Trident and other functionality from Internet Explorer can still be called programmatically by Office.
+> Some combinations of platforms and Office versions, including volume-licensed perpetual versions through Office 2019, still use the webview controls that come with Internet Explorer 11 (called "Trident") and Microsoft Edge Legacy (called "EdgeHTML") to host add-ins, as explained in this article. Internet Explorer 11 was disabled in Windows 10 and Windows 11 in February 2023, and the UI for launching it was removed; but it's still installed on those operating systems. So, Trident and other functionality from Internet Explorer can still be called programmatically by Office.
 >
 > We recommend (but don't require) that you continue to support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in one of these webviews. Keep these additional points in mind:
 >
@@ -54,7 +54,7 @@ An add-in running on Windows might use any of three different webviews:
 
 - **WebView2**, which is provided by Microsoft Edge (Chromium-based).
 - **EdgeHTML**, which is provided by Microsoft Edge Legacy.
-- **Trident+**, which is provided by Internet Explorer 11. The "+" on the end indicates that Office Add-ins use additional functionality from Internet Explorer 11 that is not built into Trident itself.
+- **Trident+**, which is provided by Internet Explorer 11. The "+" on the end indicates that Office Add-ins use additional functionality from Internet Explorer 11 that isn't built into Trident itself.
 
 ### Perpetual versions of Office on Windows
 
@@ -80,7 +80,7 @@ To determine whether Office 2016 or Office 2019 is retail or volume-licensed, us
 
 <sup>2</sup> When you use either EdgeHTML or WebView2, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Trident+, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
 
-<sup>3</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it will not use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses that browser. Otherwise, it uses Trident+. For more information, see [Runtimes](/javascript/api/manifest/runtimes).
+<sup>3</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it won't use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses that browser. Otherwise, it uses Trident+. For more information, see [Runtimes](/javascript/api/manifest/runtimes).
 
 ### Microsoft 365 subscription versions of Office on Windows
 
@@ -101,7 +101,7 @@ For subscription Office on Windows, the browser that is used is determined by th
 
 <sup>3</sup> When you use either EdgeHTML or WebView2, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Trident+, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
 
-<sup>4</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it will not use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses that browser. Otherwise, it uses Trident+ regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes).
+<sup>4</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it won't use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses that browser. Otherwise, it uses Trident+ regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes).
 
 ## Working with Trident+ (Internet Explorer 11)
 
@@ -118,7 +118,7 @@ Also, Trident+ doesn't support some HTML5 features such as media, recording, and
 
 ### Service Workers aren't working
 
-Office Add-ins don't support Service Workers when the EdgeHTML is used. They're supported with WebView2.
+Office Add-ins don't support Service Workers when EdgeHTML is used. They're supported with WebView2.
 
 ### Scroll bar doesn't appear in task pane
 
