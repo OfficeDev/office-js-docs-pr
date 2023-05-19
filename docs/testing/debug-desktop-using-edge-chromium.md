@@ -9,7 +9,7 @@ ms.localizationpriority: high
 Office Add-ins running on Windows can debug against the Edge Chromium WebView2 runtime directly in Visual Studio Code.
 
 > [!IMPORTANT]
-> This article only applies when Office runs add-ins in the Microsoft Edge Chromium WebView2 runtime, as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio Code against Microsoft Edge Legacy with the original WebView (EdgeHTML) runtime, see [Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
+> This article only applies when Office runs add-ins in the Microsoft Edge Chromium WebView2 runtime, as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio Code against Microsoft Edge Legacy with the original WebView (EdgeHTML) runtime, see [Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
 
 > [!TIP]
 > If you cannot, or don't wish to, debug using tools built into Visual Studio Code; or you are encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Chromium WebView2 runtime by using the Edge (Chromium-based) developer tools as described in [Debug add-ins using developer tools for Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
@@ -23,7 +23,7 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js (version 10+)](https://nodejs.org/)
 - Windows 10, 11
-- A combination of platform and Office application that supports Microsoft Edge with WebView2 (Chromium-based) as explained in [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your version of Office from a Microsoft 365 subscription is earlier than Version 2101, you will need to install WebView2. Use the instructions for installing it at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+- A combination of platform and Office application that supports Microsoft Edge with WebView2 (Chromium-based) as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your version of Office from a Microsoft 365 subscription is earlier than Version 2101, you will need to install WebView2. Use the instructions for installing it at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 ## Use the Visual Studio Code debugger
 
