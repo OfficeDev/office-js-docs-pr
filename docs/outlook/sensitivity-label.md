@@ -34,7 +34,7 @@ The following table lists client-server combinations that support the use of the
 |Client|Exchange Online|
 |------|------|
 |**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|
-|**Mac**<br>Version 16.71.312.0 or later|Supported|
+|**Mac**<br>Version 16.71.312.0 or later (preview)|Supported|
 |**Web browser (modern UI)**|Supported|
 |**iOS**|Not applicable|
 |**Android**|Not applicable|
@@ -42,7 +42,7 @@ The following table lists client-server combinations that support the use of the
 ## Configure the manifest
 
 > [!NOTE]
-> The sensitivity label feature isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+> The sensitivity label feature isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
 
 To use the sensitivity feature in your Outlook add-in project, you must set the [\<Permissions\> element](/javascript/api/manifest/permissions) of the XML manifest to **ReadWriteItem**.
 
@@ -208,7 +208,7 @@ Take extra measures to protect your data by using the `OnSensitivityLabelChanged
 The `OnSensitivityLabelChanged` event is available through the event-based activation feature. To learn how to configure, debug, and deploy an event-based add-in that uses this event, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 > [!NOTE]
-> The `OnSensitivityLabelChanged` event isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+> The `OnSensitivityLabelChanged` event isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
 
 ## See also
 

@@ -28,7 +28,7 @@ The following tables list client-server combinations that support the `OnMessage
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
 |**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
-|**Mac**<br>Version 16.69.116|Supported|Not applicable|Not applicable|
+|**Mac**<br>Version 16.69.116 or later (preview)|Supported|Not applicable|Not applicable|
 |**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
@@ -38,7 +38,7 @@ The following tables list client-server combinations that support the `OnMessage
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
 |**Windows**|Not applicable|Not applicable|Not applicable|
-|**Mac**<br>Version 16.69.116|Supported|Not applicable|Not applicable|
+|**Mac**<br>Version 16.69.116 or later (preview)|Supported|Not applicable|Not applicable|
 |**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
@@ -58,7 +58,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 ## Configure the manifest
 
 > [!NOTE]
-> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md).
+> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
 
 To enable the add-in to activate when the `OnMessageFromChanged` event occurs, the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point must be configured in the `VersionOverridesV1_1` node of the manifest.
 
@@ -271,7 +271,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 
 1. From the **./src/commands** folder, open **commands.html**.
 
-1. If you'll run the add-in in Outlook on Mac, replace the existing **script** tag with the following code. Otherwise, skip to the next step.
+1. To run the add-in in Outlook on Mac, replace the existing **script** tag with the following code. Otherwise, skip to the next step.
 
    ```html
    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>

@@ -151,7 +151,7 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
 The following shows how to configure your unified manifest to enable the append-on-send feature.
 
 > [!IMPORTANT]
-> The prepend-on-send feature isn't yet supported for the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md).
+> The prepend-on-send feature isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
 
 1. Open the manifest.json file.
 
@@ -328,6 +328,8 @@ As the prepend-on-send feature is in preview in Outlook on Mac, you must update 
     ```html
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
     ```
+
+1. Save your changes.
 
 ## Try it out
 
