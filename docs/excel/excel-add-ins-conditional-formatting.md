@@ -33,7 +33,7 @@ The `Range.conditionalFormats` property is a collection of [ConditionalFormat](/
 
 Only one format type can be set for the ConditionalFormat object. This is determined by the `type` property, which is a [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) enum value. `type` is set when adding a conditional format to a range.
 
-## Creating conditional formatting rules
+## Create conditional formatting rules
 
 Conditional formats are added to a range by using `conditionalFormats.add`. Once added, the properties specific to the conditional format can be set. The following examples show the creation of different formatting types.
 
@@ -278,7 +278,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-## Changing conditional formatting rules
+## Change conditional formatting rules
 
 The `ConditionalFormat` object offers multiple methods to change conditional formatting rules after they've been set.
 
@@ -391,6 +391,18 @@ await Excel.run(async (context) => {
 To remove format properties from a specific conditional format rule, use the [clearFormat](/javascript/api/excel/excel.conditionalrangeformat#excel-excel-conditionalrangeformat-clearformat-member(1)) method of the `ConditionalRangeFormat` object. The `clearFormat` method creates a formatting rule without format settings.
 
 To remove all the conditional formatting rules from a specific range, use the [clearAll](/javascript/api/excel/excel.conditionalformatcollection#excel-excel-conditionalformatcollection-clearall-member(1)) method of the `ConditionalFormatCollection` object.
+
+The following code snippet shows how to remove conditional formatting with the `clearAll` method.
+
+```js
+await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const range = sheet.getRange();
+    range.conditionalFormats.clearAll();
+
+    await context.sync();
+});
+```
 
 ## See also
 
