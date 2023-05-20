@@ -1,12 +1,12 @@
 ---
-title: Voice guidelines for Office Add-ins
-description: Learn best practices in writing user help and other strings for Office Add-ins.
-ms.date: 07/08/2019
+title: Voice and tone guidelines for Office Add-ins
+description: Learn best practices in writing user help and other text for Office Add-ins.
+ms.date: 05/18/2023
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 
-# Voice guidelines
+# Voice and tone guidelines
 
 As you design your Office Add-ins, consider the voice that you use in your UI text and elements. Strive to match the voice and tone of the Office UI, which is conversational, engaging, and accessible to users.
 

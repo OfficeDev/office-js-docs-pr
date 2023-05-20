@@ -1,7 +1,7 @@
 ---
 title: OneNote JavaScript API programming overview
 description: Learn about the OneNote JavaScript API for OneNote add-ins on the web.
-ms.date: 07/18/2022
+ms.date: 05/20/2023
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -17,7 +17,7 @@ OneNote introduces a JavaScript API for OneNote add-ins on the web. You can crea
 
 Add-ins consist of two basic components:
 
-- A **web application** consisting of a webpage and any required JavaScript, CSS, or other files. These files are hosted on a web server or web hosting service, such as Microsoft Azure. In OneNote on the web, the web application displays in a browser control or iframe.
+- A **web application** consisting of a webpage and any required JavaScript, CSS, or other files. These files are hosted on a web server or web hosting service, such as Microsoft Azure. In OneNote on the web, the web application displays in a webview control or iframe.
 
 - An **XML manifest** that specifies the URL of the add-in's webpage and any access requirements, settings, and capabilities for the add-in. This file is stored on the client. OneNote add-ins use the same [manifest](../develop/add-in-manifests.md) format as other Office Add-ins.
 

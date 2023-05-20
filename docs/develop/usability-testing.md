@@ -49,7 +49,7 @@ It’s important to get data on the entire user journey – from discovering you
 
 - Finding your add-in in AppSource
 - Choosing to install your add-in
-- First run experience
+- First-run experience
 - Ribbon commands
 - Add-in UI
 - How the add-in interacts with the document space of the Office application
