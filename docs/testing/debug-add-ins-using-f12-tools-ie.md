@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using developer tools for Internet Explorer
 description: Debug add-ins using the developer tools in Internet Explorer.
-ms.date: 11/02/2021
+ms.date: 05/20/2023
 ms.localizationpriority: medium
 ---
 
@@ -12,20 +12,20 @@ This article shows how to debug the client-side code (JavaScript or TypeScript) 
 - You cannot, or don't wish to, debug using tools built into your IDE; or you are encountering a problem that only occurs when the add-in is run outside the IDE.
 - Your computer is using a combination of Windows and Office versions that use the Internet Explorer webview control, Trident.
 
-To determine which browser is being used on your computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+To determine which browser or webview is being used on your computer, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
 > [!NOTE]
-> To install a version of Office that uses the Internet Explorer webview or to force your current version to use Internet Explorer, see [Switch to the Internet Explorer 11 webview](#switch-to-the-internet-explorer-11-webview).
+> To install a version of Office that uses Trident or to force your current version to use Trident, see [Switch to the Trident webview](#switch-to-the-trident-webview).
 
 ## Debug a task pane add-in using the F12 tools
 
 Windows 10 and 11 include a web development tool called "F12" because it was originally launched by pressing F12 in Internet Explorer. F12 is now an independent application used to debug your add-in when it is running in the Internet Explorer webview control, Trident. The application is not available in earlier versions of Windows.
 
 > [!NOTE]
-> If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser process that the F12 tools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
+> If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser runtime process that the F12 tools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
 
 The following steps are the instructions for debugging your add-in. If you just want to test the F12 tools themselves, see [Example add-in to test the F12 tools](#example-add-in-to-test-the-f12-tools).
 
@@ -79,9 +79,9 @@ If your add-in uses the Office Dialog API, the dialog runs in a separate process
 1. Open the dialog and then select the **Refresh** button in the tools. The dialog process is shown. Its name is the file name of the file that is open in the dialog.
 1. Select the process to open it and debug just as described in the section [Debug a task pane add-in using the F12 tools](#debug-a-task-pane-add-in-using-the-f12-tools).
 
-## Switch to the Internet Explorer 11 webview
+## Switch to the Trident webview
 
-There are two ways to switch the Internet Explorer webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Internet Explorer by default. We recommend the first method. But you should use the second in the following scenarios.
+There are two ways to switch the Trident webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Trident by default. We recommend the first method. But you should use the second in the following scenarios.
 
 - Your project was developed with Visual Studio and IIS. It isn't node.js-based.
 - You want to be absolutely robust in your testing.
@@ -89,11 +89,11 @@ There are two ways to switch the Internet Explorer webview. You can run a simple
 
 ### Switch via the command line
 
-[!INCLUDE [Steps to switch browsers with the command line tool](../includes/use-legacy-edge-or-ie.md)]
+[!INCLUDE [Steps to switch webviews with the command line tool](../includes/use-legacy-edge-or-ie.md)]
 
 ### Install a version of Office that uses Internet Explorer
 
-[!INCLUDE [Steps to install Office that uses Edge Legacy or Internet Explorer](../includes/install-office-that-uses-legacy-edge-or-ie.md)]
+[!INCLUDE [Steps to install Office that uses EdgeHTML (Edge Legacy) or Trident (Internet Explorer)](../includes/install-office-that-uses-legacy-edge-or-ie.md)]
 
 ## See also
 

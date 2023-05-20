@@ -1,21 +1,17 @@
 ---
-title: Activate your Outlook add-in without the Reading Pane enabled or a message selected (preview)
+title: Activate your Outlook add-in without the Reading Pane enabled or a message selected
 description: Learn how to activate your Outlook add-in without enabling the Reading Pane or first selecting a message.
-ms.date: 04/26/2023
+ms.date: 05/19/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Activate your Outlook add-in without the Reading Pane enabled or a message selected (preview)
+# Activate your Outlook add-in without the Reading Pane enabled or a message selected
 
 With a simple manifest configuration, you can create Outlook add-ins for the Message Read surface that activate a task pane without the Reading Pane enabled or a message first selected from the mailbox. Follow the walkthrough to learn more and unlock additional capabilities for your add-in. For example, you can enable your users to access content from different data sources, such as OneDrive or a customer relationship management (CRM) system, directly from their Outlook client.
 
-> [!IMPORTANT]
-> Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
-
-## Prerequisites to preview the feature
-
-To preview this feature, install Outlook on Windows, starting with Version 2304 (Build 16313.10000). Once installed, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option to access Office beta builds.
+> [!NOTE]
+> Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Set up your environment
 
@@ -26,7 +22,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 > [!NOTE]
 > This feature isn't currently supported in the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md), but the team is working on making this available.
 
-To activate your add-in with the Reading Pane turned off or without a message selected, you must add the [SupportsNoItemContext](/javascript/api/manifest/action?view=outlook-js-preview&preserve-view=true#supportsnoitemcontext-preview) child element to the **\<Action\>** element and set its value to `true`. As this feature can only be implemented with a task pane in Message Read mode, the following elements must also be configured.
+To activate your add-in with the Reading Pane turned off or without a message selected, you must add the [SupportsNoItemContext](/javascript/api/manifest/action#supportsnoitemcontext) child element to the **\<Action\>** element and set its value to `true`. As this feature can only be implemented with a task pane in Message Read mode, the following elements must also be configured.
 
 - The `xsi:type` attribute value of the **\<ExtensionPoint\>** element must be set to `MessageReadCommandSurface`.
 - The `xsi:type` attribute value of the **\<Action\>** element must be set to `ShowTaskpane`.
@@ -41,7 +37,7 @@ To activate your add-in with the Reading Pane turned off or without a message se
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
         <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
             <Requirements>
-                <bt:Sets DefaultMinVersion="1.12">
+                <bt:Sets DefaultMinVersion="1.13">
                   <bt:Set Name="Mailbox"/>
                 </bt:Sets>
             </Requirements>
@@ -178,5 +174,5 @@ When the **\<SupportsNoItemContext\>** element in the manifest is set to `true`,
 
 ## See also
 
-- [Activate your Outlook add-in on multiple messages (preview)](item-multi-select.md)
+- [Activate your Outlook add-in on multiple messages](item-multi-select.md)
 - [Implement a pinnable task pane in Outlook](pinnable-taskpane.md)

@@ -1,17 +1,17 @@
 ---
-title: Manage the delivery date and time of a message (preview)
+title: Manage the delivery date and time of a message
 description: Learn how to get and set the delivery date and time of a message in compose mode.
-ms.date: 04/28/2023
+ms.date: 05/19/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Manage the delivery date and time of a message (preview)
+# Manage the delivery date and time of a message
 
 The Outlook client gives you the option to delay the delivery of a message, but requires you to keep Outlook and your device running to send it at the specified time. With the Office JavaScript API, you can now implement an Outlook add-in that sends scheduled messages even with your Outlook client closed or with your device turned off. This capability provides your users with the convenience to schedule email marketing campaigns or time a message to be delivered during a colleague or customer's business hours.
 
-> [!IMPORTANT]
-> Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> [!NOTE]
+> Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Configure the manifest
 
@@ -21,11 +21,11 @@ For further guidance on how to configure an Outlook add-in manifest, see [Outloo
 
 ## Access the delivery property of a message
 
-The [item.delayDeliveryTime](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-messagecompose-delaydeliverytime-member) property returns a [DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime?view=outlook-js-preview&preserve-view=true) object that provides you with methods to get or set the delivery date and time of a message.
+The [item.delayDeliveryTime](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-delaydeliverytime-member) property returns a [DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime) object that provides you with methods to get or set the delivery date and time of a message.
 
 ## Get the delivery date and time of a message
 
-To get the delivery date and time of a message in compose mode, call [item.delayDeliveryTime.getAsync](/javascript/api/outlook/office.delaydeliverytime?view=outlook-js-preview&preserve-view=true#outlook-office-delaydeliverytime-getasync-member(1)) as shown in the following example. If a delivery date hasn't been set on a message yet, the call returns `0`. Otherwise, it returns a [JavaScript Date object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date).
+To get the delivery date and time of a message in compose mode, call [item.delayDeliveryTime.getAsync](/javascript/api/outlook/office.delaydeliverytime#outlook-office-delaydeliverytime-getasync-member(1)) as shown in the following example. If a delivery date hasn't been set on a message yet, the call returns `0`. Otherwise, it returns a [JavaScript Date object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date).
 
 ```javascript
 // Gets the delivery date and time of a message.
@@ -47,7 +47,7 @@ Office.context.mailbox.item.delayDeliveryTime.getAsync((asyncResult) => {
 
 ## Set the delivery date and time of a message
 
-To delay the delivery of a message, pass a [JavaScript Date object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) as a parameter to [item.delayDeliveryTime.setAsync](/javascript/api/outlook/office.delaydeliverytime?view=outlook-js-preview&preserve-view=true#outlook-office-delaydeliverytime-setasync-member(1)) method, as shown in the following example.
+To delay the delivery of a message, pass a [JavaScript Date object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) as a parameter to [item.delayDeliveryTime.setAsync](/javascript/api/outlook/office.delaydeliverytime#outlook-office-delaydeliverytime-setasync-member(1)) method, as shown in the following example.
 
 ```javascript
 // Delays the delivery time by five minutes from the current time.

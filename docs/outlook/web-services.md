@@ -1,7 +1,7 @@
 ---
 title: Use Exchange Web Services (EWS) from an Outlook add-in
 description: Provides an example that shows how an Outlook add-in can request information from Exchange Web Services.
-ms.date: 12/05/2022
+ms.date: 05/20/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -41,7 +41,7 @@ When the EWS SOAP request is complete, Outlook calls the callback function with 
 
 When parsing a SOAP response from an EWS operation, note the following browser-dependent issues.
 
-- Specify the prefix for a tag name when using the DOM method `getElementsByTagName`, to include support for Internet Explorer.
+- Specify the prefix for a tag name when using the DOM method `getElementsByTagName`, to include support for Internet Explorer and the Trident webview.
 
   `getElementsByTagName` behaves differently depending on browser type. For example, an EWS response can contain the following XML (formatted and abbreviated for display purposes).
 
@@ -64,7 +64,7 @@ When parsing a SOAP response from an EWS operation, note the following browser-d
    });
    ```
 
-   On Internet Explorer, you must include the `t:` prefix of the tag name, as follows.
+   For the Trident (Internet Explorer) webview, you must include the `t:` prefix of the tag name, as follows.
 
    ```js
    const mailbox = Office.context.mailbox;
@@ -80,7 +80,7 @@ When parsing a SOAP response from an EWS operation, note the following browser-d
    content = $.parseJSON(value.textContent);
    ```
 
-   Other properties such as `innerHTML` may not work on Internet Explorer for some tags in an EWS response.
+   Other properties such as `innerHTML` may not work on the Trident (Internet Explorer) webview for some tags in an EWS response.
 
 ## Example
 

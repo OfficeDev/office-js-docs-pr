@@ -18,8 +18,8 @@ Use the following procedure to install either a version of Office (downloaded fr
 
 1. Change the `Version` value.
 
-    - To install a version that uses Edge Legacy, change it to `16.0.11929.20946`.
-    - To install a version that uses Internet Explorer, change it to `16.0.10730.20348`.
+    - To install a version that uses EdgeHTML, change it to `16.0.11929.20946`.
+    - To install a version that uses Trident, change it to `16.0.10730.20348`.
 
 1. Optionally, change the value of `OfficeClientEdition` to `"32"` to install 32-bit Office, and change the `Language ID` value as needed to install Office in a different language.
 1. Open a command prompt *as an administrator*.
