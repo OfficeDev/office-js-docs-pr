@@ -1,12 +1,12 @@
 ---
-title: Automatically update your signature when switching between Exchange accounts (preview)
+title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 04/18/2023
+ms.date: 05/19/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Automatically update your signature when switching between Exchange accounts (preview)
+# Automatically update your signature when switching between Exchange accounts
 
 Applying the correct signature to messages when using multiple Exchange accounts is now made easier with the addition of the `OnMessageFromChanged` and `OnAppointmentFromChanged` events to the [event-based activation](autolaunch.md) feature. The `OnMessageFromChanged` event occurs when the account in the **From** field of a message being composed is changed, while the `OnAppointmentFromChanged` event occurs when the organizer of a meeting being composed is changed. These events further extend the capabilities of signature add-ins and allow them to:
 
@@ -16,11 +16,8 @@ Applying the correct signature to messages when using multiple Exchange accounts
 
 The following sections walk you through how to develop an event-based add-in that handles the `OnMessageFromChanged` event to automatically update a message's signature when the mail account in the **From** field is changed.
 
-> [!IMPORTANT]
-> Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
-
-> [!IMPORTANT]
-> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
+> [!NOTE]
+> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events were introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). For information about client support for these events, see [Supported clients and platforms](#supported-clients-and-platforms).
 
 ## Supported clients and platforms
 
@@ -30,8 +27,8 @@ The following tables list client-server combinations that support the `OnMessage
 
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
-|**Windows**<br>Version 2212 (Build 15919.10000) or later|Supported|Supported|Supported|
-|**Mac**<br>Version 16.69.116|Supported|Not applicable|Not applicable|
+|**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
+|**Mac**<br>Version 16.69.116 or later (preview)|Supported|Not applicable|Not applicable|
 |**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
@@ -41,7 +38,7 @@ The following tables list client-server combinations that support the `OnMessage
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
 |**Windows**|Not applicable|Not applicable|Not applicable|
-|**Mac**<br>Version 16.69.116|Supported|Not applicable|Not applicable|
+|**Mac**<br>Version 16.69.116 or later (preview)|Supported|Not applicable|Not applicable|
 |**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
@@ -50,19 +47,18 @@ The following tables list client-server combinations that support the `OnMessage
 
 ## Prerequisites
 
-To preview the `OnMessageFromChanged` and `OnAppointmentFromChanged` events, set up your preferred client accordingly.
+To test the walkthrough, you must have at least two Exchange accounts.
 
-- For Outlook on Windows, install Version 2212 (Build 15919.10000) or later. Once installed, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option to access Office beta builds.
-- For Outlook on Mac, install Version 16.69.116 or later.
-- For Outlook on the web, ensure that the Targeted release option is set up on your Microsoft 365 tenant. To learn more, see the "Targeted release" section of [Set up the Standard or Targeted release options](/microsoft-365/admin/manage/release-options-in-office-365#targeted-release).
-
-To test the walkthrough, you must also have at least two Exchange accounts.
+To preview the `OnMessageFromChanged` and `OnAppointmentFromChanged` events in Outlook on Mac, install Version 16.69.116 or later.
 
 ## Set up your environment
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
+
+> [!NOTE]
+> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
 
 To enable the add-in to activate when the `OnMessageFromChanged` event occurs, the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point must be configured in the `VersionOverridesV1_1` node of the manifest.
 
@@ -78,7 +74,7 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
      <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
        <Requirements>
-         <bt:Sets DefaultMinVersion="1.12">
+         <bt:Sets DefaultMinVersion="1.13">
            <bt:Set Name="Mailbox"/>
          </bt:Sets>
        </Requirements>
@@ -275,10 +271,15 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 
 1. From the **./src/commands** folder, open **commands.html**.
 
-1. Replace the existing **script** tag with the following code.
+1. To run the add-in in Outlook on Mac, replace the existing **script** tag with the following code. Otherwise, skip to the next step.
 
    ```html
    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
+   ```
+
+1. Add the following code below the existing **script** tag.
+
+   ```html
    <script type="text/javascript" src="../launchevent/launchevent.js"></script>
    ```
 

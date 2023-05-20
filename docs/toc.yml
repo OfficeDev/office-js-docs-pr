@@ -665,10 +665,8 @@ items:
       href: outlook/extension-module-outlook-add-ins.md
     - name: Activate add-in without Reading Pane or selected message
       href: outlook/contextless.md
-      displayName: preview
     - name: Item multi-select
       href: outlook/item-multi-select.md
-      displayName: preview
     - name: Pinnable task pane
       href: outlook/pinnable-taskpane.md
     - name: Add-ins for Outlook on mobile devices
@@ -756,10 +754,8 @@ items:
         href: outlook/get-or-set-the-location-of-an-appointment.md
       - name: Manage sensitivity labels
         href: outlook/sensitivity-label.md
-        displayName: preview
       - name: Manage delivery time of a message
         href: outlook/delay-delivery.md
-        displayName: preview
     - name: Privacy and security
       items:
       - name: Overview
