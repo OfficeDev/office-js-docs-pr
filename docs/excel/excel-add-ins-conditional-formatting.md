@@ -392,7 +392,7 @@ To remove format properties from a specific conditional format rule, use the [cl
 
 To remove all the conditional formatting rules from a specific range, or an entire worksheet, use the [clearAll](/javascript/api/excel/excel.conditionalformatcollection#excel-excel-conditionalformatcollection-clearall-member(1)) method of the `ConditionalFormatCollection` object.
 
-The following code snippet shows how to remove all conditional formatting from a worksheet with the `clearAll` method.
+The following sample shows how to remove all conditional formatting from a worksheet with the `clearAll` method.
 
 ```js
 await Excel.run(async (context) => {
