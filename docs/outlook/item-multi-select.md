@@ -16,7 +16,7 @@ The following sections walk you through how to configure your add-in to retrieve
 > The item multi-select feature is only available in preview with a Microsoft 365 subscription in Outlook on Windows. Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 > [!NOTE]
-> The item multi-select feature isn't currently supported in the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md), but the team is working on making this available.
+> The item multi-select feature isn't currently supported in the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md), but the team is working on making this available.
 
 ## Prerequisites to preview item multi-select
 
@@ -239,7 +239,7 @@ Now that you've enabled your add-in to operate on multiple selected messages, yo
 
 ## See also
 
-- [Outlook add-in manifests](manifests.md)
+- [Office add-in manifests](../develop/add-in-manifests.md)
 - [Call web services from an Outlook add-in](web-services.md)
 - [Overview of Microsoft Graph](/graph/overview)
 - [Activate your Outlook add-in without the Reading Pane enabled or a message selected (preview)](contextless.md)

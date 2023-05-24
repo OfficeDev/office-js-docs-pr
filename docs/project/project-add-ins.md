@@ -63,7 +63,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
 
 ### Procedure 1. To create the add-in manifest file for Bing Search
 
-- Create an XML file in a local directory. The XML file includes the **\<OfficeApp\>** element and child elements, which are described in the [Office Add-ins XML manifest](../develop/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
+- Create an XML file in a local directory. The XML file includes the **\<OfficeApp\>** element and child elements, which are described in the [Office Add-ins XML manifest](../develop/xml-manifest-overview.md). For example, create a file named BingSearch.xml that contains the following XML.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>

@@ -40,7 +40,7 @@ The web application uses the [Office JavaScript API](../reference/javascript-api
 
 The web application can be hosted on any web server, and can be built using client-side frameworks (such as Angular, React, jQuery) or server-side technologies (such as ASP.NET, Node.js, PHP).
 
-The [manifest](../develop/add-in-manifests.md) is an XML configuration file that defines how the add-in integrates with Office clients by specifying settings and capabilities such as:
+The [manifest](../develop/add-in-manifests.md) is an configuration file that defines how the add-in integrates with Office clients by specifying settings and capabilities such as:
 
 - The URL of the add-in's web application.
 - The add-in's display name, description, ID, version, and default locale.

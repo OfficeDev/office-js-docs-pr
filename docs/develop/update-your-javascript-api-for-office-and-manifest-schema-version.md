@@ -15,7 +15,7 @@ This article describes how to update your JavaScript files (Office.js and app-sp
 
 ## Use the most up-to-date project files
 
-If you use Visual Studio to develop your add-in, to use the newest API members of the Office JavaScript API and the [v1.1 features of the add-in manifest](../develop/add-in-manifests.md) (which is validated against offappmanifest-1.1.xsd), you need to download the latest version of Visual Studio. To download Visual Studio, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
+If you use Visual Studio to develop your add-in, to use the newest API members of the Office JavaScript API and the [v1.1 features of the add-in XML manifest](../develop/xml-manifest-overview.md) (which is validated against offappmanifest-1.1.xsd), you need to download the latest version of Visual Studio. To download Visual Studio, see the [Visual Studio IDE page](https://visualstudio.microsoft.com/vs/). During installation you'll need to select the Office/SharePoint development workload.
 
 If you use a text editor or IDE other than Visual Studio to develop your add-in, you need to update the references to the content delivery network (CDN) for Office.js and the version of schema referenced in your add-in's manifest.
 
@@ -71,7 +71,7 @@ The update process is applied on a  _per-project basis_ - you'll need to repeat 
 You don't need local copies of the Office JavaScript API files (Office.js and app-specific .js files) to develop anOffice Add-in (referencing the CDN for Office.js downloads the necessary files at runtime), but if you want a local copy of the library files you can use the [NuGet Command-Line Utility](https://docs.nuget.org/consume/installing-nuget) and the `Install-Package Microsoft.Office.js` command to download them.
 
 > [!NOTE]
-> To get a copy of the XSD (XML Schema Definition) for the v1.1 add-in manifest, see the listing in [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md).
+> To get a copy of the XSD (XML Schema Definition) for the v1.1 add-in manifest, see the listing in [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8). 
 
 ### Update the Office JavaScript API library files in your project to use the newest release
 
@@ -109,4 +109,4 @@ In your add-in's manifest file, update the **xmlns** attribute of the **\<Office
 - [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md) ]
 - [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
-- [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)
+- [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)

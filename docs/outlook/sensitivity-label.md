@@ -52,7 +52,7 @@ To use the sensitivity feature in your Outlook add-in project, you must set the 
 If your add-in will detect and handle the `OnSensitivityLabelChanged` event, additional manifest configurations are required to enable the event-based activation feature. To learn more, see [Detect sensitivity label changes with the OnSensitivityLabelChanged event](#detect-sensitivity-label-changes-with-the-onsensitivitylabelchanged-event).
 
 > [!IMPORTANT]
-> The sensitivity label feature isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+> The sensitivity label feature isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/unified-manifest-overview.md).
 
 ## Verify the status of the catalog of sensitivity labels
 
@@ -210,7 +210,7 @@ Take extra measures to protect your data by using the `OnSensitivityLabelChanged
 The `OnSensitivityLabelChanged` event is available through the event-based activation feature. To learn how to configure, debug, and deploy an event-based add-in that uses this event, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 > [!IMPORTANT]
-> The `OnSensitivityLabelChanged` event isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+> The `OnSensitivityLabelChanged` event isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/unified-manifest-overview.md).
 
 ## See also
 

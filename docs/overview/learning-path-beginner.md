@@ -48,7 +48,7 @@ Then explore the Office JavaScript APIs with our [Script Lab tool](explore-with-
 
 ## Step 5: Understand the manifest
 
-Get an understanding of the purposes of the add-in manifest and an introduction to its XML markup in [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+Get an understanding of the purposes of the add-in manifest and an introduction to its XML markup or JSON in [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 ## Next Steps
 

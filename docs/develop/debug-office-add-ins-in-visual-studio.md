@@ -87,7 +87,7 @@ Next, Visual Studio does the following:
 
 1. Starts the web application project in IIS Express.
 
-1. Validates the manifest. To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../develop/add-in-manifests.md). 
+1. Validates the manifest.  
 
    > [!IMPORTANT]
    > The Office manifest XSD files that Visual Studio installs are out-of-date. If you get validation errors for the manifest, your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
@@ -161,7 +161,7 @@ Next, Visual Studio does the following:
 
 1. Starts the web application project in IIS Express.
 
-1. Validates the manifest. To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../develop/add-in-manifests.md). 
+1. Validates the manifest.  
 
    > [!IMPORTANT]
    > The Office manifest XSD files that Visual Studio installs are out-of-date. If you get validation errors for the manifest, your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).

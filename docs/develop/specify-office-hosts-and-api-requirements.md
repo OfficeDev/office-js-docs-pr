@@ -250,6 +250,6 @@ The following is an example.
 
 ## See also
 
-- [Office Add-ins XML manifest](add-in-manifests.md)
+- [Office Add-ins manifest](add-in-manifests.md)
 - [Office Add-in requirement sets](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)

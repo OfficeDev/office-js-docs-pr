@@ -20,7 +20,7 @@ The following sections walk you through how to develop an event-based add-in tha
 > Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 > [!IMPORTANT]
-> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
+> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
 ## Supported clients and platforms
 
@@ -173,7 +173,7 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
 > [!TIP]
 >
 > - To learn about runtimes in add-ins, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-> - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement the event handlers
 
