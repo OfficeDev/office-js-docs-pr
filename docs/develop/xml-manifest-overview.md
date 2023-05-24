@@ -28,7 +28,7 @@ The current versions of the schema are:
 |v1.0|Supports version 1.0 of the Office JavaScript API. For example, in Outlook add-ins, this supports the read form. |
 |v1.1|Supports version 1.1 of the Office JavaScript API and **\<VersionOverrides\>**. For example, in Outlook add-ins, this adds support for the compose form.|
 |**\<VersionOverrides\>** 1.0|Supports later versions of the Office JavaScript API. This supports add-in commands.|
-|**\<VersionOverrides\>** 1.1|Supported by Outlook only. This version of **\<VersionOverrides\>** adds support for newer features, such as [pinnable task panes](pinnable-taskpane.md) and mobile add-ins.|
+|**\<VersionOverrides\>** 1.1|Supported by Outlook only. This version of **\<VersionOverrides\>** adds support for newer features, such as [pinnable task panes](../outlook/pinnable-taskpane.md) and mobile add-ins.|
 
 Even if your add-in manifest uses the **\<VersionOverrides\>** element, it is still important to include the v1.1 manifest elements to allow your add-in to work with older clients that do not support **\<VersionOverrides\>**.
 
@@ -140,7 +140,7 @@ This is separate from the **\<Hosts\>** element inside the **\<VersionOverrides\
 
 ## Specify safe domains with the AppDomains element
 
-There is an [AppDomains](/javascript/api/manifest/appdomains) element of the XML manifest file that is used to tell Office which domains your add-in should be allowed to navigate to. As noted in [Specify domains you want to open in the add-in window](add-in-manifests.md#specify-domains-you-want-to-open-in-the-add-in-window), when running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/javascript/api/manifest/sourcedomain) element), that URL opens in a new browser window outside the add-in pane of the Office application.
+There is an [AppDomains](/javascript/api/manifest/appdomains) element of the XML manifest file that is used to tell Office which domains your add-in should be allowed to navigate to. As noted in [Specify domains you want to open in the add-in window](add-in-manifests.md#specify-domains-you-want-to-open-in-the-add-in-window), when running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element), that URL opens in a new browser window outside the add-in pane of the Office application.
 
 To override this (desktop Office) behavior, add each domain you want to open in the add-in window in the list of domains specified in the **\<AppDomains\>** element. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then in desktop Office that URL opens in a new browser window (outside the add-in pane).
 
@@ -228,7 +228,7 @@ For an example of a manifest that includes a `VersionOverrides` element, see [Ma
 
 ## Requirements
 
-The **\<Requirements\>** element specifies the set of APIs available to the add-in. For detailed information about requirement sets, see [Office requirement sets availability](office-versions-and-requirement-sets#office-requirement-sets-availability). For example, for an Outlook add-in, the requirement set must be Mailbox and a value of 1.1 or above.
+The **\<Requirements\>** element specifies the set of APIs available to the add-in. For detailed information about requirement sets, see [Office requirement sets availability](office-versions-and-requirement-sets.md#office-requirement-sets-availability). For example, for an Outlook add-in, the requirement set must be Mailbox and a value of 1.1 or above.
 
 The **\<Requirements\>** element can also appear in the **\<VersionOverrides\>** element, allowing the add-in to specify a different requirement when loaded in clients that support **\<VersionOverrides\>**.
 

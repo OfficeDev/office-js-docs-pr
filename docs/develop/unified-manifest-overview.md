@@ -33,11 +33,11 @@ We've taken an important first step toward these goals by making it possible for
 
 ## Key properties of the unified manifest
 
-The main reference documentation for the preview version of the unified manifest is at [Public developer preview manifest schema for Teams](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview.md). That article provides information about the critical base manifest properties, but may not include any documentation of the "extensions" property, which is the property where Office Add-ins are configured in the unified manifest. So, here we provide a very brief description of the meaning of base properties when The Teams App is (or includes) an Office add-in. This is followed by some basic documentation for the "extensions" property and its descendent properties. There is a full sample manifest for an add-in at [Sample preview unified manifest](#sample-preview-unified-manifest).
+The main reference documentation for the preview version of the unified manifest is at [Public developer preview manifest schema for Teams](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview). That article provides information about the critical base manifest properties, but may not include any documentation of the "extensions" property, which is the property where Office Add-ins are configured in the unified manifest. So, here we provide a very brief description of the meaning of base properties when The Teams App is (or includes) an Office add-in. This is followed by some basic documentation for the "extensions" property and its descendent properties. There is a full sample manifest for an add-in at [Sample preview unified manifest](#sample-preview-unified-manifest).
 
 ### Base properties
 
-Each of these has more extensive documentation at [Public developer preview manifest schema for Teams](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview.md). Base properties not included in this table have no meaning for Office Add-ins.
+Each of these has more extensive documentation at [Public developer preview manifest schema for Teams](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview). Base properties not included in this table have no meaning for Office Add-ins.
 
 |JSON property|Purpose|
 |:-----|:-----|
@@ -60,7 +60,7 @@ We're working hard to complete reference documentation for the "extensions" prop
 
 |JSON property|Purpose|
 |:-----|:-----|:-----|:-----|
-| "requirements.capabilities" | Identifies the [requirement sets](office-versions-and-requirement-sets#office-requirement-sets-availability) that the add-in needs to be installable. |
+| "requirements.capabilities" | Identifies the [requirement sets](office-versions-and-requirement-sets.md#office-requirement-sets-availability) that the add-in needs to be installable. |
 | "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. For example, "mail" means the add-in can be installed in Outlook. | 
 | "ribbons" | The ribbons that the add-in customizes. | 
 | "ribbons.contexts" | Specifies the command surfaces that the add-in customizes. For example, "mailRead" or "mailCompose". |

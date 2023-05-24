@@ -82,7 +82,7 @@ The following table shows a mapping of some high level child properties of the "
 
 |JSON property|Purpose|XML elements|Comments|
 |:-----|:-----|:-----|:-----|
-| "requirements.capabilities" | Identifies the [requirement sets](office-versions-and-requirement-sets#office-requirement-sets-availability) that the add-in needs to be installable. that the add-in needs to be installable. | **\<Requirements\>** and **\<Sets\>** |*None.* |
+| "requirements.capabilities" | Identifies the [requirement sets](office-versions-and-requirement-sets.md#office-requirement-sets-availability) that the add-in needs to be installable. that the add-in needs to be installable. | **\<Requirements\>** and **\<Sets\>** |*None.* |
 | "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. | **\<Hosts\>** |*None.* |
 | "ribbons" | The ribbons that the add-in customizes. | **\<Hosts\>**, **ExtensionPoints**, and various **\*FormFactor** elements | The "ribbons" property is an array of anonymous objects that each merge the purposes of the these three elements. See ["ribbons" table](#ribbons-table).|
 | "alternatives" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. | **\<EquivalentAddins\>** | See the [EquivalentAddins - See also](/javascript/api/manifest/equivalentaddins#see-also) for background information. |
