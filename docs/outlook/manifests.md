@@ -1,11 +1,11 @@
 ---
-title: Manifest markup and JSON for Outlook Add-ins
+title: Manifest configuration for Outlook Add-ins
 description: Get an overview of the add-in manifest markup and JSON that is relevant only to Outlook.
 ms.date: 05/24/2023
 ms.localizationpriority: high
 ---
 
-# Outlook add-in manifests
+# Manifest configuration for Outlook Add-ins
 
 An Outlook add-in consists of two components: the add-in manifest and a web app supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients.
 
@@ -13,7 +13,7 @@ You can learn about manifests at [Office Add-in manifests](../develop/add-in-man
 
 ## Permissions
 
-Outlook add-ins have a special set of permissions that don't apply to add-ins for other Office host applications. These permissions must be configured in the manifest. For details about these permissions and their effects, see [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissisons.md).
+Outlook add-ins have a special set of permissions that don't apply to add-ins for other Office host applications. These permissions must be configured in the manifest. For details about these permissions and their effects, see [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
 
 # [XML Manifest](#tab/xmlmanifest)
 

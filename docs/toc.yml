@@ -705,7 +705,7 @@ items:
       displayName: delegate access
     - name: Manifests
       items:
-      - name: Manifest markup and JSON for Outlook Add-ins
+      - name: Manifest conifuration for Outlook Add-ins
         href: outlook/manifests.md
       - name: Activation rules
         href: outlook/activation-rules.md
