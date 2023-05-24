@@ -2,6 +2,7 @@
 title: Manifest configuration for Outlook Add-ins
 description: Get an overview of the add-in manifest markup and JSON that is relevant only to Outlook.
 ms.date: 05/24/2023
+
 ms.localizationpriority: high
 ---
 
@@ -29,6 +30,8 @@ The **\<Permissions\>** element contains the required permissions for the add-in
 
 
 # [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+
+The domain of the add-in start page that you specify in the **\<SourceLocation\>** element is the default domain for the add-in. Without using the **\<AppDomains\>** and **\<AppDomain\>** elements, if your add-in attempts to navigate to another domain, the browser or webview control will open a new window outside of the add-in pane. In order to allow the add-in to navigate to another domain within the add-in pane, add an **\<AppDomains\>** element and include each additional domain in its own **\<AppDomain\>** sub-element in the add-in manifest.
 
 The "authorization.permissions.resourceSpecific" property contains the required permissions for the add-in. In general, you should specify the minimum necessary permission that your add-in needs, depending on the exact methods that you plan to use. For example, a mail add-in that activates in compose forms and only reads but doesn't write to item properties like [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), and doesn't call [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) to access any Exchange Web Services operations should specify "MailboxItem.Read.User" permission. The following is an example of setting an Outlook permission.
 

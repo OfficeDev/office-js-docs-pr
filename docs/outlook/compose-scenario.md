@@ -44,8 +44,8 @@ Compose add-ins are implemented as [add-in commands](../design/add-in-commands.m
 - [Insert data in the body when composing an appointment or message in Outlook](insert-data-in-the-body.md)
 - [Get or set the location when composing an appointment in Outlook](get-or-set-the-location-of-an-appointment.md)
 - [Get or set the time when composing an appointment in Outlook](get-or-set-the-time-of-an-appointment.md)
-- [Manage the sensitivity label of your message or appointment in compose mode (preview)](sensitivity-label.md)
-- [Manage the delivery date and time of a message (preview)](delay-delivery.md)
+- [Manage the sensitivity label of your message or appointment in compose mode](sensitivity-label.md)
+- [Manage the delivery date and time of a message](delay-delivery.md)
 
 ## See also
 

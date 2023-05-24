@@ -1,7 +1,7 @@
 ---
 title: Apply conditional formatting to ranges with the Excel JavaScript API
 description: Learn about conditional formatting in the context of Excel JavaScript add-ins.
-ms.date: 02/15/2022
+ms.date: 05/19/2023
 ms.localizationpriority: medium
 ---
 
@@ -33,7 +33,7 @@ The `Range.conditionalFormats` property is a collection of [ConditionalFormat](/
 
 Only one format type can be set for the ConditionalFormat object. This is determined by the `type` property, which is a [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) enum value. `type` is set when adding a conditional format to a range.
 
-## Creating conditional formatting rules
+## Create conditional formatting rules
 
 Conditional formats are added to a range by using `conditionalFormats.add`. Once added, the properties specific to the conditional format can be set. The following examples show the creation of different formatting types.
 
@@ -278,6 +278,43 @@ await Excel.run(async (context) => {
 });
 ```
 
+## Change conditional formatting rules
+
+The `ConditionalFormat` object offers multiple methods to change conditional formatting rules after they've been set.
+
+- [changeRuleToCellValue](/javascript/api/excel/excel.conditionalformat#excel-excel-conditionalformat-changeruletocellvalue-member(1))
+- [changeRuleToColorScale](/javascript/api/excel/excel.conditionalformat#excel-excel-conditionalformat-changeruletocolorscale-member(1))
+- [changeRuleToContainsText](/javascript/api/excel/excel.conditionalformat#excel-excel-conditionalformat-changeruletocontainstext-member(1))
+- [changeRuleToCustom](/javascript/api/excel/excel.conditionalformat#excel-excel-conditionalformat-changeruletocustom-member(1))
+- [changeRuleToDataBar](/javascript/api/excel/excel.conditionalformat#excel-excel-conditionalformat-changeruletodatabar-member(1))
+- [changeRuleToIconSet](/javascript/api/excel/excel.conditionalformat#excel-excel-conditionalformat-changeruletoiconset-member(1))
+- [changeRuleToPresetCriteria](/javascript/api/excel/excel.conditionalformat#excel-excel-conditionalformat-changeruletopresetcriteria-member(1))
+- [changeRuleToTopBottom](/javascript/api/excel/excel.conditionalformat#excel-excel-conditionalformat-changeruletotopbottom-member(1))
+
+The following example shows how to use the `changeRuleToPresetCriteria` method from the preceding list to change an existing conditional format rule to the preset criteria rule type.
+
+> [!NOTE]
+> The specified range must have an existing conditional format rule to use the change methods. If the specified range has no conditional format rule, the change methods don't apply a new rule.
+
+```js
+await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const range = sheet.getRange("B2:M5");
+    
+    // Retrieve the first existing `ConditionalFormat` rule on this range. 
+    // Note: The specified range must have an existing conditional format rule.
+    const conditionalFormat = range.conditionalFormats.getItemOrNullObject("0");
+    
+    // Change the conditional format rule to preset criteria.
+    conditionalFormat.changeRuleToPresetCriteria({
+        criterion: Excel.ConditionalFormatPresetCriterion.oneStdDevAboveAverage, 
+    });
+    conditionalFormat.preset.format.font.color = "red";
+    
+    await context.sync();
+});
+```
+
 ## Multiple formats and priority
 
 You can apply multiple conditional formats to a range. If the formats have conflicting elements, such as differing font colors, only one format applies that particular element. Precedence is defined by the `ConditionalFormat.priority` property. Priority is a number (equal to the index in the `ConditionalFormatCollection`) and can be set when creating the format. The lower the `priority` value, the higher the priority of the format is.
@@ -345,6 +382,24 @@ await Excel.run(async (context) => {
     cellValueFormat.priority = 0;
     cellValueFormat.stopIfTrue = true;
     
+    await context.sync();
+});
+```
+
+## Clear conditional formatting rules
+
+To remove format properties from a specific conditional format rule, use the [clearFormat](/javascript/api/excel/excel.conditionalrangeformat#excel-excel-conditionalrangeformat-clearformat-member(1)) method of the `ConditionalRangeFormat` object. The `clearFormat` method creates a formatting rule without format settings.
+
+To remove all the conditional formatting rules from a specific range, or an entire worksheet, use the [clearAll](/javascript/api/excel/excel.conditionalformatcollection#excel-excel-conditionalformatcollection-clearall-member(1)) method of the `ConditionalFormatCollection` object.
+
+The following sample shows how to remove all conditional formatting from a worksheet with the `clearAll` method.
+
+```js
+await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const range = sheet.getRange();
+    range.conditionalFormats.clearAll();
+
     await context.sync();
 });
 ```

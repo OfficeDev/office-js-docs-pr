@@ -17,7 +17,7 @@ Segoe is the standard typeface for Office. Use it in your add-in to align with O
 
 |Type |Class |Size |Weight |Recommended Usage |
 |------ |----- |---- |------ |----------------- |
-|Hero|.ms-font-xxl |28 px | Segoe Light |<ul><li>This class is larger than all other typographic elements in Office. Use it sparingly to avoid unseating visual hierarchy.</li><li>Avoid use on long strings in constrained spaces.</li><li>Provide ample whitespace around text using this class.</li><li>Commonly used for first run messages, hero elements, or other calls to action.</li></ul> |
+|Hero|.ms-font-xxl |28 px | Segoe Light |<ul><li>This class is larger than all other typographic elements in Office. Use it sparingly to avoid unseating visual hierarchy.</li><li>Avoid use on long strings in constrained spaces.</li><li>Provide ample whitespace around text using this class.</li><li>Commonly used for first-run messages, hero elements, or other calls to action.</li></ul> |
 |Title|.ms-font-xl |21 px |Segoe Light | <ul><li>This class matches the task pane title of Office applications.</li><li>Use it sparingly to avoid a flat typographic hierarchy.</li><li>Commonly used as the top-level element such as dialog box, page, or content titles.</li></ul> |
 |Subtitle|.ms-font-l |17 px |Segoe Semilight | <ul><li>This class is the first stop below titles.</li><li>Commonly used as a subtitle, navigation element, or group header.</li><ul> |
 |Body|.ms-font-m |14 px |Segoe Regular |<ul><li>Commonly used as body text within add-ins.</li><ul>|

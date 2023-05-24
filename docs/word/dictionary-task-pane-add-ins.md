@@ -1,7 +1,7 @@
 ---
 title: Create a dictionary task pane add-in
 description: Learn how to create a dictionary task pane add-in.
-ms.date: 07/15/2022
+ms.date: 05/20/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,7 +21,7 @@ Figure 1 shows the selection and display experience for a Bing-branded dictionar
 
 ![Dictionary app displaying a definition.](../images/dictionary-agave-01.jpg)
 
-It's up to you to determine if selecting the **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase.
+It's up to you to determine if selecting the **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate window to the full webpage for the selected word or phrase.
 Figure 2 shows the **Define** command in the context menu that enables users to quickly launch installed dictionaries. Figures 3 through 5 show the places in the Office UI where the dictionary XML services are used to provide definitions in Word.
 
 *Figure 2. Define command in the context menu*
