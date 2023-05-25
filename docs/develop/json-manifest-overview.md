@@ -1,6 +1,6 @@
 ---
 title: Compare the XML manifest with the unified manifest for Microsoft 365
-description: Get an overview of the preview JSON-formatted unified manifest for Microsoft 365.
+description: Get a comparison of the XML manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
 ms.date: 05/24/2023
 ms.localizationpriority: high
