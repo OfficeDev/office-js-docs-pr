@@ -49,7 +49,7 @@ Specify the minimum requirement set that supports the critical set of APIs for y
 - **XML manifest**:  Use the **\<Requirements\>** element. Note that the **\<Methods\>** child element of **\<Requirements\>** isn't supported in Outlook add-ins, so you can't declare support for specific methods.
 - **Unified manifest for Microsoft 365 (preview)**: Use the "extensions.capabilities" property. 
 
-For more information, see [Outlook add-in manifests](manifests.md),  and [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
+For more information, see [Office add-in manifests](../develop/add-in-manifests.md), and [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
 ## Permissions
 
@@ -63,7 +63,7 @@ There are four levels of permissions; **restricted**, **read item**, **read/writ
 
 ## See also
 
-- [Outlook add-in manifests](manifests.md)
+- [Office add-in manifests](../develop/add-in-manifests.md)
 - [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
 - [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)

@@ -1,7 +1,7 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 05/19/2023
+ms.date: 05/24/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,7 +21,7 @@ In this walkthrough, you'll develop an add-in that prepends a header and appends
 
 ## Preview prepend-on-send in Outlook on Mac
 
-To preview the prepend-on-send feature in Outlook on Mac, install Version 16.70.212.0 or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
+To preview the prepend-on-send feature in Outlook on Mac, install Version 16.70.212.0 or later.
 
 ## Set up your environment
 
@@ -151,7 +151,7 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
 The following shows how to configure your unified manifest to enable the append-on-send feature.
 
 > [!IMPORTANT]
-> The prepend-on-send feature isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
+> The prepend-on-send feature isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
 1. Open the manifest.json file.
 
@@ -209,7 +209,7 @@ The following shows how to configure your unified manifest to enable the append-
 > The prepend-on-send and append-on-send features must be activated by the user through a task pane or function command button. If you want content to be prepended or appended on send without additional action from the user, you can implement these features in an [event-based activation add-in](autolaunch.md).
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
+> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement the prepend-on-send handler
 
@@ -317,20 +317,6 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 1. Save your changes.
 
-## Update the commands HTML file (for Outlook on Mac only)
-
-As the prepend-on-send feature is in preview in Outlook on Mac, you must update the referenced library in the **commands.html** file to be able to retrieve the API definitions.
-
-1. From the **./src/commands** folder, open the **commands.html** file.
-
-1. Replace the existing **script** tag with the following reference to the beta library on the content delivery network (CDN).
-
-    ```html
-    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
-    ```
-
-1. Save your changes.
-
 ## Try it out
 
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start if it's not already running and your add-in will be sideloaded.
@@ -388,6 +374,6 @@ If you encounter an error while implementing the prepend-on-send and append-on-s
 
 ## See also
 
-- [Outlook add-in manifests](manifests.md)
+- [Office add-in manifests](../develop/add-in-manifests.md)
 - [Office.Body](/javascript/api/outlook/office.body)
 - [Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in](smart-alerts-onmessagesend-walkthrough.md)

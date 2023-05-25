@@ -58,7 +58,7 @@ This would be a good place to take a look at the sample add-in, [Excel Add-in Ja
 
 ## Step 5: Understand the manifest
 
-Get an understanding of the purposes of the web add-in manifest and an introduction to its XML markup in [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+Get an understanding of the purposes of the web add-in manifest and an introduction to its XML markup or JSON in [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 ## Step 6 (for VSTO developers only): Reuse your VSTO code
 

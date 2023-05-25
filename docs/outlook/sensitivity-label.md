@@ -208,7 +208,7 @@ Take extra measures to protect your data by using the `OnSensitivityLabelChanged
 The `OnSensitivityLabelChanged` event is available through the event-based activation feature. To learn how to configure, debug, and deploy an event-based add-in that uses this event, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 > [!NOTE]
-> The `OnSensitivityLabelChanged` event isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
+> The `OnSensitivityLabelChanged` event isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
 ## See also
 
