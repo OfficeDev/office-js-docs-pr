@@ -1,7 +1,7 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 05/19/2023
+ms.date: 05/24/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,7 +21,7 @@ In this walkthrough, you'll develop an add-in that prepends a header and appends
 
 ## Preview prepend-on-send in Outlook on Mac
 
-To preview the prepend-on-send feature in Outlook on Mac, install Version 16.70.212.0 or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
+To preview the prepend-on-send feature in Outlook on Mac, install Version 16.70.212.0 or later.
 
 ## Set up your environment
 
@@ -313,20 +313,6 @@ In this section, you'll implement the JavaScript code to append a sample company
     ```javascript
     Office.actions.associate("prependHeaderOnSend", prependHeaderOnSend);
     Office.actions.associate("appendDisclaimerOnSend", appendDisclaimerOnSend);
-    ```
-
-1. Save your changes.
-
-## Update the commands HTML file (for Outlook on Mac only)
-
-As the prepend-on-send feature is in preview in Outlook on Mac, you must update the referenced library in the **commands.html** file to be able to retrieve the API definitions.
-
-1. From the **./src/commands** folder, open the **commands.html** file.
-
-1. Replace the existing **script** tag with the following reference to the beta library on the content delivery network (CDN).
-
-    ```html
-    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
     ```
 
 1. Save your changes.
