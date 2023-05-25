@@ -1,12 +1,11 @@
 ---
-title: Manifest configuration for Outlook Add-ins
+title: Manifest configuration for Outlook add-ins
 description: Get an overview of the add-in manifest markup and JSON that is relevant only to Outlook.
 ms.date: 05/24/2023
-
 ms.localizationpriority: high
 ---
 
-# Manifest configuration for Outlook Add-ins
+# Manifest configuration for Outlook add-ins
 
 An Outlook add-in consists of two components: the add-in manifest and a web app supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients.
 
@@ -77,7 +76,7 @@ For details and samples of activation rules, see [Activation rules for Outlook a
 > [!NOTE]
 > Form settings aren't supported in Outlook add-ins that use the unified manifest for Microsoft 365.
 
-The **\<FormSettings\>** element is used by older Outlook clients, which only support schema 1.1 and not **\<VersionOverrides\>**. Using this element, developers define how the add-in will appear in such clients. There are two parts - **ItemRead** and **ItemEdit**. **ItemRead** is used to specify how the add-in appears when the user reads messages and appointments. **ItemEdit** describes how the add-in appears while the user is composing a reply, new message, new appointment or editing an appointment where they are the organizer.
+The **\<FormSettings\>** element is used by older Outlook clients, which only support schema 1.1 and not **\<VersionOverrides\>**. Using this element, developers define how the add-in will appear in such clients. There are two parts&mdash;**ItemRead** and **ItemEdit**. **ItemRead** is used to specify how the add-in appears when the user reads messages and appointments. **ItemEdit** describes how the add-in appears while the user is composing a reply, new message, new appointment or editing an appointment as an organizer.
 
 These settings are directly related to the activation rules in the **\<Rule\>** element. For example, if an add-in specifies that it should appear on a message in compose mode, an **ItemEdit** form must be specified.
 

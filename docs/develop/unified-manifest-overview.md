@@ -1,5 +1,5 @@
 ---
-title: Office Add-ins with the unified manifest for Microsoft 365
+title: Office Add-ins with the unified manifest for Microsoft 365 (preview)
 description: Get an overview of the unified manifest for Microsoft 365 for Office Add-ins manifest and its uses.
 ms.topic: overview
 ms.date: 05/24/2023
@@ -8,11 +8,11 @@ ms.localizationpriority: high
 
 # Office Add-ins with the unified manifest for Microsoft 365 (preview)
 
-This article introduces the unified manifest for Microsoft 365. It assumes that you're familiar with [Office Add-ins manifest](add-in-manifests.md).
+This article introduces the unified manifest for Microsoft 365 in preview. It assumes that you're familiar with [Office Add-ins manifest](add-in-manifests.md).
 
 > [!TIP]
 > - For an overview of the XML manifest, see [Office Add-ins XML manifest](xml-manifest-overview.md).
-> - If you're familiar with the XML manifest, you might get a grasp on the JSON-formatted unified manifest by easier by reading [Compare the XML manifest with the unified manifest for Microsoft 365](json-manifest-overview.md). 
+> - If you're familiar with the XML manifest, you might get a grasp on the JSON-formatted unified manifest easier by reading [Compare the XML manifest with the unified manifest for Microsoft 365](json-manifest-overview.md).
 
 Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes are compatible with existing add-ins.
 
@@ -33,11 +33,11 @@ We've taken an important first step toward these goals by making it possible for
 
 ## Key properties of the unified manifest
 
-The main reference documentation for the preview version of the unified manifest is at [Public developer preview manifest schema for Teams](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview). That article provides information about the critical base manifest properties, but may not include any documentation of the "extensions" property, which is the property where Office Add-ins are configured in the unified manifest. So, here we provide a very brief description of the meaning of base properties when The Teams App is (or includes) an Office add-in. This is followed by some basic documentation for the "extensions" property and its descendent properties. There is a full sample manifest for an add-in at [Sample preview unified manifest](#sample-preview-unified-manifest).
+The main reference documentation for the preview version of the unified manifest is at [Public developer preview manifest schema for Teams](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview). That article provides information about the critical base manifest properties, but may not include any documentation of the "extensions" property, which is the property where Office Add-ins are configured in the unified manifest. So, in this article, we provide a brief description of the meaning of base properties when the Teams App is (or includes) an Office add-in. This is followed by some basic documentation for the "extensions" property and its descendent properties. There is a full sample manifest for an add-in at [Sample preview unified manifest](#sample-preview-unified-manifest).
 
 ### Base properties
 
-Each of these has more extensive documentation at [Public developer preview manifest schema for Teams](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview). Base properties not included in this table have no meaning for Office Add-ins.
+Each of the base properties listed in the following table has more extensive documentation at [Public developer preview manifest schema for Teams](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview). Base properties not included in this table have no meaning for Office Add-ins.
 
 |JSON property|Purpose|
 |:-----|:-----|
@@ -55,7 +55,7 @@ Each of these has more extensive documentation at [Public developer preview mani
 
 ### "extensions" property
 
-We're working hard to complete reference documentation for the "extensions" property and its descendent properties. In the meantime, the following provides some basic documentation. Most, but not all, of the properties have an equivalent element (or attribute) in the XML manifest for add-ins. For the most part, the description, and restrictions, that apply to the XML element or attribute also apply to its JSON property equivalent in the unified manifest. The tables found at ["extensions"](json-manifest-overview.md#extensions-property) can help you determine the XML equivalent of a JSON property.
+We're working hard to complete reference documentation for the "extensions" property and its descendent properties. In the meantime, the following provides some basic documentation. Most, but not all, of the properties have an equivalent element (or attribute) in the XML manifest for add-ins. For the most part, the description, and restrictions, that apply to the XML element or attribute also apply to its JSON property equivalent in the unified manifest. The tables in the '"extensions" property' section of [Compare the XML manifest with the unified manifest for Microsoft 365](json-manifest-overview.md#extensions-property) can help you determine the XML equivalent of a JSON property.
 
 
 |JSON property|Purpose|
@@ -71,9 +71,9 @@ We're working hard to complete reference documentation for the "extensions" prop
 
 ## Specify safe domains
 
-There is an "validDomains" array in the manifest file that is used to tell Office which domains your add-in should be allowed to navigate to. As noted in [Specify domains you want to open in the add-in window](add-in-manifests.md#specify-domains-you-want-to-open-in-the-add-in-window), when running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page, that URL opens in a new browser window outside the add-in pane of the Office application.
+There is a "validDomains" array in the manifest file that is used to tell Office which domains your add-in should be allowed to navigate to. As noted in [Specify domains you want to open in the add-in window](add-in-manifests.md#specify-domains-you-want-to-open-in-the-add-in-window), when running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page, that URL opens in a new browser window outside the add-in pane of the Office application.
 
-To override this (desktop Office) behavior, add each domain you want to open in the add-in window in the list of domains specified in the "validDomains" array. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then in desktop Office that URL opens in a new browser window (outside the add-in pane).
+To override this behavior in desktop platforms, add each domain you want to open in the add-in window to the list of domains specified in the "validDomains" array. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then in Office on desktop, that URL opens in a new browser window (outside the add-in task pane).
 
 ## Sample preview unified manifest
 
