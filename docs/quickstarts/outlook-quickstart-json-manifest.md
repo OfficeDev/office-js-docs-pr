@@ -8,7 +8,7 @@ ms.localizationpriority: high
 
 # Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)
 
-There are two tools that you can use to create an Outlook Add-in project that uses the unified manifest for Microsoft 365. This article describes how to do it with the Yeoman generator for Office (also called "Yo Office"). Alternatively, you can create an Outlook add-in project with the Teams Toolkit as described at [Create Office Add-in projects with Teams Toolkit (preview)](/develop/teams-toolkit-overview.md).
+There are two tools that you can use to create an Outlook Add-in project that uses the unified manifest for Microsoft 365. This article describes how to do it with the Yeoman generator for Office (also called "Yo Office"). Alternatively, you can create an Outlook add-in project with the Teams Toolkit as described at [Create Office Add-in projects with Teams Toolkit (preview)](../develop/teams-toolkit-overview.md).
 
 In this article, you'll walk through the process of building an Outlook task pane add-in that displays a property of a selected message, triggers a notification on the reading pane, and inserts text into a message on the compose pane. This add-in will use a preview version of the JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use. For more information about this manifest, see [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
