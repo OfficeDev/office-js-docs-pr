@@ -396,9 +396,6 @@ items:
     - name: Task pane
       href: quickstarts/excel-quickstart-jquery.md
       displayName: Excel
-    - name: Task pane (Angular)
-      href: quickstarts/excel-quickstart-angular.md
-      displayName: Excel
     - name: Task pane (React)
       href: quickstarts/excel-quickstart-react.md
       displayName: Excel
