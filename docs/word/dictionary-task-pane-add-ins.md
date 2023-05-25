@@ -238,7 +238,7 @@ The following is an example manifest file for a dictionary add-in.
 </OfficeApp>
 ```
 
-The `Dictionary` element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+The `Dictionary` element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/xml-manifest-overview.md).
 
 ### Dictionary element
 
@@ -345,7 +345,7 @@ Specifies the text to use in citations. Required for dictionary add-ins.
 
 This element specifies the beginning of the citation text that will be displayed on a line below the content that is returned from the web service (for example, "Results by: " or "Powered by: ").
 
-For this element, you can specify values for additional locales by using the `Override` element. For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing". For more information about how to specify values for additional locales, see the section "Providing settings for different locales" in [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+For this element, you can specify values for additional locales by using the `Override` element. For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing". For more information about how to specify values for additional locales, see [Localization](../develop/xml-manifest-overview.md#localization).
 
 **Example**
 

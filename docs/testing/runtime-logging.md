@@ -139,7 +139,7 @@ You might see messages in the log file that are confusing or that are classified
 
 ## See also
 
-- [Office Add-ins XML manifest](../develop/add-in-manifests.md)
+- [Office Add-ins manifest](../develop/add-in-manifests.md)
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Clear the Office cache](clear-cache.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)

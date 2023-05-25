@@ -21,7 +21,7 @@ For an introduction to using JavaScript in Office Add-ins, see [Understanding th
 
 ## Procedure 1. To create the add-in manifest file
 
-Create an XML file in a local directory. The XML file includes the `OfficeApp` element and child elements, which are described in the [Office Add-ins XML manifest](../develop/add-in-manifests.md). For example, create a file named JSOM_SimpleOMCalls.xml that contains the following XML (change the GUID value of the `Id` element).
+Create an XML file in a local directory. The XML file includes the `OfficeApp` element and child elements, which are described in the [Office Add-ins XML manifest](../develop/xml-manifest-overview.md). For example, create a file named JSOM_SimpleOMCalls.xml that contains the following XML (change the GUID value of the `Id` element).
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>

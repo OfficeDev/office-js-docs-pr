@@ -151,7 +151,7 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
 The following shows how to configure your unified manifest to enable the append-on-send feature.
 
 > [!IMPORTANT]
-> The prepend-on-send feature isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
+> The prepend-on-send feature isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
 1. Open the manifest.json file.
 
@@ -209,7 +209,7 @@ The following shows how to configure your unified manifest to enable the append-
 > The prepend-on-send and append-on-send features must be activated by the user through a task pane or function command button. If you want content to be prepended or appended on send without additional action from the user, you can implement these features in an [event-based activation add-in](autolaunch.md).
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
+> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement the prepend-on-send handler
 
@@ -374,6 +374,6 @@ If you encounter an error while implementing the prepend-on-send and append-on-s
 
 ## See also
 
-- [Outlook add-in manifests](manifests.md)
+- [Office add-in manifests](../develop/add-in-manifests.md)
 - [Office.Body](/javascript/api/outlook/office.body)
 - [Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in](smart-alerts-onmessagesend-walkthrough.md)

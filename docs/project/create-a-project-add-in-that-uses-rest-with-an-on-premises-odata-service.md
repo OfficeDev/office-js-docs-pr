@@ -98,7 +98,7 @@ The **AddIn** folder (see the next screenshot) contains the App.css file for cus
 
 The manifest for the **HelloProjectOData** project is the HelloProjectOData.xml file. You can optionally modify the manifest to add a description of the add-in, a reference to an icon, information for additional languages, and other settings. Procedure 3 simply modifies the add-in display name and description, and adds an icon.
 
-For more information about the manifest, see [Office Add-ins XML manifest](../develop/add-in-manifests.md) and [Schema reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md#see-also).
+For more information about the manifest, see [Office Add-ins manifest](../develop/add-in-manifests.md) and [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
 
 ### Procedure 3. Modify the add-in manifest
 
@@ -1115,5 +1115,5 @@ If you modify the **HelloProjectOData** add-in for production use, do the follow
 - [Task pane add-ins for Project](project-add-ins.md)
 - [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [ProjectData - Project OData service reference](/previous-versions/office/project-odata/jj163015(v=office.15))
-- [Office Add-ins XML manifest](../develop/add-in-manifests.md)
+- [Office Add-ins manifest](../develop/add-in-manifests.md)
 - [Publish your Office Add-in](../publish/publish.md)

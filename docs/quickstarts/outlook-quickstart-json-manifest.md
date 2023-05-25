@@ -8,7 +8,7 @@ ms.localizationpriority: high
 
 # Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)
 
-In this article, you'll walk through the process of building an Outlook task pane add-in that displays a property of a selected message, triggers a notification on the reading pane, and inserts text into a message on the compose pane. This add-in will use a preview version of the JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use. For more information about this manifest, see [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
+In this article, you'll walk through the process of building an Outlook task pane add-in that displays a property of a selected message, triggers a notification on the reading pane, and inserts text into a message on the compose pane. This add-in will use a preview version of the JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use. For more information about this manifest, see [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
 > [!NOTE]
 > The new manifest is available for preview and is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins.
@@ -268,5 +268,5 @@ Add a custom button to the ribbon that inserts text into a message body.
 
 ## See also
 
-- [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md)
+- [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md)
 - [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

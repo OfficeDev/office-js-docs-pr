@@ -10,7 +10,7 @@ ms.localizationpriority: high
 Extensions to the Microsoft 365 Platform are now included under "Teams Apps", even if the extension is fully outside of the Teams application itself. A primary tool for developing Teams Apps is Teams Toolkit. You can create Office Add-ins with Teams Toolkit, with the following restrictions:
 
 - Only Outlook Add-ins can be created at this time. We're working hard to enable support in Teams Toolkit for add-ins to other Office applications.
-- Add-ins created with Teams Toolkit use the [unified manifest for Microsoft 365](json-manifest-overview.md) which is currently in preview. We encourage you to experiment with creating add-ins using the toolkit but don't use the unified manifest for production add-ins.
+- Add-ins created with Teams Toolkit use the [unified manifest for Microsoft 365](unified-manifest-overview.md) which is currently in preview. We encourage you to experiment with creating add-ins using the toolkit but don't use the unified manifest for production add-ins.
 
 Install the latest version of Teams Toolkit into Visual Studio Code as described in [Install Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
 

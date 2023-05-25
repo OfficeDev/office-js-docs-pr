@@ -145,6 +145,6 @@ For more information, see [Requesting permissions for API use in add-ins](reques
 ## See also
 
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
-- [Schema reference for Office Add-ins manifests](../develop/add-in-manifests.md)
+- [Schema reference for Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 - [Runtimes in Office Add-ins](../testing/runtimes.md)

@@ -112,7 +112,12 @@ items:
       items:
       - name: Overview
         href: develop/add-in-manifests.md
-      - name: Unified manifest for Microsoft 365
+      - name: Office Add-ins XML manifest
+        href: develop/xml-manifest-overview.md
+      - name: Office Add-ins with the unified manifest for Microsoft 365
+        href: develop/unified-manifest-overview.md
+        displayName: preview
+      - name: Compare the XML manifest with the unified manifest for Microsoft 365
         href: develop/json-manifest-overview.md
         displayName: preview
       - name: Manifest reference
@@ -700,7 +705,7 @@ items:
       displayName: delegate access
     - name: Manifests
       items:
-      - name: Outlook add-in manifests
+      - name: Manifest configuration for Outlook Add-ins
         href: outlook/manifests.md
       - name: Activation rules
         href: outlook/activation-rules.md

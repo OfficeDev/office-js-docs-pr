@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send.
 
 > [!NOTE]
-> The on-send feature isn't supported in add-ins that use the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md). Achieve similar effects by using [event-based activation](autolaunch.md) and implementing a handler for the **OnMessageSend** or **OnAppointmentSend** events, or both.
+> The on-send feature isn't supported in add-ins that use the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md). Achieve similar effects by using [event-based activation](autolaunch.md) and implementing a handler for the **OnMessageSend** or **OnAppointmentSend** events, or both.
 
 For example, use the on-send feature to:
 
@@ -478,8 +478,8 @@ The on-send API requires `VersionOverrides v1_1`. The following shows you how to
 > [!NOTE]
 > For more information, see the following:
 >
-> - [Outlook add-in manifests](manifests.md)
-> - [Office Add-ins XML manifest](../develop/add-in-manifests.md)
+> - [Manifest configuration for Outlook Add-ins](manifests.md)
+> - [Office Add-ins manifest](../develop/add-in-manifests.md)
 
 ### `Event` and `item` objects, and `body.getAsync` and `body.setAsync` methods
 
