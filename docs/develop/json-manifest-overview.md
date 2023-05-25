@@ -12,7 +12,7 @@ This article is intended to help readers who are familiar with the XML manifest 
 
 ## Schemas and general points
 
-There is just one schema for the [preview unified manifest](https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/preview/DevPreview/MicrosoftTeams.schema.json), in contrast to the current XML manifest which has a total of seven [Schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).  
+There is just one schema for the [preview unified manifest](https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/preview/DevPreview/MicrosoftTeams.schema.json), in contrast to the current XML manifest which has a total of seven [schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
 
 ## Conceptual mapping of the preview unified and current XML manifests
 

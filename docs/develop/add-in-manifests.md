@@ -10,8 +10,8 @@ ms.localizationpriority: high
 
 Every Office add-in has a manifest. There are two types of manifests:
 
-- **XML manifest:** This is the only type of manifest that is currently supported for production add-ins. As the name indicates, it is XML format. This type of manifest cannot be used for an app that combines an add-in with some other kind of Teams App; that is, some other kind of extension of the Microsoft 365 platform.
-- **unified manifest for Microsoft 365:** This is a JSON-formatted manifest that has been used for years as the manifest for Teams Apps. It is supported for add-ins only as a preview currently and shouldn't be used with a production add-in. When it releases to general availability, add-ins that use this manifest can be combined with other other kinds of Teams Apps in a single app that is installable as a unit whole. 
+- **XML manifest:** This is the only type of manifest that is currently supported for production add-ins. As the name indicates, it is XML format. This type of manifest can't be used for an app that combines an add-in with some other kind of Teams App; that is, some other kind of extension of the Microsoft 365 platform.
+- **unified manifest for Microsoft 365:** This is a JSON-formatted manifest that has been used for years as the manifest for Teams Apps. It is supported for add-ins only as a preview currently and shouldn't be used with a production add-in. When it releases to general availability, add-ins that use this manifest can be combined with other kinds of Teams Apps in a single app that is installable as a unit whole. 
 
 The remainder of this article is applicable to both types of manifest. 
 
@@ -23,7 +23,7 @@ The remainder of this article is applicable to both types of manifest.
 
 The manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications.
 
-An manifest file enables an Office Add-in to do the following:
+A manifest file enables an Office Add-in to do the following:
 
 - Describe itself by providing an ID, version, description, display name, and default locale.
 
@@ -41,7 +41,7 @@ An manifest file enables an Office Add-in to do the following:
 
 All image URIs, such as those used for [add-in commands](../design/add-in-commands.md), must support caching in production. The server hosting the image shouldn't return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response. However, when you're developing the add-in and making changes to image files, the caching can prevent you from seeing your changes, so using `Cache-Control` headers is advisable in development.
 
-All URLs to code or content files in the add-in should be **SSL-secured (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
+All URLs to code or content files in the add-in should be **SSL-secured (HTTPS)**. [!INCLUDE [HTTPS guidance](../includes/https-guidance.md)]
 
 ## Best practices for submitting to AppSource
 
