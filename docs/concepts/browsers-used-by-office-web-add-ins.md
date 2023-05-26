@@ -80,7 +80,7 @@ To determine whether Office 2016 or Office 2019 is retail or volume-licensed, us
 
 <sup>2</sup> When you use either EdgeHTML or WebView2, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Trident+, the Narrator reads the title bar of the task pane, which comes from the add-in name that is specified in the add-in's manifest.
 
-<sup>3</sup> If your add-in uses an XML manifest and includes the **\<Runtimes\>** element in the manifest or it uses the unified manifest and it includes an "extensions.runtimes.lifetime" property, then it won't use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses WebView2. Otherwise, it uses Trident+. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Configure your Outlook add-in for event-based activation](../outlook/autolaunch?tabs=jsonmanifest).
+<sup>3</sup> If your add-in uses an XML manifest and includes the **\<Runtimes\>** element in the manifest or it uses the unified manifest and it includes an "extensions.runtimes.lifetime" property, then it won't use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses WebView2. Otherwise, it uses Trident+. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Configure your Outlook add-in for event-based activation](../outlook/autolaunch.md?tabs=jsonmanifest).
 
 ### Microsoft 365 subscription versions of Office on Windows
 
@@ -101,7 +101,7 @@ For subscription Office on Windows, the browser that is used is determined by th
 
 <sup>3</sup> When you use either EdgeHTML or WebView2, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Trident+, the Narrator reads the title bar of the task pane, which comes from the add-in name that is specified in the add-in's manifest.
 
-<sup>4</sup> If your add-in uses an XML manifest and includes the **\<Runtimes\>** element in the manifest or it uses the unified manifest and it includes an "extensions.runtimes.lifetime" property, then it won't use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses WebView2. Otherwise, it uses Trident+. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Configure your Outlook add-in for event-based activation](../outlook/autolaunch?tabs=jsonmanifest).
+<sup>4</sup> If your add-in uses an XML manifest and includes the **\<Runtimes\>** element in the manifest or it uses the unified manifest and it includes an "extensions.runtimes.lifetime" property, then it won't use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses WebView2. Otherwise, it uses Trident+. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Configure your Outlook add-in for event-based activation](../outlook/autolaunch.md?tabs=jsonmanifest).
 
 ## Working with Trident+ (Internet Explorer 11)
 
