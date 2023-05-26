@@ -58,7 +58,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 ## Configure the manifest
 
 > [!NOTE]
-> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
+> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
 To enable the add-in to activate when the `OnMessageFromChanged` event occurs, the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point must be configured in the `VersionOverridesV1_1` node of the manifest.
 
@@ -169,7 +169,7 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
 > [!TIP]
 >
 > - To learn about runtimes in add-ins, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-> - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement the event handlers
 

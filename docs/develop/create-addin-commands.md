@@ -28,7 +28,7 @@ The following steps explain how to add add-in commands to an existing add-in.
 
 ### Step 1: Add VersionOverrides element
 
-The [**\<VersionOverrides\>** element](/javascript/api/manifest/versionoverrides) is the root element that contains the definition of your add-in command. Details on the valid attributes and implications are found in [Version overrides in the manifest](add-in-manifests.md?tabs=tabid-1#version-overrides-in-the-manifest).
+The [**\<VersionOverrides\>** element](/javascript/api/manifest/versionoverrides) is the root element that contains the definition of your add-in command. Details on the valid attributes and implications are found in [Version overrides in the manifest](xml-manifest-overview.md?tabs=tabid-1#version-overrides-in-the-manifest).
 
 The following example shows the **\<VersionOverrides\>** element and its child elements.
 

@@ -59,7 +59,7 @@ An Office Add-in's manifest (an XML file) defines the settings and capabilities 
 - Dimensions of the add-in (for example, dimensions for content add-ins, requested height for Outlook add-ins).
 - Rules that specify when the add-in activates in the context of a message or appointment (for Outlook add-ins only).
 
-For detailed information about the manifest, see [Office Add-ins XML manifest](add-in-manifests.md).
+For detailed information about the manifest, see [Office Add-ins manifest](add-in-manifests.md).
 
 ### Interact with content in an Office document
 

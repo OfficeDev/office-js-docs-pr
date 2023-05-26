@@ -149,7 +149,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 > [!TIP]
 >
 > - For **SendMode** options available with the `OnMessageSend` and `OnAppointmentSend` events, see [Available SendMode options](/javascript/api/manifest/launchevent#available-sendmode-options).
-> - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
 
 # [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
 
@@ -461,7 +461,7 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 
 ## See also
 
-- [Outlook add-in manifests](manifests.md)
+- [Office add-in manifests](../develop/add-in-manifests.md)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
 - [Event-based activation troubleshooting guide](autolaunch.md#troubleshooting-guide)
 - [How to debug event-based add-ins](debug-autolaunch.md)

@@ -266,7 +266,7 @@ Outlook on Windows uses a JavaScript file, while Outlook on the web and on the n
 > [!TIP]
 >
 > - To learn about runtimes in add-ins, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-> - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement event handling
 
@@ -521,7 +521,7 @@ A [simple CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS#simple_requests
 
 ## See also
 
-- [Outlook add-in manifests](manifests.md)
+- [Office add-in manifests](../develop/add-in-manifests.md)
 - [How to debug event-based add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
 - [Smart Alerts and OnMessageSend walkthrough](smart-alerts-onmessagesend-walkthrough.md)

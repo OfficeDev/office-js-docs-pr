@@ -517,5 +517,5 @@ The following sections show the manifest elements in the order in which they mus
 
 ## See also
 
-- [Reference for Office Add-ins manifests (v1.1)](../develop/add-in-manifests.md)
+- [Reference for Office Add-ins manifests (v1.1)](/javascript/api/manifest)
 - [Official schema definitions](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)

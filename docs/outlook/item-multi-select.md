@@ -22,7 +22,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 ## Configure the manifest
 
 > [!NOTE]
-> The item multi-select feature isn't currently supported in the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md), but the team is working on making this available.
+> The item multi-select feature isn't currently supported in the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md), but the team is working on making this available.
 
 To enable your add-in to activate on multiple selected messages, you must add the [SupportsMultiSelect](/javascript/api/manifest/action#supportsmultiselect) child element to the **\<Action\>** element and set its value to `true`. As item multi-select only supports messages at this time, the **\<ExtensionPoint\>** element's `xsi:type` attribute value must be set to `MessageReadCommandSurface` or `MessageComposeCommandSurface`.
 
@@ -229,7 +229,7 @@ Now that you've enabled your add-in to operate on multiple selected messages, yo
 
 ## See also
 
-- [Outlook add-in manifests](manifests.md)
+- [Office add-in manifests](../develop/add-in-manifests.md)
 - [Call web services from an Outlook add-in](web-services.md)
 - [Overview of Microsoft Graph](/graph/overview)
 - [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)
