@@ -2,7 +2,7 @@
 title: Browsers and webview controls used by Office Add-ins
 description: Specifies how the operating system and Office version determine what webview is used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 05/20/2023
+ms.date: 05/26/2023
 ms.localizationpriority: medium
 ---
 
@@ -46,7 +46,7 @@ For these platforms, the platform alone determines the browser that is used.
 |Android|any|Chrome|
 
 > [!IMPORTANT]
-> [Conditional Access](/azure/active-directory/conditional-access/overview) is not supported for Office Add-ins on iOS or Android. Those add-ins use the Safari-based WKWebView, not an Edge-based browser control.
+> [Conditional Access](/azure/active-directory/conditional-access/overview) is not supported for Office Add-ins on iOS or Android. Those add-ins use the Safari-based WKWebView or the Android-based WebView, not an Edge-based browser control.
 
 ## Windows
 
@@ -91,7 +91,7 @@ For subscription Office on Windows, the browser that is used is determined by th
 |Windows 11,<br>Windows 10,<br>Windows 8.1,<br>Windows Server 2022,<br>Windows Server 2019,<br>Windows Server 2016| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>1</sup>| Yes<sup>2</sup>|  WebView2 (Microsoft Edge<sup>3</sup> Chromium-based) |
 |Window 11,<br>Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>1</sup>| No |EdgeHTML (Microsoft Edge Legacy)<sup>3, 4</sup>|
 |Windows 11,<br>Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;*AND*&nbsp;<&nbsp;16.0.13530.20424<sup>1</sup>| Doesn't matter|EdgeHTML (Microsoft Edge Legacy)<sup>3, 4</sup>|
-|Windows 11,<br>Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>| Doesn't matter|Internet Explorer 11|
+|Windows 11,<br>Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>| Doesn't matter|Trident+ (Internet Explorer 11)|
 |Windows 10 ver.&nbsp;<&nbsp;1903,<br>Windows 8.1| Microsoft 365 | No| Trident+ (Internet Explorer 11)|
 |Windows 7 | Microsoft 365| Doesn't matter | Trident+ (Internet Explorer 11)|
 
