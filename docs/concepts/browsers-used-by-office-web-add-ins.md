@@ -78,9 +78,9 @@ To determine whether Office 2016 or Office 2019 is retail or volume-licensed, us
 
 <sup>1</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with perpetual Office 2021 or later; but it isn't automatically installed with Microsoft Edge. If you have an earlier version of perpetual Office, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
-<sup>2</sup> When you use either EdgeHTML or WebView2, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Trident+, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
+<sup>2</sup> When you use either EdgeHTML or WebView2, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Trident+, the Narrator reads the title bar of the task pane, which comes from the add-in name that is specified in the add-in's manifest.
 
-<sup>3</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it won't use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses that browser. Otherwise, it uses Trident+. For more information, see [Runtimes](/javascript/api/manifest/runtimes).
+<sup>3</sup> If your add-in uses an XML manifest and includes the **\<Runtimes\>** element in the manifest or it uses the unified manifest and it has a "extensions.runtimes.lifetime" property, then it won't use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses WebView2. Otherwise, it uses Trident+. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Configure your Outlook add-in for event-based activation](../outlook/autolaunch?tabs=jsonmanifest).
 
 ### Microsoft 365 subscription versions of Office on Windows
 
@@ -99,9 +99,9 @@ For subscription Office on Windows, the browser that is used is determined by th
 
 <sup>2</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with Microsoft 365, Version 2101 or later, but it isn't automatically installed with Microsoft Edge. If you have an earlier version of Microsoft 365, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). On Microsoft 365 builds before 16.0.14326.xxxxx, you must also create the registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2** and set its value to `dword:00000001`.
 
-<sup>3</sup> When you use either EdgeHTML or WebView2, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Trident+, the Narrator reads the title bar of the task pane, which comes from the **\<DisplayName\>** value in the add-in's manifest.
+<sup>3</sup> When you use either EdgeHTML or WebView2, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Trident+, the Narrator reads the title bar of the task pane, which comes from the add-in name that is specified in the add-in's manifest.
 
-<sup>4</sup> If your add-in includes the **\<Runtimes\>** element in the manifest, then it won't use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses that browser. Otherwise, it uses Trident+ regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes).
+<sup>4</sup> If your add-in uses an XML manifest and includes the **\<Runtimes\>** element in the manifest or it uses the unified manifest and it includews an "extensions.runtimes.lifetime" property, then it won't use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses WebView2. Otherwise, it uses Trident+. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Configure your Outlook add-in for event-based activation](../outlook/autolaunch?tabs=jsonmanifest).
 
 ## Working with Trident+ (Internet Explorer 11)
 
