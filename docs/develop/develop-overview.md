@@ -15,7 +15,7 @@ All Office Add-ins are built upon the Office Add-ins platform. For any add-in yo
 
 ## Create an Office Add-in
 
-You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md) or Visual Studio, or Teams Toolkit.
+You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md), Visual Studio, or Teams Toolkit.
 
 ### Yeoman generator
 
