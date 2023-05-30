@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.
-ms.date: 05/19/2023
+ms.date: 05/30/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -10,9 +10,12 @@ ms.localizationpriority: medium
 
 This article describes how to enable shared folders (also known as delegate access) and shared mailbox scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
 
+> [!NOTE]
+> Shared folder support was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). For information about client support for these features, see [Supported clients and platforms](#supported-clients-and-platforms).
+
 ## Supported clients and platforms
 
-The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable. Excluded combinations are not supported.
+The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable. Excluded combinations aren't supported.
 
 | Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2013 on-premises |
 |---|:---:|:---:|:---:|:---:|
@@ -22,10 +25,7 @@ The following table shows supported client-server combinations for this feature,
 |**Web browser (classic Outlook UI)**|Not applicable|Not applicable|Not applicable|Not applicable|
 
 > [!NOTE]
-> \* Support for this feature in an on-premises Exchange environment is available starting in Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
-
-> [!IMPORTANT]
-> Shared folder support was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support these requirement sets.
+> \* Support for this feature in an on-premises Exchange environment is available starting in Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
 
 ## Supported setups
 
@@ -98,7 +98,7 @@ If the calendar owner granted broad access to their calendar (for example, made 
 
 ---
 
-To learn more about where add-ins do and do not activate in general, refer to the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page.
+To learn more about where add-ins do and don't activate in general, refer to the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page.
 
 ## Supported permissions
 
@@ -256,7 +256,7 @@ if (item.getSharedPropertiesAsync) {
 
   // Perform operation for shared item.
 } else {
-  // In general, this is not a shared item, so construct the REST URL using info from the Call REST APIs article:
+  // In general, this isn't a shared item, so construct the REST URL using info from the Call REST APIs article:
   // https://learn.microsoft.com/office/dev/add-ins/outlook/use-rest-api
 
   // Perform operation for non-shared item.
@@ -269,7 +269,7 @@ Depending on your add-in's scenarios, there are a few limitations for you to con
 
 ### Message Compose mode
 
-In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) is not supported in Outlook on the web or on Windows unless the following conditions are met.
+In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) isn't supported in Outlook on the web or on Windows unless the following conditions are met.
 
 a. **Delegate access/Shared folders**
 
