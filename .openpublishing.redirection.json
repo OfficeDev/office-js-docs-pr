@@ -5,6 +5,10 @@
             "redirect_url": "/office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution"
         },
         {
+            "source_path": "docs/quickstarts/excel-quickstart-angular.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
+        },
+        {
             "source_path": "docs/develop/create-and-debug-office-add-ins-in-visual-studio.md",
             "redirect_url": "/office/dev/add-ins/develop/create-office-add-ins-in-visual-studio"
         },
