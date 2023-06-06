@@ -2,7 +2,7 @@
 title: Debug Office Add-ins
 description: Find the Office Add-in debugging guidance for your development environment.
 ms.topic: overview
-ms.date: 05/20/2023
+ms.date: 06/02/2023
 ms.localizationpriority: high
 ---
 
@@ -33,12 +33,13 @@ The rest of this article is concerned only with debugging client-side JavaScript
 There are some special cases in which the debugging process differs from normal for a given combination of platform, Office application, and development environment. If you're debugging any of these special cases, use the links in this section to find the proper guidance. Otherwise, continue to [General guidance](#general-guidance).
 
 - **Debugging the `Office.initialize` or `Office.onReady` function**: [Debug the initialize and onReady functions](debug-initialize-onready.md).
-- **Debugging an Excel custom function in a _non-shared_ runtime**: [Custom functions debugging in a non-shared runtime](../excel/custom-functions-debugging.md).
-- **Debugging a [function command](../design/add-in-commands.md#types-of-add-in-commands) in a _non-shared_ runtime**: 
-    - Outlook add-ins on a Windows development computer: [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md) 
-    - Other Office application add-ins or Outlook on a Mac development computer: [Debug a function command with a non-shared runtime](debug-function-command.md).
-- **Debugging an event-based Outlook add-in**: [Debug your event-based Outlook add-in](../outlook/debug-autolaunch.md). 
- 
+- **Debugging an Excel custom function in a *non-shared* runtime**: [Custom functions debugging in a non-shared runtime](../excel/custom-functions-debugging.md).
+- **Debugging a [function command](../design/add-in-commands.md#types-of-add-in-commands) in a *non-shared* runtime**:
+  - Outlook add-ins on a Windows development computer: [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md)
+  - Other Office application add-ins or Outlook on a Mac development computer: [Debug a function command with a non-shared runtime](debug-function-command.md).
+- **Debugging an event-based Outlook add-in**: [Debug your event-based Outlook add-in](../outlook/debug-autolaunch.md).
+- **Debugging an add-in in the new Outlook on Windows desktop client (preview)**: See the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows (preview)](../outlook/one-outlook.md#debug-your-add-in).
+
 ## General guidance
 
 To find guidance for debugging client-side code, the first variable is the operating system of your development computer.
@@ -55,9 +56,9 @@ The following provides general guidance to debugging on Windows. Debugging on Wi
 - **Visual Studio Code**: Debug using the [Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
 - **Any other IDE** (or you don't want to debug inside your IDE): Use the developer tools that are associated with the webview control that add-ins use on your development computer. See one of the following:
 
-    - For the Trident webview: [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
-    - For the EdgeHTML webview: [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
-    - For the WebView2 webview: [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
+  - For the Trident webview: [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+  - For the EdgeHTML webview: [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
+  - For the WebView2 webview: [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
 
 For information about which runtime is being used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [Runtimes in Office Add-ins](runtimes.md).
 
