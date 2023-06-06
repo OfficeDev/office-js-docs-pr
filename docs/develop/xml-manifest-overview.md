@@ -2,7 +2,7 @@
 title: Office Add-ins XML manifest
 description: Get an overview of the Office Add-in XML manifest and its uses.
 ms.topic: overview
-ms.date: 05/24/2023
+ms.date: 06/06/2023
 ms.localizationpriority: high
 ---
 
@@ -53,7 +53,6 @@ The following table specifies the elements that are required for the three types
 | [DefaultLocale][]                                                                            | Required   | Required     | Required     |
 | [DisplayName][]                                                                              | Required   | Required     | Required     |
 | [Description][]                                                                              | Required   | Required     | Required     |
-| [IconUrl][]                                                                                  | Required   | Required     | Required     |
 | [SupportUrl][]\*\*                                                                           | Required   | Required     | Required     |
 | [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       | Required   | Required     | Not available|
 | [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]<br/>[SourceLocation (MailApp)][]| Required | Required | Required   |
@@ -78,7 +77,6 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 [defaultlocale]: /javascript/api/manifest/defaultlocale
 [displayname]: /javascript/api/manifest/displayname
 [description]: /javascript/api/manifest/description
-[iconurl]: /javascript/api/manifest/iconurl
 [supporturl]: /javascript/api/manifest/supporturl
 [defaultsettings (contentapp)]: /javascript/api/manifest/defaultsettings
 [defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings
