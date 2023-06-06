@@ -54,13 +54,13 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
     ```json
     {
-      "name": "Direct Debugging",
-      "type": "node",
-      "request": "attach",
-      "port": 9223,
-      "protocol": "inspector",
-      "timeout": 600000,
-      "trace": true
+      "name": "Direct Debugging",
+      "type": "node",
+      "request": "attach",
+      "port": 9223,
+      "protocol": "inspector",
+      "timeout": 600000,
+      "trace": true
     }
     ```
 
@@ -82,13 +82,13 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
     ```json
     {
-      "name": "Direct Debugging",
-      "type": "node",
-      "request": "attach",
-      "port": 9223,
-      "protocol": "inspector",
-      "timeout": 600000,
-      "trace": true
+      "name": "Direct Debugging",
+      "type": "node",
+      "request": "attach",
+      "port": 9223,
+      "protocol": "inspector",
+      "timeout": 600000,
+      "trace": true
     }
     ```
 
