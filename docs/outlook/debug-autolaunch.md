@@ -54,7 +54,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
     ```json
     {
-      "name": "Direct Debugging",
+      "name": "Direct Debugging",
       "type": "node",
       "request": "attach",
       "port": 9223,
@@ -82,7 +82,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
     ```json
     {
-      "name": "Direct Debugging",
+      "name": "Direct Debugging",
       "type": "node",
       "request": "attach",
       "port": 9223,
