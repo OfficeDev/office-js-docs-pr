@@ -6,7 +6,7 @@ ms.date: 06/08/2023
 ms.localizationpriority: medium
 ---
 
-# Convert add-in to use the unified manifest for Microsoft 365
+# Convert an add-in to use the unified manifest for Microsoft 365
 
 There are two basic tasks to converting an add-in project from the XML manifest to the unified manifest for Microsoft 365:
 
