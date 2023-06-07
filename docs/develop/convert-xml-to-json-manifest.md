@@ -45,7 +45,8 @@ When you've added the files to the project, add **\<IconUrl\>** and **\<HighReso
 The are several ways to carry out the remaining tasks, depending on what IDE and other tools you want to use for your project and on what tool was used to create the project. 
 
 - [Convert the project with Teams Toolkit](#convert-the-project-with-teams-toolkit)
--
+- [Projects created with the Office Yeoman Generator (aka "Yo Office")](#projects-created-with-the-office-yeoman-generator-aka-yo-office)
+- [NodeJS and npm projects that are not created with Yeoman Generator](#nodejs-and-npm-projects-that-are-not-created-with-yeoman-generator)
 
 ### Convert the project with Teams Toolkit
 
