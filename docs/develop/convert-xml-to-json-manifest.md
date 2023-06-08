@@ -111,7 +111,7 @@ If the project was created with the Office Yeoman Generator (using any option ex
 
 If you don't want to use the Teams Toolkit and your project wasn't created with the Office Yeoman generator, take these steps.
 
-1. In the root of the project, open a command prompt or bash shell and run the following commands. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original XML manifest. For example, if the manifest is named MyManifest.xml, the unified manifest is created at .\MyManifest\MyManifest.json. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
+In the root of the project, open a command prompt or bash shell and run the following commands. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original XML manifest. For example, if the manifest is named MyManifest.xml, the unified manifest is created at .\MyManifest\MyManifest.json. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
 
     ```command&nbsp;line
     npx office-addin-manifest-converter convert -m <relative-path-to-XML-manifest>
@@ -139,7 +139,7 @@ Once you have the unified manifest created, there are two ways to create the zip
 
     1. Open the unified manifest and scroll to the "icons" property. Note the relative path of the two image files.
     1. Use any zip utility to create a zip file that contains the unified manifest and the two image files. *The image files must have the same relative path in the zip file as they do in the project.* For example, if the relative path is "assets/icon-64.png" and "assets/icon-128.png", then you must include the "assets" folder with the two files in the zip package. 
-    1. If the folder contains other files, such as image files used in the Office ribbon, remove these from the zip package. It should have only the two image files specified in the "icons" property. 
+    1. If the folder contains other files, such as image files used in the Office ribbon, remove these from the zip package. It should have only the two image files specified in the "icons" property (in addition to the manifest in the root of the zip package). 
 
 1. In the root of the project, open a command prompt or bash shell and run the following commands.
 
