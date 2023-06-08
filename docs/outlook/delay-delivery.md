@@ -1,7 +1,7 @@
 ---
 title: Manage the delivery date and time of a message
 description: Learn how to get and set the delivery date and time of a message in compose mode.
-ms.date: 05/19/2023
+ms.date: 06/08/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -12,6 +12,10 @@ The Outlook client gives you the option to delay the delivery of a message, but 
 
 > [!NOTE]
 > Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+
+## Preview the delay delivery API in Outlook on Mac
+
+To preview the delay delivery API in Outlook on Mac, install Version 16.71.222.0 or later.
 
 ## Configure the manifest
 

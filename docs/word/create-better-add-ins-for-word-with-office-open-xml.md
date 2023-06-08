@@ -1,7 +1,7 @@
 ---
 title: Understand when and how to use Office Open XML in your Word add-in
 description: Overview of when and how to use Office Open XML in your Word add-in.
-ms.date: 07/15/2022
+ms.date: 06/07/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -12,6 +12,8 @@ ms.localizationpriority: medium
 **Provided by:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
 If you're building Office Add-ins to run in Word, you might already know that the Office JavaScript API (Office.js) offers several formats for reading and writing document content. These are called coercion types, and they include plain text, tables, HTML, and Office Open XML.
+
+## Options for adding rich content
 
 So what are your options when you need to add rich content to a document, such as images, formatted tables, charts, or even just formatted text?
 
@@ -105,10 +107,14 @@ There are two simple ways to get the Office Open XML markup you need. Either add
 > [!TIP]
 > An Office Open XML document is actually a compressed package of files that represent the document contents. Saving the file in the Word XML Document format gives you the entire Office Open XML package flattened into one XML file, which is also what you get when using `getSelectedDataAsync` to retrieve the Office Open XML markup.
 
-If you save the file to an XML format from Word, note that there are two options under the Save as Type list in the Save As dialog box for .xml format files. Be sure to choose **Word XML Document** and not the Word 2003 option.
+If you save the file to an XML format from Word, note that there are two options under the Save as Type list in the Save As dialog box for .xml format files. Be sure to choose **Word XML Document**, not the Word 2003 option.
+
 Download the code sample named [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML), which you can use as a tool to retrieve and test your markup.
+
 So is that all there is to it? Well, not quite. Yes, for many scenarios, you could use the full, flattened Office Open XML result you see with either of the preceding methods and it would work. The good news is that you probably don't need most of that markup.
+
 If you're one of the many add-in developers seeing Office Open XML markup for the first time, trying to make sense of the massive amount of markup you get for the simplest piece of content might seem overwhelming, but it doesn't have to be.
+
 In this topic, you'll use some common scenarios we've been hearing from the Office Add-ins developer community to show you techniques for simplifying Office Open XML for use in your add-in. We'll explore the markup for some types of content shown earlier along with the information you need for minimizing the Office Open XML payload. We'll also look at the code you need for inserting rich content into a document at the active selection and how to use Office Open XML with the bindings object to add or replace content at specified locations.
 
 ## Explore the Office Open XML document package
@@ -141,7 +147,7 @@ Several of the other types of content shown at the start of this topic require a
 - The document.xml.rels part defines relationships for additional parts required by the document.xml (main body) part, if any.
 
    > [!IMPORTANT]
-   > The .rels files in your package (such as the top-level .rels, document.xml.rels, and others you may see for specific types of content) are an extremely important tool that you can use as a guide for helping you quickly edit down your Office Open XML package. To learn more about how to do this, see [Creating your own markup: best practices](#create-your-own-markup-best-practices) later in this topic.
+   > The .rels files in your package (such as the top-level .rels, document.xml.rels, and others you may see for specific types of content) are an extremely important tool that you can use as a guide for helping you quickly edit down your Office Open XML package. To learn more about how to do this, see [Create your own markup: best practices](#create-your-own-markup-best-practices) later in this topic.
 
 - The document.xml part is the content in the main body of the document. You need elements of this part, of course, since that's where your content appears. But, you don't need everything you see in this part. We'll look at that in more detail later.
 
@@ -155,7 +161,7 @@ Let's take a look at the minimal Office Open XML markup required for the formatt
 
 ### Simplified Office Open XML markup
 
-You've edited the Office Open XML example shown here, as described in the preceding section, to leave just required document parts and only required elements within each of those parts. You'll walk through how to edit the markup yourself (and we'll explain a bit more about the pieces that remain here) in the next section of the topic.
+The Office Open XML example shown here was edited as described in the preceding section to leave just required document parts and only required elements within each of those parts. You'll walk through how to edit the markup yourself (and we'll explain a bit more about the pieces that remain here) in the next section of the topic.
 
 ```XML
 <pkg:package xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage">
@@ -316,14 +322,14 @@ To turn off RSID attributes in Word for documents you create going forward, do t
 
 1. In Word, choose **File** and then choose **Options**.
 1. In the Word Options dialog box, choose **Trust Center** and then choose **Trust Center Settings**.
-1. In the Trust Center dialog box, choose **Privacy Options** and then disable the setting **Store random numbers to improve Combine accuracy**.
+1. In the Trust Center dialog box, choose **Privacy Options** and then disable the setting **Store random numbers to improve Combine accuracy**. *Note that this setting may not be available in newer versions of Word.*
 
 To remove RSID tags from an existing document, try the following shortcut with the document open in Office Open XML.
 
 1. With your insertion point in the main body of the document, press **Ctrl+Home** to go to the top of the document.
 1. On the keyboard, press **Spacebar**, **Delete**, **Spacebar**. Then, save the document.
 
-After removing the majority of the markup from this package, we're left with the minimal markup that needs to be inserted for the sample, as shown in the preceding section.
+After removing the majority of the markup from this package, you're left with the minimal markup that needs to be inserted for the sample, as shown in the preceding section.
 
 ## Use the same Office Open XML structure for different content types
 
@@ -333,11 +339,9 @@ To check out the Office Open XML markup for the examples of each of these conten
 
 Before you move on, take a look at differences to note for a couple of these content types and how to swap out the pieces you need.
 
-### Understand drawingML markup (Office graphics) in Word: What are fallbacks?
+### Understand drawingML markup (Office graphics) in Word
 
 If the markup for your shape or text box looks far more complex than you would expect, there's a reason for it. With the release of Office 2007, we saw the introduction of the Office Open XML Formats as well as the introduction of a new Office graphics engine that PowerPoint and Excel fully adopted. In the 2007 release, Word only incorporated part of that graphics engine, adopting the updated Excel charting engine, SmartArt graphics, and advanced picture tools. For shapes and text boxes, Word 2007 continued to use legacy drawing objects (VML). It was in the 2010 release that Word took the additional steps with the graphics engine to incorporate updated shapes and drawing tools.
-
-So, to support shapes and text boxes in Office Open XML Format Word documents when opened in Word 2007, shapes (including text boxes) require fallback VML markup.
 
 Typically, as you see for the shape and text box examples included in the [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) code sample, the fallback markup can be removed. Word automatically adds missing fallback markup to shapes when a document is saved. However, if you prefer to keep the fallback markup to ensure that you're supporting all user scenarios, there's no harm in retaining it.
 
@@ -348,7 +352,7 @@ If you have grouped drawing objects included in your content, you'll see additio
 
 #### About graphic positioning
 
-In the code samples [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) and [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML), the text box and shape are setup using different types of text wrapping and positioning settings. (Also be aware that the image examples in those code samples are setup using in line with text formatting, which positions a graphic object on the text baseline.)
+In the code samples [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) and [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML), the text box and shape are set up using different types of text wrapping and positioning settings. (Also be aware that the image examples in those code samples are set up using in line with text formatting, which positions a graphic object on the text baseline.)
 
 The shape in those code samples is positioned relative to the right and bottom page margins. Relative positioning lets you more easily coordinate with a user's unknown document setup because it will adjust to the user's margins and run less risk of looking awkward because of paper size, orientation, or margin settings. To retain relative positioning settings when you insert a graphic object, you must retain the paragraph mark (w:p) in which the positioning (known in Word as an anchor) is stored. If you insert the content into an existing paragraph mark rather than including your own, you may be able to retain the same initial visual, but many types of relative references that enable the positioning to automatically adjust to the user's layout may be lost.
 
@@ -376,7 +380,7 @@ Don't confuse XML data binding in Word with the ability to bind to a control via
 
 Also be aware that both XML data binding and Office.js can interact with custom XML parts in your app, so it's possible to integrate these powerful tools. To learn about working with custom XML parts in the Office JavaScript API, see the [See also](#see-also) section of this topic.
 
-Working with bindings in your Word add-in is covered in the next section of the topic. First, take a look at an example of the Office Open XML required for inserting a rich text content control that you can bind to using your add-in.
+Working with bindings in your Word add-in is covered in the next section of this topic. First, take a look at an example of the Office Open XML required for inserting a rich text content control that you can bind to using your add-in.
 
 > [!IMPORTANT]
 > Rich text controls are the only type of content control you can use to bind to a content control from within your add-in.
@@ -443,11 +447,11 @@ You've already looked at how to insert content at the active selection in a Word
 
 So when might you want to use this approach?
 
-- When you need to add or replace content at specified locations in a template, such as to populate portions of the document from a database
+- When you need to add or replace content at specified locations in a template, such as to populate portions of the document from a database.
 
-- When you want the option to replace content that you're inserting at the active selection, such as to provide design element options to the user
+- When you want the option to replace content that you're inserting at the active selection, such as to provide design element options to the user.
 
-- When you want the user to add data in the document that you can access for use with your add-in, such as to populate fields in the task pane based upon information the user adds in the document
+- When you want the user to add data in the document that you can access for use with your add-in, such as to populate fields in the task pane based upon information the user adds in the document.
 
 Download the code sample [Word-Add-in-JavaScript-AddPopulateBindings](https://github.com/OfficeDev/Word-Add-in-JavaScript-AddPopulateBindings), which provides a working example of how to insert and bind to a content control, and how to populate the binding.
 
@@ -485,13 +489,13 @@ The code shown here takes the following steps.
 
 - Attempts to bind to the named content control, using [addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1)).
 
-  Take this step first if there's a possible scenario for your add-in where the named control could already exist in the document when the code executes. For example, you'll want to do this if the add-in was inserted into and saved with a template that's been designed to work with the add-in, where the control was placed in advance. You also need to do this if you need to bind to a control that was placed earlier by the add-in.
+  Take this step first if there's a possible scenario for your add-in where the named control could already exist in the document when the code runs. For example, you'll want to do this if the add-in was inserted into and saved with a template that's been designed to work with the add-in, where the control was placed in advance. You also need to do this if you need to bind to a control that was placed earlier by the add-in.
 
 - The callback in the first call to the `addFromNamedItemAsync` method checks the status of the result to see if the binding failed because the named item doesn't exist in the document (that is, the content control named MyContentControlTitle in this example). If so, the code adds the control at the active selection point (using `setSelectedDataAsync`) and then binds to it.
 
 As mentioned earlier and shown in the preceding code, the name of the content control is used to determine where to create the binding. However, in the Office Open XML markup, the code adds the binding to the document using both the name and the ID attribute of the content control.
 
-After code execution, if you examine the markup of the document in which your add-in created bindings, you'll see two parts to each binding. In the markup for the content control where a binding was added (in document.xml), you'll see the attribute **w15:webExtensionLinked/**.
+After running code, if you examine the markup of the document in which your add-in created bindings, you'll see two parts to each binding. In the markup for the content control where a binding was added (in document.xml), you'll see the attribute **w15:webExtensionLinked/**.
 
 In the document part named webExtensions1.xml, you'll see a list of the bindings you've created. Each is identified using the binding ID and the ID attribute of the applicable control, such as the following, where the **appref** attribute is the content control ID: **we:binding id="myBinding" type="text" appref="1382295294"/**.
 
