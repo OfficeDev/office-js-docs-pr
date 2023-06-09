@@ -549,6 +549,7 @@ a:hover, a:active
 
 *Figure 6. Demo dictionary UI*
 
+[!div class="mx-imgBorder"]
 ![Demo dictionary UI.](../images/dictionary-add-in-06.png)
 
 ### Write the JavaScript implementation
@@ -634,3 +635,16 @@ function errorHandler(jqXHR, textStatus, errorThrown) {
     document.getElementById('message').innerText += ("textStatus:- " + textStatus + "\nerrorThrown:- " + errorThrown + "\njqXHR:- " + JSON.stringify(jqXHR));
 }
 ```
+
+## Try it out
+
+1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+
+1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you're using the volume-licensed perpetual version of Office, instead of the Microsoft 365 version or a retail perpetual version, then custom buttons aren't supported. Instead, the task pane will open immediately.)
+
+    ![The Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-0.png)
+
+1. In Word, add text to the document then select any or all of that text.
+
+    [!div class="mx-imgBorder"]
+    ![Dictionary task pane UI.](../images/dictionary-add-in-06.png)
