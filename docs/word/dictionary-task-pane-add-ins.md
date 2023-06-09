@@ -1,11 +1,10 @@
 ---
 title: Create a dictionary task pane add-in
 description: Learn how to create a dictionary task pane add-in.
-ms.date: 05/20/2023
+ms.date: 06/13/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
-
 
 # Create a dictionary task pane add-in
 
@@ -14,14 +13,17 @@ This article shows you an example of a task pane add-in with an accompanying web
 A dictionary Office Add-in is based on the standard task pane add-in with additional features to support querying and displaying definitions from a dictionary XML web service in additional places in the Office application's UI.
 
 In a typical dictionary task pane add-in, a user selects a word or phrase in their document, and the JavaScript logic behind the add-in passes this selection to the dictionary provider's XML web service. The dictionary provider's webpage then updates to show the definitions for the selection to the user.
+
 The XML web service component returns up to three definitions in the format defined by the OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI.
+
 Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that is running in Word.
 
 *Figure 1. Dictionary add-in displaying definitions for the selected word*
 
-![Dictionary app displaying a definition.](../images/dictionary-agave-01.jpg)
+![Dictionary app displaying a definition.](../images/dictionary-add-in-01.png)
 
 It's up to you to determine if selecting the **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate window to the full webpage for the selected word or phrase.
+
 Figure 2 shows the **Define** command in the context menu that enables users to quickly launch installed dictionaries. Figures 3 through 5 show the places in the Office UI where the dictionary XML services are used to provide definitions in Word.
 
 *Figure 2. Define command in the context menu*
@@ -47,21 +49,29 @@ To create a task pane add-in that provides a dictionary lookup, you create two m
 
 The following sections provide examples of how to create these components.
 
-## Creating a dictionary XML web service
+## Prerequisites
+
+[!include[Visual Studio project prerequisites](../includes/quickstart-vs-prerequisites.md)]
+
+Next, create a Word add-in project in Visual Studio.
+
+[!include[Visual Studio instructions to create Word solution](../includes/vs-word-instructions.md)]
+
+## Create a dictionary XML web service
 
 The XML web service must return queries to the web service as XML that conforms to the OfficeDefinitions XML schema. The following two sections describe the OfficeDefinitions XML schema, and provide an example of how to code an XML web service that returns queries in that XML format.
 
 ### OfficeDefinitions XML schema
 
-The following code shows the XSD for the OfficeDefinitions XML Schema.
+The following code shows sample XSD for the OfficeDefinitions XML Schema example.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xs="https://www.w3.org/2001/XMLSchema"
-  targetNamespace="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions"
-  xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
+  targetNamespace="http://schemas.microsoft.com/contoso/OfficeDefinitions"
+  xmlns="http://schemas.microsoft.com/contoso/OfficeDefinitions">
   <xs:element name="Result">
     <xs:complexType>
       <xs:sequence>
@@ -84,12 +94,12 @@ The following code shows the XSD for the OfficeDefinitions XML Schema.
 </xs:schema>
 ```
 
-Returned XML that conforms to the OfficeDefinitions schema consists of a root `Result` element that contains a `Definitions` element with from zero to three `Definition` child elements, each of which contains definitions that are no more than 400 characters in length. Additionally, the URL to the full page on the dictionary site must be provided in the `SeeMoreURL` element. The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.
+Returned XML that conforms to the OfficeDefinitions schema consists of a root **\<Result\>** element that contains a **\<Definitions\>** element with from zero to three **\<Definition\>** child elements, each of which contains definitions that are no more than 400 characters in length. Additionally, the URL to the full page on the dictionary site must be provided in the **\<SeeMoreURL\>** element. The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<Result xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
-  <SeeMoreURL xmlns="">www.bing.com/dictionary/search?q=example</SeeMoreURL>
+<Result xmlns="http://schemas.microsoft.com/contoso/OfficeDefinitions">
+  <SeeMoreURL xmlns="">https://www.bing.com/search?q=example</SeeMoreURL>
   <Definitions xmlns="">
     <Definition>Definition1</Definition>
     <Definition>Definition2</Definition>
@@ -113,14 +123,15 @@ using System.Xml;
 using System.Text;
 using System.IO;
 using System.Net;
+using System.Web.Script.Services.ScriptService;
 
 /// <summary>
 /// Summary description for _Default.
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
-// To allow this web service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-// [System.Web.Script.Services.ScriptService]
+// To allow this web service to be called from script, using ASP.NET AJAX, include the following line. 
+[ScriptService]
 public class WebService : System.Web.Services.WebService {
 
     public WebService () {
@@ -141,10 +152,10 @@ public class WebService : System.Web.Services.WebService {
         {
             writer.WriteStartDocument();
             
-                writer.WriteStartElement("Result", "http://schemas.microsoft.com/NLG/2011/OfficeDefinitions");
+                writer.WriteStartElement("Result", "http://schemas.microsoft.com/contoso/OfficeDefinitions");
 
                     // See More URL should be changed to the dictionary publisher's page for that word on their website.
-                    writer.WriteElementString("SeeMoreURL", "http://www.bing.com/search?q=" + word);
+                    writer.WriteElementString("SeeMoreURL", "https://www.bing.com/search?q=" + word);
 
                     writer.WriteStartElement("Definitions");
             
@@ -152,9 +163,9 @@ public class WebService : System.Web.Services.WebService {
                         writer.WriteElementString("Definition", "Definition 2 of " + word);
                         writer.WriteElementString("Definition", "Definition 3 of " + word);
                    
-                    writer.WriteEndElement();
+                    writer.WriteEndElement(); // End of Definitions element.
 
-                writer.WriteEndElement();
+                writer.WriteEndElement(); // End of Result element.
             
             writer.WriteEndDocument();
         }
@@ -168,7 +179,24 @@ public class WebService : System.Web.Services.WebService {
 }
 ```
 
-## Creating the components of a dictionary add-in
+To get you started with development, you can do the following:
+
+1. Add a **Web Service (ASMX)** to the add-in's web application project in Visual Studio, naming it **DictionaryWebService**.
+1. Replace the entire content of the associated .asmx.cs file with the preceding C# code sample.
+1. In the **Web.config** of the add-in's web application project, add the following to the **\<system.web\>** node.
+
+    ```XML
+    <webServices>
+      <protocols>
+        <add name="HttpGet" />
+        <add name="HttpPost" />
+      </protocols>
+    </webServices>
+    ```
+
+1. Save your changes.
+
+## Components of a dictionary add-in
 
 A dictionary add-in consists of three main component files:
 
@@ -176,7 +204,7 @@ A dictionary add-in consists of three main component files:
 - An HTML file that provides the add-in's UI.
 - A JavaScript file that provides logic to get the user's selection from the document, sends the selection as a query to the web service, and then displays returned results in the add-in's UI.
 
-### Creating a dictionary add-in's manifest file
+### Example of a dictionary add-in's manifest file
 
 The following is an example manifest file for a dictionary add-in.
 
@@ -190,19 +218,17 @@ The following is an example manifest file for a dictionary add-in.
   <!--DisplayName is the name that will appear in the user's list of applications.-->
   <DisplayName DefaultValue="Microsoft Office Demo Dictionary" />
   <!--Description is a 2-3 sentence description of this dictionary. -->
-  <Description DefaultValue="The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It does not return real definitions." />
+  <Description DefaultValue="The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It doesn't return real definitions." />
   <!--IconUrl is the URI for the icon that will appear in the user's list of applications.-->
-  <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
+  <IconUrl DefaultValue="http://contoso/_layouts/images/general/office_logo.jpg" />
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-  <!--Capabilities specifies the kind of Office application your dictionary add-in will support. You shouldn't have to modify this area.-->
-  <Capabilities>
-    <Capability Name="Workbook"/>
-    <Capability Name="Document"/>
-    <Capability Name="Project"/>
-  </Capabilities>
+  <!--Hosts specifies the kind of Office application your dictionary add-in will support. You shouldn't have to modify this area.-->
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
   <DefaultSettings>
-    <!--SourceLocation is the URL for your dictionary-->
-    <SourceLocation DefaultValue="http://christophernlg/ExampleDictionary/DictionaryHome.html" />
+    <!--SourceLocation is the URL for your dictionary.-->
+    <SourceLocation DefaultValue="http://contoso/ExampleDictionary/DictionaryHome.html" />
   </DefaultSettings>
   <!--Permissions is the set of permissions a user will have to give your dictionary. If you need write access, such as to allow a user to replace the highlighted word with a synonym, use ReadWriteDocument. -->
   <Permissions>ReadDocument</Permissions>
@@ -229,16 +255,16 @@ The following is an example manifest file for a dictionary add-in.
       <TargetDialect>EN-ZW</TargetDialect>
     </TargetDialects>
     <!--QueryUri is the address of this dictionary's XML web service (which is used to put definitions in additional contexts, such as the spelling checker.)-->
-    <QueryUri DefaultValue="http://christophernlg/ExampleDictionary/WebService.asmx/Define?word="/>
-    <!--Citation Text, Dictionary Name, and Dictionary Home Page will be combined to form the citation line (for example, this would produce "Examples by: Microsoft", where "Microsoft" is a hyperlink to http://www.microsoft.com).-->
+    <QueryUri DefaultValue="http://contoso/ExampleDictionary/WebService.asmx/Define?word="/>
+    <!--Citation Text, Dictionary Name, and Dictionary Home Page will be combined to form the citation line (for example, this would produce "Examples by: Contoso", where "Contoso" is a hyperlink to http://www.contoso.com).-->
     <CitationText DefaultValue="Examples by: " />
-    <DictionaryName DefaultValue="Microsoft" />
-    <DictionaryHomePage DefaultValue="http://www.microsoft.com" />
+    <DictionaryName DefaultValue="Contoso" />
+    <DictionaryHomePage DefaultValue="http://www.contoso.com" />
   </Dictionary>
 </OfficeApp>
 ```
 
-The `Dictionary` element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/xml-manifest-overview.md).
+The **\<Dictionary\>** element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/xml-manifest-overview.md).
 
 ### Dictionary element
 
@@ -254,7 +280,7 @@ Specifies settings for dictionary add-ins.
 
 **Remarks**
 
-The `Dictionary` element and its child elements are added to the manifest of a task pane add-in when you create a dictionary add-in.
+The **\<Dictionary\>** element and its child elements are added to the manifest of a task pane add-in when you create a dictionary add-in.
 
 #### TargetDialects element
 
@@ -270,7 +296,7 @@ Specifies the regional languages that this dictionary supports. Required for dic
 
 **Remarks**
 
-The `TargetDialects` element and its child elements specify the set of regional languages your dictionary contains. For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element. Do not specify more than one language (e.g., Spanish and English) in this manifest. Publish separate languages as separate dictionaries.
+The **\<TargetDialects\>** element and its child elements specify the set of regional languages your dictionary contains. For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element. Do not specify more than one language (e.g., Spanish and English) in this manifest. Publish separate languages as separate dictionaries.
 
 **Example**
 
@@ -345,7 +371,7 @@ Specifies the text to use in citations. Required for dictionary add-ins.
 
 This element specifies the beginning of the citation text that will be displayed on a line below the content that is returned from the web service (for example, "Results by: " or "Powered by: ").
 
-For this element, you can specify values for additional locales by using the `Override` element. For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing". For more information about how to specify values for additional locales, see [Localization](../develop/xml-manifest-overview.md#localization).
+For this element, you can specify values for additional locales by using the **\<Override\>** element. For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing". For more information about how to specify values for additional locales, see [Localization](../develop/xml-manifest-overview.md#localization).
 
 **Example**
 
@@ -390,53 +416,103 @@ For this element, you can specify values for additional locales.
 **Example**
 
 ```XML
-<DictionaryHomePage DefaultValue="http://www.bing.com" />
+<DictionaryHomePage DefaultValue="https://www.bing.com" />
 ```
 
-### Creating a dictionary add-in's HTML user interface
+### Update your dictionary add-in's manifest file
 
-The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript in the Dictionary.js file provides programming logic for this HTML UI, see "Writing the JavaScript implementation" immediately following this section.
+1. Open the XML manifest file in the add-in project.
+1. Update the **\<ProviderName\>** element with your name.
+1. Replace the **\<DefaultValue\>** of the **\<DisplayName\>** element with an appropriate name, for example, "Microsoft Office Demo Dictionary".
+1. Replace the **\<DefaultValue\>** of the **\<Description\>** element with an appropriate name, for example, "The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It does not return real definitions.".
+1. Add the following code after the **\<Permissions\>** node, replacing "contoso" references with your own company name, then save your changes.
+
+    ```XML
+    <Dictionary>
+      <!--TargetDialects is the set of regional languages your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. Do not put more than one language (for example, Spanish and English) here. Publish separate languages as separate dictionaries. -->
+      <TargetDialects>
+        <TargetDialect>EN-AU</TargetDialect>
+        <TargetDialect>EN-BZ</TargetDialect>
+        <TargetDialect>EN-CA</TargetDialect>
+        <TargetDialect>EN-029</TargetDialect>
+        <TargetDialect>EN-HK</TargetDialect>
+        <TargetDialect>EN-IN</TargetDialect>
+        <TargetDialect>EN-ID</TargetDialect>
+        <TargetDialect>EN-IE</TargetDialect>
+        <TargetDialect>EN-JM</TargetDialect>
+        <TargetDialect>EN-MY</TargetDialect>
+        <TargetDialect>EN-NZ</TargetDialect>
+        <TargetDialect>EN-PH</TargetDialect>
+        <TargetDialect>EN-SG</TargetDialect>
+        <TargetDialect>EN-ZA</TargetDialect>
+        <TargetDialect>EN-TT</TargetDialect>
+        <TargetDialect>EN-GB</TargetDialect>
+        <TargetDialect>EN-US</TargetDialect>
+        <TargetDialect>EN-ZW</TargetDialect>
+      </TargetDialects>
+      <!--QueryUri is the address of this dictionary's XML web service (which is used to put definitions in additional contexts, such as the spelling checker.)-->
+      <QueryUri DefaultValue="~remoteAppUrl/DictionaryWebService.asmx"/>
+      <!--Citation Text, Dictionary Name, and Dictionary Home Page will be combined to form the citation line (for example, this would produce "Examples by: Contoso", where "Contoso" is a hyperlink to http://www.contoso.com).-->
+      <CitationText DefaultValue="Examples by: " />
+      <DictionaryName DefaultValue="Contoso" />
+      <DictionaryHomePage DefaultValue="http://www.contoso.com" />
+    </Dictionary>
+    ```
+
+### Create a dictionary add-in's HTML user interface
+
+The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript provides programming logic for this HTML UI, see [Write the JavaScript implementation](#write-the-javascript-implementation) immediately following this section.
+
+In the add-in's web application project in Visual Studio, you can replace the contents of the **./Home.html** file with the following sample HTML.
 
 ```HTML
 <!DOCTYPE html>
 <html>
 
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 
-<!--The title will not be shown but is supplied to ensure valid HTML.-->
-<title>Example Dictionary</title>
+    <!--The title will not be shown but is supplied to ensure valid HTML.-->
+    <title>Example Dictionary</title>
 
-<!--Required library includes.-->
-<script type="text/javascript" src="http://ajax.microsoft.com/ajax/4.0/1/MicrosoftAjax.js"></script>
-<script type="text/javascript" src="office.js"></script>
+    <!--Required library includes.-->
+    <script type="text/javascript" src="https://ajax.microsoft.com/ajax/4.0/1/MicrosoftAjax.js"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 
-<!--Optional library includes.-->
-<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.js"></script>
+    <!--Optional library includes.-->
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.js"></script>
 
-<!--App-specific CSS and JS.-->
-<link rel="Stylesheet" type="text/css" href="style.css" />
-<script type="text/ecmascript" src="dictionary.js"></script>
+    <!--App-specific CSS and JS.-->
+    <link rel="Stylesheet" type="text/css" href="Home.css" />
+    <script type="text/javascript" src="Home.js"></script>
 </head>
 
 <body>
-<div id="mainContainer">
-    <div id="header">
-        <span id="headword"></span>
-        <span id="pronunciation">(<a id="pronunciationLink">Pronounce</a>)</span>
+    <div id="mainContainer">
+        <div>INSTRUCTIONS</div>
+        <ol>
+            <li>Ensure there's text in the document.</li>
+            <li>Select text.</li>
+        </ol>
+        <div id="header">
+            <span id="headword"></span>
+        </div>
+        <div>DEFINITIONS</div>
+        <ol id="definitions">
+        </ol>
+        <div id="SeeMore">
+            <a id="SeeMoreLink" target="_blank">See More...</a>
+        </div>
+        <div id="message"></div>
     </div>
-    <ol id="definitions">
-    </ol>
-    <div id="SeeMore">
-    <a id="SeeMoreLink">See More...</a>
-    </div>
-</div>
 </body>
 
 </html>
 ```
 
-The following example shows the contents of Style.css.
+The following example shows the contents of the .css file.
+
+In the add-in's web application project in Visual Studio, you can replace the contents of the **./Home.css** file with the following sample CSS.
 
 ```CSS
 #mainContainer
@@ -449,12 +525,6 @@ The following example shows the contents of Style.css.
 {
     font-family: Segoe UI Semibold;
     color: #262626;
-}
-
-#pronunciation
-{
-    margin-left: 2px;
-    margin-right: 2px;
 }
 
 #definitions
@@ -479,51 +549,51 @@ a:hover, a:active
 
 *Figure 6. Demo dictionary UI*
 
-![Demo dictionary UI.](../images/dictionary-agave-06.jpg)
+![Demo dictionary UI.](../images/dictionary-add-in-06.png)
 
-### Writing the JavaScript implementation
+### Write the JavaScript implementation
 
-The following example shows the JavaScript implementation in the Dictionary.js file that is called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the `xmlServiceURL` variable at the top of the file, and then replacing the Bing API key for pronunciations with a properly registered one.
+The following example shows the JavaScript implementation in the .js file that's called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the `xmlServiceURL` variable at the top of the file.
 
 The primary members of the Office JavaScript API (Office.js) that are called from this implementation are as follows:
 
 - The [initialize](/javascript/api/office) event of the `Office` object, which is raised when the add-in context is initialized, and provides access to a [Document](/javascript/api/office/office.document) object instance that represents the document the add-in is interacting with.
 - The [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) method of the `Document` object, which is called in the `initialize` function to add an event handler for the [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) event of the document to listen for user selection changes.
 - The [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) method of the `Document` object, which is called in the `tryUpdatingSelectedWord()` function when the `SelectionChanged` event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.
-- When the  `selectTextCallback` asynchronous callback function that is passed as the *callback* argument of the `getSelectedDataAsync` method executes, it gets the value of the selected text when the callback returns. It gets that value from the callback's *selectedText* argument (which is of type [AsyncResult](/javascript/api/office/office.asyncresult)) by using the [value](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) property of the returned `AsyncResult` object.
-- The rest of the code in the  `selectedTextCallback` function queries the XML web service for definitions. It also calls into the Microsoft Translator APIs to provide the URL of a .wav file that has the selected word's pronunciation.
-- The remaining code in Dictionary.js displays the list of definitions and the pronunciation link in the add-in's HTML UI.
+- When the  `selectTextCallback` asynchronous callback function that's passed as the *callback* argument of the `getSelectedDataAsync` method executes, it gets the value of the selected text when the callback returns. It gets that value from the callback's *selectedText* argument (which is of type [AsyncResult](/javascript/api/office/office.asyncresult)) by using the [value](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) property of the returned `AsyncResult` object.
+- The rest of the code in the  `selectedTextCallback` function queries the XML web service for definitions.
+- The remaining code in the .js file displays the list of definitions in the add-in's HTML UI.
+
+In the add-in's web application project in Visual Studio, you can replace the contents of the **./Home.js** file with the following sample JavaScript.
 
 ```js
 // The document the dictionary add-in is interacting with.
 let _doc;
 // The last looked-up word, which is also the currently displayed word.
 let lastLookup;
-// For demo purposes only!! Get an AppID if you intend to use the Pronunciation service for your feature.
-const appID="3D8D4E1888B88B975484F0CA25CDD24AAC457ED8";
 
 // The base URL for the OfficeDefinitions-conforming XML web service to query for definitions.
-const xmlServiceUrl = "WebService.asmx/Define?Word=";
+const xmlServiceUrl = "DictionaryWebService.asmx/Define";
 
 // Initialize the add-in.
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
     // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
-    // After the DOM is loaded, app-specific code can run.
-    // Store a reference to the current document.
-    _doc = Office.context.document;
-    // Check whether text is already selected.
-    tryUpdatingSelectedWord();
-    // Add a handler to refresh when the user changes selection.
-    _doc.addHandlerAsync("documentSelectionChanged", tryUpdatingSelectedWord);
+        // After the DOM is loaded, app-specific code can run.
+        // Store a reference to the current document.
+        _doc = Office.context.document;
+        // Check whether text is already selected.
+        tryUpdatingSelectedWord();
+        // Add a handler to refresh when the user changes selection.
+        _doc.addHandlerAsync("documentSelectionChanged", tryUpdatingSelectedWord);
     });
 }
 
 // Executes when event is raised on user's selection changes, and at initialization time. 
 // Gets the current selection and passes that to asynchronous callback function.
 function tryUpdatingSelectedWord() {
-    _doc.getSelectedDataAsync(Office.CoercionType.Text, selectedTextCallback); 
+    _doc.getSelectedDataAsync(Office.CoercionType.Text, selectedTextCallback);
 }
 
 // Async callback that executes when the add-in gets the user's selection.
@@ -531,17 +601,15 @@ function tryUpdatingSelectedWord() {
 function selectedTextCallback(selectedText) {
     selectedText = $.trim(selectedText.value);
     // Be sure user has selected text. The SelectionChanged event is raised every time the user moves the cursor, even if no selection.
-    if (selectedText != "") { 
+    if (selectedText != "") {
         // Check whether user selected the same word the pane is currently displaying to avoid unnecessary web calls.
-        if (selectedText != lastLookup) { 
+        if (selectedText != lastLookup) {
             // Update the lastLookup variable.
-            lastLookup = selectedText; 
+            lastLookup = selectedText;
             // Set the "headword" span to the word you looked up.
-            $("#headword").text(selectedText); 
+            $("#headword").text("Selected text: " + selectedText);
             // AJAX request to get definitions for the selected word; pass that to refreshDefinitions.
-            $.ajax(xmlServiceUrl + selectedText, { dataType: 'xml', success: refreshDefinitions, error: errorHandler }); 
-            // AJAX request to the Microsoft Translator APIs. Gets the URL of a WAV file with pronunciation, which is passed to refreshPronunciation. See http://www.microsofttranslator.com/dev for details.
-            $.ajax("http://api.microsofttranslator.com/V2/Ajax.svc/Speak?oncomplete=refreshPronunciation&amp;appId=" + appID + "&amp;text=" + selectedText + "&amp;language=en-us", { dataType: 'script', success: null, error: errorHandler }); 
+            $.ajax(xmlServiceUrl, { data: { word: selectedText }, dataType: 'xml', success: refreshDefinitions, error: errorHandler });
         }
     }
 }
@@ -551,22 +619,18 @@ function selectedTextCallback(selectedText) {
 // It also sets the "See More" link.
 function refreshDefinitions(data, textStatus, jqXHR) {
     $(".definition").remove();
+
     // Make a new list item for each returned definition that was returned, set the CSS class, and append it to the definitions div.
     $(data).find("Definition").each(function () {
         $(document.createElement("li")).text($(this).text()).addClass("definition").appendTo($("#definitions"));
     });
+
     // Change the "See More" link to direct to the correct URL.
     $("#SeeMoreLink").attr("href", $(data).find("SeeMoreURL").text());
 }
 
-// This function is called when the add-in gets back the link to the pronunciation
-// to set the "Pronounce" link to the URL of the .WAV file.
-function refreshPronunciation(data) {
-    $("#pronunciationLink").attr("href", data);
-}
-
 // Basic error handler that writes to a div with id='message'.
 function errorHandler(jqXHR, textStatus, errorThrown) {
-    document.getElementById('message').innerText += errorThrown;
+    document.getElementById('message').innerText += ("textStatus:- " + textStatus + "\nerrorThrown:- " + errorThrown + "\njqXHR:- " + JSON.stringify(jqXHR));
 }
 ```
