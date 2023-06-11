@@ -2,7 +2,7 @@
 title: Managing both a unified manifest and an XML manifest version of your Office Add-in
 description: Learn when and how to maintain versions of your add-in for each type of manifest.
 ms.topic: best-practice
-ms.date: 07/19/2023
+ms.date: 07/11/2023
 ms.localizationpriority: medium
 ---
 
