@@ -38,7 +38,7 @@ When you're ready to replace existing add-in, you need to configure the unified 
 
 To configure the unified manifest: 
 
-1. Open the extension object in the “extensions” array.  
+1. Scroll to the extension object in the “extensions” array.  
 1. Create an “alternatives” array property, if there isn’t one already. 
 1. In the “alternatives” array, create an object that has a “hide” property. 
 1. Give the “hide” object a “storeOfficeAddin” property. 
