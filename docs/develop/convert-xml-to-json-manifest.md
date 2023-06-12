@@ -109,9 +109,9 @@ If the project was created with the Office Yeoman Generator (using any option ex
 
 ### NodeJS and npm projects that aren't created with Yeoman Generator
 
-If you don't want to use the Teams Toolkit and your project wasn't created with the Office Yeoman generator, take these steps.
+If you don't want to use the Teams Toolkit and your project wasn't created with the Office Yeoman generator, use the office-addin-manifest-converter tool.
 
-In the root of the project, open a command prompt or bash shell and run the following commands. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original XML manifest. For example, if the manifest is named MyManifest.xml, the unified manifest is created at .\MyManifest\MyManifest.json. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
+In the root of the project, open a command prompt or bash shell and run the following command. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original XML manifest. For example, if the manifest is named MyManifest.xml, the unified manifest is created at .\MyManifest\MyManifest.json. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
 
 ```command&nbsp;line
 npx office-addin-manifest-converter convert -m <relative-path-to-XML-manifest>
