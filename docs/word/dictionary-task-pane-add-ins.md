@@ -94,7 +94,7 @@ The following code shows sample XSD for the OfficeDefinitions XML Schema example
 </xs:schema>
 ```
 
-Returned XML that conforms to the OfficeDefinitions schema consists of a root **\<Result\>** element that contains a **\<Definitions\>** element with from zero to three **\<Definition\>** child elements, each of which contains definitions that are no more than 400 characters in length. Additionally, the URL to the full page on the dictionary site must be provided in the **\<SeeMoreURL\>** element. The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.
+Returned XML consists of a root **\<Result\>** element that contains a **\<Definitions\>** element with zero to three **\<Definition\>** child elements. Each child element contains definitions that are at most 400 characters in length. Additionally, the URL to the full page on the dictionary site must be provided in the **\<SeeMoreURL\>** element. The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -179,9 +179,9 @@ public class WebService : System.Web.Services.WebService {
 }
 ```
 
-To get you started with development, you can do the following:
+To get started with development, you can do the following:
 
-1. Add a **Web Service (ASMX)** to the add-in's web application project in Visual Studio, naming it **DictionaryWebService**.
+1. Add a **Web Service (ASMX)** to the add-in's web application project in Visual Studio and name it **DictionaryWebService**.
 1. Replace the entire content of the associated .asmx.cs file with the preceding C# code sample.
 1. In the **Web.config** of the add-in's web application project, add the following to the **\<system.web\>** node.
 
@@ -218,7 +218,7 @@ The following is an example manifest file for a dictionary add-in.
   <!--DisplayName is the name that will appear in the user's list of applications.-->
   <DisplayName DefaultValue="Microsoft Office Demo Dictionary" />
   <!--Description is a 2-3 sentence description of this dictionary. -->
-  <Description DefaultValue="The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It doesn't return real definitions." />
+  <Description DefaultValue="The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher can create a dictionary that integrates with Office. It doesn't return real definitions." />
   <!--IconUrl is the URI for the icon that will appear in the user's list of applications.-->
   <IconUrl DefaultValue="http://contoso/_layouts/images/general/office_logo.jpg" />
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
@@ -264,7 +264,7 @@ The following is an example manifest file for a dictionary add-in.
 </OfficeApp>
 ```
 
-The **\<Dictionary\>** element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/xml-manifest-overview.md).
+The **\<Dictionary\>** element and its child elements specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/xml-manifest-overview.md).
 
 ### Dictionary element
 
@@ -556,13 +556,13 @@ a:hover, a:active
 
 The following example shows the JavaScript implementation in the .js file that's called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the `xmlServiceURL` variable at the top of the file.
 
-The primary members of the Office JavaScript API (Office.js) that are called from this implementation are as follows:
+The primary members of the Office JavaScript API (Office.js) that are called from this implementation are shown in the following list.
 
 - The [initialize](/javascript/api/office) event of the `Office` object, which is raised when the add-in context is initialized, and provides access to a [Document](/javascript/api/office/office.document) object instance that represents the document the add-in is interacting with.
 - The [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) method of the `Document` object, which is called in the `initialize` function to add an event handler for the [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) event of the document to listen for user selection changes.
 - The [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) method of the `Document` object, which is called in the `tryUpdatingSelectedWord()` function when the `SelectionChanged` event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.
 - When the  `selectTextCallback` asynchronous callback function that's passed as the *callback* argument of the `getSelectedDataAsync` method executes, it gets the value of the selected text when the callback returns. It gets that value from the callback's *selectedText* argument (which is of type [AsyncResult](/javascript/api/office/office.asyncresult)) by using the [value](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) property of the returned `AsyncResult` object.
-- The rest of the code in the  `selectedTextCallback` function queries the XML web service for definitions.
+- The rest of the code in the `selectedTextCallback` function queries the XML web service for definitions.
 - The remaining code in the .js file displays the list of definitions in the add-in's HTML UI.
 
 In the add-in's web application project in Visual Studio, you can replace the contents of the **./Home.js** file with the following sample JavaScript.
@@ -591,7 +591,7 @@ Office.initialize = function (reason) {
     });
 }
 
-// Executes when event is raised on user's selection changes, and at initialization time. 
+// Executes when event is raised on the user's selection changes, and at initialization time. 
 // Gets the current selection and passes that to asynchronous callback function.
 function tryUpdatingSelectedWord() {
     _doc.getSelectedDataAsync(Office.CoercionType.Text, selectedTextCallback);
@@ -603,7 +603,7 @@ function selectedTextCallback(selectedText) {
     selectedText = $.trim(selectedText.value);
     // Be sure user has selected text. The SelectionChanged event is raised every time the user moves the cursor, even if no selection.
     if (selectedText != "") {
-        // Check whether user selected the same word the pane is currently displaying to avoid unnecessary web calls.
+        // Check whether the user selected the same word the pane is currently displaying to avoid unnecessary web calls.
         if (selectedText != lastLookup) {
             // Update the lastLookup variable.
             lastLookup = selectedText;
@@ -638,9 +638,9 @@ function errorHandler(jqXHR, textStatus, errorThrown) {
 
 ## Try it out
 
-1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
-1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you're using the volume-licensed perpetual version of Office, instead of the Microsoft 365 version or a retail perpetual version, then custom buttons aren't supported. Instead, the task pane will open immediately.)
+1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button to open the add-in task pane. (If you're using the volume-licensed perpetual version of Office, instead of the Microsoft 365 version or a retail perpetual version, then custom buttons aren't supported. Instead, the task pane will open immediately.)
 
     ![The Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-0.png)
 
