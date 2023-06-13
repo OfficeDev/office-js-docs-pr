@@ -154,7 +154,8 @@ public class WebService : System.Web.Services.WebService {
             
                 writer.WriteStartElement("Result", "http://schemas.microsoft.com/contoso/OfficeDefinitions");
 
-                    // See More URL should be changed to the dictionary publisher's page for that word on their website.
+                    // See More URL should be changed to the dictionary publisher's page for that word on
+                    // their website.
                     writer.WriteElementString("SeeMoreURL", "https://www.bing.com/search?q=" + word);
 
                     writer.WriteStartElement("Definitions");
