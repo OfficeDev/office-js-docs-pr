@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 06/12/2023
+ms.date: 06/13/2023
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +11,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for June 14, 2023 call
 
-Recap on Outlook add-ins Build announcement and insight into best practices by Juan Balmori Labra. 
+- Recap on Outlook add-ins Build announcement and insight into best practices by Juan Balmori Labra. 
 
 ## Previous calls
 
