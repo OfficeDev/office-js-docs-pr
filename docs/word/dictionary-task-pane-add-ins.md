@@ -28,7 +28,7 @@ Figure 2 shows the **Define** command in the context menu that enables users to 
 
 *Figure 2. Define command in the context menu*
 
-![Define context menu.](../images/dictionary-agave-02.jpg)
+:::image type="content" source="../images/dictionary-agave-02.jpg" alt-text="Define context menu.":::
 
 *Figure 3. Definitions in the Spelling and Grammar panes*
 
@@ -40,7 +40,7 @@ Figure 2 shows the **Define** command in the context menu that enables users to 
 
 *Figure 5. Definitions in Reading Mode*
 
-![Definitions in Reading Mode.](../images/dictionary-agave-05.jpg)
+:::image type="content" source="../images/dictionary-agave-05.jpg" alt-text="Definitions in Reading Mode.":::
 
 To create a task pane add-in that provides a dictionary lookup, you create two main components:
 
