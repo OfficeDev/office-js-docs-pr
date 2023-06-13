@@ -14,7 +14,7 @@ A dictionary Office Add-in is based on the standard task pane add-in with additi
 
 In a typical dictionary task pane add-in, a user selects a word or phrase in their document, and the JavaScript logic behind the add-in passes this selection to the dictionary provider's XML web service. The dictionary provider's webpage then updates to show the definitions for the selection to the user.
 
-The XML web service component returns up to three definitions in the format defined by the OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI.
+The XML web service component returns up to three definitions in the format defined by the example OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI.
 
 Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that is running in Word.
 
@@ -63,7 +63,7 @@ The XML web service must return queries to the web service as XML that conforms 
 
 ### OfficeDefinitions XML schema
 
-The following code shows sample XSD for the OfficeDefinitions XML Schema example.
+The following code shows sample XSD for the OfficeDefinitions XML schema example.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -111,7 +111,7 @@ Returned XML consists of a root **\<Result\>** element that contains a **\<Defin
 
 ### Sample dictionary XML web service
 
-The following C# code provides a simple example of how to write code for an XML web service that returns the result of a dictionary query in the OfficeDefinitions XML format.
+The following C# code provides an example of how to write code for an XML web service that returns the result of a dictionary query in the OfficeDefinitions XML format.
 
 ```cs
 using System;
@@ -141,7 +141,7 @@ public class WebService : System.Web.Services.WebService {
     }
 
     // You can replace this method entirely with your own method that gets definitions
-    // from your data source and then formats it into the OfficeDefinitions XML format. 
+    // from your data source and then formats it into the example OfficeDefinitions XML format. 
     // If you need a reference for constructing the returned XML, you can use this example as a basis.
     [WebMethod]
     public XmlDocument Define(string word)
@@ -210,7 +210,9 @@ The following is an example manifest file for a dictionary add-in.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:type="TaskPaneApp">
   <Id>7164e750-dc86-49c0-b548-1bac57abdc7c</Id>
   <Version>15.0</Version>
   <ProviderName>Microsoft Office Demo Dictionary</ProviderName>
@@ -218,11 +220,13 @@ The following is an example manifest file for a dictionary add-in.
   <!--DisplayName is the name that will appear in the user's list of applications.-->
   <DisplayName DefaultValue="Microsoft Office Demo Dictionary" />
   <!--Description is a 2-3 sentence description of this dictionary. -->
-  <Description DefaultValue="The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher can create a dictionary that integrates with Office. It doesn't return real definitions." />
+  <Description DefaultValue="The Microsoft Office Demo Dictionary is an example built to demonstrate how a
+    publisher can create a dictionary that integrates with Office. It doesn't return real definitions." />
   <!--IconUrl is the URI for the icon that will appear in the user's list of applications.-->
   <IconUrl DefaultValue="http://contoso/_layouts/images/general/office_logo.jpg" />
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-  <!--Hosts specifies the kind of Office application your dictionary add-in will support. You shouldn't have to modify this area.-->
+  <!--Hosts specifies the kind of Office application your dictionary add-in will support.
+      You shouldn't have to modify this area.-->
   <Hosts>
     <Host Name="Document"/>
   </Hosts>
@@ -230,10 +234,15 @@ The following is an example manifest file for a dictionary add-in.
     <!--SourceLocation is the URL for your dictionary.-->
     <SourceLocation DefaultValue="http://contoso/ExampleDictionary/DictionaryHome.html" />
   </DefaultSettings>
-  <!--Permissions is the set of permissions a user will have to give your dictionary. If you need write access, such as to allow a user to replace the highlighted word with a synonym, use ReadWriteDocument. -->
+  <!--Permissions is the set of permissions a user will have to give your dictionary.
+      If you need write access, such as to allow a user to replace the highlighted word with a synonym,
+      use ReadWriteDocument. -->
   <Permissions>ReadDocument</Permissions>
   <Dictionary>
-    <!--TargetDialects is the set of regional languages your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. Do not put more than one language (for example, Spanish and English) here. Publish separate languages as separate dictionaries. -->
+    <!--TargetDialects is the set of regional languages your dictionary contains. For example, if your
+        dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify
+        that here. Do not put more than one language (for example, Spanish and English) here. Publish
+        separate languages as separate dictionaries. -->
     <TargetDialects>
       <TargetDialect>EN-AU</TargetDialect>
       <TargetDialect>EN-BZ</TargetDialect>
@@ -254,9 +263,12 @@ The following is an example manifest file for a dictionary add-in.
       <TargetDialect>EN-US</TargetDialect>
       <TargetDialect>EN-ZW</TargetDialect>
     </TargetDialects>
-    <!--QueryUri is the address of this dictionary's XML web service (which is used to put definitions in additional contexts, such as the spelling checker.)-->
+    <!--QueryUri is the address of this dictionary's XML web service (which is used to put definitions in
+        additional contexts, such as the spelling checker.)-->
     <QueryUri DefaultValue="http://contoso/ExampleDictionary/WebService.asmx/Define?word="/>
-    <!--Citation Text, Dictionary Name, and Dictionary Home Page will be combined to form the citation line (for example, this would produce "Examples by: Contoso", where "Contoso" is a hyperlink to http://www.contoso.com).-->
+    <!--Citation Text, Dictionary Name, and Dictionary Home Page will be combined to form the citation line
+        (for example, this would produce "Examples by: Contoso",
+        where "Contoso" is a hyperlink to http://www.contoso.com).-->
     <CitationText DefaultValue="Examples by: " />
     <DictionaryName DefaultValue="Contoso" />
     <DictionaryHomePage DefaultValue="http://www.contoso.com" />
@@ -429,7 +441,10 @@ For this element, you can specify values for additional locales.
 
     ```XML
     <Dictionary>
-      <!--TargetDialects is the set of regional languages your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. Do not put more than one language (for example, Spanish and English) here. Publish separate languages as separate dictionaries. -->
+      <!--TargetDialects is the set of regional languages your dictionary contains. For example, if your
+          dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can
+          specify that here. Do not put more than one language (for example, Spanish and English) here.
+          Publish separate languages as separate dictionaries. -->
       <TargetDialects>
         <TargetDialect>EN-AU</TargetDialect>
         <TargetDialect>EN-BZ</TargetDialect>
@@ -450,9 +465,12 @@ For this element, you can specify values for additional locales.
         <TargetDialect>EN-US</TargetDialect>
         <TargetDialect>EN-ZW</TargetDialect>
       </TargetDialects>
-      <!--QueryUri is the address of this dictionary's XML web service (which is used to put definitions in additional contexts, such as the spelling checker.)-->
+      <!--QueryUri is the address of this dictionary's XML web service (which is used to put definitions in
+          additional contexts, such as the spelling checker.)-->
       <QueryUri DefaultValue="~remoteAppUrl/DictionaryWebService.asmx"/>
-      <!--Citation Text, Dictionary Name, and Dictionary Home Page will be combined to form the citation line (for example, this would produce "Examples by: Contoso", where "Contoso" is a hyperlink to http://www.contoso.com).-->
+      <!--Citation Text, Dictionary Name, and Dictionary Home Page will be combined to form the citation
+          line (for example, this would produce "Examples by: Contoso", where "Contoso" is a hyperlink to
+          http://www.contoso.com).-->
       <CitationText DefaultValue="Examples by: " />
       <DictionaryName DefaultValue="Contoso" />
       <DictionaryHomePage DefaultValue="http://www.contoso.com" />
@@ -591,26 +609,32 @@ Office.initialize = function (reason) {
     });
 }
 
-// Executes when event is raised on the user's selection changes, and at initialization time. 
+// Executes when event is raised on the user's selection changes, and at initialization time.
 // Gets the current selection and passes that to asynchronous callback function.
 function tryUpdatingSelectedWord() {
     _doc.getSelectedDataAsync(Office.CoercionType.Text, selectedTextCallback);
 }
 
-// Async callback that executes when the add-in gets the user's selection.
-// Determines whether anything should be done. If so, it makes requests that will be passed to various functions.
+// Async callback that executes when the add-in gets the user's selection. Determines whether anything should
+// be done. If so, it makes requests that will be passed to various functions.
 function selectedTextCallback(selectedText) {
     selectedText = $.trim(selectedText.value);
-    // Be sure user has selected text. The SelectionChanged event is raised every time the user moves the cursor, even if no selection.
+    // Be sure user has selected text. The SelectionChanged event is raised every time the user moves
+    // the cursor, even if no selection.
     if (selectedText != "") {
-        // Check whether the user selected the same word the pane is currently displaying to avoid unnecessary web calls.
+        // Check whether the user selected the same word the pane is currently displaying to
+        // avoid unnecessary web calls.
         if (selectedText != lastLookup) {
             // Update the lastLookup variable.
             lastLookup = selectedText;
             // Set the "headword" span to the word you looked up.
             $("#headword").text("Selected text: " + selectedText);
             // AJAX request to get definitions for the selected word; pass that to refreshDefinitions.
-            $.ajax(xmlServiceUrl, { data: { word: selectedText }, dataType: 'xml', success: refreshDefinitions, error: errorHandler });
+            $.ajax(xmlServiceUrl,
+                   { data: { word: selectedText },
+                     dataType: 'xml',
+                     success: refreshDefinitions,
+                     error: errorHandler });
         }
     }
 }
@@ -621,9 +645,13 @@ function selectedTextCallback(selectedText) {
 function refreshDefinitions(data, textStatus, jqXHR) {
     $(".definition").remove();
 
-    // Make a new list item for each returned definition that was returned, set the CSS class, and append it to the definitions div.
+    // Make a new list item for each returned definition that was returned, set the CSS class,
+    // and append it to the definitions div.
     $(data).find("Definition").each(function () {
-        $(document.createElement("li")).text($(this).text()).addClass("definition").appendTo($("#definitions"));
+        $(document.createElement("li"))
+                  .text($(this).text())
+                  .addClass("definition")
+                  .appendTo($("#definitions"));
     });
 
     // Change the "See More" link to direct to the correct URL.
@@ -632,7 +660,10 @@ function refreshDefinitions(data, textStatus, jqXHR) {
 
 // Basic error handler that writes to a div with id='message'.
 function errorHandler(jqXHR, textStatus, errorThrown) {
-    document.getElementById('message').innerText += ("textStatus:- " + textStatus + "\nerrorThrown:- " + errorThrown + "\njqXHR:- " + JSON.stringify(jqXHR));
+    document.getElementById('message').innerText
+      += ("textStatus:- " + textStatus
+          + "\nerrorThrown:- " + errorThrown
+          + "\njqXHR:- " + JSON.stringify(jqXHR));
 }
 ```
 
