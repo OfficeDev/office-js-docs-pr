@@ -194,9 +194,9 @@ To get started with development, you can do the following:
 1. In the **Solution Explorer**, select the **DictionaryWebService.asmx** file then open its context menu and choose **View Markup**.
 1. Replace the contents of DictionaryWebService.asmx with the following code.
 
-```cs
-<%@ WebService Language="C#" CodeBehind="DictionaryWebService.asmx.cs" Class="WebService" %>
-```
+    ```cs
+    <%@ WebService Language="C#" CodeBehind="DictionaryWebService.asmx.cs" Class="WebService" %>
+    ```
 
 #### Update the web.config
 
@@ -451,9 +451,9 @@ For this element, you can specify values for additional locales.
 ### Update your dictionary add-in's manifest file
 
 1. Open the XML manifest file in the add-in project.
-1. Update the **\<ProviderName\>** element with your name.
-1. Replace the **\<DefaultValue\>** of the **\<DisplayName\>** element with an appropriate name, for example, "Microsoft Office Demo Dictionary".
-1. Replace the **\<DefaultValue\>** of the **\<Description\>** element with an appropriate name, for example, "The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It doesn't return real definitions.".
+1. Update the value of the **\<ProviderName\>** element with your name.
+1. Replace the value of the **\<DisplayName\>** element's **\<DefaultValue\>** attribute with an appropriate name, for example, "Microsoft Office Demo Dictionary".
+1. Replace the value of the **\<Description\>** element's **\<DefaultValue\>** attribute with an appropriate description, for example, "The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It doesn't return real definitions.".
 1. Add the following code after the **\<Permissions\>** node, replacing "contoso" references with your own company name, then save your changes.
 
     ```XML
@@ -611,7 +611,7 @@ let lastLookup;
 const xmlServiceUrl = "DictionaryWebService.asmx/Define";
 
 // Initialize the add-in.
-// The initialize function is required for all add-ins.
+// Office.initialize or Office.onReady is required for all add-ins.
 Office.initialize = function (reason) {
     // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
@@ -647,11 +647,12 @@ function selectedTextCallback(selectedText) {
             $("#headword").text("Selected text: " + selectedText);
             // AJAX request to get definitions for the selected word; pass that to refreshDefinitions.
             $.ajax(xmlServiceUrl,
-                   { data: { word: selectedText },
-                     dataType: 'xml',
-                     success: refreshDefinitions,
-                     error: errorHandler });
-        }
+                {
+                    data: { word: selectedText },
+                    dataType: 'xml',
+                    success: refreshDefinitions,
+                    error: errorHandler
+                });
     }
 }
 
@@ -665,9 +666,9 @@ function refreshDefinitions(data, textStatus, jqXHR) {
     // and append it to the definitions div.
     $(data).find("Definition").each(function () {
         $(document.createElement("li"))
-                  .text($(this).text())
-                  .addClass("definition")
-                  .appendTo($("#definitions"));
+            .text($(this).text())
+            .addClass("definition")
+            .appendTo($("#definitions"));
     });
 
     // Change the "See More" link to direct to the correct URL.
