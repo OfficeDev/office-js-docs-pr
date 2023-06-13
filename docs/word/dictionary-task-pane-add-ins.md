@@ -57,6 +57,8 @@ Next, create a Word add-in project in Visual Studio.
 
 [!include[Visual Studio instructions to create Word solution](../includes/vs-word-instructions.md)]
 
+To learn more about the projects in a Word add-in solution, see the [quick start](../quickstarts/word-quickstart.md#tabpanel_1_visualstudio).
+
 ## Create a dictionary XML web service
 
 The XML web service must return queries to the web service as XML that conforms to the OfficeDefinitions XML schema. The following two sections describe the OfficeDefinitions XML schema, and provide an example of how to code an XML web service that returns queries in that XML format.
@@ -123,7 +125,7 @@ using System.Xml;
 using System.Text;
 using System.IO;
 using System.Net;
-using System.Web.Script.Services.ScriptService;
+using System.Web.Script.Services;
 
 /// <summary>
 /// Summary description for _Default.
@@ -182,8 +184,22 @@ public class WebService : System.Web.Services.WebService {
 
 To get started with development, you can do the following:
 
+#### Create the web service
+
 1. Add a **Web Service (ASMX)** to the add-in's web application project in Visual Studio and name it **DictionaryWebService**.
 1. Replace the entire content of the associated .asmx.cs file with the preceding C# code sample.
+
+#### Update the web service markup
+
+1. In the **Solution Explorer**, select the **DictionaryWebService.asmx** file then open its context menu and choose **View Markup**.
+1. Replace the contents of DictionaryWebService.asmx with the following code.
+
+```cs
+<%@ WebService Language="C#" CodeBehind="DictionaryWebService.asmx.cs" Class="WebService" %>
+```
+
+#### Update the web.config
+
 1. In the **Web.config** of the add-in's web application project, add the following to the **\<system.web\>** node.
 
     ```XML
@@ -437,7 +453,7 @@ For this element, you can specify values for additional locales.
 1. Open the XML manifest file in the add-in project.
 1. Update the **\<ProviderName\>** element with your name.
 1. Replace the **\<DefaultValue\>** of the **\<DisplayName\>** element with an appropriate name, for example, "Microsoft Office Demo Dictionary".
-1. Replace the **\<DefaultValue\>** of the **\<Description\>** element with an appropriate name, for example, "The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It does not return real definitions.".
+1. Replace the **\<DefaultValue\>** of the **\<Description\>** element with an appropriate name, for example, "The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It doesn't return real definitions.".
 1. Add the following code after the **\<Permissions\>** node, replacing "contoso" references with your own company name, then save your changes.
 
     ```XML
@@ -572,7 +588,7 @@ a:hover, a:active
 
 ### Write the JavaScript implementation
 
-The following example shows the JavaScript implementation in the .js file that's called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the `xmlServiceURL` variable at the top of the file.
+The following example shows the JavaScript implementation in the .js file that's called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script uses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the `xmlServiceURL` variable at the top of the file.
 
 The primary members of the Office JavaScript API (Office.js) that are called from this implementation are shown in the following list.
 
