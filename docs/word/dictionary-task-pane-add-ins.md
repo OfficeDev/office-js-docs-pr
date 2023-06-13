@@ -57,7 +57,7 @@ Next, create a Word add-in project in Visual Studio.
 
 [!include[Visual Studio instructions to create Word solution](../includes/vs-word-instructions.md)]
 
-To learn more about the projects in a Word add-in solution, see the [quick start](../quickstarts/word-quickstart.md#tabpanel_1_visualstudio).
+To learn more about the projects in a Word add-in solution, see the [quick start](/office/dev/add-ins/quickstarts/word-quickstart?tabs=visualstudio#explore-the-visual-studio-solution).
 
 ## Create a dictionary XML web service
 
