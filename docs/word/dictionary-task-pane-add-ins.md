@@ -42,7 +42,7 @@ Figure 2 shows the **Define** command in the context menu that enables users to 
 
 :::image type="content" source="../images/dictionary-agave-05.jpg" alt-text="Definitions in Reading Mode.":::
 
-To create a task pane add-in that provides a dictionary lookup, you create two main components:
+To create a task pane add-in that provides a dictionary lookup, create two main components.
 
 - An XML web service that looks up definitions from a dictionary service, and then returns those values in an XML format that can be consumed and displayed by the dictionary add-in.
 - A task pane add-in that submits the user's current selection to the dictionary web service, displays definitions, and can optionally insert those values into the document.
@@ -182,7 +182,7 @@ public class WebService : System.Web.Services.WebService {
 }
 ```
 
-To get started with development, you can do the following:
+To get started with development, you can do the following.
 
 #### Create the web service
 
@@ -194,7 +194,7 @@ To get started with development, you can do the following:
 1. In the **Solution Explorer**, select the **DictionaryWebService.asmx** file then open its context menu and choose **View Markup**.
 1. Replace the contents of DictionaryWebService.asmx with the following code.
 
-    ```cs
+    ```XML
     <%@ WebService Language="C#" CodeBehind="DictionaryWebService.asmx.cs" Class="WebService" %>
     ```
 
