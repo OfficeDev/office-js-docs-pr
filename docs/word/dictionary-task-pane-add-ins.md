@@ -568,8 +568,7 @@ a:hover, a:active
 
 *Figure 6. Demo dictionary UI*
 
-[!div class="mx-imgBorder"]
-![Demo dictionary UI.](../images/dictionary-add-in-06.png)
+:::image type="content" source="../images/dictionary-add-in-06.png" alt-text="Demo dictionary UI.":::
 
 ### Write the JavaScript implementation
 
@@ -678,5 +677,4 @@ function errorHandler(jqXHR, textStatus, errorThrown) {
 
 1. In Word, add text to the document then select any or all of that text.
 
-    [!div class="mx-imgBorder"]
-    ![Dictionary task pane UI.](../images/dictionary-add-in-06.png)
+    :::image type="content" source="../images/dictionary-add-in-06.png" alt-text="Dictionary task pane UI.":::
