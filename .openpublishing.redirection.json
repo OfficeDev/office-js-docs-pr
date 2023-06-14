@@ -144,15 +144,14 @@
         },
         {
             "source_path": "docs/overview/add-in-changelog.md",
-            "redirect_url": "/office/dev/add-ins/overview/office-add-ins",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md",
-            "redirect_url": "/office/dev/add-ins/develop/develop-add-ins-visual-studio"
+            "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
         },
         {
             "source_path": "docs/develop/create-and-debug-office-add-ins-in-visual-studio.md",
+            "redirect_url": "/office/dev/add-ins/develop/develop-add-ins-visual-studio"
+        },
+        {
+            "source_path": "docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md",
             "redirect_url": "/office/dev/add-ins/develop/develop-add-ins-visual-studio"
         },
         {
