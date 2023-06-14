@@ -64,7 +64,7 @@ items:
     - name: Support older Microsoft webviews and Office versions
       href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Managing both a unified manifest and an XML manifest version of your Office Add-in
+    - name: Manage both a unified manifest and an XML manifest version of your add-in
       href: concepts/duplicate-legacy-metaos-add-ins.md
       displayName: Excel, Word, PowerPoint, Outlook
   - name: Develop
