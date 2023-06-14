@@ -1,25 +1,25 @@
 ---
-title: Managing both a unified manifest and an XML manifest version of your Office Add-in
+title: Manage both a unified manifest and an XML manifest version of your Office Add-in
 description: Learn when and how to maintain versions of your add-in for each type of manifest.
 ms.topic: best-practice
 ms.date: 07/11/2023
 ms.localizationpriority: medium
 ---
 
-# Managing both a unified manifest and an XML manifest version of your Office Add-in
+# Manage both a unified manifest and an XML manifest version of your Office Add-in
 
-After you've created a version of your add-in that uses the [unified manifest for Microsoft 365](../develop/json-manifest-overview.md), you need to decide whether to maintain the existing add-in and, if so, what relationship it will have with the new version. In the long run, the best practice is to replace the existing add-in with the new version, but initially add-ins that support the unified manifest can only be installed on Microsoft 365 version 2309 ?????.????? and later. We're working hard to bring support to older versions of Microsoft 365. In the meantime, you need to maintain both versions.
+After you've created a version of your add-in that uses the [unified manifest for Microsoft 365](../develop/json-manifest-overview.md), you need to decide whether to maintain the existing add-in and, if so, what relationship it will have with the new version. In the long run, the best practice is to replace the existing add-in with the new version, but initially add-ins that support the unified manifest can only be installed on Microsoft 365 Version 2309 (Build ?????.?????) and later. We're working hard to bring support to older versions of Microsoft 365. In the meantime, you need to maintain both versions.
 
 > [!TIP]
 > For information about converting an existing add-in to use the unified manifest, see [Convert an add-in to use the unified manifest for Microsoft 365](../develop/convert-xml-to-json-manifest.md).
 
-There are also some scenarios where you need to maintain both for a longer period, including the following.
+There are also some scenarios where you need to maintain both for a longer period, including the following:
 
 - Even after support for the unified manifest is available in older versions of Microsoft 365, there will be a further period in which add-ins that use it won't be installable on perpetual versions of Office, such as volume-licensed perpetual versions of Office 2021 (and earlier).
 - There are some features of add-ins that are little used or deprecated. These aren't supported with the unified add-in. Your may choose to maintain a version of your add-in that uses these features. The following are examples.
 
     - [Outlook modules](../outlook/extension-module-outlook-add-ins.md) aren't supported. (But you can provide a nearly identical experience using the unified manifest by [combining an Outlook add-in and a Teams Tab in a single app](https://github.com/OfficeDev/TeamsFx/wiki/Configure-Outlook-Add-in-capability-within-your-Teams-app).)
-    - [Outlook contextual add-ins](../outlook/contextual-outlook-add-ins.md) (aka "activation rules") aren't supported. (But you can provide similar experiences using the unified manifest and [Event-based activation](../outlook/autolaunch.md).)
+    - [Outlook contextual add-ins](../outlook/contextual-outlook-add-ins.md) (also known as "activation rules") aren't supported. (But you can provide similar experiences using the unified manifest and [Event-based activation](../outlook/autolaunch.md).)
 
 ## Maintain both versions
 
@@ -34,15 +34,15 @@ The critical requirement for maintaining two versions is to be sure that the two
 
 ## Replace the existing add-in
 
-When you're ready to replace existing add-in, you need to configure the unified manifest to identify the existing add-in. (Don't remove the existing add-in from AppSource or the Microsoft 365 admin center.) After the new add-in is deployed, when a user runs the existing add-in, they'll see a prompt to install the new version. If they choose not to, the existing add-in runs. If they choose to upgrade, the existing add-in will be hidden.   
+When you're ready to replace the existing add-in, you need to configure the unified manifest to identify the existing add-in. (Don't remove the existing add-in from AppSource or the Microsoft 365 admin center.) After the new add-in is deployed, when a user runs the existing add-in, they'll see a prompt to install the new version. If they choose not to, the existing add-in runs. If they choose to upgrade, the existing add-in will be hidden.   
 
 To configure the unified manifest: 
 
-1. Scroll to the extension object in the “extensions” array.  
-1. Create an “alternatives” array property, if there isn’t one already. 
-1. In the “alternatives” array, create an object that has a “hide” property. 
-1. Give the “hide” object a “storeOfficeAddin” property. 
-1. Give the “storeOfficeAddin” object an “officeAddinId” property with the GUID of the existing add-in as its value. The following is an example:
+1. Scroll to the extension object in the "extensions" array.  
+1. Create an "alternatives" array property, if there isn’t one already. 
+1. In the "alternatives" array, create an object that has a "hide" property. 
+1. Give the "hide" object a "storeOfficeAddin" property. 
+1. Give the "storeOfficeAddin" object an "officeAddinId" property with the GUID of the existing add-in as its value. The following is an example.
 
     ```json
     "extensions": [
@@ -64,7 +64,7 @@ To configure the unified manifest:
     ]
     ```
 
-1. If you are marketing the add-in through [AppSource](https://appsource.microsoft.com/) there is a further step. Give the "customOfficeAddin" property an additional child property named "assetId" with the AppSource asset ID as its value. The following is an example: 
+1. If you're marketing the add-in through [AppSource](https://appsource.microsoft.com/), there's a further step. Give the "customOfficeAddin" property an additional child property named "assetId" with the AppSource asset ID as its value. The following is an example.
 
     ```json
     "hide": {
