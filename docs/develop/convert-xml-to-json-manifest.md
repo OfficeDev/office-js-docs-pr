@@ -144,12 +144,8 @@ Once you have the unified manifest created, there are two ways to create the zip
 1. In the root of the project, open a command prompt or bash shell and run the following commands.
 
     ```command&nbsp;line
-    npm install -g @microsoft/teamsfx-cli@1.0.6-alpha.df7cb43be.0
+    npm install -g @microsoft/teamsfx-cli
 
-    setx SIDELOADING_SERVICE_ENDPOINT https://titles.msit.mos.microsoft.com
-
-    setx SIDELOADING_SERVICE_SCOPE https://titles.msit.mos.microsoft.com/.default
- 
     teamsfx m365 sideloading --file-path <relative-path-to-zip-file>
     ``` 
 
