@@ -9,12 +9,8 @@
             "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
         },
         {
-            "source_path": "docs/develop/create-and-debug-office-add-ins-in-visual-studio.md",
-            "redirect_url": "/office/dev/add-ins/develop/create-office-add-ins-in-visual-studio"
-        },
-        {
             "source_path": "docs/testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md",
-            "redirect_url": "/office/dev/add-ins/testing/debug-add-ins-using-f12-developer-tools-on-windows"
+            "redirect_url": "/office/dev/add-ins/testing/debug-add-ins-using-f12-tools-ie"
         },
         {
             "source_path": "docs/overview/index.md",
@@ -86,7 +82,7 @@
         },
         {
             "source_path": "docs/excel/excel-add-ins-get-started-angular.md",
-            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-angular"
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
         },
         {
             "source_path": "docs/onenote/onenote-add-ins-get-started.md",
@@ -148,12 +144,15 @@
         },
         {
             "source_path": "docs/overview/add-in-changelog.md",
-            "redirect_url": "/office/dev/add-ins/overview/office-add-ins",
-            "redirect_document_id": true
+            "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
+        },
+        {
+            "source_path": "docs/develop/create-and-debug-office-add-ins-in-visual-studio.md",
+            "redirect_url": "/office/dev/add-ins/develop/develop-add-ins-visual-studio"
         },
         {
             "source_path": "docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md",
-            "redirect_url": "/office/dev/add-ins/develop/create-and-debug-office-add-ins-in-visual-studio"
+            "redirect_url": "/office/dev/add-ins/develop/develop-add-ins-visual-studio"
         },
         {
             "source_path": "docs/get-started/get-javascript-intellisense-in-visual-studio.md",
@@ -161,7 +160,7 @@
         },
         {
             "source_path": "docs/get-started/create-an-office-add-in-using-any-editor.md",
-            "redirect_url": "/office/dev/add-ins/index"
+            "redirect_url": "/office/dev/add-ins"
         },
         {
             "source_path": "docs/get-started/create-addin-commands.md",
@@ -198,7 +197,7 @@
         },
         {
             "source_path": "docs/develop/add-in-development-lifecycle.md",
-            "redirect_url": "/office/dev/add-ins/concepts/add-in-development-lifecycle",
+            "redirect_url": "/office/dev/add-ins/overview/office-add-ins",
             "redirect_document_id": true
         },
         {
@@ -278,35 +277,35 @@
         },
         {
             "source_path": "docs/powerpoint/office-mix/configuring-and-editing-labsjs-labs-for-office-mix.md",
-            "redirect_url": "https://mix.office.com/Home"
+            "redirect_url": "https://support.microsoft.com/office/c1c04f84-a7bb-4602-9645-258017155258"
         },
         {
             "source_path": "docs/powerpoint/office-mix/creating-your-first-lab-for-office-mix.md",
-            "redirect_url": "https://mix.office.com/Home"
+            "redirect_url": "https://support.microsoft.com/office/c1c04f84-a7bb-4602-9645-258017155258"
         },
         {
             "source_path": "docs/powerpoint/office-mix/get-started-with-labsjs-for-office-mix.md",
-            "redirect_url": "https://mix.office.com/Home"
+            "redirect_url": "https://support.microsoft.com/office/c1c04f84-a7bb-4602-9645-258017155258"
         },
         {
             "source_path": "docs/powerpoint/office-mix/guidelines-for-creating-labs-for-mix-using-labsjs.md",
-            "redirect_url": "https://mix.office.com/Home"
+            "redirect_url": "https://support.microsoft.com/office/c1c04f84-a7bb-4602-9645-258017155258"
         },
         {
             "source_path": "docs/powerpoint/office-mix/labsjs-lab-components.md",
-            "redirect_url": "https://mix.office.com/Home"
+            "redirect_url": "https://support.microsoft.com/office/c1c04f84-a7bb-4602-9645-258017155258"
         },
         {
             "source_path": "docs/powerpoint/office-mix/labsjs-labs-for-office-mix-examples.md",
-            "redirect_url": "https://mix.office.com/Home"
+            "redirect_url": "https://support.microsoft.com/office/c1c04f84-a7bb-4602-9645-258017155258"
         },
         {
             "source_path": "docs/powerpoint/office-mix/office-mix-add-ins.md",
-            "redirect_url": "https://mix.office.com/Home"
+            "redirect_url": "https://support.microsoft.com/office/c1c04f84-a7bb-4602-9645-258017155258"
         },
         {
             "source_path": "docs/tutorials/create-an-office-add-in-using-any-editor.md",
-            "redirect_url": "/office/dev/add-ins/index"
+            "redirect_url": "/office/dev/add-ins"
         },
         {
             "source_path": "docs/tutorials/get-javascript-intellisense-in-visual-studio.md",
@@ -315,7 +314,7 @@
         },
         {
             "source_path": "docs/tutorials/create-and-debug-office-add-ins-in-visual-studio.md",
-            "redirect_url": "/office/dev/add-ins/develop/create-and-debug-office-add-ins-in-visual-studio",
+            "redirect_url": "/office/dev/add-ins/develop/develop-add-ins-visual-studio",
             "redirect_document_id": false
         },
         {
@@ -1208,7 +1207,7 @@
         },
         {
             "source_path": "docs/outlook/manage-state-and-settings-outlook.md",
-            "redirect_url": "office/dev/add-ins/outlook/metadata-for-an-outlook-add-in"
+            "redirect_url": "/office/dev/add-ins/outlook/metadata-for-an-outlook-add-in"
         }
     ]
 }
