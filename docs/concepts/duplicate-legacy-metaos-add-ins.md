@@ -15,18 +15,7 @@ One important improvement we're working on is the ability to create a single uni
 > [!TIP]
 > For information about converting an existing add-in to use the unified manifest, see [Convert an add-in to use the unified manifest for Microsoft 365](../develop/convert-xml-to-json-manifest.md).
 
-After you've created a version of your add-in that uses the unified manifest, you must ensure the following:
-
-- The new version is the one that users see in all Office versions that support the unified manifest.
-- The old version is still available in versions that don't support the unified manifest.
-- Users never see two seemingly identical versions; that is, the same name and icons twice in the Office UI.
-
-To accomplish these goals, you need to configure the unified manifest to identify the existing add-in. (Don't remove the existing add-in from AppSource or the Microsoft 365 admin center.) After the new add-in version is deployed, what users will see depends on whether the Office version they are working in supports the unified manifest.
-
-- If it doesn't support the unified manifest, they will see and work with the existing version of the add-in.
-- If it does support the unified manifest, when a user runs the add-in, they'll see a prompt to install the new version. If they choose not to, the existing add-in runs. If they choose to upgrade, the existing add-in will be hidden.   
-
-To configure the unified manifest: 
+After you've created a version of your add-in that uses the unified manifest, you must link the existing add-in and the app built using the unified manifest to ensure users never see two copies of the add-in UI inside of Outlook. Use the following steps: 
 
 1. Scroll to the extension object in the "extensions" array.  
 1. Create an "alternatives" array property, if there isn’t one already. 
@@ -64,6 +53,8 @@ To configure the unified manifest:
         }
     }
     ```
+
+Don't remove the existing add-in from AppSource or the Microsoft 365 Admin Center, or earlier versions of Office will no longer be able to use your add-in.
 
 ## Maintain both versions for the immediate future
 
