@@ -73,8 +73,8 @@ Initially add-ins that support the unified manifest can only be installed on Mic
 
 There are also some scenarios where you might want to maintain both both versions of the add-in for an extended period. For example, there are two features of add-ins that aren't supported with the unified manifest because they are little used or deprecated. You may choose to maintain a version of your add-in that uses these features. The following are the features that aren't supported in the unified manifest.
 
-    - [Outlook modules](../outlook/extension-module-outlook-add-ins.md) aren't supported. (But you can provide a nearly identical experience using the unified manifest by [combining an Outlook add-in and a Teams Tab in a single app](https://github.com/OfficeDev/TeamsFx/wiki/Configure-Outlook-Add-in-capability-within-your-Teams-app).)
-    - [Outlook contextual add-ins](../outlook/contextual-outlook-add-ins.md) (also known as "activation rules") aren't supported. (But you can provide similar experiences using the unified manifest and [Event-based activation](../outlook/autolaunch.md).)
+- [Outlook modules](../outlook/extension-module-outlook-add-ins.md) aren't supported. (But you can provide a nearly identical experience using the unified manifest by [combining an Outlook add-in and a Teams Tab in a single app](https://github.com/OfficeDev/TeamsFx/wiki/Configure-Outlook-Add-in-capability-within-your-Teams-app).)
+- [Outlook contextual add-ins](../outlook/contextual-outlook-add-ins.md) (also known as "activation rules") aren't supported. (But you can provide similar experiences using the unified manifest and [Event-based activation](../outlook/autolaunch.md).)
 
 The critical requirement for maintaining two versions is to be sure that the two of them appear distinct in the Outlook UI. 
 
