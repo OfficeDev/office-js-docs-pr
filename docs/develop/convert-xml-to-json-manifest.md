@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Convert an add-in to use the unified manifest for Microsoft 365
 
-There are three basic tasks to converting an add-in project from the XML manifest to the unified manifest for Microsoft 365:
+There are three basic tasks to converting an add-in project from the XML manifest to the unified manifest for Microsoft 365.
 
 - Ensure that you have 64x64 pixel and 128x128 pixel images files to serve as icons for the add-in.
 - Convert the XML manifest itself to the JSON format of the unified manifest.
@@ -22,9 +22,9 @@ There are three basic tasks to converting an add-in project from the XML manifes
 
 ## Ensure that you have the two image files
 
-It's highly likely that you have the two image files already in your add-in. They are specified in the [IconUrl](/javascript/api/manifest/iconurl) and [HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl) elements in the XML manifest. But these are both optional elements, so it's possible your add-in project doesn't have one or both. These are required for an add-in that uses the unified manifest, so you need to create them if the project doesn't already have them. For guidance, see [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in). 
+It's highly likely that you have the two image files already in your add-in. They're specified in the [IconUrl](/javascript/api/manifest/iconurl) and [HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl) elements in the XML manifest. Because these are both optional elements, your add-in project mignt not have one or both. These are required for an add-in that uses the unified manifest, so you need to create them if the project doesn't already have them. For guidance, see [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in). 
 
-When you've added the files to the project, add **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) to the XML manifest just below the **\<Description\>** element. The following is an example:
+When you've added the files to the project, add **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) to the XML manifest just below the **\<Description\>** element. The following is an example.
 
 ```xml
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="MailApp">
@@ -52,12 +52,12 @@ There are several ways to carry out the remaining tasks, depending on what IDE a
 
 #### Prerequisites
 
-- Install [Visual Studio Code](https://code.visualstudio.com/).
-- Install [Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-teams-toolkit-for-visual-studio-code).
+- Install [Visual Studio Code](https://code.visualstudio.com/)
+- Install [Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-teams-toolkit-for-visual-studio-code)
 
 #### Import the add-in project to Teams Toolkit
 
-1. Open Visual Studio Code and select Teams Toolkit icon in the **Activity Bar**.
+1. Open Visual Studio Code and select the Teams Toolkit icon on the **Activity Bar**.
 
     :::image type="content" source="../images/teams-toolkit-icon.png" alt-text="Teams Toolkit icon.":::
 
@@ -84,19 +84,19 @@ You can sideload the add-in using the Teams Toolkit or in a command prompt, bash
 1. First, *make sure Outlook desktop is closed.*
 1. In Visual Studio Code, open the Teams Toolkit.
 1. In the **ACCOUNTS** section, verify that you're signed into Microsoft 365.
-1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** drop down menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press F5. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, Outlook desktop opens.
+1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** drop down menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press **F5**. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then Outlook desktop opens.
 1. You can now work with your add-in. Be sure you're working in the **Inbox** of *your Microsoft 365 account identity*.
 
 ##### Sideload with a system prompt, bash shell, or terminal
 
 1. First, *make sure Outlook desktop is closed.*
 1. Open a system prompt, bash shell, or the Visual Studio Code **TERMINAL**, and navigate to the root of the project.
-1. Run the command `npm run start:desktop`. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, Outlook desktop opens.
+1. Run the command `npm run start:desktop`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then Outlook desktop opens.
 1. You can now work with your add-in.
 
 ### Projects created with the Office Yeoman Generator (aka "Yo Office")
 
-If the project was created with the Office Yeoman Generator (using any option except the "unified manifest" option) and you don't want to use the Teams Toolkit, convert it with the following steps:
+If the project was created with the Office Yeoman Generator (using any option except the "unified manifest" option) and you don't want to use the Teams Toolkit, convert it using the following steps.
 
 1. In the root of the project, open a command prompt or bash shell and run the following command. This converts the manifest and updates the package.json to specify current tooling packages. The new unified manifest is in the root of the project and the old XML manifest is in a backup.zip file. For details about this command, see [Office-Addin-Project](https://www.npmjs.com/package/office-addin-project).
 
@@ -135,7 +135,7 @@ Once you have the unified manifest created, there are two ways to create the zip
 
 #### Sideload with the Teams Toolkit CLI
 
-1. Manually create the zip package with these steps:
+1. Manually create the zip package using the following steps.
 
     1. Open the unified manifest and scroll to the "icons" property. Note the relative path of the two image files.
     1. Use any zip utility to create a zip file that contains the unified manifest and the two image files. *The image files must have the same relative path in the zip file as they do in the project.* For example, if the relative path is "assets/icon-64.png" and "assets/icon-128.png", then you must include the "assets" folder with the two files in the zip package. 
