@@ -8,7 +8,9 @@ ms.localizationpriority: medium
 
 # Convert an add-in to use the unified manifest for Microsoft 365
 
-There are three basic tasks to converting an add-in project from the XML manifest to the unified manifest for Microsoft 365.
+To add Teams capabilities to an add-in that uses the XML manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
+
+There are three basic tasks to converting an add-in project from the XML manifest to the unified manifest.
 
 - Ensure that you have 64x64 pixel and 128x128 pixel images files to serve as icons for the add-in.
 - Convert the XML manifest itself to the JSON format of the unified manifest.
@@ -18,7 +20,7 @@ There are three basic tasks to converting an add-in project from the XML manifes
 > 
 > - The unified manifest is a preview feature for Office Add-ins and is currently supported only for Outlook.
 > - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
-> - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest, so you can ignore this article.
+> - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
 
 ## Ensure that you have the two image files
 
@@ -42,13 +44,15 @@ When you've added the files to the project, add **\<IconUrl\>** and **\<HighReso
 
 ## Conversion tools and options
 
-There are several ways to carry out the remaining tasks, depending on what IDE and other tools you want to use for your project and on what tool was used to create the project. 
+There are several ways to carry out the remaining tasks, depending on the IDE and other tools you want to use for your project and on tool you used to create the project. 
 
 - [Convert the project with Teams Toolkit](#convert-the-project-with-teams-toolkit)
 - [Projects created with the Office Yeoman Generator (aka "Yo Office")](#projects-created-with-the-office-yeoman-generator-aka-yo-office)
 - [NodeJS and npm projects that aren't created with Yeoman Generator](#nodejs-and-npm-projects-that-arent-created-with-yeoman-generator)
 
 ### Convert the project with Teams Toolkit
+
+The easiest way to convert is to use Teams Toolkit.
 
 #### Prerequisites
 
@@ -75,7 +79,7 @@ There are several ways to carry out the remaining tasks, depending on what IDE a
 1. In the **Workspace folder** dialog, select the folder where you want to put the converted project.
 1. In the **Application name** dialog, give a name to the project (with no spaces). Teams Toolkit creates the project with your source files and scaffolding. It then opens the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
 
-#### Sideload the add-in in Teams Toolkit
+#### Sideload the add-in in Visual Studio Code
 
 You can sideload the add-in using the Teams Toolkit or in a command prompt, bash shell, or terminal.
 
