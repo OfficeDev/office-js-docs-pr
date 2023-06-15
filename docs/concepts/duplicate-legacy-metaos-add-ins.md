@@ -76,7 +76,7 @@ There are also some scenarios where you might want to maintain both both version
 - [Outlook modules](../outlook/extension-module-outlook-add-ins.md) aren't supported. (But you can provide a nearly identical experience using the unified manifest by [combining an Outlook add-in and a Teams Tab in a single app](https://github.com/OfficeDev/TeamsFx/wiki/Configure-Outlook-Add-in-capability-within-your-Teams-app).)
 - [Outlook contextual add-ins](../outlook/contextual-outlook-add-ins.md) (also known as "activation rules") aren't supported. (But you can provide similar experiences using the unified manifest and [Event-based activation](../outlook/autolaunch.md).)
 
-The critical requirement for maintaining two versions is to be sure that the two of them appear distinct in the Outlook UI. 
+The critical requirement for making two versions available is to be sure that the two of them appear distinct in the Outlook UI. 
 
 - Give the new version a different name from the existing add-in. 
 - Create and use different icons for the new version.
