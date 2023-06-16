@@ -15,7 +15,7 @@ One important improvement we're working on is the ability to create a single uni
 > [!TIP]
 > For information about converting an existing add-in to use the unified manifest, see [Convert an add-in to use the unified manifest for Microsoft 365](../develop/convert-xml-to-json-manifest.md).
 
-After you've created a version of your add-in that uses the unified manifest, you must link the existing add-in and the app built using the unified manifest to ensure users never see two copies of the add-in UI inside of Outlook. Use the following steps: 
+After you've created a version of your add-in that uses the unified manifest, you must link the existing add-in and the app built using the unified manifest to ensure users never see two copies of the add-in UI inside of Outlook. Use the following steps.
 
 1. Scroll to the extension object in the "extensions" array.  
 1. Create an "alternatives" array property, if there isn’t one already. 
