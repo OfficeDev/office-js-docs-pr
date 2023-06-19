@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 06/15/2023
+ms.date: 06/19/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
