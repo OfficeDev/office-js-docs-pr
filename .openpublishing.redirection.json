@@ -1183,7 +1183,7 @@
         },
         {
             "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlookpreview-requirement-set/office.context.mailbox"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox"
         },
         {
             "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.md",
@@ -1208,6 +1208,14 @@
         {
             "source_path": "docs/outlook/manage-state-and-settings-outlook.md",
             "redirect_url": "/office/dev/add-ins/outlook/metadata-for-an-outlook-add-in"
+        },
+        {
+            "source_path": "docs/reference/what's-changed-in-the-javascript-api-for-office.md",
+            "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
+        },
+        {
+            "source_path": "docs/reference/openspec/openspec.md",
+            "redirect_url": "/javascript/api/overview"
         }
     ]
 }
