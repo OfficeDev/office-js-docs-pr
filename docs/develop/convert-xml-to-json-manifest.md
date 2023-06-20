@@ -6,7 +6,7 @@ ms.date: 06/19/2023
 ms.localizationpriority: medium
 ---
 
-# Convert an add-in to use the unified manifest for Microsoft 365
+# Convert an add-in to use the unified manifest for Microsoft 365 (preview)
 
 To add Teams capabilities to an add-in that uses the XML manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
 
@@ -45,7 +45,7 @@ When you've added the files to the project, add **\<IconUrl\>** and **\<HighReso
 
 ## Conversion tools and options
 
-There are several ways to carry out the remaining tasks, depending on the IDE and other tools you want to use for your project and on tool you used to create the project. 
+There are several ways to carry out the remaining tasks, depending on the IDE and other tools you want to use for your project, and on the tool you used to create the project. 
 
 - [Convert the project with Teams Toolkit](#convert-the-project-with-teams-toolkit)
 - [Projects created with the Office Yeoman Generator (aka "Yo Office")](#projects-created-with-the-office-yeoman-generator-aka-yo-office)
@@ -67,7 +67,7 @@ The easiest way to convert is to use Teams Toolkit.
     :::image type="content" source="../images/teams-toolkit-icon.png" alt-text="Teams Toolkit icon.":::
 
 1. Select **Create a new app**.
-1. In the **New Project** drop down, select **Outlook add-in**.
+1. In the **New Project** drop down, select **Outlook Add-in**.
 
     :::image type="content" source="../images/teams-toolkit-create-outlook-add-in.png" alt-text="Screenshot showing four options in New Project drop down. The fourth option is called 'Outlook add-in'.":::
 
@@ -138,7 +138,7 @@ Once you have the unified manifest created, there are two ways to create the zip
     npx office-addin-debugging stop <relative-path-to-unified-manifest>
     ``` 
 
-#### Sideload with the Teams Toolkit CLI
+#### Sideload with the Teams Toolkit CLI (command-line interface) 
 
 1. Manually create the zip package using the following steps.
 
