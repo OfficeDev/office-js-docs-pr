@@ -1,42 +1,42 @@
 ---
 title: Fluent UI React in Office Add-ins
 description: Learn how to use Fluent UI React in Office Add-ins.
-ms.date: 04/01/2022
+ms.date: 06/23/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Use Fluent UI React in Office Add-ins
 
-Fluent UI React is the official open-source JavaScript front-end framework designed to build experiences that fit seamlessly into a broad range of Microsoft products, including Office. It provides robust, up-to-date, accessible React-based components which are highly customizable using CSS-in-JS.
+[Fluent UI React](https://react.fluentui.dev) is the official open-source JavaScript front-end framework designed to build experiences that fit seamlessly into a broad range of Microsoft products, including Microsoft 365 applications. It provides robust, up-to-date, accessible React-based components which are highly customizable using CSS-in-JS.
 
 > [!NOTE]
-> This article describes the use of Fluent UI React in the context of Office Add-ins. But it is also used in a wide range of Microsoft 365 apps and extensions. For more information, see [Fluent UI React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react) and the open source repo [Fluent UI Web](https://github.com/microsoft/fluentui).
+> This article describes the use of Fluent UI React in the context of Office Add-ins. However, it's also used in a wide range of Microsoft 365 apps and extensions. For more information, see [Fluent UI React](https://react.fluentui.dev) and the [Fluent UI Web](https://github.com/microsoft/fluentui) open source repository.
 
-This article describes how to create an add-in that's built with React and uses Fluent UI React components.
+This article describes how to create an add-in that's built with React that uses Fluent UI React components.
 
 ## Create an add-in project
 
-You'll use the Yeoman generator for Office Add-ins to create an add-in project that uses React.
+You'll use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create an add-in project that uses React.
 
 ### Install the prerequisites
 
-[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+[!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ### Create the project
 
-[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
+[!INCLUDE [Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project using React framework`
 - **Choose a script type:** `TypeScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-word-react.png)
+![The Yeoman generator in a command line interface with the prompts and answers.](../images/yo-office-word-react.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
+[!INCLUDE [Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ### Try it out
 
@@ -46,8 +46,7 @@ After you complete the wizard, the generator creates the project and installs su
     cd "My Office Add-in"
     ```
 
-2. Complete the following steps to start the local web server and sideload your add-in.
-
+1. Complete the following steps to start the local web server and sideload your add-in.
     [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
@@ -67,104 +66,162 @@ After you complete the wizard, the generator creates the project and installs su
 
         [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-3. To open the add-in task pane, on the **Home** tab, choose the **Show Taskpane** button. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses UX components from Fluent UI React.
+1. To open the add-in task pane, on the **Home** tab, select the **Show Taskpane** button. Notice the default text and the **Run** button at the bottom of the task pane. In the remainder of this walkthrough, you'll redefine this text and button by creating a React component that uses Fluent UI React components.
 
-    ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane.](../images/word-task-pane-yo-default.png)
+    ![The default task pane of a Word add-in that uses React and was created using the Yeoman generator.](../images/word-task-pane-default-yo.png)
+
+## Install Fluent UI React as a dependency
+
+Before you can create React components, you must first install Fluent UI React as a dependency in your add-in project. To do so, run the following code in the root directory of your add-in project.
+
+```command&nbsp;line
+npm install @fluentui/react-components
+```
+
+## Set up the style renderer in your project
+
+Fluent UI React components are customized using CSS-in-JS. Their look and settings are defined by a style renderer, which assigns values to CSS variables based on a specified theme. To set up a style renderer in your project that uses Fluent UI React, you must add the [FluentProvider](https://react.fluentui.dev/?path=/docs/components-fluentprovider--default) component and pass it a theme. To learn more about Fluent UI React themes and the `FluentProvider` component, see [Theming](https://react.fluentui.dev/?path=/docs/concepts-developer-theming--page).
+
+Complete the following steps to add the `FluentProvider` component to your add-in project and configure it to apply the Web Light theme.
+
+1. Open your add-in project in a code editor, navigate to **./src/taskpane**, then open the **index.tsx** file.
+1. Replace the contents of the file with the following code.
+
+    ```typescript
+    import App from "./components/App";
+    import { initializeIcons } from "@fluentui/font-icons-mdl2";
+    import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+    import * as React from "react";
+    import * as ReactDOM from "react-dom";
+    
+    /* global document, Office, module, require */
+    
+    initializeIcons();
+    
+    let isOfficeInitialized = false;
+    
+    const title = "Contoso Task Pane Add-in";
+    
+    const render = (Component) => {
+      ReactDOM.render(
+        <FluentProvider theme={webLightTheme}>
+          <Component title={title} isOfficeInitialized={isOfficeInitialized} />
+        </FluentProvider>,
+        document.getElementById("container")
+      );
+    };
+    
+    /* Render application after Office initializes */
+    Office.onReady(() => {
+      isOfficeInitialized = true;
+      render(App);
+    });
+    
+    if ((module as any).hot) {
+      (module as any).hot.accept("./components/App", () => {
+        const NextApp = require("./components/App").default;
+        render(NextApp);
+      });
+    }
+    ```
+
+1. Save your changes.
 
 ## Create a React component that uses Fluent UI React
 
-At this point, you've created a very basic task pane add-in that's built using React. Next, complete the following steps to create a new React component (`ButtonPrimaryExample`) within the add-in project. The component uses the `Label` and `PrimaryButton` components from Fluent UI React.
+In this section, you'll create a new React component (`ButtonExample`) within your add-in project. The component uses the [Button](https://react.fluentui.dev/?path=/docs/components-button-button--default) and [Label](https://react.fluentui.dev/?path=/docs/components-label--default) components from Fluent UI React.
 
-1. Open the project folder created by the Yeoman generator, and go to **src\taskpane\components**.
-2. In that folder, create a new file named **Button.tsx**.
-3. In **Button.tsx**, add the following code to define the `ButtonPrimaryExample` component.
+The code does the following:
 
-```typescript
-import * as React from 'react';
-import { PrimaryButton, IButtonProps } from '@fluentui/react/lib/Button';
-import { Label } from '@fluentui/react/lib/Label';
+- Uses `import * as React from "react";` to reference the React library.
+- References the Fluent UI React components (`Button`, `ButtonProps`, and `Label`) that are used to create the `ButtonExample` component.
+- Uses `export class ButtonPrimaryExample extends React.Component` to declare the new `ButtonExample` component.
+- Declares the `insertText` function to handle the button's `onClick` event.
+- Defines the UI of the React component in the `render` function. The HTML markup uses the `Button` and `Label` components from Fluent UI React and specifies that when the `onClick` event occurs, the `insertText` function will run.
 
-export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
-  public constructor(props) {
-    super(props);
-  }
+1. Navigate to **.src/taskpane/components**, then create a new file named **Button.tsx**.
+1. In **Button.tsx**, add the following code to define the `ButtonExample` component.
 
-  insertText = async () => {
-    // In the click event, write text to the document.
-    await Word.run(async (context) => {
-      let body = context.document.body;
-      body.insertParagraph('Hello Fluent UI React!', Word.InsertLocation.end);
-      await context.sync();
-    });
-  }
+    ```typescript
+    import * as React from "react";
+    import { Button, ButtonProps, Label } from "@fluentui/react-components";
+    
+    export class ButtonExample extends React.Component<ButtonProps, {}> {
+      public constructor(props) {
+        super(props);
+      }
+    
+      insertText = async () => {
+        // Write text to the document when the button is selected.
+        await Word.run(async (context) => {
+          let body = context.document.body;
+          body.insertParagraph("Hello Fluent UI React!", Word.InsertLocation.end);
+          await context.sync();
+        });
+      };
+    
+      //Defines the Label and Button Fluent React UI components.
+      public render() {
+        let { disabled } = this.props;
+        return (
+          <div className="ms-BasicButtonExample">
+            <Label weight="semibold">Click the button to insert text.</Label>
+            <br />
+            <Button appearance="primary" disabled={disabled} size="large" onClick={this.insertText}>
+              Insert text
+            </Button>
+          </div>
+        );
+      }
+    }
+    ```
 
-  public render() {
-    let { disabled } = this.props;
-    return (
-      <div className='ms-BasicButtonsExample'>
-        <Label>Click the button to insert text.</Label>
-        <PrimaryButton
-          data-automation-id='test'
-          disabled={ disabled }
-          text='Insert text...'
-          onClick={ this.insertText } />
-      </div>
-    );
-  }
-}
-```
-
-This code does the following:
-
-- References the React library using `import * as React from 'react';`.
-- References the Fluent UI React components (`PrimaryButton`, `IButtonProps`, `Label`) that are used to create `ButtonPrimaryExample`.
-- Declares the new `ButtonPrimaryExample` component using `export class ButtonPrimaryExample extends React.Component`.
-- Declares the `insertText` function that will handle the button's `onClick` event.
-- Defines the UI of the React component in the `render` function. The HTML markup uses the `Label` and `PrimaryButton` components from Fluent UI React and specifies that when the `onClick` event fires, the `insertText` function will run.
+1. Save your changes.
 
 ## Add the React component to your add-in
 
-Add the `ButtonPrimaryExample` component to your add-in by opening **src\components\App.tsx** and completing the following steps.
+To add the newly created `ButtonExample` component to your add-in, complete the following steps.
 
-1. Add the following import statement to reference `ButtonPrimaryExample` from **Button.tsx**.
+1. Navigate to **./src/taskpane/components**, then open **App.tsx**.
+1. Add the following import statement to reference the `ButtonExample` component from **Button.tsx**.
 
     ```typescript
-    import {ButtonPrimaryExample} from './Button';
+    import { ButtonExample } from './Button';
     ```
 
-2. Remove the following import statement.
+1. Remove the following import statements, as they aren't used in this sample.
 
     ```typescript
+    import { DefaultButton } from "@fluentui/react";
     import Progress from './Progress';
     ```
 
-3. Replace the default `render()` function with the following code that uses `ButtonPrimaryExample`.
+1. Replace the default `render()` function with the following code that uses the `ButtonExample` component.
 
     ```typescript
     render() {
       return (
         <div className="ms-welcome">
-        <Header logo="assets/logo-filled.png" title={this.props.title} message="Welcome" />
-        <HeroList message="Discover what this add-in can do for you today!" items={this.state.listItems} >
-          <ButtonPrimaryExample />
-        </HeroList>
+          <Header logo="assets/logo-filled.png" title={this.props.title} message="Welcome" />
+          <HeroList message="Discover what this add-in can do for you today!" items={this.state.listItems} >
+            <ButtonExample />
+          </HeroList>
         </div>
       );
     }
     ```
 
-4. Save the changes you've made to **App.tsx**.
+1. Save your changes.
 
 ## See the result
 
-In Word, the add-in task pane automatically updates when you save changes to **App.tsx**. The default text and button at the bottom of the task pane now shows the UI that's defined by the `ButtonPrimaryExample` component. Choose the **Insert text...** button to insert text into the document.
+In Word, the add-in task pane automatically updates when you save changes to **App.tsx**. The default text and button at the bottom of the task pane now reflect the UI defined by the `ButtonExample` component. Select the **Insert text** button to insert text into the document.
 
-![Screenshot showing the Word application with the "Insert text..." button and immediately preceding text highlighted.](../images/word-task-pane-with-react-component.png)
+![Custom text inserted into the document after selecting the Insert button from the add-in task pane.](../images/word-task-pane-react-component.png)
 
 Congratulations, you've successfully created a task pane add-in using React and Fluent UI React!
 
 ## See also
 
-- [Word Add-in GettingStartedFabricReact](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
 - [Fabric Core in Office Add-ins](fabric-core.md)
 - [UX design patterns for Office Add-ins](ux-design-pattern-templates.md)
