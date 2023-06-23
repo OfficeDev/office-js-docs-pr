@@ -40,7 +40,7 @@ Browse each grouping to get an idea of how you can design your add-in using best
 
 ## See also
 
-* [Design tool kits](design-toolkits.md)
+* [Design toolkits](design-toolkits.md)
 * [Fluent UI](https://developer.microsoft.com/fluentui#)
 * [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
 * [Fluent UI React in Office Add-ins](using-office-ui-fabric-react.md)
