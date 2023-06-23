@@ -1,13 +1,13 @@
 ---
-title: Design tool kits for Office Add-ins
+title: Design toolkits for Office Add-ins
 description: Get links to some tools to help design the UI of an Office Add-in.
-ms.date: 05/12/2021
+ms.date: 06/23/2023
 ms.localizationpriority: medium
 ---
 
-# Design tool kits
+# Design toolkits
 
-To help you get started, we've created tool kits for use with either the [Sketch](https://www.sketch.com/) application for Mac or the [Adobe XD](https://www.adobe.com/products/xd/features.html) application for Windows or Mac. The following downloads include all of our available patterns, along with brief descriptions and layout recommendations.
+To help you get started, we've created toolkits for use with either the [Sketch](https://www.sketch.com/) application for Mac or the [Adobe XD](https://www.adobe.com/products/xd/features.html) application for Windows or Mac. The following downloads include all of our available patterns, along with brief descriptions and layout recommendations.
 
 ## Downloads
 

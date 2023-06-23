@@ -1,16 +1,16 @@
 ---
 title: Sideload Office Add-ins for testing from a network share
 description: Learn how to sideload an Office Add-in for testing from a network share.
-ms.date: 05/26/2022
+ms.date: 06/23/2023
 ms.localizationpriority: medium
 ---
 
 # Sideload Office Add-ins for testing from a network share
 
-You can test an Office Add-in in an Office client that is on Windows by publishing the manifest to a network file share (instructions below). This deployment option is intended to be used when you have completed development and testing on a localhost and want to test the add-in from a non-local server or cloud account.
+You can test an Office Add-in in an Office client that's on Windows by publishing the manifest to a network file share (instructions follow). This deployment option is intended to be used when you've completed development and testing on a localhost and want to test the add-in from a non-local server or cloud account.
 
 > [!IMPORTANT]
-> Deployment by network share is not supported for production add-ins. This method has the following limitations.
+> Deployment by network share isn't supported for production add-ins. This method has the following limitations.
 >
 > - The add-in can only be installed on Windows computers.
 > - If a new version of an add-in changes the ribbon, such as by adding a custom tab or custom button to it, each user will have to reinstall the add-in.
@@ -33,15 +33,15 @@ The following video walks you through the process of sideloading your add-in in 
 
 1. In File Explorer on the Windows computer where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.
 
-1. Open the context menu for the folder you want to use as your shared folder catalog (right-click the folder) and choose **Properties**.
+1. Open the context menu for the folder you want to use as your shared folder catalog (for example, right-click the folder) and choose **Properties**.
 
 1. Within the **Properties** dialog window, open the **Sharing** tab and then choose the **Share** button.
 
     ![Folder Properties dialog with the Sharing tab and Share button highlighted.](../images/sideload-windows-properties-dialog.png)
 
-1. Within the **Network access** dialog window, add yourself and any other users and/or groups with whom you want to share your add-in. You will need at least **Read/Write** permission to the folder. After you have finished choosing people to share with, choose the **Share** button.
+1. Within the **Network access** dialog window, add yourself and any other users and/or groups with whom you want to share your add-in. You'll need at least **Read/Write** permission to the folder. After you've finished choosing people to share with, choose the **Share** button.
 
-1. When you see confirmation that **Your folder is shared**, make note of the full network path that's displayed immediately following the folder name. (You will need to enter this value as the **Catalog Url** when you [specify the shared folder as a trusted catalog](#specify-the-shared-folder-as-a-trusted-catalog), as described in the next section of this article.) Choose the **Done** button to close the **Network access** dialog window.
+1. When you see the **Your folder is shared** confirmation, make note of the full network path that's displayed immediately following the folder name. (You'll need to enter this value as the **Catalog Url** when you [specify the shared folder as a trusted catalog](#specify-the-shared-folder-as-a-trusted-catalog), as described in the next section of this article.) Choose the **Done** button to close the **Network access** dialog window.
 
    ![Network access dialog with the share path highlighted.](../images/sideload-windows-network-access-dialog.png)
 
@@ -65,7 +65,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 1. After you've entered the full network path of the folder into the **Catalog Url** box, choose the **Add catalog** button.
 
-1. Select the **Show in Menu** check box for the newly-added item, and then choose the **OK** button to close the **Trust Center** dialog window. 
+1. Select the **Show in Menu** check box for the newly-added item, and then choose the **OK** button to close the **Trust Center** dialog window.
 
     ![Trust Center dialog with catalog selected.](../images/sideload-windows-trust-center-dialog.png)
 
@@ -75,7 +75,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 ### Configure the trust with a Registry script
 
-1. In a text editor, create a file named TrustNetworkShareCatalog.reg.
+1. In a text editor, create a file named **TrustNetworkShareCatalog.reg**.
 
 1. Add the following content to the file.
 
@@ -111,7 +111,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 ## Sideload your add-in
 
-1. Put the manifest XML file of any add-in that you are testing in the shared folder catalog. Note that you deploy the web application itself to a web server. Be sure to specify the URL in the **\<SourceLocation\>** element of the manifest file.
+1. Put the manifest XML file of any add-in that you're testing into the shared folder catalog. Note that you deploy the web application itself to a web server. Be sure to specify the URL in the **\<SourceLocation\>** element of the manifest file.
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
