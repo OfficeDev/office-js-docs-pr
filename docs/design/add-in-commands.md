@@ -50,7 +50,7 @@ For Outlook, the default add-in command location is based on the current Outlook
 | Viewing a meeting as an attendee | **Meeting**, **Meeting Occurrence**, or **Meeting Series** tabs.<sup>1</sup> |
 | Using a module extension | The extension's custom tab. |
 
-<sup>1</sup> If a user selects an item in the calendar but doesn't open the pop-out, the add-in's ribbon group won't be visible in the ribbon.
+<sup>1</sup> If a user selects an item in the calendar but doesn't open the pop-out, the add-in's ribbon group won't be visible on the ribbon.
 
 #### Modern Outlook on the web
 

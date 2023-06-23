@@ -49,7 +49,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
-1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
     ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
 

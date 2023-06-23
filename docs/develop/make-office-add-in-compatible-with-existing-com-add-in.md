@@ -65,7 +65,7 @@ To declare compatibility between your Outlook web add-in and COM/VSTO add-in, id
 When an [equivalent COM add-in is specified](#specify-an-equivalent-com-add-in), Office on Windows will not display your Office Add-in's user interface (UI) if the equivalent COM add-in is installed. Office only hides the ribbon buttons of the Office Add-in and doesn't prevent installation. Therefore, your Office Add-in will still appear in the following locations within the UI.
 
 - Under **My add-ins**.
-- As an entry in the ribbon manager (Excel, Word, and PowerPoint only).
+- As an entry on the ribbon manager (Excel, Word, and PowerPoint only).
 
 > [!NOTE]
 > Specifying an equivalent COM add-in in the manifest has no effect on other platforms, like Office on the web or on Mac.
@@ -77,7 +77,7 @@ The following scenarios describe what happens depending on how the user acquires
 If a user acquires the Office Add-in from AppSource and the equivalent COM add-in is already installed, then Office will:
 
 1. Install the Office Add-in.
-2. Hide the Office Add-in UI in the ribbon.
+2. Hide the Office Add-in UI on the ribbon.
 3. Display a call-out for the user that points out the COM add-in ribbon button.
 
 ### Centralized deployment of Office Add-in
@@ -85,7 +85,7 @@ If a user acquires the Office Add-in from AppSource and the equivalent COM add-i
 If an admin deploys the Office Add-in to their tenant using centralized deployment, and the equivalent COM add-in is already installed, the user must restart Office before they'll see any changes. After Office restarts, it will:
 
 1. Install the Office Add-in.
-2. Hide the Office Add-in UI in the ribbon.
+2. Hide the Office Add-in UI on the ribbon.
 3. Display a call-out for the user that points out the COM add-in ribbon button.
 
 ### Document shared with embedded Office Add-in
@@ -94,7 +94,7 @@ If a user has the COM add-in installed, and then gets a shared document with the
 
 1. Prompt the user to trust the Office Add-in.
 2. If trusted, the Office Add-in will install.
-3. Hide the Office Add-in UI in the ribbon.
+3. Hide the Office Add-in UI on the ribbon.
 
 ## Other COM add-in behavior
 

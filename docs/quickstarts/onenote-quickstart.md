@@ -95,7 +95,7 @@ try {
 
 1. In the Upload Add-in dialog, browse to **manifest.xml** in your project folder, and then choose **Upload**.
 
-1. From the **Home** tab, choose the **Show Taskpane** button in the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.
+1. From the **Home** tab, choose the **Show Taskpane** button on the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.
 
 1. At the bottom of the task pane, choose the **Run** link to set the page title and add an outline to the body of the page.
 
