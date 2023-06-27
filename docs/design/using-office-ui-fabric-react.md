@@ -1,7 +1,7 @@
 ---
 title: Fluent UI React in Office Add-ins
 description: Learn how to use Fluent UI React in Office Add-ins.
-ms.date: 06/23/2023
+ms.date: 06/27/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -80,7 +80,7 @@ npm install @fluentui/react-components
 
 ## Set up the style renderer in your project
 
-Fluent UI React components are customized using CSS-in-JS. Their look and settings are defined by a style renderer, which assigns values to CSS variables based on a specified theme. To set up a style renderer in your project that uses Fluent UI React, you must add the [FluentProvider](https://react.fluentui.dev/?path=/docs/components-fluentprovider--default) component and pass it a theme. To learn more about Fluent UI React themes and the `FluentProvider` component, see [Theming](https://react.fluentui.dev/?path=/docs/concepts-developer-theming--page).
+The styles of Fluent UI React components are defined by a style renderer, which assigns values to CSS variables based on a specified theme. To set up a style renderer in your project that uses Fluent UI React, you must add the [FluentProvider](https://react.fluentui.dev/?path=/docs/components-fluentprovider--default) component and pass it a theme. To learn more about Fluent UI React themes and the `FluentProvider` component, see [Theming](https://react.fluentui.dev/?path=/docs/concepts-developer-theming--page).
 
 Complete the following steps to add the `FluentProvider` component to your add-in project and configure it to apply the Web Light theme.
 
@@ -89,14 +89,11 @@ Complete the following steps to add the `FluentProvider` component to your add-i
 
     ```typescript
     import App from "./components/App";
-    import { initializeIcons } from "@fluentui/font-icons-mdl2";
     import { FluentProvider, webLightTheme } from "@fluentui/react-components";
     import * as React from "react";
     import * as ReactDOM from "react-dom";
     
     /* global document, Office, module, require */
-    
-    initializeIcons();
     
     let isOfficeInitialized = false;
     
@@ -221,7 +218,12 @@ In Word, the add-in task pane automatically updates when you save changes to **A
 
 Congratulations, you've successfully created a task pane add-in using React and Fluent UI React!
 
+## Migrate to Fluent UI React v9
+
+If you have an existing add-in that implements an older version of Fluent UI React, we recommend migrating to Fluent UI v9. For guidance on the migration process, see [Getting started migrating to v9](https://react.fluentui.dev/?path=/docs/concepts-migration-getting-started--page).
+
 ## See also
 
 - [Fabric Core in Office Add-ins](fabric-core.md)
 - [UX design patterns for Office Add-ins](ux-design-pattern-templates.md)
+- [Fluent UI GitHub repository](https://github.com/microsoft/fluentui)

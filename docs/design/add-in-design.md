@@ -19,7 +19,7 @@ Office applications follow a general set of interaction guidelines. The applicat
 
 Follow the Office design principles to create positive add-in experiences.
 
-- **Design explicitly for Office.** The functionality, as well as the look and feel, of an add-in must harmoniously complement the Office experience. Add-ins should feel native. They should fit seamlessly into Word on an iPad or PowerPoint on the web. A well-designed add-in will be an appropriate blend of your experience, the platform, and the Office application. Apply document and UI theming where appropriate. Consider using [Fluent UI for the web](https://developer.microsoft.com/fluentui#/get-started/web) as your design language and tool set. The Fluent UI for the web has two flavors.
+- **Design explicitly for Office.** The functionality, as well as the look and feel, of an add-in must harmoniously complement the Office experience. Add-ins should feel native. They should fit seamlessly into Word on an iPad or PowerPoint on the web. A well-designed add-in will be an appropriate blend of your experience, the platform, and the Office application. Apply document and UI theming where appropriate. Consider using Fluent UI for the web as your design language and tool set. The Fluent UI for the web has two flavors.
 
   - **For non-React UIs:** Use **Fabric Core**, an open-source collection of CSS classes and Sass mixins that give you access to colors, animations, fonts, icons, and grids. (It's called "Fabric Core" instead of "Fluent Core" for historical reasons.) To get started, see [Fabric Core in Office Add-ins](fabric-core.md).
   
