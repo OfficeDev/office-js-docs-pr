@@ -99,7 +99,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
 ## Attach the debugger
 
-The **bundle.js** file of an add-in contains the JavaScript code of your add-in. It's created when Outlook on Windows is opened. When Outlook starts, add-ins installed on the Exchange server are fetched and parsed. During parsing, the **bundle.js** file of each add-in is cached in the **Wef** folder of your machine.
+The **bundle.js** file of an add-in contains the JavaScript code of your add-in. It's created when Outlook on Windows is opened. When Outlook starts, the **bundle.js** file of each installed add-in is cached in the **Wef** folder of your machine.
 
 1. To find the add-in's **bundle.js** file, navigate to the following folder in File Explorer. Replace text enclosed in `[]` with your applicable Outlook and add-in information.
 
