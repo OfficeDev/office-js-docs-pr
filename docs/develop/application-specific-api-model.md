@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Application-specific API model
 
-This article describes how to use the API model for building add-ins in xcel, OneNote, PowerPoint, Visio, and Word. It introduces core concepts that are fundamental to using the promise-based APIs.
+This article describes how to use the API model for building add-ins in Excel, OneNote, PowerPoint, Visio, and Word. It introduces core concepts that are fundamental to using the promise-based APIs.
 
 > [!NOTE]
 > This model isn't supported by Outlook or Project clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those applications. For full platform availability notes, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
