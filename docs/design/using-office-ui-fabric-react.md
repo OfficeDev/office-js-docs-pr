@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > This article describes the use of Fluent UI React in the context of Office Add-ins. However, it's also used in a wide range of Microsoft 365 apps and extensions. For more information, see [Fluent UI React](https://react.fluentui.dev) and the [Fluent UI Web](https://github.com/microsoft/fluentui) open source repository.
 
-This article describes how to create an add-in that's built with React that uses Fluent UI React components.
+This article describes how to create an add-in that's built with React and that uses Fluent UI React components.
 
 ## Create an add-in project
 
