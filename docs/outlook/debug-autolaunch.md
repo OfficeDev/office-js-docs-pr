@@ -1,7 +1,7 @@
 ---
 title: Debug your event-based Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation.
-ms.date: 06/09/2023
+ms.date: 06/27/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -99,20 +99,13 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
 ## Attach the debugger
 
-The **bundle.js** file is created by your bundler tool to build dependencies in your add-in's JavaScript files. For example, the add-in project you create with the [Yeoman generator](../develop/yeoman-generator-overview.md) uses [webpack](https://webpack.js.org/concepts/) to output the **bundle.js** file.
+The **bundle.js** file of an add-in contains the JavaScript code of your add-in. It's created when Outlook on Windows is opened. When Outlook starts, add-ins installed on the Exchange server are fetched and parsed. During parsing, the **bundle.js** file of each add-in is cached in the **Wef** folder of your machine.
 
 1. To find the add-in's **bundle.js** file, navigate to the following folder in File Explorer. Replace text enclosed in `[]` with your applicable Outlook and add-in information.
 
     ```text
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[Outlook mail account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
     ```
-
-    > [!TIP]
-    > If the **bundle.js** file doesn't appear in the folder, run the following command from the root of your add-in project.
-    >
-    > ```command&nbsp;line
-    > npm run build
-    > ```
 
 1. Open **bundle.js** in Visual Studio Code.
 1. Place breakpoints in **bundle.js** where you want the debugger to stop.
