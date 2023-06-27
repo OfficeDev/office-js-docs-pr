@@ -1,19 +1,19 @@
 ---
 title: Using the application-specific API model
-description: Learn about the promise-based API model for Excel, OneNote, and Word add-ins.
-ms.date: 05/20/2023
+description: Learn about the promise-based API model for Excel, OneNote, PowerPoint, Visio, and Word add-ins.
+ms.date: 06/27/2023
 ms.localizationpriority: medium
 ---
 
 # Application-specific API model
 
-This article describes how to use the API model for building add-ins in Excel, Word, PowerPoint, and OneNote. It introduces core concepts that are fundamental to using the promise-based APIs.
+This article describes how to use the API model for building add-ins in Excel, OneNote, PowerPoint, Visio, and Word. It introduces core concepts that are fundamental to using the promise-based APIs.
 
 > [!NOTE]
 > This model isn't supported by Outlook or Project clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those applications. For full platform availability notes, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
 
 > [!TIP]
-> The examples in this page use the Excel JavaScript APIs, but the concepts also apply to OneNote, PowerPoint, Visio, and Word JavaScript APIs.
+> The examples in this page use the Excel JavaScript APIs, but the concepts also apply to OneNote, PowerPoint, Visio, and Word JavaScript APIs. For complete code samples that show how you could use these and other concepts in various Office applications, see [Office Add-in code samples](../overview/office-add-in-code-samples.md).
 
 ## Asynchronous nature of the promise-based APIs
 
@@ -23,7 +23,7 @@ Office Add-ins are websites which appear inside a webview control within Office 
 
 `Excel.run`, `OneNote.run`, `PowerPoint.run`, and `Word.run` execute a function that specifies the actions to perform against Excel, Word, and OneNote. `*.run` automatically creates a request context that you can use to interact with Office objects. When `*.run` completes, a promise is resolved, and any objects that were allocated at runtime are automatically released.
 
-The following example shows how to use `Excel.run`. The same pattern is also used with OneNote, PowerPoint, and Word.
+The following example shows how to use `Excel.run`. The same pattern is also used with OneNote, PowerPoint, Visio, and Word.
 
 ```js
 Excel.run(function (context) {
@@ -71,7 +71,8 @@ range.format.fill.color = "red";
 range.numberFormat = "0.00%";
 range.values = [[1]];
 
-// ALSO GOOD: Use a "set" method to immediately set all the properties without even needing to create a variable!
+// ALSO GOOD: Use a "set" method to immediately set all the properties
+// without even needing to create a variable!
 worksheet.getRange("A1").set({
     numberFormat: [["0.00%"]],
     values: [[1]],
@@ -127,7 +128,7 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> If you are only calling methods or setting properties on a proxy object, you don't need to call the `load()` method. The `load()` method is only required when you want to read properties on a proxy object.
+> If you're only calling methods or setting properties on a proxy object, you don't need to call the `load()` method. The `load()` method is only required when you want to read properties on a proxy object.
 
 Just like requests to set properties or invoke methods on proxy objects, requests to load properties on proxy objects get added to the queue of pending commands on the request context, which will run the next time you call the `sync()` method. You can queue up as many `load()` calls on the request context as necessary.
 
@@ -152,7 +153,7 @@ If you call the `load()` method on an object (or collection) without specifying 
 > [!IMPORTANT]
 > The amount of data returned by a parameter-less `load` statement can exceed the size limits of the service. To reduce the risks to older add-ins, some properties are not returned by `load` without explicitly requesting them. The following properties are excluded from such load operations.
 >
-> * `Excel.Range.numberFormatCategories`
+> - `Excel.Range.numberFormatCategories`
 
 ### ClientResult
 
