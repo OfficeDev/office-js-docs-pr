@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Word add-ins
 description: Learn how to troubleshoot development errors in Word add-ins.
-ms.date: 02/07/2023
+ms.date: 06/27/2023
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -9,6 +9,12 @@ ms.localizationpriority: medium
 # Troubleshoot Word add-ins
 
 This article discusses troubleshooting issues that are unique to Word. Use the feedback tool at the end of the page to suggest other issues that can be added to the article.
+
+## Body.insertFileFromBase64 doesn't insert header or footer
+
+It's by design that the [Body.insertFileFromBase64](/javascript/api/word/word.body#word-word-body-insertfilefrombase64-member(1)) method excludes any header or footer that was in the source file.
+
+To include any headers or footers from the source file, use [Document.insertFileFromBase64](/javascript/api/word/word.document#word-word-document-insertfilefrombase64-member(1)) instead.
 
 ## Layout breaks when using `insertHtml` while cursor is in content control in header
 
