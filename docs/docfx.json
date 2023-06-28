@@ -9,6 +9,7 @@
         "exclude": [
           "**/obj/**",
           "**/includes/**",
+          "**/excludes/**",
           "README.md",
           "LICENSE",
           "LICENSE-CODE",
@@ -45,28 +46,28 @@
       "ms.author": "o365devx",
       "author": "o365devx",
       "ms.topic": "conceptual",
-      "ms.technology": "add-ins",
+      "ms.subservice": "add-ins",
       "titleSuffix": "Office Add-ins"
     },
     "fileMetadata": {
       "feedback_system": {
         "resources/resources-links-help.md": "None"
       },
-      "ms.prod": {
-        "concepts/*.md": "non-product-specific",
-        "design/*.md": "non-product-specific",
-        "develop/*.md": "non-product-specific",
+      "ms.service": {
+        "concepts/*.md": "microsoft-365",
+        "design/*.md": "microsoft-365",
+        "develop/*.md": "microsoft-365",
         "excel/*.md": "excel",
         "onenote/*.md": "onenote",
         "outlook/*.md": "outlook",
-        "overview/*.md": "non-product-specific",
+        "overview/*.md": "microsoft-365",
         "powerpoint/*.md": "powerpoint",
         "project/*.md": "project",
-        "publish/*.md": "non-product-specific",
-        "reference/*.md": "non-product-specific",
+        "publish/*.md": "microsoft-365",
+        "reference/*.md": "microsoft-365",
         "reference/objectmodel/**/*.md": "outlook",
-        "resources/*.md": "non-product-specific",
-        "testing/*.md": "non-product-specific",
+        "resources/*.md": "microsoft-365",
+        "testing/*.md": "microsoft-365",
         "visio/*.md": "visio",
         "word/*.md": "word"
       },

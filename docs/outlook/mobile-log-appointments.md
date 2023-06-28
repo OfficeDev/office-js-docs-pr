@@ -32,7 +32,7 @@ This option will enable a user to log and view their notes and other details abo
 
 To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors aren't supported.
 
-[!INCLUDE [Unified Microsoft 365 manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
+[!INCLUDE [Unified manifest for Microsoft 365 not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 1. In your code editor, open the quick start project.
 
@@ -123,7 +123,7 @@ To enable users to log appointment notes with your add-in, you must configure th
     ```
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ### Capture appointment notes
 
@@ -283,7 +283,7 @@ This option will enable a user to log and view their notes and other details abo
 
 To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors aren't supported.
 
-[!INCLUDE [Unified Microsoft 365 manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
+[!INCLUDE [Unified manifest for Microsoft 365 not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 1. In your code editor, open the quick start project.
 
@@ -375,7 +375,7 @@ To enable users to log appointment notes with your add-in, you must configure th
     ```
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ### Capture appointment notes
 

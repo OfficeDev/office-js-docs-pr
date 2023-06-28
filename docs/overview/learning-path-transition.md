@@ -1,7 +1,7 @@
 ---
 title: VSTO add-in developer's guide to Office Web Add-ins
 description:  A recommended path for experienced VSTO add-in developers to learning resources for Office Web Add-ins.
-ms.date: 02/07/2023
+ms.date: 05/20/2023
 ms.topic: get-started
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -17,7 +17,7 @@ Your understanding of the object models for the Excel, Word, and the other Offic
 
 - You'll be working with a different language (either JavaScript or TypeScript) instead of C# or Visual Basic .NET. (There is also a way, described later, to reuse some of your existing code in a web add-in.)
 - Office Web Add-ins are deployed differently from VSTO add-ins.
-- Office Web Add-ins are web applications that run in a simplified browser window that is embedded in the Office application, so you need to gain a basic understanding of web applications and how they're hosted on web servers or cloud accounts.
+- Office Web Add-ins are web applications that run in a simplified webview control that is embedded in the Office application, so you need to gain a basic understanding of web applications and how they're hosted on web servers or cloud accounts.
 
 For these reasons, much of this article duplicates our [Beginner's guide to Office extensions](learning-path-beginner.md). What we've added are some learning resources to help VSTO add-in developers leverage their experience, and also help them reuse their existing code.
 
@@ -58,7 +58,7 @@ This would be a good place to take a look at the sample add-in, [Excel Add-in Ja
 
 ## Step 5: Understand the manifest
 
-Get an understanding of the purposes of the web add-in manifest and an introduction to its XML markup in [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+Get an understanding of the purposes of the web add-in manifest and an introduction to its XML markup or JSON in [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 ## Step 6 (for VSTO developers only): Reuse your VSTO code
 

@@ -74,7 +74,7 @@ You can validate the manifest file against the [XML Schema Definition (XSD)](/op
 
 ## See also
 
-- [Office Add-ins XML manifest](../develop/add-in-manifests.md)
+- [Office Add-ins manifest](../develop/add-in-manifests.md)
 - [Clear the Office cache](clear-cache.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)

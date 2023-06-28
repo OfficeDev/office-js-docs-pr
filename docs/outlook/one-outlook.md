@@ -1,7 +1,7 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows (preview)
 description: Learn how to develop add-ins that are compatible with the new Outlook on Windows (preview).
-ms.date: 02/07/2023
+ms.date: 06/02/2023
 ms.localizationpriority: medium
 ---
 
@@ -60,11 +60,15 @@ Test your Outlook web add-in in the new Outlook on Windows today! To switch to t
 
 - Have a minimum OS installation of Windows 10 Version 1809 (Build 17763).
 
-- Be a member of the [Office Insider Program](https://insider.office.com/join/windows).
+- Be a member of the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows).
 
 To help you sign up and install the Outlook desktop client, see [Getting started with the new Outlook for Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
 For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
+
+## Debug your add-in
+
+To debug an add-in installed in the new Outlook on Windows desktop client, first [sideload the add-in to Outlook on the web](sideload-outlook-add-ins-for-testing.md). Then, follow the guidance in [Debug add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) to use your browser's developer tools for debugging.
 
 ## Development experience feedback
 

@@ -52,7 +52,7 @@ To remove a sideloaded add-in from Outlook, use the steps outlined in [Sideload 
 
 If this add-in removal doesn't work, then delete the contents of the `Wef` folder as noted previously for Excel, Word, and PowerPoint.
 
-If your Outlook add-in uses the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md), also delete the following folder.
+If your Outlook add-in uses the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md), also delete the following folder.
 
 ```
 %userprofile%\AppData\Local\Microsoft\Outlook\HubAppFileCache
@@ -102,5 +102,5 @@ To clear the Office cache on iOS, call `window.location.reload(true)` from JavaS
 - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
-- [Office Add-ins XML manifest](../develop/add-in-manifests.md)
+- [Office Add-ins manifest](../develop/add-in-manifests.md)
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)

@@ -1,12 +1,12 @@
 ---
-title: Manage the sensitivity label of your message or appointment in compose mode (preview)
+title: Manage the sensitivity label of your message or appointment in compose mode
 description: Learn how to manage the sensitivity label of your message or appointment in compose mode.
-ms.date: 04/18/2023
+ms.date: 05/19/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Manage the sensitivity label of your message or appointment in compose mode (preview)
+# Manage the sensitivity label of your message or appointment in compose mode
 
 Collaboration in the workplace not only occurs within the organization, but extends to external partners as well. With information being shared beyond an organization's network, it's important to establish measures to prevent data loss and enforce compliance policies. [Microsoft Purview Information Protection](/microsoft-365/compliance/information-protection) helps you implement solutions to classify and protect sensitive information. The use of sensitivity labels in Outlook is a capability you can configure to protect your data.
 
@@ -16,18 +16,16 @@ You can use the Office JavaScript API to implement sensitivity label solutions i
 - Restrict additional actions if a certain sensitivity label is applied to a message or appointment, such as preventing users from adding external recipients to a message.
 - Add a header or footer to a message or appointment based on its sensitivity label to comply with business and legal policies.
 
-> [!IMPORTANT]
-> Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> [!NOTE]
+> Support for the sensitivity label feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). For information about client support for this feature, see [Supported clients and platforms](#supported-clients-and-platforms).
 
 ## Prerequisites
 
-To preview the sensitivity label feature in your add-in, you must have a Microsoft 365 E5 subscription. For access to a free developer sandbox that includes a renewable E5 subscription, join the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program#Subscription).
+To implement the sensitivity label feature in your add-in, you must have a Microsoft 365 E5 subscription. For access to a free developer sandbox that includes a renewable E5 subscription, join the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program#Subscription).
 
-You must also set up your preferred Outlook client as follows.
+### Preview the sensitivity label feature in Outlook on Mac
 
-- For Outlook on Windows, install Version 2302 (Build 16130.20020) or later. Then, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
-- For Outlook on Mac, install Version 16.71.312.0 or later. Then, join the [Office Insider program](https://insider.office.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
-- For Outlook on the web, ensure that the **Targeted release** option is set up on your Microsoft 365 tenant. To learn more, see the "Targeted release" section of [Set up the Standard or Targeted release options](/microsoft-365/admin/manage/release-options-in-office-365#targeted-release).
+To preview the sensitivity label feature in Outlook on Mac, install Version 16.71.312.0 or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
 
 ### Supported clients and platforms
 
@@ -35,13 +33,16 @@ The following table lists client-server combinations that support the use of the
 
 |Client|Exchange Online|
 |------|------|
-|**Windows**<br>Version 2302 (Build 16130.20020) or later|Supported|
-|**Mac**<br>Version 16.71.312.0 or later|Supported|
+|**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|
+|**Mac**<br>Version 16.71.312.0 or later (preview)|Supported|
 |**Web browser (modern UI)**|Supported|
 |**iOS**|Not applicable|
 |**Android**|Not applicable|
 
 ## Configure the manifest
+
+> [!NOTE]
+> The sensitivity label feature isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
 
 To use the sensitivity feature in your Outlook add-in project, you must set the [\<Permissions\> element](/javascript/api/manifest/permissions) of the XML manifest to **ReadWriteItem**.
 
@@ -51,14 +52,11 @@ To use the sensitivity feature in your Outlook add-in project, you must set the 
 
 If your add-in will detect and handle the `OnSensitivityLabelChanged` event, additional manifest configurations are required to enable the event-based activation feature. To learn more, see [Detect sensitivity label changes with the OnSensitivityLabelChanged event](#detect-sensitivity-label-changes-with-the-onsensitivitylabelchanged-event).
 
-> [!IMPORTANT]
-> The sensitivity label feature isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
-
 ## Verify the status of the catalog of sensitivity labels
 
 Sensitivity labels and policies are configured by an organization's administrator through the [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center). For guidance on how to configure sensitivity labels in your tenant, see [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels).
 
-Before you can get or set the sensitivity label on a message or appointment, you must first ensure that the catalog of sensitivity labels is enabled on the mailbox where the add-in is installed. To check the status of the catalog of sensitivity labels, call [context.sensitivityLabelsCatalog.getIsEnabledAsync](/javascript/api/outlook/office.sensitivitylabelscatalog?view=outlook-js-preview&preserve-view=true#outlook-office-sensitivitylabelscatalog-getisenabledasync-member(1)) in compose mode.
+Before you can get or set the sensitivity label on a message or appointment, you must first ensure that the catalog of sensitivity labels is enabled on the mailbox where the add-in is installed. To check the status of the catalog of sensitivity labels, call [context.sensitivityLabelsCatalog.getIsEnabledAsync](/javascript/api/outlook/office.sensitivitylabelscatalog#outlook-office-sensitivitylabelscatalog-getisenabledasync-member(1)) in compose mode.
 
 ```javascript
 // Check whether the catalog of sensitivity labels is enabled.
@@ -73,7 +71,7 @@ Office.context.sensitivityLabelsCatalog.getIsEnabledAsync((asyncResult) => {
 
 ## Identify available sensitivity labels
 
-If you want to determine the sensitivity labels available for use on a message or appointment in compose mode, use [context.sensitivityLabelsCatalog.getAsync](/javascript/api/outlook/office.sensitivitylabelscatalog?view=outlook-js-preview&preserve-view=true#outlook-office-sensitivitylabelscatalog-getasync-member(1)). The available labels are returned in the form of [SensitivityLabelDetails](/javascript/api/outlook/office.sensitivitylabeldetails?view=outlook-js-preview&preserve-view=true) objects, which provide the following details.
+If you want to determine the sensitivity labels available for use on a message or appointment in compose mode, use [context.sensitivityLabelsCatalog.getAsync](/javascript/api/outlook/office.sensitivitylabelscatalog#outlook-office-sensitivitylabelscatalog-getasync-member(1)). The available labels are returned in the form of [SensitivityLabelDetails](/javascript/api/outlook/office.sensitivitylabeldetails) objects, which provide the following details.
 
 - The name of the label.
 - The unique identifier (GUID) of the label.
@@ -112,7 +110,7 @@ Office.context.sensitivityLabelsCatalog.getIsEnabledAsync((asyncResult) => {
 
 ## Get the sensitivity label of a message or appointment
 
-To get the sensitivity label currently applied to a message or appointment in compose mode, call [item.sensitivityLabel.getAsync](/javascript/api/outlook/office.sensitivitylabel?view=outlook-js-preview&preserve-view=true#outlook-office-sensitivitylabel-getasync-member(1)) as shown in the following example. This returns the GUID of the sensitivity label.
+To get the sensitivity label currently applied to a message or appointment in compose mode, call [item.sensitivityLabel.getAsync](/javascript/api/outlook/office.sensitivitylabel#outlook-office-sensitivitylabel-getasync-member(1)) as shown in the following example. This returns the GUID of the sensitivity label.
 
 ```javascript
 // It's recommended to check the status of the catalog of sensitivity labels before
@@ -135,7 +133,7 @@ Office.context.sensitivityLabelsCatalog.getIsEnabledAsync((asyncResult) => {
 
 ## Set the sensitivity label on a message or appointment
 
-You can set only one sensitivity label on a message or appointment in compose mode. Before you set the label, call [context.sensitivityLabelsCatalog.getAsync](/javascript/api/outlook/office.sensitivitylabelscatalog?view=outlook-js-preview&preserve-view=true#outlook-office-sensitivitylabelscatalog-getasync-member(1)). This ensures that the label you want to apply is available for use. It also helps you identify a label's GUID, which you'll need to apply the label to the mail item. After you confirm the label's availability, pass its GUID as a parameter to [item.sensitivityLabel.setAsync](/javascript/api/outlook/office.sensitivitylabel?view=outlook-js-preview&preserve-view=true#outlook-office-sensitivitylabel-setasync-member(1)), as shown in the following example.
+You can set only one sensitivity label on a message or appointment in compose mode. Before you set the label, call [context.sensitivityLabelsCatalog.getAsync](/javascript/api/outlook/office.sensitivitylabelscatalog#outlook-office-sensitivitylabelscatalog-getasync-member(1)). This ensures that the label you want to apply is available for use. It also helps you identify a label's GUID, which you'll need to apply the label to the mail item. After you confirm the label's availability, pass its GUID as a parameter to [item.sensitivityLabel.setAsync](/javascript/api/outlook/office.sensitivitylabel#outlook-office-sensitivitylabel-setasync-member(1)), as shown in the following example.
 
 ```javascript
 // It's recommended to check the status of the catalog of sensitivity labels before
@@ -170,7 +168,7 @@ Office.context.sensitivityLabelsCatalog.getIsEnabledAsync((asyncResult) => {
 });
 ```
 
-Instead of using the GUID to set the sensitivity label, you can pass the [SensitivityLabelDetails](/javascript/api/outlook/office.sensitivitylabeldetails?view=outlook-js-preview&preserve-view=true) object retrieved from the catalog call, as shown in the following example.
+Instead of using the GUID to set the sensitivity label, you can pass the [SensitivityLabelDetails](/javascript/api/outlook/office.sensitivitylabeldetails) object retrieved from the catalog call, as shown in the following example.
 
 ```javascript
 // It's recommended to check the status of the catalog of sensitivity labels before
@@ -209,8 +207,8 @@ Take extra measures to protect your data by using the `OnSensitivityLabelChanged
 
 The `OnSensitivityLabelChanged` event is available through the event-based activation feature. To learn how to configure, debug, and deploy an event-based add-in that uses this event, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
-> [!IMPORTANT]
-> The `OnSensitivityLabelChanged` event isn't yet supported for the [Teams manifest for Office Add-ins (preview)](../develop/json-manifest-overview.md).
+> [!NOTE]
+> The `OnSensitivityLabelChanged` event isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
 ## See also
 
@@ -218,4 +216,4 @@ The `OnSensitivityLabelChanged` event is available through the event-based activ
 - [Get started with sensitivity labels](/microsoft-365/compliance/get-started-with-sensitivity-labels)
 - [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
-- [Office Add-ins code sample: Verify the sensitivity label of a message (preview)](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)
+- [Office Add-ins code sample: Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)

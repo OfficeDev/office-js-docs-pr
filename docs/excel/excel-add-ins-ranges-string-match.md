@@ -2,7 +2,6 @@
 title: Find a string using the Excel JavaScript API
 description: Learn how to find a string within a range using the Excel JavaScript API.
 ms.date: 02/17/2022
-ms.prod: excel
 ms.localizationpriority: medium
 ---
 

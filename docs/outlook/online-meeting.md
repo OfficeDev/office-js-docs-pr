@@ -24,11 +24,11 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 To enable users to create online meetings with your add-in, you must configure the manifest. The markup differs depending on two variables:
 
 - The type of target platform; either mobile or non-mobile.
-- The type of manifest; either XML or [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md).
+- The type of manifest; either XML or [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
 If your add-in uses an XML manifest, and the add-in will only be supported in Outlook on the web, Windows, and Mac, select the **Windows, Mac, web** tab for guidance. However, if your add-in will also be supported in Outlook on Android and iOS, select the **Mobile** tab.
 
-If the add-in uses the unified manifest (preview), select the **Unified Microsoft 365 manifest (developer preview)** tab.
+If the add-in uses the unified manifest (preview), select the **Unified manifest for Microsoft 365 (developer preview)** tab.
 
 > [!IMPORTANT]
 > Online meeting providers aren't yet supported for the unified manifest (preview). We're working on providing that support soon.
@@ -200,10 +200,10 @@ To allow users to create an online meeting from their mobile device, the [Mobile
 </VersionOverrides>
 ```
 
-# [Unified Microsoft 365 manifest (developer preview)](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
 
 > [!IMPORTANT]
-> Online meeting providers aren't yet supported for the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md). This tab is for future use.
+> Online meeting providers aren't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md). This tab is for future use.
 
 1. Open the **manifest.json** file.
 
@@ -337,7 +337,7 @@ To allow users to create an online meeting from their mobile device, the [Mobile
 ---
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## Implement adding online meeting details
 

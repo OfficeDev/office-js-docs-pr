@@ -2,7 +2,7 @@
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
 ms.topic: tutorial
-ms.date: 03/27/2023
+ms.date: 05/26/2023
 ms.localizationpriority: high
 ---
 
@@ -22,7 +22,7 @@ The projects that the tool creates have the following characteristics.
 - By default, all dependencies are installed by the tool, but you can postpone the installation with a command line argument.
 - They include a complete add-in manifest.
 - They have a "Hello World"-level add-in that is ready run as soon as the tool has finished.
-- They include a polyfill and a transpiler that is configured to transpile TypeScript, and recent versions of JavaScript, to ES5 JavaScript. These features ensure that the add-in is supported in all runtimes that Office Add-ins might run in, including Internet Explorer.
+- They include a polyfill and a transpiler that is configured to transpile TypeScript, and recent versions of JavaScript, to ES5 JavaScript. These features ensure that the add-in is supported in all webview runtimes that Office Add-ins might run in, including Trident (Internet Explorer).
 
 > [!TIP]
 > If you want to deviate from these choices significantly, such as using a different task runner or a different server, we recommend that when you run the tool you choose the [Manifest-only option](#manifest-only-option).
@@ -42,15 +42,14 @@ yo office
 
 A lot needs to load, so it may take 20 seconds before the tool starts. The tool asks you a series of questions. For some, you just type an answer to the prompt. For others, you're given a list of possible answers. If given a list, select one and then select Enter.
 
-The first question asks you to choose between eight types of projects. The options are:
+The first question asks you to choose between several types of projects. The options are:
 
 - **Office Add-in Task Pane project**
-- **Office Add-in Task Pane project using Angular framework**
 - **Office Add-in Task Pane project using React framework**
 - **Excel Custom Functions using a Shared Runtime**
 - **Excel Custom Functions using a JavaScript-only Runtime**
 - **Office Add-in Task Pane project supporting single sign-on**
-- **Outlook Add-in with the unified Microsoft 365 manifest (preview)**
+- **Outlook Add-in with the unified manifest for Microsoft 365 (preview)**
 - **Office Add-in project containing the manifest only**
 
 ![Screenshot showing the prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
@@ -88,7 +87,7 @@ If the creation is successful, you'll see a **Congratulations!** message in the 
 This option creates only a manifest for an add-in. The resulting project doesn't have a Hello World add-in, any of the scripts, or any of the dependencies. Use this option in the following scenarios.
 
 - You want to use different tools from the ones a Yeoman generator project installs and configures by default. For example, you want to use a different bundler, transpiler, task runner, or development server.
-- You want to use a web application development framework, other than Angular or React, such as Vue.
+- You want to use a web application development framework, other than React, such as Vue.
 
 For an example of using the generator with the manifest-only option, see [Use Vue to build an Excel task pane add-in](../quickstarts/excel-quickstart-vue.md).
 

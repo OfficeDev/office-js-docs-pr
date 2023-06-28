@@ -116,7 +116,7 @@ Developers should follow the tiered permissions model to provide transparency an
   <Permissions>ReadItem</Permissions>
   ```
 
-  The following example requests the **read item** permission in the Unified Microsoft 365 manifest (preview).
+  The following example requests the **read item** permission in the Unified manifest for Microsoft 365 (preview).
 
 ```json
 "authorization": {
@@ -135,7 +135,7 @@ Developers should follow the tiered permissions model to provide transparency an
 - Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body. For example, the following rule activates the Outlook add-in if one or more of three entities - phone number, postal address, or URL - are found in the subject or body of the current message.
 
 > [!NOTE]
-> Activation rules, as seen in this example, aren't supported in add-ins that use the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md).
+> Activation rules, as seen in this example, aren't supported in add-ins that use the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
   ```XML
     <Permissions>Restricted</Permissions>

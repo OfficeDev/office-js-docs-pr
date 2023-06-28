@@ -20,7 +20,7 @@ As part of the process of developing an Outlook add-in, you'll probably find you
 
 ## Create a manifest file for the add-in
 
-Each add-in is described by a manifest, a document that gives the server information about the add-in, provides descriptive information about the add-in for the user, and identifies the location of the add-in UI HTML file. You can store the manifest in a local folder or server, as long as the location is accessible by the Exchange server of the mailbox that you're testing with. We'll assume that you store your manifest in a local folder. For information about how to create a manifest file, see [Outlook add-in manifests](manifests.md).
+Each add-in is described by a manifest, a document that gives the server information about the add-in, provides descriptive information about the add-in for the user, and identifies the location of the add-in UI HTML file. You can store the manifest in a local folder or server, as long as the location is accessible by the Exchange server of the mailbox that you're testing with. We'll assume that you store your manifest in a local folder. For information about how to create a manifest file, see [Office add-in manifests](../develop/add-in-manifests.md).
 
 ## Deploy an add-in to a web server
 

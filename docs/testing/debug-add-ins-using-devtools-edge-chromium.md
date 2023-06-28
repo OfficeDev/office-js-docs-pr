@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using developer tools for Microsoft Edge WebView2
 description: Debug add-ins using the developer tools in Microsoft Edge WebView2 (Chromium-based).
-ms.date: 11/09/2021
+ms.date: 05/20/2023
 ms.localizationpriority: medium
 ---
 
@@ -15,7 +15,7 @@ This article shows how to debug the client-side code (JavaScript or TypeScript) 
 > [!TIP]
 > For information about debugging with Edge WebView2 (Chromium-based) inside Visual Studio Code, see [Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)](debug-desktop-using-edge-chromium.md).
 
-To determine which browser you're using, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+To determine which webview you're using, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
@@ -23,7 +23,7 @@ To determine which browser you're using, see [Browsers used by Office Add-ins](.
 ## Debug a task pane add-in using Microsoft Edge (Chromium-based) developer tools
 
 > [!NOTE]
-> If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser process that the Microsoft Edge (Chromium-based) developer tools cannot be launched from, so the technique described in this article cannot be used to debug code in the function.
+> If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser runtime process that the Microsoft Edge (Chromium-based) developer tools cannot be launched from, so the technique described in this article cannot be used to debug code in the function.
 
 1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
 1. Run the Microsoft Edge (Chromium-based) developer tools by one of these methods:

@@ -28,7 +28,7 @@ Use the UX pattern templates to:
 
 The patterns are organized by key actions or experiences that are common in an add-in. The main groups are:
 
-* [First run experience (FRE)](../design/first-run-experience-patterns.md)
+* [First-run experience (FRE)](../design/first-run-experience-patterns.md)
 * [Authentication](../design/authentication-patterns.md)
 * [Navigation](../design/navigation-patterns.md)
 * [Branding Design](../design/branding-patterns.md)
@@ -40,7 +40,7 @@ Browse each grouping to get an idea of how you can design your add-in using best
 
 ## See also
 
-* [Design tool kits](design-toolkits.md)
+* [Design toolkits](design-toolkits.md)
 * [Fluent UI](https://developer.microsoft.com/fluentui#)
 * [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
 * [Fluent UI React in Office Add-ins](using-office-ui-fabric-react.md)

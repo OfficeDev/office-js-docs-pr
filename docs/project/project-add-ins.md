@@ -63,7 +63,7 @@ The manifest file specifies the URL of the add-in webpage or web application, th
 
 ### Procedure 1. To create the add-in manifest file for Bing Search
 
-- Create an XML file in a local directory. The XML file includes the **\<OfficeApp\>** element and child elements, which are described in the [Office Add-ins XML manifest](../develop/add-in-manifests.md). For example, create a file named BingSearch.xml that contains the following XML.
+- Create an XML file in a local directory. The XML file includes the **\<OfficeApp\>** element and child elements, which are described in the [Office Add-ins XML manifest](../develop/xml-manifest-overview.md). For example, create a file named BingSearch.xml that contains the following XML.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -144,7 +144,7 @@ In Project 2013, you can install add-ins as stand-alone solutions on a file shar
 There can be multiple add-in manifest XML files and subdirectories in a file share. You can add or remove manifest directory locations and catalogs by using the **Trusted Add-in Catalogs** tab in the **Trust Center** dialog box in Project 2013. To show an add-in in Project, the **\<SourceLocation\>** element in a manifest must point to an existing website or HTML source file.
 
 > [!NOTE]
-> If you are developing on a Windows computer, either Internet Explorer or Microsoft Edge must be installed. For more information see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+> If you are developing on a Windows computer, either Internet Explorer or Microsoft Edge must be installed. For more information see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 In Procedure 2, the Bing Search add-in is installed on the local computer where Project 2013 is installed. However, because the add-in infrastructure does not directly use local file paths such as  `C:\Project\AppManifests`, you can create a network share on the local computer. If you prefer, you can create a file share on a remote computer.
 

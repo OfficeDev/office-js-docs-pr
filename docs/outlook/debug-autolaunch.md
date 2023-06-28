@@ -1,7 +1,7 @@
 ---
 title: Debug your event-based Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation.
-ms.date: 12/09/2022
+ms.date: 06/09/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -16,12 +16,12 @@ To begin debugging, select the tab for your applicable client.
 
 If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in project (for example, by doing the [event-based activation walkthrough](autolaunch.md)), follow the **Created with Yeoman generator** option throughout this article. Otherwise, follow the **Other** steps. Visual Studio Code should be at least version 1.56.1.
 
-## Mark your add-in for debugging
+## Mark your add-in for debugging and set the debugger port
 
 1. Set the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`. Replace `[Add-in ID]` with your add-in's ID from the manifest.
 
     - **XML manifest**: Use the value of the **\<Id\>** element child of the root **\<OfficeApp\>** element.
-    - **Unified Microsoft 365 manifest (preview)**: Use the value of the "id" property of the root anonymous `{ ... }` object.
+    - **Unified manifest for Microsoft 365 (preview)**: Use the value of the "id" property of the root anonymous `{ ... }` object.
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
@@ -35,8 +35,15 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
     **Other**: Add the `UseDirectDebugger` registry key to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\`. Replace `[Add-in ID]` with your add-in's ID from the manifest. Set the registry key to `1`.
 
+1. In the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]`, where `[Add-in ID]` is your add-in's ID from the manifest, create a new `DWORD` value with the following configuration.
+
+    - **Value name**: `DebuggerPort`
+    - **Value data (hexadecimal)**: `00002407`
+
+   This sets the debugger port to `9223`.
+
 1. Start Outlook or restart it if it's already open.
-1. Compose a new message or appointment. The Debug Event-based handler dialog should appear. Do *not* interact with the dialog yet.
+1. Perform the action to initiate the event you're developing for, such as creating a new message to initiate the `OnNewMessageCompose` event. The Debug Event-based handler dialog should appear. Do *not* interact with the dialog yet.
 
     ![The Debug Event-based handler dialog in Windows.](../images/outlook-win-autolaunch-debug-dialog.png)
 
@@ -54,13 +61,12 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
     ```json
     {
-      "name": "Direct Debugging",
-      "type": "node",
-      "request": "attach",
-      "port": 9223,
-      "protocol": "inspector",
-      "timeout": 600000,
-      "trace": true
+      "name": "Direct Debugging",
+      "type": "node",
+      "request": "attach",
+      "port": 9223,
+      "timeout": 600000,
+      "trace": true
     }
     ```
 
@@ -82,23 +88,31 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
     ```json
     {
-      "name": "Direct Debugging",
-      "type": "node",
-      "request": "attach",
-      "port": 9223,
-      "protocol": "inspector",
-      "timeout": 600000,
-      "trace": true
+      "name": "Direct Debugging",
+      "type": "node",
+      "request": "attach",
+      "port": 9223,
+      "timeout": 600000,
+      "trace": true
     }
     ```
 
 ## Attach the debugger
+
+The **bundle.js** file is created by your bundler tool to build dependencies in your add-in's JavaScript files. For example, the add-in project you create with the [Yeoman generator](../develop/yeoman-generator-overview.md) uses [webpack](https://webpack.js.org/concepts/) to output the **bundle.js** file.
 
 1. To find the add-in's **bundle.js** file, navigate to the following folder in File Explorer. Replace text enclosed in `[]` with your applicable Outlook and add-in information.
 
     ```text
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[Outlook mail account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
     ```
+
+    > [!TIP]
+    > If the **bundle.js** file doesn't appear in the folder, run the following command from the root of your add-in project.
+    >
+    > ```command&nbsp;line
+    > npm run build
+    > ```
 
 1. Open **bundle.js** in Visual Studio Code.
 1. Place breakpoints in **bundle.js** where you want the debugger to stop.

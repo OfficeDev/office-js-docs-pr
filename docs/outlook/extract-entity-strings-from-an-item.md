@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 This article describes how to create a **Display entities** Outlook add-in that extracts string instances of supported well-known entities in the subject and body of the selected Outlook item. This item can be an appointment, email message, or meeting request, response, or cancellation.
 
 > [!NOTE]
-> The Outlook Add-in feature described in this article uses activation rules, which aren't supported in add-ins that use a [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md).
+> The Outlook Add-in feature described in this article uses activation rules, which aren't supported in add-ins that use a [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
 The supported entities include:
 

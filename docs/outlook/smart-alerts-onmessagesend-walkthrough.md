@@ -149,9 +149,9 @@ To configure the manifest, select the tab for the type of manifest you are using
 > [!TIP]
 >
 > - For **SendMode** options available with the `OnMessageSend` and `OnAppointmentSend` events, see [Available SendMode options](/javascript/api/manifest/launchevent#available-sendmode-options).
-> - To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
 
-# [Unified Microsoft 365 manifest (developer preview)](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
 
 1. Open the **manifest.json** file.
 
@@ -452,8 +452,8 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 |-----|-----|-----|
 |**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
 |**Supported Outlook clients**|- Windows<br>- Web browser (modern UI)<br>- Mac (new UI)|- Windows<br>- Web browser (classic and modern UI)<br>- Mac (classic and new UI) |
-|**Supported events**|**XML manifest**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Unified Microsoft 365 manifest (preview)**<br>- "messageSending"<br>- "appointmentSending"|**XML manifest**<br>- `ItemSend`<br><br>**Unified Microsoft 365 manifest (preview)**<br>- Not supported|
-|**Manifest extension property**|**XML manifest**<br>- `LaunchEvent`<br><br>**Unified Microsoft 365 manifest (preview)**<br>- "autoRunEvents"|**XML manifest**<br>- `Events`<br><br>**Unified Microsoft 365 manifest (preview)**<br>- Not supported|
+|**Supported events**|**XML manifest**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Unified manifest for Microsoft 365 (preview)**<br>- "messageSending"<br>- "appointmentSending"|**XML manifest**<br>- `ItemSend`<br><br>**Unified manifest for Microsoft 365 (preview)**<br>- Not supported|
+|**Manifest extension property**|**XML manifest**<br>- `LaunchEvent`<br><br>**Unified manifest for Microsoft 365 (preview)**<br>- "autoRunEvents"|**XML manifest**<br>- `Events`<br><br>**Unified manifest for Microsoft 365 (preview)**<br>- Not supported|
 |**Supported send mode options**|- Prompt user<br>- Soft block<br>- Block (not supported if the add-in uses a unified manifest (preview))|Block|
 |**Maximum number of supported events in an add-in**|One `OnMessageSend` and one `OnAppointmentSend` event.|One `ItemSend` event.|
 |**Add-in deployment**|Add-in can be published to AppSource if its `SendMode` property is set to the `SoftBlock` or `PromptUser` option. Otherwise, the add-in must be deployed by an organization's administrator.|Add-in can't be published to AppSource. It must be deployed by an organization's administrator.|
@@ -461,10 +461,10 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 
 ## See also
 
-- [Outlook add-in manifests](manifests.md)
+- [Office add-in manifests](../develop/add-in-manifests.md)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
 - [Event-based activation troubleshooting guide](autolaunch.md#troubleshooting-guide)
 - [How to debug event-based add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
 - [Office Add-ins code sample: Use Outlook Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
-- [Office Add-ins code sample: Verify the sensitivity label of a message (preview)](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)
+- [Office Add-ins code sample: Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)

@@ -56,12 +56,12 @@ items:
     - name: Install the latest Office version
       href: develop/install-latest-office-version.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Browsers used by Office Add-ins
+    - name: Browsers and webview controls used by Office Add-ins
       href: concepts/browsers-used-by-office-web-add-ins.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Runtimes in Office Add-ins
       href: testing/runtimes.md
-    - name: Support older Microsoft browsers and Office versions
+    - name: Support older Microsoft webviews and Office versions
       href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Develop
@@ -112,8 +112,16 @@ items:
       items:
       - name: Overview
         href: develop/add-in-manifests.md
-      - name: Unified Microsoft 365 manifest
+      - name: Office Add-ins XML manifest
+        href: develop/xml-manifest-overview.md
+      - name: Office Add-ins with the unified manifest for Microsoft 365
+        href: develop/unified-manifest-overview.md
+        displayName: preview
+      - name: Compare the XML manifest with the unified manifest for Microsoft 365
         href: develop/json-manifest-overview.md
+        displayName: preview
+      - name: Convert an add-in to use the unified manifest for Microsoft 365
+        href: develop/convert-xml-to-json-manifest.md
         displayName: preview
       - name: Manifest reference
         href: reference/manifest-reference.md
@@ -210,11 +218,12 @@ items:
             href: design/authentication-patterns.md
           - name: Branding
             href: design/branding-patterns.md
-          - name: First run experience
+          - name: First-run experience
             href: design/first-run-experience-patterns.md
+            displayName: first run experience
           - name: Navigation
             href: design/navigation-patterns.md
-      - name: Design tool kits
+      - name: Design toolkits
         href: design/design-toolkits.md
       - name: Interface elements
         items:
@@ -226,7 +235,7 @@ items:
             href: design/add-in-commands.md
           - name: Create add-in commands with the XML manifest
             href: develop/create-addin-commands.md
-          - name: Create add-in commands with the unified Microsoft 365 manifest
+          - name: Create add-in commands with the unified manifest for Microsoft 365
             href: develop/create-addin-commands-unified-manifest.md
           - name: Create custom contextual tabs
             href: design/contextual-tabs.md
@@ -305,7 +314,7 @@ items:
         href: testing/debug-with-vs-extension.md
       - name: Debug Office Add-ins in Visual Studio
         href: develop/debug-office-add-ins-in-visual-studio.md
-      - name: Test with Internet Explorer 11
+      - name: Test with Trident
         href: testing/ie-11-testing.md
       - name: Unsupported window objects
         href: reference/window-objects-unsupported-in-add-ins.md
@@ -394,9 +403,6 @@ items:
     items:
     - name: Task pane
       href: quickstarts/excel-quickstart-jquery.md
-      displayName: Excel
-    - name: Task pane (Angular)
-      href: quickstarts/excel-quickstart-angular.md
       displayName: Excel
     - name: Task pane (React)
       href: quickstarts/excel-quickstart-react.md
@@ -635,7 +641,7 @@ items:
   - name: Build your first Outlook add-in
     href: quickstarts/outlook-quickstart.md
     displayName: Outlook
-  - name: Build an Outlook add-in with the unified Microsoft 365 manifest
+  - name: Build an Outlook add-in with the unified manifest for Microsoft 365
     href: quickstarts/outlook-quickstart-json-manifest.md
     displayName: Outlook, preview
   - name: Outlook add-in tutorial
@@ -662,9 +668,10 @@ items:
       href: outlook/contextual-outlook-add-ins.md
     - name: Module extension add-ins
       href: outlook/extension-module-outlook-add-ins.md
+    - name: Activate add-in without Reading Pane or selected message
+      href: outlook/contextless.md
     - name: Item multi-select
       href: outlook/item-multi-select.md
-      displayName: preview
     - name: Pinnable task pane
       href: outlook/pinnable-taskpane.md
     - name: Add-ins for Outlook on mobile devices
@@ -701,7 +708,7 @@ items:
       displayName: delegate access
     - name: Manifests
       items:
-      - name: Outlook add-in manifests
+      - name: Manifest configuration for Outlook Add-ins
         href: outlook/manifests.md
       - name: Activation rules
         href: outlook/activation-rules.md
@@ -755,7 +762,8 @@ items:
         href: outlook/get-or-set-the-location-of-an-appointment.md
       - name: Manage sensitivity labels
         href: outlook/sensitivity-label.md
-        displayName: preview
+      - name: Manage delivery time of a message
+        href: outlook/delay-delivery.md
     - name: Privacy and security
       items:
       - name: Overview

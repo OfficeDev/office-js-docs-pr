@@ -1,35 +1,35 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.
-ms.date: 03/03/2023
+ms.date: 05/30/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Enable shared folders and shared mailbox scenarios in an Outlook add-in
 
-This article describes how to enable shared folders (also known as delegate access) and shared mailbox (now in [preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#shared-mailboxes)) scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
+This article describes how to enable shared folders (also known as delegate access) and shared mailbox scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
+
+> [!NOTE]
+> Shared folder support was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). For information about client support for these features, see [Supported clients and platforms](#supported-clients-and-platforms).
 
 ## Supported clients and platforms
 
-The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable. Excluded combinations are not supported.
+The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable. Excluded combinations aren't supported.
 
 | Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2013 on-premises |
 |---|:---:|:---:|:---:|:---:|
-|Windows:<br>Version 1910 (Build 12130.20272) or later|Yes|Yes\*|Yes\*|Yes\*|
-|Mac:<br>build 16.47 or later|Yes|Yes|Yes|Yes|
-|Web browser:<br>modern Outlook UI|Yes|Not applicable|Not applicable|Not applicable|
-|Web browser:<br>classic Outlook UI|Not applicable|No|No|No|
+|**Windows**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|Supported\*|
+|**Mac**<br>Build 16.47 or later|Supported|Supported|Supported|Supported|
+|**Web browser (modern Outlook UI)**|Supported|Not applicable|Not applicable|Not applicable|
+|**Web browser (classic Outlook UI)**|Not applicable|Not applicable|Not applicable|Not applicable|
 
 > [!NOTE]
-> \* Support for this feature in an on-premises Exchange environment is available starting in Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
-
-> [!IMPORTANT]
-> Support for this feature was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (for details, refer to [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). However, note that the feature's support matrix is a superset of the requirement set's.
+> \* Support for this feature in an on-premises Exchange environment is available starting in Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
 
 ## Supported setups
 
-The following sections describe supported configurations for shared mailboxes (now in preview) and shared folders. The feature APIs may not work as expected in other configurations. Select the platform you'd like to learn how to configure.
+The following sections describe supported configurations for shared mailboxes and shared folders. The feature APIs may not work as expected in other configurations. Select the platform you'd like to learn how to configure.
 
 ### [Windows](#tab/windows)
 
@@ -45,7 +45,7 @@ The mailbox owner must first provide access to a delegate using one of the follo
 
 Once access is provided, the delegate must then follow the instructions outlined in the "Add another person's mailbox to your profile" section of the article [Manage another person's mail and calendar items](https://support.microsoft.com/office/afb79d6b-2967-43b9-a944-a6b953190af5).
 
-#### Shared mailboxes (preview)
+#### Shared mailboxes
 
 Exchange server admins can create and manage shared mailboxes for sets of users to access. [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) and [on-premises Exchange environments](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes) are supported.
 
@@ -74,7 +74,7 @@ Once access is provided, the delegate must then follow the instructions outlined
 
 #### Shared mailboxes
 
-Shared mailbox scenarios in Outlook add-ins aren't currently supported in modern Outlook on the web.
+Mail and calendar are shared with a delegate or shared mailbox user. Add-ins are available to the delegate or user in message and appointment read and compose modes.
 
 ### [Mac](#tab/unix)
 
@@ -98,7 +98,7 @@ If the calendar owner granted broad access to their calendar (for example, made 
 
 ---
 
-To learn more about where add-ins do and do not activate in general, refer to the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page.
+To learn more about where add-ins do and don't activate in general, refer to the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page.
 
 ## Supported permissions
 
@@ -134,7 +134,7 @@ To enable shared folders and shared mailbox scenarios in your add-in, you must e
 First, to support REST calls from a delegate, the add-in must request the **read/write mailbox** permission. The markup varies depending on the type of manifest.
 
 - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-- **Unified Microsoft 365 manifest (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+- **Unified manifest for Microsoft 365 (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
 Second, enable support for shared folders. The markup varies depending on the type of manifest.
 
@@ -167,7 +167,7 @@ Set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) 
 ...
 ```
 
-# [Unified Microsoft 365 manifest (developer preview)](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
 
 Add an additional object to the "authorization.permissions.resourceSpecific" array and set its "name" property to "Mailbox.SharedFolder".
 
@@ -256,7 +256,7 @@ if (item.getSharedPropertiesAsync) {
 
   // Perform operation for shared item.
 } else {
-  // In general, this is not a shared item, so construct the REST URL using info from the Call REST APIs article:
+  // In general, this isn't a shared item, so construct the REST URL using info from the Call REST APIs article:
   // https://learn.microsoft.com/office/dev/add-ins/outlook/use-rest-api
 
   // Perform operation for non-shared item.
@@ -269,7 +269,7 @@ Depending on your add-in's scenarios, there are a few limitations for you to con
 
 ### Message Compose mode
 
-In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) is not supported in Outlook on the web or on Windows unless the following conditions are met.
+In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) isn't supported in Outlook on the web or on Windows unless the following conditions are met.
 
 a. **Delegate access/Shared folders**
 
@@ -290,7 +290,7 @@ The message is now in a shared context and add-ins that support these shared sce
 Your add-in can use REST. To enable REST access to the owner's mailbox or to the shared mailbox as applicable, the add-in must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
 
 - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-- **Unified Microsoft 365 manifest (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+- **Unified manifest for Microsoft 365 (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
 EWS isn't supported.
 

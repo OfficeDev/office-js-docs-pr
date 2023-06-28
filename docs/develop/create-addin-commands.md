@@ -12,7 +12,7 @@ Add-in commands provide an easy way to customize the default Office user interfa
 This article describes how to edit your XML manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands). 
 
 > [!TIP]
-> For instructions on how to create add-in commands with the unified Microsoft 365 manifest, see [Create add-in commands with the unified Microsoft 365 manifest](create-addin-commands-unified-manifest.md).
+> For instructions on how to create add-in commands with the unified manifest for Microsoft 365, see [Create add-in commands with the unified manifest for Microsoft 365](create-addin-commands-unified-manifest.md).
 
 The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
 
@@ -28,7 +28,7 @@ The following steps explain how to add add-in commands to an existing add-in.
 
 ### Step 1: Add VersionOverrides element
 
-The [**\<VersionOverrides\>** element](/javascript/api/manifest/versionoverrides) is the root element that contains the definition of your add-in command. Details on the valid attributes and implications are found in [Version overrides in the manifest](add-in-manifests.md?tabs=tabid-1#version-overrides-in-the-manifest).
+The [**\<VersionOverrides\>** element](/javascript/api/manifest/versionoverrides) is the root element that contains the definition of your add-in command. Details on the valid attributes and implications are found in [Version overrides in the manifest](xml-manifest-overview.md?tabs=tabid-1#version-overrides-in-the-manifest).
 
 The following example shows the **\<VersionOverrides\>** element and its child elements.
 

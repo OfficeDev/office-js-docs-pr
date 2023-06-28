@@ -2,7 +2,7 @@
 title: Use Angular to build an Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and Angular.
 ms.date: 06/10/2022
-ms.prod: excel
+ms.service: excel
 ms.localizationpriority: high
 ---
 
@@ -34,7 +34,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 The add-in project that you've created with the Yeoman generator contains sample code for a basic task pane add-in. If you'd like to explore the key components of your add-in project, open the project in your code editor and review the files listed below. When you're ready to try out your add-in, proceed to the next section.
 
-- The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in. To learn more about the **manifest.xml** file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+- The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in. To learn more about the **manifest.xml** file, see [Office Add-ins XML manifest](../develop/xml-manifest-overview.md).
 - The **./src/taskpane/app/app.component.html** file contains the HTML markup for the task pane.
 - The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
 - The **./src/taskpane/app/app.component.ts** file contains the Office JavaScript API code that facilitates interaction between the task pane and Excel.

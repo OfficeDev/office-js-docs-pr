@@ -44,11 +44,11 @@ You can't learn to drive by reading the owner's manual, so start coding with thi
 
 First, get the big picture of the Office JavaScript library with this tutorial from Microsoft Learn training: [Understand the Office JavaScript APIs](/training/modules/understand-office-javascript-apis/index).
 
-Then explore the Office JavaScript APIs with our [the Script Lab tool](explore-with-script-lab.md) -- a sandbox for running and exploring the APIs.
+Then explore the Office JavaScript APIs with our [Script Lab tool](explore-with-script-lab.md) -- a sandbox for running and exploring the APIs.
 
 ## Step 5: Understand the manifest
 
-Get an understanding of the purposes of the add-in manifest and an introduction to its XML markup in [Office Add-ins XML manifest](../develop/add-in-manifests.md).
+Get an understanding of the purposes of the add-in manifest and an introduction to its XML markup or JSON in [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 ## Next Steps
 

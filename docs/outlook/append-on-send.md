@@ -1,7 +1,7 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 04/12/2023
+ms.date: 05/24/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,17 +17,11 @@ The prepend-on-send and append-on-send features enable your Outlook add-in to in
 In this walkthrough, you'll develop an add-in that prepends a header and appends a disclaimer when a message is sent.
 
 > [!NOTE]
-> Support for the append-on-send feature was introduced in requirement set 1.9. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
->
-> The prepend-on-send feature is currently in preview. Features in preview shouldn't be used in production add-ins. We invite you to test this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> Support for the append-on-send feature was introduced in [requirement set 1.9](/javascript/api/requirement-sets/outlook/requirement-set-1.9/outlook-requirement-set-1.9), while support for the prepend-on-send feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support these requirement sets.
 
-## Prerequisites to preview prepend-on-send
+## Preview prepend-on-send in Outlook on Mac
 
-To preview the prepend-on-send feature, set up your preferred Outlook client.
-
-- For Outlook on Windows, install Version 2209 (Build 15707.36127) or later. Then, join the [Office Insider program](https://insider.office.com/join/windows) and select the **Beta Channel** option to access Office beta builds.
-- For Outlook on Mac, install Version 16.70.212.0 or later. Then, join the [Office Insider program](https://insider.office.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
-- For Outlook on the web, ensure that the **Targeted release** option is set up on your Microsoft 365 tenant. To learn more, see the "Targeted release" section of [Set up the Standard or Targeted release options](/microsoft-365/admin/manage/release-options-in-office-365#targeted-release).
+To preview the prepend-on-send feature in Outlook on Mac, install Version 16.70.212.0 or later.
 
 ## Set up your environment
 
@@ -51,7 +45,7 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
       <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
         <Requirements>
-          <bt:Sets DefaultMinVersion="1.9">
+          <bt:Sets DefaultMinVersion="1.13">
             <bt:Set Name="Mailbox" />
           </bt:Sets>
         </Requirements>
@@ -114,7 +108,7 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
                 </OfficeTab>
               </ExtensionPoint>
   
-              <!-- Append-on-send and prepend-on-send (preview) are supported in Message Compose and Appointment Organizer modes. 
+              <!-- Append-on-send and prepend-on-send are supported in Message Compose and Appointment Organizer modes. 
               To support these features when creating a new appointment, configure the AppointmentOrganizerCommandSurface extension point. -->
   
             </DesktopFormFactor>
@@ -152,12 +146,12 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
 
 1. Save your changes.
 
-# [Unified Microsoft 365 manifest (developer preview)](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
 
 The following shows how to configure your unified manifest to enable the append-on-send feature.
 
 > [!IMPORTANT]
-> The prepend-on-send feature in preview isn't yet supported for the [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md).
+> The prepend-on-send feature isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
 1. Open the manifest.json file.
 
@@ -215,9 +209,9 @@ The following shows how to configure your unified manifest to enable the append-
 > The prepend-on-send and append-on-send features must be activated by the user through a task pane or function command button. If you want content to be prepended or appended on send without additional action from the user, you can implement these features in an [event-based activation add-in](autolaunch.md).
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md).
+> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
 
-## Implement the prepend-on-send handler (preview)
+## Implement the prepend-on-send handler
 
 In this section, you'll implement the JavaScript code to prepend a sample company header to a mail item when it's sent.
 
@@ -323,18 +317,6 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 1. Save your changes.
 
-## Update the commands HTML file
-
-1. From the **./src/commands** folder, open the **commands.html** file.
-
-1. Replace the existing **script** tag with the following reference to the beta library on the content delivery network (CDN). This retrieves the definitions of the prepend-on-send API that's in preview.
-
-    ```html
-    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
-    ```
-
-1. Save your changes.
-
 ## Try it out
 
 1. Run the following command in the root directory of your project. When you run this command, the local web server will start if it's not already running and your add-in will be sideloaded.
@@ -389,10 +371,9 @@ If you encounter an error while implementing the prepend-on-send and append-on-s
 |-----|-----|-----|
 |`DataExceedsMaximumSize`|The content to be appended or prepended is longer than 5,000 characters.|Shorten the string you pass to the `data` parameter of your `prependOnSendAsync` or `appendOnSendAsync` call.|
 |`InvalidFormatError`|The message or appointment body is in plain text format, but the `coercionType` passed to the `prependOnSendAsync` or `appendOnSendAsync` method is set to `Office.CoercionType.Html`.|Only plain text can be inserted into a plain text body of a message or appointment. To verify the format of the mail item being composed, call `Office.context.mailbox.item.body.getTypeAsync`, then pass its returned value to your `prependOnSendAsync` or `appendOnSendAsync` call.|
-|`The feature prependOnSendAsync is only enabled on the beta API endpoint`|The prepend-on-send feature that's in preview is implemented in an event-based activation handler.|To preview the prepend-on-send feature in an event handler in Outlook on Windows, your registry must be configured accordingly. For guidance on how to configure your registry, see [Preview features in event handlers (Outlook on Windows)](autolaunch.md#preview-features-in-event-handlers-outlook-on-windows).|
 
 ## See also
 
-- [Outlook add-in manifests](manifests.md)
-- [Office.Body](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true)
+- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office.Body](/javascript/api/outlook/office.body)
 - [Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in](smart-alerts-onmessagesend-walkthrough.md)

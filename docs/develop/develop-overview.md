@@ -2,7 +2,7 @@
 title: Develop Office Add-ins
 description: An introduction to developing Office Add-ins.
 ms.topic: overview
-ms.date: 05/25/2022
+ms.date: 05/26/2023
 ms.localizationpriority: high
 ---
 
@@ -15,7 +15,7 @@ All Office Add-ins are built upon the Office Add-ins platform. For any add-in yo
 
 ## Create an Office Add-in
 
-You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md) or Visual Studio.
+You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md), Visual Studio, or Teams Toolkit.
 
 ### Yeoman generator
 
@@ -29,7 +29,7 @@ The Yeoman generator for Office Add-ins can be used to create a Node.js Office A
 - Word
 - Excel custom functions
 
-Create your project using HTML, CSS and JavaScript (or TypeScript), or using Angular or React. For whichever framework you choose, you can choose between JavaScript and Typescript as well. For more information about creating add-ins with the generator, see [Yeoman generator for Office Add-ins](yeoman-generator-overview.md).
+Create your project using HTML, CSS and JavaScript (or TypeScript), or using React. If you choose React, you can choose between JavaScript and Typescript as well. For more information about creating add-ins with the generator, see [Yeoman generator for Office Add-ins](yeoman-generator-overview.md).
 
 ### Visual Studio
 
@@ -37,11 +37,15 @@ Visual Studio can be used to create Office Add-ins for Excel, Outlook, Word, and
 
 [!include[Yeoman vs Visual Studio comparison](../includes/yeoman-generator-recommendation.md)]
 
+### Teams Toolkit
+
+The Teams Toolkit can be used to create almost any kind of Teams App, a term which includes all extensions of Microsoft 365, including those that don't extend the Teams application. For details about creating an add-in, see [Create Office Add-in projects with Teams Toolkit](teams-toolkit-overview.md).
+
 ## Understand the two parts of an Office Add-in
 
 An Office Add-in consists of two parts.
 
-- The add-in manifest (an XML file) that defines the settings and capabilities of the add-in.
+- The add-in manifest that defines the settings and capabilities of the add-in.
 
 - The web application that defines the UI and functionality of add-in components such as task panes, content add-ins, and dialog boxes.
 
@@ -49,7 +53,7 @@ The web application uses the Office JavaScript API to interact with content in t
 
 ### Define an add-in's settings and capabilities
 
-An Office Add-in's manifest (an XML file) defines the settings and capabilities of the add-in. You'll configure the manifest to specify things such as:
+An Office Add-in's manifest defines the settings and capabilities of the add-in. You'll configure the manifest to specify things such as:
 
 - Metadata that describes the add-in (for example, ID, version, description, display name, default locale).
 - Office applications where the add-in will run.
@@ -58,8 +62,9 @@ An Office Add-in's manifest (an XML file) defines the settings and capabilities 
 - Location of images that the add-in uses for branding and command iconography.
 - Dimensions of the add-in (for example, dimensions for content add-ins, requested height for Outlook add-ins).
 - Rules that specify when the add-in activates in the context of a message or appointment (for Outlook add-ins only).
+- Keyboard shortcuts (for Excel only).
 
-For detailed information about the manifest, see [Office Add-ins XML manifest](add-in-manifests.md).
+For detailed information about the manifest, see [Office Add-ins manifest](add-in-manifests.md).
 
 ### Interact with content in an Office document
 

@@ -2,7 +2,7 @@
 ms.date: 11/16/2022
 description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
-ms.prod: excel
+ms.service: excel
 ms.localizationpriority: high
 ---
 

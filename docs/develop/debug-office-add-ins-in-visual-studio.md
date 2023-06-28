@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins in Visual Studio
 description: Use Visual Studio to debug Office Add-ins in the Office desktop client on Windows.
-ms.date: 03/28/2022
+ms.date: 05/20/2023
 ms.localizationpriority: medium
 ---
 
@@ -79,7 +79,7 @@ When Visual Studio builds the project, it performs the following tasks:
 1. If this is the first add-in project that you have deployed to the local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store. This is required for IIS Express to display the content of your add-in correctly.
 
 > [!NOTE]
-> If Office uses the Edge Legacy webview control (EdgeHTML) to run add-ins on your Windows computer, Visual Studio may prompt you to add a local network loopback exemption. This is required for the webview control to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**. To find out what browser control is used on your Windows computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+> If Office uses the Edge Legacy webview control (EdgeHTML) to run add-ins on your Windows computer, Visual Studio may prompt you to add a local network loopback exemption. This is required for the webview control to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**. To find out what webview control is used on your Windows computer, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 Next, Visual Studio does the following:
 
@@ -87,7 +87,7 @@ Next, Visual Studio does the following:
 
 1. Starts the web application project in IIS Express.
 
-1. Validates the manifest. To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../develop/add-in-manifests.md). 
+1. Validates the manifest.  
 
    > [!IMPORTANT]
    > The Office manifest XSD files that Visual Studio installs are out-of-date. If you get validation errors for the manifest, your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
@@ -96,7 +96,7 @@ Next, Visual Studio does the following:
 
 ### Debug the Excel, PowerPoint, or Word add-in
 
-The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. To determine which webview control is being used, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your computer is using WebView2, see [Use the built-in Visual Studio debugger](#use-the-built-in-visual-studio-debugger). For any other webview control, see [Use the browser developer tools](#use-the-browser-developer-tools).
+The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. To determine which webview control is being used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your computer is using WebView2, see [Use the built-in Visual Studio debugger](#use-the-built-in-visual-studio-debugger). For any other webview control, see [Use the browser developer tools](#use-the-browser-developer-tools).
 
 #### Use the built-in Visual Studio debugger
 
@@ -153,7 +153,7 @@ When Visual Studio builds the project it performs the following tasks.
 1. If this is the first add-in project that you have deployed to the local IIS web server, you may be prompted to install a Self-Signed Certificate to the current user's Trusted Root Certificate store. This is required for IIS Express to display the content of your add-in correctly.
 
 > [!NOTE]
-> If Office uses the Edge Legacy webview control (EdgeHTML) to run add-ins on your Windows computer, Visual Studio may prompt you to add a local network loopback exemption. This is required for the webview control to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**. To find out what browser control is used on your Windows computer, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+> If Office uses the Edge Legacy webview control (EdgeHTML) to run add-ins on your Windows computer, Visual Studio may prompt you to add a local network loopback exemption. This is required for the webview control to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**. To find out what webview control is used on your Windows computer, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 Next, Visual Studio does the following:
 
@@ -161,7 +161,7 @@ Next, Visual Studio does the following:
 
 1. Starts the web application project in IIS Express.
 
-1. Validates the manifest. To review the validation rules of the XML manifest file in your project, see [Office Add-ins XML manifest](../develop/add-in-manifests.md). 
+1. Validates the manifest.  
 
    > [!IMPORTANT]
    > The Office manifest XSD files that Visual Studio installs are out-of-date. If you get validation errors for the manifest, your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
@@ -170,7 +170,7 @@ Next, Visual Studio does the following:
 
 ### Debug the Outlook add-in
 
-The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. To determine which webview control is being used, see [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your computer is using WebView2, see [Use the built-in Visual Studio debugger](#use-the-built-in-visual-studio-debugger). For any other webview control, see [Use the browser developer tools](#use-the-browser-developer-tools).
+The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. To determine which webview control is being used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your computer is using WebView2, see [Use the built-in Visual Studio debugger](#use-the-built-in-visual-studio-debugger). For any other webview control, see [Use the browser developer tools](#use-the-browser-developer-tools).
 
 #### Use the built-in Visual Studio debugger
 
