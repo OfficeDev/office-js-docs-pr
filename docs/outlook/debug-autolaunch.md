@@ -1,7 +1,7 @@
 ---
 title: Debug your event-based Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation.
-ms.date: 06/27/2023
+ms.date: 06/28/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -106,6 +106,8 @@ The **bundle.js** file of an add-in contains the JavaScript code of your add-in.
     ```text
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[Outlook mail account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
     ```
+
+    [!INCLUDE [outlook-bundle-js](../includes/outlook-bundle-js.md)]
 
 1. Open **bundle.js** in Visual Studio Code.
 1. Place breakpoints in **bundle.js** where you want the debugger to stop.
