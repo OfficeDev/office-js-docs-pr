@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Outlook JavaScript APIs supported in Outlook on mobile devices
 
-Outlook on Android and on iOS support up to [Mailbox requirement set 1.5](/javascript/api/outlook?view=outlook-js-1.5&preserve-view=true). To ensure that your Outlook mobile add-in can implement the new extensibility features available on the Outlook desktop and web platforms, certain APIs from later requirement sets are now enabled for mobile support. This article outlines APIs supported in Outlook mobile and any implementation exceptions.
+Outlook on Android and on iOS support up to [Mailbox requirement set 1.5](/javascript/api/outlook?view=outlook-js-1.5&preserve-view=true). To further extend the capabilities of an Outlook mobile add-in, certain APIs from later requirements, that were previously only available to Outlook desktop and web clients, are now enabled for mobile support. This article outlines the APIs supported in Outlook mobile and any implementation exceptions.
 
 ## Supported APIs
 
@@ -22,7 +22,7 @@ The following table lists a subset of APIs from requirement sets beyond 1.5 that
 
 ## Unsupported APIs
 
-Although Outlook mobile supports up to requirement set 1.5, there are some APIs from these earlier requirement sets that aren't supported. The following table lists these APIs and also notes exceptions where a feature is supported, but only in certain Outlook modes.
+Although Outlook mobile supports up to requirement set 1.5, there are some APIs from these earlier requirement sets that aren't supported. The following table lists these APIs and also notes features that aren't supported in certain Outlook modes.
 
 |API|Minimum requirement set|Unsupported Outlook modes|
 |---|---|---|
