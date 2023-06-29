@@ -1,7 +1,7 @@
 ---
 title: Options for Excel custom functions
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.
-ms.date: 07/18/2022
+ms.date: 07/05/2023
 ms.localizationpriority: medium
 ---
 
@@ -246,7 +246,9 @@ function getAddress(first, second, invocation) {
 }
 ```
 
-In Excel, a custom function calling the `address` property of the `Invocation` object will return the absolute address following the format `SheetName!RelativeCellAddress` in the cell that invoked the function. For example, if the input parameter is located on a sheet called **Prices** in cell F6, the returned parameter address value will be `Prices!F6`.
+In Excel, a custom function calling the `address` property of the `Invocation` object will return the absolute address following the format `SheetName!RelativeCellAddress` in the cell that invoked the function.  For example, if the input parameter is located on a sheet called **Prices** in cell F6, the returned parameter address value will be `Prices!F6`.
+
+[!INCLUDE [Special characters note for custom function worksheet names](../includes/custom-function-sheetname-note.md)]
 
 The `invocation` parameter can also be used to send information to Excel. See [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function) to learn more.
 
@@ -283,6 +285,8 @@ function getParameterAddresses(firstParameter, secondParameter, thirdParameter, 
 ```
 
 When a custom function calling the `parameterAddresses` property runs, the parameter address is returned following the format `SheetName!RelativeCellAddress` in the cell that invoked the function. For example, if the input parameter is located on a sheet called **Costs** in cell D8, the returned parameter address value will be `Costs!D8`. If the custom function has multiple parameters and more than one parameter address is returned, the returned addresses will spill across multiple cells, descending vertically from the cell that invoked the function.
+
+[!INCLUDE [Special characters note for custom function worksheet names](../includes/custom-function-sheetname-note.md)]
 
 ## Next steps
 
