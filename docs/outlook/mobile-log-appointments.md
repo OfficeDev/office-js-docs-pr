@@ -1,7 +1,7 @@
 ---
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
-ms.date: 02/06/2023
+ms.date: 06/29/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -546,6 +546,8 @@ The following APIs are available for this feature.
   - [Office.context.mailbox.item.sensitivity](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#sensitivity)
   - [Office.context.mailbox.item.seriesId](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#seriesId)
 
+To learn more about APIs that are supported in Outlook on mobile devices, see [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
+
 ## Restrictions
 
 Several restrictions apply.
@@ -559,3 +561,4 @@ Several restrictions apply.
 
 - [Add-ins for Outlook on mobile devices](outlook-mobile-addins.md)
 - [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md)
+- [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md)
