@@ -441,7 +441,8 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[Outlook mail account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
     ```
 
-    If the **bundle.js** file doesn't appear in the folder, [remove your add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) from Outlook, then sideload it again.
+    [!INCLUDE [outlook-bundle-js](../includes/outlook-bundle-js.md)]
+
 - As you test your add-in in Outlook on Windows or Mac, enable runtime logging to identify possible manifest and add-in installation issues. For guidance on how to use runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
 - Set breakpoints in your code to debug your add-in. For platform-specific instructions, see [Debug your event-based Outlook add-in](debug-autolaunch.md).
 
