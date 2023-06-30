@@ -247,7 +247,7 @@ As you develop an event-based add-in for Outlook mobile, be mindful of the follo
 - Only one add-in can run at a time. If multiple event-based add-ins are installed on a user's account, they will run sequentially.
 - If you tap and hold the Outlook icon on your mobile device, then select **New mail** to create a new message, the event-based add-in may take a few seconds to initialize and complete processing the event.  
 - If no changes are made to a new message being composed, a draft won't be saved, even if the event-based add-in adds a signature using the [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1)) method.
-- If you select **Reply** from the bottom of a message, the event-based add-in activates and adds the signature to the message, but the signature won't be visible in the current view. To view your message with the added signature, expand the compose window to full screen.
+- In an event-based add-in that manages signatures, if you select **Reply** from the bottom of a message, the add-in activates and adds the signature to the message. However, the signature won't be visible in the current view. To view your message with the added signature, expand the compose window to full screen.
 - To enhance your add-in's functionality, you can use supported APIs from later requirement sets in compose mode. For more information, see [Additional supported APIs](#additional-supported-apis).
 
 ## Additional supported APIs
