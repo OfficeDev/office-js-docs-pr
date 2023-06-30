@@ -1,7 +1,7 @@
 ---
 title: UX design patterns for Office Add-ins
 description: Get an overview of the UI design patterns for Office Add-ins, including patterns for navigation, authentication, first-run, and branding.
-ms.date: 05/12/2021
+ms.date: 06/27/2023
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -18,20 +18,20 @@ The provided patterns are best practice solutions based on common customer scena
 
 Use the UX pattern templates to:
 
-* Apply solutions to common customer scenarios.
-* Apply design best practices.
-* Incorporate [Fluent UI](https://developer.microsoft.com/fluentui#/get-started) components and styles.
-* Build add-ins that visually integrate with the default Office UI.
-* Ideate and visualize UX.
+- Apply solutions to common customer scenarios.
+- Apply design best practices.
+- Incorporate [Fluent UI](add-in-design.md) components and styles.
+- Build add-ins that visually integrate with the default Office UI.
+- Ideate and visualize UX.
 
 ## Getting started
 
 The patterns are organized by key actions or experiences that are common in an add-in. The main groups are:
 
-* [First-run experience (FRE)](../design/first-run-experience-patterns.md)
-* [Authentication](../design/authentication-patterns.md)
-* [Navigation](../design/navigation-patterns.md)
-* [Branding Design](../design/branding-patterns.md)
+- [First-run experience (FRE)](../design/first-run-experience-patterns.md)
+- [Authentication](../design/authentication-patterns.md)
+- [Navigation](../design/navigation-patterns.md)
+- [Branding Design](../design/branding-patterns.md)
 
 Browse each grouping to get an idea of how you can design your add-in using best practices.
 
@@ -40,7 +40,6 @@ Browse each grouping to get an idea of how you can design your add-in using best
 
 ## See also
 
-* [Design toolkits](design-toolkits.md)
-* [Fluent UI](https://developer.microsoft.com/fluentui#)
-* [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
-* [Fluent UI React in Office Add-ins](using-office-ui-fabric-react.md)
+- [Design tool kits](design-toolkits.md)
+- [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
+- [Fluent UI React in Office Add-ins](using-office-ui-fabric-react.md)

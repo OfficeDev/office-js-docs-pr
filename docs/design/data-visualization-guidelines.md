@@ -1,7 +1,7 @@
 ---
 title: Data visualization style guidelines for Office Add-ins
 description: Get some good practices for how to visualize data in an Office Add-in.
-ms.date: 07/08/2021
+ms.date: 06/27/2023
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -24,14 +24,21 @@ Follow these guidelines for chart titles.
 
 - Make your chart titles easily readable. Position them to create a clear visual hierarchy in relation to the rest of the chart.
 - In general, use sentence capitalization (capitalize the first word). To create contrast or to reinforce hierarchies, you can use all caps, but all caps should be used sparingly.
-- Incorporate the [Fluent UI type ramp](https://developer.microsoft.com/fluentui#/styles/web/typography) to make your charts consistent with the Office UI, which uses Segoe. You can also use a different typeface to differentiate chart content from the UI.
+- Incorporate the Fluent UI type ramp to make your charts consistent with the Office UI, which uses Segoe. You can also use a different typeface to differentiate chart content from the UI.
+
+  - [Fluent UI React typography styles](https://react.fluentui.dev/?path=/docs/theme-typography--page)
+  - [Fabric Core typography styles](https://developer.microsoft.com/fluentui#/styles/web/typography)
+
 - Use sans-serif typefaces with large counters.
 
 ### Axis labels
 
 Make your axis labels dark enough to read clearly, with adequate contrast ratios between the text and background colors. Make sure that they are not so dark that they compete with data ink.
 
-Light grays are most effective for axis labels. If you're using Fluent UI, see the [Neutral Colors palette](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals).
+Light grays are most effective for axis labels. Explore the following Fluent UI neutral color palettes.
+
+- [Fluent UI React color schemes](https://react.fluentui.dev/?path=/docs/theme-colors--page)
+- [Fabric Core color schemes](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
 
 ### Data ink
 
@@ -39,7 +46,7 @@ The pixels that represent the actual data in a chart are referred to as data ink
 
 ### Color
 
-Choose colors that follow operating system or application themes rather than hardcoded colors. At the same time, make sure that the colors you apply do not distort the data. Misuse of color in data visualizations can result in data distortion and incorrect reading of information.
+Choose colors that follow operating system or application themes rather than hardcoded colors. At the same time, make sure that the colors you apply don't distort the data. Misuse of color in data visualizations can result in data distortion and incorrect reading of information.
 
 For best practices for use of color in data visualizations, see the following:
 
@@ -51,7 +58,10 @@ For best practices for use of color in data visualizations, see the following:
 
 Gridlines are often necessary for accurately reading a chart, but should be presented as a secondary visual element, enhancing the data ink, not competing with it. Make static gridlines thin and light, unless they are designed specifically for high contrast. You can also use interaction to create dynamic, just-in-time gridlines that appear in context when a user interacts with a chart.
 
-Light grays are most effective for gridlines. If you're using Fluent UI, see the [Neutral Colors palette](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals).
+Light grays are most effective for gridlines. Explore the following Fluent UI neutral color palettes.
+
+- [Fluent UI React color schemes](https://react.fluentui.dev/?path=/docs/theme-colors--page)
+- [Fabric Core color schemes](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
 
 The following image shows a data visualization with gridlines.
 
@@ -61,13 +71,13 @@ The following image shows a data visualization with gridlines.
 
 Add legends if necessary to:
 
-- Distinguish between series
-- Present scale or value changes
+- Distinguish between series.
+- Present scale or value changes.
 
-Make sure that your legends enhance the data ink and do not compete with it. Place legends:
+Make sure that your legends enhance the data ink and don't compete with it. Place legends:
 
 - Flush left above the plot area by default, if all legend items fit above the chart.
-- On the upper right side of the plot area, if all legend items do not fit above the chart, and make it scrollable, if necessary.
+- On the upper right side of the plot area, if all legend items don't fit above the chart, and make it scrollable, if necessary.
 
 To optimize for readability and accessibility, map legend markers to the relevant chart shape. For example, use circle legend markers for scatter plot and bubble chart legends. Use line segment legend markers for line charts.
 
@@ -81,7 +91,7 @@ The Office Design team created the following set of design principles, which we 
 
 ### Visual design principles
 
-- Visualizations should honor and enhance the data, making it easy to understand. Highlight the data, adding supporting elements only as needed to provide context. Avoid unnecessary embellishments (drop shadows, outlines, etc), chart junk, or data distortion.
+- Visualizations should honor and enhance the data, making it easy to understand. Highlight the data, adding supporting elements only as needed to provide context. Avoid unnecessary embellishments, such as drop shadows and outlines, chart junk, or data distortion.
 - Visualizations should encourage exploration by providing rich visual feedback. Use well-established interaction patterns, interface controls, and clear system feedback.
 - Embody time-honored design principles. Use established typographic and visual communication design principles to enhance form, readability, and meaning.
 
@@ -126,7 +136,7 @@ Motion follows data.
 
 ## Accessibility in data visualizations
 
-- Do not use color as the only way to communicate information. People who are color blind will not be able to interpret the results. Use shape, size and texture in addition to color when possible to communicate information.
+- Don't use color as the only way to communicate information. People who are color blind will not be able to interpret the results. Use shape, size and texture in addition to color when possible to communicate information.
 - Make all interactive elements, such as push buttons or pick lists, accessible from a keyboard.
 - Send accessibility events to screen readers to announce focus changes, tooltips, and so on.
 
