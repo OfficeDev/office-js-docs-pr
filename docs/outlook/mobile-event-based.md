@@ -1,19 +1,18 @@
 ---
-title: Use event-based activation to add a signature to messages in Outlook on mobile devices
-description: Learn how to develop an Outlook mobile add-in that uses event-based activation to add a signature to messages being composed.
-ms.date: 04/25/2023
+title: Implement event-based activation in Outlook mobile add-ins
+description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
+ms.date: 06/29/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Use event-based activation to add a signature to messages in Outlook on mobile devices
+# Implement event-based activation in Outlook mobile add-ins
 
-With the `OnNewMessageCompose` event now available in Outlook on mobile devices, implement an event-based activated add-in to automatically add a signature when a new message is created. This capability allows your add-in to:
+With the [event-based activation](autolaunch.md) feature, develop an add-in to automatically activate and complete operations when certain events occur in Outlook on Android or on iOS, such as composing a new message.
 
-- Free up some computing resources and improve your add-in's overall performance by implementing signature stamping on the client side instead of the server side.
-- Create a more convenient experience for your users by automatically adding signatures to their messages, so that they won't need to manually create and save one on each of their devices.
+The following sections walk you through how to develop an Outlook mobile add-in that automatically adds a signature to new messages being composed. This highlights a sample scenario of how you can implement event-based activation in your mobile add-in. Significantly enhance the mobile user experience by exploring other scenarios in your add-in today.
 
-The following sections walk you through how to develop an event-based add-in for Outlook mobile that automatically adds a signature to new messages being composed. If you want to learn how to implement an event-based add-in for Outlook desktop clients, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
+To learn how to implement an event-based add-in for Outlook desktop clients, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 > [!NOTE]
 > Outlook on Android and on iOS only support up to Mailbox requirement set 1.5. However, to support the event-based activation feature, some APIs from later requirement sets have been enabled on mobile clients. For more information on this exception, see [Additional supported APIs](#additional-supported-apis).
@@ -257,10 +256,9 @@ Although Outlook mobile supports APIs up to [Mailbox requirement set 1.5](/javas
 
 - [Office.context.mailbox.item.addFileAttachmentFromBase64Async](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1))
 - [Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))
-- [Office.context.mailbox.item.from](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-from-member)
+- [Office.context.mailbox.item.from.getAsync](/javascript/api/outlook/office.from#outlook-office-from-getasync-member(1))
 - [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getcomposetypeasync-member(1))
 - [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))
-- [Office.From](/javascript/api/outlook/office.from)
 
 ## Deploy to users
 

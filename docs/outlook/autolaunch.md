@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 05/19/2023
+ms.date: 06/29/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 > [!NOTE]
 > Support for this feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For details about an event's minimum requirement set and the clients and platforms that support it, see [Supported events](#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 >
-> The add-in from the following walkthrough only runs in Outlook on Windows, on Mac, and on the web. To learn how to implement an event-based add-in that runs in Outlook on mobile devices, see [Use event-based activation to add a signature to messages in Outlook on mobile devices](mobile-signature.md).
+> The add-in from the following walkthrough only runs in Outlook on Windows, on Mac, and on the web. To learn how to implement an event-based add-in that runs in Outlook on mobile devices, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 ## Supported events
 
@@ -43,7 +43,7 @@ The following table lists events that are currently available and the supported 
 > [!NOTE]
 > <sup>1</sup> Event-based add-ins in Outlook on Windows require a minimum of Windows 10 Version 1903 (Build 18362) or Windows Server 2019 Version 1903 to run.
 >
-> <sup>2</sup> Outlook on mobile supports APIs up to Mailbox requirement set 1.5. However, support is now enabled for additional APIs and features introduced in later requirement sets, such as the `OnNewMessageCompose` event. To learn more, see [Use event-based activation to add a signature to messages in Outlook on mobile devices](mobile-signature.md).
+> <sup>2</sup> Outlook on mobile supports APIs up to Mailbox requirement set 1.5. However, support is now enabled for additional APIs and features introduced in later requirement sets, such as the `OnNewMessageCompose` event. To learn more, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 ## Set up your environment
 

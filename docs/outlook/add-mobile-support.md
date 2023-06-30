@@ -1,7 +1,7 @@
 ---
 title: Add mobile support to an Outlook add-in
 description: Learn how to add support for Outlook on mobile devices including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
-ms.date: 04/25/2023
+ms.date: 06/29/2023
 ms.localizationpriority: medium
 ---
 
@@ -85,7 +85,7 @@ Currently, add-ins in Outlook mobile only support activation when reading messag
 
 1. Online meeting provider integrated add-ins activate in Appointment Organizer mode. For more information about this exception (including available APIs), see [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md#available-apis).
 1. Add-ins that log appointment notes and other details to customer relationship management (CRM) or note-taking services activate in Appointment Attendee mode. For more information about this exception (including available APIs), see [Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md#available-apis).
-1. Event-based add-ins activate when the `OnNewMessageCompose` event occurs. For more information about this exception (including additional supported APIs), see [Use event-based activation to add a signature to messages in Outlook on mobile devices](mobile-signature.md).
+1. Event-based add-ins activate when the `OnNewMessageCompose` event occurs. For more information about this exception (including additional supported APIs), see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 ### Unsupported APIs
 
