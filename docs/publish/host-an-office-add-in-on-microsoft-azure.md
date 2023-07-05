@@ -59,7 +59,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 5. Select the check box for **Show in Menu**.
 
     > [!NOTE]
-    > When you store an add-in XML manifest file on a share that is specified as a trusted web add-in catalog, the add-in appears under **Shared Folder** in the **Office Add-ins** dialog box when the user navigates to the **Insert** tab in the ribbon and chooses **My Add-ins**.
+    > When you store an add-in XML manifest file on a share that is specified as a trusted web add-in catalog, the add-in appears under **Shared Folder** in the **Office Add-ins** dialog box when the user navigates to the **Insert** tab on the ribbon and chooses **My Add-ins**.
 
 6. Close Word.
 

@@ -239,11 +239,11 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
 ### Test the add-in
 
-1. Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
     ![The Start button highlighted in Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-1. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In PowerPoint, select the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
     ![The Show Taskpane button highlighted on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
@@ -277,11 +277,11 @@ Complete the following steps to add markup that customizes the task pane UI.
 
 ### Test the add-in
 
-1. Using Visual Studio, test the PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
     ![The Start button highlighted in Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-1. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In PowerPoint, select the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
     ![The Show Taskpane button highlighted on the PowerPoint Home ribbon.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
@@ -329,11 +329,11 @@ Complete the following steps to add code that inserts text into the title slide 
 
 ### Test the add-in
 
-1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
     ![The Start button highlighted in Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-1. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In PowerPoint, select the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
     ![The Show Taskpane button on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
@@ -388,11 +388,11 @@ Complete the following steps to add code that retrieves metadata for the selecte
 
 ### Test the add-in
 
-1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
     ![The Start button in Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-1. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In PowerPoint, select the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
     ![The Show Taskpane button on the PowerPoint Home ribbon.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
@@ -488,15 +488,15 @@ Complete the following steps to add code that navigates between the slides of a 
 
 ### Test the add-in
 
-1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
     ![The Start button highlighted on the Visual Studio toolbar.](../images/powerpoint-tutorial-start.png)
 
-1. In PowerPoint, select the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In PowerPoint, select the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
     ![The Show Taskpane button highlighted on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-1. Use the **New Slide** button in the ribbon of the **Home** tab to add two new slides to the document.
+1. Use the **New Slide** button on the ribbon of the **Home** tab to add two new slides to the document.
 
 1. In the task pane, choose the **Go to First Slide** button. The first slide in the document is selected and displayed.
 
