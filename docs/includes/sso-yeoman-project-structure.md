@@ -22,10 +22,12 @@ The following files facilitate the SSO process and write data to the Office docu
 
 - In a JavaScript project, the **./src/helpers/documentHelper.js** file contains code that uses the Office JavaScript API library to add the data from Microsoft Graph to the Office document. There is no such file in a TypeScript project; the code that uses the Office JavaScript API library to add the data from Microsoft Graph to the Office document exists in **./src/taskpane/taskpane.ts** instead.
 
-- The **./src/helpers/fallbackauthdialog.html** file is the UI-less page that loads the JavaScript for the fallback authentication strategy.
+- The **./src/helpers/fallbackauthdialog.html** file is the UI-less page that loads the JavaScript for the fallback authentication strategy. The `<script>` tag to load the JavaScript is inserted into the file when Webpack.config.js runs.
 
 - The **./src/helpers/fallbackauthdialog.js** file contains the JavaScript for the fallback authentication strategy that signs in the user with msal.js.
 
-- The **./src/helpers/fallbackauthhelper.js** file contains the task pane JavaScript that invokes the fallback authentication strategy in scenarios when SSO authentication is not supported.
+- The **./src/helpers/message-helper.js** file contains JavaScript that shows or hides error messages to the user.
 
-- The **./src/middle-tier/ssoauth-helper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the access token, initiates the swap of the access token for a new access token with permissions to Microsoft Graph, and calls to Microsoft Graph for the data.
+- The **./src/helpers/middle-tier-calls.js** file contains the JavaScript that calls your web API for fetching data.
+
+- The **./src/middle-tier/sso-helper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the access token, and includes it in a call to Microsoft Graph for the data. In the event of an error or in scenarios when SSO authentication is not supported, it invokes the fallback strategy. 
