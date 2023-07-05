@@ -59,7 +59,7 @@ Use single sign-on for a smoother end-user experience. The user's identity withi
 
 1. The add-in will load after the user consents. It can extract and display any necessary user customized information.
 
-    ![Screenshot showing an Office application with add-in buttons displayed in the ribbon.](../images/add-in-ribbon.png)
+    ![Screenshot showing an Office application with add-in buttons displayed on the ribbon.](../images/add-in-ribbon.png)
 
 ## See also
 

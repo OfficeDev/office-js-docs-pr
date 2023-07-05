@@ -127,7 +127,7 @@ The following subsections explain how to include a [task pane command](../design
 1. Ensure that the "groups" array has an object to define the custom control group that will hold your add-in command UI controls. The following is an example. Note the following about this JSON:
 
     - The "id" must be unique across all groups in all ribbon objects in the manifest. Maximum length is 64 characters.
-    - The "label" appears on the group in the ribbon. Maximum length is 64 characters.
+    - The "label" appears on the group on the ribbon. Maximum length is 64 characters.
     - One of the "icons" appears on the group only if the Office application window, and hence the ribbon, has been sized by the user too small for any of the controls in the group to appear. Office decides when to use one of these icons and which one to use based on the size of the window and the resolution of the device. You cannot control this. You must provide image files for 16, 32, and 80 pixels, while five other sizes are also supported (20, 24, 40, 48, and 64 pixels). You must use Secure Sockets Layer (SSL) for all URLs.
     
     > [!NOTE]
@@ -354,7 +354,7 @@ The following subsections explain how to include a [function command](../design/
 1. Ensure that the "groups" array has an object to define the custom control group that will hold your add-in command UI controls. The following is an example. Note the following about this JSON:
 
     - The "id" must be unique across all groups in all ribbon objects in the manifest. Maximum length is 64 characters.
-    - The "label" appears on the group in the ribbon. Maximum length is 64 characters.
+    - The "label" appears on the group on the ribbon. Maximum length is 64 characters.
     - One of the "icons" appears on the group only if the Office application window, and hence the ribbon, has been sized by the user too small for any of the controls in the group to appear. Office decides when to use one of these icons and which one to use based on the size of the window and the resolution of the device. You cannot control this. You must provide image files for 16, 32, and 80 pixels, while five other sizes are also supported (20, 24, 40, 48, and 64 pixels). You must use Secure Sockets Layer (SSL) for all URLs.
     
     > [!NOTE]
@@ -490,7 +490,7 @@ Carry out the steps of the following sections:
 1. Ensure that the "groups" array has an object to define the custom control group that will hold your drop down menu control. The following is an example. Note the following about this JSON:
 
     - The "id" must be unique across all groups in all ribbon objects in the manifest. Maximum length is 64 characters.
-    - The "label" appears on the group in the ribbon. Maximum length is 64 characters.
+    - The "label" appears on the group on the ribbon. Maximum length is 64 characters.
     - One of the "icons" appears on the group only if the Office application window, and hence the ribbon, has been sized by the user too small for any of the controls in the group to appear. Office decides when to use one of these icons and which one to use based on the size of the window and the resolution of the device. You cannot control this. You must provide image files for 16, 32, and 80 pixels, while five other sizes are also supported (20, 24, 40, 48, and 64 pixels). You must use Secure Sockets Layer (SSL) for all URLs.
     
     > [!NOTE]
