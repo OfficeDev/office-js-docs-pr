@@ -20,7 +20,7 @@ The following files define the add-in's task pane UI and functionality.
 
 The following files facilitate the SSO process and write data to the Office document.
 
-- In a JavaScript project, the **./src/helpers/documentHelper.js** file contains code that encapsulates the user's profile information for insertion into the current Office document. There is no such file in a TypeScript project. Instead, the code that gathers the profile information is inline in the **./src/taskpane/taskpane.ts** file.
+- In a JavaScript project, the **./src/helpers/documentHelper.js** file contains code that encapsulates the user's profile information for insertion into the current Office document. There's no such file in a TypeScript project. Instead, the code that gathers the profile information is inline in the **./src/taskpane/taskpane.ts** file.
 
 - The **./src/helpers/fallbackauthdialog.html** file is the UI-less page that loads the JavaScript for the fallback authentication strategy. The `<script>` tag to load the JavaScript is inserted into the file when Webpack.config.js runs.
 
