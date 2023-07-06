@@ -1,7 +1,7 @@
 ---
-title: Add mobile support to an Outlook add-in
+title: Add support for add-in commands in Outlook on mobile devices
 description: Learn how to add support for Outlook on mobile devices including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
-ms.date: 10/17/2022
+ms.date: 07/06/2023
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 Using add-in commands in Outlook on mobile devices allows your users to access the same functionality (with some [limitations](#code-considerations)) that they already have in Outlook on the web, on Windows, and on Mac. Adding support for Outlook mobile requires updating the add-in manifest and possibly changing your code for mobile scenarios.
 
-## Updating the manifest
+## Update the manifest
 
 [!INCLUDE [Unified manifest for Microsoft 365 not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
@@ -81,10 +81,11 @@ In Outlook mobile, task panes take up the entire screen and by default require t
 
 ### Compose mode and appointments
 
-Currently, add-ins in Outlook mobile only support activation when reading messages. Add-ins aren't activated when composing messages or when viewing or composing appointments. However, there are two exceptions:
+Currently, add-ins in Outlook mobile only support activation when reading messages. Add-ins aren't activated when composing messages or when viewing or composing appointments. However, there are some exceptions.
 
-1. Online meeting provider integrated add-ins can be activated in Appointment Organizer mode. For more about this exception (including available APIs), refer to [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md#available-apis).
-1. Add-ins that log appointment notes and other details to customer relationship management (CRM) or note-taking services can be activated in Appointment Attendee mode. For more about this exception (including available APIs), refer to [Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md#available-apis).
+1. Online meeting provider integrated add-ins activate in Appointment Organizer mode. For more information about this exception (including available APIs), see [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md#available-apis).
+1. Add-ins that log appointment notes and other details to customer relationship management (CRM) or note-taking services activate in Appointment Attendee mode. For more information about this exception (including available APIs), see [Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md#available-apis).
+1. Event-based add-ins activate when the `OnNewMessageCompose` event occurs. For more information about this exception (including additional supported APIs), see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 ### Unsupported APIs
 
