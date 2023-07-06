@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 06/28/2023
+ms.date: 07/06/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -480,7 +480,7 @@ Some Office.js APIs that change or alter the UI aren't allowed from event-based 
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all Outlook versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
+    > [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all Outlook versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Enable single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based Outlook add-in](use-sso-in-event-based-activation.md).
 - Under `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`
@@ -501,6 +501,10 @@ Outlook on Windows includes a local copy of the production and beta versions of 
 
     ![The EnableBetaAPIsInJavaScript registry value is set to 1."](../images/outlook-beta-registry-key.png)
 
+### Enable single sign-on (SSO)
+
+To enable SSO in your event-based add-in, you must add its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Enable single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based Outlook add-in](use-sso-in-event-based-activation.md).
+
 ### Request external data
 
 You can request external data by using an API like [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using [XMLHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
@@ -516,8 +520,10 @@ A [simple CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS#simple_requests
 - Can't have event listeners registered on the object returned by `XMLHttpRequest.upload`.
 - Can't use `ReadableStream` objects in requests.
 
+To enable your event-based add-in to make CORS request, you must add the add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Enable single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based Outlook add-in](use-sso-in-event-based-activation.md).
+
 > [!NOTE]
-> Full CORS support is available in Outlook on the web, Mac, and Windows (starting in version 2201, build 16.0.14813.10000).
+> Full CORS support is available in Outlook on the web, Mac, and Windows (starting in Version 2201, Build 16.0.14813.10000).
 
 ## See also
 
