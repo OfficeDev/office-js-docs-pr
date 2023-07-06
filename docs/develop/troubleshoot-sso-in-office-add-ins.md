@@ -90,6 +90,7 @@ The user is running the add-in in Office on Microsoft Edge. The user's Microsoft
 There are several possible causes.
 
 - The add-in is running on a platform that does not support the `getAccessToken` API. For example, it is not supported on iPad. See also [Identity API requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
+- The Office document was opened from the **Files** tab of a Teams channel using the **Edit in Teams** option on the **Open** drop down menu. The `getAccessToken` API is not supported in this scenario.
 - The `forMSGraphAccess` option was passed in the call to `getAccessToken` and the user obtained the add-in from AppSource. In this scenario, the tenant admin has not granted consent to the add-in for the Microsoft Graph scopes (permissions) that it needs. Recalling `getAccessToken` with the `allowConsentPrompt` will not solve the problem because Office is allowed to prompt the user for consent to only the AAD `profile` scope.
 
 Your code should fall back to an alternate system of user authentication.
