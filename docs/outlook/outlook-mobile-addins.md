@@ -38,7 +38,7 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
 
 - When you submit your add-in to the store with [MobileFormFactor](/javascript/api/manifest/mobileformfactor) in the manifest, you'll need to agree to our developer addendum for add-ins on iOS, and you must submit your Apple Developer ID for verification.
 
-- Finally, your manifest needs to declare `MobileFormFactor`, and have the correct types of [controls](/javascript/api/manifest/control) and [icon sizes](/javascript/api/manifest/icon) included. To learn more, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+- Finally, your manifest needs to declare `MobileFormFactor`, and include the correct types of [controls](/javascript/api/manifest/control) and [icon sizes](/javascript/api/manifest/icon). To learn more, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## What makes a good scenario for Outlook mobile add-ins?
 

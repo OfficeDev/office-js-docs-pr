@@ -234,7 +234,7 @@ Ensure that the HTML file you specified in the **\<Runtime\>** element of your m
 1. Follow the guidance to [test and validate your add-in](testing-and-tips.md).
 1. [Sideload](sideload-outlook-add-ins-for-testing.md) your add-in in Outlook on Windows, on Mac, or on the web.
 1. Open Outlook on Android or on iOS. If you have Outlook already open on your device, restart it.
-1. Create a new message. The event-based add-in signature is added to the message. If you have a signature saved on your mobile device, it will briefly appear in the message you create, but will be immediately replaced by the signature added by the add-in.
+1. Create a new message. The event-based add-in adds the signature to the message. If you have a signature saved on your mobile device, it will briefly appear in the message you create, but will be immediately replaced by the signature added by the add-in.
 
     :::image type="content" source="../images/outlook-mobile-signature.png" alt-text="A sample signature added to a message being composed in Outlook mobile.":::
 
@@ -262,7 +262,7 @@ Although Outlook mobile supports APIs up to [Mailbox requirement set 1.5](/javas
 
 ## Deploy to users
 
-Event-based add-ins must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section of [Deploy to users](autolaunch.md#deploy-to-users).
+Event-based add-ins must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
 
 ## See also
 
