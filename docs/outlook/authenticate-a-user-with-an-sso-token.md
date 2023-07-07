@@ -59,7 +59,7 @@ In most scenarios, there would be little point to obtaining the access token, if
 
 ## SSO for event-based activation
 
-There are additional steps to take if your add-in uses event-based activation. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
+There are additional steps to take if your add-in uses event-based activation. For more information, see [Enable single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based Outlook add-in](use-sso-in-event-based-activation.md).
 
 ## See also
 
@@ -67,4 +67,4 @@ There are additional steps to take if your add-in uses event-based activation. F
 - For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [Outlook Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
 - [SSO API reference](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
 - [IdentityAPI requirement set](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
-- [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md)
+- [Enable single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based Outlook add-in](use-sso-in-event-based-activation.md)
