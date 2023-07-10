@@ -114,8 +114,8 @@ Office.context.mailbox.item.getAllInternetHeadersAsync(getCallback);
 
 function getCallback(asyncResult) {
   if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
-    console.log("Sender's preferred fruit: " + asyncResult.value.match(/preferred-fruit:.*/gim)[0].slice(19));
-    console.log("Sender's preferred vegetable: " + asyncResult.value.match(/preferred-vegetable:.*/gim)[0].slice(23));
+    console.log("Sender's preferred fruit: " + asyncResult.value.match(/preferred-fruit:.*/gim)[0].slice(17));
+    console.log("Sender's preferred vegetable: " + asyncResult.value.match(/preferred-vegetable:.*/gim)[0].slice(21));
   } else {
     console.log("Error getting preferences from header: " + JSON.stringify(asyncResult.error));
   }
