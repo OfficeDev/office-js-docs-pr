@@ -19,7 +19,7 @@ The plugin is [CustomFunctionsMetadataPlugin](https://github.com/OfficeDev/Offic
 > 
 > - The tool can be used only in a NoteJS-based project.
 > - These instructions assume that your project uses [Webpack](https://webpack.js.org/) and that you have it installed and configured.
-> - If your custom function add-in project is created with the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md), Webpack is installed and all of these steps are done automatically, but when applicable, you must do the steps in [Multiple custom function source files](#multiple-custom-function-source-files) manually.
+> - If your custom function add-in project is created with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), Webpack is installed and all of these steps are done automatically, but when applicable, you must do the steps in [Multiple custom function source files](#multiple-custom-function-source-files) manually.
 
 1. Open a Command Prompt or bash shell and, in the root of the project, run `npm install custom-functions-metadata-plugin`.
 1. Open the webpack.config.js file and add the following line at the top: `const CustomFunctionsMetadataPlugin = require("custom-functions-metadata-plugin");`.
