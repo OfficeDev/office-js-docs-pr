@@ -61,6 +61,10 @@ If, and only if, you have organized your custom functions into multiple source f
     },
    ```
 
+## Run the tool
+
+You don't have to do anything to run the tool. When webpack runs, it creates the functions.json file and puts it in memory in development mode, or in the /dist folder in production mode.
+
 ## Basics of JSDoc tags
 
 Add the `@customfunction` tag in the code comments for a JavaScript or TypeScript function to mark it as a custom function.
