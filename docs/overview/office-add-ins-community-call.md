@@ -11,7 +11,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for July 12, 2023 call
 
-This month Elizabeth Samuel, a senior technical writer at Microsoft, will be presenting the top five validation errors that occurred between the time period of March - May 2023. 
+This month, Elizabeth Samuel, a Senior Technical Writer at Microsoft, will be presenting the top five validation errors that occurred between the time period of March - May 2023.
 
 ## Previous calls
 
