@@ -1,7 +1,7 @@
 ---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 07/06/2023
+ms.date: 07/13/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -260,6 +260,8 @@ Although Outlook mobile supports APIs up to [Mailbox requirement set 1.5](/javas
 - [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getcomposetypeasync-member(1))
 - [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))
 
+To learn more about APIs that are supported in Outlook on mobile devices, see [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
+
 ## Deploy to users
 
 Event-based add-ins must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
@@ -269,3 +271,4 @@ Event-based add-ins must be deployed by an organization's administrator. For gui
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
 - [Add-ins for Outlook on mobile devices](outlook-mobile-addins.md)
 - [Add mobile support to an Outlook add-in](add-mobile-support.md)
+- [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md)
