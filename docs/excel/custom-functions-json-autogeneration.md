@@ -17,7 +17,7 @@ The plugin is [CustomFunctionsMetadataPlugin](https://github.com/OfficeDev/Offic
 
 > [!NOTE]
 > 
-> - The tool can be used only in a NoteJS-based project.
+> - The tool can be used only in a NodeJS-based project.
 > - These instructions assume that your project uses [Webpack](https://webpack.js.org/) and that you have it installed and configured.
 > - If your custom function add-in project is created with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), Webpack is installed and all of these steps are done automatically, but when applicable, you must do the steps in [Multiple custom function source files](#multiple-custom-function-source-files) manually.
 
@@ -63,7 +63,7 @@ If, and only if, you have organized your custom functions into multiple source f
 
 ## Run the tool
 
-You don't have to do anything to run the tool. When webpack runs, it creates the functions.json file and puts it in memory in development mode, or in the /dist folder in production mode.
+You don't have to do anything to run the tool. When Webpack runs, it creates the functions.json file and puts it in memory in development mode, or in the /dist folder in production mode.
 
 ## Basics of JSDoc tags
 
@@ -87,7 +87,7 @@ In the following example, the phrase "Calculates the volume of a sphere." is the
  */
 ```
 
-## Supported JSDoc Tags
+## Supported JSDoc tags
 
 The following JSDoc tags are supported in Excel custom functions.
 
