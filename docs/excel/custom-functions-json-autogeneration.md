@@ -1,21 +1,77 @@
 ---
 title: Autogenerate JSON metadata for custom functions
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
-ms.date: 02/28/2023
+ms.date: 07/11/2023
 ms.localizationpriority: medium
 ---
 
 # Autogenerate JSON metadata for custom functions
 
-When an Excel custom function is written in JavaScript or TypeScript, [JSDoc tags](https://jsdoc.app/) are used to provide extra information about the custom function. The JSDoc tags are then used at build time to create the JSON metadata file. Using JSDoc tags saves you from the effort of [manually editing the JSON metadata file](custom-functions-json.md).
+When an Excel custom function is written in JavaScript or TypeScript, [JSDoc tags](https://jsdoc.app/) are used to provide extra information about the custom function. We provide a [Webpack](https://webpack.js.org/) plugin that uses these JSDoc tags to automatically create the JSON metadata file at build time. Using the plugin saves you from the effort of [manually editing the JSON metadata file](custom-functions-json.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+## CustomFunctionsMetadataPlugin
+
+The plugin is [CustomFunctionsMetadataPlugin](https://github.com/OfficeDev/Office-Addin-Scripts/blob/master/packages/custom-functions-metadata-plugin/README.md). To install and configure it, use the following steps.
+
+> [!NOTE]
+> 
+> - The tool can be used only in a NodeJS-based project.
+> - These instructions assume that your project uses [Webpack](https://webpack.js.org/) and that you have it installed and configured.
+> - If your custom function add-in project is created with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), Webpack is installed and all of these steps are done automatically, but when applicable, you must do the steps in [Multiple custom function source files](#multiple-custom-function-source-files) manually.
+
+1. Open a Command Prompt or bash shell and, in the root of the project, run `npm install custom-functions-metadata-plugin`.
+1. Open the webpack.config.js file and add the following line at the top: `const CustomFunctionsMetadataPlugin = require("custom-functions-metadata-plugin");`.
+1. Scroll down to the `plugins` array and add the following to the top of the array. Change the `input` path and filename as needed to match your project, but the `output` value must be "functions.json". If you're using TypeScript, use the \*.ts source file name, *not* the transpiled \*.js file.
+
+   ```js
+   new CustomFunctionsMetadataPlugin({
+      output: "functions.json",
+      input: "./src/functions/functions.js", 
+   }),
+   ```
+
+### Multiple custom function source files
+
+If, and only if, you have organized your custom functions into multiple source files, there are additional steps. 
+
+1. In the webpack.config.js file, replace the string value of `input` with an array of string URLs that point to each of the files. The following is an example:
+
+   ```js
+   new CustomFunctionsMetadataPlugin({
+      output: "functions.json",
+      input: [
+               "./src/functions/someFunctions.js", 
+               "./src/functions/otherFunctions.js"
+             ], 
+   }),
+   ```
+
+1. Scroll to the `entry.functions` property, and replace its value with the same array you used in the preceding step. The following is an example:
+
+   ```js
+   entry: {
+      polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
+      taskpane: ["./src/taskpane/taskpane.js", "./src/taskpane/taskpane.html"],
+      functions: [
+               "./src/functions/someFunctions.js", 
+               "./src/functions/otherFunctions.js"
+             ],
+    },
+   ```
+
+## Run the tool
+
+You don't have to do anything to run the tool. When Webpack runs, it creates the functions.json file and puts it in memory in development mode, or in the /dist folder in production mode.
+
+## Basics of JSDoc tags
 
 Add the `@customfunction` tag in the code comments for a JavaScript or TypeScript function to mark it as a custom function.
 
 The function parameter types may be provided using the [@param](#param) tag in JavaScript, or from the [Function type](https://www.typescriptlang.org/docs/handbook/functions.html) in TypeScript. For more information, see the [@param](#param) tag and [Types](#types) sections.
 
-## Add a description to a function
+### Add a description to a function
 
 The description is displayed to the user as help text when they need help to understand what your custom function does. The description doesn't require any specific tag. Just enter a short text description in the JSDoc comment. In general the description is placed at the start of the JSDoc comment section, but it will work no matter where it is placed.
 
@@ -31,7 +87,7 @@ In the following example, the phrase "Calculates the volume of a sphere." is the
  */
 ```
 
-## JSDoc Tags
+## Supported JSDoc tags
 
 The following JSDoc tags are supported in Excel custom functions.
 
