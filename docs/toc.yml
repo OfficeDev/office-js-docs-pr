@@ -678,7 +678,7 @@ items:
       items:
       - name: Overview
         href: outlook/outlook-mobile-addins.md
-        displayName: outlook add-ins on mobile
+        displayName: outlook, add-ins, mobile
       - name: Add support for Outlook on mobile devices
         href: outlook/add-mobile-support.md
         displayName: outlook add-ins on mobile
