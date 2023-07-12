@@ -688,6 +688,9 @@ items:
       - name: Log appointment notes on mobile
         href: outlook/mobile-log-appointments.md
         displayName: outlook add-ins on mobile
+      - name: Event-based activation in Outlook on mobile devices
+        href: outlook/mobile-event-based.md
+        displayName: outlook add-ins on mobile, event-based activation
     - name: Create an online meeting add-in
       href: outlook/online-meeting.md
     - name: On-send add-ins
@@ -701,9 +704,6 @@ items:
         displayName: event-based activation
       - name: Smart Alerts and OnMessageSend event walkthrough
         href: outlook/smart-alerts-onmessagesend-walkthrough.md
-        displayName: event-based activation
-      - name: Event-based activation in Outlook on mobile devices
-        href: outlook/mobile-event-based.md
         displayName: event-based activation
       - name: Update your signature when switching between accounts
         href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
