@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 05/19/2023
+ms.date: 07/06/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ By the end of this walkthrough, you'll have an add-in that runs whenever a new i
 > [!NOTE]
 > Support for this feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For details about an event's minimum requirement set and the clients and platforms that support it, see [Supported events](#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 >
-> Event-based activation isn't supported in Outlook on iOS or Android.
+> The add-in from the following walkthrough only runs in Outlook on Windows, on Mac, and on the web. To learn how to implement an event-based add-in that runs in Outlook on mobile devices, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 ## Supported events
 
@@ -23,7 +23,7 @@ The following table lists events that are currently available and the supported 
 
 |Event canonical name</br>and XML manifest name|Unified manifest for Microsoft 365 name|Description|Minimum requirement set and supported clients|
 |---|---|---|---|
-|`OnNewMessageCompose`| newMessageComposeCreated |On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI |
+|`OnNewMessageCompose`| newMessageComposeCreated |On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI<br>- Android<sup>2</sup><br>- iOS<sup>2</sup> |
 |`OnNewAppointmentOrganizer`|newAppointmentOrganizerCreated|On creating a new appointment but not on editing an existing one.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI |
 |`OnMessageAttachmentsChanged`|messageAttachmentsChanged|On adding or removing attachments while composing a message.<br><br>Event-specific data object: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI|
 |`OnAppointmentAttachmentsChanged`|appointmentAttachmentsChanged|On adding or removing attachments while composing an appointment.<br><br>Event-specific data object: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI|
@@ -42,6 +42,8 @@ The following table lists events that are currently available and the supported 
 
 > [!NOTE]
 > <sup>1</sup> Event-based add-ins in Outlook on Windows require a minimum of Windows 10 Version 1903 (Build 18362) or Windows Server 2019 Version 1903 to run.
+>
+> <sup>2</sup> Outlook on mobile supports APIs up to Mailbox requirement set 1.5. However, support is now enabled for additional APIs and features introduced in later requirement sets, such as the `OnNewMessageCompose` event. To learn more, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 ## Set up your environment
 
@@ -53,7 +55,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 # [XML Manifest](#tab/xmlmanifest)
 
-To enable event-based activation of your add-in, you must configure the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point in the `VersionOverridesV1_1` node of the manifest. For now, `DesktopFormFactor` is the only supported form factor.
+To enable event-based activation of your add-in, you must configure the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point in the `VersionOverridesV1_1` node of the manifest.
 
 1. In your code editor, open the quick start project.
 
@@ -309,8 +311,7 @@ In this scenario, you'll add handling for composing new items.
         });
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest's LaunchEvent element to its JavaScript counterpart.
-    // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
+    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
     if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
       Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
       Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
@@ -398,7 +399,7 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 - Ensure that the following conditions are met in your add-in's manifest.
   - Verify that your add-in's source file location URL is publicly available and isn't blocked by a firewall. This URL is specified in your manifest's [SourceLocation element](/javascript/api/manifest/sourcelocation).
   - Verify that the **\<Runtimes\>** element correctly references the HTML or JavaScript file containing the event handlers. Outlook on Windows uses the JavaScript file during runtime, while Outlook on the web and on new Mac UI use the HTML file. For an example of how this is configured in the manifest, see [Configure the manifest](#configure-the-manifest).
-- Verify that your event-handling JavaScript file referenced by the Outlook client on Windows calls `Office.actions.associate`. This ensures that the event handler name specified in the manifest's **\<LaunchEvent\>** element is mapped to its JavaScript counterpart.
+- Verify that your event-handling JavaScript file referenced by the Outlook client on Windows calls `Office.actions.associate`. This ensures that the event handler name specified in the manifest is mapped to its JavaScript counterpart.
 
   > [!TIP]
   > If your event-based add-in has only one JavaScript file referenced by Outlook on the web, Windows, and Mac, it's recommended to check on which platform the add-in is running to determine when to call `Office.actions.associate`, as shown in the following code.
@@ -439,7 +440,8 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[Outlook mail account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
     ```
 
-    If the **bundle.js** file doesn't appear in the folder, [remove your add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) from Outlook, then sideload it again.
+    [!INCLUDE [outlook-bundle-js](../includes/outlook-bundle-js.md)]
+
 - As you test your add-in in Outlook on Windows or Mac, enable runtime logging to identify possible manifest and add-in installation issues. For guidance on how to use runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
 - Set breakpoints in your code to debug your add-in. For platform-specific instructions, see [Debug your event-based Outlook add-in](debug-autolaunch.md).
 
@@ -480,7 +482,7 @@ Some Office.js APIs that change or alter the UI aren't allowed from event-based 
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all Outlook versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Enable single sign-on (SSO) in Outlook add-ins that use event-based activation](use-sso-in-event-based-activation.md).
+    > [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all Outlook versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Enable single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based Outlook add-in](use-sso-in-event-based-activation.md).
 - Under `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`
@@ -501,6 +503,10 @@ Outlook on Windows includes a local copy of the production and beta versions of 
 
     ![The EnableBetaAPIsInJavaScript registry value is set to 1."](../images/outlook-beta-registry-key.png)
 
+### Enable single sign-on (SSO)
+
+To enable SSO in your event-based add-in, you must add its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Enable single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based Outlook add-in](use-sso-in-event-based-activation.md).
+
 ### Request external data
 
 You can request external data by using an API like [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using [XMLHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
@@ -516,8 +522,10 @@ A [simple CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS#simple_requests
 - Can't have event listeners registered on the object returned by `XMLHttpRequest.upload`.
 - Can't use `ReadableStream` objects in requests.
 
+To enable your event-based add-in to make CORS request, you must add the add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Enable single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based Outlook add-in](use-sso-in-event-based-activation.md).
+
 > [!NOTE]
-> Full CORS support is available in Outlook on the web, Mac, and Windows (starting in version 2201, build 16.0.14813.10000).
+> Full CORS support is available in Outlook on the web, Mac, and Windows (starting in Version 2201, Build 16.0.14813.10000).
 
 ## See also
 

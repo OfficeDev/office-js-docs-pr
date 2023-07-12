@@ -2,7 +2,7 @@
 title: Run code in your Office Add-in when the document opens
 description: Learn how to run code in your Office Add-in add-in when the document opens.
 ms.topic: how-to
-ms.date: 09/17/2021
+ms.date: 07/11/2023
 ms.localizationpriority: medium
 ---
 
@@ -10,7 +10,10 @@ ms.localizationpriority: medium
 
 [!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-You can configure your Office Add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.
+You can configure your Office Add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible. 
+
+> [!NOTE]
+> The configuration is implemented with a method that your code calls at runtime. This means that the add-in *won't* run the *first time* a user opens the document. The add-in must be opened manually for the first time on any document. After the method runs, either in [Office.initialize](/javascript/api/office#office-office-initialize-function(1)), [Office.onReady](/javascript/api/office#office-office-onready-function(1)), or because the user takes a code path that runs it; then whenever the document is reopened, the add-in loads immediately and any code in the `Office.initialize` or `Office.onReady` method runs.
 
 [!include[Shared runtime note](../includes/note-requires-shared-runtime.md)]
 
@@ -25,7 +28,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 > [!NOTE]
 > The `setStartupBehavior` method is asynchronous.
 
-## Place startup code in Office.initialize
+## Place startup code in Office.initialize or Office.onReady
 
 When your add-in is configured to load on document open, it will run immediately. The `Office.initialize` event handler will be called. Place your startup code in the `Office.initialize` or `Office.onReady` event handler.
 
@@ -84,7 +87,10 @@ async function onChange(event) {
 
 ## Configure your add-in for no load behavior on document open
 
-The following code configures your add-in not to start when the document is opened. Instead, it will start when the user engages it in some way, such as choosing a ribbon button or opening the task pane.
+There may be scenarios when you want to turn off the "run on document open" behavior. The following code configures your add-in not to start when the document is opened. Instead, it will start when the user engages it in some way, such as choosing a ribbon button or opening the task pane. This code has no effect if the method hasn't previously been called on the current document, with `Office.StartupBehavior.load` as the parameter.
+
+> [!NOTE]
+> If add-in calls the method, with `Office.StartupBehavior.load` as the parameter, in `Office.initialize` or `Office.onReady`, the behavior is turned on again. So, in this scenario, turning it off only applies to the *next* time the document is opened, not *all* subsequent openings. 
 
 ```JavaScript
 Office.addin.setStartupBehavior(Office.StartupBehavior.none);
@@ -92,7 +98,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.none);
 
 ## Get the current load behavior
 
-To determine what the current startup behavior is, run the following method, which returns an `Office.StartupBehavior` object.
+There may be scenarios in which your add-in needs to know if it's configured to start automatically the next time the current document is opened. To determine what the current startup behavior is, run the following method, which returns an [Office.StartupBehavior](/javascript/api/office/office.startupbehavior) value.
 
 ```JavaScript
 let behavior = await Office.addin.getStartupBehavior();

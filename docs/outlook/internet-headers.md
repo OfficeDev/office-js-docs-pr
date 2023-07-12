@@ -1,7 +1,7 @@
 ---
 title: Get and set internet headers
 description: How to get and set internet headers on a message in an Outlook add-in.
-ms.date: 08/30/2022
+ms.date: 07/10/2022
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -44,7 +44,7 @@ The following example shows how to set, get, and remove custom internet headers.
 // Set custom internet headers.
 function setCustomHeaders() {
   Office.context.mailbox.item.internetHeaders.setAsync(
-    { "x-preferred-fruit": "orange", "x-preferred-vegetable": "broccoli", "x-best-vegetable": "spinach" },
+    { "preferred-fruit": "orange", "preferred-vegetable": "broccoli", "best-vegetable": "spinach" },
     setCallback
   );
 }
@@ -60,7 +60,7 @@ function setCallback(asyncResult) {
 // Get custom internet headers.
 function getSelectedCustomHeaders() {
   Office.context.mailbox.item.internetHeaders.getAsync(
-    ["x-preferred-fruit", "x-preferred-vegetable", "x-best-vegetable", "x-nonexistent-header"],
+    ["preferred-fruit", "preferred-vegetable", "best-vegetable", "nonexistent-header"],
     getCallback
   );
 }
@@ -76,7 +76,7 @@ function getCallback(asyncResult) {
 // Remove custom internet headers.
 function removeSelectedCustomHeaders() {
   Office.context.mailbox.item.internetHeaders.removeAsync(
-    ["x-best-vegetable", "x-nonexistent-header"],
+    ["best-vegetable", "nonexistent-header"],
     removeCallback);
 }
 
@@ -95,9 +95,9 @@ getSelectedCustomHeaders();
 
 /* Sample output:
 Successfully set headers
-Selected headers: {"x-best-vegetable":"spinach","x-preferred-fruit":"orange","x-preferred-vegetable":"broccoli"}
+Selected headers: {"best-vegetable":"spinach","preferred-fruit":"orange","preferred-vegetable":"broccoli"}
 Successfully removed selected headers
-Selected headers: {"x-preferred-fruit":"orange","x-preferred-vegetable":"broccoli"}
+Selected headers: {"preferred-fruit":"orange","preferred-vegetable":"broccoli"}
 */
 ```
 
@@ -114,8 +114,8 @@ Office.context.mailbox.item.getAllInternetHeadersAsync(getCallback);
 
 function getCallback(asyncResult) {
   if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
-    console.log("Sender's preferred fruit: " + asyncResult.value.match(/x-preferred-fruit:.*/gim)[0].slice(19));
-    console.log("Sender's preferred vegetable: " + asyncResult.value.match(/x-preferred-vegetable:.*/gim)[0].slice(23));
+    console.log("Sender's preferred fruit: " + asyncResult.value.match(/preferred-fruit:.*/gim)[0].slice(17));
+    console.log("Sender's preferred vegetable: " + asyncResult.value.match(/preferred-vegetable:.*/gim)[0].slice(21));
   } else {
     console.log("Error getting preferences from header: " + JSON.stringify(asyncResult.error));
   }

@@ -285,7 +285,7 @@ You must reinstall the add-in for the manifest changes to take effect.
 
 After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Insert gist** and **Insert default gist** in a compose message window. Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.
 
-- If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons in the ribbon of the compose message window: **Insert gist** and **Insert default gist**.
+- If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons on the ribbon of the compose message window: **Insert gist** and **Insert default gist**.
 
     ![The ribbon overflow menu in Outlook on Windows with the add-in's buttons highlighted.](../images/add-in-buttons-in-windows.png)
 

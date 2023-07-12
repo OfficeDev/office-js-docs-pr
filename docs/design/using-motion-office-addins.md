@@ -1,7 +1,7 @@
 ---
 title: Using motion in Office Add-ins
 description: Get best practices for using transitions, motion, or animation in Office Add-ins.
-ms.date: 05/12/2021
+ms.date: 06/27/2023
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -10,11 +10,11 @@ ms.localizationpriority: medium
 
 When you design an Office Add-in, you can use motion to enhance the user experience. UI elements, controls, and components often have interactive behaviors that require transitions, motion, or animation. Common characteristics of motion across UI elements define the animation aspects of a design language.
 
-Because Office is focused on productivity, the Office animation language supports the goal of helping customers get things done. It strikes a balance between performant response, reliable choreography, and detailed delight. Add-ins embedded in Office sit within this existing animation language. Given this context, it is important to consider the following guidelines when applying motion.
+Because Office is focused on productivity, the animation language supports the goal of helping customers get things done. It strikes a balance between performant response, reliable choreography, and detailed delight. Office Add-ins sit within this existing animation language. Given this context, it's important to consider the following guidelines when applying motion.
 
 ## Create motion with a purpose
 
-Motion should have a purpose that communicates additional value to the user. Consider the tone and purpose of your content when choosing animations. Handle critical messages differently than exploratory navigations.
+Motion should have a purpose that communicates additional value to the user. Consider the tone and purpose of your content when choosing animations. Handle critical messages differently than exploratory navigation.
 
 Standard elements used in an add-in can incorporate motion to help focus the user, show how elements relate to each other, and validate user actions. Choreograph elements to reinforce hierarchy and mental models.
 
@@ -29,9 +29,12 @@ Standard elements used in an add-in can incorporate motion to help focus the use
 
 ## Use expected motions
 
-We recommend using [Fluent UI](https://developer.microsoft.com/fluentui#/) to create a visual connection with the Office platform, and we also encourage the use of [Fluent UI Animations](https://developer.microsoft.com/fluentui#/styles/web/motion) to create motions that align with the Fabric motion language.
+We recommend using [Fluent UI](../design/add-in-design.md) to create a visual connection with the Office platform.
 
-Use it to fit seamlessly in Office. It will help you create experiences that are more felt than observed. The animation CSS classes provide directionality, enter/exit, and duration specifics that reinforce Office mental models and provide opportunities for customers to learn how to interact with your add-in.
+- [Fluent UI React motion patterns](https://react.fluentui.dev/?path=/docs/theme-motion--page)
+- [Fabric Core motion and animation patterns](https://developer.microsoft.com/fluentui#/styles/web/motion)
+
+Use it to fit seamlessly in your add-in. It will help you create experiences that are more felt than observed. The animation CSS classes provide directionality, enter/exit, and duration specifics that reinforce Office mental models and provide opportunities for customers to learn how to interact with your add-in.
 
 ### Best practices
 
@@ -45,18 +48,19 @@ Use it to fit seamlessly in Office. It will help you create experiences that are
 
 ## Avoid out of character motion for an element
 
-Consider the size of the HTML canvas (task pane, dialog box, or content add-in) when implementing motion. Avoid overloading in constrained spaces. Moving element(s) should be in tune with Office. The character of add-in motion should be performant, reliable, and fluid. Instead of impeding productivity, aim to inform and direct.
+Consider the size of the HTML canvas (task pane, dialog box, or content add-in) when implementing motion. Avoid overloading in constrained spaces. Moving elements should be in tune with Office. The character of add-in motion should be performant, reliable, and fluid. Instead of impeding productivity, aim to inform and direct.
 
 ### Best practices
 
 |Do|Don't|
 |:-----|:-----|
-| Use [recommended motion durations](https://developer.microsoft.com/fluentui#/styles/web/motion). | Don't use exaggerated animations. Avoid creating experiences that embellish and distract your customers.
-| Follow [recommended easing curves](/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Don't move elements in a jerky or disjointed manner. Avoid anticipations, bounces, rubberband, or other effects that emulate natural world physics.|
+| Use recommended motion durations. | Don't use exaggerated animations. Avoid creating experiences that embellish and distract your customers.
+| Follow recommended easing curves. |Don't move elements in a jerky or disjointed manner. Avoid anticipations, bounces, rubber band, or other effects that emulate natural world physics.|
 
 ![GIF that shows tiles loading using a gentle fade-in beside a GIF that shows tiles loading with bounce.](../images/add-in-motion-character.gif)
 
 ## See also
 
-* [Fluent UI animation guidelines](https://developer.microsoft.com/fluentui#/styles/web/motion)
-* [Motion for Universal Windows Platform apps](/windows/uwp/design/motion)
+- [Fluent UI React motion patterns](https://react.fluentui.dev/?path=/docs/theme-motion--page)
+- [Fabric Core animation guidelines](https://developer.microsoft.com/fluentui#/styles/web/motion)
+- [Motion for Universal Windows Platform apps](/windows/uwp/design/motion)

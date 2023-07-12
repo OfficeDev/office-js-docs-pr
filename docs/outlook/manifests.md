@@ -80,7 +80,7 @@ These settings are directly related to the activation rules in the **\<Rule\>** 
 
 ## Next steps: add-in commands
 
-After defining a basic manifest, define add-in commands for your add-in. Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands](../design/add-in-commands.md).
+After defining a basic manifest, define add-in commands for your add-in. Add-in commands present a button on the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands](../design/add-in-commands.md).
 
 For an example add-in that defines add-in commands, see [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo).
 

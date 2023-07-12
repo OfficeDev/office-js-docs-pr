@@ -228,7 +228,7 @@ function logCRMEvent(appointmentEvent) {
 
 If you'd like to enable your users to undo logging or delete the logged appointment notes so a replacement log can be saved, you have two options.
 
-1. Use Microsoft Graph to [clear the custom properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user selects the appropriate button in the ribbon.
+1. Use Microsoft Graph to [clear the custom properties object](/graph/api/resources/extended-properties-overview?view=graph-rest-1.0&preserve-view=true) when the user selects the appropriate button on the ribbon.
 1. Add the following function to **./src/commands/commands.js** to clear the **EventLogged** custom property on the current appointment item.
 
     ```js

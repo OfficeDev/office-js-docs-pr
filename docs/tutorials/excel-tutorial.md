@@ -197,7 +197,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
         [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
     ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
 
@@ -312,7 +312,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
+1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
 
 1. If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button in the task pane.
 
@@ -401,7 +401,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
+1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
 
 1. If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button, and then the **Filter Table** button and the **Sort Table** button, in either order.
 
@@ -461,7 +461,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
+1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
 
 1. If the table you added previously in this tutorial is present in the worksheet, delete it.
 
@@ -945,7 +945,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.
+1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
 
 1. Choose the **Open Dialog** button in the task pane.
 

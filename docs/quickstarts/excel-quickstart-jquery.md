@@ -50,7 +50,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
-1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
     ![The Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
 
@@ -194,9 +194,9 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 
 ### Try it out
 
-1. Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS. If you are asked to trust a certificate, do so to allow the add-in to connect to its Office application.
+1. Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS. If you are asked to trust a certificate, do so to allow the add-in to connect to its Office application.
 
-1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.
+1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
     ![The Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
 
