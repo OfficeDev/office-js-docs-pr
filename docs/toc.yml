@@ -675,11 +675,24 @@ items:
     - name: Pinnable task pane
       href: outlook/pinnable-taskpane.md
     - name: Add-ins for Outlook on mobile devices
-      href: outlook/outlook-mobile-addins.md
+      items:
+      - name: Overview
+        href: outlook/outlook-mobile-addins.md
+        displayName: outlook, add-ins, mobile
+      - name: Add support for Outlook on mobile devices
+        href: outlook/add-mobile-support.md
+        displayName: outlook, add-ins, mobile
+      - name: Outlook JavaScript API support on mobile devices
+        href: outlook/outlook-mobile-apis.md
+        displayName: outlook, add-ins, mobile
+      - name: Log appointment notes on mobile
+        href: outlook/mobile-log-appointments.md
+        displayName: outlook, add-ins, mobile
+      - name: Event-based activation in Outlook on mobile devices
+        href: outlook/mobile-event-based.md
+        displayName: outlook, add-ins, mobile, event-based activation
     - name: Create an online meeting add-in
       href: outlook/online-meeting.md
-    - name: Log appointment notes on mobile
-      href: outlook/mobile-log-appointments.md
     - name: On-send add-ins
       href: outlook/outlook-on-send-addins.md
     - name: Prepend or append content on send
@@ -691,9 +704,6 @@ items:
         displayName: event-based activation
       - name: Smart Alerts and OnMessageSend event walkthrough
         href: outlook/smart-alerts-onmessagesend-walkthrough.md
-        displayName: event-based activation
-      - name: Event-based activation in Outlook on mobile devices
-        href: outlook/mobile-event-based.md
         displayName: event-based activation
       - name: Update your signature when switching between accounts
         href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
