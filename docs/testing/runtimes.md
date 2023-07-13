@@ -2,7 +2,7 @@
 title: Runtimes in Office Add-ins
 description: Learn about the runtimes that are used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 11/18/2022
+ms.date: 07/14/2023
 ms.localizationpriority: medium
 ---
 
@@ -23,7 +23,7 @@ The following table shows which possible features of an add-in use each type of 
 
 | Type of runtime | Add-in feature |
 |:-----|:-----|
-| JavaScript-only | Excel [custom functions](../excel/custom-functions-overview.md)</br>(except when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(only when the add-in is running in Outlook on Windows)|
+| JavaScript-only | Excel [custom functions](../excel/custom-functions-overview.md)</br>(except when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(only when the add-in is running in Outlook on Windows)</br></br>[Outlook spam reporting feature (preview)](../outlook/spam-reporting.md)</br>(only when the add-in is running in Outlook on Windows)|
 | browser | [task pane](../design/task-pane-add-ins.md)</br></br>[dialog](../develop/dialog-api-in-office-add-ins.md)</br></br>[function command](../design/add-in-commands.md#types-of-add-in-commands)</br></br>Excel [custom functions](../excel/custom-functions-overview.md)</br>(when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(when the add-in is running in Outlook on Mac or Outlook on the web)|
 
 The following table shows the same information organized by which type of runtime is used for the various possible features of an add-in.
@@ -32,11 +32,12 @@ The following table shows the same information organized by which type of runtim
 |:-----|:-----|:-----|:-----|
 |Excel custom functions | JavaScript-only</br>(but *browser* when the runtime is shared)|JavaScript-only</br>(but *browser* when the runtime is shared)| browser |
 |Outlook event-based tasks | JavaScript-only | browser | browser |
+|Outlook spam reporting feature (preview)| JavaScript-only | Not available | Not available |
 |task pane | browser | browser | browser |
 |dialog | browser | browser | browser |
 |function command | browser | browser | browser |
 
-In Office on the web, everything always runs in a browser type runtime. With one exception, everything in an add-in on the web runs in the *same* browser process: the browser process in which the user has opened Office on the web. The exception is when a dialog is opened with a call of [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) and the [DialogOptions.displayInIFrame](/javascript/api/office/office.dialogoptions#office-office-dialogoptions-displayiniframe-member) option is *not* passed and set to `true`. When the option is not passed (so it has the default `false` value), the dialog opens in its own process. The same principle applies to the [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) method and the [OfficeRuntime.DisplayWebDialogOptions.displayInIFrame](/javascript/api/office-runtime/officeruntime.displaywebdialogoptions#office-runtime-officeruntime-displaywebdialogoptions-displayiniframe-member) option.
+In Office on the web, everything always runs in a browser type runtime. With one exception, everything in an add-in on the web runs in the *same* browser process: the browser process in which the user has opened Office on the web. The exception is when a dialog is opened with a call of [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) and the [DialogOptions.displayInIFrame](/javascript/api/office/office.dialogoptions#office-office-dialogoptions-displayiniframe-member) option is *not* passed and set to `true`. When the option isn't passed (so it has the default `false` value), the dialog opens in its own process. The same principle applies to the [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) method and the [OfficeRuntime.DisplayWebDialogOptions.displayInIFrame](/javascript/api/office-runtime/officeruntime.displaywebdialogoptions#office-runtime-officeruntime-displaywebdialogoptions-displayiniframe-member) option.
 
 When an add-in is running on a platform other than the web, the following principles apply.
 
@@ -64,26 +65,26 @@ Depending on the host Office application and the features used in the add-in, th
 
 - An Excel add-in with the same features and is configured to share the same runtime across the task pane, function command, and custom function, has *two* runtimes. A shared runtime can open only one dialog at a time.
 - An Excel add-in with the same features, except that it has no dialog, and is configured to share the same runtime across the task pane, function command, and custom function, has *one* runtime.
-- An Outlook add-in that has the following features has as many as *four* runtimes. Runtimes cannot be shared in Outlook.
+- An Outlook add-in that has the following features has as many as *four* runtimes. Runtimes can't be shared in Outlook.
 
   - A task pane
   - A function command
-  - An event-based task
+  - An event-based task or spam reporting feature
   - A dialog (A dialog can be launched from either the task pane or the function command, but not from an event-based task.)
 
 ## Share data across runtimes
 
 > [!NOTE]
 >
-> - If you know that your add-in will only be used in Office on the web and that it will not open any dialogs with the `displayInIFrame` option set to `true`, then you can ignore this section. Since everything in your add-in runs in the same runtime process, you can just use global variables to share data between features.
+> - If you know that your add-in will only be used in Office on the web and that it won't open any dialogs with the `displayInIFrame` option set to `true`, then you can ignore this section. Since everything in your add-in runs in the same runtime process, you can just use global variables to share data between features.
 > - As noted above in [Types of runtimes](#types-of-runtimes), the type of runtime used by a feature varies partly by platform. It's a good practice to avoid having add-in code that branches based on platform, so the guidance in this section recommends techniques that will work cross-platform. There is only one case, noted below, in which branching code is required.
 
-For Excel, PowerPoint, and Word add-ins, use a [Shared runtime](#shared-runtime) when any two or more features, except dialogs, need to share data. In Outlook, or scenarios where sharing a runtime isn't feasible, you need alternative methods. The parts of the add-in that are in separate runtime processes don't share global data automatically and are treated by the add-in's web application server as separate sessions, so [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) cannot be used to share data between them. *The following guidance assumes that you're not using a shared runtime.*
+For Excel, PowerPoint, and Word add-ins, use a [Shared runtime](#shared-runtime) when any two or more features, except dialogs, need to share data. In Outlook, or scenarios where sharing a runtime isn't feasible, you need alternative methods. The parts of the add-in that are in separate runtime processes don't share global data automatically and are treated by the add-in's web application server as separate sessions, so [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) can't be used to share data between them. *The following guidance assumes that you're not using a shared runtime.*
 
 - Pass data between a dialog and its parent task pane, function command, or custom function by using the [Office.ui.messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) and [Dialog.messageChild](/javascript/api/office/office.dialog#office-office-dialog-messagechild-member(1)) methods.
 
     > [!NOTE]
-    > The `OfficeRuntime.storage` methods cannot be called in a dialog, so this is not an option for sharing data between a dialog and another runtime.
+    > The `OfficeRuntime.storage` methods can't be called in a dialog, so this isn't an option for sharing data between a dialog and another runtime.
 
 - To share data between a task pane and a function command, store data in [Window.localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), which is shared across all runtimes that access the same specific [origin](https://developer.mozilla.org/docs/Glossary/Origin).
     > [!NOTE]
@@ -113,14 +114,14 @@ For more information, see [Persist add-in state and settings](../develop/persist
 
 The JavaScript-only runtime that is used in Office Add-ins is a modification of an open source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). It doesn't have a rendering engine, and it doesn't support cookies or [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage).
 
-This type of runtime is used in Outlook event-based tasks in Office on Windows only and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime).
+This type of runtime is used in Outlook event-based and spam reporting add-ins in Office on Windows only and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime).
 
 - When used for an Excel custom function, the runtime starts up when either the worksheet recalculates or the custom function calculates. It doesn't shut down until the workbook is closed.  
-- When used in an Outlook event-based task, the runtime starts up when the event occurs. It ends when the first of the following occurs.
+- When used in an Outlook event-based or spam reporting add-in, the runtime starts up when the event occurs. It ends when the first of the following occurs.
 
   - The event handler calls the `completed` method of its event parameter.
-  - 5 minutes have elapsed since the triggering event.
-  - The user changes focus from the window where the event was triggered, such as a message compose window.
+  - Five minutes have elapsed since the triggering event.
+  - The user changes focus from the window where the event was triggered, such as a message compose window (only applies to event-based add-ins).
 
 A JavaScript-runtime uses less memory and starts up faster than a browser runtime, but has fewer features.
 
@@ -132,14 +133,14 @@ All of these runtimes include an HTML rendering engine and provide support for [
 
 A browser runtime lifespan varies depending on the feature that it implements and on whether it's being shared or not.
 
-- When an add-in with a task pane is launched, a browser runtime starts, unless it's a shared runtime that is already running. If it's a shared runtime, it shuts down when the document is closed. If it's not a shared runtime, it shuts down when the task pane is closed.
+- When an add-in with a task pane is launched, a browser runtime starts, unless it's a shared runtime that is already running. If it's a shared runtime, it shuts down when the document is closed. If it isn't a shared runtime, it shuts down when the task pane is closed.
 - When a dialog is opened, a browser runtime starts. It shuts down when the dialog is closed.
-- When a function command is executed (which happens when a user selects its button or menu item), a browser runtime starts, unless it's a shared runtime that is already running. If it's a shared runtime, it shuts down when the document is closed. If it's not a shared runtime, it shuts down when the first of the following occurs.
+- When a function command is executed (which happens when a user selects its button or menu item), a browser runtime starts, unless it's a shared runtime that is already running. If it's a shared runtime, it shuts down when the document is closed. If it isn't a shared runtime, it shuts down when the first of the following occurs.
 
   - The function command calls the `completed` method of its event parameter.
-  - 5 minutes have elapsed since the triggering event. (If a dialog was opened in the function command and it's still open when the parent runtime times out, the dialog runtime stays running until the dialog is closed.)
+  - Five minutes have elapsed since the triggering event. (If a dialog was opened in the function command and it's still open when the parent runtime times out, the dialog runtime stays running until the dialog is closed.)
 
-- When an Excel custom function is using a shared runtime, then a browser-type runtime starts when the custom function calculates if the shared runtime has not already started for some other reason. It shuts down when the document is closed.
+- When an Excel custom function is using a shared runtime, then a browser-type runtime starts when the custom function calculates if the shared runtime hasn't already started for some other reason. It shuts down when the document is closed.
 
 > [!NOTE]
 > When a runtime is being [shared](#shared-runtime), it's possible for your code to close the task pane without shutting down the add-in. See [Show or hide the task pane of your Office Add-in](../develop/show-hide-add-in.md) for more information.
@@ -153,5 +154,5 @@ A "shared runtime" isn't a type of runtime. It refers to a [browser-type runtime
 > [!NOTE]
 >
 > - You can share runtimes only in Excel, PowerPoint, and Word.
-> - You cannot configure a dialog to share a runtime. Each dialog always has its own, except when the dialog is launched in Office on the web with the `displayInIFrame` option set to `true`.
+> - You can't configure a dialog to share a runtime. Each dialog always has its own, except when the dialog is launched in Office on the web with the `displayInIFrame` option set to `true`.
 > - A shared runtime never uses the original Microsoft Edge WebView (EdgeHTML) runtime. If the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met (as specified in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md)), then that runtime is used. Otherwise, the Internet Explorer 11 runtime is used.

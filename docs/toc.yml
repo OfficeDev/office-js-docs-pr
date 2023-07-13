@@ -684,6 +684,9 @@ items:
       href: outlook/outlook-on-send-addins.md
     - name: Prepend or append content on send
       href: outlook/append-on-send.md
+    - name: Implement a spam reporting add-in
+      href: outlook/spam-reporting.md
+      displayName: preview
     - name: Event-based activation
       items:
       - name: Walkthrough
