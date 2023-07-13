@@ -8,13 +8,13 @@ ms.localizationpriority: medium
 
 # Implement an integrated spam reporting add-in (preview)
 
-With the number of unsolicited emails on the rise, security is at the forefront of add-in usage. Currently, partner spam reporting add-ins are added to the Outlook ribbon, but they usually appear towards the end of the ribbon or in the overflow section. This makes it harder for users to locate the add-in to report unsolicited emails. In addition to configuring how messages are processed when they're reported, developers also need to complete additional tasks if they want to show processing dialogs or supplemental information to the user.
+With the number of unsolicited emails on the rise, security is at the forefront of add-in usage. Currently, partner spam reporting add-ins are added to the Outlook ribbon, but they usually appear towards the end of the ribbon or in the overflow section. This makes it harder for users to locate the add-in to report unsolicited emails. In addition to configuring how messages are processed when they're reported, developers also need to complete additional tasks to show processing dialogs or supplemental information to the user.
 
-The integrated spam reporting feature eases the task of developing individual add-in components from scratch. More importantly, it adds your add-in to a prominent spot on the Outlook ribbon, making it easier for users to locate and report spam messages. Implement this feature in your add-in to:
+The integrated spam reporting feature eases the task of developing individual add-in components from scratch. More importantly, it displays your add-in in a prominent spot on the Outlook ribbon, making it easier for users to locate and report spam messages. Implement this feature in your add-in to:
 
 - Improve how unsolicited messages are tracked.
 - Provide better guidance to users on how to report suspicious messages.
-- Enable security operations centers (SOC) or IT administrators to easily perform spam and phishing simulations for educational purposes.
+- Enable an organization's security operations center (SOC) or IT administrators to easily perform spam and phishing simulations for educational purposes.
 
 > [!IMPORTANT]
 > Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
@@ -42,7 +42,10 @@ To implement the integrated spam reporting feature in your add-in, you must conf
 - To activate the add-in in the Outlook ribbon and prevent it from appearing at the end of the ribbon or in the overflow section, set the `xsi:type` attribute of the **\<ExtensionPoint\>** element to [ReportPhishingCommandSurface](/javascript/api/manifest/extensionpoint?view=outlook-js-preview&preserve-view=true#reportphishingcommandsurface-preview).
 - To customize the ribbon button and pre-processing dialog, you must define the [ReportPhishingCustomization](/javascript/api/manifest/reportphishingcustomization?view=outlook-js-preview&preserve-view=true) node.
   - A user reports an unsolicited message through the add-in's button in the ribbon. The button shows the pre-processing dialog to the user and activates the [SpamReporting](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true) event, which is then handled by the JavaScript event handler. To configure the ribbon button, set the `xsi:type` attribute of the [Control](/javascript/api/manifest/control-button) element to `Button`. Then, set the `xsi:type` attribute of the [Action](/javascript/api/manifest/action) child element to `ExecuteFunction` and specify the name of the spam reporting event handler in its **\<FunctionName\>** child element. A spam reporting add-in can only implement [function commands](../design/add-in-commands.md#types-of-add-in-commands).
-  - The pre-processing dialog is shown to a user when they report a message. In the dialog, you can provide additional guidance to a user on the reporting process and include additional options for the user to provide more information about the message being reported. To customize the pre-processing dialog, you must include the [PreProcessingDialog](/javascript/api/manifest/preprocessingdialog?view=outlook-js-preview&preserve-view=true) element in your manifest.
+
+    :::image type="content" source="../images/outlook-spam-ribbon-button.png" alt-text="A sample ribbon button of a spam reporting add-in.":::
+
+  - The pre-processing dialog is shown to a user when they report a message. In the dialog, you can share additional guidance on the reporting process and include additional options for the user to provide more information about the message being reported. To customize the title, description, and options of the pre-processing dialog, you must include the [PreProcessingDialog](/javascript/api/manifest/preprocessingdialog?view=outlook-js-preview&preserve-view=true) element in your manifest.
 
     :::image type="content" source="../images/outlook-spam-processing-dialog.png" alt-text="A sample pre-processing dialog of a spam reporting Outlook add-in.":::
 
@@ -188,7 +191,7 @@ if (Office.context.platform === Office.PlatformType.PC || Office.context.platfor
 }
 ```
 
-The following image is a sample post-processing dialog shown to the user once the add-in completes processing a reported message.
+The following is a sample post-processing dialog shown to the user once the add-in completes processing a reported message.
 
 :::image type="content" source="../images/outlook-spam-post-processing-dialog.png" alt-text="A sample of a post-processing dialog shown once a reported spam message has been processed by the add-in.":::
 
