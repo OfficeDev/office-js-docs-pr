@@ -45,7 +45,7 @@ To implement the integrated spam reporting feature in your add-in, you must conf
 
     :::image type="content" source="../images/outlook-spam-ribbon-button.png" alt-text="A sample ribbon button of a spam reporting add-in.":::
 
-  - The pre-processing dialog is shown to a user when they report a message. In the dialog, you can share additional guidance on the reporting process and include additional options for the user to provide more information about the message being reported. To customize the title, description, and options of the pre-processing dialog, you must include the [PreProcessingDialog](/javascript/api/manifest/preprocessingdialog?view=outlook-js-preview&preserve-view=true) element in your manifest.
+  - The pre-processing dialog is shown to a user when they report a message. In the dialog, you can share guidance on the reporting process and include options for the user to provide more information about the message being reported. To customize the title, description, and options of the pre-processing dialog, you must include the [PreProcessingDialog](/javascript/api/manifest/preprocessingdialog?view=outlook-js-preview&preserve-view=true) element in your manifest.
 
     :::image type="content" source="../images/outlook-spam-processing-dialog.png" alt-text="A sample pre-processing dialog of a spam reporting Outlook add-in.":::
 
