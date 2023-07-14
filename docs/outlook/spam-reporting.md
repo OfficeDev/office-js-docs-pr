@@ -23,13 +23,6 @@ The integrated spam reporting feature eases the task of developing individual ad
 
 To preview the integrated spam reporting feature in Outlook on Windows, you must install Version 2307 (Build 16626.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option to access Office beta builds.
 
-Outlook on Windows includes a local copy of the production and beta versions of Office.js instead of loading from the content delivery network (CDN). By default, the local production copy of the API is referenced. To reference the local beta copy of the API, you must configure your computer's registry. Once you've set up your Outlook client, configure the registry as follows:
-
-1. In the registry, navigate to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`. If the key doesn't exist, create it.
-1. Create an entry named `EnableBetaAPIsInJavaScript` and set its value to `1`.
-
-    ![The EnableBetaAPIsInJavaScript registry value is set to 1."](../images/outlook-beta-registry-key.png)
-
 ## Set up your environment
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
@@ -147,6 +140,16 @@ When your add-in is used to report a message, it generates a [SpamReporting](/ja
 
 Your event handler is responsible for processing the reported message, such as forwarding a copy of the message to an internal system for further investigation. To efficiently send a copy of the reported message, call the [getAsFileAsync](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-getasfileasync-member(1)) method in your event handler. This gets the Base64 encoding of a message, which you can then forward to your internal system.
 
+> [!IMPORTANT]
+> To test the `getAsFileAsync` method while it's still in preview in Outlook on Windows, you must configure your computer's registry.
+>
+> Outlook on Windows includes a local copy of the production and beta versions of Office.js instead of loading from the content delivery network (CDN). By default, the local production copy of the API is referenced. To reference the local beta copy of the API, you must configure your computer's registry as follows:
+>
+> 1. In the registry, navigate to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`. If the key doesn't exist, create it.
+> 1. Create an entry named `EnableBetaAPIsInJavaScript` and set its value to `1`.
+>
+>    :::image type="content" source="../images/outlook-beta-registry-key.png" alt-text="The EnableBetaAPIsInJavaScript registry value is set to 1.":::
+
 Once the event handler has completed processing the message, it must call the [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) method. In addition to signaling to the add-in that the spam-reporting event has been processed, `event.completed` can also be used to customize a post-processing dialog to show to the user or perform additional operations on the message, such as deleting it from the inbox. For a list of properties you can include in a JSON object to pass as a parameter to the `event.completed` method, see [Office.AddinCommands.EventCompletedOptions](/javascript/api/office/office.addincommands.eventcompletedoptions).
 
 > [!NOTE]
@@ -176,7 +179,7 @@ function onSpamReport(event) {
     const event = asyncResult.asyncContext;
     event.completed({
       onErrorDeleteItem: true,
-      postProcessingAction: moveToSpamFolder,
+      postProcessingAction: "moveToSpamFolder",
       showPostProcessingDialog: {
         title: "Contoso Spam Reporting",
         description: "Thank you for reporting this message.",
@@ -223,6 +226,7 @@ As you develop and test the integrated spam reporting feature in your add-in, be
 
 - The add-in can still process the reported message even if the user navigates away from the selected message.
 - The buttons that appear in the preprocessing and post-processing dialogs aren't customizable. Additionally, the text and buttons in the timeout and ongoing report dialogs can't be modified.
+- The integrated spam reporting and [event-based activation](autolaunch.md) features must use the same runtime. Multiple runtimes aren't currently supported in Outlook. To learn more about runtimes, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 
 ## See also
 

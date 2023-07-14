@@ -23,7 +23,7 @@ The following table shows which possible features of an add-in use each type of 
 
 | Type of runtime | Add-in feature |
 |:-----|:-----|
-| JavaScript-only | Excel [custom functions](../excel/custom-functions-overview.md)</br>(except when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(only when the add-in is running in Outlook on Windows)</br></br>[Outlook spam reporting feature (preview)](../outlook/spam-reporting.md)</br>(only when the add-in is running in Outlook on Windows)|
+| JavaScript-only | Excel [custom functions](../excel/custom-functions-overview.md)</br>(except when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(only when the add-in is running in Outlook on Windows)</br></br>[Outlook integrated spam reporting feature (preview)](../outlook/spam-reporting.md)</br>(only when the add-in is running in Outlook on Windows)|
 | browser | [task pane](../design/task-pane-add-ins.md)</br></br>[dialog](../develop/dialog-api-in-office-add-ins.md)</br></br>[function command](../design/add-in-commands.md#types-of-add-in-commands)</br></br>Excel [custom functions](../excel/custom-functions-overview.md)</br>(when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(when the add-in is running in Outlook on Mac or Outlook on the web)|
 
 The following table shows the same information organized by which type of runtime is used for the various possible features of an add-in.
@@ -32,7 +32,7 @@ The following table shows the same information organized by which type of runtim
 |:-----|:-----|:-----|:-----|
 |Excel custom functions | JavaScript-only</br>(but *browser* when the runtime is shared)|JavaScript-only</br>(but *browser* when the runtime is shared)| browser |
 |Outlook event-based tasks | JavaScript-only | browser | browser |
-|Outlook spam reporting feature (preview)| JavaScript-only | Not available | Not available |
+|Outlook integrated spam reporting feature (preview)| JavaScript-only | Not available | Not available |
 |task pane | browser | browser | browser |
 |dialog | browser | browser | browser |
 |function command | browser | browser | browser |
@@ -42,7 +42,11 @@ In Office on the web, everything always runs in a browser type runtime. With one
 When an add-in is running on a platform other than the web, the following principles apply.
 
 - A dialog runs in its own runtime process.
-- An Outlook event-based task runs in its own runtime process.
+- An Outlook event-based or spam-reporting add-in runs in its own runtime process.
+
+  > [!NOTE]
+  > The [event-based activation](../outlook/autolaunch.md) and [integrated spam reporting](../outlook/spam-reporting.md) features in Outlook must use the same runtime. Multiple runtimes aren't currently supported in Outlook.
+
 - By default, task panes, function commands, and Excel custom functions each run in their own runtime process. However, for some Office host applications, the add-in manifest can be configured so that any two, or all three, can run in the same runtime. See [Shared runtime](#shared-runtime).
 
 Depending on the host Office application and the features used in the add-in, there may be many runtimes in an add-in. Each usually will run in its own process but not necessarily simultaneously. The following are examples.
@@ -65,11 +69,11 @@ Depending on the host Office application and the features used in the add-in, th
 
 - An Excel add-in with the same features and is configured to share the same runtime across the task pane, function command, and custom function, has *two* runtimes. A shared runtime can open only one dialog at a time.
 - An Excel add-in with the same features, except that it has no dialog, and is configured to share the same runtime across the task pane, function command, and custom function, has *one* runtime.
-- An Outlook add-in that has the following features has as many as *four* runtimes. Runtimes can't be shared in Outlook.
+- An Outlook add-in that has the following features has as many as *four* runtimes. Shared runtimes aren't supported in Outlook.
 
   - A task pane
   - A function command
-  - An event-based task or spam reporting feature
+  - An event-based task or integrated spam reporting feature
   - A dialog (A dialog can be launched from either the task pane or the function command, but not from an event-based task.)
 
 ## Share data across runtimes
@@ -114,14 +118,17 @@ For more information, see [Persist add-in state and settings](../develop/persist
 
 The JavaScript-only runtime that is used in Office Add-ins is a modification of an open source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). It doesn't have a rendering engine, and it doesn't support cookies or [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage).
 
-This type of runtime is used in event-based and spam reporting add-ins in Outlook on Windows only and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime).
+This type of runtime is used in event-based and spam-reporting add-ins in Outlook on Windows only and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime).
 
 - When used for an Excel custom function, the runtime starts up when either the worksheet recalculates or the custom function calculates. It doesn't shut down until the workbook is closed.  
-- When used in an Outlook event-based or spam reporting add-in, the runtime starts up when the event occurs. It ends when the first of the following occurs.
+- When used in an Outlook event-based or spam-reporting add-in, the runtime starts up when the event occurs. It ends when the first of the following occurs.
 
   - The event handler calls the `completed` method of its event parameter.
   - Five minutes have elapsed since the triggering event.
   - The user changes focus from the window where the event was triggered, such as a message compose window (only applies to event-based add-ins).
+
+  > [!NOTE]
+  > The [event-based activation](../outlook/autolaunch.md) and [integrated spam reporting](../outlook/spam-reporting.md) features in Outlook must use the same runtime. Multiple runtimes aren't currently supported in Outlook.
 
 A JavaScript-runtime uses less memory and starts up faster than a browser runtime, but has fewer features.
 
