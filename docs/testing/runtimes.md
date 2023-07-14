@@ -114,7 +114,7 @@ For more information, see [Persist add-in state and settings](../develop/persist
 
 The JavaScript-only runtime that is used in Office Add-ins is a modification of an open source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). It doesn't have a rendering engine, and it doesn't support cookies or [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage).
 
-This type of runtime is used in Outlook event-based and spam reporting add-ins in Office on Windows only and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime).
+This type of runtime is used in event-based and spam reporting add-ins in Outlook on Windows only and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime).
 
 - When used for an Excel custom function, the runtime starts up when either the worksheet recalculates or the custom function calculates. It doesn't shut down until the workbook is closed.  
 - When used in an Outlook event-based or spam reporting add-in, the runtime starts up when the event occurs. It ends when the first of the following occurs.
