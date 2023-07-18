@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 03/21/2023
+ms.date: 07/17/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -95,7 +95,7 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
 1. Depending on your Outlook version, select **Get Add-ins** or **All Apps** from the ribbon.
 
     > [!NOTE]
-    > Starting in Outlook on Windows Version 2302 (Build 16215.10000), the **All Apps** button is used to manage your add-ins and access AppSource.
+    > Starting in Outlook on Windows Version 2303 (Build 16215.10000), the **All Apps** button is used to manage your add-ins and access AppSource.
 
     ![The Get Add-ins button is selected in an older version of Outlook on Windows.](../images/outlook-sideload-win32-get-add-ins.png)
 
