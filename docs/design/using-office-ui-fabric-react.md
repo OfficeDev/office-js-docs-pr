@@ -1,7 +1,7 @@
 ---
 title: Fluent UI React in Office Add-ins
 description: Learn how to use Fluent UI React in Office Add-ins.
-ms.date: 06/27/2023
+ms.date: 07/17/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -142,6 +142,8 @@ The code does the following:
     ```typescript
     import * as React from "react";
     import { Button, ButtonProps, Label } from "@fluentui/react-components";
+
+    /* global Word */
     
     export class ButtonExample extends React.Component<ButtonProps, {}> {
       public constructor(props) {
