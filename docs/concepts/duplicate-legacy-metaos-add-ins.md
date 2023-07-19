@@ -54,6 +54,12 @@ After you've created a version of your add-in that uses the unified manifest, yo
     }
     ```
 
+    > [!NOTE]
+    > 
+    > - The existing add-in and the add-in that uses the unified manifest must have the same published in AppSource. AppSource will not accept the package if they are different.
+    > - A given existing add-in can be hidden by only one add-in that uses the unified manifest.
+
+
 Don't remove the existing add-in from AppSource or the Microsoft 365 Admin Center, or earlier versions of Office will no longer be able to use your add-in.
 
 ## Maintain both versions for the immediate future
