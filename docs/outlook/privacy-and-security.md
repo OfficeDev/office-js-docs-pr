@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 02/24/2023
+ms.date: 07/17/2023
 ms.localizationpriority: high
 ---
 
@@ -60,7 +60,7 @@ End users and IT admins can turn off [optional connected experiences in Office](
 > [!NOTE]
 > <sup>1</sup> On Windows, support for this experience is available from Version 2008 (Build 13127.20296). For more details on your client version, see the update history page for [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).<br>
 >
-> <sup>2</sup> Starting in Outlook on Windows Version 2302 (Build 16215.10000), the **All Apps** button is used to manage add-ins and access AppSource.
+> <sup>2</sup> Starting in Outlook on Windows Version 2303 (Build 16215.10000), the **All Apps** button is used to manage add-ins and access AppSource.
 
 For general add-in behavior, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md#optional-connected-experiences).
 
