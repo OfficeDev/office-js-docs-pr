@@ -123,6 +123,9 @@ items:
       - name: Compare the XML manifest with the unified manifest for Microsoft 365
         href: develop/json-manifest-overview.md
         displayName: preview
+      - name: Convert an add-in to use the unified manifest for Microsoft 365
+        href: develop/convert-xml-to-json-manifest.md
+        displayName: preview
       - name: Manifest reference
         href: reference/manifest-reference.md
       - name: Extended overrides
