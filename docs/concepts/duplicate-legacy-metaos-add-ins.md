@@ -56,8 +56,8 @@ After you've created a version of your add-in that uses the unified manifest, yo
 
     > [!NOTE]
     > 
-    > - The existing add-in and the add-in that uses the unified manifest must have the same published in AppSource. AppSource will not accept the package if they are different.
-    > - A given existing add-in can be hidden by only one add-in that uses the unified manifest.
+    > - The asset ID of the add-in in your unified manifest must match with an existing add-in that has been published by your seller account on Partner Center. If the asset ID of the add-in that you have linked in your unified manifest does not match an existing offer published by your seller account, the unified manifest submission will fail.  You will need to update the right add-in asset ID and re-submit the unified manifest. 
+    > - An existing add-in can only be hidden by a single unified manifest. At this time, you cannot use multiple unified manifests to hide the same add-in. If you try to hide an already linked add-in using a different unified manifest, the submission will fail. You will need to remove the linking and re-submit the unified manifest.
 
 
 Don't remove the existing add-in from AppSource or the Microsoft 365 Admin Center, or earlier versions of Office will no longer be able to use your add-in.
