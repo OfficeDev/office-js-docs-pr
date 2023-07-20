@@ -2,7 +2,7 @@
 title: Runtimes in Office Add-ins
 description: Learn about the runtimes that are used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 ms.localizationpriority: medium
 ---
 
