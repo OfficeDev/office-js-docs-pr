@@ -1,7 +1,7 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows (preview)
 description: Learn how to develop add-ins that are compatible with the new Outlook on Windows (preview).
-ms.date: 06/02/2023
+ms.date: 07/20/2023
 ms.localizationpriority: medium
 ---
 
@@ -29,22 +29,22 @@ The development of the Outlook JavaScript API used by Outlook web add-ins is foc
 
 The following table identifies key Outlook scenarios and their support status in a web add-in. This table will be updated as additional scenarios are supported. Periodically check this section as you plan to migrate your VSTO or COM add-in.
 
-|Scenario|Description|Support status in Outlook web add-ins|
-|-----|-----|-----|
-|Spam email reporting and education|Enable users to report unsolicited and potentially unsafe messages and learn how to identify these messages.|Supported. Improvements are in development to further enhance the user experience.|
-|Online meetings|Enable users to create and join online meetings.|Supported.|
-|Meeting enhancements|Provide additional services for users when they schedule meetings, such as location selection, catering services, and room lighting and temperature adjustments.|Supported.|
-|Online signatures|Automatically add themed signatures to messages and appointments.|Supported.|
-|Customer relationship management (CRM) and tracking services|Enable users to send and retrieve information from their CRM system to track communications with existing and potential customers.|Supported.|
-|Content reuse|Enable users to transfer and retrieve text and other content types from partner systems.|Supported.|
-|Mail item transformation|Enable users to transform mail items into other formats.|Supported.|
-|Project management|Enable users to create and track project work items from partner systems.|Supported.|
-|Attachment management|Enable users to import or export attachments from partner locations.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
-|Message encryption|Enable users to encrypt and decrypt messages.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
-|Data loss prevention|Prevent users from forwarding mail items that contain highly sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
-|Mail item classification|Enable users to identify and classify messages that contain sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
-|Data sync service|Enable bidirectional synchronization of mail items with partner systems.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|
-|Proofing mail items|Provide users with real-time proofreading assistance as they compose messages.|Not currently supported.|
+|Scenario|Description|Support status in Outlook web add-ins|Related features and samples|
+|-----|-----|-----|-----|
+|Spam email reporting and education|Enable users to report unsolicited and potentially unsafe messages and learn how to identify these messages.|Supported. Improvements are in development to further enhance the user experience.||
+|Online meetings|Enable users to create and join online meetings.|Supported.|[Create an Outlook add-in for an online-meeting provider](online-meeting.md)<br><br>[Enable shared folders and shared mailbox scenarios in an Outlook add-in](delegate-access.md)|
+|Meeting enhancements|Provide additional services for users when they schedule meetings, such as location selection, catering services, and room lighting and temperature adjustments.|Supported.|[Configure your Outlook add-in for event-based activation](autolaunch.md)|
+|Online signatures|Automatically add themed signatures to messages and appointments.|Supported.|[Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md)<br><br>[Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md)<br><br>[Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)|
+|Customer relationship management (CRM) and tracking services|Enable users to send and retrieve information from their CRM system to track communications with existing and potential customers.|Supported.|[Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)<br><br>[Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md)|
+|Content reuse|Enable users to transfer and retrieve text and other content types from partner systems.|Supported.|[Prepend or append content to a message or appointment body on send](append-on-send.md)|
+|Mail item transformation|Enable users to transform mail items into other formats.|Supported.||
+|Project management|Enable users to create and track project work items from partner systems.|Supported.|[Activate your Outlook add-in on multiple messages](item-multi-select.md)<br><br>[Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)|
+|Attachment management|Enable users to import or export attachments from partner locations.|Supported.|[Activate your Outlook add-in on multiple messages](item-multi-select.md)<br><br>[Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)<br><br>[Configure your Outlook add-in for event-based activation](autolaunch.md)|
+|Message encryption|Enable users to encrypt and decrypt messages.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|[Temporarily set the content displayed in the body or subject of a message in read mode (preview)](/javascript/api/outlook/office.display?view=outlook-js-preview&preserve-view=true)|
+|Data loss prevention|Prevent users from forwarding mail items that contain highly sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|[Manage the sensitivity label of your message or appointment in compose mode](sensitivity-label.md)|
+|Mail item classification|Enable users to identify and classify messages that contain sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|[Manage the sensitivity label of your message or appointment in compose mode](sensitivity-label.md)<br><br>[Manage the sensitivity level of an appointment (preview)](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview&preserve-view=true)|
+|Data sync service|Enable bidirectional synchronization of mail items with partner systems.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.||
+|Proofing mail items|Provide users with real-time proofreading assistance as they compose messages.|Not currently supported.||
 
 There are various possibilities for extending the Outlook functionality through add-ins. If your VSTO or COM add-in solution doesn't quite fit any of the scenarios in the table, [complete the survey to share your scenario](https://aka.ms/DevNewOutlook).
 
