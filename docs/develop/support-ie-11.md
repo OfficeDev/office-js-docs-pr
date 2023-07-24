@@ -1,7 +1,7 @@
 ---
 title: Support older Microsoft webviews and Office versions
 description: Learn how to support support older Microsoft webviews and Office versions in your add-in.
-ms.date: 05/20/2023
+ms.date: 07/24/2023
 ms.localizationpriority: medium
 ---
 
@@ -35,7 +35,7 @@ if (navigator.userAgent.indexOf("Trident") !== -1) {
         2. Enable the add-in to gracefully fail by adding a message to the UI that
            says something similar to:
            "This add-in won't run in your version of Office. Please upgrade either to
-           perpetual Office 2021 or to a Microsoft 365 account."
+           perpetual Office 2021 (or later) or to a Microsoft 365 account."
     */
 } else if (navigator.userAgent.indexOf("Edge") !== -1) {
     /*
@@ -44,7 +44,7 @@ if (navigator.userAgent.indexOf("Trident") !== -1) {
         2. Enable the add-in to gracefully fail by adding a message to the UI that
            says something similar to:
            "This add-in won't run in your version of Office. Please upgrade either to
-           perpetual Office 2021 or to a Microsoft 365 account."
+           perpetual Office 2021 (or later) or to a Microsoft 365 account."
     */
 } else {
     /* 
@@ -54,10 +54,68 @@ if (navigator.userAgent.indexOf("Trident") !== -1) {
 }
 ```
 
+> [!NOTE]
+> Microsoft Edge (Chromium) returns `edg/` followed by one or more version digits and zero or more `.` separators as the user agent; for example, `edg/76.0.167.1`. **Note that the `e` is not present at the end of name! It is "edg", not "edge".**
+
+This JavaScript should be as early in the add-in start up process as possible. The following is an example of an add-in home page that advises users to upgrade Office when Trident is detected.
+
+```html
+<!doctype html>
+<html lang="en" data-framework="typescript">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contoso Task Pane Add-in</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+</head>
+
+<body>
+    <div id="main">
+         <!-- 
+            The add-in UI is here. 
+         -->
+    </div>
+
+    <!-- 
+        The script below makes the following div display if the
+        webview is Trident, and hides the regular div. 
+    -->
+    <div id="tridentmessage" style="display: none; padding: 10;">
+        This add-in will not run in your version of Office. Please upgrade either to 
+        perpetual Office 2021 (or later) or to a Microsoft 365 account.
+    </div>
+    <script>
+        if (navigator.userAgent.indexOf("Trident") !== -1) {
+            var tridentMessage = document.getElementById("tridentmessage");
+            var normalUI = document.getElementById("main");
+            tridentMessage.style.display = "block";
+            normalUI.style.display = "none";
+        } 
+    </script>
+</body>
+</html>
+```
+
 > [!IMPORTANT]
-> It's not usually a good practice to read the `userAgent` property. Be sure you're familiar with the article, [Browser detection using the user agent](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent), including the recommendations and alternatives to reading `userAgent`. In particular, if you're providing an alternate add-in experience to support the use of Trident, consider using feature detection instead of testing for the user agent.
+> It's not always a good practice to read the `userAgent` property. Be sure you're familiar with the article, [Browser detection using the user agent](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent), including the recommendations and alternatives to reading `userAgent`. In particular, if you're providing an alternate add-in experience to support the use of Trident, consider using feature detection instead of testing for the user agent. But if you are just providing a notification that the add-in doesn't work in Trident, as in this case, using `userAgent` is appropriate. 
+> 
+> As of July 24th, 2023, the non-English versions of the article are all out-of-date to varying degrees; some are over 12 years out-of-date.
 >
-> As of September 30th, 2021, the text in the section [Which part of the user agent contains the information you are looking for?](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) dates from before Internet Explorer 11 (and the latest version of Trident) was released. It's still generally accurate and the *tables* in the section of the English version of the article are up-to-date. The text, and in most cases the tables, in the non-English versions of the article are out-of-date.
+> As of the same date, the text and tables in the section [Which part of the user agent contains the information you are looking for?](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) of the *English* version of the article no longer mention Trident or Internet Explorer 11. In the table for **Browser Name and version**, the row for Internet Explorer 11 was the following:
+>
+> |**Engine**|**Must contain**|**Must not contain**|
+> |:---|:---|:---|
+> |Internet Explorer 11|`Trident/7.0; .*rv:xyz`||
+>
+> In the table for **Rendering engine**, the row for Trident was the following:
+>
+> |**Engine**|**Must contain**|**Comment**|
+> |:---|:---|:---|
+> |Trident|`Trident/xyz`|Internet Explorer places this fragment in the comments section of the User-Agent string.|
 
 ## Review webview and Office version support information
 
