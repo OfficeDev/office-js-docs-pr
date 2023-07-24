@@ -55,9 +55,9 @@ if (navigator.userAgent.indexOf("Trident") !== -1) {
 ```
 
 > [!NOTE]
-> Microsoft Edge (Chromium) returns `edg/` followed by one or more version digits and zero or more `.` separators as the user agent; for example, `edg/76.0.167.1`. **Note that the `e` is not present at the end of name! It is "edg", not "edge".**
+> Microsoft Edge (Chromium) returns `edg/` followed by one or more version digits and zero or more `.` separators as the user agent; for example, `edg/76.0.167.1`. **Note that the `e` isn't present at the end of name! It's "edg", not "edge".**
 
-This JavaScript should be as early in the add-in start up process as possible. The following is an example of an add-in home page that advises users to upgrade Office when Trident is detected.
+This JavaScript should be as early in the add-in startup process as possible. The following is an example of an add-in home page that advises users to upgrade Office when Trident is detected.
 
 ```html
 <!doctype html>
@@ -101,19 +101,19 @@ This JavaScript should be as early in the add-in start up process as possible. T
 ```
 
 > [!IMPORTANT]
-> It's not always a good practice to read the `userAgent` property. Be sure you're familiar with the article, [Browser detection using the user agent](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent), including the recommendations and alternatives to reading `userAgent`. In particular, if you're providing an alternate add-in experience to support the use of Trident, consider using feature detection instead of testing for the user agent. But if you are just providing a notification that the add-in doesn't work in Trident, as in this case, using `userAgent` is appropriate. 
+> It's not always a good practice to read the `userAgent` property. Be sure you're familiar with the article, [Browser detection using the user agent](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent), including the recommendations and alternatives to reading `userAgent`. In particular, if you're providing an alternate add-in experience to support the use of Trident, consider using feature detection instead of testing for the user agent. But if you're just providing a notification that the add-in doesn't work in Trident, as in this case, using `userAgent` is appropriate. 
 > 
 > As of July 24th, 2023, the non-English versions of the article are all out-of-date to varying degrees; some are over 12 years out-of-date.
 >
 > As of the same date, the text and tables in the section [Which part of the user agent contains the information you are looking for?](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) of the *English* version of the article no longer mention Trident or Internet Explorer 11. In the table for **Browser Name and version**, the row for Internet Explorer 11 was the following:
 >
-> |**Engine**|**Must contain**|**Must not contain**|
+> |Engine|Must contain|Must not contain|
 > |:---|:---|:---|
 > |Internet Explorer 11|`Trident/7.0; .*rv:xyz`||
 >
 > In the table for **Rendering engine**, the row for Trident was the following:
 >
-> |**Engine**|**Must contain**|**Comment**|
+> |Engine|Must contain|Comment|
 > |:---|:---|:---|
 > |Trident|`Trident/xyz`|Internet Explorer places this fragment in the comments section of the User-Agent string.|
 
