@@ -1,7 +1,7 @@
 ---
 title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in
 description: Learn how to handle the on-send events in your Outlook add-in using event-based activation.
-ms.date: 06/30/2023
+ms.date: 07/27/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -274,7 +274,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
       let matches = hasMatches(body);
       if (matches) {
         Office.context.mailbox.item.getAttachmentsAsync(
-          { asyncContext: event },
+          { asyncContext: event },
           getAttachmentsCallback);
       } else {
         event.completed({ allowEvent: true });
@@ -286,9 +286,9 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
         return false;
       }
 
-      const arrayOfTerms = ["send", "picture", "document", "attachment"];
-      for (let index = 0; index < arrayOfTerms.length; index++) {
-        const term = arrayOfTerms[index].trim();
+      const arrayOfTerms = ["send", "picture", "document", "attachment"];
+      for (let index = 0; index < arrayOfTerms.length; index++) {
+        const term = arrayOfTerms[index].trim();
         const regex = RegExp(term, 'i');
         if (regex.test(body)) {
           return true;
@@ -299,18 +299,18 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     }
 
     function getAttachmentsCallback(asyncResult) {
-      let event = asyncResult.asyncContext;
-      if (asyncResult.value.length > 0) {
+      let event = asyncResult.asyncContext;
+      if (asyncResult.value.length > 0) {
         for (let i = 0; i < asyncResult.value.length; i++) {
-          if (asyncResult.value[i].isInline == false) {
-            event.completed({ allowEvent: true });
+          if (asyncResult.value[i].isInline == false) {
+            event.completed({ allowEvent: true });
             return;
           }
         }
 
-        event.completed({ allowEvent: false, errorMessage: "Looks like you forgot to include an attachment?" });
+        event.completed({ allowEvent: false, errorMessage: "Looks like you forgot to include an attachment?" });
       } else {
-        event.completed({ allowEvent: false, errorMessage: "Looks like you're forgetting to include an attachment?" });
+        event.completed({ allowEvent: false, errorMessage: "Looks like you're forgetting to include an attachment?" });
       }
     }
 
@@ -492,6 +492,46 @@ While a Smart Alerts dialog message can be changed to suit your add-in scenario 
 - The message's format. For example, you can't change the text's font size and color or insert a bulleted list.
 - The dialog options. For example, the **Send Anyway** and **Don't Send** options are fixed and depend on the [send mode option](#available-send-mode-options) you select.
 - Event-based activation processing and progress information dialogs. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
+
+## Activate Smart Alerts in applications that use Simple MAPI
+
+> [!NOTE]
+> This feature is currently only supported in Outlook on Windows.
+
+Users can send mail items through certain applications that use [Simple MAPI](/previous-versions/windows/desktop/windowsmapi/simple-mapi), even if the Outlook client isn't running at the time the item is sent. When this occurs, any installed Smart Alerts add-in won't activate to check the mail item for compliance.
+
+To ensure that outgoing items meet the conditions of your Smart Alerts add-in before they're sent, you must enable the **Running Outlook for Simple MAPI Mail Sending** Group Policy setting on every applicable machine in your organization.
+
+### Behavior when the setting is enabled
+
+When the **Running Outlook for Simple MAPI Mail Sending** setting is set to **Enabled**, users are required to have their Outlook client running at the time a mail item is sent in the following scenarios.
+
+- A file is sent as an attachment through the **Share** > **Attach a copy instead** option in Excel, Word, or PowerPoint.
+
+  :::image type="content" source="../images/office-attach-a-copy.png" alt-text="The 'Attach a copy instead' option selected in Word.":::
+
+- A file is sent as an attachment through the **Send to** > **Mail recipient** option in File Explorer.
+
+  :::image type="content" source="../images/file-explorer-send-to.png" alt-text="The 'Send to mail recipient' option selected in File Explorer.":::
+
+- A file is sent through an application that uses Simple MAPI, which opens a new message Outlook window.
+
+If a user's Outlook client isn't running at the time the mail item is sent, a dialog is shown to notify them that they must open their client to send the item.
+
+### Behavior when the setting is disabled or not configured
+
+When the **Running Outlook for Simple MAPI Mail Sending** setting is set to **Disabled** or **Not Configured** in your organization, any user who uses applications that implement Simple MAPI to send mail items will be able to do so without activating their Smart Alerts add-in for compliance checks.
+
+### Configure the Group Policy setting
+
+By default, the **Running Outlook for Simple MAPI Mail Sending** setting is set to **Disabled**. To enable the setting, perform the following:
+
+1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030).
+1. Open the **Local Group Policy Editor** (**gpedit.msc**).
+1. Navigate to //TBD.
+1. Open the **Running Outlook for Simple MAPI Mail Sending** setting.
+1. In the dialog that appears, select **Enabled**.
+1. Select **OK** or **Apply** to save your change.
 
 ## Differences between Smart Alerts and the on-send feature
 
