@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
 description: Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.
-ms.date: 03/21/2023
+ms.date: 07/27/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -43,7 +43,7 @@ The Office JavaScript API provides two properties that support displaying or int
 
 ## Control localization from the manifest
 
-The techniques for localizing with the manifest differ depending on whether you are using the XML manifest or the unified manifest for Microsoft 365 (preview).
+The techniques for localizing with the manifest differ depending on whether you are using the XML manifest or the unified manifest for Microsoft 365 (preview) which is supported only on Outlook for Windows.
 
 # [XML Manifest](#tab/xmlmanifest)
 

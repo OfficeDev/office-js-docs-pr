@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an XML manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 06/19/2023
+ms.date: 07/27/2023
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +18,7 @@ There are three basic tasks to converting an add-in project from the XML manifes
 
 > [!NOTE]
 > 
-> - The unified manifest is a preview feature for Office Add-ins and is currently supported only for Outlook.
+> - The unified manifest is a preview feature for Office Add-ins and is currently supported only for Outlook on Windows.
 > - Add-ins that use the unified manifest can be sideloaded only on Office version 16.0.16501.10000 or later.
 > - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
 > - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
