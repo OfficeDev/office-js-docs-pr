@@ -56,7 +56,7 @@ The first question asks you to choose between several types of projects. The opt
 
 > [!NOTE]
 > 
-> -  The unified manifest is in preview and is supported only on Outlook on Windows. It is not supported yet for a production add-in.
+> -  The unified manifest is in preview and is supported only on Outlook on Windows. It isn't supported yet for a production add-in.
 > - The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
 
 The next question asks you to choose between **TypeScript** and **JavaScript**. (This question is skipped if you chose the manifest-only option in the preceding question.)
