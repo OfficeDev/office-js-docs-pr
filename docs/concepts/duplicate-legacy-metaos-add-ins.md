@@ -84,7 +84,7 @@ Don't remove the existing add-in from AppSource or the Microsoft 365 Admin Cente
 
 When all of your users are working with Office versions that support the unified manifest, you can remove the XML version from deployment, but you need to maintain both versions for the immediate future.
 
-Initially add-ins that support the unified manifest can only be installed on Microsoft 365 Version 2308 (Build 16626.20132) and later. We're working hard to bring support to older versions of Microsoft 365. In the meantime, you need to maintain both versions.
+Initially add-ins that support the unified manifest can only be installed on Microsoft 365 Version 2307 (Build 16626.20132) and later. We're working hard to bring support to older versions of Microsoft 365. In the meantime, you need to maintain both versions.
 
 There are also some scenarios where you might want to maintain both both versions of the add-in for an extended period. For example, there are two features of add-ins that aren't supported with the unified manifest because they are little used or deprecated. You may choose to maintain a version of your add-in that uses these features. The following are the features that aren't supported in the unified manifest.
 
