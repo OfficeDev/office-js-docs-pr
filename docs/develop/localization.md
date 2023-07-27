@@ -43,7 +43,7 @@ The Office JavaScript API provides two properties that support displaying or int
 
 ## Control localization from the manifest
 
-The techniques for localizing with the manifest differ depending on whether you are using the XML manifest or the unified manifest for Microsoft 365 (preview).
+The techniques for localizing with the manifest differ depending on whether you are using the XML manifest or the unified manifest for Microsoft 365 (preview) which is supported only on Outlook for Windows.
 
 # [XML Manifest](#tab/xmlmanifest)
 
