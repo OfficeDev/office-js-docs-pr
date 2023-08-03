@@ -2,7 +2,7 @@
 title: Addressing same-origin policy limitations in Office Add-ins
 description: Learn how to accommodate same-origin policy limitations with JSONP, CORS, iframes, and other techniques.
 
-ms.date: 05/20/2023
+ms.date: 08/02/2023
 ms.localizationpriority: medium
 ---
 
@@ -46,7 +46,7 @@ To learn more about cross-origin resource sharing, see the many resources availa
 
 ## Build your own proxy using IFRAME and POST MESSAGE (Cross-Window Messaging)
 
-For an example of how to build your own proxy using IFRAME and POST MESSAGE, see [Cross-Window Messaging](http://ejohn.org/blog/cross-window-messaging/).
+For an example of how to build your own proxy using IFRAME and POST MESSAGE, see [Cross-Window Messaging](https://johnresig.com/blog/cross-window-messaging/).
 
 ## See also
 
