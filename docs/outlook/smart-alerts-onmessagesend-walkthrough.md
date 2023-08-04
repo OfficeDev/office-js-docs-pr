@@ -245,7 +245,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 1. Open the file **./src/launchevent/launchevent.js** in your code editor and add the following JavaScript code.
 
-    ```js
+    ```javascript
     /*
     * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
     * See LICENSE in the project root for license information.
@@ -350,7 +350,7 @@ To modify the text of the **Don't Send** button or assign it a task pane command
 - The [contextData](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-contextData-member) option specifies any JSON data you want to pass to the add-in when the **Don't Send** button is selected. If you include this option, you must also set the `commandId` option. Otherwise, the JSON data will be ignored.
 
 1. Navigate to the **./src/launchevent** folder, then open **launchevent.js**.
-1. Replace the `getAttachmentsCallback` function with the following code.
+1. Replace the **getAttachmentsCallback** function with the following code.
 
     ```javascript
     function getAttachmentsCallback(asyncResult) {
@@ -392,7 +392,7 @@ There may be instances when you want your add-in to implement different send mod
 To override the send mode option at runtime, you must set the [sendMode](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-sendMode-member) option in the [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) method of your event handler.
 
 1. Navigate to the **./src/launchevent** folder, then open **launchevent.js**.
-1. Replace the `getAttachmentsCallback` function with the following code.
+1. Replace the **getAttachmentsCallback** function with the following code.
 
     ```javascript
     function getAttachmentsCallback(asyncResult) {
@@ -547,7 +547,7 @@ If you implemented the optional steps to customize the **Don't Send** button or 
 
 1. Immediately before the closing **head** tag (`</head>`), add a script entry for the event-handling JavaScript code.
 
-   ```js
+   ```javascript
    <script type="text/javascript" src="../launchevent/launchevent.js"></script> 
    ```
 
@@ -567,7 +567,7 @@ If you implemented the optional steps to customize the **Don't Send** button or 
 
 1. Locate the `plugins` array within the `config` object and add this new object to the beginning of the array.
 
-    ```js
+    ```javascript
     new CopyWebpackPlugin({
       patterns: [
         {
