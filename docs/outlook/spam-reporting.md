@@ -189,7 +189,7 @@ The following is an example of a spam-reporting event handler that calls the `ge
         const event = asyncResult.asyncContext;
         event.completed({
           onErrorDeleteItem: true,
-          postProcessingAction: Office.MailboxEnums.MoveSpamItemTo.JunkFolder,
+          moveItemTo: Office.MailboxEnums.MoveSpamItemTo.JunkFolder,
           showPostProcessingDialog: {
             title: "Contoso Spam Reporting",
             description: "Thank you for reporting this message.",
@@ -205,7 +205,7 @@ The following is an example of a spam-reporting event handler that calls the `ge
     ```
 
     > [!NOTE]
-    > Starting in Outlook on Windows Version 2308 (Build 16724.10000), you can use [Office.MailboxEnums.MoveSpamItemTo](/javascript/api/outlook/office.mailboxenums.movespamitemto?view=outlook-js-preview&preserve-view=true) in the `postProcessingAction` property of the `event.completed` call to specify the folder to which a reported message is moved. If you're using an earlier build that supports the integrated spam reporting feature, you must assign different string values to the `postProcessingAction` property. For a list of supported string values, see [Office.AddinCommands.EventCompletedOptions.postProcessingAction](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true).
+    > If you're on Outlook on Windows Version 2308 (Build 16724.10000) or later, you must use the `moveItemTo` property in the `event.completed` call to specify the folder to which a reported message is moved once it's processed by your add-in. On earlier Outlook on Windows builds that support the integrated spam reporting feature, you must use the `postProcessingAction` property.
 
 1. Save your changes.
 
