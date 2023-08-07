@@ -61,7 +61,7 @@ function attachmentTokenCallback(asyncResult) {
         serviceRequest.state = 3;
         testAttachments();
     } else {
-        showToast("Error", "Could not get callback token: " + asyncResult.error.message);
+        showToast("Error", "Couldn't get callback token: " + asyncResult.error.message);
     }
 }
 ```
