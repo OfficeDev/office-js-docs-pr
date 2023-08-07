@@ -1,14 +1,14 @@
 ---
 title: Get attachments in an Outlook add-in
 description: Your add-in can use the attachments API to send information about the attachments to a remote service.
-ms.date: 03/21/2023
+ms.date: 08/07/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Get attachments of an Outlook item from the server
 
-You can get the attachments of an Outlook item in a couple of ways but which option you use depends on your scenario.
+You can get the attachments of an Outlook item in a couple of ways, but which option you use depends on your scenario.
 
 1. Send the attachment information to your remote service.
 
@@ -16,7 +16,7 @@ You can get the attachments of an Outlook item in a couple of ways but which opt
 
 1. Use the [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) API, available from requirement set 1.8. Supported formats: [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
 
-    This API may be handy if EWS/REST is unavailable (for example, due to the admin configuration of your Exchange server), or your add-in wants to use the base64 content directly in HTML or JavaScript. Also, the `getAttachmentContentAsync` API is available in compose scenarios where the attachment may not have synced to Exchange yet; see [Manage an item's attachments in a compose form in Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md) to learn more.
+    This API may be handy if Microsoft Graph or EWS is unavailable (for example, due to the admin configuration of your Exchange server), or your add-in wants to use the base64 content directly in HTML or JavaScript. Also, the `getAttachmentContentAsync` API is available in compose scenarios where the attachment may not have synced to Exchange yet; see [Manage an item's attachments in a compose form in Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md) to learn more.
 
 This article elaborates on the first option. To send attachment information to the remote service, use the following properties and method.
 
@@ -54,8 +54,8 @@ function getAttachmentToken() {
     }
 }
 
-function attachmentTokenCallback(asyncResult, userContext) {
-    if (asyncResult.status === "succeeded") {
+function attachmentTokenCallback(asyncResult) {
+    if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
         // Cache the result from the server.
         serviceRequest.attachmentToken = asyncResult.value;
         serviceRequest.state = 3;
