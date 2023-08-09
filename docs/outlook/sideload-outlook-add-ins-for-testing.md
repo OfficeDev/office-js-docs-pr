@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 07/17/2023
+ms.date: 08/10/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -57,6 +57,8 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
     > If you don't see **Get add-ins** on the ribbon, you may have the simplified ribbon layout enabled. To manage your add-ins, select the ellipsis button (`...`) from the ribbon. Then, select **Get Add-ins**.
     >
     > ![The Get Add-ins option is selected from the ellipsis button in Outlook on the web.](../images/outlook-sideload-simplified-ribbon-web.png)
+    >
+    > If you don't see the **Get add-ins** option in both the classic and simplified ribbon layouts, you must access the **Add-Ins for Outlook** dialog through <https://aka.ms/olksideload>.
 
 1. In the **Add-Ins for Outlook** dialog box, select **My add-ins**.
 
@@ -67,6 +69,9 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
     ![The Add from File option is selected in the Custom Add-ins section.](../images/outlook-sideload-custom-add-in.png)
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+
+    > [!IMPORTANT]
+    > Due to caching, it may take up to four hours for the sideloaded add-in to appear in your Outlook client on the web.
 
 ### Classic Outlook on the web
 
@@ -125,9 +130,11 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
     >
     > - In Outlook on Windows, select **File** > **Info** > **Manage Add-ins**.
     >
-    > - Open the [Add-Ins for Outlook](https://outlook.office365.com/owa/?path=/options/manageapps) dialog.
+    > - From your preferred browser, go to <https://aka.ms/olksideload>.
     >
     > Outlook on the web opens in your preferred browser. When the **Add-Ins for Outlook** dialog appears, follow the succeeding steps to sideload your add-in.
+    >
+    > Note that due to caching, it may take up to 24 hours for the sideloaded add-in to appear in your Outlook client on Windows.
 
 1. If there are tabs near the top of the dialog that opens, ensure that the **Add-ins** tab is selected. Then, choose **My add-ins**.
 
