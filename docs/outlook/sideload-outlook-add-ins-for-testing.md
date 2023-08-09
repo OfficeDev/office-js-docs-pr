@@ -58,7 +58,7 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
     >
     > ![The Get Add-ins option is selected from the ellipsis button in Outlook on the web.](../images/outlook-sideload-simplified-ribbon-web.png)
     >
-    > If you don't see the **Get add-ins** option in both the classic and simplified ribbon layouts, you must access the **Add-Ins for Outlook** dialog through <https://aka.ms/olksideload>.
+    > If you don't see the **Get add-ins** option in either the classic or simplified ribbon layouts, you must access the **Add-Ins for Outlook** dialog through <https://aka.ms/olksideload>.
 
 1. In the **Add-Ins for Outlook** dialog box, select **My add-ins**.
 
