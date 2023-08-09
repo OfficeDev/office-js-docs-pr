@@ -100,7 +100,7 @@ The add-in project that you've created with the Yeoman generator contains sample
     ```
 
     > [!NOTE]
-    > If this is the first time you've created an add-in on the computer, or the first time in over a month, you will be prompted to install security certificates.
+    > If this is the first time you've created an add-in on the computer, or the first time in over a month, you'll be prompted to install security certificates.
 
 1. Use the classic ribbon in Outlook. The remainder of these instructions assume this.  
 
