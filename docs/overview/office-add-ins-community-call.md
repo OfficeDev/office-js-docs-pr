@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 07/17/2023
+ms.date: 08/10/2023
 ms.localizationpriority: medium
 ---
 
@@ -9,14 +9,15 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 8:00 AM Pacific Time. You can download the calendar invite at <https://aka.ms/officeaddinscommunitycall>.
 
-## Agenda for August 9, 2023 call
+## Agenda for September 13, 2023 call
 
-The agenda for the August call will be posted the week of the call.
+The agenda for the September call will be posted the week of the call.
 
 ## Previous calls
 
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
+- [June 14, 2023](https://pnp.github.io/blog/office-add-ins-community-call/2023-06-14/)
 - [May 10, 2023](https://pnp.github.io/blog/office-add-ins-community-call/2023-05-10/)
 - [April 12, 2023](https://pnp.github.io/blog/office-add-ins-community-call/2023-04-12/)
 - [March 8, 2023](https://pnp.github.io/blog/office-add-ins-community-call/2023-03-08/)
