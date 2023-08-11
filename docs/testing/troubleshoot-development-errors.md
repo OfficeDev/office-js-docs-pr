@@ -2,7 +2,7 @@
 title: Troubleshoot development errors with Office Add-ins
 description: Learn how to troubleshoot development errors in Office Add-ins.
 ms.topic: troubleshooting-problem-resolution
-ms.date: 09/30/2022
+ms.date: 07/27/2023
 ms.localizationpriority: medium
 ---
 
@@ -20,6 +20,13 @@ See [Validate an Office Add-in's manifest](troubleshoot-manifest.md) and [Debug 
 ## Changes to add-in commands including ribbon buttons and menu items do not take effect
 
 Clearing the cache helps ensure the latest version of your add-in's manifest is being used. To clear the Office cache, follow the instructions in [Clear the Office cache](clear-cache.md). If you're using Office on the web, clear your browser's cache through the browser's UI.
+
+## Add-in commands from old development add-ins stay on ribbon even after the cache is cleared
+
+Sometimes buttons or menus from an add-in that you were developing in the past appears on the ribbon when you run an Office application even after you have cleared the cache. Try these techniques:
+
+- If you develop add-ins on more than one computer and your user settings are synchronized across the computers, try [clearing the Office cache](clear-cache.md) on all the computers. Shut down all Office applications on all the computers, and then clear the cache on all of them before you open any Office application on any of them.
+- If you [published the manifest of the old add-in to a network share](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md), shut down all Office applications, clear the cache, and then *be sure that the manifest for the add-in is removed from the shared folder*.  
 
 ## Changes to static files, such as JavaScript, HTML, and CSS do not take effect
 

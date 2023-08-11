@@ -2,13 +2,16 @@
 title: Compare the XML manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the XML manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 05/24/2023
+ms.date: 07/27/2023
 ms.localizationpriority: high
 ---
 
 # Compare the XML manifest with the unified manifest for Microsoft 365
 
 This article is intended to help readers who are familiar with the XML manifest understand the unified manifest by comparing the two. Readers should also see [Office Add-ins with the unified manifest for Microsoft 365 (preview)](unified-manifest-overview.md).
+
+> [!NOTE]
+> The unified manifest is a preview feature of Office Add-ins and is only supported for Outlook on Windows.
 
 ## Schemas and general points
 
