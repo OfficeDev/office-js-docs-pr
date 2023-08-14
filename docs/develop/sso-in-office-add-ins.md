@@ -1,7 +1,7 @@
 ---
 title: Enable single sign-on (SSO) in an Office Add-in
 description: Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.
-ms.date: 05/05/2022
+ms.date: 08/14/2023
 ms.localizationpriority: high
 ---
 
@@ -34,7 +34,7 @@ Never cache or store the access token in your client-side code. Always call [get
 
 ### Enable modern authentication for Outlook
 
-If you are working with an **Outlook** add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+If you're working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Enable or disable modern authentication for Outlook in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
 
 ### Implement a fallback authentication system
 
@@ -135,7 +135,6 @@ async function getUserData() {
     }
 }
 ```
-
 
 #### When to call getAccessToken
 
