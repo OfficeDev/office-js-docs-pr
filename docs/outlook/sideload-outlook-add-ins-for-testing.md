@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 08/10/2023
+ms.date: 08/14/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -113,8 +113,6 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
     >
     >   ![The Get Add-ins or All Apps option is selected from the ellipsis button in Outlook on Windows.](../images/outlook-sideload-simplified-ribbon-windows.png)
     >
-    > - Select **Store** from the ribbon, if available.
-    >
     > - Select **File** > **Info** > **Manage Add-ins**. This opens the **Add-Ins for Outlook** dialog in Outlook on the web. To learn more about the web experience, select the **Web** tab in [Sideload manually](#sideload-manually).
 
 1. In the flyout that appears, select **Get Add-ins**.
@@ -165,13 +163,9 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
     ![The Get Add-ins button is selected in Outlook on Mac.](../images/outlook-sideload-mac-classic.png)
 
     > [!IMPORTANT]
-    > If you don't see **Get Add-ins** in your version of Outlook, do one of the following:
+    > If you don't see **Get Add-ins** in your version of Outlook, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
     >
-    > - Select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
-    >
-    >   ![The Get Add-ins option is selected from the ellipsis button in Outlook on Mac.](../images/outlook-sideload-new-mac.png)
-    >
-    > - Select **Store** from the ribbon, if available.
+    > ![The Get Add-ins option is selected from the ellipsis button in Outlook on Mac.](../images/outlook-sideload-new-mac.png)
 
 1. In the dialog that appears, select **My add-ins**.
 
