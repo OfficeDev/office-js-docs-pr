@@ -1,7 +1,7 @@
 ---
 title: Authenticate a user with a single-sign-on token
 description: Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.
-ms.date: 10/17/2022
+ms.date: 08/14/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -19,7 +19,7 @@ For an overview of SSO in Office Add-ins, see [Enable single sign-on for Office 
 
 ## Enable modern authentication in your Microsoft 365 tenancy
 
-To use SSO with an Outlook add-in, you must enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+To use SSO with an Outlook add-in, you must enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Enable or disable modern authentication for Outlook in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
 
 ## Register your add-in
 
