@@ -1,47 +1,40 @@
 ---
-title: Get or modify recipients in an Outlook add-in
-description: Learn how to get, set, or add recipients of a message or appointment in an Outlook add-in.
-ms.date: 10/07/2022
+title: Get, set, or add recipients when composing an appointment or message in Outlook
+description: Learn how to get, set, or add recipients to a message or appointment in an Outlook add-in.
+ms.date: 08/09/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Get, set, or add recipients when composing an appointment or message in Outlook
 
-The Office JavaScript API provides asynchronous methods ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)), [Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)), or [Recipients.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))) to respectively get, set, or add recipients in a compose form of an appointment or message. These asynchronous methods are available to only compose add-ins. To use these methods, make sure you have set up the add-in manifest appropriately for Outlook to activate the add-in in compose forms, as described in [Create Outlook add-ins for compose forms](compose-scenario.md). Activation rules aren't supported in add-ins that use a [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
+The Office JavaScript API provides asynchronous methods ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)), [Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)), or [Recipients.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))) to respectively get, set, or add recipients to a compose form of an appointment or message. These asynchronous methods are available to only compose add-ins. To use these methods, make sure you have set up the add-in manifest appropriately for Outlook to activate the add-in in compose forms, as described in [Create Outlook add-ins for compose forms](compose-scenario.md).
 
 Some of the properties that represent recipients in an appointment or message are available for read access in a compose form and in a read form. These properties include  [optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) for appointments, and [cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), and  [to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) for messages.
 
 In a read form, you can access the property directly from the parent object, such as:
 
 ```js
-item.cc
+Office.context.mailbox.item.cc;
 ```
 
 But in a compose form, because both the user and your add-in can be inserting or changing a recipient at the same time, you must use the asynchronous method `getAsync` to get these properties, as in the following example.
 
 ```js
-item.cc.getAsync
+Office.context.mailbox.item.cc.getAsync(callback);
 ```
 
-These properties are available for write access in only compose forms and not read forms.
+These properties are available for write access in only compose forms, and not read forms.
 
-As with most asynchronous methods in the JavaScript API for Office, `getAsync`, `setAsync`, and `addAsync` take optional input parameters. For more information about specifying these optional input parameters, see [passing optional parameters to asynchronous methods](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) in [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md).
+As with most asynchronous methods in the JavaScript API for Office, `getAsync`, `setAsync`, and `addAsync` take optional input parameters. For more information on how to specify these optional input parameters, see "Passing optional parameters to asynchronous methods" in [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md).
 
 ## Get recipients
 
-This section shows a code sample that gets the recipients of the appointment or message that is being composed, and displays the email addresses of the recipients. The code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment or message, as shown below.
+This section shows a code sample that gets the recipients of the appointment or message that is being composed, and displays the email addresses of the recipients.
 
-```XML
-<Rule xsi:type="RuleCollection" Mode="Or">
-  <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
-  <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
-</Rule>
-```
+In the Office JavaScript API, because the properties that represent the recipients of an appointment (`optionalAttendees` and `requiredAttendees`) are different from those of a message ([bcc](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-bcc-member), `cc`, and `to`), you should first use the [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) property to identify whether the item being composed is an appointment or message. In compose mode, all these properties of appointments and messages are [Recipients](/javascript/api/outlook/office.recipients) objects, so you can then call the asynchronous method, `Recipients.getAsync`, to get the corresponding recipients.
 
-In the Office JavaScript API, because the properties that represent the recipients of an appointment ( **optionalAttendees** and **requiredAttendees**) are different from those of a message ([bcc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), **cc**, and **to**), you should first use the [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) property to identify whether the item being composed is an appointment or message. In compose mode, all these properties of appointments and messages are [Recipients](/javascript/api/outlook/office.recipients) objects, so you can then apply the asynchronous method, `Recipients.getAsync`, to get the corresponding recipients.
-
-To use `getAsync`, provide a callback function to check for the status, results, and any error returned by the asynchronous `getAsync` call. You can provide any arguments to the callback function using the optional _asyncContext_ parameter. The callback function returns an _asyncResult_ output parameter. You can use the `status` and `error` properties of the [AsyncResult](/javascript/api/office/office.asyncresult) parameter object to check for status and any error messages of the asynchronous call, and the `value` property to get the actual recipients. Recipients are represented as an array of [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) objects.
+To use `getAsync`, provide a callback function to check for the status, results, and any error returned by the asynchronous `getAsync` call. The callback function returns an [asyncResult](/javascript/api/office/office.asyncresult) output parameter. Use its `status` and `error` properties to check for the status and any error messages of the asynchronous call, and its `value` property to get the actual recipients. Recipients are represented as an array of [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) objects. You can also provide additional information to the callback function using the optional `asyncContext` parameter in the `getAsync` call.
 
 Note that because the `getAsync` method is asynchronous, if there are subsequent actions that depend on successfully getting the recipients, you should organize your code to start such actions only in the corresponding callback function when the asynchronous call has successfully completed.
 
@@ -54,33 +47,26 @@ Note that because the `getAsync` method is asynchronous, if there are subsequent
 > - The recipient's name or email address is underlined or enclosed in a box.
 >
 > To resolve an email address once it's added to a mail item, the sender must use the **Tab** key or select a suggested contact or email address from the auto-complete list.
-
-> [!NOTE]
-> In Outlook on the web and on Windows, if a user creates a new message by activating a contact's email address link from their contact or profile card, your add-in's `Recipients.getAsync` call returns the contact's email address in the `displayName` property of the associated `EmailAddressDetails` object instead of the contact's saved name.
 >
-> For more details, refer to the [related GitHub issue](https://github.com/OfficeDev/office-js/issues/2201).
+> In Outlook on the web and on Windows, if a user creates a new message by selecting a contact's email address link from a contact or profile card, they must first resolve the email address so that it can be included in the results of the `getAsync` call.
 
 ```js
 let item;
 
-Office.initialize = function () {
-    item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready method.
-    $(document).ready(function () {
-        // After the DOM is loaded, app-specific code can run.
-        // Get all the recipients of the composed item.
+// Confirms that the Office.js library is loaded.
+Office.onReady((info) => {
+    if (info.host === Office.HostType.Outlook) {
+        item = Office.context.mailbox.item;
         getAllRecipients();
-    });
-}
+    }
+});
 
-// Get the email addresses of all the recipients of the composed item.
+// Gets the email addresses of all the recipients of the item being composed.
 function getAllRecipients() {
-    // Local objects to point to recipients of either
-    // the appointment or message that is being composed.
-    // bccRecipients applies to only messages, not appointments.
     let toRecipients, ccRecipients, bccRecipients;
-    // Verify if the composed item is an appointment or message.
-    if (item.itemType == Office.MailboxEnums.ItemType.Appointment) {
+
+    // Verify if the mail item is an appointment or message.
+    if (item.itemType === Office.MailboxEnums.ItemType.Appointment) {
         toRecipients = item.requiredAttendees;
         ccRecipients = item.optionalAttendees;
     }
@@ -89,101 +75,87 @@ function getAllRecipients() {
         ccRecipients = item.cc;
         bccRecipients = item.bcc;
     }
-    
-    // Use asynchronous method getAsync to get each type of recipients
-    // of the composed item. Each time, this example passes an anonymous 
-    // callback function that doesn't take any parameters.
-    toRecipients.getAsync(function (asyncResult) {
-        if (asyncResult.status == Office.AsyncResultStatus.Failed){
-            write(asyncResult.error.message);
-        }
-        else {
-            // Async call to get to-recipients of the item completed.
-            // Display the email addresses of the to-recipients. 
-            write ('To-recipients of the item:');
-            displayAddresses(asyncResult);
-        }    
-    }); // End getAsync for to-recipients.
 
-    // Get any cc-recipients.
-    ccRecipients.getAsync(function (asyncResult) {
-        if (asyncResult.status == Office.AsyncResultStatus.Failed){
+    // Get the recipients from the To or Required field of the item being composed.
+    toRecipients.getAsync((asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
             write(asyncResult.error.message);
+            return;
         }
-        else {
-            // Async call to get cc-recipients of the item completed.
-            // Display the email addresses of the cc-recipients.
-            write ('Cc-recipients of the item:');
-            displayAddresses(asyncResult);
-        }
-    }); // End getAsync for cc-recipients.
 
-    // If the item has the bcc field, i.e., item is message,
-    // get any bcc-recipients.
-    if (bccRecipients) {
-        bccRecipients.getAsync(function (asyncResult) {
-        if (asyncResult.status == Office.AsyncResultStatus.Failed){
+        // Display the email addresses of the recipients or attendees.
+        write(`Recipients in the To or Required field: ${displayAddresses(asyncResult.value)}`);
+    });
+
+    // Get the recipients from the Cc or Optional field of the item being composed.
+    ccRecipients.getAsync((asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
             write(asyncResult.error.message);
+            return;
         }
-        else {
-            // Async call to get bcc-recipients of the item completed.
-            // Display the email addresses of the bcc-recipients.
-            write ('Bcc-recipients of the item:');
-            displayAddresses(asyncResult);
+
+        // Display the email addresses of the recipients or attendees.
+        write(`Recipients in the Cc or Optional field: ${displayAddresses(asyncResult.value)}`);
+    });
+
+    // Get the recipients from the Bcc field of the message being composed, if applicable.
+    if (bccRecipients.length > 0) {
+        bccRecipients.getAsync((asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+            write(asyncResult.error.message);
+            return;
         }
-                        
-        }); // End getAsync for bcc-recipients.
-     }
+
+        // Display the email addresses of the recipients.
+        write(`Recipients in the Bcc field: ${displayAddresses(asyncResult.value)}`);
+        });
+    } else {
+        write("Recipients in the Bcc field: None");
+    }
 }
 
-// Recipients are in an array of EmailAddressDetails
-// objects passed in asyncResult.value.
-function displayAddresses (asyncResult) {
-    for (let i=0; i<asyncResult.value.length; i++)
-        write (asyncResult.value[i].emailAddress);
+// Displays the email address of each recipient.
+function displayAddresses (recipients) {
+    for (let i = 0; i < recipients.length; i++) {
+        write(recipients[i].emailAddress);
+    }
 }
 
-// Writes to a div with id='message' on the page.
-function write(message){
-    document.getElementById('message').innerText += message; 
+// Writes to a div with id="message" on the page.
+function write(message) {
+    document.getElementById("message").innerText += message;
 }
 ```
 
 ## Set recipients
 
-This section shows a code sample that sets the recipients of the appointment or message that is being composed by the user. Setting recipients overwrites any existing recipients. Similar to the previous example that gets recipients in a compose form, this example assumes that the add-in is activated in compose forms for appointments and messages. This example first verifies if the composed item is an appointment or message, so to apply the asynchronous method, `Recipients.setAsync`, on the appropriate properties that represent recipients of the appointment or message.
+This section shows a code sample that sets the recipients of the appointment or message that is being composed by the user. Setting recipients overwrites any existing recipients. This example first verifies if the mail item is an appointment or message, so that it can call the asynchronous method, `Recipients.setAsync`, on the appropriate properties that represent recipients of the appointment or message.
 
-When calling `setAsync`, provide an array as input argument for the  _recipients_ parameter, in one of the following formats.
+When calling `setAsync`, provide an array as the input argument for the `recipients` parameter, in one of the following formats.
 
 - An array of strings that are SMTP addresses.
 - An array of dictionaries, each containing a display name and email address, as shown in the following code sample.
 - An array of `EmailAddressDetails` objects, similar to the one returned by the `getAsync` method.
-  
-You can optionally provide a callback function as an input argument to the `setAsync` method, to make sure any code that depends on successfully setting the recipients would execute only when that happens. You can also provide any arguments for the callback function using the optional _asyncContext_ parameter. If you use a callback function, you can access an _asyncResult_ output parameter, and use the **status** and **error** properties of the `AsyncResult` parameter object to check for status and any error messages of the asynchronous call.
+
+You can optionally provide a callback function as an input argument to the `setAsync` method, to make sure any code that depends on successfully setting the recipients would execute only when that happens. If you implement a callback function, use the `status` and `error` properties of the `asyncResult` output parameter to check the status and any error messages of the asynchronous call. To provide additional information to the callback function, use the optional `asyncContext` parameter in the `setAsync` call.
 
 ```js
 let item;
 
-Office.initialize = function () {
-    item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready method.
-    $(document).ready(function () {
-        // After the DOM is loaded, app-specific code can run.
-        // Set recipients of the composed item.
+// Confirms that the Office.js library is loaded.
+Office.onReady((info) => {
+    if (info.host === Office.HostType.Outlook) {
+        item = Office.context.mailbox.item;
         setRecipients();
-    });
-}
+    }
+});
 
-// Set the display name and email addresses of the recipients of 
-// the composed item.
+// Sets the recipients of the item being composed.
 function setRecipients() {
-    // Local objects to point to recipients of either
-    // the appointment or message that is being composed.
-    // bccRecipients applies to only messages, not appointments.
     let toRecipients, ccRecipients, bccRecipients;
 
-    // Verify if the composed item is an appointment or message.
-    if (item.itemType == Office.MailboxEnums.ItemType.Appointment) {
+    // Verify if the mail item is an appointment or message.
+    if (item.itemType === Office.MailboxEnums.ItemType.Appointment) {
         toRecipients = item.requiredAttendees;
         ccRecipients = item.optionalAttendees;
     }
@@ -192,108 +164,107 @@ function setRecipients() {
         ccRecipients = item.cc;
         bccRecipients = item.bcc;
     }
-    
-    // Use asynchronous method setAsync to set each type of recipients
-    // of the composed item. Each time, this example passes a set of
-    // names and email addresses to set, and an anonymous 
-    // callback function that doesn't take any parameters. 
+
+    // Set the recipients in the To or Required field of the item being composed.
     toRecipients.setAsync(
         [{
-            "displayName":"Graham Durkin", 
-            "emailAddress":"graham@contoso.com"
+            "displayName": "Graham Durkin", 
+            "emailAddress": "graham@contoso.com"
          },
          {
-            "displayName" : "Donnie Weinberg",
-            "emailAddress" : "donnie@contoso.com"
+            "displayName": "Donnie Weinberg",
+            "emailAddress": "donnie@contoso.com"
          }],
-        function (asyncResult) {
-            if (asyncResult.status == Office.AsyncResultStatus.Failed){
-                write(asyncResult.error.message);
+        (asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                console.log(asyncResult.error.message);
+                return;
             }
-            else {
-                // Async call to set to-recipients of the item completed.
 
-            }    
-    }); // End to setAsync.
+            console.log("Successfully set the recipients in the To or Required field.");
+            // Run additional operations appropriate to your scenario.
+    });
 
-
-    // Set any cc-recipients.
+    // Set the recipients in the Cc or Optional field of the item being composed.
     ccRecipients.setAsync(
         [{
-             "displayName":"Perry Horning", 
-             "emailAddress":"perry@contoso.com"
+            "displayName": "Perry Horning", 
+            "emailAddress": "perry@contoso.com"
          },
          {
-             "displayName" : "Guy Montenegro",
-             "emailAddress" : "guy@contoso.com"
+            "displayName": "Guy Montenegro",
+            "emailAddress": "guy@contoso.com"
          }],
-        function (asyncResult) {
-            if (asyncResult.status == Office.AsyncResultStatus.Failed){
-                write(asyncResult.error.message);
+        (asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                console.log(asyncResult.error.message);
+                return;
             }
-            else {
-                // Async call to set cc-recipients of the item completed.
-            }
-    }); // End cc setAsync.
 
+            console.log("Successfully set the recipients in the Cc or Optional field.");
+            // Run additional operations appropriate to your scenario.
+    });
 
-    // If the item has the bcc field, i.e., item is message,
-    // set bcc-recipients.
+    // Set the recipients in the Bcc field of the message being composed.
     if (bccRecipients) {
         bccRecipients.setAsync(
             [{
-                 "displayName":"Lewis Cate", 
-                 "emailAddress":"lewis@contoso.com"
-             },
-             {
-                 "displayName" : "Francisco Stitt",
-                 "emailAddress" : "francisco@contoso.com"
-             }],
-            function (asyncResult) {
-                if (asyncResult.status == Office.AsyncResultStatus.Failed){
-                    write(asyncResult.error.message);
+                "displayName": "Lewis Cate", 
+                "emailAddress": "lewis@contoso.com"
+            },
+            {
+                "displayName": "Francisco Stitt",
+                "emailAddress": "francisco@contoso.com"
+            }],
+            (asyncResult) => {
+                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                    console.log(asyncResult.error.message);
+                    return;
                 }
-                else {
-                    // Async call to set bcc-recipients of the item completed.
-                    // Do whatever appropriate for your scenario.
-                }
-        }); // End bcc setAsync.
+    
+                console.log("Successfully set the recipients in the Bcc field.");
+                // Run additional operations appropriate to your scenario.
+        });
     }
-}
-
-// Writes to a div with id='message' on the page.
-function write(message){
-    document.getElementById('message').innerText += message; 
 }
 ```
 
 ## Add recipients
 
-If you do not want to overwrite any existing recipients in an appointment or message, instead of using `Recipients.setAsync`, you can use the `Recipients.addAsync` asynchronous method to append recipients. `addAsync` works similarly as `setAsync` in that it requires a _recipients_ input argument. You can optionally provide a callback function, and any arguments for the callback using the asyncContext parameter. You can then check the status, result, and any error of the asynchronous `addAsync` call by using the _asyncResult_ output parameter of the callback function. The following example checks if the item being composed is an appointment, and appends two required attendees to the appointment.
+If you don't want to overwrite any existing recipients in an appointment or message, instead of using `Recipients.setAsync`, use the `Recipients.addAsync` asynchronous method to append recipients. `addAsync` works similarly as `setAsync` in that it requires a `recipients` input argument. You can optionally provide a callback function, and any arguments for the callback using the `asyncContext` parameter. Then, check the status, result, and any error of the asynchronous `addAsync` call using the `asyncResult` output parameter of the callback function. The following example checks if the item being composed is an appointment, then appends two required attendees to it.
 
 ```js
-// Add specified recipients as required attendees of
-// the composed appointment. 
+let item;
+
+// Confirms that the Office.js library is loaded.
+Office.onReady((info) => {
+    if (info.host === Office.HostType.Outlook) {
+        item = Office.context.mailbox.item;
+        addAttendees();
+    }
+});
+
+// Adds the specified recipients as required attendees of the appointment.
 function addAttendees() {
-    if (item.itemType == Office.MailboxEnums.ItemType.Appointment) {
+    if (item.itemType === Office.MailboxEnums.ItemType.Appointment) {
         item.requiredAttendees.addAsync(
         [{
-            "displayName":"Kristie Jensen", 
-            "emailAddress":"kristie@contoso.com"
+            "displayName": "Kristie Jensen",
+            "emailAddress": "kristie@contoso.com"
          },
          {
-            "displayName" : "Pansy Valenzuela",
-            "emailAddress" : "pansy@contoso.com"
+            "displayName": "Pansy Valenzuela",
+            "emailAddress": "pansy@contoso.com"
           }],
-        function (asyncResult) {
-            if (asyncResult.status == Office.AsyncResultStatus.Failed){
-                write(asyncResult.error.message);
+        (asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                console.log(asyncResult.error.message);
+                return;
             }
-            else {
-                // Async call to add attendees completed.
-                // Do whatever appropriate for your scenario.
-            }
-        }); // End addAsync.
+
+            console.log("Successfully added the required attendees.");
+            // Run additional operations appropriate to your scenario.
+        });
     }
 }
 ```

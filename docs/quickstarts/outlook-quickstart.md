@@ -76,7 +76,7 @@ The add-in project that you've created with the Yeoman generator contains sample
     </main>
     ```
 
-1. In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
+1. In your code editor, open the file **./src/taskpane/taskpane.js**, then add the following code to the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
 
     ```js
     // Get a reference to the current message
@@ -84,6 +84,34 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     // Write message property value to the task pane
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
+    ```
+
+    Your **taskpane.js** file should now contain the following code.
+
+
+    ```js
+    /*
+     * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+     * See LICENSE in the project root for license information.
+     */
+
+    /* global document, Office */
+
+    Office.onReady((info) => {
+      if (info.host === Office.HostType.Outlook) {
+        document.getElementById("sideload-msg").style.display = "none";
+        document.getElementById("app-body").style.display = "flex";
+        document.getElementById("run").onclick = run;
+      }
+    });
+    
+    export async function run() {
+      // Get a reference to the current message
+      const item = Office.context.mailbox.item;
+    
+      // Write message property value to the task pane
+      document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
+    }
     ```
 
 ### Try it out
