@@ -37,7 +37,7 @@ If the user hasn't placed the cursor in the item body, `setSelectedDataAsync` in
 ```js
 let item;
 
-// Confirm that the Office.js library is loaded.
+// Confirms that the Office.js library is loaded.
 Office.onReady((info) => {
     if (info.host === Office.HostType.Outlook) {
         item = Office.context.mailbox.item;
