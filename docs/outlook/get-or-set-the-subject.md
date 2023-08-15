@@ -98,7 +98,8 @@ function setSubject() {
                 return;
             }
 
-            The subject was successfully set.
+            /*
+              The subject was successfully set.
               Run additional operations appropriate to your scenario and
               use the optionalVariable1 and optionalVariable2 values as needed.
             */
