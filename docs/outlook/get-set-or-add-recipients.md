@@ -24,7 +24,7 @@ But in a compose form, because both the user and your add-in can be inserting or
 Office.context.mailbox.item.cc.getAsync(callback);
 ```
 
-These properties are available for write access in only compose form, and not read forms.
+These properties are available for write access in only compose forms, and not read forms.
 
 As with most asynchronous methods in the JavaScript API for Office, `getAsync`, `setAsync`, and `addAsync` take optional input parameters. For more information on how to specify these optional input parameters, see "Passing optional parameters to asynchronous methods" in [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md).
 
@@ -48,12 +48,12 @@ Note that because the `getAsync` method is asynchronous, if there are subsequent
 >
 > To resolve an email address once it's added to a mail item, the sender must use the **Tab** key or select a suggested contact or email address from the auto-complete list.
 >
-> In Outlook on the web and on Windows, if a user creates a new message by selecting a contact's email address link from a contact or profile card, they must first resolve the email address, so that it can be included in the results of the `getAsync` call.
+> In Outlook on the web and on Windows, if a user creates a new message by selecting a contact's email address link from a contact or profile card, they must first resolve the email address so that it can be included in the results of the `getAsync` call.
 
 ```js
 let item;
 
-// Confirm that the Office.js library is loaded.
+// Confirms that the Office.js library is loaded.
 Office.onReady((info) => {
     if (info.host === Office.HostType.Outlook) {
         item = Office.context.mailbox.item;
@@ -61,7 +61,7 @@ Office.onReady((info) => {
     }
 });
 
-// Get the email addresses of all the recipients of the item being composed.
+// Gets the email addresses of all the recipients of the item being composed.
 function getAllRecipients() {
     let toRecipients, ccRecipients, bccRecipients;
 
@@ -114,14 +114,14 @@ function getAllRecipients() {
     }
 }
 
-// Display the email address of each recipient.
+// Displays the email address of each recipient.
 function displayAddresses (recipients) {
     for (let i = 0; i < recipients.length; i++) {
         write(recipients[i].emailAddress);
     }
 }
 
-// Write to a div with id="message" on the page.
+// Writes to a div with id="message" on the page.
 function write(message) {
     document.getElementById("message").innerText += message;
 }
@@ -142,7 +142,7 @@ You can optionally provide a callback function as an input argument to the `setA
 ```js
 let item;
 
-// Confirm that the Office.js library is loaded.
+// Confirms that the Office.js library is loaded.
 Office.onReady((info) => {
     if (info.host === Office.HostType.Outlook) {
         item = Office.context.mailbox.item;
@@ -150,7 +150,7 @@ Office.onReady((info) => {
     }
 });
 
-// Set the recipients of the item being composed.
+// Sets the recipients of the item being composed.
 function setRecipients() {
     let toRecipients, ccRecipients, bccRecipients;
 
@@ -236,7 +236,7 @@ If you don't want to overwrite any existing recipients in an appointment or mess
 ```js
 let item;
 
-// Confirm that the Office.js library is loaded.
+// Confirms that the Office.js library is loaded.
 Office.onReady((info) => {
     if (info.host === Office.HostType.Outlook) {
         item = Office.context.mailbox.item;
@@ -244,7 +244,7 @@ Office.onReady((info) => {
     }
 });
 
-// Add the specified recipients as required attendees of the appointment.
+// Adds the specified recipients as required attendees of the appointment.
 function addAttendees() {
     if (item.itemType === Office.MailboxEnums.ItemType.Appointment) {
         item.requiredAttendees.addAsync(

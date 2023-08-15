@@ -38,7 +38,7 @@ To use `item.subject.getAsync`, provide a callback function that checks for the 
 ```js
 let item;
 
-// Confirm that the Office.js library is loaded.
+// Confirms that the Office.js library is loaded.
 Office.onReady((info) => {
     if (info.host === Office.HostType.Outlook) {
         item = Office.context.mailbox.item;
@@ -46,7 +46,7 @@ Office.onReady((info) => {
     }
 });
 
-// Get the subject of the item that the user is composing.
+// Gets the subject of the item that the user is composing.
 function getSubject() {
     item.subject.getAsync((asyncResult) => {
         if (asyncResult.status === Office.AsyncResultStatus.Failed) {
@@ -60,7 +60,7 @@ function getSubject() {
 }
 
 
-// Write to a div with id="message" on the page.
+// Writes to a div with id="message" on the page.
 function write(message) {
     document.getElementById("message").innerText += message; 
 }
@@ -75,7 +75,7 @@ To use `item.subject.setAsync`, specify a string of up to 255 characters in the 
 ```js
 let item;
 
-// Confirm that the Office.js library is loaded.
+// Confirms that the Office.js library is loaded.
 Office.onReady((info) => {
     if (info.host === Office.HostType.Outlook) {
         item = Office.context.mailbox.item;
@@ -83,7 +83,7 @@ Office.onReady((info) => {
     }
 });
 
-// Set the subject of the item that the user is composing.
+// Sets the subject of the item that the user is composing.
 function setSubject() {
     // Customize the subject with today's date.
     const today = new Date();
@@ -98,14 +98,14 @@ function setSubject() {
                 return;
             }
 
-            /*
+            The subject was successfully set.
               Run additional operations appropriate to your scenario and
               use the optionalVariable1 and optionalVariable2 values as needed.
             */
         });
 }
 
-// Write to a div with id="message" on the page.
+// Writes to a div with id="message" on the page.
 function write(message) {
     document.getElementById("message").innerText += message; 
 }

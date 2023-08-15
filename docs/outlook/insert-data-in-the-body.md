@@ -45,7 +45,7 @@ Office.onReady((info) => {
     }
 });
 
-// Insert data at the current cursor position.
+// Inserts data at the current cursor position.
 function setItemBody() {
     // Identify the body type of the mail item.
     item.body.getTypeAsync((asyncResult) => {
@@ -102,7 +102,7 @@ The following JavaScript code first calls `getTypeAsync` to verify the type of t
 ```js
 let item;
 
-// Confirm that the Office.js library is loaded.
+// Confirms that the Office.js library is loaded.
 Office.onReady((info) => {
     if (info.host === Office.HostType.Outlook) {
         item = Office.context.mailbox.item;
@@ -111,7 +111,7 @@ Office.onReady((info) => {
 });
 
 
-// Prepend data to the body of the item being composed.
+// Prepends data to the body of the item being composed.
 function prependItemBody() {
     // Identify the body type of the mail item.
     item.body.getTypeAsync((asyncResult) => {
