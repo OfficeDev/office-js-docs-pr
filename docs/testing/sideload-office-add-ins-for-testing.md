@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins to Office on the web
 description: Test your Office Add-in in Office on the web by sideloading.
-ms.date: 09/02/2022
+ms.date: 08/17/2023
 ms.localizationpriority: medium
 ---
 
