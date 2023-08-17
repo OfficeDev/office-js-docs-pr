@@ -279,6 +279,6 @@ As you develop and test the integrated spam reporting feature in your add-in, be
 - [Office Add-ins manifest](../develop/add-in-manifests.md)
 - [Runtimes in Office Add-ins](../testing/runtimes.md)
 - [ReportPhishingCommandSurface extension point (preview)](/javascript/api/manifest/extensionpoint?view=outlook-js-preview&preserve-view=true#reportphishingcommandsurface-preview)
-- [Office.AddinCommands.EventCompletedOptions](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true)
-- [Office.MessageRead.getAsFileAsync (preview)](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true)
+- [Office.AddinCommands.EventCompletedOptions](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true)
+- [Office.MessageRead.getAsFileAsync (preview)](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-getasfileasync-member(1))
 - [Office.MailboxEnums.MoveSpamItemTo (preview)](/javascript/api/outlook/office.mailboxenums.movespamitemto?view=outlook-js-preview&preserve-view=true)
