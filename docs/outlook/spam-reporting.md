@@ -29,6 +29,9 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
+> [!NOTE]
+> Integrated spam reporting isn't yet supported for the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
+
 To implement the integrated spam-reporting feature in your add-in, you must configure the [VersionOverridesV1_1](/javascript/api/manifest/versionoverrides-1-1-mail) node of your manifest accordingly.
 
 - In Outlook on Windows, an add-in that implements the integrated spam-reporting feature runs in a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). As such, you must specify the JavaScript file that contains the code to handle the spam-reporting event in the [Override](/javascript/api/manifest/override) child element of the [Runtime](/javascript/api/manifest/runtime) element.
