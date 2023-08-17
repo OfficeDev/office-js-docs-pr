@@ -33,7 +33,7 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 1. Open [Office on the web](https://office.live.com/) or OneDrive. Using the **Create** option, make a document in **Excel**, **OneNote**, **PowerPoint**, or **Word**. In this new document, select **Share**, select **Copy Link**, and copy the URL.
 
-1. In the command line starting at the root directory of your project, run the following command. Replace "{url}" with the URL that you copied.
+1. Open a Command Prompt as an administrator. In the command line starting at the root directory of your project, run the following command. Replace "{url}" with the URL that you copied.
 
     [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
