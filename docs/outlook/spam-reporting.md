@@ -205,7 +205,7 @@ The following is an example of a spam-reporting event handler that calls the `ge
     ```
 
     > [!NOTE]
-    > If you're on Outlook on Windows Version 2308 (Build 16724.10000) or later, you must use the `moveItemTo` property in the `event.completed` call to specify the folder to which a reported message is moved once it's processed by your add-in. On earlier Outlook on Windows builds that support the integrated spam reporting feature, you must use the `postProcessingAction` property.
+    > If you're on Outlook on Windows Version 2308 (Build 16724.10000) or later, you must use the `moveItemTo` property in the `event.completed` call to specify the folder to which a reported message is moved once it's processed by your add-in. On earlier Outlook builds on Windows that support the integrated spam-reporting feature, you must use the `postProcessingAction` property.
 
 1. Save your changes.
 
