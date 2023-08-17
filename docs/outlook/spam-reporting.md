@@ -10,18 +10,18 @@ ms.localizationpriority: medium
 
 With the number of unsolicited emails on the rise, security is at the forefront of add-in usage. Currently, partner spam-reporting add-ins are added to the Outlook ribbon, but they usually appear towards the end of the ribbon or in the overflow menu. This makes it harder for users to locate the add-in to report unsolicited emails. In addition to configuring how messages are processed when they're reported, developers also need to complete additional tasks to show processing dialogs or supplemental information to the user.
 
-The integrated spam reporting feature eases the task of developing individual add-in components from scratch. More importantly, it displays your add-in in a prominent spot on the Outlook ribbon, making it easier for users to locate it and report spam messages. Implement this feature in your add-in to:
+The integrated spam-reporting feature eases the task of developing individual add-in components from scratch. More importantly, it displays your add-in in a prominent spot on the Outlook ribbon, making it easier for users to locate it and report spam messages. Implement this feature in your add-in to:
 
 - Improve how unsolicited messages are tracked.
 - Provide better guidance to users on how to report suspicious messages.
 - Enable an organization's security operations center (SOC) or IT administrators to easily perform spam and phishing simulations for educational purposes.
 
 > [!IMPORTANT]
-> The integrated spam reporting feature is currently in preview in Outlook on Windows. Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> The integrated spam-reporting feature is currently in preview in Outlook on Windows. Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
-## Preview the integrated spam reporting feature
+## Preview the integrated spam-reporting feature
 
-To preview the integrated spam reporting feature in Outlook on Windows, you must install Version 2307 (Build 16626.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option to access Office beta builds.
+To preview the integrated spam-reporting feature in Outlook on Windows, you must install Version 2307 (Build 16626.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option to access Office beta builds.
 
 ## Set up your environment
 
@@ -29,9 +29,9 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-To implement the integrated spam reporting feature in your add-in, you must configure the [VersionOverridesV1_1](/javascript/api/manifest/versionoverrides-1-1-mail) node of your manifest accordingly.
+To implement the integrated spam-reporting feature in your add-in, you must configure the [VersionOverridesV1_1](/javascript/api/manifest/versionoverrides-1-1-mail) node of your manifest accordingly.
 
-- In Outlook on Windows, an add-in that implements the integrated spam reporting feature runs in a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). As such, you must specify the JavaScript file that contains the code to handle the spam-reporting event in the [Override](/javascript/api/manifest/override) child element of the [Runtime](/javascript/api/manifest/runtime) element.
+- In Outlook on Windows, an add-in that implements the integrated spam-reporting feature runs in a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). As such, you must specify the JavaScript file that contains the code to handle the spam-reporting event in the [Override](/javascript/api/manifest/override) child element of the [Runtime](/javascript/api/manifest/runtime) element.
 - To activate the add-in in the Outlook ribbon and prevent it from appearing at the end of the ribbon or in the overflow section, set the `xsi:type` attribute of the **\<ExtensionPoint\>** element to [ReportPhishingCommandSurface](/javascript/api/manifest/extensionpoint?view=outlook-js-preview&preserve-view=true#reportphishingcommandsurface-preview).
 - To customize the ribbon button and preprocessing dialog, you must define the [ReportPhishingCustomization](/javascript/api/manifest/reportphishingcustomization?view=outlook-js-preview&preserve-view=true) node.
   - A user reports an unsolicited message through the add-in's button in the ribbon. The button shows the preprocessing dialog to the user and activates the [SpamReporting](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true) event, which is then handled by the JavaScript event handler. To configure the ribbon button, set the `xsi:type` attribute of the [Control](/javascript/api/manifest/control-button) element to `Button`. Then, set the `xsi:type` attribute of the [Action](/javascript/api/manifest/action) child element to `ExecuteFunction` and specify the name of the spam-reporting event handler in its **\<FunctionName\>** child element. A spam-reporting add-in can only implement [function commands](../design/add-in-commands.md#types-of-add-in-commands).
@@ -66,7 +66,7 @@ The following is an example of a **\<VersionOverrides\>** node configured for sp
             </Runtimes>
             <DesktopFormFactor>
               <FunctionFile resid="WebViewRuntime.Url"/>
-              <!-- Implements the integrated spam reporting feature in the add-in. -->
+              <!-- Implements the integrated spam-reporting feature in the add-in. -->
               <ExtensionPoint xsi:type="ReportPhishingCommandSurface">
                 <ReportPhishingCustomization>
                   <!-- Configures the ribbon button. -->
@@ -205,7 +205,7 @@ The following is an example of a spam-reporting event handler that calls the `ge
     ```
 
     > [!NOTE]
-    > If you're on Outlook on Windows Version 2308 (Build 16724.10000) or later, you must use the `moveItemTo` property in the `event.completed` call to specify the folder to which a reported message is moved once it's processed by your add-in. On earlier Outlook builds on Windows that support the integrated spam reporting feature, you must use the `postProcessingAction` property.
+    > If you're on Outlook on Windows Version 2308 (Build 16724.10000) or later, you must use the `moveItemTo` property in the `event.completed` call to specify the folder to which a reported message is moved once it's processed by your add-in. On earlier Outlook builds on Windows that support the integrated spam-reporting feature, you must use the `postProcessingAction` property.
 
 1. Save your changes.
 
@@ -259,7 +259,7 @@ The following is a sample post-processing dialog shown to the user once the add-
 
 ## Review feature behavior and limitations
 
-As you develop and test the integrated spam reporting feature in your add-in, be mindful of its characteristics and limitations.
+As you develop and test the integrated spam-reporting feature in your add-in, be mindful of its characteristics and limitations.
 
 - A spam-reporting add-in can run for a maximum of five minutes once it's activated. Any processing that occurs beyond five minutes will cause the add-in to time out. If the add-in times out, a dialog will be shown to the user to notify them of this.
 
@@ -272,7 +272,7 @@ As you develop and test the integrated spam reporting feature in your add-in, be
 
 - The add-in can still process the reported message even if the user navigates away from the selected message.
 - The buttons that appear in the preprocessing and post-processing dialogs aren't customizable. Additionally, the text and buttons in the timeout and ongoing report dialogs can't be modified.
-- The integrated spam reporting and [event-based activation](autolaunch.md) features must use the same runtime. Multiple runtimes aren't currently supported in Outlook. To learn more about runtimes, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+- The integrated spam-reporting and [event-based activation](autolaunch.md) features must use the same runtime. Multiple runtimes aren't currently supported in Outlook. To learn more about runtimes, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 
 ## See also
 
