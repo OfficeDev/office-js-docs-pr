@@ -1,7 +1,7 @@
 ---
 title: Icon guidelines for Office Add-ins
 description: Get an overview of how to design icons and the Fresh and Monoline design styles for add-in commands.
-ms.date: 05/12/2021
+ms.date: 08/18/2023
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -22,7 +22,7 @@ Many HTML containers contain controls with iconography. Use Fabric Core’s cust
 - For the Fresh style of perpetual Office 2013+, see [Fresh style icon guidelines for Office Add-ins](add-in-icons-fresh.md).
 
 > [!NOTE]
-> You must choose one style or the other and your add-in will use the same icons whether it is running in Microsoft 365 or perpetual Office.
+> You must choose one style or the other and your add-in will use the same icons whether it's running in Microsoft 365 or perpetual Office.
 
 ## See also
 

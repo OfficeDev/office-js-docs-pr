@@ -131,7 +131,7 @@ The following subsections explain how to include a [task pane command](../design
     - One of the "icons" appears on the group only if the Office application window, and hence the ribbon, has been sized by the user too small for any of the controls in the group to appear. Office decides when to use one of these icons and which one to use based on the size of the window and the resolution of the device. You cannot control this. You must provide image files for 16, 32, and 80 pixels, while five other sizes are also supported (20, 24, 40, 48, and 64 pixels). You must use Secure Sockets Layer (SSL) for all URLs.
     
     > [!NOTE]
-    > The name of the "icons.file" property may change during the preview of the unified manifest for Office Add-ins. If you get intellisense or manifest validation errors, try replacing "file" with "url".
+    > The name of the "icons.file" property may change during the preview of the unified manifest for Office Add-ins. If you get IntelliSense or manifest validation errors, try replacing "file" with "url".
 
 
     ```json
@@ -358,7 +358,7 @@ The following subsections explain how to include a [function command](../design/
     - One of the "icons" appears on the group only if the Office application window, and hence the ribbon, has been sized by the user too small for any of the controls in the group to appear. Office decides when to use one of these icons and which one to use based on the size of the window and the resolution of the device. You cannot control this. You must provide image files for 16, 32, and 80 pixels, while five other sizes are also supported (20, 24, 40, 48, and 64 pixels). You must use Secure Sockets Layer (SSL) for all URLs.
     
     > [!NOTE]
-    > The name of the "icons.file" property may change during the preview of the unified manifest for Office Add-ins. If you get intellisense or manifest validation errors, try replacing "file" with "url".
+    > The name of the "icons.file" property may change during the preview of the unified manifest for Office Add-ins. If you get IntelliSense or manifest validation errors, try replacing "file" with "url".
 
     ```json
     "groups": [
@@ -494,7 +494,7 @@ Carry out the steps of the following sections:
     - One of the "icons" appears on the group only if the Office application window, and hence the ribbon, has been sized by the user too small for any of the controls in the group to appear. Office decides when to use one of these icons and which one to use based on the size of the window and the resolution of the device. You cannot control this. You must provide image files for 16, 32, and 80 pixels, while five other sizes are also supported (20, 24, 40, 48, and 64 pixels). You must use Secure Sockets Layer (SSL) for all URLs.
     
     > [!NOTE]
-    > The name of the "icons.file" property may change during the preview of the unified manifest for Office Add-ins. If you get intellisense or manifest validation errors, try replacing "file" with "url".
+    > The name of the "icons.file" property may change during the preview of the unified manifest for Office Add-ins. If you get IntelliSense or manifest validation errors, try replacing "file" with "url".
 
     ```json
     "groups": [
