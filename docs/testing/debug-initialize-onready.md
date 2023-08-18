@@ -1,7 +1,7 @@
 ---
 title: Debug the initialize and onReady functions
 description: Learn how to debug the Office.initialize and Office.onReady functions.
-ms.date: 07/11/2022
+ms.date: 08/18/2023
 ms.localizationpriority: medium
 ---
 
@@ -10,9 +10,9 @@ ms.localizationpriority: medium
 > [!NOTE]
 > This article assumes that you are familiar with [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
-The paradox of debugging the [Office.initialize](/javascript/api/office#office-office-initialize-function(1)) and [Office.onReady](/javascript/api/office#office-office-onready-function(1)) functions is that a debugger can only attach to a process that is running, but these functions run immediately as the add-in's runtime process starts up, before a debugger can attach. In most situations, restarting the add-in after a debugger is attached doesn't help because restarting the add-in closes the original runtime process *and the attached debugger* and starts a new process that has no debugger attached.
+The paradox of debugging the [Office.initialize](/javascript/api/office#office-office-initialize-function(1)) and [Office.onReady](/javascript/api/office#office-office-onready-function(1)) functions is that a debugger can only attach to a process that's running, but these functions run immediately as the add-in's runtime process starts up, before a debugger can attach. In most situations, restarting the add-in after a debugger is attached doesn't help because restarting the add-in closes the original runtime process *and the attached debugger* and starts a new process that has no debugger attached.
 
-Fortunately, there is an exception. You can debug these functions using Office on the web, with the following steps.
+Fortunately, there's an exception. You can debug these functions using Office on the web, with the following steps.
 
 1. Sideload and run the add-in in Office on the web. This is usually done by opening an add-in's task pane or running a [function command](../design/add-in-commands.md#types-of-add-in-commands). *The add-in runs in the overall browser process, not a separate process as it would in desktop Office.*
 1. Open the browser's developer tools. This is usually done by pressing F12. The debugger in the tools attaches to the browser process.
