@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in (preview)
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 08/17/2023
+ms.date: 08/22/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -276,6 +276,7 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 - The add-in can still process the reported message even if the user navigates away from the selected message.
 - The buttons that appear in the preprocessing and post-processing dialogs aren't customizable. Additionally, the text and buttons in the timeout and ongoing report dialogs can't be modified.
 - The integrated spam-reporting and [event-based activation](autolaunch.md) features must use the same runtime. Multiple runtimes aren't currently supported in Outlook. To learn more about runtimes, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+- A task pane command can't be assigned to the spam-reporting button on the ribbon. If you want to implement a task pane in your add-in, you must include the [Action element](/javascript/api/manifest/action#xsitype-is-showtaskpane) in the manifest and set its `xsi:type` attribute to `ShowTaskpane`. Note that a separate button to activate the task pane will be added to the ribbon, but it won't appear in the dedicated spam-reporting area of the ribbon.
 
 ## See also
 
