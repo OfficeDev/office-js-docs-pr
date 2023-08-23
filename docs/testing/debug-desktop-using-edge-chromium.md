@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 description: Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) in VS Code.
-ms.date: 02/18/2022
+ms.date: 08/18/2023
 ms.localizationpriority: high
 ---
 # Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
@@ -12,7 +12,7 @@ Office Add-ins running on Windows can debug against the Edge Chromium WebView2 r
 > This article only applies when Office runs add-ins in the Microsoft Edge Chromium WebView2 runtime, as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio Code against Microsoft Edge Legacy with the original WebView (EdgeHTML) runtime, see [Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
 
 > [!TIP]
-> If you cannot, or don't wish to, debug using tools built into Visual Studio Code; or you are encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Chromium WebView2 runtime by using the Edge (Chromium-based) developer tools as described in [Debug add-ins using developer tools for Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
+> If you can't, or don't wish to, debug using tools built into Visual Studio Code; or you're encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Chromium WebView2 runtime by using the Edge (Chromium-based) developer tools as described in [Debug add-ins using developer tools for Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
 
 This debugging mode is dynamic, allowing you to set breakpoints while code is running. See changes in your code immediately while the debugger is attached, all without losing your debugging session. Your code changes also persist, so you see the results of multiple changes to your code. The following image shows this extension in action.
 
@@ -35,7 +35,7 @@ These instructions assume you have experience using the command line, understand
    - If you want to debug an existing project that was created with Yo Office, skip to the next step.
    - If you want to debug an existing project that was not created with Yo Office, complete the procedure in the [Appendix A](#appendix-a) and then return to the next step of this procedure.
 
-1. Open VS Code and open your project in it. 
+1. Open VS Code and open your project in it.
 
 1. Choose  **View** > **Run** or enter **Ctrl+Shift+D** to switch to debug view.
 
@@ -74,13 +74,13 @@ These instructions assume you have experience using the command line, understand
    > Breakpoints in calls of `Office.initialize` or `Office.onReady` are ignored. For details about these functions, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
 > [!IMPORTANT]
-> The best way to stop a debugging session is to select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu. This action should close the Node server window and attempt to close the host application, but there will be a prompt on the host application asking you whether to save the document or not. Make an appropriate choice and let the host application close. Avoid manually closing the Node window or host application. Doing so can cause bugs especially when you are stopping and starting debugging sessions repeatedly.
+> The best way to stop a debugging session is to select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu. This action should close the Node server window and attempt to close the host application, but there'll be a prompt on the host application asking you whether to save the document or not. Make an appropriate choice and let the host application close. Avoid manually closing the Node window or host application. Doing so can cause bugs especially when you are stopping and starting debugging sessions repeatedly.
 >
 > If debugging stops working; for example, if breakpoints are being ignored; stop debugging. Then, if necessary, close all host application windows and the Node window. Finally, close Visual Studio Code and reopen it.
 
 ### Appendix A
 
-If your project was not created with Yo Office, you need to create a debug configuration for Visual Studio Code.
+If your project wasn't created with Yo Office, you need to create a debug configuration for Visual Studio Code.
 
 1. Create a file named `launch.json` in the `\.vscode` folder of the project if there isn't one there already.
 1. Ensure that the file has a `configurations` array. The following is a simple example of a `launch.json`.
@@ -124,7 +124,7 @@ If your project was not created with Yo Office, you need to create a debug confi
 1. If debugging doesn't stop automatically, select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu.
 1. Close the Node window where the local server is running, if it doesn't close automatically.
 1. Close the Office application if it doesn't close automatically.
-1. Open the `\.vscode\launch.json` file in the project. 
+1. Open the `\.vscode\launch.json` file in the project.
 1. In the `configurations` array, there are several configuration objects. Find the one whose name has the pattern `$HOST$ Desktop (Edge Chromium)`, where $HOST$ is an Office application that your add-in runs in; for example, `Outlook Desktop (Edge Chromium)` or `Word Desktop (Edge Chromium)`.
 1. Change the value of the `"type"` property from `"edge"` to `"pwa-msedge"`.
 1. Change the value of the `"useWebView"` property from the string `"advanced"` to the boolean `true` (note there are no quotation marks around the `true`).

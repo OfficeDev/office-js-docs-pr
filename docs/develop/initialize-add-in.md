@@ -1,7 +1,7 @@
 ---
 title: Initialize your Office Add-in
 description: Learn how to initialize your Office Add-in.
-ms.date: 07/11/2022
+ms.date: 08/18/2023
 ms.localizationpriority: medium
 ---
 
@@ -19,14 +19,14 @@ Office Add-ins often have start-up logic to do things such as:
 
 - Use the Office Dialog API to prompt the user for default add-in settings values.
 
-However, an Office Add-in cannot successfully call any Office JavaScript APIs until the library has been loaded. This article describes the two ways your code can ensure that the library has been loaded.
+However, an Office Add-in can't successfully call any Office JavaScript APIs until the library has been loaded. This article describes the two ways your code can ensure that the library has been loaded.
 
 - Initialize with `Office.onReady()`.
 - Initialize with `Office.initialize`.
 
 > [!TIP]
 > We recommend that you use `Office.onReady()` instead of `Office.initialize`. Although `Office.initialize` is still supported, `Office.onReady()` provides more flexibility. You can assign only one handler to `Office.initialize` and it's called only once by the Office infrastructure. You can call `Office.onReady()` in different places in your code and use different callbacks.
-> 
+>
 > For information about the differences in these techniques, see [Major differences between Office.initialize and Office.onReady()](#major-differences-between-officeinitialize-and-officeonready).
 
 For more details about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
@@ -61,7 +61,7 @@ Office.onReady()
     });
 ```
 
-Here is the same example using the `async` and `await` keywords in TypeScript.
+Here's the same example using the `async` and `await` keywords in TypeScript.
 
 ```typescript
 (async () => {
@@ -72,13 +72,13 @@ Here is the same example using the `async` and `await` keywords in TypeScript.
 })();
 ```
 
-If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the response to `Office.onReady()`. For example, [JQuery's](https://jquery.com) `$(document).ready()` method would be referenced as follows:
+If you're using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the response to `Office.onReady()`. For example, [JQuery's](https://jquery.com) `$(document).ready()` method would be referenced as follows:
 
 ```js
 Office.onReady(function() {
-    // Office is ready
+    // Office is ready.
     $(document).ready(function () {
-        // The document is ready
+        // The document is ready.
     });
 });
 ```
@@ -99,13 +99,13 @@ Office.initialize = function () {
 };
 ```
 
-If you are using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the `Office.initialize` event (the exceptions described in the **Initialize with Office.onReady()** section earlier apply in this case also). For example, [JQuery's](https://jquery.com) `$(document).ready()` method would be referenced as follows:
+If you're using additional JavaScript frameworks that include their own initialization handler or tests, these should *usually* be placed within the `Office.initialize` event (the exceptions described in the **Initialize with Office.onReady()** section earlier apply in this case also). For example, [JQuery's](https://jquery.com) `$(document).ready()` method would be referenced as follows:
 
 ```js
 Office.initialize = function () {
-    // Office is ready
+    // Office is ready.
     $(document).ready(function () {
-        // The document is ready
+        // The document is ready.
     });
   };
 ```
@@ -129,7 +129,7 @@ For more information, see [Office.initialize Event](/javascript/api/office) and 
 
 - You can assign only one handler to `Office.initialize` and it's called only once by the Office infrastructure; but you can call `Office.onReady()` in different places in your code and use different callbacks. For example, your code could call `Office.onReady()` as soon as your custom script loads with a callback that runs initialization logic; and your code could also have a button in the task pane, whose script calls `Office.onReady()` with a different callback. If so, the second callback runs when the button is clicked.
 
-- The `Office.initialize` event fires at the end of the internal process in which Office.js initializes itself. And it fires *immediately* after the internal process ends. If the code in which you assign a handler to the event executes too long after the event fires, then your handler doesn't run. For example, if you are using the WebPack task manager, it might configure the add-in's home page to load polyfill files after it loads Office.js but before it loads your custom JavaScript. By the time your script loads and assigns the handler, the initialize event has already happened. But it is never "too late" to call `Office.onReady()`. If the initialize event has already happened, the callback runs immediately.
+- The `Office.initialize` event fires at the end of the internal process in which Office.js initializes itself. And it fires *immediately* after the internal process ends. If the code in which you assign a handler to the event executes too long after the event fires, then your handler doesn't run. For example, if you are using the WebPack task manager, it might configure the add-in's home page to load polyfill files after it loads Office.js but before it loads your custom JavaScript. By the time your script loads and assigns the handler, the initialize event has already happened. But it's never "too late" to call `Office.onReady()`. If the initialize event has already happened, the callback runs immediately.
 
 > [!NOTE]
 > Even if you have no start-up logic, you should either call `Office.onReady()` or assign an empty function to `Office.initialize` when your add-in JavaScript loads. Some Office application and platform combinations won't load the task pane until one of these happens. The following examples show these two approaches.

@@ -1,7 +1,7 @@
 ---
 title: Add support for add-in commands in Outlook on mobile devices
 description: Learn how to add support for Outlook on mobile devices including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
-ms.date: 07/13/2023
+ms.date: 08/22/2023
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
 
 This element contains all of the information for loading the add-in in mobile clients. This enables you to define completely different UI elements and JavaScript files for the mobile experience.
 
-The following example shows a single task pane button in a `MobileFormFactor` element.
+The following example shows a single task pane button in a **\<MobileFormFactor\>** element.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
@@ -56,10 +56,10 @@ The following example shows a single task pane button in a `MobileFormFactor` el
 This is very similar to the elements that appear in a [DesktopFormFactor](/javascript/api/manifest/desktopformfactor) element, with some notable differences.
 
 - The [OfficeTab](/javascript/api/manifest/officetab) element isn't used.
-- The [ExtensionPoint](/javascript/api/manifest/extensionpoint) element must have only one child element. If the add-in only adds one button, the child element should be a [Control](/javascript/api/manifest/control) element. If the add-in adds more than one button, the child element should be a [Group](/javascript/api/manifest/group) element that contains multiple `Control` elements.
-- There is no `Menu` type equivalent for the `Control` element.
+- The [ExtensionPoint](/javascript/api/manifest/extensionpoint) element must have only one child element. If your add-in implements the [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) or [MobileLogEventAppointmentAttendee](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) extension point, you must include a [Control](/javascript/api/manifest/control) child element. If your add-in implements the [MobileMessageReadCommandSurface](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) extension point, you must include a [Group](/javascript/api/manifest/group) child element that contains multiple **\<Control\>** elements.
+- There is no `Menu` type equivalent for the **\<Control\>** element.
 - The [Supertip](/javascript/api/manifest/supertip) element isn't used.
-- The required icon sizes are different. Mobile add-ins minimally must support 25x25, 32x32 and 48x48 pixel icons.
+- The required icon sizes are different. Mobile add-ins minimally must support 25x25, 32x32 and 48x48 pixel icons. For more information, see [Additional requirements for mobile form factors](/javascript/api/manifest/icon#additional-requirements-for-mobile-form-factors).
 
 ## Code considerations
 
@@ -67,7 +67,7 @@ Designing an add-in for mobile introduces some additional considerations.
 
 ### Use REST instead of Exchange Web Services
 
-The [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method isn't supported in Outlook mobile. Add-ins should prefer to get information from the Office.js API when possible. If add-ins require information not exposed by the Office.js API, then they should use the [Outlook REST APIs](/outlook/rest/) to access the user's mailbox.
+The [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method isn't supported in Outlook mobile. Add-ins should prefer to get information from the Office.js API when possible. If add-ins require information not exposed by the Office.js API, then they should use the [Outlook REST APIs](use-rest-api.md) to access the user's mailbox.
 
 Mailbox requirement set 1.5 introduced a new version of [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) that can request an access token compatible with the REST APIs, and a new [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) property that can be used to find the REST API endpoint for the user.
 
