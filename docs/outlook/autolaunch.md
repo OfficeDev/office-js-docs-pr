@@ -321,11 +321,7 @@ In this scenario, you'll add handling for composing new items.
 1. Save your changes.
 
 > [!NOTE]
-> If you're developing an event-based add-in in Outlook on Windows, be aware of the following:
->
-> - At present, imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
-> - Code included in the `Office.onReady()` and `Office.initialize` functions isn't processed. We recommend adding your add-in startup logic, such as checking the user's Outlook version, to your event handlers instead.
-> - Only a single JavaScript file is supported in an event-based add-in project. You must bundle your JavaScript code into a single file.
+> There are some limitations you must be aware of when developing an event-based add-in for Outlook on Windows. To learn more, see [Event-based activation behavior and limitations](#event-based-activation-behavior-and-limitations).
 
 ## Update the commands HTML file
 
@@ -399,8 +395,9 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 
 - Ensure that the following conditions are met in your add-in's manifest.
   - Verify that your add-in's source file location URL is publicly available and isn't blocked by a firewall. This URL is specified in your manifest's [SourceLocation element](/javascript/api/manifest/sourcelocation).
-  - Verify that the **\<Runtimes\>** element correctly references the HTML or JavaScript file containing the event handlers. Outlook on Windows uses the JavaScript file during runtime, while Outlook on the web and on new Mac UI use the HTML file. For an example of how this is configured in the manifest, see [Configure the manifest](#configure-the-manifest).
-- An event-based add-in that runs in Outlook on Windows only supports a single JavaScript in the add-in project. You must bundle your JavaScript code into a single file.
+  - Verify that the **\<Runtimes\>** element (XML manifest) or "code" object (unified manifest (preview)) correctly references the HTML or JavaScript file containing the event handlers. Outlook on Windows uses the JavaScript file during runtime, while Outlook on the web and on new Mac UI use the HTML file. For an example of how this is configured in the manifest, see [Configure the manifest](#configure-the-manifest).
+  
+    For Outlook on Windows, you must bundle all your event-handling JavaScript code into this JavaScript file referenced in the manifest. Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 - Verify that your event-handling JavaScript file referenced by the Outlook client on Windows calls `Office.actions.associate`. This ensures that the event handler name specified in the manifest is mapped to its JavaScript counterpart.
 
   > [!TIP]
@@ -477,6 +474,11 @@ When developing an event-based add-in to run in the Outlook on Windows client, b
 
 - Imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
 - Add-ins don't run code included in `Office.onReady()` and `Office.initialize`. We recommend adding any startup logic, such as checking the user's Outlook version, to your event handlers instead.
+- Only the JavaScript file referenced in the manifest is supported for event-based activation. You must bundle your event-handling JavaScript code into this single file. The location of the referenced JavaScript file in the manifest varies depending on the type of manifest your add-in uses.
+  - **XML manifest**: **\<Override\>** child element of the **\<Runtime\>** node
+  - **Unified manifest for Microsoft 365 (preview)**: "script" property of the "code" object
+
+  Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 
 Some Office.js APIs that change or alter the UI aren't allowed from event-based add-ins. The following are the blocked APIs.
 
