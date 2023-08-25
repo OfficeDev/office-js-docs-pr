@@ -506,7 +506,7 @@ The `validateBody` function gets the current body in the specified format (HTML)
   
 ### `NotificationMessages` object and `event.completed` method
 
-The `checkBodyOnlyOnSendCallBack` function uses a regular expression to determine whether the message body contains blocked words. If it finds a match against an array of restricted words, it then blocks the email from being sent and notifies the sender via the information bar. To do this, it uses the `notificationMessages` property of the `Item` object to return a `NotificationMessages` object. It then adds a notification to the item by calling the `addAsync` method, as shown in the following example.
+The `checkBodyOnlyOnSendCallBack` function uses a regular expression to determine whether the message body contains blocked words. If it finds a match against an array of restricted words, it then blocks the email from being sent and notifies the sender via the information bar. To do this, it uses the `notificationMessages` property of the `Item` object to return a [NotificationMessages](/javascript/api/outlook/office.notificationmessages) object. It then adds a notification to the item by calling the `addAsync` method, as shown in the following example.
 
 ```js
 // Determine whether the body contains a specific set of blocked words. If it contains the blocked words, block email from being sent. Otherwise allow sending.
@@ -537,10 +537,7 @@ The following are the parameters for the `addAsync` method.
 - `type` &ndash; One of the properties of the  JSON object parameter. Represents the type of a message; the types correspond to the values of the [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype) enumeration. Possible values are progress indicator, information message, or error message. In this example, `type` is an error message.  
 - `message` &ndash; One of the properties of the JSON object parameter. In this example, `message` is the text of the notification message.
 
-To signal that the add-in has finished processing the `ItemSend` event triggered by the send operation, call the `event.completed({allowEvent:Boolean})` method. The `allowEvent` property is a Boolean. If set to `true`, send is allowed. If set to `false`, the email message is blocked from sending.
-
-> [!NOTE]
-> For more information, see [notificationMessages](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [completed](/javascript/api/office/office.addincommands.event).
+To signal that the add-in has finished processing the `ItemSend` event triggered by the send operation, call the [event.completed({allowEvent:Boolean})](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) method. The [allowEvent](/javascript/api/office/office.addincommands.eventcompletedoptions#office-office-addincommands-eventcompletedoptions-allowevent-member) property is a Boolean. If set to `true`, send is allowed. If set to `false`, the email message is blocked from sending.
 
 ### `replaceAsync`, `removeAsync`, and `getAllAsync` methods
 
