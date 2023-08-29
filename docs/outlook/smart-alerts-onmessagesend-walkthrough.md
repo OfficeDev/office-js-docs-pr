@@ -486,7 +486,7 @@ Because the `OnMessageSend` and `OnAppointmentSend` events are supported through
 
 In addition to these constraints, only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate add-in.
 
-While a Smart Alerts dialog message can be changed to suit your add-in scenario using the [errorMessage property](/javascript/api/office/office.addincommands.eventcompletedoptions) of the event.completed method, the following can't be customized.
+While a Smart Alerts dialog message can be changed to suit your add-in scenario using the [errorMessage property](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessage-member) of the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method, the following can't be customized.
 
 - The dialog's title bar. Your add-in's name is always displayed there.
 - The message's format. For example, you can't change the text's font size and color or insert a bulleted list.
