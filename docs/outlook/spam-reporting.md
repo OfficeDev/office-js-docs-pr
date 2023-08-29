@@ -159,7 +159,7 @@ Your event handler is responsible for processing the reported message, such as f
 >
 >    :::image type="content" source="../images/outlook-beta-registry-key.png" alt-text="The EnableBetaAPIsInJavaScript registry value is set to 1.":::
 
-Once the event handler has completed processing the message, it must call the [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) method. In addition to signaling to the add-in that the spam-reporting event has been processed, `event.completed` can also be used to customize a post-processing dialog to show to the user or perform additional operations on the message, such as deleting it from the inbox. For a list of properties you can include in a JSON object to pass as a parameter to the `event.completed` method, see [Office.AddinCommands.EventCompletedOptions](/javascript/api/office/office.addincommands.eventcompletedoptions).
+Once the event handler has completed processing the message, it must call the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method. In addition to signaling to the add-in that the spam-reporting event has been processed, `event.completed` can also be used to customize a post-processing dialog to show to the user or perform additional operations on the message, such as deleting it from the inbox. For a list of properties you can include in a JSON object to pass as a parameter to the `event.completed` method, see [Office.SpamReportingEventCompletedOptions](/javascript/api/outlook/office.spamreportingeventcompletedoptions).
 
 > [!NOTE]
 > Code added after the `event.completed` call isn't guaranteed to run.
@@ -283,6 +283,6 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 - [Office Add-ins manifest](../develop/add-in-manifests.md)
 - [Runtimes in Office Add-ins](../testing/runtimes.md)
 - [ReportPhishingCommandSurface extension point (preview)](/javascript/api/manifest/extensionpoint?view=outlook-js-preview&preserve-view=true#reportphishingcommandsurface-preview)
-- [Office.AddinCommands.EventCompletedOptions](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true)
 - [Office.MessageRead.getAsFileAsync (preview)](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-getasfileasync-member(1))
 - [Office.MailboxEnums.MoveSpamItemTo (preview)](/javascript/api/outlook/office.mailboxenums.movespamitemto?view=outlook-js-preview&preserve-view=true)
+- [Office.SpamReportingEventCompletedOptions](/javascript/api/outlook/office.spamreportingeventcompletedoptions).
