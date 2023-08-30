@@ -119,7 +119,7 @@ The following is an example of a **\<VersionOverrides\>** node configured for sp
           </bt:Images>
           <bt:Urls>
             <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html"/>
-            <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/commands.js"/>
+            <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/spamreporting.js"/>
             <bt:Url id="MoreInfo.Url" DefaultValue="https://www.contoso.com/spamreporting"/>
           </bt:Urls>
           <bt:ShortStrings>
