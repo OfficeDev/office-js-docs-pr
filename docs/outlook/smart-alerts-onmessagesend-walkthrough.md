@@ -1,7 +1,7 @@
 ---
 title: Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in
 description: Learn how to handle the on-send events in your Outlook add-in using event-based activation.
-ms.date: 07/31/2023
+ms.date: 08/31/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -109,7 +109,7 @@ To configure the manifest, select the tab for the type of manifest you are using
               <!-- Enable launching the add-in on the included event. -->
               <ExtensionPoint xsi:type="LaunchEvent">
                 <LaunchEvents>
-                  <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="SoftBlock" />
+                  <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="Block" />
                 </LaunchEvents>
                 <!-- Identify the runtime to be used (also referenced by the Runtime element). -->
                 <SourceLocation resid="WebViewRuntime.Url"/>
@@ -204,7 +204,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 1. Add the following object to the "autoRunEvents" array. Note the following about this code:
 
    - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, "messageSending", as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in "actionId" must match the name used in the "id" property of the object in the "actions" array in an earlier step.
-   - The "sendMode" option is set to "softBlock". This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message.
+   - The "sendMode" option is set to "block". This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message.
 
     ```json
       {
@@ -224,7 +224,7 @@ To configure the manifest, select the tab for the type of manifest you are using
                 "type": "messageSending",
                 "actionId": "onMessageSendHandler",
                 "options": {
-                    "sendMode": "softBlock"
+                    "sendMode": "block"
                 }
             }
           ]
@@ -344,9 +344,9 @@ If a mail item doesn't meet the conditions of a Smart Alerts add-in, a dialog is
 To modify the text of the **Don't Send** button or assign it a task pane command, you must set additional options in the [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) method of your event handler.
 
 - The [cancelLabel](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-cancelLabel-member) option sets the text of the **Don't Send** button. Custom text must be a maximum of 20 characters.
-- The [commandId](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-commandId-member) option specifies the ID of the task pane that appears when the **Don't Send** button is selected. The value should match the ID assigned to the task pane in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
+- The [commandId](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-commandId-member) option specifies the ID of the task pane that opens when the **Don't Send** button is selected. The value should match the ID assigned to the task pane in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
   - **XML manifest**: The `id` attribute of the **\<Control\>** element representing the task pane.
-  - **Unified manifest for Microsoft 365 (preview)**: The "id" property of the task pane command in the "controls" property.
+  - **Unified manifest for Microsoft 365 (preview)**: The "id" property of the task pane command in the "controls" array.
 - The [contextData](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-contextData-member) option specifies any JSON data you want to pass to the add-in when the **Don't Send** button is selected. If you include this option, you must also set the `commandId` option. Otherwise, the JSON data will be ignored.
 
 1. Navigate to the **./src/launchevent** folder, then open **launchevent.js**.
@@ -625,6 +625,8 @@ If you implemented the optional step to override the send mode option at runtime
 1. In the task pane, select **Add an inline image**. An image is added to the body of your message.
 1. Send the message. A dialog appears recommending to attach a copy of the image to the message.
 1. Select **Send Anyway** to send the message as-is, or select **Attach a copy** to include a copy before sending the message.
+
+    ![Smart Alerts dialog with the Send Anyway option available at runtime.](../images/outlook-smart-alerts-send-mode-override.png)
 
 > [!IMPORTANT]
 > If a Smart Alerts add-in that implements the override feature can't complete processing an event due to an error or is unavailable when the event occurs, it uses the send mode option specified in the manifest.
