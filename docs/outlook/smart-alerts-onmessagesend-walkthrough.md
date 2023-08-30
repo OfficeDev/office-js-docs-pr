@@ -520,7 +520,7 @@ If you implemented the optional steps to customize the **Don't Send** button or 
           return;
         }
 
-        // Inserts the Base64 image to the beginning of the body.
+        // Inserts the Base64-encoded image to the beginning of the body.
         const options = { isInline: true, asyncContext: bodyResult.value };
         mailItem.addFileAttachmentFromBase64Async(base64String, "sample.png", options, (attachResult) => {
           if (attachResult.status === Office.AsyncResultStatus.Failed) {
@@ -615,7 +615,7 @@ If you implemented the optional steps to customize the **Don't Send** button or 
 
 1. Send the message. There should be no alert this time.
 
-### Override the send mode option at runtime (optional)
+### Try out overriding the send mode option at runtime (optional)
 
 If you implemented the optional step to override the send mode option at runtime, perform the following to try it out.
 
@@ -628,7 +628,7 @@ If you implemented the optional step to override the send mode option at runtime
 1. From the ribbon, select **Contoso Add-in** > **Show Taskpane**.
 1. In the task pane, select **Add an inline image**. An image is added to the body of your message.
 1. Send the message. A dialog appears recommending to attach a copy of the image to the message.
-1. Select **Send Anyway** to send the message as-is, or select **Attach a copy** to include a copy before sending the message.
+1. Select **Send Anyway** to send the message as is, or select **Attach a copy** to include a copy before sending the message.
 
     ![Smart Alerts dialog with the Send Anyway option available at runtime.](../images/outlook-smart-alerts-send-mode-override.png)
 
