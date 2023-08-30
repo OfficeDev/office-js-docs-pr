@@ -336,18 +336,20 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 > [!NOTE]
 > The **Don't Send** button customization feature is currently in preview in Outlook on Windows. Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+>
+> To preview this feature in Outlook on Windows, you must install Version 2308 (Build 16731.20000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option to access Office beta builds.
 
 If a mail item doesn't meet the conditions of a Smart Alerts add-in, a dialog is shown to the user to alert them that additional actions may be needed before an item can be sent. The [send mode option](#available-send-mode-options) specified in the manifest determines the options that appear to the user in the dialog. **Don't Send** is an option that appears in the dialog no matter what send mode option you select. By default, selecting **Don't Send** cancels the send operation and closes the dialog. To guide the user on how to meet the conditions of your add-in, you can customize the text of this button and program it to open a task pane where you can provide additional information and functionality.
 
 ### Modify the Don't Send button text and functionality
 
-To modify the text of the **Don't Send** button or assign it a task pane command, you must set additional options in the [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) method of your event handler.
+To modify the text of the **Don't Send** button or assign it a task pane command, you must set additional options in the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method of your event handler.
 
-- The [cancelLabel](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-cancelLabel-member) option sets the text of the **Don't Send** button. Custom text must be a maximum of 20 characters.
-- The [commandId](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-commandId-member) option specifies the ID of the task pane that opens when the **Don't Send** button is selected. The value should match the ID assigned to the task pane in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
+- The [cancelLabel](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-cancellabel-member) option sets the text of the **Don't Send** button. Custom text must be a maximum of 20 characters.
+- The [commandId](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-commandid-member) option specifies the ID of the task pane that opens when the **Don't Send** button is selected. The value should match the ID assigned to the task pane in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
   - **XML manifest**: The `id` attribute of the **\<Control\>** element representing the task pane.
   - **Unified manifest for Microsoft 365 (preview)**: The "id" property of the task pane command in the "controls" array.
-- The [contextData](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-contextData-member) option specifies any JSON data you want to pass to the add-in when the **Don't Send** button is selected. If you include this option, you must also set the `commandId` option. Otherwise, the JSON data will be ignored.
+- The [contextData](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-contextdata-member) option specifies any JSON data you want to pass to the add-in when the **Don't Send** button is selected. If you include this option, you must also set the `commandId` option. Otherwise, the JSON data will be ignored.
 
 1. Navigate to the **./src/launchevent** folder, then open **launchevent.js**.
 1. Replace the **getAttachmentsCallback** function with the following code.
@@ -386,10 +388,12 @@ To modify the text of the **Don't Send** button or assign it a task pane command
 
 > [!NOTE]
 > The send mode option override feature is currently in preview in Outlook on Windows. Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+>
+> To preview this feature in Outlook on Windows, you must install Version 2308 (Build 16731.20000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option to access Office beta builds.
 
 There may be instances when you want your add-in to implement different send mode options. For example, you may want your add-in to enforce the **block** option on mail items that don't meet the information protection policies of your organization, but only have it apply the **prompt user** option to provide a recommendation if a user adds the incorrect recipient.
 
-To override the send mode option at runtime, you must set the [sendMode](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-sendMode-member) option in the [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) method of your event handler.
+To override the send mode option at runtime, you must set the [sendModeOverride](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-sendmodeoverride-member)option in the `event.completed` method of your event handler.
 
 1. Navigate to the **./src/launchevent** folder, then open **launchevent.js**.
 1. Replace the **getAttachmentsCallback** function with the following code.
@@ -410,7 +414,7 @@ To override the send mode option at runtime, you must set the [sendMode](/javasc
           errorMessage: "Looks like the body of your message includes an image or an inline file. Would you like to attach a copy of it to the message?",
           cancelLabel: "Attach a copy",
           commandId: "msgComposeOpenPaneButton",
-          sendMode: Office.MailboxEnums.SendModeOverride.PromptUser
+          sendModeOverride: Office.MailboxEnums.SendModeOverride.PromptUser
         });
       } else {
         event.completed({
