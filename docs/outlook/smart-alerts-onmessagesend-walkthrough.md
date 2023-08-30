@@ -339,17 +339,17 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 >
 > To preview this feature in Outlook on Windows, you must install Version 2308 (Build 16731.20000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option to access Office beta builds.
 
-If a mail item doesn't meet the conditions of a Smart Alerts add-in, a dialog is shown to the user to alert them that additional actions may be needed before an item can be sent. The [send mode option](#available-send-mode-options) specified in the manifest determines the options that appear to the user in the dialog. **Don't Send** is an option that appears in the dialog no matter what send mode option you select. By default, selecting **Don't Send** cancels the send operation and closes the dialog. To guide the user on how to meet the conditions of your add-in, you can customize the text of this button and program it to open a task pane where you can provide additional information and functionality.
+If a mail item doesn't meet the conditions of a Smart Alerts add-in, a dialog is shown to the user to alert them that additional actions may be needed before an item can be sent. The [send mode option](#available-send-mode-options) specified in the manifest determines the options that appear to the user in the dialog. The **Don't Send** option appears in the dialog no matter what send mode option you select. By default, selecting **Don't Send** cancels the send operation and closes the dialog. To provide the user with further guidance on how to meet the conditions of your add-in, customize the text of this button and program it to open a task pane where you can provide additional information and functionality.
 
 ### Modify the Don't Send button text and functionality
 
 To modify the text of the **Don't Send** button or assign it a task pane command, you must set additional options in the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method of your event handler.
 
-- The [cancelLabel](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-cancellabel-member) option sets the text of the **Don't Send** button. Custom text must be a maximum of 20 characters.
-- The [commandId](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-commandid-member) option specifies the ID of the task pane that opens when the **Don't Send** button is selected. The value should match the ID assigned to the task pane in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
+- The [cancelLabel](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-cancellabel-member) option customizes the text of the **Don't Send** button. Custom text must be a maximum of 20 characters.
+- The [commandId](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-commandid-member) option specifies the ID of the task pane that opens when the **Don't Send** button is selected. The value must match the task pane ID in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
   - **XML manifest**: The `id` attribute of the **\<Control\>** element representing the task pane.
   - **Unified manifest for Microsoft 365 (preview)**: The "id" property of the task pane command in the "controls" array.
-- The [contextData](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-contextdata-member) option specifies any JSON data you want to pass to the add-in when the **Don't Send** button is selected. If you include this option, you must also set the `commandId` option. Otherwise, the JSON data will be ignored.
+- The [contextData](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-contextdata-member) option specifies any JSON data you want to pass to the add-in when the **Don't Send** button is selected. If you include this option, you must also set the `commandId` option. Otherwise, the JSON data is ignored.
 
 1. Navigate to the **./src/launchevent** folder, then open **launchevent.js**.
 1. Replace the **getAttachmentsCallback** function with the following code.
@@ -393,7 +393,7 @@ To modify the text of the **Don't Send** button or assign it a task pane command
 
 There may be instances when you want your add-in to implement different send mode options. For example, you may want your add-in to enforce the **block** option on mail items that don't meet the information protection policies of your organization, but only have it apply the **prompt user** option to provide a recommendation if a user adds the incorrect recipient.
 
-To override the send mode option at runtime, you must set the [sendModeOverride](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-sendmodeoverride-member)option in the `event.completed` method of your event handler.
+To override the send mode option at runtime, you must set the [sendModeOverride](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-sendmodeoverride-member) option in the `event.completed` method of your event handler.
 
 1. Navigate to the **./src/launchevent** folder, then open **launchevent.js**.
 1. Replace the **getAttachmentsCallback** function with the following code.
@@ -742,13 +742,13 @@ Because the `OnMessageSend` and `OnAppointmentSend` events are supported through
 
 In addition to these constraints, only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate add-in.
 
-While you can change the Smart Alerts dialog message and **Don't Send** button to suit your add-in scenario through the `event.completed` method, the following can't be customized.
+While you can change the Smart Alerts dialog message and **Don't Send** button to suit your add-in scenario, the following can't be customized.
 
 - The dialog's title bar. Your add-in's name is always displayed there.
 - The message's format. For example, you can't change the text's font size and color or insert a bulleted list.
-- Event-based activation processing and progress information dialogs. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
+- Dialogs that provide information on event processing and progress. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
 
-If you customize the **Don't Send** button in the dialog, you can only assign a task pane command to it. Function commands aren't supported. If you select a **Don't Send** button with an assigned function command, it will ignore the command and will proceed with cancelling the send operation and closing the dialog. When this occurs, no error is shown or logged. For guidance on the types of add-in commands, see [Types of add-in commands](../design/add-in-commands.md#types-of-add-in-commands).
+If you customize the **Don't Send** button in the dialog, you can only assign a task pane command to it. Function commands aren't supported. If you select a **Don't Send** button with an assigned function command, the command is ignored and the add-in cancels the send operation and closes the dialog. When this occurs, no error is shown or logged. For guidance on the types of add-in commands, see [Types of add-in commands](../design/add-in-commands.md#types-of-add-in-commands).
 
 ## Differences between Smart Alerts and the on-send feature
 
