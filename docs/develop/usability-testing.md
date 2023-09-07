@@ -1,7 +1,7 @@
 ---
 title: Usability testing for Office Add-ins
 description: Learn how to test your add-in design with real users.
-ms.date: 08/18/2023
+ms.date: 09/06/2023
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 A great add-in design takes user behaviors into account. Because your own preconceptions influence your design decisions, it's important to test designs with real users to make sure that your add-ins work well for your customers.
 
-You can run usability tests in different ways. For many add-in developers, remote, unmoderated usability studies are the most time and cost effective. Several popular testing services make this easy; the following are some examples.
+You can run usability tests in different ways. For many add-in developers, remote, unmoderated usability studies are the most time and cost effective. Popular testing services include:
 
 - [UserTesting.com](https://www.UserTesting.com)
 - [Optimalworkshop.com](https://www.Optimalworkshop.com)
@@ -28,20 +28,20 @@ For more information, see [Selecting an Online Tool for Unmoderated Remote User 
 
 ## 2. Develop your research questions
 
-Research questions define the objectives of your research and guide your test plan. Your questions will help you identify participants to recruit and the tasks they'll perform. Make your research questions as specific as you can. You can also seek to answer broader questions.
+Research questions define the objectives of your research and guide your test plan. Your questions will help you identify participants to recruit and the tasks they'll perform. Understand when you need specific observations or broad input.
 
-The following are some examples of research questions.
-
-**Specific**
+### Specific question examples
 
 - Do users notice the "free trial" link on the landing page?
 - When users insert content from the add-in to their document, do they understand where in the document it's inserted?
 
-**Broad**
+### Broad question examples
 
 - What are the biggest pain points for the user in our add-in?
 - Do users understand the meaning of the icons in our command bar, before they click on them?
 - Can users easily find the settings menu?
+
+### User experience aspects
 
 It's important to get data on the entire user journey – from discovering your add-in, to installing and using it. Consider research questions that address the following aspects of the add-in user experience.
 
@@ -53,7 +53,7 @@ It's important to get data on the entire user journey – from discovering your 
 - How the add-in interacts with the document space of the Office application
 - How much control the user has over any content insertion flows
 
-For more information, see [Gathering factual responses vs. subjective data](https://help.usertesting.com/hc/articles/115003378572-Writing-effective-questions).
+For more information, see [Gathering factual responses vs. subjective data](https://help.usertesting.com/hc/articles/11880238504221).
 
 ## 3. Identify participants to target
 
@@ -61,7 +61,7 @@ Remote testing services can give you control over many characteristics of your t
 
 ## 4. Create the participant screener
 
-The screener is the set of questions and requirements you will present to prospective test participants to screen them for your test. Keep in mind that participants for services like UserTesting.com have a financial interest in qualifying for your test. It's a good idea to include trick questions in your screener if you want to exclude certain users from the test.
+The screener is the set of questions and requirements you present to prospective test participants to screen them for your test. Keep in mind that participants for services like UserTesting.com have a financial interest in qualifying for your test. It's a good idea to include trick questions in your screener if you want to exclude certain users from the test.
 
 For example, if you want to find participants who are familiar with GitHub, to filter out users who might misrepresent themselves, include fakes in the list of possible answers.
 
@@ -83,7 +83,7 @@ If you're planning to test a live build of your add-in, the following questions 
  a. Yes [*Must select*]  
  b. No [*Reject*]  
 
-For more information, see [Screener Questions Best Practices](https://help.usertesting.com/hc/articles/115003370731-Screener-question-best-practices).
+For more information, see [Screener Questions Best Practices](https://help.usertesting.com/hc/articles/11880418598557).
 
 ## 5. Create tasks and questions for participants
 
@@ -95,7 +95,7 @@ The main challenge in unmoderated testing is making sure your participants under
 
 Don't assume that your user will be on the screen they're supposed to be on at any given point during the test. Consider telling them what screen they need to be on to start the next task.
 
-For more information, see [Writing Great Tasks](https://help.usertesting.com/hc/articles/115003371651-Writing-great-tasks).
+For more information, see [Writing Great Tasks](https://help.usertesting.com/hc/articles/11880303389213).
 
 ## 6. Create a prototype to match the tasks and questions
 
@@ -135,5 +135,5 @@ In general, be careful about how you use your data to draw conclusions. Don't fa
 ## See also
 
 - [How to Conduct Usability Testing](https://whatpixel.com/howto-conduct-usability-testing/)  
-- [Best Practices for UserTesting](https://help.usertesting.com/hc/articles/115003370231-Best-practices-for-UserTesting)  
+- [Best Practices for UserTesting](https://help.usertesting.com/hc/articles/11880426022813)  
 - [Minimizing Bias](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  
