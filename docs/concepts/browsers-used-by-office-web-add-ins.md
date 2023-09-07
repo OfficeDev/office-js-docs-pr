@@ -153,6 +153,9 @@ To determine if a document is WIP-protected, follow these steps.
 1. Select **Info**.
 1. In the upper left of the **Info** page, just below the file name, a WIP-enabled document will have briefcase icon followed by **Managed by Work (…)**.
 
+> [!NOTE]
+> Support for WebView2 in WIP-enabled documents was added with build 16.0.16626.20132. If you're on an older build, your runtime defaults to **EdgeHTML (Microsoft Edge Legacy)**, regardless of policy.
+
 ## See also
 
 - [Requirements for Running Office Add-ins](requirements-for-running-office-add-ins.md)
