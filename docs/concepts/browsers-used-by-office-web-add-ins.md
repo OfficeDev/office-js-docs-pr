@@ -135,7 +135,7 @@ Directly downloading blobs as PDF files in an add-in isn't supported with EdgeHT
 
 ## WIP-protected documents
 
-There is an extra step needed for Add-ins to run in a document with [WIP (Windows Information Protection](/windows/uwp/enterprise/wip-hub) and use **WebView2 (Microsoft Edge Chromium-based)**. Add the WebView2 process, **msedgewebview2.exe**, to the protected apps list in your enterprise's WIP policy. An admin [adds this WIP policy through Intune](/mem/intune/apps/windows-information-protection-policy-create#to-add-a-wip-policy) with the following values.
+There's an extra step needed for Add-ins to run in a document with [WIP (Windows Information Protection)](/windows/uwp/enterprise/wip-hub) and use **WebView2 (Microsoft Edge Chromium-based)**. Add the WebView2 process, **msedgewebview2.exe**, to the protected apps list in your enterprise's WIP policy. An admin [adds this WIP policy through Intune](/mem/intune/apps/windows-information-protection-policy-create#to-add-a-wip-policy) with the following values.
 
 - **Name**: Webview2
 - **Publisher**: O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US
@@ -144,14 +144,14 @@ There is an extra step needed for Add-ins to run in a document with [WIP (Window
 - **Min Version**: *
 - **Max Version**: *
 
-If the WIP policy hasn't been added, the Add-in defaults to an older runtime. In the sections [Perpetual versions of Office on Windows](#perpetual-versions-of-office-on-windows) and [Microsoft 365 subscription versions of Office on Windows](#microsoft-365-subscription-versions-of-office-on-windows) earlier in this article, substitute **EdgeHTML (Microsoft Edge Legacy)** for **WebView2 (Microsoft Edge Chromium-based)** wherever the latter appears.
+If the WIP policy hasn't been added, the add-in defaults to an older runtime. In the sections [Perpetual versions of Office on Windows](#perpetual-versions-of-office-on-windows) and [Microsoft 365 subscription versions of Office on Windows](#microsoft-365-subscription-versions-of-office-on-windows) earlier in this article, substitute **EdgeHTML (Microsoft Edge Legacy)** for **WebView2 (Microsoft Edge Chromium-based)** wherever the latter appears.
 
 To determine if a document is WIP-protected, follow these steps.
 
 1. Open the file.
 1. Select the **File** tab on the ribbon.
 1. Select **Info**.
-1. In the upper left of the **Info** page, just below the file name, a WIP-enabled document will have briefcase icon followed by **Managed by Work (…)**.
+1. In the upper section of the **Info** page, just below the file name, a WIP-enabled document will have a briefcase icon followed by **Managed by Work (…)**.
 
 > [!NOTE]
 > Support for WebView2 in WIP-enabled documents was added with build 16.0.16626.20132. If you're on an older build, your runtime defaults to **EdgeHTML (Microsoft Edge Legacy)**, regardless of policy.
