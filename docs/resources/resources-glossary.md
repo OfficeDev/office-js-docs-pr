@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 03/21/2023
+ms.date: 09/11/2023
 ms.topic: glossary
 ms.localizationpriority: medium
 ---
@@ -136,7 +136,7 @@ See also: [custom functions runtime](#custom-functions-runtime), [shared runtime
 
 ## shared runtime
 
-A **shared runtime**, enables all code in your add-in, including task pane, add-in commands, and custom functions, to run in the same runtime and continue running even when the task pane is closed. See [shared runtime](../testing/runtimes.md#shared-runtime) and [Tips for using the shared runtime in your Office Add-in](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) to learn more.
+A **shared runtime**, enables code in your task pane, function commands, and custom functions, to run in the same runtime and continue running even when the task pane is closed. (Code in dialog generally runs in a separate runtime even when the add-in is configured to use a shared runtime.) See [shared runtime](../testing/runtimes.md#shared-runtime) and [Tips for using the shared runtime in your Office Add-in](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) to learn more.
 
 See also: [custom functions runtime](#custom-functions-runtime), [runtime](#runtime).
 
