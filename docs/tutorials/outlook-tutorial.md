@@ -115,7 +115,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - [Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML.
     - [URI.js](https://github.com/medialize/URI.js) library to build relative URLs.
-    - [jquery](https://jquery.com/) library to simplify DOM interactions.
+    - [jQuery](https://jquery.com/) library to simplify DOM interactions.
 
      To install these tools for your project, run the following command in the root directory of the project.
 
