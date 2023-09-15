@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 09/12/2023
+ms.date: 09/15/2023
 ms.service: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -16,14 +16,12 @@ In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add
 > - Adds the [Bing](https://www.bing.com) photo of the day to a slide
 > - Adds text to a slide
 > - Gets slide metadata
+> - Adds new slides
 > - Navigates between slides
 
 ## Prerequisites
 
-- [Visual Studio 2019, *version 16.10.3 or earlier*, or Visual Studio 2022](https://www.visualstudio.com/vs/), with the **Office/SharePoint development** workload installed.
-
-    > [!IMPORTANT]
-    > Some versions of Visual Studio 2019 after 16.10.3 have a bug that prevents this tutorial from being completed. Use an earlier version of Visual Studio 2019 or use Visual Studio 2022.
+- [Visual Studio 2019 or later](https://www.visualstudio.com/vs/), with the **Office/SharePoint development** workload installed.
 
     > [!NOTE]
     > If you've previously installed Visual Studio, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.
@@ -74,7 +72,7 @@ Edit the add-in code as follows to create the framework that you'll use to imple
             <!-- TODO1: Create the insert-image button. -->
             <!-- TODO3: Create the insert-text button. -->
             <!-- TODO4: Create the get-slide-metadata button. -->
-            <!-- TODO5: Create the go-to-slide buttons. -->
+            <!-- TODO5: Create the add-slides and go-to-slide buttons. -->
         </div>
     </div>
     ```
@@ -97,7 +95,7 @@ Edit the add-in code as follows to create the framework that you'll use to imple
                 // TODO1: Assign event handler for insert-image button.
                 // TODO4: Assign event handler for insert-text button.
                 // TODO6: Assign event handler for get-slide-metadata button.
-                // TODO8: Assign event handlers for the four navigation buttons.
+                // TODO8: Assign event handlers for add-slides and the four navigation buttons.
             });
         });
 
@@ -109,7 +107,7 @@ Edit the add-in code as follows to create the framework that you'll use to imple
 
         // TODO7: Define the getSlideMetadata function.
 
-        // TODO9: Define the navigation functions.
+        // TODO9: Define the addSlides and navigation functions.
 
         // Helper function for displaying notifications.
         function showNotification(header, content) {
@@ -135,8 +133,79 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
 1. In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button. Visual Studio creates and opens the **PhotoController.cs** file.
 
-    > [!NOTE]
-    > The scaffolding process doesn't complete properly on some versions of Visual Studio 2019 after version 16.10.3. Visual Studio 2022 isn't affected.
+    > [!IMPORTANT]
+    > The scaffolding process doesn't complete properly on some versions of Visual Studio after version 16.10.3. If you aren't missing the **Global.asax** and **./App_Start/WebApiConfig.cs** files, then skip to step 6.
+
+1. If you're missing scaffolding files from the **HelloWorldWeb** project, add them as follows.
+
+    1. Using Solution Explorer, add a new folder named **App_Start** to the **HelloWorldWeb** project.
+
+    1. Right-click the **App_Start** folder and select **Add** > **Class...**.
+
+    1. In the **Add New Item** dialog, name the file **WebApiConfig.cs** then choose the **Add** button.
+
+    1. Replace the entire contents of the **WebApiConfig.cs** file with the following code.
+
+        ```cs
+        using System;
+        using System.Collections.Generic;
+        using System.Linq;
+        using System.Web;
+        using System.Web.Http;
+        
+        namespace HelloWorldWeb.App_Start
+        {
+            public static class WebApiConfig
+            {
+                public static void Register(HttpConfiguration config)
+                {
+                    config.MapHttpAttributeRoutes();
+        
+                    config.Routes.MapHttpRoute(
+                        name: "DefaultApi",
+                        routeTemplate: "api/{controller}/{id}",
+                        defaults: new { id = RouteParameter.Optional }
+                    );
+                }
+            }
+        }
+        ```
+
+    1. In the Solution Explorer, right-click the **HelloWorldWeb** project and select **Add** > **New Item...**.
+
+    1. In the **Add New Item** dialog, search for "global", select **Global Application Class**, then choose the **Add** button. By default, the file is named **Global.asax**.
+
+    1. Replace the entire contents of the **Global.asax.cs** file with the following code.
+
+        ```cs
+        using HelloWorldWeb.App_Start;
+        using System;
+        using System.Collections.Generic;
+        using System.Linq;
+        using System.Web;
+        using System.Web.Http;
+        using System.Web.Security;
+        using System.Web.SessionState;
+        
+        namespace HelloWorldWeb
+        {
+            public class WebApiApplication : System.Web.HttpApplication
+            {
+                protected void Application_Start()
+                {
+                    GlobalConfiguration.Configure(WebApiConfig.Register);
+                }
+            }
+        }
+        ```
+
+    1. In the Solution Explorer, right-click the **Global.asax** file and choose **View Markup**.
+
+    1. Replace the entire contents of the **Global.asax** file with the following code.
+
+        ```XML
+        <%@ Application Codebehind="Global.asax.cs" Inherits="HelloWorldWeb.WebApiApplication" Language="C#" %>
+        ```
 
 1. Replace the entire contents of the **PhotoController.cs** file with the following code that calls the Bing service to retrieve the photo of the day as a Base64-encoded string. When you use the Office JavaScript API to insert an image into a document, the image data must be specified as a Base64-encoded string.
 
@@ -208,7 +277,9 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
     function insertImage() {
         // Get image from web service (as a Base64-encoded string).
         $.ajax({
-            url: "/api/Photo/", success: function (result) {
+            url: "/api/photo/",
+            dataType: "text",
+            success: function (result) {
                 insertImageFromBase64String(result);
             }, error: function (xhr, status, error) {
                 showNotification("Error", "Oops, something went wrong.");
@@ -412,6 +483,12 @@ Complete the following steps to add code that navigates between the slides of a 
 
     ```html
     <br /><br />
+    <button class="Button Button--primary" id="add-slides">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Add Slides</span>
+        <span class="Button-description">Adds 2 slides.</span>
+    </button>
+    <br /><br />
     <button class="Button Button--primary" id="go-to-first-slide">
         <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
         <span class="Button-label">Go to First Slide</span>
@@ -437,18 +514,31 @@ Complete the following steps to add code that navigates between the slides of a 
     </button>
     ```
 
-1. In the **Home.js** file, replace `TODO8` with the following code to assign the event handlers for the four navigation buttons.
+1. In the **Home.js** file, replace `TODO8` with the following code to assign the event handlers for the **Add Slides** and four navigation buttons.
 
     ```js
+    $('#add-slides').click(addSlides);
     $('#go-to-first-slide').click(goToFirstSlide);
     $('#go-to-next-slide').click(goToNextSlide);
     $('#go-to-previous-slide').click(goToPreviousSlide);
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-1. In the **Home.js** file, replace `TODO9` with the following code to define the navigation functions. Each of these functions uses the `goToByIdAsync` method to select a slide based upon its position in the document (first, last, previous, and next).
+1. In the **Home.js** file, replace `TODO9` with the following code to define the `addSlides` and navigation functions. Each of these functions uses the `goToByIdAsync` method to select a slide based upon its position in the document (first, last, previous, and next).
 
     ```js
+    async function addSlides() {
+        await PowerPoint.run(async function (context) {
+            context.presentation.slides.add();
+            context.presentation.slides.add();
+
+            await context.sync();
+
+            showNotification("Success", "Slides added.");
+            goToLastSlide();
+        });
+    }
+
     function goToFirstSlide() {
         Office.context.document.goToByIdAsync(Office.Index.First, Office.GoToType.Index,
             function (asyncResult) {
@@ -496,23 +586,25 @@ Complete the following steps to add code that navigates between the slides of a 
 
     ![The Show Taskpane button highlighted on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-1. Use the **New Slide** button on the ribbon of the **Home** tab to add two new slides to the document.
+1. In the task pane, choose the **Add Slides** button. Two new slides are added to the document and the last slide in the document is selected and displayed.
+
+    ![The Add Slides button highlighted in the add-in.](../images/powerpoint-tutorial-add-slides.png)
 
 1. In the task pane, choose the **Go to First Slide** button. The first slide in the document is selected and displayed.
 
-    ![The Go to First Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-first-slide.png)
+    ![The Go to First Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-first-slide-1.png)
 
 1. In the task pane, choose the **Go to Next Slide** button. The next slide in the document is selected and displayed.
 
-    ![The Go to Next Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-next-slide.png)
+    ![The Go to Next Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-next-slide-1.png)
 
 1. In the task pane, choose the **Go to Previous Slide** button. The previous slide in the document is selected and displayed.
 
-    ![The Go to Previous Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-previous-slide.png)
+    ![The Go to Previous Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-previous-slide-1.png)
 
 1. In the task pane, choose the **Go to Last Slide** button. The last slide in the document is selected and displayed.
 
-    ![The Go to Last Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-last-slide.png)
+    ![The Go to Last Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-last-slide-1.png)
 
 1. In Visual Studio, stop the add-in by pressing **Shift+F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
