@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 09/14/2023
+ms.date: 09/15/2023
 ms.service: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -133,8 +133,79 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
 1. In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button. Visual Studio creates and opens the **PhotoController.cs** file.
 
-    > [!NOTE]
-    > The scaffolding process doesn't complete properly on some versions of Visual Studio after version 16.10.3. If you're missing the **Global.asax** and **./App_Start/WebApiConfig.cs**, then follow the instructions provided at the end of this section.
+    > [!IMPORTANT]
+    > The scaffolding process doesn't complete properly on some versions of Visual Studio after version 16.10.3. If you aren't missing the **Global.asax** and **./App_Start/WebApiConfig.cs** files, then skip to step 6.
+
+1. If you're missing scaffolding files from the **HelloWorldWeb** project, add them as follows.
+
+    1. Using Solution Explorer, add a new folder named **App_Start** to the **HelloWorldWeb** project.
+
+    1. Right-click the **App_Start** folder and select **Add** > **Class...**.
+
+    1. In the **Add New Item** dialog, name the file **WebApiConfig.cs** then choose the **Add** button.
+
+    1. Replace the entire contents of the **WebApiConfig.cs** file with the following code.
+
+        ```cs
+        using System;
+        using System.Collections.Generic;
+        using System.Linq;
+        using System.Web;
+        using System.Web.Http;
+        
+        namespace HelloWorldWeb.App_Start
+        {
+            public static class WebApiConfig
+            {
+                public static void Register(HttpConfiguration config)
+                {
+                    config.MapHttpAttributeRoutes();
+        
+                    config.Routes.MapHttpRoute(
+                        name: "DefaultApi",
+                        routeTemplate: "api/{controller}/{id}",
+                        defaults: new { id = RouteParameter.Optional }
+                    );
+                }
+            }
+        }
+        ```
+
+    1. In the Solution Explorer, right-click the **HelloWorldWeb** project and select **Add** > **New Item...**.
+
+    1. In the **Add New Item** dialog, search for "global", select **Global Application Class**, then choose the **Add** button. By default, the file is named **Global.asax**.
+
+    1. Replace the entire contents of the **Global.asax.cs** file with the following code.
+
+        ```cs
+        using HelloWorldWeb.App_Start;
+        using System;
+        using System.Collections.Generic;
+        using System.Linq;
+        using System.Web;
+        using System.Web.Http;
+        using System.Web.Security;
+        using System.Web.SessionState;
+        
+        namespace HelloWorldWeb
+        {
+            public class WebApiApplication : System.Web.HttpApplication
+            {
+                protected void Application_Start()
+                {
+                    GlobalConfiguration.Configure(WebApiConfig.Register);
+                }
+            }
+        }
+        ```
+
+    1. In the Solution Explorer, right-click the **Global.asax** file and choose **View Markup**.
+
+    1. Replace the entire contents of the **Global.asax** file with the following code.
+
+        ```XML
+        <%@ Application Codebehind="Global.asax.cs" Inherits="HelloWorldWeb.WebApiApplication" Language="C#" %>
+        ```
 
 1. Replace the entire contents of the **PhotoController.cs** file with the following code that calls the Bing service to retrieve the photo of the day as a Base64-encoded string. When you use the Office JavaScript API to insert an image into a document, the image data must be specified as a Base64-encoded string.
 
@@ -236,85 +307,6 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
             });
     }
     ```
-
-# [Successful scaffolding](#tab/successful)
-
-If you're missing scaffolding files from the **HelloWorldWeb** project (e.g., **Global.asax**), select the "Missing scaffolding" tab.
-
-# [Missing scaffolding](#tab/missing)
-
-If you're missing scaffolding files from the **HelloWorldWeb** project, add them as follows.
-
-1. Using Solution Explorer, add a new folder named **App_Start** to the **HelloWorldWeb** project.
-
-1. Right-click the **App_Start** folder and select **Add** > **Class...**.
-
-1. In the **Add New Item** dialog, name the file **WebApiConfig.cs** then choose the **Add** button.
-
-1. Replace the entire contents of the **WebApiConfig.cs** file with the following code.
-
-    ```cs
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
-    using System.Web.Http;
-    
-    namespace HelloWorldWeb.App_Start
-    {
-        public static class WebApiConfig
-        {
-            public static void Register(HttpConfiguration config)
-            {
-                config.MapHttpAttributeRoutes();
-    
-                config.Routes.MapHttpRoute(
-                    name: "DefaultApi",
-                    routeTemplate: "api/{controller}/{id}",
-                    defaults: new { id = RouteParameter.Optional }
-                );
-            }
-        }
-    }
-    ```
-
-1. In the Solution Explorer, right-click the **HelloWorldWeb** project and select **Add** > **New Item...**.
-
-1. In the **Add New Item** dialog, search for "global", select **Global Application Class**, then choose the **Add** button. By default, the file is named **Global.asax**.
-
-1. Replace the entire contents of the **Global.asax.cs** file with the following code.
-
-    ```cs
-    using HelloWorldWeb.App_Start;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
-    using System.Web.Http;
-    using System.Web.Security;
-    using System.Web.SessionState;
-    
-    namespace HelloWorldWeb
-    {
-        public class WebApiApplication : System.Web.HttpApplication
-        {
-            protected void Application_Start()
-            {
-                GlobalConfiguration.Configure(WebApiConfig.Register);
-            }
-        }
-    }
-    ```
-
-1. In the Solution Explorer, right-click the **Global.asax** file and choose **View Markup**.
-
-1. Replace the entire contents of the **Global.asax** file with the following code.
-
-    ```XML
-    <%@ Application Codebehind="Global.asax.cs" Inherits="HelloWorldWeb.WebApiApplication" Language="C#" %>
-    ```
-
----
 
 ### Test the add-in
 
