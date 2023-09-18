@@ -21,6 +21,9 @@ In this tutorial, you will:
 > - Implement a UI-less button that invokes a function
 > - Implement a task pane that inserts content into the body of a message
 
+> [!TIP]
+> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/outlook-tutorial).
+
 ## Prerequisites
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
