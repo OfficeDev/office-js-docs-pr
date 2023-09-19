@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 09/15/2023
+ms.date: 09/19/2023
 ms.service: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -18,6 +18,9 @@ In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add
 > - Gets slide metadata
 > - Adds new slides
 > - Navigates between slides
+
+> [!TIP]
+> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial).
 
 ## Prerequisites
 
@@ -134,7 +137,9 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 1. In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button. Visual Studio creates and opens the **PhotoController.cs** file.
 
     > [!IMPORTANT]
-    > The scaffolding process doesn't complete properly on some versions of Visual Studio after version 16.10.3. If you aren't missing the **Global.asax** and **./App_Start/WebApiConfig.cs** files, then skip to step 6.
+    > The scaffolding process doesn't complete properly on some versions of Visual Studio after version 16.10.3. If you have the **Global.asax** and **./App_Start/WebApiConfig.cs** files, then skip to step 6.
+    >
+    > ![The Visual Studio Solution Explorer window showing the scaffolded files highlighted in the HelloWorldWeb project.](../images/powerpoint-tutorial-solution-explorer-scaffolded.png)
 
 1. If you're missing scaffolding files from the **HelloWorldWeb** project, add them as follows.
 
@@ -321,6 +326,13 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 1. In the task pane, choose the **Insert Image** button to add the Bing photo of the day to the current slide.
 
     ![The PowerPoint add-in with the Insert Image button highlighted.](../images/powerpoint-tutorial-insert-image-button.png)
+
+    > [!NOTE]
+    > If you get an error "Could not find file [...]\bin\roslyn\csc.exe", then do the following:
+    >
+    > 1. Open the **.\Web.config** file.
+    > 1. Find the **\<compiler\>** node for the .cs `extension`, then remove the `type` attribute and its value.
+    > 1. Save the file.
 
 1. In Visual Studio, stop the add-in by pressing **Shift+F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 

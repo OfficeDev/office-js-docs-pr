@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
-ms.date: 09/15/2023
+ms.date: 09/19/2023
 ms.service: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -118,7 +118,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - [Showdown](https://github.com/showdownjs/showdown) library to convert Markdown to HTML.
     - [URI.js](https://github.com/medialize/URI.js) library to build relative URLs.
-    - [jquery](https://jquery.com/) library to simplify DOM interactions.
+    - [jQuery](https://jquery.com/) library to simplify DOM interactions.
 
      To install these tools for your project, run the following command in the root directory of the project.
 
@@ -278,7 +278,11 @@ The previous code references labels, tooltips, and URLs that you need to define 
 
 You must reinstall the add-in for the manifest changes to take effect.
 
-1. If the web server is running, close the node command window.
+1. If the web server is running, run the following command.
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. Run the following command to start the local web server and automatically sideload your add-in.
 
@@ -531,7 +535,7 @@ Finally, open the **webpack.config.js** file found in the root directory of the 
     ```js
     entry: {
       polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
-      taskpane: "./src/taskpane/taskpane.js",
+      taskpane: ["./src/taskpane/taskpane.js", "./src/taskpane/taskpane.html"],
       commands: "./src/commands/commands.js",
       dialog: "./src/settings/dialog.js",
     },
