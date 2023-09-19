@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 09/15/2023
+ms.date: 09/19/2023
 ms.service: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -18,6 +18,9 @@ In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add
 > - Gets slide metadata
 > - Adds new slides
 > - Navigates between slides
+
+> [!TIP]
+> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial).
 
 ## Prerequisites
 
