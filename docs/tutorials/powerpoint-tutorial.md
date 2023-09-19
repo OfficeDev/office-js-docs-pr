@@ -134,7 +134,9 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 1. In the **Add Controller** dialog window, enter **PhotoController** as the controller name and choose the **Add** button. Visual Studio creates and opens the **PhotoController.cs** file.
 
     > [!IMPORTANT]
-    > The scaffolding process doesn't complete properly on some versions of Visual Studio after version 16.10.3. If you aren't missing the **Global.asax** and **./App_Start/WebApiConfig.cs** files, then skip to step 6.
+    > The scaffolding process doesn't complete properly on some versions of Visual Studio after version 16.10.3. If you have the **Global.asax** and **./App_Start/WebApiConfig.cs** files, then skip to step 6.
+    >
+    > ![The Visual Studio Solution Explorer window showing the scaffolded files highlighted in the HelloWorldWeb project.](../images/powerpoint-tutorial-solution-explorer-scaffolded.png)
 
 1. If you're missing scaffolding files from the **HelloWorldWeb** project, add them as follows.
 
