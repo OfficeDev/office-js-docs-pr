@@ -102,7 +102,7 @@ Edit the add-in code as follows to create the framework that you'll use to imple
             });
         });
 
-        // TODO2: Define the insertImage function. 
+        // TODO2: Define the insertImage function.
 
         // TODO3: Define the insertImageFromBase64String function.
 
