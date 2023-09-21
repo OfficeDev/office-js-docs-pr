@@ -77,18 +77,27 @@ Complete the following steps to add code that inserts an image into a slide.
 
 1. Open the file **./src/taskpane/taskpane.html**. This file contains the HTML markup for the task pane.
 
-1. Locate the `<main>` element and replace it with the following markup, and save the file.
+1. Locate the `<body>` element and replace it with the following markup, then save the file.
 
     ```html
-    <!-- TODO2: Update the header node. -->
-    <main id="app-body" class="ms-welcome__main" style="display: none;">
-        <div class="padding">
-            <!-- TODO1: Create the insert-image button. -->
-            <!-- TODO3: Create the insert-text button. -->
-            <!-- TODO4: Create the get-slide-metadata button. -->
-            <!-- TODO5: Create the add-slides and go-to-slide buttons. -->
-        </div>
-    </main>
+    <body class="ms-font-m ms-welcome ms-Fabric">
+        <header class="ms-welcome__header ms-bgColor-neutralLighter">
+            <img width="90" height="90" src="../../assets/logo-filled.png" alt="Contoso" title="Contoso" />
+            <h1 class="ms-font-su">Welcome</h1>
+        </header>
+        <!-- TODO2: Update the header node. -->
+        <section id="sideload-msg" class="ms-welcome__main">
+            <h2 class="ms-font-xl">Please <a target="_blank" href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing">sideload</a> your add-in to see app body.</h2>
+        </section>
+        <main id="app-body" class="ms-welcome__main" style="display: none;">
+            <div class="padding">
+                <!-- TODO1: Create the insert-image button. -->
+                <!-- TODO3: Create the insert-text button. -->
+                <!-- TODO4: Create the get-slide-metadata button. -->
+                <!-- TODO5: Create the add-slides and go-to-slide buttons. -->
+            </div>
+        </main>
+    </body>
     ```
 
 1. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application. Replace the entire contents with the following code and save the file.
@@ -221,21 +230,19 @@ Complete the following steps to add code that inserts an image into a slide.
 
 Complete the following steps to add markup that customizes the task pane UI.
 
-1. In the **Home.html** file, replace `TODO2` with the following markup to add a header section and title to the task pane. Note:
+1. In the **taskpane.html** file, replace the current header section and `TODO2` with the following markup to update the header section and title in the task pane. Note:
 
-    - The styles that begin with `ms-` are defined by [Fabric Core in Office Add-ins](../design/fabric-core.md), a JavaScript front-end framework for building user experiences for Office. The **Home.html** file includes a reference to the Fabric Core stylesheet.
+    - The styles that begin with `ms-` are defined by [Fabric Core in Office Add-ins](../design/fabric-core.md), a JavaScript front-end framework for building user experiences for Office. The **taskpane.html** file includes a reference to the Fabric Core stylesheet.
 
     ```html
-    <div id="content-header">
+    <header id="content-header">
         <div class="ms-Grid ms-bgColor-neutralPrimary">
             <div class="ms-Grid-row">
                 <div class="padding ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12"> <div class="ms-font-xl ms-fontColor-white ms-fontWeight-semibold">My PowerPoint add-in</div></div>
             </div>
         </div>
-    </div>
+    </header>
     ```
-
-1. In the **Home.html** file, find the **div** with `class="footer"` and delete that entire **div** to remove the footer section from the task pane.
 
 1. Save all your changes to the project.
 
@@ -266,7 +273,7 @@ Complete the following steps to add markup that customizes the task pane UI.
 
     ![The Show Taskpane button highlighted on the PowerPoint Home ribbon.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-1. Notice that the task pane now contains a header section and title, and no longer contains a footer section.
+1. Notice that the task pane now contains an updated header section and title.
 
     ![The PowerPoint add-in with Insert Image button.](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
@@ -274,19 +281,19 @@ Complete the following steps to add markup that customizes the task pane UI.
 
 Complete the following steps to add code that inserts text into the title slide which contains image.
 
-1. In the **Home.html** file, replace `TODO3` with the following markup. This markup defines the **Insert Text** button that will appear within the add-in's task pane.
+1. In the **taskpane.html** file, replace `TODO3` with the following markup. This markup defines the **Insert Text** button that will appear within the add-in's task pane.
 
     ```html
     <button class="ms-Button" id="insert-text">Insert Text</button><br/><br/>
     ```
 
-1. In the **Home.js** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.
+1. In the **taskpane.js** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.
 
     ```js
     document.getElementById("insert-text").onclick = () => tryCatch(insertText);
     ```
 
-1. In the **Home.js** file, replace `TODO5` with the following code to define the `insertText` function. This function inserts text into the current slide.
+1. In the **taskpane.js** file, replace `TODO5` with the following code to define the `insertText` function. This function inserts text into the current slide.
 
     ```js
     function insertText() {
@@ -346,19 +353,19 @@ Complete the following steps to add code that inserts text into the title slide 
 
 Complete the following steps to add code that retrieves metadata for the selected slide.
 
-1. In the **Home.html** file, replace `TODO4` with the following markup. This markup defines the **Get Slide Metadata** button that will appear within the add-in's task pane.
+1. In the **taskpane.html** file, replace `TODO4` with the following markup. This markup defines the **Get Slide Metadata** button that will appear within the add-in's task pane.
 
     ```html
     <button class="ms-Button" id="get-slide-metadata">Get Slide Metadata</button><br/><br/>
     ```
 
-1. In the **Home.js** file, replace `TODO6` with the following code to assign the event handler for the **Get Slide Metadata** button.
+1. In the **taskpane.js** file, replace `TODO6` with the following code to assign the event handler for the **Get Slide Metadata** button.
 
     ```js
     document.getElementById("get-slide-metadata").onclick = () => tryCatch(getSlideMetadata);
     ```
 
-1. In the **Home.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slides and writes it to a popup dialog window within the add-in task pane.
+1. In the **taskpane.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slides and writes it to a popup dialog window within the add-in task pane.
 
     ```js
     function getSlideMetadata() {
@@ -417,7 +424,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
 
 Complete the following steps to add code that navigates between the slides of a document.
 
-1. In the **Home.html** file, replace `TODO5` with the following markup. This markup defines the four navigation buttons that will appear within the add-in's task pane.
+1. In the **taskpane.html** file, replace `TODO5` with the following markup. This markup defines the four navigation buttons that will appear within the add-in's task pane.
 
     ```html
     <button class="ms-Button" id="add-slides">Add Slides</button><br/><br/>
@@ -427,7 +434,7 @@ Complete the following steps to add code that navigates between the slides of a 
     <button class="ms-Button" id="go-to-last-slide">Go to Last Slide</button><br/><br/>
     ```
 
-1. In the **Home.js** file, replace `TODO8` with the following code to assign the event handlers for the **Add Slides** and four navigation buttons.
+1. In the **taskpane.js** file, replace `TODO8` with the following code to assign the event handlers for the **Add Slides** and four navigation buttons.
 
     ```js
     document.getElementById('add-slides').onclick = () => tryCatch(addSlides);
@@ -437,7 +444,7 @@ Complete the following steps to add code that navigates between the slides of a 
     document.getElementById('go-to-last-slide').onclick = () => tryCatch(goToLastSlide);
     ```
 
-1. In the **Home.js** file, replace `TODO9` with the following code to define the `addSlides` and navigation functions. Each of these functions uses the `goToByIdAsync` method to select a slide based upon its position in the document (first, last, previous, and next).
+1. In the **taskpane.js** file, replace `TODO9` with the following code to define the `addSlides` and navigation functions. Each of these functions uses the `goToByIdAsync` method to select a slide based upon its position in the document (first, last, previous, and next).
 
     ```js
     async function addSlides() {
@@ -544,7 +551,7 @@ Complete the following steps to add code that navigates between the slides of a 
 
     ![The Go to Last Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-last-slide-1.png)
 
-1. If the web server is running, run the following command to stop the server.
+1. If the web server is running, run the following command when you want to stop the server.
 
     ```command&nbsp;line
     npm stop
