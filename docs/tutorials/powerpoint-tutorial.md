@@ -81,11 +81,11 @@ Complete the following steps to add code that inserts an image into a slide.
 
     ```html
     <body class="ms-font-m ms-welcome ms-Fabric">
+        <!-- TODO2: Update the header node. -->
         <header class="ms-welcome__header ms-bgColor-neutralLighter">
             <img width="90" height="90" src="../../assets/logo-filled.png" alt="Contoso" title="Contoso" />
             <h1 class="ms-font-su">Welcome</h1>
         </header>
-        <!-- TODO2: Update the header node. -->
         <section id="sideload-msg" class="ms-welcome__main">
             <h2 class="ms-font-xl">Please <a target="_blank" href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing">sideload</a> your add-in to see app body.</h2>
         </section>
@@ -97,6 +97,12 @@ Complete the following steps to add code that inserts an image into a slide.
                 <!-- TODO5: Create the add-slides and go-to-slide buttons. -->
             </div>
         </main>
+        <section id="display-msg" class="ms-welcome__main">
+            <div class="padding">
+                <h3>Message</h3>
+                <div id="message"></div>
+            </div>
+        </section>
     </body>
     ```
 
@@ -130,6 +136,15 @@ Complete the following steps to add code that inserts an image into a slide.
 
     // TODO9: Define the addSlides and navigation functions.
 
+    async function clearMessage(callback) {
+      document.getElementById("message").innerText = "";
+      await callback();
+    }
+
+    function setMessage(message) {
+        document.getElementById("message").innerText = message;
+    }
+
     /** Default helper for invoking an action and handling errors. */
     async function tryCatch(callback) {
         try {
@@ -138,14 +153,6 @@ Complete the following steps to add code that inserts an image into a slide.
             // Note: In a production add-in, you'd want to notify the user through your add-in's UI.
             console.error(error);
         }
-    }
-
-    // Helper function for displaying notifications.
-    function showNotification(header, content) {
-        $("#notification-header").text(header);
-        $("#notification-body").text(content);
-        messageBanner.showBanner();
-        messageBanner.toggleExpansion();
     }
     ```
 
@@ -164,7 +171,7 @@ Complete the following steps to add code that inserts an image into a slide.
 1. In the **taskpane.js** file, replace `TODO2` with the following code to assign the event handler for the **Insert Image** button.
 
     ```js
-    document.getElementById("insert-image").onclick = () => tryCatch(insertImage);
+    document.getElementById("insert-image").onclick = () => clearMessage(insertImage);
     ```
 
 1. In the **taskpane.js** file, replace `TODO3` with the following code to define `insertImage` function. This function uses the Office JavaScript API to insert the image into the document. Note:
@@ -181,7 +188,7 @@ Complete the following steps to add code that inserts an image into a slide.
         },
             function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-                    showNotification("Error", asyncResult.error.message);
+                    setMessage("Error: " + asyncResult.error.message);
                 }
             });
     }
@@ -290,7 +297,7 @@ Complete the following steps to add code that inserts text into the title slide 
 1. In the **taskpane.js** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.
 
     ```js
-    document.getElementById("insert-text").onclick = () => tryCatch(insertText);
+    document.getElementById("insert-text").onclick = () => clearMessage(insertText);
     ```
 
 1. In the **taskpane.js** file, replace `TODO5` with the following code to define the `insertText` function. This function inserts text into the current slide.
@@ -300,7 +307,7 @@ Complete the following steps to add code that inserts text into the title slide 
         Office.context.document.setSelectedDataAsync('Hello World!',
             function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-                    showNotification("Error", asyncResult.error.message);
+                    setMessage("Error: " + asyncResult.error.message);
                 }
             });
     }
@@ -362,19 +369,19 @@ Complete the following steps to add code that retrieves metadata for the selecte
 1. In the **taskpane.js** file, replace `TODO6` with the following code to assign the event handler for the **Get Slide Metadata** button.
 
     ```js
-    document.getElementById("get-slide-metadata").onclick = () => tryCatch(getSlideMetadata);
+    document.getElementById("get-slide-metadata").onclick = () => clearMessage(getSlideMetadata);
     ```
 
-1. In the **taskpane.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slides and writes it to a popup dialog window within the add-in task pane.
+1. In the **taskpane.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slides and writes it to the Message section in the add-in task pane.
 
     ```js
     function getSlideMetadata() {
         Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange,
             function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-                    showNotification("Error", asyncResult.error.message);
+                    setMessage("Error: " + asyncResult.error.message);
                 } else {
-                    showNotification("Metadata for selected slides:", JSON.stringify(asyncResult.value), null, 2);
+                    setMessage("Metadata for selected slides: " + JSON.stringify(asyncResult.value));
                 }
             }
         );
@@ -416,7 +423,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
 
     ![The Show Taskpane button on the PowerPoint Home ribbon.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-1. In the task pane, choose the **Get Slide Metadata** button to get the metadata for the selected slide. The slide metadata is written to the popup dialog window at the bottom of the task pane. In this case, the `slides` array within the JSON metadata contains one object that specifies the `id`, `title`, and `index` of the selected slide. If multiple slides had been selected when you retrieved slide metadata, the `slides` array within the JSON metadata would contain one object for each selected slide.
+1. In the task pane, choose the **Get Slide Metadata** button to get the metadata for the selected slide. The slide metadata is written in the Message section below the buttons in the task pane. In this case, the `slides` array within the JSON metadata contains one object that specifies the `id`, `title`, and `index` of the selected slide. If multiple slides had been selected when you retrieved slide metadata, the `slides` array within the JSON metadata would contain one object for each selected slide.
 
     ![The Get Slide Metadata button highlighted in the add-in.](../images/powerpoint-tutorial-get-slide-metadata.png)
 
@@ -438,10 +445,10 @@ Complete the following steps to add code that navigates between the slides of a 
 
     ```js
     document.getElementById('add-slides').onclick = () => tryCatch(addSlides);
-    document.getElementById('go-to-first-slide').onclick = () => tryCatch(goToFirstSlide);
-    document.getElementById('go-to-next-slide').onclick = () => tryCatch(goToNextSlide);
-    document.getElementById('go-to-previous-slide').onclick = () => tryCatch(goToPreviousSlide);
-    document.getElementById('go-to-last-slide').onclick = () => tryCatch(goToLastSlide);
+    document.getElementById('go-to-first-slide').onclick = () => clearMessage(goToFirstSlide);
+    document.getElementById('go-to-next-slide').onclick = () => clearMessage(goToNextSlide);
+    document.getElementById('go-to-previous-slide').onclick = () => clearMessage(goToPreviousSlide);
+    document.getElementById('go-to-last-slide').onclick = () => clearMessage(goToLastSlide);
     ```
 
 1. In the **taskpane.js** file, replace `TODO9` with the following code to define the `addSlides` and navigation functions. Each of these functions uses the `goToByIdAsync` method to select a slide based upon its position in the document (first, last, previous, and next).
@@ -454,8 +461,8 @@ Complete the following steps to add code that navigates between the slides of a 
 
             await context.sync();
 
-            showNotification("Success", "Slides added.");
             goToLastSlide();
+            setMessage("Success: Slides added.");
         });
     }
 
@@ -463,7 +470,7 @@ Complete the following steps to add code that navigates between the slides of a 
         Office.context.document.goToByIdAsync(Office.Index.First, Office.GoToType.Index,
             function (asyncResult) {
                 if (asyncResult.status == "failed") {
-                    showNotification("Error", asyncResult.error.message);
+                    setMessage("Error: " + asyncResult.error.message);
                 }
             });
     }
@@ -472,7 +479,7 @@ Complete the following steps to add code that navigates between the slides of a 
         Office.context.document.goToByIdAsync(Office.Index.Last, Office.GoToType.Index,
             function (asyncResult) {
                 if (asyncResult.status == "failed") {
-                    showNotification("Error", asyncResult.error.message);
+                    setMessage("Error: " + asyncResult.error.message);
                 }
             });
     }
@@ -481,7 +488,7 @@ Complete the following steps to add code that navigates between the slides of a 
         Office.context.document.goToByIdAsync(Office.Index.Previous, Office.GoToType.Index,
             function (asyncResult) {
                 if (asyncResult.status == "failed") {
-                    showNotification("Error", asyncResult.error.message);
+                    setMessage("Error: " + asyncResult.error.message);
                 }
             });
     }
@@ -490,7 +497,7 @@ Complete the following steps to add code that navigates between the slides of a 
         Office.context.document.goToByIdAsync(Office.Index.Next, Office.GoToType.Index,
             function (asyncResult) {
                 if (asyncResult.status == "failed") {
-                    showNotification("Error", asyncResult.error.message);
+                    setMessage("Error: " + asyncResult.error.message);
                 }
             });
     }
