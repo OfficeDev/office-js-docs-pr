@@ -19,6 +19,213 @@ In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add
 > - Adds new slides
 > - Navigates between slides
 
+## Create the add-in
+
+[!include[Choose your editor](../includes/quickstart-choose-editor.md)]
+
+# [Yeoman generator](#tab/yeomangenerator)
+
+> [!TIP]
+> If you've already completed the [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator) quick start using the Yeoman generator, and want to use that project as a starting point for this tutorial, go directly to the [Insert an image](#insert-an-image) section to start this tutorial.
+
+### Prerequisites
+
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+### Create the add-in project
+
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
+
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `JavaScript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `PowerPoint`
+
+![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-powerpoint.png)
+
+After you complete the wizard, the generator creates the project and installs supporting Node components.
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
+
+### Complete setup
+
+1. Navigate to the root directory of the project.
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+1. This add-in will use the following library.
+
+    - [jQuery](https://jquery.com/) library to simplify DOM interactions.
+
+     To install these tools for your project, run the following command in the root directory of the project.
+
+    ```command&nbsp;line
+    npm install jquery --save
+    ```
+
+1. Open your project in VS Code or your preferred code editor.
+
+    [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
+### Insert an image
+
+Complete the following steps to add code that retrieves [Bing](https://www.bing.com) photo of the day and inserts that image into a slide.
+
+1. Open the project in your code editor.
+
+1. Open the file **./src/taskpane/taskpane.html**. This file contains the HTML markup for the task pane.
+
+1. Locate the `<main>` element and replace it with the following markup, and save the file.
+
+    ```html
+    <!-- TODO: Need to provide instructions for this!! -->
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+
+    <!-- TODO2: Update the header node. -->
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+        <div class="padding">
+            <!-- TODO1: Create the insert-image button. -->
+            <!-- TODO3: Create the insert-text button. -->
+            <!-- TODO4: Create the get-slide-metadata button. -->
+            <!-- TODO5: Create the add-slides and go-to-slide buttons. -->
+        </div>
+    </main>
+    ```
+
+1. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application. Replace the entire contents with the following code and save the file.
+
+    ```js
+    /*
+     * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+     * See LICENSE in the project root for license information.
+     */
+    
+    /* global document, Office */
+    
+    Office.onReady((info) => {
+      if (info.host === Office.HostType.PowerPoint) {
+        document.getElementById("sideload-msg").style.display = "none";
+        document.getElementById("app-body").style.display = "flex";
+        // TODO1: Assign event handler for insert-image button.
+        // TODO4: Assign event handler for insert-text button.
+        // TODO6: Assign event handler for get-slide-metadata button.
+        // TODO8: Assign event handlers for add-slides and the four navigation buttons.
+      }
+    });
+    
+    // TODO2: Define the insertImage function.
+
+    // TODO3: Define the insertImageFromBase64String function.
+
+    // TODO5: Define the insertText function.
+
+    // TODO7: Define the getSlideMetadata function.
+
+    // TODO9: Define the addSlides and navigation functions.
+
+    /** Default helper for invoking an action and handling errors. */
+    async function tryCatch(callback) {
+        try {
+            await callback();
+        } catch (error) {
+            // Note: In a production add-in, you'd want to notify the user through your add-in's UI.
+            console.error(error);
+        }
+    }
+    ```
+
+1. In the **taskpane.html** file, replace `TODO1` with the following markup. This markup defines the **Insert Image** button that will appear within the add-in's task pane.
+
+    ```html
+    <button class="ms-Button" id="insert-image">Insert Image</button>
+    ```
+
+1. In the **taskpane.js** file, replace `TODO1` with the following code to assign the event handler for the **Insert Image** button.
+
+    ```js
+    document.getElementById("insert-image").onclick = () => tryCatch(insertImage);
+    ```
+
+1. In the **taskpane.js** file, replace `TODO2` with the following code to define the `insertImage` function. This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.
+
+    ```js
+    function insertImage() {
+        // Get image from web service (as a Base64-encoded string).
+        const bingUrl = "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1";
+        $.ajax({
+            url: bingUrl,
+            dataType: "json",
+            success: function (result) {
+                insertImageFromBase64String(result);
+            }, error: function (xhr, status, error) {
+                showNotification("Error", "Oops, something went wrong.");
+            }
+        });
+    }
+    ```
+
+1. In the **taskpane.js** file, replace `TODO3` with the following code to define `insertImageFromBase64String` function. This function uses the Office JavaScript API to insert the image into the document. Note:
+
+    - The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsync` request indicates the type of data being inserted.
+
+    - The `asyncResult` object encapsulates the result of the `setSelectedDataAsync` request, including status and error information if the request failed.
+
+    ```js
+    function insertImageFromBase64String(image) {
+        // Call Office.js to insert the image into the document.
+        Office.context.document.setSelectedDataAsync(image, {
+            coercionType: Office.CoercionType.Image
+        },
+            function (asyncResult) {
+                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                    showNotification("Error", asyncResult.error.message);
+                }
+            });
+    }
+    ```
+
+### Test the add-in
+
+1. Navigate to the root folder of the project.
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+1. Complete the following steps to start the local web server and sideload your add-in.
+
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
+
+    > [!TIP]
+    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - To test your add-in in PowerPoint, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens PowerPoint with your add-in loaded.
+
+        ```command&nbsp;line
+        npm start
+        ```
+
+    - To test your add-in in PowerPoint on a browser, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a PowerPoint document on your OneDrive or a SharePoint library to which you have permissions.
+
+        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+
+1. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
+
+    ![Screenshot of PowerPoint with the Show Taskpane button highlighted.](../images/powerpoint_quickstart_addin_1c.png)
+
+1. At the bottom of the task pane, choose the **Run** link to insert the text "Hello World" into the current slide.
+
+    ![Screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide.](../images/powerpoint_quickstart_addin_3c.png)
+
+# [Visual Studio](#tab/visualstudio)
+
 > [!TIP]
 > If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial).
 
@@ -621,6 +828,8 @@ Complete the following steps to add code that navigates between the slides of a 
 1. In Visual Studio, stop the add-in by pressing **Shift+F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
     ![The Stop button highlighted on the Visual Studio toolbar.](../images/powerpoint-tutorial-stop.png)
+
+---
 
 ## Next steps
 
