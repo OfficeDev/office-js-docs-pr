@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 09/21/2023
+ms.date: 09/22/2023
 ms.service: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -9,11 +9,7 @@ ms.localizationpriority: high
 
 # Tutorial: Create a PowerPoint task pane add-in
 
-[!include[Choose your editor](../includes/quickstart-choose-editor.md)]
-
-# [Yeoman generator](#tab/yeomangenerator)
-
-In this tutorial, you'll use Visual Studio Code (VS Code) or your preferred code editor to create an PowerPoint task pane add-in that:
+In this tutorial, you'll use Visual Studio Code (VS Code), Visual Studio, or your preferred code editor to create an PowerPoint task pane add-in that:
 
 > [!div class="checklist"]
 >
@@ -23,10 +19,16 @@ In this tutorial, you'll use Visual Studio Code (VS Code) or your preferred code
 > - Adds new slides
 > - Navigates between slides
 
+[!include[Choose your editor](../includes/quickstart-choose-editor.md)]
+
+# [Yeoman generator](#tab/yeomangenerator)
+
 ## Create the add-in
 
 > [!TIP]
 > If you've already completed the [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator) quick start using the Yeoman generator, and want to use that project as a starting point for this tutorial, go directly to the [Insert an image](#insert-an-image) section to start this tutorial.
+>
+> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial-yo).
 
 ### Prerequisites
 
@@ -566,16 +568,6 @@ Complete the following steps to add code that navigates between the slides of a 
 
 # [Visual Studio](#tab/visualstudio)
 
-In this tutorial, you'll use Visual Studio to create an PowerPoint task pane add-in that:
-
-> [!div class="checklist"]
->
-> - Adds the [Bing](https://www.bing.com) photo of the day to a slide
-> - Adds text to a slide
-> - Gets slide metadata
-> - Adds new slides
-> - Navigates between slides
-
 > [!TIP]
 > If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial).
 
@@ -628,7 +620,7 @@ Edit the add-in code as follows to create the framework that you'll use to imple
     ```html
     <!-- TODO2: Create the content-header div. -->
     <div id="content-main">
-        <div class="padding">
+        <div class="padding">.
             <!-- TODO1: Create the insert-image button. -->
             <!-- TODO3: Create the insert-text button. -->
             <!-- TODO4: Create the get-slide-metadata button. -->
