@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 03/14/2023
+ms.date: 09/20/2023
 ms.service: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
 ms.localizationpriority: high
@@ -21,6 +21,8 @@ In this tutorial, you'll create a Word task pane add-in that:
 
 > [!TIP]
 > If you've already completed the [Build your first Word task pane add-in](../quickstarts/word-quickstart.md) quick start, and want to use that project as a starting point for this tutorial, go directly to the [Insert a range of text](#insert-a-range-of-text) section to start this tutorial.
+>
+> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/word-tutorial).
 
 ## Prerequisites
 
@@ -728,8 +730,6 @@ Complete the following steps to define the image that you'll insert into the doc
 In this step of the tutorial, you'll learn how to create Rich Text content controls in the document, and then how to insert and replace content in the controls.
 
 > [!NOTE]
-> There are several types of content controls that can be added to a Word document through the UI, but currently only Rich Text content controls are supported by Word.js.
->
 > Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with the controls and their properties. For details, see [Create forms that users complete or print in Word](https://support.microsoft.com/office/040c5cc1-e309-445b-94ac-542f732c8c8b).
 
 ### Create a content control
