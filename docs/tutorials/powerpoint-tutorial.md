@@ -229,17 +229,17 @@ Complete the following steps to add code that inserts an image into a slide.
 
 1. If the add-in task pane isn't already open in PowerPoint, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
-    ![The Show Taskpane button highlighted on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![The Show Taskpane button highlighted on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-yo-show-taskpane-button.png)
 
-1. In the task pane, choose the **Insert image** button to add the image to the current slide.
+1. In the task pane, choose the **Insert Image** button to add the image to the current slide.
 
-    ![The PowerPoint add-in with the Insert Image button highlighted.](../images/powerpoint-tutorial-insert-image-button.png)
+    ![The PowerPoint add-in with the Insert Image button highlighted.](../images/powerpoint-tutorial-yo-insert-image-button.png)
 
 ## Customize User Interface (UI) elements
 
 Complete the following steps to add markup that customizes the task pane UI.
 
-1. In the **taskpane.html** file, replace the current header section and `TODO2` with the following markup to update the header section and title in the task pane. Note:
+1. In the **taskpane.html** file, replace `TODO2` and the current header section with the following markup to update the header section and title in the task pane. Note:
 
     - The styles that begin with `ms-` are defined by [Fabric Core in Office Add-ins](../design/fabric-core.md), a JavaScript front-end framework for building user experiences for Office. The **taskpane.html** file includes a reference to the Fabric Core stylesheet.
 
@@ -280,11 +280,11 @@ Complete the following steps to add markup that customizes the task pane UI.
 
 1. If the add-in task pane isn't already open in PowerPoint, select the **Show Taskpane** button on the ribbon to open it.
 
-    ![The Show Taskpane button highlighted on the PowerPoint Home ribbon.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![The Show Taskpane button highlighted on the PowerPoint Home ribbon.](../images/powerpoint-tutorial-yo-show-taskpane-button.png)
 
 1. Notice that the task pane now contains an updated header section and title.
 
-    ![The PowerPoint add-in with Insert Image button.](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![The PowerPoint add-in with Insert Image button.](../images/powerpoint-tutorial-yo-new-task-pane-ui.png)
 
 ## Insert text
 
@@ -348,15 +348,17 @@ Complete the following steps to add code that inserts text into the title slide 
 
 1. If the add-in task pane isn't already open in PowerPoint, select the **Show Taskpane** button on the ribbon to open it.
 
-    ![The Show Taskpane button on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![The Show Taskpane button on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-yo-show-taskpane-button.png)
 
 1. In the task pane, choose the **Insert Image** button to add the image to the current slide and choose a design for the slide that contains a text box for the title.
 
-    ![The selected PowerPoint title slide and the Insert Image button highlighted in the add-in.](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![The Insert Image button highlighted in the add-in.](../images/powerpoint-tutorial-yo-insert-image.png)
+
+    ![The selected PowerPoint title slide highlighted in the add-in.](../images/powerpoint-tutorial-yo-insert-image-slide-design.png)
 
 1. Put your cursor in the text box on the title slide and then in the task pane, choose the **Insert Text** button to add text to the slide.
 
-    ![The selected PowerPoint title slide with the Insert Text button highlighted in the add-in.](../images/powerpoint-tutorial-insert-text.png)
+    ![The selected PowerPoint title slide with the Insert Text button highlighted in the add-in.](../images/powerpoint-tutorial-yo-insert-text.png)
 
 ## Get slide metadata
 
@@ -423,11 +425,11 @@ Complete the following steps to add code that retrieves metadata for the selecte
 
 1. If the add-in task pane isn't already open in PowerPoint, select the **Show Taskpane** button on the ribbon to open it.
 
-    ![The Show Taskpane button on the PowerPoint Home ribbon.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![The Show Taskpane button on the PowerPoint Home ribbon.](../images/powerpoint-tutorial-yo-show-taskpane-button.png)
 
 1. In the task pane, choose the **Get Slide Metadata** button to get the metadata for the selected slide. The slide metadata is written in the Message section below the buttons in the task pane. In this case, the `slides` array within the JSON metadata contains one object that specifies the `id`, `title`, and `index` of the selected slide. If multiple slides had been selected when you retrieved slide metadata, the `slides` array within the JSON metadata would contain one object for each selected slide.
 
-    ![The Get Slide Metadata button highlighted in the add-in.](../images/powerpoint-tutorial-get-slide-metadata.png)
+    ![The Get Slide Metadata button highlighted in the add-in.](../images/powerpoint-tutorial-yo-get-slide-metadata.png)
 
 ## Navigate between slides
 
@@ -538,27 +540,27 @@ Complete the following steps to add code that navigates between the slides of a 
 
 1. If the add-in task pane isn't already open in PowerPoint, select the **Show Taskpane** button on the ribbon to open it.
 
-    ![The Show Taskpane button highlighted on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![The Show Taskpane button highlighted on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-yo-show-taskpane-button.png)
 
 1. In the task pane, choose the **Add Slides** button. Two new slides are added to the document and the last slide in the document is selected and displayed.
 
-    ![The Add Slides button highlighted in the add-in.](../images/powerpoint-tutorial-add-slides.png)
+    ![The Add Slides button highlighted in the add-in.](../images/powerpoint-tutorial-yo-add-slides.png)
 
 1. In the task pane, choose the **Go to First Slide** button. The first slide in the document is selected and displayed.
 
-    ![The Go to First Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-first-slide-1.png)
+    ![The Go to First Slide button highlighted in the add-in.](../images/powerpoint-tutorial-yo-go-to-first-slide.png)
 
 1. In the task pane, choose the **Go to Next Slide** button. The next slide in the document is selected and displayed.
 
-    ![The Go to Next Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-next-slide-1.png)
+    ![The Go to Next Slide button highlighted in the add-in.](../images/powerpoint-tutorial-yo-go-to-next-slide.png)
 
 1. In the task pane, choose the **Go to Previous Slide** button. The previous slide in the document is selected and displayed.
 
-    ![The Go to Previous Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-previous-slide-1.png)
+    ![The Go to Previous Slide button highlighted in the add-in.](../images/powerpoint-tutorial-yo-go-to-previous-slide.png)
 
 1. In the task pane, choose the **Go to Last Slide** button. The last slide in the document is selected and displayed.
 
-    ![The Go to Last Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-last-slide-1.png)
+    ![The Go to Last Slide button highlighted in the add-in.](../images/powerpoint-tutorial-yo-go-to-last-slide.png)
 
 1. If the web server is running, run the following command when you want to stop the server.
 
