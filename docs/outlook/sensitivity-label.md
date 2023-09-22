@@ -1,7 +1,7 @@
 ---
 title: Manage the sensitivity label of your message or appointment in compose mode
 description: Learn how to manage the sensitivity label of your message or appointment in compose mode.
-ms.date: 05/19/2023
+ms.date: 10/05/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -23,10 +23,6 @@ You can use the Office JavaScript API to implement sensitivity label solutions i
 
 To implement the sensitivity label feature in your add-in, you must have a Microsoft 365 E5 subscription. For access to a free developer sandbox that includes a renewable E5 subscription, join the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program#Subscription).
 
-### Preview the sensitivity label feature in Outlook on Mac
-
-To preview the sensitivity label feature in Outlook on Mac, install Version 16.71.312.0 or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
-
 ### Supported clients and platforms
 
 The following table lists client-server combinations that support the use of the sensitivity label feature in Outlook add-ins. Excluded combinations aren't supported.
@@ -34,7 +30,7 @@ The following table lists client-server combinations that support the use of the
 |Client|Exchange Online|
 |------|------|
 |**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|
-|**Mac**<br>Version 16.71.312.0 or later (preview)|Supported|
+|**Mac**<br>Version 16.71.312.0 or later|Supported|
 |**Web browser (modern UI)**|Supported|
 |**iOS**|Not applicable|
 |**Android**|Not applicable|
