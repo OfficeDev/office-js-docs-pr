@@ -9,7 +9,7 @@ ms.localizationpriority: high
 
 # Tutorial: Create a PowerPoint task pane add-in
 
-In this tutorial, you'll use Visual Studio Code (VS Code), Visual Studio, or your preferred code editor to create an PowerPoint task pane add-in that:
+In this tutorial, you'll use Visual Studio Code (VS Code), Visual Studio, or your preferred code editor to create a PowerPoint task pane add-in that:
 
 > [!div class="checklist"]
 >
@@ -79,7 +79,7 @@ Complete the following steps to add code that inserts an image into a slide.
 
 1. Open the file **./src/taskpane/taskpane.html**. This file contains the HTML markup for the task pane.
 
-1. Locate the `<body>` element and replace it with the following markup, then save the file.
+1. Locate the `<body>` element. Replace it with the following markup, then save the file.
 
     ```html
     <body class="ms-font-m ms-welcome ms-Fabric">
@@ -144,17 +144,17 @@ Complete the following steps to add code that inserts an image into a slide.
     }
 
     function setMessage(message) {
-        document.getElementById("message").innerText = message;
+      document.getElementById("message").innerText = message;
     }
 
-    /** Default helper for invoking an action and handling errors. */
+    // Default helper for invoking an action and handling errors.
     async function tryCatch(callback) {
-        try {
-            await callback();
-        } catch (error) {
-            // Note: In a production add-in, you'd want to notify the user through your add-in's UI.
-            console.error(error);
-        }
+      try {
+        await callback();
+      } catch (error) {
+        // Note: In a production add-in, you'd want to notify the user through your add-in's UI.
+        console.error(error);
+      }
     }
     ```
 
@@ -176,7 +176,7 @@ Complete the following steps to add code that inserts an image into a slide.
     document.getElementById("insert-image").onclick = () => clearMessage(insertImage);
     ```
 
-1. In the **taskpane.js** file, replace `TODO3` with the following code to define `insertImage` function. This function uses the Office JavaScript API to insert the image into the document. Note:
+1. In the **taskpane.js** file, replace `TODO3` with the following code to define the `insertImage` function. This function uses the Office JavaScript API to insert the image into the document. Note:
 
     - The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsync` request indicates the type of data being inserted.
 
@@ -184,15 +184,18 @@ Complete the following steps to add code that inserts an image into a slide.
 
     ```js
     function insertImage() {
-        // Call Office.js to insert the image into the document.
-        Office.context.document.setSelectedDataAsync(base64Image, {
-            coercionType: Office.CoercionType.Image
+      // Call Office.js to insert the image into the document.
+      Office.context.document.setSelectedDataAsync(
+        base64Image,
+        {
+          coercionType: Office.CoercionType.Image
         },
-            function (asyncResult) {
-                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-                    setMessage("Error: " + asyncResult.error.message);
-                }
-            });
+        (asyncResult) => {
+          if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+            setMessage("Error: " + asyncResult.error.message);
+          }
+        }
+      );
     }
     ```
 
@@ -235,7 +238,7 @@ Complete the following steps to add code that inserts an image into a slide.
 
     ![The PowerPoint add-in with the Insert Image button highlighted.](../images/powerpoint-tutorial-yo-insert-image-button.png)
 
-## Customize User Interface (UI) elements
+## Customize user interface (UI) elements
 
 Complete the following steps to add markup that customizes the task pane UI.
 
@@ -257,7 +260,7 @@ Complete the following steps to add markup that customizes the task pane UI.
 
 ### Test the add-in
 
-1. Complete the following steps to start the local web server and sideload your add-in.
+1. If the local web server isn't already running, complete the following steps to start the local web server and sideload your add-in.
 
     [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
@@ -288,7 +291,7 @@ Complete the following steps to add markup that customizes the task pane UI.
 
 ## Insert text
 
-Complete the following steps to add code that inserts text into the title slide which contains image.
+Complete the following steps to add code that inserts text into the title slide which contains an image.
 
 1. In the **taskpane.html** file, replace `TODO3` with the following markup. This markup defines the **Insert Text** button that will appear within the add-in's task pane.
 
@@ -306,12 +309,11 @@ Complete the following steps to add code that inserts text into the title slide 
 
     ```js
     function insertText() {
-        Office.context.document.setSelectedDataAsync('Hello World!',
-            function (asyncResult) {
-                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-                    setMessage("Error: " + asyncResult.error.message);
-                }
-            });
+      Office.context.document.setSelectedDataAsync("Hello World!", (asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+          setMessage("Error: " + asyncResult.error.message);
+        }
+      });
     }
     ```
 
@@ -325,7 +327,7 @@ Complete the following steps to add code that inserts text into the title slide 
     cd "My Office Add-in"
     ```
 
-1. Complete the following steps to start the local web server and sideload your add-in.
+1. If the local web server isn't already running, complete the following steps to start the local web server and sideload your add-in.
 
     [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
@@ -350,7 +352,7 @@ Complete the following steps to add code that inserts text into the title slide 
 
     ![The Show Taskpane button on the Home ribbon in PowerPoint.](../images/powerpoint-tutorial-yo-show-taskpane-button.png)
 
-1. In the task pane, choose the **Insert Image** button to add the image to the current slide and choose a design for the slide that contains a text box for the title.
+1. In the task pane, choose the **Insert Image** button to add the image to the current slide, then choose a design for the slide that contains a text box for the title.
 
     ![The Insert Image button highlighted in the add-in.](../images/powerpoint-tutorial-yo-insert-image.png)
 
@@ -380,15 +382,13 @@ Complete the following steps to add code that retrieves metadata for the selecte
 
     ```js
     function getSlideMetadata() {
-        Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange,
-            function (asyncResult) {
-                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-                    setMessage("Error: " + asyncResult.error.message);
-                } else {
-                    setMessage("Metadata for selected slides: " + JSON.stringify(asyncResult.value));
-                }
-            }
-        );
+      Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange, (asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+          setMessage("Error: " + asyncResult.error.message);
+        } else {
+          setMessage("Metadata for selected slides: " + JSON.stringify(asyncResult.value));
+        }
+      });
     }
     ```
 
@@ -402,7 +402,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
     cd "My Office Add-in"
     ```
 
-1. Complete the following steps to start the local web server and sideload your add-in.
+1. If the local web server isn't already running, complete the following steps to start the local web server and sideload your add-in.
 
     [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
@@ -448,62 +448,58 @@ Complete the following steps to add code that navigates between the slides of a 
 1. In the **taskpane.js** file, replace `TODO8` with the following code to assign the event handlers for the **Add Slides** and four navigation buttons.
 
     ```js
-    document.getElementById('add-slides').onclick = () => tryCatch(addSlides);
-    document.getElementById('go-to-first-slide').onclick = () => clearMessage(goToFirstSlide);
-    document.getElementById('go-to-next-slide').onclick = () => clearMessage(goToNextSlide);
-    document.getElementById('go-to-previous-slide').onclick = () => clearMessage(goToPreviousSlide);
-    document.getElementById('go-to-last-slide').onclick = () => clearMessage(goToLastSlide);
+    document.getElementById("add-slides").onclick = () => tryCatch(addSlides);
+    document.getElementById("go-to-first-slide").onclick = () => clearMessage(goToFirstSlide);
+    document.getElementById("go-to-next-slide").onclick = () => clearMessage(goToNextSlide);
+    document.getElementById("go-to-previous-slide").onclick = () => clearMessage(goToPreviousSlide);
+    document.getElementById("go-to-last-slide").onclick = () => clearMessage(goToLastSlide);
     ```
 
 1. In the **taskpane.js** file, replace `TODO9` with the following code to define the `addSlides` and navigation functions. Each of these functions uses the `goToByIdAsync` method to select a slide based upon its position in the document (first, last, previous, and next).
 
     ```js
     async function addSlides() {
-        await PowerPoint.run(async function (context) {
-            context.presentation.slides.add();
-            context.presentation.slides.add();
+      await PowerPoint.run(async function (context) {
+        context.presentation.slides.add();
+        context.presentation.slides.add();
 
-            await context.sync();
+        await context.sync();
 
-            goToLastSlide();
-            setMessage("Success: Slides added.");
-        });
+        goToLastSlide();
+        setMessage("Success: Slides added.");
+      });
     }
 
     function goToFirstSlide() {
-        Office.context.document.goToByIdAsync(Office.Index.First, Office.GoToType.Index,
-            function (asyncResult) {
-                if (asyncResult.status == "failed") {
-                    setMessage("Error: " + asyncResult.error.message);
-                }
-            });
+      Office.context.document.goToByIdAsync(Office.Index.First, Office.GoToType.Index, (asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+          setMessage("Error: " + asyncResult.error.message);
+        }
+      });
     }
 
     function goToLastSlide() {
-        Office.context.document.goToByIdAsync(Office.Index.Last, Office.GoToType.Index,
-            function (asyncResult) {
-                if (asyncResult.status == "failed") {
-                    setMessage("Error: " + asyncResult.error.message);
-                }
-            });
+      Office.context.document.goToByIdAsync(Office.Index.Last, Office.GoToType.Index, (asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+          setMessage("Error: " + asyncResult.error.message);
+        }
+      });
     }
 
     function goToPreviousSlide() {
-        Office.context.document.goToByIdAsync(Office.Index.Previous, Office.GoToType.Index,
-            function (asyncResult) {
-                if (asyncResult.status == "failed") {
-                    setMessage("Error: " + asyncResult.error.message);
-                }
-            });
+      Office.context.document.goToByIdAsync(Office.Index.Previous, Office.GoToType.Index, (asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+          setMessage("Error: " + asyncResult.error.message);
+        }
+      });
     }
 
     function goToNextSlide() {
-        Office.context.document.goToByIdAsync(Office.Index.Next, Office.GoToType.Index,
-            function (asyncResult) {
-                if (asyncResult.status == "failed") {
-                    setMessage("Error: " + asyncResult.error.message);
-                }
-            });
+      Office.context.document.goToByIdAsync(Office.Index.Next, Office.GoToType.Index, (asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+          setMessage("Error: " + asyncResult.error.message);
+        }
+      });
     }
     ```
 
@@ -517,7 +513,7 @@ Complete the following steps to add code that navigates between the slides of a 
     cd "My Office Add-in"
     ```
 
-1. Complete the following steps to start the local web server and sideload your add-in.
+1. If the local web server isn't already running, complete the following steps to start the local web server and sideload your add-in.
 
     [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
