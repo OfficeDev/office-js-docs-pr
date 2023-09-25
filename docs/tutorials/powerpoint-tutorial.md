@@ -156,10 +156,10 @@ Complete the following steps to add code that inserts an image into a slide.
     // Default helper for invoking an action and handling errors.
     async function tryCatch(callback) {
       try {
+        document.getElementById("message").innerText = "";
         await callback();
       } catch (error) {
-        // Note: In a production add-in, you'd want to notify the user through your add-in's UI.
-        console.error(error);
+        setMessage("Error: " + error.toString());
       }
     }
     ```
