@@ -1147,23 +1147,23 @@ Complete the following steps to add code that navigates between the slides of a 
 
 1. In the task pane, choose the **Add Slides** button. Two new slides are added to the document and the last slide in the document is selected and displayed.
 
-    ![The Add Slides button highlighted in the add-in.](../images/powerpoint-tutorial-add-slides.png)
+    ![The Add Slides button highlighted in the add-in.](../images/powerpoint-tutorial-add-slides-1.png)
 
 1. In the task pane, choose the **Go to First Slide** button. The first slide in the document is selected and displayed.
 
-    ![The Go to First Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-first-slide-1.png)
+    ![The Go to First Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-first-slide.png)
 
 1. In the task pane, choose the **Go to Next Slide** button. The next slide in the document is selected and displayed.
 
-    ![The Go to Next Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-next-slide-1.png)
+    ![The Go to Next Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-next-slide.png)
 
 1. In the task pane, choose the **Go to Previous Slide** button. The previous slide in the document is selected and displayed.
 
-    ![The Go to Previous Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-previous-slide-1.png)
+    ![The Go to Previous Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-previous-slide.png)
 
 1. In the task pane, choose the **Go to Last Slide** button. The last slide in the document is selected and displayed.
 
-    ![The Go to Last Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-last-slide-1.png)
+    ![The Go to Last Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-last-slide.png)
 
 1. In Visual Studio, stop the add-in by pressing **Shift+F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
