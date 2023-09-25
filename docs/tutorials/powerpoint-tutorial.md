@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
-description: In this tutorial, you will build an PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 09/22/2023
+description: In this tutorial, you will build a PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
+ms.date: 09/25/2023
 ms.service: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -108,6 +108,12 @@ Complete the following steps to add code that inserts an image into a slide.
     </body>
     ```
 
+1. In the **taskpane.html** file, replace `TODO1` with the following markup. This markup defines the **Insert Image** button that will appear within the add-in's task pane.
+
+    ```html
+    <button class="ms-Button" id="insert-image">Insert Image</button><br/><br/>
+    ```
+
 1. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application. Replace the entire contents with the following code and save the file.
 
     ```js
@@ -156,12 +162,6 @@ Complete the following steps to add code that inserts an image into a slide.
         console.error(error);
       }
     }
-    ```
-
-1. In the **taskpane.html** file, replace `TODO1` with the following markup. This markup defines the **Insert Image** button that will appear within the add-in's task pane.
-
-    ```html
-    <button class="ms-Button" id="insert-image">Insert Image</button><br/><br/>
     ```
 
 1. In the **taskpane.js** file above the `Office.onReady` function call near the top of the file, replace `TODO1` with the following code. This code imports the variable that you defined previously in the file **./base64Image.js**.
@@ -618,7 +618,7 @@ Edit the add-in code as follows to create the framework that you'll use to imple
     ```html
     <!-- TODO2: Create the content-header div. -->
     <div id="content-main">
-        <div class="padding">.
+        <div class="padding">
             <!-- TODO1: Create the insert-image button. -->
             <!-- TODO3: Create the insert-text button. -->
             <!-- TODO4: Create the get-slide-metadata button. -->
@@ -885,7 +885,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
     ![The Stop button highlighted in Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
-## Customize User Interface (UI) elements
+## Customize user interface (UI) elements
 
 Complete the following steps to add markup that customizes the task pane UI.
 
