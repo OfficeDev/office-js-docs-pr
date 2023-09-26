@@ -1,7 +1,7 @@
 ---
 title: Build your first Project task pane add-in
 description: Learn how to build a simple Project task pane add-in by using the Office JS API.
-ms.date: 07/13/2022
+ms.date: 09/26/2023
 ms.service: project
 ms.localizationpriority: high
 ---
@@ -22,7 +22,7 @@ In this article, you'll walk through the process of building a Project task pane
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `Javascript`
+- **Choose a script type:** `JavaScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Project`
 
