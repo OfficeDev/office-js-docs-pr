@@ -49,10 +49,10 @@ The following video walks you through the process of sideloading your add-in in 
 
 ## Specify the shared folder as a trusted catalog
 
-There are a couple of options for how you can specify this trust. Follow the instructions for the option that works better for your setup.
+There are two options for how you specify this trust. Follow the instructions for the option that works better for your setup.
 
-- [Configure the trust manually](#configure-the-trust-manually)
-- [Configure the trust with a Registry script](#configure-the-trust-with-a-registry-script)
+- [Configure the trust manually.](#configure-the-trust-manually)
+- [Configure the trust with a Registry script.](#configure-the-trust-with-a-registry-script)
 
 ### Configure the trust manually
 
