@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins for testing from a network share
 description: Learn how to sideload an Office Add-in for testing from a network share.
-ms.date: 06/23/2023
+ms.date: 09/26/2023
 ms.localizationpriority: medium
 ---
 
@@ -48,6 +48,11 @@ The following video walks you through the process of sideloading your add-in in 
 1. Choose the **Close** button to close the **Properties** dialog window.
 
 ## Specify the shared folder as a trusted catalog
+
+There are two options for how you specify this trust. Follow the instructions for the option that works better for your setup.
+
+- [Configure the trust manually.](#configure-the-trust-manually)
+- [Configure the trust with a Registry script.](#configure-the-trust-with-a-registry-script)
 
 ### Configure the trust manually
 
