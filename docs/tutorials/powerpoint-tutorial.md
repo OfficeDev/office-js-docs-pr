@@ -605,7 +605,7 @@ Complete the following steps to create a PowerPoint add-in project using Visual 
    > [!IMPORTANT]
    > When you're using the **NuGet Package Manager** to install these packages, do **not** install the recommended update to jQuery. The jQuery version installed with your Visual Studio solution matches the jQuery call within the solution files.
 
-1. Use the **NuGet Package Manager** to update the Newtonsoft.Json package to version 13.0.3. Then delete the **app.config** file that was added to the **HelloWorld** project.
+1. Use the **NuGet Package Manager** to update the Newtonsoft.Json package to version 13.0.3. Then delete the **app.config** file if it was added to the **HelloWorld** project.
 
 ### Explore the Visual Studio solution
 
