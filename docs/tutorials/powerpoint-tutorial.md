@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you will build a PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 09/25/2023
+ms.date: 09/28/2023
 ms.service: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -604,6 +604,8 @@ Complete the following steps to create a PowerPoint add-in project using Visual 
 
    > [!IMPORTANT]
    > When you're using the **NuGet Package Manager** to install these packages, do **not** install the recommended update to jQuery. The jQuery version installed with your Visual Studio solution matches the jQuery call within the solution files.
+
+1. Use the **NuGet Package Manager** to update the Newtonsoft.Json package to version 13.0.3. Then delete the **app.config** file that was added to the **HelloWorld** project.
 
 ### Explore the Visual Studio solution
 
