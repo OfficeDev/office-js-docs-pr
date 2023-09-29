@@ -18,13 +18,17 @@ landingContent:
 # Start card title with a verb
 
   # Card (optional)
-  - title: Quickstarts
+  - title: get-started
     linkLists:
       - linkListType: quickstart
         links:
           - text: Build your first OneNote add-in
             url: ../quickstarts/onenote-quickstart.md
-            
+      - linkListType: sample
+        links:
+          - text: Rubric Grader Task Pane Add-in for OneNote Online
+            url: https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader
+
   # Card (optional)
   - title: About OneNote add-ins
     linkLists:
@@ -36,14 +40,12 @@ landingContent:
             url: ../reference/overview/onenote-add-ins-javascript-reference.md         
           - text: Microsoft Graph OneNote REST API Overview
             url: /graph/integrate-with-onenote
-      - linkListType: how-to-guide
+      - linkListType: concept
         links:
+          - text: Work with OneNote page content
+            url: onenote-add-ins-page-content.md
           - text: Use the OneNote JavaScript API to interact with objects and notebook content
             url: ../reference/overview/onenote-add-ins-javascript-reference.md
-          - text: Test and debug a OneNote add-in
-            url: ../testing/test-debug-office-add-ins.md
-          - text: Deploy and publish a OneNote add-in
-            url: ../publish/publish.md
 
   # Card (optional)
   - title: Key Office Add-ins concepts
@@ -60,6 +62,10 @@ landingContent:
             url: ../design/add-in-design.md
           - text: Develop Office Add-ins
             url: ../develop/develop-overview.md
+          - text: Test and debug a OneNote add-in
+            url: ../testing/test-debug-office-add-ins.md
+          - text: Deploy and publish a OneNote add-in
+            url: ../publish/publish.md
       - linkListType: reference
         links:
           - text: Office Add-ins additional resources
