@@ -16,6 +16,15 @@ metadata:
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
+
+  # Card (optional)
+  - title: Quickstarts
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Build your first OneNote add-in
+            url: ../quickstarts/onenote-quickstart.md
+            
   # Card (optional)
   - title: About OneNote add-ins
     linkLists:
@@ -37,14 +46,6 @@ landingContent:
             url: ../publish/publish.md
 
   # Card (optional)
-  - title: Quickstarts
-    linkLists:
-      - linkListType: quickstart
-        links:
-          - text: Build your first OneNote add-in
-            url: ../quickstarts/onenote-quickstart.md
-
-  # Card (optional)
   - title: Key Office Add-ins concepts
     linkLists:
       - linkListType: overview
@@ -59,17 +60,7 @@ landingContent:
             url: ../design/add-in-design.md
           - text: Develop Office Add-ins
             url: ../develop/develop-overview.md
-
-  # Card (optional)
-  - title: Resources
-    linkLists:
       - linkListType: reference
         links:
-          - text: Ask questions
-            url: /answers/topics/office-addins-dev.html
-          - text: Request features
-            url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
-          - text: Report issues
-            url: https://github.com/officedev/office-js/issues
           - text: Office Add-ins additional resources
             url: ../resources/resources-links-help.md
