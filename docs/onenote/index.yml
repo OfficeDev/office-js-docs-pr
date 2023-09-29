@@ -18,14 +18,12 @@ landingContent:
 # Start card title with a verb
 
   # Card (optional)
-  - title: get-started
+  - title: Get started
     linkLists:
-      - linkListType: quickstart
+      - linkListType: get-started
         links:
           - text: Build your first OneNote add-in
             url: ../quickstarts/onenote-quickstart.md
-      - linkListType: sample
-        links:
           - text: Rubric Grader Task Pane Add-in for OneNote Online
             url: https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader
 
