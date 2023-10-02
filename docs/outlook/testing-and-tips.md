@@ -89,7 +89,7 @@ To mitigate this, we recommend you test your add-in in Outlook on the web connec
 
 Alternatively, you can opt to pay for and use a service that hosts and manages on-premises Exchange servers. A couple of options are:
 
-- [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
+- [Rackspace](https://www.rackspace.com/applications/email-productivity)
 - [Hostway](https://hostway.com/microsoft-exchange/)
 
 Furthermore, if you don't want your add-ins to be available for users who are connected to on-premises Exchange, you can set the [requirement set](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#exchange-server-support) in the add-in manifest to be 1.6 or higher. Such add-ins will not be tested or validated on the classic Outlook on the web UI.
