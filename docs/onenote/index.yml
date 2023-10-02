@@ -8,7 +8,7 @@ metadata:
   description: Resources for learning about OneNote add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: onenote #Required
   ms.topic: landing-page # Required
-  ms.date: 03/29/2021 #Required; mm/dd/yyyy format.
+  ms.date: 09/29/2023 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -16,6 +16,17 @@ metadata:
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
+
+  # Card (optional)
+  - title: Get started
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Build your first OneNote add-in
+            url: ../quickstarts/onenote-quickstart.md
+          - text: "Sample: Rubric Grader Task Pane Add-in"
+            url: https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader
+
   # Card (optional)
   - title: About OneNote add-ins
     linkLists:
@@ -27,18 +38,12 @@ landingContent:
             url: ../reference/overview/onenote-add-ins-javascript-reference.md         
           - text: Microsoft Graph OneNote REST API Overview
             url: /graph/integrate-with-onenote
-      - linkListType: quickstart
+      - linkListType: concept
         links:
-          - text: Build your first OneNote add-in
-            url: ../quickstarts/onenote-quickstart.md
-      - linkListType: how-to-guide
-        links:
+          - text: Work with OneNote page content
+            url: onenote-add-ins-page-content.md
           - text: Use the OneNote JavaScript API to interact with objects and notebook content
             url: ../reference/overview/onenote-add-ins-javascript-reference.md
-          - text: Test and debug a OneNote add-in
-            url: ../testing/test-debug-office-add-ins.md
-          - text: Deploy and publish a OneNote add-in
-            url: ../publish/publish.md
 
   # Card (optional)
   - title: Key Office Add-ins concepts
@@ -55,17 +60,11 @@ landingContent:
             url: ../design/add-in-design.md
           - text: Develop Office Add-ins
             url: ../develop/develop-overview.md
-
-  # Card
-  - title: Resources
-    linkLists:
+          - text: Test and debug a OneNote add-in
+            url: ../testing/test-debug-office-add-ins.md
+          - text: Deploy and publish a OneNote add-in
+            url: ../publish/publish.md
       - linkListType: reference
         links:
-          - text: Ask questions
-            url: /answers/topics/office-addins-dev.html
-          - text: Request features
-            url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
-          - text: Report issues
-            url: https://github.com/officedev/office-js/issues
           - text: Office Add-ins additional resources
             url: ../resources/resources-links-help.md
