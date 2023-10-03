@@ -29,15 +29,11 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
 - Add-ins can declare buttons that appear in command surfaces across messages and appointments. For more information, see [Add-in commands](../design/add-in-commands.md).
 
-    **An add-in with command buttons on the ribbon**
-
-    ![Add-in function command.](../images/uiless-command-shape.png)
+    ![Add-in command buttons on the ribbon.](../images/outlook-windows-ribbon.png)
 
 - Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
 
-    **A contextual add-in for a highlighted entity (an address)**
-
-    ![Shows a contextual app in a card.](../images/outlook-detected-entity-card.png)
+    ![A contextual add-in card appears from a highlighted address in a message.](../images/outlook-detected-entity-card.png)
 
 ## Mailbox items available to add-ins
 
