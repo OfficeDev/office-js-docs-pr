@@ -30,7 +30,7 @@ The following table lists client-server combinations that support the use of the
 |Client|Exchange Online|
 |------|------|
 |**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|
-|**Mac**<br>Version 16.71.312.0 or later|Supported|
+|**Mac**<br>Version 16.77.816.0 or later|Supported|
 |**Web browser (modern UI)**|Supported|
 |**iOS**|Not applicable|
 |**Android**|Not applicable|
