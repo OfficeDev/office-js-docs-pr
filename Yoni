@@ -1,0 +1,11 @@
+$ls -la file*
+-rw-r--r--. 1 admin2 admin2  7 Mar 27 15:34 file1.txt
+-rw-r--r--. 1 admin2 admin2 10 Mar 27 15:34 file2.txt
+-rw-r--r--. 1 admin2 admin2 13 Mar 27 15:34 file3.txt
+echo "Adding stuff to the end of a file" >> my_output.txt
+request location
+$cat my_output.txt 
+file1.txt
+file2.txt
+file3.txt
+Adding stuff to the end of a file
