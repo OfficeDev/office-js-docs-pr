@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.
-ms.date: 05/30/2023
+ms.date: 10/05/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -78,7 +78,7 @@ Mail and calendar are shared with a delegate or shared mailbox user. Add-ins are
 
 ### [Mac](#tab/unix)
 
-#### Shared mailboxes (preview)
+#### Shared mailboxes
 
 Mail and calendar are shared with a delegate or shared mailbox user. Add-ins are available to the delegate or user in message and appointment read and compose modes.
 
