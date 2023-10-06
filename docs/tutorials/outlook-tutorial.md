@@ -1326,6 +1326,10 @@ In this tutorial, you've created an Outlook add-in that can be used in message c
 > [!div class="nextstepaction"]
 > [Outlook add-in APIs](../outlook/apis.md)
 
+## Code samples
+
+- [Completed Outlook add-in tutorial](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/outlook-tutorial): The result of completing this tutorial.
+
 ## See also
 
 - [Office add-in manifests](../develop/add-in-manifests.md)
