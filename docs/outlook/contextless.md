@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in without the Reading Pane enabled or a message selected
 description: Learn how to activate your Outlook add-in without enabling the Reading Pane or first selecting a message.
-ms.date: 05/19/2023
+ms.date: 10/10/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,6 +17,8 @@ With a simple manifest configuration, you can create Outlook add-ins for the Mes
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) to create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
+If you already have an existing add-in project, to turn on this feature in your add-in, see [Configure the manifest](#configure-the-manifest).
+
 ## Configure the manifest
 
 > [!NOTE]
@@ -24,6 +26,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 To activate your add-in with the Reading Pane turned off or without a message selected, you must add the [SupportsNoItemContext](/javascript/api/manifest/action#supportsnoitemcontext) child element to the **\<Action\>** element and set its value to `true`. As this feature can only be implemented with a task pane in Message Read mode, the following elements must also be configured.
 
+- The [VersionOverrides 1.1 Mail](/javascript/api/manifest/versionoverrides-1-1-mail) schema must be specified.
 - The `xsi:type` attribute value of the **\<ExtensionPoint\>** element must be set to `MessageReadCommandSurface`.
 - The `xsi:type` attribute value of the **\<Action\>** element must be set to `ShowTaskpane`.
 
