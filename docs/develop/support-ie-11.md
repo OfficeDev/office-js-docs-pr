@@ -176,5 +176,5 @@ To debug your add-in that supports EdgeHTML, use one of the following options.
 ## See also
 
 - [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md)
-- [ECMAScript 6 compatibility table](https://kangax.github.io/compat-table/es6/)
+- [ECMAScript 6 compatibility table](http://compat-table.github.io/compat-table/es6/)
 - [Can I use... Support tables for HTML5, CSS3, etc](https://caniuse.com/)
