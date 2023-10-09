@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins additional resources
 description: Useful resources about Office Add-ins.
-ms.date: 02/27/2023
+ms.date: 10/10/2023
 ms.localizationpriority: medium
 ---
 
