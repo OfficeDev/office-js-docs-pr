@@ -1,7 +1,7 @@
 ---
 title: Office versions and requirement sets
 description: Supported Office.js platforms using JavaScript API.
-ms.date: 09/14/2022
+ms.date: 08/15/2023
 ms.localizationpriority: high
 ---
 
@@ -24,6 +24,10 @@ To identify the Office version that you're using, from within an Office applicat
 
 > [!NOTE]
 > If your version of Office is different from this, see [What version of Outlook do I have?](https://support.microsoft.com/office/b3a9568c-edb5-42b9-9825-d48d82b2257c) or [About Office: What version of Office am I using?](https://support.microsoft.com/topic/932788b8-a3ce-44bf-bb09-e334518b8b19) to understand how to get this information for your version.
+
+## Deployment
+
+How your add-in is deployed can affect your add-in's availability on the various platforms and clients. To learn more about deployment options, see [Deploy and publish Office Add-ins](../publish/publish.md).
 
 ## Office requirement sets availability
 

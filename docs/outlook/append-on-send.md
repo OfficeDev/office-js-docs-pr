@@ -1,7 +1,7 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 05/24/2023
+ms.date: 10/05/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -18,10 +18,6 @@ In this walkthrough, you'll develop an add-in that prepends a header and appends
 
 > [!NOTE]
 > Support for the append-on-send feature was introduced in [requirement set 1.9](/javascript/api/requirement-sets/outlook/requirement-set-1.9/outlook-requirement-set-1.9), while support for the prepend-on-send feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support these requirement sets.
-
-## Preview prepend-on-send in Outlook on Mac
-
-To preview the prepend-on-send feature in Outlook on Mac, install Version 16.70.212.0 or later.
 
 ## Set up your environment
 

@@ -2,6 +2,7 @@
 title: Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)
 description: Learn how to build a simple Outlook task pane add-in with the unified manifest for Microsoft 365.
 ms.date: 10/11/2023
+
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -10,7 +11,7 @@ ms.localizationpriority: high
 
 There are two tools that you can use to create an Outlook Add-in project that uses the unified manifest for Microsoft 365. This article describes how to do it with the Yeoman generator for Office (also called "Yo Office"). Alternatively, you can create an Outlook add-in project with the Teams Toolkit as described at [Create Office Add-in projects with Teams Toolkit (preview)](../develop/teams-toolkit-overview.md).
 
-In this article, you'll walk through the process of building an Outlook task pane add-in that displays a property of a selected message, triggers a notification on the reading pane, and inserts text into a message on the compose pane. This add-in will use a preview version of the JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use. For more information about this manifest, see [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
+In this article, you'll walk through the process of building an Outlook task pane add-in that displays a property of a selected message, triggers a notification on the reading pane, and inserts text into a message on the compose pane. This add-in will use a preview version of the unified, JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use. For more information about this manifest, see [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
 > [!NOTE]
 > The new manifest is available for preview and is supported only on Outlook for Windows. It is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins.
@@ -89,32 +90,22 @@ The add-in project that you've created with the Yeoman generator contains sample
     </main>
     ```
 
-1. In your code editor, open the file **./src/taskpane/taskpane.ts** and add the following code within the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
-
-    ```typescript
-    // Get a reference to the current message.
-    let item = Office.context.mailbox.item;
-
-    // Write a message property value to the task pane.
-    document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
-    ```
-
 ### Try it out
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server starts and your add-in will be [sideloaded](../outlook/sideload-outlook-add-ins-for-testing.md).
+1. Open a command prompt *as an administrator* and run the following command in the root directory of your project. When you run this command, the local web server starts and your add-in will be [sideloaded](../outlook/sideload-outlook-add-ins-for-testing.md).
 
     ```command&nbsp;line
     npm start
     ```
 
+    > [!NOTE]
+    > If this is the first time you've created an add-in on the computer, or the first time in over a month, you'll be prompted to install security certificates.
+
 1. Use the classic ribbon in Outlook. The remainder of these instructions assume this.  
 
 1. View a message in the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0), or open the message in its own window. A new control group named **Contoso Add-in** appears on the Outlook **Home** tab (or the **Message** tab if you opened the message in a new window). The group has a button named **Show Taskpane** and one named **Perform an action**.
-
-    > [!NOTE]
-    > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually](../outlook/sideload-outlook-add-ins-for-testing.md?tabs=windows#sideload-manually) to manually sideload the add-in in Outlook. When you are prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
 
 1. Select the **Perform an action** button. It [executes a command](../develop/create-addin-commands.md?branch=outlook-json-manifest#step-3-add-the-functionfile-element) to generate a small informational notification at the bottom of the message header, just above the message body.
 
@@ -197,7 +188,7 @@ Add a custom button to the ribbon that inserts text into a message body.
     }
     ```
 
-1. The **Show Taskpane** button appears when the user is reading an email, but the button for adding text should only appear when the user is composing a new email (or replying to one). So the manifest must specify a new ribbon object. Scroll to the property `extension.ribbons` and add the following object to the `ribbons` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup:
+1. The **Show Taskpane** button appears when the user is reading an email, but the button for adding text should only appear when the user is composing a new email (or replying to one). So the manifest must specify a new ribbon object. Scroll to the property `extension.ribbons` and add the following object to the `ribbons` array. Be sure to put a comma after the object that is already in the array. Note the following about this JSON:
 
     - The only value in the `contexts` array is "mailCompose", so the button will appear when in a compose (or reply) window but not in a message read window where the **Show Taskpane** and **Perform an action** buttons appear. Compare this value with the `contexts` array in the existing ribbon object, whose value is `["mailRead"]`.
     - The value of the `tabs[0].groups[0].controls[0].actionId` must be exactly the same as the value of `actions[0].id` property in the runtime object you created in an earlier step.
@@ -243,16 +234,13 @@ Add a custom button to the ribbon that inserts text into a message body.
 
 ### Try out the updated add-in
 
-1. Run the following command in the root directory of your project.
+1. Open a command prompt *as an administrator* and run the following command in the root directory of your project.
 
     ```command&nbsp;line
     npm start
     ```
 
 1. In Outlook, open a new message window (or reply to an existing message). A new control group named **Contoso Add-in** will appear on the Outlook **Message** tab. The group has a button named **Insert text**.
-
-    > [!NOTE]
-    > If the new group isn't present, then your add-in wasn't automatically sideloaded. Follow the instructions in [Sideload manually](../outlook/sideload-outlook-add-ins-for-testing.md?tabs=windows#sideload-manually) to manually sideload the add-in in Outlook. When you're prompted to upload the manifest file, use the file `C:\Users\{your_user_name}\AppData\Local\Temp\manifest.xml`. The file has an `.xml` extension because during the preview period, the JSON-formatted manifest is converted to an XML manifest, which is then sideloaded.
 
 1. Put the cursor anywhere in the message body and choose the **Insert text** button.
 

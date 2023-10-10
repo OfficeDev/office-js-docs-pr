@@ -76,7 +76,7 @@ The add-in project that you've created with the Yeoman generator contains sample
     </main>
     ```
 
-1. In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
+1. In your code editor, open the file **./src/taskpane/taskpane.js**, then add the following code to the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
 
     ```js
     // Get a reference to the current message
@@ -84,6 +84,34 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     // Write message property value to the task pane
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
+    ```
+
+    Your **taskpane.js** file should now contain the following code.
+
+
+    ```js
+    /*
+     * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+     * See LICENSE in the project root for license information.
+     */
+
+    /* global document, Office */
+
+    Office.onReady((info) => {
+      if (info.host === Office.HostType.Outlook) {
+        document.getElementById("sideload-msg").style.display = "none";
+        document.getElementById("app-body").style.display = "flex";
+        document.getElementById("run").onclick = run;
+      }
+    });
+    
+    export async function run() {
+      // Get a reference to the current message
+      const item = Office.context.mailbox.item;
+    
+      // Write message property value to the task pane
+      document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
+    }
     ```
 
 ### Try it out
@@ -123,10 +151,10 @@ Congratulations, you've successfully created your first Outlook task pane add-in
 
 ### Prerequisites
 
-- [Visual Studio 2019](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed
+- [Visual Studio 2019](https://www.visualstudio.com/vs/) or later with the **Office/SharePoint development** workload installed
 
     > [!NOTE]
-    > If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.
+    > If you've previously installed Visual Studio 2019 or later, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.
 
 - Microsoft 365
 
@@ -283,15 +311,15 @@ When you've completed the wizard, Visual Studio creates a solution that contains
     > [!NOTE]
     > If the task pane doesn't load, try to verify by opening it in a browser on the same machine.
 
-## Code samples
-
-- [Outlook "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/outlook-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
-
 ### Next steps
 
 Congratulations, you've successfully created your first Outlook task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
 ---
+
+## Code samples
+
+- [Outlook "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/outlook-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
 
 ## See also
 

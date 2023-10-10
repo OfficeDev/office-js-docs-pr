@@ -1,7 +1,7 @@
 ---
 title: Publish task pane and content add-ins to a SharePoint app catalog
 description: To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the app catalog for their organization.
-ms.date: 11/08/2021
+ms.date: 08/18/2023
 ms.localizationpriority: medium
 ---
 
@@ -11,9 +11,9 @@ An app catalog is a dedicated site collection in a SharePoint web application or
 
 > [!IMPORTANT]
 >
-> - App catalogs on SharePoint do not support add-in features that are implemented in the `VersionOverrides` node of the [Office add-in XML manifest](../develop/xml-manifest-overview.md), such as add-in commands.
-> - If you’re targeting a cloud or hybrid environment, we recommend that you [use Integrated Apps via the Microsoft 365 admin center](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) to publish your add-ins.
-> - App catalogs on SharePoint are not supported in Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).
+> - App catalogs on SharePoint don't support add-in features that are implemented in the `VersionOverrides` node of the [Office add-in XML manifest](../develop/xml-manifest-overview.md), such as add-in commands.
+> - If you're targeting a cloud or hybrid environment, we recommend that you [use Integrated Apps via the Microsoft 365 admin center](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) to publish your add-ins.
+> - App catalogs on SharePoint aren't supported in Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).
 
 ## Create an app catalog
 
@@ -23,11 +23,11 @@ Complete the steps in one of the following sections to create an app catalog wit
 
 To create the SharePoint app catalog, follow the instructions at [Configure the App Catalog site for a web application](/sharepoint/administration/manage-the-app-catalog).
 
-Once you have created the app catalog follow the steps to [publish an Office Add-in](#publish-an-office-add-in).
+Once you've created the app catalog, follow the steps to [publish an Office Add-in](#publish-an-office-add-in).
 
 ### To create an app catalog on Microsoft 365
 
-To create the SharePoint app catalog, follow the instructions at [Create the App Catalog site collection](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection). Once you have created the app catalog, follow the steps in the next section to publish an Office Add-in.
+To create the SharePoint app catalog, follow the instructions at [Create the App Catalog site collection](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection). Once you've created the app catalog, follow the steps in the next section to publish an Office Add-in.
 
 ## Publish an Office Add-in
 
@@ -38,7 +38,7 @@ Complete the steps in one of the following sections to publish an Office Add-in 
 1. Go to the [Active sites page of the new SharePoint admin center](https://admin.microsoft.com/sharepoint?page=siteManagement&modern=true) and sign in with an account that has [admin permissions](/sharepoint/sharepoint-admin-role) for your organization.
 
     > [!NOTE]
-    > If you have Microsoft 365 operated by 21Vianet (China), [sign in to the Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=850627), then browse to the SharePoint admin center and open the More features page.
+    > If you have Microsoft 365 operated by 21Vianet (China), [sign in to the Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=850627), then browse to the SharePoint admin center and open the **More features** page.
 
 1. Open the app catalog site by selecting its URL in the URL column.
 

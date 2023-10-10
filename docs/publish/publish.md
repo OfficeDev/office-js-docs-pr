@@ -1,13 +1,13 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 05/11/2023
+ms.date: 08/15/2023
 ms.localizationpriority: high
 ---
 
 # Deploy and publish Office Add-ins
 
-You can use one of several methods to deploy your Office Add-in for testing or distribution to users.
+You can use one of several methods to deploy your Office Add-in for testing or distribution to users. The deployment method can also affect which platforms surface your add-in.
 
 |**Method**|**Use...**|
 |:---------|:------------|

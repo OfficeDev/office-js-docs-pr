@@ -1,7 +1,7 @@
 ---
 title: Integrate built-in Office buttons into custom control groups and tabs
 description: Learn how to include built-in Office buttons in your custom command groups and tabs on the Office ribbon.
-ms.date: 01/22/2022
+ms.date: 08/18/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -73,4 +73,4 @@ The IDs for supported controls and control groups are in files in the repo [Offi
 
 ## Behavior on unsupported platforms
 
-If your add-in is installed on a platform that doesn't support [requirement set AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), then the markup described in this article is ignored and the built-in Office controls/groups will not appear in your custom groups/tabs. To prevent your add-in from being installed on platforms that don't support the markup, add a reference to the requirement set in the **\<Requirements\>** section of the manifest. For instructions, see [Specify which Office versions and platforms can host your add-in](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Alternatively, design your add-in to have an experience when **AddinCommands 1.3** isn't supported, as described in [Design for alternate experiences](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). For example, if your add-in contains instructions that assume the built-in buttons are in your custom groups, you could design a version that assumes that the built-in buttons are only in their usual places.
+If your add-in is installed on a platform that doesn't support [requirement set AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), then the markup described in this article is ignored and the built-in Office controls/groups won't appear in your custom groups/tabs. To prevent your add-in from being installed on platforms that don't support the markup, add a reference to the requirement set in the **\<Requirements\>** section of the manifest. For instructions, see [Specify which Office versions and platforms can host your add-in](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Alternatively, design your add-in to have an experience when **AddinCommands 1.3** isn't supported, as described in [Design for alternate experiences](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). For example, if your add-in contains instructions that assume the built-in buttons are in your custom groups, you could design a version that assumes that the built-in buttons are only in their usual places.
