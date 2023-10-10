@@ -261,7 +261,7 @@ The management and enforcement of Office settings is done with group policy sett
 |--------------|-------------|
 | Allow Unsecure web add-ins and Catalogs | Allows users to run non-secure Office Add-ins, which are Office Add-ins that have webpage or catalog locations that are not SSL-secured (https://) and are not in users' Internet zones. |
 | Block Web Add-ins | Allows you to prevent users from running Office Add-ins that use web technologies. |
-| Block the Office Store |  Allows you to prevent users from getting or running Office Add-ins that come from AppSource. |
+| Block the Office Store |  Allows you to prevent users from getting or running Office Add-ins that come from [AppSource](https://appsource.microsoft.com). |
 
 ## See also
 
