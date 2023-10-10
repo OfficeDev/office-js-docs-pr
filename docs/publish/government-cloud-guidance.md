@@ -2,7 +2,7 @@
 title: Guidance for deploying Office Add-ins on government clouds
 description: Learn how to deploy your Office Add-in to secure, government cloud environments
 ms.topic: best-practice
-ms.date: 05/30/2023
+ms.date: 10/10/2023
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +14,7 @@ For partners providing their Office Add-ins to customers in these restricted clo
 
 ## All sovereign environments
 
-For all government cloud (i.e. Sovereign Cloud) environments, the public Office Store is not available. This means that end-users cannot acquire Office Add-ins directly from the public store. Administrators are also unable to deploy Office Add-ins directly from the public store into their Admin Portal. Instead, you must work with administrators to ensure the following:
+For all government cloud (i.e. Sovereign Cloud) environments, the public Microsoft 365 and Copilot store is not available. This means that end-users cannot acquire Office Add-ins directly from the public store. Administrators are also unable to deploy Office Add-ins directly from the public store into their Admin Portal. Instead, you must work with administrators to ensure the following:
 
 - The required resources and services for your solution are available inside the cloud boundary. Either you work with the tenant administrators to provision your service and resources inside of the cloud boundary, or you work with the network administrator to enable access to your resources that reside outside of the cloud boundary.
 

@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins additional resources
 description: Useful resources about Office Add-ins.
-ms.date: 02/27/2023
+ms.date: 10/10/2023
 ms.localizationpriority: medium
 ---
 
@@ -66,7 +66,7 @@ The following books and classes provide add-ins information from a different per
 
 |Resource|More information|
 |-----------------|------------|
-|**Pluralsight course about Office Add-ins**| [John Brown's course "Fundamentals of Building Office Add-ins with Office JavaScript APIs"](https://www.pluralsight.com/courses/build-office-addins-js-api) teaches you how to develop a PowerPoint add-in from scratch, including information about how to communicate with Trello and publish the add-in to the Office Store.|
+|**Pluralsight course about Office Add-ins**| [John Brown's course "Fundamentals of Building Office Add-ins with Office JavaScript APIs"](https://www.pluralsight.com/courses/build-office-addins-js-api) teaches you how to develop a PowerPoint add-in from scratch, including information about how to communicate with Trello and publish the add-in to AppSource.|
 |**LinkedIn course about Office Add-ins**| [Bill Ayer's course "Microsoft Office Add-Ins for Developers"](https://www.linkedin.com/learning/microsoft-office-add-ins-for-developers/microsoft-office-add-ins?u=3322) gives an overview of the platform and explains many of the major concepts of Office Add-ins.|
 |***Building Office Add-ins using Office.js* book**| [Michael Zlatkovsky's book *Building Office Add-ins using Office.js*](https://leanpub.com/buildingofficeaddins) describes the principles and design patterns shared by the 2016 APIs for Excel, Word, and OneNote. At the time of writing, Michael was a member of the Office Extensibility team at Microsoft, but this book is independently authored without input from Microsoft. Neither Microsoft nor Michael collect any profit on this book, as proceeds are donated to disaster-relief and humanitarian charitable causes.|
 

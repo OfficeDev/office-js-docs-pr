@@ -1,7 +1,7 @@
 ---
 title: AppSource listing options for your event-based Outlook add-in
 description: Learn about the AppSource listing options available for your Outlook add-in that implements event-based activation.
-ms.date: 01/20/2023
+ms.date: 10/10/2023
 ms.localizationpriority: medium
 ---
 
@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 
 Add-ins must be deployed by an organization's admins for end-users to access the [event-based activation](autolaunch.md) feature. Event-based activation is restricted if the end-user acquired the add-in directly from [AppSource](https://appsource.microsoft.com). For example, if the Contoso add-in includes an event-based function, the automatic invocation of the add-in only happens if the add-in was installed for the end-user by their organization's admin. Otherwise, the automatic invocation of the add-in is blocked.
 
-An end-user or admin can acquire add-ins through AppSource or the in-app Office Store. If your add-in's primary scenario or workflow requires event-based activation, you may want to restrict your add-in to admin deployment only. To enable that restriction, we can provide flight code URLs for add-ins in AppSource. Thanks to the flight codes, only end-users with these special URLs can access the listing. The following is an example URL.
+An end-user or admin can acquire add-ins through AppSource or the in-app Microsoft 365 and Copilot store. If your add-in's primary scenario or workflow requires event-based activation, you may want to restrict your add-in to admin deployment only. To enable that restriction, we can provide flight code URLs for add-ins in AppSource. Thanks to the flight codes, only end-users with these special URLs can access the listing. The following is an example URL.
 
 `https://appsource.microsoft.com/product/office/WA200002862?flightCodes=EventBasedTest1`
 
-Users and admins can't explicitly search for an add-in by its name in AppSource or the in-app Office Store when a flight code is enabled for it. As the add-in creator, you can privately share these flight codes with organization admins for add-in deployment.
+Users and admins can't explicitly search for an add-in by its name in AppSource or the in-app Microsoft 365 and Copilot store when a flight code is enabled for it. As the add-in creator, you can privately share these flight codes with organization admins for add-in deployment.
 
 > [!NOTE]
 > While end-users can install the add-in using a flight code, the add-in won't include event-based activation.
