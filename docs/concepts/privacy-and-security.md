@@ -1,7 +1,7 @@
 ---
 title: Privacy and security for Office Add-ins
 description: Learn about the privacy and security aspects of the Office Add-ins platform.
-ms.date: 03/21/2023
+ms.date: 10/10/2023
 ms.localizationpriority: medium
 ---
 
@@ -70,7 +70,7 @@ You can make your Office Add-ins available to the public by publishing them to A
 
 ## Optional connected experiences
 
-End users and IT admins can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Office Add-ins, the impact of disabling the **Optional connected experiences** setting is that users can no longer access add-ins or the Office Store through these clients. However, certain Microsoft add-ins that are considered essential or business-critical, and add-ins deployed by an organization's IT admin through [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) will still be available. Additionally, add-ins and the Store remain available in Outlook on the web, regardless of the status of the setting.
+End users and IT admins can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Office Add-ins, the impact of disabling the **Optional connected experiences** setting is that users can no longer access add-ins or the Microsoft 365 and Copilot store through these clients. However, certain Microsoft add-ins that are considered essential or business-critical, and add-ins deployed by an organization's IT admin through [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) will still be available. Additionally, add-ins and the Microsoft 365 and Copilot store remain available in Outlook on the web, regardless of the status of the setting.
 
 For more about Outlook-specific behavior, see [Privacy, permissions, and security for Outlook add-ins](../outlook/privacy-and-security.md#optional-connected-experiences).
 
@@ -261,7 +261,7 @@ The management and enforcement of Office settings is done with group policy sett
 |--------------|-------------|
 | Allow Unsecure web add-ins and Catalogs | Allows users to run non-secure Office Add-ins, which are Office Add-ins that have webpage or catalog locations that are not SSL-secured (https://) and are not in users' Internet zones. |
 | Block Web Add-ins | Allows you to prevent users from running Office Add-ins that use web technologies. |
-| Block the Office Store |  Allows you to prevent users from getting or running Office Add-ins that come from the Office Store. |
+| Block the Office Store |  Allows you to prevent users from getting or running Office Add-ins that come from [AppSource](https://appsource.microsoft.com). |
 
 ## See also
 
