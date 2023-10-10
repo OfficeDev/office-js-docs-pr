@@ -564,6 +564,10 @@ Complete the following steps to add code that navigates between the slides of a 
     npm stop
     ```
 
+## Code samples
+
+- [Completed PowerPoint add-in tutorial](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial-yo): The result of completing this tutorial.
+
 # [Visual Studio](#tab/visualstudio)
 
 > [!TIP]
@@ -1170,6 +1174,10 @@ Complete the following steps to add code that navigates between the slides of a 
 1. In Visual Studio, stop the add-in by pressing **Shift+F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
     ![The Stop button highlighted on the Visual Studio toolbar.](../images/powerpoint-tutorial-stop.png)
+
+## Code samples
+
+- [Completed PowerPoint add-in tutorial](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial): The result of completing this tutorial.
 
 ---
 

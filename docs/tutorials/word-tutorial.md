@@ -848,6 +848,10 @@ In this tutorial, you've created a Word task pane add-in that inserts and replac
 > [!div class="nextstepaction"]
 > [Word add-ins overview](../word/word-add-ins-programming-overview.md)
 
+## Code samples
+
+- [Completed Word add-in tutorial](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/word-tutorial): The result of completing this tutorial.
+
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
