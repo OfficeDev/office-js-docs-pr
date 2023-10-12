@@ -6,6 +6,8 @@ If the `CONTOSO` namespace isn't available in the autocomplete menu, take the fo
 
 1. Under the **Developer Add-ins** section, select **My custom functions add-in** to register it.
 
+    :::image type="content" source="../images/excel-cf-select-add-in.png" alt-text="The My Add-ins dialog that shows active add-ins, with the My custom function add-in button highlighted.":::
+
 # [Excel on the web](#tab/excel-online)
 
 1. In Excel, select **Home** > **Add-ins**, then select **Get Add-ins**.
