@@ -38,9 +38,7 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 1. Open a document.
 
-1. Choose **Add-ins** on the **Insert** tab. (On the **Insert** tab, you may need to scroll horizontally until you see the **Add-ins** button.) Your sideloaded add-in is available to insert under the **Developer** heading in the **Add-ins** UI.
-
-    ![Insert Add-ins in the Excel app.](../images/excel-insert-add-in.png)
+1. Select **Home** > **Add-ins**, then select **Get Add-ins**. Your sideloaded add-in is available to insert under the **Developer** heading in the **Add-ins** UI.
 
 ## Sideload an add-in on Excel or Word on iPad using macOS Catalina
 
@@ -59,9 +57,7 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 1. Open a document.
 
-1. Choose **Add-ins** on the **Insert** tab. (On the **Insert** tab, you may need to scroll horizontally until you see the **Add-ins** button.) Your sideloaded add-in is available to insert under the **Developer** heading in the **Add-ins** UI.
-
-    ![Insert Add-ins in the Excel app.](../images/excel-insert-add-in.png)
+1. Select **Home** > **Add-ins**, then select **Get Add-ins**. Your sideloaded add-in is available to insert under the **Developer** heading in the **Add-ins** UI.
 
 ## Remove a sideloaded add-in
 

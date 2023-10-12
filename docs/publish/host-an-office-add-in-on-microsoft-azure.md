@@ -11,12 +11,12 @@ The simplest Office Add-in is made up of an XML manifest file and an HTML page. 
 
 This article describes how to deploy an add-in web app to Azure and [sideload the add-in](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) for testing in an Office client application.
 
-## Prerequisites 
+## Prerequisites
 
 1. Install [Visual Studio 2019](https://www.visualstudio.com/downloads) and choose to include the **Azure development** workload.
 
     > [!NOTE]
-    > If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed. 
+    > If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed.
 
 2. Install Office.
 
@@ -54,12 +54,12 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 
 3. In the **Word Options** dialog box, choose **Trust Center** and then choose **Trust Center Settings**.
 
-4. In the **Trust Center** dialog box, choose **Trusted Add-in Catalogs**. Enter the universal naming convention (UNC) path for the file share you created earlier as the **Catalog URL** (for example, \\\YourMachineName\AddinManifests), and then choose **Add catalog**. 
+4. In the **Trust Center** dialog box, choose **Trusted Add-in Catalogs**. Enter the universal naming convention (UNC) path for the file share you created earlier as the **Catalog URL** (for example, \\\YourMachineName\AddinManifests), and then choose **Add catalog**.
 
 5. Select the check box for **Show in Menu**.
 
     > [!NOTE]
-    > When you store an add-in XML manifest file on a share that is specified as a trusted web add-in catalog, the add-in appears under **Shared Folder** in the **Office Add-ins** dialog box when the user navigates to the **Insert** tab on the ribbon and chooses **My Add-ins**.
+    > When you store an add-in XML manifest file on a share that is specified as a trusted web add-in catalog, the add-in appears under **Shared Folder** in the **Office Add-ins** dialog box that launches from **Home** > **Add-ins** > **Get Add-ins**.
 
 6. Close Word.
 
@@ -144,7 +144,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 1. Start Word and create a document.
 
-2. On the ribbon, choose **Insert** > **My Add-ins**.
+2. Select **Home** > **Add-ins**, then select **Get Add-ins**.
 
 3. In the **Office Add-ins** dialog box, choose **SHARED FOLDER**. Word scans the folder that you listed as a trusted add-ins catalog (in [Step 2: Add the file share to the Trusted Add-ins catalog](../publish/host-an-office-add-in-on-microsoft-azure.md#step-2-add-the-file-share-to-the-trusted-add-ins-catalog)) and shows the add-ins in the dialog box. You should see an icon for your sample add-in.
 
