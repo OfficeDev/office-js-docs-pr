@@ -2,7 +2,7 @@ If the `CONTOSO` namespace isn't available in the autocomplete menu, take the fo
 
 # [Excel on Windows or Mac](#tab/excel-windows)
 
-1. In the Excel ribbon, select the **Home** > **Add-ins**.
+1. In the Excel ribbon, select **Home** > **Add-ins**.
 
 1. Under the **Developer Add-ins** section, select **My custom functions add-in** to register it.
 
@@ -12,7 +12,7 @@ If the `CONTOSO` namespace isn't available in the autocomplete menu, take the fo
 
 1. In Excel, select **Home** > **Add-ins**, then select **Get Add-ins**.
 
-1. Under the **MY ADD-INS**, select **Manage My Add-ins** and choose **Upload My Add-in**.
+1. In the **MY ADD-INS** tab, select **Manage My Add-ins** and choose **Upload My Add-in**.
 
 1. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
 
