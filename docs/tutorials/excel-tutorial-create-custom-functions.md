@@ -156,7 +156,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 # [Excel on the web](#tab/excel-online)
 
-1. In Excel, select **Home** > **Add-ins**, then select **Get Add-ins**.
+1. In Excel, select **Home** > **Add-ins**, then select **More Add-ins**.
 
 1. In the Office Add-ins dialog, choose **Manage My Add-ins**, then select **Upload My Add-in**.
 
