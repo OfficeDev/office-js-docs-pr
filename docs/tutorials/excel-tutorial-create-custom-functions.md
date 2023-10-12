@@ -146,9 +146,9 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. Close Excel and then reopen Excel.
 
-1. In Excel, select **Home** > **Add-ins**, then select **Get Add-ins**.
+1. In the Excel ribbon, select **Home** > **Add-ins**.
 
-1. Under the **MY ADD-INS** section, select **My custom functions add-in** to register it.
+1. Under the **Developer Add-ins** section, select **My custom functions add-in** to register it.
 
 1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Office-Add-in-Samples")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Office-Add-in-Samples repository](https://github.com/OfficeDev/Office-Add-in-Samples).
 

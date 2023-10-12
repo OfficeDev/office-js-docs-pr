@@ -2,9 +2,9 @@ If the `CONTOSO` namespace isn't available in the autocomplete menu, take the fo
 
 # [Excel on Windows or Mac](#tab/excel-windows)
 
-1. In Excel, select the **Home** > **Add-ins**. Under **My Add-ins**, select **See all**.
+1. In the Excel ribbon, select the **Home** > **Add-ins**.
 
-1. Under the **MY ADD-INS** section, select **My custom functions add-in** to register it.
+1. Under the **Developer Add-ins** section, select **My custom functions add-in** to register it.
 
 # [Excel on the web](#tab/excel-online)
 
