@@ -114,12 +114,10 @@ The best method for debugging an add-in in Visual Studio 2022 depends on whether
 
 1. Follow the steps in the earlier section [Start the Excel, PowerPoint, or Word add-in project](#start-the-excel-powerpoint-or-word-add-in-project).
 
-1. Launch the add-in in the Office application if it isn't already open. For example, if it's a task pane add-in, it will have added a button to the **Home** ribbon (for example, a **Show Taskpane** button). Select the button on the ribbon. 
+1. Launch the add-in in the Office application if it isn't already open. For example, if it's a task pane add-in, it will have added a button to the **Home** ribbon (for example, a **Show Taskpane** button). Select the button on the ribbon.
 
    > [!NOTE]
-   > If your add-in isn't sideloaded by Visual Studio, you can sideload it manually. In Excel, PowerPoint, or Word, choose the **Insert** tab, and then choose the down-arrow located to the right of **My Add-ins**.
-   >
-   > ![Screenshot showing Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted.](../images/excel-cf-register-add-in-1b.png)
+   > If your add-in isn't sideloaded by Visual Studio, you can sideload it manually. Follow the instructions to [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing) for your platform.
    >
    > In the list of available add-ins, find the **Developer Add-ins** section and select the your add-in to register it.
 
