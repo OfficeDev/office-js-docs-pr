@@ -43,7 +43,7 @@ You can use the browser developer tools to debug custom functions that don't use
 
 1. Open [Office on the web](https://office.live.com/).
 2. Open a new Excel workbook.
-3. Open the **Insert** tab on the ribbon and, in the **Add-ins** section, choose **Office Add-ins**.
+3. Select **Home** > **Add-ins**, then select **Get Add-ins**.
 4. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
   
     ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)

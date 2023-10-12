@@ -63,7 +63,7 @@ The following steps are the instructions for debugging your add-in. If you just 
 This example uses Word and a free add-in from AppSource.
 
 1. Open Word and choose a blank document.
-1. On the **Insert** tab, in the **Add-ins** group, select **My Add-ins** to open the **Office Add-ins** dialog and then select the **STORE** tab.
+1. Select **Home** > **Add-ins**, then select **Get Add-ins**. to open the **Office Add-ins** dialog and then select the **STORE** tab.
 1. Select the **QR4Office** add-in. It opens in a task pane.
 1. Launch the F12 development tools that corresponds to your version of Office as described in the preceding section.
 1. In the F12 window, select **Home.html**.

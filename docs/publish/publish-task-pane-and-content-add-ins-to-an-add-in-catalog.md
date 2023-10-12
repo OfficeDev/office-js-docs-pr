@@ -70,7 +70,7 @@ For online Office applications, you can find Office Add-ins from the app catalog
 
 1. Open the online Office application (Excel, PowerPoint, or Word).
 1. Create or open a document.
-1. Choose **Insert** > **Add-ins**.
+1. Select **Home** > **Add-ins**, then select **Get Add-ins**.
 1. In the Office Add-ins dialog, choose the **MY ORGANIZATION** tab.
     The Office Add-ins are listed.
 1. Choose an Office Add-in and then choose **Add**.
@@ -86,7 +86,7 @@ For Office applications on the desktop, you can find Office Add-ins from the app
     Specify just the URL of the parent site collection:
     - `https://<domain>/sites/<AddinCatalogSiteCollection>`
 1. Close and reopen the Office application.
-1. Choose **Insert** > **Get Add-ins**.
+1. Select **Home** > **Add-ins**, then select **Get Add-ins**.
 1. In the Office Add-ins dialog, choose the **MY ORGANIZATION** tab.
     The Office Add-ins are listed.
 1. Choose an Office Add-in and then choose **Add**.
