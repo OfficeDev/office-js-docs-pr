@@ -69,7 +69,7 @@ This method doesn't use the command line and can be accomplished using commands 
 
 1. Open [Office on the web](https://office.com/). Open a document in **Excel**, **OneNote**, **PowerPoint**, or  **Word**. 
 
-1. Select **Home** > **Add-ins**, then select **Get Add-ins**.
+1. Select **Home** > **Add-ins**, then select **More Add-ins**.
 
 1. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
 
