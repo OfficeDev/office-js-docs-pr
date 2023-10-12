@@ -158,7 +158,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. In Excel, select **Home** > **Add-ins**, then select **Get Add-ins**.
 
-1. Choose **Manage My Add-ins** and select **Upload My Add-in**.
+1. In the Office Add-ins dialog, choose **Manage My Add-ins**, then select **Upload My Add-in**.
 
 1. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
 
