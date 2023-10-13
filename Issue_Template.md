@@ -5,7 +5,7 @@ To report an issue with the Office-Add-ins documentation, please provide the art
 
 If your issue is not related to the Office Add-ins documentation, please post it to one of the following channels instead.
 
-- To ask a question about using the Office.js API, post your question to Microsoft Q&A (https://learn.microsoft.com/answers/tags/321/office-development).
+- To ask a question about using the Office.js API, post your question to Stack Overflow and tag it with the "office-js" tag (https://stackoverflow.com/questions/tagged/office-js).
 
 - To report an issue with the Office.js API or platform, create the issue in the OfficeDev/office-js repository (https://github.com/OfficeDev/office-js/issues), where members of the product team monitor for customer-reported issues.
 
