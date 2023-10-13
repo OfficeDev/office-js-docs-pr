@@ -23,9 +23,9 @@ We also encourage you to fork, make the fix, and do a pull request of your propo
 
 If your issue is not related to the Office Add-ins documentation, please post it to one of the following channels instead.
 
-- To ask a question about using the Office.js API, post your question to Stack Overflow and tag it with the "office-js" tag (http://stackoverflow.com/questions/tagged/office-js).
-- To report an issue with the Office.js API or platform, create the issue in the OfficeDev/office-js repository (https://github.com/OfficeDev/office-js), which members of the product team monitor for customer-reported issues.
-- To submit a feature request for the Office.js API or platform, post your idea to the [Microsoft 365 Developer Platform Tech Community](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform), or if the feature request already exists there, add your vote for it.
+- To ask a question about using the Office.js API, post your question to Stack Overflow and tag it with the "office-js" tag (https://stackoverflow.com/questions/tagged/office-js).
+- To report an issue with the Office.js API or platform, create the issue in the OfficeDev/office-js repository (https://github.com/OfficeDev/office-js/issues), where members of the product team monitor for customer-reported issues.
+- To submit a feature request for the Office.js API or platform, post your idea to the [Microsoft 365 Developer Platform Tech Community](https://aka.ms/m365dev-suggestions), or if the feature request already exists there, add your vote for it.
 
 ## Join the Microsoft 365 Developer Program
 

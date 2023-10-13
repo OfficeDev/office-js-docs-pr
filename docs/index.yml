@@ -128,13 +128,13 @@ conceptualContent:
     # Card 6
     - title: Engage
       links:
-        - url: https://developer.microsoft.com/microsoft-365/dev-program
+        - url: https://aka.ms/m365devprogram
           itemType: whats-new
           text: Join the Developer Program
         - url: https://aka.ms/m365dev-suggestions
           itemType: architecture
           text: Request features
-        - url: /answers/products/m365
+        - url: https://aka.ms/office-addins-dev-questions
           itemType: reference
           text: Ask questions about Office.js on Microsoft Q&A
         - url: https://stackoverflow.com/questions/tagged/office-js
