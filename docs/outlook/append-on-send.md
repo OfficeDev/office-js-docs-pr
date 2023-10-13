@@ -351,7 +351,7 @@ As you implement prepend-on-send and append-on-send in your add-in, keep the fol
 
 - Any formatting applied to prepended or appended content doesn't affect the style of the rest of the mail item's body.
 
-- Prepend-on-send and append-on-send can't be implemented in the same add-in that implements the [on-send feature](outlook-on-send-addins.md). As an alternative, consider implementing [Smart Alerts](smart-alerts-onmessagesend-walkthrough.md) instead.
+- Prepend-on-send and append-on-send can't be implemented in the same add-in that implements the [on-send feature](outlook-on-send-addins.md). As an alternative, consider implementing [Smart Alerts](onmessagesend-onappointmentsend-events.md) instead.
 
 - When implementing Smart Alerts in the same add-in, the prepend-on-send and append-on-send operations occur before the `OnMessageSend` and `OnAppointmentSend` event handler operations.
 
@@ -372,4 +372,4 @@ If you encounter an error while implementing the prepend-on-send and append-on-s
 
 - [Office add-in manifests](../develop/add-in-manifests.md)
 - [Office.Body](/javascript/api/outlook/office.body)
-- [Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in](smart-alerts-onmessagesend-walkthrough.md)
+- [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)
