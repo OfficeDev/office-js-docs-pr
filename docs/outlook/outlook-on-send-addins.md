@@ -444,7 +444,7 @@ In the `Contoso Message Body Checker.xml` manifest file, you include the functio
 
 > [!IMPORTANT]
 > If you are using Visual Studio 2019 to develop your on-send add-in, you may get a validation warning like the following:
-> "This is an invalid xsi:type '<http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events>'."
+> "This is an invalid xsi:type `'http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events'`."
 > To work around this, you'll need a newer version of the MailAppVersionOverridesV1_1.xsd which has been provided as a GitHub gist in a [blog about this warning](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).
 
 For the `Contoso Subject and CC Checker.xml` manifest file, the following example shows the function file and function name to call on message send event.
