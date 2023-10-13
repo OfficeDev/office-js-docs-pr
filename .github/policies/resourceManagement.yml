@@ -67,7 +67,7 @@ configuration:
           label: 'Type: product feature request'
       actions:
       - addReply:
-          reply: Thanks for your interest in Office Add-ins development! Feedback here is intended for reporting problems with the Office Add-ins *documentation*. Can you please post this feature request to the [Microsoft 365 Developer Platform Tech Community](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform)? Feature Requests submitted to Tech Community are regularly reviewed by the product teams as they plan future releases. Thanks!
+          reply: Thanks for your interest in Office Add-ins development! Feedback here is intended for reporting problems with the Office Add-ins *documentation*. Can you please post this feature request to the [Microsoft 365 Developer Platform Tech Community](https://aka.ms/m365dev-suggestions)? Feature Requests submitted to Tech Community are regularly reviewed by the product teams as they plan future releases. Thanks!
       - closeIssue
     eventResponderTasks:
     - if:

@@ -285,5 +285,5 @@ If you encounter any deployment issues, see the [Azure App Service troubleshooti
 - [Deploy to App Service using GitHub Actions](/azure/app-service/deploy-github-actions?tabs=applevel)
 - [Deployment Best Practices](/azure/app-service/deploy-best-practices)
 - [App Service documentation](/azure/app-service)
-- [Azure community support](/answers/products/azure?product=all)
+- [Azure community support](/answers/tags/133/azure)
 - [Create a Node.js web app in Azure](/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode)
