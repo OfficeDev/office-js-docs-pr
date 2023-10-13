@@ -60,7 +60,7 @@ When you link your Office Add-ins, Teams apps, SPFx apps, and [other apps](/micr
 For more information on the Integrated Apps deployment process, see [Test and deploy Microsoft 365 Apps by partners in the Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
 > [!IMPORTANT]
-> Customers in sovereign or government clouds don't have access to Integrated Apps. They will use Centralized Deployment instead. Centralized Deployment is a similar deploy method, but doesn't expose connected add-ins and apps to the admin. For more information, see [Determine if Centralized Deployment of add-ins works for your organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
+> Customers in sovereign or government clouds don't have access to Integrated Apps. They will use Centralized Deployment instead. Centralized Deployment is a similar deployment method, but doesn't expose connected add-ins and apps to the admin. For more information, see [Determine if Centralized Deployment of add-ins works for your organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
 
 ### SharePoint app catalog deployment
 
