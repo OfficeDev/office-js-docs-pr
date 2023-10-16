@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in without the Reading Pane enabled or a message selected
 description: Learn how to activate your Outlook add-in without enabling the Reading Pane or first selecting a message.
-ms.date: 10/10/2023
+ms.date: 10/17/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -12,6 +12,8 @@ With a simple manifest configuration, you can create Outlook add-ins for the Mes
 
 > [!NOTE]
 > Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+>
+> Although Outlook on the web supports requirement set 1.13, an add-in won't activate if the Reading Pane is hidden or a message isn't selected. For more information, see [Feature support in Outlook on the web](#feature-support-in-outlook-on-the-web).
 
 ## Set up your environment
 
@@ -174,6 +176,12 @@ To activate your add-in with the Reading Pane turned off or without a message se
 ## Support for the item multi-select and pinnable task pane features
 
 When the **\<SupportsNoItemContext\>** element in the manifest is set to `true`, it automatically enables the [item multi-select](item-multi-select.md) and [pinnable task pane](pinnable-taskpane.md) features, even if these features aren't explicitly configured in the manifest.
+
+## Feature support in Outlook on the web
+
+In Outlook on the web, add-ins that implement the **\<SupportsNoItemContext\>** manifest element don't activate when the Reading Pane is hidden or when a message isn't selected. This is because add-in commands in Outlook on the web don't appear on the ribbon. To activate an add-in from the Message Read surface, you must first select a message, then select the add-in command from the message action bar.
+
+Since **\<SupportsNoItemContext\>** automatically enables the item multi-select feature, you'll be able to activate your add-in in Outlook on the web on multiple mail items.
 
 ## See also
 
