@@ -1,7 +1,8 @@
 ---
 title: Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)
 description: Learn how to build a simple Outlook task pane add-in with the unified manifest for Microsoft 365.
-ms.date: 08/09/2023
+ms.date: 10/11/2023
+
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -203,9 +204,9 @@ Add a custom button to the ribbon that inserts text into a message body.
                         "id": "msgWriteGroup",
                         "label": "Contoso Add-in",
                         "icons": [
-                            { "size": 16, "file": "https://localhost:3000/assets/icon-16.png" },
-                            { "size": 32, "file": "https://localhost:3000/assets/icon-32.png" },
-                            { "size": 80, "file": "https://localhost:3000/assets/icon-80.png" }
+                            { "size": 16, "url": "https://localhost:3000/assets/icon-16.png" },
+                            { "size": 32, "url": "https://localhost:3000/assets/icon-32.png" },
+                            { "size": 80, "url": "https://localhost:3000/assets/icon-80.png" }
                         ],
                         "controls": [
                             {
@@ -213,9 +214,9 @@ Add a custom button to the ribbon that inserts text into a message body.
                                 "type": "button",
                                 "label": "Insert text",
                                 "icons": [
-                                    { "size": 16, "file": "https://localhost:3000/assets/icon-16.png" },
-                                    { "size": 32, "file": "https://localhost:3000/assets/icon-32.png" },
-                                    { "size": 80, "file": "https://localhost:3000/assets/icon-80.png" }
+                                    { "size": 16, "url": "https://localhost:3000/assets/icon-16.png" },
+                                    { "size": 32, "url": "https://localhost:3000/assets/icon-32.png" },
+                                    { "size": 80, "url": "https://localhost:3000/assets/icon-80.png" }
                                 ],
                                 "supertip": {
                                     "title": "Insert text",

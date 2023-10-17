@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365 (preview)
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 05/24/2023
+ms.date: 10/11/2023
 ms.localizationpriority: high
 ---
 
@@ -215,15 +215,15 @@ The following is an example of a preview unified app manifest for an add-in.
                       "icons": [
                         {
                           "size": 16,
-                          "file": "test_16.png"
+                          "url": "test_16.png"
                         },
                         {
                           "size": 32,
-                          "file": "test_32.png"
+                          "url": "test_32.png"
                         },
                         {
                           "size": 80,
-                          "file": "test_80.png"
+                          "url": "test_80.png"
                         }
                       ],
                       "supertip": {
@@ -239,15 +239,15 @@ The following is an example of a preview unified app manifest for an add-in.
                       "icons": [
                         {
                           "size": 16,
-                          "file": "test_16.png"
+                          "url": "test_16.png"
                         },
                         {
                           "size": 32,
-                          "file": "test_32.png"
+                          "url": "test_32.png"
                         },
                         {
                           "size": 80,
-                          "file": "test_80.png"
+                          "url": "test_80.png"
                         }
                       ],
                       "supertip": {
@@ -272,15 +272,15 @@ The following is an example of a preview unified app manifest for an add-in.
                           "icons": [
                             {
                               "size": 16,
-                              "file": "test_16.png"
+                              "url": "test_16.png"
                             },
                             {
                               "size": 32,
-                              "file": "test_32.png"
+                              "url": "test_32.png"
                             },
                             {
                               "size": 80,
-                              "file": "test_80.png"
+                              "url": "test_80.png"
                             }
                           ],
                           "supertip": {
@@ -314,15 +314,15 @@ The following is an example of a preview unified app manifest for an add-in.
                       "icons": [
                         {
                           "size": 16,
-                          "file": "test_16.png"
+                          "url": "test_16.png"
                         },
                         {
                           "size": 32,
-                          "file": "test_32.png"
+                          "url": "test_32.png"
                         },
                         {
                           "size": 80,
-                          "file": "test_80.png"
+                          "url": "test_80.png"
                         }
                       ],
                       "supertip": {
