@@ -93,9 +93,6 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ![Custom text inserted into the document after selecting the Insert button from the add-in task pane.](../images/word-task-pane-react-component.png)
 
-### Next steps
-
-Congratulations, you've successfully created a task pane add-in using React and Fluent UI React!
 
 ## Migrate to Fluent UI React v9
 
