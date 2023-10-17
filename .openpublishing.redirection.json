@@ -3,7 +3,7 @@
         {
             "source_path": "docs/design/using-office-ui-fabric-react.md",
             "redirect_url": "/office/dev/add-ins/quickstarts/fluent-react-quickstart"
-        }
+        },
         {
             "source_path": "docs/develop/dynamic-dpi.md",
             "redirect_url": "/office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution"
