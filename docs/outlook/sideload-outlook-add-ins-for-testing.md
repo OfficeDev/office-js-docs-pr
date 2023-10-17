@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 08/14/2023
+ms.date: 10/19/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -68,6 +68,8 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
 
     ![The Add from File option is selected in the Custom Add-ins section.](../images/outlook-sideload-custom-add-in.png)
 
+    [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
+
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
     > [!IMPORTANT]
@@ -88,6 +90,8 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
 1. Locate the **Custom add-ins** section at the bottom of the dialog box. Select the **Add a custom add-in** link, and then select **Add from File**.
 
     ![The Add from File option is selected in the Custom Add-ins section.](../images/outlook-sideload-custom-add-in.png)
+
+    [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
@@ -142,6 +146,8 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
 
     ![The Add from File option is selected in the Custom add-ins section.](../images/outlook-sideload-custom-add-in.png)
 
+    [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
+
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
 ### Outlook 2013
@@ -174,6 +180,8 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
 1. Locate the **Custom add-ins** section at the bottom of the dialog. Select the **Add a custom add-in** link, and then select **Add from File**.
 
     ![The Add from File option is selected in the Custom add-ins section.](../images/outlook-sideload-custom-add-in-mac.png)
+
+    [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 

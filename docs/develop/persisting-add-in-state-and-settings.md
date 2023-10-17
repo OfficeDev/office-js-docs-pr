@@ -146,7 +146,7 @@ function createCustomXmlPartAndStoreId() {
     const xmlString = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
     Office.context.document.customXmlParts.addAsync(xmlString,
         (asyncResult) => {
-            Office.context.document.settings.set('ReviewersID', asyncResult.id);
+            Office.context.document.settings.set('ReviewersID', asyncResult.value.id);
             Office.context.document.settings.saveAsync();
         }
     );
