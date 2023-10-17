@@ -3,6 +3,7 @@ title: Fluent UI React in Office Add-ins
 description: Learn how to create an Office Add-in that uses Fluent UI React.
 ms.date: 10/17/2023
 ms.topic: how-to
+ms.service: microsoft-365
 ms.localizationpriority: medium
 ---
 
@@ -102,6 +103,6 @@ If you have an existing add-in that implements an older version of Fluent UI Rea
 
 ## See also
 
-- [UX design patterns for Office Add-ins](ux-design-pattern-templates.md)
+- [UX design patterns for Office Add-ins](../design/ux-design-pattern-templates.md)
 - [Fluent UI React](https://react.fluentui.dev)
 - [Fluent UI GitHub repository](https://github.com/microsoft/fluentui)
