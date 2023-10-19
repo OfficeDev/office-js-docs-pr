@@ -86,7 +86,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 - Test your add-in on a real device by using [sideloading](../testing/sideload-an-office-add-in-on-ipad.md).
 
 > [!NOTE]
-> If you're using [Fluent UI React](../design/using-office-ui-fabric-react.md) for your design elements, many of these elements are built into the design system.
+> If you're using [Fluent UI React](../quickstarts/fluent-react-quickstart.md) for your design elements, many of these elements are built into the design system.
 
 ## Optimize and monitor add-in performance
 
