@@ -12,7 +12,7 @@ Designing the user experience for Office Add-ins should provide a compelling exp
 
 Our UX patterns are composed of components. Components are controls that help your customers interact with elements of your software or service. Buttons, navigation, and menus are examples of common components that often have consistent styles and behaviors.
 
-[Fluent UI React components](using-office-ui-fabric-react.md) look and behave like a part of Office, as do the framework-neutral components of [Office UI Fabric JS](fabric-core.md). Take advantage of either set of components to integrate with Office. Alternatively, if your add-in has its own preexisting component language, you don't need to discard it. Look for opportunities to retain it while integrating with Office. Consider ways to swap out stylistic elements, remove conflicts, or adopt styles and behaviors that remove user confusion.
+[Fluent UI React components](../quickstarts/fluent-react-quickstart.md) look and behave like a part of Office, as do the framework-neutral components of [Office UI Fabric JS](fabric-core.md). Take advantage of either set of components to integrate with Office. Alternatively, if your add-in has its own preexisting component language, you don't need to discard it. Look for opportunities to retain it while integrating with Office. Consider ways to swap out stylistic elements, remove conflicts, or adopt styles and behaviors that remove user confusion.
 
 The provided patterns are best practice solutions based on common customer scenarios and user experience research. They are meant to provide both a quick entry point to designing and developing add-ins as well as guidance to achieve balance between Microsoft brand elements and your own. Providing a clean, modern user experience that balances design elements from Microsoft's Fluent UI design language and the partner's unique brand identity may help increase user retention and adoption of your add-in.
 
@@ -42,4 +42,4 @@ Browse each grouping to get an idea of how you can design your add-in using best
 
 - [Design tool kits](design-toolkits.md)
 - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
-- [Fluent UI React in Office Add-ins](using-office-ui-fabric-react.md)
+- [Fluent UI React in Office Add-ins](../quickstarts/fluent-react-quickstart.md)
