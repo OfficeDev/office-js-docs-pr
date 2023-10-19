@@ -1,129 +1,114 @@
 ---
-title: Get or set appointment time in an Outlook add-in
+title: Get or set the time when composing an appointment in Outlook
 description: Learn how to get or set the start and end time of an appointment in an Outlook add-in.
-ms.date: 10/07/2022
+ms.date: 08/09/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Get or set the time when composing an appointment in Outlook
 
-The Office JavaScript API provides asynchronous methods ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) and [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) to get and set the start or end time of an appointment that the user is composing. These asynchronous methods are available to only compose add-ins. To use these methods, make sure you have set up the add-in XML manifest appropriately for Outlook to activate the add-in in compose forms, as described in [Create Outlook add-ins for compose forms](compose-scenario.md). Activation rules aren't supported in add-ins that use a [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
+The Office JavaScript API provides asynchronous methods ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) and [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) to get and set the start or end time of an appointment being composed. These asynchronous methods are available only to compose add-ins. To use these methods, make sure you have set up the XML manifest of the add-in appropriately for Outlook to activate the add-in in compose forms, as described in [Create Outlook add-ins for compose forms](compose-scenario.md).
 
 The [start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) properties are available for appointments in both compose and read forms. In a read form, you can access the properties directly from the parent object, as in:
 
 ```js
-item.start
+Office.context.mailbox.item.start;
+Office.context.mailbox.item.end;
 ```
 
-and in:
+But in a compose form, because both the user and your add-in can be inserting or changing the time at the same time, you must use the `getAsync` asynchronous method to get the start or end time.
 
 ```js
-item.end
+Office.context.mailbox.item.start.getAsync(callback);
+Office.context.mailbox.item.end.getAsync(callback);
 ```
 
-But in a compose form, because both the user and your add-in can be inserting or changing the time at the same time, you must use the asynchronous method **getAsync** to get the start or end time, as shown below:
-
-```js
-item.start.getAsync
-```
-
-and:
-
-```js
-item.end.getAsync
-```
-
-As with most asynchronous methods in the Office JavaScript API, **getAsync** and **setAsync** take optional input parameters. For more information about specifying these optional input parameters, see [passing optional parameters to asynchronous methods](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) in [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md).
+As with most asynchronous methods in the Office JavaScript API, `getAsync` and `setAsync` take optional input parameters. For more information on how to specify these optional input parameters, see "Passing optional parameters to asynchronous methods" in [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md).
 
 ## Get the start or end time
 
-This section shows a code sample that gets the start time of the appointment that the user is composing and displays the time. You can use the same code and replace the **start** property by the **end** property to get the end time. This code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment, as shown below.
+This section shows a code sample that gets the start time of the appointment being composed and displays the time. You can use the same code, but replace the `start` property with the `end` property to get the end time.
 
-```XML
-<Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
-```
-
-To use **item.start.getAsync** or **item.end.getAsync**, provide a callback function that checks for the status and result of the asynchronous call. You can provide any necessary arguments to the callback function through the  _asyncContext_ optional parameter. You can obtain status, results and any error using the output parameter _asyncResult_ of the callback. If the asynchronous call is successful, you can get the start time as a **Date** object in UTC format using the [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) property.
+To use the `item.start.getAsync` or `item.end.getAsync` methods, provide a callback function that checks the status and result of the asynchronous call. Obtain the status, results, and any error using the [asyncResult](/javascript/api/office/office.asyncresult) output parameter of the callback. If the asynchronous call is successful, use the `asyncResult.value` property to get the start time as a `Date` object in UTC format. To provide any necessary arguments to the callback function, use the `asyncContext` optional parameter of the `getAsync` call.
 
 ```js
 let item;
 
-Office.initialize = function () {
-    item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready method.
-    $(document).ready(function () {
-        // After the DOM is loaded, app-specific code can run.
-        // Get the start time of the item being composed.
+// Confirms that the Office.js library is loaded.
+Office.onReady((info) => {
+    if (info.host === Office.HostType.Outlook) {
+        item = Office.context.mailbox.item;
         getStartTime();
+    }
+});
+
+// Gets the start time of the appointment being composed.
+function getStartTime() {
+    item.start.getAsync((asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+            write(asyncResult.error.message);
+            return;
+        }
+
+        // Display the start time in UTC format on the page.
+        write(`The start time in UTC is: ${asyncResult.value.toString()}`);
+        // Convert the start time to local time and display it on the page.
+        write(`The start time in local time is: ${asyncResult.value.toLocaleString()}`);
     });
 }
 
-// Get the start time of the item that the user is composing.
-function getStartTime() {
-    item.start.getAsync(
-        function (asyncResult) {
-            if (asyncResult.status == Office.AsyncResultStatus.Failed){
-                write(asyncResult.error.message);
-            }
-            else {
-                // Successfully got the start time, display it, first in UTC and 
-                // then convert the Date object to local time and display that.
-                write ('The start time in UTC is: ' + asyncResult.value.toString());
-                write ('The start time in local time is: ' + asyncResult.value.toLocaleString());
-            }
-        });
-}
-
-// Write to a div with id='message' on the page.
-function write(message){
-    document.getElementById('message').innerText += message; 
+// Writes to a div with id="message" on the page.
+function write(message) {
+    document.getElementById("message").innerText += message;
 }
 ```
 
 ## Set the start or end time
 
-This section shows a code sample that sets the start time of the appointment or message that the user is composing. You can use the same code and replace the **start** property by the **end** property to set the end time. Note that if the appointment compose form already has an existing start time, setting the start time subsequently will adjust the end time to maintain any previous duration for the appointment. If the appointment compose form already has an existing end time, setting the end time subsequently will adjust both the duration and end time. If the appointment has been set as an all-day event, setting the start time will adjust the end time to 24 hours later, and uncheck the UI for the all-day event in the compose form.
+This section shows a code sample that sets the start time of an appointment being composed. You can use the same code, but replace the `start` property with the `end` property to set the end time. Note that changes to the `start` or `end` properties may affect other properties of the appointment being composed.
 
-Similar to the previous example, this code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment.
+- If the appointment being composed already has an existing start time, setting the start time subsequently adjusts the end time to maintain any previous duration of the appointment.
+- If the appointment being composed already has an existing end time, setting the end time subsequently adjusts both the duration and end time.
+- If the appointment has been set as an all-day event, setting the start time adjusts the end time to 24 hours later, and clears the checkbox for the all-day event in the appointment.
 
-To use **item.start.setAsync** or **item.end.setAsync**, specify a **Date** value in UTC in the _dateTime_ parameter. If you get a date based on an input by the user on the client, you can use [mailbox.convertToUtcClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) to convert the value to a **Date** object in UTC. You can provide an optional callback function and any arguments for the callback function in the _asyncContext_ parameter. You should check the status, result and any error message in the _asyncResult_ output parameter of the callback. If the asynchronous call is successful, **setAsync** inserts the specified start or end time string as plain text, overwriting any existing start or end time for that item.
+To use `item.start.setAsync` or `item.end.setAsync`, specify a UTC-formatted `Date` object in the `dateTime` parameter. If you get a date based on an input by the user in the client, you can use [mailbox.convertToUtcClientTime](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttoutcclienttime-member(1)) to convert the value to a `Date` object in the UTC format. If you provide an optional callback function, include the `asyncContext` parameter and add any arguments to it. Additionally, check the status, result, and any error message through the `asyncResult` output parameter of the callback. If the asynchronous call is successful, `setAsync` inserts the specified start or end time string as plain text, overwriting any existing start or end time for that item.
+
+> [!NOTE]
+> In Outlook on Windows, the `setAsync` method can't be used to change the start or end time of a recurring appointment.
 
 ```js
 let item;
 
-Office.initialize = function () {
-    item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready method.
-    $(document).ready(function () {
-        // After the DOM is loaded, app-specific code can run.
-        // Set the start time of the item being composed.
+// Confirms that the Office.js library is loaded.
+Office.onReady((info) => {
+    if (info.host === Office.HostType.Outlook) {
+        item = Office.context.mailbox.item;
         setStartTime();
-    });
-}
+    }
+});
 
-// Set the start time of the item that the user is composing.
+// Sets the start time of the appointment being composed.
 function setStartTime() {
-    const startDate = new Date("September 27, 2012 12:30:00");
-    
+    // Get the current date and time, then add two days to the date.
+    const startDate = new Date();
+    startDate.setDate(startDate.getDate() + 2);
+
     item.start.setAsync(
         startDate,
-        { asyncContext: { var1: 1, var2: 2 } },
-        function (asyncResult) {
-            if (asyncResult.status == Office.AsyncResultStatus.Failed){
-                write(asyncResult.error.message);
+        { asyncContext: { optionalVariable1: 1, optionalVariable2: 2 } },
+        (asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                console.log(asyncResult.error.message);
+                return;
             }
-            else {
-                // Successfully set the start time.
-                // Do whatever appropriate for your scenario
-                // using the arguments var1 and var2 as applicable.
-            }
-        });
-}
 
-// Write to a div with id='message' on the page.
-function write(message){
-    document.getElementById('message').innerText += message; 
+            console.log("Successfully set the start time.");
+            /*
+                Run additional operations appropriate to your scenario and
+                use the optionalVariable1 and optionalVariable2 values as needed.
+            */
+        });
 }
 ```
 

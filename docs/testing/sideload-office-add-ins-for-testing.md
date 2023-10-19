@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins to Office on the web
 description: Test your Office Add-in in Office on the web by sideloading.
-ms.date: 09/02/2022
+ms.date: 08/17/2023
 ms.localizationpriority: medium
 ---
 
@@ -33,7 +33,7 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 1. Open [Office on the web](https://office.live.com/) or OneDrive. Using the **Create** option, make a document in **Excel**, **OneNote**, **PowerPoint**, or **Word**. In this new document, select **Share**, select **Copy Link**, and copy the URL.
 
-1. In the command line starting at the root directory of your project, run the following command. Replace "{url}" with the URL that you copied.
+1. Open a Command Prompt as an administrator. In the command line starting at the root directory of your project, run the following command. Replace "{url}" with the URL that you copied.
 
     [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
@@ -69,7 +69,7 @@ This method doesn't use the command line and can be accomplished using commands 
 
 1. Open [Office on the web](https://office.com/). Open a document in **Excel**, **OneNote**, **PowerPoint**, or  **Word**. 
 
-1. On the **Insert** tab, in the **Add-ins** section, choose **Office Add-ins**.
+1. Select **Home** > **Add-ins**, then select **More Add-ins**.
 
 1. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
 
@@ -92,9 +92,7 @@ This method doesn't use the command line and can be accomplished using commands 
 
 1. Open the App Launcher on the left end of the toolbar and select **Excel**, **OneNote**, **PowerPoint**, or **Word**, and then create a new document.
 
-1. On the **Insert** tab, select the **Add-ins** button.
-
-1. Follow steps 3 - 5 of the section [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web).
+1. Follow steps 2 - 5 of the section [Manually sideload an add-in to Office on the web](#manually-sideload-an-add-in-to-office-on-the-web).
 
 ## Remove a sideloaded add-in
 

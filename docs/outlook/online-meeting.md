@@ -1,7 +1,7 @@
 ---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 10/24/2022
+ms.date: 10/11/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -304,19 +304,19 @@ To allow users to create an online meeting from their mobile device, the [Mobile
                                 "icons": [
                                     {
                                         "size": 16,
-                                        "file": "icon-16.png"
+                                        "url": "icon-16.png"
                                     },
                                     {
                                         "size": 32,
-                                        "file": "icon-32.png"
+                                        "url": "icon-32.png"
                                     },
                                     {
                                         "size": 64,
-                                        "file": "icon-64_02.png"
+                                        "url": "icon-64_02.png"
                                     },
                                     {
                                         "size": 80,
-                                        "file": "icon-80.png"
+                                        "url": "icon-80.png"
                                     }
                                 ],
                                 "supertip": {

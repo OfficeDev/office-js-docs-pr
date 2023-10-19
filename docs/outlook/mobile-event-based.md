@@ -168,7 +168,7 @@ To enable your add-in to complete tasks when the `OnNewMessageCompose` event occ
         item.from.getAsync((result) => {
             if (result.status === Office.AsyncResultStatus.Failed) {
                 console.log(result.error.message);
-                event.completed({ allowEvent: false });
+                event.completed();
                 return;
             }
     
@@ -178,7 +178,7 @@ To enable your add-in to complete tasks when the `OnNewMessageCompose` event occ
             item.addFileAttachmentFromBase64Async(signatureIcon, "signatureIcon.png", options, (result) => {
                 if (result.status === Office.AsyncResultStatus.Failed) {
                     console.log(result.error.message);
-                    event.completed({ allowEvent: false });
+                    event.completed();
                     return;
                 }
     
@@ -187,7 +187,7 @@ To enable your add-in to complete tasks when the `OnNewMessageCompose` event occ
                 item.body.setSignatureAsync(signature, { coercionType: Office.CoercionType.Html }, (result) => {
                     if (result.status === Office.AsyncResultStatus.Failed) {
                         console.log(result.error.message);
-                        event.completed({ allowEvent: false });
+                        event.completed();
                         return;
                     }
     
@@ -202,11 +202,11 @@ To enable your add-in to complete tasks when the `OnNewMessageCompose` event occ
                     item.notificationMessages.addAsync("signature_notification", notification, (result) => {
                         if (result.status === Office.AsyncResultStatus.Failed) {
                             console.log(result.error.message);
-                            event.completed({ allowEvent: false });
+                            event.completed();
                             return;
                         }
     
-                        event.completed({ allowEvent: true });
+                        event.completed();
                     });
                 });
             });
@@ -243,7 +243,7 @@ Ensure that the HTML file you specified in the **\<Runtime\>** element of your m
 As you develop an event-based add-in for Outlook mobile, be mindful of the following feature behaviors and limitations.
 
 - Only the `OnNewMessageCompose` event is supported on Outlook mobile at this time. This event occurs when a new message (including reply, reply all, and forward) is created. The `OnNewMessageCompose` event doesn't occur when you edit an existing draft.
-- Because event-based add-ins are expected to be short-running and lightweight, an add-in is allowed to run for a maximum of 60 seconds from the time it activates. To signal that your add-in has completed processing an event, your event handler must call the [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) method. The add-in operation also ends when the user closes the compose window or sends the message.
+- Because event-based add-ins are expected to be short-running and lightweight, an add-in is allowed to run for a maximum of 60 seconds from the time it activates. To signal that your add-in has completed processing an event, your event handler must call the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method. The add-in operation also ends when the user closes the compose window or sends the message.
 - Only one add-in can run at a time. If multiple event-based add-ins are installed on a user's account, they will run sequentially.
 - If you tap and hold the Outlook icon on your mobile device, then select **New mail** to create a new message, the event-based add-in may take a few seconds to initialize and complete processing the event.  
 - If no changes are made to a new message being composed, a draft won't be saved, even if the event-based add-in adds a signature using the [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1)) method.

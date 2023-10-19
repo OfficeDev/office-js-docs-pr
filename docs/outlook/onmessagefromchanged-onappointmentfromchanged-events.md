@@ -1,7 +1,7 @@
 ---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 05/19/2023
+ms.date: 10/05/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -28,7 +28,7 @@ The following tables list client-server combinations that support the `OnMessage
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
 |**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
-|**Mac**<br>Version 16.69.116 or later (preview)|Supported|Not applicable|Not applicable|
+|**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
 |**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
@@ -38,7 +38,7 @@ The following tables list client-server combinations that support the `OnMessage
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
 |**Windows**|Not applicable|Not applicable|Not applicable|
-|**Mac**<br>Version 16.69.116 or later (preview)|Supported|Not applicable|Not applicable|
+|**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
 |**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
@@ -48,8 +48,6 @@ The following tables list client-server combinations that support the `OnMessage
 ## Prerequisites
 
 To test the walkthrough, you must have at least two Exchange accounts.
-
-To preview the `OnMessageFromChanged` and `OnAppointmentFromChanged` events in Outlook on Mac, install Version 16.69.116 or later.
 
 ## Set up your environment
 
@@ -270,12 +268,6 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 ## Update the commands HTML file
 
 1. From the **./src/commands** folder, open **commands.html**.
-
-1. To run the add-in in Outlook on Mac, replace the existing **script** tag with the following code. Otherwise, skip to the next step.
-
-   ```html
-   <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
-   ```
 
 1. Add the following code below the existing **script** tag.
 

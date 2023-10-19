@@ -1,13 +1,13 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 05/11/2023
+ms.date: 08/15/2023
 ms.localizationpriority: high
 ---
 
 # Deploy and publish Office Add-ins
 
-You can use one of several methods to deploy your Office Add-in for testing or distribution to users.
+You can use one of several methods to deploy your Office Add-in for testing or distribution to users. The deployment method can also affect which platforms surface your add-in.
 
 |**Method**|**Use...**|
 |:---------|:------------|
@@ -60,7 +60,7 @@ When you link your Office Add-ins, Teams apps, SPFx apps, and [other apps](/micr
 For more information on the Integrated Apps deployment process, see [Test and deploy Microsoft 365 Apps by partners in the Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
 > [!IMPORTANT]
-> Customers in sovereign or government clouds don't have access to Integrated Apps. They will use Centralized Deployment instead. Centralized Deployment is a similar deploy method, but doesn't expose connected add-ins and apps to the admin. For more information, see [Determine if Centralized Deployment of add-ins works for your organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
+> Customers in sovereign or government clouds don't have access to Integrated Apps. They will use Centralized Deployment instead. Centralized Deployment is a similar deployment method, but doesn't expose connected add-ins and apps to the admin. For more information, see [Determine if Centralized Deployment of add-ins works for your organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
 
 ### SharePoint app catalog deployment
 

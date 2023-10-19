@@ -177,7 +177,7 @@ items:
       - name: Overview
         href: design/add-in-design.md
       - name: Fluent UI React in Office Add-ins
-        href: design/using-office-ui-fabric-react.md
+        href: quickstarts/fluent-react-quickstart.md
       - name: Fabric Core in Office Add-ins
         href: design/fabric-core.md
       - name: Guidelines
@@ -705,7 +705,10 @@ items:
       - name: Walkthrough
         href: outlook/autolaunch.md
         displayName: event-based activation
-      - name: Smart Alerts and OnMessageSend event walkthrough
+      - name: Implement Smart Alerts to handle on-send events
+        href: outlook/onmessagesend-onappointmentsend-events.md
+        displayName: event-based activation
+      - name: Check for an attachment before a message is sent
         href: outlook/smart-alerts-onmessagesend-walkthrough.md
         displayName: event-based activation
       - name: Update your signature when switching between accounts

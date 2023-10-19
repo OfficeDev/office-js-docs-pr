@@ -63,7 +63,8 @@ The following steps are the instructions for debugging your add-in. If you just 
 This example uses Word and a free add-in from AppSource.
 
 1. Open Word and choose a blank document.
-1. On the **Insert** tab, in the **Add-ins** group, select **My Add-ins** to open the **Office Add-ins** dialog and then select the **STORE** tab.
+1. Select **Home** > **Add-ins**, then select **Get Add-ins**.
+1. In the **Office Add-ins** dialog, select the **STORE** tab.
 1. Select the **QR4Office** add-in. It opens in a task pane.
 1. Launch the F12 development tools that corresponds to your version of Office as described in the preceding section.
 1. In the F12 window, select **Home.html**.
@@ -75,7 +76,7 @@ This example uses Word and a free add-in from AppSource.
 
 If your add-in uses the Office Dialog API, the dialog runs in a separate process from the task pane (if any) and the tools must attach to that process. Follow these steps.
 
-1. Run the add-in and the tools. 
+1. Run the add-in and the tools.
 1. Open the dialog and then select the **Refresh** button in the tools. The dialog process is shown. Its name is the file name of the file that is open in the dialog.
 1. Select the process to open it and debug just as described in the section [Debug a task pane add-in using the F12 tools](#debug-a-task-pane-add-in-using-the-f12-tools).
 
@@ -83,7 +84,7 @@ If your add-in uses the Office Dialog API, the dialog runs in a separate process
 
 There are two ways to switch the Trident webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Trident by default. We recommend the first method. But you should use the second in the following scenarios.
 
-- Your project was developed with Visual Studio and IIS. It isn't node.js-based.
+- Your project was developed with Visual Studio and IIS. It isn't Node.js based.
 - You want to be absolutely robust in your testing.
 - If for any reason the command line tool doesn't work.
 

@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
 description: Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.
-ms.date: 07/27/2023
+ms.date: 10/11/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -168,7 +168,7 @@ When using the unified manifest (preview), localize the public-facing strings in
   "icons.color": "https://localhost:3000/assets/fr-fr/icon-128.png",
   "extensions[0].audienceClaimUrl": "https://localhost:3000/fr-fr/taskpane.html",
   "extensions[0].ribbons[0].tabs[0].groups[0].label": "Outils de médias",
-  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].icons[0].file": "https://localhost:3000/assets/fr-fr/player-icon.png",
+  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].icons[0].url": "https://localhost:3000/assets/fr-fr/player-icon.png",
   "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].label": "Ouvrir le lecteur vidéo",
   "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.description": "Cliquez pour ouvrir le lecteur vidéo.",
   "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.title": "Ouvrir le lecteur vidéo",

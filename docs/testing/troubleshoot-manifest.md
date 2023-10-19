@@ -1,7 +1,7 @@
 ---
 title: Validate an Office Add-in's manifest
 description: Learn how to validate the manifest of an Office Add-in using the XML schema and other tools.
-ms.date: 04/14/2023
+ms.date: 10/10/2023
 ms.localizationpriority: medium
 ---
 
@@ -50,7 +50,7 @@ If you didn't use the [Yeoman generator for Office Add-ins](../develop/yeoman-ge
     > npx office-addin-manifest validate MANIFEST_FILE
     > ```
 
-[!INCLUDE [validate also runs Office Store validation](../includes/office-store-validate.md)]
+[!INCLUDE [validate also runs Microsoft 365 and Copilot store validation](../includes/office-store-validate.md)]
 
 If you're having trouble with that command, try the following (replacing `MANIFEST_FILE` with the name of the manifest file).
 

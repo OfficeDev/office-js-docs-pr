@@ -964,6 +964,10 @@ In this tutorial, you've created an Excel task pane add-in that interacts with t
 > [!div class="nextstepaction"]
 > [Excel add-ins overview](../excel/excel-add-ins-overview.md)
 
+## Code samples
+
+- [Completed Excel add-in tutorial](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/excel-tutorial): The result of completing this tutorial.
+
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

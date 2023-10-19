@@ -40,7 +40,7 @@ If you plan to support older versions of Windows and Office, your add-in must wo
 
 There are two ways to switch the Trident webview. You can run a simple command in a command prompt, or you can install a version of Office that uses Trident by default. We recommend the first method, but you should use the second in the following scenarios.
 
-- Your project was developed with Visual Studio and IIS. It isn't node.js-based.
+- Your project was developed with Visual Studio and IIS. It isn't Node.js based.
 - You want to be absolutely robust in your testing.
 - You can't use the Beta channel for Microsoft 365 on your development computer.
 - You're developing on a Mac.

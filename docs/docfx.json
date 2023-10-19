@@ -40,7 +40,7 @@
       "breadcrumb_path": "/office/dev/add-ins/breadcrumb/toc.json",
       "feedback_system": "GitHub",
       "feedback_github_repo": "OfficeDev/office-js-docs-pr",
-      "feedback_product_url": "/answers/products/m365",
+      "feedback_product_url": "https://aka.ms/office-addins-dev-questions",
       "extendBreadcrumb": true,
       "ms.suite": "office",
       "ms.author": "o365devx",

@@ -70,6 +70,8 @@ To manually sideload an add-in in the new Outlook on Windows (preview), see [Sid
 
     ![The Add from File option is selected in the Custom Add-ins section.](../images/outlook-sideload-custom-add-in.png)
 
+    [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
+
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
     > [!IMPORTANT]
@@ -90,6 +92,8 @@ To manually sideload an add-in in the new Outlook on Windows (preview), see [Sid
 1. Locate the **Custom add-ins** section at the bottom of the dialog box. Select the **Add a custom add-in** link, and then select **Add from File**.
 
     ![The Add from File option is selected in the Custom Add-ins section.](../images/outlook-sideload-custom-add-in.png)
+
+    [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
@@ -114,8 +118,6 @@ To manually sideload an add-in in the new Outlook on Windows (preview), see [Sid
     > - If you configured your ribbon layout to Simplified Ribbon, select the ellipsis button (`...`) from the ribbon. Then, depending on your Outlook version, select **Get Add-ins** or **All Apps**.
     >
     >   ![The Get Add-ins or All Apps option is selected from the ellipsis button in Outlook on Windows.](../images/outlook-sideload-simplified-ribbon-windows.png)
-    >
-    > - Select **Store** from the ribbon, if available.
     >
     > - Select **File** > **Info** > **Manage Add-ins**. This opens the **Add-Ins for Outlook** dialog in Outlook on the web. To learn more about the web experience, select the **Web** tab in [Sideload manually](#sideload-manually).
 
@@ -146,6 +148,8 @@ To manually sideload an add-in in the new Outlook on Windows (preview), see [Sid
 
     ![The Add from File option is selected in the Custom add-ins section.](../images/outlook-sideload-custom-add-in.png)
 
+    [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
+
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
 ### Outlook 2013
@@ -167,13 +171,9 @@ To manually sideload an add-in in the new Outlook on Windows (preview), see [Sid
     ![The Get Add-ins button is selected in Outlook on Mac.](../images/outlook-sideload-mac-classic.png)
 
     > [!IMPORTANT]
-    > If you don't see **Get Add-ins** in your version of Outlook, do one of the following:
+    > If you don't see **Get Add-ins** in your version of Outlook, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
     >
-    > - Select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
-    >
-    >   ![The Get Add-ins option is selected from the ellipsis button in Outlook on Mac.](../images/outlook-sideload-new-mac.png)
-    >
-    > - Select **Store** from the ribbon, if available.
+    > ![The Get Add-ins option is selected from the ellipsis button in Outlook on Mac.](../images/outlook-sideload-new-mac.png)
 
 1. In the dialog that appears, select **My add-ins**.
 
@@ -182,6 +182,8 @@ To manually sideload an add-in in the new Outlook on Windows (preview), see [Sid
 1. Locate the **Custom add-ins** section at the bottom of the dialog. Select the **Add a custom add-in** link, and then select **Add from File**.
 
     ![The Add from File option is selected in the Custom add-ins section.](../images/outlook-sideload-custom-add-in-mac.png)
+
+    [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 

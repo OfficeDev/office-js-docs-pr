@@ -25,7 +25,7 @@ Follow the Office design principles to create positive add-in experiences.
   
   [!INCLUDE [alert-fluent-ui-web-components](../includes/alert-fluent-ui-web-components.md)]
 
-  - **For React UIs:** use **Fluent UI React**, a React front-end framework designed to build experiences that fit seamlessly into a broad range of Microsoft products. It provides robust, up-to-date, accessible React-based components which are highly customizable using CSS-in-JS. To get started, see [Fluent UI React in Office Add-ins](using-office-ui-fabric-react.md).
+  - **For React UIs:** use **Fluent UI React**, a React front-end framework designed to build experiences that fit seamlessly into a broad range of Microsoft products. It provides robust, up-to-date, accessible React-based components which are highly customizable using CSS-in-JS. To get started, see [Fluent UI React in Office Add-ins](../quickstarts/fluent-react-quickstart.md).
 
 - **Favor content over chrome.** Allow customers’ page, slide, or spreadsheet to remain the focus of the experience. An add-in is an auxiliary interface. No accessory chrome should interfere with the add-in’s content and functionality. Brand your experience wisely. We know it's important to provide users with a unique, recognizable experience but avoid distraction. Strive to keep the focus on content and task completion, not brand attention.
 
