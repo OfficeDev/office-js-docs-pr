@@ -1,7 +1,7 @@
 ---
 title: Using the application-specific API model
 description: Learn about the promise-based API model for Excel, OneNote, PowerPoint, Visio, and Word add-ins.
-ms.date: 06/27/2023
+ms.date: 10/20/2023
 ms.localizationpriority: medium
 ---
 
@@ -145,6 +145,27 @@ someRange.load("format/font/name")
 You can also set the scalar properties of a navigation property by traversing the path. For example, you could set the font size for an `Excel.Range` by using `someRange.format.font.size = 10;`. You don't need to load the property before you set it.
 
 Please be aware that some of the properties under an object may have the same name as another object. For example, `format` is a property under the `Excel.Range` object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()` (an undesirable empty `load()` statement). To avoid this, your code should only load the "leaf nodes" in an object tree.
+
+#### Load from a collection
+
+When working with a collection, use `load` on the collection to load properties for every object in the collection. Use `load` exactly as you would for an individual object in that collection. Don't include the `items` property of the collection in the `load` arguments.
+
+The following sample code shows the `name` property being loaded and logged for every chart in the "Sample" worksheet.
+
+```js
+await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const chartCollection = sheet.charts;
+
+    // Load the name property on every chart in the chart collection.
+    chartCollection.load("name");
+    await context.sync();
+
+    chartCollection.items.forEach((chart) => {
+        console.log(chart.name);
+    });
+});
+```
 
 #### Calling `load` without parameters (not recommended)
 
