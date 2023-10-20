@@ -175,6 +175,8 @@ The following sample code shows the `name` property being set for every chart in
 await Excel.run(async (context) => {
     const sheet = context.workbook.worksheets.getItem("Sample");
     const chartCollection = sheet.charts;
+
+    // Load the items property from the chart collection to set properties on individual charts.
     chartCollection.load("items");
     await context.sync();
 
