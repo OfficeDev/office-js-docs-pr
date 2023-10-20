@@ -148,7 +148,7 @@ Please be aware that some of the properties under an object may have the same na
 
 #### Load from a collection
 
-When working with a collection, use `load` on the collection to load properties for every object in the collection. Use `load` exactly as you would for an individual object in that collection. Don't include the `items` property of the collection in the `load` arguments.
+When working with a collection, use `load` on the collection to load properties for every object in the collection. Use `load` exactly as you would for an individual object in that collection.
 
 The following sample code shows the `name` property being loaded and logged for every chart in the "Sample" worksheet.
 
@@ -163,6 +163,23 @@ await Excel.run(async (context) => {
 
     chartCollection.items.forEach((chart) => {
         console.log(chart.name);
+    });
+});
+```
+
+You normally don't include the `items` property of the collection in the `load` arguments. All the items are loaded if you load any item properties. However, if you will be looping over the items in the collection, but don't need to load any particular property of the items, you need to `load` the `items` property.
+
+The following sample code shows the `name` property being set for every chart in the "Sample" worksheet.
+
+```js
+await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const chartCollection = sheet.charts;
+    chartCollection.load("items");
+    await context.sync();
+
+    chartCollection.items.forEach((chart, index) => {
+        chart.name = `Sample chart ${index}`;
     });
 });
 ```
