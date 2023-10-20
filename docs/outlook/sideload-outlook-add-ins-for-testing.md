@@ -36,11 +36,11 @@ The process for sideloading an add-in in Outlook on the web depends on whether y
 
 - If your mailbox toolbar looks like the following image, see [Sideload an add-in in the modern Outlook on the web or new Outlook on Windows (preview)](#modern-outlook-on-the-web-and-new-outlook-on-windows-preview).
 
-    ![Partial screenshot of the modern Outlook on the web toolbar.](../images/outlook-on-the-web-new-toolbar.png)
+    ![Header of the modern Outlook on the web toolbar.](../images/outlook-on-the-web-new-toolbar.png)
 
 - If your mailbox toolbar looks like the following image, see [Sideload an add-in in classic Outlook on the web](#classic-outlook-on-the-web).
 
-    ![Partial screenshot of the classic Outlook on the web toolbar.](../images/outlook-on-the-web-classic-toolbar.png)
+    ![Header of the classic Outlook on the web toolbar.](../images/outlook-on-the-web-classic-toolbar.png)
 
 > [!NOTE]
 > If your organization has included its logo in the mailbox toolbar, you might see something slightly different than shown in the preceding images.
