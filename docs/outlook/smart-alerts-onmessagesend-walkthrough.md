@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 10/19/2023
+ms.date: 10/24/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -95,7 +95,7 @@ To configure the manifest, select the tab for the type of manifest you are using
               <!-- Enable launching the add-in on the included event. -->
               <ExtensionPoint xsi:type="LaunchEvent">
                 <LaunchEvents>
-                  <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="Block" />
+                  <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="SoftBlock" />
                 </LaunchEvents>
                 <!-- Identify the runtime to be used (also referenced by the Runtime element). -->
                 <SourceLocation resid="WebViewRuntime.Url"/>
@@ -190,7 +190,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 1. Add the following object to the "autoRunEvents" array. Note the following about this code:
 
    - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, "messageSending", as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in "actionId" must match the name used in the "id" property of the object in the "actions" array in an earlier step.
-   - The "sendMode" option is set to "block". This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message.
+   - The "sendMode" option is set to "softBlock". This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message. However, if the add-in is unavailable at the time of sending, the item will be sent.
 
     ```json
       {
@@ -210,7 +210,7 @@ To configure the manifest, select the tab for the type of manifest you are using
                 "type": "messageSending",
                 "actionId": "onMessageSendHandler",
                 "options": {
-                    "sendMode": "block"
+                    "sendMode": "softBlock"
                 }
             }
           ]
