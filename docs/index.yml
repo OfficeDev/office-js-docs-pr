@@ -34,7 +34,7 @@ highlightedContent:
 productDirectory:
   items:
   - title: Get started in 5 minutes
-    imageSrc: images/index-landing=page/i_quick-start.svg
+    imageSrc: images/index-landing-page/i_quick-start.svg
     links:
       - url: quickstarts/excel-quickstart-jquery.md
         text: Excel add-in
@@ -46,7 +46,7 @@ productDirectory:
         text: Word add-in
   
   - title: Add-in scenarios
-    imageSrc: images/index-landing=page/i_design.svg
+    imageSrc: images/index-landing-page/i_design.svg
     links:
       - url: excel/pnp-open-in-excel.md
         text: Create an Excel spreadsheet with your add-in from a web page
@@ -58,7 +58,7 @@ productDirectory:
         text: Use single sign-on authentication in an Office Add-in 
   
   - title: Explore the code
-    imageSrc: images/index-landing=page/i_reference.svg
+    imageSrc: images/index-landing-page/i_reference.svg
     links:
       - url: overview/explore-with-script-lab.md
         text: Test and experiment with APIs using Script Lab
