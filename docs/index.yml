@@ -12,7 +12,7 @@ metadata:
   ms.topic: hub-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 12/16/2022 #Required; mm/dd/yyyy format.
+  ms.date: 10/26/2023 #Required; mm/dd/yyyy format.
 
 # highlightedContent section
 # Maximum of 8 items
@@ -23,26 +23,18 @@ highlightedContent:
       title: Office Add-ins platform overview
       url: overview/office-add-ins.md
     # Card 2
-    - itemType: sample
-      title: Samples for Office Add-ins
-      url: overview/office-add-in-code-samples.md
-    # Card 3
     - itemType: how-to-guide
       title: Office Add-ins Beginner's guide
       url: overview/learning-path-beginner.md
-    # Card 4
+    # Card 3
     - itemType: sample
-      title: Test and experiment with APIs using Script Lab
-      url: overview/explore-with-script-lab.md
-    # Card 5
-    - itemType: reference
-      title: Office JavaScript API reference documentation
-      url: /javascript/api/overview
+      title: Samples for Office Add-ins
+      url: overview/office-add-in-code-samples.md
 
 productDirectory:
   items:
   - title: Get started in 5 minutes
-    imageSrc: media/index/windows.svg
+    imageSrc: images/index-landing=page/i_quick-start.svg
     links:
       - url: quickstarts/excel-quickstart-jquery.md
         text: Excel add-in
@@ -54,7 +46,7 @@ productDirectory:
         text: Word add-in
   
   - title: Add-in scenarios
-    imageSrc: media/index/windows.svg
+    imageSrc: images/index-landing=page/i_design.svg
     links:
       - url: excel/pnp-open-in-excel.md
         text: Create an Excel spreadsheet with your add-in from a web page
@@ -64,6 +56,16 @@ productDirectory:
         text: Implement an integrated spam-reporting add-in
       - url: develop/create-sso-office-add-ins-nodejs.md
         text: Use single sign-on authentication in an Office Add-in 
+  
+  - title: Explore the code
+    imageSrc: images/index-landing=page/i_reference.svg
+    links:
+      - url: overview/explore-with-script-lab.md
+        text: Test and experiment with APIs using Script Lab
+      - url: /javascript/api/overview
+        text: Office JavaScript API reference documentation
+      - url: overview/office-add-in-code-samples.md#getting-started
+        text: "Hello world" samples
 
 
 # conceptualContent section (optional)
