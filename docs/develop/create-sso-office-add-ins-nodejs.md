@@ -15,7 +15,7 @@ This article works with an add-in that uses Node.js and Express. For a similar a
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)
+- [Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/en/about/previous-releases) version)
 
 - [Git Bash](https://git-scm.com/downloads) (or another git client)
 
