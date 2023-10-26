@@ -1,7 +1,7 @@
 ---
 title: Extend custom functions with XLL user-defined functions
 description: Enable compatibility with Excel XLL user-defined functions that have equivalent functionality to your custom functions.
-ms.date: 09/24/2021
+ms.date: 10/23/2023
 ms.localizationpriority: medium
 ---
 
@@ -10,17 +10,17 @@ ms.localizationpriority: medium
 > [!NOTE]
 > An XLL add-in is an Excel add-in file with the file extension **.xll**. An XLL file is a type of dynamic link library (DLL) file that can only be opened by Excel. XLL add-in files must be written in C or C++. See [Developing Excel XLLs](/office/client-developer/excel/developing-excel-xlls) to learn more.
 
-If you have existing Excel XLL add-ins, you can build equivalent custom function add-ins using the Excel JavaScript API to extend your solution features to other platforms, such as Excel on the web or on a Mac. However, Excel JavaScript API add-ins don't have all of the functionality available in XLL add-ins. Depending on the functionality your solution uses, the XLL add-in may provide a better experience than the Excel JavaScript API add-in in Excel on Windows.
+If you have existing Excel XLL add-ins, you can build equivalent custom function add-ins using the Excel JavaScript API to extend your solution features to other platforms, such as Excel on the web or on a Mac. However, Excel JavaScript API add-ins don't have all of the functionality available in XLL add-ins. Depending on the functionality your solution uses, the XLL add-in may provide a better experience in Excel on Windows than the Excel JavaScript API add-in.
 
 [!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
 ## Specify equivalent XLL in the manifest
 
-To enable compatibility with an existing XLL add-in, identify the equivalent XLL add-in in the manifest of your Excel JavaScript API add-in. Excel will then use the XLL add-in's functions instead of your Excel JavaScript API add-in custom functions when running on Windows.
+To enable compatibility with an existing XLL add-in, identify the equivalent XLL add-in in the manifest of your Excel JavaScript API add-in. Excel then uses the XLL add-in functions when running on Windows, instead of your Excel JavaScript API add-in custom functions.
 
-To set the equivalent XLL add-in for your custom functions, specify the `FileName` of the XLL file. When the user opens a workbook with functions from the XLL file, Excel converts the functions to compatible functions. The workbook then uses the XLL file when opened in Excel on Windows, and it will use custom functions from your Excel JavaScript API add-in when opened on the web or on a Mac.
+To set the equivalent XLL add-in for your custom functions, specify the `FileName` of the XLL file. When the user opens a workbook with functions from the XLL file, Excel converts the functions to compatible functions. The workbook then uses the XLL file when opened in Excel on Windows, but it continues to use custom functions from your Excel JavaScript API add-in when opened on the web or on Mac.
 
-The following example shows how to specify both a COM add-in and an XLL add-in as equivalents in an Excel JavaScript API add-in manifest file. Often you will specify both. For completeness, this example shows both in context. They are identified by their `ProgId` and `FileName` respectively. The `EquivalentAddins` element must be positioned immediately before the closing `VersionOverrides` tag. For more information on COM add-in compatibility, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+The following example shows how to specify both a COM add-in and an XLL add-in as equivalents in an Excel JavaScript API add-in manifest file. Often you specify both. For completeness, this example shows both equivalents in context. They're identified by their `ProgId` and `FileName` respectively. The `EquivalentAddins` element must be positioned immediately before the closing `VersionOverrides` tag. For more information on COM add-in compatibility, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 ```xml
 <VersionOverrides>
@@ -44,7 +44,7 @@ The following example shows how to specify both a COM add-in and an XLL add-in a
 
 ## Custom function behavior for XLL compatible functions
 
-An add-in's XLL functions are converted to XLL compatible custom functions when a spreadsheet is opened and there is an equivalent add-in available. On the next save, the XLL functions are written to the file in a compatible mode so that they work with both the XLL add-in and Excel JavaScript API add-in custom functions (when on other platforms).
+An add-in's XLL functions are converted to XLL compatible custom functions when a spreadsheet is opened and there is an equivalent add-in available. On the next save, the XLL functions are written to the file in a compatible mode so that they work with both the XLL add-in and Excel JavaScript API add-in custom functions (when on platforms unsupported by XLL).
 
 The following table compares features across XLL user-defined functions, XLL compatible custom functions, and Excel JavaScript API add-in custom functions.
 
@@ -57,7 +57,7 @@ The following table compares features across XLL user-defined functions, XLL com
 | **Localization of functions** | No | No. The Name and ID must match the existing XLL's functions. | Yes |
 | **Volatile functions** | Yes | Yes | Yes |
 | **Multi-threaded recalculation support** | Yes | Yes | Yes |
-| **Calculation behavior** | No UI. Excel can be unresponsive during calculation. | Users will see #BUSY! until a result is returned. | Users will see #BUSY! until a result is returned. |
+| **Calculation behavior** | No UI. Excel can be unresponsive during calculation. | Users see #BUSY! until a result is returned. | Users see #BUSY! until a result is returned. |
 | **Requirement sets** | N/A | CustomFunctions 1.1 and later | CustomFunctions 1.1 and later |
 
 ## See also
