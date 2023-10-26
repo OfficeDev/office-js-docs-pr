@@ -574,7 +574,7 @@ items:
     - name: Call Excel JavaScript APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
-    - name: Identify an equivalent XLL
+    - name: Extend custom functions with XLL user-defined functions
       href: excel/make-custom-functions-compatible-with-xll-udf.md
       displayName: Excel, Custom Functions
     - name: Localization
