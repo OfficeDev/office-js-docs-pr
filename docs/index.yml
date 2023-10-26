@@ -23,33 +23,47 @@ highlightedContent:
       title: Office Add-ins platform overview
       url: overview/office-add-ins.md
     # Card 2
-    - itemType: quickstart
-      title: Set up an Excel add-in in 5 minutes
-      url: quickstarts/excel-quickstart-jquery.md
-    # Card 3
-    - itemType: quickstart
-      title: Set up an Outlook add-in in 5 minutes
-      url: quickstarts/outlook-quickstart.md
-    # Card 4
-    - itemType: quickstart
-      title: Set up a Word add-in in 5 minutes
-      url: quickstarts/word-quickstart.md
-    # Card 5
     - itemType: sample
       title: Samples for Office Add-ins
       url: overview/office-add-in-code-samples.md
-    # Card 6
+    # Card 3
     - itemType: how-to-guide
       title: Office Add-ins Beginner's guide
       url: overview/learning-path-beginner.md
-    # Card 7
+    # Card 4
     - itemType: sample
       title: Test and experiment with APIs using Script Lab
       url: overview/explore-with-script-lab.md
-    # Card 8
+    # Card 5
     - itemType: reference
       title: Office JavaScript API reference documentation
       url: /javascript/api/overview
+
+productDirectory:
+  items:
+  - title: Get started in 5 minutes
+    imageSrc: media/index/windows.svg
+    links:
+      - url: quickstarts/excel-quickstart-jquery.md
+        text: Excel add-in
+      - url: quickstarts/outlook-quickstart.md
+        text: Outlook add-in
+      - url: quickstarts/powerpoint-quickstart.md
+        text: PowerPoint add-in
+      - url: quickstarts/word-quickstart.md
+        text: Word add-in
+  
+  - title: Add-in scenarios
+    imageSrc: media/index/windows.svg
+    links:
+      - url: excel/pnp-open-in-excel.md
+        text: Create an Excel spreadsheet with your add-in from a web page
+      - url: outlook/smart-alerts-onmessagesend-walkthrough.md
+        text: Automatically check for an attachment before a message is sent
+      - url: outlook/spam-reporting.md
+        text: Implement an integrated spam-reporting add-in
+      - url: develop/create-sso-office-add-ins-nodejs.md
+        text: Use single sign-on authentication in an Office Add-in 
 
 
 # conceptualContent section (optional)
@@ -64,15 +78,6 @@ conceptualContent:
         - url: overview/learning-path-beginner.md
           itemType: get-started
           text: Get started with Office Add-ins
-        - url: quickstarts/powerpoint-quickstart.md
-          itemType: quickstart
-          text: Set up a PowerPoint add-in in 5 minutes
-        - url: /training/modules/intro-office-add-ins
-          itemType: learn
-          text: Introduction to Office client customization with add-ins
-        - url: /training/paths/m365-office-add-in-associate
-          itemType: learn
-          text: Extend Office clients with Office Add-ins
         - url: https://devblogs.microsoft.com/microsoft365dev/category/office-add-ins/
           itemType: whats-new
           text: Microsoft 365 Developer Blog
@@ -95,12 +100,12 @@ conceptualContent:
     # Card 3
     - title: Test and debug
       links:
-        - url: testing/clear-cache.md
-          itemType: how-to-guide
-          text: Clear the Office cache
         - url: testing/test-debug-office-add-ins.md
           itemType: overview
           text: Check out the debugging overview
+        - url: testing/clear-cache.md
+          itemType: how-to-guide
+          text: Clear the Office cache
         - url: testing/testing-and-troubleshooting.md
           itemType: concept
           text: Troubleshoot user errors
