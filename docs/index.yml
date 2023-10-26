@@ -46,7 +46,7 @@ productDirectory:
         text: Word add-in
   
   - title: Add-in scenarios
-    imageSrc: images/index-landing-page/i_design.svg
+    imageSrc: images/index-landing-page/i_code_started.svg
     links:
       - url: excel/pnp-open-in-excel.md
         text: Create an Excel spreadsheet with your add-in from a web page
