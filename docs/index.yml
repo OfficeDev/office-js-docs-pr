@@ -65,8 +65,7 @@ productDirectory:
       - url: /javascript/api/overview
         text: Office JavaScript API reference documentation
       - url: overview/office-add-in-code-samples.md#getting-started
-        text: "Hello world" samples
-
+        text: Hello world samples
 
 # conceptualContent section (optional)
 conceptualContent:
