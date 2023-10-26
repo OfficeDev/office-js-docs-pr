@@ -32,18 +32,19 @@ highlightedContent:
       url: overview/office-add-in-code-samples.md
 
 productDirectory:
+  title: Get started with Office Add-ins # < 60 chars (optional)
   items:
-  - title: Get started in 5 minutes
+  - title: 5-minute quick starts
     imageSrc: images/index-landing-page/i_quick-start.svg
     links:
       - url: quickstarts/excel-quickstart-jquery.md
-        text: Excel add-in
+        text: Build an Excel task pane add-in
       - url: quickstarts/outlook-quickstart.md
-        text: Outlook add-in
+        text: Build your first Outlook add-in
       - url: quickstarts/powerpoint-quickstart.md
-        text: PowerPoint add-in
+        text: Build your first PowerPoint task pane add-in
       - url: quickstarts/word-quickstart.md
-        text: Word add-in
+        text: Build your first PowerPoint task pane add-in
   
   - title: Add-in scenarios
     imageSrc: images/index-landing-page/i_code-blocks.svg
