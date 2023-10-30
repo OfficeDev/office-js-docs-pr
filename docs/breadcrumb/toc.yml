@@ -1,7 +1,7 @@
-- name: Office
+- name: Microsoft 365
   tocHref: /office/
-  topicHref: /office/index
+  topicHref: /microsoft-365/index
   items:
-  - name: Add-ins
+  - name: Office Add-ins
     tocHref: /office/dev/add-ins/
-    topicHref: /office/dev/add-ins
+    topicHref: /office/dev/add-ins/index
