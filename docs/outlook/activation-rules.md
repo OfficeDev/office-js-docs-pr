@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in activation rules
 description: Outlook activates some types of add-ins if the message or appointment that the user is reading or composing satisfies the activation rules of the add-in.
-ms.date: 10/07/2022
+ms.date: 10/31/2023
 ms.localizationpriority: medium
 ---
 
@@ -10,10 +10,6 @@ ms.localizationpriority: medium
 Outlook activates some types of add-ins if the message or appointment that the user is reading or composing satisfies the activation rules of the add-in. This is true for all add-ins that use the 1.1 manifest schema. The user can then choose the add-in from the Outlook UI to start it for the current item.
 
 [!include[Rule features not supported with unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
-
-The following figure shows Outlook add-ins activated in the add-in bar for the message in the Reading Pane.
-
-![App bar showing activated read mail apps.](../images/read-form-app-bar.png)
 
 ## Specify activation rules in a manifest
 
