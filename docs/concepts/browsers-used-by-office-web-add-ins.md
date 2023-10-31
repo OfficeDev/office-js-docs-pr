@@ -2,7 +2,7 @@
 title: Browsers and webview controls used by Office Add-ins
 description: Specifies how the operating system and Office version determine what webview is used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 09/07/2023
+ms.date: 10/31/2023
 ms.localizationpriority: medium
 ---
 
@@ -67,9 +67,11 @@ To determine whether Office 2016 or Office 2019 is retail or volume-licensed, us
 | Office version | Retail vs. Volume-licensed | WebView2 installed? | Browser |
 |:-----|:-----|:-----|:-----|
 | Office 2021 | Doesn't matter | Yes<sup>1</sup> | WebView2 (Microsoft Edge<sup>2</sup> Chromium-based) |
-| Office 2016,<br>Office 2019 | Retail | Yes<sup>1</sup> | WebView2 (Microsoft Edge<sup>2</sup> Chromium-based) |
-| Office 2016,<br>Office 2019 | Retail | No | EdgeHTML (Microsoft Edge Legacy)<sup>2, 3</sup></br>If Edge isn't installed, Trident+ (Internet Explorer 11) is used. |
+| Office 2019 | Retail | Yes<sup>1</sup> | WebView2 (Microsoft Edge<sup>2</sup> Chromium-based) |
+| Office 2019 | Retail | No | EdgeHTML (Microsoft Edge Legacy)<sup>2, 3</sup></br>If Edge isn't installed, Trident+ (Internet Explorer 11) is used. |
 | Office 2019 | Volume-licensed | Doesn't matter | Trident+ (Internet Explorer 11) |
+| Office 2016 | Retail | Yes<sup>1</sup> | WebView2 (Microsoft Edge<sup>2</sup> Chromium-based) |
+| Office 2016 | Retail | No | EdgeHTML (Microsoft Edge Legacy)<sup>2, 3</sup></br>If Edge isn't installed, Trident+ (Internet Explorer 11) is used. |
 | Office 2016 | Volume-licensed | Doesn't matter | Trident+ (Internet Explorer 11) |
 | Office 2013 | Doesn't matter | Doesn't matter | Trident+ (Internet Explorer 11) |
 
