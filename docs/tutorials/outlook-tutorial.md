@@ -300,7 +300,7 @@ After you've reinstalled the add-in, you can verify that it installed successful
 
     ![The ribbon overflow menu in Outlook on Windows with the add-in's buttons highlighted.](../images/add-in-buttons-in-windows.png)
 
-- If you're running this add-in in Outlook on the web, select **Apps** from the ribbon of the compose message window, then select **Git the gist** to see the options **Insert gist** and **Insert default gist**.
+- If you're running this add-in in Outlook on the web, select **Apps** from the ribbon of the compose message window, then select **Git the gist** to see the **Insert gist** and **Insert default gist** options.
 
     ![The message compose form in Outlook on the web with the add-in button and pop-up menu highlighted.](../images/add-in-buttons-in-owa.png)
 
@@ -923,11 +923,11 @@ A function that's invoked by a UI-less button must be defined in the file that's
 
 1. Open the **./src/helpers/gist-api.js** file and add the following functions. Note the following:
 
-- If the gist contains HTML, the add-in inserts the HTML as is into the body of the message.
+    - If the gist contains HTML, the add-in inserts the HTML as is into the body of the message.
 
-- If the gist contains Markdown, the add-in uses the [Showdown](https://github.com/showdownjs/showdown) library to convert the Markdown to HTML, then inserts the resulting HTML into the body of the message.
+    - If the gist contains Markdown, the add-in uses the [Showdown](https://github.com/showdownjs/showdown) library to convert the Markdown to HTML, then inserts the resulting HTML into the body of the message.
 
-- If the gist contains anything other than HTML or Markdown, the add-in inserts it into the body of the message as a code snippet.
+    - If the gist contains anything other than HTML or Markdown, the add-in inserts it into the body of the message as a code snippet.
 
     ```js
     function getGist(gistId, callback) {
