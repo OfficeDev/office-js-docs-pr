@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in (preview)
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 08/22/2023
+ms.date: 11/02/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -23,6 +23,9 @@ The integrated spam-reporting feature eases the task of developing individual ad
 
 To preview the integrated spam-reporting feature in Outlook on Windows, you must install Version 2307 (Build 16626.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option to access Office beta builds.
 
+> [!TIP]
+> If you're unable to choose a channel in your Outlook client, see [Let users choose which Microsoft 365 Insider channel to install on Windows devices](/deployoffice/insider/deploy/user-choice?fbclid=IwAR3VzO4_HySIoNw735IZSRVBLQm_s83Cje4arT7kviE7HwaOoQYHPI0tF04).
+
 ## Set up your environment
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
@@ -37,11 +40,16 @@ To implement the integrated spam-reporting feature in your add-in, you must conf
 - In Outlook on Windows, an add-in that implements the integrated spam-reporting feature runs in a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). As such, you must specify the JavaScript file that contains the code to handle the spam-reporting event in the [Override](/javascript/api/manifest/override) child element of the [Runtime](/javascript/api/manifest/runtime) element.
 - To activate the add-in in the Outlook ribbon and prevent it from appearing at the end of the ribbon or in the overflow section, set the `xsi:type` attribute of the **\<ExtensionPoint\>** element to [ReportPhishingCommandSurface](/javascript/api/manifest/extensionpoint?view=outlook-js-preview&preserve-view=true#reportphishingcommandsurface-preview).
 - To customize the ribbon button and preprocessing dialog, you must define the [ReportPhishingCustomization](/javascript/api/manifest/reportphishingcustomization?view=outlook-js-preview&preserve-view=true) node.
-  - A user reports an unsolicited message through the add-in's button in the ribbon. The button shows the preprocessing dialog to the user and activates the [SpamReporting](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true) event, which is then handled by the JavaScript event handler. To configure the ribbon button, set the `xsi:type` attribute of the [Control](/javascript/api/manifest/control-button) element to `Button`. Then, set the `xsi:type` attribute of the [Action](/javascript/api/manifest/action) child element to `ExecuteFunction` and specify the name of the spam-reporting event handler in its **\<FunctionName\>** child element. A spam-reporting add-in can only implement [function commands](../design/add-in-commands.md#types-of-add-in-commands).
+  - A user reports an unsolicited message through the add-in's button in the ribbon. To configure the ribbon button, set the `xsi:type` attribute of the [Control](/javascript/api/manifest/control-button) element to `Button`. Then, set the `xsi:type` attribute of the [Action](/javascript/api/manifest/action) child element to `ExecuteFunction` and specify the name of the spam-reporting event handler in its **\<FunctionName\>** child element. A spam-reporting add-in can only implement [function commands](../design/add-in-commands.md#types-of-add-in-commands).
 
     :::image type="content" source="../images/outlook-spam-ribbon-button.png" alt-text="A sample ribbon button of a spam-reporting add-in.":::
 
-  - The preprocessing dialog is shown to a user when they report a message. In the dialog, you can share guidance on the reporting process and include options for the user to provide more information about the message being reported. To customize the title, description, and options of the preprocessing dialog, you must include the [PreProcessingDialog](/javascript/api/manifest/preprocessingdialog?view=outlook-js-preview&preserve-view=true) element in your manifest.
+  - The preprocessing dialog is shown to a user when they select the add-in button. It's configured through the [PreProcessingDialog](/javascript/api/manifest/preprocessingdialog?view=outlook-js-preview&preserve-view=true) element of your manifest. While the dialog must have a title and description, you can optionally include the following elements.
+    - A multiple-selection list of choices to help a user identify the type of message they're reporting. To learn how to configure these reporting options, see [ReportingOptions element](/javascript/api/manifest/reportingoptions?view=outlook-js-preview&preserve-view=true).
+    - A text box for the user to provide additional information about the message they're reporting. To learn how to implement a text box, see [FreeTextLabel element](/javascript/api/manifest/preprocessingdialog?view=outlook-js-preview&preserve-view=true#child-elements).
+    - Custom text and URL to provide informational resources to the user. To learn how to personalize these elements, see [MoreInfo element](/javascript/api/manifest/moreinfo?view=outlook-js-preview&preserve-view=true).
+
+    When a user selects **Report** from the dialog, the [SpamReporting](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true) event is activated and is then handled by the JavaScript event handler.
 
     :::image type="content" source="../images/outlook-spam-processing-dialog.png" alt-text="A sample preprocessing dialog of a spam-reporting add-in.":::
 
@@ -147,7 +155,33 @@ The following is an example of a **\<VersionOverrides\>** node configured for sp
 
 When your add-in is used to report a message, it generates a [SpamReporting](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true) event, which is then processed by the event handler in the JavaScript file of your add-in. To map the name of the event handler you specified in the **\<FunctionName\>** element of your manifest to its JavaScript counterpart, you must call [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) in your code.
 
-Your event handler is responsible for processing the reported message, such as forwarding a copy of the message to an internal system for further investigation. To efficiently send a copy of the reported message, call the [getAsFileAsync](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-getasfileasync-member(1)) method in your event handler. This gets the Base64-encoded EML format of a message, which you can then forward to your internal system.
+1. In your add-in project, navigate to the **./src** directory. Then, create a new folder named **spamreporting**.
+1. In the **./src/spamreporting** folder, create a new file named **spamreporting.js**.
+1. Open the newly created **spamreporting.js** file and add the following JavaScript code.
+
+    ```javascript
+    // Handles the SpamReporting event to process a reported message.
+    function onSpamReport(event) {
+      // TODO - Send a copy of the reported message.
+
+      // TODO - Get the user's responses.
+
+      // TODO - Signal that the spam-reporting event has completed processing.
+    }
+
+    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
+    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
+      Office.actions.associate("onSpamReport", onSpamReport);
+    }
+    ```
+
+1. Save your changes.
+
+### Forward a copy of the message and get the preprocessing dialog responses
+
+Your event handler is responsible for processing the reported message. You can configure it to forward information, such as a copy of the message or the options selected by the user in the preprocessing dialog, to an internal system for further investigation.
+
+To efficiently send a copy of the reported message, call the [getAsFileAsync](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-getasfileasync-member(1)) method in your event handler. This gets the Base64-encoded EML format of a message, which you can then forward to your internal system.
 
 > [!IMPORTANT]
 > To test the `getAsFileAsync` method while it's still in preview in Outlook on Windows, you must configure your computer's registry.
@@ -159,29 +193,67 @@ Your event handler is responsible for processing the reported message, such as f
 >
 >    :::image type="content" source="../images/outlook-beta-registry-key.png" alt-text="The EnableBetaAPIsInJavaScript registry value is set to 1.":::
 
-Once the event handler has completed processing the message, it must call the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method. In addition to signaling to the add-in that the spam-reporting event has been processed, `event.completed` can also be used to customize a post-processing dialog to show to the user or perform additional operations on the message, such as deleting it from the inbox. For a list of properties you can include in a JSON object to pass as a parameter to the `event.completed` method, see [Office.SpamReportingEventCompletedOptions](/javascript/api/outlook/office.spamreportingeventcompletedoptions).
+If you need to keep track of the user's responses to the options and text box in the preprocessing dialog, extract the `options` and `freeText` values from the `SpamReporting` event object. For more information about these properties, see [Office.SpamReportingEventArgs](/javascript/api/outlook/office.spamreportingeventargs?view=outlook-js-preview&preserve-view=true).
 
-> [!NOTE]
-> Code added after the `event.completed` call isn't guaranteed to run.
+The following is an example of a spam-reporting event handler that calls the `getAsFileAsync` method and gets the user's responses from the `SpamReporting` event object.
 
-The following is an example of a spam-reporting event handler that calls the `getAsFileAsync` method.
-
-1. In your add-in project, navigate to the **./src** directory. Then, create a new folder named **spamreporting**.
-1. In the **./src/spamreporting** folder, create a new file named **spamreporting.js**.
-1. Open the newly created **spamreporting.js** file and add the following JavaScript code.
+1. In the **spamreporting.js** file, replace its contents with the following code.
 
     ```javascript
     // Handles the SpamReporting event to process a reported message.
     function onSpamReport(event) {
-      // Gets the Base64-encoded EML format of a reported message.
+      // Get the Base64-encoded EML format of a reported message.
       Office.context.mailbox.item.getAsFileAsync({ asyncContext: event }, (asyncResult) => {
         if (asyncResult.status === Office.AsyncResultStatus.Failed) {
           console.log(`Error encountered during message processing: ${asyncResult.error.message}`);
           return;
         }
-    
+
+        // Get the user's responses to the options and text box in the preprocessing dialog.
+        const spamReportingEvent = asyncResult.asyncContext;
+        const reportedOptions = spamReportingEvent.options;
+        const additionalInfo = spamReportingEvent.freeText;
+
         // Run additional processing operations here.
-    
+
+        // TODO - Signal that the spam-reporting event has completed processing.
+      });
+    }
+
+    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
+    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
+      Office.actions.associate("onSpamReport", onSpamReport);
+    }
+    ```
+
+1. Save your changes.
+
+### Signal when the event has been processed
+
+Once the event handler has completed processing the message, it must call the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method. In addition to signaling to the add-in that the spam-reporting event has been processed, `event.completed` can also be used to customize a post-processing dialog to show to the user or perform additional operations on the message, such as deleting it from the inbox. For a list of properties you can include in a JSON object to pass as a parameter to the `event.completed` method, see [Office.SpamReportingEventCompletedOptions](/javascript/api/outlook/office.spamreportingeventcompletedoptions?view=outlook-js-preview&preserve-view=true).
+
+> [!NOTE]
+> Code added after the `event.completed` call isn't guaranteed to run.
+
+1. In the **spamreporting.js** file, replace its contents with the following code.
+
+    ```javascript
+    // Handles the SpamReporting event to process a reported message.
+    function onSpamReport(event) {
+      // Get the Base64-encoded EML format of a reported message.
+      Office.context.mailbox.item.getAsFileAsync({ asyncContext: event }, (asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+          console.log(`Error encountered during message processing: ${asyncResult.error.message}`);
+          return;
+        }
+
+        // Get the user's responses to the options and text box in the preprocessing dialog.
+        const spamReportingEvent = asyncResult.asyncContext;
+        const reportedOptions = spamReportingEvent.options;
+        const additionalInfo = spamReportingEvent.freeText;
+
+        // Run additional processing operations here.
+
         /**
          * Signals that the spam-reporting event has completed processing.
          * It then moves the reported message to the Junk Email folder of the mailbox, then
@@ -200,7 +272,7 @@ The following is an example of a spam-reporting event handler that calls the `ge
         });
       });
     }
-    
+
     // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart
     if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
       Office.actions.associate("onSpamReport", onSpamReport);
@@ -285,4 +357,5 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 - [ReportPhishingCommandSurface extension point (preview)](/javascript/api/manifest/extensionpoint?view=outlook-js-preview&preserve-view=true#reportphishingcommandsurface-preview)
 - [Office.MessageRead.getAsFileAsync (preview)](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-getasfileasync-member(1))
 - [Office.MailboxEnums.MoveSpamItemTo (preview)](/javascript/api/outlook/office.mailboxenums.movespamitemto?view=outlook-js-preview&preserve-view=true)
-- [Office.SpamReportingEventCompletedOptions](/javascript/api/outlook/office.spamreportingeventcompletedoptions).
+- [Office.SpamReportingEventArgs](/javascript/api/outlook/office.spamreportingeventargs?view=outlook-js-preview&preserve-view=true)
+- [Office.SpamReportingEventCompletedOptions](/javascript/api/outlook/office.spamreportingeventcompletedoptions?view=outlook-js-preview&preserve-view=true)
