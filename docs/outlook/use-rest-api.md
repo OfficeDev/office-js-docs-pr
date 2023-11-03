@@ -1,21 +1,21 @@
 ---
 title: Use the Outlook REST APIs from an Outlook add-in
 description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
-ms.date: 01/11/2023
+ms.date: 10/24/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Use the Outlook REST APIs from an Outlook add-in
 
-The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) namespace provides access to many of the common fields of messages and appointments. However, in some scenarios an add-in may need to access data that is not exposed by the namespace. For example, the add-in may rely on custom properties set by an outside app, or it needs to search the user's mailbox for messages from the same sender. In these scenarios, the [Outlook REST APIs](/outlook/rest) is the recommended method to retrieve the information.
+The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) namespace provides access to many of the common fields of messages and appointments. However, in some scenarios an add-in may need to access data that isn't exposed by the namespace. For example, the add-in may rely on custom properties set by an outside app, or it needs to search the user's mailbox for messages from the same sender. In these scenarios, the [Outlook REST APIs](/outlook/rest) is the recommended method to retrieve the information.
 
 > [!IMPORTANT]
-> **The Outlook REST APIs are deprecated**
+> **Outlook REST v2.0 and beta endpoints deprecation**
 >
-> It was previously announced that the Outlook REST endpoints will be fully decommissioned on November 30, 2022 (see the [November 2020 announcement](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). However, the decommission date has been postponed. The new date in 2023 will be announced six months before the decommission is enforced through the [Microsoft 365 Developer Blog](https://devblogs.microsoft.com/microsoft365dev/). For more information on this recent update, see the [November 2022 announcement](https://devblogs.microsoft.com/microsoft365dev/outlook-rest-api-v2-0-beta-deprecation-update/). Although the decommission date has been postponed, we highly encourage you to migrate your add-ins to use [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). For guidance, see [Compare Microsoft Graph and Outlook REST API endpoints](/outlook/rest/compare-graph).
+> The Outlook REST v2.0 and beta endpoints will be [fully deprecated on March 31, 2024](https://devblogs.microsoft.com/microsoft365dev/outlook-rest-api-v2-0-and-beta-endpoints-decommissioning-update/). However, active add-ins are able to use the REST service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). Add-ins that use the service are automatically identified for exemption based on the add-in's manifest ID. This exemption applies to privately released and AppSource-hosted add-ins. It also includes new add-ins developed after the decommission date.
 >
-> To assist you with the migration, active add-ins are able to keep using the REST service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). Add-in traffic that uses the service will be automatically identified for exemption based on the add-in's manifest ID. This exemption applies to privately released and AppSource-hosted add-ins. It also includes new add-ins developed after the decommission date.
+> Although add-ins are able to use the REST service until 2025, we highly encourage you to migrate your add-ins to use [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). For guidance, see [Compare Microsoft Graph and Outlook REST API endpoints](/outlook/rest/compare-graph).
 
 ## Get an access token
 

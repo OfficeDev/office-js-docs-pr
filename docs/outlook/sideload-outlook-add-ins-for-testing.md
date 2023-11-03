@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 10/19/2023
+ms.date: 10/24/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -30,24 +30,26 @@ If you created your Outlook add-in using the [Yeoman generator for Office Add-in
 
 Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in based on the Outlook client. Select the tab for your preferred Outlook client.
 
-# [Web](#tab/web)
+# [Web and new Windows UI (preview)](#tab/web)
 
-The process for sideloading an add-in in Outlook on the web depends on whether you're using the new or classic version.
+The process for sideloading an add-in in Outlook on the web depends on whether you're using the modern or classic version.
 
-- If your mailbox toolbar looks like the following image, see [Sideload an add-in in the new Outlook on the web](#new-outlook-on-the-web).
+- If your mailbox toolbar looks like the following image, see [Sideload an add-in in the modern Outlook on the web or new Outlook on Windows (preview)](#modern-outlook-on-the-web-and-new-outlook-on-windows-preview).
 
-    ![Partial screenshot of the new Outlook on the web toolbar.](../images/outlook-on-the-web-new-toolbar.png)
+    ![Header of the modern Outlook on the web toolbar.](../images/outlook-on-the-web-new-toolbar.png)
 
 - If your mailbox toolbar looks like the following image, see [Sideload an add-in in classic Outlook on the web](#classic-outlook-on-the-web).
 
-    ![Partial screenshot of the classic Outlook on the web toolbar.](../images/outlook-on-the-web-classic-toolbar.png)
+    ![Header of the classic Outlook on the web toolbar.](../images/outlook-on-the-web-classic-toolbar.png)
 
 > [!NOTE]
 > If your organization has included its logo in the mailbox toolbar, you might see something slightly different than shown in the preceding images.
 
-### New Outlook on the web
+To manually sideload an add-in in the new Outlook on Windows (preview), see [Sideload an add-in in the modern Outlook on the web or new Outlook on Windows (preview)](#modern-outlook-on-the-web-and-new-outlook-on-windows-preview).
 
-1. Go to [Outlook on the web](https://outlook.office365.com).
+### Modern Outlook on the web and new Outlook on Windows (preview)
+
+1. Go to [Outlook on the web](https://outlook.office365.com) or open the [new Outlook client on Windows (preview)](one-outlook.md).
 
 1. Select **Get add-ins** from the ribbon.
 
