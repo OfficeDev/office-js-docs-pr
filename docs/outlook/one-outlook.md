@@ -30,7 +30,9 @@ The development of the Outlook JavaScript API used by Outlook web add-ins is foc
 The following table identifies key Outlook scenarios and their support status in a web add-in. This table will be updated as additional scenarios are supported. Periodically check this section as you plan to migrate your VSTO or COM add-in.
 
 > [!TIP]
-> For a list of Outlook add-in features in preview, see [Outlook add-in API preview requirement set](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview?view=outlook-js-preview&preserve-view=true).
+> As we continue to update the table of supported scenarios, if you want to view the recent changes made, select **Edit This Document** (**pencil icon**) from the top right corner of the article, then select **History**.
+>
+> To learn more about Outlook add-in features that are in preview, see [Outlook add-in API preview requirement set](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview?view=outlook-js-preview&preserve-view=true).
 
 |Scenario|Description|Support status in Outlook web add-ins|Related features and samples|
 |-----|-----|-----|-----|
