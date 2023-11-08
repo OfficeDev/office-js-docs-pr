@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 11/07/2023
+ms.date: 11/09/2023
 ms.localizationpriority: medium
 ---
 
@@ -9,12 +9,9 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 8:00 AM Pacific Time. You can download the calendar invite at <https://aka.ms/officeaddinscommunitycall>.
 
-## Agenda for November 8, 2023 call
+## Agenda for December 13, 2023 call
 
-The agenda for the November Office Add-ins community call is the following:
-
-- Luyi Han will talk about Microsoft Teams apps for Word, Excel, and PowerPoint.
-- Miaofei Wang and Dongqi Lv will share improvements to the undo behavior in custom functions.
+The agenda for the December Office Add-ins community call will be posted the week of the call.
 
 ## Previous calls
 
