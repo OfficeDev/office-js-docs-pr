@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 07/17/2023
+ms.date: 11/09/2023
 ms.localizationpriority: high
 ---
 
@@ -68,7 +68,7 @@ For general add-in behavior, see [Privacy and security for Office Add-ins](../co
 
 The security model addresses security, privacy, and performance concerns of end users in the following ways.
 
-- End user's messages that are protected by Outlook's Information Rights Management (IRM) don't interact with Outlook add-ins on non-Windows clients.
+- End user's messages that are protected by Outlook's Information Rights Management (IRM) don't interact with add-ins in Outlook on mobile devices.
 
 [!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 

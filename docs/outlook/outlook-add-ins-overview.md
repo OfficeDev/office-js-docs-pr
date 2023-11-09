@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
-ms.date: 05/20/2023
+ms.date: 11/09/2023
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -39,7 +39,7 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
 Outlook add-ins activate when the user is composing or reading a message or appointment, but not other item types. However, add-ins are *not* activated if the current message item, in a compose or read form, is one of the following:
 
-- Protected by Information Rights Management (IRM) or encrypted in other ways for protection and accessed from Outlook on non-Windows clients. A digitally signed message is an example since digital signing relies on one of these mechanisms.
+- Protected by Information Rights Management (IRM) or encrypted in other ways for protection and accessed from Outlook on mobile devices. A digitally-signed message is an example since digital signing relies on one of these mechanisms.
 
 [!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 

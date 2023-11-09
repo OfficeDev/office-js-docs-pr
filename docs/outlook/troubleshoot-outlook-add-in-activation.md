@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: Possible reasons your add-in doesn't activate as you expect.
-ms.date: 02/24/2023
+ms.date: 11/09/2023
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -70,7 +70,7 @@ Also, because appointments are always saved in Rich Text Format, an [ItemHasRegu
 
 Even if a mail item is not one of the above types, if the item wasn't delivered by a version of Exchange Server that's at least Exchange 2013, known entities and properties, such as sender's SMTP address, wouldn't be identified on the item. Any activation rules that rely on these entities or properties wouldn't be satisfied, and the add-in wouldn't be activated.
 
-In Outlook on clients besides Windows, if your add-in activates when the user is composing a message or meeting request, make sure the item isn't protected by Information Rights Management (IRM).
+In Outlook on mobile devices, if your add-in activates when the user is composing a message or meeting request, make sure the item isn't protected by Outlook's Information Rights Management (IRM).
 
 [!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
