@@ -418,7 +418,7 @@ items:
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.md
     displayName: Excel
-  - name: Open in Excel sample
+  - name: 'Sample: Open in Excel'
     href: excel/pnp-open-in-excel.md
     displayName: Excel
   - name: Excel JavaScript API
