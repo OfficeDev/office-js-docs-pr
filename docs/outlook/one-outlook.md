@@ -1,7 +1,7 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows (preview)
 description: Learn how to develop add-ins that are compatible with the new Outlook on Windows (preview).
-ms.date: 10/24/2023
+ms.date: 11/09/2023
 ms.localizationpriority: medium
 ---
 
@@ -18,9 +18,9 @@ To help get you started on the migration process, review the following guidance.
 - The differences in features and scenarios supported by VSTO and COM add-ins and Outlook web add-ins are being addressed. To determine whether your add-in scenario is fully supported in an Outlook web add-in, see [Supported scenarios in Outlook web add-ins](#supported-scenarios-in-outlook-web-add-ins).
 - For guidance on how to transition your VSTO add-in to an Outlook web add-in, see [VSTO add-in developer's guide](../overview/learning-path-transition.md) and [Tutorial: Share code between both a VSTO Add-in and an Office Add-in with a shared code library](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
 - If you're new to Outlook web add-ins, try out the [Outlook quick start](../quickstarts/outlook-quickstart.md) to build your first add-in.
+- If you're an IT administrator and would like to learn more about how to transition to Outlook web add-ins in your organization, see [Transitioning add-ins from classic Outlook to the new Outlook for Windows](https://techcommunity.microsoft.com/t5/outlook-blog/add-ins-in-the-new-outlook-for-windows/ba-p/3954388).
 
 > [!NOTE]
->
 > VSTO and COM add-ins are still supported in classic Outlook on Windows.
 
 ### Supported scenarios in Outlook web add-ins
@@ -28,6 +28,11 @@ To help get you started on the migration process, review the following guidance.
 The development of the Outlook JavaScript API used by Outlook web add-ins is focused on closing the gap on scenarios that are only supported by VSTO and COM add-in solutions. This way, users who transition to the Outlook web add-in can continue to have a seamless experience.
 
 The following table identifies key Outlook scenarios and their support status in a web add-in. This table will be updated as additional scenarios are supported. Periodically check this section as you plan to migrate your VSTO or COM add-in.
+
+> [!TIP]
+> As we continue to update the table of supported scenarios, if you want to view the recent changes made, select **Edit This Document** (**pencil icon**) from the top right corner of the article, then select **History**.
+>
+> To learn more about Outlook add-in features that are in preview, see [Outlook add-in API preview requirement set](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview?view=outlook-js-preview&preserve-view=true).
 
 |Scenario|Description|Support status in Outlook web add-ins|Related features and samples|
 |-----|-----|-----|-----|
@@ -41,8 +46,8 @@ The following table identifies key Outlook scenarios and their support status in
 |Project management|Enable users to create and track project work items from partner systems.|Supported.|[Activate your Outlook add-in on multiple messages](item-multi-select.md)<br><br>[Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)<br><br>[Verify the color categories applied to a new message or appointment](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)|
 |Attachment management|Enable users to import or export attachments from partner locations.|Supported.|[Activate your Outlook add-in on multiple messages](item-multi-select.md)<br><br>[Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)<br><br>[Configure your Outlook add-in for event-based activation](autolaunch.md)|
 |Message encryption|Enable users to encrypt and decrypt messages.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|[Office.context.mailbox.item.display](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-display-member) (preview)<br><br>[Office.context.mailbox.item.display.body.setAsync](/javascript/api/outlook/office.displayedbody?view=outlook-js-preview&preserve-view=true#outlook-office-displayedbody-setasync-member(1)) (preview)<br><br>[Office.context.mailbox.item.display.subject.setAsync](/javascript/api/outlook/office.displayedsubject#outlook-office-displayedsubject-setasync-member(1)) (preview)|
-|Data loss prevention|Prevent users from forwarding mail items that contain highly sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|[Manage the sensitivity label of your message or appointment in compose mode](sensitivity-label.md)<br><br>[Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)<br><br>[Office.SensitivityLabel](/javascript/api/outlook/office.sensitivitylabelscatalog)<br><br>[Office.SensitivitiyLabelsCatalog](/javascript/api/outlook/office.sensitivitylabelscatalog)<br><br>[Office.SensitivityLabelDetails](/javascript/api/outlook/office.sensitivitylabeldetails)|
-|Mail item classification|Enable users to identify and classify messages that contain sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|[Manage the sensitivity label of your message or appointment in compose mode](sensitivity-label.md)<br><br>[Manage the sensitivity level of an appointment (preview)](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview&preserve-view=true)<br><br>[Office.Sensitivity](/javascript/api/outlook/office.sensitivity)<br><br>[Office.SensitivityLabel](/javascript/api/outlook/office.sensitivitylabelscatalog)<br><br>[Office.SensitivitiyLabelsCatalog](/javascript/api/outlook/office.sensitivitylabelscatalog)<br><br>[Office.SensitivityLabelDetails](/javascript/api/outlook/office.sensitivitylabeldetails)|
+|Data loss prevention|Prevent users from forwarding mail items that contain highly sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|[Automatically check for an attachment before a message is sent](smart-alerts-onmessagesend-walkthrough.md)<br><br>[Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)<br><br>[Manage the sensitivity label of your message or appointment in compose mode](sensitivity-label.md)<br><br>[Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)<br><br>[Office.SensitivityLabel](/javascript/api/outlook/office.sensitivitylabelscatalog)<br><br>[Office.SensitivitiyLabelsCatalog](/javascript/api/outlook/office.sensitivitylabelscatalog)<br><br>[Office.SensitivityLabelDetails](/javascript/api/outlook/office.sensitivitylabeldetails)|
+|Mail item classification|Enable users to identify and classify messages that contain sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|[Automatically check for an attachment before a message is sent](smart-alerts-onmessagesend-walkthrough.md)<br><br>[Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)<br><br>[Manage the sensitivity label of your message or appointment in compose mode](sensitivity-label.md)<br><br>[Manage the sensitivity level of an appointment (preview)](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview&preserve-view=true)<br><br>[Office.Sensitivity](/javascript/api/outlook/office.sensitivity)<br><br>[Office.SensitivityLabel](/javascript/api/outlook/office.sensitivitylabelscatalog)<br><br>[Office.SensitivitiyLabelsCatalog](/javascript/api/outlook/office.sensitivitylabelscatalog)<br><br>[Office.SensitivityLabelDetails](/javascript/api/outlook/office.sensitivitylabeldetails)|
 |Data sync service|Enable bidirectional synchronization of mail items with partner systems.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|[Use Microsoft Graph to manage personal contacts in Outlook](/graph/outlook-contacts-concept-overview)|
 |Proofing mail items|Provide users with real-time proofreading assistance as they compose messages.|Not currently supported.|Not available|
 
@@ -77,6 +82,7 @@ As you test your Outlook web add-in in the new Outlook on Windows, share feedbac
 ## See also
 
 - [Blog post: New Outlook for Windows available to all Office Insiders](https://insider.office.com/blog/new-outlook-for-windows-available-to-all-office-insiders)
+- [Blog post: Add-ins in the new Outlook for Windows](https://techcommunity.microsoft.com/t5/outlook-blog/add-ins-in-the-new-outlook-for-windows/ba-p/3954388)
 - [Podcast: Update on development with new Outlook for Windows](https://www.m365devpodcast.com/update-on-development-with-new-outlook-for-windows/)
 - [Outlook add-ins overview](outlook-add-ins-overview.md)
 - [Build your first Outlook add-in](../quickstarts/outlook-quickstart.md)
