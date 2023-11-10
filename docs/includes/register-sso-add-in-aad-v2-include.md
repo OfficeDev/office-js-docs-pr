@@ -117,7 +117,7 @@ Sometimes called an _application password_, a client secret is a string value yo
 
     The **Add a client application** pane appears.
 
-1. In the **Client ID** enter `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e`. This value pre-authorizes all Microsoft Office application endpoints. If you also would like to pre-authorize Office when used inside of Microsoft Teams, add `1fec8e78-bce4-4aaf-ab1b-5451cc387264` ( Teams desktop and Teams Mobile) and `5e3ce6c0-2b1f-4285-8d4b-75ee78787346` (Teams on the web).
+1. In the **Client ID** enter `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e`. This value pre-authorizes all Microsoft Office application endpoints. If you also want to pre-authorize Office when used inside of Microsoft Teams, add `1fec8e78-bce4-4aaf-ab1b-5451cc387264` (Microsoft Teams desktop and Teams mobile) and `5e3ce6c0-2b1f-4285-8d4b-75ee78787346` (Teams on the web).
 
     > [!NOTE]
     > The `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` ID pre-authorizes Office on all the following platforms. Alternatively, you can enter a proper subset of the following IDs if, for any reason, you want to deny authorization to Office on some platforms. If you do so, leave out the IDs of the platforms from which you want to withhold authorization. Users of your add-in on those platforms will not be able to call your Web APIs, but other functionality in your add-in will still work.
