@@ -32,6 +32,9 @@ items:
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
+  - name: Samples
+    href: overview/office-add-in-code-samples.md
+    displayName: PnP, 'code samples'
   - name: Set up your development environment 
     href: overview/set-up-your-dev-environment.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
@@ -286,6 +289,9 @@ items:
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript projects to TypeScript
           href: develop/convert-javascript-to-typescript.md
+      - name: Copy Script Lab snippet to Yo Office
+        href: overview/create-an-office-add-in-from-script-lab.md
+        displayName: 'code samples'
     - name: Special requirements for add-ins on the iPad
       href: develop/develop-office-add-ins-for-the-ipad.md
   - name: Test and debug
@@ -413,6 +419,9 @@ items:
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.md
     displayName: Excel
+  - name: 'Sample: Open in Excel'
+    href: excel/pnp-open-in-excel.md
+    displayName: Excel, 'code samples'
   - name: Excel JavaScript API
     items:
     - name: Overview
@@ -567,6 +576,9 @@ items:
       displayName: Excel, Custom Functions
     - name: Autogenerate JSON metadata
       href: excel/custom-functions-json-autogeneration.md
+      displayName: Excel, Custom Functions
+    - name: Batching custom function remote calls
+      href: excel/custom-functions-batching.md
       displayName: Excel, Custom Functions
     - name: Data types
       href: excel/custom-functions-data-types-concepts.md
@@ -940,19 +952,6 @@ items:
     - name: Troubleshoot Word add-ins
       href: word/word-add-ins-troubleshooting.md
       displayName: Word
-- name: Samples
-  items:
-  - name: Samples list
-    href: overview/office-add-in-code-samples.md
-    displayName: PnP
-  - name: Open in Excel
-    href: excel/pnp-open-in-excel.md
-    displayName: Excel
-  - name: Copy Script Lab snippet to Yo Office
-    href: overview/create-an-office-add-in-from-script-lab.md
-  - name: Batching custom function remote calls
-    href: excel/custom-functions-batching.md
-    displayName: Excel, Custom Functions
 - name: Resources
   items:
   - name: Glossary
