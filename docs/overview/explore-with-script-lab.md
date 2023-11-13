@@ -1,7 +1,7 @@
 ---
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
-ms.date: 05/20/2023
+ms.date: 11/10/2023
 ms.topic: concept-article
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -74,17 +74,15 @@ For more details on Script Lab for Outlook, see the related [blog post](https://
 
 ## Next steps
 
-To use Script Lab in Excel, Word, or PowerPoint, install the [Script Lab add-in](https://appsource.microsoft.com/product/office/WA104380862) from AppSource.
+> [!div class="nextstepaction"]
+> [Get Script Lab for Excel, PowerPoint, and Word](https://appsource.microsoft.com/product/office/WA104380862)
 
-To use Script Lab for Outlook, install the [Script Lab for Outlook add-in](https://appsource.microsoft.com/product/office/wa200001603) from AppSource.
+> [!div class="nextstepaction"]
+> [Get Script Lab for Outlook](https://appsource.microsoft.com/product/office/WA200001603)
 
-You're welcome to expand the sample library in Script Lab by contributing new snippets to the [office-js-snippets](https://github.com/OfficeDev/office-js-snippets#office-js-snippets) GitHub repository.
-
-When you're ready to create your first Office Add-in, try out the quick start for [Excel](../quickstarts/excel-quickstart-jquery.md), [Outlook](../quickstarts/outlook-quickstart.md), [Word](../quickstarts/word-quickstart.md), [OneNote](../quickstarts/onenote-quickstart.md), [PowerPoint](../quickstarts/powerpoint-quickstart.md), or [Project](../quickstarts/project-quickstart.md).
+Once you've prototyped your code in Script Lab, turn it into a real add-in with the steps in [Create a standalone Office Add-in from your Script Lab code](./create-an-office-add-in-from-script-lab.md).
 
 ## See also
 
-- [Get Script Lab for Excel, Word, or Powerpoint](https://appsource.microsoft.com/product/office/WA104380862)
-- [Get Script Lab for Outlook](https://appsource.microsoft.com/product/office/wa200001603)
-- [Script Lab on GitHub](https://github.com/OfficeDev/script-lab)
+- [Script Lab sample GitHub repository](https://github.com/OfficeDev/office-js-snippets#office-js-snippets)
 - [Developing Office Add-ins](../develop/develop-overview.md)

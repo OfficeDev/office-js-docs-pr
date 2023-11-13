@@ -2,7 +2,7 @@
 title: Create a standalone Office Add-in from your Script Lab code
 description: Learn how to move your snippet from Script Lab into a Yo Office project
 ms.topic: how-to
-ms.date: 06/23/2023
+ms.date: 11/10/2023
 ms.localizationpriority: high
 ---
 
@@ -16,7 +16,7 @@ The steps in this article refer to [Visual Studio Code](https://code.visualstudi
 
 You need to create the standalone add-in project which will be the new development location for your snippet code.
 
-Run the command `yo office --projectType taskpane --ts true --host <host> --name "basic-sample"`, where `<host>` is one of the following values.
+Run the command `yo office --projectType taskpane --ts true --host <host> --name "my-add-in"`, where `<host>` is one of the following values.
 
 - excel
 - outlook
@@ -26,7 +26,7 @@ Run the command `yo office --projectType taskpane --ts true --host <host> --name
 > [!IMPORTANT]
 > The `--name` argument value must be in double quotation marks, even if it has no spaces.
 
-The previous command creates a new project folder named **basic-sample**. It's configured to run in the host you specified, and uses TypeScript. Script Lab uses TypeScript by default, but most of the snippets are JavaScript. You can build a Yo Office JavaScript project if you prefer, but just be sure any code you copy over is JavaScript.
+The previous command creates a new project folder named **my-add-in**. It's configured to run in the host you specified, and uses TypeScript. Script Lab uses TypeScript by default, but most of the snippets are JavaScript. You can build a Yo Office JavaScript project if you prefer, but just be sure any code you copy over is JavaScript.
 
 ## Open the snippet in Script Lab
 
@@ -34,15 +34,13 @@ Use an existing snippet in Script Lab to learn how to copy a snippet to a Yo Off
 
 1. Open Office (Word, Excel, PowerPoint, or Outlook) and then open Script Lab.
 1. Select **Script Lab** > **Code**. If you're working in Outlook, open an email message to see Script Lab on the ribbon.
-1. In the Script Lab task pane, choose **Samples**. Then select a basic sample based on which Office host you are working in.
-    - For Excel, PowerPoint, or Word, choose the **Basic API Call (TypeScript)** sample.
-    - For Outlook, choose the **Use add-in settings** sample.
+1. Open your snippet in Script Lab. If you want to start with an existing sample, go to the Script Lab task pane and choose **Samples**.
 
 ## Copy snippet code to Visual Studio code
 
 Now you can copy the code from the snippet to the Yo Office project in VS Code.
 
-- In VS Code, open the **basic-sample** project.
+- In VS Code, open the **my-add-in** project.
 
 In the next steps, you'll copy code from several tabs in Script Lab.
 
@@ -140,14 +138,14 @@ Script Lab handles the `Office.onReady` initialization automatically. You'll nee
 
 If your snippet uses custom functions, you need to use the Yo Office custom functions template. To turn custom functions into a standalone add-in, follow these steps.
 
-1. Run the command `yo office --projectType excel-functions --ts true --name "functions-sample"`.
+1. Run the command `yo office --projectType excel-functions --ts true --name "my-functions"`.
 
     > [!IMPORTANT]
     > The `--name` argument value must be in double quotation marks, even if it has no spaces.
 
 1. Open Excel, and then open Script Lab.
 1. Select **Script Lab** > **Code**.
-1. In the Script Lab task pane, choose **Samples**, and then choose the **Basic custom function** sample.
+1. Open your snippet in Script Lab. If you want to start with an existing sample, go to the Script Lab task pane, choose **Samples**, and search under the **Custom Functions** section.
 1. Open the **/src/functions/functions.ts** file. If you're using a JavaScript project, the filename is **functions.js**.
 1. In Script Lab, select the **Script** tab.
 1. Copy all of the code in the **Script** tab to the clipboard. Paste the code at the top of the **functions.ts** (or **functions.js** for JavaScript) with the code you copied.
