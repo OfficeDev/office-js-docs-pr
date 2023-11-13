@@ -34,7 +34,7 @@ items:
     displayName: Excel, Word, PowerPoint
   - name: Samples
     href: overview/office-add-in-code-samples.md
-    displayName: PnP, code samples
+    displayName: PnP, 'code samples'
   - name: Set up your development environment 
     href: overview/set-up-your-dev-environment.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
@@ -291,7 +291,7 @@ items:
           href: develop/convert-javascript-to-typescript.md
       - name: Copy Script Lab snippet to Yo Office
         href: overview/create-an-office-add-in-from-script-lab.md
-        displayName: code samples
+        displayName: 'code samples'
     - name: Special requirements for add-ins on the iPad
       href: develop/develop-office-add-ins-for-the-ipad.md
   - name: Test and debug
@@ -421,7 +421,7 @@ items:
     displayName: Excel
   - name: 'Sample: Open in Excel'
     href: excel/pnp-open-in-excel.md
-    displayName: Excel, code samples
+    displayName: Excel, 'code samples'
   - name: Excel JavaScript API
     items:
     - name: Overview
