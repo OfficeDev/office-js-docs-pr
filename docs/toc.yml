@@ -146,7 +146,7 @@ items:
       - name: Address same origin policy limitations
         href: develop/addressing-same-origin-policy-limitations.md
       - name: Wildcard trusted domains
-        href: develop.trusted-domains.md
+        href: develop/trusted-domains.md
     - name: Authentication and authorization
       items:
       - name: Overview
