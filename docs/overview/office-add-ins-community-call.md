@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 11/09/2023
+ms.date: 11/14/2023
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +18,7 @@ The agenda for the December Office Add-ins community call will be posted the wee
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
 > [!NOTE]
-> We're experiencing delays with posting the recordings and blog posts of previous community calls. We're working on getting this fixed as soon as possible.
+> We're experiencing delays with posting the blog posts of previous community calls. We're working on getting this fixed as soon as possible.
 
 - [July 12, 2023](https://pnp.github.io/blog/office-add-ins-community-call/2023-07-12/)
 - [June 14, 2023](https://pnp.github.io/blog/office-add-ins-community-call/2023-06-14/)
@@ -55,7 +55,7 @@ Missed a previous community call? Check out the following blog resources to catc
 
 - [Recurring, monthly community call calendar invite](https://aka.ms/officeaddinscommunitycall)
 - [Community call topic requests and questions](https://aka.ms/officeaddinsform)
-- [Microsoft 365 developer YouTube channel](https://aka.ms/m365devyoutube)
-- [Microsoft 365 community YouTube channel](https://aka.ms/m365pnp/videos)
+- [Community call recordings](https://www.youtube.com/playlist?list=PLR9nK3mnD-OVExAWBr2QtS_5UmqUr7HL4)
+- [Microsoft 365 community YouTube channel](https://aka.ms/m365devyoutube)
 - [Microsoft 365 community site](https://aka.ms/m365pnp/community)
 - [Microsoft 365 community blog](https://aka.ms/m365pnp/community/blog)
