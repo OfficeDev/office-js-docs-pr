@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 10/24/2023
+ms.date: 11/14/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -73,9 +73,6 @@ To manually sideload an add-in in the new Outlook on Windows (preview), see [Sid
     [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
-
-    > [!IMPORTANT]
-    > Due to caching, it may take up to four hours for the sideloaded add-in to appear in your Outlook client on the web.
 
 ### Classic Outlook on the web
 
