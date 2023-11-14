@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 10/24/2023
+ms.date: 11/14/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -336,6 +336,9 @@ To modify the text of the **Don't Send** button or assign it a task pane command
   - **XML manifest**: The `id` attribute of the **\<Control\>** element representing the task pane.
   - **Unified manifest for Microsoft 365 (preview)**: The "id" property of the task pane command in the "controls" array.
 - The [contextData](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-contextdata-member) option specifies any JSON data you want to pass to the add-in when the **Don't Send** button is selected. If you include this option, you must also set the `commandId` option. Otherwise, the JSON data is ignored.
+
+  > [!TIP]
+  > To retrieve the value of the `contextData` option, you must call [Office.context.mailbox.item.getInitializationContextAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) in the JavaScript implementation of your task pane.
 
 1. Navigate to the **./src/launchevent** folder, then open **launchevent.js**.
 1. Replace the **getAttachmentsCallback** function with the following code.
