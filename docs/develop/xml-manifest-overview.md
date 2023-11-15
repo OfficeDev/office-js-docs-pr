@@ -326,7 +326,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
       <Host xsi:type="Document">
         <!-- Form factor. DesktopFormFactor is supported. Other form factors are available depending on the host and feature. -->
         <DesktopFormFactor>
-          <!-- Function file is an HTML page that includes the JavaScript where functions for ExecuteAction will be called.
+          <!-- Function file is an HTML page that includes, or loads, the JavaScript where functions for ExecuteAction will be called.
             Think of the FunctionFile as the "code behind" ExecuteFunction. -->
           <FunctionFile resid="Contoso.FunctionFile.Url" />
 
