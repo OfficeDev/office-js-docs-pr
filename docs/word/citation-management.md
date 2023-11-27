@@ -8,9 +8,9 @@ ms.localizationpriority: medium
 
 # Sample: Manage citations in a Word document using your Word add-in
 
-Citation management is an important aspect of documents, particularly in academia and education. Each citation style has its own guidelines for how citations should be marked in a document as well as where and how the sources should be noted. Examples of citation styles are [APA](http://apastyle.apa.org/) and [MLA](https://www.mla.org/MLA-Style).
+Citation management is an important aspect of documents, particularly in academia and education. Each citation style has its own guidelines for how citations should be marked in a document as well as where and how the sources should be noted. Such styles include [APA](http://apastyle.apa.org/) and [MLA](https://www.mla.org/MLA-Style).
 
-This article shows how to create an add-in that showcases the basics of managing citations in a Word document. The add-in displays the references loaded from the user's .bib file then the user can insert selected references into the document.
+This article features a sample add-in that manages citations in a Word document. The add-in displays the references loaded from the user's .bib file that the user selects to cite in their document.
 
 ![Screen showing citation management add-in task pane.](../images/word-citation-management.png)
 
@@ -50,15 +50,15 @@ The following considerations will help you plan how to modify your solution to m
 
 ### Use footnotes
 
-List the references in [footnotes](/javascript/api/word/word.range?view=word-js-1.5&preserve-view=true#word-word-range-insertfootnote-member(1)) at the end of the page instead of endnotes, according to the citation style.
+List the references in [footnotes](/javascript/api/word/word.range#word-word-range-insertfootnote-member(1)) at the end of the page instead of endnotes, according to the citation style.
 
-Alternatively, allow the user to choose where they'd like the references to be displayed. If so, you can update the add-in to persist the user's preference using a [document property](#persist-add-in-state-and-settings) or as part of their [authenticated experience](#use-single-sign-on).
+Alternatively, allow the user to choose where they'd like the references to be displayed. If so, you can update the add-in to persist the user's preference using a document property or as part of their authenticated experience.
 
 ### Update citation style
 
 Update the citation style used to display the references in the endnotes (or footnotes).
 
-Alternatively, provide various style options then allow the user to choose. If so, you can update the add-in to persist the user's preference using a [document property](#persist-add-in-state-and-settings) or as part of their [authenticated experience](#use-single-sign-on).
+Alternatively, provide various style options then allow the user to choose. If so, you can update the add-in to persist the user's preference using a document property or as part of their authenticated experience.
 
 ### Replace bibtexParseJs
 
