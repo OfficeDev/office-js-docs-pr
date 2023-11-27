@@ -20,7 +20,6 @@ This article features a sample add-in that manages citations in a Word document.
 - Office connected to a Microsoft 365 subscription (including Office on the web).
 - [Node.js](https://nodejs.org/) version 16 or greater.
 - npm version 8 or greater.
-- @orcid/bibtexParseJs, a JavaScript library for parsing the selected .bib file.
 
 ## Run the sample code
 
@@ -33,17 +32,15 @@ The sample code for this article is named [Manage citations in a Word document](
 1. The user chooses the appropriate reference then inserts it at the cursor's location (or at the end of selected text) in the document.
 1. The add-in adds a reference mark at that location in the document and adds the reference to an endnote. All endnotes are automatically listed at the end of the document.
 
-## Additional considerations for your solution
+## Make it yours
 
-The following considerations will help you plan how to modify your solution to meet your desired functionality.
+The following are a few suggestions for how you could tailor this to your scenario.
 
-### Use single sign-on
+### Manage user settings
 
 [Enable single sign-on (SSO) in an Office Add-in](../develop/sso-in-office-add-ins.md) to support persisting user data and settings across multiple documents. If your service provides or hosts the bibliography library, an authorized user can access and select from that bibliography in their document.
 
-### Persist add-in state and settings
-
-[Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md) in the user's current document.
+You can also [persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md) in the user's current document.
 
 > [!CAUTION]
 > Don't store sensitive information such as auth tokens or connection strings. Properties in the document aren't encrypted or protected.
@@ -66,5 +63,6 @@ Replace the .bib file parser [@orcid/bibtexParseJs](https://github.com/ORCID/bib
 
 ## See also
 
+- [Office Add-in code samples](../overview/office-add-in-code-samples.md)
 - [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - [@orcid/bibtexParseJs](https://github.com/ORCID/bibtexParseJs#readme)
