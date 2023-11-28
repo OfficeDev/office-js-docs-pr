@@ -55,6 +55,7 @@ If your development background is in building VSTO Add-ins, the following sample
 |:--------------------|:--------------------|
 | [Get, edit, and set OOXML content in a Word document with a Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-get-set-edit-openxml) | This sample shows how to get, edit, and set OOXML content in a Word document. The sample add-in provides a scratch pad to get Office Open XML for your own content and test your own edited Office Open XML snippets.|
 | [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)  | This sample add-in shows you how to add a variety of rich content types to a Word document using the setSelectedDataAsync method with ooxml coercion type. The add-in also gives you the ability to show the Office Open XML markup for each sample content type right on the page. |
+| [Manage citations with your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-citation-management) | Shows how to manage citations in a Word document. |
 
 ## Authentication, authorization, and single sign-on (SSO)
 

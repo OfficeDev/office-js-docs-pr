@@ -925,6 +925,9 @@ items:
   - name: Word add-in tutorial
     href: tutorials/word-tutorial.md
     displayName: Word
+  - name: 'Sample: Manage citations'
+    href: word/citation-management.md
+    displayName: Word
   - name: Word JavaScript API
     items:
     - name: Overview
