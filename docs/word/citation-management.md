@@ -1,7 +1,7 @@
 ---
 title: 'Sample: Manage citations through your Word add-in'
 description: Learn how to create an add-in that manages citations in a Word document.
-ms.date: 11/15/2023
+ms.date: 11/28/2023
 ms.topic: sample
 ms.localizationpriority: medium
 ---
