@@ -10,9 +10,9 @@ ms.localizationpriority: medium
 
 Citation management is an important aspect of documents, particularly in academia and education. Each citation style has its own guidelines for how citations should be marked in a document as well as where and how the sources should be noted. Such styles include [APA](http://apastyle.apa.org/) and [MLA](https://www.mla.org/MLA-Style).
 
-This article features a sample add-in that manages citations in a Word document. The add-in displays the references loaded from the user's .bib file that the user selects to cite in their document.
+This article features a sample add-in that manages citations in a Word document. The add-in displays the references loaded from a .bib file that the user selects to cite in their document.
 
-![Screen showing citation management add-in task pane.](../images/word-citation-management.png)
+![The citation management add-in task pane.](../images/word-citation-management.png)
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ The sample code for this article is named [Manage citations in a Word document](
 
 ## Make it yours
 
-The following are a few suggestions for how you could tailor this to your scenario.
+The following are a few suggestions for how you could tailor this sample to your scenario.
 
 ### Manage user settings
 
@@ -43,7 +43,7 @@ The following are a few suggestions for how you could tailor this to your scenar
 You can also [persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md) in the user's current document.
 
 > [!CAUTION]
-> Don't store sensitive information such as auth tokens or connection strings. Properties in the document aren't encrypted or protected.
+> Don't store sensitive information such as authentication tokens or connection strings. Properties in the document aren't encrypted or protected.
 
 ### Use footnotes
 
