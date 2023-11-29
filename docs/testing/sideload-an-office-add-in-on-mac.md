@@ -14,7 +14,7 @@ To see how your add-in will run on Office on Mac, you can sideload your add-in's
 
 ## Prerequisites for Office on Mac
 
-- A Mac running OS X v10.10 "Yosemite" or later with [Office on Mac](https://products.office.com/buy/compare-microsoft-office-products?tab=omac) installed.
+- A Mac running OS X v10.10 "Yosemite" or later with [Office on Mac](https://www.microsoft.com/microsoft-365/buy/compare-all-microsoft-365-products) installed.
 
 - Word on Mac version 15.18 (160109).
 

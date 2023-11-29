@@ -71,4 +71,4 @@ There are various ways to specify which Office applications and requirement sets
 - [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md)
 - [Install the latest version of Office](../develop/install-latest-office-version.md)
 - [Overview of update channels for Microsoft 365 Apps](/deployoffice/overview-of-update-channels-for-office-365-proplus)
-- [Reimagine productivity with Microsoft 365 and Microsoft Teams](https://products.office.com/compare-all-microsoft-office-products?tab=2)
+- [Reimagine productivity with Microsoft 365 and Microsoft Teams](https://www.microsoft.com/microsoft-365/buy/compare-all-microsoft-365-products)
