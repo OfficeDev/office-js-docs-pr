@@ -111,8 +111,10 @@ The Office JavaScript APIs contain objects and members for building add-ins and 
 
 Learn add-in use cases and the user experience with the scenario samples. You can start to build your add-in from the sample code.
 
-- [[Word] AI Generation](https://github.com/OfficeDev/Word-Scenario-based-Add-in-Samples/tree/main/Word-Add-in-AIGC)
+- [[Word] AI Content Generation](https://github.com/OfficeDev/Word-Scenario-based-Add-in-Samples/tree/main/Word-Add-in-AIGC)
 - [[Excel] Mail Merge](https://github.com/OfficeDev/Excel-Scenario-based-Add-in-Samples/tree/main/Mail-Merge-Sample-Add-in)
+- [[PowerPoint] Shape Editing](https://learn.microsoft.com/en-us/office/dev/add-ins/powerpoint/shapes)
+- [[Outlook] (Placehoder)](https://learn.microsoft.com/en-us/office/dev/add-ins)
 
 You can also start with the simplest hello-world add-ins with only a manifest, HTML web page, and a logo.
 

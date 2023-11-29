@@ -99,8 +99,7 @@ For more information about content add-ins, see [Content Office Add-ins](../desi
 
 ## Next steps
 
-Learn add-in use cases and the user experience with the scenario samples.
-- [[Excel] Mail Merge](https://github.com/OfficeDev/Excel-Scenario-based-Add-in-Samples/tree/main/Mail-Merge-Sample-Add-in)
+Learn add-in use cases and the user experience with the scenario samples: [[Excel] Mail Merge](https://github.com/OfficeDev/Excel-Scenario-based-Add-in-Samples/tree/main/Mail-Merge-Sample-Add-in).
 
 You can also start by following a step-by-step guidance [creating your first Excel add-in](../quickstarts/excel-quickstart-jquery.md). Then, learn about the [core concepts](excel-add-ins-core-concepts.md) of building Excel add-ins.
 
