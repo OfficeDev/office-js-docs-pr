@@ -37,7 +37,7 @@ The following table lists the entities that Exchange Server and Outlook support 
 
 The following figure describes how Exchange Server and Outlook support well-known entities for add-ins, and what add-ins can do with well-known entities. See [Retrieving entities in your add-in](#retrieving-entities-in-your-add-in) and [Activating an add-in based on the existence of an entity](#activating-an-add-in-based-on-the-existence-of-an-entity) for more details on how to use these entities.
 
-![Support and use of well-known entities in an Outlook add-in](../images/well-known-entities-info.png)
+![Support and use of well-known entities in an Outlook add-in.](../images/well-known-entities-info.png)
 
 ## Permissions to extract entities
 
@@ -119,7 +119,7 @@ There are a few facts and limits you should be aware of if you use well-known en
 
 - You can extract strings that are well-known entities only if the strings are in English.
 
-- You can extract well-known entities from the first 2,000 characters in the item body, but not beyond that limit. This size limit helps balance the need for functionality and performance, so that Exchange Server and Outlook are not bogged down by parsing and identifying instances of well-known entities in large messages and appointments. Note that this limit is independent of whether the add-in specifies an `ItemHasKnownEntity` rule. If the add-in does use such a rule, note also the rule processing limit for Outlook on Windows and on Mac later in this section.
+- You can extract well-known entities from the first 2,000 characters in the item body, but not beyond that limit. This size limit helps balance the need for functionality and performance, so that Exchange Server and Outlook aren't bogged down by parsing and identifying instances of well-known entities in large messages and appointments. Note that this limit is independent of whether the add-in specifies an `ItemHasKnownEntity` rule. If the add-in does use such a rule, note also the rule processing limit for Outlook on Windows and on Mac later in this section.
 
 - You can extract entities from appointments that are meetings organized by someone other than the mailbox owner. You can't extract entities from calendar items that aren't meetings, or meetings organized by the mailbox owner.
 
