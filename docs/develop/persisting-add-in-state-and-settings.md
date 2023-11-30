@@ -1,7 +1,7 @@
 ---
 title: Persist add-in state and settings
 description: Learn how to persist data in Office Web Add-in applications running in the stateless environment of a browser control.
-ms.date: 06/08/2023
+ms.date: 11/30/2023
 ms.localizationpriority: medium
 ---
 
@@ -18,6 +18,8 @@ Office Add-ins are essentially web applications running in the stateless environ
 - Use techniques provided by the underlying browser control: browser cookies, or HTML5 web storage ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
     > [!NOTE]
     > Some browsers or the user's browser settings may block browser-based storage techniques. You should test for availability as documented in [Using the Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
+    >
+    > Starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is being tested to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). This means that data stored by storage APIs, such as local storage, are only available to contexts with the same origin and the same top-level site. To work around this, in your browser, go to **chrome://flags** or **edge://flags**, then set the **Experimental third-party storage partitioning (#third-party-storage-partitioning)** flag to **Disabled**.
 
 This article focuses on how to use the Office JavaScript API to persist add-in state to the current document. It's recommended that you use the application-specific object if it's available for your selected Office client instead of the Common Office JavaScript version. If you need to persist state across documents, such as tracking user preferences across any documents they open, you'll need to use a different approach. For example, you could use [SSO](use-sso-to-get-office-signed-in-user-token.md) to obtain the user identity, and then save the user ID and their settings to an online database.
 
