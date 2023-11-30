@@ -33,10 +33,10 @@ Run-time resource usage limits apply to all types of Office Add-ins. These limit
 
 ### Outlook add-ins
 
-If any Outlook add-in exceeds the preceding thresholds for CPU core or memory usage, or tolerance limit for crashes, Outlook disables the add-in. The Exchange Admin Center displays the disabled status of the app.
+If any Outlook add-in exceeds the preceding thresholds for CPU core or memory usage, or tolerance limit for crashes, the add-in becomes unavailable. The Exchange Admin Center displays the add-in status.
 
 > [!NOTE]
-> Even though only the Outlook rich clients and not Outlook on the web or mobile devices monitor resource usage, if a rich client disables an Outlook add-in, that add-in is also disabled for use in Outlook on the web and mobile devices.
+> Even though only Outlook on Windows and on Mac monitor resource usage, if either of these clients makes an Outlook add-in unavailable, that add-in also becomes unavailable in Outlook on the web and on mobile devices.
 
 In addition to the CPU core, memory, and reliability rules, Outlook add-ins should observe the following rules on activation.
 
@@ -44,7 +44,7 @@ In addition to the CPU core, memory, and reliability rules, Outlook add-ins shou
 
     Using a group policy or application-specific setting in the Windows registry, administrators can adjust this default threshold value of 1,000 milliseconds in the **OutlookActivationAlertThreshold** setting.
 
-- **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails all three times by exceeding the applicable threshold (which is either the default of 1,000 milliseconds or a value specified by **OutlookActivationAlertThreshold**, if that setting exists in the Windows registry), Outlook disables the Outlook add-in. The Exchange Admin Center displays the disabled status, and the add-in is disabled for use in the Outlook rich clients, and Outlook on the web and mobile devices.
+- **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails all three times by exceeding the applicable threshold (which is either the default of 1,000 milliseconds or a value specified by **OutlookActivationAlertThreshold**, if that setting exists in the Windows registry), Outlook makes the add-in unavailable. The Exchange Admin Center displays the add-in status, and the add-in is unavailable in Outlook on Windows, on Mac, on the web and on mobile devices.
 
     Using a group policy or application-specific setting in the Windows registry, administrators can adjust this number of times to retry evaluation in the **OutlookActivationManagerRetryLimit** setting.
 
@@ -96,7 +96,7 @@ For more information, see [Deploying Telemetry Dashboard](/previous-versions/off
 
 ## Design and implementation techniques
 
-While the resources limits on CPU and memory usage, crash tolerance, UI responsiveness apply to Office Add-ins running only on the rich clients, optimizing the usage of these resources and battery should be a priority if you want your add-in to perform satisfactorily on all supporting clients and devices. Optimization is particularly important if your add-in carries out long-running operations or handles large data sets. The following list suggests some techniques to break up CPU-intensive or data-intensive operations into smaller chunks so that your add-in can avoid excessive resource consumption and the Office application can remain responsive.
+While the resources limits on CPU and memory usage, crash tolerance, and UI responsiveness apply to Office Add-ins running only in Office desktop clients, optimizing the usage of these resources and battery should be a priority if you want your add-in to perform satisfactorily on all supporting clients and devices. Optimization is particularly important if your add-in carries out long-running operations or handles large data sets. The following list suggests some techniques to break up CPU-intensive or data-intensive operations into smaller chunks so that your add-in can avoid excessive resource consumption and the Office application can remain responsive.
 
 - In a scenario where your add-in needs to read a large volume of data from an unbounded dataset, you can apply paging when reading the data from a table, or reduce the size of data in each shorter read operation, rather than attempting to complete the read in one single operation. You can do this through the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data. Another option is to use [async](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) to handle your Promises.
 
