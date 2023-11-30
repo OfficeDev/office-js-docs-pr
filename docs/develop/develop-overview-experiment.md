@@ -112,7 +112,7 @@ This article has outlined the different ways to create Office Add-ins, introduce
 
 ### Create an Office Add-in
 
-Learn add-in use cases and the user experience with the scenario samples. You can start to build your add-in from the sample code.
+Discover practical add-in use cases and learn through hands-on scenario samples.
 
 - [[Word] AI Content Generation](https://github.com/OfficeDev/Word-Scenario-based-Add-in-Samples/tree/main/Word-Add-in-AIGC)
 - [[Excel] Mail Merge](https://github.com/OfficeDev/Excel-Scenario-based-Add-in-Samples/tree/main/Mail-Merge-Sample-Add-in)
