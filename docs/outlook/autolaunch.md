@@ -420,7 +420,7 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 
 - As you make changes to your add-in, be aware that:
   - If you update the manifest, [remove the add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in), then sideload it again. If you're using Outlook on Windows, you must also close and reopen Outlook.
-  - If you make changes to files other than the manifest, close and reopen the Outlook desktop client, or refresh the browser tab running Outlook on the web.
+  - If you make changes to files other than the manifest, close and reopen the Outlook client on Windows or on Mac, or refresh the browser tab running Outlook on the web.
   - If you're still unable to see your changes after performing these steps, [clear your Office cache](../testing/clear-cache.md).
 - As you test your add-in in Outlook on Windows:
   - Check [Event Viewer](/shows/inside/event-viewer) for any reported add-in errors.
