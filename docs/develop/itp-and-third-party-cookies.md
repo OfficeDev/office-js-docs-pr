@@ -1,7 +1,7 @@
 ---
 title: Develop your Office Add-in to work with ITP when using third-party cookies
 description: How to work with ITP and Office Add-ins when using third-party cookies.
-ms.date: 08/18/2023
+ms.date: 11/30/2023
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +14,9 @@ If your Office Add-in and website must rely on third-party cookies, use the foll
 1. Set up [OAuth 2.0 Authorization](https://tools.ietf.org/html/rfc6749) so that the authenticating domain (in your case, the third-party that expects cookies) forwards an authorization token to your website. Use the token to establish a first-party session with a server-set Secure and [HttpOnly cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies).
 1. Use the [Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) so that the third-party can request permission to get access to its first-party cookies. Current versions of Office on Mac and Office on the web both support this API.
     > [!NOTE]
-    > If you're using cookies for purposes other than authentication, then consider using `localStorage` for your scenario.
+    > If you're using cookies for purposes other than authentication, consider using `localStorage` for your scenario.
+    >
+    > However, note that starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is being tested to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). This means that data stored by storage APIs, such as local storage, are only available to contexts with the same origin and the same top-level site. To work around this, in your browser, go to **chrome://flags** or **edge://flags**, then set the **Experimental third-party storage partitioning (#third-party-storage-partitioning)** flag to **Disabled**.
 
 The following code sample shows how to use the Storage Access API.
 

@@ -1,20 +1,20 @@
 ---
 title: Alternative ways of passing messages to a dialog box from its host page
 description: Learn workarounds to use when the messageChild method isn't supported.
-ms.date: 08/31/2023
+ms.date: 11/16/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Alternative ways of passing messages to a dialog box from its host page
 
-The recommended way to pass data and messages from a parent page to a child dialog box is with the `messageChild` method as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box). If your add-in is running on a platform or host that doesn't support the [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets), there are two other ways that you can pass information to the dialog box.
+The recommended way to pass data and messages from a parent page to a child dialog is with the `messageChild` method as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box). If your add-in is running on a platform or host that doesn't support the [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets), there are two other ways that you can pass information to the dialog.
+
+- Store the information somewhere accessible to both the host window and dialog. The two windows don't share a common session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property), but *if they have the same domain* (including port number, if any), they share a common [local storage](https://www.w3schools.com/html/html5_webstorage.asp).
+
+  [!INCLUDE [browser-security-updates](../includes/browser-security-updates.md)]
 
 - Add query parameters to the URL that is passed to `displayDialogAsync`.
-- Store the information somewhere that is accessible to both the host window and dialog box. The two windows don't share a common session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property), but *if they have the same domain* (including port number, if any), they share a common [Local Storage](https://www.w3schools.com/html/html5_webstorage.asp).\*
-
-> [!NOTE]
-> \* There is a bug that will affect your strategy for token handling. If the add-in is running in **Office on the web** in the Edge, Firefox, or Safari browser, the dialog box and task pane don't share the same Local Storage, so it can't be used to communicate between them.
 
 ## Use local storage
 
