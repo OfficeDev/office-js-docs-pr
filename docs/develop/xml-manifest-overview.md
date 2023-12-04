@@ -2,7 +2,7 @@
 title: Office Add-ins XML manifest
 description: Get an overview of the Office Add-in XML manifest and its uses.
 ms.topic: overview
-ms.date: 06/06/2023
+ms.date: 12/04/2023
 ms.localizationpriority: high
 ---
 
@@ -303,6 +303,11 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
+  <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation is only allowed if the domain is on this list. -->
+  <AppDomains>
+    <AppDomain>AppDomain1</AppDomain>
+    <AppDomain>AppDomain2</AppDomain>
+  </AppDomains>
   <!-- End Basic Settings. -->
 
   <!-- BeginTaskpaneMode integration. Any client that doesn't understand commands will use this section.
