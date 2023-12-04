@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 12/07/2023
+ms.date: 12/19/2023
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -131,7 +131,7 @@ In Outlook on Mac, the **Send** option becomes unavailable while in Work Offline
 ## Activate Smart Alerts in applications that use Simple MAPI
 
 > [!NOTE]
-> This feature is currently only supported in Outlook on Windows.
+> This feature is currently only supported in Outlook on Windows Version 2312 (Build 17126.20000).
 
 Users can send mail items through certain applications that use [Simple MAPI](/previous-versions/windows/desktop/windowsmapi/simple-mapi), even if the Outlook client isn't running at the time the item is sent. When this occurs, any installed Smart Alerts add-in won't activate to check the mail item for compliance.
 
@@ -153,17 +153,19 @@ When the **Running Outlook for Simple MAPI Mail Sending** setting is set to **En
 
 If a user's Outlook client isn't running at the time the mail item is sent, a dialog is shown to notify them that they must open their client to send the item.
 
+:::image type="content" source="../images/outlook-simple-mapi.png" alt-text="Dialog that alerts a user to open the Outlook client when sending a mail item.":::
+
 ### Behavior when the setting is disabled or not configured
 
 When the **Running Outlook for Simple MAPI Mail Sending** setting is set to **Disabled** or **Not Configured** in your organization, any user who uses applications that implement Simple MAPI to send mail items will be able to do so without activating their Smart Alerts add-in for compliance checks.
 
 ### Configure the Group Policy setting
 
-By default, the **Running Outlook for Simple MAPI Mail Sending** setting is set to **Disabled**. To enable the setting, perform the following:
+By default, the **Running Outlook for Simple MAPI Mail Sending** setting is set to **Not Configured**. To enable the setting, perform the following:
 
 1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030).
 1. Open the **Local Group Policy Editor** (**gpedit.msc**).
-1. Navigate to //TBD.
+1. Navigate to **User Configuration\Administrative Templates\Microsoft Outlook 2016\Miscellaneous**.
 1. Open the **Running Outlook for Simple MAPI Mail Sending** setting.
 1. In the dialog that appears, select **Enabled**.
 1. Select **OK** or **Apply** to save your change.
