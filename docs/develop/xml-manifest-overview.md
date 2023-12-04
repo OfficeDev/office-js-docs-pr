@@ -303,7 +303,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-  <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation is only allowed if the domain is on this list. -->
+  <!-- Domains that are allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation is only allowed if the domain is on this list. -->
   <AppDomains>
     <AppDomain>AppDomain1</AppDomain>
     <AppDomain>AppDomain2</AppDomain>
