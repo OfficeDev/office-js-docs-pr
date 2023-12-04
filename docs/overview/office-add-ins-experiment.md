@@ -109,14 +109,14 @@ The Office JavaScript APIs contain objects and members for building add-ins and 
 
 ## Code samples
 
-Discover practical add-in use cases and learn through hands-on scenario samples.
+Discover how Office Add-ins create solutions for content creation, better collaboration with peers, and task automation.
 
-- [[Word] AI Content Generation](https://github.com/OfficeDev/Word-Scenario-based-Add-in-Samples/tree/main/Word-Add-in-AIGC)
-- [[Excel] Mail Merge](https://github.com/OfficeDev/Excel-Scenario-based-Add-in-Samples/tree/main/Mail-Merge-Sample-Add-in)
-- [[PowerPoint] Shape Editing](https://learn.microsoft.com/en-us/office/dev/add-ins/powerpoint/shapes)
-- [[Outlook] Set Signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
+- [Insert AI-generated content into your Word document](https://github.com/OfficeDev/Word-Scenario-based-Add-in-Samples/tree/main/Word-Add-in-AIGC)
+- [Extract contact data from an Excel spreadsheet to easily perform a mail merge](https://github.com/OfficeDev/Excel-Scenario-based-Add-in-Samples/tree/main/Mail-Merge-Sample-Add-in)
+- [Create unique PowerPoint presentations with personalized designs](../powerpoint/shapes.md)
+- [Automatically insert your personalized signature into Outlook messages and meeting invites](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
 
-You can also start with the simplest hello-world add-ins with only a manifest, HTML web page, and a logo.
+When you're ready to create your own solution, start with a simple "Hello World" add-in with only a manifest, HTML web page, and a logo.
 
 - [Excel "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/excel-hello-world)
 - [Outlook "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/outlook-hello-world)

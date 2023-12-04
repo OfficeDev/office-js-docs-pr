@@ -74,9 +74,9 @@ Use the shared Office JavaScript API when you need to do any of the following:
 
 ## Next steps
 
-Discover practical add-in use cases and learn through hands-on scenario samples: [[Word] AI Content Generation](https://github.com/OfficeDev/Word-Scenario-based-Add-in-Samples/tree/main/Word-Add-in-AIGC).
+Ready to enhance your productivity using Word add-ins? Discover how to [insert AI-generated content into a document](https://github.com/OfficeDev/Word-Scenario-based-Add-in-Samples/tree/main/Word-Add-in-AIGC).
 
-You can also start by following a step-by-step guidance [creating your first Word add-in](../quickstarts/word-quickstart.md). Then, learn about the [core concepts](word-add-ins-core-concepts.md) of building Word add-ins.
+When you're ready to explore creating your own solution, [build your first Word add-in](../quickstarts/word-quickstart.md). Then, learn more about [core concepts](word-add-ins-core-concepts.md) to further extend the functionality of your add-in.
 
 ## See also
 
