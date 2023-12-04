@@ -333,9 +333,9 @@ The following sections show examples of manifest v1.1 XML files for content, tas
         <DesktopFormFactor>
           <!-- This code enables a customizable message to be displayed when the add-in is loaded successfully upon individual install. -->
           <GetStarted>
-            <!-- Title of the Getting Started call-out. The resid attribute points to a ShortString resource. -->
+            <!-- Title of the Getting Started callout. The resid attribute points to a ShortString resource. -->
             <Title resid="Contoso.GetStarted.Title"/>
-            <!-- Description of the Getting Started call-out. resid points to a LongString resource. -->
+            <!-- Description of the Getting Started callout. resid points to a LongString resource. -->
             <Description resid="Contoso.GetStarted.Description"/>  
             <!-- Points to a URL resource which details how the add-in should be used. -->
             <LearnMoreUrl resid="Contoso.GetStarted.LearnMoreUrl"/>
