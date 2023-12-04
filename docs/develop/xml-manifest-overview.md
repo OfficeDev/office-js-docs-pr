@@ -331,8 +331,16 @@ The following sections show examples of manifest v1.1 XML files for content, tas
       <Host xsi:type="Document">
         <!-- Form factor. DesktopFormFactor is supported. Other form factors are available depending on the host and feature. -->
         <DesktopFormFactor>
-          <!-- Function file is an HTML page that includes, or loads, the JavaScript where functions for ExecuteAction will be called.
-            Think of the FunctionFile as the "code behind" ExecuteFunction. -->
+          <!-- This code enables a customizable message to be displayed when the add-in is loaded successfully upon individual install. -->
+          <GetStarted>
+              <!-- Title of the Getting Started call-out. The resid attribute points to a ShortString resource. -->
+              <Title resid="Contoso.GetStarted.Title"/>
+              <!-- Description of the Getting Started call-out. resid points to a LongString resource. -->
+              <Description resid="Contoso.GetStarted.Description"/>  
+              <!-- Points to a URL resource which details how the add-in should be used. -->
+              <LearnMoreUrl resid="Contoso.GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <!-- Function file is an HTML page that includes, or loads, the JavaScript where functions for ExecuteAction will be called. Think of the FunctionFile as the "code behind" ExecuteFunction. -->
           <FunctionFile resid="Contoso.FunctionFile.Url" />
 
           <!-- PrimaryCommandSurface==Main Office app ribbon. -->
