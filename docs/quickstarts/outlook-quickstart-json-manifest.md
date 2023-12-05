@@ -1,8 +1,7 @@
 ---
 title: Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)
 description: Learn how to build a simple Outlook task pane add-in with the unified manifest for Microsoft 365.
-ms.date: 10/11/2023
-
+ms.date: 12/04/2023
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -26,8 +25,6 @@ The preview is only supported in Office downloaded from a Microsoft 365 subscrip
 You can create an Office Add-in with the unified manifest by using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor.
 
 ### Prerequisites
-
-[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
 - [.NET runtime](https://dotnet.microsoft.com/download/dotnet/6.0/runtime) for Windows. One of the tools used in the preview runs on .NET.
 
@@ -255,6 +252,8 @@ Add a custom button to the ribbon that inserts text into a message body.
     ```command&nbsp;line
     npm stop
     ```
+
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
 
 ## See also
 

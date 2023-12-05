@@ -93,7 +93,8 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - The `tryCatch` function will be used by all the functions interacting with the workbook from the task pane. Catching Office JavaScript errors in this fashion is a convenient way to generically handle any uncaught errors.
 
-    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
+    > [!NOTE]
+    > The following code uses ES6 JavaScript, which isn't compatible with [older versions of Office that use the Trident (Internet Explorer 11) browser engine](/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins). For information on how to support those platforms in production, see [Support older Microsoft webviews and Office versions](/office/dev/add-ins/develop/support-ie-11). [Join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program) to get a free, 90-day renewable Microsoft 365 subscription, with the latest Office applications, to use during development.
 
     ```js
     async function createTable() {
