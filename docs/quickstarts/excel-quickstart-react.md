@@ -1,7 +1,7 @@
 ---
 title: Use React to build an Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and React.
-ms.date: 06/10/2022
+ms.date: 12/04/2023
 ms.service: excel
 ms.localizationpriority: high
 ---
@@ -47,7 +47,7 @@ The add-in project that you've created with the Yeoman generator contains sample
     cd "My Office Add-in"
     ```
 
-1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
 1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
@@ -65,6 +65,8 @@ Congratulations, you've successfully created an Excel task pane add-in using Rea
 
 > [!div class="nextstepaction"]
 > [Excel add-in tutorial](../tutorials/excel-tutorial.md)
+
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
 
 ## See also
 

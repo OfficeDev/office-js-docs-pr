@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 07/13/2022
+ms.date: 12/04/2023
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -316,6 +316,8 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 Congratulations, you've successfully created your first Outlook task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
 ---
+
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
 
 ## Code samples
 

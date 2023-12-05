@@ -1,7 +1,7 @@
 ---
 title: Build your first Word task pane add-in
 description: Learn how to build a simple Word task pane add-in by using the Office JavaScript API.
-ms.date: 04/17/2023
+ms.date: 12/04/2023
 ms.service: word
 ms.localizationpriority: high
 ---
@@ -298,6 +298,8 @@ Congratulations, you've successfully created a Word task pane add-in! Next, to l
 > [Develop Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md)
 
 ---
+
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
 
 ## Code samples
 

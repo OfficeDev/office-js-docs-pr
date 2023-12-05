@@ -11,6 +11,9 @@ items:
   - name: Beginner's guide
     href: overview/learning-path-beginner.md
     displayName: develop
+  - name: Set up your development environment 
+    href: overview/set-up-your-dev-environment.md
+    displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
   - name: Quick starts
     items:
     - name: Excel add-in
@@ -35,9 +38,6 @@ items:
   - name: Samples
     href: overview/office-add-in-code-samples.md
     displayName: PnP, 'code samples'
-  - name: Set up your development environment 
-    href: overview/set-up-your-dev-environment.md
-    displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
 
 - name: Development lifecycle
   items:

@@ -1,7 +1,7 @@
 ---
 title: Single sign-on (SSO) quick start
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on.
-ms.date: 09/07/2022
+ms.date: 12/04/2023
 ms.service: microsoft-365
 ms.localizationpriority: high
 ---
@@ -148,6 +148,8 @@ Complete the following steps to try out an Outlook add-in.
 ## Next steps
 
 Congratulations, you've successfully created a task pane add-in that uses SSO when possible, and uses an alternate method of user authentication when SSO is not supported. To learn about customizing your add-in to add new functionality that requires different permissions, see [Customize your Node.js SSO-enabled add-in](sso-quickstart-customize.md).
+
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
 
 ## See also
 

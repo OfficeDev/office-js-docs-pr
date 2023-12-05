@@ -1,7 +1,7 @@
 ---
 title: Build your first Project task pane add-in
 description: Learn how to build a simple Project task pane add-in by using the Office JS API.
-ms.date: 09/26/2023
+ms.date: 12/04/2023
 ms.service: project
 ms.localizationpriority: high
 ---
@@ -75,6 +75,8 @@ Congratulations, you've successfully created a Project task pane add-in! Next, l
 
 > [!div class="nextstepaction"]
 > [Project add-ins](../project/project-add-ins.md)
+
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
 
 ## See also
 

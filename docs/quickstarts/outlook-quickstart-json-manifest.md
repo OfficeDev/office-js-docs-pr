@@ -1,8 +1,7 @@
 ---
 title: Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)
 description: Learn how to build a simple Outlook task pane add-in with the unified manifest for Microsoft 365.
-ms.date: 10/11/2023
-
+ms.date: 12/04/2023
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -255,6 +254,8 @@ Add a custom button to the ribbon that inserts text into a message body.
     ```command&nbsp;line
     npm stop
     ```
+
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
 
 ## See also
 
