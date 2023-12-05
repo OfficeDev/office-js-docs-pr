@@ -14,11 +14,6 @@ With custom functions, developers can add new functions to Excel by defining the
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Office connected to a Microsoft 365 subscription (including Office on the web).
-
-  > [!NOTE]
-  > If you don't already have Office, you can [join the Microsoft 365 developer program](https://aka.ms/M365devprogram) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
-
 ## Build your first custom functions project
 
 To start, you'll use the Yeoman generator to create the custom functions project. This will set up your project with the correct folder structure, source files, and dependencies to begin coding your custom functions.

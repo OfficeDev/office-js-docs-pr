@@ -12,7 +12,7 @@ In this article, you'll walk through the process of building an Outlook task pan
 
 ## Create the add-in
 
-You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) or Visual Studio. The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor, whereas Visual Studio creates a Visual Studio solution. Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally.
+You can create an Office Add-in by using the Yeoman generator for Office Add-ins or Visual Studio. The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor, whereas Visual Studio creates a Visual Studio solution. Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally.
 
 # [Yeoman generator](#tab/yeomangenerator)
 
@@ -20,9 +20,7 @@ You can create an Office Add-in by using the [Yeoman generator for Office Add-in
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) or your preferred code editor
-
-- Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web
+- Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web.
 
 ### Create the add-in project
 
@@ -116,7 +114,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server starts and your add-in will be [sideloaded](../outlook/sideload-outlook-add-ins-for-testing.md).
+1. Run the following command in the root directory of your project. When you run this command, the local web server starts and your add-in will be sideloaded.
 
     ```command&nbsp;line
     npm start
@@ -127,9 +125,6 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. Choose the **Home** tab (or the **Message** tab if you opened the message in a new window), and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
     ![Screenshot showing a message window in Outlook with the add-in ribbon button highlighted.](../images/quick-start-button-1.png)
-
-    > [!NOTE]
-    > If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 1. When prompted with the **WebView Stop On Load** dialog box, select **OK**.
 
@@ -154,10 +149,7 @@ Congratulations, you've successfully created your first Outlook task pane add-in
     > [!NOTE]
     > If you've previously installed Visual Studio 2019 or later, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.
 
-- Microsoft 365
-
-    > [!NOTE]
-    > If you do not have a Microsoft 365 subscription, you can get a free one by signing up for the [Microsoft 365 developer program](https://aka.ms/M365devprogram).
+- Office connected to a Microsoft 365 subscription (including Office on the web).
 
 ### Create the add-in project
 
@@ -316,6 +308,8 @@ Congratulations, you've successfully created your first Outlook task pane add-in
 ---
 
 [!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+
+If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 ## Code samples
 
