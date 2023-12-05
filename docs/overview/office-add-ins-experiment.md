@@ -109,12 +109,12 @@ The Office JavaScript APIs contain objects and members for building add-ins and 
 
 ## Code samples
 
-Discover how Office Add-ins create solutions for content creation, better collaboration with peers, and task automation.
+Discover how Office Add-ins create solutions for content creation, better collaboration with peers, and task automation. Run the following samples to experience quick and easy real-life solutions in action.
 
-- [Insert AI-generated content into your Word document](https://github.com/OfficeDev/Word-Scenario-based-Add-in-Samples/tree/main/Word-Add-in-AIGC)
-- [Extract contact data from an Excel spreadsheet to easily perform a mail merge](https://github.com/OfficeDev/Excel-Scenario-based-Add-in-Samples/tree/main/Mail-Merge-Sample-Add-in)
-- [Create unique PowerPoint presentations with personalized designs](../powerpoint/shapes.md)
-- [Automatically insert your personalized signature into Outlook messages and meeting invites](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
+- [Add AI-generated content to your Word document](https://github.com/OfficeDev/Word-Scenario-based-Add-in-Samples/tree/main/Word-Add-in-AIGC)
+- [Get data from an Excel spreadsheet for a mail merge](https://github.com/OfficeDev/Excel-Scenario-based-Add-in-Samples/tree/main/Mail-Merge-Sample-Add-in)
+- [Create PowerPoint presentations with unique designs](../powerpoint/shapes.md)
+- [Automatically insert a personalized signature in Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
 
 When you're ready to create your own solution, start with a simple "Hello World" add-in with only a manifest, HTML web page, and a logo.
 
