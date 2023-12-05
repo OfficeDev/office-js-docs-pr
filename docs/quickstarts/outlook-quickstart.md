@@ -18,8 +18,6 @@ You can create an Office Add-in by using the [Yeoman generator for Office Add-in
 
 ### Prerequisites
 
-[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
-
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - [Visual Studio Code (VS Code)](https://code.visualstudio.com/) or your preferred code editor

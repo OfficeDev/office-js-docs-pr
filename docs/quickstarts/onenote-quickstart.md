@@ -12,7 +12,6 @@ In this article, you'll walk through the process of building a OneNote task pane
 
 ## Prerequisites
 
-[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ## Create the add-in project

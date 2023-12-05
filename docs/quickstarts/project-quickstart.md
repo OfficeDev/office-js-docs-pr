@@ -11,8 +11,6 @@ ms.localizationpriority: high
 In this article, you'll walk through the process of building a Project task pane add-in.
 
 ## Prerequisites
-
-[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - Project 2016 or later on Windows

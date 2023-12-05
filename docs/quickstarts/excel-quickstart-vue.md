@@ -12,7 +12,6 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 ## Prerequisites
 
-[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - Install the [Vue CLI](https://cli.vuejs.org/) globally. From the terminal, run the following command.

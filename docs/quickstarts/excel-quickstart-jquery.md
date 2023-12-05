@@ -18,7 +18,6 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 ### Prerequisites
 
-[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ### Create the add-in project
@@ -109,8 +108,6 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
     ```
 
 1. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
-
-    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     'use strict';
