@@ -29,7 +29,9 @@ The projects that the tool creates have the following characteristics.
 
 ## Install the generator
 
-[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
+>[!NOTE]
+> If you aren't familiar with Node.js or npm, you should start by [setting up your development environment](../overview/set-up-your-dev-environment.md).
+
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ## Use the tool

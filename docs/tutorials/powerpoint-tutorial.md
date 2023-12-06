@@ -32,7 +32,6 @@ In this tutorial, you'll use Visual Studio Code (VS Code), Visual Studio, or you
 
 ### Prerequisites
 
-[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ### Create the add-in project
