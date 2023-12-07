@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 12/04/2023
+ms.date: 12/07/2023
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -20,7 +20,7 @@ You can create an Office Add-in by using the Yeoman generator for Office Add-ins
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web.
+- Outlook 2016 or later on Windows (connected to a Microsoft 365 account), Outlook on Mac, or Outlook on the web.
 
 ### Create the add-in project
 
@@ -34,7 +34,7 @@ You can create an Office Add-in by using the Yeoman generator for Office Add-ins
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-outlook-1.png)
+    ![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-outlook-1.png)
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
@@ -84,7 +84,6 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     Your **taskpane.js** file should now contain the following code.
 
-
     ```js
     /*
      * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
@@ -124,7 +123,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. Choose the **Home** tab (or the **Message** tab if you opened the message in a new window), and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
-    ![Screenshot showing a message window in Outlook with the add-in ribbon button highlighted.](../images/quick-start-button-1.png)
+    ![A message window in Outlook with the add-in ribbon button highlighted.](../images/quick-start-button-1.png)
 
 1. When prompted with the **WebView Stop On Load** dialog box, select **OK**.
 
@@ -132,9 +131,9 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. Scroll to the bottom of the task pane and choose the **Run** link to write the message subject to the task pane.
 
-    ![Screenshot showing the add-in's task pane with the Run link highlighted.](../images/quick-start-task-pane-2.png)
+    ![The add-in's task pane with the Run link highlighted.](../images/quick-start-task-pane-2.png)
 
-    ![Screenshot of the add-in's task pane displaying message subject.](../images/quick-start-task-pane-3.png)
+    ![The add-in's task pane displaying message subject.](../images/quick-start-task-pane-3.png)
 
 ### Next steps
 
@@ -168,7 +167,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 |**Project**|**Description**|
 |:-----|:-----|
 |Add-in project|Contains only an XML manifest file, which contains all the settings that describe your add-in. These settings help the Office application determine when your add-in should be activated and where the add-in should appear. Visual Studio generates the contents of this file for you so that you can run the project and use your add-in immediately. You can change these settings any time by modifying the XML file.|
-|Web application project|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.|
+|Web application project|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local Internet Information Services (IIS) server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.|
 
 ### Update the code
 
@@ -277,26 +276,29 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 ### Try it out
 
-1. Using Visual Studio, test the newly created Outlook add-in by pressing F5 or choosing the **Start** button. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created Outlook add-in by pressing **F5** or choosing the **Start** button. The add-in will be hosted locally on IIS.
 
-1. In the **Connect to Exchange email account** dialog box, enter the email address and password for your [Microsoft account](https://account.microsoft.com/account) and then choose **Connect**. When the Outlook.com login page opens in a browser, sign in to your email account with the same credentials as you entered previously.
+1. In the **Connect to Exchange email account** dialog box, enter the email address and password for your [Microsoft account](https://account.microsoft.com/account), then choose **Connect**. When the Outlook.com login page opens in a browser, sign in to your email account with the same credentials as you entered previously.
 
     > [!NOTE]
-    > If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in or you receive an error that you are unauthorized, Basic Auth may be disabled for accounts on your Microsoft 365 tenant. To test this add-in, try signing in again after setting the **Use multi-factor auth** property to True in the Web Add-in project properties dialog, or sign in using a [Microsoft account](https://account.microsoft.com/account) instead.
+    > If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in or you receive an error that you are unauthorized, Basic authentication may be turned off for accounts on your Microsoft 365 tenant. To test this add-in, try signing in again after setting the **Use multi-factor auth** property to **True** in the Deployment section of the Web Add-in project properties dialog, or sign in using a [Microsoft account](https://account.microsoft.com/account) instead.
 
-1. In Outlook on the web, select or open a message.
+1. Your mailbox opens in Outlook on the web. Select or open a message.
 
-1. Within the message, locate the ellipsis for the overflow menu containing the add-in's button.
+    > [!TIP]
+    > You can also test the add-in in Outlook on Windows as long as the IIS server is running.
 
-    ![A message window in Outlook on the web with the ellipsis highlighted.](../images/quick-start-button-owa-1.png)
+1. Within the message, navigate to the action bar, then select **Apps**.
 
-1. Within the overflow menu, locate the add-in's button.
+    ![A message window in Outlook on the web with the Apps option selected.](../images/outlook-quickstart-apps-owa-vs.png)
 
-    ![A message window in Outlook on the web with the add-in button highlighted.](../images/quick-start-button-owa-2.png)
+1. From the list of add-ins, select **My Office Add-in**, then choose **Show task pane**.
 
-1. Click the button to open the add-in's task pane.
+    ![A message window in Outlook on the web with the "Show task pane" option selected.](../images/outlook-quickstart-add-in-owa-vs.png)
 
-    ![The add-in's task pane in Outlook on the web displaying message properties.](../images/quick-start-task-pane-owa-1.png)
+1. View the properties of the selected message from the task pane that opens.
+
+    ![The add-in's task pane in Outlook on the web displaying message properties.](../images/outlook-quickstart-task-pane-owa-vs.png)
 
     > [!NOTE]
     > If the task pane doesn't load, try to verify by opening it in a browser on the same machine.
@@ -317,4 +319,5 @@ If you receive the error "We can't open this add-in from localhost" in the task 
 
 ## See also
 
+- [Office Add-ins XML manifest](../develop/xml-manifest-overview.md)
 - [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
