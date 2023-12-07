@@ -592,23 +592,6 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <Permissions>ReadWriteItem</Permissions>
   <!-- The <Rule> element is required for validation, but is ignored when there's a <VersionOverrides> element in your manifest. -->
   <Rule xsi:type="RuleCollection" Mode="Or">
-    <Rule xsi:type="RuleCollection" Mode="And">
-      <Rule xsi:type="RuleCollection" Mode="Or">
-        <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Read" />
-        <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
-      </Rule>
-      <Rule xsi:type="ItemHasRegularExpressionMatch"
-        PropertyName="BodyAsPlaintext" RegExName="VideoURL"
-        RegExValue=
-        "http://(((www\.)?youtube\.com/watch\?v=)|
-        (youtu\.be/))[a-zA-Z0-9_-]{11}" />
-    </Rule>
-    <Rule xsi:type="RuleCollection" Mode="Or">
-      <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit" />
-      <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" />
-    </Rule>
-  </Rule>
-  <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
   </Rule>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
