@@ -1,7 +1,7 @@
 ---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 12/05/2023
+ms.date: 12/12/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -15,11 +15,14 @@ The following sections walk you through how to develop an Outlook mobile add-in 
 To learn how to implement an event-based add-in for Outlook on Windows, on Mac, and on the web, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 > [!NOTE]
-> Outlook on Android only supports up to Mailbox requirement set 1.5. However, to support the event-based activation feature, some APIs from later requirement sets have been enabled on mobile clients. For more information on this exception, see [Additional supported APIs](#additional-supported-apis).
+> Outlook on Android and on iOS only support up to Mailbox requirement set 1.5. However, to support the event-based activation feature, some APIs from later requirement sets have been enabled on mobile clients. For more information on this exception, see [Additional supported APIs](#additional-supported-apis).
 
 ## Supported clients
 
-The add-in you develop in this walkthrough is currently only supported in Outlook on Android with a Microsoft 365 subscription.
+The add-in you develop in this walkthrough is supported in Outlook on Android with a Microsoft 365 subscription.
+
+> [!NOTE]
+> The implementation of event-based activation in Outlook on iOS is currently in progress.
 
 ## Set up your environment
 
@@ -234,6 +237,10 @@ Ensure that the HTML file you specified in the **\<Runtime\>** element of your m
 1. Follow the guidance to [test and validate your add-in](testing-and-tips.md).
 1. [Sideload](sideload-outlook-add-ins-for-testing.md) your add-in in Outlook on Windows, on Mac, or on the web.
 1. Open Outlook on Android. If you have Outlook already open on your device, restart it.
+
+    > [!NOTE]
+    > The implementation of event-based activation in Outlook on iOS is currently in progress.
+
 1. Create a new message. The event-based add-in adds the signature to the message. If you have a signature saved on your mobile device, it will briefly appear in the message you create, but will be immediately replaced by the signature added by the add-in.
 
     :::image type="content" source="../images/outlook-mobile-signature.png" alt-text="A sample signature added to a message being composed in Outlook mobile.":::
