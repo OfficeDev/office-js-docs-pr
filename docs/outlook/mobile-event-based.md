@@ -22,7 +22,7 @@ To learn how to implement an event-based add-in for Outlook on Windows, on Mac, 
 The add-in you develop in this walkthrough is supported in Outlook on Android with a Microsoft 365 subscription.
 
 > [!NOTE]
-> The implementation of event-based activation in Outlook on iOS is currently in progress.
+> Support of event-based activation in Outlook on iOS is currently being rolled out.
 
 ## Set up your environment
 
@@ -239,7 +239,7 @@ Ensure that the HTML file you specified in the **\<Runtime\>** element of your m
 1. Open Outlook on Android. If you have Outlook already open on your device, restart it.
 
     > [!NOTE]
-    > The implementation of event-based activation in Outlook on iOS is currently in progress.
+    > Support of event-based activation in Outlook on iOS is currently being rolled out.
 
 1. Create a new message. The event-based add-in adds the signature to the message. If you have a signature saved on your mobile device, it will briefly appear in the message you create, but will be immediately replaced by the signature added by the add-in.
 

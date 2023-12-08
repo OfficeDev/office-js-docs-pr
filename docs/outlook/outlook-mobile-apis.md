@@ -15,10 +15,10 @@ The following table lists a subset of APIs from requirement sets beyond 1.5 that
 
 |API|Minimum requirement set|Supported Outlook modes|Supported Outlook on mobile clients|
 |---|---|---|---|
-|[Office.context.mailbox.item.addFileAttachmentFromBase64Async](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1))|Mailbox 1.8|Message Compose|- Android<br>- iOS (implementation in progress)|
+|[Office.context.mailbox.item.addFileAttachmentFromBase64Async](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1))|Mailbox 1.8|Message Compose|- Android<br>- iOS (rollout in progress)|
 |[Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))|Mailbox 1.10|Message Compose|Android|
 |[Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))|Mailbox 1.10|Message Compose|Android|
-|[Office.context.mailbox.item.from.getAsync](/javascript/api/outlook/office.from#outlook-office-from-getasync-member(1))|Mailbox 1.7|Message Compose|- Android<br>- iOS (implementation in progress)|
+|[Office.context.mailbox.item.from.getAsync](/javascript/api/outlook/office.from#outlook-office-from-getasync-member(1))|Mailbox 1.7|Message Compose|- Android<br>- iOS (rollout in progress)|
 |[Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getcomposetypeasync-member(1))|Mailbox 1.10|Message Compose|Android|
 
 ## Unsupported APIs
