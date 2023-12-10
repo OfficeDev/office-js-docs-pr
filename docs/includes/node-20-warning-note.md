@@ -1,0 +1,2 @@
+> [!NOTE]
+> If you are using a Node.js verison >=20.0.0, you may see a warning when the generator runs the installation that you have an unsupported engine. We are working on a fix for this. In the meantime, the warning doesn't effect the generator or the project you generate, so it can be ignored.

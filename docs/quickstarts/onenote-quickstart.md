@@ -1,7 +1,7 @@
 ---
 title: Build your first OneNote task pane add-in
 description: Learn how to build a simple OneNote task pane add-in by using the Office JS API.
-ms.date: 12/04/2023
+ms.date: 12/11/2023
 ms.service: onenote
 ms.localizationpriority: high
 ---
@@ -26,6 +26,8 @@ In this article, you'll walk through the process of building a OneNote task pane
 ![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-onenote.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
+
+[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
