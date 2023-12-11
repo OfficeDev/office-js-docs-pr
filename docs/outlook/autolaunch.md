@@ -541,7 +541,6 @@ To enable your event-based add-in to make CORS request, you must add the add-in 
 - [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)
 - [Automatically check for an attachment before a message is sent](smart-alerts-onmessagesend-walkthrough.md)
 - [Automatically update your signature when switching between mail accounts](onmessagefromchanged-onappointmentfromchanged-events.md)
-- [Activate your event-based add-in on a message in read mode (preview)](event-based-activation-on-read.md)
 - Office Add-ins code samples:
   - [Encrypt attachments, process meeting request attendees, and react to appointment date/time changes using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
   - [Set your signature using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
