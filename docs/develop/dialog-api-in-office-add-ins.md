@@ -24,7 +24,7 @@ The following image shows an example of a dialog box.
 The dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the Office application and with the page in the task pane, if there is one.
 
 > [!TIP]
-> There's a *modal* dialog API available in preview. It shouldn't be used in production add-ins, but we encourage you to experiment with it. For details about it, see [Office modal dialog API](modal-dialog.md). 
+> There's a *modal* dialog API available in preview. It shouldn't be used in production add-ins, but we encourage you to experiment with it. For details about it, see [Office modal dialog API](modal-dialog.md).
 
 ## Open a dialog box from a host page
 
@@ -234,7 +234,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 > [!TIP]
 > The `DialogMessageOptions` parameter was added to the `messageParent` method as a required parameter in mid-2021. Older add-ins that send a cross-domain message with the method no longer work until they are updated to use the new parameter. Until the add-in is updated, *in Office on Windows only*, users and system administrators can enable those add-ins to continue working by specifying the trusted domains with a registry setting: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. To do this, create a file with a `.reg` extension, save it to the Windows computer, and then double-click it to run it. The following is an example of the contents of such a file.
 >
-> ```
+> ```properties
 > Windows Registry Editor Version 5.00
 > 
 > [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains]
@@ -366,7 +366,7 @@ For example, your code could use the [Office.onReady or Office.initialize functi
 > [!TIP]
 > The `DialogMessageOptions` parameter was added to the `messageChild` method as a required parameter in mid-2021. Older add-ins that send a cross-domain message with the method no longer work until they are updated to use the new parameter. Until the add-in is updated, *in Office on Windows only*, users and system administrators can enable those add-ins to continue working by specifying the trusted domains with a registry setting: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. To do this, create a file with a `.reg` extension, save it to the Windows computer, and then double-click it to run it. The following is an example of the contents of such a file.
 >
-> ```
+> ```properties
 > Windows Registry Editor Version 5.00
 > 
 > [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains]
@@ -375,7 +375,7 @@ For example, your code could use the [Office.onReady or Office.initialize functi
 > ```
 
 > [!TIP]
-> If the child dialog is the [preview modal dialog](modal-dialog.md), then a call of `messageChild` can't be triggered by user interaction with the add-in's task pane or add-in commands, because user interaction is blocked while the modal dialog is open. So, if your dialog use case requires messaging from the parent to the dialog, you will nearly always need to use the non-modal dialog API. However, calling `Office.context.ui.messageParent` in the dialog triggers the `DialogMessageReceived` event in the parent, and code in the handler for that event can call `messageChild`. 
+> If the child dialog is the [preview modal dialog](modal-dialog.md), then a call of `messageChild` can't be triggered by user interaction with the add-in's task pane or add-in commands, because user interaction is blocked while the modal dialog is open. So, if your dialog use case requires messaging from the parent to the dialog, you will nearly always need to use the non-modal dialog API. However, calling `Office.context.ui.messageParent` in the dialog triggers the `DialogMessageReceived` event in the parent, and code in the handler for that event can call `messageChild`.
 
 ## Close the dialog box
 
