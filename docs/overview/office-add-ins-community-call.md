@@ -13,7 +13,6 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 The agenda for the December Office Add-ins community call is the following:
 
-- Juan Balmori Labra will talk about the new Outlook features that were announced at the annual Microsoft Ignite conference.
 - Wang Yun will share the latest updates coming to Word.
 - Wang Yun and Mingjia Liu will discuss upcoming additions to the Word, Excel, and PowerPoint Office Add-ins developer experience.
 
