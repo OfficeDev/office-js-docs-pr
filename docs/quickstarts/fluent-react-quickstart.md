@@ -23,7 +23,6 @@ You'll use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator
 > [!NOTE]
 > The React-based Add-ins created with the generator use Fluent UI React V9. This version doesn't support the Trident (IE) webview. If your add-in's users have versions of Office that require Trident, use one of the samples in [Office-Add-ins-Fluent-React-version-8](https://github.com/OfficeDev/Office-Add-ins-Fluent-React-version-8) instead of this article. For information about which versions of Office use Trident, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-
 ### Install the prerequisites
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
