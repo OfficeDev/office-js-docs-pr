@@ -12,7 +12,7 @@ metadata:
   ms.topic: hub-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 10/26/2023 #Required; mm/dd/yyyy format.
+  ms.date: 12/12/2023 #Required; mm/dd/yyyy format.
 
 # highlightedContent section
 # Maximum of 8 items
@@ -55,6 +55,8 @@ productDirectory:
         text: Automatically check for an attachment before a message is sent
       - url: outlook/spam-reporting.md
         text: Implement an integrated spam-reporting add-in
+      - url: word/citation-management.md
+        text: Manage citations through your Word add-in
       - url: develop/create-sso-office-add-ins-nodejs.md
         text: Use single sign-on authentication in an Office Add-in 
   
