@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 11/14/2023
+ms.date: 12/12/2023
 ms.localizationpriority: medium
 ---
 
@@ -11,15 +11,19 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for December 13, 2023 call
 
-The agenda for the December Office Add-ins community call will be posted the week of the call.
+The agenda for the December Office Add-ins community call is the following:
+
+- Wang Yun will share the latest updates coming to Word.
+- Wang Yun and Mingjia Liu will discuss upcoming additions to the Word, Excel, and PowerPoint Office Add-ins developer experience.
 
 ## Previous calls
 
 Missed a previous community call? Check out the following blog resources to catch up on the discussion!
 
 > [!NOTE]
-> We're experiencing delays with posting the blog posts of previous community calls. We're working on getting this fixed as soon as possible.
+> We're working on posting the blog posts for previous community calls. To catch up on previous calls, view the recordings on our [Microsoft 365 community YouTube channel](https://www.youtube.com/playlist?list=PLR9nK3mnD-OVExAWBr2QtS_5UmqUr7HL4).
 
+- [November 8, 2023](https://pnp.github.io/blog/office-add-ins-community-call/2023-11-08/)
 - [July 12, 2023](https://pnp.github.io/blog/office-add-ins-community-call/2023-07-12/)
 - [June 14, 2023](https://pnp.github.io/blog/office-add-ins-community-call/2023-06-14/)
 - [May 10, 2023](https://pnp.github.io/blog/office-add-ins-community-call/2023-05-10/)
