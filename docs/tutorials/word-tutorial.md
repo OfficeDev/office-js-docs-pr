@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 09/20/2023
+ms.date: 12/11/2023
 ms.service: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
 ms.localizationpriority: high
@@ -45,6 +45,8 @@ In this tutorial, you'll create a Word task pane add-in that:
 ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-word.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
+
+[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 

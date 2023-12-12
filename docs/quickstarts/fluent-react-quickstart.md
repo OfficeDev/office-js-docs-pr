@@ -1,7 +1,7 @@
 ---
 title: Fluent UI React in Office Add-ins
 description: Learn how to create an Office Add-in that uses Fluent UI React.
-ms.date: 12/04/2023
+ms.date: 12/13/2023
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: medium
@@ -19,6 +19,9 @@ This article describes how to create an add-in that's built with React and that 
 ## Create an add-in project
 
 You'll use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create an add-in project that uses React.
+
+> [!NOTE]
+> The React-based Add-ins created with the generator use Fluent UI React V9. This version doesn't support the Trident (IE) webview. If your add-in's users have versions of Office that require Trident, use one of the samples in [Office-Add-ins-Fluent-React-version-8](https://github.com/OfficeDev/Office-Add-ins-Fluent-React-version-8) instead of this article. For information about which versions of Office use Trident, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ### Install the prerequisites
 
@@ -78,7 +81,10 @@ The add-in project that you've created with the Yeoman generator contains sample
         npm start
         ```
 
-    - To test your add-in in Office on the web, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a Word document on your OneDrive or a SharePoint library to which you have permissions.
+        > [!NOTE]
+        > If you're testing your add-in in Outlook, `npm start` sideloads the add-in to both the Outlook desktop and web clients. For more information on how to sideload add-ins in Outlook, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
+
+    - To test your add-in in Excel, Word, or PowerPoint on the web, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a Word document on your OneDrive or a SharePoint library to which you have permissions.
 
         [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
@@ -88,6 +94,9 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. A **WebView Stop On Load** prompt appears. Select **OK**.
 
 1. If the "My Office Add-in" task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
+
+    > [!NOTE]
+    > If you're testing your add-in in Outlook, create a new message. Then, navigate to the **Message** tab and choose **Show Taskpane** from the ribbon to open the add-in task pane.
 
 1. Enter text into the text box and then select **Insert text**.
 

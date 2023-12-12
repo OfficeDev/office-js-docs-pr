@@ -1,7 +1,7 @@
 ---
 title: Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)
 description: Learn how to build a simple Outlook task pane add-in with the unified manifest for Microsoft 365.
-ms.date: 12/04/2023
+ms.date: 12/11/2023
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -48,6 +48,8 @@ You can create an Office Add-in with the unified manifest by using the [Yeoman g
     > For this preview, the add-in name cannot be more than 30 characters.
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
+
+    [!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 

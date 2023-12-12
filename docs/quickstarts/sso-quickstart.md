@@ -1,7 +1,7 @@
 ---
 title: Single sign-on (SSO) quick start
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on.
-ms.date: 12/04/2023
+ms.date: 12/11/2023
 ms.service: microsoft-365
 ms.localizationpriority: high
 ---
@@ -42,6 +42,8 @@ In this article, you'll use the Yeoman generator for Office Add-ins to create an
 :::image type="content" source="../images/yo-office-sso-excel.png" alt-text="Prompts and answers for the Yeoman generator in a command line interface.":::
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
+
+[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
