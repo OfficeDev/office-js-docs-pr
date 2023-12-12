@@ -256,8 +256,6 @@ items:
           items:
           - name: Use the Office dialog API in your Office Add-ins
             href: develop/dialog-api-in-office-add-ins.md
-          - name: Use the Office modal dialog API (preview)
-            href: develop/modal-dialog.md
           - name: Best practices and rules for the Office dialog API
             href: develop/dialog-best-practices.md
           - name: Send data from host page to dialog box
