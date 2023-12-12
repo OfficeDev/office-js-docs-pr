@@ -2,7 +2,7 @@
 title: Office Add-ins XML manifest
 description: Get an overview of the Office Add-in XML manifest and its uses.
 ms.topic: overview
-ms.date: 06/06/2023
+ms.date: 12/07/2023
 ms.localizationpriority: high
 ---
 
@@ -226,7 +226,7 @@ For an example of a manifest that includes a `VersionOverrides` element, see [Ma
 
 ## Requirements
 
-The **\<Requirements\>** element specifies the set of APIs available to the add-in. For detailed information about requirement sets, see [Office requirement sets availability](office-versions-and-requirement-sets.md#office-requirement-sets-availability). For example, for an Outlook add-in, the requirement set must be Mailbox and a value of 1.1 or above.
+The **\<Requirements\>** element specifies the set of APIs available to the add-in. For detailed information about requirement sets, see [Office requirement sets availability](office-versions-and-requirement-sets.md#office-requirement-sets-availability). For example, in an Outlook add-in, the requirement set must be Mailbox and a value of 1.1 or above.
 
 The **\<Requirements\>** element can also appear in the **\<VersionOverrides\>** element, allowing the add-in to specify a different requirement when loaded in clients that support **\<VersionOverrides\>**.
 
@@ -303,6 +303,11 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
+  <!-- Domains that are allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation is only allowed if the domain is on this list. -->
+  <AppDomains>
+    <AppDomain>AppDomain1</AppDomain>
+    <AppDomain>AppDomain2</AppDomain>
+  </AppDomains>
   <!-- End Basic Settings. -->
 
   <!-- BeginTaskpaneMode integration. Any client that doesn't understand commands will use this section.
@@ -326,8 +331,16 @@ The following sections show examples of manifest v1.1 XML files for content, tas
       <Host xsi:type="Document">
         <!-- Form factor. DesktopFormFactor is supported. Other form factors are available depending on the host and feature. -->
         <DesktopFormFactor>
-          <!-- Function file is an HTML page that includes, or loads, the JavaScript where functions for ExecuteAction will be called.
-            Think of the FunctionFile as the "code behind" ExecuteFunction. -->
+          <!-- This code enables a customizable message to be displayed when the add-in is loaded successfully upon individual install. -->
+          <GetStarted>
+            <!-- Title of the Getting Started callout. The resid attribute points to a ShortString resource. -->
+            <Title resid="Contoso.GetStarted.Title"/>
+            <!-- Description of the Getting Started callout. resid points to a LongString resource. -->
+            <Description resid="Contoso.GetStarted.Description"/>  
+            <!-- Points to a URL resource which details how the add-in should be used. -->
+            <LearnMoreUrl resid="Contoso.GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <!-- Function file is an HTML page that includes, or loads, the JavaScript where functions for ExecuteAction will be called. Think of the FunctionFile as the "code behind" ExecuteFunction. -->
           <FunctionFile resid="Contoso.FunctionFile.Url" />
 
           <!-- PrimaryCommandSurface==Main Office app ribbon. -->
@@ -532,90 +545,135 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 [Add-in manifest schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
-<?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns=
-  "http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:type="MailApp">
-  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
-  <Id>971E76EF-D73E-567F-ADAE-5A76B39052CF</Id>
-  <Version>1.0</Version>
-  <ProviderName>Microsoft</ProviderName>
-  <DefaultLocale>en-us</DefaultLocale>
-  <DisplayName DefaultValue="YouTube"/>
-  <Description DefaultValue=
-    "Watch YouTube videos referenced in the e-mails you  
-    receive without leaving your email client.">
-    <Override Locale="fr-fr" Value="Visualisez les vidéos
-      YouTube références dans vos courriers électronique
-      directement depuis Outlook."/>
-  </Description>
-  <!-- Change the following lines to specify    -->
-  <!-- the web server that hosts the icon files. -->
-  <IconUrl DefaultValue="https://contoso.com/assets/icon-64.png" />
-  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
-  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
+
+  <!-- Begin basic settings: Add-in metadata used for all versions of Outlook, unless override provided. -->
+
+  <!-- IMPORTANT: The ID must be unique to your add-in. If you reuse this manifest, ensure that you change this to a new GUID. -->
+  <Id>971E76EF-D73E-567F-ADAE-5A76B39052C8</Id>
+  <!-- Updates from the Office Store only get triggered if there is a version change. -->
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <!-- The display name of your add-in. Used in the in-app Office Store and various places of the Outlook UI, such as an add-in's dialog. -->
+  <DisplayName DefaultValue="Contoso Add-in"/>
+  <Description DefaultValue="An Outlook add-in template to get started."/>
+  <!-- Change the following lines to specify the web server that hosts the icon files. -->
+  <IconUrl DefaultValue="https://contoso.com/assets/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png"/>
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]"/>
+  <!-- Domains allowed for navigation. -->
+  <AppDomains>
+    <AppDomain>https://www.contoso.com</AppDomain>
+  </AppDomains>
+
+  <!--End basic settings. -->
+
   <Hosts>
-    <Host Name="Mailbox" />
+    <Host Name="Mailbox"/>
   </Hosts>
+  <!-- The <Requirements> element is overridden by any <Requirements> element inside a <VersionOverrides> element. -->
   <Requirements>
-    <Sets DefaultMinVersion="1.1">
-      <Set Name="Mailbox" />
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.1"/>
     </Sets>
   </Requirements>
-
+  <!-- The <FormSettings> element is required for validation, but is ignored when there's a <VersionOverrides> element in your manifest. -->
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <!-- Change the following line to specify     -->
-        <!-- the web server that hosts the HTML file. -->
-        <SourceLocation DefaultValue=
-          "https://webserver/YouTube/YouTube_read_desktop.htm" />
-        <RequestedHeight>216</RequestedHeight>
+        <!-- Change the following line to specify the web server that hosts the HTML file. -->
+        <SourceLocation DefaultValue="[Insert the URL where your HTML file is hosted.]"/>
+        <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
-      <TabletSettings>
-        <!-- Change the following line to specify     -->
-        <!-- the web server that hosts the HTML file. -->
-        <SourceLocation DefaultValue=
-          "https://webserver/YouTube/YouTube_read_tablet.htm" />
-        <RequestedHeight>216</RequestedHeight>
-      </TabletSettings>
-    </Form>
-    <Form xsi:type="ItemEdit">
-      <DesktopSettings>
-        <!-- Change the following line to specify     -->
-        <!-- the web server that hosts the HTML file. -->
-        <SourceLocation DefaultValue=
-          "https://webserver/YouTube/YouTube_compose_desktop.htm" />
-      </DesktopSettings>
-      <TabletSettings>
-        <!-- Change the following line to specify     -->
-        <!-- the web server that hosts the HTML file. -->
-        <SourceLocation DefaultValue=
-          "https://webserver/YouTube/YouTube_compose_tablet.htm" />
-      </TabletSettings>
     </Form>
   </FormSettings>
-
   <Permissions>ReadWriteItem</Permissions>
+  <!-- The <Rule> element is required for validation, but is ignored when there's a <VersionOverrides> element in your manifest. -->
   <Rule xsi:type="RuleCollection" Mode="Or">
-    <Rule xsi:type="RuleCollection" Mode="And">
-      <Rule xsi:type="RuleCollection" Mode="Or">
-        <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Read" />
-        <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
-      </Rule>
-      <Rule xsi:type="ItemHasRegularExpressionMatch"
-        PropertyName="BodyAsPlaintext" RegExName="VideoURL"
-        RegExValue=
-        "http://(((www\.)?youtube\.com/watch\?v=)|
-        (youtu\.be/))[a-zA-Z0-9_-]{11}" />
-    </Rule>
-    <Rule xsi:type="RuleCollection" Mode="Or">
-      <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit" />
-      <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" />
-    </Rule>
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
   </Rule>
-</OfficeApp>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+      <Requirements>
+        <bt:Sets DefaultMinVersion="1.13">
+          <bt:Set Name="Mailbox"/>
+        </bt:Sets>
+      </Requirements>
+      <Hosts>
+        <Host xsi:type="MailHost">
+          <DesktopFormFactor>
+            <!-- Location of the functions that will run when the add-in's function command is selected. -->
+            <FunctionFile resid="functionFile"/>
+            <!-- Activates the add-in on the Message Read surface. -->
+            <ExtensionPoint xsi:type="MessageReadCommandSurface">
+              <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab">. -->
+              <OfficeTab id="TabDefault">
+                <!-- Add up to six groups per tab. -->
+                <Group id="msgReadGroup">
+                  <Label resid="groupLabel"/>
+                  <!-- Configures the button to launch the add-in's task pane. -->
+                  <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                    <Label resid="taskPaneButtonLabel"/>
+                    <Supertip>
+                      <Title resid="taskPaneButtonLabel"/>
+                      <Description resid="taskPaneButtonDescription"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="icon16"/>
+                      <bt:Image size="32" resid="icon32"/>
+                      <bt:Image size="80" resid="icon80"/>
+                    </Icon>
+                    <Action xsi:type="ShowTaskpane">
+                      <SourceLocation resid="messageReadTaskPaneUrl"/>
+                    </Action>
+                  </Control>
+                  <!-- Configures the function command of the add-in. -->
+                  <Control xsi:type="Button" id="msgReadActionButton">
+                    <Label resid="actionButtonLabel"/>
+                    <Supertip>
+                      <Title resid="actionButtonLabel"/>
+                      <Description resid="actionButtonDescription"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="icon16"/>
+                      <bt:Image size="32" resid="icon32"/>
+                      <bt:Image size="80" resid="icon80"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>run</FunctionName>
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
+          </DesktopFormFactor>
+        </Host>
+      </Hosts>
+      <!-- You can use resources across hosts and form factors. -->
+      <Resources>
+        <bt:Images>
+          <bt:Image id="icon16" DefaultValue="https://contoso.com/assets/icon16.png"/>
+          <bt:Image id="icon32" DefaultValue="https://contoso.com/assets/icon32.png"/>
+          <bt:Image id="icon80" DefaultValue="https://contoso.com/assets/icon80.png"/>
+        </bt:Images>
+        <bt:Urls>
+          <bt:Url id="functionFile" DefaultValue="https://contoso.com/FunctionFile.html"/>
+          <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://contoso.com/MessageRead.html"/>
+        </bt:Urls>
+        <bt:ShortStrings>
+          <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>
+          <bt:String id="taskPaneButtonLabel" DefaultValue="Show task pane"/>
+          <bt:String id="actionButtonLabel" DefaultValue="Perform an action"/>
+        </bt:ShortStrings>
+        <bt:LongStrings>
+          <bt:String id="taskPaneButtonDescription" DefaultValue="Opens a task pane."/>
+          <bt:String id="actionButtonDescription" DefaultValue="Performs an action."/>
+        </bt:LongStrings>
+      </Resources>
+    </VersionOverrides>
+  </VersionOverrides>
 ```
 
 ---

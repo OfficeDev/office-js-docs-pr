@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 10/19/2023
+ms.date: 12/12/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -23,8 +23,8 @@ The following table lists events that are currently available and the supported 
 
 |Event canonical name</br>and XML manifest name|Unified manifest for Microsoft 365 name|Description|Minimum requirement set and supported clients|
 |---|---|---|---|
-|`OnNewMessageCompose`| newMessageComposeCreated |On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI<br>- Android<sup>2</sup><br>- iOS<sup>2</sup> |
-|`OnNewAppointmentOrganizer`|newAppointmentOrganizerCreated|On creating a new appointment but not on editing an existing one.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI |
+|`OnNewMessageCompose`| newMessageComposeCreated |On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI<br>- Android<sup>2</sup><br>- iOS<sup>2</sup> (rollout in progress)|
+|`OnNewAppointmentOrganizer`|newAppointmentOrganizerCreated|On creating a new appointment but not on editing an existing one.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI|
 |`OnMessageAttachmentsChanged`|messageAttachmentsChanged|On adding or removing attachments while composing a message.<br><br>Event-specific data object: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI|
 |`OnAppointmentAttachmentsChanged`|appointmentAttachmentsChanged|On adding or removing attachments while composing an appointment.<br><br>Event-specific data object: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI|
 |`OnMessageRecipientsChanged`|messageRecipientsChanged|On adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web browser<br>- New Mac UI|
@@ -387,7 +387,7 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 
 ### Review event-based activation prerequisites
 
-- Verify that the add-in is installed on a supported Outlook client. Event-based activation isn't supported in Outlook on iOS or Android at this time.
+- Verify that the add-in is installed on a supported Outlook client. Some Outlook clients only support certain events. For example, Outlook on Android only supports the `OnNewMessageCompose` event. For more information, see [Supported events](#supported-events).
 - Verify that your Outlook client supports the minimum requirement set needed to handle the event. Event-based activation was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now supported in subsequent requirements sets. For more information, see [Supported events](#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients). If you're developing an add-in that uses the [Smart Alerts](onmessagesend-onappointmentsend-events.md) feature, see the [Supported clients and platform section](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms).
 - Review the expected behavior and limitations of the [event-based activation](#event-based-activation-behavior-and-limitations) and [Smart Alerts](onmessagesend-onappointmentsend-events.md#smart-alerts-feature-behavior-and-scenarios) features.
 
@@ -420,7 +420,7 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 
 - As you make changes to your add-in, be aware that:
   - If you update the manifest, [remove the add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in), then sideload it again. If you're using Outlook on Windows, you must also close and reopen Outlook.
-  - If you make changes to files other than the manifest, close and reopen the Outlook desktop client, or refresh the browser tab running Outlook on the web.
+  - If you make changes to files other than the manifest, close and reopen the Outlook client on Windows or on Mac, or refresh the browser tab running Outlook on the web.
   - If you're still unable to see your changes after performing these steps, [clear your Office cache](../testing/clear-cache.md).
 - As you test your add-in in Outlook on Windows:
   - Check [Event Viewer](/shows/inside/event-viewer) for any reported add-in errors.

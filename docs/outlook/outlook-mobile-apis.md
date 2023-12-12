@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript APIs supported in Outlook on mobile devices
 description: Learn which Outlook JavaScript APIs are supported in Outlook on mobile devices.
-ms.date: 07/13/2023
+ms.date: 12/12/2023
 ms.localizationpriority: medium
 ---
 
@@ -13,13 +13,13 @@ Outlook on Android and on iOS support up to [Mailbox requirement set 1.5](/javas
 
 The following table lists a subset of APIs from requirement sets beyond 1.5 that can now be implemented in Outlook mobile add-ins. Even if the minimum requirement set specified in the manifest of your add-in is greater than 1.5, as long as the API used from the later requirement set is supported, the add-in will appear and activate in Outlook on Android or on iOS. For more information on how to specify the minimum requirement set in your add-in, see [Outlook JavaScript API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
-|API|Minimum requirement set|Supported Outlook modes|
-|---|---|---|
-|[Office.context.mailbox.item.addFileAttachmentFromBase64Async](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1))|Mailbox 1.8|Message Compose|
-|[Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))|Mailbox 1.10|Message Compose|
-|[Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))|Mailbox 1.10|Message Compose|
-|[Office.context.mailbox.item.from.getAsync](/javascript/api/outlook/office.from#outlook-office-from-getasync-member(1))|Mailbox 1.7|Message Compose|
-|[Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getcomposetypeasync-member(1))|Mailbox 1.10|Message Compose|
+|API|Minimum requirement set|Supported Outlook modes|Supported Outlook on mobile clients|
+|---|---|---|---|
+|[Office.context.mailbox.item.addFileAttachmentFromBase64Async](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1))|Mailbox 1.8|Message Compose|- Android<br>- iOS (rollout in progress)|
+|[Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))|Mailbox 1.10|Message Compose|Android|
+|[Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))|Mailbox 1.10|Message Compose|Android|
+|[Office.context.mailbox.item.from.getAsync](/javascript/api/outlook/office.from#outlook-office-from-getasync-member(1))|Mailbox 1.7|Message Compose|- Android<br>- iOS (rollout in progress)|
+|[Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getcomposetypeasync-member(1))|Mailbox 1.10|Message Compose|Android|
 
 ## Unsupported APIs
 

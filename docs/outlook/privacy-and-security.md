@@ -31,8 +31,6 @@ The four levels of permissions are cumulative: the **read/write mailbox** permis
 
 The following figure shows the four levels of permissions and describes the capabilities offered to the end user, developer, and administrator by each tier. For more information about these permissions, see [End users: privacy and performance concerns](#end-users-privacy-and-performance-concerns), [Developers: permission choices and resource usage limits](#developers-permission-choices-and-resource-usage-limits), and [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md).
 
-**Relating the four-tier permission model to the end user, developer, and administrator**
-
 ![Diagram of the four-tier permissions model for mail apps schema v1.1.](../images/add-in-permission-tiers.png)
 
 ## AppSource: Add-in integrity
@@ -51,7 +49,7 @@ The following figure shows the four levels of permissions and describes the capa
 
 End users and IT admins can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Outlook add-ins, the impact of disabling the **Optional connected experiences** setting depends on the client, but it usually means that user-installed add-ins and access to the AppSource aren't allowed. Add-ins deployed by an organization's IT admin through [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) will still be available.
 
-|Client|Behavior when optional connected experiences is disabled|
+|Client|Behavior when optional connected experiences is turned off|
 |-----|-----|
 |- Windows<sup>1</sup><br>- Mac|The **Get Add-ins** or **All Apps**<sup>2</sup> button isn't displayed, so users aren't able to manage their add-ins or access AppSource.|
 |- Android<br>- iOS|The **Get Add-ins** dialog shows only admin-deployed add-ins.|
@@ -84,7 +82,7 @@ The security model addresses security, privacy, and performance concerns of end 
 
 - Data communicated with servers hosting Office Add-ins is always encrypted according to the Secure Socket Layer (SSL) protocol.
 
-- Applicable to only the Outlook rich clients: The Outlook rich clients monitor the performance of installed Outlook add-ins, exercise governance control, and disable those Outlook add-ins that exceed limits in the following areas.
+- Outlook on Windows and on Mac monitor the performance of installed Outlook add-ins, exercise governance control, and make add-ins unavailable when they exceed limits in the following areas.
 
   - Response time to activate
 
@@ -94,9 +92,9 @@ The security model addresses security, privacy, and performance concerns of end 
 
   - CPU usage  
 
-  Governance deters denial-of-service attacks and maintains add-in performance at a reasonable level. The Business Bar alerts end users about Outlook add-ins that the Outlook rich client has disabled based on such governance control.
+  Governance deters denial-of-service attacks and maintains add-in performance at a reasonable level. The Business Bar alerts end users about add-ins that Outlook on Windows and on Mac have made unavailable based on such governance control.
 
-- At any time, end users can verify the permissions requested by installed Outlook add-ins, and disable or subsequently enable any Outlook add-in in the Exchange Admin Center.
+- At any time, end users can verify the permissions requested by installed Outlook add-ins, and make any add-in available or unavailable in the Exchange Admin Center.
 
 ## Developers: Permission choices and resource usage limits
 
@@ -161,7 +159,7 @@ Developers should follow the tiered permissions model to provide transparency an
 
 ### Resource usage tuning
 
-Developers should be aware of resource usage limits for activation, incorporate performance tuning in their development workflow, so as to reduce the chance of a poorly performing add-in denying service of the host. Developers should follow the guidelines in designing activation rules as described in [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md). If an Outlook add-in is intended to run on an Outlook rich client, then developers should verify that the add-in performs within the resource usage limits.
+Developers should be aware of resource usage limits for activation, incorporate performance tuning in their development workflow, so as to reduce the chance of a poorly performing add-in denying service of the host. Developers should follow the guidelines in designing activation rules as described in [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md). If an Outlook add-in is intended to run in Outlook on Windows or on the Mac, then developers should verify that the add-in performs within the resource usage limits.
 
 ### Other measures to promote user security
 
@@ -185,7 +183,7 @@ The security model provides the following rights and responsibilities to adminis
 
 - Can prevent end users from installing any Outlook add-in, including add-ins from AppSource.
 
-- Can disable or enable any Outlook add-in on the Exchange Admin Center.
+- Can make any Outlook add-in available or unavailable through the Exchange Admin Center.
 
 - Applicable to only Outlook on Windows: Can override performance threshold settings by GPO registry settings.
 

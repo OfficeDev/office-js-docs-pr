@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: In this tutorial, you will build a PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides.
-ms.date: 09/28/2023
+ms.date: 12/11/2023
 ms.service: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -32,7 +32,6 @@ In this tutorial, you'll use Visual Studio Code (VS Code), Visual Studio, or you
 
 ### Prerequisites
 
-[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ### Create the add-in project
@@ -47,6 +46,8 @@ In this tutorial, you'll use Visual Studio Code (VS Code), Visual Studio, or you
 ![Prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-powerpoint.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
+
+[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 

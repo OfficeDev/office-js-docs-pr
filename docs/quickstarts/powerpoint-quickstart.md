@@ -1,7 +1,7 @@
 ---
 title: Build your first PowerPoint task pane add-in
 description: Learn how to build a simple PowerPoint task pane add-in by using the Office JS API.
-ms.date: 06/10/2022
+ms.date: 12/11/2023
 ms.service: powerpoint
 ms.localizationpriority: high
 ---
@@ -18,7 +18,6 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 ### Prerequisites
 
-[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ### Create the add-in project
@@ -33,6 +32,8 @@ In this article, you'll walk through the process of building a PowerPoint task p
 ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-powerpoint.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
+
+[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -242,15 +243,17 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
-## Code samples
-
-- [PowerPoint "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
-
 ### Next steps
 
 Congratulations, you've successfully created a PowerPoint task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
 ---
+
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+
+## Code samples
+
+- [PowerPoint "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
 
 ## See also
 

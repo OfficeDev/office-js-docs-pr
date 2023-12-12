@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 09/11/2023
+ms.date: 11/30/2023
 ms.topic: glossary
 ms.localizationpriority: medium
 ---
@@ -38,7 +38,7 @@ See also: [Common API](#common-api).
 
 **Client** typically refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
-See also: [application](#application), [host](#host), [Office application, Office client](#office-application-office-client).
+See also: [application](#application), [host](#host), [Office application, Office client](#office-application-office-client), [Office desktop application, Office desktop client, desktop client, desktop](#office-desktop-application-office-desktop-client-desktop-client-desktop).
 
 ## Common API
 
@@ -92,7 +92,13 @@ See also: [application](#application), [client](#client), [Office application, O
 
 **Office client** refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
-See also: [application](#application), [client](#client), [host](#host).
+See also: [application](#application), [client](#client), [host](#host), [Office desktop application, Office desktop client, desktop client, desktop](#office-desktop-application-office-desktop-client-desktop-client-desktop).
+
+## Office desktop application, Office desktop client, desktop client, desktop
+
+**Office desktop client** refers to an Office application that runs natively on Windows or on Mac. The Office desktop clients that support Office Add-ins are Excel on Windows and on Mac, Outlook on Windows and on Mac, PowerPoint on Windows and on Mac, Project on Windows, and Word on Windows and on Mac.
+
+See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 
 ## perpetual
 
@@ -100,7 +106,7 @@ See also: [application](#application), [client](#client), [host](#host).
 
 Other Microsoft content may use the term **non-subscription** to represent this concept.
 
-See also: [retail, retail perpetual](#retail-retail-perpetual), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing)
+See also: [retail, retail perpetual](#retail-retail-perpetual), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing).
 
 ## platform
 
@@ -122,7 +128,7 @@ See also: [tutorial](#tutorial).
 
 Other Microsoft content may use the term **one-time purchase** or **consumer** to represent this concept.
 
-See also: [perpetual](#perpetual)
+See also: [perpetual](#perpetual).
 
 ## ribbon, ribbon button
 
@@ -162,7 +168,7 @@ See also: [quick start](#quick-start).
 
 Other Microsoft content may use the term **commercial** to represent this concept.
 
-See also: [perpetual](#perpetual)
+See also: [perpetual](#perpetual).
 
 ## web add-in
 

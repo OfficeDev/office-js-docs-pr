@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 01/11/2023
+ms.date: 12/11/2023
 ms.service: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 ms.localizationpriority: high
@@ -46,6 +46,8 @@ In this tutorial, you'll create an Excel task pane add-in that:
 ![Screenshot of the Yeoman Office Add-in generator command line interface.](../images/yo-office-excel.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components. You may need to manually run `npm install` in the root folder of your project if something fails during the initial setup.
+
+[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -93,7 +95,8 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - The `tryCatch` function will be used by all the functions interacting with the workbook from the task pane. Catching Office JavaScript errors in this fashion is a convenient way to generically handle any uncaught errors.
 
-    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
+    > [!NOTE]
+    > The following code uses ES6 JavaScript, which isn't compatible with [older versions of Office that use the Trident (Internet Explorer 11) browser engine](/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins). For information on how to support those platforms in production, see [Support older Microsoft webviews and Office versions](/office/dev/add-ins/develop/support-ie-11). [Join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program) to get a free, 90-day renewable Microsoft 365 subscription, with the latest Office applications, to use during development.
 
     ```js
     async function createTable() {

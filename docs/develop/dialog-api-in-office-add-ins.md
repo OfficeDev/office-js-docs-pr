@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: Learn the basics of creating a dialog box in an Office Add-in.
-ms.date: 03/13/2023
+ms.date: 11/30/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -27,7 +27,7 @@ The dialog box always opens in the center of the screen. The user can move and r
 
 The Office JavaScript APIs include a [Dialog](/javascript/api/office/office.dialog) object and two functions in the [Office.context.ui namespace](/javascript/api/office/office.ui).
 
-To open a dialog box, your code, typically a page in a task pane, calls the [displayDialogAsync](/javascript/api/office/office.ui) method and passes to it the URL of the resource that you want to open. The page on which this method is called is known as the "host page". For example, if you call this method in script on index.html in a task pane, then index.html is the host page of the dialog box that the method opens.
+To open a dialog box, your code, typically a page in a task pane, calls the [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) method and passes to it the URL of the resource that you want to open. The page on which this method is called is known as the "host page". For example, if you call this method in script on index.html in a task pane, then index.html is the host page of the dialog box that the method opens.
 
 The resource that is opened in the dialog box is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog box. The following code is a simple example.
 
@@ -231,7 +231,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 > [!TIP]
 > The `DialogMessageOptions` parameter was added to the `messageParent` method as a required parameter in mid-2021. Older add-ins that send a cross-domain message with the method no longer work until they are updated to use the new parameter. Until the add-in is updated, *in Office on Windows only*, users and system administrators can enable those add-ins to continue working by specifying the trusted domains with a registry setting: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. To do this, create a file with a `.reg` extension, save it to the Windows computer, and then double-click it to run it. The following is an example of the contents of such a file.
 >
-> ```
+> ```properties
 > Windows Registry Editor Version 5.00
 > 
 > [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains]
@@ -321,7 +321,7 @@ function onRegisterMessageComplete(asyncResult) {
 Because you can make multiple `messageChild` calls from the host page, but you have only one handler in the dialog box for the `DialogParentMessageReceived` event, the handler must use conditional logic to distinguish different messages. You can do this in a way that is precisely parallel to how you would structure conditional messaging when the dialog box is sending a message to the host page as described in [Conditional messaging](#conditional-messaging).
 
 > [!NOTE]
-> In some situations, the `messageChild` API, which is a part of the [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets), may not be supported. Some alternative ways for parent-to-dialog-box messaging are described in [Alternative ways of passing messages to a dialog box from its host page](parent-to-dialog.md).
+> In some situations, the `messageChild` API, which is a part of the [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets), may not be supported. For example, `messageChild` isn't supported in volume-licensed perpetual Outlook 2016 and volume-licensed perpetual Outlook 2019. Some alternative ways for parent-to-dialog-box messaging are described in [Alternative ways of passing messages to a dialog box from its host page](parent-to-dialog.md).
 
 > [!IMPORTANT]
 > The [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets) can't be specified in the **\<Requirements\>** section of an add-in manifest. You will have to check for support for DialogApi 1.2 at runtime using the `isSetSupported` method as described in [Runtime checks for method and requirement set support](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). Support for manifest requirements is under development.
@@ -363,7 +363,7 @@ For example, your code could use the [Office.onReady or Office.initialize functi
 > [!TIP]
 > The `DialogMessageOptions` parameter was added to the `messageChild` method as a required parameter in mid-2021. Older add-ins that send a cross-domain message with the method no longer work until they are updated to use the new parameter. Until the add-in is updated, *in Office on Windows only*, users and system administrators can enable those add-ins to continue working by specifying the trusted domains with a registry setting: **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. To do this, create a file with a `.reg` extension, save it to the Windows computer, and then double-click it to run it. The following is an example of the contents of such a file.
 >
-> ```
+> ```properties
 > Windows Registry Editor Version 5.00
 > 
 > [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains]

@@ -1,7 +1,7 @@
 ---
 title: Single sign-on (SSO) quick start
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on.
-ms.date: 09/07/2022
+ms.date: 12/11/2023
 ms.service: microsoft-365
 ms.localizationpriority: high
 ---
@@ -42,6 +42,8 @@ In this article, you'll use the Yeoman generator for Office Add-ins to create an
 :::image type="content" source="../images/yo-office-sso-excel.png" alt-text="Prompts and answers for the Yeoman generator in a command line interface.":::
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
+
+[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -148,6 +150,8 @@ Complete the following steps to try out an Outlook add-in.
 ## Next steps
 
 Congratulations, you've successfully created a task pane add-in that uses SSO when possible, and uses an alternate method of user authentication when SSO is not supported. To learn about customizing your add-in to add new functionality that requires different permissions, see [Customize your Node.js SSO-enabled add-in](sso-quickstart-customize.md).
+
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
 
 ## See also
 

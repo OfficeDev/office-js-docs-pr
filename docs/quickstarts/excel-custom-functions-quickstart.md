@@ -1,7 +1,7 @@
 ---
-ms.date: 11/16/2022
-description: Developing custom functions in Excel quick start guide.
 title: Custom functions quick start
+description: Developing custom functions in Excel quick start guide.
+ms.date: 12/04/2023
 ms.service: excel
 ms.localizationpriority: high
 ---
@@ -12,13 +12,7 @@ With custom functions, developers can add new functions to Excel by defining the
 
 ## Prerequisites
 
-[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
-
-- Office connected to a Microsoft 365 subscription (including Office on the web).
-
-  > [!NOTE]
-  > If you don't already have Office, you can [join the Microsoft 365 developer program](https://aka.ms/M365devprogram) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
 
 ## Build your first custom functions project
 
@@ -89,7 +83,7 @@ Congratulations, you've successfully created a custom function in an Excel add-i
 > [!div class="nextstepaction"]
 > [Excel custom functions add-in tutorial](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web)
 
-## Troubleshooting
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
 
 You may encounter issues if you run the quick start multiple times. If the Office cache already has an instance of a function with the same name, your add-in gets an error when it sideloads. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`.
 
