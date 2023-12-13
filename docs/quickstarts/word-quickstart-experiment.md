@@ -31,7 +31,7 @@ iwr aka.ms/wordaddin/helloworld -o wordhelloworld.bat; saps wordhelloworld.b
 ```
 For MacOS: 
 ```command&nbsp;line
-bash <(curl –s aka.ms/wordaddin/helloworld_mac)
+bash <(curl –s –L aka.ms/wordaddin/helloworld_mac) 
 ```
 
 This script works in Windows or MacOS, and it will automatically execute all the required steps for running the sample and opening the code for viewing and editing. The steps include:

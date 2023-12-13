@@ -31,7 +31,7 @@ iwr aka.ms/exceladdin/helloworld -o excelhelloworld.bat; saps excelhelloworld.ba
 ```
 For MacOS: 
 ```command&nbsp;line
-bash <(curl –s aka.ms/exceladdin/helloworld_mac)
+bash <(curl –s –L aka.ms/exceladdin/helloworld_mac) 
 ```
 
 This script works in Windows or MacOS, and it will automatically execute all the required steps for running the sample and opening the code for viewing and editing. The steps include:
