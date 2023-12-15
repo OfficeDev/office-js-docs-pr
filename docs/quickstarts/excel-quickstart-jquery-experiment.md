@@ -14,42 +14,41 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 [!include[Choose your editor](../includes/quickstart-choose-editor-experiment.md)]
 
-# [Create add-in in one step!](#tab/onelinescript)
-
-If you like to skip step-by-step instructions and directly run the sample and view its code, simply run below command. 
+# [One-line script](#tab/script)
 
 ### Prerequisites
 
-Microsoft 365.  
-You can sign up for the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program) to get a free Microsoft 365 subscription. 
+You must have Office connected to a Microsoft 365 subscription.
+
+> [!NOTE]
+> If you don't already have Office, you can [join the Microsoft 365 developer program](https://developer.microsoft.com/microsoft-365/dev-program) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
 
 ### Create the add-in project
 
-Run the command below for Windows: 
+You can run the one-line script on Windows or on macOS. It performs the following to set up the add-in development environment.
+- Installs Node.js, npm, and Git, if they aren't found on your machine.
+- Downloads the files of the sample add-in project.
+- Opens the add-in project in Visual Studio Code, if installed. If Visual Studio Code isn't installed on your machine, the folder that contains the add-in project files opens instead.
+- Prompts you to run the add-in.
+> [!NOTE]
+> In addition to Windows and macOS, we're working to support the script on other platforms.
+
+If you're using Windows, run the following from a command prompt.
 ```command&nbsp;line
 iwr aka.ms/exceladdin/helloworld -o excelhelloworld.bat; saps excelhelloworld.bat
 ```
-For MacOS: 
+If you're using macOS, run the following in a terminal.
 ```command&nbsp;line
 bash <(curl –s –L aka.ms/exceladdin/helloworld_mac) 
 ```
 
-This script works in Windows or MacOS, and it will automatically execute all the required steps for running the sample and opening the code for viewing and editing. The steps include:
+### Try it out
 
-- Install Node.js, npm, git if they are not found on your machine. 
-- Download sample project. 
-- Launch Visual Studio Code (or launch sample project directory if you don’t have VS Code installed). 
-- Run the sample automatically if you choose so.
+Once your add-in project is set up, it automatically opens in Visual Studio Code. If you don't have Visual Studio Code installed on your machine, the folder containing the files of your add-in project opens instead.
 
-Stay tuned for expanded platform support on this command. 
+If you choose to run the add-in when prompted, an Excel spreadsheet opens, displaying the add-in task pane. Select a range of cells in the spreadsheet, then choose **Run** from the task pane to set the color of the selected range to yellow.
 
-### Expected results
-
-Visual Studio Code with sample code automatically opens, if you don’t have VS Code installed the sample project directory will be launched. 
-
-If you choose to launch sample when prompted, an Excel spreadsheet with add-in task pane automatically opens, and at the bottom of the task pane, choose the Run link to set the color of the selected range to yellow. 
-
-![The add-in task pane open in Excel, with the Run button highlighted in the add-in task pane.](../images/excel-quickstart-addin-3c.png)
+![The sample add-in task pane in Excel with the Run button highlighted.](../images/excel-quickstart-addin-3c.png)
 
 ### Next steps
 
