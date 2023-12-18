@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Configure your Outlook add-in for event-based activation
 
-Without the event-based activation feature, a user has to explicitly launch an add-in to complete their tasks. This feature enables your add-in to run tasks when certain events occur, such as automatically updating a mail item's attachments when the recipients have changed or checking for a particular attachment before a mail item is sent. You can also integrate event-based activation with the task pane and function commands.
+The event-based activation feature lets a user use your add-in to complete their tasks without explicitly launching the add-in. Your add-in will run tasks when certain events occur, such as automatically update a mail item's attachments when the recipients change or check for a particular attachment before a mail item is sent. You can also integrate event-based activation with the task pane and function commands.
 
 > [!NOTE]
 > Support for this feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For details about an event's minimum requirement set and the clients and platforms that support it, see [Supported events](#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).

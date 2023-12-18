@@ -8,9 +8,9 @@ ms.localizationpriority: medium
 
 # Automatically set the subject of a new message or appointment
 
-Need to insert a required disclaimer into all your messages and appointments? With an event-based add-in, the content is automatically added to new messages or appointments, so that you can focus on composing your message and still remain compliant with your organization's policies.
+Need to add a required disclaimer to all your messages? With an event-based add-in, content is automatically added to new messages or appointments. Your users can focus on writing, instead of compliance.
 
-The following sections walk you through how to develop an add-in that handles the `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events. By the end of this walkthrough, you'll have an add-in that automatically sets the subject of new messages and appointments being created.
+The following sections teach you how to develop an add-in that handles the `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events. By the end of this walkthrough, you'll have an add-in that automatically sets the subject of new messages and appointments being created.
 
 > [!NOTE]
 > The `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events were introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10). To verify that your Outlook client supports these events, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
