@@ -131,7 +131,7 @@ In Outlook on Mac, the **Send** option becomes unavailable while in Work Offline
 ## Activate Smart Alerts in applications that use Simple MAPI
 
 > [!NOTE]
-> This feature is currently only supported in Outlook on Windows Version 2301 (Build 17126.20004).
+> This feature is currently only supported in Outlook on Windows starting in Version 2301 (Build 17126.20004).
 
 Users can send mail items through certain applications that use [Simple MAPI](/previous-versions/windows/desktop/windowsmapi/simple-mapi), even if the Outlook client isn't running at the time the item is sent. When this occurs, any installed Smart Alerts add-in won't activate to check the mail item for compliance.
 
