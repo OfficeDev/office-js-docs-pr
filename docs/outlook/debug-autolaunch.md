@@ -14,7 +14,7 @@ To begin debugging, select the tab for your applicable client.
 
 # [Windows](#tab/windows)
 
-If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in project (for example, by doing the [event-based activation walkthrough](autolaunch.md)), follow the **Created with Yeoman generator** option throughout this article. Otherwise, follow the **Other** steps. Visual Studio Code should be at least version 1.56.1.
+If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in project (for example, by completing an [event-based activation walkthrough](on-new-compose-events-walkthrough.md)), follow the **Created with Yeoman generator** option throughout this article. Otherwise, follow the **Other** steps. Visual Studio Code should be at least version 1.56.1.
 
 ## Mark your add-in for debugging and set the debugger port
 

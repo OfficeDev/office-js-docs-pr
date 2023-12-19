@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 08/15/2023
+ms.date: 12/19/2023
 ms.localizationpriority: high
 ---
 
@@ -32,7 +32,7 @@ The deployment options that are available depend on the Office application that 
 | Task pane       | Supported   | Supported     | Supported | Supported                  | Supported            |
 | Command         | Supported   | Supported     | Supported | Supported                  | Not available        |
 
-&#42; SharePoint catalogs do not support Office on Mac.
+\* SharePoint catalogs don't support Office on Mac.
 
 ### Deployment options for Outlook add-ins
 
@@ -69,11 +69,11 @@ A SharePoint app catalog is a special site collection that you can create to hos
 If you are deploying add-ins in an on-premises environment, use a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
-> SharePoint catalogs do not support Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).
+> SharePoint catalogs don't support Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).
 
 ### Outlook add-in deployment
 
-For on-premises and online environments that do not use the Azure AD identity service, you can deploy Outlook add-ins via the Exchange server.
+For on-premises and online environments that don't use the Azure AD identity service, you can deploy Outlook add-ins via the Exchange server.
 
 Outlook add-in deployment requires:
 
@@ -81,6 +81,8 @@ Outlook add-in deployment requires:
 - Outlook 2013 or later
 
 To assign add-ins to tenants, use the Exchange admin center to upload a manifest directly, either from a file or a URL, or add an add-in from AppSource. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Add-ins for Outlook in Exchange Server](/exchange/add-ins-for-outlook-2013-help).
+
+It's important to note that some versions of Outlook clients and Exchange servers may only support certain Mailbox requirement sets. For details about supported requirement sets, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 
 ## GoDaddy Microsoft 365 SKUs
 
