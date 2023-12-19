@@ -80,6 +80,7 @@ olk.exe --devtools
 ```
 > [!TIP]
 > After running the commands, the DevTools window stays open, so that you can debug an add-in's task pane as you open and close it. If you close the DevTools window, you must close your Outlook client first before running olk.exe --devtools again.
+
 ## Development experience feedback
 
 As you test your Outlook web add-in in the new Outlook on Windows, share feedback on your experience with the developer community through [GitHub](https://github.com/OfficeDev/office-js/issues/new/choose).
