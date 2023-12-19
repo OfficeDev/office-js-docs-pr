@@ -73,15 +73,10 @@ For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for t
 
 ## Debug your add-in
 
-To debug an add-in installed in the new Outlook on Windows desktop client, first [sideload the add-in to Outlook on the web](sideload-outlook-add-ins-for-testing.md). Then, follow the guidance in [Debug add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) to use your browser's developer tools for debugging.
+To debug an add-in installed in the new Outlook on Windows desktop client, first [sideload the add-in to Outlook on the web](sideload-outlook-add-ins-for-testing.md). Then, in a command prompt, run the following command to open the new Outlook on Windows client and an instance of the Microsoft Edge DevTools.
 
-> [!NOTE]
-> The right-click context menu is not enabled for Task Pane add-ins and is only visible in classic Outlook and Outlook Online. This prevents access to the *Inspect* menu item to open Edge DevTools in the new Outlook for Windows, and the CRTL+SHIFT+I and F12 shortcut keys will also not work. Instead, you can run this command in the Command Prompt window to start both the new Outlook for Windows and an instance of DevTools at the same time:
-> 
-> `olk.exe --devtools`
->
-> If you close DevTools after running this command, you must close Outlook and re-run the command to make it visible again. Otherwise, it will conveniently stay open so you can debug Task Panes as they are opened, and it will stay open even after closing Task Panes.
-
+```command&nbsp;line
+olk.exe --devtools
 ## Development experience feedback
 
 As you test your Outlook web add-in in the new Outlook on Windows, share feedback on your experience with the developer community through [GitHub](https://github.com/OfficeDev/office-js/issues/new/choose).
