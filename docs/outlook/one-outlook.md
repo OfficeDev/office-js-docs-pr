@@ -73,7 +73,13 @@ For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for t
 
 ## Debug your add-in
 
-To debug an add-in installed in the new Outlook on Windows desktop client, first [sideload the add-in to Outlook on the web](sideload-outlook-add-ins-for-testing.md). Then, follow the guidance in [Debug add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md) to use your browser's developer tools for debugging.
+To debug an add-in installed in the new Outlook on Windows desktop client, first [sideload the add-in to Outlook on the web](sideload-outlook-add-ins-for-testing.md). Then, in a command prompt, run the following command to open the new Outlook on Windows client and an instance of the Microsoft Edge DevTools.
+
+```command&nbsp;line
+olk.exe --devtools
+```
+> [!TIP]
+> After running the command, the DevTools window stays open, so that you can debug an add-in's task pane as you open and close it. If you close the DevTools window, you must close your Outlook client first before running `olk.exe --devtools` again.
 
 ## Development experience feedback
 
