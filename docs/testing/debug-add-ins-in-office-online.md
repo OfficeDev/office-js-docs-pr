@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins in Office on the web
 description: How to use Office on the web to test and debug your add-ins.
-ms.date: 06/23/2023
+ms.date: 12/19/2023
 ms.localizationpriority: medium
 ---
 
@@ -28,7 +28,8 @@ To debug your add-in by using Office on the web:
     - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 
     > [!NOTE]
-    > Office on the web won't open in Internet Explorer.
+    > - Office on the web won't open in Internet Explorer.
+    > - The new Outlook on Window desktop client (preview) doesn't support the context menu or the keyboard shortcut to access the Microsoft Edge developer tools. Instead, you must run `olk.exe --devtools` from a command prompt. For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows (preview)](../outlook/one-outlook.md#debug-your-add-in).
 
 ## Potential issues
 
