@@ -12,7 +12,7 @@ metadata:
   ms.topic: hub-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 12/12/2023 #Required; mm/dd/yyyy format.
+  ms.date: 12/20/2023 #Required; mm/dd/yyyy format.
 
 # highlightedContent section
 # Maximum of 8 items
@@ -38,13 +38,13 @@ productDirectory:
     imageSrc: images/index-landing-page/i_quick-start.svg
     links:
       - url: quickstarts/excel-quickstart-jquery.md
-        text: Build an Excel task pane add-in
+        text: "Excel: Build your first add-in"
       - url: quickstarts/outlook-quickstart.md
-        text: Build your first Outlook add-in
+        text: "Outlook: Build your first add-in"
       - url: quickstarts/powerpoint-quickstart.md
-        text: Build your first PowerPoint task pane add-in
+        text: "PowerPoint: Build your first add-in"
       - url: quickstarts/word-quickstart.md
-        text: Build your first PowerPoint task pane add-in
+        text: "Word: Build your first add-in"
   
   - title: Add-in scenarios
     imageSrc: images/index-landing-page/i_code-blocks.svg
