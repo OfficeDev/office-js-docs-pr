@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.
-ms.date: 12/12/2023
+ms.date: 12/21/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -76,10 +76,15 @@ Once access is provided, the delegate must then follow the instructions outlined
 
 A shared mailbox allows a group of users to easily monitor and send messages and meeting invites using a shared email address. To access a shared mailbox that you have permissions to in Outlook on the web, open it in the same panel as your primary mailbox or open it in a separate browser tab or window. For guidance, see [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
 
-When a shared mailbox is opened in a separate browser tab or window, only the following add-ins can be activated from the shared mailbox.
+When a shared mailbox is opened in the same panel as your primary mailbox, the type of add-ins you can access from the shared mailbox differs between compose and read modes.
 
-- Default add-ins that come preinstalled in Outlook (for example, the My Templates add-in).
-- Add-ins configured with the [SupportsSharedFiles manifest element](#configure-the-manifest) that are deployed by an organization's administrator.
+- In compose mode, all add-ins deployed by your organization's administrator are available for use from the shared mailbox.
+- In read mode, only add-ins that configured the [SupportsSharedFiles manifest element](#configure-the-manifest) to `true` are available for use from the shared mailbox.
+
+When a shared mailbox is opened in a separate browser tab or window, only add-ins that meet the following criteria are available for use from the shared mailbox.
+
+- The add-in configured the [SupportsSharedFiles manifest element](#configure-the-manifest) to `true`.
+- The add-in is deployed by your organization's administrator using the Fixed or Optional Centralized Deployment methods. For more information on the deployment methods, see [Centralized Deployment FAQ](/microsoft-365/admin/manage/centralized-deployment-faq).
 
 ### [Mac](#tab/unix)
 
