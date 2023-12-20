@@ -186,7 +186,7 @@ If you customize the **Don't Send** button in the dialog, you can only assign a 
 
 ## Debug your add-in
 
-For guidance on how to troubleshoot your Smart Alerts add-in, see the "Troubleshooting guide" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#troubleshooting-guide).
+For guidance on how to troubleshoot your Smart Alerts add-in, see [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md).
 
 ## Deploy to users
 
