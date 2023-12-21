@@ -26,20 +26,27 @@ You must have Office connected to a Microsoft 365 subscription.
 ### Create the add-in project
 
 You can run the one-line script on Windows or on macOS. It performs the following to set up the add-in development environment.
-- Installs Node.js, npm, and Git, if they aren't found on your machine.
+
+On Windows:
+- Installs Node.js, and Git, if they aren't found on your machine.
 - Downloads the files of the sample add-in project.
 - Opens the add-in project in Visual Studio Code, if installed. If Visual Studio Code isn't installed on your machine, the folder that contains the add-in project files opens instead.
 - Prompts you to run the add-in.
+
+On macOS:
+- Downloads the files of the sample add-in project. 
+- Opens the folder that contains the add-in project files. Or opens the add-in project in Visual Studio Code if it is installed and configured to support launching from terminal. 
+- Prompts you to run the add-in. 
 > [!NOTE]
 > In addition to Windows and macOS, we're working to support the script on other platforms.
 
 If you're using Windows, run the following from a command prompt.
 ```command&nbsp;line
-iwr aka.ms/exceladdin/helloworld -o excelhelloworld.bat; saps excelhelloworld.bat
+iwr aka.ms/exceladdin/helloworld -outfile excelhelloworld.bat; saps excelhelloworld.bat
 ```
 If you're using macOS, run the following in a terminal.
 ```command&nbsp;line
-bash <(curl –s –L aka.ms/exceladdin/helloworld_mac) 
+bash <(curl -L -s aka.ms/exceladdin/helloworld_mac)
 ```
 
 ### Try it out
