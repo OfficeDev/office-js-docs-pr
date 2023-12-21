@@ -162,7 +162,7 @@ await Excel.run(async (context) => {
 await Excel.run(async (context) => {
     let customDocProperties = context.workbook.properties.custom;
     let customProperty = customDocProperties.getItem("Introduction");
-    customProperty.load(["key, value"]);
+    customProperty.load(["key", "value"]);
     await context.sync();
 
     console.log("Custom key  : " + customProperty.key); // "Introduction"

@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using developer tools for Microsoft Edge WebView2
 description: Debug add-ins using the developer tools in Microsoft Edge WebView2 (Chromium-based).
-ms.date: 05/20/2023
+ms.date: 12/19/2023
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 This article shows how to debug the client-side code (JavaScript or TypeScript) of your add-in when the following conditions are met.
 
-- You cannot, or don't wish to, debug using tools built into your IDE; or you are encountering a problem that only occurs when the add-in is run outside the IDE.
+- You can't, or don't wish to, debug using tools built into your IDE; or you are encountering a problem that only occurs when the add-in is run outside the IDE.
 - Your computer is using a combination of Windows and Office versions that use the Edge (Chromium-based) webview control, WebView2.
 
 > [!TIP]
@@ -23,13 +23,20 @@ To determine which webview you're using, see [Browsers and webview controls used
 ## Debug a task pane add-in using Microsoft Edge (Chromium-based) developer tools
 
 > [!NOTE]
-> If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser runtime process that the Microsoft Edge (Chromium-based) developer tools cannot be launched from, so the technique described in this article cannot be used to debug code in the function.
+> If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser runtime process that the Microsoft Edge (Chromium-based) developer tools can't be launched from, so the technique described in this article can't be used to debug code in the function.
 
 1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
+
+    > [!NOTE]
+    > To sideload an add-in in Outlook, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
+
 1. Run the Microsoft Edge (Chromium-based) developer tools by one of these methods:
 
    - Be sure the add-in's task pane has focus and press **Ctrl+Shift+I**.
    - Right-click the task pane to open the context menu and select **Inspect**, or open the [personality menu](../design/task-pane-add-ins.md#personality-menu) and select **Attach Debugger**. (The personality menu isn't supported in Outlook.)
+
+   > [!NOTE]
+   > The new Outlook on Window desktop client (preview) doesn't support the context menu or the keyboard shortcut to access the Microsoft Edge developer tools. Instead, you must run `olk.exe --devtools` from a command prompt. For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows (preview)](../outlook/one-outlook.md#debug-your-add-in).
 
 1. Open the **Sources** tab.
 1. Open the file that you want to debug with the following steps.
