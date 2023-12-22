@@ -158,7 +158,7 @@ To enable users to create online meetings with your add-in, you must configure t
 
 1. Open the **manifest.json** file.
 
-1. In the "extensions.ribbons.requirements.formFactors" array, add `mobile` as an item. When you are finished, the array should look like the following.
+1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you are finished, the array should look like the following.
 
 ```json
 "formFactors": [
