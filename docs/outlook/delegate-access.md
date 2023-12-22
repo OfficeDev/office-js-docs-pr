@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.
-ms.date: 10/05/2023
+ms.date: 12/21/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -74,13 +74,26 @@ Once access is provided, the delegate must then follow the instructions outlined
 
 #### Shared mailboxes
 
-Mail and calendar are shared with a delegate or shared mailbox user. Add-ins are available to the delegate or user in message and appointment read and compose modes.
+A shared mailbox allows a group of users to easily monitor and send messages and meeting invites using a shared email address. In Outlook on the web, a shared mailbox can be opened in the same panel as a user's primary mailbox or in a separate browser tab or window. For guidance, see [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
+
+When a shared mailbox is opened in the same panel as a user's primary mailbox, the type of add-ins that are accessible from the shared mailbox differs between compose and read modes.
+
+- In compose mode, all add-ins deployed by an organization's administrator are available for use from the shared mailbox.
+- In read mode, only add-ins configured in the manifest to support shared files are available for use from the shared mailbox. For instructions on how to do this for either the XML manifest or the unified manifest, see the [Configure the manifest](#configure-the-manifest) section.
+
+When a shared mailbox is opened in a separate browser tab or window, only add-ins that meet the following criteria are available for use from the shared mailbox.
+
+- The add-in configured in the manifest to support shared files. For instructions on how to do this for either the XML manifest or the unified manifest, see the [Configure the manifest](#configure-the-manifest) section.
+- The add-in is deployed to both the shared mailbox and the mailbox of the user who has access to the shared mailbox by an organization's administrator.
+- The add-in must be deployed using the Fixed or Optional Centralized Deployment method. For more information on the deployment methods, see [Centralized Deployment FAQ](/microsoft-365/admin/manage/centralized-deployment-faq).
 
 ### [Mac](#tab/unix)
 
 #### Shared mailboxes
 
-Mail and calendar are shared with a delegate or shared mailbox user. Add-ins are available to the delegate or user in message and appointment read and compose modes.
+A shared mailbox allows a group of users to easily monitor and send messages and meeting invites using a shared email address. For guidance on how to access a shared mailbox that you have permissions to in Outlook on Mac, see the "Open a shared or delegated mailbox" section of [Open a shared Mail, Calendar, or People folder in Outlook for Mac](https://support.microsoft.com/office/6ecc39c5-5577-4a1d-b18c-bbdc92972cb2).
+
+Users with permissions to a shared mailbox can activate add-ins configured for shared mailbox scenarios in message and appointment read and compose modes.
 
 #### Shared folders
 
