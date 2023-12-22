@@ -247,7 +247,7 @@ To enable users to create online meetings with your add-in, you must configure t
     }
 ```
 
-# [XML manifest](xmlmanifest)
+# [XML manifest](#tab/xmlmanifest)
 
 1. In your code editor, open the Outlook quick start project you created.
 
