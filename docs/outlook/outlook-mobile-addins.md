@@ -54,7 +54,7 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
 
 - Your manifest needs to declare mobile support including special mobile controls and icon sizes. 
   - **Unified manifest for Microsoft 365**: Include the string "mobile" in the "extensions.ribbons.requirements.formFactors" array, and include a "customMobileGroup" property in the tab object in the "extensions.ribbons.tabs" array. This property must include a "buttonType" of "MobileButton" and an "icons" array.
-  - **XML manifest**: Include a **/<MobileFormFactor/>**, and include the correct types of [controls](/javascript/api/manifest/control) and [icon sizes](/javascript/api/manifest/icon).
+  - **XML manifest**: Include a **\<MobileFormFactor\>**, and include the correct types of [controls](/javascript/api/manifest/control) and [icon sizes](/javascript/api/manifest/icon).
   
   To learn more, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
