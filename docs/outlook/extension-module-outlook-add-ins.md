@@ -1,146 +1,132 @@
 ---
 title: Module extension Outlook add-ins
 description: Create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
-ms.date: 08/30/2022
+ms.date: 12/21/2023
 ms.localizationpriority: medium
 ---
 
 # Module extension Outlook add-ins
 
-Module extension add-ins appear in the Outlook navigation bar, right alongside mail, tasks, and calendars. A module extension is not limited to using mail and appointment information. You can create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
+Module extension add-ins appear in the Outlook navigation bar, right alongside mail, tasks, and calendars. A module extension isn't limited to using mail and appointment information. You can create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
 
 > [!TIP]
-> Module extensions aren't supported in the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md), but you can create a very similar experience for users by making a [personal tab that opens in Outlook](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab). In the early preview period for the unified manifest in Outlook Add-ins, it isn't possible to combine an Outlook Add-in and a personal tab in the same manifest and install them as a unit. We're working on this, but in the meantime, you must create separate apps for the add-in and the personal tab. They can both use files on the same domain.
+> Instead of module extensions, create [personal tab apps that open in Outlook](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab) to provide a more modern and convenient solution. With personal tab apps, your users will have access to business critical data and productivity tools not just in Outlook, but across Microsoft 365 applications, including Microsoft Teams, and various platforms.
 
-> [!NOTE]
-> Module extensions are only supported by Outlook 2016 or later on Windows.  
+## Supported clients and manifests
+
+To create and run module extension add-ins, you must:
+
+- Develop the add-in using an XML manifest. The [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md) isn't supported.
+- Run the add-in in Outlook 2016 or later on Windows.
 
 ## Open a module extension
 
-To open a module extension, users click on the module's name or icon in the Outlook navigation bar. If the user has compact navigation selected, the navigation bar has an icon that shows an extension is loaded.
+To open a module extension, navigate to the Outlook navigation bar, select **More Apps**, then choose the module extension add-in.
 
-![Shows the compact navigation bar when a module extension is loaded in Outlook.](../images/outlook-module-navigationbar-compact.png)
+![Available modules and module extension add-ins in the More Apps flyout.](../images/outlook-updated-navigation-bar.png)
 
-If the user is not using compact navigation, the navigation bar has two looks. With one extension loaded, it shows the name of the add-in.
+> [!TIP]
+> In older versions of Outlook on Windows, the navigation bar appears at the bottom of the window. Access to a module extension varies depending on the layout of the navigation bar and the number of available module extensions.
+>
+> - If the user has compact navigation selected, the navigation bar has an icon that shows an extension is loaded.
+>
+>   ![Icons of the modules and add-ins displayed in a compact navigation bar.](../images/outlook-module-navigationbar-compact.png)
+> - If the user isn't using compact navigation, the navigation bar will display the name of the add-in.
+>
+>   ![The names of the modules and add-ins shown in an expanded navigation bar.](../images/outlook-module-navigationbar-one.png)
+> - If more than one add-in is loaded, the **Add-ins** options is displayed in the navigation bar. Select **Add-ins**, then choose the add-in you want to use.
+>
+>   ![The Add-ins option displayed in the navigation bar if more than one add-in is loaded.](../images/outlook-module-navigationbar-more.png)
 
-![Shows the expanded navigation bar when one module extension is loaded in Outlook.](../images/outlook-module-navigationbar-one.png)
+## Configure a module extension
 
-When more than one add-in is loaded, it shows the word **Add-ins**. Clicking either will open the extension's user interface.
+When you select a module extension add-in, Outlook replaces the built-in module with your custom module so that you can interact with the add-in. You can use some of the features of the [Outlook JavaScript API](/javascript/api/outlook) in your add-in. APIs that logically assume a specific Outlook item, such as a message or appointment, don't work in module extensions. The module can also include function commands in the Outlook ribbon that interact with the add-in's page. To facilitate this, your function commands must call the [Office.onReady or Office.initialize method](../develop/initialize-add-in.md) and the [Event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) method.
 
-![Shows the expanded navigation bar when more than on module extension is loaded in Outlook.](../images/outlook-module-navigationbar-more.png)
+To test and learn how to configure a module extension, see the [Office Add-ins module extension sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-compute-billable-hours).
 
-When you click on an extension, Outlook replaces the built-in module with your custom module so that your users can interact with the add-in. You can use some of the features of the Outlook JavaScript API in your add-in. APIs that logically assume a specific Outlook item, such as a message or appointment, don't work in module extensions. The module can also include function commands in the Outlook ribbon that interact with the add-in's page. To facilitate this, your function commands call the [Office.onReady or Office.initialize method](../develop/initialize-add-in.md) and the [Event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) method. To walk through how a module extension Outlook add-in is configured, see the [Outlook module extensions billable hours sample](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension).
-
-The following screenshot shows an add-in that is integrated in the Outlook navigation bar and has ribbon commands that will update the page of the add-in.
-
-![Shows the user interface of a module extension.](../images/outlook-module-extension.png)
+![The user interface of a sample module extension.](../images/outlook-module-extension.png)
 
 ## Example
 
 The following is a section of a manifest file that defines a module extension.
 
 ```xml
-<!-- Add Outlook module extension point -->
+
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides"
                   xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1"
                     xsi:type="VersionOverridesV1_1">
-
-    <!-- Begin override of existing elements -->
-    <Description resid="residVersionOverrideDesc" />
-
     <Requirements>
       <bt:Sets DefaultMinVersion="1.3">
-        <bt:Set Name="Mailbox" />
+        <bt:Set Name="Mailbox"/>
       </bt:Sets>
     </Requirements>
-    <!-- End override of existing elements -->
-
     <Hosts>
       <Host xsi:type="MailHost">
         <DesktopFormFactor>
-          <!-- Set the URL of the file that contains the
-                JavaScript function that controls the extension -->
-          <FunctionFile resid="residFunctionFileUrl" />
-
-          <!--New Extension Point - Module for a ModuleApp -->
+          <!-- Sets the URL of the JavaScript file that contains the code to
+               run the operations of a module extension add-in. -->
+          <FunctionFile resid="residFunctionFileUrl"/>
+          <!--Configures the add-in as a module extension. -->
           <ExtensionPoint xsi:type="Module">
-            <SourceLocation resid="residExtensionPointUrl" />
-            <Label resid="residExtensionPointLabel" />
-
+            <SourceLocation resid="residExtensionPointUrl"/>
+            <Label resid="residExtensionPointLabel"/>
             <CommandSurface>
               <CustomTab id="idTab">
                 <Group id="idGroup">
-                  <Label resid="residGroupLabel" />
-
+                  <Label resid="residGroupLabel"/>
+                  <!-- Adds the module extension to the Outlook navigation bar. -->
                   <Control xsi:type="Button" id="group.changeToAssociate">
-                    <Label resid="residChangeToAssociateLabel" />
+                    <Label resid="residChangeToAssociateLabel"/>
                     <Supertip>
-                      <Title resid="residChangeToAssociateLabel" />
-                      <Description resid="residChangeToAssociateDesc" />
+                      <Title resid="residChangeToAssociateLabel"/>
+                      <Description resid="residChangeToAssociateDesc"/>
                     </Supertip>
                     <Icon>
-                      <bt:Image size="16" resid="residAssociateIcon16" />
-                      <bt:Image size="32" resid="residAssociateIcon32" />
-                      <bt:Image size="80" resid="residAssociateIcon80" />
+                      <bt:Image size="16" resid="residAssociateIcon16"/>
+                      <bt:Image size="32" resid="residAssociateIcon32"/>
+                      <bt:Image size="80" resid="residAssociateIcon80"/>
                     </Icon>
                     <Action xsi:type="ExecuteFunction">
                       <FunctionName>changeToAssociateRate</FunctionName>
                     </Action>
                   </Control>
-                  
-              </Group>
-                <Label resid="residCustomTabLabel" />
+                </Group>
+                <Label resid="residCustomTabLabel"/>
               </CustomTab>
             </CommandSurface>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
     </Hosts>
-
     <Resources>
       <bt:Images>
-        <bt:Image id="residAddinIcon16" 
-                  DefaultValue="https://localhost:8080/Executive-16.png" />
-        <bt:Image id="residAddinIcon32" 
-                  DefaultValue="https://localhost:8080/Executive-32.png" />
-        <bt:Image id="residAddinIcon80" 
-                  DefaultValue="https://localhost:8080/Executive-80.png" />
-      
-        <bt:Image id="residAssociateIcon16" 
-                  DefaultValue="https://localhost:8080/Associate-16.png" />
-        <bt:Image id="residAssociateIcon32" 
-                  DefaultValue="https://localhost:8080/Associate-32.png" />
-        <bt:Image id="residAssociateIcon80" 
-                  DefaultValue="https://localhost:8080/Associate-80.png" />
+        <bt:Image id="residAssociateIcon16"
+                  DefaultValue="https://localhost:3000/assets/associate-16.png"/>
+        <bt:Image id="residAssociateIcon32"
+                  DefaultValue="https://localhost:3000/assets/associate-32.png"/>
+        <bt:Image id="residAssociateIcon80"
+                  DefaultValue="https://localhost:3000/assets/associate-80.png"/>
       </bt:Images>
-
       <bt:Urls>
-        <bt:Url id="residFunctionFileUrl" 
-                DefaultValue="https://localhost:8080/" />
-        <bt:Url id="residExtensionPointUrl" 
-                DefaultValue="https://localhost:8080/" />
+        <bt:Url id="residFunctionFileUrl"
+                DefaultValue="https://localhost:3000/module.html"/>
+        <bt:Url id="residExtensionPointUrl"
+                DefaultValue="https://localhost:3000/module.html"/>
       </bt:Urls>
-
-      <!--Short strings must be less than 30 characters long -->
       <bt:ShortStrings>
-        <bt:String id="residExtensionPointLabel" 
-                    DefaultValue="Billable Hours" />
-        <bt:String id="residGroupLabel" 
-                    DefaultValue="Change billing rate" />
-        <bt:String id="residCustomTabLabel" 
-                    DefaultValue="Billable hours" />
-
-        <bt:String id="residChangeToAssociateLabel" 
-                    DefaultValue="Associate" />
+        <bt:String id="residExtensionPointLabel"
+                    DefaultValue="Billable Hours"/>
+        <bt:String id="residGroupLabel"
+                    DefaultValue="Change billing rate"/>
+        <bt:String id="residCustomTabLabel"
+                    DefaultValue="Billable hours"/>
+        <bt:String id="residChangeToAssociateLabel"
+                    DefaultValue="Associate Rate"/>
       </bt:ShortStrings>
-
       <bt:LongStrings>
-        <bt:String id="residVersionOverrideDesc" 
-                    DefaultValue="Version override description" />
-
-        <bt:String id="residChangeToAssociateDesc" 
-                    DefaultValue="Change to the associate billing rate: $127/hr" />
+        <bt:String id="residChangeToAssociateDesc"
+                    DefaultValue="Change to the associate billing rate: $127/hr"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
@@ -151,4 +137,4 @@ The following is a section of a manifest file that defines a module extension.
 
 - [Office add-in manifests](../develop/add-in-manifests.md)
 - [Add-in commands](../design/add-in-commands.md)
-- [Outlook module extensions Billable hours sample](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension)
+- [Office Add-ins sample: Compute billable hours with a module extension add-in in Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-compute-billable-hours)
