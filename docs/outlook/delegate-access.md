@@ -79,11 +79,11 @@ A shared mailbox allows a group of users to easily monitor and send messages and
 When a shared mailbox is opened in the same panel as a user's primary mailbox, the type of add-ins that are accessible from the shared mailbox differs between compose and read modes.
 
 - In compose mode, all add-ins deployed by an organization's administrator are available for use from the shared mailbox.
-- In read mode, only add-ins that have the [SupportsSharedFiles manifest element](#configure-the-manifest) configured to `true` are available for use from the shared mailbox.
+- In read mode, only add-ins configured in the manifest to support shared files are available for use from the shared mailbox. For instructions on how to do this for either the XML manifest or the unified manifest, see the [Configure the manifest](#configure-the-manifest) section.
 
 When a shared mailbox is opened in a separate browser tab or window, only add-ins that meet the following criteria are available for use from the shared mailbox.
 
-- The add-in has the [SupportsSharedFiles manifest element](#configure-the-manifest) configured to `true`.
+- The add-in configured in the manifest to support shared files. For instructions on how to do this for either the XML manifest or the unified manifest, see the [Configure the manifest](#configure-the-manifest) section.
 - The add-in is deployed to both the shared mailbox and the mailbox of the user who has access to the shared mailbox by an organization's administrator.
 - The add-in must be deployed using the Fixed or Optional Centralized Deployment method. For more information on the deployment methods, see [Centralized Deployment FAQ](/microsoft-365/admin/manage/centralized-deployment-faq).
 
