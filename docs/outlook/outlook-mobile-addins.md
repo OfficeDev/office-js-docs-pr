@@ -26,29 +26,30 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
 - The small size and quick interactions make designing for mobile a challenge. To ensure quality experiences for customers, any add-in declaring mobile support must meet certain validation criteria to be approved in AppSource.
   - The add-in **MUST** adhere to the [UI guidelines](outlook-addin-design.md).
   - The scenario for the add-in **MUST** [make sense on mobile](#what-makes-a-good-scenario-for-outlook-mobile-add-ins).
+  - You'll need to agree to our developer addendum for add-ins on iOS, and you must submit your Apple Developer ID for verification.
 
-- In general, only Message Read mode is supported at this time. This has implications for how you configure the manifest.
+- In general, only Message Read mode is supported. This has implications for how you configure the manifest.
   - **Unified manifest for Microsoft 365**: "mailRead" is the only item you should declare in the "extensions.ribbons.contexts" array.
   - **XML manifest**: `MobileMessageReadCommandSurface` is the only [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) you should declare in the mobile section of your manifest. 
   
   However, there are some exceptions.
   1. Appointment Organizer mode is supported for online meeting provider integrated add-ins.
-    - **Unified manifest for Microsoft 365**: "onlineMeetingDetailsOrganizer" is permitted in the "extensions.ribbons.contexts" array.
-    - **XML manifest**: The [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) is permitted. 
+     - **Unified manifest for Microsoft 365**: "onlineMeetingDetailsOrganizer" is permitted in the "extensions.ribbons.contexts" array.
+     - **XML manifest**: The [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) is permitted. 
   
-    For more information on this scenario, see [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md).
+     For more information on this scenario, see [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md).
 
   1. Appointment Attendee mode is supported for integrated add-ins created by providers of note-taking and customer relationship management (CRM) applications. 
-    - **Unified manifest for Microsoft 365**: "logEventMeetingDetailsAttendee" is permitted in the "extensions.ribbons.contexts" array.
-    - **XML manifest**: The [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) is permitted. 
+     - **Unified manifest for Microsoft 365**: "logEventMeetingDetailsAttendee" is permitted in the "extensions.ribbons.contexts" array.
+     - **XML manifest**: The [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) is permitted. 
     
-    For more information on this scenario, see [Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md).
+     For more information on this scenario, see [Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md).
 
   1. Event-based add-ins that activate on the `OnNewMessageCompose` event require an exception.
-    - **Unified manifest for Microsoft 365**: Event-based add-ins aren't treated as a context in the unified manifest, so there is no exception for configuring the "extensions.ribbons.contexts" array. But note that event-based add-in's do required an "extensions.autoRunEvents" property in the manifest. 
-    - **XML manifest**: The [LaunchEvent extension point](/javascript/api/manifest/extensionpoint#launchevent) *must be declared*. 
+     - **Unified manifest for Microsoft 365**: Event-based add-ins aren't treated as a context in the unified manifest, so there is no exception for configuring the "extensions.ribbons.contexts" array. But note that event-based add-in's do required an "extensions.autoRunEvents" property in the manifest. 
+     - **XML manifest**: The [LaunchEvent extension point](/javascript/api/manifest/extensionpoint#launchevent) *must be declared*. 
   
-    For more information, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
+     For more information, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 - The [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) API isn't supported on mobile since the mobile app uses REST APIs to communicate with the server. If your app backend needs to connect to the Exchange server, you can use the callback token to make REST API calls. For details, see [Use the Outlook REST APIs from an Outlook add-in](use-rest-api.md).
 
@@ -57,9 +58,6 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
   - **XML manifest**: Include a **\<MobileFormFactor\>**, and include the correct types of [controls](/javascript/api/manifest/control) and [icon sizes](/javascript/api/manifest/icon).
   
   To learn more, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
-
-
-- Finally, when you submit an add-in that is configured to support mobile in the manifest, you'll need to agree to our developer addendum for add-ins on iOS, and you must submit your Apple Developer ID for verification.
 
 ## What makes a good scenario for Outlook mobile add-ins?
 
