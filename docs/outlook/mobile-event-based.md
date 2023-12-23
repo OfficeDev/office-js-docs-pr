@@ -36,11 +36,11 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 1. In the "extensions.ribbons.contexts" array, add `mailRead` as an item. When you are finished, the array should look like the following.
 
-```json
-"contexts": [
-    "mailRead"
-],
-```
+    ```json
+    "contexts": [
+        "mailRead"
+    ],
+    ```
 
 1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you are finished, the array should look like the following.
 
