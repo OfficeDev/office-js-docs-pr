@@ -24,7 +24,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
     ]
     ```
 
-1. If your add-in uses Appointment Attendee mode such as an add-ins that integrates a  providers of note-taking or customer relationship management (CRM) applications, add  "logEventMeetingDetailsAttendee" to the "extensions.ribbons.contexts" array. The following is an example.
+1. If your add-in uses Appointment Attendee mode such as an add-in that integrates a  provider of a note-taking or customer relationship management (CRM) application, add  "logEventMeetingDetailsAttendee" to the "extensions.ribbons.contexts" array. The following is an example.
 
     ```json
     "contexts": [
@@ -48,7 +48,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
    - Create an object in the "controls" array to represent a button and configure it as follows.
       - Set appropriate "id" and "label" values.
       - Set "buttonType" to "MobileButton".
-      - Assign a function to the "actionId" property. This should match the "actionId" of and object in the "extensions.runtimes.actions" array.
+      - Assign a function to the "actionId" property. This should match the "id" of and object in the "extensions.runtimes.actions" array.
       - Be sure you have all nine required icons. 
   
    The following is an example.

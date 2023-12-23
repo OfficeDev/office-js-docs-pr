@@ -1,7 +1,7 @@
 ---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 12/12/2023
+ms.date: 01/22/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -30,8 +30,65 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-> [!NOTE]
-> The [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md) isn't currently supported on mobile devices.
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+1. Configure the "extensions.runtimes" property just as you would for setting up a function command. For details, see [Configure the runtime for the function command](../develop/create-addin-commands-unified-manifest.md#configure-the-runtime-for-the-function-command).
+
+1. In the "extensions.ribbons.contexts" array, add `mailRead` as an item. When you are finished, the array should look like the following.
+
+```json
+"contexts": [
+    "mailRead"
+],
+```
+
+1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you are finished, the array should look like the following.
+
+    ```json
+    "formFactors": [
+        "mobile",
+        <!-- Typically there will be other form factors listed. -->
+    ]
+    ```
+
+1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+
+    ```json
+    "autoRunEvents": [
+    
+    ]
+    ```
+
+1. Add an object like the following to the "autoRunEvents" array. Note the following about this code:
+
+   - The "events" property maps handlers to events. 
+   - The "events.type" must be one of the types listed at [Supported events](autolaunch.md#supported-events).
+   - The handler "events.actionId" must match the "id" of an object in the "actions" array that you created in the first step.
+   - You can have more than one object in the "events" array.
+
+    ```json
+      {
+          "requirements": {
+              "capabilities": [
+                  {
+                      "name": "Mailbox",
+                      "minVersion": "1.10"
+                  }
+              ],
+              "scopes": [
+                  "mail"
+              ]
+          },
+          "events": [
+              {
+                  "type": "newMessageComposeCreated",
+                  "actionId": "onNewMessageComposeHandler"
+              },
+          ]
+      }
+    ```
+
+# [XML manifest](#tab/xmlmanifest)
 
 To enable an event-based add-in on Outlook mobile, you must configure the following elements in the `VersionOverridesV1_1` node of the manifest.
 
@@ -142,6 +199,8 @@ To enable an event-based add-in on Outlook mobile, you must configure the follow
     ```
 
 1. Save your changes.
+
+---
 
 > [!TIP]
 > To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
