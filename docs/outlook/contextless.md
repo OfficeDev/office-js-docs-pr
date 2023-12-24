@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in without the Reading Pane enabled or a message selected
 description: Learn how to activate your Outlook add-in without enabling the Reading Pane or first selecting a message.
-ms.date: 10/17/2023
+ms.date: 01/22/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,14 +17,61 @@ With a simple manifest configuration, you can create Outlook add-ins for the Mes
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) to create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+- To create an add-in project that uses the unified manifest for Microsoft 365, complete the [Outlook quick start for the unified manifest](../quickstarts/outlook-quickstart-json-manifest.md).
+- To create an add-in project that uses the XML manifest with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator).
 
 To turn on this feature in a preexisting add-in project, see [Configure the manifest](#configure-the-manifest).
 
 ## Configure the manifest
 
-> [!NOTE]
-> This feature isn't currently supported in the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md), but the team is working on making this available.
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+1. In your preferred code editor, open the Outlook quick start project that you created in the quick start [Outlook quick start for the unified manifest](../quickstarts/outlook-quickstart-json-manifest.md).
+
+1. Open the manifest.json file located at the root of the project.
+
+1. In the first object in the "extensions.runtimes" array, do the following:
+
+    - Change the "requirements.capabilities.minVersion" to "1.13".
+    - Add a "supportsNoItemContext" property to the object in the "actions" array and set its value to "true".
+
+    When you are done, it should look like the following.
+
+    ```json
+    "runtimes": [
+        {
+            "requirements": {
+                "capabilities": [
+                    {
+                        "name": "Mailbox",
+                        "minVersion": "1.13"
+                    }
+                ]
+            },
+            "id": "TaskPaneRuntime",
+            "type": "general",
+            "code": {
+                "page": "https://localhost:3000/taskpane.html"
+            },
+            "lifetime": "short",
+            "actions": [
+                {
+                    "id": "TaskPaneRuntimeShow",
+                    "type": "openPage",
+                    "pinnable": false,
+                    "view": "dashboard",
+                    "supportsNoItemContext": true
+                }
+            ]
+        }
+    ]
+    ```
+
+1. Delete the second object in the "extensions.runtimes" array, whose "id" is "CommandsRuntime".
+
+1. The "extensions.ribbons.tabs.groups.controls" array has two objects. Delete the second one, whose "id" is "ActionButton".
+
+# [XML Manifest](#tab/xmlmanifest)
 
 To activate your add-in with the Reading Pane turned off or without a message selected, you must add the [SupportsNoItemContext](/javascript/api/manifest/action#supportsnoitemcontext) child element to the **\<Action\>** element and set its value to `true`. As this feature can only be implemented with a task pane in Message Read mode, the following elements must also be configured.
 
@@ -99,6 +146,8 @@ To activate your add-in with the Reading Pane turned off or without a message se
     ```
 
 1. Save your changes.
+
+---
 
 ## Configure the task pane
 
