@@ -32,8 +32,10 @@ To turn on this feature in a preexisting add-in project, see [Configure the mani
 
 1. In the first object in the "extensions.runtimes" array, do the following:
 
-    - Change the "requirements.capabilities.minVersion" to "1.13".
-    - Add a "supportsNoItemContext" property to the object in the "actions" array and set its value to "true".
+    1. Change the "requirements.capabilities.minVersion" to "1.13".
+    1. Add a "supportsNoItemContext" property to the object in the "actions" array and set its value to `true`.
+    1. Add a "multiselect" property to the same object and set it to `true`.
+    1. Change the "pinnable" property in the same object to `true`.
 
     When you are done, it should look like the following.
 
@@ -58,9 +60,10 @@ To turn on this feature in a preexisting add-in project, see [Configure the mani
                 {
                     "id": "TaskPaneRuntimeShow",
                     "type": "openPage",
-                    "pinnable": false,
                     "view": "dashboard",
-                    "supportsNoItemContext": true
+                    "pinnable": true,
+                    "supportsNoItemContext": true,
+                    "multiselect": true
                 }
             ]
         }
