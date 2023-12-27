@@ -660,8 +660,6 @@ items:
     displayName: Outlook, preview
   - name: Outlook add-in tutorial
     href: tutorials/outlook-tutorial.md
-  - name: Outlook add-in with unified manifest tutorial
-    href: tutorials/outlook-tutorial-json-manifest.md
     displayName: Outlook
   - name: Develop Outlook add-ins for the new Outlook on Windows
     href: outlook/one-outlook.md
