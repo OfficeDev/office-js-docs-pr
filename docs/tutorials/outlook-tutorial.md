@@ -96,25 +96,25 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-    - **Choose a project type** - `Outlook Add-in with unified Microsoft 365 Manifest`
+- **Choose a project type** - `Outlook Add-in with unified Microsoft 365 Manifest`
 
-    - **Choose a script type** - `JavaScript`
+- **Choose a script type** - `JavaScript`
 
-    - **What do you want to name your add-in?** - `Git the gist`
+- **What do you want to name your add-in?** - `Git the gist`
 
-     ![The prompts and answers for the Yeoman generator with unified manifest and JavaScript options chosen.](../images/yo-office-outlook-json-manifest-javascript.png)
+  ![The prompts and answers for the Yeoman generator with unified manifest and JavaScript options chosen.](../images/yo-office-outlook-json-manifest-javascript.png)
 
 # [XML Manifest](#tab/xmlmanifest)
 
-    - **Choose a project type** - `Office Add-in Task Pane project`
+- **Choose a project type** - `Office Add-in Task Pane project`
 
-    - **Choose a script type** - `JavaScript`
+- **Choose a script type** - `JavaScript`
 
-    - **What do you want to name your add-in?** - `Git the gist`
+- **What do you want to name your add-in?** - `Git the gist`
 
-    - **Which Office client application would you like to support?** - `Outlook`
+- **Which Office client application would you like to support?** - `Outlook`
 
-    ![The prompts and answers for the Yeoman generator in a command line interface.](../images/yeoman-prompts-2.png)
+![The prompts and answers for the Yeoman generator in a command line interface.](../images/yeoman-prompts-2.png)
 
 ---
 
