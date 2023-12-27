@@ -182,24 +182,24 @@ Take the following steps:
 
 1. In the "extensions.runtimes" array, there are two runtime objects. For the second one, with the "id" of "CommandsRuntime", change the "actions.id" to "insertDefaultGist". This is the name of a function that you create in a later step. When you are done the runtime object should look like the following:
 
-```json
-{
-    "id": "CommandsRuntime",
-    "type": "general",
-    "code": {
-        "page": "https://localhost:3000/commands.html",
-        "script": "https://localhost:3000/commands.js"
-    },
-    "lifetime": "short",
-    "actions": [
-        {
-            "id": "insertDefaultGist",
-            "type": "executeFunction",
-            "displayName": "action"
-        }
-    ]
-}
-```
+    ```json
+    {
+        "id": "CommandsRuntime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html",
+            "script": "https://localhost:3000/commands.js"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "insertDefaultGist",
+                "type": "executeFunction",
+                "displayName": "action"
+            }
+        ]
+    }
+    ```
 
 1. Change the item in the "extensions.ribbons.contexts" array to "mailCompose". This means the the buttons will appear only in a new message or reply window.
 
@@ -229,92 +229,92 @@ Take the following steps:
     1. Change the "supertip.description" to "Inserts the content of the gist you mark as default into the current message."
     1. Change the "actionId" to "insertDefaultGist". This matches the "action.id" of the "CommandsRuntime" that you set in an earlier step.
 
-When you are done, the "ribbons" property should look like the following:
+    When you are done, the "ribbons" property should look like the following:
 
-```json
-"ribbons": [
-    {
-        "contexts": [
-            "mailCompose"
-        ],
-        "tabs": [
-            {
-                "builtInTabId": "TabDefault",
-                "groups": [
-                    {
-                        "id": "msgComposeCmdGroup",
-                        "label": "Git the gist",
-                        "icons": [
-                            {
-                                "size": 16,
-                                "file": "https://localhost:3000/assets/icon-16.png"
-                            },
-                            {
-                                "size": 32,
-                                "file": "https://localhost:3000/assets/icon-32.png"
-                            },
-                            {
-                                "size": 80,
-                                "file": "https://localhost:3000/assets/icon-80.png"
-                            }
-                        ],
-                        "controls": [
-                            {
-                                "id": "msgComposeInsertGist",
-                                "type": "button",
-                                "label": "Insert gist",
-                                "icons": [
-                                    {
-                                        "size": 16,
-                                        "file": "https://localhost:3000/assets/icon-16.png"
-                                    },
-                                    {
-                                        "size": 32,
-                                        "file": "https://localhost:3000/assets/icon-32.png"
-                                    },
-                                    {
-                                        "size": 80,
-                                        "file": "https://localhost:3000/assets/icon-80.png"
-                                    }
-                                ],
-                                "supertip": {
-                                    "title": "Insert gist",
-                                    "description": "Displays a list of your gists and allows you to insert their contents into the current message."
+    ```json
+    "ribbons": [
+        {
+            "contexts": [
+                "mailCompose"
+            ],
+            "tabs": [
+                {
+                    "builtInTabId": "TabDefault",
+                    "groups": [
+                        {
+                            "id": "msgComposeCmdGroup",
+                            "label": "Git the gist",
+                            "icons": [
+                                {
+                                    "size": 16,
+                                    "file": "https://localhost:3000/assets/icon-16.png"
                                 },
-                                "actionId": "TaskPaneRuntimeShow"
-                            },
-                            {
-                                "id": "msgComposeInsertDefaultGist",
-                                "type": "button",
-                                "label": "Insert default gist",
-                                "icons": [
-                                    {
-                                        "size": 16,
-                                        "file": "https://localhost:3000/assets/icon-16.png"
-                                    },
-                                    {
-                                        "size": 32,
-                                        "file": "https://localhost:3000/assets/icon-32.png"
-                                    },
-                                    {
-                                        "size": 80,
-                                        "file": "https://localhost:3000/assets/icon-80.png"
-                                    }
-                                ],
-                                "supertip": {
-                                    "title": "Insert default gist",
-                                    "description": "Inserts the content of the gist you mark as default into the current message."
+                                {
+                                    "size": 32,
+                                    "file": "https://localhost:3000/assets/icon-32.png"
                                 },
-                                "actionId": "insertDefaultGist"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
-]
-```
+                                {
+                                    "size": 80,
+                                    "file": "https://localhost:3000/assets/icon-80.png"
+                                }
+                            ],
+                            "controls": [
+                                {
+                                    "id": "msgComposeInsertGist",
+                                    "type": "button",
+                                    "label": "Insert gist",
+                                    "icons": [
+                                        {
+                                            "size": 16,
+                                            "file": "https://localhost:3000/assets/icon-16.png"
+                                        },
+                                        {
+                                            "size": 32,
+                                            "file": "https://localhost:3000/assets/icon-32.png"
+                                        },
+                                        {
+                                            "size": 80,
+                                            "file": "https://localhost:3000/assets/icon-80.png"
+                                        }
+                                    ],
+                                    "supertip": {
+                                        "title": "Insert gist",
+                                        "description": "Displays a list of your gists and allows you to insert their contents into the current message."
+                                    },
+                                    "actionId": "TaskPaneRuntimeShow"
+                                },
+                                {
+                                    "id": "msgComposeInsertDefaultGist",
+                                    "type": "button",
+                                    "label": "Insert default gist",
+                                    "icons": [
+                                        {
+                                            "size": 16,
+                                            "file": "https://localhost:3000/assets/icon-16.png"
+                                        },
+                                        {
+                                            "size": 32,
+                                            "file": "https://localhost:3000/assets/icon-32.png"
+                                        },
+                                        {
+                                            "size": 80,
+                                            "file": "https://localhost:3000/assets/icon-80.png"
+                                        }
+                                    ],
+                                    "supertip": {
+                                        "title": "Insert default gist",
+                                        "description": "Inserts the content of the gist you mark as default into the current message."
+                                    },
+                                    "actionId": "insertDefaultGist"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+    ```
 
 1. Save your changes to the manifest.
 
