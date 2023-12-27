@@ -142,6 +142,8 @@ Make the following updates in the **manifest.json** file to specify some basic i
     },
     ```
 
+2. Save the file.
+
 #### Test the generated add-in
 
 Before going any further, let's test the basic add-in that the generator created to confirm that the project is set up correctly.
