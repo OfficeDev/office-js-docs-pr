@@ -17,7 +17,10 @@ In this article, you'll learn how to set up your Outlook add-in to enable users 
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.
+Complete the Outlook quick start for the manifest your add-in will use. Both create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+
+- **Unified manifest for Microsoft 365**: [Outlook quick start with the unified manifest](../quickstarts/outlook-quickstart-json-manifest.md)
+- **XML manifest**: [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)
 
 ## Configure the manifest
 

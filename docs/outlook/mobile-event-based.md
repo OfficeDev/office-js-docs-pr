@@ -26,7 +26,10 @@ The add-in you develop in this walkthrough is supported in Outlook on Android wi
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Complete the Outlook quick start for the manifest your add-in will use. Both create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+
+- **Unified manifest for Microsoft 365**: [Outlook quick start with the unified manifest](../quickstarts/outlook-quickstart-json-manifest.md)
+- **XML manifest**: [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)
 
 ## Configure the manifest
 
