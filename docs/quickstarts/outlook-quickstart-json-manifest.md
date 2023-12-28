@@ -1,21 +1,19 @@
 ---
-title: Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)
+title: Build an Outlook add-in with the unified manifest for Microsoft 365
 description: Learn how to build a simple Outlook task pane add-in with the unified manifest for Microsoft 365.
-ms.date: 12/11/2023
+ms.date: 01/26/2024
 ms.service: outlook
 ms.localizationpriority: high
 ---
 
-# Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)
+# Build an Outlook add-in with the unified manifest for Microsoft 365
 
-There are two tools that you can use to create an Outlook Add-in project that uses the unified manifest for Microsoft 365. This article describes how to do it with the Yeoman generator for Office (also called "Yo Office"). Alternatively, you can create an Outlook add-in project with the Teams Toolkit as described at [Create Office Add-in projects with Teams Toolkit (preview)](../develop/teams-toolkit-overview.md).
+There are two tools that you can use to create an Outlook Add-in project that uses the unified manifest for Microsoft 365. This article describes how to do it with the Yeoman generator for Office (also called "Yo Office"). Alternatively, you can create an Outlook add-in project with the Teams Toolkit as described at [Create Office Add-in projects with Teams Toolkit](../develop/teams-toolkit-overview.md).
 
-In this article, you'll walk through the process of building an Outlook task pane add-in that displays a property of a selected message, triggers a notification on the reading pane, and inserts text into a message on the compose pane. This add-in will use a preview version of the unified, JSON-formatted manifest that Teams extensions, like custom tabs and messaging extensions, use. For more information about this manifest, see [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
+In this article, you'll walk through the process of building an Outlook task pane add-in that displays a property of a selected message, triggers a notification on the reading pane, and inserts text into a message on the compose pane. This add-in will use the unified manifest for Microsoft 365. For more information about this manifest, see [Unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
 
 > [!NOTE]
-> The new manifest is available for preview and is supported only on Outlook for Windows. It is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The preview manifest should not be used in production add-ins.
-
-The preview is only supported in Office downloaded from a Microsoft 365 subscription and installed on Windows.
+> The unified manifest is supported only on Outlook for Windows. We are working to support it in other platforms and other Office applications.
 
 > [!TIP]
 > If you want to build an Outlook add-in using the XML manifest, see [Build your first Outlook add-in](outlook-quickstart.md).
@@ -26,7 +24,7 @@ You can create an Office Add-in with the unified manifest by using the [Yeoman g
 
 ### Prerequisites
 
-- [.NET runtime](https://dotnet.microsoft.com/download/dotnet/6.0/runtime) for Windows. One of the tools used in the preview runs on .NET.
+- [.NET runtime](https://dotnet.microsoft.com/download/dotnet/6.0/runtime) for Windows. One of the tools used for the unified manifest runs on .NET.
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
@@ -38,14 +36,13 @@ You can create an Office Add-in with the unified manifest by using the [Yeoman g
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - **Choose a project type** - `Outlook Add-in with unified Microsoft 365 Manifest (preview)`
+    - **Choose a project type** - `Outlook Add-in with unified Microsoft 365 Manifest`
+
+    - **Choose a script type** - `TypeScript`
 
     - **What do you want to name your add-in?** - `Add-in with Unified Manifest`
 
-     ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface with unified manifest option chosen.](../images/yo-office-outlook-json-manifest.png)
-
-    > [!NOTE]
-    > For this preview, the add-in name cannot be more than 30 characters.
+     ![The prompts and answers for the Yeoman generator with unified manifest and TypeScript options chosen.](../images/yo-office-outlook-json-manifest-typescript.png)
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
@@ -259,5 +256,5 @@ Add a custom button to the ribbon that inserts text into a message body.
 
 ## See also
 
-- [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md)
+- [Unified manifest for Microsoft 365](../develop/unified-manifest-overview.md)
 - [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
