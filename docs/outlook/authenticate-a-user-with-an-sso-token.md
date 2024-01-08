@@ -1,7 +1,7 @@
 ---
 title: Authenticate a user with a single-sign-on token
 description: Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.
-ms.date: 12/21/2023
+ms.date: 01/08/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -42,9 +42,6 @@ The next step to enable SSO in the add-in is to add some information to the mani
         "resource": "api://addin.contoso.com/a661fed9-f33d-4e95-b6cf-624a34a2f51d"
     },
    ```
-
-  > [!NOTE]
-  > SSO-enabled add-ins that use the unified manifest can be sideloaded, but can't be deployed in any other way at this time.
 
 ## Get the SSO token
 
