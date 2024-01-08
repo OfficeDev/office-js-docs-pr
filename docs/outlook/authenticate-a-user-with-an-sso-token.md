@@ -43,9 +43,6 @@ The next step to enable SSO in the add-in is to add some information to the mani
     },
    ```
 
-  > [!NOTE]
-  > SSO-enabled add-ins that use the unified manifest can be sideloaded, but can't be deployed in any other way at this time.
-
 ## Get the SSO token
 
 The add-in gets an SSO token with client-side script. For more information, see [Add client-side code](../develop/sso-in-office-add-ins.md#add-client-side-code).
