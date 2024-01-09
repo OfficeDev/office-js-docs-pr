@@ -34,7 +34,13 @@ You can create an Office Add-in by using the Yeoman generator for Office Add-ins
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    ![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-outlook-1.png)
+    - **Which manifest would you like to use?** - Choose either `unified manifest for Microsoft 365` or `XML manifest`
+
+    Depending on your choice of manifest, the prompts and answers should look like one of the following.
+
+    ![The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and XML manifest are chosen.](../images/yo-office-outlook-xml-manifest-javascript.png)
+
+    ![The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and unified manifest are chosen.](../images/yo-office-outlook-json-manifest-javascript.png)
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
