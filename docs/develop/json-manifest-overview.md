@@ -105,4 +105,4 @@ For a full sample unified manifest, see [Sample preview unified manifest](unifie
 
 ## Next steps
 
-- [Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
+- [Build an your first Outlook add-in](../quickstarts/outlook-quickstart.md).
