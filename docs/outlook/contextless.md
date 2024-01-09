@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Activate your Outlook add-in without the Reading Pane enabled or a message selected
 
-With a simple manifest configuration, you can create Outlook add-ins for the Message Read surface that activate a task pane without the Reading Pane enabled or a message first selected from the mailbox. This feature is called "no item context." Follow the walkthrough to learn more and unlock additional capabilities for your add-in. For example, you can enable your users to access content from different data sources, such as OneDrive or a customer relationship management (CRM) system, directly from their Outlook client.
+With a simple manifest configuration, you can create Outlook add-ins for the Message Read surface that activate a task pane without the Reading Pane enabled or a message first selected from the mailbox. This feature is called "no item context". Follow the walkthrough to learn more and unlock additional capabilities for your add-in. For example, you can enable your users to access content from different data sources, such as OneDrive or a customer relationship management (CRM) system, directly from their Outlook client.
 
 > [!NOTE]
 > Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
@@ -26,9 +26,9 @@ To turn on this feature in a preexisting add-in project, see [Configure the mani
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-1. In your preferred code editor, open the Outlook quick start project that you created in the quick start [Outlook quick start for the unified manifest](../quickstarts/outlook-quickstart-json-manifest.md).
+1. In your preferred code editor, open the [Outlook quick start](../quickstarts/outlook-quickstart-json-manifest.md) project that you created.
 
-1. Open the manifest.json file located at the root of the project.
+1. Open the **manifest.json** file located at the root of the project.
 
 1. In the first object in the "extensions.runtimes" array, do the following:
 
