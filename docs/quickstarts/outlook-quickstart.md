@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 12/11/2023
+ms.date: 02/9/2024
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -35,6 +35,8 @@ You can create an Office Add-in by using the Yeoman generator for Office Add-ins
     - **Which Office client application would you like to support?** - `Outlook`
 
     - **Which manifest would you like to use?** - Choose either `unified manifest for Microsoft 365` or `XML manifest`
+
+    [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)]
 
     Depending on your choice of manifest, the prompts and answers should look like one of the following.
 
