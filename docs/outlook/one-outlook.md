@@ -1,7 +1,7 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows (preview)
 description: Learn how to develop add-ins that are compatible with the new Outlook on Windows (preview).
-ms.date: 11/09/2023
+ms.date: 01/10/2024
 ms.localizationpriority: medium
 ---
 
@@ -87,6 +87,7 @@ As you test your Outlook web add-in in the new Outlook on Windows, share feedbac
 
 ## See also
 
+- [Overview of the new Outlook for Windows](/deployoffice/outlook/overview-new-outlook)
 - [Blog post: New Outlook for Windows available to all Office Insiders](https://insider.office.com/blog/new-outlook-for-windows-available-to-all-office-insiders)
 - [Blog post: Add-ins in the new Outlook for Windows](https://techcommunity.microsoft.com/t5/outlook-blog/add-ins-in-the-new-outlook-for-windows/ba-p/3954388)
 - [Podcast: Update on development with new Outlook for Windows](https://www.m365devpodcast.com/update-on-development-with-new-outlook-for-windows/)
