@@ -78,6 +78,7 @@ To debug an add-in installed in the new Outlook on Windows desktop client, first
 ```command&nbsp;line
 olk.exe --devtools
 ```
+
 > [!TIP]
 > After running the command, the DevTools window stays open, so that you can debug an add-in's task pane as you open and close it. If you close the DevTools window, you must close your Outlook client first before running `olk.exe --devtools` again.
 
