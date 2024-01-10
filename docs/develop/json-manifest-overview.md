@@ -105,4 +105,4 @@ For a full sample unified manifest, see [Sample preview unified manifest](unifie
 
 ## Next steps
 
-- [Build an your first Outlook add-in](../quickstarts/outlook-quickstart.md).
+- [Build your first Outlook add-in](../quickstarts/outlook-quickstart.md).
