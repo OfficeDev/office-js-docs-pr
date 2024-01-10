@@ -213,7 +213,7 @@ Now that you've verified the base add-in works, you can customize it to add more
 
 - **Insert default gist**: a button that invokes a function
 
-The procedure depends on which manifest you are using.
+The procedure depends on which manifest you're using.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -221,7 +221,7 @@ Take the following steps:
 
 1. Open the **manifest.json** file.
 
-1. In the "extensions.runtimes" array, there are two runtime objects. For the second one, with the "id" of "CommandsRuntime", change the "actions.id" to "insertDefaultGist". This is the name of a function that you create in a later step. When you are done the runtime object should look like the following:
+1. In the "extensions.runtimes" array, there are two runtime objects. For the second one, with the "id" of "CommandsRuntime", change the "actions.id" to "insertDefaultGist". This is the name of a function that you create in a later step. When you're done, the runtime object should look like the following:
 
     ```json
     {
@@ -242,7 +242,7 @@ Take the following steps:
     }
     ```
 
-1. Change the item in the "extensions.ribbons.contexts" array to "mailCompose". This means the the buttons will appear only in a new message or reply window.
+1. Change the item in the "extensions.ribbons.contexts" array to "mailCompose". This means the buttons will appear only in a new message or reply window.
 
     ```json
     "contexts": [
@@ -250,19 +250,19 @@ Take the following steps:
     ],
     ```
 
-1. Change the "extensions.ribbons.tabs.groups" array has a group object in it. Make the following changes to this object:
+1. The "extensions.ribbons.tabs.groups" array has a group object in it. Make the following changes to this object.
 
     1. Change the "id" property to "msgComposeCmdGroup".
     1. Change the "label" property to "Git the gist".
 
-1. That same group object has a "controls" array with two control objects. We need to make changes to the JSON for each of them. In the first one, take these steps:
+1. That same group object has a "controls" array with two control objects. We need to make changes to the JSON for each of them. In the first one, take these steps.
 
     1. Change the "id" to "msgComposeInsertGist".
     1. Change the "label" to "Insert gist".
     1. Change the "supertip.title" to "Insert gist".
     1. Change the "supertip.description" to "Displays a list of your gists and allows you to insert their contents into the current message."
 
-1. In the second control object, take these steps:
+1. In the second control object, take these steps.
 
     1. Change the "id" to "msgComposeInsertDefaultGist".
     1. Change the "label" to "Insert default gist".
@@ -270,7 +270,7 @@ Take the following steps:
     1. Change the "supertip.description" to "Inserts the content of the gist you mark as default into the current message."
     1. Change the "actionId" to "insertDefaultGist". This matches the "action.id" of the "CommandsRuntime" that you set in an earlier step.
 
-    When you are done, the "ribbons" property should look like the following:
+    When you're done, the "ribbons" property should look like the following:
 
     ```json
     "ribbons": [
