@@ -26,12 +26,11 @@ The add-in you develop in this walkthrough is supported in Outlook on Android wi
 
 ## Set up your environment
 
-Complete the Outlook quick start for the manifest your add-in will use. Both create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
-
-- **Unified manifest for Microsoft 365**: [Outlook quick start with the unified manifest](../quickstarts/outlook-quickstart-json-manifest.md)
-- **XML manifest**: [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). 
 
 ## Configure the manifest
+
+The steps for configuring the manifest depend on which type of manifest you selected in the quick start.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -66,7 +65,7 @@ Complete the Outlook quick start for the manifest your add-in will use. Both cre
 
    - The "events" property maps handlers to events. 
    - The "events.type" must be one of the types listed at [Supported events](autolaunch.md#supported-events).
-   - The handler "events.actionId" must match the "id" of an object in the "actions" array that you created in the first step.
+   - The value of the "events.actionId" is the name of a function that you create in [Implement the event handler](#implement-the-event-handler).
    - You can have more than one object in the "events" array.
 
     ```json
@@ -283,7 +282,7 @@ To enable your add-in to complete tasks when the `OnNewMessageCompose` event occ
 
 ## Add a reference to the event-handling JavaScript file
 
-Ensure that the HTML file you specified in the **\<Runtime\>** element of your manifest has a reference to the JavaScript file that contains your event handler.
+Ensure that the **./src/commands/commands.html** file has a reference to the JavaScript file that contains your event handler.
 
 1. Navigate to the **./src/commands** folder, then open **commands.html**.
 1. Immediately before the closing **head** tag (`</head>`), add a script entry for the JavaScript file that contains the event handler.

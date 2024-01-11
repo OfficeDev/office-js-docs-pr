@@ -17,14 +17,11 @@ In this article, you'll learn how to set up your Outlook add-in to enable users 
 
 ## Set up your environment
 
-Complete the Outlook quick start for the manifest your add-in will use. Both create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
-
-- **Unified manifest for Microsoft 365**: [Outlook quick start with the unified manifest](../quickstarts/outlook-quickstart-json-manifest.md)
-- **XML manifest**: [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). 
 
 ## Configure the manifest
 
-To enable users to create online meetings with your add-in, you must configure the manifest. The markup differs depending on the type of manifest. If the add-in uses the [Unified manifest for Microsoft 365](../develop/unified-manifest-overview.md), select the **Unified manifest for Microsoft 365** tab; otherwise select the **XML manifest** tab. 
+The steps for configuring the manifest depend on which type of manifest you selected in the quick start.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -179,7 +176,7 @@ To enable users to create online meetings with your add-in, you must configure t
 ],
 ```
 
-1. In the "extensions.ribbons.tabs" array, find the tab with the "builtInTabId" of "DefaultTab". Add a child "customMobileGroup" property to it (as a peer of the existing "groups" property). When you're finished the "tabs" array should look like the following.
+1. In the "extensions.ribbons.tabs" array, find the tab with the "builtInTabId" of "TabDefault". Add a child "customMobileGroup" property to it (as a peer of the existing "groups" property). When you're finished the "tabs" array should look like the following.
 
 ```json
 "tabs": [
