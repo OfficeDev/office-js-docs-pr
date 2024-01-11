@@ -1,7 +1,7 @@
 ---
 title: Module extension Outlook add-ins
 description: Create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
-ms.date: 12/21/2023
+ms.date: 01/11/2024
 ms.localizationpriority: medium
 ---
 
@@ -42,7 +42,7 @@ To open a module extension, navigate to the Outlook navigation bar, select **Mor
 
 When you select a module extension add-in, Outlook replaces the built-in module with your custom module so that you can interact with the add-in. You can use some of the features of the [Outlook JavaScript API](/javascript/api/outlook) in your add-in. APIs that logically assume a specific Outlook item, such as a message or appointment, don't work in module extensions. The module can also include function commands in the Outlook ribbon that interact with the add-in's page. To facilitate this, your function commands must call the [Office.onReady or Office.initialize method](../develop/initialize-add-in.md) and the [Event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) method.
 
-To test and learn how to configure a module extension, see the [Office Add-ins module extension sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-compute-billable-hours).
+To test and learn how to configure a module extension, see the [Office Add-ins module extension sample](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension).
 
 ![The user interface of a sample module extension.](../images/outlook-module-extension.png)
 
@@ -137,4 +137,4 @@ The following is a section of a manifest file that defines a module extension.
 
 - [Office add-in manifests](../develop/add-in-manifests.md)
 - [Add-in commands](../design/add-in-commands.md)
-- [Office Add-ins sample: Compute billable hours with a module extension add-in in Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-compute-billable-hours)
+- [Office Add-ins sample: Compute billable hours with a module extension add-in in Outlook](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension)
