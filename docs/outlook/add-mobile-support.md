@@ -42,7 +42,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
     ],
     ```
 
-1. In the "extensions.ribbons.tabs" array, find the tab with the "builtInTabId" of "DefaultTab". Add a child "customMobileGroup" property to it (as a peer of the existing "groups" property). Inside this property do the following. 
+1. In the "extensions.ribbons.tabs" array, find the tab with the "builtInTabId" of "TabDefault". Add a child "customMobileGroup" property to it (as a peer of the existing "groups" property). Inside this property do the following. 
 
    - Set appropriate "id" and "label" values.
    - Create an object in the "controls" array to represent a button and configure it as follows.
