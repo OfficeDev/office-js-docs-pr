@@ -37,7 +37,7 @@ Complete the Outlook quick start for the manifest your add-in will use. Both cre
 
 1. Configure the "extensions.runtimes" property just as you would for setting up a function command. For details, see [Configure the runtime for the function command](../develop/create-addin-commands-unified-manifest.md#configure-the-runtime-for-the-function-command).
 
-1. In the "extensions.ribbons.contexts" array, add `mailRead` as an item. When you are finished, the array should look like the following.
+1. In the "extensions.ribbons.contexts" array, add `mailRead` as an item. When you're finished, the array should look like the following.
 
     ```json
     "contexts": [
@@ -45,7 +45,7 @@ Complete the Outlook quick start for the manifest your add-in will use. Both cre
     ],
     ```
 
-1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you are finished, the array should look like the following.
+1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you're finished, the array should look like the following.
 
     ```json
     "formFactors": [

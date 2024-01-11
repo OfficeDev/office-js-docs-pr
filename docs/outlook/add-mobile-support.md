@@ -24,7 +24,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
     ]
     ```
 
-1. If your add-in uses Appointment Attendee mode such as an add-in that integrates a  provider of a note-taking or customer relationship management (CRM) application, add  "logEventMeetingDetailsAttendee" to the "extensions.ribbons.contexts" array. The following is an example.
+1. If your add-in uses Appointment Attendee mode, such as an add-in that integrates a provider of a note-taking or customer relationship management (CRM) application, add "logEventMeetingDetailsAttendee" to the "extensions.ribbons.contexts" array. The following is an example.
 
     ```json
     "contexts": [
@@ -48,7 +48,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
    - Create an object in the "controls" array to represent a button and configure it as follows.
       - Set appropriate "id" and "label" values.
       - Set "buttonType" to "MobileButton".
-      - Assign a function to the "actionId" property. This should match the "id" of and object in the "extensions.runtimes.actions" array.
+      - Assign a function to the "actionId" property. This should match the "id" of the object in the "extensions.runtimes.actions" array.
       - Be sure you have all nine required icons. 
   
    The following is an example.
@@ -58,68 +58,69 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
         {
             "builtInTabId": "TabDefault",
             "groups": [
-              <-- non-mobile group objects omitted -->
+                <-- non-mobile group objects omitted -->
             ],
             "customMobileGroup": {
-              "id": "mobileApptComposeGroup",
-              "label": "Contoso Meeting",
-              "controls": [
-                { 
-                    "id": "mobileInsertMeetingButton",
-                    "label": "Add Meeting",
-                    "buttonType": "MobileButton",
-                    "actionId": "insertContosoMeeting",
-                    "icons": [
-                        {
-                            "scale": 1,
-                            "size": 25,
-                            "url": "https://contoso.com/assets/icon-25.png"
-                        },
-                        {
-                            "scale": 1,
-                            "size": 32,
-                            "url": "https://contoso.com/assets/icon-32.png"
-                        },
-                        {
-                            "scale": 1,
-                            "size": 48,
-                            "url": "https://contoso.com/assets/icon-48.png"
-                        },                                
-                        {
-                            "scale": 2,
-                            "size": 25,
-                            "url": "https://contoso.com/assets/icon-25.png"
-                        },
-                        {
-                            "scale": 2,
-                            "size": 32,
-                            "url": "https://contoso.com/assets/icon-32.png"
-                        },
-                        {
-                            "scale": 2,
-                            "size": 48,
-                            "url": "https://contoso.com/assets/icon-48.png"
-                        },                                
-                        {
-                            "scale": 3,
-                            "size": 25,
-                            "url": "https://contoso.com/assets/icon-25.png"
-                        },
-                        {
-                            "scale": 3,
-                            "size": 32,
-                            "url": "https://contoso.com/assets/icon-32.png"
-                        },
-                        {
-                            "scale": 3,
-                            "size": 48,
-                            "url": "https://contoso.com/assets/icon-48.png"
-                        }
-                    ],
-                }
-              ]
+                "id": "mobileApptComposeGroup",
+                "label": "Contoso Meeting",
+                "controls": [
+                    { 
+                        "id": "mobileInsertMeetingButton",
+                        "label": "Add Meeting",
+                        "buttonType": "MobileButton",
+                        "actionId": "insertContosoMeeting",
+                        "icons": [
+                            {
+                                "scale": 1,
+                                "size": 25,
+                                "url": "https://contoso.com/assets/icon-25.png"
+                            },
+                            {
+                                "scale": 1,
+                                "size": 32,
+                                "url": "https://contoso.com/assets/icon-32.png"
+                            },
+                            {
+                                "scale": 1,
+                                "size": 48,
+                                "url": "https://contoso.com/assets/icon-48.png"
+                            },                                
+                            {
+                                "scale": 2,
+                                "size": 25,
+                                "url": "https://contoso.com/assets/icon-25.png"
+                            },
+                            {
+                                "scale": 2,
+                                "size": 32,
+                                "url": "https://contoso.com/assets/icon-32.png"
+                            },
+                            {
+                                "scale": 2,
+                                "size": 48,
+                                "url": "https://contoso.com/assets/icon-48.png"
+                            },                                
+                            {
+                                "scale": 3,
+                                "size": 25,
+                                "url": "https://contoso.com/assets/icon-25.png"
+                            },
+                            {
+                                "scale": 3,
+                                "size": 32,
+                                "url": "https://contoso.com/assets/icon-32.png"
+                            },
+                            {
+                                "scale": 3,
+                                "size": 48,
+                                "url": "https://contoso.com/assets/icon-48.png"
+                            }
+                        ]
+                    }
+                ]
             }
         }
+    ]    
     ```
 
 # [XML manifest](#tab/xmlmanifest)

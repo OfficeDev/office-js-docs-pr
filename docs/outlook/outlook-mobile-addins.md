@@ -46,7 +46,7 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
      For more information on this scenario, see [Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md).
 
   1. Event-based add-ins that activate on the `OnNewMessageCompose` event require an exception.
-     - **Unified manifest for Microsoft 365**: Event-based add-ins aren't treated as a context in the unified manifest, so there is no exception for configuring the "extensions.ribbons.contexts" array. But note that event-based add-in's do required an "extensions.autoRunEvents" property in the manifest. 
+     - **Unified manifest for Microsoft 365**: Event-based add-ins aren't treated as a context in the unified manifest, so there is no exception for configuring the "extensions.ribbons.contexts" array. But note that event-based add-ins do require an "extensions.autoRunEvents" property in the manifest. 
      - **XML manifest**: The [LaunchEvent extension point](/javascript/api/manifest/extensionpoint#launchevent) *must be declared*. 
   
      For more information, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
