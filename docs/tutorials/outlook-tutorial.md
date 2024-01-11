@@ -94,35 +94,45 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+1. The steps to create the project vary slightly depending on the type of manifest. 
 
-- **Choose a project type** - `Outlook Add-in with unified Microsoft 365 Manifest`
+    [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)] 
 
-- **Choose a script type** - `JavaScript`
+    # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-- **What do you want to name your add-in?** - `Git the gist`
+    - **Choose a project type** - `Office Add-in Task Pane project`
 
-  ![The prompts and answers for the Yeoman generator with unified manifest and JavaScript options chosen.](../images/yo-office-outlook-json-manifest-javascript.png)
+    - **Choose a script type** - `JavaScript`
 
-# [XML Manifest](#tab/xmlmanifest)
+    - **What do you want to name your add-in?** - `Git the gist`
 
-- **Choose a project type** - `Office Add-in Task Pane project`
+    - **Which Office client application would you like to support?** - `Outlook`
 
-- **Choose a script type** - `JavaScript`
+    - **Which manifest would you like to use?** - `unified manifest for Microsoft 365`
 
-- **What do you want to name your add-in?** - `Git the gist`
+      ![The prompts and answers for the Yeoman generator with unified manifest and JavaScript options chosen.](../images/yo-office-outlook-json-manifest-javascript-gist.png)
 
-- **Which Office client application would you like to support?** - `Outlook`
+    # [XML Manifest](#tab/xmlmanifest)
 
-![The prompts and answers for the Yeoman generator in a command line interface.](../images/yeoman-prompts-2.png)
+    - **Choose a project type** - `Office Add-in Task Pane project`
 
----
+    - **Choose a script type** - `JavaScript`
 
-After you complete the wizard, the generator creates the project and installs supporting Node components.
+    - **What do you want to name your add-in?** - `Git the gist`
 
-[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
+    - **Which Office client application would you like to support?** - `Outlook`
 
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
+    - **Which manifest would you like to use?** - `XML manifest`
+
+    ![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-outlook-xml-manifest-javascript-gist.png)
+
+    ---
+
+    After you complete the wizard, the generator creates the project and installs supporting Node components.
+
+    [!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
+
+    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 1. Navigate to the root directory of the project.
 
