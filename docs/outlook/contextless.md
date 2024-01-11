@@ -17,12 +17,13 @@ With a simple manifest configuration, you can create Outlook add-ins for the Mes
 
 ## Set up your environment
 
-- To create an add-in project that uses the unified manifest for Microsoft 365, complete the [Outlook quick start for the unified manifest](../quickstarts/outlook-quickstart-json-manifest.md).
-- To create an add-in project that uses the XML manifest with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator).
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an Outlook add-in with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 To turn on this feature in a preexisting add-in project, see [Configure the manifest](#configure-the-manifest).
 
 ## Configure the manifest
+
+The steps to configure the manifest vary depending on which type of manifest your add-in uses.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
