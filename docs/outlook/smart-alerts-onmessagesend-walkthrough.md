@@ -212,12 +212,12 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Save your changes.
 
+---
+
 > [!TIP]
 >
 > - For a list of send mode options available with the `OnMessageSend` and `OnAppointmentSend` events, see [Available send mode options](onmessagesend-onappointmentsend-events.md#available-send-mode-options).
 > - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
-
----
 
 ## Implement event handling
 
