@@ -29,6 +29,22 @@ However, by default, if a user has an add-in task pane open for a message in the
 
 The first step is to add pinning support, which is done in the add-in manifest. The markup varies depending on the type of manifest.
 
+# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+
+Add a "pinnable" property, set to `true`, to the object in the "actions" array that defines the button or menu item that opens the task pane. The following is an example.
+
+```json
+"actions": [
+    {
+        "id": "OpenTaskPane",
+        "type": "openPage",
+        "view": "TaskPaneView",
+        "displayName": "OpenTaskPane",
+        "pinnable": true
+    }
+]
+```
+
 # [XML Manifest](#tab/xmlmanifest)
 
 Add the [SupportsPinning](/javascript/api/manifest/action#supportspinning) element to the **\<Action\>** element that describes the task pane button. The following is an example.
@@ -55,28 +71,12 @@ Add the [SupportsPinning](/javascript/api/manifest/action#supportspinning) eleme
 
 The **\<SupportsPinning\>** element is defined in the VersionOverrides v1.1 schema, so you will need to include a [VersionOverrides](/javascript/api/manifest/versionoverrides) element both for v1.0 and v1.1.
 
-# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
-
-Add a "pinnable" property, set to `true`, to the object in the "actions" array that defines the button or menu item that opens the task pane. The following is an example.
-
-```json
-"actions": [
-    {
-        "id": "OpenTaskPane",
-        "type": "openPage",
-        "view": "TaskPaneView",
-        "displayName": "OpenTaskPane",
-        "pinnable": true
-    }
-]
-```
-
 ---
 
 For a full example, see the `msgReadOpenPaneButton` control in the [command-demo sample manifest](https://github.com/OfficeDev/outlook-add-in-command-demo/blob/master/command-demo-manifest.xml).
 
 > [!NOTE]
-> A pinnable task pane can also be enabled without the **\<SupportsPinning\>** element if the **\<SupportsNoItemContext\>** element is included in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
+> Task pane pinning is automatically supported in an add-in that activates without the Reading Pane enabled or a message first selected. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
 
 ## Handling UI updates based on currently selected message
 
