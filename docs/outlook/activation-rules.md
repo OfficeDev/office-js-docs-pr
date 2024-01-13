@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in activation rules
 description: Outlook activates some types of add-ins if the message or appointment that the user is reading or composing satisfies the activation rules of the add-in.
-ms.date: 10/31/2023
+ms.date: 01/16/2024
 ms.localizationpriority: medium
 ---
 
@@ -9,9 +9,11 @@ ms.localizationpriority: medium
 
 Outlook activates some types of add-ins if the message or appointment that the user is reading or composing satisfies the activation rules of the add-in. This is true for all add-ins that use the 1.1 manifest schema. The user can then choose the add-in from the Outlook UI to start it for the current item.
 
-[!include[Rule features not supported with unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
+[!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
 ## Specify activation rules in a manifest
+
+[!include[Rule features not supported with unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
 
 To have Outlook activate an add-in for specific conditions, specify activation rules in the add-in manifest by using one of the following `Rule` elements.
 

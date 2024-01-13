@@ -1,7 +1,7 @@
 ---
 title: Limits for activation and API usage in Outlook add-ins
 description: Be aware of certain activation and API usage guidelines, and implement your add-ins to stay within these limits.
-ms.date: 11/06/2023
+ms.date: 01/16/2024
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -49,11 +49,13 @@ Each Outlook client enforces certain limits in the JavaScript object model, as d
 
 ## Limits of activation rules for contextual Outlook add-ins
 
-[!include[Rule features not supported by the unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
+[!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
 Follow these guidelines when designing activation rules for [contextual Outlook add-ins](activation-rules.md).
 
 - Limit the size of the manifest to 256 KB. You can't install the Outlook add-in for an Exchange mailbox if you exceed that limit.
+
+    [!include[Rule features not supported by the unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
 
 - Specify up to 15 activation rules for the add-in. You can't install the add-in if you exceed that limit.
 

@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 11/09/2023
+ms.date: 01/16/2024
 ms.localizationpriority: high
 ---
 
@@ -130,22 +130,9 @@ Developers should follow the tiered permissions model to provide transparency an
 },
 ```
 
-- Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body. For example, the following rule activates the Outlook add-in if one or more of three entities - phone number, postal address, or URL - are found in the subject or body of the current message.
+- Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body.
 
-> [!NOTE]
-> Activation rules, as seen in this example, aren't supported in add-ins that use the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
-
-  ```XML
-    <Permissions>Restricted</Permissions>
-        <Rule xsi:type="RuleCollection" Mode="And">
-        <Rule xsi:type="ItemIs" FormType="Read" ItemType="Message" />
-        <Rule xsi:type="RuleCollection" Mode="Or">
-            <Rule xsi:type="ItemHasKnownEntity" EntityType="PhoneNumber" />
-            <Rule xsi:type="ItemHasKnownEntity" EntityType="Address" />
-            <Rule xsi:type="ItemHasKnownEntity" EntityType="Url" />
-        </Rule>
-    </Rule>
-  ```
+    [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
 - Developers should request the **read item** permission if the Outlook add-in needs to read properties of the current item other than the default extracted entities, or write custom properties set by the add-in on the current item, but doesn't require reading or writing to other items, or creating or sending a message in the user's mailbox. For example, a developer should request **read item** permission if an Outlook add-in needs to look for an entity like a meeting suggestion, task suggestion, email address, or contact name in the item's subject or body, or uses a regular expression to activate.
 
