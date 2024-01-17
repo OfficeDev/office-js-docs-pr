@@ -55,7 +55,7 @@ Follow these guidelines when designing activation rules for [contextual Outlook 
 
 - Limit the size of the manifest to 256 KB. You can't install the Outlook add-in for an Exchange mailbox if you exceed that limit.
 
-    [!include[Rule features not supported by the unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
+    [!INCLUDE [Rule features not supported by the unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
 
 - Specify up to 15 activation rules for the add-in. You can't install the add-in if you exceed that limit.
 

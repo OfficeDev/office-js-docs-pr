@@ -13,7 +13,7 @@ Outlook activates some types of add-ins if the message or appointment that the u
 
 ## Specify activation rules in a manifest
 
-[!include[Rule features not supported with unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
+[!INCLUDE [Rule features not supported with unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
 
 To have Outlook activate an add-in for specific conditions, specify activation rules in the add-in manifest by using one of the following `Rule` elements.
 
