@@ -76,7 +76,7 @@ In Outlook on mobile devices, if your add-in activates when the user is composin
 
 ## Is the add-in manifest installed properly, and does Outlook have a cached copy?
 
-[!include[Rule features not supported by the unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
+[!INCLUDE [Rule features not supported by the unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
 
 This scenario applies to only Outlook on Windows. Normally, when you install an Outlook add-in for a mailbox, the Exchange Server copies the add-in manifest from the location you indicate to the mailbox on that Exchange Server. Every time Outlook starts, it reads all the manifests installed for that mailbox into a temporary cache at the following location.
 
