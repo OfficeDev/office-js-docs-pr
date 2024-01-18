@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 12/19/2023
+ms.date: 01/10/2024
 ms.localizationpriority: medium
 ---
 
@@ -12,9 +12,9 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 > [!IMPORTANT]
 > Beginning January 2024, the start time of the Office Add-ins community call is moving to **7:00 AM Pacific Time**. Update your calendars by redownloading the updated calendar invite at <https://aka.ms/officeaddinscommunitycall>.
 
-## Agenda for January 10, 2024 call
+## Agenda for February 14, 2024 call
 
-The agenda for the January Office Add-ins community call will be posted the week of the call.
+The agenda for the February Office Add-ins community call will be posted the week of the call.
 
 ## Previous calls
 
