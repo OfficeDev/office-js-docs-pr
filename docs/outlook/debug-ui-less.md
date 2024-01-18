@@ -39,4 +39,4 @@ Now that you've enabled debugging on your add-in, you're ready to configure and 
 
 - [Add-in commands](../design/add-in-commands.md)
 - [Overview of debugging Office Add-ins](../testing/debug-add-ins-overview.md)
-- [Debug your event-based Outlook add-in](debug-autolaunch.md)
+- [Debug event-based and spam-reporting add-ins](debug-autolaunch.md)

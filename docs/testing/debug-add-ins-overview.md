@@ -2,7 +2,7 @@
 title: Debug Office Add-ins
 description: Find the Office Add-in debugging guidance for your development environment.
 ms.topic: overview
-ms.date: 06/23/2023
+ms.date: 12/21/2023
 ms.localizationpriority: high
 ---
 
@@ -37,7 +37,7 @@ There are some special cases in which the debugging process differs from normal 
 - **Debugging a [function command](../design/add-in-commands.md#types-of-add-in-commands) in a *non-shared* runtime**:
   - Outlook add-ins on a Windows development computer: [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md)
   - Other Office application add-ins or Outlook on a Mac development computer: [Debug a function command with a non-shared runtime](debug-function-command.md).
-- **Debugging an event-based Outlook add-in**: [Debug your event-based Outlook add-in](../outlook/debug-autolaunch.md).
+- **Debugging an event-based or spam-reporting Outlook add-in**: [Debug event-based and spam-reporting add-ins](../outlook/debug-autolaunch.md).
 - **Debugging an add-in in the new Outlook on Windows desktop client (preview)**: See the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows (preview)](../outlook/one-outlook.md#debug-your-add-in).
 - **Debugging a Blazor-based add-in**: Debug the add-in the same way you would debug a Blazor web application. See [Debug ASP.NET Core Blazor WebAssembly](/aspnet/core/blazor/debug/).
 

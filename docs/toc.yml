@@ -67,6 +67,9 @@ items:
     - name: Support older Microsoft webviews and Office versions
       href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
+    - name: Manage both a unified manifest and an XML manifest version of your add-in
+      href: concepts/duplicate-legacy-metaos-add-ins.md
+      displayName: Excel, Word, PowerPoint, Outlook
   - name: Develop
     items:
     - name: Overview
@@ -731,8 +734,8 @@ items:
       - name: Update your signature when switching between accounts
         href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
         displayName: event-based activation
-      - name: Debug event-based activation
-        href: outlook/debug-autolaunch.md
+      - name: Troubleshoot event-based and spam-reporting add-ins
+        href: outlook/troubleshoot-event-based-and-spam-reporting-add-ins.md
       - name: AppSource options
         href: outlook/autolaunch-store-options.md
         displayName: event-based activation
@@ -809,7 +812,7 @@ items:
         href: outlook/authentication.md
       - name: Authenticate with SSO token
         href: outlook/authenticate-a-user-with-an-sso-token.md
-      - name: SSO in event-based activation
+      - name: SSO and CORS in event-based or spam-reporting add-ins
         href: outlook/use-sso-in-event-based-activation.md
       - name: Authenticate with an identity token
         href: outlook/authenticate-a-user-with-an-identity-token.md
@@ -825,19 +828,21 @@ items:
         href: outlook/testing-and-tips.md
       - name: Sideload an add-in for testing
         href: outlook/sideload-outlook-add-ins-for-testing.md
-      - name: Compare add-in support in Outlook on Mac
-        href: outlook/compare-outlook-add-in-support-in-outlook-for-mac.md
-      - name: Tips for handling date values
-        href: outlook/tips-for-handling-date-values-in-outlook-add-ins.md
       - name: Limits for activation and JavaScript API
         href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
+      - name: Compare add-in support in Outlook on Mac
+        href: outlook/compare-outlook-add-in-support-in-outlook-for-mac.md
       - name: Troubleshoot add-in activation
         href: outlook/troubleshoot-outlook-add-in-activation.md
       - name: Debug function commands
         href: outlook/debug-ui-less.md
-      - name: Debug event-based activation
+      - name: Troubleshoot event-based and spam-reporting add-ins
+        href: outlook/troubleshoot-event-based-and-spam-reporting-add-ins.md
+      - name: Debug event-based and spam-reporting add-ins
         href: outlook/debug-autolaunch.md
-  
+      - name: Tips for handling date values
+        href: outlook/tips-for-handling-date-values-in-outlook-add-ins.md
+
 - name: PowerPoint
   items:
   - name: PowerPoint add-ins documentation
