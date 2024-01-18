@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
-ms.date: 12/19/2023
+ms.date: 01/16/2024
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -32,6 +32,8 @@ Extension points are the ways that add-ins integrate with Outlook. The following
     ![Add-in command buttons on the ribbon.](../images/outlook-windows-ribbon.png)
 
 - Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
+
+    [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
     ![A contextual add-in card appears from a highlighted address in a message.](../images/outlook-detected-entity-card.png)
 
