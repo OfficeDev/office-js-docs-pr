@@ -744,8 +744,6 @@ items:
       displayName: delegate access
     - name: Manifests
       items:
-      - name: Manifest configuration for Outlook Add-ins
-        href: outlook/manifests.md
       - name: Activation rules
         href: outlook/activation-rules.md
       - name: Add support for Outlook on mobile devices
