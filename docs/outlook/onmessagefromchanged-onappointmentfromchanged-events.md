@@ -103,43 +103,37 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
     }
     ```
 
-1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
-
-    ```json
-    "autoRunEvents": [
-    
-    ]
-    ```
-
-1. Add the following object to the "autoRunEvents" array.
+1. Add an "autoRunEvents" array as a property of the object in the "extensions" array. The "autoRunEvents" array contains an object with the following key properties.
 
     - The "events" property assigns handlers to the `OnMessageFromChanged` and `OnNewMessageCompose` events. For information on event names used in the unified manifest, see the "Supported events" table in [Configure your Outlook add-in for event-based activation](autolaunch.md#supported-events).
     - The function name provided in "actionId" must match the "id" property of its corresponding object in the "actions" array configured earlier.
 
     ```json
-    {
-        "requirements": {
-            "capabilities": [
-                {
-                    "name": "Mailbox",
-                    "minVersion": "1.13"
-                }
-            ],
-            "scopes": [
-                "mail"
-            ]
-        },
-        "events": [
-            {
-                "type": "messageFromChanged",
-                "actionId": "onMessageFromChangedHandler"
+    "autoRunEvents": [
+        {
+            "requirements": {
+                "capabilities": [
+                    {
+                        "name": "Mailbox",
+                        "minVersion": "1.13"
+                    }
+                ],
+                "scopes": [
+                    "mail"
+                ]
             },
-            {
-                "type": "newMessageComposeCreated",
-                "actionId": "onNewMessageComposeHandler"
-            }
-        ]
-    }
+            "events": [
+                {
+                    "type": "messageFromChanged",
+                    "actionId": "onMessageFromChangedHandler"
+                },
+                {
+                    "type": "newMessageComposeCreated",
+                    "actionId": "onNewMessageComposeHandler"
+                }
+            ]
+        }
+    ]
     ```
 
 # [XML Manifest](#tab/xmlmanifest)
