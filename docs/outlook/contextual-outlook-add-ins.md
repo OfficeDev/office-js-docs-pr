@@ -1,7 +1,7 @@
 ---
 title: Contextual Outlook add-ins
 description: Initiate tasks related to a message without leaving the message itself to result in an easier and richer user experience.
-ms.date: 10/03/2022
+ms.date: 01/19/2024
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 Contextual add-ins are Outlook add-ins that activate based on text in a message or appointment. By using contextual add-ins, a user can initiate tasks related to a message without leaving the message itself, which results in an easier and richer user experience.
 
-[!include[Unified manifest for Microsoft 365 does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
+[!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
 The following are examples of contextual add-ins.
 
@@ -17,13 +17,9 @@ The following are examples of contextual add-ins.
 - Choosing a string that opens a meeting suggestion add-in.
 - Choosing a phone number to add to your contacts.
 
-
-> [!NOTE]
-> Contextual add-ins are not currently available in Outlook on Android and iOS. This functionality will be made available in the future.
->
-> Support for this feature was introduced in requirement set 1.6. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
-
 ## How to make a contextual add-in
+
+[!include[Unified manifest for Microsoft 365 does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
 A contextual add-in's manifest must include an [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) element with an `xsi:type` attribute set to `DetectedEntity`. Within the **\<ExtensionPoint\>** element, the add-in specifies the entities or regular expression that can activate it. If an entity is specified, the entity can be any of the properties in the [Entities](/javascript/api/outlook/office.entities) object.
 
@@ -57,12 +53,10 @@ Because an entity or regular expression that is not highlighted will not launch 
 
 ## How to launch a contextual add-in
 
-A user launches a contextual add-in through text, either a known entity or a developer's regular expression. Typically, a user identifies a contextual add-in because the entity is highlighted. The following example shows how highlighting appears in a message. Here the entity (an address) is colored blue and underlined with a dotted blue line. A user launches the contextual add-in by clicking the highlighted entity. 
-
-**Example of text with highlighted entity (an address)**
+A user launches a contextual add-in through text, either a known entity or a developer's regular expression. Typically, a user identifies a contextual add-in because the entity is highlighted. The following example shows how highlighting appears in a message. Here, the entity (an address) is colored blue and underlined with a dotted blue line. A user launches the contextual add-in by clicking the highlighted entity.
 
 ![Shows the highlighted entity within an email.](../images/outlook-detected-entity-highlight.png)
-    
+
 When there are multiple entities or contextual add-ins in a message, there are a few user interaction rules:
 
 - If there are multiple entities, the user has to click a different entity to launch the add-in for it.
@@ -71,11 +65,9 @@ When there are multiple entities or contextual add-ins in a message, there are a
 
 ## How a contextual add-in displays
 
-An activated contextual add-in appears in a card, which is a separate window near the entity. The card will normally appear below the entity and centered with respect to the entity as much as possible. If there is not enough room below the entity, the card is placed above it. The following screenshot shows the highlighted entity, and below it, an activated add-in (Bing Maps) in a card.
+An activated contextual add-in appears in a card, which is a separate window near the entity. The card will normally appear below the entity and centered with respect to the entity as much as possible. If there isn't enough room below the entity, the card is placed above it.
 
-**Example of an add-in displayed in a card**
-
-![Shows a contextual app in a card.](../images/outlook-detected-entity-card.png)
+![Shows a highlighted address entity and the activated Bing Maps add-in.](../images/outlook-detected-entity-card.png)
 
 To close the card and the add-in, a user clicks anywhere outside of the card.
 
