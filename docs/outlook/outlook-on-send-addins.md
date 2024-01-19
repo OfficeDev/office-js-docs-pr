@@ -476,10 +476,7 @@ The on-send API requires `VersionOverrides v1_1`. The following shows you how to
 ```
 
 > [!NOTE]
-> For more information, see the following:
->
-> - [Manifest configuration for Outlook Add-ins](manifests.md)
-> - [Office Add-ins manifest](../develop/add-in-manifests.md)
+> To learn more about manifests for Outlook add-ins, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 ### `Event` and `item` objects, and `body.getAsync` and `body.setAsync` methods
 

@@ -23,6 +23,90 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 To configure the manifest, select the tab for the type of manifest you're using.
 
+# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+
+1. Open the **manifest.json** file.
+
+1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
+
+   - The "minVersion" of the Mailbox requirement set is configured to "1.10" as this is the lowest version of the requirement set that supports the `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events.
+   - The "id" of the runtime is set to the descriptive name "autorun_runtime".
+   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
+       - Office on Windows executes the event handlers in a JavaScript-only runtime, which loads a JavaScript file directly.
+       - Office on Mac and the web execute the handlers in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
+
+     For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+   - The "lifetime" property is set to "short", which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - There are two types of "actions" that can run in the runtime. You'll create functions to correspond to these actions in a later step.
+
+    ```json
+     {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.10"
+                }
+            ]
+        },
+        "id": "autorun_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html",
+            "script": "https://localhost:3000/launchevent.js"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "onNewMessageComposeHandler",
+                "type": "executeFunction",
+                "displayName": "onNewMessageComposeHandler"
+            },
+            {
+                "id": "onNewAppointmentComposeHandler",
+                "type": "executeFunction",
+                "displayName": "onNewAppointmentComposeHandler"
+            }
+        ]
+    }
+    ```
+
+1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+
+    ```json
+    "autoRunEvents": [
+    
+    ]
+    ```
+
+1. Add the following object to the "autoRunEvents" array. The "events" property maps handlers to events as described in the table earlier in this article. The handler names must match those used in the "id" properties of the objects in the "actions" array in an earlier step.
+
+    ```json
+      {
+          "requirements": {
+              "capabilities": [
+                  {
+                      "name": "Mailbox",
+                      "minVersion": "1.10"
+                  }
+              ],
+              "scopes": [
+                  "mail"
+              ]
+          },
+          "events": [
+              {
+                  "type": "newMessageComposeCreated",
+                  "actionId": "onNewMessageComposeHandler"
+              },
+              {
+                  "type": "newAppointmentOrganizerCreated",
+                  "actionId": "onNewAppointmentComposeHandler"
+              }
+          ]
+      }
+    ```
+
 # [XML Manifest](#tab/xmlmanifest)
 
 To enable event-based activation of your add-in, you must configure the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point in the `VersionOverridesV1_1` node of the manifest.
@@ -134,90 +218,6 @@ In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook
   </VersionOverrides>
 </VersionOverrides>
 ```
-
-# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
-
-1. Open the **manifest.json** file.
-
-1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
-
-   - The "minVersion" of the Mailbox requirement set is configured to "1.10" as this is the lowest version of the requirement set that supports the `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events.
-   - The "id" of the runtime is set to the descriptive name "autorun_runtime".
-   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
-       - Office on Windows executes the event handlers in a JavaScript-only runtime, which loads a JavaScript file directly.
-       - Office on Mac and the web execute the handlers in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
-
-     For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-   - The "lifetime" property is set to "short", which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There are two types of "actions" that can run in the runtime. You'll create functions to correspond to these actions in a later step.
-
-    ```json
-     {
-        "requirements": {
-            "capabilities": [
-                {
-                    "name": "Mailbox",
-                    "minVersion": "1.10"
-                }
-            ]
-        },
-        "id": "autorun_runtime",
-        "type": "general",
-        "code": {
-            "page": "https://localhost:3000/commands.html",
-            "script": "https://localhost:3000/launchevent.js"
-        },
-        "lifetime": "short",
-        "actions": [
-            {
-                "id": "onNewMessageComposeHandler",
-                "type": "executeFunction",
-                "displayName": "onNewMessageComposeHandler"
-            },
-            {
-                "id": "onNewAppointmentComposeHandler",
-                "type": "executeFunction",
-                "displayName": "onNewAppointmentComposeHandler"
-            }
-        ]
-    }
-    ```
-
-1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
-
-    ```json
-    "autoRunEvents": [
-    
-    ]
-    ```
-
-1. Add the following object to the "autoRunEvents" array. The "events" property maps handlers to events as described in the table earlier in this article. The handler names must match those used in the "id" properties of the objects in the "actions" array in an earlier step.
-
-    ```json
-      {
-          "requirements": {
-              "capabilities": [
-                  {
-                      "name": "Mailbox",
-                      "minVersion": "1.10"
-                  }
-              ],
-              "scopes": [
-                  "mail"
-              ]
-          },
-          "events": [
-              {
-                  "type": "newMessageComposeCreated",
-                  "actionId": "onNewMessageComposeHandler"
-              },
-              {
-                  "type": "newAppointmentOrganizerCreated",
-                  "actionId": "onNewAppointmentComposeHandler"
-              }
-          ]
-      }
-    ```
 
 ---
 
