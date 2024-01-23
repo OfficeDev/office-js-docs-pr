@@ -144,7 +144,7 @@ To enable an event-based add-in on Outlook mobile, you must configure the follow
 1. Save your changes.
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Office Add-ins manifest](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## Implement the event handler
 

@@ -9,9 +9,17 @@ ms.localizationpriority: medium
 
 You can specify regular expression rules to have a [contextual add-in](contextual-outlook-add-ins.md) activated when a match is found in specific fields of the message. Contextual add-ins activate only in read mode. Outlook doesn't activate contextual add-ins when the user is composing an item. There are also other scenarios where Outlook doesn't activate add-ins, for example, digitally signed items. For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
 
-[!include[Unified manifest for Microsoft 365 does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
+> [!IMPORTANT]
+> Entity-based contextual Outlook add-ins will be retired in Q2 of 2024. Once retired, contextual add-ins will no longer be able to detect entities in mail items to perform tasks on them. To help minimize potential disruptions, the following will still be supported after entity-based contextual add-ins are retired.
+>
+> - An alternative implementation of the **Join Meeting** button, which is activated by online meeting add-ins, is being developed. Once support for entity-based contextual add-ins ends, online meeting add-ins will automatically transition to the alternative implementation to activate the **Join Meeting** button.
+> - Regular expression rules will continue to be supported after entity-based contextual add-ins are retired. We recommend updating your contextual add-in to use regular expression rules as an alternative solution.
+>
+> For more information, see [Retirement of entity-based contextual Outlook add-ins](https://devblogs.microsoft.com/microsoft365dev/retirement-of-entity-based-contextual-outlook-add-ins/).
 
 You can specify a regular expression as part of an [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule or [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) rule in the add-in XML manifest. The rules are specified in a [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity) extension point.
+
+[!include[Unified manifest for Microsoft 365 does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
 Outlook evaluates regular expressions based on the rules for the JavaScript interpreter used by the browser or webview control on the client computer. For brevity hereafter, this article uses "browser" to refer to "browser or webview control". Outlook supports the same list of special characters that all XML processors also support. The following table lists these special characters. You can use these characters in a regular expression by specifying the escape sequence of the corresponding character, as described in the following table.
 
