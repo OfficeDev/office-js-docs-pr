@@ -2,7 +2,7 @@
 title: Browsers and webview controls used by Office Add-ins
 description: Specifies how the operating system and Office version determine what webview is used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 10/31/2023
+ms.date: 01/23/2024
 ms.localizationpriority: medium
 ---
 
@@ -154,9 +154,6 @@ To determine if a document is WIP-protected, follow these steps.
 1. Select the **File** tab on the ribbon.
 1. Select **Info**.
 1. In the upper section of the **Info** page, just below the file name, a WIP-enabled document will have a briefcase icon followed by **Managed by Work (…)**.
-
-> [!NOTE]
-> Support for WebView2 in WIP-enabled documents was added with build 16.0.16626.20132. If you're on an older build, your runtime defaults to **EdgeHTML (Microsoft Edge Legacy)**, regardless of policy.
 
 ## See also
 
