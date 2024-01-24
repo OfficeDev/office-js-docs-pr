@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 01/18/2024
+ms.date: 01/25/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -118,19 +118,10 @@ To enable SSO in your event-based add-in, you must add its JavaScript file to a 
 
 You can request external data by using an API like [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using [XMLHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
 
-Be aware that you must use additional security measures when using XMLHttpRequest objects, requiring [Same Origin Policy](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) and simple [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS).
+Be aware that you must use additional security measures when using XMLHttpRequest objects, requiring [Same Origin Policy](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) and simple [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS). To learn how to make simple CORS requests, see [Simple Requests](https://developer.mozilla.org/docs/Web/HTTP/CORS#simple_requests).
 
 > [!NOTE]
 > Full CORS support is available in Outlook on the web, Mac, and Windows (starting in Version 2201, Build 16.0.14813.10000).
-
-A [simple CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS#simple_requests) implementation:
-
-- Can't use cookies.
-- Only supports simple methods, such as `GET`, `HEAD`, and `POST`.
-- Accepts simple headers with field names `Accept`, `Accept-Language`, or `Content-Language`.
-- Can use the `Content-Type`, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.
-- Can't have event listeners registered on the object returned by `XMLHttpRequest.upload`.
-- Can't use `ReadableStream` objects in requests.
 
 To make CORS requests from your event-based add-in, you must add the add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md).
 
