@@ -173,7 +173,7 @@ The task pane shows the add-in display name at the top, which is the value of th
     > [!NOTE]
     > Before you deploy the add-in, change the office.js reference and the jQuery reference to the content delivery network (CDN) reference. The CDN reference provides the most recent version and better performance.
 
-    The **HelloProjectOData** add-in also uses the SurfaceErrors.js file, which displays errors in a pop-up message. You can copy the code from the *Robust Programming* section of [Create your first task pane add-in for Project 2013 by using a text editor](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md), and then add a SurfaceErrors.js file in the **Scripts\Office** folder of the **HelloProjectODataWeb** project.
+    The **HelloProjectOData** add-in also uses the SurfaceErrors.js file, which displays errors in a pop-up message. You can copy the code from the [SurfaceErrors.js file section](#surfaceerrorsjs-file) of this article, and then add a SurfaceErrors.js file in the **Scripts\Office** folder of the **HelloProjectODataWeb** project.
 
     Following is the updated HTML code for the **head** element, with the additional line for the SurfaceErrors.js file.
 
@@ -1084,7 +1084,115 @@ Table styles
 
 ### SurfaceErrors.js file
 
-You can copy code for the SurfaceErrors.js file from the _Robust Programming_ section of [Create your first task pane add-in for Project 2013 by using a text editor](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
+The following code includes a `throwError` function that creates a `Toast` object.
+
+```js
+/*
+ * Show error messages in a "toast" notification.
+ */
+
+// Throws a custom defined error.
+function throwError(errTitle, errMessage) {
+    try {
+        // Define and throw a custom error.
+        var customError = { name: errTitle, message: errMessage }
+        throw customError;
+    }
+    catch (err) {
+        // Catch the error and display it to the user.
+        Toast.showToast(err.name, err.message);
+    }
+}
+
+// Add a dynamically-created div "toast" for displaying errors to the user.
+var Toast = {
+
+    Toast: "divToast",
+    Close: "btnClose",
+    Notice: "lblNotice",
+    Output: "lblOutput",
+
+    // Show the toast with the specified information.
+    showToast: function (title, message) {
+
+        if (document.getElementById(this.Toast) == null) {
+            this.createToast();
+        }
+
+        document.getElementById(this.Notice).innerText = title;
+        document.getElementById(this.Output).innerText = message;
+
+        $("#" + this.Toast).hide();
+        $("#" + this.Toast).show("slow");
+    },
+
+    // Create the display for the toast.
+    createToast: function () {
+        var divToast;
+        var lblClose;
+        var btnClose;
+        var divOutput;
+        var lblOutput;
+        var lblNotice;
+
+        // Create the container div.
+        divToast = document.createElement("div");
+        var toastStyle = "background-color:rgba(220, 220, 128, 0.80);" +
+            "position:absolute;" +
+            "bottom:0px;" +
+            "width:90%;" +
+            "text-align:center;" +
+            "font-size:11pt;";
+        divToast.setAttribute("style", toastStyle);
+        divToast.setAttribute("id", this.Toast);
+
+        // Create the close button.
+        lblClose = document.createElement("div");
+        lblClose.setAttribute("id", this.Close);
+        var btnStyle = "text-align:right;" +
+            "padding-right:10px;" +
+            "font-size:10pt;" +
+            "cursor:default";
+        lblClose.setAttribute("style", btnStyle);
+        lblClose.appendChild(document.createTextNode("CLOSE "));
+
+        btnClose = document.createElement("span");
+        btnClose.setAttribute("style", "cursor:pointer;");
+        btnClose.setAttribute("onclick", "Toast.close()");
+        btnClose.innerText = "X";
+        lblClose.appendChild(btnClose);
+
+        // Create the div to contain the toast title and message.
+        divOutput = document.createElement("div");
+        divOutput.setAttribute("id", "divOutput");
+        var outputStyle = "margin-top:0px;";
+        divOutput.setAttribute("style", outputStyle);
+
+        lblNotice = document.createElement("span");
+        lblNotice.setAttribute("id", this.Notice);
+        var labelStyle = "font-weight:bold;margin-top:0px;";
+        lblNotice.setAttribute("style", labelStyle);
+
+        lblOutput = document.createElement("span");
+        lblOutput.setAttribute("id", this.Output);
+
+        // Add the child nodes to the toast div.
+        divOutput.appendChild(lblNotice);
+        divOutput.appendChild(document.createElement("br"));
+        divOutput.appendChild(lblOutput);
+        divToast.appendChild(lblClose);
+        divToast.appendChild(divOutput);
+
+        // Add the toast div to the document body.
+        document.body.appendChild(divToast);
+    },
+
+    // Close the toast.
+    close: function () {
+        $("#" + this.Toast).hide("slow");
+    }
+}
+```
 
 ## Next steps
 
@@ -1113,7 +1221,6 @@ If you modify the **HelloProjectOData** add-in for production use, do the follow
 ## See also
 
 - [Task pane add-ins for Project](project-add-ins.md)
-- [Create your first task pane add-in for Project 2013 by using a text editor](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [ProjectData - Project OData service reference](/previous-versions/office/project-odata/jj163015(v=office.15))
 - [Office Add-ins manifest](../develop/add-in-manifests.md)
 - [Publish your Office Add-in](../publish/publish.md)

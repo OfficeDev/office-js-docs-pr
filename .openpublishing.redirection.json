@@ -1224,6 +1224,10 @@
         {
             "source_path": "docs/outlook/manifests.md",
             "redirect_url": "/office/dev/add-ins/develop/add-in-manifests"
+        },
+        {
+            "source_path": "docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/project-quickstart"
         }
     ]
 }
