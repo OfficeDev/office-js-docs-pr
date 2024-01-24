@@ -114,7 +114,7 @@ The following steps show how to add an icon file to the Visual Studio solution.
 
 1. In **Solution Explorer**, go to the folder named Images.
 
-1. To be displayed in the **Office Add-ins** drop-down list, the icon must be 32 x 32 pixels. Use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder.
+1. To be displayed in the **Office Add-ins** drop-down list, the icon must be 32 x 32 pixels. Use your own 32 x 32 icon; or, copy the following image to a file named **NewIcon.png**, and then add that file to the  `HelloProjectODataWeb\Images` folder.
 
     ![Icon for the HelloProjectOData app.](../images/pj15-hello-project-data-new-icon.jpg)
 
@@ -171,9 +171,9 @@ The task pane shows the add-in display name at the top, which is the value of th
     > [!NOTE]
     > Before you deploy the add-in, change the office.js reference and the jQuery reference to the content delivery network (CDN) reference. The CDN reference provides the most recent version and better performance.
 
-    The **HelloProjectOData** add-in also uses the SurfaceErrors.js file, which displays errors in a pop-up message. You can copy the code from the [SurfaceErrors.js file section](#surfaceerrorsjs-file) of this article, and then add a SurfaceErrors.js file in the **Scripts\Office** folder of the **HelloProjectODataWeb** project.
+    The **HelloProjectOData** add-in also uses a **SurfaceErrors.js** file, which displays errors in a pop-up message. Copy the code from the [SurfaceErrors.js file section](#surfaceerrorsjs-file) of this article into the **Scripts\Office** folder of the **HelloProjectODataWeb** project as a new file named **SurfaceErrors.js**.
 
-    Following is the updated HTML code for the **head** element, with the additional line for the SurfaceErrors.js file.
+    Following is the updated HTML code for the **head** element, with the additional line for the **SurfaceErrors.js** file.
 
     ```HTML
     <!DOCTYPE html>
@@ -280,15 +280,15 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
 1. Delete all code in the default HelloProjectOData.js file, and then add the global variables and `Office.initialize` function. Variable names that are all capitals imply that they are constants; they are later used with the `_pwa` variable to create the REST query in this example.
 
     ```js
-    var PROJDATA = "/_api/ProjectData";
-    var PROJQUERY = "/Projects?";
-    var QUERY_FILTER = "$filter=ProjectName ne 'Timesheet Administrative Work Items'";
-    var QUERY_SELECT1 = "&amp;$select=ProjectId, ProjectName";
-    var QUERY_SELECT2 = ", ProjectCost, ProjectWork, ProjectPercentCompleted, ProjectActualCost";
-    var _pwa;           // URL of Project Web App.
-    var _projectUid;    // GUID of the active project.
-    var _docUrl;        // Path of the project document.
-    var _odataUrl = ""; // URL of the OData service: http[s]://ServerName /ProjectServerName /_api/ProjectData
+    let PROJDATA = "/_api/ProjectData";
+    let PROJQUERY = "/Projects?";
+    let QUERY_FILTER = "$filter=ProjectName ne 'Timesheet Administrative Work Items'";
+    let QUERY_SELECT1 = "&amp;$select=ProjectId, ProjectName";
+    let QUERY_SELECT2 = ", ProjectCost, ProjectWork, ProjectPercentCompleted, ProjectActualCost";
+    let _pwa;           // URL of Project Web App.
+    let _projectUid;    // GUID of the active project.
+    let _docUrl;        // Path of the project document.
+    let _odataUrl = ""; // URL of the OData service: http[s]://ServerName /ProjectServerName /_api/ProjectData
 
     // The initialize function is required for all add-ins.
     Office.initialize = function (reason) {
@@ -314,10 +314,10 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
 
                     // If you debug with Visual Studio on a local Project Server computer, 
                     // uncomment the following lines to use the localhost URL.
-                    //var localhost = location.host.split(":", 1);
-                    //var pwaStartPosition = _pwa.lastIndexOf("/");
-                    //var pwaLength = _pwa.length - pwaStartPosition;
-                    //var pwaName = _pwa.substr(pwaStartPosition, pwaLength);
+                    //let localhost = location.host.split(":", 1);
+                    //let pwaStartPosition = _pwa.lastIndexOf("/");
+                    //let pwaLength = _pwa.length - pwaStartPosition;
+                    //let pwaName = _pwa.substr(pwaStartPosition, pwaLength);
                     //_pwa = location.protocol + "//" + localhost + pwaName;
 
                     if (_pwa.substring(0, 4) == "http") {
@@ -373,8 +373,8 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
     // Get data about all projects on Project Server,
     // by using a REST query with the ajax method in jQuery.
     function retrieveOData() {
-        var restUrl = _odataUrl + PROJQUERY + QUERY_FILTER + QUERY_SELECT1 + QUERY_SELECT2;
-        var accept = "application/json; odata=verbose";
+        let restUrl = _odataUrl + PROJQUERY + QUERY_FILTER + QUERY_SELECT1 + QUERY_SELECT2;
+        let accept = "application/json; odata=verbose";
         accept.toLocaleLowerCase();
 
         // Enable cross-origin scripting (required by jQuery 1.5 and later).
@@ -392,7 +392,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
             },
             complete: function (xhr, textStatus) {
                 // Create a message to display in the text box.
-                var message = "\r\ntextStatus: " + textStatus +
+                let message = "\r\ntextStatus: " + textStatus +
                     "\r\nContentType: " + xhr.getResponseHeader("Content-Type") +
                     "\r\nStatus: " + xhr.status +
                     "\r\nResponseText:\r\n" + xhr.responseText;
@@ -430,13 +430,13 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
     // for all projects, and compare with the values for the current project.
     function parseODataResult(oDataResult, currentProjectGuid) {
         // Deserialize the JSON string into a JavaScript object.
-        var res = Sys.Serialization.JavaScriptSerializer.deserialize(oDataResult);
-        var len = res.d.results.length;
-        var projActualCost = 0;
-        var projCost = 0;
-        var projWork = 0;
-        var projPercentCompleted = 0;
-        var myProjectIndex = -1;
+        let res = Sys.Serialization.JavaScriptSerializer.deserialize(oDataResult);
+        let len = res.d.results.length;
+        let projActualCost = 0;
+        let projCost = 0;
+        let projWork = 0;
+        let projPercentCompleted = 0;
+        let myProjectIndex = -1;
         for (i = 0; i < len; i++) {
             // If the current project GUID matches the GUID from the OData query,  
             // store the project index.
@@ -448,10 +448,10 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
             projActualCost += Number(res.d.results[i].ProjectActualCost);
             projPercentCompleted += Number(res.d.results[i].ProjectPercentCompleted);
         }
-        var avgProjCost = projCost / len;
-        var avgProjWork = projWork / len;
-        var avgProjActualCost = projActualCost / len;
-        var avgProjPercentCompleted = projPercentCompleted / len;
+        let avgProjCost = projCost / len;
+        let avgProjWork = projWork / len;
+        let avgProjActualCost = projActualCost / len;
+        let avgProjPercentCompleted = projPercentCompleted / len;
 
         // Round off cost to two decimal places, and round off other values to one decimal place.
         avgProjCost = avgProjCost.toFixed(2);
@@ -471,10 +471,10 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
 
         // Calculate and display values for the current project.
         if (myProjectIndex != -1) {
-            var myProjCost = Number(res.d.results[myProjectIndex].ProjectCost);
-            var myProjWork = Number(res.d.results[myProjectIndex].ProjectWork);
-            var myProjActualCost = Number(res.d.results[myProjectIndex].ProjectActualCost);
-            var myProjPercentCompleted =
+            let myProjCost = Number(res.d.results[myProjectIndex].ProjectCost);
+            let myProjWork = Number(res.d.results[myProjectIndex].ProjectWork);
+            let myProjActualCost = Number(res.d.results[myProjectIndex].ProjectActualCost);
+            let myProjPercentCompleted =
             Number(res.d.results[myProjectIndex].ProjectPercentCompleted);
 
             myProjCost = myProjCost.toFixed(2);
@@ -747,15 +747,15 @@ The following code is in the `Scripts\Office\HelloProjectOData.js` file of the *
 * October 2, 2012
 */
 
-var PROJDATA = "/_api/ProjectData";
-var PROJQUERY = "/Projects?";
-var QUERY_FILTER = "$filter=ProjectName ne 'Timesheet Administrative Work Items'";
-var QUERY_SELECT1 = "&amp;$select=ProjectId, ProjectName";
-var QUERY_SELECT2 = ", ProjectCost, ProjectWork, ProjectPercentCompleted, ProjectActualCost";
-var _pwa;           // URL of Project Web App.
-var _projectUid;    // GUID of the active project.
-var _docUrl;        // Path of the project document.
-var _odataUrl = ""; // URL of the OData service: http[s]://ServerName /ProjectServerName /_api/ProjectData
+let PROJDATA = "/_api/ProjectData";
+let PROJQUERY = "/Projects?";
+let QUERY_FILTER = "$filter=ProjectName ne 'Timesheet Administrative Work Items'";
+let QUERY_SELECT1 = "&amp;$select=ProjectId, ProjectName";
+let QUERY_SELECT2 = ", ProjectCost, ProjectWork, ProjectPercentCompleted, ProjectActualCost";
+let _pwa;           // URL of Project Web App.
+let _projectUid;    // GUID of the active project.
+let _docUrl;        // Path of the project document.
+let _odataUrl = ""; // URL of the OData service: http[s]://ServerName /ProjectServerName /_api/ProjectData
 
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
@@ -777,10 +777,10 @@ function setOdataUrl() {
 
                 // If you debug with Visual Studio on a local Project Server computer,
                 // uncomment the following lines to use the localhost URL.
-                //var localhost = location.host.split(":", 1);
-                //var pwaStartPosition = _pwa.lastIndexOf("/");
-                //var pwaLength = _pwa.length - pwaStartPosition;
-                //var pwaName = _pwa.substr(pwaStartPosition, pwaLength);
+                //let localhost = location.host.split(":", 1);
+                //let pwaStartPosition = _pwa.lastIndexOf("/");
+                //let pwaLength = _pwa.length - pwaStartPosition;
+                //let pwaName = _pwa.substr(pwaStartPosition, pwaLength);
                 //_pwa = location.protocol + "//" + localhost + pwaName;
 
                 if (_pwa.substring(0, 4) == "http") {
@@ -827,8 +827,8 @@ function getDocumentUrl() {
 // Get data about all projects on Project Server,
 // by using a REST query with the ajax method in jQuery.
 function retrieveOData() {
-    var restUrl = _odataUrl + PROJQUERY + QUERY_FILTER + QUERY_SELECT1 + QUERY_SELECT2;
-    var accept = "application/json; odata=verbose";
+    let restUrl = _odataUrl + PROJQUERY + QUERY_FILTER + QUERY_SELECT1 + QUERY_SELECT2;
+    let accept = "application/json; odata=verbose";
     accept.toLocaleLowerCase();
 
     // Enable cross-origin scripting (required by jQuery 1.5 and later).
@@ -846,7 +846,7 @@ function retrieveOData() {
         },
         complete: function (xhr, textStatus) {
             // Create a message to display in the text box.
-            var message = "\r\ntextStatus: " + textStatus +
+            let message = "\r\ntextStatus: " + textStatus +
                 "\r\nContentType: " + xhr.getResponseHeader("Content-Type") +
                 "\r\nStatus: " + xhr.status +
                 "\r\nResponseText:\r\n" + xhr.responseText;
@@ -878,13 +878,13 @@ function getProjectDataErrorHandler(data, errorCode, errorMessage) {
 // for all projects, and compare with the values for the current project.
 function parseODataResult(oDataResult, currentProjectGuid) {
     // Deserialize the JSON string into a JavaScript object.
-    var res = Sys.Serialization.JavaScriptSerializer.deserialize(oDataResult);
-    var len = res.d.results.length;
-    var projActualCost = 0;
-    var projCost = 0;
-    var projWork = 0;
-    var projPercentCompleted = 0;
-    var myProjectIndex = -1;
+    let res = Sys.Serialization.JavaScriptSerializer.deserialize(oDataResult);
+    let len = res.d.results.length;
+    let projActualCost = 0;
+    let projCost = 0;
+    let projWork = 0;
+    let projPercentCompleted = 0;
+    let myProjectIndex = -1;
 
     for (i = 0; i < len; i++) {
         // If the current project GUID matches the GUID from the OData query,  
@@ -898,10 +898,10 @@ function parseODataResult(oDataResult, currentProjectGuid) {
         projPercentCompleted += Number(res.d.results[i].ProjectPercentCompleted);
 
     }
-    var avgProjCost = projCost / len;
-    var avgProjWork = projWork / len;
-    var avgProjActualCost = projActualCost / len;
-    var avgProjPercentCompleted = projPercentCompleted / len;
+    let avgProjCost = projCost / len;
+    let avgProjWork = projWork / len;
+    let avgProjActualCost = projActualCost / len;
+    let avgProjPercentCompleted = projPercentCompleted / len;
 
     // Round off cost to two decimal places, and round off other values to one decimal place.
     avgProjCost = avgProjCost.toFixed(2);
@@ -922,10 +922,10 @@ function parseODataResult(oDataResult, currentProjectGuid) {
     // Calculate and display values for the current project.
     if (myProjectIndex != -1) {
 
-        var myProjCost = Number(res.d.results[myProjectIndex].ProjectCost);
-        var myProjWork = Number(res.d.results[myProjectIndex].ProjectWork);
-        var myProjActualCost = Number(res.d.results[myProjectIndex].ProjectActualCost);
-        var myProjPercentCompleted = Number(res.d.results[myProjectIndex].ProjectPercentCompleted);
+        let myProjCost = Number(res.d.results[myProjectIndex].ProjectCost);
+        let myProjWork = Number(res.d.results[myProjectIndex].ProjectWork);
+        let myProjActualCost = Number(res.d.results[myProjectIndex].ProjectActualCost);
+        let myProjPercentCompleted = Number(res.d.results[myProjectIndex].ProjectPercentCompleted);
 
         myProjCost = myProjCost.toFixed(2);
         myProjWork = myProjWork.toFixed(1);
@@ -1093,7 +1093,7 @@ The following code includes a `throwError` function that creates a `Toast` objec
 function throwError(errTitle, errMessage) {
     try {
         // Define and throw a custom error.
-        var customError = { name: errTitle, message: errMessage }
+        let customError = { name: errTitle, message: errMessage }
         throw customError;
     }
     catch (err) {
@@ -1103,7 +1103,7 @@ function throwError(errTitle, errMessage) {
 }
 
 // Add a dynamically-created div "toast" for displaying errors to the user.
-var Toast = {
+let Toast = {
 
     Toast: "divToast",
     Close: "btnClose",
@@ -1126,16 +1126,16 @@ var Toast = {
 
     // Create the display for the toast.
     createToast: function () {
-        var divToast;
-        var lblClose;
-        var btnClose;
-        var divOutput;
-        var lblOutput;
-        var lblNotice;
+        let divToast;
+        let lblClose;
+        let btnClose;
+        let divOutput;
+        let lblOutput;
+        let lblNotice;
 
         // Create the container div.
         divToast = document.createElement("div");
-        var toastStyle = "background-color:rgba(220, 220, 128, 0.80);" +
+        let toastStyle = "background-color:rgba(220, 220, 128, 0.80);" +
             "position:absolute;" +
             "bottom:0px;" +
             "width:90%;" +
@@ -1147,7 +1147,7 @@ var Toast = {
         // Create the close button.
         lblClose = document.createElement("div");
         lblClose.setAttribute("id", this.Close);
-        var btnStyle = "text-align:right;" +
+        let btnStyle = "text-align:right;" +
             "padding-right:10px;" +
             "font-size:10pt;" +
             "cursor:default";
@@ -1163,12 +1163,12 @@ var Toast = {
         // Create the div to contain the toast title and message.
         divOutput = document.createElement("div");
         divOutput.setAttribute("id", "divOutput");
-        var outputStyle = "margin-top:0px;";
+        let outputStyle = "margin-top:0px;";
         divOutput.setAttribute("style", outputStyle);
 
         lblNotice = document.createElement("span");
         lblNotice.setAttribute("id", this.Notice);
-        var labelStyle = "font-weight:bold;margin-top:0px;";
+        let labelStyle = "font-weight:bold;margin-top:0px;";
         lblNotice.setAttribute("style", labelStyle);
 
         lblOutput = document.createElement("span");
