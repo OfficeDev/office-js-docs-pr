@@ -42,7 +42,7 @@ Add-in scenarios for Project include the following:
 
 ## Develop Project add-ins
 
-Project supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the [Common API](/javascript/api/office) to create Project add-ins. For information about the Common API, see [Office JavaScript API object model](../../develop/office-javascript-api-object-model.md).
+Project supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the [Common API](/javascript/api/office) to create Project add-ins. For information about the Common API, see [Office JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 To create an add-in, you can use a simple text editor to create an HTML webpage and related JavaScript files, CSS files, and REST queries. In addition to an HTML page or a web application, an add-in requires an XML manifest file for configuration. Project can use a manifest file that includes a **type** attribute that is specified as **TaskPaneExtension**. The manifest file can be used by multiple Office 2013 client applications, or you can create a manifest file that is specific for Project 2013. For more information, see the  _Development basics_ section in [Office Add-ins platform overview](../overview/office-add-ins.md).
 
