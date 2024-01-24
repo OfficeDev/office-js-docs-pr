@@ -46,6 +46,10 @@
       "author": "o365devx",
       "ms.topic": "conceptual",
       "ms.subservice": "add-ins",
+      "open_source_feedback_contributorGuideUrl": "https://github.com/OfficeDev/office-js-docs-pr/blob/main/Contributing.md",
+      "open_source_feedback_issueTitle": "",
+      "open_source_feedback_issueUrl": "https://github.com/OfficeDev/office-js-docs-pr/issues/new?template=-customer-feedback.yml",
+      "open_source_feedback_productName": "Office Add-ins",
       "titleSuffix": "Office Add-ins"
     },
     "fileMetadata": {
