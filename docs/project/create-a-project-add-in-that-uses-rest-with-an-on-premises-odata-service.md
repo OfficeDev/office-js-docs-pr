@@ -114,9 +114,7 @@ The following steps show how to add an icon file to the Visual Studio solution.
 
 1. In **Solution Explorer**, go to the folder named Images.
 
-1. To be displayed in the **Office Add-ins** drop-down list, the icon must be 32 x 32 pixels. For example, install the Project 2013 SDK, and then choose the **Images** folder and add the following file from the SDK: `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
-
-    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder.
+1. To be displayed in the **Office Add-ins** drop-down list, the icon must be 32 x 32 pixels. Use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder.
 
     ![Icon for the HelloProjectOData app.](../images/pj15-hello-project-data-new-icon.jpg)
 
@@ -213,7 +211,7 @@ The task pane shows the add-in display name at the top, which is the value of th
 
 1. In the **body** element, delete the existing code from the template, and then add the code for the user interface. If an element is to be filled with data or manipulated by a jQuery statement, the element must include a unique **id** attribute. In the following code, the **id** attributes for the **button**, **span**, and **td** (table cell definition) elements that jQuery functions use are shown in bold font.
 
-   The following HTML adds a graphic image, which could be a company logo. You can use a logo of your choice, or copy the NewLogo.png file from the Project 2013 SDK download, and then use **Solution Explorer** to add the file to the `HelloProjectODataWeb\Images` folder.
+   The following HTML adds a graphic image (**NewLogo.png**), which could be a company logo.
 
     ```HTML
     <body>

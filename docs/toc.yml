@@ -893,14 +893,9 @@ items:
   - name: Build your first Project add-in
     href: quickstarts/project-quickstart.md
     displayName: Project
-  - name: JavaScript API for Project
-    items:
-    - name: Overview
-      href: reference/overview/project-add-ins-reference-overview.md
-      displayName: Project
-    - name: Create a Project add-in that uses REST with an on-premises OData service
-      href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
-      displayName: Project
+  - name: Create a Project add-in that uses REST with an on-premises OData service
+    href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
+    displayName: Project
 
 - name: Visio
   items:
