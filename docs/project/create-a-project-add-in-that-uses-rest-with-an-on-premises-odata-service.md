@@ -15,8 +15,6 @@ The code in this article is based on a sample developed by Saurabh Sanghvi and A
 
 The following are the prerequisites for creating a Project task pane add-in that reads the **ProjectData** service of a Project Web App instance in an on-premises installation of Project Server 2013.
 
-- Ensure that you have installed the most recent service packs and Windows updates on your local development computer. The operating system can be Windows 7, Windows 8, Windows Server 2008, or Windows Server 2012.
-
 - Project Professional 2013 is required to connect with Project Web App. The development computer must have Project Professional 2013 installed to enable **F5** debugging with Visual Studio.
 
     > [!NOTE]
