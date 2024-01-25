@@ -290,13 +290,13 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
     let _docUrl;        // Path of the project document.
     let _odataUrl = ""; // URL of the OData service: http[s]://ServerName /ProjectServerName /_api/ProjectData
 
-    // The initialize function is required for all add-ins.
-    Office.initialize = function (reason) {
-        // Checks for the DOM to load using the jQuery ready method.
+    // Ensure the Office.js library is loaded.
+    Office.onReady(function() {
+        // Office is ready.
         $(document).ready(function () {
-            // After the DOM is loaded, app-specific code can run.
+            // The document is ready.
         });
-    }
+    });
     ```
 
 1. Add `setOdataUrl` and related functions. The `setOdataUrl` function calls `getProjectGuid` and `getDocumentUrl` to initialize the global variables. In the [getProjectFieldAsync method](/javascript/api/office/office.document), the anonymous function for the  *callback* parameter enables the **Compare All Projects** button by using the `removeAttr` method in the jQuery library, and then displays the URL of the **ProjectData** service. If Project is not connected with Project Web App, the function throws an error, which displays a pop-up error message. The SurfaceErrors.js file includes the `throwError` function.
