@@ -1,9 +1,10 @@
 ---
 title: Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 description: Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) in VS Code.
-ms.date: 08/18/2023
+ms.date: 01/26/2024
 ms.localizationpriority: high
 ---
+
 # Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 
 Office Add-ins running on Windows can debug against the Edge Chromium WebView2 runtime directly in Visual Studio Code.
@@ -33,18 +34,18 @@ These instructions assume you have experience using the command line, understand
 
    - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). Use any one of our quick start guides, such as the [Outlook add-in quick start](../quickstarts/outlook-quickstart.md), in order to do this.
    - If you want to debug an existing project that was created with Yo Office, skip to the next step.
-   - If you want to debug an existing project that was not created with Yo Office, complete the procedure in the [Appendix A](#appendix-a) and then return to the next step of this procedure.
+   - If you want to debug an existing project that was not created with Yo Office, complete the procedure in the [Debug a project not created with yo office](#debug-a-project-not-created-with-yo-office) and then return to the next step of this procedure.
 
 1. Open VS Code and open your project in it.
 
-1. Choose  **View** > **Run** or enter **Ctrl+Shift+D** to switch to debug view.
+1. Choose **View** > **Run** or enter **Ctrl+Shift+D** to switch to debug view.
 
 1. From the **RUN AND DEBUG** options, choose the Edge Chromium option for your host application, such as **Outlook Desktop (Edge Chromium)**. Select **F5** or choose **Run** > **Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
 
    > [!TIP]
    > If you aren't using a project created with Yo Office, you may be prompted to adjust a registry key. While in the root folder of your project, run the following in the command line.
    >
-   > ``` command&nbsp;line
+   > ```command line
    > npx office-addin-debugging start <your manifest path>
    > ```
 
@@ -66,7 +67,7 @@ These instructions assume you have experience using the command line, understand
 
 1. You're now able to set breakpoints in your project's code and debug. To set breakpoints in Visual Studio Code, hover next to a line of code and select the red circle that appears.
 
-    ![Red circle appears on a line of code in Visual Studio Code.](../images/set-breakpoint.jpg)
+   ![Red circle appears on a line of code in Visual Studio Code.](../images/set-breakpoint.jpg)
 
 1. Run functionality in your add-in that calls the lines with breakpoints. You'll see that breakpoints have been hit and you can inspect local variables.
 
@@ -78,58 +79,83 @@ These instructions assume you have experience using the command line, understand
 >
 > If debugging stops working; for example, if breakpoints are being ignored; stop debugging. Then, if necessary, close all host application windows and the Node window. Finally, close Visual Studio Code and reopen it.
 
-### Appendix A
+## Debug a project not created with Yo Office
 
 If your project wasn't created with Yo Office, you need to create a debug configuration for Visual Studio Code.
 
+### Configure package.json file
+
+1. Ensure you have a `package.json` file. If you don't already have a package.json file, run `npm init` in the root folder of your project and answer the prompts.
+1. Run `npm install office-addin-debugging`. This package will sideload your add-in for debugging.
+1. Open the package.json file. In the `scripts` section add the following script.
+
+   ```json
+   "start:desktop": "office-addin-debugging start $MANIFEST_FILE$ desktop"
+   ```
+
+1. Replace `$MANIFEST_FILE$` with the correct file name and folder location of your manifest.xml file.
+1. Save and close the `package.json` file.
+
+### Configure launch.json file
+
 1. Create a file named `launch.json` in the `\.vscode` folder of the project if there isn't one there already.
-1. Ensure that the file has a `configurations` array. The following is a simple example of a `launch.json`.
+1. Copy the following JSON into the file.
 
    ```json
    {
      // Other properties may be here.
-   
      "configurations": [
-   
-       // Configuration objects may be here.
-   
+       {
+         "name": "$HOST$ Desktop (Edge Chromium)",
+         "type": "msedge",
+         "request": "attach",
+         "useWebView": true,
+         "port": 9229,
+         "timeout": 600000,
+         "webRoot": "${workspaceRoot}",
+         "preLaunchTask": "Debug: Excel Desktop"
+       }
      ]
-   
      // Other properties may be here.
    }
    ```
 
-1. Add the following object to the `configurations` array.
-
-   ```json
-   {
-      "name": "$HOST$ Desktop (Edge Chromium)",
-      "type": "pwa-msedge",
-      "request": "attach",
-      "useWebView": true,
-      "port": 9229,
-      "timeout": 600000,
-      "webRoot": "${workspaceRoot}",
-      "preLaunchTask": "Debug: Excel Desktop",
-      "postDebugTask": "Stop Debug"
-   },
-   ```
+   > [!NOTE]
+   > If you already have a launch.json file, just add the single configuration to the `configurations` section.
 
 1. Replace the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
 1. Save and close the file.
 
-### Appendix B
+### Configure tasks.json
 
-1. In the error dialog box, select the **Cancel** button.
-1. If debugging doesn't stop automatically, select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu.
-1. Close the Node window where the local server is running, if it doesn't close automatically.
-1. Close the Office application if it doesn't close automatically.
-1. Open the `\.vscode\launch.json` file in the project.
-1. In the `configurations` array, there are several configuration objects. Find the one whose name has the pattern `$HOST$ Desktop (Edge Chromium)`, where $HOST$ is an Office application that your add-in runs in; for example, `Outlook Desktop (Edge Chromium)` or `Word Desktop (Edge Chromium)`.
-1. Change the value of the `"type"` property from `"edge"` to `"pwa-msedge"`.
-1. Change the value of the `"useWebView"` property from the string `"advanced"` to the boolean `true` (note there are no quotation marks around the `true`).
-1. Save the file.
-1. Close VS Code.
+1. Create a file named `tasks.json` in the `\.vscode` folder of the project.
+1. Copy the following JSON into the file. It contains a task that will start debugging for your add-in.
+
+   ```json
+   {
+     "version": "2.0.0",
+     "tasks": [
+       {
+         "label": "Debug: $HOST$ Desktop",
+         "type": "shell",
+         "command": "npm",
+         "args": ["run", "start:desktop", "--", "--app", "$HOST$"],
+         "presentation": {
+           "clear": true,
+           "panel": "dedicated"
+         },
+         "problemMatcher": []
+       }
+     ]
+   }
+   ```
+
+   > [!NOTE]
+   > If you already have a tasks.json file, just add the single task to the `tasks` section.
+
+1. Replace both instances of the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
+
+You can now debug your project. Note that the previous configuration does not contain tasks to build or start your web server. You'll need to start your web server first before starting the VS Code debugger (F5). For more information on configuring default builds, see [Integrate with External Tools via Tasks](https://code.visualstudio.com/Docs/editor/tasks).
 
 ## See also
 
