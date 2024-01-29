@@ -310,7 +310,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   </AppDomains>
   <!-- End Basic Settings. -->
 
-  <!-- BeginTaskpaneMode integration. Any client that doesn't understand commands will use this section.
+  <!-- BeginTaskPaneMode integration. Any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides. -->
   <Hosts>
     <Host Name="Document"/>
@@ -318,7 +318,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <DefaultSettings>
     <SourceLocation DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html" />
   </DefaultSettings>
-  <!-- EndTaskpaneMode integration. -->
+  <!-- EndTaskPaneMode integration. -->
 
   <Permissions>ReadWriteDocument</Permissions>
 
@@ -479,20 +479,20 @@ The following sections show examples of manifest v1.1 XML files for content, tas
       <!-- ShortStrings max characters==125. -->
       <bt:ShortStrings>
         <bt:String id="Contoso.FunctionButton.Label" DefaultValue="Execute Function" />
-        <bt:String id="Contoso.TaskpaneButton.Label" DefaultValue="Show Taskpane" />
+        <bt:String id="Contoso.TaskpaneButton.Label" DefaultValue="Show Task Pane" />
         <bt:String id="Contoso.Dropdown.Label" DefaultValue="Dropdown" />
-        <bt:String id="Contoso.Item1.Label" DefaultValue="Show Taskpane 1" />
-        <bt:String id="Contoso.Item2.Label" DefaultValue="Show Taskpane 2" />
+        <bt:String id="Contoso.Item1.Label" DefaultValue="Show Task Pane 1" />
+        <bt:String id="Contoso.Item2.Label" DefaultValue="Show Task Pane 2" />
         <bt:String id="Contoso.Tab1.GroupLabel" DefaultValue="Test Group" />
          <bt:String id="Contoso.Tab1.TabLabel" DefaultValue="Test Tab" />
       </bt:ShortStrings>
       <!-- LongStrings max characters==250. -->
       <bt:LongStrings>
-        <bt:String id="Contoso.FunctionButton.Tooltip" DefaultValue="Click to Execute Function" />
-        <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane" />
+        <bt:String id="Contoso.FunctionButton.Tooltip" DefaultValue="Click to execute function." />
+        <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Click to show a task pane." />
         <bt:String id="Contoso.Dropdown.Tooltip" DefaultValue="Click to Show Options on this Menu" />
-        <bt:String id="Contoso.Item1.Tooltip" DefaultValue="Click to Show Taskpane1" />
-        <bt:String id="Contoso.Item2.Tooltip" DefaultValue="Click to Show Taskpane2" />
+        <bt:String id="Contoso.Item1.Tooltip" DefaultValue="Click to Show Task Pane 1." />
+        <bt:String id="Contoso.Item2.Tooltip" DefaultValue="Click to Show Task Pane 2." />
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
