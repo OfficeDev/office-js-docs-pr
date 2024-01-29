@@ -268,11 +268,13 @@ items:
           - name: Use the Office dialog box to play a video
             href: develop/dialog-video.md
         - name: Task panes
-          href: design/task-pane-add-ins.md
+          items:
+          - name: Task panes in Office Add-ins
+            href: design/task-pane-add-ins.md
+          - name: Show or hide an Office Add-in task pane
+            href: develop/show-hide-add-in.md
       - name: Keyboard shortcuts
         href: design/keyboard-shortcuts.md
-      - name: Show or hide an Office Add-in task pane
-        href: develop/show-hide-add-in.md  
       - name: Localization
         href: develop/localization.md
     - name: Frameworks, IDEs, and other tools
