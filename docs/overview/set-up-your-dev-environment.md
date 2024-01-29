@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 09/01/2022
+ms.date: 01/29/2024
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -16,7 +16,7 @@ You need a Microsoft 365 account. You can get a free, 90-day renewable Microsoft
 
 ## Install the environment
 
-There are two kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the two environments is different, so if multiple people will be working on an add-in project, they must all use the same environment. 
+There are two kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the two environments is different, so if multiple people will be working on an add-in project, they must all use the same environment.
 
 - **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called WebPack. The project creation and scaffolding tool, Yo Office, is updated frequently.
 - **Visual Studio environment**: Choose this environment only if your development computer is Windows, and you want to develop the server-side of the add-in with a .NET based language and framework, such as ASP.NET. The add-in project templates in Visual Studio aren't updated as frequently as those in the Node.js environment. Client-side code can't be debugged with the built-in Visual Studio debugger, but you can debug client-side code with your browser's development tools. More information later on the **Visual Studio environment** tab.
@@ -24,7 +24,7 @@ There are two kinds of development environments to choose from. The scaffolding 
 > [!NOTE]
 > Visual Studio for Mac doesn't include the project scaffolding templates for Office Add-ins, so if your development computer is a Mac, you should work with the Node.js environment.
 
-Select the tab for the environment you choose. 
+Select the tab for the environment you choose.
 
 # [Node.js environment](#tab/yeomangenerator)
 
@@ -134,6 +134,8 @@ If you do not have Visual Studio 2017 (for Windows) or later installed, install 
 ## Install Script Lab
 
 Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs. Script Lab is itself an Office Add-in and can be installed from AppSource at [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1). There's a version for Excel, PowerPoint, and Word, and a separate version for Outlook. For information about how to use Script Lab, see [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md).
+
+[!INCLUDE [script-lab-outlook-web](../includes/script-lab-outlook-web.md)]
 
 ## Next steps
 

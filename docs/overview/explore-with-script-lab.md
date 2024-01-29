@@ -1,7 +1,7 @@
 ---
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
-ms.date: 11/10/2023
+ms.date: 01/29/2024
 ms.topic: concept-article
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -66,6 +66,8 @@ Script Lab for Outlook is available on the following clients.
 - Outlook on Windows\*
 - Outlook on Mac
 - Outlook on the web when using Chrome, Microsoft Edge, or Safari browsers
+
+    [!INCLUDE [script-lab-outlook-web](../includes/script-lab-outlook-web.md)]
 
 For more details on Script Lab for Outlook, see the related [blog post](https://devblogs.microsoft.com/microsoft365dev/script-lab-now-supports-outlook/).
 
