@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 12/19/2023
+ms.date: 01/25/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -127,6 +127,42 @@ In Outlook on Windows (starting in Version 2310 (Build 16913.10000)), a Smart Al
 ![Dialog that alerts the user that their mail item can't be processed by the Smart Alerts add-in while their Outlook client is in Work Offline mode.](../images/outlook-smart-alerts-offline-mode.png)
 
 In Outlook on Mac, the **Send** option becomes unavailable while in Work Offline mode. Once Work Offline mode is turned off, the user can select **Send** and activate the Smart Alerts add-in.
+
+### User navigates away from current message
+
+When a user navigates away from the message they're sending (for example, to read a message in their inbox), the behavior of a Smart Alerts add-in differs between Outlook clients. Select the tab for the Outlook client on which the add-in is running.
+
+# [Windows](#tab/windows)
+
+#### Message composed in a window
+
+If a message is being composed in a separate window, such as a new message, and a user navigates away from it after they select **Send**, the Smart Alerts add-in will continue to process the message in the background. If additional actions are needed before the message can be sent, the appropriate Smart Alerts dialog is shown to the user (see [Available send mode options](#available-send-mode-options)).
+
+#### Message composed in the Reading Pane
+
+If a reply, forward, or existing draft is being composed in the Outlook Reading Pane, and a user navigates away from it after they select **Send**, a dialog with options is shown to the user. The options available depend on the [send mode option](#available-send-mode-options) implemented by the add-in.
+
+If the **prompt user** send mode option is implemented, the following options are shown.
+
+- **Wait**: This option opens the message being composed in a new window, so that the Smart Alerts add-in can continue to process it. If the user navigates away from the newly opened window during processing, the add-in will continue to process the message in the background (to learn more, see [Message composed in a window](#message-composed-in-a-window)). If additional actions are needed before a message can be sent, the appropriate Smart Alerts dialog is shown to the user.
+- **Send Anyway**: This option terminates the add-in operation and sends the message.
+- **Save as Draft**: This option terminates the add-in and send operation and saves a draft of the message to the mailbox's **Drafts** folder.
+
+:::image type="content" source="../images/outlook-item-switch-prompt-user.png" alt-text="The dialog shown when a user navigates away from a message being processed by a Smart Alerts add-in that implements the prompt user send mode option.":::
+
+If the **soft block** or **block** send mode option is implemented, only the **Wait** and **Save as Draft** options are shown.
+
+:::image type="content" source="../images/outlook-item-switch-block.png" alt-text="The dialog shown when a user navigates away from a message being processed by a Smart Alerts add-in that implements the soft block or block send mode option.":::
+
+# [Mac](#tab/mac)
+
+In Outlook on Mac, when a user navigates away from the message they're sending after selecting **Send**, the Smart Alerts add-in will continue to process the item in the background. If the item doesn't meet the add-in's conditions, a dialog is shown to the user to alert them that additional actions may be needed before the item can be sent. Conversely, if the item meets the add-in's conditions, the item is sent once the add-in completes processing it.
+
+# [Web/New Outlook on Windows (preview)](#tab/web)
+
+In Outlook on the web or on [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), a user must remain on the message being sent until the Smart Alerts add-in completes processing it. Otherwise, once the user navigates away from the item, the add-in terminates the Smart Alerts operation and saves a draft to the mailbox's **Drafts** folder.
+
+---
 
 ## Activate Smart Alerts in applications that use Simple MAPI
 
