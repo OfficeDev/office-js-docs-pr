@@ -39,7 +39,7 @@ The following shows how to configure your unified manifest to enable the prepend
     - The "id" of the runtime is set to the descriptive name, "function_command_runtime".
     - The "code.page" property is set to the URL of the UI-less HTML file that will load the function command.
     - The "lifetime" property is set to "short", which means that the runtime starts up when the function command button is selected and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-    - There are actions specified to run the "appendDisclaimerOnSend" and "prependHeaderOnSend" functions. You'll create these functions in a later step.
+    - There are actions specified to run the "prependHeaderOnSend" and "appendDisclaimerOnSend" functions. You'll create these functions in a later step.
 
     ```json
     {
