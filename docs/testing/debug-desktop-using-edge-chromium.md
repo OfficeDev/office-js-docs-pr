@@ -1,11 +1,11 @@
 ---
-title: Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
+title: Debug Office Add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 description: Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) in VS Code.
 ms.date: 01/26/2024
 ms.localizationpriority: high
 ---
 
-# Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
+# Debug Office Add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 
 Office Add-ins running on Windows can debug against the Edge Chromium WebView2 runtime directly in Visual Studio Code.
 
@@ -32,7 +32,7 @@ These instructions assume you have experience using the command line, understand
 
 1. The first step depends on the project and how it was created.
 
-   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). Use any one of our quick start guides, such as the [Outlook add-in quick start](../quickstarts/outlook-quickstart.md), in order to do this.
+   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). To do this, use any of our quick start guides, such as the [Outlook add-in quick start](../quickstarts/outlook-quickstart.md).
    - If you want to debug an existing project that was created with Yo Office, skip to the next step.
    - If you want to debug an existing project that was not created with Yo Office, complete the procedure in the [Debug a project not created with yo office](#debug-a-project-not-created-with-yo-office) and then return to the next step of this procedure.
 
