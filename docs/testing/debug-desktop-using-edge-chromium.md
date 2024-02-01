@@ -26,7 +26,7 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 - Windows 10, 11
 - A combination of platform and Office application that supports Microsoft Edge with WebView2 (Chromium-based) as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your version of Office from a Microsoft 365 subscription is earlier than Version 2101, you will need to install WebView2. Use the instructions for installing it at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
-## Use the Visual Studio Code debugger
+## Debug a project created with Yo Office
 
 These instructions assume you have experience using the command line, understand basic JavaScript, and have created an Office Add-in project before using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). If you haven't done this before, consider visiting one of our tutorials, such as the [Excel Office Add-in tutorial](../tutorials/excel-tutorial.md).
 
@@ -34,7 +34,6 @@ These instructions assume you have experience using the command line, understand
 
    - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). Use any one of our quick start guides, such as the [Outlook add-in quick start](../quickstarts/outlook-quickstart.md), in order to do this.
    - If you want to debug an existing project that was created with Yo Office, skip to the next step.
-   - If you want to debug an existing project that was not created with Yo Office, complete the procedure in the [Debug a project not created with yo office](#debug-a-project-not-created-with-yo-office) and then return to the next step of this procedure.
 
 1. Open VS Code and open your project in it.
 
@@ -156,6 +155,19 @@ If your project wasn't created with Yo Office, you need to create a debug config
 1. Replace both instances of the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
 
 You can now debug your project. Note that the previous configuration does not contain tasks to build or start your web server. You'll need to start your web server first before starting the VS Code debugger (F5). For more information on configuring default builds, see [Integrate with External Tools via Tasks](https://code.visualstudio.com/Docs/editor/tasks).
+
+### Appendix B
+
+1. In the error dialog box, select the **Cancel** button.
+1. If debugging doesn't stop automatically, select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu.
+1. Close the Node window where the local server is running, if it doesn't close automatically.
+1. Close the Office application if it doesn't close automatically.
+1. Open the `\.vscode\launch.json` file in the project.
+1. In the `configurations` array, there are several configuration objects. Find the one whose name has the pattern `$HOST$ Desktop (Edge Chromium)`, where $HOST$ is an Office application that your add-in runs in; for example, `Outlook Desktop (Edge Chromium)` or `Word Desktop (Edge Chromium)`.
+1. Change the value of the `"type"` property from `"edge"` to `"pwa-msedge"`.
+1. Change the value of the `"useWebView"` property from the string `"advanced"` to the boolean `true` (note there are no quotation marks around the `true`).
+1. Save the file.
+1. Close VS Code.
 
 ## See also
 
