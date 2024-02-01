@@ -89,10 +89,12 @@ If your project wasn't created with Yo Office, you need to create a debug config
 1. Open the package.json file. In the `scripts` section add the following script.
 
    ```json
-   "start:desktop": "office-addin-debugging start $MANIFEST_FILE$ desktop"
+   "start:desktop": "office-addin-debugging start $MANIFEST_FILE$ desktop",
+   "dev-server": "$SERVER_START$"
    ```
 
 1. Replace `$MANIFEST_FILE$` with the correct file name and folder location of your manifest.xml file.
+1. Replace `$SERVER_START$` with the command to start your web server. Later in these steps, the office-addin-debugging package will specifically look for the `dev-server` script to launch your web server.
 1. Save and close the `package.json` file.
 
 ### Configure launch.json file
@@ -154,7 +156,7 @@ If your project wasn't created with Yo Office, you need to create a debug config
 
 1. Replace both instances of the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
 
-You can now debug your project. Note that the previous configuration does not contain tasks to build or start your web server. You'll need to start your web server first before starting the VS Code debugger (F5). For more information on configuring default builds, see [Integrate with External Tools via Tasks](https://code.visualstudio.com/Docs/editor/tasks).
+You can now debug your project using the VS Code debugger (F5).
 
 ### Appendix B
 
