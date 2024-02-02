@@ -154,7 +154,7 @@ If your project wasn't created with Yo Office, you need to create a debug config
    > [!NOTE]
    > If you already have a `tasks.json` file, just add the single task to the `tasks` section.
 
-1. Replace both instances of the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
+1. Replace both instances of the placeholder `$HOST$` with the name of the Office application that the add-in runs in. For example, `Outlook` or `Word`.
 
 You can now debug your project using the VS Code debugger (F5).
 
