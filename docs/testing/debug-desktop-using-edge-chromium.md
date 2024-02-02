@@ -32,7 +32,7 @@ These instructions assume you have experience using the command line, understand
 
 1. The first step depends on the project and how it was created.
 
-   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). To do this, use any of our quick start guides, such as the [Outlook add-in quick start](../quickstarts/outlook-quickstart.md).
+   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). Follow any of the yo office quick start guides, such as the [Outlook add-in quick start](../quickstarts/outlook-quickstart.md).
    - If you want to debug an existing project that was created with Yo Office, skip to the next step.
 
 1. Open VS Code and open your project in it.
@@ -76,7 +76,7 @@ These instructions assume you have experience using the command line, understand
 > [!IMPORTANT]
 > The best way to stop a debugging session is to select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu. This action should close the Node server window and attempt to close the host application, but there'll be a prompt on the host application asking you whether to save the document or not. Make an appropriate choice and let the host application close. Avoid manually closing the Node window or host application. Doing so can cause bugs especially when you are stopping and starting debugging sessions repeatedly.
 >
-> If debugging stops working; for example, if breakpoints are being ignored; stop debugging. Then, if necessary, close all host application windows and the Node window. Finally, close Visual Studio Code and reopen it.
+> If debugging stops working---for example, if breakpoints are being ignored---stop debugging. Then, if necessary, close all host application windows and the Node window. Finally, close Visual Studio Code and reopen it.
 
 ## Debug a project not created with Yo Office
 
@@ -85,16 +85,16 @@ If your project wasn't created with Yo Office, you need to create a debug config
 ### Configure package.json file
 
 1. Ensure you have a `package.json` file. If you don't already have a package.json file, run `npm init` in the root folder of your project and answer the prompts.
-1. Run `npm install office-addin-debugging`. This package will sideload your add-in for debugging.
-1. Open the package.json file. In the `scripts` section add the following script.
+1. Run `npm install office-addin-debugging`. This package sideloads your add-in for debugging.
+1. Open the `package.json` file. In the `scripts` section, add the following script.
 
    ```json
    "start:desktop": "office-addin-debugging start $MANIFEST_FILE$ desktop",
    "dev-server": "$SERVER_START$"
    ```
 
-1. Replace `$MANIFEST_FILE$` with the correct file name and folder location of your manifest.xml file.
-1. Replace `$SERVER_START$` with the command to start your web server. Later in these steps, the office-addin-debugging package will specifically look for the `dev-server` script to launch your web server.
+1. Replace `$MANIFEST_FILE$` with the correct file name and folder location of your manifest.
+1. Replace `$SERVER_START$` with the command to start your web server. Later in these steps, the `office-addin-debugging` package will specifically look for the `dev-server` script to launch your web server.
 1. Save and close the `package.json` file.
 
 ### Configure launch.json file
@@ -122,15 +122,15 @@ If your project wasn't created with Yo Office, you need to create a debug config
    ```
 
    > [!NOTE]
-   > If you already have a launch.json file, just add the single configuration to the `configurations` section.
+   > If you already have a `launch.json` file, just add the single configuration to the `configurations` section.
 
-1. Replace the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
+1. Replace the placeholder `$HOST$` with the name of the Office application that the add-in runs in. For example, `Outlook` or `Word`.
 1. Save and close the file.
 
 ### Configure tasks.json
 
 1. Create a file named `tasks.json` in the `\.vscode` folder of the project.
-1. Copy the following JSON into the file. It contains a task that will start debugging for your add-in.
+1. Copy the following JSON into the file. It contains a task that starts debugging for your add-in.
 
    ```json
    {
@@ -152,7 +152,7 @@ If your project wasn't created with Yo Office, you need to create a debug config
    ```
 
    > [!NOTE]
-   > If you already have a tasks.json file, just add the single task to the `tasks` section.
+   > If you already have a `tasks.json` file, just add the single task to the `tasks` section.
 
 1. Replace both instances of the placeholder `$HOST$` with the name of the Office application that the add-in runs in; for example, `Outlook` or `Word`.
 
