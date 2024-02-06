@@ -1,7 +1,7 @@
 ---
 title: Use search options in your Word add-in to find text 
 description: Learn to use search options in your Word add-in.
-ms.date: 03/15/2023
+ms.date: 02/06/2024
 ms.localizationpriority: medium
 ---
 
@@ -202,6 +202,34 @@ await Word.run(async (context) => {
 
     // Queue a command to search the document for tabs.
     const searchResults = context.document.body.search('^t');
+
+    // Queue a command to load the font property values.
+    searchResults.load('font');
+
+    // Synchronize the document state.
+    await context.sync();
+    console.log('Found count: ' + searchResults.items.length);
+
+    // Queue a set of commands to change the font for each found item.
+    for (let i = 0; i < searchResults.items.length; i++) {
+        searchResults.items[i].font.color = 'purple';
+        searchResults.items[i].font.highlightColor = 'pink';
+        searchResults.items[i].font.bold = true;
+    }
+
+    // Synchronize the document state.
+    await context.sync();
+});
+```
+
+### Search using a wildcard for an escaped special character
+
+```js
+// Run a batch operation against the Word object model.
+await Word.run(async (context) => {
+
+    // Queue a command to search the document with a wildcard for an escaped opening curly brace.
+    const searchResults = context.document.body.search('[{]', { matchWildcards: true });
 
     // Queue a command to load the font property values.
     searchResults.load('font');
