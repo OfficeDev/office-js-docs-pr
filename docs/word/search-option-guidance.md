@@ -224,6 +224,8 @@ await Word.run(async (context) => {
 
 ### Search using a wildcard for an escaped special character
 
+As noted earlier in [Escape special characters](#escape-special-characters), there are special characters used by regular expressions. In order for a wildcard search to find one of those special characters programmatically, it'll need to be escaped using '[' and ']'. This example shows how to find the '{' special character using a wildcard search.
+
 ```js
 // Run a batch operation against the Word object model.
 await Word.run(async (context) => {
