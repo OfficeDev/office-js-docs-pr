@@ -22,7 +22,7 @@ Debugging the server-side code of an Office Add-in is the same as debugging the 
 
 - [Debug ASP.NET or ASP.NET Core apps in Visual Studio](/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications)
 - [Debugging Express](https://expressjs.com/en/guide/debugging.html)
-- [Node.js Debugging Guide](https://nodejs.org/en/docs/guides/debugging-getting-started/)
+- [Node.js Debugging Guide](https://nodejs.org/en/learn/getting-started/debugging)
 - [Node.js debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 - [Webpack Debugging](https://webpack.js.org/contribute/debugging/)
 
