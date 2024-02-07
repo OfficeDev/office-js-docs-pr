@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: Learn how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.
-ms.date: 02/17/2022
+ms.date: 02/07/2024
 ms.localizationpriority: medium
 ---
 
@@ -252,52 +252,6 @@ await Excel.run(async (context) => {
     await context.sync();
 });
 ```
-
-## Add custom XML data to the workbook
-
-Excel's Open XML **.xlsx** file format lets your add-in embed custom XML data in the workbook. This data persists with the workbook, independent of the add-in.
-
-A workbook contains a [CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection), which is a list of [CustomXmlParts](/javascript/api/excel/excel.customxmlpart). These give access to the XML strings and a corresponding unique ID. By storing these IDs as settings, your add-in can maintain the keys to its XML parts between sessions.
-
-The following samples show how to use custom XML parts. The first code block demonstrates how to embed XML data in the document. It stores a list of reviewers, then uses the workbook's settings to save the XML's `id` for future retrieval. The second block shows how to access that XML later. The "ContosoReviewXmlPartId" setting is loaded and passed to the workbook's `customXmlParts`. The XML data is then printed to the console.
-
-```js
-await Excel.run(async (context) => {
-    // Add reviewer data to the document as XML
-    let originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
-    let customXmlPart = context.workbook.customXmlParts.add(originalXml);
-    customXmlPart.load("id");
-    await context.sync();
-
-    // Store the XML part's ID in a setting
-    let settings = context.workbook.settings;
-    settings.add("ContosoReviewXmlPartId", customXmlPart.id);
-});
-```
-
-```js
-await Excel.run(async (context) => {
-    // Retrieve the XML part's id from the setting
-    let settings = context.workbook.settings;
-    let xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
-
-    await context.sync();
-
-    if (xmlPartIDSetting.value) {
-        let customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
-        let xmlBlob = customXmlPart.getXml();
-
-        await context.sync();
-
-        // Add spaces to make it more human-readable in the console.
-        let readableXML = xmlBlob.value.replace(/></g, "> <");
-        console.log(readableXML);
-    }
-});
-```
-
-> [!NOTE]
-> `CustomXMLPart.namespaceUri` is only populated if the top-level custom XML element contains the `xmlns` attribute.
 
 ## Control calculation behavior
 
