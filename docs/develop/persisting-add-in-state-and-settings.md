@@ -16,7 +16,7 @@ If you need to persist state across documents, such as tracking user preferences
 
 ## Browser storage
 
-Persist data across add-in instances with tools from the underlying browser control: browser cookies, HTML5 web storage ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), or [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
+Persist data across add-in instances with tools from the underlying browser control, such as browser cookies or HTML5 web storage ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
 
 Some browsers or the user's browser settings may block browser-based storage techniques. You should test for availability as documented in [Using the Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
 
