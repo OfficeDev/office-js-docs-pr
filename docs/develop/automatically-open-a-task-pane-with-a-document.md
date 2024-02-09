@@ -161,4 +161,4 @@ You can test the previous example by using your Microsoft 365 subscription to tr
 
 - For a sample that shows you how to use the autoopen feature, see [Auto-open a task pane with a document](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/auto-open-task-pane).
 - [Automatically open a task pane when an add-in is installed](automatically-open-on-installation.md)
-- [Learn about the Microsoft 365 developer program](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-)
+- [Learn about the Microsoft 365 Developer Program](https://aka.ms/devprogramsignup)

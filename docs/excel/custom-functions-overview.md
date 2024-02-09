@@ -90,7 +90,7 @@ Another easy way to try out custom functions is to use [Script Lab](https://apps
 
 ## See also
 
-- [Learn about the Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-)
+- [Learn about the Microsoft 365 Developer Program](https://aka.ms/devprogramsignup)
 - [Custom functions requirement sets](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
 - [Custom functions naming guidelines](custom-functions-naming.md)
 - [Make your custom functions compatible with XLL user-defined functions](make-custom-functions-compatible-with-xll-udf.md)

@@ -156,4 +156,4 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)
-- [Learn about the Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-)
+- [Learn about the Microsoft 365 Developer Program](https://aka.ms/devprogramsignup)
