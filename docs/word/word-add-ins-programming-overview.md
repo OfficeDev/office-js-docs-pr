@@ -83,6 +83,6 @@ After you develop your add-in, you can [publish](../publish/publish.md) it to a 
 ## See also
 
 * [Developing Office Add-ins](../develop/develop-overview.md)
-* [Learn about the Microsoft 365 Developer Program](https://aka.ms/devprogramsignup)
+* [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
 * [Word JavaScript API reference](../reference/overview/word-add-ins-reference-overview.md)

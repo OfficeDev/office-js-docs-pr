@@ -137,7 +137,7 @@ conceptualContent:
     # Card 6
     - title: Engage
       links:
-        - url: https://aka.ms/devprogramsignup
+        - url: https://aka.ms/m365devprogram
           itemType: whats-new
           text: Join the Developer Program
         - url: https://aka.ms/m365dev-suggestions

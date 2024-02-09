@@ -136,4 +136,4 @@ See [Support older Microsoft webviews and Office versions](../develop/support-ie
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Learn about the Microsoft 365 Developer Program](https://aka.ms/devprogramsignup)
+- [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)

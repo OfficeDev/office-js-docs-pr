@@ -16,7 +16,7 @@ The Microsoft 365 Developer Platform is committed to ensuring the compatibility 
 
 - Announcements that describe the impacted features and recommended changes are made on the [Microsoft 365 Developer Blog](https://devblogs.microsoft.com/microsoft365dev/).
 - If your add-in is published in [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), you'll be contacted through the information you provided.
-- Where possible, admins of impacted Microsoft 365 tenants (including [developer tenants](https://aka.ms/devprogramsignup)) will be contacted through [Message Center](/microsoft-365/admin/manage/message-center). It's the responsibility of the admin to contact providers of add-in solutions published outside of AppSource.
+- Where possible, admins of impacted Microsoft 365 tenants (including [Microsoft 365 Developer Program tenants](https://aka.ms/m365devprogram)) will be contacted through [Message Center](/microsoft-365/admin/manage/message-center). It's the responsibility of the admin to contact providers of add-in solutions published outside of AppSource.
 
 ### Deprecation policy
 

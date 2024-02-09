@@ -44,4 +44,4 @@ To understand the Word APIs, you must understand how the components of a documen
 * [Build your first Word add-in](../quickstarts/word-quickstart.md)
 * [Word add-in tutorial](../tutorials/word-tutorial.md)
 * [Word JavaScript API reference](/javascript/api/word)
-* [Learn about the Microsoft 365 Developer Program](https://aka.ms/devprogramsignup)
+* [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)

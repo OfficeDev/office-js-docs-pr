@@ -72,5 +72,5 @@ The following books and classes provide add-ins information from a different per
 
 ## See also
 
-- [Learn about the Microsoft 365 Developer Program](https://aka.ms/devprogramsignup)
+- [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
 - [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)
