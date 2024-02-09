@@ -1,7 +1,7 @@
 ---
 title: Persist add-in state and settings
 description: Learn how to persist data in Office Web Add-in applications running in the stateless environment of a browser control.
-ms.date: 02/07/2024
+ms.date: 02/08/2024
 ms.localizationpriority: medium
 ---
 
@@ -22,18 +22,42 @@ Some browsers or the user's browser settings may block browser-based storage tec
 
 ### Storage partitioning
 
-As a best practice, any private data should be stored in partitioned `localStorage`. [Office.context.partitionKey](/javascript/api/office/office.context#office-office-context-partitionkey-member) provides a local storage partition key only accessible by your add-in. The following example shows how to use the partition key with `localStorage`.
+As a best practice, any private data should be stored in partitioned `localStorage`. [Office.context.partitionKey](/javascript/api/office/office.context#office-office-context-partitionkey-member) provides a local storage partition key only accessible by your add-in. The following example shows how to use the partition key with `localStorage`. Note that the partition key is undefined in environments without partitioning, such as the browser controls for Windows applications.
 
 ```js
-// Store the value "hello" in partitioned local storage.
-const myPartitionKey = Office.context.partitionKey;
-localStorage.setItem(myPartitionKey, "hello");
+// Store the value "Hello" in local storage with the key "myKey1".
+setInLocalStorage("myKey1", "Hello");
+
+// ... 
+
+// Retrieve the value stored in local storage under the key "myKey1".
+const message = getFromLocalStorage("myKey1");
+console.log(message);
 
 // ...
 
-// Retrieve the value stored with the partition key.
-const value = localStorage.getItem(myPartitionKey);
-console.log(value);
+function setInLocalStorage(key: string, value: string) {
+  const myPartitionKey = Office.context.partitionKey;
+
+  // Check if local storage is partitioned. 
+  // If so, use the partition to ensure the data is only accessible by your add-in.
+  if (myPartitionKey) {
+    localStorage.setItem(myPartitionKey + key, value);
+  } else {
+    localStorage.setItem(key, value);
+  }
+}
+
+function getFromLocalStorage(key: string) {
+  const myPartitionKey = Office.context.partitionKey;
+
+  // Check if local storage is partitioned.
+  if (myPartitionKey) {
+    return localStorage.getItem(myPartitionKey + key);
+  } else {
+    return localStorage.getItem(key);
+  }
+}
 ```
 
 Starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is enabled to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). This means that data stored by storage APIs, such as local storage, are only available to contexts with the same origin and the same top-level site.
