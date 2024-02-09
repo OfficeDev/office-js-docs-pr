@@ -104,7 +104,7 @@ Get started by [creating your first Excel add-in](../quickstarts/excel-quickstar
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Learn about Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Learn about Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-)
 - [Developing Office Add-ins](../develop/develop-overview.md)
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)

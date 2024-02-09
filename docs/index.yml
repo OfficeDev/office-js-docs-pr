@@ -137,9 +137,9 @@ conceptualContent:
     # Card 6
     - title: Engage
       links:
-        - url: https://aka.ms/m365devprogram
+        - url: /office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-
           itemType: whats-new
-          text: Join the Developer Program
+          text: Learn about the Developer Program
         - url: https://aka.ms/m365dev-suggestions
           itemType: architecture
           text: Request features

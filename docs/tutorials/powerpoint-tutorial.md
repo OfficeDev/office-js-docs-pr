@@ -584,7 +584,7 @@ Complete the following steps to add code that navigates between the slides of a 
 - Office connected to a Microsoft 365 subscription (including Office on the web).
 
     > [!NOTE]
-    > If you don't already have Office, you can [join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
+    > If you don't already have Office, you might qualify for a Microsoft 365 E5 developer subscription to use during development through the [Microsoft 365 Developer Program](https://aka.ms/devprogramsignup); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 
 ## Create your add-in project
 

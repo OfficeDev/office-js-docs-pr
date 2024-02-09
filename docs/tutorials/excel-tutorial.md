@@ -32,7 +32,7 @@ In this tutorial, you'll create an Excel task pane add-in that:
 - Office connected to a Microsoft 365 subscription (including Office on the web).
 
     > [!NOTE]
-    > If you don't already have Office, you can [join the Microsoft 365 developer program](https://aka.ms/M365devprogram) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
+    > If you don't already have Office, you might qualify for a Microsoft 365 E5 developer subscription to use during development through the [Microsoft 365 Developer Program](https://aka.ms/devprogramsignup); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 
 ## Create your add-in project
 
@@ -96,7 +96,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     - The `tryCatch` function will be used by all the functions interacting with the workbook from the task pane. Catching Office JavaScript errors in this fashion is a convenient way to generically handle any uncaught errors.
 
     > [!NOTE]
-    > The following code uses ES6 JavaScript, which isn't compatible with [older versions of Office that use the Trident (Internet Explorer 11) browser engine](/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins). For information on how to support those platforms in production, see [Support older Microsoft webviews and Office versions](/office/dev/add-ins/develop/support-ie-11). [Join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program) to get a free, 90-day renewable Microsoft 365 subscription, with the latest Office applications, to use during development.
+    > The following code uses ES6 JavaScript, which isn't compatible with [older versions of Office that use the Trident (Internet Explorer 11) browser engine](/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins). For information on how to support those platforms in production, see [Support older Microsoft webviews and Office versions](/office/dev/add-ins/develop/support-ie-11). You might qualify for a Microsoft 365 E5 developer subscription, which has the latest Office applications, to use during development through the [Microsoft 365 Developer Program](https://aka.ms/devprogramsignup); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 
     ```js
     async function createTable() {

@@ -72,5 +72,5 @@ The following books and classes provide add-ins information from a different per
 
 ## See also
 
-- [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
+- [Learn about the Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-)
 - [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)

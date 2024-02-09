@@ -55,6 +55,6 @@ You can distribute add-ins through a file share, an app catalog in a SharePoint 
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Learn about the Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-)
 - [Developing Office Add-ins](../develop/develop-overview.md)
 - [Create a Project add-in that uses REST with an on-premises Project Server OData service](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
