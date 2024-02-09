@@ -2,7 +2,7 @@
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
 ms.topic: tutorial
-ms.date: 07/27/2023
+ms.date: 02/08/2024
 ms.localizationpriority: high
 ---
 
@@ -36,7 +36,7 @@ The projects that the tool creates have the following characteristics.
 
 ## Use the tool
 
-Start the tool with the following command in a system prompt (not a bash window).
+Start the tool with the following command in a system prompt (not a bash window). This will create a new project in a new folder in the current directory.
 
 ```command&nbsp;line
 yo office 
@@ -65,7 +65,7 @@ The next question asks you to choose between **TypeScript** and **JavaScript**. 
 
 ![Screenshot showing that the user chose "Office Add-in Task Pane project" to the preceding question and shows the prompt for language, and the possible answers, TypeScript and JavaScript, in the Yeoman generator.](../images/yo-office-language-prompt.png)
 
-You're then prompted to give the add-in a name. The name you specify will be used in the add-in's manifest, but you can change it later.
+You're then prompted to give the add-in a name. The name you specify will be used in the add-in's manifest, but you can change it later. This is also the folder name for the project.
 
 ![Screenshot showing that the user chose TypeScript to the previous question and shows the prompt for the add-in name in the Yeoman generator.](../images/yo-office-name-prompt.png)
 
