@@ -1,6 +1,10 @@
 {
     "redirections": [
         {
+            "source_path": "docs/quickstarts/outlook-quickstart-json-manifest.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/outlook-quickstart"
+        },
+        {
             "source_path": "docs/design/using-office-ui-fabric-react.md",
             "redirect_url": "/office/dev/add-ins/quickstarts/fluent-react-quickstart"
         },
