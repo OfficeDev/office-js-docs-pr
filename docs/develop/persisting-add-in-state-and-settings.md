@@ -22,7 +22,7 @@ Some browsers or the user's browser settings may block browser-based storage tec
 
 ### Storage partitioning
 
-As a best practice, any private data should be stored in partitioned `localStorage`. [Office.context.partitionKey](/javascript/api/office/office.context#office-office-context-partitionkey-member) provides a local storage partition key only accessible by your add-in. The following example shows how to use the partition key with `localStorage`. Note that the partition key is undefined in environments without partitioning, such as the browser controls for Windows applications.
+As a best practice, any private data should be stored in partitioned `localStorage`. [Office.context.partitionKey](/javascript/api/office/office.context#office-office-context-partitionkey-member) provides a key for use with local storage. This ensures that data stored in local storage is only available in the same context. The following example shows how to use the partition key with `localStorage`. Note that the partition key is undefined in environments without partitioning, such as the browser controls for Windows applications.
 
 ```js
 // Store the value "Hello" in local storage with the key "myKey1".
@@ -60,7 +60,7 @@ function getFromLocalStorage(key: string) {
 }
 ```
 
-Starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is enabled to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). This means that data stored by storage APIs, such as local storage, are only available to contexts with the same origin and the same top-level site.
+Starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is enabled to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). Similar to the Office key-based partitioning, data stored by storage APIs, such as local storage, is only available to contexts with the same origin and the same top-level site.
 
 > [!TIP]
 > To work around this, in your browser, go to **chrome://flags** or **edge://flags**, then set the **Experimental third-party storage partitioning (#third-party-storage-partitioning)** flag to **Disabled**.
