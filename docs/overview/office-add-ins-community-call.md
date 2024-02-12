@@ -14,7 +14,6 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 This month we will be having the following agenda topics:
 - Retirement of entity-based contextual Office add-ins
 - Chrome’s privacy sandbox and 3P cookies
-- Office add-ins design best practices
 
 > In order for us to be able to better improve our community call experience and understand our audience fill out this survey: https://forms.office.com/r/YNDtW8wQ6U
 
