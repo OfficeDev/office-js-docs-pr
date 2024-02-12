@@ -9,8 +9,8 @@ ms.localizationpriority: medium
 
 Office Add-ins are essentially web applications running in the stateless environment of a browser iframe or a webview control. (For brevity hereafter, this article uses "browser control" to mean "browser or webview control".) When in use, your add-in may need to persist data to maintain the continuity of certain operations or features across sessions. For example, your add-in may have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location. To do that, you can:
 
-- [Use the application-specific Office JavaScript APIs for Excel, Word, and Outlook that store data](#application-specific-settings-and-persistence).
 - [Use techniques provided by the underlying browser control](#browser-storage).
+- [Use the application-specific Office JavaScript APIs for Excel, Word, and Outlook that store data](#application-specific-settings-and-persistence).
 
 If you need to persist state across documents, such as tracking user preferences across any documents they open, you'll need to use a different approach. For example, you could use [SSO](use-sso-to-get-office-signed-in-user-token.md) to obtain the user identity, and then save the user ID and their settings to an online database.
 
@@ -77,9 +77,9 @@ The following example shows how to create and access a setting in Excel. The pro
 
 ```js
 await Excel.run(async (context) => {
-    let settings = context.workbook.settings;
+    const settings = context.workbook.settings;
     settings.add("NeedsReview", true);
-    let needsReview = settings.getItem("NeedsReview");
+    const needsReview = settings.getItem("NeedsReview");
     needsReview.load("value");
 
     await context.sync();
@@ -100,33 +100,15 @@ The following samples show how to use custom XML parts with an Excel workbook. T
 ```js
 await Excel.run(async (context) => {
     // Add reviewer data to the document as XML
-    let originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
-    let customXmlPart = context.workbook.customXmlParts.add(originalXml);
+    const originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
+    const customXmlPart = context.workbook.customXmlParts.add(originalXml);
     customXmlPart.load("id");
     await context.sync();
 
     // Store the XML part's ID in a setting
-    let settings = context.workbook.settings;
+    const settings = context.workbook.settings;
     settings.add("ContosoReviewXmlPartId", customXmlPart.id);
 });
-```
-
-```js
-await Excel.run(async (context) => {
-    // Retrieve the XML part's id from the setting
-    let settings = context.workbook.settings;
-    let xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
-
-    await context.sync();
-
-    if (xmlPartIDSetting.value) {
-        let customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
-        let xmlBlob = customXmlPart.getXml();
-
-        await context.sync();
-
-        // Add spaces to make it more human-readable in the console.
-        let readableXML = xmlBlob.value.replace(/></g, "> <");
         console.log(readableXML);
     }
 });
@@ -180,7 +162,7 @@ Because the set and remove methods operate against only the in-memory copy of th
 
 #### Create or update a setting value
 
-The following code example shows how to use the [Settings.set](/javascript/api/office/office.settings#office-office-settings-set-member(1)) method to create a setting called `'themeColor'` with a value `'green'`. The first parameter of the set method is the case-sensitive  _name_ (Id) of the setting to set or create. The second parameter is the _value_ of the setting.
+The following code example shows how to use the [Settings.set](/javascript/api/office/office.settings#office-office-settings-set-member(1)) method to create a setting called `'themeColor'` with a value `'green'`. The first parameter of the set method is the case-sensitive  *name* (Id) of the setting to set or create. The second parameter is the *value* of the setting.
 
 ```js
 Office.context.document.settings.set('themeColor', 'green');
@@ -190,7 +172,7 @@ The setting with the specified name is created if it doesn't already exist, or i
 
 #### Get the value of a setting
 
-The following example shows how use the [Settings.get](/javascript/api/office/office.settings#office-office-settings-get-member(1)) method to get the value of a setting called "themeColor". The only parameter of the `get` method is the case-sensitive _name_ of the setting.
+The following example shows how use the [Settings.get](/javascript/api/office/office.settings#office-office-settings-get-member(1)) method to get the value of a setting called "themeColor". The only parameter of the `get` method is the case-sensitive *name* of the setting.
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
@@ -201,11 +183,11 @@ function write(message){
 }
 ```
 
-The `get` method returns the value that was previously saved for the setting _name_ that was passed in. If the setting doesn't exist, the method returns **null**.
+The `get` method returns the value that was previously saved for the setting *name* that was passed in. If the setting doesn't exist, the method returns **null**.
 
 #### Remove a setting
 
-The following example shows how to use the [Settings.remove](/javascript/api/office/office.settings#office-office-settings-remove-member(1)) method to remove a setting with the name "themeColor". The only parameter of the `remove` method is the case-sensitive _name_ of the setting.
+The following example shows how to use the [Settings.remove](/javascript/api/office/office.settings#office-office-settings-remove-member(1)) method to remove a setting with the name "themeColor". The only parameter of the `remove` method is the case-sensitive *name* of the setting.
 
 ```js
 Office.context.document.settings.remove('themeColor');
@@ -215,7 +197,7 @@ Nothing will happen if the setting doesn't exist. Use the `Settings.saveAsync` m
 
 #### Save your settings
 
-To save any additions, changes, or deletions your add-in made to the in-memory copy of the settings property bag during the current session, you must call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) method to store them in the document. The only parameter of the `saveAsync` method is _callback_, which is a callback function with a single parameter.
+To save any additions, changes, or deletions your add-in made to the in-memory copy of the settings property bag during the current session, you must call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) method to store them in the document. The only parameter of the `saveAsync` method is *callback*, which is a callback function with a single parameter.
 
 ```js
 Office.context.document.settings.saveAsync(function (asyncResult) {
@@ -231,7 +213,7 @@ function write(message){
 }
 ```
 
-The anonymous function passed into the `saveAsync` method as the _callback_ parameter is executed when the operation is completed. The _asyncResult_ parameter of the callback provides access to an `AsyncResult` object that contains the status of the operation. In the example, the function checks the `AsyncResult.status` property to see if the save operation succeeded or failed, and then displays the result in the add-in's page.
+The anonymous function passed into the `saveAsync` method as the *callback* parameter is executed when the operation is completed. The *asyncResult* parameter of the callback provides access to an `AsyncResult` object that contains the status of the operation. In the example, the function checks the `AsyncResult.status` property to see if the save operation succeeded or failed, and then displays the result in the add-in's page.
 
 ### How to save custom XML to the document
 
