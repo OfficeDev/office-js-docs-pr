@@ -87,8 +87,6 @@ await Excel.run(async (context) => {
 });
 ```
 
-This section discusses custom XML parts in the context of the Office Common JavaScript API which is supported in Word. The application-specific JavaScript APIs for Excel and for Word also provide access to the custom XML parts. The application-specific APIs and programming patterns are somewhat different from the Common version. For more information, see [Excel.CustomXmlPart](/javascript/api/excel/excel.customxmlpart) and [Word.CustomXmlPart](/javascript/api/word/word.customxmlpart).
-
 #### Custom XML data in Excel and Word
 
 The Open XML **.xlsx** and **.docx** file formats let your add-in embed custom XML data in the Excel workbook or Word document. This data persists with the file, independent of the add-in.
@@ -109,13 +107,37 @@ await Excel.run(async (context) => {
     const settings = context.workbook.settings;
     settings.add("ContosoReviewXmlPartId", customXmlPart.id);
 });
-        console.log(readableXML);
-    }
-});
 ```
 
 > [!NOTE]
 > `CustomXMLPart.namespaceUri` is only populated if the top-level custom XML element contains the `xmlns` attribute.
+
+#### Custom properties in Excel and Word
+
+The [Excel.DocumentProperties.custom](/javascript/api/excel/excel.documentproperties#excel-excel-documentproperties-custom-member) and [Word.DocumentProperties.customProperties](/javascript/api/word/word.documentproperties#word-word-documentproperties-customproperties-member) properties represent collections of key-value pairs for user-defined properties. The following Excel example shows how to create a custom property named **Introduction** with the value "Hello", then retrieve it.
+
+```js
+await Excel.run(async (context) => {
+    const customDocProperties = context.workbook.properties.custom;
+    customDocProperties.add("Introduction", "Hello");
+    await context.sync();
+});
+
+// ...
+
+await Excel.run(async (context) => {
+    const customDocProperties = context.workbook.properties.custom;
+    const customProperty = customDocProperties.getItem("Introduction");
+    customProperty.load(["key", "value"]);
+    await context.sync();
+
+    console.log("Custom key  : " + customProperty.key); // "Introduction"
+    console.log("Custom value : " + customProperty.value); // "Hello"
+});
+```
+
+> [!TIP]
+> In Excel, custom properties can also be set at the worksheet level with the [Worksheet.customProperties](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-customproperties-member) property. These are similar to document-level custom properties, except that the same key can be repeated across different worksheets.
 
 ### How to save settings in an Outlook add-in
 
@@ -123,19 +145,7 @@ For information about how to save settings in an Outlook add-in, see [Get and se
 
 ## Common API settings and persistence
 
-The [Common APIs](understanding-the-javascript-api-for-office.md#api-models) provide objects to save add-in state across sessions, as described in the following table. In all cases, the saved settings values are associated with the [Id](/javascript/api/manifest/id) of the add-in that created them.
-
-|Object|Add-in type support|Storage location|Office application support|
-|:-----|:-----|:-----|:-----|
-|[Settings](/javascript/api/office/office.settings)|<ul><li>content</li><li>task pane</li></ul>|The document, spreadsheet, or presentation the add-in is working with. Content and task pane add-in settings are available only to the add-in that created them from the document where they're saved.<br><br>**Important**: Don't store passwords and other sensitive personally identifiable information (PII) with the **Settings** object. The data saved isn't visible to end users, but it's stored as part of the document, which is accessible by reading the document's file format directly. You should limit your add-in's use of PII and store any PII required by your add-in only on the server hosting your add-in as a user-secured resource.|<ul><li>Excel</li><li>PowerPoint</li><li>Word</li></ul><br>**Note**: Task pane add-ins for Project don't support the **Settings** API for storing add-in state or settings. However, for add-ins running in Project and other Office client applications, you can use techniques such as browser cookies or web storage. For more information on these techniques, see the [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings). |
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|mail|The user's Exchange mailbox where the add-in is installed. Because these settings are stored in the user's mailbox, they can "roam" with the user and are available to the add-in when it's running in the context of any supported Office client application or browser accessing that user's mailbox.<br><br>Outlook add-in roaming settings are available only to the add-in that created them, and only from the mailbox where the add-in is installed.|Outlook|
-|[CustomProperties](/javascript/api/outlook/office.customproperties)|mail|The message, appointment, or meeting request item the add-in is working with. Outlook add-in item custom properties are available only to the add-in that created them, and only from the item where they're saved.|Outlook<br><br>**Note**: A version of this object is available for [Excel](/javascript/api/excel/excel.custompropertycollection) and [Word](/javascript/api/word/word.custompropertycollection). Task pane and content add-ins for Excel support [Excel.CustomProperty](/javascript/api/excel/excel.customproperty). Task pane add-ins for Word support [Word.CustomProperty](/javascript/api/word/word.customproperty). Any add-in can access any custom properties saved in the document. The key and value of a custom property are each limited to 255 characters.|
-|[InternetHeaders](/javascript/api/outlook/office.internetheaders)|mail|The message, appointment, or meeting request item the add-in is working with. Custom internet headers persist after the mail item leaves Exchange and are available to the item's recipients.|Outlook|
-|[CustomXmlParts](/javascript/api/office/office.customxmlparts)|task pane|The document or spreadsheet the add-in is working with. Task pane add-in custom XML parts are available to any add-in in the document where they're saved.<br><br>**Important**: Don't store passwords and other sensitive personally identifiable information (PII) in a custom XML part. The data saved isn't visible to end users, but it's stored as part of the document, which is accessible by reading the document's file format directly. You should limit your add-in's use of PII and store any PII required by your add-in only on the server hosting your add-in as a user-secured resource.|<ul><li>Word (using the application-specific Word JavaScript API [Word.CustomXmlPartCollection](/javascript/api/word/word.customxmlpartcollection) (recommended) or using the Office JavaScript Common API)</li><li>Excel (using the application-specific Excel JavaScript API [Excel.CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection))</li></ul>|
-
-### Settings data is managed in memory at runtime
-
-Internally, the data in the property bag accessed with the `Settings`, `CustomProperties`, or `RoamingSettings` objects is stored as a serialized JavaScript Object Notation (JSON) object that contains name/value pairs. The name (key) for each value must be a `string`, and the stored value can be a JavaScript `string`, `number`, `date`, or `object`, but not a **function**.
+The [Common APIs](understanding-the-javascript-api-for-office.md#api-models) provide objects to save add-in state across sessions. The saved settings values are associated with the [Id](/javascript/api/manifest/id) of the add-in that created them. Internally, the data accessed with the `Settings`, `CustomProperties`, or `RoamingSettings` objects is stored as a serialized JavaScript Object Notation (JSON) object that contains name/value pairs. The name (key) for each value must be a `string`, and the stored value can be a JavaScript `string`, `number`, `date`, or `object`, but not a **function**.
 
 This example of the property bag structure contains three defined **string** values named `firstName`,  `location`, and  `defaultView`.
 
