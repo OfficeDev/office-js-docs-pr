@@ -146,61 +146,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-### Custom properties
-
-You can also define custom properties. The DocumentProperties object contains a `custom` property that represents a collection of key-value pairs for user-defined properties. The following example shows how to create a custom property named **Introduction** with the value "Hello", then retrieve it.
-
-```js
-await Excel.run(async (context) => {
-    let customDocProperties = context.workbook.properties.custom;
-    customDocProperties.add("Introduction", "Hello");
-    await context.sync();
-});
-
-[...]
-
-await Excel.run(async (context) => {
-    let customDocProperties = context.workbook.properties.custom;
-    let customProperty = customDocProperties.getItem("Introduction");
-    customProperty.load(["key", "value"]);
-    await context.sync();
-
-    console.log("Custom key  : " + customProperty.key); // "Introduction"
-    console.log("Custom value : " + customProperty.value); // "Hello"
-});
-```
-
-#### Worksheet-level custom properties
-
-Custom properties can also be set at the worksheet level. These are similar to document-level custom properties, except that the same key can be repeated across different worksheets. The following example shows how to create a custom property named **WorksheetGroup** with the value "Alpha" on the current worksheet, then retrieve it.
-
-```js
-await Excel.run(async (context) => {
-    // Add the custom property.
-    let customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
-    customWorksheetProperties.add("WorksheetGroup", "Alpha");
-
-    await context.sync();
-});
-
-[...]
-
-await Excel.run(async (context) => {
-    // Load the keys and values of all custom properties in the current worksheet.
-    let worksheet = context.workbook.worksheets.getActiveWorksheet();
-    worksheet.load("name");
-
-    let customWorksheetProperties = worksheet.customProperties;
-    let customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
-    customWorksheetProperty.load(["key", "value"]);
-
-    await context.sync();
-
-    // Log the WorksheetGroup custom property to the console.
-    console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
-    console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
-});
-```
+You can also define custom properties. The DocumentProperties object contains a `custom` property that represents a collection of key-value pairs for user-defined properties. For an example of setting custom properties, see the **Custom XML data in Excel and Word** section of the [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md#custom-properties-in-excel-and-word) article.
 
 ## Access document settings
 
