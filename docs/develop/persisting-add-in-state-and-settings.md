@@ -1,45 +1,151 @@
 ---
 title: Persist add-in state and settings
 description: Learn how to persist data in Office Web Add-in applications running in the stateless environment of a browser control.
-ms.date: 11/30/2023
+ms.date: 02/08/2024
 ms.localizationpriority: medium
 ---
 
 # Persist add-in state and settings
 
-[!include[information about the common API](../includes/alert-common-api-info.md)]
-
 Office Add-ins are essentially web applications running in the stateless environment of a browser iframe or a webview control. (For brevity hereafter, this article uses "browser control" to mean "browser or webview control".) When in use, your add-in may need to persist data to maintain the continuity of certain operations or features across sessions. For example, your add-in may have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location. To do that, you can:
 
-- Use members of the Office JavaScript API that store data as either:
-  - Name/value pairs in a property bag stored in a location that depends on add-in type.
-  - Custom XML stored in the document.
+- [Use techniques provided by the underlying browser control](#browser-storage).
+- [Use the application-specific Office JavaScript APIs for Excel, Word, and Outlook that store data](#application-specific-settings-and-persistence).
 
-- Use techniques provided by the underlying browser control: browser cookies, or HTML5 web storage ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
-    > [!NOTE]
-    > Some browsers or the user's browser settings may block browser-based storage techniques. You should test for availability as documented in [Using the Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
-    >
-    > Starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is being tested to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). This means that data stored by storage APIs, such as local storage, are only available to contexts with the same origin and the same top-level site. To work around this, in your browser, go to **chrome://flags** or **edge://flags**, then set the **Experimental third-party storage partitioning (#third-party-storage-partitioning)** flag to **Disabled**.
+If you need to persist state across documents, such as tracking user preferences across any documents they open, you'll need to use a different approach. For example, you could use [SSO](use-sso-to-get-office-signed-in-user-token.md) to obtain the user identity, and then save the user ID and their settings to an online database.
 
-This article focuses on how to use the Office JavaScript API to persist add-in state to the current document. It's recommended that you use the application-specific object if it's available for your selected Office client instead of the Common Office JavaScript version. If you need to persist state across documents, such as tracking user preferences across any documents they open, you'll need to use a different approach. For example, you could use [SSO](use-sso-to-get-office-signed-in-user-token.md) to obtain the user identity, and then save the user ID and their settings to an online database.
+## Browser storage
 
-## Persist add-in state and settings with the Office JavaScript API
+Persist data across add-in instances with tools from the underlying browser control, such as browser cookies or HTML5 web storage ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
 
-The Office JavaScript API provides objects, such as [Settings](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings), and [CustomProperties](/javascript/api/outlook/office.customproperties), to save add-in state across sessions as described in the following table. In all cases, the saved settings values are associated with the [Id](/javascript/api/manifest/id) of the add-in that created them.
+Some browsers or the user's browser settings may block browser-based storage techniques. You should test for availability as documented in [Using the Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
 
-|Object|Add-in type support|Storage location|Office application support|
-|:-----|:-----|:-----|:-----|
-|[Settings](/javascript/api/office/office.settings)|<ul><li>content</li><li>task pane</li></ul>|The document, spreadsheet, or presentation the add-in is working with. Content and task pane add-in settings are available only to the add-in that created them from the document where they're saved.<br><br>**Important**: Don't store passwords and other sensitive personally identifiable information (PII) with the **Settings** object. The data saved isn't visible to end users, but it's stored as part of the document, which is accessible by reading the document's file format directly. You should limit your add-in's use of PII and store any PII required by your add-in only on the server hosting your add-in as a user-secured resource.|<ul><li>Excel</li><li>PowerPoint</li><li>Word</li></ul><br>**Note**: Task pane add-ins for Project don't support the **Settings** API for storing add-in state or settings. However, for add-ins running in Project and other Office client applications, you can use techniques such as browser cookies or web storage. For more information on these techniques, see the [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings). |
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|mail|The user's Exchange mailbox where the add-in is installed. Because these settings are stored in the user's mailbox, they can "roam" with the user and are available to the add-in when it's running in the context of any supported Office client application or browser accessing that user's mailbox.<br><br>Outlook add-in roaming settings are available only to the add-in that created them, and only from the mailbox where the add-in is installed.|Outlook|
-|[CustomProperties](/javascript/api/outlook/office.customproperties)|mail|The message, appointment, or meeting request item the add-in is working with. Outlook add-in item custom properties are available only to the add-in that created them, and only from the item where they're saved.|Outlook<br><br>**Note**: A version of this object is available for [Excel](/javascript/api/excel/excel.custompropertycollection) and [Word](/javascript/api/word/word.custompropertycollection). Task pane and content add-ins for Excel support [Excel.CustomProperty](/javascript/api/excel/excel.customproperty). Task pane add-ins for Word support [Word.CustomProperty](/javascript/api/word/word.customproperty). Any add-in can access any custom properties saved in the document. The key and value of a custom property are each limited to 255 characters.|
-|[InternetHeaders](/javascript/api/outlook/office.internetheaders)|mail|The message, appointment, or meeting request item the add-in is working with. Custom internet headers persist after the mail item leaves Exchange and are available to the item's recipients.|Outlook|
-|[CustomXmlParts](/javascript/api/office/office.customxmlparts)|task pane|The document or spreadsheet the add-in is working with. Task pane add-in custom XML parts are available to any add-in in the document where they're saved.<br><br>**Important**: Don't store passwords and other sensitive personally identifiable information (PII) in a custom XML part. The data saved isn't visible to end users, but it's stored as part of the document, which is accessible by reading the document's file format directly. You should limit your add-in's use of PII and store any PII required by your add-in only on the server hosting your add-in as a user-secured resource.|<ul><li>Word (using the application-specific Word JavaScript API [Word.CustomXmlPartCollection](/javascript/api/word/word.customxmlpartcollection) (recommended) or using the Office JavaScript Common API)</li><li>Excel (using the application-specific Excel JavaScript API [Excel.CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection))</li></ul>|
+### Storage partitioning
 
-## Settings data is managed in memory at runtime
+As a best practice, any private data should be stored in partitioned `localStorage`. [Office.context.partitionKey](/javascript/api/office/office.context#office-office-context-partitionkey-member) provides a key for use with local storage. This ensures that data stored in local storage is only available in the same context. The following example shows how to use the partition key with `localStorage`. Note that the partition key is undefined in environments without partitioning, such as the browser controls for Windows applications.
 
-The following two sections discuss settings in the context of the Office Common JavaScript API. The application-specific JavaScript APIs for Excel and for Word also provide access to the custom settings. The application-specific APIs and programming patterns are somewhat different from the Common version. For more information, see [Excel.SettingCollection](/javascript/api/excel/excel.settingcollection) and [Word.SettingCollection](/javascript/api/word/word.settingcollection).
+```js
+// Store the value "Hello" in local storage with the key "myKey1".
+setInLocalStorage("myKey1", "Hello");
 
-Internally, the data in the property bag accessed with the `Settings`, `CustomProperties`, or `RoamingSettings` objects is stored as a serialized JavaScript Object Notation (JSON) object that contains name/value pairs. The name (key) for each value must be a `string`, and the stored value can be a JavaScript `string`, `number`, `date`, or `object`, but not a **function**.
+// ... 
+
+// Retrieve the value stored in local storage under the key "myKey1".
+const message = getFromLocalStorage("myKey1");
+console.log(message);
+
+// ...
+
+function setInLocalStorage(key: string, value: string) {
+  const myPartitionKey = Office.context.partitionKey;
+
+  // Check if local storage is partitioned. 
+  // If so, use the partition to ensure the data is only accessible by your add-in.
+  if (myPartitionKey) {
+    localStorage.setItem(myPartitionKey + key, value);
+  } else {
+    localStorage.setItem(key, value);
+  }
+}
+
+function getFromLocalStorage(key: string) {
+  const myPartitionKey = Office.context.partitionKey;
+
+  // Check if local storage is partitioned.
+  if (myPartitionKey) {
+    return localStorage.getItem(myPartitionKey + key);
+  } else {
+    return localStorage.getItem(key);
+  }
+}
+```
+
+Starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is enabled to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). Similar to the Office key-based partitioning, data stored by storage APIs, such as local storage, is only available to contexts with the same origin and the same top-level site.
+
+> [!TIP]
+> To work around this, in your browser, go to **chrome://flags** or **edge://flags**, then set the **Experimental third-party storage partitioning (#third-party-storage-partitioning)** flag to **Disabled**.
+
+## Application-specific settings and persistence
+
+Excel, Word, and Outlook provide application-specific APIs to save settings and other data. Use these instead of the [Common APIs mentioned later in this article](#common-api-settings-and-persistence) so that your add-in follows consistent patterns and is optimized for the targeted application.
+
+### Settings in Excel and Word
+
+The application-specific JavaScript APIs for Excel and for Word also provide access to the custom settings. Settings are unique to a single Excel file and add-in pairing. For more information, see [Excel.SettingCollection](/javascript/api/excel/excel.settingcollection) and [Word.SettingCollection](/javascript/api/word/word.settingcollection).
+
+The following example shows how to create and access a setting in Excel. The process is functionally equivalent in Word, which uses [Document.settings](/javascript/api/word/word.document#word-word-document-settings-member) instead of `Workbook.settings`.
+
+```js
+await Excel.run(async (context) => {
+    const settings = context.workbook.settings;
+    settings.add("NeedsReview", true);
+    const needsReview = settings.getItem("NeedsReview");
+    needsReview.load("value");
+
+    await context.sync();
+    console.log("Workbook needs review : " + needsReview.value);
+});
+```
+
+#### Custom XML data in Excel and Word
+
+The Open XML **.xlsx** and **.docx** file formats let your add-in embed custom XML data in the Excel workbook or Word document. This data persists with the file, independent of the add-in.
+
+A [Word.Document](/javascript/api/word/word.document#word-word-document-customxmlparts-member) and [Excel.Workbook](/javascript/api/excel/excel.workbook#excel-excel-workbook-customxmlparts-member) contain a `CustomXmlPartCollection`, which is a list of `CustomXmlParts`. These give access to the XML strings and a corresponding unique ID. By storing these IDs as settings, your add-in can maintain the keys to its XML parts between sessions.
+
+The following samples show how to use custom XML parts with an Excel workbook. The first code block demonstrates how to embed XML data. It stores a list of reviewers, then uses the workbook's settings to save the XML's `id` for future retrieval. The second block shows how to access that XML later. The "ContosoReviewXmlPartId" setting is loaded and passed to the workbook's `customXmlParts`. The XML data is then printed to the console. The process is functionally equivalent in Word, which uses [Document.customXmlParts](/javascript/api/word/word.document#word-word-document-customxmlparts-member) instead of `Workbook.customXmlParts`.
+
+```js
+await Excel.run(async (context) => {
+    // Add reviewer data to the document as XML
+    const originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
+    const customXmlPart = context.workbook.customXmlParts.add(originalXml);
+    customXmlPart.load("id");
+    await context.sync();
+
+    // Store the XML part's ID in a setting
+    const settings = context.workbook.settings;
+    settings.add("ContosoReviewXmlPartId", customXmlPart.id);
+});
+```
+
+> [!NOTE]
+> `CustomXMLPart.namespaceUri` is only populated if the top-level custom XML element contains the `xmlns` attribute.
+
+#### Custom properties in Excel and Word
+
+The [Excel.DocumentProperties.custom](/javascript/api/excel/excel.documentproperties#excel-excel-documentproperties-custom-member) and [Word.DocumentProperties.customProperties](/javascript/api/word/word.documentproperties#word-word-documentproperties-customproperties-member) properties represent collections of key-value pairs for user-defined properties. The following Excel example shows how to create a custom property named **Introduction** with the value "Hello", then retrieve it.
+
+```js
+await Excel.run(async (context) => {
+    const customDocProperties = context.workbook.properties.custom;
+    customDocProperties.add("Introduction", "Hello");
+    await context.sync();
+});
+
+// ...
+
+await Excel.run(async (context) => {
+    const customDocProperties = context.workbook.properties.custom;
+    const customProperty = customDocProperties.getItem("Introduction");
+    customProperty.load(["key", "value"]);
+    await context.sync();
+
+    console.log("Custom key  : " + customProperty.key); // "Introduction"
+    console.log("Custom value : " + customProperty.value); // "Hello"
+});
+```
+
+> [!TIP]
+> In Excel, custom properties can also be set at the worksheet level with the [Worksheet.customProperties](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-customproperties-member) property. These are similar to document-level custom properties, except that the same key can be repeated across different worksheets.
+
+### How to save settings in an Outlook add-in
+
+For information about how to save settings in an Outlook add-in, see [Get and set add-in metadata for an Outlook add-in](../outlook/metadata-for-an-outlook-add-in.md) and [Get and set internet headers on a message in an Outlook add-in](../outlook/internet-headers.md).
+
+## Common API settings and persistence
+
+The [Common APIs](understanding-the-javascript-api-for-office.md#api-models) provide objects to save add-in state across sessions. The saved settings values are associated with the [Id](/javascript/api/manifest/id) of the add-in that created them. Internally, the data accessed with the `Settings`, `CustomProperties`, or `RoamingSettings` objects is stored as a serialized JavaScript Object Notation (JSON) object that contains name/value pairs. The name (key) for each value must be a `string`, and the stored value can be a JavaScript `string`, `number`, `date`, or `object`, but not a **function**.
 
 This example of the property bag structure contains three defined **string** values named `firstName`,  `location`, and  `defaultView`.
 
@@ -56,7 +162,7 @@ After the settings property bag is saved during the previous add-in session, it 
 > [!IMPORTANT]
 > To persist any additions, updates, or deletions made during the add-in's current session to the storage location, you must call the `saveAsync` method of the corresponding object used to work with that kind of settings. The `get`, `set`, and `remove` methods operate only on the in-memory copy of the settings property bag. If your add-in is closed without calling `saveAsync`, any changes made to settings during that session will be lost.
 
-## How to save add-in state and settings per document for content and task pane add-ins
+### How to save add-in state and settings per document for content and task pane add-ins
 
 To persist state or custom settings of a content or task pane add-in for Word, Excel, or PowerPoint, use the [Settings](/javascript/api/office/office.settings) object and its methods. The property bag created with the methods of the `Settings` object are available only to the instance of the content or task pane add-in that created it, and only from the document in which it is saved.
 
@@ -64,9 +170,9 @@ The `Settings` object is automatically loaded as part of the [Document](/javascr
 
 Because the set and remove methods operate against only the in-memory copy of the settings property bag, to save new or changed settings back to the document the add-in is associated with, you must call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) method.
 
-### Create or update a setting value
+#### Create or update a setting value
 
-The following code example shows how to use the [Settings.set](/javascript/api/office/office.settings#office-office-settings-set-member(1)) method to create a setting called `'themeColor'` with a value `'green'`. The first parameter of the set method is the case-sensitive  _name_ (Id) of the setting to set or create. The second parameter is the _value_ of the setting.
+The following code example shows how to use the [Settings.set](/javascript/api/office/office.settings#office-office-settings-set-member(1)) method to create a setting called `'themeColor'` with a value `'green'`. The first parameter of the set method is the case-sensitive  *name* (Id) of the setting to set or create. The second parameter is the *value* of the setting.
 
 ```js
 Office.context.document.settings.set('themeColor', 'green');
@@ -74,9 +180,9 @@ Office.context.document.settings.set('themeColor', 'green');
 
 The setting with the specified name is created if it doesn't already exist, or its value is updated if it does exist. Use the `Settings.saveAsync` method to persist the new or updated settings to the document.
 
-### Get the value of a setting
+#### Get the value of a setting
 
-The following example shows how use the [Settings.get](/javascript/api/office/office.settings#office-office-settings-get-member(1)) method to get the value of a setting called "themeColor". The only parameter of the `get` method is the case-sensitive _name_ of the setting.
+The following example shows how use the [Settings.get](/javascript/api/office/office.settings#office-office-settings-get-member(1)) method to get the value of a setting called "themeColor". The only parameter of the `get` method is the case-sensitive *name* of the setting.
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
@@ -87,11 +193,11 @@ function write(message){
 }
 ```
 
-The `get` method returns the value that was previously saved for the setting _name_ that was passed in. If the setting doesn't exist, the method returns **null**.
+The `get` method returns the value that was previously saved for the setting *name* that was passed in. If the setting doesn't exist, the method returns **null**.
 
-### Remove a setting
+#### Remove a setting
 
-The following example shows how to use the [Settings.remove](/javascript/api/office/office.settings#office-office-settings-remove-member(1)) method to remove a setting with the name "themeColor". The only parameter of the `remove` method is the case-sensitive _name_ of the setting.
+The following example shows how to use the [Settings.remove](/javascript/api/office/office.settings#office-office-settings-remove-member(1)) method to remove a setting with the name "themeColor". The only parameter of the `remove` method is the case-sensitive *name* of the setting.
 
 ```js
 Office.context.document.settings.remove('themeColor');
@@ -99,9 +205,9 @@ Office.context.document.settings.remove('themeColor');
 
 Nothing will happen if the setting doesn't exist. Use the `Settings.saveAsync` method to persist removal of the setting from the document.
 
-### Save your settings
+#### Save your settings
 
-To save any additions, changes, or deletions your add-in made to the in-memory copy of the settings property bag during the current session, you must call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) method to store them in the document. The only parameter of the `saveAsync` method is _callback_, which is a callback function with a single parameter.
+To save any additions, changes, or deletions your add-in made to the in-memory copy of the settings property bag during the current session, you must call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) method to store them in the document. The only parameter of the `saveAsync` method is *callback*, which is a callback function with a single parameter.
 
 ```js
 Office.context.document.settings.saveAsync(function (asyncResult) {
@@ -117,11 +223,9 @@ function write(message){
 }
 ```
 
-The anonymous function passed into the `saveAsync` method as the _callback_ parameter is executed when the operation is completed. The _asyncResult_ parameter of the callback provides access to an `AsyncResult` object that contains the status of the operation. In the example, the function checks the `AsyncResult.status` property to see if the save operation succeeded or failed, and then displays the result in the add-in's page.
+The anonymous function passed into the `saveAsync` method as the *callback* parameter is executed when the operation is completed. The *asyncResult* parameter of the callback provides access to an `AsyncResult` object that contains the status of the operation. In the example, the function checks the `AsyncResult.status` property to see if the save operation succeeded or failed, and then displays the result in the add-in's page.
 
-## How to save custom XML to the document
-
-This section discusses custom XML parts in the context of the Office Common JavaScript API which is supported in Word. The application-specific JavaScript APIs for Excel and for Word also provide access to the custom XML parts. The application-specific APIs and programming patterns are somewhat different from the Common version. For more information, see [Excel.CustomXmlPart](/javascript/api/excel/excel.customxmlpart) and [Word.CustomXmlPart](/javascript/api/word/word.customxmlpart).
+### How to save custom XML to the document
 
 A custom XML part is an available storage option for when you want to store information that has a structured character or need the data to be accessible across instances of your add-in. Note that data stored this way can also be accessed by other add-ins. You can persist custom XML markup in a task pane add-in for Word (and for Excel and Word using application-specific API as mentioned in the previous paragraph). In Word, you can use the [CustomXmlPart](/javascript/api/office/office.customxmlpart) object and its methods. The following code creates a custom XML part and displays its ID and then its content in divs on the page. Note that there must be an `xmlns` attribute in the XML string.
 
@@ -172,9 +276,6 @@ function getReviewers() {
 }
 ```
 
-## How to save settings in an Outlook add-in
-
-For information about how to save settings in an Outlook add-in, see [Get and set add-in metadata for an Outlook add-in](../outlook/metadata-for-an-outlook-add-in.md) and [Get and set internet headers on a message in an Outlook add-in](../outlook/internet-headers.md).
 
 ## See also
 
