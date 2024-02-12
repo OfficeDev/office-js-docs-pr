@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 01/10/2024
+ms.date: 02/14/2024
 ms.localizationpriority: medium
 ---
 
@@ -9,12 +9,14 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 7:00 AM Pacific Time. You can download the calendar invite at <https://aka.ms/officeaddinscommunitycall>.
 
-> [!IMPORTANT]
-> Beginning January 2024, the start time of the Office Add-ins community call is moving to **7:00 AM Pacific Time**. Update your calendars by redownloading the updated calendar invite at <https://aka.ms/officeaddinscommunitycall>.
-
 ## Agenda for February 14, 2024 call
 
-The agenda for the February Office Add-ins community call will be posted the week of the call.
+This month we will be having the following agenda topics:
+- Retirement of entity-based contextual Office add-ins
+- Chrome’s privacy sandbox and 3P cookies
+- Office add-ins design best practices
+
+> In order for us to be able to better improve our community call experience and understand our audience fill out this survey: https://forms.office.com/r/YNDtW8wQ6U
 
 ## Previous calls
 
