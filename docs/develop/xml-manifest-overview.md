@@ -298,7 +298,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <DefaultLocale>en-US</DefaultLocale>
   <!-- The display name of your add-in. Used on the store and various placed of the Office UI such as the add-ins dialog. -->
   <DisplayName DefaultValue="Add-in Commands Sample" />
-  <Description DefaultValue="Sample that illustrates add-in commands basic control types and actions" />
+  <Description DefaultValue="Sample that illustrates add-in commands basic control types and actions." />
   <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
@@ -476,7 +476,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
         <bt:Url id="Contoso.Taskpane1.Url" DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html" />
         <bt:Url id="Contoso.Taskpane2.Url" DefaultValue="https://commandsimple.azurewebsites.net/Taskpane2.html" />
       </bt:Urls>
-      <!-- ShortStrings max characters==125. -->
+      <!-- ShortStrings max characters=125. -->
       <bt:ShortStrings>
         <bt:String id="Contoso.FunctionButton.Label" DefaultValue="Execute Function" />
         <bt:String id="Contoso.TaskpaneButton.Label" DefaultValue="Show Task Pane" />
@@ -486,13 +486,13 @@ The following sections show examples of manifest v1.1 XML files for content, tas
         <bt:String id="Contoso.Tab1.GroupLabel" DefaultValue="Test Group" />
          <bt:String id="Contoso.Tab1.TabLabel" DefaultValue="Test Tab" />
       </bt:ShortStrings>
-      <!-- LongStrings max characters==250. -->
+      <!-- LongStrings max characters=250. -->
       <bt:LongStrings>
         <bt:String id="Contoso.FunctionButton.Tooltip" DefaultValue="Click to execute function." />
         <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Click to show a task pane." />
-        <bt:String id="Contoso.Dropdown.Tooltip" DefaultValue="Click to Show Options on this Menu" />
-        <bt:String id="Contoso.Item1.Tooltip" DefaultValue="Click to Show Task Pane 1." />
-        <bt:String id="Contoso.Item2.Tooltip" DefaultValue="Click to Show Task Pane 2." />
+        <bt:String id="Contoso.Dropdown.Tooltip" DefaultValue="Click to show options on this menu." />
+        <bt:String id="Contoso.Item1.Tooltip" DefaultValue="Click to show Task Pane 1." />
+        <bt:String id="Contoso.Item2.Tooltip" DefaultValue="Click to show Task Pane 2." />
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
