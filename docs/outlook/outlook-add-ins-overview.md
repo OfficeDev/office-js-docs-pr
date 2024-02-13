@@ -77,7 +77,7 @@ To get started building Outlook add-ins, try the following:
 
 ## See also
 
-- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
 - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [License your Office and SharePoint Add-ins](/office/dev/store/license-your-add-ins)
