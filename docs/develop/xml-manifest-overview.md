@@ -109,7 +109,7 @@ The root element for the Office add-in manifest is **\<OfficeApp\>**. This eleme
   xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
   xsi:type="MailApp">
 
-  <!-- the rest of the manifest -->
+  <!-- The rest of the manifest. -->
 
 </OfficeApp>
 ```
@@ -209,15 +209,15 @@ The following are examples of `VersionOverrides` used, respectively, in a task p
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-    <!-- child elements omitted -->
+    <!-- Child elements are omitted. -->
 </VersionOverrides>
 ```
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
-  <!-- other child elements omitted -->
+  <!-- Other child elements are omitted. -->
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
-    <!-- child elements omitted -->
+    <!-- Child elements are omitted. -->
   </VersionOverrides>
 </VersionOverrides>
 ```
@@ -253,21 +253,21 @@ Some aspects of the add-in need to be localized for different locales, such as t
   <bt:Images>
     <bt:Image id="icon1_16x16" DefaultValue="https://contoso.com/images/app_icon_small.png" >
       <bt:Override Locale="ar-sa" Value="https://contoso.com/images/app_icon_small_arsa.png" />
-      <!-- add information for other locales -->
+      <!-- Add information for other locales. -->
     </bt:Image>
   </bt:Images>
 
   <bt:Urls>
     <bt:Url id="residDesktopFuncUrl" DefaultValue="https://contoso.com/urls/page_appcmdcode.html" >
       <bt:Override Locale="ar-sa" Value="https://contoso.com/urls/page_appcmdcode.html?lcid=ar-sa" />
-      <!-- add information for other locales -->
+      <!-- Add information for other locales. -->
     </bt:Url>
   </bt:Urls>
 
   <bt:ShortStrings> 
     <bt:String id="residViewTemplates" DefaultValue="Launch My Add-in">
       <bt:Override Locale="ar-sa" Value="<add localized value here>" />
-      <!-- add information for other locales -->
+      <!-- Add information for other locales. -->
     </bt:String>
   </bt:ShortStrings>
 </Resources>
@@ -287,7 +287,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
-  <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation.-->
+  <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation. -->
 
   <!-- BeginBasicSettings: Add-in metadata, used for all versions of Office unless override provided. -->
 
@@ -664,8 +664,8 @@ The following sections show examples of manifest v1.1 XML files for content, tas
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>
-          <bt:String id="taskPaneButtonLabel" DefaultValue="Show task pane"/>
-          <bt:String id="actionButtonLabel" DefaultValue="Perform an action"/>
+          <bt:String id="taskPaneButtonLabel" DefaultValue="Show Task Pane"/>
+          <bt:String id="actionButtonLabel" DefaultValue="Perform an Action"/>
         </bt:ShortStrings>
         <bt:LongStrings>
           <bt:String id="taskPaneButtonDescription" DefaultValue="Opens a task pane."/>
