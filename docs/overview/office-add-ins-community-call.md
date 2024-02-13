@@ -11,11 +11,11 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for February 14, 2024 call
 
-This month we will be having the following agenda topics:
-- Retirement of entity-based contextual Office add-ins
-- Chrome’s privacy sandbox and 3P cookies
+This month, we have the following agenda topics:
+- Retirement of entity-based contextual Office Add-ins.
+- Chrome’s privacy sandbox and third-party cookies.
 
-> In order for us to be able to better improve our community call experience and understand our audience fill out this survey: https://forms.office.com/r/YNDtW8wQ6U
+> For us to improve our community call experience and better understand our audience, please fill out this survey: https://forms.office.com/r/YNDtW8wQ6U
 
 ## Previous calls
 
