@@ -40,7 +40,7 @@ In this tutorial, you will:
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `My custom functions add-in`
 
-    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="Screenshot of the Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
+    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="The Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
 
     The Yeoman generator will create the project files and install supporting Node components.
 
