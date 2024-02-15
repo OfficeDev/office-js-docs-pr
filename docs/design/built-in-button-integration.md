@@ -57,7 +57,7 @@ The following markup example adds the Office Superscript control to a custom gro
             <!-- Information on the control omitted. -->
         </Control>
         <OfficeControl id="Superscript" />
-        <!-- Other controls, as needed/ -->
+        <!-- Other controls, as needed. -->
     </Group>
     <Label resid="customTabLabel1" />
   </CustomTab>
