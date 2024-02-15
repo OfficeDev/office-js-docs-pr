@@ -26,7 +26,7 @@ To use SSO with Office, you need to create an app registration in the Azure port
 
     - Set **Name** to `Office-Add-in-SSO`.
     - Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**.
-    - Set the application type to **Web** and then set **Redirect URI** to `https://localhost:[port]/dialog.html`. Replace `[port]` with the correct port number for your web application. If you created the add-in using yo office, the port number is typically 3000 and found in the package.json file. If you created the add-in with Visual Studio 2019, the port is found in the **SSL URL** property of the web project.
+    - Set the application type to **Web** and then set **Redirect URI** to `https://localhost:[port]/dialog.html`. Replace `[port]` with the correct port number for your web application. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file. If you created the add-in with Visual Studio 2019, the port is found in the **SSL URL** property of the web project.
     - Choose **Register**.
 
 1. On the **Office-Add-in-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
@@ -40,7 +40,7 @@ To use SSO with Office, you need to create an app registration in the Azure port
 
 1. Select **Expose an API** under **Manage**. Select the **Set** link. This will generate the Application ID URI in the form `api://[app-id-guid]`, where `[app-id-guid]` is the **Application (client) ID**.
 
-1. In the generated ID, insert `localhost:[port]/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. Replace `[port]` with the correct port number for your web application. If you created the add-in using yo office, the port number is typically 3000 and found in the package.json file. If you created the add-in with Visual Studio 2019, the port is found in the **SSL URL** property of the web project.
+1. In the generated ID, insert `localhost:[port]/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. Replace `[port]` with the correct port number for your web application. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file. If you created the add-in with Visual Studio 2019, the port is found in the **SSL URL** property of the web project.
 
     When you're finished, the entire ID should have the form `api://localhost:[port]/[app-id-guid]`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
@@ -104,7 +104,7 @@ The project is created and will contain two projects in the solution.
 - **sso-display-user-info**: Contains the manifest and details for sideloading the add-in to Excel.
 - **sso-display-user-infoWeb**: The ASP.NET project that hosts the web pages for the add-in.
 
-# [yo office](#tab/yooffice)
+# [Yo Office](#tab/yooffice)
 
 Be sure you have [Set up your development environment](../overview/set-up-your-dev-environment.md).
 
@@ -124,7 +124,7 @@ The project is created in a new folder named **sso-display-user-info**.
 
 In **Solution Explorer**, open **sso-display-user-info** > **sso-display-user-infoManifest** > **sso-display-user-info.xml**.
 
-# [yo office](#tab/yooffice)
+# [Yo Office](#tab/yooffice)
 
 In Visual Studio Code, open the **manifest.xml** file.
 
@@ -144,7 +144,7 @@ In Visual Studio Code, open the **manifest.xml** file.
     </WebApplicationInfo>
    ```
 
-1. Replace `[port]` with the correct port number for your project. If you created the add-in using yo office, the port number is typically 3000 and found in the package.json file. If you created the add-in with Visual Studio 2019, the port is found in the **SSL URL** property of the web project.
+1. Replace `[port]` with the correct port number for your project. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file. If you created the add-in with Visual Studio 2019, the port is found in the **SSL URL** property of the web project.
 1. Replace both `[application-id]` placeholders with the actual application ID from your app registration.
 1. Save the file.
 
@@ -168,7 +168,7 @@ You can call the `getAccessToken` API to get the ID token from Office. First, le
 
     `Install-Package jwt-decode -Projectname sso-display-user-infoWeb`
 
-# [yo office](#tab/yooffice)
+# [Yo Office](#tab/yooffice)
 
 1. From a terminal/console window go to the root folder for your add-in project.
 1. Enter the following command
@@ -206,7 +206,7 @@ Modify the task pane so that it can display the user information you'll get from
     </body>
     ```
 
-# [yo office](#tab/yooffice)
+# [Yo Office](#tab/yooffice)
 
 1. Open the **src/taskpane/taskpane.html** file.
 1. Replace the `<body>` section with the following HTML.
@@ -277,7 +277,7 @@ The final step is to get the ID token by calling `getAccessToken`.
 
 1. Save the file.
 
-# [yo office](#tab/yooffice)
+# [Yo Office](#tab/yooffice)
 
 1. Open the **src/taskpane/taskpane.js** file.
 1. Replace the entire contents of the file with the following code.
@@ -328,7 +328,7 @@ The final step is to get the ID token by calling `getAccessToken`.
 
 Choose **Debug** > **Start Debugging**, or press **F5**.
 
-# [yo office](#tab/yooffice)
+# [Yo Office](#tab/yooffice)
 
 Run `npm start` from the command line.
 
