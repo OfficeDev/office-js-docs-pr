@@ -87,8 +87,8 @@ The following sections show the manifest elements in the order in which they mus
     <Hosts>
         <Host>
     <Requirements>
-    <Sets>
-        <Set>
+        <Sets>
+            <Set>
     <FormSettings>
         <Form>
         <DesktopSettings>
