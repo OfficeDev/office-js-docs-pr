@@ -32,7 +32,7 @@ These instructions assume you have experience using the command line, understand
 
 1. The first step depends on the project and how it was created.
 
-   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). Follow any of the yo office quick start guides, such as the [Outlook add-in quick start](../quickstarts/outlook-quickstart.md).
+   - If you want to create a project to experiment with debugging in Visual Studio Code, use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). Follow any of the Yo Office quick start guides, such as the [Outlook add-in quick start](../quickstarts/outlook-quickstart.md).
    - If you want to debug an existing project that was created with Yo Office, skip to the next step.
 
 1. Open VS Code and open your project in it.

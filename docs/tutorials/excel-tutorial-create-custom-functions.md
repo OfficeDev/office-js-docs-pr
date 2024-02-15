@@ -32,7 +32,7 @@ In this tutorial, you will:
  To start, create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) will set up your project with some prebuilt custom functions that you can try out. If you've already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.
 
 > [!NOTE]
-> If you recreate the yo office project, you may get an error because the Office cache already has an instance of a function with the same name. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`.
+> If you recreate the Yo Office project, you may get an error because the Office cache already has an instance of a function with the same name. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`.
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 

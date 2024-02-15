@@ -188,7 +188,7 @@ An **XLL** add-in is an Excel add-in file that provides user-defined functions a
 
 See also: [custom function](#custom-function).
 
-## Yeoman generator, yo office
+## Yeoman generator, Yo Office
 
 The [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) uses the open source [Yeoman](https://github.com/yeoman/yo) tool to generate an Office Add-in via the command line. `yo office` is the command that runs the Yeoman generator for Office Add-ins. The Office Add-ins quick starts and tutorials use the Yeoman generator.
 

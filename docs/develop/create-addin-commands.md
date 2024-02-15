@@ -20,7 +20,7 @@ The following diagram shows the hierarchy of elements used to define add-in comm
 
 ## Sample commands
 
-All the task pane add-ins created by [yo office](yeoman-generator-overview.md) have add-in commands. They contain an add-in command (button) to show the task pane. Generate these projects by following one of the quick starts, such as [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md). Ensure that you have read [Add-in commands](../design/add-in-commands.md) to understand command capabilities.
+All the task pane add-ins created by [Yo Office](yeoman-generator-overview.md) have add-in commands. They contain an add-in command (button) to show the task pane. Generate these projects by following one of the quick starts, such as [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md). Ensure that you have read [Add-in commands](../design/add-in-commands.md) to understand command capabilities.
 
 ## Important parts of an add-in command
 
@@ -85,7 +85,7 @@ The following example shows the **\<Hosts\>**, **\<Host\>**, and **\<DesktopForm
 The [**\<FunctionFile\>** element](/javascript/api/manifest/functionfile) specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action. The **\<FunctionFile\>** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a [**\<Url\>** element](/javascript/api/manifest/url) in the [**\<Resources\>** element](/javascript/api/manifest/resources).
 
 > [!NOTE]
-> The yo office projects use [webpack](https://webpack.js.org/concepts/) to avoid manually adding the JavaScript to the HTML.
+> The Yo Office projects use [webpack](https://webpack.js.org/concepts/) to avoid manually adding the JavaScript to the HTML.
 
 The following is an example of the **\<FunctionFile\>** element.
   
