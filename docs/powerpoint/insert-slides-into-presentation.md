@@ -33,7 +33,7 @@ There are many ways to convert a file to base64. Which programming language and 
 
     This markup adds the UI in the following screenshot to the page.
 
-    ![Screenshot showing an HTML file type input control preceded by an instructional sentence reading "Select a PowerPoint presentation from which to insert slides". The control consists of a button labelled "Choose file" followed by the sentence "No file chosen".](../images/powerpoint-html-file-input-control.png)
+    ![An HTML file type input control preceded by an instructional sentence reading "Select a PowerPoint presentation from which to insert slides". The control consists of a button labelled "Choose file" followed by the sentence "No file chosen".](../images/powerpoint-html-file-input-control.png)
 
     > [!NOTE]
     > There are many other ways to get a PowerPoint file. For example, if the file is stored on OneDrive or SharePoint, you can use Microsoft Graph to download it. For more information, see [Working with files in Microsoft Graph](/graph/api/resources/onedrive) and [Access Files with Microsoft Graph](/training/modules/msgraph-access-file-data/).
