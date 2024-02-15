@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 12/19/2023
+ms.date: 02/16/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -179,10 +179,67 @@ In addition to these constraints, only one instance each of the `OnMessageSend` 
 While you can change the Smart Alerts dialog message and **Don't Send** button to suit your add-in scenario, the following can't be customized.
 
 - The dialog's title bar. Your add-in's name is always displayed there.
-- The message's format. For example, you can't change the text's font size and color or insert a bulleted list.
+- The font or color of the dialog message. However, you can use Markdown to format certain elements of your message. For a list of supported elements, see [Limitations to formatting the dialog message using Markdown](#limitations-to-formatting-the-dialog-message-using-markdown).
 - Dialogs that provide information on event processing and progress. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
 
+### Limitations to customizing the Don't Send button
+
 If you customize the **Don't Send** button in the dialog, you can only assign a task pane command to it. Function commands aren't supported. If you select a **Don't Send** button with an assigned function command, the command is ignored and the add-in cancels the send operation and closes the dialog. When this occurs, no error is shown or logged. For guidance on the types of add-in commands, see [Types of add-in commands](../design/add-in-commands.md#types-of-add-in-commands).
+
+### Limitations to formatting the dialog message using Markdown
+
+You can use Markdown to format the message of a Smart Alerts dialog. However, only the following elements are supported.
+
+- Bold, italic, or bold and italic text. Both the [asterisk (*) and underscore (_) formats](https://www.markdownguide.org/basic-syntax/#emphasis) are supported.
+
+    ```javascript
+    event.completed({
+      allowEvent: false,
+      ...
+      errorMessageMarkdown: "**Important**: Apply the appropriate sensitivity label to your message before sending."
+    });
+    ```
+
+    :::image type="content" source="../images/outlook-smart-alerts-bold.png" alt-text="A sample Smart Alerts dialog with bold text.":::
+
+- Unordered or bulleted lists. To create an item in the list, begin with a dash (`-`) or asterisk (`*`), add the content, then append `\r` to signify item completion.
+
+    ```javascript
+    event.completed({
+      allowEvent: false,
+      ...
+      errorMessageMarkdown: "Your email doesn't meet company guidelines.\n\nFor additional assistance, contact the IT Service Desk:\n\n- Phone number: 425-555-0102\r- Email: it@contoso.com\r- Website: [Contoso IT Service Desk](https://www.contoso.com/it-service-desk)\r"
+    });
+    ```
+
+    :::image type="content" source="../images/outlook-smart-alerts-list.png" alt-text="A sample Smart Alerts dialog containing a bulleted list.":::
+
+- Links. To create a link, enclose your link text in square brackets (`[]`), then enclose the URL in parentheses (`()`). The angle brackets format (`<>`) isn't supported.
+
+    ```javascript
+    event.completed({
+      allowEvent: false,
+      ...
+      errorMessageMarkdown: "Need onsite assistance on the day of your meeting? Visit the [Contoso Facilities](https://www.contoso.com/facilities/meetings) page to learn more."
+    });
+    ```
+
+    :::image type="content" source="../images/outlook-smart-alerts-link.png" alt-text="A sample Smart Alerts dialog containing a link.":::
+
+- New lines. Use `\n\n` to create a new line.
+
+    ```javascript
+    event.completed({
+      allowEvent: false,
+      ...
+      errorMessageMarkdown: "Add a personalized user avatar to your signature today!\n\nTo customize your signature, visit [Customize my email signature](https://www.fabrikam.com/marketing/customize-email-signature)."
+    });
+    ```
+
+    :::image type="content" source="../images/outlook-smart-alerts-new-line.png" alt-text="A sample Smart Alerts dialog containing a new line in the message.":::
+
+> [!TIP]
+> To escape characters in your message, such as an asterisk, add a backslash (`\`) before the character.
 
 ## Debug your add-in
 
