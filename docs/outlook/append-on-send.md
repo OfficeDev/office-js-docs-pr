@@ -1,7 +1,7 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 01/31/2024
+ms.date: 02/18/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -95,15 +95,15 @@ The following shows how to configure your unified manifest to enable the prepend
                         "icons": [
                             {
                                 "size": 16,
-                                "file": "https://localhost:3000/assets/icon-16.png"
+                                "url" "https://localhost:3000/assets/icon-16.png"
                             },
                             {
                                 "size": 32,
-                                "file": "https://localhost:3000/assets/icon-32.png"
+                                "url" "https://localhost:3000/assets/icon-32.png"
                             },
                             {
                                 "size": 80,
-                                "file": "https://localhost:3000/assets/icon-80.png"
+                                "url" "https://localhost:3000/assets/icon-80.png"
                             }
                         ],
                         "controls": [
@@ -114,15 +114,15 @@ The following shows how to configure your unified manifest to enable the prepend
                                 "icons": [
                                     {
                                         "size": 16,
-                                        "file": "https://localhost:3000/assets/icon-16.png"
+                                        "url" "https://localhost:3000/assets/icon-16.png"
                                     },
                                     {
                                         "size": 32,
-                                        "file": "https://localhost:3000/assets/icon-32.png"
+                                        "url" "https://localhost:3000/assets/icon-32.png"
                                     },
                                     {
                                         "size": 80,
-                                        "file": "https://localhost:3000/assets/icon-80.png"
+                                        "url" "https://localhost:3000/assets/icon-80.png"
                                     }
                                 ],
                                 "supertip": {
@@ -138,15 +138,15 @@ The following shows how to configure your unified manifest to enable the prepend
                                 "icons": [
                                     {
                                         "size": 16,
-                                        "file": "https://localhost:3000/assets/icon-16.png"
+                                        "url" "https://localhost:3000/assets/icon-16.png"
                                     },
                                     {
                                         "size": 32,
-                                        "file": "https://localhost:3000/assets/icon-32.png"
+                                        "url" "https://localhost:3000/assets/icon-32.png"
                                     },
                                     {
                                         "size": 80,
-                                        "file": "https://localhost:3000/assets/icon-80.png"
+                                        "url" "https://localhost:3000/assets/icon-80.png"
                                     }
                                 ],
                                 "supertip": {
