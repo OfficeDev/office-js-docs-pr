@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 02/09/2024
+ms.date: 02/22/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,8 +21,76 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+1. In your preferred code editor, open the Outlook quick start project you created.
+
+1. Open the **manifest.json** file located at the root of the project.
+
+1. In the "authorization.permissions.resourceSpecific" array, change the value of the "name" property to "Mailbox.ReadWrite.User". It should look like the following when you're done.
+
+    ```json
+    "authorization": {
+        "permissions": {
+            "resourceSpecific": [
+                {
+                    "name": "Mailbox.ReadWrite.User",
+                    "type": "Delegated"
+                }
+            ]
+        }
+    },
+    ```
+
+1. In first object of the "extensions.runtimes" array, make the following changes.
+
+    1. Change the "requirements.capabilities.minVersion" property to "1.13".
+    1. Set the "actions.pinnable" property to `true`.
+    1. In the same "actions" object, add the "multiselect" property and set it to `true`.
+
+    Your code should look like the following after you've made the changes.
+
+    ```json
+    "runtimes": [
+        {
+            "requirements": {
+                "capabilities": [
+                    {
+                        "name": "Mailbox",
+                        "minVersion": "1.13"
+                    }
+                ]
+            },
+            "id": "TaskPaneRuntime",
+            "type": "general",
+            "code": {
+                "page": "https://localhost:3000/taskpane.html"
+            },
+            "lifetime": "short",
+            "actions": [
+                {
+                    "id": "TaskPaneRuntimeShow",
+                    "type": "openPage",
+                    "pinnable": true,
+                    "view": "dashboard",
+                    "multiselect": true
+                }
+            ]
+        },
+        ...
+    ]
+    ```
+
+1. Delete the second object of the "extensions.runtimes" array, whose "id" is "CommandsRuntime".
+
+1. In the "extensions.ribbons.tabs.controls" array, delete the second object, whose "id" is "ActionButton".
+
+1. Save your changes.
+
 > [!NOTE]
-> The item multi-select feature isn't currently supported in the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md), but the team is working on making this available.
+> Item multi-select can also be enabled without setting the "runtimes.actions.multiselect" property to `true` if the "runtimes.actions.supportsNoItemContext" property is set to `true` in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
+
+# [XML Manifest](#tab/xmlmanifest)
 
 To enable your add-in to activate on multiple selected messages, you must add the [SupportsMultiSelect](/javascript/api/manifest/action#supportsmultiselect) child element to the **\<Action\>** element and set its value to `true`. As item multi-select only supports messages at this time, the **\<ExtensionPoint\>** element's `xsi:type` attribute value must be set to `MessageReadCommandSurface` or `MessageComposeCommandSurface`.
 
@@ -102,6 +170,8 @@ To enable your add-in to activate on multiple selected messages, you must add th
     > Item multi-select can also be enabled without the **\<SupportsMultiSelect\>** element if the **\<SupportsNoItemContext\>** element is included in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
 
 1. Save your changes.
+
+---
 
 ## Configure the task pane
 
