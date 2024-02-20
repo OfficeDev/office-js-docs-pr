@@ -45,7 +45,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 1. In first object of the "extensions.runtimes" array, make the following changes.
 
     1. Change the "requirements.capabilities.minVersion" property to "1.13".
-    1. Set the "actions.pinnable" property to `true`.
+    1. In the same "actions" object, add the "supportsNoItemContext" property and set it to `true`.
     1. In the same "actions" object, add the "multiselect" property and set it to `true`.
 
     Your code should look like the following after you've made the changes.
@@ -71,8 +71,9 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
                 {
                     "id": "TaskPaneRuntimeShow",
                     "type": "openPage",
-                    "pinnable": true,
+                    "pinnable": false,
                     "view": "dashboard",
+                    "supportsNoItemContext": true,
                     "multiselect": true
                 }
             ]
@@ -81,14 +82,14 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
     ]
     ```
 
+    > [!NOTE]
+    > If you turn on the item multi-select feature in your add-in, your add-in will automatically support the [no item context](contextless.md) feature, even if it isn't explicitly configured in the manifest.
+
 1. Delete the second object of the "extensions.runtimes" array, whose "id" is "CommandsRuntime".
 
 1. In the "extensions.ribbons.tabs.controls" array, delete the second object, whose "id" is "ActionButton".
 
 1. Save your changes.
-
-> [!NOTE]
-> Item multi-select can also be enabled without setting the "runtimes.actions.multiselect" property to `true` if the "runtimes.actions.supportsNoItemContext" property is set to `true` in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
 
 # [XML Manifest](#tab/xmlmanifest)
 
@@ -280,7 +281,7 @@ Item multi-select only supports messages within an Exchange mailbox in both read
 - The messages must be selected from one Exchange mailbox at a time. Non-Exchange mailboxes aren't supported.
 - The messages must be selected from one mailbox folder at a time. An add-in doesn't activate on multiple messages if they're located in different folders, unless Conversations view is enabled. For more information, see [Multi-select in conversations](#multi-select-in-conversations).
 - An add-in must implement a task pane in order to detect the `SelectedItemsChanged` event.
-- The [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) in Outlook must be enabled. An exception to this is if the item multi-select feature is enabled through the **\<SupportsNoItemContext\>** element in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
+- The [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) in Outlook must be enabled. An exception to this is if the item multi-select feature is enabled through the no item context feature in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
 - A maximum of 100 messages can be selected at a time.
 
 > [!NOTE]
