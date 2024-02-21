@@ -2,20 +2,20 @@
 title: Compare the XML manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the XML manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 07/27/2023
+ms.date: 03/15/2024
 ms.localizationpriority: high
 ---
 
 # Compare the XML manifest with the unified manifest for Microsoft 365
 
-This article is intended to help readers who are familiar with the XML manifest understand the unified manifest by comparing the two. Readers should also see [Office Add-ins with the unified manifest for Microsoft 365 (preview)](unified-manifest-overview.md).
+This article is intended to help readers who are familiar with the XML manifest understand the unified manifest by comparing the two. Readers should also see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
 
 > [!NOTE]
-> The unified manifest is a preview feature of Office Add-ins and is only supported for Outlook on Windows.
+> The unified manifest currently only supports Outlook add-ins and only in Office linked to a Microsoft 365 subscription and installed on Windows, on a mobile device, or in Outlook on the web. We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office.
 
 ## Schemas and general points
 
-There is just one schema for the [preview unified manifest](https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/preview/DevPreview/MicrosoftTeams.schema.json), in contrast to the current XML manifest which has a total of seven [schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
+There is just one schema for the [unified manifest](https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/preview/DevPreview/MicrosoftTeams.schema.json), in contrast to the current XML manifest which has a total of seven [schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
 
 ## Conceptual mapping of the preview unified and current XML manifests
 
@@ -101,8 +101,8 @@ The following table maps the child properties of the anonymous child objects in 
 | "contexts" | Specifies the command surfaces that the add-in customizes. | various **\*CommandSurface** elements, such as **PrimaryCommandSurface** and **MessageReadCommandSurface** |*None.* |
 | "tabs" | Configures custom ribbon tabs. | **\<CustomTab\>** | The names and hierarchy of the descendant properties of "tabs" closely match the descendants of **\<CustomTab\>**.  |
 
-For a full sample unified manifest, see [Sample preview unified manifest](unified-manifest-overview.md#sample-preview-unified-manifest).
+For a full sample unified manifest, see [Sample unified manifest](unified-manifest-overview.md#sample-preview-unified-manifest).
 
 ## Next steps
 
-- [Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
+- [Build an Outlook add-in with the unified manifest for Microsoft 365](../quickstarts/outlook-quickstart-json-manifest.md).
