@@ -32,19 +32,23 @@ Though we strongly recommend sideloading automatically through the command line 
 
 # [Windows (classic and new) and Web](#tab/windows-web)
 
-Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To sideload an add-in in Outlook on Windows, on the web, and on new Outlook on Windows (preview), perform the following steps.
+Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To sideload an add-in in Outlook on Windows, on the web, and on [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), perform the following steps.
 
-> [!NOTE]
-> If your mailbox toolbar looks like the following image, you're using the classic version of Outlook on the web. To manually sideload an add-in, see [Sideload an add-in in classic Outlook on the web](#sideload-an-add-in-in-classic-outlook-on-the-web).
->
-> ![Header of the classic Outlook on the web toolbar with "Office 365 | Outlook" as its title.](../images/outlook-on-the-web-classic-toolbar.png)
->
-> Note that your organization may include its own logo in the mailbox toolbar, so you might see something slightly different than shown in the preceding images.
-
-1. In your preferred browser, go to <https://aka.ms/olksideload>. The **Add-Ins for Outlook** dialog appears after a few seconds.
+1. In your preferred browser, go to <https://aka.ms/olksideload>. Outlook on the web opens, then the **Add-Ins for Outlook** dialog appears after a few seconds.
 
     > [!TIP]
-    > In Outlook on Windows, you can also access the **Add-Ins for Outlook** dialog by selecting **File** > **Info** > **Manage Add-ins**. This opens Outlook on the web in your preferred browser, then loads the dialog.
+    >
+    > - If your mailbox toolbar looks like the following image, you're using the classic version of Outlook on the web.
+    >
+    > ![Header of the classic Outlook on the web toolbar with "Office 365 | Outlook" as its title.](../images/outlook-on-the-web-classic-toolbar.png)
+    >
+    > To access the **Add-Ins for Outlook** dialog, open [Outlook on the web](https://outlook.office365.com). Then, select the gear icon from the top-right section of the toolbar and choose **Manage add-ins**.
+    >
+    > ![The Manage add-ins option is selected in classic Outlook on the web.](../images/outlook-sideload-web-manage-integrations.png)
+    >
+    > Note that your organization may include its own logo in the mailbox toolbar, so you might see something slightly different than shown in the preceding images.
+    >
+    > - In Outlook on Windows, you can also access the **Add-Ins for Outlook** dialog by selecting **File** > **Info** > **Manage Add-ins**. This opens Outlook on the web in your preferred browser, then loads the dialog.
 
 1. In the **Add-Ins for Outlook** dialog box, select **My add-ins**.
 
@@ -61,26 +65,6 @@ Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To s
     > [!NOTE]
     > In Outlook on Windows, it may take up to 24 hours for your manually sideloaded add-in to appear in the client. This is due to caching.
 
-### Sideload an add-in in classic Outlook on the web
-
-1. Go to [Outlook on the web](https://outlook.office365.com).
-
-1. Choose the gear icon in the top-right section of the toolbar and select **Manage add-ins**.
-
-    ![The Manage add-ins option is selected in classic Outlook on the web.](../images/outlook-sideload-web-manage-integrations.png)
-
-1. On the **Manage add-ins** page, select **Add-Ins**, and then select **My add-ins**.
-
-    ![Outlook on the web add-ins dialog with My add-ins selected.](../images/outlook-sideload-my-add-ins.png)
-
-1. Locate the **Custom add-ins** section at the bottom of the dialog box. Select the **Add a custom add-in** link, and then select **Add from File**.
-
-    ![The Add from File option is selected in the Custom Add-ins section.](../images/outlook-sideload-custom-add-in.png)
-
-    [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
-
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
-
 # [Mac](#tab/mac)
 
 1. Open Outlook on Mac.
@@ -89,7 +73,7 @@ Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To s
 
     ![The Get Add-ins button is selected in Outlook on Mac.](../images/outlook-sideload-mac-classic.png)
 
-    > [!IMPORTANT]
+    > [!TIP]
     > If you don't see **Get Add-ins** in your version of Outlook, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
     >
     > ![The Get Add-ins option is selected from the ellipsis button in Outlook on Mac.](../images/outlook-sideload-new-mac.png)
