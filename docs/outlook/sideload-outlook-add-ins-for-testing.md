@@ -40,13 +40,13 @@ Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To s
     >
     > - If your mailbox toolbar looks like the following image, you're using the classic version of Outlook on the web.
     >
-    > ![Header of the classic Outlook on the web toolbar with "Office 365 | Outlook" as its title.](../images/outlook-on-the-web-classic-toolbar.png)
+    >   ![Header of the classic Outlook on the web toolbar with "Office 365 | Outlook" as its title.](../images/outlook-on-the-web-classic-toolbar.png)
     >
-    > To access the **Add-Ins for Outlook** dialog, open [Outlook on the web](https://outlook.office365.com). Then, select the gear icon from the top-right section of the toolbar and choose **Manage add-ins**.
+    >   To access the **Add-Ins for Outlook** dialog, open [Outlook on the web](https://outlook.office365.com). Then, select the gear icon from the top-right section of the toolbar and choose **Manage add-ins**.
     >
-    > ![The Manage add-ins option is selected in classic Outlook on the web.](../images/outlook-sideload-web-manage-integrations.png)
+    >   ![The Manage add-ins option is selected in classic Outlook on the web.](../images/outlook-sideload-web-manage-integrations.png)
     >
-    > Note that your organization may include its own logo in the mailbox toolbar, so you might see something slightly different than shown in the preceding images.
+    >   Note that your organization may include its own logo in the mailbox toolbar, so you might see something slightly different than shown in the preceding images.
     >
     > - In Outlook on Windows, you can also access the **Add-Ins for Outlook** dialog by selecting **File** > **Info** > **Manage Add-ins**. This opens Outlook on the web in your preferred browser, then loads the dialog.
 
