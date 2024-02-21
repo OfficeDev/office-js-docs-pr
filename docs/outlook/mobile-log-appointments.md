@@ -1,7 +1,7 @@
 ---
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
-ms.date: 02/02/2024
+ms.date: 02/22/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -112,15 +112,15 @@ To configure your add-in's manifest, select the type of manifest you're using.
                         "icons": [
                             {
                                 "size": 16,
-                                "file": "https://localhost:3000/assets/icon-16.png"
+                                "url": "https://localhost:3000/assets/icon-16.png"
                             },
                             {
                                 "size": 32,
-                                "file": "https://localhost:3000/assets/icon-32.png"
+                                "url": "https://localhost:3000/assets/icon-32.png"
                             },
                             {
                                 "size": 80,
-                                "file": "https://localhost:3000/assets/icon-80.png"
+                                "url": "https://localhost:3000/assets/icon-80.png"
                             }
                         ],
                         "controls": [
@@ -131,15 +131,15 @@ To configure your add-in's manifest, select the type of manifest you're using.
                                 "icons": [
                                     {
                                         "size": 16,
-                                        "file": "https://www.contoso.com/assets/icon-16.png"
+                                        "url": "https://www.contoso.com/assets/icon-16.png"
                                     },
                                     {
                                         "size": 32,
-                                        "file": "https://www.contoso.com/assets/icon-32.png"
+                                        "url": "https://www.contoso.com/assets/icon-32.png"
                                     },
                                     {
                                         "size": 80,
-                                        "file": "https://www.contoso.com/assets/icon-80.png"
+                                        "url": "https://www.contoso.com/assets/icon-80.png"
                                     }
                                 ],
                                 "supertip": {
@@ -270,15 +270,15 @@ To configure your add-in's manifest, select the type of manifest you're using.
                         "icons": [
                             {
                                 "size": 16,
-                                "file": "https://localhost:3000/assets/icon-16.png"
+                                "url": "https://localhost:3000/assets/icon-16.png"
                             },
                             {
                                 "size": 32,
-                                "file": "https://localhost:3000/assets/icon-32.png"
+                                "url": "https://localhost:3000/assets/icon-32.png"
                             },
                             {
                                 "size": 80,
-                                "file": "https://localhost:3000/assets/icon-80.png"
+                                "url": "https://localhost:3000/assets/icon-80.png"
                             }
                         ],
                         "controls": [
@@ -289,15 +289,15 @@ To configure your add-in's manifest, select the type of manifest you're using.
                                 "icons": [
                                     {
                                         "size": 16,
-                                        "file": "https://www.contoso.com/assets/icon-16.png"
+                                        "url": "https://www.contoso.com/assets/icon-16.png"
                                     },
                                     {
                                         "size": 32,
-                                        "file": "https://www.contoso.com/assets/icon-32.png"
+                                        "url": "https://www.contoso.com/assets/icon-32.png"
                                     },
                                     {
                                         "size": 80,
-                                        "file": "https://www.contoso.com/assets/icon-80.png"
+                                        "url": "https://www.contoso.com/assets/icon-80.png"
                                     }
                                 ],
                                 "supertip": {
