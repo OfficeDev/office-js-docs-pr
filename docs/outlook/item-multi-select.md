@@ -82,9 +82,6 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
     ]
     ```
 
-    > [!NOTE]
-    > If you turn on the item multi-select feature in your add-in, your add-in will automatically support the [no item context](contextless.md) feature, even if it isn't explicitly configured in the manifest.
-
 1. Delete the second object of the "extensions.runtimes" array, whose "id" is "CommandsRuntime".
 
 1. In the "extensions.ribbons.tabs.controls" array, delete the second object, whose "id" is "ActionButton".
@@ -167,12 +164,12 @@ To enable your add-in to activate on multiple selected messages, you must add th
     </VersionOverrides>
     ```
 
-    > [!NOTE]
-    > Item multi-select can also be enabled without the **\<SupportsMultiSelect\>** element if the **\<SupportsNoItemContext\>** element is included in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
-
 1. Save your changes.
 
 ---
+
+> [!NOTE]
+> If you turn on the item multi-select feature in your add-in, your add-in will automatically support the [no item context](contextless.md) feature, even if it isn't explicitly configured in the manifest.
 
 ## Configure the task pane
 
