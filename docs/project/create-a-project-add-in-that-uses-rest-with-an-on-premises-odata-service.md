@@ -267,7 +267,7 @@ The task pane shows the add-in display name at the top, which is the value of th
 
 ## Create the JavaScript code for the add-in
 
-The template for a Project task pane add-in includes default initialization code that is designed to demonstrate basic get and set actions for data in a document for an Office add-in that uses the [Common APIs](../develop/office-javascript-api-object-model.md). Because Project does not support actions that write to the active project, and the **HelloProjectOData** add-in does not use the `getSelectedDataAsync` method, you can delete the script within the `Office.initialize` function, and delete the `setData` function and `getData` function in the default HelloProjectOData.js file.
+The template for a Project task pane add-in includes default initialization code that's designed to demonstrate basic get and set actions for data in a document for an Office add-in that uses the [Common APIs](../develop/office-javascript-api-object-model.md). Because Project doesn't support actions that write to the active project, and the **HelloProjectOData** add-in doesn't use the `getSelectedDataAsync` method, you can delete the script within the `Office.initialize` function, and delete the `setData` function and `getData` function in the default HelloProjectOData.js file.
 
 The JavaScript includes global constants for the REST query and global variables that are used in several functions. The **Get ProjectData Endpoint** button calls the `setOdataUrl` function, which initializes the global variables and determines whether Project is connected with Project Web App.
 
@@ -534,7 +534,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
 
 ## Test the HelloProjectOData add-in
 
-To test and debug the **HelloProjectOData** add-in with Visual Studio 2015, Project Professional must be installed on the development computer. To enable different test scenarios, ensure that you can choose whether Project opens for files on the local computer or connects with Project Web App. For example, do the following steps.
+To test and debug the **HelloProjectOData** add-in with Visual Studio, Project Professional must be installed on the development computer. To enable different test scenarios, ensure that you can choose whether Project opens for files on the local computer or connects with Project Web App. The following are example steps.
 
 1. On the **File** tab, choose the **Info** tab in the Backstage view, and then choose **Manage Accounts**.
 

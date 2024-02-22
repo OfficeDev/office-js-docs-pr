@@ -18,7 +18,7 @@ For an introduction to Office Add-ins, see [Office Add-ins platform overview](..
 Project managers can use Project task pane add-ins to help with project management activities. Instead of leaving Project and opening another application to search for frequently used information, project managers can directly access the information within Project. The content in a task pane add-in can be context-sensitive, based on the selected task, resource, view, or other data in a cell in a Gantt chart, task usage view, or resource usage view.
 
 > [!NOTE]
-> With Project Professional, you can develop task pane add-ins that access Project on the web, on-premises installations of Project Server, and on-premises or online SharePoint. Project Standard does not support direct integration with Project Server data or SharePoint task lists that are synchronized with Project Server.
+> With Project Professional, you can develop task pane add-ins that access Project on the web, on-premises installations of Project Server, and on-premises or online SharePoint. Project Standard doesn't support direct integration with Project Server data or SharePoint task lists that are synchronized with Project Server.
 
 Add-in scenarios for Project include the following:
 
@@ -32,7 +32,7 @@ Add-in scenarios for Project include the following:
 
 - **Work packages** Search for specified kinds of project templates within SharePoint libraries and online template collections. For example, find templates for construction projects and add them to your Project template collection.
 
-- **Related items** View metadata, documents, and messages that are related to specific tasks in a project plan. For example, you can use Project Professional to manage a project that was imported from a SharePoint task list, and still synchronize the task list with changes in the project. A task pane add-in can show additional fields or metadata that Project did not import for tasks in the SharePoint list.
+- **Related items**: View metadata, documents, and messages that are related to specific tasks in a project plan. For example, you can use Project Professional to manage a project that was imported from a SharePoint task list, and still synchronize the task list with changes in the project. A task pane add-in can show additional fields or metadata that Project didn't import for tasks in the SharePoint list.
 
 - **Use the Project Server object models** Use the GUID of a selected task with methods in the Project Server Interface (PSI) or the client-side object model (CSOM) of Project Server. For example, the web application for an add-in can read and update the statusing data of a selected task and resource, or integrate with an external timesheet application.
 
@@ -44,7 +44,7 @@ Add-in scenarios for Project include the following:
 
 Project supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the [Common API](/javascript/api/office) to create Project add-ins. For information about the Common API, see [Office JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
-To create an add-in, you can use a simple text editor to create an HTML webpage and related JavaScript files, CSS files, and REST queries. In addition to an HTML page or a web application, an add-in requires an XML manifest file for configuration. Project can use a manifest file that includes a **type** attribute that is specified as **TaskPaneExtension**. The manifest file can be used by multiple Office client applications, or you can create a manifest file that is specific for Project. For more information, see the  _Development basics_ section in [Office Add-ins platform overview](../overview/office-add-ins.md).
+To create an add-in, you can use a simple text editor to create an HTML webpage and related JavaScript files, CSS files, and REST queries. In addition to an HTML page or a web application, an add-in requires an XML manifest file for configuration. Project can use a manifest file that includes a **type** attribute that's specified as **TaskPaneExtension**. The manifest file can be used by multiple Office client applications, or you can create a manifest file that's specific for Project. For more information, see the  _Development basics_ section in [Office Add-ins platform overview](../overview/office-add-ins.md).
 
 Be sure to test your add-in as you develop it. Learn about testing and sideloading add-in in the article [Test Office Add-ins](../testing/test-debug-office-add-ins.md).
 
