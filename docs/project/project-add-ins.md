@@ -22,21 +22,21 @@ Project managers can use Project task pane add-ins to help with project manageme
 
 Add-in scenarios for Project include the following:
 
-- **Project scheduling** View data from related projects that can affect scheduling. A task pane add-in can integrate relevant data from other projects in Project Server. For example, you can view the departmental collection of projects and milestone dates, or view specified data from other projects that are based on a selected custom field.
+- **Project scheduling**: View data from related projects that can affect scheduling. A task pane add-in can integrate relevant data from other projects in Project Server. For example, you can view the departmental collection of projects and milestone dates, or view specified data from other projects that are based on a selected custom field.
 
-- **Resource management** View the complete resource pool in Project Server or a subset based on specified skills, including cost data and resource availability, to help select appropriate resources.
+- **Resource management**: View the complete resource pool in Project Server or a subset based on specified skills, including cost data and resource availability, to help select appropriate resources.
 
-- **Statusing and approvals** Use a web application in a task pane add-in to update or view data from an external enterprise resource planning (ERP) application, timesheet system, or accounting application. Or, create a custom status approval Web Part that can be used within both Project Web App and Project Professional.
+- **Statusing and approvals**: Use a web application in a task pane add-in to update or view data from an external enterprise resource planning (ERP) application, timesheet system, or accounting application. Or, create a custom status approval Web Part that can be used within both Project Web App and Project Professional.
 
-- **Team communication** Communicate with team members and resources directly from a task pane add-in, within the context of a project. Or, easily maintain a set of context-sensitive notes for yourself as you work in a project.
+- **Team communication**: Communicate with team members and resources directly from a task pane add-in, within the context of a project. Or, easily maintain a set of context-sensitive notes for yourself as you work in a project.
 
-- **Work packages** Search for specified kinds of project templates within SharePoint libraries and online template collections. For example, find templates for construction projects and add them to your Project template collection.
+- **Work packages**: Search for specified kinds of project templates within SharePoint libraries and online template collections. For example, find templates for construction projects and add them to your Project template collection.
 
 - **Related items**: View metadata, documents, and messages that are related to specific tasks in a project plan. For example, you can use Project Professional to manage a project that was imported from a SharePoint task list, and still synchronize the task list with changes in the project. A task pane add-in can show additional fields or metadata that Project didn't import for tasks in the SharePoint list.
 
-- **Use the Project Server object models** Use the GUID of a selected task with methods in the Project Server Interface (PSI) or the client-side object model (CSOM) of Project Server. For example, the web application for an add-in can read and update the statusing data of a selected task and resource, or integrate with an external timesheet application.
+- **Use the Project Server object models**: Use the GUID of a selected task with methods in the Project Server Interface (PSI) or the client-side object model (CSOM) of Project Server. For example, the web application for an add-in can read and update the statusing data of a selected task and resource, or integrate with an external timesheet application.
 
-- **Get reporting data** Use Representational State Transfer (REST), JavaScript, or LINQ queries to find related information for a selected task or resource in the OData service for reporting tables in Project Web App. Queries that use the OData service can be done with an online or an on-premises installation of Project Server.
+- **Get reporting data**: Use Representational State Transfer (REST), JavaScript, or LINQ queries to find related information for a selected task or resource in the OData service for reporting tables in Project Web App. Queries that use the OData service can be done with an online or an on-premises installation of Project Server.
 
     For example, see [Create a Project add-in that uses REST with an on-premises Project Server OData service](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
 
