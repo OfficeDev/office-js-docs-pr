@@ -1,7 +1,7 @@
 ---
 title: Localization for Office Add-ins
 description: Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.
-ms.date: 10/11/2023
+ms.date: 03/15/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -144,7 +144,7 @@ For Outlook add-ins, the [SourceLocation] element also aligns to the form factor
 
 # [Unified manifest (developer preview)](#tab/jsonmanifest)
 
-When using the unified manifest (preview), localize the public-facing strings in the manifest as described in [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization#localize-strings-in-your-app-manifest). The following is an example for an Outlook add-in. First is the "localizationInfo" object in the manifest. Below that is the fr-fr.json file with the translated strings. The add-in has a task pane (with a French version of the home page), localized French icons, and a custom ribbon button that opens a video player in a dialog box. 
+When using the unified manifest, localize the public-facing strings in the manifest as described in [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization#localize-strings-in-your-app-manifest). The following is an example for an Outlook add-in. First is the "localizationInfo" object in the manifest. Below that is the fr-fr.json file with the translated strings. The add-in has a task pane (with a French version of the home page), localized French icons, and a custom ribbon button that opens a video player in a dialog box. 
 
 ```json
 "localizationInfo": {
@@ -181,7 +181,7 @@ When using the unified manifest (preview), localize the public-facing strings in
 ## Localize extended overrides
 
 > [!NOTE]
-> This section is not applicable if you are using the unified manifest (preview).
+> This section is not applicable if you are using the unified manifest.
 
 Some extensibility features of Office Add-ins, such as keyboard shortcuts, are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest. This section assumes that you're familiar with extended overrides. See [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element.
 

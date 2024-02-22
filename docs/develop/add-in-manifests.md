@@ -2,7 +2,7 @@
 title: Office Add-ins manifest
 description: Get an overview of the Office Add-in manifest and its uses.
 ms.topic: overview
-ms.date: 07/27/2023
+ms.date: 03/15/2024
 ms.localizationpriority: high
 ---
 
@@ -10,15 +10,15 @@ ms.localizationpriority: high
 
 Every Office add-in has a manifest. There are two types of manifests:
 
-- **XML manifest:** This is the only type of manifest that is currently supported for production add-ins. As the name indicates, it is XML format. This type of manifest can't be used for an app that combines an add-in with some other kind of Teams App; that is, some other kind of extension of the Microsoft 365 platform.
-- **unified manifest for Microsoft 365:** This is a JSON-formatted manifest that has been used for years as the manifest for Teams Apps. It is supported for add-ins only as a preview currently, and only on Outlook for Windows. It shouldn't be used with a production add-in. When it releases to general availability, add-ins that use this manifest can be combined with other kinds of Teams Apps in a single app that is installable as a unit whole. 
+- **XML manifest:** This is the only type of manifest that is currently supported for non-Outlook add-ins. As the name indicates, it is XML format. This type of manifest can't be used for an app that combines an add-in with some other kind of extension of the Microsoft 365 platform.
+- **unified manifest for Microsoft 365:** This is an expanded version of the JSON-formatted manifest that has been used for years as the manifest for Teams Apps. Currently, this manifest is only available for Outlook add-ins and only in Office linked to a Microsoft 365 subscription and installed on Windows, on a mobile device, or in Outlook on the web. We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office. Add-ins that use this manifest can be combined with other kinds of extensions of the Microsoft 365 platform in a single app that is installable as a unit whole. 
 
 The remainder of this article is applicable to both types of manifest. 
 
 > [!TIP]
 >
 > - For an overview that is specific to the XML manifest, see [Office Add-ins XML manifest](xml-manifest-overview.md).
-> - For an overview that is specific to the unified manifest, see [Office Add-ins with the unified manifest for Microsoft 365 (preview)](unified-manifest-overview.md).
+> - For an overview that is specific to the unified manifest, see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
 > - If you have some familiarity with the XML manifest, the article [Compare the XML manifest with the unified manifest for Microsoft 365](json-manifest-overview.md) explains the unified manifest by comparing it with the XML manifest.
 
 The manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications.
@@ -63,7 +63,7 @@ To override this (desktop Office) behavior, specify each domain you want to open
 
 ## Specify domains from which Office.js API calls are made
 
-Your add-in can make Office.js API calls from the ad-in's domain referenced in the manifest file. If you have other iframes within your add-in that need to access Office.js APIs, add the domain of that source URL to the manifest file. If an iframe with a source not listed in the manifest attempts to make an Office.js API call, then the add-in will receive a [permission denied error](../reference/javascript-api-for-office-error-codes.md).
+Your add-in can make Office.js API calls from the add-in's domain referenced in the manifest file. If you have other iframes within your add-in that need to access Office.js APIs, add the domain of that source URL to the manifest file. If an iframe with a source not listed in the manifest attempts to make an Office.js API call, then the add-in will receive a [permission denied error](../reference/javascript-api-for-office-error-codes.md).
 
 ## See also
 

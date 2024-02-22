@@ -2,11 +2,11 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an XML manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 07/27/2023
+ms.date: 03/15/2024
 ms.localizationpriority: medium
 ---
 
-# Convert an add-in to use the unified manifest for Microsoft 365 (preview)
+# Convert an add-in to use the unified manifest for Microsoft 365
 
 To add Teams capabilities to an add-in that uses the XML manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
 
@@ -14,12 +14,12 @@ There are three basic tasks to converting an add-in project from the XML manifes
 
 - Ensure that you have 64x64 pixel and 128x128 pixel images files to serve as icons for the add-in.
 - Convert the XML manifest itself to the JSON format of the unified manifest.
-- Package the new manifest and main icon and high resolution icon image files into a zip file for sideloading or deployment.
+- Package the new manifest and the two icon image files into a zip file for sideloading or deployment.
 
 > [!NOTE]
 > 
-> - The unified manifest is a preview feature for Office Add-ins and is currently supported only for Outlook on Windows.
-> - Add-ins that use the unified manifest can be sideloaded only on Office version 16.0.16501.10000 or later.
+> - TCurrently, the unified manifest is only available for Outlook add-ins and only in Office linked to a Microsoft 365 subscription and installed on Windows, on a mobile device, or in Outlook on the web. We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office.
+> - Add-ins that use the unified manifest can be sideloaded only on Office version 2304 (Build 16320.20000) or later.
 > - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
 > - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
 
@@ -101,7 +101,7 @@ You can sideload the add-in using the Teams Toolkit or in a command prompt, bash
 
 ### Projects created with the Office Yeoman Generator (aka "Yo Office")
 
-If the project was created with the Office Yeoman Generator (using any option except the "unified manifest" option) and you don't want to use the Teams Toolkit, convert it using the following steps.
+If the project was created with the Office Yeoman Generator and you don't want to use the Teams Toolkit, convert it using the following steps.
 
 1. In the root of the project, open a command prompt or bash shell and run the following command. This converts the manifest and updates the package.json to specify current tooling packages. The new unified manifest is in the root of the project and the old XML manifest is in a backup.zip file. For details about this command, see [Office-Addin-Project](https://www.npmjs.com/package/office-addin-project).
 
