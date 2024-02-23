@@ -1,7 +1,7 @@
 ---
 title: Manage the sensitivity label of your message or appointment in compose mode
 description: Learn how to manage the sensitivity label of your message or appointment in compose mode.
-ms.date: 10/05/2023
+ms.date: 01/16/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,7 +21,7 @@ You can use the Office JavaScript API to implement sensitivity label solutions i
 
 ## Prerequisites
 
-To implement the sensitivity label feature in your add-in, you must have a Microsoft 365 E5 subscription. For access to a free developer sandbox that includes a renewable E5 subscription, join the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program#Subscription).
+To implement the sensitivity label feature in your add-in, you must have a Microsoft 365 E5 subscription. You might qualify for a Microsoft 365 E5 developer subscription through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 
 ### Supported clients and platforms
 
@@ -37,14 +37,10 @@ The following table lists client-server combinations that support the use of the
 
 ## Configure the manifest
 
-> [!NOTE]
-> The sensitivity label feature isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md).
+To use the sensitivity feature in your Outlook add-in project, you must configure the **read/write item** permission in the manifest of your add-in.
 
-To use the sensitivity feature in your Outlook add-in project, you must set the [\<Permissions\> element](/javascript/api/manifest/permissions) of the XML manifest to **ReadWriteItem**.
-
-```xml
-<Permissions>ReadWriteItem</Permissions>
-```
+- **Unified manifest for Microsoft 365 (preview)**: In the "authorization.permissions.resourceSpecific" array, set the "name" property of an object to "MailboxItem.ReadWrite.User".
+- **XML manifest**: Set the [\<Permissions\> element](/javascript/api/manifest/permissions) to **ReadWriteItem**.
 
 If your add-in will detect and handle the `OnSensitivityLabelChanged` event, additional manifest configurations are required to enable the event-based activation feature. To learn more, see [Detect sensitivity label changes with the OnSensitivityLabelChanged event](#detect-sensitivity-label-changes-with-the-onsensitivitylabelchanged-event).
 
@@ -202,9 +198,6 @@ Office.context.sensitivityLabelsCatalog.getIsEnabledAsync((asyncResult) => {
 Take extra measures to protect your data by using the `OnSensitivityLabelChanged` event. This event enables your add-in to complete tasks in response to sensitivity label changes on a message or appointment. For example, you can prevent users from downgrading the sensitivity label of a mail item if it contains certain attachments.
 
 The `OnSensitivityLabelChanged` event is available through the event-based activation feature. To learn how to configure, debug, and deploy an event-based add-in that uses this event, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
-
-> [!NOTE]
-> The `OnSensitivityLabelChanged` event isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
 
 ## See also
 

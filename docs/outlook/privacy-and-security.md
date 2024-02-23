@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 11/09/2023
+ms.date: 02/20/2024
 ms.localizationpriority: high
 ---
 
@@ -66,9 +66,13 @@ For general add-in behavior, see [Privacy and security for Office Add-ins](../co
 
 The security model addresses security, privacy, and performance concerns of end users in the following ways.
 
-- End user's messages that are protected by Outlook's Information Rights Management (IRM) don't interact with add-ins in Outlook on mobile devices.
+- End user's messages that are protected by Outlook's Information Rights Management (IRM) won't interact with add-ins in the following instances.
 
-[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
+  - When the IRM-protected message is accessed from Outlook on mobile devices.
+
+  - When the IRM-protected message contains a sensitivity label with the **Allow programmatic access** custom policy option set to `false`.
+
+  For more information on IRM support in add-ins, see [Mail items protected by IRM](outlook-add-ins-overview.md#mail-items-protected-by-irm).
 
 - Before installing an add-in from AppSource, end users can see the access and actions that the add-in can make on their data and must explicitly confirm to proceed. No Outlook add-in is automatically pushed onto a client computer without manual validation by the user or administrator.
 
@@ -130,22 +134,9 @@ Developers should follow the tiered permissions model to provide transparency an
 },
 ```
 
-- Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body. For example, the following rule activates the Outlook add-in if one or more of three entities - phone number, postal address, or URL - are found in the subject or body of the current message.
+- Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body.
 
-> [!NOTE]
-> Activation rules, as seen in this example, aren't supported in add-ins that use the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
-
-  ```XML
-    <Permissions>Restricted</Permissions>
-        <Rule xsi:type="RuleCollection" Mode="And">
-        <Rule xsi:type="ItemIs" FormType="Read" ItemType="Message" />
-        <Rule xsi:type="RuleCollection" Mode="Or">
-            <Rule xsi:type="ItemHasKnownEntity" EntityType="PhoneNumber" />
-            <Rule xsi:type="ItemHasKnownEntity" EntityType="Address" />
-            <Rule xsi:type="ItemHasKnownEntity" EntityType="Url" />
-        </Rule>
-    </Rule>
-  ```
+    [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
 - Developers should request the **read item** permission if the Outlook add-in needs to read properties of the current item other than the default extracted entities, or write custom properties set by the add-in on the current item, but doesn't require reading or writing to other items, or creating or sending a message in the user's mailbox. For example, a developer should request **read item** permission if an Outlook add-in needs to look for an entity like a meeting suggestion, task suggestion, email address, or contact name in the item's subject or body, or uses a regular expression to activate.
 

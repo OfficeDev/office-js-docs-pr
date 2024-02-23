@@ -1,14 +1,14 @@
 ---
-title: Debug your event-based Outlook add-in
-description: Learn how to debug your Outlook add-in that implements event-based activation.
-ms.date: 06/28/2023
+title: Debug your event-based or spam-reporting Outlook add-in
+description: Learn how to debug your Outlook add-in that implements event-based activation or integrated spam reporting.
+ms.date: 12/21/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Debug your event-based Outlook add-in
+# Debug your event-based or spam-reporting Outlook add-in
 
-This article discusses the key debugging stages to enable and set breakpoints in your code as you implement [event-based activation](autolaunch.md) in your add-in. The event-based activation feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For more information, see [Supported events](autolaunch.md#supported-events). Before you proceed, review the [event-based troubleshooting guide](autolaunch.md#troubleshooting-guide) for additional guidance.
+This article discusses the key debugging stages to enable and set breakpoints in your code as you implement [event-based activation](autolaunch.md) or [integrated spam reporting (preview)](spam-reporting.md) in your add-in. Before you proceed, we recommend reviewing the [troubleshooting guide](troubleshoot-event-based-and-spam-reporting-add-ins.md) for additional steps on how to resolve development errors.
 
 To begin debugging, select the tab for your applicable client.
 
@@ -43,7 +43,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
    This sets the debugger port to `9223`.
 
 1. Start Outlook or restart it if it's already open.
-1. Perform the action to initiate the event you're developing for, such as creating a new message to initiate the `OnNewMessageCompose` event. The Debug Event-based handler dialog should appear. Do *not* interact with the dialog yet.
+1. Perform the action to initiate the event you're developing for, such as creating a new message to initiate the `OnNewMessageCompose` event or reporting spam messages. The Debug Event-based handler dialog should appear. Do *not* interact with the dialog yet.
 
     ![The Debug Event-based handler dialog in Windows.](../images/outlook-win-autolaunch-debug-dialog.png)
 
@@ -119,7 +119,7 @@ The **bundle.js** file of an add-in contains the JavaScript code of your add-in.
 
 1. After confirming that the debugger is attached, return to Outlook, and in the **Debug Event-based handler** dialog, choose **OK** .
 
-1. You can now hit your breakpoints in Visual Studio Code, enabling you to debug your event-based activation code.
+1. You can now hit your breakpoints in Visual Studio Code, enabling you to debug your event-based activation or spam-reporting code.
 
 ## Stop the debugger
 
@@ -140,5 +140,6 @@ Use your preferred browser's developer tools to debug your event-based add-in in
 ## See also
 
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
-- [Event-based activation troubleshooting guide](autolaunch.md#troubleshooting-guide)
+- [Implement an integrated spam-reporting add-in (preview)](spam-reporting.md)
+- [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Debug your add-in with runtime logging](../testing/runtime-logging.md#runtime-logging-on-windows)

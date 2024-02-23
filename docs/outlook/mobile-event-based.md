@@ -1,14 +1,14 @@
 ---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 01/22/2024
+ms.date: 02/06/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Implement event-based activation in Outlook mobile add-ins
 
-With the [event-based activation](autolaunch.md) feature, develop an add-in to automatically activate and complete operations when certain events occur in Outlook on Android, such as composing a new message.
+With the [event-based activation](autolaunch.md) feature, develop an add-in to automatically activate and complete operations when certain events occur in Outlook on Android or on iOS, such as composing a new message.
 
 The following sections walk you through how to develop an Outlook mobile add-in that automatically adds a signature to new messages being composed. This highlights a sample scenario of how you can implement event-based activation in your mobile add-in. Significantly enhance the mobile user experience by exploring other scenarios in your add-in today.
 
@@ -19,10 +19,7 @@ To learn how to implement an event-based add-in for Outlook on Windows, on Mac, 
 
 ## Supported clients
 
-The add-in you develop in this walkthrough is supported in Outlook on Android with a Microsoft 365 subscription.
-
-> [!NOTE]
-> Support for event-based activation in Outlook on iOS is currently being rolled out.
+The add-in you develop in this walkthrough is supported in Outlook on Android and on iOS starting in Version 4.2352.0. You must have a Microsoft 365 subscription to run the feature.
 
 ## Set up your environment
 
@@ -205,7 +202,7 @@ To enable an event-based add-in on Outlook mobile, you must configure the follow
 ---
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Outlook add-in manifests](manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Office Add-ins manifest](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## Implement the event handler
 
@@ -297,11 +294,7 @@ Ensure that the **./src/commands/commands.html** file has a reference to the Jav
 
 1. Follow the guidance to [test and validate your add-in](testing-and-tips.md).
 1. [Sideload](sideload-outlook-add-ins-for-testing.md) your add-in in Outlook on Windows, on Mac, or on the web.
-1. Open Outlook on Android. If you have Outlook already open on your device, restart it.
-
-    > [!NOTE]
-    > Support for event-based activation in Outlook on iOS is currently being rolled out.
-
+1. Open Outlook on Android or on iOS. If you have Outlook already open on your device, restart it.
 1. Create a new message. The event-based add-in adds the signature to the message. If you have a signature saved on your mobile device, it will briefly appear in the message you create, but will be immediately replaced by the signature added by the add-in.
 
     :::image type="content" source="../images/outlook-mobile-signature.png" alt-text="A sample signature added to a message being composed in Outlook mobile.":::

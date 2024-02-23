@@ -1,16 +1,16 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
-description: Possible reasons your add-in doesn't activate as you expect.
-ms.date: 11/09/2023
+description: Possible reasons your contextual Outlook add-in doesn't activate as you expect.
+ms.date: 02/20/2024
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
 
-# Troubleshoot Outlook add-in activation
+# Troubleshoot Outlook contextual add-in activation
 
 Outlook contextual add-in activation is based on the activation rules in an XML manifest for the add-in. When conditions for the currently selected item satisfy the activation rules for the add-in, the application activates and displays the add-in button in the Outlook UI (add-in selection pane for compose add-ins, add-in bar for read add-ins). However, if your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
 
-[!include[Rule features not supported by the unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
+[!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
 ## Is user mailbox on a version of Exchange Server that is at least Exchange 2013?
 
@@ -70,11 +70,9 @@ Also, because appointments are always saved in Rich Text Format, an [ItemHasRegu
 
 Even if a mail item is not one of the above types, if the item wasn't delivered by a version of Exchange Server that's at least Exchange 2013, known entities and properties, such as sender's SMTP address, wouldn't be identified on the item. Any activation rules that rely on these entities or properties wouldn't be satisfied, and the add-in wouldn't be activated.
 
-In Outlook on mobile devices, if your add-in activates when the user is composing a message or meeting request, make sure the item isn't protected by Outlook's Information Rights Management (IRM).
-
-[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
-
 ## Is the add-in manifest installed properly, and does Outlook have a cached copy?
+
+[!INCLUDE [Rule features not supported by the unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
 
 This scenario applies to only Outlook on Windows. Normally, when you install an Outlook add-in for a mailbox, the Exchange Server copies the add-in manifest from the location you indicate to the mailbox on that Exchange Server. Every time Outlook starts, it reads all the manifests installed for that mailbox into a temporary cache at the following location.
 

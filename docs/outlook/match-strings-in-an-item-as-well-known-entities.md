@@ -1,13 +1,15 @@
 ---
 title: Match strings as well-known entities in an Outlook add-in
 description: Using the Office JavaScript API, you can get strings that match specific well-known entities for further processing.
-ms.date: 03/21/2023
+ms.date: 01/16/2024
 ms.localizationpriority: medium
 ---
 
 # Match strings in an Outlook item as well-known entities
 
 Before sending a message or meeting request item, Exchange Server parses the contents of the item, identifies and stamps certain strings in the subject and body that resemble entities well-known to Exchange, for example, email addresses, phone numbers, and URLs. Messages and meeting requests are delivered by Exchange Server in an Outlook Inbox with well-known entities stamped.
+
+[!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
 Using the Office JavaScript API, you can get these strings that match specific well-known entities for further processing. You can also specify a well-known entity in a rule in the add-in manifest so that Outlook can activate your add-in when the user is viewing an item that contains matches for that entity. You can then extract and take action on matches for the entity.
 

@@ -29,7 +29,7 @@ In this article, you'll walk through the process of building a PowerPoint task p
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `PowerPoint`
 
-![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-powerpoint.png)
+![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-powerpoint.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -72,11 +72,11 @@ After you complete the wizard, the generator creates the project and installs su
 
 3. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
-    ![Screenshot of PowerPoint with the Show Taskpane button highlighted.](../images/powerpoint_quickstart_addin_1c.png)
+    ![PowerPoint with the Show Taskpane button highlighted.](../images/powerpoint_quickstart_addin_1c.png)
 
 4. At the bottom of the task pane, choose the **Run** link to insert the text "Hello World" into the current slide.
 
-    ![Screenshot of PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide.](../images/powerpoint_quickstart_addin_3c.png)
+    ![PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide.](../images/powerpoint_quickstart_addin_3c.png)
 
 ### Next steps
 
@@ -231,15 +231,15 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 2. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
-    ![Screenshot of PowerPoint with the Show Taskpane ribbon button highlighted.](../images/powerpoint_quickstart_addin_1.png)
+    ![PowerPoint with the Show Taskpane ribbon button highlighted.](../images/powerpoint_quickstart_addin_1.png)
 
 3. In the task pane, choose the **Insert Image** button to add an image to the selected slide.
 
-    ![Screenshot of PowerPoint with an image of a dog displayed on the slide.](../images/powerpoint_quickstart_addin_2.png)
+    ![PowerPoint with an image of a dog displayed on the slide.](../images/powerpoint_quickstart_addin_2.png)
 
 4. In the task pane, choose the **Insert Text** button to add text to the selected slide.
 
-    ![Screenshot of PowerPoint with an image of a dog and the text 'Hello World` on the slide.](../images/powerpoint_quickstart_addin_3.png)
+    ![PowerPoint with an image of a dog and the text 'Hello World` on the slide.](../images/powerpoint_quickstart_addin_3.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
