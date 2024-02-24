@@ -66,9 +66,13 @@ For general add-in behavior, see [Privacy and security for Office Add-ins](../co
 
 The security model addresses security, privacy, and performance concerns of end users in the following ways.
 
-- End user's messages that are protected by Outlook's Information Rights Management (IRM) don't interact with add-ins in Outlook on mobile devices.
+- End user's messages that are protected by Outlook's Information Rights Management (IRM) won't interact with add-ins in the following instances.
 
-[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
+  - When the IRM-protected message is accessed from Outlook on mobile devices.
+
+  - When the IRM-protected message contains a sensitivity label with the **Allow programmatic access** custom policy option set to `false`.
+
+  For more information on IRM support in add-ins, see [Mail items protected by IRM](outlook-add-ins-overview.md#mail-items-protected-by-irm).
 
 - Before installing an add-in from AppSource, end users can see the access and actions that the add-in can make on their data and must explicitly confirm to proceed. No Outlook add-in is automatically pushed onto a client computer without manual validation by the user or administrator.
 

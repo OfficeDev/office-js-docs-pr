@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
-ms.date: 01/16/2024
+ms.date: 02/20/2024
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -41,9 +41,9 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
 Outlook add-ins activate when the user is composing or reading a message or appointment, but not other item types. However, add-ins are *not* activated if the current message item, in a compose or read form, is one of the following:
 
-- Protected by Information Rights Management (IRM) or encrypted in other ways for protection and accessed from Outlook on mobile devices. A digitally-signed message is an example since digital signing relies on one of these mechanisms.
+- Protected by Information Rights Management (IRM) or encrypted in other ways for protection and accessed from Outlook on mobile devices. A digitally-signed message is an example since digital signing relies on one of these mechanisms. To learn more about IRM support in Outlook add-ins, see [Mail items protected by IRM](#mail-items-protected-by-irm).
 
-[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
+- An IRM-protected mail item with a sensitivity label that has the **Allow programmatic access** custom policy option set to `false`. To learn more about IRM support in Outlook add-ins, see [Mail items protected by IRM](#mail-items-protected-by-irm).
 
 - A delivery report or notification that has the message class IPM.Report.*, including delivery and Non-Delivery Report (NDR) reports, and read, non-read, and delay notifications.
 
@@ -63,6 +63,24 @@ Outlook add-ins activate when the user is composing or reading a message or appo
 In general, Outlook can activate add-ins in read form for items in the Sent Items folder, with the exception of add-ins that activate based on string matches of well-known entities. For more information about the reasons behind this, see [Support for well-known entities](match-strings-in-an-item-as-well-known-entities.md#support-for-well-known-entities).
 
 Currently, there are additional considerations when designing and implementing add-ins for mobile clients. To learn more, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+
+### Mail items protected by IRM
+
+Outlook add-ins activate on IRM-protected mail items when the item is accessed from the following supported clients.
+
+- Outlook on Windows starting in Version 2009 (Build 13229.10000)
+
+    >[!NOTE]
+    > Digital signing relies on protection mechanisms, such as IRM. Starting in Outlook on Windows Version 1711 (Build 8711.1000) associated with a Microsoft 365 subscription, add-ins activate on digitally-signed messages.
+
+- Outlook on Mac starting in Version 16.77.827.0
+- Outlook on the web
+- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+
+However, add-ins won't activate on IRM-protected items when:
+
+- The IRM-protected item is accessed from Outlook on mobile devices.
+- The IRM-protected item has a sensitivity label with the **Allow programmatic access** custom policy option set to `false`. For more information on custom policy options, see [Usage rights and descriptions](/azure/information-protection/configure-usage-rights).
 
 ## Supported clients
 

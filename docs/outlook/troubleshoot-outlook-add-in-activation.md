@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: Possible reasons your contextual Outlook add-in doesn't activate as you expect.
-ms.date: 01/16/2024
+ms.date: 02/20/2024
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -69,10 +69,6 @@ If your Outlook add-in is a read add-in and is supposed to be activated when the
 Also, because appointments are always saved in Rich Text Format, an [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule that specifies a **PropertyName** value of **BodyAsHTML** wouldn't activate an add-in on an appointment or message that's saved in plain text or Rich Text Format.
 
 Even if a mail item is not one of the above types, if the item wasn't delivered by a version of Exchange Server that's at least Exchange 2013, known entities and properties, such as sender's SMTP address, wouldn't be identified on the item. Any activation rules that rely on these entities or properties wouldn't be satisfied, and the add-in wouldn't be activated.
-
-In Outlook on mobile devices, if your add-in activates when the user is composing a message or meeting request, make sure the item isn't protected by Outlook's Information Rights Management (IRM).
-
-[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 ## Is the add-in manifest installed properly, and does Outlook have a cached copy?
 
