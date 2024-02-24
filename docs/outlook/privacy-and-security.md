@@ -132,7 +132,7 @@ Developers should follow the tiered permissions model to provide transparency an
       ]
     }
   },
-```
+  ```
 
 - Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body.
 
