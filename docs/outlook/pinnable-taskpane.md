@@ -1,7 +1,7 @@
 ---
 title: Implement a pinnable task pane in an Outlook add-in
 description: The task pane UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions.
-ms.date: 04/26/2023
+ms.date: 03/15/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -29,7 +29,7 @@ However, by default, if a user has an add-in task pane open for a message in the
 
 The first step is to add pinning support, which is done in the add-in manifest. The markup varies depending on the type of manifest.
 
-# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 Add a "pinnable" property, set to `true`, to the object in the "actions" array that defines the button or menu item that opens the task pane. The following is an example.
 

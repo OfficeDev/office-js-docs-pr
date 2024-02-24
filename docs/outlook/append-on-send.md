@@ -1,7 +1,7 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 02/18/2024
+ms.date: 03/15/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -27,7 +27,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 To configure the manifest, select the tab for the type of manifest you'll use.
 
-# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 The following shows how to configure your unified manifest to enable the prepend-on-send and append-on-send features.
 
