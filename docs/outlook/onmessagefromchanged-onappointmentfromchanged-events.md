@@ -1,7 +1,7 @@
 ---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 01/16/2024
+ms.date: 03/15/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -55,7 +55,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 1. Open the **manifest.json** file.
 
@@ -334,7 +334,9 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     }
     
     // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to 
-    // map the event handler name specified in the manifest's LaunchEvent element to its JavaScript counterpart.
+    // map the event handler name specified in the manifest's LaunchEvent element (with the XML manifest)
+    // or the "autoRunEvents.events.actionId" property (with the unified manifest for Microsoft 365)
+    // to its JavaScript counterpart.
     if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
         Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
         Office.actions.associate("onMessageFromChangedHandler", onMessageFromChangedHandler);

@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 01/16/2024
+ms.date: 03/15/2024
 ms.localizationpriority: high
 ---
 
@@ -114,20 +114,20 @@ Developers should follow the tiered permissions model to provide transparency an
   <Permissions>ReadItem</Permissions>
   ```
 
-  The following example requests the **read item** permission in the Unified manifest for Microsoft 365 (preview).
+  The following example requests the **read item** permission in the unified manifest for Microsoft 365.
 
-```json
-"authorization": {
-  "permissions": {
-    "resourceSpecific": [
-      ...
-      {
-        "name": "MailboxItem.Read.User",
-        "type": "Delegated"
-      },
-    ]
-  }
-},
+  ```json
+  "authorization": {
+    "permissions": {
+      "resourceSpecific": [
+        ...
+        {
+          "name": "MailboxItem.Read.User",
+          "type": "Delegated"
+        },
+      ]
+    }
+  },
 ```
 
 - Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body.

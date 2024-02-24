@@ -1,7 +1,7 @@
 ---
 title: Module extension Outlook add-ins
 description: Create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
-ms.date: 01/11/2024
+ms.date: 03/15/2024
 ms.localizationpriority: medium
 ---
 
@@ -16,7 +16,7 @@ Module extension add-ins appear in the Outlook navigation bar, right alongside m
 
 To create and run module extension add-ins, you must:
 
-- Develop the add-in using an XML manifest. The [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md) isn't supported.
+- Develop the add-in using an XML manifest. The [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md) doesn't support module extensions.
 - Run the add-in in Outlook 2016 or later on Windows.
 
 ## Open a module extension
