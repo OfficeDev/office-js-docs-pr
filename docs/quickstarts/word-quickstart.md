@@ -141,9 +141,9 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
                 // Use this to check whether the API is supported in the Word client.
                 if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
                     // Do something that is only available via the new APIs.
-                    $('#emerson').click(insertEmersonQuoteAtSelection);
-                    $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
-                    $('#proverb').click(insertChineseProverbAtTheEnd);
+                    $('#emerson').on("click", insertEmersonQuoteAtSelection);
+                    $('#checkhov').on("click", insertChekhovQuoteAtTheBeginning);
+                    $('#proverb').on("click", insertChineseProverbAtTheEnd);
                     $('#supportedVersion').html('This code is using Word 2016 or later.');
                 } else {
                     // Lets you know that this code will not work with your version of Word.
