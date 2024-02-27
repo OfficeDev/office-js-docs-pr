@@ -16,7 +16,7 @@ When you build an add-in using the [application-specific Office JavaScript APIs]
 In our [code samples](https://github.com/OfficeDev/Office-Add-in-samples) and [Script Lab](../overview/explore-with-script-lab.md) snippets, you'll notice that every call to `Excel.run`, `PowerPoint.run`, or `Word.run` is accompanied by a `catch` statement to catch any errors. We recommend that you use the same pattern when you build an add-in using the application-specific APIs.
 
 ```js
-$("#run").click(() => tryCatch(run));
+$("#run").on("click", () => tryCatch(run));
 
 async function run() {
   await Excel.run(async (context) => {
