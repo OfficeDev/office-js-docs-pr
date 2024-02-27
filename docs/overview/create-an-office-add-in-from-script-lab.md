@@ -104,7 +104,7 @@ Script Lab handles the `Office.onReady` initialization automatically. You'll nee
     Office.onReady(function () {
       // Office is ready.
       $(document).ready(function () {
-        // The document is ready
+        // The document is ready.
         $("#run").on("click", () => tryCatch(run));
       });
     });
