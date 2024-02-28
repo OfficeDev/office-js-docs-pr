@@ -90,7 +90,7 @@ The event handler should accept a single parameter, which is an object literal. 
 ```js
 function itemChanged(eventArgs) {
   // Update UI based on the new current item.
-  UpdateTaskPaneUI(Office.context.mailbox.item);
+  updateTaskPaneUI(Office.context.mailbox.item);
 }
 ```
 
