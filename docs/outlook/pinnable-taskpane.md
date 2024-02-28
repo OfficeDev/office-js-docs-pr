@@ -1,33 +1,34 @@
 ---
 title: Implement a pinnable task pane in an Outlook add-in
 description: The task pane UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions.
-ms.date: 04/26/2023
+ms.date: 02/27/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Implement a pinnable task pane in Outlook
 
-The [task pane](../design/add-in-commands.md#types-of-add-in-commands) UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions (filling in multiple fields, etc.). This task pane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
+The [task pane](../design/add-in-commands.md#types-of-add-in-commands) UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request. This allows an add-in to provide UI for more detailed interactions, such as filling in multiple text fields. This task pane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
 
 However, by default, if a user has an add-in task pane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable task panes, your add-in can give the user that option.
 
 > [!NOTE]
-> Although the pinnable task panes feature was introduced in [requirement set 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), it's currently only available to Microsoft 365 subscribers using the following:
+> Although the pinnable task pane feature was introduced in [requirement set 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), it's currently only available to Microsoft 365 subscribers using the following:
 >
 > - Outlook 2016 or later on Windows (Build 7668.2000 or later for users in the Current or Microsoft 365 Insider Channels, Build 7900.xxxx or later for users in Deferred channels)
 > - Outlook 2016 or later on Mac (Version 16.13.503 or later)
 > - Modern Outlook on the web
+> - [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 
 > [!IMPORTANT]
-> Pinnable task panes are not available for the following:
+> Pinnable task panes aren't available for the following:
 >
 > - Appointments/Meetings
 > - Outlook.com
 
 ## Support task pane pinning
 
-The first step is to add pinning support, which is done in the add-in manifest. The markup varies depending on the type of manifest.
+The first step is to add pinning support, which is done in the add-in manifest. The markup varies depending on the type of manifest your add-in uses.
 
 # [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
 
@@ -50,7 +51,7 @@ Add a "pinnable" property, set to `true`, to the object in the "actions" array t
 Add the [SupportsPinning](/javascript/api/manifest/action#supportspinning) element to the **\<Action\>** element that describes the task pane button. The following is an example.
 
 ```xml
-<!-- Task pane button -->
+<!-- Task pane button. -->
 <Control xsi:type="Button" id="msgReadOpenPaneButton">
   <Label resid="paneReadButtonLabel" />
   <Supertip>
@@ -88,7 +89,7 @@ The event handler should accept a single parameter, which is an object literal. 
 
 ```js
 function itemChanged(eventArgs) {
-  // Update UI based on the new current item
+  // Update UI based on the new current item.
   UpdateTaskPaneUI(Office.context.mailbox.item);
 }
 ```
@@ -97,9 +98,8 @@ function itemChanged(eventArgs) {
 > The implementation of event handlers for an ItemChanged event should check whether or not the Office.content.mailbox.item is null.
 >
 > ```js
-> // Example implementation
-> function UpdateTaskPaneUI(item)
-> {
+> // Example implementation.
+> function updateTaskPaneUI(item) {
 >   // Assuming that item is always a read item (instead of a compose item).
 >   if (item != null) console.log(item.subject);
 > }
@@ -107,19 +107,23 @@ function itemChanged(eventArgs) {
 
 ### Register the event handler
 
-Use the [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your task pane.
+Use the [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.onReady` function of your task pane.
 
 ```js
-Office.initialize = function (reason) {
-  $(document).ready(function () {
-
-    // Set up ItemChanged event
+Office.onReady(() => {
+  $(document).ready(() => {
+    // Set up the ItemChanged event.
     Office.context.mailbox.addHandlerAsync(Office.EventType.ItemChanged, itemChanged);
-
-    UpdateTaskPaneUI(Office.context.mailbox.item);
+    updateTaskPaneUI(Office.context.mailbox.item);
   });
-};
+});
 ```
+
+## Task pane pinning in multi-select
+
+In Outlook on the web and new Outlook on Windows (preview), when the task pane of an add-in that implements the [item multi-select](item-multi-select.md) feature is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
+
+Conversely, in Outlook on Windows and on Mac, the task pane of a multi-select add-in isn't automatically pinned and closes when a user switches to a different mail item.
 
 ## Deploy to users
 
