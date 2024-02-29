@@ -67,7 +67,6 @@ The following tables list the errors that application-specific APIs may return.
 |`ApiNotAvailable`|The requested API is not available.|*None.* |
 |`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of the Office application. See [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets) for more information.|*None.* |
 |`BadPassword`|The password you supplied is incorrect.|*None.* |
-|`Client Error` | There is an unspecified error on the client. | *None.* | 
 |`Conflict`|Request could not be processed because of a conflict.|*None.* |
 |`ContentLengthRequired`|A `Content-length` HTTP header is missing.|*None.* |
 |`GeneralException`|There was an internal error while processing the request.|*None.* |
