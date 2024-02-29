@@ -2,7 +2,7 @@
 title: Error handling with the application-specific JavaScript APIs
 description: Learn about Excel, Word, PowerPoint, and other application-specific JavaScript API error handling logic to account for runtime errors.
 ms.topic: error-reference
-ms.date: 06/27/2023
+ms.date: 03/01/2024
 ms.localizationpriority: medium
 ---
 
@@ -70,12 +70,14 @@ The following tables list the errors that application-specific APIs may return.
 |`Conflict`|Request could not be processed because of a conflict.|*None.* |
 |`ContentLengthRequired`|A `Content-length` HTTP header is missing.|*None.* |
 |`GeneralException`|There was an internal error while processing the request.|*None.* |
+|`HostRestartNeeded` | The Office application needs to be restarted. | This error is thrown by the [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon#office-office-ribbon-requestupdate-member(1)) method if the add-in that calls the method has been updated since the Office application started. |
 |`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|*None.* |
 |`InvalidArgument` |The argument is invalid or missing or has an incorrect format.|*None.* |
 |`InvalidBinding` |This object binding is no longer valid due to previous updates.|*None.* |
 |`InvalidOperation`|The operation attempted is invalid on the object.|*None.* |
 |`InvalidReference`|This reference is not valid for the current operation.|*None.* |
 |`InvalidRequest`  |Cannot process the request.|*None.* |
+|`InvalidRibbonDefinition` | Office has been given an invalid ribbon definition. | This error is thrown if an invalid [RibbonUpdateObject](/javascript/api/office/office.ribbonupdaterdata) is passed to the [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon#office-office-ribbon-requestupdate-member(1)) method. |
 |`InvalidSelection`|The current selection is invalid for this operation.|*None.* |
 |`ItemAlreadyExists`|The resource being created already exists.|*None.* |
 |`ItemNotFound` |The requested resource doesn't exist.|*None.* |
