@@ -65,7 +65,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
    - The "id" of the runtime is set to a descriptive name, "autorun_runtime".
    - The "code" property has a child "page" property set to an HTML file and a child "script" property set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
        - Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
-       - Outlook on the web, on Mac, and on new Outlook on Windows (preview) execute the handler in a browser runtime, which loads an HTML file. The HTML file contains a `<script>` tag that then loads the JavaScript file.
+       - Outlook on the web and on Mac, and new Outlook on Windows (preview) execute the handler in a browser runtime, which loads an HTML file. The HTML file contains a `<script>` tag that then loads the JavaScript file.
 
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
    - The "lifetime" property is set to "short". This means the runtime starts up when the event occurs and shuts down when the handler completes.
@@ -160,8 +160,8 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
          <Host xsi:type="MailHost">
            <Runtimes>
              <!-- HTML file that references or contains inline JavaScript event handlers.
-                  This is used by event-based activation add-ins in Outlook on the web, on Mac,
-                  and on new Outlook on Windows (preview). -->
+                  This is used by event-based activation add-ins in Outlook on the web and on Mac,
+                  and in new Outlook on Windows (preview). -->
              <Runtime resid="WebViewRuntime.Url">
                <!-- JavaScript file that contains the event handlers.
                     This is used by event-based activation add-ins in Outlook on Windows. -->

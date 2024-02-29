@@ -424,14 +424,14 @@ As a meeting attendee, you should see a screen similar to the following image wh
 [![The join meeting screen on Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
-> The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and on new Outlook on Windows (preview). If you only see a meeting link, but don't see the **Join** button in a supported client, it may be that the online-meeting template for your service isn't registered on our servers. See the [Register your online-meeting template](#register-your-online-meeting-template) section for details.
+> The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows (preview). If you only see a meeting link, but don't see the **Join** button in a supported client, it may be that the online-meeting template for your service isn't registered on our servers. See the [Register your online-meeting template](#register-your-online-meeting-template) section for details.
 
 ## Register your online-meeting template
 
 Registering your online-meeting add-in is optional. It only applies if you want to surface the **Join** button in meetings, in addition to the meeting link. Once you've developed your online-meeting add-in and would like to register it, create a GitHub issue using the following guidance. We'll contact you to coordinate a registration timeline.
 
 > [!IMPORTANT]
-> The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and on new Outlook on Windows (preview).
+> The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows (preview).
 
 1. Create a [new GitHub issue](https://github.com/OfficeDev/office-js/issues/new).
 1. Set the **Title** of the new issue to "Outlook: Register the online-meeting template for my-service", replacing `my-service` with your service name.

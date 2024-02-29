@@ -144,7 +144,7 @@ function addItemAttachment(itemId) {
 ```
 
 > [!NOTE]
-> You can use a compose add-in to attach an instance of a recurring appointment in Outlook on the web, on mobile devices, or on [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). However, in a supporting Outlook client on Windows or on Mac, attempting to attach an instance would result in attaching the recurring series (the parent appointment).
+> You can use a compose add-in to attach an instance of a recurring appointment in Outlook on the web, on mobile devices, or in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). However, in a supporting Outlook client on Windows or on Mac, attempting to attach an instance would result in attaching the recurring series (the parent appointment).
 
 ## Get attachments
 

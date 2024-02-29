@@ -126,7 +126,7 @@ To configure the manifest, select the tab for the type of manifest you are using
             <!-- Event-based activation happens in a lightweight runtime.-->
             <Runtimes>
               <!-- HTML file including reference to or inline JavaScript event handlers.
-                   This is used by Outlook on the web, on the new Mac UI, and on new Outlook on Windows (preview). -->
+                   This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows (preview). -->
               <Runtime resid="WebViewRuntime.Url">
                 <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
                 <Override type="javascript" resid="JSRuntime.Url"/>
