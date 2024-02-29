@@ -1,7 +1,7 @@
 ---
 title: Use regular expression activation rules to show an add-in
 description: Learn how to use regular expression activation rules for Outlook contextual add-ins.
-ms.date: 02/13/2024
+ms.date: 02/29/2024
 ms.localizationpriority: medium
 ---
 
@@ -59,7 +59,7 @@ Pay special attention to the following when you use regular expressions.
 
     Because different browsers use different ways to obtain the text body of a selected item, you should make sure that your regular expression supports the subtle differences that can be returned as part of the body text. For example, some browsers such as Internet Explorer 9 uses the `innerText` property of the DOM, and others such as Firefox uses the `.textContent()` method to obtain the text body of an item. Also, different browsers may return line breaks differently: a line break is `\r\n` on Internet Explorer, and `\n` on Firefox and Chrome. For more information, se [W3C DOM Compatibility - HTML](https://quirksmode.org/dom/html/).
 
-- The HTML body of an item is slightly different between Outlook on Windows or on Mac, and Outlook on the web or on mobile devices. Define your regular expressions carefully.
+- The HTML body of an item is slightly different between Outlook on Windows or on Mac, and Outlook on the web, on mobile devices, or on [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). Define your regular expressions carefully.
 
 - Depending on the Outlook client, type of device, or property that a regular expression is being applied on, there are other best practices and limits for each of the clients that you should be aware of when designing regular expressions as activation rules. See [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) for details.
 

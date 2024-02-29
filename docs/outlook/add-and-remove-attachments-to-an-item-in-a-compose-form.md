@@ -1,7 +1,7 @@
 ---
 title: Add and remove attachments in an Outlook add-in
 description: Use various attachment APIs to manage the files or Outlook items attached to the item the user is composing.
-ms.date: 02/27/2023
+ms.date: 02/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -25,7 +25,7 @@ If there are tasks that depend on the action to complete, you should carry out t
 For example, you can define `options.asyncContext` as a JSON object that contains one or more key-value pairs. You can find more examples about passing optional parameters to asynchronous methods in the Office Add-ins platform in [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods). The following example shows how to use the `asyncContext` parameter to pass two arguments to a callback function.
 
 ```js
-const options = { asyncContext: { var1: 1, var2: 2}};
+const options = { asyncContext: { var1: 1, var2: 2 } };
 
 Office.context.mailbox.item.addFileAttachmentAsync('https://contoso.com/rtm/icon.png', 'icon.png', options, callback);
 ```
@@ -144,7 +144,7 @@ function addItemAttachment(itemId) {
 ```
 
 > [!NOTE]
-> You can use a compose add-in to attach an instance of a recurring appointment in Outlook on the web or on mobile devices. However, in a supporting Outlook client on Windows or on Mac, attempting to attach an instance would result in attaching the recurring series (the parent appointment).
+> You can use a compose add-in to attach an instance of a recurring appointment in Outlook on the web, on mobile devices, or on [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). However, in a supporting Outlook client on Windows or on Mac, attempting to attach an instance would result in attaching the recurring series (the parent appointment).
 
 ## Get attachments
 

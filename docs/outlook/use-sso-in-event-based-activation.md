@@ -1,7 +1,7 @@
 ---
 title: Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in
 description: Learn how to use SSO or CORS in an Outlook add-in that implements event-based activation or integrated spam reporting.
-ms.date: 12/21/2023
+ms.date: 02/29/2024
 ms.localizationpriority: medium
 ---
 
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 When an Outlook add-in implements event-based activation or integrated spam reporting, the events run in a separate [runtime](../testing/runtimes.md). To configure single sign-on (SSO) or request external data through cross-origin resource sharing (CORS) in these add-ins, you must configure a well-known URI. Through this resource, Office will be able to identify the add-ins, including their JavaScript files, that support SSO or CORS requests.
 
 > [!NOTE]
-> The steps in this article only apply to Outlook add-ins that run on Windows. This is because Outlook on Windows uses a JavaScript file, while Outlook on Mac and on the web use an HTML file that references the same JavaScript file. To learn more, see [Configure your Outlook add-in for event-based activation](autolaunch.md) and [Implement an integrated spam-reporting add-in (preview)](spam-reporting.md).
+> The steps in this article only apply to Outlook add-ins that run on Windows. This is because Outlook on Windows uses a JavaScript file, while Outlook on Mac, on the web, and on [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use an HTML file that references the same JavaScript file. To learn more, see [Configure your Outlook add-in for event-based activation](autolaunch.md) and [Implement an integrated spam-reporting add-in (preview)](spam-reporting.md).
 
 ## List allowed add-ins in a well-known URI
 
