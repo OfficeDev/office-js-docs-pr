@@ -70,7 +70,7 @@ The following tables list the errors that application-specific APIs may return.
 |`Conflict`|Request could not be processed because of a conflict.|*None.* |
 |`ContentLengthRequired`|A `Content-length` HTTP header is missing.|*None.* |
 |`GeneralException`|There was an internal error while processing the request.|*None.* |
-|`HostRestartNeeded` | The Office application needs to be restarted. | This error is thrown by the [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon#office-office-ribbon-requestupdate-member(1)) method if the add-in that calls the method has been updated since the Office application started.
+|`HostRestartNeeded` | The Office application needs to be restarted. | This error is thrown by the [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon#office-office-ribbon-requestupdate-member(1)) method if the add-in that calls the method has been updated since the Office application started. |
 |`InsertDeleteConflict`|The insert or delete operation attempted resulted in a conflict.|*None.* |
 |`InvalidArgument` |The argument is invalid or missing or has an incorrect format.|*None.* |
 |`InvalidBinding` |This object binding is no longer valid due to previous updates.|*None.* |
