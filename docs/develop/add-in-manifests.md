@@ -10,8 +10,8 @@ ms.localizationpriority: high
 
 Every Office add-in has a manifest. There are two types of manifests:
 
-- **XML manifest:** This is the only type of manifest that is currently supported for non-Outlook add-ins. As the name indicates, it is XML format. This type of manifest can't be used for an app that combines an add-in with some other kind of extension of the Microsoft 365 platform.
-- **unified manifest for Microsoft 365:** This is an expanded version of the JSON-formatted manifest that has been used for years as the manifest for Teams Apps. Currently, this manifest is only available for Outlook add-ins and only in Office linked to a Microsoft 365 subscription and installed on Windows, on a mobile device, or in Outlook on the web. We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office. Add-ins that use this manifest can be combined with other kinds of extensions of the Microsoft 365 platform in a single app that is installable as a unit whole. 
+- **XML manifest**: This is the only type of manifest that is currently supported for non-Outlook add-ins. As the name indicates, it's XML format. This type of manifest can't be used for an app that combines an add-in with some other kind of extension of the Microsoft 365 platform.
+- **unified manifest for Microsoft 365**: This is an expanded version of the JSON-formatted manifest that has been used for years as the manifest for Teams Apps. Currently, this manifest is only available for Outlook add-ins and only in Office linked to a Microsoft 365 subscription. It's supported in Outlook on Windows, on a mobile device, in Outlook on the web, and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office. Add-ins that use this manifest can be combined with other kinds of extensions of the Microsoft 365 platform in a single app that's installable as a unit whole. 
 
 The remainder of this article is applicable to both types of manifest. 
 
@@ -51,7 +51,7 @@ Add-ins submitted to AppSource must also include a support URL in the manifest. 
 
 ## Specify domains you want to open in the add-in window
 
-When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the manifest file), that URL opens in a new browser window outside the add-in pane of the Office application.
+When running in Office on the web or [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the manifest file), that URL opens in a new browser window outside the add-in pane of the Office application.
 
 To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the manifest. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
 
