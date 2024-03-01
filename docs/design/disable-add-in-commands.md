@@ -19,7 +19,7 @@ You can also specify whether the command is enabled or disabled when the Office 
 
 ## Office application and platform support only
 
-The APIs described in this article are only available in Excel. However, [preview support](../develop/understanding-the-javascript-api-for-office.md#accessing-the-office-javascript-api-library) is currently available in PowerPoint and Word. For full support details, see [RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) requirement set.
+The APIs described in this article are only available in Excel. However, [preview support](../develop/understanding-the-javascript-api-for-office.md#accessing-the-office-javascript-api-library) is currently available in PowerPoint and Word. For full support details, see the [RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) requirement set.
 
 ### Test for platform support with requirement sets
 
