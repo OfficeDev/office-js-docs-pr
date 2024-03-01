@@ -139,8 +139,8 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
             // Office is ready
             $(document).ready(function () {
                 // The document is ready
-                $('#insert-image').click(insertImage);
-                $('#insert-text').click(insertText);
+                $('#insert-image').on("click", insertImage);
+                $('#insert-text').on("click", insertText);
             });
         });
 

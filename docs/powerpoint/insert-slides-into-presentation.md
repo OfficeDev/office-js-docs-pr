@@ -41,7 +41,7 @@ There are many ways to convert a file to base64. Which programming language and 
 2. Add the following code to the add-in's JavaScript to assign a function to the input control's `change` event. (You create the `storeFileAsBase64` function in the next step.)
 
     ```javascript
-    $("#file").change(storeFileAsBase64);
+    $("#file").on("change", storeFileAsBase64);
     ```
 
 3. Add the following code. Note the following about this code.

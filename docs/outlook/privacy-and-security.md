@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 01/16/2024
+ms.date: 02/29/2024
 ms.localizationpriority: high
 ---
 
@@ -53,7 +53,7 @@ End users and IT admins can turn off [optional connected experiences in Office](
 |-----|-----|
 |- Windows<sup>1</sup><br>- Mac|The **Get Add-ins** or **All Apps**<sup>2</sup> button isn't displayed, so users aren't able to manage their add-ins or access AppSource.|
 |- Android<br>- iOS|The **Get Add-ins** dialog shows only admin-deployed add-ins.|
-|Web browser|Availability of add-ins and access to AppSource are unaffected, so users can continue to [manage their add-ins](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce) including admin-deployed ones.|
+|- Web browser<br>- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Availability of add-ins and access to AppSource are unaffected, so users can continue to [manage their add-ins](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce) including admin-deployed ones.|
 
 > [!NOTE]
 > <sup>1</sup> On Windows, support for this experience is available from Version 2008 (Build 13127.20296). For more details on your client version, see the update history page for [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).<br>
@@ -66,9 +66,13 @@ For general add-in behavior, see [Privacy and security for Office Add-ins](../co
 
 The security model addresses security, privacy, and performance concerns of end users in the following ways.
 
-- End user's messages that are protected by Outlook's Information Rights Management (IRM) don't interact with add-ins in Outlook on mobile devices.
+- End user's messages that are protected by Outlook's Information Rights Management (IRM) won't interact with add-ins in the following instances.
 
-[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
+  - When the IRM-protected message is accessed from Outlook on mobile devices.
+
+  - When the IRM-protected message contains a sensitivity label with the **Allow programmatic access** custom policy option set to `false`.
+
+  For more information on IRM support in add-ins, see [Mail items protected by IRM](outlook-add-ins-overview.md#mail-items-protected-by-irm).
 
 - Before installing an add-in from AppSource, end users can see the access and actions that the add-in can make on their data and must explicitly confirm to proceed. No Outlook add-in is automatically pushed onto a client computer without manual validation by the user or administrator.
 
