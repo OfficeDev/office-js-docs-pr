@@ -4,7 +4,11 @@ description: Learn requirements for names of Excel custom functions and how to l
 ms.date: 02/29/2024
 ms.localizationpriority: medium
 ---
-# Custom functions naming guidelines
+# Custom functions naming and localization
+
+This article describes guidelines and best practices for naming custom functions. It also shows how to localize custom function names to languages other than English.
+
+## Custom functions naming guidelines
 
 A custom function is identified by an `id` and `name` property in the JSON metadata file.
 
@@ -142,5 +146,5 @@ Learn about [error handling best practices](custom-functions-errors.md).
 
 ## See also
 
-* [Manually create JSON metadata for custom functions](custom-functions-json.md)
-* [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Manually create JSON metadata for custom functions](custom-functions-json.md)
+- [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
