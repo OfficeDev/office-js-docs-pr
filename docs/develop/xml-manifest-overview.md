@@ -8,7 +8,7 @@ ms.localizationpriority: high
 
 # Office Add-ins XML manifest
 
-This article introduces the XML-formatted manifest for Office Add-ins. It assumes that you're familiar with [Office Add-ins manifest](add-in-manifests.md). In addition to the purposes described in that article, the XML-formatted manifest also supports certain Outlook Add-in features that aren't supported in the unified manifest for Microsoft 365. For example, an XML manifest for Outlook add-ins, can define the rule or rules that specify the context in which the add-in is activated.
+This article introduces the XML-formatted manifest for Office Add-ins. It assumes that you're familiar with [Office Add-ins manifest](add-in-manifests.md). In addition to the purposes described in that article, the XML-formatted manifest also supports certain Outlook add-in features that aren't supported in the unified manifest for Microsoft 365. For example, an XML manifest for Outlook add-ins, can define the rule or rules that specify the context in which the add-in is activated.
 
 > [!TIP]
 > For an overview of the unified manifest for Microsoft 365, see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
