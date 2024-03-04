@@ -23,7 +23,7 @@ The following table lists supported client-server combinations for the Smart Ale
 |-----|-----|-----|-----|
 |**Windows**<br>Version 2206 (Build 15330.20196) or later|Yes|Yes|Yes|
 |**Mac**<br>Version 16.65.827.0 or later|Yes|Not applicable|Not applicable|
-|**Web browser (modern UI)**|Yes|Not applicable|Not applicable|
+|**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Yes|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 
@@ -215,7 +215,7 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 |Attribute|Smart Alerts|On-send|
 |-----|-----|-----|
 |**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
-|**Supported Outlook clients**|- Windows<br>- Web browser (modern UI)<br>- Mac (new UI)|- Windows<br>- Web browser (classic and modern UI)<br>- Mac (classic and new UI) |
+|**Supported Outlook clients**|- Windows (classic and new (preview))<br>- Web browser (modern UI)<br>- Mac (new UI)|- Windows<br>- Web browser (classic and modern UI)<br>- Mac (classic and new UI) |
 |**Supported events**|**XML manifest**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Unified manifest for Microsoft 365 (preview)**<br>- "messageSending"<br>- "appointmentSending"|**XML manifest**<br>- `ItemSend`<br><br>**Unified manifest for Microsoft 365 (preview)**<br>- Not supported|
 |**Manifest extension property**|**XML manifest**<br>- `LaunchEvent`<br><br>**Unified manifest for Microsoft 365 (preview)**<br>- "autoRunEvents"|**XML manifest**<br>- `Events`<br><br>**Unified manifest for Microsoft 365 (preview)**<br>- Not supported|
 |**Supported send mode options**|- prompt user<br>- soft block<br>- block<br><br>To learn more about each option, see [Available send mode options](#available-send-mode-options).|Block|

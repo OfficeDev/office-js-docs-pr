@@ -1,7 +1,7 @@
 ---
 title: Manage the sensitivity label of your message or appointment in compose mode
 description: Learn how to manage the sensitivity label of your message or appointment in compose mode.
-ms.date: 01/16/2023
+ms.date: 02/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -31,7 +31,7 @@ The following table lists client-server combinations that support the use of the
 |------|------|
 |**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|
 |**Mac**<br>Version 16.77.816.0 or later|Supported|
-|**Web browser (modern UI)**|Supported|
+|**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|
 |**iOS**|Not applicable|
 |**Android**|Not applicable|
 
