@@ -187,7 +187,7 @@ If you customize the **Don't Send** button in the dialog, you can only assign a 
 In Outlook on the web and in new Outlook on Windows (preview):
 
 - The `OnAppointmentSend` event only occurs when the meeting being sent was created through the **New Event** option. If the meeting being sent was created by selecting a date and time directly from the calendar, the `OnAppointmentSend` event doesn't occur.
-- When forwarding a meeting, the `OnAppointmentSend` event only occurs if the organizer forwards the meeting. It doesn't occur if an attendee forwards the meeting to which they’re invited.
+- When forwarding a meeting, the `OnAppointmentSend` event only occurs if the organizer forwards the meeting. It doesn't occur if an attendee forwards the meeting to which they're invited.
 
 ## Best practices
 
