@@ -1,7 +1,7 @@
 ---
 title: Manage the sensitivity label of your message or appointment in compose mode
 description: Learn how to manage the sensitivity label of your message or appointment in compose mode.
-ms.date: 01/16/2023
+ms.date: 02/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,7 +21,7 @@ You can use the Office JavaScript API to implement sensitivity label solutions i
 
 ## Prerequisites
 
-To implement the sensitivity label feature in your add-in, you must have a Microsoft 365 E5 subscription. For access to a free developer sandbox that includes a renewable E5 subscription, join the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program#Subscription).
+To implement the sensitivity label feature in your add-in, you must have a Microsoft 365 E5 subscription. You might qualify for a Microsoft 365 E5 developer subscription through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 
 ### Supported clients and platforms
 
@@ -31,7 +31,7 @@ The following table lists client-server combinations that support the use of the
 |------|------|
 |**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|
 |**Mac**<br>Version 16.77.816.0 or later|Supported|
-|**Web browser (modern UI)**|Supported|
+|**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|
 |**iOS**|Not applicable|
 |**Android**|Not applicable|
 

@@ -45,7 +45,13 @@
       "ms.author": "o365devx",
       "author": "o365devx",
       "ms.topic": "conceptual",
+      "ms.service": "microsoft-365",
       "ms.subservice": "add-ins",
+      "product": ["office", "office-add-ins"],
+      "open_source_feedback_contributorGuideUrl": "https://github.com/OfficeDev/office-js-docs-pr/blob/main/Contributing.md",
+      "open_source_feedback_issueTitle": "",
+      "open_source_feedback_issueUrl": "https://github.com/OfficeDev/office-js-docs-pr/issues/new?template=3-customer-feedback.yml",
+      "open_source_feedback_productName": "Office Add-ins",
       "titleSuffix": "Office Add-ins"
     },
     "fileMetadata": {
@@ -53,20 +59,13 @@
         "resources/resources-links-help.md": "None"
       },
       "ms.service": {
-        "concepts/*.md": "microsoft-365",
-        "design/*.md": "microsoft-365",
-        "develop/*.md": "microsoft-365",
         "excel/*.md": "excel",
         "onenote/*.md": "onenote",
         "outlook/*.md": "outlook",
         "overview/*.md": "microsoft-365",
         "powerpoint/*.md": "powerpoint",
         "project/*.md": "project",
-        "publish/*.md": "microsoft-365",
-        "reference/*.md": "microsoft-365",
         "reference/objectmodel/**/*.md": "outlook",
-        "resources/*.md": "microsoft-365",
-        "testing/*.md": "microsoft-365",
         "visio/*.md": "visio",
         "word/*.md": "word"
       },

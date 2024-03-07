@@ -1,7 +1,7 @@
 ---
 title: Authorize to Microsoft Graph with SSO
 description: Learn how users of an Office Add-in can use single sign-on (SSO) to fetch data from Microsoft Graph.
-ms.date: 08/14/2023
+ms.date: 01/22/2024
 ms.localizationpriority: medium
 ---
 
@@ -72,6 +72,8 @@ As a best practice, always pass `forMSGraphAccess` to `getAccessToken` when your
 If you develop an Outlook add-in that uses SSO and you sideload it for testing, Office will *always* return error 13012 when `forMSGraphAccess` is passed to `getAccessToken` even if administrator consent has been granted. For this reason, you should comment out the `forMSGraphAccess` option **when developing** an Outlook add-in. Be sure to uncomment the option when you deploy for production. The bogus 13012 only happens when you are sideloading in Outlook.
 
 For Outlook add-ins, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Enable or disable modern authentication for Outlook in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
+
+[!INCLUDE [chrome-tracking-prevention](../includes/chrome-tracking-prevention.md)]
 
 ## See also
 

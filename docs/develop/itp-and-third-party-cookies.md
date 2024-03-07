@@ -1,7 +1,7 @@
 ---
 title: Develop your Office Add-in to work with ITP when using third-party cookies
 description: How to work with ITP and Office Add-ins when using third-party cookies.
-ms.date: 11/30/2023
+ms.date: 01/22/2024
 ms.localizationpriority: medium
 ---
 
@@ -54,6 +54,8 @@ Third-party cookies are cookies that are loaded in an iframe, where the domain i
 When developing Office Add-ins on Mac, access to third-party cookies is blocked by the MacOS Big Sur SDK. This is because WKWebView ITP is enabled by default on the Safari browser, and WKWebView blocks all third-party cookies. Office on Mac version 16.44 or later is integrated with the MacOS Big Sur SDK.
 
 In the Safari browser, end users can toggle the **Prevent cross-site tracking** checkbox under **Preference** > **Privacy** to turn off ITP. However, ITP can't be turned off for the embedded WKWebView control.
+
+[!INCLUDE [chrome-tracking-prevention](../includes/chrome-tracking-prevention.md)]
 
 ## See also
 

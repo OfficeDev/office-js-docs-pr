@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands with the XML manifest
 description: Configure an XML manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 04/07/2023
+ms.date: 02/29/2024
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands](../design/add-in-commands.md).
 
-This article describes how to edit your XML manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands). 
+This article describes how to edit your XML manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands).
 
 > [!TIP]
 > For instructions on how to create add-in commands with the unified manifest for Microsoft 365, see [Create add-in commands with the unified manifest for Microsoft 365](create-addin-commands-unified-manifest.md).
@@ -20,7 +20,7 @@ The following diagram shows the hierarchy of elements used to define add-in comm
 
 ## Sample commands
 
-All the task pane add-ins created by [yo office](yeoman-generator-overview.md) have add-in commands. They contain an add-in command (button) to show the task pane. Generate these projects by following one of the quick starts, such as [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md). Ensure that you have read [Add-in commands](../design/add-in-commands.md) to understand command capabilities.
+All the task pane add-ins created by [Yo Office](yeoman-generator-overview.md) have add-in commands. They contain an add-in command (button) to show the task pane. Generate these projects by following one of the quick starts, such as [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md). Ensure that you have read [Add-in commands](../design/add-in-commands.md) to understand command capabilities.
 
 ## Important parts of an add-in command
 
@@ -85,7 +85,7 @@ The following example shows the **\<Hosts\>**, **\<Host\>**, and **\<DesktopForm
 The [**\<FunctionFile\>** element](/javascript/api/manifest/functionfile) specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action. The **\<FunctionFile\>** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a [**\<Url\>** element](/javascript/api/manifest/url) in the [**\<Resources\>** element](/javascript/api/manifest/resources).
 
 > [!NOTE]
-> The yo office projects use [webpack](https://webpack.js.org/concepts/) to avoid manually adding the JavaScript to the HTML.
+> The Yo Office projects use [webpack](https://webpack.js.org/concepts/) to avoid manually adding the JavaScript to the HTML.
 
 The following is an example of the **\<FunctionFile\>** element.
   
@@ -341,7 +341,8 @@ Add-in commands are available in the following Outlook versions.
 - Outlook on iOS
 - Outlook on Android
 - Outlook on the web for Exchange 2016 or later
-- Outlook on the web for Microsoft 365 and Outlook.com.
+- Outlook on the web for Microsoft 365 and Outlook.com
+- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 
 Support for add-in commands in Exchange 2016 requires [Cumulative Update 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 
