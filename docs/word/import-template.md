@@ -36,7 +36,7 @@ The following are a few suggestions for how you could tailor this sample to your
 
 ### Manage user settings
 
-[Enable single sign-on (SSO) in an Office Add-in](../develop/sso-in-office-add-ins.md) to support persisting user data and settings across multiple documents. If your service provides or hosts the bibliography library, an authorized user can access and select from that bibliography in their document.
+[Enable single sign-on (SSO) in an Office Add-in](../develop/sso-in-office-add-ins.md) to support persisting user data and settings across multiple documents. If your service provides or hosts the document template library, an authorized user can access and apply a template in their document.
 
 You can also [persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md) in the user's current document.
 
