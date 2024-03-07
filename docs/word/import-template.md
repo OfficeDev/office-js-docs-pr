@@ -8,9 +8,9 @@ ms.localizationpriority: medium
 
 # Sample: Import a Word document template with a Word add-in
 
-The ability to create and use templates enable users to quickly create consistent documents, especially for their organizations. Templates can include company information and other critical details that users shouldn't omit for compliance, legal, or other reasons.
+Templates enable users to quickly create consistent documents for their organizations. Templates can include company information and other critical details that users need for compliance, legal, or other reasons.
 
-This article features a sample add-in that imports a .docx file and uses it as a template in a Word document. The add-in replaces the current document's content with the content from the template.
+This article features a sample add-in that imports a .docx file to use as a template in a Word document. The add-in replaces the current document's content with the content from the template.
 
 ![The import template add-in task pane.](../images/word-import-template.png)
 
