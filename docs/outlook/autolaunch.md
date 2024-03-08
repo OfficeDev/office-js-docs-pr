@@ -71,7 +71,7 @@ Add-in launch-event handlers are expected to be short-running, lightweight, and 
 
 If the user has multiple add-ins that subscribe to the same event, the Outlook platform launches the add-ins in no particular order. Currently, only five event-based add-ins can be actively running.
 
-In all supported Outlook clients, the user must remain on the current mail item where the add-in was activated for it to complete running. Navigating away from the current item (for example, switching to another compose window or tab) terminates the add-in operation. However, an add-in that activates on the `OnMessageSend` event handles item switching differently depending on which Outlook client it's running. To learn more, see the "User navigates away from current message" section of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#user-navigates-away-from-current-message).
+In all supported Outlook clients, the user must remain on the current mail item where the add-in was activated for it to complete running. Navigating away from the current item (for example, switching to another compose window or tab) terminates the add-in operation. However, an add-in that activates on the `OnMessageSend` event handles item switching differently depending on which Outlook client it's running on. To learn more, see the "User navigates away from current message" section of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#user-navigates-away-from-current-message).
 
 In addition to item switching, an event-based add-in also ceases operation when the user sends the message or appointment they're composing.
 

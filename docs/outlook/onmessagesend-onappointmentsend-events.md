@@ -160,7 +160,7 @@ In Outlook on Mac, when a user navigates away from the message they're sending a
 
 # [Web/New Outlook on Windows (preview)](#tab/web)
 
-In Outlook on the web or on [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), a user must remain on the message being sent until the Smart Alerts add-in completes processing it. Otherwise, once the user navigates away from the item, the add-in terminates the Smart Alerts operation and saves a draft to the mailbox's **Drafts** folder.
+In Outlook on the web or in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), a user must remain on the message being sent until the Smart Alerts add-in completes processing it. Otherwise, once the user navigates away from the item, the add-in terminates the Smart Alerts operation and saves a draft to the mailbox's **Drafts** folder.
 
 ---
 
