@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an XML manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 07/27/2023
+ms.date: 03/11/2024
 ms.localizationpriority: medium
 ---
 
@@ -42,6 +42,10 @@ When you've added the files to the project, add **\<IconUrl\>** and **\<HighReso
 
   <!-- Other markup omitted -->
 ```
+
+## Ensure that your function command names are short enough
+
+If your manifest has a **\<FunctionName\>** element, make sure its value has fewer than 65 characters. The value of this element must exactly match the name of a function in a JavaScript or TypeScript file. If you change it in the manifest, be sure to change it in the code file too.
 
 ## Conversion tools and options
 
