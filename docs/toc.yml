@@ -572,7 +572,7 @@ items:
       - name: Share custom function data with the task pane tutorial
         href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
         displayName: Excel, Custom Functions
-    - name: Naming guidelines
+    - name: Naming and localization
       href: excel/custom-functions-naming.md
       displayName: Excel, Custom Functions
     - name: Parameter options
@@ -595,9 +595,6 @@ items:
       displayName: Excel, Custom Functions
     - name: Extend custom functions with XLL user-defined functions
       href: excel/make-custom-functions-compatible-with-xll-udf.md
-      displayName: Excel, Custom Functions
-    - name: Localization
-      href: excel/custom-functions-localize.md
       displayName: Excel, Custom Functions
     - name: Manually create JSON metadata
       href: excel/custom-functions-json.md
