@@ -6,13 +6,13 @@ ms.date: 03/11/2024
 ms.localizationpriority: medium
 ---
 
-# Convert an add-in to use the unified manifest for Microsoft 365 (preview)
+# Convert an add-in to use the unified manifest for Microsoft 365
 
 To add Teams capabilities to an add-in that uses the XML manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
 
 There are three basic tasks to converting an add-in project from the XML manifest to the unified manifest.
 
-- Ensure that you have 64x64 pixel and 128x128 pixel images files to serve as icons for the add-in.
+- Ensure that your add-in is ready to convert.
 - Convert the XML manifest itself to the JSON format of the unified manifest.
 - Package the new manifest and main icon and high resolution icon image files into a zip file for sideloading or deployment.
 
@@ -23,7 +23,9 @@ There are three basic tasks to converting an add-in project from the XML manifes
 > - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
 > - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
 
-## Ensure that you have the two image files
+## Ensure that your add-in is ready to convert
+
+### Ensure that you have the two image files
 
 It's highly likely that you have the two image files already in your add-in. They're specified in the [IconUrl](/javascript/api/manifest/iconurl) and [HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl) elements in the XML manifest. Because these are both optional elements, your add-in project mignt not have one or both. These are required for an add-in that uses the unified manifest, so you need to create them if the project doesn't already have them. For guidance, see [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in). 
 
@@ -43,9 +45,9 @@ When you've added the files to the project, add **\<IconUrl\>** and **\<HighReso
   <!-- Other markup omitted -->
 ```
 
-## Ensure that your function command names are short enough
+### Ensure that your function command names are short enough
 
-If your manifest has a **\<FunctionName\>** element, make sure its value has fewer than 65 characters. The value of this element must exactly match the name of a function in a JavaScript or TypeScript file. If you change it in the manifest, be sure to change it in the code file too.
+If your manifest has any **\<FunctionName\>** elements, make sure their values have fewer than 65 characters. The value of this element must exactly match the name of a function in a JavaScript or TypeScript file. If you change it in the manifest, be sure to change it in the code file too.
 
 ## Conversion tools and options
 
