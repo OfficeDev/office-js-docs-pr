@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 03/05/2024
+ms.date: 03/19/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -190,6 +190,11 @@ In Outlook on the web and in new Outlook on Windows (preview):
 - When forwarding a meeting, the `OnAppointmentSend` event only occurs if the organizer forwards the meeting. It doesn't occur if an attendee forwards the meeting to which they're invited.
 
 ### Limitations to formatting the dialog message using Markdown
+
+> [!NOTE]
+> Support for Markdown in a Smart Alerts dialog is currently in preview in Outlook on Windows only. Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the Feedback section at the end of this page).
+>
+> To test this feature in Outlook on Windows, you must install Version 2403 (Build 17330.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/windows) and select the **Beta Channel** option in your Outlook client to access Office beta builds.
 
 You can use Markdown to format the message of a Smart Alerts dialog. However, only the following elements are supported.
 
