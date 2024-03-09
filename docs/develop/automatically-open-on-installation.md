@@ -2,7 +2,7 @@
 title: Automatically open a task pane when an add-in is installed
 description: Learn how to configure an Office Add-in to open automatically when it's installed.
 ms.topic: how-to
-ms.date: 09/01/2022
+ms.date: 02/23/2024
 ms.localizationpriority: medium
 ---
 
@@ -15,7 +15,6 @@ By default, task pane add-ins that do *not* include any [add-in commands](../des
 
 > [!NOTE]
 > 
-> - This feature is currently available only in Office on the web. We're working to bring this behavior to other platforms, but currently they still exhibit the historic default behavior described previously.
 > - This feature applies only to add-ins installed by an end-user, not to centrally deployed add-ins.
 > - This feature doesn't apply to Content add-ins or Mail (Outlook) add-ins.
 > - This feature applies only to add-ins that have at least one add-in command of [the type "task pane command"](../design/add-in-commands.md#types-of-add-in-commands).

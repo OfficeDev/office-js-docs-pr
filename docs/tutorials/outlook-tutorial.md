@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
-ms.date: 12/11/2023
+ms.date: 02/29/2024
 ms.service: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -28,11 +28,11 @@ In this tutorial, you will:
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) or your preferred code editor
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) or your preferred code editor.
 
-- Outlook 2016 or later on Windows (connected to a Microsoft 365 account) or Outlook on the web
+- Outlook 2016 or later on Windows (connected to a Microsoft 365 account), Outlook on the web, or [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
-- A [GitHub](https://www.github.com) account
+- A [GitHub](https://www.github.com) account.
 
 ## Setup
 
@@ -302,7 +302,7 @@ After you've reinstalled the add-in, you can verify that it installed successful
 
     ![The ribbon overflow menu in Outlook on Windows with the add-in's buttons highlighted.](../images/add-in-buttons-in-windows.png)
 
-- If you're running this add-in in Outlook on the web, select **Apps** from the ribbon of the compose message window, then select **Git the gist** to see the **Insert gist** and **Insert default gist** options.
+- If you're running this add-in in Outlook on the web or new Outlook on Windows (preview), select **Apps** from the ribbon of the compose message window, then select **Git the gist** to see the **Insert gist** and **Insert default gist** options.
 
     ![The message compose form in Outlook on the web with the add-in button and pop-up menu highlighted.](../images/add-in-buttons-in-owa.png)
 

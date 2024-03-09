@@ -13,7 +13,7 @@ Data types organize complex data structures as objects. This includes formatted 
 
 The following screenshot highlights one of the primary features of data types: an entity card. In this case, the entity card shows expanded information about the **Tofu** product from a list of grocery store products.
 
-:::image type="content" source="../images/excel-data-types-entity-card-tofu.png" alt-text="A screenshot showing an entity value data type with the card window displayed.":::
+:::image type="content" source="../images/excel-data-types-entity-card-tofu.png" alt-text="An entity value data type with the card window displayed.":::
 
 > [!NOTE]
 > To start experimenting with data types right away, install [Script Lab](../overview/explore-with-script-lab.md) in Excel and check out the **Data types** section in our **Samples** library. You can also explore the Script Lab samples in our [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/tree/prod/samples/excel/20-data-types) repository.

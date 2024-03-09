@@ -63,7 +63,7 @@ This tutorial uses the [VSTO Add-in shared library for Office Add-in](https://gi
 
 The add-in is a custom task pane for Excel. You can select any cell with text, and then choose the **Show unicode** button. In the **Result** section, the add-in will display a list of each character in the text along with its corresponding Unicode number.
 
-![Screenshot of the Cell Analyzer VSTO add-in running in Excel with the "Show unicode" button and empty Result section.](../images/pnp-cell-analyzer-vsto-add-in.png)
+![The Cell Analyzer VSTO add-in running in Excel with the "Show unicode" button and empty Result section.](../images/pnp-cell-analyzer-vsto-add-in.png)
 
 ## Analyze types of code in the VSTO Add-in
 

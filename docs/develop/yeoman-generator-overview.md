@@ -2,7 +2,7 @@
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
 ms.topic: tutorial
-ms.date: 02/08/2024
+ms.date: 02/20/2024
 ms.localizationpriority: high
 ---
 
@@ -54,24 +54,24 @@ The first question asks you to choose between several types of projects. The opt
 - **Outlook Add-in with the unified manifest for Microsoft 365 (preview)**
 - **Office Add-in project containing the manifest only**
 
-![Screenshot showing the prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
+![The prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
 
 > [!NOTE]
-> 
-> -  The unified manifest is in preview and is supported only on Outlook on Windows. It isn't supported yet for a production add-in.
+>
+> - The unified manifest is in preview and is supported only on Outlook on Windows. It isn't supported yet for a production add-in.
 > - The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
 
 The next question asks you to choose between **TypeScript** and **JavaScript**. (This question is skipped if you chose the manifest-only option in the preceding question.)
 
-![Screenshot showing that the user chose "Office Add-in Task Pane project" to the preceding question and shows the prompt for language, and the possible answers, TypeScript and JavaScript, in the Yeoman generator.](../images/yo-office-language-prompt.png)
+![The Yo Office interface after the user chose "Office Add-in Task Pane project" to the preceding question. It shows the prompt for language, and the possible answers, TypeScript and JavaScript, in the Yeoman generator.](../images/yo-office-language-prompt.png)
 
 You're then prompted to give the add-in a name. The name you specify will be used in the add-in's manifest, but you can change it later. This is also the folder name for the project.
 
-![Screenshot showing that the user chose TypeScript to the previous question and shows the prompt for the add-in name in the Yeoman generator.](../images/yo-office-name-prompt.png)
+![The Yo Office interface after the user chose TypeScript to the previous question. It shows the prompt for the add-in name in the Yeoman generator.](../images/yo-office-name-prompt.png)
 
 You're then prompted to choose which Office application the add-in should run in. There are six possible applications to choose from: **Excel**, **OneNote**, **Outlook**, **PowerPoint**, **Project**, and **Word**. You must choose just one, but you can change the manifest later to support the additional Office applications. The exception is Outlook. A manifest that supports Outlook cannot support any other Office application.
 
-![Screenshot showing that the user named the project "Contoso Add-in" and shows the prompt for Office application, and the possible answers, in the Yeoman generator.](../images/yo-office-host-prompt.png)
+![The Yo Office interface after the user named the project "Contoso Add-in". It shows the prompt for Office application, and the possible answers, in the Yeoman generator.](../images/yo-office-host-prompt.png)
 
 After you've answered this question, the generator creates the project and installs the dependencies. You may see **WARN** messages in the npm output on screen. You can ignore these. You may also see messages that vulnerabilities were found. You can ignore these for now, but you'll eventually need to fix them before your add-in is released to production. For more information about fixing vulnerabilities, open your browser and search for "npm vulnerability".
 
@@ -85,6 +85,9 @@ If the creation is successful, you'll see a **Congratulations!** message in the 
 > ```
 >
 > When you're ready to install the dependencies, navigate to the root folder of the project in a command prompt and enter `npm install`.
+
+> [!WARNING]
+> If you choose **Office Add-in Task Pane project supporting single sign-on** and **TypeScript**, and you are using a Node.js version greater than 18.16.0, then a bug in Node.js causes the project file **\<root\>\src\middle-tier\ssoauth-helper.ts** to be corrupted. To fix it, copy the contents of the file from the repo, [ssoauth-helper.ts](https://github.com/OfficeDev/Office-Addin-Taskpane-SSO/blob/master/src/middle-tier/ssoauth-helper.ts), over the contents of the file in the generated project.
 
 ## Manifest-only option
 

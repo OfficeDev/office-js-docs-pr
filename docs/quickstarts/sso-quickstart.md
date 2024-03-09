@@ -105,14 +105,14 @@ Complete the following steps to test an Excel, Word, or PowerPoint add-in.
 
 5. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed in to Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose **Accept** to continue.
 
-    ![Screenshot showing permissions requested dialog with Accept button highlighted.](../images/sso-permissions-request.png)
+    ![The permissions requested dialog with Accept button highlighted.](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > After a user accepts this permissions request, they won't be prompted again in the future.
 
 6. The add-in retrieves profile information for the signed-in user and writes it to the document. The following image shows an example of profile information written to an Excel worksheet.
 
-    ![Screenshot showing user profile information in Excel worksheet.](../images/sso-user-profile-info-excel.png)
+    ![The user profile information in Excel worksheet.](../images/sso-user-profile-info-excel.png)
 
 ### Outlook
 
@@ -132,20 +132,20 @@ Complete the following steps to try out an Outlook add-in.
 
 4. In the message compose window, choose the **Show Taskpane** button to open the add-in task pane.
 
-    ![Screenshot showing highlighted add-in ribbon button in Outlook compose message window.](../images/outlook-sso-ribbon-button.png)
+    ![The highlighted add-in ribbon button in Outlook compose message window.](../images/outlook-sso-ribbon-button.png)
 
 5. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process.
 
 6. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed in to Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose **Accept** to continue.
 
-    ![Screenshot of permissions requested dialog with Accept button highlighted.](../images/sso-permissions-request.png)
+    ![The permissions requested dialog with Accept button highlighted.](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > After a user accepts this permissions request, they won't be prompted again in the future.
 
 7. The add-in retrieves profile information for the signed-in user and writes it to the body of the email message.
 
-    ![Screenshot showing user profile information in Outlook compose message window.](../images/sso-user-profile-info-outlook.png)
+    ![The user profile information in Outlook compose message window.](../images/sso-user-profile-info-outlook.png)
 
 ## Next steps
 

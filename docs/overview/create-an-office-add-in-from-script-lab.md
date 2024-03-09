@@ -95,7 +95,7 @@ Script Lab handles the `Office.onReady` initialization automatically. You'll nee
 1. For Excel, PowerPoint, or Word, replace:
 
     ```typescript
-    $("#run").click(() => tryCatch(run));
+    $("#run").on("click", () => tryCatch(run));
     ```
 
     with:
@@ -104,8 +104,8 @@ Script Lab handles the `Office.onReady` initialization automatically. You'll nee
     Office.onReady(function () {
       // Office is ready.
       $(document).ready(function () {
-        // The document is ready
-        $("#run").click(() => tryCatch(run));
+        // The document is ready.
+        $("#run").on("click", () => tryCatch(run));
       });
     });
     ```
@@ -113,9 +113,9 @@ Script Lab handles the `Office.onReady` initialization automatically. You'll nee
 1. For Outlook, replace:
 
     ```typescript
-    $("#get").click(get);
-    $("#set").click(set);
-    $("#save").click(save);
+    $("#get").on("click", get);
+    $("#set").on("click", set);
+    $("#save").on("click", save);
     ```
 
     with:
@@ -125,9 +125,9 @@ Script Lab handles the `Office.onReady` initialization automatically. You'll nee
       // Office is ready
       $(document).ready(function () {
         // The document is ready
-        $("#get").click(get);
-        $("#set").click(set);
-        $("#save").click(save);
+        $("#get").on("click", get);
+        $("#set").on("click", set);
+        $("#save").on("click", save);
       });
     });
     ```

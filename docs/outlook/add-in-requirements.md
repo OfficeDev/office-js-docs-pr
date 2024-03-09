@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in requirements
 description: For Outlook add-ins to load and function properly, there are a number of requirements for both the servers and the clients.
-ms.date: 02/09/2021
+ms.date: 02/29/2024
 ms.localizationpriority: high
 ---
 
@@ -20,6 +20,7 @@ For Outlook add-ins to load and function properly, there are a number of require
   - Outlook on the web for Exchange 2016 or later
   - Outlook on the web for Exchange 2013
   - Outlook.com
+  - [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 
 - The client must be connected to an Exchange server or Microsoft 365 using a direct connection. When configuring the client, the user must choose an **Exchange**, **Office**, or **Outlook.com** account type. If the client is configured to connect with POP3 or IMAP, add-ins will not load.
 

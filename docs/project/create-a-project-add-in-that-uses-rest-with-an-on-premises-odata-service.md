@@ -1,28 +1,28 @@
 ---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
-description: Learn how to build a task pane add-in for Project Professional 2013 that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance.
-ms.date: 07/08/2021
+description: Learn how to build a task pane add-in for Project Professional that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance.
+ms.date: 02/21/2024
 ms.localizationpriority: medium
 ---
 
 # Create a Project add-in that uses REST with an on-premises Project Server OData service
 
-This article describes how to build a task pane add-in for Project Professional 2013 that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance. The add-in uses REST with the jQuery library to access the **ProjectData** OData reporting service in Project Server 2013.
+This article describes how to build a task pane add-in for Project Professional that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance. The add-in uses REST with the jQuery library to access the **ProjectData** OData reporting service in Project Server.
 
 The code in this article is based on a sample developed by Saurabh Sanghvi and Arvind Iyer, Microsoft Corporation.
 
 ## Prerequisites
 
-The following are the prerequisites for creating a Project task pane add-in that reads the **ProjectData** service of a Project Web App instance in an on-premises installation of Project Server 2013.
+The following are the prerequisites for creating a Project task pane add-in that reads the **ProjectData** service of a Project Web App instance in an on-premises installation of Project Server.
 
-- Project Professional 2013 is required to connect with Project Web App. The development computer must have Project Professional 2013 installed to enable **F5** debugging with Visual Studio.
+- Project Professional is required to connect with Project Web App. The development computer must have Project Professional installed to enable **F5** debugging with Visual Studio.
 
     > [!NOTE]
-    > Project Standard 2013 can also host task pane add-ins, but cannot sign in to Project Web App.
+    > Project Standard can also host task pane add-ins, but cannot sign in to Project Web App.
 
 - Visual Studio 2015 with Office Developer Tools for Visual Studio includes templates for creating Office and SharePoint Add-ins. Ensure that you have installed the most recent version of Office Developer Tools; see the  *Tools* section of the [Office Add-ins and SharePoint downloads](https://developer.microsoft.com/office/docs).
 
-- The procedures and code examples in this article access the **ProjectData** service of Project Server 2013 in a local domain. The jQuery methods in this article do not work with Project on the web.
+- The procedures and code examples in this article access the **ProjectData** service of Project Server in a local domain. The jQuery methods in this article do not work with Project on the web.
 
     Verify that the **ProjectData** service is accessible from your development computer.
 
@@ -54,7 +54,7 @@ The following are the prerequisites for creating a Project task pane add-in that
 
 ## Use Visual Studio to create a task pane add-in for Project
 
-Office Developer Tools for Visual Studio includes a template for task pane add-ins for Project 2013. If you create a solution named **HelloProjectOData**, the solution contains the following two Visual Studio projects:
+Office Developer Tools for Visual Studio includes a template for task pane add-ins for Project. If you create a solution named **HelloProjectOData**, the solution contains the following two Visual Studio projects:
 
 - The add-in project takes the name of the solution. It includes the XML manifest file for the add-in and targets the .NET Framework 4.5. Procedure 3 shows the steps to modify the manifest for the **HelloProjectOData** add-in.
 
@@ -267,7 +267,7 @@ The task pane shows the add-in display name at the top, which is the value of th
 
 ## Create the JavaScript code for the add-in
 
-The template for a Project task pane add-in includes default initialization code that is designed to demonstrate basic get and set actions for data in a document for a typical Office 2013 add-in. Because Project 2013 does not support actions that write to the active project, and the **HelloProjectOData** add-in does not use the `getSelectedDataAsync` method, you can delete the script within the `Office.initialize` function, and delete the `setData` function and `getData` function in the default HelloProjectOData.js file.
+The template for a Project task pane add-in includes default initialization code that's designed to demonstrate basic get and set actions for data in a document for an Office add-in that uses the [Common APIs](../develop/office-javascript-api-object-model.md). Because Project doesn't support actions that write to the active project, and the **HelloProjectOData** add-in doesn't use the `getSelectedDataAsync` method, you can delete the script within the `Office.initialize` function, and delete the `setData` function and `getData` function in the default HelloProjectOData.js file.
 
 The JavaScript includes global constants for the REST query and global variables that are used in several functions. The **Get ProjectData Endpoint** button calls the `setOdataUrl` function, which initializes the global variables and determines whether Project is connected with Project Web App.
 
@@ -361,7 +361,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
 1. Add the `retrieveOData` function, which concatenates values for the REST query and then calls the `ajax` function in jQuery to get the requested data from the **ProjectData** service. The `support.cors` variable enables cross-origin resource sharing (CORS) with the `ajax` function. If the `support.cors` statement is missing or is set to `false`, the `ajax` function returns a **No transport** error.
 
    > [!NOTE]
-   > The following code works with an on-premises installation of Project Server 2013. For Project on the web, you can use OAuth for token-based authentication. For more information, see [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
+   > The following code works with an on-premises installation of Project Server. For Project on the web, you can use OAuth for token-based authentication. For more information, see [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
 
    In the `ajax` call, you can use either the *headers* parameter or the *beforeSend* parameter. The *complete* parameter is an anonymous function so that it is in the same scope as the variables in `retrieveOData`. The function for the  *complete* parameter displays results in the `odataText` control and also calls the `parseODataResult` method to parse and display the JSON response. The *error* parameter specifies the named `getProjectDataErrorHandler` function, which writes an error message to the `odataText` control and also uses the `throwError` function to display a pop-up message.
 
@@ -534,7 +534,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
 
 ## Test the HelloProjectOData add-in
 
-To test and debug the **HelloProjectOData** add-in with Visual Studio 2015, Project Professional 2013 must be installed on the development computer. To enable different test scenarios, ensure that you can choose whether Project opens for files on the local computer or connects with Project Web App. For example, do the following steps.
+To test and debug the **HelloProjectOData** add-in with Visual Studio, Project Professional must be installed on the development computer. To enable different test scenarios, ensure that you can choose whether Project opens for files on the local computer or connects with Project Web App. The following are example steps.
 
 1. On the **File** tab, choose the **Info** tab in the Backstage view, and then choose **Manage Accounts**.
 
@@ -552,7 +552,7 @@ Basic tests should include the following:
 
 ### Procedure 6. Test the add-in
 
-1. Run Project Professional 2013, connect with Project Web App, and then create a test project. Assign tasks to local resources or to enterprise resources, set various values of percent complete on some tasks, and then publish the project. Quit Project, which enables Visual Studio to start Project for debugging the add-in.
+1. Run Project Professional, connect with Project Web App, and then create a test project. Assign tasks to local resources or to enterprise resources, set various values of percent complete on some tasks, and then publish the project. Quit Project, which enables Visual Studio to start Project for debugging the add-in.
 
 1. In Visual Studio, press **F5**. Log on to Project Web App, and then open the project that you created in the previous step. You can open the project in read-only mode or in edit mode.
 
