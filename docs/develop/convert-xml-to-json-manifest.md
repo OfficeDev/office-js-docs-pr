@@ -27,7 +27,7 @@ There are three basic tasks to converting an add-in project from the XML manifes
 
 ### Ensure that you have the two image files
 
-It's highly likely that you have the two image files already in your add-in. They're specified in the [IconUrl](/javascript/api/manifest/iconurl) and [HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl) elements in the XML manifest. Because these are both optional elements, your add-in project mignt not have one or both. These are required for an add-in that uses the unified manifest, so you need to create them if the project doesn't already have them. For guidance, see [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in). 
+It's highly likely that you already have the two image files in your add-in. They're specified in the [IconUrl](/javascript/api/manifest/iconurl) and [HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl) elements in the XML manifest. Because these are both optional elements, your add-in project might not have one or both. These are required for an add-in that uses the unified manifest, so you need to create them if the project doesn't already have them. For guidance, see [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in). 
 
 When you've added the files to the project, add **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) to the XML manifest just below the **\<Description\>** element. The following is an example.
 
