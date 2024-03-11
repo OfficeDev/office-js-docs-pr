@@ -1,7 +1,7 @@
 ---
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
-ms.date: 02/22/2024
+ms.date: 03/22/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -89,7 +89,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
     - The "desktop" and "mobile" values in the "ribbons.requirements.formFactors" array configure the **Log to Contoso CRM** button to appear in Outlook on mobile devices and on desktop clients.
     - The "logEventMeetingDetailsAttendee" value in the "contexts" array configures the add-in button to appear in the Appointment Attendee surface, so that users can log their appointment notes.
     - The object in the "ribbons.tabs.groups.controls" array configures the add-in button that calls the note-logging function in Outlook desktop clients. The "actionId" property must match the "actions.id" of the object in the "runtimes" array.
-    - The "customMobileGroup" property configures the add-in button that calls the note-logging function in Outlook on mobile devices. All nine of the icon objects specified are required for a mobile button. Additionally, the "actionId" property must match the "actions.id" of the object in the "runtimes" array.
+    - The object in the "ribbons.tabs.customMobileRibbonGroups" array configures the add-in button that calls the note-logging function in Outlook on mobile devices. All nine of the objects specified in the "customMobileRibbonGroups.controls.icons" array are required for a mobile button. Additionally, the "customMobileRibbonGroups.controls.actionId" property must match the "actions.id" of the object in the "runtimes" array.
 
     ```json
     {
@@ -151,65 +151,67 @@ To configure your add-in's manifest, select the type of manifest you're using.
                         ]
                     }
                 ],
-                "customMobileGroup": {
-                    "id": "mobileApptReadGroup",
-                    "label": "Contoso Add-in",
-                    "controls": [
-                        { 
-                            "id": "mobileLogToCRM",
-                            "label": "Log to Contoso CRM",
-                            "buttonType": "MobileButton",
-                            "icons": [
-                                {
-                                    "scale": 1,
-                                    "size": 25,
-                                    "url": "https://contoso.com/assets/icon-25.png"
-                                },
-                                {
-                                    "scale": 1,
-                                    "size": 32,
-                                    "url": "https://contoso.com/assets/icon-32.png"
-                                },
-                                {
-                                    "scale": 1,
-                                    "size": 48,
-                                    "url": "https://contoso.com/assets/icon-48.png"
-                                },                                
-                                {
-                                    "scale": 2,
-                                    "size": 25,
-                                    "url": "https://contoso.com/assets/icon-25.png"
-                                },
-                                {
-                                    "scale": 2,
-                                    "size": 32,
-                                    "url": "https://contoso.com/assets/icon-32.png"
-                                },
-                                {
-                                    "scale": 2,
-                                    "size": 48,
-                                    "url": "https://contoso.com/assets/icon-48.png"
-                                },                                
-                                {
-                                    "scale": 3,
-                                    "size": 25,
-                                    "url": "https://contoso.com/assets/icon-25.png"
-                                },
-                                {
-                                    "scale": 3,
-                                    "size": 32,
-                                    "url": "https://contoso.com/assets/icon-32.png"
-                                },
-                                {
-                                    "scale": 3,
-                                    "size": 48,
-                                    "url": "https://contoso.com/assets/icon-48.png"
-                                }
-                            ],
-                            "actionId": "logCRMEvent"
-                        }
-                    ]
-                }
+                "customMobileRibbonGroups": [
+                    {
+                        "id": "mobileApptReadGroup",
+                        "label": "Contoso Add-in",
+                        "controls": [
+                            {
+                                "id": "mobileLogToCRM",
+                                "label": "Log to Contoso CRM",
+                                "buttonType": "MobileButton",
+                                "icons": [
+                                    {
+                                        "scale": 1,
+                                        "size": 25,
+                                        "url": "https://contoso.com/assets/icon-25.png"
+                                    },
+                                    {
+                                        "scale": 1,
+                                        "size": 32,
+                                        "url": "https://contoso.com/assets/icon-32.png"
+                                    },
+                                    {
+                                        "scale": 1,
+                                        "size": 48,
+                                        "url": "https://contoso.com/assets/icon-48.png"
+                                    },                                
+                                    {
+                                        "scale": 2,
+                                        "size": 25,
+                                        "url": "https://contoso.com/assets/icon-25.png"
+                                    },
+                                    {
+                                        "scale": 2,
+                                        "size": 32,
+                                        "url": "https://contoso.com/assets/icon-32.png"
+                                    },
+                                    {
+                                        "scale": 2,
+                                        "size": 48,
+                                        "url": "https://contoso.com/assets/icon-48.png"
+                                    },                                
+                                    {
+                                        "scale": 3,
+                                        "size": 25,
+                                        "url": "https://contoso.com/assets/icon-25.png"
+                                    },
+                                    {
+                                        "scale": 3,
+                                        "size": 32,
+                                        "url": "https://contoso.com/assets/icon-32.png"
+                                    },
+                                    {
+                                        "scale": 3,
+                                        "size": 48,
+                                        "url": "https://contoso.com/assets/icon-48.png"
+                                    }
+                                ],
+                                "actionId": "logCRMEvent"
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }
@@ -247,7 +249,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
     - The "desktop" and "mobile" values in the "ribbons.requirements.formFactors" array configure the **Log to Contoso CRM** button to appear in Outlook on mobile devices and on desktop clients.
     - The "logEventMeetingDetailsAttendee" value in the "contexts" array configures the add-in button to appear in the Appointment Attendee surface, so that users can open a task pane to view and log their appointment notes.
     - The object in the "ribbons.tabs.groups.controls" array configures the add-in button to open a task pane in Outlook desktop clients. The "actionId" property must match the "actions.id" of the object in the "runtimes" array.
-    - The "customMobileGroup" property configures the add-in button to open a task pane in Outlook on mobile devices. All nine of the icon objects specified are required for a mobile button. Additionally, the "actionId" property must match the "actions.id" of the object in the "runtimes" array.
+    - The object in the "ribbons.tabs.customMobileRibbonGroups" array configures the add-in button to open a task pane in Outlook on mobile devices. All nine of the objects specified in the "customMobileRibbonGroups.controls.icons" array are required for a mobile button. Additionally, the "customMobileRibbonGroups.controls.actionId" property must match the "actions.id" of the object in the "runtimes" array.
 
     ```json
     {
@@ -309,65 +311,67 @@ To configure your add-in's manifest, select the type of manifest you're using.
                         ]
                     }
                 ],
-                "customMobileGroup": {
-                    "id": "mobileApptReadGroup",
-                    "label": "Contoso Add-in",
-                    "controls": [
-                        { 
-                            "id": "mobileTaskpaneButton",
-                            "label": "Log to Contoso CRM",
-                            "buttonType": "MobileButton",
-                            "icons": [
-                                {
-                                    "scale": 1,
-                                    "size": 25,
-                                    "url": "https://contoso.com/assets/icon-25.png"
-                                },
-                                {
-                                    "scale": 1,
-                                    "size": 32,
-                                    "url": "https://contoso.com/assets/icon-32.png"
-                                },
-                                {
-                                    "scale": 1,
-                                    "size": 48,
-                                    "url": "https://contoso.com/assets/icon-48.png"
-                                },                                
-                                {
-                                    "scale": 2,
-                                    "size": 25,
-                                    "url": "https://contoso.com/assets/icon-25.png"
-                                },
-                                {
-                                    "scale": 2,
-                                    "size": 32,
-                                    "url": "https://contoso.com/assets/icon-32.png"
-                                },
-                                {
-                                    "scale": 2,
-                                    "size": 48,
-                                    "url": "https://contoso.com/assets/icon-48.png"
-                                },                                
-                                {
-                                    "scale": 3,
-                                    "size": 25,
-                                    "url": "https://contoso.com/assets/icon-25.png"
-                                },
-                                {
-                                    "scale": 3,
-                                    "size": 32,
-                                    "url": "https://contoso.com/assets/icon-32.png"
-                                },
-                                {
-                                    "scale": 3,
-                                    "size": 48,
-                                    "url": "https://contoso.com/assets/icon-48.png"
-                                }
-                            ],
-                            "actionId": "TaskPaneRuntimeShow"
-                        }
-                    ]
-                }
+                "customMobileRibbonGroups": [
+                    {
+                        "id": "mobileApptReadGroup",
+                        "label": "Contoso Add-in",
+                        "controls": [
+                            {
+                                "id": "mobileTaskpaneButton",
+                                "label": "Log to Contoso CRM",
+                                "buttonType": "MobileButton",
+                                "icons": [
+                                    {
+                                        "scale": 1,
+                                        "size": 25,
+                                        "url": "https://contoso.com/assets/icon-25.png"
+                                    },
+                                    {
+                                        "scale": 1,
+                                        "size": 32,
+                                        "url": "https://contoso.com/assets/icon-32.png"
+                                    },
+                                    {
+                                        "scale": 1,
+                                        "size": 48,
+                                        "url": "https://contoso.com/assets/icon-48.png"
+                                    },                                
+                                    {
+                                        "scale": 2,
+                                        "size": 25,
+                                        "url": "https://contoso.com/assets/icon-25.png"
+                                    },
+                                    {
+                                        "scale": 2,
+                                        "size": 32,
+                                        "url": "https://contoso.com/assets/icon-32.png"
+                                    },
+                                    {
+                                        "scale": 2,
+                                        "size": 48,
+                                        "url": "https://contoso.com/assets/icon-48.png"
+                                    },                                
+                                    {
+                                        "scale": 3,
+                                        "size": 25,
+                                        "url": "https://contoso.com/assets/icon-25.png"
+                                    },
+                                    {
+                                        "scale": 3,
+                                        "size": 32,
+                                        "url": "https://contoso.com/assets/icon-32.png"
+                                    },
+                                    {
+                                        "scale": 3,
+                                        "size": 48,
+                                        "url": "https://contoso.com/assets/icon-48.png"
+                                    }
+                                ],
+                                "actionId": "TaskPaneRuntimeShow"
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }
