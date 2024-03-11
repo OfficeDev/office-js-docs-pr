@@ -88,11 +88,11 @@ Specifically for Outlook running on smartphones and non-Windows tablet devices, 
 >
 > **modern**
 >
-> ![Partial screenshot of the modern Outlook toolbar.](../images/outlook-on-the-web-new-toolbar.png)
+> ![The section of the modern Outlook toolbar that says 'Outlook' in blue and white.](../images/outlook-on-the-web-new-toolbar.png)
 >
 > **classic**
 >
-> ![Partial screenshot of the classic Outlook toolbar.](../images/outlook-on-the-web-classic-toolbar.png)
+> ![The classic Outlook toolbar that says 'Office 365' and 'Outlook' in black and white.](../images/outlook-on-the-web-classic-toolbar.png)
 
 ## See also
 

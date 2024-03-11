@@ -23,7 +23,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
 
-![Screenshot of the Yeoman Office Add-in generator command line interface, with project type set to the Angular framework.](../images/yo-office-excel-angular-2.png)
+![The Yeoman Office Add-in generator command line interface, with project type set to the Angular framework.](../images/yo-office-excel-angular-2.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -50,13 +50,13 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
-    ![Screenshot of the Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
+    ![The Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
 
 1. Select any range of cells in the worksheet.
 
 1. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
 
-    ![Screenshot of Excel, with the add-in task pane open, and the Run button highlighted in the add-in task pane.](../images/excel-quickstart-addin-3c.png)
+    ![Excel with the add-in task pane open, and the Run button highlighted in the add-in task pane.](../images/excel-quickstart-addin-3c.png)
 
 ## Next steps
 

@@ -12,7 +12,7 @@ This guide helps you set up tools so you can create Office Add-ins by following 
 
 ## Get Microsoft 365
 
-You need a Microsoft 365 account. You can get a free, 90-day renewable Microsoft 365 subscription that includes all Office apps by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+You need a Microsoft 365 account. You might qualify for a Microsoft 365 E5 developer subscription, which includes all Office apps, through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 
 ## Install the environment
 
@@ -156,4 +156,4 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)
-- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)

@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins on Mac for testing
 description: Test your Office Add-in on Mac by sideloading.
-ms.date: 02/17/2023
+ms.date: 02/09/2024
 ms.localizationpriority: medium
 ---
 
@@ -43,7 +43,7 @@ To see how your add-in will run on Office on Mac, you can sideload your add-in's
 
 1. Open Word (or restart Word if it's already running), then open a document.
 
-1. Select **Home** > **Add-ins** from the ribbon, then select **Get Add-ins**.
+1. Select **Home** > **Add-ins**, and then select your add-in from the menu.
 
 1. Verify that your add-in is displayed in Word.
 

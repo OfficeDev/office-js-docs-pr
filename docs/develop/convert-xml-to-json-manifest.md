@@ -69,11 +69,11 @@ The easiest way to convert is to use Teams Toolkit.
 1. Select **Create a new app**.
 1. In the **New Project** drop down, select **Outlook Add-in**.
 
-    :::image type="content" source="../images/teams-toolkit-create-outlook-add-in.png" alt-text="Screenshot showing four options in New Project drop down. The fourth option is called 'Outlook add-in'.":::
+    :::image type="content" source="../images/teams-toolkit-create-outlook-add-in.png" alt-text="The four options in New Project drop down. The fourth option is called 'Outlook add-in'.":::
 
 1. In the **App Features Using an Outlook Add-in** drop down, select **Import an Existing Outlook Add-in**.
 
-    :::image type="content" source="../images/teams-toolkit-create-outlook-task-pane-capability.png" alt-text="Screenshot showing two options in the App Features Using an Outlook Add-in drop down. The second option is called 'Import an Existing Outlook add-in'.":::
+    :::image type="content" source="../images/teams-toolkit-create-outlook-task-pane-capability.png" alt-text="The two options in the App Features Using an Outlook Add-in drop down. The second option is called 'Import an Existing Outlook add-in'.":::
 
 1. In the **Existing add-in project folder** drop down, browse to the root folder of the add-in project.
 1. In the **Select import project manifest file** drop down, browse to the XML manifest file.
