@@ -2,7 +2,7 @@
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
 ms.topic: tutorial
-ms.date: 02/08/2024
+ms.date: 02/20/2024
 ms.localizationpriority: high
 ---
 
@@ -85,6 +85,9 @@ If the creation is successful, you'll see a **Congratulations!** message in the 
 > ```
 >
 > When you're ready to install the dependencies, navigate to the root folder of the project in a command prompt and enter `npm install`.
+
+> [!WARNING]
+> If you choose **Office Add-in Task Pane project supporting single sign-on** and **TypeScript**, and you are using a Node.js version greater than 18.16.0, then a bug in Node.js causes the project file **\<root\>\src\middle-tier\ssoauth-helper.ts** to be corrupted. To fix it, copy the contents of the file from the repo, [ssoauth-helper.ts](https://github.com/OfficeDev/Office-Addin-Taskpane-SSO/blob/master/src/middle-tier/ssoauth-helper.ts), over the contents of the file in the generated project.
 
 ## Manifest-only option
 

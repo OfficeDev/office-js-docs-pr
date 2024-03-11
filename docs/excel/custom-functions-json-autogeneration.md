@@ -415,7 +415,7 @@ Any other type will be treated as an error.
 
 ## Next steps
 
-Learn about [naming conventions for custom functions](custom-functions-naming.md). Alternatively, learn how to [localize your functions](custom-functions-localize.md) which requires you to [write your JSON file by hand](custom-functions-json.md).
+Learn about [naming and localization for custom functions](custom-functions-naming.md).
 
 ## See also
 
