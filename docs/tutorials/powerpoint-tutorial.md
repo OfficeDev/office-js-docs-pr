@@ -584,7 +584,7 @@ Complete the following steps to add code that navigates between the slides of a 
 - Office connected to a Microsoft 365 subscription (including Office on the web).
 
     > [!NOTE]
-    > If you don't already have Office, you can [join the Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
+    > If you don't already have Office, you might qualify for a Microsoft 365 E5 developer subscription to use for development through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 
 ## Create your add-in project
 
@@ -827,7 +827,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 1. In the **Home.js** file, replace `TODO1` with the following code to assign the event handler for the **Insert Image** button.
 
     ```js
-    $('#insert-image').click(insertImage);
+    $('#insert-image').on("click", insertImage);
     ```
 
 1. In the **Home.js** file, replace `TODO2` with the following code to define the `insertImage` function. This function fetches the image from the Bing web service and then calls the `insertImageFromBase64String` function to insert that image into the document.
@@ -948,7 +948,7 @@ Complete the following steps to add code that inserts text into the title slide 
 1. In the **Home.js** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.
 
     ```js
-    $('#insert-text').click(insertText);
+    $('#insert-text').on("click", insertText);
     ```
 
 1. In the **Home.js** file, replace `TODO5` with the following code to define the `insertText` function. This function inserts text into the current slide.
@@ -1004,7 +1004,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
 1. In the **Home.js** file, replace `TODO6` with the following code to assign the event handler for the **Get Slide Metadata** button.
 
     ```js
-    $('#get-slide-metadata').click(getSlideMetadata);
+    $('#get-slide-metadata').on("click", getSlideMetadata);
     ```
 
 1. In the **Home.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slide(s) and writes it to a popup dialog window within the add-in task pane.
@@ -1083,11 +1083,11 @@ Complete the following steps to add code that navigates between the slides of a 
 1. In the **Home.js** file, replace `TODO8` with the following code to assign the event handlers for the **Add Slides** and four navigation buttons.
 
     ```js
-    $('#add-slides').click(addSlides);
-    $('#go-to-first-slide').click(goToFirstSlide);
-    $('#go-to-next-slide').click(goToNextSlide);
-    $('#go-to-previous-slide').click(goToPreviousSlide);
-    $('#go-to-last-slide').click(goToLastSlide);
+    $('#add-slides').on("click", addSlides);
+    $('#go-to-first-slide').on("click", goToFirstSlide);
+    $('#go-to-next-slide').on("click", goToNextSlide);
+    $('#go-to-previous-slide').on("click", goToPreviousSlide);
+    $('#go-to-last-slide').on("click", goToLastSlide);
     ```
 
 1. In the **Home.js** file, replace `TODO9` with the following code to define the `addSlides` and navigation functions. Each of these functions uses the `goToByIdAsync` method to select a slide based upon its position in the document (first, last, previous, and next).

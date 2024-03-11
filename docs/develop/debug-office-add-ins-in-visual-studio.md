@@ -183,13 +183,13 @@ The best method for debugging an add-in in Visual Studio 2022 depends on whether
 
 #### Use the browser developer tools in Outlook on the web
 
-1. In the Outlook page, select an email message or appointment item to open it in its own window. 
+1. In the Outlook page, select an email message or appointment item to open it in its own window.
 
 1. Press F12 to open the Edge debugging tool.
 
 1. After the tool is open, launch the add-in. For example, in the toolbar at the top of a message, select the **More apps** button, and then select your add-in from the callout that opens.
 
-   ![Screenshot showing the More apps button and the callout that it opens with the add-in's name and icon visible along with other app icons.](../images/outlook-more-apps-button.png)
+   ![The More apps button and the callout that it opens with the add-in's name and icon visible along with other app icons.](../images/outlook-more-apps-button.png)
 
 1. Use the instructions in one of the following articles to set breakpoints and step through code. They each have a link to more detailed guidance.
 

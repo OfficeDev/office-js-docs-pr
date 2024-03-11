@@ -1,7 +1,7 @@
 ---
 title: Use the Outlook REST APIs from an Outlook add-in
 description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
-ms.date: 10/24/2023
+ms.date: 02/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,7 @@ The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/previ
 > [!IMPORTANT]
 > **Outlook REST v2.0 and beta endpoints deprecation**
 >
-> The Outlook REST v2.0 and beta endpoints will be [fully deprecated on March 31, 2024](https://devblogs.microsoft.com/microsoft365dev/outlook-rest-api-v2-0-and-beta-endpoints-decommissioning-update/). However, active add-ins are able to use the REST service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). Add-ins that use the service are automatically identified for exemption based on the add-in's manifest ID. This exemption applies to privately released and AppSource-hosted add-ins. It also includes new add-ins developed after the decommission date.
+> The Outlook REST v2.0 and beta endpoints will be [fully deprecated on March 31, 2024](https://devblogs.microsoft.com/microsoft365dev/outlook-rest-api-v2-0-and-beta-endpoints-decommissioning-update/). However, privately released and AppSource-hosted add-ins are able to use the REST service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). Traffic from these add-ins is automatically identified for exemption. This exemption also applies to new add-ins developed after the decommission date.
 >
 > Although add-ins are able to use the REST service until 2025, we highly encourage you to migrate your add-ins to use [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). For guidance, see [Compare Microsoft Graph and Outlook REST API endpoints](/outlook/rest/compare-graph).
 

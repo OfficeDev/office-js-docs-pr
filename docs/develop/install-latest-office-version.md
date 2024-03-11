@@ -65,7 +65,7 @@ New developer features, including those still in preview, are delivered first to
 
 When the installation process finishes, you will have the latest Office applications installed. To verify that you have the latest build, go to **File** > **Account** from any Office application. Under Office Updates, you'll see the (Office Insiders) label above the version number.
 
-![A screenshot that shows product information with the Office Insiders label.](../images/office-insiders-label.png)
+![Product information, including the version number, with the Office Insiders label.](../images/office-insiders-label.png)
 
 ## Minimum Office builds for Office JavaScript API requirement sets
 

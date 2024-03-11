@@ -31,7 +31,7 @@ In this tutorial, you'll create a Word task pane add-in that:
 - Office connected to a Microsoft 365 subscription (including Office on the web).
 
     > [!NOTE]
-    > If you don't already have Office, you can [join the Microsoft 365 developer program](https://aka.ms/M365devprogram) to get a free, 90-day renewable Microsoft 365 subscription to use during development.
+    > If you don't already have Office, you might qualify for a Microsoft 365 E5 developer subscription to use for development through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 
 ## Create your add-in project
 
@@ -42,7 +42,7 @@ In this tutorial, you'll create a Word task pane add-in that:
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-word.png)
+![The previous prompts and answers given to the Yeoman generator in a command line interface.](../images/yo-office-word.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -154,7 +154,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 1. In Word, if the "My Office Add-in" task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
-    ![Screenshot displaying the Show Taskpane button highlighted in Word.](../images/word-quickstart-addin-2b.png)
+    ![The Show Taskpane button highlighted in Word.](../images/word-quickstart-addin-2b.png)
 
 1. In the task pane, choose the **Insert Paragraph** button.
 
@@ -162,7 +162,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 1. Choose the **Insert Paragraph** button again. Note that the new paragraph appears above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
 
-    ![Screenshot showing the Insert Paragraph button in the add-in.](../images/word-tutorial-insert-paragraph-2.png)
+    ![The Insert Paragraph button in the add-in.](../images/word-tutorial-insert-paragraph-2.png)
 
 ## Format text
 
@@ -306,7 +306,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 1. Choose the **Change Font** button. The font of the second paragraph changes to 18 pt., bold, Courier New.
 
-    ![Screenshot showing the results of applying the styles and fonts defined for the add-in buttons Apply Style, Apply Custom Style, and Change font.](../images/word-tutorial-apply-styles-and-font-2.png)
+    ![The results of applying the styles and fonts defined for the add-in buttons Apply Style, Apply Custom Style, and Change font.](../images/word-tutorial-apply-styles-and-font-2.png)
 
 ## Replace text and insert text
 
@@ -546,7 +546,7 @@ async function insertTextIntoRange() {
 
 1. Choose the **Change Quantity Term** button. Note that "many" replaces the selected text.
 
-    ![Screenshot showing the results of choosing the add-in buttons Insert Abbreviation, Add Version Info, and Change Quantity Term.](../images/word-tutorial-text-replace-2.png)
+    ![The results of choosing the add-in buttons Insert Abbreviation, Add Version Info, and Change Quantity Term.](../images/word-tutorial-text-replace-2.png)
 
 ## Insert images, HTML, and tables
 
@@ -725,7 +725,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. Choose the **Insert Table** button and note that a table is inserted after the second paragraph.
 
-    ![Screenshot showing the results of choosing the add-in buttons Insert Image, Insert HTML, and Insert Table.](../images/word-tutorial-insert-image-html-table-2.png)
+    ![The results of choosing the add-in buttons Insert Image, Insert HTML, and Insert Table.](../images/word-tutorial-insert-image-html-table-2.png)
 
 ## Create and update content controls
 
@@ -841,7 +841,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 1. Choose the **Rename Service** button and note that the text of the content control changes to "Fabrikam Online Productivity Suite".
 
-    ![Screenshot showing the results of choosing the add-in buttons Create Content Control and Rename Service.](../images/word-tutorial-content-control-2.png)
+    ![The results of choosing the add-in buttons Create Content Control and Rename Service.](../images/word-tutorial-content-control-2.png)
 
 ## Next steps
 
