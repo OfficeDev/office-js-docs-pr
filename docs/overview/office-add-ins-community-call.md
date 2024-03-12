@@ -14,7 +14,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 The agenda for the March Office Add-ins community call is the following:
 - Word Add-in API Updates
 - Update on progress for Excel Undo/Redo
-- Improvements to  WXP Add-in Acquisition – Installation link and widget
+- Improvements to WXP Add-in Acquisition – Installation link and widget
 - Incentive Program for Office Add-in Developers
 - Modern Office 365 Add-ins Development
 
