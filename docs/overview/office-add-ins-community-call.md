@@ -16,7 +16,6 @@ The agenda for the March Office Add-ins community call is the following:
 - Update on progress for Excel Undo/Redo
 - Improvements to WXP Add-in Acquisition – Installation link and widget
 - Incentive Program for Office Add-in Developers
-- Modern Office 365 Add-ins Development
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
