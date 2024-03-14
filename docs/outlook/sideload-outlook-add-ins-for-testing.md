@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 03/19/2024
+ms.date: 03/14/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
