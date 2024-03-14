@@ -38,7 +38,7 @@ Though we strongly recommend sideloading automatically through the command line 
 
 # [Windows (classic and new) and Web](#tab/windows-web)
 
-Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To sideload an add-in in Outlook on Windows, on the web, and on [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), perform the following steps.
+Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To sideload an add-in in Outlook on Windows, on the web, and in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), perform the following steps.
 
 1. In your preferred browser, go to <https://aka.ms/olksideload>. Outlook on the web opens, then the **Add-Ins for Outlook** dialog appears after a few seconds.
 
@@ -52,7 +52,7 @@ Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To s
     >
     >   ![The Manage add-ins option is selected in classic Outlook on the web.](../images/outlook-sideload-web-manage-integrations.png)
     >
-    >   Note that your organization may include its own logo in the mailbox toolbar, so you might see something slightly different than shown in the preceding images.
+    >   Note that your organization may include its own logo in the mailbox toolbar, so you might see something slightly different from what is shown in the preceding images.
     >
     > - In Outlook on Windows, you can also access the **Add-Ins for Outlook** dialog by selecting **File** > **Info** > **Manage Add-ins**. This opens Outlook on the web in your preferred browser, then loads the dialog.
 
