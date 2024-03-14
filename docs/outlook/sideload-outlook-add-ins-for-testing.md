@@ -100,7 +100,7 @@ Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To s
 
 ## Locate a sideloaded add-in
 
-To learn how to access a sideloaded add-in in your Outlook client, see [Use an Office Add-in in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
+To learn how to access a sideloaded add-in in your Outlook client, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
 ## Remove a sideloaded add-in
 
