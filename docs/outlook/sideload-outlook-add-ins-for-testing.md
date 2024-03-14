@@ -60,9 +60,9 @@ Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To s
 
     ![The My add-ins option selected in the Add-Ins for Outlook dialog.](../images/outlook-sideload-my-add-ins-owa.png)
 
-1. Locate the **Custom add-ins** section at the bottom of the dialog box. Select the **Add a custom add-in** link, and then select **Add from File**.
+1. Locate the **Custom Addins** section at the bottom of the dialog box. Select the **Add a custom add-in** link, and then select **Add from File**.
 
-    ![The Add from File option is selected in the Custom Add-ins section.](../images/outlook-sideload-custom-add-in.png)
+    ![The Add from File option is selected in the Custom Addins section.](../images/outlook-sideload-custom-add-in.png)
 
     [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
 
@@ -88,9 +88,9 @@ Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To s
 
     ![The My add-ins options is selected in the Add-ins dialog](../images/outlook-sideload-my-add-ins-mac.png)
 
-1. Locate the **Custom add-ins** section at the bottom of the dialog. Select the **Add a custom add-in** link, and then select **Add from File**.
+1. Locate the **Custom Addins** section at the bottom of the dialog. Select the **Add a custom add-in** link, and then select **Add from File**.
 
-    ![The Add from File option is selected in the Custom add-ins section.](../images/outlook-sideload-custom-add-in-mac.png)
+    ![The Add from File option is selected in the Custom Addins section.](../images/outlook-sideload-custom-add-in-mac.png)
 
     [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
 
@@ -106,7 +106,7 @@ To learn how to access a sideloaded add-in in your Outlook client, see [Use add-
 
 On all versions of Outlook, the key to removing a sideloaded add-in is the **Add-Ins for Outlook** dialog, which lists your installed add-ins. To access the dialog on your Outlook client, use the steps listed for [manual sideloading](#sideload-manually) in the previous section of this article.
 
-To remove a sideloaded add-in from Outlook, in the **Add-Ins for Outlook** dialog, navigate to the **Custom add-ins** section. Choose the ellipsis (`...`) for the add-in, then choose **Remove**.
+To remove a sideloaded add-in from Outlook, in the **Add-Ins for Outlook** dialog, navigate to the **Custom Addins** section. Choose the ellipsis (`...`) for the add-in, then choose **Remove**.
 
 ## See also
 
