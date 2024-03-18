@@ -64,7 +64,7 @@ Test your Outlook web add-in in the new Outlook on Windows today! To switch to t
 - Have a Microsoft 365 work or school account connected to Exchange Online. The new client doesn't currently support on-premises, hybrid, or sovereign Exchange accounts.
 
     > [!NOTE]
-    > While you can add third-party accounts, such as Gmail, to the new Outlook on Windows, you can only use Outlook add-ins with a Microsoft account.
+    > While you can add non-Microsoft mail accounts, such as Gmail, to the new Outlook on Windows, you can only use Outlook add-ins with a Microsoft account.
 
 - Have a minimum OS installation of Windows 10 Version 1809 (Build 17763).
 
