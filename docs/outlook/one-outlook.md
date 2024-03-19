@@ -75,7 +75,7 @@ To help you sign up and install the Outlook desktop client, see [Getting started
 For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
 
 > [!TIP]
-> If you're moving from the classic Outlook client on Windows to the new Outlook client, note that that the location of add-ins is different. While add-ins are accessed from the ribbon or app bar in the classic Outlook client, access to add-ins in the new Outlook client depends on whether you're reading or composing a mail item. To learn more, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
+> If you're moving from the classic Outlook client on Windows to the new Outlook client, note that the location of add-ins is different. While add-ins are accessed from the ribbon or app bar in the classic Outlook client, access to add-ins in the new Outlook client depends on whether you're reading or composing a mail item. To learn more, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
 ## Debug your add-in
 
