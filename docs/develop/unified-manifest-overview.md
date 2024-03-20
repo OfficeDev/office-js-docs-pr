@@ -44,7 +44,7 @@ Each of the base properties listed in the following table has more extensive doc
 |"$schema"| Identifies the manifest schema. | 
 |"manifestVersion"| Version of the manifest schema. |  
 |"id"| GUID of the Teams app/add-in. |
-|"version"| Version of the Teams app/add-in. | 
+|"version"| Version of the Teams app/add-in. The format must be `n.n.n` where each `n` can be no more than five digits.| 
 |"name"| Public short and long names of the Teams app/add-in. The short name appears at the top of an add-in's task pane. | 
 |"description"| Public short and long descriptions of the Teams app/add-in. | 
 |"developer"| Information about the developer of the Teams app/add-in. | 
