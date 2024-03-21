@@ -372,7 +372,7 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 - A task pane command can't be assigned to the spam-reporting button on the ribbon. If you want to implement a task pane in your add-in, you must include the [Action element](/javascript/api/manifest/action#xsitype-is-showtaskpane) in the manifest and set its `xsi:type` attribute to `ShowTaskpane`. Note that a separate button to activate the task pane will be added to the ribbon, but it won't appear in the dedicated spam-reporting area of the ribbon.
 - In Outlook on the web or in new Outlook on Windows (preview), a post-processing dialog isn't shown once the add-in completes processing a reported message. This applies even if the `showPostProcessingDialog` property in the `event.completed` call is configured. However, depending on how you configured the `moveItemTo` property in the `event.completed` call, a notification is shown to signal when the reported message is deleted or moved to another folder in the mailbox.
 
-    :::image type="content" source="../images/outlook-owa-deleted-notification.png" alt-text="The notification shown when a user deletes a message in Outlook on the web or on new Outlook on Windows.":::
+    :::image type="content" source="../images/outlook-owa-deleted-notification.png" alt-text="The notification shown when a user deletes a message in Outlook on the web or in new Outlook on Windows.":::
 
 ## Troubleshoot your add-in
 
