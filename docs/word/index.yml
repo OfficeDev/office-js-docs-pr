@@ -8,7 +8,7 @@ metadata:
   description: Resources for learning about Word add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: word #Required
   ms.topic: landing-page # Required
-  ms.date: 12/12/2023 #Required; mm/dd/yyyy format.
+  ms.date: 03/08/2024 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -39,6 +39,8 @@ landingContent:
             url: ../publish/publish.md
       - linkListType: sample
         links:
+          - text: Import a Word document template with a Word add-in
+            url: import-template.md
           - text: Manage citations through your Word add-in
             url: citation-management.md
 
