@@ -247,7 +247,7 @@ You can use Markdown to format the message of a Smart Alerts dialog. However, on
 
     :::image type="content" source="../images/outlook-smart-alerts-bold.png" alt-text="A sample Smart Alerts dialog with bold text.":::
 
-- Unordered or bulleted lists. To create an item in the list, begin with a dash (`-`) or asterisk (`*`), add the content, then append `\r` to signify item completion.
+- Bulleted or unordered lists. To create an item in the list, begin with a dash (`-`) or asterisk (`*`), add the content, then append `\r` to signify item completion.
 
     ```javascript
     event.completed({
