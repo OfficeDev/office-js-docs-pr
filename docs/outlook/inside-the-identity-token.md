@@ -1,11 +1,14 @@
 ---
 title: Inside the Exchange identity token in an Outlook add-in
 description: Learn about the contents of an Exchange user identity token generated from an Outlook add-in.
-ms.date: 05/20/2023
+ms.date: 03/21/2024
 ms.localizationpriority: medium
 ---
 
 # Inside the Exchange identity token
+
+> [!IMPORTANT]
+> Legacy Exchange user identity tokens and callback tokens will be turned off by default for all Exchange Online tenants in October 2024 as part of [Microsoft’s Secure Future Initiative](https://blogs.microsoft.com/on-the-issues/2023/11/02/secure-future-initiative-sfi-cybersecurity-cyberattacks/), which gives organizations the tools needed to respond to the current threat landscape. Exchange user identity tokens will still work for Exchange on premise. Nested app authentication is the recommended approach for tokens going forward. For more information see <tbd blog post>
 
 The Exchange user identity token returned by the [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method provides a way for your add-in code to include the user's identity with calls to your back-end service. This article will discuss the format and contents of the token.
 
