@@ -1,7 +1,7 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 02/18/2024
+ms.date: 03/26/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -393,7 +393,10 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 ## Register the JavaScript functions
 
-1. In the same **commands.js** file, insert the following after the `appendDisclaimerOnSend` function. These calls map the function name specified in the manifest's **\<FunctionName\>** element to its JavaScript counterpart.
+1. In the same **commands.js** file, insert the following after the `appendDisclaimerOnSend` function. These calls map the function name specified in the manifest to its JavaScript counterpart. The location of the function name in the manifest varies depending on the type of manifest your add-in uses.
+
+- **XML manifest**: The function name specified in the **\<FunctionName\>** element.
+- **Unified manifest for Microsoft 365**: The function name specified in the "id" property of the objects in the "extensions.runtimes.actions" array.
 
     ```javascript
     Office.actions.associate("prependHeaderOnSend", prependHeaderOnSend);
