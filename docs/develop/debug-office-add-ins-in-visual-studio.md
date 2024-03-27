@@ -40,7 +40,7 @@ The following table describes the properties of the add-in project.
 |**Project Folder**|Specifies the location of the project file.|
 |**Active Deployment Configuration**<br/>(present only when debugging Excel,<br/> PowerPoint, or Word on the web)|Specifies the deployment configuration. This should be set to **Default**.|
 |**Server Connection**<br/>(present only when debugging Excel,<br/> PowerPoint, or Word on the web)|Specifies whether the project connects to the SharePoint service specified in the **Site URL** property. This should be set to **Online**.|
-|**Site URL**<br/>(present only when debugging Excel,<br/> PowerPoint, or Word on the web)|Specifies the full, absolute URL of the SharePoint tenant that you want to host the add-in pages when debugging. For example **https://mysite.sharepoint.com/**|
+|**Site URL**<br/>(present only when debugging Excel,<br/> PowerPoint, or Word on the web)|Specifies the full, absolute URL of the SharePoint tenant that you want to host the add-in pages when debugging. For example `https://mysite.sharepoint.com/`|
 
 > [!NOTE]
 > For an Outlook add-in, you may choose to specify values for one or more of the *Outlook add-ins only* properties in the **Properties** window, but doing so isn't required.
@@ -99,11 +99,11 @@ Next, Visual Studio does the following:
 
 ### Debug the add-in
 
-The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. To determine which webview control is being used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your computer is using WebView2, see [Use the built-in Visual Studio debugger](#use-the-built-in-visual-studio-debugger-to-debug-on-the-desktop). For any other webview control, see [Use the browser developer tools](#use-the-browser-developer-tools-to-debug-on-the-desktop).
+The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. To determine which webview control is being used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your computer is using WebView2, see [Use the built-in Visual Studio debugger to debug on the desktop](#use-the-built-in-visual-studio-debugger-to-debug-on-the-desktop). For any other webview control, see [Use the browser developer tools to debug on the desktop](#use-the-browser-developer-tools-to-debug-on-the-desktop).
 
 #### Use the built-in Visual Studio debugger to debug on the desktop
 
-1. Set breakpoints, as needed, in the source JavaScript or TypeScript files. You can do this either before or after you start the add-in as described in the earlier section [Start the Excel, PowerPoint, or Word add-in project](#start-the-excel-powerpoint-or-word-add-in-project). If setting a breakpoint causes the IIS server to shut down, restart debugging after you have set your breakpoints.
+1. Set breakpoints, as needed, in the source JavaScript or TypeScript files. You can do this either before or after you start the add-in as described in the earlier section [Start the add-in project](#start-the-add-in-project). If setting a breakpoint causes the IIS server to shut down, restart debugging after you have set your breakpoints.
 
 1. When the add-in is running, use the add-in's UI to run the code that contains your breakpoints. 
 
@@ -153,21 +153,21 @@ Start the project by choosing **Debug** > **Start Debugging** from the menu bar 
 >    1. Stop debugging in Visual Studio.
 >    1. [Create a PowerShell script](/powershell/scripting/windows-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise) with the following lines. Replace the placeholder `{Full absolute URL to add-in home page}` with the redirect URL in the error message; for example, "https://contoso-79d42f062409ae.sharepoint.com/_forms/default.aspx".
 >
->    ```powershell
->    Connect-MgGraph -Scopes Application.ReadWrite.All
->    $sharepointPrincipal = Get-MgServiceprincipal -Filter "AppId eq '00000003-0000-0ff1-ce00-000000000000'"
->    $sharepointPrincipal | fl
->    $replyUrls = $sharepointPrincipal.ReplyUrls
->    $replyUrls += "{Full absolute URL to add-in home page}"
->    Update-MgServiceprincipal -ServicePrincipalId $sharepointPrincipal.Id -ReplyUrls $replyUrls
->    ```
+>       ```powershell
+>       Connect-MgGraph -Scopes Application.ReadWrite.All
+>       $sharepointPrincipal = Get-MgServiceprincipal -Filter "AppId eq '00000003-0000-0ff1-ce00-000000000000'"
+>       $sharepointPrincipal | fl
+>       $replyUrls = $sharepointPrincipal.ReplyUrls
+>       $replyUrls += "{Full absolute URL to add-in home page}"
+>       Update-MgServiceprincipal -ServicePrincipalId $sharepointPrincipal.Id -ReplyUrls $replyUrls
+>       ```
 >
 >    1. Run the script in PowerShell.
 >    1. Restart the project by choosing **Debug** > **Start Debugging** from the menu bar or press the F5 button.
 
 When Visual Studio builds the project it performs the following tasks.
 
-1. Prompts you for login credentials. If you're asked to sign in repeatedly or if you receive an error that you're unauthorized, then Basic Auth may be disabled for accounts on your Microsoft 365 tenant. In this case, try using a Microsoft account instead. You can also try setting the property **Use multi-factor auth** to **True** in the Outlook Web Add-in project properties pane. See [Add-in project properties](#add-in-project-properties).
+1. Prompts you for login credentials. If you're asked to sign in repeatedly or if you receive an error that you're unauthorized, then Basic Auth may be disabled for accounts on your Microsoft 365 tenant. In this case, try using a Microsoft account instead. You can also try setting the property **Use multi-factor auth** to **True** in the add-in project properties pane. See [Add-in project properties](#add-in-project-properties).
 
 1. Creates a copy of the XML manifest file and adds it to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory. Microsoft 365 consumes this copy when you start Visual Studio and debug the add-in.
 
@@ -175,7 +175,7 @@ When Visual Studio builds the project it performs the following tasks.
 
 Next, Visual Studio does the following:
 
-1. Modifies the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the XML manifest file (that was copied to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory) by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://contoso.sharepoint.com/Home.html`).
+1. Modifies the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the XML manifest file (that was copied to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory) by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://contoso-79d42f062409ae.sharepoint.com/_forms/default.aspx`).
 
 1. Starts the web application project.
 
@@ -188,11 +188,11 @@ Next, Visual Studio does the following:
 
 ### Debug the add-in on the web
 
-The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. To determine which webview control is being used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your computer is using WebView2, see [Use the built-in Visual Studio debugger](#use-the-built-in-visual-studio-debugger-to-debug-on-the-web). For any other webview control, see [Use the browser developer tools](#use-the-browser-developer-tools-to-debug-on-the-web).
+The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. To determine which webview control is being used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your computer is using WebView2, see [Use the built-in Visual Studio debugger to debug on the web](#use-the-built-in-visual-studio-debugger-to-debug-on-the-web). For any other webview control, see [Use the browser developer tools to debug on the web](#use-the-browser-developer-tools-to-debug-on-the-web).
 
 #### Use the built-in Visual Studio debugger to debug on the web
 
-1. Set breakpoints, as needed, in the source JavaScript or TypeScript files. You can do this either before or after you start the add-in as described in the earlier section [Start the Outlook add-in project](#start-the-outlook-add-in-project).
+1. Set breakpoints, as needed, in the source JavaScript or TypeScript files. You can do this either before or after you start the add-in as described in the earlier section [Start the add-in project on the web](#start-the-add-in-project-on-the-web).
 
 1. When the add-in is running, use the add-in's UI to run the code that contains your breakpoints. 
 
@@ -203,11 +203,11 @@ The best method for debugging an add-in in Visual Studio 2022 depends on whether
 
 #### Use the browser developer tools to debug on the web
 
-1. In the Outlook page, select an email message or appointment item to open it in its own window.
+1. For an add-in in any host except Outlook, in the Office host application page, press F12 to open the debugging tool.
 
-1. Press F12 to open the Edge debugging tool.
+1. For an Outlook add-in, if the add-in's manifest is configured for a read surface, select an email message or appointment item to open it in its own window. If the add-in is configured for only a compose surface, open a new message, reply to message, or new appointment window. Ensure that the appropriate window has focus and press F12 to pen the debugging tool.
 
-1. After the tool is open, launch the add-in. For example, in the toolbar at the top of a message, select the **More apps** button, and then select your add-in from the callout that opens.
+1. After the tool is open, launch the add-in. The exact steps vary depending on the design of your add-in. Typically, you press a button to open a task pane. In Outlook, in the toolbar at the top of the window, select the **More apps** button, and then select your add-in from the callout that opens.
 
    ![The More apps button and the callout that it opens with the add-in's name and icon visible along with other app icons.](../images/outlook-more-apps-button.png)
 
