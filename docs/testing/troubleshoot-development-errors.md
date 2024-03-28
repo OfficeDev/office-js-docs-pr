@@ -20,7 +20,7 @@ See [Validate an Office Add-in's manifest](troubleshoot-manifest.md) and [Debug 
 ## Ribbon customizations are not rendering as expected
 
 - With the add-in sideloaded and running, paste the URLs for the add-in's ribbon icons into a browser's navigation bar and see if the icon files open.
-- By default, add-in errors connected to the Office UI are suppressed. You can turn on these error messages with the following steps:
+- By default, add-in errors connected to the Office UI are suppressed. You can turn on these error messages with the following steps.
 
    1. With the add-in removed, open the **File** tab of the Office application.
    1. Select **Options**.
