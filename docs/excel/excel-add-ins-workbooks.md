@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: Learn how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.
-ms.date: 02/07/2024
+ms.date: 03/26/2024
 ms.localizationpriority: medium
 ---
 
@@ -136,7 +136,7 @@ Protection can also be set at the worksheet level to prevent unwanted data editi
 
 ## Access document properties
 
-Workbook objects have access to the Office file metadata, which is known as the [document properties](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75). The Workbook object's `properties` property is a [DocumentProperties](/javascript/api/excel/excel.documentproperties) object containing these metadata values. The following example shows how to set the `author` property.
+Workbook objects have access to the Office file metadata, which is known as the [document properties](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75). The Workbook object's `properties` property is a [DocumentProperties](/javascript/api/excel/excel.documentproperties) object that contains some of these metadata values. The following example shows how to set the `author` property.
 
 ```js
 await Excel.run(async (context) => {
