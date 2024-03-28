@@ -52,7 +52,7 @@ The following table lists the available send mode options.
 
 If the item doesn't meet the add-in's conditions, the user can choose **Send Anyway** in the alert, or address the issue then try to send the item again. If the add-in is taking a long time to process the item, the user will be prompted with the option to stop running the add-in and choose **Send Anyway**. In the event the add-in is unavailable (for example, there's an error loading the add-in), the item will be sent.
 
-![The prompt user dialog with the Send Anyway and Don't Send options.](../images/outlook-launchevent-promptUser.png)
+![The prompt user dialog with the Send Anyway and Don't Send options.](../images/outlook-smart-alerts-prompt-user.png)
 
 Use the **prompt user** option in your add-in if one of the following applies.
 
@@ -65,7 +65,7 @@ Some scenarios where the **prompt user** option is applied include suggesting to
 
 Default option if the send mode property of your manifest isn't configured. The user is alerted that the item they're sending doesn't meet the add-in's conditions and they must address the issue before trying to send the item again. However, if the add-in is unavailable (for example, there's an error loading the add-in), the item will be sent.
 
-![The soft block dialog with the Don't Send option.](../images/outlook-launchevent-soft-block.png)
+![The soft block dialog with the Don't Send option.](../images/outlook-smart-alerts-soft-hard-block.png)
 
 Use the **soft block** option in your add-in when you want a condition to be met before a message or appointment can be sent, but you don't want the user to be blocked from sending the item if the add-in is unavailable. Sample scenarios where the **soft block** option is used include prompting the user to set a message or appointment's importance level and checking that the appropriate signature is applied before the item is sent.
 
@@ -77,7 +77,7 @@ The item isn't sent if any of the following situations occur.
 - The add-in is unable to connect to the server.
 - There's an error loading the add-in.
 
-![The block dialog with the Don't Send option.](../images/outlook-launchevent-block.png)
+![The block dialog with the Don't Send option.](../images/outlook-smart-alerts-soft-hard-block.png)
 
 Use the **block** option if the add-in's conditions are mandatory, even if the add-in is unavailable. For example, the **block** option is ideal when users are required to apply a sensitivity label to a message or appointment before it can be sent.
 
@@ -87,7 +87,7 @@ If the add-in is unavailable when a message or appointment is being sent (for ex
 
 If the **prompt user** or **soft block** option is used, the user can choose **Send Anyway** to send the item without the add-in checking it, or **Try Later** to let the item be checked by the add-in when it becomes available again.
 
-![Dialog that alerts the user that the add-in is unavailable and gives the user the option to send the item now or later.](../images/outlook-soft-block-promptUser-unavailable.png)
+![Dialog that alerts the user that the add-in is unavailable and gives the user the option to send the item now or later.](../images/outlook-soft-block-prompt-user-unavailable.png)
 
 If the **block** option is used, the user can't send the item until the add-in becomes available.
 
@@ -102,7 +102,7 @@ If the add-in runs for more than five seconds, but less than five minutes, the u
 
 If the **prompt user** option is used, the user can choose **Send Anyway** to send the item without the add-in completing its check. Alternatively, the user can select **Don't Send** to stop the add-in from processing.
 
-![Dialog that alerts the user that the add-in is taking longer than expected to process the item. The user can choose to send the item without the add-in completing its check or stop the add-in from processing the item.](../images/outlook-promptUser-long-running.png)
+![Dialog that alerts the user that the add-in is taking longer than expected to process the item. The user can choose to send the item without the add-in completing its check or stop the add-in from processing the item.](../images/outlook-prompt-user-long-running.png)
 
 However, if the **soft block** or **block** option is used, the user will not be able to send the item until the add-in completes processing it.
 
@@ -114,7 +114,7 @@ However, if the **soft block** or **block** option is used, the user will not be
 
 If the add-in runs for five minutes or more, it will time out. If the **prompt user** option is used, the user can choose **Send Anyway** to send the item without the add-in completing its check. Alternatively, the user can choose **Don't Send**.
 
-![Dialog that alerts the user that the add-in process has timed out. The user can choose to send the item without the add-in completing its check, or not send the item.](../images/outlook-promptUser-timeout.png)
+![Dialog that alerts the user that the add-in process has timed out. The user can choose to send the item without the add-in completing its check, or not send the item.](../images/outlook-prompt-user-timeout.png)
 
 If the **soft block** or **block** option is  used, the user can't send the item until the add-in completes its check. The user must attempt to send the item again to reactivate the add-in.
 
