@@ -103,7 +103,7 @@ The best method for debugging an add-in in Visual Studio 2022 depends on whether
 
 #### Use the built-in Visual Studio debugger to debug on the desktop
 
-1. Set breakpoints, as needed, in the source JavaScript or TypeScript files. You can do this either before or after you start the add-in as described in the earlier section [Start the add-in project](#start-the-add-in-project). If setting a breakpoint causes the IIS server to shut down, restart debugging after you have set your breakpoints.
+1. Set breakpoints, as needed, in the source JavaScript or TypeScript files. You can do this either before or after you start the add-in as described in the earlier section [Start the add-in project](#start-the-add-in-project). If setting a breakpoint causes the Internet Information Services (IIS) server to shut down, restart debugging after you have set your breakpoints.
 
 1. When the add-in is running, use the add-in's UI to run the code that contains your breakpoints. 
 
@@ -148,7 +148,7 @@ Start the project by choosing **Debug** > **Start Debugging** from the menu bar 
 >
 >    "The redirect URI `{Full absolute URL to add-in home page}` specified in the request doesn't match the redirect URIs configured for the application  ... "
 >
-> This is caused because new web applications that are deployed to SharePoint may take up to 24 hours to be available. To make your add-in debuggable immediately, take the following steps:
+> This occurs because new web applications that are deployed to SharePoint may take up to 24 hours to be available. To make your add-in debuggable immediately, take the following steps:
 >
 >    1. Stop debugging in Visual Studio.
 >    1. [Create a PowerShell script](/powershell/scripting/windows-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise) with the following lines. Replace the placeholder `{Full absolute URL to add-in home page}` with the redirect URL in the error message; for example, "https://contoso-79d42f062409ae.sharepoint.com/_forms/default.aspx".
