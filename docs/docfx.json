@@ -44,7 +44,6 @@
       "ms.topic": "conceptual",
       "ms.service": "microsoft-365",
       "ms.subservice": "add-ins",
-      "product": ["office", "office-add-ins"],
       "feedback_system": "OpenSource",
       "feedback_product_url": "https://aka.ms/office-addins-dev-questions",
       "open_source_feedback_contributorGuideUrl": "https://github.com/OfficeDev/office-js-docs-pr/blob/main/Contributing.md",
