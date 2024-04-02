@@ -2,7 +2,7 @@
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
 ms.topic: tutorial
-ms.date: 03/15/2024
+ms.date: 04/12/2024
 ms.localizationpriority: high
 ---
 
@@ -71,7 +71,9 @@ You're then prompted to choose which Office application the add-in should run in
 
 ![The Yo Office interface after the user named the project "Contoso Add-in". It shows the prompt for Office application, and the possible answers, in the Yeoman generator.](../images/yo-office-host-prompt.png)
 
-If you choose **Outlook** as the Office application, you get an additional question asking you which type of manifest you want to use. We recommend that you choose **unified manifest for Microsoft 365** unless (1) your add-in will include an extensibility feature that isn't yet supported by the unified manifest or (2) your add-in must be installable in Office on Mac, which doesn't yet support the unified manifest. The unified manifest currently only supports Outlook add-ins and only in Office linked to a Microsoft 365 subscription. It's supported in Outlook on Windows, on a mobile device, in Outlook on the web, and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac and to perpetual versions of Office.
+If you choose **Outlook** as the Office application, you get an additional question asking you which type of manifest you want to use. We recommend that you choose **unified manifest for Microsoft 365** unless (1) your add-in will include an extensibility feature that isn't yet supported by the unified manifest.
+
+[!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
 After you've answered this question, the generator creates the project and installs the dependencies. You may see **WARN** messages in the npm output on screen. You can ignore these. You may also see messages that vulnerabilities were found. You can ignore these for now, but you'll eventually need to fix them before your add-in is released to production. For more information about fixing vulnerabilities, open your browser and search for "npm vulnerability".
 

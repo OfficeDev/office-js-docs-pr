@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Teams Toolkit
 description: Learn how to create Office Add-in projects using Teams Toolkit.
-ms.date: 03/15/2024
+ms.date: 04/12/2024
 ms.localizationpriority: high
 ---
 
@@ -9,8 +9,10 @@ ms.localizationpriority: high
 
 A primary tool for developing Teams Apps is Teams Toolkit. You can create Office Add-ins with Teams Toolkit, with the following restrictions:
 
-- Only Outlook add-ins can be created at this time and only for Outlook on Windows, [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), on the web, and on mobile platforms. We're working hard to enable support in Teams Toolkit for add-ins to other Office applications and platforms.
 - Add-ins created with Teams Toolkit use the [unified manifest for Microsoft 365](unified-manifest-overview.md).
+- Only Outlook add-ins can be created at this time. We're working hard to enable support in Teams Toolkit for add-ins to other Office applications and platforms.
+
+   [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
 Install the latest version of Teams Toolkit into Visual Studio Code as described in [Install Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
 

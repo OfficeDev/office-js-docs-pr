@@ -2,7 +2,7 @@
 title: Office Add-ins manifest
 description: Get an overview of the Office Add-in manifest and its uses.
 ms.topic: overview
-ms.date: 03/15/2024
+ms.date: 04/12/2024
 ms.localizationpriority: high
 ---
 
@@ -11,7 +11,9 @@ ms.localizationpriority: high
 Every Office add-in has a manifest. There are two types of manifests:
 
 - **XML manifest**: This is the only type of manifest that is currently supported for non-Outlook add-ins. As the name indicates, it's XML format. This type of manifest can't be used for an app that combines an add-in with some other kind of extension of the Microsoft 365 platform.
-- **unified manifest for Microsoft 365**: This is an expanded version of the JSON-formatted manifest that has been used for years as the manifest for Teams Apps. Currently, this manifest is only available for Outlook add-ins and only in Office linked to a Microsoft 365 subscription. It's supported in Outlook on Windows, on a mobile device, in Outlook on the web, and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office. Add-ins that use this manifest can be combined with other kinds of extensions of the Microsoft 365 platform in a single app that's installable as a unit whole. 
+- **unified manifest for Microsoft 365**: This is an expanded version of the JSON-formatted manifest that has been used for years as the manifest for Teams Apps. Add-ins that use this manifest can be combined with other kinds of extensions of the Microsoft 365 platform in a single app that's installable as a unit whole.
+
+[!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
 The remainder of this article is applicable to both types of manifest. 
 

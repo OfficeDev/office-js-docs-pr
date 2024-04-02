@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands with the unified manifest for Microsoft 365
 description: Configure the unified manifest for Microsoft 365 to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 03/15/2024
+ms.date: 04/12/2024
 ms.localizationpriority: medium
 ---
 
@@ -14,8 +14,8 @@ This article describes how to configure the [Unified manifest for Microsoft 365]
 > [!TIP]
 > Instructions for creating add-in commands with the XML manifest are in [Create add-in commands with the XML manifest](create-addin-commands.md).
 
-> [!NOTE]
-> The unified manifest currently only supports Outlook add-ins and only in Office linked to a Microsoft 365 subscription. It's supported in Outlook on Windows, on a mobile device, in Outlook on the web, and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac and to perpetual versions of Office.
+
+[!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
 ## Starting point and major steps
 

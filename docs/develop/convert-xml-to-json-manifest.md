@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an XML manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 03/15/2024
+ms.date: 04/12/2024
 ms.localizationpriority: medium
 ---
 
@@ -16,16 +16,17 @@ There are three basic tasks to converting an add-in project from the XML manifes
 - Convert the XML manifest itself to the JSON format of the unified manifest.
 - Package the new manifest and the two icon image files into a zip file for sideloading or deployment.
 
+[!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
+
 > [!NOTE]
 > 
-> - Currently, the unified manifest is only available for Outlook add-ins and only in Office linked to a Microsoft 365 subscription. It's supported in Outlook on Windows, on a mobile device, in Outlook on the web, and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac and to perpetual versions of Office.
 > - Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
 > - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
 > - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
 
 ## Ensure that you have the two image files
 
-It's highly likely that you have the two image files already in your add-in. They're specified in the [IconUrl](/javascript/api/manifest/iconurl) and [HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl) elements in the XML manifest. Because these are both optional elements, your add-in project mignt not have one or both. These are required for an add-in that uses the unified manifest, so you need to create them if the project doesn't already have them. For guidance, see [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in). 
+It's highly likely that you have the two image files already in your add-in. They're specified in the [IconUrl](/javascript/api/manifest/iconurl) and [HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl) elements in the XML manifest. Because these are both optional elements, your add-in project might not have one or both. These are required for an add-in that uses the unified manifest, so you need to create them if the project doesn't already have them. For guidance, see [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in). 
 
 When you've added the files to the project, add **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) to the XML manifest just below the **\<Description\>** element. The following is an example.
 
