@@ -1,23 +1,23 @@
 ---
-title: Enable SSO in an Office Add-in as a single-page application
-description: Learn how to enable SSO in an Office Add-in running as an SPA.
+title: Enable SSO in an Office Add-in using nested app authentication
+description: Learn how to enable SSO in an Office Add-in using nested app authentication.
 ms.date: 03/20/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 
 ---
 
-# Enable SSO in an Office Add-in as a single-page application (preview)
+# Enable SSO in an Office Add-in using nested app authentication (preview)
 
-You can use the MSAL.js library (version 3.10 and later) to use SSO and run your add-in as a single-page application (SPA). This approach offers several advantages over the On-Behalf-Of (OBO) flow.
+You can use the MSAL.js library (version 3.10 and later) with nested app authentication to use SSO from your Office Add-in. Using nested app authentication offers several advantages over the On-Behalf-Of (OBO) flow.
 
-- You only need to use the MSAL.js library and don’t need to use the getAccessToken function in Office.js.
-- There’s no need for a middle-tier server. You can call services such as Microsoft Graph with an access token from your client code as an SPA.
+- You only need to use the MSAL.js library and don’t need to use the `getAccessToken` function in Office.js.
+- You can call services such as Microsoft Graph with an access token from your client code as an SPA. There’s no need for a middle-tier server.
 - You can use incremental and dynamic consent for scopes.
+- You don't need to [preauthorize your hosts](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab?tabs=manifest-teams-toolkit#update-azure-ad-app-registration-for-sso) (For example, Teams, Office) to call your endpoints.
 
-The MSAL.js library (version 3.10 and later) supports SSO in Office on the web. To support Office on native hosts, such as Office on Mac and Windows, the MSAL.js uses nested app authentication (NAA). In this article you’ll learn how to enable NAA so that you can use SSO when running in an Office native host application.
-
-NOTE: Nested app authentication is currently in preview. To try this feature you need to join the Microsoft 365 Insider Program (https://insider.microsoft365.com/en-us/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> [!IMPORTANT]
+> Nested app authentication is currently in preview. To try this feature you need to join the Microsoft 365 Insider Program (https://insider.microsoft365.com/en-us/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 ## Register your single-page application
 
@@ -31,15 +31,15 @@ If your add-in requires additional app registration beyond NAA and SSO, see [Sin
 
 ## Add a trusted broker through SPA redirect
 
-To enable NAA, your app registration must include a specific redirect URI to indicate to the Microsoft identity platform that your add-in allows itself to be brokered by supported hosts. The redirect URI of the application must be of type Single Page Application and conform to the following scheme.
+To enable NAA, your app registration must include a specific redirect URI to indicate to the Microsoft identity platform that your add-in allows itself to be brokered by supported hosts. The redirect URI of the application must be of type **Single Page Application** and conform to the following scheme.
 
 `brk-multihub://your-add-in-domain`
 
 Trusted broker groups are dynamic by design and can be updated in the future to include additional hosts where your add-in may use NAA flows. Currently the brk-multihub group includes Office Word, Excel, PowerPoint, Outlook, and Teams (for when Office is activated inside).
 
-## Enable NAA in your MSAL config
+## Configure MSAL config to use NAA
 
-Configure your add-in to enable NAA by setting the **supportsNestedAppAuth** property to true in your MSAL configuration. This enables MSAL to use APIs on its native application host (For example, Outlook) to acquire tokens for your application. If you don't set this property, MSAL uses the default JavaScript-based implementation to acquire tokens for your application, which may lead to unexpected auth prompts and unsatisfiable Conditional Access policies when running inside of a WebView.
+Configure your add-in to use NAA by setting the `supportsNestedAppAuth` property to true in your MSAL configuration. This enables MSAL to use APIs on its native application host (For example, Outlook) to acquire tokens for your application. If you don't set this property, MSAL uses the default JavaScript-based implementation to acquire tokens for your application, which may lead to unexpected auth prompts and unsatisfiable conditional access policies when running inside of a webview.
 
 ```JavaScript
 // Configuration for NAA.  
@@ -55,7 +55,7 @@ const msalConfig = {
 
 ## Initialize the public client application
 
-Next you need to initialize MSAL and get an instance of the public client application. This is used to get access tokens when needed. It's recommended to create the public client application in the **Office.onReady** method.
+Next you need to initialize MSAL and get an instance of the public client application. This is used to get access tokens when needed. It's recommended to create the public client application in the `Office.onReady` method.
 
 ```javascript
 let pca = undefined;
@@ -68,7 +68,7 @@ Office.onReady(async (info) => {
 
 ## Acquire your first token
 
-The tokens acquired by MSAL.js via NAA will be issued for your app registration ID. Unlike OBO, you don't need to [preauthorize your hosts](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab?tabs=manifest-teams-toolkit#update-azure-ad-app-registration-for-sso) (For example, Teams, Office) to call your endpoints. In this code sample, we acquire a token for the Microsoft Graph API. The token is acquired silently if the user has an active session with Microsoft Entra ID. If not, the library prompts the user to sign-in interactively. The token is then used to call the Microsoft Graph API.
+The tokens acquired by MSAL.js via NAA will be issued for your Azure app registration ID. In this code sample, we acquire a token for the Microsoft Graph API. The token is acquired silently if the user has an active session with Microsoft Entra ID. If not, the library prompts the user to sign in interactively. The token is then used to call the Microsoft Graph API.
 
 The following steps show the pattern to use for acquiring a token:
 
@@ -104,7 +104,7 @@ async function run() {
 
 ## Call an API
 
-After acquiring the token, we use it to call an API. The following example shows how to call the Microsoft Graph API using the `fetch` with our token attached in the *Authorization* header.
+After acquiring the token use it to call an API. The following example shows how to call the Microsoft Graph API by calling `fetch` with the token attached in the *Authorization* header.
 
 ```javascript
 async function makeMSGraphCall(accessToken) {
@@ -127,9 +127,13 @@ async function makeMSGraphCall(accessToken) {
 }
 ```
 
+## What is nested app authentication
+
+Nested app authentication enables SSO for applications that are nested inside of supported first-party applications. For example, Excel on Windows runs your add-in inside a webview. In this scenario, your add-in is a nested application running inside Excel, which is the host. NAA also supports nested apps in Teams. For example, if a Teams tab is hosting Excel, and your add-in is loaded, it is nested inside Excel, which is also nested inside Teams. Again, NAA supports this nested scenario and you can access SSO to get user identity and access tokens of the signed in user.
+
 ## NAA supported accounts and hosts
 
-NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn’t support B2C scenarios. For preview, NAA is supported in Office on Windows, Mac. For GA NAA will also work on iOS, as well as Outlook Mobile on Android and iOS.  
+NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn’t support B2C scenarios. For preview, NAA is supported in Office on Windows and Mac. For GA, NAA will also support Office on the web, iOS, and Outlook Mobile on Android and iOS.
 
 ## Best practices
 
@@ -179,7 +183,6 @@ While we strive to provide a high-degree of compatibility with these flows acros
 | *setLogger*                   | YES               |
 | *ssoSilent*                   | YES              |
 
+## Security reporting
 
-Security reporting 
-
-If you find a security issue with our libraries or services, report the issue to [secure@microsoft)](secure@microsoft).com with as much detail as you can provide. Your submission may be eligible for a bounty through the [Microsoft Bounty](https://aka.ms/bugbounty) program. Don't post security issues to [GitHub Issues](https://github.com/AzureAD/microsoft-authentication-library-for-android/issues) or any other public site. We'll contact you shortly after receiving your issue report. We encourage you to get new security incident notifications by visiting [Microsoft technical security notifications](https://technet.microsoft.com/security/dd252948) to subscribe to Security Advisory Alerts.
+If you find a security issue with our libraries or services, report the issue to [secure@microsoft)](secure@microsoft).com with as much detail as you can provide. Your submission may be eligible for a bounty through the [Microsoft Bounty](https://aka.ms/bugbounty) program. Don't post security issues to GitHub or any other public site. We'll contact you shortly after receiving your issue report. We encourage you to get new security incident notifications by visiting [Microsoft technical security notifications](https://technet.microsoft.com/security/dd252948) to subscribe to Security Advisory Alerts.
