@@ -151,7 +151,7 @@ While we strive to provide a high-degree of compatibility with these flows acros
 
 ## MSAL.js APIs supported by NAA
 
-The following table shows which methods are supported when NAA is enabled in the MSAL config.
+The following table shows which APIs are supported when NAA is enabled in the MSAL config.
 
 | Method                        | Supported by NAA |
 |-------------------------------|------------------|
