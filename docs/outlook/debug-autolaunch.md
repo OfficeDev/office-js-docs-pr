@@ -1,7 +1,7 @@
 ---
 title: Debug your event-based or spam-reporting Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation or integrated spam reporting.
-ms.date: 02/29/2024
+ms.date: 03/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -18,10 +18,12 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
 ## Mark your add-in for debugging and set the debugger port
 
-1. Set the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`. Replace `[Add-in ID]` with your add-in's ID from the manifest.
+1. Get your add-in's ID from the manifest.
 
-    - **XML manifest**: Use the value of the **\<Id\>** element child of the root **\<OfficeApp\>** element.
+    - **XML manifest**: Use the value of the **\<Id\>** element, child of the root **\<OfficeApp\>** element.
     - **Unified manifest for Microsoft 365 (preview)**: Use the value of the "id" property of the root anonymous `{ ... }` object.
+
+1. Create a registry `DWORD` value named `UseDirectDebugger` in `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]`. Replace `[Add-in ID]` with your add-in's ID from the manifest.
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
@@ -31,9 +33,9 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
     npm start
     ```
 
-    In addition to building the code and starting the local server, this command sets the `UseDirectDebugger` registry key for this add-in to `1`.
+    In addition to building the code and starting the local server, this command sets the `UseDirectDebugger` registry DWORD value data for this add-in to `1`.
 
-    **Other**: Add the `UseDirectDebugger` registry key to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\`. Replace `[Add-in ID]` with your add-in's ID from the manifest. Set the registry key to `1`.
+    **Other**: In the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\UseDirectDebugger` registry DWORD value, where `[Add-in ID]` is your add-in's ID from the manifest, set the value data to `1`.
 
 1. In the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]`, where `[Add-in ID]` is your add-in's ID from the manifest, create a new `DWORD` value with the following configuration.
 
