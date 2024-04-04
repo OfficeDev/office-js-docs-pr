@@ -71,7 +71,7 @@ You're then prompted to choose which Office application the add-in should run in
 
 ![The Yo Office interface after the user named the project "Contoso Add-in". It shows the prompt for Office application, and the possible answers, in the Yeoman generator.](../images/yo-office-host-prompt.png)
 
-If you choose **Outlook** as the Office application, you get an additional question asking you which type of manifest you want to use. We recommend that you choose **unified manifest for Microsoft 365** unless (1) your add-in will include an extensibility feature that isn't yet supported by the unified manifest.
+If you choose **Outlook** as the Office application, you get an additional question asking you which type of manifest you want to use. We recommend that you choose **unified manifest for Microsoft 365** unless your add-in will include an extensibility feature that isn't yet supported by the unified manifest.
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 

@@ -19,7 +19,7 @@ There are several "requirements" properties in the [unified manifest for Microso
 
 The "extensions.requirements" property specifies the scopes, form factors, and [requirement sets](/javascript/api/requirement-sets) for Microsoft 365 Add-ins. If the Microsoft 365 version doesn't support the specified requirements, then the extension won't be available for installation. Users won't see it in the Office UI for searching and installing add-ins. Some examples:
 
-- If the "requirements.capabilities.name" property is set to "Mailbox" and the "requirements.capabilities.minVersion" to "1.10", then the add-in isn't installable on older versions of Office that don't support the **Mailbox** requirement set greater than version 1.9.
+- If the "requirements.capabilities.name" property is set to "Mailbox" and the "requirements.capabilities.minVersion" to "1.10", then the add-in isn't installable on older versions of Office that don't support **Mailbox** requirement sets greater than version 1.9.
 - If the "requirements.scopes" is set to "mail", then the add-in is installable only on Outlook.
 - If the "requirements.formFactors" is set to only "desktop", then the add-in isn't installable on Office running on a mobile device.
 

@@ -7,7 +7,7 @@ ms.localizationpriority: high
 
 # Create Office Add-in projects with Teams Toolkit
 
-A primary tool for developing Teams Apps is Teams Toolkit. You can create Office Add-ins with Teams Toolkit, with the following restrictions:
+A primary tool for developing Teams Apps is Teams Toolkit. You can create Office Add-ins with Teams Toolkit, with the following restrictions.
 
 - Add-ins created with Teams Toolkit use the [unified manifest for Microsoft 365](unified-manifest-overview.md).
 - Only Outlook add-ins can be created at this time. We're working hard to enable support in Teams Toolkit for add-ins to other Office applications and platforms.

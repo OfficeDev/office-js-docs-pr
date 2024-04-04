@@ -8,7 +8,7 @@ ms.localizationpriority: high
 
 # Office Add-ins XML manifest
 
-This article introduces the XML-formatted manifest for Office Add-ins. It assumes that you're familiar with [Office Add-ins manifest](add-in-manifests.md). 
+This article introduces the XML-formatted manifest for Office Add-ins. It assumes that you're familiar with the [Office Add-ins manifest](add-in-manifests.md). 
 
 > [!TIP]
 > For an overview of the unified manifest for Microsoft 365, see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
