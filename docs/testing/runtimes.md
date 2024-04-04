@@ -2,7 +2,7 @@
 title: Runtimes in Office Add-ins
 description: Learn about the runtimes that are used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 03/21/2024
+ms.date: 04/04/2024
 ms.localizationpriority: medium
 ---
 
@@ -133,7 +133,10 @@ This type of runtime is used in event-based and spam-reporting add-ins in Outloo
   > [!NOTE]
   > The [event-based activation](../outlook/autolaunch.md) and [integrated spam reporting](../outlook/spam-reporting.md) features in Outlook must use the same runtime. Multiple runtimes aren't currently supported in Outlook.
 
-A JavaScript-runtime uses less memory and starts up faster than a browser runtime, but has fewer features.
+A JavaScript-only runtime uses less memory and starts up faster than a browser runtime, but has fewer features.
+
+> [!IMPORTANT]
+> The JavaScript-only runtime directly supports the ECMAScript 2016 standard of JavaScript, but you can use later versions of JavaScript or TypeScript. For information about how to do this, see [](../develop/support-ie-11.md#support-for-recent-versions-of-javascript).
 
 ## Browser runtime
 
