@@ -1,7 +1,7 @@
 ---
 title: Publish task pane and content add-ins to a SharePoint app catalog
 description: To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the app catalog for their organization.
-ms.date: 04/03/2024
+ms.date: 04/04/2024
 ms.localizationpriority: medium
 ---
 
@@ -69,7 +69,7 @@ Complete the steps in one of the following sections to publish an Office Add-in 
 
 Find Office Add-ins from the app catalog using the following steps.
 
-### Office on the web (not Outlook)
+### Office on the web
 
 1. Open the application.
 1. Create or open a document.
@@ -78,7 +78,7 @@ Find Office Add-ins from the app catalog using the following steps.
 1. In the Office Add-ins dialog, choose the **MY ORGANIZATION** tab.
 1. Choose an Office Add-in and then choose **Add**.
 
-### Office on desktop (not Outlook)
+### Office on desktop
 
 1. Open the application.
 1. Choose **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
