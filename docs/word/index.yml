@@ -1,14 +1,14 @@
 ### YamlMime:Landing
 
 title: Word add-ins documentation # < 60 chars
-summary: With Word add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Word across multiple platforms, including on the web, Windows, Mac, and iPad. Learn how to build, test, debug, and publish Word add-ins. # < 160 chars
+summary: With Word add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that runs in Word across multiple platforms, including on the web, Windows, Mac, and iPad. Learn how to build, test, debug, and publish Word add-ins. # < 160 chars
 
 metadata:
   title: Word add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Resources for learning about Word add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: word #Required
   ms.topic: landing-page # Required
-  ms.date: 03/08/2024 #Required; mm/dd/yyyy format.
+  ms.date: 04/03/2024 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
