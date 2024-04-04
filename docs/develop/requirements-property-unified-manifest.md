@@ -1,6 +1,6 @@
 ---
-title: Specifying Office Add-in requirements in the unified manifest for Microsoft 365
-description: Learn how to use requirements to configure on which host and platforms an add-in can be installed.
+title: Specify Office Add-in requirements in the unified manifest for Microsoft 365
+description: Learn how to use requirements to configure on which host and platforms an add-in can be installed and which features are available.
 ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
@@ -11,16 +11,9 @@ ms.localizationpriority: medium
   it will be moving over to the M365 doc set as soon as that is up and running. 
 -->
 
-# Specifying Office Add-in requirements in the unified manifest for Microsoft 365
+# Specify Office Add-in requirements in the unified manifest for Microsoft 365
 
-The "requirements" property in the [unified manifest for Microsoft 365](unified-manifest-overview.md) controls the Office applications and versions on which the add-in can be installed. See [extensions.requirements](#extensions-requirements). 
-
-It can also be used to selectively suppress some features of an add-in on specific Office applications or versions where those features would be unneeded or unsupported. For more information, see the following sections.
-
-- [extensions.alternates.requirements](#extensionsalternatesrequirements)
-- [extensions.autoRunEvents.requirements](#extensionsautoruneventsrequirements)
-- [extensions.ribbons.requirements](#extensionsribbonsrequirements)
-- [extensions.runtimes.requirements](#extensionsruntimesrequirements)
+There are several "requirements" properties in the [unified manifest for Microsoft 365](unified-manifest-overview.md). The [extensions.requirements](#extensions-requirements) property controls the Office applications and versions on which the add-in can be installed. Other "requirements" properties are used to selectively suppress some features of an add-in on specific Office applications or versions where those features would be unneeded or unsupported. For more information, see [Filter features](#filter-features).
 
 ## extensions.requirements
 
@@ -29,6 +22,33 @@ The "extensions.requirements" property specifies the scopes, formFactors, and [r
 - If the "requirements.capabilities.name" property is set to "Mailbox" and the "requirements.capabilities.minVersion" to "1.10", then the add-in isn't installable on older versions of Office that don't support the **Mailbox** requirement set greater than version 1.9.
 - If the "requirements.scopes" is set to "mail", then the add-in is installable only on Outlook.
 - If the "requirements.formFactors" is set to only "desktop", then the add-in isn't installable on Office running on a mobile device.
+
+You can have more than one capability object. The following example shows how to ensure that an add-in is installable only on versions of Office that support two different requirement sets and not on mobile devices.
+
+```json
+"extensions": [
+    ...
+    "requirements": {
+        "capabilities": [
+            {
+                "name": "MailBox",
+                "minVersion": "1.10"
+            },
+            {
+                "name": "DialogAPI",
+                "minVersion": "1.2"
+            }
+        ],
+        "formFactors": [
+            "desktop"
+        ]
+    }
+]
+```
+
+## Filter features
+
+The "requirements" properties in descendant objects of "extensions" are used to filter out; that is, block, some features of an add-in while still allowing the add-in to be installed. The implementation of this filtering is done at the source of installation, such as [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) or [Microsoft 365 Admin Center](../publish/publish.md). If the version of Office doesn't support the requirements specified for the feature, then the JSON node for the feature is removed from the manifest before it is installed in the Office application. 
 
 ### extensions.alternates.requirements
 
@@ -44,7 +64,7 @@ For more information, see [Manage both a unified manifest and an XML manifest ve
 
 The "requirements" subproperty of "extensions.alternates" to selectively apply the "hide" or "prefer" subproperties only when certain requirements are met. 
 
-For example, suppose that you want to hide (from the Office UI for installing add-ins) an older version of your add-in, but only in Office versions that support the **Mailbox 1.10** requirement set. You could do that with markup similar to the following. 
+For example, suppose that you want to hide (from the Office UI for installing add-ins) an older version of your add-in, but only in Office versions that support the **Mailbox 1.10** requirement set. You could do that with markup similar to the following.
 
 ```json
 "extensions": [
@@ -62,10 +82,12 @@ For example, suppose that you want to hide (from the Office UI for installing ad
                     }
                 },
                 "requirements": {
-                    "capabilities": {
-                        "name": "MailBox",
-                        "minVersion": "1.10"
-                    }
+                    "capabilities": [
+                        {
+                            "name": "MailBox",
+                            "minVersion": "1.10"
+                        }
+                    ]
                 }
             }
         ]
@@ -77,7 +99,7 @@ For example, suppose that you want to hide (from the Office UI for installing ad
 
 The "extensions.autoRunEvents" property configures an add-in to run specified code automatically in response to specified events. The "requirements" subproperty can be used to block this behavior in some versions of Office.
 
-For example, suppose an Outlook add-in is configured to autolaunch in response to the **OnMailSend** event and code in the function that runs requires the **Mailbox 1.13** requirement set. But the add-in has other features that would be useful Office versions that only support version 1.12. To ensure that the add-in is installable on versions that support 1.12, a developer can set the “extensions.requirements.capabilities” property to the requirement set **MailBox 1.12**. But to block the autolaunch feature in versions that don't support 1.13, the developer can add an “extensions.autoRunEvents.requirements.capabilities” property that specifies **Mailbox 1.13**. The following is an example.
+For example, suppose an Outlook add-in is configured to autolaunch in response to the **OnMailSend** event and suppose that the code in the function that runs requires the **Mailbox 1.13** requirement set. But the add-in has other features that would be useful Office versions that only support version 1.12. To ensure that the add-in is installable on versions that support 1.12, a developer can set the “extensions.requirements.capabilities” property to the requirement set **MailBox 1.12** instead of 1.13. But to block the autolaunch feature in versions that don't support 1.13, the developer can add an “extensions.autoRunEvents.requirements.capabilities” property that specifies **Mailbox 1.13**. The following is an example.
 
 ```json
 "extensions": [
@@ -96,10 +118,12 @@ For example, suppose an Outlook add-in is configured to autolaunch in response t
                     }
                 },
                 "requirements": {
-                    "capabilities": {
-                        "name": "MailBox",
-                        "minVersion": "1.13"
-                    }
+                    "capabilities": [
+                        {
+                            "name": "MailBox",
+                            "minVersion": "1.13"
+                        }
+                    ]
                 }
             }
         ]
@@ -111,7 +135,7 @@ For example, suppose an Outlook add-in is configured to autolaunch in response t
 
 The "extensions.ribbons" property is used to customize the Office application ribbon when the add-in is installed. The "requirements" subproperty can be used to prevent the customizations in some versions of Office.
 
-For example, suppose an Outlook add-in is configured to add a custom button to the ribbon and the button runs a function that uses code introduced in the **Mailbox 1.9** requirement set. But the add-in has other features that would be useful on versions of Office that only support version 1.8. To ensure that the add-in is installable on versions that support 1.8, a developer can set the “extensions.requirements.capabilities” property to the requirement set **MailBox 1.8**. But to block the custom button from appearing on the ribbon in versions that don't support 1.9, the developer can add an “extensions.ribbons.requirements.capabilities” property that specifies **Mailbox 1.9**. The following is an example. For details of the custom ribbon configuration, see [Create add-in commands with the unified manifest for Microsoft 365](create-addin-commands-unified-manifest.md).
+For example, suppose an Outlook add-in is configured to add a custom button to the ribbon and the button runs a function that uses code introduced in the **Mailbox 1.9** requirement set. But the add-in has other features that would be useful on versions of Office that only support version 1.8. To ensure that the add-in is installable on versions that support 1.8, a developer can set the “extensions.requirements.capabilities” property to the requirement set **MailBox 1.8** instead of 1.9. But to block the custom button from appearing on the ribbon in versions that don't support 1.9, the developer can add an “extensions.ribbons.requirements.capabilities” property that specifies **Mailbox 1.9**. The following is an example. For details of the custom ribbon configuration, see [Create add-in commands with the unified manifest for Microsoft 365](create-addin-commands-unified-manifest.md).
 
 ```json
 "extensions": [
@@ -124,10 +148,12 @@ For example, suppose an Outlook add-in is configured to add a custom button to t
                 // Details of the ribbon configuration would be here.
 
                 "requirements": {
-                    "capabilities": {
-                        "name": "MailBox",
-                        "minVersion": "1.9"
-                    }
+                    "capabilities": [
+                        {
+                            "name": "MailBox",
+                            "minVersion": "1.9"
+                        }
+                    ]
                 }
             }
         ]
@@ -155,10 +181,12 @@ The example earlier in [extensions.autoRunEvents.requirements](#extensionsautoru
                 // Details of the runtime configuration would be here.
 
                 "requirements": {
-                    "capabilities": {
-                        "name": "MailBox",
-                        "minVersion": "1.13"
-                    }
+                    "capabilities": [
+                        {
+                            "name": "MailBox",
+                            "minVersion": "1.13"
+                        }
+                    ]
                 }
             }
         ]
