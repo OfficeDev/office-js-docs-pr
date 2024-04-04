@@ -1,7 +1,7 @@
 ---
 title: Support older Microsoft webviews and Office versions
 description: Learn how to support support older Microsoft webviews and Office versions in your add-in.
-ms.date: 07/24/2023
+ms.date: 04/04/2024
 ms.localizationpriority: medium
 ---
 
