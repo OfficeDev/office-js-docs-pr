@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 # Specify Office Add-in requirements in the unified manifest for Microsoft 365
 
-There are several "requirements" properties in the [unified manifest for Microsoft 365](unified-manifest-overview.md). The [extensions.requirements](#extensions-requirements) property controls the Office applications and versions on which the add-in can be installed. Other "requirements" properties are used to selectively suppress some features of an add-in on specific Office applications or versions where those features would be unneeded or unsupported. For more information, see [Filter features](#filter-features).
+There are several "requirements" properties in the [unified manifest for Microsoft 365](unified-manifest-overview.md). The [extensions.requirements](#extensionsrequirements) property controls the Office applications and versions on which the add-in can be installed. Other "requirements" properties are used to selectively suppress some features of an add-in on specific Office applications or versions where those features would be unneeded or unsupported. For more information, see [Filter features](#filter-features).
 
 ## extensions.requirements
 
