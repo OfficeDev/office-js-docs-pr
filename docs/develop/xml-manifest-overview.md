@@ -296,10 +296,10 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <!-- The display name of your add-in. Used on the store and various placed of the Office UI such as the add-ins dialog. -->
+  <!-- The display name of your add-in. Used on the store and various placed of the Office UI such as the add-in's dialog. -->
   <DisplayName DefaultValue="Add-in Commands Sample" />
   <Description DefaultValue="Sample that illustrates add-in commands basic control types and actions." />
-  <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
+  <!-- Icon for your add-in. Used on installation screens and the add-in's dialog. -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
