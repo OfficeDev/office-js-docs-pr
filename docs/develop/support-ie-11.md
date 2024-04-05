@@ -149,9 +149,9 @@ To debug your add-in that supports EdgeHTML, use one of the following options.
 
 ## Support for recent versions of JavaScript
 
-If you want to use the syntax and features of a version of JavaScript that is newer than the one supported in the webview or runtime that your code is running it, or you want to use TypeScript, you must use a transpiler or a polyfill or both. For example, a transpiler will convert syntax or operators, such as the `=>` operator, that is unknown in ES5, to ES5. A polyfill replaces methods, types, and classes from a newer version of JavaScript into equivalent functionality in an older version.
+If you want to use the syntax and features of a version of JavaScript that is newer than the one supported in the webview or runtime that your code is running in, or you want to use TypeScript, you must use a transpiler or a polyfill or both. For example, a transpiler will convert syntax or operators, such as the `=>` operator, that is unknown in ES5, to ES5. A polyfill replaces methods, types, and classes from a newer version of JavaScript into equivalent functionality in an older version.
 
-The following subsections assume that that the target JavaScript standard is ES5, but the information applies with other targets too. For example, if your target is ECMAScript 2016, just replace "ES5" with "ECMAScript 2016" (and "post-ES5" with "post-ECMAScript 2016") in these subsections.
+The following subsections assume that the target JavaScript standard is ES5, but the information applies with other targets too. For example, if your target is ECMAScript 2016, just replace "ES5" with "ECMAScript 2016" (and "post-ES5" with "post-ECMAScript 2016") in these subsections.
 
 ### Use a transpiler
 
