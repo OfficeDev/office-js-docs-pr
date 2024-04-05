@@ -48,7 +48,7 @@ Nested App Authentication (NAA) enables Single Sign-On (SSO) for Office add-ins 
 > [!IMPORTANT]
 > Nested app authentication is currently in preview. To try this feature you need to join the Microsoft 365 Insider Program (https://insider.microsoft365.com/en-us/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
-To enable your Outlook add-in to use NAA, see <TBD article link>. NAA works the same across all Office Add-ins.
+To enable your Outlook add-in to use NAA, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md). NAA works the same across all Office Add-ins.
 
 ## Exchange user identity token
 
