@@ -1,7 +1,7 @@
 ---
 title: Publish task pane and content add-ins to a SharePoint app catalog
 description: To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the app catalog for their organization.
-ms.date: 04/04/2024
+ms.date: 04/05/2024
 ms.localizationpriority: medium
 ---
 
@@ -90,7 +90,7 @@ Find Office Add-ins from the app catalog using the following steps.
     - `https://<domain>/sites/<AddinCatalogSiteCollection>`
 1. Close and reopen the Office application.
 1. Select **Home** > **Add-ins**, then select **Get Add-ins**.
-1. In the Office Add-ins dialog, choose the **SHARED FOLDER** tab.
+1. In the Office Add-ins dialog, choose the **MY ORGANIZATION** tab.
 1. Choose an Office Add-in and then choose **Add**.
 
 Alternatively, an administrator can specify an app catalog on SharePoint by using Group Policy. The relevant policy settings are available in the [Administrative Template files (ADMX/ADML) for Microsoft 365 Apps, Office LTSC 2021, Office 2019, and Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) and be found under **User Configuration\Policies\Administrative Templates\Microsoft Office 2016\Security Settings\Trust Center\Trusted Catalogs**.
