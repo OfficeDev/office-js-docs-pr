@@ -9,13 +9,13 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 7:00 AM Pacific Time. You can download the calendar invite at <https://aka.ms/officeaddinscommunitycall>.
 
-## Agenda for March 13, 2024 call
+## Agenda for April 10, 2024 call
 
 The agenda for the March Office Add-ins community call is the following:
-- Word Add-in API Updates
-- Update on progress for Excel Undo/Redo
-- Improvements to WXP Add-in Acquisition – Installation link and widget
-- Incentive Program for Office Add-in Developers
+- Design Best Practices Office Add-ins
+- Updates on Add-in authentication and access to Exchange APIs
+- Implementing an integrated spam reporting add-in for Outlook
+
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
