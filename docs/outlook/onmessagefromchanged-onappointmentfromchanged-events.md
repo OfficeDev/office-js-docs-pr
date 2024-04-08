@@ -391,8 +391,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     npm start
     ```
 
-    > [!NOTE]
-    > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. In your preferred Outlook client, create a new message. If you don't have a default Outlook signature configured, the add-in adds one to the newly created message.
 

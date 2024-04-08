@@ -1,7 +1,7 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows (preview)
 description: Learn how to develop add-ins that are compatible with the new Outlook on Windows (preview).
-ms.date: 01/10/2024
+ms.date: 03/18/2024
 ms.localizationpriority: medium
 ---
 
@@ -63,6 +63,9 @@ Test your Outlook web add-in in the new Outlook on Windows today! To switch to t
 
 - Have a Microsoft 365 work or school account connected to Exchange Online. The new client doesn't currently support on-premises, hybrid, or sovereign Exchange accounts.
 
+    > [!NOTE]
+    > While you can add non-Microsoft mail accounts, such as Gmail, to the new Outlook on Windows, you can only use Outlook add-ins with a Microsoft account.
+
 - Have a minimum OS installation of Windows 10 Version 1809 (Build 17763).
 
 - Be a member of the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows).
@@ -70,6 +73,9 @@ Test your Outlook web add-in in the new Outlook on Windows today! To switch to t
 To help you sign up and install the Outlook desktop client, see [Getting started with the new Outlook for Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
 For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
+
+> [!TIP]
+> If you're moving from the classic Outlook client on Windows to the new Outlook client, note that the location of add-ins is different. While add-ins are accessed from the ribbon or app bar in the classic Outlook client, access to add-ins in the new Outlook client depends on whether you're reading or composing a mail item. To learn more, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
 ## Debug your add-in
 

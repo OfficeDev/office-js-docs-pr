@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
-ms.date: 02/29/2024
+ms.date: 04/04/2024
 ms.service: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -163,6 +163,8 @@ Before going any further, let's test the basic add-in that the generator created
     ```command&nbsp;line
     npm start
     ```
+
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. In Outlook, open an existing message and select the **Show Taskpane** button.
 
