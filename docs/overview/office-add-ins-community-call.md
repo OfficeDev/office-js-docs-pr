@@ -12,9 +12,9 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 ## Agenda for April 10, 2024 call
 
 The agenda for the March Office Add-ins community call is the following:
-- Design Best Practices Office Add-ins
-- Updates on Add-in authentication and access to Exchange APIs
-- Implementing an integrated spam reporting add-in for Outlook
+- Design best practices for Office Add-ins.
+- Updates on add-in authentication and access to Exchange APIs.
+- Implement an integrated spam reporting add-in for Outlook.
 
 
 > [!NOTE]
