@@ -29,8 +29,8 @@ sections:
 
           ### October 2024
 
-          - Exchange Online will block legacy Exchange user identity tokens and callback tokens by default in all tenants. Add-ins that have not adopted NAA and rely on legacy Exchange tokens will not won’t function as expected.
-          - Exchange 2019 and other on -premises versions of Exchange will continue to allow legacy Exchange user identity tokens and callback tokens.
+          - Exchange Online will block legacy Exchange user identity tokens and callback tokens by default in all tenants. Add-ins that have not adopted NAA and rely on legacy Exchange tokens won’t function as expected.
+          - Exchange 2019 and other on-premises versions of Exchange will continue to allow legacy Exchange user identity tokens and callback tokens.
   - name: Outlook add-in migration FAQ
     questions:
       - question: Why is Microsoft making Outlook add-ins migrate?
@@ -39,10 +39,10 @@ sections:
           Entra ID (formerly Azure Active Directory) is a leader in the identity and access management space. Customers can take advantage of zero trust features such as conditional access, MFA requirements, continual token monitoring, real time safety heuristics, and more that are not available with legacy Exchange tokens. Customers have much of their most important business data stored in Exchange, so it’s vital that we ensure this data is protected. Migrating the whole Outlook ecosystem to using Entra ID tokens with Microsoft Graph greatly improves security for customer data.
       - question: Can my Outlook add-in get an exception to finish the migration after Oct 2024?
         answer: |
-          Unfortunately, no. We recognize that this migration is happening quickly, but we cannot offer exceptions to any partners. Migrating away from legacy tokens by October 2024 is a commitment to customers and their security teams. This effort will greatly improveimprove protection of customers' vital email data.
+          Unfortunately, no. We recognize that this migration is happening quickly, but we cannot offer exceptions to any partners. Migrating away from legacy tokens by October 2024 is a commitment to customers and their security teams. This effort will greatly improve protection of customers' vital email data.
       - question: Does my Outlook add-in have to migrate to NAA?
         answer: |
-          No, Outlook add-ins don't have to use NAA. As long as add-ins are not using legacy Exchange tokens, they will not be affected by the deprecation of the legacy tokens.If add-ins are not using legacy Exchange tokens, they won’t be affected by their deprecation. Custom work using MSAL.js or other SSO methods that rely on Entra ID will still work after October 2024, as long as your add-in no longer relies on legacy Exchange user identity tokens and callback tokens.
+          No, Outlook add-ins don't have to use NAA. As long as add-ins are not using legacy Exchange tokens, they will not be affected by the deprecation of the legacy tokens. If add-ins are not using legacy Exchange tokens, they won’t be affected by their deprecation. Custom work using MSAL.js or other SSO methods that rely on Entra ID will still work after October 2024, as long as your add-in no longer relies on legacy Exchange user identity tokens and callback tokens.
       - question: How do I know if my Outlook add-in relies on legacy tokens?
         answer: |
           To find out whether your add-in uses legacy Exchange user identity tokens and callback tokens, you can search your code for calls to the following APIs.
@@ -58,7 +58,7 @@ sections:
           If your add-in is for Exchange on-premises only (for example, Exchange 2019), it is not affected by this announcement.
       - question: What will happen to my Outlook add-ins if I don't migrate to NAA?
         answer: |
-          If you don't migrate your Outlook add-ins to NAA, they will stop working as expected in Exchange Online. Beginning in April 2024, Exchange Online admins will have the abilitybe able to block legacy token issuance in their tenants. In October 2024, Exchange Online will block legacy token issuance by default in all tenants. Any add-in that uses legacy tokens will not be able to access Exchange online resources.
+          If you don't migrate your Outlook add-ins to NAA, they will stop working as expected in Exchange Online. Beginning in April 2024, Exchange Online admins will be able to block legacy token issuance in their tenants. In October 2024, Exchange Online will block legacy token issuance by default in all tenants. Any add-in that uses legacy tokens will not be able to access Exchange online resources.
           If your add-in only works on-premises or if your add-in is on a deprecation path, you may not need to update. However, most add-ins that access Exchange resources through EWS or Outlook REST will have to migrate to continue functioning as expected.
       - question: How do I migrate my Outlook add-ins to NAA?
         answer: |
@@ -82,7 +82,7 @@ sections:
           If you are unable to confirm with an add-in dev whether an add-in uses these APIs, you can test your most important add-ins and add-in use cases by creating an Exchange authentication policy that blocks legacy tokens for a mailbox. Then check if the add-ins still function as expected.
       - question: As an admin, I don’t own an add-in that needs an update. What should I do?
         answer: |
-          If you rely on an independent software vendor (ISV) for your add-in, we recommend reaching out as soon as possible to confirm they have a plan and a timeline for moving off ofoff legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they are ready for the end of Exchange legacy tokens onin October 2024.
+          If you rely on an independent software vendor (ISV) for your add-in, we recommend reaching out as soon as possible to confirm they have a plan and a timeline for moving off of legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they are ready for the end of Exchange legacy tokens on October 2024.
           If you rely on a developer within your organization, we recommend asking them to reach out to the Outlook extensibility PM team on GithubGitHub: [https://github.com/officedev/office-js/issues](https://github.com/officedev/office-js/issues).
 additionalContent: |
 
