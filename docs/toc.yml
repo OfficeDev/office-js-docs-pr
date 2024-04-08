@@ -174,10 +174,8 @@ items:
           href: develop/create-sso-office-add-ins-nodejs.md
         - name: Troubleshoot error messages
           href: develop/troubleshoot-sso-in-office-add-ins.md
-      - name: Single sign-on with nested app authentication
-        items:
-          - name: Enable SSO using nested app authentication (preview)
-            href: develop/enable-nested-app-authentication-in-your-add-in.md
+      - name: Enable SSO using nested app authentication
+        href: develop/enable-nested-app-authentication-in-your-add-in.md
       - name: Office dialog API
         href: develop/auth-with-office-dialog-api.md      
       - name: Identity providers
@@ -823,6 +821,8 @@ items:
         href: outlook/inside-the-identity-token.md
       - name: "Scenario: Implement single sign-on"
         href: outlook/implement-sso-in-outlook-add-in.md
+      - name: Legacy token deprecation FAQ 
+        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.yml
     - name: Testing and tips
       items:
       - name: Overview
