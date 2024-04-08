@@ -11,23 +11,23 @@ ms.localizationpriority: medium
 
 You can use the MSAL.js library (version 3.10 and later) with nested app authentication to use SSO from your Office Add-in. Using nested app authentication offers several advantages over the On-Behalf-Of (OBO) flow.
 
-- You only need to use the MSAL.js library and don’t need to use the `getAccessToken` function in Office.js.
+- You only need to use the MSAL.js library and don’t need the `getAccessToken` function in Office.js.
 - You can call services such as Microsoft Graph with an access token from your client code as an SPA. There’s no need for a middle-tier server.
 - You can use incremental and dynamic consent for scopes.
 - You don't need to [preauthorize your hosts](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab?tabs=manifest-teams-toolkit#update-azure-ad-app-registration-for-sso) (For example, Teams, Office) to call your endpoints.
 
 > [!IMPORTANT]
-> Nested app authentication is currently in preview. To try this feature you need to join the Microsoft 365 Insider Program (https://insider.microsoft365.com/en-us/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> Nested app authentication (NAA) is currently in preview. To try this feature, join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 ## Register your single-page application
 
 You’ll need to create a Microsoft Azure App registration for your add-in on the Azure portal. The app registration must have at minimum:
 
-- A name.
-- A supported account type.
-- An SPA redirect.
+- A name
+- A supported account type
+- An SPA redirect
 
-If your add-in requires additional app registration beyond NAA and SSO, see [Single-page application: App registration](/entra/identity-platform/scenario-spa-app-registration)
+If your add-in requires additional app registration beyond NAA and SSO, see [Single-page application: App registration](/entra/identity-platform/scenario-spa-app-registration).
 
 ## Add a trusted broker through SPA redirect
 
@@ -39,7 +39,7 @@ Trusted broker groups are dynamic by design and can be updated in the future to 
 
 ## Configure MSAL config to use NAA
 
-Configure your add-in to use NAA by setting the `supportsNestedAppAuth` property to true in your MSAL configuration. This enables MSAL to use APIs on its native application host (For example, Outlook) to acquire tokens for your application. If you don't set this property, MSAL uses the default JavaScript-based implementation to acquire tokens for your application, which may lead to unexpected auth prompts and unsatisfiable conditional access policies when running inside of a webview.
+Configure your add-in to use NAA by setting the `supportsNestedAppAuth` property to true in your MSAL configuration. This enables MSAL to use APIs on its native application host (for example, Outlook) to acquire tokens for your application. If you don't set this property, MSAL uses the default JavaScript-based implementation to acquire tokens for your application, which may lead to unexpected auth prompts and unsatisfiable conditional access policies when running inside of a webview.
 
 ```JavaScript
 // Configuration for NAA.  
@@ -55,7 +55,7 @@ const msalConfig = {
 
 ## Initialize the public client application
 
-Next you need to initialize MSAL and get an instance of the public client application. This is used to get access tokens when needed. It's recommended to create the public client application in the `Office.onReady` method.
+Next, you need to initialize MSAL and get an instance of the public client application. This is used to get access tokens when needed. It's recommended to create the public client application in the `Office.onReady` method.
 
 ```javascript
 let pca = undefined;
@@ -68,9 +68,9 @@ Office.onReady(async (info) => {
 
 ## Acquire your first token
 
-The tokens acquired by MSAL.js via NAA will be issued for your Azure app registration ID. In this code sample, we acquire a token for the Microsoft Graph API. The token is acquired silently if the user has an active session with Microsoft Entra ID. If not, the library prompts the user to sign in interactively. The token is then used to call the Microsoft Graph API.
+The tokens acquired by MSAL.js via NAA will be issued for your Azure app registration ID. In this code sample, you acquire a token for the Microsoft Graph API. If the user has an active session with Microsoft Entra ID the token is acquired silently. If not, the library prompts the user to sign in interactively. The token is then used to call the Microsoft Graph API.
 
-The following steps show the pattern to use for acquiring a token:
+The following steps show the pattern to use for acquiring a token.
 
 1. Specify your scopes. NAA supports incremental and dynamic consent so always request the minimum scopes needed for your code to complete its task.
 1. Call `acquireTokenSilent`. This will get the token without requiring user interaction.
@@ -104,7 +104,7 @@ async function run() {
 
 ## Call an API
 
-After acquiring the token use it to call an API. The following example shows how to call the Microsoft Graph API by calling `fetch` with the token attached in the *Authorization* header.
+After acquiring the token, use it to call an API. The following example shows how to call the Microsoft Graph API by calling `fetch` with the token attached in the *Authorization* header.
 
 ```javascript
 async function makeMSGraphCall(accessToken) {
@@ -137,13 +137,13 @@ NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identi
 
 ## Best practices
 
-The following are some best practices to follow when using MSAL.js with NAA.
+The following are some best practices when using MSAL.js with NAA.
 
 ### Use silent authentication whenever possible
 
 MSAL.js provides the `acquireTokenSilent` method that handles token renewal by making silent token requests without prompting the user. The method first looks for a valid cached token. If it doesn't find one, the library makes the silent request to Microsoft Entra ID and if there's an active user session, a fresh token is returned.  
 
-In certain cases, the `acquireTokenSilent` method's attempt to get the token fails. Some examples of this are when there's an expired user session with Microsoft Entra ID or a password change by the user, and so on. which requires user interaction. When the acquireTokenSilent fails, you need to call the interactive acquire token method (acquireTokenPopup).
+In certain cases, the `acquireTokenSilent` method's attempt to get the token fails. Some examples of this are when there's an expired user session with Microsoft Entra ID or a password change by the user, which requires user interaction. When the acquireTokenSilent fails, you need to call the interactive `acquireTokenPopup` token method.
 
 ### Have a fallback when NAA isn't supported
 
@@ -187,4 +187,4 @@ The following table shows which APIs are supported when NAA is enabled in the MS
 
 ## Security reporting
 
-If you find a security issue with our libraries or services, report the issue to [secure@microsoft)](secure@microsoft).com with as much detail as you can provide. Your submission may be eligible for a bounty through the [Microsoft Bounty](https://aka.ms/bugbounty) program. Don't post security issues to GitHub or any other public site. We'll contact you shortly after receiving your issue report. We encourage you to get new security incident notifications by visiting [Microsoft technical security notifications](https://technet.microsoft.com/security/dd252948) to subscribe to Security Advisory Alerts.
+If you find a security issue with our libraries or services, report the issue to [secure@microsoft.com](mailto:secure@microsoft.com) with as much detail as you can provide. Your submission may be eligible for a bounty through the [Microsoft Bounty](https://aka.ms/bugbounty) program. Don't post security issues to GitHub or any other public site. We'll contact you shortly after receiving your issue report. We encourage you to get new security incident notifications by visiting [Microsoft technical security notifications](https://technet.microsoft.com/security/dd252948) to subscribe to Security Advisory Alerts.
