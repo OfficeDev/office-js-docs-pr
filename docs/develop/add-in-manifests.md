@@ -10,7 +10,7 @@ ms.localizationpriority: high
 
 Every Office add-in has a manifest. There are two types of manifests:
 
-- **XML manifest**: This is the only type of manifest that is currently supported for non-Outlook add-ins. As the name indicates, it's XML format. This type of manifest can't be used for an app that combines an add-in with some other kind of extension of the Microsoft 365 platform.
+- **XML manifest**: This is the only type of manifest that's currently supported for non-Outlook add-ins. As the name indicates, it's XML format. This type of manifest can't be used for an app that combines an add-in with some other kind of extension of the Microsoft 365 platform.
 - **unified manifest for Microsoft 365**: This is an expanded version of the JSON-formatted manifest that has been used for years as the manifest for Teams Apps. Add-ins that use this manifest can be combined with other kinds of extensions of the Microsoft 365 platform in a single app that's installable as a unit whole.
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
@@ -20,7 +20,7 @@ The remainder of this article is applicable to both types of manifest.
 > [!TIP]
 >
 > - For an overview that is specific to the XML manifest, see [Office Add-ins XML manifest](xml-manifest-overview.md).
-> - For an overview that is specific to the unified manifest, see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
+> - For an overview that's specific to the unified manifest, see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
 > - If you have some familiarity with the XML manifest, the article [Compare the XML manifest with the unified manifest for Microsoft 365](json-manifest-overview.md) explains the unified manifest by comparing it with the XML manifest.
 
 The manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications.
