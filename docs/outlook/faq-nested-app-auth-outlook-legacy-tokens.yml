@@ -16,7 +16,7 @@ sections:
     questions:
       - question: What is nested app authentication (NAA)?
         answer: |
-          Nested app authentication enables single sign-on (SSO) for applications nested inside of supported Microsoft applications such as Outlook. Compared with existing full-trust authentication models, and the on-behalf-of flow, NAA provides better security and greater flexibility in app architecture, enabling the creation of rich, client-driven applications. For more information, see [Enable SSO in an Office Add-in using nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
+          Nested app authentication enables single sign-on (SSO) for applications nested inside of supported Microsoft applications such as Outlook. Compared with existing full-trust authentication models, and the on-behalf-of flow, NAA provides better security and greater flexibility in app architecture, enabling the creation of rich, client-driven applications. For more information, see [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
       - question: What is the timeline for shutting down legacy tokens?
         answer: |
@@ -64,7 +64,7 @@ sections:
         answer: |
           To support NAA in your Outlook add-in, please refer to the following documentation and sample.
 
-          - [Enable SSO in an Office Add-in using nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
+          - [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
           - [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples).
       - question: As an admin, how do I control legacy token issuance in my Exchange Online tenant?
         answer: |
@@ -88,5 +88,5 @@ additionalContent: |
 
   ## Related content
 
-  - [Enable SSO in an Office Add-in using nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
+  - [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
   - [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples).
