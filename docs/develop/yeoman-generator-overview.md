@@ -55,8 +55,7 @@ The first question asks you to choose between several types of projects. The opt
 
 ![The prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
 
-> [!NOTE]
->
+> [!NOTE]>
 > The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
 
 The next question asks you to choose between **TypeScript** and **JavaScript**. (This question is skipped if you chose the manifest-only option in the preceding question.)

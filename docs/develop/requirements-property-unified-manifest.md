@@ -58,7 +58,10 @@ The "extensions.alternates" property enables add-in developers to do the followi
 - Either hide or give preference to the version that uses the older technology.
 - Specify icons that are needed to make the unified manifest version of the add-in installable on Office versions that don't directly support the unified manifest. 
 
-[!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
+> [!NOTE]
+> Office Add-ins that use the unified manifest for Microsoft 365 are *directly* supported in Office on the web, in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), and in Office on Windows connected to a Microsoft 365 subscription, Version 2304 (Build 16320.00000) or later.
+>
+> When the app package that contains the unified manifest is deployed in [AppSource](https://appsource.microsoft.com/) or the [Microsoft 365 Admin Center](../publish/publish.md) then, if the manifest has a valid "alternateIcons" property, an XML manifest is generated from the unified manifest and stored. This XML manifest enables the add-in to be installed on platforms that don't directly support the unified manifest, including Office on Mac, Office on mobile, subscription versions of Office on Windows earlier than 2304 (Build 16320.00000), and perpetual versions of Office on Windows. 
 
 For more information, see [Manage both a unified manifest and an XML manifest version of your Office Add-in](/office/dev/add-ins/concepts/duplicate-legacy-metaos-add-ins).
 
