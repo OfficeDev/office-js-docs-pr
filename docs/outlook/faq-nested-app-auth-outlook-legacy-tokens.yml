@@ -30,7 +30,7 @@ sections:
           ### October 2024
 
           - Exchange Online will block legacy Exchange user identity tokens and callback tokens by default in all tenants. Add-ins that have not adopted NAA and rely on legacy Exchange tokens will not won’t function as expected.
-          - Exchange 2019 and other on -premises versions of Exchange will continue to allow legacy Exchange user identity tokens and callback tokens.
+          - Exchange 2019 and other on-premises versions of Exchange will continue to allow legacy Exchange user identity tokens and callback tokens.
   - name: Outlook add-in migration FAQ
     questions:
       - question: Why is Microsoft making Outlook add-ins migrate?
