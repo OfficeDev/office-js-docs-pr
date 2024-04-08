@@ -413,8 +413,7 @@ In this section, you'll implement the JavaScript code to append a sample company
     npm start
     ```
 
-    > [!NOTE]
-    > If your add-in wasn't automatically sideloaded, follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. Create a new message, and add yourself to the **To** line.
 

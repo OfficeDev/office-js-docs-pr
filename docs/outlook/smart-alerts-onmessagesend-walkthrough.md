@@ -585,8 +585,7 @@ If you implemented the optional steps to customize the **Don't Send** button or 
     npm start
     ```
 
-    > [!NOTE]
-    > If your add-in wasn't automatically sideloaded, follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. In your preferred Outlook client, create a new message and set the subject. In the body, add some text. For example, "Here's a picture of the proposed logo."
 1. Send the message. A dialog appears requesting you to add an attachment. Select **Don't Send** or **Add an attachment**. The option available to you depends on whether you implemented the optional step to customize the **Don't Send** button.
@@ -610,8 +609,7 @@ If you implemented the optional step to override the send mode option at runtime
 
 1. Run `npm start` in the root directory of your project. This starts the local web server (if it isn't already running) and sideloads your add-in.
 
-    > [!NOTE]
-    > If your add-in wasn't automatically sideloaded, follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. In Outlook on Windows, create a new message and set the subject. In the body, add some text. For example, "Here's a picture of the proposed logo."
 1. From the ribbon, select **Contoso Add-in** > **Show Taskpane**.
