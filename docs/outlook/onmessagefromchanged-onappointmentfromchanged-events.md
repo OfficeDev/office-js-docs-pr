@@ -1,7 +1,7 @@
 ---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 10/05/2023
+ms.date: 02/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -29,7 +29,7 @@ The following tables list client-server combinations that support the `OnMessage
 |-----|-----|-----|-----|
 |**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
 |**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
-|**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
+|**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 
@@ -39,7 +39,7 @@ The following tables list client-server combinations that support the `OnMessage
 |-----|-----|-----|-----|
 |**Windows**|Not applicable|Not applicable|Not applicable|
 |**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
-|**Web browser (modern UI)**|Supported|Not applicable|Not applicable|
+|**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 
@@ -55,8 +55,88 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-> [!NOTE]
-> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events aren't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
+# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+
+1. Open the **manifest.json** file.
+
+1. Add the following object to the "extensions.runtimes" array. Note the following about this markup.
+
+   - The "minVersion" of the Mailbox requirement set is configured as "1.13" because this is the lowest version of the requirement set that supports the `OnMessageFromChanged` event. For more information, see the "Supported events" table in [Configure your Outlook add-in for event-based activation](autolaunch.md#supported-events).
+   - The "id" of the runtime is set to a descriptive name, "autorun_runtime".
+   - The "code" property has a child "page" property set to an HTML file and a child "script" property set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
+       - Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
+       - Outlook on the web and on Mac, and new Outlook on Windows (preview) execute the handler in a browser runtime, which loads an HTML file. The HTML file contains a `<script>` tag that then loads the JavaScript file.
+
+     For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+   - The "lifetime" property is set to "short". This means the runtime starts up when the event occurs and shuts down when the handler completes.
+   - There are "actions" to run handlers for the `OnMessageFromChanged` and `OnNewMessageCompose` events. You'll create the handlers in a later step.
+
+    ```json
+    {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.13"
+                }
+            ]
+        },
+        "id": "autorun_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html",
+            "script": "https://localhost:3000/launchevent.js"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "onMessageFromChangedHandler",
+                "type": "executeFunction",
+                "displayName": "onMessageFromChangedHandler"
+            },
+            {
+                "id": "onNewMessageComposeHandler",
+                "type": "executeFunction",
+                "displayName": "onNewMessageComposeHandler"
+            }
+        ]
+    }
+    ```
+
+1. Add an "autoRunEvents" array as a property of the object in the "extensions" array. The "autoRunEvents" array contains an object with the following key properties.
+
+    - The "events" property assigns handlers to the `OnMessageFromChanged` and `OnNewMessageCompose` events. For information on event names used in the unified manifest, see the "Supported events" table in [Configure your Outlook add-in for event-based activation](autolaunch.md#supported-events).
+    - The function name provided in "actionId" must match the "id" property of its corresponding object in the "actions" array configured earlier.
+
+    ```json
+    "autoRunEvents": [
+        {
+            "requirements": {
+                "capabilities": [
+                    {
+                        "name": "Mailbox",
+                        "minVersion": "1.13"
+                    }
+                ],
+                "scopes": [
+                    "mail"
+                ]
+            },
+            "events": [
+                {
+                    "type": "messageFromChanged",
+                    "actionId": "onMessageFromChangedHandler"
+                },
+                {
+                    "type": "newMessageComposeCreated",
+                    "actionId": "onNewMessageComposeHandler"
+                }
+            ]
+        }
+    ]
+    ```
+
+# [XML Manifest](#tab/xmlmanifest)
 
 To enable the add-in to activate when the `OnMessageFromChanged` event occurs, the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point must be configured in the `VersionOverridesV1_1` node of the manifest.
 
@@ -80,7 +160,8 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
          <Host xsi:type="MailHost">
            <Runtimes>
              <!-- HTML file that references or contains inline JavaScript event handlers.
-                  This is used by event-based activation add-ins in Outlook on the web and Outlook on the new Mac UI. -->
+                  This is used by event-based activation add-ins in Outlook on the web and on Mac,
+                  and in new Outlook on Windows (preview). -->
              <Runtime resid="WebViewRuntime.Url">
                <!-- JavaScript file that contains the event handlers.
                     This is used by event-based activation add-ins in Outlook on Windows. -->
@@ -163,6 +244,8 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
      </VersionOverrides>
    </VersionOverrides>
    ```
+
+---
 
 > [!TIP]
 >
@@ -308,8 +391,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     npm start
     ```
 
-    > [!NOTE]
-    > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. In your preferred Outlook client, create a new message. If you don't have a default Outlook signature configured, the add-in adds one to the newly created message.
 
@@ -323,7 +405,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 
 ## Troubleshoot your add-in
 
-For guidance on how to troubleshoot your event-based activation add-in, see the "Troubleshooting guide" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#troubleshooting-guide).
+For guidance on how to troubleshoot your event-based activation add-in, see [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md).
 
 ## Deploy to users
 

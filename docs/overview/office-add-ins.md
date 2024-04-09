@@ -127,4 +127,4 @@ For a more detailed introduction to developing Office Add-ins, see [Develop Offi
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)
-- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)

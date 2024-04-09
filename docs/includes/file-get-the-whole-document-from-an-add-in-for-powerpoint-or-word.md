@@ -171,7 +171,7 @@ Office.initialize = function (reason) {
     $(document).ready(function () {
 
         // Run sendFile when Submit is clicked.
-        $('#submit').click(function () {
+        $('#submit').on("click", function () {
             sendFile();
         });
 
@@ -333,7 +333,7 @@ Office.initialize = function (reason) {
     $(document).ready(function () {
 
         // Run sendFile when Submit is clicked.
-        $('#submit').click(function () {
+        $('#submit').on("click", function () {
             sendFile();
         });
 

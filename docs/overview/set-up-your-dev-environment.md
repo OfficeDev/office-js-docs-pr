@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 09/01/2022
+ms.date: 01/29/2024
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -12,11 +12,11 @@ This guide helps you set up tools so you can create Office Add-ins by following 
 
 ## Get Microsoft 365
 
-You need a Microsoft 365 account. You can get a free, 90-day renewable Microsoft 365 subscription that includes all Office apps by joining the [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program).
+You need a Microsoft 365 account. You might qualify for a Microsoft 365 E5 developer subscription, which includes all Office apps, through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 
 ## Install the environment
 
-There are two kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the two environments is different, so if multiple people will be working on an add-in project, they must all use the same environment. 
+There are two kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the two environments is different, so if multiple people will be working on an add-in project, they must all use the same environment.
 
 - **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called WebPack. The project creation and scaffolding tool, Yo Office, is updated frequently.
 - **Visual Studio environment**: Choose this environment only if your development computer is Windows, and you want to develop the server-side of the add-in with a .NET based language and framework, such as ASP.NET. The add-in project templates in Visual Studio aren't updated as frequently as those in the Node.js environment. Client-side code can't be debugged with the built-in Visual Studio debugger, but you can debug client-side code with your browser's development tools. More information later on the **Visual Studio environment** tab.
@@ -24,7 +24,7 @@ There are two kinds of development environments to choose from. The scaffolding 
 > [!NOTE]
 > Visual Studio for Mac doesn't include the project scaffolding templates for Office Add-ins, so if your development computer is a Mac, you should work with the Node.js environment.
 
-Select the tab for the environment you choose. 
+Select the tab for the environment you choose.
 
 # [Node.js environment](#tab/yeomangenerator)
 
@@ -135,6 +135,8 @@ If you do not have Visual Studio 2017 (for Windows) or later installed, install 
 
 Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs. Script Lab is itself an Office Add-in and can be installed from AppSource at [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1). There's a version for Excel, PowerPoint, and Word, and a separate version for Outlook. For information about how to use Script Lab, see [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md).
 
+[!INCLUDE [script-lab-outlook-web](../includes/script-lab-outlook-web.md)]
+
 ## Next steps
 
 Try creating your own add-in or use [Script Lab](explore-with-script-lab.md) to try built-in samples.
@@ -154,4 +156,4 @@ Explore the library of built-in samples in [Script Lab](explore-with-script-lab.
 - [Design Office Add-ins](../design/add-in-design.md)
 - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)
-- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)

@@ -1,7 +1,7 @@
 ---
 title: Get and set metadata in an Outlook add-in
 description: Manage custom data in your Outlook add-in by using either roaming settings or custom properties.
-ms.date: 12/14/2022
+ms.date: 02/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -311,7 +311,7 @@ Office.context.mailbox.getCallbackTokenAsync(
 
 The following table summarizes saved custom properties behavior in messages for various Outlook clients.
 
-|Scenario|Outlook on Windows|Outlook on the web|Outlook on Mac|
+|Scenario|Outlook on Windows|Outlook on the web and on new Windows client (preview)|Outlook on Mac|
 |---|---|---|---|
 |New compose|null|null|null|
 |Reply, reply all|null|null|null|

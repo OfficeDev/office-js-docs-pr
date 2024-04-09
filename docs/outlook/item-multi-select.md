@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 06/19/2023
+ms.date: 02/27/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -222,9 +222,18 @@ Item multi-select supports [Conversations view](https://support.microsoft.com/of
 
 |Selection|Expanded conversation view|Collapsed conversation view|
 |------|------|------|
-|**Conversation header is selected**|If the conversation header is the only item selected, an add-in supporting multi-select doesn't activate. However, if other non-header messages are also selected, the add-in will only activate on those and not the selected header.|The newest message (that is, the first message in the conversation stack) is included in the message selection.<br><br>If the newest message in the conversation is located in another folder from the one currently in view, the subsequent message in the stack located in the current folder is included in the selection.|
-|**Selected conversation messages are located in the same folder as the one currently in view**|All chosen conversation messages are included in the selection.|Not applicable. Only the conversation header is available for selection in collapsed conversation view.|
-|**Selected conversation messages are located in different folders from the one currently in view** |All chosen conversation messages are included in the selection.|Not applicable. Only the conversation header is available for selection in collapsed conversation view.|
+|**Conversation header is selected**|If the conversation header is the only item selected, an add-in supporting multi-select doesn't activate. However, if other non-header messages are also selected, the add-in will only activate on those and not the selected header.|The behavior differs depending on the Outlook client.<br><br>**Outlook on Windows and on Mac**:<br>The newest message (that is, the first message in the conversation stack) is included in the message selection.<br><br>If the newest message in the conversation is located in another folder from the one currently in view, the subsequent message in the stack located in the current folder is included in the selection.<br><br>**Outlook on the web and new Outlook on Windows (preview)**:<br>All the messages in the conversation stack are selected. This includes messages in the conversation that are located in folders other than the one currently in view.|
+|**Multiple selected messages in a conversation stack are located in the same folder as the one currently in view**|All chosen messages in the same conversation are included in the selection.|Not applicable. You must expand the conversation stack to select multiple messages from it.|
+|**Multiple selected messages in a conversation stack are located in different folders from the one currently in view** |All chosen messages in the same conversation are included in the selection.|Not applicable. You must expand the conversation stack to select multiple messages from it.|
+
+> [!NOTE]
+> On all Outlook clients, you can't select multiple messages that belong to different conversations. If you expand a different conversation while another conversation is expanded, the view of the currently expanded conversation collapses and any selected messages are deselected. However, you can select multiple messages from the same expanded conversation and messages that aren't part of any conversation at the same time.
+
+### Task pane pinning in multi-select add-ins
+
+In Outlook on the web and in new Outlook on Windows (preview), when the task pane of a multi-select add-in is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
+
+Conversely, in Outlook on Windows and on Mac, the task pane isn't automatically pinned and closes when a user switches to a different mail item.
 
 ## Next steps
 

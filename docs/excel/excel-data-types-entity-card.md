@@ -16,7 +16,7 @@ An entity value, or [EntityCellValue](/javascript/api/excel/excel.entitycellvalu
 
 The following screenshot shows an example of an open entity value card, in this case for the **Chef Anton's Gumbo Mix** product from a list of grocery store products.
 
-:::image type="content" source="../images/excel-data-types-entity-card-gumbo.png" alt-text="A screenshot showing an entity value data type with the card window displayed.":::
+:::image type="content" source="../images/excel-data-types-entity-card-gumbo.png" alt-text="An entity value data type with the card window displayed.":::
 
 ## Card properties
 
@@ -69,7 +69,7 @@ const entity: Excel.EntityCellValue = {
 
 The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the **Product ID**, **Product Name**, **Image**, **Quantity Per Unit**, and **Unit Price** information from the preceding code snippet.
 
-:::image type="content" source="../images/excel-data-types-entity-card-properties-gumbo.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the product name, product ID, quantity per unit, and unit price information.":::
+:::image type="content" source="../images/excel-data-types-entity-card-properties-gumbo.png" alt-text="An entity value data type with the card layout window displayed. The card shows the product name, product ID, quantity per unit, and unit price information.":::
 
 ### Property metadata
 
@@ -94,7 +94,7 @@ Entity properties have an optional `propertyMetadata` field that uses the [`Cell
 
 The following screenshot shows an entity value card that uses the preceding code snippet, displaying the property metadata `sublabel` of **USD** next to the **Unit Price** property.
 
-:::image type="content" source="../images/excel-data-types-entity-card-property-metadata.png" alt-text="A screenshot showing the sublabel USD next to the Unit Price.":::
+:::image type="content" source="../images/excel-data-types-entity-card-property-metadata.png" alt-text="The sublabel USD next to the Unit Price.":::
 
 ## Card layout
 
@@ -159,7 +159,7 @@ const entity: Excel.EntityCellValue = {
 
 The following screenshot shows an entity value card that uses the preceding code snippets. In the screenshot, the `shoppingBag` icon displays alongside the product names in the spreadsheet. In the entity card, the `mainImage` object displays at the top, followed by the `title` object which uses the **Product Name** and is set to **Chef Anton's Gumbo Mix**. The screenshot also shows `sections`. The **Quantity and price** section is collapsible and contains **Quantity Per Unit** and **Unit Price**. The **Additional information** field is collapsible and is collapsed when the card is opened.
 
-:::image type="content" source="../images/excel-data-types-entity-card-sections-gumbo.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the card title and sections.":::
+:::image type="content" source="../images/excel-data-types-entity-card-sections-gumbo.png" alt-text="An entity value data type with the card layout window displayed. The card shows the card title and sections.":::
 
 > [!NOTE]
 > In the preceding screenshot, the `branch` icon displays alongside **Condiments** in the **Category** section. See the [Data types: Create entity cards from data in a table](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) sample to learn how to set nested icons like the **Category** section icon.
@@ -197,7 +197,7 @@ const entity: Excel.EntityCellValue = {
 
 The following screenshot shows an entity value card that uses the preceding code snippet. The screenshot shows the data provider attribution in the lower left corner. In this instance, the data provider is Microsoft and the Microsoft logo is displayed.
 
-:::image type="content" source="../images/excel-data-types-entity-card-attribution.png" alt-text="A screenshot showing an entity value data type with the card layout window displayed. The card shows the data provider attribution in the lower left corner.":::
+:::image type="content" source="../images/excel-data-types-entity-card-attribution.png" alt-text="An entity value data type with the card layout window displayed. The card shows the data provider attribution in the lower left corner.":::
 
 ## Next steps
 
