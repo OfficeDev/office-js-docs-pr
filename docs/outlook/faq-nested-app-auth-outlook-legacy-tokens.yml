@@ -9,7 +9,7 @@ metadata:
   
 title: Nested app authentication and Outlook legacy tokens deprecation FAQ
 summary: |
-  Exchange [user identity tokens](https://learn.microsoft.com/office/dev/add-ins/outlook/authentication#exchange-user-identity-token) and [callback tokens](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/authentication#callback-tokens) will be turned off by default by October 2024. We recommend moving Outlook add-ins that use legacy Exchange tokens to nested app authentication.
+  Exchange [user identity tokens](https://learn.microsoft.com/office/dev/add-ins/outlook/authentication#exchange-user-identity-token) and [callback tokens](https://learn.microsoft.com/office/dev/add-ins/outlook/authentication#callback-tokens) will be turned off by default by October 2024. We recommend moving Outlook add-ins that use legacy Exchange tokens to nested app authentication.
 
 sections:
   - name: General FAQ
