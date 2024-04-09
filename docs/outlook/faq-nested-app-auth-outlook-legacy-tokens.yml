@@ -64,7 +64,7 @@ sections:
           To support NAA in your Outlook add-in, please refer to the following documentation and sample.
 
           - [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
-          - [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples).
+          - [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA).
       - question: As an admin, how do I know which add-ins in my org need to be updated?
         answer: |
           Add-ins use the legacy Exchange tokens to get resources from Exchange through the EWS or Outlook REST APIs. Sometimes, an add-in will require Exchange resources for some use cases and not others, making it especially difficult to figure out whether the add-in requires an update.
@@ -83,4 +83,4 @@ additionalContent: |
   ## Related content
 
   - [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
-  - [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples).
+  - [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA).
