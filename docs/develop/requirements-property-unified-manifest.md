@@ -148,7 +148,7 @@ For example, suppose an Outlook add-in is configured to add a custom button to t
         "ribbons": [
             ...
             {
-                // Details of the ribbon configuration would be here.
+                // Insert details of the ribbon configuration here.
 
                 "requirements": {
                     "capabilities": [
@@ -181,7 +181,7 @@ The previous example shown in [extensions.autoRunEvents.requirements](#extension
         "runtimes": [
             ...
             {
-                // Details of the runtime configuration would be here.
+                // Insert details of the runtime configuration here.
 
                 "requirements": {
                     "capabilities": [
