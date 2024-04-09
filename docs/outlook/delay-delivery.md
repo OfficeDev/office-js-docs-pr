@@ -1,7 +1,7 @@
 ---
 title: Manage the delivery date and time of a message
 description: Learn how to get and set the delivery date and time of a message in compose mode.
-ms.date: 10/05/2023
+ms.date: 01/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -75,6 +75,8 @@ This behavior differs from a message scheduled using the native **Delay Delivery
 Get the [Script Lab for Outlook add-in](https://appsource.microsoft.com/product/office/WA200001603) and try out the "Get and set message delivery (Message Compose)" sample snippet. To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
 
 :::image type="content" source="../images/outlook-delay-delivery-script-lab.png" alt-text="The message delivery sample snippet in Script Lab.":::
+
+[!INCLUDE [script-lab-outlook-web](../includes/script-lab-outlook-web.md)]
 
 ## See also
 

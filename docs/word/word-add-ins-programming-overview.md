@@ -1,7 +1,7 @@
 ---
 title: Word add-ins overview
 description: Learn the basics of Word add-ins.
-ms.date: 02/24/2023
+ms.date: 04/03/2024
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -44,7 +44,7 @@ You can use any web server technology to host your Word add-in, such as ASP.NET,
 
 The Word JavaScript APIs give your application access to the objects and metadata found in a Word document. You can use these APIs to create add-ins that target:
 
-* Word 2013 or later on Windows
+* Word 2016 or later on Windows
 * Word on the web
 * Word 2016 or later on Mac
 * Word on iPad
@@ -65,7 +65,6 @@ We recommend that you start with the Word JavaScript API because the object mode
 
 Use the shared Office JavaScript API when you need to do any of the following:
 
-* Target Word 2013.
 * Perform initial actions for the application.
 * Check the supported requirement set.
 * Access metadata, settings, and environmental information for the document.
@@ -83,6 +82,6 @@ After you develop your add-in, you can [publish](../publish/publish.md) it to a 
 ## See also
 
 * [Developing Office Add-ins](../develop/develop-overview.md)
-* [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
+* [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
 * [Office Add-ins platform overview](../overview/office-add-ins.md)
 * [Word JavaScript API reference](../reference/overview/word-add-ins-reference-overview.md)

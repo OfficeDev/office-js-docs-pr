@@ -1,7 +1,7 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows (preview)
 description: Learn how to develop add-ins that are compatible with the new Outlook on Windows (preview).
-ms.date: 11/09/2023
+ms.date: 03/18/2024
 ms.localizationpriority: medium
 ---
 
@@ -63,6 +63,9 @@ Test your Outlook web add-in in the new Outlook on Windows today! To switch to t
 
 - Have a Microsoft 365 work or school account connected to Exchange Online. The new client doesn't currently support on-premises, hybrid, or sovereign Exchange accounts.
 
+    > [!NOTE]
+    > While you can add non-Microsoft mail accounts, such as Gmail, to the new Outlook on Windows, you can only use Outlook add-ins with a Microsoft account.
+
 - Have a minimum OS installation of Windows 10 Version 1809 (Build 17763).
 
 - Be a member of the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows).
@@ -71,6 +74,9 @@ To help you sign up and install the Outlook desktop client, see [Getting started
 
 For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
 
+> [!TIP]
+> If you're moving from the classic Outlook client on Windows to the new Outlook client, note that the location of add-ins is different. While add-ins are accessed from the ribbon or app bar in the classic Outlook client, access to add-ins in the new Outlook client depends on whether you're reading or composing a mail item. To learn more, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
+
 ## Debug your add-in
 
 To debug an add-in installed in the new Outlook on Windows desktop client, first [sideload the add-in to Outlook on the web](sideload-outlook-add-ins-for-testing.md). Then, in a command prompt, run the following command to open the new Outlook on Windows client and an instance of the Microsoft Edge DevTools.
@@ -78,6 +84,7 @@ To debug an add-in installed in the new Outlook on Windows desktop client, first
 ```command&nbsp;line
 olk.exe --devtools
 ```
+
 > [!TIP]
 > After running the command, the DevTools window stays open, so that you can debug an add-in's task pane as you open and close it. If you close the DevTools window, you must close your Outlook client first before running `olk.exe --devtools` again.
 
@@ -87,6 +94,7 @@ As you test your Outlook web add-in in the new Outlook on Windows, share feedbac
 
 ## See also
 
+- [Overview of the new Outlook for Windows](/deployoffice/outlook/overview-new-outlook)
 - [Blog post: New Outlook for Windows available to all Office Insiders](https://insider.office.com/blog/new-outlook-for-windows-available-to-all-office-insiders)
 - [Blog post: Add-ins in the new Outlook for Windows](https://techcommunity.microsoft.com/t5/outlook-blog/add-ins-in-the-new-outlook-for-windows/ba-p/3954388)
 - [Podcast: Update on development with new Outlook for Windows](https://www.m365devpodcast.com/update-on-development-with-new-outlook-for-windows/)

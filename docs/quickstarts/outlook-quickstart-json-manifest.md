@@ -42,7 +42,7 @@ You can create an Office Add-in with the unified manifest by using the [Yeoman g
 
     - **What do you want to name your add-in?** - `Add-in with Unified Manifest`
 
-     ![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface with unified manifest option chosen.](../images/yo-office-outlook-json-manifest.png)
+     ![The prompts and answers for the Yeoman generator in a command line interface with unified manifest option chosen.](../images/yo-office-outlook-json-manifest.png)
 
     > [!NOTE]
     > For this preview, the add-in name cannot be more than 30 characters.

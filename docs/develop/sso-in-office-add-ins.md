@@ -1,7 +1,7 @@
 ---
 title: Enable single sign-on (SSO) in an Office Add-in
 description: Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.
-ms.date: 08/14/2023
+ms.date: 01/22/2024
 ms.localizationpriority: high
 ---
 
@@ -237,6 +237,8 @@ The following is a typical decoded payload of an access token. For information a
 ## Using SSO with an Outlook add-in
 
 There are some small, but important differences in using SSO in an Outlook add-in from using it in an Excel, PowerPoint, or Word add-in. Be sure to read [Authenticate a user with a single sign-on token in an Outlook add-in](../outlook/authenticate-a-user-with-an-sso-token.md) and [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md).
+
+[!INCLUDE [chrome-tracking-prevention](../includes/chrome-tracking-prevention.md)]
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 12/19/2023
+ms.date: 02/14/2024
 ms.localizationpriority: medium
 ---
 
@@ -9,12 +9,16 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 7:00 AM Pacific Time. You can download the calendar invite at <https://aka.ms/officeaddinscommunitycall>.
 
-> [!IMPORTANT]
-> Beginning January 2024, the start time of the Office Add-ins community call is moving to **7:00 AM Pacific Time**. Update your calendars by redownloading the updated calendar invite at <https://aka.ms/officeaddinscommunitycall>.
+## Agenda for April 10, 2024 call
 
-## Agenda for January 10, 2024 call
+The agenda for the March Office Add-ins community call is the following:
+- Design best practices for Office Add-ins.
+- Updates on add-in authentication and access to Exchange APIs.
+- Implement an integrated spam reporting add-in for Outlook.
 
-The agenda for the January Office Add-ins community call will be posted the week of the call.
+
+> [!NOTE]
+> For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
 
 ## Previous calls
 

@@ -118,12 +118,6 @@ Because settings data created or deleted with the `set` and `remove` methods is 
 
 For more details about working with custom data using the methods of the `Settings` object, see [Persisting add-in state and settings](persisting-add-in-state-and-settings.md).
 
-## Read properties of a project document
-
-If your task pane add-in runs in Project, your add-in can read data from some of the project fields, resource, and task fields in the active project. To do that, you use the methods and events of the [ProjectDocument](/javascript/api/office/office.document) object, which extends the `Document` object to provide additional Project-specific functionality.
-
-For examples of reading Project data, see [Create your first task pane add-in for Project](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
-
 ## Permissions model and governance
 
 Your add-in uses the `Permissions` element in its manifest to request permission to access the level of functionality it requires from the Office JavaScript API. For example, if your add-in requires read/write access to the document, its manifest must specify `ReadWriteDocument` as the text value in its `Permissions` element. Because permissions exist to protect a user's privacy and security, as a best practice you should request the minimum level of permissions it needs for its features. The following example shows how to request the **ReadDocument** permission in a task pane's manifest.
