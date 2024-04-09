@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 02/22/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -296,6 +296,12 @@ Item multi-select supports [Conversations view](https://support.microsoft.com/of
 
 > [!NOTE]
 > On all Outlook clients, you can't select multiple messages that belong to different conversations. If you expand a different conversation while another conversation is expanded, the view of the currently expanded conversation collapses and any selected messages are deselected. However, you can select multiple messages from the same expanded conversation and messages that aren't part of any conversation at the same time.
+
+### Task pane pinning in multi-select add-ins
+
+In Outlook on the web and in new Outlook on Windows (preview), when the task pane of a multi-select add-in is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
+
+Conversely, in Outlook on Windows and on Mac, the task pane isn't automatically pinned and closes when a user switches to a different mail item.
 
 ## Next steps
 

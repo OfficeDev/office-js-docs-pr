@@ -30,4 +30,4 @@ The following files facilitate the SSO process and write data to the Office docu
 
 - The **./src/helpers/middle-tier-calls.js** file contains the JavaScript that calls your web API for fetching data.
 
-- The **./src/middle-tier/sso-helper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the access token, and includes it in a call to Microsoft Graph for the data. In the event of an error or in scenarios when SSO authentication isn't supported, it invokes the fallback strategy. 
+- The **./src/helpers/sso-helper.js** file contains the JavaScript call to the SSO API, `getAccessToken`, receives the access token, and includes it in a call to Microsoft Graph for the data. In the event of an error or in scenarios when SSO authentication isn't supported, it invokes the fallback strategy. 

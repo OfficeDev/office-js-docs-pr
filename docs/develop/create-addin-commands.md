@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands with the XML manifest
 description: Configure an XML manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 04/07/2023
+ms.date: 02/29/2024
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands](../design/add-in-commands.md).
 
-This article describes how to edit your XML manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands). 
+This article describes how to edit your XML manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands).
 
 > [!TIP]
 > For instructions on how to create add-in commands with the unified manifest for Microsoft 365, see [Create add-in commands with the unified manifest for Microsoft 365](create-addin-commands-unified-manifest.md).
@@ -341,7 +341,8 @@ Add-in commands are available in the following Outlook versions.
 - Outlook on iOS
 - Outlook on Android
 - Outlook on the web for Exchange 2016 or later
-- Outlook on the web for Microsoft 365 and Outlook.com.
+- Outlook on the web for Microsoft 365 and Outlook.com
+- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 
 Support for add-in commands in Exchange 2016 requires [Cumulative Update 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 

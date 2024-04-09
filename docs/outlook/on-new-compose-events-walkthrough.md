@@ -1,7 +1,7 @@
 ---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
-ms.date: 12/19/2023
+ms.date: 02/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -33,7 +33,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
    - The "id" of the runtime is set to the descriptive name "autorun_runtime".
    - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
        - Office on Windows executes the event handlers in a JavaScript-only runtime, which loads a JavaScript file directly.
-       - Office on Mac and the web execute the handlers in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
+       - Office on Mac and on the web, and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handlers in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
 
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
    - The "lifetime" property is set to "short", which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
@@ -111,7 +111,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
 
 To enable event-based activation of your add-in, you must configure the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point in the `VersionOverridesV1_1` node of the manifest.
 
-In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the **\<Runtime\>** element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
+In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI, and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the **\<Runtime\>** element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
 
 1. In your code editor, open the quick start project.
 
@@ -132,7 +132,7 @@ In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web and Outlook on the new Mac UI. -->
+               This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows (preview). -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
@@ -318,10 +318,9 @@ In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook
     npm start
     ```
 
-    > [!NOTE]
-    > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
-1. In Outlook on the web, create a new message.
+1. In Outlook on the web or in new Outlook on Windows (preview), create a new message.
 
     ![A message window in Outlook on the web with the subject set on compose.](../images/outlook-web-autolaunch-1.png)
 
