@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 02/9/2024
+ms.date: 04/12/2024
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -20,7 +20,7 @@ You can create an Office Add-in by using the Yeoman generator for Office Add-ins
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Outlook 2016 or later on Windows (connected to a Microsoft 365 account), Outlook on Mac, or Outlook on the web.
+- Outlook 2016 or later on Windows (connected to a Microsoft 365 account), Outlook on Mac, Outlook on the web, or [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
 ### Create the add-in project
 
@@ -123,11 +123,13 @@ The Yeoman generator creates a project in a folder with the project name that yo
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server starts and your add-in will be sideloaded.
+1. Run the following command in the root directory of your project. When you run this command, the local web server starts and your add-in is sideloaded.
 
     ```command&nbsp;line
     npm start
     ```
+
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. In Outlook, view a message in the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0), or open the message in its own window.
 

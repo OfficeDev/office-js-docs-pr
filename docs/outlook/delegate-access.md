@@ -151,6 +151,24 @@ First, to support REST calls from a delegate, the add-in must request the **read
 
 Second, enable support for shared folders. The markup varies depending on the type of manifest.
 
+# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+
+Add an additional object to the "authorization.permissions.resourceSpecific" array and set its "name" property to "Mailbox.SharedFolder".
+
+```json
+"authorization": {
+  "permissions": {
+    "resourceSpecific": [
+      ...
+      {
+        "name": "Mailbox.SharedFolder",
+        "type": "Delegated"
+      },
+    ]
+  }
+},
+```
+
 # [XML Manifest](#tab/xmlmanifest)
 
 Set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors aren't supported.
@@ -178,24 +196,6 @@ Set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) 
   </VersionOverrides>
 </VersionOverrides>
 ...
-```
-
-# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
-
-Add an additional object to the "authorization.permissions.resourceSpecific" array and set its "name" property to "Mailbox.SharedFolder".
-
-```json
-"authorization": {
-  "permissions": {
-    "resourceSpecific": [
-      ...
-      {
-        "name": "Mailbox.SharedFolder",
-        "type": "Delegated"
-      },
-    ]
-  }
-},
 ```
 
 ---

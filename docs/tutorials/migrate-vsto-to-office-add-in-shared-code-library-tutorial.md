@@ -47,7 +47,7 @@ To set up your development environment:
 
 You also need the following:
 
-- A Microsoft 365 account. You can join the [Microsoft 365 developer program](https://aka.ms/devprogramsignup) that provides a renewable 90-day Microsoft 365 subscription that includes Office apps.
+- A Microsoft 365 account. You might qualify for a Microsoft 365 E5 developer subscription, which includes Office apps, through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 - A Microsoft Azure Tenant. A trial subscription can be acquired here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## The Cell analyzer VSTO Add-in
@@ -63,7 +63,7 @@ This tutorial uses the [VSTO Add-in shared library for Office Add-in](https://gi
 
 The add-in is a custom task pane for Excel. You can select any cell with text, and then choose the **Show unicode** button. In the **Result** section, the add-in will display a list of each character in the text along with its corresponding Unicode number.
 
-![Screenshot of the Cell Analyzer VSTO add-in running in Excel with the "Show unicode" button and empty Result section.](../images/pnp-cell-analyzer-vsto-add-in.png)
+![The Cell Analyzer VSTO add-in running in Excel with the "Show unicode" button and empty Result section.](../images/pnp-cell-analyzer-vsto-add-in.png)
 
 ## Analyze types of code in the VSTO Add-in
 

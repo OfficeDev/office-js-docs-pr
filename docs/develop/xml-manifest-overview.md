@@ -109,7 +109,7 @@ The root element for the Office add-in manifest is **\<OfficeApp\>**. This eleme
   xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
   xsi:type="MailApp">
 
-  <!-- the rest of the manifest -->
+  <!-- The rest of the manifest. -->
 
 </OfficeApp>
 ```
@@ -209,15 +209,15 @@ The following are examples of `VersionOverrides` used, respectively, in a task p
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-    <!-- child elements omitted -->
+    <!-- Child elements are omitted. -->
 </VersionOverrides>
 ```
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
-  <!-- other child elements omitted -->
+  <!-- Other child elements are omitted. -->
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
-    <!-- child elements omitted -->
+    <!-- Child elements are omitted. -->
   </VersionOverrides>
 </VersionOverrides>
 ```
@@ -253,21 +253,21 @@ Some aspects of the add-in need to be localized for different locales, such as t
   <bt:Images>
     <bt:Image id="icon1_16x16" DefaultValue="https://contoso.com/images/app_icon_small.png" >
       <bt:Override Locale="ar-sa" Value="https://contoso.com/images/app_icon_small_arsa.png" />
-      <!-- add information for other locales -->
+      <!-- Add information for other locales. -->
     </bt:Image>
   </bt:Images>
 
   <bt:Urls>
     <bt:Url id="residDesktopFuncUrl" DefaultValue="https://contoso.com/urls/page_appcmdcode.html" >
       <bt:Override Locale="ar-sa" Value="https://contoso.com/urls/page_appcmdcode.html?lcid=ar-sa" />
-      <!-- add information for other locales -->
+      <!-- Add information for other locales. -->
     </bt:Url>
   </bt:Urls>
 
   <bt:ShortStrings> 
     <bt:String id="residViewTemplates" DefaultValue="Launch My Add-in">
       <bt:Override Locale="ar-sa" Value="<add localized value here>" />
-      <!-- add information for other locales -->
+      <!-- Add information for other locales. -->
     </bt:String>
   </bt:ShortStrings>
 </Resources>
@@ -287,7 +287,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
-  <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation.-->
+  <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation. -->
 
   <!-- BeginBasicSettings: Add-in metadata, used for all versions of Office unless override provided. -->
 
@@ -296,10 +296,10 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <!-- The display name of your add-in. Used on the store and various placed of the Office UI such as the add-ins dialog. -->
+  <!-- The display name of your add-in. Used on the store and various placed of the Office UI such as the add-in's dialog. -->
   <DisplayName DefaultValue="Add-in Commands Sample" />
-  <Description DefaultValue="Sample that illustrates add-in commands basic control types and actions" />
-  <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
+  <Description DefaultValue="Sample that illustrates add-in commands basic control types and actions." />
+  <!-- Icon for your add-in. Used on installation screens and the add-in's dialog. -->
   <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
@@ -310,7 +310,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   </AppDomains>
   <!-- End Basic Settings. -->
 
-  <!-- BeginTaskpaneMode integration. Any client that doesn't understand commands will use this section.
+  <!-- BeginTaskPaneMode integration. Any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides. -->
   <Hosts>
     <Host Name="Document"/>
@@ -318,7 +318,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
   <DefaultSettings>
     <SourceLocation DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html" />
   </DefaultSettings>
-  <!-- EndTaskpaneMode integration. -->
+  <!-- EndTaskPaneMode integration. -->
 
   <Permissions>ReadWriteDocument</Permissions>
 
@@ -476,23 +476,23 @@ The following sections show examples of manifest v1.1 XML files for content, tas
         <bt:Url id="Contoso.Taskpane1.Url" DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html" />
         <bt:Url id="Contoso.Taskpane2.Url" DefaultValue="https://commandsimple.azurewebsites.net/Taskpane2.html" />
       </bt:Urls>
-      <!-- ShortStrings max characters==125. -->
+      <!-- ShortStrings max characters=125. -->
       <bt:ShortStrings>
         <bt:String id="Contoso.FunctionButton.Label" DefaultValue="Execute Function" />
-        <bt:String id="Contoso.TaskpaneButton.Label" DefaultValue="Show Taskpane" />
+        <bt:String id="Contoso.TaskpaneButton.Label" DefaultValue="Show Task Pane" />
         <bt:String id="Contoso.Dropdown.Label" DefaultValue="Dropdown" />
-        <bt:String id="Contoso.Item1.Label" DefaultValue="Show Taskpane 1" />
-        <bt:String id="Contoso.Item2.Label" DefaultValue="Show Taskpane 2" />
+        <bt:String id="Contoso.Item1.Label" DefaultValue="Show Task Pane 1" />
+        <bt:String id="Contoso.Item2.Label" DefaultValue="Show Task Pane 2" />
         <bt:String id="Contoso.Tab1.GroupLabel" DefaultValue="Test Group" />
          <bt:String id="Contoso.Tab1.TabLabel" DefaultValue="Test Tab" />
       </bt:ShortStrings>
-      <!-- LongStrings max characters==250. -->
+      <!-- LongStrings max characters=250. -->
       <bt:LongStrings>
-        <bt:String id="Contoso.FunctionButton.Tooltip" DefaultValue="Click to Execute Function" />
-        <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane" />
-        <bt:String id="Contoso.Dropdown.Tooltip" DefaultValue="Click to Show Options on this Menu" />
-        <bt:String id="Contoso.Item1.Tooltip" DefaultValue="Click to Show Taskpane1" />
-        <bt:String id="Contoso.Item2.Tooltip" DefaultValue="Click to Show Taskpane2" />
+        <bt:String id="Contoso.FunctionButton.Tooltip" DefaultValue="Click to execute function." />
+        <bt:String id="Contoso.TaskpaneButton.Tooltip" DefaultValue="Click to show a task pane." />
+        <bt:String id="Contoso.Dropdown.Tooltip" DefaultValue="Click to show options on this menu." />
+        <bt:String id="Contoso.Item1.Tooltip" DefaultValue="Click to show Task Pane 1." />
+        <bt:String id="Contoso.Item2.Tooltip" DefaultValue="Click to show Task Pane 2." />
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
@@ -664,8 +664,8 @@ The following sections show examples of manifest v1.1 XML files for content, tas
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>
-          <bt:String id="taskPaneButtonLabel" DefaultValue="Show task pane"/>
-          <bt:String id="actionButtonLabel" DefaultValue="Perform an action"/>
+          <bt:String id="taskPaneButtonLabel" DefaultValue="Show Task Pane"/>
+          <bt:String id="actionButtonLabel" DefaultValue="Perform an Action"/>
         </bt:ShortStrings>
         <bt:LongStrings>
           <bt:String id="taskPaneButtonDescription" DefaultValue="Opens a task pane."/>

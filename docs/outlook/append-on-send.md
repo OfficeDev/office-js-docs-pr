@@ -1,7 +1,7 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 10/05/2023
+ms.date: 03/26/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -26,6 +26,153 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 ## Configure the manifest
 
 To configure the manifest, select the tab for the type of manifest you'll use.
+
+# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+
+The following shows how to configure your unified manifest to enable the prepend-on-send and append-on-send features.
+
+1. Open the **manifest.json** file.
+
+1. Add the following object to the "extensions.runtimes" array. Note the following about this code.
+
+    - The "minVersion" of the Mailbox requirement set is set to "1.13", so the add-in can't be installed on platforms and Office versions where this feature isn't supported.
+    - The "id" of the runtime is set to the descriptive name, "function_command_runtime".
+    - The "code.page" property is set to the URL of the UI-less HTML file that will load the function command.
+    - The "lifetime" property is set to "short", which means that the runtime starts up when the function command button is selected and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+    - There are actions specified to run the "prependHeaderOnSend" and "appendDisclaimerOnSend" functions. You'll create these functions in a later step.
+
+    ```json
+    {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.13"
+                }
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "id": "function_command_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "prependHeaderOnSend",
+                "type": "executeFunction",
+                "displayName": "prependHeaderOnSend"
+            },
+            {
+                "id": "appendDisclaimerOnSend",
+                "type": "executeFunction",
+                "displayName": "appendDisclaimerOnSend"
+            }
+        ]
+    }
+    ```
+
+1. Add the following object to the "extensions.ribbons" array. Note the following about this code.
+
+    - The "mailCompose" value is added to the "contexts" array to surface the prepend-on-send and append-on-send buttons in a compose window.
+    - The "controls" objects create and configure the buttons for the prepend-on-send and append-on-send functions. The "actionId" property of each object must reflect the same value specified in the applicable "actions.id" property of the "extensions.runtimes" object.
+
+    ```json
+    {
+        "contexts": [
+            "mailCompose"
+        ],
+        "tabs": [
+            {
+                "builtInTabId": "TabDefault",
+                "groups": [
+                    {
+                        "id": "msgComposeGroup",
+                        "label": "Contoso Add-in",
+                        "icons": [
+                            {
+                                "size": 16,
+                                "url" "https://localhost:3000/assets/icon-16.png"
+                            },
+                            {
+                                "size": 32,
+                                "url" "https://localhost:3000/assets/icon-32.png"
+                            },
+                            {
+                                "size": 80,
+                                "url" "https://localhost:3000/assets/icon-80.png"
+                            }
+                        ],
+                        "controls": [
+                            {
+                                "id": "PrependButton",
+                                "type": "button",
+                                "label": "Prepend header on send",
+                                "icons": [
+                                    {
+                                        "size": 16,
+                                        "url" "https://localhost:3000/assets/icon-16.png"
+                                    },
+                                    {
+                                        "size": 32,
+                                        "url" "https://localhost:3000/assets/icon-32.png"
+                                    },
+                                    {
+                                        "size": 80,
+                                        "url" "https://localhost:3000/assets/icon-80.png"
+                                    }
+                                ],
+                                "supertip": {
+                                    "title": "Prepend header on send",
+                                    "description": "Prepend the Contoso header on send."
+                                },
+                                "actionId": "prependHeaderOnSend"
+                            },
+                            {
+                                "id": "AppendButton",
+                                "type": "button",
+                                "label": "Append disclaimer on send",
+                                "icons": [
+                                    {
+                                        "size": 16,
+                                        "url" "https://localhost:3000/assets/icon-16.png"
+                                    },
+                                    {
+                                        "size": 32,
+                                        "url" "https://localhost:3000/assets/icon-32.png"
+                                    },
+                                    {
+                                        "size": 80,
+                                        "url" "https://localhost:3000/assets/icon-80.png"
+                                    }
+                                ],
+                                "supertip": {
+                                    "title": "Append disclaimer on send",
+                                    "description": "Append the Contoso disclaimer on send."
+                                },
+                                "actionId": "appendDisclaimerOnSend"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+    ```
+
+1. In the "authorization.permissions.resourceSpecific" array, add the following object. Be sure it's separated from other objects in the array with a comma.
+
+    ```json
+    {
+      "name": "Mailbox.AppendOnSend.User",
+      "type": "Delegated"
+    }
+    ```
+
+1. Save your changes.
 
 # [XML Manifest](#tab/xmlmanifest)
 
@@ -142,70 +289,12 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
 
 1. Save your changes.
 
-# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
-
-The following shows how to configure your unified manifest to enable the append-on-send feature.
-
-> [!IMPORTANT]
-> The prepend-on-send feature isn't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
-
-1. Open the manifest.json file.
-
-1. Add the following object to the "extensions.runtimes" array. Note the following about this code.
-
-   - The "minVersion" of the Mailbox requirement set is set to "1.9", so the add-in can't be installed on platforms and Office versions where this feature isn't supported.
-   - The "id" of the runtime is set to the descriptive name, "function_command_runtime".
-   - The "code.page" property is set to the URL of UI-less HTML file that will load the function command.
-   - The "lifetime" property is set to "short", which means that the runtime starts up when the function command button is selected and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There's an action to run a function named "appendDisclaimerOnSend". You'll create this function in a later step.
-
-    ```json
-    {
-        "requirements": {
-            "capabilities": [
-                {
-                    "name": "Mailbox",
-                    "minVersion": "1.9"
-                }
-            ],
-            "formFactors": [
-                "desktop"
-            ]
-        },
-        "id": "function_command_runtime",
-        "type": "general",
-        "code": {
-            "page": "https://localhost:3000/commands.html"
-        },
-        "lifetime": "short",
-        "actions": [
-            {
-                "id": "appendDisclaimerOnSend",
-                "type": "executeFunction",
-                "displayName": "appendDisclaimerOnSend"
-            }
-        ]
-    }
-    ```
-
-1. In the "authorization.permissions.resourceSpecific" array, add the following object. Be sure it's separated from other objects in the array with a comma.
-
-    ```json
-    {
-      "name": "Mailbox.AppendOnSend.User",
-      "type": "Delegated"
-    }
-    ```
-
-1. Save your changes.
-
 ---
 
 > [!TIP]
-> The prepend-on-send and append-on-send features must be activated by the user through a task pane or function command button. If you want content to be prepended or appended on send without additional action from the user, you can implement these features in an [event-based activation add-in](autolaunch.md).
-
-> [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
+>
+> - The prepend-on-send and append-on-send features must be activated by the user through a task pane or function command button. If you want content to be prepended or appended on send without additional action from the user, you can implement these features in an [event-based activation add-in](autolaunch.md).
+> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement the prepend-on-send handler
 
@@ -304,7 +393,10 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 ## Register the JavaScript functions
 
-1. In the same **commands.js** file, insert the following after the `appendDisclaimerOnSend` function. These calls map the function name specified in the manifest's **\<FunctionName\>** element to its JavaScript counterpart.
+1. In the same **commands.js** file, insert the following after the `appendDisclaimerOnSend` function. These calls map the function name specified in the manifest to its JavaScript counterpart. The location of the function name in the manifest varies depending on the type of manifest your add-in uses.
+
+- **XML manifest**: The function name specified in the **\<FunctionName\>** element.
+- **Unified manifest for Microsoft 365**: The function name specified in the "id" property of the objects in the "extensions.runtimes.actions" array.
 
     ```javascript
     Office.actions.associate("prependHeaderOnSend", prependHeaderOnSend);
@@ -321,8 +413,7 @@ In this section, you'll implement the JavaScript code to append a sample company
     npm start
     ```
 
-    > [!NOTE]
-    > If your add-in wasn't automatically sideloaded, follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. Create a new message, and add yourself to the **To** line.
 

@@ -1,7 +1,7 @@
 ---
 title: Understanding Outlook add-in permissions
 description: Outlook add-ins specify the required permission level in their manifest, which include restricted, read item, read/write item, or read/write mailbox. 
-ms.date: 10/07/2022
+ms.date: 01/16/2024
 ms.localizationpriority: medium
 ---
 
@@ -20,6 +20,8 @@ You can see the permissions requested by a mail add-in before installing it from
 The **restricted** permission is the most basic level of permission. Outlook assigns this permission to a mail add-in by default if the add-in doesn't request a specific permission in its manifest.
 
 ### Can do
+
+[!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
 - [Get only specific entities](match-strings-in-an-item-as-well-known-entities.md) (phone number, address, URL) from the item's subject or body.
 
@@ -76,29 +78,9 @@ The **read item** permission is the next level of permission in the permissions 
 
 - [Get all existing well-known entities](match-strings-in-an-item-as-well-known-entities.md), not just a subset, from the item's subject or body.
 
-- Use all the [well-known entities](activation-rules.md#itemhasknownentity-rule) in [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) rules, or [regular expressions](activation-rules.md#itemhasregularexpressionmatch-rule) in [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rules. The following example follows schema v1.1. It shows a rule that activates the add-in if one or more of the well-known entities are found in the subject or body of the selected message.
+    [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
-  [!include[Rule features not supported by the unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
-
-  ```XML
-    <Permissions>ReadItem</Permissions>
-        <Rule xsi:type="RuleCollection" Mode="And">
-        <Rule xsi:type="ItemIs" FormType = "Read" ItemType="Message" />
-        <Rule xsi:type="RuleCollection" Mode="Or">
-            <Rule xsi:type="ItemHasKnownEntity" 
-                EntityType="PhoneNumber" />
-            <Rule xsi:type="ItemHasKnownEntity" EntityType="Address" />
-            <Rule xsi:type="ItemHasKnownEntity" EntityType="Url" />
-            <Rule xsi:type="ItemHasKnownEntity" 
-                EntityType="MeetingSuggestion" />
-            <Rule xsi:type="ItemHasKnownEntity" 
-                EntityType="TaskSuggestion" />
-            <Rule xsi:type="ItemHasKnownEntity" 
-                EntityType="EmailAddress" />
-            <Rule xsi:type="ItemHasKnownEntity" EntityType="Contact" />
-    </Rule>
-  ```
-
+- Use all the [well-known entities](activation-rules.md#itemhasknownentity-rule) in [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) rules, or [regular expressions](activation-rules.md#itemhasregularexpressionmatch-rule) in [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rules.
 
 ### Can't do
 

@@ -71,7 +71,7 @@ Enabling runtime logging from the command line is the fastest way to use this lo
 
 The following image shows what the registry should look like. To turn the feature off, remove the `RuntimeLogging` key from the registry.
 
-![Screenshot of the registry editor with a RuntimeLogging registry key.](../images/runtime-logging-registry.png)
+![The registry editor with a RuntimeLogging registry key.](../images/runtime-logging-registry.png)
 
 ## Runtime logging on Mac
 

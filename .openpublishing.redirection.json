@@ -442,6 +442,10 @@
             "redirect_url": "/javascript/api/requirement-sets/excel/custom-functions-requirement-sets"
         },
         {
+            "source_path": "docs/excel/custom-functions-localize.md",
+            "redirect_url": "/office/dev/add-ins/excel/custom-functions-naming"
+        },
+        {
             "source_path": "docs/outlook/add-in-commands-for-outlook.md",
             "redirect_url": "/office/dev/add-ins/develop/create-addin-commands"
         },
@@ -1224,6 +1228,18 @@
         {
             "source_path": "docs/reference/openspec/openspec.md",
             "redirect_url": "/javascript/api/overview"
+        },
+        {
+            "source_path": "docs/outlook/manifests.md",
+            "redirect_url": "/office/dev/add-ins/develop/add-in-manifests"
+        },
+        {
+            "source_path": "docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/project-quickstart"
+        },
+        {
+            "source_path": "docs/reference/overview/project-add-ins-reference-overview.md",
+            "redirect_url": "/office/dev/add-ins/project/overview"
         }
     ]
 }

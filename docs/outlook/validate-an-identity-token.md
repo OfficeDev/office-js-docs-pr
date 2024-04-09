@@ -1,12 +1,15 @@
 ---
 title: Validate an Outlook add-in identity token
 description: Your Outlook add-in can send you an Exchange user identity token, but before you trust the request you must validate the token to ensure that it came from the Exchange server that you expect.
-ms.date: 10/11/2021
+ms.date: 03/21/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Validate an Exchange identity token
+
+> [!IMPORTANT]
+> Legacy Exchange user identity tokens and callback tokens will be turned off for all Exchange Online tenants in October 2024 as part of [Microsoft’s Secure Future Initiative](https://blogs.microsoft.com/on-the-issues/2023/11/02/secure-future-initiative-sfi-cybersecurity-cyberattacks/), which gives organizations the tools needed to respond to the current threat landscape. Exchange user identity tokens will still work for Exchange on-premises. Nested app authentication is the recommended approach for tokens going forward. For more information, see our [blog post about nested app authentication and legacy Exchange tokens](https://aka.ms/NAApreviewblog).
 
 Your Outlook add-in can send you an Exchange user identity token, but before you trust the request you must validate the token to ensure that it came from the Exchange server that you expect. Exchange user identity tokens are JSON Web Tokens (JWT). The steps required to validate a JWT are described in [RFC 7519 JSON Web Token (JWT)](https://www.rfc-editor.org/rfc/rfc7519.txt).
 

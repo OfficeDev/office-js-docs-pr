@@ -1,7 +1,7 @@
 ---
 title: Integrate built-in Office buttons into custom control groups and tabs
 description: Learn how to include built-in Office buttons in your custom command groups and tabs on the Office ribbon.
-ms.date: 08/18/2023
+ms.date: 02/15/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -12,11 +12,11 @@ ms.localizationpriority: medium
 You can insert built-in Office buttons into your custom control groups on the Office ribbon by using markup in the add-in's manifest. (You can't insert your custom add-in commands into a built-in Office group.) You can also insert entire built-in Office control groups into your custom ribbon tabs.
 
 > [!NOTE]
-> This article assumes that you are familiar with the article [Basic concepts for add-in commands](add-in-commands.md). Please review it if you haven't done so recently.
+> This article assumes that you're familiar with the article [Basic concepts for add-in commands](add-in-commands.md). Please review it if you haven't done so recently.
 
 > [!IMPORTANT]
 >
-> - The add-in feature and markup described in this article is *only available in PowerPoint on the web*.
+> - The add-in feature and markup described in this article is *only available in PowerPoint on the web, on Windows, and on Mac*.
 > - The markup described in this article only works on platforms that support requirement set **AddinCommands 1.3**. See the later section [Behavior on unsupported platforms](#behavior-on-unsupported-platforms).
 
 ## Insert a built-in control group into a custom tab
@@ -54,10 +54,10 @@ The following markup example adds the Office Superscript control to a custom gro
             <bt:Image size="80" resid="blue-icon-80" />
         </Icon>
         <Control xsi:type="Button" id="Contoso.Button1">
-            <!-- information on the control omitted -->
+            <!-- Information on the control omitted. -->
         </Control>
         <OfficeControl id="Superscript" />
-        <!-- other controls, as needed -->
+        <!-- Other controls, as needed. -->
     </Group>
     <Label resid="customTabLabel1" />
   </CustomTab>

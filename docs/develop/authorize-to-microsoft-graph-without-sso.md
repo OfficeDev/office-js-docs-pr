@@ -1,7 +1,7 @@
 ---
 title: Authorize to Microsoft Graph from an Office Add-in
 description: Learn to authorize to Microsoft Graph from an Office Add-in.
-ms.date: 06/23/2023
+ms.date: 01/22/2024
 ms.localizationpriority: medium
 ---
 
@@ -31,3 +31,5 @@ The following samples get Microsoft Graph data from an Office Add-in.
 - [Office Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Outlook Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
 - [Office Add-in Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)
+
+[!INCLUDE [chrome-tracking-prevention](../includes/chrome-tracking-prevention.md)]

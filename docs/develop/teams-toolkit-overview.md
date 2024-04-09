@@ -23,11 +23,11 @@ Install the latest version of Teams Toolkit into Visual Studio Code as described
 1. Select **Create a new app**.
 1. In the **New Project** drop down, select **Outlook add-in**.
 
-    :::image type="content" source="../images/teams-toolkit-create-outlook-add-in.png" alt-text="Screenshot showing four options in New Project drop down. The fourth option is called 'Outlook add-in'.":::
+    :::image type="content" source="../images/teams-toolkit-create-outlook-add-in.png" alt-text="The four options in New Project drop down. The fourth option is called 'Outlook add-in'.":::
 
 1. In the **App Features Using an Outlook Add-in** drop down, select **Taskpane**.
 
-    :::image type="content" source="../images/teams-toolkit-create-outlook-task-pane-capability.png" alt-text="Screenshot showing two options in the App Features Using an Outlook Add-in drop down. The first option 'Taskpane' is selected.":::
+    :::image type="content" source="../images/teams-toolkit-create-outlook-task-pane-capability.png" alt-text="The two options in the App Features Using an Outlook Add-in drop down. The first option 'Taskpane' is selected.":::
 
 1. In the **Workspace folder** dialog that opens, select the folder where you want to create the project.
 1. Give a name to the project (with no spaces) when prompted. Teams Toolkit will create the project with basic files and scaffolding. It will then open the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
