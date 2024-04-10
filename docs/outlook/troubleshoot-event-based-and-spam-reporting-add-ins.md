@@ -27,6 +27,7 @@ As you develop your [event-based](autolaunch.md) or [spam-reporting (preview)](s
 ## Check manifest and JavaScript requirements
 
 - Ensure that the following conditions are met in your add-in's manifest.
+
   - Verify that your add-in's source file location URL is publicly available and isn't blocked by a firewall. This URL is specified in the [SourceLocation element](/javascript/api/manifest/sourcelocation) of the XML manifest or the "extensions.runtimes.code.page" property of the unified manifest for Microsoft 365.
   - Verify that the **\<Runtimes\>** element (XML manifest) or "extensions.runtimes.code" property (unified manifest) correctly references the HTML or JavaScript file containing the event handlers. Outlook on Windows uses the JavaScript file during runtime, while Outlook on the web and on new Mac UI use the HTML file. For an example of how this is configured in the manifest, see the "Configure the manifest" section of [Automatically set the subject of a new message or appointment](on-new-compose-events-walkthrough.md#configure-the-manifest).
   
@@ -34,7 +35,7 @@ As you develop your [event-based](autolaunch.md) or [spam-reporting (preview)](s
 - Verify that your event-handling JavaScript file referenced by the Outlook client on Windows calls `Office.actions.associate`. This ensures that the event handler name specified in the manifest is mapped to its JavaScript counterpart.
 
   > [!TIP]
-  > If your add-in has only one JavaScript file referenced by Outlook on the web, Windows, and Mac, it's recommended to check on which platform the add-in is running to determine when to call `Office.actions.associate`, as shown in the following code.
+  > If your add-in has only one JavaScript file referenced by Outlook on the web, on Windows (classic and new (preview)), and on Mac, it's recommended to check on which platform the add-in is running to determine when to call `Office.actions.associate`, as shown in the following code.
   >
   > ```js
   > if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
@@ -47,7 +48,7 @@ As you develop your [event-based](autolaunch.md) or [spam-reporting (preview)](s
   - Avoid using `async` and `await` statements in your code. Including these in your JavaScript code will cause the add-in to time out.
   - Avoid using the [conditional (ternary) operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) as it will prevent your add-in from loading.
   
-  If your add-in has only one JavaScript file referenced by Outlook on the web, Windows, and Mac, you must limit your code to ECMAScript 2016 to ensure that your add-in runs in Outlook on Windows. However, if you have a separate JavaScript file referenced by Outlook on the web and Mac, you can implement a later ECMAScript specification in that file.
+  If your add-in has only one JavaScript file referenced by Outlook on the web, on Windows (classic and new (preview)), and on Mac, you must limit your code to ECMAScript 2016 to ensure that your add-in runs in Outlook on Windows. However, if you have a separate JavaScript file referenced by Outlook on the web, on Mac, and new Outlook on Windows (preview), you can implement a later ECMAScript specification in that file.
 
 ## Debug your add-in
 

@@ -1,7 +1,7 @@
 ---
 title: Build your first Word task pane add-in
 description: Learn how to build a simple Word task pane add-in by using the Office JavaScript API.
-ms.date: 12/11/2023
+ms.date: 04/03/2024
 ms.service: word
 ms.localizationpriority: high
 ---
@@ -141,9 +141,9 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
                 // Use this to check whether the API is supported in the Word client.
                 if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
                     // Do something that is only available via the new APIs.
-                    $('#emerson').click(insertEmersonQuoteAtSelection);
-                    $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
-                    $('#proverb').click(insertChineseProverbAtTheEnd);
+                    $('#emerson').on("click", insertEmersonQuoteAtSelection);
+                    $('#checkhov').on("click", insertChekhovQuoteAtTheBeginning);
+                    $('#proverb').on("click", insertChineseProverbAtTheEnd);
                     $('#supportedVersion').html('This code is using Word 2016 or later.');
                 } else {
                     // Lets you know that this code will not work with your version of Word.
@@ -269,9 +269,9 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
     ...
     <ProviderName>John Doe</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the Store and various places of the Office UI such as the add-ins dialog. -->
+    <!-- The display name of your add-in. Used on the Store and various places of the Office UI such as the add-in's dialog. -->
     <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for Word"/>
+    <Description DefaultValue="A task pane add-in for Word."/>
     ...
     ```
 
@@ -279,7 +279,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
-1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane. (If you're using the volume-licensed perpetual version of Office, instead of the Microsoft 365 version or a retail perpetual version, then custom buttons aren't supported. Instead, the task pane will open immediately.)
+1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane. (If you're using a volume-licensed perpetual version of Office 2016 or older, then custom buttons aren't supported. Instead, the task pane will open immediately.)
 
     ![The Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-0.png)
 

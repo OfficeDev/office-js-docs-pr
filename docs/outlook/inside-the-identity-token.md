@@ -7,6 +7,9 @@ ms.localizationpriority: medium
 
 # Inside the Exchange identity token
 
+> [!IMPORTANT]
+> Legacy Exchange user identity tokens and callback tokens will be turned off by default for all Exchange Online tenants in October 2024 as part of [Microsoft’s Secure Future Initiative](https://blogs.microsoft.com/on-the-issues/2023/11/02/secure-future-initiative-sfi-cybersecurity-cyberattacks/), which gives organizations the tools needed to respond to the current threat landscape. Exchange user identity tokens will still work for Exchange on-premises. Nested app authentication is the recommended approach for tokens going forward. For more information, see our [blog post about nested app authentication and legacy Exchange tokens](https://aka.ms/NAApreviewblog).
+
 The Exchange user identity token returned by the [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method provides a way for your add-in code to include the user's identity with calls to your back-end service. This article will discuss the format and contents of the token.
 
 An Exchange user identity token is a base-64 URL-encoded string that is signed by the Exchange server that sent it. The token is not encrypted, and the public key that you use to validate the signature is stored on the Exchange server that issued the token. The token has three parts: a header, a payload, and a signature. In the token string, the parts are separated by a period character (`.`) to make it easy for you to split the token.
