@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in (preview)
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 04/09/2024
+ms.date: 04/11/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -57,7 +57,7 @@ To implement the integrated spam-reporting feature in your add-in, you must conf
   - The preprocessing dialog is shown to a user when they select the add-in button. It's configured through the [PreProcessingDialog](/javascript/api/manifest/preprocessingdialog?view=outlook-js-preview&preserve-view=true) element of your manifest. While the dialog must have a title and description, you can optionally include the following elements.
     - A multiple-selection list of choices to help a user identify the type of message they're reporting. To learn how to configure these reporting options, see [ReportingOptions element](/javascript/api/manifest/reportingoptions?view=outlook-js-preview&preserve-view=true).
     - A text box for the user to provide additional information about the message they're reporting. To learn how to implement a text box, see [FreeTextLabel element](/javascript/api/manifest/preprocessingdialog?view=outlook-js-preview&preserve-view=true#child-elements).
-    - Custom text and URL to provide informational resources to the user. To learn how to personalize these elements, see [MoreInfo element](/javascript/api/manifest/moreinfo?view=outlook-js-preview&preserve-view=true).
+    - A link with custom text and URL to provide informational resources to the user. To learn how to personalize these elements, see [MoreInfo element](/javascript/api/manifest/moreinfo?view=outlook-js-preview&preserve-view=true).
 
     When a user selects **Report** from the dialog, the [SpamReporting](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true) event is activated and is then handled by the JavaScript event handler.
 
