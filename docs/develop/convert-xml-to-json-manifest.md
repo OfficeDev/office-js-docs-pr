@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an XML manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 03/22/2024
+ms.date: 04/12/2024
 ms.localizationpriority: medium
 ---
 
