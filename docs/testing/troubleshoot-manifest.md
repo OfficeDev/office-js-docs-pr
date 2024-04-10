@@ -39,7 +39,7 @@ If you didn't use the [Teams Toolkit](teams-toolkit-overview.md) or [Yeoman gene
     ```
 
     > [!NOTE]
-    > If this command isn't available or not working, run the following command instead to force the use of the latest version of the office-addin-manifest tool (replacing `MANIFEST_FILE` with the name of the manifest file).
+    > If this command isn't working, run the following command instead to force the use of the latest version of the office-addin-manifest tool (replacing `MANIFEST_FILE` with the name of the manifest file).
     >
     > ```command&nbsp;line
     > npx office-addin-manifest validate MANIFEST_FILE
@@ -55,7 +55,7 @@ npx office-addin-manifest validate -p MANIFEST_FILE
 
 ## Validate the manifest in the UI of Teams Toolkit
 
-If youa'e working in Teams Toolkit and using the unified manifest, you can use the toolkit's validation options. For instructions, see [Validate application](/microsoftteams/platform/toolkit/teamsfx-preview-and-customize-app-manifest#validate-application).
+If you're working in Teams Toolkit and using the unified manifest, you can use the toolkit's validation options. For instructions, see [Validate application](/microsoftteams/platform/toolkit/teamsfx-preview-and-customize-app-manifest#validate-application).
 
 ## See also
 
