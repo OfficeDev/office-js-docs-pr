@@ -176,7 +176,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 ],
 ```
 
-1. In the "extensions.ribbons.tabs" array, find the tab with the "builtInTabId" of "TabDefault". Add a child "customMobileGroup" property to it (as a peer of the existing "groups" property). When you're finished the "tabs" array should look like the following.
+1. In the "extensions.ribbons.tabs" array, find the tab with the "builtInTabId" of "TabDefault". Add a child "customMobileRibbonGroups" array to it (as a peer of the existing "groups" property). When you're finished, the "tabs" array should look like the following:
 
 ```json
 "tabs": [
@@ -185,65 +185,67 @@ The steps for configuring the manifest depend on which type of manifest you sele
         "groups": [
             <-- non-mobile group objects omitted -->
         ],
-        "customMobileGroup": {
-            "id": "mobileApptComposeGroup",
-            "label": "Contoso Meeting",
-            "controls": [
-                { 
-                    "id": "mobileInsertMeetingButton",
-                    "label": "Add Meeting",
-                    "buttonType": "MobileButton",
-                    "actionId": "insertContosoMeeting",
-                    "icons": [
-                        {
-                            "scale": 1,
-                            "size": 25,
-                            "url": "https://contoso.com/assets/icon-25.png"
-                        },
-                        {
-                            "scale": 1,
-                            "size": 32,
-                            "url": "https://contoso.com/assets/icon-32.png"
-                        },
-                        {
-                            "scale": 1,
-                            "size": 48,
-                            "url": "https://contoso.com/assets/icon-48.png"
-                        },                                
-                        {
-                            "scale": 2,
-                            "size": 25,
-                            "url": "https://contoso.com/assets/icon-25.png"
-                        },
-                        {
-                            "scale": 2,
-                            "size": 32,
-                            "url": "https://contoso.com/assets/icon-32.png"
-                        },
-                        {
-                            "scale": 2,
-                            "size": 48,
-                            "url": "https://contoso.com/assets/icon-48.png"
-                        },                                
-                        {
-                            "scale": 3,
-                            "size": 25,
-                            "url": "https://contoso.com/assets/icon-25.png"
-                        },
-                        {
-                            "scale": 3,
-                            "size": 32,
-                            "url": "https://contoso.com/assets/icon-32.png"
-                        },
-                        {
-                            "scale": 3,
-                            "size": 48,
-                            "url": "https://contoso.com/assets/icon-48.png"
-                        }
-                    ]
-                }
-            ]
-        }
+        "customMobileRibbonGroups": [
+            {
+                "id": "mobileApptComposeGroup",
+                "label": "Contoso Meeting",
+                "controls": [
+                    { 
+                        "id": "mobileInsertMeetingButton",
+                        "label": "Add Meeting",
+                        "buttonType": "MobileButton",
+                        "actionId": "insertContosoMeeting",
+                        "icons": [
+                            {
+                                "scale": 1,
+                                "size": 25,
+                               "url": "https://contoso.com/assets/icon-25.png"
+                            },
+                            {
+                                "scale": 1,
+                                "size": 32,
+                                "url": "https://contoso.com/assets/icon-32.png"
+                            },
+                            {
+                                "scale": 1,
+                                "size": 48,
+                                "url": "https://contoso.com/assets/icon-48.png"
+                            },                                
+                            {
+                                "scale": 2,
+                                "size": 25,
+                                "url": "https://contoso.com/assets/icon-25.png"
+                            },
+                            {
+                                "scale": 2,
+                                "size": 32,
+                                "url": "https://contoso.com/assets/icon-32.png"
+                            },
+                            {
+                                "scale": 2,
+                                "size": 48,
+                                "url": "https://contoso.com/assets/icon-48.png"
+                            },                                
+                            {
+                                "scale": 3,
+                                "size": 25,
+                                "url": "https://contoso.com/assets/icon-25.png"
+                            },
+                            {
+                                "scale": 3,
+                                "size": 32,
+                                "url": "https://contoso.com/assets/icon-32.png"
+                            },
+                            {
+                                "scale": 3,
+                                "size": 48,
+                                "url": "https://contoso.com/assets/icon-48.png"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ]  
 ```
