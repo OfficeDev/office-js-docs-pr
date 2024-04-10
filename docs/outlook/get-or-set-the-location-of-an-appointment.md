@@ -1,7 +1,7 @@
 ---
 title: Get or set the location of an appointment in an add-in
 description: Learn how to get or set the location of an appointment in an Outlook add-in.
-ms.date: 03/15/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---

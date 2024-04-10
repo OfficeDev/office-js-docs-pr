@@ -1,7 +1,7 @@
 ---
 title: Manage the delivery date and time of a message
 description: Learn how to get and set the delivery date and time of a message in compose mode.
-ms.date: 03/15/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---

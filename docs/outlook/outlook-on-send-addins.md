@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 03/15/2024
+ms.date: 04/12/2024
 ms.localizationpriority: medium
 ---
 

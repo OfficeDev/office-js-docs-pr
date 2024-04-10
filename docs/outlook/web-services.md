@@ -1,7 +1,7 @@
 ---
 title: Use Exchange Web Services (EWS) from an Outlook add-in
 description: Provides an example that shows how an Outlook add-in can request information from Exchange Web Services.
-ms.date: 03/15/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---

@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 03/15/2024
+ms.date: 04/12/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---

@@ -1,7 +1,7 @@
 ---
 title: Get and set categories
 description: How to manage categories on mailbox and item.
-ms.date: 03/15/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---

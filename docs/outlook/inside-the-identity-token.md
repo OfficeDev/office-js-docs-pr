@@ -1,7 +1,7 @@
 ---
 title: Inside the Exchange identity token in an Outlook add-in
 description: Learn about the contents of an Exchange user identity token generated from an Outlook add-in.
-ms.date: 02/25/2024
+ms.date: 04/12/2024
 ms.localizationpriority: medium
 ---
 

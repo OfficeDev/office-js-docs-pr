@@ -1,7 +1,7 @@
 ---
 title: Debug your event-based or spam-reporting Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation or integrated spam reporting.
-ms.date: 03/15/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
