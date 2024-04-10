@@ -1,7 +1,7 @@
 ---
 title: Authentication for custom functions without a shared runtime
 description: Authenticate users using custom functions that don't use a shared runtime.
-ms.date: 07/18/2022
+ms.date: 02/10/2024
 ms.localizationpriority: medium
 ---
 
@@ -31,10 +31,11 @@ If a token doesn't exist, you should use the `OfficeRuntime.dialog` API to ask t
 The following diagram outlines this basic process. The dotted line indicates that custom functions and your add-in's task pane are both part of your add-in as a whole, though they use separate runtimes.
 
 1. You issue a custom function call from a cell in an Excel workbook.
-2. The custom function uses `OfficeRuntime.dialog` to pass your user credentials to a website.
-3. This website then returns an access token to the custom function.
-4. Your custom function then sets this access token to an item in the `OfficeRuntime.storage`.
-5. Your add-in's task pane accesses the token from `OfficeRuntime.storage`.
+1. The custom function uses `OfficeRuntime.dialog` to pass your user credentials to a website.
+1. This website then returns an access token to the page in the dialog.
+1. Your JavaScript in the dialog calls the [Office.ui.messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) function to send the access token to the custom function. For more information about this function, see [Send information from the dialog box to the host page](../develop/dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page).
+1. Your custom function then sets this access token to an item in the `OfficeRuntime.storage`.
+1. Your add-in's task pane accesses the token from `OfficeRuntime.storage`.
 
 ![Diagram of custom function using dialog API to get access token, and then share token with task pane through the OfficeRuntime.storage API.](../images/authentication-diagram.png "Authentication diagram.")
 

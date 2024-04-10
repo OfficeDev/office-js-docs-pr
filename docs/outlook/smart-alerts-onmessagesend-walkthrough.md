@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 11/14/2023
+ms.date: 02/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -25,6 +25,86 @@ Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?ta
 
 To configure the manifest, select the tab for the type of manifest you are using.
 
+# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+
+1. Open the **manifest.json** file.
+
+1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
+
+   - The "minVersion" of the Mailbox requirement set is set to "1.12" because the [supported events table](autolaunch.md#supported-events) specifies that this is the lowest version of the requirement set that supports the `OnMessageSend` event.
+   - The "id" of the runtime is set to the descriptive name "autorun_runtime".
+   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
+       - Office on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
+       - Office on the web, on Mac, and on [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
+     For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+   - The "lifetime" property is set to "short", which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - There is an action to run a handler for the `OnMessageSend` event. You'll create the handler function in a later step.
+
+    ```json
+     {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.12"
+                }
+            ]
+        },
+        "id": "autorun_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html",
+            "script": "https://localhost:3000/launchevent.js"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "onMessageSendHandler",
+                "type": "executeFunction",
+                "displayName": "onMessageSendHandler"
+            }
+        ]
+    }
+    ```
+
+1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+
+    ```json
+    "autoRunEvents": [
+    
+    ]
+    ```
+
+1. Add the following object to the "autoRunEvents" array. Note the following about this code:
+
+   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, "messageSending", as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in "actionId" must match the name used in the "id" property of the object in the "actions" array in an earlier step.
+   - The "sendMode" option is set to "softBlock". This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message. However, if the add-in is unavailable at the time of sending, the item will be sent.
+
+    ```json
+      {
+          "requirements": {
+              "capabilities": [
+                  {
+                      "name": "Mailbox",
+                      "minVersion": "1.12"
+                  }
+              ],
+              "scopes": [
+                  "mail"
+              ]
+          },
+          "events": [
+            {
+                "type": "messageSending",
+                "actionId": "onMessageSendHandler",
+                "options": {
+                    "sendMode": "softBlock"
+                }
+            }
+          ]
+      }
+    ```
+
 # [XML Manifest](#tab/xmlmanifest)
 
 1. In your code editor, open the quick start project.
@@ -46,7 +126,7 @@ To configure the manifest, select the tab for the type of manifest you are using
             <!-- Event-based activation happens in a lightweight runtime.-->
             <Runtimes>
               <!-- HTML file including reference to or inline JavaScript event handlers.
-                   This is used by Outlook on the web and on the new Mac UI. -->
+                   This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows (preview). -->
               <Runtime resid="WebViewRuntime.Url">
                 <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
                 <Override type="javascript" resid="JSRuntime.Url"/>
@@ -132,92 +212,12 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Save your changes.
 
+---
+
 > [!TIP]
 >
 > - For a list of send mode options available with the `OnMessageSend` and `OnAppointmentSend` events, see [Available send mode options](onmessagesend-onappointmentsend-events.md#available-send-mode-options).
 > - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
-
-# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
-
-1. Open the **manifest.json** file.
-
-1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
-
-   - The "minVersion" of the Mailbox requirement set is set to "1.12" because the [supported events table](autolaunch.md#supported-events) specifies that this is the lowest version of the requirement set that supports the `OnMessageSend` event.
-   - The "id" of the runtime is set to the descriptive name "autorun_runtime".
-   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
-       - Office on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
-       - Office on Mac and the web execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
-     For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-   - The "lifetime" property is set to "short", which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There is an action to run a handler for the `OnMessageSend` event. You'll create the handler function in a later step.
-
-    ```json
-     {
-        "requirements": {
-            "capabilities": [
-                {
-                    "name": "Mailbox",
-                    "minVersion": "1.12"
-                }
-            ]
-        },
-        "id": "autorun_runtime",
-        "type": "general",
-        "code": {
-            "page": "https://localhost:3000/commands.html",
-            "script": "https://localhost:3000/launchevent.js"
-        },
-        "lifetime": "short",
-        "actions": [
-            {
-                "id": "onMessageSendHandler",
-                "type": "executeFunction",
-                "displayName": "onMessageSendHandler"
-            }
-        ]
-    }
-    ```
-
-1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
-
-    ```json
-    "autoRunEvents": [
-    
-    ]
-    ```
-
-1. Add the following object to the "autoRunEvents" array. Note the following about this code:
-
-   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, "messageSending", as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in "actionId" must match the name used in the "id" property of the object in the "actions" array in an earlier step.
-   - The "sendMode" option is set to "softBlock". This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message. However, if the add-in is unavailable at the time of sending, the item will be sent.
-
-    ```json
-      {
-          "requirements": {
-              "capabilities": [
-                  {
-                      "name": "Mailbox",
-                      "minVersion": "1.12"
-                  }
-              ],
-              "scopes": [
-                  "mail"
-              ]
-          },
-          "events": [
-            {
-                "type": "messageSending",
-                "actionId": "onMessageSendHandler",
-                "options": {
-                    "sendMode": "softBlock"
-                }
-            }
-          ]
-      }
-    ```
-
----
 
 ## Implement event handling
 
@@ -629,8 +629,8 @@ If you implemented the optional step to override the send mode option at runtime
 - [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
 - [Office add-in manifests](../develop/add-in-manifests.md)
-- [Event-based activation troubleshooting guide](autolaunch.md#troubleshooting-guide)
-- [How to debug event-based add-ins](debug-autolaunch.md)
+- [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
+- [Debug event-based and spam-reporting add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
 - [Office Add-ins code sample: Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
 - [Office Add-ins code sample: Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)

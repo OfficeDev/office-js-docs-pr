@@ -19,7 +19,7 @@ The technique described in this article can be used only when the following cond
 
 To launch the debugger, choose the top right corner of the task pane to activate the **Personality** menu (as shown in the red circle in the following image).
 
-![Screenshot of Attach Debugger menu.](../images/attach-debugger.png)
+![The Attach Debugger menu in the add-in task pane.](../images/attach-debugger.png)
 
 Select **Attach Debugger**. This launches the Microsoft Edge (Chromium-based) developer tools. Use the tools as described in [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md).
 

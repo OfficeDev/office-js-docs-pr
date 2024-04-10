@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in (preview)
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 11/02/2023
+ms.date: 12/21/2023
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -228,6 +228,9 @@ The following is an example of a spam-reporting event handler that calls the `ge
 
 1. Save your changes.
 
+> [!NOTE]
+> To configure single sign-on (SSO) or cross-origin resource sharing (CORS) in your spam-reporting add-in, you must add your add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md).
+
 ### Signal when the event has been processed
 
 Once the event handler has completed processing the message, it must call the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method. In addition to signaling to the add-in that the spam-reporting event has been processed, `event.completed` can also be used to customize a post-processing dialog to show to the user or perform additional operations on the message, such as deleting it from the inbox. For a list of properties you can include in a JSON object to pass as a parameter to the `event.completed` method, see [Office.SpamReportingEventCompletedOptions](/javascript/api/outlook/office.spamreportingeventcompletedoptions?view=outlook-js-preview&preserve-view=true).
@@ -350,10 +353,15 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 - The integrated spam-reporting and [event-based activation](autolaunch.md) features must use the same runtime. Multiple runtimes aren't currently supported in Outlook. To learn more about runtimes, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 - A task pane command can't be assigned to the spam-reporting button on the ribbon. If you want to implement a task pane in your add-in, you must include the [Action element](/javascript/api/manifest/action#xsitype-is-showtaskpane) in the manifest and set its `xsi:type` attribute to `ShowTaskpane`. Note that a separate button to activate the task pane will be added to the ribbon, but it won't appear in the dedicated spam-reporting area of the ribbon.
 
+## Troubleshoot your add-in
+
+As you develop your spam-reporting add-in, you may need to troubleshoot issues, such as your add-in not loading. For guidance on how to troubleshoot a spam-reporting add-in, see [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md).
+
 ## See also
 
 - [Office Add-ins manifest](../develop/add-in-manifests.md)
 - [Runtimes in Office Add-ins](../testing/runtimes.md)
+- [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [ReportPhishingCommandSurface extension point (preview)](/javascript/api/manifest/extensionpoint?view=outlook-js-preview&preserve-view=true#reportphishingcommandsurface-preview)
 - [Office.MessageRead.getAsFileAsync (preview)](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-getasfileasync-member(1))
 - [Office.MailboxEnums.MoveSpamItemTo (preview)](/javascript/api/outlook/office.mailboxenums.movespamitemto?view=outlook-js-preview&preserve-view=true)

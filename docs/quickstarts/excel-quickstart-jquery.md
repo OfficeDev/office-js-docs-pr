@@ -120,7 +120,7 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
             // Office is ready
             $(document).ready(function () {
                 // The document is ready
-                $('#set-color').click(setColor);
+                $('#set-color').on("click", setColor);
             });
         });
 

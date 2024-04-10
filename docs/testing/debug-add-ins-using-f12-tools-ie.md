@@ -43,7 +43,7 @@ The following steps are the instructions for debugging your add-in. If you just 
 1. Open the **Debugger** tab.
 1. In the upper left of the tab, just below the debugger tool ribbon, there is a small folder icon. Select this to open a drop down list of the files in the add-in. The following is an example.
 
-    :::image type="content" source="../images/f12-file-dropdown.png" alt-text="Screenshot of upper left corner of debugger tab with a folder drop down open and a list of files.":::
+    :::image type="content" source="../images/f12-file-dropdown.png" alt-text="The upper left corner of debugger tab with a folder drop down open and a list of files.":::
 
 1. Select the file that you want to debug and it opens in the the **script** (left) pane of the **Debugger** tab. If you're using a transpiler, bundler, or minifier, that changes the name of the file, it will have the final name that is actually loaded, not the original source file name.
 
