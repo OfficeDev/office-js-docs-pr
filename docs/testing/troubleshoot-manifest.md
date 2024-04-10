@@ -1,33 +1,28 @@
 ---
 title: Validate an Office Add-in's manifest
-description: Learn how to validate the manifest of an Office Add-in using the XML schema and other tools.
-ms.date: 10/10/2023
+description: Learn how to validate the manifest of an Office Add-in.
+ms.date: 04/12/2024
 ms.localizationpriority: medium
 ---
 
 # Validate an Office Add-in's manifest
 
-You may want to validate your add-in's manifest file to ensure that it's correct and complete. Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in. This article describes multiple ways to validate the manifest file.
+You should your add-in's manifest file to ensure that it's correct and complete. Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in. This article describes multiple ways to validate the manifest file. Except as specified otherwise, they work for both the unified manifest for Microsoft 365 and the XML manifest.
 
 > [!NOTE]
 > For details about using runtime logging to troubleshoot issues with your add-in's manifest, see [Debug your add-in with runtime logging](runtime-logging.md).
 
-## Validate your manifest with the Yeoman generator for Office Add-ins
+## Validate your manifest with the validate command
 
-If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can also use it to validate your project's manifest file. Run the following command in the root directory of your project.
+If you used the [Teams Toolkit](teams-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate your project's manifest file with the following command in the root directory of your project.
 
 ```command&nbsp;line
 npm run validate
 ```
 
-![Animated GIF that shows the Yo Office validator being run at the command line and generating results that show Validation Passed.](../images/yo-office-validator.gif)
-
-> [!NOTE]
-> To access this functionality, your add-in project must be created using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) version 1.1.17 or later.
-
 ## Validate your manifest with office-addin-manifest
 
-If you didn't use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
+If you didn't use the [Teams Toolkit](teams-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
 
 1. Install [Node.js](https://nodejs.org/download/).
 
@@ -37,14 +32,14 @@ If you didn't use the [Yeoman generator for Office Add-ins](../develop/yeoman-ge
     npm install -g office-addin-manifest
     ```
 
-1. Run the following command *in the root directory of your project*.
+1. Run the following command *in the folder of your project that contains the manifest file*.
 
     ```command&nbsp;line
-    npm run validate
+    office-addin-manifest validate MANIFEST_FILE
     ```
 
     > [!NOTE]
-    > If this command is not available or not working, run the following command instead to force the use of the latest version of the office-addin-manifest tool (replacing `MANIFEST_FILE` with the name of the manifest file).
+    > If this command isn't available or not working, run the following command instead to force the use of the latest version of the office-addin-manifest tool (replacing `MANIFEST_FILE` with the name of the manifest file).
     >
     > ```command&nbsp;line
     > npx office-addin-manifest validate MANIFEST_FILE
@@ -58,19 +53,9 @@ If you're having trouble with that command, try the following (replacing `MANIFE
 npx office-addin-manifest validate -p MANIFEST_FILE
 ```
 
-## Validate your manifest against the XML schema
+## Validate the manifest in the UI of Teams Toolkit
 
-You can validate the manifest file against the [XML Schema Definition (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) files. This will ensure that the manifest file follows the correct schema, including any namespaces for the elements you are using. If you copied elements from other sample manifests double check that you also **include the appropriate namespaces**. You can use an XML schema validation tool to perform this validation.
-
-### To use a command-line XML schema validation tool to validate your manifest
-
-1. Install [tar](https://www.gnu.org/software/tar/) and [libxml](http://xmlsoft.org/FAQ.html), if you haven't already.
-
-1. Run the following command. Replace `XSD_FILE` with the path to the manifest XSD file, and replace `XML_FILE` with the path to the manifest XML file.
-
-    ```command&nbsp;line
-    xmllint --noout --schema XSD_FILE XML_FILE
-    ```
+If youa'e working in Teams Toolkit and using the unified manifest, you can use the toolkit's validation options. For instructions, see [Validate application](/microsoftteams/platform/toolkit/teamsfx-preview-and-customize-app-manifest#validate-application).
 
 ## See also
 
