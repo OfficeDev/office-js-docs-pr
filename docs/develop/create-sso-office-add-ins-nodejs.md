@@ -315,13 +315,13 @@ The web server provides REST APIs for the client to call. For example, the REST 
       };
 
       // The Scope claim tells you what permissions the client application has in the service.
-      // In this case we look for a scope value of access_as_user, or full access to the service as the user.
+      // In this case we look for a scope value of access_as_users, or full access to the service as the user.
       const tokenScopes = jwt.decode(oboRequest.oboAssertion).scp.split(' ');
       const accessAsUserScope = tokenScopes.find(
-        (scope) => scope === 'access_as_user'
+        (scope) => scope === 'access_as_users'
       );
       if (!accessAsUserScope) {
-        res.status(401).send({ type: "Missing access_as_user" });
+        res.status(401).send({ type: "Missing access_as_users" });
         return;
       }
       const cca = authHelper.getConfidentialClientApplication();
