@@ -1,7 +1,7 @@
 ---
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
-ms.date: 03/22/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
