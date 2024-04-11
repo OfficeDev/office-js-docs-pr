@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in (preview)
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 03/21/2024
+ms.date: 04/09/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -31,6 +31,9 @@ To preview the integrated spam-reporting feature, you must have one of the follo
 > If you're unable to choose a channel in your Outlook client on Windows, see [Let users choose which Microsoft 365 Insider channel to install on Windows devices](/deployoffice/insider/deploy/user-choice).
 
 ## Set up your environment
+
+> [!TIP]
+> To immediately try out a completed spam-reporting add-in solution, see the [Report spam or phishing emails in Outlook (preview)](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-spam-reporting) sample.
 
 Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
