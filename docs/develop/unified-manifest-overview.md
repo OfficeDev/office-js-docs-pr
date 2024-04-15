@@ -65,7 +65,7 @@ We're working hard to complete reference documentation for the "extensions" prop
 | "ribbons" | The ribbons that the add-in customizes. | 
 | "ribbons.contexts" | Specifies the command surfaces that the add-in customizes. For example, "mailRead" or "mailCompose". |
 | "ribbons.tabs" | Configures custom ribbon tabs. |
-| "alternatives" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. | 
+| "alternates" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. Also specifies the main icons that are used to represent the add-in on older versions of Office. | 
 | "runtimes"  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). | 
 | "autoRunEvents" | Configures an event handler for a specified event. | 
 
@@ -293,7 +293,7 @@ The following is an example of a preview unified app manifest for an add-in.
                     }
                   ]
                 }
-              ]
+              ],
             }
           ]
         },
@@ -310,6 +310,38 @@ The following is an example of a preview unified app manifest for an add-in.
                     {
                       "id": "control1",
                       "type": "button",
+                      "label": "Action 1",
+                      "icons": [
+                        {
+                          "size": 16,
+                          "url": "test_16.png"
+                        },
+                        {
+                          "size": 32,
+                          "url": "test_32.png"
+                        },
+                        {
+                          "size": 80,
+                          "url": "test_80.png"
+                        }
+                      ],
+                      "supertip": {
+                        "title": "Action 1 Title",
+                        "description": "Action 1 Description"
+                      },
+                      "actionId": "action1"
+                    }
+                  ]
+                }
+              ],
+              "customMobileRibbonGroups" [
+                {
+                  "id": "myMobileGroup",
+                  "label": "Contoso Actions",
+                  "controls": [
+                    {
+                      "id": "msgReadFunctionButton",
+                      "type": "MobileButton",
                       "label": "Action 1",
                       "icons": [
                         {
@@ -376,6 +408,16 @@ The following is an example of a preview unified app manifest for an add-in.
             "storeOfficeAddin": {
               "officeAddinId": "00000000-0000-0000-0000-000000000000",
               "assetId": "WA000000000"
+            }
+          },
+          "alternateIcons": {
+            "icon": {
+              "size": 64,
+              "url": "https://contoso.com/assets/icon64x64.jpg"
+            },
+            "highResolutionIcon": {
+              "size": 64,
+              "url": "https://contoso.com/assets/icon128x128.jpg"
             }
           }
         }
