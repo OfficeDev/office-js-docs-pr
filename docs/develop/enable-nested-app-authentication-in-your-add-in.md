@@ -219,7 +219,7 @@ While we strive to provide a high-degree of compatibility with these flows acros
 
 - [Authenticate and authorize with the Office dialog API](/office/dev/add-ins/develop/auth-with-office-dialog-api).
 - [Microsoft identity sample for SPA and JavaScript](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/blob/main/2-Authorization-I/1-call-graph/README.md)
-- [Microsoft identity samples for various app types and frameworks](https://learn.microsoft.com/entra/identity-platform/sample-v2-code?tabs=apptype)
+- [Microsoft identity samples for various app types and frameworks](/entra/identity-platform/sample-v2-code?tabs=apptype)
 
 ## MSAL.js APIs supported by NAA
 
