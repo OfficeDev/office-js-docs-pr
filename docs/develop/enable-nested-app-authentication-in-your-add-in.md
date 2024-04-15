@@ -1,10 +1,9 @@
 ---
 title: Enable SSO in an Office Add-in using nested app authentication
 description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 04/09/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: high
-
 ---
 
 # Enable SSO in an Office Add-in using nested app authentication (preview)
@@ -18,6 +17,12 @@ You can use the MSAL.js library (version 3.11 and later) with nested app authent
 
 > [!IMPORTANT]
 > Nested app authentication (NAA) is currently in preview. To try this feature, join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> NAA is supported in the following builds.
+>
+> - Word, Excel, and PowerPoint on Windows build 16.0.17531.20000 or later.
+> - Word, Excel, and PowerPoint on Mac build 16.85.24040319 or later.
+> - Outlook on Windows build 16.0.17531.20000 or later.
+> - Outlook on Mac build 16.85.24040319 or later.
 
 ## Register your single-page application
 
@@ -41,30 +46,52 @@ Trusted broker groups are dynamic by design and can be updated in the future to 
 
 Configure your add-in to use NAA by setting the `supportsNestedAppAuth` property to true in your MSAL configuration. This enables MSAL to use APIs on its native application host (for example, Outlook) to acquire tokens for your application. If you don't set this property, MSAL uses the default JavaScript-based implementation to acquire tokens for your application, which may lead to unexpected auth prompts and unsatisfiable conditional access policies when running inside of a webview.
 
-```JavaScript
-// Configuration for NAA.  
+The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts` file in a project built with `yo office`. The code can be adapted to any project.
 
-const msalConfig = { 
-  auth: { 
-    clientId: "Enter_the_Application_Id_Here", 
-    authority: "https://login.microsoftonline.com/common", 
-    supportsNestedAppAuth: true 
-  } 
-} 
-```
+1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project.
+
+    ```json
+    "dependencies": {
+        "@azure/msal-browser": "^3.11.1",
+        ...
+    ```
+
+1. Save and run `npm install` to install `@azure/msal-browser`.
+
+1. Add the following code to the top of the `taskpane.js` or `taskpane.ts` file. Replace the `Enter_the_Application_Id_Here` placeholder with the Azure app ID you saved previously.
+
+    ```JavaScript
+    import { PublicClientNext } from "@azure/msal-browser";
+    
+    // Configuration for NAA.  
+    const msalConfig = { 
+      auth: { 
+        clientId: "Enter_the_Application_Id_Here", 
+        authority: "https://login.microsoftonline.com/common", 
+        supportsNestedAppAuth: true 
+      } 
+    }
+    let pca = undefined; // public client application to be initialized later.
+    ```
 
 ## Initialize the public client application
 
 Next, you need to initialize MSAL and get an instance of the public client application. This is used to get access tokens when needed. It's recommended to create the public client application in the `Office.onReady` method.
 
-```javascript
-let pca = undefined;
+- In your `Office.onReady` function, add a call to `createPublicClientApplication` as shown below to initilize the `pca` variable.
 
-// Initialize the publice client application
-Office.onReady(async (info) => {
-    pca = await msalBrowser.PublicClientNext.createPublicClientApplication(msalConfig);
-  });
-```
+    ```javascript
+    Office.onReady(async (info) => {
+      if (info.host === Office.HostType.Excel) {
+        document.getElementById("sideload-msg").style.display = "none";
+        document.getElementById("app-body").style.display = "flex";
+        document.getElementById("run").onclick = run;
+        
+        // Initialize the publice client application
+        pca = await PublicClientNext.createPublicClientApplication(msalConfig);
+      }
+    });
+    ```
 
 ## Acquire your first token
 
@@ -76,60 +103,124 @@ The following steps show the pattern to use for acquiring a token.
 1. Call `acquireTokenSilent`. This will get the token without requiring user interaction.
 1. If `acquireTokenSilent` fails, call `acquireTokenPopup` to display an interactive dialog for the user. `acquireTokenSilent` can fail if the token expired, or the user has not yet consented to all of the requested scopes.
 
-```JavaScript
-async function run() { 
-  // Specify minimum scopes needed for the access token. 
-  const tokenRequest = { 
-    scopes: ["User.Read", "openid", "profile"], 
-    loginHint: myloginHint 
-  } 
- 
-  try { 
-    const userAccount = await pca.acquireTokenSilent(tokenRequest); 
-    // Call your API with the token. 
-    makeMSGraphCall(userAccount.accessToken); 
-  } catch (error) { 
-    // Acquire token silent failure. Send an interactive request via popup. 
-    try { 
-      const userAccount = pca.acquireTokenPopup(tokenRequest); 
-      // Call  your API with the token. 
-      makeMSGraphCall(userAccount.accessToken); 
-    } catch (popupError) { 
-      // Acquire token interactive failure. 
-      console.log(popupError); 
-    } 
-  } 
-} 
-```
+The following code shows how to implement this authentication pattern in your own project.
+
+1. Add the following code to `taskpane.js` or `taskpane.ts`. The `getFileNames` function specifies the scopes needed when it calls the `ssoGetToken` function.
+
+    ```javascript
+    /**
+     * Gets the first 10 (or specified number) file names from
+     * the user's OneDrive account.
+     * 
+     * @param {*} count Number of file names to get.
+     * @returns 
+     */
+    async function getFileNames(count=10) {
+      const accessToken = await ssoGetToken(["Files.Read","User.Read","openid","profile"]);
+      const response = await makeGraphRequest(
+        accessToken,
+        "/me/drive/root/children",
+        `?$select=name&$top=${count}`
+      );
+    
+      const names = response.value.map((item) => item.name);
+      return names;
+    }
+    ```
+
+1. Next, add the following `ssoGetToken` function. This function calls `acquireTokenSilent` to get the access token. If that fails, it will call `acquireTokenPopup` to get the access token interactively.
+
+    ```JavaScript
+    /**
+     * Uses MSAL and nested app authentication to get an access token using SSO.
+     * 
+     * @param {*} scopes Minimal scopes required for the token.
+     * @returns An access token for user signed in to Office.
+     */
+    async function ssoGetToken(scopes) {
+      if (pca === undefined) {
+        throw new Error("AccountManager is not initialized!");
+      }
+    
+      // Specify minimum scopes needed for the access token.
+      const tokenRequest = {
+        scopes: scopes
+      };
+    
+      try {
+        console.log("Trying to acquire token silently...");
+        const userAccount = await pca.acquireTokenSilent(tokenRequest);
+        console.log("Acquired token silently.");
+        return userAccount.accessToken;
+      } catch (error) {
+        console.log(`Unable to acquire token silently: ${error}`);
+      }
+    
+      // Acquire token silent failure. Send an interactive request via popup.
+      try {
+        console.log("Trying to acquire token interactively...");
+        const userAccount = await pca.acquireTokenPopup(tokenRequest);
+        console.log("Acquired token interactively.");
+        return userAccount.accessToken;
+      } catch (popupError) {
+        // Acquire token interactive failure.
+        console.log(`Unable to acquire token interactively: ${popupError}`);
+        throw new Error(`Unable to acquire access token: ${popupError}`);
+      }
+    }
+    ```
 
 ## Call an API
 
 After acquiring the token, use it to call an API. The following example shows how to call the Microsoft Graph API by calling `fetch` with the token attached in the *Authorization* header.
 
-```javascript
-async function makeMSGraphCall(accessToken) {
-  const requestString = "https://graph.microsoft.com/v1.0/me";
-  const headersInit = { 'Authorization': accessToken };
-  const requestInit = { 'headers': headersInit }
+1. Add the following code to `taskpane.js` or `taskpane.ts`. The `makeGraphRequest` function calls the specified REST API and returns the result.
 
-  // Make REST call to MS Graph.
-  const result = await fetch(requestString, requestInit);
-  if (result.ok) {
-    const data = await result.text();
-    console.log(data);
-    document.getElementById("userInfo").innerText = data;
-  } else {
-    // Likely an MS Graph error if result was not ok.
-    // Error details are in the body.
-    const response = await result.text();
-    console.log(response);
-  }
-}
-```
+    ```javascript
+    /**
+     *  Calls a Microsoft Graph API and returns the response.
+     *
+     * @param accessToken The access token to use for the request.
+     * @param path Path component of the URI, e.g., "/me". Should start with "/".
+     * @param queryParams Query parameters, e.g., "?$select=name,id". Should start with "?".
+     * @returns
+     */
+    async function makeGraphRequest(accessToken, path, queryParams) {
+      if (!path) throw new Error("path is required.");
+      if (!path.startsWith("/")) throw new Error("path must start with '/'.");
+      if (queryParams && !queryParams.startsWith("?")) throw new Error("queryParams must start with '?'.");
+    
+      const response = await fetch(`https://graph.microsoft.com/v1.0${path}${queryParams}`, {
+        headers: { Authorization: accessToken },
+      });
+    
+      if (response.ok) {
+        const data = await response.json();
+        return data;
+      } else {
+        throw new Error(response.statusText);
+      }
+    }
+    ```
+
+1. Use the following code to replace the `run` function to call `getFileNames`. This code writes the file names to the debug console. You need to ensure this function is called by a button on the task pane.
+
+    ```javascript
+    async function run() {
+      try {
+        const fileNames = await getFileNames();
+        fileNames.forEach(fileName => {
+          console.log(fileName);
+        })
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    ```
 
 ## What is nested app authentication
 
-Nested app authentication enables SSO for applications that are nested inside of supported first-party applications. For example, Excel on Windows runs your add-in inside a webview. In this scenario, your add-in is a nested application running inside Excel, which is the host. NAA also supports nested apps in Teams. For example, if a Teams tab is hosting Excel, and your add-in is loaded, it is nested inside Excel, which is also nested inside Teams. Again, NAA supports this nested scenario and you can access SSO to get user identity and access tokens of the signed in user.
+Nested app authentication enables SSO for applications that are nested inside of supported Microsoft applications. For example, Excel on Windows runs your add-in inside a webview. In this scenario, your add-in is a nested application running inside Excel, which is the host. NAA also supports nested apps in Teams. For example, if a Teams tab is hosting Excel, and your add-in is loaded, it is nested inside Excel, which is also nested inside Teams. Again, NAA supports this nested scenario and you can access SSO to get user identity and access tokens of the signed in user.
 
 ## NAA supported accounts and hosts
 
@@ -137,7 +228,7 @@ NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identi
 
 ## Best practices
 
-The following are some best practices when using MSAL.js with NAA.
+We recommend the following best practices when using MSAL.js with NAA.
 
 ### Use silent authentication whenever possible
 
@@ -147,7 +238,11 @@ In certain cases, the `acquireTokenSilent` method's attempt to get the token f
 
 ### Have a fallback when NAA isn't supported
 
-While we strive to provide a high-degree of compatibility with these flows across the Microsoft ecosystem, your application may appear in downlevel/legacy clients that haven't been updated to support NAA. In these cases, your application won't support seamless SSO and you may need to invoke special APIs for interacting with the user to open authentication dialogs. For more information, see [Authenticate and authorize with the Office dialog API](/office/dev/add-ins/develop/auth-with-office-dialog-api).
+While we strive to provide a high-degree of compatibility with these flows across the Microsoft ecosystem, your add-in may be loaded in an older Office host that does not support NAA. In these cases, your add-in won't support seamless SSO and you may need to fall back to an alternate method of authenticating the user. In generaly you'll want to use the MSAL SPA authentication pattern with the Office JS dialog API. For more information, see the following resources.
+
+- [Authenticate and authorize with the Office dialog API](/office/dev/add-ins/develop/auth-with-office-dialog-api).
+- [Microsoft identity sample for SPA and JavaScript](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/blob/main/2-Authorization-I/1-call-graph/README.md)
+- [Microsoft identity samples for various app types and frameworks](https://learn.microsoft.com/entra/identity-platform/sample-v2-code?tabs=apptype)
 
 ## MSAL.js APIs supported by NAA
 
@@ -155,14 +250,14 @@ The following table shows which APIs are supported when NAA is enabled in the MS
 
 | Method                        | Supported by NAA |
 |-------------------------------|------------------|
-| *acquireTokenByCode*          | NO (throws exception)               |
+| *acquireTokenByCode*          | NO (throws exception) |
 | *acquireTokenPopup*           | YES              |
-| *acquireTokenRedirect*        | NO (throws exception)              |
+| *acquireTokenRedirect*        | NO (throws exception) |
 | *acquireTokenSilent*          | YES              |
 | *addEventCallback*            | YES              |
-| *addPerformanceCallback*      | YES              |
-| *disableAccountStorageEvents* | NO (throws exception)               |
-| *enableAccountStorageEvents*  | NO (throws exception)             |
+| *addPerformanceCallback*      | NO (throws exception) |
+| *disableAccountStorageEvents* | NO (throws exception) |
+| *enableAccountStorageEvents*  | NO (throws exception) |
 | *getAccountByHomeId*          | YES              |
 | *getAccountByLocalId*         | YES              |
 | *getAccountByUsername*        | YES              |
@@ -170,19 +265,19 @@ The following table shows which APIs are supported when NAA is enabled in the MS
 | *getAllAccounts*              | YES              |
 | *getConfiguration*            | YES              |
 | *getLogger*                   | YES              |
-| *getTokenCache*               | NO (throws exception)              |
+| *getTokenCache*               | NO (throws exception) |
 | *handleRedirectPromise*       | NO               |
 | *initialize*                  | YES              |
 | *initializeWrapperLibrary*    | YES              |
 | *loginPopup*                  | YES              |
-| *loginRedirect*               | NO (throws exception)              |
-| *logout*                      | NO (throws exception)              |
-| *logoutPopup*                 | NO (throws exception)              |
-| *logoutRedirect*              | NO (throws exception)              |
+| *loginRedirect*               | NO (throws exception) |
+| *logout*                      | NO (throws exception) |
+| *logoutPopup*                 | NO (throws exception) |
+| *logoutRedirect*              | NO (throws exception) |
 | *removeEventCallback*         | YES              |
-| *removePerformanceCallback*   | YES               |
+| *removePerformanceCallback*   | NO (throws exception) |
 | *setActiveAccount*            | NO               |
-| *setLogger*                   | YES               |
+| *setLogger*                   | YES              |
 | *ssoSilent*                   | YES              |
 
 ## Security reporting
