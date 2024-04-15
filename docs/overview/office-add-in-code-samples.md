@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: A list of Office Add-in code samples to help you learn and build your own add-ins.
-ms.date: 10/19/2023
+ms.date: 03/08/2024
 localization_priority: high
 ---
 
@@ -54,6 +54,7 @@ If your development background is in building VSTO Add-ins, the following sample
 | Name                | Description         |
 |:--------------------|:--------------------|
 | [Get, edit, and set OOXML content in a Word document with a Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-get-set-edit-openxml) | This sample shows how to get, edit, and set OOXML content in a Word document. The sample add-in provides a scratch pad to get Office Open XML for your own content and test your own edited Office Open XML snippets.|
+| [Import a Word document template with a Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-import-template) | Shows how to import templates in a Word document. |
 | [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)  | This sample add-in shows you how to add a variety of rich content types to a Word document using the setSelectedDataAsync method with ooxml coercion type. The add-in also gives you the ability to show the Office Open XML markup for each sample content type right on the page. |
 | [Manage citations with your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-citation-management) | Shows how to manage citations in a Word document. |
 

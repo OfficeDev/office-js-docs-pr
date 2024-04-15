@@ -318,8 +318,7 @@ In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook
     npm start
     ```
 
-    > [!NOTE]
-    > If your add-in wasn't automatically sideloaded, then follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. In Outlook on the web or in new Outlook on Windows (preview), create a new message.
 

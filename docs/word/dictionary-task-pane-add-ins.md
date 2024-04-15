@@ -16,7 +16,7 @@ In a typical dictionary task pane add-in, a user selects a word or phrase in the
 
 The XML web service component returns up to three definitions in the format defined by the example OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI.
 
-Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that is running in Word.
+Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that's running in Word.
 
 *Figure 1. Dictionary add-in displaying definitions for the selected word*
 

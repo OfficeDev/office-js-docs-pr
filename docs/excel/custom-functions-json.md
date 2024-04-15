@@ -277,7 +277,7 @@ The following sample shows the JSON metadata that corresponds to the functions d
 
 ## Next steps
 
-Learn the [best practices for naming your function](custom-functions-naming.md) or discover how to [localize your function](custom-functions-localize.md) using the previously described handwritten JSON method.
+Learn the [best practices for naming your function](custom-functions-naming.md) or discover how to [localize your function](custom-functions-naming.md#localize-custom-functions) using the previously described handwritten JSON method.
 
 ## See also
 
