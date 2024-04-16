@@ -591,7 +591,11 @@ If you implemented the optional steps to customize the **Don't Send** button or 
 1. In your preferred Outlook client, create a new message and set the subject. In the body, add some text. For example, "Here's a picture of the proposed logo."
 1. Send the message. A dialog appears requesting you to add an attachment. Select **Don't Send** or **Add an attachment**. The option available to you depends on whether you implemented the optional step to customize the **Don't Send** button.
 
+    - Default **Don't Send** button.
+
     ![Dialog requesting the user to add an attachment to the message.](../images/outlook-win-smart-alerts.png)
+
+    - Customized **Add an attachment** button.
 
     ![Dialog with a customized Don't Send button requesting the user to add an attachment to the message.](../images/outlook-smart-alerts-custom-button.png)
 
