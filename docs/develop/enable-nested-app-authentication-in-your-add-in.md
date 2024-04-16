@@ -76,7 +76,7 @@ The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts`
 
 Next, you need to initialize MSAL and get an instance of the public client application. This is used to get access tokens when needed. It's recommended to create the public client application in the `Office.onReady` method.
 
-- In your `Office.onReady` function, add a call to `createPublicClientApplication` as shown below to initilize the `pca` variable.
+- In your `Office.onReady` function, add a call to `createPublicClientApplication` as shown below to initialize the `pca` variable.
 
   ```javascript
   Office.onReady(async (info) => {
@@ -132,7 +132,7 @@ The following code shows how to implement this authentication pattern in your ow
    // TODO 3: Call acquireTokenPopup.
    ```
 
-1. Replace `TODO 3` with the following code. This code checks if the access token is acquired. If not it attemps to interactively get the access token by calling `acquireTokenPopup`.
+1. Replace `TODO 3` with the following code. This code checks if the access token is acquired. If not it attempts to interactively get the access token by calling `acquireTokenPopup`.
 
    ```javascript
    if (accessToken === null) {
