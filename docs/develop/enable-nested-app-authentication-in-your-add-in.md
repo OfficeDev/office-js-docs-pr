@@ -85,7 +85,7 @@ Next, you need to initialize MSAL and get an instance of the public client appli
       document.getElementById("app-body").style.display = "flex";
       document.getElementById("run").onclick = run;
 
-      // Initialize the publice client application
+      // Initialize the public client application
       pca = await PublicClientNext.createPublicClientApplication(msalConfig);
     }
   });
@@ -213,7 +213,7 @@ In certain cases, the `acquireTokenSilent` method's attempt to get the token f
 
 ### Have a fallback when NAA isn't supported
 
-While we strive to provide a high-degree of compatibility with these flows across the Microsoft ecosystem, your add-in may be loaded in an older Office host that does not support NAA. In these cases, your add-in won't support seamless SSO and you may need to fall back to an alternate method of authenticating the user. In generaly you'll want to use the MSAL SPA authentication pattern with the Office JS dialog API. For more information, see the following resources.
+While we strive to provide a high-degree of compatibility with these flows across the Microsoft ecosystem, your add-in may be loaded in an older Office host that does not support NAA. In these cases, your add-in won't support seamless SSO and you may need to fall back to an alternate method of authenticating the user. In general you'll want to use the MSAL SPA authentication pattern with the [Office JS dialog API](auth-with-office-dialog-api.md). For more information, see the following resources.
 
 - [Authenticate and authorize with the Office dialog API](/office/dev/add-ins/develop/auth-with-office-dialog-api).
 - [Microsoft identity sample for SPA and JavaScript](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/blob/main/2-Authorization-I/1-call-graph/README.md)
