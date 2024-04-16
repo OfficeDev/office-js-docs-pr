@@ -593,11 +593,11 @@ If you implemented the optional steps to customize the **Don't Send** button or 
 
     - Default **Don't Send** button.
 
-    ![Dialog requesting the user to add an attachment to the message.](../images/outlook-win-smart-alerts.png)
+        ![Dialog requesting the user to add an attachment to the message.](../images/outlook-win-smart-alerts.png)
 
     - Customized **Add an attachment** button.
 
-    ![Dialog with a customized Don't Send button requesting the user to add an attachment to the message.](../images/outlook-smart-alerts-custom-button.png)
+        ![Dialog with a customized Don't Send button requesting the user to add an attachment to the message.](../images/outlook-smart-alerts-custom-button.png)
 
     > [!TIP]
     > If you assign a task pane to the **Don't Send** button, closing the dialog also opens the specified task pane.
