@@ -181,7 +181,7 @@ After acquiring the token, use it to call an API. The following example shows ho
    );
 
    if (response.ok) {
-     // Write file names to the debug console.
+     // Write file names to the console.
      const data = await response.json();
      const names = data.value.map((item) => item.name);
      names.forEach((name) => {
