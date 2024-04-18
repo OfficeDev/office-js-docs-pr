@@ -183,7 +183,7 @@ Exchange and SharePoint provide client-side proxies to enable cross-domain acces
 
 ### Tips to prevent malicious cross-site scripting
 
-An ill-intentioned user could attack the origin of an add-in by entering malicious script through the document or fields in the add-in. A developer should process user input to avoid executing a malicious user's JavaScript within their domain. The following are some good practices to follow to handle user input from a document or mail message, or via fields in an add-in.
+A bad actor could attack the origin of an add-in by entering malicious script through the document or fields in the add-in. A developer should process user input to avoid executing a malicious user's JavaScript within their domain. The following are some good practices to follow to handle user input from a document or mail message, or via fields in an add-in.
 
 - Instead of the DOM property [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML), use the [innerText](https://developer.mozilla.org/docs/Web/API/Node/innerText) and [textContent](https://developer.mozilla.org/docs/DOM/Node.textContent) properties where appropriate. Do the following for Internet Explorer and Firefox cross-browser support.
 
@@ -211,7 +211,7 @@ First, identify sensitive actions that your add-in can perform. These include an
 
 Second, for sensitive actions, your add-in should confirm with the user before it executes the action. This confirmation should detail what effect the action will have. It should also detail how the user can prevent the action, if necessary, whether by choosing a specific button marked "Don't Allow" or by ignoring the confirmation.
 
-Third, to ensure that no potential attacker can hide or mask the confirmation, you should display it outside the context of the add-in (that is, not in an HTML dialog box).
+Third, to ensure that no threat actor can hide or mask the confirmation, you should display it outside the context of the add-in (that is, not in an HTML dialog box).
 
 The following are some examples of how you could get confirmation.
 
@@ -221,7 +221,7 @@ The following are some examples of how you could get confirmation.
 
 - Open a confirmation dialog in a new browser window to a page that cannot be iframed. This is typically the pattern that is used by login pages. Use the [dialog api](../develop/dialog-api-in-office-add-ins.md) to create a new dialog.
 
-Also, ensure that the address you use for contacting the user couldn't have been provided by a potential attacker. For example, for payment confirmations use the address on file for the authorized user's account.
+Also, ensure that the address you use for contacting the user couldn't have been provided by a threat actor. For example, for payment confirmations use the address on file for the authorized user's account.
 
 ### Other security practices
 
