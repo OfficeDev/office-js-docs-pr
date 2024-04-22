@@ -44,52 +44,49 @@ Trusted broker groups are dynamic by design and can be updated in the future to 
 
 Configure your add-in to use NAA by setting the `supportsNestedAppAuth` property to true in your MSAL configuration. This enables MSAL to use APIs on its native application host (for example, Outlook) to acquire tokens for your application. If you don't set this property, MSAL uses the default JavaScript-based implementation to acquire tokens for your application, which may lead to unexpected auth prompts and unsatisfiable conditional access policies when running inside of a webview.
 
-The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts` file in a project built with `yo office`. The code can be adapted to any project.
+The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts` file in a project built with `yo office` (**Office Add-in Task Pane** project).
 
 1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project.
 
-   ```json
-   "dependencies": {
-       "@azure/msal-browser": "^3.11.1",
-       ...
-   ```
+    ```json
+    "dependencies": {
+        "@azure/msal-browser": "^3.11.1",
+        ...
+    ```
 
 1. Save and run `npm install` to install `@azure/msal-browser`.
 
-1. Add the following code to the top of the `taskpane.js` or `taskpane.ts` file. Replace the `Enter_the_Application_Id_Here` placeholder with the Azure app ID you saved previously.
+1. Add the following code to the top of the `taskpane.js` or `taskpane.ts` file. This will import the MSAL browser library.
 
-   ```JavaScript
-   import { PublicClientNext } from "@azure/msal-browser";
-
-   // Configuration for NAA.
-   const msalConfig = {
-     auth: {
-       clientId: "Enter_the_Application_Id_Here",
-       authority: "https://login.microsoftonline.com/common",
-       supportsNestedAppAuth: true
-     }
-   }
-   let pca = undefined; // public client application to be initialized later.
-   ```
+    ```JavaScript
+    import { PublicClientNext } from "@azure/msal-browser";
+    ```
 
 ## Initialize the public client application
 
 Next, you need to initialize MSAL and get an instance of the public client application. This is used to get access tokens when needed. It's recommended to create the public client application in the `Office.onReady` method.
 
-- In your `Office.onReady` function, add a call to `createPublicClientApplication` as shown below to initialize the `pca` variable.
+- In your `Office.onReady` function, add a call to `createPublicClientApplication` as shown below. Replace the `Enter_the_Application_Id_Here` placeholder with the Azure app ID you saved previously.
 
-  ```javascript
-  Office.onReady(async (info) => {
-    if (info.host === Office.HostType.Excel) {
-      document.getElementById("sideload-msg").style.display = "none";
-      document.getElementById("app-body").style.display = "flex";
-      document.getElementById("run").onclick = run;
-
-      // Initialize the public client application
-      pca = await PublicClientNext.createPublicClientApplication(msalConfig);
-    }
-  });
-  ```
+    ```javascript
+    let pca = undefined;
+    Office.onReady(async (info) => {
+      if (info.host === Office.HostType.Excel) {
+        document.getElementById("sideload-msg").style.display = "none";
+        document.getElementById("app-body").style.display = "flex";
+        document.getElementById("run").onclick = run;
+  
+        // Initialize the public client application
+        pca = await PublicClientNext.createPublicClientApplication({
+          auth: {
+            clientId: "Enter_the_Application_Id_Here",
+            authority: "https://login.microsoftonline.com/common",
+            supportsNestedAppAuth: true,
+          },
+        });
+      }
+    });
+    ```
 
 ## Acquire your first token
 
@@ -105,91 +102,92 @@ The following code shows how to implement this authentication pattern in your ow
 
 1. Replace the `run` function in `taskpane.js` or `taskpane.ts` with the following code. The code specifies the minimum scopes needed to read the user's files.
 
-   ```javascript
-   async function run() {
-     // Specify minimum scopes needed for the access token.
-     const tokenRequest = {
-       scopes: ["Files.Read", "User.Read", "openid", "profile"],
-     };
-     let accessToken = null;
+    ```javascript
+    async function run() {
+    // Specify minimum scopes needed for the access token.
+    const tokenRequest = {
+      scopes: ["Files.Read", "User.Read", "openid", "profile"],
+    };
+    let accessToken = null;
 
-     // TODO 2: Call acquireTokenSilent.
-   }
-   ```
+    // TODO 1: Call acquireTokenSilent.
 
-1. Replace `TODO 2` with the following code. This code calls `acquireTokenSilent` to get the access token.
+    // TODO 2: Call acquireTokenPopup.
+    
+    // TODO 3: Log error if token still null.
+    
+    // TODO 4: Call the Microsoft Graph API.
 
-   ```JavaScript
-   try {
-     console.log("Trying to acquire token silently...");
-     const userAccount = await pca.acquireTokenSilent(tokenRequest);
-     console.log("Acquired token silently.");
-     accessToken = userAccount.accessToken;
-   } catch (error) {
-     console.log(`Unable to acquire token silently: ${error}`);
-   }
+    }
+    ```
 
-   // TODO 3: Call acquireTokenPopup.
-   ```
+1. Replace `TODO 1` with the following code. This code calls `acquireTokenSilent` to get the access token.
 
-1. Replace `TODO 3` with the following code. This code checks if the access token is acquired. If not it attempts to interactively get the access token by calling `acquireTokenPopup`.
+    ```JavaScript
+    try {
+      console.log("Trying to acquire token silently...");
+      const userAccount = await pca.acquireTokenSilent(tokenRequest);
+      console.log("Acquired token silently.");
+      accessToken = userAccount.accessToken;
+    } catch (error) {
+      console.log(`Unable to acquire token silently: ${error}`);
+    }
+    ```
 
-   ```javascript
-   if (accessToken === null) {
-     // Acquire token silent failure. Send an interactive request via popup.
-     try {
-       console.log("Trying to acquire token interactively...");
-       const userAccount = await pca.acquireTokenPopup(tokenRequest);
-       console.log("Acquired token interactively.");
-       accessToken = userAccount.accessToken;
-     } catch (popupError) {
-       // Acquire token interactive failure.
-       console.log(`Unable to acquire token interactively: ${popupError}`);
-     }
-   }
+1. Replace `TODO 2` with the following code. This code checks if the access token is acquired. If not it attempts to interactively get the access token by calling `acquireTokenPopup`.
 
-   // TODO 4: Log error if token still null.
-   ```
+    ```javascript
+    if (accessToken === null) {
+      // Acquire token silent failure. Send an interactive request via popup.
+      try {
+        console.log("Trying to acquire token interactively...");
+        const userAccount = await pca.acquireTokenPopup(tokenRequest);
+        console.log("Acquired token interactively.");
+        accessToken = userAccount.accessToken;
+      } catch (popupError) {
+        // Acquire token interactive failure.
+        console.log(`Unable to acquire token interactively: ${popupError}`);
+      }
+    }
+    ```
 
-1. Replace `TODO 4` with the following code. If both silent and interactive sign-in failed, log the error and return.
+1. Replace `TODO 3` with the following code. If both silent and interactive sign-in failed, log the error and return.
 
-   ```javascript
-   // Log error if both silent and popup requests failed.
-   if (accessToken === null) {
-     console.error(`Unable to acquire access token.`);
-     return;
-   }
-
-   // TODO 5: Call the Microsoft Graph API.
-   ```
+    ```javascript
+    // Log error if both silent and popup requests failed.
+    if (accessToken === null) {
+      console.error(`Unable to acquire access token.`);
+      return;
+    }
+    ```
 
 ## Call an API
 
 After acquiring the token, use it to call an API. The following example shows how to call the Microsoft Graph API by calling `fetch` with the token attached in the _Authorization_ header.
 
-- Replace `TODO 5` with the following code.
+- Replace `TODO 4` with the following code.
 
-   ```javascript
-   // Call the Microsoft Graph API with the access token.
-   const response = await fetch(
-     `https://graph.microsoft.com/v1.0/me/drive/root/children?$select=name&$top=10`,
-     {
-       headers: { Authorization: accessToken },
-     }
-   );
-
-   if (response.ok) {
-     // Write file names to the console.
-     const data = await response.json();
-     const names = data.value.map((item) => item.name);
-     names.forEach((name) => {
-       console.log(name);
-     });
-   } else {
-     const errorText = await response.text();
-     console.error("Microsoft Graph call failed - error text: " + errorText);
-   }
-   ```
+    ```javascript
+    // Call the Microsoft Graph API with the access token.
+    const response = await fetch(
+      `https://graph.microsoft.com/v1.0/me/drive/root/children?$select=name&$top=10`,
+      {
+        headers: { Authorization: accessToken },
+      }
+    );
+  
+    if (response.ok) {
+      // Write file names to the console.
+      const data = await response.json();
+      const names = data.value.map((item) => item.name);
+      names.forEach((name) => {
+        console.log(name);
+      });
+    } else {
+      const errorText = await response.text();
+      console.error("Microsoft Graph call failed - error text: " + errorText);
+    }
+    ```
 
 Once all the previous code is added to the `run` function, be sure a button on the task pane calls the `run` function. Then you can sideload the add-in and try out the code.
 
@@ -261,7 +259,7 @@ If you find a security issue with our libraries or services, report the issue to
 
 ## Code samples
 
-|Sample name | Description |
-|----------------|--------------------------------------------------------|
-| [Office Add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-SSO-NAA) | Shows how to use MSAL.js nested app authentication (NAA) in an Office Add-in to access Microsoft Graph APIs for the signed-in user. The sample displays the signed-in user's name and email. It also inserts the names of files from the user's Microsoft OneDrive account into the document. |
-| [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA) | Shows how to use MSAL.js nested app authentication (NAA) in an Outlook Add-in to access Microsoft Graph APIs for the signed-in user. The sample displays the signed-in user's name and email. It also inserts the names of files from the user's Microsoft OneDrive account into a new message body.|
+| Sample name                                                                                                                                                 | Description                                                                                                                                                                                                                                                                                          |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Office Add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-SSO-NAA)   | Shows how to use MSAL.js nested app authentication (NAA) in an Office Add-in to access Microsoft Graph APIs for the signed-in user. The sample displays the signed-in user's name and email. It also inserts the names of files from the user's Microsoft OneDrive account into the document.        |
+| [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA) | Shows how to use MSAL.js nested app authentication (NAA) in an Outlook Add-in to access Microsoft Graph APIs for the signed-in user. The sample displays the signed-in user's name and email. It also inserts the names of files from the user's Microsoft OneDrive account into a new message body. |
