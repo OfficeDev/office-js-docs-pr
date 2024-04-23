@@ -254,7 +254,7 @@ await Word.run(async (context) => {
 
 ## Try code examples in Script Lab
 
-Get the [Script Lab add-in](https://appsource.microsoft.com/product/office/wa104380862) and try out the code examples provided in this article. To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
+Get the [Script Lab add-in](https://appsource.microsoft.com/?search=script%20lab) and try out the code examples provided in this article. To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
 
 ## See also
 
