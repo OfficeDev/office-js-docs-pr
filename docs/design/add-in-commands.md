@@ -40,7 +40,7 @@ The default tab depends on the application and context. For Excel, PowerPoint, a
 
 ### Outlook
 
-For Outlook, the default location of an add-in command is based on the platform and current Outlook mode. For guidance, see [Get an Office Add-in for Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
+For Outlook, the default location of an add-in command is based on the platform and current Outlook mode. For guidance, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
 ### Drop-down menu
 

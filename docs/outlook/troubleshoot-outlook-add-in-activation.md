@@ -56,11 +56,7 @@ Outlook on Windows and on Mac can make an add-in unavailable due to performance 
 > [!NOTE]
 > Only classic Outlook on Windows and Outlook on Mac monitor resource usage. However, an add-in made unavailable in classic Outlook on Windows or Outlook on Mac also becomes unavailable in Outlook on the web, on mobile devices, and in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
-Check your list of installed add-ins to verify whether an add-in is available.
-
-- For instructions on how to view your add-ins in classic Outlook on Windows or Outlook on Mac, see [Get an Office Add-in for Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
-
-- For instructions on how to view your add-ins in Outlook on the web and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), see [Using add-ins in Outlook on the web](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce).
+Check your list of installed add-ins to verify whether an add-in is available. For instructions on how to view your add-ins in Outlook, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
 ## Does the tested item support Outlook add-ins? Is the selected item delivered by a version of Exchange Server that is at least Exchange 2016?
 
