@@ -96,7 +96,7 @@ It's important to note that some versions of Outlook clients and Exchange server
 
 - [Sideload Outlook add-ins for testing](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Submit to AppSource][AppSource]
-- [AppSource](https://appsource.microsoft.com/?product=office)
+- [AppSource](https://appsource.microsoft.com/marketplace/apps?src=office&page=1)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Create effective AppSource listings](/office/dev/store/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
