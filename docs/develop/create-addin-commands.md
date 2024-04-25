@@ -336,13 +336,13 @@ The following shows an example of how to use the **\<Resources\>** element. Each
 
 Add-in commands are available in the following Outlook versions.
 
-- Outlook 2013 or later on Windows
-- Outlook 2016 or later on Mac
+- Outlook on the web for Microsoft 365 and Outlook.com
+- Outlook on the web for Exchange 2016 or later
+- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+- Outlook 2016 or later on Windows
+- Outlook on Mac
 - Outlook on iOS
 - Outlook on Android
-- Outlook on the web for Exchange 2016 or later
-- Outlook on the web for Microsoft 365 and Outlook.com
-- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 
 Support for add-in commands in Exchange 2016 requires [Cumulative Update 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 

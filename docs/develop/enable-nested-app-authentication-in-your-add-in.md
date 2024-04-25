@@ -133,7 +133,7 @@ Nested app authentication enables SSO for applications that are nested inside of
 
 ## NAA supported accounts and hosts
 
-NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn’t support B2C scenarios. For preview, NAA is supported in Office on Windows and Mac. For GA, NAA will also support Office on the web, iOS, and Outlook Mobile on Android and iOS.
+NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn’t support B2C scenarios. For preview, NAA is supported in Office on Windows and on Mac. For GA, NAA will also support Office on the web, iOS, and Outlook Mobile on Android and iOS.
 
 ## Best practices
 

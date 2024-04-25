@@ -54,22 +54,19 @@ The **\<Hosts\>** element can contain one or more **\<Host\>** elements. There s
 
 | Name          | Office client applications                     | Available add-in types |
 |:--------------|:-----------------------------------------------|:-----------------------|
-| Database      | Access web apps                                | Task pane              |
 | Document      | Word on the web, Windows, Mac, iPad            | Task pane              |
 | Mailbox       | Outlook on the web, Windows (classic and [new (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), Mac, Android, iOS | Mail |
 | Notebook      | OneNote on the web                             | Task pane, Content     |
 | Presentation  | PowerPoint on the web, Windows, Mac, iPad      | Task pane, Content     |
 | Project       | Project on Windows                             | Task pane              |
 | Workbook      | Excel on the web, Windows, Mac, iPad           | Task pane, Content     |
+| Database      | Access (obsolete)                              | Task pane              |
 
 > [!NOTE]
 > Office applications are supported on different platforms and run on desktops, web browsers, tablets, and mobile devices. You usually can't specify which platform can be used to run your add-in. For example, if you specify `Workbook`, both Excel on the web and on Windows can be used to run your add-in. However, if you specify `Mailbox`, your add-in won't run on Outlook mobile clients unless you define the [mobile extension point](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface).
 
 > [!NOTE]
 > It isn't possible for an add-in manifest to apply to more than one type: Mail, Task pane, or Content. This means that if you want your add-in to be installable on Outlook and on one of the other Office applications, you must create *two* add-ins, one with a Mail type manifest and the other with a Task pane or Content type manifest.
-
-> [!IMPORTANT]
-> We no longer recommend that you create and use Access web apps and databases in SharePoint. As an alternative, we recommend that you use [Microsoft PowerApps](https://powerapps.microsoft.com/) to build no-code business solutions for web and mobile devices.
 
 ## Specify which Office versions and platforms can host your add-in
 
@@ -84,7 +81,7 @@ To simplify the process of specifying the APIs that your add-in needs, Office gr
 
 Requirement sets are versioned. For example, the APIs that support [Dialog Boxes](../develop/dialog-api-in-office-add-ins.md) are in the requirement set DialogApi 1.1. When additional APIs that enable messaging from a task pane to a dialog were released, they were grouped into DialogApi 1.2, along with all the APIs in DialogApi 1.1. *Each version of a requirement set is a superset of all earlier versions.*
 
-Requirement set support varies by Office application, the version of the Office application, and the platform on which it is running. For example, DialogApi 1.2 is not supported on volume-licensed perpetual versions of Office before Office 2021, but DialogApi 1.1 is supported on all perpetual versions back to Office 2013. You want your add-in to be installable on every combination of platform and Office version that supports the APIs that it uses, so you should always specify in the manifest the *minimum* version of each requirement set that your add-in requires. Details about how to do this are later in this article.
+Requirement set support varies by Office application, the version of the Office application, and the platform on which it is running. For example, DialogApi 1.2 isn't supported on volume-licensed perpetual versions of Office before Office 2021, but DialogApi 1.1 is supported on all perpetual versions back to Office 2016. You want your add-in to be installable on every combination of platform and Office version that supports the APIs that it uses, so you should always specify in the manifest the *minimum* version of each requirement set that your add-in requires. Details about how to do this are later in this article.
 
 > [!TIP]
 > For more information about requirement set versioning, see [Office requirement sets availability](office-versions-and-requirement-sets.md#office-requirement-sets-availability), and for the complete lists of requirement sets and information about the APIs in each, start with [Office Add-in requirement sets](/javascript/api/requirement-sets/common/office-add-in-requirement-sets). The reference topics for most Office.js APIs also specify the requirement set they belong to (if any).

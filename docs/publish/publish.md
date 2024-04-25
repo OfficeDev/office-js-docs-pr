@@ -77,8 +77,8 @@ For on-premises and online environments that don't use the Azure AD identity ser
 
 Outlook add-in deployment requires:
 
-- Microsoft 365, Exchange Online, or Exchange Server 2013 or later
-- Outlook 2013 or later
+- Microsoft 365, Exchange Online, or Exchange Server 2016 or later
+- Outlook 2016 or later
 
 To assign add-ins to tenants, use the Exchange admin center to upload a manifest directly, either from a file or a URL, or add an add-in from AppSource. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Add-ins for Outlook in Exchange Server](/exchange/add-ins-for-outlook-2013-help).
 

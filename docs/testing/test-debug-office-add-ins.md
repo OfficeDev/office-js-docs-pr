@@ -30,14 +30,10 @@ Some Office versions on Windows still use the webview controls that come with In
 
 You can use sideloading to install an Office Add-in for testing without having to first put it in an add-in catalog. The procedure for sideloading an add-in varies by platform, and in some cases, by product as well. The following articles each describe how to sideload Office Add-ins on a specific platform or within a specific product.
 
-- [Sideload Office Add-ins on Windows](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-
 - [Sideload Office Add-ins in Office on the web](sideload-office-add-ins-for-testing.md)
-
+- [Sideload Office Add-ins on Windows](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Sideload Office Add-ins on Mac](sideload-an-office-add-in-on-mac.md)
-
 - [Sideload Office Add-ins on iPad](sideload-an-office-add-in-on-ipad.md)
-
 - [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
 
 ## Unit testing
