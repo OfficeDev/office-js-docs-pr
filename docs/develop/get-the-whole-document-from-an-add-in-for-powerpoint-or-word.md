@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Get the whole document from an add-in for PowerPoint or Word
 
-You can create an Office Add-in to send or publish a Word document or PowerPoint presentation to a remote location. This article demonstrates how to build a simple task pane add-in for PowerPoint or Word that gets all of the presentation or document as a data object and sends that data to a web server via an HTTP request.
+You can create an Office Add-in to send or publish a PowerPoint presentation or Word document to a remote location. This article demonstrates how to build a simple task pane add-in for PowerPoint or Word that gets all of the presentation or document as a data object and sends that data to a web server via an HTTP request.
 
 ## Prerequisites for creating an add-in for PowerPoint or Word
 
