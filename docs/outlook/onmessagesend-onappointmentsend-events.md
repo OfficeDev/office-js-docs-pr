@@ -13,7 +13,7 @@ The `OnMessageSend` and `OnAppointmentSend` events take advantage of Smart Alert
 Smart Alerts is available through the event-based activation feature. To understand how to configure your add-in to use this feature, use other available events, debug your add-in, and more, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 > [!NOTE]
-> The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12). See [clients and platforms](#supported-clients-and-platforms) that support this requirement set.
+> The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12). Additional functionality and customization options were also added to subsequent requirement sets. To verify that your Outlook client supports these events and features, see [Supported clients and platforms](#supported-clients-and-platforms) and the specific sections in the [walkthrough](smart-alerts-onmessagesend-walkthrough.md) that describe the features you want to implement.
 
 ## Supported clients and platforms
 
@@ -21,7 +21,8 @@ The following table lists supported client-server combinations for the Smart Ale
 
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later) |
 |-----|-----|-----|-----|
-|**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Yes|Not applicable|Not applicable|
+|**Web browser (modern UI)**|Yes|Not applicable|Not applicable|
+|[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Yes|Not applicable|Not applicable|
 |**Windows** (classic)<br>Version 2206 (Build 15330.20196) or later|Yes|Yes|Yes|
 |**Mac**<br>Version 16.65.827.0 or later|Yes|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
@@ -47,6 +48,9 @@ The following table lists the available send mode options.
 |**prompt user**|`PromptUser`|promptUser|
 |**soft block**|`SoftBlock`|softBlock|
 |**block**|`Block`|block|
+
+> [!TIP]
+> Starting in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14), your add-in can now override its send mode option at runtime. To learn more, see [Override the send mode option at runtime (optional)](smart-alerts-onmessagesend-walkthrough.md#override-the-send-mode-option-at-runtime-optional).
 
 #### prompt user
 
@@ -94,7 +98,7 @@ If the **block** option is used, the user can't send the item until the add-in b
 ![Dialog that alerts the user that the add-in is unavailable. The user can only send the item when the add-in is available again.](../images/outlook-hard-block-unavailable.png)
 
 > [!IMPORTANT]
-> If a Smart Alerts add-in that implements the [send mode override](smart-alerts-onmessagesend-walkthrough.md#override-the-send-mode-option-at-runtime-optional-preview) feature can't complete processing an event due to an error or is unavailable when the event occurs, it uses the send mode option specified in the manifest.
+> If a Smart Alerts add-in that implements the [send mode override](smart-alerts-onmessagesend-walkthrough.md#override-the-send-mode-option-at-runtime-optional) feature can't complete processing an event due to an error or is unavailable when the event occurs, it uses the send mode option specified in the manifest.
 
 ### Long-running add-in operations
 
@@ -223,6 +227,9 @@ While you can change the Smart Alerts dialog message and **Don't Send** button t
 
 If you customize the **Don't Send** button in the dialog, you can only assign a task pane command to it. Function commands aren't supported. If you select a **Don't Send** button with an assigned function command, the command is ignored and the add-in cancels the send operation and closes the dialog. When this occurs, no error is shown or logged. For guidance on the types of add-in commands, see [Types of add-in commands](../design/add-in-commands.md#types-of-add-in-commands).
 
+> [!NOTE]
+> Support to customize the **Don't Send** button was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14).
+
 In Outlook on the web and in new Outlook on Windows (preview):
 
 - The `OnAppointmentSend` event only occurs when the meeting being sent was created through the **New Event** option. If the meeting being sent was created by selecting a date and time directly from the calendar, the `OnAppointmentSend` event doesn't occur.
@@ -233,7 +240,7 @@ In Outlook on the web and in new Outlook on Windows (preview):
 The Smart Alerts feature ensures that all outgoing mail items are compliant with the information protection policies of an organization and helps users improve their messages through recommendations. To ensure your add-in always provides users with a smooth and efficient sending experience, observe the following guidelines.
 
 - **Don't let your add-in further delay the send operation**. Smart Alerts add-ins must be short-running and lightweight. Avoid overloading the `OnMessageSend` and `OnAppointmentSend` event handlers with heavy validations. To prevent this, preprocess information when other events occur, such as the `OnMessageRecipientsChanged` or `OnMessageAttachmentsChanged` event. To determine which events your add-in can respond to, see the "Supported events" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#supported-events).
-- **Don't implement additional dialogs**. Prevent overwhelming your users with too many dialogs. Instead, customize the text in the Smart Alerts dialog to convey information. If needed, you can also [customize the **Don't Send** button (preview)](smart-alerts-onmessagesend-walkthrough.md#customize-the-dont-send-button-optional-preview) to provide users with additional information and functionality through a task pane.
+- **Don't implement additional dialogs**. Prevent overwhelming your users with too many dialogs. Instead, customize the text in the Smart Alerts dialog to convey information. If needed, you can also [customize the **Don't Send** button](smart-alerts-onmessagesend-walkthrough.md#customize-the-dont-send-button-optional) to provide users with additional information and functionality through a task pane.
 - **Enable the appropriate Group Policy settings in your organization**. To ensure that your Smart Alerts add-in activates on each mail item, including those sent using applications that implement Simple MAPI, configure the **Running Outlook for Simple MAPI Sending** setting. To learn more about this setting, see [Activate Smart Alerts in applications that use Simple MAPI](#activate-smart-alerts-in-applications-that-use-simple-mapi).
 
 ## Debug your add-in

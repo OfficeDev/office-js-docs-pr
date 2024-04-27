@@ -41,4 +41,4 @@ After you configure the well-known URI, if your add-in implements SSO, you can t
 
 - [Authenticate a user with a single-sign-on token in an Outlook add-in](authenticate-a-user-with-an-sso-token.md)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
-- [Implement an integrated spam-reporting add-in (preview)](spam-reporting.md)
+- [Implement an integrated spam-reporting add-in](spam-reporting.md)

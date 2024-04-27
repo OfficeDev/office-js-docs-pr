@@ -717,7 +717,6 @@ items:
       href: outlook/append-on-send.md
     - name: Implement a spam reporting add-in
       href: outlook/spam-reporting.md
-      displayName: preview
     - name: Event-based activation
       items:
       - name: Implement an event-based add-in
