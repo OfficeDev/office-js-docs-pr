@@ -19,6 +19,9 @@ This article describes the possible permissions that Outlook add-ins can request
 
 - **Administrators**: Privileges to set performance thresholds
 
+> [!NOTE]
+> This article focuses on information about privacy, permissions, and security specific to Outlook add-ins. If you haven't already, we recommend you to first review [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md), as its contents applies to all Office Add-ins.
+
 ## Permissions model
 
 Because customers' perception of add-in security can affect add-in adoption, Outlook add-in security relies on a tiered permissions model. An Outlook add-in would disclose the level of permissions it needs, identifying the possible access and actions that the add-in can make on the customer's mailbox data.
