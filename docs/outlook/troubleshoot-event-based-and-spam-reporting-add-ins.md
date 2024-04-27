@@ -8,16 +8,16 @@ ms.localizationpriority: medium
 
 # Troubleshoot event-based and spam-reporting add-ins
 
-As you develop your [event-based](autolaunch.md) or [spam-reporting (preview)](spam-reporting.md) add-in, you may encounter issues, such as your add-in not loading or an event not occurring. The following sections provide guidance on how to troubleshoot your add-in.
+As you develop your [event-based](autolaunch.md) or [spam-reporting](spam-reporting.md) add-in, you may encounter issues, such as your add-in not loading or an event not occurring. The following sections provide guidance on how to troubleshoot your add-in.
 
 ## Review feature prerequisites
 
-- Verify that the add-in is installed on a supported Outlook client. Some Outlook clients only support certain events or aspects of event-based activation or integrated spam reporting. For more information, see [Supported events](autolaunch.md#supported-events) and [Preview the integrated spam-reporting feature](spam-reporting.md#preview-the-integrated-spam-reporting-feature).
+- Verify that the add-in is installed on a supported Outlook client. Some Outlook clients only support certain events or aspects of event-based activation or integrated spam reporting. For more information, see [Supported events](autolaunch.md#supported-events) and [Implement an integrated spam-reporting add-in](spam-reporting.md).
 - Verify that your Outlook client supports the minimum requirement set needed.
 
   Event-based activation was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now supported in subsequent requirements sets. For more information, see [Supported events](autolaunch.md#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients). If you're developing an add-in that handles the `OnMessageSend` and `OnAppointmentSend` events, see the "Supported clients and platform section" of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms).
 
-  The integrated spam reporting feature is currently in preview in Outlook on Windows. For more information, see [Preview the integrated spam-reporting feature](spam-reporting.md#preview-the-integrated-spam-reporting-feature)
+  The integrated spam reporting feature was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14).
 - Review the expected behavior and limitations of the feature.
 
   - [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations)
@@ -84,4 +84,4 @@ If you still need help after performing the recommended troubleshooting steps, [
 ## See also
 
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
-- [Implement an integrated spam-reporting add-in (preview)](spam-reporting.md)
+- [Implement an integrated spam-reporting add-in](spam-reporting.md)

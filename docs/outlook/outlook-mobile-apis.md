@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript APIs supported in Outlook on mobile devices
 description: Learn which Outlook JavaScript APIs are supported in Outlook on mobile devices.
-ms.date: 02/06/2024
+ms.date: 04/29/2024
 ms.localizationpriority: medium
 ---
 
@@ -27,7 +27,7 @@ Although Outlook mobile supports up to requirement set 1.5, there are some APIs 
 
 |API|Minimum requirement set|Unsupported Outlook modes|
 |---|---|---|
-|[Office.context.officeTheme](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true#office-office-context-officetheme-member)|Mailbox preview|- Message Read<br>- Message Compose<br>- Appointment Attendee<br>- Appointment Organizer|
+|[Office.context.officeTheme](/javascript/api/office/office.context#office-office-context-officetheme-member)|Mailbox 1.14|- Message Read<br>- Message Compose<br>- Appointment Attendee<br>- Appointment Organizer|
 |[Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-ewsurl-member)|Mailbox 1.1|- Message Read<br>- Message Compose<br>- Appointment Attendee<br>- Appointment Organizer|
 |[Office.context.mailbox.convertToEwsId](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttoewsid-member(1))|Mailbox 1.3|- Message Read<br>- Message Compose<br>- Appointment Attendee<br>- Appointment Organizer|
 |[Office.context.mailbox.convertToRestId](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttorestid-member(1))|Mailbox 1.3|- Message Read<br>- Message Compose<br>- Appointment Attendee<br>- Appointment Organizer|
