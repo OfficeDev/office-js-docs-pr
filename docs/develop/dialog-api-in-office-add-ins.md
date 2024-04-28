@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: Learn the basics of creating a dialog box in an Office Add-in.
-ms.date: 11/30/2023
+ms.date: 05/10/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -14,7 +14,7 @@ Use the [Office dialog API](/javascript/api/office/office.ui) to open dialog box
 - Provide more screen space, or even a full screen, for some tasks in your add-in.
 - Host a video that would be too small if confined to a task pane.
 
-> [!NOTE]
+> [!TIP]
 > Because overlapping UI elements are discouraged, avoid opening a dialog box from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example of a tabbed task pane, see the [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
 
 The following image shows an example of a dialog box.
@@ -22,6 +22,9 @@ The following image shows an example of a dialog box.
 ![Sign-in dialog with Microsoft identity platform in Word.](../images/dialog-api-sign-in.png)
 
 The dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the Office application and with the page in the task pane, if there is one.
+
+> [!NOTE]
+> If you're developing an add-in that runs in Office on the web and requires access to a user's device capabilities, see the [device permission API](/javascript/api/requirement-sets/common/device-permission-service-requirement-sets) to learn how to prompt the user for permissions. Device capabilities include a user's camera, geolocation, and microphone.
 
 ## Open a dialog box from a host page
 
