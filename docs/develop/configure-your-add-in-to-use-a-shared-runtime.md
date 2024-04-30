@@ -190,7 +190,7 @@ When you add the **\<Runtime\>** element, you also specify a lifetime with a val
 
 ## About the shared runtime
 
-On Windows or Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate runtime environments. This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.
+On Windows or on Mac, your add-in will run code for ribbon buttons, custom functions, and the task pane in separate runtime environments. This creates limitations such as not being able to easily share global data, and not being able to access all CORS functionality from a custom function.
 
 However, you can configure your Office Add-in to share code in the same runtime (also referred to as a shared runtime). This enables better coordination across your add-in and access to the task pane DOM and CORS from all parts of your add-in.
 

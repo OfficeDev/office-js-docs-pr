@@ -87,9 +87,9 @@ Known issues are tracked and reported in the [Excel Custom Functions GitHub repo
 
 If you are encountering issues that aren't documented here, let us know. There are two ways to report issues.
 
-### In Excel on Windows or Mac
+### In Excel on Windows or on Mac
 
-If using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File -> Feedback -> Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
+If using Excel on Windows or on Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File** > **Feedback** > **Send a Frown**. Sending a frown will provide the necessary logs to understand the issue you are hitting.
 
 ### In Github
 

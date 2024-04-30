@@ -44,7 +44,7 @@ The following table specifies the elements that are required for the three types
 
 ### Required elements by Office Add-in type
 
-| Element                                                                                      | Content    | Task pane    | Mail<br>(Outlook)      |
+| Element                                                                                      | Content    | Task pane    | Mail<br>(Outlook) |
 | :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------:   |
 | [OfficeApp][]                                                                                | Required   | Required     | Required     |
 | [Id][]                                                                                       | Required   | Required     | Required     |
@@ -144,10 +144,10 @@ To override this (desktop Office) behavior, add each domain you want to open in 
 
 The following table describes browser behavior when your add-in attempts to navigate to a URL outside of the add-in's default domain.
 
-|Office client|Domain defined<br>in AppDomains?|Browser behavior|
+|Office client|Domain defined in AppDomains?|Browser behavior|
 |---|---|---|
 |All clients|Yes|Link opens in add-in task pane.|
-|- Office 2016 on Windows (volume-licensed perpetual)<br>- Office 2013 on Windows (perpetual)|No|Link opens in Internet Explorer 11.|
+|Office 2016 on Windows (volume-licensed perpetual)|No|Link opens in Internet Explorer 11.|
 |Other clients|No|Link opens in user's default browser.|
 
 The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **\<SourceLocation\>** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/javascript/api/manifest/appdomain) element within the **\<AppDomains\>** element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
