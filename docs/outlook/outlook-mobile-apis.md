@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript APIs supported in Outlook on mobile devices
 description: Learn which Outlook JavaScript APIs are supported in Outlook on mobile devices.
-ms.date: 02/06/2024
+ms.date: 04/30/2024
 ms.localizationpriority: medium
 ---
 
@@ -20,6 +20,9 @@ The following table lists a subset of APIs from requirement sets beyond 1.5 that
 |[Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))|Mailbox 1.10|Message Compose|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
 |[Office.context.mailbox.item.from.getAsync](/javascript/api/outlook/office.from#outlook-office-from-getasync-member(1))|Mailbox 1.7|Message Compose|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
 |[Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getcomposetypeasync-member(1))|Mailbox 1.10|Message Compose|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
+|[Office.context.mailbox.item.internetHeaders.getAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-getasync-member(1))|Mailbox 1.8|Message Compose|<ul><li>Android (Version 4.2405.0 or later)</li><li>iOS (Version 4.2405.0 or later)</li></ul>|
+|[Office.context.mailbox.item.internetHeaders.removeAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-removeasync-member(1))|Mailbox 1.8|Message Compose|<ul><li>Android (Version 4.2405.0 or later)</li><li>iOS (Version 4.2405.0 or later)</li></ul>|
+|[Office.context.mailbox.item.internetHeaders.setAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-setasync-member(1))|Mailbox 1.8|Message Compose|<ul><li>Android (Version 4.2405.0 or later)</li><li>iOS (Version 4.2405.0 or later)</li></ul>|
 
 ## Unsupported APIs
 

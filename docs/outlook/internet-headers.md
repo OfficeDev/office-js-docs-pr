@@ -1,7 +1,7 @@
 ---
 title: Get and set internet headers
 description: How to get and set internet headers on a message in an Outlook add-in.
-ms.date: 07/10/2022
+ms.date: 04/30/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -24,13 +24,19 @@ While there's a way for you to set the internet headers through Exchange Web Ser
 
 ## Purpose of the internet headers API
 
-Introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), the internet headers APIs enable developers to:
+Introduced in [Mailbox requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), the internet headers APIs enable developers to:
 
 - Stamp information on an email that persists after it leaves Exchange across all clients.
 - Read information on an email that persisted after the email left Exchange across all clients in mail read scenarios.
 - Access the entire MIME header of the email.
 
 ![Diagram of internet headers. Text: User 1 sends email. Add-in manages custom internet headers while user is composing email. User 2 receives the email. Add-in gets internet headers from received email then parses and uses custom headers.](../images/outlook-internet-headers.png)
+
+## Supported clients
+
+To use the internet headers API in your add-in, your Outlook client must support requirement set 1.8 or later. For information on supported clients, see [Outlook client support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+
+The internet headers API is also supported in Outlook on Android and on iOS starting in Version 4.2405.0. To learn more about features supported in Outlook on mobile devices, see [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
 
 ## Set internet headers while composing a message
 
