@@ -42,6 +42,14 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 1. Start the local web server, which runs in Node.js. You can try out the custom function add-in in Excel. You may be prompted to open the add-in's task pane, although this is optional. You can still run your custom functions without opening your add-in's task pane.
 
+# [Excel on the web](#tab/excel-online)
+
+To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
+
+[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
+
 # [Excel on Windows or Mac](#tab/excel-windows)
 
 To test your add-in in Excel on Windows or Mac, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
@@ -49,14 +57,6 @@ To test your add-in in Excel on Windows or Mac, run the following command. When 
 ```command&nbsp;line
 npm run start:desktop
 ```
-
-[!INCLUDE [alert use https](../includes/alert-use-https.md)]
-
-# [Excel on the web](#tab/excel-online)
-
-To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
-
-[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
