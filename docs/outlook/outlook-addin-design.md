@@ -1,6 +1,6 @@
 ---
 title: Outlook add-in design
-description: Guidelines to help you design and build a compelling add-in, which brings the best of your app right into Outlook on Windows, Web, iOS, Mac, and Android.
+description: Guidelines to help you design and build a compelling add-in, which brings the best of your app right into Outlook on the web, on Windows, on Mac, on Android, and on iOS.
 ms.date: 08/12/2021
 ms.topic: best-practice
 ms.localizationpriority: high
@@ -10,7 +10,7 @@ ms.localizationpriority: high
 
 Add-ins are a great way for partners to extend the functionality of Outlook beyond our core feature set. Add-ins enable users to access external experiences, tasks, and content without needing to leave their inbox. Once installed, Outlook add-ins are available on every platform and device.  
 
-The following high-level guidelines will help you design and build a compelling add-in, which brings the best of your app right into Outlook&mdash;on Windows, Web, iOS, Mac, and Android.
+The following high-level guidelines will help you design and build a compelling add-in, which brings the best of your app right into Outlook on the web, on Windows, on Mac, on Android, and on iOS.
 
 ## Principles
 
