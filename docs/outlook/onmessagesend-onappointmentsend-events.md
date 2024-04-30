@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 03/21/2024
+ms.date: 04/30/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -21,11 +21,11 @@ The following table lists supported client-server combinations for the Smart Ale
 
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later) |
 |-----|-----|-----|-----|
-|**Windows**<br>Version 2206 (Build 15330.20196) or later|Yes|Yes|Yes|
-|**Mac**<br>Version 16.65.827.0 or later|Yes|Not applicable|Not applicable|
 |**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Yes|Not applicable|Not applicable|
-|**iOS**|Not applicable|Not applicable|Not applicable|
+|**Windows** (classic)<br>Version 2206 (Build 15330.20196) or later|Yes|Yes|Yes|
+|**Mac**<br>Version 16.65.827.0 or later|Yes|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
+|**iOS**|Not applicable|Not applicable|Not applicable|
 
 ## Smart Alerts feature behavior and scenarios
 
@@ -132,7 +132,13 @@ In Outlook on Mac, the **Send** option becomes unavailable while in Work Offline
 
 When a user navigates away from the message they're sending (for example, to read a message in their inbox), the behavior of a Smart Alerts add-in differs between Outlook clients. Select the tab for the Outlook client on which the add-in is running.
 
-# [Windows](#tab/windows)
+# [Web/New Outlook on Windows (preview)](#tab/web)
+
+In Outlook on the web or in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), a user must remain on the message being sent until the Smart Alerts add-in completes processing it. Otherwise, once the user navigates away from the item, the add-in terminates the Smart Alerts operation and saves a draft to the mailbox's **Drafts** folder. The user is then alerted that they must resend the message from the **Drafts** folder and remain on the message until the add-in completes processing it.
+
+:::image type="content" source="../images/outlook-smart-alerts-item-switch-dialog-web.png" alt-text="The dialog shown to the user in Outlook on the web or new Outlook on Windows when they navigate away from a message after selecting Send.":::
+
+# [Windows (classic)](#tab/windows)
 
 #### Message composed in a window
 
@@ -156,11 +162,7 @@ If the **soft block** or **block** send mode option is implemented, only the **W
 
 # [Mac](#tab/mac)
 
-In Outlook on Mac, when a user navigates away from the message they're sending after selecting **Send**, the Smart Alerts add-in will continue to process the item in the background. If the item doesn't meet the add-in's conditions, a dialog is shown to the user to alert them that additional actions may be needed before the item can be sent. Conversely, if the item meets the add-in's conditions, the item is sent once the add-in completes processing it.
-
-# [Web/New Outlook on Windows (preview)](#tab/web)
-
-In Outlook on the web or in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), a user must remain on the message being sent until the Smart Alerts add-in completes processing it. Otherwise, once the user navigates away from the item, the add-in terminates the Smart Alerts operation and saves a draft to the mailbox's **Drafts** folder.
+In Outlook on Mac, when a user navigates away from a message after selecting **Send**, the Smart Alerts add-in will continue to process the item in the background. If the item doesn't meet the add-in's conditions, a dialog is shown to the user to alert them that additional actions may be needed before the item can be sent. Conversely, if the item meets the add-in's conditions, the item is sent once the add-in completes processing it.
 
 ---
 
@@ -252,10 +254,10 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 |Attribute|Smart Alerts|On-send|
 |-----|-----|-----|
 |**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
-|**Supported Outlook clients**|- Windows (classic and new (preview))<br>- Web browser (modern UI)<br>- Mac (new UI)|- Windows<br>- Web browser (classic and modern UI)<br>- Mac (classic and new UI) |
-|**Supported events**|**XML manifest**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Unified manifest for Microsoft 365 (preview)**<br>- "messageSending"<br>- "appointmentSending"|**XML manifest**<br>- `ItemSend`<br><br>**Unified manifest for Microsoft 365 (preview)**<br>- Not supported|
-|**Manifest extension property**|**XML manifest**<br>- `LaunchEvent`<br><br>**Unified manifest for Microsoft 365 (preview)**<br>- "autoRunEvents"|**XML manifest**<br>- `Events`<br><br>**Unified manifest for Microsoft 365 (preview)**<br>- Not supported|
-|**Supported send mode options**|- prompt user<br>- soft block<br>- block<br><br>To learn more about each option, see [Available send mode options](#available-send-mode-options).|Block|
+|**Supported Outlook clients**|<ul><li>Windows (classic and new (preview))</li><li>Web browser (modern UI)</li><li>Mac (new UI)</li></ul>|<ul><li>Windows (classic)</li><li>Web browser (classic and modern UI)</li><li>Mac (classic and new UI)</li></ul>|
+|**Supported events**|**XML manifest**<ul><li>`OnMessageSend`</li><li>`OnAppointmentSend`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>"messageSending"</li><li>"appointmentSending"</li></ul>|**XML manifest**<ul><li>`ItemSend`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>Not supported</li></ul>|
+|**Manifest extension property**|**XML manifest**<ul><li>`LaunchEvent`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>"autoRunEvents"</li></ul>|**XML manifest**<ul><li>`Events`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>Not supported</li></ul>|
+|**Supported send mode options**|<ul><li>prompt user</li><li>soft block</li><li>block</li></ul><br>To learn more about each option, see [Available send mode options](#available-send-mode-options).|Block|
 |**Maximum number of supported events in an add-in**|One `OnMessageSend` and one `OnAppointmentSend` event.|One `ItemSend` event.|
 |**Add-in deployment**|Add-in can be published to AppSource if its send mode property is set to the **soft block** or **prompt user** option. Otherwise, the add-in must be deployed by an organization's administrator.|Add-in can't be published to AppSource. It must be deployed by an organization's administrator.|
 |**Additional configuration for add-in installation**|No additional configuration is needed once the manifest is uploaded to the Microsoft 365 admin center.|Depending on the organization's compliance standards and the Outlook client used, certain mailbox policies must be configured to install the add-in.|

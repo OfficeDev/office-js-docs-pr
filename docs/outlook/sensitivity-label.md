@@ -29,11 +29,11 @@ The following table lists client-server combinations that support the use of the
 
 |Client|Exchange Online|
 |------|------|
-|**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|
-|**Mac**<br>Version 16.77.816.0 or later|Supported|
 |**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|
-|**iOS**|Not applicable|
+|**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|
+|**Mac**<br>Version 16.77.816.0 or later|Supported|
 |**Android**|Not applicable|
+|**iOS**|Not applicable|
 
 ## Configure the manifest
 
