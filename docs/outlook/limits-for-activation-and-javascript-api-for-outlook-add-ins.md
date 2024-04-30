@@ -84,7 +84,7 @@ The following table lists the limits and describes the differences in the portio
 |:-----|:-----|:-----|:-----|
 |**Form factor**|Any supported device other than Android smartphones, iPad, and iPhone.|Any supported device.|Android smartphones, iPad, or iPhone.|
 |**Plain text item body**|Activates the add-in only if the body < 500,000 characters.|Applies the regex on the first 1 MB of the data of the body, but not on the rest of the body over that limit.|Activates the add-in only if the body < 16,000 characters.|
-|**HTML item body**|Applies the regex on the first 64,000 characters (including HTML tag characters), but not on the rest of the body over that limit.|Activates the add-in only if the body < 500,000 characters.|Applies the regex on the first 512 KB of the data of the body, but not on the rest of the body over that limit. (The actual number of characters depends on the encoding which can range from 1 to 4 bytes per character.)|
+|**HTML item body**|Activates the add-in only if the body < 500,000 characters.|Applies the regex on the first 512 KB of the data of the body, but not on the rest of the body over that limit. (The actual number of characters depends on the encoding which can range from 1 to 4 bytes per character.)|Applies the regex on the first 64,000 characters (including HTML tag characters), but not on the rest of the body over that limit.|
 
 ### Limits on the matches returned
 

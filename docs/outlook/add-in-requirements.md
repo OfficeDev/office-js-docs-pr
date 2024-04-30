@@ -18,8 +18,8 @@ For Outlook add-ins to load and function properly, there are a number of require
   - [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
   - Outlook 2016 or later on Windows
   - Outlook on Mac
-  - Outlook on iOS
   - Outlook on Android
+  - Outlook on iOS
 
 - The client must be connected to an Exchange server or Microsoft 365 using a direct connection. When configuring the client, the user must choose an **Exchange**, **Office**, or **Outlook.com** account type. If the client is configured to connect with POP3 or IMAP, add-ins will not load.
 

@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 Your add-in can use Exchange Web Services (EWS) from a computer that is running Exchange Server, a web service that is available on the server that provides the source location for the add-in's UI, or a web service that is available on the Internet. This article provides an example that shows how an Outlook add-in can request information from EWS.
 
 > [!IMPORTANT]
-> EWS calls and operations aren't supported in add-ins running in Outlook on iOS and on Android.
+> EWS calls and operations aren't supported in add-ins running in Outlook on Android and on iOS.
 
 The way you call a web service varies based on where the web service is located. The following tables list the different ways you can call a web service based on location.
 

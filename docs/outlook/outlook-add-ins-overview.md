@@ -11,7 +11,7 @@ ms.localizationpriority: high
 
 Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. Outlook add-ins have three key aspects:
 
-- The same add-in and business logic works across desktop (Outlook on Windows and on Mac), web (Microsoft 365 and Outlook.com), and mobile.
+- The same add-in and business logic works across web (Microsoft 365 and Outlook.com), desktop (Outlook on Windows and on Mac), and mobile.
 - Outlook add-ins consist of a manifest, which describes how the add-in integrates into Outlook (for example, a button or a task pane), and JavaScript/HTML code, which makes up the UI and business logic of the add-in.
 - Outlook add-ins can be acquired from [AppSource](https://appsource.microsoft.com) or [sideloaded](sideload-outlook-add-ins-for-testing.md) by end-users or administrators.
 

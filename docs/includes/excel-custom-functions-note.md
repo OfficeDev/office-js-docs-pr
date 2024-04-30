@@ -8,7 +8,7 @@
 >   - volume-licensed perpetual Office 2021 and later
 > - Office on Mac
 >
-> Excel custom functions are currently not supported in the following:
+> Excel custom functions aren't currently supported in the following:
 >
 > - Office on iPad
 > - volume-licensed perpetual versions of Office 2019 or earlier on Windows

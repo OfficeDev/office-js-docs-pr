@@ -20,7 +20,7 @@ You can verify the version of Exchange by using one of the following approaches.
 
 - Check with your Exchange Server administrator.
 
-- If you're testing the add-in on Outlook on the web or mobile devices, in a script debugger (for example, the JScript Debugger that comes with Internet Explorer), look for the **src** attribute of the **script** tag that specifies the location from which scripts are loaded. The path should contain a substring **owa/16.0.516.x/owa2/...**, where **16.0.516.x** represents the version of the Exchange Server, such as **16.0.516.2**.
+- If you're testing the add-in on Outlook on the web or mobile devices, in a script debugger (for example, the JScript Debugger that comes with Internet Explorer), look for the **src** attribute of the **script** tag that specifies the location from which scripts are loaded. The path should contain a substring **owa/15.0.516.x/owa2/...**, where **15.0.516.x** represents the version of the Exchange Server, such as **15.0.516.2**.
 
 - Alternatively, you can use the [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) property to verify the version. In Outlook on the web, on mobile devices, and in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), this property returns the version of the Exchange Server.
 

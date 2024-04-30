@@ -21,8 +21,8 @@ The following table shows supported client-server combinations for this feature,
 |---|:---:|:---:|:---:|
 |**Web browser (modern Outlook UI)**|Supported|Not applicable|Not applicable|
 |**Web browser (classic Outlook UI)**|Not applicable|Not applicable|Not applicable|
-|**Windows**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|
-|**Mac**<br>Build 16.47 or later|Supported|Supported|Supported|
+|**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|
+|**Mac**<br>Version 16.47 or later|Supported|Supported|Supported|
 
 > [!NOTE]
 > \* Support for this feature in an on-premises Exchange environment is available starting in Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
