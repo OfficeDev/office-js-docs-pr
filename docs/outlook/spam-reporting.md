@@ -17,7 +17,7 @@ The integrated spam-reporting feature eases the task of developing individual ad
 - Enable an organization's security operations center (SOC) or IT administrators to easily perform spam and phishing simulations for educational purposes.
 
 > [!IMPORTANT]
-> The integrated spam-reporting feature is currently in preview in classic Outlook on Windows and Outlook on Mac. Support for the feature in Outlook on the web and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) is currently being rolled out.
+> The integrated spam-reporting feature is currently in preview in classic Outlook on Windows and Outlook on Mac. Preview support for the feature in Outlook on the web and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) is currently being rolled out.
 >
 > Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
@@ -29,7 +29,7 @@ To preview the integrated spam-reporting feature, you must have one of the follo
 - Outlook on Mac Version 16.81.1217.0 or later. You must join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
 
 > [!NOTE]
-> Support for the integrated spam-reporting feature in Outlook on the web and new Outlook on Windows (preview) is currently being rolled out. Once it's available for preview, you must [configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365#set-up-the-release-option-in-the-admin-center) to access Office beta builds.
+> Preview support for the integrated spam-reporting feature in Outlook on the web and new Outlook on Windows (preview) is currently being rolled out. Once it's available for preview, you must [configure targeted release on your Microsoft 365 tenant](/microsoft-365/admin/manage/release-options-in-office-365#set-up-the-release-option-in-the-admin-center) to access Office beta builds.
 
 > [!TIP]
 > If you're unable to choose a channel in your Outlook client on Windows, see [Let users choose which Microsoft 365 Insider channel to install on Windows devices](/deployoffice/insider/deploy/user-choice).
