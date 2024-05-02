@@ -18,7 +18,7 @@ One important improvement we're working on is the ability to create a single uni
 After you've created a version of your add-in that uses the unified manifest, you must link the existing add-in and the app built using the unified manifest to ensure users don't see two copies of the add-in UI inside of Outlook. 
 
 > [!NOTE]
-> The configuration described below doesn't take effect for up to 24 hours after the new version is installed on a user's computer. During that period, the UI of both version is visible. For example, if both versions have a custom ribbon button, both buttons appear on the ribbon.  
+> The configuration described below doesn't take effect for up to 24 hours after the new version is installed on a user's computer. During that period, the UI of both versions is visible. For example, if both versions have a custom ribbon button, both buttons appear on the ribbon.  
 
 Use the following steps.
 
@@ -61,7 +61,7 @@ Use the following steps.
 
 
 1. If the old add-in isn't distributed through AppSource, then give the "hide" object a "customOfficeAddin" property.
-1. Give the "customOfficeAddin" object an "officeAddinId" property with the GUID of the old add-in as its value. The following is an example:
+1. Give the "customOfficeAddin" object an "officeAddinId" property with the GUID of the old add-in as its value. The following is an example.
 
     ```json
     "extensions": [
