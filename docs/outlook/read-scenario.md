@@ -21,7 +21,7 @@ Read add-ins activate in the Reading Pane or read inspector of Outlook. Unlike c
 
 The location of an add-in in the Message Read surface depends on your Outlook client.
 
-- **Windows**, **Mac**: Select the add-in from the ribbon of the Reading Pane or read inspector.
+- **Windows (classic)**, **Mac**: Select the add-in from the ribbon of the Reading Pane or read inspector.
 
   :::image type="content" source="../images/outlook-message-read-surface-desktop.png" alt-text="A read add-in is selected from the ribbon of an Outlook desktop client.":::
 

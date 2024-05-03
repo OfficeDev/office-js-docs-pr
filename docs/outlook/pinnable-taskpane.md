@@ -15,10 +15,10 @@ However, by default, if a user has an add-in task pane open for a message in the
 > [!NOTE]
 > Although the pinnable task pane feature was introduced in [requirement set 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), it's currently only available to Microsoft 365 subscribers using the following:
 >
-> - Outlook 2016 or later on Windows (Build 7668.2000 or later for users in the Current or Microsoft 365 Insider Channels, Build 7900.xxxx or later for users in Deferred channels)
-> - Outlook 2016 or later on Mac (Version 16.13.503 or later)
 > - Modern Outlook on the web
-> - [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+> - [New Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+> - Classic Outlook 2016 or later on Windows (Build 7668.2000 or later for users in the Current or Microsoft 365 Insider Channels, Build 7900.xxxx or later for users in Deferred channels)
+> - Outlook on Mac (Version 16.13.503 or later)
 
 > [!IMPORTANT]
 > Pinnable task panes aren't available for the following:
@@ -123,7 +123,7 @@ Office.onReady(() => {
 
 In Outlook on the web and new Outlook on Windows (preview), when the task pane of an add-in that implements the [item multi-select](item-multi-select.md) feature is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
 
-Conversely, in Outlook on Windows and on Mac, the task pane of a multi-select add-in isn't automatically pinned and closes when a user switches to a different mail item.
+Conversely, in classic Outlook on Windows and Outlook on Mac, the task pane of a multi-select add-in isn't automatically pinned and closes when a user switches to a different mail item.
 
 ## Deploy to users
 

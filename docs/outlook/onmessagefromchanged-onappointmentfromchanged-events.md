@@ -27,9 +27,9 @@ The following tables list client-server combinations that support the `OnMessage
 
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
-|**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
-|**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
 |**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
+|**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
+|**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 
@@ -37,9 +37,9 @@ The following tables list client-server combinations that support the `OnMessage
 
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
-|**Windows**|Not applicable|Not applicable|Not applicable|
-|**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
 |**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
+|**Windows (classic)**|Not applicable|Not applicable|Not applicable|
+|**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 
@@ -64,7 +64,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
    - The "minVersion" of the Mailbox requirement set is configured as "1.13" because this is the lowest version of the requirement set that supports the `OnMessageFromChanged` event. For more information, see the "Supported events" table in [Configure your Outlook add-in for event-based activation](autolaunch.md#supported-events).
    - The "id" of the runtime is set to a descriptive name, "autorun_runtime".
    - The "code" property has a child "page" property set to an HTML file and a child "script" property set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
-       - Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
+       - Classic Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
        - Outlook on the web and on Mac, and new Outlook on Windows (preview) execute the handler in a browser runtime, which loads an HTML file. The HTML file contains a `<script>` tag that then loads the JavaScript file.
 
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
@@ -164,7 +164,7 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
                   and in new Outlook on Windows (preview). -->
              <Runtime resid="WebViewRuntime.Url">
                <!-- JavaScript file that contains the event handlers.
-                    This is used by event-based activation add-ins in Outlook on Windows. -->
+                    This is used by event-based activation add-ins in classic Outlook on Windows. -->
                <Override type="javascript" resid="JSRuntime.Url"/>
              </Runtime>
            </Runtimes>

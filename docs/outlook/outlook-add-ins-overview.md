@@ -11,7 +11,7 @@ ms.localizationpriority: high
 
 Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. Outlook add-ins have three key aspects:
 
-- The same add-in and business logic works across desktop (Outlook on Windows and Mac), web (Microsoft 365 and Outlook.com), and mobile.
+- The same add-in and business logic works across web (Microsoft 365 and Outlook.com), desktop (Outlook on Windows and on Mac), and mobile.
 - Outlook add-ins consist of a manifest, which describes how the add-in integrates into Outlook (for example, a button or a task pane), and JavaScript/HTML code, which makes up the UI and business logic of the add-in.
 - Outlook add-ins can be acquired from [AppSource](https://appsource.microsoft.com) or [sideloaded](sideload-outlook-add-ins-for-testing.md) by end-users or administrators.
 
@@ -68,14 +68,14 @@ Currently, there are additional considerations when designing and implementing a
 
 Outlook add-ins activate on IRM-protected mail items when the item is accessed from the following supported clients.
 
-- Outlook on Windows starting in Version 2009 (Build 13229.10000)
+- Outlook on the web
+- [New Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+- Classic Outlook on Windows starting in Version 2009 (Build 13229.10000)
 
     >[!NOTE]
     > Digital signing relies on protection mechanisms, such as IRM. Starting in Outlook on Windows Version 1711 (Build 8711.1000) associated with a Microsoft 365 subscription, add-ins activate on digitally-signed messages.
 
 - Outlook on Mac starting in Version 16.77.827.0
-- Outlook on the web
-- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 
 However, add-ins won't activate on IRM-protected items when:
 

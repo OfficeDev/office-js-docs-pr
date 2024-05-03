@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Monoline style icon guidelines for Office Add-ins
 
-Monoline style iconography are used in Office apps. If you'd prefer that your icons match the Fresh style of perpetual Office 2013+, see [Fresh style icon guidelines for Office Add-ins](add-in-icons-fresh.md).
+Monoline style iconography are used in Office apps. If you'd prefer that your icons match the Fresh style of perpetual Office 2016 and later, see [Fresh style icon guidelines for Office Add-ins](add-in-icons-fresh.md).
 
 ## Office Monoline visual style
 

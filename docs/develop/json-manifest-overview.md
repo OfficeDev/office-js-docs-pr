@@ -2,24 +2,24 @@
 title: Compare the XML manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the XML manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 07/27/2023
+ms.date: 04/12/2024
 ms.localizationpriority: high
 ---
 
 # Compare the XML manifest with the unified manifest for Microsoft 365
 
-This article is intended to help readers who are familiar with the XML manifest understand the unified manifest by comparing the two. Readers should also see [Office Add-ins with the unified manifest for Microsoft 365 (preview)](unified-manifest-overview.md).
+This article is intended to help readers who are familiar with the XML manifest understand the unified manifest by comparing the two. Readers should also see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
 
 > [!NOTE]
-> The unified manifest is a preview feature of Office Add-ins and is only supported for Outlook on Windows.
+> The unified manifest currently only supports Outlook add-ins and only in Office linked to a Microsoft 365 subscription and installed on Windows, on a mobile device, or in Outlook on the web. We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office.
 
 ## Schemas and general points
 
-There is just one schema for the [preview unified manifest](https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/preview/DevPreview/MicrosoftTeams.schema.json), in contrast to the current XML manifest which has a total of seven [schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
+There is just one schema for the [unified manifest](https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/preview/DevPreview/MicrosoftTeams.schema.json), in contrast to the current XML manifest which has a total of seven [schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
 
-## Conceptual mapping of the preview unified and current XML manifests
+## Conceptual mapping of the unified and current XML manifests
 
-This section describes the preview unified manifest for readers who are familiar with the current XML manifest. Some points to keep in mind: 
+This section describes the unified manifest for readers who are familiar with the current XML manifest. Some points to keep in mind: 
 
 - The unified manifest is JSON-formatted.
 - JSON doesn't distinguish between attribute and element value like XML does. Typically, the JSON that maps to an XML element makes both the element value and each of the attributes a child property. The following example shows some XML markup and its JSON equivalent.
@@ -50,13 +50,13 @@ This section describes the preview unified manifest for readers who are familiar
 
 ### Top-level structure
 
-The root level of the preview unified manifest, which roughly corresponds to the **\<OfficeApp\>** element in the current XML manifest, is an anonymous object. 
+The root level of the unified manifest, which roughly corresponds to the **\<OfficeApp\>** element in the current XML manifest, is an anonymous object. 
 
-The children of **\<OfficeApp\>** are commonly divided into two notional categories. The **\<VersionOverrides\>** element is one category. The other consists of all the other children of **\<OfficeApp\>**, which are collectively referred to as the base manifest. So too, the preview unified manifest has a similar division. There is a top-level "extensions" property that roughly corresponds in its purposes and child properties to the **\<VersionOverrides\>** element. The preview unified manifest also has over 10 other top-level properties that collectively serve the same purposes as the base manifest of the XML manifest. These other properties can be thought of collectively as the base manifest of the unified manifest. 
+The children of **\<OfficeApp\>** are commonly divided into two notional categories. The **\<VersionOverrides\>** element is one category. The other consists of all the other children of **\<OfficeApp\>**, which are collectively referred to as the base manifest. So too, the unified manifest has a similar division. There is a top-level "extensions" property that roughly corresponds in its purposes and child properties to the **\<VersionOverrides\>** element. The unified manifest also has over 10 other top-level properties that collectively serve the same purposes as the base manifest of the XML manifest. These other properties can be thought of collectively as the base manifest of the unified manifest. 
 
 ### Base manifest
 
-The base manifest properties specify characteristics of the add-in that *any* type of extension of Microsoft 365 is expected to have. This includes Teams tabs and message extensions, not just Office add-ins. These characteristics include a public name and a unique ID. The following table shows a mapping of some critical top-level properties in the preview unified manifest to the XML elements in the current manifest, where the mapping principle is the *purpose* of the markup.
+The base manifest properties specify characteristics of the add-in that *any* type of extension of Microsoft 365 is expected to have. This includes Teams tabs and message extensions, not just Office add-ins. These characteristics include a public name and a unique ID. The following table shows a mapping of some critical top-level properties in the unified manifest to the XML elements in the current manifest, where the mapping principle is the *purpose* of the markup.
 
 |JSON property|Purpose|XML elements|Comments|
 |:-----|:-----|:-----|:-----|
@@ -66,22 +66,22 @@ The base manifest properties specify characteristics of the add-in that *any* ty
 |"manifestVersion"| Version of the manifest schema. |  attributes of **\<OfficeApp\>** |*None.* |
 |"name"| Public name of the add-in. | **\<DisplayName\>** |*None.* |
 |"description"| Public description of the add-in.  | **\<Description\>** |*None.* |
-|"accentColor"|*None.* |*None.* | This property has no equivalent in the current XML manifest and isn't used in the preview of the unified manifest. But it must be present. |
+|"accentColor"|*None.* |*None.* | This property has no equivalent in the current XML manifest and isn't used in the unified manifest. But it must be present. |
 |"developer"| Identifies the developer of the add-in. | **\<ProviderName\>** |*None.* |
 |"localizationInfo"| Configures the default locale and other supported locales. | **\<DefaultLocale\>** and **\<Override\>** |*None.* |
 |"webApplicationInfo"| Identifies the add-in's web app as it is known in Azure Active Directory. | **\<WebApplicationInfo\>** | In the current XML manifest, the **\<WebApplicationInfo\>** element is inside **\<VersionOverrides\>**, not the base manifest. |
 |"authorization"| Identifies any Microsoft Graph permissions that the add-in needs. | **\<WebApplicationInfo\>** | In the current XML manifest, the **\<WebApplicationInfo\>** element is inside **\<VersionOverrides\>**, not the base manifest. |
 
-The **\<Hosts\>**, **\<Requirements\>**, and **\<ExtendedOverrides\>** elements are part of the base manifest in the current XML manifest. But concepts and purposes associated with these elements are configured inside the "extensions" property of the preview unified manifest.
+The **\<Hosts\>**, **\<Requirements\>**, and **\<ExtendedOverrides\>** elements are part of the base manifest in the current XML manifest. But concepts and purposes associated with these elements are configured inside the "extensions" property of the unified manifest.
 
 ### "extensions" property
 
-The "extensions" property in the preview unified manifest primarily represents characteristics of the add-in that wouldn't be relevant to other kinds of Microsoft 365 extensions. For example, the Office applications that the add-in extends (such as, Excel, PowerPoint, Word, and Outlook) are specified inside the "extensions" property, as are customizations of the Office application ribbon. The configuration purposes of the "extensions" property closely match those of the **\<VersionOverrides\>** element in the current XML manifest.
+The "extensions" property in the unified manifest primarily represents characteristics of the add-in that wouldn't be relevant to other kinds of Microsoft 365 extensions. For example, the Office applications that the add-in extends (such as, Excel, PowerPoint, Word, and Outlook) are specified inside the "extensions" property, as are customizations of the Office application ribbon. The configuration purposes of the "extensions" property closely match those of the **\<VersionOverrides\>** element in the current XML manifest.
 
 > [!NOTE]
-> The **\<VersionOverrides\>** section of the current XML manifest has a "double jump" system for many string resources. Strings, including URLs, are specified and assigned an ID in the **\<Resources\>** child of **\<VersionOverrides\>**. Elements that require a string have a `resid` attribute that matches the ID of a string in the **\<Resources\>** element. The "extensions" property of the preview unified manifest simplifies things by defining strings directly as property values. There is nothing in the unified manifest that is equivalent to the **\<Resources\>** element.
+> The **\<VersionOverrides\>** section of the current XML manifest has a "double jump" system for many string resources. Strings, including URLs, are specified and assigned an ID in the **\<Resources\>** child of **\<VersionOverrides\>**. Elements that require a string have a `resid` attribute that matches the ID of a string in the **\<Resources\>** element. The "extensions" property of the unified manifest simplifies things by defining strings directly as property values. There is nothing in the unified manifest that is equivalent to the **\<Resources\>** element.
 
-The following table shows a mapping of some high level child properties of the "extensions" property in the preview unified manifest to XML elements in the current manifest. Dot notation is used to reference child properties.
+The following table shows a mapping of some high level child properties of the "extensions" property in the unified manifest to XML elements in the current manifest. Dot notation is used to reference child properties.
 
 |JSON property|Purpose|XML elements|Comments|
 |:-----|:-----|:-----|:-----|
@@ -101,8 +101,8 @@ The following table maps the child properties of the anonymous child objects in 
 | "contexts" | Specifies the command surfaces that the add-in customizes. | various **\*CommandSurface** elements, such as **PrimaryCommandSurface** and **MessageReadCommandSurface** |*None.* |
 | "tabs" | Configures custom ribbon tabs. | **\<CustomTab\>** | The names and hierarchy of the descendant properties of "tabs" closely match the descendants of **\<CustomTab\>**.  |
 
-For a full sample unified manifest, see [Sample preview unified manifest](unified-manifest-overview.md#sample-preview-unified-manifest).
+For a full sample unified manifest, see [Sample unified manifest](unified-manifest-overview.md#sample-unified-manifest).
 
 ## Next steps
 
-- [Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
+- [Build an Outlook add-in with the unified manifest for Microsoft 365](../quickstarts/outlook-quickstart-json-manifest.md).

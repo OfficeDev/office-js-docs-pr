@@ -120,13 +120,10 @@ items:
         href: develop/xml-manifest-overview.md
       - name: Office Add-ins with the unified manifest for Microsoft 365
         href: develop/unified-manifest-overview.md
-        displayName: preview
       - name: Compare the XML manifest with the unified manifest for Microsoft 365
         href: develop/json-manifest-overview.md
-        displayName: preview
       - name: Convert an add-in to use the unified manifest for Microsoft 365
         href: develop/convert-xml-to-json-manifest.md
-        displayName: preview
       - name: Manifest reference
         href: reference/manifest-reference.md
       - name: Extended overrides
@@ -285,7 +282,7 @@ items:
         href: develop/add-ins-with-angular2.md
       - name: Create add-ins with the Yeoman Generator
         href: develop/yeoman-generator-overview.md
-      - name: Create add-ins with the Teams Toolkit (preview)
+      - name: Create add-ins with the Teams Toolkit
         href: develop/teams-toolkit-overview.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
@@ -661,7 +658,7 @@ items:
     displayName: Outlook
   - name: Build an Outlook add-in with the unified manifest for Microsoft 365
     href: quickstarts/outlook-quickstart-json-manifest.md
-    displayName: Outlook, preview
+    displayName: Outlook
   - name: Outlook add-in tutorial
     href: tutorials/outlook-tutorial.md
     displayName: Outlook
@@ -873,7 +870,7 @@ items:
       href: powerpoint/insert-slides-into-presentation.md
       displayName: PowerPoint
     - name: Get the whole document from an add-in
-      href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
+      href: develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md
       displayName: PowerPoint
     - name: Use custom tags on presentations, slides, and shapes
       href: powerpoint/tagging-presentations-slides-shapes.md
@@ -947,7 +944,7 @@ items:
       href: word/dictionary-task-pane-add-ins.md
       displayName: Word
     - name: Get the whole document from an add-in
-      href: word/get-the-whole-document-from-an-add-in-for-word.md
+      href: develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md
       displayName: Word
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md

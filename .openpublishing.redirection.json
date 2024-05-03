@@ -137,8 +137,12 @@
             "redirect_url": "/office/dev/add-ins/testing/test-debug-office-add-ins"
         },
         {
-            "source_path": "docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md",
-            "redirect_url": "/office/dev/add-ins/word/get-the-whole-document-from-an-add-in-for-word",
+            "source_path": "docs/powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md",
+            "redirect_url": "/office/dev/add-ins/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word"
+        },
+        {
+            "source_path": "docs/word/get-the-whole-document-from-an-add-in-for-word.md",
+            "redirect_url": "/office/dev/add-ins/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word",
             "redirect_document_id": true
         },
         {
