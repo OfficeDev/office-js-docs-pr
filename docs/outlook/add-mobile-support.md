@@ -1,7 +1,7 @@
 ---
 title: Add support for add-in commands in Outlook on mobile devices
 description: Learn how to add support for Outlook on mobile devices including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
-ms.date: 02/29/2024
+ms.date: 04/12/2024
 ms.localizationpriority: medium
 ---
 
@@ -11,9 +11,123 @@ Using add-in commands in Outlook on mobile devices allows your users to access t
 
 ## Update the manifest
 
-[!INCLUDE [Unified manifest for Microsoft 365 not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
+The first step to enabling add-in commands in Outlook mobile is to define them in the add-in manifest. 
 
-The first step to enabling add-in commands in Outlook mobile is to define them in the add-in manifest. The [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 schema defines a new form factor for mobile, [MobileFormFactor](/javascript/api/manifest/mobileformfactor).
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you are finished, the array should look like the following.
+
+    ```json
+    "formFactors": [
+        "mobile",
+        <!-- Typically there will be other form factors listed. -->
+    ]
+    ```
+
+1. If your add-in uses Appointment Attendee mode, such as an add-in that integrates a provider of a note-taking or customer relationship management (CRM) application, add "logEventMeetingDetailsAttendee" to the "extensions.ribbons.contexts" array. The following is an example.
+
+    ```json
+    "contexts": [
+        "meetingDetailsAttendee",
+        "logEventMeetingDetailsAttendee"
+    ],
+    ```
+
+1. If your add-in uses an integrated online meeting provider, add "onlineMeetingDetailsOrganizer" to the "extensions.ribbons.contexts" array. The following is an example.
+
+    ```json
+    "contexts": [
+        "meetingDetailsOrganizer",
+        "onlineMeetingDetailsOrganizer"
+    ],
+    ```
+
+1. In the "extensions.ribbons.tabs" array, find the tab with the "builtInTabId" of "TabDefault". Add a child "customMobileRibbonGroups" array to it (as a peer of the existing "groups" property). Inside this array, create an object and do the following:
+
+   - Set appropriate "id" and "label" values.
+   - Create an object in the "controls" array to represent a button and configure it as follows.
+      - Set appropriate "id" and "label" values.
+      - Set "buttonType" to "MobileButton".
+      - Assign a function to the "actionId" property. This should match the "id" of the object in the "extensions.runtimes.actions" array.
+      - Be sure you have all nine required icons. 
+  
+   The following is an example.
+
+    ```json
+    "tabs": [
+        {
+            "builtInTabId": "TabDefault",
+            "groups": [
+                <-- non-mobile group objects omitted -->
+            ],
+            "customMobileRibbonGroups": [
+                {
+                    "id": "mobileApptComposeGroup",
+                    "label": "Contoso Meeting",
+                    "controls": [
+                        { 
+                            "id": "mobileInsertMeetingButton",
+                            "label": "Add Meeting",
+                            "buttonType": "MobileButton",
+                            "actionId": "insertContosoMeeting",
+                            "icons": [
+                                {
+                                    "scale": 1,
+                                    "size": 25,
+                                    "url": "https://contoso.com/assets/icon-25.png"
+                                },
+                                {
+                                    "scale": 1,
+                                    "size": 32,
+                                    "url": "https://contoso.com/assets/icon-32.png"
+                                },
+                                {
+                                    "scale": 1,
+                                    "size": 48,
+                                    "url": "https://contoso.com/assets/icon-48.png"
+                                },                                
+                                {
+                                    "scale": 2,
+                                    "size": 25,
+                                    "url": "https://contoso.com/assets/icon-25.png"
+                                },
+                                {
+                                    "scale": 2,
+                                    "size": 32,
+                                    "url": "https://contoso.com/assets/icon-32.png"
+                                },
+                                {
+                                    "scale": 2,
+                                    "size": 48,
+                                    "url": "https://contoso.com/assets/icon-48.png"
+                                },                                
+                                {
+                                    "scale": 3,
+                                    "size": 25,
+                                    "url": "https://contoso.com/assets/icon-25.png"
+                                },
+                                {
+                                    "scale": 3,
+                                    "size": 32,
+                                    "url": "https://contoso.com/assets/icon-32.png"
+                                },
+                                {
+                                    "scale": 3,
+                                    "size": 48,
+                                    "url": "https://contoso.com/assets/icon-48.png"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]    
+    ```
+
+# [XML manifest](#tab/xmlmanifest)
+
+The [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 schema defines a new form factor for mobile, [MobileFormFactor](/javascript/api/manifest/mobileformfactor).
 
 This element contains all of the information for loading the add-in in mobile clients. This enables you to define completely different UI elements and JavaScript files for the mobile experience.
 
@@ -60,6 +174,8 @@ This is very similar to the elements that appear in a [DesktopFormFactor](/javas
 - There is no `Menu` type equivalent for the **\<Control\>** element.
 - The [Supertip](/javascript/api/manifest/supertip) element isn't used.
 - The required icon sizes are different. Mobile add-ins minimally must support 25x25, 32x32 and 48x48 pixel icons. For more information, see [Additional requirements for mobile form factors](/javascript/api/manifest/icon#additional-requirements-for-mobile-form-factors).
+
+---
 
 ## Code considerations
 
