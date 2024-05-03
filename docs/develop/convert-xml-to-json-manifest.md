@@ -14,20 +14,21 @@ There are three basic tasks to converting an add-in project from the XML manifes
 
 - Ensure that your add-in is ready to convert.
 - Convert the XML manifest itself to the JSON format of the unified manifest.
-- Package the new manifest and main icon and high resolution icon image files into a zip file for sideloading or deployment.
+- Package the new manifest and the two icon image files into a zip file for sideloading or deployment.
+
+[!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
 > [!NOTE]
 > 
-> - The unified manifest is a preview feature for Office Add-ins and is currently supported only for Outlook on Windows.
-> - Add-ins that use the unified manifest can be sideloaded only on Office Build 16.0.16501.10000 or later.
+> - Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
 > - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
 > - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
 
 ## Ensure that your add-in is ready to convert
 
-### Ensure that you have the two image files
+The following sections describe conditions that must be met before you convert the manifest.
 
-It's highly likely that you already have the two image files in your add-in. They're specified in the [IconUrl](/javascript/api/manifest/iconurl) and [HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl) elements in the XML manifest. Because these are both optional elements, your add-in project might not have one or both. These are required for an add-in that uses the unified manifest, so you need to create them if the project doesn't already have them. For guidance, see [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in). 
+### Ensure that you have the two image files
 
 When you've added the files to the project, add **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) to the XML manifest just below the **\<Description\>** element. The following is an example.
 
@@ -107,7 +108,7 @@ You can sideload the add-in using the Teams Toolkit or in a command prompt, bash
 
 ### Projects created with the Office Yeoman Generator (aka "Yo Office")
 
-If the project was created with the Office Yeoman Generator (using any option except the "unified manifest" option) and you don't want to use the Teams Toolkit, convert it using the following steps.
+If the project was created with the Office Yeoman Generator and you don't want to use the Teams Toolkit, convert it using the following steps.
 
 1. In the root of the project, open a command prompt or bash shell and run the following command. This converts the manifest and updates the package.json to specify current tooling packages. The new unified manifest is in the root of the project and the old XML manifest is in a backup.zip file. For details about this command, see [Office-Addin-Project](https://www.npmjs.com/package/office-addin-project).
 
