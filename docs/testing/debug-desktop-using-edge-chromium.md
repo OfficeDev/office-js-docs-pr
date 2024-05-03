@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 description: Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) in VS Code.
-ms.date: 01/26/2024
+ms.date: 04/15/2024
 ms.localizationpriority: high
 ---
 
@@ -53,7 +53,7 @@ These instructions assume you have experience using the command line, understand
    >
    > ![Error that says Configured debug type edge is not supported.](../images/configured-debug-type-error.jpg)
    >
-   > Complete the tasks in [Appendix B](#appendix-b) and then restart this procedure.
+   > Complete the tasks in the [Appendix](#appendix) and then restart this procedure.
 
 1. In the host application, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear with text similar to the following:
 
@@ -158,7 +158,7 @@ If your project wasn't created with Yo Office, you need to create a debug config
 
 You can now debug your project using the VS Code debugger (F5).
 
-### Appendix B
+### Appendix
 
 1. In the error dialog box, select the **Cancel** button.
 1. If debugging doesn't stop automatically, select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu.

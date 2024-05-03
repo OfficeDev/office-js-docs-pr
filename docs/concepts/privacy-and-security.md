@@ -34,29 +34,23 @@ The following sections briefly describe how the runtime architecture supports ru
 
 ### Clients on Windows and OS X devices
 
-In supported clients for desktop and tablet devices, such as Excel on Windows, and Outlook on Windows and Mac, Office Add-ins are supported by integrating an in-process component, the Office Add-ins runtime, which manages the add-in lifecycle and enables interoperability between the add-in and the client application. The add-in webpage itself is hosted out-of-process. As shown in figure 1, on a Windows desktop or tablet device, [the add-in webpage is hosted inside an Internet Explorer or Microsoft Edge control](browsers-used-by-office-web-add-ins.md) which, in turn, is hosted inside an add-in runtime process that provides security and performance isolation.
+In supported clients for desktop and tablet devices, such as Excel on Windows, and Outlook on Windows and on Mac, Office Add-ins are supported by integrating an in-process component, the Office Add-ins runtime, which manages the add-in lifecycle and enables interoperability between the add-in and the client application. The add-in webpage itself is hosted out-of-process. On a Windows desktop or tablet device, [the add-in webpage is hosted inside an Internet Explorer or Microsoft Edge control](browsers-used-by-office-web-add-ins.md) which, in turn, is hosted inside an add-in runtime process that provides security and performance isolation.
 
 On Windows desktops, Protected Mode in Internet Explorer must be enabled for the Restricted Site Zone. This is typically enabled by default. If it is disabled, an [error will occur](/office/troubleshoot/office-suite-issues/apps-for-office-not-start) when you try to launch an add-in.
 
-*Figure 1. Office Add-ins runtime environment in Windows-based desktop and tablet clients*
+![Diagram of the Office Add-ins runtime environment on Windows desktop and tablet clients.](../images/dk2-agave-overview-02.png)
 
-![Diagram showing rich-client infrastructure.](../images/dk2-agave-overview-02.png)
+On a macOS desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection.
 
-As shown in the following figure, on a Mac OS X desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection.
-
-*Figure 2. Office Add-ins runtime environment in Mac OS X clients*
-
-![Diagram showing apps for Office runtime environment on Mac OS X.](../images/dk2-agave-overview-mac-02.png)
+![Diagram of the Office Add-ins runtime environment on macOS desktop clients.](../images/dk2-agave-overview-mac-02.png)
 
 The Office Add-ins runtime manages interprocess communication, the translation of JavaScript API calls and events into native ones, as well as UI remoting support to enable the add-in to be rendered inside the document, in a task pane, or adjacent to an email message, meeting request, or appointment.
 
 ### Web clients
 
-In supported web clients, Office Add-ins are hosted in an **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. The following figure shows the infrastructure that supports add-ins in Office running in the browser, and the relevant components (the web client, **iframe**, Office Add-ins runtime, and JavaScript API for Office) that are required to support them.
+In supported web clients, Office Add-ins are hosted in an **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. The following figure shows the infrastructure that supports add-ins in Office running in the browser, and the relevant components (the web client, **iframe**, Office Add-ins runtime, and JavaScript API for Office) required to support them.
 
-*Figure 3. Infrastructure that supports Office Add-ins in Office web clients*
-
-![Diagram showing web-client infrastructure.](../images/dk2-agave-overview-03.png)
+![Diagram of the infrastructure that supports Office Add-ins in Office on the web clients.](../images/dk2-agave-overview-03.png)
 
 ## Add-in integrity in AppSource
 
@@ -95,10 +89,9 @@ The add-in platform addresses end users' privacy concerns in the following ways.
 
 - When sharing a document, users also share add-ins that have been inserted in or associated with that document. If a user opens a document that contains an add-in that the user hasn't used before, the Office client application prompts the user to grant permission for the add-in to run in the document. In an organizational environment, the Office client application also prompts the user if the document comes from an external source.
 
-- Users can enable or disable the access to AppSource. For content and task pane add-ins, users manage access to trusted add-ins and catalogs from the **Trust Center** on the host Office client (opened from **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**). In Outlook, access to manage add-ins depends on the user's Outlook client.
+- Users can enable or disable the access to AppSource. For content and task pane add-ins, users manage access to trusted add-ins and catalogs from the **Trust Center** on the host Office client (opened from **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**).
 
-  - For instructions on how to manage add-ins in Outlook on Windows or on Mac, see [Get an Office Add-in for Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
-  - In Outlook on the web, select **Get Add-ins** from the ribbon. To learn more, see [Using add-ins in Outlook on the web](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce).
+  In Outlook, access to manage add-ins depends on the user's Outlook client. To learn more, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
   Administrators can also manage access to AppSource [through the admin center](/microsoft-365/admin/manage/manage-addins-in-the-admin-center).
 
@@ -183,7 +176,7 @@ Exchange and SharePoint provide client-side proxies to enable cross-domain acces
 
 ### Tips to prevent malicious cross-site scripting
 
-An ill-intentioned user could attack the origin of an add-in by entering malicious script through the document or fields in the add-in. A developer should process user input to avoid executing a malicious user's JavaScript within their domain. The following are some good practices to follow to handle user input from a document or mail message, or via fields in an add-in.
+A bad actor could attack the origin of an add-in by entering malicious script through the document or fields in the add-in. A developer should process user input to avoid executing a malicious user's JavaScript within their domain. The following are some good practices to follow to handle user input from a document or mail message, or via fields in an add-in.
 
 - Instead of the DOM property [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML), use the [innerText](https://developer.mozilla.org/docs/Web/API/Node/innerText) and [textContent](https://developer.mozilla.org/docs/DOM/Node.textContent) properties where appropriate. Do the following for Internet Explorer and Firefox cross-browser support.
 
@@ -211,7 +204,7 @@ First, identify sensitive actions that your add-in can perform. These include an
 
 Second, for sensitive actions, your add-in should confirm with the user before it executes the action. This confirmation should detail what effect the action will have. It should also detail how the user can prevent the action, if necessary, whether by choosing a specific button marked "Don't Allow" or by ignoring the confirmation.
 
-Third, to ensure that no potential attacker can hide or mask the confirmation, you should display it outside the context of the add-in (that is, not in an HTML dialog box).
+Third, to ensure that no threat actor can hide or mask the confirmation, you should display it outside the context of the add-in (that is, not in an HTML dialog box).
 
 The following are some examples of how you could get confirmation.
 
@@ -221,7 +214,7 @@ The following are some examples of how you could get confirmation.
 
 - Open a confirmation dialog in a new browser window to a page that cannot be iframed. This is typically the pattern that is used by login pages. Use the [dialog api](../develop/dialog-api-in-office-add-ins.md) to create a new dialog.
 
-Also, ensure that the address you use for contacting the user couldn't have been provided by a potential attacker. For example, for payment confirmations use the address on file for the authorized user's account.
+Also, ensure that the address you use for contacting the user couldn't have been provided by a threat actor. For example, for payment confirmations use the address on file for the authorized user's account.
 
 ### Other security practices
 

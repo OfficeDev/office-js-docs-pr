@@ -1,7 +1,7 @@
 ---
 title: Privacy, permissions, and security for Outlook add-ins
 description: Learn how to manage privacy, permissions, and security in an Outlook add-in.
-ms.date: 02/29/2024
+ms.date: 04/12/2024
 ms.localizationpriority: high
 ---
 
@@ -51,9 +51,9 @@ End users and IT admins can turn off [optional connected experiences in Office](
 
 |Client|Behavior when optional connected experiences is turned off|
 |-----|-----|
-|- Windows<sup>1</sup><br>- Mac|The **Get Add-ins** or **All Apps**<sup>2</sup> button isn't displayed, so users aren't able to manage their add-ins or access AppSource.|
-|- Android<br>- iOS|The **Get Add-ins** dialog shows only admin-deployed add-ins.|
-|- Web browser<br>- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Availability of add-ins and access to AppSource are unaffected, so users can continue to [manage their add-ins](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce) including admin-deployed ones.|
+|<ul><li>Web browser</li><li>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)</li></ul>|Availability of add-ins and access to AppSource are unaffected, so users can continue to [manage their add-ins](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8) including admin-deployed ones.|
+|<ul><li>Windows (classic)<sup>1</sup></li><li>Mac</li></ul>|The **All Apps**<sup>2</sup> or **Get Add-ins** button isn't displayed, so users aren't able to manage their add-ins or access AppSource.|
+|<ul><li>Android</li><li>iOS</li></ul>|The **Get Add-ins** dialog shows only admin-deployed add-ins.|
 
 > [!NOTE]
 > <sup>1</sup> On Windows, support for this experience is available from Version 2008 (Build 13127.20296). For more details on your client version, see the update history page for [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).<br>
@@ -118,25 +118,25 @@ Developers should follow the tiered permissions model to provide transparency an
   <Permissions>ReadItem</Permissions>
   ```
 
-  The following example requests the **read item** permission in the Unified manifest for Microsoft 365 (preview).
+  The following example requests the **read item** permission in the unified manifest for Microsoft 365.
 
-```json
-"authorization": {
-  "permissions": {
-    "resourceSpecific": [
-      ...
-      {
-        "name": "MailboxItem.Read.User",
-        "type": "Delegated"
-      },
-    ]
-  }
-},
-```
+  ```json
+  "authorization": {
+    "permissions": {
+      "resourceSpecific": [
+        ...
+        {
+          "name": "MailboxItem.Read.User",
+          "type": "Delegated"
+        },
+      ]
+    }
+  },
+  ```
 
 - Developers can request the **restricted** permission if the Outlook add-in activates on a specific type of Outlook item (appointment or message), or on specific extracted entities (phone number, address, URL) being present in the item's subject or body.
 
-    [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
+  [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
 - Developers should request the **read item** permission if the Outlook add-in needs to read properties of the current item other than the default extracted entities, or write custom properties set by the add-in on the current item, but doesn't require reading or writing to other items, or creating or sending a message in the user's mailbox. For example, a developer should request **read item** permission if an Outlook add-in needs to look for an entity like a meeting suggestion, task suggestion, email address, or contact name in the item's subject or body, or uses a regular expression to activate.
 

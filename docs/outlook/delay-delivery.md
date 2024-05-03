@@ -1,7 +1,7 @@
 ---
 title: Manage the delivery date and time of a message
 description: Learn how to get and set the delivery date and time of a message in compose mode.
-ms.date: 01/29/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ The Outlook client gives you the option to delay the delivery of a message, but 
 
 ## Configure the manifest
 
-To schedule the delivery of a message, your add-in must be able to activate in message compose mode. This is defined through the [MessageComposeCommandSurface](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface) extension point in an XML manifest or the **mailCompose** "contexts" property in a [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
+To schedule the delivery of a message, your add-in must be able to activate in message compose mode. This is defined through the [MessageComposeCommandSurface](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface) extension point in an XML manifest or the **mailCompose** "contexts" property in a [Unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
 
 For further guidance on how to configure an Outlook add-in manifest, see [Office add-in manifests](../develop/add-in-manifests.md).
 
@@ -72,7 +72,7 @@ This behavior differs from a message scheduled using the native **Delay Delivery
 
 ## Try sample snippets in Script Lab
 
-Get the [Script Lab for Outlook add-in](https://appsource.microsoft.com/product/office/WA200001603) and try out the "Get and set message delivery (Message Compose)" sample snippet. To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
+Get the [Script Lab for Outlook add-in](https://appsource.microsoft.com/?search=script%20lab) and try out the "Get and set message delivery (Message Compose)" sample snippet. To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
 
 :::image type="content" source="../images/outlook-delay-delivery-script-lab.png" alt-text="The message delivery sample snippet in Script Lab.":::
 

@@ -1,7 +1,7 @@
 ---
 title: Manage the sensitivity label of your message or appointment in compose mode
 description: Learn how to manage the sensitivity label of your message or appointment in compose mode.
-ms.date: 02/29/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -29,17 +29,17 @@ The following table lists client-server combinations that support the use of the
 
 |Client|Exchange Online|
 |------|------|
-|**Windows**<br>Version 2304 (Build 16327.20248) or later|Supported|
-|**Mac**<br>Version 16.77.816.0 or later|Supported|
 |**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|
-|**iOS**|Not applicable|
+|**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|
+|**Mac**<br>Version 16.77.816.0 or later|Supported|
 |**Android**|Not applicable|
+|**iOS**|Not applicable|
 
 ## Configure the manifest
 
 To use the sensitivity feature in your Outlook add-in project, you must configure the **read/write item** permission in the manifest of your add-in.
 
-- **Unified manifest for Microsoft 365 (preview)**: In the "authorization.permissions.resourceSpecific" array, set the "name" property of an object to "MailboxItem.ReadWrite.User".
+- **Unified manifest for Microsoft 365**: In the "authorization.permissions.resourceSpecific" array, set the "name" property of an object to "MailboxItem.ReadWrite.User".
 - **XML manifest**: Set the [\<Permissions\> element](/javascript/api/manifest/permissions) to **ReadWriteItem**.
 
 If your add-in will detect and handle the `OnSensitivityLabelChanged` event, additional manifest configurations are required to enable the event-based activation feature. To learn more, see [Detect sensitivity label changes with the OnSensitivityLabelChanged event](#detect-sensitivity-label-changes-with-the-onsensitivitylabelchanged-event).

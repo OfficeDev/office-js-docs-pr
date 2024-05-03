@@ -2,7 +2,7 @@
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
 ms.topic: tutorial
-ms.date: 02/20/2024
+ms.date: 04/12/2024
 ms.localizationpriority: high
 ---
 
@@ -51,15 +51,12 @@ The first question asks you to choose between several types of projects. The opt
 - **Excel Custom Functions using a Shared Runtime**
 - **Excel Custom Functions using a JavaScript-only Runtime**
 - **Office Add-in Task Pane project supporting single sign-on**
-- **Outlook Add-in with the unified manifest for Microsoft 365 (preview)**
 - **Office Add-in project containing the manifest only**
 
 ![The prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
 
 > [!NOTE]
->
-> - The unified manifest is in preview and is supported only on Outlook on Windows. It isn't supported yet for a production add-in.
-> - The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
+> The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
 
 The next question asks you to choose between **TypeScript** and **JavaScript**. (This question is skipped if you chose the manifest-only option in the preceding question.)
 
@@ -72,6 +69,10 @@ You're then prompted to give the add-in a name. The name you specify will be use
 You're then prompted to choose which Office application the add-in should run in. There are six possible applications to choose from: **Excel**, **OneNote**, **Outlook**, **PowerPoint**, **Project**, and **Word**. You must choose just one, but you can change the manifest later to support the additional Office applications. The exception is Outlook. A manifest that supports Outlook cannot support any other Office application.
 
 ![The Yo Office interface after the user named the project "Contoso Add-in". It shows the prompt for Office application, and the possible answers, in the Yeoman generator.](../images/yo-office-host-prompt.png)
+
+If you choose **Outlook** as the Office application, you get an additional question asking you which type of manifest you want to use. We recommend that you choose **unified manifest for Microsoft 365** unless your add-in will include an extensibility feature that isn't yet supported by the unified manifest.
+
+[!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
 After you've answered this question, the generator creates the project and installs the dependencies. You may see **WARN** messages in the npm output on screen. You can ignore these. You may also see messages that vulnerabilities were found. You can ignore these for now, but you'll eventually need to fix them before your add-in is released to production. For more information about fixing vulnerabilities, open your browser and search for "npm vulnerability".
 

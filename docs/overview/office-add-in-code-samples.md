@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: A list of Office Add-in code samples to help you learn and build your own add-ins.
-ms.date: 03/08/2024
+ms.date: 04/09/2024
 localization_priority: high
 ---
 
@@ -43,11 +43,13 @@ If your development background is in building VSTO Add-ins, the following sample
 
 | Name                | Description         |
 |:--------------------|:--------------------|
+| [Report spam or phishing emails in Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-spam-reporting) | Showcases how to build an integrated spam-reporting solution that is easily discoverable in the Outlook client ribbon. Provides the user with a processing dialog to report an email. Facilitates saving a copy of the reported email to a file to submit it to your backend system for further processing. |
 | [Encrypt attachments, process meeting request attendees, and react to appointment date/time changes using Outlook event-based activation](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-encrypt-attachments) | Use event-based activation to encrypt attachments when added by the user. Also use event handling for recipients changed in a meeting request, and changes to the start or end date or time in a meeting request. |
 | [Identify and tag external recipients using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external) | Use event-based activation to run an Outlook add-in when the user changes recipients while composing a message. The add-in also uses the `appendOnSendAsync` API to add a disclaimer. |
-| [Set your signature using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature) | Use event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane is not open. It also uses the `setSignatureAsync` API. |
+| [Set your signature using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature) | Use event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane isn't open. It also uses the `setSignatureAsync` API. |
 | [Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories) | Use Outlook Smart Alerts to verify that required color categories are applied to a new message or appointment before it's sent. |
 | [Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label) | Use the sensitivity label API in an event-based add-in to verify and apply the **Highly Confidential** sensitivity label to applicable outgoing messages. |
+| [Report spam or phishing emails in Outlook (preview)](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-spam-reporting) | Build an integrated spam-reporting add-in that's displayed in a prominent spot on the Outlook ribbon. |
 
 ## Word
 
@@ -62,6 +64,10 @@ If your development background is in building VSTO Add-ins, the following sample
 
 | Name                | Description         |
 |:--------------------|:--------------------|
+|Sample name | Description |
+|----------------|--------------------------------------------------------|
+| [Office Add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-SSO-NAA) | Shows how to use MSAL.js nested app authentication (NAA) in an Office Add-in to access Microsoft Graph APIs for the signed-in user. The sample displays the signed-in user's name and email. It also inserts the names of files from the user's Microsoft OneDrive account into the document. |
+| [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA) | Shows how to use MSAL.js nested app authentication (NAA) in an Outlook Add-in to access Microsoft Graph APIs for the signed-in user. The sample displays the signed-in user's name and email. It also inserts the names of files from the user's Microsoft OneDrive account into a new message body.|
 | [Use SSO with event-based activation in an Outlook add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-events) | Shows how to use SSO to access a user's Microsoft Graph data from an event fired in an Outlook add-in. |
 | [Single Sign-on (SSO) Sample Outlook Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO) | Use Office's SSO feature to give the add-in access to Microsoft Graph data.|
 | [Get OneDrive data using Microsoft Graph and msal.js in an Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React) | Build an Office Add-in, as a single-page application (SPA) with no backend, that connects to Microsoft Graph, and access workbooks stored in OneDrive for Business to update a spreadsheet.  |
@@ -82,12 +88,6 @@ If your development background is in building VSTO Add-ins, the following sample
 |:--------------------|:--------------------|
 | [Share global data with a shared runtime](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-global-state) | Set up a basic project that uses the shared runtime to run code for ribbon buttons, task pane, and custom functions in a single browser runtime. |
 | [Manage ribbon and task pane UI, and run code on doc open](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-scenario) | Create contextual ribbon buttons that are enabled based on the state of your add-in. |
-
-<br>
-
----
-
----
 
 ## Additional samples
 

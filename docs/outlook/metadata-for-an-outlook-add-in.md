@@ -311,14 +311,14 @@ Office.context.mailbox.getCallbackTokenAsync(
 
 The following table summarizes saved custom properties behavior in messages for various Outlook clients.
 
-|Scenario|Outlook on Windows|Outlook on the web and on new Windows client (preview)|Outlook on Mac|
+|Scenario|Outlook on the web and on new Windows client (preview)|classic Outlook on Windows|Outlook on Mac|
 |---|---|---|---|
 |New compose|null|null|null|
 |Reply, reply all|null|null|null|
-|Forward|Loads parent's properties|null|null|
+|Forward|null|Loads parent's properties|null|
 |Sent item from new compose|null|null|null|
 |Sent item from reply or reply all|null|null|null|
-|Sent item from forward|Removes parent's properties if not saved|null|null|
+|Sent item from forward|null|Removes parent's properties if not saved|null|
 
 To handle the situation in Outlook on Windows:
 
