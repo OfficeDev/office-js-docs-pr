@@ -1,14 +1,14 @@
 ---
-title: Office Add-ins with the unified app manifest for Microsoft 365 (preview)
+title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 10/11/2023
+ms.date: 04/12/2024
 ms.localizationpriority: high
 ---
 
-# Office Add-ins with the unified app manifest for Microsoft 365 (preview)
+# Office Add-ins with the unified app manifest for Microsoft 365
 
-This article introduces the unified app manifest for Microsoft 365 in preview. It assumes that you're familiar with [Office Add-ins manifest](add-in-manifests.md).
+This article introduces the unified app manifest for Microsoft 365. It assumes that you're familiar with [Office Add-ins manifest](add-in-manifests.md).
 
 > [!TIP]
 > - For an overview of the XML manifest, see [Office Add-ins XML manifest](xml-manifest-overview.md).
@@ -16,28 +16,24 @@ This article introduces the unified app manifest for Microsoft 365 in preview. I
 
 Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes are compatible with existing add-ins.
 
-One important improvement we're working on is the ability to create a single unit of distribution for all your Microsoft 365 extensions (Teams Apps) by using the same manifest format and schema, based on the JSON-formatted unified app manifest for Microsoft 365.
+One important improvement is the ability to create a single unit of distribution for all your Microsoft 365 extensions by using the same manifest format and schema.
+
+We've taken an important first step toward these goals by making it possible for you to create Outlook add-ins with a unified manifest for Microsoft 365.
 
 > [!NOTE]
-> Any extension of any part of the Microsoft 365 platform is now called a "Teams App" even if it doesn't extend the Teams application itself.
-
-We've taken an important first step toward these goals by making it possible for you to create Outlook add-ins, running on Windows only, with a unified manifest for Microsoft 365.
-
-> [!NOTE]
-> - The unified manifest is available for preview and is subject to change based on feedback. We encourage experienced add-in developers to experiment with it. The unified manifest shouldn't be used in production add-ins.
-> - The preview version of the unified manifest only supports Outlook add-ins and only in Office downloaded from a Microsoft 365 subscription and installed on Windows. We're working on extending support to Excel, PowerPoint, and Word, as well as other platforms.
-> - The unified manifest requires Office Version 2304 (Build 16320.00000) or later. Your Microsoft 365 subscription channel must be "Beta".
+> - The unified manifest currently only supports Outlook add-ins and only in Office linked to a Microsoft 365 subscription and installed on Windows, on a mobile device, or in Outlook on the web. We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office.
+> - The unified manifest requires Office Version 2304 (Build 16320.00000) or later.
 
 > [!TIP]
-> Ready to get started with the preview unified manifest? Begin with [Build an Outlook add-in with the unified manifest for Microsoft 365 (preview)](../quickstarts/outlook-quickstart-json-manifest.md).
+> Ready to get started with the unified manifest? Begin with [Build an Outlook add-in with the unified manifest for Microsoft 365](../quickstarts/outlook-quickstart-json-manifest.md).
 
 ## Key properties of the unified manifest
 
-The main reference documentation for the preview version of the unified app manifest is at [Public developer preview app manifest schema for Teams](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview). That article provides information about the critical base manifest properties, but may not include any documentation of the "extensions" property, which is the property where Office Add-ins are configured in the unified manifest. So, in this article, we provide a brief description of the meaning of base properties when the Teams App is (or includes) an Office add-in. This is followed by some basic documentation for the "extensions" property and its descendent properties. There is a full sample manifest for an add-in at [Sample preview unified manifest](#sample-preview-unified-manifest).
+The main reference documentation for the version of the unified app manifest is at [Manifest schema](/microsoftteams/platform/resources/schema/manifest-schema). That article provides information about the critical base manifest properties, but may not include any documentation of the "extensions" property, which is the property where Office Add-ins are configured in the unified manifest. So, in this article, we provide a brief description of the meaning of base properties when the Teams App is (or includes) an Office add-in. This is followed by some basic documentation for the "extensions" property and its descendent properties. There is a full sample manifest for an add-in at [Sample unified manifest](#sample-unified-manifest).
 
 ### Base properties
 
-Each of the base properties listed in the following table has more extensive documentation at [Public developer preview app manifest schema for Teams](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview). Base properties not included in this table have no meaning for Office Add-ins.
+Each of the base properties listed in the following table has more extensive documentation at [Manifest schema](/microsoftteams/platform/resources/schema/manifest-schema). Base properties not included in this table have no meaning for Office Add-ins.
 
 |JSON property|Purpose|
 |:-----|:-----|
@@ -65,7 +61,7 @@ We're working hard to complete reference documentation for the "extensions" prop
 | "ribbons" | The ribbons that the add-in customizes. | 
 | "ribbons.contexts" | Specifies the command surfaces that the add-in customizes. For example, "mailRead" or "mailCompose". |
 | "ribbons.tabs" | Configures custom ribbon tabs. |
-| "alternatives" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. | 
+| "alternatives" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. Also, specifies icons to represent the add-in in older versions of Office.| 
 | "runtimes"  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). | 
 | "autoRunEvents" | Configures an event handler for a specified event. | 
 
@@ -75,9 +71,9 @@ There is a "validDomains" array in the manifest file that is used to tell Office
 
 To override this behavior in desktop platforms, add each domain you want to open in the add-in window to the list of domains specified in the "validDomains" array. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then in Office on desktop, that URL opens in a new browser window (outside the add-in task pane).
 
-## Sample preview unified manifest
+## Sample unified manifest
 
-The following is an example of a preview unified app manifest for an add-in.
+The following is an example of a unified app manifest for an add-in.
 
 ```json
 {
@@ -334,6 +330,38 @@ The following is an example of a preview unified app manifest for an add-in.
                   ]
                 }
               ]
+              "customMobileRibbonGroups": [
+                {
+                  "id": "mobileDashboard",
+                  "label": "Controls",
+                  "controls": [
+                    {
+                      "id": "control1",
+                      "type": "MobileButton",
+                      "label": "Action 1",
+                      "icons": [
+                        {
+                          "size": 16,
+                          "url": "test_16.png"
+                        },
+                        {
+                          "size": 32,
+                          "url": "test_32.png"
+                        },
+                        {
+                          "size": 80,
+                          "url": "test_80.png"
+                        }
+                      ],
+                      "supertip": {
+                        "title": "Action 1 Title",
+                        "description": "Action 1 Description"
+                      },
+                      "actionId": "action1"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -378,6 +406,16 @@ The following is an example of a preview unified app manifest for an add-in.
               "assetId": "WA000000000"
             }
           }
+          "alternateIcons": {
+            "icon": {
+              "size": 16,
+              "url": "https://cdn.contoso.com/resources/icon64.jpg"
+            },
+            "highResolutionIcon": {
+              "size": 16,
+              "url": "https://cdn.contoso.com/resources/icon128.jpg"
+            },
+          }
         }
       ]
     }
@@ -388,4 +426,4 @@ The following is an example of a preview unified app manifest for an add-in.
 ## See also
 
 - [Create add-in commands with the unified manifest for Microsoft 365](create-addin-commands-unified-manifest.md)
-- [Preview schema for the unified app manifest](https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/preview/DevPreview/MicrosoftTeams.schema.json)
+- [Manifest schema](/microsoftteams/platform/resources/schema/manifest-schema)
