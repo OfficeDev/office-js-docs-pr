@@ -2,7 +2,7 @@
 title: Runtimes in Office Add-ins
 description: Learn about the runtimes that are used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 04/04/2024
+ms.date: 05/06/2024
 ms.localizationpriority: medium
 ---
 
@@ -136,7 +136,7 @@ This type of runtime is used in event-based and spam-reporting add-ins in Outloo
 A JavaScript-only runtime uses less memory and starts up faster than a browser runtime, but has fewer features.
 
 > [!IMPORTANT]
-> The JavaScript-only runtime directly supports the ECMAScript 2016 standard of JavaScript, but you can use later versions of JavaScript or TypeScript. For information about how to do this, see [Support for recent versions of JavaScript](../develop/support-ie-11.md#support-for-recent-versions-of-javascript).
+> In Office for Windows versions before 2403 (Build 16.0.17425.20000) and perpetual license Office through Office 2021, the JavaScript-only runtime directly supports the ECMAScript 2016 standard of JavaScript. However, you can use later versions of JavaScript or TypeScript. For information about how to do this, see [Support for recent versions of JavaScript](../develop/support-ie-11.md#support-for-recent-versions-of-javascript).
 
 ## Browser runtime
 
