@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 02/27/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,8 +21,74 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 ## Configure the manifest
 
-> [!NOTE]
-> The item multi-select feature isn't currently supported in the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md), but the team is working on making this available.
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+1. In your preferred code editor, open the Outlook quick start project you created.
+
+1. Open the **manifest.json** file located at the root of the project.
+
+1. In the "authorization.permissions.resourceSpecific" array, change the value of the "name" property to "Mailbox.ReadWrite.User". It should look like the following when you're done.
+
+    ```json
+    "authorization": {
+        "permissions": {
+            "resourceSpecific": [
+                {
+                    "name": "Mailbox.ReadWrite.User",
+                    "type": "Delegated"
+                }
+            ]
+        }
+    },
+    ```
+
+1. In first object of the "extensions.runtimes" array, make the following changes.
+
+    1. Change the "requirements.capabilities.minVersion" property to "1.13".
+    1. In the same "actions" object, add the "supportsNoItemContext" property and set it to `true`.
+    1. In the same "actions" object, add the "multiselect" property and set it to `true`.
+
+    Your code should look like the following after you've made the changes.
+
+    ```json
+    "runtimes": [
+        {
+            "requirements": {
+                "capabilities": [
+                    {
+                        "name": "Mailbox",
+                        "minVersion": "1.13"
+                    }
+                ]
+            },
+            "id": "TaskPaneRuntime",
+            "type": "general",
+            "code": {
+                "page": "https://localhost:3000/taskpane.html"
+            },
+            "lifetime": "short",
+            "actions": [
+                {
+                    "id": "TaskPaneRuntimeShow",
+                    "type": "openPage",
+                    "pinnable": false,
+                    "view": "dashboard",
+                    "supportsNoItemContext": true,
+                    "multiselect": true
+                }
+            ]
+        },
+        ...
+    ]
+    ```
+
+1. Delete the second object of the "extensions.runtimes" array, whose "id" is "CommandsRuntime".
+
+1. In the "extensions.ribbons.tabs.controls" array, delete the second object, whose "id" is "ActionButton".
+
+1. Save your changes.
+
+# [XML Manifest](#tab/xmlmanifest)
 
 To enable your add-in to activate on multiple selected messages, you must add the [SupportsMultiSelect](/javascript/api/manifest/action#supportsmultiselect) child element to the **\<Action\>** element and set its value to `true`. As item multi-select only supports messages at this time, the **\<ExtensionPoint\>** element's `xsi:type` attribute value must be set to `MessageReadCommandSurface` or `MessageComposeCommandSurface`.
 
@@ -98,10 +164,12 @@ To enable your add-in to activate on multiple selected messages, you must add th
     </VersionOverrides>
     ```
 
-    > [!NOTE]
-    > Item multi-select can also be enabled without the **\<SupportsMultiSelect\>** element if the **\<SupportsNoItemContext\>** element is included in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
-
 1. Save your changes.
+
+---
+
+> [!NOTE]
+> If you turn on the item multi-select feature in your add-in, your add-in will automatically support the [no item context](contextless.md) feature, even if it isn't explicitly configured in the manifest.
 
 ## Configure the task pane
 
@@ -210,7 +278,7 @@ Item multi-select only supports messages within an Exchange mailbox in both read
 - The messages must be selected from one Exchange mailbox at a time. Non-Exchange mailboxes aren't supported.
 - The messages must be selected from one mailbox folder at a time. An add-in doesn't activate on multiple messages if they're located in different folders, unless Conversations view is enabled. For more information, see [Multi-select in conversations](#multi-select-in-conversations).
 - An add-in must implement a task pane in order to detect the `SelectedItemsChanged` event.
-- The [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) in Outlook must be enabled. An exception to this is if the item multi-select feature is enabled through the **\<SupportsNoItemContext\>** element in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
+- The [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) in Outlook must be enabled. An exception to this is if the item multi-select feature is enabled through the no item context feature in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
 - A maximum of 100 messages can be selected at a time.
 
 > [!NOTE]
