@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 02/29/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -25,7 +25,7 @@ Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?ta
 
 To configure the manifest, select the tab for the type of manifest you are using.
 
-# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 1. Open the **manifest.json** file.
 
@@ -334,7 +334,7 @@ To modify the text of the **Don't Send** button or assign it a task pane command
 - The [cancelLabel](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-cancellabel-member) option customizes the text of the **Don't Send** button. Custom text must be a maximum of 20 characters.
 - The [commandId](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-commandid-member) option specifies the ID of the task pane that opens when the **Don't Send** button is selected. The value must match the task pane ID in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
   - **XML manifest**: The `id` attribute of the **\<Control\>** element representing the task pane.
-  - **Unified manifest for Microsoft 365 (preview)**: The "id" property of the task pane command in the "controls" array.
+  - **Unified manifest for Microsoft 365**: The "id" property of the task pane command in the "controls" array.
 - The [contextData](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-contextdata-member) option specifies any JSON data you want to pass to the add-in when the **Don't Send** button is selected. If you include this option, you must also set the `commandId` option. Otherwise, the JSON data is ignored.
 
   > [!TIP]

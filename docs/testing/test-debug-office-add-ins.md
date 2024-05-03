@@ -30,6 +30,9 @@ Some Office versions on Windows still use the webview controls that come with In
 
 You can use sideloading to install an Office Add-in for testing without having to first put it in an add-in catalog. The procedure for sideloading an add-in varies by platform, and in some cases, by product as well. The following articles each describe how to sideload Office Add-ins on a specific platform or within a specific product.
 
+> [!NOTE]
+> Office Add-ins that use the unified manifest for Microsoft 365 are *directly* supported in Office on the web, in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), and in Office on Windows connected to a Microsoft 365 subscription, Version 2304 (Build 16320.00000) or later. When the app package that contains the unified manifest is sideloaded to a platform that doesn't directly support that type of manifest then, if the manifest has a valid "alternateIcons" property, an XML manifest is generated from the unified manifest and this manifest is the one that's sideloaded.  
+
 - [Sideload Office Add-ins in Office on the web](sideload-office-add-ins-for-testing.md)
 - [Sideload Office Add-ins on Windows](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Sideload Office Add-ins on Mac](sideload-an-office-add-in-on-mac.md)

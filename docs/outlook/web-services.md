@@ -1,7 +1,7 @@
 ---
 title: Use Exchange Web Services (EWS) from an Outlook add-in
 description: Provides an example that shows how an Outlook add-in can request information from Exchange Web Services.
-ms.date: 05/20/2023
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -186,7 +186,7 @@ When you use the `makeEwsRequestAsync` method, the request is authenticated by u
 To use the `makeEwsRequestAsync` method, your add-in must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
 
 - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-- **Unified manifest for Microsoft 365 (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+- **Unified manifest for Microsoft 365**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
 For information about using the **read/write mailbox** permission, see [read/write mailbox permission](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission).
 
