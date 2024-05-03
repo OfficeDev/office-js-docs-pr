@@ -151,9 +151,9 @@ items:
       items:
       - name: Overview
         href: develop/overview-authn-authz.md
-      - name: Single sign-on (SSO)
+      - name: Single sign-on with on-behalf-of flow
         items:
-        - name: Enable SSO in an Office Add-in
+        - name: Enable SSO using on-behalf-of flow
           href: develop/sso-in-office-add-ins.md
         - name: Quick start
           href: quickstarts/sso-quickstart.md
@@ -171,6 +171,8 @@ items:
           href: develop/create-sso-office-add-ins-nodejs.md
         - name: Troubleshoot error messages
           href: develop/troubleshoot-sso-in-office-add-ins.md
+      - name: Enable SSO using nested app authentication
+        href: develop/enable-nested-app-authentication-in-your-add-in.md
       - name: Office dialog API
         href: develop/auth-with-office-dialog-api.md      
       - name: Identity providers
@@ -816,6 +818,8 @@ items:
         href: outlook/inside-the-identity-token.md
       - name: "Scenario: Implement single sign-on"
         href: outlook/implement-sso-in-outlook-add-in.md
+      - name: Legacy token deprecation FAQ 
+        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.yml
     - name: Testing and tips
       items:
       - name: Overview
@@ -866,7 +870,7 @@ items:
       href: powerpoint/insert-slides-into-presentation.md
       displayName: PowerPoint
     - name: Get the whole document from an add-in
-      href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
+      href: develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md
       displayName: PowerPoint
     - name: Use custom tags on presentations, slides, and shapes
       href: powerpoint/tagging-presentations-slides-shapes.md
@@ -940,7 +944,7 @@ items:
       href: word/dictionary-task-pane-add-ins.md
       displayName: Word
     - name: Get the whole document from an add-in
-      href: word/get-the-whole-document-from-an-add-in-for-word.md
+      href: develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md
       displayName: Word
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md

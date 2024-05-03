@@ -14,7 +14,6 @@ This article describes how to configure the [Unified manifest for Microsoft 365]
 > [!TIP]
 > Instructions for creating add-in commands with the XML manifest are in [Create add-in commands with the XML manifest](create-addin-commands.md).
 
-
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
 ## Starting point and major steps
