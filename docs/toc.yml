@@ -656,9 +656,6 @@ items:
   - name: Build your first Outlook add-in
     href: quickstarts/outlook-quickstart.md
     displayName: Outlook
-  - name: Build an Outlook add-in with the unified manifest for Microsoft 365
-    href: quickstarts/outlook-quickstart-json-manifest.md
-    displayName: Outlook
   - name: Outlook add-in tutorial
     href: tutorials/outlook-tutorial.md
     displayName: Outlook
