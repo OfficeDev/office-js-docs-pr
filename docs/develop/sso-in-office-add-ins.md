@@ -1,7 +1,7 @@
 ---
 title: Enable single sign-on (SSO) in an Office Add-in
 description: Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.
-ms.date: 01/22/2024
+ms.date: 05/06/2024
 ms.localizationpriority: high
 ---
 
@@ -67,9 +67,26 @@ To work with SSO you need to register your add-in with the Microsoft identity pl
 
 For more details about this process, see [Register an Office Add-in that uses SSO with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
 
-### Configure the add-in
+### Configure the manifest
 
-Add new markup to the add-in manifest.
+Your manifest must provide Office with certain information about how the add-in is registered in Microsoft Entra. The configurtion depends on which type of manifest the add-in uses. 
+
+# [Unified manifest](#tab/jsonmanifest)
+
+There should be a "webApplicationInfo" property in the root of the manifest. It has a required child "id" property which must be set to the application ID (a GUID) of the add-in in Microsoft Entra. For SSO, it must also have a child "resource" property that is set to the URI of the add-in. This is the same **Application ID URI** (including the `api:` protocol) that you set when you registered the add-in with Microsoft Entra. The URI must end with the client ID specified in the "webApplicationInfo.id" property. The following is an example:
+
+```json
+"webApplicationInfo": {
+	"id": "a661fed9-f33d-4e95-b6cf-624a34a2f51d",
+	"resource": "api://addin.contoso.com/a661fed9-f33d-4e95-b6cf-624a34a2f51d"
+},
+```
+
+> [!NOTE]
+> Experienced add-in developers should note that, unlike the XML manifest, you don't specify the Azure Active Directory or Microsoft Graph properties you need in the unified manifest. 
+
+
+# [XML Manifest](#tab/xmlmanifest)
 
 - **\<WebApplicationInfo\>** - The parent of the following elements.
 - **\<Id\>** - The application (client) ID you received when you registered the add-in with the Microsoft identity platform. For more information, see [Register an Office Add-in that uses SSO with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
@@ -99,6 +116,8 @@ The following is an example of the markup.
 
 > [!NOTE]
 > If you don't follow the format requirements in the manifest for SSO, your add-in will be rejected from AppSource until it meets the required format.
+
+---
 
 ### Include the Identity API requirement set
 
