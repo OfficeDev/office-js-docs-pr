@@ -448,16 +448,6 @@ The following is an example of a unified app manifest for an add-in.
               "url": "https://contoso.com/assets/icon128x128.jpg"
             }
           }
-          "alternateIcons": {
-            "icon": {
-              "size": 16,
-              "url": "https://cdn.contoso.com/resources/icon64.jpg"
-            },
-            "highResolutionIcon": {
-              "size": 16,
-              "url": "https://cdn.contoso.com/resources/icon128.jpg"
-            },
-          }
         }
       ]
     }
