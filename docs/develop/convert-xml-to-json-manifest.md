@@ -50,6 +50,11 @@ When you've added the files to the project, add **\<IconUrl\>** and **\<HighReso
 
 If your manifest has any **\<FunctionName\>** elements, make sure their values have fewer than 65 characters. The value of this element must exactly match the name of a function in a JavaScript or TypeScript file. If you change it in the manifest, be sure to change it in the code file too.
 
+### Ensure that your SSO add-in requests permissions 
+
+If your add-in uses Microsoft single sign-in, your add-in has a **\<Scopes\>** element that specifies the Azure Active Directory or Microsoft Graph permissions that the add-in needs. With the unified manifest, permissions must be requested in runtime code. Update your code as needed to request these permissions. The exact code depends on the architecture and authorization code libraries you are using. Typically, code requests permissions in a function that requests an access token. 
+
+
 ## Conversion tools and options
 
 There are several ways to carry out the remaining tasks, depending on the IDE and other tools you want to use for your project, and on the tool you used to create the project. 
