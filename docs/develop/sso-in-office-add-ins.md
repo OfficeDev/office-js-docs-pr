@@ -67,7 +67,7 @@ To work with SSO you need to register your add-in with the Microsoft identity pl
 
 For more details about this process, see [Register an Office Add-in that uses SSO with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
 
-### Configure the manifest
+### Configure the add-in
 
 Your manifest must provide Office with certain information about how the add-in is registered in Microsoft Entra. The configurtion depends on which type of manifest the add-in uses. 
 
