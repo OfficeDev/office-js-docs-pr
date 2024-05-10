@@ -38,6 +38,8 @@ To enable NAA, your app registration must include a specific redirect URI to ind
 
 `brk-multihub://your-add-in-domain`
 
+For example if you were testing your add-in on port 3000 on the localhost server, you would use `brk-multihub://localhost:3000` as the redirect value.
+
 Trusted broker groups are dynamic by design and can be updated in the future to include additional hosts where your add-in may use NAA flows. Currently the brk-multihub group includes Office Word, Excel, PowerPoint, Outlook, and Teams (for when Office is activated inside).
 
 ## Configure MSAL config to use NAA
@@ -46,7 +48,7 @@ Configure your add-in to use NAA by setting the `supportsNestedAppAuth` prop
 
 The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts` file in a project built with `yo office` (**Office Add-in Task Pane** project).
 
-1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project.
+1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project. For more information on package, see [Microsoft Authentication Library for JavaScript (MSAL.js) for Browser-Based Single-Page Applications](https://www.npmjs.com/package/%40azure/msal-browser).
 
     ```json
     "dependencies": {
@@ -87,6 +89,9 @@ Next, you need to initialize MSAL and get an instance of the public client appli
       }
     });
     ```
+
+> [!NOTE]
+> The previous code sample sets the **authority** to **common**, which supports work and school accounts or personal Microsoft accounts. If you want to configure a single tenant or other account types, see [Application configuration options](/entra/identity-platform/msal-client-application-configuration) for additional authority options.
 
 ## Acquire your first token
 
