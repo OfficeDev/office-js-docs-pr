@@ -19,7 +19,7 @@ There are two types of runtimes used by Office Add-ins:
 
 Details about these types are later in this article at [JavaScript-only runtime](#javascript-only-runtime) and [Browser runtime](#browser-runtime).
 
-The following table shows which possible features of an add-in that uses each type of runtime.
+The following table shows the possible features of an add-in, according to each type of runtime.
 
 | Type of runtime | Add-in feature |
 |:-----|:-----|
