@@ -69,11 +69,11 @@ For more details about this process, see [Register an Office Add-in that uses SS
 
 ### Configure the add-in
 
-Your manifest must provide Office with certain information about how the add-in is registered in Microsoft Entra. The configurtion depends on which type of manifest the add-in uses. 
+Your manifest must provide Office with certain information about how the add-in is registered in Microsoft Entra ID. The configuration depends on which type of manifest the add-in uses. 
 
 # [Unified manifest](#tab/jsonmanifest)
 
-There should be a "webApplicationInfo" property in the root of the manifest. It has a required child "id" property which must be set to the application ID (a GUID) of the add-in in Microsoft Entra. For SSO, it must also have a child "resource" property that is set to the URI of the add-in. This is the same **Application ID URI** (including the `api:` protocol) that you set when you registered the add-in with Microsoft Entra. The URI must end with the client ID specified in the "webApplicationInfo.id" property. The following is an example:
+There should be a "webApplicationInfo" property in the root of the manifest. It has a required child "id" property which must be set to the application ID (a GUID) of the add-in in the Microsoft identity platform. For SSO, it must also have a child "resource" property that is set to the URI of the add-in. This is the same **Application ID URI** (including the `api:` protocol) that you set when you registered the add-in with the Microsoft identity platform. The URI must end with the client ID specified in the "webApplicationInfo.id" property. The following is an example:
 
 ```json
 "webApplicationInfo": {

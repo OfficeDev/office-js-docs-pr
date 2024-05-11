@@ -52,7 +52,7 @@ If your manifest has any **\<FunctionName\>** elements, make sure their values h
 
 ### Ensure that your SSO add-in requests permissions 
 
-If your add-in uses Microsoft single sign-in, your add-in has a **\<Scopes\>** element that specifies the Azure Active Directory or Microsoft Graph permissions that the add-in needs. With the unified manifest, permissions must be requested in runtime code. Update your code as needed to request these permissions. The exact code depends on the architecture and authorization code libraries you are using. Typically, code requests permissions in a function that requests an access token. 
+If your add-in uses Microsoft single sign-on with the on-behalf-of (OBO) flow, your add-in has a **\<Scopes\>** element that specifies the Microsoft Graph or other API permissions that the add-in needs. With the unified manifest, permissions must be requested at runtime in the code. Update your code as needed to request these permissions. The exact code depends on the architecture and authorization code libraries you are using. Typically, code requests permissions in a function that requests an access token. 
 
 
 ## Conversion tools and options
