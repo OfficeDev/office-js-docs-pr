@@ -83,7 +83,7 @@ There should be a "webApplicationInfo" property in the root of the manifest. It 
 ```
 
 > [!NOTE]
-> Experienced add-in developers should note that, unlike the XML manifest, you don't specify the Azure Active Directory or Microsoft Graph permissions that the add-in needs in the unified manifest. Request permissions in your runtime code.
+> Experienced add-in developers should note that, there is no unified manifest property corresponding to the **\<Scopes\>** element in the XML manifest. Microsoft Graph and other API permissions are requested at runtime in your code.
 
 
 # [XML Manifest](#tab/xmlmanifest)
