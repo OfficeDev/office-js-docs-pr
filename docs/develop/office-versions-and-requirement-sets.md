@@ -1,7 +1,7 @@
 ---
 title: Office versions and requirement sets
 description: Supported Office.js platforms using JavaScript API.
-ms.date: 05/10/2024
+ms.date: 05/13/2024
 ms.localizationpriority: high
 ---
 
