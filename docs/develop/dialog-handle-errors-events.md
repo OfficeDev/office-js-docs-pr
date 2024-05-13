@@ -55,7 +55,7 @@ Three errors and events in the dialog box will raise a `DialogEventReceived` eve
 |:-----|:-----|
 |12002|One of the following:<ul><li>No page exists at the URL that was passed to `displayDialogAsync`.</li><li>The page that was passed to `displayDialogAsync` loaded, but the dialog box was then redirected to a page that it cannot find or load, or it has been directed to a URL with invalid syntax.</li></ul>|
 |12003|The dialog box was directed to a URL with the HTTP protocol. HTTPS is required.|
-|12006|One of the following:<ul><li>The dialog box was closed, usually because the user chose the **Close** button **X**.</li><li>The dialog returned a [Cross-Origin-Opener-Policy: same-origin](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) response header. To prevent this, you must set the header to `Cross-Origin-Opener-Policy: unsafe-none` or configure your add-in and dialog to be in the same domain.</li></ul>|
+|12006|One of the following:<ul><li>The dialog box was closed, usually because the user chose the **Close** button **X**.</li><li>The dialog returned a [Cross-Origin-Opener-Policy: same-origin](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) response header. To prevent this, you must set the header to `Cross-Origin-Opener-Policy: unsafe-none` or configure your add-in and dialog to be in the same domain as the host page.</li></ul>|
 
 Your code can assign a handler for the `DialogEventReceived` event in the call to `displayDialogAsync`. The following is a simple example.
 
