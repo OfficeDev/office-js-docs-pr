@@ -240,7 +240,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 >   "Another trusted domain"="https://fabrikam.com"
 >   ```
 >
-> - In Office on the web, if the domain of your dialog is different from that of your add-in and it enforces the [Cross-Origin-Opener-Policy: same-origin](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) response header, your add-in will be blocked from accessing messages from the dialog and your users will be shown [error 12006](dialog-handle-errors-events.md#errors-and-events-in-the-dialog-box). To prevent this, you must set the header to `Cross-Origin-Opener-Policy: unsafe-none` or configure your add-in and dialog to be in the same domain.
+> - In Office on the web and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), if the domain of your dialog is different from that of your add-in and it enforces the [Cross-Origin-Opener-Policy: same-origin](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) response header, your add-in will be blocked from accessing messages from the dialog and your users will be shown [error 12006](dialog-handle-errors-events.md#errors-and-events-in-the-dialog-box). To prevent this, you must set the header to `Cross-Origin-Opener-Policy: unsafe-none` or configure your add-in and dialog to be in the same domain.
 
 ## Pass information to the dialog box
 
