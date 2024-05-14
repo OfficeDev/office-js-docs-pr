@@ -1,7 +1,7 @@
 ---
 title: Debug your event-based or spam-reporting Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation or integrated spam reporting.
-ms.date: 03/29/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -20,8 +20,8 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
 1. Get your add-in's ID from the manifest.
 
-    - **XML manifest**: Use the value of the **\<Id\>** element, child of the root **\<OfficeApp\>** element.
-    - **Unified manifest for Microsoft 365 (preview)**: Use the value of the "id" property of the root anonymous `{ ... }` object.
+    - **XML manifest**: Use the value of the **\<Id\>** element child of the root **\<OfficeApp\>** element.
+    - **Unified manifest for Microsoft 365**: Use the value of the "id" property of the root anonymous `{ ... }` object.
 
 1. Create a registry `DWORD` value named `UseDirectDebugger` in `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]`. Replace `[Add-in ID]` with your add-in's ID from the manifest.
 

@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 04/09/2024
+ms.date: 05/01/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -246,9 +246,7 @@ The following is an example of a spam-reporting event handler that calls the `ge
 Once the event handler has completed processing the message, it must call the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method. In addition to signaling to the add-in that the spam-reporting event has been processed, `event.completed` can also be used to customize a post-processing dialog to show to the user or perform additional operations on the message, such as deleting it from the inbox. For a list of properties you can include in a JSON object to pass as a parameter to the `event.completed` method, see [Office.SpamReportingEventCompletedOptions](/javascript/api/outlook/office.spamreportingeventcompletedoptions).
 
 > [!NOTE]
->
-> - Code added after the `event.completed` call isn't guaranteed to run.
-> - In Outlook on the web or in new Outlook on Windows (preview), a post-processing dialog isn't shown once the add-in completes processing a reported message. This applies even if the `showPostProcessingDialog` property in the `event.completed` call is configured. However, depending on how you configured the `moveItemTo` property in the `event.completed` call, a notification is shown to signal when the reported message is deleted or moved to another folder in the mailbox.
+> Code added after the `event.completed` call isn't guaranteed to run.
 
 1. In the **spamreporting.js** file, replace its contents with the following code.
 
@@ -354,9 +352,6 @@ The following is a sample post-processing dialog shown to the user once the add-
 1. In the preprocessing dialog, choose a reason for reporting the message and add information about the message, if configured. Then, select **Report**.
 1. (Optional) In the post-processing dialog, select **OK**.
 
-    > [!TIP]
-    > In Outlook on the web or in new Outlook on Windows (preview), a post-processing dialog isn't shown once the add-in completes processing a reported message. This applies even if the `showPostProcessingDialog` property in the `event.completed` call is configured. However, depending on how you configured the `moveItemTo` property in the `event.completed` call, a notification is shown to signal when the reported message is deleted or moved to another folder in the mailbox.
-
 ## Review feature behavior and limitations
 
 As you develop and test the integrated spam-reporting feature in your add-in, be mindful of its characteristics and limitations.
@@ -376,9 +371,6 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 - The buttons that appear in the preprocessing and post-processing dialogs aren't customizable. Additionally, the text and buttons in the timeout and ongoing report dialogs can't be modified.
 - The integrated spam-reporting and [event-based activation](autolaunch.md) features must use the same runtime. Multiple runtimes aren't currently supported in Outlook. To learn more about runtimes, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 - A task pane command can't be assigned to the spam-reporting button on the ribbon. If you want to implement a task pane in your add-in, you must include the [Action element](/javascript/api/manifest/action#xsitype-is-showtaskpane) in the manifest and set its `xsi:type` attribute to `ShowTaskpane`. Note that a separate button to activate the task pane will be added to the ribbon, but it won't appear in the dedicated spam-reporting area of the ribbon.
-- In Outlook on the web or in new Outlook on Windows (preview), a post-processing dialog isn't shown once the add-in completes processing a reported message. This applies even if the `showPostProcessingDialog` property in the `event.completed` call is configured. However, depending on how you configured the `moveItemTo` property in the `event.completed` call, a notification is shown to signal when the reported message is deleted or moved to another folder in the mailbox.
-
-    :::image type="content" source="../images/outlook-owa-deleted-notification.png" alt-text="The notification shown when a user deletes a message in Outlook on the web or in new Outlook on Windows.":::
 
 ## Troubleshoot your add-in
 

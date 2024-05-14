@@ -1,7 +1,7 @@
 ---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 02/29/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -23,12 +23,71 @@ The add-in you develop in this walkthrough is supported in Outlook on Android an
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md). 
 
 ## Configure the manifest
 
-> [!NOTE]
-> The [Unified Microsoft 365 manifest (preview)](../develop/json-manifest-overview.md) isn't currently supported on mobile devices.
+The steps for configuring the manifest depend on which type of manifest you selected in the quick start.
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+1. Configure the "extensions.runtimes" property just as you would for setting up a function command. For details, see [Configure the runtime for the function command](../develop/create-addin-commands-unified-manifest.md#configure-the-runtime-for-the-function-command).
+
+1. In the "extensions.ribbons.contexts" array, add `mailRead` as an item. When you're finished, the array should look like the following.
+
+    ```json
+    "contexts": [
+        "mailRead"
+    ],
+    ```
+
+1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you're finished, the array should look like the following.
+
+    ```json
+    "formFactors": [
+        "mobile",
+        <!-- Typically there will be other form factors listed. -->
+    ]
+    ```
+
+1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+
+    ```json
+    "autoRunEvents": [
+    
+    ]
+    ```
+
+1. Add an object like the following to the "autoRunEvents" array. Note the following about this code:
+
+   - The "events" property maps handlers to events. 
+   - The "events.type" must be one of the types listed at [Supported events](autolaunch.md#supported-events).
+   - The value of the "events.actionId" is the name of a function that you create in [Implement the event handler](#implement-the-event-handler).
+   - You can have more than one object in the "events" array.
+
+    ```json
+      {
+          "requirements": {
+              "capabilities": [
+                  {
+                      "name": "Mailbox",
+                      "minVersion": "1.10"
+                  }
+              ],
+              "scopes": [
+                  "mail"
+              ]
+          },
+          "events": [
+              {
+                  "type": "newMessageComposeCreated",
+                  "actionId": "onNewMessageComposeHandler"
+              },
+          ]
+      }
+    ```
+
+# [XML manifest](#tab/xmlmanifest)
 
 To enable an event-based add-in on Outlook mobile, you must configure the following elements in the `VersionOverridesV1_1` node of the manifest.
 
@@ -140,6 +199,8 @@ To enable an event-based add-in on Outlook mobile, you must configure the follow
 
 1. Save your changes.
 
+---
+
 > [!TIP]
 > To learn more about manifests for Outlook add-ins, see [Office Add-ins manifest](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
@@ -218,7 +279,7 @@ To enable your add-in to complete tasks when the `OnNewMessageCompose` event occ
 
 ## Add a reference to the event-handling JavaScript file
 
-Ensure that the HTML file you specified in the **\<Runtime\>** element of your manifest has a reference to the JavaScript file that contains your event handler.
+Ensure that the **./src/commands/commands.html** file has a reference to the JavaScript file that contains your event handler.
 
 1. Navigate to the **./src/commands** folder, then open **commands.html**.
 1. Immediately before the closing **head** tag (`</head>`), add a script entry for the JavaScript file that contains the event handler.

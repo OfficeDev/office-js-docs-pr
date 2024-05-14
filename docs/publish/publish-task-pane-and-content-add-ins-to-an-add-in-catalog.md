@@ -1,7 +1,8 @@
 ---
 title: Publish task pane and content add-ins to a SharePoint app catalog
 description: To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the app catalog for their organization.
-ms.date: 04/05/2024
+ms.date: 04/12/2024
+
 ms.localizationpriority: medium
 ---
 
@@ -15,6 +16,8 @@ An app catalog is a dedicated site collection in a SharePoint web application or
 > - App catalogs on SharePoint don't support add-in features that are implemented in the `VersionOverrides` node of the [Office add-in XML manifest](../develop/xml-manifest-overview.md), such as add-in commands.
 > - If you're targeting a cloud or hybrid environment, we recommend that you [use Integrated Apps via the Microsoft 365 admin center](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) to publish your add-ins.
 > - App catalogs on SharePoint aren't supported in Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).
+> - App catalogs don't support add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
+
 
 ## Create an app catalog
 
