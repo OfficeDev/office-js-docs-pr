@@ -323,8 +323,6 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 > [!NOTE]
 >
 > - Support to customize the **Don't Send** button was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
->
-> - This feature is currently in preview in Outlook on Mac. To preview this feature, you must install Version //TODO or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
 
 If a mail item doesn't meet the conditions of a Smart Alerts add-in, a dialog is shown to the user to alert them that additional actions may be needed before an item can be sent. The [send mode option](onmessagesend-onappointmentsend-events.md#available-send-mode-options) specified in the manifest determines the options that appear to the user in the dialog. The **Don't Send** option appears in the dialog no matter what send mode option you select. By default, selecting **Don't Send** cancels the send operation and closes the dialog. To provide the user with further guidance on how to meet the conditions of your add-in, customize the text of this button and program it to open a task pane where you can provide additional information and functionality.
 
@@ -379,8 +377,6 @@ To modify the text of the **Don't Send** button or assign it a task pane command
 > [!NOTE]
 >
 > - Support to customize the **Don't Send** button was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
->
-> - This feature is currently in preview in Outlook on Mac. To preview this feature, you must install Version //TODO or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
 
 There may be instances when you want your add-in to implement different send mode options. For example, you may want your add-in to enforce the **block** option on mail items that don't meet the information protection policies of your organization, but only have it apply the **prompt user** option to provide a recommendation if a user adds the incorrect recipient.
 
