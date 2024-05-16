@@ -1,7 +1,7 @@
 ---
 title: Privacy and security for Office Add-ins
 description: Learn about the privacy and security aspects of the Office Add-ins platform.
-ms.date: 10/10/2023
+ms.date: 05/16/2024
 ms.localizationpriority: medium
 ---
 
@@ -89,6 +89,14 @@ The add-in platform addresses end users' privacy concerns in the following ways.
 
 - When sharing a document, users also share add-ins that have been inserted in or associated with that document. If a user opens a document that contains an add-in that the user hasn't used before, the Office client application prompts the user to grant permission for the add-in to run in the document. In an organizational environment, the Office client application also prompts the user if the document comes from an external source.
 
+- Add-ins running in the following Office applications are blocked from accessing a user's device capabilities.
+
+  - Office on the web (Excel, Outlook, PowerPoint, and Word) running in Chromium-based browsers, such as Microsoft Edge or Google Chrome
+
+  - [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+
+  A user's device capabilities include their camera, geolocation, and microphone. To learn more, see [View, manage, and install add-ins for Excel, PowerPoint, and Word](https://support.microsoft.com/office/16278816-1948-4028-91e5-76dca5380f8d).
+
 - Users can enable or disable the access to AppSource. For content and task pane add-ins, users manage access to trusted add-ins and catalogs from the **Trust Center** on the host Office client (opened from **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**).
 
   In Outlook, access to manage add-ins depends on the user's Outlook client. To learn more, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
@@ -119,7 +127,7 @@ The following lists some specific PII protection guidelines for you as a develop
 
 Follow these general guidelines to support the security model of Office Add-ins, and drill down on more details for each add-in type.
 
-### Permissions choices
+### Request the necessary permissions
 
 The add-in platform provides a permissions model that your add-in uses to declare the level of access to a user's data that it requires for its features. Each permission level corresponds to the subset of the JavaScript API for Office your add-in is allowed to use for its features. For example, the **WriteDocument** permission for content and task pane add-ins allows access to the [Document.setSelectedDataAsync](/javascript/api/office/office.document) method that lets an add-in write to the user's document, but doesn't allow access to any of the methods for reading data from the document. This permission level makes sense for add-ins that only need to write to a document, such as an add-in where the user can query for data to insert into their document.
 
@@ -150,7 +158,7 @@ For more information about permissions for Outlook add-ins, see the following to
 
 - [Understanding Outlook add-in permissions](../outlook/understanding-outlook-add-in-permissions.md)
 
-### Same origin policy
+### Follow the same-origin policy
 
 Because Office Add-ins are webpages that run in a web browser control, they must follow the same-origin policy enforced by the browser. By default, a webpage in one domain can't make [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) web service calls to another domain other than the one where it is hosted.
 
@@ -174,7 +182,7 @@ function loadVideoDetails(videoIndex) {
 
 Exchange and SharePoint provide client-side proxies to enable cross-domain access. In general, same origin policy on an intranet isn't as strict as on the Internet. For more information, see [Same Origin Policy Part 1: No Peeking](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking) and [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
 
-### Tips to prevent malicious cross-site scripting
+### Prevent malicious cross-site scripting
 
 A bad actor could attack the origin of an add-in by entering malicious script through the document or fields in the add-in. A developer should process user input to avoid executing a malicious user's JavaScript within their domain. The following are some good practices to follow to handle user input from a document or mail message, or via fields in an add-in.
 
@@ -196,7 +204,7 @@ A bad actor could attack the origin of an add-in by entering malicious script th
 
 - See [Developing secure add-ins](/previous-versions/windows/apps/hh849625(v=win.10)) for more best practices to create more secure web solutions.
 
-### Tips to prevent "Clickjacking"
+### Prevent "clickjacking"
 
 Because Office Add-ins are rendered in an iframe when running in a browser with Office client applications, use the following tips to minimize the risk of [clickjacking](https://en.wikipedia.org/wiki/Clickjacking) -- a technique used by hackers to fool users into revealing confidential information.
 
@@ -212,9 +220,25 @@ The following are some examples of how you could get confirmation.
 
 - Send a text message to the user that includes a confirmation code that the user can enter in the add-in.
 
-- Open a confirmation dialog in a new browser window to a page that cannot be iframed. This is typically the pattern that is used by login pages. Use the [dialog api](../develop/dialog-api-in-office-add-ins.md) to create a new dialog.
+- Open a confirmation dialog in a new browser window to a page that cannot be iframed. This is typically the pattern that is used by login pages. Use the [dialog API](../develop/dialog-api-in-office-add-ins.md) to create a new dialog.
 
 Also, ensure that the address you use for contacting the user couldn't have been provided by a threat actor. For example, for payment confirmations use the address on file for the authorized user's account.
+
+### Request permission to access device capabilities (applies to Office on the web and new Outlook on Windows)
+
+If an add-in requires access to a user's device capabilities, such as their camera, geolocation, or microphone, the developer must configure it to request permission from the user. This applies to the following Office applications.
+
+- Office on the web (Excel, Outlook, PowerPoint, and Word) running in Chromium-based browsers, such as Microsoft Edge or Google Chrome
+- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+
+To request permission, the add-in must implement the [device permission API](/javascript/api/office/office.devicepermission).
+
+For information on how the user is prompted for permission, see [View, manage, and install add-ins for Excel, PowerPoint, and Word](https://support.microsoft.com/office/16278816-1948-4028-91e5-76dca5380f8d).
+
+> [!NOTE]
+>
+> - Add-ins that run in Office desktop clients or in browsers not based on Chromium automatically show a dialog requesting for a user's permission. The developer doesn't need to implement the device permission API on these platforms.
+> - Add-ins that run in Safari are blocked from accessing a user's device capabilities. The device permission API isn't supported in Safari.
 
 ### Other security practices
 

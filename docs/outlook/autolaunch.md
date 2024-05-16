@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 04/12/2024
+ms.date: 05/16/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -75,7 +75,9 @@ In all supported Outlook clients, the user must remain on the current mail item 
 
 In addition to item switching, an event-based add-in also ceases operation when the user sends the message or appointment they're composing.
 
-When developing an event-based add-in to run in the Outlook on Windows client, be mindful of the following:
+### Event-based add-ins in classic Outlook on Windows
+
+When developing an event-based add-in to run in the classic Outlook on Windows client, be mindful of the following:
 
 - Imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
 - Add-ins don't run code included in `Office.onReady()` and `Office.initialize`. We recommend adding any startup logic, such as checking the user's Outlook version, to your event handlers instead.
@@ -85,23 +87,20 @@ When developing an event-based add-in to run in the Outlook on Windows client, b
 
   Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 
-Some Office.js APIs that change or alter the UI aren't allowed from event-based add-ins. The following are the blocked APIs.
+### Unsupported APIs
 
-- Under `Office.context.auth`:
-  - `getAccessToken`
-  - `getAccessTokenAsync`
-    > [!NOTE]
-    > [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all Outlook versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md).
-- Under `Office.context.mailbox`:
-  - `displayAppointmentForm`
-  - `displayMessageForm`
-  - `displayNewAppointmentForm`
-  - `displayNewMessageForm`
-- Under `Office.context.mailbox.item`:
-  - `close`
-- Under `Office.context.ui`:
-  - `displayDialogAsync`
-  - `messageParent`
+Some Office.js APIs that change or alter the UI aren't allowed from event-based add-ins. The following are blocked APIs.
+
+| API | Methods |
+| --- | --- |
+| `Office.devicePermission` | <ul><li>`requestPermissionsAsync`</li></ul> |
+| `Office.context.auth`\* | <ul><li>`getAccessToken`</li></ul><li>`getAccessTokenAsync`</li></ul> |
+| `Office.context.mailbox` | <ul><li>`displayAppointmentForm`</li><li>`displayMessageForm`</li><li>`displayNewAppointmentForm`</li><li>`displayNewMessageForm`</li></ul> |
+| `Office.context.mailbox.item` | <ul><li>`close`</li></ul> |
+| `Office.context.ui` | <ul><li>`displayDialogAsync`</li><li>`messageParent`</li></ul>|
+
+> [!NOTE]
+> \* [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all Outlook versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md).
 
 ### Preview features in event handlers (Outlook on Windows)
 
