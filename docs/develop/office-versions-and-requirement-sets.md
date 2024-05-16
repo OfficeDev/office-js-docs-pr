@@ -1,7 +1,7 @@
 ---
 title: Office versions and requirement sets
 description: Supported Office.js platforms using JavaScript API.
-ms.date: 08/15/2023
+ms.date: 05/16/2024
 ms.localizationpriority: high
 ---
 
@@ -49,6 +49,7 @@ Some requirement sets contain APIs that can be used by several Office applicatio
 
 - [Office common requirement sets](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
 - [Add-in commands requirement sets](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)
+- [Device Permission Service requirement sets](/javascript/api/requirement-sets/common/device-permission-service-requirement-sets)
 - [Dialog API requirement sets](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
 - [Dialog Origin requirement sets](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)
 - [Identity API requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets)

@@ -1,27 +1,27 @@
 ---
 title: Best practices and rules for the Office dialog API
 description: Provides rules and best practices for the Office dialog API, such as best practices for a single-page application (SPA).
-ms.date: 05/10/2024
+ms.date: 05/16/2024
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 
 # Best practices and rules for the Office dialog API
 
-This article provides rules, gotchas, and best practices for the Office dialog API, including best practices for designing the UI of a dialog and using the API with in a single-page application (SPA)
+This article provides rules, gotchas, and best practices for the Office dialog API, including best practices for designing the UI of a dialog and using the API within a single-page application (SPA).
 
 > [!NOTE]
-> This article presupposes that you are familiar with the basics of using the Office dialog API as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
+> To familiarize yourself with the basics of using the Office dialog API, see [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
 >
 > See also [Handling errors and events with the Office dialog box](dialog-handle-errors-events.md).
 
 ## Rules and gotchas
 
 - The dialog box can only navigate to HTTPS URLs, not HTTP.
-- The URL passed to the [displayDialogAsync](/javascript/api/office/office.ui) method must be in the exact same domain as the add-in itself. It cannot be a subdomain. But the page that is passed to it can redirect to a page in another domain.
+- The URL passed to the [displayDialogAsync](/javascript/api/office/office.ui) method must be in the exact same domain as the add-in itself. It can't be a subdomain. However, the page that is passed to it can redirect to a page in another domain.
 - A host page can have only one dialog box open at a time. The host page could be either a task pane or the [function file](/javascript/api/manifest/functionfile) of a [function command](../design/add-in-commands.md#types-of-add-in-commands).
-- Only two Office APIs can be called in the dialog box:
-  - The [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) function.
+- Only two Office APIs can be called in the dialog box,
+  - [Office.context.ui.messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1))
   - `Office.context.requirements.isSetSupported` (For more information, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md).)
 - The [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) function should usually be called from a page in the exact same domain as the add-in itself, but this isn't mandatory. For more information, see [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
 
@@ -40,13 +40,27 @@ For best practices in dialog box design, see [Dialog boxes in Office Add-ins](..
 
 ### Handle pop-up blockers with Office on the web
 
-Attempting to display a dialog box while using Office on the web may cause the browser's pop-up blocker to block the dialog box. If this happens, then Office on the web will open a prompt similar to the following:
+Attempting to display a dialog box while using Office on the web may cause the browser's pop-up blocker to block the dialog box. To prevent this, Office on the web prompts the user to **Allow** or **Ignore** opening the dialog.
 
 ![The prompt with a brief description and Allow and Ignore buttons that an add-in can generate to avoid in-browser pop-up blockers.](../images/dialog-prompt-before-open.png)
 
-If the user chooses **Allow**, the Office dialog box opens. If the user chooses **Ignore**, the prompt closes and the Office dialog box doesn't open. Instead, the `displayDialogAsync` method returns error 12009. Your code should catch this error and either provide an alternate experience that doesn't require a dialog, or display a message to the user advising that the add-in requires them to allow the dialog. (For more about 12009, see [Errors from displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
+If the user chooses **Allow**, the Office dialog box opens. If the user chooses **Ignore**, the prompt closes and the Office dialog box does not open. Instead, the `displayDialogAsync` method returns error 12009. Your code should catch this error and either provide an alternate experience that doesn't require a dialog, or display a message to the user advising that the add-in requires them to allow the dialog. (For more about 12009, see [Errors from displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
 
-If, for any reason, you want to turn off this feature, then your code must opt out. It makes this request with the [DialogOptions](/javascript/api/office/office.dialogoptions) object that is passed to the `displayDialogAsync` method. Specifically, the object should include `promptBeforeOpen: false`. When this option is set to false, Office on the web won't prompt the user to allow the add-in open a dialog, and the Office dialog won't open.
+If, for any reason, you want to turn off this feature, then your code must opt out. It makes this request with the [DialogOptions](/javascript/api/office/office.dialogoptions) object that is passed to the `displayDialogAsync` method. Specifically, the object should include `promptBeforeOpen: false`. When this option is set to false, Office on the web won't prompt the user to allow the add-in to open a dialog, and the Office dialog won't open.
+
+### Request access to device capabilities in Office on the web and new Outlook on Windows (preview)
+
+If your add-in requires access to a user's device capabilities, a dialog to request for permissions is available through the [device permission API](/javascript/api/requirement-sets/common/device-permission-service-requirement-sets). Device capabilities include a user's camera, geolocation, and microphone. This applies to the following Office applications.
+
+- Office on the web (Excel, Outlook, PowerPoint, and Word) running in Chromium-based browsers, such as Microsoft Edge or Google Chrome
+- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+
+When your add-in calls [Office.context.devicePermission.requestPermissions](/javascript/api/office/office.devicepermission#office-office-devicepermission-requestpermissions-member(1)) or [Office.context.devicePermission.requestPermissionsAsync](/javascript/api/office/office.devicepermission#office-office-devicepermission-requestpermissionsasync-member(1)), a dialog is shown with the requested device capabilities and the options to **Allow**, **Allow once**, or **Deny** access. To learn more, see [View, manage, and install add-ins for Excel, PowerPoint, and Word](https://support.microsoft.com/office/16278816-1948-4028-91e5-76dca5380f8d).
+
+> [!NOTE]
+>
+> - Add-ins that run in Office desktop clients or in browsers not based on Chromium automatically show a dialog requesting for a user's permission. The developer doesn't need to implement the device permission API on these platforms.
+> - Add-ins that run in Safari are blocked from accessing a user's device capabilities. The device permission API isn't supported in Safari.
 
 ### Don't use the \_host\_info value
 
