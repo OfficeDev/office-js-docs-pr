@@ -1,7 +1,7 @@
 ---
 title: Enable SSO in an Office Add-in using nested app authentication
 description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 04/12/2024
+ms.date: 05/16/2024
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -48,7 +48,7 @@ Configure your add-in to use NAA by setting the `supportsNestedAppAuth` prop
 
 The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts` file in a project built with `yo office` (**Office Add-in Task Pane** project).
 
-1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project. For more information on package, see [Microsoft Authentication Library for JavaScript (MSAL.js) for Browser-Based Single-Page Applications](https://www.npmjs.com/package/%40azure/msal-browser).
+1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project. For more information on this package, see [Microsoft Authentication Library for JavaScript (MSAL.js) for Browser-Based Single-Page Applications](https://www.npmjs.com/package/%40azure/msal-browser).
 
     ```json
     "dependencies": {
@@ -66,7 +66,7 @@ The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts`
 
 ## Initialize the public client application
 
-Next, you need to initialize MSAL and get an instance of the public client application. This is used to get access tokens when needed. We recommend that you put the code that creates the public client application in the `Office.onReady` method.
+Next, you need to initialize MSAL and get an instance of the [public client application](/entra/identity-platform/msal-client-applications). This is used to get access tokens when needed. We recommend that you put the code that creates the public client application in the `Office.onReady` method.
 
 - In your `Office.onReady` function, add a call to `createPublicClientApplication` as shown below. Replace the `Enter_the_Application_Id_Here` placeholder with the Azure app ID you saved previously.
 
