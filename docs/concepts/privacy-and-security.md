@@ -1,7 +1,7 @@
 ---
 title: Privacy and security for Office Add-ins
 description: Learn about the privacy and security aspects of the Office Add-ins platform.
-ms.date: 05/13/2024
+ms.date: 05/16/2024
 ms.localizationpriority: medium
 ---
 
@@ -89,7 +89,13 @@ The add-in platform addresses end users' privacy concerns in the following ways.
 
 - When sharing a document, users also share add-ins that have been inserted in or associated with that document. If a user opens a document that contains an add-in that the user hasn't used before, the Office client application prompts the user to grant permission for the add-in to run in the document. In an organizational environment, the Office client application also prompts the user if the document comes from an external source.
 
-- On Chromium-based browsers (such as Microsoft Edge or Google Chrome), add-ins that run in web versions of Excel, Outlook, PowerPoint, and Word are blocked from accessing a user's device capabilities without their consent. A user's device capabilities include their camera, geolocation, and microphone. To learn more, see [View, manage, and install add-ins for Excel, PowerPoint, and Word](https://support.microsoft.com/office/16278816-1948-4028-91e5-76dca5380f8d).
+- Add-ins running in the following Office applications are blocked from accessing a user's device capabilities.
+
+  - Office on the web (Excel, Outlook, PowerPoint, and Word) running in Chromium-based browsers, such as Microsoft Edge or Google Chrome
+
+  - [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+
+  A user's device capabilities include their camera, geolocation, and microphone. To learn more, see [View, manage, and install add-ins for Excel, PowerPoint, and Word](https://support.microsoft.com/office/16278816-1948-4028-91e5-76dca5380f8d).
 
 - Users can enable or disable the access to AppSource. For content and task pane add-ins, users manage access to trusted add-ins and catalogs from the **Trust Center** on the host Office client (opened from **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**).
 
@@ -218,13 +224,21 @@ The following are some examples of how you could get confirmation.
 
 Also, ensure that the address you use for contacting the user couldn't have been provided by a threat actor. For example, for payment confirmations use the address on file for the authorized user's account.
 
-### Request permission to access device capabilities (applies to Office on the web)
+### Request permission to access device capabilities (applies to Office on the web and new Outlook on Windows)
 
-On Chromium-based browsers (such as Microsoft Edge or Google Chrome), if an add-in running in Office on the web requires access to a user's device capabilities, a developer must configure their add-in to request permission from the user. This applies to web versions of Excel, Outlook, PowerPoint, and Word.
+If an add-in requires access to a user's device capabilities, such as their camera, geolocation, or microphone, the developer must configure it to request permission from the user. This applies to the following Office applications.
 
-A user's device capabilities include their camera, geolocation, and microphone. To request permission, the add-in must implement the [device permission API](/javascript/api/office/office.devicepermission).
+- Office on the web (Excel, Outlook, PowerPoint, and Word) running in Chromium-based browsers, such as Microsoft Edge or Google Chrome
+- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+
+To request permission, the add-in must implement the [device permission API](/javascript/api/office/office.devicepermission).
 
 For information on how the user is prompted for permission, see [View, manage, and install add-ins for Excel, PowerPoint, and Word](https://support.microsoft.com/office/16278816-1948-4028-91e5-76dca5380f8d).
+
+> [!NOTE]
+>
+> - Add-ins that run in Office desktop clients or in browsers not based on Chromium automatically show a dialog requesting for a user's permission. The developer doesn't need to implement the device permission API on these platforms.
+> - Add-ins that run in Safari are blocked from accessing a user's device capabilities. The device permission API isn't supported in Safari.
 
 ### Other security practices
 

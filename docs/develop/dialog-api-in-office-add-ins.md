@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: Learn the basics of creating a dialog box in an Office Add-in.
-ms.date: 05/13/2024
+ms.date: 05/16/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -24,7 +24,7 @@ The following image shows an example of a dialog box.
 The dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the Office application and with the page in the task pane, if there is one.
 
 > [!NOTE]
-> If you're developing an add-in that runs in Office on the web and requires access to a user's device capabilities, see the [device permission API](/javascript/api/requirement-sets/common/device-permission-service-requirement-sets) to learn how to prompt the user for permissions. Device capabilities include a user's camera, geolocation, and microphone.
+> If you're developing an add-in that runs in Office on the web or new Outlook on Windows (preview) and it requires access to a user's device capabilities, see the [device permission API](/javascript/api/requirement-sets/common/device-permission-service-requirement-sets) to learn how to prompt the user for permissions. Device capabilities include a user's camera, geolocation, and microphone.
 
 ## Open a dialog box from a host page
 

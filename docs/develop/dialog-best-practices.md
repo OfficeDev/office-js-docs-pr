@@ -1,7 +1,7 @@
 ---
 title: Best practices and rules for the Office dialog API
 description: Provides rules and best practices for the Office dialog API, such as best practices for a single-page application (SPA).
-ms.date: 05/13/2024
+ms.date: 05/16/2024
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -45,11 +45,19 @@ If the user chooses **Allow**, the Office dialog box opens. If the user chooses 
 
 If, for any reason, you want to turn off this feature, then your code must opt out. It makes this request with the [DialogOptions](/javascript/api/office/office.dialogoptions) object that is passed to the `displayDialogAsync` method. Specifically, the object should include `promptBeforeOpen: false`. When this option is set to false, Office on the web won't prompt the user to allow the add-in to open a dialog, and the Office dialog won't open.
 
-### Request access to device capabilities in Office on the web
+### Request access to device capabilities in Office on the web and new Outlook on Windows (preview)
 
-If your add-in runs in Office on the web and requires access to a user's device capabilities, a dialog to request for permissions is available through the [device permission API](/javascript/api/requirement-sets/common/device-permission-service-requirement-sets). Device capabilities include a user's camera, geolocation, and microphone.
+If your add-in requires access to a user's device capabilities, a dialog to request for permissions is available through the [device permission API](/javascript/api/requirement-sets/common/device-permission-service-requirement-sets). Device capabilities include a user's camera, geolocation, and microphone. This applies to the following Office applications.
+
+- Office on the web (Excel, Outlook, PowerPoint, and Word) running in Chromium-based browsers, such as Microsoft Edge or Google Chrome
+- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 
 When your add-in calls [Office.context.devicePermission.requestPermissions](/javascript/api/office/office.devicepermission#office-office-devicepermission-requestpermissions-member(1)) or [Office.context.devicePermission.requestPermissionsAsync](/javascript/api/office/office.devicepermission#office-office-devicepermission-requestpermissionsasync-member(1)), a dialog is shown with the requested device capabilities and the options to **Allow**, **Allow once**, or **Deny** access. To learn more, see [View, manage, and install add-ins for Excel, PowerPoint, and Word](https://support.microsoft.com/office/16278816-1948-4028-91e5-76dca5380f8d).
+
+> [!NOTE]
+>
+> - Add-ins that run in Office desktop clients or in browsers not based on Chromium automatically show a dialog requesting for a user's permission. The developer doesn't need to implement the device permission API on these platforms.
+> - Add-ins that run in Safari are blocked from accessing a user's device capabilities. The device permission API isn't supported in Safari.
 
 ### Do not use the \_host\_info value
 
