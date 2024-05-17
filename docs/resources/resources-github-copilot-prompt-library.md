@@ -17,7 +17,8 @@ We encourage you to customize your own prompts for developing Office Add-ins wit
 
 The following sections contain prompts for multiple scenarios when developing and publishing add-ins.
 
-> [!TIP] Switch out the italicized phrases in the prompts to experiment with related scenarios.
+> [!TIP]
+> Switch out the phrases between asterisks in the prompts to experiment with related scenarios.
 
 ### Guidance for getting started
 
