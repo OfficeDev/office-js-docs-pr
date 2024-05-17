@@ -86,7 +86,7 @@ For more information on coauthoring, see [About coauthoring in Excel](/office/vb
 
 Want to try out custom functions? Check out the simple [custom functions quick start](../quickstarts/excel-custom-functions-quickstart.md) or the more in-depth [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md) if you haven't already.
 
-Another easy way to try out custom functions is to use [Script Lab](https://appsource.microsoft.com/?search=script%20lab), an add-in that allows you to experiment with custom functions right in Excel. You can try out creating your own custom function or play with the provided samples.
+Another easy way to try out custom functions is to use [Script Lab](https://appsource.microsoft.com/product/office/WA104380862), an add-in that allows you to experiment with custom functions right in Excel. You can try out creating your own custom function or play with the provided samples.
 
 ## See also
 
