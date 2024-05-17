@@ -2,7 +2,6 @@
 title: Office Add-ins prompts for GitHub Copilot
 description: An Office Add-ins prompt library to use with GitHub Copilot.
 ms.date: 05/16/2024
-ms.topic: glossary
 ms.localizationpriority: medium
 ---
 
