@@ -2,6 +2,7 @@
 title: Office Add-ins prompts for GitHub Copilot
 description: An Office Add-ins prompt library to use with GitHub Copilot.
 ms.date: 05/16/2024
+ms.topic: glossary
 ms.localizationpriority: medium
 ---
 
@@ -9,9 +10,9 @@ ms.localizationpriority: medium
 
 The Office Add-ins prompt library is a collection of prompt examples to use with [GitHub Copilot](https://github.com/features/copilot/plans) when you develop Office add-ins. GitHub Copilot is an AI pair-programmer that helps you write code. It's available as an extension for many IDEs, such as [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and [Visual Studio](https://marketplace.visualstudio.com/items?itemName=GitHub.copilotvs). You can install and launch the extensions directly through your IDE.
 
-Copy the prompts from this article and enter them into the GitHub Copilot chat to begin experimenting. You can also open the prompt list in your IDE by downloading the file: [link to GitHub repo].
+Copy the prompts from this article and enter them into the GitHub Copilot chat to begin experimenting. You can also open the prompt list in your IDE by downloading the file from GitHub at [Office Add-ins prompts for GitHub Copilot on GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/main/docs/resources/resources-github-copilot-prompt-library.md).
 
-We encourage you to customize your own prompts for developing Office Add-ins with GitHub Copilot. To contribute your ideas to this prompt library, review the guidance for [contributing to the Office Add-ins](https://github.com/OfficeDev/office-js-docs-pr/blob/main/Contributing.md) documentation through GitHub. You can also share your prompts and feedback through the survey [add link to a survey].
+We encourage you to customize your own prompts for developing Office Add-ins with GitHub Copilot. To contribute your ideas to this prompt library, review the guidance for [contributing to the Office Add-ins](https://github.com/OfficeDev/office-js-docs-pr/blob/main/Contributing.md) documentation through GitHub. You can also share your prompts and feedback through the survey at [Office Add-ins prompts feedback](https://aka.ms/promptfeedback).
 
 ## Prompt examples
 
