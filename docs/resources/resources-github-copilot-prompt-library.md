@@ -7,9 +7,9 @@ ms.localizationpriority: medium
 
 # Office Add-ins prompts for GitHub Copilot
 
-The Office Add-ins prompt library is a collection of prompt examples to use with [GitHub Copilot](https://github.com/features/copilot/plans) when you develop Office add-ins. GitHub Copilot is an AI pair-programmer that helps you write code. It's available as an extension for many IDEs, such as [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and [Visual Studio](https://marketplace.visualstudio.com/items?itemName=GitHub.copilotvs). You can install and launch the extensions directly through your IDE.
+The Office Add-ins prompt library is a collection of prompt examples to use with [GitHub Copilot](https://github.com/features/copilot/plans) when you develop Office add-ins. GitHub Copilot is an AI pair-programmer that helps you write code. It's available as an extension for many code editors, such as [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and [Visual Studio](https://marketplace.visualstudio.com/items?itemName=GitHub.copilotvs). You can install and launch the extensions directly through your code editor.
 
-Copy the prompts from this article and enter them into the GitHub Copilot chat to begin experimenting. You can also open the prompt list in your IDE by downloading the file from GitHub at [Office Add-ins prompts for GitHub Copilot on GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/main/docs/resources/resources-github-copilot-prompt-library.md).
+Copy the prompts from this article and enter them into the GitHub Copilot chat to begin experimenting. You can also open the prompt list in your code editor by downloading the file from GitHub at [Office Add-ins prompts for GitHub Copilot on GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/main/docs/resources/resources-github-copilot-prompt-library.md).
 
 > [!IMPORTANT]
 > The prompts in this article are designed to work in English with GitHub Copilot. They've been tested to ensure that Copilot returns relevant responses, but generative AI can inherently return variable responses. Always review code produced by GitHub Copilot for accuracy before publishing or distributing your add-in to users.
