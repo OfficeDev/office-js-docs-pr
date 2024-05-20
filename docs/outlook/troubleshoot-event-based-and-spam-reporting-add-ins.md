@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot event-based and spam-reporting add-ins
 description: Learn how to troubleshoot development errors in Outlook add-ins that implement event-based activation or integrated spam reporting.
-ms.date: 05/16/2024
+ms.date: 05/20/2024
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---

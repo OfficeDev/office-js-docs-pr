@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 05/16/2024
+ms.date: 05/20/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---

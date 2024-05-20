@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 05/16/2024
+ms.date: 05/20/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
