@@ -11,6 +11,9 @@ The Office Add-ins prompt library is a collection of prompt examples to use with
 
 Copy the prompts from this article and enter them into the GitHub Copilot chat to begin experimenting. You can also open the prompt list in your IDE by downloading the file from GitHub at [Office Add-ins prompts for GitHub Copilot on GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/main/docs/resources/resources-github-copilot-prompt-library.md).
 
+> [!IMPORTANT]
+> The prompts in this article are designed to work in English with GitHub Copilot. They've been tested to ensure that Copilot returns relevant responses, but generative AI can inherently return variable responses. Always review code produced by GitHub Copilot for accuracy before publishing or distributing your add-in to users.
+
 We encourage you to customize your own prompts for developing Office Add-ins with GitHub Copilot. To contribute your ideas to this prompt library, review the guidance for [contributing to the Office Add-ins](https://github.com/OfficeDev/office-js-docs-pr/blob/main/Contributing.md) documentation through GitHub. You can also share your prompts and feedback through the survey at [Office Add-ins prompts feedback](https://aka.ms/promptfeedback).
 
 ## Prompt examples
@@ -193,3 +196,7 @@ Tell me how to deploy and distribute the local Office JavaScript
 add-in code to the *add-in store* after development. Provide the 
 steps to follow.
 ```
+
+## See also
+
+- [GitHub Copilot](https://github.com/features/copilot/plans)
