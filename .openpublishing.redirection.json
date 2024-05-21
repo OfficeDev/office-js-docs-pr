@@ -46,7 +46,7 @@
         },
         {
             "source_path": "docs/reference/outlook-api-reference-latest.md",
-            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.13"
+            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.14"
         },
         {
             "source_path": "docs/reference/powerpoint-api-reference.md",
