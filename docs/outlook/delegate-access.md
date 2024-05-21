@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.
-ms.date: 05/20/2024
+ms.date: 05/21/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,6 +21,7 @@ The following table shows supported client-server combinations for this feature,
 |---|:---:|:---:|:---:|
 |**Web browser (modern Outlook UI)**|Supported|Not applicable|Not applicable|
 |**Web browser (classic Outlook UI)**|Not applicable|Not applicable|Not applicable|
+|[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|
 |**Mac**<br>Version 16.47 or later|Supported|Supported|Supported|
 
@@ -54,7 +55,7 @@ An Exchange Server feature known as "automapping" is on by default which means t
 > [!WARNING]
 > Do **NOT** sign into the shared mailbox with a password. The feature APIs won't work in that case.
 
-### [Web browser - modern Outlook](#tab/modern)
+### [Web (modern) and new Outlook on Windows](#tab/web)
 
 #### Shared folders
 
@@ -74,7 +75,11 @@ Once access is provided, the delegate must then follow the instructions outlined
 
 #### Shared mailboxes
 
-A shared mailbox allows a group of users to easily monitor and send messages and meeting invites using a shared email address. In Outlook on the web, a shared mailbox can be opened in the same panel as a user's primary mailbox or in a separate browser tab or window. For guidance, see [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
+A shared mailbox allows a group of users to easily monitor and send messages and meeting invites using a shared email address.
+
+In Outlook on the web, a shared mailbox can be opened in the same panel as a user's primary mailbox or in a separate browser tab or window. For guidance, see [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
+
+In new Outlook on Windows, a shared mailbox is added to the **Shared with me** section of the folder pane. For guidance, see [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
 ### [Mac](#tab/unix)
 
