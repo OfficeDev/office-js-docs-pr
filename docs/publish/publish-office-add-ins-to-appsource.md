@@ -10,15 +10,13 @@ CustomerIntent: As a developer, I want to publish my Office Add-in to Microsoft 
 
 Publish your Office Add-in to Microsoft AppSource to make it widely available to customers and businesses. Microsoft AppSource is an online store that contains thousands of business applications and services built by industry-leading software providers. When you publish your add-in to Microsoft AppSource, you also make it available in the in-product experience within Office.
 
-Microsoft AppSource provides a convenient location for you to upload new Office and SharePoint Add-ins, Microsoft Teams apps, and Power BI visuals that provide solutions for both consumers and businesses. When you add your app solution to Microsoft AppSource, you also make it available in the in-product experience within Office. To include your solution in Microsoft AppSource and within Office, you submit it to Partner Center. You need to create a company account and, if applicable, add payout information. For details, see the following articles:
-
 ## The publishing process
 
 To include your solution in Microsoft AppSource and within Office, you submit it to Partner Center. Then it goes through an approval and certification process. For complete details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center).
 
 ## Provide an install link
 
-To help customers discover and install your add-in, create an install link that provides a "click and run" experience. Put the link on your website, social media, or anywhere you think helps your customers discover your add-in.
+After you publish to Microsoft AppSource, you can create an install link to help customers discover and install your add-in. The install link provides a "click and run" experience. Put the link on your website, social media, or anywhere you think helps your customers discover your add-in.
 
 The link opens a new Word, Excel, or PowerPoint document in the browser for the signed-in user. Your add-in is automatically loaded in the new document so you can guide users to try your add-in without the need to search for it in Microsoft AppSource and install it manually.
 
