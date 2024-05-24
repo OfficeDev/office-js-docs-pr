@@ -393,7 +393,7 @@ items:
       - name: Host an Office Add-in on Microsoft Azure
         href: publish/host-an-office-add-in-on-microsoft-azure.md
     - name: Publish add-ins to AppSource
-      href: /office/dev/store/submit-to-the-office-store
+      href: publish/publish-office-add-ins-to-appsource.md
     - name: AppSource validation policies
       href: /legal/marketplace/certification-policies
     - name: Publish add-ins to a SharePoint app catalog
