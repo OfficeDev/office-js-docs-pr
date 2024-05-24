@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Grant or revoke administrator consent to the add-in
 
-The sections below show how to grant and revoke administrator consent for the permissions that you add-in needs to run.
+This article shows how to grant or revoke administrator consent for the permissions that your add-in needs to run.
 
 ## Grant consent
 
@@ -35,10 +35,10 @@ Carry out this procedure *after* you have [registered the add-in](../develop/reg
 
 1. Select the app with display name **$ADD-IN-NAME$**.
 
-1. On the **$ADD-IN-NAME$** page, select **API permissions**.
+1. On the **$ADD-IN-NAME$** page, select **Manage > API permissions**.
 
 1. Under the **Configured permissions** section, go to the table row for the permission that you want to revoke and select the **...** button. 
 
 1. On the menu that appears, select **Remove permission**. 
 
-1. Repeat the last two steps for every permission that you want to revoke.
+1. Repeat the previous two steps for each permission that you want to revoke.
