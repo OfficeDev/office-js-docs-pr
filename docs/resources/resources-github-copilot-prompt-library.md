@@ -181,7 +181,7 @@ or APIs.
 
 ## Guidance for publishing add-ins
 
-### Distribute an add-in to the add-in store
+### Distribute an add-in to an organization
 
 ```code
 Tell me how to deploy and distribute the local Office JavaScript 
@@ -189,7 +189,7 @@ add-in code to *all employees in my organization* after
 development. Provide the steps to follow.
 ```
 
-### Distribute an add-in to an organization
+### Distribute an add-in to the add-in store
 
 ```code
 Tell me how to deploy and distribute the local Office JavaScript 
