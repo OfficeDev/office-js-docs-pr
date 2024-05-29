@@ -1,7 +1,7 @@
 ---
 title: Enable SSO in an Office Add-in using nested app authentication
 description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 04/12/2024
+ms.date: 05/29/2024
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -52,7 +52,7 @@ The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts`
 
     ```json
     "dependencies": {
-        "@azure/msal-browser": "^3.11.1",
+        "@azure/msal-browser": "^3.15.0",
         ...
     ```
 
@@ -61,25 +61,25 @@ The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts`
 1. Add the following code to the top of the `taskpane.js` or `taskpane.ts` file. This will import the MSAL browser library.
 
     ```JavaScript
-    import { PublicClientNext } from "@azure/msal-browser";
+    import { createNestablePublicClientApplication } from "@azure/msal-browser";
     ```
 
 ## Initialize the public client application
 
 Next, you need to initialize MSAL and get an instance of the public client application. This is used to get access tokens when needed. We recommend that you put the code that creates the public client application in the `Office.onReady` method.
 
-- In your `Office.onReady` function, add a call to `createPublicClientApplication` as shown below. Replace the `Enter_the_Application_Id_Here` placeholder with the Azure app ID you saved previously.
+- In your `Office.onReady` function, add a call to `createNestablePublicClientApplication` as shown below. Replace the `Enter_the_Application_Id_Here` placeholder with the Azure app ID you saved previously.
 
     ```javascript
     let pca = undefined;
     Office.onReady(async (info) => {
-      if (info.host === Office.HostType.Excel) {
+      if (info.host) {
         document.getElementById("sideload-msg").style.display = "none";
         document.getElementById("app-body").style.display = "flex";
         document.getElementById("run").onclick = run;
   
         // Initialize the public client application
-        pca = await PublicClientNext.createPublicClientApplication({
+        pca = await createNestablePublicClientApplication({
           auth: {
             clientId: "Enter_the_Application_Id_Here",
             authority: "https://login.microsoftonline.com/common",
@@ -185,9 +185,13 @@ After acquiring the token, use it to call an API. The following example shows ho
       // Write file names to the console.
       const data = await response.json();
       const names = data.value.map((item) => item.name);
-      names.forEach((name) => {
-        console.log(name);
-      });
+
+      // Be sure the taskpane.html has an element with Id = item-subject.
+      const label = document.getElementById("item-subject");
+      
+      // Write file names to task pane and the console.
+      if (label) label.innerHTML = names.join("<br>");
+      console.log(names.join(","));
     } else {
       const errorText = await response.text();
       console.error("Microsoft Graph call failed - error text: " + errorText);
