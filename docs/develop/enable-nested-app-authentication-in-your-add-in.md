@@ -21,6 +21,8 @@ You can use the MSAL.js library (version 3.11 and later) with nested app authent
 >
 > - Word, Excel, PowerPoint, and Outlook on Windows build 16.0.17531.20000 or later
 > - Word, Excel, PowerPoint, and Outlook on Mac build 16.85.24040319 or later
+>
+> NAA is not supported in event-based activation code in Outlook.
 
 ## Register your single-page application
 
@@ -187,10 +189,11 @@ After acquiring the token, use it to call an API. The following example shows ho
 
       // Be sure the taskpane.html has an element with Id = item-subject.
       const label = document.getElementById("item-subject");
-      
+    
       // Write file names to task pane and the console.
-      if (label) label.innerHTML = names.join("<br>");
-      console.log(names.join(","));
+      const nameText = names.join(", ");
+      if (label) label.textContent = nameText;
+      console.log(nameText);
     } else {
       const errorText = await response.text();
       console.error("Microsoft Graph call failed - error text: " + errorText);
