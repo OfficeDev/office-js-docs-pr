@@ -22,7 +22,7 @@ You can use the MSAL.js library (version 3.11 and later) with nested app authent
 > - Word, Excel, PowerPoint, and Outlook on Windows build 16.0.17531.20000 or later
 > - Word, Excel, PowerPoint, and Outlook on Mac build 16.85.24040319 or later
 >
-> NAA is not supported in event-based activation code in Outlook.
+> NAA is not supported at this time in event-based activation code in Outlook.
 
 ## Register your single-page application
 
