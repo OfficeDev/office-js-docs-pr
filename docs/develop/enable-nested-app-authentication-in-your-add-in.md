@@ -44,7 +44,7 @@ Trusted broker groups are dynamic by design and can be updated in the future to 
 
 ## Configure MSAL config to use NAA
 
-Configure your add-in to use NAA by setting the `supportsNestedAppAuth` property to true in your MSAL configuration. This enables MSAL to use APIs on its native application host (for example, Outlook) to acquire tokens for your application. If you don't set this property, MSAL uses the default JavaScript-based implementation to acquire tokens for your application, which may lead to unexpected auth prompts and unsatisfiable conditional access policies when running inside of a webview.
+Configure your add-in to use NAA by calling the `createNestablePublicClientApplication` function in MSAL. MSAL returns a public client application that can be nested in a native application host (for example, Outlook) to acquire tokens for your application.
 
 The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts` file in a project built with `yo office` (**Office Add-in Task Pane** project).
 
@@ -82,8 +82,7 @@ Next, you need to initialize MSAL and get an instance of the public client appli
         pca = await createNestablePublicClientApplication({
           auth: {
             clientId: "Enter_the_Application_Id_Here",
-            authority: "https://login.microsoftonline.com/common",
-            supportsNestedAppAuth: true,
+            authority: "https://login.microsoftonline.com/common"
           },
         });
       }
