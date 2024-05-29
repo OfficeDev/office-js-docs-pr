@@ -11,6 +11,10 @@ This article provides code samples that cut, copy, and paste ranges using the Ex
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
+> [!TIP]
+> > [!NOTE]
+> To experiment with these cut, copy, and paste APIs in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Copy and paste ranges](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) in our **Samples** library.
+
 ## Copy and paste
 
 The [Range.copyFrom](/javascript/api/excel/excel.range#excel-excel-range-copyfrom-member(1)) method replicates the **Copy** and **Paste** actions of the Excel UI. The destination is the `Range` object that `copyFrom` is called on. The source to be copied is passed as a range or a string address representing a range.
