@@ -14,9 +14,9 @@ Publish your Office Add-in to Microsoft AppSource to make it widely available to
 
 To include your solution in Microsoft AppSource and within Office, you submit it to Partner Center. Then it goes through an approval and certification process. For complete details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center).
 
-## Provide an install link
+## Provide an installation link
 
-After you publish to Microsoft AppSource, you can create an install link to help customers discover and install your add-in. The install link provides a "click and run" experience. Put the link on your website, social media, or anywhere you think helps your customers discover your add-in.
+After you publish to Microsoft AppSource, you can create an installation link to help customers discover and install your add-in. The installation link provides a "click and run" experience. Put the link on your website, social media, or anywhere you think helps your customers discover your add-in.
 
 The link opens a new Word, Excel, or PowerPoint document in the browser for the signed-in user. Your add-in is automatically loaded in the new document so you can guide users to try your add-in without the need to search for it in Microsoft AppSource and install it manually.
 
@@ -37,11 +37,11 @@ Change the three parameters in the previous URL to support your add-in as follow
 - **templateid**:  The ID of your add-in as listed in Microsoft AppSource.
 - **templatetitle**:  The full title of your add-in. This must be HTML encoded.
 
-For example, if you want to provide an install link for [Script Lab](https://appsource.microsoft.com/product/office/wa104380862), use the following link.
+For example, if you want to provide an installation link for [Script Lab](https://appsource.microsoft.com/product/office/wa104380862), use the following link.
 
 [https://go.microsoft.com/fwlink/?linkid=2261819&templateid=WA104380862&templatetitle=Script%20Lab,%20a%20Microsoft%20Garage%20project](https://go.microsoft.com/fwlink/?linkid=2261819&templateid=WA104380862&templatetitle=Script%20Lab,%20a%20Microsoft%20Garage%20project)
 
-The following parameter values are used for the Script Lab install link.
+The following parameter values are used for the Script Lab installation link.
 
 - **linkid:**  The value `2261819` specifies the Excel endpoint. Script Lab supports Word, Excel and PowerPoint, so this value can be changed to support different endpoints.
 - **templateid:** The value `WA104380862` is the Microsoft AppSource id for Script Lab.
