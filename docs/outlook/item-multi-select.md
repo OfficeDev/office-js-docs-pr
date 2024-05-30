@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 04/12/2024
+ms.date: 05/20/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,7 @@ With the item multi-select feature, your Outlook add-in can now activate and per
 The following sections walk you through how to configure your add-in to retrieve the subject line of multiple messages in read mode.
 
 > [!NOTE]
-> Support for the item multi-select feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for the item multi-select feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13), with additional item properties now available in subsequent requirement sets. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Set up your environment
 
@@ -220,9 +220,6 @@ To alert your add-in when the `SelectedItemsChanged` event occurs, you must regi
 ## Retrieve the subject line of selected messages
 
 Now that you've registered an event handler, you then call the [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getselecteditemsasync-member(1)) method to retrieve the subject line of the selected messages and log them to the task pane. The `getSelectedItemsAsync` method can also be used to get other message properties, such as the item ID, item type (`Message` is the only supported type at this time), and item mode (`Read` or `Compose`).
-
-> [!NOTE]
-> Additional message properties, such as `conversationId`, `internetMessageId`, and `hasAttachment`, are in preview in Outlook on Windows. To preview these properties, you must install Version 2305 (Build 16501.20210) or later. For more information on these properties, see [Office.SelectedItemDetails](/javascript/api/outlook/office.selecteditemdetails?view=outlook-js-preview&preserve-view=true).
 
 1. In **taskpane.js**, navigate to the `run` function and insert the following code.
 

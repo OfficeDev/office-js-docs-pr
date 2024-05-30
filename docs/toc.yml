@@ -159,7 +159,7 @@ items:
           href: quickstarts/sso-quickstart.md
         - name: Register with Microsoft identity platform
           href: develop/register-sso-add-in-aad-v2.md
-        - name: Grant administrator consent
+        - name: Grant or revoke administrator consent
           href: develop/grant-admin-consent-to-an-add-in.md
         - name: Get the identity token
           href: develop/use-sso-to-get-office-signed-in-user-token.md
@@ -393,7 +393,7 @@ items:
       - name: Host an Office Add-in on Microsoft Azure
         href: publish/host-an-office-add-in-on-microsoft-azure.md
     - name: Publish add-ins to AppSource
-      href: /office/dev/store/submit-to-the-office-store
+      href: publish/publish-office-add-ins-to-appsource.md
     - name: AppSource validation policies
       href: /legal/marketplace/certification-policies
     - name: Publish add-ins to a SharePoint app catalog
@@ -711,7 +711,6 @@ items:
       href: outlook/append-on-send.md
     - name: Implement a spam reporting add-in
       href: outlook/spam-reporting.md
-      displayName: preview
     - name: Event-based activation
       items:
       - name: Implement an event-based add-in
