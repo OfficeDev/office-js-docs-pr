@@ -228,7 +228,7 @@ function removeAttachment(attachmentId) {
 ```
 
 > [!TIP]
-> The `removeAttachmentAsync` method doesn't remove inline attachments from a mail item. To remove an inline attachment, first get the item's body, then remove any references of the attachment from the content. You can use the [Office.Body](/javascript/api/outlook/office.body) APIs to get and set the body of an item.
+> The `removeAttachmentAsync` method doesn't remove inline attachments from a mail item. To remove an inline attachment, first get the item's body, then remove any references of the attachment from its contents. Use the [Office.Body](/javascript/api/outlook/office.body) APIs to get and set the body of an item.
 
 ## See also
 
