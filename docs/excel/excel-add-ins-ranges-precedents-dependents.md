@@ -1,7 +1,7 @@
 ---
 title: Work with formula precedents and dependents using the Excel JavaScript API
 description: Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.
-ms.date: 11/27/2023
+ms.date: 05/30/2024
 ms.localizationpriority: medium
 ---
 
@@ -64,6 +64,9 @@ await Excel.run(async (context) => {
 });
 ```
 
+> [!NOTE]
+> The `Range.getPrecedents` and `Range.getDirectPrecedents` methods return an `ItemNotFound` error if no precedent cells are found.
+
 ## Get the dependents of a formula
 
 Locate a formula's dependent cells with [Range.getDependents](/javascript/api/excel/excel.range#excel-excel-range-getdependents-member(1)). Like `Range.getPrecedents`, `Range.getDependents` also returns a `WorkbookRangeAreas` object. This object contains the addresses of all the dependents in the workbook. It has a separate `RangeAreas` object for each worksheet containing at least one formula dependent. For more information on working with the `RangeAreas` object, see [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
@@ -114,6 +117,9 @@ await Excel.run(async (context) => {
     }
 });
 ```
+
+> [!NOTE]
+> The `Range.getDependents` and `Range.getDirectDependents` methods return an `ItemNotFound` error if no dependent cells are found.
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.
-ms.date: 12/21/2023
+ms.date: 05/21/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,12 +17,13 @@ This article describes how to enable shared folders (also known as delegate acce
 
 The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable. Excluded combinations aren't supported.
 
-| Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2013 on-premises |
-|---|:---:|:---:|:---:|:---:|
-|**Windows**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|Supported\*|
-|**Mac**<br>Build 16.47 or later|Supported|Supported|Supported|Supported|
-|**Web browser (modern Outlook UI)**|Supported|Not applicable|Not applicable|Not applicable|
-|**Web browser (classic Outlook UI)**|Not applicable|Not applicable|Not applicable|Not applicable|
+| Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) |
+|---|:---:|:---:|:---:|
+|**Web browser (modern Outlook UI)**|Supported|Not applicable|Not applicable|
+|**Web browser (classic Outlook UI)**|Not applicable|Not applicable|Not applicable|
+|[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
+|**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|
+|**Mac**<br>Version 16.47 or later|Supported|Supported|Supported|
 
 > [!NOTE]
 > \* Support for this feature in an on-premises Exchange environment is available starting in Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
@@ -54,7 +55,7 @@ An Exchange Server feature known as "automapping" is on by default which means t
 > [!WARNING]
 > Do **NOT** sign into the shared mailbox with a password. The feature APIs won't work in that case.
 
-### [Web browser - modern Outlook](#tab/modern)
+### [Web (modern) and new Outlook on Windows](#tab/web)
 
 #### Shared folders
 
@@ -74,18 +75,11 @@ Once access is provided, the delegate must then follow the instructions outlined
 
 #### Shared mailboxes
 
-A shared mailbox allows a group of users to easily monitor and send messages and meeting invites using a shared email address. In Outlook on the web, a shared mailbox can be opened in the same panel as a user's primary mailbox or in a separate browser tab or window. For guidance, see [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
+A shared mailbox allows a group of users to easily monitor and send messages and meeting invites using a shared email address.
 
-When a shared mailbox is opened in the same panel as a user's primary mailbox, the type of add-ins that are accessible from the shared mailbox differs between compose and read modes.
+In Outlook on the web, a shared mailbox can be opened in the same panel as a user's primary mailbox or in a separate browser tab or window. For guidance, see [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
 
-- In compose mode, all add-ins deployed by an organization's administrator are available for use from the shared mailbox.
-- In read mode, only add-ins configured in the manifest to support shared files are available for use from the shared mailbox. For instructions on how to do this for either the XML manifest or the unified manifest, see the [Configure the manifest](#configure-the-manifest) section.
-
-When a shared mailbox is opened in a separate browser tab or window, only add-ins that meet the following criteria are available for use from the shared mailbox.
-
-- The add-in configured in the manifest to support shared files. For instructions on how to do this for either the XML manifest or the unified manifest, see the [Configure the manifest](#configure-the-manifest) section.
-- The add-in is deployed to both the shared mailbox and the mailbox of the user who has access to the shared mailbox by an organization's administrator.
-- The add-in must be deployed using the Fixed or Optional Centralized Deployment method. For more information on the deployment methods, see [Centralized Deployment FAQ](/microsoft-365/admin/manage/centralized-deployment-faq).
+In new Outlook on Windows, a shared mailbox is added to the **Shared with me** section of the folder pane. For guidance, see [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
 ### [Mac](#tab/unix)
 
@@ -147,11 +141,11 @@ To enable shared folders and shared mailbox scenarios in your add-in, you must e
 First, to support REST calls from a delegate, the add-in must request the **read/write mailbox** permission. The markup varies depending on the type of manifest.
 
 - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-- **Unified manifest for Microsoft 365 (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+- **Unified manifest for Microsoft 365**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
 Second, enable support for shared folders. The markup varies depending on the type of manifest.
 
-# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 Add an additional object to the "authorization.permissions.resourceSpecific" array and set its "name" property to "Mailbox.SharedFolder".
 
@@ -303,7 +297,7 @@ The message is now in a shared context and add-ins that support these shared sce
 Your add-in can use REST. To enable REST access to the owner's mailbox or to the shared mailbox as applicable, the add-in must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
 
 - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-- **Unified manifest for Microsoft 365 (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+- **Unified manifest for Microsoft 365**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
 EWS isn't supported.
 

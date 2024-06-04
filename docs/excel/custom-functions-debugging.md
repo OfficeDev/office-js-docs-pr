@@ -25,8 +25,8 @@ The process of debugging a custom function for add-ins that don't use a shared r
 
 | **Target platform** | **Visual Studio Code** | **Other IDE** |
 |--------------|-------------|-------------|
-| Excel on Windows | [Use VS Code and the browser development tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web) | Debugging CF-NSR that are running in Excel on Windows outside VS Code isn't supported. Debug against Excel on the web. |
 | Excel on the web | [Use VS Code and the browser development tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web) | [Use the command line tools](#use-the-command-line-tools-to-debug)|
+| Excel on Windows | [Use VS Code and the browser development tools](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web) | Debugging CF-NSR that are running in Excel on Windows outside VS Code isn't supported. Debug against Excel on the web. |
 | Excel on Mac |  VS Code debugging of CF-NSR that are running in Excel on Mac isn't supported. Debug against Excel on the web. | [Use the command line tools](#use-the-command-line-tools-to-debug)|
 
 ## Use the browser developer tools to debug custom functions in Excel on the web

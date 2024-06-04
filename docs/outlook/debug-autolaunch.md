@@ -1,14 +1,14 @@
 ---
 title: Debug your event-based or spam-reporting Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation or integrated spam reporting.
-ms.date: 03/29/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Debug your event-based or spam-reporting Outlook add-in
 
-This article discusses the key debugging stages to enable and set breakpoints in your code as you implement [event-based activation](autolaunch.md) or [integrated spam reporting (preview)](spam-reporting.md) in your add-in. Before you proceed, we recommend reviewing the [troubleshooting guide](troubleshoot-event-based-and-spam-reporting-add-ins.md) for additional steps on how to resolve development errors.
+This article discusses the key debugging stages to enable and set breakpoints in your code as you implement [event-based activation](autolaunch.md) or [integrated spam reporting](spam-reporting.md) in your add-in. Before you proceed, we recommend reviewing the [troubleshooting guide](troubleshoot-event-based-and-spam-reporting-add-ins.md) for additional steps on how to resolve development errors.
 
 To begin debugging, select the tab for your applicable client.
 
@@ -20,8 +20,8 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
 1. Get your add-in's ID from the manifest.
 
-    - **XML manifest**: Use the value of the **\<Id\>** element, child of the root **\<OfficeApp\>** element.
-    - **Unified manifest for Microsoft 365 (preview)**: Use the value of the "id" property of the root anonymous `{ ... }` object.
+    - **XML manifest**: Use the value of the **\<Id\>** element child of the root **\<OfficeApp\>** element.
+    - **Unified manifest for Microsoft 365**: Use the value of the "id" property of the root anonymous `{ ... }` object.
 
 1. Create a registry `DWORD` value named `UseDirectDebugger` in `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]`. Replace `[Add-in ID]` with your add-in's ID from the manifest.
 
@@ -152,6 +152,6 @@ Use your preferred browser's developer tools to debug your event-based add-in in
 ## See also
 
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
-- [Implement an integrated spam-reporting add-in (preview)](spam-reporting.md)
+- [Implement an integrated spam-reporting add-in](spam-reporting.md)
 - [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Debug your add-in with runtime logging](../testing/runtime-logging.md#runtime-logging-on-windows)

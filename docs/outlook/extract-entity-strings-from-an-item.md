@@ -1,7 +1,7 @@
 ---
 title: Extract entity strings from an Outlook item
 description: Learn how to extract entity strings from an Outlook item in an Outlook add-in.
-ms.date: 01/16/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -37,7 +37,7 @@ The add-in provides buttons for the user to choose a type of entity. When the us
 ## XML manifest
 
 > [!NOTE]
-> The Outlook add-in feature described in this article uses activation rules, which aren't supported in add-ins that use a [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
+> The Outlook add-in feature described in this article uses activation rules, which aren't supported in add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
 
 The entities add-in has two activation rules joined by a logical OR operation.
 
