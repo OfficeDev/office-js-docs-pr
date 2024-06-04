@@ -143,7 +143,7 @@ document using the Word JavaScript API.
 ### Insert a content control
 
 ```code
-Insert a content control labeled *"Sample Content Control"* on the 
+Insert a content control labeled *"Sample Content Control"* into the 
 first paragraph and *set the content control's color to red* using 
 the Word JavaScript API.
 ```
@@ -151,8 +151,8 @@ the Word JavaScript API.
 ### Add a comment
 
 ```code
-Insert a comment with the content *"my comment"* on the document 
-selection in a Word add-in using Office.js.
+Insert a comment with the content *"my comment"* into the document 
+selection with a Word add-in using Office.js.
 ```
 
 ### Insert a document into the target document at a specific location
