@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins prompts for GitHub Copilot
 description: An Office Add-ins prompt library to use with GitHub Copilot.
-ms.date: 05/16/2024
+ms.date: 06/04/2024
 ms.localizationpriority: medium
 ---
 
@@ -151,15 +151,14 @@ the Word JavaScript API.
 ### Add a comment
 
 ```code
-Insert a comment with the content *"my comment"* into the document 
-selection with a Word add-in using Office.js.
+Insert a comment into the document selection using the Word JavaScript API
 ```
 
 ### Insert a document into the target document at a specific location
 
 ```code
-Import a file from local storage as a template to the current 
-document using the insertFileFromBase64 API.
+Import a file from local storage as a template to the current
+document using the Word JavaScript insertFileFromBase64 API.
 ```
 
 ## Implement a feature for Excel, PowerPoint, or Word add-ins
