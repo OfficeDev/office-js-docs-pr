@@ -956,6 +956,9 @@ items:
       displayName: Word
 - name: Resources
   items:
+  - name: GitHub Copilot prompt library
+    href: resources/resources-github-copilot-prompt-library.md
+    displayName: Excel, Word, PowerPoint
   - name: Glossary
     href: resources/resources-glossary.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
