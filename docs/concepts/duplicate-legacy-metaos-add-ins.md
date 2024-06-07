@@ -2,7 +2,7 @@
 title: Manage both a unified manifest and an XML manifest version of your Office Add-in
 description: Learn when and how to maintain versions of your add-in for each type of manifest.
 ms.topic: best-practice
-ms.date: 05/02/2024
+ms.date: 06/07/2024
 ms.localizationpriority: medium
 ---
 
@@ -87,9 +87,12 @@ Don't remove the existing add-in from AppSource or the Microsoft 365 Admin Cente
 
 ## Maintain both versions for the immediate future
 
-When all of your users are working with Office versions that support the unified manifest, you can remove the XML version from deployment, but you need to maintain both versions for the immediate future.
+Generally, add-ins that use the unified manifest can be installed only on Microsoft 365 Version 2307 (Build 16626.20132) and later. However, there are two exceptions which enable these add-ins to be installed on older versions of Microsoft 365 and on perpetual license versions of Office. 
 
-Initially, add-ins that support the unified manifest can be installed only on Microsoft 365 Version 2307 (Build 16626.20132) and later. We're working hard to bring support to older versions of Microsoft 365. In the meantime, you need to maintain both versions.
+- The user's Microsoft 365 administrator deploys the add-in for all users.
+- The user installs the add-in on another Microsoft 365 client app that *is* version Version 2307 (Build 16626.20132) and later. This makes the add-in available on the same user's other Office clients, including older or perpetual license.
+
+If you have users on older or perpetual license versions for which these exceptions don't apply, then you will need to maintain both versions of the add-in. When all of your users are working with Office versions that support the unified manifest, you can remove the XML version from deployment.
 
 There are also some scenarios where you might want to maintain both both versions of the add-in for an extended period. For example, there are two features of add-ins that aren't supported with the unified manifest because they're little used or deprecated. You may choose to maintain a version of your add-in that uses these features. The following are the features that aren't supported in the unified manifest.
 
