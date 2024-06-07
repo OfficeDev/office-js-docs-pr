@@ -31,7 +31,7 @@ Otherwise, if you used another tool to create your add-in, perform the following
 
 Now that you've enabled debugging on your add-in, you're ready to configure and run the debugger. For instructions on how to do this, select one of the following options that applies to your webview control. For information about how to determine what webview control is used on your development computer, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
-- If your add-in runs in the embedded webview control from Edge Legacy (EdgeHTML), see [Microsoft Office Add-in Debugger Extension for Visual Studio Code](../testing/debug-with-vs-extension.md).
+- If your add-in runs in the embedded webview control from Edge Legacy (EdgeHTML), see [Debug add-ins using developer tools in Microsoft Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md).
 
 - If your add-in runs in the embedded webview control from Microsoft Edge Chromium (WebView2), see [Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)](../testing/debug-desktop-using-edge-chromium.md).
 
