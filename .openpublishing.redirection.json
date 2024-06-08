@@ -1,6 +1,10 @@
 {
     "redirections": [
         {
+            "source_path": "docs/testing/debug-with-vs-extension.md",
+            "redirect_url": "/office/dev/add-ins/testing/debug-add-ins-overview"
+        },			
+        {
             "source_path": "docs/quickstarts/outlook-quickstart-json-manifest.md",
             "redirect_url": "/office/dev/add-ins/quickstarts/outlook-quickstart"
         },
