@@ -101,7 +101,7 @@ Select the tab for the type of manifest you're using.
     ```
 
 1. Add the following object to the "extensions.ribbons" array. Note the following about this markup.
-    - The "contexts" array contains the "reportPhishingCustomization" string. This prevents the add-in button from appearing at the end of the ribbon or in the overflow section.
+    - The "contexts" array contains the "spamReportingOverride" string. This prevents the add-in button from appearing at the end of the ribbon or in the overflow section.
     - The "fixedControls" array contains an object that configures the look and functionality of the add-in button on the ribbon. The name of the event handler specified in the "actionId" property must match the value used in the "id" property of the object in the "actions" array. While the "enabled" property must be specified in the array, its value doesn't affect the functionality of a spam-reporting add-in.
     - The "spamPreProcessingDialog" object specifies the information and options that are shown in the preprocessing dialog. While you must specify a "title" and "description" for the dialog, you can optionally configure the following properties.
         - The "spamReportingOptions" object. It provides a multiple-selection list of up to five choices. This helps a user identify the type of message they're reporting.
@@ -111,7 +111,7 @@ Select the tab for the type of manifest you're using.
     ```json
     {
         "contexts": [
-            "reportPhishingCustomization"
+            "spamReportingOverride"
         ],
         "fixedControls": [
             {
@@ -122,15 +122,15 @@ Select the tab for the type of manifest you're using.
                 "icons": [
                     {
                         "size": 16,
-                        "file": "https://localhost:3000/assets/icon-16.png"
+                        "url": "https://localhost:3000/assets/icon-16.png"
                     },
                     {
                         "size": 32,
-                        "file": "https://localhost:3000/assets/icon-32.png"
+                        "url": "https://localhost:3000/assets/icon-32.png"
                     },
                     {
                         "size": 80,
-                        "file": "https://localhost:3000/assets/icon-80.png"
+                        "url": "https://localhost:3000/assets/icon-80.png"
                     }
                 ],
                 "supertip": {
