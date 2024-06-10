@@ -302,7 +302,7 @@ Conversely, in Outlook on Windows and on Mac, the task pane isn't automatically 
 
 ## Next steps
 
-Now that you've enabled your add-in to operate on multiple selected messages, you can extend your add-in's capabilities and further enhance the user experience. Explore performing more complex operations by using the selected messages' item IDs with services such as [Exchange Web Services (EWS)](web-services.md) and [Microsoft Graph](/graph/overview).
+Now that you've enabled your add-in to operate on multiple selected messages, you can extend your add-in's capabilities and further enhance the user experience. Explore performing more complex operations by using the selected messages' item IDs with services, such as [Microsoft Graph](/graph/overview).
 
 ## See also
 
