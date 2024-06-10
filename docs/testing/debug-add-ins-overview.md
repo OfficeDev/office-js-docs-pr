@@ -54,7 +54,6 @@ To find guidance for debugging client-side code, the first variable is the opera
 The following provides general guidance to debugging on Windows. Debugging on Windows depends on your IDE.
 
 - **Visual Studio**: Debug using the browser's F12 tools. See [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
-- **Visual Studio Code**: Debug using the [Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
 - **Any other IDE** (or you don't want to debug inside your IDE): Use the developer tools that are associated with the webview control that add-ins use on your development computer. See one of the following:
 
   - For the Trident webview: [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)

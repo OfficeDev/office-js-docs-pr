@@ -43,14 +43,13 @@ For a sample add-in that uses the SSO token, see [Outlook Add-in SSO](https://gi
 Nested App Authentication (NAA) enables Single Sign-On (SSO) for Office Add-ins running in the context of native Office applications. Compared with the on-behalf-of flow used with Office.js and getAccessToken(), NAA provides greater flexibility in app architecture, enabling the creation of rich, client-driven applications. NAA makes handling SSO simpler for your add-in code. NAA enables you to make Microsoft Graph calls from your add-in client code as an SPA without the need for a middle-tier server. There’s no need to use Office.js APIs as NAA is provided by the MSAL.js library.
 
 > [!IMPORTANT]
-> Nested app authentication is currently in preview. To try this feature, join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> Nested app authentication is currently in preview. To try this feature, join the [Microsoft 365 Insider Program](https://insider.microsoft365.com/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 To enable your Outlook add-in to use NAA, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md). NAA works the same across all Office Add-ins.
 
 ## Exchange user identity token
 
-> [!IMPORTANT]
-> Legacy Exchange user identity tokens and callback tokens will be turned off for all Exchange Online tenants in October 2024 as part of [Microsoft’s Secure Future Initiative](https://blogs.microsoft.com/on-the-issues/2023/11/02/secure-future-initiative-sfi-cybersecurity-cyberattacks/), which gives organizations the tools needed to respond to the current threat landscape. Exchange user identity tokens will still work for Exchange on-premises. Nested app authentication is the recommended approach for tokens going forward. For more information see our [blog post about nested app authentication and legacy Exchange tokens](https://aka.ms/NAApreviewblog).
+[!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
 Exchange user identity tokens provide a way for your add-in to establish the identity of the user. By verifying the user's identity, you can then perform a one-time authentication into your back-end system, then accept the user identity token as an authorization for future requests. Use the Exchange user identity token:
 
@@ -70,8 +69,7 @@ Using this method, your add-in prompts the user to sign-in to the service either
 
 ## Callback tokens
 
-> [!IMPORTANT]
-> Legacy Exchange user identity tokens and callback tokens will be turned off for all Exchange Online tenants in October 2024 as part of [Microsoft’s Secure Future Initiative](https://blogs.microsoft.com/on-the-issues/2023/11/02/secure-future-initiative-sfi-cybersecurity-cyberattacks/), which gives organizations the tools needed to respond to the current threat landscape. Exchange user identity tokens will still work for Exchange on-premises. Nested app authentication is the recommended approach for tokens going forward. For more information, see our [blog post about nested app authentication and legacy Exchange tokens](https://aka.ms/NAApreviewblog).
+[!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
 Callback tokens provide access to the user's mailbox from your server back-end, either using [Exchange Web Services (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange), or the [Outlook REST API](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). Consider using callback tokens if your add-in:
 

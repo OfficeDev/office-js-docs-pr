@@ -322,8 +322,6 @@ items:
         href: testing/debug-add-ins-using-devtools-edge-chromium.md
       - name: Debug using Visual Studio Code and Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
-      - name: Debug using Visual Studio Code and Edge Legacy WebView
-        href: testing/debug-with-vs-extension.md
       - name: Debug Office Add-ins in Visual Studio
         href: develop/debug-office-add-ins-in-visual-studio.md
       - name: Test with Trident

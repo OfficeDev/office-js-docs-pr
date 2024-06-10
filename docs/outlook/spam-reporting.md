@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 05/20/2024
+ms.date: 06/10/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -64,6 +64,9 @@ To implement the integrated spam-reporting feature in your add-in, you must conf
     - A multiple-selection list of choices to help a user identify the type of message they're reporting. To learn how to configure these reporting options, see [ReportingOptions element](/javascript/api/manifest/reportingoptions).
     - A text box for the user to provide additional information about the message they're reporting. To learn how to implement a text box, see [FreeTextLabel element](/javascript/api/manifest/preprocessingdialog#child-elements).
     - Custom text and URL to provide informational resources to the user. To learn how to personalize these elements, see [MoreInfo element](/javascript/api/manifest/moreinfo).
+
+      > [!NOTE]
+      > Depending on the Outlook client, the custom text specified in the **\<MoreInfoText\>** element appears before the URL that's provided in the **\<MoreInfoUrl\>** element or as link text for the URL. For more information, see [MoreInfoText](/javascript/api/manifest/moreinfo#moreinfotext).
 
     When a user selects **Report** from the dialog, the [SpamReporting](/javascript/api/office/office.eventtype) event is activated and is then handled by the JavaScript event handler.
 
@@ -155,7 +158,7 @@ The following is an example of a **\<VersionOverrides\>** node configured for sp
             <bt:String id="PreProcessingDialog.Label" DefaultValue="Report Spam Message"/>
             <bt:String id="OptionsTitle.Label" DefaultValue="Why are you reporting this email?"/>
             <bt:String id="FreeText.Label" DefaultValue="Provide additional information, if any:"/>
-            <bt:String id="MoreInfo.Label" DefaultValue="To learn more about reporting unsolicited messages, see "/>
+            <bt:String id="MoreInfo.Label" DefaultValue="Reporting unsolicited messages"/>
             <bt:String id="Option1.Label" DefaultValue="Received spam email."/>
             <bt:String id="Option2.Label" DefaultValue="Received a phishing email."/>
             <bt:String id="Option3.Label" DefaultValue="I'm not sure this is a legitimate email."/>
