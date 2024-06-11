@@ -11,8 +11,8 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for June 12, 2024 call
 The agenda for the June Office Add-ins community call:
-* Dev tools update for WXP add-ins
-* Excel add-ins update
+* Developer tools update for Word, Excel, and PowerPoint add-ins.
+* Excel add-ins update.
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
