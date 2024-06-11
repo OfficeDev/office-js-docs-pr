@@ -93,8 +93,7 @@ Select the tab for the type of manifest you're using.
         "actions": [
             {
                 "id": "onSpamReport",
-                "type": "executeFunction",
-                "displayName": "onSpamReport"
+                "type": "executeFunction"
             }
         ]
     },
