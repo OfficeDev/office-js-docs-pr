@@ -24,12 +24,12 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 The deployment options that are available depend on the Office application that you're targeting and the type of add-in you create.
 
-| Extension point | Sideloading | Network share                                 | AppSource | Microsoft 365 admin center | SharePoint catalog\* |
-|:----------------|:-----------:|:---------------------------------------------:|:---------:|:--------------------------:|:--------------------:|
-| Content         | Supported   | Supported                                     | Supported | Supported                  | Supported            |
-| Task pane       | Supported   | Supported                                     | Supported | Supported                  | Supported            |
-| Command         | Supported   | Support for Excel, PowerPoint, and Word only  | Supported | Supported                  | Not supported        |
-| Mail app        | Supported   | Not supported                                 | Supported | Supported                  | Not supported        |
+| Extension point | Sideloading | Network share                                 | AppSource | Microsoft 365 admin center | SharePoint catalog\* | Exchange server |
+|:----------------|:-----------:|:---------------------------------------------:|:---------:|:--------------------------:|:--------------------:|:---------------:|
+| Content         | Supported   | Supported                                     | Supported | Supported                  | Supported            | Not supported |
+| Task pane       | Supported   | Supported                                     | Supported | Supported                  | Supported            | Not supported |
+| Command         | Supported   | Support for Excel, PowerPoint, and Word only  | Supported | Supported                  | Not supported        | Not supported |
+| Mail app        | Supported   | Not supported                                 | Supported | Supported                  | Not supported        | Supported |
 
 \* SharePoint catalogs don't support Office on Mac.
 
