@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 7:00 AM Pacific Time. You can download the calendar invite at <https://aka.ms/officeaddinscommunitycall>.
 
 > [!IMPORTANT]
-> We have changed the schedule to 7:00 AM Pacific Time. If you still have the old calendar invite starting at 8:00 AM Pacific Time, please remove it and download the lastest one at <https://aka.ms/officeaddinscommunitycall>.
+> We have changed the schedule to 7:00 AM Pacific Time. If you still have the old calendar invite that starts at 8:00 AM Pacific Time, please remove it and download the latest one at <https://aka.ms/officeaddinscommunitycall>.
 
 ## Agenda for July 10, 2024 call
 The agenda for the July Office Add-ins community call will be posted the week of the call.
