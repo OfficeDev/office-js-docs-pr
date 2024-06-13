@@ -215,7 +215,7 @@ To activate your add-in with the Reading Pane turned off or without a message se
     ```
 
     > [!TIP]
-    > If your add-in doesn't automatically sideload, follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md?tabs=windows#sideload-manually) to manually sideload it in Outlook.
+    > If your add-in doesn't automatically sideload, follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload it in Outlook.
 
 1. Navigate to your inbox and do one of the following:
 
