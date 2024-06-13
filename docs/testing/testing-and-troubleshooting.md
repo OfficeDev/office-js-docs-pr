@@ -2,7 +2,7 @@
 title: Troubleshoot user errors with Office Add-ins
 description: Learn how to troubleshoot user errors in Office Add-ins.
 ms.topic: troubleshooting-problem-resolution
-ms.date: 03/21/2023
+ms.date: 06/13/2024
 ms.localizationpriority: medium
 ---
 
@@ -23,14 +23,17 @@ The following table lists common error messages that users might encounter and s
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to **Tools** > **Compatibility View Settings**.|
 |Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md).|
 
-## When installing an add-in, you see "Error loading add-in" in the status bar
+## When installing an add-in, you see "Error loading add-ins" in the status bar
 
 1. Close Office.
+1. Check that the time and date are set correctly on your computer. An incorrect time and date can cause issues when verifying the add-in's manifest.
 1. Verify that the manifest is valid. See [Validate an Office Add-in's manifest](troubleshoot-manifest.md).
 1. Restart the add-in.
 1. Install the add-in again.
 
-You can also give us feedback: if using Excel on Windows or Mac, you can report feedback to the Office extensibility team directly from Excel. To do this, select **File** > **Feedback** > **Send a Frown**. Sending a frown provides the necessary logs to understand the issue.
+If the add-in package was tampered with before installation, this error will occur. You can try to install the add-in again, or contact the publisher of the add-in for help.
+
+You can also give us feedback: if using Office on Windows or Mac, you can report feedback to the Office extensibility team directly from Office. To do this, select **File** > **Feedback** > **Report a problem**. Sending a report provides necessary information to understand the issue.
 
 ## Outlook add-in doesn't work correctly
 
