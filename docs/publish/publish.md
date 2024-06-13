@@ -26,10 +26,10 @@ The deployment options that are available depend on the Office application that 
 
 | Extension point | Sideloading | Network share                                 | AppSource | Microsoft 365 admin center | SharePoint catalog\* | Exchange server |
 |:----------------|:-----------:|:---------------------------------------------:|:---------:|:--------------------------:|:--------------------:|:---------------:|
-| Content         | Supported   | Supported                                     | Supported | Supported                  | Supported            | Not supported |
-| Task pane       | Supported   | Supported                                     | Supported | Supported                  | Supported            | Not supported |
-| Command         | Supported   | Support for Excel, PowerPoint, and Word only  | Supported | Supported                  | Not supported        | Not supported |
-| Mail app        | Supported   | Not supported                                 | Supported | Supported                  | Not supported        | Supported |
+| Content         | Supported   | Supported                                     | Supported | Supported                  | Supported            | Not supported   |
+| Task pane       | Supported   | Supported                                     | Supported | Supported                  | Supported            | Not supported   |
+| Command         | Supported   | Support for Excel, PowerPoint, and Word only  | Supported | Supported                  | Not supported        | Not supported   |
+| Mail app        | Supported   | Not supported                                 | Supported | Supported                  | Not supported        | Supported       |
 
 \* SharePoint catalogs don't support Office on Mac.
 
