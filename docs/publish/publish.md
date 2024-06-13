@@ -16,7 +16,7 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |[AppSource][AppSource]|To distribute your add-in publicly to users.|
 |[Microsoft 365 admin center](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)|In a cloud deployment, to distribute your add-in to users in your organization by using the Microsoft 365 admin center. This is done through [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins). |
 |[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization. Doesn't support add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).|
-|[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
+|[Exchange server](#outlook-add-in-exchange-server-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
