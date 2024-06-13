@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 04/12/2024
+ms.date: 06/13/2024
 ms.localizationpriority: high
 ---
 
@@ -24,22 +24,14 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 The deployment options that are available depend on the Office application that you're targeting and the type of add-in you create.
 
-### Deployment options for Word, Excel, and PowerPoint add-ins
-
-| Extension point | Sideloading | Network share | AppSource | Microsoft 365 admin center | SharePoint catalog\* |
-|:----------------|:-----------:|:-------------:|:---------:|:--------------------------:|:--------------------:|
-| Content         | Supported   | Supported     | Supported | Supported                  | Supported            |
-| Task pane       | Supported   | Supported     | Supported | Supported                  | Supported            |
-| Command         | Supported   | Supported     | Supported | Supported                  | Not available        |
+| Extension point | Sideloading | Network share                                 | AppSource | Microsoft 365 admin center | SharePoint catalog\* |
+|:----------------|:-----------:|:---------------------------------------------:|:---------:|:--------------------------:|:--------------------:|
+| Content         | Supported   | Supported                                     | Supported | Supported                  | Supported            |
+| Task pane       | Supported   | Supported                                     | Supported | Supported                  | Supported            |
+| Command         | Supported   | Support for Excel, PowerPoint, and Word only  | Supported | Supported                  | Not supported        |
+| Mail app        | Supported   | Not supported                                 | Supported | Supported                  | Not supported        |
 
 \* SharePoint catalogs don't support Office on Mac.
-
-### Deployment options for Outlook add-ins
-
-| Extension point | Sideloading | AppSource | Exchange server |
-|:----------------|:-----------:|:---------:|:---------------:|
-| Mail app        | Supported   | Supported | Supported       |
-| Command         | Supported   | Supported | Supported       |
 
 ## Production deployment methods
 
@@ -71,7 +63,7 @@ If you are deploying add-ins in an on-premises environment, use a SharePoint cat
 > [!NOTE]
 > SharePoint catalogs don't support Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).
 
-### Outlook add-in deployment
+### Outlook add-in Exchange server deployment
 
 For on-premises and online environments that don't use the Azure AD identity service, you can deploy Outlook add-ins via the Exchange server.
 
