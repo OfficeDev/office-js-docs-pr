@@ -9,10 +9,11 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 7:00 AM Pacific Time. You can download the calendar invite at <https://aka.ms/officeaddinscommunitycall>.
 
-## Agenda for June 12, 2024 call
-The agenda for the June Office Add-ins community call:
-* Developer tools update for Word, Excel, and PowerPoint add-ins.
-* Excel add-ins update.
+> [!IMPORTANT]
+> We have changed the schedule to 7:00 AM Pacific Time. If you still have the old calendar invite that starts at 8:00 AM Pacific Time, please remove it and download the latest one at <https://aka.ms/officeaddinscommunitycall>.
+
+## Agenda for July 10, 2024 call
+The agenda for the July Office Add-ins community call will be posted the week of the call.
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
