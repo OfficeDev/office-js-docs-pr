@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 10/19/2022
+ms.date: 04/12/2024
 ms.localizationpriority: medium
 ---
 
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send.
 
 > [!NOTE]
-> The on-send feature isn't supported in add-ins that use the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md). Achieve similar effects by using [event-based activation](autolaunch.md) and implementing a handler for the **OnMessageSend** or **OnAppointmentSend** events, or both.
+> The on-send feature isn't supported in add-ins that use the [Unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). Achieve similar effects by using [event-based activation](autolaunch.md) and implementing a handler for the **OnMessageSend** or **OnAppointmentSend** events, or both. See also the note below about Smart Alerts.
 
 For example, use the on-send feature to:
 
@@ -33,12 +33,12 @@ For information about limitations related to the on-send feature, see [Limitatio
 
 The following table shows supported client-server combinations for the on-send feature, including the minimum required Cumulative Update where applicable. Excluded combinations are not supported.
 
-| Client | Exchange Online | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) |
+| Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) |
 |---|:---:|:---:|:---:|
-|Windows:<br>Version 1910 (Build 12130.20272) or later|Yes|Yes|Yes|
-|Mac:<br>build 16.47 or later|Yes|Yes|Yes|
 |Web browser:<br>modern Outlook UI|Yes|Not applicable|Not applicable|
 |Web browser:<br>classic Outlook UI|Not applicable|Yes|Yes|
+|Windows:<br>Version 1910 (Build 12130.20272) or later|Yes|Yes|Yes|
+|Mac:<br>Version 16.47 or later|Yes|Yes|Yes|
 
 > [!NOTE]
 > The on-send feature was officially released in requirement set 1.8 (see [current server and client support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details). However, note that the feature's support matrix is a superset of the requirement set's.

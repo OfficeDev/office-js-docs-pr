@@ -2,7 +2,7 @@
 title: Use SSO to get the identity of the signed-in user
 description: Call the getAccessToken API to get the ID token with name, email, and additional information about the signed-in user.
 ms.date: 06/23/2023
-localization_priority: Normal
+ms.localizationpriority: medium
 ---
 
 # Use SSO to get the identity of the signed-in user

@@ -74,6 +74,8 @@ The **read item** permission is the next level of permission in the permissions 
 
 - [Get a callback token to get item attachments](get-attachments-of-an-outlook-item.md) or the full item with Exchange Web Services (EWS) or [Outlook REST APIs](use-rest-api.md).
 
+    [!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
+
 - [Write custom properties](/javascript/api/outlook/office.customproperties) set by the add-in on that item.
 
 - [Get all existing well-known entities](match-strings-in-an-item-as-well-known-entities.md), not just a subset, from the item's subject or body.
@@ -133,7 +135,7 @@ Specify **read/write item** permission in the manifest to request this permissio
 
 ## read/write mailbox permission
 
-The **read/write mailbox** permission is the highest level of permission. 
+The **read/write mailbox** permission is the highest level of permission.
 
 In addition to what the **read/write item** permission supports, the token provided by **mailbox.getCallbackTokenAsync** provides access to use Exchange Web Services (EWS) operations or Outlook REST APIs to do the following:
 
@@ -159,6 +161,8 @@ Through **mailbox.makeEWSRequestAsync**, you can access the following EWS operat
 - [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation)
 
 Attempting to use an unsupported operation will result in an error response.
+
+[!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
 ## See also
 

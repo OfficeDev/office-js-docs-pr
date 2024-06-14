@@ -1,7 +1,7 @@
 ---
 title: Work with workbooks using the Excel JavaScript API
 description: Learn how to perform common tasks with workbooks or application-level features using the Excel JavaScript API.
-ms.date: 02/07/2024
+ms.date: 03/26/2024
 ms.localizationpriority: medium
 ---
 
@@ -76,7 +76,7 @@ insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOp
 ```
 
 > [!IMPORTANT]
-> The `insertWorksheetsFromBase64` method is supported for Excel on Windows, Mac, and the web. It's not supported for iOS. Additionally, in Excel on the web this method doesn't support source worksheets with PivotTable, Chart, Comment, or Slicer elements. If those objects are present, the `insertWorksheetsFromBase64` method returns the `UnsupportedFeature` error in Excel on the web.
+> The `insertWorksheetsFromBase64` method is supported for Excel on the web, on Windows, and on Mac. It's not supported for iOS. Additionally, in Excel on the web, this method doesn't support source worksheets with PivotTable, Chart, Comment, or Slicer elements. If those objects are present, the `insertWorksheetsFromBase64` method returns the `UnsupportedFeature` error in Excel on the web.
 
 The following code sample shows how to insert worksheets from another workbook into the current workbook. This code sample first processes a workbook file with a [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) object and extracts a base64-encoded string, and then it inserts this base64-encoded string into the current workbook. The new worksheets are inserted after the worksheet named **Sheet1**. Note that `[]` is passed as the parameter for the [InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#excel-excel-insertworksheetoptions-sheetnamestoinsert-member) property. This means that all the worksheets from the target workbook are inserted into the current workbook.
 
@@ -136,7 +136,7 @@ Protection can also be set at the worksheet level to prevent unwanted data editi
 
 ## Access document properties
 
-Workbook objects have access to the Office file metadata, which is known as the [document properties](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75). The Workbook object's `properties` property is a [DocumentProperties](/javascript/api/excel/excel.documentproperties) object containing these metadata values. The following example shows how to set the `author` property.
+Workbook objects have access to the Office file metadata, which is known as the [document properties](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75). The Workbook object's `properties` property is a [DocumentProperties](/javascript/api/excel/excel.documentproperties) object that contains some of these metadata values. The following example shows how to set the `author` property.
 
 ```js
 await Excel.run(async (context) => {

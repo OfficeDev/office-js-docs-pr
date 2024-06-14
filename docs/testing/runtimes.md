@@ -2,7 +2,7 @@
 title: Runtimes in Office Add-ins
 description: Learn about the runtimes that are used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 03/21/2024
+ms.date: 05/06/2024
 ms.localizationpriority: medium
 ---
 
@@ -19,18 +19,18 @@ There are two types of runtimes used by Office Add-ins:
 
 Details about these types are later in this article at [JavaScript-only runtime](#javascript-only-runtime) and [Browser runtime](#browser-runtime).
 
-The following table shows which possible features of an add-in use each type of runtime.
+The following table shows the possible features of an add-in, according to each type of runtime.
 
 | Type of runtime | Add-in feature |
 |:-----|:-----|
-| JavaScript-only | Excel [custom functions](../excel/custom-functions-overview.md)</br>(except when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(only when the add-in is running in Outlook on Windows)</br></br>[Outlook integrated spam reporting feature (preview)](../outlook/spam-reporting.md)</br>(only when the add-in is running in Outlook on Windows)|
-| browser | [task pane](../design/task-pane-add-ins.md)</br></br>[dialog](../develop/dialog-api-in-office-add-ins.md)</br></br>[function command](../design/add-in-commands.md#types-of-add-in-commands)</br></br>Excel [custom functions](../excel/custom-functions-overview.md)</br>(when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(when the add-in is running in Outlook on Mac or Outlook on the web)</br></br>[Outlook integrated spam reporting feature (preview)](../outlook/spam-reporting.md)</br>(only when the add-in is running in Outlook on Mac or on the web or in the [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627))|
+| JavaScript-only | Excel [custom functions](../excel/custom-functions-overview.md)</br>(except when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(only when the add-in is running in Outlook on Windows)</br></br>[Outlook integrated spam reporting feature](../outlook/spam-reporting.md)</br>(only when the add-in is running in Outlook on Windows)|
+| browser | [task pane](../design/task-pane-add-ins.md)</br></br>[dialog](../develop/dialog-api-in-office-add-ins.md)</br></br>[function command](../design/add-in-commands.md#types-of-add-in-commands)</br></br>Excel [custom functions](../excel/custom-functions-overview.md)</br>(when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(when the add-in is running in Outlook on Mac or Outlook on the web or in the [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627))</br></br>[Outlook integrated spam reporting feature](../outlook/spam-reporting.md)</br>(only when the add-in is running in Outlook on Mac or on the web or in the [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627))|
 
 The following table shows the same information organized by which type of runtime is used for the various possible features of an add-in.
 
 | Add-in feature | Type of runtime on Windows | Type of runtime on Mac | Type of runtime on the web |
 |:-----|:-----|:-----|:-----|
-|Excel custom functions | JavaScript-only</br>(but *browser* when the runtime is shared)|JavaScript-only</br>(but *browser* when the runtime is shared)| browser |
+|Excel custom functions | JavaScript-only</br>(but *browser* when the runtime is shared)|browser| browser |
 |Outlook event-based tasks | JavaScript-only</br>(classic Outlook on Windows)</br></br>browser</br>(new Outlook on Windows (preview)) | browser | browser |
 |Outlook integrated spam reporting feature (preview)| JavaScript-only</br>(classic Outlook on Windows)</br></br>browser</br>(new Outlook on Windows (preview)) | browser | browser |
 |task pane | browser | browser | browser |
@@ -133,7 +133,10 @@ This type of runtime is used in event-based and spam-reporting add-ins in Outloo
   > [!NOTE]
   > The [event-based activation](../outlook/autolaunch.md) and [integrated spam reporting](../outlook/spam-reporting.md) features in Outlook must use the same runtime. Multiple runtimes aren't currently supported in Outlook.
 
-A JavaScript-runtime uses less memory and starts up faster than a browser runtime, but has fewer features.
+A JavaScript-only runtime uses less memory and starts up faster than a browser runtime, but has fewer features.
+
+> [!IMPORTANT]
+> In Office for Windows versions before 2403 (Build 16.0.17425.20000) and perpetual license Office through Office 2021, the JavaScript-only runtime directly supports the ECMAScript 2016 standard of JavaScript. However, you can use later versions of JavaScript or TypeScript. For information about how to do this, see [Support for recent versions of JavaScript](../develop/support-ie-11.md#support-for-recent-versions-of-javascript).
 
 ## Browser runtime
 

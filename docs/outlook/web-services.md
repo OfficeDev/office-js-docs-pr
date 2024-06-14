@@ -1,7 +1,7 @@
 ---
 title: Use Exchange Web Services (EWS) from an Outlook add-in
 description: Provides an example that shows how an Outlook add-in can request information from Exchange Web Services.
-ms.date: 05/20/2023
+ms.date: 06/10/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -10,8 +10,7 @@ ms.localizationpriority: medium
 
 Your add-in can use Exchange Web Services (EWS) from a computer that is running Exchange Server, a web service that is available on the server that provides the source location for the add-in's UI, or a web service that is available on the Internet. This article provides an example that shows how an Outlook add-in can request information from EWS.
 
-> [!IMPORTANT]
-> EWS calls and operations aren't supported in add-ins running in Outlook on iOS and Android.
+[!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
 The way you call a web service varies based on where the web service is located. The following tables list the different ways you can call a web service based on location.
 
@@ -22,6 +21,9 @@ The way you call a web service varies based on where the web service is located.
 |All other locations|Create a proxy for the web service on the web server that provides the source location for the UI. If you do not provide a proxy, cross-site scripting errors will prevent your add-in from running. One way to provide a proxy is by using JSON/P. For more information, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md).|
 
 ## Using the makeEwsRequestAsync method to access EWS operations
+
+> [!IMPORTANT]
+> EWS calls and operations aren't supported in add-ins running in Outlook on Android and on iOS.
 
 You can use the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to make an EWS request to the Exchange server that hosts the user's mailbox.
 
@@ -186,7 +188,7 @@ When you use the `makeEwsRequestAsync` method, the request is authenticated by u
 To use the `makeEwsRequestAsync` method, your add-in must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
 
 - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-- **Unified manifest for Microsoft 365 (preview)**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+- **Unified manifest for Microsoft 365**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
 For information about using the **read/write mailbox** permission, see [read/write mailbox permission](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission).
 

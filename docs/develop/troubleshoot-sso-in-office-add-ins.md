@@ -104,7 +104,7 @@ The `getAccessToken` was called too many times in a short amount of time, so Off
 
 ### 50001
 
-This error (which is not specific to `getAccessToken`) may indicate that the browser has cached an old copy of the office.js files. When you are developing, clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. On Windows, the minimum version is 16.0.12215.20006. On Mac, it is 16.32.19102902.
+This error (which is not specific to `getAccessToken`) may indicate that the browser has cached an old copy of the office.js files. When you are developing, clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. On Windows, the minimum build is 16.0.12215.20006. On Mac, it's 16.32.19102902.
 
 In a production add-in, the add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 

@@ -1,7 +1,7 @@
 ---
 title: Add and remove attachments in an Outlook add-in
 description: Use various attachment APIs to manage the files or Outlook items attached to the item the user is composing.
-ms.date: 02/29/2024
+ms.date: 06/04/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -226,6 +226,9 @@ function removeAttachment(attachmentId) {
         });
 }
 ```
+
+> [!TIP]
+> The `removeAttachmentAsync` method doesn't remove inline attachments from a mail item. To remove an inline attachment, first get the item's body, then remove any references of the attachment from its contents. Use the [Office.Body](/javascript/api/outlook/office.body) APIs to get and set the body of an item.
 
 ## See also
 

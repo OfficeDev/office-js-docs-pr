@@ -2,7 +2,7 @@
 title: Troubleshoot development errors with Office Add-ins
 description: Learn how to troubleshoot development errors in Office Add-ins.
 ms.topic: troubleshooting-problem-resolution
-ms.date: 07/27/2023
+ms.date: 03/29/2024
 ms.localizationpriority: medium
 ---
 
@@ -16,6 +16,18 @@ Here's a list of common issues you may encounter while developing an Office Add-
 ## Add-in doesn't load in task pane or other issues with the add-in manifest
 
 See [Validate an Office Add-in's manifest](troubleshoot-manifest.md) and [Debug your add-in with runtime logging](runtime-logging.md) to debug add-in manifest issues.
+
+## Ribbon customizations are not rendering as expected
+
+- With the add-in sideloaded and running, paste the URLs for the add-in's ribbon icons into a browser's navigation bar and see if the icon files open.
+- By default, add-in errors connected to the Office UI are suppressed. You can turn on these error messages with the following steps.
+
+   1. With the add-in removed, open the **File** tab of the Office application.
+   1. Select **Options**.
+   1. In the **Options** dialog, select **Advanced**.
+   1. In the **General** section (the **Developers** section for Outlook), enable **Show add-in user interface errors**.
+   
+   Sideload the add-in again and see if there are any errors.
 
 ## Changes to add-in commands including ribbon buttons and menu items do not take effect
 
@@ -126,7 +138,6 @@ When you're loading the Office JavaScript Library from a local copy instead of f
 - [Sideload an Office Add-in on Mac](sideload-an-office-add-in-on-mac.md)  
 - [Sideload an Office Add-in on iPad](sideload-an-office-add-in-on-ipad.md)  
 - [Debug Office Add-ins on a Mac](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md)
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
 - [Troubleshoot user errors with Office Add-ins](testing-and-troubleshooting.md)

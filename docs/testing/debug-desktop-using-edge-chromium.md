@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
 description: Learn how to debug Office Add-ins that use Microsoft Edge WebView2 (Chromium-based) in VS Code.
-ms.date: 01/26/2024
+ms.date: 04/15/2024
 ms.localizationpriority: high
 ---
 
@@ -10,7 +10,7 @@ ms.localizationpriority: high
 Office Add-ins running on Windows can debug against the Edge Chromium WebView2 runtime directly in Visual Studio Code.
 
 > [!IMPORTANT]
-> This article only applies when Office runs add-ins in the Microsoft Edge Chromium WebView2 runtime, as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio Code against Microsoft Edge Legacy with the original WebView (EdgeHTML) runtime, see [Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
+> This article only applies when Office runs add-ins in the Microsoft Edge Chromium WebView2 runtime, as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For instructions about debugging in Visual Studio Code against Microsoft Edge Legacy with the original WebView (EdgeHTML) runtime, see [Debug add-ins using developer tools in Microsoft Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md).
 
 > [!TIP]
 > If you can't, or don't wish to, debug using tools built into Visual Studio Code; or you're encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Chromium WebView2 runtime by using the Edge (Chromium-based) developer tools as described in [Debug add-ins using developer tools for Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
@@ -53,7 +53,7 @@ These instructions assume you have experience using the command line, understand
    >
    > ![Error that says Configured debug type edge is not supported.](../images/configured-debug-type-error.jpg)
    >
-   > Complete the tasks in [Appendix B](#appendix-b) and then restart this procedure.
+   > Complete the tasks in the [Appendix](#appendix) and then restart this procedure.
 
 1. In the host application, your add-in is now ready to use. Select **Show Taskpane** or run any other add-in command. A dialog box will appear with text similar to the following:
 
@@ -158,7 +158,7 @@ If your project wasn't created with Yo Office, you need to create a debug config
 
 You can now debug your project using the VS Code debugger (F5).
 
-### Appendix B
+### Appendix
 
 1. In the error dialog box, select the **Cancel** button.
 1. If debugging doesn't stop automatically, select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu.
@@ -174,7 +174,6 @@ You can now debug your project using the VS Code debugger (F5).
 ## See also
 
 - [Test and debug Office Add-ins](test-debug-office-add-ins.md)
-- [Debug add-ins on Windows using Visual Studio Code and Microsoft Edge legacy WebView (EdgeHTML)](debug-with-vs-extension.md)
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
 - [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)

@@ -1,7 +1,7 @@
 ---
 title: Requirements for running Office Add-ins
 description: Learn about the client and server requirements that an end user needs to run Office Add-ins.
-ms.date: 05/20/2023
+ms.date: 04/24/2024
 ms.localizationpriority: medium
 ---
 
@@ -26,7 +26,7 @@ For all types of add-ins (content, Outlook, and task pane add-ins and add-in com
 
 For content and task pane add-ins, in the supported Office client applications - Excel, PowerPoint, Project, or Word - you also need either an [app catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file, or you need to deploy the add-in using [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
-To test and run an Outlook add-in, the user's Outlook email account must reside on Exchange 2013 or later, which is available through Microsoft 365, Exchange Online, or through an on-premises installation. The user or administrator installs manifest files for Outlook add-ins on that server.
+To test and run an Outlook add-in, the user's Outlook email account must reside on Exchange 2016 or later, which is available through Microsoft 365, Exchange Online, or through an on-premises installation. The user or administrator installs manifest files for Outlook add-ins on that server.
 
 > [!NOTE]
 > POP and IMAP email accounts in Outlook don't support Office Add-ins.
@@ -36,8 +36,8 @@ To test and run an Outlook add-in, the user's Outlook email account must reside 
 The following software is required for developing an Office Add-in for the supported Office desktop clients or web clients that run on Windows-based desktop, laptop, or tablet devices.
 
 - For Windows x86 and x64 desktops, and tablets such as Surface Pro:
-  - The 32- or 64-bit version of Office 2013 or a later version, running on Windows 7 or a later version.
-  - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you're testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
+  - The 32- or 64-bit version of Office 2016 or a later version, running on Windows 7 or a later version.
+  - Excel 2016, Outlook 2016, PowerPoint 2016, Project Professional 2016, Project 2016, Word 2016, or a later version of the Office client, if you're testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
 
   If you have a valid Microsoft 365 subscription and you don't have access to the Office client, you can [download and install the latest version of Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658).
 
@@ -71,17 +71,17 @@ Specifically for Outlook running on smartphones and non-Windows tablet devices, 
 
 | Office application | Device | Operating system | Exchange account | Mobile browser |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook on Android|- Android tablets<br>- Android smartphones|- Android 4.4 KitKat or later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for Android.<sup>1</sup>|
-|Outlook on iOS|- iPad tablets<br>- iPhone smartphones|- iOS 11 or later|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for iOS.<sup>1</sup>|
-|Outlook on the web (modern)<sup>2</sup>|- iPad 2 or later<br>- Android tablets |- iOS 5 or later<br>- Android 4.4 KitKat or later|On Microsoft 365, Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
-|Outlook on the web (classic)|- iPhone 4 or later<br>- iPad 2 or later<br>- iPod Touch 4 or later|- iOS 5 or later|On on-premises Exchange Server 2013 or later<sup>3</sup>|- Safari|
+|Outlook on the web (modern)<sup>1</sup>|<ul><li>iPad 2 or later</li><li>Android tablets</li></ul>|<ul><li>iOS 5 or later</li><li>Android 4.4 KitKat or later</li></ul>|On Microsoft 365, Exchange Online|<ul><li>Microsoft Edge</li><li>Chrome</li><li>Firefox</li><li>Safari</li></ul>|
+|Outlook on the web (classic)|<ul><li>iPhone 4 or later</li><li>iPad 2 or later</li><li>iPod Touch 4 or later</li></ul>|<ul><li>iOS 5 or later</li></ul>|On on-premises Exchange Server 2016 or later<sup>2</sup>|<ul><li>Safari</li></ul>|
+|Outlook on Android|<ul><li>Android tablets</li><li>Android smartphones</li></ul>|<ul><li>Android 4.4 KitKat or later</li></ul>|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for Android.<sup>3</sup>|
+|Outlook on iOS|<ul><li>iPad tablets</li><li>iPhone smartphones|<ul><li>iOS 11 or later</li></ul>|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for iOS.<sup>3</sup>|
 
 > [!NOTE]
-> <sup>1</sup> OWA for Android, OWA for iPad, and OWA for iPhone native apps have been [deprecated](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
+> <sup>1</sup> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins.
 >
-> <sup>2</sup> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins.
+> <sup>2</sup> Add-ins aren't supported in Outlook on Android, on iOS, and modern mobile web with on-premises Exchange accounts.
 >
-> <sup>3</sup> Add-ins aren't supported in Outlook on Android, on iOS, and modern mobile web with on-premises Exchange accounts.
+> <sup>3</sup> OWA for Android, OWA for iPad, and OWA for iPhone native apps have been [deprecated](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
 
 > [!TIP]
 > You can distinguish between classic and modern Outlook in a web browser by checking your mailbox toolbar.

@@ -1,7 +1,7 @@
 ---
 title: Cut, copy, and paste ranges using the Excel JavaScript API
 description: Learn how to cut, copy, and paste ranges using the Excel JavaScript API.
-ms.date: 02/16/2022
+ms.date: 05/28/2024
 ms.localizationpriority: medium
 ---
 
@@ -10,6 +10,9 @@ ms.localizationpriority: medium
 This article provides code samples that cut, copy, and paste ranges using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
+
+> [!TIP]
+> To experiment with the cut, copy, and paste APIs from this article in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Copy and paste ranges](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) in our **Samples** library.
 
 ## Copy and paste
 

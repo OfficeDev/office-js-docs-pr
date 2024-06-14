@@ -1,23 +1,23 @@
 ---
 title: Troubleshoot event-based and spam-reporting add-ins
 description: Learn how to troubleshoot development errors in Outlook add-ins that implement event-based activation or integrated spam reporting.
-ms.date: 02/29/2024
+ms.date: 05/20/2024
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
 
 # Troubleshoot event-based and spam-reporting add-ins
 
-As you develop your [event-based](autolaunch.md) or [spam-reporting (preview)](spam-reporting.md) add-in, you may encounter issues, such as your add-in not loading or an event not occurring. The following sections provide guidance on how to troubleshoot your add-in.
+As you develop your [event-based](autolaunch.md) or [spam-reporting](spam-reporting.md) add-in, you may encounter issues, such as your add-in not loading or an event not occurring. The following sections provide guidance on how to troubleshoot your add-in.
 
 ## Review feature prerequisites
 
-- Verify that the add-in is installed on a supported Outlook client. Some Outlook clients only support certain events or aspects of event-based activation or integrated spam reporting. For more information, see [Supported events](autolaunch.md#supported-events) and [Preview the integrated spam-reporting feature](spam-reporting.md#preview-the-integrated-spam-reporting-feature).
+- Verify that the add-in is installed on a supported Outlook client. Some Outlook clients only support certain events or aspects of event-based activation or integrated spam reporting. For more information, see [Supported events](autolaunch.md#supported-events) and [Implement an integrated spam-reporting add-in](spam-reporting.md).
 - Verify that your Outlook client supports the minimum requirement set needed.
 
   Event-based activation was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now supported in subsequent requirements sets. For more information, see [Supported events](autolaunch.md#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients). If you're developing an add-in that handles the `OnMessageSend` and `OnAppointmentSend` events, see the "Supported clients and platform section" of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms).
 
-  The integrated spam reporting feature is currently in preview in Outlook on Windows. For more information, see [Preview the integrated spam-reporting feature](spam-reporting.md#preview-the-integrated-spam-reporting-feature)
+  The integrated spam reporting feature was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14).
 - Review the expected behavior and limitations of the feature.
 
   - [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations)
@@ -27,10 +27,11 @@ As you develop your [event-based](autolaunch.md) or [spam-reporting (preview)](s
 ## Check manifest and JavaScript requirements
 
 - Ensure that the following conditions are met in your add-in's manifest.
-  - Verify that your add-in's source file location URL is publicly available and isn't blocked by a firewall. This URL is specified in your manifest's [SourceLocation element](/javascript/api/manifest/sourcelocation).
-  - Verify that the **\<Runtimes\>** element (XML manifest) or "code" object (unified manifest (preview)) correctly references the HTML or JavaScript file containing the event handlers. Outlook on Windows uses the JavaScript file during runtime, while Outlook on the web, on new Mac UI, and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use the HTML file. For an example of how this is configured in the manifest, see the "Configure the manifest" section of [Automatically set the subject of a new message or appointment](on-new-compose-events-walkthrough.md#configure-the-manifest).
+
+  - Verify that your add-in's source file location URL is publicly available and isn't blocked by a firewall. This URL is specified in the [SourceLocation element](/javascript/api/manifest/sourcelocation) of the XML manifest or the "extensions.runtimes.code.page" property of the unified manifest for Microsoft 365.
+  - Verify that the **\<Runtimes\>** element (XML manifest) or "extensions.runtimes.code" property (unified manifest) correctly references the HTML or JavaScript file containing the event handlers. Classic Outlook on Windows uses the JavaScript file during runtime, while Outlook on the web, on new Mac UI, and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use the HTML file. For an example of how this is configured in the manifest, see the "Configure the manifest" section of [Automatically set the subject of a new message or appointment](on-new-compose-events-walkthrough.md#configure-the-manifest).
   
-    For Outlook on Windows, you must bundle all your event-handling JavaScript code into this JavaScript file referenced in the manifest. Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
+    For classic Outlook on Windows, you must bundle all your event-handling JavaScript code into this JavaScript file referenced in the manifest. Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 - Verify that your event-handling JavaScript file referenced by the Outlook client on Windows calls `Office.actions.associate`. This ensures that the event handler name specified in the manifest is mapped to its JavaScript counterpart.
 
   > [!TIP]
@@ -84,4 +85,4 @@ If you still need help after performing the recommended troubleshooting steps, [
 ## See also
 
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
-- [Implement an integrated spam-reporting add-in (preview)](spam-reporting.md)
+- [Implement an integrated spam-reporting add-in](spam-reporting.md)

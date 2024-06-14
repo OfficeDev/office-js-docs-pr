@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 12/19/2023
+ms.date: 06/13/2024
 ms.localizationpriority: high
 ---
 
@@ -11,12 +11,12 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 |**Method**|**Use...**|
 |:---------|:------------|
-|[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser. (Not for production add-ins.)|
-|[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows after you have published the add-in to a server other than localhost. (Not for production add-ins or for testing on iPad, Mac, or the web.)|
+|[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser. (Not for production add-ins.) |
+|[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows after you have published the add-in to a server other than localhost. (Not for production add-ins, for testing on iPad, Mac, or the web, or for add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).)|
 |[AppSource][AppSource]|To distribute your add-in publicly to users.|
 |[Microsoft 365 admin center](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)|In a cloud deployment, to distribute your add-in to users in your organization by using the Microsoft 365 admin center. This is done through [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins). |
-|[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization.|
-|[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
+|[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization. Doesn't support add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).|
+|[Exchange server](#outlook-add-in-exchange-server-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -24,22 +24,14 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 The deployment options that are available depend on the Office application that you're targeting and the type of add-in you create.
 
-### Deployment options for Word, Excel, and PowerPoint add-ins
-
-| Extension point | Sideloading | Network share | AppSource | Microsoft 365 admin center | SharePoint catalog\* |
-|:----------------|:-----------:|:-------------:|:---------:|:--------------------------:|:--------------------:|
-| Content         | Supported   | Supported     | Supported | Supported                  | Supported            |
-| Task pane       | Supported   | Supported     | Supported | Supported                  | Supported            |
-| Command         | Supported   | Supported     | Supported | Supported                  | Not available        |
+| Extension point | Sideloading | Network share                                 | AppSource | Microsoft 365 admin center | SharePoint catalog\* | Exchange server |
+|:----------------|:-----------:|:---------------------------------------------:|:---------:|:--------------------------:|:--------------------:|:---------------:|
+| Content         | Supported   | Supported                                     | Supported | Supported                  | Supported            | Not supported   |
+| Task pane       | Supported   | Supported                                     | Supported | Supported                  | Supported            | Not supported   |
+| Command         | Supported   | Support for Excel, PowerPoint, and Word only  | Supported | Supported                  | Not supported        | Not supported   |
+| Mail app        | Supported   | Not supported                                 | Supported | Supported                  | Not supported        | Supported       |
 
 \* SharePoint catalogs don't support Office on Mac.
-
-### Deployment options for Outlook add-ins
-
-| Extension point | Sideloading | AppSource | Exchange server |
-|:----------------|:-----------:|:---------:|:---------------:|
-| Mail app        | Supported   | Supported | Supported       |
-| Command         | Supported   | Supported | Supported       |
 
 ## Production deployment methods
 
@@ -71,14 +63,14 @@ If you are deploying add-ins in an on-premises environment, use a SharePoint cat
 > [!NOTE]
 > SharePoint catalogs don't support Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).
 
-### Outlook add-in deployment
+### Outlook add-in Exchange server deployment
 
 For on-premises and online environments that don't use the Azure AD identity service, you can deploy Outlook add-ins via the Exchange server.
 
 Outlook add-in deployment requires:
 
-- Microsoft 365, Exchange Online, or Exchange Server 2013 or later
-- Outlook 2013 or later
+- Microsoft 365, Exchange Online, or Exchange Server 2016 or later
+- Outlook 2016 or later
 
 To assign add-ins to tenants, use the Exchange admin center to upload a manifest directly, either from a file or a URL, or add an add-in from AppSource. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Add-ins for Outlook in Exchange Server](/exchange/add-ins-for-outlook-2013-help).
 
@@ -96,7 +88,7 @@ It's important to note that some versions of Outlook clients and Exchange server
 
 - [Sideload Outlook add-ins for testing](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Submit to AppSource][AppSource]
-- [AppSource](https://appsource.microsoft.com/marketplace/apps?src=office&page=1)
+- [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Create effective AppSource listings](/office/dev/store/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)

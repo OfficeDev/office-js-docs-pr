@@ -1,7 +1,7 @@
 ---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 02/29/2024
+ms.date: 5/21/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,193 +17,13 @@ In this article, you'll learn how to set up your Outlook add-in to enable users 
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 
-To enable users to create online meetings with your add-in, you must configure the manifest. The markup differs depending on two variables:
+The steps for configuring the manifest depend on which type of manifest you selected in the quick start.
 
-- The type of target platform; either mobile or non-mobile.
-- The type of manifest; either XML or [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md).
-
-If your add-in uses an XML manifest, and the add-in will only be supported in Outlook on the web, Windows (classic and new (preview)), and Mac, select the **Windows, Mac, web** tab for guidance. However, if your add-in will also be supported in Outlook on Android and iOS, select the **Mobile** tab.
-
-If the add-in uses the unified manifest (preview), select the **Unified manifest for Microsoft 365 (developer preview)** tab.
-
-> [!IMPORTANT]
-> Online meeting providers aren't yet supported for the unified manifest (preview). We're working on providing that support soon.
-
-# [Windows, Mac, web](#tab/non-mobile)
-
-1. In your code editor, open the Outlook quick start project you created.
-
-1. Open the **manifest.xml** file located at the root of your project.
-
-1. Select the entire **\<VersionOverrides\>** node (including open and close tags) and replace it with the following XML.
-
-```xml
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
-    <Description resid="residDescription"></Description>
-    <Requirements>
-      <bt:Sets>
-        <bt:Set Name="Mailbox" MinVersion="1.3"/>
-      </bt:Sets>
-    </Requirements>
-    <Hosts>
-      <Host xsi:type="MailHost">
-        <DesktopFormFactor>
-          <FunctionFile resid="residFunctionFile"/>
-          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="apptComposeGroup">
-                <Label resid="residDescription"/>
-                <Control xsi:type="Button" id="insertMeetingButton">
-                  <Label resid="residLabel"/>
-                  <Supertip>
-                    <Title resid="residLabel"/>
-                    <Description resid="residTooltip"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon-16"/>
-                    <bt:Image size="32" resid="icon-32"/>
-                    <bt:Image size="64" resid="icon-64"/>
-                    <bt:Image size="80" resid="icon-80"/>
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>insertContosoMeeting</FunctionName>
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-        </DesktopFormFactor>
-      </Host>
-    </Hosts>
-    <Resources>
-      <bt:Images>
-        <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
-        <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
-        <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
-        <bt:Image id="icon-64" DefaultValue="https://contoso.com/assets/icon-64.png"/>
-        <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
-      </bt:Images>
-      <bt:Urls>
-        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
-      </bt:Urls>
-      <bt:ShortStrings>
-        <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
-        <bt:String id="residLabel" DefaultValue="Add a contoso meeting"/>
-      </bt:ShortStrings>
-      <bt:LongStrings>
-        <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/>
-      </bt:LongStrings>
-    </Resources>
-  </VersionOverrides>
-</VersionOverrides>
-```
-
-# [Mobile](#tab/mobile)
-
-To allow users to create an online meeting from their mobile device, the [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) is configured in the manifest under the parent element **\<MobileFormFactor\>**. This extension point isn't supported in other form factors.
-
-1. In your code editor, open the Outlook quick start project you created.
-
-1. Open the **manifest.xml** file located at the root of your project.
-
-1. Select the entire **\<VersionOverrides\>** node (including open and close tags) and replace it with the following XML.
-
-```xml
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
-    <Description resid="residDescription"></Description>
-    <Requirements>
-      <bt:Sets>
-        <bt:Set Name="Mailbox" MinVersion="1.3"/>
-      </bt:Sets>
-    </Requirements>
-    <Hosts>
-      <Host xsi:type="MailHost">
-        <DesktopFormFactor>
-          <FunctionFile resid="residFunctionFile"/>
-          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="apptComposeGroup">
-                <Label resid="residDescription"/>
-                <Control xsi:type="Button" id="insertMeetingButton">
-                  <Label resid="residLabel"/>
-                  <Supertip>
-                    <Title resid="residLabel"/>
-                    <Description resid="residTooltip"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon-16"/>
-                    <bt:Image size="32" resid="icon-32"/>
-                    <bt:Image size="64" resid="icon-64"/>
-                    <bt:Image size="80" resid="icon-80"/>
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>insertContosoMeeting</FunctionName>
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-        </DesktopFormFactor>
-
-        <MobileFormFactor>
-          <FunctionFile resid="residFunctionFile"/>
-          <ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
-            <Control xsi:type="MobileButton" id="insertMeetingButton">
-              <Label resid="residLabel"/>
-              <Icon>
-                <bt:Image size="25" scale="1" resid="icon-16"/>
-                <bt:Image size="25" scale="2" resid="icon-16"/>
-                <bt:Image size="25" scale="3" resid="icon-16"/>
-
-                <bt:Image size="32" scale="1" resid="icon-32"/>
-                <bt:Image size="32" scale="2" resid="icon-32"/>
-                <bt:Image size="32" scale="3" resid="icon-32"/>
-
-                <bt:Image size="48" scale="1" resid="icon-48"/>
-                <bt:Image size="48" scale="2" resid="icon-48"/>
-                <bt:Image size="48" scale="3" resid="icon-48"/>
-              </Icon>
-              <Action xsi:type="ExecuteFunction">
-                <FunctionName>insertContosoMeeting</FunctionName>
-              </Action>
-            </Control>
-          </ExtensionPoint>
-        </MobileFormFactor>
-      </Host>
-    </Hosts>
-    <Resources>
-      <bt:Images>
-        <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
-        <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
-        <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
-        <bt:Image id="icon-64" DefaultValue="https://contoso.com/assets/icon-64.png"/>
-        <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
-      </bt:Images>
-      <bt:Urls>
-        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
-      </bt:Urls>
-      <bt:ShortStrings>
-        <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
-        <bt:String id="residLabel" DefaultValue="Add a contoso meeting"/>
-      </bt:ShortStrings>
-      <bt:LongStrings>
-        <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/>
-      </bt:LongStrings>
-    </Resources>
-  </VersionOverrides>
-</VersionOverrides>
-```
-
-# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
-
-> [!IMPORTANT]
-> Online meeting providers aren't yet supported for the [Unified manifest for Microsoft 365 (preview)](../develop/unified-manifest-overview.md). This tab is for future use.
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 1. Open the **manifest.json** file.
 
@@ -334,6 +154,209 @@ To allow users to create an online meeting from their mobile device, the [Mobile
     ]
     ```
 
+### Add mobile support
+
+1. Open the **manifest.json** file.
+
+1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you're finished, the array should look like the following.
+
+```json
+"formFactors": [
+    "desktop",
+    "mobile"
+]
+```
+
+1. In the "extensions.ribbons.contexts" array, add `onlineMeetingDetailsOrganizer` as an item. When you're finished, the array should look like the following.
+
+```json
+"contexts": [
+    "meetingDetailsOrganizer",
+    "onlineMeetingDetailsOrganizer"
+],
+```
+
+1. In the "extensions.ribbons.tabs" array, find the tab with the "builtInTabId" of "TabDefault". Add a child "customMobileRibbonGroups" array to it (as a peer of the existing "groups" property). When you're finished, the "tabs" array should look like the following:
+
+```json
+"tabs": [
+    {
+        "builtInTabId": "TabDefault",
+        "groups": [
+            <-- non-mobile group objects omitted -->
+        ],
+        "customMobileRibbonGroups": [
+            {
+                "id": "mobileApptComposeGroup",
+                "label": "Contoso Meeting",
+                "controls": [
+                    { 
+                        "id": "mobileInsertMeetingButton",
+                        "label": "Add Meeting",
+                        "buttonType": "MobileButton",
+                        "actionId": "insertContosoMeeting",
+                        "icons": [
+                            {
+                                "scale": 1,
+                                "size": 25,
+                               "url": "https://contoso.com/assets/icon-25.png"
+                            },
+                            {
+                                "scale": 1,
+                                "size": 32,
+                                "url": "https://contoso.com/assets/icon-32.png"
+                            },
+                            {
+                                "scale": 1,
+                                "size": 48,
+                                "url": "https://contoso.com/assets/icon-48.png"
+                            },                                
+                            {
+                                "scale": 2,
+                                "size": 25,
+                                "url": "https://contoso.com/assets/icon-25.png"
+                            },
+                            {
+                                "scale": 2,
+                                "size": 32,
+                                "url": "https://contoso.com/assets/icon-32.png"
+                            },
+                            {
+                                "scale": 2,
+                                "size": 48,
+                                "url": "https://contoso.com/assets/icon-48.png"
+                            },                                
+                            {
+                                "scale": 3,
+                                "size": 25,
+                                "url": "https://contoso.com/assets/icon-25.png"
+                            },
+                            {
+                                "scale": 3,
+                                "size": 32,
+                                "url": "https://contoso.com/assets/icon-32.png"
+                            },
+                            {
+                                "scale": 3,
+                                "size": 48,
+                                "url": "https://contoso.com/assets/icon-48.png"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]  
+```
+
+# [XML manifest](#tab/xmlmanifest)
+
+1. In your code editor, open the Outlook quick start project you created.
+
+1. Open the **manifest.xml** file located at the root of your project.
+
+1. Select the entire **\<VersionOverrides\>** node (including open and close tags) and replace it with the following XML.
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    <Description resid="residDescription"></Description>
+    <Requirements>
+      <bt:Sets>
+        <bt:Set Name="Mailbox" MinVersion="1.3"/>
+      </bt:Sets>
+    </Requirements>
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <FunctionFile resid="residFunctionFile"/>
+          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="apptComposeGroup">
+                <Label resid="residDescription"/>
+                <Control xsi:type="Button" id="insertMeetingButton">
+                  <Label resid="residLabel"/>
+                  <Supertip>
+                    <Title resid="residLabel"/>
+                    <Description resid="residTooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon-16"/>
+                    <bt:Image size="32" resid="icon-32"/>
+                    <bt:Image size="64" resid="icon-64"/>
+                    <bt:Image size="80" resid="icon-80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>insertContosoMeeting</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
+        <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
+        <bt:Image id="icon-64" DefaultValue="https://contoso.com/assets/icon-64.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
+        <bt:String id="residLabel" DefaultValue="Add a contoso meeting"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</VersionOverrides>
+```
+
+### Add mobile support
+
+To allow users to create an online meeting from their mobile device, the [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) is configured in the manifest under the parent element **\<MobileFormFactor\>**. This extension point isn't supported in other form factors.
+
+1. In your code editor, open the Outlook quick start project you created.
+
+1. Open the **manifest.xml** file located at the root of your project.
+
+1. Add the following markup as the second child of the **\<Host xsi:type="MailHost"\>** element. It should be a peer of the **\<DesktopFormFactor\>** element.
+
+```xml
+<MobileFormFactor>
+  <FunctionFile resid="residFunctionFile"/>
+  <ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
+    <Control xsi:type="MobileButton" id="insertMeetingButton">
+      <Label resid="residLabel"/>
+      <Icon>
+        <bt:Image size="25" scale="1" resid="icon-16"/>
+        <bt:Image size="25" scale="2" resid="icon-16"/>
+        <bt:Image size="25" scale="3" resid="icon-16"/>
+
+        <bt:Image size="32" scale="1" resid="icon-32"/>
+        <bt:Image size="32" scale="2" resid="icon-32"/>
+        <bt:Image size="32" scale="3" resid="icon-32"/>
+
+        <bt:Image size="48" scale="1" resid="icon-48"/>
+        <bt:Image size="48" scale="2" resid="icon-48"/>
+        <bt:Image size="48" scale="3" resid="icon-48"/>
+      </Icon>
+      <Action xsi:type="ExecuteFunction">
+        <FunctionName>insertContosoMeeting</FunctionName>
+      </Action>
+    </Control>
+  </ExtensionPoint>
+</MobileFormFactor>
+```
+
 ---
 
 > [!TIP]
@@ -431,7 +454,9 @@ As a meeting attendee, you should see a screen similar to the following image wh
 Registering your online-meeting add-in is optional. It only applies if you want to surface the **Join** button in meetings, in addition to the meeting link. Once you've developed your online-meeting add-in and would like to register it, create a GitHub issue using the following guidance. We'll contact you to coordinate a registration timeline.
 
 > [!IMPORTANT]
-> The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows (preview).
+>
+> - The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows (preview).
+> - The **Join** button relies on the technology used by entity-based contextual Outlook add-ins. As this technology will be retired by the end of June 2024, an alternative implementation of the **Join** button is currently being developed. During the transition to this implementation, the **Join** button may not be visible when using an online meeting add-in. As a workaround, you must select the meeting link from the body of the meeting invitation to join the meeting directly. For more information on the retirement of entity-based contextual add-ins, see [Retirement of entity-based contextual Outlook add-ins](https://devblogs.microsoft.com/microsoft365dev/retirement-of-entity-based-contextual-outlook-add-ins/).
 
 1. Create a [new GitHub issue](https://github.com/OfficeDev/office-js/issues/new).
 1. Set the **Title** of the new issue to "Outlook: Register the online-meeting template for my-service", replacing `my-service` with your service name.

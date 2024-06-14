@@ -2,7 +2,7 @@
 title: Browsers and webview controls used by Office Add-ins
 description: Specifies how the operating system and Office version determine what webview is used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 10/31/2023
+ms.date: 04/24/2024
 ms.localizationpriority: medium
 ---
 
@@ -13,7 +13,7 @@ Office Add-ins are web applications that are displayed using iframes when runnin
 Which webview is used depends on:
 
 - The computer's operating system.
-- Whether the add-in is running in Office on the web, in Office downloaded from a Microsoft 365 subscription, or in perpetual Office 2013 or later.
+- Whether the add-in is running in Office on the web, in Office downloaded from a Microsoft 365 subscription, or in perpetual Office 2016 or later.
 - Within the perpetual versions of Office on Windows, whether the add-in is running in the "retail" or "volume-licensed" variation.
 
 > [!IMPORTANT]
@@ -23,7 +23,7 @@ Which webview is used depends on:
 >
 > We recommend (but don't require) that you continue to support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in one of these webviews. Keep these additional points in mind:
 >
-> - Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on the web on these browsers.
+> - Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on these web browsers.
 > - AppSource still tests for combinations of platform and Office *desktop* versions that use Trident or EdgeHTML. However, it only issues a warning when the add-in doesn't support these webviews; the add-in isn't rejected by AppSource.
 > - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Trident.
 >
@@ -43,7 +43,7 @@ For these platforms, the platform alone determines the browser that is used.
 |Android|any|Chrome|
 
 > [!IMPORTANT]
-> [Conditional Access](/azure/active-directory/conditional-access/overview) is not supported for Office Add-ins on iOS or Android. Those add-ins use the Safari-based WKWebView or the Android-based WebView, not an Edge-based browser control.
+> [Conditional Access](/azure/active-directory/conditional-access/overview) isn't supported for Office Add-ins on iOS or Android. Those add-ins use the Safari-based WKWebView or the Android-based WebView, not an Edge-based browser control.
 
 ## Windows
 
@@ -57,9 +57,9 @@ An add-in running on Windows might use any of three different webviews:
 
 For perpetual versions of Office on Windows, the browser that is used is determined by the Office version, whether the license is retail or volume-licensed, and whether the Edge WebView2 (Chromium-based) is installed. The version of Windows doesn't matter, but note that Office Web Add-ins aren't supported on versions earlier than Windows 7 and Office 2021 isn't supported on versions earlier than Windows 10.
 
-To determine whether Office 2016 or Office 2019 is retail or volume-licensed, use the format of the Office version and build number. (For Office 2013 and Office 2021, the distinction between volume-licensed and retail doesn't matter.)
+To determine whether Office 2016 or Office 2019 is retail or volume-licensed, use the format of the Office version and build number. (For Office 2021, the distinction between volume-licensed and retail doesn't matter.)
 
-- **Retail**: For both Office 2016 and 2019, the format is `YYMM (xxxxx.xxxxxx)`, ending with two blocks of five digits; for example, `2206 (Build 15330.20264`.
+- **Retail**: For both Office 2016 and 2019, the format is `YYMM (xxxxx.xxxxxx)`, ending with two blocks of five digits; for example, `2206 (Build 15330.20264)`.
 - **Volume-licensed**:
   - For Office 2016, the format is `16.0.xxxx.xxxxx`, ending with two blocks of *four* digits; for example, `16.0.5197.1000`.
   - For Office 2019, the format is `1808 (xxxxx.xxxxxx)`, ending with two blocks of *five* digits; for example, `1808 (Build 10388.20027)`. Note that the year and month is always `1808`.
@@ -73,7 +73,6 @@ To determine whether Office 2016 or Office 2019 is retail or volume-licensed, us
 | Office 2016 | Retail | Yes<sup>1</sup> | WebView2 (Microsoft Edge<sup>2</sup> Chromium-based) |
 | Office 2016 | Retail | No | EdgeHTML (Microsoft Edge Legacy)<sup>2, 3</sup></br>If Edge isn't installed, Trident+ (Internet Explorer 11) is used. |
 | Office 2016 | Volume-licensed | Doesn't matter | Trident+ (Internet Explorer 11) |
-| Office 2013 | Doesn't matter | Doesn't matter | Trident+ (Internet Explorer 11) |
 
 <sup>1</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with perpetual Office 2021 or later; but it isn't automatically installed with Microsoft Edge. If you have an earlier version of perpetual Office, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 

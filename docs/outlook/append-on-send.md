@@ -1,7 +1,7 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 02/18/2024
+ms.date: 04/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -27,7 +27,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 To configure the manifest, select the tab for the type of manifest you'll use.
 
-# [Unified manifest for Microsoft 365 (developer preview)](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 The following shows how to configure your unified manifest to enable the prepend-on-send and append-on-send features.
 
@@ -393,7 +393,10 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 ## Register the JavaScript functions
 
-1. In the same **commands.js** file, insert the following after the `appendDisclaimerOnSend` function. These calls map the function name specified in the manifest's **\<FunctionName\>** element to its JavaScript counterpart.
+1. In the same **commands.js** file, insert the following after the `appendDisclaimerOnSend` function. These calls map the function name specified in the manifest to its JavaScript counterpart. The location of the function name in the manifest varies depending on the type of manifest your add-in uses.
+
+- **XML manifest**: The function name specified in the **\<FunctionName\>** element.
+- **Unified manifest for Microsoft 365**: The function name specified in the "id" property of the objects in the "extensions.runtimes.actions" array.
 
     ```javascript
     Office.actions.associate("prependHeaderOnSend", prependHeaderOnSend);
@@ -410,8 +413,7 @@ In this section, you'll implement the JavaScript code to append a sample company
     npm start
     ```
 
-    > [!NOTE]
-    > If your add-in wasn't automatically sideloaded, follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. Create a new message, and add yourself to the **To** line.
 

@@ -1,6 +1,14 @@
 {
     "redirections": [
         {
+            "source_path": "docs/testing/debug-with-vs-extension.md",
+            "redirect_url": "/office/dev/add-ins/testing/debug-add-ins-overview"
+        },			
+        {
+            "source_path": "docs/quickstarts/outlook-quickstart-json-manifest.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/outlook-quickstart"
+        },
+        {
             "source_path": "docs/design/using-office-ui-fabric-react.md",
             "redirect_url": "/office/dev/add-ins/quickstarts/fluent-react-quickstart"
         },
@@ -42,7 +50,7 @@
         },
         {
             "source_path": "docs/reference/outlook-api-reference-latest.md",
-            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.13"
+            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.14"
         },
         {
             "source_path": "docs/reference/powerpoint-api-reference.md",
@@ -137,8 +145,12 @@
             "redirect_url": "/office/dev/add-ins/testing/test-debug-office-add-ins"
         },
         {
-            "source_path": "docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md",
-            "redirect_url": "/office/dev/add-ins/word/get-the-whole-document-from-an-add-in-for-word",
+            "source_path": "docs/powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md",
+            "redirect_url": "/office/dev/add-ins/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word"
+        },
+        {
+            "source_path": "docs/word/get-the-whole-document-from-an-add-in-for-word.md",
+            "redirect_url": "/office/dev/add-ins/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word",
             "redirect_document_id": true
         },
         {

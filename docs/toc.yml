@@ -120,13 +120,10 @@ items:
         href: develop/xml-manifest-overview.md
       - name: Office Add-ins with the unified manifest for Microsoft 365
         href: develop/unified-manifest-overview.md
-        displayName: preview
       - name: Compare the XML manifest with the unified manifest for Microsoft 365
         href: develop/json-manifest-overview.md
-        displayName: preview
       - name: Convert an add-in to use the unified manifest for Microsoft 365
         href: develop/convert-xml-to-json-manifest.md
-        displayName: preview
       - name: Manifest reference
         href: reference/manifest-reference.md
       - name: Extended overrides
@@ -154,15 +151,15 @@ items:
       items:
       - name: Overview
         href: develop/overview-authn-authz.md
-      - name: Single sign-on (SSO)
+      - name: Single sign-on with on-behalf-of flow
         items:
-        - name: Enable SSO in an Office Add-in
+        - name: Enable SSO using on-behalf-of flow
           href: develop/sso-in-office-add-ins.md
         - name: Quick start
           href: quickstarts/sso-quickstart.md
         - name: Register with Microsoft identity platform
           href: develop/register-sso-add-in-aad-v2.md
-        - name: Grant administrator consent
+        - name: Grant or revoke administrator consent
           href: develop/grant-admin-consent-to-an-add-in.md
         - name: Get the identity token
           href: develop/use-sso-to-get-office-signed-in-user-token.md
@@ -174,6 +171,8 @@ items:
           href: develop/create-sso-office-add-ins-nodejs.md
         - name: Troubleshoot error messages
           href: develop/troubleshoot-sso-in-office-add-ins.md
+      - name: Enable SSO using nested app authentication
+        href: develop/enable-nested-app-authentication-in-your-add-in.md
       - name: Office dialog API
         href: develop/auth-with-office-dialog-api.md      
       - name: Identity providers
@@ -283,7 +282,7 @@ items:
         href: develop/add-ins-with-angular2.md
       - name: Create add-ins with the Yeoman Generator
         href: develop/yeoman-generator-overview.md
-      - name: Create add-ins with the Teams Toolkit (preview)
+      - name: Create add-ins with the Teams Toolkit
         href: develop/teams-toolkit-overview.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
@@ -323,8 +322,6 @@ items:
         href: testing/debug-add-ins-using-devtools-edge-chromium.md
       - name: Debug using Visual Studio Code and Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
-      - name: Debug using Visual Studio Code and Edge Legacy WebView
-        href: testing/debug-with-vs-extension.md
       - name: Debug Office Add-ins in Visual Studio
         href: develop/debug-office-add-ins-in-visual-studio.md
       - name: Test with Trident
@@ -394,7 +391,7 @@ items:
       - name: Host an Office Add-in on Microsoft Azure
         href: publish/host-an-office-add-in-on-microsoft-azure.md
     - name: Publish add-ins to AppSource
-      href: /office/dev/store/submit-to-the-office-store
+      href: publish/publish-office-add-ins-to-appsource.md
     - name: AppSource validation policies
       href: /legal/marketplace/certification-policies
     - name: Publish add-ins to a SharePoint app catalog
@@ -657,9 +654,6 @@ items:
   - name: Build your first Outlook add-in
     href: quickstarts/outlook-quickstart.md
     displayName: Outlook
-  - name: Build an Outlook add-in with the unified manifest for Microsoft 365
-    href: quickstarts/outlook-quickstart-json-manifest.md
-    displayName: Outlook, preview
   - name: Outlook add-in tutorial
     href: tutorials/outlook-tutorial.md
     displayName: Outlook
@@ -715,7 +709,6 @@ items:
       href: outlook/append-on-send.md
     - name: Implement a spam reporting add-in
       href: outlook/spam-reporting.md
-      displayName: preview
     - name: Event-based activation
       items:
       - name: Implement an event-based add-in
@@ -819,6 +812,8 @@ items:
         href: outlook/inside-the-identity-token.md
       - name: "Scenario: Implement single sign-on"
         href: outlook/implement-sso-in-outlook-add-in.md
+      - name: Legacy token deprecation FAQ 
+        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.yml
     - name: Testing and tips
       items:
       - name: Overview
@@ -869,7 +864,7 @@ items:
       href: powerpoint/insert-slides-into-presentation.md
       displayName: PowerPoint
     - name: Get the whole document from an add-in
-      href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
+      href: develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md
       displayName: PowerPoint
     - name: Use custom tags on presentations, slides, and shapes
       href: powerpoint/tagging-presentations-slides-shapes.md
@@ -943,7 +938,7 @@ items:
       href: word/dictionary-task-pane-add-ins.md
       displayName: Word
     - name: Get the whole document from an add-in
-      href: word/get-the-whole-document-from-an-add-in-for-word.md
+      href: develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md
       displayName: Word
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
@@ -959,6 +954,9 @@ items:
       displayName: Word
 - name: Resources
   items:
+  - name: GitHub Copilot prompt library
+    href: resources/resources-github-copilot-prompt-library.md
+    displayName: Excel, Word, PowerPoint
   - name: Glossary
     href: resources/resources-glossary.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook

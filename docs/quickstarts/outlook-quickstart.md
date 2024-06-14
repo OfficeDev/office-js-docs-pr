@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 02/29/2024
+ms.date: 04/12/2024
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -20,7 +20,7 @@ You can create an Office Add-in by using the Yeoman generator for Office Add-ins
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Outlook 2016 or later on Windows (connected to a Microsoft 365 account), Outlook on Mac, Outlook on the web, or [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
+- Outlook on the web, [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), Outlook 2016 or later on Windows (connected to a Microsoft 365 account), or Outlook on Mac.
 
 ### Create the add-in project
 
@@ -34,7 +34,15 @@ You can create an Office Add-in by using the Yeoman generator for Office Add-ins
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    ![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-outlook-1.png)
+    - **Which manifest would you like to use?** - Choose either `unified manifest for Microsoft 365` or `XML manifest`
+
+    [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)]
+
+    Depending on your choice of manifest, the prompts and answers should look like one of the following.
+
+    ![The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and XML manifest are chosen.](../images/yo-office-outlook-xml-manifest-javascript.png)
+
+    ![The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and unified manifest are chosen.](../images/yo-office-outlook-json-manifest-javascript.png)
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
@@ -50,9 +58,9 @@ You can create an Office Add-in by using the Yeoman generator for Office Add-ins
 
 ### Explore the project
 
-The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.
+The Yeoman generator creates a project in a folder with the project name that you chose. The project contains sample code for a very basic task pane add-in. The following are the most important files.
 
-- The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
+- The **./manifest.json** or **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
 - The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
 - The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
 - The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and Outlook.
@@ -115,11 +123,13 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. Run the following command in the root directory of your project. When you run this command, the local web server starts and your add-in will be sideloaded.
+1. Run the following command in the root directory of your project. When you run this command, the local web server starts and your add-in is sideloaded.
 
     ```command&nbsp;line
     npm start
     ```
+
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. In Outlook, view a message in the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0), or open the message in its own window.
 
