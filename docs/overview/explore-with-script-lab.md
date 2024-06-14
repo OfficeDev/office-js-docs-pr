@@ -49,7 +49,7 @@ To call preview APIs within a snippet, you need to update the snippet's librarie
 
 By default, snippets that you open in Script Lab are saved to your browser cache or local storage. To save a snippet permanently, select **Copy** and paste the resulting clipboard content into a new .yml file. Use this to share snippets with colleagues or provide code for community sites, such as Stack Overflow.
 
-To import a snippet into Script Lab, select **Import** from the menu and paste in the complete YAML for the snippet. If you have saved the YAML as a [GitHub gist](https://gist.github.com/), you can paste a link to the gist instead.
+To import a snippet into Script Lab, select **Import** from the menu and paste in the complete YAML for the snippet. If you've saved the YAML as a [GitHub gist](https://gist.github.com/), you can paste a link to the gist instead.
 
 ## Supported clients
 
