@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 05/20/2024
+ms.date: 06/18/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -268,7 +268,19 @@ You can use Markdown to format the message of a Smart Alerts dialog. However, on
 
     :::image type="content" source="../images/outlook-smart-alerts-list.png" alt-text="A sample Smart Alerts dialog containing a bulleted list.":::
 
-- Links. To create a link, enclose your link text in square brackets (`[]`), then enclose the URL in parentheses (`()`). The angle brackets format (`<>`) isn't supported.
+- Numbered or ordered lists. To create an item in the list, begin with a number followed by a period, add the content, then append `\r` to signify item completion. The first item of the list must start with the number one (`1.`) and the succeeding numbers must be in numerical order.
+
+    ```javascript
+    event.completed({
+      allowEvent: false,
+      ...
+      errorMessageMarkdown: "Help your recipients know your intentions when you send a mail item. To set the sensitivity level of an item:\n\n1. Select **File** > **Properties**.\r2. From the **Sensitivity** dropdown, select **Normal**, **Personal**, **Private**, or **Confidential**.\r3. Select **Close**.\r"
+    });
+    ```
+
+    :::image type="content" source="../images/outlook-smart-alerts-numbered-list.png" alt-text="A sample Smart Alerts dialog containing a numbered list.":::
+
+- Links. To create a link, enclose your link text in square brackets (`[]`), then enclose the HTTPS URL in parentheses (`()`). The angle brackets format (`<>`) isn't supported.
 
     ```javascript
     event.completed({
