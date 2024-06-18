@@ -1,7 +1,7 @@
 ---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: Enable compatibility between your Office Add-in and equivalent COM add-in.
-ms.date: 02/07/2023
+ms.date: 06/20/2024
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,15 @@ You can configure your Office Add-in so that when the equivalent COM add-in is a
 
 ## Specify an equivalent COM add-in
 
-### Manifest
+### Obtain the ProgId of a COM add-in
+
+Before you can specify an equivalent COM add-in, you must first identify its `ProgId`. To obtain the `ProgId` of a COM add-in:
+
+1. Open Windows Registry Editor on the computer where the COM add-in is installed.
+1. Go to **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\\*<application\>*\Addins** or **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\\*<application\>*\Addins**.
+1. Copy the name of the registry key associated with the COM add-in you need. Note that the names are case-sensitive.
+
+### Configure the manifest
 
 > [!IMPORTANT]
 > Applies to Excel, Outlook, PowerPoint, and Word.
@@ -41,12 +49,12 @@ The following example shows the portion of the manifest that specifies a COM add
 > [!TIP]
 > For information about COM add-in and XLL UDF compatibility, see [Make your custom functions compatible with XLL user-defined functions](../excel/make-custom-functions-compatible-with-xll-udf.md). Not applicable for Outlook.
 
-### Group policy
+### Configure the Group Policy setting
 
 > [!IMPORTANT]
 > Applies to Outlook only.
 
-To declare compatibility between your Outlook web add-in and COM/VSTO add-in, identify the equivalent COM add-in in the group policy **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** by configuring it on the user's machine. Then, Outlook on Windows will use the COM add-in instead of the web add-in, if they're both installed.
+To declare compatibility between your Outlook web add-in and COM/VSTO add-in, identify the equivalent COM add-in in the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting. This must be configured on the user's machine. Then, Outlook on Windows will use the COM add-in instead of the web add-in, if they're both installed.
 
 1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030), paying attention to the tool's **Install Instructions**.
 1. Open the Local Group Policy Editor (**gpedit.msc**).
