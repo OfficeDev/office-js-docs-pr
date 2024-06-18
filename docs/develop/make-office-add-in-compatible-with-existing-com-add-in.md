@@ -1,7 +1,7 @@
 ---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: Enable compatibility between your Office Add-in and equivalent COM add-in.
-ms.date: 06/20/2024
+ms.date: 06/18/2024
 ms.localizationpriority: medium
 ---
 
@@ -22,7 +22,7 @@ You can configure your Office Add-in so that when the equivalent COM add-in is a
 Before you can specify an equivalent COM add-in, you must first identify its `ProgId`. To obtain the `ProgId` of a COM add-in:
 
 1. Open Windows Registry Editor on the computer where the COM add-in is installed.
-1. Go to **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\\*<application\>*\Addins** or **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\\*<application\>*\Addins**.
+1. Go to **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\\*<Office application\>*\Addins** or **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\\*<Office application\>*\Addins**, where *\<Office application\>* is Excel, Outlook, PowerPoint, or Word. For example, **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\Excel\Addins**.
 1. Copy the name of the registry key associated with the COM add-in you need. Note that the names are case-sensitive.
 
 ### Configure the manifest
