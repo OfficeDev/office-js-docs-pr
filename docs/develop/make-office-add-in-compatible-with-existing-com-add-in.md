@@ -54,7 +54,7 @@ The following example shows the portion of the manifest that specifies a COM add
 > [!IMPORTANT]
 > Applies to Outlook only.
 
-To declare compatibility between your Outlook web add-in and COM/VSTO add-in, identify the equivalent COM add-in in the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting. This must be configured on the user's machine. Then, Outlook on Windows will use the COM add-in instead of the web add-in, if they're both installed.
+To declare compatibility between your Outlook web add-in and COM add-in, identify the equivalent COM add-in in the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting. This must be configured on the user's machine. Then, Outlook on Windows will use the COM add-in instead of the web add-in, if they're both installed.
 
 1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030), paying attention to the tool's **Install Instructions**.
 1. Open the Local Group Policy Editor (**gpedit.msc**).
@@ -63,7 +63,7 @@ To declare compatibility between your Outlook web add-in and COM/VSTO add-in, id
 1. Open the link to edit the policy setting.
 1. In the dialog **Outlook web add-ins to deactivate**:
     1. Set **Value name** to the `Id` found in the web add-in's manifest. **Important**: Do *not* add curly braces `{}` around the entry.
-    1. Set **Value** to the `ProgId` of the equivalent COM/VSTO add-in.
+    1. Set **Value** to the `ProgId` of the equivalent COM add-in.
     1. Select **OK** to put the update into effect.
 
     ![The "Outlook web add-ins to deactivate" dialog.](../images/outlook-deactivate-gpo-dialog.png)
@@ -114,9 +114,9 @@ After you specify an equivalent COM add-in for your Office Add-in, Office stops 
 
 ### Outlook
 
-The COM/VSTO add-in must be connected when Outlook is started in order for the corresponding web add-in to be disabled.
+The COM add-in must be connected when Outlook is started in order for the corresponding web add-in to be disabled.
 
-If the COM/VSTO add-in is then disconnected during a subsequent Outlook session, the web add-in will likely remain disabled until Outlook is restarted.
+If the COM add-in is then disconnected during a subsequent Outlook session, the web add-in will likely remain disabled until Outlook is restarted.
 
 ## See also
 
