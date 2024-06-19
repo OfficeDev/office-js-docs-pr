@@ -1,7 +1,7 @@
 ---
 title: Use document themes in your PowerPoint add-ins
-description: Learn how to visually coordinate themes such as fonts and colors to apply to presentations, documents, worksheets, and emails.
-ms.date: 07/08/2021
+description: Learn how to visually coordinate themes, such as fonts and colors, to apply to PowerPoint presentations.
+ms.date: 06/18/2024
 ms.localizationpriority: medium
 ---
 
@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 
 An [Office theme](https://support.microsoft.com/office/83e68627-2c17-454a-9fd8-62deb81951a6) consists, in part, of a visually coordinated set of fonts and colors that you can apply to presentations, documents, worksheets, and emails. To apply or customize the theme of a presentation in PowerPoint, you use the **Themes** and **Variants** groups on **Design** tab of the ribbon. PowerPoint assigns a new blank presentation with the default **Office Theme**, but you can choose other themes available on the **Design** tab, download additional themes from Office.com, or create and customize your own theme.
 
-Using OfficeThemes.css, design add-ins that are coordinated with PowerPoint in two ways.
+Using **OfficeThemes.css**, design add-ins that are coordinated with PowerPoint in two ways.
 
-- **In content add-ins for PowerPoint**. Use the document theme classes of OfficeThemes.css to specify fonts and colors that match the theme of the presentation your content add-in is inserted into - and those fonts and colors will dynamically update if a user changes or customizes the presentation's theme.
-    
-- **In task pane add-ins for PowerPoint**. Use the Office UI theme classes of OfficeThemes.css to specify the same fonts and background colors used in the UI so that your task pane add-ins will match the colors of built-in task panes - and those colors will dynamically update if a user changes the Office UI theme.
+- **In content add-ins for PowerPoint**. Use the document theme classes of **OfficeThemes.css** to specify fonts and colors that match the theme of the presentation your content add-in is inserted into - and those fonts and colors will dynamically update if a user changes or customizes the presentation's theme.
+
+- **In task pane add-ins for PowerPoint**. Use the Office UI theme classes of **OfficeThemes.css** to specify the same fonts and background colors used in the UI so that your task pane add-ins will match the colors of built-in task panes - and those colors will dynamically update if a user changes the Office UI theme.
 
 ## Document theme colors
 
@@ -43,28 +43,28 @@ Office also lets you choose between several predefined themes that specify some 
 
 ![Office theme drop-down.](../images/office15-app-office-theme-picker.png)
 
-OfficeThemes.css includes classes that you can use in your task pane add-ins for PowerPoint so they will use these same fonts and colors. This lets you design your task pane add-ins that match the appearance of built-in task panes.
+**OfficeThemes.css** includes classes that you can use in your task pane add-ins for PowerPoint so they will use these same fonts and colors. This lets you design your task pane add-ins that match the appearance of built-in task panes.
 
 ## Use OfficeThemes.css
 
-Using the OfficeThemes.css file with your content add-ins for PowerPoint lets you coordinate the appearance of your add-in with the theme applied to the presentation it's running with. Using the OfficeThemes.css file with your task pane add-ins for PowerPoint lets you coordinate the appearance of your add-in with the fonts and colors of the Office UI.
+Using the **OfficeThemes.css** file with your content add-ins for PowerPoint lets you coordinate the appearance of your add-in with the theme applied to the presentation it's running with. Using the **OfficeThemes.css** file with your task pane add-ins for PowerPoint lets you coordinate the appearance of your add-in with the fonts and colors of the Office UI.
 
 ## Add the OfficeThemes.css file to your project
 
-Use the following steps to add and reference the OfficeThemes.css file to your add-in project.
+Use the following steps to add and reference the **OfficeThemes.css** file to your add-in project.
 
 > [!NOTE]
-> The steps in this procedure only apply to Visual Studio 2015. If you are using Visual Studio 2019, the OfficeThemes.css file is created automatically for any new PowerPoint add-in projects that you create.
+> The steps in this procedure only apply to Visual Studio 2015. If you are using Visual Studio 2019, the **OfficeThemes.css** file is created automatically for any new PowerPoint add-in projects that you create.
 
 1. In **Solution Explorer**, right-click the **Content** folder in the _**project_name**_**Web** project, choose **Add**, and then select **Style Sheet**.
-    
-2. Name the new style sheet **OfficeThemes**.
-    
+
+1. Name the new style sheet **OfficeThemes**.
+
    > [!IMPORTANT]
    > The style sheet must be named OfficeThemes, or the feature that dynamically updates add-in fonts and colors when a user changes the theme won't work.
-   
-3. Delete the default **body** class (`body {}`) in the file, and copy and paste the following CSS code into the file.
-    
+
+1. Delete the default **body** class (`body {}`) in the file, and copy and paste the following CSS code into the file.
+
     ```css
     /* The following classes describe the common theme information for office documents */ 
 
@@ -122,11 +122,12 @@ Use the following steps to add and reference the OfficeThemes.css file to your a
     .office-officeTheme-secondary-fontColor { color:#262626; } 
     .office-officeTheme-secondary-bgColor { background-color:#ffffff; }
     ```
-4. If you are using a tool other than Visual Studio to create your add-in, copy the CSS code from step 3 into a text file, making sure to save the file as OfficeThemes.css.   
+
+1. If you are using a tool other than Visual Studio to create your add-in, copy the CSS code from the previous step into a text file. Then, save the file as **OfficeThemes.css**.
 
 ## Reference OfficeThemes.css in your add-in's HTML pages
 
-To use the OfficeThemes.css file in your add-in project, add a `<link>` tag that references the OfficeThemes.css file inside the `<head>` tag of the web pages (such as an .html, .aspx, or .php file) that implement the UI of your add-in in this format.
+To use the **OfficeThemes.css** file in your add-in project, add a `<link>` tag that references the **OfficeThemes.css** file inside the `<head>` tag of the web pages (such as an .html, .aspx, or .php file) that implement the UI of your add-in in this format.
 
 ```HTML
 <link href="<local_path_to_OfficeThemes.css>" rel="stylesheet" type="text/css" />
@@ -136,25 +137,25 @@ To do this in Visual Studio, follow these steps.
 
 1. Choose **Create a new project**.
 
-2. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
+1. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
 
-3. Name your project and select **Create**.
+1. Name your project and select **Create**.
 
-3. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
+1. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
 
-4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+1. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
-5. In the HTML pages that implement the UI of your add-in, such as Home.html in the default template, add the following `<link>` tag inside the `<head>` tag that references the OfficeThemes.css file.
-    
+1. In the HTML pages that implement the UI of your add-in, such as Home.html in the default template, add the following `<link>` tag inside the `<head>` tag that references the **OfficeThemes.css** file.
+
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />
     ```
 
-If you are creating your add-in with a tool other than Visual Studio, add a `<link>` tag with the same format specifying a relative path to the copy of OfficeThemes.css that will be deployed with your add-in.
+If you are creating your add-in with a tool other than Visual Studio, add a `<link>` tag with the same format specifying a relative path to the copy of **OfficeThemes.css** that will be deployed with your add-in.
 
 ### Use OfficeThemes.css document theme classes in your content add-in's HTML page
 
-The following shows a simple example of HTML in a content add-in that uses the OfficeTheme.css document theme classes. For details about the OfficeThemes.css classes that correspond to the 12 colors and 2 fonts used in a document theme, see [Theme classes for content add-ins](#theme-classes-for-content-add-ins).
+The following shows a simple example of HTML in a content add-in that uses the OfficeTheme.css document theme classes. For details about the **OfficeThemes.css** classes that correspond to the 12 colors and 2 fonts used in a document theme, see [Theme classes for content add-ins](#theme-classes-for-content-add-ins).
 
 ```HTML
 <body>
@@ -175,7 +176,7 @@ At runtime, when inserted into a presentation that uses the default **Office The
 
 ![Content app running with Office theme.](../images/office15-app-content-app-office-theme.png)
 
-If you change the presentation to use another theme or customize the presentation's theme, the fonts and colors specified with OfficeThemes.css classes will dynamically update to correspond to the fonts and colors of the presentation's theme. Using the same HTML example as above, if the presentation the add-in is inserted into uses the **Facet** theme, the add-in rendering will look like this.
+If you change the presentation to use another theme or customize the presentation's theme, the fonts and colors specified with **OfficeThemes.css** classes will dynamically update to correspond to the fonts and colors of the presentation's theme. Using the same HTML example as above, if the presentation the add-in is inserted into uses the **Facet** theme, the add-in rendering will look like this.
 
 ![Content app running with Facet theme.](../images/office15-app-content-app-facet-theme.png)
 
@@ -183,7 +184,7 @@ If you change the presentation to use another theme or customize the presentatio
 
 In addition to the document theme, users can customize the color scheme of the Office user interface for all Office applications using the **File** > **Account** > **Office Theme** drop-down box.
 
-The following shows a simple example of HTML in a task pane add-in that uses OfficeTheme.css classes to specify font color and background color. For details about the OfficeThemes.css classes that correspond to fonts and colors of the Office UI theme, see [Theme classes for task pane add-ins](#theme-classes-for-task-pane-add-ins).
+The following shows a simple example of HTML in a task pane add-in that uses OfficeTheme.css classes to specify font color and background color. For details about the **OfficeThemes.css** classes that correspond to fonts and colors of the Office UI theme, see [Theme classes for task pane add-ins](#theme-classes-for-task-pane-add-ins).
 
 ```HTML
 <body> 
@@ -207,17 +208,17 @@ When running in PowerPoint with **File** > **Account** > **Office Theme** set to
 
 ![Task pane with Office White theme.](../images/office15-app-task-pane-theme-white.png)
 
-If you change **OfficeTheme** to **Dark Gray**, the fonts and colors specified with OfficeThemes.css classes will dynamically update to render like this.
+If you change **OfficeTheme** to **Dark Gray**, the fonts and colors specified with **OfficeThemes.css** classes will dynamically update to render like this.
 
 ![Task pane with Office Dark Gray theme.](../images/office15-app-task-pane-theme-dark-gray.png)
 
 ## OfficeTheme.css classes
 
-The OfficeThemes.css file contains two sets of classes you can use with your content and task pane add-ins for PowerPoint.
+The **OfficeThemes.css** file contains two sets of classes you can use with your content and task pane add-ins for PowerPoint.
 
 ### Theme classes for content add-ins
 
-The OfficeThemes.css file provides classes that correspond to the 2 fonts and 12 colors used in a document theme. These classes are appropriate to use with content add-ins for PowerPoint so that your add-in's fonts and colors will be coordinated with the presentation it's inserted into.
+The **OfficeThemes.css** file provides classes that correspond to the 2 fonts and 12 colors used in a document theme. These classes are appropriate to use with content add-ins for PowerPoint so that your add-in's fonts and colors will be coordinated with the presentation it's inserted into.
 
 ### Theme fonts for content add-ins
 
@@ -267,7 +268,7 @@ The following screenshot shows examples of all of the theme color classes (excep
 
 ### Theme classes for task pane add-ins
 
-The OfficeThemes.css file provides classes that correspond to the 4 colors assigned to fonts and backgrounds used by the Office application UI theme. These classes are appropriate to use with task add-ins for PowerPoint so that your add-in's colors will be coordinated with the other built-in task panes in Office.
+The **OfficeThemes.css** file provides classes that correspond to the four colors assigned to fonts and backgrounds used by the Office application UI theme. These classes are appropriate to use with task add-ins for PowerPoint, so that your add-in's colors are coordinated with the other built-in task panes in Office.
 
 ### Theme font and background colors for task pane add-ins
 
