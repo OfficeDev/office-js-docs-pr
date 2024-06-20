@@ -62,7 +62,7 @@ In this article, you'll walk through the process of building an Excel [content a
 
 1. Ensure that there's text in the worksheet, then select any range of cells containing text in the worksheet.
 
-1. Select the tab for the template you chose and then follow the instructions.
+1. Select the tab for the template you chose, then follow the instructions.
 
     # [Basic Add-in](#tab/basic)
 
