@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 06/18/2024
+ms.date: 06/25/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -280,7 +280,7 @@ You can use Markdown to format the message of a Smart Alerts dialog. However, on
 
     :::image type="content" source="../images/outlook-smart-alerts-numbered-list.png" alt-text="A sample Smart Alerts dialog containing a numbered list.":::
 
-- Links. To create a link, enclose your link text in square brackets (`[]`), then enclose the HTTPS URL in parentheses (`()`). The angle brackets format (`<>`) isn't supported.
+- Links. To create a link, enclose your link text in square brackets (`[]`), then enclose the HTTPS URL in parentheses (`()`). You must provide an HTTPS URL, otherwise it won't render as a link that a user can select from the dialog. The angle brackets format (`<>`) isn't supported.
 
     ```javascript
     event.completed({
