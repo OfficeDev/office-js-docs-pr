@@ -1,7 +1,7 @@
 ---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 06/18/2024
+ms.date: 06/25/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,24 +17,23 @@ To learn how to implement an event-based add-in for Outlook on Windows (classic 
 > [!NOTE]
 > Outlook on Android and on iOS only support up to Mailbox requirement set 1.5. However, to support the event-based activation feature, some APIs from later requirement sets have been enabled on mobile clients. For more information on this exception, see [Additional supported APIs](#additional-supported-apis).
 
-## Supported events
+## Supported events and clients
 
-For a list of events supported in Outlook on Android and on iOS, see the "Supported events" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#supported-events).
-
-## Supported clients
-
-The add-in you develop in this walkthrough is supported in Outlook on Android and on iOS starting in Version 4.2352.0. You must have a Microsoft 365 subscription to run the feature.
+| Event canonical name and XML manifest name | Unified app manifest for Microsoft 365 name | Description | Supported clients |
+| ----- | ----- | ----- | ----- |
+| `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0)</li><li>iOS (Version 4.2352.0)</li></ul> |
+| `OnMessageRecipientsChanged` | Not available | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul> |
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+To run the feature, you must have a supported version of Outlook on Android or on iOS (see [Supported events and clients](#supported-events-and-clients)) and a Microsoft 365 subscription. Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 
 The steps for configuring the manifest depend on which type of manifest you selected in the quick start.
 
 > [!NOTE]
-> When developing an event-based add-in to run on Outlook on Android and on iOS, note that the unified app manifest for Microsoft 365 can only be used if the add-in handles the `OnNewMessageCompose` event.
+> When developing an event-based add-in to run on Outlook on Android and on iOS, note that the unified app manifest for Microsoft 365 can only be used if the add-in handles certain events. To learn which events are supported, see [Supported events and clients](#supported-events-and-clients).
 
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -68,7 +67,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 1. Add an object like the following to the "autoRunEvents" array. Note the following about this code:
 
    - The "events" property maps handlers to events.
-   - The "events.type" must be one of the types listed at [Supported events](autolaunch.md#supported-events).
+   - The "events.type" must be one of the types listed at [Supported events and clients](#supported-events-and-clients).
    - The value of the "events.actionId" is the name of a function that you create in [Implement the event handler](#implement-the-event-handler).
    - You can have more than one object in the "events" array.
 
@@ -78,7 +77,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
               "capabilities": [
                   {
                       "name": "Mailbox",
-                      "minVersion": "1.10"
+                      "minVersion": "1.5"
                   }
               ],
               "scopes": [
