@@ -1,7 +1,7 @@
 ---
 title: Contextual Outlook add-ins
 description: Initiate tasks related to a message without leaving the message itself to result in an easier and richer user experience.
-ms.date: 01/19/2024
+ms.date: 06/20/2024
 ms.localizationpriority: medium
 ---
 
@@ -77,6 +77,13 @@ The following contextual add-ins are installed by default for users with Outlook
 
 - Bing Maps
 - Suggested Meetings
+
+> [!IMPORTANT]
+> Because the Bing Maps and Suggested Meetings add-ins rely on the entity-based contextual feature, these add-ins will be retired at the end of June 2024.
+>
+> Although the Action Items add-in isn't installed by default in Outlook, it will also be retired at the end of June 2024.
+>
+> For more information, see [Retirement of entity-based contextual Outlook add-ins](https://devblogs.microsoft.com/microsoft365dev/retirement-of-entity-based-contextual-outlook-add-ins/).
 
 ## See also
 
