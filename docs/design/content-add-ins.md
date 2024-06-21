@@ -48,7 +48,7 @@ There are minor differences in the manifests between content add-ins and add-ins
 
 For a sample that implements a content add-in, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) on GitHub.
 
-To create your own content add-in, see the [Excel content add-in quick start](../quickstarts/excel-quickstart-content.md).
+To create your own content add-in, see the [Excel content add-in quick start](../quickstarts/excel-quickstart-content.md) and [PowerPoint content add-in quick start](../quickstarts/powerpoint-quickstart-content.md).
 
 ## Support considerations
 
