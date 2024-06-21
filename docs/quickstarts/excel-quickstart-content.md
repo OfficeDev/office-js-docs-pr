@@ -66,15 +66,15 @@ In this article, you'll walk through the process of building an Excel [content a
 
     # [Basic Add-in](#tab/basic)
 
-    In the content add-in, choose the **Get data from selection** button to get the text from the selected range.
+    - In the content add-in, choose the **Get data from selection** button to get the text from the selected range.
 
-    ![The add-in content open in Excel.](../images/excel-quickstart-content-basic-ui.png)
+      ![The add-in content open in Excel.](../images/excel-quickstart-content-basic-ui.png)
 
     # [Document Visualization Add-in](#tab/advanced)
 
-    In the content add-in, choose the **Insert sample data** button to add sample data to the worksheet and display a visualization.
+    - In the content add-in, choose the **Insert sample data** button to add sample data to the worksheet and display a visualization.
 
-    ![The add-in content visualization open in Excel.](../images/excel-quickstart-content-advanced-visualization.png)
+      ![The add-in content visualization open in Excel.](../images/excel-quickstart-content-advanced-visualization.png)
 
     ---
 
