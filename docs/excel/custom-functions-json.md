@@ -200,7 +200,8 @@ The `parameters` property is an array of parameter objects. The following table 
 >             "cellValueType": "??"
 >     }
 > ]
- 
+> ```
+
 ### result
 
 The `result` object defines the type of information that is returned by the function. The following table lists the properties of the `result` object.
