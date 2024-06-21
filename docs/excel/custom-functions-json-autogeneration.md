@@ -1,7 +1,7 @@
 ---
 title: Autogenerate JSON metadata for custom functions
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
-ms.date: 07/11/2023
+ms.date: 06/21/2024
 ms.localizationpriority: medium
 ---
 
@@ -408,6 +408,12 @@ A streaming function can indicate an error by calling `setResult()` with an Erro
 ### Promise
 
 A custom function can return a promise that provides the value when the promise is resolved. If the promise is rejected, then the custom function will throw an error.
+
+### Cell value type
+
+JavaScript Syntax: @param {any} [cellValueType] name description
+
+Use the `type` subfield `cellValueType` to specify that a custom function accept and return Excel data types. The `type` value must be `any` to use the `cellValueType` subfield. Accepted `cellValueType` values are ??, ??, ??. 
 
 ### Other types
 
