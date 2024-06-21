@@ -28,6 +28,10 @@ The following table lists supported client-server combinations for the Smart Ale
 |**Android**|Not applicable|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 
+## Try out Smart Alerts in an event-based add-in
+
+To see Smart Alerts in action, try out the [walkthrough](smart-alerts-onmessagesend-walkthrough.md). You'll create an add-in that checks whether a document or picture is attached to a message before it's sent.
+
 ## Smart Alerts feature behavior and scenarios
 
 The following sections include guidance on the send mode options and the behavior of the feature in certain scenarios.
@@ -341,13 +345,8 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 |**Add-in deployment**|Add-in can be published to AppSource if its send mode property is set to the **soft block** or **prompt user** option. Otherwise, the add-in must be deployed by an organization's administrator.|Add-in can't be published to AppSource. It must be deployed by an organization's administrator.|
 |**Additional configuration for add-in installation**|No additional configuration is needed once the manifest is uploaded to the Microsoft 365 admin center.|Depending on the organization's compliance standards and the Outlook client used, certain mailbox policies must be configured to install the add-in.|
 
-## Try out Smart Alerts in an event-based add-in
-
-Ready to implement Smart Alerts in an event-based add-in? Try out the [walkthrough](smart-alerts-onmessagesend-walkthrough.md) where you'll create an add-in that checks whether a document or picture is attached to a message before it's sent.
-
 ## See also
 
-- [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
 - [Office Add-ins code sample: Office Add-ins code sample: Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
