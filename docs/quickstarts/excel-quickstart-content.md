@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel content add-in
 description: Learn how to build a simple Excel content add-in by using the Office JS API.
-ms.date: 06/20/2024
+ms.date: 06/25/2024
 ms.service: excel
 ms.localizationpriority: medium
 ---
