@@ -17,7 +17,7 @@ Use **Microsoft 365 Admin Center** or **Azure Admin Center**  for any **business
 |:------------|:------------|
 | **Microsoft 365 product issues and failures** | If you have a Premier support contract for Microsoft 365, visit the Microsoft 365 Admin Center and use the Support menu to [open a service request](https://admin.microsoft.com/). |
 | **Azure help and support** | If you have a paid Azure subscription, visit the Azure Admin Center to [open a ticket](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportreq). |
-| **General questions about Microsoft 365** | If you have general questions about Microsoft 365 or Office, submit your questions on [Microsoft 365 and Office Community](https://answers.microsoft.com/msoffice/forum).|
+| **General questions about Microsoft 365** | If you have general questions about Microsoft 365 or Office, submit your questions on [Microsoft 365 and Office Community](https://answers.microsoft.com).|
 
 ## Developer community help
 
