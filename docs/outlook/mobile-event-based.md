@@ -33,7 +33,7 @@ To run the feature, you must have a supported version of Outlook on Android or o
 The steps for configuring the manifest depend on which type of manifest you selected in the quick start.
 
 > [!NOTE]
-> When developing an event-based add-in to run on Outlook on Android and on iOS, note that the unified app manifest for Microsoft 365 can only be used if the add-in handles certain events. To learn which events are supported, see [Supported events and clients](#supported-events-and-clients).
+> When developing an event-based add-in to run in Outlook on Android and on iOS, note that the unified app manifest for Microsoft 365 can only be used if the add-in handles certain events. To learn which events are supported, see [Supported events and clients](#supported-events-and-clients).
 
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
