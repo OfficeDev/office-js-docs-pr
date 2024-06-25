@@ -420,6 +420,9 @@ items:
     - name: Task pane (Vue)
       href: quickstarts/excel-quickstart-vue.md
       displayName: Excel
+    - name: Content
+      href: quickstarts/excel-quickstart-content.md
+      displayName: Excel
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.md
     displayName: Excel
