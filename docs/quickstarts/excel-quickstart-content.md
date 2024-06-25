@@ -24,9 +24,9 @@ In this article, you'll walk through the process of building an Excel [content a
 
 1. Name your project **ExcelWebAddIn1** and select **Create**.
 
-1. In the **Create Office Add-in** dialog window, choose **Insert content into Excel spreadsheets** add-in type, then choose **Next**.
+1. In the **Create Office Add-in** dialog window, choose the **Insert content into Excel spreadsheets** add-in type, then choose **Next**.
 
-1. Choose **Basic Add-in** or **Document Visualization Add-in** add-in template, and then choose **Finish** to create the project.
+1. Choose the **Basic Add-in** or **Document Visualization Add-in** add-in template, and then choose **Finish** to create the project.
 
 1. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
@@ -44,7 +44,7 @@ In this article, you'll walk through the process of building an Excel [content a
 
 1. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A content add-in for Excel.**.
 
-1. Save the file.
+1. Save the file. The updated lines should look like the following code sample.
 
     ```xml
     ...
