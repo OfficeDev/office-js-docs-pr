@@ -42,7 +42,7 @@ In this article, you'll walk through the process of building a PowerPoint [conte
 
 4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A content add-in for PowerPoint.**.
 
-5. Save the file.
+5. Save the file. The updated lines should look like the following code sample.
 
     ```xml
     ...
