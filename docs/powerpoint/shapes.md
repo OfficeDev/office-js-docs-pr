@@ -111,8 +111,7 @@ The following code sample shows how to delete shapes.
 ```js
 await PowerPoint.run(async (context) => {
     // Delete all shapes from the first slide.
-    const sheet = context.presentation.slides.getItemAt(0);
-    const shapes = sheet.shapes;
+    const shapes = context.presentation.slides.getItemAt(0).shapes;
 
     // Load all the shapes in the collection without loading their properties.
     shapes.load("items/$none");

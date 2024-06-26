@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 05/20/2024
+ms.date: 06/25/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -27,6 +27,10 @@ The following table lists supported client-server combinations for the Smart Ale
 |**Mac**<br>Version 16.65.827.0 or later|Yes|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
+
+## Try out Smart Alerts in an event-based add-in
+
+To see Smart Alerts in action, try out the [walkthrough](smart-alerts-onmessagesend-walkthrough.md). You'll create an add-in that checks whether a document or picture is attached to a message before it's sent.
 
 ## Smart Alerts feature behavior and scenarios
 
@@ -221,7 +225,7 @@ In addition to these constraints, only one instance each of the `OnMessageSend` 
 While you can change the Smart Alerts dialog message and **Don't Send** button to suit your add-in scenario, the following can't be customized.
 
 - The dialog's title bar. Your add-in's name is always displayed there.
-- The message's format. For example, you can't change the text's font size and color or insert a bulleted list.
+- The font or color of the dialog message. However, you can use Markdown to format certain elements of your message. For a list of supported elements, see [Limitations to formatting the dialog message using Markdown](#limitations-to-formatting-the-dialog-message-using-markdown).
 - The icon next to the dialog message.
 - Dialogs that provide information on event processing and progress. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
 
@@ -234,6 +238,78 @@ In Outlook on the web and in new Outlook on Windows (preview):
 
 - The `OnAppointmentSend` event only occurs when the meeting being sent was created through the **New Event** option. If the meeting being sent was created by selecting a date and time directly from the calendar, the `OnAppointmentSend` event doesn't occur.
 - When forwarding a meeting, the `OnAppointmentSend` event only occurs if the organizer forwards the meeting. It doesn't occur if an attendee forwards the meeting to which they're invited.
+
+### Limitations to formatting the dialog message using Markdown
+
+> [!NOTE]
+> Support for Markdown in a Smart Alerts dialog is currently in preview in Outlook on Windows only. Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the Feedback section at the end of this page).
+>
+> To test this feature in Outlook on Windows, you must install Version 2403 (Build 17330.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/windows) and select the **Beta Channel** option in your Outlook client to access Office beta builds.
+
+You can use Markdown to format the message of a Smart Alerts dialog. However, only the following elements are supported.
+
+- Bold, italic, or bold and italic text. Both the [asterisk (*) and underscore (_) formats](https://www.markdownguide.org/basic-syntax/#emphasis) are supported.
+
+    ```javascript
+    event.completed({
+      allowEvent: false,
+      ...
+      errorMessageMarkdown: "**Important**: Apply the appropriate sensitivity label to your message before sending."
+    });
+    ```
+
+    :::image type="content" source="../images/outlook-smart-alerts-bold.png" alt-text="A sample Smart Alerts dialog with bold text.":::
+
+- Bulleted or unordered lists. To create an item in the list, begin with a dash (`-`) or asterisk (`*`), add the content, then append `\r` to signify item completion.
+
+    ```javascript
+    event.completed({
+      allowEvent: false,
+      ...
+      errorMessageMarkdown: "Your email doesn't meet company guidelines.\n\nFor additional assistance, contact the IT Service Desk:\n\n- Phone number: 425-555-0102\r- Email: it@contoso.com\r- Website: [Contoso IT Service Desk](https://www.contoso.com/it-service-desk)\r"
+    });
+    ```
+
+    :::image type="content" source="../images/outlook-smart-alerts-list.png" alt-text="A sample Smart Alerts dialog containing a bulleted list.":::
+
+- Numbered or ordered lists. To create an item in the list, begin with a number followed by a period, add the content, then append `\r` to signify item completion. The first item of the list must start with the number one (`1.`) and the succeeding numbers must be in numerical order.
+
+    ```javascript
+    event.completed({
+      allowEvent: false,
+      ...
+      errorMessageMarkdown: "Help your recipients know your intentions when you send a mail item. To set the sensitivity level of an item:\n\n1. Select **File** > **Properties**.\r2. From the **Sensitivity** dropdown, select **Normal**, **Personal**, **Private**, or **Confidential**.\r3. Select **Close**.\r"
+    });
+    ```
+
+    :::image type="content" source="../images/outlook-smart-alerts-numbered-list.png" alt-text="A sample Smart Alerts dialog containing a numbered list.":::
+
+- Links. To create a link, enclose your link text in square brackets (`[]`), then enclose the HTTPS URL in parentheses (`()`). You must provide an HTTPS URL, otherwise it won't render as a link that a user can select from the dialog. The angle brackets format (`<>`) isn't supported.
+
+    ```javascript
+    event.completed({
+      allowEvent: false,
+      ...
+      errorMessageMarkdown: "Need onsite assistance on the day of your meeting? Visit the [Contoso Facilities](https://www.contoso.com/facilities/meetings) page to learn more."
+    });
+    ```
+
+    :::image type="content" source="../images/outlook-smart-alerts-link.png" alt-text="A sample Smart Alerts dialog containing a link.":::
+
+- New lines. Use `\n\n` to create a new line.
+
+    ```javascript
+    event.completed({
+      allowEvent: false,
+      ...
+      errorMessageMarkdown: "Add a personalized user avatar to your signature today!\n\nTo customize your signature, visit [Customize my email signature](https://www.fabrikam.com/marketing/customize-email-signature)."
+    });
+    ```
+
+    :::image type="content" source="../images/outlook-smart-alerts-new-line.png" alt-text="A sample Smart Alerts dialog containing a new line in the message.":::
+
+> [!TIP]
+> To escape characters in your message, such as an asterisk, add a backslash (`\`) before the character.
 
 ## Best practices
 
@@ -269,13 +345,8 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 |**Add-in deployment**|Add-in can be published to AppSource if its send mode property is set to the **soft block** or **prompt user** option. Otherwise, the add-in must be deployed by an organization's administrator.|Add-in can't be published to AppSource. It must be deployed by an organization's administrator.|
 |**Additional configuration for add-in installation**|No additional configuration is needed once the manifest is uploaded to the Microsoft 365 admin center.|Depending on the organization's compliance standards and the Outlook client used, certain mailbox policies must be configured to install the add-in.|
 
-## Try out Smart Alerts in an event-based add-in
-
-Ready to implement Smart Alerts in an event-based add-in? Try out the [walkthrough](smart-alerts-onmessagesend-walkthrough.md) where you'll create an add-in that checks whether a document or picture is attached to a message before it's sent.
-
 ## See also
 
-- [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
 - [Office Add-ins code sample: Office Add-ins code sample: Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
