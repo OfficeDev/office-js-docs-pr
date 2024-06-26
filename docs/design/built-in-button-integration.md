@@ -1,7 +1,7 @@
 ---
 title: Integrate built-in Office buttons into custom control groups and tabs
 description: Learn how to include built-in Office buttons in your custom command groups and tabs on the Office ribbon.
-ms.date: 02/15/2024
+ms.date: 06/26/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -15,9 +15,7 @@ You can insert built-in Office buttons into your custom control groups on the Of
 > This article assumes that you're familiar with the article [Basic concepts for add-in commands](add-in-commands.md). Please review it if you haven't done so recently.
 
 > [!IMPORTANT]
->
-> - The add-in feature and markup described in this article is *only available in PowerPoint on the web, on Windows, and on Mac*.
-> - The markup described in this article only works on platforms that support requirement set **AddinCommands 1.3**. See the later section [Behavior on unsupported platforms](#behavior-on-unsupported-platforms).
+> The add-in feature described in this article is only available in **PowerPoint** on the web, on Windows, and on Mac.
 
 ## Insert a built-in control group into a custom tab
 
