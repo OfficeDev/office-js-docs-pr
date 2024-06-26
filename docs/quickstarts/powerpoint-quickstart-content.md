@@ -1,7 +1,7 @@
 ---
 title: Build your first PowerPoint content add-in
 description: Learn how to build a simple PowerPoint content add-in by using the Office JS API.
-ms.date: 06/21/2024
+ms.date: 06/26/2024
 ms.service: powerpoint
 ms.localizationpriority: medium
 ---
@@ -20,29 +20,58 @@ In this article, you'll walk through the process of building a PowerPoint [conte
 
 1. In Visual Studio, choose **Create a new project**.
 
-2. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
+1. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
 
-3. Name your project and select **Create**.
+1. Name your project and select **Create**.
 
-4. In the **Create Office Add-in** dialog window, choose **Insert content into PowerPoint slides**, and then choose **Finish** to create the project.
+1. In the **Create Office Add-in** dialog window, choose **Insert content into PowerPoint slides**, and then choose **Finish** to create the project.
 
-5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+1. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
 ### Explore the Visual Studio solution
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
+### Update the code
+
+1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the `<p>` element that contains the text "This example will read the current document selection." and replace the entire element with the following markup then save the file.
+
+    ```html
+    <p class="ms-font-m-plus">This example will get details about the current slide.</p>
+    ```
+
+1. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Find the `getDataFromSelection` function and replace the entire function with the following code then save the file.
+
+    ```js
+    // Reads data from current slide and displays a notification.
+    function getDataFromSelection() {
+        if (Office.context.document.getSelectedDataAsync) {
+            Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange,
+                function (result) {
+                    if (result.status === Office.AsyncResultStatus.Succeeded) {
+                        showNotification('The slide details are:', '"' + JSON.stringify(result.value) + '"');
+                    } else {
+                        showNotification('Error:', result.error.message);
+                    }
+                }
+            );
+        } else {
+            app.showNotification('Error:', 'Reading selection data is not supported by this host application.');
+        }
+    }
+    ```
+
 ### Update the manifest
 
 1. Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
-2. The `ProviderName` element has a placeholder value. Replace it with your name.
+1. The `ProviderName` element has a placeholder value. Replace it with your name.
 
-3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
+1. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
 
-4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A content add-in for PowerPoint.**.
+1. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A content add-in for PowerPoint.**.
 
-5. Save the file. The updated lines should look like the following code sample.
+1. Save the file. The updated lines should look like the following code sample.
 
     ```xml
     ...
@@ -58,9 +87,9 @@ In this article, you'll walk through the process of building a PowerPoint [conte
 
 1. Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the content add-in displayed over the slide.
 
-2. In PowerPoint, add text to the slide, select any or all of the text, and then choose the **Get data from selection** button in the content add-in to get the text from the selection.
+1. In PowerPoint, choose the **Get data from selection** button in the content add-in to get details about the current slide.
 
-    ![The add-in content open in PowerPoint.](../images/powerpoint-quickstart-content-ui.png)
+    :::image type="content" source="../images/powerpoint-quickstart-content-ui.png" alt-text="The add-in content open in PowerPoint.":::
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
