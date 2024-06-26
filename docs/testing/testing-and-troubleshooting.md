@@ -33,6 +33,7 @@ The following table lists common error messages that users might encounter and s
 
 If the add-in package was tampered with before installation, this error will occur. Download the add-in again, and try to reinstall it. Or contact the publisher of the add-in for help.
 
+You can also give us feedback: if using Office on Windows or Mac, you can report feedback to the Office extensibility team directly from Office. To do this, select **Help** > **Feedback** > **Report a problem**. Sending a report provides necessary information to understand the issue.
 
 ## Outlook add-in doesn't work correctly
 
