@@ -674,6 +674,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
       </Resources>
     </VersionOverrides>
   </VersionOverrides>
+</OfficeApp>
 ```
 
 ---
