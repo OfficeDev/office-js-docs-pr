@@ -1,7 +1,7 @@
 ---
 title: Content Office Add-ins
 description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
-ms.date: 06/25/2024
+ms.date: 06/27/2024
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -48,7 +48,7 @@ There are minor differences in the manifests between content add-ins and add-ins
 
 For a sample that implements a content add-in, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) on GitHub.
 
-To create your own content add-in, see the [Excel content add-in quick start](../quickstarts/excel-quickstart-content.md).
+To create your own content add-in, see the [Excel content add-in quick start](../quickstarts/excel-quickstart-content.md) and [PowerPoint content add-in quick start](../quickstarts/powerpoint-quickstart-content.md).
 
 ## Support considerations
 
