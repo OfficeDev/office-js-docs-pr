@@ -1,7 +1,7 @@
 ---
 title: Build your first PowerPoint content add-in
 description: Learn how to build a simple PowerPoint content add-in by using the Office JS API.
-ms.date: 06/26/2024
+ms.date: 06/27/2024
 ms.service: powerpoint
 ms.localizationpriority: medium
 ---
