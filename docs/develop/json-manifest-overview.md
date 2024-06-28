@@ -2,7 +2,7 @@
 title: Compare the XML manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the XML manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 04/12/2024
+ms.date: 06/28/2024
 ms.localizationpriority: high
 ---
 
@@ -19,7 +19,7 @@ There is just one schema for the [unified manifest](https://raw.githubuserconten
 
 ## Conceptual mapping of the unified and current XML manifests
 
-This section describes the unified manifest for readers who are familiar with the current XML manifest. Some points to keep in mind: 
+This section describes the unified manifest for readers who are familiar with the current XML manifest. Some points to keep in mind:
 
 - The unified manifest is JSON-formatted.
 - JSON doesn't distinguish between attribute and element value like XML does. Typically, the JSON that maps to an XML element makes both the element value and each of the attributes a child property. The following example shows some XML markup and its JSON equivalent.
@@ -50,9 +50,9 @@ This section describes the unified manifest for readers who are familiar with th
 
 ### Top-level structure
 
-The root level of the unified manifest, which roughly corresponds to the **\<OfficeApp\>** element in the current XML manifest, is an anonymous object. 
+The root level of the unified manifest, which roughly corresponds to the **\<OfficeApp\>** element in the current XML manifest, is an anonymous object.
 
-The children of **\<OfficeApp\>** are commonly divided into two notional categories. The **\<VersionOverrides\>** element is one category. The other consists of all the other children of **\<OfficeApp\>**, which are collectively referred to as the base manifest. So too, the unified manifest has a similar division. There is a top-level "extensions" property that roughly corresponds in its purposes and child properties to the **\<VersionOverrides\>** element. The unified manifest also has over 10 other top-level properties that collectively serve the same purposes as the base manifest of the XML manifest. These other properties can be thought of collectively as the base manifest of the unified manifest. 
+The children of **\<OfficeApp\>** are commonly divided into two notional categories. The **\<VersionOverrides\>** element is one category. The other consists of all the other children of **\<OfficeApp\>**, which are collectively referred to as the base manifest. So too, the unified manifest has a similar division. There is a top-level "extensions" property that roughly corresponds in its purposes and child properties to the **\<VersionOverrides\>** element. The unified manifest also has over 10 other top-level properties that collectively serve the same purposes as the base manifest of the XML manifest. These other properties can be thought of collectively as the base manifest of the unified manifest.
 
 ### Base manifest
 
@@ -91,10 +91,11 @@ The following table shows a mapping of some high level child properties of the "
 | "alternatives" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. | **\<EquivalentAddins\>** | See the [EquivalentAddins - See also](/javascript/api/manifest/equivalentaddins#see-also) for background information. |
 | "runtimes"  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). | **\<Runtimes\>**. **\<FunctionFile\>**, and **\<ExtensionPoint\>** (of type CustomFunctions) |*None.* |
 | "autoRunEvents" | Configures an event handler for a specified event. | **\<ExtensionPoint\>** (of type LaunchEvent) |*None.* |
+| "keyboardShortcuts" (developer preview) | Defines custom keyboard shortcuts or key combinations to run specific actions. | **\<ExtendedOverrides\>** | *None.* |
 
 #### "ribbons" table
 
-The following table maps the child properties of the anonymous child objects in the "ribbons" array onto XML elements in the current manifest. 
+The following table maps the child properties of the anonymous child objects in the "ribbons" array onto XML elements in the current manifest.
 
 |JSON property|Purpose|XML elements|Comments|
 |:-----|:-----|:-----|:-----|
