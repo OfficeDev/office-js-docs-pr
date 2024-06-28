@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 04/12/2024
+ms.date: 06/14/2024
 ms.localizationpriority: high
 ---
 
@@ -11,6 +11,7 @@ ms.localizationpriority: high
 This article introduces the unified app manifest for Microsoft 365. It assumes that you're familiar with [Office Add-ins manifest](add-in-manifests.md).
 
 > [!TIP]
+>
 > - For an overview of the XML manifest, see [Office Add-ins XML manifest](xml-manifest-overview.md).
 > - If you're familiar with the XML manifest, you might get a grasp on the JSON-formatted unified manifest easier by reading [Compare the XML manifest with the unified manifest for Microsoft 365](json-manifest-overview.md).
 
@@ -21,6 +22,7 @@ One important improvement is the ability to create a single unit of distribution
 We've taken an important first step toward these goals by making it possible for you to create Outlook add-ins with a unified manifest for Microsoft 365.
 
 > [!NOTE]
+>
 > - The unified manifest currently only supports Outlook add-ins and only in Office linked to a Microsoft 365 subscription and installed on Windows, on a mobile device, or in Outlook on the web. We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office.
 > - The unified manifest requires Office Version 2304 (Build 16320.00000) or later.
 
@@ -37,33 +39,34 @@ Each of the base properties listed in the following table has more extensive doc
 
 |JSON property|Purpose|
 |:-----|:-----|
-|"$schema"| Identifies the manifest schema. | 
+|"$schema"| Identifies the manifest schema. |
 |"manifestVersion"| Version of the manifest schema. |  
 |"id"| GUID of the Teams app/add-in. |
-|"version"| Version of the Teams app/add-in. The format must be `n.n.n` where each `n` can be no more than five digits.| 
-|"name"| Public short and long names of the Teams app/add-in. The short name appears at the top of an add-in's task pane. | 
-|"description"| Public short and long descriptions of the Teams app/add-in. | 
-|"developer"| Information about the developer of the Teams app/add-in. | 
-|"localizationInfo"| Configures the default locale and other supported locales. | 
+|"version"| Version of the Teams app/add-in. The format must be `n.n.n` where each `n` can be no more than five digits.|
+|"name"| Public short and long names of the Teams app/add-in. The short name appears at the top of an add-in's task pane. |
+|"description"| Public short and long descriptions of the Teams app/add-in. |
+|"developer"| Information about the developer of the Teams app/add-in. |
+|"localizationInfo"| Configures the default locale and other supported locales. |
 |"validDomains" | See [Specify safe domains](#specify-safe-domains). |
-|"webApplicationInfo"| Identifies the Teams app/add-in's web app as it is known in Azure Active Directory. | 
+|"webApplicationInfo"| Identifies the Teams app/add-in's web app as it is known in Azure Active Directory. |
 |"authorization"| Identifies any Microsoft Graph permissions that the add-in needs. |
 
 ### "extensions" property
 
 We're working hard to complete reference documentation for the "extensions" property and its descendent properties. In the meantime, the following provides some basic documentation. Most, but not all, of the properties have an equivalent element (or attribute) in the XML manifest for add-ins. For the most part, the description, and restrictions, that apply to the XML element or attribute also apply to its JSON property equivalent in the unified manifest. The tables in the '"extensions" property' section of [Compare the XML manifest with the unified manifest for Microsoft 365](json-manifest-overview.md#extensions-property) can help you determine the XML equivalent of a JSON property.
 
-
 |JSON property|Purpose|
 |:-----|:-----|:-----|:-----|
 | "requirements.capabilities" | Identifies the [requirement sets](office-versions-and-requirement-sets.md#office-requirement-sets-availability) that the add-in needs to be installable. |
-| "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. For example, "mail" means the add-in can be installed in Outlook. | 
-| "ribbons" | The ribbons that the add-in customizes. | 
+| "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. For example, "mail" means the add-in can be installed in Outlook. |
+| "ribbons" | The ribbons that the add-in customizes. |
 | "ribbons.contexts" | Specifies the command surfaces that the add-in customizes. For example, "mailRead" or "mailCompose". |
+| "ribbons.fixedControls" (developer preview) | Configures and adds the button of an [integrated spam-reporting](../outlook/spam-reporting.md) add-in to the Outlook ribbon. |
+| "ribbons.spamPreProcessingDialog" (developer preview) | Configures the preprocessing dialog shown after the button of a spam-reporting add-in is selected from the Outlook ribbon. |
 | "ribbons.tabs" | Configures custom ribbon tabs. |
-| "alternates" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. Also specifies the main icons that are used to represent the add-in on older versions of Office. | 
-| "runtimes"  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). | 
-| "autoRunEvents" | Configures an event handler for a specified event. | 
+| "alternates" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. Also specifies the main icons that are used to represent the add-in on older versions of Office. |
+| "runtimes"  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). |
+| "autoRunEvents" | Configures an event handler for a specified event. |
 
 ## Specify safe domains
 
@@ -77,7 +80,7 @@ The following is an example of a unified app manifest for an add-in.
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/op/extensions/MicrosoftTeams.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
   "id": "00000000-0000-0000-0000-000000000000",
   "version": "1.0.0",
   "manifestVersion": "devPreview",
@@ -138,7 +141,8 @@ The following is an example of a unified app manifest for an add-in.
           "requirements": {
             "capabilities": [
               {
-                "name": "MailBox", "minVersion": "1.10"
+                "name": "MailBox",
+                "minVersion": "1.10"
               }
             ]
           },
