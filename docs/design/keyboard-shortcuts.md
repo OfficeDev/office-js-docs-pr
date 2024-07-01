@@ -82,7 +82,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     > [!NOTE]
     > You can use "CONTROL" in place of "Ctrl" throughout this article.
 
-    In a later step, the actions will be mapped to functions that you create. In this example, you'll later map "SHOWTASKPANE" to a function that calls the [Office.addin.showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1))method and "HIDETASKPANE" to a function that calls the [Office.addin.hide](/javascript/api/office/office.addin#office-office-addin-hide-member(1)) method.
+    The actions will be mapped to functions that you create. In this example, you'll map "SHOWTASKPANE" to a function that calls the [Office.addin.showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) method and "HIDETASKPANE" to a function that calls the [Office.addin.hide](/javascript/api/office/office.addin#office-office-addin-hide-member(1)) method.
 
 ## Create a mapping of actions to their functions
 
