@@ -1,7 +1,7 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows (preview)
 description: Learn how to develop add-ins that are compatible with the new Outlook on Windows (preview).
-ms.date: 05/20/2024
+ms.date: 07/01/2024
 ms.localizationpriority: medium
 ---
 
@@ -55,7 +55,7 @@ There are various possibilities for extending the Outlook functionality through 
 
 ## Support for classic Outlook on Windows
 
-The classic Outlook on Windows desktop client will continue to support the development of new and existing Outlook web add-ins. Additionally, it will continue to receive releases of the latest Outlook add-in features.
+Classic Outlook on Windows with a Microsoft 365 subscription or a retail perpetual version of Office 2016 or later will continue to support the development of new and existing Outlook web add-ins. Additionally, it will continue to receive releases of the latest Outlook add-in features.
 
 ## Test your add-in in the new Outlook on Windows
 
