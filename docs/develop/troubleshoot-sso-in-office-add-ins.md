@@ -121,7 +121,7 @@ In certain configurations of identity in AAD and Microsoft 365, it is possible f
 
 Your code should test for this `claims` property. Depending on your add-in's architecture, you may test for it on the client-side, or you may test for it on the server-side and relay it to the client. You need this information in the client because Office handles authentication for SSO add-ins. If you relay it from the server-side, the message to the client can be either an error (such as `500 Server Error` or `401 Unauthorized`) or in the body of a success response (such as `200 OK`). In either case, the (failure or success) callback of your code's client-side AJAX call to your add-in's web API should test for this response.
 
-Regardless of your architecture, if the claims value has been sent from AAD, your code should recall `getAccessToken` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the `options` parameter. When AAD sees this string, it prompts the user for the additional factor(s) and then returns a new access token which will be accepted in the on-behalf-of flow.
+Regardless of your architecture, if the claims value has been sent from AAD, your code should recall `getAccessToken` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the `options` parameter. When AAD sees this string, it prompts the user for the additional factors and then returns a new access token which will be accepted in the on-behalf-of flow.
 
 ### Consent missing errors
 

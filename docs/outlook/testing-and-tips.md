@@ -11,7 +11,7 @@ ms.localizationpriority: high
 As part of the process of developing an Outlook add-in, you'll probably find yourself iteratively deploying and installing the add-in for testing, which involves the following steps.
 
 1. Creating a manifest file that describes the add-in.
-1. Deploying the add-in UI file(s) to a web server.
+1. Deploying the add-in UI files to a web server.
 1. Installing the add-in in your mailbox.
 1. Testing the add-in, making appropriate changes to the UI or manifest files, and repeating steps 2 and 3 to test the changes.
 

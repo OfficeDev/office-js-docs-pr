@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
-ms.date: 02/29/2024
+ms.date: 07/02/2024
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -9,7 +9,7 @@ ms.localizationpriority: high
 
 # Outlook add-ins overview
 
-Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. Outlook add-ins have three key aspects:
+Outlook add-ins are solutions that extend the functionality of the Outlook client through a web-based platform. Outlook add-ins have three key aspects.
 
 - The same add-in and business logic works across web (Microsoft 365 and Outlook.com), desktop (Outlook on Windows and on Mac), and mobile.
 - Outlook add-ins consist of a manifest, which describes how the add-in integrates into Outlook (for example, a button or a task pane), and JavaScript/HTML code, which makes up the UI and business logic of the add-in.
@@ -17,7 +17,11 @@ Outlook add-ins are integrations built by third parties into Outlook by using ou
 
 Outlook add-ins are different from COM or VSTO add-ins, which are older integrations specific to Outlook running on Windows. Unlike COM add-ins, Outlook add-ins don't have any code physically installed on the user's device or Outlook client. For an Outlook add-in, Outlook reads the manifest and hooks up the specified controls in the UI, and then loads the JavaScript and HTML. The web components all run in the context of a browser or webview control in a sandbox.
 
-[!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
+> [!IMPORTANT]
+>
+> - COM and VSTO add-ins aren't supported in the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). However, these add-ins are still supported in the classic Outlook on Windows desktop client. To learn more, see [Develop Outlook add-ins for new Outlook on Windows (preview)](../outlook/one-outlook.md).
+>
+> - In classic Outlook on Windows, it isn't recommended to install COM add-ins alongside Office web add-ins, especially if they operate on the same surface or mail item. The operations performed by COM and web add-ins could interfere with each other and lead to unexpected behavior. If you need to support both COM and web add-in versions of your solution, you must specify the COM solution as an equivalent add-in. To learn more, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 The Outlook items that support add-ins include email messages, meeting requests, responses and cancellations, and appointments. Each Outlook add-in defines the context in which it is available, including the types of items and if the user is reading or composing an item.
 

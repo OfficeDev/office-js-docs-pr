@@ -1,6 +1,6 @@
 ---
 title: Compare the XML manifest with the unified manifest for Microsoft 365
-description: Get a comparison of the XML manifest with the unified manifest for Microsoft 365.
+description: Gets a comparison of the XML manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
 ms.date: 04/12/2024
 ms.localizationpriority: high
@@ -94,7 +94,7 @@ The following table shows a mapping of some high level child properties of the "
 
 #### "ribbons" table
 
-The following table maps the child properties of the anonymous child objects in the "ribbons" array onto XML elements in the current manifest. 
+The following table maps the child properties of the anonymous child objects in the "ribbons" array onto XML elements in the current manifest.
 
 |JSON property|Purpose|XML elements|Comments|
 |:-----|:-----|:-----|:-----|
@@ -105,4 +105,4 @@ For a full sample unified manifest, see [Sample unified manifest](unified-manife
 
 ## Next steps
 
-- [Build your first Outlook add-in](../quickstarts/outlook-quickstart.md).
+- [Build your first Outlook add-in](../quickstarts/outlook-quickstart.md)
