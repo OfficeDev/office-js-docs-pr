@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 08/18/2023
+ms.date: 06/28/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -82,7 +82,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     > [!NOTE]
     > You can use "CONTROL" in place of "Ctrl" throughout this article.
 
-    In a later step, the actions will themselves be mapped to functions that you write. In this example, you'll later map SHOWTASKPANE to a function that calls the `Office.addin.showAsTaskpane` method and HIDETASKPANE to a function that calls the `Office.addin.hide` method.
+    The actions will be mapped to functions that you create. In this example, you'll map "SHOWTASKPANE" to a function that calls the [Office.addin.showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) method and "HIDETASKPANE" to a function that calls the [Office.addin.hide](/javascript/api/office/office.addin#office-office-addin-hide-member(1)) method.
 
 ## Create a mapping of actions to their functions
 
@@ -93,38 +93,28 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
     - The second parameter is the function that runs when a user presses the key combination that is mapped to the action in the JSON file.
 
     ```javascript
-    Office.actions.associate('-- action ID goes here--', function () {
+    Office.actions.associate("SHOWTASKPANE", showTaskPane);
+    Office.actions.associate("HIDETASKPANE", hideTaskPane);
 
-    });
-    ```
+    function showTaskPane() {
+        return Office.addin.showAsTaskpane()
+            .then(() => {
+                console.log("Task pane is visible.");
+            })
+            .catch((error) => {
+                console.log(error.code);
+            });
+    }
 
-1. To continue the example, use `'SHOWTASKPANE'` as the first parameter.
-1. For the body of the function, use the [Office.addin.showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) method to open the add-in's task pane. When you are done, the code should look like the following:
-
-    ```javascript
-    Office.actions.associate('SHOWTASKPANE', function () {
-        return Office.addin.showAsTaskpane()
-            .then(function () {
-                return;
-            })
-            .catch(function (error) {
-                return error.code;
-            });
-    });
-    ```
-
-1. Add a second call of `Office.actions.associate` function to map the `HIDETASKPANE` action to a function that calls [Office.addin.hide](/javascript/api/office/office.addin#office-office-addin-hide-member(1)). The following is an example.
-
-    ```javascript
-    Office.actions.associate('HIDETASKPANE', function () {
-        return Office.addin.hide()
-            .then(function () {
-                return;
-            })
-            .catch(function (error) {
-                return error.code;
-            });
-    });
+    function hideTaskPane() {
+        return Office.addin.hide()
+            .then(() => {
+                console.log("Task pane is hidden.");
+            })
+            .catch((error) => {
+                console.log(error.code);
+            })
+    }
     ```
 
 Following the previous steps lets your add-in toggle the visibility of the task pane by pressing **Ctrl+Alt+Up** and **Ctrl+Alt+Down**. The same behavior is shown in the [Excel keyboard shortcuts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) sample in the Office Add-in Samples repo in GitHub.
