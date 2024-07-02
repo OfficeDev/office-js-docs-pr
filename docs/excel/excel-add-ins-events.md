@@ -54,7 +54,7 @@ Events within an Excel workbook can be triggered by:
 - Office Add-in (JavaScript) code that changes the workbook
 - VBA add-in (macro) code that changes the workbook
 
-Any change that complies with default behavior of Excel will trigger the corresponding event(s) in a workbook.
+Any change that complies with default behavior of Excel will trigger the corresponding events in a workbook.
 
 ### Lifecycle of an event handler
 
