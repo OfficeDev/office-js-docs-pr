@@ -997,7 +997,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
     <button class="Button Button--primary" id="get-slide-metadata">
         <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
         <span class="Button-label">Get Slide Metadata</span>
-        <span class="Button-description">Gets metadata for the selected slide(s).</span>
+        <span class="Button-description">Gets metadata for the selected slides.</span>
     </button>
     ```
 
@@ -1007,7 +1007,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
     $('#get-slide-metadata').on("click", getSlideMetadata);
     ```
 
-1. In the **Home.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slide(s) and writes it to a popup dialog window within the add-in task pane.
+1. In the **Home.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slides and writes it to a popup dialog window within the add-in task pane.
 
     ```js
     function getSlideMetadata() {
@@ -1016,7 +1016,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                     showNotification("Error", asyncResult.error.message);
                 } else {
-                    showNotification("Metadata for selected slide(s):", JSON.stringify(asyncResult.value), null, 2);
+                    showNotification("Metadata for selected slides:", JSON.stringify(asyncResult.value), null, 2);
                 }
             }
         );
