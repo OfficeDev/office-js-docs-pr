@@ -5,7 +5,7 @@ metadata:
   ms.service: microsoft-365
   ms.subservice: add-ins
   ms.topic: faq
-  ms.date: 04/08/2024
+  ms.date: 07/02/2024
   
 title: Nested app authentication and Outlook legacy tokens deprecation FAQ
 summary: |
@@ -26,6 +26,10 @@ sections:
 
           - NAA will be available in public preview. If your add-in uses legacy Exchange user identity tokens or callback tokens you should adopt NAA in your add-in. Developers can identify this token use by looking for calls to `makeEwsRequestAsync`, `getUserIdentityTokenAsync`, or `getCallbackTokenAsync` in the add-in's code.
 
+          ### June 2024
+
+          - Exchange Online administrators can control the issuance of legacy Exchange tokens using Exchange authentication policies.
+          
           ### October 2024
 
           - Exchange Online will block legacy Exchange user identity tokens and callback tokens by default in all tenants. Add-ins that have not adopted NAA and rely on legacy Exchange tokens won't function as expected.
@@ -65,6 +69,12 @@ sections:
 
           - [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
           - [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA).
+      - question: As an admin, how do I control legacy token issuance in my Exchange Online tenant?
+        answer: |
+          To control legacy token issuance in your organization, use the [New-AuthenticationPolicy](/powershell/module/exchange/new-authenticationpolicy#-allowlegacyexchangetokens) or [Set-AuthenticationPolicy](/powershell/module/exchange/set-authenticationpolicy#-allowlegacyexchangetokens) PowerShell cmdlet with the `-AllowLegacyExchangeToken` switch.
+          This creates or updates the Exchange authentication policy to allow or block the issuance of Exchange user identity and callback tokens.
+          Once you've configured the authentication policy, you can assign it to test mailboxes or to your entire organization.
+          We recommend to first deploy any new policies to a set of test mailboxes to make sure there aren't any unintended effects on add-ins your organization needs.
       - question: As an admin, how do I know which add-ins in my org need to be updated?
         answer: |
           Add-ins use the legacy Exchange tokens to get resources from Exchange through the EWS or Outlook REST APIs. Sometimes, an add-in will require Exchange resources for some use cases and not others, making it especially difficult to figure out whether the add-in requires an update.
@@ -73,7 +83,6 @@ sections:
           - `makeEwsRequestAsync`
           - `getUserIdentityTokenAsync`
           - `getCallbackTokenAsync`
-
       - question: As an admin, I don't own an add-in that needs an update. What should I do?
         answer: |
           If you rely on an independent software vendor (ISV) for your add-in, we recommend reaching out as soon as possible to confirm they have a plan and a timeline for moving off of legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they are ready for the end of Exchange legacy tokens on October 2024.
