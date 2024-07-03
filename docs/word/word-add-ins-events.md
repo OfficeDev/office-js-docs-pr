@@ -58,7 +58,7 @@ Any change that complies with default behavior of Word will trigger the correspo
 An event handler is created when an add-in registers the event handler. It's destroyed when the add-in deregisters the event handler or when the add-in is refreshed, reloaded, or closed. Event handlers don't persist as part of the Word file, or across sessions with Word on the web.
 
 > [!CAUTION]
-> When an object to which events are registered is deleted (e.g., a paragraph with an `onChanged` event registered), the event handler no longer triggers but remains in memory until the add-in or Word session refreshes or closes.
+> When an object to which events are registered is deleted (e.g., a content control with an `onDataChanged` event registered), the event handler no longer triggers but remains in memory until the add-in or Word session refreshes or closes.
 
 ### Events and coauthoring
 
@@ -142,7 +142,7 @@ Certain event types also require you to call `track()` on the object you're addi
   - onCommentDeselected
   - onCommentSelected
 
-The following example shows how to register an event handler on each content control. Because you're adding the event to the content controls, `track()` is called on each content control in the collection.
+The following code sample shows how to register an event handler on each content control. Because you're adding the event to the content controls, `track()` is called on each content control in the collection.
 
 ```typescript
 await Word.run(async (context) => {
@@ -168,7 +168,7 @@ await Word.run(async (context) => {
 });
 ```
 
-The following example shows how to register comment event handlers on the document's body object and include a `body.track();` statement.
+The following code sample shows how to register comment event handlers on the document's body object and include a `body.track();` statement.
 
 ```typescript
 // Registers event handlers.
