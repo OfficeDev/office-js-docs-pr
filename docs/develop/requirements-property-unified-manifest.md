@@ -1,7 +1,7 @@
 ---
 title: Specify Office Add-in requirements in the unified manifest for Microsoft 365
 description: Learn how to use requirements to configure on which host and platforms an add-in can be installed and which features are available.
-ms.date: 04/12/2024
+ms.date: 07/03/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -48,7 +48,7 @@ You can have more than one capability object. The following example shows how to
 
 ## Filter features
 
-The "requirements" properties in descendant objects of "extensions" are used to block some features of an add-in while still allowing the add-in to be installed. The implementation of this filtering is done at the source of installation, such as [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) or [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish). If the version of Office doesn't support the requirements specified for the feature, then the JSON node for the feature is removed from the manifest before it is installed in the Office application. 
+The "requirements" properties in descendant objects of "extensions" are used to block some features of an add-in while still allowing the add-in to be installed. The implementation of this filtering is done at the source of installation, such as [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) or [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish). If the version of Office doesn't support the requirements specified for the feature, then the JSON node for the feature is removed from the manifest before it is installed in the Office application.
 
 ### extensions.alternates.requirements
 
@@ -56,7 +56,7 @@ The "extensions.alternates" property enables add-in developers to do the followi
 
 - Maintain a version of an add-in that was built on an older extensibility platform (such as COM or VSTO add-ins) or using the XML manifest, in addition to the version that uses the unified manifest.
 - Either hide or give preference to the version that uses the older technology.
-- Specify icons that are needed to make the unified manifest version of the add-in installable on Office versions that don't directly support the unified manifest. 
+- Specify icons that are needed to make the unified manifest version of the add-in installable on Office versions that don't directly support the unified manifest.
 
 > [!NOTE]
 > Office Add-ins that use the unified manifest for Microsoft 365 are *directly* supported in Office on the web, in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), and in Office on Windows connected to a Microsoft 365 subscription, Version 2304 (Build 16320.00000) or later.
@@ -65,7 +65,7 @@ The "extensions.alternates" property enables add-in developers to do the followi
 
 For more information, see [Manage both a unified manifest and an XML manifest version of your Office Add-in](/office/dev/add-ins/concepts/duplicate-legacy-metaos-add-ins).
 
-The "requirements" subproperty of "extensions.alternates" to selectively apply the "hide" or "prefer" subproperties only when certain requirements are met. 
+The "requirements" subproperty of "extensions.alternates" to selectively apply the "hide" or "prefer" subproperties only when certain requirements are met.
 
 For example, suppose that you want to hide (from the Office UI for installing add-ins) an older version of your add-in, but only in Office versions that support the **Mailbox 1.10** requirement set. You could do that with markup similar to the following:
 
@@ -125,6 +125,39 @@ For example, suppose an Outlook add-in is configured to autolaunch in response t
                         {
                             "name": "Mailbox",
                             "minVersion": "1.13"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]
+```
+
+### extensions.contextMenus.requirements
+
+The "extensions.contextMenus" property configures the add-in's context menus. A context menu is a shortcut menu that appears when you right-click in the Office UI. The "requirements" subproperty can be used to allow context menus only when certain requirements are met.
+
+For example, suppose you want to show context menus only in Excel versions that support the AddinCommands 1.1 requirement set. You could do that with markup similar to the following:
+
+```json
+"extensions": [
+    ...
+    {
+        ...
+        "contextMenus": [
+            ...
+            {
+                // Insert details of the context menu configuration here.
+
+                "requirements": {
+                    "scopes": [
+                        "workbook"
+                    ],
+                    "capabilities": [
+                        {
+                            "name": "AddinCommands",
+                            "minVersion": "1.1"
                         }
                     ]
                 }
