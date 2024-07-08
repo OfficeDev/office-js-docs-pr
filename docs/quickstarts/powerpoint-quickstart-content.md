@@ -1,7 +1,7 @@
 ---
 title: Build your first PowerPoint content add-in
 description: Learn how to build a simple PowerPoint content add-in by using the Office JS API.
-ms.date: 06/27/2024
+ms.date: 07/08/2024
 ms.service: powerpoint
 ms.localizationpriority: medium
 ---
@@ -34,22 +34,28 @@ In this article, you'll walk through the process of building a PowerPoint [conte
 
 ### Update the code
 
-1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the `<p>` element that contains the text "This example will read the current document selection." and replace the entire element with the following markup then save the file.
+1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the `<p>` element that contains the text "This example will read the current document selection." and the `<button>` element where the id is "get-data-from-selection". Replace these entire elements with the following markup then save the file.
 
     ```html
-    <p class="ms-font-m-plus">This example will get details about the current slide.</p>
+    <p class="ms-font-m-plus">This example will get some details about the current slide.</p>
+
+    <button class="Button Button--primary" id="get-data-from-selection">
+        <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+        <span class="Button-label">Get slide details</span>
+        <span class="Button-description">Gets and displays the current slide's details.</span>
+    </button>
     ```
 
 1. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Find the `getDataFromSelection` function and replace the entire function with the following code then save the file.
 
     ```js
-    // Reads data from current slide and displays a notification.
+    // Gets some details about the current slide and displays them in a notification.
     function getDataFromSelection() {
         if (Office.context.document.getSelectedDataAsync) {
             Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange,
                 function (result) {
                     if (result.status === Office.AsyncResultStatus.Succeeded) {
-                        showNotification('The slide details are:', '"' + JSON.stringify(result.value) + '"');
+                        showNotification('Some slide details are:', '"' + JSON.stringify(result.value) + '"');
                     } else {
                         showNotification('Error:', result.error.message);
                     }
@@ -87,7 +93,7 @@ In this article, you'll walk through the process of building a PowerPoint [conte
 
 1. Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the content add-in displayed over the slide.
 
-1. In PowerPoint, choose the **Get data from selection** button in the content add-in to get details about the current slide.
+1. In PowerPoint, choose the **Get slide details** button in the content add-in to get details about the current slide.
 
     :::image type="content" source="../images/powerpoint-quickstart-content-ui.png" alt-text="The add-in content open in PowerPoint.":::
 
