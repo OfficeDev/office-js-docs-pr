@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in.
 
-You can also use tools to intercept HTTP messages to identify and debug issues with your add-ins. Popular choices include [Fiddler](https://www.telerik.com/fiddler), [Charles](https://www.charlesproxy.com), and [Requestly](https://requestly.com/).
+You can also use tools to intercept HTTP messages to identify and debug issues with your add-ins. Popular choices include [Fiddler](https://www.telerik.com/fiddler), [Charles](https://www.charlesproxy.com), and [Requestly](https://requestly.com/downloads/).
 
 ## Common errors and troubleshooting steps
 

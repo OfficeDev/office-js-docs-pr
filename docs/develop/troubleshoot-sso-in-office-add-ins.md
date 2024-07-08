@@ -18,8 +18,8 @@ This article provides some guidance about how to troubleshoot problems with sing
 We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Some of the most popular are:
 
 - [Fiddler](https://www.telerik.com/fiddler): Free for 10 days ([Documentation](https://docs.telerik.com/fiddler-everywhere/introduction))
-- [Charles](https://www.charlesproxy.com): Free for 30 days. ([Documentation](https://www.charlesproxy.com/documentation/))
-- [Requestly](https://requestly.com/): Free basic service. ([Documentation](https://developers.requestly.com/))
+- [Charles](https://www.charlesproxy.com): Free for 30 days. ([Documentation](https://www.charlesproxy.com/documentation))
+- [Requestly](https://requestly.com/downloads): Free basic service. ([Documentation](https://developers.requestly.com))
 
 ## Causes and handling of errors from getAccessToken
 
