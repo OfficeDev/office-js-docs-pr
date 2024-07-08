@@ -34,7 +34,7 @@ In this article, you'll walk through the process of building a PowerPoint [conte
 
 ### Update the code
 
-1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the `<p>` element that contains the text "This example will read the current document selection." and the `<button>` element where the id is "get-data-from-selection". Replace these entire elements with the following markup then save the file.
+1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the `<p>` element that contains the text "This example will read the current document selection." and the `<button>` element where the `id` is "get-data-from-selection". Replace these entire elements with the following markup then save the file.
 
     ```html
     <p class="ms-font-m-plus">This example will get some details about the current slide.</p>
