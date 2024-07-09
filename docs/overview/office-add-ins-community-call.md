@@ -14,7 +14,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for July 10, 2024 call
 The agenda for the July Office Add-ins community call is：
-* An overview of the Microsoft 365 App Compliance Program
+* An overview of the Microsoft 365 App Compliance Program.
 
 
 > [!NOTE]
