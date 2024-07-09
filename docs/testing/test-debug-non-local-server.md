@@ -5,7 +5,7 @@ ms.date: 07/12/2024
 ms.localizationpriority: medium
 ---
 
-# Test and debug Office Add-ins on a non-local host
+# Test and debug Office Add-ins on a non-local server
 
 When you've completed development and testing on a localhost and want to stage and test the add-in from a non-local server or cloud account, you can use the tool [office-addin-debugging](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-debugging) for any Node.js-based add-in project. (The tool isn't supported in projects created with Visual Studio.)
 
@@ -21,7 +21,7 @@ If your project was created with [Teams Toolkit](../develop/teams-toolkit-overvi
 
 ## Other projects
 
-If your project wasn't created with one of those tools, run the tool with npx in the root of the project. Invoke it with its `start` command followed by the relative path to the manifest. The following is an example:
+If your project wasn't created with one of Teams Toolkit or Yo Office, run the tool with npx in the root of the project. Invoke it with its `start` command followed by the relative path to the manifest. The following is an example:
 
 ```command&nbsp;line
 npx office-addin-debugging start manifest.json
