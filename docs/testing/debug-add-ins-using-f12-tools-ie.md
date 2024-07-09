@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using developer tools for Internet Explorer
 description: Debug add-ins using the developer tools in Internet Explorer.
-ms.date: 05/20/2023
+ms.date: 07/14/2024
 ms.localizationpriority: medium
 ---
 
@@ -29,7 +29,7 @@ Windows 10 and 11 include a web development tool called "F12" because it was ori
 
 The following steps are the instructions for debugging your add-in. If you just want to test the F12 tools themselves, see [Example add-in to test the F12 tools](#example-add-in-to-test-the-f12-tools).
 
-1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
+1. [Sideload](test-debug-non-local-server.md) and run the add-in.
 1. Launch the F12 development tools that corresponds to your version of Office.
 
    - For the 32-bit version of Office, use C:\Windows\System32\F12\IEChooser.exe

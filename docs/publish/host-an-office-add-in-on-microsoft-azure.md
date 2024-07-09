@@ -1,7 +1,7 @@
 ---
 title: Host an Office Add-in on Microsoft Azure | Microsoft Docs
 description: Learn how to deploy an add-in web app to Azure and sideload the add-in for testing in an Office client application.
-ms.date: 01/23/2023
+ms.date: 07/14/2024
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 The simplest Office Add-in is made up of an XML manifest file and an HTML page. The XML manifest file describes the add-in's characteristics, such as its name, what Office desktop clients it can run in, and the URL for the add-in's HTML page. The HTML page is contained in a web app that users interact with when they install and run your add-in within an Office client application. You can host the web app of an Office Add-in on any web hosting platform, including Azure.
 
-This article describes how to deploy an add-in web app to Azure and [sideload the add-in](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) for testing in an Office client application.
+This article describes how to deploy an add-in web app to Azure and [sideload the add-in](../testing/test-debug-non-local-server.md) for testing in an Office client application.
 
 ## Prerequisites
 

@@ -1,7 +1,7 @@
 ---
 title: Grant or revoke administrator consent to the add-in
 description: Learn how to grant or revoke administrator consent to your add-in.
-ms.date: 05/06/2023
+ms.date: 07/14/2024
 ms.localizationpriority: medium
 ---
 
@@ -25,7 +25,7 @@ Carry out this procedure *after* you have [registered the add-in](../develop/reg
 1. On the **$ADD-IN-NAME$** page, select **API permissions** then, under the **Configured permissions** section, choose **Grant admin consent for [tenant name]**. Select **Yes** for the confirmation that appears.
 
 > [!NOTE]
-> We recommend this procedure as a best practice if you're using a [Microsoft 365 developer account](https://aka.ms/m365devprogram). However, if you prefer, it's possible to sideload an SSO add-in under development and prompt the user with a consent form. For more information, see [Sideload on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and [Sideload on Office on the web](../testing/sideload-office-add-ins-for-testing.md).
+> We recommend this procedure as a best practice if you're using a [Microsoft 365 developer account](https://aka.ms/m365devprogram). However, if you prefer, it's possible to sideload an SSO add-in under development and prompt the user with a consent form. For more information, see [Sideload on desktop](../testing/test-debug-non-local-server.md) and [Sideload on Office on the web](../testing/sideload-office-add-ins-for-testing.md).
 
 ## Revoke consent
 

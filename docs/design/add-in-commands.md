@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
-ms.date: 03/04/2024
+ms.date: 07/14/2024
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -12,7 +12,7 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 
 > [!NOTE]
 >
-> - SharePoint catalogs don't support add-in commands. You can deploy add-in commands via [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing.
+> - SharePoint catalogs don't support add-in commands. You can deploy add-in commands via [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), or use [sideloading](../testing/test-debug-non-local-server.md) to deploy your add-in command for testing.
 > - Content add-ins don't currently support add-in commands.
 
 ## Types of add-in commands

@@ -1,7 +1,7 @@
 ---
 title: Test Office Add-ins
 description: Learn how to test your Office Add-in.
-ms.date: 12/12/2022
+ms.date: 07/12/2024
 ms.localizationpriority: high
 ---
 
@@ -34,7 +34,7 @@ You can use sideloading to install an Office Add-in for testing without having t
 > Office Add-ins that use the unified manifest for Microsoft 365 are *directly* supported in Office on the web, in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), and in Office on Windows connected to a Microsoft 365 subscription, Version 2304 (Build 16320.00000) or later. When the app package that contains the unified manifest is sideloaded to a platform that doesn't directly support that type of manifest then, if the manifest has a valid "alternateIcons" property, an XML manifest is generated from the unified manifest and this manifest is the one that's sideloaded.  
 
 - [Sideload Office Add-ins in Office on the web](sideload-office-add-ins-for-testing.md)
-- [Sideload Office Add-ins on Windows](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+- [Sideload Office Add-ins on Windows](test-debug-non-local-server.md)
 - [Sideload Office Add-ins on Mac](sideload-an-office-add-in-on-mac.md)
 - [Sideload Office Add-ins on iPad](sideload-an-office-add-in-on-ipad.md)
 - [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
