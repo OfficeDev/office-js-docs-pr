@@ -31,7 +31,7 @@ To start, open a terminal and set the `OfficeWebAddinDeveloperExtras` property f
     > [!IMPORTANT]
     > Mac App Store builds of Office don't support the `OfficeWebAddinDeveloperExtras` flag.
 
-Then, open the Office application and [sideload your add-in](sideload-an-office-add-in-on-mac.md). Right-click the add-in and you should see an **Inspect Element** option in the context menu. Select that option and it will pop the Inspector, where you can set breakpoints and debug your add-in.
+Then, open the Office application and [sideload your add-in](sideload-an-office-add-in-on-mac.md). Select and hold (or right-click) the add-in and you should see an **Inspect Element** option in the context menu. Select that option and it will pop the Inspector, where you can set breakpoints and debug your add-in.
 
 > [!NOTE]
 >
