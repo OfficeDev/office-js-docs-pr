@@ -13,7 +13,9 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 > We have changed the schedule to 7:00 AM Pacific Time. If you still have the old calendar invite that starts at 8:00 AM Pacific Time, please remove it and download the latest one at <https://aka.ms/officeaddinscommunitycall>.
 
 ## Agenda for July 10, 2024 call
-The agenda for the July Office Add-ins community call will be posted the week of the call.
+The agenda for the July Office Add-ins community call is：
+* An overview of the Microsoft 365 App Compliance Program.
+
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
