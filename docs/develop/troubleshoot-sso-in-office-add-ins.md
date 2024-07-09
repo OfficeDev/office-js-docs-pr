@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.
-ms.date: 08/14/2023
+ms.date: 07/08/2024
 ms.localizationpriority: medium
 ---
 
@@ -15,10 +15,11 @@ This article provides some guidance about how to troubleshoot problems with sing
 
 ## Debugging tools
 
-We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are:
+We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Some of the most popular are:
 
-- [Fiddler](https://www.telerik.com/fiddler): Free ([Documentation](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
-- [Charles](https://www.charlesproxy.com): Free for 30 days. ([Documentation](https://www.charlesproxy.com/documentation/))
+- [Fiddler](https://www.telerik.com/fiddler): Free for 10 days ([Documentation](https://docs.telerik.com/fiddler-everywhere/introduction))
+- [Charles](https://www.charlesproxy.com): Free for 30 days. ([Documentation](https://www.charlesproxy.com/documentation))
+- [Requestly](https://requestly.com/downloads): Free basic service. ([Documentation](https://developers.requestly.com))
 
 ## Causes and handling of errors from getAccessToken
 
