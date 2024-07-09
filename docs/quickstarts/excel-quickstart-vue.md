@@ -1,7 +1,7 @@
 ---
 title: Use Vue to build an Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and Vue.
-ms.date: 12/04/2023
+ms.date: 07/14/2024
 ms.service: excel
 ms.localizationpriority: high
 ---
