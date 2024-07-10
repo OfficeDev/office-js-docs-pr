@@ -1,7 +1,7 @@
 ---
 title: Create Outlook add-ins for read forms
 description: Read add-ins are Outlook add-ins that are activated in the Reading Pane or read inspector in Outlook.
-ms.date: 01/16/2024
+ms.date: 07/11/2024
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -39,8 +39,7 @@ Read add-ins can be any combination of the following types.
 
 - [Add-in commands](../design/add-in-commands.md)
 - [Contextual Outlook add-ins](contextual-outlook-add-ins.md)
-
-    [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
+- [Event-based activation add-ins](autolaunch.md)
 
 ## See also
 

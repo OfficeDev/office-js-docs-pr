@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
-ms.date: 07/02/2024
+ms.date: 07/11/2024
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -35,11 +35,11 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
     ![Add-in command buttons on the ribbon.](../images/outlook-windows-ribbon.png)
 
-- Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
+- Add-ins can link off regular expression matches in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
 
     [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
-    ![A contextual add-in card appears from a highlighted address in a message.](../images/outlook-detected-entity-card.png)
+- Add-ins can perform tasks when a specific event occurs. For more information, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 ## Mailbox items available to add-ins
 
@@ -63,8 +63,6 @@ Outlook add-ins activate when the user is composing or reading a message or appo
 - Using a custom form.
 
 - Created through Simple MAPI. Simple MAPI is used when an Office user creates or sends an email from an Office application on Windows while Outlook is closed. For example, a user can create an Outlook email while working in Word which triggers an Outlook compose window without launching the full Outlook application. If, however, Outlook is already running when the user creates the email from Word, that isn't a Simple MAPI scenario so Outlook add-ins work in the compose form as long as other activation requirements are met.
-
-In general, Outlook can activate add-ins in read form for items in the Sent Items folder, with the exception of add-ins that activate based on string matches of well-known entities. For more information about the reasons behind this, see [Support for well-known entities](match-strings-in-an-item-as-well-known-entities.md#support-for-well-known-entities).
 
 Currently, there are additional considerations when designing and implementing add-ins for mobile clients. To learn more, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 

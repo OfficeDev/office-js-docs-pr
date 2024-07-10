@@ -1,7 +1,7 @@
 ---
 title: Understanding Outlook add-in permissions
 description: Outlook add-ins specify the required permission level in their manifest, which include restricted, read item, read/write item, or read/write mailbox. 
-ms.date: 01/16/2024
+ms.date: 07/11/2024
 ms.localizationpriority: medium
 ---
 
@@ -21,19 +21,9 @@ The **restricted** permission is the most basic level of permission. Outlook ass
 
 ### Can do
 
-[!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
-
-- [Get only specific entities](match-strings-in-an-item-as-well-known-entities.md) (phone number, address, URL) from the item's subject or body.
-
-- Specify an [ItemIs activation rule](activation-rules.md#itemis-rule) that requires the current item in a read or compose form to be a specific item type, or [ItemHasKnownEntity rule](match-strings-in-an-item-as-well-known-entities.md) that matches any of a smaller subset of supported well-known entities (phone number, address, URL) in the selected item.
-
-  [!include[Rule features not supported by the unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
-
-- Access any properties and methods that do **not** pertain to specific information about the user or item (see the next section for the list of members that do).
+Access any properties and methods that do **not** pertain to specific information about the user or item (see the next section for the list of members that do).
 
 ### Can't do
-
-- Use an [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) rule on the contact, email address, meeting suggestion, or task suggestion entity.
 
 - Use the [ItemHasAttachment](/javascript/api/manifest/rule#itemhasattachment-rule) or [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule.
 
@@ -78,11 +68,7 @@ The **read item** permission is the next level of permission in the permissions 
 
 - [Write custom properties](/javascript/api/outlook/office.customproperties) set by the add-in on that item.
 
-- [Get all existing well-known entities](match-strings-in-an-item-as-well-known-entities.md), not just a subset, from the item's subject or body.
-
-    [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
-
-- Use all the [well-known entities](activation-rules.md#itemhasknownentity-rule) in [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) rules, or [regular expressions](activation-rules.md#itemhasregularexpressionmatch-rule) in [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rules.
+- Use [regular expressions](activation-rules.md#itemhasregularexpressionmatch-rule) in a contextual add-in.
 
 ### Can't do
 
@@ -167,4 +153,3 @@ Attempting to use an unsupported operation will result in an error response.
 ## See also
 
 - [Privacy, permissions, and security for Outlook add-ins](../concepts/privacy-and-security.md)
-- [Match strings in an Outlook item as well-known entities](match-strings-in-an-item-as-well-known-entities.md)

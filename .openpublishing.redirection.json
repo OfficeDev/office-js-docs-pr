@@ -1248,6 +1248,18 @@
         {
             "source_path": "docs/reference/overview/project-add-ins-reference-overview.md",
             "redirect_url": "/office/dev/add-ins/project/overview"
+        },
+        {
+            "source_path": "docs/outlook/match-strings-in-an-item-as-well-known-entities.md",
+            "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
+        },
+        {
+            "source_path": "docs/outlook/extract-entity-strings-from-an-item.md",
+            "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
+        },
+        {
+            "source_path": "docs/outlook/use-regular-expressions-to-show-an-outlook-add-in.md",
+            "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
         }
     ]
 }

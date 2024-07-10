@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: Possible reasons your contextual Outlook add-in doesn't activate as you expect.
-ms.date: 02/29/2024
+ms.date: 07/11/2024
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -63,8 +63,6 @@ Check your list of installed add-ins to verify whether an add-in is available. F
 If your Outlook add-in is a read add-in and is supposed to be activated when the user is viewing a message (including email messages, meeting requests, responses, and cancellations) or appointment, even though these items generally support add-ins, there are exceptions. Check if the selected item is one of those [listed where Outlook add-ins don't activate](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins).
 
 Also, because appointments are always saved in Rich Text Format, an [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule that specifies a **PropertyName** value of **BodyAsHTML** wouldn't activate an add-in on an appointment or message that's saved in plain text or Rich Text Format.
-
-Even if a mail item isn't one of the above types, if the item wasn't delivered by a version of Exchange Server that's at least Exchange 2016, known entities and properties, such as sender's SMTP address, wouldn't be identified on the item. Any activation rules that rely on these entities or properties wouldn't be satisfied, and the add-in wouldn't be activated.
 
 ## Is the add-in manifest installed properly, and does Outlook have a cached copy?
 
@@ -143,7 +141,7 @@ See [Validate and troubleshoot issues with your manifest](../testing/troubleshoo
 
 ## Are you using the appropriate activation rules?
 
-Starting in version 1.1 of the Office Add-ins manifests schema, you can create add-ins that are activated when the user is in a compose form (compose add-ins) or in a read form (read add-ins). Make sure you specify the appropriate activation rules for each type of form that your add-in is supposed to activate in. For example, you can activate compose add-ins using only [ItemIs](/javascript/api/manifest/rule#itemis-rule) rules with the **FormType** attribute set to **Edit** or **ReadOrEdit**, and you cannot use any of the other types of rules, such as [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) and [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rules for compose add-ins. For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
+Starting in version 1.1 of the Office Add-ins manifests schema, you can create add-ins that are activated when the user is in a compose form (compose add-ins) or in a read form (read add-ins). Make sure you specify the appropriate activation rules for each type of form that your add-in is supposed to activate in. For example, you can activate compose add-ins using only [ItemIs](/javascript/api/manifest/rule#itemis-rule) rules with the **FormType** attribute set to **Edit** or **ReadOrEdit**, and you can't use any of the other types of rules, such as [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rules for compose add-ins. For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
 
 ## If you use a regular expression, is it properly specified?
 
@@ -238,6 +236,6 @@ This section applies to all activation rules that use regular expressions, parti
 
 - [Deploy and install Outlook add-ins for testing](testing-and-tips.md)
 - [Activation rules for Outlook add-ins](activation-rules.md)
-- [Use regular expression activation rules to show an Outlook add-in](use-regular-expressions-to-show-an-outlook-add-in.md)
+- [Contextual Outlook add-ins](contextual-outlook-add-ins.md)
 - [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
 - [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md)
