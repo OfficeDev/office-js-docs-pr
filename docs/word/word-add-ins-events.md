@@ -15,7 +15,7 @@ When certain changes occur in a Word document, event notifications fire. The Wor
 
 | Event | Description | Supported objects |
 |:---------------|:-------------|:-----------|
-| `onAnnotationClicked` | Occurs when the user clicks an annotation (or selects it using **Alt+Down**).<br><br>Event data object:<br>[AnnotationClickedEventArgs](/javascript/api/word/word.annotationclickedeventargs) | [**Document**](/javascript/api/word/word.document#word-word-document-onannotationclicked-member) |
+| `onAnnotationClicked` | Occurs when the user selects an annotation.<br><br>Event data object:<br>[AnnotationClickedEventArgs](/javascript/api/word/word.annotationclickedeventargs) | [**Document**](/javascript/api/word/word.document#word-word-document-onannotationclicked-member) |
 | `onAnnotationHovered` | Occurs when the user hovers the cursor over an annotation.<br><br>Event data object:<br>[AnnotationHoveredEventArgs](/javascript/api/word/word.annotationhoveredeventargs) | [**Document**](/javascript/api/word/word.document#word-word-document-onannotationhovered-member) |
 | `onAnnotationInserted` | Occurs when the user adds one or more annotations.<br><br>Event data object:<br>[AnnotationInsertedEventArgs](/javascript/api/word/word.annotationinsertedeventargs) | [**Document**](/javascript/api/word/word.document#word-word-document-onannotationinserted-member) |
 | `onAnnotationPopupAction` | Occurs when the user performs an action in an annotation pop-up menu.<br><br>Event data object:<br>[AnnotationPopupActionEventArgs](/javascript/api/word/word.annotationpopupactioneventargs) | [**Document**](/javascript/api/word/word.document#word-word-document-onannotationpopupaction-member) |
