@@ -1,7 +1,7 @@
 ---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 5/21/2024
+ms.date: 07/11/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -451,16 +451,19 @@ As a meeting attendee, you should see a screen similar to the following image wh
 
 ## Register your online-meeting template
 
-Registering your online-meeting add-in is optional. It only applies if you want to surface the **Join** button in meetings, in addition to the meeting link. Once you've developed your online-meeting add-in and would like to register it, create a GitHub issue using the following guidance. We'll contact you to coordinate a registration timeline.
+Registering your online-meeting add-in is optional. It only applies if you want to surface the **Join** button in meetings, in addition to the meeting link. Once you've published your online-meeting add-in and would like to register it, create a GitHub issue using the following guidance. We'll contact you to coordinate a registration timeline.
 
 > [!IMPORTANT]
 >
 > - The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows (preview).
+> - Only online-meeting add-ins published to AppSource can be registered. Line-of-business add-ins aren't supported.
 > - The **Join** button relies on the technology used by entity-based contextual Outlook add-ins. As this technology will be retired by the end of June 2024, an alternative implementation of the **Join** button is currently being developed. During the transition to this implementation, the **Join** button may not be visible when using an online meeting add-in. As a workaround, you must select the meeting link from the body of the meeting invitation to join the meeting directly. For more information on the retirement of entity-based contextual add-ins, see [Retirement of entity-based contextual Outlook add-ins](https://devblogs.microsoft.com/microsoft365dev/retirement-of-entity-based-contextual-outlook-add-ins/).
 
 1. Create a [new GitHub issue](https://github.com/OfficeDev/office-js/issues/new).
 1. Set the **Title** of the new issue to "Outlook: Register the online-meeting template for my-service", replacing `my-service` with your service name.
-1. In the issue body, replace the existing text with the string you set in the `newBody` or similar variable from the [Implement adding online meeting details](#implement-adding-online-meeting-details) section earlier in this article.
+1. In the issue body, replace the existing text with the following:
+    - The asset ID of your published add-in.
+    - The string you set in the `newBody` or similar variable from the [Implement adding online meeting details](#implement-adding-online-meeting-details) section earlier in this article.
 1. Click **Submit new issue**.
 
 ![A new GitHub issue screen with Contoso sample content.](../images/outlook-request-to-register-online-meeting-template.png)
