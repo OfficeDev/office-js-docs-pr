@@ -44,7 +44,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
 ### Create a TypeScript config file
 
-1. In **Solution Explorer**, right-click the ASP.NET web project and choose **Add > New Item**. The ASP.NET web project has your project name with the text `Web` appended to the end.
+1. In **Solution Explorer**, select and hold (or right-click) the ASP.NET web project and choose **Add > New Item**. The ASP.NET web project has your project name with the text `Web` appended to the end.
 1. In the **Add New Item** dialog, select **TypeScript JSON configuration File** to create a **tsconfig.json** file and then choose **Add**.
 1. Update the **tsconfig.json** file to also have an `include` section as shown in the following JSON.
 

@@ -33,7 +33,7 @@ To determine which webview you're using, see [Browsers and webview controls used
 1. Run the Microsoft Edge (Chromium-based) developer tools by one of these methods:
 
    - Be sure the add-in's task pane has focus and press **Ctrl+Shift+I**.
-   - Right-click the task pane to open the context menu and select **Inspect**, or open the [personality menu](../design/task-pane-add-ins.md#personality-menu) and select **Attach Debugger**. (The personality menu isn't supported in Outlook.)
+   - Select and hold (or right-click) the task pane to open the context menu and select **Inspect**, or open the [personality menu](../design/task-pane-add-ins.md#personality-menu) and select **Attach Debugger**. (The personality menu isn't supported in Outlook.)
 
    > [!NOTE]
    > The new Outlook on Window desktop client (preview) doesn't support the context menu or the keyboard shortcut to access the Microsoft Edge developer tools. Instead, you must run `olk.exe --devtools` from a command prompt. For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows (preview)](../outlook/one-outlook.md#debug-your-add-in).
@@ -63,6 +63,6 @@ If your add-in uses the Office Dialog API, the dialog runs in a separate process
 1. Open the Microsoft Edge (Chromium-based) developer tools by one of these methods:
 
    - Press **Ctrl+Shift+I** or **F12**.
-   - Right-click the dialog to open the context menu and select **Inspect**.
+   - Select and hold (or right-click) the dialog to open the context menu and select **Inspect**.
 
 1. Use the tool the same as you would for code in a task pane. See [Debug a task pane add-in using Microsoft Edge (Chromium-based) developer tools](#debug-a-task-pane-add-in-using-microsoft-edge-chromium-based-developer-tools) earlier in this article.

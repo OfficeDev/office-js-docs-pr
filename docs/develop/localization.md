@@ -388,7 +388,7 @@ To enable localized strings for the heading and paragraph, you place the strings
 
 #### Add the resource file to the add-in project
 
-1. In **Solution Explorer** in Visual Studio, right-click the **WorldReadyAddInWeb** project and choose **Add** > **New Item**.
+1. In **Solution Explorer** in Visual Studio, select and hold (or right-click) the **WorldReadyAddInWeb** project and choose **Add** > **New Item**.
 
 1. In the **Add New Item** dialog box, choose **JavaScript File**.
 
