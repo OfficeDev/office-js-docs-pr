@@ -11,7 +11,7 @@ This article describes important concepts related to working with events in Word
 
 ## Events in Word
 
-Each time certain types of changes occur in a Word document, an event notification fires. By using the Word JavaScript API, you can register event handlers that allow your add-in to automatically run a designated function when a specific event occurs. The following events are currently supported.
+When certain changes occur in a Word document, event notifications fire. The Word JavaScript APIs let you register event handlers that allow your add-in to automatically run designated functions when those changes occur. The following events are currently supported.
 
 | Event | Description | Supported objects |
 |:---------------|:-------------|:-----------|
@@ -62,11 +62,11 @@ An event handler is created when an add-in registers the event handler. It's des
 
 ### Events and coauthoring
 
-With coauthoring, multiple people can work together and edit the same Word document simultaneously. For events that can be triggered by a coauthor, such as `onParagraphChanged`, the corresponding **Event** object will contain a **source** property that indicates whether the event was triggered locally by the current user (`event.source = Local`) or was triggered by the remote coauthor (`event.source = Remote`).
+With coauthoring, multiple people can work together and edit the same Word document simultaneously. For events that can be triggered by a coauthor, such as `onParagraphChanged`, the corresponding **Event** object will contain a **source** property that indicates whether the event was triggered locally by the current user (`event.source == Local`) or was triggered by the remote coauthor (`event.source == Remote`).
 
 ## Register an event handler
 
-The following code sample registers an event handler for the `onParagraphChanged` event in the document. The code specifies that when content changes in the document, the `handleChange` function should run.
+The following code sample registers an event handler for the `onParagraphChanged` event in the document. The code specifies that when content changes in the document, the `handleChange` function runs.
 
 ```js
 await Word.run(async (context) => {
