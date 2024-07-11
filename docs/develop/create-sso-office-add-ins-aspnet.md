@@ -48,7 +48,7 @@ Use the following values for placeholders for the subsequent app registration st
 
 ## Configure the solution
 
-1. In the root of the **Begin** folder, open the solution (.sln) file in **Visual Studio**. Right-click the top node in **Solution Explorer** (the Solution node, not either of the project nodes), and then select **Set startup projects**.
+1. In the root of the **Begin** folder, open the solution (.sln) file in **Visual Studio**. Right-click (or select and hold) the top node in **Solution Explorer** (the Solution node, not either of the project nodes), and then select **Set startup projects**.
 
 1. Under **Common Properties**, select **Startup Project**, and then **Multiple startup projects**. Ensure that the **Action** for both projects is set to **Start**, and that the **Office-Add-in-ASPNETCoreWebAPI** project is listed first. Close the dialog.
 

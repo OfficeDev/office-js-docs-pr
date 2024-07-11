@@ -56,7 +56,7 @@ Use the following steps to add and reference the **OfficeThemes.css** file to yo
 > [!NOTE]
 > The steps in this procedure only apply to Visual Studio 2015. If you are using Visual Studio 2019, the **OfficeThemes.css** file is created automatically for any new PowerPoint add-in projects that you create.
 
-1. In **Solution Explorer**, right-click the **Content** folder in the _**project_name**_**Web** project, choose **Add**, and then select **Style Sheet**.
+1. In **Solution Explorer**, right-click (or select and hold) the **Content** folder in the _**project_name**_**Web** project, choose **Add**, and then select **Style Sheet**.
 
 1. Name the new style sheet **OfficeThemes**.
 

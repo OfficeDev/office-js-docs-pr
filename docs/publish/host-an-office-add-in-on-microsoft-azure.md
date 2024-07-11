@@ -32,11 +32,11 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 
 1. Open File Explorer on your development computer.
 
-2. Right-click the C:\ drive and then choose **New** > **Folder**.
+2. Right-click (or select and hold) the C:\ drive and then choose **New** > **Folder**.
 
 3. Name the new folder AddinManifests.
 
-4. Right-click the AddinManifests folder and then choose **Share with** > **Specific people**.
+4. Right-click (or select and hold) the AddinManifests folder and then choose **Share with** > **Specific people**.
 
 5. In **File Sharing**, choose the drop-down arrow and then choose **Everyone** > **Add** > **Share**.
 
@@ -114,7 +114,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 1. With your add-in project open in Visual Studio, expand the solution node in **Solution Explorer**, then select **App Service**.
 
-2. Right-click the web project and then choose **Publish**. The web project contains Office Add-in web app files so this is the project that you publish to Azure.
+2. Right-click (or select and hold) the web project and then choose **Publish**. The web project contains Office Add-in web app files so this is the project that you publish to Azure.
 
 3. On the **Publish** tab:
 
@@ -132,7 +132,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 1. In Visual Studio with the sample Office Add-in open in **Solution Explorer**, expand the solution so that both projects show.
 
-2. Expand the Office Add-in project (for example WordWebAddIn), right-click the manifest folder, and then choose **Open**. The add-in XML manifest file opens.
+2. Expand the Office Add-in project (for example WordWebAddIn), right-click (or select and hold) the manifest folder, and then choose **Open**. The add-in XML manifest file opens.
 
 3. In the XML manifest file, find and replace all instances of "~remoteAppUrl" with the root URL of the add-in web app on Azure. This is the URL that you copied earlier after you published the add-in web app to Azure (for example: `https://YourDomain.azurewebsites.net`).
 
