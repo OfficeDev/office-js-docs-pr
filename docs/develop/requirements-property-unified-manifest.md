@@ -136,7 +136,7 @@ For example, suppose an Outlook add-in is configured to autolaunch in response t
 
 ### extensions.contextMenus.requirements
 
-The "extensions.contextMenus" property configures the add-in's context menus. A context menu is a shortcut menu that appears when you select and hold (or right-click) in the Office UI. The "requirements" subproperty can be used to allow context menus only when certain requirements are met.
+The "extensions.contextMenus" property configures the add-in's context menus. A context menu is a shortcut menu that appears when you right-click (or select and hold) in the Office UI. The "requirements" subproperty can be used to allow context menus only when certain requirements are met.
 
 For example, suppose you want to show context menus only in Excel versions that support the AddinCommands 1.1 requirement set. You could do that with markup similar to the following:
 
