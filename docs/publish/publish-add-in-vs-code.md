@@ -40,8 +40,8 @@ When your add-in is working as desired, you can publish it directly through Visu
 
     :::image type="content" source="../images/azure-extension-create-storage-account.png" alt-text="Selecting Storage accounts > Create Storage Account in the Azure extension.":::
 
-1. Select and hold (or right-click) your storage account and select **Configure Static Website**. You'll be asked to enter the index document name and the 404 document name. Change the index document name from the default `index.html` to **`taskpane.html`**. You may also change the 404 document name but are not required to.
-1. Select and hold (or right-click) your storage account again and this time select **Browse Static Website**. From the browser window that opens, copy the website URL.
+1. Right-click (or select and hold) your storage account and select **Configure Static Website**. You'll be asked to enter the index document name and the 404 document name. Change the index document name from the default `index.html` to **`taskpane.html`**. You may also change the 404 document name but are not required to.
+1. Right-click (or select and hold) your storage account again and this time select **Browse Static Website**. From the browser window that opens, copy the website URL.
 1. Open your project's manifest file (`manifest.xml`) and change all references to your localhost URL (such as `https://localhost:3000`) to the URL you've copied. This endpoint is the static website URL for your newly created storage account. Save the changes to your manifest file.
 1. Open a command line prompt or terminal window and go to the root directory of your add-in project. Run the following command to prepare all files for production deployment.
 
@@ -51,11 +51,11 @@ When your add-in is working as desired, you can publish it directly through Visu
 
     When the build completes, the **dist** folder in the root directory of your add-in project will contain the files that you'll deploy in subsequent steps.
 
-1. In VS Code, go to the Explorer and select and hold (or right-click) the **dist** folder, and select **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously.
+1. In VS Code, go to the Explorer and right-click (or select and hold) the **dist** folder, and select **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously.
 
-    :::image type="content" source="../images/deploy-to-static-website.png" alt-text="Select the dist folder, select and hold (or right-click), and select Deploy to Static Website via Azure Storage.":::
+    :::image type="content" source="../images/deploy-to-static-website.png" alt-text="Select the dist folder, right-click (or select and hold), and select Deploy to Static Website via Azure Storage.":::
 
-1. When deployment is complete, select and hold (or right-click) the storage account that you created previously and select **Browse Static Website**. This opens the static web site and displays the task pane.
+1. When deployment is complete, right-click (or select and hold) the storage account that you created previously and select **Browse Static Website**. This opens the static web site and displays the task pane.
 
 1. Finally, [sideload the manifest file](../testing/sideload-office-add-ins-for-testing.md) and the add-in will load from the static web site you just deployed.
 
@@ -63,7 +63,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 
 If your add-in has custom functions, there are a few more steps to enable them on the Azure Storage account. First, enable CORS so that Office can access the functions.json file.
 
-1. Select and hold (or right-click) the Azure storage account and select **Open in Portal**.
+1. Right-click (or select and hold) the Azure storage account and select **Open in Portal**.
 1. In the Settings group, select **Resource sharing (CORS)**. You can also use the search box to find this.
 1. Create a new CORS rule with the following settings.
 
@@ -118,7 +118,7 @@ Next, add a MIME type for JSON files.
 
     When the build completes, the **dist** folder in the root directory of your add-in project will contain the files that you'll deploy.
 
-1. To deploy, in the VS Code **Explorer**, select and hold (or right-click) the **dist** folder, and select **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously. If you already deployed the **dist** folder, you'll be prompted if you want to overwrite the files in the Azure storage with the latest changes.
+1. To deploy, in the VS Code **Explorer**, right-click (or select and hold) the **dist** folder and select **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously. If you already deployed the **dist** folder, you'll be prompted if you want to overwrite the files in the Azure storage with the latest changes.
 
 ## Deploy updates
 
