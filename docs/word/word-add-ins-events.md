@@ -13,7 +13,7 @@ This article describes important concepts related to working with events in Word
 
 When certain changes occur in a Word document, event notifications fire. The Word JavaScript APIs let you register event handlers that allow your add-in to automatically run designated functions when those changes occur. The following events are currently supported.
 
-| Event | Description | Supported objects | Supports coauthoring? |
+| Event | Description | Supported objects | Triggered during coauthoring? |
 |:---------------|:-------------|:-----------|:-----------|
 | `onAnnotationClicked` | Occurs when the user selects an annotation.<br><br>Event data object:<br>[AnnotationClickedEventArgs](/javascript/api/word/word.annotationclickedeventargs) | [**Document**](/javascript/api/word/word.document#word-word-document-onannotationclicked-member) | No |
 | `onAnnotationHovered` | Occurs when the user hovers the cursor over an annotation.<br><br>Event data object:<br>[AnnotationHoveredEventArgs](/javascript/api/word/word.annotationhoveredeventargs) | [**Document**](/javascript/api/word/word.document#word-word-document-onannotationhovered-member) | No |
@@ -35,7 +35,7 @@ When certain changes occur in a Word document, event notifications fire. The Wor
 > [!NOTE]
 > The following events are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
-| Event | Description | Supported objects | Supports coauthoring? |
+| Event | Description | Supported objects | Triggered during coauthoring? |
 |:---------------|:-------------|:-----------|:-----------|
 | `onCommentAdded` | Occurs when new comments are added.<br><br>Event data object:<br>[CommentEventArgs](/javascript/api/word/word.commenteventargs) | <ul><li>[**Body**](/javascript/api/word/word.body?view=word-js-preview&preserve-view=true&preserve-view=true#word-word-body-oncommentadded-member)</li><li>[**ContentControl**](/javascript/api/word/word.contentcontrol?view=word-js-preview&preserve-view=true#word-word-contentcontrol-oncommentadded-member)</li><li>[**Paragraph**](/javascript/api/word/word.paragraph#word-word-paragraph-oncommentadded-member)</li><li>[**Range**](/javascript/api/word/word.range#word-word-range-oncommentadded-member)</li></ul> | Yes |
 | `onCommentChanged` | Occurs when a comment or its reply is changed.<br><br>Event data object:<br>[CommentEventArgs](/javascript/api/word/word.commenteventargs) | <ul><li>[**Body**](/javascript/api/word/word.body?view=word-js-preview&preserve-view=true#word-word-body-oncommentchanged-member)</li><li>[**ContentControl**](/javascript/api/word/word.contentcontrol?view=word-js-preview&preserve-view=true#word-word-contentcontrol-oncommentchanged-member)</li><li>[**Paragraph**](/javascript/api/word/word.paragraph#word-word-paragraph-oncommentchanged-member)</li><li>[**Range**](/javascript/api/word/word.range#word-word-range-oncommentchanged-member)</li></ul> | Yes |
