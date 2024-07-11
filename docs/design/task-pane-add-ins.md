@@ -21,8 +21,8 @@ Task panes are interface surfaces that typically appear on the right side of the
 |:-----|:--------|
 |Include the name of your add-in in the title.|Don't append your company name to the title.|
 |Use short descriptive names in the title.|Don't append strings such as "add-in," "for Word," or "for Office" to the title of your add-in.|
-|Include some navigational or commanding element such as the CommandBar or Pivot at the top of your add-in.|*None.*|
-|Include a branding element such as the BrandBar at the bottom of your add-in unless your add-in is to be used within Outlook.|*None.*|
+|Include some navigational or commanding element such as the CommandBar or Pivot at the top of your add-in.|*None*|
+|Include a branding element such as the BrandBar at the bottom of your add-in unless your add-in is to be used within Outlook.|*None*|
 
 ## Variants
 
