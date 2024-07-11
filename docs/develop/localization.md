@@ -47,9 +47,7 @@ The techniques for localizing with the manifest differ depending on whether you 
 
 # [XML Manifest](#tab/xmlmanifest)
 
-Every Office Add-in specifies a [DefaultLocale] element and a locale in its manifest. By default, the Office Add-in platform and Office client applications apply the values of the [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl], and [SourceLocation] elements to all locales. You can optionally support specific values for specific locales, by specifying an [Override] child element for each additional locale, for any of these five elements. The value for the [DefaultLocale] element and for the `Locale` attribute of the [Override] element is specified according to [RFC 3066], "Tags for the Identification of Languages." Table 1 describes the localizing support for these elements.
-
-*Table 1. Localization support*
+Every Office Add-in specifies a [DefaultLocale] element and a locale in its manifest. By default, the Office Add-in platform and Office client applications apply the values of the [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl], and [SourceLocation] elements to all locales. You can optionally support specific values for specific locales, by specifying an [Override] child element for each additional locale, for any of these five elements. The value for the [DefaultLocale] element and for the `Locale` attribute of the [Override] element is specified according to [RFC 3066], "Tags for the Identification of Languages." The following table describes the localizing support for these elements.
 
 |**Element**|**Localization support**|
 |:-----|:-----|
@@ -175,7 +173,6 @@ When using the unified manifest, localize the public-facing strings in the manif
 }
 ```
 
-
 ---
 
 ## Localize extended overrides
@@ -183,7 +180,7 @@ When using the unified manifest, localize the public-facing strings in the manif
 > [!NOTE]
 > This section isn't applicable if you're using the unified manifest.
 
-Some extensibility features of Office Add-ins, such as keyboard shortcuts, are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest. This section assumes that you're familiar with extended overrides. See [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element.
+Some extensibility features of Office Add-ins, such as keyboard shortcuts, are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest. This section assumes that you're familiar with extended overrides. See [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element.
 
 Use the `ResourceUrl` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element to point Office to a file of localized resources. The following is an example.
 
