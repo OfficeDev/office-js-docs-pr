@@ -62,7 +62,7 @@ An event handler is created when an add-in registers the event handler. It's des
 
 With coauthoring, multiple people can work together and edit the same Word document simultaneously. For events that can be triggered by a coauthor, such as `onParagraphChanged`, the corresponding **Event** object will contain a **source** property that indicates whether the event was triggered locally by the current user (`event.source == Local`) or was triggered by the remote coauthor (`event.source == Remote`).
 
-Events that use the following data objects support coauthoring.
+Events that use the following data objects are triggered during coauthoring.
 
 - `CommentEventArgs` (preview)
 - `ContentControlAddedEventArgs`
@@ -181,7 +181,7 @@ await Word.run(async (context) => {
 });
 ```
 
-The following code sample shows how to register comment event handlers on the document's body object and include a `body.track();` statement.
+The following code sample shows how to register comment event handlers on the document's body object and includes a `body.track()` call.
 
 ```typescript
 let eventContexts = [];
