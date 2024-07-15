@@ -1,7 +1,7 @@
 ---
 title: Contextual Outlook add-ins
 description: Initiate tasks related to a message without leaving the message itself to result in an easier and richer user experience.
-ms.date: 07/11/2024
+ms.date: 07/18/2024
 ms.localizationpriority: medium
 ---
 
@@ -62,6 +62,8 @@ In the JavaScript code of your add-in, you can obtain matches to a regular expre
 - [getRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) returns matches in the current item for all regular expressions specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
 
 - [getRegExMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) returns matches in the current item for the identified regular expression specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
+
+- [getSelectedRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) returns highlighted matches in the current item for the regular expression specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
 
 When the regular expressions are evaluated, the matches are returned to your add-in in an array object. For `getRegExMatches`, that object has the identifier of the name of the regular expression.
 

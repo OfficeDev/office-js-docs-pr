@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
-ms.date: 07/11/2024
+ms.date: 07/18/2024
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
