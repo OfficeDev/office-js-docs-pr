@@ -1,7 +1,7 @@
 ---
 title: Content Office Add-ins
 description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
-ms.date: 06/27/2024
+ms.date: 07/17/2024
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -41,10 +41,45 @@ For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from
 
 ## Implementation
 
-There are minor differences in the manifests between content add-ins and add-ins that use task panes.
+There are minor differences in the manifests between content add-ins and add-ins that use task panes. Open the tab for the type of manifest you are using.
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+Configure the manifest with the following steps:
+
+1. Add a "contentRuntimes" child array to the extension object in the "extensions" array.
+1. Add an anonymous content runtime object in the "contentRuntimes" array.
+1. Set the "id" property of the object to a descriptive name.
+1. Set the "code.page" object to the full URL of the page that contains the content.
+1. Optionally, set the "requestedWidth" and "requestedHeight" properties to the size between 32 and 1000 pixels. If these properties are not used, the Office application determines the size.
+1. Optionally, set the the "disableSnapshot" property to `true` to prevent Office from saving a snapshot of the content component with the document. 
+1. Optionally, add a "requirements.scopes" property to restrict the installability of the content component to only Excel or only PowerPoint. The allowed values are "workbook" and "presentation". (Listing both means the content component is available in both, which is the same as having no "requirements" property at all.)
+
+```json
+"contentRuntimes": [
+    {
+        "id": "ContentRuntime",
+        "code": {
+            "page": "https://localhost:3000/content.html"
+        },
+        "requestedWidth": 100,
+        "requestedHeight": 100,
+        "disableSnapshot": true,
+        "requirements": {
+            "scopes": [
+                "workbook"
+            ]
+        },
+    }
+]
+```
+
+# [XML Manifest](#tab/xmlmanifest)
 
 - For the **\<[OfficeApp](/javascript/api/manifest/officeapp)\>** element, set the `xsi:type` attribute to `"ContentApp"`.
 - In the **\<[DefaultSettings](/javascript/api/manifest/defaultsettings)\>** element, add the **\<[RequestedHeight](/javascript/api/manifest/requestedheight)\>** and  **\<[RequestedWidth](/javascript/api/manifest/requestedwidth)\>** elements.
+
+---
 
 For a sample that implements a content add-in, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) on GitHub.
 
