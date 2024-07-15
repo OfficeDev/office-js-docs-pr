@@ -20,7 +20,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
   - Embed complementary services within Office applications.
   - Improve the Office experience to enhance productivity.
 - Make sure that the value of your add-in is clear to users right away by [creating an engaging first-run experience](#create-an-engaging-first-run-experience).
-- Create an [effective AppSource listing](/office/dev/store/create-effective-office-store-listings). Make the benefits of your add-in clear in your title and description. Don't rely on your brand to communicate what your add-in does.
+- Create an [effective AppSource listing](/partner-center/marketplace-offers/create-effective-office-store-listings). Make the benefits of your add-in clear in your title and description. Don't rely on your brand to communicate what your add-in does.
 
 ## Create an engaging first-run experience
 
@@ -38,7 +38,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
   ![A "Do" versus "Don't" comparison on including an option to insert sample data in your add-in. The "Do" example shows an add-in that includes a button users can click to insert sample data. The "Don't" example shows an add-in without sample data or buttons.](../images/add-in-title.png)
 
-- Offer [free trials](/office/dev/store/decide-on-a-pricing-model). If your add-in requires a subscription, make some functionality available without a subscription.
+- Offer [free trials](/partner-center/marketplace-offers/monetize-addins-through-microsoft-commercial-marketplace). If your add-in requires a subscription, make some functionality available without a subscription.
 
 - Make the sign-up experience simple. Prefill information, such as email and display name, and skip email verifications.
 
@@ -119,7 +119,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 ## Market your add-in
 
-- Publish your add-in to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) and [promote it](/office/dev/store/promote-your-office-store-solution) from your website. Create an [effective AppSource listing](/office/dev/store/create-effective-office-store-listings).
+- Publish your add-in to [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) and [promote it](/partner-center/marketplace-offers/promote-your-office-store-solution) from your website. Create an [effective AppSource listing](/partner-center/marketplace-offers/create-effective-office-store-listings).
 
 - Use succinct and descriptive add-in titles. Include no more than 128 characters.
 
