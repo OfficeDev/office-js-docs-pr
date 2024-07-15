@@ -51,7 +51,7 @@ Every Office Add-in specifies a [DefaultLocale] element and a locale in its mani
 
 *Table 1. Localization support*
 
-|**Element**|**Localization support**|
+|Element|Localization support|
 |:-----|:-----|
 |[Description]   |Users in each locale you specify can see a localized description for the add-in in AppSource (or private catalog).<br/>For Outlook add-ins, users can see the description in the Exchange Admin Center (EAC) after installation.|
 |[DisplayName]   |Users in each locale you specify can see a localized description for the add-in in AppSource (or private catalog).<br/>For Outlook add-ins, users can see the display name as a label for the Outlook add-in button and in the EAC after installation.<br/>For content and task pane add-ins, users can see the display name on the ribbon after installing the add-in.|
@@ -388,7 +388,7 @@ To enable localized strings for the heading and paragraph, you place the strings
 
 #### Add the resource file to the add-in project
 
-1. In **Solution Explorer** in Visual Studio, right-click the **WorldReadyAddInWeb** project and choose **Add** > **New Item**.
+1. In **Solution Explorer** in Visual Studio, right-click (or select and hold) the **WorldReadyAddInWeb** project and choose **Add** > **New Item**.
 
 1. In the **Add New Item** dialog box, choose **JavaScript File**.
 

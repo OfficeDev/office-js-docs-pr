@@ -28,7 +28,7 @@ To have Outlook activate an add-in for specific conditions, specify activation r
 
 The following table lists the types of rules that are available. You can find more information following the table.
 
-|**Rule name**|**Applicable forms**|**Description**|
+|Rule name|Applicable forms|Description|
 |:-----|:-----|:-----|
 |[ItemIs](#itemis-rule)|Read, Compose|Checks to see whether the current item is of the specified type (message or appointment). Can also check the item class and form type, and optionally, item message class.|
 |[ItemHasAttachment](#itemhasattachment-rule)|Read|Checks to see whether the selected item contains an attachment.|
@@ -43,7 +43,7 @@ The `ItemIs` complex type defines a rule that evaluates to `true` if the current
 
 Specify one of the following item types in the `ItemType` attribute of an `ItemIs` rule. You can specify more than one `ItemIs` rule in a manifest. The `ItemType` attribute defines the types of Outlook items that support Outlook add-ins.
 
-|**Value**|**Description**|
+|Value|Description|
 |:-----|:-----|
 |**Appointment**|Specifies an item in an Outlook calendar. This includes a meeting item that has been responded to and has an organizer and attendees, or an appointment that doesn't have an organizer or attendee and is simply an item on the calendar. This corresponds to the IPM.Appointment message class in Outlook.|
 |**Message**|Specifies one of the following items received in typically the Inbox. <ul><li><p>An email message. This corresponds to the IPM.Note message class in Outlook.</p></li><li><p>A meeting request, response, or cancellation. This corresponds to the following message classes in Outlook.</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|

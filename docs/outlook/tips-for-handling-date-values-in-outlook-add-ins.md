@@ -38,7 +38,7 @@ The aforementioned JavaScript limitation has an implication for you when you use
 
 For clarity, let's define the time zones in question.
 
-|**Time zone**|**Description**|
+|Time zone|Description|
 |:-----|:-----|
 |Client computer time zone|This is set on the operating system of the client computer. Most browsers use the client computer time zone to display date or time values of the JavaScript `Date` object.<br/><br/>Classic Outlook on Windows and Outlook on Mac use this time zone to display date or time values in the user interface. <br/><br/>For example, on a client computer running Windows, classic Outlook uses the time zone set on Windows as the local time zone. On the Mac, if the user changes the time zone on the client computer, Outlook on Mac would prompt the user to update the time zone in Outlook as well.|
 |Exchange Admin Center (EAC) time zone|The user sets this time zone value (and the preferred language) when they log on to Outlook on the web, new Outlook on Windows (preview), or mobile devices the first time. <br/><br/>Outlook on the web, new Outlook on Windows (preview), and mobile devices use this time zone to display date or time values in the user interface.|

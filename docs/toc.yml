@@ -948,6 +948,9 @@ items:
     - name: Use search options to find text
       href: word/search-option-guidance.md
       displayName: Word
+    - name: Use events
+      href: word/word-add-ins-events.md
+      displayName: Word
     - name: When and how to use Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
       displayName: Word
