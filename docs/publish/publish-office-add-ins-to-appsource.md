@@ -12,7 +12,7 @@ Publish your Office Add-in to Microsoft AppSource to make it widely available to
 
 ## The publishing process
 
-To include your solution in Microsoft AppSource and within Office, you submit it to Partner Center. Then it goes through an approval and certification process. For complete details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center).
+To include your solution in Microsoft AppSource and within Office, submit it to Partner Center. Then it goes through an approval and certification process. For complete details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center).
 
 ## Provide an installation link
 
@@ -43,8 +43,8 @@ For example, if you want to provide an installation link for [Script Lab](https:
 
 The following parameter values are used for the Script Lab installation link.
 
-- **linkid:**  The value `2261819` specifies the Excel endpoint. Script Lab supports Word, Excel and PowerPoint, so this value can be changed to support different endpoints.
-- **templateid:** The value `WA104380862` is the Microsoft AppSource id for Script Lab.
+- **linkid:**  The value `2261819` specifies the Excel endpoint. Script Lab supports Word, Excel, and PowerPoint, so this value can be changed to support different endpoints.
+- **templateid:** The value `WA104380862` is the Microsoft AppSource ID for Script Lab.
 - **templatetitle:** The value `Script%20Lab,%20a%20Microsoft%20Garage%20project` which is the HTML encoded value of the title.
 
 ## Related content

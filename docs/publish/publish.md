@@ -9,7 +9,7 @@ ms.localizationpriority: high
 
 You can use one of several methods to deploy your Office Add-in for testing or distribution to users. The deployment method can also affect which platforms surface your add-in.
 
-|**Method**|**Use...**|
+|Method|Use|
 |:---------|:------------|
 |[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser. (Not for production add-ins.) |
 |[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows after you have published the add-in to a server other than localhost. (Not for production add-ins, for testing on iPad, Mac, or the web, or for add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).)|
@@ -78,7 +78,7 @@ It's important to note that some versions of Outlook clients and Exchange server
 
 ## GoDaddy Microsoft 365 SKUs
 
-[Microsoft 365 subscriptions provided by GoDaddy](https://www.godaddy.com/business/office-365) have limited support for add-ins. The following options are **not** supported:
+[Microsoft 365 subscriptions provided by GoDaddy](https://www.godaddy.com/business/office-365) have limited support for add-ins. The following options are **not** supported.
 
 - Deployment through the Microsoft Admin Center.
 - Deployment through Exchange servers.

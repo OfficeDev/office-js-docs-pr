@@ -149,7 +149,7 @@ Starting in version 1.1 of the Office Add-ins manifests schema, you can create a
 
 Because regular expressions in activation rules are part of the XML manifest file for a read add-in, if a regular expression uses certain characters, be sure to follow the corresponding escape sequence that XML processors support. The following table lists these special characters.
 
-|**Character**|**Description**|**Escape sequence to use**|
+|Character|Description|Escape sequence to use|
 |:-----|:-----|:-----|
 |`"`|Double quotation mark|&amp;quot;|
 |`&`|Ampersand|&amp;amp;|

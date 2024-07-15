@@ -66,7 +66,7 @@ To create extensions that seamlessly work across different Office documents, the
 
 In both selection-based and binding-based data access, document contents are exposed through data types that are common across all the supported Office applications. Three main data types are supported.
 
-|**Data type**|**Description**|**Host application support**|
+|Data type|Description|Host application support|
 |:-----|:-----|:-----|
 |Text|Provides a string representation of the data in the selection or binding.|In Excel, Project, and PowerPoint, only plain text is supported. In Word, three text formats are supported: plain text, HTML, and Office Open XML (OOXML). When text is selected in a cell in Excel, selection-based methods read and write to the entire contents of the cell, even if only a portion of the text is selected in the cell. When text is selected in Word and PowerPoint, selection-based methods read and write only to the run of characters that are selected. Project and PowerPoint support only selection-based data access.|
 |Matrix|Provides the data in the selection or binding as a two dimensional **Array**, which in JavaScript is implemented as an array of arrays. For example, two rows of **string** values in two columns would be ` [['a', 'b'], ['c', 'd']]`, and a single column of three rows would be `[['a'], ['b'], ['c']]`.|Matrix data access is supported only in Excel and Word.|
@@ -103,7 +103,7 @@ The [Bindings](/javascript/api/office/office.bindings) object exposes a [getAllA
 
 There are three different types of bindings that you specify with the  _bindingType_ parameter when you create a binding with the `addFromSelectionAsync`, `addFromPromptAsync` or `addFromNamedItemAsync` methods.
 
-|**Binding type**|**Description**|**Host application support**|
+|Binding type|Description|Host application support|
 |:-----|:-----|:-----|
 |Text binding|Binds to a region of the document that can be represented as text.|In Word, most contiguous selections are valid, while in Excel only single cell selections can be the target of a text binding. In Excel, only plain text is supported. In Word, three formats are supported: plain text, HTML, and Open XML for Office.|
 |Matrix binding|Binds to a fixed region of a document that contains tabular data without headers. Data in a matrix binding is written or read as a two dimensional **Array**, which in JavaScript is implemented as an array of arrays. For example, two rows of **string** values in two columns can be written or read as ` [['a', 'b'], ['c', 'd']]`, and a single column of three rows can be written or read as `[['a'], ['b'], ['c']]`.|In Excel, any contiguous selection of cells can be used to establish a matrix binding. In Word, only tables support matrix binding.|
