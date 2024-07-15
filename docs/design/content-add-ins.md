@@ -45,6 +45,9 @@ There are minor differences in the manifests between content add-ins and add-ins
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
+> [!NOTE]
+> The unified manifest is available in Excel, PowerPoint, and Word as a developer preview. For Outlook, it is generally available and can be used in production add-ins. 
+
 Configure the manifest with the following steps:
 
 1. Add a "contentRuntimes" child array to the extension object in the "extensions" array.
