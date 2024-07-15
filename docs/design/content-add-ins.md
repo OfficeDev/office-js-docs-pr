@@ -54,9 +54,11 @@ Configure the manifest with the following steps:
 1. Add an anonymous content runtime object in the "contentRuntimes" array.
 1. Set the "id" property of the object to a descriptive name.
 1. Set the "code.page" object to the full URL of the page that contains the content.
-1. Optionally, set the "requestedWidth" and "requestedHeight" properties to the size between 32 and 1000 pixels. If these properties are not used, the Office application determines the size.
+1. Optionally, set the "requestedWidth" and "requestedHeight" properties to a size between 32 and 1000 pixels. If these properties are not used, the Office application determines the size.
 1. Optionally, set the the "disableSnapshot" property to `true` to prevent Office from saving a snapshot of the content component with the document. 
 1. Optionally, add a "requirements.scopes" property to restrict the installability of the content component to only Excel or only PowerPoint. The allowed values are "workbook" and "presentation". (Listing both means the content component is available in both, which is the same as having no "requirements" property at all.)
+
+The following is an example of a "contentRuntimes" property.
 
 ```json
 "contentRuntimes": [
