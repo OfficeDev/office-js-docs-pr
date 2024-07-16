@@ -14,7 +14,7 @@ Publish your Office Add-in to Microsoft AppSource to make it widely available to
 
 Before you proceed, ensure that your add-in adheres to the applicable [AppSource validation policies](/legal/marketplace/certification-policies) and that you're [ready to publish](/partner-center/marketplace-offers/checklist).
 
-After that, when you're ready to include your solution in Microsoft AppSource and within Office, submit it to Partner Center. Then it goes through an approval and certification process. For complete details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center).
+When you're ready to include your solution in Microsoft AppSource and within Office, submit it to Partner Center. Then, it goes through an approval and certification process. For complete details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center).
 
 ## Provide an installation link
 
