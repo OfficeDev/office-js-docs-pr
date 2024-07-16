@@ -1,7 +1,7 @@
 ---
 title: Add support for add-in commands in Outlook on mobile devices
 description: Learn how to add support for Outlook on mobile devices including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
-ms.date: 04/12/2024
+ms.date: 07/18/2024
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +11,7 @@ Using add-in commands in Outlook on mobile devices allows your users to access t
 
 ## Update the manifest
 
-The first step to enabling add-in commands in Outlook mobile is to define them in the add-in manifest. 
+The first step to enabling add-in commands in Outlook mobile is to define them in the add-in manifest.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -46,10 +46,10 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
 
    - Set appropriate "id" and "label" values.
    - Create an object in the "controls" array to represent a button and configure it as follows.
-      - Set appropriate "id" and "label" values.
+      - Set appropriate "id" and "label" values. To ensure that the button fits correctly in the ribbon, it's recommended to limit the "label" to 16 characters.
       - Set "buttonType" to "MobileButton".
       - Assign a function to the "actionId" property. This should match the "id" of the object in the "extensions.runtimes.actions" array.
-      - Be sure you have all nine required icons. 
+      - Be sure you have all nine required icons.
   
    The following is an example.
 
@@ -67,7 +67,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
                     "controls": [
                         { 
                             "id": "mobileInsertMeetingButton",
-                            "label": "Add Meeting",
+                            "label": "Add meeting",
                             "buttonType": "MobileButton",
                             "actionId": "insertContosoMeeting",
                             "icons": [
