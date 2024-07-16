@@ -42,7 +42,7 @@ Office desktop icons are bitmap images. Different sizes will render depending on
 - 80 px (Required)
 
 > [!IMPORTANT]
-> For an image that is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.
+> For an image that is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/partner-center/marketplace-offers/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.
 
 Make sure to redraw your icons for each size rather than shrink them to fit.
 
@@ -131,4 +131,4 @@ Office icons are designed to render well in high contrast modes. Foreground elem
 - [Icon manifest element](/javascript/api/manifest/icon)
 - [IconUrl manifest element](/javascript/api/manifest/iconurl)
 - [HighResolutionIconUrl manifest element](/javascript/api/manifest/highresolutioniconurl)
-- [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)
+- [Create an icon for your add-in](/partner-center/marketplace-offers/create-effective-office-store-listings#create-an-icon-for-your-add-in)

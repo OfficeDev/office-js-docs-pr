@@ -61,7 +61,7 @@ A SharePoint app catalog is a special site collection that you can create to hos
 If you are deploying add-ins in an on-premises environment, use a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
-> SharePoint catalogs don't support Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).
+> SharePoint catalogs don't support Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).
 
 ### Outlook add-in Exchange server deployment
 
@@ -90,9 +90,9 @@ It's important to note that some versions of Outlook clients and Exchange server
 - [Submit to AppSource][AppSource]
 - [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
-- [Create effective AppSource listings](/office/dev/store/create-effective-office-store-listings)
+- [Create effective AppSource listings](/partner-center/marketplace-offers/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 - [What is the Microsoft commercial marketplace?](/azure/marketplace/overview)
 - [Microsoft Dev Center app publishing page](https://developer.microsoft.com/microsoft-teams/app-publishing)
 
-[AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
+[AppSource]: /partner-center/marketplace-offers/submit-to-appsource-via-partner-center

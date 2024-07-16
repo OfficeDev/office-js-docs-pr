@@ -49,4 +49,4 @@ You can now upload your XML manifest to the appropriate location to [publish you
 ## See also
 
 - [Publish your Office Add-in](../publish/publish.md)
-- [Make your solutions available in AppSource and within Office](/office/dev/store/submit-to-the-office-store)
+- [Make your solutions available in AppSource and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center)

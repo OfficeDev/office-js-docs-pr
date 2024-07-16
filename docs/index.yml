@@ -128,10 +128,10 @@ conceptualContent:
     # Card 5
     - title: Publish
       links:
-        - url: /office/dev/store
+        - url: /partner-center/marketplace-offers/checklist
           itemType: overview
           text: Validate your Office Add-in
-        - url: /office/dev/store/add-in-submission-guide
+        - url: /partner-center/marketplace-offers/add-in-submission-guide
           itemType: how-to-guide
           text: Review the Microsoft 365 App Store submission guide
     # Card 6
