@@ -16,7 +16,7 @@ You can also use tools to intercept HTTP messages to identify and debug issues w
 
 The following table lists common error messages that users might encounter and steps that your users can take to resolve the errors.
 
-|**Error message**|**Resolution**|
+|Error message|Resolution|
 |:-----|:-----|
 |App error: Catalog could not be reached|Verify firewall settings."Catalog" refers to AppSource. This message indicates that the user cannot access AppSource.|
 |APP ERROR: This app could not be started. Close this dialog to ignore the problem or click "Restart" to try again.|Verify that the latest Office updates are installed, or update with the [Windows Installer](/officeupdates/office-updates-msi).|
