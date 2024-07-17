@@ -142,7 +142,7 @@ Developers should follow the tiered permissions model to provide transparency an
 - Developers should request the **read item** permission if the Outlook add-in needs to:
   - Read properties of the current item.
   - Write custom properties set by the add-in on the current item, but doesn't require reading or writing to other items.
-  - Creating or sending a message in the user's mailbox.
+  - Create or send a message in the user's mailbox.
 
 - Developers should request the **read/write item** permission if the Outlook add-in needs to write to properties of the composed item, such as recipient names, email addresses, body, and subject, or needs to add or remove item attachments.
 

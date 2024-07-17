@@ -112,7 +112,7 @@ You can combine `RuleCollection` rules to form complex rules. The following exam
 </Rule>
 ```
 
-The following example activates the add-in when the user is composing a message, or when the user is viewing an appointment and it's subject contains "sales", "marketing", or "finance".
+The following example activates the add-in when the user is composing a message, or when the user is viewing an appointment and its subject contains "sales", "marketing", or "finance".
 
 ```xml
 <Rule xsi:type="RuleCollection" Mode="Or">
