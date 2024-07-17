@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 06/25/2024
+ms.date: 07/17/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -118,6 +118,9 @@ To enable SSO in your event-based add-in, you must add its JavaScript file to a 
 ### Request external data
 
 You can request external data by using an API like [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using [XMLHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
+
+> [!NOTE]
+> If your add-in will operate in a JavaScript-only runtime, use absolute URLs in your Fetch API calls. Relative URLs in Fetch API calls aren't supported in a JavaScript-only runtime.
 
 Be aware that you must use additional security measures when using XMLHttpRequest objects, requiring [Same Origin Policy](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) and [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS).
 
