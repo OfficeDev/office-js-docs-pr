@@ -1,7 +1,7 @@
 ---
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
-ms.date: 04/12/2024
+ms.date: 07/18/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -86,7 +86,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
 
 1. In the "ribbons" array, replace the existing object with the following code. Note the following about these changes.
 
-    - The "desktop" and "mobile" values in the "ribbons.requirements.formFactors" array configure the **Log to Contoso CRM** button to appear in Outlook on mobile devices and on desktop clients.
+    - The "desktop" and "mobile" values in the "ribbons.requirements.formFactors" array configure the **Log to Contoso** button to appear in Outlook on mobile devices and on desktop clients.
     - The "logEventMeetingDetailsAttendee" value in the "contexts" array configures the add-in button to appear in the Appointment Attendee surface, so that users can log their appointment notes.
     - The object in the "ribbons.tabs.groups.controls" array configures the add-in button that calls the note-logging function in Outlook desktop clients. The "actionId" property must match the "actions.id" of the object in the "extensions.runtimes" array.
     - The object in the "ribbons.tabs.customMobileRibbonGroups" array configures the add-in button that calls the note-logging function in Outlook on mobile devices. All nine of the objects specified in the "customMobileRibbonGroups.controls.icons" array are required for a mobile button. Additionally, the "customMobileRibbonGroups.controls.actionId" property must match the "actions.id" of the object in the "extensions.runtimes" array.
@@ -127,7 +127,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
                             {
                                 "id": "desktopLogToCRM",
                                 "type": "button",
-                                "label": "Log to Contoso CRM",
+                                "label": "Log to Contoso",
                                 "icons": [
                                     {
                                         "size": 16,
@@ -158,7 +158,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
                         "controls": [
                             {
                                 "id": "mobileLogToCRM",
-                                "label": "Log to Contoso CRM",
+                                "label": "Log to Contoso",
                                 "buttonType": "MobileButton",
                                 "icons": [
                                     {
@@ -246,7 +246,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
 
 1. In the "ribbons" array, replace the existing object with the following code. Note the following about these changes.
 
-    - The "desktop" and "mobile" values in the "ribbons.requirements.formFactors" array configure the **Log to Contoso CRM** button to appear in Outlook on mobile devices and on desktop clients.
+    - The "desktop" and "mobile" values in the "ribbons.requirements.formFactors" array configure the **Log to Contoso** button to appear in Outlook on mobile devices and on desktop clients.
     - The "logEventMeetingDetailsAttendee" value in the "contexts" array configures the add-in button to appear in the Appointment Attendee surface, so that users can open a task pane to view and log their appointment notes.
     - The object in the "ribbons.tabs.groups.controls" array configures the add-in button to open a task pane in Outlook desktop clients. The "actionId" property must match the "actions.id" of the object in the "extensions.runtimes" array.
     - The object in the "ribbons.tabs.customMobileRibbonGroups" array configures the add-in button to open a task pane in Outlook on mobile devices. All nine of the objects specified in the "customMobileRibbonGroups.controls.icons" array are required for a mobile button. Additionally, the "customMobileRibbonGroups.controls.actionId" property must match the "actions.id" of the object in the "extensions.runtimes" array.
@@ -287,7 +287,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
                             {
                                 "id": "desktopOpenTaskpane",
                                 "type": "button",
-                                "label": "Log to Contoso CRM",
+                                "label": "Log to Contoso",
                                 "icons": [
                                     {
                                         "size": 16,
@@ -318,7 +318,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
                         "controls": [
                             {
                                 "id": "mobileTaskpaneButton",
-                                "label": "Log to Contoso CRM",
+                                "label": "Log to Contoso",
                                 "buttonType": "MobileButton",
                                 "icons": [
                                     {
@@ -467,7 +467,7 @@ To enable users to log appointment notes with your add-in, you must configure th
           </bt:Urls>
           <bt:ShortStrings>
             <bt:String id="residDescription" DefaultValue="Log appointment notes and other details to Contoso CRM."/>
-            <bt:String id="residLabel" DefaultValue="Log to Contoso CRM"/>
+            <bt:String id="residLabel" DefaultValue="Log to Contoso"/>
           </bt:ShortStrings>
           <bt:LongStrings>
             <bt:String id="residTooltip" DefaultValue="Log notes to Contoso CRM for this appointment."/>
@@ -562,7 +562,7 @@ To enable users to log appointment notes with your add-in, you must configure th
             </bt:Urls>
             <bt:ShortStrings>
               <bt:String id="residDescription" DefaultValue="Log appointment notes and other details to Contoso CRM."/>
-              <bt:String id="residLabel" DefaultValue="Log to Contoso CRM"/>
+              <bt:String id="residLabel" DefaultValue="Log to Contoso"/>
             </bt:ShortStrings>
             <bt:LongStrings>
               <bt:String id="residTooltip" DefaultValue="Log notes to Contoso CRM for this appointment."/>

@@ -1,7 +1,7 @@
 ---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 04/12/2024
+ms.date: 07/18/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -110,7 +110,7 @@ The following shows how to configure your unified manifest to enable the prepend
                             {
                                 "id": "PrependButton",
                                 "type": "button",
-                                "label": "Prepend header on send",
+                                "label": "Prepend header",
                                 "icons": [
                                     {
                                         "size": 16,
@@ -134,7 +134,7 @@ The following shows how to configure your unified manifest to enable the prepend
                             {
                                 "id": "AppendButton",
                                 "type": "button",
-                                "label": "Append disclaimer on send",
+                                "label": "Add disclaimer",
                                 "icons": [
                                     {
                                         "size": 16,
@@ -270,8 +270,8 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
           <bt:ShortStrings>
             <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
             <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
-            <bt:String id="PrependButton.Label" DefaultValue="Prepend header on send"/>
-            <bt:String id="AppendButton.Label" DefaultValue="Append disclaimer on send"/>
+            <bt:String id="PrependButton.Label" DefaultValue="Prepend header"/>
+            <bt:String id="AppendButton.Label" DefaultValue="Add disclaimer"/>
           </bt:ShortStrings>
           <bt:LongStrings>
             <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens a pane displaying all available properties."/>
@@ -421,7 +421,7 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 1. From the ribbon or overflow menu, select **Prepend header**.
 
-1. From the ribbon or overflow menu, select **Append disclaimer**.
+1. From the ribbon or overflow menu, select **Add disclaimer**.
 
 1. Send the message, then open it from your **Inbox** or **Sent Items** folder to view the inserted content.
 

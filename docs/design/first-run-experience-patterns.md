@@ -16,8 +16,8 @@ Follow these best practices when crafting your first-run experience.
 
 |Do|Don't|
 |:------|:------|
-|Provide a simple and brief introduction to the main actions in the add-in. | Don't include information and call-outs that aren't relevant to getting started.
-|Give users the opportunity to complete an action that will positively impact their use of the add-in. | Don't expect users to learn everything at once. Focus on the action that provides the most value.
+|Provide a simple and brief introduction to the main actions in the add-in. | Don't include information and call-outs that aren't relevant to getting started. |
+|Give users the opportunity to complete an action that will positively impact their use of the add-in. | Don't expect users to learn everything at once. Focus on the action that provides the most value. |
 |Create an engaging experience that users will want to complete. | Don't force the users to click through the first-run experience. Give users an option to bypass the first-run experience. |
 
 Consider whether showing users the first-run experience once or periodically is important to your scenario. For example, if your add-in is only utilized periodically, users may become less familiar with your add-in and may benefit from another interaction with the first-run experience.
@@ -59,3 +59,7 @@ The video placemat shows users a video before they start using your add-in.
 *Figure 6. Video player - Users presented with a video within a dialog window*
 
 ![Illustration showing a video in a dialog window with an Office desktop application and add-in task pane in the background.](../images/add-in-FRE-video-dialog.png)
+
+## See also
+
+[Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)

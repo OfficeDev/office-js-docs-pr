@@ -86,7 +86,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
    - The "minVersion" of the Mailbox requirement set is set to "1.3" so the the ribbon customizations won't appear on platforms and Office versions where this feature is not supported.
    - The "contexts" array specifies that the ribbon is available only in the meeting details organizer window.
    - There will be a custom control group on the default ribbon tab (of the meeting details organizer window) labelled **Contoso meeting**.
-   - The group will have a button labelled **Add a Contoso meeting**.
+   - The group will have a button labelled **Add meeting**.
    - The button's "actionId" has been set to "insertContosoMeeting", which matches the "id" of the action you created in the previous step.
 
     ```json
@@ -120,7 +120,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
                             {
                                 "id": "insertMeetingButton",
                                 "type": "button",
-                                "label": "Add a Contoso meeting",
+                                "label": "Add meeting",
                                 "icons": [
                                     {
                                         "size": 16,
@@ -192,7 +192,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
                 "controls": [
                     { 
                         "id": "mobileInsertMeetingButton",
-                        "label": "Add Meeting",
+                        "label": "Add meeting",
                         "buttonType": "MobileButton",
                         "actionId": "insertContosoMeeting",
                         "icons": [
@@ -310,7 +310,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
-        <bt:String id="residLabel" DefaultValue="Add a contoso meeting"/>
+        <bt:String id="residLabel" DefaultValue="Add meeting"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/>
