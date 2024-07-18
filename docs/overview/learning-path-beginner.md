@@ -56,7 +56,7 @@ Get an understanding of the purposes of the add-in manifest and an introduction 
 
 ## Next Steps
 
-Congratulations on finishing the beginner's learning path for Office Add-ins! The following are some suggestions for further exploration of our documentation.
+Congratulations on finishing the beginner's learning path for Office Add-ins! Here are some suggestions for further exploration of our documentation:
 
 - Tutorials or quick starts for other Office applications:
 
