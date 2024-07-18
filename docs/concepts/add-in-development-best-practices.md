@@ -22,7 +22,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 - Make sure that the value of your add-in is clear to users right away by [creating an engaging first-run experience](#create-an-engaging-first-run-experience).
 - Create an [effective AppSource listing](/partner-center/marketplace-offers/create-effective-office-store-listings).
   - Make the benefits of your add-in clear in your title and description. Don't rely on your brand to communicate what your add-in does.
-  - To be published to AppSource, your add-in must provide sufficient value to justify users' investment. Your add-in shouldn't be a simple utility or of limited scope.
+  - Your add-in must provide sufficient value to justify users' investment. Your add-in shouldn't be a simple utility or of limited scope.
   - [!INCLUDE [AppSource enterprise info](../includes/appsource-enterprise.md)]
 
 ## Create an engaging first-run experience
@@ -136,7 +136,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
   - Ensure that your add-in works error-free in all operating systems, browsers, and devices supported by the minimum set of APIs declared in your add-in manifest.
 
-  - Be prepared to provide detailed testing instructions and resources for certification reviewers to verify the functionality of your add-in.
+  - Provide detailed testing instructions and resources for certification reviewers to verify the functionality of your add-in.
 
 - [Promote your add-in](/partner-center/marketplace-offers/promote-your-office-store-solution) from your website.
 
