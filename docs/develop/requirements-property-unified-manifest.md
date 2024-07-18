@@ -161,6 +161,9 @@ For example, suppose you want to embed the page only in Excel, not PowerPoint. Y
 ]
 ```
 
+> [!IMPORTANT]
+> The "requirements.capabilities" and "requirements.formFactors" properties have no effect and should not be used when the parent is a content runtimes object.
+
 ### extensions.contextMenus.requirements
 
 The "extensions.contextMenus" property configures the add-in's context menus. A context menu is a shortcut menu that appears when you right-click (or select and hold) in the Office UI. The "requirements" subproperty can be used to allow context menus only when certain requirements are met.
