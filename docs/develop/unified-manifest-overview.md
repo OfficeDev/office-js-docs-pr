@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 06/28/2024
+ms.date: 07/18/2024
 ms.localizationpriority: high
 ---
 
@@ -65,7 +65,7 @@ We're working hard to complete reference documentation for the "extensions" prop
 | "alternates" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. Also specifies the main icons that are used to represent the add-in on older versions of Office. |
 | "runtimes"  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). |
 | "autoRunEvents" | Configures an event handler for a specified event. |
-| "keyboardShortcuts" (developer preview) | Defines custom keyboard shortcuts or key combinations to run specific actions. | **\<ExtendedOverrides\>** | *None.* |
+| "keyboardShortcuts" (developer preview) | Defines custom keyboard shortcuts or key combinations to run specific actions. |
 
 ## Specify safe domains
 

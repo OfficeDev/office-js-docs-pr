@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 06/28/2024
+ms.date: 07/18/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,7 +17,7 @@ There are three steps to add keyboard shortcuts to an add-in.
 
 1. [Configure the add-in's manifest to use a shared runtime](#configure-the-manifest-to-use-a-shared-runtime).
 1. [Define custom keyboard shortcuts](#define-custom-keyboard-shortcuts) and the actions they'll run.
-1. [Add one or more runtime calls](#create-a-mapping-of-actions-to-their-functions) of the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map a function to each action.
+1. [Map custom actions to their functions](#map-custom-actions-to-their-functions) using the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API.
 
 ## Prerequisites
 
@@ -102,7 +102,7 @@ In your project's **manifest.json** file, add the following to the "extensions" 
 
 - The SharedRuntime 1.1 requirement set is specified in the "requirements.capabilities" object to support custom keyboard shortcuts.
 - Each "shortcuts" object represents a single action that's invoked by a keyboard shortcut. It specifies the supported key combinations for various platforms, such as Office on the web, on Windows, and on Mac. For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
-- A default key combination must be specified. It can be used on all supported platforms if there isn't a specific combination configured for a particular platform.
+- A default key combination must be specified. It's used on all supported platforms if there isn't a specific combination configured for a particular platform.
 - The value of the "actionId" property must match the value specified in the "id" property of the applicable "extensions.runtimes.actions" object.
 
 ```json
@@ -142,13 +142,7 @@ In your project's **manifest.json** file, add the following to the "extensions" 
 
 # [XML manifest](#tab/xmlmanifest)
 
-## Create or edit the shortcuts JSON file
-
-It's possible to customize shortcuts to be platform-specific. The following is an example of the `shortcuts` object that customizes the shortcuts for each of the following platforms: `windows`, `mac`, `web`. Note that you must still have a `default` shortcut key for each shortcut.
-
-In the following example, the `default` key is the fallback key for any platform that isn't specified. The only platform not specified is Windows, so the `default` key will only apply to Windows.
-
-//REVIEW
+### Create or edit the shortcuts JSON file
 
 If your add-in uses an XML manifest, custom keyboard shortcuts are defined in a JSON file. This file describes your keyboard shortcuts and the actions that they'll invoke. The complete schema for the JSON file is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
@@ -162,8 +156,10 @@ If your add-in uses an XML manifest, custom keyboard shortcuts are defined in a 
     - The specified actions will be mapped to functions that you create in a later step. In the example, you'll later map "ShowTaskpane" to a function that calls the `Office.addin.showAsTaskpane` method and "HideTaskpane" to a function that calls the `Office.addin.hide` method.
     - The "shortcuts" array contains objects that map key combinations to actions. The "shortcuts.action", "shortcuts.key", and "shortcuts.key.default" properties are required.
     - The value of the "shortcuts.action" property must match the "actions.id" property of the applicable action object.
-    - The default key combination can be used on all supported platforms if there isn't a specific combination configured for a particular platform.
-    - For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
+    - It's possible to customize shortcuts to be platform-specific. In the example, the `shortcuts` object customizes shortcuts for each of the following platforms: `windows`, `mac`, `web`. You must define a `default` shortcut key for each shortcut. This is used as a fallback key if a key combination isn't specified for a particular platform.
+
+    > [!TIP]
+    > For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
 
     ```json
     {
@@ -216,14 +212,14 @@ If your add-in uses an XML manifest, custom keyboard shortcuts are defined in a 
 
 ---
 
-## Create a mapping of actions to their functions
+## Map custom actions to their functions
 
 1. In your project, open the JavaScript file loaded by your HTML page in the **\<FunctionFile\>** element.
 1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map each action you specified in an earlier step to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
     - The first parameter is the name of an action that you mapped to a keyboard shortcut. The location of the name of the action depends on the type of manifest your add-in uses.
         - **Unified app manifest for Microsoft 365**: The value of the "extensions.keyboardShortcuts.shortcuts.actionId" property in the **manifest.json** file.
         - **XML manifest**: The value of the "actions.id" property in the shortcuts JSON file.
-    - The second parameter is the function that runs when a user presses the key combination that is mapped to an action.
+    - The second parameter is the function that runs when a user presses the key combination that's mapped to an action.
 
     ```javascript
     Office.actions.associate("ShowTaskpane", () => {
@@ -253,7 +249,7 @@ If your add-in uses an XML manifest, custom keyboard shortcuts are defined in a 
 
 Use the following guidelines to create custom key combinations for your add-ins.
 
-- A keyboard shortcut must include at least one modifier key (Alt/Option, Ctrl/Command, Shift) and only one other key. These keys must be joined by a `+` character.
+- A keyboard shortcut must include at least one modifier key (Alt/Option, Ctrl/Command, Shift) and only one other key. These keys must be joined with a `+` character.
 - The Command modifier key is supported on the macOS platform.
 - On macOS, the Alt key is mapped to the Option key. On Windows, the Command key is mapped to the Ctrl key.
 - The Shift key can't be used as the only modifier key. It must be combined with either Alt/Option or Ctrl/Command.
@@ -304,8 +300,106 @@ You may need to localize your custom keyboard shortcuts in the following scenari
 
 Guidance on how to localize your keyboard shortcuts varies depending on the type of manifest your add-in uses.
 
-- **Unified app manifest for Microsoft 365**: To learn how to localize your keyboard shortcuts, see [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization).
-- **XML manifest**: Use the `ResourceUrl` attribute of the [ExtendedOverrides element](/javascript/api/manifest/extendedoverrides?view=common-js-preview) to direct Microsoft 365 to a file of localized resources. For more information, see [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
+# [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
+
+To learn how to localize your custom keyboard shortcuts with the unified app manifest for Microsoft 365, see [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization).
+
+# [XML manifest](#tab/xmlmanifest)
+
+Use the `ResourceUrl` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element to point Microsoft 365 to a file of localized resources. The following is an example.
+
+```xml
+    ...
+    </VersionOverrides>  
+    <ExtendedOverrides Url="https://contoso.com/addin/extended-overrides.json" 
+                       ResourceUrl="https://contoso.com/addin/my-resources.json">
+    </ExtendedOverrides>
+</OfficeApp>
+```
+
+The extended overrides file then uses tokens instead of strings. The tokens name strings in the resource file. The following is an example that assigns a keyboard shortcut to a function (defined elsewhere) that displays the add-in's task pane. Note about this markup:
+
+- The example isn't quite valid. (We add a required additional property to it in a later step.)
+- The tokens must have the format **${resource.*name-of-resource*}**.
+
+```json
+{
+    "actions": [
+        {
+            "id": "ShowTaskpane",
+            "type": "ExecuteFunction",
+            "name": "${resource.ShowTaskpane_action_name}"
+        }
+    ],
+    "shortcuts": [
+        {
+            "action": "ShowTaskpane",
+            "key": {
+                "default": "${resource.ShowTaskpane_default_shortcut}"
+            }
+        }
+    ] 
+}
+```
+
+The resource file, which is also JSON-formatted, has a top-level `resources` property that's divided into subproperties by locale. For each locale, a string is assigned to each token that was used in the extended overrides file. The following is an example which has strings for `en-us` and `fr-fr`. In this example, the keyboard shortcut is the same in both locales, but that won't always be the case, especially when you are localizing for locales that have a different alphabet or writing system, and hence a different keyboard.
+
+```json
+{
+    "resources":{ 
+        "en-us": { 
+            "ShowTaskpane_default_shortcut": { 
+                "value": "CTRL+SHIFT+A", 
+            }, 
+            "ShowTaskpane_action_name": {
+                "value": "Show task pane for add-in",
+            }, 
+        },
+        "fr-fr": { 
+            "ShowTaskpane_default_shortcut": { 
+                "value": "CTRL+SHIFT+A", 
+            }, 
+            "ShowTaskpane_action_name": {
+                "value": "Afficher le volet de tâche pour add-in",
+              } 
+        }
+    }
+}
+```
+
+There is no `default` property in the file that's a peer to the `en-us` and `fr-fr` sections. This is because the default strings, which are used when the locale of the Microsoft 365 host application doesn't match any of the *ll-cc* properties in the resources file, *must be defined in the extended overrides file itself*. Defining the default strings directly in the extended overrides file ensures that Microsoft 365 doesn't download the resource file when the locale of the Microsoft 365 application matches the default locale of the add-in (as specified in the manifest). The following is a corrected version of the preceding example of an extended overrides file that uses resource tokens.
+
+```json
+{
+    "actions": [
+        {
+            "id": "ShowTaskpane",
+            "type": "ExecuteFunction",
+            "name": "${resource.ShowTaskpane_action_name}"
+        }
+    ],
+    "shortcuts": [
+        {
+            "action": "ShowTaskpane",
+            "key": {
+                "default": "${resource.ShowTaskpane_default_shortcut}"
+            }
+        }
+    ],
+    "resources": { 
+        "default": { 
+            "ShowTaskpane_default_shortcut": { 
+                "value": "CTRL+SHIFT+A", 
+            }, 
+            "ShowTaskpane_action_name": {
+                "value": "Show task pane for add-in",
+            } 
+        }
+    }
+}
+```
+
+---
 
 ## Turn on shortcut customization for specific users
 
@@ -376,4 +470,4 @@ Office.actions.areShortcutsInUse(shortcuts)
 
 - [Excel keyboard shortcuts sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)
 - [Shared runtime requirement sets](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
-- [Keyboard shortcuts requirement sets](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets?view=common-js-preview)
+- [Keyboard shortcuts requirement sets](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)

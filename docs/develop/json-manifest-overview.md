@@ -2,7 +2,7 @@
 title: Compare the XML manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the XML manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 06/28/2024
+ms.date: 07/18/2024
 ms.localizationpriority: high
 ---
 
