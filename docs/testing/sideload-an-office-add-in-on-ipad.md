@@ -16,7 +16,7 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 - A Windows or Mac computer with [iTunes](https://www.apple.com/itunes/download/) installed.
   > [!IMPORTANT]
-  > If you're running macOS Catalina, [iTunes is no longer available](https://support.apple.com/HT210200) so you should follow the instructions in the section [Sideload an add-in on Excel or Word on iPad using macOS Catalina](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina) later in this article.
+  > If you're running macOS Catalina, [iTunes is no longer available](https://support.apple.com/119585), so you should follow the instructions in the section [Sideload an add-in on Excel or Word on iPad using macOS Catalina](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina) later in this article.
 
 - An iPad running iOS 8.2 or later with [Excel](https://apps.apple.com/app/microsoft-excel/id586683407) or [Word](https://apps.apple.com/app/microsoft-word/id586447913) installed, and a sync cable.
 
@@ -43,7 +43,7 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 ## Sideload an add-in on Excel or Word on iPad using macOS Catalina
 
 > [!IMPORTANT]
-> With the introduction of macOS Catalina, [Apple discontinued iTunes on Mac](https://support.apple.com/HT210200) and integrated functionality required to sideload apps into **Finder**.
+> With the introduction of macOS Catalina, Apple discontinued iTunes on Mac and integrated functionality required to sideload apps into **Finder**. To learn more, see [Use the Finder to share files between your Mac and your iPhone, iPad, iPod touch](https://support.apple.com/119585).
 
 1. Use a sync cable to connect your iPad to your computer. If you're connecting the iPad to your computer for the first time, you'll be prompted with **Trust This Computer?**. Choose **Trust** to continue. You may also be asked if this is a new iPad or if you're restoring one.
 
