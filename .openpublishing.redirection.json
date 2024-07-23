@@ -1,5 +1,9 @@
 {
     "redirections": [
+	    {
+            "source_path": "docs/develop/grant-admin-consent-to-an-add-in.md",
+            "redirect_url": "/entra/identity-platform/quickstart-configure-app-access-web-apis#more-on-api-permissions-and-admin-consent"
+        },	
         {
             "source_path": "docs/testing/debug-with-vs-extension.md",
             "redirect_url": "/office/dev/add-ins/testing/debug-add-ins-overview"
