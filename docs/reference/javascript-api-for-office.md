@@ -3,7 +3,7 @@ layout: LandingPage
 ms.topic: landing-page
 title: Office JavaScript API reference documentation
 description: Learn about the Office JavaScript APIs.
-ms.date: 05/18/2023
+ms.date: 07/22/2024
 ms.localizationpriority: high
 ---
 
@@ -123,4 +123,4 @@ You should use application-specific APIs whenever feasible, and use Common APIs 
     </li>
 </ul>
 
-<b>Note</b>: There's currently no application-specific JavaScript API for Project; you'll use Common APIs to create Project add-ins. Additionally, the application-specific API for PowerPoint is very limited in scope; you'll mainly use Common APIs to create PowerPoint add-ins.
+<b>Note</b>: There's currently no application-specific JavaScript API for Project; you'll use Common APIs to create Project add-ins.
