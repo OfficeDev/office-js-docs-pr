@@ -14,7 +14,7 @@ Thank you for your interest in our documentation!
 Here are some ways you can contribute to this documentation:
 
 * To make small changes to an article, [Contribute using GitHub](#contribute-using-github).
-* To make large changes, or changes that involve code, [Contribute using Git](#contribute-using-git).
+* To make large changes or changes that involve code, [Contribute using Git](#contribute-using-git).
 * Report documentation bugs by going to the **Feedback** section at the bottom of the affected article, then selecting **This page** to create a GitHub issue. If that's not available, then create a new issue directly on [GitHub](https://github.com/OfficeDev/office-js-docs-pr/issues).
 * Request new documentation with [GitHub Issues](https://github.com/OfficeDev/office-js-docs-pr/issues).
 
@@ -41,7 +41,7 @@ Use Git to contribute substantive changes, such as:
 
 * Contributing code.
 * Contributing changes that affect meaning.
-* Contributing large changes to text.
+* Contributing large changes to the text.
 * Adding new topics.
 
 ### To contribute using Git
@@ -77,7 +77,7 @@ Pull requests are typically reviewed within 10 business days.
 
         cd <repo name>
         git remote add upstream https://github.com/OfficeDev/<repo name>.git
-        git fetch upstream
+        fetch upstream
 
 Congratulations! You've now set up your repository. You won't need to repeat these steps again.
 
@@ -92,7 +92,7 @@ To make the contribution process as seamless as possible, follow these steps.
 3. Submit a pull request to the main repository.
 4. Delete the branch.
 
-**Important** Limit each branch to a single concept/article to streamline the work flow and reduce the chance of merge conflicts. Content appropriate for a new branch includes:
+**Important** Limit each branch to a single concept/article to streamline the workflow and reduce the chance of merge conflicts. Content appropriate for a new branch includes:
 
 * A new article.
 * Spelling and grammar edits.
@@ -138,14 +138,14 @@ When you're finished with your work and are ready to have it merged into the mai
 
 One of the site administrators will process your pull request. Your pull request will surface on the OfficeDev/<repo name> site under Issues. When the pull request is accepted, the issue will be resolved.
 
-#### Create a new branch after merge
+#### Create a new branch after the merge
 
 After a branch is successfully merged (that is, your pull request is accepted), don't continue working in that local branch. This can lead to merge conflicts if you submit another pull request. To do another update, create a new local branch from the successfully merged upstream branch, and then delete your initial local branch.
 
-For example, if your local branch X was successfully merged into the OfficeDev/microsoft-graph-docs master branch and you want to make additional updates to the content that was merged. Create a new local branch, X2, from the OfficeDev/microsoft-graph-docs master branch. To do this, open GitBash and execute the following commands.
+For example, if your local branch X was successfully merged into the OfficeDev/Microsoft-graph-docs master branch and you want to make additional updates to the content that was merged. Create a new local branch, X2, from the OfficeDev/Microsoft-graph-docs master branch. To do this, open GitBash and execute the following commands.
 
-    cd microsoft-graph-docs
-    git pull upstream master:X2
+    cd Microsoft-graph-docs
+    git pull upstream master: X2
     git push origin X2
 
 You now have local copies (in a new local branch) of the work that you submitted in branch X. The X2 branch also contains all the work other writers have merged, so if your work depends on others' work (for example, shared images), it is available in the new branch. You can verify that your previous work (and others' work) is in the branch by checking out the new branch...
@@ -162,7 +162,7 @@ Once your changes are successfully merged into the main repository, delete the b
 
 1. In the Git Bash command prompt, type `git checkout master`. This ensures that you aren't in the branch to be deleted (which isn't allowed).
 2. Next, at the command prompt, type `git branch -d <branch name>`. This deletes the branch on your computer only if it has been successfully merged to the upstream repository. (You can override this behavior with the `–D` flag, but first be sure you want to do this.)
-3. Finally, type `git push origin :<branch name>` at the command prompt (a space before the colon and no space after it).  This will delete the branch on your github fork.  
+3. Finally, type `git push origin:<branch name>` at the command prompt (a space before the colon and no space after it).  This will delete the branch on your GitHub fork.  
 
 Congratulations, you have successfully contributed to the project!
 
@@ -182,7 +182,7 @@ Fill out the form at [Join GitHub](https://github.com/join) to open a free GitHu
 
 You will automatically be sent a notice that you need to sign the Contributor's License Agreement (CLA) if your pull request requires one.
 
-As a community member, **you must sign the Contribution License Agreement (CLA) before you can contribute large submissions to this project**. You only need complete and submit the documentation once. Carefully review the document. You may be required to have your employer sign the document.
+As a community member, **you must sign the Contribution License Agreement (CLA) before you can contribute large submissions to this project**. You only need to complete and submit the documentation once. Carefully review the document. You may be required to have your employer sign the document.
 
 ### What happens with my contributions?
 
