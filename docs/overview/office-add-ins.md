@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 07/18/2024
+ms.date: 07/25/2024
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -41,11 +41,11 @@ Office Add-ins provide the following advantages over add-ins built using VBA, CO
 
 ## Components of an Office Add-in
 
-An Office Add-in includes two basic components: an XML manifest file, and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as Microsoft Azure.
+An Office Add-in includes two basic components: a manifest file and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as Microsoft Azure.
 
 ### Manifest
 
-The manifest is an XML file that specifies settings and capabilities of the add-in, such as:
+The manifest specifies settings and capabilities of the add-in, such as:
 
 - The add-in's display name, description, ID, version, and default locale.
 
@@ -79,7 +79,7 @@ Custom UI and task panes are specified in the add-in manifest.  
 
 #### Custom buttons and menu commands  
 
-You can add custom ribbon buttons and menu items to the ribbon in Office on the web and on Windows. This makes it easy for users to access your add-in directly from their Office application. Command buttons can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
+You can add custom ribbon buttons and menu items to the ribbon in Office on the web and on Windows. This makes it easy for users to access your add-in directly from their Office application. Custom buttons and menu items can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
 
 ![Custom buttons and menu commands.](../images/about-addins-addincommands.png)
 
@@ -107,7 +107,7 @@ You can embed web-based objects called content add-ins within Excel and PowerPoi
 
 ## Office JavaScript APIs
 
-The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. There's a common object model that's shared by Excel, Outlook, Word, PowerPoint, OneNote, and Project. There are also more extensive application-specific object models for Excel and Word. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific application.
+The Office JavaScript APIs contain objects and members for building add-ins and interacting with Office content and web services. There's a common object model that's shared by Excel, Outlook, Word, PowerPoint, OneNote, and Project. There are also more extensive application-specific object models for Excel, OneNote, PowerPoint, and Word. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for a specific application.
 
 ## Code samples
 
