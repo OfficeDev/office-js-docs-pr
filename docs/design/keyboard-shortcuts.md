@@ -46,7 +46,7 @@ To customize keyboard shortcuts for your add-in, you must first configure the ad
 
     - The SharedRuntime 1.1 requirement set is specified in the "requirements.capabilities" object. This is required to support custom keyboard shortcuts.
     - The "actions" objects specify the functions your add-in can run. In the following example, an add-in will be able to show and hide a task pane. You'll create these functions in a later section. Currently, custom keyboard shortcuts can only run actions that are of type "executeFunction".
-    - While the "actions.displayName" property is optional, it's required if a custom keyboard shortcut will be created for the action. This property is used to describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. It's a good practice to include the name of the add-in in the property, so that the user can easily identify to which add-in the action belongs. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
+    - While the "actions.displayName" property is optional, it's required if a custom keyboard shortcut will be created for the action. This property is used to describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
 
     ```json
     "runtimes": [
@@ -151,7 +151,7 @@ If your add-in uses an XML manifest, custom keyboard shortcuts are defined in a 
 
     - The "actions" array contains objects that define the actions to be invoked. The "actions.id" and "actions.name" properties are required.
     - The "actions.id" property uniquely identifies the action to invoke using a keyboard shortcut.
-    - The "actions.name" property must describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. It's a good practice to include the name of the add-in in the property, so that the user can easily identify to which add-in the action belongs. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
+    - The "actions.name" property must describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
     - The "type" property is optional. Currently, only the "ExecuteFunction" type is supported.
     - The specified actions will be mapped to functions that you create in a later step. In the example, you'll later map "ShowTaskpane" to a function that calls the `Office.addin.showAsTaskpane` method and "HideTaskpane" to a function that calls the `Office.addin.hide` method.
     - The "shortcuts" array contains objects that map key combinations to actions. The "shortcuts.action", "shortcuts.key", and "shortcuts.key.default" properties are required.
@@ -167,12 +167,12 @@ If your add-in uses an XML manifest, custom keyboard shortcuts are defined in a 
             {
                 "id": "ShowTaskpane",
                 "type": "ExecuteFunction",
-                "name": "Show task pane (Contoso Add-in)"
+                "name": "Show task pane"
             },
             {
                 "id": "HideTaskpane",
                 "type": "ExecuteFunction",
-                "name": "Hide task pane (Contoso Add-in)"
+                "name": "Hide task pane"
             }
         ],
         "shortcuts": [
