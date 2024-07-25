@@ -66,6 +66,14 @@ Congratulations on finishing the beginner's learning path for Office Add-ins! He
   - [Project quick start](../quickstarts/project-quickstart.md)
   - [Word tutorial](../tutorials/word-tutorial.md)
 
+- Scenarios and other code samples:
+
+  - [Excel: Create a spreadsheet from your web page and embed your add-in](/office/dev/add-ins/excel/pnp-open-in-excel)
+  - [Outlook: Report spam or phishing emails](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-spam-reporting)
+  - [Word: Import a document template](/office/dev/add-ins/word/import-template)
+  - [Word: Manage citations](/office/dev/add-ins/word/citation-management)
+  - [Office Add-in code samples](/office/dev/add-ins/overview/office-add-in-code-samples)
+
 - Other important subjects:
 
   - [Develop Office Add-ins](../develop/develop-overview.md)
