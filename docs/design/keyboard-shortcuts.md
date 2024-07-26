@@ -15,7 +15,7 @@ Keyboard shortcuts, also known as key combinations, make it possible for your ad
 
 There are three steps to add keyboard shortcuts to an add-in.
 
-1. [Configure the add-in's manifest to use a shared runtime](#configure-the-manifest-to-use-a-shared-runtime).
+1. [Configure the add-in's manifest to use a shared runtime](#define-custom-keyboard-shortcuts).
 1. [Define custom keyboard shortcuts](#define-custom-keyboard-shortcuts) and the actions they'll run.
 1. [Map custom actions to their functions](#map-custom-actions-to-their-functions) using the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API.
 
@@ -32,33 +32,28 @@ Keyboard shortcuts are currently only supported in **Excel** and only in these p
 - Excel on Windows: Version 2102 (Build 13801.20632) and later
 - Excel on Mac: Version 16.48 and later
 
-## Configure the manifest to use a shared runtime
+## Define custom keyboard shortcuts
 
-To customize keyboard shortcuts for your add-in, you must first configure the add-in manifest to use a [shared runtime](../testing/runtimes.md#shared-runtime). Select the tab for the type of manifest you're using.
+The process to define custom keyboard shortcuts for your add-in varies depending on the type of manifest your add-in uses. Select the tab for the type of manifest you're using.
+
+> [!TIP]
+> To learn more about manifests for Office Add-ins, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
 > Implementing keyboard shortcuts with the unified app manifest for Microsoft 365 is in public developer preview. It's currently only available in **Excel**. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
 
+If your add-in uses the unified app manifest for Microsoft 365, custom keyboard shortcuts and their actions are defined in the manifest.
+
 1. In your add-in project, open the **manifest.json** file.
 1. Add the following object to the "extensions.runtimes" array. Note the following about this markup.
-
-    - The SharedRuntime 1.1 requirement set is specified in the "requirements.capabilities" object. This is required to support custom keyboard shortcuts.
     - The "actions" objects specify the functions your add-in can run. In the following example, an add-in will be able to show and hide a task pane. You'll create these functions in a later section. Currently, custom keyboard shortcuts can only run actions that are of type "executeFunction".
     - While the "actions.displayName" property is optional, it's required if a custom keyboard shortcut will be created for the action. This property is used to describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
 
     ```json
     "runtimes": [
         {
-            "requirements": {
-                "capabilities": [
-                    {
-                        "name": "SharedRuntime",
-                        "minVersion": "1.1"
-                    }
-                ]
-            },
             "id": "TaskPaneRuntime",
             "type": "general",
             "code": {
@@ -81,66 +76,52 @@ To customize keyboard shortcuts for your add-in, you must first configure the ad
     ]
     ```
 
-# [XML manifest](#tab/xmlmanifest)
+1. Add the following to the "extensions" array. Note the following about the markup.
+    - The SharedRuntime 1.1 requirement set is specified in the "requirements.capabilities" object to support custom keyboard shortcuts.
+    - Each "shortcuts" object represents a single action that's invoked by a keyboard shortcut. It specifies the supported key combinations for various platforms, such as Office on the web, on Windows, and on Mac. For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
+    - A default key combination must be specified. It's used on all supported platforms if there isn't a specific combination configured for a particular platform.
+    - The value of the "actionId" property must match the value specified in the "id" property of the applicable "extensions.runtimes.actions" object.
 
-For guidance on how to configure your add-in to use a shared runtime, see [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
-
----
-
-> [!TIP]
-> To learn more about manifests for Office Add-ins, see [Office Add-ins manifest](../develop/add-in-manifests.md).
-
-## Define custom keyboard shortcuts
-
-The process to define custom keyboard shortcuts for your add-in varies depending on the type of manifest your add-in uses. Select the tab for the type of manifest you're using.
-
-# [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
-
-If your add-in uses the unified app manifest for Microsoft 365, custom keyboard shortcuts and their actions are defined in the manifest.
-
-In your project's **manifest.json** file, add the following to the "extensions" array. Note the following about the markup.
-
-- The SharedRuntime 1.1 requirement set is specified in the "requirements.capabilities" object to support custom keyboard shortcuts.
-- Each "shortcuts" object represents a single action that's invoked by a keyboard shortcut. It specifies the supported key combinations for various platforms, such as Office on the web, on Windows, and on Mac. For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
-- A default key combination must be specified. It's used on all supported platforms if there isn't a specific combination configured for a particular platform.
-- The value of the "actionId" property must match the value specified in the "id" property of the applicable "extensions.runtimes.actions" object.
-
-```json
-"keyboardShortcuts": [
-    {
-        "requirements": {
-            "capabilities": [
+    ```json
+    "keyboardShortcuts": [
+        {
+            "requirements": {
+                "capabilities": [
+                    {
+                        "name": "SharedRuntime",
+                        "minVersion": "1.1"
+                    }
+                ]
+            },
+            "shortcuts": [
                 {
-                    "name": "SharedRuntime",
-                    "minVersion": "1.1"
+                    "key": {
+                        "default": "Ctrl+Alt+Up",
+                        "mac": "Command+Shift+Up",
+                        "web": "Ctrl+Alt+1",
+                        "windows": "Ctrl+Alt+Up"
+                    },
+                    "actionId": "ShowTaskpane"
+                },
+                {
+                    "key": {
+                        "default": "Ctrl+Alt+Down",
+                        "mac": "Command+Shift+Down",
+                        "web": "Ctrl+Alt+2",
+                        "windows": "Ctrl+Alt+Up"
+                    },
+                    "actionId": "HideTaskpane"
                 }
             ]
-        },
-        "shortcuts": [
-            {
-                "key": {
-                    "default": "Ctrl+Alt+Up",
-                    "mac": "Command+Shift+Up",
-                    "web": "Ctrl+Alt+1",
-                    "windows": "Ctrl+Alt+Up"
-                },
-                "actionId": "ShowTaskpane"
-            },
-            {
-                "key": {
-                    "default": "Ctrl+Alt+Down",
-                    "mac": "Command+Shift+Down",
-                    "web": "Ctrl+Alt+2",
-                    "windows": "Ctrl+Alt+Up"
-                },
-                "actionId": "HideTaskpane"
-            }
-        ]
-    }
-]
-```
+        }
+    ]
+    ```
 
 # [XML manifest](#tab/xmlmanifest)
+
+### Configure the manifest to use a shared runtime
+
+To customize keyboard shortcuts for your add-in, you must first configure the add-in manifest to use a [shared runtime](../testing/runtimes.md#shared-runtime). For guidance on how to configure your add-in to use a shared runtime, see [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ### Create or edit the shortcuts JSON file
 
@@ -148,7 +129,6 @@ If your add-in uses an XML manifest, custom keyboard shortcuts are defined in a 
 
 1. In your add-in project, create a JSON file.
 1. Add the following markup to the file. Note the following about the code.
-
     - The "actions" array contains objects that define the actions to be invoked. The "actions.id" and "actions.name" properties are required.
     - The "actions.id" property uniquely identifies the action to invoke using a keyboard shortcut.
     - The "actions.name" property must describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
