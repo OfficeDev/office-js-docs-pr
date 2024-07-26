@@ -126,8 +126,6 @@ items:
         href: develop/convert-xml-to-json-manifest.md
       - name: Manifest reference
         href: reference/manifest-reference.md
-      - name: Extended overrides
-        href: develop/extended-overrides.md
       - name: Find the proper order of manifest elements
         href: develop/manifest-element-ordering.md
       - name: Update API and manifest version
