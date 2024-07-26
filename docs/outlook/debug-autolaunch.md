@@ -137,7 +137,7 @@ To debug your add-in in [new Outlook on Windows desktop client (preview)](https:
 olk.exe --devtools
 ```
 
-For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows (preview)](one-outlook.md#debug-your-add-in).
+For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows](one-outlook.md#debug-your-add-in).
 
 # [Mac](#tab/mac)
 

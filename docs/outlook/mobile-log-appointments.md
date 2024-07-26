@@ -858,7 +858,7 @@ If you'd like your users to undo logging or delete the logged appointment notes 
 ## Test and validate
 
 1. Follow the usual guidance to [test and validate your add-in](testing-and-tips.md).
-1. After you [sideload](sideload-outlook-add-ins-for-testing.md) the add-in in Outlook on the web, on Windows (classic or [new (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), or on Mac, restart Outlook on your Android or iOS mobile device.
+1. After you [sideload](sideload-outlook-add-ins-for-testing.md) the add-in in Outlook on the web, on Windows (classic or [new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), or on Mac, restart Outlook on your Android or iOS mobile device.
 1. Open an appointment as an attendee, then verify that under the **Meeting Insights** card, there's a new card with your add-in's name alongside the **Log** button.
 
 ### UI: Log the appointment notes

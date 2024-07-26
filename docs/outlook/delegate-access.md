@@ -21,7 +21,7 @@ The following table shows supported client-server combinations for this feature,
 |---|:---:|:---:|:---:|
 |**Web browser (modern Outlook UI)**|Supported|Not applicable|Not applicable|
 |**Web browser (classic Outlook UI)**|Not applicable|Not applicable|Not applicable|
-|[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
+|[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|
 |**Mac**<br>Version 16.47 or later|Supported|Supported|Supported|
 

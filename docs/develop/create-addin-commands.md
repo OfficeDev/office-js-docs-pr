@@ -338,7 +338,7 @@ Add-in commands are available in the following Outlook versions.
 
 - Outlook on the web for Microsoft 365 and Outlook.com
 - Outlook on the web for Exchange 2016 or later
-- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+- [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 - Outlook 2016 or later on Windows
 - Outlook on Mac
 - Outlook on Android
