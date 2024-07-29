@@ -13,73 +13,12 @@ ms.localizationpriority: medium
 
 # Find the IDs of built-in Office ribbon tabs
 
-The following are valid built-in Office ribbon tab `id` values by application. Values in **bold** are supported in both desktop and online; and, for Outlook, in New Outlook. Others are supported only in desktop. For example, **TabHome** is supported in Word 2016 or later on Windows and Word on the web, but TabBlogPost is supported only in Word desktop.
+The following table shows the valid built-in Office ribbon tab `id` values by application. The columns indicate on which platform the IDs are supported. For example, **TabHome** is supported in Word 2016 or later on Windows and Word on the web, but TabBlogPost is supported only in Word desktop.
 
-### Outlook
-
-- **TabDefault** (Depending on what Outlook window is open, this ID refers to either the **Home**, **Message**, or **Meeting** tab.)
-
-### Word
-
-- **TabHome**
-- **TabInsert**
-- **TabWordDesign**
-- **TabPageLayoutWord**
-- **TabReferences**
-- **TabMailings**
-- **TabReviewWord**
-- **TabView**
-- **TabDeveloper**
-- **TabAddIns**
-- TabBlogPost
-- TabBlogInsert
-- TabPrintPreview
-- TabOutlining
-- TabConflicts
-- TabBackgroundRemoval
-- TabBroadcastPresentation
-
-### Excel
-
-- **TabHome**
-- **TabInsert**
-- **TabPageLayoutExcel**
-- **TabFormulas**
-- **TabData**
-- **TabReview**
-- **TabView**
-- **TabDeveloper**
-- **TabAddIns**
-- TabPrintPreview
-- TabBackgroundRemoval
-
-### PowerPoint
-
-- **TabHome**
-- **TabInsert**
-- **TabDesign**
-- **TabTransitions**
-- **TabAnimations**
-- **TabSlideShow**
-- **TabReview**
-- **TabView**
-- **TabDeveloper**
-- **TabAddIns**
-- TabPrintPreview
-- TabMerge
-- TabGrayscale
-- TabBlackAndWhite
-- TabBroadcastPresentation
-- TabSlideMaster
-- TabHandoutMaster
-- TabNotesMaster
-- TabBackgroundRemoval
-- TabSlideMasterHome
-
-### OneNote
-
-- **TabHome**
-- **TabInsert**
-- **TabView**
-- TabDeveloper
-- TabAddIns
+| Office application | Supported on desktop and on the web | Supported only on desktop |
+|--------------------|--------------------------------------|---------------------------|
+| Excel              | TabHome</br>TabInsert</br>TabPageLayoutExcel</br>TabFormulas</br>TabData</br>TabReview</br>TabView</br>TabDeveloper</br>TabAddIns | TabPrintPreview</br>TabBackgroundRemoval |
+| OneNote            | TabHome</br>TabInsert</br>TabView | TabDeveloper</br>TabAddIns |
+| Outlook            | TabDefault</br>(Depending on what Outlook window is open,</br> this ID refers to either the</br> **Home**, **Message**, or **Meeting** tab.) |                           |
+| PowerPoint         | TabHome</br>TabInsert</br>TabDesign</br>TabTransitions</br>TabAnimations</br>TabSlideShow</br>TabReview</br>TabView</br>TabDeveloper</br>TabAddIns | TabPrintPreview</br>TabMerge</br>TabGrayscale</br>TabBlackAndWhite</br>TabBroadcastPresentation</br>TabSlideMaster</br>TabHandoutMaster</br>TabNotesMaster</br>TabBackgroundRemoval</br>TabSlideMasterHome |
+| Word               | TabHome</br>TabInsert</br>TabWordDesign</br>TabPageLayoutWord</br>TabReferences</br>TabMailings</br>TabReviewWord</br>TabView</br>TabDeveloper</br>TabAddIns | TabBlogPost</br>TabBlogInsert</br>TabPrintPreview</br>TabOutlining</br>TabConflicts</br>TabBackgroundRemoval</br>TabBroadcastPresentation |
