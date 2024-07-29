@@ -86,7 +86,7 @@ However, add-ins won't activate on IRM-protected items when:
 
 ## Supported clients
 
-Outlook add-ins are supported in Outlook on Windows (classic and [new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), Outlook on Mac, Outlook on the web, Outlook on iOS, Outlook on Android, and Outlook.com. Not all of the newest features are supported in all clients at the same time. For details about feature support on clients and servers, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) and articles specific to those features.
+Outlook add-ins are supported in Outlook on the web, Outlook on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), Outlook on Mac, Outlook on iOS, Outlook on Android, and Outlook.com. Not all of the newest features are supported in all clients at the same time. For details about feature support on clients and servers, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) and articles specific to those features.
 
 ## Get started building Outlook add-ins
 

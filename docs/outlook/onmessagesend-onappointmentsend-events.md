@@ -337,7 +337,7 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 |Attribute|Smart Alerts|On-send|
 |-----|-----|-----|
 |**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
-|**Supported Outlook clients**|<ul><li>Windows (classic and new)</li><li>Web browser (modern UI)</li><li>Mac (new UI)</li></ul>|<ul><li>Windows (classic)</li><li>Web browser (classic and modern UI)</li><li>Mac (classic and new UI)</li></ul>|
+|**Supported Outlook clients**|<ul><li>Windows (new and classic)</li><li>Web browser (modern UI)</li><li>Mac (new UI)</li></ul>|<ul><li>Windows (classic)</li><li>Web browser (modern and classic UI)</li><li>Mac (new and classic UI)</li></ul>|
 |**Supported events**|**XML manifest**<ul><li>`OnMessageSend`</li><li>`OnAppointmentSend`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>"messageSending"</li><li>"appointmentSending"</li></ul>|**XML manifest**<ul><li>`ItemSend`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>Not supported</li></ul>|
 |**Manifest extension property**|**XML manifest**<ul><li>`LaunchEvent`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>"autoRunEvents"</li></ul>|**XML manifest**<ul><li>`Events`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>Not supported</li></ul>|
 |**Supported send mode options**|<ul><li>prompt user</li><li>soft block</li><li>block</li></ul><br>To learn more about each option, see [Available send mode options](#available-send-mode-options).|Block|

@@ -31,7 +31,7 @@ If you created your Outlook add-in using the [Yeoman generator for Office Add-in
 
 ## Sideload manually
 
-Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in. Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. The following steps apply to Outlook on the web, on Windows (classic and [new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), and on Mac.
+Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in. Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. The following steps apply to Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac.
 
 > [!NOTE]
 > The sideloading guidance in this section only applies to Outlook add-ins that use an XML manifest. To learn about sideloading options for Outlook add-ins that use the unified manifest for Microsoft 365, see the "Conversion tools and options" section of [Convert an add-in to use the unified manifest for Microsoft 365](../develop/convert-xml-to-json-manifest.md#conversion-tools-and-options).

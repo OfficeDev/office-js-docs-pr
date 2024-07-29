@@ -55,7 +55,7 @@ The **\<Hosts\>** element can contain one or more **\<Host\>** elements. There s
 | Name          | Office client applications                     | Available add-in types |
 |:--------------|:-----------------------------------------------|:-----------------------|
 | Document      | Word on the web, Windows, Mac, iPad            | Task pane              |
-| Mailbox       | Outlook on the web, Windows (classic and [new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), Mac, Android, iOS | Mail |
+| Mailbox       | Outlook on the web, Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), Mac, Android, iOS | Mail |
 | Notebook      | OneNote on the web                             | Task pane, Content     |
 | Presentation  | PowerPoint on the web, Windows, Mac, iPad      | Task pane, Content     |
 | Project       | Project on Windows                             | Task pane              |
