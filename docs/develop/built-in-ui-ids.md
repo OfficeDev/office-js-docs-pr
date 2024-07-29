@@ -19,6 +19,6 @@ The following table shows the valid built-in Office ribbon tab `id` values by ap
 |--------------------|--------------------------------------|---------------------------|
 | Excel              | TabHome</br>TabInsert</br>TabPageLayoutExcel</br>TabFormulas</br>TabData</br>TabReview</br>TabView</br>TabDeveloper</br>TabAddIns | TabPrintPreview</br>TabBackgroundRemoval |
 | OneNote            | TabHome</br>TabInsert</br>TabView | TabDeveloper</br>TabAddIns |
-| Outlook            | TabDefault</br>(Depending on what Outlook window is open,</br> this ID refers to either the</br> **Home**, **Message**, or **Meeting** tab.) |                           |
+| Outlook            | TabDefault</br>(Depending on what Outlook window is open,</br> this ID refers to either the **Home**, **Message**, or **Meeting** tab.) |                           |
 | PowerPoint         | TabHome</br>TabInsert</br>TabDesign</br>TabTransitions</br>TabAnimations</br>TabSlideShow</br>TabReview</br>TabView</br>TabDeveloper</br>TabAddIns | TabPrintPreview</br>TabMerge</br>TabGrayscale</br>TabBlackAndWhite</br>TabBroadcastPresentation</br>TabSlideMaster</br>TabHandoutMaster</br>TabNotesMaster</br>TabBackgroundRemoval</br>TabSlideMasterHome |
 | Word               | TabHome</br>TabInsert</br>TabWordDesign</br>TabPageLayoutWord</br>TabReferences</br>TabMailings</br>TabReviewWord</br>TabView</br>TabDeveloper</br>TabAddIns | TabBlogPost</br>TabBlogInsert</br>TabPrintPreview</br>TabOutlining</br>TabConflicts</br>TabBackgroundRemoval</br>TabBroadcastPresentation |
