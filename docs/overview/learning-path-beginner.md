@@ -1,7 +1,7 @@
 ---
 title: Beginner's guide to Office Add-ins
 description:  A recommended path for beginners through the learning resources for Office Add-ins.
-ms.date: 07/18/2024
+ms.date: 07/28/2024
 ms.topic: get-started
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -42,7 +42,7 @@ Next, create an add-in using one of our quick starts. For the purpose of learnin
 
 ## Step 4: Code
 
-You can't learn to drive by reading the owner's manual, so start coding with this [Excel tutorial](../tutorials/excel-tutorial.md). You'll be using the Office JavaScript library and some XML in the add-in's manifest. There's no need to memorize anything, because you'll be getting more background about both in a later steps.
+You can't learn to drive by reading the owner's manual, so start coding with this [Excel tutorial](../tutorials/excel-tutorial.md). You'll be using the Office JavaScript library and some JSON or XML in the add-in's manifest. There's no need to memorize anything, because you'll be getting more background about both in a later steps.
 
 ## Step 5: Understand the JavaScript library
 
