@@ -13,9 +13,9 @@ ms.localizationpriority: medium
 
 # Find the IDs of built-in Office ribbon tabs
 
-The following table shows the valid built-in Office ribbon tab `id` values by application. The columns indicate on which platform the IDs are supported. For example, **TabHome** is supported in Word 2016 or later on Windows and Word on the web, but TabBlogPost is supported only in Word desktop.
+The following table shows the valid built-in Office ribbon tab `id` values by application. The columns indicate on which platform the IDs are supported. For example, **TabHome** is supported in Word 2016 or later on Windows and Word on the web, but **TabBlogPost** is supported only in Word desktop.
 
-| Office application | Supported on desktop, on the web,</br>and new Outlook on Windows (preview) | Supported only on desktop |
+| Office application | Supported on desktop, on the web,</br>and new Outlook on Windows | Supported only on desktop |
 |--------------------|--------------------------------------|---------------------------|
 | Excel              | TabHome</br>TabInsert</br>TabPageLayoutExcel</br>TabFormulas</br>TabData</br>TabReview</br>TabView</br>TabDeveloper</br>TabAddIns | TabPrintPreview</br>TabBackgroundRemoval |
 | OneNote            | TabHome</br>TabInsert</br>TabView | TabDeveloper</br>TabAddIns |
