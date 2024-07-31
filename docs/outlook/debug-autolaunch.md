@@ -12,7 +12,7 @@ This article discusses the key debugging stages to enable and set breakpoints in
 
 To begin debugging, select the tab for your applicable client.
 
-# [Windows](#tab/windows)
+# [Windows (classic)](#tab/windows)
 
 If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in project (for example, by completing an [event-based activation walkthrough](on-new-compose-events-walkthrough.md)), follow the **Created with Yeoman generator** option throughout this article. Otherwise, follow the **Other** steps. Visual Studio Code should be at least version 1.56.1.
 
@@ -101,7 +101,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
 ## Attach the debugger
 
-The **bundle.js** file of an add-in contains the JavaScript code of your add-in. It's created when Outlook on Windows is opened. When Outlook starts, the **bundle.js** file of each installed add-in is cached in the **Wef** folder of your machine.
+The **bundle.js** file of an add-in contains the JavaScript code of your add-in. It's created when classic Outlook on Windows is opened. When Outlook starts, the **bundle.js** file of each installed add-in is cached in the **Wef** folder of your machine.
 
 1. To find the add-in's **bundle.js** file, navigate to the following folder in File Explorer. Replace text enclosed in `[]` with your applicable Outlook and add-in information.
 
@@ -129,7 +129,7 @@ To stop debugging the rest of the current Outlook on Windows session, in the **D
 
 To prevent the **Debug Event-based handler** dialog from popping up and stop debugging for subsequent Outlook sessions, delete the associated registry key, `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`, or set its value to `0`.
 
-# [New Windows (preview)](#tab/new-windows)
+# [Windows (new)](#tab/new-windows)
 
 To debug your add-in in [new Outlook on Windows desktop client (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), you must run the following command to open Microsoft Edge DevTools.
 

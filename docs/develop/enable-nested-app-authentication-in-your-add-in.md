@@ -19,8 +19,8 @@ You can use the MSAL.js library (version 3.11 and later) with nested app authent
 > Nested app authentication (NAA) is currently in preview. To try this feature, join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 > NAA is supported in the following builds.
 >
-> - Word, Excel, PowerPoint, and Outlook on Windows build 16.0.17531.20000 or later
-> - Word, Excel, PowerPoint, and Outlook on Mac build 16.85.24040319 or later
+> - Word, Excel, PowerPoint, and classic Outlook on Windows Build 16.0.17531.20000 or later
+> - Word, Excel, PowerPoint, and Outlook on Mac Build 16.85.24040319 or later
 >
 > Support for NAA in event-based activation code in Outlook is coming soon.
 

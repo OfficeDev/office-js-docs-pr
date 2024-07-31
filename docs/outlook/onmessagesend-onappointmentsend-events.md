@@ -130,7 +130,7 @@ If the **soft block** or **block** option is  used, the user can't send the item
 
 ### Outlook client in Work Offline mode
 
-In Outlook on Windows (starting in Version 2310 (Build 16913.10000)), a Smart Alerts add-in that implements the **soft block** or **block** option can only process a mail item while the Outlook client is online. If [Work Offline mode](https://support.microsoft.com/office/f3a1251c-6dd5-4208-aef9-7c8c9522d633) is turned on in the Outlook client when a mail item is sent, the item isn't saved to the **Outbox** folder and the user is alerted that they must deactivate Work Offline mode before they can attempt to send their item.
+In classic Outlook on Windows (starting in Version 2310 (Build 16913.10000)), a Smart Alerts add-in that implements the **soft block** or **block** option can only process a mail item while the Outlook client is online. If [Work Offline mode](https://support.microsoft.com/office/f3a1251c-6dd5-4208-aef9-7c8c9522d633) is turned on in the Outlook client when a mail item is sent, the item isn't saved to the **Outbox** folder and the user is alerted that they must deactivate Work Offline mode before they can attempt to send their item.
 
 ![Dialog that alerts the user that their mail item can't be processed by the Smart Alerts add-in while their Outlook client is in Work Offline mode.](../images/outlook-smart-alerts-offline-mode.png)
 
@@ -177,7 +177,7 @@ In Outlook on Mac, when a user navigates away from a message after selecting **S
 ## Activate Smart Alerts in applications that use Simple MAPI
 
 > [!NOTE]
-> This feature is currently only supported in Outlook on Windows starting in Version 2301 (Build 17126.20004).
+> This feature is currently only supported in classic Outlook on Windows starting in Version 2301 (Build 17126.20004).
 
 Users can send mail items through certain applications that use [Simple MAPI](/previous-versions/windows/desktop/windowsmapi/simple-mapi), even if the Outlook client isn't running at the time the item is sent. When this occurs, any installed Smart Alerts add-in won't activate to check the mail item for compliance.
 
@@ -242,9 +242,9 @@ In Outlook on the web and in new Outlook on Windows:
 ### Limitations to formatting the dialog message using Markdown
 
 > [!NOTE]
-> Support for Markdown in a Smart Alerts dialog is currently in preview in Outlook on Windows only. Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the Feedback section at the end of this page).
+> Support for Markdown in a Smart Alerts dialog is currently in preview in classic Outlook on Windows only. Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the Feedback section at the end of this page).
 >
-> To test this feature in Outlook on Windows, you must install Version 2403 (Build 17330.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/windows) and select the **Beta Channel** option in your Outlook client to access Office beta builds.
+> To test this feature in classic Outlook on Windows, you must install Version 2403 (Build 17330.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/windows) and select the **Beta Channel** option in your Outlook client to access Office beta builds.
 
 You can use Markdown to format the message of a Smart Alerts dialog. However, only the following elements are supported.
 

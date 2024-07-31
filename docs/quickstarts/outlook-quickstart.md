@@ -298,7 +298,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 1. Your mailbox opens in Outlook on the web. Select or open a message.
 
     > [!TIP]
-    > You can also test the add-in in Outlook on Windows as long as the IIS server is running.
+    > You can also test the add-in in classic Outlook on Windows as long as the IIS server is running.
 
 1. Within the message, navigate to the action bar, then select **Apps**.
 

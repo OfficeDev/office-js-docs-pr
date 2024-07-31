@@ -299,7 +299,7 @@ Ensure that the **./src/commands/commands.html** file has a reference to the Jav
 ## Test and validate your add-in
 
 1. Follow the guidance to [test and validate your add-in](testing-and-tips.md).
-1. [Sideload](sideload-outlook-add-ins-for-testing.md) your add-in in Outlook on Windows (classic or new), on Mac, or on the web.
+1. [Sideload](sideload-outlook-add-ins-for-testing.md) your add-in in Outlook on Windows (new or classic), on Mac, or on the web.
 1. Open Outlook on Android or on iOS. If you have Outlook already open on your device, restart it.
 1. Create a new message. The event-based add-in adds the signature to the message. If you have a signature saved on your mobile device, it will briefly appear in the message you create, but will be immediately replaced by the signature added by the add-in.
 

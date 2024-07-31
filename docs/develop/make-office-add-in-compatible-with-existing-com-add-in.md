@@ -54,7 +54,7 @@ The following example shows the portion of the manifest that specifies a COM add
 > [!IMPORTANT]
 > Applies to Outlook only.
 
-To declare compatibility between your Outlook web add-in and COM add-in, identify the equivalent COM add-in in the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting. This must be configured on the user's machine. Then, Outlook on Windows will use the COM add-in instead of the web add-in, if they're both installed.
+To declare compatibility between your Outlook web add-in and COM add-in, identify the equivalent COM add-in in the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting. This must be configured on the user's machine. Then, classic Outlook on Windows will use the COM add-in instead of the web add-in, if they're both installed.
 
 1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030), paying attention to the tool's **Install Instructions**.
 1. Open the Local Group Policy Editor (**gpedit.msc**).
