@@ -16,7 +16,7 @@ Module extension add-ins appear in the Outlook navigation bar, right alongside m
 
 To create and run module extension add-ins, you must:
 
-- Develop the add-in using an XML manifest. The [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md) doesn't support module extensions.
+- Develop the add-in using an add-in only manifest. The [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md) doesn't support module extensions.
 - Run the add-in in Outlook 2016 or later on Windows.
 
 ## Open a module extension

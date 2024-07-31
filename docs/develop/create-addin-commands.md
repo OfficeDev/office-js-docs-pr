@@ -1,15 +1,15 @@
 ---
-title: Create add-in commands with the XML manifest
-description: Configure an XML manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
+title: Create add-in commands with the add-in only manifest
+description: Configure an add-in only manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or menus, and perform actions.
 ms.date: 02/29/2024
 ms.localizationpriority: medium
 ---
 
-# Create add-in commands with the XML manifest
+# Create add-in commands with the add-in only manifest
 
 Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands](../design/add-in-commands.md).
 
-This article describes how to edit your XML manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands).
+This article describes how to edit your add-in only manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands).
 
 > [!TIP]
 > For instructions on how to create add-in commands with the unified manifest for Microsoft 365, see [Create add-in commands with the unified manifest for Microsoft 365](create-addin-commands-unified-manifest.md).
@@ -338,7 +338,7 @@ Add-in commands are available in the following Outlook versions.
 
 - Outlook on the web for Microsoft 365 and Outlook.com
 - Outlook on the web for Exchange 2016 or later
-- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+- [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 - Outlook 2016 or later on Windows
 - Outlook on Mac
 - Outlook on Android
@@ -346,7 +346,7 @@ Add-in commands are available in the following Outlook versions.
 
 Support for add-in commands in Exchange 2016 requires [Cumulative Update 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 
-If your add-in uses an XML manifest, then add-in commands are only available for add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](../outlook/activation-rules.md) to limit the types of items they activate on. However, [contextual add-ins](../outlook/contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
+If your add-in uses an add-in only manifest, then add-in commands are only available for add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](../outlook/activation-rules.md) to limit the types of items they activate on. However, [contextual add-ins](../outlook/contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
 
 ## See also
 

@@ -35,7 +35,7 @@ To configure the manifest, select the tab for the type of manifest you are using
    - The "id" of the runtime is set to the descriptive name "autorun_runtime".
    - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
        - Classic Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
-       - Outlook on the web, on Mac, and on [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
+       - Outlook on the web, on Mac, and on [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
    - The "lifetime" property is set to "short", which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
    - There is an action to run a handler for the `OnMessageSend` event. You'll create the handler function in a later step.
@@ -105,7 +105,7 @@ To configure the manifest, select the tab for the type of manifest you are using
       }
     ```
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 1. In your code editor, open the quick start project.
 
@@ -126,7 +126,7 @@ To configure the manifest, select the tab for the type of manifest you are using
             <!-- Event-based activation happens in a lightweight runtime.-->
             <Runtimes>
               <!-- HTML file including reference to or inline JavaScript event handlers.
-                   This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows (preview). -->
+                   This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows. -->
               <Runtime resid="WebViewRuntime.Url">
                 <!-- JavaScript file containing event handlers. This is used by classic Outlook on Windows. -->
                 <Override type="javascript" resid="JSRuntime.Url"/>
@@ -349,7 +349,7 @@ To modify the text of the **Don't Send** button or assign it a task pane command
 
 - The [cancelLabel](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-cancellabel-member) option customizes the text of the **Don't Send** button. Custom text must be a maximum of 20 characters.
 - The [commandId](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-commandid-member) option specifies the ID of the task pane that opens when the **Don't Send** button is selected. The value must match the task pane ID in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
-  - **XML manifest**: The `id` attribute of the **\<Control\>** element representing the task pane.
+  - **Add-in only manifest**: The `id` attribute of the **\<Control\>** element representing the task pane.
   - **Unified manifest for Microsoft 365**: The "id" property of the task pane command in the "controls" array.
 - The [contextData](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-contextdata-member) option specifies any JSON data you want to pass to the add-in when the **Don't Send** button is selected. If you include this option, you must also set the `commandId` option. Otherwise, the JSON data is ignored.
 

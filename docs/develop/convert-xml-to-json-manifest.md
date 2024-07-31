@@ -1,6 +1,6 @@
 ---
 title: Convert an add-in to use the unified manifest for Microsoft 365
-description: Learn the various methods for converting an add-in with an XML manifest to the unified manifest for Microsoft 365 and sideload the add-in.
+description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
 ms.date: 04/12/2024
 ms.localizationpriority: medium
@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 
 # Convert an add-in to use the unified manifest for Microsoft 365
 
-To add Teams capabilities to an add-in that uses the XML manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
+To add Teams capabilities to an add-in that uses the add-in only manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
 
-There are three basic tasks to converting an add-in project from the XML manifest to the unified manifest.
+There are three basic tasks to converting an add-in project from the add-in only manifest to the unified manifest.
 
 - Ensure that your add-in is ready to convert.
-- Convert the XML manifest itself to the JSON format of the unified manifest.
+- Convert the XML-formatted add-in only manifest itself to the JSON format of the unified manifest.
 - Package the new manifest and the two icon image files into a zip file for sideloading or deployment.
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
@@ -30,7 +30,7 @@ The following sections describe conditions that must be met before you convert t
 
 ### Ensure that you have the two image files
 
-When you've added the files to the project, add **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) to the XML manifest just below the **\<Description\>** element. The following is an example.
+When you've added the files to the project, add **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) to the add-in only manifest just below the **\<Description\>** element. The following is an example.
 
 ```xml
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="MailApp">
@@ -88,7 +88,7 @@ The easiest way to convert is to use Teams Toolkit.
     :::image type="content" source="../images/teams-toolkit-create-outlook-task-pane-capability.png" alt-text="The two options in the App Features Using an Outlook Add-in drop down. The second option is called 'Import an Existing Outlook add-in'.":::
 
 1. In the **Existing add-in project folder** drop down, browse to the root folder of the add-in project.
-1. In the **Select import project manifest file** drop down, browse to the XML manifest file.
+1. In the **Select import project manifest file** drop down, browse to the add-in only manifest file, typically called manifest.xml.
 1. In the **Workspace folder** dialog, select the folder where you want to put the converted project.
 1. In the **Application name** dialog, give a name to the project (with no spaces). Teams Toolkit creates the project with your source files and scaffolding. It then opens the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
 
@@ -115,7 +115,7 @@ You can sideload the add-in using the Teams Toolkit or in a command prompt, bash
 
 If the project was created with the Office Yeoman Generator and you don't want to use the Teams Toolkit, convert it using the following steps.
 
-1. In the root of the project, open a command prompt or bash shell and run the following command. This converts the manifest and updates the package.json to specify current tooling packages. The new unified manifest is in the root of the project and the old XML manifest is in a backup.zip file. For details about this command, see [Office-Addin-Project](https://www.npmjs.com/package/office-addin-project).
+1. In the root of the project, open a command prompt or bash shell and run the following command. This converts the manifest and updates the package.json to specify current tooling packages. The new unified manifest is in the root of the project and the old add-in only manifest is in a backup.zip file. For details about this command, see [Office-Addin-Project](https://www.npmjs.com/package/office-addin-project).
 
     ```command&nbsp;line
     npx office-addin-project convert -m <relative-path-to-XML-manifest>
@@ -128,7 +128,7 @@ If the project was created with the Office Yeoman Generator and you don't want t
 
 If you don't want to use the Teams Toolkit and your project wasn't created with the Office Yeoman generator, use the office-addin-manifest-converter tool.
 
-In the root of the project, open a command prompt or bash shell and run the following command. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original XML manifest. For example, if the manifest is named MyManifest.xml, the unified manifest is created at .\MyManifest\MyManifest.json. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
+In the root of the project, open a command prompt or bash shell and run the following command. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original add-in only manifest. For example, if the manifest is named MyManifest.xml, the unified manifest is created at .\MyManifest\MyManifest.json. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
 
 ```command&nbsp;line
 npx office-addin-manifest-converter convert -m <relative-path-to-XML-manifest>

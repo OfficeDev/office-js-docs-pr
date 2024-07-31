@@ -93,7 +93,7 @@ The add-in platform addresses end users' privacy concerns in the following ways.
 
   - Office on the web (Excel, Outlook, PowerPoint, and Word) running in Chromium-based browsers, such as Microsoft Edge or Google Chrome
 
-  - [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+  - [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 
   A user's device capabilities include their camera, geolocation, and microphone. To learn more, see [View, manage, and install add-ins for Excel, PowerPoint, and Word](https://support.microsoft.com/office/16278816-1948-4028-91e5-76dca5380f8d).
 
@@ -229,7 +229,7 @@ Also, ensure that the address you use for contacting the user couldn't have been
 If an add-in requires access to a user's device capabilities, such as their camera, geolocation, or microphone, the developer must configure it to request permission from the user. This applies to the following Office applications.
 
 - Office on the web (Excel, Outlook, PowerPoint, and Word) running in Chromium-based browsers, such as Microsoft Edge or Google Chrome
-- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+- [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 
 To request permission, the add-in must implement the [device permission API](/javascript/api/office/office.devicepermission).
 

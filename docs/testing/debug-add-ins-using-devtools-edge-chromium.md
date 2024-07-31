@@ -36,7 +36,7 @@ To determine which webview you're using, see [Browsers and webview controls used
    - Right-click (or select and hold) the task pane to open the context menu and select **Inspect**, or open the [personality menu](../design/task-pane-add-ins.md#personality-menu) and select **Attach Debugger**. (The personality menu isn't supported in Outlook.)
 
    > [!NOTE]
-   > The new Outlook on Window desktop client (preview) doesn't support the context menu or the keyboard shortcut to access the Microsoft Edge developer tools. Instead, you must run `olk.exe --devtools` from a command prompt. For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows (preview)](../outlook/one-outlook.md#debug-your-add-in).
+   > The new Outlook on Window desktop client (preview) doesn't support the context menu or the keyboard shortcut to access the Microsoft Edge developer tools. Instead, you must run `olk.exe --devtools` from a command prompt. For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows](../outlook/one-outlook.md#debug-your-add-in).
 
 1. Open the **Sources** tab.
 1. Open the file that you want to debug with the following steps.

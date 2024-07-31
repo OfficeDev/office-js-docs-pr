@@ -36,7 +36,7 @@ Run-time resource usage limits apply to all types of Office Add-ins. These limit
 If any Outlook add-in exceeds the preceding thresholds for CPU core or memory usage, or tolerance limit for crashes, the add-in becomes unavailable. The Exchange Admin Center displays the add-in status.
 
 > [!NOTE]
-> Even though only Outlook on Windows and on Mac monitor resource usage, if either of these clients makes an Outlook add-in unavailable, that add-in also becomes unavailable in Outlook on the web, on mobile devices, and in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
+> Even though only Outlook on Windows and on Mac monitor resource usage, if either of these clients makes an Outlook add-in unavailable, that add-in also becomes unavailable in Outlook on the web, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
 In addition to the CPU core, memory, and reliability rules, Outlook add-ins should observe the following rules on activation.
 

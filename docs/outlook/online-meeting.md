@@ -250,7 +250,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 ]  
 ```
 
-# [XML manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 1. In your code editor, open the Outlook quick start project you created.
 
@@ -447,7 +447,7 @@ As a meeting attendee, you should see a screen similar to the following image wh
 [![The join meeting screen on Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
-> The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows (preview). If you only see a meeting link, but don't see the **Join** button in a supported client, it may be that the online-meeting template for your service isn't registered on our servers. See the [Register your online-meeting template](#register-your-online-meeting-template) section for details.
+> The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows. If you only see a meeting link, but don't see the **Join** button in a supported client, it may be that the online-meeting template for your service isn't registered on our servers. See the [Register your online-meeting template](#register-your-online-meeting-template) section for details.
 
 ## Register your online-meeting template
 
@@ -455,7 +455,7 @@ Registering your online-meeting add-in is optional. It only applies if you want 
 
 > [!IMPORTANT]
 >
-> - The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows (preview).
+> - The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows.
 > - Only online-meeting add-ins published to AppSource can be registered. Line-of-business add-ins aren't supported.
 > - The **Join** button relies on the technology used by entity-based contextual Outlook add-ins. As this technology will be retired by the end of June 2024, an alternative implementation of the **Join** button is currently being developed. During the transition to this implementation, the **Join** button may not be visible when using an online meeting add-in. As a workaround, you must select the meeting link from the body of the meeting invitation to join the meeting directly. For more information on the retirement of entity-based contextual add-ins, see [Retirement of entity-based contextual Outlook add-ins](https://devblogs.microsoft.com/microsoft365dev/retirement-of-entity-based-contextual-outlook-add-ins/).
 

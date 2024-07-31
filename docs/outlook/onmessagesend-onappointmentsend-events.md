@@ -22,7 +22,7 @@ The following table lists supported client-server combinations for the Smart Ale
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later) |
 |-----|-----|-----|-----|
 |**Web browser (modern UI)**|Yes|Not applicable|Not applicable|
-|[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Yes|Not applicable|Not applicable|
+|[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Yes|Not applicable|Not applicable|
 |**Windows** (classic)<br>Version 2206 (Build 15330.20196) or later|Yes|Yes|Yes|
 |**Mac**<br>Version 16.65.827.0 or later|Yes|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
@@ -40,14 +40,14 @@ The following sections include guidance on the send mode options and the behavio
 
 When you configure your add-in to respond to the `OnMessageSend` or `OnAppointmentSend` event, you must include the send mode property in the manifest. Its markup varies depending on the type of manifest your add-in uses.
 
-- **XML manifest**: Set the **SendMode** property of the [LaunchEvent](/javascript/api/manifest/launchevent) element.
+- **Add-in only manifest**: Set the **SendMode** property of the [LaunchEvent](/javascript/api/manifest/launchevent) element.
 - **Unified manifest for Microsoft 365**: Set the "sendMode" option of the event object in the "autoRunEvents" array.
 
 If the conditions implemented by your add-in aren't met or your add-in is unavailable when the event occurs, a dialog is shown to the user to alert them that additional actions may be needed before the mail item can be sent. The send mode property determines the options available to the user in the dialog.
 
 The following table lists the available send mode options.
 
-|Send mode option canonical name|XML manifest name|Unified manifest for Microsoft 365 name|
+|Send mode option canonical name|Add-in only manifest name|Unified manifest for Microsoft 365 name|
 |-----|-----|-----|
 |**prompt user**|`PromptUser`|promptUser|
 |**soft block**|`SoftBlock`|softBlock|
@@ -140,9 +140,9 @@ In Outlook on Mac, the **Send** option becomes unavailable while in Work Offline
 
 When a user navigates away from the message they're sending (for example, to read a message in their inbox), the behavior of a Smart Alerts add-in differs between Outlook clients. Select the tab for the Outlook client on which the add-in is running.
 
-# [Web/New Outlook on Windows (preview)](#tab/web)
+# [Web/new Outlook on Windows](#tab/web)
 
-In Outlook on the web or in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), a user must remain on the message being sent until the Smart Alerts add-in completes processing it. Otherwise, once the user navigates away from the item, the add-in terminates the Smart Alerts operation and saves a draft to the mailbox's **Drafts** folder. The user is then alerted that they must resend the message from the **Drafts** folder and remain on the message until the add-in completes processing it.
+In Outlook on the web or in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), a user must remain on the message being sent until the Smart Alerts add-in completes processing it. Otherwise, once the user navigates away from the item, the add-in terminates the Smart Alerts operation and saves a draft to the mailbox's **Drafts** folder. The user is then alerted that they must resend the message from the **Drafts** folder and remain on the message until the add-in completes processing it.
 
 :::image type="content" source="../images/outlook-smart-alerts-item-switch-dialog-web.png" alt-text="The dialog shown to the user in Outlook on the web or new Outlook on Windows when they navigate away from a message after selecting Send.":::
 
@@ -234,7 +234,7 @@ If you customize the **Don't Send** button in the dialog, you can only assign a 
 > [!NOTE]
 > Support to customize the **Don't Send** button was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14).
 
-In Outlook on the web and in new Outlook on Windows (preview):
+In Outlook on the web and in new Outlook on Windows:
 
 - The `OnAppointmentSend` event only occurs when the meeting being sent was created through the **New Event** option. If the meeting being sent was created by selecting a date and time directly from the calendar, the `OnAppointmentSend` event doesn't occur.
 - When forwarding a meeting, the `OnAppointmentSend` event only occurs if the organizer forwards the meeting. It doesn't occur if an attendee forwards the meeting to which they're invited.
@@ -338,8 +338,8 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 |-----|-----|-----|
 |**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
 |**Supported Outlook clients**|<ul><li>Windows (classic and new (preview))</li><li>Web browser (modern UI)</li><li>Mac (new UI)</li></ul>|<ul><li>Windows (classic)</li><li>Web browser (classic and modern UI)</li><li>Mac (classic and new UI)</li></ul>|
-|**Supported events**|**XML manifest**<ul><li>`OnMessageSend`</li><li>`OnAppointmentSend`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>"messageSending"</li><li>"appointmentSending"</li></ul>|**XML manifest**<ul><li>`ItemSend`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>Not supported</li></ul>|
-|**Manifest extension property**|**XML manifest**<ul><li>`LaunchEvent`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>"autoRunEvents"</li></ul>|**XML manifest**<ul><li>`Events`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>Not supported</li></ul>|
+|**Supported events**|**Add-in only manifest**<ul><li>`OnMessageSend`</li><li>`OnAppointmentSend`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>"messageSending"</li><li>"appointmentSending"</li></ul>|**Add-in only manifest**<ul><li>`ItemSend`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>Not supported</li></ul>|
+|**Manifest extension property**|**Add-in only manifest**<ul><li>`LaunchEvent`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>"autoRunEvents"</li></ul>|**Add-in only manifest**<ul><li>`Events`</li></ul><br>**Unified manifest for Microsoft 365 (preview)**<ul><li>Not supported</li></ul>|
 |**Supported send mode options**|<ul><li>prompt user</li><li>soft block</li><li>block</li></ul><br>To learn more about each option, see [Available send mode options](#available-send-mode-options).|Block|
 |**Maximum number of supported events in an add-in**|One `OnMessageSend` and one `OnAppointmentSend` event.|One `ItemSend` event.|
 |**Add-in deployment**|Add-in can be published to AppSource if its send mode property is set to the **soft block** or **prompt user** option. Otherwise, the add-in must be deployed by an organization's administrator.|Add-in can't be published to AppSource. It must be deployed by an organization's administrator.|

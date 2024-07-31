@@ -56,7 +56,7 @@ The following are the prerequisites for creating a Project task pane add-in that
 
 Office Developer Tools for Visual Studio includes a template for task pane add-ins for Project. If you create a solution named **HelloProjectOData**, the solution contains the following two Visual Studio projects:
 
-- The add-in project takes the name of the solution. It includes the XML manifest file for the add-in and targets the .NET Framework 4.5. Procedure 3 shows the steps to modify the manifest for the **HelloProjectOData** add-in.
+- The add-in project takes the name of the solution. It includes the add-in only manifest file for the add-in and targets the .NET Framework 4.5. Procedure 3 shows the steps to modify the manifest for the **HelloProjectOData** add-in.
 
 - The web project is named **HelloProjectODataWeb**. It includes the webpages, JavaScript files, CSS files, images, references, and configuration files for the web content in the task pane. The web project targets the .NET Framework 4. Procedure 4 and Procedure 5 show how to modify the files in the web project to create the functionality of the **HelloProjectOData** add-in.
 
@@ -116,7 +116,7 @@ The following steps show how to add an icon file to the Visual Studio solution.
 
     ![Icon for the HelloProjectOData app.](../images/pj15-hello-project-data-new-icon.jpg)
 
-1. In the HelloProjectOData.xml manifest, add an **\<IconUrl\>** element below the **\<Description\>** element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: `<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`. The HelloProjectOData.xml manifest file now contains the following (your **\<Id\>** value will be different):
+1. In the HelloProjectOData.xml, add an **\<IconUrl\>** element below the **\<Description\>** element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: `<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`. The HelloProjectOData.xml file now contains the following (your **\<Id\>** value will be different):
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>

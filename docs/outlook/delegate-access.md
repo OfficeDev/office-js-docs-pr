@@ -21,7 +21,7 @@ The following table shows supported client-server combinations for this feature,
 |---|:---:|:---:|:---:|
 |**Web browser (modern Outlook UI)**|Supported|Not applicable|Not applicable|
 |**Web browser (classic Outlook UI)**|Not applicable|Not applicable|Not applicable|
-|[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
+|[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|
 |**Mac**<br>Version 16.47 or later|Supported|Supported|Supported|
 
@@ -140,7 +140,7 @@ To enable shared folders and shared mailbox scenarios in your add-in, you must e
 
 First, to support REST calls from a delegate, the add-in must request the **read/write mailbox** permission. The markup varies depending on the type of manifest.
 
-- **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
+- **Add-in only manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
 - **Unified manifest for Microsoft 365**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
 Second, enable support for shared folders. The markup varies depending on the type of manifest.
@@ -163,7 +163,7 @@ Add an additional object to the "authorization.permissions.resourceSpecific" arr
 },
 ```
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 Set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors aren't supported.
 
@@ -296,7 +296,7 @@ The message is now in a shared context and add-ins that support these shared sce
 
 Your add-in can use REST. To enable REST access to the owner's mailbox or to the shared mailbox as applicable, the add-in must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
 
-- **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
+- **Add-in only manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
 - **Unified manifest for Microsoft 365**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
 
 EWS isn't supported.

@@ -83,10 +83,10 @@ There should be a "webApplicationInfo" property in the root of the manifest. It 
 ```
 
 > [!NOTE]
-> Experienced add-in developers should note that, there is no unified manifest property corresponding to the **\<Scopes\>** element in the XML manifest. Microsoft Graph and other API permissions are requested at runtime in your code.
+> Experienced add-in developers should note that, there is no unified manifest property corresponding to the **\<Scopes\>** element in the add-in only manifest. Microsoft Graph and other API permissions are requested at runtime in your code.
 
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 - **\<WebApplicationInfo\>** - The parent of the following elements.
 - **\<Id\>** - The application (client) ID you received when you registered the add-in with the Microsoft identity platform. For more information, see [Register an Office Add-in that uses SSO with the Microsoft identity platform](register-sso-add-in-aad-v2.md).

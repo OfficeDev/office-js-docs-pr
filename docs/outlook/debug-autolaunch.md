@@ -20,7 +20,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
 1. Get your add-in's ID from the manifest.
 
-    - **XML manifest**: Use the value of the **\<Id\>** element child of the root **\<OfficeApp\>** element.
+    - **Add-in only manifest**: Use the value of the **\<Id\>** element child of the root **\<OfficeApp\>** element.
     - **Unified manifest for Microsoft 365**: Use the value of the "id" property of the root anonymous `{ ... }` object.
 
 1. Create a registry `DWORD` value named `UseDirectDebugger` in `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]`. Replace `[Add-in ID]` with your add-in's ID from the manifest.
@@ -137,7 +137,7 @@ To debug your add-in in [new Outlook on Windows desktop client (preview)](https:
 olk.exe --devtools
 ```
 
-For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows (preview)](one-outlook.md#debug-your-add-in).
+For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows](one-outlook.md#debug-your-add-in).
 
 # [Mac](#tab/mac)
 

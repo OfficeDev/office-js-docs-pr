@@ -12,7 +12,7 @@ Add-in commands provide an easy way to customize the default Office user interfa
 This article describes how to configure the [Unified manifest for Microsoft 365](unified-manifest-overview.md) to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands).
 
 > [!TIP]
-> Instructions for creating add-in commands with the XML manifest are in [Create add-in commands with the XML manifest](create-addin-commands.md).
+> Instructions for creating add-in commands with the add-in only manifest are in [Create add-in commands with the add-in only manifest](create-addin-commands.md).
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 

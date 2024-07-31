@@ -21,7 +21,7 @@ To debug custom functions add-ins that don't use a shared runtime, see [Custom f
 
 ## Enable runtime logging
 
-If you're testing your add-in in Office on Windows, you should [enable runtime logging](../testing/runtime-logging.md). Runtime logging delivers `console.log` statements to a separate log file you create to help you uncover issues. The statements cover a variety of errors, including errors pertaining to your add-in's XML manifest file, runtime conditions, or installation of your custom functions. For more information about runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
+If you're testing your add-in in Office on Windows, you should [enable runtime logging](../testing/runtime-logging.md). Runtime logging delivers `console.log` statements to a separate log file you create to help you uncover issues. The statements cover a variety of errors, including errors pertaining to your add-in's manifest file, runtime conditions, or installation of your custom functions. For more information about runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
 
 ### Check for Excel error messages
 

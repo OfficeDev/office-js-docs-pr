@@ -54,7 +54,7 @@ End users and IT admins can turn off [optional connected experiences in Office](
 
 |Client|Behavior when optional connected experiences is turned off|
 |-----|-----|
-|<ul><li>Web browser</li><li>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)</li></ul>|Availability of add-ins and access to AppSource are unaffected, so users can continue to [manage their add-ins](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8) including admin-deployed ones.|
+|<ul><li>Web browser</li><li>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)</li></ul>|Availability of add-ins and access to AppSource are unaffected, so users can continue to [manage their add-ins](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8) including admin-deployed ones.|
 |<ul><li>Windows (classic)<sup>1</sup></li><li>Mac</li></ul>|The **All Apps**<sup>2</sup> or **Get Add-ins** button isn't displayed, so users aren't able to manage their add-ins or access AppSource.|
 |<ul><li>Android</li><li>iOS</li></ul>|The **Get Add-ins** dialog shows only admin-deployed add-ins.|
 
@@ -115,7 +115,7 @@ Developers should follow the tiered permissions model to provide transparency an
 
 - As noted above, developers request permission in the manifest.
 
-  The following example requests the **read item** permission in the XML manifest.
+  The following example requests the **read item** permission in the add-in only manifest.
 
   ```XML
   <Permissions>ReadItem</Permissions>

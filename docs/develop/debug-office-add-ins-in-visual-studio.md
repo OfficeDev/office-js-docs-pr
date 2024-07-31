@@ -73,7 +73,7 @@ Start the project by choosing **Debug** > **Start Debugging** from the menu bar 
 
 When Visual Studio builds the project, it performs the following tasks:
 
-1. Creates a copy of the XML manifest file and adds it to the  `_ProjectName_\bin\Debug\OfficeAppManifests` directory. The Office application that hosts your add-in consumes this copy when you start Visual Studio and debug the add-in.
+1. Creates a copy of the add-in only manifest file and adds it to the  `_ProjectName_\bin\Debug\OfficeAppManifests` directory. The Office application that hosts your add-in consumes this copy when you start Visual Studio and debug the add-in.
 
 1. Creates a set of registry entries on your Windows computer that enables the add-in to appear in the Office application.
 
@@ -86,7 +86,7 @@ When Visual Studio builds the project, it performs the following tasks:
 
 Next, Visual Studio does the following:
 
-1. Modifies the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the XML manifest file (that was copied to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory) by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
+1. Modifies the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the add-in only manifest file (that was copied to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory) by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
 
 1. Starts the web application project in IIS Express.
 
@@ -169,13 +169,13 @@ When Visual Studio builds the project it performs the following tasks.
 
 1. Prompts you for login credentials. If you're asked to sign in repeatedly or if you receive an error that you're unauthorized, then Basic Auth may be disabled for accounts on your Microsoft 365 tenant. In this case, try using a Microsoft account instead. You can also try setting the property **Use multi-factor auth** to **True** in the add-in project properties pane. See [Add-in project properties](#add-in-project-properties).
 
-1. Creates a copy of the XML manifest file and adds it to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory. Microsoft 365 consumes this copy when you start Visual Studio and debug the add-in.
+1. Creates a copy of the add-in only manifest file and adds it to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory. Microsoft 365 consumes this copy when you start Visual Studio and debug the add-in.
 
 1. Builds the web application project, and then deploys it to the Microsoft 365 tenancy.
 
 Next, Visual Studio does the following:
 
-1. Modifies the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the XML manifest file (that was copied to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory) by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://contoso-79d42f062409ae.sharepoint.com/_forms/default.aspx`).
+1. Modifies the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the add-in only manifest file (that was copied to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory) by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://contoso-79d42f062409ae.sharepoint.com/_forms/default.aspx`).
 
 1. Starts the web application project.
 

@@ -1,14 +1,14 @@
 ---
-title: Office Add-ins XML manifest
-description: Get an overview of the Office Add-in XML manifest and its uses.
+title: Add-in only manifest for Office Add-ins
+description: Get an overview of the add-in only manifest for Office add-ins and its uses.
 ms.topic: overview
 ms.date: 04/12/2024
 ms.localizationpriority: high
 ---
 
-# Office Add-ins XML manifest
+# Add-in only manifest for Office Add-ins
 
-This article introduces the XML-formatted manifest for Office Add-ins. It assumes that you're familiar with the [Office Add-ins manifest](add-in-manifests.md). 
+This article introduces the XML-formatted add-in only manifest for Office Add-ins. It assumes that you're familiar with the [Office Add-ins manifest](add-in-manifests.md). 
 
 > [!TIP]
 > For an overview of the unified manifest for Microsoft 365, see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
@@ -40,7 +40,7 @@ Even if your add-in manifest uses the **\<VersionOverrides\>** element, it is st
 The following table specifies the elements that are required for the three types of Office Add-ins.
 
 > [!NOTE]
-> There is also a mandatory order in which elements must appear within their parent element. For more information see [How to find the proper order of XML manifest elements](manifest-element-ordering.md).
+> There is also a mandatory order in which elements must appear within their parent element. For more information see [How to find the proper order of add-in only manifest elements](manifest-element-ordering.md).
 
 ### Required elements by Office Add-in type
 
@@ -134,11 +134,11 @@ Office add-ins specify the **\<Hosts\>** element like the following:
 </OfficeApp>
 ```
 
-This is separate from the **\<Hosts\>** element inside the **\<VersionOverrides\>** element, which is discussed in [Create add-in commands with the XML manifest](../develop/create-addin-commands.md).
+This is separate from the **\<Hosts\>** element inside the **\<VersionOverrides\>** element, which is discussed in [Create add-in commands with the add-in only manifest](../develop/create-addin-commands.md).
 
 ## Specify safe domains with the AppDomains element
 
-There is an [AppDomains](/javascript/api/manifest/appdomains) element of the XML manifest file that is used to tell Office which domains your add-in should be allowed to navigate to. As noted in [Specify domains you want to open in the add-in window](add-in-manifests.md#specify-domains-you-want-to-open-in-the-add-in-window), when running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element), that URL opens in a new browser window outside the add-in pane of the Office application.
+There is an [AppDomains](/javascript/api/manifest/appdomains) element of the add-in only manifest file that is used to tell Office which domains your add-in should be allowed to navigate to. As noted in [Specify domains you want to open in the add-in window](add-in-manifests.md#specify-domains-you-want-to-open-in-the-add-in-window), when running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element), that URL opens in a new browser window outside the add-in pane of the Office application.
 
 To override this (desktop Office) behavior, add each domain you want to open in the add-in window in the list of domains specified in the **\<AppDomains\>** element. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then in desktop Office that URL opens in a new browser window (outside the add-in pane).
 
@@ -150,7 +150,7 @@ The following table describes browser behavior when your add-in attempts to navi
 |Office 2016 on Windows (volume-licensed perpetual)|No|Link opens in Internet Explorer 11.|
 |Other clients|No|Link opens in user's default browser.|
 
-The following XML manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **\<SourceLocation\>** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/javascript/api/manifest/appdomain) element within the **\<AppDomains\>** element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
+The following add-in only manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **\<SourceLocation\>** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/javascript/api/manifest/appdomain) element within the **\<AppDomains\>** element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -685,8 +685,8 @@ For information about validating a manifest against the [XML Schema Definition (
 
 ## See also
 
-- [How to find the proper order of XML manifest elements](manifest-element-ordering.md)
-- [Create add-in commands with the XML manifest](create-addin-commands.md)
+- [How to find the proper order of add-in only manifest elements](manifest-element-ordering.md)
+- [Create add-in commands with the add-in only manifest](create-addin-commands.md)
 - [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
 - [Localization for Office Add-ins](localization.md)
 - [Schema reference for XML Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)

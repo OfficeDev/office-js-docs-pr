@@ -16,7 +16,7 @@ In this article, you'll walk through the process of building an Outlook task pan
 > The unified manifest is supported on Outlook for Windows, Outlook on the web, and Outlook on mobile platforms. We are working to support it in Outlook on Mac and in other Office applications.
 
 > [!TIP]
-> If you want to build an Outlook add-in using the XML manifest, see [Build your first Outlook add-in](outlook-quickstart.md).
+> If you want to build an Outlook add-in using the add-in only manifest, see [Build your first Outlook add-in](outlook-quickstart.md).
 
 ## Create the add-in
 

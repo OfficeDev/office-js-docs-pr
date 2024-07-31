@@ -11,8 +11,8 @@ ms.localizationpriority: high
 This article introduces the unified app manifest for Microsoft 365. It assumes that you're familiar with [Office Add-ins manifest](add-in-manifests.md).
 
 > [!TIP]
-> - For an overview of the XML manifest, see [Office Add-ins XML manifest](xml-manifest-overview.md).
-> - If you're familiar with the XML manifest, you might get a grasp on the JSON-formatted unified manifest easier by reading [Compare the XML manifest with the unified manifest for Microsoft 365](json-manifest-overview.md).
+> - For an overview of the add-in only manifest, see [Add-in only manifest for Office Add-ins](xml-manifest-overview.md).
+> - If you're familiar with the add-in only manifest, you might get a grasp on the JSON-formatted unified manifest easier by reading [Compare the add-in only manifest with the unified manifest for Microsoft 365](json-manifest-overview.md).
 
 Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes are compatible with existing add-ins.
 
@@ -51,7 +51,7 @@ Each of the base properties listed in the following table has more extensive doc
 
 ### "extensions" property
 
-We're working hard to complete reference documentation for the "extensions" property and its descendent properties. In the meantime, the following provides some basic documentation. Most, but not all, of the properties have an equivalent element (or attribute) in the XML manifest for add-ins. For the most part, the description, and restrictions, that apply to the XML element or attribute also apply to its JSON property equivalent in the unified manifest. The tables in the '"extensions" property' section of [Compare the XML manifest with the unified manifest for Microsoft 365](json-manifest-overview.md#extensions-property) can help you determine the XML equivalent of a JSON property.
+We're working hard to complete reference documentation for the "extensions" property and its descendent properties. In the meantime, the following provides some basic documentation. Most, but not all, of the properties have an equivalent element (or attribute) in the add-in only manifest for add-ins. For the most part, the description, and restrictions, that apply to the XML element or attribute also apply to its JSON property equivalent in the unified manifest. The tables in the '"extensions" property' section of [Compare the add-in only manifest with the unified manifest for Microsoft 365](json-manifest-overview.md#extensions-property) can help you determine the XML equivalent of a JSON property.
 
 
 |JSON property|Purpose|

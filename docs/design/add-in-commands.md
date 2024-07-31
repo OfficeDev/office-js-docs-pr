@@ -132,6 +132,6 @@ Apply the following best practices when you develop add-in commands.
 
 The best way to get started using add-in commands is to take a look at the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
 
-For more information about specifying add-in commands in an XML manifest, see [Create add-in commands with the XML manifest](../develop/create-addin-commands.md) and the [VersionOverrides](/javascript/api/manifest/versionoverrides) reference content.
+For more information about specifying add-in commands in an add-in only manifest, see [Create add-in commands with the add-in only manifest](../develop/create-addin-commands.md) and the [VersionOverrides](/javascript/api/manifest/versionoverrides) reference content.
 
 For more information about specifying add-in commands in the unified manifest for Microsoft 365, see [Create add-in commands with the unified manifest for Microsoft 365](../develop/create-addin-commands-unified-manifest.md).

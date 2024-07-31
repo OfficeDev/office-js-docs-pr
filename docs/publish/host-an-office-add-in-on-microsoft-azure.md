@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Host an Office Add-in on Microsoft Azure
 
-The simplest Office Add-in is made up of an XML manifest file and an HTML page. The XML manifest file describes the add-in's characteristics, such as its name, what Office desktop clients it can run in, and the URL for the add-in's HTML page. The HTML page is contained in a web app that users interact with when they install and run your add-in within an Office client application. You can host the web app of an Office Add-in on any web hosting platform, including Azure.
+The simplest Office Add-in is made up of an manifest file and an HTML page. The manifest file describes the add-in's characteristics, such as its name, what Office desktop clients it can run in, and the URL for the add-in's HTML page. The HTML page is contained in a web app that users interact with when they install and run your add-in within an Office client application. You can host the web app of an Office Add-in on any web hosting platform, including Azure.
 
 This article describes how to deploy an add-in web app to Azure and [sideload the add-in](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) for testing in an Office client application.
 
@@ -28,7 +28,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
     > [!NOTE]
     > If don't already have an Azure subscription, you can [get one as part of your Visual Studio subscription](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) or [register for a free trial](https://azure.microsoft.com/pricing/free-trial).
 
-## Step 1: Create a shared folder to host your add-in XML manifest file
+## Step 1: Create a shared folder to host your add-in manifest file
 
 1. Open File Explorer on your development computer.
 
@@ -41,7 +41,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 5. In **File Sharing**, choose the drop-down arrow and then choose **Everyone** > **Add** > **Share**.
 
 > [!NOTE]
-> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in XML manifest file. In a real-world scenario, you might instead choose to [deploy the XML manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).
+> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in manifest file. In a real-world scenario, you might instead choose to [deploy the manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).
 
 ## Step 2: Add the file share to the Trusted Add-ins catalog
 
@@ -59,7 +59,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 5. Select the check box for **Show in Menu**.
 
     > [!NOTE]
-    > When you store an add-in XML manifest file on a share that is specified as a trusted web add-in catalog, the add-in appears under **Shared Folder** in the **Office Add-ins** dialog box that launches from **Home** > **Add-ins** > **Get Add-ins**.
+    > When you store an add-in manifest file on a share that is specified as a trusted web add-in catalog, the add-in appears under **Shared Folder** in the **Office Add-ins** dialog box that launches from **Home** > **Add-ins** > **Get Add-ins**.
 
 6. Close Word.
 
@@ -128,15 +128,15 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 5. Copy the root URL (for example: `https://YourDomain.azurewebsites.net`); you'll need it when you edit the add-in manifest file later in this article.
 
-## Step 6: Edit and deploy the add-in XML manifest file
+## Step 6: Edit and deploy the add-in manifest file
 
 1. In Visual Studio with the sample Office Add-in open in **Solution Explorer**, expand the solution so that both projects show.
 
-2. Expand the Office Add-in project (for example WordWebAddIn), right-click (or select and hold) the manifest folder, and then choose **Open**. The add-in XML manifest file opens.
+2. Expand the Office Add-in project (for example WordWebAddIn), right-click (or select and hold) the manifest folder, and then choose **Open**. The add-in manifest file opens.
 
-3. In the XML manifest file, find and replace all instances of "~remoteAppUrl" with the root URL of the add-in web app on Azure. This is the URL that you copied earlier after you published the add-in web app to Azure (for example: `https://YourDomain.azurewebsites.net`).
+3. In the manifest file, find and replace all instances of "~remoteAppUrl" with the root URL of the add-in web app on Azure. This is the URL that you copied earlier after you published the add-in web app to Azure (for example: `https://YourDomain.azurewebsites.net`).
 
-4. Choose **File** and then choose **Save All**. Next, Copy the add-in XML manifest file (for example, WordWebAddIn.xml).
+4. Choose **File** and then choose **Save All**. Next, Copy the add-in manifest file (for example, WordWebAddIn.xml).
 
 5. Using the **File Explorer** program, browse to the network file share that you created in [Step 1: Create a shared folder](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file) and paste the manifest file into the folder.
 

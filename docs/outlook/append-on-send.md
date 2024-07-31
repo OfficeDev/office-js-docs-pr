@@ -174,7 +174,7 @@ The following shows how to configure your unified manifest to enable the prepend
 
 1. Save your changes.
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To enable the prepend-on-send and append-on-send features in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](/javascript/api/manifest/extendedpermissions). Additionally, you'll configure function commands to prepend and append content to the message body.
 
@@ -395,7 +395,7 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 1. In the same **commands.js** file, insert the following after the `appendDisclaimerOnSend` function. These calls map the function name specified in the manifest to its JavaScript counterpart. The location of the function name in the manifest varies depending on the type of manifest your add-in uses.
 
-- **XML manifest**: The function name specified in the **\<FunctionName\>** element.
+- **Add-in only manifest**: The function name specified in the **\<FunctionName\>** element.
 - **Unified manifest for Microsoft 365**: The function name specified in the "id" property of the objects in the "extensions.runtimes.actions" array.
 
     ```javascript

@@ -69,7 +69,7 @@ In this article, you'll walk through the process of building a PowerPoint [conte
 
 ### Update the manifest
 
-1. Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.
+1. Open the add-in only manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
 1. The `ProviderName` element has a placeholder value. Replace it with your name.
 
