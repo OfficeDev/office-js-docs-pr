@@ -11,7 +11,7 @@ ms.localizationpriority: high
 This article introduces the unified app manifest for Microsoft 365. It assumes that you're familiar with [Office Add-ins manifest](add-in-manifests.md).
 
 > [!TIP]
-> - For an overview of the add-in only manifest, see [Add-in only manifest for Office Add-ins](xml-manifest-overview.md).
+> - For an overview of the add-in only manifest, see [Office Add-ins with the add-in only manifest](xml-manifest-overview.md).
 > - If you're familiar with the add-in only manifest, you might get a grasp on the JSON-formatted unified manifest easier by reading [Compare the add-in only manifest with the unified manifest for Microsoft 365](json-manifest-overview.md).
 
 Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes are compatible with existing add-ins.

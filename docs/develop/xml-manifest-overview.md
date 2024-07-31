@@ -1,12 +1,12 @@
 ---
-title: Add-in only manifest for Office Add-ins
+title: Office Add-ins with the add-in only manifest
 description: Get an overview of the add-in only manifest for Office add-ins and its uses.
 ms.topic: overview
 ms.date: 04/12/2024
 ms.localizationpriority: high
 ---
 
-# Add-in only manifest for Office Add-ins
+# Office Add-ins with the add-in only manifest
 
 This article introduces the XML-formatted add-in only manifest for Office Add-ins. It assumes that you're familiar with the [Office Add-ins manifest](add-in-manifests.md). 
 

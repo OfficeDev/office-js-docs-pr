@@ -293,7 +293,7 @@ The following is an example manifest file for a dictionary add-in.
 </OfficeApp>
 ```
 
-The **\<Dictionary\>** element and its child elements specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Add-in only manifest for Office Add-ins](../develop/xml-manifest-overview.md).
+The **\<Dictionary\>** element and its child elements specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins with the add-in only manifest](../develop/xml-manifest-overview.md).
 
 ### Dictionary element
 
