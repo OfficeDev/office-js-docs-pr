@@ -32,7 +32,7 @@ While you can use the JavaScript `Date` object to get a date or time value based
 
 ## Date-related features for Outlook add-ins
 
-The aforementioned JavaScript limitation has an implication for you when you use the Office JavaScript API to handle date or time values in add-ins that run in Outlook on Windows (classic or [new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), on Mac, on the web, or on mobile devices.
+The aforementioned JavaScript limitation has an implication for you when you use the Office JavaScript API to handle date or time values in add-ins that run in Outlook on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) or classic), on Mac, on the web, or on mobile devices.
 
 ### Time zones for Outlook clients
 

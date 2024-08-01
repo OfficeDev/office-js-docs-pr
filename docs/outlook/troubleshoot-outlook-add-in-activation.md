@@ -222,7 +222,7 @@ This section applies to all activation rules that use regular expressions, parti
 
 - **Length of a regular expression match**. There are limits to the length of a regular expression match that the Outlook application would return. Outlook doesn't include any match above the limit and doesn't display any warning message. You can run your regular expression using other regex evaluation tools or a stand-alone C++ test program to verify whether you have a match that exceeds such limits. The following table summarizes the limits. For more information, see [Limits of activation rules for contextual Outlook add-in](limits-for-activation-and-javascript-api-for-outlook-add-ins.md#limits-on-the-matches-returned).
 
-    |Limit on length of a regex match|Outlook on the web, on mobile devices, and on new Windows client (preview)|Outlook on Windows (classic) and on Mac|
+    |Limit on length of a regex match|Outlook on the web, on mobile devices, and on new Windows client|Outlook on Windows (classic) and on Mac|
     |:-----|:-----|:-----|
     |Item body is plain text|3 KB|1.5 KB|
     |Item body is HTML|3 KB|3 KB|

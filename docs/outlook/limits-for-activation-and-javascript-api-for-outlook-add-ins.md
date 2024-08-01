@@ -77,7 +77,7 @@ The following table lists the limits and describes the differences in the suppor
 
 The following table lists the limits and describes the differences in the portion of the item body to which each Outlook client applies a regular expression. Some of these limits depend on the type of device and item body, if the regular expression is applied on the item body.
 
-||Outlook on the web and on new Windows client|Outlook on classic Windows client and on Mac|Outlook on mobile devices|
+||Outlook on the web and on new Windows client|Outlook on Windows (classic) and on Mac|Outlook on mobile devices|
 |:-----|:-----|:-----|:-----|
 |**Form factor**|Any supported device other than Android smartphones, iPad, and iPhone.|Any supported device.|Android smartphones, iPad, or iPhone.|
 |**Plain text item body**|Activates the add-in only if the body < 500,000 characters.|Applies the regex on the first 1 MB of the data of the body, but not on the rest of the body over that limit.|Activates the add-in only if the body < 16,000 characters.|
@@ -87,7 +87,7 @@ The following table lists the limits and describes the differences in the portio
 
 The following table lists the limits and describes the differences in the matches that each Outlook client returns after evaluating a regular expression. The support is independent of any specific type of device, but may depend on the type of item body, if the regular expression is applied on the item body.
 
-||Outlook on the web, on mobile devices, and on new Windows client|Outlook on classic Windows client and on Mac|
+||Outlook on the web, on mobile devices, and on new Windows client|Outlook on Windows (classic) and on Mac|
 |:-----|:-----|:-----|
 |**Order of returned matches**|Assume the `getRegExMatches` method returns different matches for the same regular expression applied on the same mail item in Outlook on Windows (classic) and on Mac versus in Outlook on the web, on mobile devices, and in new Outlook on Windows.|Assume the `getRegExMatches` method returns different matches for the same regular expression applied on the same mail item in Outlook on Windows (classic) and on Mac versus in Outlook on the web, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).|
 |**Plain text item body**|`getRegExMatches` returns any matches that are up to 3,072 (3 KB) characters, for a maximum of 50 matches.|The `getRegExMatches` method returns any matches that are up to 1,536 (1.5 KB) characters, for a maximum of 50 matches.<br/><br/>**Note**: `getRegExMatches` doesn't return matches in any specific order in the returned array. In general, assume the order of matches for the same regular expression applied on the same mail item in Outlook on Windows (classic) and on Mac is different from that in Outlook on the web, on mobile devices, and in new Outlook on Windows.|
