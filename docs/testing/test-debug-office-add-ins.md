@@ -14,7 +14,7 @@ This article contains guidance about testing, debugging, and troubleshooting iss
 Office Add-ins run across major platforms, so you need to test an add-in in all the platforms where your users might be running Office. This usually includes Office on the web, Office on Windows (both perpetual and Microsoft 365 subscription), Office on Mac, Office on iOS, and (for Outlook add-ins) Office on Android. However, there may be some situations in which you can be sure that none of your users will be working on some platforms. For example, if you're making an add-in for a company that requires its users to work with Windows computers and subscription Office, then you don't need to test for Office on Mac or perpetual Office on Windows.
 
 > [!NOTE]
-> On Windows computers, the version of Windows and Office will determine which browser or webview control is used by add-ins. For more information, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For brevity hereafter, this article uses "browser control" to mean "browser or webview control". 
+> On Windows computers, the version of Windows and Office will determine which browser or webview control is used by add-ins. For more information, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). For brevity hereafter, this article uses "browser control" to mean "browser or webview control".
 
 ### Add-ins tested for Office on the web
 

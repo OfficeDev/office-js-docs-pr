@@ -51,10 +51,10 @@ You can verify the version of Exchange by using one of the following approaches.
 
 ## Is the add-in available?
 
-Outlook on Windows and on Mac can make an add-in unavailable due to performance reasons, including exceeding usage thresholds for CPU core or memory, tolerance for crashes, and length of time to process all the regular expressions for an add-in. When this happens, Outlook on Windows and on Mac display a notification that it's making an add-in unavailable.
+Outlook on Windows (classic) and on Mac can make an add-in unavailable due to performance reasons, including exceeding usage thresholds for CPU core or memory, tolerance for crashes, and length of time to process all the regular expressions for an add-in. When this happens, Outlook on Windows (classic) and on Mac display a notification that it's making an add-in unavailable.
 
 > [!NOTE]
-> Only classic Outlook on Windows and Outlook on Mac monitor resource usage. However, an add-in made unavailable in classic Outlook on Windows or Outlook on Mac also becomes unavailable in Outlook on the web, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
+> Only Outlook on Windows (classic) and Outlook on Mac monitor resource usage. However, an add-in made unavailable in Outlook on Windows (classic) or Outlook on Mac also becomes unavailable in Outlook on the web, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
 Check your list of installed add-ins to verify whether an add-in is available. For instructions on how to view your add-ins in Outlook, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
@@ -68,7 +68,7 @@ Also, because appointments are always saved in Rich Text Format, an [ItemHasRegu
 
 [!INCLUDE [Rule features not supported by the unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
 
-This scenario applies to only Outlook on Windows. Normally, when you install an Outlook add-in for a mailbox, the Exchange Server copies the add-in manifest from the location you indicate to the mailbox on that Exchange Server. Every time Outlook starts, it reads all the manifests installed for that mailbox into a temporary cache at the following location.
+This scenario applies to only classic Outlook on Windows. Normally, when you install an Outlook add-in for a mailbox, the Exchange Server copies the add-in manifest from the location you indicate to the mailbox on that Exchange Server. Every time Outlook starts, it reads all the manifests installed for that mailbox into a temporary cache at the following location.
 
 ```text
 %LocalAppData%\Microsoft\Office\16.0\WEF
@@ -155,13 +155,13 @@ Because regular expressions in activation rules are part of the XML-formatted ad
 |`<`|Less-than sign|&amp;lt;|
 |`>`|Greater-than sign|&amp;gt;|
 
-## If you use a regular expression, does the read add-in activate in Outlook on the web, on mobile devices, or in new Outlook on Windows, but not in classic Outlook on Windows or Outlook on Mac?
+## If you use a regular expression, does the read add-in activate in Outlook on the web, on mobile devices, or in new Outlook on Windows, but not in Outlook on Windows (classic) or Outlook on Mac?
 
-Classic Outlook on Windows and Outlook on Mac use a regular expression engine that's different from the one used by Outlook on the web, on mobile devices, and on [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). Classic Outlook on Windows and Outlook on Mac use the C++ regular expression engine provided as part of the Visual Studio standard template library. This engine complies with ECMAScript 5 standards. Outlook on the web, on mobile devices, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use regular expression evaluation that's part of JavaScript, is provided by the browser, and supports a superset of ECMAScript 5.
+Outlook on Windows (classic) and Outlook on Mac use a regular expression engine that's different from the one used by Outlook on the web, on mobile devices, and on [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). Classic Outlook on Windows and Outlook on Mac use the C++ regular expression engine provided as part of the Visual Studio standard template library. This engine complies with ECMAScript 5 standards. Outlook on the web, on mobile devices, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use regular expression evaluation that's part of JavaScript, is provided by the browser, and supports a superset of ECMAScript 5.
 
-While in most cases, these Outlook clients find the same matches for the same regular expression in an activation rule, there are exceptions. For instance, if the regex includes a custom character class based on predefined character classes, classic Outlook on Windows and Outlook on Mac may return results different from Outlook on the web, on mobile devices, and new Outlook on Windows. As an example, character classes that contain shorthand character classes `[\d\w]` within them would return different results. In this case, to avoid different results on different applications, use `(\d|\w)` instead.
+While in most cases, these Outlook clients find the same matches for the same regular expression in an activation rule, there are exceptions. For instance, if the regex includes a custom character class based on predefined character classes, Outlook on Windows (classic) and Outlook on Mac may return results different from Outlook on the web, on mobile devices, and new Outlook on Windows. As an example, character classes that contain shorthand character classes `[\d\w]` within them would return different results. In this case, to avoid different results on different applications, use `(\d|\w)` instead.
 
-Test your regular expression thoroughly. If it returns different results, rewrite the regular expression for compatibility with both engines. To verify evaluation results in classic Outlook on Windows and Outlook on Mac, write a small C++ program that applies the regular expression against a sample of the text you are trying to match. Running on Visual Studio, the C++ test program would use the standard template library, simulating the behavior of classic Outlook on Windows or Outlook on Mac when running the same regular expression. To verify evaluation results in Outlook on the web, on mobile devices, and in new Outlook on Windows, use your favorite JavaScript regular expression tester.
+Test your regular expression thoroughly. If it returns different results, rewrite the regular expression for compatibility with both engines. To verify evaluation results in Outlook on Windows (classic) and Outlook on Mac, write a small C++ program that applies the regular expression against a sample of the text you are trying to match. Running on Visual Studio, the C++ test program would use the standard template library, simulating the behavior of Outlook on Windows (classic) or Outlook on Mac when running the same regular expression. To verify evaluation results in Outlook on the web, on mobile devices, and in new Outlook on Windows, use your favorite JavaScript regular expression tester.
 
 ## If you use an ItemIs, ItemHasAttachment, or ItemHasRegularExpressionMatch rule, have you verified the related item property?
 
@@ -169,7 +169,7 @@ If you use an **ItemHasRegularExpressionMatch** activation rule, verify whether 
 
 - If the selected item is a message and you specify **BodyAsHTML** in the **PropertyName** attribute, open the message, and then choose **View Source** to verify the message body in the HTML representation of that item.
 
-- If the selected item is an appointment, or if the activation rule specifies **BodyAsPlaintext** in the **PropertyName**, you can use the Outlook object model and the Visual Basic Editor in Outlook on Windows:
+- If the selected item is an appointment, or if the activation rule specifies **BodyAsPlaintext** in the **PropertyName**, you can use the Outlook object model and the Visual Basic Editor in classic Outlook on Windows.
 
     1. Ensure that macros are enabled and the **Developer** tab is displayed on the ribbon for Outlook.
 
@@ -218,19 +218,19 @@ This section applies to all activation rules that use regular expressions, parti
 
 - **The size of the item body evaluated**. There are limits to the portion of an item body on which Outlook evaluates a regular expression. These limits depend on the Outlook client, form factor, and format of the item body. For more information, see [Limits on the size of the item body evaluated](limits-for-activation-and-javascript-api-for-outlook-add-ins.md#limits-on-the-size-of-the-item-body-evaluated).
 
-- **Number of regular expression matches**. Outlook on Windows (classic and [new (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), on Mac, on the web, and on mobile devices each returns a maximum of 50 regular expression matches. These matches are unique, and duplicate matches don't count against this limit. Don't assume any order to the returned matches, and don't assume the order in classic Outlook on Windows and Outlook on Mac is the same as that in Outlook on the web, on mobile devices, and in new Outlook on Windows. If you expect many matches to regular expressions in your activation rules, and you're missing a match, you may be exceeding this limit.
+- **Number of regular expression matches**. Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), on Mac, and on mobile devices each returns a maximum of 50 regular expression matches. These matches are unique, and duplicate matches don't count against this limit. Don't assume any order to the returned matches, and don't assume the order in Outlook on Windows (classic) and Outlook on Mac is the same as that in Outlook on the web, on mobile devices, and in new Outlook on Windows. If you expect many matches to regular expressions in your activation rules, and you're missing a match, you may be exceeding this limit.
 
 - **Length of a regular expression match**. There are limits to the length of a regular expression match that the Outlook application would return. Outlook doesn't include any match above the limit and doesn't display any warning message. You can run your regular expression using other regex evaluation tools or a stand-alone C++ test program to verify whether you have a match that exceeds such limits. The following table summarizes the limits. For more information, see [Limits of activation rules for contextual Outlook add-in](limits-for-activation-and-javascript-api-for-outlook-add-ins.md#limits-on-the-matches-returned).
 
-    |Limit on length of a regex match|Outlook on the web, on mobile devices, and on new Windows client (preview)|Outlook on classic Windows client and on Mac|
+    |Limit on length of a regex match|Outlook on the web, on new Windows client, and on mobile devices|Outlook on Windows (classic) and on Mac|
     |:-----|:-----|:-----|
     |Item body is plain text|3 KB|1.5 KB|
     |Item body is HTML|3 KB|3 KB|
 
-- **Time spent on evaluating all regular expressions of a read add-in in classic Outlook on Windows and Outlook on Mac**. By default, for each read add-in, Outlook must finish evaluating all the regular expressions in its activation rules within one second. Otherwise, Outlook retries up to three times and makes the add-in unavailable if Outlook can't complete the evaluation. Outlook displays a message in the notification bar that the add-in is unavailable. The amount of time available for your regular expression can be modified by setting a group policy or a registry key.
+- **Time spent on evaluating all regular expressions of a read add-in in Outlook on Windows (classic) and Outlook on Mac**. By default, for each read add-in, Outlook must finish evaluating all the regular expressions in its activation rules within one second. Otherwise, Outlook retries up to three times and makes the add-in unavailable if Outlook can't complete the evaluation. Outlook displays a message in the notification bar that the add-in is unavailable. The amount of time available for your regular expression can be modified by setting a group policy or a registry key.
 
    > [!NOTE]
-   > If classic Outlook on Windows or Outlook on Mac makes a read add-in unavailable, the read add-in becomes unavailable on the same mailbox in Outlook on the web, on mobile devices, and in new Outlook on Windows.
+   > If Outlook on Windows (classic) or Outlook on Mac makes a read add-in unavailable, the read add-in becomes unavailable on the same mailbox in Outlook on the web, on mobile devices, and in new Outlook on Windows.
 
 ## See also
 

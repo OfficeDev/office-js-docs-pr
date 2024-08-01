@@ -348,7 +348,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 > Windows: At present, imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
 
 > [!TIP]
-> Event-based add-ins running in Outlook on Windows don't run code included in the `Office.onReady()` and `Office.initialize` functions. We recommend adding your add-in startup logic, such as checking the user's Outlook version, to your event handlers instead.
+> Event-based add-ins running in classic Outlook on Windows don't run code included in the `Office.onReady()` and `Office.initialize` functions. We recommend adding your add-in startup logic, such as checking the user's Outlook version, to your event handlers instead.
 
 ## Update the commands HTML file
 
@@ -420,7 +420,7 @@ Because the `OnMessageFromChanged` and `OnAppointmentFromChanged` events are sup
 In addition to these characteristics, the following aspects also apply when an add-in activates on these events.
 
 - The `OnMessageFromChanged` event is only supported in message compose mode, while the `OnAppointmentFromChanged` event is only supported in appointment compose mode.
-- In Outlook on Windows, only the `OnMessageFromChanged` event is supported.
+- In classic Outlook on Windows, only the `OnMessageFromChanged` event is supported.
 - The `OnMessageFromChanged` and `OnAppointmentFromChanged` events only support Exchange accounts. In messages being composed, the Exchange account is selected from the **From** field dropdown list or manually entered in the field. In appointments being composed, the Exchange account is selected from the organizer field dropdown list. If a user switches to a non-Exchange account in the **From** or organizer field, the Outlook client automatically clears out the signature set by the previously selected account.
 - Delegate and shared mailbox scenarios are supported.
 - The `OnAppointmentFromChanged` event isn't supported in [Microsoft 365 group calendars](https://support.microsoft.com/office/0cf1ad68-1034-4306-b367-d75e9818376a#Outlook=Web). If a user switches from their Exchange account to a Microsoft 365 group calendar account in the organizer field, the Outlook client automatically clears out the signature set by the Exchange account.

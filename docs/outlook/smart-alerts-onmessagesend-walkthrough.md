@@ -330,7 +330,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     ```
 
 > [!IMPORTANT]
-> When developing your Smart Alerts add-in to run in Outlook on Windows, keep the following in mind.
+> When developing your Smart Alerts add-in to run in classic Outlook on Windows, keep the following in mind.
 >
 > - Imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
 > - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs in Outlook on Windows, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings.
@@ -664,7 +664,7 @@ If you implemented the optional step to override the send mode option at runtime
 
     [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
-1. In Outlook on Windows, create a new message and set the subject. In the body, add some text. For example, "Here's a picture of the proposed logo."
+1. In your preferred Outlook client, create a new message and set the subject. In the body, add some text. For example, "Here's a picture of the proposed logo."
 1. From the ribbon, select **Contoso Add-in** > **Show Taskpane**.
 1. In the task pane, select **Add an inline image**. An image is added to the body of your message.
 1. Send the message. A dialog appears recommending to attach a copy of the image to the message.

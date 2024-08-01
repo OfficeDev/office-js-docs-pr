@@ -660,7 +660,6 @@ items:
     displayName: Outlook
   - name: Develop Outlook add-ins for the new Outlook on Windows
     href: outlook/one-outlook.md
-    displayName: preview
   - name: Outlook JavaScript API
     displayName: Outlook
     items:

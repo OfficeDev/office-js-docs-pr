@@ -205,7 +205,6 @@ The "requirements" subproperty can be used to prevent the runtime from being inc
 
 The previous example shown in [extensions.autoRunEvents.requirements](#extensionsautoruneventsrequirements) shows how to block the autolaunch feature in versions that don't support all of the code in the `logOutgoingEmail` function, which includes code that requires **Mailbox 1.13**. Suppose that in that same scenario, the "runtime" object that's configured to support the "logOutgoingEmail" action isn't configured to support any other action. In that case, the developer should block the runtime object in versions that don't support **Mailbox 1.13** since it would never be used. The following is an example. For details of the runtime configuration, see [Create add-in commands with the unified manifest for Microsoft 365](/office/dev/add-ins/develop/create-addin-commands-unified-manifest).
 
-
 ```json
 "extensions": [
     ...

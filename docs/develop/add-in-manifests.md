@@ -15,7 +15,7 @@ Every Office add-in has a manifest. There are two types of manifests:
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
-The remainder of this article is applicable to both types of manifest. 
+The remainder of this article is applicable to both types of manifest.
 
 > [!TIP]
 >

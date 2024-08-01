@@ -35,7 +35,7 @@ The origin refers to a pattern of scheme + subdomain + domain + port. The name o
 After you configure the well-known URI, if your add-in implements SSO, you can then call the [getAccessToken() API](/javascript/api/office-runtime/officeruntime.auth) to get an access token with the user's identity.
 
 > [!IMPORTANT]
-> While `OfficeRuntime.auth.getAccessToken` and `Office.auth.getAccessToken` perform the same functionality of retrieving an access token, we recommend calling `OfficeRuntime.auth.getAccessToken` in your event-based or spam-reporting (preview) add-in. This API is supported in all Outlook client versions that support event-based activation, integrated spam reporting, and SSO. On the other hand, `Office.auth.getAccessToken` is only supported in Outlook on Windows starting from Version 2111 (Build 14701.20000).
+> While `OfficeRuntime.auth.getAccessToken` and `Office.auth.getAccessToken` perform the same functionality of retrieving an access token, we recommend calling `OfficeRuntime.auth.getAccessToken` in your event-based or spam-reporting (preview) add-in. This API is supported in all Outlook client versions that support event-based activation, integrated spam reporting, and SSO. On the other hand, `Office.auth.getAccessToken` is only supported in classic Outlook on Windows starting from Version 2111 (Build 14701.20000).
 
 ## See also
 

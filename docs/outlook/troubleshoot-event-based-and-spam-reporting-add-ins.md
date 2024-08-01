@@ -35,7 +35,7 @@ As you develop your [event-based](autolaunch.md) or [spam-reporting](spam-report
 - Verify that your event-handling JavaScript file referenced by the Outlook client on Windows calls `Office.actions.associate`. This ensures that the event handler name specified in the manifest is mapped to its JavaScript counterpart.
 
   > [!TIP]
-  > If your add-in has only one JavaScript file referenced by Outlook on the web, on Windows (classic and new (preview)), and on Mac, it's recommended to check on which platform the add-in is running to determine when to call `Office.actions.associate`, as shown in the following code.
+  > If your add-in has only one JavaScript file referenced by Outlook on the web, on Windows (new and classic), and on Mac, it's recommended to check on which platform the add-in is running to determine when to call `Office.actions.associate`, as shown in the following code.
   >
   > ```js
   > if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
@@ -44,11 +44,11 @@ As you develop your [event-based](autolaunch.md) or [spam-reporting](spam-report
   > }
   > ```
 
-- The JavaScript code of event-based and spam-reporting add-ins that run in Outlook on Windows only supports [ECMAScript 2016](https://262.ecma-international.org/7.0/) and earlier specifications. Some examples of programming syntax to avoid are as follows.
+- The JavaScript code of event-based and spam-reporting add-ins that run in classic Outlook on Windows only supports [ECMAScript 2016](https://262.ecma-international.org/7.0/) and earlier specifications. Some examples of programming syntax to avoid are as follows.
   - Avoid using `async` and `await` statements in your code. Including these in your JavaScript code will cause the add-in to time out.
   - Avoid using the [conditional (ternary) operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) as it will prevent your add-in from loading.
   
-  If your add-in has only one JavaScript file referenced by Outlook on the web, on Windows (classic and new (preview)), and on Mac, you must limit your code to ECMAScript 2016 to ensure that your add-in runs in Outlook on Windows. However, if you have a separate JavaScript file referenced by Outlook on the web, on Mac, and new Outlook on Windows, you can implement a later ECMAScript specification in that file.
+  If your add-in has only one JavaScript file referenced by Outlook on the web, on Windows (new and classic), and on Mac, you must limit your code to ECMAScript 2016 to ensure that your add-in runs in classic Outlook on Windows. However, if you have a separate JavaScript file referenced by Outlook on the web, on Mac, and new Outlook on Windows, you can implement a later ECMAScript specification in that file.
 
 ## Debug your add-in
 
@@ -56,7 +56,7 @@ As you develop your [event-based](autolaunch.md) or [spam-reporting](spam-report
   - If you update the manifest, [remove the add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in), then sideload it again. If you're using Outlook on Windows, you must also close and reopen Outlook.
   - If you make changes to files other than the manifest, close and reopen the Outlook client on Windows or on Mac, or refresh the browser tab running Outlook on the web.
   - If you're still unable to see your changes after performing these steps, [clear your Office cache](../testing/clear-cache.md).
-- As you test your add-in in Outlook on Windows:
+- As you test your add-in in classic Outlook on Windows:
   - For event-based add-ins, check [Event Viewer](/shows/inside/event-viewer) for any reported add-in errors.
     1. In Event Viewer, select **Windows Logs** > **Application**.
     1. From the **Actions** panel, select **Filter Current Log**.
@@ -75,7 +75,7 @@ As you develop your [event-based](autolaunch.md) or [spam-reporting](spam-report
 
     [!INCLUDE [outlook-bundle-js](../includes/outlook-bundle-js.md)]
 
-- As you test your add-in in Outlook on Windows or Mac, enable runtime logging to identify possible manifest and add-in installation issues. For guidance on how to use runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
+- As you test your add-in in Outlook on Windows (classic) or Mac, enable runtime logging to identify possible manifest and add-in installation issues. For guidance on how to use runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
 - Set breakpoints in your code to debug your add-in. For platform-specific instructions, see [Debug event-based and spam-reporting add-ins](debug-autolaunch.md).
 
 ## Seek additional help

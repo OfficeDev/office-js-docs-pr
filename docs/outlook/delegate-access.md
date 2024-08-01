@@ -26,19 +26,45 @@ The following table shows supported client-server combinations for this feature,
 |**Mac**<br>Version 16.47 or later|Supported|Supported|Supported|
 
 > [!NOTE]
-> \* Support for this feature in an on-premises Exchange environment is available starting in Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
+> \* Support for this feature in an on-premises Exchange environment is available starting in classic Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
 
 ## Supported setups
 
 The following sections describe supported configurations for shared mailboxes and shared folders. The feature APIs may not work as expected in other configurations. Select the platform you'd like to learn how to configure.
 
-### [Windows](#tab/windows)
+### [Web (modern) and new Outlook on Windows](#tab/web)
+
+#### Shared folders
+
+The mailbox owner must first provide access to a delegate.
+
+- To provide access to manage meetings and meeting responses on behalf of the mailbox owner, see [Calendar delegation in Outlook on the web](https://support.microsoft.com/office/532e6410-ee80-42b5-9b1b-a09345ccef1b).
+
+- To provide access to manage both the inbox and calendar on behalf of the mailbox owner, access must be configured through one of the following options.
+
+  - The mailbox owner can configure access through classic Outlook on Windows. To learn more, see [Allow someone else to manage your mail and calendar](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926).
+
+  - An administrator can configure access through the Microsoft 365 admin center. To learn more, see [Give mailbox permissions to another Microsoft 365 user](/microsoft-365/admin/add-users/give-mailbox-permissions-to-another-user).
+
+  - An administrator can configure access through the Exchange admin center. To learn more, see [Manage permissions for recipients](/exchange/recipients/mailbox-permissions).
+
+Once access is provided, the delegate must then follow the instructions outlined in the "Add another person’s mailbox to your folder list in Outlook Web App" section of the article [Access another person's mailbox](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081).
+
+#### Shared mailboxes
+
+A shared mailbox allows a group of users to easily monitor and send messages and meeting invites using a shared email address.
+
+In Outlook on the web, a shared mailbox can be opened in the same panel as a user's primary mailbox or in a separate browser tab or window. For guidance, see [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
+
+In new Outlook on Windows, a shared mailbox is added to the **Shared with me** section of the folder pane. For guidance, see [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
+
+### [Windows (classic)](#tab/windows)
 
 #### Shared folders
 
 The mailbox owner must first provide access to a delegate using one of the following options.
 
-- Set up delegate access from the mailbox in Outlook on Windows. To learn more, see [Allow someone else to manage your mail and calendar](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926).
+- Set up delegate access from the mailbox in classic Outlook on Windows. To learn more, see [Allow someone else to manage your mail and calendar](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926).
 
 - Set up delegate access from the Microsoft 365 admin center. This option can only be completed by administrators. To learn more, see [Give mailbox permissions to another Microsoft 365 user](/microsoft-365/admin/add-users/give-mailbox-permissions-to-another-user).
 
@@ -54,32 +80,6 @@ An Exchange Server feature known as "automapping" is on by default which means t
 
 > [!WARNING]
 > Do **NOT** sign into the shared mailbox with a password. The feature APIs won't work in that case.
-
-### [Web (modern) and new Outlook on Windows](#tab/web)
-
-#### Shared folders
-
-The mailbox owner must first provide access to a delegate.
-
-- To provide access to manage meetings and meeting responses on behalf of the mailbox owner, see [Calendar delegation in Outlook on the web](https://support.microsoft.com/office/532e6410-ee80-42b5-9b1b-a09345ccef1b).
-
-- To provide access to manage both the inbox and calendar on behalf of the mailbox owner, access must be configured through one of the following options.
-
-  - The mailbox owner can configure access through Outlook on Windows. To learn more, see [Allow someone else to manage your mail and calendar](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926).
-
-  - An administrator can configure access through the Microsoft 365 admin center. To learn more, see [Give mailbox permissions to another Microsoft 365 user](/microsoft-365/admin/add-users/give-mailbox-permissions-to-another-user).
-
-  - An administrator can configure access through the Exchange admin center. To learn more, see [Manage permissions for recipients](/exchange/recipients/mailbox-permissions).
-
-Once access is provided, the delegate must then follow the instructions outlined in the "Add another person’s mailbox to your folder list in Outlook Web App" section of the article [Access another person's mailbox](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081).
-
-#### Shared mailboxes
-
-A shared mailbox allows a group of users to easily monitor and send messages and meeting invites using a shared email address.
-
-In Outlook on the web, a shared mailbox can be opened in the same panel as a user's primary mailbox or in a separate browser tab or window. For guidance, see [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
-
-In new Outlook on Windows, a shared mailbox is added to the **Shared with me** section of the folder pane. For guidance, see [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
 ### [Mac](#tab/unix)
 
@@ -284,7 +284,7 @@ a. **Delegate access/Shared folders**
 1. They save the message then move it from their own **Drafts** folder to a folder shared with the delegate.
 1. The delegate opens the draft from the shared folder then continues composing.
 
-b. **Shared mailbox (applies to Outlook on Windows only)**
+b. **Shared mailbox (applies to classic Outlook on Windows only)**
 
 1. A shared mailbox user starts a message. This can be a new message, a reply, or a forward.
 1. They save the message then move it from their own **Drafts** folder to a folder in the shared mailbox.

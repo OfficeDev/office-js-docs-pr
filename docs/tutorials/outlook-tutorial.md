@@ -94,9 +94,9 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-1. The steps to create the project vary slightly depending on the type of manifest. 
+1. The steps to create the project vary slightly depending on the type of manifest.
 
-    [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)] 
+    [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)]
 
     # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 

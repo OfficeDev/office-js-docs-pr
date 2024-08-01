@@ -7,13 +7,13 @@ ms.localizationpriority: medium
 
 # Compare Outlook add-in support in Outlook on Mac with other Outlook clients
 
-You can create and run an Outlook add-in the same way in Outlook on Mac as in the other clients, including Outlook on the web, Windows (classic and [new (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), iOS, and Android, without customizing the JavaScript for each client. The same calls from the add-in to the Office JavaScript API generally work the same way, except for the areas described in the following table.
+You can create and run an Outlook add-in the same way in Outlook on Mac as in the other clients, including Outlook on the web, Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), iOS, and Android, without customizing the JavaScript for each client. The same calls from the add-in to the Office JavaScript API generally work the same way, except for the areas described in the following table.
 
 For more information, see [Deploy and install Outlook add-ins for testing](testing-and-tips.md).
 
 For information about new UI support, see [Add-in support in Outlook on new Mac UI](#add-in-support-in-outlook-on-new-mac-ui).
 
-| Area | Outlook on the web, Windows (classic and new (preview)), and mobile devices | Outlook on Mac |
+| Area | Outlook on the web, Windows (new and classic), and mobile devices | Outlook on Mac |
 |:-----|:-----|:-----|
 | Supported versions of office.js| All APIs in Office.js. | All APIs in Office.js.<br><br>**NOTE**: In Outlook on Mac, only Version 16.35.308 or later supports saving a meeting. Otherwise, the `saveAsync` method fails when called from a meeting in compose mode. See [Cannot save a meeting as a draft in Outlook for Mac by using Office JS API](https://support.microsoft.com/help/4505745) for a workaround. |
 | Instances of a recurring appointment series | <ul><li>Can get the item ID and other properties of a master appointment or appointment instance of a recurring series.</li><li>Can use [mailbox.displayAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) to display an instance or the master of a recurring series.</li></ul> | <ul><li>Can get the item ID and other properties of the master appointment, but not those of an instance of a recurring series.</li><li>Can display the master appointment of a recurring series. Without the item ID, cannot display an instance of a recurring series.</li></ul> |
