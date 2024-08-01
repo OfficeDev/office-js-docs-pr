@@ -13,7 +13,7 @@ You can use the MSAL.js library (version 3.11 and later) with nested app authent
 - You only need to use the MSAL.js library and don’t need the `getAccessToken` function in Office.js.
 - You can call services such as Microsoft Graph with an access token from your client code as an SPA. There’s no need for a middle-tier server.
 - You can use incremental and dynamic consent for scopes.
-- You don't need to [preauthorize your hosts](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab?tabs=manifest-teams-toolkit#update-azure-ad-app-registration-for-sso) (For example, Teams, Office) to call your endpoints.
+- You don't need to [preauthorize your hosts](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab?tabs=manifest-teams-toolkit#update-azure-ad-app-registration-for-sso) (for example, Teams, Office) to call your endpoints.
 
 ## NAA supported accounts and hosts
 
@@ -25,7 +25,7 @@ NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identi
 | Application | Windows                                                                            | Mac | Web          | iOS/iPad   | Android        |
 |-------------|------------------------------------------------------------------------------------|-----|--------------|------------|----------------|
 | Excel       | Yes (Current Channel (Preview))                                                    | Yes | Coming soon  | Yes (iPad) | Not applicable |
-| Outlook     | Yes* (Current Channel (Preview) for classic Outlook only, new Outlook coming soon) | Yes | Yes          | Yes (iOS)  | Not applicable |
+| Outlook     | Yes* (Current Channel (Preview) for classic Outlook only, new Outlook coming soon) | Yes | Yes          | Yes (iOS)  | Yes            |
 | PowerPoint  | Yes (Current Channel (Preview))                                                    | Yes | Coming soon  | Yes (iPad) | Not applicable |
 | Word        | Yes (Current Channel (Preview))                                                    | Yes | Coming soon  | Yes (iPad) | Not applicable |
 
