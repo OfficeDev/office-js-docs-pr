@@ -2,7 +2,7 @@
 title: Develop Office Add-ins
 description: An introduction to developing Office Add-ins.
 ms.topic: overview
-ms.date: 05/26/2023
+ms.date: 07/28/2024
 ms.localizationpriority: high
 ---
 
@@ -34,8 +34,6 @@ Create your project using HTML, CSS and JavaScript (or TypeScript), or using Rea
 ### Visual Studio
 
 Visual Studio can be used to create Office Add-ins for Excel, Outlook, Word, and PowerPoint. An Office Add-in project gets created as part of a Visual Studio solution and uses HTML, CSS, and JavaScript. For more information about creating add-ins with Visual Studio, see [Develop Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
-
-[!include[Yeoman vs Visual Studio comparison](../includes/yeoman-generator-recommendation.md)]
 
 ### Teams Toolkit
 

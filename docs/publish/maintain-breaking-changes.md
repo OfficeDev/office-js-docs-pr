@@ -15,7 +15,7 @@ After you publish your add-in, you should keep it up to date with any important 
 The Microsoft 365 Developer Platform is committed to ensuring the compatibility of your add-in. We strive to avoid making breaking changes to the API surface and behavior. However, there are cases where we need to make breaking updates for the sake of security or reliability. In those rare cases, the following steps are taken to ensure users of your add-in are unaffected.
 
 - Announcements that describe the impacted features and recommended changes are made on the [Microsoft 365 Developer Blog](https://devblogs.microsoft.com/microsoft365dev/).
-- If your add-in is published in [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), you'll be contacted through the information you provided.
+- If your add-in is published in [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), you'll be contacted through the information you provided.
 - Where possible, admins of impacted Microsoft 365 tenants (including [Microsoft 365 Developer Program tenants](https://aka.ms/m365devprogram)) will be contacted through [Message Center](/microsoft-365/admin/manage/message-center). It's the responsibility of the admin to contact providers of add-in solutions published outside of AppSource.
 
 ### Deprecation policy

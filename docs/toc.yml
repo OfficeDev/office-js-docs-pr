@@ -159,8 +159,6 @@ items:
           href: quickstarts/sso-quickstart.md
         - name: Register with Microsoft identity platform
           href: develop/register-sso-add-in-aad-v2.md
-        - name: Grant or revoke administrator consent
-          href: develop/grant-admin-consent-to-an-add-in.md
         - name: Get the identity token
           href: develop/use-sso-to-get-office-signed-in-user-token.md
         - name: Authorize to Microsoft Graph
@@ -662,7 +660,6 @@ items:
     displayName: Outlook
   - name: Develop Outlook add-ins for the new Outlook on Windows
     href: outlook/one-outlook.md
-    displayName: preview
   - name: Outlook JavaScript API
     displayName: Outlook
     items:
@@ -763,12 +760,6 @@ items:
       items:
       - name: Overview
         href: outlook/read-scenario.md
-      - name: Use regular expressions to activate contextual add-ins
-        href: outlook/use-regular-expressions-to-show-an-outlook-add-in.md
-      - name: Match well known entities in an item
-        href: outlook/match-strings-in-an-item-as-well-known-entities.md
-      - name: Extract entities from an item
-        href: outlook/extract-entity-strings-from-an-item.md
       - name: Get attachments
         href: outlook/get-attachments-of-an-outlook-item.md
     - name: Compose scenario

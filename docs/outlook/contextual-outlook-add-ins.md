@@ -1,93 +1,92 @@
 ---
 title: Contextual Outlook add-ins
 description: Initiate tasks related to a message without leaving the message itself to result in an easier and richer user experience.
-ms.date: 06/20/2024
+ms.date: 07/18/2024
 ms.localizationpriority: medium
 ---
 
 # Contextual Outlook add-ins
 
-Contextual add-ins are Outlook add-ins that activate based on text in a message or appointment. By using contextual add-ins, a user can initiate tasks related to a message without leaving the message itself, which results in an easier and richer user experience.
+Contextual add-ins are Outlook add-ins that activate based on text in a message or appointment. By using contextual add-ins, a user can initiate tasks related to a mail item without leaving the item itself. For example, a contextual add-in can choose a string in the body of a mail item that opens a meeting suggestion add-in.
 
-[!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
+You can specify regular expression rules to activate a contextual add-in when a match is found in specific fields of the message. Contextual add-ins only activate in read mode. Outlook doesn't activate contextual add-ins when the user is composing an item. There are also other scenarios where Outlook doesn't activate add-ins. For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
 
-The following are examples of contextual add-ins.
+> [!IMPORTANT]
+> Entity-based contextual Outlook add-ins are now retired. As an alternative solution, implement regular expression rules in your contextual add-in.
 
-- Choosing an address to open a map of the location.
-- Choosing a string that opens a meeting suggestion add-in.
-- Choosing a phone number to add to your contacts.
-
-## How to make a contextual add-in
+## Configure the manifest
 
 [!INCLUDE [Unified manifest for Microsoft 365 does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
-A contextual add-in's manifest must include an [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) element with an `xsi:type` attribute set to `DetectedEntity`. Within the **\<ExtensionPoint\>** element, the add-in specifies the entities or regular expression that can activate it. If an entity is specified, the entity can be any of the properties in the [Entities](/javascript/api/outlook/office.entities) object.
+A contextual add-in's XML manifest must include an [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) element with its `xsi:type` attribute set to `DetectedEntity`. Within the **\<ExtensionPoint\>** element, the add-in must then specify a regular expression rule using the [Rule](/javascript/api/manifest/rule) element with its `xsi:type` attribute set to [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule).
 
-Thus, the add-in manifest must contain a rule of type **ItemHasKnownEntity** or **ItemHasRegularExpressionMatch**. The following example shows how to specify that an add-in should activate on messages with a detected entity that is a phone number.
+The following example activates an add-in whenever a stock symbol is included in the body of the current mail item.
 
-```XML
+```xml
 <ExtensionPoint xsi:type="DetectedEntity">
-  <Label resid="contextLabel" />
-  <!--If you opt to include RequestedHeight, it must be between 140px to 450px, inclusive.-->
-  <!--<RequestedHeight>360</RequestedHeight>-->
-  <SourceLocation resid="detectedEntityURL" />
-  <Rule xsi:type="RuleCollection" Mode="And">
-    <Rule xsi:type="ItemIs" ItemType="Message" />
-    <Rule xsi:type="ItemHasKnownEntity" EntityType="PhoneNumber" Highlight="all" />
-  </Rule>
+  <Label resid="Context.Label" />
+  <SourceLocation resid="DetectedEntity.URL" />
+  <Rule xsi:type="ItemHasRegularExpressionMatch" PropertyName="BodyAsPlaintext" RegExName="TickerSymbols" RegExValue="\b(NYSE|NASDAQ|AMEX):\s*[A-Za-z]+\b" />
 </ExtensionPoint>
 ```
 
-After a contextual add-in is associated with an account, it will automatically start when the user clicks a highlighted entity or regular expression. For more information about regular expressions for Outlook add-ins, see [Use regular expression activation rules to show an Outlook add-in](use-regular-expressions-to-show-an-outlook-add-in.md).
+### Supported characters in regular expression rules
 
-There are several restrictions on contextual add-ins:
+Outlook evaluates regular expressions based on the rules for the JavaScript interpreter used by the browser or webview control on the client computer. For brevity, this article uses "browser" to refer to "browser or webview control". Outlook supports the same list of special characters that all XML processors also support. The following table lists these special characters. You can use these characters in a regular expression by specifying the escape sequence of the corresponding character.
 
-- A contextual add-in can only exist in read add-ins (not compose add-ins).
-- You cannot specify the color of the highlighted entity.
-- An entity that is not highlighted will not launch a contextual add-in in a card.
+|Character|Description|Escape sequence to use|
+|:-----|:-----|:-----|
+|`"`|Double quotation mark|`&quot;`|
+|`&`|Ampersand|`&amp;`|
+|`'`|Apostrophe|`&apos;`|
+|`<`|Less-than sign|`&lt;`|
+|`>`|Greater-than sign|`&gt;`|
 
-Because an entity or regular expression that is not highlighted will not launch a contextual add-in, add-ins must include at least one `Rule` element with the `Highlight` attribute set to `all`.
+### Best practices for using regular expressions in rules
+
+Be mindful of the following when you use regular expressions.
+
+- If you specify an `ItemHasRegularExpressionMatch` rule on the body of an item, the regular expression should further filter the body and shouldn't attempt to return the entire body of the item. Using a regular expression such as `.*` to attempt to obtain the entire body of an item doesn't always return the expected results.
+- The plain text body returned on one browser can be different in subtle ways on another. If you use an `ItemHasRegularExpressionMatch` rule with `BodyAsPlaintext` as the `PropertyName` attribute, test your regular expression on all the browsers that your add-in supports.
+
+    Because different browsers use different ways to obtain the text body of a selected item, you should make sure that your regular expression supports the subtle differences that can be returned as part of the body text. For example, browsers may return line breaks differently. For more information, see [W3C DOM Compatibility - HTML](https://quirksmode.org/dom/html/).
+
+- The HTML body of an item is slightly different between classic Outlook on Windows or Outlook on Mac, and Outlook on the web, on mobile devices, or [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). Define your regular expressions carefully.
+
+- Depending on the Outlook client, type of device, or property that a regular expression is being applied on, there are other best practices and limits for each of the clients that you should be aware of when designing regular expressions as activation rules. For details, see [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
+
+## Use regular expression results in your JavaScript code
+
+In the JavaScript code of your add-in, you can obtain matches to a regular expression by using the following methods on the current item.
+
+- [getRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) returns matches in the current item for all regular expressions specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
+
+- [getRegExMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) returns matches in the current item for the identified regular expression specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
+
+- [getSelectedRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) returns highlighted matches in the current item for the regular expression specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
+
+When the regular expressions are evaluated, the matches are returned to your add-in in an array object. For `getRegExMatches`, that object has the identifier of the name of the regular expression.
 
 > [!NOTE]
-> The `EmailAddress` and `Url` entity types do not support highlighting, so they cannot be used to launch a contextual add-in. They can however be combined in a `RuleCollection` rule type as an additional activation criteria.
+> Outlook doesn't return matches in any particular order in the array. Also, you shouldn't assume that matches are returned in the same order in this array even when you run the same add-in on each of these clients on the same item in the same mailbox.
 
-## How to launch a contextual add-in
+The following is an example of a rule collection that contains an `ItemHasRegularExpressionMatch` rule with a regular expression named `videoURL`.
 
-A user launches a contextual add-in through text, either a known entity or a developer's regular expression. Typically, a user identifies a contextual add-in because the entity is highlighted. The following example shows how highlighting appears in a message. Here, the entity (an address) is colored blue and underlined with a dotted blue line. A user launches the contextual add-in by clicking the highlighted entity.
+```XML
+<Rule xsi:type="RuleCollection" Mode="And">
+    <Rule xsi:type="ItemIs" ItemType="Message"/>
+    <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="videoURL" RegExValue="http://www\.youtube\.com/watch\?v=[a-zA-Z0-9_-]{11}" PropertyName="BodyAsPlaintext"/>
+</Rule>
+```
 
-![Shows the highlighted entity within an email.](../images/outlook-detected-entity-highlight.png)
+The `getRegExMatches` method is then called on the current message to set a variable `videos` to the results of specified `ItemHasRegularExpressionMatch` rule.
 
-When there are multiple entities or contextual add-ins in a message, there are a few user interaction rules:
-
-- If there are multiple entities, the user has to click a different entity to launch the add-in for it.
-- If an entity activates multiple add-ins, each add-in opens a new tab. The user switches between tabs to change between add-ins. For example, a name and address might trigger a phone add-in and a map.
-- If a single string contains multiple entities that activate multiple add-ins, the entire string is highlighted, and clicking the string shows all add-ins relevant to the string on separate tabs. For example, a string that describes a proposed meeting at a restaurant might activate the Suggested Meeting add-in and a restaurant rating add-in.
-
-## How a contextual add-in displays
-
-An activated contextual add-in appears in a card, which is a separate window near the entity. The card will normally appear below the entity and centered with respect to the entity as much as possible. If there isn't enough room below the entity, the card is placed above it.
-
-![Shows a highlighted address entity and the activated Bing Maps add-in.](../images/outlook-detected-entity-card.png)
-
-To close the card and the add-in, a user clicks anywhere outside of the card.
-
-## Current contextual add-ins
-
-The following contextual add-ins are installed by default for users with Outlook add-ins.
-
-- Bing Maps
-- Suggested Meetings
-
-> [!IMPORTANT]
-> Because the Bing Maps and Suggested Meetings add-ins rely on the entity-based contextual feature, these add-ins will be retired at the end of June 2024.
->
-> Although the Action Items add-in isn't installed by default in Outlook, it will also be retired at the end of June 2024.
->
-> For more information, see [Retirement of entity-based contextual Outlook add-ins](https://devblogs.microsoft.com/microsoft365dev/retirement-of-entity-based-contextual-outlook-add-ins/).
+```js
+const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
+```
 
 ## See also
 
 - [Outlook add-in: Contoso Order Number](https://github.com/OfficeDev/Outlook-Add-In-Contextual-Regex) (sample contextual add-in that activates based on a regular expression match)
-- [Write your first Outlook add-in](../quickstarts/outlook-quickstart.md)
-- [Use regular expression activation rules to show an Outlook add-in](use-regular-expressions-to-show-an-outlook-add-in.md)
-- [Entities object](/javascript/api/outlook/office.entities)
+- [Build your first Outlook add-in](../quickstarts/outlook-quickstart.md)
+- [Activation rules for contextual Outlook add-ins](activation-rules.md)

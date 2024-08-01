@@ -1,17 +1,17 @@
 ---
 title: Add support for add-in commands in Outlook on mobile devices
 description: Learn how to add support for Outlook on mobile devices including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
-ms.date: 04/12/2024
+ms.date: 07/18/2024
 ms.localizationpriority: medium
 ---
 
 # Add support for add-in commands in Outlook on mobile devices
 
-Using add-in commands in Outlook on mobile devices allows your users to access the same functionality (with some [limitations](#code-considerations)) that they already have in Outlook on the web, on Windows (classic and [new (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), and on Mac. Adding support for Outlook mobile requires updating the add-in manifest and possibly changing your code for mobile scenarios.
+Using add-in commands in Outlook on mobile devices allows your users to access the same functionality (with some [limitations](#code-considerations)) that they already have in Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac. Adding support for Outlook mobile requires updating the add-in manifest and possibly changing your code for mobile scenarios.
 
 ## Update the manifest
 
-The first step to enabling add-in commands in Outlook mobile is to define them in the add-in manifest. 
+The first step to enabling add-in commands in Outlook mobile is to define them in the add-in manifest.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -46,10 +46,10 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
 
    - Set appropriate "id" and "label" values.
    - Create an object in the "controls" array to represent a button and configure it as follows.
-      - Set appropriate "id" and "label" values.
+      - Set appropriate "id" and "label" values. To ensure that the button fits correctly in the ribbon, we recommend that you limit the "label" to 16 characters.
       - Set "buttonType" to "MobileButton".
       - Assign a function to the "actionId" property. This should match the "id" of the object in the "extensions.runtimes.actions" array.
-      - Be sure you have all nine required icons. 
+      - Be sure you have all nine required icons.
   
    The following is an example.
 
@@ -67,7 +67,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
                     "controls": [
                         { 
                             "id": "mobileInsertMeetingButton",
-                            "label": "Add Meeting",
+                            "label": "Add meeting",
                             "buttonType": "MobileButton",
                             "actionId": "insertContosoMeeting",
                             "icons": [

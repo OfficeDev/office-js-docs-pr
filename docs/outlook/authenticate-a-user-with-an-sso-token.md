@@ -1,7 +1,7 @@
 ---
 title: Authenticate a user with a single-sign-on token
 description: Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.
-ms.date: 01/08/2023
+ms.date: 07/24/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -27,7 +27,7 @@ To use SSO, your Outlook add-in will need to have a server-side web API that is 
 
 ### Provide consent when sideloading an add-in
 
-When you are developing an add-in, you will have to provide consent in advance. For more information, see [Grant or revoke administrator consent to the add-in](../develop/grant-admin-consent-to-an-add-in.md).
+When you are developing an add-in, you will have to provide consent in advance. For more information, see [Admin consent](/entra/identity-platform/quickstart-configure-app-access-web-apis#more-on-api-permissions-and-admin-consent).
 
 ## Update the add-in manifest
 

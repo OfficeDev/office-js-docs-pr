@@ -1,8 +1,8 @@
 ---
 title: Best practices for developing Office Add-ins
-description: Apply the best practices when developing to create Office Add-ins.
+description: Apply the best practices when developing Office Add-ins.
 ms.topic: best-practice
-ms.date: 05/20/2023
+ms.date: 07/18/2024
 ms.localizationpriority: medium
 ---
 
@@ -20,7 +20,10 @@ Effective add-ins offer unique and compelling functionality that extends Office 
   - Embed complementary services within Office applications.
   - Improve the Office experience to enhance productivity.
 - Make sure that the value of your add-in is clear to users right away by [creating an engaging first-run experience](#create-an-engaging-first-run-experience).
-- Create an [effective AppSource listing](/office/dev/store/create-effective-office-store-listings). Make the benefits of your add-in clear in your title and description. Don't rely on your brand to communicate what your add-in does.
+- Learn how to create an [effective AppSource listing](/partner-center/marketplace-offers/create-effective-office-store-listings) to promote your add-in.
+  - Make the benefits of your add-in clear in your title and description. Don't rely on your brand to communicate what your add-in does.
+  - Your add-in must provide sufficient value to justify users' investment. Your add-in shouldn't be a simple utility or of limited scope.
+  - [!INCLUDE [AppSource enterprise info](../includes/appsource-enterprise.md)]
 
 ## Create an engaging first-run experience
 
@@ -38,7 +41,7 @@ Effective add-ins offer unique and compelling functionality that extends Office 
 
   ![A "Do" versus "Don't" comparison on including an option to insert sample data in your add-in. The "Do" example shows an add-in that includes a button users can click to insert sample data. The "Don't" example shows an add-in without sample data or buttons.](../images/add-in-title.png)
 
-- Offer [free trials](/office/dev/store/decide-on-a-pricing-model). If your add-in requires a subscription, make some functionality available without a subscription.
+- Offer [free trials](/partner-center/marketplace-offers/monetize-addins-through-microsoft-commercial-marketplace). If your add-in requires a subscription, make some functionality available without a subscription.
 
 - Make the sign-up experience simple. Prefill information, such as email and display name, and skip email verifications.
 
@@ -58,7 +61,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Keep users in control. Ensure that users understand important decisions, and can easily reverse actions the add-in performs.
 
-- Use branding to inspire trust and orient users. Do not use branding to overwhelm or advertise to users.
+- Use branding to inspire trust and orient users. Don't use branding to overwhelm or advertise to users.
 
 - Avoid scrolling. Optimize for 1366 x 768 resolution.
 
@@ -117,17 +120,28 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Minimize data exchanges between the add-in and the Office document. For more information, see [Avoid using the context.sync method in loops](correlated-objects-pattern.md).
 
-## Market your add-in
+## Publish and market your add-in
 
-- Publish your add-in to [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) and [promote it](/office/dev/store/promote-your-office-store-solution) from your website. Create an [effective AppSource listing](/office/dev/store/create-effective-office-store-listings).
+- Create an [effective AppSource listing](/partner-center/marketplace-offers/create-effective-office-store-listings).
 
-- Use succinct and descriptive add-in titles. Include no more than 128 characters.
+  - Use succinct and descriptive add-in titles. Include no more than 128 characters.
 
-- Write short, compelling descriptions of your add-in. Answer the question "What problem does this add-in solve?".
+  - Write short, compelling, and accurate descriptions of your add-in. Answer the question "What problem does this add-in solve?".
 
-- Convey the value proposition of your add-in in your title and description. Don't rely on your brand.
+  - Convey the value proposition of your add-in in your title and description. Don't rely on your brand.
 
 - Create a website to help users find and use your add-in.
+
+- Publish your add-in to [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center). Be sure to follow the AppSource [prepublish checklist](/partner-center/marketplace-offers/checklist) and [submission guide](/partner-center/marketplace-offers/add-in-submission-guide).
+
+  - Ensure that your add-in works error-free in all operating systems, browsers, and devices supported by the minimum set of APIs declared in your add-in manifest.
+
+  - Provide detailed testing instructions and resources for certification reviewers to verify the functionality of your add-in.
+
+- [Promote your add-in](/partner-center/marketplace-offers/promote-your-office-store-solution) from your website.
+
+> [!IMPORTANT]
+> [!INCLUDE [AppSource enterprise info](../includes/appsource-enterprise.md)]
 
 ## Support older Microsoft webviews and Office versions (recommended but not required)
 
