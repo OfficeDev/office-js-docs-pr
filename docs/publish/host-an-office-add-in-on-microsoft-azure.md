@@ -138,7 +138,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 4. Choose **File** and then choose **Save All**. Next, Copy the add-in manifest file (for example, WordWebAddIn.xml).
 
-5. Using the **File Explorer** program, browse to the network file share that you created in [Step 1: Create a shared folder](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file) and paste the manifest file into the folder.
+5. Using the **File Explorer** program, browse to the network file share that you created in [Step 1: Create a shared folder](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-manifest-file) and paste the manifest file into the folder.
 
 ## Step 7: Insert and run the add-in in the Office client application
 
