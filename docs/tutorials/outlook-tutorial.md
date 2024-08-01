@@ -122,7 +122,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    - **Which manifest would you like to use?** - `add-in only manifest`
+    - **Which manifest would you like to use?** - `Add-in only manifest`
 
     ![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-outlook-xml-manifest-javascript-gist.png)
 
