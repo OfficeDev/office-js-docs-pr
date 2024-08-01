@@ -15,14 +15,20 @@ You can use the MSAL.js library (version 3.11 and later) with nested app authent
 - You can use incremental and dynamic consent for scopes.
 - You don't need to [preauthorize your hosts](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab?tabs=manifest-teams-toolkit#update-azure-ad-app-registration-for-sso) (For example, Teams, Office) to call your endpoints.
 
+## NAA supported accounts and hosts
+
 > [!IMPORTANT]
 > Nested app authentication (NAA) is currently in preview. To try this feature, join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
-> NAA is supported in the following builds.
->
-> - Word, Excel, PowerPoint, and Outlook on Windows build 16.0.17531.20000 or later
-> - Word, Excel, PowerPoint, and Outlook on Mac build 16.85.24040319 or later
->
-> Support for NAA in event-based activation code in Outlook is coming soon.
+
+NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn’t support B2C scenarios. The following table explains the current support in preview. Anything listed as "Coming soon" will be supported by the time that NAA is made generally available.
+
+| Application | Windows                                                                | Mac | Web          | iOS | Android |
+|-------------|------------------------------------------------------------------------|-----|--------------|-----|---------|
+| Excel       | Yes (Insiders Slow)                                                    | Yes | Coming soon  | Yes | No      |
+| Outlook     | Yes* (Insiders Slow for classic Outlook only, new Outlook coming soon) | Yes | Yes          | Yes | Yes     |
+| PowerPoint  | Yes (Insiders Slow)                                                    | Yes | Coming soon  | Yes | No      |
+| Word        | Yes (Insiders Slow)                                                    | Yes | Coming soon  | Yes | No      |
+*\* - NAA for event-based activation in Outlook is currently supported in Insiders Fast.*
 
 ## Register your single-page application
 
@@ -205,17 +211,6 @@ Once all the previous code is added to the `run` function, be sure a button on t
 ## What is nested app authentication
 
 Nested app authentication enables SSO for applications that are nested inside of supported Microsoft applications. For example, Excel on Windows runs your add-in inside a webview. In this scenario, your add-in is a nested application running inside Excel, which is the host. NAA also supports nested apps in Teams. For example, if a Teams tab is hosting Excel, and your add-in is loaded, it is nested inside Excel, which is also nested inside Teams. Again, NAA supports this nested scenario and you can access SSO to get user identity and access tokens of the signed in user.
-
-## NAA supported accounts and hosts
-
-NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn’t support B2C scenarios. The following table explains the current support in preview. Anything listed as "Coming soon" will be supported by the time that NAA is made generally available.
-
-| Application | Windows                                                               | Mac | Web          | iOS | Android |
-|-------------|-----------------------------------------------------------------------|-----|--------------|-----|---------|
-| Excel       | Yes (Insiders Slow)                                                   | Yes | Coming soon  | Yes | No      |
-| Outlook     | Yes (Insiders Slow for classic Outlook only, new Outlook coming soon) | Yes | Yes          | Yes | Yes     |
-| PowerPoint  | Yes (Insiders Slow)                                                   | Yes | Coming soon  | Yes | No      |
-| Word        | Yes (Insiders Slow)                                                   | Yes | Coming soon  | Yes | No      |
 
 ## Best practices
 
