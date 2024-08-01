@@ -20,7 +20,7 @@ You can use the MSAL.js library (version 3.11 and later) with nested app authent
 > [!IMPORTANT]
 > Nested app authentication (NAA) is currently in preview. To try this feature, join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
-NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn’t support B2C scenarios. The following table explains the current support in preview. Anything listed as "Coming soon" will be supported by the time that NAA is made generally available.
+NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn’t support Azure AD B2C for business-to-consumer identity management scenarios. The following table explains the current support in preview. Anything listed as "Coming soon" will be supported by the time that NAA is made generally available.
 
 | Application | Windows                                                                | Mac | Web          | iOS | Android |
 |-------------|------------------------------------------------------------------------|-----|--------------|-----|---------|
