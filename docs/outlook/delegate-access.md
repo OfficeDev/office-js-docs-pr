@@ -1,7 +1,7 @@
 ---
 title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.
-ms.date: 05/21/2024
+ms.date: 08/02/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -54,7 +54,10 @@ Once access is provided, the delegate must then follow the instructions outlined
 
 A shared mailbox allows a group of users to easily monitor and send messages and meeting invites using a shared email address.
 
-In Outlook on the web, a shared mailbox can be opened in the same panel as a user's primary mailbox or in a separate browser tab or window. For guidance, see [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
+In Outlook on the web, a shared mailbox can be opened in the same panel as a user's primary mailbox. For guidance, see the "Add the shared mailbox so it displays under your primary mailbox" section of [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
+
+> [!NOTE]
+> In Outlook on the web, add-ins aren't currently supported when a shared mailbox is opened in a separate browser tab or window using the **Open another mailbox** option.
 
 In new Outlook on Windows, a shared mailbox is added to the **Shared with me** section of the folder pane. For guidance, see [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
