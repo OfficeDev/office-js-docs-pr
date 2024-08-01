@@ -32,29 +32,6 @@ The following table shows supported client-server combinations for this feature,
 
 The following sections describe supported configurations for shared mailboxes and shared folders. The feature APIs may not work as expected in other configurations. Select the platform you'd like to learn how to configure.
 
-### [Windows (classic)](#tab/windows)
-
-#### Shared folders
-
-The mailbox owner must first provide access to a delegate using one of the following options.
-
-- Set up delegate access from the mailbox in classic Outlook on Windows. To learn more, see [Allow someone else to manage your mail and calendar](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926).
-
-- Set up delegate access from the Microsoft 365 admin center. This option can only be completed by administrators. To learn more, see [Give mailbox permissions to another Microsoft 365 user](/microsoft-365/admin/add-users/give-mailbox-permissions-to-another-user).
-
-- Set up delegate access from the Exchange admin center. This option can only be completed by administrators. To learn more, see [Manage permissions for recipients](/exchange/recipients/mailbox-permissions).
-
-Once access is provided, the delegate must then follow the instructions outlined in the "Add another person's mailbox to your profile" section of the article [Manage another person's mail and calendar items](https://support.microsoft.com/office/afb79d6b-2967-43b9-a944-a6b953190af5).
-
-#### Shared mailboxes
-
-Exchange server admins can create and manage shared mailboxes for sets of users to access. [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) and [on-premises Exchange environments](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes) are supported.
-
-An Exchange Server feature known as "automapping" is on by default which means that subsequently the [shared mailbox should automatically appear](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) in a user's Outlook app after Outlook has been closed and reopened. However, if an admin turned off automapping, the user must follow the manual steps outlined in the "Add a shared mailbox to Outlook" section of the article [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
-
-> [!WARNING]
-> Do **NOT** sign into the shared mailbox with a password. The feature APIs won't work in that case.
-
 ### [Web (modern) and new Outlook on Windows](#tab/web)
 
 #### Shared folders
@@ -80,6 +57,29 @@ A shared mailbox allows a group of users to easily monitor and send messages and
 In Outlook on the web, a shared mailbox can be opened in the same panel as a user's primary mailbox or in a separate browser tab or window. For guidance, see [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
 
 In new Outlook on Windows, a shared mailbox is added to the **Shared with me** section of the folder pane. For guidance, see [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
+
+### [Windows (classic)](#tab/windows)
+
+#### Shared folders
+
+The mailbox owner must first provide access to a delegate using one of the following options.
+
+- Set up delegate access from the mailbox in classic Outlook on Windows. To learn more, see [Allow someone else to manage your mail and calendar](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926).
+
+- Set up delegate access from the Microsoft 365 admin center. This option can only be completed by administrators. To learn more, see [Give mailbox permissions to another Microsoft 365 user](/microsoft-365/admin/add-users/give-mailbox-permissions-to-another-user).
+
+- Set up delegate access from the Exchange admin center. This option can only be completed by administrators. To learn more, see [Manage permissions for recipients](/exchange/recipients/mailbox-permissions).
+
+Once access is provided, the delegate must then follow the instructions outlined in the "Add another person's mailbox to your profile" section of the article [Manage another person's mail and calendar items](https://support.microsoft.com/office/afb79d6b-2967-43b9-a944-a6b953190af5).
+
+#### Shared mailboxes
+
+Exchange server admins can create and manage shared mailboxes for sets of users to access. [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) and [on-premises Exchange environments](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes) are supported.
+
+An Exchange Server feature known as "automapping" is on by default which means that subsequently the [shared mailbox should automatically appear](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) in a user's Outlook app after Outlook has been closed and reopened. However, if an admin turned off automapping, the user must follow the manual steps outlined in the "Add a shared mailbox to Outlook" section of the article [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
+
+> [!WARNING]
+> Do **NOT** sign into the shared mailbox with a password. The feature APIs won't work in that case.
 
 ### [Mac](#tab/unix)
 
