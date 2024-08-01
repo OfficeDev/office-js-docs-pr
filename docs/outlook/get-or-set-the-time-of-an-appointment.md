@@ -75,7 +75,7 @@ This section shows a code sample that sets the start time of an appointment bein
 To use `item.start.setAsync` or `item.end.setAsync`, specify a UTC-formatted `Date` object in the `dateTime` parameter. If you get a date based on an input by the user in the client, you can use [mailbox.convertToUtcClientTime](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttoutcclienttime-member(1)) to convert the value to a `Date` object in the UTC format. If you provide an optional callback function, include the `asyncContext` parameter and add any arguments to it. Additionally, check the status, result, and any error message through the `asyncResult` output parameter of the callback. If the asynchronous call is successful, `setAsync` inserts the specified start or end time string as plain text, overwriting any existing start or end time for that item.
 
 > [!NOTE]
-> In Outlook on Windows, the `setAsync` method can't be used to change the start or end time of a recurring appointment.
+> In classic Outlook on Windows, the `setAsync` method can't be used to change the start or end time of a recurring appointment.
 
 ```js
 let item;
