@@ -31,7 +31,7 @@ If you created your Outlook add-in using the [Yeoman generator for Office Add-in
 
 ## Sideload manually
 
-Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in. Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. The following steps apply to Outlook on the web, on Windows (classic and [new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), and on Mac.
+Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in. Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. The following steps apply to Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac.
 
 > [!NOTE]
 > The sideloading guidance in this section only applies to Outlook add-ins that use an XML manifest. To learn about sideloading options for Outlook add-ins that use the unified manifest for Microsoft 365, see the "Conversion tools and options" section of [Convert an add-in to use the unified manifest for Microsoft 365](../develop/convert-xml-to-json-manifest.md#conversion-tools-and-options).
@@ -50,7 +50,7 @@ Though we strongly recommend sideloading automatically through the command line 
     >
     >   Note that your organization may include its own logo in the mailbox toolbar, so you might see something slightly different from what is shown in the preceding images.
     >
-    > - In Outlook on Windows, you can also access the **Add-Ins for Outlook** dialog by selecting **File** > **Info** > **Manage Add-ins**. This opens Outlook on the web in your preferred browser, then loads the dialog.
+    > - In classic Outlook on Windows, you can also access the **Add-Ins for Outlook** dialog by selecting **File** > **Info** > **Manage Add-ins**. This opens Outlook on the web in your preferred browser, then loads the dialog.
     >
     > - In Outlook on Mac, starting in Version 16.85 (24051214), the **Get Add-ins** button no longer opens the **Add-Ins for Outlook** dialog. Instead, it opens [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office%3Boutlook&page=1&src=office) in your default browser. Earlier versions can still access the **Add-Ins for Outlook** dialog through the **Get Add-ins** button. If you don't see **Get Add-ins** in your version of Outlook, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
     >
@@ -69,7 +69,7 @@ Though we strongly recommend sideloading automatically through the command line 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
     > [!NOTE]
-    > In Outlook on Windows, it may take up to 24 hours for your manually sideloaded add-in to appear in the client. This is due to caching.
+    > In classic Outlook on Windows, it may take up to 24 hours for your manually sideloaded add-in to appear in the client. This is due to caching.
 
 ## Locate a sideloaded add-in
 

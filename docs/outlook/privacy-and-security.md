@@ -54,14 +54,14 @@ End users and IT admins can turn off [optional connected experiences in Office](
 
 |Client|Behavior when optional connected experiences is turned off|
 |-----|-----|
-|<ul><li>Web browser</li><li>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)</li></ul>|Availability of add-ins and access to AppSource are unaffected, so users can continue to [manage their add-ins](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8) including admin-deployed ones.|
+|<ul><li>Web browser</li><li>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)</li></ul>|Availability of add-ins and access to AppSource are unaffected, so users can continue to [manage their add-ins](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8) including admin-deployed ones.|
 |<ul><li>Windows (classic)<sup>1</sup></li><li>Mac</li></ul>|The **All Apps**<sup>2</sup> or **Get Add-ins** button isn't displayed, so users aren't able to manage their add-ins or access AppSource.|
 |<ul><li>Android</li><li>iOS</li></ul>|The **Get Add-ins** dialog shows only admin-deployed add-ins.|
 
 > [!NOTE]
 > <sup>1</sup> On Windows, support for this experience is available from Version 2008 (Build 13127.20296). For more details on your client version, see the update history page for [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).<br>
 >
-> <sup>2</sup> Starting in Outlook on Windows Version 2303 (Build 16215.10000), the **All Apps** button is used to manage add-ins and access AppSource.
+> <sup>2</sup> Starting in classic Outlook on Windows Version 2303 (Build 16215.10000), the **All Apps** button is used to manage add-ins and access AppSource.
 
 For general add-in behavior, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md#optional-connected-experiences).
 
@@ -89,7 +89,7 @@ The security model addresses security, privacy, and performance concerns of end 
 
 - Data communicated with servers hosting Office Add-ins is always encrypted according to the Secure Socket Layer (SSL) protocol.
 
-- Outlook on Windows and on Mac monitor the performance of installed Outlook add-ins, exercise governance control, and make add-ins unavailable when they exceed limits in the following areas.
+- Outlook on Windows (classic) and on Mac monitor the performance of installed Outlook add-ins, exercise governance control, and make add-ins unavailable when they exceed limits in the following areas.
 
   - Response time to activate
 
@@ -99,7 +99,7 @@ The security model addresses security, privacy, and performance concerns of end 
 
   - CPU usage  
 
-  Governance deters denial-of-service attacks and maintains add-in performance at a reasonable level. The Business Bar alerts end users about add-ins that Outlook on Windows and on Mac have made unavailable based on such governance control.
+  Governance deters denial-of-service attacks and maintains add-in performance at a reasonable level. The Business Bar alerts end users about add-ins that Outlook on Windows (classic) and on Mac have made unavailable based on such governance control.
 
 - At any time, end users can verify the permissions requested by installed Outlook add-ins, and make any add-in available or unavailable in the Exchange Admin Center.
 
@@ -154,7 +154,7 @@ Developers should follow the tiered permissions model to provide transparency an
 
 ### Resource usage tuning
 
-Developers should be aware of resource usage limits for activation, incorporate performance tuning in their development workflow, so as to reduce the chance of a poorly performing add-in denying service of the host. Developers should follow the guidelines in designing activation rules as described in [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md). If an Outlook add-in is intended to run in Outlook on Windows or on the Mac, then developers should verify that the add-in performs within the resource usage limits.
+Developers should be aware of resource usage limits for activation, incorporate performance tuning in their development workflow, so as to reduce the chance of a poorly performing add-in denying service of the host. Developers should follow the guidelines in designing activation rules as described in [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md). If an Outlook add-in is intended to run in Outlook on Windows (classic) or on the Mac, then developers should verify that the add-in performs within the resource usage limits.
 
 ### Other measures to promote user security
 
@@ -180,7 +180,7 @@ The security model provides the following rights and responsibilities to adminis
 
 - Can make any Outlook add-in available or unavailable through the Exchange Admin Center.
 
-- Applicable to only Outlook on Windows: Can override performance threshold settings by GPO registry settings.
+- Applicable to only classic Outlook on Windows: Can override performance threshold settings by GPO registry settings.
 
 ## See also
 

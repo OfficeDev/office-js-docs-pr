@@ -15,7 +15,7 @@ For Outlook add-ins to load and function properly, there are a number of require
 
   - Outlook on the web for Exchange 2016 or later
   - Outlook.com
-  - [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+  - [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
   - Outlook 2016 or later on Windows
   - Outlook on Mac
   - Outlook on Android
