@@ -1,7 +1,7 @@
 ---
 title: Enable SSO in an Office Add-in using nested app authentication
 description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 05/29/2024
+ms.date: 08/01/2024
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -208,7 +208,14 @@ Nested app authentication enables SSO for applications that are nested inside of
 
 ## NAA supported accounts and hosts
 
-NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn’t support B2C scenarios. For preview, NAA is supported in Office on Windows and on Mac. For GA, NAA will also support Office on the web, and Outlook mobile on Android and on iOS.
+NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn’t support B2C scenarios. The following table explains the current support in preview. Anything listed as "Coming soon" will be supported by the time that NAA is made generally available.
+
+| Application | Windows                                                               | Mac | Web          | iOS | Android |
+|-------------|-----------------------------------------------------------------------|-----|--------------|-----|---------|
+| Excel       | Yes (Insiders Slow)                                                   | Yes | Coming soon  | Yes | No      |
+| Outlook     | Yes (Insiders Slow for classic Outlook only, new Outlook coming soon) | Yes | Yes          | Yes | Yes     |
+| PowerPoint  | Yes (Insiders Slow)                                                   | Yes | Coming soon  | Yes | No      |
+| Word        | Yes (Insiders Slow)                                                   | Yes | Coming soon  | Yes | No      |
 
 ## Best practices
 
