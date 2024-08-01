@@ -1,11 +1,11 @@
 ---
-title: Develop Outlook add-ins for the new Outlook on Windows (preview)
-description: Learn how to develop add-ins that are compatible with the new Outlook on Windows (preview).
+title: Develop Outlook add-ins for the new Outlook on Windows
+description: Learn how to develop add-ins that are compatible with the new Outlook on Windows.
 ms.date: 07/01/2024
 ms.localizationpriority: medium
 ---
 
-# Develop Outlook add-ins for the new Outlook on Windows (preview)
+# Develop Outlook add-ins for the new Outlook on Windows
 
 The new Outlook on Windows desktop client unifies the Windows and web codebases to create a more consistent Outlook experience for users and administrators. Its modern and simplified interface has added capabilities and aims to improve productivity, organization, and collaboration for users. More importantly, the new Outlook on Windows supports Outlook web add-ins, so that you can continue to extend Outlook's functionality.
 
@@ -59,7 +59,7 @@ Classic Outlook on Windows with a Microsoft 365 subscription or a retail perpetu
 
 ## Test your add-in in the new Outlook on Windows
 
-Test your Outlook web add-in in the new Outlook on Windows today! To switch to the new Outlook on Windows that's in preview, you must meet the following requirements.
+Test your Outlook web add-in in the new Outlook on Windows today! To switch to the new Outlook on Windows, you must meet the following requirements.
 
 - Have a Microsoft 365 work or school account connected to Exchange Online. The new client doesn't currently support on-premises, hybrid, or sovereign Exchange accounts.
 
@@ -68,7 +68,7 @@ Test your Outlook web add-in in the new Outlook on Windows today! To switch to t
 
 - Have a minimum OS installation of Windows 10 Version 1809 (Build 17763).
 
-To help you sign up and install the Outlook desktop client, see [Getting started with the new Outlook for Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
+To help you install and set up the Outlook desktop client, see [Getting started with the new Outlook for Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
 For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
 

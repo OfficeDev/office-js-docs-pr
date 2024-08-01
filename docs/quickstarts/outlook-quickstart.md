@@ -20,7 +20,7 @@ You can create an Office Add-in by using the Yeoman generator for Office Add-ins
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Outlook on the web, [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), Outlook 2016 or later on Windows (connected to a Microsoft 365 account), or Outlook on Mac.
+- Outlook on the web, [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), Outlook 2016 or later on Windows (connected to a Microsoft 365 account), or Outlook on Mac.
 
 ### Create the add-in project
 
@@ -298,7 +298,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 1. Your mailbox opens in Outlook on the web. Select or open a message.
 
     > [!TIP]
-    > You can also test the add-in in Outlook on Windows as long as the IIS server is running.
+    > You can also test the add-in in classic Outlook on Windows as long as the IIS server is running.
 
 1. Within the message, navigate to the action bar, then select **Apps**.
 

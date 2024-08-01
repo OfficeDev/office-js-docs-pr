@@ -51,7 +51,7 @@ Be mindful of the following when you use regular expressions.
 
     Because different browsers use different ways to obtain the text body of a selected item, you should make sure that your regular expression supports the subtle differences that can be returned as part of the body text. For example, browsers may return line breaks differently. For more information, see [W3C DOM Compatibility - HTML](https://quirksmode.org/dom/html/).
 
-- The HTML body of an item is slightly different between classic Outlook on Windows or Outlook on Mac, and Outlook on the web, on mobile devices, or [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). Define your regular expressions carefully.
+- The HTML body of an item is slightly different between classic Outlook on Windows or Outlook on Mac, and Outlook on the web, on mobile devices, or [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). Define your regular expressions carefully.
 
 - Depending on the Outlook client, type of device, or property that a regular expression is being applied on, there are other best practices and limits for each of the clients that you should be aware of when designing regular expressions as activation rules. For details, see [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
