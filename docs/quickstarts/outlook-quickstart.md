@@ -34,7 +34,7 @@ You can create an Office Add-in by using the Yeoman generator for Office Add-ins
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    - **Which manifest would you like to use?** - Choose either `unified manifest for Microsoft 365` or `add-in only manifest`
+    - **Which manifest would you like to use?** - Choose either `Unified manifest for Microsoft 365` or `Add-in only manifest`
 
     [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)]
 
