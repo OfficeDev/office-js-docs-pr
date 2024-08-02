@@ -1,7 +1,7 @@
 ---
 title: Register custom protocol handlers to launch add-ins
-description: 
-ms.topic: overview
+description: How to establish custom protocol handlers in the registry to launch add-ins.
+ms.topic: how-to
 ms.date: 08/02/2024
 ms.localizationpriority: medium
 ---
