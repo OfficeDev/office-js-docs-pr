@@ -110,6 +110,8 @@ items:
         displayName: manifest
       - name: Configure your add-in to use a shared runtime
         href: develop/configure-your-add-in-to-use-a-shared-runtime.md
+      - name: Register custom protocol handlers to launch add-ins
+        href: develop/custom-protocol-handler.md
       - name: Run code on document open
         href: develop/run-code-on-document-open.md
     - name: Manifest
