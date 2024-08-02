@@ -24,13 +24,13 @@ The following image explains the differences between using `yo office` scaffold 
 ![Image of differences between using the Yeoman generator for Office Add-ins and writing your own JSON.](../images/custom-functions-json.png)
 
 > [!NOTE]
-> Remember to connect your manifest to the JSON file you create, through the **\<Resources\>** section in your XML manifest file if you do not use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+> Remember to connect your manifest to the JSON file you create, through the **\<Resources\>** section in your add-in only manifest file if you do not use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Authoring metadata and connecting to the manifest
 
 Create a JSON file in your project and provide all the details about your functions in it, such as the function's parameters. See the [following metadata example](#json-metadata-example) and [the metadata reference](#metadata-reference) for a complete list of function properties.
 
-Ensure your XML manifest file references your JSON file in the **\<Resources\>** section, similar to the following example.
+Ensure your add-in only manifest file references your JSON file in the **\<Resources\>** section, similar to the following example.
 
 ```json
 <Resources>
@@ -158,7 +158,7 @@ The `functions` property is an array of custom function objects. The following t
 | `description` | string    | No       | The description of the function that end users see in Excel. For example, **Converts a Celsius value to Fahrenheit**.                                                            |
 | `helpUrl`     | string    | No       | URL that provides information about the function. (It is displayed in a task pane.) For example, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
 | `id`          | string    | Yes      | A unique ID for the function. This ID can only contain alphanumeric characters and periods and should not be changed after it is set.                                            |
-| `name`        | string    | Yes      | The name of the function that end users see in Excel. In Excel, this function name is prefixed by the custom functions namespace that's specified in the XML manifest file. |
+| `name`        | string    | Yes      | The name of the function that end users see in Excel. In Excel, this function name is prefixed by the custom functions namespace that's specified in the add-in only manifest file. |
 | `options`     | object    | No       | Enables you to customize some aspects of how and when Excel executes the function. See [options](#options) for details.                                                          |
 | `parameters`  | array     | Yes      | Array that defines the input parameters for the function. See [parameters](#parameters) for details.                                                                             |
 | `result`      | object    | Yes      | Object that defines the type of information that is returned by the function. See [result](#result) for details.                                                                 |

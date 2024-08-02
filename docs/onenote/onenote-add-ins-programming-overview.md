@@ -19,7 +19,7 @@ Add-ins consist of two basic components:
 
 - A **web application** consisting of a webpage and any required JavaScript, CSS, or other files. These files are hosted on a web server or web hosting service, such as Microsoft Azure. In OneNote on the web, the web application displays in a webview control or iframe.
 
-- An **XML manifest** that specifies the URL of the add-in's webpage and any access requirements, settings, and capabilities for the add-in. This file is stored on the client. OneNote add-ins use the same [manifest](../develop/add-in-manifests.md) format as other Office Add-ins.
+- A **manifest** that specifies the URL of the add-in's webpage and any access requirements, settings, and capabilities for the add-in. This file is stored on the client. OneNote add-ins use the [add-in only manifest](../develop/add-in-manifests.md) format.
 
 ### Office Add-in = Manifest + Webpage
 

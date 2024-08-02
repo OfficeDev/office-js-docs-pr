@@ -75,7 +75,7 @@ The steps to configure the manifest vary depending on which type of manifest you
 
 1. The "extensions.ribbons.tabs.groups.controls" array has two objects. Delete the second one, whose "id" is "ActionButton".
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To activate your add-in with the Reading Pane turned off or without a message selected, you must add the [SupportsNoItemContext](/javascript/api/manifest/action#supportsnoitemcontext) child element to the **\<Action\>** element and set its value to `true`. As this feature can only be implemented with a task pane in Message Read mode, the following elements must also be configured.
 

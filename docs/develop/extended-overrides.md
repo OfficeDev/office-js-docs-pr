@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Work with Extended Overrides of the manifest
 
-Some extensibility features of Office Add-ins are configured with JSON files that are hosted on your server, instead of with the add-in's XML manifest.
+When your add-in uses the XML-formatted add-in only manifest, some extensibility features of Office Add-ins are configured with JSON files that are hosted on your server, instead of with the add-in's manifest.
 
 > [!NOTE]
 > This article assumes that you're familiar with Office Add-in manifests and their role in add-ins. Please read [Office Add-ins manifest](add-in-manifests.md), if you haven't recently.

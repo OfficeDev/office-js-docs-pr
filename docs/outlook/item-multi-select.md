@@ -88,7 +88,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 1. Save your changes.
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To enable your add-in to activate on multiple selected messages, you must add the [SupportsMultiSelect](/javascript/api/manifest/action#supportsmultiselect) child element to the **\<Action\>** element and set its value to `true`. As item multi-select only supports messages at this time, the **\<ExtensionPoint\>** element's `xsi:type` attribute value must be set to `MessageReadCommandSurface` or `MessageComposeCommandSurface`.
 

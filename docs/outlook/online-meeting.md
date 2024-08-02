@@ -250,7 +250,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 ]  
 ```
 
-# [XML manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 1. In your code editor, open the Outlook quick start project you created.
 

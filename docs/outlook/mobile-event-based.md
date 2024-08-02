@@ -19,7 +19,7 @@ To learn how to implement an event-based add-in for Outlook on the web, on Windo
 
 ## Supported events and clients
 
-| Event canonical name and XML manifest name | Unified app manifest for Microsoft 365 name | Description | Supported clients |
+| Event canonical name and add-in only manifest name | Unified app manifest for Microsoft 365 name | Description | Supported clients |
 | ----- | ----- | ----- | ----- |
 | `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0)</li><li>iOS (Version 4.2352.0)</li></ul> |
 | `OnMessageRecipientsChanged` | Not available | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul> |
@@ -93,7 +93,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
       }
     ```
 
-# [XML manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To enable an event-based add-in on Outlook mobile, you must configure the following elements in the `VersionOverridesV1_1` node of the manifest.
 

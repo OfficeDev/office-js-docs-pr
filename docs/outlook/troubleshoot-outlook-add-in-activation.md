@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Troubleshoot Outlook contextual add-in activation
 
-Outlook contextual add-in activation is based on the activation rules in an XML manifest for the add-in. When conditions for the currently selected item satisfy the activation rules for the add-in, the application activates and displays the add-in button in the Outlook UI (add-in selection pane for compose add-ins, add-in bar for read add-ins). However, if your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
+Outlook contextual add-in activation is based on the activation rules in an add-in only manifest for the add-in. When conditions for the currently selected item satisfy the activation rules for the add-in, the application activates and displays the add-in button in the Outlook UI (add-in selection pane for compose add-ins, add-in bar for read add-ins). However, if your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
 
 [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
@@ -145,7 +145,7 @@ Starting in version 1.1 of the Office Add-ins manifests schema, you can create a
 
 ## If you use a regular expression, is it properly specified?
 
-Because regular expressions in activation rules are part of the XML manifest file for a read add-in, if a regular expression uses certain characters, be sure to follow the corresponding escape sequence that XML processors support. The following table lists these special characters.
+Because regular expressions in activation rules are part of the XML-formatted add-in only manifest file for a read add-in, if a regular expression uses certain characters, be sure to follow the corresponding escape sequence that XML processors support. The following table lists these special characters.
 
 |Character|Description|Escape sequence to use|
 |:-----|:-----|:-----|

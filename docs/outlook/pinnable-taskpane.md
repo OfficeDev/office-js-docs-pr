@@ -46,7 +46,7 @@ Add a "pinnable" property, set to `true`, to the object in the "actions" array t
 ]
 ```
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 Add the [SupportsPinning](/javascript/api/manifest/action#supportspinning) element to the **\<Action\>** element that describes the task pane button. The following is an example.
 

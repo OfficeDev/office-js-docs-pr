@@ -7,5 +7,5 @@ When you add features or fix bugs in your add-in, you'll need to deploy the upda
 > [!NOTE]
 > Whenever you make a change to the manifest, you must raise the version number of the manifest.
 >
-> - If the add-in uses the XML manifest, see [Version element](/javascript/api/manifest/version).
+> - If the add-in uses the add-in only manifest, see [Version element](/javascript/api/manifest/version).
 > - If the add-in uses the unified manifest, see [version property](/microsoftteams/platform/resources/schema/manifest-schema#version).
