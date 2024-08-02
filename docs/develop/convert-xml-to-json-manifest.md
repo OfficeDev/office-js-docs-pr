@@ -88,7 +88,7 @@ The easiest way to convert is to use Teams Toolkit.
     :::image type="content" source="../images/teams-toolkit-create-outlook-task-pane-capability.png" alt-text="The two options in the App Features Using an Outlook Add-in drop down. The second option is called 'Import an Existing Outlook add-in'.":::
 
 1. In the **Existing add-in project folder** drop down, browse to the root folder of the add-in project.
-1. In the **Select import project manifest file** drop down, browse to the add-in only manifest file, typically called manifest.xml.
+1. In the **Select import project manifest file** drop down, browse to the add-in only manifest file, typically named **manifest.xml**.
 1. In the **Workspace folder** dialog, select the folder where you want to put the converted project.
 1. In the **Application name** dialog, give a name to the project (with no spaces). Teams Toolkit creates the project with your source files and scaffolding. It then opens the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
 
@@ -128,7 +128,7 @@ If the project was created with the Office Yeoman Generator and you don't want t
 
 If you don't want to use the Teams Toolkit and your project wasn't created with the Office Yeoman generator, use the office-addin-manifest-converter tool.
 
-In the root of the project, open a command prompt or bash shell and run the following command. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original add-in only manifest. For example, if the manifest is named MyManifest.xml, the unified manifest is created at .\MyManifest\MyManifest.json. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
+In the root of the project, open a command prompt or bash shell and run the following command. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original add-in only manifest. For example, if the manifest is named **MyManifest.xml**, the unified manifest is created at **.\MyManifest\MyManifest.json**. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
 
 ```command&nbsp;line
 npx office-addin-manifest-converter convert -m <relative-path-to-XML-manifest>
