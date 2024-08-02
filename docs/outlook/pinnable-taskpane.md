@@ -28,7 +28,7 @@ However, by default, if a user has an add-in task pane open for a message in the
 
 ## Supported Outlook modes
 
-Pinnable task panes are supported in both the Message Compose and Message Read modes in Outlook. However, pinning isn't supported across different modes. For example, if a user pins the task pane of an add-in while reading a message, then creates a new message, they won't see the add-in's task pane from the message they're composing. To view the task pane, the user must activate the add-in from the message they're composing. If the user then pins the task pane, the task pane remains pinned the next time the user composes another message.
+Pinnable task panes are supported in both the Message Compose and Message Read modes in Outlook. However, pinning isn't supported across different modes. This is because an add-in could have different UIs for buttons and task panes in each mode. For example, if a user pins the task pane of an add-in while reading a message, then creates a new message, they won't see the add-in's task pane from the message they're composing. To view the task pane, the user must activate the add-in from the message they're composing. If the user then pins the task pane, the task pane remains pinned the next time the user composes another message.
 
 ## Support task pane pinning
 
