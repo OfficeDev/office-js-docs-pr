@@ -17,7 +17,7 @@ You can also specify whether the command is enabled or disabled when the Office 
 
 ## Office application and platform support
 
-The APIs described in this article are available in Excel, PowerPoint, and Word as part of the [RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) requirement set. To learn how to test for platform support with requirement sets, see [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md).
+The APIs described in this article are available in **Excel**, **PowerPoint**, and **Word** as part of the [RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) requirement set. To learn how to test for platform support with requirement sets, see [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md).
 
 ## Shared runtime required
 
