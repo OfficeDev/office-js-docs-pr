@@ -12,17 +12,17 @@ Protocol handlers are registered with the operating system to allow an app to be
 
 Every add-in and protocol pair is established with registry keys. Each pair also needs to be trusted. This either comes in the form end-user consent or admin group policies. Similarly, admins can block certain add-in and protocol pairs.
 
-> [IMPORTANT]
+> [!IMPORTANT]
 > Custom protocol handlers that launch add-ins are currently only supported on Windows.
 
 ## Registry key format
 
-To enable a custom protocol handler that launches an add-in, create registry keys in the following locations. Note that `<add-in id>` refers to the [Id element](/javascript/api/manifest/id) specified in your add-in's manifest.
+To enable a custom protocol handler that launches an add-in, create a registry key at one of the following locations. Note that `<add-in id>` refers to the [Id element](/javascript/api/manifest/id) specified in your add-in's manifest.
 
-- `HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
-- `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
-- `HKEY_CURRENT_USER\SOFTWARE\Policies\Wow6432Node\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
-- `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Wow6432Node\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
+- Current user (64-bit Office): `HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
+- Local machine (64-bit Office): `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
+- Current user (32-bit Office): `HKEY_CURRENT_USER\SOFTWARE\Policies\Wow6432Node\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
+- Local machine (32-bit Office): `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Wow6432Node\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
 
 Give the key the following values.
 
