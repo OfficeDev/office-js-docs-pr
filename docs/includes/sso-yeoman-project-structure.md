@@ -2,7 +2,7 @@
 
 The following files specify configuration settings for the add-in.
 
-- The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
+- The **./manifest.xml** or **manifest.json** file in the root directory of the project defines the settings and capabilities of the add-in.
 
 - The **./.ENV** file in the root directory of the project defines constants that are used by the add-in project.
 
