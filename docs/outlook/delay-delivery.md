@@ -15,7 +15,7 @@ The Outlook client gives you the option to delay the delivery of a message, but 
 
 ## Configure the manifest
 
-To schedule the delivery of a message, your add-in must be able to activate in message compose mode. This is defined through the [MessageComposeCommandSurface](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface) extension point in an XML manifest or the **mailCompose** "contexts" property in a [Unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
+To schedule the delivery of a message, your add-in must be able to activate in message compose mode. This is defined through the [MessageComposeCommandSurface](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface) extension point in an add-in only manifest or the **mailCompose** "contexts" property in a [Unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
 
 For further guidance on how to configure an Outlook add-in manifest, see [Office add-in manifests](../develop/add-in-manifests.md).
 

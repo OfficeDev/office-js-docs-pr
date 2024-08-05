@@ -27,7 +27,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 To configure your add-in's manifest, select the type of manifest you're using.
 
 - [Unified manifest for Microsoft 365](#unified-manifest-for-microsoft-365)
-- [XML manifest](#xml-manifest)
+- [Add-in only manifest](#add-in-only-manifest)
 
 ### Unified manifest for Microsoft 365
 
@@ -381,7 +381,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
 
 ---
 
-### XML manifest
+### Add-in only manifest
 
 To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors aren't supported.
 

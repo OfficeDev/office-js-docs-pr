@@ -67,7 +67,7 @@ items:
     - name: Support older Microsoft webviews and Office versions
       href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Manage both a unified manifest and an XML manifest version of your add-in
+    - name: Manage both a unified manifest and an add-in only manifest version of your add-in
       href: concepts/duplicate-legacy-metaos-add-ins.md
       displayName: Excel, Word, PowerPoint, Outlook
   - name: Develop
@@ -116,15 +116,15 @@ items:
       items:
       - name: Overview
         href: develop/add-in-manifests.md
-      - name: Office Add-ins XML manifest
+      - name: Office Add-ins with the add-in only manifest
         href: develop/xml-manifest-overview.md
       - name: Office Add-ins with the unified manifest for Microsoft 365
         href: develop/unified-manifest-overview.md
-      - name: Compare the XML manifest with the unified manifest for Microsoft 365
+      - name: Compare the add-in only manifest with the unified manifest for Microsoft 365
         href: develop/json-manifest-overview.md
       - name: Convert an add-in to use the unified manifest for Microsoft 365
         href: develop/convert-xml-to-json-manifest.md
-      - name: Manifest reference
+      - name: Add-in only manifest reference
         href: reference/manifest-reference.md
       - name: Extended overrides
         href: develop/extended-overrides.md
@@ -238,7 +238,7 @@ items:
           items:
           - name: Basic concepts for Add-in Commands
             href: design/add-in-commands.md
-          - name: Create add-in commands with the XML manifest
+          - name: Create add-in commands with the add-in only manifest
             href: develop/create-addin-commands.md
           - name: Create add-in commands with the unified manifest for Microsoft 365
             href: develop/create-addin-commands-unified-manifest.md

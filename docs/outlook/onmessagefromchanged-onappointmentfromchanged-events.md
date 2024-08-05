@@ -136,7 +136,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
     ]
     ```
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To enable the add-in to activate when the `OnMessageFromChanged` event occurs, the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point must be configured in the `VersionOverridesV1_1` node of the manifest.
 
@@ -335,7 +335,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     }
     
     // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to 
-    // map the event handler name specified in the manifest's LaunchEvent element (with the XML manifest)
+    // map the event handler name specified in the manifest's LaunchEvent element (with the add-in only manifest)
     // or the "autoRunEvents.events.actionId" property (with the unified manifest for Microsoft 365)
     // to its JavaScript counterpart.
     if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {

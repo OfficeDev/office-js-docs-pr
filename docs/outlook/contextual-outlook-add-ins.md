@@ -18,7 +18,7 @@ You can specify regular expression rules to activate a contextual add-in when a 
 
 [!INCLUDE [Unified manifest for Microsoft 365 does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
-A contextual add-in's XML manifest must include an [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) element with its `xsi:type` attribute set to `DetectedEntity`. Within the **\<ExtensionPoint\>** element, the add-in must then specify a regular expression rule using the [Rule](/javascript/api/manifest/rule) element with its `xsi:type` attribute set to [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule).
+A contextual add-in's manifest must include an [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) element with its `xsi:type` attribute set to `DetectedEntity`. Within the **\<ExtensionPoint\>** element, the add-in must then specify a regular expression rule using the [Rule](/javascript/api/manifest/rule) element with its `xsi:type` attribute set to [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule).
 
 The following example activates an add-in whenever a stock symbol is included in the body of the current mail item.
 

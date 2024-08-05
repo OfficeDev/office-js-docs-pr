@@ -255,7 +255,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 
 ### Update the manifest
 
-1. Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.
+1. Open the add-in only manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
 1. The `ProviderName` element has a placeholder value. Replace it with your name.
 

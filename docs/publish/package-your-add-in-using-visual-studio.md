@@ -38,7 +38,7 @@ Complete the following steps to package your add-in using Visual Studio 2019.
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)] Azure websites automatically provide an HTTPS endpoint.
 
-You can now upload your XML manifest to the appropriate location to [publish your add-in](../publish/publish.md). You can find the XML manifest in `OfficeAppManifests` in the `app.publish` folder. For example:
+You can now upload your manifest to the appropriate location to [publish your add-in](../publish/publish.md). You can find the manifest in `OfficeAppManifests` in the `app.publish` folder. For example:
 
  `%UserProfile%\Documents\Visual Studio 2019\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
 

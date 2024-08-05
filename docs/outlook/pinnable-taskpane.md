@@ -1,7 +1,7 @@
 ---
 title: Implement a pinnable task pane in an Outlook add-in
 description: The task pane UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions.
-ms.date: 04/12/2024
+ms.date: 08/02/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -26,6 +26,10 @@ However, by default, if a user has an add-in task pane open for a message in the
 > - Appointments/Meetings
 > - Outlook.com
 
+## Supported Outlook modes
+
+Pinnable task panes are supported in both the Message Compose and Message Read modes in Outlook. However, pinning isn't supported across different modes. This is because an add-in could have different UIs for buttons and task panes in each mode. For example, if a user pins the task pane of an add-in while reading a message, then creates a new message, they won't see the add-in's task pane from the message they're composing. To view the task pane, the user must activate the add-in from the message they're composing. If the user then pins the task pane, the task pane remains pinned the next time the user composes another message.
+
 ## Support task pane pinning
 
 The first step is to add pinning support, which is done in the add-in manifest. The markup varies depending on the type of manifest your add-in uses.
@@ -46,7 +50,7 @@ Add a "pinnable" property, set to `true`, to the object in the "actions" array t
 ]
 ```
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 Add the [SupportsPinning](/javascript/api/manifest/action#supportspinning) element to the **\<Action\>** element that describes the task pane button. The following is an example.
 
@@ -95,7 +99,7 @@ function itemChanged(eventArgs) {
 ```
 
 > [!IMPORTANT]
-> The implementation of event handlers for an ItemChanged event should check whether or not the Office.content.mailbox.item is null.
+> The implementation of event handlers for an `ItemChanged` event should check whether or not the Office.content.mailbox.item is null.
 >
 > ```js
 > // Example implementation.

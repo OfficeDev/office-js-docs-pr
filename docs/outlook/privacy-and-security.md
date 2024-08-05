@@ -115,7 +115,7 @@ Developers should follow the tiered permissions model to provide transparency an
 
 - As noted above, developers request permission in the manifest.
 
-  The following example requests the **read item** permission in the XML manifest.
+  The following example requests the **read item** permission in the add-in only manifest.
 
   ```XML
   <Permissions>ReadItem</Permissions>

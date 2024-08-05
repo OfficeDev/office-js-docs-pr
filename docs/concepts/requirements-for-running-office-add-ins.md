@@ -24,7 +24,7 @@ For all types of add-ins (content, Outlook, and task pane add-ins and add-in com
 > [!TIP]
 > When you develop and debug an add-in in Visual Studio, Visual Studio deploys and runs your add-in's webpage files locally with IIS Express, and doesn't require an additional web server.
 
-For content and task pane add-ins, in the supported Office client applications - Excel, PowerPoint, Project, or Word - you also need either an [app catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML manifest file, or you need to deploy the add-in using [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
+For content and task pane add-ins, in the supported Office client applications - Excel, PowerPoint, Project, or Word - you also need either an [app catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML-formatted add-in only manifest file, or you need to deploy the add-in using [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
 To test and run an Outlook add-in, the user's Outlook email account must reside on Exchange 2016 or later, which is available through Microsoft 365, Exchange Online, or through an on-premises installation. The user or administrator installs manifest files for Outlook add-ins on that server.
 
