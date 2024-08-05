@@ -25,7 +25,7 @@ To automatically trust a custom protocol handler that launches an add-in, create
 Give the key the following values.
 
 - **Name**: The protocol name based on the URI. For example, `mailto`.
-- **Type**: REG_DWORD
+- **Type**: REG_SZ
 - **Data**: ["Allow", "Block"]
 
 ## Set group policies
