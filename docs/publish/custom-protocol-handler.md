@@ -1,23 +1,23 @@
 ---
-title: Register custom protocol handlers to launch add-ins
-description: How to establish custom protocol handlers in the registry to launch add-ins.
+title: Trust custom protocol handlers that launch add-ins
+description: How to use group policies for protocol handler trust in the registry to launch add-ins.
 ms.topic: how-to
-ms.date: 08/02/2024
+ms.date: 08/05/2024
 ms.localizationpriority: medium
 ---
 
-# Register custom protocol handlers to launch add-ins
+# Trust custom protocol handlers to launch add-ins
 
-Protocol handlers are registered with the operating system to allow an app to be launched from a URI (for example, how `mailto:` launchs an email client). Add-ins can also be launched from protocol handlers. This article specifies the format for registering these handlers.
+Protocol handlers are registered with the operating system to allow an app to be launched from a URI (for example, how `mailto:` launchs an email client). Add-ins can also be launched from protocol handlers. This article explains how to automatically trust these custom protocol handlers by using admin group policies.
 
-Every add-in and protocol pair is established with registry keys. Each pair also needs to be trusted. This either comes in the form end-user consent or admin group policies. Similarly, admins can block certain add-in and protocol pairs.
+Every add-in and protocol pair needs to be trusted. This either comes in the form end-user consent or admin group policies. Similarly, admins can block certain add-in and protocol pairs.
 
 > [!IMPORTANT]
-> Custom protocol handlers that launch add-ins are currently only supported on Windows.
+> This information about trusting custom protocol handlers that launch add-ins through the registry only pertains to Windows.
 
 ## Registry key format
 
-To enable a custom protocol handler that launches an add-in, create a registry key at one of the following locations. Note that `<add-in id>` refers to the [Id element](/javascript/api/manifest/id) specified in your add-in's manifest.
+To automatically trust a custom protocol handler that launches an add-in, create a registry key at one of the following locations. Note that `<add-in id>` refers to the [Id element](/javascript/api/manifest/id) specified in your add-in's manifest.
 
 - Current user (64-bit Office): `HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
 - Local machine (64-bit Office): `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
@@ -38,7 +38,7 @@ Give the key the following values.
 
 ## Set group policies
 
-The following sample files can help admins define these custom protocol handlers across their organization.
+The following sample files show how admins define and trust these custom protocol handlers across their organization.
 
 ### Sample ADMX file
 
