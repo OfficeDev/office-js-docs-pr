@@ -21,20 +21,12 @@ To automatically trust a custom protocol handler that launches an add-in, create
 
 - Current user (64-bit Office): `HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
 - Local machine (64-bit Office): `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
-- Current user (32-bit Office): `HKEY_CURRENT_USER\SOFTWARE\Policies\Wow6432Node\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
-- Local machine (32-bit Office): `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Wow6432Node\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
 
 Give the key the following values.
 
 - **Name**: The protocol name based on the URI. For example, `mailto`.
 - **Type**: REG_DWORD
-- **Data**: [1,2,3] (See the following table.)
-
-| Data value | Behavior                                                                                     |
-|------------|----------------------------------------------------------------------------------------------|
-|1           | Prompt before protocol execution. This is the default behaviour when no registry key is set. |
-|2           | Allow protocol execution.                                                                    |
-|3           | Block protocol execution.                                                                    |
+- **Data**: ["Allow", "Block"]
 
 ## Set group policies
 
@@ -110,5 +102,4 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Office\16.0\WEF\ProtocolHandlers\[add-in id]] 
 "protocol1"="Allow" 
 "protocol2"="Block" 
-"protocol3"="Prompt" 
 ```
