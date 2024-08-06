@@ -57,7 +57,7 @@ A shared mailbox allows a group of users to easily monitor and send messages and
 In Outlook on the web, a shared mailbox can be opened in the same panel as a user's primary mailbox or in a separate browser tab or window. For guidance, see [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
 
 > [!NOTE]
-> In Outlook on the web, while you can open a shared mailbox in a separate browser tab or window using the **Open another mailbox** option, you may encounter issues when accessing add-ins from the mailbox. We recommend opening the mailbox in the same panel as your primary mailbox instead. This ensures that add-ins work as expected in your shared mailbox.
+> In Outlook on the web, if you open a shared mailbox in a separate browser tab or window using the **Open another mailbox** option, you may encounter issues when accessing add-ins from the mailbox. We recommend opening the mailbox in the same panel as your primary mailbox instead. This ensures that add-ins work as expected in your shared mailbox.
 >
 > If you prefer to open the shared mailbox using the **Open another mailbox** option, we recommend deploying the add-in to both your primary user and shared mailboxes.
 
