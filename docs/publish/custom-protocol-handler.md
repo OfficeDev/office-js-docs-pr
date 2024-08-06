@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Trust custom protocol handlers to launch add-ins
 
-Protocol handlers are registered with the operating system to allow an app to be launched from a URI (for example, how `mailto:` launchs an email client). Add-ins can also be launched from protocol handlers. This article explains how to automatically trust these custom protocol handlers by using admin group policies.
+Protocol handlers are registered with the operating system to allow an app to be launched from a URI (for example, how `mailto:` launches an email client). Add-ins can also be launched from protocol handlers. This article explains how to automatically trust these custom protocol handlers by using admin group policies.
 
 Every add-in and protocol pair needs to be trusted. This either comes in the form end-user consent or admin group policies. Similarly, admins can block certain add-in and protocol pairs.
 
@@ -17,7 +17,7 @@ Every add-in and protocol pair needs to be trusted. This either comes in the for
 
 ## Registry key format
 
-To automatically trust a custom protocol handler that launches an add-in, create a registry key at one of the following locations. Note that `<add-in id>` refers to the [Id element](/javascript/api/manifest/id) specified in the add-in only manifest or to the "id" property of the unified manifest..
+To automatically trust a custom protocol handler that launches an add-in, create a registry key at one of the following locations. Note that `<add-in id>` refers to the [Id element](/javascript/api/manifest/id) specified in the add-in only manifest or to the "id" property of the unified manifest.
 
 - Current user (64-bit Office): `HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
 - Local machine (64-bit Office): `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
@@ -103,3 +103,7 @@ Windows Registry Editor Version 5.00
 "protocol1"="Allow" 
 "protocol2"="Block" 
 ```
+
+## Support
+
+Support for this feature was introduced with Office Version 2408 (Build 17928.20018).
