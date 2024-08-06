@@ -90,7 +90,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
     ```
 
 1. Save the file.
-1. Select the ASP.NET web project has your project name with the text `Web` appended to the end. Under the **npm** section, set both **Restore On Project Open** and **Restore On Save** to "True".
+1. Select the ASP.NET web project that has your project name with the text `Web` appended to the end. Under the **npm** section, set both **Restore On Project Open** and **Restore On Save** to "True".
 
 ### Update the JavaScript files
 
