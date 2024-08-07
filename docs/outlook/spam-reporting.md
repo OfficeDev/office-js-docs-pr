@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 06/10/2024
+ms.date: 08/08/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -358,6 +358,10 @@ The following is a sample post-processing dialog shown to the user once the add-
 ## Review feature behavior and limitations
 
 As you develop and test the integrated spam-reporting feature in your add-in, be mindful of its characteristics and limitations.
+
+- In Outlook on the web and on Windows (new and classic), an integrated spam-reporting add-in replaces the native **Report** button in the Outlook ribbon.
+
+    :::image type="content" source="../images/outlook-spam-replace-button.png" alt-text="A sample integrated spam-reporting add-in that replaces the Report button in the Outlook ribbon.":::
 
 - A spam-reporting add-in can run for a maximum of five minutes once it's activated. Any processing that occurs beyond five minutes will cause the add-in to time out. If the add-in times out, a dialog will be shown to the user to notify them of this.
 
