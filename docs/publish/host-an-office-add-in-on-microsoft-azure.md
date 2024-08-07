@@ -77,7 +77,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 ## Step 4: Publish your Office Add-in web app to Azure
 
-1. With your add-in project open in Visual Studio, right-click (or select and hold) the web project and then choose **Publish**. 
+1. With your add-in project open in Visual Studio, right-click (or select and hold) the web project and then choose **Publish**.
 
 1. Follow the instructions at [Publish your web app](/azure/app-service/quickstart-dotnetcore?tabs=netframework48&pivots=development-environment-vs#2-publish-your-web-app). Skip the article sections that precede **Publish your web app**, but be sure that the **Visual Studio** button is selected at the top of the page.
 
