@@ -1,7 +1,7 @@
 ---
 title: Authentication options in Outlook add-ins
 description: Outlook add-ins provide a number of different methods to authenticate, depending on your specific scenario.
-ms.date: 04/12/2024
+ms.date: 08/07/2024
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -43,7 +43,7 @@ For a sample add-in that uses the SSO token, see [Outlook Add-in SSO](https://gi
 Nested App Authentication (NAA) enables Single Sign-On (SSO) for Office Add-ins running in the context of native Office applications. Compared with the on-behalf-of flow used with Office.js and getAccessToken(), NAA provides greater flexibility in app architecture, enabling the creation of rich, client-driven applications. NAA makes handling SSO simpler for your add-in code. NAA enables you to make Microsoft Graph calls from your add-in client code as an SPA without the need for a middle-tier server. There’s no need to use Office.js APIs as NAA is provided by the MSAL.js library.
 
 > [!IMPORTANT]
-> Nested app authentication is currently in preview. To try this feature, join the [Microsoft 365 Insider Program](https://insider.microsoft365.com/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> Nested app authentication is currently in preview. To try this feature, join the [Microsoft 365 Insider Program](https://insider.microsoft365.com/join). Then, choose **Current Channel (Preview)** from a [supported Microsoft 365 application](../develop/enable-nested-app-authentication-in-your-add-in.md#naa-supported-accounts-and-hosts). Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 To enable your Outlook add-in to use NAA, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md). NAA works the same across all Office Add-ins.
 
