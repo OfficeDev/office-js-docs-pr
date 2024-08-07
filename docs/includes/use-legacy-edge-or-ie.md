@@ -19,12 +19,16 @@ If your project is Node.js-based (that is, not developed with Visual Studio and 
     npx office-addin-dev-settings webview <path-to-manifest> <webview>
     ```
 
-    The following is an example.
+    The following are examples.
 
     ```command&nbsp;line
     npx office-addin-dev-settings webview manifest.xml ie
     ```
 
+    ```command&nbsp;line
+    npx office-addin-dev-settings webview manifest.json edge-legacy
+    ```
+	
     You should see a message in the command line that the webview type is now set to IE (or Edge Legacy).
 
 1. When you're finished, set Office to resume using the default webview for your combination of Windows and Office versions with the following command.
