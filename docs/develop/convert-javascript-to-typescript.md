@@ -38,7 +38,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 
 ### Add Nuget package
 
-1. Open the Nuget package manager by choosing **Tools > Nuget Package Manager > Manage Nuget Packages for Solution**
+1. Open the Nuget package manager by choosing **Tools** > **Nuget Package Manager** > **Manage Nuget Packages for Solution**
 1. Select the **Browse** tab and search for **Microsoft.TypeScript.MSBuild**. Install this package to the ASP.NET web project, or update it if it's already installed. The ASP.NET web project has your project name with the text `Web` appended to the end. This will ensure the project will transpile to JavaScript when the build runs.
 
 > [!NOTE]
