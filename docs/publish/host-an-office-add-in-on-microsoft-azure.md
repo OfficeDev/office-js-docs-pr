@@ -81,7 +81,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 1. Follow the instructions at [Publish your web app](/azure/app-service/quickstart-dotnetcore?tabs=netframework48&pivots=development-environment-vs#2-publish-your-web-app). Skip the article sections that precede **Publish your web app**, but be sure that the **Visual Studio** button is selected at the top of the page.
 
-   Visual Studio publishes the web project for your Office Add-in to your Azure web app. When Visual Studio finishes publishing the web project, your browser opens and shows a webpage with the text "Your web app is running and waiting for your content" This is the current default page for the web app.
+   Visual Studio publishes the web project for your Office Add-in to your Azure web app. When Visual Studio finishes publishing the web project, your browser opens and shows a webpage with the text "Your web app is running and waiting for your content." This is the current default page for the web app.
 
 1. Copy the root URL (for example: `https://YourDomain.azurewebsites.net`); you'll need it when you edit the add-in manifest file later in this article.
 
