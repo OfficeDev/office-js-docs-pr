@@ -39,7 +39,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 ### Add Nuget package
 
 1. Open the Nuget package manager by choosing **Tools** > **Nuget Package Manager** > **Manage Nuget Packages for Solution**
-1. Select the **Browse** tab and search for **Microsoft.TypeScript.MSBuild**. Install this package to the ASP.NET web project, or update it if it's already installed. The ASP.NET web project has your project name with the text `Web` appended to the end. This will ensure the project will transpile to JavaScript when the build runs.
+1. Select the **Browse** tab. Search for and select **Microsoft.TypeScript.MSBuild**. Install this package to the ASP.NET web project, or update it if it's already installed. The ASP.NET web project has your project name with the text `Web` appended to the end. This will ensure the project will transpile to JavaScript when the build runs.
 
 > [!NOTE]
 > In your TypeScript project, you can have a mix of TypeScript and JavaScript files and your project will compile. This is because TypeScript is a typed superset of JavaScript that compiles JavaScript.
@@ -47,7 +47,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 ### Create a TypeScript config file
 
 1. In **Solution Explorer**, right-click (or select and hold) the ASP.NET web project and choose **Add > New Item**. The ASP.NET web project has your project name with the text `Web` appended to the end.
-1. In the **Add New Item** dialog, select **TypeScript JSON configuration File** to create a **tsconfig.json** file and then choose **Add**.
+1. In the **Add New Item** dialog, search for and select **TypeScript JSON configuration File**. Select **Add** to create a **tsconfig.json** file.
 1. Update the **tsconfig.json** file to also have an `include` section as shown in the following JSON.
 
     ```json
@@ -75,7 +75,7 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 ### Create an npm configuration file
 
 1. In **Solution Explorer**, right-click (or select and hold) the ASP.NET web project and choose **Add > New Item**. The ASP.NET web project has your project name with the text `Web` appended to the end.
-1. In the **Add New Item** dialog, select **npm Configuration File** to create a **package.json** file and then choose **Add**.
+1. In the **Add New Item** dialog, search for **npm Configuration File**. Select **Add** to create a **package.json** file.
 1. Update the **package.json** file to have the `@types/jquery` package in the `devDependencies` section, as shown in the following JSON.
 
     ```json
