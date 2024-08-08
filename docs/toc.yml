@@ -224,8 +224,13 @@ items:
           - name: Branding
             href: design/branding-patterns.md
           - name: First-run experience
-            href: design/first-run-experience-patterns.md
-            displayName: first run experience
+            items:
+            - name: Overview
+              href: design/first-run-experience-patterns.md
+              displayName: first run experience
+            - name: Quick start
+              href: quickstarts/fre-quickstart.md
+              displayName: first run experience
           - name: Navigation
             href: design/navigation-patterns.md
       - name: Design toolkits
