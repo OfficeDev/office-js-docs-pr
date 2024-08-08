@@ -19,7 +19,7 @@ There are three steps to add keyboard shortcuts to an add-in.
 
 1. [Configure the add-in's manifest](#configure-the-manifest).
 1. [Create or edit the shortcuts JSON file](#create-or-edit-the-shortcuts-json-file) to define actions and their keyboard shortcuts.
-1. [Add one or more runtime calls](#create-a-mapping-of-actions-to-their-functions) of the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map a function to each action.
+1. [Add one or more runtime calls](#create-a-mapping-of-actions-to-their-functions) of the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) API to map a function to each action.
 
 ## Configure the manifest
 
@@ -87,7 +87,7 @@ Create a JSON file in your project. Be sure the path of the file matches the loc
 ## Create a mapping of actions to their functions
 
 1. In your project, open the JavaScript file loaded by your HTML page in the **\<FunctionFile\>** element.
-1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map each action that you specified in the JSON file to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
+1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) API to map each action that you specified in the JSON file to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
 
     - The first parameter is one of the actions from the JSON file.
     - The second parameter is the function that runs when a user presses the key combination that is mapped to the action in the JSON file.
