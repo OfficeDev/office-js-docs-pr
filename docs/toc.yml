@@ -67,7 +67,7 @@ items:
     - name: Support older Microsoft webviews and Office versions
       href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
-    - name: Manage both a unified manifest and an XML manifest version of your add-in
+    - name: Manage both a unified manifest and an add-in only manifest version of your add-in
       href: concepts/duplicate-legacy-metaos-add-ins.md
       displayName: Excel, Word, PowerPoint, Outlook
   - name: Develop
@@ -116,15 +116,15 @@ items:
       items:
       - name: Overview
         href: develop/add-in-manifests.md
-      - name: Office Add-ins XML manifest
+      - name: Office Add-ins with the add-in only manifest
         href: develop/xml-manifest-overview.md
       - name: Office Add-ins with the unified manifest for Microsoft 365
         href: develop/unified-manifest-overview.md
-      - name: Compare the XML manifest with the unified manifest for Microsoft 365
+      - name: Compare the add-in only manifest with the unified manifest for Microsoft 365
         href: develop/json-manifest-overview.md
       - name: Convert an add-in to use the unified manifest for Microsoft 365
         href: develop/convert-xml-to-json-manifest.md
-      - name: Manifest reference
+      - name: Add-in only manifest reference
         href: reference/manifest-reference.md
       - name: Extended overrides
         href: develop/extended-overrides.md
@@ -159,8 +159,6 @@ items:
           href: quickstarts/sso-quickstart.md
         - name: Register with Microsoft identity platform
           href: develop/register-sso-add-in-aad-v2.md
-        - name: Grant or revoke administrator consent
-          href: develop/grant-admin-consent-to-an-add-in.md
         - name: Get the identity token
           href: develop/use-sso-to-get-office-signed-in-user-token.md
         - name: Authorize to Microsoft Graph
@@ -240,7 +238,7 @@ items:
           items:
           - name: Basic concepts for Add-in Commands
             href: design/add-in-commands.md
-          - name: Create add-in commands with the XML manifest
+          - name: Create add-in commands with the add-in only manifest
             href: develop/create-addin-commands.md
           - name: Create add-in commands with the unified manifest for Microsoft 365
             href: develop/create-addin-commands-unified-manifest.md
@@ -390,7 +388,7 @@ items:
       items:
       - name: Publish your add-in (Visual Studio)
         href: publish/package-your-add-in-using-visual-studio.md
-      - name: Host an Office Add-in on Microsoft Azure
+      - name: Stage an Office Add-in on Microsoft Azure
         href: publish/host-an-office-add-in-on-microsoft-azure.md
     - name: Publish add-ins to AppSource
       href: publish/publish-office-add-ins-to-appsource.md
@@ -402,6 +400,8 @@ items:
       href: publish/government-cloud-guidance.md
     - name: Maintain your Office Add-in
       href: publish/maintain-breaking-changes.md
+    - name: Trust custom protocol handlers to launch add-ins
+      href: publish/custom-protocol-handler.md
 
 - name: Excel
   items: 
@@ -421,6 +421,9 @@ items:
       displayName: Excel
     - name: Task pane (Vue)
       href: quickstarts/excel-quickstart-vue.md
+      displayName: Excel
+    - name: Content
+      href: quickstarts/excel-quickstart-content.md
       displayName: Excel
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.md
@@ -661,7 +664,6 @@ items:
     displayName: Outlook
   - name: Develop Outlook add-ins for the new Outlook on Windows
     href: outlook/one-outlook.md
-    displayName: preview
   - name: Outlook JavaScript API
     displayName: Outlook
     items:
@@ -762,12 +764,6 @@ items:
       items:
       - name: Overview
         href: outlook/read-scenario.md
-      - name: Use regular expressions to activate contextual add-ins
-        href: outlook/use-regular-expressions-to-show-an-outlook-add-in.md
-      - name: Match well known entities in an item
-        href: outlook/match-strings-in-an-item-as-well-known-entities.md
-      - name: Extract entities from an item
-        href: outlook/extract-entity-strings-from-an-item.md
       - name: Get attachments
         href: outlook/get-attachments-of-an-outlook-item.md
     - name: Compose scenario
@@ -846,8 +842,13 @@ items:
     href: powerpoint/powerpoint-add-ins.md
     displayName: PowerPoint
   - name: Build your first PowerPoint add-in
-    href: quickstarts/powerpoint-quickstart.md
-    displayName: PowerPoint
+    items:
+    - name: Task pane
+      href: quickstarts/powerpoint-quickstart.md
+      displayName: PowerPoint
+    - name: Content
+      href: quickstarts/powerpoint-quickstart-content.md
+      displayName: PowerPoint
   - name: PowerPoint add-in tutorial
     href: tutorials/powerpoint-tutorial.md
     displayName: PowerPoint
@@ -947,6 +948,9 @@ items:
       displayName: Word
     - name: Use search options to find text
       href: word/search-option-guidance.md
+      displayName: Word
+    - name: Use events
+      href: word/word-add-ins-events.md
       displayName: Word
     - name: When and how to use Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md

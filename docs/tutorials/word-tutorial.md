@@ -28,11 +28,6 @@ In this tutorial, you'll create a Word task pane add-in that:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Office connected to a Microsoft 365 subscription (including Office on the web).
-
-    > [!NOTE]
-    > If you don't already have Office, you might qualify for a Microsoft 365 E5 developer subscription to use for development through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
-
 ## Create your add-in project
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]

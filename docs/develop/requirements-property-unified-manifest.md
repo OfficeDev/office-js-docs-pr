@@ -1,7 +1,7 @@
 ---
 title: Specify Office Add-in requirements in the unified manifest for Microsoft 365
 description: Learn how to use requirements to configure on which host and platforms an add-in can be installed and which features are available.
-ms.date: 04/12/2024
+ms.date: 07/03/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -48,24 +48,24 @@ You can have more than one capability object. The following example shows how to
 
 ## Filter features
 
-The "requirements" properties in descendant objects of "extensions" are used to block some features of an add-in while still allowing the add-in to be installed. The implementation of this filtering is done at the source of installation, such as [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) or [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish). If the version of Office doesn't support the requirements specified for the feature, then the JSON node for the feature is removed from the manifest before it is installed in the Office application. 
+The "requirements" properties in descendant objects of "extensions" are used to block some features of an add-in while still allowing the add-in to be installed. The implementation of this filtering is done at the source of installation, such as [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) or [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish). If the version of Office doesn't support the requirements specified for the feature, then the JSON node for the feature is removed from the manifest before it is installed in the Office application.
 
 ### extensions.alternates.requirements
 
 The "extensions.alternates" property enables add-in developers to do the following:
 
-- Maintain a version of an add-in that was built on an older extensibility platform (such as COM or VSTO add-ins) or using the XML manifest, in addition to the version that uses the unified manifest.
+- Maintain a version of an add-in that was built on an older extensibility platform (such as COM or VSTO add-ins) or using the add-in only manifest, in addition to the version that uses the unified manifest.
 - Either hide or give preference to the version that uses the older technology.
-- Specify icons that are needed to make the unified manifest version of the add-in installable on Office versions that don't directly support the unified manifest. 
+- Specify icons that are needed to make the unified manifest version of the add-in installable on Office versions that don't directly support the unified manifest.
 
 > [!NOTE]
-> Office Add-ins that use the unified manifest for Microsoft 365 are *directly* supported in Office on the web, in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), and in Office on Windows connected to a Microsoft 365 subscription, Version 2304 (Build 16320.00000) or later.
+> Office Add-ins that use the unified manifest for Microsoft 365 are *directly* supported in Office on the web, in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), and in Office on Windows connected to a Microsoft 365 subscription, Version 2304 (Build 16320.00000) or later.
 >
-> When the app package that contains the unified manifest is deployed in [AppSource](https://appsource.microsoft.com/) or the [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish) then, if the manifest has a valid "alternateIcons" property, an XML manifest is generated from the unified manifest and stored. This XML manifest enables the add-in to be installed on platforms that don't directly support the unified manifest, including Office on Mac, Office on mobile, subscription versions of Office on Windows earlier than 2304 (Build 16320.00000), and perpetual versions of Office on Windows. 
+> When the app package that contains the unified manifest is deployed in [AppSource](https://appsource.microsoft.com/) or the [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish) then, if the manifest has a valid "alternateIcons" property, an add-in only manifest is generated from the unified manifest and stored. This add-in only manifest enables the add-in to be installed on platforms that don't directly support the unified manifest, including Office on Mac, Office on mobile, subscription versions of Office on Windows earlier than 2304 (Build 16320.00000), and perpetual versions of Office on Windows.
 
-For more information, see [Manage both a unified manifest and an XML manifest version of your Office Add-in](/office/dev/add-ins/concepts/duplicate-legacy-metaos-add-ins).
+For more information, see [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](/office/dev/add-ins/concepts/duplicate-legacy-metaos-add-ins).
 
-The "requirements" subproperty of "extensions.alternates" to selectively apply the "hide" or "prefer" subproperties only when certain requirements are met. 
+The "requirements" subproperty of "extensions.alternates" to selectively apply the "hide" or "prefer" subproperties only when certain requirements are met.
 
 For example, suppose that you want to hide (from the Office UI for installing add-ins) an older version of your add-in, but only in Office versions that support the **Mailbox 1.10** requirement set. You could do that with markup similar to the following:
 
@@ -134,6 +134,39 @@ For example, suppose an Outlook add-in is configured to autolaunch in response t
 ]
 ```
 
+### extensions.contextMenus.requirements
+
+The "extensions.contextMenus" property configures the add-in's context menus. A context menu is a shortcut menu that appears when you right-click (or select and hold) in the Office UI. The "requirements" subproperty can be used to allow context menus only when certain requirements are met.
+
+For example, suppose you want to show context menus only in Excel versions that support the AddinCommands 1.1 requirement set. You could do that with markup similar to the following:
+
+```json
+"extensions": [
+    ...
+    {
+        ...
+        "contextMenus": [
+            ...
+            {
+                // Insert details of the context menu configuration here.
+
+                "requirements": {
+                    "scopes": [
+                        "workbook"
+                    ],
+                    "capabilities": [
+                        {
+                            "name": "AddinCommands",
+                            "minVersion": "1.1"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]
+```
+
 ### extensions.ribbons.requirements
 
 The "extensions.ribbons" property is used to customize the Office application ribbon when the add-in is installed. The "requirements" subproperty can be used to prevent the customizations in some versions of Office.
@@ -171,7 +204,6 @@ The "extensions.runtimes" property configures the sets of runtimes and actions t
 The "requirements" subproperty can be used to prevent the runtime from being included in versions of Office or in Office applications where it wouldn't be used.
 
 The previous example shown in [extensions.autoRunEvents.requirements](#extensionsautoruneventsrequirements) shows how to block the autolaunch feature in versions that don't support all of the code in the `logOutgoingEmail` function, which includes code that requires **Mailbox 1.13**. Suppose that in that same scenario, the "runtime" object that's configured to support the "logOutgoingEmail" action isn't configured to support any other action. In that case, the developer should block the runtime object in versions that don't support **Mailbox 1.13** since it would never be used. The following is an example. For details of the runtime configuration, see [Create add-in commands with the unified manifest for Microsoft 365](/office/dev/add-ins/develop/create-addin-commands-unified-manifest).
-
 
 ```json
 "extensions": [

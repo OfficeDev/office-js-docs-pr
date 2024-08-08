@@ -20,7 +20,7 @@ You can create an Office Add-in by using the Yeoman generator for Office Add-ins
 
 [!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Outlook on the web, [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), Outlook 2016 or later on Windows (connected to a Microsoft 365 account), or Outlook on Mac.
+- Outlook on the web, [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), Outlook 2016 or later on Windows (connected to a Microsoft 365 account), or Outlook on Mac.
 
 ### Create the add-in project
 
@@ -34,13 +34,13 @@ You can create an Office Add-in by using the Yeoman generator for Office Add-ins
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    - **Which manifest would you like to use?** - Choose either `unified manifest for Microsoft 365` or `XML manifest`
+    - **Which manifest would you like to use?** - Choose either `Unified manifest for Microsoft 365` or `Add-in only manifest`
 
     [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)]
 
     Depending on your choice of manifest, the prompts and answers should look like one of the following.
 
-    ![The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and XML manifest are chosen.](../images/yo-office-outlook-xml-manifest-javascript.png)
+    ![The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and add-in only manifest are chosen.](../images/yo-office-outlook-xml-manifest-javascript.png)
 
     ![The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and unified manifest are chosen.](../images/yo-office-outlook-json-manifest-javascript.png)
 
@@ -176,9 +176,9 @@ Congratulations, you've successfully created your first Outlook task pane add-in
 
 When you've completed the wizard, Visual Studio creates a solution that contains two projects.
 
-|**Project**|**Description**|
+|Project|Description|
 |:-----|:-----|
-|Add-in project|Contains only an XML manifest file, which contains all the settings that describe your add-in. These settings help the Office application determine when your add-in should be activated and where the add-in should appear. Visual Studio generates the contents of this file for you so that you can run the project and use your add-in immediately. You can change these settings any time by modifying the XML file.|
+|Add-in project|Contains an add-in only manifest file, which contains all the settings that describe your add-in. These settings help the Office application determine when your add-in should be activated and where the add-in should appear. Visual Studio generates the contents of this file for you so that you can run the project and use your add-in immediately. You can change these settings any time by modifying the XML file.|
 |Web application project|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local Internet Information Services (IIS) server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.|
 
 ### Update the code
@@ -266,7 +266,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 ### Update the manifest
 
-1. Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
+1. Open the manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
 
 1. The **\<ProviderName\>** element has a placeholder value. Replace it with your name.
 
@@ -298,7 +298,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 1. Your mailbox opens in Outlook on the web. Select or open a message.
 
     > [!TIP]
-    > You can also test the add-in in Outlook on Windows as long as the IIS server is running.
+    > You can also test the add-in in classic Outlook on Windows as long as the IIS server is running.
 
 1. Within the message, navigate to the action bar, then select **Apps**.
 
@@ -331,5 +331,5 @@ If you receive the error "We can't open this add-in from localhost" in the task 
 
 ## See also
 
-- [Office Add-ins XML manifest](../develop/xml-manifest-overview.md)
+- [Office Add-ins with the add-in only manifest](../develop/xml-manifest-overview.md)
 - [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

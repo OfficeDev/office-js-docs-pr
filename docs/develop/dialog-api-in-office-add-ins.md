@@ -24,7 +24,7 @@ The following image shows an example of a dialog box.
 The dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the Office application and with the page in the task pane, if there is one.
 
 > [!NOTE]
-> If you're developing an add-in that runs in Office on the web or new Outlook on Windows (preview) and it requires access to a user's device capabilities, see the [device permission API](/javascript/api/requirement-sets/common/device-permission-service-requirement-sets) to learn how to prompt the user for permissions. Device capabilities include a user's camera, geolocation, and microphone.
+> If you're developing an add-in that runs in Office on the web or new Outlook on Windows and it requires access to a user's device capabilities, see the [device permission API](/javascript/api/requirement-sets/common/device-permission-service-requirement-sets) to learn how to prompt the user for permissions. Device capabilities include a user's camera, geolocation, and microphone.
 
 ## Open a dialog box from a host page
 
@@ -243,7 +243,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 >   "Another trusted domain"="https://fabrikam.com"
 >   ```
 >
-> - In Office on the web and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), if the domain of your dialog is different from that of your add-in and it enforces the [Cross-Origin-Opener-Policy: same-origin](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) response header, your add-in will be blocked from accessing messages from the dialog and your users will be shown [error 12006](dialog-handle-errors-events.md#errors-and-events-in-the-dialog-box). To prevent this, you must set the header to `Cross-Origin-Opener-Policy: unsafe-none` or configure your add-in and dialog to be in the same domain.
+> - In Office on the web and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), if the domain of your dialog is different from that of your add-in and it enforces the [Cross-Origin-Opener-Policy: same-origin](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) response header, your add-in will be blocked from accessing messages from the dialog and your users will be shown [error 12006](dialog-handle-errors-events.md#errors-and-events-in-the-dialog-box). To prevent this, you must set the header to `Cross-Origin-Opener-Policy: unsafe-none` or configure your add-in and dialog to be in the same domain.
 
 ## Pass information to the dialog box
 

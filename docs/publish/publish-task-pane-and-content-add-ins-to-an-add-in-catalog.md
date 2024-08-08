@@ -13,9 +13,9 @@ An app catalog is a dedicated site collection in a SharePoint web application or
 > [!IMPORTANT]
 >
 > - Outlook add-ins are **not** supported by app catalogs.
-> - App catalogs on SharePoint don't support add-in features that are implemented in the `VersionOverrides` node of the [Office add-in XML manifest](../develop/xml-manifest-overview.md), such as add-in commands.
+> - App catalogs on SharePoint don't support add-in features that are implemented in the `VersionOverrides` node of the [Office add-in only manifest](../develop/xml-manifest-overview.md), such as add-in commands.
 > - If you're targeting a cloud or hybrid environment, we recommend that you [use Integrated Apps via the Microsoft 365 admin center](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) to publish your add-ins.
-> - App catalogs on SharePoint aren't supported in Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/office/dev/store/submit-to-the-office-store).
+> - App catalogs on SharePoint aren't supported in Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).
 > - App catalogs don't support add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
 
 
@@ -65,7 +65,7 @@ Complete the steps in one of the following sections to publish an Office Add-in 
 1. Choose **Distribute apps for Office**.
 1. In the **Apps for Office** page, choose **New**.
 1. In the **Add a document** dialog, select the **Choose Files** button.
-1. Locate and specify the [XML manifest](../develop/xml-manifest-overview.md) file to upload and choose **Open**.
+1. Locate and specify the [manifest](../develop/xml-manifest-overview.md) file to upload and choose **Open**.
 1. In the **Add a document** dialog, choose **OK**.
 
 ## Insert Office Add-ins from the app catalog

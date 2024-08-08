@@ -13,10 +13,10 @@ There are two tools that you can use to create an Outlook Add-in project that us
 In this article, you'll walk through the process of building an Outlook task pane add-in that displays a property of a selected message, triggers a notification on the reading pane, and inserts text into a message on the compose pane. This add-in will use the unified manifest for Microsoft 365. For more information about this manifest, see [Unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
 
 > [!NOTE]
-> The unified manifest is supported on Outlook for Windows, Outlook on the web, and Outlook on mobile platforms. We are working to support it in Outlook on Mac and in other Office applications.
+> The unified manifest is supported on Outlook for Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), Outlook on the web, and Outlook on mobile platforms. We're working to support it in Outlook on Mac and in other Office applications.
 
 > [!TIP]
-> If you want to build an Outlook add-in using the XML manifest, see [Build your first Outlook add-in](outlook-quickstart.md).
+> If you want to build an Outlook add-in using the add-in only manifest, see [Build your first Outlook add-in](outlook-quickstart.md).
 
 ## Create the add-in
 

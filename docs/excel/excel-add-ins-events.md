@@ -54,7 +54,7 @@ Events within an Excel workbook can be triggered by:
 - Office Add-in (JavaScript) code that changes the workbook
 - VBA add-in (macro) code that changes the workbook
 
-Any change that complies with default behavior of Excel will trigger the corresponding event(s) in a workbook.
+Any change that complies with default behavior of Excel will trigger the corresponding events in a workbook.
 
 ### Lifecycle of an event handler
 
@@ -65,7 +65,7 @@ An event handler is created when an add-in registers the event handler. It is de
 
 ### Events and coauthoring
 
-With [coauthoring](co-authoring-in-excel-add-ins.md), multiple people can work together and edit the same Excel workbook simultaneously. For events that can be triggered by a coauthor, such as `onChanged`, the corresponding **Event** object will contain a **source** property that indicates whether the event was triggered locally by the current user (`event.source = Local`) or was triggered by the remote coauthor (`event.source = Remote`).
+With [coauthoring](co-authoring-in-excel-add-ins.md), multiple people can work together and edit the same Excel workbook simultaneously. For events that can be triggered by a coauthor, such as `onChanged`, the corresponding **Event** object will contain a **source** property that indicates whether the event was triggered locally by the current user (`event.source == Local`) or was triggered by the remote coauthor (`event.source == Remote`).
 
 ## Register an event handler
 
@@ -121,6 +121,8 @@ async function handleSelectionChange(event) {
 }
 
 async function remove() {
+  // The `RequestContext` used to create the event handler is needed to remove it.
+  // In this example, `eventContext` is being used to keep track of that context.
   await Excel.run(eventResult.context, async (context) => {
     eventResult.remove();
     await context.sync();

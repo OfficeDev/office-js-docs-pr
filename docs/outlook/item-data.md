@@ -17,7 +17,7 @@ The following table shows the item-level properties in the Office JavaScript API
 
 For the remaining item-level properties available in compose forms, because the add-in and user can possibly be reading or writing the same property at the same time, the methods to get or set them in compose mode are asynchronous, and hence the type of the objects returned by these properties may also be different in compose forms than in read forms. For more information about using asynchronous methods to get or set item-level properties in compose mode, see [Get and set item data in a compose form in Outlook](get-and-set-item-data-in-a-compose-form.md).
 
-|**Item type**|**Property**|**Property type in read forms**|**Property type in compose forms**|
+|Item type|Property|Property type in read forms|Property type in compose forms|
 |:-----|:-----|:-----|:-----|
 |Appointments and messages|[dateTimeCreated](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|JavaScript **Date** object|Property not available|
 |Appointments and messages|[dateTimeModified](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|JavaScript **Date** object|Property not available|

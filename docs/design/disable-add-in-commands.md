@@ -1,7 +1,7 @@
 ---
 title: Enable and Disable Add-in Commands
 description: Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.
-ms.date: 06/18/2024
+ms.date: 08/05/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,13 +13,11 @@ When some functionality in your add-in should only be available in certain conte
 You can also specify whether the command is enabled or disabled when the Office client application opens.
 
 > [!NOTE]
-> This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
->
-> - [Basic concepts for Add-in Commands](add-in-commands.md)
+> This article assumes that you're familiar with the [basic concepts for Add-in Commands](add-in-commands.md). Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
 
 ## Office application and platform support
 
-The APIs described in this article are available in Excel, PowerPoint, and Word as part of the [RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) requirement set. Currently, the Ribbon APIs for the web applications are in [preview](../develop/understanding-the-javascript-api-for-office.md#accessing-the-office-javascript-api-library). To learn how to test for platform support with requirement sets, see [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md).
+The APIs described in this article are available in **Excel**, **PowerPoint**, and **Word** as part of the [RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) requirement set. To learn how to test for platform support with requirement sets, see [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md).
 
 ## Shared runtime required
 

@@ -1,11 +1,11 @@
 ---
-title: Develop Outlook add-ins for the new Outlook on Windows (preview)
-description: Learn how to develop add-ins that are compatible with the new Outlook on Windows (preview).
-ms.date: 05/20/2024
+title: Develop Outlook add-ins for the new Outlook on Windows
+description: Learn how to develop add-ins that are compatible with the new Outlook on Windows.
+ms.date: 07/01/2024
 ms.localizationpriority: medium
 ---
 
-# Develop Outlook add-ins for the new Outlook on Windows (preview)
+# Develop Outlook add-ins for the new Outlook on Windows
 
 The new Outlook on Windows desktop client unifies the Windows and web codebases to create a more consistent Outlook experience for users and administrators. Its modern and simplified interface has added capabilities and aims to improve productivity, organization, and collaboration for users. More importantly, the new Outlook on Windows supports Outlook web add-ins, so that you can continue to extend Outlook's functionality.
 
@@ -49,17 +49,17 @@ The following table identifies key Outlook scenarios and their support status in
 |Data loss prevention|Prevent users from forwarding mail items that contain highly sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|<ul><li>[Automatically check for an attachment before a message is sent](smart-alerts-onmessagesend-walkthrough.md)</li><li>[Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)</li><li>[Manage the sensitivity label of your message or appointment in compose mode](sensitivity-label.md)</li><li>[Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)</li><li>[Office.SensitivityLabel](/javascript/api/outlook/office.sensitivitylabelscatalog)</li><li>[Office.SensitivitiyLabelsCatalog](/javascript/api/outlook/office.sensitivitylabelscatalog)</li><li>[Office.SensitivityLabelDetails](/javascript/api/outlook/office.sensitivitylabeldetails)</li><li>[Office.context.mailbox.item.closeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-closeasync-member(1))</li><li>[Office.context.mailbox.item.inReplyTo](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-inreplyto-member)</li><li>[Office.context.mailbox.item.getConversationIndexAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getconversationindexasync-member(1))</li><li>[Office.context.mailbox.item.getItemClassAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getitemclassasync-member(1))</li></ul>|
 |Mail item classification|Enable users to identify and classify messages that contain sensitive information.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|<ul><li>[Automatically check for an attachment before a message is sent](smart-alerts-onmessagesend-walkthrough.md)</li><li>[Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)</li><li>[Manage the sensitivity label of your message or appointment in compose mode](sensitivity-label.md)</li><li>[Manage the sensitivity level of an appointment](/javascript/api/outlook/office.sensitivity)</li><li>[Office.Sensitivity](/javascript/api/outlook/office.sensitivity)</li><li>[Office.SensitivityLabel](/javascript/api/outlook/office.sensitivitylabelscatalog)</li><li>[Office.SensitivitiyLabelsCatalog](/javascript/api/outlook/office.sensitivitylabelscatalog)</li><li>[Office.SensitivityLabelDetails](/javascript/api/outlook/office.sensitivitylabeldetails)</li></ul>|
 |Data sync service|Enable bidirectional synchronization of mail items with partner systems.|Partially supported. Essential features are yet to be addressed to create a similar experience to VSTO or COM add-ins.|<ul><li>[Use Microsoft Graph to manage personal contacts in Outlook](/graph/outlook-contacts-concept-overview)</li></ul>|
-|Proofing mail items|Provide users with real-time proofreading assistance as they compose messages.|Not currently supported.|Not available.|
+|Proofing mail items|Provide users with real-time proofreading assistance as they compose messages.|Not currently supported.|Not available|
 
 There are various possibilities for extending the Outlook functionality through add-ins. If your VSTO or COM add-in solution doesn't quite fit any of the scenarios in the table, [complete the survey to share your scenario](https://aka.ms/DevNewOutlook).
 
 ## Support for classic Outlook on Windows
 
-The classic Outlook on Windows desktop client will continue to support the development of new and existing Outlook web add-ins. Additionally, it will continue to receive releases of the latest Outlook add-in features.
+Classic Outlook on Windows with a Microsoft 365 subscription or a retail perpetual version of Office 2016 or later will continue to support the development of new and existing Outlook web add-ins. Additionally, it will continue to receive releases of the latest Outlook add-in features.
 
 ## Test your add-in in the new Outlook on Windows
 
-Test your Outlook web add-in in the new Outlook on Windows today! To switch to the new Outlook on Windows that's in preview, you must meet the following requirements.
+Test your Outlook web add-in in the new Outlook on Windows today! To switch to the new Outlook on Windows, you must meet the following requirements.
 
 - Have a Microsoft 365 work or school account connected to Exchange Online. The new client doesn't currently support on-premises, hybrid, or sovereign Exchange accounts.
 
@@ -68,7 +68,7 @@ Test your Outlook web add-in in the new Outlook on Windows today! To switch to t
 
 - Have a minimum OS installation of Windows 10 Version 1809 (Build 17763).
 
-To help you sign up and install the Outlook desktop client, see [Getting started with the new Outlook for Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
+To help you install and set up the Outlook desktop client, see [Getting started with the new Outlook for Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
 For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
 

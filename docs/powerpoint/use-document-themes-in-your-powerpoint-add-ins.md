@@ -56,7 +56,7 @@ Use the following steps to add and reference the **OfficeThemes.css** file to yo
 > [!NOTE]
 > The steps in this procedure only apply to Visual Studio 2015. If you are using Visual Studio 2019, the **OfficeThemes.css** file is created automatically for any new PowerPoint add-in projects that you create.
 
-1. In **Solution Explorer**, right-click the **Content** folder in the _**project_name**_**Web** project, choose **Add**, and then select **Style Sheet**.
+1. In **Solution Explorer**, right-click (or select and hold) the **Content** folder in the _**project_name**_**Web** project, choose **Add**, and then select **Style Sheet**.
 
 1. Name the new style sheet **OfficeThemes**.
 
@@ -222,7 +222,7 @@ The **OfficeThemes.css** file provides classes that correspond to the 2 fonts an
 
 ### Theme fonts for content add-ins
 
-|**Class**|**Description**|
+|Class|Description|
 |:-----|:-----|
 | `office-bodyFont-eastAsian`|East Asian name of the body font.|
 | `office-bodyFont-latin`|Latin name of the body font. Default "Calabri"|
@@ -235,7 +235,7 @@ The **OfficeThemes.css** file provides classes that correspond to the 2 fonts an
 
 ### Theme colors for content add-ins
 
-|**Class**|**Description**|
+|Class|Description|
 |:-----|:-----|
 | `office-docTheme-primary-fontColor`|Primary font color. Default #000000|
 | `office-docTheme-primary-bgColor`|Primary font background color. Default #FFFFFF|
@@ -272,7 +272,7 @@ The **OfficeThemes.css** file provides classes that correspond to the four color
 
 ### Theme font and background colors for task pane add-ins
 
-|**Class**|**Description**|
+|Class|Description|
 |:-----|:-----|
 | `office-officeTheme-primary-fontColor`|Primary font color. Default #B83B1D|
 | `office-officeTheme-primary-bgColor`|Primary background color. Default #DEDEDE|

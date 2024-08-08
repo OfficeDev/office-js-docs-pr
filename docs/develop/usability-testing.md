@@ -20,7 +20,7 @@ These testing services help you to streamline test plan creation and remove the 
 You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
 > [!NOTE]
-> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to AppSource](/office/dev/store/submit-to-appsource-via-partner-center), it must work on all [platforms that support the methods that you define](/javascript/api/requirement-sets).
+> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), it must work on all [platforms that support the methods that you define](/javascript/api/requirement-sets).
 
 ## 1. Sign up for a testing service
 
