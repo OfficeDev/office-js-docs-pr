@@ -176,7 +176,7 @@ The following is an example of a **\<VersionOverrides\>** node configured for sp
 
 ## Implement the event handler
 
-When your add-in is used to report a message, it generates a [SpamReporting](/javascript/api/office/office.eventtype) event, which is then processed by the event handler in the JavaScript file of your add-in. To map the name of the event handler you specified in the **\<FunctionName\>** element of your manifest to its JavaScript counterpart, you must call [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) in your code.
+When your add-in is used to report a message, it generates a [SpamReporting](/javascript/api/office/office.eventtype) event, which is then processed by the event handler in the JavaScript file of your add-in. To map the name of the event handler you specified in the **\<FunctionName\>** element of your manifest to its JavaScript counterpart, you must call [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) in your code.
 
 1. In your add-in project, navigate to the **./src** directory. Then, create a new folder named **spamreporting**.
 1. In the **./src/spamreporting** folder, create a new file named **spamreporting.js**.
