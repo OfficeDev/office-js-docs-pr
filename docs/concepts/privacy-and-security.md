@@ -137,7 +137,7 @@ You specify permissions in the manifest of your add-in, as shown in the example 
 
 To see an example of how to request permissions in the manifest, open the tab for the type of manifest your add-in uses.
 
-# [Unified manifest](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 The following example shows how a task pane add-in specifies the **read document** permission in its manifest. To keep permissions as the focus, other elements in the manifest aren't displayed.
 
@@ -166,9 +166,9 @@ The following example shows how a task pane add-in specifies the **read document
            xmlns:ver="http://schemas.microsoft.com/office/appforoffice/1.0"
            xsi:type="TaskPaneApp">
 
-... <!-- To keep permissions as the focus, not displaying other elements. -->
+    ... <!-- To keep permissions as the focus, not displaying other elements. -->
   <Permissions>ReadDocument</Permissions>
-...
+    ...
 </OfficeApp>
 ```
 

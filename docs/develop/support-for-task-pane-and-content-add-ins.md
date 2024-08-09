@@ -1,7 +1,7 @@
 ---
 title: Office JavaScript API support for content and task pane add-ins
 description: Use the Office JavaScript API to create a task pane or content add-in.
-ms.date: 03/21/2023
+ms.date: 09/06/2024
 ms.localizationpriority: medium
 ---
 
@@ -139,7 +139,7 @@ Your add-in uses the app manifest to request permission to access the level of f
    ```
 
 
-- **Add-in only manifest**: Use the `Permissions` element in its manifest  For example, if your add-in requires read/write access to the document, its manifest must specify `ReadWriteDocument` as the text value in its `Permissions` element. Because permissions exist to protect a user's privacy and security, as a best practice you should request the minimum level of permissions it needs for its features. The following example shows how to request the **read document** permission in a task pane's manifest.
+- **Add-in only manifest**: Use the `Permissions` element in the manifest  For example, if your add-in requires read/write access to the document, its manifest must specify `ReadWriteDocument` as the text value in its `Permissions` element. Because permissions exist to protect a user's privacy and security, as a best practice you should request the minimum level of permissions it needs for its features. The following example shows how to request the **read document** permission in a task pane's manifest.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
