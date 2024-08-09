@@ -108,17 +108,7 @@ Update the CSS file to ensure that the add-in UI is styled appropriately given t
 
 ### Try it out
 
-1. If the local web server is already running and your add-in is already loaded in your selected Office application, proceed to step 2. Otherwise, start the local web server and sideload your add-in.
-
-    - To test your add-in in Office, run the following command in the root directory of your project. This starts the local web server (if it isn't already running) and opens the selected Office application with your add-in loaded.
-
-    ```command&nbsp;line
-    npm start
-    ```
-
-    - To test your add-in in Office on the web, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a Office document on your OneDrive or a SharePoint library to which you have permissions.
-
-    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+1. Ensure that the web server is running and the add-in has been sideloaded. For details, see the instructions in the quick start you used.
 
 1. If the add-in task pane isn't already open in Office, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
 
