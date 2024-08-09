@@ -120,7 +120,7 @@ Update the CSS file to ensure that the add-in UI is styled appropriately given t
 
     ![The add-in task pane UI on second run.](../images/fre-tutorial-addin-next-run.png)
 
-1. If the local web server is running, run the following command when you want to stop the server and uninstall the add-in.
+1. If you used `npm start` to start the local web server, run the following command when you want to stop the server and uninstall the add-in.
 
     ```command&nbsp;line
     npm stop
