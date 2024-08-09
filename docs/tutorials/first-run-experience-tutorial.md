@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 In this article, you'll walk through the process of updating a task pane add-in to include a [first-run experience](../design/first-run-experience-patterns.md) using the value placemat pattern. When the user runs the add-in, the add-in determines whether or not to show the first-run experience by checking [local storage](../develop/persisting-add-in-state-and-settings.md#browser-storage) for a flag.
 
-This tutorial provides instructions and screenshots for Excel but you can use a similar pattern to implement a first-run experience in other Office applications where Office Web Add-ins are supported. Also note that actual interactions with your selected Office application will differ.
+This tutorial provides instructions and screenshots for Excel but you can use a similar pattern to implement a first-run experience in other Office applications where Office Web Add-ins are supported.
 
 ## Prerequisites
 
@@ -29,11 +29,11 @@ This tutorial provides instructions and screenshots for Excel but you can use a 
 
 ### Update the HTML file
 
-Be clear about the area of the UI that will be part of the first-run experience. In this tutorial, you'll create a div with `id` named "first-run-experience" that represents what users see only the first time they run your add-in.
+Be clear about the area of the UI that will be part of the first-run experience. In this tutorial, you'll create a `<div>` element with the `id` named "first-run-experience" that represents what users see only the first time they run your add-in.
 
 1. Open the **taskpane.html**. Replace the `<main>` element with the following markup, then save the file. Some notes about this markup:
 
-    - The "first-run-experience" div is inserted in the `<main>` element. It surrounds the list of Office Add-ins features. By default, this div isn't displayed.
+    - The "first-run-experience" `<div>` is inserted in the `<main>` element. It surrounds the list of Office Add-ins features. By default, this `<div>` isn't displayed.
     - The first `<p>` element provides the user with instructions for using the add-in.
 
     ```html
@@ -72,14 +72,15 @@ Update the JavaScript file to display the first-run experience if this is the fi
 1. Open the **taskpane.js** file. Replace the `Office.onReady` statement with the following code, then save the file. Some notes about this code:
 
     - It checks local storage for a key called "showedFRE". If the key doesn't exist, then show the first-run experience.
-    - It adds a new function called `showFirstRunExperience` that displays the "first-run-experience" div added to the HTML. This function also adds the "showedFRE" item to local storage.
+    - It adds a new function called `showFirstRunExperience` that displays the "first-run-experience" `<div>` added to the HTML. This function also adds the "showedFRE" item to local storage.
 
     ```javascript
     Office.onReady((info) => {
       if (info.host === Office.HostType.Excel) {
         document.getElementById("sideload-msg").style.display = "none";
         document.getElementById("app-body").style.display = "flex";
-    
+
+        // showedFRE is created and set to "true" when you call showFirstRunExperience().
         if (!localStorage.getItem("showedFRE")) {
           showFirstRunExperience();
         }
@@ -98,7 +99,7 @@ Update the JavaScript file to display the first-run experience if this is the fi
 
 ### Update the CSS file
 
-Update the CSS file to ensure that the add-in UI is styled appropriately given the addition of the "first-run-experience" div.
+Update the CSS file to ensure that the add-in UI is styled appropriately given the addition of the "first-run-experience" `<div>`.
 
 - Open the **taskpane.css** file. Replace the line `.ms-welcome__main {` with the following code, then save the file.
 
@@ -134,19 +135,16 @@ Congratulations, you've successfully created an Office task pane add-in with a f
 
 Using this tutorial, you implemented a basic [first-run experience](../design/first-run-experience-patterns.md). For the first-run experience to be ready for users, you should consider the following:
 
-- Use a more secure and robust option for tracking first-run state. For example, use storage partitioning if available, or implement a Single Sign-on (SSO) authentication solution. For more about available settings options, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md). For more about available authentication options, see [Overview of authentication and authorization](../develop/overview-authn-authz.md).
 - Update the features listed in the value placemat to match what your add-in actually does.
 - Implement a different pattern (for example, video placemat or carousel) that better showcases the benefits of your add-in.
+- Use a more secure and robust option for tracking first-run state. For example, use storage partitioning if available, or implement a Single Sign-on (SSO) authentication solution. For more about available settings options, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md). For more about available authentication options, see [Overview of authentication and authorization](../develop/overview-authn-authz.md).
 
 If you're planning to make your add-in available in the AppSource marketplace, you'll need to have a robust and useful first-run experience. For more information, see [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md).
-
-## Code samples
-
-- ["Hello world" add-ins](../overview/office-add-in-code-samples.md#getting-started): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
 
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
+- [Office Add-in code samples](../overview/office-add-in-code-samples.md)
 - [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
