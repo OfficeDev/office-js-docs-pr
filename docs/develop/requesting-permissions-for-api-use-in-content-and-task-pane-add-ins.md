@@ -16,7 +16,6 @@ This article describes the different permission levels that you declare in your 
 
 A five-level JavaScript API access-permissions model provides the basis for privacy and security for users of your add-ins. The following figure shows the five levels of API permissions you can declare in your add-in's manifest.
 
-*Figure 1. The five-level permission model for add-ins*
 
 ![Levels of permissions for add-ins.](../images/office15-app-sdk-task-pane-app-permission.png)
 
