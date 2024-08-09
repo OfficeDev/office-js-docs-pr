@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 04/12/2024
+ms.date: 08/09/2024
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -70,19 +70,7 @@ The Yeoman generator creates a project in a folder with the project name that yo
 1. Open your project in VS Code or your preferred code editor.
    [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
 
-1. Open the file **./src/taskpane/taskpane.html** and replace the entire **\<main\>** element (within the **\<body\>** element) with the following markup. This new markup adds a label where the script in **./src/taskpane/taskpane.js** will write data.
-
-    ```html
-    <main id="app-body" class="ms-welcome__main" style="display: none;">
-        <h2 class="ms-font-xl"> Discover what Office Add-ins can do for you today! </h2>
-        <p><label id="item-subject"></label></p>
-        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
-            <span class="ms-Button-label">Run</span>
-        </div>
-    </main>
-    ```
-
-1. In your code editor, open the file **./src/taskpane/taskpane.js**, then add the following code to the **run** function. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
+1. Open the file **./src/taskpane/taskpane.js**, then replace the contents of the **run** function with the following code. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
 
     ```js
     // Get a reference to the current message
@@ -111,10 +99,10 @@ The Yeoman generator creates a project in a folder with the project name that yo
     });
     
     export async function run() {
-      // Get a reference to the current message
+      // Get a reference to the current message.
       const item = Office.context.mailbox.item;
     
-      // Write message property value to the task pane
+      // Write message property value to the task pane.
       document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
     }
     ```
@@ -135,7 +123,7 @@ The Yeoman generator creates a project in a folder with the project name that yo
 
 1. Choose the **Home** tab (or the **Message** tab if you opened the message in a new window), and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
-    ![A message window in Outlook with the add-in ribbon button highlighted.](../images/quick-start-button-1.png)
+    ![A message window in Outlook with the add-in ribbon button highlighted.](../images/outlook-quick-start-button-1.png)
 
 1. When prompted with the **WebView Stop On Load** dialog box, select **OK**.
 
@@ -143,9 +131,9 @@ The Yeoman generator creates a project in a folder with the project name that yo
 
 1. Scroll to the bottom of the task pane and choose the **Run** link to write the message subject to the task pane.
 
-    ![The add-in's task pane with the Run link highlighted.](../images/quick-start-task-pane-2.png)
+    ![The add-in's task pane with the Run link highlighted.](../images/outlook-quick-start-task-pane-2.png)
 
-    ![The add-in's task pane displaying message subject.](../images/quick-start-task-pane-3.png)
+    ![The add-in's task pane displaying message subject.](../images/outlook-quick-start-task-pane-3.png)
 
 ### Next steps
 

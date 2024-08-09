@@ -228,8 +228,8 @@ items:
             - name: Overview
               href: design/first-run-experience-patterns.md
               displayName: first run experience
-            - name: Quick start
-              href: quickstarts/fre-quickstart.md
+            - name: Tutorial
+              href: tutorials/first-run-experience-tutorial.md
               displayName: first run experience
           - name: Navigation
             href: design/navigation-patterns.md

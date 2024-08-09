@@ -1,7 +1,7 @@
 ---
 title: First-run experience patterns for Office Add-ins
 description: Learn the best practices for designing first-run experiences in Office Add-ins.
-ms.date: 08/08/2024
+ms.date: 08/09/2024
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -48,7 +48,7 @@ The value placement communicates your add-in's value proposition through logo pl
 
 ![Illustration showing a value placemat in the first-run experience of an Office desktop application task pane. In this example, the task pane displays the add-in logo, a description of the add-in, and a button to get started.](../images/add-in-FRE-value.png)
 
-For an example that uses the value placemat pattern, see the [first-run experience quick start](../quickstarts/fre-quickstart.md).
+For an example that uses the value placemat pattern, see the [first-run experience tutorial](../tutorials/first-run-experience-tutorial.md).
 
 ### Video Placemat
 
@@ -64,5 +64,5 @@ The video placemat shows users a video before they start using your add-in.
 
 ## See also
 
-[First-run experience quick start](../quickstarts/fre-quickstart.md)
+[First-run experience tutorial](../tutorials/fre-tutorial.md)
 [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
