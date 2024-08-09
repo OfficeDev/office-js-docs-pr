@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Build an Office Add-in with a basic first-run experience
 
-In this article, you'll walk through the process of updating a task pane add-in to include a [first-run experience](../design/first-run-experience-patterns.md) using the value placemat pattern. When the user runs the add-in, the add-in determines whether or not to show the first-run experience by checking [local storage](../develop/persisting-add-in-state-and-settings.md#browser-storage) for the existence of a certain flag.
+In this article, you'll walk through the process of updating a task pane add-in to include a [first-run experience](../design/first-run-experience-patterns.md) using the value placemat pattern. When the user runs the add-in, the add-in determines whether or not to show the first-run experience by checking [local storage](../develop/persisting-add-in-state-and-settings.md#browser-storage) for a flag.
 
 This tutorial provides instructions and screenshots for Excel but you can use a similar pattern to implement a first-run experience in other Office applications where Office Web Add-ins are supported. Also note that actual interactions with your selected Office application will differ.
 
@@ -31,7 +31,7 @@ This tutorial provides instructions and screenshots for Excel but you can use a 
 
 Be clear about the area of the UI that will be part of the first-run experience. In this tutorial, you'll create a div with `id` named "first-run-experience" that represents what users see only the first time they run your add-in.
 
-1. Open the **taskpane.html**. Replace the `<main>` element with the following markup, then save the file. Note about this markup:
+1. Open the **taskpane.html**. Replace the `<main>` element with the following markup, then save the file. Some notes about this markup:
 
     - The "first-run-experience" div is inserted in the `<main>` element. It surrounds the list of Office Add-ins features. By default, this div isn't displayed.
     - The first `<p>` element provides the user with instructions for using the add-in.
@@ -69,10 +69,10 @@ Be clear about the area of the UI that will be part of the first-run experience.
 
 Update the JavaScript file to display the first-run experience if this is the first time the user is running the add-in.
 
-1. Open the **taskpane.js** file. Replace the `Office.onReady` statement with the following code, then save the file. Note about this code:
+1. Open the **taskpane.js** file. Replace the `Office.onReady` statement with the following code, then save the file. Some notes about this code:
 
-    - It checks local storage for a key called "showedFRE". If it doesn't exist, then show the first-run experience.
-    - Adds a new function called `showFirstRunExperience` that displays the "first-run-experience" div added to the HTML. This function also adds the "showedFRE" item to local storage.
+    - It checks local storage for a key called "showedFRE". If the key doesn't exist, then show the first-run experience.
+    - It adds a new function called `showFirstRunExperience` that displays the "first-run-experience" div added to the HTML. This function also adds the "showedFRE" item to local storage.
 
     ```javascript
     Office.onReady((info) => {
