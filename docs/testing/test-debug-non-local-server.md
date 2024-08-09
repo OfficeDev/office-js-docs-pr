@@ -27,7 +27,7 @@ If your project wasn't created with Teams Toolkit or Yo Office, run the tool wit
 npx office-addin-debugging start manifest.json
 ```
 
-This command sideloads the add-in for testing and debugging. The tool also works with an XML manifest.
+This command sideloads the add-in for testing and debugging. The tool also works with an add-in only manifest.
 
 There are many options for the `start` command. For details, see the README for the tool at [office-addin-debugging](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-debugging).
 
