@@ -64,5 +64,5 @@ The video placemat shows users a video before they start using your add-in.
 
 ## See also
 
-[First-run experience tutorial](../tutorials/fre-tutorial.md)
+[First-run experience tutorial](../tutorials/first-run-experience-tutorial.md)
 [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
