@@ -167,7 +167,7 @@ The following example shows how a task pane add-in specifies the **read document
            xsi:type="TaskPaneApp">
 
     ... <!-- To keep permissions as the focus, not displaying other elements. -->
-  <Permissions>ReadDocument</Permissions>
+    <Permissions>ReadDocument</Permissions>
     ...
 </OfficeApp>
 ```

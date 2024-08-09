@@ -122,7 +122,7 @@ For more details about working with custom data using the methods of the `Settin
 
 Your add-in uses the app manifest to request permission to access the level of functionality it requires from the Office JavaScript API. The method varies depending on the type of manifest.
 
-- **Unified manifest for Microsoft 365**: Use the "authorization.permissions.resourceSpecific" property. For example, if your add-in requires read/write access to the document, its manifest must specify `Document.ReadWrite.User` as the value in its "authorization.permissions.resourceSpecific.name" property.The following example requests the **read document** permission, which allows only methods that can write to (but not read) the document.
+- **Unified manifest for Microsoft 365**: Use the "authorization.permissions.resourceSpecific" property. For example, if your add-in requires read/write access to the document, its manifest must specify `Document.ReadWrite.User` as the value in its "authorization.permissions.resourceSpecific.name" property. The following example requests the **read document** permission, which allows only methods that can read (but not write to) the document.
 
    ```json
    "authorization": {
