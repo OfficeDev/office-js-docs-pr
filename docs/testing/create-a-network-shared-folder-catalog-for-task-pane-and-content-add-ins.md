@@ -13,7 +13,7 @@ You can test an Office Add-in in an Office client that's on Windows by publishin
 > Deployment by network share isn't supported for production add-ins. This method has the following limitations.
 >
 > - The add-in can only be installed on Windows computers.
-> - Add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) are not supported by publishing to a network share.
+> - Add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) aren't supported when published to a network share.
 > - If a new version of an add-in changes the ribbon, such as by adding a custom tab or custom button to it, each user will have to reinstall the add-in.
 
 > [!NOTE]
