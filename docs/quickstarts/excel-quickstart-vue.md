@@ -1,7 +1,7 @@
 ---
 title: Use Vue to build an Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and Vue.
-ms.date: 12/04/2023
+ms.date: 07/14/2024
 ms.service: excel
 ms.localizationpriority: high
 ---
@@ -207,7 +207,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. Run your add-in and sideload the add-in within Excel. Follow the instructions for the platform you'll be using:
 
    - Web browser: [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-a-yeoman-created-add-in-to-office-on-the-web)
-   - Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+   - Windows: [Sideload Office Add-ins on Windows](../testing/test-debug-non-local-server.md)
    - Mac: [Sideload Office Add-ins on Mac](../testing/sideload-an-office-add-in-on-mac.md)
    - iPad: [Sideload Office Add-ins on iPad](../testing/sideload-an-office-add-in-on-ipad.md)
 

@@ -340,6 +340,8 @@ items:
         href: testing/sideload-an-office-add-in-on-ipad.md
       - name: Debug on Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
+    - name: Test and debug on a non-local server
+      href: testing/test-debug-non-local-server.md
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload
