@@ -23,7 +23,7 @@ This tutorial provides instructions and screenshots for Excel but you can use a 
     - [Project](../quickstarts/project-quickstart.md)
     - [Word](../quickstarts/word-quickstart.md)
 
-1. Follow the instructions in your selected quick start. After you complete the "Try it out" section, return here to continue.
+1. Follow the instructions in your selected quick start. After you complete its "Try it out" section, return here to continue.
 
 ## Implement the first-run experience
 
