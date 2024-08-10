@@ -50,7 +50,7 @@ The value placement communicates your add-in's value proposition through logo pl
 
 For an example that uses the value placemat pattern, see the [first-run experience tutorial](../tutorials/first-run-experience-tutorial.md).
 
-### Video Placemat
+### Video placemat
 
 The video placemat shows users a video before they start using your add-in.
 
