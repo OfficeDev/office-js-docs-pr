@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 08/08/2024
+ms.date: 08/13/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -133,6 +133,8 @@ If the **soft block** or **block** option is  used, the user can't send the item
 In Outlook on Windows (classic client starting in Version 2310 (Build 16913.10000)) and on Mac (starting in Version 16.80 (23121017)), a Smart Alerts add-in that implements the **soft block** or **block** option can only process a mail item while the Outlook client is online. If [Work Offline mode](https://support.microsoft.com/office/f3a1251c-6dd5-4208-aef9-7c8c9522d633) is turned on in the Outlook client when a mail item is sent, the item isn't saved to the **Outbox** folder and the user is alerted that they must deactivate Work Offline mode before they can attempt to send their item.
 
 ![Dialog that alerts the user that their mail item can't be processed by the Smart Alerts add-in while their Outlook client is in Work Offline mode.](../images/outlook-smart-alerts-offline-mode.png)
+
+If the Smart Alerts add-in implements the **prompt user** option, it doesn't process mail items while Work Offline mode is turned on. The item is saved to the **Outbox** folder instead.
 
 ### User navigates away from current message
 
