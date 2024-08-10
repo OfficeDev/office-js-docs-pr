@@ -40,7 +40,7 @@ The carousel takes users through a series of features or informational pages bef
 
 ![Illustration showing step 3 of a carousel in the first-run experience of an Office desktop application task pane. In this example, the third and final screen of the task pane shows a button to get started.](../images/add-in-FRE-step-3.png)
 
-## Value Placemat
+## Value placemat
 
 The value placement communicates your add-in's value proposition through logo placement, a clearly stated value proposition, feature highlights or summary, and a call-to-action.
 

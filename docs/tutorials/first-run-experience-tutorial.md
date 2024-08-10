@@ -109,9 +109,7 @@ Update the CSS file to ensure that the add-in UI is styled appropriately given t
 
 ### Try it out
 
-1. Ensure that the web server is running and the add-in has been sideloaded. For details, see the instructions in the quick start you used.
-
-1. If the add-in task pane isn't already open in Office, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. Ensure that the web server is running and the add-in has been sideloaded, then open the task pane. For details, see the instructions in the quick start you used.
 
 1. Verify that the task pane includes the list of features.
 
