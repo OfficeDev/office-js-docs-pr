@@ -11,6 +11,7 @@ ms.localizationpriority: high
 In this article, you'll walk through the process of building a Project task pane add-in.
 
 ## Prerequisites
+
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - Project 2016 or later on Windows
@@ -68,6 +69,16 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.
 
     ![The Project application with the task pane add-in loaded.](../images/project-quickstart-addin-1.png)
+
+1. When you want to stop the local web server and uninstall the add-in, follow these instructions:
+
+    - To stop the server, run the following command.
+
+        ```command&nbsp;line
+        npm stop
+        ```
+
+    - To uninstall the sideloaded add-in, see [Remove a sideloaded add-in](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md#remove-a-sideloaded-add-in).
 
 ## Next steps
 
