@@ -42,7 +42,7 @@ The carousel takes users through a series of features or informational pages bef
 
 ## Value placemat
 
-The value placement communicates your add-in's value proposition through logo placement, a clearly stated value proposition, feature highlights or summary, and a call-to-action.
+The value placemat communicates your add-in's value proposition through logo placement, a clearly stated value proposition, feature highlights or summary, and a call-to-action.
 
 *Figure 4. A value placemat with logo, clear value proposition, feature summary, and call-to-action*
 
