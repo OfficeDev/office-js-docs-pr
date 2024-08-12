@@ -116,7 +116,7 @@ Visual Studio creates a basic Word add-in that you'll be able to publish as-is, 
 
 ## Deploy updates
 
-[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
+[!INCLUDE [General statements about updating an add-in](../includes/deploy-updates-general.md)]
 
 ## See also
 
