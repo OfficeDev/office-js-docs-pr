@@ -48,11 +48,11 @@ If the following folder exists, delete its contents too.
 
 #### Manually clear the cache in Outlook
 
-To remove a sideloaded add-in from Outlook, use the steps outlined in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to find the add-in in the **Custom add-ins** section of the dialog box that lists your installed add-ins. Choose the ellipsis (`...`) for the add-in and then choose **Remove** to remove that specific add-in. 
+To remove a sideloaded add-in from Outlook, use the steps outlined in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to find the add-in in the **Custom add-ins** section of the dialog box that lists your installed add-ins. Choose the ellipsis (`...`) for the add-in and then choose **Remove** to remove that specific add-in.
 
 If this add-in removal doesn't work, then delete the contents of the `Wef` folder as noted previously for Excel, Word, and PowerPoint.
 
-If your Outlook add-in uses the [Unified manifest for Microsoft 365 (preview)](../develop/json-manifest-overview.md), also delete the following folder.
+If your Outlook add-in uses the [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md), also delete the following folder.
 
 ```
 %userprofile%\AppData\Local\Microsoft\Outlook\HubAppFileCache
