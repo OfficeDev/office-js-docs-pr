@@ -1,11 +1,11 @@
 ---
-title: Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code (prerelease)
+title: Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code (preview)
 description: Learn how to create Office Add-in projects using Office Add-ins Development Kit.
 ms.date: 08/09/2024
 ms.localizationpriority: high
 ---
 
-# Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code (prerelease)
+# Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code (preview)
 
 The Office Add-ins Development Kit helps developers set up the environment, create and build Office JS add-ins with a steamlined developer experience in Visual Studio Code.
 
