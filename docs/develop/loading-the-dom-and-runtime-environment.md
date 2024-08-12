@@ -20,7 +20,7 @@ The following events occur when a content or task pane add-in starts.
 
 1. The user opens a document that already contains an add-in or inserts an add-in in the document.
 
-2. The Office client application reads the add-in's XML manifest from AppSource, an app catalog on SharePoint, or the shared folder catalog it originates from.
+2. The Office client application reads the add-in's manifest from AppSource, an app catalog on SharePoint, or the shared folder catalog it originates from.
 
 3. The Office client application opens the add-in's HTML page in a webview control.
 
@@ -40,7 +40,7 @@ The following figure shows the flow of events involved in starting an Outlook ad
 
 The following events occur when an Outlook add-in starts.
 
-1. When Outlook starts, Outlook reads the XML manifests for Outlook add-ins that have been installed for the user's email account.
+1. When Outlook starts, Outlook reads the manifests for Outlook add-ins that have been installed for the user's email account.
 
 2. The user selects an item in Outlook.
 

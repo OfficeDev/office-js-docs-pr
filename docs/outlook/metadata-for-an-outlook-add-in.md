@@ -110,7 +110,7 @@ Before you can use custom properties, you must load them by calling the [loadCus
  > When using custom properties in Outlook add-ins, keep in mind that:
  >
  > - Outlook on Mac doesn't cache custom properties. If the user's network goes down, add-ins in Outlook on Mac wouldn't be able to access their custom properties.
- > - In Outlook on Windows, custom properties saved while in compose mode only persist after the item being composed is closed or after `Office.context.mailbox.item.saveAsync` is called.
+ > - In classic Outlook on Windows, custom properties saved while in compose mode only persist after the item being composed is closed or after `Office.context.mailbox.item.saveAsync` is called.
 
 ### Custom properties example
 
@@ -311,7 +311,7 @@ Office.context.mailbox.getCallbackTokenAsync(
 
 The following table summarizes saved custom properties behavior in messages for various Outlook clients.
 
-|Scenario|Outlook on the web and on new Windows client (preview)|classic Outlook on Windows|Outlook on Mac|
+|Scenario|Outlook on the web and on new Windows client|classic Outlook on Windows|Outlook on Mac|
 |---|---|---|---|
 |New compose|null|null|null|
 |Reply, reply all|null|null|null|
@@ -320,7 +320,7 @@ The following table summarizes saved custom properties behavior in messages for 
 |Sent item from reply or reply all|null|null|null|
 |Sent item from forward|null|Removes parent's properties if not saved|null|
 
-To handle the situation in Outlook on Windows:
+To handle the situation in classic Outlook on Windows:
 
 1. Check for existing properties on initializing your add-in, and keep them or clear them as needed.
 1. When setting custom properties, include an additional property to indicate whether the custom properties were added in read mode. This will help you differentiate if the property was created in compose mode or inherited from the parent.

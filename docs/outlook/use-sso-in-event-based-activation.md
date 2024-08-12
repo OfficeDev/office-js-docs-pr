@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 When an Outlook add-in implements event-based activation or integrated spam reporting, the events run in a separate [runtime](../testing/runtimes.md). To configure single sign-on (SSO) or request external data through cross-origin resource sharing (CORS) in these add-ins, you must configure a well-known URI. Through this resource, Office will be able to identify the add-ins, including their JavaScript files, that support SSO or CORS requests.
 
 > [!NOTE]
-> The steps in this article only apply to Outlook add-ins that run in classic Outlook on Windows. This is because classic Outlook on Windows uses a JavaScript file, while Outlook on Mac, on the web, and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use an HTML file that references the same JavaScript file. To learn more, see [Configure your Outlook add-in for event-based activation](autolaunch.md) and [Implement an integrated spam-reporting add-in](spam-reporting.md).
+> The steps in this article only apply to Outlook add-ins that run in classic Outlook on Windows. This is because classic Outlook on Windows uses a JavaScript file, while Outlook on Mac, on the web, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use an HTML file that references the same JavaScript file. To learn more, see [Configure your Outlook add-in for event-based activation](autolaunch.md) and [Implement an integrated spam-reporting add-in](spam-reporting.md).
 
 ## List allowed add-ins in a well-known URI
 
@@ -28,14 +28,14 @@ The following example shows how to configure SSO or CORS for two add-ins (a main
 }
 ```
 
-Host the JSON file under a location named `.well-known` in the URI at the root of the origin. For example, if the origin is `https://addin.contoso.com:8000/`, then the well-known URI is `https://addin.contoso.com:8000/.well-known/microsoft-officeaddins-allowed.json`.
+Host the JSON file under a location named `.well-known` in the URI at the root of the origin. For example, if the origin is `https://addin.contoso.com:8000/`, then the well-known URI is `https://addin.contoso.com:8000/.well-known/microsoft-officeaddins-allowed.json`. For clarification, this file is to be hosted in your Office Web Add-in, not the web server that you're attempting to make a CORS request to. See the [Outlook-Add-in-SSO-events](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/auth/Outlook-Add-in-SSO-events/public/.well-known/microsoft-officeaddins-allowed.json) sample for an example using the recommended location.
 
 The origin refers to a pattern of scheme + subdomain + domain + port. The name of the location **must** be `.well-known`, and the name of the resource file **must** be `microsoft-officeaddins-allowed.json`. This file must contain a JSON object with an attribute named `allowed` whose value is an array of all JavaScript files authorized for SSO for their respective add-ins.
 
 After you configure the well-known URI, if your add-in implements SSO, you can then call the [getAccessToken() API](/javascript/api/office-runtime/officeruntime.auth) to get an access token with the user's identity.
 
 > [!IMPORTANT]
-> While `OfficeRuntime.auth.getAccessToken` and `Office.auth.getAccessToken` perform the same functionality of retrieving an access token, we recommend calling `OfficeRuntime.auth.getAccessToken` in your event-based or spam-reporting (preview) add-in. This API is supported in all Outlook client versions that support event-based activation, integrated spam reporting, and SSO. On the other hand, `Office.auth.getAccessToken` is only supported in Outlook on Windows starting from Version 2111 (Build 14701.20000).
+> While `OfficeRuntime.auth.getAccessToken` and `Office.auth.getAccessToken` perform the same functionality of retrieving an access token, we recommend calling `OfficeRuntime.auth.getAccessToken` in your event-based or spam-reporting (preview) add-in. This API is supported in all Outlook client versions that support event-based activation, integrated spam reporting, and SSO. On the other hand, `Office.auth.getAccessToken` is only supported in classic Outlook on Windows starting from Version 2111 (Build 14701.20000).
 
 ## See also
 

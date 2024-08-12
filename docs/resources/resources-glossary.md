@@ -96,7 +96,7 @@ See also: [application](#application), [client](#client), [host](#host), [Office
 
 ## Office desktop application, Office desktop client, desktop client, desktop
 
-**Office desktop client** refers to an Office application that runs natively on Windows or on Mac. The Office desktop clients that support Office Add-ins are Excel on Windows and on Mac, Outlook on Windows and on Mac, PowerPoint on Windows and on Mac, Project on Windows, and Word on Windows and on Mac.
+**Office desktop client** refers to an Office application that runs natively on Windows or on Mac. The Office desktop clients that support Office Add-ins are Excel on Windows and on Mac, Outlook on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic) and on Mac, PowerPoint on Windows and on Mac, Project on Windows, and Word on Windows and on Mac.
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 

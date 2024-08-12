@@ -27,7 +27,7 @@ The following tables list client-server combinations that support the `OnMessage
 
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
-|**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
+|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
 |**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
@@ -37,7 +37,7 @@ The following tables list client-server combinations that support the `OnMessage
 
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
-|**Web browser (modern UI)**<br><br>[new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
+|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**Windows (classic)**|Not applicable|Not applicable|Not applicable|
 |**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
@@ -65,7 +65,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
    - The "id" of the runtime is set to a descriptive name, "autorun_runtime".
    - The "code" property has a child "page" property set to an HTML file and a child "script" property set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
        - Classic Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
-       - Outlook on the web and on Mac, and new Outlook on Windows (preview) execute the handler in a browser runtime, which loads an HTML file. The HTML file contains a `<script>` tag that then loads the JavaScript file.
+       - Outlook on the web and on Mac, and new Outlook on Windows execute the handler in a browser runtime, which loads an HTML file. The HTML file contains a `<script>` tag that then loads the JavaScript file.
 
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
    - The "lifetime" property is set to "short". This means the runtime starts up when the event occurs and shuts down when the handler completes.
@@ -136,7 +136,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
     ]
     ```
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To enable the add-in to activate when the `OnMessageFromChanged` event occurs, the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point must be configured in the `VersionOverridesV1_1` node of the manifest.
 
@@ -161,7 +161,7 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
            <Runtimes>
              <!-- HTML file that references or contains inline JavaScript event handlers.
                   This is used by event-based activation add-ins in Outlook on the web and on Mac,
-                  and in new Outlook on Windows (preview). -->
+                  and in new Outlook on Windows. -->
              <Runtime resid="WebViewRuntime.Url">
                <!-- JavaScript file that contains the event handlers.
                     This is used by event-based activation add-ins in classic Outlook on Windows. -->
@@ -335,7 +335,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     }
     
     // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to 
-    // map the event handler name specified in the manifest's LaunchEvent element (with the XML manifest)
+    // map the event handler name specified in the manifest's LaunchEvent element (with the add-in only manifest)
     // or the "autoRunEvents.events.actionId" property (with the unified manifest for Microsoft 365)
     // to its JavaScript counterpart.
     if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
@@ -348,7 +348,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 > Windows: At present, imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
 
 > [!TIP]
-> Event-based add-ins running in Outlook on Windows don't run code included in the `Office.onReady()` and `Office.initialize` functions. We recommend adding your add-in startup logic, such as checking the user's Outlook version, to your event handlers instead.
+> Event-based add-ins running in classic Outlook on Windows don't run code included in the `Office.onReady()` and `Office.initialize` functions. We recommend adding your add-in startup logic, such as checking the user's Outlook version, to your event handlers instead.
 
 ## Update the commands HTML file
 
@@ -420,7 +420,7 @@ Because the `OnMessageFromChanged` and `OnAppointmentFromChanged` events are sup
 In addition to these characteristics, the following aspects also apply when an add-in activates on these events.
 
 - The `OnMessageFromChanged` event is only supported in message compose mode, while the `OnAppointmentFromChanged` event is only supported in appointment compose mode.
-- In Outlook on Windows, only the `OnMessageFromChanged` event is supported.
+- In classic Outlook on Windows, only the `OnMessageFromChanged` event is supported.
 - The `OnMessageFromChanged` and `OnAppointmentFromChanged` events only support Exchange accounts. In messages being composed, the Exchange account is selected from the **From** field dropdown list or manually entered in the field. In appointments being composed, the Exchange account is selected from the organizer field dropdown list. If a user switches to a non-Exchange account in the **From** or organizer field, the Outlook client automatically clears out the signature set by the previously selected account.
 - Delegate and shared mailbox scenarios are supported.
 - The `OnAppointmentFromChanged` event isn't supported in [Microsoft 365 group calendars](https://support.microsoft.com/office/0cf1ad68-1034-4306-b367-d75e9818376a#Outlook=Web). If a user switches from their Exchange account to a Microsoft 365 group calendar account in the organizer field, the Outlook client automatically clears out the signature set by the Exchange account.

@@ -1,7 +1,7 @@
 ---
 title: Enable and Disable Add-in Commands
 description: Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.
-ms.date: 02/29/2024
+ms.date: 08/05/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,22 +13,11 @@ When some functionality in your add-in should only be available in certain conte
 You can also specify whether the command is enabled or disabled when the Office client application opens.
 
 > [!NOTE]
-> This article assumes that you are familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
->
-> - [Basic concepts for Add-in Commands](add-in-commands.md)
+> This article assumes that you're familiar with the [basic concepts for Add-in Commands](add-in-commands.md). Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
 
 ## Office application and platform support
 
-The APIs described in this article are only available in Excel. However, [preview support](../develop/understanding-the-javascript-api-for-office.md#accessing-the-office-javascript-api-library) is currently available in PowerPoint and Word. For full support details, see the [RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) requirement set.
-
-### Test for platform support with requirement sets
-
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application and platform combination supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md).
-
-The enable/disable APIs belong to the [RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) requirement set.
-
-> [!NOTE]
-> The **RibbonApi 1.1** requirement set isn't yet supported in the manifest, so you can't specify it in the manifest's **\<Requirements\>** section. To test for support, your code should call `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`. If, *and only if*, that call returns `true`, your code can call the enable/disable APIs. If the call of `isSetSupported` returns `false`, then all custom add-in commands are enabled all of the time. You must design your production add-in, and any in-app instructions, to take account of how it will work when the **RibbonApi 1.1** requirement set isn't supported. For more information and examples of using `isSetSupported`, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md), especially [Runtime checks for method and requirement set support](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (The section [Specify which Office versions and platforms can host your add-in](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) of that article doesn't apply to Ribbon 1.1.)
+The APIs described in this article are available in **Excel**, **PowerPoint**, and **Word** as part of the [RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) requirement set. To learn how to test for platform support with requirement sets, see [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md).
 
 ## Shared runtime required
 

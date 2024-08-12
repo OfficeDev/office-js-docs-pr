@@ -40,14 +40,14 @@ App Service supports various versions of Node.js on both Linux and Windows. Sele
 
 # [Deploy to Linux](#tab/linux)
 
-1. Right-click on App Services and select **Create new Web App**. A Linux container is used by default.
+1. Right-click (or select and hold) on App Services and select **Create new Web App**. A Linux container is used by default.
 1. Type a globally unique name for your web app and press **Enter**. The name must be unique across all of Azure and use only alphanumeric characters ('A-Z', 'a-z', and '0-9') and hyphens ('-').
 1. In Select a runtime stack, select the **Node 16 LTS** runtime stack.
 1. In Select a pricing tier, select **Free (F1)** and wait for the resources to be provisioned in Azure. When prompted to deploy, don't deploy the add-in yet. You'll do that in a later step.
 
 # [Deploy to Windows](#tab/windows)
 
-1. Right-click on App Services and select **Create new Web App... Advanced**.
+1. Right-click (or select and hold) on App Services and select **Create new Web App... Advanced**.
 1. Type a globally unique name for your web app and press **Enter**. The name must be unique across all of Azure and use only alphanumeric characters ('A-Z', 'a-z', and '0-9') and hyphens ('-').
 1. Select the resource group you want to use. If you don't have a resource group, select **Create a new resource group**, then enter a name for the resource group, such as *AppServiceQS-rg*.
 1. Select the **Node 16 LTS** runtime stack.
@@ -55,7 +55,7 @@ App Service supports various versions of Node.js on both Linux and Windows. Sele
 1. Select the location you want to serve your app from. For example, *West Europe*.
 1. Select the App Service plan you want to use. If you don't have an App Service plan, select **Create new App Service plan**, then enter a name for the plan (such as *AppServiceQS-plan*), then select **F1 Free**.
 1. For **Select an Application Insights resource for your app**, select **Skip for now** and wait the resources to be provisioned in Azure. When prompted to deploy, don't deploy the add-in yet. You'll do that in a later step.
-1. In the **App Service** explorer in Visual Studio code, expand the node for the new app, right-click **Application Settings**, and select **Add New Setting**:
+1. In the **App Service** explorer in Visual Studio code, expand the node for the new app, right-click (or select and hold) **Application Settings**, and select **Add New Setting**:
 
     :::image type="content" source="../images/azure-app-service-add-setting.png" alt-text="Add app setting command.":::
 
@@ -66,7 +66,7 @@ App Service supports various versions of Node.js on both Linux and Windows. Sele
 
 -----
 
-1. Right-click your App Service app and select **Open in Portal**.
+1. Right-click (or select and hold) your App Service app and select **Open in Portal**.
 1. When the portal opens in the browser, copy the domain name of the **URL** (not the `https://` part) from the **Overview** pane and save it. You'll need it in later steps.
 
 ## Update package.json
@@ -260,7 +260,7 @@ We recommend you create multiple app registrations for localhost, staging, and d
 Once the files and app registration are updated, you can deploy the add-in.
 
 1. In VS Code open the terminal and run the command `npm run build`. This will build a folder named `dist` that you can deploy.
-1. In the VS Code **Explorer** browse to the `dist` folder. Right-click the `dist` folder and select **Deploy to Web App..**.
+1. In the VS Code **Explorer** browse to the `dist` folder. Right-click (or select and hold) the `dist` folder and select **Deploy to Web App...**.
 1. When prompted to select a resource, select the App Service app you created previously.
 1. When prompted if you are sure, select **Deploy**.
 1. When prompted to always deploy the workspace, choose **Yes**.
@@ -269,7 +269,7 @@ If you make additional code changes, you'll need to run `npm run build` again an
 
 ### Deploy updates
 
-[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
+[!INCLUDE [General statements about updating an add-in](../includes/deploy-updates-general.md)]
 
 ## Test the deployment
 

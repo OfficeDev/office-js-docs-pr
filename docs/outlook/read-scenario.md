@@ -1,7 +1,7 @@
 ---
 title: Create Outlook add-ins for read forms
 description: Read add-ins are Outlook add-ins that are activated in the Reading Pane or read inspector in Outlook.
-ms.date: 01/16/2024
+ms.date: 07/18/2024
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -25,7 +25,7 @@ The location of an add-in in the Message Read surface depends on your Outlook cl
 
   :::image type="content" source="../images/outlook-message-read-surface-desktop.png" alt-text="A read add-in is selected from the ribbon of an Outlook desktop client.":::
 
-- **Web, [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)**: Select or open a message in a new window, then select the add-in from the message action bar. If your add-in doesn't appear in the action bar, select **Apps** to view your installed add-ins.
+- **Web, [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)**: Select or open a message in a new window, then select the add-in from the message action bar. If your add-in doesn't appear in the action bar, select **Apps** to view your installed add-ins.
 
   :::image type="content" source="../images/outlook-message-read-surface-owa.png" alt-text="A read add-in is selected from the action bar of a message in Outlook on the web.":::
 
@@ -39,8 +39,7 @@ Read add-ins can be any combination of the following types.
 
 - [Add-in commands](../design/add-in-commands.md)
 - [Contextual Outlook add-ins](contextual-outlook-add-ins.md)
-
-    [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
+- [Event-based activation add-ins](autolaunch.md)
 
 ## See also
 

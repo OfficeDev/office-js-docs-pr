@@ -1,7 +1,7 @@
 ---
 title: First-run experience patterns for Office Add-ins
 description: Learn the best practices for designing first-run experiences in Office Add-ins.
-ms.date: 05/18/2023
+ms.date: 08/09/2024
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -16,8 +16,8 @@ Follow these best practices when crafting your first-run experience.
 
 |Do|Don't|
 |:------|:------|
-|Provide a simple and brief introduction to the main actions in the add-in. | Don't include information and call-outs that aren't relevant to getting started.
-|Give users the opportunity to complete an action that will positively impact their use of the add-in. | Don't expect users to learn everything at once. Focus on the action that provides the most value.
+|Provide a simple and brief introduction to the main actions in the add-in. | Don't include information and call-outs that aren't relevant to getting started. |
+|Give users the opportunity to complete an action that will positively impact their use of the add-in. | Don't expect users to learn everything at once. Focus on the action that provides the most value. |
 |Create an engaging experience that users will want to complete. | Don't force the users to click through the first-run experience. Give users an option to bypass the first-run experience. |
 
 Consider whether showing users the first-run experience once or periodically is important to your scenario. For example, if your add-in is only utilized periodically, users may become less familiar with your add-in and may benefit from another interaction with the first-run experience.
@@ -40,15 +40,17 @@ The carousel takes users through a series of features or informational pages bef
 
 ![Illustration showing step 3 of a carousel in the first-run experience of an Office desktop application task pane. In this example, the third and final screen of the task pane shows a button to get started.](../images/add-in-FRE-step-3.png)
 
-## Value Placemat
+## Value placemat
 
-The value placement communicates your add-in's value proposition through logo placement, a clearly stated value proposition, feature highlights or summary, and a call-to-action.
+The value placemat communicates your add-in's value proposition through logo placement, a clearly stated value proposition, feature highlights or summary, and a call-to-action.
 
 *Figure 4. A value placemat with logo, clear value proposition, feature summary, and call-to-action*
 
 ![Illustration showing a value placemat in the first-run experience of an Office desktop application task pane. In this example, the task pane displays the add-in logo, a description of the add-in, and a button to get started.](../images/add-in-FRE-value.png)
 
-### Video Placemat
+For an example that uses the value placemat pattern, see the [first-run experience tutorial](../tutorials/first-run-experience-tutorial.md).
+
+### Video placemat
 
 The video placemat shows users a video before they start using your add-in.
 
@@ -59,3 +61,8 @@ The video placemat shows users a video before they start using your add-in.
 *Figure 6. Video player - Users presented with a video within a dialog window*
 
 ![Illustration showing a video in a dialog window with an Office desktop application and add-in task pane in the background.](../images/add-in-FRE-video-dialog.png)
+
+## See also
+
+- [First-run experience tutorial](../tutorials/first-run-experience-tutorial.md)
+- [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)

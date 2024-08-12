@@ -1,7 +1,7 @@
 ---
 title: Trident testing
 description: Test your Office Add-in on the Trident webview associated with Internet Explorer 11.
-ms.date: 05/20/2023
+ms.date: 07/14/2024
 ms.localizationpriority: medium
 ---
 
@@ -16,7 +16,7 @@ If you plan to support older versions of Windows and Office, your add-in must wo
 >
 > We recommend (but don't require) that you support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in these webviews. Keep these additional points in mind:
 >
-> - Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on the web on these browsers.
+> - Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on the web on these browsers.
 > - AppSource still tests for combinations of platform and Office *desktop* versions that use Trident or EdgeHTML. However, it only issues a warning when the add-in doesn't support these webviews; the add-in isn't rejected by AppSource.
 > - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Trident.
 
@@ -57,7 +57,7 @@ There are two ways to switch the Trident webview. You can run a simple command i
 ## See also
 
 - [Test and debug Office Add-ins](test-debug-office-add-ins.md)
-- [Sideload Office Add-ins for testing](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+- [Sideload Office Add-ins for testing](test-debug-non-local-server.md)
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
 - [Runtimes in Office Add-ins](runtimes.md)

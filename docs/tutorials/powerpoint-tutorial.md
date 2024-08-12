@@ -684,7 +684,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
     ![The Visual Studio Solution Explorer window showing the Controllers folder highlighted in the HelloWorldWeb project.](../images/powerpoint-tutorial-solution-explorer-controllers.png)
 
-1. Right-click the **Controllers** folder and select **Add** > **New Scaffolded Item...**.
+1. Right-click (or select and hold) the **Controllers** folder and select **Add** > **New Scaffolded Item...**.
 
 1. In the **Add Scaffold** dialog window, select **Web API 2 Controller - Empty** and choose the **Add** button.
 
@@ -699,7 +699,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
     1. Using Solution Explorer, add a new folder named **App_Start** to the **HelloWorldWeb** project.
 
-    1. Right-click the **App_Start** folder and select **Add** > **Class...**.
+    1. Right-click (or select and hold) the **App_Start** folder and select **Add** > **Class...**.
 
     1. In the **Add New Item** dialog, name the file **WebApiConfig.cs** then choose the **Add** button.
 
@@ -730,7 +730,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
         }
         ```
 
-    1. In the Solution Explorer, right-click the **HelloWorldWeb** project and select **Add** > **New Item...**.
+    1. In the Solution Explorer, right-click (or select and hold) the **HelloWorldWeb** project and select **Add** > **New Item...**.
 
     1. In the **Add New Item** dialog, search for "global", select **Global Application Class**, then choose the **Add** button. By default, the file is named **Global.asax**.
 
@@ -758,7 +758,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
         }
         ```
 
-    1. In the Solution Explorer, right-click the **Global.asax** file and choose **View Markup**.
+    1. In the Solution Explorer, right-click (or select and hold) the **Global.asax** file and choose **View Markup**.
 
     1. Replace the entire contents of the **Global.asax** file with the following code.
 
@@ -997,7 +997,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
     <button class="Button Button--primary" id="get-slide-metadata">
         <span class="Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
         <span class="Button-label">Get Slide Metadata</span>
-        <span class="Button-description">Gets metadata for the selected slide(s).</span>
+        <span class="Button-description">Gets metadata for the selected slides.</span>
     </button>
     ```
 
@@ -1007,7 +1007,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
     $('#get-slide-metadata').on("click", getSlideMetadata);
     ```
 
-1. In the **Home.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slide(s) and writes it to a popup dialog window within the add-in task pane.
+1. In the **Home.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slides and writes it to a popup dialog window within the add-in task pane.
 
     ```js
     function getSlideMetadata() {
@@ -1016,7 +1016,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                     showNotification("Error", asyncResult.error.message);
                 } else {
-                    showNotification("Metadata for selected slide(s):", JSON.stringify(asyncResult.value), null, 2);
+                    showNotification("Metadata for selected slides:", JSON.stringify(asyncResult.value), null, 2);
                 }
             }
         );

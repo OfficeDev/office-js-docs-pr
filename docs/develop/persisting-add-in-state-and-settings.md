@@ -1,7 +1,7 @@
 ---
 title: Persist add-in state and settings
 description: Learn how to persist data in Office Web Add-in applications running in the stateless environment of a browser control.
-ms.date: 02/08/2024
+ms.date: 08/07/2024
 ms.localizationpriority: medium
 ---
 
@@ -61,9 +61,6 @@ function getFromLocalStorage(key: string) {
 ```
 
 Starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is enabled to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). Similar to the Office key-based partitioning, data stored by storage APIs, such as local storage, is only available to contexts with the same origin and the same top-level site.
-
-> [!TIP]
-> To work around this, in your browser, go to **chrome://flags** or **edge://flags**, then set the **Experimental third-party storage partitioning (#third-party-storage-partitioning)** flag to **Disabled**.
 
 ## Application-specific settings and persistence
 

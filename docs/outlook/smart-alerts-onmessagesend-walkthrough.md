@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 05/20/2024
+ms.date: 06/25/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -35,7 +35,7 @@ To configure the manifest, select the tab for the type of manifest you are using
    - The "id" of the runtime is set to the descriptive name "autorun_runtime".
    - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
        - Classic Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
-       - Outlook on the web, on Mac, and on [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
+       - Outlook on the web, on Mac, and on [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
    - The "lifetime" property is set to "short", which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
    - There is an action to run a handler for the `OnMessageSend` event. You'll create the handler function in a later step.
@@ -105,7 +105,7 @@ To configure the manifest, select the tab for the type of manifest you are using
       }
     ```
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 1. In your code editor, open the quick start project.
 
@@ -126,7 +126,7 @@ To configure the manifest, select the tab for the type of manifest you are using
             <!-- Event-based activation happens in a lightweight runtime.-->
             <Runtimes>
               <!-- HTML file including reference to or inline JavaScript event handlers.
-                   This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows (preview). -->
+                   This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows. -->
               <Runtime resid="WebViewRuntime.Url">
                 <!-- JavaScript file containing event handlers. This is used by classic Outlook on Windows. -->
                 <Override type="javascript" resid="JSRuntime.Url"/>
@@ -223,7 +223,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 You have to implement handling for your selected event.
 
-In this scenario, you'll add handling for sending a message. Your add-in will check for certain keywords in the message. If any of those keywords are found, it will then check if there are any attachments. If there are no attachments, your add-in will recommend to the user to add the possibly missing attachment.
+In this scenario, you'll add handling for sending a message. Your add-in will check for certain keywords in the message. If any of those keywords are found, it will then check for any attachments. If there are no attachments, your add-in will recommend to the user to add the possibly missing attachment.
 
 1. From the same quick start project, create a new folder named **launchevent** under the **./src** directory.
 
@@ -296,12 +296,29 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
         event.completed({
           allowEvent: false,
-          errorMessage: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending."
+          errorMessage: `
+            Looks like the body of your message includes an image or an inline file.
+            Attach a copy to the message before sending.`,
+          // TIP: In addition to the formatted message, it's recommended to also set a
+          // plain text message in the errorMessage property for compatibility on
+          // older versions of Outlook clients.
+          errorMessageMarkdown: `
+            Looks like the body of your message includes an image or an inline file.
+            Attach a copy to the message before sending.\n\n
+            **Tip**: For guidance on how to attach a file, see
+            [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).`
         });
       } else {
         event.completed({
           allowEvent: false,
-          errorMessage: "Looks like you're forgetting to include an attachment."
+          errorMessage: "Looks like you're forgetting to include an attachment.",
+          // TIP: In addition to the formatted message, it's recommended to also set a
+          // plain text message in the errorMessage property for compatibility on
+          // older versions of Outlook clients.
+          errorMessageMarkdown: `
+            Looks like you're forgetting to include an attachment.\n\n
+            **Tip**: For guidance on how to attach a file, see
+            [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).`
         });
       }
     }
@@ -313,7 +330,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     ```
 
 > [!IMPORTANT]
-> When developing your Smart Alerts add-in to run in Outlook on Windows, keep the following in mind.
+> When developing your Smart Alerts add-in to run in classic Outlook on Windows, keep the following in mind.
 >
 > - Imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
 > - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs in Outlook on Windows, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings.
@@ -332,7 +349,7 @@ To modify the text of the **Don't Send** button or assign it a task pane command
 
 - The [cancelLabel](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-cancellabel-member) option customizes the text of the **Don't Send** button. Custom text must be a maximum of 20 characters.
 - The [commandId](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-commandid-member) option specifies the ID of the task pane that opens when the **Don't Send** button is selected. The value must match the task pane ID in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
-  - **XML manifest**: The `id` attribute of the **\<Control\>** element representing the task pane.
+  - **Add-in only manifest**: The `id` attribute of the **\<Control\>** element representing the task pane.
   - **Unified manifest for Microsoft 365**: The "id" property of the task pane command in the "controls" array.
 - The [contextData](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-contextdata-member) option specifies any JSON data you want to pass to the add-in when the **Don't Send** button is selected. If you include this option, you must also set the `commandId` option. Otherwise, the JSON data is ignored.
 
@@ -355,7 +372,17 @@ To modify the text of the **Don't Send** button or assign it a task pane command
 
         event.completed({
           allowEvent: false,
-          errorMessage: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending.",
+          errorMessage: `
+            Looks like the body of your message includes an image or an inline file.
+            Attach a copy to the message before sending.`,
+          // TIP: In addition to the formatted message, it's recommended to also set a
+          // plain text message in the errorMessage property for compatibility on
+          // older versions of Outlook clients.
+          errorMessageMarkdown: `
+            Looks like the body of your message includes an image or an inline file.
+            Attach a copy to the message before sending.\n\n
+            **Tip**: For guidance on how to attach a file, see
+            [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).`,
           cancelLabel: "Add an attachment",
           commandId: "msgComposeOpenPaneButton"
         });
@@ -363,6 +390,13 @@ To modify the text of the **Don't Send** button or assign it a task pane command
         event.completed({
           allowEvent: false,
           errorMessage: "Looks like you're forgetting to include an attachment.",
+          // TIP: In addition to the formatted message, it's recommended to also set a
+          // plain text message in the errorMessage property for compatibility on
+          // older versions of Outlook clients.
+          errorMessageMarkdown: `
+            Looks like you're forgetting to include an attachment.\n\n
+            **Tip**: For guidance on how to attach a file, see
+            [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).`,
           cancelLabel: "Add an attachment",
           commandId: "msgComposeOpenPaneButton"
         });
@@ -398,7 +432,17 @@ To override the send mode option at runtime, you must set the [sendModeOverride]
 
         event.completed({
           allowEvent: false,
-          errorMessage: "Looks like the body of your message includes an image or an inline file. Would you like to attach a copy of it to the message?",
+          errorMessage: `
+            Looks like the body of your message includes an image or an inline file.
+            Would you like to attach a copy of it to the message?`,
+          // TIP: In addition to the formatted message, it's recommended to also set a
+          // plain text message in the errorMessage property for compatibility on
+          // older versions of Outlook clients.
+          errorMessageMarkdown: `
+            Looks like the body of your message includes an image or an inline file.
+            Would you like to attach a copy of it to the message?\n\n
+            **Tip**: For guidance on how to attach a file, see
+            [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).`,
           cancelLabel: "Attach a copy",
           commandId: "msgComposeOpenPaneButton",
           sendModeOverride: Office.MailboxEnums.SendModeOverride.PromptUser
@@ -407,6 +451,13 @@ To override the send mode option at runtime, you must set the [sendModeOverride]
         event.completed({
           allowEvent: false,
           errorMessage: "Looks like you're forgetting to include an attachment.",
+          // TIP: In addition to the formatted message, it's recommended to also set a
+          // plain text message in the errorMessage property for compatibility on
+          // older versions of Outlook clients.
+          errorMessageMarkdown: `
+            Looks like you're forgetting to include an attachment.\n\n
+            **Tip**: For guidance on how to attach a file, see
+            [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).`,
           cancelLabel: "Add an attachment",
           commandId: "msgComposeOpenPaneButton"
         });
@@ -613,7 +664,7 @@ If you implemented the optional step to override the send mode option at runtime
 
     [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
-1. In Outlook on Windows, create a new message and set the subject. In the body, add some text. For example, "Here's a picture of the proposed logo."
+1. In your preferred Outlook client, create a new message and set the subject. In the body, add some text. For example, "Here's a picture of the proposed logo."
 1. From the ribbon, select **Contoso Add-in** > **Show Taskpane**.
 1. In the task pane, select **Add an inline image**. An image is added to the body of your message.
 1. Send the message. A dialog appears recommending to attach a copy of the image to the message.

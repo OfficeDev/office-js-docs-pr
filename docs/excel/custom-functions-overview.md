@@ -66,7 +66,7 @@ function add(first, second){
 
 ### Manifest file
 
-The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) creates) does several things.
+The add-in only manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) creates) does several things.
 
 - Defines the namespace for your custom functions. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.
 - Uses **\<ExtensionPoint\>** and **\<Resources\>** elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.

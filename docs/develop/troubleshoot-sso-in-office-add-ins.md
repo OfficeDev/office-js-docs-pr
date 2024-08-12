@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.
-ms.date: 08/14/2023
+ms.date: 07/08/2024
 ms.localizationpriority: medium
 ---
 
@@ -15,10 +15,11 @@ This article provides some guidance about how to troubleshoot problems with sing
 
 ## Debugging tools
 
-We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are:
+We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Some of the most popular are:
 
-- [Fiddler](https://www.telerik.com/fiddler): Free ([Documentation](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
-- [Charles](https://www.charlesproxy.com): Free for 30 days. ([Documentation](https://www.charlesproxy.com/documentation/))
+- [Fiddler](https://www.telerik.com/fiddler): Free for 10 days ([Documentation](https://docs.telerik.com/fiddler-everywhere/introduction))
+- [Charles](https://www.charlesproxy.com): Free for 30 days. ([Documentation](https://www.charlesproxy.com/documentation))
+- [Requestly](https://requestly.com/downloads): Free basic service. ([Documentation](https://developers.requestly.com))
 
 ## Causes and handling of errors from getAccessToken
 
@@ -121,7 +122,7 @@ In certain configurations of identity in AAD and Microsoft 365, it is possible f
 
 Your code should test for this `claims` property. Depending on your add-in's architecture, you may test for it on the client-side, or you may test for it on the server-side and relay it to the client. You need this information in the client because Office handles authentication for SSO add-ins. If you relay it from the server-side, the message to the client can be either an error (such as `500 Server Error` or `401 Unauthorized`) or in the body of a success response (such as `200 OK`). In either case, the (failure or success) callback of your code's client-side AJAX call to your add-in's web API should test for this response.
 
-Regardless of your architecture, if the claims value has been sent from AAD, your code should recall `getAccessToken` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the `options` parameter. When AAD sees this string, it prompts the user for the additional factor(s) and then returns a new access token which will be accepted in the on-behalf-of flow.
+Regardless of your architecture, if the claims value has been sent from AAD, your code should recall `getAccessToken` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the `options` parameter. When AAD sees this string, it prompts the user for the additional factors and then returns a new access token which will be accepted in the on-behalf-of flow.
 
 ### Consent missing errors
 

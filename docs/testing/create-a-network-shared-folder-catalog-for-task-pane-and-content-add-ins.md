@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins for testing from a network share
 description: Learn how to sideload an Office Add-in for testing from a network share.
-ms.date: 09/26/2023
+ms.date: 07/14/2024
 ms.localizationpriority: medium
 ---
 
@@ -13,6 +13,7 @@ You can test an Office Add-in in an Office client that's on Windows by publishin
 > Deployment by network share isn't supported for production add-ins. This method has the following limitations.
 >
 > - The add-in can only be installed on Windows computers.
+> - Add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) aren't supported when published to a network share.
 > - If a new version of an add-in changes the ribbon, such as by adding a custom tab or custom button to it, each user will have to reinstall the add-in.
 
 > [!NOTE]
@@ -124,7 +125,7 @@ There are two options for how you specify this trust. Follow the instructions fo
     > [!NOTE]
     > For Visual Studio projects, use the manifest built by the project in the `{projectfolder}\bin\Debug\OfficeAppManifests` folder.
 
-1. In Excel, Word, or PowerPoint, select **Home** > **Add-ins** from the ribbon, then select **Get Add-ins**. In Project, select **My Add-ins** on the **Project** tab of the ribbon.
+1. In Excel, Word, or PowerPoint, select **Home** > **Add-ins** from the ribbon, then select **More Add-ins**. In Project, select **My Add-ins** on the **Project** tab of the ribbon.
 
 1. Choose **SHARED FOLDER** at the top of the **Office Add-ins** dialog box.
 

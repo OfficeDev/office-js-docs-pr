@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 03/14/2024
+ms.date: 08/01/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,12 +13,28 @@ Sideload your Outlook add-in for testing without having to first put it in an ad
 > [!IMPORTANT]
 > If your Outlook add-in supports mobile, sideload the manifest using the instructions in this article for your Outlook client on the web, on Windows, or on Mac, then follow the guidance in [Testing your add-ins on mobile](outlook-mobile-addins.md#testing-your-add-ins-on-mobile).
 
-## Sideload automatically
+## Sideload an add-in that uses the unified app manifest for Microsoft 365
+
+The process to sideload an add-in that uses the unified app manifest for Microsoft 365 varies depending on the tool you used to create your add-in project.
+
+- For add-in projects created using the [Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode), use one of the following options.
+  - [Sideload in Visual Studio Code with Teams Toolkit](../develop/convert-xml-to-json-manifest.md#sideload-with-the-teams-toolkit)
+  - [Sideload in Visual Studio Code with a system prompt, bash shell, or terminal](../develop/convert-xml-to-json-manifest.md#sideload-with-a-system-prompt-bash-shell-or-terminal)
+- For add-in projects created using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), in a command prompt, navigate to the root of your project. Then, run `npm run start:desktop`. The project builds and a Node dev-server window opens. This process may take a couple of minutes before it opens Outlook desktop.
+- For NodeJS and npm projects that weren't created with the Yeoman generator, use one of the following options.
+  - [Sideload with the Office-Addin-Debugging tool](../develop/convert-xml-to-json-manifest.md#sideload-with-the-office-addin-debugging-tool)
+  - [Sideload with the Teams Toolkit CLI (command-line interface)](../develop/convert-xml-to-json-manifest.md#sideload-with-the-teams-toolkit-cli-command-line-interface)
+
+## Sideload an add-in that uses an XML manifest
+
+An Outlook add-in that uses an XML manifest can be sideloaded automatically through the command line or manually through the **Add-Ins for Outlook** dialog.
+
+### Sideload automatically
 
 If you created your Outlook add-in using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), sideloading is best done through the command line. This takes advantage of our tooling and allows you to sideload across all of your supported devices in one command.
 
 > [!NOTE]
-> If you're developing on macOS, you must manually sideload your add-in after running `npm start`. For guidance, see the [Sideload manually](#sideload-manually) section of this article, then select the **Mac** tab.
+> If you're developing on macOS, you must manually sideload your add-in after running `npm start`. For guidance, see the [Sideload manually](#sideload-manually) section of this article.
 
 1. Open a command prompt and navigate to the root directory of your Yeoman generated add-in project. Run the command `npm start`.
 
@@ -29,16 +45,9 @@ If you created your Outlook add-in using the [Yeoman generator for Office Add-in
 
 1. If your manifest contains no errors and the path is valid, your add-in will now be sideloaded and available on both your desktop and in Outlook on the web. It will also be installed across all your supported devices.
 
-## Sideload manually
+### Sideload manually
 
-Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in based on the Outlook client. Select the tab for your preferred Outlook client.
-
-> [!NOTE]
-> The sideloading guidance in this section only applies to Outlook add-ins that use an XML manifest. To learn about sideloading options for Outlook add-ins that use the unified manifest for Microsoft 365, see the "Conversion tools and options" section of [Convert an add-in to use the unified manifest for Microsoft 365](../develop/convert-xml-to-json-manifest.md#conversion-tools-and-options).
-
-# [Windows (classic and new) and Web](#tab/windows-web)
-
-Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To sideload an add-in in Outlook on Windows, on the web, and in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), perform the following steps.
+Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in. Add-ins that use the XML manifest are manually sideloaded through the **Add-Ins for Outlook** dialog. The following steps apply to Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac.
 
 1. In your preferred browser, go to <https://aka.ms/olksideload>. Outlook on the web opens, then the **Add-Ins for Outlook** dialog appears after a few seconds.
 
@@ -54,7 +63,11 @@ Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To s
     >
     >   Note that your organization may include its own logo in the mailbox toolbar, so you might see something slightly different from what is shown in the preceding images.
     >
-    > - In Outlook on Windows, you can also access the **Add-Ins for Outlook** dialog by selecting **File** > **Info** > **Manage Add-ins**. This opens Outlook on the web in your preferred browser, then loads the dialog.
+    > - In classic Outlook on Windows, you can also access the **Add-Ins for Outlook** dialog by selecting **File** > **Info** > **Manage Add-ins**. This opens Outlook on the web in your preferred browser, then loads the dialog.
+    >
+    > - In Outlook on Mac, starting in Version 16.85 (24051214), the **Get Add-ins** button no longer opens the **Add-Ins for Outlook** dialog. Instead, it opens [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office%3Boutlook&page=1&src=office) in your default browser. Earlier versions can still access the **Add-Ins for Outlook** dialog through the **Get Add-ins** button. If you don't see **Get Add-ins** in your version of Outlook, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
+    >
+    >   ![The Get Add-ins option is selected from the ellipsis button in Outlook on Mac.](../images/outlook-sideload-new-mac.png)
 
 1. In the **Add-Ins for Outlook** dialog box, select **My add-ins**.
 
@@ -69,34 +82,7 @@ Add-ins are manually sideloaded through the **Add-Ins for Outlook** dialog. To s
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
     > [!NOTE]
-    > In Outlook on Windows, it may take up to 24 hours for your manually sideloaded add-in to appear in the client. This is due to caching.
-
-# [Mac](#tab/mac)
-
-1. Open Outlook on Mac.
-
-1. Select **Get Add-ins** from the ribbon.
-
-    ![The Get Add-ins button is selected in Outlook on Mac.](../images/outlook-sideload-mac-classic.png)
-
-    > [!TIP]
-    > If you don't see **Get Add-ins** in your version of Outlook, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
-    >
-    > ![The Get Add-ins option is selected from the ellipsis button in Outlook on Mac.](../images/outlook-sideload-new-mac.png)
-
-1. In the dialog that appears, select **My add-ins**.
-
-    ![The My add-ins options is selected in the Add-ins dialog](../images/outlook-sideload-my-add-ins-mac.png)
-
-1. Locate the **Custom Addins** section at the bottom of the dialog. Select the **Add a custom add-in** link, and then select **Add from File**.
-
-    ![The Add from File option is selected in the Custom Addins section.](../images/outlook-sideload-custom-add-in-mac.png)
-
-    [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
-
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
-
----
+    > In classic Outlook on Windows, it may take up to 24 hours for your manually sideloaded add-in to appear in the client. This is due to caching.
 
 ## Locate a sideloaded add-in
 

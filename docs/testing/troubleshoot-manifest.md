@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Validate an Office Add-in's manifest
 
-You should validate your add-in's manifest file to ensure that it's correct and complete. Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in. This article describes multiple ways to validate the manifest file. Except as specified otherwise, they work for both the unified manifest for Microsoft 365 and the XML manifest.
+You should validate your add-in's manifest file to ensure that it's correct and complete. Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in. This article describes multiple ways to validate the manifest file. Except as specified otherwise, they work for both the unified manifest for Microsoft 365 and the add-in only manifest.
 
 > [!NOTE]
 > For details about using runtime logging to troubleshoot issues with your add-in's manifest, see [Debug your add-in with runtime logging](runtime-logging.md).
