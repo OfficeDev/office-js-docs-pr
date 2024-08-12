@@ -204,7 +204,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Try it out
 
-1. Run your add-in and sideload the add-in within Excel. Follow the instructions for the platform you'll be using:
+1. Sideload your add-in within Excel. Follow the instructions for the platform you'll be using:
 
    - Web browser: [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-a-yeoman-created-add-in-to-office-on-the-web)
    - Windows: [Sideload Office Add-ins on Windows](../testing/test-debug-non-local-server.md)
@@ -220,6 +220,16 @@ The add-in project that you've created with the Yeoman generator contains sample
 1. Set the color of the selected range to green. In your add-in's task pane, choose the **Set color** button.
 
    ![The add-in task pane open in Excel.](../images/excel-quickstart-addin-2c.png)
+
+1. When you want to stop the local web server and uninstall the add-in, follow these instructions:
+
+    - To stop the server, run the following command.
+
+        ```command&nbsp;line
+        npm stop
+        ```
+
+    - To uninstall the sideloaded add-in, see "Remove a sideloaded add-in" in the article for the platform you used in step 1 of this "Try it out" section.
 
 ## Next steps
 

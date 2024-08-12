@@ -78,6 +78,8 @@ After you complete the wizard, the generator creates the project and installs su
 
     ![The Word application with the task pane add-in loaded.](../images/word-quickstart-addin-1c.png)
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
+
 ### Next steps
 
 Congratulations, you've successfully created a Word task pane add-in! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the Word add-in tutorial.

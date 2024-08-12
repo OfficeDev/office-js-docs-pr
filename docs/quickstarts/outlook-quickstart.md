@@ -141,6 +141,8 @@ The Yeoman generator creates a project in a folder with the project name that yo
 
     ![The add-in's task pane displaying message subject.](../images/outlook-quick-start-task-pane-3.png)
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
+
 ### Next steps
 
 Congratulations, you've successfully created your first Outlook task pane add-in! Next, learn more about the capabilities of an Outlook add-in and build a more complex add-in by following along with the [Outlook add-in tutorial](../tutorials/outlook-tutorial.md).

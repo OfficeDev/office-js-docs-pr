@@ -49,7 +49,7 @@ After you complete the wizard, the generator creates the project and installs su
     cd "My Office Add-in"
     ```
 
-2. Complete the following steps to start the local web server and sideload your add-in.
+1. Complete the following steps to start the local web server and sideload your add-in.
 
     [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
@@ -70,13 +70,15 @@ After you complete the wizard, the generator creates the project and installs su
 
         [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-3. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
+1. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
     ![PowerPoint with the Show Taskpane button highlighted.](../images/powerpoint_quickstart_addin_1c.png)
 
-4. At the bottom of the task pane, choose the **Run** link to insert the text "Hello World" into the current slide.
+1. At the bottom of the task pane, choose the **Run** link to insert the text "Hello World" into the current slide.
 
     ![PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide.](../images/powerpoint_quickstart_addin_3c.png)
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 
 ### Next steps
 

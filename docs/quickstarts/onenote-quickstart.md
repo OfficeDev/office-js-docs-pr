@@ -84,7 +84,7 @@ try {
 
 1. In [OneNote on the web](https://www.onenote.com/notebooks), open a notebook and create a new page.
 
-1. Choose **Insert > Office Add-ins** to open the Office Add-ins dialog.
+1. Choose **Insert** > **Office Add-ins** to open the Office Add-ins dialog.
 
     - If you're signed in with your consumer account, select the **MY ADD-INS** tab, and then choose **Upload My Add-in**.
 
@@ -101,6 +101,16 @@ try {
 1. At the bottom of the task pane, choose the **Run** link to set the page title and add an outline to the body of the page.
 
     ![The add-in built from this walkthrough, where the Show Taskpane ribbon button was used to open the task pane in OneNote.](../images/onenote-first-add-in-4.png)
+
+1. When you want to stop the local web server and uninstall the add-in, follow these instructions:
+
+    - To stop the server, run the following command.
+
+        ```command&nbsp;line
+        npm stop
+        ```
+
+    - To uninstall the sideloaded add-in, see [Remove a sideloaded add-in](../testing/sideload-office-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
 ## Next steps
 
