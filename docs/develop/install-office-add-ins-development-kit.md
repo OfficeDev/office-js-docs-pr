@@ -1,9 +1,11 @@
 ---
-title: Install Office Add-ins Development Kit for Visual Studio Code (prerelease)
+title: Install Office Add-ins Development Kit for Visual Studio Code (preview)
 description: Learn how to install Office Add-ins Development Kit for Visual Studio Code.
 ms.date: 08/09/2024
 ms.localizationpriority: high
 ---
+
+# Install Office Add-ins Development Kit for Visual Studio Code (preview)
 
 This section helps you to know about the prerequisites, install Microsoft Office Add-ins Development Kit for Visual Studio Code, and install a different version of Office Add-ins Development Kit.
 
