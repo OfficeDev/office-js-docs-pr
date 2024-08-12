@@ -1,7 +1,7 @@
 ---
 title: First-run experience patterns for Office Add-ins
 description: Learn the best practices for designing first-run experiences in Office Add-ins.
-ms.date: 05/18/2023
+ms.date: 08/09/2024
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -40,15 +40,17 @@ The carousel takes users through a series of features or informational pages bef
 
 ![Illustration showing step 3 of a carousel in the first-run experience of an Office desktop application task pane. In this example, the third and final screen of the task pane shows a button to get started.](../images/add-in-FRE-step-3.png)
 
-## Value Placemat
+## Value placemat
 
-The value placement communicates your add-in's value proposition through logo placement, a clearly stated value proposition, feature highlights or summary, and a call-to-action.
+The value placemat communicates your add-in's value proposition through logo placement, a clearly stated value proposition, feature highlights or summary, and a call-to-action.
 
 *Figure 4. A value placemat with logo, clear value proposition, feature summary, and call-to-action*
 
 ![Illustration showing a value placemat in the first-run experience of an Office desktop application task pane. In this example, the task pane displays the add-in logo, a description of the add-in, and a button to get started.](../images/add-in-FRE-value.png)
 
-### Video Placemat
+For an example that uses the value placemat pattern, see the [first-run experience tutorial](../tutorials/first-run-experience-tutorial.md).
+
+### Video placemat
 
 The video placemat shows users a video before they start using your add-in.
 
@@ -62,4 +64,5 @@ The video placemat shows users a video before they start using your add-in.
 
 ## See also
 
-[Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
+- [First-run experience tutorial](../tutorials/first-run-experience-tutorial.md)
+- [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
