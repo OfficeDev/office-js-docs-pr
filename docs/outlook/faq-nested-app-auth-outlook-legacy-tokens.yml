@@ -23,6 +23,7 @@ sections:
           The following tables list the key milestones based on which channel customers are using. Note that the general availability (GA) date for NAA will vary based on channel. We'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins are not yet migrated to NAA.
 
           **Current Channel**
+
           | Date          | Action      |
           | ------------- | ------------- |
           | October 2024 | NAA is GA for Current Channel. <br>Exchange online tokens are turned off by default for new tenants and existing tenants known not to be using Exchange tokens. <br>The administrator can choose to reenable Exchange tokens on tenants or add-ins as needed.  |
@@ -31,6 +32,7 @@ sections:
           | October 2025 | Exchange online tokens are turned off for all tenants and add-ins, including any that were reenabled. |
 
           **Monthly Enterprise Channel**
+
           | Date          | Action      |
           | ------------- | ------------- |
           | November 2024 | NAA is GA for Monthly Enterprise Channel. <br>Exchange online tokens are turned off by default for new tenants and existing tenants known not to be using Exchange tokens. <br>The administrator can choose to reenable Exchange tokens on tenants or add-ins as needed. |
@@ -39,6 +41,7 @@ sections:
           | October 2025  | Exchange online tokens are turned off for all tenants and add-ins, including any that were reenabled. |
 
           **Semi-annual Channel**
+
           | Date          | Action      |
           | ------------- | ------------- |
           | January 2025  | NAA is GA for Semi-annual Channel. <br>Exchange online tokens are turned off by default for all tenants. <br>The administrator can choose to reenable Exchange tokens on tenants and add-ins as needed. |
@@ -46,6 +49,7 @@ sections:
           | October 2025 | Exchange online tokens are turned off for all tenants and add-ins, including any that were reenabled. |
 
           **Semi-annual Channel Extended**
+          
           | Date          | Action      |
           | ------------- | ------------- |
           | June 2025    | NAA is GA for Semi-annual Channel Extended. <br>The ability for the administrator to reenable Exchange online tokens is removed. If a tenant or add-in needs Exchange tokens reenabled, the administrator must contact Microsoft. |
