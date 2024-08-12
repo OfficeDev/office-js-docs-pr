@@ -61,7 +61,7 @@ While we strive to maintain backwards compatibility, the patterns and practices 
 
 ## Update your add-in
 
-When you update your add-in, there are two pieces to consider: the web service and the manifest. Updates to your web service don't require any action from your users. Those users only have the manifest in their Office application. Changes to the manifest do require users to update. If you have published your add-in to AppSource, you will need to update your submission. More information about that process is found in the article [Update an existing offer](/partner-center/marketplace-offers/update-existing-offer).
+When you update your add-in, there are two pieces to consider: the web application and the manifest. Updates to your web application don't require any action from your users. Those users only have the manifest in their Office application. Changes to the manifest do require users to update. If you have published your add-in to AppSource, you will need to update your submission. More information about that process is found in the article [Update an existing offer](/partner-center/marketplace-offers/update-existing-offer).
 
 Whenever you make a change to the manifest, you must raise the version number of the manifest.
 
