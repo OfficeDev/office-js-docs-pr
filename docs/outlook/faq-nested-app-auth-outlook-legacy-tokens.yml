@@ -5,7 +5,7 @@ metadata:
   ms.service: microsoft-365
   ms.subservice: add-ins
   ms.topic: faq
-  ms.date: 04/08/2024
+  ms.date: 08/12/2024
   
 title: Nested app authentication and Outlook legacy tokens deprecation FAQ
 summary: |
@@ -20,16 +20,19 @@ sections:
 
       - question: What is the timeline for shutting down legacy tokens?
         answer: |
-          After October 2024, Outlook add-ins that rely on legacy Exchange tokens will not work as expected since Exchange will no longer issue those legacy tokens by default.
+          In April, we announced that Exchange tokens will be turned off by default for all tenants in October 2024. This has been updated and you should have more time to move your Outlook add-ins from Exchange tokens to NAA. The following tables list the key milestones based on which channel customers are using. Note that the general availability (GA) date for NAA will vary based on channel. We'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins are not yet migrated to NAA.
 
-          ### April 2024
+          **Current Channel**
 
-          - NAA will be available in public preview. If your add-in uses legacy Exchange user identity tokens or callback tokens you should adopt NAA in your add-in. Developers can identify this token use by looking for calls to `makeEwsRequestAsync`, `getUserIdentityTokenAsync`, or `getCallbackTokenAsync` in the add-in's code.
+          | Date          | Action      |
+          | ------------- | ------------- |
+          | October 2024 | NAA is GA for Current Channel. <br>Exchange online tokens are turned off by default for new tenants and existing tenants known not to be using Exchange tokens. <br>The administrator can choose to reenable Exchange tokens on tenants or add-ins as needed.  |
+          | January 2025 | Exchange online tokens are turned off by default for all tenants. <br>The administrator can choose to reenable Exchange tokens on tenants and add-ins as needed.  |
+          | June 2025    | The ability for the administrator to reenable Exchange online tokens is removed. If a tenant or add-in needs Exchange tokens reenabled, the administrator must contact Microsoft. |
+          | October 2025 | Exchange online tokens are turned off for all tenants and add-ins, including any that were reenabled. |
 
-          ### October 2024
+          **Monthly Enterprise Channel**
 
-          - Exchange Online will block legacy Exchange user identity tokens and callback tokens by default in all tenants. Add-ins that have not adopted NAA and rely on legacy Exchange tokens won't function as expected.
-          - Exchange 2019 and other on-premises versions of Exchange will continue to allow legacy Exchange user identity tokens and callback tokens.
   - name: Outlook add-in migration FAQ
     questions:
       - question: Why is Microsoft making Outlook add-ins migrate?
