@@ -2,7 +2,7 @@
 title: Compare the add-in only manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the add-in only manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 06/14/2024
+ms.date: 08/15/2024
 ms.localizationpriority: high
 ---
 
@@ -50,7 +50,7 @@ This section describes the unified manifest for readers who are familiar with th
 
 ### Top-level structure
 
-The root level of the unified manifest, which roughly corresponds to the **\<OfficeApp\>** element in the add-in only manifest, is an anonymous object. 
+The root level of the unified manifest, which roughly corresponds to the **\<OfficeApp\>** element in the add-in only manifest, is an anonymous object.
 
 The children of **\<OfficeApp\>** are commonly divided into two notional categories. The **\<VersionOverrides\>** element is one category. The other consists of all the other children of **\<OfficeApp\>**, which are collectively referred to as the base manifest. So too, the unified manifest has a similar division. There is a top-level "extensions" property that roughly corresponds in its purposes and child properties to the **\<VersionOverrides\>** element. The unified manifest also has over 10 other top-level properties that collectively serve the same purposes as the base manifest of the add-in only manifest. These other properties can be thought of collectively as the base manifest of the unified manifest.
 

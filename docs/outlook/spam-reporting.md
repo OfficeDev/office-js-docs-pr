@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 06/14/2024
+ms.date: 08/15/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -57,10 +57,10 @@ To implement the integrated spam-reporting feature in your add-in, you must conf
 
 Select the tab for the type of manifest you're using.
 
-# [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
-> Implementing integrated spam reporting with the unified app manifest for Microsoft 365 is in public developer preview. It's currently only available to use in classic Outlook on Windows. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> Implementing integrated spam reporting with the unified manifest for Microsoft 365 is in public developer preview. It's currently only available to use in classic Outlook on Windows. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
 
 1. In your preferred code editor, open the add-in project you created.
 1. Open the **manifest.json** file.
@@ -159,9 +159,9 @@ Select the tab for the type of manifest you're using.
 
 1. Save your changes.
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
-Configure the [VersionOverridesV1_1](/javascript/api/manifest/versionoverrides-1-1-mail) node of your XML manifest accordingly.
+Configure the [VersionOverridesV1_1](/javascript/api/manifest/versionoverrides-1-1-mail) node of your add-in only manifest accordingly.
 
 - To run a spam-reporting add-in in Outlook on the web and on Mac and in the new Outlook on Windows, you must specify the HTML file that references or contains the code to handle the spam-reporting event in the `resid` attribute of the [Runtime](/javascript/api/manifest/runtime) element.
 - To run a spam-reporting add-in in classic Outlook on Windows, you must specify the JavaScript file that contains the code to handle the spam-reporting event in the [Override](/javascript/api/manifest/override) child element of the **\<Runtime\>** element.
@@ -481,8 +481,8 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 - The buttons that appear in the preprocessing and post-processing dialogs aren't customizable. Additionally, the text and buttons in the timeout and ongoing report dialogs can't be modified.
 - The integrated spam-reporting and [event-based activation](autolaunch.md) features must use the same runtime. Multiple runtimes aren't currently supported in Outlook. To learn more about runtimes, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 - A spam-reporting add-in only implements [function commands](../design/add-in-commands.md#types-of-add-in-commands). A task pane command can't be assigned to the spam-reporting button on the ribbon. If you want to implement a task pane in your add-in, you must configure it in your manifest as follows:
-  - **XML manifest**: Include the [Action element](/javascript/api/manifest/action#xsitype-is-showtaskpane) in the manifest and set its `xsi:type` attribute to `ShowTaskpane`.
-  - **Unified app manifest for Microsoft 365**: Configure a task pane object in the "extensions.runtimes" and "extensions.ribbons" arrays. For guidance, see the "Add a task pane command" section of [Create add-in commands with the unified manifest for Microsoft 365](../develop/create-addin-commands-unified-manifest.md#add-a-task-pane-command).
+  - **Add-in only manifest**: Include the [Action element](/javascript/api/manifest/action#xsitype-is-showtaskpane) in the manifest and set its `xsi:type` attribute to `ShowTaskpane`.
+  - **Unified manifest for Microsoft 365**: Configure a task pane object in the "extensions.runtimes" and "extensions.ribbons" arrays. For guidance, see the "Add a task pane command" section of [Create add-in commands with the unified manifest for Microsoft 365](../develop/create-addin-commands-unified-manifest.md#add-a-task-pane-command).
 
   Note that a separate button to activate the task pane will be added to the ribbon, but it won't appear in the dedicated spam-reporting area of the ribbon.
 

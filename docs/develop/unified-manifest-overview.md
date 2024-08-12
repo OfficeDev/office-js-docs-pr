@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 06/14/2024
+ms.date: 08/15/2024
 ms.localizationpriority: high
 ---
 
@@ -11,6 +11,7 @@ ms.localizationpriority: high
 This article introduces the unified app manifest for Microsoft 365. It assumes that you're familiar with [Office Add-ins manifest](add-in-manifests.md).
 
 > [!TIP]
+>
 > - For an overview of the add-in only manifest, see [Office Add-ins with the add-in only manifest](xml-manifest-overview.md).
 > - If you're familiar with the add-in only manifest, you might get a grasp on the JSON-formatted unified manifest easier by reading [Compare the add-in only manifest with the unified manifest for Microsoft 365](json-manifest-overview.md).
 
