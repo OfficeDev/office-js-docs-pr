@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/403da2a8-4195-445b-abba-37841273ceb9)---
+---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
 ms.date: 04/17/2024
