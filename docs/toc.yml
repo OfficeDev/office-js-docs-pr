@@ -224,8 +224,13 @@ items:
           - name: Branding
             href: design/branding-patterns.md
           - name: First-run experience
-            href: design/first-run-experience-patterns.md
-            displayName: first run experience
+            items:
+            - name: Overview
+              href: design/first-run-experience-patterns.md
+              displayName: first run experience
+            - name: Tutorial
+              href: tutorials/first-run-experience-tutorial.md
+              displayName: first run experience
           - name: Navigation
             href: design/navigation-patterns.md
       - name: Design toolkits
@@ -340,6 +345,8 @@ items:
         href: testing/sideload-an-office-add-in-on-ipad.md
       - name: Debug on Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
+    - name: Test and debug on a non-local server
+      href: testing/test-debug-non-local-server.md
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload

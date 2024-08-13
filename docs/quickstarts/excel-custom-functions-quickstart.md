@@ -76,6 +76,8 @@ The `ADD` custom function computes the sum of the two numbers that you specify a
 
 [!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 
+[!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
+
 ## Next steps
 
 Congratulations, you've successfully created a custom function in an Excel add-in! Next, build a more complex add-in with streaming data capability. The following link takes you through the next steps in the Excel add-in with custom functions tutorial.

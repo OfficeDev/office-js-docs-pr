@@ -122,7 +122,7 @@ Next, add a MIME type for JSON files.
 
 ## Deploy updates
 
-[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
+[!INCLUDE [General statements about updating an add-in](../includes/deploy-updates-general.md)]
 
 ## See also
 
