@@ -359,7 +359,7 @@ The following is a sample post-processing dialog shown to the user once the add-
 
 As you develop and test the integrated spam-reporting feature in your add-in, be mindful of its characteristics and limitations.
 
-- In Outlook on the web and on Windows (new and classic), an integrated spam-reporting add-in replaces the native **Report** button in the Outlook ribbon. If multiple spam-reporting add-ins are installed, they will all appear in this location on the ribbon.
+- In Outlook on the web and on Windows (new and classic), an integrated spam-reporting add-in replaces the native **Report** button in the Outlook ribbon. If multiple spam-reporting add-ins are installed, they will all appear in the **Report** section of the ribbon.
 
     :::image type="content" source="../images/outlook-spam-replace-button.png" alt-text="A sample integrated spam-reporting add-in that replaces the Report button in the Outlook ribbon.":::
 
