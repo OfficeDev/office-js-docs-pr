@@ -66,7 +66,7 @@ sections:
           Unfortunately, no. We are following the timeline specified in the previous tables. We recognize that this migration is happening quickly, but we cannot offer exceptions to any partners. Migrating away from legacy tokens by the established timeline is a commitment to customers and their security teams. This effort will greatly improve protection of customers' vital email data.
       - question: Does my Outlook add-in have to migrate to NAA?
         answer: |
-          No, Outlook add-ins don't have to use NAA, although NAA offers the best authentication experience for users and best security posture for organizations. If add-ins are not using legacy Exchange tokens, they won't be affected by the deprecation of Exchange tokens. Add-ins using MSAL.js or other SSO methods that rely on Entra ID will continue to work.
+          No. Outlook add-ins don't have to use NAA, although NAA offers the best authentication experience for users and best security posture for organizations. If add-ins are not using legacy Exchange tokens, they won't be affected by the deprecation of Exchange tokens. Add-ins using MSAL.js or other SSO methods that rely on Entra ID will continue to work.
       - question: How do I know if my Outlook add-in relies on legacy tokens?
         answer: |
           To find out whether your add-in uses legacy Exchange user identity tokens and callback tokens, you can search your code for calls to the following APIs.
