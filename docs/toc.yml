@@ -281,8 +281,8 @@ items:
         href: develop/localization.md
     - name: Frameworks, IDEs, and other tools
       items:
-      - name: Develop add-ins with Angular
-        href: develop/add-ins-with-angular2.md
+      - name: Create add-ins with the Office Add-ins Development Kit
+        href: develop/development-kit-overview.md
       - name: Create add-ins with the Yeoman Generator
         href: develop/yeoman-generator-overview.md
       - name: Create add-ins with the Teams Toolkit
@@ -301,6 +301,8 @@ items:
       - name: Copy Script Lab snippet to Yo Office
         href: overview/create-an-office-add-in-from-script-lab.md
         displayName: 'code samples'
+      - name: Develop add-ins with Angular
+        href: develop/add-ins-with-angular2.md
     - name: Special requirements for add-ins on the iPad
       href: develop/develop-office-add-ins-for-the-ipad.md
   - name: Test and debug
