@@ -27,7 +27,7 @@ To create an Office Add-in with the Yeoman generator, follow instructions in the
 
 ## Create the add-in project using the Office Add-ins Development Kit (preview)
 
-The Office Add-ins Development Kit is a Visual Studio Code extension that allows you to create new projects directly from VS Code. For information on installing the extension and creating projects from templates and samples, see [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](development-kit-overview.md).
+The [Office Add-ins Development Kit](https://marketplace.visualstudio.com/items?itemName=msoffice.microsoft-office-add-in-debugger) is a Visual Studio Code extension that allows you to create new projects directly from VS Code. For information on installing the extension and creating projects from templates and samples, see [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](development-kit-overview.md).
 
 [!INCLUDE [Information about the preview status of the dev kit.](../includes/dev-kit-preview-note.md)]
 

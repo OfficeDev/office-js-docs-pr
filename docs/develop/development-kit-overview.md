@@ -7,7 +7,7 @@ ms.localizationpriority: high
 
 # Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code (preview)
 
-The Office Add-ins Development Kit helps developers set up their environment, create Office Add-ins, and debug their code with a streamlined developer experience.
+The Office Add-ins Development Kit helps set up your environment, create Office Add-ins, and debug your code in a streamlined experience.
 
 [!INCLUDE [Information about the preview status of the dev kit.](../includes/dev-kit-preview-note.md)]
 
@@ -18,8 +18,6 @@ The Office Add-ins Development Kit helps developers set up their environment, cr
 - Office connected to a Microsoft 365 subscription. You might qualify for a Microsoft 365 E5 developer subscription through the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program), see [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-) for details. Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try?rtc=1) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/buy/compare-all-microsoft-365-products).
 
 ## Install the development kit
-
-[!INCLUDE [script-lab-outlook-web](../includes/install-dev-kit.md)]
 
 You can install Office Add-ins Development Kit using **Extensions** in Visual Studio Code or install it from the Visual Studio Code Marketplace.
 
@@ -45,9 +43,7 @@ The Office Add-ins Development Kit offers two ways to get started with a new pro
 Templates offer a basic starting point for your add-in. They add a minimal amount of functionality so you can get started without changing much of the existing code. The following instructions detail how to make a new project from a template using the development kit.
 
 1. Open Visual Studio Code and select the Office Add-ins Development Kit icon in the **Activity Bar**.
-1. Select **Create a New Add-in**.
-    ![The 'Create a New Add-in' option in the extension task pane.](../images/office-add-ins-development-kit-create-a-new-add-in.png)
-
+1. Select **Create a New Add-in** in the extension task pane.
 1. In the now-active Quick Pick menu, select the Office application for your add-in.
 1. Select an add-in template from the list of available templates.
 1. Select "JavaScript" or "TypeScript" as the programming language.
@@ -69,8 +65,6 @@ Samples show a working add-in that solves an end-to-end scenario. Samples are mo
 To understand how the add-in will work in an Office application, use the Office Add-ins Development Kit to run and debug your Office add-in in your local development environment.
 
 Select **Preview Your Office Add-in(F5)** to launch the add-in and debug the code. In the drop down menu, select the option **Desktop (Edge Chromium)**.
-
-![The 'Preview Your Office Add-in' option in the extension task pane.](../images/office-add-ins-development-kit-preview-your-office-add-in.png)
 
 The extension checks that the prerequisites are met before debugging starts. Check the terminal for detailed information if there are issues with your environment. After this process, the Office desktop application launches and sideloads the add-in.
 
