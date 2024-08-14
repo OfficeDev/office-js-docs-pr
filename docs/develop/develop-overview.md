@@ -39,6 +39,10 @@ Visual Studio can be used to create Office Add-ins for Excel, Outlook, Word, and
 
 The Teams Toolkit can be used to create almost any kind of Teams App, a term which includes all extensions of Microsoft 365, including those that don't extend the Teams application. For details about creating an add-in, see [Create Office Add-in projects with Teams Toolkit](teams-toolkit-overview.md).
 
+### Office Add-ins Development Kit (preview)
+
+The Office Add-ins Development Kit is an extension for Visual Studio Code. It lets you create new add-in projects and load samples directly from the IDE. Download the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=msoffice.microsoft-office-add-in-debugger) or learn more in the article [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](development-kit-overview.md).
+
 ## Understand the two parts of an Office Add-in
 
 An Office Add-in consists of two parts.

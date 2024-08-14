@@ -7,10 +7,10 @@ ms.localizationpriority: high
 
 # Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code (preview)
 
-The Office Add-ins Development Kit helps developers set up the environment, create and build Office JS add-ins with a streamlined developer experience in Visual Studio Code.
+The Office Add-ins Development Kit helps developers set up their environment, create Office Add-ins, and debug their code with a streamlined developer experience.
 
-- Add-ins created with Office Add-ins Development Kit use the [XML-formatted add-in only manifest](xml-manifest-overview.md).
-- Only Excel, PowerPoint and Word add-ins can be created at this time. We're working hard to enable support for add-ins to other Office applications and platforms.
+> ![IMPORTANT]
+> The Office Add-ins Development Kit extension is currently in preview. It only supports creating add-ins that use the [add-in only manifest](xml-manifest-overview.md). It also only creates Excel, PowerPoint, and Word add-ins at this time. Support for Outlook is under development, as are additional samples and other improvements. We welcome any feedback you have on the tool. Issues and features requests should be submitted through [GitHub issues on the extension's repo](https://aka.ms/officedevkitnewissue).
 
 ## Prerequisites
 
@@ -20,23 +20,17 @@ The Office Add-ins Development Kit helps developers set up the environment, crea
 
 ## Install the development kit
 
-You can install Office Add-ins Development Kit using **Extensions** in Visual Studio Code, or install it from the Visual Studio Code Marketplace.
+[!INCLUDE [script-lab-outlook-web](../includes/install-dev-kit.md)]
+
+You can install Office Add-ins Development Kit using **Extensions** in Visual Studio Code or install it from the Visual Studio Code Marketplace.
 
 # [Visual Studio Code](#tab/vscode)
 
-1. Launch Visual Studio Code.
-1. Select **View** > **Extensions** or **Ctrl+Shift+X**. You can also open extensions by selecting the **Extensions** tab from the Visual Studio Code activity bar.
-
-    ![The View menu with the Extensions option highlighted.](../images/office-add-ins-development-kit-install-activity-bar.png)
-
-1. Enter **Office Add-ins Development Kit** in the search box.
-1. Select **Office Add-ins Development Kit**. From the Office Add-ins Development Kit extension page that appears in the right pane, select  **Install**. After successfully installing, the Office Add-ins Development Kit icon will appear in the Visual Studio Code activity bar.
-
-    ![The task pane shown by the Office Add-ins Development Kit after installation.](../images/office-add-ins-development-kit-install-activity-bar.png)
+[!INCLUDE [Instructions to install the Office Add-ins Development Kit through VS Code.](../includes/install-dev-kit.md)]
 
 # [Marketplace](#tab/marketplace)
 
-1. open the [Office Add-ins Development Kit](https://marketplace.visualstudio.com/items?itemName=msoffice.microsoft-office-add-in-debugger) page in the Visual Studio Code Marketplace.
+1. Open the [Office Add-ins Development Kit](https://marketplace.visualstudio.com/items?itemName=msoffice.microsoft-office-add-in-debugger) page in the Visual Studio Code Marketplace.
 
 1. Select **Install** on the web page. If you're prompted that the extension requires Visual Studio Code, select **Continue**.
 

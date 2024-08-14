@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 07/28/2024
+ms.date: 08/15/2024
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -34,34 +34,13 @@ The main tools to be installed are:
 - npm
 - A code editor of your choice
 - A project creation tool:
-
-    - Office Yeoman Generator (Yo Office)
-    - Teams Toolkit (requires Visual Studio Code)
-
+  - Office Yeoman Generator (Yo Office)
+  - Teams Toolkit (requires Visual Studio Code)
 - The Office JavaScript linter
 
 This guide assumes that you know how to use a command-line tool.
 
-### Install Node.js and npm
-
-Node.js is a JavaScript runtime you use to develop modern Office Add-ins.
-
-Install Node.js by [downloading the latest recommended version from their website](https://nodejs.org). Follow the installation instructions for your operating system.
-
-npm is an open source software registry from which to download the packages used in developing Office Add-ins. It's usually installed automatically when you install Node.js. To check if you already have npm installed and see the installed version, run the following in the command line.
-
-```command&nbsp;line
-npm -v
-```
-
-If, for any reason, you want to install it manually, run the following in the command line.
-
-```command&nbsp;line
-npm install npm -g
-```
-
-> [!TIP]
-> You may wish to use a Node version manager to allow you to switch between multiple versions of Node.js and npm, but this isn't strictly necessary. For details on how to do this, [see npm's instructions](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+[!INCLUDE [Instructions to install Node.js.](../includes/install-node-js.md)]
 
 ### Install a code editor
 
@@ -83,7 +62,7 @@ The project creation and scaffolding tool is [Yeoman generator for Office Add-in
   npm install -g yo generator-office
   ```
 
-#### Install Teams Toolkit 
+#### Install Teams Toolkit
 
 Install [Visual Studio Code](https://code.visualstudio.com/) and then install the latest version of Teams Toolkit as described in [Install Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
 
@@ -135,6 +114,29 @@ If you do not have Visual Studio 2017 (for Windows) or later installed, install 
 
 > [!NOTE]
 > For information about debugging client-side code when you're using the Visual Studio environment, see [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md). Debug the server-side code the same way you would any web application created in Visual Studio. See [Client-side or server-side](../testing/debug-add-ins-overview.md#server-side-or-client-side).
+
+# [Visual Studio Code](#tab/visualstudiocode)
+
+The main tools to be installed are:
+
+- Node.js
+- npm
+- Visual Studio Code
+- The Office Add-ins Development Kit VS Code extension
+
+This guide assumes that you know how to use a command-line tool.
+
+[!INCLUDE [Instructions to install Node.js.](../includes/install-node-js.md)]
+
+### Install Visual Studio Code
+
+Get the latest version of Visual Studio Code from [Visual Studio Code homepage](https://code.visualstudio.com). Select the appropriate option for your platform of choice.
+
+### Install the Office Add-ins Development Kit extension
+
+The Office Add-ins Development Kit extension for Visual Studio Code lets you create and run new add-ins directly from the IDE. For more information about the extension, see [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](development-kit-overview.md).
+
+[!INCLUDE [Instructions to install the Office Add-ins Development Kit through VS Code.](../includes/install-dev-kit.md)]
 
 ---
 
