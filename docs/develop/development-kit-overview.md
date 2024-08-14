@@ -31,14 +31,9 @@ You can install Office Add-ins Development Kit using **Extensions** in Visual St
 # [Marketplace](#tab/marketplace)
 
 1. Open the [Office Add-ins Development Kit](https://marketplace.visualstudio.com/items?itemName=msoffice.microsoft-office-add-in-debugger) page in the Visual Studio Code Marketplace.
-
 1. Select **Install** on the web page. If you're prompted that the extension requires Visual Studio Code, select **Continue**.
-
 1. Your browser may ask you to verify that the site is trying to open Visual Studio Code. Allow Visual Studio Code to open. Visual Studio Code will then open with the Office Add-ins Development Kit extension readme displayed.
-
 1. Select **Install** in Visual Studio Code. After successfully installing, the Office Add-ins Development Kit icon will appear in the Visual Studio Code activity bar.
-
-    ![The task pane shown by the Office Add-ins Development Kit after installation.](../images/office-add-ins-development-kit-install-activity-bar.png)
 
 ## Create an add-in project
 
@@ -49,9 +44,7 @@ The Office Add-ins Development Kit offers two ways to get started with a new pro
 Templates offer a basic starting point for your add-in. They add a minimal amount of functionality so you can get started without changing much of the existing code. The following instructions detail how to make a new project from a template using the development kit.
 
 1. Open Visual Studio Code and select the Office Add-ins Development Kit icon in the **Activity Bar**.
-
 1. Select **Create a New Add-in**.
-
     ![The 'Create a New Add-in' option in the extension task pane.](../images/office-add-ins-development-kit-create-a-new-add-in.png)
 
 1. In the now-active Quick Pick menu, select the Office application for your add-in.
@@ -65,9 +58,7 @@ Templates offer a basic starting point for your add-in. They add a minimal amoun
 Samples show a working add-in that solves an end-to-end scenario. Samples are most useful as learning tools to understand how features of the Office Add-ins framework work together. You can also expand sample to fit your particular needs.
 
 1. Open Visual Studio Code and select the Office Add-ins Development Kit icon in the **Activity Bar**.
-
 1. Select **View Samples**.
-
     ![The 'View Samples' option in the extension task pane.](../images/office-add-ins-development-kit-install-activity-bar.png)
 
 1. Select the sample you would like to view.
