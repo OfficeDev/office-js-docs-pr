@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code (preview)
-description: Learn how to create Office Add-in projects using Office Add-ins Development Kit.
-ms.date: 08/09/2024
+description: Learn how to create Office Add-in projects using Office Add-ins Development Kit extension.
+ms.date: 08/14/2024
 ms.localizationpriority: high
 ---
 
@@ -16,7 +16,7 @@ The Office Add-ins Development Kit helps developers set up the environment, crea
 
 - Download and install [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 - Node.js (the latest LTS version). Visit the [Node.js site](https://nodejs.org/) to download and install the right version for your operating system. To verify if you've already installed these tools, run the commands `node -v` and `npm -v` in your terminal.
-- Office connected to a Microsoft 365 subscription. You might qualify for a Microsoft 365 E5 developer subscription through the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program), see [FAQ](https://learn.microsoft.com/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-) for details. Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try?rtc=1) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/buy/compare-all-microsoft-365-products).
+- Office connected to a Microsoft 365 subscription. You might qualify for a Microsoft 365 E5 developer subscription through the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program), see [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-) for details. Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try?rtc=1) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/buy/compare-all-microsoft-365-products).
 
 ## Install the development kit
 
@@ -48,6 +48,12 @@ You can install Office Add-ins Development Kit using **Extensions** in Visual St
 
 ## Create an add-in project
 
+The Office Add-ins Development Kit offers two ways to get started with a new project: templates and samples. Templates let you choose the Office application, programming language, and starting feature. Samples are more complete projects that demonstrate a real-world scenario.
+
+### Create an add-in from a template
+
+Templates offer a basic starting point for your add-in. They add a minimal amount of functionality so you can get started without changing much of the existing code. The following instructions detail how to make a new project from a template using the development kit.
+
 1. Open Visual Studio Code and select the Office Add-ins Development Kit icon in the **Activity Bar**.
 
 1. Select **Create a New Add-in**.
@@ -57,6 +63,20 @@ You can install Office Add-ins Development Kit using **Extensions** in Visual St
 1. In the now-active Quick Pick menu, select the Office application for your add-in.
 1. Select an add-in template from the list of available templates.
 1. Select "JavaScript" or "TypeScript" as the programming language.
+1. In the **Workspace folder** dialog that opens, select the folder where you want to create the project.
+1. Give a name to the project (with no spaces) when prompted. Office Add-ins Development Kit will create the project with basic files and scaffolding. It then opens the project in a *second* Visual Studio Code window. You can freely the original Visual Studio Code window.
+
+### Create an add-in from a sample
+
+Samples show a working add-in that solves an end-to-end scenario. Samples are most useful as learning tools to understand how features of the Office Add-ins framework work together. You can also expand sample to fit your particular needs.
+
+1. Open Visual Studio Code and select the Office Add-ins Development Kit icon in the **Activity Bar**.
+
+1. Select **View Samples**.
+
+    ![The 'View Samples' option in the extension task pane.](../images/office-add-ins-development-kit-install-activity-bar.png)
+
+1. Select the sample you would like to view.
 1. In the **Workspace folder** dialog that opens, select the folder where you want to create the project.
 1. Give a name to the project (with no spaces) when prompted. Office Add-ins Development Kit will create the project with basic files and scaffolding. It then opens the project in a *second* Visual Studio Code window. You can freely the original Visual Studio Code window.
 
