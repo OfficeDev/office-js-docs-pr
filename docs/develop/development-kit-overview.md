@@ -36,7 +36,7 @@ You can install Office Add-ins Development Kit using **Extensions** in Visual St
 
 ## Create an add-in project
 
-The Office Add-ins Development Kit offers two ways to get started with a new project: templates and samples. Templates let you choose the Office application, programming language, and starting feature. Samples are more complete projects that demonstrate a real-world scenario.
+The Office Add-ins Development Kit offers two ways to get started with a new project: templates and samples. Templates let you choose the Office application, programming language, and starting feature. Samples are more complete projects that demonstrate a realistic scenario.
 
 ### Create an add-in from a template
 
@@ -48,7 +48,7 @@ Templates offer a basic starting point for your add-in. They add a minimal amoun
 1. Select an add-in template from the list of available templates.
 1. Select "JavaScript" or "TypeScript" as the programming language.
 1. In the **Workspace folder** dialog that opens, select the folder where you want to create the project.
-1. Give a name to the project (with no spaces) when prompted. Office Add-ins Development Kit will create the project with basic files and scaffolding. It then opens the project in a *second* Visual Studio Code window. You can freely the original Visual Studio Code window.
+1. Give a name to the project (with no spaces) when prompted. Office Add-ins Development Kit will create the project with basic files and scaffolding. It then opens the project in a *second* Visual Studio Code window. You can freely close the original Visual Studio Code window.
 
 ### Create an add-in from a sample
 
@@ -58,7 +58,7 @@ Samples show a working add-in that solves an end-to-end scenario. Samples are mo
 1. Select **View Samples**.
 1. Select the sample you would like to view.
 1. In the **Workspace folder** dialog that opens, select the folder where you want to create the project.
-1. Give a name to the project (with no spaces) when prompted. Office Add-ins Development Kit will create the project with basic files and scaffolding. It then opens the project in a *second* Visual Studio Code window. You can freely the original Visual Studio Code window.
+1. Give a name to the project (with no spaces) when prompted. Office Add-ins Development Kit will create the project with basic files and scaffolding. It then opens the project in a *second* Visual Studio Code window. You can freely close the original Visual Studio Code window.
 
 ## Test your add-in
 
@@ -66,7 +66,7 @@ To understand how the add-in will work in an Office application, use the Office 
 
 Select **Preview Your Office Add-in (F5)** to launch the add-in and debug the code. In the Quick Pick menu, select the option **Edge Desktop (Edge Chromium)**.
 
-The extension checks that the prerequisites are met before debugging starts. Check the terminal for detailed information if there are issues with your environment. After this process, the Office desktop application launches and sideloads the add-in.
+The development kit checks that the prerequisites are met before debugging starts. Check the terminal for detailed information if there are issues with your environment. After this process, the Office desktop application launches and sideloads the add-in.
 
 ## Stop testing your Office Add-in
 
