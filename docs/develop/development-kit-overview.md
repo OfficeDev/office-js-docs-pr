@@ -35,6 +35,8 @@ You can install Office Add-ins Development Kit using **Extensions** in Visual St
 1. Your browser may ask you to verify that the site is trying to open Visual Studio Code. Allow Visual Studio Code to open. Visual Studio Code will then open with the Office Add-ins Development Kit extension readme displayed.
 1. Select **Install** in Visual Studio Code. After successfully installing, the Office Add-ins Development Kit icon will appear in the Visual Studio Code activity bar.
 
+---
+
 ## Create an add-in project
 
 The Office Add-ins Development Kit offers two ways to get started with a new project: templates and samples. Templates let you choose the Office application, programming language, and starting feature. Samples are more complete projects that demonstrate a real-world scenario.
