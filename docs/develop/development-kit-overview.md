@@ -64,7 +64,7 @@ Samples show a working add-in that solves an end-to-end scenario. Samples are mo
 
 To understand how the add-in will work in an Office application, use the Office Add-ins Development Kit to run and debug your Office add-in in your local development environment.
 
-Select **Preview Your Office Add-in(F5)** to launch the add-in and debug the code. In the drop down menu, select the option **Desktop (Edge Chromium)**.
+Select **Preview Your Office Add-in (F5)** to launch the add-in and debug the code. In the Quick Pick menu, select the option **Edge Desktop (Edge Chromium)**.
 
 The extension checks that the prerequisites are met before debugging starts. Check the terminal for detailed information if there are issues with your environment. After this process, the Office desktop application launches and sideloads the add-in.
 
