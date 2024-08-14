@@ -108,6 +108,8 @@ npm run lint
 
 # [Visual Studio environment](#tab/visualstudio)
 
+This option only installs Visual Studio.
+
 ### Install Visual Studio
 
 If you do not have Visual Studio 2017 (for Windows) or later installed, install the latest version from [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/). Be sure to include the **Office/SharePoint development** workload when the installer asks you to specify workloads. Other workloads that you may need are **Web development tools for .NET**, **JavaScript and TypeScript language support** (for coding the client-side of the add-in), and ASP.NET-related workloads.
