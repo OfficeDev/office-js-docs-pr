@@ -60,8 +60,6 @@ Samples show a working add-in that solves an end-to-end scenario. Samples are mo
 
 1. Open Visual Studio Code and select the Office Add-ins Development Kit icon in the **Activity Bar**.
 1. Select **View Samples**.
-    ![The 'View Samples' option in the extension task pane.](../images/office-add-ins-development-kit-install-activity-bar.png)
-
 1. Select the sample you would like to view.
 1. In the **Workspace folder** dialog that opens, select the folder where you want to create the project.
 1. Give a name to the project (with no spaces) when prompted. Office Add-ins Development Kit will create the project with basic files and scaffolding. It then opens the project in a *second* Visual Studio Code window. You can freely the original Visual Studio Code window.
