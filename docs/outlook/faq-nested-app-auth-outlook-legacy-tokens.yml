@@ -5,11 +5,11 @@ metadata:
   ms.service: microsoft-365
   ms.subservice: add-ins
   ms.topic: faq
-  ms.date: 04/08/2024
+  ms.date: 08/12/2024
   
 title: Nested app authentication and Outlook legacy tokens deprecation FAQ
 summary: |
-  Exchange [user identity tokens](https://learn.microsoft.com/office/dev/add-ins/outlook/authentication#exchange-user-identity-token) and [callback tokens](https://learn.microsoft.com/office/dev/add-ins/outlook/authentication#callback-tokens) will be turned off by default by October 2024. We recommend moving Outlook add-ins that use legacy Exchange tokens to nested app authentication.
+  Exchange [user identity tokens](https://learn.microsoft.com/office/dev/add-ins/outlook/authentication#exchange-user-identity-token) and [callback tokens](https://learn.microsoft.com/office/dev/add-ins/outlook/authentication#callback-tokens) are deprecated and will begin to be turned off in October 2024. We recommend moving Outlook add-ins that use legacy Exchange tokens to nested app authentication.
 
 sections:
   - name: General FAQ
@@ -20,28 +20,53 @@ sections:
 
       - question: What is the timeline for shutting down legacy tokens?
         answer: |
-          After October 2024, Outlook add-ins that rely on legacy Exchange tokens will not work as expected since Exchange will no longer issue those legacy tokens by default.
+          The following tables list the key milestones based on which channel customers are using. Note that the general availability (GA) date for NAA will vary based on channel. We'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA.
 
-          ### April 2024
+          **Current Channel**
 
-          - NAA will be available in public preview. If your add-in uses legacy Exchange user identity tokens or callback tokens you should adopt NAA in your add-in. Developers can identify this token use by looking for calls to `makeEwsRequestAsync`, `getUserIdentityTokenAsync`, or `getCallbackTokenAsync` in the add-in's code.
+          | Date          | Action      |
+          | ------------- | ------------- |
+          | October 2024 | NAA is GA for Current Channel. <br>Exchange online tokens are turned off by default for new tenants and existing tenants known not to be using Exchange tokens. <br>The administrator can choose to reenable Exchange tokens on tenants or add-ins as needed.  |
+          | January 2025 | Exchange online tokens are turned off by default for all tenants. <br>The administrator can choose to reenable Exchange tokens on tenants and add-ins as needed.  |
+          | June 2025    | The ability for the administrator to reenable Exchange online tokens is removed. If a tenant or add-in needs Exchange tokens reenabled, the administrator must contact Microsoft. |
+          | October 2025 | Exchange online tokens are turned off for all tenants and add-ins, including any that were reenabled. |
 
-          ### October 2024
+          **Monthly Enterprise Channel**
 
-          - Exchange Online will block legacy Exchange user identity tokens and callback tokens by default in all tenants. Add-ins that have not adopted NAA and rely on legacy Exchange tokens won't function as expected.
-          - Exchange 2019 and other on-premises versions of Exchange will continue to allow legacy Exchange user identity tokens and callback tokens.
+          | Date          | Action      |
+          | ------------- | ------------- |
+          | November 2024 | NAA is GA for Monthly Enterprise Channel. <br>Exchange online tokens are turned off by default for new tenants and existing tenants known not to be using Exchange tokens. <br>The administrator can choose to reenable Exchange tokens on tenants or add-ins as needed. |
+          | February 2025 | Exchange online tokens are turned off by default for all tenants. <br>The administrator can choose to reenable Exchange tokens on tenants and add-ins as needed.  |
+          | June 2025     | The ability for the administrator to reenable Exchange online tokens is removed. If a tenant or add-in needs Exchange tokens reenabled, the administrator must contact Microsoft. |
+          | October 2025  | Exchange online tokens are turned off for all tenants and add-ins, including any that were reenabled. |
+
+          **Semi-annual Channel**
+
+          | Date          | Action      |
+          | ------------- | ------------- |
+          | January 2025  | NAA is GA for Semi-annual Channel. <br>Exchange online tokens are turned off by default for all tenants. <br>The administrator can choose to reenable Exchange tokens on tenants and add-ins as needed. |
+          | June 2025    | The ability for the administrator to reenable Exchange online tokens is removed. If a tenant or add-in needs Exchange tokens reenabled, the administrator must contact Microsoft. |
+          | October 2025 | Exchange online tokens are turned off for all tenants and add-ins, including any that were reenabled. |
+
+          **Semi-annual Channel Extended**
+          
+          | Date          | Action      |
+          | ------------- | ------------- |
+          | June 2025    | NAA is GA for Semi-annual Channel Extended. <br>The ability for the administrator to reenable Exchange online tokens is removed. If a tenant or add-in needs Exchange tokens reenabled, the administrator must contact Microsoft. |
+          | October 2025 | Exchange online tokens are turned off for all tenants and add-ins, including any that were reenabled. |
+
   - name: Outlook add-in migration FAQ
     questions:
       - question: Why is Microsoft making Outlook add-ins migrate?
         answer: |
           Switching to Microsoft Graph using Entra ID tokens is a big improvement in security for Outlook and Exchange customers.
-          Entra ID (formerly Azure Active Directory) is a leader in the identity and access management space. Customers can take advantage of zero trust features such as conditional access, MFA requirements, continual token monitoring, real time safety heuristics, and more that are not available with legacy Exchange tokens. Customers have much of their most important business data stored in Exchange, so it's vital that we ensure this data is protected. Migrating the whole Outlook ecosystem to using Entra ID tokens with Microsoft Graph greatly improves security for customer data.
-      - question: Can my Outlook add-in get an exception to finish the migration after Oct 2024?
+          Entra ID (formerly Azure Active Directory) is a leader in the identity and access management space. Customers can take advantage of zero trust features such as conditional access, MFA requirements, continual token monitoring, real time safety heuristics, and more that aren't available with legacy Exchange tokens. Customers have much of their most important business data stored in Exchange, so it's vital that we ensure this data is protected. Migrating the whole Outlook ecosystem to using Entra ID tokens with Microsoft Graph greatly improves security for customer data.
+      - question: Can my Outlook add-in get an exception to finish the migration later?
         answer: |
-          Unfortunately, no. We recognize that this migration is happening quickly, but we cannot offer exceptions to any partners. Migrating away from legacy tokens by October 2024 is a commitment to customers and their security teams. This effort will greatly improve protection of customers' vital email data.
+          Unfortunately, no. We're following the timeline specified in the previous tables. We recognize that this migration is happening quickly, but we can't offer exceptions to any partners. Migrating away from legacy tokens by the established timeline is a commitment to customers and their security teams. This effort will greatly improve protection of customers' vital email data.
       - question: Does my Outlook add-in have to migrate to NAA?
         answer: |
-          No, Outlook add-ins don't have to use NAA, although NAA offers the best authentication experience for users and best security posture for organizations. If add-ins are not using legacy Exchange tokens, they won't be affected by their deprecation. Add-ins using MSAL.js or other SSO methods that rely on Entra ID will still work after October 2024.
+          No. Outlook add-ins don't have to use NAA, although NAA offers the best authentication experience for users and best security posture for organizations. If add-ins aren't using legacy Exchange tokens, they won't be affected by the deprecation of Exchange tokens. Add-ins using MSAL.js or other SSO methods that rely on Entra ID will continue to work.
       - question: How do I know if my Outlook add-in relies on legacy tokens?
         answer: |
           To find out whether your add-in uses legacy Exchange user identity tokens and callback tokens, you can search your code for calls to the following APIs.
@@ -57,7 +82,7 @@ sections:
           If your add-in is for Exchange on-premises only (for example, Exchange 2019), it is not affected by this announcement.
       - question: What will happen to my Outlook add-ins if I don't migrate to NAA?
         answer: |
-          If you don't migrate your Outlook add-ins to NAA, they will stop working as expected in Exchange Online. In October 2024, Exchange Online will block legacy token issuance by default in all tenants. Any add-in that uses legacy tokens will not be able to access Exchange online resources.
+          If you don't migrate your Outlook add-ins to NAA, they'll stop working as expected in Exchange Online. When Exchange tokens are turned off (according to the previous tables), Exchange Online will block legacy token issuance. Any add-in that uses legacy tokens won't be able to access Exchange online resources.
           If your add-in only works on-premises or if your add-in is on a deprecation path, you may not need to update. However, most add-ins that access Exchange resources through EWS or Outlook REST will have to migrate to continue functioning as expected.
       - question: How do I migrate my Outlook add-ins to NAA?
         answer: |
@@ -76,7 +101,7 @@ sections:
 
       - question: As an admin, I don't own an add-in that needs an update. What should I do?
         answer: |
-          If you rely on an independent software vendor (ISV) for your add-in, we recommend reaching out as soon as possible to confirm they have a plan and a timeline for moving off of legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they are ready for the end of Exchange legacy tokens on October 2024.
+          If you rely on an independent software vendor (ISV) for your add-in, we recommend reaching out as soon as possible to confirm they have a plan and a timeline for moving off of legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they're ready for the end of Exchange legacy tokens.
           If you rely on a developer within your organization, we recommend asking them to reach out to the Outlook extensibility PM team on GitHub: [https://github.com/officedev/office-js/issues](https://github.com/officedev/office-js/issues).
 additionalContent: |
 
