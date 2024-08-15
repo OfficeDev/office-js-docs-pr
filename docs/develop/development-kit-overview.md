@@ -40,7 +40,7 @@ The Office Add-ins Development Kit offers two ways to get started with a new pro
 
 ### Create an add-in from a template
 
-Templates offer a basic starting point for your add-in. They add a minimal amount of functionality so you can get started without changing much of the existing code. The following instructions detail how to make a new project from a template using the development kit.
+Templates offer a basic starting point for your add-in. They add a minimal amount of functionality so you can get started without changing much of the existing code. The following instructions describe how to make a new project from a template using the development kit.
 
 1. Open Visual Studio Code and select the Office Add-ins Development Kit icon in the **Activity Bar**.
 1. Select **Create a New Add-in** in the extension task pane.
@@ -52,7 +52,7 @@ Templates offer a basic starting point for your add-in. They add a minimal amoun
 
 ### Create an add-in from a sample
 
-Samples show a working add-in that solves an end-to-end scenario. Samples are most useful as learning tools to understand how features of the Office Add-ins framework work together. You can also expand sample to fit your particular needs.
+Samples show a working add-in that solves an end-to-end scenario. Samples are most useful as learning tools to understand how features of the Office Add-ins framework work together. You can also expand a sample to fit your particular needs.
 
 1. Open Visual Studio Code and select the Office Add-ins Development Kit icon in the **Activity Bar**.
 1. Select **View Samples**.
