@@ -2,7 +2,7 @@
 title: Develop Office Add-ins
 description: An introduction to developing Office Add-ins.
 ms.topic: overview
-ms.date: 07/28/2024
+ms.date: 08/15/2024
 ms.localizationpriority: high
 ---
 
@@ -15,7 +15,7 @@ All Office Add-ins are built upon the Office Add-ins platform. For any add-in yo
 
 ## Create an Office Add-in
 
-You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md), Visual Studio, or Teams Toolkit.
+You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md), Visual Studio, Teams Toolkit, or the [Office Add-ins Development Kit (preview)](development-kit-overview.md).
 
 ### Yeoman generator
 
