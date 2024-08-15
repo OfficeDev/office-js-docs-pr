@@ -130,8 +130,6 @@ items:
         href: develop/extended-overrides.md
       - name: Find the proper order of manifest elements
         href: develop/manifest-element-ordering.md
-      - name: Update API and manifest version
-        href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
         displayName: manifest
     - name: Privacy, security, and storage
       items:
