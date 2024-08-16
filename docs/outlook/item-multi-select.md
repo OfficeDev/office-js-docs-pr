@@ -230,6 +230,7 @@ To alert your add-in when the `SelectedItemsChanged` event occurs, you must regi
       }
     });
     ```
+
 1. Save your changes.
 
 ## Get properties and run operations on selected messages
