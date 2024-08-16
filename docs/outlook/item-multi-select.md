@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 05/20/2024
+ms.date: 08/15/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 With the item multi-select feature, your Outlook add-in can now activate and perform operations on multiple selected messages in one go. Certain operations, such as uploading messages to your Customer Relationship Management (CRM) system or categorizing numerous items, can now be easily completed with a single click.
 
-The following sections walk you through how to configure your add-in to retrieve the subject line of multiple messages in read mode.
+The following sections show how to configure your add-in to retrieve the subject line and sender's email address of multiple messages in read mode.
 
 > [!NOTE]
 > Support for the item multi-select feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13), with additional item properties now available in subsequent requirement sets. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
@@ -157,7 +157,7 @@ To enable your add-in to activate on multiple selected messages, you must add th
                   <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
                 </bt:ShortStrings>
                 <bt:LongStrings>
-                  <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens a pane which displays an option to retrieve the subject line of selected messages."/>
+                  <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens a pane with an option to get information about the selected messages."/>
                 </bt:LongStrings>
             </Resources>
         </VersionOverrides>
@@ -181,13 +181,22 @@ Item multi-select relies on the [SelectedItemsChanged](/javascript/api/office/of
 
     ```html
     <main id="app-body" class="ms-welcome__main">
-        <h2 class="ms-font-xl">Retrieve the subject line of multiple messages with one click!</h2>
+        <h2 class="ms-font-l">Get information about each selected message</h2>
         <ul id="selected-items"></ul>
         <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
-            <span class="ms-Button-label">Run</span>
+            <span class="ms-Button-label">Get information</span>
         </div>
     </main>
     ```
+
+1. For classic Outlook on Windows only. Replace the existing **script** element with the following markup. This references the preview version of the Office JavaScript API.
+
+    ```html
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
+    ```
+
+    > [!NOTE]
+    > The preview version of the Office JavaScript API is used because this walkthrough implements the `loadItemByIdAsync` and `unloadAsync` methods, which are currently in preview. If your multi-select add-in doesn't implement these methods, use `https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js` instead. For more information, see [Referencing the Office JavaScript API library](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 1. Save your changes.
 
@@ -197,52 +206,130 @@ To alert your add-in when the `SelectedItemsChanged` event occurs, you must regi
 
 1. From the **./src/taskpane** folder, open **taskpane.js**.
 
-1. In the `Office.onReady()` callback function, replace the existing code with the following:
+1. Replace the `Office.onReady()` function with the following:
 
     ```javascript
-    if (info.host === Office.HostType.Outlook) {
+    let list;
+
+    Office.onReady((info) => {
+      if (info.host === Office.HostType.Outlook) {
         document.getElementById("sideload-msg").style.display = "none";
         document.getElementById("app-body").style.display = "flex";
         document.getElementById("run").onclick = run;
-    
+        list = document.getElementById("selected-items");
+
         // Register an event handler to identify when messages are selected.
-        Office.context.mailbox.addHandlerAsync(Office.EventType.SelectedItemsChanged, run, asyncResult => {
+        Office.context.mailbox.addHandlerAsync(Office.EventType.SelectedItemsChanged, run, (asyncResult) => {
           if (asyncResult.status === Office.AsyncResultStatus.Failed) {
             console.log(asyncResult.error.message);
             return;
           }
-    
+
           console.log("Event handler added.");
         });
-    }
+      }
+    });
     ```
+1. Save your changes.
 
-## Retrieve the subject line of selected messages
+## Get properties and run operations on selected messages
 
-Now that you've registered an event handler, you then call the [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getselecteditemsasync-member(1)) method to retrieve the subject line of the selected messages and log them to the task pane. The `getSelectedItemsAsync` method can also be used to get other message properties, such as the item ID, item type (`Message` is the only supported type at this time), and item mode (`Read` or `Compose`).
+Now that you've registered an event handler, your add-in can now get properties or run operations on multiple selected messages. There are two ways to process selected messages. The use of each option depends on the properties and operations you need for your scenario.
 
-1. In **taskpane.js**, navigate to the `run` function and insert the following code.
+- Call the [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getselecteditemsasync-member(1)) method to get the following properties:
+  - Attachment boolean
+  - Conversation ID
+  - Internet message ID
+  - Item ID
+  - Item mode (`Read` or `Compose`)
+  - Item type (`Message` is the only supported type at this time)
+  - Subject line
+- Call the [loadItemByIdAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#outlook-office-mailbox-loaditembyidasync-member(1)) method (preview) to get properties that aren't provided by `getSelectedItemsAsync` or to run operations on the selected messages. The `loadItemByIdAsync` method loads one selected message at a time using the message's Exchange Web Services (EWS) ID. To get the EWS IDs of the selected messages, we recommend calling `getSelectedItemsAsync`. After processing a selected message using `loadItemByIdAsync`, you must call the `unloadAsync` method (preview) before calling `loadItemByIdAsync` on another selected message.
+
+    > [!TIP]
+    > Before you use the `loadItemByIdAsync` method, determine if you can already access the properties you need using `getSelectedItemsAsync`. If you can, you don't need to call `loadItemByIdAsync`.
+
+The following example implements the `getSelectedItemsAsync` and `loadItemByIdAsync` methods to get the subject line and sender's email address from each selected message.
+
+> [!NOTE]
+> The `loadItemByIdAsync` method is currently in preview in classic Outlook on Windows. To preview this API, install Version 2405 (Build 17606.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option.
+
+1. In **taskpane.js**, replace the existing `run` function with the following code.
 
     ```javascript
-    // Clear list of previously selected messages, if any.
-    const list = document.getElementById("selected-items");
-    while (list.firstChild) {
-        list.removeChild(list.firstChild);
-    }
+    export async function run() {
+      // Clear the list of previously selected messages, if any.
+      clearList(list);
 
-    // Retrieve the subject line of the selected messages and log it to a list in the task pane.
-    Office.context.mailbox.getSelectedItemsAsync(asyncResult => {
+      // Get the subject line and sender's email address of each selected message and log it to a list in the task pane.
+      Office.context.mailbox.getSelectedItemsAsync((asyncResult) => {
         if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-            console.log(asyncResult.error.message);
-            return;      
+          console.log(asyncResult.error.message);
+          return;
         }
 
-        asyncResult.value.forEach(item => {
-            const listItem = document.createElement("li");
-            listItem.textContent = item.subject;
-            list.appendChild(listItem);
+        const selectedItems = asyncResult.value;
+        getItemInfo(selectedItems);
+      });
+    }
+
+    // Gets the subject line and sender's email address of each selected message.
+    async function getItemInfo(selectedItems) {
+      for (const item of selectedItems) {
+        addToList(item.subject);
+        // The loadItemByIdAsync method is currently only available to preview in classic Outlook on Windows.
+        if (Office.context.diagnostics.platform === Office.PlatformType.PC) {
+          await getSenderEmailAddress(item);
+        }
+      }
+    }
+
+    // Gets the sender's email address of each selected message.
+    async function getSenderEmailAddress(item) {
+      const itemId = item.itemId;
+      await new Promise((resolve) => {
+        Office.context.mailbox.loadItemByIdAsync(itemId, (result) => {
+          if (result.status === Office.AsyncResultStatus.Failed) {
+            console.log(result.error.message);
+            return;
+          }
+
+          const loadedItem = result.value;
+          const sender = loadedItem.from.emailAddress;
+          appendToListItem(sender);
+
+          // Unload the current message before processing another selected message.
+          loadedItem.unloadAsync((asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+              console.log(asyncResult.error.message);
+              return;
+            }
+
+            resolve();
+          });
         });
-    });
+      });
+    }
+
+    // Clears the list in the task pane.
+    function clearList(list) {
+      while (list.firstChild) {
+        list.removeChild(list.firstChild);
+      }
+    }
+
+    // Adds an item to a list in the task pane.
+    function addToList(item) {
+      const listItem = document.createElement("li");
+      listItem.textContent = item;
+      list.appendChild(listItem);
+    }
+
+    // Appends data to the last item of the list in the task pane.
+    function appendToListItem(data) {
+      const listItem = list.lastChild;
+      listItem.textContent += ` (${data})`;
+    }
     ```
 
 1. Save your changes.
@@ -262,9 +349,9 @@ Now that you've registered an event handler, you then call the [getSelectedItems
 
 1. Navigate to your inbox and choose multiple messages by holding **Ctrl** while selecting messages.
 
-1. Select **Show Taskpane** from the ribbon.
+1. Select **Show Taskpane**. The location of the add-in varies depending on your Outlook client. For guidance, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
-1. In the task pane, select **Run** to view a list of the selected messages' subject lines.
+1. In the task pane, select **Get information**. A list of the selected messages' subject lines and sender email addresses is displayed in the task pane.
 
     :::image type="content" source="../images/outlook-multi-select.png" alt-text="A sample list of subject lines retrieved from multiple selected messages.":::
 
@@ -277,6 +364,7 @@ Item multi-select only supports messages within an Exchange mailbox in both read
 - An add-in must implement a task pane in order to detect the `SelectedItemsChanged` event.
 - The [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) in Outlook must be enabled. An exception to this is if the item multi-select feature is enabled through the no item context feature in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
 - A maximum of 100 messages can be selected at a time.
+- The `loadItemByIdAsync` method only processes one selected message at a a time. Remember to call `unloadAsync` after `loadItemByIdAsync` finishes processing the message. This way, the add-in can load and process the next selected message.
 
 > [!NOTE]
 > Meeting invites and responses are considered messages, not appointments, and can therefore be included in a selection.
