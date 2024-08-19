@@ -231,6 +231,11 @@
             "redirect_document_id": true
         },
         {
+            "source_path": "docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md",
+            "redirect_url": "/office/dev/add-ins/develop/referencing-the-javascript-api-for-office-library-from-its-cdn",
+            "redirect_document_id": true
+        },
+        {
             "source_path": "docs/develop/define-add-in-commands.md",
             "redirect_url": "/office/dev/add-ins/develop/create-addin-commands",
             "redirect_document_id": false
