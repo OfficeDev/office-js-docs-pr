@@ -13,7 +13,7 @@ This article describes how to publish an Office Add-in that you created using th
 > [!NOTE]
 >
 > - For information about publishing an Office Add-in that you created using Visual Studio, see [Publish your add-in using Visual Studio](package-your-add-in-using-visual-studio.md).
-> - The process described in this article doesn't apply to add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). For information about publishing an Office Add-in that you created using Teams Toolkit (which use the unified manifest), see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). The latter article is about Teams tab apps, but it is applicable to Office Add-ins created with Teams Toolkit.
+> - The process described in this article doesn't apply to add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). Add-ins created using Teams Toolkit use the unified manifest. For information about publishing an add-in that you created using Teams Toolkit, see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). The latter article is about Teams tab apps, but it is applicable to Office Add-ins created with Teams Toolkit.
 
 ## Publishing an add-in for other users to access
 
