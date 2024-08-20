@@ -1,7 +1,7 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows
 description: Learn how to develop add-ins that are compatible with the new Outlook on Windows.
-ms.date: 07/01/2024
+ms.date: 08/16/2024
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +18,7 @@ To help get you started on the migration process, review the following guidance.
 - The differences in features and scenarios supported by VSTO and COM add-ins and Outlook web add-ins are being addressed. To determine whether your add-in scenario is fully supported in an Outlook web add-in, see [Supported scenarios in Outlook web add-ins](#supported-scenarios-in-outlook-web-add-ins).
 - For guidance on how to transition your VSTO add-in to an Outlook web add-in, see [VSTO add-in developer's guide](../overview/learning-path-transition.md) and [Tutorial: Share code between both a VSTO Add-in and an Office Add-in with a shared code library](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
 - If you're new to Outlook web add-ins, try out the [Outlook quick start](../quickstarts/outlook-quickstart.md) to build your first add-in.
-- If you're an IT administrator and would like to learn more about how to transition to Outlook web add-ins in your organization, see [Transitioning add-ins from classic Outlook to the new Outlook for Windows](https://techcommunity.microsoft.com/t5/outlook-blog/add-ins-in-the-new-outlook-for-windows/ba-p/3954388).
+- If you're an IT administrator and would like to learn more about how to transition to Outlook web add-ins in your organization, see [Transitioning add-ins from classic Outlook to the new Outlook for Windows](/microsoft-365-apps/outlook/get-started/migrate-com-to-web-addins#transitioning-add-ins-from-classic-outlook-to-the-new-outlook-for-windows). By default, when a user switches to new Outlook on Windows for the first time, they can choose to import their Outlook settings and install existing add-ins from classic Outlook on Windows. Because COM add-ins aren't supported in the new client, web add-in counterparts are installed instead. For more information, see [Install web add-in counterparts of existing COM add-ins in new Outlook for Windows](/microsoft-365-apps/outlook/get-started/install-web-add-ins).
 
 > [!NOTE]
 > VSTO and COM add-ins are still supported in classic Outlook on Windows.
@@ -98,7 +98,7 @@ As you test your Outlook web add-in in the new Outlook on Windows, share feedbac
 
 ## See also
 
-- [Overview of the new Outlook for Windows](/deployoffice/outlook/overview-new-outlook)
+- [Overview of the new Outlook for Windows](/microsoft-365-apps/outlook/overview-new-outlook)
 - [Blog post: Add-ins in the new Outlook for Windows](https://techcommunity.microsoft.com/t5/outlook-blog/add-ins-in-the-new-outlook-for-windows/ba-p/3954388)
 - [Podcast: Update on development with new Outlook for Windows](https://www.m365devpodcast.com/update-on-development-with-new-outlook-for-windows/)
 - [Outlook add-ins overview](outlook-add-ins-overview.md)
