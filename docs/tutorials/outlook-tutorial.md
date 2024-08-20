@@ -130,8 +130,6 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-    [!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 1. Navigate to the root directory of the project.

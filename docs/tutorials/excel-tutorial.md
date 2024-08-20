@@ -42,8 +42,6 @@ In this tutorial, you'll create an Excel task pane add-in that:
 
 After you complete the wizard, the generator creates the project and installs supporting Node components. You may need to manually run `npm install` in the root folder of your project if something fails during the initial setup.
 
-[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## Create a table
