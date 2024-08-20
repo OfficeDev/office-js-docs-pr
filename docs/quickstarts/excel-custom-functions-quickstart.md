@@ -85,7 +85,7 @@ Congratulations, you've successfully created a custom function in an Excel add-i
 > [!div class="nextstepaction"]
 > [Excel custom functions add-in tutorial](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web)
 
-[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting-yo.md)]
 
 You may encounter issues if you run the quick start multiple times. If the Office cache already has an instance of a function with the same name, your add-in gets an error when it sideloads. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`.
 

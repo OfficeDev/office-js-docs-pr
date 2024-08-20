@@ -23,13 +23,13 @@ items:
     - name: OneNote add-in
       href: quickstarts/onenote-quickstart.md
     - name: Outlook add-in
-      href: quickstarts/outlook-quickstart.md
+      href: quickstarts/outlook-quickstart-yo.md
     - name: PowerPoint add-in
-      href: quickstarts/powerpoint-quickstart.md
+      href: quickstarts/powerpoint-quickstart-yo.md
     - name: Project add-in
       href: quickstarts/project-quickstart.md
     - name: Word add-in
-      href: quickstarts/word-quickstart.md
+      href: quickstarts/word-quickstart-yo.md
     - name: Single sign-on (SSO)
       href: quickstarts/sso-quickstart.md
   - name: Explore Office JS APIs using Script Lab
@@ -660,7 +660,7 @@ items:
     href: outlook/outlook-add-ins-overview.md
     displayName: Outlook
   - name: Build your first Outlook add-in
-    href: quickstarts/outlook-quickstart.md
+    href: quickstarts/outlook-quickstart-yo.md
     displayName: Outlook
   - name: Outlook add-in tutorial
     href: tutorials/outlook-tutorial.md
@@ -847,7 +847,7 @@ items:
   - name: Build your first PowerPoint add-in
     items:
     - name: Task pane
-      href: quickstarts/powerpoint-quickstart.md
+      href: quickstarts/powerpoint-quickstart-yo.md
       displayName: PowerPoint
     - name: Content
       href: quickstarts/powerpoint-quickstart-content.md
@@ -918,7 +918,7 @@ items:
     href: word/word-add-ins-programming-overview.md
     displayName: Word
   - name: Build your first Word add-in
-    href: quickstarts/word-quickstart.md
+    href: quickstarts/word-quickstart-yo.md
     displayName: Word
   - name: Word add-in tutorial
     href: tutorials/word-tutorial.md
@@ -961,6 +961,39 @@ items:
     - name: Troubleshoot Word add-ins
       href: word/word-add-ins-troubleshooting.md
       displayName: Word
+- name: Transition from VSTO and COM
+  items: 
+  - name: VSTO add-in developers' guide to Office Add-ins
+    href: overview/learning-path-transition.md
+  - name: Quick starts
+    items:
+    - name: Excel
+      items:
+      - name: Task pane
+        href: quickstarts/excel-quickstart-vs.md
+        displayName: Excel
+      - name: Content
+        href: quickstarts/excel-quickstart-content.md
+        displayName: Excel
+    - name: Outlook
+      href: quickstarts/outlook-quickstart-vs.md
+      displayName: Outlook
+    - name: PowerPoint 
+      items:
+      - name: Task pane
+        href: quickstarts/powerpoint-quickstart-vs.md
+        displayName: PowerPoint
+      - name: Content
+        href: quickstarts/powerpoint-quickstart-content.md
+        displayName: PowerPoint
+    - name: Word
+      href: quickstarts/word-quickstart-vs.md
+      displayName: Word
+  - name: Share code from VSTO Add-in to Office Add-in
+    href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+  - name: Make your Office Add-in compatible with an existing COM add-in
+    href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+    displayName: manifest
 - name: Resources
   items:
   - name: GitHub Copilot prompt library
@@ -974,12 +1007,4 @@ items:
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
   - name: Office Add-ins community call
     href: overview/office-add-ins-community-call.md
-  - name: VSTO and COM transition resources
-    items: 
-    - name: VSTO add-in developers' guide to Office Add-ins
-      href: overview/learning-path-transition.md
-    - name: Share code from VSTO Add-in to Office Add-in
-      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-    - name: Make your Office Add-in compatible with an existing COM add-in
-      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-      displayName: manifest
+

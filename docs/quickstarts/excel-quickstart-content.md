@@ -10,13 +10,11 @@ ms.localizationpriority: medium
 
 In this article, you'll walk through the process of building an Excel [content add-in](../design/content-add-ins.md) using Visual Studio.
 
-## Create the add-in
-
-### Prerequisites
+## Prerequisites
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### Create the add-in project
+## Create the add-in project
 
 1. In Visual Studio, choose **Create a new project**.
 
@@ -30,11 +28,11 @@ In this article, you'll walk through the process of building an Excel [content a
 
 1. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
-### Explore the Visual Studio solution
+## Explore the Visual Studio solution
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### Update the manifest
+## Update the manifest
 
 1. In **Solution Explorer**, go to the **ExcelWebAddIn1** add-in project and open the **ExcelWebAddIn1Manifest** directory. This directory contains your manifest file, **ExcelWebAddIn1.xml**. The manifest file defines the add-in's settings and capabilities. See the preceding section [Explore the Visual Studio solution](#explore-the-visual-studio-solution) for more information about the two projects created by your Visual Studio solution.
 
@@ -56,7 +54,7 @@ In this article, you'll walk through the process of building an Excel [content a
     ...
     ```
 
-### Try it out
+## Try it out
 
 1. Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the content add-in displayed in the spreadsheet.
 
@@ -80,9 +78,11 @@ In this article, you'll walk through the process of building an Excel [content a
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
-### Next steps
+## Next steps
 
 Congratulations, you've successfully created an Excel content add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
+
+[!include[The common troubleshooting section for all Visual Studio quick starts](../includes/quickstart-troubleshooting-vs.md)]
 
 ## Code samples
 

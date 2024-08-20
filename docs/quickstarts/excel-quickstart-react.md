@@ -69,7 +69,7 @@ Congratulations, you've successfully created an Excel task pane add-in using Rea
 > [!div class="nextstepaction"]
 > [Excel add-in tutorial](../tutorials/excel-tutorial.md)
 
-[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+[!include[The common troubleshooting section for all yo office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 
 ## See also
 

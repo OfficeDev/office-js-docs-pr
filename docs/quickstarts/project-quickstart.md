@@ -87,7 +87,7 @@ Congratulations, you've successfully created a Project task pane add-in! Next, l
 > [!div class="nextstepaction"]
 > [Project add-ins](../project/project-add-ins.md)
 
-[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+[!include[The common troubleshooting section for all yo office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 
 ## See also
 
