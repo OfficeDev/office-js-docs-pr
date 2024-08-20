@@ -41,8 +41,6 @@ In this tutorial, you'll create a Word task pane add-in that:
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## Insert a range of text

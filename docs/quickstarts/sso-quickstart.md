@@ -43,8 +43,6 @@ In this article, you'll use the Yeoman generator for Office Add-ins to create an
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## Explore the project
