@@ -183,4 +183,4 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
-- [Publish your add-in using Visual Studio](../publish/package-your-add-in-using-visual-studio)
+- [Publish your add-in using Visual Studio](../publish/package-your-add-in-using-visual-studio.md)

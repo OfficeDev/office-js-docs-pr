@@ -232,4 +232,4 @@ Congratulations, you've successfully created a Word task pane add-in! Next, to l
 - [Word add-ins overview](../word/word-add-ins-programming-overview.md)
 - [Word add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Word)
 - [Word JavaScript API reference](../reference/overview/word-add-ins-reference-overview.md)
-- [Publish your add-in using Visual Studio](../publish/package-your-add-in-using-visual-studio.vs)
+- [Publish your add-in using Visual Studio](../publish/package-your-add-in-using-visual-studio.md)
