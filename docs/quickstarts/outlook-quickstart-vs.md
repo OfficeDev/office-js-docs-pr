@@ -187,4 +187,4 @@ If you receive the error "We can't open this add-in from localhost" in the task 
 ## See also
 
 - [Office Add-ins with the add-in only manifest](../develop/xml-manifest-overview.md)
-- [Publish your add-in using Visual Studio](../publish/package-your-add-in-using-visual-studio)
+- [Publish your add-in using Visual Studio](../publish/package-your-add-in-using-visual-studio.md)

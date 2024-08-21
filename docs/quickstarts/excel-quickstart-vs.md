@@ -167,4 +167,4 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 - [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)
 - [Excel add-in code samples](https://developer.microsoft.com/microsoft-365/gallery/?filterBy=Excel,Samples)
 - [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
-- [Publish your add-in using Visual Studio](../publish/package-your-add-in-using-visual-studio)
+- [Publish your add-in using Visual Studio](../publish/package-your-add-in-using-visual-studio.md)

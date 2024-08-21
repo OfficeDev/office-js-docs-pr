@@ -18,10 +18,10 @@ This tutorial provides instructions and screenshots for Excel but you can use a 
 
     - [Excel](../quickstarts/excel-quickstart-jquery.md)
     - [OneNote](../quickstarts/onenote-quickstart.md)
-    - [Outlook](../quickstarts/outlook-quickstart.md)
-    - [PowerPoint](../quickstarts/powerpoint-quickstart.md)
+    - [Outlook](../quickstarts/outlook-quickstart-yo.md)
+    - [PowerPoint](../quickstarts/powerpoint-quickstart-yo.md)
     - [Project](../quickstarts/project-quickstart.md)
-    - [Word](../quickstarts/word-quickstart.md)
+    - [Word](../quickstarts/word-quickstart-yo.md)
 
 1. Follow the instructions in your selected quick start. After you complete its "Try it out" section, return here to continue.
 

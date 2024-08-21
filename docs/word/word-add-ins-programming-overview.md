@@ -69,7 +69,7 @@ Use the shared Office JavaScript API when you need to do any of the following:
 
 ## Next steps
 
-Ready to create your first Word add-in? See [Build your first Word add-in](../quickstarts/word-quickstart.md). Use the [add-in manifest](../develop/add-in-manifests.md) to describe where your add-in is hosted, how it's displayed, and define permissions and other information.
+Ready to create your first Word add-in? See [Build your first Word add-in](../quickstarts/word-quickstart-yo.md). Use the [add-in manifest](../develop/add-in-manifests.md) to describe where your add-in is hosted, how it's displayed, and define permissions and other information.
 
 To learn more about how to design a world-class Word add-in that creates a compelling experience for your users, see [Design guidelines](../design/add-in-design.md) and [Best practices](../concepts/add-in-development-best-practices.md).
 

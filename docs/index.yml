@@ -39,11 +39,11 @@ productDirectory:
     links:
       - url: quickstarts/excel-quickstart-jquery.md
         text: "Excel: Build your first add-in"
-      - url: quickstarts/outlook-quickstart.md
+      - url: quickstarts/outlook-quickstart-yo.md
         text: "Outlook: Build your first add-in"
-      - url: quickstarts/powerpoint-quickstart.md
+      - url: quickstarts/powerpoint-quickstart-yo.md
         text: "PowerPoint: Build your first add-in"
-      - url: quickstarts/word-quickstart.md
+      - url: quickstarts/word-quickstart-yo.md
         text: "Word: Build your first add-in"
   
   - title: Add-in scenarios
