@@ -79,7 +79,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 > [!div class="nextstepaction"]
 > [Word add-in tutorial](../tutorials/word-tutorial.md)
 
-[!include[The common troubleshooting section for all yo office quick starts](../includes/quickstart-troubleshooting.md)]
+[!include[The common troubleshooting section for all yo office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 
 ## Code samples
 

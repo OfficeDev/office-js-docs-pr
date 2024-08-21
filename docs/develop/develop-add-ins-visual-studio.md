@@ -17,10 +17,10 @@ This article describes how to use Visual Studio to develop an Office Add-in. If 
 
 Visual Studio can be used to create Office Add-ins for Excel, Outlook, PowerPoint, and Word. An Office Add-in project gets created as part of a Visual Studio solution and uses HTML, CSS, and JavaScript. To create an Office Add-in with Visual Studio, follow instructions in the quick start that corresponds to the add-in you'd like to create.
 
-- [Excel quick start](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
-- [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=visualstudio)
-- [PowerPoint quick start](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
-- [Word quick start](../quickstarts/word-quickstart.md?tabs=visualstudio)
+- [Excel quick start](../quickstarts/excel-quickstart-vs.md?)
+- [Outlook quick start](../quickstarts/outlook-quickstart-vs.md)
+- [PowerPoint quick start](../quickstarts/powerpoint-quickstart-vs.md)
+- [Word quick start](../quickstarts/word-quickstart-vs.md)
 
 Visual Studio doesn't support creating Office Add-ins for OneNote or Project. To create Office Add-ins for either of these applications, you'll need to use the Yeoman generator for Office Add-ins, as described in the [OneNote quick start](../quickstarts/onenote-quickstart.md) or the [Project quick start](../quickstarts/project-quickstart.md).
 

@@ -1,12 +1,12 @@
 ---
-title: Build your first Excel task pane add-in
+title: Build your first Excel task pane add-in with Visual Studio
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and Visual Studio's templates.
 ms.date: 08/20/2024
 ms.service: excel
 ms.localizationpriority: high
 ---
 
-# Build an Excel task pane add-in
+# Build an Excel task pane add-in with Visual Studio
 
 In this article, you'll walk through the process of building an Excel task pane add-in in Visual Studio.
 
@@ -167,4 +167,4 @@ Congratulations, you've successfully created an Excel task pane add-in! Next, le
 - [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)
 - [Excel add-in code samples](https://developer.microsoft.com/microsoft-365/gallery/?filterBy=Excel,Samples)
 - [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
-- [Publish your add-in using Visual Studio](..//publish/package-your-add-in-using-visual-studio)
+- [Publish your add-in using Visual Studio](../publish/package-your-add-in-using-visual-studio)

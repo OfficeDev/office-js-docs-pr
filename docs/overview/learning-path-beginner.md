@@ -37,8 +37,8 @@ You've got the big picture now, so dive in by installing our [Script Lab add-in]
 
 Next, create an add-in using one of our quick starts. For the purpose of learning the platform, we recommend the Excel quick start. There's a version based on Visual Studio and another based in Node.js and Visual Studio Code.
 
-- [Visual Studio](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
-- [Node.js and Visual Studio Code](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)
+- [Visual Studio](../quickstarts/excel-quickstart-vs.md)
+- [Node.js and Visual Studio Code](../quickstarts/excel-quickstart-jquery.md)
 
 ## Step 4: Code
 

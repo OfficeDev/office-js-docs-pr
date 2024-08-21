@@ -39,8 +39,8 @@ There are a lot of links in those articles, but if you're transitioning to Offic
 
 You've got the big picture now, so dive in with one of our quick starts. For purposes of learning the platform, we recommend the Excel quick start. There's a version based on Visual Studio and another based on Node.js and Visual Studio Code. If you're transitioning from VSTO add-ins, you'll probably find the Visual Studio version easier to work with.
 
-- [Visual Studio](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
-- [Node.js and Visual Studio Code](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)
+- [Visual Studio](../quickstarts/excel-quickstart-vs.md)
+- [Node.js and Visual Studio Code](../quickstarts/excel-quickstart-jquery.md)
 
 ## Step 3: Code
 

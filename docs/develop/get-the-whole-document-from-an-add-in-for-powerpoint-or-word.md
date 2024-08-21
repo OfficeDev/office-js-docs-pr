@@ -27,11 +27,11 @@ This article assumes that you are using a text editor to create the task pane ad
 Alternatively, you can create an add-in for your Office application using one of the following options. You won't have to create new files as the equivalent of each required file will be available for you to update. For example, the Yeoman generator options include **./src/taskpane/taskpane.html**, **./src/taskpane/taskpane.js**, **./src/taskpane/taskpane.css**, and **./manifest.xml**.
 
 - PowerPoint
-  - [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
-  - [Yeoman generator for Office Add-ins](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator)
+  - [Visual Studio](../quickstarts/powerpoint-quickstart-vs.md)
+  - [Yeoman generator for Office Add-ins](../quickstarts/powerpoint-quickstart-yo.md)
 - Word
-  - [Visual Studio](../quickstarts/word-quickstart.md?tabs=visualstudio)
-  - [Yeoman generator for Office Add-ins](../quickstarts/word-quickstart.md?tabs=yeomangenerator)
+  - [Visual Studio](../quickstarts/word-quickstart-vs.md)
+  - [Yeoman generator for Office Add-ins](../quickstarts/word-quickstart-yo.md)
 
 ### Core concepts to know for creating a task pane add-in
 

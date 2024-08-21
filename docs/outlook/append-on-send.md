@@ -21,7 +21,7 @@ In this walkthrough, you'll develop an add-in that prepends a header and appends
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) which creates an add-in project with the Yeoman generator for Office Add-ins.
 
 ## Configure the manifest
 
