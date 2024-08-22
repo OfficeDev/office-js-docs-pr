@@ -33,8 +33,6 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ### Explore the project

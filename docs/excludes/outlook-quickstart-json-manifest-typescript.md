@@ -46,8 +46,6 @@ You can create an Office Add-in with the unified manifest by using the [Yeoman g
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
-    [!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 1. Navigate to the root folder of the web application project.
