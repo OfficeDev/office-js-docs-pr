@@ -21,13 +21,9 @@ In this article, you'll walk through the process of building an Outlook task pan
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
     - **Choose a project type** - `Office Add-in Task Pane project`
-
     - **Choose a script type** - `JavaScript`
-
     - **What do you want to name your add-in?** - `My Office Add-in`
-
     - **Which Office client application would you like to support?** - `Outlook`
-
     - **Which manifest would you like to use?** - Choose either `Unified manifest for Microsoft 365` or `Add-in only manifest`
 
     [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)]
@@ -141,7 +137,7 @@ Congratulations, you've successfully created your first Outlook task pane add-in
 
 [!include[The common troubleshooting section for all yo office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 
-If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
+- If you receive the error "We can't open this add-in from localhost" in the task pane, follow the steps outlined in the [troubleshooting article](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 ## Code samples
 

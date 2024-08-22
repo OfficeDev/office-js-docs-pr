@@ -1,7 +1,7 @@
 ---
 title: Beginner's guide to Office Add-ins
 description:  A recommended path for beginners through the learning resources for Office Add-ins.
-ms.date: 07/28/2024
+ms.date: 08/22/2024
 ms.topic: get-started
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -35,10 +35,7 @@ You've got the big picture now, so dive in by installing our [Script Lab add-in]
 
 ## Step 3: Install tools and create your first add-in
 
-Next, create an add-in using one of our quick starts. For the purpose of learning the platform, we recommend the Excel quick start. There's a version based on Visual Studio and another based in Node.js and Visual Studio Code.
-
-- [Visual Studio](../quickstarts/excel-quickstart-vs.md)
-- [Node.js and Visual Studio Code](../quickstarts/excel-quickstart-jquery.md)
+Next, create an add-in using one of our quick starts. For the purpose of learning the platform, we recommend the [Excel quick start](../quickstarts/excel-quickstart-jquery.md).
 
 ## Step 4: Code
 
