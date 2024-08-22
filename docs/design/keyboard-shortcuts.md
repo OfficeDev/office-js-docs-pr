@@ -244,28 +244,22 @@ Office.actions.getShortcuts()
 
 ```
 
-### Best practices for user shortcut customization
+As described in [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins), it's a good practice to avoid conflicts in shortcuts. To discover if one or more key combinations are already in use, pass them as an array of strings to the [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member) method. The method returns a report containing key combinations that are already in use in the form of an array of objects of type `{shortcut: string, inUse: boolean}`. The `shortcut` property is a key combination, such as "Ctrl+Shift+1". If the combination is already registered to another action, the `inUse` property is set to `true`. For example, `[{shortcut: "Ctrl+Shift+1", inUse: true}, {shortcut: "Ctrl+Shift+2", inUse: false}]`. The following code snippet is an example.
 
-- As described in [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins), it's a good practice to avoid conflicts in shortcuts. To discover if one or more key combinations are already in use, pass them as an array of strings to the [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member) method. The method returns a report containing key combinations that are already in use in the form of an array of objects of type `{shortcut: string, inUse: boolean}`. The `shortcut` property is a key combination, such as "Ctrl+Shift+1". If the combination is already registered to another action, the `inUse` property is set to `true`. For example, `[{shortcut: "Ctrl+Shift+1", inUse: true}, {shortcut: "Ctrl+Shift+2", inUse: false}]`. The following code snippet is an example.
-
-    ```javascript
-    const shortcuts = ["Ctrl+Shift+1", "Ctrl+Shift+2"];
-    Office.actions.areShortcutsInUse(shortcuts)
-        .then((inUseArray) => {
-            const availableShortcuts = inUseArray.filter((shortcut) => {
-                return !shortcut.inUse;
-            });
-            console.log(availableShortcuts);
-            const usedShortcuts = inUseArray.filter((shortcut) => {
-                return shortcut.inUse;
-            });
-            console.log(usedShortcuts);
+```javascript
+const shortcuts = ["Ctrl+Shift+1", "Ctrl+Shift+2"];
+Office.actions.areShortcutsInUse(shortcuts)
+    .then((inUseArray) => {
+        const availableShortcuts = inUseArray.filter((shortcut) => {
+            return !shortcut.inUse;
         });
-    ```
-
-- Provide options to manage and reset custom keyboard shortcuts in your add-in's settings. To make an option accessible and recognizable, use clear and concise labeling, such as **Manage keyboard shortcuts**.
-- Provide options to reset keyboard shortcuts to their default settings individually or in a batch. Use the reset API to implement this in your add-in.
-- Implement functionality to back up current keyboard shortcuts before a user resets them. This way, users can restore their previous shortcuts if needed.
+        console.log(availableShortcuts);
+        const usedShortcuts = inUseArray.filter((shortcut) => {
+            return shortcut.inUse;
+        });
+        console.log(usedShortcuts);
+    });
+```
 
 ## Implement custom keyboard shortcuts across supported Microsoft 365 apps
 
