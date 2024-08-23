@@ -2,7 +2,7 @@
 title: Configure your Office Add-in to use a shared runtime
 description: Configure your Office Add-in to use a shared runtime to support additional ribbon, task pane, and custom function features.
 ms.topic: how-to
-ms.date: 05/20/2023
+ms.date: 08/23/2024
 ms.localizationpriority: high
 ---
 
@@ -26,7 +26,7 @@ If your add-in uses an add-in only manifest, you can also use the steps in this 
 
 ## Configure the manifest
 
-Follow these steps to configure a new or existing project to use a shared runtime. These steps assume you have generated your project using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md).
+Follow these steps to configure a new or existing project to use a shared runtime. These steps assume you have generated your project using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md). Select the tab for the type of manifest your add-in is using.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -61,6 +61,8 @@ Follow these steps to configure a new or existing project to use a shared runtim
         ]
     ]
     ```
+
+1. Save your changes.
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
@@ -122,7 +124,7 @@ Follow these steps to configure a new or existing project to use a shared runtim
     ...
     ```
 
-1. Save the **manifest.xml** file.
+1. Save your changes.
 
 ---
 
@@ -176,7 +178,7 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
 Confirm that you're using the shared runtime correctly by using the following instructions.
 
 1. Open the **taskpane.js** file.
-1. Replace the entire contents of the file with the following code. This will display a count of how many times the task pane has been opened. Adding the onVisibilityModeChanged event is only supported in a shared runtime.
+1. Replace the entire contents of the file with the following code. This will display a count of how many times the task pane has been opened. Adding the `onVisibilityModeChanged` event is only supported in a shared runtime.
 
     ```javascript
     /*global document, Office*/
