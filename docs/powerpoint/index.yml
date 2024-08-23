@@ -28,7 +28,7 @@ landingContent:
       - linkListType: quickstart
         links:
           - text: Build your first PowerPoint add-in
-            url: ../quickstarts/powerpoint-quickstart.md
+            url: ../quickstarts/powerpoint-quickstart-yo.md
           - text: Explore Office JavaScript API using Script Lab
             url: ../overview/explore-with-script-lab.md
       - linkListType: how-to-guide

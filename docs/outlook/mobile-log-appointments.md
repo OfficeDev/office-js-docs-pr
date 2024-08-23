@@ -20,7 +20,7 @@ Logging notes to an external application from an Outlook mobile add-in is suppor
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) to create an add-in project with the Yeoman generator for Office Add-ins.
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to create an add-in project with the Yeoman generator for Office Add-ins.
 
 ## Configure the manifest
 

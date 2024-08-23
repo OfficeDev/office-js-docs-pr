@@ -17,7 +17,7 @@ With a simple manifest configuration, you can create Outlook add-ins for the Mes
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an Outlook add-in with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) in which you create an Outlook add-in with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 To turn on this feature in a preexisting add-in project, see [Configure the manifest](#configure-the-manifest).
 

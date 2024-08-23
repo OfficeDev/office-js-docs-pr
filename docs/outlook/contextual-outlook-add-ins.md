@@ -88,5 +88,5 @@ const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
 ## See also
 
 - [Outlook add-in: Contoso Order Number](https://github.com/OfficeDev/Outlook-Add-In-Contextual-Regex) (sample contextual add-in that activates based on a regular expression match)
-- [Build your first Outlook add-in](../quickstarts/outlook-quickstart.md)
+- [Build your first Outlook add-in](../quickstarts/outlook-quickstart-yo.md)
 - [Activation rules for contextual Outlook add-ins](activation-rules.md)

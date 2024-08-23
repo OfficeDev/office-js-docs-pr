@@ -200,5 +200,5 @@ function write(message){
 
 ## See also
 
-- [Create your first Outlook add-in](../quickstarts/outlook-quickstart.md)
+- [Create your first Outlook add-in](../quickstarts/outlook-quickstart-yo.md)
 - [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)
