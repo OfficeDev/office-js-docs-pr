@@ -8,7 +8,7 @@ ms.localizationpriority: high
 
 # Build your first Outlook add-in
 
-In this article, you'll walk through the process of building an Outlook task pane add-in using yo office that displays at least one property of a selected message.
+In this article, you'll walk through the process of building an Outlook task pane add-in using Yo Office that displays at least one property of a selected message.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ In this article, you'll walk through the process of building an Outlook task pan
 
     [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)]
 
-    Depending on your choice of manifest, the prompts and answers should look like one of the following.
+    Depending on your choice of manifest, the prompts and answers should look like one of the following:
 
     ![The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and add-in only manifest are chosen.](../images/yo-office-outlook-xml-manifest-javascript.png)
 
@@ -61,10 +61,10 @@ The Yeoman generator creates a project in a folder with the project name that yo
 1. Open the file **./src/taskpane/taskpane.js**, then replace the contents of the **run** function with the following code. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
 
     ```js
-    // Get a reference to the current message
+    // Get a reference to the current message.
     const item = Office.context.mailbox.item;
 
-    // Write message property value to the task pane
+    // Write message property value to the task pane.
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
     ```
 

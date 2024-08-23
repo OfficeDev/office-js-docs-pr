@@ -138,7 +138,7 @@ This option only installs Visual Studio.
 
 ### Install Visual Studio
 
-Install the latest version Visual Studio from [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/). Be sure to include the **Office/SharePoint development** workload when the installer asks you to specify workloads. Other workloads that you may need are **Web development tools for .NET**, **JavaScript and TypeScript language support** (for coding the client-side of the add-in), and ASP.NET-related workloads.
+Install the latest version of Visual Studio from [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/). Be sure to include the **Office/SharePoint development** workload when the installer asks you to specify workloads. Other workloads that you may need are **Web development tools for .NET**, **JavaScript and TypeScript language support** (for coding the client-side of the add-in), and ASP.NET-related workloads.
 
 > [!NOTE]
 > For information about debugging client-side code when you're using the Visual Studio environment, see [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md). Debug the server-side code the same way you would any web application created in Visual Studio. See [Client-side or server-side](../testing/debug-add-ins-overview.md#server-side-or-client-side).

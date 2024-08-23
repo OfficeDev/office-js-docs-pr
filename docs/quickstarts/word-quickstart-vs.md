@@ -1,6 +1,6 @@
 ---
 title: Build your first Word task pane add-in with Visual Studio
-description: Learn how to build a simple Word task pane add-in by using the Office JavaScript API.
+description: Learn how to build a simple Word task pane add-in by using the Office JavaScript API and a Visual Studio template.
 ms.date: 08/20/2024
 ms.service: word
 ms.localizationpriority: high
