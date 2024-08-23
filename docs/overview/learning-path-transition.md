@@ -37,9 +37,13 @@ There are a lot of links in those articles, but if you're transitioning to Offic
 
 ## Step 2: Install tools and create your first add-in
 
-You've got the big picture now, so dive in with one of our quick starts. For purposes of learning the platform, we recommend the [Excel quick start for Visual Studio](../quickstarts/excel-quickstart-vs.md).
+You've got the big picture now, so dive in with one of our quick starts. For purposes of learning the platform, we recommend the [PowerPoint quick start for Visual Studio](../quickstarts/powerpoint-quickstart-vs.md).
 
-## Step 3: Understand the JavaScript library
+## Step 3: Code
+
+You can't learn to drive by reading the owner's manual, so start coding with this [PowerPoint tutorial](../tutorials/powerpoint-tutorial.md?tabs=visualstudio). You'll be using the Office JavaScript library and some XML in the add-in's manifest. There's no need to memorize anything, because you'll be getting more background about both in a later step.
+
+## Step 4: Understand the JavaScript library
 
 Get the big picture of the Office JavaScript library with the [Understand the Office JavaScript APIs tutorial](/training/modules/intro-office-add-ins/3-apis) from Microsoft Learn training.
 
@@ -49,11 +53,11 @@ Then, explore the Office JavaScript APIs with the [Script Lab tool](explore-with
 
 This would be a good place to take a look at the sample add-in, [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker). It was created to highlight the similarities and differences between VSTO add-ins and Office Web Add-ins, and the readme of the sample calls out the important points of comparison.
 
-## Step 4: Understand the manifest
+## Step 5: Understand the manifest
 
 Get an understanding of the purposes of the web add-in manifest and an introduction to its XML markup or JSON in [Office Add-ins manifest](../develop/add-in-manifests.md).
 
-## Step 5 (for VSTO developers only): Reuse your VSTO code
+## Step 6 (for VSTO developers only): Reuse your VSTO code
 
 You can reuse some of your VSTO add-in code in an Office web add-in by moving it to your web application's back end on the server and making it available to your JavaScript or TypeScript as a web API. For guidance, see [Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
 
@@ -63,11 +67,14 @@ Congratulations on finishing the VSTO add-in developer's learning path for Offic
 
 - Tutorials or quick starts for other Office applications:
 
+  - [Excel tutorial](../tutorials/excel-tutorial.md)
   - [OneNote quick start](../quickstarts/onenote-quickstart.md)
   - [Outlook tutorial](/outlook/add-ins/addin-tutorial)
-  - [PowerPoint tutorial](../tutorials/powerpoint-tutorial.md)
   - [Project quick start](../quickstarts/project-quickstart.md)
   - [Word tutorial](../tutorials/word-tutorial.md)
+
+    > [!NOTE]
+    > These tutorials use Yo Office as their tooling infrastructure, instead of Visual Studio and the Office development templates.
 
 - Other important subjects:
 
