@@ -53,48 +53,6 @@ The Yeoman generator creates a project in a folder with the project name that yo
 - The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
 - The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and Outlook.
 
-## Update the code
-
-1. Open your project in VS Code or your preferred code editor.
-   [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
-
-1. Open the file **./src/taskpane/taskpane.js**, then replace the contents of the **run** function with the following code. This code uses the Office JavaScript API to get a reference to the current message and write its **subject** property value to the task pane.
-
-    ```js
-    // Get a reference to the current message.
-    const item = Office.context.mailbox.item;
-
-    // Write message property value to the task pane.
-    document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
-    ```
-
-    Your **taskpane.js** file should now contain the following code.
-
-    ```js
-    /*
-     * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
-     * See LICENSE in the project root for license information.
-     */
-
-    /* global document, Office */
-
-    Office.onReady((info) => {
-      if (info.host === Office.HostType.Outlook) {
-        document.getElementById("sideload-msg").style.display = "none";
-        document.getElementById("app-body").style.display = "flex";
-        document.getElementById("run").onclick = run;
-      }
-    });
-    
-    export async function run() {
-      // Get a reference to the current message.
-      const item = Office.context.mailbox.item;
-    
-      // Write message property value to the task pane.
-      document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
-    }
-    ```
-
 ## Try it out
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
@@ -109,7 +67,7 @@ The Yeoman generator creates a project in a folder with the project name that yo
 
 1. In Outlook, view a message in the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0), or open the message in its own window.
 
-1. Select the **Show Taskpane** button to open the add-in task pane. The location of the add-in button varies depending on the Outlook client you're using. 
+1. Select the **Show Taskpane** button to open the add-in task pane. The location of the add-in button varies depending on the Outlook client you're using.
 
     - **Outlook on the web** and **new Outlook on Windows**: From the action bar of the message, select **Apps**. Then, select **My Office Add-in** > **Show Taskpane**.
     - **Classic Outlook on Windows**: Select the **Home** tab (or the **Message** tab if you opened the message in a new window). Then, select **Show Taskpane** from the ribbon.
