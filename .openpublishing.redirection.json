@@ -1231,8 +1231,23 @@
             "redirect_url": "/office/dev/add-ins/testing/sideload-an-office-add-in-on-mac"
         },
         {
+            "source_path": "docs/quickstarts/outlook-quickstart.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/outlook-quickstart-yo",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/quickstarts/powerpoint-quickstart.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/powerpoint-quickstart-yo",
+            "redirect_document_id": true
+        },
+        {
             "source_path": "docs/quickstarts/sso-quickstart-customize.md",
             "redirect_url": "/office/dev/add-ins/develop/sso-in-office-add-ins"
+        },
+        {
+            "source_path": "docs/quickstarts/word-quickstart.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/word-quickstart-yo",
+            "redirect_document_id": true
         },
         {
             "source_path": "docs/outlook/manage-state-and-settings-outlook.md",

@@ -26,7 +26,7 @@ landingContent:
       - linkListType: quickstart
         links:
           - text: Build your first Word add-in
-            url: ../quickstarts/word-quickstart.md
+            url: ../quickstarts/word-quickstart-yo.md
           - text: Explore APIs with Script Lab
             url: ../overview/explore-with-script-lab.md       
       - linkListType: how-to-guide
