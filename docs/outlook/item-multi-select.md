@@ -17,7 +17,7 @@ The following sections walk you through how to configure your add-in to retrieve
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) to create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 

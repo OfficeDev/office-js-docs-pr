@@ -204,7 +204,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 ## Try it out
 
-1. Run your add-in and sideload the add-in within Excel. Follow the instructions for the platform you'll be using:
+1. Sideload your add-in within Excel. Follow the instructions for the platform you'll be using:
 
    - Web browser: [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-a-yeoman-created-add-in-to-office-on-the-web)
    - Windows: [Sideload Office Add-ins on Windows](../testing/test-debug-non-local-server.md)
@@ -221,6 +221,16 @@ The add-in project that you've created with the Yeoman generator contains sample
 
    ![The add-in task pane open in Excel.](../images/excel-quickstart-addin-2c.png)
 
+1. When you want to stop the local web server and uninstall the add-in, follow these instructions:
+
+    - To stop the server, run the following command.
+
+        ```command&nbsp;line
+        npm stop
+        ```
+
+    - To uninstall the sideloaded add-in, see "Remove a sideloaded add-in" in the article for the platform you used in step 1 of this "Try it out" section.
+
 ## Next steps
 
 Congratulations, you've successfully created an Excel task pane add-in using Vue! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
@@ -228,7 +238,7 @@ Congratulations, you've successfully created an Excel task pane add-in using Vue
 > [!div class="nextstepaction"]
 > [Excel add-in tutorial](../tutorials/excel-tutorial.md)
 
-[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+[!include[The common troubleshooting section for all Yo Office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 
 ## See also
 

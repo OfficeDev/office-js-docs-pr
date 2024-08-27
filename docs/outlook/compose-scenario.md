@@ -49,4 +49,4 @@ Compose add-ins are implemented as [add-in commands](../design/add-in-commands.m
 
 ## See also
 
-- [Get Started with Outlook add-ins for Office](../quickstarts/outlook-quickstart.md)
+- [Get Started with Outlook add-ins for Office](../quickstarts/outlook-quickstart-yo.md)

@@ -26,7 +26,7 @@ In this tutorial, you'll use Visual Studio Code (VS Code), Visual Studio, or you
 ## Create the add-in
 
 > [!TIP]
-> If you've already completed the [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator) quick start using the Yeoman generator, and want to use that project as a starting point for this tutorial, go directly to the [Insert an image](#insert-an-image) section to start this tutorial.
+> If you've already completed the [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart-yo.md) quick start using the Yeoman generator, and want to use that project as a starting point for this tutorial, go directly to the [Insert an image](#insert-an-image) section to start this tutorial.
 >
 > If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial-yo).
 
@@ -46,8 +46,6 @@ In this tutorial, you'll use Visual Studio Code (VS Code), Visual Studio, or you
 ![Prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-powerpoint.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
-
-[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 

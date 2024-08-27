@@ -19,7 +19,7 @@ The following sections walk you through how to develop an event-based add-in tha
 
 Before you start the walkthrough, verify that your Outlook client supports the Smart Alerts feature. For guidance, see [Supported clients and platforms](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms).
 
-Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 

@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 08/15/2024
+ms.date: 08/27/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -41,7 +41,7 @@ To preview the integrated spam-reporting feature in Outlook on Mac, you must ins
 > [!TIP]
 > To immediately try out a completed spam-reporting add-in solution, see the [Report spam or phishing emails in Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-spam-reporting) sample.
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 
@@ -465,6 +465,10 @@ The following is a sample post-processing dialog shown to the user once the add-
 ## Review feature behavior and limitations
 
 As you develop and test the integrated spam-reporting feature in your add-in, be mindful of its characteristics and limitations.
+
+- In Outlook on the web and on Windows (new and classic), an integrated spam-reporting add-in replaces the native **Report** button in the Outlook ribbon. If multiple spam-reporting add-ins are installed, they will all appear in the **Report** section of the ribbon.
+
+    :::image type="content" source="../images/outlook-spam-replace-button.png" alt-text="A sample integrated spam-reporting add-in that replaces the Report button in the Outlook ribbon.":::
 
 - A spam-reporting add-in can run for a maximum of five minutes once it's activated. Any processing that occurs beyond five minutes will cause the add-in to time out. If the add-in times out, a dialog will be shown to the user to notify them of this.
 

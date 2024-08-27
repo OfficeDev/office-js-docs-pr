@@ -43,13 +43,11 @@ The Office JavaScript API provides two properties that support displaying or int
 
 ## Control localization from the manifest
 
-The techniques for localizing with the manifest differ depending on whether you are using the add-in only manifest or the unified manifest for Microsoft 365 (preview) which is supported only on Outlook for Windows.
+The techniques for localizing with the manifest differ depending on whether you are using the add-in only manifest or the unified manifest for Microsoft 365, which is supported only on Outlook.
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-Every Office Add-in specifies a [DefaultLocale] element and a locale in its manifest. By default, the Office Add-in platform and Office client applications apply the values of the [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl], and [SourceLocation] elements to all locales. You can optionally support specific values for specific locales, by specifying an [Override] child element for each additional locale, for any of these five elements. The value for the [DefaultLocale] element and for the `Locale` attribute of the [Override] element is specified according to [RFC 3066], "Tags for the Identification of Languages." Table 1 describes the localizing support for these elements.
-
-*Table 1. Localization support*
+Every Office Add-in specifies a [DefaultLocale] element and a locale in its manifest. By default, the Office Add-in platform and Office client applications apply the values of the [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl], and [SourceLocation] elements to all locales. You can optionally support specific values for specific locales, by specifying an [Override] child element for each additional locale, for any of these five elements. The value for the [DefaultLocale] element and for the `Locale` attribute of the [Override] element is specified according to [RFC 3066], "Tags for the Identification of Languages." The following table describes the localizing support for these elements.
 
 |Element|Localization support|
 |:-----|:-----|
@@ -144,7 +142,7 @@ For Outlook add-ins, the [SourceLocation] element also aligns to the form factor
 
 # [Unified manifest](#tab/jsonmanifest)
 
-When using the unified manifest, localize the public-facing strings in the manifest as described in [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization#localize-strings-in-your-app-manifest). The following is an example for an Outlook add-in. First is the "localizationInfo" object in the manifest. Below that is the fr-fr.json file with the translated strings. The add-in has a task pane (with a French version of the home page), localized French icons, and a custom ribbon button that opens a video player in a dialog box. 
+When using the unified manifest, localize the public-facing strings in the manifest as described in [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization#localize-strings-in-your-app-manifest). The following is an example for an Outlook add-in. First is the "localizationInfo" object in the manifest. Below that is the fr-fr.json file with the translated strings. The add-in has a task pane (with a French version of the home page), localized French icons, and a custom ribbon button that opens a video player in a dialog box.
 
 ```json
 "localizationInfo": {
@@ -174,7 +172,6 @@ When using the unified manifest, localize the public-facing strings in the manif
   "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.title": "Ouvrir le lecteur vidéo",
 }
 ```
-
 
 ---
 
@@ -376,8 +373,6 @@ The text that you want to localize for another language appears in two areas.
 
 The following figure shows the heading (h1) element and the paragraph (p) element that will display localized text when you complete the remaining steps and run the add-in.
 
-*Figure 1. The add-in UI*
-
 ![App user interface with sections highlighted.](../images/office15-app-how-to-localize-fig03.png)
 
 #### Add the resource file that contains the localized strings
@@ -522,8 +517,6 @@ To test your localized add-in, change the language used for display or editing i
 5. In Word, choose **Home** > **Show Taskpane**.
 
 Once running, the strings in the add-in UI change to match the language used by the application, as shown in the following figure.
-
-*Figure 3. Add-in UI with localized text*
 
 ![App with localized UI text.](../images/office15-app-how-to-localize-fig05.png)
 

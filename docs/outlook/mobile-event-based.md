@@ -26,7 +26,7 @@ To learn how to implement an event-based add-in for Outlook on the web, on Windo
 
 ## Set up your environment
 
-To run the feature, you must have a supported version of Outlook on Android or on iOS (see [Supported events and clients](#supported-events-and-clients)) and a Microsoft 365 subscription. Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+To run the feature, you must have a supported version of Outlook on Android or on iOS (see [Supported events and clients](#supported-events-and-clients)) and a Microsoft 365 subscription. Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 

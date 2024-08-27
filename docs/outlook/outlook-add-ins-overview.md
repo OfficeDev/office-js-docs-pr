@@ -92,7 +92,7 @@ Outlook add-ins are supported in Outlook on the web, Outlook on Windows ([new](h
 
 To get started building Outlook add-ins, try the following:
 
-- [Quick start](../quickstarts/outlook-quickstart.md) - Build a simple task pane.
+- [Quick start](../quickstarts/outlook-quickstart-yo.md) - Build a simple task pane.
 - [Tutorial](../tutorials/outlook-tutorial.md) - Learn how to create an add-in that inserts GitHub gists into a new message.
 
 ## See also
