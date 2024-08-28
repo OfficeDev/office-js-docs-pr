@@ -2,7 +2,7 @@
 title: Automatically open a task pane when an add-in is installed
 description: Learn how to configure an Office Add-in to open automatically when it's installed.
 ms.topic: how-to
-ms.date: 02/23/2024
+ms.date: 09/19/2024
 ms.localizationpriority: medium
 ---
 
