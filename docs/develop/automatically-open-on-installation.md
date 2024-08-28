@@ -30,7 +30,37 @@ The new behavior is as follows:
 > [!NOTE]
 > If for any reason, the add-in command that launches the task pane cannot be manually selected by a user at start up, such as when it's [configured to be disabled](../design/disable-add-in-commands.md) at start up, then it won't be automatically opened regardless of configuration. 
 
-## Configure default task pane
+## Configure default task pane in the manifest
+
+The process for specifying the default task pane depends on the type of manifest the add-in uses.
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
+
+To specify the default task pane, find the runtime object in the "runtimes" array whose "code.page" property is set to the URL of the page that you want to be the default. Ensure that the "actions" array in this same runtime object has at least one action whose "type" value is "openPage". Add a "view" property to this action object and set it to "Office.AutoShowTaskpaneWithDocument". You can only set this value on one action object and it must an action of type "openPage". If you set this value on multiple actions, the first occurrence of the value will be recognized as the default and the others will be ignored.
+
+The following example shows a "view" value set to "Office.AutoShowTaskpaneWithDocument".
+
+```json
+"runtimes": [
+    {
+        ...
+        "code": {
+            "page": "https://contoso.com/taskpane.html"
+        },
+        "actions": [
+            {
+                "id": "ShowTaskPane",
+                "type": "openPage",
+                "view": "Office.AutoShowTaskpaneWithDocument"
+            }
+        ]
+    }
+]
+```
+
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To designate a task pane as the default, add a [TaskpaneId](/javascript/api/manifest/action#taskpaneid) element as the first child of the **\<Action\>** element and set its value to **Office.AutoShowTaskpaneWithDocument**. The following is an example.
 
@@ -40,6 +70,8 @@ To designate a task pane as the default, add a [TaskpaneId](/javascript/api/mani
     <SourceLocation resid="Contoso.Taskpane.Url" />
 </Action>
 ```
+
+---
 
 > [!TIP]
 > If you want your add-in to automatically launch whenever the user reopens the document, you need to take further configuration steps. For details and advice about when to use this feature, see [Automatically open a task pane with a document](automatically-open-a-task-pane-with-a-document.md). 
