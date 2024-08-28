@@ -138,6 +138,7 @@ Your add-in uses the app manifest to request permission to access the level of f
    },
    ```
 
+   [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 - **Add-in only manifest**: Use the `Permissions` element in the manifest  For example, if your add-in requires read/write access to the document, its manifest must specify `ReadWriteDocument` as the text value in its `Permissions` element. Because permissions exist to protect a user's privacy and security, as a best practice you should request the minimum level of permissions it needs for its features. The following example shows how to request the **read document** permission in a task pane's manifest.
 

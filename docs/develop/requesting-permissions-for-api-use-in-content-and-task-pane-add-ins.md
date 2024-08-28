@@ -37,6 +37,8 @@ These permissions specify the subset of the API that the add-in [runtime](../tes
    },
    ```
 
+   [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
+
 - **Add-in only manifest**: Use the [Permissions](/javascript/api/manifest/permissions) element of the manifest. The following example requests the **write document** permission, which allows only methods that can write to (but not read) the document.
 
    ```XML

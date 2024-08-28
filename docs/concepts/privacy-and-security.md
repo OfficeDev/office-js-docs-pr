@@ -139,6 +139,8 @@ To see an example of how to request permissions in the manifest, open the tab fo
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
+[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
+
 The following example shows how a task pane add-in specifies the **read document** permission in its manifest. To keep permissions as the focus, other elements in the manifest aren't displayed.
 
 ```json
