@@ -24,7 +24,7 @@ By default, task pane add-ins that do *not* include any [add-in commands](../des
 The new behavior is as follows:
 
 - If the add-in has just one [task pane command](../design/add-in-commands.md#types-of-add-in-commands), then the add-in's ribbon tab is selected and the task pane opens automatically upon installation. You don't need to configure anything.
-- If the add-in has multiple task pane commands, and one is configured to be the default (see [Configure default task pane](#configure-default-task-pane)), then the add-in's ribbon tab is selected and the default task pane opens automatically upon installation.
+- If the add-in has multiple task pane commands, and one is configured to be the default (see [Configure default task pane](#configure-default-task-pane-in-the-manifest)), then the add-in's ribbon tab is selected and the default task pane opens automatically upon installation.
 - If the add-in has multiple task pane commands, but none is configured to be the default, then the add-in's ribbon tab is selected automatically upon installation and a callout appears near it notifying the user of the new add-in, but no task pane is opened. This is the same as the historic default behavior.
 
 > [!NOTE]
