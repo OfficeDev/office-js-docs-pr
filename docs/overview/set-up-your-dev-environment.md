@@ -56,7 +56,9 @@ The project creation and scaffolding tool is [Yeoman generator for Office Add-in
   ```command&nbsp;line
   npm install -g yo generator-office
   ```
-
+```command&nbsp;line
+  yo office
+  ```
 ### Install and use the Office JavaScript linter
 
 Microsoft provides a JavaScript linter to help you catch common errors when using the Office JavaScript library. If you create an add-in project with either the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) or [Teams Toolkit](../develop/teams-toolkit-overview.md), then the linter is installed and configured for you. Skip to [Run the linter](#run-the-linter).
