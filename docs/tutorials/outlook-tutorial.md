@@ -215,6 +215,8 @@ Before going any further, let's test the basic add-in that the generator created
 
     ![The Show Taskpane button and Git the gist task pane added by the sample.](../images/button-and-pane.png)
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
+
 ## Define buttons
 
 Now that you've verified the base add-in works, you can customize it to add more functionality. By default, the manifest only defines buttons for the read message window. Let's update the manifest to remove the buttons from the read message window and define two new buttons for the compose message window:

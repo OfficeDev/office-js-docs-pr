@@ -656,6 +656,8 @@ If you implemented the optional steps to customize the **Don't Send** button or 
 
 1. Send the message. There should be no alert this time.
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
+
 ### Try out overriding the send mode option at runtime (optional)
 
 If you implemented the optional step to override the send mode option at runtime, perform the following to try it out.

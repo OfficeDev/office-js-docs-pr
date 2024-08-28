@@ -405,6 +405,8 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 
    :::image type="content" source="../images/OnMessageFromChanged_update_signature.png" alt-text="A sample of an updated signature with a logo when the account in the From field is changed.":::
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
+
 ## Troubleshoot your add-in
 
 For guidance on how to troubleshoot your event-based activation add-in, see [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md).

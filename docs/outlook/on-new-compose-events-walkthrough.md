@@ -332,6 +332,8 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
 
     ![A message window in classic Outlook on Windows with the subject set on compose.](../images/outlook-win-autolaunch.png)
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
+
 ## Next steps
 
 To learn more about event-based activation and other events that you can implement in your add-in, see [Configure your Outlook add-in for event-based activation](autolaunch.md).

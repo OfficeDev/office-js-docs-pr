@@ -118,7 +118,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. Scroll to the bottom of the task pane and choose the **Run** link to copy the message's subject to the task pane.
 
-1. End the debugging session with the following command:
+1. End the debugging session with the following command.
 
     ```command&nbsp;line
     npm stop
@@ -244,7 +244,7 @@ Add a custom button to the ribbon that inserts text into a message body.
 
     The phrase "Hello World" will be inserted at the cursor.
 
-1. End the debugging session with the following command:
+1. End the debugging session with the following command.
 
     ```command&nbsp;line
     npm stop

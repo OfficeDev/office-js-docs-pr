@@ -430,6 +430,8 @@ In this section, you'll implement the JavaScript code to append a sample company
     > [!TIP]
     > Because content is only prepended or appended once the message is sent, the sender will only be able to view the added content from their **Inbox** or **Sent Items** folder. If you require the sender to view the added content before the message is sent, see [Insert data in the body when composing an appointment or message in Outlook](insert-data-in-the-body.md).
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
+
 ## Review feature behavior and limitations
 
 As you implement prepend-on-send and append-on-send in your add-in, keep the following in mind.

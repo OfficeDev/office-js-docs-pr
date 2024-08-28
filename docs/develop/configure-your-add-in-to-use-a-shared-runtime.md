@@ -166,11 +166,17 @@ You can confirm that you are using the shared runtime correctly by using the fol
 
 1. Save your changes and run the project.
 
-   ```command line
+   ```command&nbsp;line
    npm start
    ```
 
 Each time you open the task pane, the count of how many times it has been opened will be incremented. The value of **_count** will not be lost because the shared runtime keeps your code running even when the task pane is closed.
+
+When you're ready to stop the dev server and uninstall the add-in, run the following command.
+
+```command&nbsp;line
+npm stop
+```
 
 ## Runtime lifetime
 
