@@ -250,7 +250,7 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
 > [!TIP]
 >
 > - To learn about runtimes in add-ins, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement the event handlers
 

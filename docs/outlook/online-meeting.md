@@ -360,7 +360,7 @@ To allow users to create an online meeting from their mobile device, the [Mobile
 ---
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## Implement adding online meeting details
 

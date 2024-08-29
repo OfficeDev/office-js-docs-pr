@@ -1578,6 +1578,6 @@ In this tutorial, you've created an Outlook add-in that can be used in message c
 
 ## See also
 
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Outlook add-in design guidelines](../outlook/outlook-addin-design.md)
 - [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md)
