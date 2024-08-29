@@ -251,7 +251,7 @@ Now that you've registered an event handler, you then call the [getSelectedItems
 
 1. From a terminal, run the following code in the root directory of your project. This starts the local web server and sideloads your add-in.
 
-    ```command line
+    ```command&nbsp;line
     npm start
     ```
 
@@ -267,6 +267,8 @@ Now that you've registered an event handler, you then call the [getSelectedItems
 1. In the task pane, select **Run** to view a list of the selected messages' subject lines.
 
     :::image type="content" source="../images/outlook-multi-select.png" alt-text="A sample list of subject lines retrieved from multiple selected messages.":::
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ## Item multi-select behavior and limitations
 
@@ -306,7 +308,7 @@ Now that you've enabled your add-in to operate on multiple selected messages, yo
 
 ## See also
 
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Call web services from an Outlook add-in](web-services.md)
 - [Overview of Microsoft Graph](/graph/overview)
 - [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)

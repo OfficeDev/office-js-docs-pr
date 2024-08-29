@@ -237,6 +237,8 @@ Complete the following steps to add code that inserts an image into a slide.
 
     ![The PowerPoint add-in with the Insert Image button highlighted.](../images/powerpoint-tutorial-yo-insert-image-button.png)
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
+
 ## Customize user interface (UI) elements
 
 Complete the following steps to add markup that customizes the task pane UI.

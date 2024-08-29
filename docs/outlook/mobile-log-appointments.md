@@ -577,7 +577,7 @@ To enable users to log appointment notes with your add-in, you must configure th
 ---
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## Capture appointment notes
 

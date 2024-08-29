@@ -250,7 +250,7 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
 > [!TIP]
 >
 > - To learn about runtimes in add-ins, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement the event handlers
 
@@ -404,6 +404,8 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 1. Select **From**, then choose a different Exchange account. Alternatively, manually enter the Exchange email address by selecting **From** > **Other Email Address**. An updated signature is added to the message, replacing the previous one.
 
    :::image type="content" source="../images/OnMessageFromChanged_update_signature.png" alt-text="A sample of an updated signature with a logo when the account in the From field is changed.":::
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ## Troubleshoot your add-in
 

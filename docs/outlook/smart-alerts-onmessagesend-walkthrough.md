@@ -217,7 +217,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 > [!TIP]
 >
 > - For a list of send mode options available with the `OnMessageSend` and `OnAppointmentSend` events, see [Available send mode options](onmessagesend-onappointmentsend-events.md#available-send-mode-options).
-> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement event handling
 
@@ -656,6 +656,8 @@ If you implemented the optional steps to customize the **Don't Send** button or 
 
 1. Send the message. There should be no alert this time.
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
+
 ### Try out overriding the send mode option at runtime (optional)
 
 If you implemented the optional step to override the send mode option at runtime, perform the following to try it out.
@@ -679,7 +681,7 @@ If you implemented the optional step to override the send mode option at runtime
 
 - [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Debug event-based and spam-reporting add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
