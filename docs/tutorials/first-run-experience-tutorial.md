@@ -14,7 +14,7 @@ This tutorial provides instructions and screenshots for Excel but you can use a 
 
 ## Prerequisites
 
-1. Select the quick start for the Office application you'd like to use. Make sure to choose the Yeoman generator version.
+1. Select the Yo Office quick start for the Office application you'd like to use.
 
     - [Excel](../quickstarts/excel-quickstart-jquery.md)
     - [OneNote](../quickstarts/onenote-quickstart.md)
